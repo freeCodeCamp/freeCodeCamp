@@ -4,153 +4,144 @@
   "time": "5 hours",
   "helpRoom": "Help",
   "challenges": [
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712398c441eddfaeb5bdef",
       "title": "Flexbox is about positioning",
       "description": [
-Any UI is made up of two things
-
-Right colors, fonts, images etc. visual elements
-Right placement or positioning of the elements
-In this section, we would focus on placing the elements the right way, that is, browser and screen width independent.
-
-We will use flexbox to achieve this. Flexbox is a relatively new construct, supported by all modern major browsers, and it gives a nice way to control placing your elements in the webpage.
-
-No more CSS float or inline-block.
-
-Over the course of this section on flexbox, we would be building a simple tweet component, as shown on the right.
-
-Instruction
-Oh you don't need to do anything other than stare at the sample tweet component and thing of how > you would implement it.
-
-Note
-We would use SCSS over here, and not vanilla CSS. So, you might want to cover our SCSS section first
-
+        "Any UI is made up of two things",
+        "Right colors, fonts, images etc. visual elements",
+        "Right placement or positioning of the elements",
+        "In this section, we would focus on placing the elements the right way, that is, browser and screen width independent.",
+        "We will use flexbox to achieve this. Flexbox is a relatively new construct, supported by all modern major browsers, and it gives a nice way to control placing your elements in the webpage.",
+        "No more CSS float or inline-block.",
+        "Over the course of this section on flexbox, we would be building a simple tweet component, as shown on the right.",
+        "Instruction",
+        "Oh you don't need to do anything other than stare at the sample tweet component and thing of how > you would implement it.",
+        "Note",
+        "We would use SCSS over here, and not vanilla CSS. So, you might want to cover our SCSS section first"
       ],
       "challengeSeed": [
-<header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
-  <div class="profile-name">
-    <h3>Quincy Larson</h3>
-    <h4>@ossia</h4>
-  </div>
-  <div class="follow-btn">
-    <button>
-      <i class="fa fa-twitter"></i>&nbsp;Follow
-    </button>
-  </div>
-</header>
-<div id="inner">
-  <p>How would you describe to a layperson the relationship between Node, Express, and npm in a single tweet? An analogy would be helpful.</p>
-  <span class="date">7:24 PM - 17 Aug 2016</span>
-  <hr>
-</div>
-<footer>
-  <div class="stats">
-    <div class="retweets">
-      <strong>5</strong> RETWEETS
-    </div>
-    <div class="likes">
-      <strong>28</strong> LIKES
-    </div>
-  </div>
-  <div class="cta">
-    <button class="share-btn">
-      <i class="fa fa-share"></i>
-    </button>
-    <button class="retweet-btn">
-      <i class="fa fa-retweet"></i>
-    </button>
-    <button class="like-btn">
-      <i class="fa fa-heart"></i>
-    </button>
-  </div>
-</footer>
-body {
-  font-family: Arial, sans-serif;
-}
-
-header, footer {
-  display: flex;
-  flex-direction: row;
-}
-
-header {
-  .profile-thumbnail {
-    width: 50px;
-    height: 50px;
-    border-radius: 4px;
-  }
-
-  .profile-name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 10px;
-  }
-
-  .follow-btn {
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 auto;
-
-    button {
-      border: 0;
-      border-radius: 3px;
-      padding: 5px;
-    }
-
-    i {
-      color: #4099FF;
-    }
-  }
-
-  h3, h4 {
-    margin: 0;
-    display: flex;
-    align-items: center;
-  }
-}
-
-#inner {
-  p {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  hr {
-    margin: 20px 0;
-    opacity: 0.1;
-    border-style: solid;
-  }
-}
-
-footer {  
-  .stats {
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-
-    strong {
-      font-size: 18px;
-    }
-
-    .likes {
-      margin-left: 10px;
-    }
-  }
-  .cta {
-    margin-left: auto;
-
-    button {
-      border: 0;
-      background: transparent;
-    }
-  }
-}
+        "<header>",
+        "  <img src=\"http://i.imgur.com/CRnWqWl.jpg\" alt=\"Neil DeGrasse Tyson's Twitter profile picture\" class=\"profile-thumbnail\">",
+        "  <div class=\"profile-name\">",
+        "    <h3></h3>",
+        "    <h4></h4>",
+        "  </div>",
+        "  <div class=\"follow-btn\">",
+        "    <button>",
+        "      <i class=\"fa fa-twitter\"></i>&nbsp;Follow",
+        "    </button>",
+        "  </div>",
+        "</header>",
+        "<div id=\"inner\">",
+        "  <p>In 5-billion yrs the Sun will expand & engulf our orbit as the charred ember that was once Earth vaporizes. Have a nice day.</p>",
+        "  <span class=\"date\">8:04 AM - 6 Sep 2016</span>",
+        "  <hr>",
+        "</div>",
+        "<footer>",
+        "  <div class=\"stats\">",
+        "    <div class=\"retweets\">",
+        "      <strong>56,203</strong> RETWEETS",
+        "    </div>",
+        "    <div class=\"likes\">",
+        "      <strong>84,703</strong> LIKES",
+        "    </div>",
+        "  </div>",
+        "  <div class=\"cta\">",
+        "    <button class=\"share-btn\">",
+        "      <i class=\"fa fa-share\"></i>",
+        "    </button>",
+        "    <button class=\"retweet-btn\">",
+        "      <i class=\"fa fa-retweet\"></i>",
+        "    </button>",
+        "    <button class=\"like-btn\">",
+        "      <i class=\"fa fa-heart\"></i>",
+        "    </button>",
+        "  </div>",
+        "</footer>",
+        "body {",
+        "  font-family: Arial, sans-serif;",
+        "}",
+        "",
+        "header, footer {",
+        "  display: flex;",
+        "  flex-direction: row;",
+        "}",
+        "",
+        "header {",
+        "  .profile-thumbnail {",
+        "    width: 50px;",
+        "    height: 50px;",
+        "    border-radius: 4px;",
+        "  }",
+        "",
+        "  .profile-name {",
+        "    display: flex;",
+        "    flex-direction: column;",
+        "    justify-content: center;",
+        "    margin-left: 10px;",
+        "  }",
+        "",
+        "  .follow-btn {",
+        "    display: flex;",
+        "    align-items: center;",
+        "    margin: 0 0 0 auto;",
+        "",
+        "    button {",
+        "      border: 0;",
+        "      border-radius: 3px;",
+        "      padding: 5px;",
+        "    }",
+        "",
+        "    i {",
+        "      color: #4099FF;",
+        "    }",
+        "  }",
+        "",
+        "  h3, h4 {",
+        "    margin: 0;",
+        "    display: flex;",
+        "    align-items: center;",
+        "  }",
+        "}",
+        "",
+        "#inner {",
+        "  p {",
+        "    font-size: 20px;",
+        "    margin-bottom: 10px;",
+        "  }",
+        "  hr {",
+        "    margin: 20px 0;",
+        "    opacity: 0.1;",
+        "    border-style: solid;",
+        "  }",
+        "}",
+        "",
+        "footer {  ",
+        "  .stats {",
+        "    display: flex;",
+        "    flex-direction: row;",
+        "    font-size: 15px;",
+        "",
+        "    strong {",
+        "      font-size: 18px;",
+        "    }",
+        "",
+        "    .likes {",
+        "      margin-left: 10px;",
+        "    }",
+        "  }",
+        "  .cta {",
+        "    margin-left: auto;",
+        "",
+        "    button {",
+        "      border: 0;",
+        "      background: transparent;",
+        "    }",
+        "  }",
+        "}"
       ],
-      "tests": [
-
-      ],
+      "tests": [],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -182,36 +173,33 @@ footer {
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d7123c99441eddfaeb5bdef",
       "title": "Using display: flex with our two boxes",
       "description": [
-In these challenges, we will often have a theory based challenge and then a practical challenge where you apply what you have learned to flexify your tweet embed!
-
-Adding display: flex allows us to use other flex properties like justify-content and flex-basis which we will learn about later on in the challenges.
-Instructions
-
-Using CSS, add display: flex to both boxes using #box-1 and #box-2.
+        "In these challenges, we will often have a theory based challenge and then a practical challenge where you apply what you have learned to flexify your tweet embed!",
+        "Adding display: flex allows us to use other flex properties like justify-content and flex-basis which we will learn about later on in the challenges.",
+        "Instructions",
+        "Using CSS, add display: flex to both boxes using #box-1 and #box-2."
       ],
       "challengeSeed": [
-<div id="box-1"></div>
-<div id="box-2"></div>
-#box-1 {
-    background-color: dodgerblue;
-    width: 500px;
-    height: 500px;
-}
-
-#box-2 {
-    background-color: orangered;
-    width: 500px;
-    height: 500px;
-}
-
+        "<div id=\"box-1\"></div>",
+        "<div id=\"box-2\"></div>",
+        "#box-1 {",
+        "    background-color: dodgerblue;",
+        "    width: 500px;",
+        "    height: 500px;",
+        "}",
+        "",
+        "#box-2 {",
+        "    background-color: orangered;",
+        "    width: 500px;",
+        "    height: 500px;",
+        "}"
       ],
       "tests": [
-assert($('#box-1').css('display') == 'flex', 'message: <code>#box-1</code> should be using <code>display: flex</code>.'),
-assert($('#box-2').css('display') == 'flex', 'message: <code>#box-2</code> should be using <code>display: flex</code>.')
+        "assert($('#box-1').css('display') == 'flex', 'message: <code>#box-1</code> should be using <code>display: flex</code>.'),",
+        "assert($('#box-2').css('display') == 'flex', 'message: <code>#box-2</code> should be using <code>display: flex</code>.')"
       ],
       "solutions": [],
       "hints": [],
@@ -244,1761 +232,167 @@ assert($('#box-2').css('display') == 'flex', 'message: <code>#box-2</code> shoul
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712397c441eddfaeb5bdef",
       "title": "Adding Flex superpowers to our tweet embed",
       "description": [
-Now that we know how about display: flex, we can add it to our tweet embed.
-Instructions
-
-Add display: flex to the following items:
-
-header
-footer
-h3
-h4
-.profile-name
-.follow-btn
-.stats
+        "Now that we know how about display: flex, we can add it to our tweet embed.",
+        "Instructions",
+        "Add display: flex to the following items:",
+        "header",
+        "footer",
+        "h3",
+        "h4",
+        ".profile-name",
+        ".follow-btn",
+        ".stats"
       ],
       "challengeSeed": [
-<header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
-  <div class="profile-name">
-    <h3>Quincy Larson</h3>
-    <h4>@ossia</h4>
-  </div>
-  <div class="follow-btn">
-    <button>
-      <i class="fa fa-twitter"></i>&nbsp;Follow
-    </button>
-  </div>
-</header>
-<div id="inner">
-  <p>How would you describe to a layperson the relationship between Node, Express, and npm in a single tweet? An analogy would be helpful.</p>
-  <span class="date">7:24 PM - 17 Aug 2016</span>
-  <hr>
-</div>
-<footer>
-  <div class="stats">
-    <div class="retweets">
-      <strong>5</strong> RETWEETS
-    </div>
-    <div class="likes">
-      <strong>28</strong> LIKES
-    </div>
-  </div>
-  <div class="cta">
-    <button class="share-btn">
-      <i class="fa fa-share"></i>
-    </button>
-    <button class="retweet-btn">
-      <i class="fa fa-retweet"></i>
-    </button>
-    <button class="like-btn">
-      <i class="fa fa-heart"></i>
-    </button>
-  </div>
-</footer>
-body {
-  font-family: Arial, sans-serif;
-}
-
-header {
-  .profile-thumbnail {
-    width: 50px;
-    height: 50px;
-    border-radius: 4px;
-  }
-
-  .profile-name {
-    margin-left: 10px;
-  }
-
-  .follow-btn {
-    margin: 0 0 0 auto;
-
-    button {
-      border: 0;
-      border-radius: 3px;
-      padding: 5px;
+        "<header>",
+        "  <img src=\"http://i.imgur.com/CRnWqWl.jpg\" alt=\"Neil DeGrasse Tyson's Twitter profile picture\" class=\"profile-thumbnail\">",
+        "  <div class=\"profile-name\">",
+        "    <h3></h3>",
+        "    <h4></h4>",
+        "  </div>",
+        "  <div class=\"follow-btn\">",
+        "    <button>",
+        "      <i class=\"fa fa-twitter\"></i>&nbsp;Follow",
+        "    </button>",
+        "  </div>",
+        "</header>",
+        "<div id=\"inner\">",
+        "  <p>In 5-billion yrs the Sun will expand & engulf our orbit as the charred ember that was once Earth vaporizes. Have a nice day.</p>",
+        "  <span class=\"date\">8:04 AM - 6 Sep 2016</span>",
+        "  <hr>",
+        "</div>",
+        "<footer>",
+        "  <div class=\"stats\">",
+        "    <div class=\"retweets\">",
+        "      <strong>56,203</strong> RETWEETS",
+        "    </div>",
+        "    <div class=\"likes\">",
+        "      <strong>84,703</strong> LIKES",
+        "    </div>",
+        "  </div>",
+        "  <div class=\"cta\">",
+        "    <button class=\"share-btn\">",
+        "      <i class=\"fa fa-share\"></i>",
+        "    </button>",
+        "    <button class=\"retweet-btn\">",
+        "      <i class=\"fa fa-retweet\"></i>",
+        "    </button>",
+        "    <button class=\"like-btn\">",
+        "      <i class=\"fa fa-heart\"></i>",
+        "    </button>",
+        "  </div>",
+        "</footer>",
+        "body {",
+        "  font-family: Arial, sans-serif;",
+        "}",
+        "",
+        "header {",
+        "  .profile-thumbnail {",
+        "    width: 50px;",
+        "    height: 50px;",
+        "    border-radius: 4px;",
+        "  }",
+        "",
+        "  .profile-name {",
+        "    margin-left: 10px;",
+        "  }",
+        "",
+        "  .follow-btn {",
+        "    margin: 0 0 0 auto;",
+        "",
+        "    button {",
+        "      border: 0;",
+        "      border-radius: 3px;",
+        "      padding: 5px;",
+        "    }",
+        "",
+        "    i {",
+        "      color: #4099FF;",
+        "    }",
+        "  }",
+        "",
+        "  h3, h4 {",
+        "    margin: 0;",
+        "  }",
+        "}",
+        "",
+        "#inner {",
+        "  p {",
+        "    font-size: 20px;",
+        "    margin-bottom: 10px;",
+        "  }",
+        "  hr {",
+        "    margin: 20px 0;",
+        "    opacity: 0.1;",
+        "    border-style: solid;",
+        "  }",
+        "}",
+        "",
+        "footer {  ",
+        "  .stats {",
+        "    font-size: 15px;",
+        "",
+        "    strong {",
+        "      font-size: 18px;",
+        "    }",
+        "",
+        "    .likes {",
+        "      margin-left: 10px;",
+        "    }",
+        "  }",
+        "  .cta {",
+        "    margin-left: auto;",
+        "",
+        "    button {",
+        "      border: 0;",
+        "      background: transparent;",
+        "    }",
+        "  }",
+        "}"
+      ],
+      "tests": [
+        "assert($('header').css('display') == 'flex', 'message: Your <code>header</code> tag should be using <code>display: flex</code>.'),",
+        "assert($('footer').css('display') == 'flex', 'message: Your <code>footer</code> tag should be using <code>display: flex</code>.'),",
+        "assert($('h3').css('display') == 'flex', 'message: Your <code>h3</code> tag should be using <code>display: flex</code>.'),",
+        "assert($('h4').css('display') == 'flex', 'message: Your <code>h4</code> tag should be using <code>display: flex</code>.'),",
+        "assert($('.profile-name').css('display') == 'flex', 'message: Your <code>.profile-name</code> element should be using <code>display: flex</code>.'),",
+        "assert($('.follow-btn').css('display') == 'flex', 'message: Your <code>.follow-btn</code> element should be using <code>display: flex</code>.'),",
+        "assert($('.stats').css('display') == 'flex', 'message: Your <code>.stats</code> element should be using <code>display: flex</code>.')"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
     }
-
-    i {
-      color: #4099FF;
-    }
-  }
-
-  h3, h4 {
-    margin: 0;
-  }
-}
-
-#inner {
-  p {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  hr {
-    margin: 20px 0;
-    opacity: 0.1;
-    border-style: solid;
-  }
-}
-
-footer {  
-  .stats {
-    font-size: 15px;
-
-    strong {
-      font-size: 18px;
-    }
-
-    .likes {
-      margin-left: 10px;
-    }
-  }
-  .cta {
-    margin-left: auto;
-
-    button {
-      border: 0;
-      background: transparent;
-    }
-  }
-}
-      ],
-      "tests": [
-assert($('header').css('display') == 'flex', 'message: Your <code>header</code> tag should be using <code>display: flex</code>.'),
-assert($('footer').css('display') == 'flex', 'message: Your <code>footer</code> tag should be using <code>display: flex</code>.'),
-assert($('h3').css('display') == 'flex', 'message: Your <code>h3</code> tag should be using <code>display: flex</code>.'),
-assert($('h4').css('display') == 'flex', 'message: Your <code>h4</code> tag should be using <code>display: flex</code>.'),
-assert($('.profile-name').css('display') == 'flex', 'message: Your <code>.profile-name</code> element should be using <code>display: flex</code>.'),
-assert($('.follow-btn').css('display') == 'flex', 'message: Your <code>.follow-btn</code> element should be using <code>display: flex</code>.'),
-assert($('.stats').css('display') == 'flex', 'message: Your <code>.stats</code> element should be using <code>display: flex</code>.')
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-
   ]
 }

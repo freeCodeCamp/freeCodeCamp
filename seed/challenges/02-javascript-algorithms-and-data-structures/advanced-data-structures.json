@@ -4,32 +4,27 @@
   "time": "50 hours",
   "helpRoom": "Help",
   "challenges": [
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712311c441eddfaeb5bdef",
       "title": "Learn how a Stack Works",
       "description": [
-You are probably familiar with stack of books on your table. You might have used the undo feature in your computer. You are also used to hitting the back button on your phone to go back to the previous view in your app.
-You know what they all have in common? They all store the data in a way so that you can traverse backwards.
-The topmost book in the stack was the one that was put there at the last. If you remove that book from your stack's top, you would expose the book that was put there before the last book and so on.
-
-If you think about it, in all the above examples, you are getting Last-In-First-Out type of service. We will try to mimic this with our code - create a similar data storage scheme with JS arrays and functions that we always get back first what we put there last.
-
-Oh, and did I mention such data storage scheme is called Stack! In particular, we would have to implement the push function that pushes JS object at the top of the stack; and pop function, that removes the JS object that's at the top of the stack at the current moment.
-
-Instructions
-
-Here we have a stack of homework assignments represented as an array: BIO12 is at the base, and PSY44 is at the top of the stack.
-
-Remove the element on top of the stack, and Add CS50.
+        "You are probably familiar with stack of books on your table. You might have used the undo feature in your computer. You are also used to hitting the back button on your phone to go back to the previous view in your app.",
+        "You know what they all have in common? They all store the data in a way so that you can traverse backwards.",
+        "The topmost book in the stack was the one that was put there at the last. If you remove that book from your stack's top, you would expose the book that was put there before the last book and so on.",
+        "If you think about it, in all the above examples, you are getting Last-In-First-Out type of service. We will try to mimic this with our code - create a similar data storage scheme with JS arrays and functions that we always get back first what we put there last.",
+        "Oh, and did I mention such data storage scheme is called Stack! In particular, we would have to implement the push function that pushes JS object at the top of the stack; and pop function, that removes the JS object that's at the top of the stack at the current moment.",
+        "Instructions",
+        "Here we have a stack of homework assignments represented as an array: BIO12 is at the base, and PSY44 is at the top of the stack.",
+        "Remove the element on top of the stack, and Add CS50."
       ],
       "challengeSeed": [
-var homeworkStack = ['BIO12','HIS80','MAT122','PSY44']
-// Only change code below this line
+        "var homeworkStack = ['BIO12','HIS80','MAT122','PSY44']",
+        "// Only change code below this line"
       ],
       "tests": [
-assert(homeworkStack.length === 4, 'message: <code>homeworkStack</code> should only contain 4 elements');
-assert(homeworkStack[3] === 'CS50', 'message: The last element in <code>homeworkStack</code> should be CS50');
-assert(homeworkStack.indexOf('PSY44') === -1, 'message: <code>homeworkStack</code> should not contain PSY44');
+        "assert(homeworkStack.length === 4, 'message: <code>homeworkStack</code> should only contain 4 elements');",
+        "assert(homeworkStack[3] === 'CS50', 'message: The last element in <code>homeworkStack</code> should be CS50');",
+        "assert(homeworkStack.indexOf('PSY44') === -1, 'message: <code>homeworkStack</code> should not contain PSY44');"
       ],
       "solutions": [],
       "hints": [],
@@ -62,52 +57,46 @@ assert(homeworkStack.indexOf('PSY44') === -1, 'message: <code>homeworkStack</cod
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712312c441eddfaeb5bdef",
       "title": "Create a Stack Class",
       "description": [
-In the last section, we talked about what a stack is and how we can use an array to represent a stack. In this section, we will be creating our own stack class.
-
-Although you can use arrays to create stacks, sometimes it is best to limit the amount of control we have with our stacks.
-
-Apart from the push and pop method, stacks has other useful methods. Let's add a peek, isEmpty, and clear method to our stack class.
-
-Instructions
-
-Write a push method that pushes an element to the top of the stack, a pop method that removes the element on the top of the stack, a peek method that looks at the first element in the stack, an isEmpty method that checks if the stack is empty, and a clear method that removes all elements from the stack.
-
-Normally stacks don't have this, but we've added a print() helper method that console logs the collection.
-
+        "In the last section, we talked about what a stack is and how we can use an array to represent a stack. In this section, we will be creating our own stack class.",
+        "Although you can use arrays to create stacks, sometimes it is best to limit the amount of control we have with our stacks.",
+        "Apart from the push and pop method, stacks has other useful methods. Let's add a peek, isEmpty, and clear method to our stack class.",
+        "Instructions",
+        "Write a push method that pushes an element to the top of the stack, a pop method that removes the element on the top of the stack, a peek method that looks at the first element in the stack, an isEmpty method that checks if the stack is empty, and a clear method that removes all elements from the stack.",
+        "Normally stacks don't have this, but we've added a print() helper method that console logs the collection."
       ],
       "challengeSeed": [
-function Stack() { 
-    collection = [];
-    this.print = function() {
-        console.log(collection)
-    }
-    // Only change code below this line
-
-    // Only change code above this line
-}
-
-// Test your stack class
-var homework = new Stack();
-homework.push('CS50');
-console.log(homework.peek())
-console.log(homework.isEmpty())
-homework.clear();
-console.log(homework.isEmpty())
+        "function Stack() { ",
+        "    collection = [];",
+        "    this.print = function() {",
+        "        console.log(collection)",
+        "    }",
+        "    // Only change code below this line",
+        "",
+        "    // Only change code above this line",
+        "}",
+        "",
+        "// Test your stack class",
+        "var homework = new Stack();",
+        "homework.push('CS50');",
+        "console.log(homework.peek())",
+        "console.log(homework.isEmpty())",
+        "homework.clear();",
+        "console.log(homework.isEmpty())"
       ],
       "tests": [
-assert((function(){var test = new Stack(); return (typeof test.push === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>push</code> method.');
-assert((function(){var test = new Stack(); return (typeof test.pop === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>pop</code> method.');
-assert((function(){var test = new Stack(); return (typeof test.peek === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>peek</code> method.');
-assert((function(){var test = new Stack(); return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>isEmpty</code> method.');
-assert((function(){var test = new Stack(); return (typeof test.clear === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>clear</code> method.');
-assert((function(){var test = new Stack();  test.push('CS50'); return (test.peek() === 'CS50')}()), 'message: The <code>peek</code> method should return the top element of the stack');
-assert((function(){var test = new Stack(); test.push('CS50'); return (test.pop() === 'CS50');}()), 'message: The <code>pop</code> method should remove and return the top element of the stack');
-assert((function(){var test = new Stack(); return test.isEmpty()}()), 'message: The <code>isEmpty</code> method should return true if a stack does not contain any elements');
-assert((function(){var test = new Stack();  test.push('CS50'); test.clear(); return (test.isEmpty())}()), 'message: The <code>clear</code> method should remove all element from the stack');
+        "assert((function(){var test = new Stack(); return (typeof test.push === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>push</code> method.');",
+        "assert((function(){var test = new Stack(); return (typeof test.pop === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>pop</code> method.');",
+        "assert((function(){var test = new Stack(); return (typeof test.peek === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>peek</code> method.');",
+        "assert((function(){var test = new Stack(); return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>isEmpty</code> method.');",
+        "assert((function(){var test = new Stack(); return (typeof test.clear === 'function')}()), 'message: Your <code>Stack</code> class should have a <code>clear</code> method.');",
+        "assert((function(){var test = new Stack();  test.push('CS50'); return (test.peek() === 'CS50')}()), 'message: The <code>peek</code> method should return the top element of the stack');",
+        "assert((function(){var test = new Stack(); test.push('CS50'); return (test.pop() === 'CS50');}()), 'message: The <code>pop</code> method should remove and return the top element of the stack');",
+        "assert((function(){var test = new Stack(); return test.isEmpty()}()), 'message: The <code>isEmpty</code> method should return true if a stack does not contain any elements');",
+        "assert((function(){var test = new Stack();  test.push('CS50'); test.clear(); return (test.isEmpty())}()), 'message: The <code>clear</code> method should remove all element from the stack');"
       ],
       "solutions": [],
       "hints": [],
@@ -140,50 +129,46 @@ assert((function(){var test = new Stack();  test.push('CS50'); test.clear(); ret
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712313c441eddfaeb5bdef",
       "title": "Create a Queue Class",
       "description": [
-Like stacks, queues are a collection of elements. But unlike stacks, queues follow the FIFO (First-In First-Out) principle. Elements added to a queue are pushed to the tail, or the end, of the queue, and only the element at the front of the queue is allowed to be removed.
-
-We could use an array to represent a queue, but just like stacks, we want to limit the amount of control we have over our queues.
-
-The two main methods of a queue class is the enqueue and the dequeue method. The enqueue method pushes an element to the tail of the queue, and the dequeue method removes and returns the element at the front of the queue. Other useful methods are the front, size, and isEmpty methods.
-
-Instructions
-
-Write an enqueue method that pushes an element to the tail of the queue, a dequeue method that removes and returns the front element, a front method that lets us see the front element, a size method that shows the length, and an isEmpty method to check if the queue is empty.
+        "Like stacks, queues are a collection of elements. But unlike stacks, queues follow the FIFO (First-In First-Out) principle. Elements added to a queue are pushed to the tail, or the end, of the queue, and only the element at the front of the queue is allowed to be removed.",
+        "We could use an array to represent a queue, but just like stacks, we want to limit the amount of control we have over our queues.",
+        "The two main methods of a queue class is the enqueue and the dequeue method. The enqueue method pushes an element to the tail of the queue, and the dequeue method removes and returns the element at the front of the queue. Other useful methods are the front, size, and isEmpty methods.",
+        "Instructions",
+        "Write an enqueue method that pushes an element to the tail of the queue, a dequeue method that removes and returns the front element, a front method that lets us see the front element, a size method that shows the length, and an isEmpty method to check if the queue is empty."
       ],
       "challengeSeed": [
-function Queue () { 
-    collection = [];
-    this.print() = function(){
-        console.log(collection);
-    }
-    // Only change code below this line
-
-    // Only change code above this line
-}
-
-// Test your queue class
-var DMV = new Queue();
-DMV.enqueue('David Brown');
-DMV.enqueue('Jon Snow');
-DMV.size();
-DMV.dequeue();
-DMV.front();
-DMV.isEmpty();
+        "function Queue () { ",
+        "    collection = [];",
+        "    this.print() = function(){",
+        "        console.log(collection);",
+        "    }",
+        "    // Only change code below this line",
+        "",
+        "    // Only change code above this line",
+        "}",
+        "",
+        "// Test your queue class",
+        "var DMV = new Queue();",
+        "DMV.enqueue('David Brown');",
+        "DMV.enqueue('Jon Snow');",
+        "DMV.size();",
+        "DMV.dequeue();",
+        "DMV.front();",
+        "DMV.isEmpty();"
       ],
       "tests": [
-assert((function(){var test = new Queue();  return (typeof test.enqueue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>enqueue</code> method.');
-assert((function(){var test = new Queue();  return (typeof test.denqueue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>denqueue</code> method.');
-assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>front</code> method.');
-assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>size</code> method.');
-assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>isEmpty</code> method.');
-assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.dequeue() === 'Smith')}()), 'message: The <code>dequeue</code> method should remove and return the front element of the queue');
-assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()), 'message: The <code>front</code> method should return value of the front element of the queue');
-assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()), 'message: The <code>size</code> method should return the length of the queue');
-assert((function(){var test = new Queue();  test.enqueue('Smith'); return !(test.isEmpty())}()), 'message: The <code>isEmpty</code> method should return false if there are elements in the queue');
+        "assert((function(){var test = new Queue();  return (typeof test.enqueue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>enqueue</code> method.');",
+        "assert((function(){var test = new Queue();  return (typeof test.denqueue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>denqueue</code> method.');",
+        "assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>front</code> method.');",
+        "assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>size</code> method.');",
+        "assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>isEmpty</code> method.');",
+        "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.dequeue() === 'Smith')}()), 'message: The <code>dequeue</code> method should remove and return the front element of the queue');",
+        "assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()), 'message: The <code>front</code> method should return value of the front element of the queue');",
+        "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()), 'message: The <code>size</code> method should return the length of the queue');",
+        "assert((function(){var test = new Queue();  test.enqueue('Smith'); return !(test.isEmpty())}()), 'message: The <code>isEmpty</code> method should return false if there are elements in the queue');"
       ],
       "solutions": [],
       "hints": [],
@@ -216,39 +201,33 @@ assert((function(){var test = new Queue();  test.enqueue('Smith'); return !(test
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712314c441eddfaeb5bdef",
       "title": "Work with Nodes in a Linked List",
       "description": [
-Another common data structure is the linked list. In a linked list, elements are stored in a node. The node contains two key pieces of information: the element itself, and a reference to the next node.
-
-Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line, they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.
-
-Instructions
-
-In the code, we've create two nodes, Kitten and Puppy, and we've manually connected the Kitten node to the Puppy node.
-
-Create a Cat and Dog node and manually add them to the line.
-
-
+        "Another common data structure is the linked list. In a linked list, elements are stored in a node. The node contains two key pieces of information: the element itself, and a reference to the next node.",
+        "Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line, they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.",
+        "Instructions",
+        "In the code, we've create two nodes, Kitten and Puppy, and we've manually connected the Kitten node to the Puppy node.",
+        "Create a Cat and Dog node and manually add them to the line."
       ],
       "challengeSeed": [
-var Node = function(element){
-    this.element = element; 
-    this.next = null; 
-};
-var Kitten = new Node("Kitten");
-var Puppy = new Node("Puppy");
-
-Kitten.next = Puppy;
-// only add code below this line
-
-// test your code
-console.log(Kitten.next)
+        "var Node = function(element){",
+        "    this.element = element; ",
+        "    this.next = null; ",
+        "};",
+        "var Kitten = new Node(\"Kitten\");",
+        "var Puppy = new Node(\"Puppy\");",
+        "",
+        "Kitten.next = Puppy;",
+        "// only add code below this line",
+        "",
+        "// test your code",
+        "console.log(Kitten.next)"
       ],
       "tests": [
-assert(Puppy.next.element === "Cat", 'message: Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.');
-assert(Cat.next.element === "Dog", 'message: Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.');
+        "assert(Puppy.next.element === \"Cat\", 'message: Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.');",
+        "assert(Cat.next.element === \"Dog\", 'message: Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.');"
       ],
       "solutions": [],
       "hints": [],
@@ -281,59 +260,53 @@ assert(Cat.next.element === "Dog", 'message: Your <code>Cat</code> node should h
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712315c441eddfaeb5bdef",
       "title": "Create a Linked List Class",
       "description": [
-Let's create a linked list class. Every linked list has a head and length. The head is the first node added to the linked list. The length is the size of the linked list. When an element is added to the linked list, the length should increment by one.
-
-The first method of a linked list is the add method. When an element is added to a linked list, a new node is created. If is it the first node created, it is assigned to the head of the linked list. If it is not the first node, the previous node should reference the new created node.
-
-Instructions
-
-Write an add method that assigns head to the first node push to the linked list, and after that, every node should be referenced by the previous node.
-
-We've added a head and size helper method.
-
-Note
-
-Length should increase by one every time an element is pushed to the linked list.
+        "Let's create a linked list class. Every linked list has a head and length. The head is the first node added to the linked list. The length is the size of the linked list. When an element is added to the linked list, the length should increment by one.",
+        "The first method of a linked list is the add method. When an element is added to a linked list, a new node is created. If is it the first node created, it is assigned to the head of the linked list. If it is not the first node, the previous node should reference the new created node.",
+        "Instructions",
+        "Write an add method that assigns head to the first node push to the linked list, and after that, every node should be referenced by the previous node.",
+        "We've added a head and size helper method.",
+        "Note",
+        "Length should increase by one every time an element is pushed to the linked list."
       ],
       "challengeSeed": [
-function LinkedList() { 
-  var length = 0; 
-  var head = null; 
-
-  var Node = function(element){
-    this.element = element; 
-    this.next = null; 
-  }; 
-
-  this.head = function(){
-    return head;
-  };
-
-  this.size = function(){
-    return length;
-  };
-
-  this.add = function(element){
-    // Only change code below this line
-
-    // Only change code above this line
-  }; 
-} 
-
-// Test your code
-var conga = new LinkedList();
-conga.add('Kitten');
-console.log(conga.head().element);
+        "function LinkedList() { ",
+        "  var length = 0; ",
+        "  var head = null; ",
+        "",
+        "  var Node = function(element){",
+        "    this.element = element; ",
+        "    this.next = null; ",
+        "  }; ",
+        "",
+        "  this.head = function(){",
+        "    return head;",
+        "  };",
+        "",
+        "  this.size = function(){",
+        "    return length;",
+        "  };",
+        "",
+        "  this.add = function(element){",
+        "    // Only change code below this line",
+        "",
+        "    // Only change code above this line",
+        "  }; ",
+        "} ",
+        "",
+        "// Test your code",
+        "var conga = new LinkedList();",
+        "conga.add('Kitten');",
+        "console.log(conga.head().element);"
       ],
       "tests": [
-assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>add</code> method.');
-assert((function(){var test = new LinkedList(); test.add('cat'); return test.head().element === 'cat'}()), 'message: Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.head().next.element === 'dog'}()), 'message: The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.size() === 2}()), 'message: The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.');
+        "assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>add</code> method.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); return test.head().element === 'cat'}()), 'message: Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.head().next.element === 'dog'}()), 'message: The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.size() === 2}()), 'message: The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.');"
       ],
       "solutions": [],
       "hints": [],
@@ -366,79 +339,73 @@ assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog')
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712316c441eddfaeb5bdef",
       "title": "Remove Elements from a Linked List",
       "description": [
-The next important method of a linked list is the remove method. The remove method takes an element and searches the linked list to find and remove the node containing that element. When a node is removed, the previous node that had reference to removed node, now has reference to the node that the removed node once referenced.
-
-This might sound really confusing, but let's return to the conga line example. You're in conga line, and the person straight ahead of you leaves the line. The person leaving the line, no longer has his hands on any one in line and you no longer have hands on the person that left. You step forward and put your hands on next person you see.
-
-If the element being removed is the head element, the head is reassigned to the second node of the linked list.
-
-Instructions
-
-Write a remove method that takes an element and removes it from the linked list.
-
-Note
-
-Length should decrease by one every time an element is removed from the linked list.
+        "The next important method of a linked list is the remove method. The remove method takes an element and searches the linked list to find and remove the node containing that element. When a node is removed, the previous node that had reference to removed node, now has reference to the node that the removed node once referenced.",
+        "This might sound really confusing, but let's return to the conga line example. You're in conga line, and the person straight ahead of you leaves the line. The person leaving the line, no longer has his hands on any one in line and you no longer have hands on the person that left. You step forward and put your hands on next person you see.",
+        "If the element being removed is the head element, the head is reassigned to the second node of the linked list.",
+        "Instructions",
+        "Write a remove method that takes an element and removes it from the linked list.",
+        "Note",
+        "Length should decrease by one every time an element is removed from the linked list."
       ],
       "challengeSeed": [
-function LinkedList() { 
-  var length = 0; 
-  var head = null; 
-
-  var Node = function(element){ 
-    this.element = element; 
-    this.next = null; 
-  }; 
-
-  this.length = function(){
-    return length;
-  };
-
-  this.head = function(){
-    return head;
-  };
-
-  this.add = function(element){
-    var node = new Node(element);
-    if(head === null){
-        head = node;
-    } else {
-        currentNode = head;
-
-        while(currentNode.next){
-            currentNode  = currentNode.next;
-        }
-
-        currentNode.next = node;
-    }
-
-    length++;
-  }; 
-
-  this.remove = function(element){
-    // Only change code below this line
-
-    // Only change code above this line
-  }
-} 
-
-// Test your code
-var conga = new LinkedList();
-conga.add('Kitten');
-conga.add('Puppy');
-console.log(conga.length());
-conga.remove('Kitten');
-console.log(conga.head());
+        "function LinkedList() { ",
+        "  var length = 0; ",
+        "  var head = null; ",
+        "",
+        "  var Node = function(element){ ",
+        "    this.element = element; ",
+        "    this.next = null; ",
+        "  }; ",
+        "",
+        "  this.length = function(){",
+        "    return length;",
+        "  };",
+        "",
+        "  this.head = function(){",
+        "    return head;",
+        "  };",
+        "",
+        "  this.add = function(element){",
+        "    var node = new Node(element);",
+        "    if(head === null){",
+        "        head = node;",
+        "    } else {",
+        "        currentNode = head;",
+        "",
+        "        while(currentNode.next){",
+        "            currentNode  = currentNode.next;",
+        "        }",
+        "",
+        "        currentNode.next = node;",
+        "    }",
+        "",
+        "    length++;",
+        "  }; ",
+        "",
+        "  this.remove = function(element){",
+        "    // Only change code below this line",
+        "",
+        "    // Only change code above this line",
+        "  }",
+        "} ",
+        "",
+        "// Test your code",
+        "var conga = new LinkedList();",
+        "conga.add('Kitten');",
+        "conga.add('Puppy');",
+        "console.log(conga.length());",
+        "conga.remove('Kitten');",
+        "console.log(conga.head());"
       ],
       "tests": [
-assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>remove</code> method.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'message: Your <code>Remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.length() === 1}()), 'message: Your <code>Remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'}()), "message: Your <code>Remove</code> method should reassign the reference of the previous node of the removed node to the removed node's <code>next</code> reference ");
+        "assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>remove</code> method.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'message: Your <code>Remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.length() === 1}()), 'message: Your <code>Remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'}()), 'message: Your <code>Remove</code> method should reassign the reference of the previous node of the removed node to the removed node's <code>next</code> reference ');"
       ],
       "solutions": [],
       "hints": [],
@@ -471,90 +438,87 @@ assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog')
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712317c441eddfaeb5bdef",
       "title": "Search within a Linked List",
       "description": [
-Let's add a few more useful methods to our linked list class. Like the stack and queue classes, we should add an isEmpty method to check if the linked list is empty.
-
-We also want to find elements in our linked list. Let's create a indexOf method that takes an element and returns the indexs of it in the linked list. The method should return -1 if the element is not found in the linked list. We also need an elementAt method that takes an index and returns the element at the given index. The method should return undefined if no element is found.
-
-Instructions
-
-Write isEmpty method that checks if the linked list is empty, a size method that returns the length of the linked list, a indexOf method that returns the index of a given element, and an elementAt that returns an element at a given index.
+        "Let's add a few more useful methods to our linked list class. Like the stack and queue classes, we should add an isEmpty method to check if the linked list is empty.",
+        "We also want to find elements in our linked list. Let's create a indexOf method that takes an element and returns the indexs of it in the linked list. The method should return -1 if the element is not found in the linked list. We also need an elementAt method that takes an index and returns the element at the given index. The method should return undefined if no element is found.",
+        "Instructions",
+        "Write isEmpty method that checks if the linked list is empty, a size method that returns the length of the linked list, a indexOf method that returns the index of a given element, and an elementAt that returns an element at a given index."
       ],
       "challengeSeed": [
-function LinkedList() { 
-  var length = 0; 
-  var head = null; 
-
-  var Node = function(element){ // {1} 
-    this.element = element; 
-    this.next = null; 
-  }; 
-
-  this.size = function() {
-    return length;
-  };
-
-  this.head = function(){
-    return head;
-  };
-
-  this.add = function(element){
-    var node = new Node(element);
-    if(head === null){
-        head = node;
-    } else {
-        currentNode = head;
-
-        while(currentNode.next){
-            currentNode  = currentNode.next;
-        }
-
-        currentNode.next = node;
-    }
-
-    length++;
-  }; 
-
-  this.remove = function(element){
-    var currentNode = head;
-    var previousNode;
-    if(currentNode.element === element){
-        head = currentNode.next;
-    } else {
-        while(currentNode.element !== element) {
-            previousNode = currentNode;
-            currentNode = currentNode.next;
-        }
-
-        previousNode.next = currentNode.next;
-    }
-
-    length --;
-  };
-
-  // Only change code below this line
-
-  // Only change code above this line
-}
-
-// Test your code
-var conga = new LinkedList();
-conga.add('Kitten');
-conga.add('Puppy');
-console.log(conga.indexOf('Puppy'))
-console.log(conga.elementAt('0'))
-conga.remove('Kitten');
-console.log(conga.head());
+        "function LinkedList() { ",
+        "  var length = 0; ",
+        "  var head = null; ",
+        "",
+        "  var Node = function(element){ // {1} ",
+        "    this.element = element; ",
+        "    this.next = null; ",
+        "  }; ",
+        "",
+        "  this.size = function() {",
+        "    return length;",
+        "  };",
+        "",
+        "  this.head = function(){",
+        "    return head;",
+        "  };",
+        "",
+        "  this.add = function(element){",
+        "    var node = new Node(element);",
+        "    if(head === null){",
+        "        head = node;",
+        "    } else {",
+        "        currentNode = head;",
+        "",
+        "        while(currentNode.next){",
+        "            currentNode  = currentNode.next;",
+        "        }",
+        "",
+        "        currentNode.next = node;",
+        "    }",
+        "",
+        "    length++;",
+        "  }; ",
+        "",
+        "  this.remove = function(element){",
+        "    var currentNode = head;",
+        "    var previousNode;",
+        "    if(currentNode.element === element){",
+        "        head = currentNode.next;",
+        "    } else {",
+        "        while(currentNode.element !== element) {",
+        "            previousNode = currentNode;",
+        "            currentNode = currentNode.next;",
+        "        }",
+        "",
+        "        previousNode.next = currentNode.next;",
+        "    }",
+        "",
+        "    length --;",
+        "  };",
+        "",
+        "  // Only change code below this line",
+        "",
+        "  // Only change code above this line",
+        "}",
+        "",
+        "// Test your code",
+        "var conga = new LinkedList();",
+        "conga.add('Kitten');",
+        "conga.add('Puppy');",
+        "console.log(conga.indexOf('Puppy'))",
+        "console.log(conga.elementAt('0'))",
+        "conga.remove('Kitten');",
+        "console.log(conga.head());"
       ],
       "tests": [
-assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>indexOf</code> method.');
-assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>elementAt</code> method.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()), 'message: Your <code>size</code> method should return the length of the linked list');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()), 'message: Your <code>indexOf</code> method should return the index of the given element.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()), 'message: Your <code>elementAt</code> method should return at element at a given index.');
+        "assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>indexOf</code> method.');",
+        "assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>elementAt</code> method.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()), 'message: Your <code>size</code> method should return the length of the linked list');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()), 'message: Your <code>indexOf</code> method should return the index of the given element.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()), 'message: Your <code>elementAt</code> method should return at element at a given index.');"
       ],
       "solutions": [],
       "hints": [],
@@ -587,94 +551,90 @@ assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog')
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712319c441eddfaeb5bdef",
       "title": "Remove Elements from a Linked List by Index",
       "description": [
-Now we need to create a remove method that removes the element at a given index. The method should be called removeAt(index). To remove an element at a certain index we need to keep count of each node as we move along the linked list. Starting at the head of the linked list, our currentIndex should be 0. The currentIndex should increment by one for each node we pass. Just like the remove(element) method, we need to reconnect the nodes. The node that has reference to the removed node should now have reference to the next node.
-
-Instructions
-
-Write a removeAt(index) method that removes and returns a node at a given index. The method should return null if the given index is a negative or is more than or equal to the length of the linked list.
-
-Note
-
-Remember to keep count of the currentIndex.
+        "Now we need to create a remove method that removes the element at a given index. The method should be called removeAt(index). To remove an element at a certain index we need to keep count of each node as we move along the linked list. Starting at the head of the linked list, our currentIndex should be 0. The currentIndex should increment by one for each node we pass. Just like the remove(element) method, we need to reconnect the nodes. The node that has reference to the removed node should now have reference to the next node.",
+        "Instructions",
+        "Write a removeAt(index) method that removes and returns a node at a given index. The method should return null if the given index is a negative or is more than or equal to the length of the linked list.",
+        "Note",
+        "Remember to keep count of the currentIndex."
       ],
       "challengeSeed": [
-function LinkedList() { 
-  var length = 0; 
-  var head = null; 
-
-  var Node = function(element){ // {1} 
-    this.element = element; 
-    this.next = null; 
-  }; 
-
-  this.size = function(){
-    return length;
-  };
-
-  this.head = function(){
-    return head;
-  };
-
-  this.add = function(element){
-    var node = new Node(element);
-    if(head === null){
-        head = node;
-    } else {
-        currentNode = head;
-
-        while(currentNode.next){
-            currentNode  = currentNode.next;
-        }
-
-        currentNode.next = node;
-    }
-
-    length++;
-  }; 
-
-  this.remove = function(element){
-    var currentNode = head;
-    var previousNode;
-    if(currentNode.element === element){
-        head = currentNode.next;
-    } else {
-        while(currentNode.element !== element) {
-            previousNode = currentNode;
-            currentNode = currentNode.next;
-        }
-
-        previousNode.next = currentNode.next;
-    }
-
-    length --;
-  };
-
-  // Only change code below this line
-
-  // Only change code above this line
-} 
-
-// Test your code
-var conga = new LinkedList();
-conga.add('Kitten');
-conga.add('Puppy');
-conga.add('Dog');
-conga.add('Cat');
-conga.add('Fish');
-console.log(conga.size());
-console.log(conga.removeAt(3));
-console.log(conga.size());
+        "function LinkedList() { ",
+        "  var length = 0; ",
+        "  var head = null; ",
+        "",
+        "  var Node = function(element){ // {1} ",
+        "    this.element = element; ",
+        "    this.next = null; ",
+        "  }; ",
+        "",
+        "  this.size = function(){",
+        "    return length;",
+        "  };",
+        "",
+        "  this.head = function(){",
+        "    return head;",
+        "  };",
+        "",
+        "  this.add = function(element){",
+        "    var node = new Node(element);",
+        "    if(head === null){",
+        "        head = node;",
+        "    } else {",
+        "        currentNode = head;",
+        "",
+        "        while(currentNode.next){",
+        "            currentNode  = currentNode.next;",
+        "        }",
+        "",
+        "        currentNode.next = node;",
+        "    }",
+        "",
+        "    length++;",
+        "  }; ",
+        "",
+        "  this.remove = function(element){",
+        "    var currentNode = head;",
+        "    var previousNode;",
+        "    if(currentNode.element === element){",
+        "        head = currentNode.next;",
+        "    } else {",
+        "        while(currentNode.element !== element) {",
+        "            previousNode = currentNode;",
+        "            currentNode = currentNode.next;",
+        "        }",
+        "",
+        "        previousNode.next = currentNode.next;",
+        "    }",
+        "",
+        "    length --;",
+        "  };",
+        "",
+        "  // Only change code below this line",
+        "",
+        "  // Only change code above this line",
+        "} ",
+        "",
+        "// Test your code",
+        "var conga = new LinkedList();",
+        "conga.add('Kitten');",
+        "conga.add('Puppy');",
+        "conga.add('Dog');",
+        "conga.add('Cat');",
+        "conga.add('Fish');",
+        "console.log(conga.size());",
+        "console.log(conga.removeAt(3));",
+        "console.log(conga.size());"
       ],
       "tests": [
-assert((function(){var test = new LinkedList(); return (typeof test.removeAt === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>removeAt</code> method.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.removeAt(1); return test.size() === 2}()), 'message: Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return test.removeAt(1) === 'dog'}()), 'message: Your <code>removeAt</code> method should also return the element of the removed node.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return (test.removeAt(-1) === null)}()), 'message: Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return (test.removeAt(3) === null)}()), 'message: Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.');
+        "assert((function(){var test = new LinkedList(); return (typeof test.removeAt === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>removeAt</code> method.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.removeAt(1); return test.size() === 2}()), 'message: Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return test.removeAt(1) === 'dog'}()), 'message: Your <code>removeAt</code> method should also return the element of the removed node.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return (test.removeAt(-1) === null)}()), 'message: Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return (test.removeAt(3) === null)}()), 'message: Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.');"
       ],
       "solutions": [],
       "hints": [],
@@ -707,75 +667,71 @@ assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog')
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712320c441eddfaeb5bdef",
       "title": "Learn how Binary Search Trees Work",
       "description": [
-Lets look at one of the most popular Data Structures : Trees. Like the literal meaning, a tree can have many leaves and many brances. Here, lets see an example of a simple tree, a Binary Search Tree. This tree is special, as at any level it can have two child's, a left child and a right child. Although, it has another unique speciality : The left child's value must be less than the parent, and the parents value must be less than the right child. Sound's confusing at first? Well, this is a rule enforced for all Binary Search Trees (BST)'s around the world for one simple reason, fast searching. Yes, hence the name Search in the Tree!
-
-You might have guessed it by now : Suppose your job is to find the value 7 from a tree containing 1 to 10 values. Now whenever you encounter a value, instantly you can guess which child will contain 7. That is, say you face a node having value of 5, instantly you know that 7 must lie somewhere under the right child of this node. Simple yet elegant!
-
-Today we are going to add a number in a Tree. While adding though you need to be careful about the golden rule : left child < parent < right child. So turn up your thinking hats and solve this challenge, such that every time an element is added its in the right position! And btw, lookout for the null values as usual! Btw, we have added a simple helper function for you to visualize the tree.
-
-Also, we are going to display how trivial it is to search for an element in a Binary Search Tree. Given a value test whether the number isPresent in the tree!
-
+        "Lets look at one of the most popular Data Structures : Trees. Like the literal meaning, a tree can have many leaves and many brances. Here, lets see an example of a simple tree, a Binary Search Tree. This tree is special, as at any level it can have two child's, a left child and a right child. Although, it has another unique speciality : The left child's value must be less than the parent, and the parents value must be less than the right child. Sound's confusing at first? Well, this is a rule enforced for all Binary Search Trees (BST)'s around the world for one simple reason, fast searching. Yes, hence the name Search in the Tree!",
+        "You might have guessed it by now : Suppose your job is to find the value 7 from a tree containing 1 to 10 values. Now whenever you encounter a value, instantly you can guess which child will contain 7. That is, say you face a node having value of 5, instantly you know that 7 must lie somewhere under the right child of this node. Simple yet elegant!",
+        "Today we are going to add a number in a Tree. While adding though you need to be careful about the golden rule : left child < parent < right child. So turn up your thinking hats and solve this challenge, such that every time an element is added its in the right position! And btw, lookout for the null values as usual! Btw, we have added a simple helper function for you to visualize the tree.",
+        "Also, we are going to display how trivial it is to search for an element in a Binary Search Tree. Given a value test whether the number isPresent in the tree!"
       ],
       "challengeSeed": [
-// helper function
-function Node(val) {
-    this.value = val;
-    this.left = null;
-    this.right = null;
-}
-
-function BinarySearchTree() {
-    this.root = null;
-
-        /**
-     * Add an element in a BST
-     */
-    this.add = function(val) {
-        var root = this.root;
-        // Only change your code below this line
-
-
-        // Only change your code above this line
-    }
-
-    /**
-     * Return true if value present in tree, false otherwise
-     */
-    this.isPresent = function(query) {
-        var root = this.root;
-        // Only change your code below this line
-
-
-        // Only change your code above this line
-    }
-}
-
-var bst = new BinarySearchTree();
-bst.add(2);
-bst.add(1);
-bst.add(3);
-displayTree(bst);
-bst.isPresent(3);
-bst.isPresent(5);
-
-
-// helper function
-function displayTree(tree) {
-    console.log(JSON.stringify(tree, null, 2))
-}
+        "// helper function",
+        "function Node(val) {",
+        "    this.value = val;",
+        "    this.left = null;",
+        "    this.right = null;",
+        "}",
+        "",
+        "function BinarySearchTree() {",
+        "    this.root = null;",
+        "",
+        "        /**",
+        "     * Add an element in a BST",
+        "     */",
+        "    this.add = function(val) {",
+        "        var root = this.root;",
+        "        // Only change your code below this line",
+        "",
+        "",
+        "        // Only change your code above this line",
+        "    }",
+        "",
+        "    /**",
+        "     * Return true if value present in tree, false otherwise",
+        "     */",
+        "    this.isPresent = function(query) {",
+        "        var root = this.root;",
+        "        // Only change your code below this line",
+        "",
+        "",
+        "        // Only change your code above this line",
+        "    }",
+        "}",
+        "",
+        "var bst = new BinarySearchTree();",
+        "bst.add(2);",
+        "bst.add(1);",
+        "bst.add(3);",
+        "displayTree(bst);",
+        "bst.isPresent(3);",
+        "bst.isPresent(5);",
+        "",
+        "",
+        "// helper function",
+        "function displayTree(tree) {",
+        "    console.log(JSON.stringify(tree, null, 2))",
+        "}"
       ],
       "tests": [
-assert((function(){var test = new BinarySearchTree(); return (typeof test.add === 'function')}()), 'message: Your <code>BinarySearchTree</code> class should have a <code>add</code> method.');
-assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); return test.root.value === 2}()), 'message: Tree should have root element created from the first input');
-assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); return test.root.left.value === 1}()), 'message: Tree should have left child of root element as the least value input');
-assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); return test.root.right.value === 3}()), 'message: Tree should have right child of root element as the greatest value input');
-assert((function(){var test = new BinarySearchTree(); test.add(1); test.add(2); test.add(3); return (test.root.value === 1 && test.root.right.value ==2 && test.root.right.right.value == 3)}()), 'message: When added in ascending order, all elements must be in right nodes');
-assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(2); test.add(1); return (test.root.value === 3 && test.root.left.value ==2 && test.root.left.left.value == 1)}()), 'message: When added in descending order, all elements must be in left nodes');
-assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(2); test.add(1); var t = test.isPresent(2); var f = test.isPresent(5); return (t == true && f == false)}()), 'message: If value present in tree, return isPresent true else false');
+        "assert((function(){var test = new BinarySearchTree(); return (typeof test.add === 'function')}()), 'message: Your <code>BinarySearchTree</code> class should have a <code>add</code> method.');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); return test.root.value === 2}()), 'message: Tree should have root element created from the first input');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); return test.root.left.value === 1}()), 'message: Tree should have left child of root element as the least value input');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); return test.root.right.value === 3}()), 'message: Tree should have right child of root element as the greatest value input');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(1); test.add(2); test.add(3); return (test.root.value === 1 && test.root.right.value ==2 && test.root.right.right.value == 3)}()), 'message: When added in ascending order, all elements must be in right nodes');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(2); test.add(1); return (test.root.value === 3 && test.root.left.value ==2 && test.root.left.left.value == 1)}()), 'message: When added in descending order, all elements must be in left nodes');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(2); test.add(1); var t = test.isPresent(2); var f = test.isPresent(5); return (t == true && f == false)}()), 'message: If value present in tree, return isPresent true else false');"
       ],
       "solutions": [],
       "hints": [],
@@ -808,76 +764,70 @@ assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(2); 
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712321c441eddfaeb5bdef",
       "title": "Add Elements at a Specific Index in a Linked List",
       "description": [
-Let's create a addAt(index,element) method that adds an element at a given index.
-Just like how we remove elements at a given index, we need to keep track of the currentIndex as we traverse the linked list. When the currentIndex matches the given index, we would need to reassign the previous node's next property to reference the new added node. And the new node should reference the next node in the currentIndex.
-
-Returning to the conga line example, a new person wants to join the line, but he wants to join in the middle. You are in the middle of the line, so you take your hands off of the person ahead of you. The new person walks over and puts his hands on the person you once had hands on, and you now have your hands on the new person.
-
-Instructions
-
-Create an addAt(index,element) method that adds an element at a given index. Return false if an element was unable to be added.
-
-Note
-
-Remember to check if the given index is a negative or is longer than the length of the linked list.
-
+        "Let's create a addAt(index,element) method that adds an element at a given index.",
+        "Just like how we remove elements at a given index, we need to keep track of the currentIndex as we traverse the linked list. When the currentIndex matches the given index, we would need to reassign the previous node's next property to reference the new added node. And the new node should reference the next node in the currentIndex.",
+        "Returning to the conga line example, a new person wants to join the line, but he wants to join in the middle. You are in the middle of the line, so you take your hands off of the person ahead of you. The new person walks over and puts his hands on the person you once had hands on, and you now have your hands on the new person.",
+        "Instructions",
+        "Create an addAt(index,element) method that adds an element at a given index. Return false if an element was unable to be added.",
+        "Note",
+        "Remember to check if the given index is a negative or is longer than the length of the linked list."
       ],
       "challengeSeed": [
-function LinkedList() { 
-  var length = 0; 
-  var head = null; 
-
-  var Node = function(element){
-    this.element = element; 
-    this.next = null; 
-  }; 
-
-  this.size = function(){
-    return length;
-  };
-
-  this.head = function(){
-    return head;
-  };
-
-  this.add = function(element){
-    var node = new Node(element);
-    if(head === null){
-        head = node;
-    } else {
-        currentNode = head;
-
-        while(currentNode.next){
-            currentNode  = currentNode.next;
-        }
-
-        currentNode.next = node;
-    }
-
-    length++;
-  }; 
-
-  // Only change code below this line
-
-  // Only change code above this line
-
-} 
-
-// Test your code
-var conga = new LinkedList();
-conga.add('Kitten');
-console.log(conga.addAt(1,'Puppy'));
-console.log(conga.addAt(2,'Cat'));
-console.log(conga.head());
+        "function LinkedList() { ",
+        "  var length = 0; ",
+        "  var head = null; ",
+        "",
+        "  var Node = function(element){",
+        "    this.element = element; ",
+        "    this.next = null; ",
+        "  }; ",
+        "",
+        "  this.size = function(){",
+        "    return length;",
+        "  };",
+        "",
+        "  this.head = function(){",
+        "    return head;",
+        "  };",
+        "",
+        "  this.add = function(element){",
+        "    var node = new Node(element);",
+        "    if(head === null){",
+        "        head = node;",
+        "    } else {",
+        "        currentNode = head;",
+        "",
+        "        while(currentNode.next){",
+        "            currentNode  = currentNode.next;",
+        "        }",
+        "",
+        "        currentNode.next = node;",
+        "    }",
+        "",
+        "    length++;",
+        "  }; ",
+        "",
+        "  // Only change code below this line",
+        "",
+        "  // Only change code above this line",
+        "",
+        "} ",
+        "",
+        "// Test your code",
+        "var conga = new LinkedList();",
+        "conga.add('Kitten');",
+        "console.log(conga.addAt(1,'Puppy'));",
+        "console.log(conga.addAt(2,'Cat'));",
+        "console.log(conga.head());"
       ],
       "tests": [
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.head().element === 'cat'}()), 'message: Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.size() === 3}()), 'message: Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.');
-assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return (test.addAt(4,'cat') === false); }()), 'message: Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.');
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.head().element === 'cat'}()), 'message: Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.size() === 3}()), 'message: Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return (test.addAt(4,'cat') === false); }()), 'message: Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.');"
       ],
       "solutions": [],
       "hints": [],
@@ -910,151 +860,149 @@ assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog')
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712322c441eddfaeb5bdef",
       "title": "Traverse a Binary Search Tree In-order, Pre-order and Post-order",
       "description": [
-When talking about trees, lets see how we can walk along a tree. There are three ways we can do so:
-
-Inorder traversal : Traverse the nodes according to their value (ascending to descending)
-Preorder traversal : Traverse the nodes according as they are added
-Postorder traversal : Traverse the nodes in the reverse way as they were added. Usefull to delete a tree
-These traversals can be easily implemented using a slight recursion technique. All you need to know when to recurse and when to print.
-Here for our convenience we will not print a node, in turn we will push that node in an array and pass that array to the function for later use.
-Remember to return that array as well!
-
-Bonus exercise : Return the size of the tree.
+        "When talking about trees, lets see how we can walk along a tree. There are three ways we can do so:",
+        "Inorder traversal : Traverse the nodes according to their value (ascending to descending)",
+        "Preorder traversal : Traverse the nodes according as they are added",
+        "Postorder traversal : Traverse the nodes in the reverse way as they were added. Usefull to delete a tree",
+        "These traversals can be easily implemented using a slight recursion technique. All you need to know when to recurse and when to print.",
+        "Here for our convenience we will not print a node, in turn we will push that node in an array and pass that array to the function for later use.",
+        "Remember to return that array as well!",
+        "Bonus exercise : Return the size of the tree."
       ],
       "challengeSeed": [
-function Node(val) {
-    this.value = val;
-    this.left = null;
-    this.right = null;
-}
-
-function BinarySearchTree() {
-    this.root = null;
-    this.current = null;
-
-    this.add = function(val) {
-        var root = this.root;
-        if(!root) {
-            this.root = new Node(val);
-            return;
-        }
-
-        var currentNode = root;
-        var newNode = new Node(val);
-
-        while(currentNode) {
-            if(val < currentNode.value) {
-                if(!currentNode.left) {
-                    currentNode.left = newNode;
-                    break;
-                }
-                else {
-                    currentNode = currentNode.left;
-                }
-            } else {
-                if(!currentNode.right) {
-                    currentNode.right = newNode;
-                    break;
-                } else {
-                    currentNode = currentNode.right;
-                }
-            }
-        }
-    }
-
-    this.isPresent = function(query) {
-        var root = this.root;
-        var currentNode = root;
-        while(currentNode) {
-            if(currentNode.value == query) {
-                return true;
-            } else if(query < currentNode.value) {
-                currentNode = currentNode.left;
-            } else {
-                currentNode = currentNode.right;
-            }
-        }
-        return false;
-        // Only change your code above this line
-    }
-
-    /**
-     * Inorder traversal. For BST, the ouput should be a sorted array
-     * Hint : For each node, the strategy is: recur left, print the node data, recur right
-     */
-    this.inorder = function(node, arr) {
-        var root = this.root;
-        // Only change your code below this line
-
-        // Only change your code above this line
-    }
-
-    /**
-     * Preorder traversal.
-     * Hint : For each node, the strategy is: print the node data, recur left, recur right
-     */
-    this.preorder = function(node, arr) {
-        var root = this.root;
-        // Only change your code above this line
-
-        // Only change your code above this line
-    }
-
-    /**
-     * Postorder traversal.
-     * Hint : For each node, the strategy is: recur left, recur right, print the node data
-     */
-    this.postorder = function(node, arr) {
-        var root = this.root;
-        // Only change your code above this line
-
-        // Only change your code above this line
-    }
-
-    /**
-     * Size of tree.
-     */
-    this.size = function() {
-        // Only change your code above this line
-
-        // Only change your code above this line
-    }
-
-}
-
-// helper function
-function displayTree(tree) {
-    console.log(JSON.stringify(tree, null, 2))
-}
-
-var bst = new BinarySearchTree();
-bst.add(2);
-bst.add(1);
-bst.add(3);
-displayTree(bst);
-
-var a = bst.inorder();
-console.log(a);
-console.log(bst.size());
-
-var b = bst.postorder();
-console.log(b);
-
-var c = bst.preorder();
-console.log(c);
+        "function Node(val) {",
+        "    this.value = val;",
+        "    this.left = null;",
+        "    this.right = null;",
+        "}",
+        "",
+        "function BinarySearchTree() {",
+        "    this.root = null;",
+        "    this.current = null;",
+        "",
+        "    this.add = function(val) {",
+        "        var root = this.root;",
+        "        if(!root) {",
+        "            this.root = new Node(val);",
+        "            return;",
+        "        }",
+        "",
+        "        var currentNode = root;",
+        "        var newNode = new Node(val);",
+        "",
+        "        while(currentNode) {",
+        "            if(val < currentNode.value) {",
+        "                if(!currentNode.left) {",
+        "                    currentNode.left = newNode;",
+        "                    break;",
+        "                }",
+        "                else {",
+        "                    currentNode = currentNode.left;",
+        "                }",
+        "            } else {",
+        "                if(!currentNode.right) {",
+        "                    currentNode.right = newNode;",
+        "                    break;",
+        "                } else {",
+        "                    currentNode = currentNode.right;",
+        "                }",
+        "            }",
+        "        }",
+        "    }",
+        "",
+        "    this.isPresent = function(query) {",
+        "        var root = this.root;",
+        "        var currentNode = root;",
+        "        while(currentNode) {",
+        "            if(currentNode.value == query) {",
+        "                return true;",
+        "            } else if(query < currentNode.value) {",
+        "                currentNode = currentNode.left;",
+        "            } else {",
+        "                currentNode = currentNode.right;",
+        "            }",
+        "        }",
+        "        return false;",
+        "        // Only change your code above this line",
+        "    }",
+        "",
+        "    /**",
+        "     * Inorder traversal. For BST, the ouput should be a sorted array",
+        "     * Hint : For each node, the strategy is: recur left, print the node data, recur right",
+        "     */",
+        "    this.inorder = function(node, arr) {",
+        "        var root = this.root;",
+        "        // Only change your code below this line",
+        "",
+        "        // Only change your code above this line",
+        "    }",
+        "",
+        "    /**",
+        "     * Preorder traversal.",
+        "     * Hint : For each node, the strategy is: print the node data, recur left, recur right",
+        "     */",
+        "    this.preorder = function(node, arr) {",
+        "        var root = this.root;",
+        "        // Only change your code above this line",
+        "",
+        "        // Only change your code above this line",
+        "    }",
+        "",
+        "    /**",
+        "     * Postorder traversal.",
+        "     * Hint : For each node, the strategy is: recur left, recur right, print the node data",
+        "     */",
+        "    this.postorder = function(node, arr) {",
+        "        var root = this.root;",
+        "        // Only change your code above this line",
+        "",
+        "        // Only change your code above this line",
+        "    }",
+        "",
+        "    /**",
+        "     * Size of tree.",
+        "     */",
+        "    this.size = function() {",
+        "        // Only change your code above this line",
+        "",
+        "        // Only change your code above this line",
+        "    }",
+        "",
+        "}",
+        "",
+        "// helper function",
+        "function displayTree(tree) {",
+        "    console.log(JSON.stringify(tree, null, 2))",
+        "}",
+        "",
+        "var bst = new BinarySearchTree();",
+        "bst.add(2);",
+        "bst.add(1);",
+        "bst.add(3);",
+        "displayTree(bst);",
+        "",
+        "var a = bst.inorder();",
+        "console.log(a);",
+        "console.log(bst.size());",
+        "",
+        "var b = bst.postorder();",
+        "console.log(b);",
+        "",
+        "var c = bst.preorder();",
+        "console.log(c);"
       ],
       "tests": [
-assert((function(){var test = new BinarySearchTree(); return (typeof test.inorder === 'function' && typeof test.preorder === 'function' && typeof test.postorder === 'function' && typeof test.size === 'function')}()), 'message: Your <code>BinarySearchTree</code> class should have <code>inorder</code>, <code>preorder</code>, <code>postorder</code> and <code>size</code> methods.');
-assert((function(){var test = new BinarySearchTree(); test.add(1); test.add(2); test.add(3); return (test.root.value === 1 && test.root.right.value ==2 && test.root.right.right.value == 3)}()), 'message: When added in ascending order, all elements must be in right nodes');
-assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(2); test.add(1); return (test.root.value === 3 && test.root.left.value ==2 && test.root.left.left.value == 1)}()), 'message: When added in descending order, all elements must be in left nodes');
-assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); var i = test.inorder(); return (i[0] == 1 && i[1] == 2 && i[2] == 3)}()), 'message: Inorder traversal must return sorted array');
-assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); var i = test.preorder(); return (i[0] == 2 && i[1] == 1 && i[2] == 3)}()), 'message: Preorder traversal must return BFS array');
-assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); var i = test.postorder(); return (i[0] == 1 && i[1] == 3 && i[2] == 2)}()), 'message: Postrder traversal must return reversed array');
-assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); var l = test.size(); return (l === 3)}()), 'message: Postrder traversal must return reversed array');
+        "assert((function(){var test = new BinarySearchTree(); return (typeof test.inorder === 'function' && typeof test.preorder === 'function' && typeof test.postorder === 'function' && typeof test.size === 'function')}()), 'message: Your <code>BinarySearchTree</code> class should have <code>inorder</code>, <code>preorder</code>, <code>postorder</code> and <code>size</code> methods.');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(1); test.add(2); test.add(3); return (test.root.value === 1 && test.root.right.value ==2 && test.root.right.right.value == 3)}()), 'message: When added in ascending order, all elements must be in right nodes');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(2); test.add(1); return (test.root.value === 3 && test.root.left.value ==2 && test.root.left.left.value == 1)}()), 'message: When added in descending order, all elements must be in left nodes');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); var i = test.inorder(); return (i[0] == 1 && i[1] == 2 && i[2] == 3)}()), 'message: Inorder traversal must return sorted array');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); var i = test.preorder(); return (i[0] == 2 && i[1] == 1 && i[2] == 3)}()), 'message: Preorder traversal must return BFS array');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); var i = test.postorder(); return (i[0] == 1 && i[1] == 3 && i[2] == 2)}()), 'message: Postrder traversal must return reversed array');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); test.add(3); var l = test.size(); return (l === 3)}()), 'message: Postrder traversal must return reversed array');"
       ],
       "solutions": [],
       "hints": [],
@@ -1087,2880 +1035,288 @@ assert((function(){var test = new BinarySearchTree(); test.add(2); test.add(1); 
         }
       }
     },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
+    {
+      "id": "5d712323c441eddfaeb5bdef",
       "title": "Delete Leaf Nodes from a Binary Search Tree",
       "description": [
-This is a long and complicated task, but very useful to know. Basically while deleting tree nodes we encounter the following three cases :
-
-Root to be deleted is a :
-
-Leaf Node
-A Node with just one child
-Node with two children
-Each case requires special handling. Also, it depends whether the node to delete is actually a root itself or not, because then you have to consider the child nodes as well.
-Let's discuss the cases in detail :
-
-Case 1 : Leaf Node
-
-No brainer here, just obliterate the leaf node. No special things to do here, invalidate the pointer from its parent to itself!
-
-Case 2 : Node with just one child
-
-First, figure out which child it is, i.e either a left child or a right child. Then "skip" the pointer from its parent to its child, It's simple as that!
-
-Case 3 : Node with two children
-
-Now here is when the things start going crazy! Let us see this with an example image : https://en.wikipedia.org/wiki/File:Binary_search_tree.svg
-With a root of 8 and a left child of 3, what would happen if the 3 was removed? There are two possibilities: 1 (3′s left child, called the in-order predecessor) could take the place of 3 or 4 (the left-most child of the right subtree, called the in-order successor) can take the place of 3.
-
-Either of these two options is appropriate. To find the in-order predecessor, the value that comes before the value being removed, examine the left subtree of the node to remove and select the right-most descendant; to find the in-order successor, the value that comes immediately after the value being removed, reverse the process and examine the right subtree for the left-most descendant. Each of these requires another traversal of the tree to complete the operation.
-
-Sounds tough? See this tutorial : https://webdocs.cs.ualberta.ca/~holte/T26/del-from-bst.html, or better yet, play with this superb animation : https://www.cs.usfca.edu/~galles/visualization/BST.html
-
-Ready? Lets begin coding!
+        "This is a long and complicated task, but very useful to know. Basically while deleting tree nodes we encounter the following three cases:",
+        "Root to be deleted is a :",
+        "Leaf Node",
+        "A Node with just one child",
+        "Node with two children",
+        "Each case requires special handling. Also, it depends whether the node to delete is actually a root itself or not, because then you have to consider the child nodes as well.",
+        "Let's discuss the cases in detail :",
+        "Case 1 : Leaf Node",
+        "No brainer here, just obliterate the leaf node. No special things to do here, invalidate the pointer from its parent to itself!",
+        "Case 2 : Node with just one child",
+        "First, figure out which child it is, i.e either a left child or a right child. Then \"skip\" the pointer from its parent to its child, It's simple as that!",
+        "Case 3 : Node with two children",
+        "Now here is when the things start going crazy! Let us see this with an example image : https://en.wikipedia.org/wiki/File:Binary_search_tree.svg",
+        "With a root of 8 and a left child of 3, what would happen if the 3 was removed? There are two possibilities: 1 (3′s left child, called the in-order predecessor) could take the place of 3 or 4 (the left-most child of the right subtree, called the in-order successor) can take the place of 3.",
+        "Either of these two options is appropriate. To find the in-order predecessor, the value that comes before the value being removed, examine the left subtree of the node to remove and select the right-most descendant; to find the in-order successor, the value that comes immediately after the value being removed, reverse the process and examine the right subtree for the left-most descendant. Each of these requires another traversal of the tree to complete the operation.",
+        "Sounds tough? See this tutorial : https://webdocs.cs.ualberta.ca/~holte/T26/del-from-bst.html, or better yet, play with this superb animation : https://www.cs.usfca.edu/~galles/visualization/BST.html",
+        "Ready? Lets begin coding!"
       ],
       "challengeSeed": [
-function Node(val) {
-    this.value = val;
-    this.left = null;
-    this.right = null;
-}
-
-function BinarySearchTree() {
-    this.root = null;
-    this.current = null;
-
-    this.add = function(val) {
-        var root = this.root;
-        if(!root) {
-            this.root = new Node(val);
-            return;
+        "function Node(val) {",
+        "    this.value = val;",
+        "    this.left = null;",
+        "    this.right = null;",
+        "}",
+        "",
+        "function BinarySearchTree() {",
+        "    this.root = null;",
+        "    this.current = null;",
+        "",
+        "    this.add = function(val) {",
+        "        var root = this.root;",
+        "        if(!root) {",
+        "            this.root = new Node(val);",
+        "            return;",
+        "        }",
+        "",
+        "        var currentNode = root;",
+        "        var newNode = new Node(val);",
+        "",
+        "        while(currentNode) {",
+        "            if(val < currentNode.value) {",
+        "                if(!currentNode.left) {",
+        "                    currentNode.left = newNode;",
+        "                    break;",
+        "                }",
+        "                else {",
+        "                    currentNode = currentNode.left;",
+        "                }",
+        "            } else {",
+        "                if(!currentNode.right) {",
+        "                    currentNode.right = newNode;",
+        "                    break;",
+        "                } else {",
+        "                    currentNode = currentNode.right;",
+        "                }",
+        "            }",
+        "        }",
+        "    }",
+        "",
+        "    this.isPresent = function(query) {",
+        "        var root = this.root;",
+        "        var currentNode = root;",
+        "        while(currentNode) {",
+        "            if(currentNode.value == query) {",
+        "                return true;",
+        "            } else if(query < currentNode.value) {",
+        "                currentNode = currentNode.left;",
+        "            } else {",
+        "                currentNode = currentNode.right;",
+        "            }",
+        "        }",
+        "        return false;",
+        "    }",
+        "",
+        "    this.remove = function (val) {",
+        "        var found = false,",
+        "                parent = null,",
+        "                current = this.root,",
+        "                childCount,",
+        "                replacement,",
+        "                replacementParent",
+        "",
+        "        // find the node and set `found` = true, with current pointing to the found node",
+        "        // and `parent` its parent",
+        "        // Only change your code below this line",
+        "",
+        "",
+        "        // Only change your code above this line",
+        "",
+        "        // If node was found, then we proceed deletion",
+        "        if(found) {",
+        "            // figure out how many children (i.e either 0 or 1 or 2)",
+        "            // Only change your code below this line",
+        "",
+        "",
+        "            // Only change your code above this line",
+        "",
+        "            // case : if value is at the root",
+        "            if(current == this.root) {",
+        "                console.log('root case')",
+        "                switch(childCount) {",
+        "                    // case : no children, so we will just proceed to erase the root",
+        "                    case 0:",
+        "                        console.log('case 0')",
+        "                        // Only change your code below this line",
+        "",
+        "                        // Only change your code above this line",
+        "                        break;",
+        "                    // case : one child, figure out which child and then use that as root",
+        "                    case 1:",
+        "                        console.log('case 1')",
+        "                        // Only change your code below this line",
+        "",
+        "                        // Only change your code above this line",
+        "                        break;",
+        "                    // case : two children",
+        "                    case 2:",
+        "                        console.log('case 2')",
+        "                        // let us select new root to be old root's left child",
+        "                        replacement = this.root.left;",
+        "                        // now let's find the right most leaf node to be the new root",
+        "                        // find the right most leaf node of `replacement` and save the its parent",
+        "                        // within `replacementParent`",
+        "                        // Only change your code below this line",
+        "",
+        "",
+        "                        // Only change your code above this line",
+        "",
+        "                        // If it is not the first left node",
+        "                        if (replacementParent !== null) {",
+        "                            // remove the new root from its previous position",
+        "                            // i.e, replace the right child of replacement parent with left child of the",
+        "                            // node to be replaced",
+        "                            // Only change your code below this line",
+        "",
+        "",
+        "                            // Only change your code above this line",
+        "",
+        "                            // Give the new root all of old root's children",
+        "                            // Only change your code below this line",
+        "",
+        "",
+        "                            // Only change your code above this line",
+        "                        } else {",
+        "                            // assign the children to the root's right child",
+        "                            // Only change your code below this line",
+        "",
+        "",
+        "                            // Only change your code above this line",
+        "                        }",
+        "                        // finally assign new root",
+        "                        this.root = replacement;",
+        "                        break;",
+        "                }",
+        "            }",
+        "            // case if value is not root",
+        "            else {",
+        "                console.log('child case')",
+        "                switch(childCount) {",
+        "                    // case 0 : no children, just detach it from parent",
+        "                    case 0:",
+        "                        console.log('case 0')",
+        "                        // if current's value is less than its parents, null out the left pointer,",
+        "                        // else null out the right pointer",
+        "                        // Only change your code below this line",
+        "",
+        "",
+        "                        // Only change your code above this line",
+        "                        break;",
+        "                    // case 1: one child, just reassign to parent",
+        "                    case 1:",
+        "                        console.log('case 1')",
+        "                        // if current's value is less than its parents, reset the left pointer,",
+        "                        // else reset the right pointer",
+        "                        // Only change your code below this line",
+        "",
+        "",
+        "                        // Only change your code above this line",
+        "                        break;",
+        "                    // case 2: two child",
+        "                    case 2:",
+        "                        console.log('case 2')",
+        "                        // reset pointers for new traversal",
+        "                        replacement = current.left;",
+        "                        // find the right most node",
+        "                        // find the right most leaf node of `replacement` and save the its parent",
+        "                        // within `replacementParent`",
+        "                        // Only change your code below this line",
+        "",
+        "",
+        "                        // Only change your code above this line",
+        "                        if (replacementParent) {",
+        "                            // remove the new node from its previous position",
+        "                            // i.e, replace the right child of replacement parent with left child of the",
+        "                            // node to be replaced",
+        "                            // Only change your code below this line",
+        "",
+        "                            // Only change your code above this line",
+        "",
+        "                            // assign all current's children to the replacement",
+        "                            // Only change your code below this line",
+        "",
+        "",
+        "                            // Only change your code above this line",
+        "                        } else {",
+        "                            // assign the children to the current's right child",
+        "                            // Only change your code below this line",
+        "",
+        "                            // Only change your code above this line",
+        "                        }",
+        "                        // place the replacement in the right spot",
+        "                        // if current value is less than parent, add replacement as parent left child,",
+        "                        // else right",
+        "                        // Only change your code below this line",
+        "",
+        "                        // Only change your above below this line",
+        "                        break;",
+        "                }",
+        "            }",
+        "        }",
+        "    }",
+        "}",
+        "",
+        "// helper function",
+        "function displayTree(tree) {",
+        "    console.log(JSON.stringify(tree, null, 2))",
+        "}",
+        "",
+        "var bst = new BinarySearchTree();",
+        "bst.add(3);",
+        "bst.add(1);",
+        "bst.add(4);",
+        "bst.add(2);",
+        "bst.add(0);",
+        "bst.add(5);",
+        "bst.add(6);",
+        "displayTree(bst);",
+        "",
+        "bst.remove(1);",
+        "displayTree(bst);"
+      ],
+      "tests": [
+        "assert((function(){var test = new BinarySearchTree(); return (typeof test.remove === 'function' && typeof test.add === 'function')}()), 'message: Your <code>BinarySearchTree</code> class should have <code>add</code> and <code>remove</code> methods.');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(1); test.add(4); test.add(2); test.add(0); test.add(5); test.add(6); test.remove(6); return (test.isPresent(6) !== true)}()), 'message: Leaf node should be removed properly');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(1); test.add(4); test.add(2); test.add(0); test.add(5); test.add(6); test.remove(3); return (test.isPresent(3) !== true && test.root.value == 2)}()), 'message: Root node should be removed properly and replaced by suitable candidate');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(1); test.add(4); test.add(2); test.add(0); test.add(5); test.add(6); test.remove(5); return (test.isPresent(5) !== true)}()), 'message: Node with one child should be removed properly');",
+        "assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(1); test.add(4); test.add(2); test.add(0); test.add(5); test.add(6); test.remove(1); return (test.isPresent(1) !== true && test.root.left.value == 0)}()), 'message: Node with two child should be removed properly and replaced by suitable candidate');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
         }
-
-        var currentNode = root;
-        var newNode = new Node(val);
-
-        while(currentNode) {
-            if(val < currentNode.value) {
-                if(!currentNode.left) {
-                    currentNode.left = newNode;
-                    break;
-                }
-                else {
-                    currentNode = currentNode.left;
-                }
-            } else {
-                if(!currentNode.right) {
-                    currentNode.right = newNode;
-                    break;
-                } else {
-                    currentNode = currentNode.right;
-                }
-            }
-        }
+      }
     }
-
-    this.isPresent = function(query) {
-        var root = this.root;
-        var currentNode = root;
-        while(currentNode) {
-            if(currentNode.value == query) {
-                return true;
-            } else if(query < currentNode.value) {
-                currentNode = currentNode.left;
-            } else {
-                currentNode = currentNode.right;
-            }
-        }
-        return false;
-    }
-
-    this.remove = function (val) {
-        var found = false,
-                parent = null,
-                current = this.root,
-                childCount,
-                replacement,
-                replacementParent
-
-        // find the node and set `found` = true, with current pointing to the found node
-        // and `parent` its parent
-        // Only change your code below this line
-
-
-        // Only change your code above this line
-
-        // If node was found, then we proceed deletion
-        if(found) {
-            // figure out how many children (i.e either 0 or 1 or 2)
-            // Only change your code below this line
-
-
-            // Only change your code above this line
-
-            // case : if value is at the root
-            if(current == this.root) {
-                console.log('root case')
-                switch(childCount) {
-                    // case : no children, so we will just proceed to erase the root
-                    case 0:
-                        console.log('case 0')
-                        // Only change your code below this line
-
-                        // Only change your code above this line
-                        break;
-                    // case : one child, figure out which child and then use that as root
-                    case 1:
-                        console.log('case 1')
-                        // Only change your code below this line
-
-                        // Only change your code above this line
-                        break;
-                    // case : two children
-                    case 2:
-                        console.log('case 2')
-                        // let us select new root to be old root's left child
-                        replacement = this.root.left;
-                        // now let's find the right most leaf node to be the new root
-                        // find the right most leaf node of `replacement` and save the its parent
-                        // within `replacementParent`
-                        // Only change your code below this line
-
-
-                        // Only change your code above this line
-
-                        // If it is not the first left node
-                        if (replacementParent !== null) {
-                            // remove the new root from its previous position
-                            // i.e, replace the right child of replacement parent with left child of the
-                            // node to be replaced
-                            // Only change your code below this line
-
-
-                            // Only change your code above this line
-
-                            // Give the new root all of old root's children
-                            // Only change your code below this line
-
-
-                            // Only change your code above this line
-                        } else {
-                            // assign the children to the root's right child
-                            // Only change your code below this line
-
-
-                            // Only change your code above this line
-                        }
-                        // finally assign new root
-                        this.root = replacement;
-                        break;
-                }
-            }
-            // case if value is not root
-            else {
-                console.log('child case')
-                switch(childCount) {
-                    // case 0 : no children, just detach it from parent
-                    case 0:
-                        console.log('case 0')
-                        // if current's value is less than its parents, null out the left pointer,
-                        // else null out the right pointer
-                        // Only change your code below this line
-
-
-                        // Only change your code above this line
-                        break;
-                    // case 1: one child, just reassign to parent
-                    case 1:
-                        console.log('case 1')
-                        // if current's value is less than its parents, reset the left pointer,
-                        // else reset the right pointer
-                        // Only change your code below this line
-
-
-                        // Only change your code above this line
-                        break;
-                    // case 2: two child
-                    case 2:
-                        console.log('case 2')
-                        // reset pointers for new traversal
-                        replacement = current.left;
-                        // find the right most node
-                        // find the right most leaf node of `replacement` and save the its parent
-                        // within `replacementParent`
-                        // Only change your code below this line
-
-
-                        // Only change your code above this line
-                        if (replacementParent) {
-                            // remove the new node from its previous position
-                            // i.e, replace the right child of replacement parent with left child of the
-                            // node to be replaced
-                            // Only change your code below this line
-
-                            // Only change your code above this line
-
-                            // assign all current's children to the replacement
-                            // Only change your code below this line
-
-
-                            // Only change your code above this line
-                        } else {
-                            // assign the children to the current's right child
-                            // Only change your code below this line
-
-                            // Only change your code above this line
-                        }
-                        // place the replacement in the right spot
-                        // if current value is less than parent, add replacement as parent left child,
-                        // else right
-                        // Only change your code below this line
-
-                        // Only change your above below this line
-                        break;
-                }
-            }
-        }
-    }
-}
-
-// helper function
-function displayTree(tree) {
-    console.log(JSON.stringify(tree, null, 2))
-}
-
-var bst = new BinarySearchTree();
-bst.add(3);
-bst.add(1);
-bst.add(4);
-bst.add(2);
-bst.add(0);
-bst.add(5);
-bst.add(6);
-displayTree(bst);
-
-bst.remove(1);
-displayTree(bst);
-      ],
-      "tests": [
-assert((function(){var test = new BinarySearchTree(); return (typeof test.remove === 'function' && typeof test.add === 'function')}()), 'message: Your <code>BinarySearchTree</code> class should have <code>add</code> and <code>remove</code> methods.');
-assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(1); test.add(4); test.add(2); test.add(0); test.add(5); test.add(6); test.remove(6); return (test.isPresent(6) !== true)}()), 'message: Leaf node should be removed properly');
-assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(1); test.add(4); test.add(2); test.add(0); test.add(5); test.add(6); test.remove(3); return (test.isPresent(3) !== true && test.root.value == 2)}()), 'message: Root node should be removed properly and replaced by suitable candidate');
-assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(1); test.add(4); test.add(2); test.add(0); test.add(5); test.add(6); test.remove(5); return (test.isPresent(5) !== true)}()), 'message: Node with one child should be removed properly');
-assert((function(){var test = new BinarySearchTree(); test.add(3); test.add(1); test.add(4); test.add(2); test.add(0); test.add(5); test.add(6); test.remove(1); return (test.isPresent(1) !== true && test.root.left.value == 0)}()), 'message: Node with two child should be removed properly and replaced by suitable candidate');
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-        {
-      "id": "5d7123c8c441eddfaeb5bdef",
-      "title": "",
-      "description": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "tests": [
-
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-
   ]
 }
