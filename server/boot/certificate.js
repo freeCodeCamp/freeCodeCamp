@@ -231,6 +231,19 @@ export default function certificate(app) {
       .subscribe(
         (didCertify) => {
           if (didCertify) {
+            // Check if they have a name set
+            if (user.name === '') {
+              return res.status(200).send(
+                dedent`
+                  We need your name so we can put it on your certificate. 
+                  <a href="https://github.com/settings/profile">Add your
+                  name to your GitHub account</a>, then go to your
+                  <a href="https://www.freecodecamp.com/settings">settings
+                  page</a> and click the "update my portfolio from GitHub"
+                  button. Then we can issue your certificate.
+                  `
+                );
+             }
             return res.status(200).send(true);
           }
           return res.status(200).send(
