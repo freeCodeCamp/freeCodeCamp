@@ -8,7 +8,7 @@ export default function SocialSettings({
   isLinkedIn
 }) {
   const githubCopy = isGithubCool ?
-    'Update my portfolio from GitHub' :
+    'Update my profile from GitHub' :
     'Link my GitHub to unlock my portfolio';
   const buttons = [
     <Button
