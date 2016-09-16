@@ -1,5 +1,6 @@
 import { defaultProfileImage } from '../../common/utils/constantStrings.json';
 import supportedLanguages from '../../common/utils/supported-languages';
+import dedent from 'dedent';
 
 const message =
   'Learn to Code and Help Nonprofits';
@@ -33,9 +34,22 @@ module.exports = function(app) {
     if (!supportedLanguages[req._urlLang]) {
       return next();
     }
+    const referer = req.headers.referer;
 
     if (req.user) {
-      return res.redirect('/challenges/current-challenge');
+      if ((referer.indexOf('/settings') >= 1) && (req.user.isGithubCool)) {
+
+        const msg = dedent`
+              We've updated your profile based
+              on your your GitHub account.
+            `;
+        const username = req.user.username;
+
+        req.flash('info', { msg: msg});
+        return res.redirect(`/${username}`);
+      } else {
+        return res.redirect('/challenges/current-challenge');
+      }
     }
 
     return res.render('home', { title: message });
