@@ -2,6 +2,7 @@ import dedent from 'dedent';
 import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
+import emoji from 'node-emoji';
 
 import {
   frontEndChallengeId,
@@ -329,6 +330,10 @@ module.exports = function(app) {
               team@freecodecamp.com for details.
             `
           });
+        }
+
+        if (userPortfolio.bio) {
+          userPortfolio.bio = emoji.emojify(userPortfolio.bio);
         }
 
         return map$.map(({ entities }) => createNameIdMap(entities))
