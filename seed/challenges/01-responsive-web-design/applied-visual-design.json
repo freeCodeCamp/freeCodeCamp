@@ -792,7 +792,7 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/background-color:\\s*?rgba\\(\\s*?45\\s*?,\\s*?45\\s*?,\\s*?45\\s*?,\\s*?0?\\.1\\s*?\\)/gi), 'message: Add a <code>background-color</code> property to the <code>h4</code> element set to the given color.');",        
+        "assert(code.match(/background-color:\\s*?rgba\\(\\s*?45\\s*?,\\s*?45\\s*?,\\s*?45\\s*?,\\s*?0?\\.1\\s*?\\)/gi), 'message: Add a <code>background-color</code> property to the <code>h4</code> element set to the given color.');",
         "assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px', 'message: Add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.');",
         "assert(!($('h4').css('height') == '25px'), 'message: Make sure to remove the <code>height</code> property on the <code>h4</code> element.');"
       ],
@@ -3392,12 +3392,18 @@
     {
       "id": "c40123c8c441eddfaeb5b8ef",
       "title": "Make a CSS Heartbeat using the Infinity Property",
+	  "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
+          "raw": true
+        }
+      ],
       "description": [
         "Let's do one more continuous animation example using the <code>animation-iteration-count</code> property to keep the heart beating.",
-        "The one second long heartbeat animation consists of two animated pieces. The <code>span</code> element is animated to change its size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.",
+        "The one second long heartbeat animation consists of two animated pieces. The <code>i</code> element is animated to change its size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.",
         "Note: The code example is using a heart icon accessed through a web library. Don't worry if this is new for you, it will be covered in the Front End Libraries section. For now, focus on the animation aspects of the challenge.",
         "<h3>Instructions:</h3>",
-        "Keep the heart beating by adding the <code>animation-iteration-count</code> property for both the <code>span</code> and the <code>div</code> elements and setting the value to infinite."
+        "Keep the heart beating by adding the <code>animation-iteration-count</code> property for both the <code>i</code> and the <code>div</code> elements and setting the value to infinite."
       ],
       "challengeSeed": [
         "<style>",
@@ -3415,10 +3421,9 @@
         "    ",
         "  }",
         "",
-        "  span {",
+        "  i {",
         "    margin-top:100px;",
         "    width:100%;",
-        "    font-size:200px;",
         "    color:red;",
         "    text-align: center;",
         "    animation-name: beat;",
@@ -3426,13 +3431,13 @@
         "    ",
         "  }",
         "",
-        "  @keyframes backdiv{",
+        "  @keyframes backdiv {",
         "    50% {",
         "      background:#ffe6f2;",
         "    }",
         "  }",
         "",
-        "  @keyframes beat{",
+        "  @keyframes beat {",
         "    0% {",
         "      transform: scale(1);",
         "    }",
@@ -3443,14 +3448,14 @@
         "",
         "</style>",
         "<div></div>",
-        "<span id=\"heart\" class=\"glyphicon glyphicon-heart\"></span>"
+        "<i class=\"fa fa-5x fa-heart\" aria-hidden=\"true\"></i>"
       ],
       "tests": [
-        "assert($('span').css('animation-iteration-count') == 'infinite', 'message: Add the <code>animation-iteration-count</code> property for the <code>span</code> and set its value to infinite.');",
+        "assert($('i').css('animation-iteration-count') == 'infinite', 'message: Add the <code>animation-iteration-count</code> property for the <code>i</code> and set its value to infinite.');",
         "assert($('div').css('animation-iteration-count') == 'infinite', 'message: Add the <code>animation-iteration-count</code> property for the <code>div</code> and set its value to infinite.');"
       ],
       "solutions": [
-        "<style>\ndiv{\n  position:fixed;\n  padding:0;\n  margin:0;\n  top:0;\n  left:0;\n  width: 100%;\n  height: 100%;\n  background:white;\n  animation-name: backdiv;\n  animation-duration: 1s; \n  animation-iteration-count: infinite;\n/** Change code above this line. **/\n}\n\nspan {\n  margin-top:100px;\n  width:100%;\n  font-size:200px;\n  color:red;\n  animation-name: beat;\n  animation-duration: 1s;\n  text-align: center;\n  animation-iteration-count: infinite;\n/** Change code above this line. **/\n}\n\n@keyframes backdiv{\n  50% {\n  background:#ffe6f2;\n  }\n}  \n\n@keyframes beat{\n  0% {\n  transform: scale(1);\n  } \n    50% {\n  transform: scale(.6);\n  }\n}  \n\n</style>\n<div></div>\n<span id= \"heart\" class = \"glyphicon glyphicon-heart\"></span> "
+        "<style>\ndiv{\n  position:fixed;\n  padding:0;\n  margin:0;\n  top:0;\n  left:0;\n  width: 100%;\n  height: 100%;\n  background:white;\n  animation-name: backdiv;\n  animation-duration: 1s; \n  animation-iteration-count: infinite;\n/** Change code above this line. **/\n}\n\ni {\n  margin-top:100px;\n  width:100%;\n  color:red;\n  animation-name: beat;\n  animation-duration: 1s;\n  text-align: center;\n  animation-iteration-count: infinite;\n/** Change code above this line. **/\n}\n\n@keyframes backdiv {\n  50% {\n  background:#ffe6f2;\n  }\n}  \n\n@keyframes beat {\n  0% {\n  transform: scale(1);\n  } \n    50% {\n  transform: scale(.6);\n  }\n}  \n\n</style>\n<div></div>\n<i class=\"fa fa-5x fa-heart\" aria-hidden=\"true\"></i> "
       ],
       "hints": [],
       "type": "waypoint",
