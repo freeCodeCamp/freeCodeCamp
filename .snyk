@@ -49,9 +49,29 @@ patch:
         patched: '2016-09-03T18:30:05.313Z'
     - loopback > loopback-connector-remote > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
         patched: '2016-09-03T18:30:05.313Z'
+    - loopback > strong-remoting > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback-component-passport > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > loopback-datasource-juggler > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback-boot > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > strong-remoting > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
   'npm:uglify-js:20151024':
     - jade > transformers > uglify-js:
         patched: '2016-07-29T23:00:15.905Z'
+    - jade > transformers > uglify-js:
+        patched: '2016-09-20T18:38:48.774Z'
   'npm:uglify-js:20150824':
     - jade > transformers > uglify-js:
         patched: '2016-07-29T23:00:15.905Z'
