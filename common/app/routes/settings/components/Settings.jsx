@@ -258,6 +258,15 @@ export class Settings extends React.Component {
               >
               Delete my Free Code Camp account
             </Button>
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='danger'
+              className='btn-link-social'
+              href='/reset-my-progress'
+              >
+              Reset all of my progress and brownie points
+            </Button>
           </Col>
         </Row>
       </div>
