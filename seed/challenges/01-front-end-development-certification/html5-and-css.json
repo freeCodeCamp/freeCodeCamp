@@ -4304,7 +4304,7 @@
       "description": [
         "Sometimes your HTML elements will receive multiple styles that conflict with one another.",
         "For example, your <code>h1</code> element can't be both green and pink at the same time.",
-        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <code>override</code> the <code>body</code> element's <code>color: green;</code> CSS property?",
+        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <em>override</em> the <code>body</code> element's <code>color: green;</code> CSS property?",
         "Create a CSS class called <code>pink-text</code> that gives an element the color pink.",
         "Give your <code>h1</code> element the class of <code>pink-text</code>."
       ],
