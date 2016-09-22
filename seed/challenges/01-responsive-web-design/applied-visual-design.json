@@ -10,7 +10,7 @@
       "description": [
         "In this section of the curriculum, we will be focusing on Applied Visual Design. The first group of challenges will all build on the given card layout to illustrate a number of core principles.",
         "Text often comprises a large portion of web content, and CSS offers several options to visually present it by using the <code>text-align</code> property. In this challenge, we will be aligning text to the center, to the left, and justifying it.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Align the <code>h4</code> tag's text, which says \"Google\", to the center. Then justify the paragraph tag which contains information about how Google was founded. Finally, align the two anchor tags to the left by using the <code>links</code> class selector.",
         "Note: When you align the two anchor tags, you will see no difference. This is because text is aligned to the left by default."
       ],
@@ -85,10 +85,8 @@
       "title": "Adjust the Width of an Element Using the Width Property",
       "description": [
         "You can specify the width of an element using the <code>width</code> property in CSS. Values can be given in relative length units (such as em or vh), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:",
-        "<code>img {</code>",
-        "<code>  width: 220px;</code>",
-        "<code>}</code>",
-        "<h3>Instructions:</h3>",
+        "<blockquote>img {<br>  width: 220px;<br>}<br></blockquote>",
+        "<h4>Instructions</h4>",
         "Change the <code>width</code> of Google's Logo to 75px. Select the element by using the class of <code>cardImg</code>."
       ],
       "challengeSeed": [
@@ -163,10 +161,8 @@
       "title": "Adjust the Height of an Element Using the Height Property",
       "description": [
         "You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:",
-        "<code>img {</code>",
-        "<code>  height: 20px;</code>",
-        "<code>}</code>",
-        "<h3>Instructions:</h3>",
+        "<blockquote>img {<br>  height: 20px;<br>}<br></blockquote>",
+        "<h4>Instructions</h4>",
         "Add a <code>height</code> property to the <code>h4</code> tag and set it to 40px."
       ],
       "challengeSeed": [
@@ -243,7 +239,7 @@
       "description": [
         "In this challenge we have changed the layout of the links by stacking them to look more like a list.",
         "To keep everything balanced, we should make sure every element's width and height makes sense in that context.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Change the <code>height</code> of the <code>h4</code> tag to 25px to make the card more compact and a little cleaner."
       ],
       "challengeSeed": [
@@ -322,7 +318,7 @@
       "title": "Create Visual Emphasis by Using the Strong Tag to Make Text Bold",
       "description": [
         "To make text bold, you can use the <code>strong</code> tag. This is often used to draw attention to text and symbolize that it is important. When using the <code>strong</code> tag, the browser applies the CSS of <code>font-weight: bold;</code> to the element.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Wrap a <code>strong</code> tag around the entire <code>h4</code> element and its contents."
       ],
       "challengeSeed": [
@@ -402,7 +398,7 @@
       "title": "Create Visual Emphasis by Using the u Tag to Underline Text",
       "description": [
         "To underline text, you can use the <code>u</code> tag. This is often used to signify a section of text is important, or something to remember. When using the <code>u</code> tag, the browser applies the CSS of <code>text-decoration: underline;</code> to the element.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Wrap the <code>u</code> tag around the two anchor tags. It should not include the parent <code>div</code> that has the class of <code>cardLinks</code>.",
         "Note: Try to avoid using the u tag when it could be confused for a link, since anchor tags also have a default underlined formatting."
       ],
@@ -484,7 +480,7 @@
       "title": "Create Visual Emphasis by Using the em Tag to Italicize Text",
       "description": [
         "To emphasize text, you can use the <code>em</code> tag. This displays text as italicized, as the browser applies the CSS of <code>font-style: italic;</code> to the element.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Wrap an <code>em</code> tag around our paragraph tag to give it emphasis."
       ],
       "challengeSeed": [
@@ -566,7 +562,7 @@
       "title": "Create Visual Emphasis by Using the del Tag to Strikethrough Text",
       "description": [
         "To strikethrough text, which is when a horizontal line cuts across the characters, you can use the <code>del</code> tag. It shows that a section of text is no longer valid. When using the <code>del</code> tag, the browser applies the CSS of <code>text-decoration: line-through;</code> to the element.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Wrap the <code>del</code> tag around \"Google\" inside our <code>h4</code> tag and then add \"Alphabet\" beside it, which should not have the strikethrough formatting."
       ],
       "challengeSeed": [
@@ -649,7 +645,7 @@
       "title": "Create a Horizontal Line Using the hr Element",
       "description": [
         "We can use the <code>hr</code> tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Add an <code>hr</code> tag underneath our <code>h4</code> which contains the card title.",
         "Note: In HTML, &lt;hr&gt; is a self-closing tag, and therefore doesn't need an end tag."
       ],
@@ -732,14 +728,10 @@
       "title": "Create Visual Emphasis by Adjusting the Background-color Property of Text",
       "description": [
         "Instead of adjusting your overall background or the color of the text to make the foreground easily readable, we can add a <code>background-color</code> to the element holding the text we want to emphasize. This challenge will use <code>rgba()</code> instead of <code>hex</code> codes or normal <code>rgb()</code>.",
-        "rgba stands for:",
-        "  r = red",
-        "  g = green",
-        "  b = blue",
-        "  a = alpha/level of opacity",
+        "<blockquote>rgba stands for:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha/level of opacity<br></blockquote>",
         "The rgb values can range from 0 to 255, and the alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. <code>rgba()</code> is great to use in this case, as it allows us to adjust the opacity, which means we don't have to completely block out the background.",
         "In this challenge we will be using <code>background-color: rgba(45, 45, 45, 0.1)</code>. This produces a dark gray color that is nearly transparent given the low opacity value of 0.1.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "To make our text stand out more, adjust the <code>background-color</code> of the <code>h4</code> element to the given <code>rgba()</code> value.",
         "Also remove the <code>height</code> property and add <code>padding</code> of 10px."
       ],
@@ -826,7 +818,7 @@
       "title": "Create Visual Emphasis by Adjusting the Size of a Header Versus a Paragraph Tag",
       "description": [
         "Header tags (<code>h1</code> through <code>h6</code>) should be larger than paragraph tags. This makes it easier for the user to understand the layout and level of importance of everything on the page.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "To make our heading significantly larger than our paragraph, change the <code>font-size</code> of the <code>h4</code> tag to 27 pixels."
       ],
       "challengeSeed": [
@@ -912,8 +904,8 @@
         "The <code>box-shadow</code> property applies one or more shadows to an element. This technique can be used on any state, but we are going to apply it on hover.",
         "The <code>box-shadow</code> property takes values for <code>offset-x</code> (how far to push the shadow horizontally from the element), <code>offset-y</code> (how far to push the shadow vertically from the element), <code>blur-radius</code>, <code>spread-radius</code> and a color value in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.",
         "Here's an example of the CSS to create multiple shadows with some blur, at mostly-transparent black colors:",
-        "<code>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</code>",
-        "<h3>Instructions:</h3>",
+        "<blockquote>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</blockquote>",
+        "<h4>Instructions</h4>",
         "Use the example CSS values above to place a <code>box-shadow</code> on the card. The element now has an id of <code>thumbnail</code>, use this selector to place the shadows for the hover state."
       ],
       "challengeSeed": [
@@ -1003,9 +995,7 @@
       "title": "Decrease the Opacity of an Element",
       "description": [
         "The <code>opacity</code> property in CSS is used to adjust the opacity, or conversely, the transparency for an item.",
-        "A value of 1 is opaque, which isn't transparent at all.",
-        "A value of 0.5 is half see-through.",
-        "A value of 0 is completely transparent.",
+        "<blockquote>A value of 1 is opaque, which isn't transparent at all.<br>A value of 0.5 is half see-through.<br>A value of 0 is completely transparent.<br></blockquote>",
         "The value given will apply to the entire element, whether that's an image with some transparency, or the foreground and background colors for a block of text.",
         "Set the <code>opacity</code> of Google's Logo to 0.9 using the class of <code>cardImg</code>."
       ],
@@ -1095,7 +1085,7 @@
       "description": [
         "The <code>text-transform</code> property in CSS is used to set text to uppercase.",
         "Note: Other values for this property are lowercase, capitalize (transforms the first letter of each word to uppercase), initial (sets the property to the default value), inherit (inherits the property from parent element) and none (the default).",
-        "<h3>Instructions</h3>",
+        "<h4>Instructions</h4>",
         "Set the text inside the <code>h4</code> tag to be uppercase using the <code>text-transform</code> property."
       ],
       "challengeSeed": [
@@ -1182,14 +1172,20 @@
     {
       "id": "c72123c8c441e9efaebebdef",
       "title": "Use a Google Font",
+	    "required": [
+        {
+          "link": "https://fonts.googleapis.com/css?family=Open+Sans",
+          "raw": true
+        }
+      ],
       "description": [
         "<code>Google Fonts</code> is a great way to find free fonts to use in a project.",
         "Once you have selected the preferred font, copy the link tag that is provided and insert it into the <code>head</code> of your page.",
         "In this case, we have already gone ahead and added Open Sans behind the scenes. The code to include this font is the following:",
-        "<code>&lt;link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" rel=\"stylesheet\"&gt;</code>",
+        "<blockquote>&lt;link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" rel=\"stylesheet\"&gt;<br></blockquote>",
         "Once the link is in place, the font is available to include in your CSS by using the pattern <code>font-family: 'FONT', FAMILY_NAME;</code>.",
         "In our case, \"FONT\" would be 'Open Sans' and \"FAMILY_NAME\" would be sans-serif. Note that quotes around 'Open Sans' are required because it has a space in its name, and capitalization matters.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Set the <code>font-family</code> of the body to \"Open Sans\"."
       ],
       "challengeSeed": [
@@ -1279,135 +1275,11 @@
       }
     },
     {
-      "id": "c56123c8c441eddfaeb55def",
-      "title": "Learn the Importance of Ratios in Type EMPTY",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [
-        "assert(true, 'message: TEMPORARY!');"
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-    {
-      "id": "c57123c8c441eddfaeb54def",
-      "title": "Learn About Modular Type EMPTY",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [
-        "assert(true, 'message: TEMPORARY!');"
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-    {
-      "id": "c58123c8c441eddfaeb53def",
-      "title": "Apply Different Ratios to Type Using the font-size Property EMPTY",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [
-        "assert(true, 'message: TEMPORARY!');"
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-    {
-      "id": "c59123c8c441eddfaeb52def",
-      "title": "Create a Typographic Style Guide EMPTY",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [
-        "assert(true, 'message: TEMPORARY!');"
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-    {
       "id": "c60123c8c441eddfaeb51def",
       "title": "Set the Font-size for Multiple Heading Elements",
       "description": [
         "The <code>font-size</code> property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, we are going to set the values for all <code>h1</code> through <code>h6</code> tags to balance the heading sizes.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "<ul>",
         "<li>Set the <code>font-size</code> of the <code>h1</code> tag to 68px.</li>",
         "<li>Set the <code>font-size</code> of the <code>h2</code> tag to 52px.</li>",
@@ -1472,7 +1344,7 @@
       "description": [
         "After setting the correct <code>font-size</code> of each heading tag, we are now going to adjust the <code>font-weight</code>.",
         "<code>font-weight</code> sets how thick or thin characters are in a section of text.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "<ul>",
         "<li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li>",
         "<li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li>",
@@ -1554,7 +1426,7 @@
       "title": "Set the Font-size of Paragraph Text",
       "description": [
         "The <code>font-size</code> property in CSS is not limited to headings, it can be applied to any element containing text.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Change the value of the <code>font-size</code> property for the paragraph to 16px to make it more visible."
       ],
       "challengeSeed": [
@@ -1613,7 +1485,7 @@
       "title": "Set the Line-height of Paragraphs",
       "description": [
         "CSS offers the <code>line-height</code> property to change the height of each line in a paragraph.",
-        "<h3>Instructions</h3>",
+        "<h4>Instructions</h4>",
         "Set the <code>line-height</code> of the <code>p</code> tag to 25px."
       ],
       "challengeSeed": [
@@ -1658,7 +1530,7 @@
       "title": "Adjust the Color of an Anchor Tag",
       "description": [
         "We can adjust the text color of anchor tags by specifically targeting the <code>a</code> element in the CSS.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Change the <code>color</code> property of the anchor tag to <code>#000</code> (black)."
       ],
       "challengeSeed": [
@@ -1700,7 +1572,7 @@
       "title": "Adjust the Hover State of an Anchor Tag",
       "description": [
         "Following from the previous challenge, the styling of the anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Change the <code>a</code> tag's CSS so when the user hovers over it, the <code>color</code> is blue and the underline is removed.",
         "Remember: You can remove underlining of anchor tags using the <code>text-decoration</code> property set to none."
       ],
@@ -1749,13 +1621,10 @@
       "description": [
         "CSS treats each HTML element as its own box, which is usually referred to as the <code>CSS Box Model</code>. Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline items sit within surrounding content (like images or spans). The default layout of elements in this way is called the <code>normal flow</code> of a document, but CSS offers the position property to override it.",
         "When the position of an element is set to <code>relative</code>, it allows you to specify how CSS should move it relative to its current position in the normal flow of the page. It pairs with the CSS offset properties of <code>left</code> or <code>right</code>, and <code>top</code> or <code>bottom</code>, which say how many pixels, percentages, or ems to move the item <i>away</i> from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:",
-        "<code>p {</code>",
-        "<code>  position: relative;</code>",
-        "<code>  bottom: 10px;</code>",
-        "<code>}</code>",
+        "<blockquote>p {<br>  position: relative;<br>  bottom: 10px;<br>}<br></blockquote>",
         "Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were there.",
         "Note: Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and still make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Change the <code>position</code> of the <code>h2</code> to <code>relative</code>, and use a CSS offset to move it 15 pixels away from the <code>top</code> of where it sits in the normal flow. Notice there is no impact on the positions of the surrounding h1 and p elements."
       ],
       "challengeSeed": [
@@ -1805,7 +1674,7 @@
       "title": "Move a Relatively Positioned Element with CSS Offsets",
       "description": [
         "When combined with an element whose <code>position</code> is <code>relative</code>, the CSS offsets of <code>top</code> or <code>bottom</code>, and <code>left</code> or <code>right</code> tell the browser how far to offset that item relative to where it would sit in the normal flow of the document. This can be slightly confusing, because you're offsetting an element away from a given spot, which effectively moves it towards the opposite direction. As you saw in the last challenge, using the top offset moved the h2 downwards. Likewise, using a left offset effectively moves an item to the right.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Let's do one more problem for practice. Move the <code>h2</code> 15 pixels to the right and 10 pixels up."
       ],
       "challengeSeed": [
@@ -1858,8 +1727,8 @@
       "title": "Lock an Element to its Parent with Absolute Positioning",
       "description": [
         "The next option for the CSS <code>position</code> property is <code>absolute</code>, which locks the element in place relative to its parent container. Unlike the <code>relative</code> position, this removes the element from the normal flow of the document, so surrounding items ignore it. The CSS offset properties (top or bottom and left or right) are used to refine the position.",
-        "One nuance with absolute positioning is that it will be locked relative to its closest <i>positioned</i> ancestor. If you forget to add a position rule to the parent item, (this is typically done using <code>position: relative;</code>), the browser will keep looking up the chain and ultimately default to the body tag.",
-        "<h3>Instructions:</h3>",
+        "One nuance with absolute positioning is that it will be locked relative to its closest <em>positioned</em> ancestor. If you forget to add a position rule to the parent item, (this is typically done using <code>position: relative;</code>), the browser will keep looking up the chain and ultimately default to the body tag.",
+        "<h4>Instructions</h4>",
         "Lock the <code>#searchbar</code> element to the top-right of its <code>section</code> parent by declaring its <code>position</code> as <code>absolute</code>. Give it <code>top</code> and <code>right</code> offsets of 0 pixels each."
       ],
       "challengeSeed": [
@@ -1920,7 +1789,7 @@
       "description": [
         "The next layout scheme that CSS offers is the <code>fixed</code> position, which is a type of absolute positioning that locks an element relative to the browser window. Similar to absolute positioning, it's used with the CSS offset properties and also removes the element from the normal flow of the document. Other items no longer \"realize\" where it is positioned, which may require some layout adjustments elsewhere.",
         "One key difference from the <code>absolute</code> position is that the element won't move when the user scrolls.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "The navigation bar in the code is labeled with an id of <code>navbar</code>. Change its <code>position</code> to <code>fixed</code>, and offset it 0 pixels from the <code>top</code> and 0 pixels from the <code>left</code>. Notice the (lack of) impact to the <code>h1</code> position, it hasn't been pushed down to accommodate the navigation bar and would need to be adjusted separately."
       ],
       "challengeSeed": [
@@ -1992,7 +1861,7 @@
       "title": "Push Elements Left or Right with the Float Property",
       "description": [
         "The last positioning tool does not actually use <code>position</code>, but sets the <code>float</code> property of an element. Floating elements are removed from the normal flow of a document and pushed to either the <code>left</code> or <code>right</code> of their containing parent element. It's commonly used with the <code>width</code> property to specify how much horizontal space the floated element requires.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "The given markup would work well as a two-column layout, with the <code>section</code> and <code>aside</code> elements next to each other. Give the <code>#left</code> item a <code>float</code> of <code>left</code> and the <code>#right</code> item a <code>float</code> of <code>right</code>."
       ],
       "challengeSeed": [
@@ -2060,7 +1929,7 @@
       "title": "Change the Position of Overlapping Elements with the Z-index Property",
       "description": [
         "When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the <code>z-index</code> property can be applied to specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the <code>z-index</code> property of an element move it higher in the stack than those with lower values.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Add a <code>z-index</code> property to the element with the class name of <code>first</code> (the ace of spades) and set it to a value of 2 so it covers the other element (ace of hearts)."
       ],
       "challengeSeed": [
@@ -2121,14 +1990,10 @@
         "Color theory and its impact on design is a deep topic and only the basics will be covered in the following challenges. Color can be used on a website to draw attention to content, evoke emotions, or create visual harmony. Using different combinations of colors can dramatically change the look of a website, and a lot of thought can go into picking a color palette that works with your content.",
         "The color wheel is a useful tool to visualize how colors relate to each other - similar hues are neighbors and different hues are farther apart. When two colors are opposite each other on the wheel, they are called complementary colors. They have the characteristic that if they are combined, they effectively cancel each other out and result in a gray color. However, when placed side-by-side, these colors will make each other appear more vibrant and produce a strong visual contrast.",
         "Some examples of complementary colors with their hex codes are:",
-        "<ul>",
-        "<li>red (<code>#FF0000</code>) and cyan (<code>#00FFFF</code>)</li>",
-        "<li>green (<code>#00FF00</code>) and magenta (<code>#FF00FF</code>)</li>",
-        "<li>blue (<code>#0000FF</code>) and yellow (<code>#FFFF00</code>)</li>",
-        "</ul>",
+        "<blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)<br></blockquote>",
         "There are many color picking tools available online that have an option to find the complement of a color.",
         "Note for all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Change the <code>background-color</code> property of the <code>blue</code> and <code>yellow</code> classes to their respective colors. Notice how the colors look different next to each other than they do compared against the white background."
       ],
       "challengeSeed": [
@@ -2186,12 +2051,8 @@
         "Tertiary colors are the result of combining a primary color with one of its secondary color neighbors. For example, red (primary) and yellow (secondary) make orange. This adds six more colors to a simple color wheel for a total of twelve.",
         "There are various methods of selecting different colors that result in a harmonious combination in design. One example that can use tertiary colors is called the split-complementary color scheme. It starts with a base color, then pairs it with the two colors that are adjacent to its complement. The three colors provide strong visual contrast in a design, but is more subtle than using two complementary colors.",
         "Here are three colors using the split-complement scheme:",
-        "<ul>",
-        "<li>cyan (<code>#00FFFF</code>)</li>",
-        "<li>orange (<code>#FF7D00</code>)</li>",
-        "<li>raspberry (<code>#FF007D</code>)</li>",
-        "</ul>",
-        "<h3>Instructions:</h3>",
+        "<blockquote>cyan (#00FFFF)<br>orange (#FF7D00)<br>raspberry (#FF007D)<br></blockquote>",
+        "<h4>Instructions</h4>",
         "Change the <code>background-color</code> property of the <code>orange</code>, <code>cyan</code>, and <code>raspberry</code> classes to their respective colors. Make sure to use the hex codes because the orange and raspberry in the example above are not browser-recognized color names."
       ],
       "challengeSeed": [
@@ -2253,7 +2114,7 @@
       "title": "Adjusting the Color of Various Elements to Complementary Colors",
       "description": [
         "The complementary colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "This page will use a shade of teal (<code>#09A7A1</code>) as the dominant color, and its orange (<code>#FF790E</code>) complement to visually highlight the sign-up buttons. Change the <code>background-color</code> of both the <code>header</code> and <code>footer</code> from black to the teal color. Then change the <code>h2</code> text <code>color</code> to teal as well. Finally, change the <code>background-color</code> of the <code>button</code> to the orange color."
       ],
       "challengeSeed": [
@@ -2335,16 +2196,9 @@
         "<b>Hue</b> is what people generally think of as 'color'. If you picture a spectrum of colors starting with red on the left, moving through green in the middle, and blue on right, the hue is where a color fits along this line. In hsl(), hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.",
         "<b>Saturation</b> is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. This is given as a percentage with 100% being fully saturated.",
         "<b>Lightness</b> is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.",
-        "Here are a few examples of using hsl() with fully-saturated, normal lightness colors:",
-        "<ul>",
-        "<li>Red: <code>hsl(0, 100%, 50%)</code> (Red can also have a hue of 360)</li>",
-        "<li>Yellow: <code>hsl(60, 100%, 50%)</code></li>",
-        "<li>Green: <code>hsl(120, 100%, 50%)</code></li>",
-        "<li>Cyan: <code>hsl(180, 100%, 50%)</code></li>",
-        "<li>Blue: <code>hsl(240, 100%, 50%)</code></li>",
-        "<li>Magenta: <code>hsl(300, 100%, 50%)</code></li>",
-        "</ul>",
-        "<h3>Instructions:</h3>",
+        "Here are a few examples of using <code>hsl()</code> with fully-saturated, normal lightness colors:",
+        "<blockquote>/* Red */<br>hsl(0, 100%, 50%) (Red can also have a hue of 360)<br><br>/* Yellow */<br>hsl(60, 100%, 50%)<br><br>/* Green */<br>hsl(120, 100%, 50%)<br><br>/* Cyan */<br>hsl(180, 100%, 50%)<br><br>/* Blue */<br>hsl(240, 100%, 50%)<br><br>/* Magenta */<br>hsl(300, 100%, 50%)<br></blockquote>",
+        "<h4>Instructions</h4>",
         "Change the <code>background-color</code> of each <code>div</code> element based on the class names (<code>green</code>, <code>cyan</code>, or <code>blue</code>) using <code>hsl()</code>. All three should have full saturation and normal lightness."
       ],
       "challengeSeed": [
@@ -2410,7 +2264,7 @@
       "title": "Adjust the Tone of a Color",
       "description": [
         "The <code>hsl()</code> option in CSS also makes it easy to adjust the tone of a color. Mixing white with a pure hue creates a tint of that color, and adding black will make a shade. Alternatively, a tone is produced by adding gray, while the hue stays the same, or by both tinting and shading. Recall that the 's' and 'l' of <code>hsl()</code> stand for saturation and lightness, respectively. The saturation percent changes the amount of gray and the lightness percent determines how much white or black is in the color. This is useful when you have a base hue you like, but need different variations of it.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "The navigation bar on this site currently inherits its <code>background-color</code> from the <code>header</code> element. Starting with that color as a base, add a <code>background-color</code> to the <code>nav</code> element so it uses the same teal hue, but has 80% saturation and 25% lightness values to change its tone and shade."
       ],
       "challengeSeed": [
@@ -2487,7 +2341,7 @@
         "The fist argument specifies the direction from which color transition starts - it can be stated as a degree, where 90deg makes a vertical gradient and 45deg is angled like a backslash. The following arguments specify the order of colors used in the gradient.",
         "Example:",
         "<code>background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));</code>",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>background</code>, and set it from a direction of 35 degrees to change the color from <code>#CCFFFF</code> to <code>#FFCCCC</code>."
       ],
       "challengeSeed": [
@@ -2542,7 +2396,7 @@
         "For this example It helps to think about the color stops as pairs where every two colors blend together.",
         "<code>0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px</code>",
         "If every two color stop values are the same color, the blending isn't noticeable because it's between the same color, followed by a hard transition to the next color, and we end up with stripes.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Make stripes by changing the <code>repeating-linear-gradient()</code> to use a gradient angle of <code>45deg</code>, then set the first two color stops to <code>yellow</code>, and finally the second two color stops to <code>black</code>."
       ],
       "challengeSeed": [
@@ -2604,7 +2458,7 @@
       "title": "Create Texture by Adding a Subtle Pattern as a Background Image",
       "description": [
         "One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as you don't want the background to stand out too much, and take away from the foreground! The <code>background</code> property supports the <code>url()</code> function in order to link to an image of the chosen texture or pattern. The link address is input in quotes inside the parentheses.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Using the url of <code>https://i.imgur.com/MJAkxbh.png</code>, set the <code>background</code> of the whole page using the <code>body</code> selector."
       ],
       "challengeSeed": [
@@ -2645,46 +2499,13 @@
       }
     },
     {
-      "id": "c31123c8c441eddfaeb5bd2f",
-      "title": "Create a Pattern by Reusing a Block of Elements EMPTY",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [
-        "assert(true, 'message: TEMPORARY!');"
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-    {
       "id": "c17123c8c441eddfaeb5bde1",
       "title": "Use the CSS Transform Scale Property to Change the Size of an Element",
       "description": [
         "To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example will double the size of all the paragraph elements on the page:",
-        "<code>p {</code>",
-        "<code>    transform:scale(2);</code>",
-        "<code>}</code>",
+        "<blockquote>p {<br>  transform:scale(2);<br>}<br></blockquote>",
         "Now let's change the size of one of the elements displayed in the right;",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Increase the size of the element with the id of <code>ball2</code> to 1.5 times its original size."
       ],
       "challengeSeed": [
@@ -2713,8 +2534,8 @@
         "",
         "</style>",
         "",
-        "<div class=\"img-circle ball\" id= \"ball\"></div>",
-        "<div class=\"img-circle ball\" id= \"ball2\"></div>"
+        "<div class=\"ball\" id= \"ball\"></div>",
+        "<div class=\"ball\" id= \"ball2\"></div>"
       ],
       "tests": [
         "assert(code.match(/#ball2\\s*?{\\s*?left:\\s*?65%;\\s*?transform:\\s*?scale\\(1\\.5\\);/gi), 'message: Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.');"
@@ -2750,10 +2571,8 @@
       "description": [
         "The <code>transform</code> property has a verity of functions that lets you scale, move, rotate ,skew , etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
         "Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:",
-        "<code>p:hover {</code>",
-        "<code>  transform: scale(2.1);</code>",
-        "<code>}</code>",
-        "<h3>Instructions:</h3>",
+        "<blockquote>p:hover {<br>  transform: scale(2.1);}<br>}<br></blockquote>",
+        "<h4>Instructions</h4>",
         "Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use the <code>transform</code> property to scale the <code>div</code> element to 1.1 times its original size when a user hovers over it."
       ],
       "challengeSeed": [
@@ -2773,7 +2592,7 @@
         "  ",
         "</style>",
         "",
-        "<div class =\"img-rounded\"></div>"
+        "<div></div>"
       ],
       "tests": [
         "assert(code.match(/div:hover\\s*?{\\s*?transform:\\s*?scale\\(1\\.1\\);/gi), 'message: Scale your<code>div</code> element 1.1 times when the mouse hovers over it.');"
@@ -2811,10 +2630,8 @@
       "description": [
         "The next function of the <code>transform</code> property is the <code>skewX()</code> function which skews the selected element along its X (horizontal) axis by a given degree.",
         "The following code skews the paragraph element by -32 degrees along the X axis.",
-        "<code>p {</code>",
-        "<code>  transform: skewX(-32deg);</code>",
-        "<code>}</code>",
-        "<h3>Instructions:</h3>",
+        "<blockquote>p {<br>  transform: skewX(-32deg);<br>}<br></blockquote>",
+        "<h4>Instructions</h4>",
         "Skew the elements with the id of <code>hearts</code> by 24 degrees along the x axis."
       ],
       "challengeSeed": [
@@ -2844,7 +2661,7 @@
         "<style>\n\n  .card {\n    display: inline-block;\n    margin-top: 30px;\n  }\n  .img-rounded{\n    max-height:200px;\n\n  }\n  #hearts {\n    transform: skewX(24deg);\n/** Only change code above this line. **/\n  }\n\n</style>\n\n  <img class=\"img-rounded card\" id=\"card\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Aceofspades.svg/2000px-Aceofspades.svg.png\" />\n\n  <img class=\"img-rounded second-pic card\" id=\"hearts\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Playing_card_heart_A.svg/2000px-Playing_card_heart_A.svg.png\" />"
       ],
       "hints": [
-        "Notice that there is no space between the number and \"deg\" (<code>-32deg</code>) when declaring the degrees value."
+        "Notice that there is no space between the number and \"deg\" (-32deg) when declaring the degrees value."
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2873,7 +2690,7 @@
       "description": [
         "If the <code>skewX()</code> function skews the selected element along the X axis by a given degree, can you guess what <code>skewY()</code> does?",
         "Yes, it skews the selected element along the Y axis.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Skew the element with the id of <code>hearts</code> 53 degrees along the Y axis by using the <code>transform</code> property."
       ],
       "challengeSeed": [
@@ -2932,7 +2749,7 @@
         "We will create a round, transparent object with a crisp shadow that is slightly offset to the side - the shadow is actually going to be the moon shape you see. ",
         "In order to create a round object, the <code>border-radius</code> property should be set to a value of 50%.",
         "You may recall from an earlier challenge that the <code>box-shadow</code> property takes values for <code>offset-x</code>, <code>offset-y</code>, <code>blur-radius</code>, <code>spread-radius</code> and a color value in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Time to manipulate the square element in the editor to create the moon shape. First, change the <code>background-color</code> to transparent, then set the <code>border-radius</code> property to 50% to make the circular shape. Finally, for the <code>box-shadow</code> property, set the <code>offset-x</code> to 25px, the <code>offset-y</code> to 10px, <code>blur-radius</code> to 0, <code>spread-radius</code> to 0, and color to blue."
       ],
       "challengeSeed": [
@@ -2990,22 +2807,13 @@
       "title": "Create a More Complex Shape Using CSS and HTML",
       "description": [
         "One of the most popular shapes in the world is the heart shape and we are going to make it in raw CSS in this challenge. But first, we need to familiarize ourselves with the <code>:before</code> and <code>:after</code> selectors. These selectors are used to to add something before/after a selected element. In the following example a <code>:before</code> selector is used to add a rectangle to an element with the class <code>heart</code>:",
-        "<code>.heart:before {</code>",
-        "<code>  content: \"\";</code>",
-        "<code>  background-color: yellow;</code>",
-        "<code>  border-radius: 25%;</code>",
-        "<code>  position: absolute;</code>",
-        "<code>  height: 50px;</code>",
-        "<code>  width: 70px;</code>",
-        "<code>  top: -50px;</code>",
-        "<code>  left: 5px;</code>",
-        "<code>}</code>",
+        "<blockquote>.heart:before {<br>  content: \"\";<br>  background-color: yellow;<br>  border-radius: 25%;<br>  position: absolute;<br>  height: 50px;<br>  width: 70px;<br>  top: -50px;<br>  left: 5px;<br>}<br></blockquote>",
         "Note that for the <code>:before</code> and <code>:after</code> selectors to function properly, they must have a defined content property to contain contents such as photos or text; however, since we will only use the <code>:before</code> and <code>:after</code> selectors to add shapes, we can set the content property to an empty string.",
         "In the above example, the element with the class of <code>heart</code> has a <code>:before</code> selector that produces a yellow rectangle with <code>height</code> and <code>width</code> of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the <code>left</code> and 50px above the <code>top</code> of the element.",
         "Let's transform the element on the right of the screen to a heart.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Start by targeting the <code>heart:after</code> selector by changing the <code>background-color</code> to pink and the <code>border-radius</code> to 50%.",
-        "Next, target the element with the class <code>heart</code> (not with the <code>:before</code> or <code>:after</code> pseudo-selectors) and fill in the <code>transform</code> property using the <code>rotate()</code> function with -45 degrees.",
+        "Next, target the element with the class <code>heart</code> (not with the <code>:before</code> or <code>:after</code> pseudo-selectors) and fill in the <code>transform</code> property using the <code>rotate()</code> function with -45 degrees (it works the same way that <code>skewX()</code> and <code>skewY()</code> do).",
         "Finally, in the <code>heart:before</code> selector, set its <code>content</code> property to an empty string."
       ],
       "challengeSeed": [
@@ -3084,20 +2892,9 @@
         "<code>animation-name</code> sets the name of the animation, which is later used by <code>@keyframes</code> to tell CSS which rules go with which animations.",
         "<code>animation-duration</code> sets the length of time for the animation.",
         "<code>@keyframes</code> rule is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific \"frames\" during the animation, with percentages ranging from 0% to 100%. If you compare this to a movie, the CSS properties for 0% is how the element displays in the opening scene. The CSS properties for 100% is how the element appears at the end, right before the credits roll. Then CSS applies the magic to transition the element over the given duration to act out the scene. Let's look at the following example to illustrate the usage of <code>@keyframes</code> and the animate properties:",
-        "<code>#anim {</code>",
-        "<code>  animation-name: colorful;</code>",
-        "<code>  animation-duration: 3s;</code>",
-        "<code>}</code>",
-        "<code>@keyframes colorful {</code>",
-        "<code>  0% {</code>",
-        "<code>   background-color: blue;</code>",
-        "<code>  }</code>",
-        "<code>  100% {</code>",
-        "<code>    background-color: yellow;</code>",
-        "<code>  }</code>",
-        "<code>}</code>",
+        "<blockquote>#anim {<br>  animation-name: colorful;<br>  animation-duration: 3s;<br>}<br>@keyframes colorful {<br>  0% {<br>   background-color: blue;<br>  }<br>  100% {<br>    background-color: yellow;<br>  }<br>}<br></blockquote>",
         "For the element with the <code>anim</code> id, the code snippet above sets the <code>animation-name</code> to <code>colorful</code> and sets the <code>animation-duration</code> to 3 seconds. Then the <code>@keyframes</code> rule links to the animation properties with the name <code>colorful</code>, and sets the color to blue at the beginning of the animation (0%) which will transition to yellow by the end of the animation (100%). You aren't limited to only beginning-end transitions, you can set properties for the element for any percentage between 0% and 100%.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Create an animation for the element with the id <code>rect</code>, set the <code>animation-name</code> to rainbow and the <code>animation-duration</code> to 4 seconds. Next, declare a <code>@keyframes</code> rule, and set the <code>background-color</code> at the beginning of the animation (<code>0%</code>) to blue, the middle of the animation (<code>50%</code>) to green, and the end of the animation (<code>100%</code>) to yellow."
       ],
       "challengeSeed": [
@@ -3164,20 +2961,8 @@
       "description": [
         "We can use CSS <code>@keyframes</code> to change the color of a button in its hover state.",
         "Here's an example of changing the height of an image on hover:",
-        "<code>&lt;style&gt;</code>",
-        "<code>  img:hover {</code>",
-        "<code>    animation-name: width;</code>",
-        "<code>    animation-duration: 4s;</code>",
-        "<code>  }</code>",
-        "<code></code>",
-        "<code>  @keyframes width {</code>",
-        "<code>    100% {</code>",
-        "<code>      width: 40px;</code>",
-        "<code>    }</code>",
-        "<code>  }</code>",
-        "<code>&lt;/style&gt;</code>",
-        "<code>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</code>",
-        "<h3>Instructions:</h3>",
+        "<blockquote>&lt;style&gt;<br>  img:hover {<br>    animation-name: width;<br>    animation-duration: 4s;<br>  }<br>  @keyframes width {<br>    100% {<br>      width: 40px;<br>    }<br>  }<br>&lt;/style&gt;<br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;<br></blockquote>",
+        "<h4>Instructions</h4>",
         "Use CSS <code>@keyframes</code> to change the <code>background-color</code> of our <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>."
       ],
       "challengeSeed": [
@@ -3232,21 +3017,8 @@
       "description": [
         "When elements have a specified <code>position</code>, such as <code>fixed</code> or <code>relative</code>, the CSS offset properties <code>right</code>, <code>left</code>, <code>top</code>, and <code>down</code> can be used in animation rules to create movement.",
         "As shown in the code snippet below, we could achieve a downward movement followed by an upward movement by setting the <code>top</code> property of the <code>50%</code> keyframe to 50px, but having it set to 0px for the first (<code>0%</code>) and the last (<code>100%</code>) keyframe.",
-        "<code>@keyframes rainbow {</code>",
-        "<code>  0% {</code>",
-        "<code>    background-color: blue;</code>",
-        "<code>    top: 0px;</code>",
-        "<code>  }</code>",
-        "<code>  50% {</code>",
-        "<code>    background-color: green;</code>",
-        "<code>    top: 50px;</code>",
-        "<code>  }</code>",
-        "<code>  100% {</code>",
-        "<code>    background-color: yellow;</code>",
-        "<code>    top: 0px;</code>",
-        "<code>  }</code>",
-        "<code>}</code>",
-        "<h3>Instructions:</h3>",
+        "<blockquote>@keyframes rainbow {<br>  0% {<br>    background-color: blue;<br>    top: 0px;<br>  }<br>  50% {<br>    background-color: green;<br>    top: 50px;<br>  }<br>  100% {<br>    background-color: yellow;<br>    top: 0px;<br>  }<br>}<br></blockquote>",
+        "<h4>Instructions</h4>",
         "Let's add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>."
       ],
       "challengeSeed": [
@@ -3317,13 +3089,80 @@
       }
     },
     {
+      "id": "c45123c8c441eddfaeb5b2ef",
+      "title": "Create Visual Direction by Fading an Element from Left to Right",
+      "description": [
+        "For this challenge we will be changing the <code>opacity</code> of an animated element so it gradually fades as it reaches the right side of the screen.",
+        "In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the <code>@keyframes</code> rule.",
+        "<h4>Instructions</h4>",
+        "Target the element with the id of <code>ball</code> and add the <code>opacity</code> property set to 0.1 at <code>50%</code> so the element fades as it moves to the right."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "  #ball {",
+        "    width: 70px;",
+        "    height: 70px;",
+        "    margin: 50 auto;",
+        "    position: fixed;",
+        "    left:20%;",
+        "    border-radius: 50%;",
+        "    background: linear-gradient(",
+        "      35deg,",
+        "      #ccffff,",
+        "      #ffcccc",
+        "    );",
+        "  animation-name: fade;",
+        "  animation-duration: 3s;",
+        "  }",
+        "",
+        "  @keyframes fade{",
+        "    50% {",
+        "      left:60%;",
+        "      ",
+        "    }",
+        "  }",
+        "",
+        "</style>",
+        "",
+        "<div id=\"ball\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/opacity:\\s*?0?\\.1;/gi), 'message: Add the <code>opacity</code> property to the <code>keyframes</code> rule for fade at 50% and set it to 0.1.');"
+      ],
+      "solutions": [
+        "<style>\n\n  #ball{ \n    width: 70px;\n    height: 70px;\n    margin: 50 auto;\n    position: fixed;\n    left:20%;\n    background: linear-gradient(\n    35deg,\n    #ccffff,\n    #ffcccc\n  );       \n  }\n\n#ball {\n  animation-name: fade;\n  animation-duration: 3s;\n  animation-iteration-count: infinite;\n}\n\n@keyframes fade{\n  50% {\n    left:60%;\n    opacity:.1;\n/** Only change code above this line. **/\n  }\n} \n\n\n</style>\n\n<div class=\"img-circle\" id= \"ball\"></div>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
       "id": "c39123c8c441eddfaeb5b7ef",
-      "title": "Animate Elements Continually Using the Infinity Property",
+      "title": "Animate Elements Continually Using an Infinite Animation Count",
       "description": [
         "The previous challenges covered how to use some of the animation properties and the <code>@keyframes</code> rule. Another animation property is the <code>animation-iteration-count</code>, which allows you to control how many times you would like to loop through the animation. Here's an example:",
         "<code>animation-iteration-count: 3;</code>",
         "The above animation will stop after running 3 times, but it's possible to make the animation run continuously by setting that value to infinite.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "To keep the ball bouncing on the right on a continuous loop, change the <code>animation-iteration-count</code> property to infinite."
       ],
       "challengeSeed": [
@@ -3359,7 +3198,7 @@
         "    }",
         "  }",
         "</style>",
-        "<div id= \"ball\"></div>"
+        "<div id=\"ball\"></div>"
       ],
       "tests": [
         "assert($('#ball').css('animation-iteration-count') == 'infinite', 'message: Change the <code>animation-iteration-count</code> property to infinite.');"
@@ -3391,7 +3230,7 @@
     },
     {
       "id": "c40123c8c441eddfaeb5b8ef",
-      "title": "Make a CSS Heartbeat using the Infinity Property",
+      "title": "Make a CSS Heartbeat using an Infinite Animation Count",
 	  "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
@@ -3402,7 +3241,7 @@
         "Let's do one more continuous animation example using the <code>animation-iteration-count</code> property to keep the heart beating.",
         "The one second long heartbeat animation consists of two animated pieces. The <code>i</code> element is animated to change its size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.",
         "Note: The code example is using a heart icon accessed through a web library. Don't worry if this is new for you, it will be covered in the Front End Libraries section. For now, focus on the animation aspects of the challenge.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Keep the heart beating by adding the <code>animation-iteration-count</code> property for both the <code>i</code> and the <code>div</code> elements and setting the value to infinite."
       ],
       "challengeSeed": [
@@ -3482,7 +3321,7 @@
     {
       "id": "c42123c8c441eddfaeb5b5ef",
       "title": "Animate Elements at Variable Rates",
-	  "required": [
+	    "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
           "raw": true
@@ -3492,7 +3331,7 @@
         "There are a variety of ways to alter the animation rates of similarly animated elements. So far, this has been achieved by applying an <code>animation-iteration-count</code> property and setting <code>@keyframe</code> rules.",
         "To illustrate, the animation on the right consists of two stars that each decrease in size and opacity at the 20% mark in the <code>@keyframe</code> rule, which creates the twinkle animation. In this challenge, we'll change the <code>@keyframe</code> rule for one of the elements so the stars twinkle at different rates.",
         "Note: The code example is using star icons accessed through a web library. Don't worry if this is new for you, it will be covered in the Front End Libraries section. For now, focus on the animation aspects of the challenge.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Alter the animation rate for the element with the class name of <code>star-1</code> by changing its <code>@keyframes</code> rule to 50%."
       ],
       "challengeSeed": [
@@ -3593,7 +3432,7 @@
     {
       "id": "c41123c8c441eddfaeb5b6ef",
       "title": "Animate Multiple Elements at Variable Rates",
-	  "required": [
+	    "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css",
           "raw": true
@@ -3603,7 +3442,7 @@
         "In the previous challenge, we changed the animation rates for two similarly animated elements by altering their <code>@keyframes</code> rules. In this challenge, we'll achieve the same goal by manipulating the <code>animation-duration</code> of multiple elements.",
         "In the demonstrated animation, there are three stars in the sky that twinkle at the same rate on a continuous loop. To make them twinkle at different rates, we can set the <code>animation-duration</code> property to different values for each element.",
         "Note: The code example is using star icons accessed through a web library. Don't worry if this is new for you, it will be covered in the Front End Libraries section. For now, focus on the animation aspects of the challenge.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Set the <code>animation-duration</code> of the elements with the classes <code>star-1</code>, <code>star-2</code>, and <code>star-3</code> to 1s, 0.9s, and 1.1s, respectively."
       ],
       "challengeSeed": [
@@ -3704,110 +3543,11 @@
       }
     },
     {
-      "id": "c45123c8c441eddfaeb5b2ef",
-      "title": "Create Visual Direction by Fading an Element from Left to Right",
-      "description": [
-        "For this challenge we will be changing the <code>opacity</code> of an animated element so it gradually fades as it reaches the right side of the screen.",
-        "In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the <code>@keyframes</code> rule.",
-        "<h3>Instructions:</h3>",
-        "Target the element with the id of <code>ball</code> and add the <code>opacity</code> property set to 0.1 at <code>50%</code> so the element fades as it moves to the right."
-      ],
-      "challengeSeed": [
-        "<style>",
-        "",
-        "  #ball {",
-        "    width: 70px;",
-        "    height: 70px;",
-        "    margin: 50 auto;",
-        "    position: fixed;",
-        "    left:20%;",
-        "    border-radius: 50%;",
-        "    background: linear-gradient(",
-        "      35deg,",
-        "      #ccffff,",
-        "      #ffcccc",
-        "    );",
-        "  animation-name: fade;",
-        "  animation-duration: 3s;",
-        "  animation-iteration-count: infinite;",
-        "  }",
-        "",
-        "  @keyframes fade{",
-        "    50% {",
-        "      left:60%;",
-        "      ",
-        "    }",
-        "  }",
-        "",
-        "</style>",
-        "",
-        "<div id=\"ball\"></div>"
-      ],
-      "tests": [
-        "assert(code.match(/opacity:\\s*?0?\\.1;/gi), 'message: Add the <code>opacity</code> property to the <code>keyframes</code> rule for fade at 50% and set it to 0.1.');"
-      ],
-      "solutions": [
-        "<style>\n\n  #ball{ \n    width: 70px;\n    height: 70px;\n    margin: 50 auto;\n    position: fixed;\n    left:20%;\n    background: linear-gradient(\n    35deg,\n    #ccffff,\n    #ffcccc\n  );       \n  }\n\n#ball {\n  animation-name: fade;\n  animation-duration: 3s;\n  animation-iteration-count: infinite;\n}\n\n@keyframes fade{\n  50% {\n    left:60%;\n    opacity:.1;\n/** Only change code above this line. **/\n  }\n} \n\n\n</style>\n\n<div class=\"img-circle\" id= \"ball\"></div>"
-      ],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-    {
-      "id": "c30123c8c441eddfaeb5bd3f",
-      "title": "Use the box-shadow z-axis and Opacity together to Animate an Element EMPTY",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [
-        "assert(true, 'message: TEMPORARY!');"
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-    {
       "id": "c01123c8c441eddfaeb5bdee",
       "title": "Change Animation Timing with Keywords",
       "description": [
         "In CSS animations, the <code>animation-timing-function</code> property controls how quickly an animated element changes over the duration of the animation. If the animation is a vehicle moving from point A to point B in a set time (given by your <code>animation-duration</code> property), the <code>animation-timing-function</code> dictates how the car accelerates and decelerates over the course of the drive. There are a number of predefined keywords available for popular options. For example, the default value is linear, which applies a constant animation speed throughout. Other options include ease-out, which is quick in the beginning then slows down, or ease-in, which is slow in the beginning, then speeds up at the end.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "For the elements with id of <code>ball</code> and <code>ball2</code>, add an <code>animation-timing-function</code> property to each, and set <code>#ball</code> to linear, and <code>#ball2</code> to ease-out. Notice the difference between how the elements move during the animation but end together, since they share the same <code>animation-duration</code> of 2 seconds."
       ],
       "challengeSeed": [
@@ -3888,7 +3628,7 @@
         "In CSS animations, Bezier curves are used with the <code>cubic-bezier</code> function. The curve lives on a 1 by 1 coordinate system. The X axis of this coordinate system is the duration of the animation (think of it as a time scale), and the Y axis is the change in the animation. The <code>cubic-bezier</code> function consists of four main points that sit on this 1 by 1 grid: <code>p0</code>, <code>p1</code>, <code>p2</code>, and <code>p3</code>. <code>p0</code> and <code>p3</code> are set for you - they are the beginning and end points which are always located respectively at the origin (0, 0) and (1, 1). You set the x and y values for the other two points, and where you place them in the grid dictates the shape of the curve for the animation to follow. This is done in CSS by declaring the x and y values of the <code>p1</code> and <code>p2</code> \"anchor\" points in the form: <code>(x1, y1, x2, y2)</code>. Pulling it all together, here's an example of a Bezier curve in CSS code:",
         "<code>animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);</code>",
         "In the example above, the x and y values are equivalent for each point (x1 = 0.25 = y1 and x2 = 0.75 = y2), which if you remember from geometry class, results in a line that extends from the origin to point (1, 1). This animation is a linear change of an element during the length of an animation, and is the same as using the linear keyword. In other words, it changes at a constant speed.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "For the element with the id of <code>ball</code>, change the value of the <code>animation-timing-function</code> property from linear to its equivalent <code>cubic-bezier</code> function value. Use the point values given in the example above."
       ],
       "challengeSeed": [
@@ -3969,7 +3709,7 @@
         "In general, changing the <code>p1</code> and <code>p2</code> anchor points drives the creation of different Bezier curves, which controls how the animation progresses through time. Here's an example of a Bezier curve using values to mimic the ease-out style:",
         "<code>animation-timing-function: cubic-bezier(0, 0, 0.58, 1);</code>",
         "Remember that all <code>cubic-bezier</code> functions start with <code>p0</code> at (0, 0) and end with <code>p3</code> at (1, 1). In this configuration, the curve moves faster through the Y axis (starts at 0, goes to <code>p1</code> y value of 0, then goes to <code>p2</code> y value of 1) than it moves through the X axis (0 to start, then 0 for <code>p1</code>, up to 0.58 for <code>p2</code>). As a result, the change in the animated element progresses faster than the time of the animation for that segment. Towards the end of the curve, the relationship between the change in x and y values reverses - the y value moves from 1 to 1 (no change), and the x values move from 0.58 to 1, making the animation changes progress slower compared to the animation duration.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "To see the effect of this Bezier curve in action, change the <code>animation-timing-function</code> of the element with id of <code>red</code> to the above-mentioned configuration using a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1. This will make both elements progress through the animation similarly."
       ],
       "challengeSeed": [
@@ -4041,11 +3781,11 @@
       "title": "Make Motion more Natural using a Bezier Curve",
       "description": [
         "In this challenge, we'll animate an element to replicate the movement of a ball being juggled. Prior challenges covered the linear and ease-out cubic Bezier curves, however neither depicts the juggling movement accurately. We need to customize a Bezier curve for this.",
-        "Note that the <code>animation-timing-function</code> automatically loops at every keyframe given the <code>animation-iteration-count</code> is set to infinite. Since there is a keyframe rule set in the middle of our animation duration (at 50%), it results in two identical animation progressions at the upward and downward movement of the ball.",
+        "Note that the <code>animation-timing-function</code> automatically loops at every keyframe given the <code>animation-iteration-count</code> is set to infinite. Since there is a keyframe rule set in the middle of our animation duration (at <code>50%</code>), it results in two identical animation progressions at the upward and downward movement of the ball.",
         "The following cubic Bezier curve simulates a juggling movement:",
         "<code>cubic-bezier(0.3, 0.4, 0.5, 1.6); </code>",
         "Notice that the value of y2 is larger than 1. Although the cubic Bezier curve is mapped on an 1 by 1 coordinate system, and it can only accept x values from 0 to 1, the y value can be set to numbers larger than one. This results in a bouncing movement that is ideal for simulating the juggling ball.",
-        "<h3>Instructions:</h3>",
+        "<h4>Instructions</h4>",
         "Change value of the <code>animation-timing-function</code> of the element with the id of <code>green</code> to a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0.311, 0.441, 0.444, 1.649."
       ],
       "challengeSeed": [
