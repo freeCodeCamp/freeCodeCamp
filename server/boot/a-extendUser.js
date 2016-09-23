@@ -92,13 +92,13 @@ module.exports = function(app) {
     debug('sending welcome email');
     return user.verify(mailOptions, function(err) {
       if (err) { return next(err); }
-      req.flash('success', {
-        msg: [ 'Congratulations ! We\'ve created your account. ',
-               'Please check your email. We sent you a link that you can ',
-               'click to verify your email address and then login.'
-             ].join('')
-      });
-      return res.redirect(redirect);
+      //req.flash('success', {
+      //  msg: [ 'Congratulations ! We\'ve created your account. ',
+      //         'Please check your email. We sent you a link that you can ',
+      //         'click to verify your email address and then login.'
+      //       ].join('')
+      //});
+      return res.redirect('/welcome');
     });
   });
 };

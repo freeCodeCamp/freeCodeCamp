@@ -26,6 +26,7 @@ module.exports = function(app) {
   router.get('/shop/confirm-stickers', confirmStickers);
   router.get('/all-stories', showAllTestimonials);
   router.get('/terms', terms);
+  router.get('/welcome', welcome);
   router.get('/privacy', privacy);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get(
@@ -55,6 +56,12 @@ module.exports = function(app) {
       res.render('resources/privacy', {
           title: 'Privacy policy'
       });
+  }
+
+  function welcome(req, res) {
+    res.render('resources/welcome', {
+      title: 'Welcome to Free Code Camp!'
+    });
   }
 
   function howNonprofitProjectsWork(req, res) {

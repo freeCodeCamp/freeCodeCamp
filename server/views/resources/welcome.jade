@@ -1,0 +1,22 @@
+extends ../layout
+block content
+    .row
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-6.col-md-offset-3.text-center
+            h1 Welcome to Free Code Camp!
+            p You have created a brand new account.
+            p Already have an account? &thinsp;
+                a(href='/signout') Sign out, then sign in with a different email address.
+            .spacer
+            hr
+            .spacer
+            p Can we show you how to join our chat rooms, forums, and local study groups?
+            p It only takes a few minutes.
+            .spacer
+            .row
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/')
+                        | Yes, I want to join the community
+            .row
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-danger.btn-link-social(href='/map')
+                        | No, I want to start coding immediately
