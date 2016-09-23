@@ -24,7 +24,10 @@
         "<h1>Hello</h1>"
       ],
       "tests": [
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
+        {
+          "text": "Your <code>h1</code> element should have the text \"Hello World\".');",
+          "testString": "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
+        }
       ],
       "type": "waypoint",
       "challengeType": 0,
