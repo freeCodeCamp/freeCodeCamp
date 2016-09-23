@@ -34,7 +34,7 @@ module.exports = function(app) {
     if (!supportedLanguages[req._urlLang]) {
       return next();
     }
-    const referer = req.headers.referer;
+    const { referer = '' } = req.headers;
 
     if (req.user) {
       if ((referer.indexOf('/settings') >= 1) && (req.user.isGithubCool)) {
