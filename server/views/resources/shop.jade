@@ -1,6 +1,37 @@
 extends ../layout
 block content
-    h2.text-center Buy cool stuff and support our open source community:
+    h2.text-center Buy cool gear and support our open source community:
+    .spacer
+    .row
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
+            img.img-responsive.img-center(src='//i.imgur.com/FPNHmHJr.png')
+            h3 Free Code Camp laptop sticker pack
+            p Get all 4 of these designs for only $10, with free shipping anywhere!
+            p These durable 2" (5 cm) stickers sport a matte finish, and look great anywhere - especially on your laptop.
+            html.
+                <form action="//www.paypal.com/cgi-bin/webscr" onSubmit="ga('send', 'event', 'Shop', 'clicked', 'Freecodecamp sept2016 sticker');" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="W2XNHEVDVNA9G">
+                <input type="submit" class="btn btn-cta signup-btn btn-block" name="submit" value='Get these with PayPal or a Credit Card'>
+                <img alt="" border="0" src="//www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
+    hr
+    .row
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
+            img.img-responsive.img-center(src='//i.imgur.com/FNFqn9Tg.jpg')
+            h3 Free Code Camp laptop stickers
+            p Get 4 for only $10, with free shipping anywhere!
+            p These durable 2" (5 cm) stickers sport a matte finish, and look great anywhere - especially on your laptop.
+            html.
+                <form action="//www.paypal.com/cgi-bin/webscr" onSubmit="ga('send', 'event', 'Shop', 'clicked', 'Freecodecamp 4xsticker');" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="JLML847M8B3B4">
+                <input type="submit" class="btn btn-cta signup-btn btn-block" name="submit" value='Get these with PayPal or a Credit Card'>
+                <img alt="" border="0" src="//www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
+    hr
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
             img.img-responsive.img-center(src='//i.imgur.com/0JSMQlO.jpg')
@@ -45,24 +76,12 @@ block content
             p These onesies come in pink and green, and range in size from 6 months to 2 years old.
             a.btn.btn-cta.signup-btn.btn-block(href='http://bit.ly/2b4Gq12' target='_blank' onClick="ga('send', 'event', 'Shop', 'clicked', 'open data onesie');") Get this adorable onesie
 
-    hr
-    .row
-        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
-            img.img-responsive.img-center(src='//i.imgur.com/FNFqn9Tg.jpg')
-            h3 Free Code Camp laptop stickers
-            p Get 2 for only $5, with free shipping anywhere!
-            p These durable 2" (5 cm) stickers sport a matte finish, and look great anywhere - especially on your laptop.
-            html.
-                <form action="//www.paypal.com/cgi-bin/webscr" onSubmit="ga('send', 'event', 'Shop', 'clicked', 'Freecodecamp sticker');" method="post" target="_blank">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="R9AGYKJUCU37N">
-                <input type="submit" class="btn btn-cta signup-btn btn-block" name="submit" value='Get these with PayPal or a Credit Card'>
-                <img alt="" border="0" src="//www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                </form>
+
     hr
 
     .big-break
     h2.text-center These audiobooks are extremely popular with developers:
+    .spacer
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
             img.img-responsive.img-center(src='//i.imgur.com/0aHcAtS.jpg')
@@ -85,3 +104,6 @@ block content
             h3 Hackers: Heroes of the Computer Revolution
             p Get this audiobook and another of your choosing for free with an Audible free trial.
             a.btn.btn-cta.signup-btn.btn-block(target='_blank' href="http://amzn.to/2bIHlYP" onClick="ga('send', 'event', 'Shop', 'clicked', 'book-hackers');") Get this audiobook for free            
+
+    hr
+    h2.text-center Thanks for your support!
