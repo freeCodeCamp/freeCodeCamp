@@ -4304,7 +4304,7 @@
       "description": [
         "Sometimes your HTML elements will receive multiple styles that conflict with one another.",
         "For example, your <code>h1</code> element can't be both green and pink at the same time.",
-        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <code>override</code> the <code>body</code> element's <code>color: green;</code> CSS property?",
+        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <em>override</em> the <code>body</code> element's <code>color: green;</code> CSS property?",
         "Create a CSS class called <code>pink-text</code> that gives an element the color pink.",
         "Give your <code>h1</code> element the class of <code>pink-text</code>."
       ],
@@ -4331,7 +4331,7 @@
           "description": [
             "Manchmal werden deine HTML Elemente mehrere Styles erhalten die sich gegenseitig widersprechen.",
             "Zum Beispiel könnte dein <code>h1</code> Element nicht gleichzeitig grün und pink sein.",
-            "Schauen wir uns an was passiert wenn wir eine Klasse erstellen die Text pink macht und dann einem Element hinzufügen. Wird unsere Klasse die <code>color:green;</code> Eigenschaft unseres <code>body</code> Elements überschreiben - <code>override</code> - ?"
+            "Schauen wir uns an was passiert wenn wir eine Klasse erstellen die Text pink macht und dann einem Element hinzufügen. Wird unsere Klasse die <code>color:green;</code> Eigenschaft unseres <code>body</code> Elements überschreiben - <em>override</em> - ?"
           ]
         },
         "es": {
@@ -4339,7 +4339,7 @@
           "description": [
             "A veces los elementos HTML recibirán múltiples estilos que entran en conflicto entre sí.",
             "Por ejemplo, el elemento <code>h1</code> no puede ser verde y rosa al mismo tiempo.",
-            "Vamos a ver lo que sucede cuando creamos una clase que hace rosado el texto y luego lo aplicamos a un elemento. ¿Anulará (<code>override</code>) nuestra clase la propiedad CSS <code>color: green</code> del elemento <code>body</code>?",
+            "Vamos a ver lo que sucede cuando creamos una clase que hace rosado el texto y luego lo aplicamos a un elemento. ¿Anulará (<em>override</em>) nuestra clase la propiedad CSS <code>color: green</code> del elemento <code>body</code>?",
             "Crea una clase CSS llamada <code>pink-text</code> que le da a un elemento el color rosado.",
             "Ponle a tu elemento <code>h1</code> la clase de <code>pink-text</code>."
           ]
@@ -4349,7 +4349,7 @@
           "description": [
             "As vezes os elementos HTML recebem múltiplos estilos que entram em conflito entre si.",
             "Por exemplo, o elemento <code>h1</code> não pode ser verde e rosa ao mesmo tempo.",
-            "Vamos ver o que acontece quando criamos uma classe que faz com que o texto seja rosa e então o aplicamos a um elemento. Isso irá sobrepor (<code>override</code>) a propriedade CSS <code>color: green</code> do elemento <code>body</code> de nossa classe?",
+            "Vamos ver o que acontece quando criamos uma classe que faz com que o texto seja rosa e então o aplicamos a um elemento. Isso irá sobrepor (<em>override</em>) a propriedade CSS <code>color: green</code> do elemento <code>body</code> de nossa classe?",
             "Crie uma classe CSS chamada <code>pink-text</code>, que dê a cor rosa a um elemento.",
             "Depois, adicione a classe <code>pink-text</code> ao seu elemento <code>h1</code>."
           ]
@@ -4359,7 +4359,7 @@
           "description": [
             "Иногда вашим HTML-элементам будут присвоены множественные стили, конфликтующие друг с другом.",
             "Например, ваш элемент <code>h1</code> не может быть одновременно зелёным и розовым.",
-            "Давайте посмотрим, что произойдёт, когда мы создадим класс, который делает текст розовым, затем присвоим его элементу. <code>Переопределит</code> ли наш класс значение CSS-свойства элемента <code>body</code> равное <code>color: green;</code>?",
+            "Давайте посмотрим, что произойдёт, когда мы создадим класс, который делает текст розовым, затем присвоим его элементу. <em>Переопределит</em> ли наш класс значение CSS-свойства элемента <code>body</code> равное <code>color: green;</code>?",
             "Создайте CSS-класс <code>pink-text</code>, который назначает элементу розовый в качестве цвета.",
             "Назначьте вашему элементу <code>h1</code> класс <code>pink-text</code>."
           ]
