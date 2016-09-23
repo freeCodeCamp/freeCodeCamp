@@ -201,7 +201,7 @@ var syncDepenedents = [
 
 gulp.task('sync', syncDepenedents, function() {
   sync.init(null, {
-    proxy: 'http://localhost:3000',
+    proxy: 'http://0.0.0.0:3000',
     logLeval: 'debug',
     files: paths.syncWatch,
     port: 3001,
@@ -289,7 +289,7 @@ gulp.task('webpack-dev-server', function(cb) {
     publicPath: '/js'
   };
   webpackConfig.entry.bundle = [
-    'webpack-dev-server/client?http://localhost:2999/',
+    'webpack-dev-server/client?http://0.0.0.0:2999/',
     'webpack/hot/dev-server'
   ].concat(webpackConfig.entry.bundle);
 
@@ -299,7 +299,7 @@ gulp.task('webpack-dev-server', function(cb) {
     res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
     next();
   });
-  return devServer.listen('2999', 'localhost', function(err) {
+  return devServer.listen('2999', '0.0.0.0', function(err) {
       if (err) {
         throw new gutil.PluginError('webpack-dev-server', err);
       }

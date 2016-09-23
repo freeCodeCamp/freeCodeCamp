@@ -6,6 +6,7 @@
 -   [Contribution Guidelines](#contribution-guidelines)
 -   [Prerequisites](#prerequisites)
 -   [Getting Started](#getting-started)
+-   [Development Environment using Containers] (#development-environment-using-containers)
 -   [Linting Setup](#linting-setup)
 -   [Found a bug?](#found-a-bug)
 -   [Creating Pull Requests](#creating-pull-requests)
@@ -131,6 +132,28 @@ Now navigate to your browser and open
 <http://localhost:3001>. If the app loads,
 congratulations – you're all set. Otherwise, let us know by opening a GitHub
 issue and with your error.
+
+### Development Environment using Containers
+If you are interested in running the development environment inside containers, follow these instructions.
+
+
+- Install Docker [You don't need to install npm/bower/gulp/mongodb locally]
+
+```bash
+# Get the latest snapshot
+git clone --depth=1 https://github.com/freecodecamp/freecodecamp.git freecodecamp
+
+# Change directory
+cd freecodecamp
+
+# Start the development environment
+./run_dev_environment.sh
+
+```
+
+Running the above script starts two containers, one running mongodb and the other running the freecodecamp node.js application. After a few seconds, you can open the browser and use `http://localhost:3000` to access the application.
+
+To see the logs of the node.js application, run `docker logs -f fcc_dev_web`
 
 ### Linting Setup
 
