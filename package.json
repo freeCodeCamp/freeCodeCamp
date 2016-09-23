@@ -31,6 +31,11 @@
     "cover": "babel-node ./node_modules/.bin/babel-istanbul cover tape common/**/*.test.js",
     "coveralls": "npm run cover && istanbul-coveralls"
   },
+  "config": {
+    "ghooks": {
+      "pre-push": "npm run lint"
+    }
+  },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
     "accepts": "^1.3.0",
@@ -132,6 +137,7 @@
     "eslint": "^3.1.0",
     "eslint-plugin-import": "^1.9.2",
     "eslint-plugin-react": "^6.2.0",
+    "ghooks": "^1.3.2",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.0",
