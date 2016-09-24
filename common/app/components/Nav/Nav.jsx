@@ -171,6 +171,7 @@ export default class extends React.Component {
         <AvatarPointsNavItem
           picture={ picture }
           points={ points }
+          username={ username }
         />
       );
     } else {
