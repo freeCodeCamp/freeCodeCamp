@@ -67,10 +67,6 @@ module.exports = function(app) {
   User.afterRemote('create', function({ req, res }, user, next) {
     debug('user created, sending email');
     if (!user.email || !isEmail(user.email)) { return next(); }
-    const redirect = req.session && req.session.returnTo ?
-      req.session.returnTo :
-      '/';
-
     var mailOptions = {
       type: 'email',
       to: user.email,
@@ -92,12 +88,6 @@ module.exports = function(app) {
     debug('sending welcome email');
     return user.verify(mailOptions, function(err) {
       if (err) { return next(err); }
-      //req.flash('success', {
-      //  msg: [ 'Congratulations ! We\'ve created your account. ',
-      //         'Please check your email. We sent you a link that you can ',
-      //         'click to verify your email address and then login.'
-      //       ].join('')
-      //});
       return res.redirect('/welcome');
     });
   });
