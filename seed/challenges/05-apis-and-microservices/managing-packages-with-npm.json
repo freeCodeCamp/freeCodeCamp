@@ -20,7 +20,9 @@
         "All fields must be separated with a comma (,)"
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        "() => ($.get('https://red-moose.hyperdev.space/' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.author, '\"author\" key missing in package.json'); }).promise())"
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -57,7 +59,9 @@
         "Remember to use double-quotes for field-names (\") and commas (,) to separate fields."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        "(cb) => {$.get('https://red-moose.hyperdev.space/' + '/_api/package.json', function(data) { try {  var packJson = JSON.parse(data); assert(packJson.description, '\"description\" key missing in package.json'); cb(); } catch(e) { cb(e); } }) }"
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
