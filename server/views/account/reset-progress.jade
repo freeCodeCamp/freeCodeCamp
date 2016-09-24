@@ -5,13 +5,13 @@ block content
         .modal-dialog
             .modal-content
                 .modal-header
-                    a.close(href='/about', data-dismiss='modal', aria-hidden='true') ×
+                    a.close(href='/settings', data-dismiss='modal', aria-hidden='true') ×
                     h3 You don't really want to reset your progress, do you?
                 .modal-body
                     p This will really delete all of your progress and brownie points.
                     p We won't be able to recover any of it for you later, even if you change your mind.
                 .modal-footer
-                    a.btn.btn-success.btn-block(href='/about', data-dismiss='modal', aria-hidden='true')
+                    a.btn.btn-success.btn-block(href='/settings', data-dismiss='modal', aria-hidden='true')
                         | Nevermind, I don't want to delete all of my progress and brownie points
                     .spacer
                     form(action='/account/resetprogress', method='POST')
