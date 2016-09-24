@@ -8,54 +8,30 @@
       "id": "bc7123c8c441eddfaeb5bdef",
       "title": "Create a Media Query",
       "description": [
-        "Media Queries are a new technique introduced in CSS3 that let the presentation of content be changed for a specific viewport only.",
-        "They consist of a media type and if that media type matches the type of device the document is being displayed on, the styles will be applied. You can have as many selectors and styles inside your media query as you want.",
+        "Media Queries are a new technique introduced in CSS3 that let the presentation of content be changed for a specific viewport only. The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.",
+        "Media Queries consist of a media type and if that media type matches the type of device the document is being displayed on, the styles will be applied. You can have as many selectors and styles inside your media query as you want.",
         "Here is an example of a media query that returns the content when the device's width is under 100px:",
-        "<code>@media (max-width: 100px) {}</code>",
-        "Remember The css inside the media query will only be displayed if the media type matches the one of the device being used.",
-        "Add a media query, so that the p tag will have the font size of 10px when the device's height is smaller than 800px."
+        "<code>@media (max-width: 100px) { /* CSS Rules */ }</code>",
+        "Remember, The CSS inside the media query will only be displayed if the media type matches that of the device being used.",
+        "<h4>Instructions</h4>",
+        "Add a media query, so that the <code>p</code> tag will have the <code>font-size</code> of 10px when the device's maximum height is 800px."
       ],
       "challengeSeed": [
         "<style>",
-        "",
+        "  ",
         "</style>",
         "",
         "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
       ],
       "tests": [
-        "assert($('img').css('font-size') == '10px', 'message: Your <code>p</code> tag should have the font size of <code>10px</code> when the device's height is smaller than <code>800px</code>.')"
+        "assert($('p').css('font-size') == '10px', 'message: Your <code>p</code> tag should have the <code>font-size</code> of 10px when the device <code>height</code> is smaller than 800px.');",
+        "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare a <code>@media</code> query for devices with <code>height</code> less than 800px.');"
       ],
       "type": "waypoint",
       "solution": [
         "<style>\n\n  @media (max-height: 800px) {\n    p {\n      font-size: 10px;\n    }\n  }\n\n</style>\n\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
       ],
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
-    },
-    {
-      "id": "bd7123c8c441eddfaeb5bdeb",
-      "title": "Create a Compound Media Query",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
+      "hints": [],
       "challengeType": 0,
       "translations": {
         "de": {
@@ -80,29 +56,31 @@
       "id": "bd7123c8c441eddfaeb5bdec",
       "title": "Make an Image Responsive",
       "description": [
-        "Making images responsive in CSS is actually very simple.",
-        "Instead of applying an absolute width to an element:",
+        "Making images responsive in CSS is actually very simple. Instead of applying an absolute width to an element:",
         "<code>img { width: 720px; }</code>",
-        "you can use:",
-        "<code>img { max-width: 720px; width: 100%; }</code",
-        "<code>max-width</code> prevents the width being larger than 720px and <code>width: 100%</code> makes sure the width isn't larger than the viewport size (100%).",
-        "Set the max width of the img tag to 300px."
+        "You can use:",
+        "<code>img { max-width: 720px; width: 100%; }</code>",
+        "The <code>max-width</code> property prevents the width being larger than 720px and <code>width: 100%;</code> makes sure the width isn't larger than the viewport size (100%).",
+        "<h4>Instructions</h4>",
+        "Set the <code>max-width</code> of the <code>img</code> tag to 300px and prevent the <code>img</code> from being larger than the device viewport."
       ],
       "challengeSeed": [
         "<style>",
-        "",
+        "  ",
         "</style>",
         "",
-        "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1000px-Google_%22G%22_Logo.svg.png\" alt=\"Google's logo\">"
+        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-Double428x280.jpg\" alt=\"Free Code Camp stickers for pair programming and open data\">"
       ],
       "tests": [
-        "assert($('img').css('max-width') == '300px', 'message: Your <code>img</code> tag should have the max width of <code>300px</code>.')"
+        "assert($('img').css('max-width') == '300px', 'message: Your <code>img</code> tag should have a <code>max-width</code> of 300px.');",
+        "assert(code.match(/width:\\s*?100%;/g), 'message: Your <code>img</code> tag should not be wider than the device screen.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
       "solutions": [
-        "<style>\n\n  img {\n    max-width: 300px;\n    width: 100%;\n  }\n\n</style>\n\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1000px-Google_%22G%22_Logo.svg.png\" alt=\"Google's logo\">"
+        "<style>\n\n  img {\n    max-width: 300px;\n    width: 100%;\n  }\n\n</style>\n\n<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-Double428x280.jpg\" alt=\"Free Code Camp stickers for pair programming and open data\">"
       ],
+      "hints": [],
       "translations": {
         "de": {
           "description": [],
@@ -126,31 +104,27 @@
       "id": "bd7123c8c441eddfaeb5bded",
       "title": "Use a Retina Image for Higher Resolution Displays",
       "description": [
-        "The simplest way to make your images appear \"retina\" is to define your width and height as only half of what the original file is.",
+        "The simplest way to make your images appear \"retina\" (and optimize them for retina displays) is to define their <code>width</code> and <code>height</code> values as only half of what the original file is.",
         "Here is an example of an image that is only using half of the original height and width:",
-        "",
-        "<code><style></code>",
-        "</code>  img { height: 250px; width: 250px; }</code>",
-        "<code></style></code>",
-        "",
-        "<img src=\"https://bit.ly/chrome500x500\" alt=\"Google Chrome's Logo\">",
-        "Set the width and height of the img tag to half of what they originally where. In this case, the original height was 200px and the original width was 200px."
+        "<blockquote>&lt;style&gt;<br>  img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;A most excellent picture&quot;&gt;</blockquote>",
+        "<h4>Instructions</h4>",
+        "Set the <code>width</code> and <code>height</code> of the <code>img</code> tag to half of what they originally were. In this case, both the original <code>height</code> and the original <code>width</code> were 200px each."
       ],
       "challengeSeed": [
         "<style>",
-        "",
+        "  ",
         "</style>",
         "",
-        "<img src=\"https://bit.ly/bigben200x200\" alt=\"Big Ben\">"
+        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg\" alt=\"Free Code Camp sticker saying because CamperBot cares\">"
       ],
       "tests": [
-        "assert($('img').width() == '100px', 'message: Your <code>img</code> tag should have the width of <code>100px</code>.'),",
-        "assert($('img').height() == '100px', 'message: Your <code>img</code> tag should have the height of <code>100px</code>.')"
+        "assert($('img').css('width') == '100px', 'message: Your <code>img</code> tag should have the <code>width</code> of 100 pixels.');",
+        "assert($('img').css('height') == '100px', 'message: Your <code>img</code> tag should have the <code>height</code> of 100 pixels.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
       "solutions": [
-        "<style>\n    img {\n        width: 100px;\n        height: 100px;\n    }\n</style>\n\n<img src=\"https://bit.ly/bigben200x200\" alt=\"Big Ben\">"
+        "<style>\n    img {\n        width: 100px;\n        height: 100px;\n    }\n</style>\n\n<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg\" alt=\"Free Code Camp sticker saying because CamperBot cares\">"
       ],
       "hints": [],
       "translations": {
@@ -176,32 +150,32 @@
       "id": "bd7123c8c441eddfaeb5bdee",
       "title": "Make Typography Responsive",
       "description": [
-        "Instead of using em or px we can use Viewport units for responsive typography. Viewport units differ from percentages because they use e.g. the width of the viewport instead of the parent container.",
+        "Instead of using <code>em</code> or <code>px</code>, we can use viewport units for responsive typography. Viewport units differ from percentages because they are relative to viewport dimensions (width and height), instead of being relative to the parent container element.",
         "The four different viewport units are:",
         "<ul>",
         "<li><code>vw: 10vw</code> would be 10% of the viewport's width.</li>",
         "<li><code>vh: 3vh</code> would be 3% of the viewport's height.</li>",
-        "<li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension.</li>",
-        "<li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension.</li>",
+        "<li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension (height vs. width).</li>",
+        "<li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension (height vs. width).</li>",
         "</ul>",
-        "<strong>Instructions:</strong>",
-        "Set the width of the h2 tag to 80% of the viewport's width and the width of the image as 75% of the viewport's bigger dimension."
+        "<h4>Instructions</h4>",
+        "Set the <code>width</code> of the <code>h2</code> tag to 80% of the viewport's width and the <code>width</code> of the paragraph as 75% of the viewport's smaller dimension."
       ],
       "challengeSeed": [
         "<style>",
-        "",
+        "  ",
         "</style>",
         "",
-        "<h2>Camper Cat</h2>",
-        "<img src=\"https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif\" alt=\"Cat typing on a keyboard\">"
+        "<h2>Importantus Ipsum</h2>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
       ],
       "tests": [
-        "assert($(\"h2\").width() == '80vw', 'message: Your <code>h2</code> tag should have the width of <code>80vw</code>.'),",
-        "assert($(\"h2\").width() == '75vmax', 'message: Your <code>img</code> tag should have the width of <code>75vmax</code>.')"
+        "assert(code.match(/h2\\s*?{\\s*?width:\\s*?80vw;\\s*?}/g), 'message: Your <code>h2</code> tag should have a <code>width</code> of 80vw.');",
+        "assert(code.match(/p\\s*?{\\s*?width:\\s*?75vmin;\\s*?}/g), 'message: Your <code>p</code> tag should have a <code>width</code> of 75vmin.');"
       ],
       "type": "waypoint",
       "solutions": [
-        "<style>\n    h2 {\n        width: 80vw;\n    }\n</style>\n\n<h2>Camper Cat</h2>\n<img src=\"https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif\" alt=\"Cat typing on a keyboard\" />"
+        "<style>\n    h2 {\n        width: 80vw;\n    }\np {\n        width: 75vmin;\n    }\n</style>\n\n<h2>Importantus Ipsum</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
       ],
       "hints": [],
       "challengeType": 0,
