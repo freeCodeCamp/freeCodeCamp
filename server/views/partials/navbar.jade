@@ -23,8 +23,8 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 li
                     a(href='/signup') Sign Up
             else
-                li.brownie-points-nav
-                    a(href='/settings') [&thinsp;#{user.points}&thinsp;]
-                li.hidden-xs.hidden-sm.avatar
+                li.avatar-points
                     a(href='/settings')
+                      span.brownie-points-nav [&thinsp;#{user.points}&thinsp;]
+                      span.hidden-xs.hidden-sm.avatar
                         img.profile-picture.float-right(src='#{user.picture}')

@@ -156,8 +156,13 @@ h1, h2, h3, h4, h5, h6, p, li {
 
 .navbar > .container {
   width: auto;
-  padding-left: 0px;
   padding-right: 0px;
+
+  @media (max-width: 767px) {
+    // container default padding size
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .nav-height {
@@ -318,7 +323,7 @@ h1, h2, h3, h4, h5, h6, p, li {
   }
 }
 
-li.avatar, li.avatar > a { padding:0; margin:0 }
+li.avatar-points, li.avatar-points > a { padding:0; margin:0 }
 
 .thin-progress-bar {
   height: 8px;
@@ -474,8 +479,14 @@ thead {
 }
 
 .brownie-points-nav {
-  @media (min-width: 991px) and (max-width: 999px) {
-    margin-right: -10px;
+  @media (min-width: 991px) and (max-width: 1030px) {
+    float: none !important;
+    padding-right: 10px;
+    display: inline-block;
+  }
+  @media (min-width: 991px) {
+    float: left;
+    padding: 15px;
   }
 }
 

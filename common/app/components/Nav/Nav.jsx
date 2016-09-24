@@ -10,8 +10,7 @@ import {
 } from 'react-bootstrap';
 
 import navLinks from './links.json';
-import PointsNavItem from './Points-Nav-Item.jsx';
-import AvatarNavItem from './Avatar-Nav-Item.jsx';
+import AvatarPointsNavItem from './Avatar-Points-Nav-Item.jsx';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
@@ -163,30 +162,17 @@ export default class extends React.Component {
     });
   }
 
-  renderPoints(username, points, shouldShowSignIn) {
-    if (!username || !shouldShowSignIn) {
-      return null;
-    }
-    return (
-      <LinkContainer
-        eventKey={ navLinks.length + 1 }
-        key='points'
-        to='/settings'
-        >
-        <PointsNavItem
-          className='brownie-points-nav'
-          points={ points }
-        />
-      </LinkContainer>
-    );
-  }
-
-  renderSignIn(username, picture, shouldShowSignIn) {
+  renderSignIn(username, points, picture, shouldShowSignIn) {
     if (!shouldShowSignIn) {
       return null;
     }
     if (username) {
-      return <AvatarNavItem picture={ picture } />;
+      return (
+        <AvatarPointsNavItem
+          picture={ picture }
+          points={ points }
+        />
+      );
     } else {
       return (
         <NavItem
@@ -216,19 +202,21 @@ export default class extends React.Component {
         className='nav-height'
         fixedTop={ true }
         >
-        <NavbarBrand>
-          <a
-            href='/challenges/current-challenge'
-            onClick={ this.handleLogoClick }
-            >
-            <img
-              alt='learn to code javascript at Free Code Camp logo'
-              className='img-responsive nav-logo'
-              src={ fCClogo }
-            />
-          </a>
-        </NavbarBrand>
-        <Navbar.Toggle children={ toggleButtonChild } />
+        <Navbar.Header>
+          <Navbar.Toggle children={ toggleButtonChild } />
+          <NavbarBrand>
+            <a
+              href='/challenges/current-challenge'
+              onClick={ this.handleLogoClick }
+              >
+              <img
+                alt='learn to code javascript at Free Code Camp logo'
+                className='img-responsive nav-logo'
+                src={ fCClogo }
+              />
+            </a>
+          </NavbarBrand>
+        </Navbar.Header>
         <Navbar.Collapse>
           <Nav
             className='hamburger-dropdown'
@@ -238,8 +226,7 @@ export default class extends React.Component {
             { this.renderMapLink(isOnMap, toggleMapDrawer) }
             { this.renderChat(toggleMainChat) }
             { this.renderLinks() }
-            { this.renderPoints(username, points, shouldShowSignIn) }
-            { this.renderSignIn(username, picture, shouldShowSignIn) }
+            { this.renderSignIn(username, points, picture, shouldShowSignIn) }
           </Nav>
         </Navbar.Collapse>
       </Navbar>
