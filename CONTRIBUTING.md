@@ -21,8 +21,8 @@ JavaScript developers alike! Follow these steps to contribute:
 
 2.  Let us know you are working on it by posting a comment on the issue.
 
-3.  Feel free to ask for help in our [Help
-    Contributors](https://gitter.im/FreeCodeCamp/HelpContributors) Gitter room.
+3.  Feel free to ask for help in our
+    [Contributors](https://gitter.im/FreeCodeCamp/Contributors) Gitter room.
 
 If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
 
@@ -171,7 +171,7 @@ accepted by Free Code Camp proper.
 #### Need Help?
 
 Free Code Camp Issue Mods and staff are on hand to assist with Pull Request
-related issues on our Help Contributors Chat Room
+related issues on our Contributors Chat Room.
 
 #### How to find the code in the Free Code Camp codebase to fix/edit?
 
@@ -324,4 +324,4 @@ Be sure to post in the PR conversation that you have made the requested changes.
     message](http://forum.freecodecamp.com/t/writing-good-git-commit-messages/13210)
 
 -   [Contributor Chat Support - For the FCC Repositories, and running a local
-    instance](https://gitter.im/FreeCodeCamp/HelpContributors)
+    instance](https://gitter.im/FreeCodeCamp/Contributors)
