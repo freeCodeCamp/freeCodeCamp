@@ -63,7 +63,10 @@
       ],
       "challengeSeed": [],
       "tests": [
-        "(cb) => {$.get('https://red-moose.hyperdev.space/' + '/_api/package.json', function(data) { try {  var packJson = JSON.parse(data); assert(packJson.description, '\"description\" key missing in package.json'); cb(); } catch(e) { cb(e); } }) }"
+        {
+          "text": "\"description\" key missing in package.json",
+          "testString": "(cb) => {$.get('https://red-moose.hyperdev.space/' + '/_api/package.json', function(data) { try {  var packJson = JSON.parse(data); assert(packJson.description); cb(); } catch(e) { cb(e); } }) }"
+        }
       ],
       "solutions": [],
       "hints": [],
