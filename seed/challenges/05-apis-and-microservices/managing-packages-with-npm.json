@@ -21,7 +21,10 @@
       ],
       "challengeSeed": [],
       "tests": [
-        "() => ($.get('https://red-moose.hyperdev.space/' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.author, '\"author\" key missing in package.json'); }).promise())"
+        {
+          "text": "\"author\" key missing in package.json",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space/' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.author); }).promise())"
+        }
       ],
       "solutions": [],
       "hints": [],
