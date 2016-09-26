@@ -49,7 +49,7 @@ export class SuperBlock extends PureComponent {
     isOpen: PropTypes.bool,
     isHidden: PropTypes.bool,
     message: PropTypes.string,
-    toggleThisPanl: PropTypes.func
+    toggleThisPanel: PropTypes.func
   };
 
   handleSelect(eventKey, e) {

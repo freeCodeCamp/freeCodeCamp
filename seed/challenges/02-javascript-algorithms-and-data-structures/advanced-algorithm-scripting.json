@@ -89,7 +89,7 @@
       "title": "Symmetric Difference",
       "description": [
         "Create a function that takes two or more arrays and returns an array of the <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of the provided arrays.",
-        "Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term \"symmetric difference\" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>).",
+        "Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term \"symmetric difference\" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). The resulting array must contain only unique values (<em>no duplicates</em>).",
         "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -100,11 +100,15 @@
         "sym([1, 2, 3], [5, 2, 1, 4]);"
       ],
       "solutions": [
-        "function sym(args) {\n  var index = -1;\n  var length = arguments.length;\n  var result;\n  while (++index < length) {\n    var array = arguments[index];\n    result = result ? diff(result, array).concat(diff(array, result)) : array;\n  }\n  return result ? uniq(result) : [];\n}\n\nfunction uniq(arr) {\n  var h = Object.create(null);\n  var u = [];\n  arr.forEach(function(v) {\n    if (v in h) return;\n    h[v] = true;\n    u.push(v);\n  });\n  return u;\n}\n\nfunction diff(a, b) {\n  var h = Object.create(null);\n  b.forEach(function(v) {\n    h[v] = true;  \n  });\n  return a.filter(function(v) { return !(v in h);});\n}\nsym([1, 2, 3], [5, 2, 1, 4]);\n"
+        "function sym() {\n  var arrays = [].slice.call(arguments);\n  return arrays.reduce(function (symDiff, arr) {\n    return symDiff.concat(arr).filter(function (val, idx, theArr) {\n      return theArr.indexOf(val) === idx \n        && (symDiff.indexOf(val) === -1 || arr.indexOf(val) === -1);\n    });\n  });\n}\nsym([1, 2, 3], [5, 2, 1, 4]);\n"
       ],
       "tests": [
         "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');",
         "assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3, 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should contain only three elements.');",
+        "assert.sameMembers(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5], 'message: <code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');",
+        "assert.equal(sym([1, 2, 3, 3], [5, 2, 1, 4]).length, 3, 'message: <code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should contain only three elements.');",
+        "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should return <code>[3, 4, 5]</code>.');",
+        "assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3, 'message: <code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should contain only three elements.');",
         "assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>');",
         "assert.equal(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).length, 3, 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should contain only three elements.');",
         "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.');",

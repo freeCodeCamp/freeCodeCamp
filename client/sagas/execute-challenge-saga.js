@@ -91,6 +91,8 @@ export default function executeChallengeSaga(action$, getState) {
       type === types.executeChallenge ||
       type === types.updateMain
     ))
+    // if isCodeLockedTrue do not run challenges
+    .filter(() => !getState().challengesApp.isCodeLocked)
     .debounce(750)
     .flatMapLatest(({ type }) => {
       const state = getState();

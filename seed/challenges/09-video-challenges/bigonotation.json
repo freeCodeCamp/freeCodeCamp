@@ -52,7 +52,7 @@
       "id": "56b15f15632298c12f31517a",
       "title": "Big O Notation: A Few Examples",
       "description": [
-        "Time complexity is commonly estimated by counting the number of elementary operations (elementary operation = an operation that takes a fixed amount of time to preform) performed in the algorithm.",
+        "Time complexity is commonly estimated by counting the number of elementary operations (elementary operation = an operation that takes a fixed amount of time to perform) performed in the algorithm.",
         "Time complexity is classified by the nature of the function O(n). O represents the function, and (n) represents the number of elements to be acted on.",
         "Worst-case time complexity, the longest it could possibly take with any valid input, is the most common way to express time complexity.",
         "When you discuss Big-O notation, that is generally referring to the worst case scenario.",

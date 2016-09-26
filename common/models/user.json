@@ -142,12 +142,12 @@
     "isFrontEndCert": {
       "type": "boolean",
       "description": "Camper is front end certified",
-      "defaut": false
+      "default": false
     },
     "isDataVisCert": {
       "type": "boolean",
       "description": "Camper is data visualization certified",
-      "defaut": false
+      "default": false
     },
     "isBackEndCert": {
       "type": "boolean",

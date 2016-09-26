@@ -142,7 +142,8 @@
       ],
       "tests": [
         "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'message: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.');",
-        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');"
+        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these classes to the element.');",
+        "assert(/'/g.test(code) === false , 'message: Only use double quotes in your jQuery code, as is stated in the jQuery style guide.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -768,7 +769,7 @@
       "tests": [
         "assert($(\"#target1\") && $(\"#target1\").prop(\"disabled\"), 'message: Disable your <code>target1</code> button.');",
         "assert($(\"#target2\") && !$(\"#target2\").prop(\"disabled\"), 'message: Do not disable any other buttons.');",
-        "assert(!code.match(/disabled>/g), 'message: Only use jQuery to add these classes to the element.');"
+        "assert(!code.match(/disabled[^<]*>/g), 'message: Only use jQuery to add these classes to the element.');"
       ],
       "type": "waypoint",
       "challengeType": 0,

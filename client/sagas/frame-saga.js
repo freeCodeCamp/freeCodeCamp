@@ -2,6 +2,7 @@ import Rx, { Observable, Subject } from 'rx';
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
+import { ofType } from '../../common/utils/get-actions-of-type';
 import types from '../../common/app/routes/challenges/redux/types';
 import {
   updateOutput,
@@ -89,12 +90,13 @@ export default function frameSaga(actions$, getState, { window, document }) {
   const proxyLogger$ = new Subject();
   const runTests$ = window.__common[testId + 'Ready$'] =
     new Subject();
-  const result$ = actions$
-    .filter(({ type }) => (
-      type === types.frameMain ||
-      type === types.frameTests ||
-      type === types.frameOutput
-    ))
+  const result$ = actions$::ofType(
+      types.frameMain,
+      types.frameTests,
+      types.frameOutput
+    )
+    // if isCodeLocked is true do not frame user code
+    .filter(() => !getState().challengesApp.isCodeLocked)
     .map(action => {
       if (action.type === types.frameMain) {
         return frameMain(action.payload, document, proxyLogger$);

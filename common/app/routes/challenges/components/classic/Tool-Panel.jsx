@@ -1,7 +1,14 @@
 import React, { PropTypes } from 'react';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button, ButtonGroup, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 
+const unlockWarning = (
+  <Tooltip id='tooltip'>
+    <h4>
+      <strong>Careful!</strong> Only run code you trust
+    </h4>
+  </Tooltip>
+);
 export default class ToolPanel extends PureComponent {
   constructor(...props) {
     super(...props);
@@ -11,11 +18,14 @@ export default class ToolPanel extends PureComponent {
   static displayName = 'ToolPanel';
 
   static propTypes = {
-    executeChallenge: PropTypes.func,
-    updateHint: PropTypes.func,
+    executeChallenge: PropTypes.func.isRequired,
+    updateHint: PropTypes.func.isRequired,
     hint: PropTypes.string,
-    toggleHelpChat: PropTypes.func,
-    openBugModal: PropTypes.func
+    isCodeLocked: PropTypes.bool,
+    unlockUntrustedCode: PropTypes.func.isRequired,
+    toggleHelpChat: PropTypes.func.isRequired,
+    openBugModal: PropTypes.func.isRequired,
+    makeToast: PropTypes.func.isRequired
   };
 
   makeHint() {
@@ -51,24 +61,55 @@ export default class ToolPanel extends PureComponent {
     );
   }
 
+  renderExecute(isCodeLocked, executeChallenge, unlockUntrustedCode) {
+    if (isCodeLocked) {
+      return (
+        <OverlayTrigger
+          overlay={ unlockWarning }
+          placement='right'
+          >
+          <Button
+            block={ true }
+            bsStyle='primary'
+            className='btn-big'
+            onClick={ unlockUntrustedCode }
+            >
+            Code Locked. Unlock?
+          </Button>
+        </OverlayTrigger>
+      );
+    }
+    return (
+      <Button
+        block={ true }
+        bsStyle='primary'
+        className='btn-big'
+        onClick={ executeChallenge }
+        >
+        Run tests (ctrl + enter)
+      </Button>
+    );
+  }
+
   render() {
     const {
       hint,
+      isCodeLocked,
       executeChallenge,
       toggleHelpChat,
-      openBugModal
+      openBugModal,
+      unlockUntrustedCode
     } = this.props;
     return (
       <div>
         { this.renderHint(hint, this.makeHint) }
-        <Button
-          block={ true }
-          bsStyle='primary'
-          className='btn-big'
-          onClick={ executeChallenge }
-          >
-          Run tests (ctrl + enter)
-        </Button>
+        {
+          this.renderExecute(
+            isCodeLocked,
+            executeChallenge,
+            unlockUntrustedCode
+          )
+        }
         <div className='button-spacer' />
         <ButtonGroup
           className='input-group'

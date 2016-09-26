@@ -12,7 +12,7 @@ const toLowerCase = String.prototype.toLowerCase;
 function langRedirect(...args) {
   const url = args.length === 2 ? args[1] : args[0];
   const { lang } = this.req;
-  const maybeLang = toLowerCase.call(url.split('/')[1]);
+  const maybeLang = toLowerCase.call((url.split('/')[1] || ''));
 
   if (
     passthroughs[maybeLang] ||

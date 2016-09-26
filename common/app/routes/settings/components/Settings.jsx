@@ -7,23 +7,13 @@ import LockedSettings from './Locked-Settings.jsx';
 import SocialSettings from './Social-Settings.jsx';
 import EmailSettings from './Email-Setting.jsx';
 import LangaugeSettings from './Language-Settings.jsx';
-import DeleteModal from './Delete-Modal.jsx';
 
-import {
-  toggleUserFlag,
-  openDeleteModal,
-  hideDeleteModal
-} from '../redux/actions';
-import {
-  toggleNightMode,
-  updateTitle
-} from '../../../redux/actions';
+import { toggleUserFlag } from '../redux/actions';
+import { toggleNightMode, updateTitle } from '../../../redux/actions';
 
 const actions = {
   updateTitle,
   toggleNightMode,
-  openDeleteModal,
-  hideDeleteModal,
   toggleIsLocked: () => toggleUserFlag('isLocked'),
   toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
   toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
@@ -33,8 +23,7 @@ const actions = {
 const mapStateToProps = state => {
   const {
     app: { user: username },
-    entities: { user: userMap },
-    settingsApp: { isDeleteOpen }
+    entities: { user: userMap }
   } = state;
   const {
     email,
@@ -49,7 +38,6 @@ const mapStateToProps = state => {
   return {
     username,
     email,
-    isDeleteOpen,
     isLocked,
     isGithubCool,
     isTwitter,
@@ -69,7 +57,6 @@ export class Settings extends React.Component {
   static propTypes = {
     children: PropTypes.element,
     username: PropTypes.string,
-    isDeleteOpen: PropTypes.bool,
     isLocked: PropTypes.bool,
     isGithubCool: PropTypes.bool,
     isTwitter: PropTypes.bool,
@@ -84,8 +71,6 @@ export class Settings extends React.Component {
     toggleQuincyEmail: PropTypes.func.isRequired,
     toggleMonthlyEmail: PropTypes.func.isRequired,
     toggleNotificationEmail: PropTypes.func.isRequired,
-    openDeleteModal: PropTypes.func.isRequired,
-    hideDeleteModal: PropTypes.func.isRequired,
     lang: PropTypes.string,
     initialLang: PropTypes.string,
     updateMyLang: PropTypes.func
@@ -105,7 +90,6 @@ export class Settings extends React.Component {
     const {
       children,
       username,
-      isDeleteOpen,
       isLocked,
       isGithubCool,
       isTwitter,
@@ -118,9 +102,7 @@ export class Settings extends React.Component {
       toggleIsLocked,
       toggleQuincyEmail,
       toggleMonthlyEmail,
-      toggleNotificationEmail,
-      openDeleteModal,
-      hideDeleteModal
+      toggleNotificationEmail
     } = this.props;
     if (children) {
       return (
@@ -267,11 +249,15 @@ export class Settings extends React.Component {
             smOffset={ 2 }
             xs={ 12 }
             >
-            <DeleteModal
-              hide={ hideDeleteModal }
-              isOpen={ isDeleteOpen }
-              open={ openDeleteModal }
-            />
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='danger'
+              className='btn-link-social'
+              href='/delete-my-account'
+              >
+              Delete my Free Code Camp account
+            </Button>
           </Col>
         </Row>
       </div>

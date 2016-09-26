@@ -11,7 +11,8 @@ import {
 import { render } from 'redux-epic';
 import { createHistory } from 'history';
 import useLangRoutes from './utils/use-lang-routes';
-import sendPageAnalytics from './utils/send-page-analytics.js';
+import sendPageAnalytics from './utils/send-page-analytics';
+import flashToToast from './utils/flash-to-toast';
 
 import createApp from '../common/app';
 import provideStore from '../common/app/provide-store';
@@ -34,6 +35,9 @@ const initialState = isColdStored() ?
   getColdStorage() :
   window.__fcc__.data;
 initialState.app.csrfToken = csrfToken;
+initialState.toasts = flashToToast(window.__fcc__.flash);
+
+delete window.__fcc__;
 
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
@@ -72,10 +76,13 @@ createApp({
     }
   })
   .doOnNext(() => log('rendering'))
-  .flatMap(({ props, store }) => render(
-    provideStore(React.createElement(Router, props), store),
-    DOMContainer
-  ))
+  .flatMap(
+    ({ props, store }) => render(
+      provideStore(React.createElement(Router, props), store),
+      DOMContainer
+    ),
+    ({ store }) => store
+  )
   .subscribe(
     () => debug('react rendered'),
     err => { throw err; },
