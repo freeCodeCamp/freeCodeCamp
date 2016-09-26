@@ -69,7 +69,7 @@
         "  ",
         "</style>",
         "",
-        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-Double428x280.jpg\" alt=\"Free Code Camp stickers for pair programming and open data\">"
+        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg\" alt=\"Free Code Camp stickers set\">"
       ],
       "tests": [
         "assert($('img').css('max-width') == '300px', 'message: Your <code>img</code> tag should have a <code>max-width</code> of 300px.');",
@@ -78,7 +78,7 @@
       "type": "waypoint",
       "challengeType": 0,
       "solutions": [
-        "<style>\n\n  img {\n    max-width: 300px;\n    width: 100%;\n  }\n\n</style>\n\n<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-Double428x280.jpg\" alt=\"Free Code Camp stickers for pair programming and open data\">"
+        "<style>\n\n  img {\n    max-width: 300px;\n    width: 100%;\n  }\n\n</style>\n\n<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg\" alt=\"Free Code Camp stickers set\">"
       ],
       "hints": [],
       "translations": {
