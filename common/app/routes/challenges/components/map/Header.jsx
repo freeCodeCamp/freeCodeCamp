@@ -41,6 +41,7 @@ export class Header extends PureComponent {
 
   handleKeyDown(e) {
     if (e.keyCode === ESC) {
+      e.preventDefault();
       this.props.clearFilter();
     }
   }
