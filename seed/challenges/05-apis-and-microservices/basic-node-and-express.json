@@ -12,7 +12,12 @@
         "To get started, just put the classic Hello World in the console. We recommend to keep the log panel open while working at these challenges. Reading the logs you can be aware of the nature of the errors that may occur."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text" : "You didn't put <code>\"Hello World\"</code> in the console",
+          "testString" : "() => ($.get(window.projectUrl + '/_api/hello-console').then(function(data){ assert.isTrue(data.passed); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -50,7 +55,12 @@
         "Use the app.get() method to serve the string Hello Express, to GET requests matching the / root path. Be sure that your code works by looking at the logs, then see the results in your browser, clicking the button ‘Show Live’ in the HyperDev UI."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text" : "Your app doesn't serve the string 'Hello Express'",
+          "testString" : "() => ($.get(window.projectUrl).then(function(data){ assert.equal(data, 'Hello Express'); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -85,7 +95,12 @@
         "Note: You can edit the solution of the preceding challenge, or create a new one. If you create a new solution, keep in mind that Express evaluates the routes from top to bottom. It executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text" : "Your app doesn't serve the file views/index.html",
+          "testString" : "() => ($.get(window.projectUrl).then(function(data){ assert.match(data, /<h1>.*<\\/h1>/); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -114,11 +129,16 @@
       "title": "Serve Static assets",
       "description": [
         "An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images). In Express you can put in place this functionality using the middleware express.static(<public-dir-absolute_path>). If don’t know what a midleware is, don’t worry. We’ll discuss about it later in details. Basically middleware are function that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method app.use([optional-path], <mware function>). The first path argument is optional. If you don’t pass it, the middleware will be executed for all the requests.",
-        "Mount theexpress.static() middleware for all the requests with app.use(). The absolute path to the assets folder is __dirname + /public.",
+        "Mount the express.static() middleware for all the requests with app.use(). The absolute path to the assets folder is __dirname + /public.",
         "Now your app should be able to serve a CSS stylesheet. From outside the public folder will appear mounted to the root directory. Your front-page should look a little better now"
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text" : "Your app doesn't serve the file views/index.html",
+          "testString" : "() => ($.get(window.projectUrl + '/style.css').then(function(data){ assert.match(data, /body\\s*\\{[^\\}]*\\}/); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -151,7 +171,12 @@
         "Serve the object <code>{message: 'json'}</code> as a response in JSON format, to the GET requests to the route /json. Point your browser to <your-app-url>/json, you should see the message on the screen."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text" : "The endpoint /json doesn't serve the json Object <code>{\"message\": \"Hello json\"}</code>",
+          "testString" : "() => ($.get(window.projectUrl + '/json').then(function(data){ assert.equal(data.message, 'Hello json'); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -179,7 +204,7 @@
       "id": "9d764658c441eaafaeb5bdef",
       "title": "Use the .env file",
       "description": [
-        "The .env file is an hidden file that is used to pass environment variables to your application. This file is secret, noone but you can access it. In this file you should store data that you want to keep secret. For example you can store API keys from external services or your database URI. You can also use it to store configuration options. Setting that options you can change the behavior of your, without the need of rewriting some code. The environment variables are accessible from the app as process.env.VAR_NAME. The process.env object is a global Node object. The variables are passed as strings. By convention the variable names are all uppercase, with words separated by _. The .env is a shell file so you don’t need to quote names or values, and there cannot be space around the = e.g. VAR_NAME=value. Usually you will put each variable definition on a separate line.",
+        "The .env file is an hidden file that is used to pass environment variables to your application. This file is secret, noone but you can access it. In this file you should store data that you want to keep secret. For example you can store API keys from external services or your database URI. You can also use it to store configuration options. Setting that options you can change the behavior of your application, without the need of rewriting some code. The environment variables are accessible from the app as process.env.VAR_NAME. The process.env object is a global Node object. The variables are passed as strings. By convention the variable names are all uppercase, with words separated by _. The .env is a shell file so you don’t need to quote names or values, and there cannot be space around the = e.g. VAR_NAME=value. Usually you will put each variable definition on a separate line.",
         "We are going to use one environment variable as a configuration option. Store the variable MESSAGE_STYLE=uppercase in the .env file. Then change the GET /json route handler so that if process.env.MESSAGE_STYLE equals to uppercase the response object becomes {message: HELLO JSON}."
       ],
       "challengeSeed": [],

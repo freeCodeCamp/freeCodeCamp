@@ -23,7 +23,7 @@
       "tests": [
         {
           "text": "\"author\" key missing in package.json",
-          "testString": "() => ($.get('https://red-moose.hyperdev.space/' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.author); }).promise())"
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.author); }).promise())"
         }
       ],
       "solutions": [],
@@ -65,7 +65,7 @@
       "tests": [
         {
           "text": "\"description\" key missing in package.json",
-          "testString": "(cb) => {$.get('https://red-moose.hyperdev.space/' + '/_api/package.json', function(data) { try {  var packJson = JSON.parse(data); assert(packJson.description); cb(); } catch(e) { cb(e); } }) }"
+          "testString": "(cb) => {$.get('https://red-moose.hyperdev.space' + '/_api/package.json', function(data) { try {  var packJson = JSON.parse(data); assert(packJson.description); cb(); } catch(e) { cb(e); } }) }"
         }
       ],
       "solutions": [],
@@ -104,7 +104,20 @@
         "One of the keywords should be freecodecamp."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"keywords\" key missing in package.json",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.keywords); }).promise())"
+        },
+        {
+          "text": "\"keywords\" key is not an Array",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.isArray(packJson.keywords); }).promise())"
+        },
+        {
+          "text": "\"keywords\" doesn't include \"freecodecamp\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.include(packJson.keywords, 'freecodecamp'); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -142,7 +155,12 @@
         "Fill the license-field in the package.json of your HyperDev project as you find suitable."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"license\" key missing in package.json",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.license); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -177,7 +195,12 @@
         "Add a version to the package.json in your HyperDev project."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"version\" key missing in package.json",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.version); }).promise())"
+        },
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -216,7 +239,16 @@
         "Moment is a handy library for working with time and dates."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" doesn't include \"moment\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'moment'); }).promise())"
+        },
+        {
+          "text": "\"moment\" version doesn't match \"2.14.0\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.match(packJson.dependencies.moment, /^[\\^\\~]?2\\.14\\.0/); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -260,7 +292,16 @@
         "In the dependencies-section of your package.json, change the version of moment to match MAJOR version 2, MINOR version 10 and PATCH version 2"
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" doesn't include \"moment\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'moment'); }).promise())"
+        },
+        {
+          "text": "\"moment\" version doesn't match \"2.10.2\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.match(packJson.dependencies.moment, /^[\\^\\~]?2\\.10\\.2/); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -297,7 +338,16 @@
         "Note that the version numbers themselves not should be changed."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" doesn't include \"moment\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'moment'); }).promise())"
+        },
+        {
+          "text": "\"moment\" version doesn't match \"~2.10.x\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.match(packJson.dependencies.moment, /^\\~2\\.10\\./); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -334,7 +384,16 @@
         "Note that the version numbers themselves not should be changed."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" doesn't include \"moment\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'moment'); }).promise())"
+        },
+        {
+          "text": "\"moment\" version doesn't match \"^2.x.x\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.match(packJson.dependencies.moment, /^\\^2\\./); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
@@ -370,7 +429,12 @@
         "Make sure you have the right amount of commas after removing it."
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" does include \"moment\"",
+          "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.notProperty(packJson.dependencies, 'moment'); }).promise())"
+        },
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
