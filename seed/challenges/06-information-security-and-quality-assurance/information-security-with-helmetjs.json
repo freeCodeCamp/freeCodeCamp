@@ -5,7 +5,7 @@
   "helpRoom": "HelpBackend",
   "challenges": [
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e0dfaeb5bdef",
       "title": "Install and Require Helmet.js",
       "description": [
         "Helmet helps you secure your Express apps by setting various HTTP headers. Install the package, then require it."
@@ -41,7 +41,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e1dfaeb5bdef",
       "title": "Hide potentially dangerous information using helmet.hidePoweredBy()",
       "description": [
         "Hackers can exploit known vulnerabilities in Express/Node if they see that your site is powered by Express. X-Powered-By: Express is sent in every request coming from Express by default. The helmet.hidePoweredBy() middleware will remove the X-Powered-By header. You can also explicitly set the header to something else, to throw people off. e.g. app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))"
@@ -77,7 +77,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e2dfaeb5bdef",
       "title": "Mitigate the risk of clickjacking - helmet.frameguard()",
       "description": [
         "Your page could be put in a <frame> or <iframe> without your consent. This can result in clickjacking attacks, among other things. Clickjacking is a technique of tricking a user into interacting with a page different from what the user thinks it is. This can be obtained executing your page in a malicious context, by mean of iframing. In that context a hacker can put a hidden layer over your page. Hidden buttons can be used to run bad scripts. This middleware sets the X-Frame-Options header. It restricts who can put your site in a frame. It has three modes: DENY, SAMEORIGIN, and ALLOW-FROM.",
@@ -114,7 +114,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e3dfaeb5bdef",
       "title": "Mitigate the risk of Cross Site Scripting (XSS) Attacks - helmet.xssFilter()",
       "description": [
         "Cross-site scripting (XSS) is a frequent type of attack where malicious script are injected into vulnerable pages, on the purpouse of stealing sensitive data like session cookies, or passwords.",
@@ -154,7 +154,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e4dfaeb5bdef",
       "title": "Avoid inferring the response MIME type - helmet.noSniff()",
       "description": [
         "Browsers can use content or MIME sniffing to adapt to different datatypes coming from a response. They override the Content-Type headers to guess and process the data. While this can be convenient in some scenarios, it can also lead to some dangerous attacks. This middleware sets the X-Content-Type-Options header to nosniff. This instructs the browser to not bypass the provided Content-Type."
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e5dfaeb5bdef",
       "title": "Prevent IE from opening untrusted HTML - helmet.ieNoOpen()",
       "description": [
         "Some web applications will serve untrusted HTML for download. Some versions of Internet Explorer by default open those HTML files in the context of your site. This means that an untrusted HTML page could start doing bad things in the context of your pages. This middleware sets the X-Download-Options header to noopen. This will prevent IE users from executing downloads in the trusted site’s context."
@@ -226,7 +226,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e6dfaeb5bdef",
       "title": "Ask browsers to access your site via HTTPS only - helmet.hsts()",
       "description": [
         "HTTP Strict Transport Security (HSTS) is a web security policy which helps to protect websites against protocol downgrade attacks and cookie hijacking. If your website can be accessed via HTTPS you can ask user’s browsers to avoid using insecure HTTP. By setting the header Strict-Transport-Security, you tell the browsers to use HTTPS for the future requests in a specified amount of time. This will work for the requests coming after the initial request.",
@@ -264,7 +264,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e7dfaeb5bdef",
       "title": "Disable DNS Prefetching - helmet.dnsPrefetchControl()",
       "description": [
         "To improve performance, most browsers prefetch DNS records for the links in a page. In that way the destination ip is already known when the user clicks on a link. This may lead to over-use of the DNS service (if you own a big website, visited by millions people…), privacy issues (one eavesdropper could infer that you are on a certain page), or page statistics alteration (some links may appear visited even if they are not). If you have high security needs you can disable DNS prefetching, at the cost of a performance penalty."
@@ -300,7 +300,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e8dfaeb5bdef",
       "title": "Disable Client-Side Caching - helmet.noCache()",
       "description": [
         "If you are releasing an update for your website, and you want the users to always download the newer version, you can (try to) disable caching on client’s browser. It can be useful in development too. Caching has performance benefits, and you will lose them, use this option only when there is a real need."
@@ -336,7 +336,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441e9dfaeb5bdef",
       "title": "Set a Content Security Policy - helmet.contentSecurityPolicy()",
       "description": [
         "This challenge highlights one promising new defense that can significantly reduce the risk and impact of many type of attacks in modern browsers. By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect protect your app from XSS vulnerabilities, undesidered tracking, malicious frqmes, and much more. CSP works by defining a whitelist of content sources which are trusted. You can configure them for each kind of resource a web page may need (scripts, stylesheets, fonts, frames, media, and so on…). There are multiple directives available, so a website owner can have a granular control. See HTML 5 Rocks, KeyCDN for more details. Unfortunately CSP in unsupported by older browser.",
@@ -374,7 +374,7 @@
       }
     },
     {
-      "id": "010246c8c441eddfaeb5bdef",
+      "id": "010246c8c441efdfaeb5bdef",
       "title": "The ‘parent’ helmet() middleware",
       "description": [
         "app.use(helmet()) will automatically include all the middleware introduced above, except noCache(), and contentSecurityPolicy(), but these can be enabled if necessary. You can also disable or configure any other middleware individually, using a configuration object.",
