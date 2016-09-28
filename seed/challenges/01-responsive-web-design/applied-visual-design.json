@@ -11,7 +11,19 @@
           [
             "",
             "",
-            "Visual Design in web development is a sweeping topic that intertwines typography, color theory, graphics, animation, and the overall layout of a page in order to most effectively deliver a site's message and enhance user experience. Many books have been written exploring these themes, and what constitutes good design has been debated long before the birth of the internet.<br><br>At a basic level, most web content provides a user with information, and the Visual Design of the page can dramatically influence its presentation. In web development, HTML gives structure and semantics to the underlying material, and CSS controls the layout and appearance of it. This section aims to cover some of the basic tools CSS offers that give developers the flexibility to craft their own visual designs.",
+            "Visual Design in web development is a broad topic. It combines typography, color theory, graphics, animation, and page layout to help deliver a site's message. Many books cover these themes, and what defines good design is a well-discussed subject.",
+            ""
+          ],
+          [
+            "",
+            "",
+            "At a basic level, most web content provides a user with information. The Visual Design of the page can influence its presentation and a user's experience. In web development, HTML gives structure and semantics to a page's content, and CSS controls the layout and appearance of it.",
+            ""
+          ],
+          [
+            "",
+            "",
+            "This section's goal is to cover some of the basic CSS tools that allow developers to create their own visual designs.",
             ""
           ]
         ],
