@@ -76,7 +76,7 @@
       ],
       "tests": [
         [
-          "Algorithms expressed exponentially like O(N^2) can work well in certain situations, so you shouldn't avoid them completely.",
+          "Algorithms expressed exponentially like O(C^N), where C is a constant can work well in certain situations, so you shouldn't avoid them completely.",
           false,
           "While they can work in certain small scale situations, they aren't good practice because they will not work larger scale."
         ],
