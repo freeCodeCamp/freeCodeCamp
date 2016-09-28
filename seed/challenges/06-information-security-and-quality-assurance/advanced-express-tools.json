@@ -4,12 +4,305 @@
   "time": "5 hours",
   "helpRoom": "Help",
   "challenges": [
-    {
-      "id": "c37123c8c441eddfaeb5bdef",
+   {
+      "id": "110246c8c441eddfaeb5bdef",
       "title": "",
-      "description": [],
-      "challengeSeed": [],
-      "tests": [],
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+   {
+      "id": "110246c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+   {
+      "id": "110246c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+   {
+      "id": "110246c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+   {
+      "id": "110246c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+   {
+      "id": "110246c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+   {
+      "id": "110246c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+   {
+      "id": "110246c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [
+
+      ],
+      "hints": [],
       "type": "waypoint",
       "challengeType": 0,
       "translations": {
