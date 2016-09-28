@@ -1,0 +1,23 @@
+FROM node:6.6.0
+
+MAINTAINER Murali Paluru <mpaluru@gmail.com>
+
+RUN mkdir -p /src /opt/freecodecamp/bin /opt/freecodecamp/cache
+
+WORKDIR /src
+
+COPY package.json /opt/freecodecamp/cache/package.json
+
+RUN cd /opt/freecodecamp/cache && npm install && npm install -g gulp bower
+
+COPY bower.json /opt/freecodecamp/cache/bower.json
+
+RUN cd /opt/freecodecamp/cache && bower --allow-root install
+
+COPY dev_docker_entrypoint.sh /opt/freecodecamp/bin/entrypoint.sh
+
+VOLUME /src
+
+EXPOSE 2999 3000 3001 3002
+
+ENTRYPOINT ["/opt/freecodecamp/bin/entrypoint.sh"]
