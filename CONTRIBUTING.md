@@ -61,8 +61,8 @@ If you've found a bug that is not on the board, [follow these steps](#found-a-bu
 | Prerequisite                                | Version |
 | ------------------------------------------- | ------- |
 | [MongoDB](http://www.mongodb.org/downloads) | `~ ^3`  |
-| [Node.js](http://nodejs.org)                | `~ ^4`  |
-| npm (comes with Node)                       | `~ ^2`  |
+| [Node.js](http://nodejs.org)                | `~ ^6`  |
+| npm (comes with Node)                       | `~ ^3`  |
 
 > _Updating to the latest releases is recommended_.
 
