@@ -11,13 +11,19 @@
             [
               "",
               "",
-              "\"Accessibility\" generally means packaging your web content and creating a user interface that can be understood, navigated, and interacted with by the broadest audience possible. This includes people with visual, auditory, mobility, or cognitive disabilities. Websites should be open and accessible to everyone, regardless of a user's abilities or resources. Some users may rely on assistive technology such as a screen reader or voice recognition software, and others may only be able to navigate through a site using a keyboard. Keeping the needs of various users in mind when developing your project can go a long way towards achieving the goal of an open web.",
+              "\"Accessibility\" generally means having web content and a user interface that can be understood, navigated, and interacted with by a broad audience. This includes people with visual, auditory, mobility, or cognitive disabilities.",
               ""
             ],
             [
               "",
               "",
-              "Here are three general concepts we'll explore more throughout the following challenges:<br><br><ol><br><li>have well-organized code that uses appropriate markup</li><br><li>ensure text alternatives exist for non-text and visual content</li><br><li>create an easily-navigated page that's keyboard-friendly</li><br></ol><br><br>Having accessible web content is an ongoing challenge. A great resource for your projects going forward is the W3 Consortium's Web Content Accessibility Guidelines (WCAG). They set the international standard for accessibility and provide a number of criteria you can use to check your work against.",
+              "Websites should be open and accessible to everyone, regardless of a user's abilities or resources. Some users rely on assistive technology such as a screen reader or voice recognition software. Other users may only be able to navigate through a site using a keyboard. Keeping the needs of various users in mind when developing your project can go a long way towards creating an open web.",
+              ""
+            ],
+            [
+              "",
+              "",
+              "Here are three general concepts we'll explore more throughout the following challenges:<br><br><ol><br><li>have well-organized code that uses appropriate markup</li><br><li>ensure text alternatives exist for non-text and visual content</li><br><li>create an easily-navigated page that's keyboard-friendly</li><br></ol><br><br>Having accessible web content is an ongoing challenge. A great resource for your projects going forward is the W3 Consortium's Web Content Accessibility Guidelines (WCAG). They set the international standard for accessibility and provide a number of criteria you can use to check your work.",
               ""
             ]
           ],
@@ -84,7 +90,7 @@
       },
       {
         "id": "ad7123c8c441ea2faeb5bdef",
-        "title": "Know when alt text should be left blank",
+        "title": "Know When Alt Text Should be Left Blank",
         "description": [
           "In the last challenge, you learned that including an <code>alt</code> attribute on img tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only, and <code>alt</code> text may seem redundant or unnecessary. In situations when an image is already explained with text content, or does not add meaning to a page, the <code>img</code> still needs an <code>alt</code> attribute, but it can be set to an empty string. Here's an example:",
           "<code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>",
@@ -310,7 +316,7 @@
       },
       {
         "id": "ad7123c8c441ea6faeb5bdef",
-        "title": "Make Screen Reader Navigation easier with the Header Landmark",
+        "title": "Make Screen Reader Navigation Easier with the Header Landmark",
         "description": [
           "The next HTML5 element that adds semantic meaning and improves accessibility is the <code>header</code> tag. It's used to wrap introductory information or navigation links for its parent tag, and works well around content that's repeated at the top on multiple pages. <code>Header</code> shares the embedded landmark feature we saw with <code>main</code>, allowing assistive technologies to quickly navigate to that content.",
           "Note: <code>Header</code> is meant for use in the <code>body</code> tag of your HTML document. This is different than the <code>head</code> element, which contains the page's title, meta information, etc.",
@@ -370,7 +376,7 @@
       },
       {
         "id": "ad7123c8c441ea7faeb5bdef",
-        "title": "Make Screen Reader Navigation easier to access with the Nav Landmark",
+        "title": "Make Screen Reader Navigation Easier with the Nav Landmark",
         "description": [
           "The <code>nav</code> element is another item in the HTML5 suite with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page. If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a <code>nav</code> tag as well, using a <code>footer</code> (covered in the next challenge) is sufficient.",
           "<h4>Instructions</h4>",
@@ -865,9 +871,9 @@
       },
       {
         "id": "ad7123c8c441e95faeb5bdef",
-        "title": "Make Elements only Visible to a Screen Reader by Using Custom CSS",
+        "title": "Make Elements Only Visible to a Screen Reader by Using Custom CSS",
         "description": [
-          "Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to illustrate the importance of creating a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect. However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is clearly conveyed in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.",
+          "Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to show the importance of a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect. However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.",
           "Here's an example of the CSS rules that accomplish this:",
           "<blockquote>.sr-only {<br>  position: absolute;<br>  left: -10000px;<br>  width: 1px;<br>  height: 1px;<br>  top: auto;<br>  overflow: hidden;<br>}</blockquote>",
           "Note: The following CSS approaches will NOT do the same thing:",
@@ -997,9 +1003,9 @@
       },
       {
         "id": "ad7123c8c441e93faeb5bdef",
-        "title": "Improve readability with high contrast text",
+        "title": "Improve Readability with High Contrast Text",
         "description": [
-          "Low contrast between the foreground and background colors can make text difficult to read. Sufficient contrast improves the readability of your content, but what exactly does \"sufficient\" mean? The Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. The ratio is calculated by comparing the relative luminance values of two colors, and ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the strongest contrast. There are many contrast checking tools available online that calculate this ratio for you.",
+          "Low contrast between the foreground and background colors can make text difficult to read. Sufficient contrast improves the readability of your content, but what exactly does \"sufficient\" mean? The Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. The ratio is calculated by comparing the relative luminance values of two colors. This ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the strongest contrast. There are many contrast checking tools available online that calculate this ratio for you.",
           "<h4>Instructions</h4>",
           "Camper Cat's choice of light gray text on a white background for his recent blog post has a 1.5:1 contrast ratio, making it hard to read. Change the current gray (<code>#D3D3D3</code>) <code>color</code> of the text to a darker gray (<code>#636363</code>) to improve the contrast ratio to 6:1."
         ],
@@ -1054,10 +1060,10 @@
       },
       {
         "id": "ad7123c8c441e92faeb5bdef",
-        "title": "Avoid Colorblindness Colors by using Sufficient Contrast",
+        "title": "Avoid Colorblindness Issues by Using Sufficient Contrast",
         "description": [
-          "Color is an integral part of visual design, but its use introduces two accessibility issues. First, color alone should not be used as the only way to convey important information because screen reader users won't see it. Second, foreground and background colors need sufficient contrast so colorblind users can distinguish them. We've covered having text alternatives to address the first issue, and the last challenge introduced contrast checking tools to help with the second. The WCAG recommended contrast ratio of 4.5:1 applies for color use as well as gray-scale combinations.",
-          "Colorblind users have trouble distinguishing some colors from others - usually in hue but sometimes lightness as well. You may recall the contrast ratio is calculated using the relative luminance (or lightness) values of the foreground and background colors. In practice, the 4.5:1 ratio can be targeted by darkening the darker color and lightening the lighter one with the aid of a color contrast checker. Darker colors on the color wheel are considered to be blues, violets, magentas, and reds, whereas lighter colors are oranges, yellows, greens, and blue-greens.",
+          "Color is a large part of visual design, but its use introduces two accessibility issues. First, color alone should not be used as the only way to convey important information because screen reader users won't see it. Second, foreground and background colors need sufficient contrast so colorblind users can distinguish them. We've covered having text alternatives to address the first issue. The last challenge introduced contrast checking tools to help with the second. The WCAG-recommended contrast ratio of 4.5:1 applies for color use as well as gray-scale combinations.",
+          "Colorblind users have trouble distinguishing some colors from others - usually in hue but sometimes lightness as well. You may recall the contrast ratio is calculated using the relative luminance (or lightness) values of the foreground and background colors. In practice, the 4.5:1 ratio can be reached by darkening the darker color and lightening the lighter one with the aid of a color contrast checker. Darker colors on the color wheel are considered to be blues, violets, magentas, and reds, whereas lighter colors are oranges, yellows, greens, and blue-greens.",
           "<h4>Instructions</h4>",
           "Camper Cat is experimenting with using color for his blog text and background, but his current combination of a greenish <code>background-color</code> with maroon text <code>color</code> has a 2.5:1 contrast ratio. We can easily adjust the lightness of the colors since he declared them using the CSS <code>hsl()</code> property (which stands for hue, saturation, lightness) by changing the third argument. Increase the <code>background-color</code> lightness value from 35% to 55%, and decrease the <code>color</code> lightness value from 20% to 15%. This improves the contrast to 5.9:1."
         ],
@@ -1114,7 +1120,7 @@
         "id": "ad7123c8c441e91faeb5bdef",
         "title": "Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information",
         "description": [
-          "There are various forms of colorblindness, ranging from a reduced sensitivity to a certain wavelength of light to the inability to perceive color at all. The most common form is a reduced sensitivity to detect greens. If two colors with similar hues (that are close to the wavelength the colorblind person is deficient to) are the foreground and background color of your content, that user may not be able to distinguish them. Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.",
+          "There are various forms of colorblindness, ranging from a reduced sensitivity to a certain wavelength of light to the inability to see color at all. The most common form is a reduced sensitivity to detect greens. For example, if two similar green colors are the foreground and background color of your content, a colorblind user may not be able to distinguish them. Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.",
           "Note: Some online color picking tools include visual simulations of how colors appear for different types of colorblindness. These are great resources in addition to online contrast checking calculators.",
           "<h4>Instructions</h4>",
           "Camper Cat is testing different styles for an important button, but the yellow (<code>#FFFF33</code>) <code>background-color</code> and the green (<code>#33FF33</code>) text <code>color</code> are neighboring hues on the color wheel and virtually indistinguishable for some colorblind users. (Their similar lightness also fails the contrast ratio check). Change the text <code>color</code> to a dark blue (<code>#003366</code>) to solve both problems."
@@ -1167,7 +1173,7 @@
       },
       {
         "id": "ad7123c8c441e90faeb5bdef",
-        "title": "Give Links Meaning by using Descriptive Link Text",
+        "title": "Give Links Meaning by Using Descriptive Link Text",
         "description": [
           "As we've seen in prior challenges, screen reader users have different options for what type of content their device reads, including skipping to (or over) landmark elements, jumping to the main content, or getting a page summary from the headings. Another option is to only hear the links available on a page. Screen readers do this by reading the link text, or what's between the anchor (<code>a</code>) tags. Having a list of \"click here\" or \"read more\" links isn't helpful, instead, use brief but descriptive text within the <code>a</code> tags to provide more meaning for these users.",
           "<h4>Instructions</h4>",
@@ -1271,7 +1277,7 @@
       },
       {
         "id": "ad7123c8c441e88faeb5bdef",
-        "title": "Use tabindex to add keyboard focus to an element",
+        "title": "Use Tabindex to Add keyboard Focus to an Element",
         "description": [
           "The HTML <code>tabindex</code> attribute has three distinct functions relating to an element's keyboard focus. Its presence on a tag indicates that element can be focused on, and the value (an integer that's positive, negative, or zero) determines the behavior. We'll start with the special values of zero and a negative number.",
           "Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page, in the same order as they come in the HTML source markup. This same functionality can be given to other elements, such as <code>div</code>, <code>span</code>, and <code>p</code>, by placing a <code>tabindex=\"0\"</code> attribute on them.",
@@ -1357,7 +1363,7 @@
       },
       {
         "id": "ad7123c8c441e87faeb5bdef",
-        "title": "Use tabindex to specify the order of keyboard focus for several elements",
+        "title": "Use Tabindex to Specify the Order of Keyboard Focus for Several Elements",
         "description": [
           "The next function that the <code>tabindex</code> attribute offers is to specify the exact tab order of elements. This is achieved when the value of the attribute is set to a positive number of 1 or higher. Setting a tabindex=\"1\" will bring keyboard focus to that element first, then cycle through the sequence of specified <code>tabindex</code> values (2, 3, etc.), before moving to default and <code>tabindex=\"0\"</code> items. It's important to note that when the tab order is set this way, it overrides the default order (which uses the HTML source), and may confuse users who are expecting to start navigation from the top of the page. This technique may be necessary in some circumstances, but in terms of accessibility, take care before applying it.",
           "Here's an example:",
