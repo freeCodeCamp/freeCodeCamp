@@ -12,7 +12,7 @@ export default function AvatarPointsNavItem({ picture, points, username }) {
       <Link to='/settings'>
         <span className='brownie-points-nav'>
           <span className='hidden-md hidden-lg'> { username } </span>
-          <span class='brownie-points'> [ { points || 1 } ] </span>
+          <span className='brownie-points'> [ { points || 1 } ] </span>
         </span>
         <span className='hidden-xs hidden-sm avatar'>
           <img
