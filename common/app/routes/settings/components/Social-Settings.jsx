@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
 import FA from 'react-fontawesome';
+import classnames from 'classnames';
 
 export default function SocialSettings({
   isGithubCool,
@@ -22,33 +23,44 @@ export default function SocialSettings({
       { githubCopy }
     </Button>
   ];
-  if (isGithubCool && !isTwitter) {
-    buttons.push((
-      <Button
-        block={ true }
-        bsSize='lg'
-        className='btn-link-social btn-twitter'
-        href='/link/twitter'
-        key='twitter'
-        >
-        <FA name='twitter' />
-        Add my Twitter to my portfolio
-      </Button>
-    ));
-  }
-  if (isGithubCool && !isLinkedIn) {
-    buttons.push((
-      <Button
-        block={ true }
-        bsSize='lg'
-        className='btn-link-social btn-linkedin'
-        href='/link/linkedin'
-        key='linkedin'
-        >
-        <FA name='linkedin' />
-        Add my LinkedIn to my portfolio
-      </Button>
-    ));
+  const socials = [
+    {
+      isActive: isTwitter,
+      identifier: 'twitter',
+      text: 'Twitter'
+    },
+    {
+      isActive: isLinkedIn,
+      identifier: 'linkedin',
+      text: 'LinkedIn'
+    }
+  ];
+  if (isGithubCool) {
+    socials.forEach(({ isActive, identifier, text }) => {
+      const socialClass = classnames(
+        'btn-link-social',
+        `btn-${identifier}`,
+        { active: isActive }
+      );
+      const socialLink = isActive ?
+        `/account/unlink/${identifier}` :
+        `/link/${identifier}`;
+      const socialText = isTwitter ?
+        `Remove my ${text} from my portfolio` :
+        `Add my ${text} to my portfolio`;
+      buttons.push((
+        <Button
+          block={ true }
+          bsSize='lg'
+          className={ socialClass }
+          href={ socialLink }
+          key={ identifier }
+          >
+          <FA name={ identifier } />
+          { socialText }
+        </Button>
+      ));
+    });
   }
   return (<div>{ buttons }</div>);
 }
