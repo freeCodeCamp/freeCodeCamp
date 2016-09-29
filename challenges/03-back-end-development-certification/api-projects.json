@@ -138,7 +138,7 @@
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/whoami/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/whoami/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-api-development-projects</a>.",
         "Here's the specific user story you should implement for this project:",
-        "<strong>User Story:</strong> I can get the IP address, language and operating system for my browser.",
+        "<strong>User Story:</strong> I can get the IP address, language, and operating system for my browser as a JSON object.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
