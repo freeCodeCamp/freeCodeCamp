@@ -91,7 +91,10 @@ export const moveToNextChallenge = createAction(types.moveToNextChallenge);
 // code storage
 export const saveCode = createAction(types.saveCode);
 export const loadCode = createAction(types.loadCode);
-export const savedCodeFound = createAction(types.savedCodeFound);
+export const savedCodeFound = createAction(
+  types.savedCodeFound,
+  (files, challenge) => ({ files, challenge })
+);
 export const clearSavedCode = createAction(types.clearSavedCode);
 
 
