@@ -25,8 +25,8 @@
       ],
       "tests": [
         {
-          "text": "Your <code>h1</code> element should have the text \"Hello World\".');",
-          "testString": "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
+          "text": "Your <code>h1</code> element should have the text \"Hello World\".",
+          "testString": "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".')"
         }
       ],
       "type": "waypoint",
@@ -108,10 +108,10 @@
         "<h1>Hello World</h1>"
       ],
       "tests": [
-        "assert(($(\"h2\").length > 0), 'message: Create an <code>h2</code> element.');",
-        "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, 'message: Make sure your <code>h2</code> element has a closing tag.');",
-        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($(\"h2\").text()), 'message: Your <code>h2</code> element should have the text \"CatPhotoApp\".');",
-        "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
+        "assert(($(\"h2\").length > 0), 'message: Create an <code>h2</code> element.')",
+        "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, 'message: Make sure your <code>h2</code> element has a closing tag.')",
+        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($(\"h2\").text()), 'message: Your <code>h2</code> element should have the text \"CatPhotoApp\".')",
+        "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".')"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -172,7 +172,7 @@
         "<h2>CatPhotoApp</h2>"
       ],
       "tests": [
-        "assert(($(\"p\").length > 0), 'message: Create a <code>p</code> element.');",
+        "assert(($(\"p\").length > 0), 'message: Create a <code>p</code> element.')",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should have the text \"Hello Paragraph\".');",
         "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure your <code>p</code> element has a closing tag.');"
       ],
