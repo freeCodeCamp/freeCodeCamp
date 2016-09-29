@@ -12,4 +12,4 @@ html(lang='en')
     script.
       window.webpackManifest = !{JSON.stringify(chunkManifest || {})};
     script(src=rev('/js', 'vendor-challenges.js'))
-    script(src=getBundleLocation())
+    script(src=rev('/js', 'bundle.js'))
