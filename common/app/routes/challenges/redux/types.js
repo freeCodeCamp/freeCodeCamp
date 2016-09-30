@@ -2,6 +2,8 @@ import createTypes from '../../../utils/create-types';
 
 export default createTypes([
   // step
+  'stepForward',
+  'stepBackward',
   'goToStep',
   'completeAction',
   'openLightBoxImage',
@@ -17,6 +19,8 @@ export default createTypes([
   'replaceChallenge',
   'resetUi',
   'updateHint',
+  'lockUntrustedCode',
+  'unlockUntrustedCode',
 
   // map
   'updateFilter',
@@ -49,6 +53,7 @@ export default createTypes([
   'saveCode',
   'loadCode',
   'savedCodeFound',
+  'clearSavedCode',
 
   // video challenges
   'toggleQuestionView',

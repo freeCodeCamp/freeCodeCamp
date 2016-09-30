@@ -191,10 +191,10 @@ export default class extends React.Component {
       return (
         <NavItem
           eventKey={ 2 }
-          href='/signin'
-          key='signin'
+          href='/signup'
+          key='signup'
           >
-          Sign In
+          Sign Up
         </NavItem>
       );
     }

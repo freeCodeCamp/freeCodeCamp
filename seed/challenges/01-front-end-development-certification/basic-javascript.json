@@ -1069,29 +1069,27 @@
         "This signals to JavaScript that the following quote is not the end of the string, but should instead appear inside the string. So if you were to print this to the console, you would get:",
         "<code>Alan said, \"Peter is learning JavaScript\".</code>",
         "<h4>Instructions</h4>",
-        "Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable so that <em>if</em> you were to print it to the console, you would see:",
+        "Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable so that if you were to print it to the console, you would see:",
         "<code>I am a \"double quoted\" string inside \"double quotes\".</code>"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-        "var myStr; // Change this line",
+        "var myStr = \"\"; // Change this line",
         "",
         ""
       ],
       "tail": [
         "(function(){",
         "  if(typeof myStr === 'string') {",
-        "    return \"myStr = \" + myStr;",
+        "    console.log(\"myStr = \\\"\" + myStr + \"\\\"\");",
         "  } else {",
-        "    return \"myStr is undefined\";",
+        "    console.log(\"myStr is undefined\");",
         "  }",
         "})();"
       ],
-      "solutions": [
-        "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\";"
-      ],
+      "solutions": [],
       "tests": [
-        "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
+        "assert(code.match(/\\\\\"/g).length === 6 && code.match(/[^\\\\]\"/g).length === 10, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
         "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
       ],
       "type": "waypoint",
@@ -1980,8 +1978,7 @@
       ],
       "tests": [
         "assert(myData === 8, 'message: <code>myData</code> should be equal to <code>8</code>.');",
-        "assert(/myArray\\[\\d+\\]\\[\\d+\\]/g.test(code), 'message: You should be using bracket notation to read the value from <code>myArray</code>.');",
-        "assert(/myData\\s*?=\\s*?myArray\\[\\d+\\]\\[\\d+\\]\\s*?;/g.test(code), 'message: You should only be reading one value from <code>myArray</code>.');"
+        "assert(/myArray\\[2\\]\\[1\\]/g.test(code) && !/myData\\s*=\\s*(?:.*[-+*/%]|\\d)/g.test(code), 'message: You should be using bracket notation to read the correct value from <code>myArray</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -3746,7 +3743,7 @@
         "es": {
           "title": "Código de golf",
           "description": [
-            "En el juego de <a href='https://en.wikipedia.org/wiki/Golf' target='_blank'>golf</a> cada hoyo tiene un <dfn>par</dfn> promedio para el número de <dfn>golpes</dfn> necesarios para meter la pelota. Dependiendo de que tan lejos por encima o por debajo del <code>par</code> estén tus <code>golpes</code>, habrá un sobrenombre diferente.",
+            "En el juego de <a href='https://es.wikipedia.org/wiki/Golf' target='_blank'>golf</a> cada hoyo tiene un <dfn>par</dfn> promedio para el número de <dfn>golpes</dfn> necesarios para meter la pelota. Dependiendo de que tan lejos por encima o por debajo del <code>par</code> estén tus <code>golpes</code>, habrá un sobrenombre diferente.",
             "Tu función pasará un <code>par</code> y el número de <code>golpes</code>, y retornará una cadena de acuerdo a esta tabla (basada en el orden de prioridad - arriba (lo más alto) hacia abajo (lo más bajo)):",
             "<table class=\"table table-striped\"><thead><tr><th>Golpes</th><th>Retorna</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
             "Tanto <code>par</code> como <code>golpes</code> siempre serán numéricos y positivos."

@@ -45,6 +45,7 @@ const initialUiState = {
   shouldShowQuestions: false
 };
 const initialState = {
+  isCodeLocked: false,
   id: '',
   challenge: '',
   helpChatRoom: 'Help',
@@ -67,7 +68,7 @@ const mainReducer = handleActions(
       ...state,
       challenge: payload
     }),
-    [types.updateCurrentChallenge]: (state, { payload: challenge }) => ({
+    [types.updateCurrentChallenge]: (state, { payload: challenge = {} }) => ({
       ...state,
       id: challenge.id,
       // used mainly to find code storage
@@ -87,6 +88,14 @@ const mainReducer = handleActions(
       hintIndex: state.hintIndex + 1 >= state.numOfHints ?
         0 :
         state.hintIndex + 1
+    }),
+    [types.lockUntrustedCode]: state => ({
+      ...state,
+      isCodeLocked: true
+    }),
+    [types.unlockUntrustedCode]: state => ({
+      ...state,
+      isCodeLocked: false
     }),
     [types.executeChallenge]: state => ({
       ...state,
@@ -215,7 +224,7 @@ const filesReducer = handleActions(
     [types.savedCodeFound]: (state, { payload: files }) => ({
       ...files
     }),
-    [types.updateCurrentChallenge]: (state, { payload: challenge }) => {
+    [types.updateCurrentChallenge]: (state, { payload: challenge = {} }) => {
       if (challenge.type === 'mod') {
         return challenge.files;
       }

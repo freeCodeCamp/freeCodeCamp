@@ -935,8 +935,9 @@
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
         "Copy the following code snippet and paste it into the top of your code editor:",
         "<code>&#60;link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>",
-        "Now you can set <code>Lobster</code> as a font-family value on your <code>h2</code> element.",
-        "Apply the <code>font-family</code> of <code>Lobster</code> to your <code>h2</code> element."
+        "Remember, before you can apply styles, like a new font, to an element, you'll need to create a CSS rule.",
+        "<blockquote>h2 {<br>  font-family: Sans-serif;<br>}</blockquote>",
+        "Create a CSS rule for the <code>font-family</code> of <code>Lobster</code> and apply this new font to your <code>h2</code> element."
       ],
       "challengeSeed": [
         "<style>",
@@ -1014,7 +1015,8 @@
         "When one font isn't available, you can tell the browser to \"degrade\" to another font.",
         "For example, if you wanted an element to use the <code>Helvetica</code> font, but also degrade to the <code>Sans-Serif</code> font when <code>Helvetica</code> wasn't available, you could use this CSS style:",
         "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
-        "Now comment out your call to Google Fonts, so that the <code>Lobster</code> font isn't available. Notice how it degrades to the <code>Monospace</code> font."
+        "Now comment out your call to Google Fonts, so that the <code>Lobster</code> font isn't available. Notice how it degrades to the <code>Monospace</code> font.",
+        "<strong>Note</strong><br>If you have the Lobster font installed on your computer, you wont see the degradation because your browser is able to find the font."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -4825,7 +4827,7 @@
         "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color red instead of the word <code>red</code>.');",
         "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'message: Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');",
         "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color green instead of the word <code>green</code>.');",
-        "assert($('.dodger-blue-text').css('color') === '#1E90FF', 'message: Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');",
+        "assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)', 'message: Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');",
         "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#1E90FF\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');",
         "assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', 'message: Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.');",
         "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), 'message: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');"
