@@ -14,7 +14,8 @@ const viewTypes = {
   [ challengeTypes.simpleProject]: 'project',
   // formally hikes
   [ challengeTypes.video ]: 'video',
-  [ challengeTypes.step ]: 'step'
+  [ challengeTypes.step ]: 'step',
+  backend: 'backend'
 };
 
 const submitTypes = {
@@ -44,6 +45,8 @@ export const challengeSelector = createSelector(
     }
     const challenge = challengeMap[challengeName];
     const challengeType = challenge && challenge.challengeType;
+    const type = challenge && challenge.type;
+    const viewType = viewTypes[type] || viewTypes[challengeType] || 'classic';
     const blockName = blockNameify(challenge.block);
     const title = blockName && challenge.title ?
                   `${blockName}: ${challenge.title}` :
@@ -51,7 +54,7 @@ export const challengeSelector = createSelector(
     return {
       challenge,
       title,
-      viewType: viewTypes[challengeType] || 'classic',
+      viewType,
       submitType: submitTypes[challengeType] || 'tests',
       showPreview: challengeType === challengeTypes.html,
       mode: challenge && challengeType === challengeTypes.html ?

@@ -3,6 +3,10 @@ import { bonfire, html, js } from '../../utils/challengeTypes';
 import { decodeScriptTags } from '../../../utils/encode-decode';
 import protect from '../../utils/empty-protector';
 
+// determines if a line in a challenge description
+// has html that should be rendered
+export const descriptionRegex = /\<blockquote|\<ol|\<h4|\<table/;
+
 export function arrayToString(seedData = ['']) {
   seedData = Array.isArray(seedData) ? seedData : [seedData];
   return seedData.reduce((seed, line) => '' + seed + line + '\n', '\n');

@@ -1,14 +1,12 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import classnames from 'classnames';
-import PureComponent from 'react-pure-render/component';
 import { Col, Row } from 'react-bootstrap';
 
-export default class extends PureComponent {
-  static displayName = 'TestSuite';
-  static propTypes = {
-    tests: PropTypes.arrayOf(PropTypes.object)
-  };
+const propTypes = {
+  tests: PropTypes.arrayOf(PropTypes.object)
+};
 
+export default class TestSuite extends PureComponent {
   renderTests(tests = []) {
     // err && pass > invalid state
     // err && !pass > failed tests
@@ -52,3 +50,6 @@ export default class extends PureComponent {
     );
   }
 }
+
+TestSuite.displayName = 'TestSuite';
+TestSuite.propTypes = propTypes;

@@ -9,6 +9,7 @@ import Classic from './classic/Classic.jsx';
 import Step from './step/Step.jsx';
 import Project from './project/Project.jsx';
 import Video from './video/Video.jsx';
+import BackEnd from './backend/Back-End.jsx';
 
 import {
   fetchChallenge,
@@ -25,7 +26,8 @@ const views = {
   classic: Classic,
   project: Project,
   simple: Project,
-  video: Video
+  video: Video,
+  backend: BackEnd
 };
 
 const bindableActions = {

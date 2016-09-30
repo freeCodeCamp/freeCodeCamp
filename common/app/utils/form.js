@@ -1,3 +1,4 @@
+import omit from 'lodash/omit';
 import normalizeUrl from 'normalize-url';
 import { isURL } from 'validator';
 
@@ -67,4 +68,22 @@ export function getValidationState(field) {
   return field.error ?
     'error' :
     'success';
+}
+
+// this should filter out none-dom props to silence React warnings
+export function DOMOnlyProps(field) {
+  return omit(field, [
+    'initialValue',
+    'autofill',
+    'onUpdate',
+    'valid',
+    'invalid',
+    'dirty',
+    'pristine',
+    'active',
+    'touched',
+    'visited',
+    'autofilled',
+    'error'
+  ]);
 }
