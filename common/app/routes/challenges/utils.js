@@ -36,7 +36,7 @@ export function getFileKey({ challengeType }) {
 export function createTests({ tests = [] }) {
   return tests
     .map(test => {
-      if (typeof tests === 'string') {
+      if (typeof test === 'string') {
         return {
           text: ('' + test).split('message: ').pop().replace(/\'\);/g, ''),
           testString: test
