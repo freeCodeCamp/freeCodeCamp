@@ -394,6 +394,83 @@
             ]
           ]
         },
+        "pt-br": {
+          "title": "Aprenda como o Free Code Camp funciona",
+          "description": [
+            [
+              "//i.imgur.com/6ibIavQ.jpg",
+              "Imagem dos 4 benefícios do Free Code Camp: Conecte-se, Aprenda Javascript, Construa seu Portfolio, Ajude Organizações Sem Fins Lucrativos",
+              "Bem-vindo ao Free Code Camp. Nós somos uma comunidade Open Source cujo objetivo é ajudá-lo(a) a aprender a programar e praticar através da construção de projetos para organizações sem fins lucrativos.",
+              ""
+            ],
+            [
+              "//i.imgur.com/Elb3dfj.jpg",
+              "Um screenshot de alguns dos nossos campistas programando em Toronto.",
+              "<bold>Aprender a programar é difícil.</bold> Para ter sucesso, você precisará de muita prática e suporte. É por isto que criamos um rigoroso programa de estudos e uma comunidade com bastante suporte.",
+              ""
+            ],
+            [
+              "//i.imgur.com/WD3STY6.jpg",
+              "Foto de três campistas que conseguiram emprego depois de aprender a programar através do Free Code Camp.",
+              "Free Code Camp é o caminho certo em direção ao seu primeiro emprego como desenvolvedor de software. Várias empresas já contrataram milhares de pessoas como você que aprenderam a programar através do Free Code Camp.",
+              ""
+            ],
+            [
+              "//i.imgur.com/D7Y5luw.jpg",
+              "Gráfico da taxa de crescimento de emprego em relação ao crescimento de formandos em ciência da computação. Existem 1.4 milhões vagas de emprego e apenas 400 mil pessoas para preenche-las.",
+              "Existem milhares de vagas de emprego para desenvolvedores de softwares atualmente não preenchidas e a demanda para programadores cresce a cada ano.",
+              ""
+            ],
+            [
+              "//i.imgur.com/vLNso6h.jpg",
+              "Uma ilustração mostrando que você aprenderá HTML5, CSS3, JavaScript, Banco de Dados, Git, Node.js, React e D3.",
+              "Nós temos centenas de desafios opcionais de programação que o(a) ensinarão as principais tecnologias de desenvolvimento web como HTML5, Node.js e banco de dados.",
+              ""
+            ],
+            [
+              "//i.imgur.com/UVB9hxp.jpg",
+              "Imagem de um campista numa cafeteria construindo projetos no Free Code Camp.",
+              "Nós acreditamos que as pessoas aprendem mais ao praticar, portanto você gastará a maior parte do seu tempo de fato construindo projetos. Nós proveremos a você uma lista de espeficicações (agile user stories), e você dará um jeito de como construir aplicações que satisfaçam a essas espeficações.",
+              ""
+            ],
+            [
+              "//i.imgur.com/pbW7K5S.jpg",
+              "Uma imagem mostrando nossos certificados de front-end, back-end e visualização de dados (400 horas cada), nossos projetos sem fins lucrativos (800 horas) e uma preparação para entrevista (80 horas) para um total de 2.080 horas de experiência em programação.",
+              "Nosso programa de estudos está dividido em 4 certificações. Estas certificações são padronizadas e instantaneamente verificadas por seus clientes freelance e futuros empregadores. Assim como tudo no Free Code Camp, essas certificações são gratuitas. Nós recomendamos que as mesmas sejam feitas em ordem mas você está livre para explorar ao seu modo. As primeiras três certificações levam 400 horas cada e a cetificação final leva 800 horas e envolve a construção de projetos reais para organizações sem fins lucrativos.",
+              ""
+            ],
+            [
+              "//i.imgur.com/akGfLoa.jpg",
+              "Uma foto de nossa certificação de desenvolvimento Front End",
+              "Para ganhar nossa certificação verificada de desenvolvimento Front End, você terá que construir 10 projetos usando HTML, CSS, jQuery e JavaScript.",
+              ""
+            ],
+            [
+              "//i.imgur.com/ocEL0D3.jpg",
+              "Uma foto de nosso certificado de Visualização de Dados",
+              "Para ganhar nossa certificação verificada de Visualização de Dados, você terá que construir 10 projetos usando React, Sass e D3.js.",
+              ""
+            ],
+            [
+              "//i.imgur.com/8HCk1Od.jpg",
+              "Uma foto de nossa certificação de desenvolvimento Back End",
+              "Para ganhar nossa certificação verificada de desenvolvimento Back End, você terá que construir 10 projetos usando Node.js, Express e MongoDB. Você usará Git e Heroku para implanta-los na nuvem.",
+              ""
+            ],
+            [
+              "//i.imgur.com/yXyxbDd.jpg",
+              "Uma foto de nosso diretório de projetos sem fins lucrativos.",
+              "Após você completar todos os três certificados, você formará uma equipe com outro campista e usará metodologias ágeis de desenvolvimento de software para construir dois projetos reais para organizações sem fins lucrativos. Você também adicionará funcionalidades a dois antigos projetos sem fins lucrativos. Quando você terminar, você terá um portfolio com projetos reais que pessoas usam todos os dias.",
+              ""
+            ],
+            [
+              "//i.imgur.com/PDGQ9ZM.jpg",
+              "Uma imagem de campistas construindo projetos em Seoul.",
+              "Se você completar todas as 2.080 horas válidas de desafios e projetos, você ganhará nosso certificado de desenvolvimento Full Stack. Nós o(a) oferecemos prática gratuita para entrevistas de programação. Nós oferecemos ainda um espaço de trabalho onde empregadores espeficamente contratam campistas que conseguiram certificações no Free Code Camp.",
+              ""
+            ]
+          ]
+        },
         "ru": {
           "title": "Узнайте как работает Free Code Camp",
           "description": [
