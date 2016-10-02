@@ -1091,6 +1091,17 @@
             ]
           ]
         },
+        "pt-br": {
+          "title": "Configure o seu portifólio de código",
+          "description": [
+            [
+              "//i.imgur.com/tP2ccTE.gif",
+              "Um gif mostrando como você pode clicar em sua imagem de perfil no canto superior direito do seu portifólio de código e se conectar com GitHub.",
+              "Confira seu portifólio de código. Clique na sua imagem no canto superior direito. Para ativar seu portifólio de código, você precisa vincular sua conta do GitHub com Free Code Camp. Seu portfólio de código mostra o seu progresso e quantos Brownie Points você tem. Você pode obter Brownie Points completando desafios e ajudando outros campistas em nossas salas de chat. Se você receber Brownie Points em vários dias em seguida, você vai ter um \"Streak\".",
+              ""
+            ]
+          ]
+        },
         "ru": {
           "title": "Настройте ваше портфолио с кодом",
           "description": [
@@ -1177,6 +1188,23 @@
             ]
           ]
         },
+        "pt-br": {
+          "title": "Junte-se a um grupo do Free Code Camp em sua cidade",
+          "description": [
+            [
+              "//i.imgur.com/XugIMb4.jpg",
+              "Uma imagem de alguns de nossos campistas reunidos em uma cafeteria local.",
+              "Você pode programar em conjunto com outros campistas em sua cidade ao se juntar em um grupo local do Free Code Camp.",
+              ""
+            ],
+            [
+              "//i.imgur.com/fTFMjwf.gif",
+              "Um gif mostrando como você pode clicar no link abaixo e encontrar a sua cidade na lista de grupos locais.",
+              "Encontre sua cidade na lista e clique nela. Isto irá levá-lo à sua respectiva página do Facebook. Clique no botão \"Entrar no grupo\". Alguém do grupo irá aprová-lo em breve. Se a sua cidade não está nesta lista, percorra ao topo do artigo wiki para obter instruções sobre como você pode começar um grupo em sua cidade.",
+              "http://forum.freecodecamp.com/t/free-code-camp-city-based-local-groups/19574"
+            ]
+          ]
+        },
         "ru": {
           "title": "Присоединяйтесь к группе Free Code Camp в вашем городе",
           "description": [
@@ -1243,6 +1271,17 @@
               "Une gif montrant comment tu peux créer un compte sur Medium.",
               "Notre communauté a une publication sur Medium où on écrit plusieurs articles sur la programmation. Tu peux visiter la publication de Free Code Camp sur Medium et cliquer sur \"follow\". Nos campers publient plusieurs articles chaque semaine. Si tu n’as pas encore un compte Medium, utilise le lien ci-dessous  pour s’inscrire en utilisant un compte sur les médias sociaux ou en utilisant ton email (un email de confirmation sera envoyé à votre email pour terminer l’inscription). Une fois un sujet qui t’intéresse est choisi, tu peux continuer les étapes.",
               "https://www.medium.com"
+            ]
+          ]
+        },
+        "pt-br": {
+          "title": "Leia notícias sobre programação em nossas publicações nas plataforma Medium",
+          "description": [
+            [
+              "//i.imgur.com/AZNLvEC.gif",
+              "Um gif mostrando como você pode clicar no botão \"seguir\" para acompanhar publicações do Free Code Camp.",
+              "Nossa comunidade possui um espaço na plataforma Medium onde publicamos toneladas de artigos úteis sobre programação e tecnologia. Uma vez que você abrir o link, clique no botão \"seguir\" no canto superior direito. Se você não tiver uma conta no Medium, você pode criar uma em segundos.",
+              "https://medium.freecodecamp.com"
             ]
           ]
         },
