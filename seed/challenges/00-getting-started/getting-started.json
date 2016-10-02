@@ -911,6 +911,65 @@
             ]
           ]
         },
+        "pt-br": {
+          "title": "Crie uma conta no Github e junte-se a nossas salas de bate-papo",
+          "description": [
+            [
+              "//i.imgur.com/EAR7Lvh.jpg",
+              "Um screenshot de uma de nossas salas de bate-papo Gitter.",
+              "Antes de começarmos a programar, vamos nos juntar às salas de bate-papo do Free Code Camp. Você pode vir aqui a qualquer momento do dia para socializar, fazer perguntas ou encontar outro campista para programar em dupla. Primeiro, você precisará de uma conta no GitHub.",
+              ""
+            ],
+            [
+              "//i.imgur.com/n6GeSEm.gif",
+              "Um gif mostrando a você para clicar no botão abaixo para ir ao site do GitHub. Preencha os campos necessários em clique em submeter. Então acesse sua caixa de e-mails e encontre um e-mail enviado por GitHub para que você verifique sua conta.",
+              "Clique no botão \"Abrir link em nova aba\" abaixo para abrir o GitHub. Crie uma conta ao preencher o formulário. Certifique-se que você está usando seu verdadeiro e-mail - GitHub manterá sua informação em segredo. Então acesse sua caixa de e-mails e encontre um e-mail enviado por GitHub para que você verifique sua conta. Abra-o e clique no botão \"Verifique seu e-mail\" dentro do e-mail recebido. <br><div class=\"small\">Nota: Se você já possui ma conta no GitHub, você pode pular este passo ao clicar em \"Abrir link em nova aba\", fechar a nova aba que abrirá e então clicar em \"avançar para o próximo passo\". Nós removemos nosso botão \"pular passo\" porque muitas pessoas estavam apenas clicando nele repetidamente sem seguir os importantes passos.</div>",
+              "https://github.com/join"
+            ],
+            [
+              "//i.imgur.com/hFqAEr8.gif",
+              "Um gif mostrando a você para clicar na sua foto de perfil no canto superior direito na página do GitHub. Faça o upload de uma foto sua ou você continuará a usar a foto automaticamente gerada (arte em pixel). Preencha os campos restantes no formulário e clique em submeter.",
+              "Clique na foto (arte em pixel) no canto superior direito na página do GitHub e clique em opções. Faça o upload de uma foto sua. Uma foto de seu rosto é o que funciona melhor. É assim que seus amigos campistas vão ver você nas salas de bate-papo. Você pode adicionar sua cidade e seu nome se você quiser.",
+              "https://github.com/settings/profile"
+            ],
+            [
+              "//i.imgur.com/pYk0wOk.gif",
+              "Um gif mostrando o repositório do Free Code Camp.",
+              "Abra o repositório open-source so Free Code Camp. É lá que nossa equipe voluntária colabora em construir o Free Code Camp.",
+              "https://github.com/freecodecamp/freecodecamp"
+            ],
+            [
+              "//i.imgur.com/OmRmLB4.gif",
+              "Um gif mostrando como clicar no link abaixo para ir à nossa sala de bate-papo e clicando no botão \"entre com GitHub\". Em seguida, você pode clicar no campo de entrada de texto e digitar uma mensagem para os seus colegas campistas.",
+              "Agora que você tem uma conta GitHub, você pode se juntar à nossa sala de chat principal, fazendo login com GitHub. Apresente-se, dizendo \"Hello world! \" e diga a seus colegas campistas como você encontrou Free Code Camp. Também diga-nos por que você quer aprender a programar.",
+              "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
+            ],
+            [
+              "//i.imgur.com/Ecs5XAd.gif",
+              "Um gif mostrando como você pode clicar no botão Configurações no canto superior direito e modificar suas configurações de notificação.",
+              "Nossas salas de chat são extremamente ativas. Você deve alterar as configurações para que você seja notificado somente se alguém mencionar seu nome.",
+              ""
+            ],
+            [
+              "//i.imgur.com/T0bGJPe.gif",
+              "Um gif mostrando como você pode clicar em uma imagem de perfil para iniciar uma mensagem privada com outro usuário.",
+              "Por favor, note que todas as nossas salas de chat são visíveis ao público. Se você precisa compartilhar informações pessoais, tais como um endereço de e-mail ou número de telefone, compartilhe através de uma mensagem privada.",
+              ""
+            ],
+            [
+              "//i.imgur.com/vDTMJSh.gif",
+              "Um gif mostrando que você pode ir e voltar pros desafios e nossas salas de chat.",
+              "Mantenha a nossa sala de chat aberta enquanto você trabalha em um de nossos desafios. Dessa forma, você pode pedir ajuda se você não conseguir avançar. Você também pode socializar com outros campistas quando você sentir vontade de fazer uma pausa.",
+              ""
+            ],
+            [
+              "//i.imgur.com/WvQvNGN.gif",
+              "Um gif mostrando como você pode clicar no link abaixo para baixar um aplicativo de bate-papo nativo para o seu computador.",
+              "Você também pode baixar o app da sala de chat para o seu computador ou telefone.",
+              "https://gitter.im/apps"
+            ]
+          ]
+        },
         "ru": {
           "title": "Создайте учётную запись на GitHub и присоединяйтесь к нашим чатам",
           "description": [
