@@ -28,8 +28,8 @@ import {
 
 const isDev = Rx.config.longStackSupport = debug.enabled('fcc:*');
 const log = debug('fcc:client');
-const hotReloadTimeout = 5000;
-const csrfToken = window.__fcc__.csrf.token;
+const hotReloadTimeout = 2000;
+const { csrf: { csrfToken } = {} } = window.__fcc__;
 const DOMContainer = document.getElementById('fcc');
 const initialState = isColdStored() ?
   getColdStorage() :
@@ -37,7 +37,8 @@ const initialState = isColdStored() ?
 initialState.app.csrfToken = csrfToken;
 initialState.toasts = flashToToast(window.__fcc__.flash);
 
-delete window.__fcc__;
+// make empty object so hot reload works
+window.__fcc__ = {};
 
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
@@ -69,7 +70,10 @@ createApp({
   })
   .doOnNext(({ store }) => {
     if (module.hot && typeof module.hot.accept === 'function') {
-      module.hot.accept('../common/app', function() {
+      module.hot.accept(err => {
+        if (err) { console.error(err); }
+        log('saving state and refreshing.');
+        log('ignore react ssr warning.');
         saveToColdStorage(store.getState());
         setTimeout(() => window.location.reload(), hotReloadTimeout);
       });

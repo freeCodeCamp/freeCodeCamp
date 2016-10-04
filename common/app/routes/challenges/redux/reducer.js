@@ -221,9 +221,29 @@ const filesReducer = handleActions(
           return files;
         }, { ...state });
     },
-    [types.savedCodeFound]: (state, { payload: files }) => ({
-      ...files
-    }),
+    [types.savedCodeFound]: (state, { payload: { files, challenge } }) => {
+      if (challenge.type === 'mod') {
+        // this may need to change to update head/tail
+        return challenge.files;
+      }
+      if (
+        challenge.challengeType !== html &&
+        challenge.challengeType !== js &&
+        challenge.challengeType !== bonfire
+      ) {
+        return {};
+      }
+      // classic challenge to modern format
+      const preFile = getPreFile(challenge);
+      return {
+        [preFile.key]: createPoly({
+          ...files[preFile.key],
+          // make sure head/tail are always fresh
+          head: arrayToString(challenge.head),
+          tail: arrayToString(challenge.tail)
+        })
+      };
+    },
     [types.updateCurrentChallenge]: (state, { payload: challenge = {} }) => {
       if (challenge.type === 'mod') {
         return challenge.files;
@@ -238,7 +258,6 @@ const filesReducer = handleActions(
       // classic challenge to modern format
       const preFile = getPreFile(challenge);
       return {
-        ...state,
         [preFile.key]: createPoly({
           ...preFile,
           contents: buildSeed(challenge),

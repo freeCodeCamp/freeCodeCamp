@@ -7,14 +7,14 @@
       "id": "56b15f15632298c12f315184",
       "title": "Chrome Dev Tools: Elements",
       "description": [
-        "This is basic info and a mini-lesson on the Elements tab of Chrome Dev Tools. Check out more in-depth documentation here: <a href='http://developers.google.com/web/tools/iterate/inspect-styles/basics' target='_blank'>developers.google.com/web/tools/iterate/inspect-styles/basics</a>",
+        "This is basic info and a mini-lesson on the Elements tab of Chrome Dev Tools. Check out more in-depth documentation here: <a href='https://developers.google.com/web/tools/chrome-devtools/inspect-styles/' target='_blank'>developers.google.com/web/tools/chrome-devtools/inspect-styles/</a>",
         "We will be using the webpage mckellen.com/ per suggestion of Free Code Camp user kmiasko.",
         "If you right click and select 'Inspect element', you can have access to the elements tab. You can change text, background color, text color, and any other CSS or HTML you'd like!",
         "These changes don't set up automatically, so don't use this as an IDE or a place to create or edit anything you want to save. You can set up something called 'persistent authoring' to save.",
         "Cascade, inherit, and other CSS rules still apply, so keep that in mind as you play around. Additionally, overridden styles will be shown as having a strike through them.",
         "It should also be noted that all of the code you're seeing in this 'tree' is current HTML, not the original when the page loaded. If you use JavaScript or jQuery to change something, it will be updated on this tree.",
         "Padding, border, and margins are easily inspected and edited using the colorful box on the right or bottom side.",
-        "Please check out the Chrome Dev Tools documentation at <a href='http://developers.google.com/web/tools/chrome-devtools/' target='_blank'>http://developers.google.com/web/tools/chrome-devtools/</a>"
+        "Please check out the Chrome Dev Tools documentation at <a href='http://developers.google.com/web/tools/chrome-devtools/' target='_blank'>developers.google.com/web/tools/chrome-devtools/</a>"
       ],
       "challengeSeed": [
         "oz32JxUx1Fk"
@@ -36,14 +36,14 @@
         "es": {
           "title": "Herramientas de desarrollo de Chrome: Elementos",
           "description": [
-            "Esta es información básica y una mini-lección sobre la pestaña Elements en las herramientas de desarrollo de Chrome. Echa un vistazo a la documentación más detallada aquí: <a href='http://developers.google.com/web/tools/iterate/inspect-styles/basics' target='_blank'>developers.google.com/web/tools/iterate/inspect-styles/basics</a>",
+            "Esta es información básica y una mini-lección sobre la pestaña Elements en las herramientas de desarrollo de Chrome. Echa un vistazo a la documentación más detallada aquí: <a href='https://developers.google.com/web/tools/chrome-devtools/inspect-styles/' target='_blank'>developers.google.com/web/tools/chrome-devtools/inspect-styles/</a>",
             "Vamos a utilizar la página web mckellen.com/ por sugerencia del usuario de FreeCodeCamp kmiasko.",
             "Si pulsas con el botón derecho y seleccionas 'Inspeccionar elemento', tendrás acceso a la pestaña elements. ¡Puedes cambiar el texto, el color de fondo, el color de texto y cualquier otra propiedad CSS o elemento HTML que desees!",
             "Estos cambios no se establecen de forma automática, por lo que no debes usar el inspector como un IDE o como un lugar para crear o editar cualquier cosa que desees guardar. Puedes configurar algo que se llama 'autoría persistente' para salvar.",
             "Las reglas de CSS como cascada, herencia y otras se aplican, así que tenlo en cuenta a medida que juegas. Además, los estilos anulados se muestran con un tachado sobre ellos. ",
             "También hay que señalar que todo el código que veas en ese 'árbol' es código HTML actual, no el original que había cuando se cargó la página. Si utilizas jQuery o JavaScript para cambiar algo, esté árbol se actualizará.",
             "El relleno, los bordes y los márgenes se inspeccionan fácilmente y puedes editarlos usando la caja con colores que encontrarás al lado derecho o en la parte de abajo.",
-            "Por favor, echa un vistazo a la documentación de las herramientas de desarrollo de Chrome en <a href='http://developers.google.com/web/tools/chrome-devtools/' target='_blank'>http://developers.google.com/web/tools/chrome-devtools/</a>"
+            "Por favor, echa un vistazo a la documentación de las herramientas de desarrollo de Chrome en <a href='http://developers.google.com/web/tools/chrome-devtools/' target='_blank'>developers.google.com/web/tools/chrome-devtools/</a>"
           ]
         }
       }
@@ -58,7 +58,7 @@
         "If you look at the line on the side, you'll notice a pattern of colors. Those colors each represent a different type of content in the request.",
         "The longer the line is a certain color, the longer that type of content took in that request. Ultimately, you want short lines, and if any request has long lines, you know what may be slowing down the web page.",
         "If you click a request in the log, you can get even more detailed information.",
-        "Check out more in-depth documentation here: <a href='http://developers.google.com/web/tools/profile-performance/network-performance/resource-loading' target='_blank'>developers.google.com/web/tools/profile-performance/network-performance/resource-loading</a>"
+        "Check out more in-depth documentation here: <a href='https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading' target='_blank'>developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading</a>"
       ],
       "challengeSeed": [
         "dsVbhlBIfz0"
@@ -85,7 +85,7 @@
             "Si te fijas en la línea al lado derecho, te darás cuenta de un patrón de colores. Cada color representa un tipo diferente de contenido en la solicitud. ",
             "Cuanto más larga sea la línea de un color determinado, tanto más tiempo tomó ese tipo de contenido en la solicitud. En últimas quieres líneas cortas, y si cualquier solicitud tiene largas líneas, sabes que puede estar ralentizando la página web.",
             "Si pulsas sobre una solicitud en la bitácora, podrás obtener información más detallada.",
-            "Consulta más documentación detallada aquí: <a href='http://developers.google.com/web/tools/profile-performance/network-performance/resource-loading' target='_blank'>developers.google.com/web/tools/profile-performance/network-performance/resource-loading</a>"
+            "Consulta más documentación detallada aquí: <a href='https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading' target='_blank'>developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading</a>"
           ]
         }
       }
@@ -101,7 +101,7 @@
         "By slowing everything down and giving yourself a chance to examine what's happening at every spot you've set, you can keep track of exactly what's happening in the page or app.",
         "Once all of the breakpoints are set, you can step through the code and examine the state of your page or app at every breakpoint.",
         "Just like with elements, you can live-edit through Dev Tools, but remember to save those changes however you can so your progress isn't lost.",
-        "Check out more in-depth documentation here: <a href='http://developers.google.com/web/tools/javascript/breakpoints/' target='_blank'>developers.google.com/web/tools/javascript/breakpoints/</a>"
+        "Check out more in-depth documentation here: <a href='https://developers.google.com/web/tools/chrome-devtools/javascript/add-breakpoints' target='_blank'>developers.google.com/web/tools/chrome-devtools/javascript/add-breakpoints/</a>"
       ],
       "challengeSeed": [
         "CoESC2XGZLg"
@@ -130,7 +130,7 @@
             "Al reducir la velocidad de todo y darte la oportunidad de examinar lo que está sucediendo en cada punto que hayas configurado, podrás controlar exactamente lo que está sucediendo en la página o aplicación.",
             "Una vez has establecido todos los puntos de interrupción, puedes recorrer el código y examinar el estado de tu página o aplicación en cada punto de interrupción.",
             "Al igual que con los elementos, puedes editar en vivo mediante las herramientas de desarrollo, pero recuerda que debes guardar esos cambios para que no pierdas tu progreso.",
-            "Revisa documentación más detallada aquí: <a href='http://developers.google.com/web/tools/javascript/breakpoints/' target='_blank'>developers.google.com/web/tools/javascript/breakpoints/</a>"
+            "Revisa documentación más detallada aquí: <a href='https://developers.google.com/web/tools/chrome-devtools/javascript/add-breakpoints' target='_blank'>developers.google.com/web/tools/chrome-devtools/javascript/add-breakpoints/</a>"
           ]
         }
       }
@@ -146,7 +146,7 @@
         "All of this will help you to better understand what's happening in the browser, particularly which events require more browser memory than others.",
         "When you're using timeline, remember to use this 'clear' button and to start recording before you load the page, depending on what you want to capture.",
         "You'll notice that when you record JS events, clicking on the title or 'function call' on the left will take you to the document and line of that function using the resource panel.",
-        "Check out more in-depth documentation here: <a href='http://developers.google.com/web/tools/profile-performance/evaluate-performance/timeline-tool' target='_blank'>developers.google.com/web/tools/profile-performance/evaluate-performance/timeline-tool</a>"
+        "Check out more in-depth documentation here: <a href='https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool' target='_blank'>developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool</a>"
       ],
       "challengeSeed": [
         "mxsZlsG8tKA"
@@ -175,7 +175,7 @@
             "Todo esto te ayudará a entender mejor lo que está pasando en el navegador, en particular cuáles eventos requieren más memoria del navegador.",
             "Cuando uses la línea de tiempo, recuerda que debes utilizar el botón 'limpiar' (clear) para iniciar la grabación y antes de cargar la página, dependiendo de lo que desees capturar.",
             "Te darás cuenta de que cuando grabas eventos JS, al pulsar en el título o en una 'llamada a una función' al lado izquierdo, te llevará al documento y a la línea de esa función en el panel de recursos. ",
-            "Revisa documentación más detallada aquí: <a href='http://developers.google.com/web/tools/profile-performance/evaluate-performance/timeline-tool' target='_blank'>developers.google.com/web/tools/profile-performance/evaluate-performance/timeline-tool</a>"
+            "Revisa documentación más detallada aquí: <a href='https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool' target='_blank'>developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool</a>"
           ]
         }
       }
@@ -188,7 +188,7 @@
         "There are three types of profiles you can collect: CPU profile, HEAP snapshot, and HEAP profile. HEAP profiles have more to do with memory usage, while a CPU profile has more to do with JavaScript performance.",
         "A profiler called V8 is used while your code runs to pinpoint what in the JavaScript takes the most time, making it easy to optimize your code.",
         "Each of these profiles can be viewed on the left, and you can take multiple profiles of each. Overall, the profiles tab is helpful when optimizing code.",
-        "Check out more in-depth documentation here: <a href='http://developers.google.com/web/tools/profile-performance/rendering-tools/js-execution' target='_blank'>developers.google.com/web/tools/profile-performance/rendering-tools/js-execution</a>"
+        "Check out more in-depth documentation here: <a href='https://developers.google.com/web/tools/chrome-devtools/memory-problems/allocation-profiler' target='_blank'>developers.google.com/web/tools/chrome-devtools/memory-problems/allocation-profiler</a>"
       ],
       "challengeSeed": [
         "fvfqnFYXF_8"
@@ -214,7 +214,7 @@
             "Hay tres tipos de perfiles que se pueden recolectar: el perfil de la CPU, instantáneas de la memoria con estructura montón (Heap), y el perfil de la memoria con estructura montón. Los perfiles de memoria en estructura montón tienen más que ver con el uso de memoria, mientras que un perfil de la CPU tiene más que ver con el rendimiento de JavaScript. ",
             "Un perfilador llamado V8 se usa mientras se ejecuta el código para identificar lo que en el JavaScript toma mucho tiempo, facilitándote de esta forma optimizar tu código.",
             "Cada uno de estos perfiles se puede ver a la izquierda, y se puede tomar múltiples perfiles de cada uno. En general, la pestaña de perfiles es muy útil cuando deseas optimizar tu código. ",
-            "Revisa documentación más detallada aquí: <a href='http://developers.google.com/web/tools/profile-performance/rendering-tools/js-execution' target='_blank'>developers.google.com/web/tools/profile-performance/rendering-tools/js-execution</a>"
+            "Revisa documentación más detallada aquí: <a href='https://developers.google.com/web/tools/chrome-devtools/memory-problems/allocation-profiler' target='_blank'>developers.google.com/web/tools/chrome-devtools/memory-problems/allocation-profiler</a>"
           ]
         }
       }
@@ -302,7 +302,7 @@
         "You should know that messages stack up, and you can clear them by typing and entering 'clear()'. You can also save the log by selecting 'Preserve Log'.",
         "There are different commands that will log differently, like console.log() for basic logging, console.error() & console.warn() for 'eye catching stuff'.",
         "The console can track exceptions, which basically means when something goes wrong. It can even pause the code during those exceptions, a function that you might remember from the 'Source' tab.",
-        "Check out more in-depth documentation here: <a href='http://developers.google.com/web/tools/javascript/console/' target='_blank'>developers.google.com/web/tools/javascript/console/</a>"
+        "Check out more in-depth documentation here: <a href='https://developers.google.com/web/tools/chrome-devtools/console/' target='_blank'>developers.google.com/web/tools/chrome-devtools/console/</a>"
       ],
       "challengeSeed": [
         "zMg3PO8MtyI"
@@ -330,7 +330,7 @@
             "Debes saber que los mensajes se apilan y que puedes limpiarlos escribiendo <code>clear()</code>. También puedes guardar la bitácora seleccionando 'Preserve Log'. ",
             "Hay diferentes órdenes que registrarán en bitácoras de manera diferente, como console.log() para registrar información básica, console.error() y console.warn() para registrar en bitácoras 'información llamativa'.",
             "La consola puede realizar un seguimiento de excepciones, que básicamente registra cuando algo sale mal. Puede incluso hacer una pausa en el código durante esas excepciones, función que posiblemente recuerdes de la pestaña 'Fuente'. ",
-            "Revisa documentación más detallada aquí: <a href='http://developers.google.com/web/tools/javascript/console/' target='_blank'>developers.google.com/web/tools/javascript/console/</a>"
+            "Revisa documentación más detallada aquí: <a href='https://developers.google.com/web/tools/chrome-devtools/console/' target='_blank'>developers.google.com/web/tools/chrome-devtools/console/</a>"
           ]
         }
       }

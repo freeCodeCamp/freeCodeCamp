@@ -69,6 +69,7 @@ function frameMain({ build, source } = {}, document, proxyLogger$) {
   const { frame: main, frameWindow } = getFrameDocument(document);
   refreshFrame(main);
   buildProxyConsole(frameWindow, proxyLogger$);
+  main.Rx = Rx;
   main.open();
   main.write(createHeader() + proxyConsole(build, source));
   main.close();

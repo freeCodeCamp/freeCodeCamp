@@ -23,7 +23,7 @@ module.exports = {
       'bundle-[name].js' :
       'bundle-[name]-[chunkhash].js',
     path: path.join(__dirname, '/public/js'),
-    publicPath: __DEV__ ? 'http://localhost:2999/js' : '/js'
+    publicPath: '/js'
   },
   module: {
     loaders: [
@@ -33,9 +33,7 @@ module.exports = {
           path.join(__dirname, 'client/'),
           path.join(__dirname, 'common/')
         ],
-        loaders: [
-          'babel-loader'
-        ]
+        loaders: __DEV__ ? ['react-hot', 'babel'] : [ 'babel' ]
       },
       {
         test: /\.json$/,
