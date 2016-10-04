@@ -128,7 +128,7 @@ gulp
 ```
 
 Now navigate to your browser and open
-<http://localhost:3001>. If the app loads,
+<http://localhost:3000>. If the app loads,
 congratulations – you're all set. Otherwise, let us know by opening a GitHub
 issue and with your error.
 
@@ -176,8 +176,8 @@ related issues on our Contributors Chat Room.
 #### How to find the code in the Free Code Camp codebase to fix/edit?
 
 The best way to find out any code you wish to change/add or remove is using
-the GitHub search bar at the top of the repository page. For example, you could 
-search for a challenge name and the results will display all the files along 
+the GitHub search bar at the top of the repository page. For example, you could
+search for a challenge name and the results will display all the files along
 with line numbers. Then you can proceed to the files and verify this is the area
 that you were looking forward to edit. Always feel free to reach out to the chat
 room when you are not certain of any thing specific in the code.
