@@ -199,7 +199,7 @@
         {
           "text": "\"version\" key missing in package.json",
           "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert(packJson.version); }).promise())"
-        },
+        }
       ],
       "solutions": [],
       "hints": [],
@@ -433,7 +433,7 @@
         {
           "text": "\"dependencies\" does include \"moment\"",
           "testString": "() => ($.get('https://red-moose.hyperdev.space' + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.notProperty(packJson.dependencies, 'moment'); }).promise())"
-        },
+        }
       ],
       "solutions": [],
       "hints": [],
