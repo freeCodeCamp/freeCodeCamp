@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // and collapsing the pipe
             newTest.err = err.message + '\n' + err.stack;
             // RxJS catch expects an observable as a return
-            return Rx.Observable.of(err);
+            return Rx.Observable.of(newTest);
           });
       })
       // gather tests back into an array
