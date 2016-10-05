@@ -1,0 +1,619 @@
+{
+  "name": "Debugging",
+  "order": 4,
+  "time": "1 hour",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "9d7053c8c441eddfaeb5bdef",
+        "title": "Introduction to the Debugging Challenges",
+        "description": [
+          [
+            "http://imgs.xkcd.com/comics/debugging.png",
+            "XKCD web comic walking through the convoluted process of debugging. The programmer moves from a browser problem, to a keyboard driver issue, receives a cryptic system utility error message, and ends by finding the sword of Martin the Warrior.",
+            "Debugging is a valuable and (unfortunately) necessary tool for programmers. It follows the testing phase of checking if your code works as intended, and discovering it does not. Debugging is the process of finding exactly what isn't working and fixing it.",
+            ""
+          ],
+          [
+            "",
+            "",
+            "After spending time creating a brilliant block of code, it is tough realizing it may have errors. These issues generally come in three forms: 1) syntax errors that prevent a program from running, 2) runtime errors when code fails to execute or has unexpected behavior, and 3) semantic (or logical) errors when code doesn't do what it's meant to. Modern code editors (and experience) can help identify syntax errors. Semantic and runtime errors are harder to find. They may cause your program to crash, make it run forever, or give incorrect output. Think of debugging as trying to understand why your code is behaving the way it is.<br><br>Example of a syntax error - often detected by the code editor:<br><br><blockquote>funtion willNotWork( {<br>  console.log(\"Yuck\");<br>}<br>// \"function\" keyword is misspelled and there's a missing parenthesis<br></blockquote><br><br>Here's an example of a runtime error - often detected while the program executes:<br><br><blockquote>function loopy() {<br>  while(true) {<br>    console.log(\"Hello, world!\");<br>  }<br>}<br>loopy(); // This kicks off an infinite loop, which may crash your browser<br></blockquote><br><br>Example of a semantic error - often detected after testing code output;<br><br><blockquote>function calcAreaOfRect(w, h) {<br>  return w + h; // This should be w * h<br>}<br>let myRectArea = calcAreaOfRect(2, 3);<br>// Correct syntax and the program executes, but this gives the wrong answer<br></blockquote>",
+            ""
+          ],
+          [
+            "",
+            "",
+            "Debugging is frustrating, but it helps to develop (and follow) a step-by-step approach to review your code. This means checking the intermediate values and types of variables to see if they are what they should be. You can start with a simple process of elimination. For example, if function A works and returned what it's supposed to, then function B may have the issue. Or start checking values in a block of code from the middle to try to cut the search space in half. A problem in one spot indicates a bug in the first half of the code. If not, it's likely in the second.<br><br>This section will cover a couple helpful tools to find bugs, and some of the common forms they take. Fortunately, debugging is a learnable skill that just requires a little patience and practice to master.",
+            ""
+          ]
+        ],
+        "releasedOn": "",
+        "challengeSeed": [],
+        "tests": [],
+        "type": "Waypoint",
+        "challengeType": 7,
+        "isRequired": false,
+        "titleEs": "",
+        "descriptionEs": [
+          []
+        ],
+        "titleFr": "",
+        "descriptionFr": [
+          []
+        ],
+        "titleDe": "",
+        "descriptionDe": [
+          []
+        ]
+    },
+    {
+      "id": "9d7013c8c441eddfaeb5bdef",
+      "title": "Use the JavaScript Console to Check the Value of a Variable",
+      "description": [
+        "Both Chrome and Firefox have excellent JavaScript consoles, also known as DevTools, for debugging your JavaScript.",
+        "You can find Developer tools in your Chrome's menu or Web Console in FireFox's menu. If you're using a different browser, or a mobile phone, we strongly recommend switching to desktop Firefox or Chrome.",
+        "The <code>console.log()</code> method, which \"prints\" the output of what's within its parentheses to the console, will likely be your most helpful debugging tool. Placing it at strategic points in your code can show you the intermediate values of variables. It's good practice to have an idea of what the output should be before looking at what it is. Having check points to see the status of your calculations throughout your code will help narrow down where the problem is.",
+        "Here's an example to print 'Hello world!' to the console:",
+        "<blockquote>console.log('Hello world!');</blockquote>",
+        "<h4>Instructions</h4>",
+        "Use the <code>console.log()</code> method to print the value of the variable <code>a</code> where noted in the code."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "let a = 5;",
+        "let b = 1;",
+        "a++;",
+        "// Use console.log() below this line to check the value of a, it should output 6",
+        "",
+        "",
+        "let sumAB = a + b;",
+        "console.log(sumAB);"
+      ],
+      "tests": [
+        "assert(code.match(/console\\.log\\(a\\)/g), 'message: Use <code>console.log()</code> to check the value of the variable <code>a</code>.');"
+      ],
+      "solutions": [
+        "\"use strict\"\n\nlet a = 5;\nlet b = 1;\na++;\n// Use console.log() to check the value of a, it should output 6\nconsole.log(a);\n\nlet sumAB = a + b;\nconsole.log(sumAB);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7023c8c441eddfaeb5bdef",
+      "title": "Use typeof to Check the Type of a Variable",
+      "description": [
+        "You can use <code>typeof</code> to check the data structure, or type, of a variable. This is useful in debugging when you're working with multiple data types. If you think you're adding two numbers, but one is actually a string, the results can be unexpected. Type errors can lurk in calculations or function calls. Especially take care when you're accessing and working with external data in the form of a JavaScript object (JSON).",
+        "Here are some examples using <code>typeof</code>:",
+        "<blockquote>console.log(typeof \"\"); // outputs \"string\"<br>console.log(typeof 0); // outputs \"number\"<br>console.log(typeof []); // outputs \"object\"<br>console.log(typeof {}); // outputs \"object\"<br></blockquote>",
+        "JavaScript recognizes six primitive (immutable) data types: <code>Boolean</code>, <code>Null</code>, <code>Undefined</code>, <code>Number</code>, <code>String</code>, and <code>Symbol</code> (new with ES6) and one type for mutable items: <code>Object</code>. Note that in JavaScript, arrays are technically a type of object.",
+        "<h4>Instructions</h4>",
+        "Add two <code>console.log()</code> statements to check the <code>typeof</code> each of the two variables <code>seven</code> and <code>three</code> in the code."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "let seven = 7;",
+        "let three = \"3\";",
+        "console.log(seven + three);",
+        "// Add your code below this line",
+        ""
+      ],
+      "tests": [
+        "assert(code.match(/console\\.log\\(typeof[\\( ].*\\)?\\);/g).length == 2, 'message: Use <code>typeof</code> in a <code>console.log()</code> statement to check the type of the variables.');",
+        "assert(code.match(/typeof[\\( ]seven\\)?/g), 'message: Use <code>typeof</code> to check the type of the variable <code>seven</code>.');",
+        "assert(code.match(/typeof[\\( ]three\\)?/g), 'message: Use <code>typeof</code> to check the type of the variable <code>three</code>.');"
+      ],
+      "solutions": [
+        "\"use strict\"\n\nlet number7 = 7;\nlet string3 = \"3\";\nconsole.log(number7 + string3);\n// Add your code below this line\nconsole.log(typeof number7);\nconsole.log(typeof string3);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7033c8c441eddfaeb5bdef",
+      "title": "Catch Misspelled Variable and Function Names",
+      "description": [
+        "Now that we've covered the two primary ways to check intermediate values and types of program output, let's get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error. Transposed, missing, or mis-capitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. As you know, JavaScript variable and function names are case-sensitive.",
+        "<h4>Instructions</h4>",
+        "Fix the two spelling errors in the code so the <code>netWorkingCapital</code> calculation works."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "let receivables = 10;",
+        "let payables = 8;",
+        "let netWorkingCapital = recievables - payable;",
+        "console.log(`Net working capital is: ${netWorkingCapital}`);"
+      ],
+      "tests": [
+        "assert(netWorkingCapital === 2, 'message: Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".');",
+        "assert(!code.match(/recievables/g), 'message: There should be no instances of mis-spelled variables in the code.');",
+        "assert(code.match(/receivables/g).length == 2, 'message: The <code>receivables</code> variable should be declared and used properly in the code.');",
+        "assert(!code.match(/payable;/g), 'message: There should be no instances of mis-spelled variables in the code.');",
+        "assert(code.match(/payables/g).length == 2, 'message: The <code>payables</code> variable should be declared and used properly in the code.');"
+      ],
+      "solutions": [
+        "\"use strict\"\n\nlet receivables = 10;\nlet payables = 8;\nlet netWorkingCapital = receivables - payables;\nconsole.log(`Net working capital is: ${netWorkingCapital}`);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7043c8c441eddfaeb5bdef",
+      "title": "Catch Unclosed Parentheses, Brackets, Braces and Quotes",
+      "description": [
+        "Another syntax error to watch out for is that all opening parentheses, brackets, curly braces, and quotes have a closing pair. This tends to happen while editing existing code and inserting items with one of the pair types. Also, take care when nesting code blocks into others, such as adding a callback function as an argument to a method.",
+        "One way to avoid this mistake is as soon as the opening character is typed, immediately include the closing match, then move the cursor back between them and continue coding. Fortunately, most modern code editors generate the second half of the pair automatically.",
+        "<h4>Instructions</h4>",
+        "Fix the two pair errors in the code."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "let myArray = [1, 2, 3;",
+        "let arraySum = myArray.reduce((previous, current =>  previous + current);",
+        "console.log(`Sum of array values is: ${arraySum}`);"
+      ],
+      "tests": [
+        "assert(code.match(/myArray\\s*?=\\s*?\\[\\s*?1\\s*?,\\s*?2\\s*?,\\s*?3\\s*?\\];/g), 'message: Check the array for a missing piece.');",
+        "assert(arraySum === 6, 'message: Check the <code>.reduce()</code> method for a missing piece. The console output should show that \"Sum of array values is: 6\".');"
+      ],
+      "solutions": [
+        "\"use strict\"\n\nlet myArray = [1, 2, 3];\nlet addSeven = myArray.map((val) => val + 7);\nconsole.log(`addSeven array is: ${addSeven}`);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7073c8c441eddfaeb5bdef",
+      "title": "Catch Mixed Usage of Single and Double Quotes",
+      "description": [
+        "JavaScript allows the use of both single ('') and double (\"\") quotes to declare a string, and deciding which one to use generally comes down to personal preference. Having two choices is great when a string has contractions or another piece of text that's in quotes. Just be careful that you don't close the string too early, which causes a syntax error.",
+        "Here are some examples of mixing quotes:",
+        "<blockquote>// These work:<br>const grouchoContraction = \"I've had a perfectly wonderful evening, but this wasn't it.\";<br>const quoteInString = \"Groucho Marx once said 'Quote me as saying I was mis-quoted.'\";<br>// This is incorrect:<br>const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';<br></blockquote>",
+        "Of course, if you prefer to only use one style of quotes, then you can escape the ones inside the string by using the backslash (\\) escape character:",
+        "<blockquote>const allSameQuotes = 'I\\'ve had a perfectly wonderful evening, but this wasn\\'t it.';</blockquote>",
+        "<h4>Instructions</h4>",
+        "Fix the string so it either uses different quotes for the <code>href</code> value, or escape the existing ones. Keep the double quote marks around the entire string."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "let innerHtml = \"<p>Click here to <a href=\"#Home\">return home</a></p>\";",
+        "console.log(innerHtml);"
+      ],
+      "tests": [
+        "assert(code.match(/<a href=\\s*?('|\\\\\")#Home\\1\\s*?>/g), 'message: Fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.');",
+        "assert(code.match(/\"<p>.*?<\\/p>\";/g), 'message: Keep the double quotes around the entire string.');"
+      ],
+      "solutions": [
+        "\"use strict\"\n\nlet innerHtml = \"<p>Click here to <a href='#Home'>return home.</a></p>\"\nconsole.log(innerHtml);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7083c8c441eddfaeb5bdef",
+      "title": "Catch Use of Assignment Operator Instead of Equality Operator",
+      "description": [
+        "Branching programs, aka ones that do different things if certain conditions are met, rely on <code>if</code>, <code>else if</code>, and <code>else</code> statements in JavaScript. The condition sometimes takes the form of testing whether a result is equal to a value. How we speak this logic (in English, at least) is \"if x equals y, then ...\" which can literally translate into code using the <code>=</code>, or assignment operator, and unexpected control flow in your program.",
+        "As you know, the assignment operator (<code>=</code>) in JavaScript assigns a value to a variable name. And the <code>==</code> and <code>===</code> operators check for equality (the triple <code>===</code> tests for strict equality, meaning both value and type are the same). The code below assigns <code>x</code> to be 2, which evaluates as <code>true</code>. Almost every value on its own in JavaScript evaluates to <code>true</code>, except what are known as the \"falsy\" values: <code>false</code>, <code>0</code>, <code>\"\"</code> (an empty string), <code>NaN</code>, <code>undefined</code>, and <code>null</code>.",
+        "<blockquote>let x = 1;<br>let y = 2;<br>if (x = y) {<br>  // this code block will run for any value of y (unless y were originally set as a falsy)<br>} else {<br>  // this code block is what should run (but won't) in this example<br>}<br></blockquote>",
+        "<h4>Instructions</h4>",
+        "Fix the condition so the program runs the right branch, and the appropriate value is assigned to <code>result</code>."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "let x = 7;",
+        "let y = 9;",
+        "let result = \"to come\";",
+        "",
+        "if(x = y) {",
+        "  result = \"Equal!\";",
+        "} else {",
+        "  result = \"Not equal!\";",
+        "}",
+        "",
+        "console.log(result);"
+      ],
+      "tests": [
+        "assert(result == \"Not equal!\", 'message: Fix the code so it checks for equality, instead of using assignment in the condition.');",
+        "assert(code.match(/x\\s*?===?\\s*?y/g), 'message: The condition can use either <code>==</code> or <code>===</code> to test for equality.');"
+      ],
+      "solutions": [
+        "\"use strict\"\n\nlet x = 7;\nlet y = 9;\nlet result = \"to come\";\n\nif(x == y) {\n    result = \"Equal!\";\n} else {\n    result = \"Not equal!\";\n}\n\nconsole.log(result);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7093c8c441eddfaeb5bdef",
+      "title": "Catch Missing Open and Closing Parenthesis After a Function Call",
+      "description": [
+        "When a function or method doesn't take any arguments, you may forget to include the (empty) opening and closing parentheses when calling it. Often times the result of a function call is saved in a variable for other use in your code. This error can be detected by logging variable values (or their types) to the console and seeing that one is set to a function reference, instead of the expected value the function returns.",
+        "The variables in the following example are different:",
+        "<blockquote>function myFunction() {<br>  return \"You rock!\";<br>}<br>let varOne = myFunction; // set to equal a function<br>let varTwo = myFunction(); // set to equal the string \"You rock!\"<br></blockquote>",
+        "<h4>Instructions</h4>",
+        "Fix the code so the variable <code>result</code> is set to the value returned from calling the function <code>getNine</code>."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "function getNine() {",
+        "  let x = 6;",
+        "  let y = 3;",
+        "  return x + y;",
+        "}",
+        "",
+        "let result = getNine;",
+        "console.log(result);"
+      ],
+      "tests": [
+        "assert(result == 9, 'message: Fix the code so the variable <code>result</code> is the number that the function <code>getNine</code> returns.');",
+        "assert(code.match(/getNine\\(\\);/g), 'message: Make sure to call the <code>getNine</code> function.');"
+      ],
+      "solutions": [
+        "\"use strict\"\n\nfunction getNine() {\n    let x = 6;\n    let y = 3;\n    return x + y;\n}\n\nlet result = getNine();\nconsole.log(result);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7103c8c441eddfaeb5bdef",
+      "title": "Catch Arguments Passed in the Wrong Order When Calling a Function",
+      "description": [
+        "Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.",
+        "<h4>Instructions</h4>",
+        "The following function <code>positivePowers</code> raises a base to a positive exponent. Unfortunately, it's not called properly - fix the code so the value of <code>power</code> is the expected 8."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "function positivePowers(b, e) {",
+        "  let result = 1;",
+        "  if (e <= 0) return result;",
+        "  for (let i = 1; i <= e; i++) {",
+        "    result *= b;",
+        "  }",
+        "  return result;",
+        "}",
+        "",
+        "let base = 2;",
+        "let exp = 3;",
+        "let power = positivePowers(exp, base);",
+        "console.log(power);"
+      ],
+      "tests": [
+        "assert(power == 8, 'message: Fix the code so the variable <code>power</code> equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');",
+        "assert(code.match(/positivePowers\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'message: Check the order of the arguments for the positivePowers function call.');"
+      ],
+      "solutions": [
+        "use strict\"\n\nfunction positivePowers(b, e) {\n    let result = 1;\n    if (e <= 0) return result;\n    for (let i = 1; i <= e; i++) {\n        result *= b;\n    }\n    return result;\n}\n\nlet base = 2;\nlet exp = 3;\nlet test = positivePowers(base, exp);\nconsole.log(test);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eddfaeb5bdef",
+      "title": "Catch Off By One Errors When Using Indexing",
+      "description": [
+        "<code>Off by one errors</code> (sometimes called OBOE) crop up when you're trying to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them. As you know, JavaScript indexing starts at zero, not one, which means the last index is always one less than the length of the item. If you try to access an index equal to the length, the program may throw an \"index out of range\" reference error or print <code>undefined</code>. When using string or array methods that take index ranges as arguments, it helps to read the documentation and understand if they are inclusive (the item at the given index is part of what's returned) or not.",
+        "Here are some examples of off by one errors:",
+        "<blockquote>let alphabet = \"abcdefghijklmnopqrstuvwxyz\";<br>let len = alphabet.length;<br>for (let i = 0; i <= len; i++) {<br>  // loops one too many times at the end<br>  console.log(alphabet[i]);<br>}<br>for (let j = 1; j < len; j++) {<br>  // loops one too few times and misses the first character at index 0<br>  console.log(alphabet[j]);<br>}<br>for (let k = 0; k < len; k++) {<br>  // Goldilocks approves - this is just right<br>  console.log(alphabet[k]);<br>}<br></blockquote>",
+        "<h4>Instructions</h4>",
+        "Fix the two indexing errors in the following function so all the numbers 1 through 5 are printed to the console."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "function countToFive() {",
+        "  let firstFive = \"12345\";",
+        "  let len = firstFive.length;",
+        "  let counter = 0;",
+        "  for (let i = 1; i <= len; i++) {",
+        "    console.log(firstFive[i]);",
+        "    counter++;",
+        "  }",
+        "  return counter;",
+        "}",
+        "",
+        "let loopCount = countToFive();"
+      ],
+      "tests": [
+        "assert(loopCount == 5, 'message: The loop code should execute exactly 5 times.');",
+        "assert(code.match(/i\\s*?=\\s*?0;/g).length == 1, 'message: Check that the initial condition for the loop starts at the first index.');",
+        "assert(!code.match(/i\\s?=\\s*?1;/g), 'message: Make sure to fix the initial condition for the loop.');",
+        "assert(code.match(/i\\s*?<\\s*?len;/g).length == 1, 'message: Check that the terminal condition for the loop stops at the last index.');",
+        "assert(!code.match(/i\\s*?<=\\s*?len;/g), 'message: Make sure to fix the terminal condition for the loop.');"
+      ],
+      "solutions": [
+        "use strict\"\n\nfunction countToFive() {\n    let firstFive = \"12345\";\n    let len = firstFive.length;\n    for (let i = 0; i < len; i++) {\n        console.log(firstFive[i]);\n    }\n}\n\ncountToFive();"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7113c8c441eddfaeb5bdef",
+      "title": "Use Caution When Reinitializing Variables Inside a Loop",
+      "description": [
+        "Sometimes it's necessary to save information, increment counters, or re-set variables within a loop. A potential issue is when variables either should be reinitialized, and aren't, or vice versa. This is particularly dangerous if you accidentally reset the variable being used for the terminal condition, causing an infinite loop.",
+        "Printing variable values with each cycle of your loop by using <code>console.log()</code> can uncover buggy behavior related to resetting, or failing to reset a variable.",
+        "<h4>Instructions</h4>",
+        "The following function is supposed to create a two-dimensional array with <code>m</code> rows and <code>n</code> columns of zeroes. Unfortunately, it's not producing the expected output because the <code>row</code> variable isn't being reinitialized (set back to an empty array) in the outer loop. Fix the code so it returns a correct 3x2 array of zeroes, which looks like <code>[[0, 0], [0, 0], [0, 0]]</code>."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "function zeroArray(m, n) {",
+        "  // Creates a 2-D array with m rows and n columns of zeroes",
+        "  let newArray = [];",
+        "  let row = [];",
+        "  for (let i = 0; i < m; i++) {",
+        "    // Adds the m-th row into newArray",
+        "    ",
+        "    for (let j = 0; j < n; j++) {",
+        "      // Pushes n zeroes into the current row to create the columns",
+        "      row.push(0);",
+        "    }",
+        "    // Pushes the current row, which now has n zeroes in it, to the array",
+        "    newArray.push(row);",
+        "  }",
+        "  return newArray;",
+        "}",
+        "",
+        "let matrix = zeroArray(3, 2);",
+        "console.log(matrix);"
+      ],
+      "tests": [
+        "assert(JSON.stringify(matrix) == \"[[0,0],[0,0],[0,0]]\", 'message: The <code>matrix</code> variable should be an array holding 3 rows of 2 columns of zeroes each.');",
+        "assert(matrix.length == 3, 'message: The <code>matrix</code> variable should have 3 rows.');",
+        "assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'message: The <code>matrix</code> variable should have 2 columns in each row.');"
+      ],
+      "solutions": [
+        "\"use strict\"\n\nfunction zeroArray(m, n) {\n    // Creates a 2-D array with m rows and n columns of zeroes\n    let newArray = [];    \n    for (let i = 0; i < m; i++) {\n        // Adds m rows into newArray\n        let row = [];\n        for (let j = 0; j < n; j++) {\n            // Adds n zeroes into the current row\n            row.push(0);\n        }\n        newArray.push(row);\n    }\n    return newArray;\n}\n\nlet test = zeroArray(3, 2);\nconsole.log(test);"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7133c8c441eddfaeb5bdef",
+      "title": "Prevent Infinite Loops with a Valid Terminal Condition",
+      "description": [
+        "Our final topic is the dreaded infinite loop. Loops are great tools when you need your program to run a code block a certain number of times or until a condition is met, but they need a terminal condition that ends the looping. Infinite loops are likely to freeze or crash the browser, and cause general program execution mayhem, which no one wants.",
+        "We saw an example of an infinite loop in the introduction - there is no terminal condition to break out of the <code>while</code> loop inside <code>loopy()</code>. Do NOT call this function!",
+        "<blockquote>function loopy() {<br>  while(true) {<br>    console.log(\"Hello, world!\");<br>  }<br>}</blockquote>",
+        "It's the programmer's job to ensure that the terminal condition, which tells the program when to break out of the loop code, is eventually reached. Some errors include incrementing or decrementing a counter variable in the wrong direction from the terminal condition, or accidentally resetting a counter or index variable within the loop code, instead of incrementing or decrementing it.",
+        "<h4>Instructions</h4>",
+        "The <code>myFunc()</code> function contains an infinite loop because the terminal condition <code>i != 4</code> will never evaluate to <code>false</code> (and break the looping) - <code>i</code> will increment by 2 each pass, and jump right over 4 since <code>i</code> is odd to start. Fix the comparison operator in the terminal condition so the loop only runs for <code>i</code> less than or equal to 4."
+      ],
+      "challengeSeed": [
+        "\"use strict\"",
+        "",
+        "function myFunc() {",
+        "  for (let i = 1; i != 4; i += 2) {",
+        "    console.log(\"Still going!\");",
+        "  }",
+        "}"
+      ],
+      "tests": [
+        "assert(code.match(/i\\s*?<=\\s*?4;/g).length == 1, 'message: Change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.');",
+        "assert(!code.match(/i\\s*?!=\\s*?4;/g), 'message: Make sure to fix the comparison operator in the terminal condition of the loop.');"
+      ],
+      "solutions": [
+        "use strict\"\nfunction myFunc() {\n    for (let i = 1; i <= 4; i += 2) {\n        console.log(\"Still going!\");\n    }\n}"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

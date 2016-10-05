@@ -1,0 +1,498 @@
+{
+  "name": "JSON APIs and Ajax",
+  "order": 2,
+  "time": "2 hours",
+  "helpRoom": "Help",
+  "required": [
+    {
+      "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
+    }
+  ],
+  "challenges": [
+    {
+      "id": "9d7123c8c441ebdfaeb5bdef",
+      "title": "Get JSON with XMLHttpRequest Method",
+      "description": [
+        "You can also request data from an external source. This is where APIs come into play.",
+        "Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
+        "Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.",
+        "However, JSON transmitted by APIs are bytes, and your application receives it as string. They can be converted to JS Objects, but they are not JS Objects by default.",
+        "You've already been using JSON whenever you create a JavaScript object. JSON is nothing more than object properties and their current values, sandwiched between a { and a }.",
+        "These properties and their values are often referred to as \"key-value pairs\".",
+        "Let's get the JSON from Free Code Camp's Cat Photo API.",
+        "Here's the code you can put in your click event to do this:",
+        "<code>    req=new XMLHttpRequest();</code>",
+        "<code>    req.open(\"GET\",'/json/cats.json',true);</code>",
+        "<code>    req.send();</code>",
+        "<code>    req.onload=function(){</code>",
+        "<code>        json=JSON.parse(req.responseText);</code>",
+        "<code>        document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);</code>",
+        "<code>    };</code>",
+        "Once you've added this, click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the Free Code Camp Cat Photo API."
+      ],
+      "challengeSeed": [
+        "      <script>",
+        "        document.addEventListener('DOMContentLoaded',function(){",
+        "            document.getElementById('getMessage').onclick=function(){",
+        "               // Only change code below this line.       ",
+        "              // Only change code above this line.",
+        "           };",
+        "      });",
+        "     </script>",
+        "    <div class = \"container-fluid\">",
+        "      <div class = \"row text-center\">",
+        "       <h2>Cat Photo Finder</h2>",
+        "     </div>",
+        "     <div class = \"row text-center\">",
+        "       <div class = \"col-xs-12 well message\">",
+        "         The message will go here",
+        "       </div>",
+        "     </div>",
+        "     <div class = \"row text-center\">",
+        "       <div class = \"col-xs-12\">",
+        "         <button id = \"getMessage\" class = \"btn btn-primary\">",
+        "          Get Message",
+        "         </button>",
+        "       </div>",
+        "     </div>",
+        "   </div>"
+      ],
+      "tests": [],
+      "solutions": [
+        "<script>\n        document.addEventListener('DOMContentLoaded',function(){\n            document.getElementById('getMessage').onclick=function(){\n               req=new XMLHttpRequest();\n               req.open(\"GET\",'/json/cats.json',true);\n               req.send();\n               req.onload=function(){\n                  json=JSON.parse(req.responseText);\n                  document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);          \n              };\n          };\n     });\n     </script>\n    <div class=\"container-fluid\">\n      <div class = \"row text-center\">\n       <h2>Cat Photo Finder</h2>\n     </div>\n     <div class = \"row text-center\">\n       <div class = \"col-xs-12 well message\">\n         The message will go here\n       </div>\n     </div>\n     <div class = \"row text-center\">\n       <div class = \"col-xs-12\">\n         <button id = \"getMessage\" class = \"btn btn-primary\">\n          Get Message\n         </button>\n       </div>\n     </div>\n   </div>"
+      ],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ebffaeb5bdef",
+      "title": "Convert JSON Data to HTML",
+      "description": [
+        "Now that we're getting data from a JSON API, let's display it in our HTML.",
+        "We can use the .forEach() method to loop through our data and modify our HTML elements.",
+        "First, let's declare an html variable with var html = \"\";.",
+        "Then, let's loop through our JSON, adding more HTML to that variable. When the loop is finished, we'll render it.",
+        "Here's the code that does this:",
+        "<code>   json.forEach(function(val) {</code>",
+        "<code>      var keys = Object.keys(val);</code>",
+        "<code>      html += \"<div class = \"cat\">\";</code>",
+        "<code>      keys.forEach(function(key) {</code>",
+        "<code>        html += \"<strong>\" + key + \"</strong>: \" + val[key] + \"<br>\";</code>",
+        "<code>      });</code>",
+        "<code>      html += \"</div><br>\";</code>",
+        "<code>   });</code>"
+      ],
+      "challengeSeed": [
+        "<script>",
+        "  document.addEventListener('DOMContentLoaded',function(){",
+        "    document.getElementById('getMessage').onclick=function(){",
+        "       req=new XMLHttpRequest();",
+        "       req.open(\"GET\",'/json/cats.json',true);",
+        "       req.send();",
+        "       req.onload=function(){",
+        "          json=JSON.parse(req.responseText);",
+        "          var html = \"\";",
+        "          // Only change code below this line",
+        "",
+        "",
+        "          // Only change code above this line",
+        "       };",
+        "   };",
+        "});",
+        "</script>",
+        "<div class=\"container-fluid\">",
+        "  <div class=\"row text-center\">",
+        "    <h2>Cat Photo Finder</h2> ",
+        "  </div>",
+        "  <div class=\"row text-center\">",
+        "    <div class=\"col-xs-12 well message\">",
+        "         The message will go here",
+        "    </div>",
+        "  </div>",
+        "  <div class=\"row text-center\">",
+        "    <div class=\"col-xs-12\">",
+        "    <button id=\"getMessage\" class=\"btn btn-primary\">",
+        "        Get Message",
+        "    </button>",
+        "  </div>",
+        " </div>",
+        "</div>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eb0faeb5bdef",
+      "title": "Render Images from Data Sources",
+      "description": [
+        "We've seen from the last two lessons that each object in our JSON array contains an imageLink key with a value that is the URL of a cat's image.",
+        "When we're looping through these objects, let's use this imageLink property to display this image in an img element.",
+        "Here's the code that does this:",
+        "<code>   html += \"<img src = '\" + val.imageLink + \"' \" + \"alt='\" + val.altText + \"'>\"; </code>"
+      ],
+      "challengeSeed": [
+        "<script>",
+        "    document.addEventListener('DOMContentLoaded',function(){",
+        "       document.getElementById('getMessage').onclick=function(){",
+        "           req=new XMLHttpRequest();",
+        "           req.open(\"GET\",'/json/cats.json',true);",
+        "           req.send();",
+        "           req.onload=function(){",
+        "               json=JSON.parse(req.responseText);",
+        "               var html = \"\";",
+        "               json.forEach(function(val) {",
+        "                   html += \"<div class = 'cat'>\";",
+        "                   // Only change code below this line.",
+        "",
+        "",
+        "                   // Only change code above this line.",
+        "                   html += \"</div><br>\";",
+        "              });",
+        "              document.getElementsByClassName('message')[0].innerHTML=html;",
+        "         };",
+        "     };",
+        "  });",
+        "  </script>",
+        " <div class=\"container-fluid\">",
+        "  <div class = \"row text-center\">",
+        "    <h2>Cat Photo Finder</h2>",
+        "  </div>",
+        "  <div class = \"row text-center\">",
+        "    <div class = \"col-xs-12 well message\">",
+        "      The message will go here",
+        "    </div>",
+        "  </div>",
+        "  <div class = \"row text-center\">",
+        "    <div class = \"col-xs-12\">",
+        "      <button id = \"getMessage\" class = \"btn btn-primary\">",
+        "        Get Message",
+        "      </button>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eb9faeb5bdef",
+      "title": "Trigger Click Events with javascript",
+      "description": [
+        "In this section, we'll learn how to get data from APIs. APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
+        "We'll also learn how to update HTML with the data we get from these APIs using a technology called Ajax.",
+        "We want our code to execute only once our page has finished loading. For that purpose we attach a event to our document called 'DOMContentLoaded'. Here's the code that does this:",
+        "<code> document.addEventListener('DOMContentLoaded',function() {</code>",
+        "<code></code>",
+        "<code> });  </code>",
+        "So Let's start by implementing a click event handler inside of our <code>document.addEventListener('DOMContentLoaded',function(){",
+        "});</code> function by adding this code:",
+        "",
+        "<code>document.getElementById('getMessage').onclick=function(){};</code>",
+        "After completing this, proceed to the next challenge where we will make our \"Get Message\" button change the text of the element with the class message."
+      ],
+      "challengeSeed": [
+        "   <script>",
+        "    document.addEventListener('DOMContentLoaded',function(){",
+        "          // Only change code below this line.",
+        "",
+        "",
+        "         // Only change code above this line.",
+        "    });",
+        "  </script>",
+        "  <div class=\"container-fluid\">",
+        "     <div class = \"row text-center\">",
+        "        <h2>Cat Photo Finder</h2>",
+        "     </div>",
+        "     <div class = \"row text-center\">",
+        "        <div class = \"col-xs-12 well message\">",
+        "          The message will go here",
+        "        </div>",
+        "    </div>",
+        "   <div class = \"row text-center\">",
+        "      <div class = \"col-xs-12\">",
+        "         <button id = \"getMessage\" class = \"btn btn-primary\">",
+        "         Get Message",
+        "        </button>",
+        "      </div>",
+        "   </div>",
+        "</div>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eb7faeb5bdef",
+      "title": "Prefilter JSON",
+      "description": [
+        "If we don't want to render every cat photo we get from our Free Code Camp's Cat Photo JSON API, we can pre-filter the json before we loop through it.",
+        "Let's filter out the cat whose \"id\" key has a value of 1.",
+        "Here's the code to do this:",
+        "<code>   json = json.filter(function(val) {</code>",
+        "<code>      return (val.id !== 1);</code>",
+        "<code>   });</code>"
+      ],
+      "challengeSeed": [
+        "         // Only change code above this line. ",
+        "         json.forEach(function(val) {",
+        "              html += \"<div class = 'cat'>\"",
+        "              html += \"<img src = '\" + val.imageLink + \"'>\"",
+        "              html += \"</div>\"",
+        "          });",
+        "          document.getElementsByClassName('message')[0].innerHTML=html;",
+        "       };",
+        "     }; ",
+        "  });",
+        "  </script>",
+        "   <div class=\"container-fluid\">",
+        "      <div class = \"row text-center\">",
+        "         <h2>Cat Photo Finder</h2>",
+        "      </div>",
+        "      <div class = \"row text-center\">",
+        "        <div class = \"col-xs-12 well message\">",
+        "          The message will go here",
+        "        </div>",
+        "    </div>",
+        "   <div class = \"row text-center\">",
+        "      <div class = \"col-xs-12\">",
+        "         <button id = \"getMessage\" class = \"btn btn-primary\">",
+        "         Get Message",
+        "        </button>",
+        "      </div>",
+        "   </div>",
+        " </div>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eb6faeb5bdef",
+      "title": "Posting data using XMLHttpRequest Method",
+      "description": [
+        "Till now we received data from external resource. We can also send data to an external resource. We are required to know the URL of an external resource which supports AJAX requests.",
+        "JavaScript's XMLHttpRequest Method can also be used to post data to a server. Here's the code to do it :",
+        "<code>req=new XMLHttpRequest();</code>",
+        "<code>req.open(\"POST\",url,true);</code>",
+        "<code>req.setRequestHeader('Content-Type','text/plain');</code>",
+        "<code>req.onreadystatechange=function(){</code>",
+        "<code>    if(req.readyState==4 && req.status==200){</code>",
+        "<code>        document.getElementsByClassName('message')[0].innerHTML=req.responseText;</code>",
+        "<code>    }</code>",
+        "<code> };</code>",
+        "<code> req.send(userName);</code>",
+        "Once you have entered your name in input box and click \"Send Message\" , your AJAX function will replace \"Reply from Server will be here.\" with reply of server which in this case is your name appended with \" loves cats\"."
+      ],
+      "challengeSeed": [
+        "<script>",
+        "   document.addEventListener('DOMContentLoaded',function(){",
+        "       document.getElementById('sendMessage').onclick=function(){",
+        "",
+        "         var userName=document.getElementById(\"name\").value;",
+        "         // Only change code below this line.          ",
+        "",
+        "",
+        "         // Only change code above this line.",
+        "     };",
+        "  });",
+        " </script>",
+        "  <div class=\"container-fluid\">",
+        "    <div class=\"row text-center\">",
+        "      <h2>Cat Friends</h2>",
+        "    </div>",
+        "   <div class=\"row text-center\">",
+        "      <div class=\"col-xs-12 well message\">",
+        "          Reply from Server will be here.",
+        "      </div>",
+        "   </div>",
+        "",
+        "   <div class=\"row text-center\">",
+        "      <div class=\"col-xs-12\">",
+        "        <label>Your name:",
+        "           <input type=\"text\" id=\"name\"/>",
+        "        </label>",
+        "        <button id=\"sendMessage\" class=\"btn btn-primary\">",
+        "           Send Message",
+        "        </button>",
+        "     </div>",
+        "   </div>",
+        " </div>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eb5faeb5bdef",
+      "title": "Get Geolocation data",
+      "description": [
+        "Another cool thing we can do is access our user's current location. Every browser has a built in navigator that can give us this information.",
+        "The navigator will get our user's current longitude and latitude.",
+        "You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.",
+        "By selecting allow you will see the text on the output phone change to your latitude and longitude.",
+        "Here's some code that does this:",
+        "<code>if (navigator.geolocation){ </code>",
+        "<code>   navigator.geolocation.getCurrentPosition(function(position) {  </code>",
+        "<code>        document.getElementById('data').innerHTML=\"latitude: \"+ position.coords.latitude +  \"<br>longitude: \" +  position.coords.longitude;</code>",
+        "<code>    });</code>",
+        "<code>}</code>"
+      ],
+      "challengeSeed": [
+        "<script>",
+        "  // Only change code below this line.",
+        "",
+        "",
+        "  // Only change code above this line.",
+        "</script>",
+        "<div id = \"data\">",
+        "  <h4>You are here:</h4>",
+        "",
+        "</div>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

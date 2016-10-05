@@ -1,0 +1,1777 @@
+{
+  "name": "Data Visualization with D3",
+  "order": 1,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "9d7123c8c331ee0faeb5bdef",
+      "title": "Adding elements with D3",
+      "description": [
+        "D3 JS lets you add, edit, or delete documents based on data. In this exercise, we shall start with adding a simple text in the page; using D3.",
+        "The select() function lets you pick the first element that matches the input string.",
+        "<code>const anchor = d3.select(\"a\");</code>",
+        "It returns an HTML node, on which you can use even binding functions.",
+        "Similarly, there are append() and text() functions.",
+        "The append() function appends a HTML node, and returns a handle to the node",
+        "The text() function either sets the text of the selected node, or gets the current text. To set the value, you would have to pass a string as argument."
+      ],
+      "challengeSeed": [
+        "<script>",
+        "    /* Add your code below */",
+        "",
+        "    /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee9faeb5bdef",
+      "title": "Working with Data",
+      "description": [
+        "As stated earlier, D3 JS focuses on data-driven approach. So, let's start by working with an array of data.",
+        "We want to display some things on the webpage based on the data at hand.",
+        "To make D3 aware of the data we have, we have to use the data() function and pass our array into the function.",
+        "We would also need to use enter() function, which is used to create missing elements in-memory before rendering.",
+        "Say, you want to create 5 lines of texts, based on 5 entries of the array. Then you need to call enter() on the selection, before proceeding to creating the text elements.",
+        "Instructions",
+        "Target the body node using D3 select and append as many <h1> tags as many are there elements in the array",
+        "Note",
+        "You can chain the functions mentioned above. Also, use string to select tags, not HTML notation. For example, if you want to append or select <h2>, use \"h2\"."
+      ],
+      "challengeSeed": [
+        "<script>",
+        "    var dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5]",
+        "    /* Add your code below */",
+        "",
+        "    /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee8faeb5bdef",
+      "title": "Working with Dynamic Data",
+      "description": [
+        "We have learned the tools to display dynamic data.",
+        "Let's start with displaying array elements.",
+        "We have already learned about data() function and enter(); to pass an array to D3 and let it display some text according to the number of data elements present.",
+        "But now it's time we display the actual data, no cloak-and-dagger about it. We need to modify the text() function we had used earlier.",
+        "The text() function takes a callback, where you can simply return the argument to callback to display the data. Obviously, the argument to callback is an invidual data-point itself.",
+        "selection.text((d) => d)",
+        "Instructions",
+        "Display the content of the array, and append \"USD\" (with a space; like \"10 USD\") to each of them. Use h1 to hold each node.",
+        "Note",
+        "You can chain the functions mentioned above. Also, use string to select tags, not HTML notation. For example, if you want to append or select <h2>, use \"h2\"."
+      ],
+      "challengeSeed": [
+        "<script>",
+        "    var dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5]",
+        "    /* Add your code below */",
+        "",
+        "    /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee7faeb5bdef",
+      "title": "",
+      "description": [
+        "We can use style() function on any selection in D3, to give the rendered value an inline style.",
+        "The input to the style() function can be a comma-separated key value pair.",
+        "selection.style(\"color\",\"blue\");",
+        "Turn all the displayed text into verdana font.",
+        "Note",
+        "Use font-family property."
+      ],
+      "challengeSeed": [
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    d3.select(\"body\").selectAll(\"h1\")",
+        "        .data(dataset)",
+        "        .enter()",
+        "        .append(\"h2\")",
+        "        .text((d) => (\"Value : \" + d))",
+        "        /* Add your code below */",
+        "",
+        "        /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [
+        "// Check if body has 9 h1 tags",
+        "// Check if h1 has the text \"New Title\"",
+        "// Check if the code uses enter()"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee5faeb5bdef",
+      "title": "Add Logic to your style",
+      "description": [
+        "Since D3 is all about visualization and presentation of data, it is expected that, you would need to provide some logic in your styling",
+        "In this challenge, we would render styling conditionally on each data element.",
+        "Say, we would want to color each data point blue, if they are less than 20; else red.",
+        "We can pass this as an if-else logic into the style() function. It accepts a callback, which has each of the data point as its argument.",
+        "selection.style(\"color\", (d) => {",
+        "    /* Some logic that returns conditional value of color */",
+        "});",
+        "This can be used with other properties as well.",
+        "Challenge Instructions",
+        "Write the callback function that returns proper styling - for data element value less than 20, returns `\"color\",",
+        "Note",
+        "You can also use ternary operator."
+      ],
+      "challengeSeed": [
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    d3.select(\"body\").selectAll(\"h1\")",
+        "        .data(dataset)",
+        "        .enter()",
+        "        .append(\"h1\")",
+        "        .text((d) => (\"Value : \" + d))",
+        "        /* Add your code below */",
+        "",
+        "        /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee4faeb5bdef",
+      "title": "Add Classes using D3",
+      "description": [
+        "It's not always a good idea to keep adding inline styles in HTML elements. It could get cumbersome for even smaller apps.",
+        "What we would ideally want to do, is to add CSS class es to HTML nodes, with attr(); maybe even conditionally.",
+        "But keeping the actual styling better left inside the CSS classes.",
+        "We can add a class by using \"class\" property inside attr().",
+        "selection.attr(\"class\", \"container\");",
+        "This can be used with other properties as well.",
+        "Instructions",
+        "Add the CSS class bar to the selection using attr()",
+        "Note",
+        "Write code only inside where you are asked to add your code."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "<script src=\"https://d3js.org/d3.v4.min.js\"></script>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    d3.select(\"body\").selectAll(\"div\")",
+        "        .data(dataset)",
+        "        .enter()",
+        "        .append(\"div\")",
+        "        /* Add your code below */",
+        "",
+        "        /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee3faeb5bdef",
+      "title": "Updating Height Dynamically",
+      "description": [
+        "Now that we know how to display data from an array, and how to add CSS classes, we are finally at a place where we can use both of these tricks and display a bar chart!",
+        "There are two phases to this:",
+        "Create a div for each of the data points in the array.",
+        "Give each of these divs a dynamic height, using style(), that matches their value.",
+        "Challenge Instructions",
+        "After calling enter(), use append() to add a <div> for each of the data points. Then use attr() to add a CSS class bar to each of the elements.",
+        "Finally, add dynamic height using style() and a callback function; which returns the value of the data point and a \"px\" string added to it.",
+        "Note",
+        "Write code only inside where you are asked to add your code."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "<script src=\"https://d3js.org/d3.v4.min.js\"></script>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    d3.select(\"body\").selectAll(\"div\")",
+        "        .data(dataset)",
+        "        .enter()",
+        "        .append(\"div\")",
+        "        .attr(\"class\", \"bar\")",
+        "        /* Add your code below */",
+        "",
+        "        /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee2faeb5bdef",
+      "title": "Clean Up the Presentation of your Chart",
+      "description": [
+        "We have a bar chart, except it could be better.",
+        "There are two phases to doing this:",
+        "Make each of the bar separate from each other, instead of being coalesced together. This can be obtained by adding margin to the CSS of .bar class.",
+        "Present each of the bars distinctly from each other. This can be done by multiplying the value to get the height.",
+        "Challenge Instructions",
+        "Add a margin of 3px to the .bar class in CSS styling.",
+        "The callback that sets the height, should return a value 10 times the original data point value.",
+        "Note",
+        "Write code only inside where you are asked to add your code.",
+        "Multiplying by the same constant only alters the scale. Kinda like zooming in. It doesn't alter any data."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        /* Add code only below this line */",
+        "",
+        "        /* Add code only above this line */",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "<script src=\"https://d3js.org/d3.v4.min.js\"></script>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    d3.select(\"body\").selectAll(\"div\")",
+        "        .data(dataset)",
+        "        .enter()",
+        "        .append(\"div\")",
+        "        .attr(\"class\", \"bar\")",
+        "        /* Add your code below */",
+        "",
+        "        /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee1faeb5bdef",
+      "title": "",
+      "description": [
+        "SVG stands for Scalable Vector Graphics.",
+        "Scalable in this context means that an SVG media object would not appear pixelated when you zoom in or zoom out. It would scale with the display system the right way, whether it's Apple Watch or a large screen TV monitor.",
+        "SVG has great support for common geometric shapes.",
+        "Since D3 is about presenting data and helping you visualize; it's important that we also use SVG whenever possible.",
+        "CSS can be made scalable too, by using relative parameters (vh or vw; and percentages); but SVG is much more easy to use.",
+        "Challenge Instructions",
+        "Add an <svg> node using append(), and give it a width attribute of 500 and height attribute of 100",
+        "Note",
+        "Note that width and height attributes have no units. Just numbers.",
+        "This is the building block of scaling, because the element will always have a 5:1 width to height ratio, no matter what the zoom level is."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        margin: 3px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "        /* Add your code below */",
+        "",
+        "        /* Add your code above */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ee0faeb5bdef",
+      "title": "Use SVG to Display Shapes",
+      "description": [],
+      "challengeSeed": [
+        "We have created an SVG element so far, with a given width and height.",
+        "But it's not showing, right?",
+        "SVG only created the space of given width and height.",
+        "We have to render a rectangle <rect> SVG shape to actually display something, like, say a bar.",
+        "Instructions",
+        "Add a <rect> SVG shape using append(), and give it a width attribute of 25 and height attribute of 100. Also, set x and y attribute to 0 each.",
+        "Note",
+        "Read up on different attributes of <rect> from the documentation on MDN and other sources.",
+        "You might need to use select() from earlier, because <rect> would be added inside a <svg> node. Also don't forget to use data() and enter()."
+      ],
+      "tests": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        margin: 3px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "                    /* Add your code below */",
+        "",
+        "                    /* Add your code above */",
+        "</script>"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed9faeb5bdef",
+      "title": "Use SVG to Add Space Between Elements",
+      "description": [
+        "We have created an SVG Rect element, next we need to make lot of rectangles like this.",
+        "Actually, not a lot. To be precise, exactly the number of rectangles as there are data points in the array.",
+        "However, we need to find a way to place each of the rectangles.",
+        "The placement of a rectangle is handled by x and y attributes. Earlier we set them to 0.",
+        "Now, we want all the bars to be in the same vertical level (y stays 0), but as we iterate over array elements, the x value should increase.",
+        "Remember attr() in D3 accepts a callback function to dynamically set the attribute specfied? This callback takes two arguments (second one is optional).",
+        "<code>selection.attr('property', (d, i) => {</code>",
+        "<code>       /* </code>",
+        "<code>       * d is the data point value</code>",
+        "<code>       * i is the index of the data point in the array</code>",
+        "<code>       */</code>",
+        "<code>})</code>",
+        "Instructions",
+        "Add a dynamic origin (x attribute) for each of the bars, by making sure the first <rect> has x = 0, second <rect> has x = 30, third <rect> has x = 60, fourth <rect> has x = 90, and so on.",
+        "Note",
+        "We picked 30 as the distance of one <rect> from the next one. Ideally, any value greater than 25, the width of each of the <rect> would have worked.",
+        "Try to relate the distance as i varies. For instance, if i = 0 => x = 0, if i = 1, x = 30, if i = 2, x = 60 etc."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        margin: 3px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "",
+        "<script type>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "    svg.selectAll(\"rect\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"rect\")",
+        "           .attr(\"x\", (d, i) => {",
+        "               /* Add your code below */",
+        "",
+        "               /* Add your code above */",
+        "           })",
+        "           .attr(\"y\", 0)",
+        "           .attr(\"width\", 25)",
+        "           .attr(\"height\", 100);",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed8faeb5bdef",
+      "title": "Change the Height of SVG Elements",
+      "description": [
+        "We only need to alter the height of each bar according to the value of the data point, as given in the array.",
+        "Just like we set the x attribute earlier dynamically, we need to set theheight attribute of the <rect> node.",
+        "<code>selection.attr('property', (d, i) => {</code>",
+        "<code>       /* </code>",
+        "<code>       * d is the data point value</code>",
+        "<code>       * i is the index of the data point in the array</code>",
+        "<code>       */</code>",
+        "<code>})</code>",
+        "Instructions",
+        "Set the height of the bar i using the value of d in the callback of attr(). It should be d * 3, instead of just d (for better distinction).",
+        "Note",
+        "We have already described why d * 3 is same as d when it comes to data visualization. In fact, the former one helps discern it better."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        margin: 3px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "    svg.selectAll(\"rect\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"rect\")",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", 0)",
+        "           .attr(\"width\", 25)",
+        "           .attr(\"height\", (d, i) => {",
+        "               /* Add your code below */",
+        "",
+        "               /* Add your code above */",
+        "           });",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed7faeb5bdef",
+      "title": "Invert SVG Elements",
+      "description": [
+        "We are almost there, except our bar chart is inverted!",
+        "This is because of how SVG parses (x, y) coordinate information (not because a demogorgon took you into upside-down)",
+        "In SVG, a <rect> shape has its origin at top-left corner. x increases toward the right. So, if you increase x, the rectangle moves toward the right.",
+        "But if you increase y, it goes down, instead of going up.",
+        "We have to keep the height propertional to the data point's value d. So, to fix this, we would have to decrease y as the value increases.",
+        "When d=0, y should be the height of SVG node, h. When d is greater than 0, y is less than h.",
+        "A relationship like y = h - d would work great!",
+        "Instructions",
+        "Set the y attribute of the bar i using the value of d in the callback of attr(\"y\"). Don't return h - d; instead, take into account that d is being multplied by a factor of 3 to obtain the height.",
+        "Note",
+        "In general, the relationship is y = h - m * d, where m is a multiplying factor"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        margin: 3px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "    svg.selectAll(\"rect\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"rect\")",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => {",
+        "                /* Add code below this line */",
+        "",
+        "                /* Add code above this line */",
+        "           })",
+        "           .attr(\"width\", 25)",
+        "           .attr(\"height\", (d, i) => d * 3);",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed6faeb5bdef",
+      "title": "Change the Color of an SVG Element",
+      "description": [
+        "We finally got the bars right, but they are all monochromatic, filled with black color.",
+        "At the very least, SVG should let us change the color of the bars.",
+        "In SVG, a <rect> shape has its color defined by fill attribute. You can obviously do more complex, visually appealing stuff with gradient and transperancy.",
+        "Instructions",
+        "Set the fill attribute of all the bars to color navy.",
+        "Note ",
+        "You can also set Hexadecimal colors."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        margin: 3px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "    svg.selectAll(\"rect\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"rect\")",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => h - 3 * d )",
+        "           .attr(\"width\", 25)",
+        "           .attr(\"height\", (d, i) => d * 3)",
+        "           /* Add code below this line */",
+        "",
+        "           /* Add code above this line */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed5faeb5bdef",
+      "title": "Add Labels to your D3 Elements",
+      "description": [
+        "We can label a graph element, such as a bar, in D3.",
+        "We will be using SVG element, <text>. Like <rect> element, a <text> element needs to have x and y attributes, for placing it on the SVG canvas.",
+        "This exercise is to demonstrate the level of control D3 gives you, to label your bars.",
+        "We would add the value of each bar on top of each bar, with a 3-unit distance (we left pixel-land when we started with SVG) from corresponding bar.",
+        "Helpful links",
+        "Instructions",
+        "Create <text> node, exactly like we created <rect> nodes.",
+        "Pass the dataset into them, call enter() and then place them on top of each bar, with a 3 unit distance from each bar.",
+        "You can use text() function from D3 to set the text.",
+        "Note ",
+        "Their x and y attribute would have same value as the bar at location i. Only difference would be in the value of y.",
+        "Decide if the value of y would be greater than the value of y, or less."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        margin: 3px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "    svg.selectAll(\"rect\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"rect\")",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => h - 3 * d )",
+        "           .attr(\"width\", 25)",
+        "           .attr(\"height\", (d, i) => d * 3)",
+        "           .attr(\"fill\", \"navy\");",
+        "",
+        "   /* Add code below this line */",
+        "",
+        "   /* Add code above this line */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed4faeb5bdef",
+      "title": "Style D3 Labels",
+      "description": [
+        "Just as we can label a bar, we can also style the label.",
+        "We will set the color and font-size of the text in this exercise",
+        "The color of the text, is dictated by fill attribute of the <text> node. The font-size is governed by, you guessed it right, font-size attribute.",
+        "Instructions",
+        "Set the font-size to 25px, and color of the text to red"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar {",
+        "        width: 25px;",
+        "        height: 100px;",
+        "        margin: 3px;",
+        "        display: inline-block;",
+        "        background-color: blue;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "    svg.selectAll(\"rect\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"rect\")",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => h - 3 * d )",
+        "           .attr(\"width\", 25)",
+        "           .attr(\"height\", (d, i) => d * 3)",
+        "           .attr(\"fill\", \"navy\");",
+        "",
+        "    svg.selectAll(\"text\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"text\")",
+        "           .text((d) => d)",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => h - (d * 3 + 3))   ",
+        "           /* Add code below this line */",
+        "",
+        "           /* Add code above this line */",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed3faeb5bdef",
+      "title": "Add a Hover Effect to your D3 Elements",
+      "description": [
+        "Just because we are using SVG, doesn't mean we cannot use CSS!",
+        "We can set a CSS class using class attribute on an SVG element.",
+        "In this exercise, we will set a CSS class, that creates some color change effect on mouse hover.",
+        "Instructions",
+        "Set the CSS class of all <rect> nodes to bar",
+        "Note ",
+        "You might need to use attr() function from D3."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "    svg.selectAll(\"rect\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"rect\")",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => h - 3 * d )",
+        "           .attr(\"width\", 25)",
+        "           .attr(\"height\", (d, i) => d * 3)",
+        "           .attr(\"fill\", \"navy\")",
+        "           /* Add code below this line */",
+        "",
+        "           /* Add code above this line */",
+        "",
+        "    svg.selectAll(\"text\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"text\")",
+        "           .text((d) => d)",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => h - (d * 3 + 3))   ",
+        "",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed2faeb5bdef",
+      "title": "Add a Tooltip to your D3 Elements",
+      "description": [
+        "We can add a tooltip to each of the bars using <title> node under each <rect>",
+        "<title> is another SVG element, commonly used for tool-tip, which can be set by calling text() on the <title> node after creation.",
+        "Instructions",
+        "Create <title> element under each <rect> node, and call text() function on it, to set the text to each data value.",
+        "Note ",
+        "You might need to use callback function to return the data point value d."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [ 5, 10, 15, 20, 25, 20, 15, 10, 5];",
+        "",
+        "    const w = 500;",
+        "    const h = 100;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "    svg.selectAll(\"rect\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"rect\")",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => h - 3 * d )",
+        "           .attr(\"width\", 25)",
+        "           .attr(\"height\", (d, i) => d * 3)",
+        "           .attr(\"fill\", \"navy\")",
+        "           attr(\"class\", \"bar\")",
+        "           /* Add code below this line */",
+        "",
+        "           /* Add code above this line */",
+        "",
+        "    svg.selectAll(\"text\")",
+        "           .data(dataset)",
+        "           .enter()",
+        "           .append(\"text\")",
+        "           .text((d) => d)",
+        "           .attr(\"x\", (d, i) => i * 30)",
+        "           .attr(\"y\", (d, i) => h - (d * 3 + 3))   ",
+        "",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ed1faeb5bdef",
+      "title": "Create Scatterplot SVG Circles",
+      "description": [
+        "Scatter plots are consisted of small circles.",
+        "SVG lets you create <circle> shape, just like it supports <rect> shape.",
+        "To draw a circle in SVG, you need to pass it the position of its center (cx and cy attributes), and radius (r attribute).",
+        "As in <rect>, the attribute cy is measured from the top boundary of SVG canvas, not bottom.",
+        "Instructions",
+        "Create <circle> elements that correspond to the data points provided in the array. Each data point contains value of cx, cy (in that order).",
+        "All circle should have radius of 5.",
+        "Note ",
+        "Don't forget to use selectAll(), data(), enter(). Also, remember to flip the scatter plot, by passing proper value in attr(\"cy\")",
+        "You don't have to scale the value either, using some multiplicative factor; like we did for bar chart."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [",
+        "                  [ 34,     78 ],",
+        "                  [ 109,   280 ],",
+        "                  [ 310,   120 ],",
+        "                  [ 79,   411 ],",
+        "                  [ 420,   220 ],",
+        "                  [ 233,   145 ],",
+        "                  [ 333,   96 ],",
+        "                  [ 222,    333 ],",
+        "                  [ 78,    320 ],",
+        "                  [ 21,   123 ]",
+        "              ];",
+        "",
+        "",
+        "    const w = 500;",
+        "    const h = 500;",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                    .append(\"svg\")",
+        "                    .attr(\"width\", w)",
+        "                    .attr(\"height\", h);",
+        "",
+        "   /* Add code below this line */",
+        "",
+        "   /* Add code above this line */",
+        "",
+        "",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ecdfaeb5bdef",
+      "title": "Add Labels to your Scatter Plot Circles",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ecffaeb5bdef",
+      "title": "Create a Linear Scale with SVG",
+      "description": [
+        "We have seen how to create simple bar chart and scatter plots.",
+        "Now, we are going to take a look at something more fundamental; yet necessary for any plotting - Scale",
+        "Often, you are required to plot a set of values at a given scale. For instance, if you are plotting various countries' GDP using plot, you have to divide the absolute GDP by a few Billions, if not trillions; and keep only the relevant figures.",
+        "You would almost never plot raw data as-is. Which is why, before even plotting, you have to set the scale for your entire data set, so that the x and y values can fit your canvas width and height.",
+        "To create a simple linear scale, use D3 function scaleLinear().",
+        "<code> const scale = d3.scaleLinear()</code>",
+        "This creates a simple scale.",
+        "Create a scale and call it with input argument 50.",
+        "Note ",
+        "Guess the scaling factor scaleLinear() sets by default."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    /* Add code below this line */",
+        "        const scale = undefined // create scale here",
+        "        const output = scale(); // invoke with argument 50",
+        "    /* Add code above this line */",
+        "",
+        "    d3.select('body')",
+        "      .append('h2')",
+        "      .text(output)",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ecefaeb5bdef",
+      "title": "Set a Domain and a Range",
+      "description": [
+        "The previous scale was identity relationship - we want something more interesting.",
+        "Say the x-coordinate, or domain, might vary between 50 and 480. Meaning we have data available only for those points.",
+        "The y-coordinate, or the range, varies between 10 and 500 within that interval of x-coordinates.",
+        "We can express this using domain() and range() of the scale.",
+        "We would want to set this, because it would help set axis later.",
+        "<code>// Let's set a domain</code>",
+        "<code>// The domain is the possible input values</code>",
+        "<code>scale.domain([50, 480]);</code>",
+        "<code>// And now a  range</code>",
+        "<code>// The range of possible output values</code>",
+        "<code>scale.range([10, 500]);</code>",
+        "<code>scale(50) //returns 10</code>",
+        "<code>scale(480) // returns 500</code>",
+        "<code>scale(325) // returns 323.37209302325584</code>",
+        "<code>scale(750) // returns 807.6744186046511</code>",
+        "<code>d3.scaleLinear()</code>",
+        "Create a scale and set it with domain [250, 500] and range [10, 150].",
+        "Note ",
+        "You can totally chain these functions!"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    /* Add code below this line */",
+        "        const scale = d3.scaleLinear() // create scale here",
+        "",
+        "",
+        "    /* Add code above this line */",
+        "    const output = scale(50);",
+        "    d3.select('body')",
+        "      .append('h2')",
+        "      .text(output)",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ecdfbbb5bdef",
+      "title": "Use the D3 Max Function and Min Function",
+      "description": [
+        "Now that we know how we can use D3 functions to set the domain and range of our data, it's time to look at some utilities that makes that easy for us.",
+        "To set domain and range, we need to know some minimum and maximum present within the data given. It's error prone to do that manually, especially if the dataset is large.",
+        "D3 gives you two functions - d3.max() and d3.min() to extract these information.",
+        "<code>const exampleData = [34, 234, 73, 90, 6, 52];</code>",
+        "<code>d3.min(exampleData) // returns 6</code>",
+        "<code>d3.max(exampleData) // returns 234</code>",
+        "But a dataset might have nested arrays, like [x,y] coordinate pair we used in scatter plot.",
+        "In that case, we need to tell D3 how we want our maxiumum and minimum to be computed.",
+        "This is achieved by passing a callback in max() or min() function.",
+        "This callback's argument is current inner array. The callback needs to return the element from the inner array over which you want to compute the maximum or minimum.",
+        "<code>const locationData = [[1,7],[6,3],[8,3]];</code>",
+        "<code>// This is how you make it work with an array of arrays</code>",
+        "<code>// this returns the smallest number of the first element</code>",
+        "<code>const minX = d3.min(locationData, (d) => d[0]);</code>",
+        "Instructions",
+        "Compute the maximum of z-coordinate from the 3D array; where the 3rd value in coordinate is the z-index.",
+        "Note ",
+        "D3 can totally plot 3D arrays. Where do you think the 3 in D3 comes from!"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8,3]]",
+        "    /* Add code below this line */",
+        "    const output = undefined; // change this line",
+        "    /* Add code above this line */",
+        "",
+        "    d3.select('body')",
+        "      .append('h2')",
+        "      .text(output)",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eccfaeb5bdef",
+      "title": "Use Dynamic Scales",
+      "description": [
+        "We can use the D3 min and max utility to set the scale properly.",
+        "Given a conplex data-set, we would want to first scale it to fit the SVG container's width and height.",
+        "We would even want to have some padding, so that the axes have some breathing room from the boundary of the SVG canvas.",
+        "Let's see an example of how to set the X-axis scale for a typical scatter plot.",
+        "<code>const dataset = [</code>",
+        "<code>                [ 34,     78 ],</code>",
+        "<code>                [ 109,   280 ],</code>",
+        "<code>                [ 310,   120 ],</code>",
+        "<code>                [ 79,   411 ],</code>",
+        "<code>                [ 420,   220 ],</code>",
+        "<code>                [ 233,   145 ],</code>",
+        "<code>                [ 333,   96 ],</code>",
+        "<code>                [ 222,    333 ],</code>",
+        "<code>                [ 78,    320 ],</code>",
+        "<code>                [ 21,   123 ]</code>",
+        "<code>            ];</code>",
+        "<code>const w = 500;</code>",
+        "<code>const h = 500;</code>",
+        "<code>// padding from SVG box boundary</code>",
+        "<code>const padding = 30;</code>",
+        "<code>const xScale = d3.scaleLinear()</code>",
+        "<code>                  .domain([0, d3.max(dataset, (d)=> d[0])])</code>",
+        "<code>                  .range([padding, w - padding ]);</code>",
+        "The last line of code requires some understanding. The domain setting is straightforward.",
+        "It's setting the minimum of available values of x-coordinate to 0, and maximum is computed by D3 max() utility.",
+        "The range() of values the x-values should map to - to fit within the width of SVG container, is set to be between padding and w - padding.",
+        "If you have trouble understanding this part, you might want to take a piece of paper and a pen; draw a line starting at 0, ending at w.",
+        "Now mark off padding from both ends and see the length available to place all the x-values.",
+        "The 0 in your X axis data would match to padding mark; and xMax would match to w - padding mark.",
+        "Instructions",
+        "Compute the yScale using similar logic. Assume minimum possible value in y-domain is 0.",
+        "Note: We don't want to do flipping later. So, when setting the range for Y coordinates, you can use the higher value first, and lower value second.",
+        "This would flip all Y-data by default. Essentially, scaling with a negative factor.",
+        "To help you think, draw a line, this time vertically; and see where yMin and yMax would match."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [",
+        "                  [ 34,     78 ],",
+        "                  [ 109,   280 ],",
+        "                  [ 310,   120 ],",
+        "                  [ 79,   411 ],",
+        "                  [ 420,   220 ],",
+        "                  [ 233,   145 ],",
+        "                  [ 333,   96 ],",
+        "                  [ 222,    333 ],",
+        "                  [ 78,    320 ],",
+        "                  [ 21,   123 ]",
+        "              ];",
+        "",
+        "    const w = 500;",
+        "    const h = 500;",
+        "",
+        "    // padding from SVG canvas borders",
+        "    const padding = 30;",
+        "",
+        "    // create an x and y scale",
+        "",
+        "    const xScale = d3.scaleLinear()",
+        "                    .domain([0, d3.max(dataset, (d) => d[0])])",
+        "                    .range([padding, w - padding]);",
+        "",
+        "    /* Add code below this line */",
+        "    const yScale = undefined;",
+        "    /* Add code above this line */",
+        "    const output = yScale(411); // returns 30",
+        "    d3.select('body')",
+        "      .append('h2')",
+        "      .text(output)",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ecbfaeb5bdef",
+      "title": "Use a Pre-defined Scale",
+      "description": [
+        "Now that we have set up our scale, we are ready to plot the scatter plot once again.",
+        "This time, we will use the scales we have set up.",
+        "This would keep our data within proper bounds. We can use our scale as a processing function that returns processed value for rendering.",
+        "<code>shape</code>",
+        "<code>   .attr(\"x\", (d) => xScale(d[0]))</code>",
+        "To set any attribute value inside any shape (<rect>, <text>, or <circle>), we pass it via the scaling function.",
+        "However, if it doesn't need to be geometrically rendered, but only displayed as text or tooltip; we can use the raw value without scaling.",
+        "Instructions",
+        "Use scaling to render values after converting them properly. In particular, render circles and text right to them.",
+        "All circle must have a radius of 5 units. The offset in x coordinate for text would be 10 units.",
+        "Text should display raw value.",
+        "Note ",
+        "No flipping necessary here. Our scaling already took care of that."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [",
+        "                  [ 34,     78 ],",
+        "                  [ 109,   280 ],",
+        "                  [ 310,   120 ],",
+        "                  [ 79,   411 ],",
+        "                  [ 420,   220 ],",
+        "                  [ 233,   145 ],",
+        "                  [ 333,   96 ],",
+        "                  [ 222,    333 ],",
+        "                  [ 78,    320 ],",
+        "                  [ 21,   123 ]",
+        "              ];",
+        "",
+        "    const w = 500;",
+        "    const h = 500;",
+        "    const padding = 60;",
+        "",
+        "    const xScale = d3.scaleLinear()",
+        "                .domain([0, d3.max(dataset, (d) => d[0])])",
+        "                .range([padding, w - padding]);",
+        "",
+        "    const yScale = d3.scaleLinear()",
+        "                .domain([0, d3.max(dataset, (d) => d[1])])",
+        "                .range([h - padding, padding]);",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                        .append(\"svg\")",
+        "                        .attr(\"width\", w)",
+        "                        .attr(\"height\", h);                     ",
+        "",
+        "    // update the code to use the scale",
+        "",
+        "",
+        "    // Add code below",
+        "    // ",
+        "    // Add code above",
+        "",
+        "",
+        "",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ecafaeb5bdef",
+      "title": "Add Axes to your Visualization",
+      "description": [
+        "There's only one thing missing from our plot to make it look all professional - with axes.",
+        "Axes is plural for Axis. In particular, we would want an x-axis, and an y-axis.",
+        "Let's use D3's utility functions axisLeft and axisBottom to render Y and X axis, respectively.",
+        "const xAxis = d3.axisBottom(xScale);",
+        "This creates an xAxis. We still need to render this.",
+        "To render an axis, we shall use the most general SVG component, the g element.",
+        "Unlike rect and circle and text; we are rendering just a stright line, when rendering an axis. So, using g suffices.",
+        "However, this requires a little bit of transform offset, because otherwise the line would be rendered along the border of SVG canvas and won't be visible at all.",
+        "<code>svg.append(\"g\")</code>",
+        "<code>  .attr(\"transform\", \"translate(0, y)\")</code>",
+        "<code>  .call(xAxis);</code>",
+        "The above renders an X-axis, which is passed as an argument to the call() function.",
+        "Similarly, Y-axis can be rendered, except the translate argument is of the form (x, 0)",
+        "The <g> element Challenge Instructions > Add the x and y axis, then render them properly. The padding should be offset for both the axes - x-axis must be at a height (y translation) of padding from bottom border of the SVG canvas. > > The y-axis must be at the right of leftmost border of SVG canvas by padding amount of x-axis translation. > > Text should display raw value. > Note > The translate argument should be a string. So generate a string using concatenation and value of padding. > > Focus on what would be the y-translation of the x-axis. This value is the final value on the coordinate axis; not the amount of movement or translation."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "    .bar:hover {",
+        "      fill: brown;",
+        "    }",
+        "</style>",
+        "",
+        "<script>",
+        "    const dataset = [",
+        "                  [ 34,     78 ],",
+        "                  [ 109,   280 ],",
+        "                  [ 310,   120 ],",
+        "                  [ 79,   411 ],",
+        "                  [ 420,   220 ],",
+        "                  [ 233,   145 ],",
+        "                  [ 333,   96 ],",
+        "                  [ 222,    333 ],",
+        "                  [ 78,    320 ],",
+        "                  [ 21,   123 ]",
+        "              ];",
+        "",
+        "    const w = 500;",
+        "    const h = 500;",
+        "    const padding = 60;",
+        "",
+        "    const xScale = d3.scaleLinear()",
+        "                .domain([0, d3.max(dataset, (d) => d[0])])",
+        "                .range([padding, w - padding]);",
+        "",
+        "    const yScale = d3.scaleLinear()",
+        "                .domain([0, d3.max(dataset, (d) => d[1])])",
+        "                .range([h - padding, padding]);",
+        "",
+        "    const svg = d3.select(\"body\")",
+        "                        .append(\"svg\")",
+        "                        .attr(\"width\", w)",
+        "                        .attr(\"height\", h);                     ",
+        "",
+        "    // update the code to use the scale",
+        "    svg.selectAll(\"circle\")",
+        "               .data(dataset)",
+        "               .enter()",
+        "               .append(\"circle\")",
+        "               .attr(\"cx\", (d) => xScale(d[0]))",
+        "               .attr(\"cy\",(d) => yScale(d[1]))",
+        "               .attr(\"r\", (d) => 5)",
+        "",
+        "    svg.selectAll(\"text\")",
+        "               .data(dataset)",
+        "               .enter()",
+        "               .append(\"text\")",
+        "               .text((d) =>  (d[0] + \",\" + d[1]))",
+        "               .attr(\"x\", (d) => xScale(d[0] + 10))",
+        "               .attr(\"y\", (d) => yScale(d[1]))",
+        "",
+        "    // Add code below",
+        "",
+        "",
+        "    // Add code above",
+        "",
+        "</script>"
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

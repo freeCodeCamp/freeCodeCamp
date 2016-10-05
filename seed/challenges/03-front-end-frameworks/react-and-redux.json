@@ -1,0 +1,35 @@
+{
+  "name": "React and Redux",
+  "order": 7,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "2d7123c8c441eddfaeb5bdef",
+      "title": "",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

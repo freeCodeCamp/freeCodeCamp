@@ -1,0 +1,1049 @@
+{
+  "name": "Quality Assurance and Testing with Chai",
+  "order": 2,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "010246c8c441eddfa0b5bdef",
+      "title": "Learn How JavaScript Assertions Work",
+      "description": [
+        "Use assert.isNull() or assert.isNotNull() to make the tests pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Null should be null",
+          "testString": "assert.isNull(null);"
+        },
+        {
+          "text": "1 should not be null",
+          "testString": "assert.isNotNull(1);"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa1b5bdef",
+      "title": "Test whether a Variable or Function is Defined",
+      "description": [
+        "Use assert.isDefined() or assert.isUndefined() to make the tests pass"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Null should not be undefined",
+          "testString": "assert.isDefined(null);"
+        },
+        {
+          "text": "Undefined should be undefined",
+          "testString": "assert.isUndefined(undefined);"
+        },
+        {
+          "text": "A string should not be undefined",
+          "testString": "assert.isDefined('hello');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa2b5bdef",
+      "title": "Use Assert.isOK and Assert.isNotOK",
+      "description": [
+        "Use assert.isOk() or assert.isNotOk() to make the tests pass.",
+        ".isOk(truthy) and .isNotOk(falsey) will pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Null is falsey.",
+          "testString": "assert.isNotOk(null);"
+        },
+        {
+          "text": "A string is truthy",
+          "testString": "assert.isOk(\"I'm truthy\");"
+        },
+        {
+          "text": "true is truthy'",
+          "testString": "assert.isOk(true);"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa3b5bdef",
+      "title": "Test for Truthiness",
+      "description": [
+        "Use assert.isTrue() or assert.isNotTrue() to make the tests pass.",
+        ".isTrue(true) and .isNotTrue(everything else) will pass.",
+        ".isFalse() and .isNotFalse() also exist."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "True is true.",
+          "testString": "assert.isTrue(true);"
+        },
+        {
+          "text": "Double negation of a truthy value is true.",
+          "testString": "assert.isTrue( !!'double negation');"
+        },
+        {
+          "text": "A truthy object is not true - neither is a false one.",
+          "testString": "assert.isNotTrue({ value: 'truthy' });"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa4b5bdef",
+      "title": "Use the Double Equals to Assert Equality",
+      "description": [
+        ".equal(), .notEqual()",
+        ".equal() compares objects using '=='"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Numbers are coerced into strings with == ",
+          "testString": "assert.equal( 12, '12');"
+        },
+        {
+          "text": "== compares object references.",
+          "testString": "assert.notEqual( {value: 1}, {value:1});"
+        },
+        {
+          "text": "No more hints...",
+          "testString": "assert.equal( 6 * '2', '12');"
+        },
+        {
+          "text": "Type your error message if you want",
+          "testString": "assert.notEqual( 6 + '2', '12');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa5b5bdef",
+      "title": "Use the Triple Equals to Assert Strict Equality",
+      "description": [
+        ".strictEqual(), .notStrictEqual()",
+        ".strictEqual() compares objects using '==='"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.notStrictEqual( 6, '6' );",
+          "testString": "assert.notStrictEqual( 6, '6' );"
+        },
+        {
+          "text": "assert.strictEqual( 6, 3*2 );",
+          "testString": "assert.strictEqual( 6, 3*2 );"
+        },
+        {
+          "text": "assert.strictEqual( 6 * '2', 12 );",
+          "testString": "assert.strictEqual( 6 * '2', 12 );"
+        },
+        {
+          "text": "assert.notStrictEqual( [1, 'a', {} ], [1, 'a', {}] )",
+          "testString": "assert.notStrictEqual( [1, 'a', {} ], [1, 'a', {}] )"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa6b5bdef",
+      "title": "Assert Deep Equality with .deepEqual and .notDeepEqual",
+      "description": [
+        ".deepEqual(), .notDeepEqual()",
+        ".deepEqual() asserts that two object are deep equal"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "The order of the keys doesn't matter.",
+          "testString": "assert.deepEqual( { a: '1', b: 5 } , { b: 5, a: '1' });"
+        },
+        {
+          "text": "The position of elements within an array does matter.",
+          "testString": "assert.notDeepEqual( { a: [5, 6] }, { a: [6, 5] });"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa7b5bdef",
+      "title": "Compare the Properties of Two Elements",
+      "description": [
+        ".isAbove() => a > b , .isAtMost() => a <= b"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.isAtMost('hello'.length , 5)",
+          "testString": "assert.isAtMost('hello'.length , 5)"
+        },
+        {
+          "text": "assert.isAbove(1, 0);",
+          "testString": "assert.isAbove(1, 0);"
+        },
+        {
+          "text": "assert.isAbove(Math.PI, 3);",
+          "testString": "assert.isAbove(Math.PI, 3);"
+        },
+        {
+          "text": "assert.isAtMost(1 - Math.random(), 1);",
+          "testString": "assert.isAtMost(1 - Math.random(), 1);"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa8b5bdef",
+      "title": "Test whether one Value is Below or At Least as Large as Another",
+      "description": [
+        ".isBelow() => a < b , .isAtLeast =>  a >= b"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.isAtLeast('world'.length , 5)",
+          "testString": "assert.isAtLeast('world'.length , 5)"
+        },
+        {
+          "text": "assert.isAtLeast(2*Math.random(), 0)",
+          "testString": "assert.isAtLeast(2*Math.random(), 0)"
+        },
+        {
+          "text": "assert.isBelow(5 % 2, 2);",
+          "testString": "assert.isBelow(5 % 2, 2);"
+        },
+        {
+          "text": "assert.isBelow(2/3, 1);",
+          "testString": "assert.isBelow(2/3, 1);"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfa9b5bdef",
+      "title": "Test whether a Value Falls within a Specific Range",
+      "description": [
+        ".approximately",
+        ".approximately(actual, expected, range, [message])",
+        "actual = expected +/- range",
+        "Choose the minimum range (3rd parameter) to make the test always pass",
+        "it should be less than 1"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.approximately(weirdNumbers(0.5) , 1, /*edit this*/ 0.5 );",
+          "testString": "assert.approximately(weirdNumbers(0.5) , 1, /*edit this*/ 0.5 );"
+        },
+        {
+          "text": "assert.approximately(weirdNumbers(0.2) , 1, /*edit this*/ 0.8 );",
+          "testString": "assert.approximately(weirdNumbers(0.2) , 1, /*edit this*/ 0.8 );"
+        },
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfaab5bdef",
+      "title": "Test whether a Value is an Array",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.isArray('isThisAnArray?'.split(''), 'String.prototype.split() returns an Array');",
+          "testString": "assert.isArray('isThisAnArray?'.split(''), 'String.prototype.split() returns an Array');"
+        },
+        {
+          "text": "assert.isNotArray([1,2,3].indexOf(2), 'indexOf returns a number.')",
+          "testString": "assert.isNotArray([1,2,3].indexOf(2), 'indexOf returns a number.')"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfabb5bdef",
+      "title": "Test whether an Array Contains an Item",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.notInclude(winterMonths, 'jul', \"It's summer in july...\");",
+          "testString": "assert.notInclude(winterMonths, 'jul', \"It's summer in july...\");"
+        },
+        {
+          "text": "assert.include(backendLanguages, 'javascript', 'JS is a backend language !!')",
+          "testString": "assert.include(backendLanguages, 'javascript', 'JS is a backend language !!')"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfacb5bdef",
+      "title": "Test whether a Value is a String",
+      "description": [
+        "#isString asserts that the actual value is a string."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.isNotString(Math.sin(Math.PI/4), 'a float is not a string')",
+          "testString": "assert.isNotString(Math.sin(Math.PI/4), 'a float is not a string')"
+        },
+        {
+          "text": "assert.isString(process.env.NODE_ENGINE, 'env vars are strings (or undefined)')",
+          "testString": "assert.isString(process.env.NODE_ENGINE, 'env vars are strings (or undefined)')"
+        },
+        {
+          "text": "assert.isString(JSON.stringify({type: 'object'}), 'a JSON is a string');",
+          "testString": "assert.isString(JSON.stringify({type: 'object'}), 'a JSON is a string');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfadb5bdef",
+      "title": "Test whether a String Contains a Substring",
+      "description": [
+        "#include (on #notInclude ) works for strings too !!",
+        "It asserts that the actual string contains the expected substring"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.include('Arrow', 'row', \"Arrow contains row...\");",
+          "testString": "assert.include('Arrow', 'row');"
+        },
+        {
+          "text": "assert.notInclude('dart', 'queue', \"But a dart doesn't contain a queue\")",
+          "testString": "assert.notInclude('dart', 'queue')"
+        },
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddfafb5bdef",
+      "title": "Use Regular Expressions to Test a String",
+      "description": [
+        "#match Asserts that the actual value",
+        "matches the second argument regular expression."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.match(formatPeople('John Doe', 35), regex);",
+          "testString": "assert.match(formatPeople('John Doe', 35), regex);"
+        },
+        {
+          "text": "assert.notMatch(formatPeople('Paul Smith III', 'twenty-four'), regex);",
+          "testString": "assert.notMatch(formatPeople('Paul Smith III', 'twenty-four'), regex);"
+        },
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddf0eb5bdef",
+      "title": "Test whether an Object has a Property",
+      "description": [
+        "#property asserts that the actual object has a given property.",
+        "Use #property or #notProperty where appropriate"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.notProperty(myCar, 'wings', 'A car is not an Airplane')",
+          "testString": "assert.notProperty(myCar, 'wings', 'A carshould benot an Airplane')"
+        },
+        {
+          "text": "assert.property(airlinePlane, 'engines', 'planes have engines')",
+          "testString": "assert.property(airlinePlane, 'engines', 'planes have engines')"
+        },
+        {
+          "text": "assert.property(myCar, 'wheels', 'Cars have wheels')",
+          "testString": "assert.property(myCar, 'wheels', 'Cars have wheels')"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddf1eb5bdef",
+      "title": "Test whether a Value is of a Specific Data Structure Type",
+      "description": [
+        "#typeOf asserts that value’s type is the given string, as determined by Object.prototype.toString.",
+        "Use #typeOf or #notTypeOf where appropriate"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.typeOf(myCar, 'object')",
+          "testString": "assert.typeOf(myCar, 'object')"
+        },
+        {
+          "text": "assert.typeOf(myCar.model, 'string')",
+          "testString": "assert.typeOf(myCar.model, 'string')"
+        },
+        {
+          "text": "assert.notTypeOf(airlinePlane.wings, 'string')",
+          "testString": "assert.notTypeOf(airlinePlane.wings, 'string')"
+        },
+        {
+          "text": "assert.typeOf(airlinePlane.engines, 'array')",
+          "testString": "assert.typeOf(airlinePlane.engines, 'array')"
+        },
+        {
+          "text": "assert.typeOf(myCar.wheels, 'number')",
+          "testString": "assert.typeOf(myCar.wheels, 'number')"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddf2eb5bdef",
+      "title": "Test whether an Object is an Instance of a Constructor",
+      "description": [
+        "#instanceOf asserts that an object is an instance of a constructor.",
+        "Use #instanceOf or #notInstanceOf where appropriate"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.notInstanceOf(myCar, Plane)",
+          "testString": "assert.notInstanceOf(myCar, Plane)"
+        },
+        {
+          "text": "assert.instanceOf(airlinePlane, Plane)",
+          "testString": "assert.instanceOf(airlinePlane, Plane)"
+        },
+        {
+          "text": "assert.instanceOf(airlinePlane, Object, 'everythingshould bean Object')",
+          "testString": "assert.instanceOf(airlinePlane, Object, 'everythingshould bean Object')"
+        },
+        {
+          "text": "assert.notInstanceOf(myCar.wheels, String )",
+          "testString": "assert.notInstanceOf(myCar.wheels, String )"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddf3eb5bdef",
+      "title": "Perform Asynchronous Tests with Mocha",
+      "description": [
+        "Mocha allows testing asyncronous operations.",
+        "There is a small (BIG) difference. Can you spot it?"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.isOk('Async test !!');",
+          "testString": "assert.isOk('Async test !!');"
+        },
+        {
+          "text": "",
+          "testString": ""
+        },
+        {
+          "text": "",
+          "testString": ""
+        },
+        {
+          "text": "",
+          "testString": ""
+        },
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddf4eb5bdef",
+      "title": "Run Functional Tests on API Endpoints using Chai-HTTP",
+      "description": [
+        "We can test our API endpoints using a plugin, called chai-http.",
+        "Let's see how it works. And remember, API calls are asynchronous..."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert.equal(res.status, 200, 'response status should be 200');",
+          "testString": "assert.equal(res.status, 200, 'response status should be 200');"
+        },
+        {
+          "text": "response should be \"hello John\"",
+          "testString": "assert.equal(res.text, 'hello John');"
+        },
+        {
+          "text": "assert.fail();",
+          "testString": "assert.fail();"
+        },
+        {
+          "text": "assert.fail();",
+          "testString": "assert.fail();"
+        },
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddf5eb5bdef",
+      "title": "Run Functional Tests on an API Response using Chai-HTTP",
+      "description": [
+        "In the next example we'll see how to send data in a request payload (body).",
+        "We are going to test a PUT request. The '/travellers' endpoint accepts",
+        "a JSON object taking the structure :",
+        " {surname: [last name of a traveller of the past]} ,",
+        "The route responds with :",
+        " {name: [first name], surname:[last name], dates: [birth - death years]}",
+        "see the server code for more details."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Response status should be 200",
+          "testString": "assert.equal(res.status, 200);"
+        },
+        {
+          "text": "Response should be json",
+          "testString": "assert.equal(res.type, 'application/json')"
+        },
+        {
+          "text": "assert.equal(res.body.name, 'Marco')",
+          "testString": "assert.equal(res.body.name, 'Marco')"
+        },
+        {
+          "text": "res.body.surname should be \"Polo\"",
+          "testString": "assert.equal(res.body.surname, 'Polo');"
+        },
+        {
+          "text": "assert.fail();",
+          "testString": "assert.fail();"
+        },
+        {
+          "text": "assert.fail();",
+          "testString": "assert.fail();"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "010246c8c441eddf6eb5bdef",
+      "title": "Run Functional Tests using a Headless Browser",
+      "description": [
+        "In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.",
+        "A headless browser is a web browser without a graphical user interface. These kind of tools are particularly useful for testing web pages as they are able to render and understand HTML, CSS, and JavaScript the same way a browser would.",
+        "For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Hyperdev. There are many other (more powerful) options."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "assert that status is OK 200",
+          "testString": "browser.assert.success();"
+        },
+        {
+          "text": "  assert that the text inside the element 'span#name' is 'Marco'",
+          "testString": "browser.assert.text('span#name', 'Marco');"
+        },
+        {
+          "text": "  assert that the text inside the element 'span#surname' is 'Polo'",
+          "testString": "browser.assert.text('span#surname', 'Polo');"
+        },
+        {
+          "text": "  assert that the element(s) 'span#dates' exist and their count is 1",
+          "testString": "browser.assert.element('span#dates', 1);"
+        },
+        {
+          "text": "  assert.fail();",
+          "testString": "  assert.fail();"
+        },
+        {
+          "text": "  assert.fail();",
+          "testString": "  assert.fail();"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1530 @@
+{
+  "name": "Functional Programming",
+  "order": 6,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "9d7123c8c441efffaeb5bdef",
+      "title": "Understand the Hazards of Using Imperative Code",
+      "description": [
+        "Functional programming is a good habit. It keeps your code easy to manage, and saves you from sneaky bugs. But before we get there, let's inspect some bad habits first.",
+        "Consider the scenario: you are browsing the web in your browser, and we want to track the tabs you have opened. Let's try to model this using some simple object-oriented code.",
+        "A Window object is made up of tabs, and you usually have more than one Window open, each window having lot of tabs open. We keep titles of each site open in each Window object as an array.",
+        "We shall try to move some windows, merge them together, close some tabs, open few other tabs - and print tabs you have open after all these operations.",
+        "For sake of simplicity, let's assume you can open a tab only at the end, so it would always be appended to the array of tab titles. However, we can close a tab at any position (removing any array item).",
+        "Consider the implementation in the code section with these functions:",
+        "tabOpen(), tabClose(), join(). The Window object has an array tabs, which is the array that stores the information about open pages.",
+        "Instructions",
+        "Run the code by either using Run button, or using Ctrl + Enter. The final list of open tabs should be ['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'FreeCodeCamp', 'new tab']; but you would get a slightly different answer.",
+        "In particular, the final array you would get by running the code, would have one element less. You should work out the answer by using pen-paper; or you can even create three browser windows with those tabs and follow the steps given in code exactly; to see what all tabs are left."
+      ],
+      "challengeSeed": [
+        "// tabs is an array of titles of each site open within the window",
+        "var Window = function(tabs) {",
+        "    this.tabs = tabs; // we keep a record of the array inside the object",
+        "}",
+        "",
+        "// When you join two windows into one window",
+        "Window.prototype.join = function (otherWindow) {",
+        "    this.tabs = this.tabs.concat(otherWindow.tabs);",
+        "    return this;",
+        "}",
+        "",
+        "// When you open a new tab at the end",
+        "Window.prototype.tabOpen = function (tab) {",
+        "    this.tabs.push('new tab'); // let's open a new tab for now",
+        "    return this;",
+        "}",
+        "",
+        " // When you close a tab",
+        "Window.prototype.tabClose = function (index) {",
+        "    var tabsBeforeIndex = this.tabs.splice(0, index); // get the tabs before the tab",
+        "    var tabsAfterIndex = this.tabs.splice(index); // get the tabs after the tab",
+        "",
+        "    this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // join them together ",
+        "    return this;",
+        " }",
+        "",
+        "// let's create three browser windows",
+        "var workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'FreeCodeCamp']); // your mailbox, drive, and other work stuff",
+        "var socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // Social sites",
+        "var videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); //  entertainment stuff",
+        "",
+        "// Now perform the tab opening closing and other operations",
+        "var finalTabs = socialWindow",
+        "                    .tabOpen() // let's open a new tab for dank cat memes",
+        "                    .join(videoWindow.tabClose(2)) // close third tab in video window, and join",
+        "                    .join(workWindow.tabClose(1).tabOpen()) // well, you get it",
+        "",
+        "alert(finalTabs.tabs);"
+      ],
+      "tests": [
+        "intentionally no test"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441efefaeb5bdef",
+      "title": "Write an Incrementer using Functional Programming",
+      "description": [
+        "If you haven't already figured it out; the issue was with the splice() call in the tabClose() function. Before we get to fixing that, let's take a moment to think.",
+        "This is a small example of a much larger pattern - you call a function on a variable or an array or an object; and they change something in them.",
+        "One of the core principle of functional programming - don't change things! Changing stuff leads to bugs. It's much easier to keep on coding if you can blindly rely upon function calls, that they don't mutate anything - neither the function arguments, nor any global variable.",
+        "In our previous example, we didn't even get to any complicated operation. Heck, we don't even have basic error checking (like closing tabs even if they are not open). Yet, we end up with a bug. It's like a minefield out there in coding land!",
+        "In functional programming, changing or altering things are called mutation, and the outcome is called side-effect. A function, ideally, should be pure function, free from side-effects.",
+        "We shall try to master this discipline now! Let's make a vow never to alter any variable or object in our code.",
+        "Instructions",
+        "Write an incrementer that would increase the value of a global variable by one."
+      ],
+      "challengeSeed": [
+        "// the global variable",
+        "var fixedValue = 4;",
+        "",
+        "function incrementer () {",
+        "   // add code below this line",
+        "",
+        "   // add code above this line",
+        "}",
+        "",
+        "var newValue = incrementer(); // should be 5",
+        "console.log(fixedValue); // should be 4"
+      ],
+      "tests": [
+        "// test that fixedValue hasn't changed, and incrementer indeed returns fixedValue + 1"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441efdfaeb5bdef",
+      "title": "Create an Incrementer that Takes Arguments",
+      "description": [
+        "We are on the right path towards achieving pure enlightenment, but there is still something missing.",
+        "We didn't alter the global value in previous challenge, but our function incrementer would not work without the global variable fixedValue being there.",
+        "Another principle from the functional programming land - always declare your dependencies explicitly.",
+        "In other words, if a function depends on a variable or object being present; we should pass that directly into the function as an argument.",
+        "It has lot of happy consequences - being able to test easily, being able to run different instances of it in parallel in multicore hardware etc.; but the thing that should make you happy is that when you look at a function which is written like that, you know exactly what input it takes and that it won't depend on anything else.",
+        "It gives you more confidence if you are altering or removing or adding new code. You would know what you can or cannot change. You can clearly see where the traps are.",
+        "The function would always produce same output for same set of inputs, no matter what part of the code executes it.",
+        "We shall update our incrementer function now, to clearly declare its dependencies.",
+        "Instructions",
+        "Write an incrementer that would increase the value of a global variable by one, but this time, with proper arguments."
+      ],
+      "challengeSeed": [
+        "// the global variable",
+        "var fixedValue = 4;",
+        "",
+        "// fix the function signature by adding argument(s)",
+        "function incrementer () {",
+        "   // add code below this line",
+        "",
+        "   // add code above this line",
+        "}",
+        "",
+        "var newValue = incrementer(fixedValue); // should be 5",
+        "console.log(fixedValue); // should be 4"
+      ],
+      "tests": [
+        "// test that fixedValue hasn't changed, and incrementer indeed returns fixedValue + 1"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441efcfaeb5bdef",
+      "title": "Refactor Global Variables out of Functions",
+      "description": [
+        "We have taken a bite off the apple that is functional programming, and so far, we can already taste two distinct principles",
+        "Don't alter var or Object. Create new stuff and return if need be.",
+        "Declare function arguments, and computation inside a function would depend only on the arguments, and not on any global object or variable.",
+        "Let's face it, adding one to a number is not quite fun.",
+        "But being able to apply these principles in day-to-day fights with Array or complex API response JSON Objects would surely make us all the more happy!",
+        "So let's take it up a notch. We will apply these ideas on Arrays here.",
+        "Instructions",
+        "Refactor (alter) code presented to make sure no global arrays are being changed inside a function."
+      ],
+      "challengeSeed": [
+        "// the global variable",
+        "var bookList = ['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']",
+        "",
+        "/* This function should add a book to the list and return the list */",
+        "// fix the function argument(s)",
+        "// don't add new arguments at the end",
+        "function add (bookName) {",
+        "   // change code below this line",
+        "   return bookList.push(bookName);",
+        "   // change code above this line",
+        "}",
+        "",
+        "/* This function should remove a book from the list and return the list */",
+        "// fix the function argument(s)",
+        "// don't add new arguments at the end",
+        "function remove (bookName) {",
+        "   if (bookList.indexOf(bookName) >= 0) {",
+        "        // change code below this line",
+        "        return bookList.splice(0, 1, bookName);",
+        "        // change code above this line",
+        "    }",
+        "}",
+        "",
+        "var newBookList = bookList.add('A Brief History of Time');",
+        "var newerBookList = bookList.remove('On The Electrodynamics of Moving Bodies')",
+        "var newestBookList = bookList.add('A Brief History of Time').remove('On The Electrodynamics of Moving Bodies');",
+        "",
+        "console.log(bookList);"
+      ],
+      "tests": [
+        "// test that newBookList is  ['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']",
+        "// test that newerBookList is ['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']",
+        "// test that newestBookList is ['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time'] ",
+        "// test that bookList is ['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441efbfaeb5bdef",
+      "title": "Use Map to Extract Data from an API Response",
+      "description": [
+        "We have learned to use pure functions, with no side-effects. We have also seen the value in having a function dependent only its input arguments.",
+        "This is only the beginning. As its name suggests, functional programming is centered around theory of functions.",
+        "Functions are the central theme. It would make sense to be able to pass them as argument to other functions; and return functions from another functions. Functions are First Class Object in JS.",
+        "This lets your code become more succinct, and you can get rid of boilerplate fluff.",
+        "We will start with some simple Array functions. In this exercise we are looking at map. First we will get familiar with Array.prototype.map()",
+        "Instructions",
+        "Use map to extract title and rating from the remote API response. In its current form, we are doing it with a for-loop"
+      ],
+      "challengeSeed": [
+        "// the global variable",
+        "var watchList = [",
+        "                 {  ",
+        "                   \"Title\": \"Inception\",",
+        "                   \"Year\": \"2010\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"16 Jul 2010\",",
+        "                   \"Runtime\": \"148 min\",",
+        "                   \"Genre\": \"Action, Adventure, Crime\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Christopher Nolan\",",
+        "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+        "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+        "                   \"Language\": \"English, Japanese, French\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"74\",",
+        "                   \"imdbRating\": \"8.8\",",
+        "                   \"imdbVotes\": \"1,446,708\",",
+        "                   \"imdbID\": \"tt1375666\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {  ",
+        "                   \"Title\": \"Interstellar\",",
+        "                   \"Year\": \"2014\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"07 Nov 2014\",",
+        "                   \"Runtime\": \"169 min\",",
+        "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+        "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+        "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+        "                   \"Language\": \"English\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"74\",",
+        "                   \"imdbRating\": \"8.6\",",
+        "                   \"imdbVotes\": \"910,366\",",
+        "                   \"imdbID\": \"tt0816692\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {",
+        "                   \"Title\": \"The Dark Knight\",",
+        "                   \"Year\": \"2008\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"18 Jul 2008\",",
+        "                   \"Runtime\": \"152 min\",",
+        "                   \"Genre\": \"Action, Adventure, Crime\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+        "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+        "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+        "                   \"Language\": \"English, Mandarin\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"82\",",
+        "                   \"imdbRating\": \"9.0\",",
+        "                   \"imdbVotes\": \"1,652,832\",",
+        "                   \"imdbID\": \"tt0468569\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {  ",
+        "                   \"Title\": \"Batman Begins\",",
+        "                   \"Year\": \"2005\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"15 Jun 2005\",",
+        "                   \"Runtime\": \"140 min\",",
+        "                   \"Genre\": \"Action, Adventure\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+        "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+        "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+        "                   \"Language\": \"English, Urdu, Mandarin\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"70\",",
+        "                   \"imdbRating\": \"8.3\",",
+        "                   \"imdbVotes\": \"972,584\",",
+        "                   \"imdbID\": \"tt0372784\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {",
+        "                   \"Title\": \"Avatar\",",
+        "                   \"Year\": \"2009\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"18 Dec 2009\",",
+        "                   \"Runtime\": \"162 min\",",
+        "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+        "                   \"Director\": \"James Cameron\",",
+        "                   \"Writer\": \"James Cameron\",",
+        "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+        "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+        "                   \"Language\": \"English, Spanish\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"83\",",
+        "                   \"imdbRating\": \"7.9\",",
+        "                   \"imdbVotes\": \"876,575\",",
+        "                   \"imdbID\": \"tt0499549\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                }",
+        "];",
+        "",
+        "// change code below this line",
+        "var rating = []",
+        "for(var i=0; i < watchList.length; i++){",
+        "    rating.push({title: watchList[i][\"Title\"],  rating: watchList[i].[\"imdbRating\"]});",
+        "}",
+        "// change code above this line",
+        "",
+        "console.log(rating); "
+      ],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441efafaeb5bdef",
+      "title": "Implement Map on a Prototype",
+      "description": [
+        "As you have seen from applying Array.prototype.map(), or simply map() earlier, map() returns an equal-length array, as the one it has been invoked upon. It also doesn't alter the original array, as long as its callback function doesn't.",
+        "In other words, map() is a pure function, and its output depends solely on its inputs. Going one functional step ahead, it takes another function as its argument.",
+        "It would teach us a lot about map(), if we were to implement a version of map() ourselves that behaves exactly like the Array.prototype.map() with a for-loop or Array.prototype.forEach().",
+        "Just to be clear, a pure function is allowed to alter local variables defined within its scope. Although, we prefer to avoid that too.",
+        "Instructions",
+        "Implement Array.prototype.myMap(), which should behave exactly like Array.prototype.map(). You may use either a good-old for-loop or Array.prototype.forEach(). You would also have to take care of gaps in the input Array, for instance, some elements might be undefined."
+      ],
+      "challengeSeed": [
+        "// the global Array",
+        "var s = [23, 65, 98, 5];",
+        "",
+        "// Don't forget to consult the doc",
+        "// The callback function takes some optional arguments too",
+        "Array.prototype.myMap = function(callback){",
+        "       var newArray = [];",
+        "       // add code below this line",
+        "",
+        "       // add code above this line",
+        "       return newArray; ",
+        "",
+        "}",
+        "",
+        "var new_s = s.myMap(function(item){",
+        "   return item * 2",
+        "})"
+      ],
+      "tests": [
+        "// test that new_s is [46, 130, 196, 10]",
+        "// test that myMap is not implemented with `map`. Use RegEx",
+        "// test that Array with undefined values are being treated properly.",
+        "// test optional args are handled properly"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef0faeb5bdef",
+      "title": "Learn how Functional Programming Works",
+      "description": [
+        "What is functional programming?",
+        "A style of programming where solutions are simple, isolated functions, without any side-effects to outside of the function scope.",
+        "INPUT → PROCESS → OUTPUT",
+        "Functional Programming is about",
+        "🐳 isolated function (non-dependence on external state)",
+        "🐧 pure functions (same input always gives same output)",
+        "🐬 functions with non mutating external states (no side effects)",
+        "Instructions",
+        "The prepareTea and getTea tasks (functions) have been defined for you.",
+        "Today is your lucky day. You must know that FreeCodeCamp runs on tea! '🍵'",
+        "Could you please at least get 40 cups of tea for FreeCodeCamp team and store them in tea4TeamFCC variable?",
+        "Hint: Use the getTea function :)"
+      ],
+      "challengeSeed": [
+        "/**",
+        " * A long process to prepare tea.",
+        " * @return {string} A cup of tea.",
+        " **/",
+        "const prepareTea = () => '🍵'",
+        "",
+        "/**",
+        " * Get given number of cups of tea.",
+        " * @param {number} numOfCups Number of required cups of tea.",
+        " * @return {Array<string>} Given amount of tea cups.",
+        " **/",
+        "const getTea = (numOfCups) => {",
+        "  const teaCups = []",
+        "",
+        "  for(let cups = 1; cups <= numOfCups; cups += 1) {",
+        "    const teaCup = prepareTea()",
+        "    teaCups.push(teaCup)",
+        "  }",
+        "",
+        "  return teaCups",
+        "}",
+        "",
+        "const tea4TeamFCC = null // :(",
+        "",
+        "console.log(tea4TeamFCC)"
+      ],
+      "tests": [
+        "test('Team FCC gets 40 cups of tea')"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef1faeb5bdef",
+      "title": "Understand the Seperation of Concern Prinicple",
+      "description": [
+        "The Team had a mood swing and now wants two types of tea.",
+        "Green Tea",
+        "Black Tea",
+        "General Fact: Client mood swings are pretty common.",
+        "So with that information, we must know how to detach responsibility so you're in more control.",
+        "Callbacks are the functions that are slipped (passed) into another function for deciding the invocation of the function.",
+        "Such functions which can be assigned to a variable, passed in or returned from another function just like any other normal value, are called First class functions. And in JS, all functions are first class functions.",
+        "And those functions which take a function as argument or return a function as return value are called Higher Order functions.",
+        "When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a Lambda.",
+        "Instructions",
+        "Can you prepare 27 cups of green tea and 13 cups of black tea and store them in tea4GreenTeamFCC and tea4BlackTeamFCC variables respectively?",
+        "Hint: Use the getTea function applying two arguments — a function (task) for preparing the relevant tea and the number of cups of tea.",
+        "Note: 👀📝 The data is supplied as last argument. We'll discuss about this in later lessons."
+      ],
+      "challengeSeed": [
+        "/**",
+        " * A long process to prepare green tea.",
+        " * @return {string} A cup of green tea.",
+        " **/",
+        "const prepareGreenTea = () => '🍵'",
+        "",
+        "/**",
+        " * A long process to prepare black tea.",
+        " * @return {string} A cup of black tea.",
+        " **/",
+        "const prepareBlackTea = () => '☕'",
+        "",
+        "/**",
+        " * Get given number of cups of tea.",
+        " * @param {function():string} prepareTea The type of tea preparing function.",
+        " * @param {number} numOfCups Number of required cups of tea.",
+        " * @return {Array<string>} Given amount of tea cups.",
+        " **/",
+        "const getTea = (prepareTea, numOfCups) => {",
+        "  const teaCups = []",
+        "",
+        "  for(let cups = 1; cups <= numOfCups; cups += 1) {",
+        "    const teaCup = prepareTea()",
+        "    teaCups.push(teaCup)",
+        "  }",
+        "",
+        "  return teaCups",
+        "}",
+        "",
+        "const tea4GreenTeamFCC = null // :(",
+        "const tea4BlackTeamFCC = null // :(",
+        "",
+        "console.log(",
+        "  tea4GreenTeamFCC,",
+        "  tea4BlackTeamFCC",
+        ")"
+      ],
+      "tests": [
+        "test('Green Team gets 27 cups of Green Tea')",
+        "test('Black Team gets 13 cups of Black Tea')"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef2faeb5bdef",
+      "title": "Use Filter to Extract Data from an API Response",
+      "description": [
+        "Let's get warmed up with Array.prototype.filter(), or simply filter() earlier, filter() returns an array which is at most as long as the original array, but usually smaller than the original array.",
+        "filter() doesn't alter the original array, just like map(). It takes as a callback function, which applies the logic inside the callback on each element of the array, and returns an array where the elements returns true when the callback is applied on them.",
+        "Let's start by applying filter() on one array.",
+        "Instructions",
+        "Use filter to extract title and rating from the remote API response provided, where IMDB rating is over or equal to 8.0."
+      ],
+      "challengeSeed": [
+        "// the global variable",
+        "var watchList = [",
+        "                 {  ",
+        "                   \"Title\": \"Inception\",",
+        "                   \"Year\": \"2010\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"16 Jul 2010\",",
+        "                   \"Runtime\": \"148 min\",",
+        "                   \"Genre\": \"Action, Adventure, Crime\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Christopher Nolan\",",
+        "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+        "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+        "                   \"Language\": \"English, Japanese, French\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"74\",",
+        "                   \"imdbRating\": \"8.8\",",
+        "                   \"imdbVotes\": \"1,446,708\",",
+        "                   \"imdbID\": \"tt1375666\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {  ",
+        "                   \"Title\": \"Interstellar\",",
+        "                   \"Year\": \"2014\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"07 Nov 2014\",",
+        "                   \"Runtime\": \"169 min\",",
+        "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+        "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+        "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+        "                   \"Language\": \"English\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"74\",",
+        "                   \"imdbRating\": \"8.6\",",
+        "                   \"imdbVotes\": \"910,366\",",
+        "                   \"imdbID\": \"tt0816692\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {",
+        "                   \"Title\": \"The Dark Knight\",",
+        "                   \"Year\": \"2008\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"18 Jul 2008\",",
+        "                   \"Runtime\": \"152 min\",",
+        "                   \"Genre\": \"Action, Adventure, Crime\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+        "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+        "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+        "                   \"Language\": \"English, Mandarin\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"82\",",
+        "                   \"imdbRating\": \"9.0\",",
+        "                   \"imdbVotes\": \"1,652,832\",",
+        "                   \"imdbID\": \"tt0468569\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {  ",
+        "                   \"Title\": \"Batman Begins\",",
+        "                   \"Year\": \"2005\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"15 Jun 2005\",",
+        "                   \"Runtime\": \"140 min\",",
+        "                   \"Genre\": \"Action, Adventure\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+        "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+        "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+        "                   \"Language\": \"English, Urdu, Mandarin\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"70\",",
+        "                   \"imdbRating\": \"8.3\",",
+        "                   \"imdbVotes\": \"972,584\",",
+        "                   \"imdbID\": \"tt0372784\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {",
+        "                   \"Title\": \"Avatar\",",
+        "                   \"Year\": \"2009\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"18 Dec 2009\",",
+        "                   \"Runtime\": \"162 min\",",
+        "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+        "                   \"Director\": \"James Cameron\",",
+        "                   \"Writer\": \"James Cameron\",",
+        "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+        "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+        "                   \"Language\": \"English, Spanish\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"83\",",
+        "                   \"imdbRating\": \"7.9\",",
+        "                   \"imdbVotes\": \"876,575\",",
+        "                   \"imdbID\": \"tt0499549\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                }",
+        "];",
+        "",
+        "// change code below this line",
+        "var filteredList = // add expression here",
+        "// change code above this line",
+        "",
+        "console.log(filteredList); "
+      ],
+      "tests": [
+        "// test that watchList is intact",
+        "// test that JSON.stringify(rating) is [{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]",
+        "// test that for loop was not used, using RegEx"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef3faeb5bdef",
+      "title": "Implement the Filter Function on a Prototype",
+      "description": [
+        "It would teach us a lot about filter(), if we were to implement a version of filter() ourselves that behaves exactly like the Array.prototype.filter() with a for-loop or Array.prototype.forEach().",
+        "Just to be clear, a pure function is allowed to alter local variables defined within its scope. Although, we prefer to avoid that too.",
+        "Instructions",
+        "Implement Array.prototype.myFilter(), which should behave exactly like Array.prototype.filter(). You may use either a good-old for-loop or Array.prototype.forEach(). You would also have to take care of gaps in the input Array, for instance, some elements might be undefined."
+      ],
+      "challengeSeed": [
+        "// the global Array",
+        "var s = [23, 65, 98, 5];",
+        "",
+        "// Don't forget to consult the doc",
+        "// The callback function takes some optional arguments too",
+        "Array.prototype.myFilter = function(callback){",
+        "       var newArray = [];",
+        "       // add code below this line",
+        "",
+        "       // add code above this line",
+        "       return newArray; ",
+        "",
+        "}",
+        "",
+        "var new_s = s.myFilter(function(item){",
+        "   return item % 2 === 1",
+        "})"
+      ],
+      "tests": [
+        "// test that new_s is [23, 65, 5]",
+        "// test that myFilter is not implemented with `filter`. Use RegEx",
+        "// test optional args are handled properly"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef4faeb5bdef",
+      "title": "Use Reduce to Transform Data from an API Response",
+      "description": [
+        "Array.prototype.reduce(), or simply reduce(), is the most general of all Array operations in JS. You can virtually solve any array processing problem using reduce().",
+        "filter() and map() don't allow interaction (say, comparing or adding elements) between two elements of the array.",
+        "reduce() is the most general form of Array processing, and it can be shown that each of filter() and map() can be derived as a special application of reduce().",
+        "However, before we get there, let's warm up with reduce() first.",
+        "Instructions",
+        "Use reduce() to compute average IMDB rating of the movies directed by Christopher Nolan, using the remote API response provided."
+      ],
+      "challengeSeed": [
+        "// the global variable",
+        "var watchList = [",
+        "                 {  ",
+        "                   \"Title\": \"Inception\",",
+        "                   \"Year\": \"2010\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"16 Jul 2010\",",
+        "                   \"Runtime\": \"148 min\",",
+        "                   \"Genre\": \"Action, Adventure, Crime\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Christopher Nolan\",",
+        "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+        "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+        "                   \"Language\": \"English, Japanese, French\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"74\",",
+        "                   \"imdbRating\": \"8.8\",",
+        "                   \"imdbVotes\": \"1,446,708\",",
+        "                   \"imdbID\": \"tt1375666\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {  ",
+        "                   \"Title\": \"Interstellar\",",
+        "                   \"Year\": \"2014\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"07 Nov 2014\",",
+        "                   \"Runtime\": \"169 min\",",
+        "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+        "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+        "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+        "                   \"Language\": \"English\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"74\",",
+        "                   \"imdbRating\": \"8.6\",",
+        "                   \"imdbVotes\": \"910,366\",",
+        "                   \"imdbID\": \"tt0816692\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {",
+        "                   \"Title\": \"The Dark Knight\",",
+        "                   \"Year\": \"2008\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"18 Jul 2008\",",
+        "                   \"Runtime\": \"152 min\",",
+        "                   \"Genre\": \"Action, Adventure, Crime\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+        "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+        "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+        "                   \"Language\": \"English, Mandarin\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"82\",",
+        "                   \"imdbRating\": \"9.0\",",
+        "                   \"imdbVotes\": \"1,652,832\",",
+        "                   \"imdbID\": \"tt0468569\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {  ",
+        "                   \"Title\": \"Batman Begins\",",
+        "                   \"Year\": \"2005\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"15 Jun 2005\",",
+        "                   \"Runtime\": \"140 min\",",
+        "                   \"Genre\": \"Action, Adventure\",",
+        "                   \"Director\": \"Christopher Nolan\",",
+        "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+        "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+        "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+        "                   \"Language\": \"English, Urdu, Mandarin\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"70\",",
+        "                   \"imdbRating\": \"8.3\",",
+        "                   \"imdbVotes\": \"972,584\",",
+        "                   \"imdbID\": \"tt0372784\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                },",
+        "                {",
+        "                   \"Title\": \"Avatar\",",
+        "                   \"Year\": \"2009\",",
+        "                   \"Rated\": \"PG-13\",",
+        "                   \"Released\": \"18 Dec 2009\",",
+        "                   \"Runtime\": \"162 min\",",
+        "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+        "                   \"Director\": \"James Cameron\",",
+        "                   \"Writer\": \"James Cameron\",",
+        "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+        "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+        "                   \"Language\": \"English, Spanish\",",
+        "                   \"Country\": \"USA, UK\",",
+        "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+        "                   \"Metascore\": \"83\",",
+        "                   \"imdbRating\": \"7.9\",",
+        "                   \"imdbVotes\": \"876,575\",",
+        "                   \"imdbID\": \"tt0499549\",",
+        "                   \"Type\": \"movie\",",
+        "                   \"Response\": \"True\"",
+        "                }",
+        "];",
+        "",
+        "// change code below this line",
+        "var averageRating = // add expression here",
+        "// change code above this line",
+        "",
+        "console.log(averageRating); "
+      ],
+      "tests": [
+        "// test that watchList is intact",
+        "// test that average is correct",
+        "// test that for loop was not used, using RegEx"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef5faeb5bdef",
+      "title": "Convert Strings to URL Slugs using the Reduce Function",
+      "description": [
+        "Array.prototype.reduce(), or simply reduce() can be quite powerful is reducing problems to simpler forms!",
+        "From computing average to sorting, any Array operation can be achieved by reduce.",
+        "Normally, this is the part where we implement reduce() using our JS knowledge. But before we take the engine apart, let's test drive this new car for a little while.",
+        "Instructions",
+        "Lot of CMS sites have titles of post converted to part of the URL for simple bookmarking. For instance, if you write a Medium post titled Stop Using Reduce, you can be pretty sure the URL would have some form of the title String in it (say stop-using-reduce).",
+        "You have already seen the same in this very page, right?",
+        "Let's implement this functionality with reduce. Here are the rules:",
+        "input is a sentence with spaces and title-cased words",
+        "output is a string with all spaces replaced by -",
+        "output should only have lower-cased string",
+        "output should not have any space at the beginning, anywhere in the middle of it, or at the end",
+        "You can also use map or filter too; because they are special forms of reduce."
+      ],
+      "challengeSeed": [
+        "// the global variable",
+        "var globalTitle = \"Winter Is Coming\"",
+        "",
+        "// change code below this line",
+        "var urlSlug = // add your expression here; should be 'winter-is-coming'",
+        "// change code above this line",
+        "",
+        "console.log(urlSlug); "
+      ],
+      "tests": [
+        "// test that globalTitle is intact -- or you can skip this, because Strings are immutable!",
+        "// test that urlSlug is correct",
+        "// write some tests to check multiple spaces in between or spaces at the front or end are removed",
+        "// test that String.replace() was not used - with RegEx the solution is easier"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef6faeb5bdef",
+      "title": "Use the Every Function to Check Each Element in an Array",
+      "description": [
+        "The .every() function can be used to check if every element in an array passes a particular test.",
+        "For example, the following code would check if every element in the numbers array is less than 10.",
+        "<code>var numbers = [1, 5, 8, 0, 10, 11];</code>",
+        "<code>numbers.every(function(currentValue) {</code>",
+        "<code>    return currentValue < 10;</code>",
+        "<code>});</code>",
+        "Instructions",
+        "Using .every(), check if every element in arr is positive."
+      ],
+      "challengeSeed": [
+        "function checkPositive(arr) {",
+        "",
+        "    return arr;",
+        "}",
+        "checkPositive([1, 2, 3, -4, 5]);"
+      ],
+      "tests": [
+        "assert(checkPositive([1, 2, 3, -4, 5]) === false, 'checkPositive([1, 2, 3, -4, 5]) should return false');",
+        "assert(checkPositive([1, 2, 3, 4, 5]) === true, 'checkPositive([1, 2, 3, 4, 5]) should return true');",
+        "assert(checkPositive([1, -2, 3, -4, 5]) === false, 'checkPositive([1, -2, 3, -4, 5]) should return false');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef7faeb5bdef",
+      "title": "Use the Some Function to Check whether Some Elements in an Array Meet a Criteria",
+      "description": [
+        "The .some() function can be used to check if any element in an array passes a particular test.",
+        "For example, the following code would check if any element in the numbers array is less than 10.",
+        "var numbers = [10, 50, 8, 220, 110, 11];",
+        "<code>numbers.some(function(currentValue) {</code>",
+        "<code>    return currentValue < 10;</code>",
+        "<code>});</code>",
+        "Instructions",
+        "Using .some(), check if any element in arr is positive."
+      ],
+      "challengeSeed": [
+        "function checkPositive(arr) {",
+        "",
+        "    return arr;",
+        "}",
+        "checkPositive([1, 2, 3, -4, 5]);"
+      ],
+      "tests": [
+        "assert(checkPositive([1, 2, 3, -4, 5]) === true, 'checkPositive([1, 2, 3, -4, 5]) should return true');",
+        "assert(checkPositive([1, 2, 3, 4, 5]) === true, 'checkPositive([1, 2, 3, 4, 5]) should return true');",
+        "assert(checkPositive([-1, -2, -3, -4, -5]) === false, 'checkPositive([-1, -2, -3, -4, -5]) should return false');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef8faeb5bdef",
+      "title": "Sort an Array Alphabetiacally using the Sort Function",
+      "description": [
+        "The sort function is used to sort the elements of an array aaccording to some callback function.",
+        "For example:",
+        "<code>function ascendingOrder([1, 5, 2, 3, 4]) {</code>",
+        "<code>    return arr.sort(function(a, b) {</code>",
+        "<code>        return a - b;</code>",
+        "<code>    });</code>",
+        "<code>}</code>",
+        "Instructions",
+        "Using the sort function, sort the elements of arr in alphabetical order."
+      ],
+      "challengeSeed": [
+        "function alphabeticalOrder(arr) {",
+        "    return arr;",
+        "}",
+        "alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"]);"
+      ],
+      "tests": [
+        "assert(alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"]) === [ 'a', 'a', 'c', 'd', 'g', 'z' ], 'alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"]) should return [ 'a', 'a', 'c', 'd', 'g', 'z' ]');",
+        "assert(alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"]) === [ 'a', 'h', 'm', 'm', 'n', 'x' ], 'alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"]) should return [ 'a', 'h', 'm', 'm', 'n', 'x' ]');",
+        "assert(alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"]) === [ 'a', 'a', 'a', 'a', 't', 'x' ], 'alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"]) should return [ 'a', 'a', 'a', 'a', 't', 'x' ]');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441ef9faeb5bdef",
+      "title": "Return a Sorted Array Without Changing the Original Array",
+      "description": [
+        "The sort function changes the order of the elements in the original array. ",
+        "Instructions",
+        "Using the sort function, sort arr without changing it and return the new sorted array."
+      ],
+      "challengeSeed": [
+        "var arr = [5, 6, 3, 2, 9]; //Don't mind me, I am just chillin'",
+        "function nonMutatingSort() {",
+        "    return arr;",
+        "}",
+        "nonMutatingSort();"
+      ],
+      "tests": [
+        "assert(arr === [5, 6, 3, 2, 9], 'arr should remain unchanged.');",
+        "assert(nonMutatingSort() === [2, 3, 5, 6, 9], 'nonMutatingSort() should return [2, 3, 5, 6, 9]');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eeffaeb5bdef",
+      "title": "Combine Two Arrays using the Concat Function",
+      "description": [
+        "Concatenation means to join strings end to end. The concat function returns a new array by concatenating strings or arrays. concat does not alter the arguments. In contrast, the push function adds an element to the variable it is called upon.",
+        "For example,",
+        "<code>[1, 2, 3].concat([4, 5, 6]); //would return [1, 2, 3, 4, 5, 6]</code>",
+        "Instructions",
+        "Using the concat function, concatenate attach to the org array and return the conatenated array."
+      ],
+      "challengeSeed": [
+        "function nonMutatingConcat(org, attach) {",
+        "    return org;",
+        "}",
+        "nonMutatingConcat([1, 2, 3], [4, 5]);"
+      ],
+      "tests": [
+        "assert(org === [1, 2, 3], '<code>org</code> should remain unchanged.');",
+        "assert(nonMutatingConcat([1, 2, 3], [4, 5]) === [1, 2, 3, 4, 5], 'message: <code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return [1, 2, 3, 4, 5]');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eedfaeb5bdef",
+      "title": "Join two Strings Using the Concat Function",
+      "description": [
+        "Functional Programming is all about non mutating functions.",
+        "You have already used .push() function to add elements to an array. .push() adds elements to the same array it is called on, hence, mutating the array. ",
+        "For example,",
+        "<code>var arr = [1, 2, 3];</code>",
+        "<code>arr.push([4, 5, 6]); //would change arr to [1, 2, 3, 4, 5, 6] //Not the Functional Programming way</code>",
+        "Instructions",
+        "Write a function that joins attach to the org array end-to-end and return the new array.",
+        "Do not change the org array."
+      ],
+      "challengeSeed": [
+        "function nonMutatingPush(org, attach) {",
+        "    return org;",
+        "}",
+        "nonMutatingPush([1, 2, 3], [4, 5]);"
+      ],
+      "tests": [
+        "assert(org === [1, 2, 3], '<code>org</code> should remain unchanged.');",
+        "assert(nonMutatingPush([1, 2, 3], [4, 5]) === [1, 2, 3, 4, 5], 'message: <code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return [1, 2, 3, 4, 5]');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eeefaeb5bdef",
+      "title": "Split a String in Two using the Split Function",
+      "description": [
+        "The .split() function can be used to split a string into an array of strings by specifying a seperator.",
+        "For example:",
+        "<code>var str = \"Hello World\";</code>",
+        "<code>var arr = str.split(\" \"); //would change arr to [\"Hello\", \"World\"] </code>",
+        "Instructions",
+        "Write a function that splits str into words."
+      ],
+      "challengeSeed": [
+        "function splitify(str) {",
+        "    return str;",
+        "}",
+        "splitify(\"Hello World,I-am code\");"
+      ],
+      "tests": [
+        "assert(splitify(\"Hello World,I-am code\") === [\"Hello\", \"World\", \"I\", \"am\", \"code\"], 'message: <code>splitify(\"Hello World,I-am code\")</code> should return [\"Hello\", \"World\", \"I\", \"am\", \"code\"]');",
+        "assert(splitify(\"Earth-is-our home\") === [\"Earth\", \"is\", \"our\", \"home\"], 'message: <code>splitify(\"Earth-is-our home\")</code> should return [\"Earth\", \"is\", \"our\", \"home\"]');",
+        "assert(splitify(\"Hello World,I-am code\") === [\"Hello\", \"World\", \"I\", \"am\", \"code\"], 'message: <code>splitify(\"Hello World,I-am code\")</code> should return [\"Hello\", \"World\", \"I\", \"am\", \"code\"]');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eecfaeb5bdef",
+      "title": "Turn an Array into a Sentence of Text",
+      "description": [
+        "The .join() function can be used to join the elements of an array. The function takes a seperator argument that will be placed after each array element.",
+        "For example:",
+        "<code>var arr = [\"Hello\", \"World\"];</code>",
+        "<code>var str = arr.join(\" \"); //would change str to \"Hello World\" </code>",
+        "Instructions",
+        "Write a function that makes a sentence from the words in the string str.",
+        "For example, \"I-like-Star-Wars\" would be converted to \"I like Star Wars\"."
+      ],
+      "challengeSeed": [
+        "function sentensify(str) {",
+        "    return str;",
+        "}",
+        "sentensify(\"May-the-force-be-with-you\");"
+      ],
+      "tests": [
+        "assert(typeof sentensify(\"May-the-force-be-with-you\") === \"string\", 'message: <code>sentensify(\"May-the-force-be-with-you\")</code> should return a <code>string</code>');",
+        "assert(sentensify(\"May-the-force-be-with-you\") === \"May the force be with you\", 'message: <code>sentensify(\"May-the-force-be-with-you\")</code> should return \"May the force be with you\"');",
+        "assert(sentensify(\"The.force.is.strong.with.this.one\") === \"The force is strong with this one\", 'message: <code>sentensify(\"The.force.is.strong.with.this.one\")</code> should return \"The force is strong with this one\"');",
+        "assert(sentensify(\"There,has,been,an,awakening\") === \"There has been an awakening\", 'message: <code>sentensify(\"There,has,been,an,awakening\")</code> should return \"There has been an awakening\"');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eebfaeb5bdef",
+      "title": "Slice Off Part of an Array using the Slice Function",
+      "description": [
+        "The .slice() function returns a copy of an array after removing some elements. The elements to be removed are specified in the function arguments using the indices.",
+        "For example:",
+        "<code>var arr = [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\"];</code>",
+        "<code>var newArray = arr.slice(1, 3); //would set `newArray` to [\"Dog\", \"Tiger\"]. </code>",
+        "Instructions",
+        "Write a function that slices an array according to the provided indices. ",
+        "Do not mutate the original array."
+      ],
+      "challengeSeed": [
+        "function sliceArray(anim) {",
+        "    return anim;",
+        "}",
+        "sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3);"
+      ],
+      "tests": [
+        "assert(anim === [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 'message: Do not change <code>anim</code>');",
+        "assert(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3) === [\"Dog\", \"Tiger\"], 'message: <code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code> should return [\"Dog\", \"Tiger\"]');",
+        "assert(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1) === [\"Cat\"], 'message: <code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code> should return [\"Cat\"]');",
+        "assert(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4) === [\"Dog\", \"Tiger\", \"Zebra\"], 'message: <code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code> should return [\"Dog\", \"Tiger\", \"Zebra\"]');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d7123c8c441eeafaeb5bdef",
+      "title": "Remove Elements from an Array using the Splice Function",
+      "description": [
+        "The .splice() function deletes elements from the array it is called on, hence, mutating the array.",
+        "For example:",
+        "<code>var cities = [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"];</code>",
+        "<code>cities.splice(3, 1) //deletes \"London\" from the cities array.</code>",
+        "Instructions",
+        "Rewrite the function nonMutatingSplice so that it limits the cities array to a length of 3. ",
+        "Do not mutate the original array."
+      ],
+      "challengeSeed": [
+        "function nonMutatingSplice(cities) {",
+        "     return cities.splice(3);",
+        "}",
+        "nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"]);"
+      ],
+      "tests": [
+        "assert(cities === [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"], 'message: Do not change <code>cities</code>');",
+        "assert(nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"]) === [\"Chicago\", \"Delhi\", \"Islamabad\"], 'message: <code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code> should return [\"Chicago\", \"Delhi\", \"Islamabad\"]');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

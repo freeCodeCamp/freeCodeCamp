@@ -1,0 +1,356 @@
+{
+  "name": "Information Security and Quality Assurance Projects",
+  "order": 4,
+  "time": "100 hours",
+  "helpRoom": "HelpBackend",
+  "challenges": [
+    {
+      "id": "bd7158d8c443eddfaeb5bdef",
+      "title": "Build a Voting App",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://ballistic-swallow.hyperdev.space/' target='_blank'>https://ballistic-swallow.hyperdev.space/</a> on HyperDev or on your own publicly accessible domain.",
+        "Start by remixing this boilerplate HyperDev project: <a href='https://shimmer-ripper.hyperdev.space/'>https://shimmer-ripper.hyperdev.space/</a>. Then get all the tests for the below user stories to pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "As an authenticated user, I can keep my polls and come back later to access them.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can share my polls with my friends.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can see the aggregate results of my polls.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can delete polls that I decide I don't want anymore.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can create a poll with any number of possible items.",
+          "testString": ""
+        },
+        {
+          "text": "As an unauthenticated or authenticated user, I can see the results of polls in chart form.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, if I don't like the options on a poll, I can create a new option.",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "basejump",
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "challengeType": 4,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [
+            "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> y despliégala en Heroku.",
+            "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+            "Estas son las Historias de usuario que debes satisfacer para este proyecto:",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo guardar mis votaciones y acceder a ellas posteriormente.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo compartir mis votaciones con mis amigos.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo ver los resultados agregados de mis votaciones.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo eliminar votaciones que ya no quiero tener guardadas.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo crear una votación con cualquier número de opciones.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado o no autenticado, puedo ver y votar en las votaciones de otros.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado o no autenticado, puedo ver los resultados de las votaciones por medio de un gráfico. (Esto podría implementarse utilizando Chart.js o Google Charts.)",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, si no me gustan las opciones en una votación, puedo crear una nueva opción.",
+            "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
+            "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdff",
+      "title": "Build a Nightlife Coordination App",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://cream-ape.hyperdev.space/' target='_blank'>https://cream-ape.hyperdev.space/</a> on HyperDev or on your own publicly accessible domain.",
+        "Start by remixing this boilerplate HyperDev project: <a href='https://shimmer-ripper.hyperdev.space/'>https://shimmer-ripper.hyperdev.space/</a>. Then get all the tests for the below user stories to pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "As an unauthenticated user, I can view all bars in my area.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can add myself to a bar to indicate I am going there tonight.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can remove myself from a bar if I no longer want to go there.",
+          "testString": ""
+        },
+        {
+          "text": "As an unauthenticated user, when I login I should not have to search again.",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "basejump",
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "challengeType": 4,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [
+            "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> y despliégala en Heroku.",
+            "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+            "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+            "<strong>Historia de usuario:</strong> Como un usuario no autenticado, puedo ver todos los bares en mi área.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo agregarme a mí mismo a un bar para indicar que voy a estar allí esta noche.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo removerme de un bar si ya no pienso ir allí.",
+            "<strong>Historia de usuario:</strong> Como un usuario no autenticado, cuando accedo a mi cuenta no debo tener la necesidad de buscar de nuevo.",
+            "<span class='text-info'>Pista:</span> Prueba utilizar el <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>API de Yelp</a> para encontrar lugares en las ciudades donde tus usuarios buscan. Si utilizas el API de Yelp, asegúrate de mencionarlo en tu aplicación.",
+            "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
+            "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bd0e",
+      "title": "Chart the Stock Market",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://glen-neck.hyperdev.space/' target='_blank'>https://glen-neck.hyperdev.space/</a> on HyperDev or on your own publicly accessible domain.",
+        "Start by remixing this boilerplate HyperDev project: <a href='https://shimmer-ripper.hyperdev.space/'>https://shimmer-ripper.hyperdev.space/</a>. Then get all the tests for the below user stories to pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "I can view a graph displaying the recent trend lines for each added stock.",
+          "testString": ""
+        },
+        {
+          "text": "I can add new stocks by their symbol name.",
+          "testString": ""
+        },
+        {
+          "text": "I can remove stocks.",
+          "testString": ""
+        },
+        {
+          "text": "I can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "basejump",
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "challengeType": 4,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [
+            "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> y despliégalo en Heroku.",
+            "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+            "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+            "<strong>Historia de usuario:</strong> Como usuario, puedo ver un gráfico que me muestre las líneas de tendencia recientes para cada acción agregada.",
+            "<strong>Historia de usuario:</strong> Como usuario, puedo agregar nuevas acciones por su símbolo.",
+            "<strong>Historia de usuario:</strong> Como usuario, puedo remover acciones.",
+            "<strong>Historia de usuario:</strong> Como usuario, puedo ver cambios en tiempo real cuando algún otro usuario agrega o remueve una acción. Puedes usar Web Sockets para hacer esto.",
+            "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
+            "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bd0f",
+      "title": "Manage a Book Trading Club",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://shell-swallow.hyperdev.space/' target='_blank'>https://shell-swallow.hyperdev.space/</a> on HyperDev or on your own publicly accessible domain.",
+        "Start by remixing this boilerplate HyperDev project: <a href='https://shimmer-ripper.hyperdev.space/'>https://shimmer-ripper.hyperdev.space/</a>. Then get all the tests for the below user stories to pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "I can view all books posted by every user.",
+          "testString": ""
+        },
+        {
+          "text": "I can add a new book.",
+          "testString": ""
+        },
+        {
+          "text": "I can update my settings to store my full name, city, and state.",
+          "testString": ""
+        },
+        {
+          "text": "I can propose a trade and wait for the other user to accept the trade.",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "basejump",
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "challengeType": 4,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [
+            "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> y despliégalo en Heroku.",
+            "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+            "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+            "<strong>Historia de usuario:</strong> Puedo ver todos los libros agregados por cada usuario.",
+            "<strong>Historia de usuario:</strong> Puedo agregar un nuevo libro.",
+            "<strong>Historia de usuario:</strong> Puedo actualizar mi configuración para que almacene mi nombre completo, ciudad y Estado.",
+            "<strong>Historia de usuario:</strong> Puedo proponer un intercambio y esperar a que algún otro usuario acepte el trato.",
+            "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
+            "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdee",
+      "title": "Build a Pinterest Clone",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://wild-song.hyperdev.space/' target='_blank'>https://wild-song.hyperdev.space/</a> on HyperDev or on your own publicly accessible domain.",
+        "Start by remixing this boilerplate HyperDev project: <a href='https://shimmer-ripper.hyperdev.space/'>https://shimmer-ripper.hyperdev.space/</a>. Then get all the tests for the below user stories to pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "As an unauthenticated user, I can log in with GitHub.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can link to images.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can delete images that I've linked to.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, I can see a Pinterest-style wall of all the images I've linked to.",
+          "testString": ""
+        },
+        {
+          "text": "As an unauthenticated user, I can browse other users' walls of images.",
+          "testString": ""
+        },
+        {
+          "text": "As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "basejump",
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "challengeType": 4,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [
+            "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://pintech.herokuapp.com/' target='_blank'>http://pintech.herokuapp.com/</a> y despliégalo en Heroku.",
+            "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+            "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+            "<strong>Historia de usuario:</strong> Como usuario autenticado, puedo acceder a mi cuenta con Twitter.",
+            "<strong>Historia de usuario:</strong> Como usuario autenticado, puedo agregar enlaces a imágenes.",
+            "<strong>Historia de usuario:</strong> Como usuario autenticado, puedo elimiar imágenes que he agregado.",
+            "<strong>Historia de usuario:</strong> Como usuario autenticado, puedo ver un muro al estilo de Pinterest con todas las imágenes para las que he agregado un enlace.",
+            "<strong>Historia de usuario:</strong> Como usuario no autenticado, puedo navegar los muros de imágenes de otros usuarios.",
+            "<strong>Historia de usuario:</strong> Como usuario autenticado, si agrego una imagen corrupta, será reemplazada por una imagen predeterminada. (Puedes utilizar la detección de imágenes corruptas de jQuery)",
+            "<strong>Pista:</strong> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> es una librería que permite crear cuadrículas de imágenes al estilo de Pinterest.",
+            "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
+            "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
+    }
+  ]
+}

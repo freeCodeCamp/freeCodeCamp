@@ -1,0 +1,412 @@
+{
+  "name": "MongoDB and Mongoose",
+  "order": 3,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "9d2246c8c441eddfafb5bdef",
+      "title": "Install and Set Up Mongoose",
+      "description": [
+        "Add mongodb and mongoose to the project’s package.json. Then require mongoose. Store your mLab database URI in the private .env file as MONGO_URI. Connect to the database using mongoose.connect(<Your URI>)"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfaab5bdef",
+      "title": "Create a Model",
+      "description": [
+        "First of all we need a Schema. Each schema maps to a MongoDB collection. It defines the shape of the documents within that collection.",
+        "Schemas are building block for Models. They can be nested to create complex models, but in this case we’ll keep things simple.",
+        "A model allows you to create instances of your objects, called documents.",
+        "Create a person having this prototype :",
+        "<code>- Person Prototype -</code>",
+        "<code>--------------------</code>",
+        "<code>name : string [required]</code>",
+        "<code>age :  number</code>",
+        "<code>favoriteFoods : array of strings (*) </code>",
+        "Use the mongoose basic schema types. If you want you can also add",
+        "more fields, use simple validators like required or unique,",
+        "and set default values. See the <a href='http://mongoosejs.com/docs/guide.html'>mongoose docs</a>.",
+        "[C]RUD Part I - CREATE",
+        "Note: HyperDev is a real server, and in real servers the interactions with the db happen in handler functions. These function are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The done() function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating or deleting. It’s following the Node convention and should be called as done(null, data) on success, or done(err) on error.",
+        "Warning - When interacting with remote services, errors may occur !",
+        "<code>/* Example */</code>",
+        "<code>var someFunc = function(done) {</code>",
+        "<code>  //... do something (risky) ...</code>",
+        "<code>  if(error) return done(error);</code>",
+        "<code>  done(null, result);</code>",
+        "<code>};</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfabb5bdef",
+      "title": "Create and Save a Record of a Model",
+      "description": [
+        "Create a document instance using the Person constructor you build before. Pass to the constructor an object having the fields name, age, and favoriteFoods. Their types must be conformant to the ones in the Person Schema. Then call the method document.save() on the returned document instance. Pass to it a callback using the Node convention. This is a common pattern, all the following CRUD methods take a callback function like this as the last argument.",
+        "<code>/* Example */</code>",
+        "<code>// ...</code>",
+        "<code>person.save(function(err, data) {</code>",
+        "<code>//   ...do your stuff here...</code>",
+        "<code>});</code>"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfacb5bdef",
+      "title": "Create Many Records with Model.create()",
+      "description": [
+        "Sometimes you need to create many instances of your models, e.g. when seeding a database with initial data. Model.create() takes an array of objects like [{name: 'John', ...}, {...}, ...] as the first argument, and saves them all in the db. Create many people with Model.create(), using the function argument arrayOfPeople."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfa0b5bdef",
+      "title": "Use Model.find()",
+      "description": [
+        "Find all the people having a given name, using Model.find() -> [Person]",
+        "In its simplest usage, Model.find() accepts a query document (a JSON object ) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Check it in the docs. Use the function argument personName as search key."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfa1b5bdef",
+      "title": "Use Model.findOne()",
+      "description": [
+        "Model.findOne() behaves like .find(), but it returns only one document (not an array), even if there are items. It is especially useful when searching by properties that you have declared as unique. Find just one person which has a certain food in her favorites, using Model.findOne() -> Person. Use the function argument food as search key."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfa2b5bdef",
+      "title": "Use Model.findById()",
+      "description": [
+        "When saving a document, mongodb automatically adds the field _id, and set it to a unique alphanumeric key. Searching by _id is an extremely frequent operation, so moongose provides a dedicated method for it. Find the (only!!) person having a given _id, using Model.findById() -> Person. Use the function argument personId as search key."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfa3b5bdef",
+      "title": "Perform Classic Updates by Running Find, Edit, then Save",
+      "description": [
+        "In the good old days this was what you needed to do if you wanted to edit a document and be able to use it somehow e.g. sending it back in a server response. Mongoose has a dedicated updating method : Model.update(). It is binded to the low-level mongo driver. It can bulk edit many documents matching certain criteria, but it doesn’t send back the updated document, only a ‘status’ message. Furthermore it makes model validations difficult, because it just directly calls the mongo driver.",
+        "Find a person by _id ( use any of the above methods ) with the parameter personId as search key. Add “hamburger” to the list of her favoriteFoods (you can use Array.push()). Then - inside the find callback - save() the updated Person.",
+        "[*] Hint: This may be tricky if in your Schema you declared favoriteFoods as an Array, without specifying the type (i.e. [String]). In that casefavoriteFoods defaults to Mixed type, and you have to manually mark it as edited using document.markModified('edited-field'). (http://mongoosejs.com/docs/schematypes.html - #Mixed )"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfa4b5bdef",
+      "title": "Perform New Updates Using Model.findOneAndUpdate()",
+      "description": [
+        "Recent versions of mongoose have methods to simplify documents updating. Some more advanced features (i.e. pre/post hooks, validation) behave differently with this approach, so the Classic method is still useful in many situations. findByIdAndUpdate() can be used when searching by Id.",
+        "Find a person by Name and set her age to 20. Use the function parameter personName as search key.",
+        "Hint: We want you to return the updated document. o do that you need to pass the options document { new: true } as the 3rd argument to findOneAndUpdate(). By default these methods return the unmodified object."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfa555bdef",
+      "title": "Delete one Record",
+      "description": [
+        "Delete one person by her _id. You should use one of the methods findByIdAndRemove() or findOneAndRemove(). They are like the previous update methods. They pass the removed document to the cb. As usual, use the function argument personId as search key."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfa665bdef",
+      "title": "Delete Many Records with Model.remove()",
+      "description": [
+        "Model.remove() is useful to delete all the documents matching given criteria. Delete all the people whose name is “Mary”, using Model.remove(). Pass to it a query ducument with the “name” field set, and of course a callback.",
+        "Note: Model.remove() doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the done() callback, since we use it in tests."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "9d2246c8c441eddfa7b5bdef",
+      "title": "Chain Search Query Helpers",
+      "description": [
+        "If you don’t pass the callback as the last argument to Model.find() (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method .exec(). Pass your callback to this last method. There are many query helpers, here we’ll use the most ‘famous’ ones.",
+        "Find people who like \"burrito\". Sort them by name, limit the results to two documents, and hide their age. Chain .find(), .sort(), .limit(), .select(), and then .exec(). Pass the done(err, data) callback to exec()."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}
