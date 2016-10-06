@@ -35,10 +35,15 @@ export function getFileKey({ challengeType }) {
 
 export function createTests({ tests = [] }) {
   return tests
-    .map(test => ({
-      text: ('' + test).split('message: ').pop().replace(/\'\);/g, ''),
-      testString: test
-    }));
+    .map(test => {
+      if (typeof tests === 'string') {
+        return {
+          text: ('' + test).split('message: ').pop().replace(/\'\);/g, ''),
+          testString: test
+        };
+      }
+      return test;
+    });
 }
 
 export function loggerToStr(args) {

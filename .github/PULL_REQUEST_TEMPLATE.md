@@ -1,7 +1,7 @@
 <!-- FreeCodeCamp Pull Request Template -->
 
 <!-- IMPORTANT Please review https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/CONTRIBUTING.md for detailed contributing guidelines -->
-<!-- Help with PRs can be found at https://gitter.im/FreeCodeCamp/HelpContributors -->
+<!-- Help with PRs can be found at https://gitter.im/FreeCodeCamp/Contributors -->
 <!-- Make sure that your PR is not a duplicate -->
 
 #### Pre-Submission Checklist
