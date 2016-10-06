@@ -61,13 +61,17 @@ export class ShowMap extends PureComponent {
   }
 
   render() {
-    const { height, superBlocks } = this.props;
+    const { superBlocks } = this.props;
+    let height = 'auto';
+    if (!this.props.params) {
+      height = this.props.height + 'px';
+    }
     return (
       <Col xs={ 12 }>
         <MapHeader />
         <div
           className='map-accordion center-block'
-          style={{ height: height + 'px' }}
+          style={{ height: height }}
           >
           { this.renderSuperBlocks(superBlocks) }
           <div className='spacer' />
