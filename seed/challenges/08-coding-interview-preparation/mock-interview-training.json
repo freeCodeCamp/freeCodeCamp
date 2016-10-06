@@ -3,7 +3,7 @@
   "order": 24,
   "time": "10 Hours",
   "isLocked": true,
-  "message": "To qualify for the coding interview preparation, you must first earn all three foundational certifications: Front End, Data Visualization, and Back End",
+  "message": "To qualify for Mock Interviews, you must first earn your Full Stack Developer Certificate by contributing to open source, then complete our Coding Interview Training.",
   "challenges": [
     {
       "title": "Mock Interview #1"

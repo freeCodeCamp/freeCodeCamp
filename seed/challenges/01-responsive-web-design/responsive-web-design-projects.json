@@ -146,8 +146,7 @@
       "title": "Build a Tribute Page",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/xEbddb/' target='_blank'>https://codepen.io/FreeCodeCamp/full/xEbddb/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can view a tribute page with an image and text.",
         "<strong>User Story:</strong> I can click on a link that will take me to an external website with further information on the topic.",
         "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
@@ -167,8 +166,7 @@
           "title": "Construye una página Tributo",
           "description": [
             "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcionalmente sea similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/xEbddb/' target='_blank'>https://codepen.io/FreeCodeCamp/full/xEbddb/</a>",
-            "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
-            "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
+            "Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
             "<strong>Historia de usuario:</strong> Puedo ver una página tributo con una imagen y texto.",
             "<strong>Historia de usuario:</strong> Puedo pulsar en un enlace que me llevará a un sitio web externo con mayor información sobre el tema.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
@@ -196,8 +194,7 @@
       "title": "Build a Survey Form",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/BLyRRJ/' target='_blank'>https://codepen.io/FreeCodeCamp/full/BLyRRJ/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can fill out a survey with at least six input fields, including checkboxes, radio buttons, text inputs, and select inputs.",
         "<strong>User Story:</strong> Some of the fields are marked as required, and I can't submit without filling these in.",
         "<strong>User Story:</strong> The form prevents me from submitting input that violates HTML5's native validations.",
@@ -232,8 +229,7 @@
       "title": "Build a Product Landing Page",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/jrEmLv/' target='_blank'>https://codepen.io/FreeCodeCamp/full/jrEmLv/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> When I arrive at the product landing page, I can click buttons in the navbar that will take me to the corresponding section of the landing page (features, pricing, email sign up).",
         "<strong>User Story:</strong> I can watch an embedded product video.",
         "<strong>User Story:</strong> There is a form field where I can enter an email address..",
@@ -269,8 +265,7 @@
       "title": "Build a Technical Documentation Page",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/gwbWXG/' target='_blank'>https://codepen.io/FreeCodeCamp/full/gwbWXG/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see a list of commands on a sidebar.",
         "<strong>User Story:</strong> The sidebar stays in the same place when I scroll down through the documentation..",
         "<strong>User Story:</strong> When I click a command link on the sidebar, the page scrolls down to that command's documentation entry.",
@@ -306,8 +301,7 @@
       "title": "Build a Personal Portfolio Webpage",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/qaEmRd/' target='_blank'>https://codepen.io/FreeCodeCamp/full/qaEmRd/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
         "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
         "<strong>User Story:</strong> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
@@ -329,8 +323,7 @@
           "title": "Construye una página web para tu portafolio",
           "description": [
             "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/qaEmRd/' target='_blank'>https://codepen.io/FreeCodeCamp/full/qaEmRd/</a>.",
-            "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
-            "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
+            "Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
             "<strong>Historia de usuario:</strong> Puedo acceder a todo el contenido de la página del portafolio con sólo desplazarme en la ventana.",
             "<strong>Historia de usuario:</strong> Puedo pulsar diferentes botones que me llevarán a las páginas de las diferentes cuentas de redes sociales del creador del portafolio.",
             "<strong>Historia de usuario:</strong> Puedo ver una imagenes en miniatura de los diferentes proyectos que el creador del portafolio ha construido (si no has construido ningún sitio web antes, usa marcadores de posición.)",
@@ -346,8 +339,7 @@
           "title": "Создайте сайт-портфолио",
           "description": [
             "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/qaEmRd/' target='_blank'>https://codepen.io/FreeCodeCamp/full/qaEmRd/</a>.",
-            "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
-            "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://ru.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
+            "Реализуйте следующие <a href='https://ru.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
             "<strong>Пользовательская история:</strong> Я могу получить доступ ко всей информации на странице просто прокрутив ее сверху вниз.",
             "<strong>Пользовательская история:</strong> Я могу нажать на различные кнопки и перейти к социальным страницам владельца портфолио.",
             "<strong>Пользовательская история:</strong> Я могу увидеть эскизы проектов созданных владельцем портфолио (используйте временную картинку если у вас пока нет собственных веб-страниц).",
