@@ -6,7 +6,7 @@ import FA from 'react-fontawesome';
 import LockedSettings from './Locked-Settings.jsx';
 import SocialSettings from './Social-Settings.jsx';
 import EmailSettings from './Email-Setting.jsx';
-import LangaugeSettings from './Language-Settings.jsx';
+import LanguageSettings from './Language-Settings.jsx';
 
 import { toggleUserFlag } from '../redux/actions';
 import { toggleNightMode, updateTitle } from '../../../redux/actions';
@@ -236,7 +236,7 @@ export class Settings extends React.Component {
             smOffset={ 2 }
             xs={ 12 }
             >
-            <LangaugeSettings />
+            <LanguageSettings />
           </Col>
         </Row>
         <div className='spacer' />
