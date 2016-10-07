@@ -119,7 +119,6 @@ export const updateNavHeight = createAction(types.updateNavHeight);
 
 // data
 export const updateChallengesData = createAction(types.updateChallengesData);
-export const updateJobsData = createAction(types.updateJobsData);
 export const updateHikesData = createAction(types.updateHikesData);
 
 export const createErrorObservable = error => Observable.just({

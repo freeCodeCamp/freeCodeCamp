@@ -26,7 +26,13 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     priority= 0.9
 
   url
-    loc http://www.freecodecamp.com/labs
+    loc http://www.freecodecamp.com/about
+    changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/shop
     changefreq weekly
     lastmod= now
     priority= 0.9
@@ -38,14 +44,44 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     priority= 0.9
 
   url
-    loc http://www.freecodecamp.com/jobs
+    loc http://www.freecodecamp.com/coding-bootcamp-cost-calculator
+    changefreq monthly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/privacy
     changefreq weekly
     lastmod= now
     priority= 0.9
 
   url
-    loc http://www.freecodecamp.com/coding-bootcamp-cost-calculator
-    changefreq monthly
+    loc http://www.freecodecamp.com/software-resources-for-nonprofits
+    changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/the-fastest-web-page-on-the-internet
+    changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/academic-honesty
+    changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/code-of-conduct
+    changefreq weekly
+    lastmod= now
+    priority= 0.9
+
+  url
+    loc http://www.freecodecamp.com/how-nonprofit-projects-work
+    changefreq weekly
     lastmod= now
     priority= 0.9
 
@@ -55,10 +91,3 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
       lastmod= now
       changefreq weekly
       priority= 0.9
-
-  each job in jobs
-    url
-      loc #{appUrl}/jobs/#{job}
-      lastmod= now
-      changefreq monthly
-      priority= 0.5

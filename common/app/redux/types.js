@@ -28,7 +28,6 @@ export default createTypes([
 
   // data handling
   'updateChallengesData',
-  'updateJobsData',
   'updateHikesData',
 
   // drawers
