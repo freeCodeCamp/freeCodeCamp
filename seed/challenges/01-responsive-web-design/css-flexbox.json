@@ -5,150 +5,40 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "5d712398c441eddfaeb5bdef",
-      "title": "Flexbox is About Positioning",
+      "id": "5d712398c441edd431b5bdef",
+      "title": "Introduction to the CSS Flexbox Challenges",
       "description": [
-        "A web User Interface (\"UI\") is made up of two things:",
-        "1) Visual elements, such as colors, fonts, and images",
-        "2) The placement or positioning of the elements",
-        "This section will focus on using CSS to position elements in a flexible way. CSS3 introduced <code>flexbox</code> to create responsive page layouts for different browsers and devices. It is relatively new, but supported by all popular modern browsers.",
-        "This section will use a simple tweet component, as shown on the right, to demonstrate different options in flexbox.",
-        "<h4>Instructions</h4>",
-        "Take a look at the code in the editor, and continue when you're ready."
+        [
+          "",
+          "",
+          "A website's User Interface (\"UI\") has two components. First, there are the visual elements, such as colors, fonts, and images. Second, there is the placement or positioning of those elements. In Responsive Web Design, a UI layout must accommodate many different browsers and devices accessing the content.<br><br>CSS3 introduced Flexbox to create flexible page layouts for a dynamic UI. While somewhat new, all popular modern browsers support Flexbox. This section will cover how to use Flexbox and the different layout options it offers.",
+          ""
+        ]
       ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    font-family: Arial, sans-serif;",
-        "  }",
-        "  header, footer {",
-        "    display: flex;",
-        "    flex-direction: row;",
-        "  }",
-        "  header .profile-thumbnail {",
-        "    width: 50px;",
-        "    height: 50px;",
-        "    border-radius: 4px;",
-        "  }",
-        "  header .profile-name {",
-        "    display: flex;",
-        "    flex-direction: column;",
-        "    justify-content: center;",
-        "    margin-left: 10px;",
-        "  }",
-        "  header .follow-btn {",
-        "    display: flex;",
-        "    align-items: center;",
-        "    margin: 0 0 0 auto;",
-        "  }",
-        "  header .follow-btn button {",
-        "    border: 0;",
-        "    border-radius: 3px;",
-        "    padding: 5px;",
-        "  }",
-        "  header h3, header h4 {",
-        "    display: flex;",
-        "    align-items: center;",
-        "    margin: 0;",
-        "  }",
-        "  #inner p {",
-        "    margin-bottom: 10px;",
-        "    font-size: 20px;",
-        "  }",
-        "  #inner hr {",
-        "    margin: 20px 0;",
-        "    border-style: solid;",
-        "    opacity: 0.1;",
-        "  }",
-        "  footer .stats {",
-        "    display: flex;",
-        "    flex-direction: row;",
-        "    font-size: 15px;",
-        "  }",
-        "  footer .stats strong {",
-        "    font-size: 18px;",
-        "  }",
-        "  footer .stats .likes {",
-        "    margin-left: 10px;",
-        "  }",
-        "  footer .cta {",
-        "    margin-left: auto;",
-        "  }",
-        "  footer .cta button {",
-        "    border: 0;",
-        "    background: transparent;",
-        "  }",
-        "</style>",
-        "<header>",
-        "  <img src=\"https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png\" alt=\"Quincy Larson's profile picture\" class=\"profile-thumbnail\">",
-        "  <div class=\"profile-name\">",
-        "    <h3>Quincy Larson</h3>",
-        "    <h4>@ossia</h4>",
-        "  </div>",
-        "  <div class=\"follow-btn\">",
-        "    <button>Follow</button>",
-        "  </div>",
-        "</header>",
-        "<div id=\"inner\">",
-        "  <p>How would you describe to a layperson the relationship between Node, Express, and npm in a single tweet? An analogy would be helpful.</p>",
-        "  <span class=\"date\">7:24 PM - 17 Aug 2016</span>",
-        "  <hr>",
-        "</div>",
-        "<footer>",
-        "  <div class=\"stats\">",
-        "    <div class=\"retweets\">",
-        "      <strong>56,203</strong> RETWEETS",
-        "    </div>",
-        "    <div class=\"likes\">",
-        "      <strong>84,703</strong> LIKES",
-        "    </div>",
-        "  </div>",
-        "  <div class=\"cta\">",
-        "    <button class=\"share-btn\">Share</button>",
-        "    <button class=\"retweet-btn\">Retweet</button>",
-        "    <button class=\"like-btn\">Like</button>",
-        "  </div>",
-        "</footer>"
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
       ],
-      "tests": [
-          "assert(true, 'message: Time to learn about flexbox!');"
+      "titleFr": "",
+      "descriptionFr": [
+        []
       ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": [],
-          "title": ""
-        },
-        "cn": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
     },
     {
       "id": "5d7123c99441eddfaeb5bdef",
       "title": "Using display: flex with Two Boxes",
       "description": [
-        "In this section, there will often be alternating challenge styles. First, a challenge will explain theory, then a practical challenge will apply the flexbox concept to the tweet embed.",
+        "This section will focus on using CSS to position elements in a flexible way with alternating challenge styles. First, a challenge will explain theory, then a practical challenge using a simple tweet component will apply the flexbox concept.",
         "Placing the CSS property <code>display: flex;</code> on an element allows us to use other flex properties to build a responsive page.",
         "<h4>Instructions</h4>",
         "Add the CSS property <code>display</code> to both <code>#box-1</code> and <code>#box-2</code> and set each to a value of flex."
@@ -211,9 +101,9 @@
       "id": "5d712397c441eddfaeb5bdef",
       "title": "Adding Flex Superpowers to the Tweet Embed",
       "description": [
-        "The last challenge demonstrated <code>display: flex</code>. Let's add it to several components in the tweet embed.",
+        "To the right is the tweet embed that will be used as the practical example. Some of the elements would benefit with a different layout. The last challenge demonstrated <code>display: flex</code>. Let's add it to several components in the tweet embed to start fixing their positioning.",
         "<h4>Instructions</h4>",
-        "Add the CSS property <code>display: flex</code> to all of the following items:",
+        "Add the CSS property <code>display: flex</code> to all of the following items - note that the selectors are already set up in the CSS:",
         "<code>header</code>, the header's <code>.profile-name</code>, the header's <code>.follow-btn</code>, the header's <code>h3</code> and <code>h4</code>, the <code>footer</code>, and the footer's <code>.stats</code>."
       ],
       "challengeSeed": [
@@ -1418,7 +1308,7 @@
       "title": "Using the Flex-basis Property to Set the Initial Size of an Item",
       "description": [
         "The previous example included <code>flex-basis</code> to help demonstrate how <code>flex-grow</code> works. The <code>flex-basis</code> property specifies the initial size of the item before CSS makes adjustments with <code>flex-shrink</code> or <code>flex-grow</code>.",
-        "The units used by the <code>flex-basis</code> property are the same as other size properties (<code>px</code>, <code>em</code>, <code>%</code>, etc.). The value <code>auto</code> sizes items based on their content.",
+        "The units used by the <code>flex-basis</code> property are the same as other size properties (<code>px</code>, <code>em</code>, <code>%</code>, etc.). The value <code>auto</code> sizes items based on the content.",
         "<h4>Instructions</h4>",
         "Set the initial size of the boxes using <code>flex-basis</code>. Add the CSS property <code>flex-basis</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of 10em and <code>#box-2</code> a value of 20em."
       ],
@@ -1447,8 +1337,10 @@
         "</div>"
       ],
       "tests": [
-          "assert($('#box-1').css('flex-basis') == '10em', 'message: The <code>#box-1</code> element should have the <code>flex-basis</code> property set to a value of 10em.');",
-          "assert($('#box-2').css('flex-basis') == '20em', 'message: The <code>#box-2</code> element should have the <code>flex-basis</code> property set to a value of 20em.');"
+          "assert($('#box-1').css('flex-basis') != 'auto', 'message: The <code>#box-1</code> element should have a <code>flex-basis</code> property.');",
+          "assert(code.match(/#box-1\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-basis:\\s*?10em;/g), 'message: The <code>#box-1</code> element should have a <code>flex-basis</code> value of 10em.');",
+          "assert($('#box-2').css('flex-basis') != 'auto', 'message: The <code>#box-2</code> element should have the <code>flex-basis</code> property.');",
+          "assert(code.match(/#box-2\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-basis:\\s*?20em;/g), 'message: The <code>#box-2</code> element should have a <code>flex-basis</code> value of 20em.');"
       ],
       "solutions": [],
       "hints": [],
