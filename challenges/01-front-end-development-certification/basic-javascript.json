@@ -2048,9 +2048,9 @@
       "title": "Manipulate Arrays With pop()",
       "description": [
         "Another way to change the data in an array is with the <code>.pop()</code> function.",
-        "<code>.pop()</code> is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" value by assigning it to a variable.",
+        "<code>.pop()</code> is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" value by assigning it to a variable. In other words, <code>.pop()</code> removes the last element from an array and returns that element.",
         "Any type of entry can be \"popped\" off of an array - numbers, strings, even nested arrays.",
-        "For example, for the code<br><code>var oneDown = [1, 4, 6].pop();</code><br>the variable <code>oneDown</code> now holds the value <code>6</code> and the array becomes <code>[1, 4]</code>.",
+        "<blockquote><code>var threeArr = [1, 4, 6];<br> var oneDown = threeArr.pop();<br> console.log(oneDown); // Returns 6<br> console.log(threeArr); // Returns [1, 4]</code></blockquote>",
         "<h4>Instructions</h4>",
         "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
       ],
