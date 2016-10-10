@@ -11,7 +11,16 @@
         "Add mongodb and mongoose to the project’s package.json. Then require mongoose. Store your mLab database URI in the private .env file as MONGO_URI. Connect to the database using mongoose.connect(<Your URI>)"
       ],
       "challengeSeed": [],
-      "tests": [],
+      "tests": [
+        {
+          "text": "\"mongodb\" dependency missing in package.json",
+          "testString": "() => ($.get(window.projectUrl + '/_api/file/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongodb'); }).promise())"
+        },
+        {
+          "text": "\"mongoose\" dependency missing in package.json",
+          "testString": "() => ($.get(window.projectUrl + '/_api/file/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongooose'); }).promise())"
+        }
+      ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",

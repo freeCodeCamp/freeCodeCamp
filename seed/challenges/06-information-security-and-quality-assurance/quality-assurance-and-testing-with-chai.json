@@ -13,12 +13,16 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=0').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "Null should be null",
-          "testString": "assert.isNull(null);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=0').then(function(data){  assert.equal(data.assertions[0].method, 'isNull'); }).promise())"
         },
         {
           "text": "1 should not be null",
-          "testString": "assert.isNotNull(1);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=0').then(function(data){  assert.equal(data.assertions[1].method, 'isNotNull'); }).promise())"
         }
       ],
       "solutions": [],
@@ -53,16 +57,20 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=1').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "Null should not be undefined",
-          "testString": "assert.isDefined(null);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[0].method, 'isDefined'); }).promise())"
         },
         {
           "text": "Undefined should be undefined",
-          "testString": "assert.isUndefined(undefined);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[1].method, 'isUndefined'); }).promise())"
         },
         {
           "text": "A string should not be undefined",
-          "testString": "assert.isDefined('hello');"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[2].method, 'isDefined'); }).promise())"
         }
       ],
       "solutions": [],
@@ -98,16 +106,20 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=2').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "Null is falsey.",
-          "testString": "assert.isNotOk(null);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[0].method, 'isNotOk'); }).promise())"
         },
         {
           "text": "A string is truthy",
-          "testString": "assert.isOk(\"I'm truthy\");"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[1].method, 'isOk'); }).promise())"
         },
         {
           "text": "true is truthy'",
-          "testString": "assert.isOk(true);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[2].method, 'isOk'); }).promise())"
         }
       ],
       "solutions": [],
@@ -144,16 +156,20 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=3').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "True is true.",
-          "testString": "assert.isTrue(true);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[0].method, 'isTrue'); }).promise())"
         },
         {
           "text": "Double negation of a truthy value is true.",
-          "testString": "assert.isTrue( !!'double negation');"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[1].method, 'isTrue'); }).promise())"
         },
         {
           "text": "A truthy object is not true - neither is a false one.",
-          "testString": "assert.isNotTrue({ value: 'truthy' });"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[2].method, 'isNotTrue'); }).promise())"
         }
       ],
       "solutions": [],
@@ -189,20 +205,25 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "Numbers are coerced into strings with == ",
-          "testString": "assert.equal( 12, '12');"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[0].method, 'equal'); }).promise())"
+
         },
         {
           "text": "== compares object references.",
-          "testString": "assert.notEqual( {value: 1}, {value:1});"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[1].method, 'notEqual'); }).promise())"
         },
         {
           "text": "No more hints...",
-          "testString": "assert.equal( 6 * '2', '12');"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[2].method, 'equal'); }).promise())"
         },
         {
           "text": "Type your error message if you want",
-          "testString": "assert.notEqual( 6 + '2', '12');"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[3].method, 'notEqual'); }).promise())"
         }
       ],
       "solutions": [],
@@ -238,20 +259,24 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "assert.notStrictEqual( 6, '6' );",
-          "testString": "assert.notStrictEqual( 6, '6' );"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[0].method, 'notStrictEqual'); }).promise())"
         },
         {
           "text": "assert.strictEqual( 6, 3*2 );",
-          "testString": "assert.strictEqual( 6, 3*2 );"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[1].method, 'strictEqual'); }).promise())"
         },
         {
           "text": "assert.strictEqual( 6 * '2', 12 );",
-          "testString": "assert.strictEqual( 6 * '2', 12 );"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[2].method, 'strictEqual'); }).promise())"
         },
         {
           "text": "assert.notStrictEqual( [1, 'a', {} ], [1, 'a', {}] )",
-          "testString": "assert.notStrictEqual( [1, 'a', {} ], [1, 'a', {}] )"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[3].method, 'notStrictEqual'); }).promise())"
         }
       ],
       "solutions": [],
@@ -287,12 +312,16 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=6').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "The order of the keys doesn't matter.",
-          "testString": "assert.deepEqual( { a: '1', b: 5 } , { b: 5, a: '1' });"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=6').then(function(data){  assert.equal(data.assertions[0].method, 'deepEqual'); }).promise())"
         },
         {
           "text": "The position of elements within an array does matter.",
-          "testString": "assert.notDeepEqual( { a: [5, 6] }, { a: [6, 5] });"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=6').then(function(data){  assert.equal(data.assertions[1].method, 'notdeepEqual'); }).promise())"
         }
       ],
       "solutions": [],
@@ -327,20 +356,24 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "assert.isAtMost('hello'.length , 5)",
-          "testString": "assert.isAtMost('hello'.length , 5)"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[0].method, 'isAtMost'); }).promise())"
         },
         {
           "text": "assert.isAbove(1, 0);",
-          "testString": "assert.isAbove(1, 0);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[1].method, 'isAbove'); }).promise())"
         },
         {
           "text": "assert.isAbove(Math.PI, 3);",
-          "testString": "assert.isAbove(Math.PI, 3);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[2].method, 'isAbove'); }).promise())"
         },
         {
           "text": "assert.isAtMost(1 - Math.random(), 1);",
-          "testString": "assert.isAtMost(1 - Math.random(), 1);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[3].method, 'isAtMost'); }).promise())"
         }
       ],
       "solutions": [],
@@ -375,20 +408,24 @@
       "challengeSeed": [],
       "tests": [
         {
+          "text": "All tests should pass",
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+        },
+        {
           "text": "assert.isAtLeast('world'.length , 5)",
-          "testString": "assert.isAtLeast('world'.length , 5)"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isAtLeast'); }).promise())"
         },
         {
           "text": "assert.isAtLeast(2*Math.random(), 0)",
-          "testString": "assert.isAtLeast(2*Math.random(), 0)"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isAtLeast'); }).promise())"
         },
         {
           "text": "assert.isBelow(5 % 2, 2);",
-          "testString": "assert.isBelow(5 % 2, 2);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isBelow'); }).promise())"
         },
         {
           "text": "assert.isBelow(2/3, 1);",
-          "testString": "assert.isBelow(2/3, 1);"
+          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isBelow'); }).promise())"
         }
       ],
       "solutions": [],
