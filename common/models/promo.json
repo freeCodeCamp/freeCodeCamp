@@ -18,7 +18,7 @@
     "buttonId": {
       "type": "string",
       "required": true,
-      "description": "The id of paypal button"
+      "description": "The ID of the paypal button"
     },
     "type": {
       "type": "string",
@@ -35,7 +35,7 @@
     },
     "discountPercent": {
       "type": "number",
-      "description": "The amount of discount as a percentage if applicable"
+      "description": "The amount of the discount as a percentage if applicable"
     }
   },
   "validations": [],

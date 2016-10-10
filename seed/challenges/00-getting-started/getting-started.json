@@ -1568,6 +1568,59 @@
             ]
           ]
         },
+        "pt-br": {
+          "title": "Aprenda o que fazer se você não conseguir avançar",
+          "description": [
+            [
+              "//i.imgur.com/lzKvwU2.jpg",
+              "A frase \"Programar é difícil.\"",
+              "Programar é difícil. Você não vai conseguir sair do lugar. Até mesmo desenvolvedores experientes ficam presos. A chave é saber como conseguir sair do lugar.",
+              ""
+            ],
+            [
+              "//i.imgur.com/sfsidp6.jpg",
+              "A frase \"Leva tempo para saber como ficar bom em programação\"",
+              "Leva-se tempo para ficar bom em programação. Você não esperaria vencer um mestre de xadrez depois de jogar por apenas 3 meses. Não espere conseguir construir o próximo Facebook após programar por apenas 3 meses.",
+              ""
+            ],
+            [
+              "//i.imgur.com/EoTfOyC.jpg",
+              "Uma imagem de alguns dos nossos campistas programando juntos em Montreal.",
+              "Continue a praticar programação todos os dias, socialize com outras pessoas que programam e você se tornará um desenvolvedor pronto para o mercado de trabalho.",
+              ""
+            ],
+            [
+              "//i.imgur.com/EWWZBag.jpg",
+              "Uma imagem com o texto \"1. Leia o erro 2. Pesquisa no Google 3. Peça ajuda.\"",
+              "Toda vez que você ficar preso ou não saber o que fazer a seguir: Leia-Pesquise-Pergunte",
+              ""
+            ],
+            [
+              "//i.imgur.com/99BfAcK.jpg",
+              "Uma imagem mostrando documentação jQuery",
+              "Primeiro, leia a documentação ou mensagem de erro. A habilidade fundamental que os bons programadores têm é a capacidade de interpretar e, em seguida, seguir as instruções.",
+              ""
+            ],
+            [
+              "//i.imgur.com/GxvrsFb.gif",
+              "Um gif mostrando-nos como fazer uma pesquisa avançada no Google. Primeiro, inserimos a consulta \"jquery não executa quando a minha página carrega\". Em seguida, clique no botão ferramentas de pesquisa e altere a caixa de seleção de \"Qualquer momento\" para \"Ano passado\". Em seguida, clique em um resultado, leia o artigo e encontre a nossa resposta.",
+              "Se isso não ajudar, pesquise no Google. Boas consultas no Google levam bastante tempo de prática. Quando você pesquisa no Google, você geralmente deseja incluir a linguagem de programação ou framework que você está usando. Você também quer limitar os resultados para um período recente.",
+              ""
+            ],
+            [
+              "//i.imgur.com/LZYU7p2.gif",
+              "Um gif mostrando-nos usando link abaixo para ir a sala de bate-papo de ajuda e perguntas \"jquery não executa quando a minha página carrega\".",
+              "Se isso não ajudar, pergunte a seus amigos. Se você tiver problemas, você pode perguntar a seus companheiros campistas na nossa sala de bate-papo para ajuda.",
+              "https://gitter.im/FreeCodeCamp/Help"
+            ],
+            [
+              "//i.imgur.com/ZRgXraT.gif",
+              "Um gif mostrando a navegação no nosso mapa de desafios.",
+              "Agora você está pronto para começar a programar. O botão \"Mapa\" no canto superior direito irá mostrar-lhe o nosso mapa de desafios. Recomendamos que você complete estes desafios de cima para baixo, em um ritmo adequado. Nossa comunidade open source está constantemente melhorando os nossos desafios por isso não se surpreenda se os desafios mudarem. Não se preocupe em voltar - apenas continue seguindo em frente.",
+              ""
+            ]
+          ]
+        },
         "ru": {
           "title": "Узнайте, что делать если вы застряли",
           "description": [

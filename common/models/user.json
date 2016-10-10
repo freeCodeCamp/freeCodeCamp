@@ -33,7 +33,7 @@
     },
     "isCheater": {
       "type": "boolean",
-      "description": "Users who are confirmed to break academic honesty policy are marked as cheaters",
+      "description": "Users who are confirmed to have broken academic honesty policy are marked as cheaters",
       "default": false
     },
     "isGithubCool": {
@@ -123,7 +123,7 @@
     "currentChallengeId": {
       "type": "string",
       "default": "",
-      "description": "the challenge last visited by the user"
+      "description": "The challenge last visited by the user"
     },
     "currentChallenge": {
       "type": {},
@@ -166,7 +166,7 @@
     },
     "challengeMap": {
       "type": "object",
-      "description": "A map by id of all the user completed challenges",
+      "description": "A map by ID of all the user completed challenges",
       "default": {}
     },
     "completedChallenges": {
@@ -204,7 +204,7 @@
     },
     "languageTag": {
       "type": "string",
-      "description": "A IETF language tag",
+      "description": "An IETF language tag",
       "default": "en"
     }
   },

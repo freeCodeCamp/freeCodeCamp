@@ -28,7 +28,7 @@ const options = [(
       key='default'
       value='not-the-momma'
       >
-      Prefered Langauge
+      Preferred Language
     </option>
   ),
   ...Object.keys(langs).map(tag => {
@@ -50,7 +50,7 @@ const options = [(
   )
 ];
 
-export class LangaugeSettings extends React.Component {
+export class LanguageSettings extends React.Component {
   static propTypes = {
     fields: PropTypes.object,
     handleSubmit: PropTypes.func.isRequired,
@@ -107,4 +107,4 @@ export default reduxForm(
   },
   mapStateToProps,
   actions
-)(LangaugeSettings);
+)(LanguageSettings);

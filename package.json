@@ -75,6 +75,7 @@
     "mongodb": "^2.0.33",
     "morgan": "^1.6.1",
     "mousetrap": "^1.6.0",
+    "node-emoji": "^1.4.1",
     "node-uuid": "^1.4.3",
     "nodemailer": "^2.1.0",
     "nodemailer-ses-transport": "^1.3.0",
