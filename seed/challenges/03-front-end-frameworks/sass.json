@@ -11,7 +11,7 @@
           [
             "",
             "",
-            "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.<br><br>Sass can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to create variables, nest CSS rules into others, and import other CSS files, among other things. The result is more compact, easier to read code.<br><br>This section will introduce the basic features of Sass.",
+            "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.<br><br>Sass can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to create variables, nest CSS rules into others, and import other Sass files, among other things. The result is more compact, easier to read code.<br><br>This section will introduce the basic features of Sass.",
             ""
             ]
         ],
@@ -45,9 +45,9 @@
       ],
       "description": [
         "One feature of Sass that's different than CSS is it uses variables. They are declared and set to store data, similar to JavaScript.",
-        "In Javascript, variables are defined using the <code>let</code> and <code>const</code> keywords (for ES6, or ES2015) or the <code>var</code> keyword (pre-ES6). In Sass, variables start with a <code>$</code> followed by the variable name.",
+        "In Javascript, variables are defined using the <code>let</code> and <code>const</code> keywords. In Sass, variables start with a <code>$</code> followed by the variable name.",
         "Here are a couple examples:",
-        "<blockquote>$headings-color: green;<br>$main-fonts: Arial, sans-serif;<br><br>//To use a variable:<br>h1 {<br>&nbsp;&nbsp;font-family: $main-fonts;<br>}</blockquote>",
+        "<blockquote>$main-fonts: Arial, sans-serif;<br>$headings-color: green;<br><br>//To use variables:<br>h1 {<br>&nbsp;&nbsp;font-family: $main-fonts;<br>&nbsp;&nbsp;color: $headings-color;<br>}</blockquote>",
         "One example where variables are useful is when a number of elements need to be the same color. If that color is changed, the only place to edit the code is the variable value.",
         "<h4>Instructions</h4>",
         "Create a variable <code>$text-color</code> and set it to red.",
@@ -350,7 +350,7 @@
         "<code>@for</code> is used in two ways: \"start through end\" or \"start to end\". The main difference is that \"start to end\" excludes the end number, and \"start through end\" includes the end number.",
         "Here's a start <b>through</b> end example:",
         "<blockquote>@for $i from 1 through 12 {<br>&nbsp;&nbsp;.col-#{$i} { width: 100%/12 * $i; }<br>}</blockquote>",
-        "Note that the syntax to use the current index number (a variable) with text to make the column name is <code>#{$i}</code>. When the Sass file is converted to CSS, it looks like this:",
+        "Note that the syntax to combine a variable with text to make a string is <code>#{$i}</code>. When the Sass file is converted to CSS, it looks like this:",
         "<blockquote>.col-1 {<br>&nbsp;&nbsp;width: 8.33333%;<br>}<br><br>.col-2 {<br>&nbsp;&nbsp;width: 16.66667%;<br>}<br><br>...<br><br>.col-12 {<br>&nbsp;&nbsp;width: 100%;<br>}</blockquote>",
         "This is a powerful way to create a grid layout. Now there are twelve options for column widths available as CSS classes.",
         "<h4>Instructions</h4>",
@@ -371,7 +371,7 @@
         "<p class=\"text-5\">Hello</p>"
       ],
       "tests": [
-          "assert(code.match(/@for/g), 'message: Your code should use a <code>@for</code> directive.');",
+          "assert(code.match(/@for /g), 'message: Your code should use a <code>@for</code> directive.');",
           "assert($('.text-1').css('font-size') == '10px', 'message: Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.');",
           "assert($('.text-2').css('font-size') == '20px', 'message: Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.');",
           "assert($('.text-3').css('font-size') == '30px', 'message: Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.');",
@@ -425,7 +425,7 @@
         "A map has slightly different syntax. Here's an example:",
         "<blockquote>$colors: (color1: blue, color2: red, color3: green);<br><br>@each $key, $color in $colors {<br>&nbsp;&nbsp;.#{$color}-text {color: $color;}<br>}</blockquote>",
         "Note that the <code>$key</code> variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have <code>color1</code>, <code>color2</code>... in it.",
-        "Both of the above code is converted into the following CSS:",
+        "Both of the above code examples are converted into the following CSS:",
         "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}<br><br>.red-text {<br>&nbsp;&nbsp;color: red;<br>}<br><br>.green-text {<br>&nbsp;&nbsp;color: green;<br>}</blockquote>",
         "<h4>Instructions</h4>",
         "Write an <code>@each</code> directive that goes through a list: <code>blue, black, red</code> and assigns each variable to a <code>.color-bg</code> class, where the \"color\" part changes for each item.",
@@ -447,7 +447,7 @@
         "<div class=\"red-bg\"></div>"
       ],
       "tests": [
-          "assert(code.match(/@each/g), 'message: Your code should use an <code>@each</code> directive.');",
+          "assert(code.match(/@each /g), 'message: Your code should use an <code>@each</code> directive.');",
           "assert($('blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'message: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');",
           "assert($('black-bg').css('background-color') == 'rgb(0, 0, 0)', 'message: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');",
           "assert($('red-bg').css('background-color') == 'rgb(255, 0, 0)', 'message: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');"
@@ -521,7 +521,7 @@
         "<p class=\"text-10\">Hello</p>"
       ],
       "tests": [
-          "assert(code.match(/@while/g), 'message: Your code should use an <code>@while</code> directive.');",
+          "assert(code.match(/@while /g), 'message: Your code should use an <code>@while</code> directive.');",
           "assert(code.match(/\\$.*:\\s*?1;/gi), 'message: Your code should set an index variable to 1 to start.');",
           "assert(code.match(/\\$(.*):\\s*?\\$\\1\\s*?\\+\\s*?1;/gi), 'message: Your code should increment the counter variable.');",
           "assert($('.text-1').css('font-size') == '5px', 'message: Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.');",
@@ -577,7 +577,7 @@
       ],
       "description": [
           "<code>Partials</code> in Sass are separate files that hold segments of CSS code. These are imported and used in other Sass files. This is a great way to group similar code into a module to keep it organized.",
-          "Names for <code>partials</code> start with the underscore (<code>_</code>) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file. Also, all Sass files end with the <code>.scss</code> file extension. To bring the code in the <code>partial</code> into another Sass file, use the <code>@import</code> directive.",
+          "Names for <code>partials</code> start with the underscore (<code>_</code>) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file. Also, Sass files end with the <code>.scss</code> file extension. To bring the code in the <code>partial</code> into another Sass file, use the <code>@import</code> directive.",
           "For example, if all the <code>mixins</code> are saved in a <code>partial</code> named \"_mixins.scss\", and they are needed in the \"main.scss\" file, this is how to use them in the main file:",
           "<blockquote>// In the main.scss file<br><br>@import 'mixins'</blockquote>",
           "Note that the underscore is not needed in the <code>import</code> statement - Sass understands it is a <code>partial</code>. Once a <code>partial</code> is imported into a file, all variables, <code>mixins</code>, and other code are available to use.",
