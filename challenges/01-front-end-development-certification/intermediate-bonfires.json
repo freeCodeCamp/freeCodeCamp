@@ -341,7 +341,7 @@
         "Array.prototype.indexOf()",
         "Array.prototype.push()",
         "Array.prototype.join()",
-        "String.prototype.substr()",
+        "String.prototype.substring()",
         "String.prototype.split()"
       ],
       "isRequired": true,
