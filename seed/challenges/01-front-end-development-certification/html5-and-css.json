@@ -790,7 +790,7 @@
         "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
         "Create a second <code>p</code> element after the existing <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Inside the same <code>&#60;style&#62;</code> tag that contains your <code>red-text</code> class, create an entry for <code>p</code> elements and set the <code>font-size</code> to 16 pixels (<code>16px</code>).",
-        "<strong>Note</strong><br> please do not add a class attribute to your new <code>p</code> element."
+        "<strong>Note</strong><br> Please do not add a class attribute to your new <code>p</code> element."
       ],
       "challengeSeed": [
         "<style>",
@@ -830,7 +830,7 @@
             "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
             "Créez un second élément <code>p</code> après l'élément <code>p</code> existant avec le texte kitty ipsum suivant : <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
             "À l'intérieur de la même balise <code>&#60;style&#62;</code> qui contiens votre classe <code>.red-text</code>, créez une nouvelle entrée pour les éléments <code>p</code> et paramétrer le <code>font-size</code> à 16 pixels (<code>16px</code>).",
-            "<strong>Prenez note</strong><br> veuillez ne pas ajouter d'attributs de classe à votre nouvel élément <code>p</code>."
+            "<strong>Prenez note</strong><br> Veuillez ne pas ajouter d'attributs de classe à votre nouvel élément <code>p</code>."
           ]
         },
         "pt-br": {
@@ -851,7 +851,7 @@
             "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
             "Создайте второй элемент <code>p</code> со следующи текстом <code>kitty ipsum</code>: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
             "Внутри того же элемента <code>&#60;style&#62;</code>, который содержит ваш класс <code>red-text</code>, создайте вхождение для элементов <code>p</code> и установите свойство <code>font-size</code> равным 16 пикселей (<code>16px</code>).",
-            "<strong>Внимание</strong><br> пожалуйста, не добавляйте атрибут класс к вашему новому элементу <code>p</code>."
+            "<strong>Внимание</strong><br> Пожалуйста, не добавляйте атрибут класс к вашему новому элементу <code>p</code>."
           ]
         }
       }
