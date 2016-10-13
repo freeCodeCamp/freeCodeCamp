@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "bd7243d8c341eddeaeb5bd0f",
-      "title": "Store Data in MongoDB",
+      "title": "MongoDB: Store Data in MongoDB",
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -43,7 +43,7 @@
       "challengeType": 2,
       "translations": {
         "es": {
-          "title": "Guarda tus datos en MongoDB",
+          "title": "MongoDB: Guarda tus datos en MongoDB",
           "description": [
             "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
             "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",

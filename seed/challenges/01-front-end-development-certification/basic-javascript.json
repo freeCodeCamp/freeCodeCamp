@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "bd7123c9c441eddfaeb4bdef",
-      "title": "Comment your JavaScript Code",
+      "title": "JavaScript: Comment your JavaScript Code",
       "description": [
         "Comments are lines of code that JavaScript will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.",
         "There are two ways to write comments in JavaScript:",
@@ -33,7 +33,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Agrega comentarios a tu código JavaScript",
+          "title": "JavaScript: Agrega comentarios a tu código JavaScript",
           "description": [
             "Los comentarios son líneas de código que el computador ignorará intencionalmente. Los comentarios son una gran forma de dejarte notas a ti mismo y a otras personas que luego tendrán que averiguar lo que hace que el código. ",
             "Vamos a echar un vistazo a las dos maneras en las que puedes agregar tus comentarios en JavaScript.",
@@ -45,7 +45,7 @@
           ]
         },
         "fr": {
-          "title": "Commentez votre code JavaScript",
+          "title": "JavaScript: Commentez votre code JavaScript",
           "description": [
             "Les commentaires sont des lignes de code que Javascript va intentionnellement ignorer. Les commentaires sont un bon moyen de laisser des notes à votre intention ou pour d'autres personnes qui devront comprendre ce que fait votre code.",
             "Il y a deux façons d'écrire des commentaires en JavaScript.",
@@ -63,7 +63,7 @@
     },
     {
       "id": "bd7123c9c443eddfaeb5bdef",
-      "title": "Declare JavaScript Variables",
+      "title": "JavaScript: Declare JavaScript Variables",
       "description": [
         "In computer science, <dfn>data</dfn> is anything that is meaningful to the computer. JavaScript provides seven different <dfn>data types</dfn> which are <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code>, and <code>object</code>.",
         "For example, computers distinguish between numbers, such as the number <code>12</code>, and <code>strings</code>, such as <code>\"12\"</code>, <code>\"dog\"</code>, or <code>\"123 cats\"</code>, which are collections of characters. Computers can perform mathematical operations on a number, but not on a string.",
@@ -97,7 +97,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Declara variables en JavaScript",
+          "title": "JavaScript: Declara variables en JavaScript",
           "description": [
             "Cuando almacenamos datos en una <code>estructura de datos</code>, la llamamos una <code>variable</code>. Estas variables no son diferentes de las variables x e y que utilizas en matemáticas. ",
             "Vamos a crear nuestra primera variable y a llamarla \"myName\".",
@@ -107,7 +107,7 @@
           ]
         },
         "fr": {
-          "title": "Déclarer des variables en JavaScript",
+          "title": "JavaScript: Déclarer des variables en JavaScript",
           "description": [
             "En informatique, une <dfn>donnée</dfn> comporte tout ce qui peut avoir du sens pour l'ordinateur. Javascript dispose de sept <code>types de données</code> différents qui sont <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code> et <code>object</code>.",
             "Par exemple, les ordinateurs font la différence entre les nombres tel que <code>12</code> et les <code>strings</code>, tels que <code>\"12\"</code>, <code>\"dog\"</code>, ou <code>\"123 cats\"</code>, qui sont des collections de caractères. Les ordinateurs peuvent faire des opérations mathématiques sur un nombre, mais pas sur une chaîne de caractères.",
@@ -126,7 +126,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244a8",
-      "title": "Storing Values with the Assignment Operator",
+      "title": "JavaScript: Storing Values with the Assignment Operator",
       "description": [
         "In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator.",
         "<code>myVariable = 5;</code>",
@@ -171,7 +171,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Almacenar valores con el operador igual",
+          "title": "JavaScript: Almacenar valores con el operador igual",
           "description": [
             "En JavaScript, puedes almacenar un valor en una variable con la <dfn>asignación</dfn> o con el operador <code>igual</code> (<code>=</code>).",
             "<code>miVariable = 5;</code>",
@@ -188,7 +188,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244a9",
-      "title": "Initializing Variables with the Assignment Operator",
+      "title": "JavaScript: Initializing Variables with the Assignment Operator",
       "description": [
         "It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.",
         "<code>var myVar = 0;</code>",
@@ -217,7 +217,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Inicializar variables con el operador igual",
+          "title": "JavaScript: Inicializar variables con el operador igual",
           "description": [
             "Es común <dfn>inicializar</dfn> una variable a un valor inicial en la misma línea que es declarada.",
             "<code>var miVar = 0;</code>",
@@ -230,7 +230,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244aa",
-      "title": "Understanding Uninitialized Variables",
+      "title": "JavaScript: Understanding Uninitialized Variables",
       "description": [
         "When JavaScript variables are declared, they have an initial value of <code>undefined</code>. If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>\"Not a Number\"</dfn>. If you concatenate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>\"undefined\"</code>.",
         "<h4>Instructions</h4>",
@@ -266,7 +266,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Entendiendo variables sin inicializar",
+          "title": "JavaScript: Entendiendo variables sin inicializar",
           "description": [
             "Cuando las variables de JavaScript son declaradas, ellas tienen un valor inicial de <code>undefined</code>. Si tu haces una operación matematica sobre una variable <code>undefined</code> tu resultado sera <code>NaN</code> el cual significa <dfn>\"Not a Number\"</dfn> es decir \"No es un número\". Si tu concatenas una cadena con una variable <code>undefined</code>, vas a obtener una <dfn>cadena</dfn> literal de <code>\"undefined\"</code>.",
             "<h4>Instrucciones</h4>",
@@ -277,7 +277,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ab",
-      "title": "Understanding Case Sensitivity in Variables",
+      "title": "JavaScript: Understanding Case Sensitivity in Variables",
       "description": [
         "In JavaScript all variables and function names are case sensitive. This means that capitalization matters.",
         "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you <em>do not</em> use this language feature.",
@@ -315,7 +315,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Entendiendo la distinción en variables",
+          "title": "JavaScript: Entendiendo la distinción en variables",
           "description": [
             "En JavaScript todas las variables y nombres de funciones distinguen entre mayúsculas y minúsculas. Esto significa que la capitalización importa.",
             "<code>MIVAR</code> no es lo mismo que <code>MiVar</code> o <code>mivar</code>. Esto hace posible tener múltiples variables distintas con el mismo nombre pero de diferente manera. Es fuertemente recomendado por el bien de la claridad, que tu <em>no</em> uses esta característica del lenguaje.",
@@ -331,7 +331,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb3bdef",
-      "title": "Add Two Numbers with JavaScript",
+      "title": "JavaScript: Add Two Numbers with JavaScript",
       "description": [
         "<code>Number</code> is a data type in JavaScript which represents numeric data.",
         "Now let's try to add two numbers using JavaScript.",
@@ -361,7 +361,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Suma dos números con JavaScript",
+          "title": "JavaScript: Suma dos números con JavaScript",
           "description": [
             "Intentemos sumar dos números con JavaScript.",
             "JavaScript utiliza el símbolo <code>+</code> para la adición.",
@@ -372,7 +372,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb4bdef",
-      "title": "Subtract One Number from Another with JavaScript",
+      "title": "JavaScript: Subtract One Number from Another with JavaScript",
       "description": [
         "We can also subtract one number from another.",
         "JavaScript uses the <code>-</code> symbol for subtraction.",
@@ -403,7 +403,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Resta un número de otro con JavaScript",
+          "title": "JavaScript: Resta un número de otro con JavaScript",
           "description": [
             "También podemos restar un número de otro.",
             "JavaScript utiliza el símbolo <code>-</code> de sustracción",
@@ -414,7 +414,7 @@
     },
     {
       "id": "cf1231c1c11feddfaeb5bdef",
-      "title": "Multiply Two Numbers with JavaScript",
+      "title": "JavaScript: Multiply Two Numbers with JavaScript",
       "description": [
         "We can also multiply one number by another.",
         "JavaScript uses the <code>*</code> symbol for multiplication of two numbers.",
@@ -444,7 +444,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Multiplica dos números con JavaScript",
+          "title": "JavaScript: Multiplica dos números con JavaScript",
           "description": [
             "También podemos multiplicar un número por otro.",
             "JavaScript utiliza el símbolo <code>*</code> de la multiplicación.",
@@ -455,7 +455,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb6bdef",
-      "title": "Divide One Number by Another with JavaScript",
+      "title": "JavaScript: Divide One Number by Another with JavaScript",
       "description": [
         "We can also divide one number by another.",
         "JavaScript uses the <code>/</code> symbol for division.",
@@ -485,7 +485,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Divide un número por otro con JavaScript",
+          "title": "JavaScript: Divide un número por otro con JavaScript",
           "description": [
             "También podemos dividir un número por otro.",
             "JavaScript utiliza el símbolo <code>/</code> para dividir.",
@@ -496,7 +496,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ac",
-      "title": "Increment a Number with JavaScript",
+      "title": "JavaScript: Increment a Number with JavaScript",
       "description": [
         "You can easily <dfn>increment</dfn> or add one to a variable with the <code>++</code> operator.",
         "<code>i++;</code>",
@@ -531,7 +531,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Incrementa un número con JavaScript",
+          "title": "JavaScript: Incrementa un número con JavaScript",
           "description": [
             "Tu puedes fácilmente <dfn>incrementar</dfn> o agregar uno a una variable con el operador <code>++</code>.",
             "<code>i++</code>",
@@ -546,7 +546,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ad",
-      "title": "Decrement a Number with JavaScript",
+      "title": "JavaScript: Decrement a Number with JavaScript",
       "description": [
         "You can easily <dfn>decrement</dfn> or decrease a variable by one with the <code>--</code> operator.",
         "<code>i--;</code>",
@@ -579,7 +579,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Decrementar un número con JavaScript",
+          "title": "JavaScript: Decrementar un número con JavaScript",
           "description": [
             "Fácilmente puedes <dfn>decrementar</dfn> o disminuir una variable por uno con el operador <code>--</code>.",
             "<code>i--;</code>",
@@ -594,7 +594,7 @@
     },
     {
       "id": "cf1391c1c11feddfaeb4bdef",
-      "title": "Create Decimal Numbers with JavaScript",
+      "title": "JavaScript: Create Decimal Numbers with JavaScript",
       "description": [
         "We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.",
         "<strong>Note</strong><br>Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
@@ -622,7 +622,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Crea números decimales con JavaScript",
+          "title": "JavaScript: Crea números decimales con JavaScript",
           "description": [
             "Podemos almacenar números decimales en variables también. Los números decimales a veces son referidos como números de <dfn>punto flotante</dfn> o <dfn>flotantes</dfn>.",
             "<strong>Nota</strong><br>No todos los números reales pueden ser exactamente representados en <dfn>punto flotante</dfn>. Esto puede conducir a errores de redondeo. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Detalles aquí</a>.",
@@ -634,7 +634,7 @@
     },
     {
       "id": "bd7993c9c69feddfaeb7bdef",
-      "title": "Multiply Two Decimals with JavaScript",
+      "title": "JavaScript: Multiply Two Decimals with JavaScript",
       "description": [
         "In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.",
         "Let's multiply two decimals together to get their product.",
@@ -660,7 +660,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Multiplicar dos decimales con JavaScript",
+          "title": "JavaScript: Multiplicar dos decimales con JavaScript",
           "description": [
             "En JavaScript, también puedes realizar cálculos con números decimales, al igual que con números enteros.",
             "Vamos a multiplicar dos números decimales para obtener su producto.",
@@ -672,7 +672,7 @@
     },
     {
       "id": "bd7993c9ca9feddfaeb7bdef",
-      "title": "Divide one Decimal by Another with JavaScript",
+      "title": "JavaScript: Divide one Decimal by Another with JavaScript",
       "description": [
         "Now let's divide one decimal by another.",
         "<h4>Instructions</h4>",
@@ -697,7 +697,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Divide un número decimal por otro con JavaScript",
+          "title": "JavaScript: Divide un número decimal por otro con JavaScript",
           "description": [
             "Ahora vamos a dividir un decimal por otro.",
             "<h4>Instrucciones</h4>",
@@ -708,7 +708,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ae",
-      "title": "Finding a Remainder in JavaScript",
+      "title": "JavaScript: Finding a Remainder in JavaScript",
       "description": [
         "The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.",
         "<strong>Example</strong>",
@@ -741,7 +741,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Encontrar un cociente en JavaScript",
+          "title": "JavaScript: Encontrar un cociente en JavaScript",
           "description": [
             "El operador <dfn>residuo</dfn> <code>%</code> da el residuo de la división de dos números.",
             "<strong>Ejemplo</strong>",
@@ -757,7 +757,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244af",
-      "title": "Compound Assignment With Augmented Addition",
+      "title": "JavaScript: Compound Assignment With Augmented Addition",
       "description": [
         "In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:",
         "<code>myVar = myVar + 5;</code>",
@@ -797,7 +797,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Asignación con más",
+          "title": "JavaScript: Asignación con más",
           "description": [
             "En programación, es común usar asignaciones para modificar el contenido de una variable. Recuerda que todo lo de la derecha del signo igual es evaluado primero, así podemos decir que:",
             "<code>miVar = miVar + 5;</code>",
@@ -812,7 +812,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b0",
-      "title": "Compound Assignment With Augmented Subtraction",
+      "title": "JavaScript: Compound Assignment With Augmented Subtraction",
       "description": [
         "Like the <code>+=</code> operator, <code>-=</code> subtracts a number from a variable.",
         "<code>myVar = myVar - 5;</code>",
@@ -852,7 +852,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Asignación con menos",
+          "title": "JavaScript: Asignación con menos",
           "description": [
             "Al igual que el operador <code>+=</code>, <code>-=</code> substrae un número de una variable.",
             "<code>miVar = miVar - 5;</code>",
@@ -866,7 +866,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b1",
-      "title": "Compound Assignment With Augmented Multiplication",
+      "title": "JavaScript: Compound Assignment With Augmented Multiplication",
       "description": [
         "The <code>*=</code> operator multiplies a variable by a number.",
         "<code>myVar = myVar * 5;</code>",
@@ -906,7 +906,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Asignación con veces igual",
+          "title": "JavaScript: Asignación con veces igual",
           "description": [
             "El operador <code>*=</code> multiplica una variable por un número.",
             "<code>miVar = miVar * 5;</code>",
@@ -920,7 +920,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b2",
-      "title": "Compound Assignment With Augmented Division",
+      "title": "JavaScript: Compound Assignment With Augmented Division",
       "description": [
         "The <code>/=</code> operator divides a variable by another number.",
         "<code>myVar = myVar / 5;</code>",
@@ -959,7 +959,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Asignación con división",
+          "title": "JavaScript: Asignación con división",
           "description": [
             "El operador <code>/=</code> divide una variable por otro número.",
             "<code>miVar = miVar / 5;</code>",
@@ -973,7 +973,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b3",
-      "title": "Convert Celsius to Fahrenheit",
+      "title": "JavaScript: Convert Celsius to Fahrenheit",
       "description": [
         "To test your learning, you will create a solution \"from scratch\". Place your code between the indicated lines and it will be tested against multiple test cases.",
         "The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times <code>9/5</code>, plus <code>32</code>.",
@@ -1009,7 +1009,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Convierte celsius a fahrenheit",
+          "title": "JavaScript: Convierte celsius a fahrenheit",
           "description": [
             "Para probar tu aprendizaje, crearás una solucion \"desde cero\". Coloca tu código entre las líneas indicadas y este será probado contra multiples casos de prueba.",
             "El algoritmo para convertir de Celsius a Fahrenheit consiste en multiplicar la temperatura en grados Celsius por 9/5 y al resultado agregarle 32.",
@@ -1020,7 +1020,7 @@
     },
     {
       "id": "bd7123c9c444eddfaeb5bdef",
-      "title": "Declare String Variables",
+      "title": "JavaScript: Declare String Variables",
       "description": [
         "Previously we have used the code",
         "<code>var myName = \"your name\";</code>",
@@ -1051,7 +1051,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Declara variables tipo cadena",
+          "title": "JavaScript: Declara variables tipo cadena",
           "description": [
             "En el reto anterior, se utilizó el código <code>myName var = \"su nombre\"</code>. Esto es lo que llamamos una variable tipo <code>cadena</code>. No es nada más que una \"cadena\" de caracteres. Las cadenas en JavaScript siempre se encierran entre comillas. ",
             "Ahora vamos a crear dos nuevas variables tipo cadena: <code>myFirstName</code> y <code>myLastName</code> y asignarles los valores de tu nombre y tu apellido, respectivamente."
@@ -1061,7 +1061,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b5",
-      "title": "Escaping Literal Quotes in Strings",
+      "title": "JavaScript: Escaping Literal Quotes in Strings",
       "description": [
         "When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: <code>\"</code> or <code>'</code> inside of your string?",
         "In JavaScript, you can <dfn>escape</dfn> a quote from considering it as an end of string quote by placing a <dfn>backslash</dfn> (<code>\\</code>) in front of the quote.",
@@ -1096,7 +1096,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Escapar comillas en cadenas de texto",
+          "title": "JavaScript: Escapar comillas en cadenas de texto",
           "description": [
             "Cuando estás definiendo una cadena debes iniciar y terminar con apóstrofes o comillas. ¿Qué pasa cuando necesitas una comilla: <code>\"</code> o <code>'</code> dentro de tu cadena?",
             "En JavaScript, tu puedes <dfn>escapar</dfn> unas comillas para diferenciarlas de las comillas del final de la cadena colocando una <dfn>barra invertida</dfn> (<code>\\</code>) antes de la cita.",
@@ -1112,7 +1112,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b4",
-      "title": "Quoting Strings with Single Quotes",
+      "title": "JavaScript: Quoting Strings with Single Quotes",
       "description": [
         "<dfn>String</dfn> values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote. Unlike some languages, single and double quotes are functionally identical in JavaScript.",
         "<code>\"This string has \\\"double quotes\\\" in it\"</code>",
@@ -1143,7 +1143,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Citando cadenas con comillas simples",
+          "title": "JavaScript: Citando cadenas con comillas simples",
           "description": [
             "Los valores de <dfn>Cadenas</dfn> en JavaScript pueden ser escritos con comillas o apóstrofes, siempre y cuando inicien y terminen con el mismo tipo de cita. A diferencia de algunos lenguajes, apóstrofes y comillas son funcionalmente identicas en JavaScript.",
             "<code>\"Esta cadena tiene \\\"comillas\\\" en esta\"</code>",
@@ -1157,7 +1157,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b6",
-      "title": "Escape Sequences in Strings",
+      "title": "JavaScript: Escape Sequences in Strings",
       "description": [
         "Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. There are two reasons to use escaping characters: First is to allow you to use characters you might not otherwise be able to type out, such as a backspace. Second is to allow you to represent multiple quotes in a string without JavaScript misinterpreting what you mean. We learned this in the previous challenge.",
         "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\\'</code></td><td>single quote</td></tr><tr><td><code>\\\"</code></td><td>double quote</td></tr><tr><td><code>\\\\</code></td><td>backslash</td></tr><tr><td><code>\\n</code></td><td>newline</td></tr><tr><td><code>\\r</code></td><td>carriage return</td></tr><tr><td><code>\\t</code></td><td>tab</td></tr><tr><td><code>\\b</code></td><td>backspace</td></tr><tr><td><code>\\f</code></td><td>form feed</td></tr></tbody></table>",
@@ -1193,7 +1193,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Secuencias de escape en cadenas",
+          "title": "JavaScript: Secuencias de escape en cadenas",
           "description": [
             "Las comillas no son el único caracter que puede ser <dfn>escapado</dfn> dentro de una cadena. Aquí ahí una tabla de secuencias de escape comunes:",
             "<table class=\"table table-striped\"><thead><tr><th>Código</th><th>Salida</th></tr></thead><tbody><tr><td>\\'</td><td>apostrofe</td></tr><tr><td>\\\"</td><td>comilla</td></tr><tr><td>\\\\</td><td>barra invertida</td></tr><tr><td>\\n</td><td>nueva línea</td></tr><tr><td>\\r</td><td>retorno de carro</td></tr><tr><td>\\t</td><td>tabulación</td></tr><tr><td>\\b</td><td>retroceso</td></tr><tr><td>\\f</td><td>salto de página</td></tr></tbody></table>",
@@ -1206,7 +1206,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b7",
-      "title": "Concatenating Strings with Plus Operator",
+      "title": "JavaScript: Concatenating Strings with Plus Operator",
       "description": [
         "In JavaScript, when the <code>+</code> operator is used with a <code>String</code> value, it is called the <dfn>concatenation</dfn> operator. You can build a new string out of other strings by <dfn>concatenating</dfn> them together.",
         "<strong>Example</strong>",
@@ -1248,7 +1248,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Concatenar cadenas con el operador más",
+          "title": "JavaScript: Concatenar cadenas con el operador más",
           "description": [
             "En JavaScript, cuando el operador <code>+</code> es usado con un valor de <code>Cadena</code>, este es llamado el operador <dfn>concatenación</dfn>. Tu puedes construir una nueva cadena de otras cadenas <dfn>concatenandolas</dfn> juntas.",
             "<strong>Ejemplo</strong>",
@@ -1262,7 +1262,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b8",
-      "title": "Concatenating Strings with the Plus Equals Operator",
+      "title": "JavaScript: Concatenating Strings with the Plus Equals Operator",
       "description": [
         "We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.",
         "<strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.",
@@ -1301,7 +1301,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Concatenar cadenas con el operador mas igual",
+          "title": "JavaScript: Concatenar cadenas con el operador mas igual",
           "description": [
             "Nosotros también podemos usar el operador <code>+=</code> para <dfn>concatenar</dfn> una cadena al final de una variable de cadena existente. Esto puede ser muy útil para romper una cadena larga sobre varias líneas.",
             "<strong>Nota</strong><br>Cuidado con los espacios. La concatenación no agrega espacios entre cadenas concatenadas, así que necesitarás añadirlos tu mismo.",
@@ -1313,7 +1313,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244b9",
-      "title": "Constructing Strings with Variables",
+      "title": "JavaScript: Constructing Strings with Variables",
       "description": [
         "Sometimes you will need to build a string, <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\" target=\"_blank\">Mad Libs</a> style. By using the concatenation operator (<code>+</code>), you can insert one or more variables into a string you're building.",
         "<h4>Instructions</h4>",
@@ -1358,7 +1358,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Construir cadenas con variables",
+          "title": "JavaScript: Construir cadenas con variables",
           "description": [
             "A veces necesitarás construir una cadena, al estilo <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\" target=\"_blank\">Mad Libs</a>. Mediante el uso del operador concatenación (<code>+</code>), puedes insertar una o más variables dentro de una cadena que estés construyendo.",
             "<h4>Instrucciones</h4>",
@@ -1369,7 +1369,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ed",
-      "title": "Appending Variables to Strings",
+      "title": "JavaScript: Appending Variables to Strings",
       "description": [
         "Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (<code>+=</code>) operator.",
         "<h4>Instructions</h4>",
@@ -1415,7 +1415,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Anexando variables a cadenas",
+          "title": "JavaScript: Anexando variables a cadenas",
           "description": [
             "Al igual que podemos construir una cadena en múltiples líneas a partir de cadenas <dfn>literales</dfn>, nosotros podemos ademas anexar variables a una cadena usando el operador más igual (<code>+=</code>).",
             "<h4>Instructiones</h4>",
@@ -1426,7 +1426,7 @@
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
-      "title": "Find the Length of a String",
+      "title": "JavaScript: Find the Length of a String",
       "description": [
         "You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.",
         "<code>\"Alan Peter\".length; // 10</code>",
@@ -1465,7 +1465,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Comprueba la propiedad longitud (length) de una variable tipo cadena",
+          "title": "JavaScript: Comprueba la propiedad longitud (length) de una variable tipo cadena",
           "description": [
             "Las <code>estructuras de datos</code> tienen <code>propiedades</code>. Por ejemplo, las <code>cadenas</code> tienen una propiedad llamada <code>.length </code> que te dirá cuántos caracteres hay en la cadena.",
             "Por ejemplo, si creamos una variable <code>var firstName=\"Charles\"</code>, podemos averiguar la longitud de la cadena \"Charles\" usando la propiedad <code>firstName.length</code>. ",
@@ -1476,7 +1476,7 @@
     },
     {
       "id": "bd7123c9c549eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the First Character in a String",
+      "title": "JavaScript: Use Bracket Notation to Find the First Character in a String",
       "description": [
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
         "Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.",
@@ -1515,7 +1515,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usa la notación de corchetes para encontrar el primer carácter de una cadena",
+          "title": "JavaScript: Usa la notación de corchetes para encontrar el primer carácter de una cadena",
           "description": [
             "La <code>notación de corchetes</code> es una forma de obtener el caracter en un <code>índice</code> específico de una cadena.",
             "Los computadoras no empiezan a contar desde 1 como hacen los humanos. Comienzan en 0 ",
@@ -1528,7 +1528,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ba",
-      "title": "Understand String Immutability",
+      "title": "JavaScript: Understand String Immutability",
       "description": [
         "In JavaScript, <code>String</code> values are <dfn>immutable</dfn>, which means that they cannot be altered once created.",
         "For example, the following code:",
@@ -1563,7 +1563,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Comprender la inmutabilidad de cadenas",
+          "title": "JavaScript: Comprender la inmutabilidad de cadenas",
           "description": [
             "En JavaScript, los valores de las <code>Cadenas</code> son <dfn>inmutables</dfn>, lo cual significa que ellos no pueden ser alterados una vez creados.",
             "Por ejemplo, el siguiente código:",
@@ -1578,7 +1578,7 @@
     },
     {
       "id": "bd7123c9c450eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the Nth Character in a String",
+      "title": "JavaScript: Use Bracket Notation to Find the Nth Character in a String",
       "description": [
         "You can also use <dfn>bracket notation</dfn> to get the character at other positions within a string.",
         "Remember that computers start counting at <code>0</code>, so the first character is actually the zeroth character.",
@@ -1613,7 +1613,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usar la notación de corchetes para encontrar el n-ésimo caracter en una cadena",
+          "title": "JavaScript: Usar la notación de corchetes para encontrar el n-ésimo caracter en una cadena",
           "description": [
             "También puede usar <code>notación de corchetes</code> para obtener el caracter en otras posiciones dentro de una cadena.",
             "Recuerda que los computadores empiezan a contar a 0, por lo que el primer caracter es en realidad el caracter cero.",
@@ -1626,7 +1626,7 @@
     },
     {
       "id": "bd7123c9c451eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the Last Character in a String",
+      "title": "JavaScript: Use Bracket Notation to Find the Last Character in a String",
       "description": [
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
@@ -1661,7 +1661,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usa notación de corchetes para encontrar el último caracter de una cadena",
+          "title": "JavaScript: Usa notación de corchetes para encontrar el último caracter de una cadena",
           "description": [
             "Con el fin de conseguir la última letra de una cadena, puedes restar uno a la longitud de la cadena.",
             "Por ejemplo, si <code>var firstName = \"Charles\"</code>, se puede obtener la última letra usando <code>firstName[firstName.length - 1]</code>. ",
@@ -1674,7 +1674,7 @@
     },
     {
       "id": "bd7123c9c452eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the Nth-to-Last Character in a String",
+      "title": "JavaScript: Use Bracket Notation to Find the Nth-to-Last Character in a String",
       "description": [
         "You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
@@ -1709,7 +1709,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usa notación de corchetes para encontrar el n-ésimo último caracter de una cadena",
+          "title": "JavaScript: Usa notación de corchetes para encontrar el n-ésimo último caracter de una cadena",
           "description": [
             "Puede utilizar el mismo principio utilizamos para recuperar el último caracter de una cadena para recuperar el n-ésimo último caracter.",
             "Por ejemplo, se puede obtener el valor de la tercera última letra de la cadena <code>var firstName = \"Charles\"</code> utilizando <code>firstName[firstName.length - 3]</code> ",
@@ -1722,7 +1722,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244bb",
-      "title": "Word Blanks",
+      "title": "JavaScript: Word Blanks",
       "description": [
         "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". You will create an (optionally humorous) \"Fill in the Blanks\" style sentence. Here's an example of an incomplete sentence.",
         "<code>\"The ______ ______ looked around ______ then ______ into the house\"</code>",
@@ -1760,7 +1760,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Espacios en blanco de palabras",
+          "title": "JavaScript: Espacios en blanco de palabras",
           "description": [
             "Ahora usaremos nuestro conocimiento de cadenas para construir un juego de palabras estilo \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" que llamaremos \"Espacios en Blanco de Palabras\". Vas a crear unas oraciones estilo (opcionalmente graciosa) \"Llena los espacios en blanco\".",
             "Necesitarás usar operadores de cadenas para construir una nueva cadena <code>result</code>, usando las variables previstas: <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code> y <code>myAdverb</code>.",
@@ -1772,7 +1772,7 @@
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
-      "title": "Store Multiple Values in one Variable using JavaScript Arrays",
+      "title": "JavaScript: Store Multiple Values in one Variable using JavaScript Arrays",
       "description": [
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
         "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this: ",
@@ -1804,7 +1804,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Almacena múltiples valores en una variable utilizando vectores en JavaScript",
+          "title": "JavaScript: Almacena múltiples valores en una variable utilizando vectores en JavaScript",
           "description": [
             "Con las variables tipo <code>vector</code> (o en inglés <code>array</code>) podemos almacenar diversos datos en un solo lugar.",
             "Empiezas la declaración de un vector con un corchete de apertura, y terminas con un corchete de cierre, y pones una coma entre cada entrada, así: <code>var sandwich = [\"mantequilla de maní\", \"jalea\" , \"pan\"]</code>. ",
@@ -1817,7 +1817,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb7bdef",
-      "title": "Nest one Array within Another Array",
+      "title": "JavaScript: Nest one Array within Another Array",
       "description": [
         "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23], [\"White Sox\", 45]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.",
         "<h4>Instructions</h4>",
@@ -1844,7 +1844,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Anida un vector dentro de otro vector",
+          "title": "JavaScript: Anida un vector dentro de otro vector",
           "description": [
             "También puedes anidar vectores dentro de otros vectores, como este: <code>[[\"Bulls\", 23], [\"White Sox\", 45]]</code>.",
             "<h4>Instrucciones</h4>",
@@ -1855,7 +1855,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392ca",
-      "title": "Access Array Data with Indexes",
+      "title": "JavaScript: Access Array Data with Indexes",
       "description": [
         "We can access the data inside arrays using <code>indexes</code>.",
         "Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array is element <code>0</code>.",
@@ -1890,7 +1890,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Accede a los datos de un vector mediante índices",
+          "title": "JavaScript: Accede a los datos de un vector mediante índices",
           "description": [
             "Podemos acceder a los datos dentro de los vectores usando <code>índices</code>.",
             "Los índices del vector se escriben en la misma notación con corchetes usado con cadenas, excepto que en lugar de especificar un caracter, especifican un elemento del vector.",
@@ -1906,7 +1906,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb8bdef",
-      "title": "Modify Array Data With Indexes",
+      "title": "JavaScript: Modify Array Data With Indexes",
       "description": [
         "Unlike strings, the entries of arrays are <dfn>mutable</dfn> and can be changed freely.",
         "<strong>Example</strong>",
@@ -1941,7 +1941,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Modifica datos de un vector usando índices",
+          "title": "JavaScript: Modifica datos de un vector usando índices",
           "description": [
             "También podemos modificar los datos almacenados en vectores usando índices.",
             "Por ejemplo:",
@@ -1955,7 +1955,7 @@
     },
     {
       "id": "56592a60ddddeae28f7aa8e1",
-      "title": "Access Multi-Dimensional Arrays With Indexes",
+      "title": "JavaScript: Access Multi-Dimensional Arrays With Indexes",
       "description": [
         "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.",
         "<strong>Example</strong>",
@@ -1987,7 +1987,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Acceder a vectores multi-dimensionales con índices",
+          "title": "JavaScript: Acceder a vectores multi-dimensionales con índices",
           "description": [
             "Una manera de pensar un vector <dfn>multi-dimensional</dfn>, es como un <em>vector de vectores</em>. Cuando usas corchetes para acceder a tu vector, el primer conjunto de brackets se refiere a las entradas en el vector más externo y cada nivel subsecuente de brackets se refiere al siguiente nivel de vectores internos.",
             "<strong>Ejemplo</strong>",
@@ -2000,7 +2000,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392cb",
-      "title": "Manipulate Arrays With push()",
+      "title": "JavaScript: Manipulate Arrays With push()",
       "description": [
         "An easy way to append data to the end of an array is via the <code>push()</code> function.",
         "<code>.push()</code> takes one or more <dfn>parameters</dfn> and \"pushes\" them onto the end of the array.",
@@ -2034,7 +2034,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Manipula vectores con push()",
+          "title": "JavaScript: Manipula vectores con push()",
           "description": [
             "No sólo se pueden sacar datos del final de un vector con <code>pop()</code>, también puedes empujar (<code>push()</code>) datos al final del vector.",
             "<h4>Instrucciones</h4>",
@@ -2045,7 +2045,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392cc",
-      "title": "Manipulate Arrays With pop()",
+      "title": "JavaScript: Manipulate Arrays With pop()",
       "description": [
         "Another way to change the data in an array is with the <code>.pop()</code> function.",
         "<code>.pop()</code> is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" value by assigning it to a variable. In other words, <code>.pop()</code> removes the last element from an array and returns that element.",
@@ -2083,7 +2083,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Manipula vectores con pop()",
+          "title": "JavaScript: Manipula vectores con pop()",
           "description": [
             "Otra forma de cambiar los datos en un vector es con la función <code>.pop()</code>.",
             "<code>.pop()</code> se utiliza para \"sacar\" el valor final de un vector. Podemos almacenar el valor \"sacado\" asignando <code>pop</code> a una variable por ejemplo durante su declaración.",
@@ -2096,7 +2096,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392cd",
-      "title": "Manipulate Arrays With shift()",
+      "title": "JavaScript: Manipulate Arrays With shift()",
       "description": [
         "<code>pop()</code> always removes the last element of an array. What if you want to remove the first?",
         "That's where <code>.shift()</code> comes in. It works just like <code>.pop()</code>, except it removes the first element instead of the last.",
@@ -2131,7 +2131,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Manipula vectores con shift()",
+          "title": "JavaScript: Manipula vectores con shift()",
           "description": [
             "<code>pop()</code> siempre elimina el último elemento de un vector. ¿Qué pasa si quieres quitar el primero?",
             "Ahí es donde entra <code>.shift()</code>. Funciona igual que <code>.pop ()</code>, excepto que elimina el primer elemento en lugar del pasado. ",
@@ -2143,7 +2143,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392ce",
-      "title": "Manipulate Arrays With unshift()",
+      "title": "JavaScript: Manipulate Arrays With unshift()",
       "description": [
         "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements to the beginning of an array i.e. add elements in front of the array.",
         "<code>.unshift()</code> works exactly like <code>.push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.",
@@ -2178,7 +2178,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Manipula vectores con unshift()",
+          "title": "JavaScript: Manipula vectores con unshift()",
           "description": [
             "No sólo se puedes <code>correr</code> (shift) elementos del comienzo de un vector, también puedes <code>descorrerlos</code> (unshift) al comienzo.",
             "<code>unshift()</code> funciona exactamente igual que <code>push()</code>, pero en lugar de añadir el elemento al final del vector, <code>unshift()</code> añade el elemento al comienzo del vector. ",
@@ -2190,7 +2190,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244bc",
-      "title": "Shopping List",
+      "title": "JavaScript: Shopping List",
       "description": [
         "Create a shopping list in the variable <code>myList</code>. The list should be a multi-dimensional array containing several sub-arrays.",
         "The first element in each sub-array should contain a string with the name of the item. The second element should be a number representing the quantity i.e.",
@@ -2244,7 +2244,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Lista de compras",
+          "title": "JavaScript: Lista de compras",
           "description": [
             "Crea una lista de compras en la variable <code>myList</code>. La lista tiene que ser un vector multidimensional conteniendo varios sub-vectores.",
             "El primer elemento en cada sub-vector debe contener una cadena con el nombre del elemento. El segundo elemento debe ser un número representando la cantidad i. e.",
@@ -2256,7 +2256,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392cf",
-      "title": "Write Reusable JavaScript with Functions",
+      "title": "JavaScript: Write Reusable JavaScript with Functions",
       "description": [
         "In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.",
         "Here's an example of a function:",
@@ -2321,7 +2321,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Escribe código JavaScript reutilizable con funciones",
+          "title": "JavaScript: Escribe código JavaScript reutilizable con funciones",
           "description": [
             "En JavaScript, podemos dividir nuestro código en partes reutilizables llamadas funciones.",
             "He aquí un ejemplo de una función:",
@@ -2338,7 +2338,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244bd",
-      "title": "Passing Values to Functions with Arguments",
+      "title": "JavaScript: Passing Values to Functions with Arguments",
       "description": [
         "<dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>\"passed\"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.",
         "Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
@@ -2405,7 +2405,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Pasando valores a funciones con argumentos",
+          "title": "JavaScript: Pasando valores a funciones con argumentos",
           "description": [
             "Los <dfn>parámetros</dfn> son variables que actúan como marcadores de lugar para los valores que han de ser entrada para una función cuando esta es llamada. Cuando una función es definida, es típicamente definida con uno o más parámetros. Los valores actuales que son entrada (or <dfn>\"pasados\"</dfn>) dentro de una función cuando esta es llamada son concidos como <dfn>argumentos</dfn>.",
             "Aquí hay una función con dos parámetros, <code>param1</code> y <code>param2</code>:",
@@ -2421,7 +2421,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244be",
-      "title": "Global Scope and Functions",
+      "title": "JavaScript: Global Scope and Functions",
       "description": [
         "In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.",
         "Variables which are used without the <code>var</code> keyword are automatically created in the <code>global</code> scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with <code>var</code>.",
@@ -2493,7 +2493,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Alcance global y funciones",
+          "title": "JavaScript: Alcance global y funciones",
           "description": [
             "En JavaScript, <dfn>alcance</dfn> se referiere a la visibilidad de variables. Las variables que definas fuera de un bloque de una función tienen alcance <dfn>Global</dfn>. Esto significa que ellas pueden ser vistas en todas partes en tu código JavaScript.",
             "Las variables que pueden ser usadas sin la palabra clave <code>var</code> son automáticamente creadas en el alcance <code>global</code>. Esto puede tener consecuencias no deseadas en otras partes de tu código o cuando se ejecuta una función de nuevo. Tu siempre deberías declarar tus variables con <code>var</code>.",
@@ -2506,7 +2506,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244bf",
-      "title": "Local Scope and Functions",
+      "title": "JavaScript: Local Scope and Functions",
       "description": [
         "Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.",
         "Here is a function <code>myTest</code> with a local variable called <code>loc</code>.",
@@ -2569,7 +2569,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Alcance local y funciones",
+          "title": "JavaScript: Alcance local y funciones",
           "description": [
             "Las variables que son declaradas dentro de una función, así como los parámetros de la función tienen alcance <dfn>local</dfn>. Eso significa que solo son visibles dentro de esa función.",
             "Aquí está una función <code>myTest</code> con una variable local llamada <code>loc</code>.",
@@ -2583,7 +2583,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c0",
-      "title": "Global vs. Local Scope in Functions",
+      "title": "JavaScript: Global vs. Local Scope in Functions",
       "description": [
         "It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.",
         "In this example:",
@@ -2620,7 +2620,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Alcance global vs. local en funciones",
+          "title": "JavaScript: Alcance global vs. local en funciones",
           "description": [
             "Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo nombre. Cuando tu haces esto, la variable <code>local</code> toma precedencia sobre la variable <code>global</code>.",
             "En este ejemplo:",
@@ -2634,7 +2634,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c2",
-      "title": "Return a Value from a Function with Return",
+      "title": "JavaScript: Return a Value from a Function with Return",
       "description": [
         "We can pass values into a function with <dfn>arguments</dfn>. You can use a <code>return</code> statement to send a value back out of a function.",
         "<strong>Example</strong>",
@@ -2670,7 +2670,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Retorna un valor desde una función con return",
+          "title": "JavaScript: Retorna un valor desde una función con return",
           "description": [
             "Podemos pasar valores a una función mediante los <dfn>argumentos</dfn>. Puedes usar una sentencia <code>return</code> para enviar un valor de vuelta de una función.",
             "<strong>Ejemplo</strong>",
@@ -2684,7 +2684,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c3",
-      "title": "Assignment with a Returned Value",
+      "title": "JavaScript: Assignment with a Returned Value",
       "description": [
         "If you'll recall from our discussion of <a href=\"storing-values-with-the-assignment-operator\" target=\"_blank\">Storing Values with the Assignment Operator</a>, everything to the right of the equal sign is resolved before the value is assigned. This means we can take the return value of a function and assign it to a variable.",
         "Assume we have pre-defined a function <code>sum</code> which adds two numbers together, then: ",
@@ -2729,7 +2729,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Asignación con un valor retornado",
+          "title": "JavaScript: Asignación con un valor retornado",
           "description": [
             "Si recuerdas de nuestra discusión de <a href=\"waypoint-storing-values-with-the-equal-operator\" target=\"_blank\">Almacenar Valores con el Operador Igual</a>, todo a la derecha del signo igual es resuelto antes que el valor sea asignado. Esto significa que nosotros podemos tomar el valor de retorno de una función y asignarlo a una variable.",
             "Supongamos que tenemos una función pre-definida <code>suma</code> la cual suma dos números, entonces: ",
@@ -2743,7 +2743,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
-      "title": "Stand in Line",
+      "title": "JavaScript: Stand in Line",
       "description": [
         "In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.",
         "Write a function <code>nextInLine</code> which takes an array (<code>arr</code>) and a number (<code>item</code>) as arguments. Add the number to the end of the array, then remove the first element of array. The <code>nextInLine</code> function should then return the element that was removed."
@@ -2804,7 +2804,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Hacer cola",
+          "title": "JavaScript: Hacer cola",
           "description": [
             "En Ciencias de la Computación una <dfn>cola</dfn> es una <dfn>Estructura de Datos</dfn> abstracta donde los elementos son mantenidos en orden. Nuevos elementos pueden ser agregados en la parte trasera de la <code>cola</code> y los elementos viejos son quitados desde el frente de la <code>cola</code>.",
             "Escribe una función <code>nextInLine</code> la cual toma un vector (<code>arr</code>) y un número (<code>item</code>) como argumentos. Agrega el número al final del vector, entonces retira el primer elemento del vector. La función nextInLine debe entonces devolver el elemento que se ha eliminado."
@@ -2814,7 +2814,7 @@
     },
     {
       "id": "bd7123c9c441eddfaeb5bdef",
-      "title": "Understanding Boolean Values",
+      "title": "JavaScript: Understanding Boolean Values",
       "description": [
         "Another data type is the <dfn>Boolean</dfn>. <code>Booleans</code> may only be one of two values: <code>true</code> or <code>false</code>. They are basically little on-off switches, where <code>true</code> is \"on\" and <code>false</code> is \"off.\"  These two states are mutually exclusive.",
         "<strong>Note</strong><br><code>Boolean</code> values are never written with quotes. The <code>strings</code> <code>\"true\"</code> and <code>\"false\"</code> are not <code>Boolean</code> and have no special meaning in JavaScript.",
@@ -2845,7 +2845,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Entiende los valores booleanos",
+          "title": "JavaScript: Entiende los valores booleanos",
           "description": [
             "En informática las <code>estructuras de datos</code> son cosas que contienen datos. JavaScript tiene siete de estas. Por ejemplo, la estructura de datos <code>Número</code> contiene números. ",
             "Vamos a aprender acerca de la estructura de datos más básica de todas: el <code>Boolean</code>. Los booleanos sólo puede contener el valor verdadero o el valor falso. Son básicamente pequeños interruptores de encendido y apagado. ",
@@ -2857,7 +2857,7 @@
     },
     {
       "id": "cf1111c1c12feddfaeb3bdef",
-      "title": "Use Conditional Logic with If Statements",
+      "title": "JavaScript: Use Conditional Logic with If Statements",
       "description": [
         "<code>If</code> statements are used to make decisions in code. The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions because they may only be <code>true</code> or <code>false</code>.",
         "When the condition evaluates to <code>true</code>, the program executes the statement inside the curly braces. When the Boolean condition evaluates to <code>false</code>, the statement inside the curly braces will not execute.",
@@ -2906,7 +2906,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usa lógica condicional con instrucciones if y else",
+          "title": "JavaScript: Usa lógica condicional con instrucciones if y else",
           "description": [
             "Podemos usar instrucciones <code>if</code> (\"if\" es \"si\" en español) en JavaScript para ejecutar código sólo cuando cierta condición se cumpla.",
             "Las instrucciones <code>if</code> requieren evaluar algún tipo de condición booleana.",
@@ -2925,7 +2925,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d0",
-      "title": "Comparison with the Equality Operator",
+      "title": "JavaScript: Comparison with the Equality Operator",
       "description": [
         "There are many <dfn>Comparison Operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.",
         "The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.",
@@ -2962,7 +2962,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador de igualdad",
+          "title": "JavaScript: La comparación con el operador de igualdad",
           "description": [
             "Hay muchos <dfn>Operadores de Comparación</dfn> en JavaScript. Todos estos operadores retornan un valor booleano <code>true</code>(verdadero) o <code>false</code>(falso).",
             "El operador más básico es el operador de igualdad <code>==</code>. El operador de igualdad compara dos valores y retorna <code>true</code> si son equivalentes o <code>false</code> si no lo son. Nota que la igualdad es diferente de la asignación (<code>=</code>), la cual asigna el valor a la derecha del operador a la variable en la izquierda.",
@@ -2978,7 +2978,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d1",
-      "title": "Comparison with the Strict Equality Operator",
+      "title": "JavaScript: Comparison with the Strict Equality Operator",
       "description": [
         "Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). Unlike the equality operator, strict equality tests both the <code>data type</code> and value of the compared elements.",
         "<strong>Examples</strong>",
@@ -3013,7 +3013,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador de estricta igualdad",
+          "title": "JavaScript: La comparación con el operador de estricta igualdad",
           "description": [
             "Igualdad estricta (<code>===</code>) es la contraparte del operador de igualdad (<code>==</code>). Diferente al operador de igualdad, igualdad estricta prueba los <code>tipos de datos</code> y el valor de los elementos comparados.",
             "<strong>Ejemplos</strong>",
@@ -3027,7 +3027,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d2",
-      "title": "Comparison with the Inequality Operator",
+      "title": "JavaScript: Comparison with the Inequality Operator",
       "description": [
         "The inequality operator (<code>!=</code>) is the opposite of the equality operator. It means \"Not Equal\" and returns <code>false</code> where equality would return <code>true</code> and <em>vice versa</em>. Like the equality operator, the inequality operator will convert data types of values while comparing.",
         "<strong>Examples</strong>",
@@ -3063,7 +3063,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador de desigualdad",
+          "title": "JavaScript: La comparación con el operador de desigualdad",
           "description": [
             "El operador de desigualdad (<code>!=</code>) es el opuesto al operador de igualdad. Esto significa \"No Igual a\" y retorna <code>false</code> cuando igualdad retornaría <code>true</code> y <em>viceversa</em>. Como el operador de igualdad, el operador de desigualdad convertirá tipos de datos mientras compara.",
             "<strong>Ejemplos</strong>",
@@ -3076,7 +3076,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d3",
-      "title": "Comparison with the Strict Inequality Operator",
+      "title": "JavaScript: Comparison with the Strict Inequality Operator",
       "description": [
         "The strict inequality operator (<code>!==</code>) is the opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
         "<strong>Examples</strong>",
@@ -3116,7 +3116,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador de estricta desigualdad",
+          "title": "JavaScript: La comparación con el operador de estricta desigualdad",
           "description": [
             "El operador de estricta desigualdad (<code>!==</code>) es el opuesto al operador de estricta igualdad. Esto significa \"Estrictamente no Igual\" y retorna <code>false</code>(falso) donde igualdad estricta retornaría <code>true</code>(verdadero) y <em>viceversa</em>. Estricta desigualdad no convertirá tipos de datos.",
             "<strong>Ejemplos</strong>",
@@ -3129,7 +3129,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d4",
-      "title": "Comparison with the Greater Than Operator",
+      "title": "JavaScript: Comparison with the Greater Than Operator",
       "description": [
         "The greater than operator (<code>&gt;</code>) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.",
         "Like the equality operator, greater than operator will convert data types of values while comparing.",
@@ -3172,7 +3172,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador mayor que",
+          "title": "JavaScript: La comparación con el operador mayor que",
           "description": [
             "El operador mayor que (<code>&gt;</code>) compara los valores de dos números. Si el número a la izquierda es mayor que el número a la derecha, este returna <code>true</code>(verdadero). De otra manera, este retorna <code>false</code>(falso).",
             "Al igual que el operador de igualdad, el operador mayor que convertirá tipos de datos de valores mientras los compara.",
@@ -3186,7 +3186,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d5",
-      "title": "Comparison with the Greater Than Or Equal To Operator",
+      "title": "JavaScript: Comparison with the Greater Than Or Equal To Operator",
       "description": [
         "The <code>greater than or equal to</code> operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.",
         "Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.",
@@ -3229,7 +3229,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador mayor o ogual",
+          "title": "JavaScript: La comparación con el operador mayor o ogual",
           "description": [
             "El operador <code>mayor o igual </code> (<code>&gt;=</code>) compara los valores de dos números. Si el número de la izquierda es mayor o igual a el número de la derecha, este retorna <code>true</code>(verdadero). De otra manera, este retorna <code>false</code>(falso).",
             "Como el operador de igualdad, el operador <code>mayor o igual</code> convertirá tipos de datos mientras está comparando.",
@@ -3243,7 +3243,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d6",
-      "title": "Comparison with the Less Than Operator",
+      "title": "JavaScript: Comparison with the Less Than Operator",
       "description": [
         "The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two numbers. If the number to the left is less than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.",
         "<strong>Examples</strong>",
@@ -3284,7 +3284,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador menor que",
+          "title": "JavaScript: La comparación con el operador menor que",
           "description": [
             "El operador <dfn>menor que</dfn> (<code>&lt;</code>) compara los valores de dos números. Si el número a la izquierda es menor que el número de la derecha, este retorna <code>true</code>(verdadero). De otra manera, este retorna <code>false</code>(falso). Como el operador de igualdad, el operador <dfn>menor que</dfn> convierte tipos de datos mientra compara.",
             "<strong>Ejemplos</strong>",
@@ -3297,7 +3297,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d7",
-      "title": "Comparison with the Less Than Or Equal To Operator",
+      "title": "JavaScript: Comparison with the Less Than Or Equal To Operator",
       "description": [
         "The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.",
         "<strong>Examples</strong>",
@@ -3340,7 +3340,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador menor o igual",
+          "title": "JavaScript: La comparación con el operador menor o igual",
           "description": [
             "El operador <code>menor o igual</code> (<code>&lt;=</code>) compara los valores de dos números. Si el número a la izquierda es menor o igual que el número de la derecha, este retorna <code>true</code>(verdadero). Si el número a la izquierda es mayor que el número de la derecha, este retorna <code>false</code>(falso). Al igual que el operador de igualdad, <code>menor o igual</code> convierte tipos de datos.",
             "<strong>Ejemplos</strong>",
@@ -3353,7 +3353,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d8",
-      "title": "Comparisons with the Logical And Operator",
+      "title": "JavaScript: Comparisons with the Logical And Operator",
       "description": [
         "Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.",
         "The same effect could be achieved by nesting an if statement inside another if:",
@@ -3400,7 +3400,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador lógico y",
+          "title": "JavaScript: La comparación con el operador lógico y",
           "description": [
             "A veces necesitarás probar más de una cosa a la vez. El operador <dfn>lógico y</dfn> (<code>&&</code>) retorna <code>true</code>(verdadero) si y solo si los <dfn>operandos</dfn> a la izquierda y derecha de este son verdaderos.",
             "El mismo efecto podría lograrse anidando una sentencia if dentro de otro if:",
@@ -3415,7 +3415,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244d9",
-      "title": "Comparisons with the Logical Or Operator",
+      "title": "JavaScript: Comparisons with the Logical Or Operator",
       "description": [
         "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of the <dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.",
         "The pattern below should look familiar from prior waypoints:",
@@ -3464,7 +3464,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "La comparación con el operador lógico o",
+          "title": "JavaScript: La comparación con el operador lógico o",
           "description": [
             "El operador <dfn>lógico o</dfn> (<code>||</code>) retorna <code>true</code>(verdadero) si cualquiera de los <dfn>operandos</dfn> es <code>true</code>(verdadero). De otra manera, este retorna <code>false</code>(falso).",
             "El patrón de abajo debería ser familiar de los puntos de referencia anteriores:",
@@ -3479,7 +3479,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244da",
-      "title": "Introducing Else Statements",
+      "title": "JavaScript: Introducing Else Statements",
       "description": [
         "When a condition for an <code>if</code> statement is true, the block of code following it is executed. What about when that condition is false?  Normally nothing would happen. With an <code>else</code> statement, an alternate block of code can be executed.",
         "<blockquote>if (num > 10) {<br>  return \"Bigger than 10\";<br>} else {<br>  return \"10 or Less\";<br>}</blockquote>",
@@ -3524,7 +3524,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Introducción de las sentencias else",
+          "title": "JavaScript: Introducción de las sentencias else",
           "description": [
             "Cuando una condición de una sentencia <code>if</code> es verdadera, el siguiente bloque de código es ejecutado. ¿Y cuando esa condición es falsa? Normalmente nada pasaría. Con una sentencia <code>else</code>(además), un bloque alternativo de código puede ser ejecutado.",
             "<blockquote>if (num > 10) {<br>  return \"Más grande que 10\";<br>} else {<br>  return \"10 o Menos\";<br>}</blockquote>",
@@ -3536,7 +3536,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244db",
-      "title": "Introducing Else If Statements",
+      "title": "JavaScript: Introducing Else If Statements",
       "description": [
         "If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.",
         "<blockquote>if (num > 15) {<br>  return \"Bigger than 15\";<br>} else if (num < 5) {<br>  return \"Smaller than 5\";<br>} else {<br>  return \"Between 5 and 15\";<br>}</blockquote>",
@@ -3577,7 +3577,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Introducción de las sentencias else if",
+          "title": "JavaScript: Introducción de las sentencias else if",
           "description": [
             "Si tienes múltiples condiciones que deben abordarse, puedes encadenar sentencias <code>if</code> juntas con sentencias <code>else if</code>.",
             "<blockquote>if (num > 15) {<br>  return \"Más grande que 15\";<br>} else if (num < 5) {<br>  return \"Más pequeño que 5\";<br>} else {<br>  return \"Entre 5 y 15\";<br>}</blockquote>",
@@ -3589,7 +3589,7 @@
     },
     {
       "id": "5690307fddb111c6084545d7",
-      "title": "Logical Order in If Else Statements",
+      "title": "JavaScript: Logical Order in If Else Statements",
       "description": [
         "Order is important in <code>if</code>, <code>else if</code> statements.",
         "The loop is executed from top to bottom so you will want to be careful of what statement comes first.",
@@ -3629,7 +3629,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Orden lógico en sentencias else if",
+          "title": "JavaScript: Orden lógico en sentencias else if",
           "description": [
             "El orden es importante en las sentencia <code>if</code> y <code>else if</code>.",
             "El ciclo es ejecutado de arriba hacia abajo por lo que tendrás que ser cuidadoso de cual sentencia va primero.",
@@ -3648,7 +3648,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244dc",
-      "title": "Chaining If Else Statements",
+      "title": "JavaScript: Chaining If Else Statements",
       "description": [
         "<code>if/else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:",
         "<blockquote>if (<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition2</em>) {<br>  <em>statement2</em><br>} else if (<em>condition3</em>) {<br>  <em>statement3</em><br>. . .<br>} else {<br>  <em>statementN</em><br>}</blockquote>",
@@ -3691,7 +3691,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Encadenamiento de sentencias else if",
+          "title": "JavaScript: Encadenamiento de sentencias else if",
           "description": [
             "Las sentencias <code>if/else</code>(si/de lo contrario) pueden ser encadenadas juntas por una lógica compleja. Aquí está el <dfn>pseudocódigo</dfn> de múltiples sentencias <code>if</code> / <code>else if</code> encadenadas:",
             "<blockquote>if (<em>condicion1</em>) {<br>  <em>sentencias1</em><br>} else if (<em>condicion2</em>) {<br>  <em>sentencias2</em><br>} else if (<em>condicion3</em>) {<br>  <em>sentencias3</em><br>. . .<br>} else {<br>  <em>sentenciasN</em><br>}</blockquote>",
@@ -3704,7 +3704,7 @@
     },
     {
       "id": "5664820f61c48e80c9fa476c",
-      "title": "Golf Code",
+      "title": "JavaScript: Golf Code",
       "description": [
         "In the game of <a href=\"https://en.wikipedia.org/wiki/Golf\" target=\"_blank\">golf</a> each hole has a <code>par</code> meaning the average number of <code>strokes</code> a golfer is expected to make in order to sink the ball in a hole to complete the play. Depending on how far above or below <code>par</code> your <code>strokes</code> are, there is a different nickname.",
         "Your function will be passed <code>par</code> and <code>strokes</code> arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):",
@@ -3744,7 +3744,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Código de golf",
+          "title": "JavaScript: Código de golf",
           "description": [
             "En el juego de <a href='https://es.wikipedia.org/wiki/Golf' target='_blank'>golf</a> cada hoyo tiene un <dfn>par</dfn> promedio para el número de <dfn>golpes</dfn> necesarios para meter la pelota. Dependiendo de que tan lejos por encima o por debajo del <code>par</code> estén tus <code>golpes</code>, habrá un sobrenombre diferente.",
             "Tu función pasará un <code>par</code> y el número de <code>golpes</code>, y retornará una cadena de acuerdo a esta tabla (basada en el orden de prioridad - arriba (lo más alto) hacia abajo (lo más bajo)):",
@@ -3756,7 +3756,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244dd",
-      "title": "Selecting from many options with Switch Statements",
+      "title": "JavaScript: Selecting from many options with Switch Statements",
       "description": [
         "If you have many options to choose from, use a <code>switch</code> statement. A <code>switch</code> statement tests a value and can have many <code>case</code> statements which define various possible values. Statements are executed from the first matched <code>case</code> value until a <code>break</code> is encountered.",
         "Here is a <dfn>pseudocode</dfn> example:",
@@ -3799,7 +3799,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Seleccionar desde diferentes opciones con la sentencia switch",
+          "title": "JavaScript: Seleccionar desde diferentes opciones con la sentencia switch",
           "description": [
             "Si tienes varias opciones para elegir, usa una sentencia <code>switch</code>. Una sentencia <code>switch</code> prueba un valor y puede tener varias sentencias <code>case</code> las cuales definen varios posibles valores. Las sentencias son ejecutadas desde el primer valor <code>case</code> igualado hasta que se encuentr un <code>break</code>.",
             "Aquí hay un <dfn>pseudocódigo</dfn> de ejemplo:",
@@ -3813,7 +3813,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244de",
-      "title": "Adding a default option in Switch statements",
+      "title": "JavaScript: Adding a default option in Switch statements",
       "description": [
         "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.",
         "A <code>default</code> statement should be the last case.",
@@ -3853,7 +3853,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Agregar una opción por omisión (default) en una sentencia switch",
+          "title": "JavaScript: Agregar una opción por omisión (default) en una sentencia switch",
           "description": [
             "En una sentencia <code>switch</code> puede que no seas capaz de especificar todos los posibles valores en las sentencias <code>case</code>. En su lugar, puedes agregar la sentencia <code>default</code> la cual será ejecutada si no es encontrada ninguna coincidencia con alguna sentencia <code>case</code>. Piensa en esto como la última sentencia <code>else</code> en una cadena <code>if/else</code>.",
             "Una sentencia <code>default</code> debería ser el último caso.",
@@ -3866,7 +3866,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244df",
-      "title": "Multiple Identical Options in Switch Statements",
+      "title": "JavaScript: Multiple Identical Options in Switch Statements",
       "description": [
         "If the <code>break</code> statement is omitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
         "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
@@ -3911,7 +3911,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Múltiples opciones idénticas en una sentencias switch",
+          "title": "JavaScript: Múltiples opciones idénticas en una sentencias switch",
           "description": [
             "Si la sentencia <code>break</code> es omitida de una sentencia <code>case</code> de un <code>switch</code>, las siguientes sentencias <code>case</code> son ejecutadas hasta que sea encontrado un <code>break</code>. Si tienes multiples entradas con la misma salida, puede representarlas en una sentencia <code>switch</code> así:",
             "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
@@ -3925,7 +3925,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244e0",
-      "title": "Replacing If Else Chains with Switch",
+      "title": "JavaScript: Replacing If Else Chains with Switch",
       "description": [
         "If you have many options to choose from, a <code>switch</code> statement can be easier to write than many chained <code>if</code>/<code>else if</code> statements. The following:",
         "<blockquote>if (val === 1) {<br>  answer = \"a\";<br>} else if (val === 2) {<br>  answer = \"b\";<br>} else {<br>  answer = \"c\";<br>}</blockquote>",
@@ -3979,7 +3979,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Reemplazar cadenas if else con switch",
+          "title": "JavaScript: Reemplazar cadenas if else con switch",
           "description": [
             "Si tienes varias opciones para elegir, una sentencia <code>switch</code> puede ser más fácil de escribir que varias sentencias <code>if</code>/<code>if else</code> anidadas. Lo siguiente:",
             "<blockquote>if (val === 1) {<br>  respuesta = \"a\";<br>} else if (val === 2) {<br>  respuesta = \"b\";<br>} else {<br>  respuesta = \"c\";<br>}</blockquote>",
@@ -3993,7 +3993,7 @@
     },
     {
       "id": "5679ceb97cbaa8c51670a16b",
-      "title": "Returning Boolean Values from Functions",
+      "title": "JavaScript: Returning Boolean Values from Functions",
       "description": [
         "You may recall from <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
         "Sometimes people use an if/else statement to do a comparison, like this:",
@@ -4032,7 +4032,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Retornar valores booleanos desde funciones",
+          "title": "JavaScript: Retornar valores booleanos desde funciones",
           "description": [
             "Tal vez recuerdes de <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">La comparación con el operador de igualdad</a> que todos los operadores de comparación retornan un valor booleano <code>true</code> (verdadero) o <code>false</code> (falso).",
             "Un <dfn>anti-patrón</dfn> común es usar una sentencia <code>if/else</code> para hacer una comparación y entonces retornar <code>true</code> o <code>false</code>:",
@@ -4047,7 +4047,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c4",
-      "title": "Return Early Pattern for Functions",
+      "title": "JavaScript: Return Early Pattern for Functions",
       "description": [
         "When a <code>return</code> statement is reached, the execution of the current function stops and control returns to the calling location.",
         "<strong>Example</strong>",
@@ -4091,7 +4091,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Retornar un patrón temprano para funciones",
+          "title": "JavaScript: Retornar un patrón temprano para funciones",
           "description": [
             "Cuando se alcanza una sentencia <code>return</code>, la ejecución de la presente función se detiene y el control la retorna a la ubicación de la llamada.",
             "<strong>Ejemplo</strong>",
@@ -4106,7 +4106,7 @@
     },
     {
       "id": "565bbe00e9cc8ac0725390f4",
-      "title": "Counting Cards",
+      "title": "JavaScript: Counting Cards",
       "description": [
         "In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank'>Card Counting</a>.",
         "Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.",
@@ -4147,7 +4147,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Contar cartas",
+          "title": "JavaScript: Contar cartas",
           "description": [
             "En el juego de casino Blackjack, un jugador puede conseguir ventaja sobre la casa manteniendo un registro del número relativo de cartas altas y bajas restantes en la baraja. Esto es llamado <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank'>Conteo de Cartas</a>.",
             "Tener más cartas altas restantes en la baraja favorece al jugador. A cada carta se le asigna un valor de acuerdo a la tabla de abajo. Cuando el conteo es positivo, el jugador debe apostar alto. Cuando el conteo es cero o negativo, el jugador debe apostar bajo.",
@@ -4160,7 +4160,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d0",
-      "title": "Build JavaScript Objects",
+      "title": "JavaScript: Build JavaScript Objects",
       "description": [
         "You may have heard the term <code>object</code> before.",
         "Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.",
@@ -4206,7 +4206,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Construye objetos en JavaScript",
+          "title": "JavaScript: Construye objetos en JavaScript",
           "description": [
             "Es posible que haya oído el término <code>objeto</code> antes.",
             "Los objetos son similares a los <code>vectores</code>, excepto que en lugar de utilizar los índices para acceder y modificar sus datos, pueden accederse mediante lo que se llama <code>propiedades</code>.",
@@ -4226,7 +4226,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c7",
-      "title": "Accessing Objects Properties with the Dot Operator",
+      "title": "JavaScript: Accessing Objects Properties with the Dot Operator",
       "description": [
         "There are two ways to access the properties of an object: the dot operator (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.",
         "The dot operator is what you use when you know the name of the property you're trying to access ahead of time.",
@@ -4266,7 +4266,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Acceder a propiedades de objetos con el operador punto",
+          "title": "JavaScript: Acceder a propiedades de objetos con el operador punto",
           "description": [
             "Hay dos maneras de acceder a las propiedades de un objeto: con el operador punto (<code>.</code>) y con la notación corchete (<code>[]</code>), similar al caso de un vector.",
             "El operador punto es el que usas cuando de antemano sabes el nombre de la propiedad que estás intentando acceder.",
@@ -4280,7 +4280,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c8",
-      "title": "Accessing Objects Properties with Bracket Notation",
+      "title": "JavaScript: Accessing Objects Properties with Bracket Notation",
       "description": [
         "The second way to access the properties of an object is bracket notation (<code>[]</code>). If the property of the object you are trying to access has a space in it's name, you will need to use bracket notation.",
         "Here is a sample of using bracket notation to read an object property:",
@@ -4320,7 +4320,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Acceder a las propiedades de objetos con la notación corchete",
+          "title": "JavaScript: Acceder a las propiedades de objetos con la notación corchete",
           "description": [
             "La segunda manera de acceder a las propiedades de un objeto es con la notación corchete (<code>[]</code>). Si el nombre de la propiedad del objeto que estás intentando acceder tiene un espacio, necesitarás usar la notación corchete.",
             "Aquí está un ejemplo del uso de la notación corchete para leer una propiedad de un objeto:",
@@ -4334,7 +4334,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c9",
-      "title": "Accessing Objects Properties with Variables",
+      "title": "JavaScript: Accessing Objects Properties with Variables",
       "description": [
         "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for iterating through lists of the object properties or for doing the lookup.",
         "Here is an example of using a variable to access a property:",
@@ -4376,7 +4376,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Acceder a propiedades de objetos con variables",
+          "title": "JavaScript: Acceder a propiedades de objetos con variables",
           "description": [
             "Otro uso de la notación corchete sobre objetos es usar una variable para acceder a una propiedad. Esto puede ser muy útil en iteraciones sobre la lista de propiedades de un objetos o para hacer operaciones de búsqueda.",
             "Aquí está un ejemplo del uso de una variable para acceder a una propiedad:",
@@ -4392,7 +4392,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d1",
-      "title": "Updating Object Properties",
+      "title": "JavaScript: Updating Object Properties",
       "description": [
         "After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.",
         "For example, let's look at <code>ourDog</code>:",
@@ -4441,7 +4441,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Actualiza las propiedades de un objeto en JavaScript",
+          "title": "JavaScript: Actualiza las propiedades de un objeto en JavaScript",
           "description": [
             "Después de que hayas creado un objeto de JavaScript, puedes actualizar sus propiedades en cualquier momento, tal y como harías con cualquier otra variable.",
             "Por ejemplo, echemos un vistazo a <code>ourDog</code>:",
@@ -4462,7 +4462,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d2",
-      "title": "Add New Properties to a JavaScript Object",
+      "title": "JavaScript: Add New Properties to a JavaScript Object",
       "description": [
         "You can add new properties to existing JavaScript objects the same way you would modify them.",
         "Here's how we would add a <code>\"bark\"</code> property to <code>ourDog</code>:",
@@ -4509,7 +4509,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Añade nuevas propiedades a un objeto JavaScript",
+          "title": "JavaScript: Añade nuevas propiedades a un objeto JavaScript",
           "description": [
             "Puedes añadir nuevas propiedades a objetos existente de la misma forma que usarías para modificarlos.",
             "Así es como añadimos una propiedad <code>\"bark\"</code> (ladra) a nuestro objeto <code>ourDog</code>:",
@@ -4523,7 +4523,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d3",
-      "title": "Delete Properties from a JavaScript Object",
+      "title": "JavaScript: Delete Properties from a JavaScript Object",
       "description": [
         "We can also delete properties from objects like this:",
         "<code>delete ourDog.bark;</code>",
@@ -4569,7 +4569,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Elimina propiedades de un objeto JavaScript",
+          "title": "JavaScript: Elimina propiedades de un objeto JavaScript",
           "description": [
             "También podemos eliminar propiedades de los objetos de esta manera:",
             "<code>delete ourDog.bark;</code>",
@@ -4581,7 +4581,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244ca",
-      "title": "Using Objects for Lookups",
+      "title": "JavaScript: Using Objects for Lookups",
       "description": [
         "Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to \"lookup\" values rather than a <code>switch</code> statement or an <code>if/else</code> chain. This is most useful when you know that your input data is limited to a certain range.",
         "Here is an example of a simple reverse alphabet lookup:",
@@ -4640,7 +4640,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usar objetos para búsquedas",
+          "title": "JavaScript: Usar objetos para búsquedas",
           "description": [
             "Los objetos pueden ser considerados como un almacenamiento llave/valor, como un diccionario. Si tienes datos tabulados, puedes almacenarlos en un objeto para después \"buscar\" valores, en lugar de emplear una sentencia <code>switch</code> o una secuencia de <code>if/else</code>. Esto es más útil cuando sabes que tus datos de entrada son limitados a un cierto rango.",
             "Aquí está un ejemplo de una simple búsqueda inversa de alfabeto:",
@@ -4653,7 +4653,7 @@
     },
     {
       "id": "567af2437cbaa8c51670a16c",
-      "title": "Testing Objects for Properties",
+      "title": "JavaScript: Testing Objects for Properties",
       "description": [
         "Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
         "<strong>Example</strong>",
@@ -4694,7 +4694,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Probar si un objeto tiene cierta propiedad",
+          "title": "JavaScript: Probar si un objeto tiene cierta propiedad",
           "description": [
             "A veces es útil revisar si cierta propiedad existe o no en un objeto dado. Podemos usar el método de objetos <code>.hasOwnProperty(nomprop)</code> para determinar si un objeto tiene la propiedad <code>nomprop</code>. <code>.hasOwnProperty()</code> retorna <code>true</code> o <code>false</code> si la propiedad es encontrada o no.",
             "<strong>Ejemplo</strong>",
@@ -4707,7 +4707,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244cb",
-      "title": "Manipulating Complex Objects",
+      "title": "JavaScript: Manipulating Complex Objects",
       "description": [
         "Sometimes you may want to store data in a flexible <dfn>Data Structure</dfn>. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and <dfn>objects</dfn>.",
         "Here's an example of a complex data structure:",
@@ -4758,7 +4758,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Manipula objetos complicados",
+          "title": "JavaScript: Manipula objetos complicados",
           "description": [
             "Los objetos Javascript son flexibles porque permiten <dfn>Estructuras de Datos</dfn> con combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>vectores</dfn>, <dfn>funciones</dfn>, y <dfn>objetos</dfn>.",
             "Aquí está un ejemplo de un objeto complicado:",
@@ -4773,7 +4773,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244cc",
-      "title": "Accessing Nested Objects",
+      "title": "JavaScript: Accessing Nested Objects",
       "description": [
         "The sub-properties of objects can be accessed by chaining together the dot or bracket notation.",
         "Here is a nested object:",
@@ -4820,7 +4820,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Acceder a objetos anidados",
+          "title": "JavaScript: Acceder a objetos anidados",
           "description": [
             "Las sub-propiedades de los objetos pueden ser accesadas mediante encadenamiento de la notación punto o corchete.",
             "Aquí está un objeto anidado:",
@@ -4833,7 +4833,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
-      "title": "Accessing Nested Arrays",
+      "title": "JavaScript: Accessing Nested Arrays",
       "description": [
         "As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
         "Here is an example of how to access a nested array:",
@@ -4887,7 +4887,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Acceder a vectores anidados",
+          "title": "JavaScript: Acceder a vectores anidados",
           "description": [
             "Como hemos visto en ejemplos anteriores, los objetos pueden contener objetos anidados y vectores anidados. De forma similar a acceder a objetos anidados, la notación corchete en vectores puede ser encadenada para acceder a vectores anidados.",
             "Aquí está un ejemplo de como acceder a un vector anidado:",
@@ -4900,7 +4900,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244cf",
-      "title": "Record Collection",
+      "title": "JavaScript: Record Collection",
       "description": [
         "You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.",
         "Write a function which takes an album's <code>id</code> (like <code>2548</code>), a property <code>prop</code> (like <code>\"artist\"</code> or <code>\"tracks\"</code>), and a <code>value</code> (like <code>\"Addicted to Love\"</code>) to modify the data in this collection.",
@@ -4975,7 +4975,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Colección de registros",
+          "title": "JavaScript: Colección de registros",
           "description": [
             "Se te da un objeto que representa (una pequeña parte de) tu colección de grabaciones. Cada álbum es identificado por un número id único y tiene varias propiedades. No todos los álbumes tienen la información completa.",
             "Escribe una función que reciba un <code>id</code>, una propiedad (<code>prop</code>) y un valor (<code>value</code>).",
@@ -4991,7 +4991,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb5bdef",
-      "title": "Iterate with JavaScript For Loops",
+      "title": "JavaScript: Iterate with JavaScript For Loops",
       "description": [
         "You can run the same code multiple times by using a loop.",
         "The most common type of JavaScript loop is called a \"<code>for loop</code>\" because it runs \"for\" a specific number of times.",
@@ -5035,7 +5035,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Iterar en JavaScript con ciclos for",
+          "title": "JavaScript: Iterar en JavaScript con ciclos for",
           "description": [
             "Puede ejecutar el mismo código varias veces mediante el uso de un ciclo.",
             "El tipo más común de bucle de JavaScript se llama \"ciclo for\"porque se ejecuta \"por\" (for) un número específico de veces.",
@@ -5058,7 +5058,7 @@
     },
     {
       "id": "56104e9e514f539506016a5c",
-      "title": "Iterate Odd Numbers With a For Loop",
+      "title": "JavaScript: Iterate Odd Numbers With a For Loop",
       "description": [
         "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
         "We'll start at <code>i = 0</code> and loop while <code>i &#60; 10</code>. We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
@@ -5097,7 +5097,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Itera por los números pares con un ciclo for",
+          "title": "JavaScript: Itera por los números pares con un ciclo for",
           "description": [
             "Los ciclos <code>for</code> no siempre iteran incrementado de a uno. Cambiando nuestra <code>expresión final</code>, podemos contar los números pares.",
             "Vamos a empezar con <code>i = 0</code> e iterar mientras <code>i <10</code>.  Vamos a incrementar <code>i</code> de a 2 en cada iteración <code>i + = 2</code>. ",
@@ -5115,7 +5115,7 @@
     },
     {
       "id": "56105e7b514f539506016a5e",
-      "title": "Count Backwards With a For Loop",
+      "title": "JavaScript: Count Backwards With a For Loop",
       "description": [
         "A for loop can also count backwards, so long as we can define the right conditions.",
         "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
@@ -5155,7 +5155,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Cuenta hacia atrás con un ciclo for",
+          "title": "JavaScript: Cuenta hacia atrás con un ciclo for",
           "description": [
             "Un ciclo también puede contar hacia atrás, siempre y cuando definamos las condiciones adecuadas.",
             "Para contar hacia atrás de dos en dos, tendremos que cambiar nuestra <code>inicialización</code>, la <code>condición</code> y la <code>última-expresión</code>.",
@@ -5174,7 +5174,7 @@
     },
     {
       "id": "5675e877dbd60be8ad28edc6",
-      "title": "Iterate Through an Array with a For Loop",
+      "title": "JavaScript: Iterate Through an Array with a For Loop",
       "description": [
         "A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:",
         "<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
@@ -5215,7 +5215,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Iterar a través de un vector con un ciclo for",
+          "title": "JavaScript: Iterar a través de un vector con un ciclo for",
           "description": [
             "Una tarea común en JavaScript es iterar a traves del contenido de un vector. Una manera de hacerlo es con un ciclo <code>for</code>. Este código imprimirá cada elemento del vector <code>arr</code> en la consola:",
             "<blockquote>var arr = [10,9,8,7,6];<br>for (var i=0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
@@ -5228,7 +5228,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244e1",
-      "title": "Nesting For Loops",
+      "title": "JavaScript: Nesting For Loops",
       "description": [
         "If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:",
         "<blockquote>var arr = [<br>  [1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>  for (var j=0; j &lt; arr[i].length; j++) {<br>    console.log(arr[i][j]);<br>  }<br>}</blockquote>",
@@ -5265,7 +5265,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Anidar ciclos for",
+          "title": "JavaScript: Anidar ciclos for",
           "description": [
             "Si tienes una matriz multi-dimensional, puedes usar la misma lógica del punto anterior para iterar a través de un vector y cualquier sub-vector. Aquí está un ejemplo:",
             "<blockquote>var arr = [<br>  [1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>  for (var j=0; j &lt; arr[i].length; j++) {<br>    console.log(arr[i][j]);<br>  }<br>}</blockquote>",
@@ -5278,7 +5278,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb1bdef",
-      "title": "Iterate with JavaScript While Loops",
+      "title": "JavaScript: Iterate with JavaScript While Loops",
       "description": [
         "You can run the same code multiple times by using a loop.",
         "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
@@ -5309,7 +5309,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Iterar con JavaScript con ciclos while",
+          "title": "JavaScript: Iterar con JavaScript con ciclos while",
           "description": [
             "Puede ejecutar el mismo código varias veces mediante el uso de un ciclo.",
             "Otro tipo de ciclo de JavaScript se llama un ciclo \"while\", ya que se ejecuta, \"mientras que\" algo sea cierto y se detiene una vez que ya no sea así.",
@@ -5328,7 +5328,7 @@
     },
     {
       "id": "5688e62ea601b2482ff8422b",
-      "title": "Profile Lookup",
+      "title": "JavaScript: Profile Lookup",
       "description": [
         "We have an array of objects representing different people in our contacts lists.",
         "A <code>lookUpProfile</code> function that takes <code>firstName</code> and a property (<code>prop</code>) as arguments has been pre-written for you.",
@@ -5391,7 +5391,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Búsqueda de perfiles",
+          "title": "JavaScript: Búsqueda de perfiles",
           "description": [
             "Tenemos un vector de objetos que representan diferentes personas en nuestra lista de contactos.",
             "Una función <code>lookUp</code> que recibe el nombre (<code>firstName</code>) y una propiedad (<code>prop</code>) como argumentos ya ha sido escrita previamente para ti.",
@@ -5406,7 +5406,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb9bdef",
-      "title": "Generate Random Fractions with JavaScript",
+      "title": "JavaScript: Generate Random Fractions with JavaScript",
       "description": [
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>",
@@ -5439,7 +5439,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Generar fracciones al azar con JavaScript",
+          "title": "JavaScript: Generar fracciones al azar con JavaScript",
           "description": [
             "Los números aleatorios son útiles para crear un comportamiento aleatorio.",
             "JavaScript tiene una función <code>Math.random()</code> que genera un número decimal aleatorio.",
@@ -5452,7 +5452,7 @@
     },
     {
       "id": "cf1111c1c12feddfaeb1bdef",
-      "title": "Generate Random Whole Numbers with JavaScript",
+      "title": "JavaScript: Generate Random Whole Numbers with JavaScript",
       "description": [
         "It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.",
         "<ol><li>Use <code>Math.random()</code> to generate a random decimal.</li><li>Multiply that random decimal by <code>20</code>.</li><li>Use another function, <code>Math.floor()</code> to round the number down to its nearest whole number.</li></ol>",
@@ -5489,7 +5489,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Genera números aleatorios enteros con JavaScript",
+          "title": "JavaScript: Genera números aleatorios enteros con JavaScript",
           "description": [
             "Es muy bueno que podamos generar números decimales al azar, pero es aún más útil si lo utilizamos para generar números enteros aleatorios.",
             "En primer lugar, vamos a usar <code>Math.random()</code> para generar un decimal aleatorio.",
@@ -5508,7 +5508,7 @@
     },
     {
       "id": "cf1111c1c12feddfaeb2bdef",
-      "title": "Generate Random Whole Numbers within a Range",
+      "title": "JavaScript: Generate Random Whole Numbers within a Range",
       "description": [
         "Instead of generating a random number between zero and a given number like we did before, we can generate a random number that falls within a range of two specific numbers.",
         "To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>.",
@@ -5566,7 +5566,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Genera números aleatorios enteros dentro de un rango",
+          "title": "JavaScript: Genera números aleatorios enteros dentro de un rango",
           "description": [
             "En lugar de generar un número aleatorio entre cero y un número dado como lo hicimos antes, podemos generar un número aleatorio que caiga dentro de un rango de dos números específicos.",
             "Para ello, vamos a definir un número mínimo <code>min</code> y un número máximo <code>max</code>.",
@@ -5581,7 +5581,7 @@
     },
     {
       "id": "cf1111c1c12feddfaeb6bdef",
-      "title": "Sift through Text with Regular Expressions",
+      "title": "JavaScript: Sift through Text with Regular Expressions",
       "description": [
         "<code>Regular expressions</code> are used to find certain words or patterns inside of <code>strings</code>.",
         "For example, if we wanted to find the word <code>the</code> in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>/the/gi</code>",
@@ -5631,7 +5631,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Examina un texto con expresiones regulares",
+          "title": "JavaScript: Examina un texto con expresiones regulares",
           "description": [
             "Las <code>expresiones regulares</code> se utilizan para encontrar ciertas palabras o patrones dentro de <code>cadenas</code>.",
             "Por ejemplo, si quisiéramos encontrar la palabra <code>el</code> en la cadena <code>El perro persiguió al gato el lunes</code>, podríamos utilizar la siguiente <code>expresión regular</code>: <code>/el/gi</code> ",
@@ -5649,7 +5649,7 @@
     },
     {
       "id": "cf1111c1c12feddfaeb7bdef",
-      "title": "Find Numbers with Regular Expressions",
+      "title": "JavaScript: Find Numbers with Regular Expressions",
       "description": [
         "We can use special selectors in <dfn>Regular Expressions</dfn> to select a particular type of value.",
         "One such selector is the digit selector <code>\\d</code> which is used to retrieve one digit (e.g. numbers 0 to 9) in a string.",
@@ -5689,7 +5689,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Encuentra números con expresiones regulares",
+          "title": "JavaScript: Encuentra números con expresiones regulares",
           "description": [
             "Podemos usar selectores especiales en las <code>expresiones regulares</code> para seleccionar un determinado tipo de valor.",
             "Uno de estos selectores es el de dígitos <code>\\d</code> que se utiliza para hacer coincidir números en una cadena.",
@@ -5703,7 +5703,7 @@
     },
     {
       "id": "cf1111c1c12feddfaeb8bdef",
-      "title": "Find Whitespace with Regular Expressions",
+      "title": "JavaScript: Find Whitespace with Regular Expressions",
       "description": [
         "We can also use regular expression selectors like <code>\\s</code> to find whitespace in a string.",
         "The whitespace characters are <code>\" \"</code> (space), <code>\\r</code> (the carriage return), <code>\\n</code> (newline), <code>\\t</code> (tab), and <code>\\f</code> (the form feed).",
@@ -5742,7 +5742,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Encuentra espacios en blanco con las expresiones regulares",
+          "title": "JavaScript: Encuentra espacios en blanco con las expresiones regulares",
           "description": [
             "También podemos utilizar selectores de expresiones regulares como <code>\\s</code> para encontrar un espacio en blanco en una cadena.",
             "Los espacios en blanco son <code>\" \"</code> (espacio), <code>\\r</code> (el retorno de carro), <code>\\n</code> (nueva línea), <code>\\t</code> (tabulador), y <code>\\f</code> (el avance de página). ",
@@ -5756,7 +5756,7 @@
     },
     {
       "id": "cf1111c1c13feddfaeb3bdef",
-      "title": "Invert Regular Expression Matches with JavaScript",
+      "title": "JavaScript: Invert Regular Expression Matches with JavaScript",
       "description": [
         "You can invert any match by using the uppercase version of the regular expression selector.",
         "For example, <code>\\s</code> will match any whitespace, and <code>\\S</code> will match anything that isn't whitespace.",
@@ -5793,7 +5793,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Hacer coincidir con una expresión regular invertida",
+          "title": "JavaScript: Hacer coincidir con una expresión regular invertida",
           "description": [
             "Puedes invertir las coincidencias de un selector usando su versión en mayúsculas.",
             "Por ejemplo, <code>\\s</code> coincidirá con cualquier espacio en blanco, mientras que <code>\\S</code> coincidirá con todo lo que no sea espacio en blanco.",
@@ -5805,7 +5805,7 @@
     },
     {
       "id": "cf1111c1c12feddfaeb9bdef",
-      "title": "Create a JavaScript Slot Machine",
+      "title": "JavaScript: Create a JavaScript Slot Machine",
       "description": [
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
@@ -5962,7 +5962,7 @@
       "isBeta": true,
       "translations": {
         "es": {
-          "title": "Crea una máquina tragamonedas en JavaScript",
+          "title": "JavaScript: Crea una máquina tragamonedas en JavaScript",
           "description": [
             "Ahora vamos a tratar de combinar algunas de las cosas que hemos aprendido para crear la lógica de una máquina tragamonedas.",
             "Para esto tendremos que generar tres números aleatorios entre <code>1</code> y <code>3</code> que representen los valores posibles de cada casilla.",
@@ -5975,7 +5975,7 @@
     },
     {
       "id": "cf1111c1c13feddfaeb1bdef",
-      "title": "Add your JavaScript Slot Machine Slots",
+      "title": "JavaScript: Add your JavaScript Slot Machine Slots",
       "description": [
         "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
         "If they have, we should notify our user that they've won and we should return <code>null</code>.",
@@ -6137,7 +6137,7 @@
       "isBeta": true,
       "translations": {
         "es": {
-          "title": "Añade casillas a tu tragamonedas JavaScript",
+          "title": "JavaScript: Añade casillas a tu tragamonedas JavaScript",
           "description": [
             "Ahora que cada una de nuestras casillas genera números aleatorios, tenemos que comprobar si todos quedan con el mismo número.",
             "Si es así, debemos notificar a nuestros usuarios que han ganado y debemos retornar <code>null</code>.",
@@ -6154,7 +6154,7 @@
     },
     {
       "id": "cf1111c1c13feddfaeb2bdef",
-      "title": "Bring your JavaScript Slot Machine to Life",
+      "title": "JavaScript: Bring your JavaScript Slot Machine to Life",
       "description": [
         "Now we can detect a win. Let's get this slot machine working.",
         "Let's use the jQuery <code>selector</code> <code>$(\".slot\")</code> to select all of the slots.",
@@ -6322,7 +6322,7 @@
       "isBeta": true,
       "translations": {
         "es": {
-          "title": "Da vida a tu máquina tragamonedas en JavaScript",
+          "title": "JavaScript: Da vida a tu máquina tragamonedas en JavaScript",
           "description": [
             "Ahora podemos detectar una victoria. Logremos que la máquina tragamonedas funcione. ",
             "Usemos un <code>selector</code> de jQuery <code>$(\".slot\")</code> para seleccionar todas las casillas.",
@@ -6336,7 +6336,7 @@
     },
     {
       "id": "cf1111c1c11feddfaeb1bdff",
-      "title": "Give your JavaScript Slot Machine some Stylish Images",
+      "title": "JavaScript: Give your JavaScript Slot Machine some Stylish Images",
       "description": [
         "Now let's add some images to our slots.",
         "We've already set up the images for you in an array called <code>images</code>. We can use different indexes to grab each of these.",
@@ -6512,7 +6512,7 @@
       "isBeta": true,
       "translations": {
         "es": {
-          "title": "Dale a tu máquina tragamonedas JavaScript algunas imágenes con estilo",
+          "title": "JavaScript: Dale a tu máquina tragamonedas JavaScript algunas imágenes con estilo",
           "description": [
             "Ahora añadamos algunas imágenes en nuestras casillas.",
             "Ya hemos creado las imágenes por ti en una matriz llamada <code>images</code>. Podemos utilizar diferentes índices para tomara cada una de estas. ",

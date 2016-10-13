@@ -9,7 +9,7 @@
   "challenges": [
     {
       "id": "56bbb991ad1ed5201cd392d4",
-      "title": "Trigger Click Events with jQuery",
+      "title": "JSON: Trigger Click Events with jQuery",
       "description": [
         "In this section, we'll learn how to get data from APIs. APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
         "We'll also learn how to update HTML with the data we get from these APIs using a technology called Ajax.",
@@ -54,7 +54,7 @@
       "challengeType": 0,
       "translations": {
         "es": {
-          "title": "Activa eventos de pulsación con jQuery",
+          "title": "JSON: Activa eventos de pulsación con jQuery",
           "description": [
             "En esta sección, vamos a aprender cómo obtener datos de las APIs. Las APIs - o interfaces de programación de aplicaciones - son herramientas que utilizan los computadores para comunicarse entre sí.",
             "También aprenderemos cómo actualizar HTML con los datos que obtenemos de estas API usando una tecnología llamada Ajax.",
@@ -65,7 +65,7 @@
           ]
         },
         "pt": {
-          "title": "Ativando eventos de clique com jQuery",
+          "title": "JSON: Ativando eventos de clique com jQuery",
           "description": [
             "Nesta sessão, vamos aprender como obter dados de uma API. As APIS - Interface de Programação de Aplicativos - são ferramentas usadas pelos computadores  para se comunicarem entre si.",
             "Também aprenderemos como utilizar o HTML com os dados obtidos de uma API usando uma tecnologia chamada Ajax",
@@ -79,7 +79,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d5",
-      "title": "Change Text with Click Events",
+      "title": "JSON: Change Text with Click Events",
       "description": [
         "When our click event happens, we can use jQuery to update an HTML element.",
         "Let's make it so that when a user clicks the \"Get Message\" button, we change the text of the element with the class <code>message</code> to say \"Here is the message\".",
@@ -123,7 +123,7 @@
       "challengeType": 0,
       "translations": {
         "es": {
-          "title": "Cambia texto con eventos de pulsación",
+          "title": "JSON: Cambia texto con eventos de pulsación",
           "description": [
             "Cuando nuestro evento de pulsación ocurre, podemos utilizar jQuery para actualizar un elemento HTML.",
             "Hagamos que cuando un usuario pulse el botón \"Get Message\", el texto del elemento con la clase <code>message</code> cambie para decir \"Here is the message\".",
@@ -132,7 +132,7 @@
           ]
         },
         "pt": {
-          "title": "Mundando texto com eventos de clique",
+          "title": "JSON: Mundando texto com eventos de clique",
           "description": [
             "Quando nosso evento de clique ocorre, podemos utilizar o jQuery para atualixar um elemento HTML",
             "Vamos fazer que quando um usuário clicar no botão \"Get Message\", o texto do elemento com a classe <code>message</code> passe a dizer \"Here is the message\".",
@@ -144,7 +144,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d6",
-      "title": "Get JSON with the jQuery getJSON Method",
+      "title": "JSON: Get JSON with the jQuery getJSON Method",
       "description": [
         "You can also request data from an external source. This is where APIs come into play.",
         "Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
@@ -200,7 +200,7 @@
       "challengeType": 0,
       "translations": {
         "es": {
-          "title": "Obtén JSON con el método getJSON de jQuery",
+          "title": "JSON: Obtén JSON con el método getJSON de jQuery",
           "description": [
             "También puedes solicitar los datos de una fuente externa. Aquí es donde entran en juego las API. ",
             "Recuerda que las API - o interfaces de programación de aplicaciones - son herramientas que utilizan los ordenadores para comunicarse entre sí.",
@@ -214,7 +214,7 @@
           ]
         },
         "pt": {
-          "title": "Obter um JSON com o método getJSON do jQuery",
+          "title": "JSON: Obter um JSON com o método getJSON do jQuery",
           "description": [
             "Também é possivel solicitar os dados de uma fonte externa. É aqui onde as API's entram em jogo.",
             "Lembre que as API's - Interface de Programação de Aplicativos - são ferramentas que os computadores usam para se comunicar entre si.",
@@ -231,7 +231,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d7",
-      "title": "Convert JSON Data to HTML",
+      "title": "JSON: Convert JSON Data to HTML",
       "description": [
         "Now that we're getting data from a JSON API, let's display it in our HTML.",
         "We can use the <code>.forEach()</code> method to loop through our data and modify our HTML elements.",
@@ -286,7 +286,7 @@
       "challengeType": 0,
       "translations": {
         "es": {
-          "title": "Convierte datos JSON a datos HTML",
+          "title": "JSON: Convierte datos JSON a datos HTML",
           "description": [
             "Ahora que estamos obteniendo datos de una API JSON, mostremóslos en nuestro HTML.",
             "Podemos usar el método <code>.forEach()</code> para recorrer nuestros datos y modificar nuestros elementos HTML.",
@@ -297,7 +297,7 @@
           ]
         },
         "pt": {
-          "title": "Converter dados JSON para HTML",
+          "title": "JSON: Converter dados JSON para HTML",
           "description": [
             "Agora que estamos obtendo os dados de uma API JSON, vamos mostra-los em nosso HTML",
             "Podemos usar o método <code>.forEach()</code> para percorrer os nossos dados e modificar o elementos HTML.",
@@ -311,7 +311,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d8",
-      "title": "Render Images from Data Sources",
+      "title": "JSON: Render Images from Data Sources",
       "description": [
         "We've seen from the last two lessons that each object in our JSON array contains an <code>imageLink</code> key with a value that is the URL of a cat's image.",
         "When we're looping through these objects, let's use this <code>imageLink</code> property to display this image in an <code>img</code> element.",
@@ -373,7 +373,7 @@
       "challengeType": 0,
       "translations": {
         "es": {
-          "title": "Presenta imágenes de fuentes de datos",
+          "title": "JSON: Presenta imágenes de fuentes de datos",
           "description": [
             "Hemos visto en las dos últimas lecciones que cada objeto en nuestro vector JSON contiene una llave <code>imageLink</code> con un valor que corresponde a la URL de la imagen de un gato.",
             "Cuando estamos recorriendo estos objetos, usemos esta propiedad <code>imageLink</code> para visualizar la imagen en un elemento <code>img</code>.",
@@ -382,7 +382,7 @@
           ]
         },
         "pt": {
-          "title": "Apresentar as imagens da fonte de dados",
+          "title": "JSON: Apresentar as imagens da fonte de dados",
           "description": [
             "Como temos visto nas ultimas lições, cada objeto em nosso array JSON contém a chave <code>imageLink</code> com um valor que corresponde a URL da imagem de um gato.",
             "Quando estamos percorrendo por estes objetos, usamos a propriedade <code>imageLink</code> para visualizar a imagem em um elemento <code>img</code>.",
@@ -394,7 +394,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392d9",
-      "title": "Prefilter JSON",
+      "title": "JSON: Prefilter JSON",
       "description": [
         "If we don't want to render every cat photo we get from our Free Code Camp's Cat Photo JSON API, we can pre-filter the json before we loop through it.",
         "Let's filter out the cat whose \"id\" key has a value of 1.",
@@ -458,7 +458,7 @@
       "challengeType": 0,
       "translations": {
         "es": {
-          "title": "Pre-filtra JSON",
+          "title": "JSON: Pre-filtra JSON",
           "description": [
             "Si no queremos presentar cada foto de gato que obtengamos de la API JSON de fotos de gato de Free Code Camp, podemos pre-filtrar el json antes de iterar a través de este.",
             "Vamos a filtrar el gato cuya llave \"id\" tiene un valor de 1.",
@@ -467,7 +467,7 @@
           ]
         },
         "pt": {
-          "title": "Pré-filtro JSON",
+          "title": "JSON: Pré-filtro JSON",
           "description": [
             "Se não queremos apresentar cada foto de gato que obtemos da API JSON de fotos de gatos do Free Code Camp, podemos realizar um pré-filtro o JSON  antes de iterar através dele.",
             "Vamos filtrar o gato cuja a chave \"id\" tenha o valor 1.",
@@ -479,7 +479,7 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392da",
-      "title": "Get Geo-location Data",
+      "title": "JSON: Get Geo-location Data",
       "description": [
         "Another cool thing we can do is access our user's current location. Every browser has a built in navigator that can give us this information.",
         "The navigator will get our user's current longitude and latitude.",
@@ -512,7 +512,7 @@
       "challengeType": 0,
       "translations": {
         "es": {
-          "title": "Recibir datos de Geo-localización",
+          "title": "JSON: Recibir datos de Geo-localización",
           "description": [
             "Otra cosa interesante que podemos hacer es acceder a la ubicación actual de nuestros usuarios. Todos los navegadores han incorporado un geo-localizador que nos puede dar esta información. ",
             "El navegador puede obtener la longitud y latitud actual de nuestros usuarios.",
@@ -523,7 +523,7 @@
           ]
         },
         "pt": {
-          "title": "Receber dados de Geo-localização",
+          "title": "JSON: Receber dados de Geo-localização",
           "description": [
             "Outra coisa interessante que podemos fazer é acessar a atual localização do nosso usuário. Todos os navegadores tem implementado um geo-localizador que pode nos fornecer essa informação.",
             "O navegador pode obter a longitude e latitude atual de nossos usuários",

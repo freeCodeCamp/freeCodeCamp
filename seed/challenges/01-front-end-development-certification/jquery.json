@@ -9,7 +9,7 @@
   "challenges": [
     {
       "id": "bad87fee1348bd9acdd08826",
-      "title": "Learn how Script Tags and Document Ready Work",
+      "title": "jQuery: Learn how Script Tags and Document Ready Work",
       "description": [
         "Now we're ready to learn jQuery, the most popular JavaScript tool of all time. Don't worry about JavaScript itself - we will cover it soon.",
         "Before we can start using jQuery, we need to add some things to our HTML.",
@@ -55,7 +55,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Lerne, wie Script Tags und Document Ready funktionieren",
+          "title": "jQuery: Lerne, wie Script Tags und Document Ready funktionieren",
           "description": [
             "Jetzt sind wir bereit jQuery zu lernen, das populärste JavaScript-Tool aller Zeiten. Mach dir über JavaScript keine Sorgen - über dieses werden wir bald sprechen.",
             "Bevor wir jQuery nutzen können, müssen wir erst ein paar Dinge zu unserem HTML hinzufügen.",
@@ -67,7 +67,7 @@
           ]
         },
         "es": {
-          "title": "Aprende cómo funcionan las etiquetas de programa y la función de documento listo.",
+          "title": "jQuery: jQuery: Aprende cómo funcionan las etiquetas de programa y la función de documento listo.",
           "description": [
             "Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos. No te preocupes por JavaScript en si --lo cubriremos pronto.",
             "Antes de que podamos comenzar a usar jQuery, tenemos que añadir algunas cosas a nuestro HTML.",
@@ -79,7 +79,7 @@
           ]
         },
         "fr": {
-          "title": "Apprendre comment fonctionnent les balises Script et Document Ready",
+          "title": "jQuery: Apprendre comment fonctionnent les balises Script et Document Ready",
           "description": [
             "Nous sommes maintenant prêt à apprendre jQuery, l'outil Javascript le plus populaire de tout les temps. Ne vous inquiétez pas à propos de JavaScript lui-même, nous y viendrons bientôt.",
             "Avant de pouvoir utiliser jQuery, nous avons besoin d'ajouter certaines choses à notre HTML.",
@@ -94,7 +94,7 @@
     },
     {
       "id": "bad87fee1348bd9bedc08826",
-      "title": "Target HTML Elements with Selectors Using jQuery",
+      "title": "jQuery: Target HTML Elements with Selectors Using jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -149,7 +149,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "HTML-Elemente mit Selektoren durch jQuery auswählen",
+          "title": "jQuery: HTML-Elemente mit Selektoren durch jQuery auswählen",
           "description": [
             "Jetzt haben wir eine <code>Document Ready Funktion</code>.",
             "Lass uns unser erstes jQuery Statement schreiben. Alle jQuery Funktionen starten mit einem <code>$</code>, für gewöhnlich als <code>Dollar-Zeichen Operator</code> bezeichnet.",
@@ -160,7 +160,7 @@
           ]
         },
         "es": {
-          "title": "Elige elementos HTML usando selectores y jQuery",
+          "title": "jQuery: Elige elementos HTML usando selectores y jQuery",
           "description": [
             "Ya tenemos una <code>función de documento listo</code>.",
             "Ahora vamos a escribir nuestra primera instrucción jQuery. Todas las funciones de jQuery comienzan con un <code>$</code>, al que suele referirse como <code>operador dólar</code>, o simplemente como <code>bling</code>. ",
@@ -171,7 +171,7 @@
           ]
         },
         "fr": {
-          "title": "Cibler des élements HTML par sélecteurs avec jQuery",
+          "title": "jQuery: Cibler des élements HTML par sélecteurs avec jQuery",
           "description": [
             "Nous avons maintenant un <code>document ready function</code>.",
             "Nous allons à présent écrire notre première expression jQuery. Chaque fonction jQuery commence avec un <code>$</code>, habituellement nommé <code>opérateur dollar</code>, ou <code>bling</code>.",
@@ -186,7 +186,7 @@
     },
     {
       "id": "bad87fee1348bd9aedc08826",
-      "title": "Target Elements by Class Using jQuery",
+      "title": "jQuery: Target Elements by Class Using jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -240,7 +240,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Elemente anhand von Klassen mit jQuery auswählen",
+          "title": "jQuery: Elemente anhand von Klassen mit jQuery auswählen",
           "description": [
             "Siehst du, wie wir alle deine <code>Button</code> Elemente hüpfen haben lassen? Wir haben sie mit <code>$(\"button\")</code> ausgewählt, dann CSS-Klassen mit <code>.addClass(\"animated bounce\");</code> hinzugefügt.",
             "Du hast gerade jQuery's <code>.addClass()</code> Funktion genutzt, die dir erlaubt, Klassen zu Elemente hinzuzufügen.",
@@ -252,7 +252,7 @@
           ]
         },
         "es": {
-          "title": "Elige elementos por su clase usando jQuery",
+          "title": "jQuery: Elige elementos por su clase usando jQuery",
           "description": [
             "¿Viste como hicimos rebotar todos tus elementos <code>button</code>? Los seleccionamos con <code>$(\"button\")</code>, y luego les añadimos algunas clases CSS con <code>.addClass(\"animated bounce\");.</code> ",
             "Acabas de usar la función <code>addClass()</code> de jQuery, que te permite añadir clases a los elementos.",
@@ -264,7 +264,7 @@
           ]
         },
         "fr": {
-          "title": "Cibler les élements par Classe avec jQuery",
+          "title": "jQuery: Cibler les élements par Classe avec jQuery",
           "description": [
             "Voyez comment nous avons fait rebondir tous nos éléments <code>button</code>? Nous les avons sélectionné avec <code>$(\"button\")</code>, puis nous leur avons ajouté des classes CSS avec <code>.addClass(\"animated bounce\");</code>.",
             "Vous venez d'utiliser la fonction jQuery <code>.addClass()</code>, ce qui nous permet d'ajouter des classes aux éléments.",
@@ -279,7 +279,7 @@
     },
     {
       "id": "bad87fee1348bd9aeda08826",
-      "title": "Target Elements by ID Using jQuery",
+      "title": "jQuery: Target Elements by ID Using jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -335,7 +335,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Elemente anhand der ID mit jQuery auswählen",
+          "title": "jQuery: Elemente anhand der ID mit jQuery auswählen",
           "description": [
             "Du kannst Elemente auch anhand deren ID-Attributs auswählen.",
             "Wähle als erstes dein <code>Button</code> Element mit der ID <code>target3</code>, indem du den <code>$(\"#target3\")</code> Selektor nutzt.",
@@ -346,7 +346,7 @@
           ]
         },
         "es": {
-          "title": "Elige elementos por ID usando jQuery",
+          "title": "jQuery: Elige elementos por ID usando jQuery",
           "description": [
             "También puedes elegir un elemento por su atributo id.",
             "Primero selecciona tu elemento <code>button</code> con el id <code>target3</code> mediante el uso del selector <code>$(\"#target3\")</code>.",
@@ -357,7 +357,7 @@
           ]
         },
         "fr": {
-          "title": "Cibler les éléments par ID avec jQuery",
+          "title": "jQuery: Cibler les éléments par ID avec jQuery",
           "description": [
             "Vous pouvez également cibler les éléments à l'aide de leurs attributs id.",
             "Premièrement, cibler votre élément <code>button</code> avec l'id <code>target3</code> en utilisant le sélecteur <code>$(\"#target\")</code>.",
@@ -371,7 +371,7 @@
     },
     {
       "id": "bad87fee1348bd9aeda08726",
-      "title": "Delete your jQuery Functions",
+      "title": "jQuery: Delete your jQuery Functions",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -426,21 +426,21 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Lösche deine jQuery Funktionen",
+          "title": "jQuery: Lösche deine jQuery Funktionen",
           "description": [
             "Anfangs waren diese Animationen noch cool, jetzt sind sie aber ein wenig störend.",
             "Lösche alle drei jQuery Funktionen deiner <code>Document Ready Funktion</code>, aber lasse die <code>Document Ready Funktion</code> selbst intakt."
           ]
         },
         "es": {
-          "title": "Elimina tus funciones jQuery",
+          "title": "jQuery: Elimina tus funciones jQuery",
           "description": [
             "Estas animaciones eran divertidas al principio, pero ahora se están volviendo una distracción.",
             "Elimina esas tres funciones jQuery de tu <code>función de documento listo</code>, pero deja intacta la declaración de la <code>función de documento listo</code>."
           ]
         },
         "fr": {
-          "title": "Effacer vos fonctions jQuery",
+          "title": "jQuery: Effacer vos fonctions jQuery",
           "description": [
             "Ces animations sont sympathiques à première vue, mais maintenant elles deviennent plutôt distrayantes.",
             "Effacez les trois fonctions jQuery de votre <code>document ready function</code>, mais laissez votre <code>document ready function</code> lui-même intact."
@@ -450,7 +450,7 @@
     },
     {
       "id": "bad87fee1348bd9aed908626",
-      "title": "Target the same element with multiple jQuery Selectors",
+      "title": "jQuery: Target the same element with multiple jQuery Selectors",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -508,7 +508,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Wähle das gleiche Element mit mehreren jQuery Selektoren aus",
+          "title": "jQuery: Wähle das gleiche Element mit mehreren jQuery Selektoren aus",
           "description": [
             "Bis jetzt kennst du drei verschiedene Wege um Elemente auszuwählen: mit dem Element-Typ: <code>$(\"button\")</code>, mit der Element-Klasse: <code>$(\".btn\")</code>, und der Element-ID: <code>$(\"#target1\")</code>.",
             "Auch wenn es möglich ist, mehrere Klassen in einem einzigen <code>.addClass()</code> Aufruf hinzuzufügen, lass uns jetzt die Klassen in drei verschiedenen Wegen dem Element hinzufügen.",
@@ -519,7 +519,7 @@
           ]
         },
         "es": {
-          "title": "Elige un mismo elemento con múltiples selectores jQuery",
+          "title": "jQuery: Elige un mismo elemento con múltiples selectores jQuery",
           "description": [
             "Ahora ya sabes tres formas de seleccionar elementos: por tipo <code>$(\"button\")</code>, por clase <code>$(\".btn\")</code>, y por identificación <code>$(\"#target1\")</code>. ",
             "Aunque es posible agregar varias clases en una sola llamada a <code>.addClass()</code>, vamos a añadirlas al mismo elemento de tres maneras diferentes.",
@@ -530,7 +530,7 @@
           ]
         },
         "fr": {
-          "title": "Cibler le même élément avec plusieurs sélecteurs jQuery",
+          "title": "jQuery: Cibler le même élément avec plusieurs sélecteurs jQuery",
           "description": [
             "À présent, vous connaissez trois façons de cibler les éléments: par type: <code>$(\"button\")</code>, par classe: <code>$(\".btn\")</code>, et par id <code>$(\"#target1\")</code>.",
             "En utilisant <code>.addClass()</code>, ajoutez uniquement une classe à la fois au même élément, de trois façons différentes:",
@@ -543,7 +543,7 @@
     },
     {
       "id": "bad87fee1348bd9aed918626",
-      "title": "Remove Classes from an element with jQuery",
+      "title": "jQuery: Remove Classes from an element with jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -598,7 +598,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Entferne Klassen von einem Element mit jQuery",
+          "title": "jQuery: Entferne Klassen von einem Element mit jQuery",
           "description": [
             "Genauso wie du Klassen mit der jQuery Funktion <code>addClass()</code> hinzufügen kannst, kannst du mit der jQuery Funktion <code>removeClass()</code> Klassen entfernen.",
             "So könntest du das bei einem spezifischen Button machen:",
@@ -607,7 +607,7 @@
           ]
         },
         "es": {
-          "title": "Elimina clases de un elemento con jQuery",
+          "title": "jQuery: Elimina clases de un elemento con jQuery",
           "description": [
             "De la misma manera que puedes agregar clases a un elemento con la función <code>addClass()</code> de jQuery, puedes eliminarlas con la función <code>removeClass()</code>.",
             "He aquí cómo puedes hacerlo para un botón específico:",
@@ -616,7 +616,7 @@
           ]
         },
         "fr": {
-          "title": "Supprimer des classes d'un élément avec jQuery",
+          "title": "jQuery: Supprimer des classes d'un élément avec jQuery",
           "description": [
             "De la même façon que vous pouvez ajouter des classes à un élément avec la fonction jQuery <code>addClass()</code>, vous pouvez les supprimer avec la fonction jQuery <code>removeClass()</code>.",
             "Voici comment procéder pour un bouton spécifique:",
@@ -686,7 +686,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Das CSS eines Elements mit jQuery ändern",
+          "title": "jQuery: Das CSS eines Elements mit jQuery ändern",
           "description": [
             "Wir können auch das CSS eines HTML-Elements mit jQuery verändern.",
             "jQuery hat die Funktion <code>.css()</code>, welche dir erlaubt, das CSS eines Elements zu ändern.",
@@ -698,7 +698,7 @@
           ]
         },
         "es": {
-          "title": "Cambia el CSS de un elemento usando jQuery",
+          "title": "jQuery: Cambia el CSS de un elemento usando jQuery",
           "description": [
             "También podemos cambiar el CSS de un elemento HTML directamente con jQuery.",
             "jQuery tiene una función llamada <code>.css()</code> que te permite cambiar el CSS de un elemento.",
@@ -710,7 +710,7 @@
           ]
         },
         "fr": {
-          "title": "Changer le CSS d'un élément en utilisant jQuery",
+          "title": "jQuery: Changer le CSS d'un élément en utilisant jQuery",
           "description": [
             "Nous pouvons aussi changer le CSS d'un élément HTML directement avec jQuery.",
             "jQuery dispose d'une fonction appelée <code>.css()</code> qui vous permet de changer le CSS d'un élément.",
@@ -725,7 +725,7 @@
     },
     {
       "id": "bad87fee1348bd9aed808826",
-      "title": "Disable an Element Using jQuery",
+      "title": "jQuery: Disable an Element Using jQuery",
       "description": [
         "You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.",
         "When you disable a button, it will become grayed-out and can no longer be clicked.",
@@ -775,7 +775,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Elemente mit jQuery deaktivieren",
+          "title": "jQuery: Elemente mit jQuery deaktivieren",
           "description": [
             "Du kannst auch die nicht-CSS Eigenschaften eines HTML-Elements mit jQuery ändern. Zum Beispiel kannst du <code>Buttons</code> deaktivieren.",
             "Wenn du einen <code>Button</code> deaktivierst, wird er grau unterlegt und kann nicht mehr geklickt werden.",
@@ -786,7 +786,7 @@
           ]
         },
         "es": {
-          "title": "Desactiva un elemento usando jQuery",
+          "title": "jQuery: Desactiva un elemento usando jQuery",
           "description": [
             "También puedes cambiar propiedades que no son CSS de los elementos HTML con jQuery. Por ejemplo, puedes desactivar los botones. ",
             "Al deshabilitar un botón, se volverá gris y no podrá pulsarse.",
@@ -797,7 +797,7 @@
           ]
         },
         "fr": {
-          "title": "Changer le texte à l'intérieur d'un élément en utilisant jQuery",
+          "title": "jQuery: Changer le texte à l'intérieur d'un élément en utilisant jQuery",
           "description": [
             "En utilisant jQuery, vous pouvez changer le texte entre les balises ouvrante et fermante d'un élément. Vous pouvez même changer les balises HTML.",
             "jQuery dispose d'une fonction appelée <code>.html()</code> qui vous permet d'ajouter des balises HTML et du texte à l'intérieur d'un élément. Tout le contenu de l'élément sera alors remplacé par le contenu que vous indiquerez en utilisant la fonction.",
@@ -811,7 +811,7 @@
     },
     {
       "id": "564944c91be2204b269d51e3",
-      "title": "Change Text Inside an Element Using jQuery",
+      "title": "jQuery: Change Text Inside an Element Using jQuery",
       "description": [
         "Using jQuery, you can change the text between the start and end tags of an element. You can even change HTML markup.",
         "jQuery has a function called <code>.html()</code> that lets you add HTML tags and text within an element. Any content previously within the element will be completely replaced with the content you provide using this function.",
@@ -865,7 +865,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Ändere den Text innerhalb eines Elements mit jQuery",
+          "title": "jQuery: Ändere den Text innerhalb eines Elements mit jQuery",
           "description": [
             "Mit jQuery kannst du den Text zwischen dem Start- und dem End-Tag eines Elements ändern. Du kannst sogar das HTML-Markup ändern.",
             "jQuery hat eine Funktion namens <code>.html()</code>, die dich HTML-Tags und Text innerhalb eines Elements hinzufügen lässt. Jeglicher Content der sich vorher innerhalb des Elements befand, wird mit jenem Content ersetzt, den du durch diese Funktion bereitstellst.",
@@ -876,7 +876,7 @@
           ]
         },
         "es": {
-          "title": "Cambia el texto de un elemento usando jQuery",
+          "title": "jQuery: Cambia el texto de un elemento usando jQuery",
           "description": [
             "Con jQuery, puedes cambiar el texto que está entre las etiquetas de apertura y cierre de un elemento.  Incluso puedes cambiar marcado HTML.",
             "jQuery tiene una función llamada <code>.html()</code> que te permite añadir etiquetas HTML y texto dentro de un elemento.  Cualquier contenido que estuviese previamente dentro del elemento será remplazado por completo con el contenido que proveas usando esta función.",
@@ -890,7 +890,7 @@
     },
     {
       "id": "bad87fee1348bd9aed708826",
-      "title": "Remove an Element Using jQuery",
+      "title": "jQuery: Remove an Element Using jQuery",
       "description": [
         "Now let's remove an HTML element from your page using jQuery.",
         "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely",
@@ -937,7 +937,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Entferne ein Element mit jQuery",
+          "title": "jQuery: Entferne ein Element mit jQuery",
           "description": [
             "Lass uns jetzt ein HTML-Element mit jQuery von deiner Seite entfernen.",
             "jQuery hat eine Funktion namens <code>.remove()</code>, die ein HTML-Element komplett entfernt.",
@@ -945,7 +945,7 @@
           ]
         },
         "es": {
-          "title": "Elimina un elemento usando jQuery",
+          "title": "jQuery: Elimina un elemento usando jQuery",
           "description": [
             "Ahora quitemos un elemento HTML de tu página usando jQuery.",
             "jQuery tiene una función llamada <code>.remove()</code> que eliminará un elemento HTML por completo",
@@ -956,7 +956,7 @@
     },
     {
       "id": "bad87fee1348bd9aed608826",
-      "title": "Use appendTo to Move Elements with jQuery",
+      "title": "jQuery: Use appendTo to Move Elements with jQuery",
       "description": [
         "Now let's try moving elements from one <code>div</code> to another.",
         "jQuery has a function called <code>appendTo()</code> that allows you to select HTML elements and append them to another element.",
@@ -1007,7 +1007,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Verwende appendTo um Elemente mit jQuery zu verschieben.",
+          "title": "jQuery: Verwende appendTo um Elemente mit jQuery zu verschieben.",
           "description": [
             "Lass uns jetzt versuchen, ein Element von einem <code>div</code> zum Nächsten zu verschieben.",
             "jQuery hat eine Funktion namens <code>appendTo()</code>, die es dir erlaubt HTML-Elemente auszuwählen und diese zu einem anderen Element anzuhängen.",
@@ -1017,7 +1017,7 @@
           ]
         },
         "es": {
-          "title": "Usa appendTo para mover elementos con jQuery",
+          "title": "jQuery: Usa appendTo para mover elementos con jQuery",
           "description": [
             "Ahora intentemos mover elementos de un <code>div</code> a otro.",
             "jQuery tiene una función llamada <code>appendTo()</code> que te permite seleccionar elementos HTML y anexarlos a otro elemento.",
@@ -1030,7 +1030,7 @@
     },
     {
       "id": "bad87fee1348bd9aed508826",
-      "title": "Clone an Element Using jQuery",
+      "title": "jQuery: Clone an Element Using jQuery",
       "description": [
         "In addition to moving elements, you can also copy them from one place to another.",
         "jQuery has a function called <code>clone()</code> that makes a copy of an element.",
@@ -1083,7 +1083,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Ein Element kopieren mit jQuery",
+          "title": "jQuery: Ein Element kopieren mit jQuery",
           "description": [
             "Neben der Möglichkeit Elemente zu verschieben, können diese auch von einem Platz zum nächsten kopiert werden.",
             "jQuery hat eine Funktion namens <code>clone()</code>, die eine Kopie eines Elements anfertigt.",
@@ -1094,7 +1094,7 @@
           ]
         },
         "es": {
-          "title": "Clona un elemento usando jQuery",
+          "title": "jQuery: Clona un elemento usando jQuery",
           "description": [
             "Además de mover elementos, puedes copiarlos de un sitio a otro.",
             "jQuery tiene una función llamada <code>clone()</code> que hace una copia de un elemento.",
@@ -1108,7 +1108,7 @@
     },
     {
       "id": "bad87fee1348bd9aed308826",
-      "title": "Target the Parent of an Element Using jQuery",
+      "title": "jQuery: Target the Parent of an Element Using jQuery",
       "description": [
         "Every HTML element has a <code>parent</code> element from which it <code>inherits</code> properties.",
         "For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class=\"container-fluid\"&#62</code>, which itself has the parent <code>body</code>.",
@@ -1165,7 +1165,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Wähle das Eltern-Element mit jQuery aus",
+          "title": "jQuery: Wähle das Eltern-Element mit jQuery aus",
           "description": [
             "Jedes HTML-Element hat ein <code>Eltern-Element</code>, von dem es Eigenschaften <code>erbt</code>.",
             "Dein <code>jQuery Playground</code> <code>h3</code> Element hat zum Beispiel das Eltern-Element <code>&#60;div class=\"container-fluid\"&#62</code>, welches das <code>body</code> Element als Eltern-Element hat.",
@@ -1176,7 +1176,7 @@
           ]
         },
         "es": {
-          "title": "Elige el padre de un elemento usando jQuery",
+          "title": "jQuery: Elige el padre de un elemento usando jQuery",
           "description": [
             "Cada elemento HTML tiene un elemento <code>padre</code> del cual <code>hereda</code> propiedades.",
             "Por ejemplo, tu elemento <code>h3</code> <code>jQuery Playground</code> tiene el elemento padre <code>&#60;div class=\"container-fluid\"&#62</code>, que a su vez tiene el padre <code>body</code>. ",
@@ -1190,7 +1190,7 @@
     },
     {
       "id": "bad87fee1348bd9aed208826",
-      "title": "Target the Children of an Element Using jQuery",
+      "title": "jQuery: Target the Children of an Element Using jQuery",
       "description": [
         "Many HTML elements have <code>children</code> which <code>inherit</code> their properties from their parent HTML elements.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
@@ -1245,7 +1245,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Wähle Kinder-Elemente mit jQuery aus",
+          "title": "jQuery: Wähle Kinder-Elemente mit jQuery aus",
           "description": [
             "Viele HTML-Elemente haben <code>Kinder-Elemente</code>, die ihre Eigenschaften von ihren Eltern-Elementen <code>erben</code>.",
             "Zum Beispiel ist jedes HTML-Element ein Kind-Element des <code>body</code> Elements und dein <code>\"jQuery Playground\"</code> <code>h3</code> Element ist ein Kind-Element deines <code>&#60;div class=\"container-fluid\"&#62</code> Elements.",
@@ -1256,7 +1256,7 @@
           ]
         },
         "es": {
-          "title": "Elige los hjos de un elemento usando jQuery",
+          "title": "jQuery: Elige los hjos de un elemento usando jQuery",
           "description": [
             "Muchos elementos HTML tienen <code>hijos</code>, los cuales <code>heredan</code> sus propiedades de sus elementos padres",
             "Por ejemplo, cada elemento HTML es un hijo de tu elemento <code>body</code>, y tu elemento <code>h3</code> \"jQuery Playground\" es un hijo de tu elemento <code>&#60;div class=\"container-fluid\"&#62</code>.",
@@ -1270,7 +1270,7 @@
     },
     {
       "id": "bad87fee1348bd9aed108826",
-      "title": "Target a Specific Child of an Element Using jQuery",
+      "title": "jQuery: Target a Specific Child of an Element Using jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -1331,7 +1331,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Wähle ein spezifisches Kinder-Element mit jQuery aus",
+          "title": "jQuery: Wähle ein spezifisches Kinder-Element mit jQuery aus",
           "description": [
             "Du hast gesehen, warum ID-Attribute so praktisch sind, um Elemente mit jQuery Selektoren auszuwählen. Leider hast du aber nicht immer so praktische IDs, mit denen du arbeiten kannst.",
             "Zum Glück hat jQuery einige Tricks auf Lager, um die richtigen Elemente auszuwählen.",
@@ -1342,7 +1342,7 @@
           ]
         },
         "es": {
-          "title": "Elige un hijo específico de un elemento usando jQuery",
+          "title": "jQuery: Elige un hijo específico de un elemento usando jQuery",
           "description": [
             "Seguramente habrás entendido porque los atributos id son tan convenientes para elegir con selectores jQuery. Pero no siempre contarás con estos agradables identificadores para trabajar. ",
             "Afortunadamente, jQuery tiene algunos otros trucos para elegir los elementos adecuados.",
@@ -1356,7 +1356,7 @@
     },
     {
       "id": "bad87fee1348bd9aed008826",
-      "title": "Target Even Numbered Elements Using jQuery",
+      "title": "jQuery: Target Even Numbered Elements Using jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -1418,7 +1418,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Wähle gerade Zahlen mit jQuery aus",
+          "title": "jQuery: Wähle gerade Zahlen mit jQuery aus",
           "description": [
             "Du kannst auch alle geradzahligen Elemente auswählen.",
             "Hier siehst du, wie du ungeradzahlige Elemente mit der Klasse <code>target</code> auswählen und ihnen folgende Klassen geben kannst:",
@@ -1428,7 +1428,7 @@
           ]
         },
         "es": {
-          "title": "Elige elementos con numeración par usando jQuery",
+          "title": "jQuery: Elige elementos con numeración par usando jQuery",
           "description": [
             "También puedes elegir todos los elementos con numeración par.",
             "He aquí cómo elegirías todos los elementos impares con clase <code>target</code> y como les agregarías unas clases:",
@@ -1440,7 +1440,7 @@
     },
     {
       "id": "bad87fee1348bd9aecb08826",
-      "title": "Use jQuery to Modify the Entire Page",
+      "title": "jQuery: Use jQuery to Modify the Entire Page",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -1500,7 +1500,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Mit jQuery die gesamte Seite modifizieren",
+          "title": "jQuery: Mit jQuery die gesamte Seite modifizieren",
           "description": [
             "Genug mit unserem jQuery Spielplatz herumgespielt. Reißen wir ihn ein!",
             "jQuery kann auch das <code>body</code> Element auswählen.",
@@ -1509,7 +1509,7 @@
           ]
         },
         "es": {
-          "title": "Usa jQuery para modificar la página entera",
+          "title": "jQuery: Usa jQuery para modificar la página entera",
           "description": [
             "Hemos terminado de jugar en nuestro patio de recreo jQuery. ¡Vamos a derribarlo!",
             "jQuery también puede elegir el elemento <code>body</code>.",

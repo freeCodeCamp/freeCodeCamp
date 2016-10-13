@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "bd7158d2c442eddfbeb5bd1f",
-      "title": "Get Set for our Algorithm Challenges",
+      "title": "JavaScript: Get Set for our Algorithm Challenges",
       "description": [
         [
           "//i.imgur.com/sJkp30a.png",
@@ -40,7 +40,7 @@
       "isRequired": false,
       "translations": {
         "es": {
-          "title": "Prepárate para nuestros Desafíos sobre Algoritmos",
+          "title": "JavaScript: Prepárate para nuestros Desafíos sobre Algoritmos",
           "description": [
             [
               "//i.imgur.com/sJkp30a.png",
@@ -72,7 +72,7 @@
     },
     {
       "id": "a202eed8fc186c8434cb6d61",
-      "title": "Reverse a String",
+      "title": "JavaScript: Reverse a String",
       "description": [
         "Reverse the provided string.",
         "You may need to turn the string into an array before you can reverse it.",
@@ -106,7 +106,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Invierte el texto",
+          "title": "JavaScript: Invierte el texto",
           "description": [
             "Invierte la cadena de texto que se te provee",
             "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
@@ -118,7 +118,7 @@
     },
     {
       "id": "a302f7aae1aa3152a5b413bc",
-      "title": "Factorialize a Number",
+      "title": "JavaScript: Factorialize a Number",
       "description": [
         "Return the factorial of the provided integer.",
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
@@ -151,7 +151,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Factoriza un número",
+          "title": "JavaScript: Factoriza un número",
           "description": [
             "Crea una función que devuelva el factorial del número entero que se te provee",
             "El factorial de un número entero positivo n es la multiplicación de todos los enteros positivos menores o iguales a n",
@@ -164,7 +164,7 @@
     },
     {
       "id": "aaa48de84e1ecc7c742e1124",
-      "title": "Check for Palindromes",
+      "title": "JavaScript: Check for Palindromes",
       "description": [
         "Return <code>true</code> if the given string is a palindrome. Otherwise, return <code>false</code>.",
         "A <dfn>palindrome</dfn> is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
@@ -210,7 +210,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Verifica si es palíndromo",
+          "title": "JavaScript: Verifica si es palíndromo",
           "description": [
             "Crea una función que devuelva <code>true</code> si una cadena de texto dada es un palíndromo, y que devuelva <code>false</code> en caso contrario",
             "Un palíndromo es una palabra u oración que se escribe de la misma forma en ambos sentidos, sin tomar en cuenta signos de puntuación, espacios y sin distinguir entre mayúsculas y minúsculas.",
@@ -224,7 +224,7 @@
     },
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
-      "title": "Find the Longest Word in a String",
+      "title": "JavaScript: Find the Longest Word in a String",
       "description": [
         "Return the length of the longest word in the provided sentence.",
         "Your response should be a number.",
@@ -257,7 +257,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Encuentra la palabra más larga",
+          "title": "JavaScript: Encuentra la palabra más larga",
           "description": [
             "Crea una función que devuelva la longitud de la palabra más larga en una frase dada",
             "El resultado debe ser un número",
@@ -268,7 +268,7 @@
     },
     {
       "id": "ab6137d4e35944e21037b769",
-      "title": "Title Case a Sentence",
+      "title": "JavaScript: Title Case a Sentence",
       "description": [
         "Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.",
         "For the purpose of this exercise, you should also capitalize connecting words like \"the\" and \"of\".",
@@ -298,7 +298,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Aplica formato de título",
+          "title": "JavaScript: Aplica formato de título",
           "description": [
             "Crea una función que devuelva la cadena de texto que recibe con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
             "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
@@ -309,7 +309,7 @@
     },
     {
       "id": "a789b3483989747d63b0e427",
-      "title": "Return Largest Numbers in Arrays",
+      "title": "JavaScript: Return Largest Numbers in Arrays",
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax <code>arr[i]</code>.",
@@ -339,7 +339,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Devuelve el mayor entero de cada arreglo",
+          "title": "JavaScript: Devuelve el mayor entero de cada arreglo",
           "description": [
             "Crea una función que devuelva un arreglo que contenga el mayor de los números de cada sub-arreglo que recibe. Para simplificar las cosas, el arreglo que recibirá tendrá exactamente 4 sub-arreglos",
             "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
@@ -351,7 +351,7 @@
     },
     {
       "id": "acda2fb1324d9b0fa741e6b5",
-      "title": "Confirm the Ending",
+      "title": "JavaScript: Confirm the Ending",
       "description": [
         "Check if a string (first argument, <code>str</code>) ends with the given target string (second argument, <code>target</code>).",
         "This challenge <em>can</em> be solved with the <code>.endsWith()</code> method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.",
@@ -388,7 +388,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Confirma la terminación",
+          "title": "JavaScript: Confirma la terminación",
           "description": [
             "Verifica si una cadena de texto (primer argumento) termina con otra cadena de texto (segundo argumento).",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -398,7 +398,7 @@
     },
     {
       "id": "afcc8d540bea9ea2669306b6",
-      "title": "Repeat a string repeat a string",
+      "title": "JavaScript: Repeat a string repeat a string",
       "description": [
         "Repeat a given string <code>str</code> (first argument) for <code>num</code> times (second argument). Return an empty string if <code>num</code> is not a positive number.",
         "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -430,7 +430,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Repite el texto Repite el texto",
+          "title": "JavaScript: Repite el texto Repite el texto",
           "description": [
             "Repite una cadena de texto dada (primer argumento) <code>num</code> veces (segundo argumento). Retorna una cadena de texto vacía si <code>num</code> es un número negativo.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -440,7 +440,7 @@
     },
     {
       "id": "ac6993d51946422351508a41",
-      "title": "Truncate a string",
+      "title": "JavaScript: Truncate a string",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a <code>...</code> ending.",
         "Note that inserting the three dots to the end will add to the string length.",
@@ -474,7 +474,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Trunca una cadena de texto",
+          "title": "JavaScript: Trunca una cadena de texto",
           "description": [
             "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
             "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
@@ -486,7 +486,7 @@
     },
     {
       "id": "a9bd25c716030ec90084d8a1",
-      "title": "Chunky Monkey",
+      "title": "JavaScript: Chunky Monkey",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a two-dimensional array.",
         "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -520,7 +520,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "En mil pedazos",
+          "title": "JavaScript: En mil pedazos",
           "description": [
             "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo bidimensional.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -530,7 +530,7 @@
     },
     {
       "id": "579e2a2c335b9d72dd32e05c",
-      "title": "Slice and Splice",
+      "title": "JavaScript: Slice and Splice",
       "description": [
         "You are given two arrays and an index.",
         "Use the array methods <code>slice</code> and <code>splice</code> to copy each element of the first array into the second array, in order.",
@@ -572,7 +572,7 @@
     },
     {
       "id": "af2170cad53daa0770fabdea",
-      "title": "Mutations",
+      "title": "JavaScript: Mutations",
       "description": [
         "Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.",
         "For example, <code>[\"hello\", \"Hello\"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.",
@@ -609,7 +609,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Mutaciones",
+          "title": "JavaScript: Mutaciones",
           "description": [
             "Crea una función que devuelva <code>true</code> si la cadena de texto del primer elemento de un arreglo contiene todas las letras de la cadena de texto del segundo elemento del arreglo.",
             "Por ejemplo, <code>[\"hello\", \"Hello\"]</code>, debe devolver <code>true</code> porque todas las letras en la segunda cadena de texto están presentes en la primera, sin distinguir entre mayúsculas y minúsculas.",
@@ -622,7 +622,7 @@
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
-      "title": "Falsy Bouncer",
+      "title": "JavaScript: Falsy Bouncer",
       "description": [
         "Remove all falsy values from an array.",
         "Falsy values in JavaScript are <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
@@ -654,7 +654,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Detector de mentiras",
+          "title": "JavaScript: Detector de mentiras",
           "description": [
             "Remueve todos los valores falsy de un arreglo dado",
             "En javascript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
@@ -665,7 +665,7 @@
     },
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
-      "title": "Seek and Destroy",
+      "title": "JavaScript: Seek and Destroy",
       "description": [
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
         "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -697,7 +697,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Buscar y destruir",
+          "title": "JavaScript: Buscar y destruir",
           "description": [
             "Se te proveerá un arreglo inicial (el primer argumento en la función <code>destroyer</code>), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -707,7 +707,7 @@
     },
     {
       "id": "a24c1a4622e3c05097f71d67",
-      "title": "Where do I belong",
+      "title": "JavaScript: Where do I belong",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.",
         "For example, <code>getIndexToIns([1,2,3,4], 1.5)</code> should return <code>1</code> because it is greater than <code>1</code> (index 0), but less than <code>2</code> (index 1).",
@@ -742,7 +742,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "¿Cuál es mi asiento?",
+          "title": "JavaScript: ¿Cuál es mi asiento?",
           "description": [
             "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo (primer argumento) una vez ha sido ordenado.",
             "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
@@ -754,7 +754,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244e2",
-      "title": "Caesars Cipher",
+      "title": "JavaScript: Caesars Cipher",
       "description": [
         "One of the simplest and most widely known <dfn>ciphers</dfn> is a <code>Caesar cipher</code>, also known as a <code>shift cipher</code>. In a <code>shift cipher</code> the meanings of the letters are shifted by some set amount.",
         "A common modern use is the <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus 'A' &harr; 'N', 'B' &harr;  'O' and so on.",
@@ -793,7 +793,7 @@
       "releasedOn": "January 1, 2016",
       "translations": {
         "es": {
-          "title": "Cifrado César",
+          "title": "JavaScript: Cifrado César",
           "description": [
             "Uno de los <dfn>cifrados</dfn> más simples y ampliamente conocidos es el <code>cifrado César</code>, también llamado <code>cifrado por desplazamiento</code>. En un <code>cifrado por desplazamiento</code> los significados de las letras se desplazan por una cierta cantidad.",
             "Un uso moderno común es el cifrado <a href=\"https://es.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> , donde los valores de las letras se desplazan 13 espacios. De esta forma 'A' &harr; 'N', 'B' &harr;  'O' y así.",
