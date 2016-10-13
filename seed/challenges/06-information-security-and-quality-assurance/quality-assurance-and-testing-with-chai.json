@@ -14,15 +14,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=0').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=0').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "Null should be null",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=0').then(function(data){  assert.equal(data.assertions[0].method, 'isNull'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=0').then(function(data){  assert.equal(data.assertions[0].method, 'isNull'); }).promise())"
         },
         {
           "text": "1 should not be null",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=0').then(function(data){  assert.equal(data.assertions[1].method, 'isNotNull'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=0').then(function(data){  assert.equal(data.assertions[1].method, 'isNotNull'); }).promise())"
         }
       ],
       "solutions": [],
@@ -58,19 +58,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=1').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=1').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "Null should not be undefined",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[0].method, 'isDefined'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[0].method, 'isDefined'); }).promise())"
         },
         {
           "text": "Undefined should be undefined",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[1].method, 'isUndefined'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[1].method, 'isUndefined'); }).promise())"
         },
         {
           "text": "A string should not be undefined",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[2].method, 'isDefined'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[2].method, 'isDefined'); }).promise())"
         }
       ],
       "solutions": [],
@@ -107,19 +107,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=2').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=2').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "Null is falsey.",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[0].method, 'isNotOk'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[0].method, 'isNotOk'); }).promise())"
         },
         {
           "text": "A string is truthy",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[1].method, 'isOk'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[1].method, 'isOk'); }).promise())"
         },
         {
           "text": "true is truthy'",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[2].method, 'isOk'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[2].method, 'isOk'); }).promise())"
         }
       ],
       "solutions": [],
@@ -157,19 +157,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=3').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=3').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "True is true.",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[0].method, 'isTrue'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[0].method, 'isTrue'); }).promise())"
         },
         {
           "text": "Double negation of a truthy value is true.",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[1].method, 'isTrue'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[1].method, 'isTrue'); }).promise())"
         },
         {
           "text": "A truthy object is not true - neither is a false one.",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[2].method, 'isNotTrue'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[2].method, 'isNotTrue'); }).promise())"
         }
       ],
       "solutions": [],
@@ -206,24 +206,24 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=4').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "Numbers are coerced into strings with == ",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[0].method, 'equal'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[0].method, 'equal'); }).promise())"
 
         },
         {
           "text": "== compares object references.",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[1].method, 'notEqual'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[1].method, 'notEqual'); }).promise())"
         },
         {
           "text": "6 * '2' is 12 ! It should be equal to '12'",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[2].method, 'equal'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[2].method, 'equal'); }).promise())"
         },
         {
           "text": "6 + '2' is '62'...",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[3].method, 'notEqual'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[3].method, 'notEqual'); }).promise())"
         }
       ],
       "solutions": [],
@@ -260,23 +260,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=5').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "with strictEqual the type must match",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[0].method, 'notStrictEqual'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[0].method, 'notStrictEqual'); }).promise())"
         },
         {
           "text": " 3*2 = 6...",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[1].method, 'strictEqual'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[1].method, 'strictEqual'); }).promise())"
         },
         {
           "text": "6 * '2' is 12. Types match !",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[2].method, 'strictEqual'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[2].method, 'strictEqual'); }).promise())"
         },
         {
           "text": "Even if they have the same elements, the Arrays are notStrictEqual",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[3].method, 'notStrictEqual'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[3].method, 'notStrictEqual'); }).promise())"
         }
       ],
       "solutions": [],
@@ -313,15 +313,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=6').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=6').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "The order of the keys doesn't matter.",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=6').then(function(data){  assert.equal(data.assertions[0].method, 'deepEqual'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=6').then(function(data){  assert.equal(data.assertions[0].method, 'deepEqual'); }).promise())"
         },
         {
           "text": "The position of elements within an array does matter.",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=6').then(function(data){  assert.equal(data.assertions[1].method, 'notdeepEqual'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=6').then(function(data){  assert.equal(data.assertions[1].method, 'notdeepEqual'); }).promise())"
         }
       ],
       "solutions": [],
@@ -357,23 +357,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=7').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "5 is at most (<=) 5",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[0].method, 'isAtMost'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[0].method, 'isAtMost'); }).promise())"
         },
         {
           "text": "1 is greater than 0;",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[1].method, 'isAbove'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[1].method, 'isAbove'); }).promise())"
         },
         {
           "text": "Math.PI = 3.14159265 is greater than 3",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[2].method, 'isAbove'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[2].method, 'isAbove'); }).promise())"
         },
         {
           "text": " 1 - Math.random() is > 0 and <= 1. It is atMost 1 !",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[3].method, 'isAtMost'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[3].method, 'isAtMost'); }).promise())"
         }
       ],
       "solutions": [],
@@ -409,23 +409,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=8').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "5 is at least (>=) 5" ,
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isAtLeast'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isAtLeast'); }).promise())"
         },
         {
           "text": "2 * Math.random() is at least 0",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isAtLeast'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isAtLeast'); }).promise())"
         },
         {
           "text": "1 is smaller than 2;",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isBelow'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isBelow'); }).promise())"
         },
         {
           "text": "2/3 (0.6666) is smaller than 1;",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isBelow'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isBelow'); }).promise())"
         }
       ],
       "solutions": [],
@@ -465,15 +465,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=10').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=10').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "weirdNumbers(0.5) is in the range (0.5, 1.5]. It's within 1 +/- 0.5",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[0].method, 'isApproximately');  assert.equal(data.assertions[0].args[2], 0.5); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[0].method, 'isApproximately');  assert.equal(data.assertions[0].args[2], 0.5); }).promise())"
         },
         {
           "text": "weirdNumbers(0.2) is in the range (0.2, 1.2] It's within 1 +/- 0.8",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[1].method, 'isApproximately');  assert.equal(data.assertions[1].args[2], 0.8); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[1].method, 'isApproximately');  assert.equal(data.assertions[1].args[2], 0.8); }).promise())"
         }
       ],
       "solutions": [],
@@ -507,15 +507,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=10').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=10').then(function(data){assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "String.prototype.split() returns an Array",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[0].method, 'isArray'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[0].method, 'isArray'); }).promise())"
         },
         {
           "text": "Array.prototype.indexOf returns a number",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[1].method, 'isNotArray'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[1].method, 'isNotArray'); }).promise())"
         }
       ],
       "solutions": [],
@@ -549,15 +549,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=11').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=11').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "It's summer in july...",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=11').then(function(data){  assert.equal(data.assertions[0].method, 'notInclude'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=11').then(function(data){  assert.equal(data.assertions[0].method, 'notInclude'); }).promise())"
         },
         {
           "text": "JavaScript is a backend language !!",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=11').then(function(data){  assert.equal(data.assertions[1].method, 'include'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=11').then(function(data){  assert.equal(data.assertions[1].method, 'include'); }).promise())"
         }
       ],
       "solutions": [],
@@ -593,19 +593,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=12').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=12').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "A float number is not a string",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[0].method, 'isNotString'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[0].method, 'isNotString'); }).promise())"
         },
         {
           "text": "environment vars are strings (or undefined)",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[1].method, 'isString'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[1].method, 'isString'); }).promise())"
         },
         {
           "text": "A JSON is a string",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[2].method, 'isString'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[2].method, 'isString'); }).promise())"
         }
       ],
       "solutions": [],
@@ -642,15 +642,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=13').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=13').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "'Arrow' contains 'row'...",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=13').then(function(data){  assert.equal(data.assertions[0].method, 'include'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=13').then(function(data){  assert.equal(data.assertions[0].method, 'include'); }).promise())"
         },
         {
           "text": "... but a 'dart' doesn't contain a 'queue'",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=13').then(function(data){  assert.equal(data.assertions[1].method, 'notInclude'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=13').then(function(data){  assert.equal(data.assertions[1].method, 'notInclude'); }).promise())"
         },
         {
           "text": "",
@@ -691,15 +691,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=14').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=14').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "'# name: John Doe, age: 35' matches the regex",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=14').then(function(data){  assert.equal(data.assertions[0].method, 'match'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=14').then(function(data){  assert.equal(data.assertions[0].method, 'match'); }).promise())"
         },
         {
           "text": "'# name: Paul Smith III, age: twenty-four' doesn't match the regex (the age must be numeric)",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=14').then(function(data){  assert.equal(data.assertions[1].method, 'notMatch'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=14').then(function(data){  assert.equal(data.assertions[1].method, 'notMatch'); }).promise())"
         }
       ],
       "solutions": [],
@@ -736,19 +736,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "A car is not an Airplane---",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[0].method, 'notProperty'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[0].method, 'notProperty'); }).promise())"
         },
         {
           "text": "planes have engines",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[1].method, 'property'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[1].method, 'property'); }).promise())"
         },
         {
           "text": "Cars have wheels",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[2].method, 'property'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[2].method, 'property'); }).promise())"
         }
       ],
       "solutions": [],
@@ -785,27 +785,27 @@
       "tests": [
         {
           "text": "in the example car is an Otring",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "everything is an object in JavaScript...",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[0].method, 'typeOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[0].method, 'typeOf'); }).promise())"
         },
         {
           "text": "in the example objects car.model is a String",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[1].method, 'typeOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[1].method, 'typeOf'); }).promise())"
         },
         {
           "text": "in the example objects car.wings is a Number (not a String)",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[1].method, 'notTypeOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[1].method, 'notTypeOf'); }).promise())"
         },
         {
           "text": "in the example objects car.engines is an Array",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[3].method, 'typeOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[3].method, 'typeOf'); }).promise())"
         },
         {
           "text": "in the example objects car.wheels is a Number",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[4].method, 'typeOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[4].method, 'typeOf'); }).promise())"
         }
       ],
       "solutions": [],
@@ -842,23 +842,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
           "text": "myCar is not an instance of Plane",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[0].method, 'notInstanceOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[0].method, 'notInstanceOf'); }).promise())"
         },
         {
           "text": "airlinePlane is an instance of Plane",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[1].method, 'instanceOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[1].method, 'instanceOf'); }).promise())"
         },
         {
           "text": "everything is an Object in JavaScript...",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[2].method, 'instanceOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[2].method, 'instanceOf'); }).promise())"
         },
         {
           "text": "myCar.wheels is not an instance of String",
-          "testString": "() => ($.get(window.projectUrl + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[3].method, 'notInstanceOf'); }).promise())"
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[3].method, 'notInstanceOf'); }).promise())"
         }
       ],
       "solutions": [],
@@ -886,32 +886,24 @@
     },
     {
       "id": "010246c8c441eddf3eb5bdef",
-      "title": "Perform Asynchronous Tests with Mocha",
+      "title": "Run Functional Tests on API Endpoints using Chai-HTTP",
       "description": [
-        "Mocha allows testing asyncronous operations.",
-        "There is a small (BIG) difference. Can you spot it?"
+        "Replace assert.fail(). Test the status and the text.response. Make the test pass.",
+        "Don't send a name in the query, the endpoint with responds with 'hello Guest'."
       ],
       "challengeSeed": [],
       "tests": [
         {
-          "text": "assert.isOk('Async test !!');",
-          "testString": "assert.isOk('Async test !!');"
+          "text": "All tests should pass",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=0').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
-          "text": "",
-          "testString": ""
+          "text": "You should test for 'res.status' == 200",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=0').then(function(data){ assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}).promise())"
         },
         {
-          "text": "",
-          "testString": ""
-        },
-        {
-          "text": "",
-          "testString": ""
-        },
-        {
-          "text": "",
-          "testString": ""
+          "text": "You should test for 'res.text' == 'hello Guest'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=0').then(function(data){ assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.text'); assert.equal(data.assertions[1].args[1], '\\'hello Guest\\'');}).promise())"
         }
       ],
       "solutions": [],
@@ -939,32 +931,24 @@
     },
     {
       "id": "010246c8c441eddf4eb5bdef",
-      "title": "Run Functional Tests on API Endpoints using Chai-HTTP",
+      "title": "Run Functional Tests on API Endpoints using Chai-HTTP II",
       "description": [
-        "We can test our API endpoints using a plugin, called chai-http.",
-        "Let's see how it works. And remember, API calls are asynchronous..."
+        "Replace assert.fail(). Test the status and the text.response. Make the test pass.",
+        "Send you name in the query appending ?name=<your_name>, the endpoint with responds with 'hello <your_name>'."
       ],
       "challengeSeed": [],
       "tests": [
         {
-          "text": "assert.equal(res.status, 200, 'response status should be 200');",
-          "testString": "assert.equal(res.status, 200, 'response status should be 200');"
+          "text": "All tests should pass",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=1').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
-          "text": "response should be \"hello John\"",
-          "testString": "assert.equal(res.text, 'hello John');"
+          "text": "You should test for 'res.status' == 200",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=1').then(function(data){ assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}).promise())"
         },
         {
-          "text": "assert.fail();",
-          "testString": "assert.fail();"
-        },
-        {
-          "text": "assert.fail();",
-          "testString": "assert.fail();"
-        },
-        {
-          "text": "",
-          "testString": ""
+          "text": "You should test for 'res.text' == 'hello Guest'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=1').then(function(data){ assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.text'); assert.match(data.assertions[1].args[1], /hello [\\w\\d_-]/);}).promise())"
         }
       ],
       "solutions": [],
@@ -992,7 +976,7 @@
     },
     {
       "id": "010246c8c441eddf5eb5bdef",
-      "title": "Run Functional Tests on an API Response using Chai-HTTP",
+      "title": "Run Functional Tests on an API Response using Chai-HTTP III - PUT method",
       "description": [
         "In the next example we'll see how to send data in a request payload (body).",
         "We are going to test a PUT request. The '/travellers' endpoint accepts",
@@ -1000,33 +984,87 @@
         " {surname: [last name of a traveller of the past]} ,",
         "The route responds with :",
         " {name: [first name], surname:[last name], dates: [birth - death years]}",
-        "see the server code for more details."
+        "see the server code for more details.",
+        "Send {surname: 'Colombo'}. Replace assert.fail() and make the test pass.",
+        "Check for 1) status, 2) type, 3) body.name, 4) body.surname",
+        "Follow the assertion order above, We rely on it."
       ],
       "challengeSeed": [],
       "tests": [
         {
-          "text": "Response status should be 200",
-          "testString": "assert.equal(res.status, 200);"
+          "text": "All tests should pass",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
-          "text": "Response should be json",
-          "testString": "assert.equal(res.type, 'application/json')"
+          "text": "You should test for 'res.status' to be 200",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}).promise())"
         },
         {
-          "text": "assert.equal(res.body.name, 'Marco')",
-          "testString": "assert.equal(res.body.name, 'Marco')"
+          "text": "You should test for 'res.type' to be 'application/json'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.type'); assert.equal(data.assertions[1].args[1], '\\'application/json\\'');}).promise())"
         },
         {
-          "text": "res.body.surname should be \"Polo\"",
-          "testString": "assert.equal(res.body.surname, 'Polo');"
+          "text": "You should test for 'res.body.name' to be 'Cristoforo'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.equal(data.assertions[2].args[1], '\\'Cristoforo\\'');}).promise())"
         },
         {
-          "text": "assert.fail();",
-          "testString": "assert.fail();"
+          "text": "You should test for 'res.body.surname' to be 'Colombo'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.equal(data.assertions[3].args[1], '\\'Colombo\\'');}).promise())"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "57ffabacfb5f003cfa12a8c2",
+      "title": "Run Functional Tests on an API Response using Chai-HTTP IV - PUT method redux",
+      "description": [
+        "This exercise is similar to the preceding. Look at it for the details.",
+        "Send {surname: 'da Verrazzano'}. Replace assert.fail() and make the test pass.",
+        "Check for 1) status, 2) type, 3) body.name, 4) body.surname",
+        "Follow the assertion order above, We rely on it."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
-          "text": "assert.fail();",
-          "testString": "assert.fail();"
+          "text": "You should test for 'res.status' to be 200",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}).promise())"
+        },
+        {
+          "text": "You should test for 'res.type' to be 'application/json'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.type'); assert.equal(data.assertions[1].args[1], '\\'application/json\\'');}).promise())"
+        },
+        {
+          "text": "You should test for 'res.body.name' to be 'Giovanni'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.equal(data.assertions[2].args[1], '\\'Giovanni\\'');}).promise())"
+        },
+        {
+          "text": "You should test for 'res.body.surname' to be 'da Verrazzano'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.equal(data.assertions[3].args[1], '\\'da Verrazzano\\'');}).promise())"
         }
       ],
       "solutions": [],
@@ -1058,33 +1096,89 @@
       "description": [
         "In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.",
         "A headless browser is a web browser without a graphical user interface. These kind of tools are particularly useful for testing web pages as they are able to render and understand HTML, CSS, and JavaScript the same way a browser would.",
-        "For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Hyperdev. There are many other (more powerful) options."
+        "For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Hyperdev. There are many other (more powerful) options.<br>",
+        "Look at the examples in the code for the exercise directions Follow the assertions order, We rely on it."
       ],
       "challengeSeed": [],
       "tests": [
         {
-          "text": "assert that status is OK 200",
-          "testString": "browser.assert.success();"
+          "text": "All tests should pass",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
-          "text": "  assert that the text inside the element 'span#name' is 'Marco'",
-          "testString": "browser.assert.text('span#name', 'Marco');"
+          "text": "  assert that the headless browser request succeded",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.assertions[0].method, 'browser.success'); }).promise())"
         },
         {
-          "text": "  assert that the text inside the element 'span#surname' is 'Polo'",
-          "testString": "browser.assert.text('span#surname', 'Polo');"
+          "text": "  assert that the text inside the element 'span#name' is 'Cristoforo'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Cristoforo\\'');}).promise())"
+
         },
         {
-          "text": "  assert that the element(s) 'span#dates' exist and their count is 1",
-          "testString": "browser.assert.element('span#dates', 1);"
+          "text": "  assert that the text inside the element 'span#surname' is 'Colombo'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Colombo\\'');}).promise())"
+
         },
         {
-          "text": "  assert.fail();",
-          "testString": "  assert.fail();"
+          "text": "  assert that the element 'span#dates' exist and its count is 1",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}).promise())"
+
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "57ffae98fb5f003cfa12a8c3",
+      "title": "Run Functional Tests using a Headless Browser II",
+      "description": [
+        "This exercise is similar to the preceding.",
+        "Look at  the code for directions. Follow the assertions order, We rely on it."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
         },
         {
-          "text": "  assert.fail();",
-          "testString": "  assert.fail();"
+          "text": "  assert that the headless browser request succeded",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.assertions[0].method, 'browser.success'); }).promise())"
+        },
+        {
+          "text": "  assert that the text inside the element 'span#name' is 'Amerigo'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Amerigo\\'');}).promise())"
+
+        },
+        {
+          "text": "  assert that the text inside the element 'span#surname' is 'Vespucci'",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Vespucci\\'');}).promise())"
+
+        },
+        {
+          "text": "  assert that the element 'span#dates' exist and its count is 1",
+          "testString": "() => ($.get('https://time-shape.hyperdev.space' + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}).promise())"
+
         }
       ],
       "solutions": [],
