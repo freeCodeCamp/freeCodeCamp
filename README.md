@@ -1,4 +1,4 @@
-![](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
+![FreeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
 [![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
 
@@ -17,17 +17,17 @@ You start by working through our self-paced, browser-based full stack JavaScript
 ##### 1. Front End Certification
 The first section will teach you the basics of how webpages work and also introduce you to JavaScript programming.
 
-Skills you'll practice include `HTML, CSS, JavaScript, jQuery` and `Bootstrap`.
+Skills you'll practice include `HTML`, `CSS`, `JavaScript`, `jQuery` and `Bootstrap`.
 
 To earn this certification, you'll build **10 front-end projects** and implement many **JavaScript algorithms**.
 
 ##### 2. Data Visualization Certification
-The second section builds upon the first and introduces you to more advanced topics such as `Sass, React` and `D3`.
+The second section builds upon the first and introduces you to more advanced topics such as `Sass`, `React` and `D3`.
 
 To earn this certification, you'll build **5 React-apps** and **5 Data visualization apps** using `D3.js`.
 
 ##### 3. Back End Certification
-The third section introduces you to back end development using `Node.js, Express,` and `MongoDB`. It also teaches you about the important concept of source control using `Git`.
+The third section introduces you to back end development using `Node.js`, `Express,` and `MongoDB`. It also teaches you about the important concept of source control using `Git`.
 
 To earn this certification, you'll build **5 APIs** and **5 full stack apps**.
 
@@ -41,9 +41,9 @@ For this certification, you'll work on **two projects from scratch** and then **
 
 ---
 
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](http://medium.freecodecamp.com), and even a [YouTube channel](http://youtube.com/freecodecamp).
+This code is running live at [FreeCodeCamp.com](https://www.freecodecamp.com). We also have [Gitter chat rooms](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](https://medium.freecodecamp.com), and even a [YouTube channel](https://youtube.com/freecodecamp).
 
-### [Join our community here](http://www.freecodecamp.com/signin).
+### [Join our community here](https://www.freecodecamp.com/signin).
 
 Found a bug?
 ------------
