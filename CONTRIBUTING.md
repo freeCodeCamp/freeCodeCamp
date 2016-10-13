@@ -349,14 +349,14 @@ Free Code Camp has a team of volunteer Issue Moderators. These Issue Moderators 
 
 2. Another Issue Moderator will QA the same pull request. Once they have also confirmed that the new code does what it is supposed to without seeming to introduce any new bugs, they will merge the pull request.
 
-If you would like to apply to join our Issue Moderator team - which is a Core Team position - message @berkeleytrue with links to a 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commneting or QA'ing.
+If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@berkeleytrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commneting or QA'ing.
 
 
 ### How We Close Stale Issues
 
 We will close any issues or pull requests that have been inactive for more than 15 days, except those that match the following criteria:
 - bugs that are confirmed
-- pull requests that are waiting on other pull requests
+- pull requests that are waiting on other pull requests to be merged
 - features that are a part of a GitHub project
 
 ### Next Steps
