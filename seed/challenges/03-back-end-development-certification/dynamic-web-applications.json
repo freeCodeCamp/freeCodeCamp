@@ -200,7 +200,7 @@
       ],
       "tests": [{
         "text": "website should return 200",
-        "testString": "() => $.ajax({ url: 'https://www.google.com', method: 'HEAD' }).then(null, (err) => assert.fail(err));"
+        "testString": "getUserInput => $.ajax({ url: getUserInput('url'), method: 'HEAD' }).then(null, (err) => assert.fail(err));"
       }],
       "type": "backend"
     },

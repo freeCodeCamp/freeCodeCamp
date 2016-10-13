@@ -131,6 +131,28 @@
     "no-script-url": 2,
     "no-self-compare": 2,
     "no-sequences": 2,
+    "no-unused-expressions": 2,
+    "no-void": 0,
+    "no-warning-comments": [
+      2,
+      {
+        "terms": [
+          "fixme"
+        ],
+        "location": "start"
+      }
+    ],
+    "no-with": 2,
+    "radix": 2,
+    "vars-on-top": 0,
+    "wrap-iife": [2, "any"],
+    "yoda": 0,
+
+    "strict": 0,
+
+    "no-catch-shadow": 2,
+    "no-delete-var": 2,
+    "no-label-var": 2,
     "no-shadow": 0,
     "no-shadow-restricted-names": 2,
     "no-spaced-func": 2,

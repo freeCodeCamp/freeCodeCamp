@@ -75,6 +75,7 @@ export function DOMOnlyProps(field) {
   return omit(field, [
     'initialValue',
     'autofill',
+    'autocompleted',
     'onUpdate',
     'valid',
     'invalid',
