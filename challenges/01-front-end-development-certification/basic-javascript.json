@@ -2859,7 +2859,7 @@
       "id": "cf1111c1c12feddfaeb3bdef",
       "title": "Use Conditional Logic with If Statements",
       "description": [
-        "<code>If</code> statements are used to make decisions in code. The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions because they may only be <code>true</code> or <code>false</code>.",
+        "<code>If</code> statements are used to make decisions in code. The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions and they may only be <code>true</code> or <code>false</code>.",
         "When the condition evaluates to <code>true</code>, the program executes the statement inside the curly braces. When the Boolean condition evaluates to <code>false</code>, the statement inside the curly braces will not execute.",
         "<strong>Pseudocode</strong>",
         "<blockquote>if (<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>",
