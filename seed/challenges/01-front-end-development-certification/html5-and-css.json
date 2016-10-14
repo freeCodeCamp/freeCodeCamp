@@ -1773,7 +1773,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href=\"http://www.freecatphotoapp.com\">cat photos</a>.</p>",
+        "<p>Click here to view more <a href=\"http://www.freecatphotoapp.com\">cat photos</a>.</p>",
         "",
         "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
         "",
