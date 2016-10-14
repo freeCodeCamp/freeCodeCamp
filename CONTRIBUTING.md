@@ -220,7 +220,7 @@ When you make a pull request, all of your changes need to be in one commit.
 
 If you have made more then one commit, then you will need to _squash_ your commits.
 
-To do this, see To do this, see [Squashing Your Commits](http://forum.freecodecamp.com/t/how-to-squash-multiple-commits-into-one-with-git/13231).
+To do this, see [Squashing Your Commits](http://forum.freecodecamp.com/t/how-to-squash-multiple-commits-into-one-with-git/13231).
 
 ### Creating A Pull Request
 
@@ -403,7 +403,7 @@ Be sure to post in the PR conversation that you have made the requested changes.
     GitHub](http://forum.freecodecamp.com/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
 
 -   [Writing great git commit
-    message](http://forum.freecodecamp.com/t/writing-good-git-commit-messages/13210)
+    messages](http://forum.freecodecamp.com/t/writing-good-git-commit-messages/13210)
 
 -   [Contributor Chat Support - For the FCC Repositories, and running a local
     instance](https://gitter.im/FreeCodeCamp/Contributors)
