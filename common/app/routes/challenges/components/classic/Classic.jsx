@@ -12,7 +12,8 @@ import { challengeSelector } from '../../redux/selectors';
 import {
   executeChallenge,
   updateFile,
-  loadCode
+  loadCode,
+  codeUpdated
 } from '../../redux/actions';
 
 const mapStateToProps = createSelector(
@@ -40,7 +41,8 @@ const mapStateToProps = createSelector(
 const bindableActions = {
   executeChallenge,
   updateFile,
-  loadCode
+  loadCode,
+  codeUpdated
 };
 
 export class Challenge extends PureComponent {
@@ -54,7 +56,8 @@ export class Challenge extends PureComponent {
     file: PropTypes.object,
     updateFile: PropTypes.func,
     executeChallenge: PropTypes.func,
-    loadCode: PropTypes.func
+    loadCode: PropTypes.func,
+    codeUpdated: PropTypes.func
   };
 
   componentDidMount() {
@@ -88,7 +91,8 @@ export class Challenge extends PureComponent {
       file,
       mode,
       showPreview,
-      executeChallenge
+      executeChallenge,
+      codeUpdated
     } = this.props;
     return (
       <div>
@@ -103,6 +107,7 @@ export class Challenge extends PureComponent {
           md={ showPreview ? 5 : 8 }
           >
           <Editor
+            codeUpdated={ codeUpdated }
             content={ content }
             executeChallenge={ executeChallenge }
             mode={ mode }

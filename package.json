@@ -94,7 +94,7 @@
     "react": "^15.0.2",
     "react-bootstrap": "^0.30.0",
     "react-codemirror": "^0.2.6",
-    "react-css-transition-replace": "^1.2.0-beta",
+    "react-css-transition-replace": "^1.3.0",
     "react-dom": "^15.0.2",
     "react-fontawesome": "^1.2.0",
     "react-images": "^0.5.1",

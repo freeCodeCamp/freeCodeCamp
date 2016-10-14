@@ -13,7 +13,8 @@ import {
   openBugModal,
   updateHint,
   executeChallenge,
-  unlockUntrustedCode
+  unlockUntrustedCode,
+  submitChallenge
 } from '../../redux/actions';
 import { makeToast } from '../../../../toasts/redux/actions';
 import { toggleHelpChat } from '../../../../redux/actions';
@@ -24,7 +25,8 @@ const bindableActions = {
   updateHint,
   toggleHelpChat,
   openBugModal,
-  unlockUntrustedCode
+  unlockUntrustedCode,
+  submitChallenge
 };
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -34,6 +36,7 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.output,
   state => state.challengesApp.hintIndex,
   state => state.challengesApp.isCodeLocked,
+  state => state.challengesApp.isChallengePassed,
   (
     { challenge: { title, description, hints = [] } = {} },
     windowHeight,
@@ -41,7 +44,8 @@ const mapStateToProps = createSelector(
     tests,
     output,
     hintIndex,
-    isCodeLocked
+    isCodeLocked,
+    isChallengePassed
   ) => ({
     title,
     description,
@@ -49,7 +53,8 @@ const mapStateToProps = createSelector(
     tests,
     output,
     hint: hints[hintIndex],
-    isCodeLocked
+    isCodeLocked,
+    isChallengePassed
   })
 );
 
@@ -73,7 +78,9 @@ export class SidePanel extends PureComponent {
     openBugModal: PropTypes.func,
     unlockUntrustedCode: PropTypes.func,
     isCodeLocked: PropTypes.bool,
-    executeChallenge: PropTypes.func
+    isChallengePassed: PropTypes.bool,
+    executeChallenge: PropTypes.func,
+    submitChallenge: PropTypes.func
   };
 
   renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
@@ -97,7 +104,8 @@ export class SidePanel extends PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.title !== nextProps.title) {
+    let { title } = this.props;
+    if (title !== nextProps.title) {
       ReactDom.findDOMNode(this).scrollTop = 0;
     }
   }
@@ -116,7 +124,9 @@ export class SidePanel extends PureComponent {
       toggleHelpChat,
       openBugModal,
       isCodeLocked,
-      unlockUntrustedCode
+      isChallengePassed,
+      unlockUntrustedCode,
+      submitChallenge
     } = this.props;
     const style = {};
     if (height) {
@@ -145,9 +155,11 @@ export class SidePanel extends PureComponent {
         <ToolPanel
           executeChallenge={ executeChallenge }
           hint={ hint }
+          isChallengePassed={ isChallengePassed }
           isCodeLocked={ isCodeLocked }
           makeToast={ makeToast }
           openBugModal={ openBugModal }
+          submitChallenge={ submitChallenge }
           toggleHelpChat={ toggleHelpChat }
           unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
