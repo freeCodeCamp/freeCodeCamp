@@ -349,7 +349,7 @@ Free Code Camp has a team of volunteer Issue Moderators. These Issue Moderators 
 
 2. Another Issue Moderator will QA the same pull request. Once they have also confirmed that the new code does what it is supposed to without seeming to introduce any new bugs, they will merge the pull request.
 
-If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@berkeleytrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commneting or QA'ing.
+If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@berkeleytrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
 
 
 ### How We Close Stale Issues
