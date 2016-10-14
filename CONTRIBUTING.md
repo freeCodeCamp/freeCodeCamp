@@ -26,6 +26,8 @@ Remember to feel free to ask for help in our [Contributors](https://gitter.im/Fr
 - [Squash Your Commits](#squash-your-commits)
 - [Creating A Pull Request](#creating-a-pull-request)
 - [Common Steps](#common-steps)
+- [How We Review and Merge Pull Requests](#how-we-review-and-merge-pull-requests)
+- [How We Close Stale Issues](#how-we-close-stale-issues)
 - [Next Steps](#next-steps)
 - [Other resources](#other-resources)
 
@@ -337,6 +339,25 @@ for further information
         close the existing issue, if the PR is merged.
 
 6.  Indicate if you have tested on a local copy of the site or not.
+
+
+### How We Review and Merge Pull Requests
+
+Free Code Camp has a team of volunteer Issue Moderators. These Issue Moderators routinely go through open pull requests in a process called [Quality Assurance](https://en.wikipedia.org/wiki/Quality_assurance) (QA).
+
+1. If an Issue Moderator QA's a pull request and confirms that the new code does what it is supposed without seeming to introduce any new bugs, they will comment "LGTM" which means "Looks good to me."
+
+2. Another Issue Moderator will QA the same pull request. Once they have also confirmed that the new code does what it is supposed to without seeming to introduce any new bugs, they will merge the pull request.
+
+If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@berkeleytrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
+
+
+### How We Close Stale Issues
+
+We will close any issues or pull requests that have been inactive for more than 15 days, except those that match the following criteria:
+- bugs that are confirmed
+- pull requests that are waiting on other pull requests to be merged
+- features that are a part of a GitHub project
 
 ### Next Steps
 
