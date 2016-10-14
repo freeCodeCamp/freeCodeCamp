@@ -18,6 +18,7 @@ export default createTypes([
   'resetChallenge',
   'replaceChallenge',
   'resetUi',
+  'isPassed',
   'updateHint',
   'lockUntrustedCode',
   'unlockUntrustedCode',

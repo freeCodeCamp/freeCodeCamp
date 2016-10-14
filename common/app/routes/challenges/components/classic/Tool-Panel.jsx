@@ -21,11 +21,14 @@ export default class ToolPanel extends PureComponent {
     executeChallenge: PropTypes.func.isRequired,
     updateHint: PropTypes.func.isRequired,
     hint: PropTypes.string,
+    isChallengePassed: PropTypes.bool,
     isCodeLocked: PropTypes.bool,
     unlockUntrustedCode: PropTypes.func.isRequired,
     toggleHelpChat: PropTypes.func.isRequired,
     openBugModal: PropTypes.func.isRequired,
-    makeToast: PropTypes.func.isRequired
+    makeToast: PropTypes.func.isRequired,
+    submitChallenge: PropTypes.func.isRequired,
+    isPassed: PropTypes.func.isRequired
   };
 
   makeHint() {
@@ -91,14 +94,30 @@ export default class ToolPanel extends PureComponent {
     );
   }
 
+  renderNext(isChallengePassed, submitChallenge) {
+      return (
+        <Button
+          block={ true }
+          bsStyle='primary'
+          className='btn-big'
+          disabled={ !isChallengePassed }
+          onClick={ submitChallenge }
+          >
+          Submit and go to next challenge
+        </Button>
+      );
+    }
+
   render() {
     const {
       hint,
+      isChallengePassed,
       isCodeLocked,
       executeChallenge,
       toggleHelpChat,
       openBugModal,
-      unlockUntrustedCode
+      unlockUntrustedCode,
+      submitChallenge
     } = this.props;
     return (
       <div>
@@ -110,6 +129,8 @@ export default class ToolPanel extends PureComponent {
             unlockUntrustedCode
           )
         }
+        <div className='button-spacer' />
+        { this.renderNext(isChallengePassed, submitChallenge) }
         <div className='button-spacer' />
         <ButtonGroup
           className='input-group'

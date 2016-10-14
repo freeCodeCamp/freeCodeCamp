@@ -42,7 +42,8 @@ const initialUiState = {
   isPressed: false,
   isCorrect: false,
   shouldShakeQuestion: false,
-  shouldShowQuestions: false
+  shouldShowQuestions: false,
+  isChallengePassed: false
 };
 const initialState = {
   isCodeLocked: false,
@@ -64,6 +65,16 @@ const initialState = {
 
 const mainReducer = handleActions(
   {
+    [types.isPassed]: state => {
+      let { tests } = state;
+    if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
+      return ({
+              ...state,
+              isChallengePassed: true
+              });
+    }
+    return state;
+    },
     [types.fetchChallengeCompleted]: (state, { payload = '' }) => ({
       ...state,
       challenge: payload
