@@ -37,7 +37,7 @@ We will accept solutions implemented in _any_ programming language, as long as b
 The fourth section is where you'll get **real-world experience** by working on projects for **nonprofits**.
 We'll pair you with another camper, an agile project manager, and a stakeholder from a nonprofit organization. Together, you'll plan, build and maintain apps that help that nonprofit carry out its mission more effectively.
 
-For this certification, you'll work on **two projects from scratch** and then **maintain/upgrade two existing projects**.
+For this certification, you'll work on **2 projects from scratch** and then **maintain/upgrade two existing projects**.
 
 ---
 
