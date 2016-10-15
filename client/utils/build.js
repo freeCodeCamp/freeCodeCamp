@@ -1,4 +1,6 @@
 import { Observable } from 'rx';
+import { getValues } from 'redux-form';
+
 import { ajax$ } from '../../common/utils/ajax-stream';
 import throwers from '../rechallenge/throwers';
 import transformers from '../rechallenge/transformers';
@@ -79,7 +81,7 @@ export function cacheLink({ link } = {}, crossDomain = true) {
 const htmlCatch = '\n<!--fcc-->';
 const jsCatch = '\n;/*fcc*/\n';
 // we add a cache breaker to prevent browser from caching ajax request
-const frameRunner$ = cacheScript({
+const frameRunner = cacheScript({
   src: `/js/frame-runner.js?cacheBreaker=${Math.random()}` },
   false
 );
@@ -140,7 +142,7 @@ export function buildClassic(files, required, shouldProxyConsole) {
         .reduce((head, required) => head + required, '')
         .map(head => `<head>${head}</head>`);
 
-      return Observable.combineLatest(head$, frameRunner$)
+      return Observable.combineLatest(head$, frameRunner)
         .map(([ head, frameRunner ]) => {
           const body = `
             <body style='margin:8px;'>
@@ -155,4 +157,12 @@ export function buildClassic(files, required, shouldProxyConsole) {
           };
         });
     });
+}
+
+export function buildBackendChallenge(state) {
+  const { solution: url } = getValues(state.form.BackEndChallenge);
+  return frameRunner.map(build => ({
+    build,
+    source: { url }
+  }));
 }

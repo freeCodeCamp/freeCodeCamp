@@ -9,8 +9,9 @@ import {
 
 import SolutionInput from '../Solution-Input.jsx';
 import TestSuite from '../Test-Suite.jsx';
-import { challengeSelector } from '../../redux/selectors';
-import { descriptionRegex } from '../../utils';
+import { executeChallenge } from '../../redux/actions.js';
+import { challengeSelector } from '../../redux/selectors.js';
+import { descriptionRegex } from '../../utils.js';
 import {
   isValidURL,
   makeRequired,
@@ -23,10 +24,11 @@ const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   tests: PropTypes.array,
   // provided by redux form
-  isSubmitting: PropTypes.bool,
+  submitting: PropTypes.bool,
   fields: PropTypes.object,
   resetForm: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
+  executeChallenge: PropTypes.func.isRequired
 };
 
 const fields = [ 'solution' ];
@@ -53,6 +55,10 @@ const mapStateToProps = createSelector(
     description
   })
 );
+
+const mapDispatchToActions = {
+  executeChallenge
+};
 
 export class BackEnd extends PureComponent {
 
@@ -86,12 +92,12 @@ export class BackEnd extends PureComponent {
       tests,
       // provided by redux-form
       fields: { solution },
-      isSubmitting,
+      submitting,
       handleSubmit,
-      resetForm
+      executeChallenge
     } = this.props;
 
-    const buttonCopy = isSubmitting ?
+    const buttonCopy = submitting ?
       'Submit and go to my next challenge' :
       "I've completed this challenge";
     return (
@@ -108,12 +114,7 @@ export class BackEnd extends PureComponent {
           <Row>
             <form
               name='BackEndChallenge'
-              onSubmit={
-                handleSubmit(() => {
-                  // submitChallenge(values);
-                  resetForm('BackEndChallenge');
-                })
-              }
+              onSubmit={ handleSubmit(executeChallenge) }
               >
               <SolutionInput
                 placeholder='https://your-app.com'
@@ -123,8 +124,8 @@ export class BackEnd extends PureComponent {
                 block={ true }
                 bsStyle='primary'
                 className='btn-big'
-                onClick={ isSubmitting ? null : null }
-                type={ isSubmitting ? 'submit' : null }
+                onClick={ submitting ? null : null }
+                type={ submitting ? null : 'submit' }
                 >
                 { buttonCopy } (ctrl + enter)
               </Button>
@@ -148,5 +149,6 @@ export default reduxForm(
     fields,
     validate: createFormValidator(fieldValidators)
   },
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToActions
 )(BackEnd);

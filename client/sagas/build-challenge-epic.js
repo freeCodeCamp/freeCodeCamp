@@ -1,6 +1,9 @@
 import { Scheduler, Observable } from 'rx';
 
-import { buildClassic } from '../utils/build.js';
+import {
+  buildClassic,
+  buildBackendChallenge
+} from '../utils/build.js';
 import { ofType } from '../../common/utils/get-actions-of-type.js';
 import {
   challengeSelector
@@ -14,17 +17,27 @@ import {
   saveCode
 } from '../../common/app/routes/challenges/redux/actions';
 
-export default function builChallengeEpic(actions, getState) {
+export default function buildChallengeEpic(actions, getState) {
   return actions
     ::ofType(types.executeChallenge, types.updateMain)
-    // if isCodeLockedTrue do not run challenges
+    // if isCodeLocked do not run challenges
     .filter(() => !getState().challengesApp.isCodeLocked)
     .debounce(750)
     .flatMapLatest(({ type }) => {
       const shouldProxyConsole = type === types.updateMain;
       const state = getState();
       const { files } = state.challengesApp;
-      const { challenge: { required = [] } } = challengeSelector(state);
+      const {
+        challenge: {
+          required = [],
+          type: challengeType
+        }
+      } = challengeSelector(state);
+      if (challengeType === 'backend') {
+        return buildBackendChallenge(state)
+          .map(frameTests)
+          .startWith(initOutput('// running test'));
+      }
       return buildClassic(files, required, shouldProxyConsole)
         .flatMap(payload => {
           const actions = [
