@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
-      "title": "Manage Packages with npm",
+      "title": "Node.js: Manage Packages with npm",
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud. <strong>Note:</strong> Cloud 9 supports a <a href='https://docs.c9.io/docs/themes' target='_blank'>high-contrast theme</a> for those with visual impairments.",
         "If you don't already have a Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -50,7 +50,7 @@
       "challengeType": 2,
       "translations": {
         "es": {
-          "title": "Administrando paquetes con NPM",
+          "title": "Node.js: Administrando paquetes con NPM",
           "description": [
             "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
             "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -85,7 +85,7 @@
     },
     {
       "id": "bd7153d8c441eddfaeb5bdff",
-      "title": "Start a Node.js Server",
+      "title": "Node.js: Start a Node.js Server",
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud. We'll do the first 7 steps of Node School's LearnYouNode challenges.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -118,7 +118,7 @@
       "challengeType": 2,
       "translations": {
         "es": {
-          "title": "Inicia un servidor en Node.js",
+          "title": "Node.js: Inicia un servidor en Node.js",
           "description": [
             "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
             "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -147,7 +147,7 @@
     },
     {
       "id": "bd7153d8c441eddfaeb5bdfe",
-      "title": "Continue working with Node.js Servers",
+      "title": "Node.js: Continue working with Node.js Servers",
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 8 through 10.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
@@ -166,7 +166,7 @@
       "challengeType": 2,
       "translations": {
         "es": {
-          "title": "Continuemos trabajando con servidores en Node.js",
+          "title": "Node.js: Continuemos trabajando con servidores en Node.js",
           "description": [
             "Sigamos con el desafío de LearnYouNode de Node School. Para este Waypoint, trabajaremos con las lecciones 11 a 13.",
             "Asegúrate de que siempre te encuentres en el directorio \"workspace\" de tu proyecto. Puedes regresar a este directorio cuando quieras usando el comando: <code>cd ~/workspace</code>.",
@@ -182,7 +182,7 @@
     },
     {
       "id": "bd7153d8c441eddfaeb5bdfd",
-      "title": "Finish working with Node.js Servers",
+      "title": "Node.js: Finish working with Node.js Servers",
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 11 through 13.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
@@ -201,7 +201,7 @@
       "challengeType": 2,
       "translations": {
         "es": {
-          "title": "Terminemos de trabajar con servidores en Node.js",
+          "title": "Node.js: Terminemos de trabajar con servidores en Node.js",
           "description": [
             "Sigamos con el desafío de LearnYouNode de Node School. Para este Waypoint, trabajaremos con las lecciones 11 a 13.",
             "Asegúrate de que siempre te encuentres en el directorio \"workspace\" de tu proyecto. Puedes regresar a este directorio cuando quieras usando el comando: <code>cd ~/workspace</code>.",
@@ -217,7 +217,7 @@
     },
     {
       "id": "bd7153d8c441eddfaeb5bd1f",
-      "title": "Build Web Apps with Express.js",
+      "title": "Express.js: Build Web Apps with Express.js",
       "description": [
         "Before we begin using Express.js, read this article on <a href='http://evanhahn.com/understanding-express/' target='_blank'>Understanding Express.js</a>.",
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
@@ -251,7 +251,7 @@
       "challengeType": 2,
       "translations": {
         "es": {
-          "title": "Creando Web Apps con Express.js",
+          "title": "Express.js: Creando Web Apps con Express.js",
           "description": [
             "Haremos este desafío en Cloud 9, un poderoso editor en línea con un ambiente de trabajo Ubuntu Linux completo, corriendo totalmente en la nube.",
             "Si todavía no tienes una cuenta en Cloud 9, crea una ahora en <a href='http://c9.io' target='_blank'>http://c9.io</a>.",

@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "bd7123c8c441eddfaeb5bdef",
-      "title": "Say Hello to HTML Elements",
+      "title": "HTML: Say Hello to HTML Elements",
       "description": [
         "Welcome to Free Code Camp's first coding challenge.",
         "You can edit <code>code</code> in your <code>text editor</code>, which we've embedded into this web page.",
@@ -48,7 +48,7 @@
           ]
         },
         "fr": {
-          "title": "Dites bonjour aux éléments HTML",
+          "title": "HTML: Dites bonjour aux éléments HTML",
           "description": [
             "Bienvenue au premier défi de code de Free Code Camp.",
             "Vous pouvez modifier le <code>code</code> dans votre <code>éditeur texte</code>, lequel est disponible dans cette page.",
@@ -64,7 +64,7 @@
           ]
         },
         "pt-br": {
-          "title": "Diga Olá aos Elementos HTML",
+          "title": "HTML: Diga Olá aos Elementos HTML",
           "description": [
             "Seja bem vindo ao primeiro desafio de programação do Free Code Camp!",
             "Você pode editar o seu <code>código</code> em seu <code>editor de texto</code>, que embutimos aqui nesta página da web.",
@@ -77,7 +77,7 @@
           ]
         },
         "ru": {
-          "title": "Скажи привет HTML-элементам",
+          "title": "HMTL: Скажи привет HTML-элементам",
           "description": [
             "Добро пожаловать на первое программное испытание Free Code Camp.",
             "Вы можете редактировать <code>код</code> в вашем <code>текстовом редакторе</code>, который мы встроили в эту web-страницу.",
@@ -96,7 +96,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf0887a",
-      "title": "Headline with the h2 Element",
+      "title": "HTML: Headline with the h2 Element",
       "description": [
         "Over the next few challenges, we'll build an HTML5 app that will look something like this:",
         "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
@@ -126,7 +126,7 @@
           ]
         },
         "fr": {
-          "title": "Un titre avec l'élément h2",
+          "title": "HTML: Un titre avec l'élément h2",
           "description": [
             "Pour les quelques prochains défis, nous construirons une application HTML5 qui ressemblera à ceci :",
             "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Cliquez pour agrandir\" alt=\"Une capture écran de notre application de photo de chats\"></a>",
@@ -136,7 +136,7 @@
           ]
         },
         "pt-br": {
-          "title": "Cabeçalho com o Elemento h2",
+          "title": "HTML: Cabeçalho com o Elemento h2",
           "description": [
             "Durante os próximos desafios, construiremos um aplicativo em HTML que se parecerá como este:",
             "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Clique para aumentar\" alt=\"Imagem do aplicativo CatPhotoApp finalizado\"></a>",
@@ -147,7 +147,7 @@
           ]
         },
         "ru": {
-          "title": "Заголовок с применением элемента h2",
+          "title": "HMTL: Заголовок с применением элемента h2",
           "description": [
             "В результате прохождения нескольких следующих испытаний, мы построим HTML5 приложение, которое будет похоже на это:",
             "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
@@ -160,7 +160,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08801",
-      "title": "Inform with the Paragraph Element",
+      "title": "HTML: Inform with the Paragraph Element",
       "description": [
         "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
         "You can create a <code>p</code> element like this:",
@@ -188,7 +188,7 @@
           ]
         },
         "fr": {
-          "title": "Informez avec l'élément paragraphe",
+          "title": "HTML: Informez avec l'élément paragraphe",
           "description": [
             "L'élément <code>p</code> est le préféré pour les textes de paragraphes de taille normale. P est l'acronyme de \"paragraphe\",",
             "Vous pouvez créer un élément <code>p</code> comme ceci :",
@@ -197,7 +197,7 @@
           ]
         },
         "pt-br": {
-          "title": "Informe com o Elemento Parágrafo",
+          "title": "HTML: Informe com o Elemento Parágrafo",
           "description": [
             "Os elementos <code>p</code> são os preferenciais para criar parágrafos de texto com tamanho normal nas páginas da web. P significa a abreviatura de \"parágrafo\".",
             "Você pode criar um elemento <code>p</code> assim:",
@@ -206,7 +206,7 @@
           ]
         },
         "ru": {
-          "title": "Проинформируйте с применением элемента p",
+          "title": "HTML: Проинформируйте с применением элемента p",
           "description": [
             "Элементы <code>p</code> предпочтительно использовать для обозначения параграфов с текстом нормального размера в web-сайтах. P - сокращение от \"paragraph\".",
             "Вы можете создать элемент <code>p</code> следующим образом:",
@@ -218,7 +218,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08802",
-      "title": "Uncomment HTML",
+      "title": "HTML: Uncomment HTML",
       "description": [
         "Commenting is a way that you can leave comments within your code without affecting the code itself.",
         "Commenting is also a convenient way to make code inactive without having to delete it entirely.",
@@ -252,7 +252,7 @@
           ]
         },
         "fr": {
-          "title": "Décommenter du HTML",
+          "title": "HTML: Décommenter du HTML",
           "description": [
             "Commenter est une façon de laisser des commentaires dans votre code sans affecter le fonctionnement du code.",
             "Commenter est aussi un moyen pratique de rendre du code inactif sans devoir le supprimer entièrement.",
@@ -261,7 +261,7 @@
           ]
         },
         "pt-br": {
-          "title": "Descomente o HTML",
+          "title": "HTML: Descomente o HTML",
           "description": [
             "\"Comentar\" é uma forma de deixar anotações em seu código sem afetá-lo.",
             "Comentar também é um jeito conveniente de deixar seu código inativo sem precisar apagá-lo por completo.",
@@ -270,7 +270,7 @@
           ]
         },
         "ru": {
-          "title": "Раскомментируйте HTML",
+          "title": "HTML: Раскомментируйте HTML",
           "description": [
             "Комментирование - способ хранения заметок по коду без воздействия на сам код.",
             "Также комментирование - неплохой метод отключения части кода без необходимости его удаления.",
@@ -282,7 +282,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08804",
-      "title": "Comment out HTML",
+      "title": "HTML: Comment out HTML",
       "description": [
         "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>",
         "Here you'll need to end the comment before your <code>h2</code> element begins.",
@@ -315,7 +315,7 @@
           ]
         },
         "fr": {
-          "title": "Commentez du HTML",
+          "title": "HTML: Commentez du HTML",
           "description": [
             "Souvenez-vous que pour débuter un commentaire, vous devez utiliser <code>&#60;!--</code> et que pour le terminer, vous devez utiliser <code>--&#62;</code>.",
             "Ici vous devrez terminer le commentaire juste avant que l'élément <code>h2</code> commence.",
@@ -323,7 +323,7 @@
           ]
         },
         "pt-br": {
-          "title": "Comente o HTML",
+          "title": "HTML: Comente o HTML",
           "description": [
             "Lembre-se que para iniciar um comentário você precisa utilizar <code>&#60;!--</code>, e para terminar um comentário é necessário usar <code>--&#62;</code>.",
             "Aqui, você deverá terminar o comentário antes que seu elemento <code>h2</code> inicie.",
@@ -331,7 +331,7 @@
           ]
         },
         "ru": {
-          "title": "Закомментируйте HTML",
+          "title": "HTML: Закомментируйте HTML",
           "description": [
             "Помните, что для начала комментария вам необходимо использовать <code>&#60;!--</code>, а для завершения комментария - <code>--&#62;</code>",
             "Тут вам необходимо завершить комментарий до начала вашего элемента <code>h2</code>.",
@@ -342,7 +342,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08833",
-      "title": "Fill in the Blank with Placeholder Text",
+      "title": "HTML: Fill in the Blank with Placeholder Text",
       "description": [
         "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. The 'lorem ipsum' text is randomly scraped from a famous passage by Cicero of Ancient Rome.",
         "Lorem ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
@@ -371,7 +371,7 @@
           ]
         },
         "fr": {
-          "title": "Remplissez les blancs avec du faux-texte",
+          "title": "HTML: Remplissez les blancs avec du faux-texte",
           "description": [
             "Les développeurs Web utilisent traditionnellement du <code>lorem ipsum</code> comme texte de substitution. Le texte lorem ipsum provient d'un extrait de Cicero, de la Rome antique.",
             "Le texte lorem ipsum a été utilisé comme faux-texte par des typographes depuis le 16<sup>ème</sup> siècle et cette tradition se poursuit sur le Web.",
@@ -380,7 +380,7 @@
           ]
         },
         "pt-br": {
-          "title": "Preencha Espaços com Texto de Espaço Reservado",
+          "title": "HTML: Preencha Espaços com Texto de Espaço Reservado",
           "description": [
             "Desenvolvedores web tradicionalmente usam <code>Lorem Ipsum</code> como texto de preenchimento. Lorem Ipsum é chamado assim pois essas são as duas primeiras palavras de uma passagem famosa de Cícero da Roma Antiga.",
             "O texto Lorem Ipsum tem sido utilizado como texto de espaço reservado por compositores desde o século 16, e esta tradição continua na web.",
@@ -389,7 +389,7 @@
           ]
         },
         "ru": {
-          "title": "Заполните пустоты замещающим текстом",
+          "title": "HTML: Заполните пустоты замещающим текстом",
           "description": [
             "Традиционно web-разработчики используют текст <code>lorem ipsum</code> в качестве замещающего текста. Он называется тектсом <code>lorem ipsum</code> по первым двум словам известного пассажа Цицерона из Древнего Рима.",
             "Текст <code>lorem ipsum</code> применяется в качестве замещающего текста наборщиками с 16-го века, и эта традиция продолжается в сети.",
@@ -401,7 +401,7 @@
     },
     {
       "id": "bad87fed1348bd9aedf08833",
-      "title": "Delete HTML Elements",
+      "title": "HTML: Delete HTML Elements",
       "description": [
         "Our phone doesn't have much vertical space.",
         "Let's remove the unnecessary elements so we can start building our CatPhotoApp.",
@@ -430,7 +430,7 @@
           ]
         },
         "fr": {
-          "title": "Supprimer des éléments HTML",
+          "title": "HTML: Supprimer des éléments HTML",
           "description": [
             "Notre téléphone n'a pas beaucoup d'espace vertical.",
             "Enlevons les éléments superflus pour débuter la construction de notre application de photos de chats.",
@@ -438,7 +438,7 @@
           ]
         },
         "pt-br": {
-          "title": "Apague Elementos HTML",
+          "title": "HTML: Apague Elementos HTML",
           "description": [
             "Nosso celular não possui muito espaço vertical.",
             "Vamos eliminar os elementos desnecessários para começar a construir nosso CatPhotoApp.",
@@ -446,7 +446,7 @@
           ]
         },
         "ru": {
-          "title": "Удалите HTML-элементы",
+          "title": "HTML: Удалите HTML-элементы",
           "description": [
             "Наш телефон не очень большой по-вертикали.",
             "Давайте удалим некоторые ненужные элементы, чтобы мы могли приступить к созданию приложения CatPhotoApp.",
@@ -457,7 +457,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08803",
-      "title": "Change the Color of Text",
+      "title": "HTML: Change the Color of Text",
       "description": [
         "Now let's change the color of some of our text.",
         "We can do this by changing the <code>style</code> of your <code>h2</code> element.",
@@ -488,7 +488,7 @@
           ]
         },
         "fr": {
-          "title": "Changer la couleur du texte",
+          "title": "HTML: Changer la couleur du texte",
           "description": [
             "Changeons maintenant la couleur de quelques-uns de nos textes.",
             "Nous pouvons le faire en changeant le <code>style</code> de votre élément <code>h2</code>.",
@@ -499,7 +499,7 @@
           ]
         },
         "pt-br": {
-          "title": "Substitua a Cor do Texto",
+          "title": "HTML: Substitua a Cor do Texto",
           "description": [
             "Agora vamos substituir a cor de parte do nosso texto.",
             "Podemos fazer isso mudando o <code>style</code> do elemento <code>h2</code>.",
@@ -510,7 +510,7 @@
           ]
         },
         "ru": {
-          "title": "Измените цвет текста",
+          "title": "HTML: Измените цвет текста",
           "description": [
             "Теперь давайте изменим цвет части нашего текста.",
             "Мы можем сделать это изменив <code>style</code> нашего элемента <code>h2</code>.",
@@ -524,7 +524,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08805",
-      "title": "Use CSS Selectors to Style Elements",
+      "title": "CSS: Use CSS Selectors to Style Elements",
       "description": [
         "With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.",
         "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were giving that individual <code>h2</code> element an <code>inline style</code>.",
@@ -565,7 +565,7 @@
           ]
         },
         "fr": {
-          "title": "Utiliser les sélecteurs CSS pour styliser des éléments",
+          "title": "CSS: Utiliser les sélecteurs CSS pour styliser des éléments",
           "description": [
             "Avec CSS, il y a des centaines de <code>propriétés</code> que vous pouvez utliser pour changer l'apparence d'un élément dans votre page.",
             "Quand vous avez entré <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, vous donniez à cet élément <code>h2</code> uniquement, un style <code>inline</code>.",
@@ -579,7 +579,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use Seletores CSS para Estilizar Elementos",
+          "title": "CSS: Use Seletores CSS para Estilizar Elementos",
           "description": [
             "Com o CSS, existem centenas de <code>propriedades</code> que você pode utilizar para modificar a forma de como um elemento pode ser visto em uma página da internet.",
             "Quando você usou o <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, você deu ao elemento <code>h2</code> um <code>estilo inline</code>.",
@@ -594,7 +594,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте CSS-селекторы для стилизации элементов",
+          "title": "CSS: Используйте CSS-селекторы для стилизации элементов",
           "description": [
             "В CSS существуют сотни CSS-<code>свойств</code>, которые вы можете использовать для изменения внешнего вида элементов вашей страницы.",
             "Когда вы вводите <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, вы присваиваете определённому <code>h2</code> элементу <code>встроенный стиль</code>.",
@@ -611,7 +611,7 @@
     },
     {
       "id": "bad87fee1348bd9aecf08806",
-      "title": "Use a CSS Class to Style an Element",
+      "title": "CSS: Use a CSS Class to Style an Element",
       "description": [
         "Classes are reusable styles that can be added to HTML elements.",
         "Here's an example CSS class declaration:",
@@ -657,7 +657,7 @@
           ]
         },
         "fr": {
-          "title": "Utiliser les classes CSS pour styler un élément",
+          "title": "CSS: Utiliser les classes CSS pour styler un élément",
           "description": [
             "Les classes sont des styles réutilisables qui peuvent être ajoutées à des éléments HTML.",
             "Voici un exemple de déclaration de classe CSS :",
@@ -671,7 +671,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use Classes CSS para Estilizar Elementos",
+          "title": "CSS: Use Classes CSS para Estilizar Elementos",
           "description": [
             "As classes são estilos reutilizáveis que podem ser adicionadas a elementos HTML.",
             "Aqui está um exemplo de como declarar uma classe com CSS:",
@@ -689,7 +689,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте CSS-класс для стилизации элемента",
+          "title": "CSS: Используйте CSS-класс для стилизации элемента",
           "description": [
             "Классы являются повторно применяемыми стилями, которые могут быть добавлены к HTML-элементам.",
             "Вот пример объявления CSS-класса:",
@@ -706,7 +706,7 @@
     },
     {
       "id": "bad87fee1348bd9aefe08806",
-      "title": "Style Multiple Elements with a CSS Class",
+      "title": "CSS: Style Multiple Elements with a CSS Class",
       "description": [
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
         "Remember that CSS class selectors require a period at the beginning like this:",
@@ -746,7 +746,7 @@
           ]
         },
         "fr": {
-          "title": "Stylez plusieurs éléments avec une classe CSS",
+          "title": "CSS: Stylez plusieurs éléments avec une classe CSS",
           "description": [
             "Souvenez-vous que vous pouvez ajouter des classes aux éléments HTML en utilisant <code>class=\"votre-classe-ici\"</code> à l'intérieur de la balise ouvrante correspondante.",
             "Souvenez-vous que les sélecteurs CSS nécessitent un point au début comme ceci :",
@@ -757,7 +757,7 @@
           ]
         },
         "pt-br": {
-          "title": "Estilize Múltiplos Elementos com uma Classe CSS",
+          "title": "CSS: Estilize Múltiplos Elementos com uma Classe CSS",
           "description": [
             "Lembre-se que é possível adicionar classes a elementos HTML ao utilizar <code>class=\"sua-classe-aqui\"</code> dentro da tag de abertura do elemento.",
             "Relembre também que os seletores de classes CSS exigem um ponto em seu início, assim:",
@@ -770,7 +770,7 @@
           ]
         },
         "ru": {
-          "title": "Стилизуйте множество элементов с помощью CSS-класса",
+          "title": "CSS: Стилизуйте множество элементов с помощью CSS-класса",
           "description": [
             "Помните, что вы можете присваивать классы HTML-элементам используя <code>class=\"ваш-класс-тут\"</code> внутри открывающей метки соответствующего элемента.",
             "Помните, что селекторы CSS-классов должны начинаться с точки, например:",
@@ -784,7 +784,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08806",
-      "title": "Change the Font Size of an Element",
+      "title": "CSS: Change the Font Size of an Element",
       "description": [
         "Font size is controlled by the <code>font-size</code> CSS property, like this:",
         "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
@@ -824,7 +824,7 @@
           ]
         },
         "fr": {
-          "title": "Changez la taille de police d'un élément",
+          "title": "CSS: Changez la taille de police d'un élément",
           "description": [
             "La taille de police est contrôlée par la propriété CSS <code>font-size</code>, comme ceci :",
             "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
@@ -834,7 +834,7 @@
           ]
         },
         "pt-br": {
-          "title": "Mude o Tamanho da Fonte de um Elemento",
+          "title": "CSS: Mude o Tamanho da Fonte de um Elemento",
           "description": [
             "O tamanho da fonte é controlado pela propriedade CSS \"font-size\", como aqui:",
             "<code>h1 {</code>",
@@ -845,7 +845,7 @@
           ]
         },
         "ru": {
-          "title": "Измените размер шрифта элемента",
+          "title": "CSS: Измените размер шрифта элемента",
           "description": [
             "Размером шрифта управляют с помощтю CSS-своайства <code>font-size</code>, например:",
             "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
@@ -858,7 +858,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08807",
-      "title": "Set the Font Family of an Element",
+      "title": "CSS: Set the Font Family of an Element",
       "description": [
         "You can set an element's font by using the <code>font-family</code> property.",
         "For example, if you wanted to set your <code>h2</code> element's font to <code>Sans-serif</code>, you would use the following CSS:",
@@ -896,7 +896,7 @@
           ]
         },
         "fr": {
-          "title": "Paramétrer la famille de police d'un élément",
+          "title": "CSS: Paramétrer la famille de police d'un élément",
           "description": [
             "Vous pouvez paramétrer la police d'un élément en utilisant la propriété <code>font-family</code>.",
             "Par exemple, si vous voulez paramétrer la police de votre élément <code>h2</code> à <code>Sans-serif</code>, vous devez utiliser le CSS suivant :",
@@ -905,7 +905,7 @@
           ]
         },
         "pt-br": {
-          "title": "Defina a Fonte para um Elemento",
+          "title": "CSS: Defina a Fonte para um Elemento",
           "description": [
             "Você pode estabelecer o estilo de fonte para um elemento ao utilizar a propriedade <code>font-family</code>.",
             "Por exemplo, se você quiser estabelecer o estilo de fonte de seu elemento <code>h2</code> como <code>Sans-serif</code>, você poderá utilizar o seguinte código em CSS:",
@@ -916,7 +916,7 @@
           ]
         },
         "ru": {
-          "title": "Установите семейство шрифтов для элемента",
+          "title": "CSS: Установите семейство шрифтов для элемента",
           "description": [
             "Вы можете установить семейство шрифтов для элемента используя свойство <code>font-family</code>.",
             "Например, если бы вы хотели установить семейство шрифтов <code>Sans-serif</code> для вашего элемента <code>h2</code>, вы бы использовали следующий CSS:",
@@ -928,7 +928,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08807",
-      "title": "Import a Google Font",
+      "title": "HTML: Import a Google Font",
       "description": [
         "Now, let's import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).",
         "First, you'll need to make a <code>call</code> to Google to grab the <code>Lobster</code> font and load it into your HTML.",
@@ -974,7 +974,7 @@
           ]
         },
         "fr": {
-          "title": "Importer une police de Google",
+          "title": "HTML: Importer une police de Google",
           "description": [
             "Maintenant, importons et appliquons une police de Google (prenez note que si Google est interdit d'accès dans votre pays, vous devrez omettre ce défi).",
             "Premièrement, vous devrez faire un <code>appel</code> vers Google pour prendre la police <code>Lobster</code> et la charger dans votre HTML.",
@@ -984,7 +984,7 @@
           ]
         },
         "pt-br": {
-          "title": "Importe uma Fonte a Partir do Google Fonts",
+          "title": "HTML: Importe uma Fonte a Partir do Google Fonts",
           "description": [
             "Agora, vamos importar e aplicar um estilo de fonte por meio do Google Fonts.",
             "Primeiro, faça um <code>chamado</code> ao Google Fonts para poder utilizar a fonte chamada <code>Lobster</code> e carregá-la em seu HTML.",
@@ -994,7 +994,7 @@
           ]
         },
         "ru": {
-          "title": "Импортируйте шрифт Google",
+          "title": "HTML: Импортируйте шрифт Google",
           "description": [
             "Теперь давайте импортируем и применим шрифт Google (обратите внимание, что если Google заблокирован в ваней стране, вам нужно будет пропустить это испытание).",
             "Сначала вам понадобится сделать <code>запрос</code> к Google для получения шрифта <code>Lobster</code> и загрузить его в ваш HTML.",
@@ -1008,7 +1008,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08808",
-      "title": "Specify How Fonts Should Degrade",
+      "title": "CSS: Specify How Fonts Should Degrade",
       "description": [
         "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>",
         "When one font isn't available, you can tell the browser to \"degrade\" to another font.",
@@ -1058,7 +1058,7 @@
           ]
         },
         "fr": {
-          "title": "Spécifier comment vos polices devraient dégrader",
+          "title": "CSS: Spécifier comment vos polices devraient dégrader",
           "description": [
             "Il y a plusieurs polices par défaut qui sont disponible dans tous les navigateurs Web. Ceci comprend <code>Monospace</code>, <code>Serif</code> et <code>Sans-Serif</code>.",
             "Quand une police n'est pas disponible, vous pouvez demander au navigateur de \"dégrader\" vers une autre police.",
@@ -1068,7 +1068,7 @@
           ]
         },
         "pt-br": {
-          "title": "Especifique como as Fontes Devem se Degradar",
+          "title": "CSS: Especifique como as Fontes Devem se Degradar",
           "description": [
             "Existem diversas fontes que estão disponíveis por padrão nos navegadores de internet, incluindo <code>Monospace</code>, <code>Serif</code> e <code>Sans-Serif</code>.",
             "No entanto, quando uma fonte não está disponível, podemos dizer ao navegador que \"degrade\" a outro tipo de fonte.",
@@ -1080,7 +1080,7 @@
           ]
         },
         "ru": {
-          "title": "Укажите порядок деградации шрифтов",
+          "title": "CSS: Укажите порядок деградации шрифтов",
           "description": [
             "Существует несколько стандартных шрифтов, которые доступны во всех браузерах. Среди них <code>Monospace</code>, <code>Serif</code> и <code>Sans-Serif</code>",
             "Когда один шрифт недоступен, вы можете сообщить браузеру \"деградировать\" до другого шрифта.",
@@ -1093,7 +1093,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08812",
-      "title": "Add Images to your Website",
+      "title": "HTML: Add Images to your Website",
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
         "An example of this would be:",
@@ -1146,7 +1146,7 @@
           ]
         },
         "fr": {
-          "title": "Ajouter des images à votre site Web",
+          "title": "HTML: Ajouter des images à votre site Web",
           "description": [
             "Vous pouvez ajouter des images à votre site Web en utilisant l'élément <code>img</code> et pointer vers une URL d'image spécifique en utilisant l'attribut <code>src</code>.",
             "Un exemple de cette procédure serait :",
@@ -1158,7 +1158,7 @@
           ]
         },
         "pt-br": {
-          "title": "Adicione Imagens em sua Página Web",
+          "title": "HTML: Adicione Imagens em sua Página Web",
           "description": [
             "Você pode adicionar imagens à sua página da internet com o uso do elemento <code>img</code>, e apontar para a URL específica de uma imagem utilizando o atributo <code>src</code>.",
             "Um exemplo para isso seria:",
@@ -1169,7 +1169,7 @@
           ]
         },
         "ru": {
-          "title": "Добавьте изображения к вашему сайту",
+          "title": "HTML: Добавьте изображения к вашему сайту",
           "description": [
             "Вы можете добавлять изображения к вашему сайту с помощью элемента <code>img</code> и указывать ссылки определённых изображений с помощтю атрибута <code>src</code>.",
             "Примером добавления мзображения может служить:",
@@ -1183,7 +1183,7 @@
     },
     {
       "id": "bad87fee1348bd9acdf08812",
-      "title": "Size your Images",
+      "title": "CSS: Size your Images",
       "description": [
         "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
         "For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:",
@@ -1232,7 +1232,7 @@
           ]
         },
         "fr": {
-          "title": "Redimensionner vos images",
+          "title": "CSS: Redimensionner vos images",
           "description": [
             "Le CSS a une propriété nommé <code>width</code> qui contrôle la largeur d'un élément. Comme pour les polices, nous utiliserons <code>px</code> (pixels) pour déterminer la largeur d'une image.",
             "Par exemple, si nous voulons créer une classe CSS nommée <code>larger-image</code> qui donnne aux éléments une largeur de 500 pixels, nous utilisons :",
@@ -1242,7 +1242,7 @@
           ]
         },
         "pt-br": {
-          "title": "Dê um Tamanho para suas Imagens",
+          "title": "CSS: Dê um Tamanho para suas Imagens",
           "description": [
             "O CSS possui uma propriedade chamada <code>width</code>, que controla a largura de um elemento. Da mesma forma que com as fontes, vamos utilizar <code>px</code> (pixels) como medida para especificar a largura de nossa imagem.",
             "Por exemplo, se queremos criar uma classe CSS chamada <code>larger-image</code> que dê aos elementos HTML uma largura de 500px, vamos usar:",
@@ -1255,7 +1255,7 @@
           ]
         },
         "ru": {
-          "title": "Установите размер ваших изображений",
+          "title": "CSS: Установите размер ваших изображений",
           "description": [
             "В CSS есть свойтсво, называемое <code>width</code>, которе управляет шириной элемента. По аналогии со шрифтами, мы используем <code>px</code> (пиксели) для указания ширины изображения.",
             "Например, если бы мы хотели создать CSS-класс <code>larger-image</code>, который присваивал бы HTML-эементам ширину равную 500 пикселей, мы бы использовали:",
@@ -1268,7 +1268,7 @@
     },
     {
       "id": "bad87fee1348bd9bedf08813",
-      "title": "Add Borders Around your Elements",
+      "title": "CSS: Add Borders Around your Elements",
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:",
@@ -1326,7 +1326,7 @@
           ]
         },
         "fr": {
-          "title": "Ajouter des bordures autour de vos éléments",
+          "title": "CSS: Ajouter des bordures autour de vos éléments",
           "description": [
             "Les bordures CSS ont des propriétés comme <code>style</code>, <code>color</code> et <code>width</code>",
             "Par exemple, si nous voulons créer une bordure de 5 pixel rouge autour d'un élément HTML, nous pouvons utiliser cette classe :",
@@ -1337,7 +1337,7 @@
           ]
         },
         "pt-br": {
-          "title": "Adicione Bordas ao Redor de seus Elementos",
+          "title": "CSS: Adicione Bordas ao Redor de seus Elementos",
           "description": [
             "As bordas em CSS possuem propriedades como <code>style</code>, <code>color</code> e <code>width</code>",
             "Por exemplo, se queremos criar uma borda com tamanho de 5 pixels de cor vermelha ao redor de um elemento HTML, podemos utilizar esta classe:",
@@ -1354,7 +1354,7 @@
           ]
         },
         "ru": {
-          "title": "Дбавьте границы вокруг ваших элементов",
+          "title": "CSS: Дбавьте границы вокруг ваших элементов",
           "description": [
             "CSS-границы имеют свойства: <code>style</code>, <code>color</code> и <code>width</code>",
             "Например, если бы мы хотели создать красную границу шириной в 5 пикселей вокруг HTML-элемента, мы могли бы использовать этот класс:",
@@ -1368,7 +1368,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08814",
-      "title": "Add Rounded Corners with a Border Radius",
+      "title": "CSS: Add Rounded Corners with a Border Radius",
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
         "You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.",
@@ -1416,7 +1416,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge abgerundete Ecken mit Border Radius hinzu",
+          "title": "CSS: Füge abgerundete Ecken mit Border Radius hinzu",
           "description": [
             "Dein Katzenfoto hat momentan spitze Ecken. Wir können diese Ecken mit dem CSS Attribut <code>border-radius</code> abrunden.",
             "Du kannst einen <code>border-radius</code> mit Pixeln deklarieren. Gib deinem Katzenfoto einen <code>border-radius</code> von <code>10px</code>.",
@@ -1424,7 +1424,7 @@
           ]
         },
         "es": {
-          "title": "Agrega esquinas redondeadas usando Border Radius",
+          "title": "CSS: Agrega esquinas redondeadas usando Border Radius",
           "description": [
             "Tu foto del gato tiene actualmente esquinas angulares. Podemos redondear esas esquinas con una propiedad CSS llamada <code>border-radius</code>.",
             "Puedes especificar <code>border-radius</code> usando pixeles. Dale a tu foto del gato un <code>border-radius</code> de <code>10px</code>.",
@@ -1432,7 +1432,7 @@
           ]
         },
         "pt-br": {
-          "title": "Insira Bordas Arredondadas com o Border Radius",
+          "title": "CSS: Insira Bordas Arredondadas com o Border Radius",
           "description": [
             "Sua foto com o gato possui cantos pontiagudos. Podemos arredondar os cantos com uma propriedade CSS chamado <code>border-radius</code>.",
             "Você pode especificar um <code>border-radius</code> com pixels. Adicione um <code>border-radius</code> de <code>10px</code> para a sua foto.",
@@ -1440,7 +1440,7 @@
           ]
         },
         "ru": {
-          "title": "Добавьте скруглённые углы с помощью радиуса границы",
+          "title": "CSS: Добавьте скруглённые углы с помощью радиуса границы",
           "description": [
             "У вашего фото кота сейчас острые углы. Мы можем скруглить углы используя CSS-свойство <code>border-radius</code>.",
             "Вы можете указать значения <code>border-radius</code> в пикселях. Присвойте вашему фото кота свойство <code>border-radius</code> со значением <code>10px</code>.",
@@ -1451,7 +1451,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08815",
-      "title": "Make Circular Images with a Border Radius",
+      "title": "CSS: Make Circular Images with a Border Radius",
       "description": [
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage.",
         "Give your cat photo a <code>border-radius</code> of <code>50%</code>."
@@ -1499,28 +1499,28 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle runde Bilder mit einem Border Radius",
+          "title": "CSS: Erstelle runde Bilder mit einem Border Radius",
           "description": [
             "Du kannst einem <code>border-radius</code> neben Pixeln auch Prozentwerte zuweisen.",
             "Gib deinem Katzenfoto einen <code>border-radius</code> von <code>50%</code>."
           ]
         },
         "es": {
-          "title": "Crea imágenes circulares usando Border Radius",
+          "title": "CSS: Crea imágenes circulares usando Border Radius",
           "description": [
             "Además de pixeles, puedes especificar un <code>border-radius</code> usando porcentajes.",
             "Dale a tu foto del gato un <code>border-radius</code> de <code>50%</code>."
           ]
         },
         "pt-br": {
-          "title": "Deixe as Imagens Circulares com o Border Radius",
+          "title": "CSS: Deixe as Imagens Circulares com o Border Radius",
           "description": [
             "Assim como pixels, você também pode usar o <code>border-radius</code> com porcentagens.",
             "Dê para a sua foto de gato um <code>border-radius</code> de <code>50%</code>."
           ]
         },
         "ru": {
-          "title": "Сделайте круглые изображения с помощью радиуса границы",
+          "title": "CSS: Сделайте круглые изображения с помощью радиуса границы",
           "description": [
             "В дополнение к пикселям, вы также может использовать проценты для указания значения свойства <code>border-radius</code>.",
             "Присвойте вашему фото кота свойство <code>border-radius</code> со значением <code>50%</code>."
@@ -1530,7 +1530,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08816",
-      "title": "Link to External Pages with Anchor Elements",
+      "title": "HTML: Link to External Pages with Anchor Elements",
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
@@ -1594,7 +1594,7 @@
           ]
         },
         "es": {
-          "title": "Enlaza páginas externas con elementos ancla",
+          "title": "HTML: Enlaza páginas externas con elementos ancla",
           "description": [
             "Los elementos <code>a</code>, también conocidos como elementos <code>ancla</code>, se utilizan para enlazar a contenido fuera de la página actual.",
             "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
@@ -1605,7 +1605,7 @@
           ]
         },
         "pt-br": {
-          "title": "Ligue Páginas Externas com o Elemento Âncora",
+          "title": "HTML: Ligue Páginas Externas com o Elemento Âncora",
           "description": [
             "Os elementos <code>a</code>, também conhecidos como elementos <code>âncora</code>, são utilizados para ligar conteúdo fora da página atual.",
             "Aqui está um diagrama de um elemento <code>a</code>. Neste caso, o elemento <code>a</code> é utilizado no meio de um elemento de parágrafo, o que significa que o link externo aparecerá no meio de uma frase.",
@@ -1616,7 +1616,7 @@
           ]
         },
         "ru": {
-          "title": "Присоедините внешние страницы с помощью якорных элементов",
+          "title": "HTML: Присоедините внешние страницы с помощью якорных элементов",
           "description": [
             "Элементы <code>a</code>, также известные как <code>якорные</code> элементы, применяют для связи с содержимым вне текущей страницы.",
             "Вот диаграмма элемента <code>a</code>. В этом случае, элемент <code>a</code> использован в середине элемента параграфа, что значит, что ссылка появится в середине предложения.",
@@ -1630,7 +1630,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08817",
-      "title": "Nest an Anchor Element within a Paragraph",
+      "title": "HTML: Nest an Anchor Element within a Paragraph",
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
@@ -1690,7 +1690,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Umschließe ein Anker Element mit einem Paragraphen",
+          "title": "HTML Umschließe ein Anker Element mit einem Paragraphen",
           "description": [
             "Hier ist nochmal ein Beispiel für ein <code>a</code> Element:",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Klick zum Vergrößern\" alt=\"Eine Darstellung wie Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
@@ -1701,7 +1701,7 @@
           ]
         },
         "es": {
-          "title": "Anida un elemento de ancla dentro de un párrafo",
+          "title": "HTML: Anida un elemento de ancla dentro de un párrafo",
           "description": [
             "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
@@ -1712,7 +1712,7 @@
           ]
         },
         "pt-br": {
-          "title": "Aninhe o Elemento Âncora no Interior de um Parágrafo",
+          "title": "HTML: Aninhe o Elemento Âncora no Interior de um Parágrafo",
           "description": [
             "Outra vez, aqui está um diagrama de um elemento <code>a</code> para você usar como referência.",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
@@ -1723,7 +1723,7 @@
           ]
         },
         "ru": {
-          "title": "Создайте вложенный якорный элемент внутри параграфа",
+          "title": "HTML: Создайте вложенный якорный элемент внутри параграфа",
           "description": [
             "Вот диаграмма элемента <code>a</code>:",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
@@ -1737,7 +1737,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08817",
-      "title": "Make Dead Links using the Hash Symbol",
+      "title": "HTML: Make Dead Links using the Hash Symbol",
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
@@ -1787,7 +1787,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle tote Links mit dem Hash Symbol",
+          "title": "HTML: Erstelle tote Links mit dem Hash Symbol",
           "description": [
             "Manchmal wirst du <code>a</code> Elemente zu deiner Website hinzufügen möchten, ohne dass du das Ziel des Links kennst.",
             "Das ist auch nützlich, wenn du die Funktion eines Links mit <code>jQuery</code> verändern willst. Das werden wir später noch behandeln.",
@@ -1795,7 +1795,7 @@
           ]
         },
         "es": {
-          "title": "Haz vínculos muertos utilizando el símbolo de numero",
+          "title": "HTML: Haz vínculos muertos utilizando el símbolo de numero",
           "description": [
             "A veces quieres agregar elementos <code>a</code> a tu sitio web antes de saber qué enlazarán.",
             "Esto también es útil cuando estás cambiando el comportamiento de un enlace usando <code>jQuery</code>, lo cual aprenderemos más adelante.",
@@ -1803,7 +1803,7 @@
           ]
         },
         "pt-br": {
-          "title": "Crie Links Inativos com o Símbolo Cerquilha",
+          "title": "HTML: Crie Links Inativos com o Símbolo Cerquilha",
           "description": [
             "As vezes você pode querer adicionar elementos <code>a</code> em sua página web antes de saber o link que as ligará.",
             "Isso também é útil quando você desejar mudar o comportamento de um link utilizando <code>jQuery</code>, o que vamos aprender mais adiante.",
@@ -1811,7 +1811,7 @@
           ]
         },
         "ru": {
-          "title": "Создайте мёртвые ссылки используя хэш-символ",
+          "title": "HTML: Создайте мёртвые ссылки используя хэш-символ",
           "description": [
             "Иногда вам нужно добавить элементы <code>a</code> к вашему сайту до того, как вы знаете куда будут вести ссылки.",
             "Также это может оказаться полезно, когда вы меняете поведение ссылки используя <code>jQuery</code>, что мы изучим позже.",
@@ -1822,7 +1822,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08820",
-      "title": "Turn an Image into a Link",
+      "title": "HTML: Turn an Image into a Link",
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
         "Nest your image within an <code>a</code> element. Here's an example:",
@@ -1877,7 +1877,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Verlinke ein Bild",
+          "title": "HTML: Verlinke ein Bild",
           "description": [
             "Du kannst jedes Element in einen Link verwandeln, indem du es mit einem <code>a</code> Element umschließt.",
             "Umschließe dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel:",
@@ -1887,7 +1887,7 @@
           ]
         },
         "es": {
-          "title": "Convierte una imagen en un vínculo",
+          "title": "HTML: Convierte una imagen en un vínculo",
           "description": [
             "Puedes convertir elementos en enlaces al anidarlos dentro de un elemento <code>a</code>.",
             "Anida tu imagen dentro de un elemento <code>a</code>. He aquí un ejemplo: ",
@@ -1897,7 +1897,7 @@
           ]
         },
         "pt-br": {
-          "title": "Transforme uma Imagem em um Link",
+          "title": "HTML: Transforme uma Imagem em um Link",
           "description": [
             "Você pode transformar elementos em links ao aninhá-los com um elemento <code>a</code>.",
             "Aninhe sua imagem dentro de um elemento <code>a</code>. Temos aqui um exemplo.",
@@ -1906,7 +1906,7 @@
           ]
         },
         "ru": {
-          "title": "Превратите изображение в ссылку",
+          "title": "HTML: Превратите изображение в ссылку",
           "description": [
             "Вы можете превратить элементы в ссылки путём их вложения внутрь элементов <code>a</code>.",
             "Вложите ваше изображение в элемент <code>a</code>. Вот пример:",
@@ -1919,7 +1919,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08827",
-      "title": "Create a Bulleted Unordered List",
+      "title": "HTML: Create a Bulleted Unordered List",
       "description": [
         "HTML has a special element for creating <code>unordered lists</code>, or bullet point-style lists.",
         "Unordered lists start with a <code>&#60;ul&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
@@ -1975,7 +1975,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle eine ungeordnete Liste",
+          "title": "HTML: Erstelle eine ungeordnete Liste",
           "description": [
             "HTML hat ein spezielles Element zum Erstellen von <code>unordered lists</code> (ungeordneten Listen).",
             "Ungeordnete Listen starten mit einem <code>&#60;ul&#62;</code> Element. Dann beinhalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
@@ -1986,7 +1986,7 @@
           ]
         },
         "es": {
-          "title": "Crea una lista no ordenada con viñetas",
+          "title": "HTML: Crea una lista no ordenada con viñetas",
           "description": [
             "HTML tiene un elemento especial para la creación de <code>listas no ordenadas</code>, o listas con estilo viñeta.",
             "Las listas no ordenadas comienzan con un elemento <code>&#60;ul&#62;</code>. A continuación contienen una cantidad de elementos <code>&#60;li&#62;.</code>",
@@ -1997,7 +1997,7 @@
           ]
         },
         "pt-br": {
-          "title": "Crie uma Lista Não Ordenada com Marcadores",
+          "title": "HTML: Crie uma Lista Não Ordenada com Marcadores",
           "description": [
             "O HTML possui um elemento especial para a criação de <code>listas não ordenadas</code>, ou listas com marcadores.",
             "As listas não ordenadas iniciam com um elemento <code>&#60;ul&#62;</code>. Logo após, possuem uma série de elementos <code>&#60;li&#62;.</code>",
@@ -2011,7 +2011,7 @@
           ]
         },
         "ru": {
-          "title": "Создайте ненумерованный неупорядоченный список",
+          "title": "HTML: Создайте ненумерованный неупорядоченный список",
           "description": [
             "В HTML есть специальный элемент для создания <code>неупорядоченного списка</code>, или списка с точками в виде меток элементов.",
             "Неупорядоченные списки начинаются с элемента <code>&#60;ul&#62;</code>. Затем они содержат некоторе количество элементов <code>&#60;li&#62;</code>.",
@@ -2025,7 +2025,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08828",
-      "title": "Create an Ordered List",
+      "title": "HTML: Create an Ordered List",
       "description": [
         "HTML has a special element for creating <code>ordered lists</code>, or numbered-style lists.",
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
@@ -2089,7 +2089,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle eine geordnete Liste",
+          "title": "HTML: Erstelle eine geordnete Liste",
           "description": [
             "HTML beinhaltet ein spezielles Element für <code>ordered lists</code> (geordnete Listen).",
             "Geordnete Listen starten mit einem <code>&#60;ol&#62;</code> Element. Dann enthalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
@@ -2100,7 +2100,7 @@
           ]
         },
         "es": {
-          "title": "Crear una lista ordenada",
+          "title": "HTML: Crear una lista ordenada",
           "description": [
             "HTML tiene un elemento especial para la creación de <code>listas ordenadas</code>, o listas de estilo numerado.",
             "Las listas ordenadas comienzan con un elemento <code>&#60;ol&#62;</code>. Luego contienen un número de elementos <code>&#60;li&#62;.</code>",
@@ -2111,7 +2111,7 @@
           ]
         },
         "pt-br": {
-          "title": "Crie uma Lista Ordenada",
+          "title": "HTML: Crie uma Lista Ordenada",
           "description": [
             "O HTML possui um elemento especial para a criação de <code>listas ordenadas</code>, ou listas numeradas.",
             "As listas ordenadas iniciam com um elemento <code>&#60;ol&#62;</code>. Logo após, contém uma série de elementos <code>&#60;li&#62;.</code>",
@@ -2125,7 +2125,7 @@
           ]
         },
         "ru": {
-          "title": "Создайте упорядоченный список",
+          "title": "HTML: Создайте упорядоченный список",
           "description": [
             "В HTML есть специальный элемент для создания <code>упорядоченных списков</code>, или списков с номерами в качестве меток элементов.",
             "Упорядоченные списки начинаются с элемента <code>&#60;ol&#62;</code>. Далее они содержат некоторое количество элементов <code>&#60;li&#62;</code>.",
@@ -2139,7 +2139,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08829",
-      "title": "Create a Text Field",
+      "title": "HTML: Create a Text Field",
       "description": [
         "Now let's create a web form.",
         "Text inputs are a convenient way to get input from your user.",
@@ -2202,7 +2202,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle ein Textfeld",
+          "title": "HTML: Erstelle ein Textfeld",
           "description": [
             "Nun erstellen wir ein Web Formular.",
             "Eingabefelder sind eine bewährte Möglichkeit um Daten von Usern zu erhalten.",
@@ -2213,7 +2213,7 @@
           ]
         },
         "es": {
-          "title": "Crea un campo de texto",
+          "title": "HTML: Crea un campo de texto",
           "description": [
             "Ahora vamos a crear un formulario web.",
             "Los campos de texto son una manera conveniente de obtener retroalimentación de tu usuario.",
@@ -2224,7 +2224,7 @@
           ]
         },
         "pt-br": {
-          "title": "Crie um Campo de Texto",
+          "title": "HTML: Crie um Campo de Texto",
           "description": [
             "Agora vamos criar um formulário web.",
             "Os campos de texto são uma forma conveniente de obter uma resposta do usuário.",
@@ -2235,7 +2235,7 @@
           ]
         },
         "ru": {
-          "title": "Создайте текстовое поле",
+          "title": "HTML: Создайте текстовое поле",
           "description": [
             "Теперь давайте создадим web-форму.",
             "Поля текстового ввода - удобный способ получения данных от пользователя.",
@@ -2249,7 +2249,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08830",
-      "title": "Add Placeholder Text to a Text Field",
+      "title": "HTML: Add Placeholder Text to a Text Field",
       "description": [
         "Your placeholder text is what appears in your text <code>input</code> before your user has input anything.",
         "You can create placeholder text like so:",
@@ -2313,7 +2313,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge Platzhalter zu einem Textfeld hinzu",
+          "title": "HTML: Füge Platzhalter zu einem Textfeld hinzu",
           "description": [
             "Platzhaltertexte erscheinen in deinen <code>input</code> Feldern, bevor der Nutzer etwas eingibt.",
             "Du kannst Platzhalter auf folgende Weise erstellen:",
@@ -2322,7 +2322,7 @@
           ]
         },
         "es": {
-          "title": "Agrega un texto de relleno a un campo de texto",
+          "title": "HTML: Agrega un texto de relleno a un campo de texto",
           "description": [
             "El texto de relleno es el que aparece en un campo de texto antes de que un usuario haya ingresado datos.",
             "Puedes crear un texto de relleno de esta manera:",
@@ -2331,7 +2331,7 @@
           ]
         },
         "pt-br": {
-          "title": "Adicione Texto Indicativo a um Campo de Texto",
+          "title": "HTML: Adicione Texto Indicativo a um Campo de Texto",
           "description": [
             "O texto indicativo é o que aparece em um campo de texto antes que um usuário tenha escrito algo.",
             "Você pode criar um texto indicativo assim:",
@@ -2340,7 +2340,7 @@
           ]
         },
         "ru": {
-          "title": "Добавьте замещающий текст к текстовому полю",
+          "title": "HTML: Добавьте замещающий текст к текстовому полю",
           "description": [
             "Ваш замещающий текст - это то, что отображается в виде текста внутри <code>input</code> пока пользователь не ввёл туда что-либо.",
             "Вы можете создать замещающий текст следующим образом:",
@@ -2352,7 +2352,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08830",
-      "title": "Create a Form Element",
+      "title": "HTML: Create a Form Element",
       "description": [
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
         "For example:",
@@ -2416,7 +2416,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle ein Formular",
+          "title": "HTML: Erstelle ein Formular",
           "description": [
             "Du kannst Web Formulare bauen, die Daten zu einem Server übertragen – und das nur mit HTML. Das wird möglich, indem du eine Aktion für dein <code>form</code> Element bestimmst.",
             "Zum Beispiel:",
@@ -2425,7 +2425,7 @@
           ]
         },
         "es": {
-          "title": "Crea un elemento de formulario",
+          "title": "HTML: Crea un elemento de formulario",
           "description": [
             "Puedes construir formularios web que realmente envíen datos a un servidor usando nada más que HTML puro. Puedes hacerlo especificando una acción en tu elemento <code>form</code>.",
             "Por ejemplo:",
@@ -2434,7 +2434,7 @@
           ]
         },
         "pt-br": {
-          "title": "Crie um Elemento de Formulário",
+          "title": "HTML: Crie um Elemento de Formulário",
           "description": [
             "É possível construir formulários web que realmente enviem dados a um servidor utilizando nada além de HTML puro. Você pode fazer isso especificando uma ação em seu elemento <code>form</code>.",
             "Por exemplo:",
@@ -2443,7 +2443,7 @@
           ]
         },
         "ru": {
-          "title": "Создайте элемент типа форма",
+          "title": "HTML: Создайте элемент типа форма",
           "description": [
             "Вы можете строить web-формы, которые отправляют данные серверу, не ипользуя ничего кроме HTML. Вы можете достичь этого указанием действия в атрибутах элемента <code>form</code>.",
             "Например:",
@@ -2455,7 +2455,7 @@
     },
     {
       "id": "bad87fee1348bd9aedd08830",
-      "title": "Add a Submit Button to a Form",
+      "title": "HTML: Add a Submit Button to a Form",
       "description": [
         "Let's add a <code>submit</code> button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button:",
@@ -2522,7 +2522,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge eine Button zum Senden hinzu",
+          "title": "HTML: Füge eine Button zum Senden hinzu",
           "description": [
             "Lass uns nun einen <code>submit</code> Button hinzufügen. Durch einen Klick auf diesen Button werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
             "Hier ist ein Beispiel einen solchen Button:",
@@ -2531,7 +2531,7 @@
           ]
         },
         "es": {
-          "title": "Agrega un botón Enviar a un formulario",
+          "title": "HTML: Agrega un botón Enviar a un formulario",
           "description": [
             "Añadamos un elemento <code>submit</code> a tu formulario. Al hacer clic en este botón enviará los datos del formulario a la URL especificada en el atributo <code>action</code> de tu formulario. ",
             "He aquí un ejemplo de un botón de envío:",
@@ -2540,7 +2540,7 @@
           ]
         },
         "pt-br": {
-          "title": "Inclua um Botão de Enviar a um Formulário",
+          "title": "HTML: Inclua um Botão de Enviar a um Formulário",
           "description": [
             "Vamos inserir um elemento <code>submit</code> ao seu formulário. Ao clicar neste botão, os dados inseridos serão enviados para a URL especificada no atributo <code>action</code> do formulário.",
             "Aqui está um exemplo de um botão de enviar:",
@@ -2549,7 +2549,7 @@
           ]
         },
         "ru": {
-          "title": "Добавьте кнопку отправки к форме",
+          "title": "HTML: Добавьте кнопку отправки к форме",
           "description": [
             "Давайте добавим кнопку отправки <code>submit</code> к вашей форме. Нажатие на эту кнопку отправит данные из вашей формы по адресу, указанному в атрибуте <code>action</code> вашей формы.",
             "Вот пример кнопки отправки:",
@@ -2561,7 +2561,7 @@
     },
     {
       "id": "bad87fee1348bd9aedc08830",
-      "title": "Use HTML5 to Require a Field",
+      "title": "HTML: Use HTML5 to Require a Field",
       "description": [
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
         "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, you would use: <code>&#60;input type=\"text\" required&#62;</code>",
@@ -2627,7 +2627,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Nutze HTML5 um ein Pflichtfeld zu erstellen",
+          "title": "HTML: Nutze HTML5 um ein Pflichtfeld zu erstellen",
           "description": [
             "Du kannst bestimmte Felder eines Formulars zu Pflichtfeldern erklären. Damit ist es deinen Usern nicht mehr möglich, das Formular abzuschicken, ohne die Pflichtfelder auszufüllen.",
             "Um zum Beispiel ein Textfeld zum Pflichtfeld zu erklären, kannst du einfach ein <code>required</code> innerhalb deines <code>input</code> Elements hinzufügen: <code>&#60;input type=\"text\" required&#62;</code>",
@@ -2637,7 +2637,7 @@
           ]
         },
         "es": {
-          "title": "Utiliza HTML5 para especificar campos obligatorios",
+          "title": "HTML: Utiliza HTML5 para especificar campos obligatorios",
           "description": [
             "Puedes especificar un campo obligatorio en un formulario para que tu usuario no pueda enviar el formulario hasta que lo haya llenado.",
             "Por ejemplo, si quieres requerir obligatoriamente un campo de texto, puedes agregar la palabra <code>required</code> dentro de tu elemento <code>input</code>, usarías: <code>&#60;input type=\"text\" required&#62;</code> ",
@@ -2647,7 +2647,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use HTML5 para Especificar Campos Obrigatórios",
+          "title": "HTML: Use HTML5 para Especificar Campos Obrigatórios",
           "description": [
             "Você pode especificar um campo como obrigatório para que seu usuário não consiga enviar o formulário até que o tenha completado.",
             "Por exemplo, se você quiser tornar obrigatório um campo de texto, basta adicionar a palavra <code>required</code> dentro de seu elemento <code>input</code> assim: <code>&#60;input type=\"text\" required&#62;</code>",
@@ -2656,7 +2656,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте HTML5, чтобы сделать заполнение поля обязательным",
+          "title": "HTML: Используйте HTML5, чтобы сделать заполнение поля обязательным",
           "description": [
             "Вы можете требовать заполнения определённых полей формы, таким образом пользователь не сможет отправить данные формы до их заполнения.",
             "Например, если бы вы хотели сделать заполнение текстового поля обязательным, вы могли бы добавить слово <code>required</code> внутрь вашего элемента <code>input</code>: <code>&#60;input type=\"text\" required&#62;</code>",
@@ -2669,7 +2669,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08834",
-      "title": "Create a Set of Radio Buttons",
+      "title": "HTML: Create a Set of Radio Buttons",
       "description": [
         "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer.",
         "Radio buttons are a type of <code>input</code>",
@@ -2742,7 +2742,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle ein Set von Radiobuttons",
+          "title": "HTML: Erstelle ein Set von Radiobuttons",
           "description": [
             "Du kannst Optionsfelder, <code>radio buttons</code>, für Fragen verwenden, auf die der Nutzer nur eine Antwort geben soll.",
             "Radiobuttons sind lediglich ein weiterer Typ von <code>input</code> Elementen.",
@@ -2754,7 +2754,7 @@
           ]
         },
         "es": {
-          "title": "Crea un Conjunto de botones de radio",
+          "title": "HTML: Crea un Conjunto de botones de radio",
           "description": [
             "Puedes usar <code>botones de radio</code> para las preguntas en las que deseas que el usuario sólo pueda dar una respuesta.",
             "Los botones de radio son un tipo del elemento <code>input</code>",
@@ -2766,7 +2766,7 @@
           ]
         },
         "pt-br": {
-          "title": "Crie um Conjunto de Botões de Seleção",
+          "title": "HTML: Crie um Conjunto de Botões de Seleção",
           "description": [
             "É possível utilizar botões de seleção (botões de rádio) para perguntas nas quais o usuário deverá selecionar apenas uma resposta, dentre várias possíveis.",
             "Os botões de seleção são um tipo de elemento <code>input</code>",
@@ -2778,7 +2778,7 @@
           ]
         },
         "ru": {
-          "title": "Создайте набор радио-кнопок",
+          "title": "HTML: Создайте набор радио-кнопок",
           "description": [
             "Вы можете использовать <code>радио кнопки</code> для вопросов, которые требуют выбора одного варианта ответа из множества.",
             "Радио-кнопки относятся к типу <code>input</code>",
@@ -2793,7 +2793,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08835",
-      "title": "Create a Set of Checkboxes",
+      "title": "HTML: Create a Set of Checkboxes",
       "description": [
         "Forms commonly use <code>checkboxes</code> for questions that may have more than one answer.",
         "Checkboxes are a type of <code>input</code>",
@@ -2866,7 +2866,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle ein paar Checkboxen",
+          "title": "HTML: Erstelle ein paar Checkboxen",
           "description": [
             "Formulare nutzen Kontrollkästchen, <code>checkboxes</code> meistens für Fragen, die mehrerer Antworten bedürfen.",
             "Checkboxen sind eine Art von <code>input</code> Elementen",
@@ -2878,7 +2878,7 @@
           ]
         },
         "es": {
-          "title": "Crea un conjunto de casillas de verificación",
+          "title": "HTML: Crea un conjunto de casillas de verificación",
           "description": [
             "Los formularios suelen usar <code>casillas de verificación</code> para preguntas que pueden tener más de una respuesta.",
             "Las casillas de verificación son un tipo del elemento <code>input</code>",
@@ -2890,7 +2890,7 @@
           ]
         },
         "pt-br": {
-          "title": "Crie um Conjunto de Caixas de Seleção",
+          "title": "HTML: Crie um Conjunto de Caixas de Seleção",
           "description": [
             "Os formulários costumam utilizar caixas de seleção para perguntas que podem ter mais de uma resposta.",
             "As caixas de seleção são um tipo de elemento <code>input</code>",
@@ -2902,7 +2902,7 @@
           ]
         },
         "ru": {
-          "title": "Создайте набор флаговых кнопок",
+          "title": "HTML: Создайте набор флаговых кнопок",
           "description": [
             "Обычно формы используют <code>флаги (флаговые кнопки)</code> для вопросов, к которым может относиться несколько вариантов ответов.",
             "Флаги относятся к типу <code>input</code>",
@@ -2917,7 +2917,7 @@
     },
     {
       "id": "bad87fee1348bd9aedd08835",
-      "title": "Check Radio Buttons and Checkboxes by Default",
+      "title": "HTML: Check Radio Buttons and Checkboxes by Default",
       "description": [
         "You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
         "To do this, just add the word \"checked\" to the inside of an input element. For example:",
@@ -2988,7 +2988,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Standardmäßig ausgewählte Radiobuttons und Checkboxen",
+          "title": "HTML: Standardmäßig ausgewählte Radiobuttons und Checkboxen",
           "description": [
             "Du kannst Checkboxen und Radiobuttons standardmäßig markiert machen, indem du das <code>checked</code> Attribut verwendest.",
             "Das kannst du erreichen, indem du das Word \"checked\" innerhalb des Inputelements eingefügst. Zum Beispiel so:",
@@ -2997,7 +2997,7 @@
           ]
         },
         "es": {
-          "title": "Marca botones de radio y casillas de verificación por omisión",
+          "title": "HTML: Marca botones de radio y casillas de verificación por omisión",
           "description": [
             "Puedes marcar por omisión una casilla de verificación o un botón de radio usando el atributo <code>checked</code>.",
             "Para ello, sólo tienes que añadir la palabra \"checked\" en el interior de un elemento <code>input</code>. Por ejemplo:",
@@ -3006,7 +3006,7 @@
           ]
         },
         "pt-br": {
-          "title": "Deixe Botões e Caixas de Seleção Ativados por Padrão",
+          "title": "HTML: Deixe Botões e Caixas de Seleção Ativados por Padrão",
           "description": [
             "É possível deixar um botão ou caixa de seleção ativado por padrão ao utilizar o atributo <code>checked</code>.",
             "Para isso, basta você acrescentar a palavra \"checked\" no interior de um elemento de entrada. Por exemplo:",
@@ -3015,7 +3015,7 @@
           ]
         },
         "ru": {
-          "title": "Отметьте радио-кнопки и флаговые кнопки по-умолчанию",
+          "title": "HTML: Отметьте радио-кнопки и флаговые кнопки по-умолчанию",
           "description": [
             "Вы можете установить флаг или радио-кнопку отмеченной по-умолчанию с помощью атрибута <code>checked</code>.",
             "Для этого добавьте слово \"checked\" в качестве атрибута элемента input. Например:",
@@ -3027,7 +3027,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08835",
-      "title": "Nest Many Elements within a Single Div Element",
+      "title": "HTML: Nest Many Elements within a Single Div Element",
       "description": [
         "The <code>div</code> element, also known as a division element, is a general purpose container for other elements.",
         "The <code>div</code> element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.",
@@ -3102,7 +3102,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Umschließe viele Elemente mit einem einzigen Div Element",
+          "title": "HTML: Umschließe viele Elemente mit einem einzigen Div Element",
           "description": [
             "Das <code>div</code> Element oder \"Division\" ist ein allgemeiner Container für andere Elemente.",
             "Das <code>div</code> Element ist wahrscheinlich das am häufigsten verwendete HTML Element. Es ist nützlich um die CSS Stile der eigenen Klasse an die enthaltenen Elemente zu vererben.",
@@ -3112,7 +3112,7 @@
           ]
         },
         "es": {
-          "title": "Anida muchos elementos dentro de una sólo elemento Div",
+          "title": "HTML: Anida muchos elementos dentro de una sólo elemento Div",
           "description": [
             "El elemento <code>div</code>, también conocido como un elemento de división, es un contenedor de propósito general para otros elementos.",
             "El elemento <code>div</code> es probablemente el elemento HTML más utilizado. Es útil para pasar el CSS de sus propias declaraciones de clase a todos los elementos que contiene. ",
@@ -3122,7 +3122,7 @@
           ]
         },
         "pt-br": {
-          "title": "Aninhe Muitos Elementos Dentro de um só Elemento Div",
+          "title": "HTML: Aninhe Muitos Elementos Dentro de um só Elemento Div",
           "description": [
             "O elemento <code>div</code>, também conhecido como elemento de divisão, é um contentor de propósito geral para outros elementos.",
             "O elemento <code>div</code> é provavelmente o elemento HTML mais utilizado. Ele é útil para adicionar o CSS de suas próprias declarações de classe para todos os elementos que o contém.",
@@ -3132,7 +3132,7 @@
           ]
         },
         "ru": {
-          "title": "Вложите множество элементов внутрь одного элемента div",
+          "title": "HTML: Вложите множество элементов внутрь одного элемента div",
           "description": [
             "Элемент <code>div</code>, известный как элемент раздела, является контейнером общего назначения для других элементов.",
             "Элемент <code>div</code> возможно наиболее широко используемый HTML элемент из всех возможных. Он полезен для передачи собственных CSS-свойств вниз по дереву элементов, которые он содержит.",
@@ -3145,7 +3145,7 @@
     },
     {
       "id": "bad87fed1348bd9aede07836",
-      "title": "Give a Background Color to a Div Element",
+      "title": "HTML: Give a Background Color to a Div Element",
       "description": [
         "You can set an element's background color with the <code>background-color</code> property.",
         "For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:",
@@ -3219,7 +3219,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Gib einem Div Element eine Hintergrundfarbe",
+          "title": "HTML: Gib einem Div Element eine Hintergrundfarbe",
           "description": [
             "Du kannst die Hintergrundfarbe von einem Element mit dem <code>background-color</code> Attribut setzen",
             "Wenn du zum Beispiel die Hintergrundfarbe von einem Element <code>green</code> machen willst, schreibe dies in dein <code>style</code> Element:",
@@ -3228,7 +3228,7 @@
           ]
         },
         "es": {
-          "title": "Da un color de fondo a un elemento Div",
+          "title": "HTML: Da un color de fondo a un elemento Div",
           "description": [
             "Puedes fijar el color de fondo de un elemento con la propiedad <code>background-color</code>.",
             "Por ejemplo, si quieres que el color de fondo de un elemento sea verde (<code>green</code>), dentro de tu elemento <code>style</code> pondrías:",
@@ -3237,7 +3237,7 @@
           ]
         },
         "pt-br": {
-          "title": "Dê uma Cor de Fundo a um Elemento Div",
+          "title": "HTML: Dê uma Cor de Fundo a um Elemento Div",
           "description": [
             "Você pode acrescentar uma cor de fundo de um elemento com a propriedade <code>background-color</code>.",
             "Por exemplo, se você quiser que a cor de fundo de um elemento seja verde (<code>green</code>), dentro de seu elemento <code>style</code> seria assim:",
@@ -3248,7 +3248,7 @@
           ]
         },
         "ru": {
-          "title": "Присвойте цвет фона элементу div",
+          "title": "HTML: Присвойте цвет фона элементу div",
           "description": [
             "Вы можете установить цвет фона элемента с помощью свойства <code>background-color</code>.",
             "Например, если бы вы хотели установить цвет фона элемента <code>зелёным</code>, вы бы использовали следующий стиль внутри вашего элемента <code>style</code>:",
@@ -3260,7 +3260,7 @@
     },
     {
       "id": "bad87eee1348bd9aede07836",
-      "title": "Set the ID of an Element",
+      "title": "HTML: Set the ID of an Element",
       "description": [
         "In addition to classes, each HTML element can also have an <code>id</code> attribute.",
         "There are several benefits to using <code>id</code> attributes, and you'll learn more about them once you start using jQuery.",
@@ -3338,7 +3338,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Setze die ID von einem Element",
+          "title": "HTML: Setze die ID von einem Element",
           "description": [
             "Zusätzlich zu Klassen, kann jedes HTML Element auch ein <code>id</code> Attribut haben.",
             "Es hat mehrere Vorteile <code>id</code> Attribute zu verwenden und du wirst mehr über diese erfahren wenn du anfängst mit jQuery zu arbeiten.",
@@ -3349,7 +3349,7 @@
           ]
         },
         "es": {
-          "title": "Establecer el ID de un elemento",
+          "title": "HTML: Establecer el ID de un elemento",
           "description": [
             "Además de las clases, cada elemento HTML también puede tener un atributo de identificación <code>id</code>.",
             "Hay varias ventajas al usar atributos <code>id</code>, y aprenderás más sobre estas cuando comiences a usar jQuery.",
@@ -3360,7 +3360,7 @@
           ]
         },
         "pt-br": {
-          "title": "Estabeleça a ID de um Elemento",
+          "title": "HTML: Estabeleça a ID de um Elemento",
           "description": [
             "Além das classes, cada elemento HTML também pode ter um atributo de identificação chamado <code>id</code>.",
             "Existem várias vantagens ao utilizar atributos <code>id</code>, e você aprenderá mais sobre elas quando começar a utilizar jQuery.",
@@ -3371,7 +3371,7 @@
           ]
         },
         "ru": {
-          "title": "Установите id элемента",
+          "title": "HTML: Установите id элемента",
           "description": [
             "В дополнение к классам, каждый HTML-элемент может также иметь атрибут <code>id</code>.",
             "Есть некоторые преимущества использования атрибутов <code>id</code>, вы узнаете о них больше, когда начнёте использовать jQuery.",
@@ -3385,7 +3385,7 @@
     },
     {
       "id": "bad87dee1348bd9aede07836",
-      "title": "Use an ID Attribute to Style an Element",
+      "title": "CSS: Use an ID Attribute to Style an Element",
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
         "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element:",
@@ -3466,7 +3466,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Benutze ein ID Attribute um ein Element zu stylen",
+          "title": "CSS: Benutze ein ID Attribute um ein Element zu stylen",
           "description": [
             "Eine coole Eigenschaft von <code>id</code> Attributen ist, dass du sie, genauso wie Klassen, mit CSS stylen kannst.",
             "Hier ist ein Beispiel wie du einem Element mit dem <code>id</code> Attribut <code>cat-photo-element</code> eine grüne Hintergrundfarbe geben kannst. In deinem <code>style</code> Element:",
@@ -3476,7 +3476,7 @@
           ]
         },
         "es": {
-          "title": "Usa un atributo ID para dar estilo a un elemento",
+          "title": "CSS: Usa un atributo ID para dar estilo a un elemento",
           "description": [
             "Una cosa buena sobre los atributos <code>id</code> es que, al igual que con clases, puedes darles estilo usando CSS.",
             "He aquí un ejemplo de cómo puedes tomar tu elemento con atributo <code>id</code> de <code>cat-photo-element</code> y ponerle el color de fondo verde. En tu elemento <code>style</code>: ",
@@ -3486,7 +3486,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use um Atributo ID para Estilizar um Elemento",
+          "title": "CSS: Use um Atributo ID para Estilizar um Elemento",
           "description": [
             "Algo interessante sobre os atributos <code>id</code> é que, da mesma forma que com as classes, é possível dar estilos a eles usando CSS.",
             "Aqui está um exemplo de como você pode usar seu elemento com atributo <code>id</code> em <code>cat-photo-element</code> e dar a ele a cor de fundo verde.",
@@ -3498,7 +3498,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте атрибут id для стилизации элемента",
+          "title": "CSS: Используйте атрибут id для стилизации элемента",
           "description": [
             "Одной из замечательных вещей в отношении атрибута <code>id</code> является то, что, как и с классами, вы можете стилизовать их с помощью CSS.",
             "Вот пример того как вы можете присвоить вашему элементу со значением атрибута <code>id</code> равным <code>cat-photo-element</code> зелёный цвет фона. В вашем элементе <code>style</code>:",
@@ -3511,7 +3511,7 @@
     },
     {
       "id": "bad88fee1348bd9aedf08825",
-      "title": "Adjusting the Padding of an Element",
+      "title": "CSS: Adjusting the Padding of an Element",
       "description": [
         "Now let's put our Cat Photo App away for a little while and learn more about styling HTML.",
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
@@ -3564,7 +3564,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Justiere den Innenabstand eines Elements",
+          "title": "CSS: Justiere den Innenabstand eines Elements",
           "description": [
             "Lass uns jetzt mal unsere Katzenfoto App kurz beiseite legen um mehr über HTML Styling zu lernen",
             "Du hast vielleicht schon bemerkt, dass alle HTML Elemente im Prinzip kleine Rechtecke sind.",
@@ -3575,7 +3575,7 @@
           ]
         },
         "es": {
-          "title": "Ajusta el relleno de un elemento",
+          "title": "CSS: Ajusta el relleno de un elemento",
           "description": [
             "Ahora vamos a dejar de lado nuestra aplicación de fotos de gatos por un tiempo, y aprenderemos más sobre dar estilo a HTML",
             "Ya habrás notado esto, pero todos los elementos HTML son esencialmente pequeños rectángulos.",
@@ -3587,7 +3587,7 @@
           ]
         },
         "pt-br": {
-          "title": "Ajuste o Preenchimento de um Elemento",
+          "title": "CSS: Ajuste o Preenchimento de um Elemento",
           "description": [
             "Agora vamos deixar nosso aplicativo de fotos de gatos um pouco de lado, e aprender mais sobre dar estilos em HTML.",
             "Você provavelmente já deve ter notado, mas todos os elementos HTML são, essencialmente, pequenos retângulos.",
@@ -3599,7 +3599,7 @@
           ]
         },
         "ru": {
-          "title": "Настройка отступа содержимого для элемента",
+          "title": "CSS: Настройка отступа содержимого для элемента",
           "description": [
             "Теперь давайте отложим наше фото кота на некоторое время и изучим стилизацию HTML.",
             "Вы могли уже заметить это, но все HTML-элеметы в приницпе являются небольшими прямоугольниками.",
@@ -3614,7 +3614,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08822",
-      "title": "Adjust the Margin of an Element",
+      "title": "CSS: Adjust the Margin of an Element",
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
@@ -3666,7 +3666,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Passe den Außenabstand eines Elements an",
+          "title": "CSS: Passe den Außenabstand eines Elements an",
           "description": [
             "<code>margin</code> kontrolliert den Abstand zwischen dem Rahmen - <code>border</code> - eines Elements und den benachbarten Elementen.",
             "In diesem Beispiel sehen wir die grüne und die rote Box die sich beide innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>margin</code> aufweist als die grüne Box, wodurch sie kleiner wirkt.",
@@ -3675,7 +3675,7 @@
           ]
         },
         "es": {
-          "title": "Ajusta el margen de un elemento",
+          "title": "CSS: Ajusta el margen de un elemento",
           "description": [
             "El margen (<code>margin</code>) de un elemento controla la cantidad de espacio entre el borde (<code>border</code>) y los elementos alrededor.",
             "Aquí, podemos ver que la caja verde y la caja roja se anidan dentro de la caja amarilla. Ten en cuenta que la caja roja tiene más margen (<code>margin</code>) que la caja verde, haciendo que parezca más pequeña. ",
@@ -3684,7 +3684,7 @@
           ]
         },
         "pt-br": {
-          "title": "Ajuste a Margem de um Elemento",
+          "title": "CSS: Ajuste a Margem de um Elemento",
           "description": [
             "A margem (<code>margin</code>) de um elemento controla a quantidade de espaço entre a borda (<code>border</code>) e os elementos ao seu redor.",
             "Aqui, podemos ver que a caixa verde e a caixa vermelha se aninham dentro da caixa amarela. Note que a caixa vermelha possui a margem maior que a caixa verde, fazendo com que ela pareça menor.",
@@ -3693,7 +3693,7 @@
           ]
         },
         "ru": {
-          "title": "Настройка отступа элемента",
+          "title": "CSS: Настройка отступа элемента",
           "description": [
             "Значение свойства <code>margin</code> контролирует размер отступа между границей <code>border</code> элемента и его окружением.",
             "Тут мы можем видеть, что зелёный прямоугольник и красный прямоугольник вложены в жёлтый прямоугольник. Обратите внимание на то, что красный прямоугольник имеет больший отступ <code>margin</code>, чем зелёный прямоугольник, что делает его визуально меньше.",
@@ -3705,7 +3705,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08823",
-      "title": "Add a Negative Margin to an Element",
+      "title": "CSS: Add a Negative Margin to an Element",
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "If you set an element's <code>margin</code> to a negative value, the element will grow larger.",
@@ -3756,7 +3756,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge einem Element negativen Außenabstand hinzu",
+          "title": "CSS: Füge einem Element negativen Außenabstand hinzu",
           "description": [
             "<code>margin</code> kontrolliert den Abstand zwischen dem Rahmen - <code>border</code> - eines Elements und den benachbarten Elementen.",
             "Wenn du dem Außenabstand - <code>margin</code> - eines Elements einen negativen Wert zuweist, wird das Element größer.",
@@ -3765,7 +3765,7 @@
           ]
         },
         "es": {
-          "title": "Agregar un margen negativo a un elemento",
+          "title": "CSS: Agregar un margen negativo a un elemento",
           "description": [
             "El margen de un elemento controla la cantidad de espacio entre el borde del elemento y los elementos que lo rodean.",
             "Si estableces el margen de un elemento en un valor negativo, el elemento se hará más grande.",
@@ -3774,7 +3774,7 @@
           ]
         },
         "pt-br": {
-          "title": "Adicione uma Margem Negativa a um Elemento",
+          "title": "CSS: Adicione uma Margem Negativa a um Elemento",
           "description": [
             "A margem de um elemento controla a quantidade de espaço entre a borda do elemento e os elementos ao seu redor.",
             "Se você estabelece a margem de um elemento com um valor negativo, o elemento ficará maior.",
@@ -3783,7 +3783,7 @@
           ]
         },
         "ru": {
-          "title": "Добавьте отрицательный отступ к элементу",
+          "title": "CSS: Добавьте отрицательный отступ к элементу",
           "description": [
             "Значение свойства <code>margin</code> контролирует размер отступа между границей <code>border</code> элемента и его окружением.",
             "Если вы установите значение свойства <code>margin</code> элемента отрицательным, то элемент будет становиться больше.",
@@ -3795,7 +3795,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08824",
-      "title": "Add Different Padding to Each Side of an Element",
+      "title": "CSS: Add Different Padding to Each Side of an Element",
       "description": [
         "Sometimes you will want to customize an element so that it has different <code>padding</code> on each of its sides.",
         "CSS allows you to control the <code>padding</code> of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties.",
@@ -3849,7 +3849,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Gib jeder Seite eines Elements einen unterschiedlichen Innenabstand",
+          "title": "CSS: Gib jeder Seite eines Elements einen unterschiedlichen Innenabstand",
           "description": [
             "Manchmal wirst du einem Element auf jeder Seite unterschiedliche Innenabstände – also <code>padding</code> – geben wollen.",
             "CSS erlaubt dir den Innenabstand - <code>padding</code> - eines Elements auf allen Seiten einzeln mit den Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu steuern.",
@@ -3857,7 +3857,7 @@
           ]
         },
         "es": {
-          "title": "Añade relleno diferente a cada lado de un elemento",
+          "title": "CSS: Añade relleno diferente a cada lado de un elemento",
           "description": [
             "A veces querrás personalizar un elemento para que tenga diferente relleno (<code>padding</code>) en cada uno de sus lados.",
             "CSS te permite controlar el relleno (<code>padding</code>) de un elemento en los cuatro lados superior, derecho, inferior e izquierdo con las propiedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> y <code>padding-left</code>. ",
@@ -3865,7 +3865,7 @@
           ]
         },
         "pt-br": {
-          "title": "Dê Valores Diferentes de Preenchimento a Cada Lado de um Elemento",
+          "title": "CSS: Dê Valores Diferentes de Preenchimento a Cada Lado de um Elemento",
           "description": [
             "As vezes pode ser que você queira personalizar um elemento para que tenha um preenchimento (<code>padding</code>) diferente em cada um de seus lados.",
             "O CSS permite controlar o preenchimento (<code>padding</code>) de um elemento em todos os quatro lados: superior, direito, inferior e esquerdo, com as propriedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> e <code>padding-left</code>.",
@@ -3873,7 +3873,7 @@
           ]
         },
         "ru": {
-          "title": "Добавьте разный отступ содердимого с каждой стороны элемента",
+          "title": "CSS: Добавьте разный отступ содердимого с каждой стороны элемента",
           "description": [
             "Иногда вам может потребоваться изменить элемент таким образом, чтобы отступ содержимого <code>padding</code> с каждой из сторон был разным.",
             "CSS позволяет вам контролировать значение свойства <code>padding</code> элемента со всех сторон с помощью свойств: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>.",
@@ -3884,7 +3884,7 @@
     },
     {
       "id": "bad87fee1248bd9aedf08824",
-      "title": "Add Different Margins to Each Side of an Element",
+      "title": "CSS: Add Different Margins to Each Side of an Element",
       "description": [
         "Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.",
         "CSS allows you to control the <code>margin</code> of an element on all four sides with <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties.",
@@ -3938,7 +3938,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge jeder Seite eines Elements einen unterschiedlichen Außenabstand hinzu",
+          "title": "CSS: Füge jeder Seite eines Elements einen unterschiedlichen Außenabstand hinzu",
           "description": [
             "Manchmal wirst du einem Element auf jeder Seite einen unterschiedlichen Außenabstand - <code>margin</code> - geben wollen.",
             "CSS erlaubt dir ebenfalls den Außenabstand - <code>margin</code> - eines Elements auf jeder Seite einzeln mit den Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu steuern.",
@@ -3946,7 +3946,7 @@
           ]
         },
         "es": {
-          "title": "Añade márgenes diferentes a cada lado de un elemento",
+          "title": "CSS: Añade márgenes diferentes a cada lado de un elemento",
           "description": [
             "A veces querrás personalizar un elemento para que tenga un margen (<code>margin</code>) diferente en cada uno de sus lados.",
             "CSS te permite controlar el margen de un elemento en los cuatro lados superior, derecho, inferior e izquierdo con las propiedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> y <code>margin-left</code>. ",
@@ -3954,7 +3954,7 @@
           ]
         },
         "pt-br": {
-          "title": "Dê Valores Diferentes de Margem a Cada Lado de um Elemento",
+          "title": "CSS: Dê Valores Diferentes de Margem a Cada Lado de um Elemento",
           "description": [
             "Talvez você queira personalizar um elemento para que possua uma margem (<code>margin</code>) diferente em cada um de seus lados.",
             "O CSS permite controlar a margem de um elemento em todos os seus quatro lados: superior, direito, inferior e esquerdo, com as propriedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> e <code>margin-left</code>.",
@@ -3962,7 +3962,7 @@
           ]
         },
         "ru": {
-          "title": "Добавьте разный отступ для элемента",
+          "title": "CSS: Добавьте разный отступ для элемента",
           "description": [
             "Иногда вам может потребоваться изменить элемент, установив разный отступ <code>margin</code> с каждой из его сторон.",
             "CSS позволяет вам контролировать отступ <code>margin</code> элемента с каждой из его сторон с помощью свойств: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>.",
@@ -3973,7 +3973,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08826",
-      "title": "Use Clockwise Notation to Specify the Padding of an Element",
+      "title": "CSS: Use Clockwise Notation to Specify the Padding of an Element",
       "description": [
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties, you can specify them all in one line, like this:",
         "<code>padding: 10px 20px 10px 20px;</code>",
@@ -4025,7 +4025,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Nutze die Notation im Uhrzeigersinn um den Innenabstand eines Elements zu bestimmen",
+          "title": "CSS: Nutze die Notation im Uhrzeigersinn um den Innenabstand eines Elements zu bestimmen",
           "description": [
             "Anstatt die Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu verwenden, kannst du sie alle in einer Zeile schreiben:",
             "<code>padding: 10px 20px 10px 20px;</code>",
@@ -4034,7 +4034,7 @@
           ]
         },
         "es": {
-          "title": "Utiliza notación en sentido horario para especificar el relleno de un elemento",
+          "title": "CSS: Utiliza notación en sentido horario para especificar el relleno de un elemento",
           "description": [
             "En lugar de especificar las propiedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> y <code>padding-left</code> de un elemento, puedes especificar todas en una sóla línea, así: ",
             "<code>padding: 10px 20px 10px 20px;</code>",
@@ -4043,7 +4043,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use Notação em Sentido Horário para Especificar o Preenchimento de um Elemento",
+          "title": "CSS: Use Notação em Sentido Horário para Especificar o Preenchimento de um Elemento",
           "description": [
             "Ao invés de especificar as propriedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> e <code>padding-left</code> de um elemento, você pode especificar todas elas em uma só linha, assim:",
             "<code>padding: 10px 20px 10px 20px;</code>",
@@ -4052,7 +4052,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте систему ссылок по часовой стрелке для установки отступа содержмого элемента",
+          "title": "CSS: Используйте систему ссылок по часовой стрелке для установки отступа содержмого элемента",
           "description": [
             "Вместо указания свойств элемента: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>, вы можете указать их в строку, например:",
             "<code>padding: 10px 20px 10px 20px;</code>",
@@ -4064,7 +4064,7 @@
     },
     {
       "id": "bad87fee1348bd9afdf08726",
-      "title": "Use Clockwise Notation to Specify the Margin of an Element",
+      "title": "CSS: Use Clockwise Notation to Specify the Margin of an Element",
       "description": [
         "Let's try this again, but with <code>margin</code> this time.",
         "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties, you can specify them all in one line, like this:",
@@ -4117,7 +4117,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Nutze die Notation im Uhrzeigersinn um den Außenabstand eines Elements zu bestimmen",
+          "title": "CSS: Nutze die Notation im Uhrzeigersinn um den Außenabstand eines Elements zu bestimmen",
           "description": [
             "Versuchen wir das noch einmal, aber diesmal mit dem Außenabstand – also <code>margin</code>.",
             "Anstatt die Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu verwenden, kannst du alle in eine Zeile schreiben:",
@@ -4127,7 +4127,7 @@
           ]
         },
         "es": {
-          "title": "Utiliza notación en sentido horario para especificar el margen de un elemento",
+          "title": "CSS: Utiliza notación en sentido horario para especificar el margen de un elemento",
           "description": [
             "Vamos a intentar esto de nuevo, pero esta vez con el margen (<code>margin</code>).",
             "En lugar de especificar las propiedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, y <code>margin-left</code> de un elemento, puedes especificarlas en una sóla línea así: ",
@@ -4137,7 +4137,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use Notação em Sentido Horário para Especificar a Margem de um Elemento",
+          "title": "CSS: Use Notação em Sentido Horário para Especificar a Margem de um Elemento",
           "description": [
             "Vamos praticar isso outra vez, mas desta vez será com a margem (<code>margin</code>).",
             "Ao invés de especificar as propriedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, e <code>margin-left</code> de um elemento, você pode especificar todas elas em apenas uma linha assim:",
@@ -4147,7 +4147,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте систему ссылок по часовой стрелке для установки отступа элемента",
+          "title": "CSS: Используйте систему ссылок по часовой стрелке для установки отступа элемента",
           "description": [
             "Давайте попробуем то же самое, но со свойством <code>margin</code> на этот раз.",
             "Вмето указания свойств элемента: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>, вы можете указать их в строку, например:",
@@ -4160,7 +4160,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08736",
-      "title": "Style the HTML Body Element",
+      "title": "CSS: Style the HTML Body Element",
       "description": [
         "Now let's start fresh and talk about CSS inheritance.",
         "Every HTML page has a <code>body</code> element.",
@@ -4182,7 +4182,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Style das HTML Body Element",
+          "title": "CSS: Style das HTML Body Element",
           "description": [
             "Lass uns jetzt frisch beginnen und über CSS Vererbung reden.",
             "Jede HTML Seite hat ein <code>body</code> Element.",
@@ -4192,7 +4192,7 @@
           ]
         },
         "es": {
-          "title": "Da estilo en HTML al elemento cuerpo",
+          "title": "CSS: Da estilo en HTML al elemento cuerpo",
           "description": [
             "Ahora vamos a empezar de nuevo y hablaremos de herencia CSS.",
             "Cada página HTML tiene un cuerpo (<code>body</code>).",
@@ -4202,7 +4202,7 @@
           ]
         },
         "pt-br": {
-          "title": "Dê Estilo ao Elemento Body em HTML",
+          "title": "CSS: Dê Estilo ao Elemento Body em HTML",
           "description": [
             "Agora vamos recomeçar e falar sobre herança em CSS.",
             "Cada página HTML possui um corpo (<code>body</code>).",
@@ -4214,7 +4214,7 @@
           ]
         },
         "ru": {
-          "title": "Стилизуйте HTML-элемент body",
+          "title": "CSS: Стилизуйте HTML-элемент body",
           "description": [
             "Теперь давайте начнём с нуля и поговорим о наследовании в CSS.",
             "Каждая HTML-страница имеет элемент <code>body</code>.",
@@ -4227,7 +4227,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08746",
-      "title": "Inherit Styles from the Body Element",
+      "title": "CSS: Inherit Styles from the Body Element",
       "description": [
         "Now we've proven that every HTML page has a <code>body</code> element, and that its <code>body</code> element can also be styled with CSS.",
         "Remember, you can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.",
@@ -4256,7 +4256,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erbe Styles vom Body Element",
+          "title": "CSS: Erbe Styles vom Body Element",
           "description": [
             "Jetzt haben wir bewiesen dass jede HTML Seite ein <code>body</code> Element besitzt und dass dieses <code>body</code> Element ebenfalls mit CSS gestylt werden kann.",
             "Vergiss nicht, dass du dein <code>body</code> Element wie jedes andere HTML Element stylen kannst und dass alle anderen Elemente von deinem <code>body</code> Element Styles erben werden.",
@@ -4266,7 +4266,7 @@
           ]
         },
         "es": {
-          "title": "Hereda estilos del elemento cuerpo",
+          "title": "CSS: Hereda estilos del elemento cuerpo",
           "description": [
             "Ya hemos demostrado que cada página HTML tiene un cuerpo (<code>body</code>), y que puede dársele estilo CSS.",
             "Recuerda que puedes dar estilo de tu elemento <code>body</code> como a cualquier otro elemento HTML, y que todos tus otros elementos heredarán sus estilos de tu elemento <code>body</code>.",
@@ -4276,7 +4276,7 @@
           ]
         },
         "pt-br": {
-          "title": "Herde Estilos do Elemento Body",
+          "title": "CSS: Herde Estilos do Elemento Body",
           "description": [
             "Já demonstramos que cada página HTML possui um corpo (<code>body</code>), e que podemos dar estilo a ele através do CSS.",
             "Observe que você pode dar estilo ao seu elemento <code>body</code> como a qualquer outro elemento HTML, e que todos os outros elementos herdarão os estilos de seu elemento <code>body</code>.",
@@ -4286,7 +4286,7 @@
           ]
         },
         "ru": {
-          "title": "Наследование стилей от элемента Body",
+          "title": "CSS: Наследование стилей от элемента Body",
           "description": [
             "Мы доказали наличие у каждой HTML-страницы элемента <code>body</code> и то, что этот элемент <code>body</code> можно стилизовать с помощью CSS.",
             "Не забывайте, что вы можете стилизовать ваш элемент <code>body</code> так же как и любой другой HTML-элемент, а все остальные элементы унаследуют стили элемента <code>body</code>.",
@@ -4299,7 +4299,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08756",
-      "title": "Prioritize One Style Over Another",
+      "title": "CSS: Prioritize One Style Over Another",
       "description": [
         "Sometimes your HTML elements will receive multiple styles that conflict with one another.",
         "For example, your <code>h1</code> element can't be both green and pink at the same time.",
@@ -4326,7 +4326,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Ziehe einen Style einem Anderen vor",
+          "title": "CSS: Ziehe einen Style einem Anderen vor",
           "description": [
             "Manchmal werden deine HTML Elemente mehrere Styles erhalten die sich gegenseitig widersprechen.",
             "Zum Beispiel könnte dein <code>h1</code> Element nicht gleichzeitig grün und pink sein.",
@@ -4334,7 +4334,7 @@
           ]
         },
         "es": {
-          "title": "Priorizar un estilo sobre otro",
+          "title": "CSS: Priorizar un estilo sobre otro",
           "description": [
             "A veces los elementos HTML recibirán múltiples estilos que entran en conflicto entre sí.",
             "Por ejemplo, el elemento <code>h1</code> no puede ser verde y rosa al mismo tiempo.",
@@ -4344,7 +4344,7 @@
           ]
         },
         "pt-br": {
-          "title": "Priorize um Estilo Sobre o Outro",
+          "title": "CSS: Priorize um Estilo Sobre o Outro",
           "description": [
             "As vezes os elementos HTML recebem múltiplos estilos que entram em conflito entre si.",
             "Por exemplo, o elemento <code>h1</code> não pode ser verde e rosa ao mesmo tempo.",
@@ -4354,7 +4354,7 @@
           ]
         },
         "ru": {
-          "title": "Установите приоритет одного стиля над другим",
+          "title": "CSS: Установите приоритет одного стиля над другим",
           "description": [
             "Иногда вашим HTML-элементам будут присвоены множественные стили, конфликтующие друг с другом.",
             "Например, ваш элемент <code>h1</code> не может быть одновременно зелёным и розовым.",
@@ -4367,7 +4367,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf04756",
-      "title": "Override Styles in Subsequent CSS",
+      "title": "CSS: Override Styles in Subsequent CSS",
       "description": [
         "Our \"pink-text\" class overrode our <code>body</code> element's CSS declaration!",
         "We just proved that our classes will override the <code>body</code> element's CSS. So the next logical question is, what can we do to override our <code>pink-text</code> class?",
@@ -4401,7 +4401,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Überschreibe Styles mit nachträglichen CSS",
+          "title": "CSS: Überschreibe Styles mit nachträglichen CSS",
           "description": [
             "Unsere \"pink-text\" Klasse hat unsere CSS Angaben des <code>body</body> Elements überschrieben!",
             "Wir haben gerade bewiesen, dass unsere Klassen das CSS des <code>body</body> Elements überschreiben. Die logische nächste Frage ist also was wir tun können um unsere <code>pink-text</code> Klasse zu überschreiben?",
@@ -4414,7 +4414,7 @@
           ]
         },
         "es": {
-          "title": "Anula estilos con CSS posterior",
+          "title": "CSS: Anula estilos con CSS posterior",
           "description": [
             "¡Nuestra clase \"pink-text\" anuló la declaración CSS de nuestro elemento <code>body</code>!",
             "Acabamos de demostrar que nuestras clases anularán el CSS del elemento <code>body</code>. Así que la siguiente pregunta lógica es: ¿qué podemos hacer para anular nuestra clase <code>pink-text</code>?",
@@ -4427,7 +4427,7 @@
           ]
         },
         "pt-br": {
-          "title": "Sobreponha Estilos com CSS Posterior",
+          "title": "CSS: Sobreponha Estilos com CSS Posterior",
           "description": [
             "Nossa classe \"pink-text\" anulou a declaração CSS de nosso elemento <code>body</code>!",
             "Acabamos de demonstrar que nossas classes irão sobrepor o CSS do elemento <code>body</code>. Sendo assim, nossa seguinte pergunta lógica é: O que podemos fazer para sobrepor a nossa classe <code>pink-text</code>?",
@@ -4440,7 +4440,7 @@
           ]
         },
         "ru": {
-          "title": "Преопределите стили последующим CSS",
+          "title": "CSS: Преопределите стили последующим CSS",
           "description": [
             "Наш класс \"pink-text\" переопределил объявленное CSS-свойство элемента <code>body</code>!",
             "Мы только что доказали, что наши классы переопределяют CSS-свойства, обявленные в элементе <code>body</code>. Следующим вопросом по логике дожно быть: можем ли мы переопределить наш класс <code>pink-text</code> class?",
@@ -4456,7 +4456,7 @@
     },
     {
       "id": "bad87fee1348bd8aedf06756",
-      "title": "Override Class Declarations by Styling ID Attributes",
+      "title": "CSS: Override Class Declarations by Styling ID Attributes",
       "description": [
         "We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.",
         "But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?",
@@ -4496,7 +4496,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Überschreibe Klassen Deklarationen mit Styling von ID Attributen",
+          "title": "CSS: Überschreibe Klassen Deklarationen mit Styling von ID Attributen",
           "description": [
             "Wir haben gerade bewiesen, dass der Browser CSS von oben nach unten liest. Das bedeuted, dass im Falle eines Konflikts der Browser immer die letzte CSS Deklaration verwenden wird.",
             "Aber damit sind wir noch nicht fertig. Es gibt andere Wege um CSS zu überschreiben. Erinnerst du dich an Id Attribute?",
@@ -4509,7 +4509,7 @@
           ]
         },
         "es": {
-          "title": "Anula la declaración de clases dando estilo a los atributos ID",
+          "title": "CSS: Anula la declaración de clases dando estilo a los atributos ID",
           "description": [
             "Acabamos de demostrar que los navegadores leen CSS de arriba hacia abajo. Eso significa que, en el caso de un conflicto, el navegador utilizará la última declaración CSS. ",
             "Pero no hemos terminado todavía. Hay otras maneras con las que puedes anular CSS. ¿Te acuerdas de los atributos id?",
@@ -4523,7 +4523,7 @@
           ]
         },
         "pt-br": {
-          "title": "Sobreponha a Declaração de Classes Estilizando Atributos ID",
+          "title": "CSS: Sobreponha a Declaração de Classes Estilizando Atributos ID",
           "description": [
             "Acabamos de demonstrar que os navegadores fazem a leitura do CSS de cima para baixo. Isso significa que, em caso de um conflito, o navegador utilizará a última declaração CSS.",
             "Mas ainda não terminamos, pois existem outras formas para sobrepor CSS. Você se lembra dos atributos <code>id</code>?",
@@ -4536,7 +4536,7 @@
           ]
         },
         "ru": {
-          "title": "Переопределите значения свойств классов стилизацией атрибутов id",
+          "title": "CSS: Переопределите значения свойств классов стилизацией атрибутов id",
           "description": [
             "Мы только что доказали, что браузеры читают CSS сверху-вниз. Это значит, что в случае конфликта значений будет установлено то, которое было объявлено в последнюю очередь.",
             "Но мы ещё не закончилил. Есть и другие способы переопределения CSS. Помните атрибуты id?",
@@ -4553,7 +4553,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf06756",
-      "title": "Override Class Declarations with Inline Styles",
+      "title": "HTML: Override Class Declarations with Inline Styles",
       "description": [
         "So we've proven that id declarations override class declarations, regardless of where they are declared in your <code>style</code> element CSS.",
         "There are other ways that you can override CSS. Do you remember inline styles?",
@@ -4591,7 +4591,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Überschreibe deine Klassen Deklarationen mit Inline Styles",
+          "title": "HTML: Überschreibe deine Klassen Deklarationen mit Inline Styles",
           "description": [
             "Wir haben also gesehen dass Id Deklarationen die von Klassen überschreiben, egal wo sie in deinem <code>style</code> Element CSS stehen.",
             "Es gibt noch andere Wege CSS zu überschreiben. Erinnerst du dich an Inline Styles?",
@@ -4601,7 +4601,7 @@
           ]
         },
         "es": {
-          "title": "Anula declaraciones de clase con estilos en línea",
+          "title": "HTML: Anula declaraciones de clase con estilos en línea",
           "description": [
             "Así que hemos demostrado que las declaraciones de identificadores anulan las declaraciones de clase, independientemente del lugar donde se declaran en tu elemento de estilo CSS <code>style</code>.",
             "Hay otras maneras en las que puedes anular CSS. ¿Te acuerdas de los estilos en línea?",
@@ -4611,7 +4611,7 @@
           ]
         },
         "pt-br": {
-          "title": "Sobreponha a Declaração de Classes com Estilos Inline",
+          "title": "HTML: Sobreponha a Declaração de Classes com Estilos Inline",
           "description": [
             "Certo, nós demonstramos que declarações de id sobrepoem as declarações de classe, independente do lugar onde são declarados em seu elemento <code>style</code> no CSS.",
             "Existem outras formas em que você pode sobrepor CSS. Você se lembra de estilos inline?",
@@ -4621,7 +4621,7 @@
           ]
         },
         "ru": {
-          "title": "Переопределите значения свойств классов встроенными стилями",
+          "title": "HTML: Переопределите значения свойств классов встроенными стилями",
           "description": [
             "Итак, мы доказали, что объявление атрибута <code>id</code> переопределяет значения свойств, определённые в значениях атрибута <code>class</code>, независимо от того, были ли они объявлены в вашем элементе <code>style</code>.",
             "Есть и другие способы переопределения CSS. Помните встроенные стили?",
@@ -4634,7 +4634,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf07756",
-      "title": "Override All Other Styles by using Important",
+      "title": "CSS: Override All Other Styles by using Important",
       "description": [
         "Yay! We just proved that in-line styles will override all the CSS declarations in your <code>style</code> element.",
         "But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.",
@@ -4675,7 +4675,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Überschreibe alle anderen Styles mit Important",
+          "title": "CSS: Überschreibe alle anderen Styles mit Important",
           "description": [
             "Juhu! Wir haben bewiesen dass Inline Styles alle CSS Deklarationen aus deinem <code>style</code> Element überschreiben.",
             "Aber warte. Es gibt eine letzte Art CSS zu überschreiben. Dabei handelt es sich um die mächtigste Methode von allen. Aber bevor wir dazu kommen, sehen wir uns an warum du überhaupt CSS überschreiben wollen würdest.",
@@ -4687,7 +4687,7 @@
           ]
         },
         "es": {
-          "title": "Anula todos los demás estilos utilizando Important",
+          "title": "CSS: Anula todos los demás estilos utilizando Important",
           "description": [
             "¡Hurra! Demostramos que los estilos en línea anularán todas las declaraciones CSS de tu elemento <code>style</code>. ",
             "¡Pero espera! Hay una última forma de anular CSS. Este es el método más poderoso de todos. Pero antes de hacerlo, vamos a hablar de por qué puedes querer anular CSS. ",
@@ -4699,7 +4699,7 @@
           ]
         },
         "pt-br": {
-          "title": "Sobreponha Todos os Outros Elementos Utilizando Important",
+          "title": "CSS: Sobreponha Todos os Outros Elementos Utilizando Important",
           "description": [
             "Isso! Demonstramos que os estilos inline irão sobrepor todas as declarações CSS de seu elemento <code>style</code>.",
             "Mas, espere! Há uma última forma de sobrepor com CSS. Este é o método mais poderoso de todos. Contudo, antes de colocá-lo em prática, vamos falar sobre os motivos que podem fazer você querer sobrepor CSS.",
@@ -4711,7 +4711,7 @@
           ]
         },
         "ru": {
-          "title": "Переопределите все другие стили применив important",
+          "title": "CSS: Переопределите все другие стили применив important",
           "description": [
             "Ура! Мы только что доказали, что встроенные стили переопределяют все другие объявления CSS-свойств в вашем элементе <code>style</code>.",
             "Но подождите. Есть ещё один последний способ переопределения CSS. Это наиболее существенный способ из всех. Но перед тем, как мы его попробует, давайте поговорим о том, зачем вам может понадобиться переопрелить CSS.",
@@ -4726,7 +4726,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08726",
-      "title": "Use Hex Code for Specific Colors",
+      "title": "CSS: Use Hex Code for Specific Colors",
       "description": [
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
         "We usually use <code>decimals</code>, or base 10 numbers, which use the symbols 0 to 9 for each digit. <code>Hexadecimals</code> (or <code>hex</code>) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represents values zero to nine. Then A,B,C,D,E,F represent values ten to fifteen. Altogether, 0 to F can represent a digit in <code>hexadecimal</code>, giving us 16 total possible values. You can find more information about <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>hexadecimal numbers here</a>.",
@@ -4748,7 +4748,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Verwende hexadezimal Code für spezifische Farben",
+          "title": "CSS: Verwende hexadezimal Code für spezifische Farben",
           "description": [
             "Wusstest du dass es andere Möglichkeiten gibt Farben in CSS darzustellen? Eine dieser Möglichkeiten ist \"Hexadezimal Code\" genannt, oder kurz <code>hex code</code>.",
             "Wir verwenden üblicherweise <code>decimals</code> (Dezimalen), oder Zehnersystem, das für jede Ziffer eine Symbol von 0 bis 9 verwendet. <code>Hexadecimals</code> (Hexadezimalzahlen oder <code>hex</code>) beruhen auf einer 16er Basis. Das bedeuted dass sie 16 verschiedene Symbole verwenden. Wie auch Dezimalzahlen, repräsentiern die Symbole \"0\"-\"9\" Null bis Neun. Dann allerdings geht es weiter mit A,B,C,D,E,F für die Zahlen 10-15. Alles in Allem kann eine einzige Ziffer, mit 0 bis F, in <code>hexadecimal</code> 16 mögliche Werte ausdrücken. Mehr Informationen über das Hexadezimalsystem kannst du <a target='_blank' href='https://de.wikipedia.org/wiki/Hexadezimalsystem'>hier</a> finden.",
@@ -4757,7 +4757,7 @@
           ]
         },
         "es": {
-          "title": "Usa el código hexadecimal para especificar colores",
+          "title": "CSS: Usa el código hexadecimal para especificar colores",
           "description": [
             "¿Sabías que hay otras maneras de representar los colores en CSS? Una de estas formas es llamada código hexadecimal o <code>código hex</code> para abreviar. ",
             "El sistema <code>Decimal</code> se refiere al que nos permite representar cantidades empleando los dígitos del cero al nueve - los números que la gente usa en la vida cotidiana. El sistema <code>Hexadecimal</code> incluye estos 10 dígitos más las letras A, B, C, D, E y F. Esto significa que Hexadecimal tiene un total de 16 dígitos posibles, en lugar de las 10 posibles que nos da nuestro sistema numérico normal en base 10. ",
@@ -4766,7 +4766,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use Código Hexadecimal para Especificar Cores",
+          "title": "CSS: Use Código Hexadecimal para Especificar Cores",
           "description": [
             "Você sabia que existem outras formas para representar as cores em CSS? Uma dessas formas é com o que chamamos de código hexadecimal, ou <code>código hex</code> para abreviar.",
             "O sistema <code>Decimal</code> nos permite representar quantidades numéricas com os dígitos de zero a nove - assim como nós os utilizamos durante o nosso dia a dia. Já o sistema <code>Hexadecimal</code> inclui estes 10 dígitos e também as letras A, B, C, D, E e F. Isso significa que o Hexadecimal possui um total de 16 dígitos possíveis, ao invés dos 10 possíveis que podemos usar com nosso sistema numérico normal de base 10.",
@@ -4775,7 +4775,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте hex-цвета для выбора определённых цветов",
+          "title": "CSS: Используйте hex-цвета для выбора определённых цветов",
           "description": [
             "Знали ли вы, что существуют другие способы представления цветов в CSS? Одним из этих способов является шестнадцатиричный код, <code>hex-код</code>, если короче.",
             "Обычно мы используем <code>десятки</code>, или десятичную систему счисления, в основе которой лежит число 10, которая использует символы от 0 до 9 для каждого числа. В основе <code>Шестнадцатиричной</code> системы лежит число 16. Это значит, что она использует шестнадцать различных символов. Как в десятичной, символы 0-9 соответствуют значениям от нуля до девяти. Далее A,B,C,D,E,F соответствуют значениям от десяти до пятнадцати. Вместе, от 0 до F, с их помощью можно представить число в <code>шестнадцатиричной</code> системе счисления, что даёт нам в целом 16 возможных значений. Вы можете найти больше информации о <a target='_blank' href='https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F'>шестнадцатиричной системе счисления тут</a>.",
@@ -4787,7 +4787,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08721",
-      "title": "Use Hex Code to Mix Colors",
+      "title": "CSS: Use Hex Code to Mix Colors",
       "description": [
         "To review, hex codes use 6 hexadecimal digits to represent colors, two each for red (R), green (G), and blue (B) components.",
         "From these three pure colors (red, green, and blue), we can vary the amounts of each to create over 16 million other colors!",
@@ -4835,7 +4835,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Verwende Hexadezimal Code um Farben zu mischen",
+          "title": "CSS: Verwende Hexadezimal Code um Farben zu mischen",
           "description": [
             "Mit diesen drei puren Farben (Rot, Grün und Blau) können wir 16 Millionen andere Farben erzeugen.",
             "Orange, zum Beispiel, ist pures Rot, gemischt mit ein bisschen Grün und keinem Blau",
@@ -4843,7 +4843,7 @@
           ]
         },
         "es": {
-          "title": "Usa código hex para mezclar colores",
+          "title": "CSS: Usa código hex para mezclar colores",
           "description": [
             "A partir de estos tres colores puros (rojo, verde y azul), podemos crear 16 millones de colores.",
             "Por ejemplo, el naranja es rojo puro, mezclado con un poco de verde, y sin azul.",
@@ -4851,7 +4851,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use Código Hexadecimal para Misturar Cores",
+          "title": "CSS: Use Código Hexadecimal para Misturar Cores",
           "description": [
             "A partir dessas três cores puras (vermelho, verde e azul), podemos criar 16 milhões de cores.",
             "Por exemplo, o laranja é vermelho puro misturado com um pouco de verde, e sem nada de azul.",
@@ -4859,7 +4859,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте hex-код, чтобы смешивать цвета",
+          "title": "CSS: Используйте hex-код, чтобы смешивать цвета",
           "description": [
             "Из этих трёх чистых цветов (красного, зелёного и синего), мы можем создать 16 миллионов других цветов.",
             "Например, оранжевый - смесь чистого красного с примесью зелёного, но без синего.",
@@ -4870,7 +4870,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08719",
-      "title": "Use Abbreviated Hex Code",
+      "title": "CSS: Use Abbreviated Hex Code",
       "description": [
         "Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.",
         "For example, red's hex code <code>#FF0000</code> can be shortened to <code>#F00</code>. This shortened form gives one digit for red, one digit for green, and one digit for blue.",
@@ -4916,7 +4916,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Verwende abgekürzten Hexadezimal Code",
+          "title": "CSS: Verwende abgekürzten Hexadezimal Code",
           "description": [
             "Viele Leute fühlen sich mit der Auswahl aus über 16 Millionen Farben überfordert. Außerdem ist es schwierig sich Hexadezimal Codes zu merken. Zum Glück kannst du sie abkürzen.",
             "Rot, zum Beispiel, mit dem Hexadezimal Code von <code>#FF0000</code> kannst du mit <code>#F00</code> abkürzen. Das bedeuted eine Ziffer für Rot, eine für Grün und eine für Blau",
@@ -4925,7 +4925,7 @@
           ]
         },
         "es": {
-          "title": "Uso código hex abreviado",
+          "title": "CSS: Uso código hex abreviado",
           "description": [
             "Mucha gente se siente abrumada por las posibilidades de más de 16 millones de colores. Y es difícil recordar el código hexadecimal. Afortunadamente puedes acortarlo. ",
             "Por ejemplo, el rojo, que es <code>#FF0000</code> en código hexadecimal, se puede abreviar a <code>#F00</code>. Es decir, un dígito para el rojo, un dígito para el verde, un dígito para el azul. ",
@@ -4934,7 +4934,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use Código Hexadecimal Abreviado",
+          "title": "CSS: Use Código Hexadecimal Abreviado",
           "description": [
             "Muitas pessoas se sentem confusas com as possibilidades de mais de 16 milhões de cores. Além disso, é difícil lembrar de códigos hexadecimais. Por sorte, podemos abreviá-lo.",
             "Por exemplo, o vermelho que é <code>#FF0000</code> em código hexadecimal pode ser abreviado a <code>#F00</code>. Isso quer dizer que podemos usar um dígito para vermelho, um dígito para verde e um dígito para azul.",
@@ -4943,7 +4943,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте аббревиатуры hex-кода",
+          "title": "CSS: Используйте аббревиатуры hex-кода",
           "description": [
             "Множество людей обременяет возможность применения более 16-ти миллионов цветов. И hex-коды достаточно сложно запоминать. К счастью, вы можете использовать укороченные выражения.",
             "Например, красный, который имеет значение <code>#FF0000</code> в виде hex-кода, может быть укорочен до <code>#F00</code>. В укороченном виде: одна цифра представляет красный, одна - зелёный, одна - синий.",
@@ -4955,7 +4955,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08718",
-      "title": "Use RGB values to Color Elements",
+      "title": "CSS: Use RGB values to Color Elements",
       "description": [
         "Another way you can represent colors in CSS is by using <code>RGB</code> values.",
         "The RGB value for black looks like this:",
@@ -4981,7 +4981,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Verwende RGB Werte um Elemente zu färben",
+          "title": "CSS: Verwende RGB Werte um Elemente zu färben",
           "description": [
             "Ein anderer Weg um Farben in CSS darzustellen ist <code>rgb</code> Werte zu verwenden.",
             "Der RGB Wert für Schwarz sieht so aus:",
@@ -4994,7 +4994,7 @@
           ]
         },
         "es": {
-          "title": "Usa RGB para colorear elementos",
+          "title": "CSS: Usa RGB para colorear elementos",
           "description": [
             "Otra forma en la que puedes representar colores en CSS es usando valores <code>rgb</code>.",
             "El valor RGB para el negro, luce así:",
@@ -5007,7 +5007,7 @@
           ]
         },
         "pt-br": {
-          "title": "Use Valores RBG para Colorir Elementos",
+          "title": "CSS: Use Valores RBG para Colorir Elementos",
           "description": [
             "Outra forma em que você pode representar cores em CSS é utilizando valores <code>rgb</code>.",
             "O valor RGB para preto é assim:",
@@ -5020,7 +5020,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте формат RGB для придания цвета элементам",
+          "title": "CSS: Используйте формат RGB для придания цвета элементам",
           "description": [
             "Другим способом представления цветов в CSS является применение значений <code>rgb</code>.",
             "Значение RGB для чёрного цвета выглядит следующим образом:",
@@ -5036,7 +5036,7 @@
     },
     {
       "id": "bad82fee1348bd9aedf08721",
-      "title": "Use RGB to Mix Colors",
+      "title": "CSS: Use RGB to Mix Colors",
       "description": [
         "Just like with hex code, you can mix colors in RGB by using combinations of different values.",
         "Replace the color words in our <code>style</code> element with their correct RGB values.",
@@ -5080,28 +5080,28 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Verwende RGB um Farben zu mischen",
+          "title": "CSS: Verwende RGB um Farben zu mischen",
           "description": [
             "Wie auch mit Hexadezimal Code, kannst du Farben in RGB mischen indem du Kombination von verschiedenen Werten nimmst.",
             "Ändere die Hintergrundfarbe des <code>body</code> Elements zum RGB Wert von Orange: <code>rgb(255, 165, 0)</code>"
           ]
         },
         "es": {
-          "title": "Usa RGB para mezclar colores",
+          "title": "CSS: Usa RGB para mezclar colores",
           "description": [
             "Al igual que con el código hexadecimal, puedes mezclar los colores en RGB mediante el uso de combinaciones de diferentes valores.",
             "Cambia el color de fondo del elemento <code>body</code> a anaranjado usando su valor RGB: <code>rgb(255, 165, 0)</code>"
           ]
         },
         "pt-br": {
-          "title": "Use Valores RBG para Misturar Cores",
+          "title": "CSS: Use Valores RBG para Misturar Cores",
           "description": [
             "Assim como com código hexadecimal, você pode misturar as cores com RGB através do uso de combinações de valores diferentes.",
             "Mude a cor de fundo do elemento <code>body</code> para alaranjado usando seu valor RGB: <code>rgb(255, 165, 0)</code>."
           ]
         },
         "ru": {
-          "title": "Используйте формат RGB, чтобы смешивать цвета",
+          "title": "CSS: Используйте формат RGB, чтобы смешивать цвета",
           "description": [
             "Так же как и с hex-кодом, вы можете смешивать цвета в формате RGB, используя комбинации различных значений.",
             "Измените цвет фона элемента <code>body</code> на значение в формате RGB соответствующее оранжевому: <code>rgb(255, 165, 0)</code>"

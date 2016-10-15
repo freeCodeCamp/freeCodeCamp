@@ -15,7 +15,7 @@
   "challenges": [
     {
       "id": "cf1111c1c15feddfaeb1bdef",
-      "title": "Declare JavaScript Objects as Variables",
+      "title": "OOP: Declare JavaScript Objects as Variables",
       "description": [
         "Before we dive into Object Oriented Programming, let's revisit JavaScript objects.",
         "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
@@ -48,7 +48,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Declara objetos de JavaScript como variables",
+          "title": "OOP: Declara objetos de JavaScript como variables",
           "description": [
             "Antes de sumergirnos en Programación Orientada a Objetos, vamos a revisar los objetos de JavaScript.",
             "Dale a tu objeto <code>motorBike</code> un atributo <code>wheels</code>, otro llamado <code>motors</code> y otro <code>seats</code> y asignales números."
@@ -58,7 +58,7 @@
     },
     {
       "id": "cf1111c1c15feddfaeb2bdef",
-      "title": "Construct JavaScript Objects with Functions",
+      "title": "OOP: Construct JavaScript Objects with Functions",
       "description": [
         "We are also able to create objects using <code>constructor</code> functions.",
         "A <code>constructor</code> function is given a capitalized name to make it clear that it is a <code>constructor</code>.",
@@ -98,7 +98,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Construye objetos de JavaScript con funciones",
+          "title": "OOP: Construye objetos de JavaScript con funciones",
           "description": [
             "También podemos crear objetos utilizando funciones <code>constructoras</code>.",
             "A cada función <code>constructora</code> se le da un nombre comenzando en mayúsculas para que quede claro que es una <code>constructora</code>.",
@@ -119,7 +119,7 @@
     },
     {
       "id": "cf1111c1c15feddfaeb4bdef",
-      "title": "Make Instances of Objects with a Constructor Function",
+      "title": "OOP: Make Instances of Objects with a Constructor Function",
       "description": [
         "Now let's put that great <code>constructor</code> function we made in the last lesson to use!",
         "To use a <code>constructor</code> function we call it with the <code>new</code> keyword in front of it like:",
@@ -160,7 +160,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Crea instancias de objetos con funciones constructoras",
+          "title": "OOP: Crea instancias de objetos con funciones constructoras",
           "description": [
             "¡Ahora usemos esa gran <code>constructora</code> que hicimos en la última lección!",
             "Para utilizar una función <code>constructora</code> la llamamos con la palabra reservada <code>new</code> al frente, como:",
@@ -183,7 +183,7 @@
     },
     {
       "id": "563cfb55594311ffcb333c70",
-      "title": "Make Unique Objects by Passing Parameters to our Constructor",
+      "title": "OOP: Make Unique Objects by Passing Parameters to our Constructor",
       "description": [
         "The <code>constructor</code> we have is great, but what if we don't always want to create the same object?",
         "To solve this we can add <code>parameters</code> to our <code>constructor</code>. We do this like the following example:",
@@ -222,7 +222,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Crea objetos únicos pasando parámetros a la constructora",
+          "title": "OOP: Crea objetos únicos pasando parámetros a la constructora",
           "description": [
             "La <code>constructora</code> que tenemos es fabulosa, pero ¿qué hacer si no queremos crear siempre el mismo objeto?",
             "Para solucionar esto podemos añadir<code>parámetros</code>en nuestra <code>constructora</code>. Hacemos esto como en el siguiente ejemplo: ",
@@ -247,7 +247,7 @@
     },
     {
       "id": "cf1111c1c15feddfaeb3bdef",
-      "title": "Make Object Properties Private",
+      "title": "OOP: Make Object Properties Private",
       "description": [
         "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
         "In the <a href='/challenges/make-instances-of-objects-with-a-constructor-function' target='_blank'>previous challenges</a>, we used the <code>this</code> keyword to reference <code>public properties</code> of the current object.",
@@ -306,7 +306,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Crea propiedades privadas de un objeto",
+          "title": "OOP: Crea propiedades privadas de un objeto",
           "description": [
             "Los objetos tienen sus propios atributos, llamados <code>propiedades</code>, y sus propias funciones, llamadas<code>métodos</code>.",
             "En los desafíos anteriores, se utilizó la palabra reservada <code>this</code> para referenciar <code>propiedades públicas</code>del objeto actual.",
@@ -322,7 +322,7 @@
     },
     {
       "id": "cf1111c1c15feddfaeb7bdef",
-      "title": "Iterate over Arrays with .map",
+      "title": "OOP: Iterate over Arrays with .map",
       "description": [
         "The <code>map</code> method is a convenient way to iterate through arrays. Here's an example usage:",
         "<blockquote>var oldArray = [1, 2, 3];<br>var timesFour = oldArray.map(function(val){<br>&nbsp;&nbsp;return val * 4;<br>});<br>console.log(timesFour); // returns [4, 8, 12]<br>console.log(oldArray);  // returns [1, 2, 3]</blockquote>",
@@ -353,7 +353,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Iterar sobre vectores con .map",
+          "title": "OOP: Iterar sobre vectores con .map",
           "description": [
             "El método <code>map</code> es una manera conveniente de iterar sobre vectores. He aquí un ejemplo de uso: ",
             "<code>var porCuatro = vectorAntiguo.map(function(val){</code>",
@@ -368,7 +368,7 @@
     },
     {
       "id": "cf1111c1c15feddfaeb8bdef",
-      "title": "Condense arrays with .reduce",
+      "title": "OOP: Condense arrays with .reduce",
       "description": [
         "The array method <code>reduce</code> is used to iterate through an array and condense it into one value.",
         "To use <code>reduce</code> you pass in a callback whose arguments are an accumulator (in this case, <code>previousVal</code>) and the current value (<code>currentVal</code>).",
@@ -400,7 +400,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Condensa vectores con .reduce",
+          "title": "OOP: Condensa vectores con .reduce",
           "description": [
             "El método <code>reduce</code> de un vector, se utiliza para iterar a través del vector y condensarlo en un valor.",
             "Para usar <code>reduce</code> tu le pasas una función de devolución de llamada cuyos argumentos sean un acumulador (en este caso, <code>valorPrevio</code>) y el valor actual (<code>valorActual</code>). ",
@@ -416,7 +416,7 @@
     },
     {
       "id": "cf1111c1c15feddfaeb9bdef",
-      "title": "Filter Arrays with .filter",
+      "title": "OOP: Filter Arrays with .filter",
       "description": [
         "The <code>filter</code> method creates a new array from an existing one by iterating over it and returning only the elements where a given condition returns true.",
         "<code>filter</code> is passed a callback function which takes the current value (we've called that <code>val</code>) as an argument.",
@@ -449,7 +449,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Filtrar vectores con .filter",
+          "title": "OOP: Filtrar vectores con .filter",
           "description": [
             "El método <code>filter</code> se utiliza para iterar a través de un vector y filtrar los elementos que hagan falsa un condición determinada.",
             "<code>filter</code> recibe una función de devolución de llamada que a su vez recibe como argumento el valor actual (que hemos llamado <code>val</code>).",
@@ -466,7 +466,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb1bdef",
-      "title": "Sort Arrays with .sort",
+      "title": "OOP: Sort Arrays with .sort",
       "description": [
         "You can use the method <code>sort</code> to easily sort the values in an array alphabetically or numerically.",
         "Unlike the previous array methods we have been looking at, <code>sort</code> actually alters the array in place. However, it also returns this sorted array.",
@@ -499,7 +499,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Ordena vectores con .sort",
+          "title": "OOP: Ordena vectores con .sort",
           "description": [
             "Puedes utilizar el método <code>sort</code> para ordenar alfabética o numéricamente los valores de un vector.",
             "A diferencia de los métodos de vector que hemos visto,<code>sort</code>en realidad altera el vector en su lugar. Sin embargo, también devuelve este vector ordenado. ",
@@ -516,7 +516,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb2bdef",
-      "title": "Reverse Arrays with .reverse",
+      "title": "OOP: Reverse Arrays with .reverse",
       "description": [
         "You can use the <code>reverse</code> method to reverse the elements of an array.",
         "<code>reverse</code> is another array method that alters the array in place, but it also returns the reversed array.",
@@ -547,7 +547,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Invierte vectores con .reverse",
+          "title": "OOP: Invierte vectores con .reverse",
           "description": [
             "Puedes utilizar el método <code>reverse</code> para invertir los elementos en un vector.",
             "<code>reverse</code> es otro método de vector que altera el vector mismo, y también devuelve el vector invertido.",
@@ -561,7 +561,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb3bdef",
-      "title": "Concatenate Arrays with .concat",
+      "title": "OOP: Concatenate Arrays with .concat",
       "description": [
         "<code>concat</code> can be used to merge the contents of two arrays into one.",
         "<code>concat</code> takes an array as an argument and returns a new array with the elements of this array concatenated onto the end.",
@@ -594,7 +594,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Concatena vectores con .concat",
+          "title": "OOP: Concatena vectores con .concat",
           "description": [
             "<code>concat</code> se puede utilizar para combinar el contenido de dos vectores en uno solo.",
             "<code>concat</code> recibe un vector como argumento y devuelve un nuevo vector con los elementos del vector que recibe concatenados al final.",
@@ -607,7 +607,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb4bdef",
-      "title": "Split Strings with .split",
+      "title": "OOP: Split Strings with .split",
       "description": [
         "You can use the <code>split</code> method to split a string into an array.",
         "<code>split</code> uses the argument you pass in as a delimiter to determine which points the string should be split at.",
@@ -637,7 +637,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Divide cadenas con .split",
+          "title": "OOP: Divide cadenas con .split",
           "description": [
             "Puedes utilizar el método <code>split</code> para dividir una cadena en un vector.",
             "<code>split</code> utiliza el argumento que recibe como delimitador para determinar en qué puntos debe dividir la cadena.",
@@ -650,7 +650,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb5bdef",
-      "title": "Join Strings with .join",
+      "title": "OOP: Join Strings with .join",
       "description": [
         "We can use the <code>join</code> method to join each element of an array into a string separated by whatever delimiter you provide as an argument.",
         "The following is an example of using <code>join</code> to join all of the elements of an array into a string with all the elements separated by word <code>and</code>:",
@@ -679,7 +679,7 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Une cadenas con .join",
+          "title": "OOP: Une cadenas con .join",
           "description": [
             "Podemos usar el método <code>join</code> para unir los elementos de un vector en una cadena, separándolos con el delimitador que proporciones como argumento.",
             "El siguiente es un ejemplo del uso de <code>join</code> para unir todos los elementos de un vector en una cadena con todos los elementos separados entre si por palabra` Na`: ",
