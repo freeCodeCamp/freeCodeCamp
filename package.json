@@ -168,7 +168,7 @@
     "webpack-hot-middleware": "^2.12.2",
     "webpack-manifest-plugin": "^1.0.0",
     "webpack-stream": "^3.1.0",
-    "yargs": "^5.0.0"
+    "yargs": "^6.1.1"
   },
   "snyk": true
 }
