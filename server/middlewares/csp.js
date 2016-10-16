@@ -20,6 +20,7 @@ export default function csp() {
       ]),
       connectSrc: trusted.concat([
         'https://hyperdev.com',
+        'https://*.hyperdev.com',
         'https://*.cloudflare.com'
       ]),
       scriptSrc: [
