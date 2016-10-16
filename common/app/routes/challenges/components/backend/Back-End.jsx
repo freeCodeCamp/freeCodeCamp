@@ -42,16 +42,17 @@ const fieldValidators = {
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.output,
+  state => state.challengesApp.tests,
   (
     {
       challenge: {
         id,
         title,
-        description,
-        tests = []
+        description
       } = {}
     },
-    output
+    output,
+    tests
   ) => ({
     id,
     title,
