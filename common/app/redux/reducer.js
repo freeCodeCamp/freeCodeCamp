@@ -11,14 +11,15 @@ const initialState = {
   navHeight: 0,
   isMainChatOpen: false,
   isHelpChatOpen: false,
-  theme: 'default'
+  theme: 'default',
+  block: ' '
 };
 
 export default handleActions(
   {
     [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
       ...state,
-      title: payload + ' | Free Code Camp'
+      title: `${ state.block || 'Free Code Camp' }: ${payload} | Free Code Camp`
     }),
 
     [types.updateThisUser]: (state, { payload: user }) => ({
@@ -30,6 +31,14 @@ export default handleActions(
       ...state,
       lang: payload
     }),
+    [types.updateBlock]: (state, {payload = ' '}) => {
+      let blockName = payload.split('-')
+                              .join(' ')
+                              .toUpperCase()
+                              .replace(/\sAND\s/g, ' and ');
+
+      return {...state, block: blockName};
+    },
     [types.updateTheme]: (state, { payload = 'default' }) => ({
       ...state,
       theme: payload

@@ -4,6 +4,7 @@ export default createTypes([
   'analytics',
   'updateTitle',
   'updateAppLang',
+  'updateBlock',
 
   'fetchUser',
   'addUser',
