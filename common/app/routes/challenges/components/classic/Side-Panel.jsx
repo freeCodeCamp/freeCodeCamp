@@ -6,7 +6,7 @@ import PureComponent from 'react-pure-render/component';
 import { Col, Row } from 'react-bootstrap';
 
 import TestSuite from '../Test-Suite.jsx';
-import Output from './Output.jsx';
+import Output from '../Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import { challengeSelector } from '../../redux/selectors';
 import {
@@ -157,7 +157,16 @@ export class SidePanel extends PureComponent {
           unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
         />
-        <Output output={ output }/>
+        <Output
+          defaultOutput={
+`/**
+  * Your output will go here.
+  * Any console.log() statements
+  * will appear in here as well.
+  */`
+          }
+          output={ output }
+        />
         <br />
         <TestSuite tests={ tests } />
       </div>

@@ -1,5 +1,4 @@
-import React, { PropTypes } from 'react';
-import PureComponent from 'react-pure-render/component';
+import React, { PureComponent, PropTypes } from 'react';
 import NoSSR from 'react-no-ssr';
 import Codemirror from 'react-codemirror';
 
@@ -13,22 +12,24 @@ const defaultOptions = {
   lineWrapping: true
 };
 
-export default class extends PureComponent {
-  static displayName = 'Output';
-  static propTypes = {
-    output: PropTypes.string
-  };
+export default class Output extends PureComponent {
   render() {
-    const { output } = this.props;
+    const { output, defaultOutput } = this.props;
     return (
       <div className='challenge-log'>
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ output } /> }>
           <Codemirror
             options={ defaultOptions }
-            value={ output }
+            value={ output || defaultOutput }
           />
         </NoSSR>
       </div>
     );
   }
 }
+
+Output.displayName = 'Output';
+Output.propTypes = {
+  output: PropTypes.string,
+  defaultOutput: PropTypes.string
+};

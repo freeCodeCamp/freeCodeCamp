@@ -9,6 +9,7 @@ import {
 
 import SolutionInput from '../Solution-Input.jsx';
 import TestSuite from '../Test-Suite.jsx';
+import Output from '../Output.jsx';
 import { executeChallenge } from '../../redux/actions.js';
 import { challengeSelector } from '../../redux/selectors.js';
 import { descriptionRegex } from '../../utils.js';
@@ -16,13 +17,14 @@ import {
   isValidURL,
   makeRequired,
   createFormValidator
-} from '../../../../utils/form';
+} from '../../../../utils/form.js';
 
 const propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.arrayOf(PropTypes.string),
   tests: PropTypes.array,
+  output: PropTypes.string,
   // provided by redux form
   submitting: PropTypes.bool,
   fields: PropTypes.object,
@@ -39,6 +41,7 @@ const fieldValidators = {
 
 const mapStateToProps = createSelector(
   challengeSelector,
+  state => state.challengesApp.output,
   (
     {
       challenge: {
@@ -47,12 +50,14 @@ const mapStateToProps = createSelector(
         description,
         tests = []
       } = {}
-    }
+    },
+    output
   ) => ({
     id,
     title,
     tests,
-    description
+    description,
+    output
   })
 );
 
@@ -90,6 +95,7 @@ export class BackEnd extends PureComponent {
       title,
       description,
       tests,
+      output,
       // provided by redux-form
       fields: { solution },
       submitting,
@@ -130,6 +136,16 @@ export class BackEnd extends PureComponent {
                 { buttonCopy } (ctrl + enter)
               </Button>
             </form>
+          </Row>
+          <Row>
+            <Output
+              defaultOutput={
+`/**
+  * Test output will go here
+  */`
+              }
+              output={ output }
+            />
           </Row>
           <Row>
             <TestSuite tests={ tests } />

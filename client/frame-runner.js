@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var helpers = Rx.helpers;
   var chai = parent.chai;
   var source = document.__source;
+  var __getUserInput = document.__getUserInput || (x => x);
 
   document.__getJsOutput = function getJsOutput() {
     if (window.__err || !common.shouldRun()) {
@@ -23,10 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return output;
   };
 
-  document.__runTests = function runTests(
-    tests = [],
-    __getUserInput = x => x
-  ) {
+  document.__runTests = function runTests(tests = []) {
     /* eslint-disable no-unused-vars */
     const editor = { getValue() { return source; } };
     const code = source;
@@ -71,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // the function could expect a callback
             // or it could return a promise/observable
             // or it could still be sync
-            if (test.length < 1) {
+            if (test.length === 1) {
               // a function with length 0 means it expects 0 args
               // We call it and store the result
               // This result may be a promise or an observable or undefined

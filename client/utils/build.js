@@ -25,13 +25,16 @@ export function createFileStream(files = {}) {
   );
 }
 
-
-const globalRequires = [{
-  link: 'https://cdnjs.cloudflare.com/' +
-    'ajax/libs/normalize/4.2.0/normalize.min.css'
-}, {
+const jQuery = {
   src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js'
-}];
+};
+const globalRequires = [
+  {
+    link: 'https://cdnjs.cloudflare.com/' +
+      'ajax/libs/normalize/4.2.0/normalize.min.css'
+  },
+  jQuery
+];
 
 const scriptCache = new Map();
 export function cacheScript({ src } = {}, crossDomain = true) {
@@ -161,8 +164,9 @@ export function buildClassic(files, required, shouldProxyConsole) {
 
 export function buildBackendChallenge(state) {
   const { solution: url } = getValues(state.form.BackEndChallenge);
-  return frameRunner.map(build => ({
-    build,
-    source: { url }
-  }));
+  return Observable.combineLatest(frameRunner, cacheScript(jQuery))
+    .map(([ frameRunner, jQuery ]) => ({
+      build: jQuery + frameRunner,
+      source: { url }
+    }));
 }
