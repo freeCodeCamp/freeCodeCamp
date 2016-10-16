@@ -3,6 +3,7 @@
   "order": 5,
   "time": "3 hours",
   "helpRoom": "Help",
+  "type": "jQuery",
   "required": [
    { "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" }
   ],

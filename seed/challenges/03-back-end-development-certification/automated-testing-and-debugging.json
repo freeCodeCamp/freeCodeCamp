@@ -3,6 +3,7 @@
   "order": 20,
   "time": "15 minutes",
   "helpRoom": "HelpBackEnd",
+  "type": "Testing",
   "challenges": [
     {
       "id": "cf1111c1c16feddfaeb6bdef",

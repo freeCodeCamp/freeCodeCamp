@@ -73,7 +73,7 @@ export class Challenges extends PureComponent {
   };
 
   componentWillMount() {
-    this.props.updateTitle(this.props.title);
+    this.props.updateTitle(this.type + ':' + this.props.title);
   }
 
   componentDidMount() {
@@ -90,7 +90,7 @@ export class Challenges extends PureComponent {
     const { block, dashedName } = nextProps.params;
     const { resetUi, updateTitle, replaceChallenge } = this.props;
     if (this.props.params.dashedName !== dashedName) {
-      updateTitle(nextProps.title);
+      updateTitle(nextProps.type + ':' + nextProps.title);
       resetUi();
       replaceChallenge({ dashedName, block });
     }

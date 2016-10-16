@@ -4,6 +4,7 @@
   "isComingSoon": true,
   "time": "5 hours",
   "helpRoom": "HelpDataViz",
+  "type": "D3",
   "challenges": [
     {
       "id": "bd7158d8c423ede2aab5bdee",
