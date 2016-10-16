@@ -763,7 +763,7 @@
         "<code>myVar = myVar + 5;</code>",
         "to add <code>5</code> to <code>myVar</code>. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.",
         "One such operator is the <code>+=</code> operator.",
-        "<code>myVar += 5;</code> will add <code>5</code> to <code>myVar</code>.",
+        "<blockquote>var myVar = 1;<br>myVar += 5;<br>console.log(myVar); // Returns 6</blockquote>",
         "<h4>Instructions</h4>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
       ],
