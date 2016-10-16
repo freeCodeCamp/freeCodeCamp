@@ -7,6 +7,9 @@ window.common = (function(global) {
   const detectFunctionCall = /function\s*?\(|function\s+\w+\s*?\(/gi;
   const detectUnsafeJQ = /\$\s*?\(\s*?\$\s*?\)/gi;
   const detectUnsafeConsoleCall = /if\s\(null\)\sconsole\.log\(1\);/gi;
+  const detectInComments = new RegExp(['\\/\\/.*?function.*?|',
+                                      '\\/\\*[\\s\\w\\W]*?function',
+                                      '[\\s\\w\\W]*?\\*\\/'].join(''), 'gi');
 
   common.detectUnsafeCode$ = function detectUnsafeCode$(code) {
     const openingComments = code.match(/\/\*/gi);
@@ -35,7 +38,8 @@ window.common = (function(global) {
 
     if (
       code.match(/function/g) &&
-      !code.match(detectFunctionCall)
+      !code.match(detectFunctionCall) &&
+      !code.match(detectInComments)
     ) {
       return Observable.throw(
         new Error('SyntaxError: Unsafe or unfinished function declaration')
