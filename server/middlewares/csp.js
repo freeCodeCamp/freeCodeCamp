@@ -18,6 +18,10 @@ export default function csp() {
         '*.cloudflare.com',
         'https://*.optimizely.com'
       ]),
+      connectSrc: trusted.concat([
+        'https://hyperdev.com',
+        'https://*.cloudflare.com'
+      ]),
       scriptSrc: [
         "'unsafe-eval'",
         "'unsafe-inline'",
