@@ -40,7 +40,8 @@ export class Editor extends PureComponent {
     height: PropTypes.number,
     content: PropTypes.string,
     mode: PropTypes.string,
-    updateFile: PropTypes.func
+    updateFile: PropTypes.func,
+    codeUpdated: PropTypes.func
   };
 
   static defaultProps = {
@@ -102,6 +103,7 @@ export class Editor extends PureComponent {
 
   handleChange(value) {
     if (this._subscription) {
+      this.props.codeUpdated();
       this._editorContent$.onNext(value);
     }
   }

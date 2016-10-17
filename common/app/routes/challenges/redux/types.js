@@ -10,6 +10,7 @@ export default createTypes([
   'closeLightBoxImage',
 
   // challenges
+  'codeUpdated',
   'fetchChallenge',
   'fetchChallenges',
   'fetchChallengeCompleted',

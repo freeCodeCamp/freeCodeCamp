@@ -2,7 +2,8 @@ import { Observable } from 'rx';
 import types from './types';
 import {
   updateCurrentChallenge,
-  updateMain
+  updateMain,
+  codeUpdated
 } from './actions';
 
 export default function resetChallengeSaga(actions$, getState) {
@@ -16,6 +17,7 @@ export default function resetChallengeSaga(actions$, getState) {
       const currentChallenge = challengeMap[dashedName];
       return Observable.of(
         updateCurrentChallenge(currentChallenge),
+        codeUpdated(),
         updateMain()
       );
     });

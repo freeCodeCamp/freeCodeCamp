@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Button, ButtonGroup, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
 
 const unlockWarning = (
   <Tooltip id='tooltip'>
@@ -21,11 +22,13 @@ export default class ToolPanel extends PureComponent {
     executeChallenge: PropTypes.func.isRequired,
     updateHint: PropTypes.func.isRequired,
     hint: PropTypes.string,
+    isChallengePassed: PropTypes.bool,
     isCodeLocked: PropTypes.bool,
     unlockUntrustedCode: PropTypes.func.isRequired,
     toggleHelpChat: PropTypes.func.isRequired,
     openBugModal: PropTypes.func.isRequired,
-    makeToast: PropTypes.func.isRequired
+    makeToast: PropTypes.func.isRequired,
+    submitChallenge: PropTypes.func.isRequired
   };
 
   makeHint() {
@@ -61,10 +64,36 @@ export default class ToolPanel extends PureComponent {
     );
   }
 
-  renderExecute(isCodeLocked, executeChallenge, unlockUntrustedCode) {
+  render() {
+    const {
+      hint,
+      isChallengePassed,
+      isCodeLocked,
+      executeChallenge,
+      toggleHelpChat,
+      openBugModal,
+      unlockUntrustedCode,
+      submitChallenge
+    } = this.props;
+
+  const actionButton = () => {
+    if (isChallengePassed) {
+      return (
+        <Button
+          block={ true }
+          bsStyle='primary'
+          className='btn-big'
+          key={1}
+          onClick={ submitChallenge }
+          >
+          Submit and go to next challenge
+        </Button>
+      );
+    }
     if (isCodeLocked) {
       return (
         <OverlayTrigger
+          key={2}
           overlay={ unlockWarning }
           placement='right'
           >
@@ -84,32 +113,23 @@ export default class ToolPanel extends PureComponent {
         block={ true }
         bsStyle='primary'
         className='btn-big'
+        key={3}
         onClick={ executeChallenge }
         >
         Run tests (ctrl + enter)
       </Button>
     );
-  }
-
-  render() {
-    const {
-      hint,
-      isCodeLocked,
-      executeChallenge,
-      toggleHelpChat,
-      openBugModal,
-      unlockUntrustedCode
-    } = this.props;
+  };
     return (
       <div>
         { this.renderHint(hint, this.makeHint) }
-        {
-          this.renderExecute(
-            isCodeLocked,
-            executeChallenge,
-            unlockUntrustedCode
-          )
-        }
+        <ReactCSSTransitionReplace
+          transitionEnterTimeout={1000}
+          transitionLeaveTimeout={400}
+          transitionName='fade-wait'
+          >
+          { actionButton() }
+        </ReactCSSTransitionReplace>
         <div className='button-spacer' />
         <ButtonGroup
           className='input-group'

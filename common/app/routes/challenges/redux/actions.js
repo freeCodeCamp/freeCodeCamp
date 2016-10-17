@@ -41,6 +41,7 @@ export const updateCurrentChallenge = createAction(
   types.updateCurrentChallenge
 );
 export const resetChallenge = createAction(types.resetChallenge);
+export const codeUpdated = createAction(types.codeUpdated);
 // replaceChallenge(dashedname) => Action
 export const replaceChallenge = createAction(types.replaceChallenge);
 

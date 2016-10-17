@@ -42,7 +42,8 @@ const initialUiState = {
   isPressed: false,
   isCorrect: false,
   shouldShakeQuestion: false,
-  shouldShowQuestions: false
+  shouldShowQuestions: false,
+  isChallengePassed: false
 };
 const initialState = {
   isCodeLocked: false,
@@ -79,10 +80,16 @@ const mainReducer = handleActions(
       helpChatRoom: challenge.helpRoom || 'Help',
       numOfHints: Array.isArray(challenge.hints) ? challenge.hints.length : 0
     }),
+    [types.codeUpdated]: state => ({
+      ...state,
+      isChallengePassed: false
+    }),
     [types.updateTests]: (state, { payload: tests }) => ({
       ...state,
-      tests
-    }),
+      tests,
+      isChallengePassed: (tests.length > 0 &&
+                          tests.every(test => test.pass && !test.err))
+  }),
     [types.updateHint]: state => ({
       ...state,
       hintIndex: state.hintIndex + 1 >= state.numOfHints ?
