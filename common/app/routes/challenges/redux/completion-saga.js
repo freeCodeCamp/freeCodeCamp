@@ -7,7 +7,6 @@ import {
 } from './actions';
 
 import { challengeSelector } from './selectors';
-import { randomCompliment } from '../../../utils/get-words';
 import {
   createErrorObservable,
   updateUserPoints,
@@ -40,14 +39,7 @@ function submitModern(type, state) {
   const { tests } = state.challengesApp;
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
     if (type === types.checkChallenge) {
-      return Observable.of(
-        makeToast({
-          message: `${randomCompliment()} Go to your next challenge.`,
-          action: 'Submit',
-          actionCreator: 'submitChallenge',
-          timeout: 10000
-        })
-      );
+      return Observable.just(null);
     }
 
     if (type === types.submitChallenge) {

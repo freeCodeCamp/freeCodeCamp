@@ -42,7 +42,9 @@ const initialUiState = {
   isPressed: false,
   isCorrect: false,
   shouldShakeQuestion: false,
-  shouldShowQuestions: false
+  shouldShowQuestions: false,
+  isChallengeModalOpen: false,
+  successMessage: 'Happy Coding!'
 };
 const initialState = {
   isCodeLocked: false,
@@ -81,7 +83,19 @@ const mainReducer = handleActions(
     }),
     [types.updateTests]: (state, { payload: tests }) => ({
       ...state,
-      tests
+      tests,
+      isChallengeModalOpen: (
+        tests.length > 0 &&
+        tests.every(test => test.pass && !test.err)
+      )
+    }),
+    [types.closeChallengeModal]: state => ({
+      ...state,
+      isChallengeModalOpen: false
+    }),
+    [types.updateSuccessMessage]: (state, { payload }) => ({
+      ...state,
+      successMessage: payload
     }),
     [types.updateHint]: state => ({
       ...state,
