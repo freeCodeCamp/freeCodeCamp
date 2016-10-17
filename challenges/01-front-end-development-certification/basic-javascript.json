@@ -1163,10 +1163,10 @@
         "<em>Note that the backslash itself must be escaped in order to display as a backslash.</em>",
         "<h4>Instructions</h4>",
         "Assign the following three lines of text into the single variable <code>myStr</code> using escape sequences.",
-        "<blockquote>FirstLine<br>\\SecondLine\\<br>ThirdLine</blockquote>",
+        "<blockquote>FirstLine<br/>&nbsp;&nbsp;&nbsp;&nbsp;\\SecondLine<br/>ThirdLine</blockquote>",
         "You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.",
         "Here is the text with the escape sequences written out.",
-        "<q>FirstLine<code>newline</code><code>backslash</code>SecondLine<code>backslash</code><code>carriage-return</code>ThirdLine</q>"
+        "<q>FirstLine<code>newline</code><code>tab</code><code>backslash</code>SecondLine<code>newline</code>ThirdLine</q>"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -1177,16 +1177,16 @@
       "tail": [
         "(function(){",
         "if (myStr !== undefined){",
-        "console.log('myStr: '+ myStr);}})();"
+        "console.log('myStr:\\n' + myStr);}})();"
       ],
       "solutions": [
-        "var myStr = \"FirstLine\\n\\\\SecondLine\\\\\\rThirdLine\";"
+        "var myStr = \"FirstLine\\n\\t\\\\SecondLine\\nThirdLine\";"
       ],
       "tests": [
-        "assert(myStr === \"FirstLine\\n\\\\SecondLine\\\\\\rThirdLine\", 'message: <code>myStr</code> should have encoded text with the proper escape sequences and no spacing.');",
-        "assert(myStr.match(/\\n/g).length == 1, 'message: <code>myStr</code> should have one newline character <code>\\n</code>');",
-        "assert(myStr.match(/\\r/g).length == 1, 'message: <code>myStr</code> should have one carriage return character <code>\\r</code>');",
-        "assert(myStr.match(/\\\\/g).length == 2, 'message: <code>myStr</code> should have two correctly escaped backslash characters <code>\\\\</code>');"
+        "assert(myStr === \"FirstLine\\n\\t\\\\SecondLine\\nThirdLine\", 'message: <code>myStr</code> should have encoded text with the proper escape sequences and no spacing.');",
+        "assert(myStr.match(/\\n/g).length == 2, 'message: <code>myStr</code> should have two newline characters <code>\\n</code>');",
+        "assert(myStr.match(/\\t/g).length == 1, 'message: <code>myStr</code> should have one tab character <code>\\t</code>');",
+        "assert(myStr.match(/\\\\/g).length == 1, 'message: <code>myStr</code> should have one correctly escaped backslash character <code>\\\\</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1198,7 +1198,7 @@
             "<table class=\"table table-striped\"><thead><tr><th>Código</th><th>Salida</th></tr></thead><tbody><tr><td>\\'</td><td>apostrofe</td></tr><tr><td>\\\"</td><td>comilla</td></tr><tr><td>\\\\</td><td>barra invertida</td></tr><tr><td>\\n</td><td>nueva línea</td></tr><tr><td>\\r</td><td>retorno de carro</td></tr><tr><td>\\t</td><td>tabulación</td></tr><tr><td>\\b</td><td>retroceso</td></tr><tr><td>\\f</td><td>salto de página</td></tr></tbody></table>",
             "<em>Nota que la barra invertida por si misma tiene que ser escapada con el fin de mostrarse como una barra invertida.</em>",
             "<h4>Instrucciones</h4>",
-            "Codifica la siguiente secuencia, separada por espacios:<br><code>barra invertida tabulación tabulación retorno de carro nueva línea</code> y asignala a <code>myStr</code>"
+            "Codifica la siguiente secuencia, separada por espacios:<br><q>FirstLine<code>nueva línea</code><code>tabulación</code><code>barra invertida</code>SecondLine<code>nueva línea</code>ThirdLine</q>"
           ]
         }
       }
