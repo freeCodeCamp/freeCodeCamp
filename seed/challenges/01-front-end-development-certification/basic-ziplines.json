@@ -3,6 +3,7 @@
   "order": 5.5,
   "time": "50 hours",
   "helpRoom": "HelpFrontEnd",
+  "blockType": "Project",
   "challenges": [
     {
       "id": "bd7158d8c442eddfbeb5bd1f",

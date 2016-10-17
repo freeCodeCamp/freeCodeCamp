@@ -35,7 +35,7 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.hintIndex,
   state => state.challengesApp.isCodeLocked,
   (
-    { challenge: { title, description, hints = [] } = {} },
+    { challenge: { title, description, hints = [], blockType } = {} },
     windowHeight,
     navHeight,
     tests,
@@ -49,6 +49,7 @@ const mapStateToProps = createSelector(
     tests,
     output,
     hint: hints[hintIndex],
+    blockType,
     isCodeLocked
   })
 );
@@ -67,6 +68,7 @@ export class SidePanel extends PureComponent {
     title: PropTypes.string,
     output: PropTypes.string,
     hint: PropTypes.string,
+    blockType: PropTypes.string,
     updateHint: PropTypes.func,
     makeToast: PropTypes.func,
     toggleHelpChat: PropTypes.func,
@@ -110,6 +112,7 @@ export class SidePanel extends PureComponent {
       tests = [],
       output,
       hint,
+      blockType,
       executeChallenge,
       updateHint,
       makeToast,
@@ -122,6 +125,16 @@ export class SidePanel extends PureComponent {
     if (height) {
       style.height = height + 'px';
     }
+
+    let titleString = () => {
+      if ((!blockType || blockType === 'undefined') && title) {
+        return title;
+      } else if (!title) {
+        return 'Happy Coding!';
+      }
+      return `${blockType}: ${title}`;
+    };
+
     return (
       <div
         className='challenges-instructions-panel'
@@ -130,7 +143,7 @@ export class SidePanel extends PureComponent {
         >
         <div>
           <h4 className='text-center challenge-instructions-title'>
-            { title || 'Happy Coding!' }
+            { titleString() }
           </h4>
           <hr />
           <Row>

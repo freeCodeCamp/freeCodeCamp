@@ -40,6 +40,7 @@ Observable.combineLatest(
     var fileName = challengeSpec.fileName;
     var helpRoom = challengeSpec.helpRoom || 'Help';
     var time = challengeSpec.time || 'N/A';
+    var blockType = challengeSpec.blockType;
     var isLocked = !!challengeSpec.isLocked;
     var message = challengeSpec.message;
     var required = challengeSpec.required || [];
@@ -60,6 +61,7 @@ Observable.combineLatest(
       superBlockMessage: message,
       order: order,
       time: time,
+      blockType: blockType,
       isLocked: isLocked
     };
 
@@ -88,6 +90,7 @@ Observable.combineLatest(
             challenge.suborder = index + 1;
             challenge.block = dasherize(blockName);
             challenge.blockId = block.id;
+            challenge.blockType = blockType;
             challenge.isBeta = challenge.isBeta || isBeta;
             challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
             challenge.isLocked = challenge.isLocked || isLocked;

@@ -3,7 +3,7 @@
   "order": 27,
   "time": "250 hours",
   "helpRoom": "HelpBackEnd",
-  "type": "Web Applications",
+  "blockType": "Web Applications",
   "challenges": [
     {
       "id": "bd7158d8c443eddfaeb5bcef",

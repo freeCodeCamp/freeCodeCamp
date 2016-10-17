@@ -5,6 +5,7 @@ import PureComponent from 'react-pure-render/component';
 export default class SidePanel extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
+    blockType: PropTypes.string,
     description: PropTypes.arrayOf(PropTypes.string),
     isCompleted: PropTypes.bool,
     isSignedIn: PropTypes.bool
@@ -33,11 +34,19 @@ export default class SidePanel extends PureComponent {
   }
 
   render() {
-    const { title, description, isCompleted } = this.props;
+    const { title, description, isCompleted, blockType } = this.props;
+    let titleString = () => {
+      if ((!blockType || blockType === 'undefined') && title) {
+        return title;
+      } else if (!title) {
+        return 'Happy Coding!';
+      }
+      return `${blockType}: ${title}`;
+    };
     return (
       <div>
         <h4 className='text-center challenge-instructions-title'>
-          { title }
+          { titleString() }
           { this.renderIcon(isCompleted) }
         </h4>
         <hr />

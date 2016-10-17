@@ -3,7 +3,7 @@
   "order": 24,
   "time": "3 hours",
   "helpRoom": "HelpBackEnd",
-  "type": "Git",
+  "blockType": "Git",
   "challenges": [
     {
       "id": "bd7353d8c341eddeaeb5bd0f",

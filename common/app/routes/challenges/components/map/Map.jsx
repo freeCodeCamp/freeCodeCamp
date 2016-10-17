@@ -43,9 +43,10 @@ export class ShowMap extends PureComponent {
     if (!this.props.params) {
       return;
     }
-    this.props.updateTitle(
-      'A Map to Learn to Code and Become a Software Engineer'
-    );
+    this.props.updateTitle({
+      blockType: null,
+      title: 'A Map to Learn to Code and Become a Software Engineer'
+    });
   }
 
   renderSuperBlocks(superBlocks) {
