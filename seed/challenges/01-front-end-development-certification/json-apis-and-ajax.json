@@ -3,7 +3,7 @@
   "order": 10,
   "time": "2 hours",
   "helpRoom": "Help",
-  "type": "JSON",
+  "blockType": "JSON",
   "required": [
    { "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" }
   ],

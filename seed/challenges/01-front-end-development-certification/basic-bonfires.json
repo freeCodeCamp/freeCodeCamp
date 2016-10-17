@@ -3,7 +3,7 @@
   "order": 8,
   "time": "50 hours",
   "helpRoom": "HelpJavaScript",
-  "type": "JavaScript",
+  "blockType": "JavaScript",
   "challenges": [
     {
       "id": "bd7158d2c442eddfbeb5bd1f",

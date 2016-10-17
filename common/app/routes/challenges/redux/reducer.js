@@ -49,6 +49,7 @@ const initialState = {
   id: '',
   challenge: '',
   helpChatRoom: 'Help',
+  blockType: '',
   isBugOpen: false,
   // old code storage key
   legacyKey: '',
@@ -77,6 +78,7 @@ const mainReducer = handleActions(
       key: getFileKey(challenge),
       tests: createTests(challenge),
       helpChatRoom: challenge.helpRoom || 'Help',
+      blockType: challenge.blockType,
       numOfHints: Array.isArray(challenge.hints) ? challenge.hints.length : 0
     }),
     [types.updateTests]: (state, { payload: tests }) => ({

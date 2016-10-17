@@ -13,7 +13,8 @@ const bindableActions = { resetUi, updateTitle };
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.shouldShowQuestions,
-  ({ challenge: { title } }, shouldShowQuestions) => ({
+  ({ challenge: { title, blockType } }, shouldShowQuestions) => ({
+    blockType,
     title,
     shouldShowQuestions
   })
@@ -27,6 +28,7 @@ export class Video extends React.Component {
     // actions
     resetUi: PropTypes.func,
     // ui
+    blockType: PropTypes.string,
     title: PropTypes.string,
     params: PropTypes.object,
     shouldShowQuestions: PropTypes.bool,
@@ -34,8 +36,8 @@ export class Video extends React.Component {
   };
 
   componentWillMount() {
-    const { updateTitle } = this.props;
-    updateTitle(this.props.title);
+    const { updateTitle, title, blockType } = this.props;
+    updateTitle({blockType, title});
   }
 
   componentWillUnmount() {
