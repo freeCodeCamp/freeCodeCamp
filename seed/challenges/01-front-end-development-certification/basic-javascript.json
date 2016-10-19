@@ -4990,6 +4990,57 @@
         }
       }
     },
+	{
+      "id": "cf1111c1c11feddfaeb1bdef",
+      "title": "Iterate with JavaScript While Loops",
+      "description": [
+        "You can run the same code multiple times by using a loop.",
+        "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
+        "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
+        "Let's try getting a while loop to work by pushing values to an array.",
+        "<h4>Instructions</h4>",
+        "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
+      ],
+      "challengeSeed": [
+        "// Setup",
+        "var myArray = [];",
+        "",
+        "// Only change code below this line.",
+        "",
+        ""
+      ],
+      "tail": [
+        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+      ],
+      "solutions": [
+        "var myArray = [];\nvar i = 0;\nwhile(i < 5) {\n  myArray.push(i);\n  i++;\n}"
+      ],
+      "tests": [
+        "assert(code.match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {
+        "es": {
+          "title": "Iterar con JavaScript con ciclos while",
+          "description": [
+            "Puede ejecutar el mismo código varias veces mediante el uso de un ciclo.",
+            "Otro tipo de ciclo de JavaScript se llama un ciclo \"while\", ya que se ejecuta, \"mientras que\" algo sea cierto y se detiene una vez que ya no sea así.",
+            "<code>var ourArray = [];</code>",
+            "<code>var i = 0;</code>",
+            "<code>while(i < 5) {</code>",
+            "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
+            "<code>&nbsp;&nbsp;i++;</code>",
+            "<code>}</code>",
+            "Intentemos que un ciclo <code>while</code> empuje valores en un vector.",
+            "<h4>Instrucciones</h4>",
+            "Empuja los números de 0 a 4 para <code>myArray</code> utilizando un ciclo <code>while</code>."
+          ]
+        }
+      }
+    },
+    
     {
       "id": "cf1111c1c11feddfaeb5bdef",
       "title": "Iterate with JavaScript For Loops",
@@ -5273,56 +5324,6 @@
             "Esto imprime cada sub-elemento en <code>arr</code> uno a la vez. Nota que en el ciclo interior, estamos comprobando la longitud <code>.length</code> de <code>arr[i]</code>, ya que <code>arr[i]</code> es por si mismo un vector.",
             "<h4>Instrucciones</h4>",
             "Modifica la función <code>multiplyAll</code> de manera que esta multiplique la variable <code>product</code> por cada número en los sub-vectores de <code>arr</code>"
-          ]
-        }
-      }
-    },
-    {
-      "id": "cf1111c1c11feddfaeb1bdef",
-      "title": "Iterate with JavaScript While Loops",
-      "description": [
-        "You can run the same code multiple times by using a loop.",
-        "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
-        "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
-        "Let's try getting a while loop to work by pushing values to an array.",
-        "<h4>Instructions</h4>",
-        "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
-      ],
-      "challengeSeed": [
-        "// Setup",
-        "var myArray = [];",
-        "",
-        "// Only change code below this line.",
-        "",
-        ""
-      ],
-      "tail": [
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
-      ],
-      "solutions": [
-        "var myArray = [];\nvar i = 0;\nwhile(i < 5) {\n  myArray.push(i);\n  i++;\n}"
-      ],
-      "tests": [
-        "assert(code.match(/while/g), 'message: You should be using a <code>while</code> loop for this.');",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'message: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
-      ],
-      "type": "waypoint",
-      "challengeType": 1,
-      "translations": {
-        "es": {
-          "title": "Iterar con JavaScript con ciclos while",
-          "description": [
-            "Puede ejecutar el mismo código varias veces mediante el uso de un ciclo.",
-            "Otro tipo de ciclo de JavaScript se llama un ciclo \"while\", ya que se ejecuta, \"mientras que\" algo sea cierto y se detiene una vez que ya no sea así.",
-            "<code>var ourArray = [];</code>",
-            "<code>var i = 0;</code>",
-            "<code>while(i < 5) {</code>",
-            "<code>&nbsp;&nbsp;ourArray.push(i);</code>",
-            "<code>&nbsp;&nbsp;i++;</code>",
-            "<code>}</code>",
-            "Intentemos que un ciclo <code>while</code> empuje valores en un vector.",
-            "<h4>Instrucciones</h4>",
-            "Empuja los números de 0 a 4 para <code>myArray</code> utilizando un ciclo <code>while</code>."
           ]
         }
       }
