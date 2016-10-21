@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var chai = parent.chai;
   var source = document.__source;
   var __getUserInput = document.__getUserInput || (x => x);
+  var checkChallengePayload = document.__checkChallengePayload;
 
   document.__getJsOutput = function getJsOutput() {
     if (window.__err || !common.shouldRun()) {
@@ -126,5 +127,5 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // notify that the window methods are ready to run
-  frameReady.onNext(null);
+  frameReady.onNext({ checkChallengePayload });
 });

@@ -10,7 +10,7 @@ import {
 import SolutionInput from '../Solution-Input.jsx';
 import TestSuite from '../Test-Suite.jsx';
 import Output from '../Output.jsx';
-import { executeChallenge } from '../../redux/actions.js';
+import { submitChallenge, executeChallenge } from '../../redux/actions.js';
 import { challengeSelector } from '../../redux/selectors.js';
 import { descriptionRegex } from '../../utils.js';
 import {
@@ -25,12 +25,13 @@ const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   tests: PropTypes.array,
   output: PropTypes.string,
+  executeChallenge: PropTypes.func.isRequired,
+  submitChallenge: PropTypes.func.isRequired,
   // provided by redux form
   submitting: PropTypes.bool,
   fields: PropTypes.object,
   resetForm: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
-  executeChallenge: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired
 };
 
 const fields = [ 'solution' ];
@@ -63,7 +64,8 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToActions = {
-  executeChallenge
+  executeChallenge,
+  submitChallenge
 };
 
 export class BackEnd extends PureComponent {

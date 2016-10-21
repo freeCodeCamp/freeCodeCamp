@@ -1,40 +1,9 @@
 import { createSelector } from 'reselect';
 
+import { viewTypes, submitTypes, getNode } from '../utils';
 import * as challengeTypes from '../../../utils/challengeTypes';
-import { getNode } from '../utils';
 import blockNameify from '../../../utils/blockNameify';
-
-const viewTypes = {
-  [ challengeTypes.html]: 'classic',
-  [ challengeTypes.js ]: 'classic',
-  [ challengeTypes.bonfire ]: 'classic',
-  [ challengeTypes.frontEndProject]: 'project',
-  [ challengeTypes.backEndProject]: 'project',
-  // might not be used anymore
-  [ challengeTypes.simpleProject]: 'project',
-  // formally hikes
-  [ challengeTypes.video ]: 'video',
-  [ challengeTypes.step ]: 'step',
-  backend: 'backend'
-};
-
-const submitTypes = {
-  [ challengeTypes.html ]: 'tests',
-  [ challengeTypes.js ]: 'tests',
-  [ challengeTypes.bonfire ]: 'tests',
-  // requires just a button press
-  [ challengeTypes.simpleProject ]: 'project.simple',
-  // requires just a single url
-  // like codepen.com/my-project
-  [ challengeTypes.frontEndProject ]: 'project.frontEnd',
-  // requires two urls
-  // a hosted URL where the app is running live
-  // project code url like GitHub
-  [ challengeTypes.backEndProject ]: 'project.backEnd',
-  // formally hikes
-  [ challengeTypes.video ]: 'video',
-  [ challengeTypes.step ]: 'step'
-};
+import { html } from '../../../utils/challengeTypes';
 
 export const challengeSelector = createSelector(
   state => state.challengesApp.challenge,
@@ -55,9 +24,12 @@ export const challengeSelector = createSelector(
       challenge,
       title,
       viewType,
-      submitType: submitTypes[challengeType] || 'tests',
-      showPreview: challengeType === challengeTypes.html,
-      mode: challenge && challengeType === challengeTypes.html ?
+      submitType:
+        submitTypes[challengeType] ||
+        submitTypes[challenge && challenge.type] ||
+        'tests',
+      showPreview: challengeType === html,
+      mode: challenge && challengeType === html ?
         'text/html' :
         'javascript'
     };

@@ -72,12 +72,13 @@ function frameMain({ build } = {}, document, proxyLogger) {
   main.close();
 }
 
-function frameTests({ build, source } = {}, document) {
+function frameTests({ build, source, checkChallengePayload } = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
   tests.__source = source;
   tests.__getUserInput = key => source[key];
+  tests.__checkChallengePayload = checkChallengePayload;
   tests.open();
   tests.write(createHeader(testId) + build);
   tests.close();
@@ -90,8 +91,8 @@ export default function frameEpic(actions, getState, { window, document }) {
   window.__common.shouldRun = () => true;
   // this will proxy console.log calls
   const proxyLogger = new Subject();
-  // runTests will let us know when the test iframe is ready to run
-  const runTests = window.__common[testId + 'Ready'] = new Subject();
+  // frameReady will let us know when the test iframe is ready to run
+  const frameReady = window.__common[testId + 'Ready'] = new Subject();
   const result = actions
     ::ofType(types.frameMain, types.frameTests)
     // if isCodeLocked is true do not frame user code
@@ -106,13 +107,14 @@ export default function frameEpic(actions, getState, { window, document }) {
 
   return Observable.merge(
     proxyLogger.map(updateOutput),
-    runTests.flatMap(() => {
+    frameReady.flatMap(({ checkChallengePayload }) => {
       const { frame } = getFrameDocument(document, testId);
       const { tests } = getState().challengesApp;
       const postTests = Observable.of(
         updateOutput('// tests completed'),
-        checkChallenge()
+        checkChallenge(checkChallengePayload)
       ).delay(250);
+      // run the tests within the test iframe
       return frame.__runTests(tests)
         .do(tests => {
           tests.forEach(test => {

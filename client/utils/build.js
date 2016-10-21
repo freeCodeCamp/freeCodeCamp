@@ -167,6 +167,7 @@ export function buildBackendChallenge(state) {
   return Observable.combineLatest(frameRunner, cacheScript(jQuery))
     .map(([ frameRunner, jQuery ]) => ({
       build: jQuery + frameRunner,
-      source: { url }
+      source: { url },
+      checkChallengePayload: { solution: url }
     }));
 }
