@@ -5,6 +5,36 @@
   "helpRoom": "Help",
   "challenges": [
     {
+      "id": "9d7123c01441eddf8635bdef",
+        "title": "Introduction to the Object Oriented Programming Challenges",
+        "description": [
+          [
+            "",
+            "",
+            "At its core, software development solves a problem or achieves a result with computation. The software development process first defines a problem, then presents a solution. Object oriented programming is one of several major approaches to the software development process.<br><br>As its name implies, object oriented programming organizes code into object definitions. These are sometimes called classes, and they group together data with related behavior. The data is an object's attributes, and the behavior (or functions) are methods.<br><br>The object structure makes it flexible within a program. For example, objects can exchange information with each other. One object would invoke a method and send data to the other in a process called message passing.<br><br>Object oriented programming uses the concept of inheritance. It allows a new class to inherit, or receive, all the features from a base or parent class plus a few of its own. Inheritance helps to avoid repeated code by reusing it between related classes.<br><br>Your choice of programming approach depends on a few factors. The type of problem, and how you want to structure your data and algorithms make a difference. This section covers object oriented programming principles in JavaScript.",
+            ""
+          ]
+        ],
+        "releasedOn": "",
+        "challengeSeed": [],
+        "tests": [],
+        "type": "Waypoint",
+        "challengeType": 7,
+        "isRequired": false,
+        "titleEs": "",
+        "descriptionEs": [
+          []
+        ],
+        "titleFr": "",
+        "descriptionFr": [
+          []
+        ],
+        "titleDe": "",
+        "descriptionDe": [
+          []
+        ]
+    },
+    {
       "id": "9d7123c01441eddfaeb5bdef",
       "title": "Create a Basic JavaScript Object",
       "description": [
