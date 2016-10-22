@@ -41,6 +41,15 @@ Remember to feel free to ask for help in our [Contributors](https://gitter.im/Fr
 
 > _Updating to the latest releases is recommended_.
 
+If Node or MongoDB is already installed in your machine, run the following commands to validate the versions:
+
+```shell 
+node -v 
+mongo --version
+``` 
+
+If your versions are lower than the prerequisite versions, you should update. 
+
 ### Forking The Project
 
 #### Setting Up Your System
