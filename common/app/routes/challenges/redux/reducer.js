@@ -44,7 +44,8 @@ const initialUiState = {
   shouldShakeQuestion: false,
   shouldShowQuestions: false,
   isChallengeModalOpen: false,
-  successMessage: 'Happy Coding!'
+  successMessage: 'Happy Coding!',
+  unlockedSteps: []
 };
 const initialState = {
   isCodeLocked: false,
@@ -143,16 +144,19 @@ const mainReducer = handleActions(
     }),
 
     // step
-    [types.goToStep]: (state, { payload: step = 0 }) => ({
+    [types.goToStep]: (state, { payload: { step = 0, isUnlocked }}) => ({
       ...state,
       currentIndex: step,
       previousIndex: state.currentIndex,
-      isActionCompleted: false
+      isActionCompleted: isUnlocked
     }),
-
     [types.completeAction]: state => ({
       ...state,
       isActionCompleted: true
+    }),
+    [types.updateUnlockedSteps]: (state, { payload }) => ({
+      ...state,
+      unlockedSteps: payload
     }),
     [types.openLightBoxImage]: state => ({
       ...state,

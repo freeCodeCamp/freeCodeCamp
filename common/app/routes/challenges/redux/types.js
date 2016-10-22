@@ -8,6 +8,7 @@ export default createTypes([
   'completeAction',
   'openLightBoxImage',
   'closeLightBoxImage',
+  'updateUnlockedSteps',
 
   // challenges
   'fetchChallenge',

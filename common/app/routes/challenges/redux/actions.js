@@ -7,8 +7,12 @@ import types from './types';
 // step
 export const stepForward = createAction(types.stepForward);
 export const stepBackward = createAction(types.stepBackward);
-export const goToStep = createAction(types.goToStep);
+export const goToStep = createAction(
+  types.goToStep,
+  (step, isUnlocked) => ({ step, isUnlocked })
+);
 export const completeAction = createAction(types.completeAction);
+export const updateUnlockedSteps = createAction(types.updateUnlockedSteps);
 export const openLightBoxImage = createAction(types.openLightBoxImage);
 export const closeLightBoxImage = createAction(types.closeLightBoxImage);
 
