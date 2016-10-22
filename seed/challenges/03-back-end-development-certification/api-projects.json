@@ -101,7 +101,7 @@
         "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://timestamp-ms.herokuapp.com/' target='_blank'>https://timestamp-ms.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.com/challenges/get-set-for-our-api-development-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
-        "<strong>User Story:</strong> I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).",
+        "<strong>User Story:</strong> I can pass a string as a parameter, and it will check to see whether that string contains either a Unix timestamp or a natural language date (example: January 1, 2016).",
         "<strong>User Story:</strong> If it does, it returns both the Unix timestamp and the natural language form of that date.",
         "<strong>User Story:</strong> If it does not contain a date or Unix timestamp, it returns null for those properties.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
