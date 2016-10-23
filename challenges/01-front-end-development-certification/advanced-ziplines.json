@@ -39,6 +39,20 @@
             "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen. ",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
           ]
+        },
+        "pt-br": {
+          "title": "Construa uma calculadora JavaScript",
+          "description": [
+            "<span class='text-info'>Objetivo:</span> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/rLJZrA/' target='_blank'>https://codepen.io/FreeCodeCamp/full/rLJZrA/</a>.",
+            "<span class='text-info'>Regra #1:</span> Não veja o código do projeto de exemplo no CodePen. Encontre a sua própria forma de fazê-lo.",
+            "<span class='text-info'>Regra #2:</span> Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
+            "<span class='text-info'>História de usuário:</span> Eu posso somar, subtrair, multiplicar e dividir dois números.",
+            "<span class='text-info'>História de usuário opcional:</span> Eu posso limpar o campo de entrada com um botão claro.",
+            "<span class='text-info'>História de usuário opcional:</span> Eu posso manter o encadeamento de operações matemáticas juntas até eu apertar o botão de igual, e a calculadora irá me dizer a resposta correta.",
+            "Lembre-se de utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Buscar-Perguntar</a> se você tiver dificuldades.",
+            "Quando tiver terminado, clique no botão \"Eu concluí este desafio\" e inclua um link para o seu projeto no CodePen. ",
+            "Você pode obter feedback sobre o seu projeto compartilhando-o com os seus amigos no Facebook."
+          ]
         }
       }
     },
@@ -93,6 +107,19 @@
             "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen. Если вы программировали с кем-то в паре, также добавьте имя вашего напарника.",
             "Если вы хотите получить немедленную оценку вашего проекта, нажмите эту кнопку и добавьте ссылку на ваш CodePen. В противном случае мы проверим его перед тем как вы приступите к проектам для некоммерческих организаций.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
           ]
+        },
+        "pt-br": {
+          "title": "Construa um relógio Pomodoro",
+          "description": [
+            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+            "<span class='text-info'>Regra #1:</span> Não veja o código do projeto de exemplo no CodePen. Encontre a sua própria forma de fazê-lo.",
+            "<span class='text-info'>Regra #2:</span> Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
+            "<span class='text-info'>História de usuário:</span> Eu posso começar um pomodoro de 25 minutos, e o temporizador desligará quando 25 minutos tiverem passado.",
+            "<span class='text-info'>História de usuário:</span> Eu posso zerar o relógio para o meu próximo pomodoro.",
+            "Lembre-se de utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Buscar-Perguntar</a> se você tiver dificuldades.",
+            "Quando tiver terminado, clique no botão \"Eu concluí este desafio\" e inclua um link para o seu projeto no CodePen. ",
+            "Você pode obter feedback sobre o seu projeto compartilhando-o com os seus amigos no Facebook."
+          ]
         }
       }
     },
@@ -130,6 +157,20 @@
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
             "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        },
+        "pt-br": {
+          "title": "Construa um Jogo da Velha",
+          "description": [
+            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+            "<span class='text-info'>Regra #1:</span> Não veja o código do projeto de exemplo no CodePen. Encontre a sua própria forma de fazê-lo.",
+            "<span class='text-info'>Regra #2:</span> Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
+            "<span class='text-info'>História de usuário:</span> Eu posso jogar o Jogo da Velha com o computador.",
+            "<span class='text-info'>História de usuário:</span> Meu jogo reiniciará assim que acabar para que eu possa jogar novamente.",
+            "<span class='text-info'>História de usuário:</span> Eu posso escolher se eu quero jogar como X ou O.",
+            "Lembre-se de utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Buscar-Perguntar</a> se você tiver dificuldades.",
+            "Quando tiver terminado, clique no botão \"Eu concluí este desafio\" e inclua um link para o seu projeto no CodePen. ",
+            "Você pode obter feedback sobre o seu projeto compartilhando-o com os seus amigos no Facebook."
           ]
         }
       }
@@ -180,6 +221,26 @@
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
             "Cuando hayas terminado, pulsa el botón de \"I've completed this challenge\" e incluye un enlace a tu CodePen.",
             "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        },
+        "pt-br": {
+          "title": "Construa um jogo de Simon",
+          "description": [
+            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+            "<span class='text-info'>Regra #1:</span> Não veja o código do projeto de exemplo no CodePen. Encontre a sua própria forma de fazê-lo.",
+            "<span class='text-info'>Regra #2:</span> Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
+            "<span class='text-info'>História de usuário:</span> Eu sou apresentado a uma sequência aleatória de botões para presisonar.",
+            "<span class='text-info'>História de usuário:</span> Cada vez que eu pressionar uma sequência de botões corretamente, eu vejo a mesma sequência de botões, mas com um passo adicional.",
+            "<span class='text-info'>História de usuário:</span> Eu ouço um som que corresponde a cada botão quando a sequência é tocada, e quando eu, pessoalmente, pressiono cada botão.",
+            "<span class='text-info'>História de usuário:</span> Se eu pressionar o botão errado, eu sou notificado, e essa sequência de botões recomeça para que eu possa me lembrar do padrão e tentar novamente.",
+            "<span class='text-info'>História de usuário:</span> Eu posso ver quantos passos estão na sequência atual de botões para pressionar.",
+            "<span class='text-info'>História de usuário:</span> Se eu quiser reiniciar, eu posso pressionar um botão e o jogo retornará para um único passo na sequência de botões.",
+            "<span class='text-info'>História de usuário:</span> Eu posso jogar no modo rigoroso, onde se eu pressionar um botão errado, eu sou notificado e o jogo recomeça em uma nova série aleatória de botões para pressionar.",
+            "<span class='text-info'>História de usuário:</span> Eu posso ganhar o jogo pressionando uma sequência de 20 passos corretamente. Eu sou notificado da minha vitória e então o jogo recomeça.",
+            "<strong>Dica: </strong>Aqui estão alguns mp3s que você pode usar para cada botão: <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code>.",
+            "Lembre-se de utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Buscar-Perguntar</a> se você tiver dificuldades.",
+            "Quando tiver terminado, clique no botão \"Eu concluí este desafio\" e inclua um link para o seu projeto no CodePen. ",
+            "Você pode obter feedback sobre o seu projeto compartilhando-o com os seus amigos no Facebook."
           ]
         }
       }
