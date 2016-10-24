@@ -780,10 +780,10 @@
         "var lookup = {\n  'A': 'N','B': 'O','C': 'P','D': 'Q',\n  'E': 'R','F': 'S','G': 'T','H': 'U',\n  'I': 'V','J': 'W','K': 'X','L': 'Y',\n  'M': 'Z','N': 'A','O': 'B','P': 'C',\n  'Q': 'D','R': 'E','S': 'F','T': 'G',\n  'U': 'H','V': 'I','W': 'J','X': 'K',\n  'Y': 'L','Z': 'M' \n};\n\nfunction rot13(encodedStr) {\n  var codeArr = encodedStr.split(\"\");  // String to Array\n  var decodedArr = []; // Your Result goes here\n  // Only change code below this line\n  \n  decodedArr = codeArr.map(function(letter) {\n    if(lookup.hasOwnProperty(letter)) {\n      letter = lookup[letter];\n    }\n    return letter;\n  });\n\n  // Only change code above this line\n  return decodedArr.join(\"\"); // Array to String\n}"
       ],
       "tests": [
-        "assert(rot13(\"SERR PBQR PNZC\") === \"FREE CODE CAMP\", 'message: <code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>\"FREE CODE CAMP\"</code>');",
-        "assert(rot13(\"SERR CVMMN!\") === \"FREE PIZZA!\", 'message: <code>rot13(\"SERR CVMMN!\")</code> should decode to <code>\"FREE PIZZA!\"</code>');",
-        "assert(rot13(\"SERR YBIR?\") === \"FREE LOVE?\", 'message: <code>rot13(\"SERR YBIR?\")</code> should decode to <code>\"FREE LOVE?\"</code>');",
-        "assert(rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\") === \"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\", 'message: <code>rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\")</code> should decode to <code>\"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\"</code>');"
+        "assert(rot13(\"SERR PBQR PNZC\") === \"FREE CODE CAMP\", 'message: <code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>FREE CODE CAMP</code>');",
+        "assert(rot13(\"SERR CVMMN!\") === \"FREE PIZZA!\", 'message: <code>rot13(\"SERR CVMMN!\")</code> should decode to <code>FREE PIZZA!</code>');",
+        "assert(rot13(\"SERR YBIR?\") === \"FREE LOVE?\", 'message: <code>rot13(\"SERR YBIR?\")</code> should decode to <code>FREE LOVE?</code>');",
+        "assert(rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\") === \"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\", 'message: <code>rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>');"
       ],
       "type": "bonfire",
       "MDNlinks": [
