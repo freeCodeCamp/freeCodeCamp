@@ -77,6 +77,12 @@ export class Editor extends PureComponent {
         'Cmd-Enter': function() {
           executeChallenge();
           return false;
+        },
+        'Ctrl-/': function(cm) {
+          cm.toggleComment();
+        },
+        'Cmd-/': function(cm) {
+          cm.toggleComment();
         }
       }
     })
