@@ -150,6 +150,7 @@
         "assert.deepEqual(convertToRoman(83), \"LXXXIII\", 'message: <code>convertToRoman(83)</code> should return \"LXXXIII\"');",
         "assert.deepEqual(convertToRoman(97), \"XCVII\", 'message: <code>convertToRoman(97)</code> should return \"XCVII\"');",
         "assert.deepEqual(convertToRoman(99), \"XCIX\", 'message: <code>convertToRoman(99)</code> should return \"XCIX\"');",
+        "assert.deepEqual(convertToRoman(400), \"CD\", 'message: <code>convertToRoman(400)</code> should return \"CD\"');",
         "assert.deepEqual(convertToRoman(500), \"D\", 'message: <code>convertToRoman(500)</code> should return \"D\"');",
         "assert.deepEqual(convertToRoman(501), \"DI\", 'message: <code>convertToRoman(501)</code> should return \"DI\"');",
         "assert.deepEqual(convertToRoman(649), \"DCXLIX\", 'message: <code>convertToRoman(649)</code> should return \"DCXLIX\"');",
