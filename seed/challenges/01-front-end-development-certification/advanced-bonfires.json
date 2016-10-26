@@ -126,7 +126,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Diferencia simétrica",
+          "title": "Diferencia Simétrica",
           "description": [
             "Crea una función que acepte dos o más arreglos y que devuelva un arreglo conteniendo la diferenia simétrica entre ambos",
             "En Matemáticas, el término 'diferencia simétrica' se refiere a los elementos en dos conjuntos que están en el primer conjunto o en el segundo, pero no en ambos.",
@@ -134,7 +134,7 @@
           ]
         },
         "it": {
-          "title": "Differenza simmetrica",
+          "title": "Differenza Simmetrica",
           "description": [
             "Crea una funzione che accetti due o più array e che ritorni un array contenente la <dfn>differenza simmetrica</dfn> (<code>&xutri;</code> o <code>&oplus;</code>) degli stessi.",
             "Dati due insiemi (per esempio l'insieme <code>A = {1, 2, 3}<code> e l'insieme <code>B = {2, 3, 4}</code>, il termine matematico \"differenza simmetrica\" di due insiemi è l'insieme degli elementi che sono in almeno uno dei due insiemi, ma non in entrambi (<code>A &xutri; B = C = {1, 4}</code>). Per ogni differenza simmetrica aggiuntiva che fai (per esempio su un insieme <code>D = {2, 3}</code>), devi prendere l'insieme degli elementi che sono in almeno uno dei due insiemi ma non in entrambi (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>).",
@@ -195,7 +195,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Cambio exacto",
+          "title": "Cambio Exacto",
           "description": [
             "Crea una función que simule una caja registradora que acepte el precio de compra como el primer argumento, la cantidad recibida como el segundo argumento, y la cantidad de dinero disponible en la registradora (cid) como tercer argumento",
             "cid es un arreglo bidimensional que lista la cantidad de dinero disponible",
@@ -205,7 +205,7 @@
           ]
         },
         "it": {
-          "title": "Cambio esatto",
+          "title": "Cambio Esatto",
           "description": [
             "Scrivi una funzione che simuli un registro di cassa chiamata <code>checkCashRegister()</code> che accetti il prezzo degli articoli come primo argomento (<code>price</code>), la somma pagata (<code>cash</code>), e la somma disponibile nel registratore di cassa (<code>cid</code>) come terzo argomento.",
             "<code>cid</code> è un array a due dimensioni che contiene la quantità di monete e banconote disponibili.",
@@ -264,14 +264,14 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Actualizando el inventario",
+          "title": "Actualizando el Inventario",
           "description": [
             "Compara y actualiza el inventario actual, almacenado en un arreglo bidimensional, contra otro arreglo bidimensional de inventario nuevo. Actualiza las cantidades en el inventario actual y, en caso de recibir una nueva mercancía, añade su nombre y la cantidad recibida al arreglo del inventario en orden alfabético.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "it": {
-          "title": "Aggiornamento dell'inventario",
+          "title": "Aggiornamento dell'Inventario",
           "description": [
             "Confronta e aggiorna l'inventario, contenuto in un array bidimensionale, con un secondo array bidimensionale relativo ad una nuova consegna. Aggiorna le quantità disponibili in inventario (dentro <code>arr1</code>). Se uno degli articoli non è presente nell'inventario, aggiungi allo stesso il nuovo articolo e la sua quantità. Ritorna un array con l'inventario aggiornato, che deve essere ordinato alfabeticamente per articolo.",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
@@ -281,7 +281,7 @@
     },
     {
       "id": "a7bf700cd123b9a54eef01d5",
-      "title": "No repeats please",
+      "title": "No Repeats Please",
       "description": [
         "Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.",
         "For example, <code>aab</code> should return 2 because it has 6 total permutations (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), but only 2 of them (<code>aba</code> and <code>aba</code>) don't have the same letter (in this case <code>a</code>) repeating.",
@@ -317,7 +317,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Sin repeticiones, por favor",
+          "title": "Sin Repeticiones, por Favor",
           "description": [
             "Crea una función que devuelva el número total de permutaciones de las letras en la cadena de texto provista, en las cuales no haya letras consecutivas repetidas",
             "Por ejemplo, 'aab' debe retornar 2 porque, del total de 6 permutaciones posibles, solo 2 de ellas no tienen repetida la misma letra (en este caso 'a').",
@@ -325,7 +325,7 @@
           ]
         },
         "it": {
-          "title": "Niente ripetizioni, per favore",
+          "title": "Niente Ripetizioni, per Favore",
           "description": [
             "Ritorna il numero totale di permutazioni della stringa passata che non hanno lettere consecutive riptetute. Assumi che tutti i caratteri nella stringa passata siano unici.",
             "Per esempio, <code>aab</code> deve ritornare 2, perchè la stringa ha 6 permutazioni possibili in totale (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), ma solo 2 di loro (<code>aba</code> e <code>aba</code>) non contengono la stessa lettera (in questo caso <code>a</code> ripetuta).",
@@ -376,7 +376,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Rangos de fechas amigables",
+          "title": "Rangos de Fechas Amigables",
           "description": [
             "Convierte un rango de fecha que conste de dos fechas en formato AAAA-MM-DD a un formato más legible",
             "",
@@ -386,7 +386,7 @@
           ]
         },
         "it": {
-          "title": "Intervalli di date leggibili",
+          "title": "Intervalli di Date Leggibili",
           "description": [
             "Converti un intervallo di date composto da due date in formato <code>YYYY-MM-DD</code> in un formato più leggibile.",
             "Il formato leggibile deve usare i nomi dei mesi (in inglese) e le i numeri dei giorni in formato ordinale invece che cardinale (sempre in inglese. Ad esempio <code>1st</code> invece di <code>1</code>).",
@@ -502,7 +502,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Ubica los escombros",
+          "title": "Ubica los Escombros",
           "description": [
             "Crea una función que devuelva un nuevo arreglo que transforme la altitud promedio del elemento en su período orbital.",
             "El arreglo debe contener objetos en el formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
@@ -513,7 +513,7 @@
           ]
         },
         "it": {
-          "title": "Mappa i detriti",
+          "title": "Mappa i Detriti",
           "description": [
             "Ritorna un nuovo array che trasformi l'altitudine media degli elementi nel loro periodo orbitale.",
             "L'array conterrà oggetti in formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
@@ -561,7 +561,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "En parejas",
+          "title": "En Parejas",
           "description": [
             "Crea una función que devuelva la suma de todos los índices de los elementos de 'arr' que pueden ser emparejados con otro elemento de tal forma que la suma de ambos equivalga al valor del segundo argumento, 'arg'. Si varias combinaciones son posibles, devuelve la menor suma de índices. Una vez un elemento ha sido usado, no puede ser usado de nuevo para emparejarlo con otro elemento.",
             "Por ejemplo, pairwise([1, 4, 2, 3, 0, 5], 7) debe devolver 11 porque 4, 2, 3 y 5 pueden ser emparejados para obtener una suma de 7",
@@ -570,7 +570,7 @@
           ]
         },
         "it": {
-          "title": "A coppie",
+          "title": "A Coppie",
           "description": [
             "Dato un array <code>arr</code>, trova le coppie di elementi la cui somma è uguale al secondo argomento passato <code>arg</code>. Ritorna quindi la somma dei loro indici.",
             "Se ci sono più coppie possibili che hanno lo stesso valore numerico ma indici differenti, ritorna la somma degli indici minore. Una volta usato un elemento, lo stesso non può essere riutilizzato per essere accoppiato con un altro.",
