@@ -184,6 +184,16 @@ module.exports = function(app) {
     sendNonUserToMap,
     getAccount
   );
+  router.get(
+    '/reset-my-progress',
+    sendNonUserToMap,
+    showResetProgress
+  );
+  api.post(
+    '/account/resetprogress',
+    ifNoUser401,
+    postResetProgress
+  );
 
   // Ensure these are the last routes!
   api.get(
@@ -452,6 +462,35 @@ module.exports = function(app) {
       req.logout();
       req.flash('info', { msg: 'You\'ve successfully deleted your account.' });
       return res.redirect('/');
+    });
+  }
+
+  function showResetProgress(req, res) {
+    return res.render('account/reset-progress', { title: 'Reset My Progress!'
+    });
+  }
+
+  function postResetProgress(req, res, next) {
+    User.findById(req.user.id, function(err, user) {
+      if (err) { return next(err); }
+      return user.updateAttributes({
+        progressTimestamps: [{
+          timestamp: Date.now()
+        }],
+        currentStreak: 0,
+        longestStreak: 0,
+        currentChallengeId: '',
+        isBackEndCert: false,
+        isFullStackCert: false,
+        isDataVisCert: false,
+        isFrontEndCert: false,
+        challengeMap: {},
+        challegesCompleted: []
+      }, function(err) {
+        if (err) { return next(err); }
+        req.flash('info', { msg: 'You\'ve successfully reset your progress.' });
+        return res.redirect('/');
+      });
     });
   }
 
