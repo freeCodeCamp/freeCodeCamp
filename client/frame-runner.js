@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+  var testTimeout = 5000;
   var common = parent.__common;
   var frameId = window.__frameId;
   var frameReady = common[frameId + 'Ready'] || { onNext() {} };
@@ -99,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
           __result = Rx.Observable.throw(e);
         }
         return __result
+          .timeout(testTimeout)
           .map(() => {
             // we don't need the result of a promise/observable/cb here
             // all data asserts should happen further up the chain
