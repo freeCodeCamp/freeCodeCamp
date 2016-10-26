@@ -45,6 +45,18 @@ function nextTick(fn) {
   return process.nextTick(fn);
 }
 
+function getWaitPeriod(ttl) {
+  const fiveMinutesAgo = moment().subtract(5, 'minutes');
+  const lastEmailSentAt = moment(new Date(ttl || null));
+  const isWaitPeriodOver = ttl ?
+    lastEmailSentAt.isBefore(fiveMinutesAgo) : true;
+  if (!isWaitPeriodOver) {
+    const minutesLeft = 5 -
+      (moment().minutes() - lastEmailSentAt.minutes());
+    return minutesLeft;
+  }
+  return 0;
+}
 module.exports = function(User) {
   // NOTE(berks): user email validation currently not needed but build in. This
   // work around should let us sneak by
@@ -75,6 +87,7 @@ module.exports = function(User) {
     User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
     User.update$ = Observable.fromNodeCallback(User.updateAll, User);
     User.count$ = Observable.fromNodeCallback(User.count, User);
+    User.findOrCreate$ = Observable.fromCallback(User.findOrCreate, User);
   });
 
   User.beforeRemote('create', function({ req }) {
@@ -488,43 +501,40 @@ module.exports = function(User) {
     }
   );
 
-  User.requestAuthLink = function requestAuthLink(email, emailTemplate) {
+  User.requestAuthLink = function requestAuthLink(email) {
     if (!isEmail(email)) {
       return Promise.reject(
         new Error('The submitted email not valid.')
         );
     }
 
-    const filter = {
-      where: { email },
-      // remove password from the query
-      fields: { password: null }
+    var userObj = {
+      username: 'fcc' + uuid.v4().slice(0, 8),
+      email: email,
+      emailVerified: false
     };
-    return User.findOne$(filter)
-      .map(user => {
-        if (!user) {
-          debug(`no user found with the email ${email}.`);
-          // do not let the user know if an email is not found
-          // this is to avoid sending spam requests to valid users
+    return User.findOrCreate$({ where: { email: userObj.email }}, userObj)
+      .map(([ err, user, isCreated ]) => {
+        if (err) {
           return dedent`
-           If you entered a valid email, a magic link is on its way.
-           Please click that link to sign in.`;
+           Oops, something is not right, please try again later.`;
         }
 
-        // Todo : Break this below chunk to a separate function
-        const fiveMinutesAgo = moment().subtract(5, 'minutes');
-        const lastEmailSentAt = moment(new Date(user.emailAuthLinkTTL || null));
-        const isWaitPeriodOver = user.emailAuthLinkTTL ?
-          lastEmailSentAt.isBefore(fiveMinutesAgo) : true;
-        if (!isWaitPeriodOver) {
-          const minutesLeft = 5 -
-            (moment().minutes() - lastEmailSentAt.minutes());
-          const timeToWait = minutesLeft ?
-            `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-            'a few seconds';
-          debug('request before wait time : ' + timeToWait);
-          return dedent`
-            Please wait ${timeToWait} to resend email verification.`;
+        if (!isDev) {
+          const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
+          if (minutesLeft) {
+            const timeToWait = minutesLeft ?
+              `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+              'a few seconds';
+            debug('request before wait time : ' + timeToWait);
+            return dedent`
+              Please wait ${timeToWait} to resend an authentication link.`;
+          }
+        }
+
+        let emailTemplate = 'user-request-sign-in.ejs';
+        if (isCreated) {
+          emailTemplate = 'user-request-sign-up.ejs';
         }
 
         // create a temporary access token with ttl for 1 hour
@@ -546,15 +556,19 @@ module.exports = function(User) {
             type: 'email',
             to: user.email,
             from: 'Team@freecodecamp.com',
-            subject: 'Free Code Camp - Sign in Request!',
+            subject: 'Free Code Camp - Authentication Request!',
             text: renderAuthEmail({
               loginEmail,
               loginToken
             })
           };
-          this.email.send(mailOptions, err =>{
-            if (err) { throw err; }
-          });
+          if (!isDev) {
+            this.email.send(mailOptions, err =>{
+              if (err) { throw err; }
+            });
+          } else {
+            console.log('~~~~\n' + mailOptions.text + '~~~~\n');
+          }
           user.emailAuthLinkTTL = token.created;
           user.save(err =>{ if (err) { throw err; }});
         });
@@ -583,8 +597,6 @@ module.exports = function(User) {
       description: 'request a link on email with temporary token to sign in',
       accepts: [{
         arg: 'email', type: 'string', required: true
-      }, {
-        arg: 'emailTemplate', type: 'string', required: true
       }],
       returns: [{
         arg: 'message', type: 'string'
@@ -596,13 +608,7 @@ module.exports = function(User) {
   );
 
   User.prototype.updateEmail = function updateEmail(email) {
-    const fiveMinutesAgo = moment().subtract(5, 'minutes');
-    const lastEmailSentAt = moment(new Date(this.emailVerifyTTL || null));
     const ownEmail = email === this.email;
-    const isWaitPeriodOver = this.emailVerifyTTL ?
-      lastEmailSentAt.isBefore(fiveMinutesAgo) :
-      true;
-
     if (!isEmail('' + email)) {
       return Observable.throw(createEmailError());
     }
@@ -613,17 +619,17 @@ module.exports = function(User) {
       ));
     }
 
-    if (ownEmail && !isWaitPeriodOver) {
-      const minutesLeft = 5 -
-        (moment().minutes() - lastEmailSentAt.minutes());
-
-      const timeToWait = minutesLeft ?
-        `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-        'a few seconds';
-
-      return Observable.throw(new Error(
-        `Please wait ${timeToWait} to resend email verification.`
-      ));
+    if (!isDev) {
+      const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
+      if (ownEmail && minutesLeft) {
+        const timeToWait = minutesLeft ?
+          `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+          'a few seconds';
+        debug('request before wait time : ' + timeToWait);
+        return Observable.throw(new Error(
+          `Please wait ${timeToWait} to resend email verification.`
+        ));
+      }
     }
 
     return Observable.fromPromise(User.doesExist(null, email))

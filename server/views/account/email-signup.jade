@@ -16,7 +16,7 @@ block content
               | Sign up with an Email here:
               .button-spacer
           .col-sm-6.col-sm-offset-3
-              form(method='POST', action='/passwordless-signup')
+              form(method='POST', action='/passwordless-auth')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .form-group
                       input.input-lg.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
