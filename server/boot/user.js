@@ -195,6 +195,12 @@ module.exports = function(app) {
     postResetProgress
   );
 
+  api.get(
+    '/account/unlink/:social',
+    sendNonUserToMap,
+    getUnlinkSocial
+  );
+
   // Ensure these are the last routes!
   api.get(
     '/:username/front-end-certification',
@@ -275,6 +281,70 @@ module.exports = function(app) {
   function getAccount(req, res) {
     const { username } = req.user;
     return res.redirect('/' + username);
+  }
+
+  function getUnlinkSocial(req, res, next) {
+    const { user } = req;
+    const { username } = user;
+
+    let social = req.params.social;
+    if (!social) {
+      req.flash('errors', {
+        msg: 'No social account found'
+      });
+      return res.redirect('/' + username);
+    }
+
+    social = social.toLowerCase();
+    const validSocialAccounts = ['twitter', 'linkedin'];
+    if (validSocialAccounts.indexOf(social) === -1) {
+      req.flash('errors', {
+        msg: 'Invalid social account'
+      });
+      return res.redirect('/' + username);
+    }
+
+    if (!user[social]) {
+      req.flash('errors', {
+        msg: `No ${social} account associated`
+      });
+      return res.redirect('/' + username);
+    }
+
+    const query = {
+      where: {
+        provider: social
+      }
+    };
+
+    return user.identities(query, function(err, identities) {
+      if (err) { return next(err); }
+
+      // assumed user identity is unique by provider
+      let identity = identities.shift();
+      if (!identity) {
+        req.flash('errors', {
+          msg: 'No social account found'
+        });
+        return res.redirect('/' + username);
+      }
+
+      return identity.destroy(function(err) {
+        if (err) { return next(err); }
+
+        const updateData = { [social]: null };
+
+        return user.update$(updateData)
+          .subscribe(() => {
+            debug(`${social} has been unlinked successfully`);
+
+            req.flash('info', {
+              msg: `You\'ve successfully unlinked your ${social}.`
+            });
+            return res.redirect('/' + username);
+          }, next);
+      });
+    });
   }
 
   function showUserProfile(req, res, next) {
