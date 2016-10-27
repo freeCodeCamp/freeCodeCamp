@@ -1,4 +1,4 @@
-version: v1.5.0
+version: v1.5.2
 ignore: {}
 patch:
   'npm:marked:20150520':
@@ -9,6 +9,8 @@ patch:
   'npm:minimatch:20160620':
     - gulp > vinyl-fs > glob-stream > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
+      jsonlint-cli > minimatch:
+        patched: '2016-10-27T21:56:34.219Z'
     - gulp > vinyl-fs > glob-stream > glob > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
     - rev-del > mocha > glob > minimatch:
