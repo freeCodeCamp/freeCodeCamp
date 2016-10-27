@@ -11,6 +11,7 @@ import {
 
 import navLinks from './links.json';
 import AvatarPointsNavItem from './Avatar-Points-Nav-Item.jsx';
+import NoPropsPassthrough from '../../utils/No-Props-Passthrough.jsx';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
@@ -82,14 +83,16 @@ export default class extends React.Component {
   renderMapLink(isOnMap, toggleMapDrawer) {
     if (isOnMap) {
       return (
-        <li role='presentation'>
-          <a
-            href='#'
-            onClick={ this.handleMapClickOnMap }
-            >
-            Map
-          </a>
-        </li>
+        <NoPropsPassthrough>
+          <li role='presentation'>
+            <a
+              href='#'
+              onClick={ this.handleMapClickOnMap }
+              >
+              Map
+            </a>
+          </li>
+        </NoPropsPassthrough>
       );
     }
     return (
