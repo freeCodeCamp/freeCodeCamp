@@ -14,13 +14,13 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "You didn't put <code>\"Hello World\"</code> in the console",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/_api/hello-console').then(function(data){ assert.isTrue(data.passed); }).promise())"
+          "text" : "<code>\"Hello World\"</code> should be in the console",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/hello-console').then(function(data){ assert.isTrue(data.passed, ''); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -57,13 +57,13 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Your app doesn't serve the string 'Hello Express'",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space').then(function(data){ assert.equal(data, 'Hello Express'); }).promise())"
+          "text" : "Your app should serve the string 'Hello Express'",
+          "testString" : "getUserInput => ($.get(getUserInput('url')).then(function(data){ assert.equal(data, 'Hello Express'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -97,13 +97,13 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Your app doesn't serve the file views/index.html",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space').then(function(data){ assert.match(data, /<h1>.*<\\/h1>/); }).promise())"
+          "text" : "Your app should serve the file views/index.html",
+          "testString" : "getUserInput => ($.get(getUserInput('url')).then(function(data){ assert.match(data, /<h1>.*<\\/h1>/); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -135,13 +135,13 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Your app doesn't serve the file views/index.html",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/style.css').then(function(data){ assert.match(data, /body\\s*\\{[^\\}]*\\}/); }).promise())"
+          "text" : "Your app should serve asset files from the <code>/public</code> directory",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/style.css').then(function(data){ assert.match(data, /body\\s*\\{[^\\}]*\\}/); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -173,13 +173,13 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The endpoint /json doesn't serve the json Object <code>{\"message\": \"Hello json\"}</code>",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/json').then(function(data){ assert.equal(data.message, 'Hello json'); }).promise())"
+          "text" : "The endpoint /json should serve the json <code>{\"message\": \"Hello json\"}</code>",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/json').then(function(data){ assert.equal(data.message, 'Hello json'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -210,13 +210,13 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The response of the endpoint /json doesn't depend on the env var MESSAGE_STYLE",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/_api/use-env-vars').then(function(data){ assert.isTrue(data.passed); }).promise())"
+          "text" : "The response of the endpoint /json should change setting the environment variable MESSAGE_STYLE",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/use-env-vars').then(function(data){ assert.isTrue(data.passed); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -255,13 +255,13 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The root level logger middleware is not working as it should",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/_api/root-middleware-logger').then(function(data){ assert.isTrue(data.passed); }).promise())"
+          "text" : "Root level logger middleware should be active",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/root-middleware-logger').then(function(data){ assert.isTrue(data.passed); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -301,17 +301,17 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The /now endpoint doesn't have mounted middleware",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/_api/chain-middleware-time').then(function(data){ assert.equal(data.stackLength, 2); }).promise())"
+          "text" : "The /now endpoint should have mounted middleware",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/chain-middleware-time').then(function(data){ assert.equal(data.stackLength, 2); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text" : "The /now endpoint doesn't return a time that is +/- 20 secs from now",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/_api/chain-middleware-time').then(function(data){ var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000); }).promise())"
+          "text" : "The /now endpoint should return a time that is +/- 20 secs from now",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/chain-middleware-time').then(function(data){ var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -345,17 +345,17 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Test 1 : Your echo server doesn't repeat words correctly",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/eChOtEsT/echo').then(function(data){ assert.equal(data.echo, 'eChOtEsT') }).promise())"
+          "text" : "Test 1 : Your echo server should repeat words correctly",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/eChOtEsT/echo').then(function(data){ assert.equal(data.echo, 'eChOtEsT') }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text" : "Test 2 : Your echo server doesn't repeat words correctly",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/ech0-t3st/echo').then(function(data){ assert.equal(data.echo, 'ech0-t3st') }).promise())"
+          "text" : "Test 2 : Your echo server should repeat words correctly",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/ech0-t3st/echo').then(function(data){ assert.equal(data.echo, 'ech0-t3st') }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -390,17 +390,17 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Test 1 : Your API endpoint doesn't respond with the correct name",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/name?first=Mick&last=Jagger').then(function(data){ assert.equal(data.name, 'Mick Jagger') }).promise())"
+          "text" : "Test 1 : Your API endpoint should respond with the correct name",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/name?first=Mick&last=Jagger').then(function(data){ assert.equal(data.name, 'Mick Jagger') }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text" : "Test 2 : Your APi endpoint doesn't respond with the correct name",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/name?last=Richards&first=Keith').then(function(data){ assert.equal(data.name, 'Keith Richards') }).promise())"
+          "text" : "Test 2 : Your APi endpoint should respond with the correct name",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/name?last=Richards&first=Keith').then(function(data){ assert.equal(data.name, 'Keith Richards') }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -442,13 +442,13 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The 'body-parser' middleware is not mounted",
-          "testString" : "() => ($.get('https://west-horse.hyperdev.space' + '/_api/add-body-parser').then(function(data){ assert.isAbove(data.mountedAt, 0) }).promise())"
+          "text" : "The 'body-parser' middleware should be mounted",
+          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/add-body-parser').then(function(data){ assert.isAbove(data.mountedAt, 0) }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -488,17 +488,17 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Test 1 : Your APi endpoint doesn't respond with the correct name",
-          "testString" : "() => ($.post('https://west-horse.hyperdev.space' + '/name', {first: 'Mick', last: 'Jagger'}).then(function(data){ assert.equal(data.name, 'Mick Jagger') }).promise())"
+          "text" : "Test 1 : Your APi endpoint should respond with the correct name",
+          "testString" : "getUserInput => ($.post(getUserInput('url') + '/name', {first: 'Mick', last: 'Jagger'}).then(function(data){ assert.equal(data.name, 'Mick Jagger') }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text" : "Test 2 : Your APi endpoint doesn't respond with the correct name",
-          "testString" : "() => ($.post('https://west-horse.hyperdev.space' + '/name', {first: 'Keith', last: 'Richards'}).then(function(data){ assert.equal(data.name, 'Keith Richards') }).promise())"
+          "text" : "Test 2 : Your APi endpoint should respond with the correct name",
+          "testString" : "getUserInput => ($.post(getUserInput('url') + '/name', {first: 'Keith', last: 'Richards'}).then(function(data){ assert.equal(data.name, 'Keith Richards') }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {
         "de": {

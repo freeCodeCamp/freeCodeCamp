@@ -13,12 +13,12 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text": "\"mongodb\" dependency missing in package.json",
-          "testString": "() => ($.get(window.projectUrl + '/_api/file/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongodb'); }).promise())"
+          "text": "\"mongodb\" dependency should be in package.json",
+          "testString": "() => ($.get(window.projectUrl + '/_api/file/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongodb'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "\"mongoose\" dependency missing in package.json",
-          "testString": "() => ($.get(window.projectUrl + '/_api/file/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongooose'); }).promise())"
+          "text": "\"mongoose\" dependency should be in package.json",
+          "testString": "() => ($.get(window.projectUrl + '/_api/file/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongooose'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
