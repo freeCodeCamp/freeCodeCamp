@@ -133,7 +133,7 @@
     "chunk-manifest-webpack-plugin": "0.1.0",
     "del": "^2.2.0",
     "eslint": "^3.1.0",
-    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-react": "^6.2.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
