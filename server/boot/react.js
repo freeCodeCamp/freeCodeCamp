@@ -1,11 +1,12 @@
 import React from 'react';
 import { RouterContext } from 'react-router';
 import debug from 'debug';
-
 import { renderToString } from 'redux-epic';
-import provideStore from '../../common/app/provide-store';
 
+import provideStore from '../../common/app/provide-store';
 import createApp from '../../common/app';
+import blockNameify from '../../common/app/utils/blockNameify';
+
 
 const log = debug('fcc:react-server');
 
@@ -84,7 +85,11 @@ export default function reactSubRouter(app) {
       .flatMap(function({ markup, store, epic }) {
         log('react markup rendered, data fetched');
         const state = store.getState();
-        const { title } = state.app;
+        const { challenge } = state.entities;
+        const challengeKey = Object.keys(challenge)[0];
+        const blockName = blockNameify(challenge[challengeKey].block);
+        const challengeTitle = challenge[challengeKey].title;
+        const title = `${blockName}: ${challengeTitle}`;
         epic.dispose();
         res.expose(state, 'data');
         res.expose(req.flash(), 'flash');

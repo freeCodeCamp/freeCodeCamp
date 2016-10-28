@@ -44,7 +44,9 @@ const mapStateToProps = createSelector(
   state => state.app.lang,
   (
     {
-      challenge: { title, isTranslated } = {}, viewType
+      challenge: { isTranslated } = {},
+      viewType,
+      title
     },
     challenge,
     superBlocks = [],
@@ -92,8 +94,7 @@ export class Challenges extends PureComponent {
   };
 
   componentWillMount() {
-    const { title, updateTitle, lang, isTranslated, makeToast } = this.props;
-    updateTitle(title);
+    const { lang, isTranslated, makeToast } = this.props;
     if (lang !== 'en' && !isTranslated) {
       makeToast({
         message: 'We haven\'t translated this challenge yet.',
@@ -107,6 +108,9 @@ export class Challenges extends PureComponent {
     if (!this.props.areChallengesLoaded) {
       this.props.fetchChallenges();
     }
+    if (this.props.title) {
+      this.props.updateTitle(this.props.title);
+    }
   }
 
   componentWillUnmount() {
@@ -114,11 +118,12 @@ export class Challenges extends PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
+    const { title } = nextProps;
     const { block, dashedName } = nextProps.params;
     const { lang, isTranslated } = nextProps;
     const { resetUi, updateTitle, replaceChallenge, makeToast } = this.props;
     if (this.props.params.dashedName !== dashedName) {
-      updateTitle(nextProps.title);
+      updateTitle(title);
       resetUi();
       replaceChallenge({ dashedName, block });
       if (lang !== 'en' && !isTranslated) {

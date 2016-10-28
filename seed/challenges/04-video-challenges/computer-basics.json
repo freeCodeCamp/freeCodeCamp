@@ -5,7 +5,7 @@
   "challenges": [
     {
       "id": "bd7128d8c441eddfbeb5bddf",
-      "title": "Computer Basics: The 4 Basic Parts of a Computer",
+      "title": "The 4 Basic Parts of a Computer",
       "description": [
         "At the very least, a machine needs these four basic parts to be considered a computer.",
         "Today we're going to talk about the basics of computer hardware.",
@@ -44,7 +44,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentes básicos del computador: Las 4 partes básicas de un computador",
+          "title": "Las 4 partes básicas de un computador",
           "description": [
             "Una máquina necesita por lo menos cuatro partes básicas para ser considerada un computador.",
             "Hoy vamos a hablar acerca de conceptos básicos de hardware.",
@@ -65,7 +65,7 @@
     },
     {
       "id": "bd7127d8c441eddfbeb5bddf",
-      "title": "Computer Basics: More Computer Hardware",
+      "title": "More Computer Hardware",
       "description": [
         "In this video we cover the basic functions of a motherboard, expansion slots, and power supply.",
         "Let's quickly review - the 4 basic parts of a computer are the input, like the mouse or the keyboard, the output, which is seen on the monitor or heard on the speakers, the CPU, the central processing unit, and the memory.",
@@ -103,7 +103,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Más Hardware",
+          "title": "Más Hardware",
           "description": [
             "En este video cubrimos las funciones básicas de una placa base, tarjetas de expansión, y la fuente de poder.",
             "Vamos a revisar rápidamente - las 4 partes básicas de un computador son dispositivos de entrada, como el ratón o el teclado, dispositivos de salida, monitor o altavoces, la CPU, la unidad central de procesamiento, y la memoria.",
@@ -123,7 +123,7 @@
     },
     {
       "id": "bd7129d8a441eddfbeb5bddf",
-      "title": "Computer Basics: Chips and Moore's Law",
+      "title": "Chips and Moore's Law",
       "description": [
         "We discuss what constitutes a chip and why technology gets cheaper every year.",
         "In this video we are going to be talking about chips and something called Moore's Law.",
@@ -159,7 +159,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Chips y la Ley de Moore",
+          "title": "Chips y la Ley de Moore",
           "description": [
             "Discutiremos lo que constituye un chip y por qué la tecnología se vuelve más barata cada año.",
             "En este video vamos a estar hablando sobre chips y algo que se llama la Ley de Moore.",
@@ -177,7 +177,7 @@
     },
     {
       "id": "bd7126d8c441eddfbeb5bddf",
-      "title": "Computer Basics: Intro to Binary Code",
+      "title": "Intro to Binary Code",
       "description": [
         "What binary looks like, and what it can mean.",
         "0's and 1's can turn be interpreted into far more complex data.",
@@ -209,7 +209,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Introducción a código binario",
+          "title": "Introducción a código binario",
           "description": [
             "Cómo se ve lo binario, y lo que puede significar.",
             "Los 0s y 1s pueden interpretarse como datos mucho más complejos.",
@@ -224,7 +224,7 @@
     },
     {
       "id": "bd7125d8c441eddfbeb5bddf",
-      "title": "Computer Basics: Decoding a Binary Number",
+      "title": "Decoding a Binary Number",
       "description": [
         "In this video, we decode a number written in binary notation.",
         "Let's talk about the binary numeral system, also known as a bunch of 1's and 0's over and over again.",
@@ -258,7 +258,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: decodificar un número binario",
+          "title": "decodificar un número binario",
           "description": [
             "En este vídeo, decodificaremos un número escrito en notación binaria.",
             "Hablemos sobre el sistema de numeración binario, también conocido como un montón de 1s y 0s una y otra vez.",
@@ -275,7 +275,7 @@
     },
     {
       "id": "bd7122d8c441eddfbeb5bddf",
-      "title": "Computer Basics: Binary Bytes",
+      "title": "Binary Bytes",
       "description": [
         "Binary does more than express numbers - through bytes, it can symbolize all alphanumeric symbols, which can then be interpreted into more complex code.",
         "Let's talk about the most basic level that a computer can understand other languages like JavaScript.",
@@ -307,7 +307,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Bytes en binario",
+          "title": "Bytes en binario",
           "description": [
             "En binario se puede hacer más que representar números - mediante bytes, puede simbolizar todos los símbolos alfanuméricos, los cuales pueden ser interpretados en códigos más complejos",
             "Vamos a hablar sobre el nivel más básico que un computador puede comprender otros lenguajes como JavaScript.",
@@ -322,7 +322,7 @@
     },
     {
       "id": "bd7124d8c441eddfbeb5bddf",
-      "title": "Computer Basics: How To Measure Data Size",
+      "title": "How To Measure Data Size",
       "description": [
         "How the size/amount of data is measured, starting from a bit and going all the way up to a petabyte.",
         "Today we're going to be talking about Data Size.",
@@ -359,7 +359,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Cómo medir el tamaño de los datos",
+          "title": "Cómo medir el tamaño de los datos",
           "description": [
             "¿Cómo se mide el tamaño/cantidad de datos, a partir de un bit y continuando hasta un petabyte.",
             "Hoy vamos a estar hablando de tamaño de los datos.",
@@ -379,7 +379,7 @@
     },
     {
       "id": "bd7123d8c441eddfbeb5bddf",
-      "title": "Computer Basics: Measuring Data Speed",
+      "title": "Measuring Data Speed",
       "description": [
         "Data speed and data size are measured differently.",
         "In this video, we cover how data speed is measured.",
@@ -411,7 +411,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: medición de la velocidad de datos",
+          "title": "medición de la velocidad de datos",
           "description": [
             "La velocidad de datos y el tamaño de los datos se miden de manera diferente.",
             "En este video, cubrimos cómo se mide la velocidad de los datos.",
@@ -430,7 +430,7 @@
     },
     {
       "id": "bd7121d8c441eddfbeb5bddf",
-      "title": "Computer Basics: Types of Computers",
+      "title": "Types of Computers",
       "description": [
         "This video covers the basics of supercomputers, servers, workstations, PCs, and microcontrollers.",
         "Let's discuss the different types of computers.",
@@ -467,7 +467,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Tipos de Computadores",
+          "title": "Tipos de Computadores",
           "description": [
             "Este video cubre los conceptos básicos de los supercomputadores, servidores, estaciones de trabajo, PC y microcontroladores.",
             "Vamos a discutir los diferentes tipos de computadores.",
@@ -487,7 +487,7 @@
     },
     {
       "id": "bd7120d8c441eddfbeb5bddf",
-      "title": "Computer Basics: More on the Motherboard",
+      "title": "More on the Motherboard",
       "description": [
         "A little more detail on what constitutes a motherboard and what functionalities are standard in PCs.",
         "Today we're going to be talking more about the motherboard.",
@@ -526,7 +526,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Más sobre la placa base",
+          "title": "Más sobre la placa base",
           "description": [
             "Un poco más de detalle sobre lo que constituye una placa base y sus funciones estándar en un computador.",
             "Hoy vamos a hablar más sobre la placa base.",
@@ -548,7 +548,7 @@
     },
     {
       "id": "bd712fd8c441eddfbeb5bddf",
-      "title": "Computer Basics: Data Networks",
+      "title": "Data Networks",
       "description": [
         "This video covers the basics of local area networks, wide area networks, and virtual private networks.",
         "In this video we talk about Data Networks.",
@@ -587,7 +587,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Redes de datos",
+          "title": "Redes de datos",
           "description": [
             "Este video cubre los conceptos básicos de redes de área local, redes de área amplia y redes privadas virtuales.",
             "En este vídeo se habla de redes de datos.",
@@ -608,7 +608,7 @@
     },
     {
       "id": "bd712ed8c441eddfbeb5bddf",
-      "title": "Computer Basics: IP Addresses",
+      "title": "IP Addresses",
       "description": [
         "Every device has an IP address.",
         "IP addresses are assigned based on location, and are vital for the internet to work.",
@@ -640,7 +640,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Direcciones IP",
+          "title": "Direcciones IP",
           "description": [
             "Cada dispositivo tiene una dirección IP.",
             "Las direcciones IP se asignan en función de la ubicación, y son vitales para que Internet funcione.",
@@ -660,7 +660,7 @@
     },
     {
       "id": "bd712dd8c441eddfbeb5bddf",
-      "title": "Computer Basics: How the Internet Works",
+      "title": "How the Internet Works",
       "description": [
         "This is a brief and basic overview of how the internet works.",
         "For a more in-depth explanation, check out <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>.",
@@ -694,7 +694,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: ¿Cómo funciona Internet",
+          "title": "¿Cómo funciona Internet",
           "description": [
             "Esta es una descripción breve y descripción de cómo funciona Internet.",
             "Para una explicación más en profundidad, dale un vistazo a <a href='http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm' target='_blank'>web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm</a>.",
@@ -715,7 +715,7 @@
     },
     {
       "id": "bd712cd8c441eddfbeb5bddf",
-      "title": "Computer Basics: Software",
+      "title": "Software",
       "description": [
         "We discriminate between hardware and software, and also discuss the differences between an operating system and application software.",
         "In this video, we'll discuss the basics of software.",
@@ -739,7 +739,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Software",
+          "title": "Software",
           "description": [
             "Diferenciamos entre hardware y software, y también discutimos las diferencias entre el sistema operativo y el software de aplicación.",
             "En este video, vamos a discutir los fundamentos del software.",
@@ -755,7 +755,7 @@
     },
     {
       "id": "56b15f15632298c12f31510f",
-      "title": "Computer Basics: Content Delivery Networks",
+      "title": "Content Delivery Networks",
       "description": [
         "A Content Delivery Network is a system of distributed servers (network) that deliver webpages and other Web content to a user based on the geographic locations of the user, the origin of the webpage and a content delivery server.",
         "The goal of a CDN is to establish higher quality network connections.",
@@ -787,7 +787,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Fundamentos básicos del computador: Redes de distribución de contenido",
+          "title": "Redes de distribución de contenido",
           "description": [
             "Una red de distribución de contenido  (del inglés <em>Content Delivery Network</em>) es un sistema (red) de servidores distribuidos que sirven páginas web y otros contenidos web a los usuarios en función de su ubicación geográfica, el origen de la página web y un servidor de entrega de contenido.",
             "El objetivo de una RDC (CDN) es establecer conexiones de red de mayor calidad.",
