@@ -5,7 +5,7 @@
   "challenges": [
     {
       "id": "56b15f15632298c12f31517b",
-      "title": "Big O Notation: What It Is and Why You Should Care",
+      "title": "What It Is and Why You Should Care",
       "description": [
         "Time complexity is a way of discussing how long specific algorithms take. This is useful in streamlining software so it works as fast as possible.",
         "When you're writing code, you should be aware of how long it's going to take to execute. Nobody wants to create a product that users find frustrating due to slow use.",
@@ -34,7 +34,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Notación O mayúscula: ¿Qué es y porque te debe interesar?",
+          "title": "¿Qué es y porque te debe interesar?",
           "description": [
             "La complejidad temporal es una forma de discutir cunto tiempo toma un algoritmo específico.  Esto es útil al ajustar software para que opere tan rápido como sea posible.",
             "Cuando escribes código, debes tener en cuenta cuanto se va a demorar su ejecución. Nadie quiere crear un producto que fruste a los usuarios por su lentitud.",
@@ -50,7 +50,7 @@
     },
     {
       "id": "56b15f15632298c12f31517a",
-      "title": "Big O Notation: A Few Examples",
+      "title": "A Few Examples",
       "description": [
         "Time complexity is commonly estimated by counting the number of elementary operations (elementary operation = an operation that takes a fixed amount of time to perform) performed in the algorithm.",
         "Time complexity is classified by the nature of the function O(n). O represents the function, and (n) represents the number of elements to be acted on.",
@@ -90,7 +90,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Notación O mayúscula: Unos pocos ejemplos",
+          "title": "Unos pocos ejemplos",
           "description": [
             "La complejidad en tiempo comunmente se estima contando la cantidad de operaciones elementales que un algoritmo efectua (una operación elemental es una cuya ejecución requiere una cantidad de tiempo fijo).",
             "La complejidad temporal se clasifica por la naturaleza de la función O(n) donde O representa una función matemática para el tiempo que tarda el algoritmo y n representa la cantidad de elementos sobre los que actua el algoritmo.",

@@ -5,7 +5,7 @@
   "challenges": [
     {
       "id": "56b15f15632298c12f315184",
-      "title": "Chrome Dev Tools: Elements",
+      "title": "Elements",
       "description": [
         "This is basic info and a mini-lesson on the Elements tab of Chrome Dev Tools. Check out more in-depth documentation here: <a href='https://developers.google.com/web/tools/chrome-devtools/inspect-styles/' target='_blank'>developers.google.com/web/tools/chrome-devtools/inspect-styles/</a>",
         "We will be using the webpage mckellen.com/ per suggestion of Free Code Camp user kmiasko.",
@@ -34,7 +34,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: Elementos",
+          "title": "Elementos",
           "description": [
             "Esta es información básica y una mini-lección sobre la pestaña Elements en las herramientas de desarrollo de Chrome. Echa un vistazo a la documentación más detallada aquí: <a href='https://developers.google.com/web/tools/chrome-devtools/inspect-styles/' target='_blank'>developers.google.com/web/tools/chrome-devtools/inspect-styles/</a>",
             "Vamos a utilizar la página web mckellen.com/ por sugerencia del usuario de FreeCodeCamp kmiasko.",
@@ -50,7 +50,7 @@
     },
     {
       "id": "56b15f15632298c12f315183",
-      "title": "Chrome Dev Tools: Network",
+      "title": "Network",
       "description": [
         "The network tab helps answer questions like 'Which element or part of the page took the longest?' or 'What initiated a request?'.",
         "The network panel records detailed information about how long each element of your page or app takes to load.",
@@ -77,7 +77,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: red",
+          "title": "red",
           "description": [
             "La pestaña network (red) ayuda a responder preguntas como '¿Qué elemento o parte de la página fue el más demorado?' o '¿Qué inició una petición?'",
             "El panel de red registra información detallada sobre cuánto tarda en cargar cada elemento de su página o aplicación.",
@@ -92,7 +92,7 @@
     },
     {
       "id": "56b15f15632298c12f315182",
-      "title": "Chrome Dev Tools: Sources",
+      "title": "Sources",
       "description": [
         "The 'Sources' tab is most useful for debugging JavaScript. The bigger your project is, the harder it can be to find exactly where a problem occurs.",
         "You can select different parts of the code to be 'breakpoints', checkpoints that will stop the code at that exact moment.",
@@ -121,7 +121,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: Fuentes",
+          "title": "Fuentes",
           "description": [
             "La pestaña 'fuentes' es más útil para la depuración de JavaScript. Cuanto más grande sea tu proyecto, tanto más difícil resulta encontrar exactamente dónde se produce un problema. ",
             "Puedes seleccionar diferentes partes del código para ser 'puntos de interrupción', puestos de control que detendrán la ejecución del código en ese preciso momento. ",
@@ -137,7 +137,7 @@
     },
     {
       "id": "56b15f15632298c12f315181",
-      "title": "Chrome Dev Tools: Timeline",
+      "title": "Timeline",
       "description": [
         "The Timeline panel lets you record and analyze all the activity in your application as it runs. It's the best place to start investigating perceived performance issues in your application.",
         "Just like you use network to find out how long things take to communicate with the internet and you use sources to find out where something is broken, you can use the timeline to figure out what's going on and how long it takes in even more detail.",
@@ -166,7 +166,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: Línea de tiempo",
+          "title": "Línea de tiempo",
           "description": [
             "El panel Línea de tiempo te permite grabar y analizar toda la actividad en tu aplicación mientras se ejecuta. Es el mejor lugar para comenzar a investigar los problemas de rendimiento que percibas en tu aplicación. ",
             "Al igual que usas el panel de red para averiguar cuánto tiempo toman las partes de la página para comunicarse con el Internet y utilizas fuentes para averiguar dónde algo se daña, puedes utilizar la línea de tiempo para averiguar con más detalle lo que está pasando y el tiempo que tarda.",
@@ -182,7 +182,7 @@
     },
     {
       "id": "56b15f15632298c12f315180",
-      "title": "Chrome Dev Tools: Profiles",
+      "title": "Profiles",
       "description": [
         "The Profiles panel lets you profile the execution time and memory usage of a web app or page. This primarily applies to the JavaScript running on your page or app.",
         "There are three types of profiles you can collect: CPU profile, HEAP snapshot, and HEAP profile. HEAP profiles have more to do with memory usage, while a CPU profile has more to do with JavaScript performance.",
@@ -208,7 +208,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: Perfiles",
+          "title": "Perfiles",
           "description": [
             "El panel Perfiles te permite perfilar el tiempo de ejecución y el uso de memoria de una aplicación web o de una página. Esto se aplica principalmente a la ejecución de JavaScript en su página o aplicación. ",
             "Hay tres tipos de perfiles que se pueden recolectar: el perfil de la CPU, instantáneas de la memoria con estructura montón (Heap), y el perfil de la memoria con estructura montón. Los perfiles de memoria en estructura montón tienen más que ver con el uso de memoria, mientras que un perfil de la CPU tiene más que ver con el rendimiento de JavaScript. ",
@@ -221,7 +221,7 @@
     },
     {
       "id": "56b15f15632298c12f31517f",
-      "title": "Chrome Dev Tools: Resources",
+      "title": "Resources",
       "description": [
         "The Resources panel lets you inspect resources that are loaded in the inspected page including IndexedDB or Web SQL databases, local and session storage, cookies, Application Cache, images, fonts, and style sheets.",
         "You can view and edit all of this information within the browser.",
@@ -241,7 +241,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: Recursos",
+          "title": "Recursos",
           "description": [
             "El panel de Recursos te permite inspeccionar los recursos que se cargan en la página, incluyendo IndexedDB o bases de datos SQL Web, almacenamiento local y de sesión, las galletas (cookies), memoria caché de aplicaciones, imágenes, fuentes y hojas de estilo.",
             "Puedes ver y editar toda esta información dentro del navegador.",
@@ -253,7 +253,7 @@
     },
     {
       "id": "56b15f15632298c12f31517e",
-      "title": "Chrome Dev Tools: Audits",
+      "title": "Audits",
       "description": [
         "The Audit tool walks you through how to improve your page step by step.",
         "In this video, we use this tool on the quote generator that I made as a front end development project.",
@@ -280,7 +280,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: Las auditorías",
+          "title": "Las auditorías",
           "description": [
             "La herramienta de auditoría te guía para mejorar tu página paso a paso.",
             "En este vídeo, se utiliza esta herramienta con un generador de citas aleatorias desarrollado como uno de los proyectos de desarrollo de interfaces.",
@@ -294,7 +294,7 @@
     },
     {
       "id": "56b15f15632298c12f31517d",
-      "title": "Chrome Dev Tools: Console",
+      "title": "Console",
       "description": [
         "The Console panel provides two primary functions: logging diagnostic information in the development process and providing a shell prompt which can be used to interact with the document and Dev Tools.",
         "When using the console, you can view raw or structured data by using standard JS statements and console-specific commands.",
@@ -322,7 +322,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: Consola",
+          "title": "Consola",
           "description": [
             "El panel de la consola ofrece dos funciones principales: registro de datos de diagnóstico en el proceso de desarrollo y proporcionar un intérprete de órdenes que puedes utilizar para interactuar con el documento y las Herramientas de desarrollo",
             "Al utilizar la consola, puedes ver los datos en bruto o estructurados mediante instrucciones estándar JS y órdenes específicas para la consola.",
@@ -337,7 +337,7 @@
     },
     {
       "id": "56b15f15632298c12f31517c",
-      "title": "Chrome Dev Tools: Summary",
+      "title": "Summary",
       "description": [
         "1.) Chrome Dev Tools are awesome, and the more you can dive in and try to use them, the faster your skill level will grow.",
         "2.) Use the documentation, even if you've never read documentation before: <a href='http://developers.google.com/web/tools/chrome-devtools/' target='_blank'>developers.google.com/web/tools/chrome-devtools/</a>",
@@ -356,7 +356,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "Herramientas de desarrollo de Chrome: Resumen",
+          "title": "Resumen",
           "description": [
             ", Las herramientas de desarrollo de Chrome son impresionantes, y cuanto más te puedas sumergir y tratar de utilizarlas, más rápido aumentará tu nivel. ",
             ", Utiliza la documentación, incluso si nunca has leído documentación antes: <a href='http://developers.google.com/web/tools/chrome-devtools/' target='_blank'>developers.google.com/web/tools/chrome-devtools/</a> ",
