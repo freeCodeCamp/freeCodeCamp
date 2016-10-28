@@ -260,6 +260,6 @@
     "import/no-duplicates": 2,
     "import/newline-after-import": 2,
     "import/unambiguous": 2,
-    "import/extensions": [ 1, "always" ]
+    "import/extensions": [ 0, "always" ]
   }
 }
