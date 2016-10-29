@@ -97,7 +97,7 @@ export class Header extends PureComponent {
           <Row className='map-buttons'>
             <InputGroup>
               <FormControl
-                autocompleted='off'
+                autoComplete='off'
                 className={ inputClass }
                 onChange={ updateFilter }
                 onKeyDown={ this.handleKeyDown }
