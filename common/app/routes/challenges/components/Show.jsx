@@ -9,6 +9,7 @@ import Classic from './classic/Classic.jsx';
 import Step from './step/Step.jsx';
 import Project from './project/Project.jsx';
 import Video from './video/Video.jsx';
+import FCCSpinner from '../../../components/FCC-Spinner.jsx';
 
 import {
   fetchChallenge,
@@ -102,9 +103,11 @@ export class Challenges extends PureComponent {
   }
 
   render() {
-    const { viewType } = this.props;
+    const { viewType, areChallengesLoaded } = this.props;
+    const spinner = !areChallengesLoaded ? <FCCSpinner /> : <span />;
     return (
       <div>
+        { spinner }
         { this.renderView(viewType) }
       </div>
     );

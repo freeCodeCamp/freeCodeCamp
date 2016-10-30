@@ -1,0 +1,36 @@
+.keyframes(@name; @arguments) {
+	@keyframes @name { @arguments(); }
+}
+
+.animation(@arguments) {
+	animation: @arguments;
+}
+
+.fcc-spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow-x: hidden;
+
+  span {
+    font-size: 150px;
+    color: @brand-primary;
+
+    .keyframes(spinner;{
+      0% { transform: rotateY(0deg); }
+      50% { transform: rotateY(180deg); }
+      100% { transform: rotateY(360deg); }
+    });
+
+    .animation(spinner 4s ease-in-out infinite);
+  }
+}
