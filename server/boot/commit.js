@@ -106,8 +106,8 @@ export default function commit(app) {
             req.flash('info', {
               msg: dedent`
                 Looks like you already have a pledge to ${pledge.displayName}.
-                Clicking "Commit" here will replace your old commitment. If you 
-                do change your commitment, please remember to cancel your 
+                Clicking "Commit" here will replace your old commitment. If you
+                do change your commitment, please remember to cancel your
                 previous recurring donation directly with ${pledge.displayName}.
               `
             });
@@ -134,7 +134,7 @@ export default function commit(app) {
     const {
       nonprofit: nonprofitName = 'girl develop it',
       amount = '5',
-      goal = commitGoals.frontEndCert
+      goal = commitGoals.respWebDesignCert
     } = req.query;
 
     const nonprofit = findNonprofit(nonprofitName);
@@ -173,7 +173,7 @@ export default function commit(app) {
             msg: dedent`
               Congratulations, you have committed to giving
               ${displayName} $${amount} each month until you have completed
-              your ${goal}. Please remember to cancel your pledge directly 
+              your ${goal}. Please remember to cancel your pledge directly
               with ${displayName} once you finish.
             `
           });
@@ -223,13 +223,13 @@ export default function commit(app) {
       .subscribe(
         pledge => {
           let msg = dedent`
-            You have successfully stopped your pledge. Please 
-            rememberto cancel your recurring donation directly  
+            You have successfully stopped your pledge. Please
+            remember to cancel your recurring donation directly
             with the nonprofit if you haven't already done so.
           `;
           if (!pledge) {
             msg = dedent`
-              It doesn't look like you had an active pledge, so 
+              It doesn't look like you had an active pledge, so
               there's no pledge to stop.
             `;
           }

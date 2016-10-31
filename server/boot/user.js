@@ -5,9 +5,12 @@ import debugFactory from 'debug';
 import emoji from 'node-emoji';
 
 import {
-  frontEndChallengeId,
-  dataVisChallengeId,
-  backEndChallengeId
+  respWebDesignId,
+  frontEndLibsId,
+  jsAlgoDataStructId,
+  dataVisId,
+  apisMicroservicesId,
+  infosecQaId
 } from '../utils/constantStrings.json';
 import certTypes from '../utils/certTypes.json';
 import {
@@ -27,23 +30,33 @@ import { cachedMap } from '../utils/map';
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
 const certIds = {
-  [certTypes.frontEnd]: frontEndChallengeId,
-  [certTypes.dataVis]: dataVisChallengeId,
-  [certTypes.backEnd]: backEndChallengeId
+  [certTypes.respWebDesign]: respWebDesignId,
+  [certTypes.frontEndLibs]: frontEndLibsId,
+  [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
+  [certTypes.dataVis]: dataVisId,
+  [certTypes.apisMicroservices]: apisMicroservicesId,
+  [certTypes.infosecQa]: infosecQaId
 };
 
 const certViews = {
-  [certTypes.frontEnd]: 'certificate/front-end.jade',
-  [certTypes.dataVis]: 'certificate/data-vis.jade',
-  [certTypes.backEnd]: 'certificate/back-end.jade',
-  [certTypes.fullStack]: 'certificate/full-stack.jade'
+  [certTypes.respWebDesign]: 'certificate/responsive-web-design.jade',
+  [certTypes.frontEndLibs]: 'certificate/front-end-libraries.jade',
+  [certTypes.jsAlgoDataStruct]:
+  'certificate/javascript-algorithms-and-data-structures.jade',
+  [certTypes.dataVis]: 'certificate/data-visualization.jade',
+  [certTypes.apisMicroservices]: 'certificate/apis-and-microservices.jade',
+  [certTypes.infosecQa]:
+  'certificate/information-security-and-quality-assurance.jade'
 };
 
 const certText = {
-  [certTypes.frontEnd]: 'Front End certified',
-  [certTypes.dataVis]: 'Data Vis Certified',
-  [certTypes.backEnd]: 'Back End Certified',
-  [certTypes.fullStack]: 'Full Stack Certified'
+  [certTypes.respWebDesign]: 'Responsive Web Design Certified',
+  [certTypes.frontEndLibs]: 'Front End Libraries Certified',
+  [certTypes.jsAlgoDataStruct]:
+  'JavaScript Algorithms and Data Structures Certified',
+  [certTypes.dataVis]: 'Data Visualization Certified',
+  [certTypes.apisMicroservices]: 'APIs and Microservices Certified',
+  [certTypes.infosecQa]: 'Information Security and Quality Assurance Certified'
 };
 
 const dateFormat = 'MMM DD, YYYY';
@@ -187,23 +200,33 @@ module.exports = function(app) {
 
   // Ensure these are the last routes!
   api.get(
-    '/:username/front-end-certification',
-    showCert.bind(null, certTypes.frontEnd)
+    '/:username/responsive-web-design-certification',
+    showCert.bind(null, certTypes.respWebDesign)
   );
 
   api.get(
+    '/:username/front-end-libraries-certification',
+    showCert.bind(null, certTypes.frontEndLibs)
+  );
+
+  api.get(
+    '/:username/javascript-algorithms-data-structures-certification',
+    showCert.bind(null, certTypes.jsAlgoDataStruct)
+  );
+
+ api.get(
     '/:username/data-visualization-certification',
     showCert.bind(null, certTypes.dataVis)
   );
 
   api.get(
-    '/:username/back-end-certification',
-    showCert.bind(null, certTypes.backEnd)
+    '/:username/apis-microservices-certification',
+    showCert.bind(null, certTypes.apisMicroservices)
   );
 
   api.get(
-    '/:username/full-stack-certification',
-    (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
+    '/:username/information-security-quality-assurance-certification',
+    showCert.bind(null, certTypes.infosecQa)
   );
 
   router.get('/:username', showUserProfile);
@@ -369,10 +392,12 @@ module.exports = function(app) {
           isGithubCool: true,
           isCheater: true,
           isLocked: true,
-          isFrontEndCert: true,
+          isRespWebDesignCert: true,
+          isFrontEndLibsCert: true,
+          isJsAlgoDataStructCert: true,
           isDataVisCert: true,
-          isBackEndCert: true,
-          isFullStackCert: true,
+          isApisMicroservicesCert: true,
+          isInfosecQaCert: true,
           isHonest: true,
           username: true,
           name: true,

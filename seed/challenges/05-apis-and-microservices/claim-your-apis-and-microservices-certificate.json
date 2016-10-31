@@ -36,11 +36,11 @@
         {
           "properties": [
             "isHonest",
-            "isFrontEndCert"
+            "isApisMicroservicesCert"
           ],
           "apis": [
             "/certificate/honest",
-            "/certificate/verify/front-end"
+            "/certificate/verify/apis-microservices"
           ],
           "stepIndex": [
             1,

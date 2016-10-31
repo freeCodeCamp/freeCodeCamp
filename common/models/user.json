@@ -139,9 +139,19 @@
       "description": "Camper has signed academic honesty policy",
       "default": false
     },
-    "isFrontEndCert": {
+    "isRespWebDesignCert": {
       "type": "boolean",
-      "description": "Camper is front end certified",
+      "description": "Camper is responsive web design certified",
+      "default": false
+    },
+    "isFrontEndLibsCert": {
+      "type": "boolean",
+      "description": "Camper is front end libraries certified",
+      "default": false
+    },
+    "isJsAlgoDataStructCert": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified",
       "default": false
     },
     "isDataVisCert": {
@@ -149,14 +159,14 @@
       "description": "Camper is data visualization certified",
       "default": false
     },
-    "isBackEndCert": {
+    "isApisMicroservicesCert": {
       "type": "boolean",
-      "description": "Campers is back end certified",
+      "description": "Camper is apis and microservices certified",
       "default": false
     },
-    "isFullStackCert": {
+    "isInfosecQaCert": {
       "type": "boolean",
-      "description": "Campers is full stack certified",
+      "description": "Camper is information security and quality assurance certified",
       "default": false
     },
     "isChallengeMapMigrated": {

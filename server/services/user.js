@@ -16,10 +16,12 @@ const publicUserProps = [
   'isGithubCool',
 
   'isLocked',
-  'isFrontEndCert',
-  'isBackEndCert',
+  'isRespWebDesignCert',
+  'isFrontEndLibsCert',
+  'isJsAlgoDataStructCert',
   'isDataVisCert',
-  'isFullStackCert',
+  'isApisMicroservicesCert',
+  'isInfosecQaCert',
 
   'githubURL',
   'sendMonthlyEmail',

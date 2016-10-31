@@ -14,9 +14,12 @@ import {
 import { observeQuery } from '../utils/rx';
 
 import {
-  frontEndChallengeId,
-  dataVisChallengeId,
-  backEndChallengeId
+  respWebDesignId,
+  frontEndLibsId,
+  jsAlgoDataStructId,
+  dataVisId,
+  apisMicroservicesId,
+  infosecQaId
 } from '../utils/constantStrings.json';
 
 import {
@@ -73,9 +76,12 @@ function getFormatedDate(challengeMap, challengeId) {
 //   {
 //     email: String,
 //     username: String,
-//     isFrontEndCert: Boolean,
-//     isBackEndCert: Boolean,
-//     isDataVisCert: Boolean
+//     isRespWebDesignCert: Boolean,
+//     isFrontEndLibsCert: Boolean,
+//     isJsAlgoDataStructCert: Boolean,
+//     isDataVisCert: Boolean,
+//     isApisMicroservicesCert: Boolean,
+//     isInfosecQaCert: Boolean
 //   },
 //   send$: Observable
 // ) => Observable
@@ -84,27 +90,39 @@ function sendCertifiedEmail(
     email,
     name,
     username,
-    isFrontEndCert,
-    isBackEndCert,
+    isRespWebDesignCert,
+    isFrontEndLibsCert,
+    isJsAlgoDataStructCert,
     isDataVisCert,
+    isApisMicroservicesCert,
+    isInfosecQaCert,
     challengeMap
   },
   send$
 ) {
   if (
-    !isFrontEndCert ||
-    !isBackEndCert ||
-    !isDataVisCert
+    !isRespWebDesignCert ||
+    !isFrontEndLibsCert ||
+    !isJsAlgoDataStructCert ||
+    !isDataVisCert ||
+    !isApisMicroservicesCert ||
+    !isInfosecQaCert
   ) {
     return Observable.just(false);
   }
-  let frontEndDate;
-  let backEndDate;
+  let respWebDesignDate;
+  let frontEndLibsDate;
+  let jsAlgoDataStructDate;
   let dataVisDate;
+  let apisMicroservicesDate;
+  let infosecQaDate;
   try {
-    frontEndDate = getFormatedDate(challengeMap, frontEndChallengeId);
-    backEndDate = getFormatedDate(challengeMap, backEndChallengeId);
-    dataVisDate = getFormatedDate(challengeMap, dataVisChallengeId);
+    respWebDesignDate = getFormatedDate(challengeMap, respWebDesignId);
+    frontEndLibsDate = getFormatedDate(challengeMap, frontEndLibsId);
+    jsAlgoDataStructDate = getFormatedDate(challengeMap, jsAlgoDataStructId);
+    dataVisDate = getFormatedDate(challengeMap, dataVisId);
+    apisMicroservicesDate = getFormatedDate(challengeMap, apisMicroservicesId);
+    infosecQaDate = getFormatedDate(challengeMap, infosecQaId);
   } catch (err) {
     return Observable.throw(err);
   }
@@ -117,16 +135,19 @@ function sendCertifiedEmail(
     text: renderNotifyEmail({
       username,
       name,
-      frontEndDate,
+      respWebDesignDate,
+      frontEndLibsDate,
+      jsAlgoDataStructDate,
       dataVisDate,
-      backEndDate
+      apisMicroservicesDate,
+      infosecQaDate
     })
   };
   const notifyUser = {
     type: 'email',
     to: email,
     from: 'Michael@FreeCodeCamp.com',
-    subject: 'Congratulation on gaining your third certification!',
+    subject: 'Congratulation on gaining your sixth certification!',
     text: renderCertifedEmail({
       username,
       name
@@ -144,27 +165,51 @@ export default function certificate(app) {
   const { Email, Challenge } = app.models;
 
   const certTypeIds = {
-    [certTypes.frontEnd]: getIdsForCert$(frontEndChallengeId, Challenge),
-    [certTypes.dataVis]: getIdsForCert$(dataVisChallengeId, Challenge),
-    [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge)
+    [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
+    [certTypes.frontEndLibs]: getIdsForCert$(frontEndLibsId, Challenge),
+    [certTypes.jsAlgoDataStruct]: getIdsForCert$(jsAlgoDataStructId, Challenge),
+    [certTypes.dataVis]: getIdsForCert$(dataVisId, Challenge),
+    [certTypes.apisMicroservices]: getIdsForCert$(
+      apisMicroservicesId,
+      Challenge
+    ),
+    [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge)
   };
 
   router.post(
-    '/certificate/verify/front-end',
+    '/certificate/verify/responsive-web-design',
     ifNoUser401,
-    verifyCert.bind(null, certTypes.frontEnd)
+    verifyCert.bind(null, certTypes.respWebDesign)
   );
 
   router.post(
-    '/certificate/verify/back-end',
+    '/certificate/verify/front-end-libraries',
     ifNoUser401,
-    verifyCert.bind(null, certTypes.backEnd)
+    verifyCert.bind(null, certTypes.frontEndLibs)
+  );
+
+  router.post(
+    '/certificate/verify/javascript-algorithms-data-structures',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.jsAlgoDataStruct)
   );
 
   router.post(
     '/certificate/verify/data-visualization',
     ifNoUser401,
     verifyCert.bind(null, certTypes.dataVis)
+  );
+
+  router.post(
+    '/certificate/verify/apis-microservices',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.apisMicroservices)
+  );
+
+  router.post(
+    '/certificate/verify/information-security-quality-assurance',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.infosecQa)
   );
 
   router.post(

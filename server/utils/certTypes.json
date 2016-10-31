@@ -1,6 +1,8 @@
 {
-  "frontEnd": "isFrontEndCert",
-  "backEnd": "isBackEndCert",
+  "respWebDesign": "isRespWebDesignCert",
+  "frontEndLibs": "isFrontEndLibsCert",
+  "jsAlgoDataStruct": "isJsAlgoDataStructCert",
   "dataVis": "isDataVisCert",
-  "fullStack": "isFullStackCert"
+  "apisMicroservices": "isApisMicroservicesCert",
+  "infosecQa": "isInfosecQaCert"
 }
