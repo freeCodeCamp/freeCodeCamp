@@ -180,7 +180,7 @@ module.exports = function(app) {
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
-  router.get('/passwordless-auth', getPasswordlessAuth);
+  router.get('/passwordless-auth', invalidateAuthToken, getPasswordlessAuth);
   api.post('/passwordless-auth', postPasswordlessAuth);
   router.get(
     '/delete-my-account',
@@ -261,6 +261,9 @@ module.exports = function(app) {
     });
   }
 
+  const defaultErrorMsg = [ 'Oops, something is not right, please request a ',
+  'fresh link to sign in / sign up.' ].join('');
+
   function postPasswordlessAuth(req, res) {
     if (req.user || !(req.body && req.body.email)) {
       return res.redirect('/');
@@ -272,10 +275,60 @@ module.exports = function(app) {
       })
       .catch(err => {
         debug(err);
-        return res.status(200).send({
-          message: 'Oops, something is not right, please try again later.'
-        });
+        return res.status(200).send({ message: defaultErrorMsg });
       });
+  }
+
+  function invalidateAuthToken(req, res, next) {
+    if (req.user) {
+      res.redirect('/');
+    }
+
+    if (!req.query || !req.query.email || !req.query.token) {
+      req.flash('info', { msg: defaultErrorMsg });
+      return res.redirect('/email-signin');
+    }
+
+    const authTokenId = req.query.token;
+    const authEmailId = req.query.email;
+
+    return AccessToken.findOne$({ where: {id: authTokenId} })
+     .map(authToken => {
+       if (!authToken) {
+         req.flash('info', { msg: defaultErrorMsg });
+         return res.redirect('/email-signin');
+       }
+
+       const userId = authToken.userId;
+       return User.findById(userId, (err, user) => {
+         if (err) {
+           debug(err);
+           req.flash('info', { msg: defaultErrorMsg });
+           return res.redirect('/email-signin');
+         }
+         if (user.email !== authEmailId) {
+           req.flash('info', { msg: defaultErrorMsg });
+           return res.redirect('/email-signin');
+         }
+         return authToken.validate((err, isValid) => {
+           if (err) { throw err; }
+           if (!isValid) {
+             req.flash('info', { msg: [ 'Looks like the link you clicked has',
+              'expired, please request a fresh link, to sign in.'].join('')
+              });
+             return res.redirect('/email-signin');
+           }
+           return authToken.destroy((err) => {
+             if (err) { debug(err); }
+             next();
+           });
+         });
+       });
+     })
+     .subscribe(
+       () => {},
+       next
+     );
   }
 
   function getPasswordlessAuth(req, res, next) {
@@ -285,9 +338,6 @@ module.exports = function(app) {
           });
       return res.redirect('/');
     }
-
-    const defaultErrorMsg = [ 'Oops, something is not right, please request a ',
-    'fresh link to sign in / sign up.' ].join('');
 
     if (!req.query || !req.query.email || !req.query.token) {
       req.flash('info', { msg: defaultErrorMsg });
