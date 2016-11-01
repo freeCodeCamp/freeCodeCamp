@@ -237,12 +237,6 @@ export class Settings extends React.Component {
             xs={ 12 }
             >
             <LanguageSettings />
-            <p className='text-center'>
-              Our community has translated many of our challenges.
-              <br />
-              If we don't have a translation for a challenge,
-              it will be in English.
-            </p>
           </Col>
         </Row>
         <div className='spacer' />
