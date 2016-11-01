@@ -206,6 +206,15 @@
       "type": "string",
       "description": "An IETF language tag",
       "default": "en"
+    },
+    "badges": {
+      "type": {
+        "coreTeam": {
+          "type": "array",
+          "default": []
+        }
+      },
+      "default": {}
     }
   },
   "validations": [],
