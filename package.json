@@ -61,7 +61,7 @@
     "gitter-sidecar": "^1.2.3",
     "helmet": "^2.0.0",
     "helmet-csp": "^1.0.3",
-    "history": "^2.0.0",
+    "history": "^4.4.0",
     "invariant": "^2.2.1",
     "jade": "^1.11.0",
     "jsonlint-cli": "^1.0.1",
