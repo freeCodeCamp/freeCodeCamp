@@ -26,6 +26,16 @@ const transformersForHtmlJS = {
       transformer: function addLoopProtect(file) {
         return updateContents(loopProtect(file.contents), file);
       }
+    },
+    {
+      name: 'replace-nbsp',
+      nbspRegExp: new RegExp(String.fromCharCode(160), 'g'),
+      transformer: function replaceNBSP(file) {
+        return updateContents(
+           file.contents.replace(this.nbspRegExp, ' '),
+           file
+         );
+      }
     }
   ]
 };
