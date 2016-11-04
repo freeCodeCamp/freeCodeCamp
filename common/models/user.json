@@ -139,6 +139,21 @@
       "description": "Camper has signed academic honesty policy",
       "default": false
     },
+    "isFrontEndCert": {
+      "type": "boolean",
+      "description": "Camper is front end certified",
+      "default": false
+    },
+    "isBackEndCert": {
+      "type": "boolean",
+      "description": "Campers is back end certified",
+      "default": false
+    },
+    "isFullStackCert": {
+      "type": "boolean",
+      "description": "Campers is full stack certified",
+      "default": false
+    },
     "isRespWebDesignCert": {
       "type": "boolean",
       "description": "Camper is responsive web design certified",

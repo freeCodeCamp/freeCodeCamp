@@ -16,6 +16,9 @@ const publicUserProps = [
   'isGithubCool',
 
   'isLocked',
+  'isFrontEndCert',
+  'isBackEndCert',
+  'isFullStackCert',
   'isRespWebDesignCert',
   'isFrontEndLibsCert',
   'isJsAlgoDataStructCert',

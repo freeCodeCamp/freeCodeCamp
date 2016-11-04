@@ -1,4 +1,7 @@
 {
+  "frontEnd": "isFrontEndCert",
+  "backEnd": "isBackEndCert",
+  "fullStack": "isFullStackCert",
   "respWebDesign": "isRespWebDesignCert",
   "frontEndLibs": "isFrontEndLibsCert",
   "jsAlgoDataStruct": "isJsAlgoDataStructCert",

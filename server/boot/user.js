@@ -5,6 +5,8 @@ import debugFactory from 'debug';
 import emoji from 'node-emoji';
 
 import {
+  frontEndChallengeId,
+  backEndChallengeId,
   respWebDesignId,
   frontEndLibsId,
   jsAlgoDataStructId,
@@ -30,6 +32,8 @@ import { cachedMap } from '../utils/map';
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
 const certIds = {
+  [certTypes.frontEnd]: frontEndChallengeId,
+  [certTypes.backEnd]: backEndChallengeId,
   [certTypes.respWebDesign]: respWebDesignId,
   [certTypes.frontEndLibs]: frontEndLibsId,
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
@@ -39,6 +43,9 @@ const certIds = {
 };
 
 const certViews = {
+  [certTypes.frontEnd]: 'certificate/front-end.jade',
+  [certTypes.backEnd]: 'certificate/back-end.jade',
+  [certTypes.fullStack]: 'certificate/full-stack.jade',
   [certTypes.respWebDesign]: 'certificate/responsive-web-design.jade',
   [certTypes.frontEndLibs]: 'certificate/front-end-libraries.jade',
   [certTypes.jsAlgoDataStruct]:
@@ -50,6 +57,9 @@ const certViews = {
 };
 
 const certText = {
+  [certTypes.frontEnd]: 'Front End certified',
+  [certTypes.backEnd]: 'Back End Certified',
+  [certTypes.fullStack]: 'Full Stack Certified',
   [certTypes.respWebDesign]: 'Responsive Web Design Certified',
   [certTypes.frontEndLibs]: 'Front End Libraries Certified',
   [certTypes.jsAlgoDataStruct]:
@@ -199,6 +209,21 @@ module.exports = function(app) {
   );
 
   // Ensure these are the last routes!
+  api.get(
+    '/:username/front-end-certification',
+    showCert.bind(null, certTypes.frontEnd)
+  );
+
+  api.get(
+    '/:username/back-end-certification',
+    showCert.bind(null, certTypes.backEnd)
+  );
+
+  api.get(
+    '/:username/full-stack-certification',
+    (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
+  );
+
   api.get(
     '/:username/responsive-web-design-certification',
     showCert.bind(null, certTypes.respWebDesign)
@@ -392,6 +417,9 @@ module.exports = function(app) {
           isGithubCool: true,
           isCheater: true,
           isLocked: true,
+          isFrontEndCert: true,
+          isBackEndCert: true,
+          isFullStackCert: true,
           isRespWebDesignCert: true,
           isFrontEndLibsCert: true,
           isJsAlgoDataStructCert: true,
