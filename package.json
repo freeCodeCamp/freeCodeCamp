@@ -60,7 +60,7 @@
     "frameguard": "^2.0.0",
     "gitter-sidecar": "^1.2.3",
     "helmet": "^2.0.0",
-    "helmet-csp": "^1.0.3",
+    "helmet-csp": "^2.1.0",
     "history": "^2.0.0",
     "invariant": "^2.2.1",
     "jade": "^1.11.0",
