@@ -35,7 +35,7 @@
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
     "accepts": "^1.3.0",
-    "babel-core": "^6.3.26",
+    "babel-core": "^6.18.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.3.0",
