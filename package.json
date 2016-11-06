@@ -109,7 +109,7 @@
     "react-router-redux": "^4.0.5",
     "react-youtube": "^7.0.0",
     "redux": "^3.0.5",
-    "redux-actions": "^0.10.0",
+    "redux-actions": "^0.13.0",
     "redux-epic": "^0.1.1",
     "redux-form": "^5.2.3",
     "request": "^2.65.0",
