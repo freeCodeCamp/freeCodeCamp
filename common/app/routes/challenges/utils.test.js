@@ -4,7 +4,7 @@ import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock,
-  filterCommingSoonBetaChallenge,
+  filterComingSoonBetaChallenge,
   filterComingSoonBetaFromEntities,
   createMapUi,
   traverseMapUi,
@@ -860,29 +860,29 @@ test('common/app/routes/challenges/utils', function(t) {
       );
     });
   });
-  t.test('filterCommingSoonBetaChallenge', t => {
+  t.test('filterComingSoonBetaChallenge', t => {
     t.plan(4);
     t.test('should return true when not coming-soon/beta', t => {
       let isDev;
-      t.ok(filterCommingSoonBetaChallenge(isDev, {}));
-      t.ok(filterCommingSoonBetaChallenge(true, {}));
+      t.ok(filterComingSoonBetaChallenge(isDev, {}));
+      t.ok(filterComingSoonBetaChallenge(true, {}));
       t.end();
     });
     t.test('should return false when isComingSoon', t => {
       let isDev;
-      t.notOk(filterCommingSoonBetaChallenge(isDev, { isComingSoon: true }));
+      t.notOk(filterComingSoonBetaChallenge(isDev, { isComingSoon: true }));
       t.end();
     });
     t.test('should return false when isBeta', t => {
       let isDev;
-      t.notOk(filterCommingSoonBetaChallenge(isDev, { isBeta: true }));
+      t.notOk(filterComingSoonBetaChallenge(isDev, { isBeta: true }));
       t.end();
     });
     t.test('should always return true when in dev', t => {
       let isDev = true;
-      t.ok(filterCommingSoonBetaChallenge(isDev, { isBeta: true }));
-      t.ok(filterCommingSoonBetaChallenge(isDev, { isComingSoon: true }));
-      t.ok(filterCommingSoonBetaChallenge(
+      t.ok(filterComingSoonBetaChallenge(isDev, { isBeta: true }));
+      t.ok(filterComingSoonBetaChallenge(isDev, { isComingSoon: true }));
+      t.ok(filterComingSoonBetaChallenge(
         isDev,
         { isBeta: true, isCompleted: true }
       ));
