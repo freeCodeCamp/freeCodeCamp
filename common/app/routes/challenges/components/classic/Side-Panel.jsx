@@ -34,6 +34,7 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.output,
   state => state.challengesApp.hintIndex,
   state => state.challengesApp.isCodeLocked,
+  state => state.app.block,
   (
     { challenge: { title, description, hints = [] } = {} },
     windowHeight,
@@ -41,7 +42,8 @@ const mapStateToProps = createSelector(
     tests,
     output,
     hintIndex,
-    isCodeLocked
+    isCodeLocked,
+    block
   ) => ({
     title,
     description,
@@ -49,7 +51,8 @@ const mapStateToProps = createSelector(
     tests,
     output,
     hint: hints[hintIndex],
-    isCodeLocked
+    isCodeLocked,
+    block
   })
 );
 
@@ -65,6 +68,7 @@ export class SidePanel extends PureComponent {
     height: PropTypes.number,
     tests: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string,
+    block: PropTypes.string,
     output: PropTypes.string,
     hint: PropTypes.string,
     updateHint: PropTypes.func,
@@ -105,6 +109,7 @@ export class SidePanel extends PureComponent {
   render() {
     const {
       title,
+      block,
       description,
       height,
       tests = [],
@@ -122,6 +127,14 @@ export class SidePanel extends PureComponent {
     if (height) {
       style.height = height + 'px';
     }
+    let titleString;
+    if (!title) {
+      titleString = 'Happy Coding!';
+    } else if (!block && title) {
+      titleString = title;
+    } else {
+      titleString = `${block}: ${title}`;
+    }
     return (
       <div
         className='challenges-instructions-panel'
@@ -130,7 +143,7 @@ export class SidePanel extends PureComponent {
         >
         <div>
           <h4 className='text-center challenge-instructions-title'>
-            { title || 'Happy Coding!' }
+            { titleString }
           </h4>
           <hr />
           <Row>

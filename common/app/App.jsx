@@ -11,6 +11,8 @@ import {
   toggleMapDrawer,
   toggleMainChat,
   updateAppLang,
+  updateBlock,
+  updateTitle,
   trackEvent,
   loadCurrentChallenge
 } from './redux/actions';
@@ -29,6 +31,8 @@ const bindableActions = {
   toggleMapDrawer,
   toggleMainChat,
   updateAppLang,
+  updateBlock,
+  updateTitle,
   trackEvent,
   loadCurrentChallenge
 };
@@ -82,6 +86,8 @@ export class FreeCodeCamp extends React.Component {
     shouldShowSignIn: PropTypes.bool,
     params: PropTypes.object,
     updateAppLang: PropTypes.func.isRequired,
+    updateBlock: PropTypes.func.isRequired,
+    updateTitle: PropTypes.func.isRequired,
     trackEvent: PropTypes.func.isRequired,
     loadCurrentChallenge: PropTypes.func.isRequired
   };
@@ -90,6 +96,10 @@ export class FreeCodeCamp extends React.Component {
     if (this.props.params.lang !== nextProps.params.lang) {
       this.props.updateAppLang(nextProps.params.lang);
     }
+    if (this.props.params.block !== nextProps.params.block) {
+      this.props.updateBlock(nextProps.params.block);
+      this.props.updateTitle();
+    }
   }
 
   componentDidMount() {
@@ -97,7 +107,9 @@ export class FreeCodeCamp extends React.Component {
     if (!this.props.isSignedIn) {
       this.props.fetchUser();
     }
-  }
+      this.props.updateBlock(this.props.params.block);
+      this.props.updateTitle();
+    }
 
   renderChallengeComplete() {
     const { submitChallenge } = this.props;

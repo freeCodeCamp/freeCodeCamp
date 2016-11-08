@@ -105,6 +105,10 @@ export const updateUserChallenge = createAction(
 );
 
 export const updateAppLang = createAction(types.updateAppLang);
+export const updateBlock = createAction(
+  types.updateBlock,
+  (block) => block
+);
 
 // used when server needs client to redirect
 export const delayedRedirect = createAction(types.delayedRedirect);
