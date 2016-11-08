@@ -401,7 +401,7 @@
     },
     {
       "id": "afcc8d540bea9ea2669306b6",
-      "title": "Repeat a string repeat a string",
+      "title": "Repeat a String Repeat a String",
       "description": [
         "Repeat a given string <code>str</code> (first argument) for <code>num</code> times (second argument). Return an empty string if <code>num</code> is not a positive number.",
         "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
@@ -433,7 +433,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Repite el texto Repite el texto",
+          "title": "Repite el Texto Repite el Texto",
           "description": [
             "Repite una cadena de texto dada (primer argumento) <code>num</code> veces (segundo argumento). Retorna una cadena de texto vacía si <code>num</code> es un número negativo.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -443,7 +443,7 @@
     },
     {
       "id": "ac6993d51946422351508a41",
-      "title": "Truncate a string",
+      "title": "Truncate a String",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a <code>...</code> ending.",
         "Note that inserting the three dots to the end will add to the string length.",
@@ -477,7 +477,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Trunca una cadena de texto",
+          "title": "Trunca una Cadena de Texto",
           "description": [
             "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
             "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
@@ -523,7 +523,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "En mil pedazos",
+          "title": "En mil Pedazos",
           "description": [
             "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo bidimensional.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -657,7 +657,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Detector de mentiras",
+          "title": "Detector de Mentiras",
           "description": [
             "Remueve todos los valores falsy de un arreglo dado",
             "En javascript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
@@ -701,7 +701,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "Buscar y destruir",
+          "title": "Buscar y Destruir",
           "description": [
             "Se te proveerá un arreglo inicial (el primer argumento en la función <code>destroyer</code>), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -711,7 +711,7 @@
     },
     {
       "id": "a24c1a4622e3c05097f71d67",
-      "title": "Where do I belong",
+      "title": "Where do I Belong",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.",
         "For example, <code>getIndexToIns([1,2,3,4], 1.5)</code> should return <code>1</code> because it is greater than <code>1</code> (index 0), but less than <code>2</code> (index 1).",
@@ -746,7 +746,7 @@
       "challengeType": 5,
       "translations": {
         "es": {
-          "title": "¿Cuál es mi asiento?",
+          "title": "¿Cuál es mi Asiento?",
           "description": [
             "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo (primer argumento) una vez ha sido ordenado.",
             "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
