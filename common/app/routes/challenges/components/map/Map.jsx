@@ -8,6 +8,7 @@ import { Col } from 'react-bootstrap';
 
 import MapHeader from './Header.jsx';
 import SuperBlock from './Super-Block.jsx';
+import FCCSpinner from '../../../../components/FCC-Spinner.jsx';
 import { fetchChallenges } from '../../redux/actions';
 import { updateTitle } from '../../../../redux/actions';
 
@@ -50,7 +51,7 @@ export class ShowMap extends PureComponent {
 
   renderSuperBlocks(superBlocks) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
-      return <div>No Super Blocks</div>;
+      return <FCCSpinner />;
     }
     return superBlocks.map(dashedName => (
       <SuperBlock
