@@ -5,7 +5,6 @@ import windowSaga from './window-saga';
 import executeChallengeSaga from './execute-challenge-saga';
 import frameSaga from './frame-saga';
 import codeStorageSaga from './code-storage-saga';
-import gitterSaga from './gitter-saga';
 import mouseTrapSaga from './mouse-trap-saga';
 import analyticsSaga from './analytics-saga';
 import nightModeSaga from './night-mode-saga';
@@ -18,7 +17,6 @@ export default [
   executeChallengeSaga,
   frameSaga,
   codeStorageSaga,
-  gitterSaga,
   mouseTrapSaga,
   analyticsSaga,
   nightModeSaga

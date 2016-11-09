@@ -3,13 +3,10 @@ import { Button, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import MapDrawer from './components/Map-Drawer.jsx';
 import {
   fetchUser,
   initWindowHeight,
   updateNavHeight,
-  toggleMapDrawer,
-  toggleMainChat,
   updateAppLang,
   trackEvent,
   loadCurrentChallenge
@@ -26,8 +23,6 @@ const mapDispatchToProps = {
   updateNavHeight,
   fetchUser,
   submitChallenge,
-  toggleMapDrawer,
-  toggleMainChat,
   updateAppLang,
   trackEvent,
   loadCurrentChallenge
@@ -37,23 +32,17 @@ const mapStateToProps = createSelector(
   userSelector,
   state => state.app.isSignInAttempted,
   state => state.app.toast,
-  state => state.app.isMapDrawerOpen,
-  state => state.app.isMapAlreadyLoaded,
   state => state.challengesApp.toast,
   (
     { user: { username, points, picture } },
     isSignInAttempted,
     toast,
-    isMapDrawerOpen,
-    isMapAlreadyLoaded,
   ) => ({
     username,
     points,
     picture,
     toast,
     showLoading: !isSignInAttempted,
-    isMapDrawerOpen,
-    isMapAlreadyLoaded,
     isSignedIn: !!username
   })
 );
@@ -68,10 +57,6 @@ const propTypes = {
   updateNavHeight: PropTypes.func,
   initWindowHeight: PropTypes.func,
   submitChallenge: PropTypes.func,
-  isMapDrawerOpen: PropTypes.bool,
-  isMapAlreadyLoaded: PropTypes.bool,
-  toggleMapDrawer: PropTypes.func,
-  toggleMainChat: PropTypes.func,
   fetchUser: PropTypes.func,
   showLoading: PropTypes.bool,
   params: PropTypes.object,
@@ -79,7 +64,6 @@ const propTypes = {
   trackEvent: PropTypes.func.isRequired,
   loadCurrentChallenge: PropTypes.func.isRequired
 };
-const contextTypes = { router: PropTypes.object };
 
 // export plain class for testing
 export class FreeCodeCamp extends React.Component {
@@ -112,30 +96,19 @@ export class FreeCodeCamp extends React.Component {
   }
 
   render() {
-    const { router } = this.context;
     const {
       username,
       points,
       picture,
       updateNavHeight,
-      isMapDrawerOpen,
-      isMapAlreadyLoaded,
-      toggleMapDrawer,
-      toggleMainChat,
-      showLoading,
-      params: { lang },
       trackEvent,
       loadCurrentChallenge
     } = this.props;
     const navProps = {
-      isOnMap: router.isActive(`/${lang}/map`),
       username,
       points,
       picture,
       updateNavHeight,
-      toggleMapDrawer,
-      toggleMainChat,
-      showLoading,
       trackEvent,
       loadCurrentChallenge
     };
@@ -146,11 +119,6 @@ export class FreeCodeCamp extends React.Component {
         <Row>
           { this.props.children }
         </Row>
-        <MapDrawer
-          isAlreadyLoaded={ isMapAlreadyLoaded }
-          isOpen={ isMapDrawerOpen }
-          toggleMapDrawer={ toggleMapDrawer }
-        />
         <Toasts />
       </div>
     );
@@ -158,7 +126,6 @@ export class FreeCodeCamp extends React.Component {
 }
 
 FreeCodeCamp.displayName = 'FreeCodeCamp';
-FreeCodeCamp.contextTypes = contextTypes;
 FreeCodeCamp.propTypes = propTypes;
 
 export default connect(
