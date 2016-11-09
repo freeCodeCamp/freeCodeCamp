@@ -257,7 +257,7 @@ export function getMouse(e, [dx, dy]) {
   return [pageX - dx, pageY - dy];
 }
 
-export function filterCommingSoonBetaChallenge(
+export function filterComingSoonBetaChallenge(
   isDev = false,
   { isComingSoon, isBeta }
 ) {
@@ -269,7 +269,7 @@ export function filterComingSoonBetaFromEntities(
   { challenge: challengeMap, ...rest },
   isDev = false
 ) {
-  const filter = filterCommingSoonBetaChallenge.bind(null, isDev);
+  const filter = filterComingSoonBetaChallenge.bind(null, isDev);
   return {
     ...rest,
     challenge: Object.keys(challengeMap)
