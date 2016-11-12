@@ -271,8 +271,8 @@ There are two methods of creating a pull request for Free Code Camp:
 
 ##### Method 1: Editing via your Local Fork _(Recommended)_
 
-This is the recommended method. Read about How to Setup and Maintain a Local
-Instance of Free Code Camp.
+This is the recommended method. Read about [How to Setup and Maintain a Local
+Instance of Free Code Camp](#maintaining-your-fork).
 
 1.  Perform the maintenance step of rebasing `staging`.
 2.  Ensure you are on the `staging` branch using `git status`:
