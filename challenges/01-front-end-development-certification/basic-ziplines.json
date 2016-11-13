@@ -146,8 +146,7 @@
       "title": "Build a Tribute Page",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can view a tribute page with an image and text.",
         "<strong>User Story:</strong> I can click on a link that will take me to an external website with further information on the topic.",
         "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
@@ -196,9 +195,7 @@
       "title": "Build a Personal Portfolio Webpage",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/FreeCodeCamp/full/YqLyXB/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
-        "<strong>Rule #3:</strong> You can use Bootstrap, or any other framework of your choice.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
         "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
         "<strong>User Story:</strong> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
