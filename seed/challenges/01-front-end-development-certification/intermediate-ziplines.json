@@ -9,8 +9,7 @@
       "title": "Build a Random Quote Machine",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/ONjoLe/' target='_blank'>https://codepen.io/FreeCodeCamp/full/ONjoLe/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can click a button to show me a new random quote.",
         "<strong>User Story:</strong> I can press a button to tweet out a quote.",
         "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
@@ -61,8 +60,7 @@
       "title": "Show the Local Weather",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELRjV</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see the weather in my current location.",
         "<strong>User Story:</strong> I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.",
         "<strong>User Story:</strong> I can push a button to toggle between Fahrenheit and Celsius.",
@@ -118,8 +116,7 @@
       "title": "Build a Wikipedia Viewer",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/wGqEga/' target='_blank'>https://codepen.io/FreeCodeCamp/full/wGqEga/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.",
         "<strong>User Story:</strong> I can click a button to see a random Wikipedia entry.",
         "<span class='text-info'>Hint #1:</span> Here's a URL you can use to get a random Wikipedia article: <code>https://en.wikipedia.org/wiki/Special:Random</code>.",
@@ -163,8 +160,7 @@
       "title": "Use the Twitch.tv JSON API",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/FreeCodeCamp/full/Myvqmo/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see whether Free Code Camp is currently streaming on Twitch.tv.",
         "<strong>User Story:</strong> I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
         "<strong>User Story:</strong> if a Twitch user is currently streaming, I can see additional details about what they are streaming.",

@@ -9,8 +9,7 @@
       "title": "Build a JavaScript Calculator",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/rLJZrA/' target='_blank'>https://codepen.io/FreeCodeCamp/full/rLJZrA/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can add, subtract, multiply and divide two numbers.",
         "<strong>User Story:</strong> I can clear the input field with a clear button.",
         "<strong>User Story:</strong> I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.",
@@ -61,8 +60,7 @@
       "title": "Build a Pomodoro Clock",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.",
         "<strong>User Story:</strong> I can reset the clock for my next pomodoro.",
         "<strong>User Story:</strong> I can customize the length of each pomodoro.",
@@ -128,8 +126,7 @@
       "title": "Build a Tic Tac Toe Game",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/KzXQgy/' target='_blank'>https://codepen.io/FreeCodeCamp/full/KzXQgy/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can play a game of Tic Tac Toe with the computer.",
         "<strong>User Story:</strong> My game will reset as soon as it's over so I can play again.",
         "<strong>User Story:</strong> I can choose whether I want to play as X or O.",
@@ -180,8 +177,7 @@
       "title": "Build a Simon Game",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>https://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I am presented with a random series of button presses.",
         "<strong>User Story:</strong> Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.",
         "<strong>User Story:</strong> I hear a sound that corresponds to each button both when the series of button presses plays, and when I personally press a button.",
