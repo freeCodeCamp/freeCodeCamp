@@ -14,7 +14,7 @@
       "tests": [
         {
           "text": "\"helmet\" dependency should be in package.json",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'helmet'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'helmet'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -50,7 +50,7 @@
       "tests": [
         {
           "text": "helmet.hidePoweredBy() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'hidePoweredBy'); assert.notEqual(data.headers['x-powered-by'], 'Express')}, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'hidePoweredBy'); assert.notEqual(data.headers['x-powered-by'], 'Express')}, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -87,10 +87,10 @@
       "tests": [
         {
           "text": "helmet.frameguard() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'frameguard'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'frameguard', 'helmet.frameguard() middleware is not mounted correctly'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }, {
           "text": "helmet.frameguard() 'action' should be set to 'DENY'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.property(data.headers, 'x-frame-options'); assert.equal(data.headers['x-frame-options'], 'DENY');}, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.property(data.headers, 'x-frame-options'); assert.equal(data.headers['x-frame-options'], 'DENY');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -130,7 +130,7 @@
       "tests": [
         {
           "text": "helmet.xssFilter() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'xXssProtection'); assert.property(data.headers, 'x-xss-protection'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'xXssProtection'); assert.property(data.headers, 'x-xss-protection'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -166,7 +166,7 @@
       "tests": [
         {
           "text": "helmet.noSniff() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'nosniff'); assert.equal(data.headers['x-content-type-options'], 'nosniff'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'nosniff'); assert.equal(data.headers['x-content-type-options'], 'nosniff'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -202,7 +202,7 @@
       "tests": [
         {
           "text": "helmet.ieNoOpen() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'ienoopen'); assert.equal(data.headers['x-download-options'], 'noopen'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'ienoopen'); assert.equal(data.headers['x-download-options'], 'noopen'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -240,11 +240,11 @@
       "tests": [
         {
           "text": "helmet.hsts() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'hsts'); assert.property(data.headers, 'strict-transport-security'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'hsts'); assert.property(data.headers, 'strict-transport-security'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "maxAge should be equal to 7776000 ms (90 days)",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.equal(data.headers['strict-transport-security'], 'max-age=7776000'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.equal(data.headers['strict-transport-security'], 'max-age=7776000'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -280,7 +280,7 @@
       "tests": [
         {
           "text": "helmet.dnsPrefetchControl() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'dnsPrefetchControl'); assert.equal(data.headers['x-dns-prefetch-control'], 'off'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'dnsPrefetchControl'); assert.equal(data.headers['x-dns-prefetch-control'], 'off'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -316,7 +316,7 @@
       "tests": [
         {
           "text": "helmet.noCache() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'nocache'); assert.equal(data.headers['cache-control'], 'no-store, no-cache, must-revalidate, proxy-revalidate'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'nocache'); assert.equal(data.headers['cache-control'], 'no-store, no-cache, must-revalidate, proxy-revalidate'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -354,11 +354,11 @@
       "tests": [
         {
           "text": "helmet.csp() middleware should be mounted correctly",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ assert.include(data.appStack, 'csp'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'csp'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "Your csp config is not correct. defaultSrc should be [\"'self'\"] and scriptSrc should be [\"'self'\", 'trusted-cdn.com']",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(function(data){ var cspHeader = Object.keys(data.headers).filter(function(k){ return k === 'content-security-policy' || k === 'x-webkit-csp' || k === 'x-content-security-policy' })[0]; assert.equal(data.headers[cspHeader], \"default-src 'self'; script-src 'self' trusted-cdn.com\"); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/app-info').then(data => { var cspHeader = Object.keys(data.headers).filter(function(k){ return k === 'content-security-policy' || k === 'x-webkit-csp' || k === 'x-content-security-policy' })[0]; assert.equal(data.headers[cspHeader], \"default-src 'self'; script-src 'self' trusted-cdn.com\"); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],

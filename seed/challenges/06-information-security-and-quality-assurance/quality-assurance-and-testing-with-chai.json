@@ -14,15 +14,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "You should choose the right assertion",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(function(data){  assert.equal(data.assertions[0].method, 'isNull', 'Null should be null'); }).promise())"
+          "text": "Choose the right assertion - isNull vs. isNotNull",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {  assert.equal(data.assertions[0].method, 'isNull', 'Null should be null'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "You should choose the right assertion",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(function(data){  assert.equal(data.assertions[1].method, 'isNotNull', '1 should not be null'); }).promise())"
+          "text": "Choose the right assertion - isNull vs. isNotNull",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {  assert.equal(data.assertions[1].method, 'isNotNull', '1 should not be null'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -58,19 +58,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "You should choose the right assertion",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[0].method, 'isDefined', 'Null should not be undefined'); }).promise())"
+          "text": "Choose the right assertion - isDefined vs. isUndefined",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[0].method, 'isDefined', 'Null should not be undefined'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "You should choose the right assertion",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[1].method, 'isUndefined', 'Undefined should be undefined'); }).promise())"
+          "text": "Choose the right assertion - isDefined vs. isUndefined",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[1].method, 'isUndefined', 'Undefined should be undefined'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "You should choose the right assertion",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(function(data){  assert.equal(data.assertions[2].method, 'isDefined', 'A string should not be undefined'); }).promise())"
+          "text": "Choose the right assertion - isDefined vs. isUndefined",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[2].method, 'isDefined', 'A string should not be undefined'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -107,19 +107,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "Null is falsey.",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[0].method, 'isNotOk'); }).promise())"
+          "text": "Choose the right assertion - isOk vs. isNotOk",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[0].method, 'isNotOk', 'Null is falsey'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "A string is truthy",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[1].method, 'isOk'); }).promise())"
+          "text": "Choose the right assertion - isOk vs. isNotOk",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[1].method, 'isOk','A string is truthy'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "true is truthy'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(function(data){  assert.equal(data.assertions[2].method, 'isOk'); }).promise())"
+          "text": "Choose the right assertion - isOk vs. isNotOk",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[2].method, 'isOk', 'true is truthy'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -157,19 +157,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "True is true.",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[0].method, 'isTrue'); }).promise())"
+          "text": "Choose the right assertion - isTrue vs. isNotTrue",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[0].method, 'isTrue', 'True is true'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "Double negation of a truthy value is true.",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[1].method, 'isTrue'); }).promise())"
+          "text": "Choose the right assertion - isTrue vs. isNotTrue",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[1].method, 'isTrue', 'Double negation of a truthy value is true'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "A truthy object is not true - neither is a false one.",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(function(data){  assert.equal(data.assertions[2].method, 'isNotTrue'); }).promise())"
+          "text": "Choose the right assertion - isTrue vs. isNotTrue",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[2].method, 'isNotTrue', 'A truthy object is not true - neither is a false one'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -206,24 +206,24 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "Numbers are coerced into strings with == ",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[0].method, 'equal'); }).promise())"
+          "text": "Choose the right assertion - equal vs. notEqual",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[0].method, 'equal', 'Numbers are coerced into strings with == '); }, xhr => { throw new Error(xhr.statusText); }).promise())"
 
         },
         {
-          "text": "== compares object references.",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[1].method, 'notEqual'); }).promise())"
+          "text": "Choose the right assertion - equal vs. notEqual",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[1].method, 'notEqual', ' == compares object references'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "6 * '2' is 12 ! It should be equal to '12'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[2].method, 'equal'); }).promise())"
+          "text": "Choose the right assertion - equal vs. notEqual",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[2].method, 'equal', '6 * '2' is 12 ! It should be equal to '12''); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
-          "text": "6 + '2' is '62'...",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(function(data){  assert.equal(data.assertions[3].method, 'notEqual'); }).promise())"
+          "text": "Choose the right assertion - equal vs. notEqual",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[3].method, 'notEqual', '6 + '2' is '62'...'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -260,23 +260,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "with strictEqual the type must match",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[0].method, 'notStrictEqual'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {  assert.equal(data.assertions[0].method, 'notStrictEqual'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": " 3*2 = 6...",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[1].method, 'strictEqual'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {  assert.equal(data.assertions[1].method, 'strictEqual'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "6 * '2' is 12. Types match !",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[2].method, 'strictEqual'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {  assert.equal(data.assertions[2].method, 'strictEqual'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "Even if they have the same elements, the Arrays are notStrictEqual",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(function(data){  assert.equal(data.assertions[3].method, 'notStrictEqual'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {  assert.equal(data.assertions[3].method, 'notStrictEqual'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -313,15 +313,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "The order of the keys doesn't matter.",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(function(data){  assert.equal(data.assertions[0].method, 'deepEqual'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {  assert.equal(data.assertions[0].method, 'deepEqual'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "The position of elements within an array does matter.",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(function(data){  assert.equal(data.assertions[1].method, 'notdeepEqual'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {  assert.equal(data.assertions[1].method, 'notdeepEqual'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -357,23 +357,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "5 is at most (<=) 5",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[0].method, 'isAtMost'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[0].method, 'isAtMost'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "1 is greater than 0;",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[1].method, 'isAbove'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[1].method, 'isAbove'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "Math.PI = 3.14159265 is greater than 3",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[2].method, 'isAbove'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[2].method, 'isAbove'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": " 1 - Math.random() is > 0 and <= 1. It is atMost 1 !",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(function(data){  assert.equal(data.assertions[3].method, 'isAtMost'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[3].method, 'isAtMost'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -409,23 +409,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "5 is at least (>=) 5" ,
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isAtLeast'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isAtLeast'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "2 * Math.random() is at least 0",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isAtLeast'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isAtLeast'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "1 is smaller than 2;",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isBelow'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isBelow'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "2/3 (0.6666) is smaller than 1;",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(function(data){  assert.equal(data.assertions[0].method, 'isBelow'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isBelow'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -465,15 +465,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "weirdNumbers(0.5) is in the range (0.5, 1.5]. It's within 1 +/- 0.5",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[0].method, 'isApproximately');  assert.equal(data.assertions[0].args[2], 0.5); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[0].method, 'isApproximately');  assert.equal(data.assertions[0].args[2], 0.5); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "weirdNumbers(0.2) is in the range (0.2, 1.2] It's within 1 +/- 0.8",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[1].method, 'isApproximately');  assert.equal(data.assertions[1].args[2], 0.8); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[1].method, 'isApproximately');  assert.equal(data.assertions[1].args[2], 0.8); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -507,15 +507,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(function(data){assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "String.prototype.split() returns an Array",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[0].method, 'isArray'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[0].method, 'isArray'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "Array.prototype.indexOf returns a number",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(function(data){  assert.equal(data.assertions[1].method, 'isNotArray'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[1].method, 'isNotArray'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -549,15 +549,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "It's summer in july...",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(function(data){  assert.equal(data.assertions[0].method, 'notInclude'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[0].method, 'notInclude'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "JavaScript is a backend language !!",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(function(data){  assert.equal(data.assertions[1].method, 'include'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[1].method, 'include'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -593,19 +593,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "A float number is not a string",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[0].method, 'isNotString'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[0].method, 'isNotString'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "environment vars are strings (or undefined)",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[1].method, 'isString'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[1].method, 'isString'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "A JSON is a string",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(function(data){  assert.equal(data.assertions[2].method, 'isString'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[2].method, 'isString'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -642,15 +642,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "'Arrow' contains 'row'...",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(function(data){  assert.equal(data.assertions[0].method, 'include'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[0].method, 'include'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "... but a 'dart' doesn't contain a 'queue'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(function(data){  assert.equal(data.assertions[1].method, 'notInclude'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[1].method, 'notInclude'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "",
@@ -691,15 +691,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "'# name: John Doe, age: 35' matches the regex",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(function(data){  assert.equal(data.assertions[0].method, 'match'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(data => {  assert.equal(data.assertions[0].method, 'match'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "'# name: Paul Smith III, age: twenty-four' doesn't match the regex (the age must be numeric)",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(function(data){  assert.equal(data.assertions[1].method, 'notMatch'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(data => {  assert.equal(data.assertions[1].method, 'notMatch'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -736,19 +736,19 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "A car is not an Airplane---",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[0].method, 'notProperty'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[0].method, 'notProperty'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "planes have engines",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[1].method, 'property'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[1].method, 'property'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "Cars have wheels",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(function(data){ assert.equal(data.assertions[2].method, 'property'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[2].method, 'property'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -785,27 +785,27 @@
       "tests": [
         {
           "text": "in the example car is an Otring",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "everything is an object in JavaScript...",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[0].method, 'typeOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[0].method, 'typeOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "in the example objects car.model is a String",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[1].method, 'typeOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[1].method, 'typeOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "in the example objects car.wings is a Number (not a String)",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[1].method, 'notTypeOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[1].method, 'notTypeOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "in the example objects car.engines is an Array",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[3].method, 'typeOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[3].method, 'typeOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "in the example objects car.wheels is a Number",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(function(data){ assert.equal(data.assertions[4].method, 'typeOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[4].method, 'typeOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -842,23 +842,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "myCar is not an instance of Plane",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[0].method, 'notInstanceOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[0].method, 'notInstanceOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "airlinePlane is an instance of Plane",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[1].method, 'instanceOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[1].method, 'instanceOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "everything is an Object in JavaScript...",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[2].method, 'instanceOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[2].method, 'instanceOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "myCar.wheels is not an instance of String",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(function(data){ assert.equal(data.assertions[3].method, 'notInstanceOf'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[3].method, 'notInstanceOf'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -895,15 +895,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.status' == 200",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(function(data){ assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(data => { assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.text' == 'hello Guest'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(function(data){ assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.text'); assert.equal(data.assertions[1].args[1], '\\'hello Guest\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(data => { assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.text'); assert.equal(data.assertions[1].args[1], '\\'hello Guest\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -940,15 +940,15 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.status' == 200",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(function(data){ assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(data => { assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.text' == 'hello Guest'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(function(data){ assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.text'); assert.match(data.assertions[1].args[1], /hello [\\w\\d_-]/);}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(data => { assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.text'); assert.match(data.assertions[1].args[1], /hello [\\w\\d_-]/);}, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -993,23 +993,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.status' to be 200",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.type' to be 'application/json'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.type'); assert.equal(data.assertions[1].args[1], '\\'application/json\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.type'); assert.equal(data.assertions[1].args[1], '\\'application/json\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.body.name' to be 'Cristoforo'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.equal(data.assertions[2].args[1], '\\'Cristoforo\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.equal(data.assertions[2].args[1], '\\'Cristoforo\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.body.surname' to be 'Colombo'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(function(data){ assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.equal(data.assertions[3].args[1], '\\'Colombo\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.equal(data.assertions[3].args[1], '\\'Colombo\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -1048,23 +1048,23 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.status' to be 200",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.type' to be 'application/json'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.type'); assert.equal(data.assertions[1].args[1], '\\'application/json\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.type'); assert.equal(data.assertions[1].args[1], '\\'application/json\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.body.name' to be 'Giovanni'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.equal(data.assertions[2].args[1], '\\'Giovanni\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.equal(data.assertions[2].args[1], '\\'Giovanni\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "You should test for 'res.body.surname' to be 'da Verrazzano'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(function(data){ assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.equal(data.assertions[3].args[1], '\\'da Verrazzano\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.equal(data.assertions[3].args[1], '\\'da Verrazzano\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
         }
       ],
       "solutions": [],
@@ -1103,25 +1103,25 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "  assert that the headless browser request succeded",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.assertions[0].method, 'browser.success'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[0].method, 'browser.success'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "  assert that the text inside the element 'span#name' is 'Cristoforo'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Cristoforo\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Cristoforo\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
 
         },
         {
           "text": "  assert that the text inside the element 'span#surname' is 'Colombo'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Colombo\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Colombo\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
 
         },
         {
           "text": "  assert that the element 'span#dates' exist and its count is 1",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(function(data){ assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.statusText); }).promise())"
 
         }
       ],
@@ -1159,25 +1159,25 @@
       "tests": [
         {
           "text": "All tests should pass",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.state,'passed'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "  assert that the headless browser request succeded",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.assertions[0].method, 'browser.success'); }).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[0].method, 'browser.success'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
         },
         {
           "text": "  assert that the text inside the element 'span#name' is 'Amerigo'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Amerigo\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Amerigo\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
 
         },
         {
           "text": "  assert that the text inside the element 'span#surname' is 'Vespucci'",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Vespucci\\'');}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Vespucci\\'');}, xhr => { throw new Error(xhr.statusText); }).promise())"
 
         },
         {
           "text": "  assert that the element 'span#dates' exist and its count is 1",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(function(data){ assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}).promise())"
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.statusText); }).promise())"
 
         }
       ],
