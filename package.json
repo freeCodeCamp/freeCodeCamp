@@ -1,10 +1,7 @@
 {
   "name": "freecodecamp",
   "version": "0.1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/freecodecamp/freecodecamp.git"
-  },
+  "repository": "freecodecamp/freecodecamp",
   "scripts": {
     "only-once": "npm run create-rev && echo '/****/' && echo 'Seeding Database' && echo '/****/' && node seed && echo '/****/' && echo 'Seeding Completed' && echo '/****/'",
     "create-rev": "node -e \"var fs = require('fs'); fs.access('./server/rev-manifest.json', function(err) { if (err) { console.log('\\n\\ncreating manifest\\n\\n'); return fs.writeFileSync('server/rev-manifest.json', '{}'); } console.log('\\n\\nrev-manifest present\\n\\n'); });\"",
