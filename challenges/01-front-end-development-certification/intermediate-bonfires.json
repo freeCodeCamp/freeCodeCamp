@@ -450,6 +450,7 @@
       "tests": [
         "assert.deepEqual(fearNotLetter(\"abce\"), \"d\", 'message: <code>fearNotLetter(\"abce\")</code> should return \"d\".');",
         "assert.deepEqual(fearNotLetter(\"abcdefghjklmno\"), \"i\", 'message: <code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".');",
+        "assert.deepEqual(fearNotLetter(\"stvwx\"), \"u\", 'message: <code>fearNotLetter(\"stvwx\")</code> should return \"u\".');",
         "assert.isUndefined(fearNotLetter(\"bcd\"), 'message: <code>fearNotLetter(\"bcd\")</code> should return undefined.');",
         "assert.isUndefined(fearNotLetter(\"yz\"), 'message: <code>fearNotLetter(\"yz\")</code> should return undefined.');"
       ],
