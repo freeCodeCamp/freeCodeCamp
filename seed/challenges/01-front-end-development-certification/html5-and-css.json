@@ -4466,7 +4466,7 @@
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
         "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
         "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
-        "Note: It doesn't matter whether you declare this css above or below pink-text class, since id attribute will always take precedence."
+        "Note: It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence."
       ],
       "challengeSeed": [
         "<style>",
@@ -4519,7 +4519,7 @@
             "Deja las clases <code>blue-text</code> y <code>pink-text</code> de tu elemento <code>h1</code>.",
             "Crea una declaración CSS para tu identificación <code>orange-text</code> en tu elemento <code>style</code>. He aquí un ejemplo de como se ve esto: ",
             "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
-            "Nota: No importa si usted declara este css encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
+            "Nota: No importa si usted declara este CSS encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
           ]
         },
         "pt-br": {
