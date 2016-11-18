@@ -3206,18 +3206,18 @@
         "    return \"10 or Over\";",
         "  }",
         "",
-        "  return \"9 or Under\";",
+        "  return \"Less than 10\";",
         "}",
         "",
         "// Change this value to test",
         "testGreaterOrEqual(10);"
       ],
       "solutions": [
-        "function testGreaterOrEqual(val) {\n  if (val >= 20) {  // Change this line\n    return \"20 or Over\";\n  }\n  \n  if (val >= 10) {  // Change this line\n    return \"10 or Over\";\n  }\n\n  return \"9 or Under\";\n}"
+        "function testGreaterOrEqual(val) {\n  if (val >= 20) {  // Change this line\n    return \"20 or Over\";\n  }\n  \n  if (val >= 10) {  // Change this line\n    return \"10 or Over\";\n  }\n\n  return \"Less than 10\";\n}"
       ],
       "tests": [
-        "assert(testGreaterOrEqual(0) === \"9 or Under\", 'message: <code>testGreaterOrEqual(0)</code> should return \"9 or Under\"');",
-        "assert(testGreaterOrEqual(9) === \"9 or Under\", 'message: <code>testGreaterOrEqual(9)</code> should return \"9 or Under\"');",
+        "assert(testGreaterOrEqual(0) === \"Less than 10\", 'message: <code>testGreaterOrEqual(0)</code> should return \"Less than 10\"');",
+        "assert(testGreaterOrEqual(9) === \"Less than 10\", 'message: <code>testGreaterOrEqual(9)</code> should return \"Less than 10\"');",
         "assert(testGreaterOrEqual(10) === \"10 or Over\", 'message: <code>testGreaterOrEqual(10)</code> should return \"10 or Over\"');",
         "assert(testGreaterOrEqual(11) === \"10 or Over\", 'message: <code>testGreaterOrEqual(11)</code> should return \"10 or Over\"');",
         "assert(testGreaterOrEqual(19) === \"10 or Over\", 'message: <code>testGreaterOrEqual(19)</code> should return \"10 or Over\"');",
