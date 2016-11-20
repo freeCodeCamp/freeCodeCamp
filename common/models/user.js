@@ -27,6 +27,16 @@ function getAboutProfile({
   };
 }
 
+function getStatsProfile({
+  username,
+  challengeMap = {}
+}) {
+  return {
+    username,
+    challengeMap
+  };
+}
+
 function nextTick(fn) {
   return process.nextTick(fn);
 }
@@ -343,7 +353,9 @@ module.exports = function(User) {
       // Zalgo!!
       return nextTick(() => {
         cb(new TypeError(
-            `username should be a string but got ${ username }`
+          dedent`
+            username should be a string but got ${ username },
+            of type ${ typeof username }.`
         ));
       });
     }
@@ -377,6 +389,51 @@ module.exports = function(User) {
       ],
       http: {
         path: '/about',
+        verb: 'get'
+      }
+    }
+  );
+
+  User.stats = function stats(username, cb) {
+    if (!username) {
+      return nextTick(() => {
+        cb(new TypeError(
+          dedent`
+            username should be a string but got ${ username },
+            of type ${ typeof username }.`
+        ));
+      });
+    }
+    return User.findOne({ where: { username } }, (err, user) => {
+      if (err) {
+        return cb(err);
+      }
+      if (!user || user.username !== username) {
+        return cb(new Error(`no user found for ${ username }`));
+      }
+      const statsUser = getStatsProfile(user);
+      return cb(null, statsUser);
+    });
+  };
+
+  User.remoteMethod(
+    'stats',
+    {
+      description: 'get user stats',
+      accepts: [
+        {
+          arg: 'username',
+          type: 'string'
+        }
+      ],
+      returns: [
+        {
+          arg: 'stats',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/stats',
         verb: 'get'
       }
     }
