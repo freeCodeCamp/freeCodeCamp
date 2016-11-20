@@ -161,7 +161,8 @@ module.exports = function(app) {
   }
 
   AccessToken.findOne$ = Observable.fromNodeCallback(
-    AccessToken.findOne, AccessToken);
+    AccessToken.findOne, AccessToken
+  );
 
   router.get('/login', function(req, res) {
     res.redirect(301, '/signin');

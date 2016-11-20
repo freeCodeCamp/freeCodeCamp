@@ -505,7 +505,7 @@ module.exports = function(User) {
     if (!isEmail(email)) {
       return Promise.reject(
         new Error('The submitted email not valid.')
-        );
+      );
     }
 
     var userObj = {
@@ -517,19 +517,19 @@ module.exports = function(User) {
       .map(([ err, user, isCreated ]) => {
         if (err) {
           return dedent`
-           Oops, something is not right, please try again later.`;
+            Oops, something is not right, please try again later.
+          `;
         }
 
-        if (!isDev) {
-          const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
-          if (minutesLeft) {
-            const timeToWait = minutesLeft ?
-              `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-              'a few seconds';
-            debug('request before wait time : ' + timeToWait);
-            return dedent`
-              Please wait ${timeToWait} to resend an authentication link.`;
-          }
+        const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
+        if (minutesLeft) {
+          const timeToWait = minutesLeft ?
+            `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+            'a few seconds';
+          debug('request before wait time : ' + timeToWait);
+          return dedent`
+            Please wait ${timeToWait} to resend an authentication link.
+          `;
         }
 
         let emailTemplate = 'user-request-sign-in.ejs';
@@ -574,13 +574,15 @@ module.exports = function(User) {
         });
 
         return dedent`
-           If you entered a valid email, a magic link is on its way.
-           Please follow that link to sign in.`;
+          If you entered a valid email, a magic link is on its way.
+          Please follow that link to sign in.
+        `;
       })
       .map((msg) => {
         if (msg) { return msg; }
         return dedent`
-         Oops, something is not right, please try again later.`;
+          Oops, something is not right, please try again later.
+        `;
       })
       .catch(error => {
         debug(error);
@@ -619,17 +621,15 @@ module.exports = function(User) {
       ));
     }
 
-    if (!isDev) {
-      const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
-      if (ownEmail && minutesLeft) {
-        const timeToWait = minutesLeft ?
-          `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-          'a few seconds';
-        debug('request before wait time : ' + timeToWait);
-        return Observable.throw(new Error(
-          `Please wait ${timeToWait} to resend email verification.`
-        ));
-      }
+    const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
+    if (ownEmail && minutesLeft) {
+      const timeToWait = minutesLeft ?
+        `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+        'a few seconds';
+      debug('request before wait time : ' + timeToWait);
+      return Observable.throw(new Error(
+        `Please wait ${timeToWait} to resend email verification.`
+      ));
     }
 
     return Observable.fromPromise(User.doesExist(null, email))
