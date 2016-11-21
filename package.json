@@ -143,7 +143,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-reduce-file": "0.0.1",
     "gulp-rev": "^7.0.0",
-    "gulp-sourcemaps": "^2.0.0",
+    "gulp-sourcemaps": "^2.2.1",
     "gulp-tape": "0.0.9",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.6",
