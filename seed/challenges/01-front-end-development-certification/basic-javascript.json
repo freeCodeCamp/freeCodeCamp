@@ -2539,8 +2539,7 @@
       ],
       "challengeSeed": [
         "function myLocalScope() {",
-        "  'use strict';",
-        "  ",
+        "  'use strict'; // you shouldn't need to edit this line",
         "  ",
         "  console.log(myVar);",
         "}",
