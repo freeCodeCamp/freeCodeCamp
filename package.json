@@ -91,7 +91,7 @@
     "pmx": "~0.6.2",
     "react": "^15.0.2",
     "react-bootstrap": "^0.30.5",
-    "react-codemirror": "^0.2.6",
+    "react-codemirror": "^0.3.0",
     "react-css-transition-replace": "^1.2.0-beta",
     "react-dom": "^15.0.2",
     "react-fontawesome": "^1.2.0",
