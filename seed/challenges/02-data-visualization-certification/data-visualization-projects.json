@@ -9,7 +9,7 @@
       "title": "Visualize Data with a Bar Chart",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/FreeCodeCamp/full/vGjLVZ</a>.",
-        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see US Gross Domestic Product by quarter, over time.",
         "<strong>User Story:</strong> I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.",
         "<strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json</a>",
@@ -48,7 +48,7 @@
       "title": "Visualize Data with a Scatterplot Graph",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/ONxvaa/' target='_blank'>https://codepen.io/FreeCodeCamp/full/ONxvaa/</a>.",
-        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see performance time visualized in a scatterplot graph.",
         "<strong>User Story:</strong> I can mouse over a plot to see a tooltip with additional details.",
         "<strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json' target='_blank'>https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json</a>",
@@ -87,7 +87,7 @@
       "title": "Visualize Data with a Heat Map",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/aNLYPp/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNLYPp/</a>.",
-        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can view a heat map with data represented both on the Y and X axis.",
         "<strong>User Story:</strong> Each cell is colored based its relationship to other data.",
         "<strong>User Story:</strong> I can mouse over a cell in the heat map to get more exact information.",
@@ -128,7 +128,7 @@
       "title": "Show National Contiguity with a Force Directed Graph",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/xVopBo' target='_blank'>https://codepen.io/FreeCodeCamp/full/xVopBo</a>.",
-        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see a Force-directed Graph that shows which countries share borders.",
         "<strong>User Story:</strong> I can see each country's flag on its node.",
         "<strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json' target='_blank'>https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json</a>",
@@ -171,7 +171,7 @@
       "title": "Map Data Across the Globe",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>https://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
-        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see where all Meteorites landed on a world map.",
         "<strong>User Story:</strong> I can tell the relative size of the meteorite, just by looking at the way it's represented on the map.",
         "<strong>User Story:</strong> I can mouse over the meteorite's data point for additional data.",
