@@ -27,6 +27,26 @@ function destroyAll(id, Model) {
   )({ userId: id });
 }
 
+const renderSignUpEmail = loopback.template(path.join(
+  __dirname,
+  '..',
+  '..',
+  'server',
+  'views',
+  'emails',
+  'user-request-sign-up.ejs'
+));
+
+const renderSignInEmail = loopback.template(path.join(
+  __dirname,
+  '..',
+  '..',
+  'server',
+  'views',
+  'emails',
+  'user-request-sign-in.ejs'
+));
+
 function getAboutProfile({
   username,
   githubProfile: github,
@@ -513,7 +533,7 @@ module.exports = function(User) {
       email: email,
       emailVerified: false
     };
-    return User.findOrCreate$({ where: { email: userObj.email }}, userObj)
+    return User.findOrCreate$({ where: { email }}, userObj)
       .map(([ err, user, isCreated ]) => {
         if (err) {
           return dedent`
@@ -532,10 +552,8 @@ module.exports = function(User) {
           `;
         }
 
-        let emailTemplate = 'user-request-sign-in.ejs';
-        if (isCreated) {
-          emailTemplate = 'user-request-sign-up.ejs';
-        }
+        const renderAuthEmail = isCreated ?
+          renderSignUpEmail : renderSignInEmail;
 
         // create a temporary access token with ttl for 1 hour
         user.createAccessToken({ ttl: 60 * 60 * 1000 }, (err, token) => {
@@ -543,15 +561,7 @@ module.exports = function(User) {
 
           const { id: loginToken } = token;
           const loginEmail = user.email;
-          const renderAuthEmail = loopback.template(path.join(
-            __dirname,
-            '..',
-            '..',
-            'server',
-            'views',
-            'emails',
-            emailTemplate
-          ));
+
           const mailOptions = {
             type: 'email',
             to: user.email,
