@@ -43,12 +43,12 @@ Remember to feel free to ask for help in our [Contributors](https://gitter.im/Fr
 
 If Node or MongoDB is already installed in your machine, run the following commands to validate the versions:
 
-```shell 
-node -v 
+```shell
+node -v
 mongo --version
-``` 
+```
 
-If your versions are lower than the prerequisite versions, you should update. 
+If your versions are lower than the prerequisite versions, you should update.
 
 ### Forking The Project
 
@@ -132,7 +132,7 @@ Before you start working, you will need to create a separate branch specific to 
 
 #### Naming Your Branch
 
-Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a short description of the changes or feature you are attempting to add. For example `fix/email-login` would be a branch where I fix something specific to email login.
+Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a short description of the changes or feature you are attempting to add. For example `fix/email-login` would be a branch where you fix something specific to email login.
 
 #### Adding Your Branch
 
@@ -156,7 +156,6 @@ You should have [ESLint running in your editor](http://eslint.org/docs/user-guid
 
 > Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base.
 
-Make sure none of your JavaScript is longer than 80 characters per line. The reason we enforce this is because one of our dependent NPM modules, [jsonlint](https://github.com/zaach/jsonlint), does not fully support wildcard paths in Windows.
 
 ### Setup FreeCodeCamp
 Once you have FreeCodeCamp cloned, before you start the application, you first need to install all of the dependencies:
@@ -205,24 +204,35 @@ gulp
 
 Now navigate to your browser and open
 <http://localhost:3000>. If the app loads,
-congratulations – you're all set. Otherwise, let us know by asking in the [Contributors Room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
+congratulations – you're all set. Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
 
 ### Make Changes
 This bit is up to you!
 
+#### How to find the code in the Free Code Camp codebase to fix/edit?
+
+The best way to find out any code you wish to change/add or remove is using
+the GitHub search bar at the top of the repository page. For example, you could
+search for a challenge name and the results will display all the files along
+with line numbers. Then you can proceed to the files and verify this is the area
+that you were looking forward to edit. Always feel free to reach out to the chat
+room when you are not certain of any thing specific in the code.
+
+#### Changes to the seed files
+If you made changes to any file in the `/seed` directory, you need to run
+```shell
+$ node seed
+```
+in order to see the changes.
+
 ### Run The Test Suite
-When your are ready to share your code, run the test suite:
+When you're ready to share your code, run the test suite:
 
 ```shell
 $ npm test
 ```
 
-and ensure all tests pass. For Windows contributors, skip the jsonlint pretest by using this instead:
-
-```shell
-npm run test-challenges
-```
-This is because jsonlint will always fail on Windows, due to the wildcard parameters.
+and ensure all tests pass.
 
 ### Squash Your Commits
 When you make a pull request, all of your changes need to be in one commit.
@@ -243,16 +253,7 @@ accepted by Free Code Camp proper.
 #### Need Help?
 
 Free Code Camp Issue Mods and staff are on hand to assist with Pull Request
-related issues on our Contributors Chat Room.
-
-#### How to find the code in the Free Code Camp codebase to fix/edit?
-
-The best way to find out any code you wish to change/add or remove is using
-the GitHub search bar at the top of the repository page. For example, you could
-search for a challenge name and the results will display all the files along
-with line numbers. Then you can proceed to the files and verify this is the area
-that you were looking forward to edit. Always feel free to reach out to the chat
-room when you are not certain of any thing specific in the code.
+related issues in our [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors).
 
 #### Important: ALWAYS EDIT ON A BRANCH
 
@@ -266,8 +267,8 @@ fork and re-fork.
 
 There are two methods of creating a pull request for Free Code Camp:
 
+-   Editing files on a local clone (recommended)
 -   Editing files via the GitHub Interface
--   Editing files on a local clone
 
 ##### Method 1: Editing via your Local Fork _(Recommended)_
 
@@ -358,7 +359,7 @@ Free Code Camp has a team of volunteer Issue Moderators. These Issue Moderators 
 
 2. Another Issue Moderator will QA the same pull request. Once they have also confirmed that the new code does what it is supposed to without seeming to introduce any new bugs, they will merge the pull request.
 
-If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@berkeleytrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
+If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@BerkeleyTrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
 
 
 ### How We Close Stale Issues
