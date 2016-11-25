@@ -16,6 +16,7 @@ import flashToToast from './utils/flash-to-toast';
 
 import createApp from '../common/app';
 import provideStore from '../common/app/provide-store';
+import { getLangFromPath } from '../common/app/utils/lang';
 
 // client specific sagas
 import sagas from './sagas';
@@ -34,6 +35,8 @@ const DOMContainer = document.getElementById('fcc');
 const initialState = isColdStored() ?
   getColdStorage() :
   window.__fcc__.data;
+const primaryLang = getLangFromPath(window.location.pathname);
+
 initialState.app.csrfToken = csrfToken;
 initialState.toasts = flashToToast(window.__fcc__.flash);
 
@@ -42,7 +45,7 @@ window.__fcc__ = {};
 
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
-const history = useLangRoutes(createHistory)();
+const history = useLangRoutes(createHistory, primaryLang)();
 sendPageAnalytics(history, window.ga);
 
 const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
