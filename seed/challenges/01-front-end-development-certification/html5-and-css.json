@@ -958,6 +958,7 @@
       "tests": [
         "assert(new RegExp(\"googleapis\", \"gi\").test(code), 'message: Import the <code>Lobster</code> font.');",
         "assert($(\"h2\").css(\"font-family\").match(/lobster/i), 'message: Your <code>h2</code> element should use the font <code>Lobster</code>.');",
+        "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?\\s*;\\s*\\}/gi.test(code), 'message: Use an <code>h2</code> CSS selector to change the font.');",
         "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'message: Your <code>p</code> element should still use the font <code>Monospace</code>.');"
       ],
       "type": "waypoint",
@@ -1041,7 +1042,7 @@
       ],
       "tests": [
         "assert($(\"h2\").css(\"font-family\").match(/^\"?lobster/i), 'message: Your h2 element should use the font <code>Lobster</code>.');",
-        "assert($(\"h2\").css(\"font-family\").match(/lobster.*,.*monospace/i), 'message: Your h2 element should degrade to the font <code>Monospace</code> when <code>Lobster</code> is not available.');",
+        "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?,\\s*Monospace\\s*;\\s*\\}/gi.test(code), 'message: Your h2 element should degrade to the font <code>Monospace</code> when <code>Lobster</code> is not available.');",
         "assert(new RegExp(\"<!--[^fc]\", \"gi\").test(code), 'message: Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.');",
         "assert(new RegExp(\"[^fc]-->\", \"gi\").test(code), 'message: Be sure to close your comment by adding <code>--&#62;</code>.');"
       ],
