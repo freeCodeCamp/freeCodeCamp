@@ -1019,7 +1019,7 @@
         "By using the <code>span</code> element, you can put several elements together, and even style different parts of the same element differently.",
         "Nest the word \"love\" in your \"Things cats love\" element below within a <code>span</code> element. Then give that <code>span</code> the class <code>text-danger</code> to make the text red.",
         "Here's how you would do this with the \"Top 3 things cats hate\" element:",
-        "<code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>"
+        "<code>&#60;p&#62;Top 3 things cats &#60;span class=\"text-danger\"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>"
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1096,7 +1096,7 @@
             "Al usar el elemento <code>span</code>, puedes poner varios elementos juntos, e incluso darle diferentes estilos a partes diferentes del mismo elemento.",
             "Anida la palabra \"love\" en tu elemento \"Things cats love\" dentro de un elemento <code>span</code>. Luego, asigna a ese elemento <code>span</code> la clase <code>text-danger</code> para hacer que el texto sea rojo.",
             "Así es como lo harías con el elemento \"Top 3 things cats hate\":",
-            "<code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>"
+            "<code>&#60;p&#62;Top 3 things cats &#60;span class=\"text-danger\"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>"
           ]
         },
         "fr": {
@@ -1108,7 +1108,7 @@
             "En utilisant un élément <code>span</code>, vous pouvez mettre ensemble plusieurs éléments, et même donner un style différent à plusieurs parties d'un même élément",
             "Nichez le mot \"love\" dans votre élément \"Things cats love\" en dessous dans un élément <code>span</code>; Ensuite donnez à ce <code>span</code> la classe <code>text-danger</code> pour rendre le texte rouge.",
             "Il faudrait que vous fassiez ainsi pour l'élément \"Top 3 things cats hate\":",
-            "<code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>"
+            "<code>&#60;p&#62;Top 3 things cats &#60;span class=\"text-danger\"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>"
           ]
         }
       }
