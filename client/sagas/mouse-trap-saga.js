@@ -4,6 +4,7 @@ import { push } from 'react-router-redux';
 import {
   toggleNightMode,
   toggleMapDrawer,
+  closeMapDrawer,
   toggleMainChat,
   hardGoTo
 } from '../../common/app/redux/actions';
@@ -37,6 +38,7 @@ export default function mouseTrapSaga(actions$) {
       () => hardGoTo('http://forum.freecodecamp.com')
     ),
     bindKey$('g m', toggleMapDrawer),
+    bindKey$('esc', closeMapDrawer),
     bindKey$('g t n', toggleNightMode),
     bindKey$('g c', toggleMainChat)
   ];

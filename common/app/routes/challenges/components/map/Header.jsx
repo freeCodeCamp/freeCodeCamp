@@ -41,7 +41,7 @@ export class Header extends PureComponent {
 
   handleKeyDown(e) {
     if (e.keyCode === ESC) {
-      e.preventDefault();
+      document.activeElement.blur();
       this.props.clearFilter();
     }
   }
