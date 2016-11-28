@@ -556,7 +556,7 @@ module.exports = function(User) {
           renderSignUpEmail : renderSignInEmail;
 
         // create a temporary access token with ttl for 1 hour
-        user.createAccessToken({ ttl: 60 * 60 * 1000 }, (err, token) => {
+        return user.createAccessToken({ ttl: 60 * 60 * 1000 }, (err, token) => {
           if (err) { throw err; }
 
           const { id: loginToken } = token;
@@ -579,26 +579,25 @@ module.exports = function(User) {
           } else {
             console.log('~~~~\n' + mailOptions.text + '~~~~\n');
           }
-          user.emailAuthLinkTTL = token.created;
-          user.save(err =>{ if (err) { throw err; }});
-        });
+          const emailAuthLinkTTL = token.created;
+          this.update$({
+            emailAuthLinkTTL
+          })
+          .do(() => {
+            this.emailAuthLinkTTL = emailAuthLinkTTL;
+          });
 
-        return dedent`
-          If you entered a valid email, a magic link is on its way.
-          Please follow that link to sign in.
-        `;
+          return dedent`
+            If you entered a valid email, a magic link is on its way.
+            Please follow that link to sign in.
+          `;
+        });
       })
       .map((msg) => {
         if (msg) { return msg; }
         return dedent`
           Oops, something is not right, please try again later.
         `;
-      })
-      .catch(error => {
-        debug(error);
-        return Observable.throw(
-          'Oops, something went wrong, please try again later.'
-        );
       })
       .toPromise();
   };
