@@ -3077,7 +3077,7 @@
       "id": "56533eb9ac21ba0edf2244d3",
       "title": "Comparison with the Strict Inequality Operator",
       "description": [
-        "The strict inequality operator (<code>!==</code>) is the opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
+        "The strict inequality operator (<code>!==</code>) is the logical opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
         "<strong>Examples</strong>",
         "<blockquote>3 !== 3   // false<br>3 !== '3' // true<br>4 !== 3   // true</blockquote>",
         "<h4>Instructions</h4>",
@@ -3103,6 +3103,9 @@
       ],
       "solutions": [
         "function testStrictNotEqual(val) {\n  if (val !== 17) {\n    return \"Not Equal\";\n  }\n  return \"Equal\";\n}"
+      ],
+      "MDNlinks": [
+        "Strict Inequality Operator"
       ],
       "tests": [
         "assert(testStrictNotEqual(17) === \"Equal\", 'message: <code>testStrictNotEqual(17)</code> should return \"Equal\"');",
