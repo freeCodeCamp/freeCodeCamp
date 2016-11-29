@@ -18,6 +18,7 @@ import {
 } from '../redux/actions';
 import { challengeSelector } from '../redux/selectors';
 import { updateTitle } from '../../../redux/actions';
+import { makeToast } from '../../../toasts/redux/actions';
 
 const views = {
   step: Step,
@@ -30,6 +31,7 @@ const views = {
 const bindableActions = {
   fetchChallenge,
   fetchChallenges,
+  makeToast,
   replaceChallenge,
   resetUi,
   updateTitle
@@ -39,7 +41,17 @@ const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.challenge,
   state => state.challengesApp.superBlocks,
-  ({ challenge: { title } = {}, viewType }, challenge, superBlocks = []) => ({
+  state => state.app.lang,
+  (
+    {
+      challenge: { title, isTranslated } = {}, viewType
+    },
+    challenge,
+    superBlocks = [],
+    lang
+  ) => ({
+    lang,
+    isTranslated,
     title,
     challenge,
     viewType,
@@ -57,6 +69,10 @@ const fetchOptions = {
   }
 };
 
+const link = 'http://forum.freecodecamp.com/t/' +
+   'guidelines-for-translating-free-code-camp' +
+   '-to-any-language/19111';
+
 export class Challenges extends PureComponent {
   static displayName = 'Challenges';
 
@@ -69,11 +85,22 @@ export class Challenges extends PureComponent {
     params: PropTypes.object.isRequired,
     areChallengesLoaded: PropTypes.bool,
     resetUi: PropTypes.func.isRequired,
-    updateTitle: PropTypes.func.isRequired
+    updateTitle: PropTypes.func.isRequired,
+    makeToast: PropTypes.func.isRequired,
+    lang: PropTypes.string.isRequired,
+    isTranslated: PropTypes.bool
   };
 
   componentWillMount() {
-    this.props.updateTitle(this.props.title);
+    const { title, updateTitle, lang, isTranslated, makeToast } = this.props;
+    updateTitle(title);
+    if (lang !== 'en' && !isTranslated) {
+      makeToast({
+        message: 'We haven\'t translated this challenge yet.',
+        action: <a href={ link } target='_blank'>Help Us</a>,
+        timeout: 15000
+      });
+    }
   }
 
   componentDidMount() {
@@ -88,11 +115,19 @@ export class Challenges extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     const { block, dashedName } = nextProps.params;
-    const { resetUi, updateTitle, replaceChallenge } = this.props;
+    const { lang, isTranslated } = nextProps;
+    const { resetUi, updateTitle, replaceChallenge, makeToast } = this.props;
     if (this.props.params.dashedName !== dashedName) {
       updateTitle(nextProps.title);
       resetUi();
       replaceChallenge({ dashedName, block });
+      if (lang !== 'en' && !isTranslated) {
+        makeToast({
+          message: 'We haven\'t translated this challenge yet.',
+          action: <a href={ link } target='_blank'>Help Us</a>,
+          timeout: 15000
+        });
+      }
     }
   }
 
