@@ -3,6 +3,7 @@
   "order": 7,
   "time": "2 hours",
   "helpRoom": "HelpJavaScript",
+  "blockType": "OOP",
   "note": [
     "Methods",
     "Closures",

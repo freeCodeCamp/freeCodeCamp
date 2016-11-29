@@ -19,14 +19,16 @@ const mapStateToProps = createSelector(
         id,
         title,
         description,
-        challengeSeed: [ videoId = '' ] = []
+        challengeSeed: [ videoId = '' ] = [],
+        blockType
       } = {}
     }
   ) => ({
     id,
     videoId,
     title,
-    description
+    description,
+    blockType
   })
 );
 
@@ -37,7 +39,8 @@ export class Project extends PureComponent {
     videoId: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.arrayOf(PropTypes.string),
-    isCompleted: PropTypes.bool
+    isCompleted: PropTypes.bool,
+    blockType: PropTypes.string
   };
 
   render() {
@@ -46,13 +49,15 @@ export class Project extends PureComponent {
       title,
       videoId,
       isCompleted,
-      description
+      description,
+      blockType
     } = this.props;
 
     return (
       <div>
         <Col md={ 4 }>
           <SidePanel
+            blockType={ blockType }
             description={ description }
             isCompleted={ isCompleted }
             title={ title }

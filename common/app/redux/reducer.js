@@ -16,11 +16,15 @@ const initialState = {
 
 export default handleActions(
   {
-    [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
+    [types.updateTitle]:
+    (state,
+    {payload: {title = 'Learn to Code', blockType = 'Free Code Camp'} }) => {
+    let updatedTitle = (blockType) ? `${blockType}: ${title}` : title;
+      return {
       ...state,
-      title: payload + ' | Free Code Camp'
-    }),
-
+      title: `${updatedTitle} | Free Code Camp`
+      };
+    },
     [types.updateThisUser]: (state, { payload: user }) => ({
       ...state,
       user,

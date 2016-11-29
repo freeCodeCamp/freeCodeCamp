@@ -39,10 +39,11 @@ const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.challenge,
   state => state.challengesApp.superBlocks,
-  ({ challenge: { title } = {}, viewType }, challenge, superBlocks = []) => ({
+  ({ challenge: { title = 'Learn to Code', blockType } = {},
+    viewType}, challenge, superBlocks = []) => ({
     title,
-    challenge,
     viewType,
+    blockType,
     areChallengesLoaded: superBlocks.length > 0
   })
 );
@@ -69,17 +70,16 @@ export class Challenges extends PureComponent {
     params: PropTypes.object.isRequired,
     areChallengesLoaded: PropTypes.bool,
     resetUi: PropTypes.func.isRequired,
-    updateTitle: PropTypes.func.isRequired
+    updateTitle: PropTypes.func.isRequired,
+    blockType: PropTypes.string
   };
 
-  componentWillMount() {
-    this.props.updateTitle(this.props.title);
-  }
-
   componentDidMount() {
-    if (!this.props.areChallengesLoaded) {
+    const { areChallengesLoaded, blockType, title } = this.props;
+    if (!areChallengesLoaded) {
       this.props.fetchChallenges();
     }
+    this.props.updateTitle({ blockType, title });
   }
 
   componentWillUnmount() {
@@ -87,10 +87,11 @@ export class Challenges extends PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { block, dashedName } = nextProps.params;
+    const { params, blockType, title } = nextProps;
+    const { block, dashedName } = params;
     const { resetUi, updateTitle, replaceChallenge } = this.props;
     if (this.props.params.dashedName !== dashedName) {
-      updateTitle(nextProps.title);
+      updateTitle({ blockType, title });
       resetUi();
       replaceChallenge({ dashedName, block });
     }
@@ -103,6 +104,7 @@ export class Challenges extends PureComponent {
 
   render() {
     const { viewType } = this.props;
+console.log('show render', this.props.blockType);
     return (
       <div>
         { this.renderView(viewType) }

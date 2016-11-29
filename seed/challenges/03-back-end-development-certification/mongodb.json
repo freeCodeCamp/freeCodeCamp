@@ -3,6 +3,7 @@
   "order": 25,
   "time": "3 hours",
   "helpRoom": "HelpBackEnd",
+  "blockType": "MongoDB",
   "challenges": [
     {
       "id": "bd7243d8c341eddeaeb5bd0f",

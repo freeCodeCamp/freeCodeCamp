@@ -3,6 +3,7 @@
   "order": 24,
   "time": "20 hours",
   "helpRoom": "HelpBackEnd",
+  "blockType": "Node.js/Express.js",
   "challenges": [
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
