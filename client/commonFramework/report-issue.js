@@ -5,7 +5,7 @@ window.common = (function({ common = { init: [] } }) {
         'Challenge [',
         (common.challengeName || window.location.pathname),
         '](',
-        window.location.href,
+        window.location.origin + window.location.pathname,
         ') has an issue.\n',
         'User Agent is: <code>',
         navigator.userAgent,
