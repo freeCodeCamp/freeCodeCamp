@@ -204,7 +204,24 @@ gulp
 
 Now navigate to your browser and open
 <http://localhost:3000>. If the app loads,
-congratulations – you're all set. Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
+congratulations – you're all set. Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
+ 
+ ```bash
+ # Remove all installed node modules
+ rm -rf node_modules
+ 
+ # Reinstall npm packages
+ npm install
+ 
+ # Re-run bower install
+ bower install
+ 
+ # Seed the database (optional)
+ node seed
+ 
+ # Re-start the application
+ gulp
+ ```
 
 ### Make Changes
 This bit is up to you!
