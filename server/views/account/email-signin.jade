@@ -10,8 +10,8 @@ block content
                     #flash-content
         .row
           .text-center
-            h2 Sign in with your Email here:
-          .button-spacer
+            h2 Sign in with an Email here:
+              .button-spacer
           .col-sm-6.col-sm-offset-3
               form(method='POST', action='/passwordless-auth')
                   input(type='hidden', name='_csrf', value=_csrf)
@@ -25,7 +25,13 @@ block content
           .col-sm-6.col-sm-offset-3
               br
               p.text-center
-                  a(href="/signup") Or Click here if you want to sign up.
+                | Free Code Camp uses passwordless authentication.
+                br
+                | If you are a new camper use any email, and sign up instantly,
+                | or use your existing email with us, if you already have an account.
+              br
+              p.text-center
+                  a(href="/signin") Or click here if you want to sign in with other options.
 
         script.
            $(document).ready(function() {
