@@ -10,7 +10,8 @@ import {
 } from './actions';
 import {
   createMapUi,
-  filterComingSoonBetaFromEntities
+  filterComingSoonBetaFromEntities,
+  updateForLang
 } from '../utils';
 import {
   delayedRedirect,
@@ -68,6 +69,16 @@ export default function fetchChallengesSaga(action$, getState, { services }) {
             entities,
             isDev
           );
+          if (lang !== 'en') {
+            const langFilteredEntities = updateForLang(filteredEntities);
+            return Observable.of(
+              fetchChallengesCompleted(
+                createNameIdMap(langFilteredEntities),
+                result
+              ),
+              initMap(createMapUi(langFilteredEntities, result)),
+            );
+          }
           return Observable.of(
             fetchChallengesCompleted(
               createNameIdMap(filteredEntities),
