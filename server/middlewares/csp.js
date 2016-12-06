@@ -5,13 +5,19 @@ let trusted = [
 ];
 
 if (process.env.NODE_ENV !== 'production') {
-  trusted.push('ws://localhost:3001');
+  trusted = trusted.concat([
+    'ws://localhost:3000'
+  ]);
 }
 
 export default function csp() {
   return helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: trusted.concat('*.optimizely.com'),
+      defaultSrc: trusted.concat([
+        'https://*.cloudflare.com',
+        '*.cloudflare.com',
+        'https://*.optimizely.com'
+      ]),
       scriptSrc: [
         "'unsafe-eval'",
         "'unsafe-inline'",
@@ -27,7 +33,8 @@ export default function csp() {
         '*.twimg.com',
         'https://*.twimg.com',
         '*.youtube.com',
-        '*.ytimg.com'
+        '*.ytimg.com',
+        'https://*.optimizely.com'
       ].concat(trusted),
       styleSrc: [
         "'unsafe-inline'",
@@ -36,7 +43,8 @@ export default function csp() {
         '*.bootstrapcdn.com',
         'https://*.bootstrapcdn.com',
         '*.cloudflare.com',
-        'https://*.cloudflare.com'
+        'https://*.cloudflare.com',
+        'https://*.optimizely.com'
       ].concat(trusted),
       fontSrc: [
         '*.cloudflare.com',
@@ -44,7 +52,8 @@ export default function csp() {
         '*.bootstrapcdn.com',
         '*.googleapis.com',
         '*.gstatic.com',
-        'https://*.bootstrapcdn.com'
+        'https://*.bootstrapcdn.com',
+        'https://*.optimizely.com'
       ].concat(trusted),
       imgSrc: [
         // allow all input since we have user submitted images for
