@@ -19,9 +19,9 @@ export default function csp() {
         'https://*.optimizely.com'
       ]),
       connectSrc: trusted.concat([
-        'https://hyperdev.com',
-        'https://*.hyperdev.com',
-        'https://*.hyperdev.space',
+        'https://gomix.com',
+        'https://*.gomix.com',
+        'https://*.gomix.me',
         'https://*.cloudflare.com'
       ]),
       scriptSrc: [
