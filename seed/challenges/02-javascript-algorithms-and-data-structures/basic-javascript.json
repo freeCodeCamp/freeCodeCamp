@@ -677,19 +677,18 @@
         "Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.2</code>."
       ],
       "challengeSeed": [
-        "var quotient = 0.0 / 2.0;",
+        "var quotient = 0.0 / 2.0; // Fix this line",
         "",
         ""
       ],
       "tail": [
         "(function(y){return 'quotient = '+y;})(quotient);"
       ],
-      "solutions": [
-        "var quotient = 4.4 / 2.0;"
-      ],
+      "solutions": [],
       "tests": [
-        "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>.');",
-        "assert(/\\//.test(code), 'message: You should use the <code>/</code> operator');"
+        "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>');",
+        "assert(/4\\.40*\\s*\\/\\s*2\\.*0*/.test(code), 'message: You should use the <code>/</code> operator to divide 4.4 by 2');",
+        "assert(code.match(/quotient/g).length === 3, 'message: The quotient variable should only be assigned once');"
       ],
       "type": "waypoint",
       "challengeType": 1,
