@@ -809,7 +809,7 @@
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.');",
         "assert($(\"p:eq(0)\").attr(\"class\") === \"red-text\", 'message: The first <code>p</code> element should have the class <code>red-text</code>.');",
         "assert($(\"p:eq(1)\").attr(\"class\") === undefined, 'message: Do not add a class attribute to the second <code>p</code> element.');",
-        "assert(parseInt($(\"p:not([class])\").css(\"font-size\"), 10) > 15, 'message: Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
+        "assert(code.match(/p\\s*{\\s*font-size\\s*:\\s*16\\s*px\\s*;\\s*}/i), 'message: Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -958,6 +958,7 @@
       "tests": [
         "assert(new RegExp(\"googleapis\", \"gi\").test(code), 'message: Import the <code>Lobster</code> font.');",
         "assert($(\"h2\").css(\"font-family\").match(/lobster/i), 'message: Your <code>h2</code> element should use the font <code>Lobster</code>.');",
+        "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?\\s*;\\s*\\}/gi.test(code), 'message: Use an <code>h2</code> CSS selector to change the font.');",
         "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'message: Your <code>p</code> element should still use the font <code>Monospace</code>.');"
       ],
       "type": "waypoint",
@@ -1041,7 +1042,7 @@
       ],
       "tests": [
         "assert($(\"h2\").css(\"font-family\").match(/^\"?lobster/i), 'message: Your h2 element should use the font <code>Lobster</code>.');",
-        "assert($(\"h2\").css(\"font-family\").match(/lobster.*,.*monospace/i), 'message: Your h2 element should degrade to the font <code>Monospace</code> when <code>Lobster</code> is not available.');",
+        "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?,\\s*Monospace\\s*;\\s*\\}/gi.test(code), 'message: Your h2 element should degrade to the font <code>Monospace</code> when <code>Lobster</code> is not available.');",
         "assert(new RegExp(\"<!--[^fc]\", \"gi\").test(code), 'message: Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.');",
         "assert(new RegExp(\"[^fc]-->\", \"gi\").test(code), 'message: Be sure to close your comment by adding <code>--&#62;</code>.');"
       ],
@@ -1100,7 +1101,7 @@
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.",
         "Let's add an <code>alt</code> attribute to our <code>img</code> example above:",
-        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up. \"&#62</code>",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up.\"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
@@ -1210,7 +1211,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1300,7 +1301,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1403,7 +1404,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1486,7 +1487,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1569,14 +1570,14 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "tests": [
         "assert((/cat photos/gi).test($(\"a\").text()), 'message: Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\".');",
-        "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>');",
+        "assert(/http:\\/\\/(www\\.)?freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>');",
         "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure your <code>a</code> element has a closing tag.');"
       ],
       "type": "waypoint",
@@ -1669,19 +1670,19 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<a href=\"http://www.freecatphotoapp.com\">cat photos</a>",
+        "<a href=\"http://freecatphotoapp.com\">cat photos</a>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "tests": [
-        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0, 'message: You need an <code>a</code> element that links to \"http://www.freecatphotoapp.com\".');",
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").length > 0 || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0), 'message: You need an <code>a</code> element that links to \"http://freecatphotoapp.com\".');",
         "assert($(\"a\").text().match(/cat\\sphotos/gi), 'message: Your <code>a</code> element should have the anchor text of \"cat photos\"');",
         "assert($(\"p\") && $(\"p\").length > 2, 'message: Create a new <code>p</code> element around your <code>a</code> element.');",
-        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'message: Your <code>a</code> element should be nested within your new <code>p</code> element.');",
-        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi), 'message: Your <code>p</code> element should have the text \"View more \" (with a space after it).');",
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().is(\"p\") || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\")), 'message: Your <code>a</code> element should be nested within your new <code>p</code> element.');",
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi) || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi)), 'message: Your <code>p</code> element should have the text \"View more \" (with a space after it).');",
         "assert(!$(\"a\").text().match(/View\\smore/gi), 'message: Your <code>a</code> element should <em>not</em> have the text \"View more\".');",
         "assert(code.match(/<\\/p>/g) && code.match(/<p/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.');",
         "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.');"
@@ -1741,7 +1742,7 @@
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
-        "The current value of the <code>href</code> attribute is a link that points to \"http://www.freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link."
+        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1773,9 +1774,9 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here to view more <a href=\"http://www.freecatphotoapp.com\">cat photos</a>.</p>",
+        "<p>Click here to view more <a href=\"http://freecatphotoapp.com\">cat photos</a>.</p>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1826,7 +1827,7 @@
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
         "Nest your image within an <code>a</code> element. Here's an example:",
-        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\" alt=\"Three kittens running towards the camera. \"&#62;&#60;/a&#62;</code>",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\" alt=\"Three kittens running towards the camera.\"&#62;&#60;/a&#62;</code>",
         "Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.",
         "Place the existing image element within an anchor element.",
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
@@ -1863,7 +1864,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1960,7 +1961,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -2066,7 +2067,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2180,7 +2181,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2288,7 +2289,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2391,7 +2392,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2494,7 +2495,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2601,7 +2602,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2711,7 +2712,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2835,7 +2836,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2956,7 +2957,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -3067,7 +3068,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -3184,7 +3185,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -3304,7 +3305,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div class=\"silver-background\">",
         "  <p>Things cats love:</p>",
@@ -3429,7 +3430,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div class=\"silver-background\">",
         "  <p>Things cats love:</p>",
@@ -4466,7 +4467,7 @@
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
         "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
         "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
-        "Note: It doesn't matter whether you declare this css above or below pink-text class, since id attribute will always take precedence."
+        "Note: It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence."
       ],
       "challengeSeed": [
         "<style>",
@@ -4519,7 +4520,7 @@
             "Deja las clases <code>blue-text</code> y <code>pink-text</code> de tu elemento <code>h1</code>.",
             "Crea una declaración CSS para tu identificación <code>orange-text</code> en tu elemento <code>style</code>. He aquí un ejemplo de como se ve esto: ",
             "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
-            "Nota: No importa si usted declara este css encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
+            "Nota: No importa si usted declara este CSS encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
           ]
         },
         "pt-br": {
@@ -4729,7 +4730,7 @@
       "title": "Use Hex Code for Specific Colors",
       "description": [
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
-        "We usually use <code>decimals</code>, or base 10 numbers, which use the symbols 0 to 9 for each digit. <code>Hexadecimals</code> (or <code>hex</code>) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represents values zero to nine. Then A,B,C,D,E,F represent values ten to fifteen. Altogether, 0 to F can represent a digit in <code>hexadecimal</code>, giving us 16 total possible values. You can find more information about <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>hexadecimal numbers here</a>.",
+        "We usually use <code>decimals</code>, or base 10 numbers, which use the symbols 0 to 9 for each digit. <code>Hexadecimals</code> (or <code>hex</code>) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represent values zero to nine. Then A,B,C,D,E,F represent values ten to fifteen. Altogether, 0 to F can represent a digit in <code>hexadecimal</code>, giving us 16 total possible values. You can find more information about <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>hexadecimal numbers here</a>.",
         "In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components. For example, <code>#000000</code> is black and is also the lowest possible value. You can find more information about the <a target='_blank' href='https://en.wikipedia.org/wiki/RGB_color_model'>RGB color system here</a>.",
         "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>."
       ],

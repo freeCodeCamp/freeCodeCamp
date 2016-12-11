@@ -21,7 +21,7 @@ import Nav from './components/Nav';
 import Toasts from './toasts/Toasts.jsx';
 import { userSelector } from './redux/selectors';
 
-const bindableActions = {
+const mapDispatchToProps = {
   initWindowHeight,
   updateNavHeight,
   fetchUser,
@@ -35,14 +35,14 @@ const bindableActions = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  state => state.app.shouldShowSignIn,
+  state => state.app.isSignInAttempted,
   state => state.app.toast,
   state => state.app.isMapDrawerOpen,
   state => state.app.isMapAlreadyLoaded,
   state => state.challengesApp.toast,
   (
     { user: { username, points, picture } },
-    shouldShowSignIn,
+    isSignInAttempted,
     toast,
     isMapDrawerOpen,
     isMapAlreadyLoaded,
@@ -51,41 +51,38 @@ const mapStateToProps = createSelector(
     points,
     picture,
     toast,
-    shouldShowSignIn,
+    showLoading: !isSignInAttempted,
     isMapDrawerOpen,
     isMapAlreadyLoaded,
     isSignedIn: !!username
   })
 );
 
+const propTypes = {
+  children: PropTypes.node,
+  username: PropTypes.string,
+  isSignedIn: PropTypes.bool,
+  points: PropTypes.number,
+  picture: PropTypes.string,
+  toast: PropTypes.object,
+  updateNavHeight: PropTypes.func,
+  initWindowHeight: PropTypes.func,
+  submitChallenge: PropTypes.func,
+  isMapDrawerOpen: PropTypes.bool,
+  isMapAlreadyLoaded: PropTypes.bool,
+  toggleMapDrawer: PropTypes.func,
+  toggleMainChat: PropTypes.func,
+  fetchUser: PropTypes.func,
+  showLoading: PropTypes.bool,
+  params: PropTypes.object,
+  updateAppLang: PropTypes.func.isRequired,
+  trackEvent: PropTypes.func.isRequired,
+  loadCurrentChallenge: PropTypes.func.isRequired
+};
+const contextTypes = { router: PropTypes.object };
+
 // export plain class for testing
 export class FreeCodeCamp extends React.Component {
-  static displayName = 'FreeCodeCamp';
-  static contextTypes = {
-    router: PropTypes.object
-  };
-  static propTypes = {
-    children: PropTypes.node,
-    username: PropTypes.string,
-    isSignedIn: PropTypes.bool,
-    points: PropTypes.number,
-    picture: PropTypes.string,
-    toast: PropTypes.object,
-    updateNavHeight: PropTypes.func,
-    initWindowHeight: PropTypes.func,
-    submitChallenge: PropTypes.func,
-    isMapDrawerOpen: PropTypes.bool,
-    isMapAlreadyLoaded: PropTypes.bool,
-    toggleMapDrawer: PropTypes.func,
-    toggleMainChat: PropTypes.func,
-    fetchUser: PropTypes.func,
-    shouldShowSignIn: PropTypes.bool,
-    params: PropTypes.object,
-    updateAppLang: PropTypes.func.isRequired,
-    trackEvent: PropTypes.func.isRequired,
-    loadCurrentChallenge: PropTypes.func.isRequired
-  };
-
   componentWillReceiveProps(nextProps) {
     if (this.props.params.lang !== nextProps.params.lang) {
       this.props.updateAppLang(nextProps.params.lang);
@@ -125,7 +122,7 @@ export class FreeCodeCamp extends React.Component {
       isMapAlreadyLoaded,
       toggleMapDrawer,
       toggleMainChat,
-      shouldShowSignIn,
+      showLoading,
       params: { lang },
       trackEvent,
       loadCurrentChallenge
@@ -138,7 +135,7 @@ export class FreeCodeCamp extends React.Component {
       updateNavHeight,
       toggleMapDrawer,
       toggleMainChat,
-      shouldShowSignIn,
+      showLoading,
       trackEvent,
       loadCurrentChallenge
     };
@@ -160,7 +157,11 @@ export class FreeCodeCamp extends React.Component {
   }
 }
 
+FreeCodeCamp.displayName = 'FreeCodeCamp';
+FreeCodeCamp.contextTypes = contextTypes;
+FreeCodeCamp.propTypes = propTypes;
+
 export default connect(
   mapStateToProps,
-  bindableActions
+  mapDispatchToProps
 )(FreeCodeCamp);

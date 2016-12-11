@@ -22,6 +22,7 @@ export const fetchChallengeCompleted = createAction(
   (_, challenge) => challenge,
   entities => ({ entities })
 );
+export const closeChallengeModal = createAction(types.closeChallengeModal);
 export const resetUi = createAction(types.resetUi);
 export const updateHint = createAction(types.updateHint);
 export const lockUntrustedCode = createAction(types.lockUntrustedCode);
@@ -29,7 +30,7 @@ export const unlockUntrustedCode = createAction(
   types.unlockUntrustedCode,
   () => null
 );
-
+export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 export const fetchChallenges = createAction(types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
   types.fetchChallengesCompleted,

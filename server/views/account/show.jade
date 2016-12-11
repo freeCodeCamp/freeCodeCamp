@@ -56,6 +56,10 @@ block content
                     if isBackEndCert
                         .button-spacer
                         a.btn.btn-primary.btn-block(href='/' + username + '/back-end-certification') View My Back End Development Certification
+    .row
+      .col-xs-12.text-center
+        if (badges.coreTeam && badges.coreTeam.length)
+            h4 Core Team #{badges.coreTeam.reverse().join(', ')}
 
     .spacer
     .col-md-12

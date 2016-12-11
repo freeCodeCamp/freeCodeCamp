@@ -21,6 +21,8 @@ export default createTypes([
   'updateHint',
   'lockUntrustedCode',
   'unlockUntrustedCode',
+  'closeChallengeModal',
+  'updateSuccessMessage',
 
   // map
   'updateFilter',

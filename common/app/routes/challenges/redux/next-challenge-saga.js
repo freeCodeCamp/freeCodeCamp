@@ -61,6 +61,17 @@ export default function nextChallengeSaga(actions$, getState) {
           message
         };
         */
+        if (nextChallenge.isLocked) {
+          return Observable.of(
+            makeToast({
+              message: 'The next challenge has not been unlocked. ' +
+              'Please revisit the required (*) challenges ' +
+              'that have not been passed yet. ',
+              timeout: 15000
+            }),
+            push('/map')
+          );
+        }
         return Observable.of(
           updateCurrentChallenge(nextChallenge),
           resetUi(),

@@ -29,7 +29,21 @@ function handleNavLinkEvent(content) {
   });
 }
 
-export default class extends React.Component {
+const propTypes = {
+  points: PropTypes.number,
+  picture: PropTypes.string,
+  signedIn: PropTypes.bool,
+  username: PropTypes.string,
+  isOnMap: PropTypes.bool,
+  updateNavHeight: PropTypes.func,
+  toggleMapDrawer: PropTypes.func,
+  toggleMainChat: PropTypes.func,
+  showLoading: PropTypes.bool,
+  trackEvent: PropTypes.func.isRequired,
+  loadCurrentChallenge: PropTypes.func.isRequired
+};
+
+export default class FCCNav extends React.Component {
   constructor(...props) {
     super(...props);
     this.handleMapClickOnMap = this.handleMapClickOnMap.bind(this);
@@ -38,20 +52,6 @@ export default class extends React.Component {
       this[`handle${content}Click`] = handleNavLinkEvent.bind(this, content);
     });
   }
-  static displayName = 'Nav';
-  static propTypes = {
-    points: PropTypes.number,
-    picture: PropTypes.string,
-    signedIn: PropTypes.bool,
-    username: PropTypes.string,
-    isOnMap: PropTypes.bool,
-    updateNavHeight: PropTypes.func,
-    toggleMapDrawer: PropTypes.func,
-    toggleMainChat: PropTypes.func,
-    shouldShowSignIn: PropTypes.bool,
-    trackEvent: PropTypes.func.isRequired,
-    loadCurrentChallenge: PropTypes.func.isRequired
-  };
 
   componentDidMount() {
     const navBar = ReactDOM.findDOMNode(this);
@@ -165,8 +165,8 @@ export default class extends React.Component {
     });
   }
 
-  renderSignIn(username, points, picture, shouldShowSignIn) {
-    if (!shouldShowSignIn) {
+  renderSignIn(username, points, picture, showLoading) {
+    if (showLoading) {
       return null;
     }
     if (username) {
@@ -198,7 +198,7 @@ export default class extends React.Component {
       isOnMap,
       toggleMapDrawer,
       toggleMainChat,
-      shouldShowSignIn
+      showLoading
     } = this.props;
 
     return (
@@ -230,10 +230,13 @@ export default class extends React.Component {
             { this.renderMapLink(isOnMap, toggleMapDrawer) }
             { this.renderChat(toggleMainChat) }
             { this.renderLinks() }
-            { this.renderSignIn(username, points, picture, shouldShowSignIn) }
+            { this.renderSignIn(username, points, picture, showLoading) }
           </Nav>
         </Navbar.Collapse>
       </Navbar>
     );
   }
 }
+
+FCCNav.displayName = 'Nav';
+FCCNav.propTypes = propTypes;
