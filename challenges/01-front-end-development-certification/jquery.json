@@ -1282,7 +1282,7 @@
         "jQuery uses CSS Selectors to target elements. The <code>target:nth-child(n)</code> CSS selector allows you to select all the nth elements with the target class or element type.",
         "Here's how you would give the third element in each well the bounce class:",
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
-        "Make the second child in each of your well elements bounce. You must target the children of element with the <code>target</code> class."
+        "Make the second child in each of your well elements bounce. You must select the elements' children with the <code>target</code> class."
       ],
       "challengeSeed": [
         "fccss",
