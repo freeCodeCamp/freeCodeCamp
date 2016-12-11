@@ -127,7 +127,7 @@
     "babel-loader": "^6.2.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-stage-0": "^6.3.13",
-    "browser-sync": "^2.9.12",
+    "browser-sync": "^2.18.4",
     "chunk-manifest-webpack-plugin": "0.1.0",
     "del": "^2.2.0",
     "eslint": "^3.1.0",
