@@ -303,6 +303,16 @@ export function filterComingSoonBetaFromEntities(
   };
 }
 
+export function searchableChallengeTitles({ challenge: challengeMap } = {}) {
+  return Object.keys(challengeMap)
+    .map(dashedName => challengeMap[dashedName])
+    .reduce((accu, current) => {
+        accu[current.dashedName] = current.title;
+        return accu;
+      }
+    , {});
+}
+
 // interface Node {
 //   isHidden: Boolean,
 //   children: Void|[ ...Node ],
@@ -328,7 +338,8 @@ export function filterComingSoonBetaFromEntities(
 // }
 export function createMapUi(
   { superBlock: superBlockMap, block: blockMap } = {},
-  superBlocks
+  superBlocks,
+  searchNameMap
 ) {
   if (!superBlocks || !superBlockMap || !blockMap) {
     return {};
@@ -347,6 +358,7 @@ export function createMapUi(
             children: protect(blockMap[block]).challenges.map(challenge => {
               return {
                 name: challenge,
+                title: searchNameMap[challenge],
                 isHidden: false,
                 children: null
               };
@@ -455,7 +467,7 @@ export function applyFilterToMap(tree, filterRegex) {
       // if leaf (challenge) then test if regex is a match
       if (!Array.isArray(node.children)) {
         // does challenge name meet filter criteria?
-        if (filterRegex.test(node.name)) {
+        if (filterRegex.test(node.title)) {
           // is challenge currently hidden?
           if (node.isHidden) {
             // unhide challenge, it matches
