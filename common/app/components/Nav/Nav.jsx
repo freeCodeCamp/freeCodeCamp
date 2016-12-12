@@ -38,7 +38,6 @@ const propTypes = {
   openDropdown: PropTypes.func.isRequired,
   picture: PropTypes.string,
   points: PropTypes.number,
-  showLoading: PropTypes.bool,
   signedIn: PropTypes.bool,
   trackEvent: PropTypes.func.isRequired,
   updateNavHeight: PropTypes.func,
@@ -137,19 +136,8 @@ export default class FCCNav extends React.Component {
     );
   }
 
-  renderSignIn(username, points, picture, showLoading) {
-    if (showLoading) {
-      return null;
-    }
-    if (username) {
-      return (
-        <AvatarPointsNavItem
-          picture={ picture }
-          points={ points }
-          username={ username }
-        />
-      );
-    } else {
+  renderSignIn(username, points, picture) {
+    if (!username) {
       return (
         <NavItem
           href='/signup'
@@ -159,14 +147,20 @@ export default class FCCNav extends React.Component {
         </NavItem>
       );
     }
+    return (
+      <AvatarPointsNavItem
+        picture={ picture }
+        points={ points }
+        username={ username }
+      />
+    );
   }
 
   render() {
     const {
       username,
       points,
-      picture,
-      showLoading
+      picture
     } = this.props;
 
     return (
@@ -200,7 +194,7 @@ export default class FCCNav extends React.Component {
                 this.renderLink.bind(this, true)
               )
             }
-            { this.renderSignIn(username, points, picture, showLoading) }
+            { this.renderSignIn(username, points, picture) }
           </Nav>
         </Navbar.Collapse>
       </Navbar>

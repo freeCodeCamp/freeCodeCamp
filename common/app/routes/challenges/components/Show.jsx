@@ -98,11 +98,13 @@ export class Challenges extends PureComponent {
   componentWillMount() {
     const { lang, isTranslated, makeToast } = this.props;
     if (lang !== 'en' && !isTranslated) {
-      makeToast({
-        message: 'We haven\'t translated this challenge yet.',
-        action: <a href={ link } target='_blank'>Help Us</a>,
-        timeout: 15000
-      });
+      setTimeout(() => {
+        makeToast({
+          message: 'We haven\'t translated this challenge yet.',
+          action: <a href={ link } target='_blank'>Help Us</a>,
+          timeout: 15000
+        });
+      }, 100);
     }
   }
 

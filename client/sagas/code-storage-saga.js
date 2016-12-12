@@ -124,7 +124,7 @@ export function loadCodeSaga(actions, getState, { window, location }) {
           }),
           savedCodeFound(finalFiles, challenge),
           updateMain()
-        );
+        ).delay(100);
       }
 
       if (user.challengeMap && user.challengeMap[id]) {

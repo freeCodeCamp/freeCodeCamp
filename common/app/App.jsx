@@ -35,13 +35,11 @@ const mapDispatchToProps = {
 const mapStateToProps = createSelector(
   userSelector,
   state => state.app.isNavDropdownOpen,
-  state => state.app.isSignInAttempted,
   state => state.app.toast,
   state => state.challengesApp.toast,
   (
     { user: { username, points, picture } },
     isNavDropdownOpen,
-    isSignInAttempted,
     toast,
   ) => ({
     username,
@@ -49,7 +47,6 @@ const mapStateToProps = createSelector(
     picture,
     toast,
     isNavDropdownOpen,
-    showLoading: !isSignInAttempted,
     isSignedIn: !!username
   })
 );
@@ -65,7 +62,6 @@ const propTypes = {
   initWindowHeight: PropTypes.func,
   submitChallenge: PropTypes.func,
   fetchUser: PropTypes.func,
-  showLoading: PropTypes.bool,
   params: PropTypes.object,
   updateAppLang: PropTypes.func.isRequired,
   trackEvent: PropTypes.func.isRequired,
