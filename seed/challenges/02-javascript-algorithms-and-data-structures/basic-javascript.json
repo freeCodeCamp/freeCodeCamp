@@ -2388,7 +2388,7 @@
         "if (typeof functionWithArgs !== \"function\") { ",
         "  console.log(\"functionWithArgs is not defined\");",
         "} else {",
-        "  (if (logOutput) { console.log(logOutput) } else { console.log(\"console.log never called\") })()",
+        "  console.log(logOutput || \"console.log never called\");",
         "}"
       ],
       "solutions": [
@@ -2473,10 +2473,10 @@
         "}"
       ],
       "tail": [
-        "console.log(fun1();)",
-        "console.log(fun2();)",
+        "console.log(fun1());",
+        "console.log(fun2());",
         "console.log(uncapture());",
-        "if console.log(logOutput || 'console.log never called\");"
+        "console.log(logOutput || \"console.log never called\");"
       ],
       "solutions": [
         "// Declare your variable here\nvar myGlobal = 10;\n\nfunction fun1() {\n  // Assign 5 to oopsGlobal Here\n  oopsGlobal = 5;\n}\n\n// Only change code above this line\nfunction fun2() {\n  var output = \"\";\n  if(typeof myGlobal != \"undefined\") {\n    output += \"myGlobal: \" + myGlobal;\n  }\n  if(typeof oopsGlobal != \"undefined\") {\n    output += \" oopsGlobal: \" + oopsGlobal;\n  }\n  console.log(output);\n}"
@@ -4309,7 +4309,7 @@
         "var drinkValue = testObj;    // Change this line"
       ],
       "tail": [
-        "console.log(\"entreeValue = '\" + entreeValue + \"', drinkValue = '\" + drinkValue + \"'\";)"
+        "console.log(\"entreeValue = '\" + entreeValue + \"', drinkValue = '\" + drinkValue + \"'\");"
       ],
       "solutions": [
         "var testObj = {\n  \"an entree\": \"hamburger\",\n  \"my side\": \"veggies\",\n  \"the drink\": \"water\"\n};\nvar entreeValue = testObj[\"an entree\"];\nvar drinkValue = testObj['the drink'];"
@@ -4744,7 +4744,13 @@
         ""
       ],
       "tail": [
-        "if (Array.isArray(x)) { console.log(JSON.stringify(x)); } else { console.log(\"myMusic is not an array\");"
+        "(function(x) { ",
+        "  if (Array.isArray(x)) {",
+        "    console.log(JSON.stringify(x));",
+        "  } else { ",
+        "    console.log(\"myMusic is not an array\");",
+        "  }",
+        "}(myMusic))"
       ],
       "solutions": [
         "var myMusic = [\n  {\n    \"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }, \n  {\n    \"artist\": \"ABBA\",\n    \"title\": \"Ring Ring\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\",\n    \"CD\",\n  ]\n  }\n];"
@@ -4812,7 +4818,8 @@
         "  if(typeof x != 'undefined') { ",
         "    console.log(\"gloveBoxContents = \" + x);",
         "  } else {",
-        "  return \"gloveBoxContents is undefined\";",
+        "    console.log(\"gloveBoxContents is undefined\");",
+        "  }",
         "})(gloveBoxContents);"
       ],
       "solutions": [
@@ -4880,6 +4887,7 @@
         "    console.log(\"secondTree = \" + x);",
         "  } else {",
         "    console.log(\"secondTree is undefined\");",
+        "  }",
         "})(secondTree);"
       ],
       "solutions": [
@@ -4963,7 +4971,7 @@
         ""
       ],
       "tail": [
-        "console.log(\"collection = \\n\" + JSON.stringify(x, '\\n', 2));"
+        "(function(x){ console.log(\"collection = \\n\" + JSON.stringify(x, '\\n', 2)); }(collection))"
       ],
       "solutions": [
         "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction updateRecords(id, prop, value) {\n  if(value === \"\") delete collection[id][prop];\n  else if(prop === \"tracks\") {\n    collection[id][prop] = collection[id][prop] || [];\n    collection[id][prop].push(value);\n  } else {\n    collection[id][prop] = value;\n  }\n  \n  return collection;\n}"
@@ -5257,7 +5265,13 @@
         ""
       ],
       "tail": [
-        "(function(){if(typeof total !== 'undefined') { console.log(\"total = \" + total); } else { console.log(\"total is undefined\");})();"
+        "(function(){",
+        "  if(typeof total !== 'undefined') {",
+        "    console.log(\"total = \" + total);",
+        "  } else {",
+        "    console.log(\"total is undefined\");",
+        "  }",
+        "})();"
       ],
       "solutions": [
         "var ourArr = [ 9, 10, 11, 12];\nvar ourTotal = 0;\n\nfor (var i = 0; i < ourArr.length; i++) {\n  ourTotal += ourArr[i];\n}\n\nvar myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
