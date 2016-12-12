@@ -130,8 +130,8 @@ function buildDisplayChallenges(
     .reduce((output, group) => ({ ...output, ...group}), {})
     .map(groups => ({
       algorithms: groups.algorithms || [],
-      projects: groups.projects || [],
-      challenges: groups.challenges || []
+      projects: groups.projects ? groups.projects.reverse() : [],
+      challenges: groups.challenges ? groups.challenges.reverse() : []
     }));
 }
 
