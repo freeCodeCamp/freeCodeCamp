@@ -123,7 +123,7 @@
     "adler32": "~0.1.7",
     "babel-cli": "^6.3.17",
     "babel-eslint": "^7.0.0",
-    "babel-istanbul": "^0.11.0",
+    "babel-istanbul": "^0.12.1",
     "babel-loader": "^6.2.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-stage-0": "^6.3.13",
