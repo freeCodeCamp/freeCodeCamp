@@ -25,6 +25,7 @@ import {
 import supportedLanguages from '../../common/utils/supported-languages';
 import { getChallengeInfo, cachedMap } from '../utils/map';
 
+const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
 const certIds = {
@@ -170,14 +171,13 @@ module.exports = function(app) {
   router.get('/logout', function(req, res) {
     res.redirect(301, '/signout');
   });
-  router.get('/signup', getEmailSignup);
+  router.get('/signup', getSignin);
   router.get('/signin', getSignin);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   api.post('/forgot', postForgot);
   router.get('/reset-password', getReset);
   api.post('/reset-password', postReset);
-  router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
@@ -438,12 +438,16 @@ module.exports = function(app) {
     if (req.user) {
       return res.redirect('/');
     }
+    if (isSignUpDisabled) {
+      return res.render('account/beta', {
+        title: 'New sign ups are disabled'
+      });
+    }
     return res.render('account/email-signin', {
       title: 'Sign in to freeCodeCamp using your Email Address'
     });
   }
-
-  const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
+  
   function getEmailSignup(req, res) {
     if (req.user) {
       return res.redirect('/');
