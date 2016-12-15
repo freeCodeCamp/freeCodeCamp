@@ -23,7 +23,7 @@
       "tests": [
         {
           "text": "package.json should have a valid \"author\" key" ,
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.author, '\"author\" is missing'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.author, '\"author\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -65,7 +65,7 @@
       "tests": [
         {
           "text": "package.json should have a valid \"description\" key",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.description, '\"description\" is missing'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.description, '\"description\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -107,15 +107,15 @@
       "tests": [
         {
           "text": "package.json should have a valid \"keywords\" key",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, '\"keywords\" is missing'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, '\"keywords\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"keywords\" field should be an Array",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, '\"keywords\" is not an array'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, '\"keywords\" is not an array'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"keywords\" should include \"freecodecamp\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, 'freecodecamp', '\"keywords\" doesn't include \"freecodecamp\"'); },  xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, 'freecodecamp', '\"keywords\" doesn't include \"freecodecamp\"'); },  xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -158,7 +158,7 @@
       "tests": [
         {
           "text": "package.json should have a valid \"license\" key",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.license, '\"license\" is missing'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.license, '\"license\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -198,7 +198,7 @@
       "tests": [
         {
           "text": "package.json should have a valid \"version\" key",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.version, '\"version\" is missing'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.version, '\"version\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -242,11 +242,11 @@
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);  assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);  assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"moment\" version should be \"2.14.0\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);  assert.match(packJson.dependencies.moment, /^[\\^\\~]?2\\.14\\.0/, 'Wrong version of \"moment\" installed. It should be 2.14.0'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);  assert.match(packJson.dependencies.moment, /^[\\^\\~]?2\\.14\\.0/, 'Wrong version of \"moment\" installed. It should be 2.14.0'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -295,11 +295,11 @@
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"moment\" version should be \"2.10.2\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^[\\^\\~]?2\\.10\\.2/, 'Wrong version of \"moment\". It should be 2.10.2'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^[\\^\\~]?2\\.10\\.2/, 'Wrong version of \"moment\". It should be 2.10.2'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -341,11 +341,11 @@
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"moment\" version should match \"~2.10.x\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\\~2\\.10\\./. 'Wrong version of \"moment\". It should be ~2.10.2'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\\~2\\.10\\./. 'Wrong version of \"moment\". It should be ~2.10.2'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -387,11 +387,11 @@
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"moment\" version should match \"^2.x.x\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\\^2\\./, 'Wrong version of \"moment\". It should be ^2.10.2'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\\^2\\./, 'Wrong version of \"moment\". It should be ^2.10.2'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -432,7 +432,7 @@
       "tests": [
         {
           "text": "\"dependencies\" should not include \"moment\"",
-          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.notProperty(packJson.dependencies, 'moment', '\"dependencies\" still includes \"moment\"'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.notProperty(packJson.dependencies, 'moment', '\"dependencies\" still includes \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],

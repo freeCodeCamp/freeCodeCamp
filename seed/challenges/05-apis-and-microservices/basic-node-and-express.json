@@ -15,7 +15,7 @@
       "tests": [
         {
           "text" : "<code>\"Hello World\"</code> should be in the console",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/hello-console').then(data => { assert.isTrue(data.passed, '\"Hello World\" is not in the server console'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/hello-console').then(data => { assert.isTrue(data.passed, '\"Hello World\" is not in the server console'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -58,7 +58,7 @@
       "tests": [
         {
           "text" : "Your app should serve the string 'Hello Express'",
-          "testString" : "getUserInput => ($.get(getUserInput('url')).then(data => { assert.equal(data, 'Hello Express', 'Your app doesn't serve the text \"Hello Express\"); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url')).then(data => { assert.equal(data, 'Hello Express', 'Your app doesn't serve the text \"Hello Express\"); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -98,7 +98,7 @@
       "tests": [
         {
           "text" : "Your app should serve the file views/index.html",
-          "testString" : "getUserInput => ($.get(getUserInput('url')).then(data => { assert.match(data, /<h1>.*<\\/h1>/. 'Your app doesn't serve the expected HTML'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url')).then(data => { assert.match(data, /<h1>.*<\\/h1>/. 'Your app doesn't serve the expected HTML'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -136,7 +136,7 @@
       "tests": [
         {
           "text" : "Your app should serve asset files from the <code>/public</code> directory",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/style.css').then(data => { assert.match(data, /body\\s*\\{[^\\}]*\\}/, 'Your app doesn't serve static assets'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/style.css').then(data => { assert.match(data, /body\\s*\\{[^\\}]*\\}/, 'Your app doesn't serve static assets'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -174,7 +174,7 @@
       "tests": [
         {
           "text" : "The endpoint /json should serve the json <code>{\"message\": \"Hello json\"}</code>",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/json').then(data => { assert.equal(data.message, 'Hello json', 'The '/json' endpoint doesn't serve the right data'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/json').then(data => { assert.equal(data.message, 'Hello json', 'The '/json' endpoint doesn't serve the right data'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -211,7 +211,7 @@
       "tests": [
         {
           "text" : "The response of the endpoint /json should change setting the environment variable MESSAGE_STYLE",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/use-env-vars').then(data => { assert.isTrue(data.passed, 'The response of \"/json\" doesn't change according to MESSAGE_STYLE'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/use-env-vars').then(data => { assert.isTrue(data.passed, 'The response of \"/json\" doesn't change according to MESSAGE_STYLE'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -256,7 +256,7 @@
       "tests": [
         {
           "text" : "Root level logger middleware should be active",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/root-middleware-logger').then(data => { assert.isTrue(data.passed, 'root-level logger is not working as expected'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/root-middleware-logger').then(data => { assert.isTrue(data.passed, 'root-level logger is not working as expected'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -302,11 +302,11 @@
       "tests": [
         {
           "text" : "The /now endpoint should have mounted middleware",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { assert.equal(data.stackLength, 2, '\"/now\" route has not mounted middleware'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { assert.equal(data.stackLength, 2, '\"/now\" route has not mounted middleware'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text" : "The /now endpoint should return a time that is +/- 20 secs from now",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000, 'the returned time is not between +- 20 secs from now'); }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000, 'the returned time is not between +- 20 secs from now'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -346,11 +346,11 @@
       "tests": [
         {
           "text" : "Test 1 : Your echo server should repeat words correctly",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/eChOtEsT/echo').then(data => { assert.equal(data.echo, 'eChOtEsT', 'Test 1: the echo server is not working as expected') }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/eChOtEsT/echo').then(data => { assert.equal(data.echo, 'eChOtEsT', 'Test 1: the echo server is not working as expected') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text" : "Test 2 : Your echo server should repeat words correctly",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/ech0-t3st/echo').then(data => { assert.equal(data.echo, 'ech0-t3st', 'Test 2: the echo server is not working as expected') }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/ech0-t3st/echo').then(data => { assert.equal(data.echo, 'ech0-t3st', 'Test 2: the echo server is not working as expected') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -391,11 +391,11 @@
       "tests": [
         {
           "text" : "Test 1 : Your API endpoint should respond with the correct name",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/name?first=Mick&last=Jagger').then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/name?first=Mick&last=Jagger').then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text" : "Test 2 : Your APi endpoint should respond with the correct name",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/name?last=Richards&first=Keith').then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/name?last=Richards&first=Keith').then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -443,7 +443,7 @@
       "tests": [
         {
           "text" : "The 'body-parser' middleware should be mounted",
-          "testString" : "getUserInput => ($.get(getUserInput('url') + '/_api/add-body-parser').then(data => { assert.isAbove(data.mountedAt, 0, '\"body-parser\" is not mounted correctly') }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/add-body-parser').then(data => { assert.isAbove(data.mountedAt, 0, '\"body-parser\" is not mounted correctly') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -489,11 +489,11 @@
       "tests": [
         {
           "text" : "Test 1 : Your API endpoint should respond with the correct name",
-          "testString" : "getUserInput => ($.post(getUserInput('url') + '/name', {first: 'Mick', last: 'Jagger'}).then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Mick', last: 'Jagger'}).then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text" : "Test 2 : Your API endpoint should respond with the correct name",
-          "testString" : "getUserInput => ($.post(getUserInput('url') + '/name', {first: 'Keith', last: 'Richards'}).then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.statusText); }).promise())"
+          "testString" : "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Keith', last: 'Richards'}).then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
