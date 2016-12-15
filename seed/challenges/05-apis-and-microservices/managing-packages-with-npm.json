@@ -115,7 +115,7 @@
         },
         {
           "text": "\"keywords\" should include \"freecodecamp\"",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, 'freecodecamp', '\"keywords\" doesn't include \"freecodecamp\"'); },  xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, 'freecodecamp', '\"keywords\" does not include \"freecodecamp\"'); },  xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -242,7 +242,7 @@
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);  assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);  assert.property(packJson.dependencies, 'moment', '\"dependencies\" does not include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"moment\" version should be \"2.14.0\"",
@@ -295,7 +295,7 @@
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" does not include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"moment\" version should be \"2.10.2\"",
@@ -341,7 +341,7 @@
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" does not include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"moment\" version should match \"~2.10.x\"",
@@ -387,7 +387,7 @@
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" doesn't include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" does not include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"moment\" version should match \"^2.x.x\"",

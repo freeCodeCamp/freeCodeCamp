@@ -223,7 +223,7 @@
         },
         {
           "text": "Choose the right assertion - equal vs. notEqual",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[3].method, 'notEqual', '6 + \\'2\\' is '62'...'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[3].method, 'notEqual', '6 + \\'2\\' is \\'62\\'...'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
