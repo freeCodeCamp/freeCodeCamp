@@ -244,7 +244,7 @@
         },
         {
           "text": "maxAge should be equal to 7776000 ms (90 days)",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.equal(data.headers['strict-transport-security'], 'max-age=7776000'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.match(data.headers['strict-transport-security'], /^max-age=777600000;?/); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
