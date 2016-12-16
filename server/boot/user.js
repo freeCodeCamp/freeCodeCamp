@@ -140,16 +140,9 @@ function buildDisplayChallenges(
 module.exports = function(app) {
   const router = app.loopback.Router();
   const api = app.loopback.Router();
-<<<<<<< HEAD
-  const { User, Email } = app.models;
+  const { AccessToken, Email, User } = app.models;
   const map$ = cachedMap(app.models);
-=======
-  const User = app.models.User;
-  const AccessToken = app.models.AccessToken;
-  const Block = app.models.Block;
-  const { Email } = app.models;
-  const map$ = cachedMap(Block);
->>>>>>> Optimize code and streamline flow.
+
   function findUserByUsername$(username, fields) {
     return observeQuery(
       User,
@@ -176,7 +169,6 @@ module.exports = function(app) {
   router.get('/signout', signout);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
-  router.get('/update-email', getUpdateEmail);
   router.get('/passwordless-auth', invalidateAuthToken, getPasswordlessAuth);
   api.post('/passwordless-auth', postPasswordlessAuth);
   router.get(
@@ -421,15 +413,6 @@ module.exports = function(app) {
     });
   }
 
-  function getUpdateEmail(req, res) {
-    if (!req.user) {
-      return res.redirect('/');
-    }
-    return res.render('account/update-email', {
-      title: 'Update your Email'
-    });
-  }
-
   function getEmailSignin(req, res) {
     if (req.user) {
       return res.redirect('/');
@@ -443,7 +426,7 @@ module.exports = function(app) {
       title: 'Sign in to freeCodeCamp using your Email Address'
     });
   }
-  
+
   function getEmailSignup(req, res) {
     if (req.user) {
       return res.redirect('/');
