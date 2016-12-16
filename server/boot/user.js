@@ -174,10 +174,6 @@ module.exports = function(app) {
   router.get('/signup', getSignin);
   router.get('/signin', getSignin);
   router.get('/signout', signout);
-  router.get('/forgot', getForgot);
-  api.post('/forgot', postForgot);
-  router.get('/reset-password', getReset);
-  api.post('/reset-password', postReset);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
   router.get('/update-email', getUpdateEmail);
@@ -749,74 +745,6 @@ module.exports = function(app) {
     });
   }
 
-  function getReset(req, res) {
-    if (!req.accessToken) {
-      req.flash('errors', { msg: 'access token invalid' });
-      return res.render('account/forgot');
-    }
-    return res.render('account/reset', {
-      title: 'Reset your Password',
-      accessToken: req.accessToken.id
-    });
-  }
-
-  function postReset(req, res, next) {
-    const errors = req.validationErrors();
-    const { password } = req.body;
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('back');
-    }
-
-    return User.findById(req.accessToken.userId, function(err, user) {
-      if (err) { return next(err); }
-      return user.updateAttribute('password', password, function(err) {
-        if (err) { return next(err); }
-
-        debug('password reset processed successfully');
-        req.flash('info', { msg: 'You\'ve successfully reset your password.' });
-        return res.redirect('/');
-      });
-    });
-  }
-
-  function getForgot(req, res) {
-    if (req.isAuthenticated()) {
-      return res.redirect('/');
-    }
-    return res.render('account/forgot', {
-      title: 'Forgot Password'
-    });
-  }
-
-  function postForgot(req, res) {
-    req.validate('email', 'Email format is not valid').isEmail();
-    const errors = req.validationErrors();
-    const email = req.body.email.toLowerCase();
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/forgot');
-    }
-
-    return User.resetPassword({
-      email: email
-    }, function(err) {
-      if (err) {
-        req.flash('errors', err.message);
-        return res.redirect('/forgot');
-      }
-
-      req.flash('info', {
-        msg: 'An e-mail has been sent to ' +
-        email +
-        ' with further instructions.'
-      });
-      return res.render('account/forgot');
-    });
-  }
-
   function getReportUserProfile(req, res) {
     const username = req.params.username.toLowerCase();
     return res.render('account/report-profile', {
@@ -867,4 +795,5 @@ module.exports = function(app) {
       return res.redirect('/');
     });
   }
+
 };

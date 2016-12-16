@@ -355,6 +355,7 @@ module.exports = function(User) {
       });
   });
 
+<<<<<<< HEAD
   User.on('resetPasswordRequest', function(info) {
     if (!isEmail(info.email)) {
       console.error(createEmailError());
@@ -398,6 +399,8 @@ module.exports = function(User) {
     });
   });
 
+=======
+>>>>>>> Remove reset-password logic
   User.beforeRemote('login', function(ctx, notUsed, next) {
     const { body } = ctx.req;
     if (body && typeof body.email === 'string') {
