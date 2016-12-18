@@ -1,0 +1,14 @@
+mongo:
+  image: mongo:latest
+fcc:
+  build: .
+  volumes:
+    - ".:/FreeCodeCamp"
+  env_file: .env
+  command: bash -c "npm install && bower install --allow-root && npm run only-once && gulp"
+  ports:
+    - "3000:3000"
+    - "3001:3001"
+    - "1337:1337"
+  links:
+    - mongo
