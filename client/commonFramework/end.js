@@ -113,6 +113,7 @@ $(document).ready(function() {
         common.displayTestResults(tests, true);
         if (solved) {
           common.showCompletion();
+          common.codeStorage.removeStoredValue(challengeName);
         }
         return null;
       },
