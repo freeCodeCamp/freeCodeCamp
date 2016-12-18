@@ -6,7 +6,6 @@ window.common = (function(global) {
 
   const {
     addLoopProtect,
-    getJsFromHtml,
     detectUnsafeCode$,
     updatePreview$,
     challengeType,
@@ -33,22 +32,10 @@ window.common = (function(global) {
         return addLoopProtect(combinedCode);
       })
       .flatMap(code => updatePreview$(code))
-      .flatMap(code => {
-        let output;
-
-        if (
-          challengeType === challengeTypes.HTML &&
-          common.hasJs(code)
-        ) {
-          output = common.getJsOutput(getJsFromHtml(code));
-        } else if (challengeType !== challengeTypes.HTML) {
-          output = common.getJsOutput(addLoopProtect(combinedCode));
-        }
-
+      .flatMap(() => {
         return common.runPreviewTests$({
           tests: common.tests.slice(),
-          originalCode,
-          output
+          originalCode
         });
       });
   };
