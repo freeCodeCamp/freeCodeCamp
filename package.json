@@ -78,7 +78,7 @@
     "nodemailer": "^2.1.0",
     "nodemailer-ses-transport": "^1.3.0",
     "normalize-url": "^1.3.1",
-    "normalizr": "^2.0.0",
+    "normalizr": "2.2.1",
     "object.assign": "^4.0.3",
     "passport": "^0.2.1",
     "passport-facebook": "^2.0.0",
