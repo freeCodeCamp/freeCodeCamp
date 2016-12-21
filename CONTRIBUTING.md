@@ -352,8 +352,7 @@ for further information
 4.  The title (also called the subject) of your PR should be descriptive of your
     changes and succinctly indicates what is being fixed.
 
-    -   **Do not add the issue number in the PR title**.
-
+    -   **Do not add the issue number in the PR title or commit message.**
     -   Examples: `Add Test Cases to Bonfire Drop It` `Correct typo in Waypoint
         Size Your Images`
 
