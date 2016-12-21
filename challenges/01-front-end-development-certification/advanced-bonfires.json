@@ -81,6 +81,16 @@
             "In questo problema ti saranno presentate delle stringe come <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Il tuo obiettivo è di validare o rigettare il numero di telefono basato su una qualunque combinazione dei formati specificati sopra. Il prefisso di zona è obbligatorio. Se il prefisso nazionale è presente, devi confermare che corrisponda a <code>1</code>. Ritorna <code>true</code> se la stringa è un numero di telefono valido negli Stati Uniti; altrimenti ritorna <code>false</code>.",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
+        },
+        "pt-br": {
+          "title": "Valida números telefônicos dos EUA",
+          "description": [
+            "Retorna <code>true</code> se a string passada é um número telefônico válido nos EUA.",
+            "O usuário pode preencher o campo de qualquer maneira com tanto que seja um número válido nos EUA. Os seguintes exemplos são formatos válidos para números de telefone nos EUA (baseie-se nos testes abaixo para outras variações):",
+            "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
+            "Para esse desafio será dado a você uma string como <code>800-692-7753</code> ou <code>8oo-six427676;laskdjf</code>. Seu trabalho é validar ou rejeitar o número de telefone dos EUA baseado nos exmplos de formatos fornecidos acima. O código de área é obrigatório. Se o código do país for fornecido, você deve confirmar que o código do país é <code>1</code>. Retorne <code>true</code> se a string é um número válido nos EUA; caso contrário retorne <code>false</code>.",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -139,6 +149,14 @@
             "Crea una funzione che accetti due o più array e che ritorni un array contenente la <dfn>differenza simmetrica</dfn> (<code>&xutri;</code> o <code>&oplus;</code>) degli stessi.",
             "Dati due insiemi (per esempio l'insieme <code>A = {1, 2, 3}<code> e l'insieme <code>B = {2, 3, 4}</code>, il termine matematico \"differenza simmetrica\" di due insiemi è l'insieme degli elementi che sono in almeno uno dei due insiemi, ma non in entrambi (<code>A &xutri; B = C = {1, 4}</code>). Per ogni differenza simmetrica aggiuntiva che fai (per esempio su un insieme <code>D = {2, 3}</code>), devi prendere l'insieme degli elementi che sono in almeno uno dei due insiemi ma non in entrambi (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>).",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+          ]
+        },
+        "pt-br": {
+          "title": "Diferença Simétrica",
+          "description": [
+            "Crie uma função que recebe duas ou mais matrizes e retorna a matriz <dfn>diferença simétrica</dfn> (<code>&xutri;</code> ou <code>&oplus;</code>) das matrizes fornecidas.",
+            "Dado dois conjuntos (por exemplo conjunto <code>A = {1, 2, 3}</code> e conjunto <code>B = {2, 3, 4}</code>), o termo matemático \"diferença simétrica\" dos dois cojuntos é o conjunto dos elementos que estão em um dos conjuntos, mas não nos dois (<code>A &xutri; B = C = {1, 4}</code>). Para cada diferença simétrica adicional que você faz (digamos em um terceiro conjunto <code>D = {2, 3}</code>), voce deve retornar o conjunto no qual os elementos estão em um dos conjuntos mas não nos dois (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). O conjunto final deve ter somentes valores únicos (<em>sem números repetidos</em>).",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }
@@ -213,6 +231,17 @@
             "Altrimenti, ritorna il resto in monete e banconote, ordinate da quelle con valore maggiore a quelle con valore minore.",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
+        },
+        "pt-br": {
+          "title": "Troco Exato",
+          "description": [
+            "Crie uma função que simula uma caixa registradora chamada <code>checkCashRegister()</code> e aceita o valor da compra como primeiro argumento (<code>price</code>), pagamento como segundo argumento (<code>cash</code>), e o dinheiro na caixa registradora (<code>cid</code>) como terceiro argumento.",
+            "<code>cid</code> é uma matriz bidimensional que lista o dinheiro disponível.",
+            "Retorne a string <code>\"Insufficient Funds\"</code> se o dinheiro na caixa registradora é menor do que o troco ou se não é possível retornar o troco exato. Retorne a string <code>\"Closed\"</code> se o dinheiro na caixa é igual ao troco.",
+            "Case cotrário, retorne o troco em moedas e notas, ordenado do maior para menor.",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código.",
+            "<table class='table table-striped'><tr><th>Currency Unit</th><th>Amount</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.1 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1 (DOLLAR)</td></tr><tr><td>Five Dollars</td><td>$5 (FIVE)</td></tr><tr><td>Ten Dollars</td><td>$10 (TEN)</td></tr><tr><td>Twenty Dollars</td><td>$20 (TWENTY)</td></tr><tr><td>One-hundred Dollars</td><td>$100 (ONE HUNDRED)</td></tr></table>"
+          ]
         }
       }
     },
@@ -276,6 +305,13 @@
             "Confronta e aggiorna l'inventario, contenuto in un array bidimensionale, con un secondo array bidimensionale relativo ad una nuova consegna. Aggiorna le quantità disponibili in inventario (dentro <code>arr1</code>). Se uno degli articoli non è presente nell'inventario, aggiungi allo stesso il nuovo articolo e la sua quantità. Ritorna un array con l'inventario aggiornato, che deve essere ordinato alfabeticamente per articolo.",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
+        },
+        "pt-br": {
+          "title": "Atualizando Inventário",
+          "description": [
+            "Compare e atualize o inventário armazenado em um matriz 2D contra uma segunda matriz 2D de uma entrega recente. Atualize a quantidade de itens no inventário atual (em <code>arr1</code>). Se um item não pode ser encontrado, adicione um novo item e a sua quantidade na matriz do inventário. O inventário retornado deve estar em ordem alfabética por item.",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -330,6 +366,14 @@
             "Ritorna il numero totale di permutazioni della stringa passata che non hanno lettere consecutive riptetute. Assumi che tutti i caratteri nella stringa passata siano unici.",
             "Per esempio, <code>aab</code> deve ritornare 2, perchè la stringa ha 6 permutazioni possibili in totale (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), ma solo 2 di loro (<code>aba</code> e <code>aba</code>) non contengono la stessa lettera (in questo caso <code>a</code> ripetuta).",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+          ]
+        },
+        "pt-br": {
+          "title": "Sem repetição, por favor",
+          "description": [
+            "Retorne o número total de permutações da string fornecida que não tem letras consecutivas repetidas. Assuma que todos os caracteres na string fornecida são únicos.",
+            "Por exemplo, <code>aab</code> deve retornar 2 porque tem um total de 6 permutações (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), mas somente duas delas (<code>aba</code> and <code>aba</code>) não tem a mesma letra (nesse caso <code>a</code>) se repetindo.",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }
@@ -398,6 +442,20 @@
             "<code>makeFriendlyDates([\"2016-07-01\", \"2018-07-04\"])</code> deve ritornare <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
+        },
+        "pt-br": {
+          "title": "Intervalo de Datas Amigável",
+          "description": [
+            "Converta um intervalo de tempo que consiste de duas datas formatadas como <code>YYYY-MM-DD</code> em um formato mais legível.",
+            "O resultado deve usar o nome dos meses ao invés de números e datas ordinais ao invés de cardinais(<code>1st</code> ao invés de <code>1</code>).",
+            "Não mostre informação que é redundante ou que pode ser inferida pelo usuário: se o intevalo termina em <em>menos de um ano</em> da data de início, não mostre <em>o ano na data final</em>.",
+            "Além disso, se o intervalo começa no <em>no ano atual</em> (i.e. o ano atual é 2016) e termina no mesmo ano, o ano não deve ser mostrado no <em>início</em> do intevalo amigável.",
+            "Se o intervalo termina no <em>mesmo mês</em> em que começa, não mostre <em>o ano e o mês na data final</em>.",
+            "Examples:",
+            "<code>makeFriendlyDates([\"2016-07-01\", \"2016-07-04\"])</code> deve retornar <code>[\"July 1st\",\"4th\"]</code>",
+            "<code>makeFriendlyDates([\"2016-07-01\", \"2018-07-04\"])</code> deve retornar <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -465,6 +523,17 @@
             "Questi metodi devono essere l'unica maniera possibile di interagire con l'oggetto.",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
+        },
+        "pt-br": {
+          "title": "Faça uma Pessoa",
+          "description": [
+            "Preencha o contrutor do objeto com seguintes métodos:",
+            "<blockquote>getFirstName()\ngetLastName()\ngetFullName()\nsetFirstName(first)\nsetLastName(last)\nsetFullName(firstAndLast)</blockquote>",
+            "Rode os testes para ver o resultado esperado de cada método.",
+            "Os métodos que recebem um argumento deve aceitar somente um argumento e deve ser uma string.",
+            "Esses métodos devem ser o único meio de interação com o objeto.",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -521,6 +590,17 @@
             "I valori devono essere arrotondati al numero intero più vicino. Il corpo attorno a cui orbitano gli elementi è la Terra.",
             "Il raggio della Terra è di 6367.4447 kilometri, e il valore GM della Terra è di 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+          ]
+        },
+        "pt-br": {
+          "title": "Mapeie o Lixo espacial",
+          "description": [
+            "Retorne uma nova matriz que transforma a altitude média do elemento em seu período orbital.",
+            "A matriz vai conter objetos no formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
+            "Você pode ler sobre período orbital <a href=\"https://pt.wikipedia.org/wiki/Per%C3%ADodo_orbital\" target='_blank'>na wikipedia</a>.",
+            "Os valores devem ser arredondados para número inteiro mais próximo. O corpe sendo orbitado é a Terra.",
+            "O raio da terra é 6367.4447 quilômetros, e o valor GM da terra é 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }
@@ -579,6 +659,18 @@
             "Qui sotto prendiamo gli indici corrispondenti e li sommiamo.",
             "7 + 13 = 20 &#8594; Indici 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indici 1 + 2 = 3<br>3 + 3 = 6 &#8594 Ritorna <code>6</code>",
             "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+          ]
+        },
+        "pt-br": {
+          "title": "Emparelhados",
+          "description": [
+            "Dado uma matriz <code>arr</code>, encontre pares de elementos no qual a soma é igual ao segundo argumento <code>arg</code> e retorne a soma dos seus indices.",
+            "Se multiplos pares tem o mesmo elemento numérico mas indices diferentes, retorne a soma dos menores indices. Uma vez que um elemento é usado, este não pode ser emparelhado novamente com outro elemento.",
+            "Por exemplo <code>pairwise([7, 9, 11, 13, 15], 20)</code> retorna <code>6</code>. Os pares que somam 20 são <code>[7, 13]</code> e <code>[9, 11]</code>. Nós podemos então criar a matriz com seus indices e valores.",
+            "<table class=\"table\"><tr><th><b>Index</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
+            "Abaixo nós pegamos os índices correspondentes e somá-los.",
+            "7 + 13 = 20 &#8594; Indices 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indices 1 + 2 = 3<br>3 + 3 = 6 &#8594 Retorna <code>6</code>",
+            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }
