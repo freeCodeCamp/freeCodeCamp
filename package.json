@@ -63,7 +63,7 @@
     "jade": "^1.11.0",
     "jsonlint-cli": "^1.0.1",
     "lodash": "^4.1.0",
-    "loopback": "^2.22.0",
+    "loopback": "^3.1.1",
     "loopback-boot": "^2.13.0",
     "loopback-component-passport": "^2.0.0",
     "loopback-connector-mongodb": "1.17.0",
