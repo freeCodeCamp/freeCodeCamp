@@ -319,7 +319,7 @@ nothing to commit, working directory clean
     add .` to add all unstaged files. Take care, though, because you can
     accidentally add files you don't want added. Review your `git status` first.
 
-6.  Commit your edits: `git commit -m "Brief Description of Commit"`
+6.  Commit your edits: `git commit -m "Brief Description of Commit"`. Do not add the issue number in the commit message.
 
 7.  Squash your commits, if there are more than one.
 
@@ -352,7 +352,7 @@ for further information
 4.  The title (also called the subject) of your PR should be descriptive of your
     changes and succinctly indicates what is being fixed.
 
-    -   **Do not add the issue number in the PR title**.
+    -   **Do not add the issue number in the PR title or commit message.**
 
     -   Examples: `Add Test Cases to Bonfire Drop It` `Correct typo in Waypoint
         Size Your Images`
