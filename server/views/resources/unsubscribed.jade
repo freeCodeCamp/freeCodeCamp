@@ -2,5 +2,14 @@ extends ../layout
 block content
     .panel.panel-info
         .panel-body.text-center
-            h1 You have successfully been unsubscribed.
-            h2 Whatever you do, keep coding! :)
+            h1 OK - you have unsubscribed.
+            h2 I (Quincy) may have sent you duplicate emails. 
+            h2 There was a bug in my emailing script. 
+            h2 I'm really sorry for the trouble.
+            h2 This should be a one-time issue.
+            h2 Do you want to re-subscribe?
+            .big-break
+            a.btn.btn-cta.signup-btn(href='/resubscribe/#{email}') Re-subscribe
+
+
+
