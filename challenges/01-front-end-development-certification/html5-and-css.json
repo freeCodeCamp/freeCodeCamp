@@ -4558,7 +4558,7 @@
       "description": [
         "So we've proven that id declarations override class declarations, regardless of where they are declared in your <code>style</code> element CSS.",
         "There are other ways that you can override CSS. Do you remember inline styles?",
-        "Use an <code>in-line style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this:",
+        "Use an <code>inline style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this:",
         "<code>&#60;h1 style=\"color: green\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element."
       ],
@@ -4596,7 +4596,7 @@
           "description": [
             "Wir haben also gesehen dass Id Deklarationen die von Klassen überschreiben, egal wo sie in deinem <code>style</code> Element CSS stehen.",
             "Es gibt noch andere Wege CSS zu überschreiben. Erinnerst du dich an Inline Styles?",
-            "Benutze <code>in-line style</code> um dein <code>h1</code> Element weiß zu machen. Vergiss nicht, Inline Styles sehen so aus:",
+            "Benutze <code>inline style</code> um dein <code>h1</code> Element weiß zu machen. Vergiss nicht, Inline Styles sehen so aus:",
             "<code>&#60;h1 style=\"color: green\"&#62;</code>",
             "Lasse die <code>blue-text</code> und <code>pink-text</code> Klassen auf deinem <code>h1</code> Element."
           ]
@@ -4637,10 +4637,10 @@
       "id": "bad87fee1348bd9aedf07756",
       "title": "Override All Other Styles by using Important",
       "description": [
-        "Yay! We just proved that in-line styles will override all the CSS declarations in your <code>style</code> element.",
+        "Yay! We just proved that inline styles will override all the CSS declarations in your <code>style</code> element.",
         "But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.",
         "In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use <code>!important</code>",
-        "Let's go all the way back to our <code>pink-text</code> class declaration. Remember that our <code>pink-text</code> class was overridden by subsequent class declarations, id declarations, and in-line styles.",
+        "Let's go all the way back to our <code>pink-text</code> class declaration. Remember that our <code>pink-text</code> class was overridden by subsequent class declarations, id declarations, and inline styles.",
         "Let's add the keyword <code>!important</code> to your pink-text element's color declaration to make 100% sure that your <code>h1</code> element will be pink.",
         "An example of how to do this is:",
         "<code>color: red !important;</code>"
