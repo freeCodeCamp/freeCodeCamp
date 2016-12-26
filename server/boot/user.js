@@ -227,7 +227,10 @@ module.exports = function(app) {
 
   function signout(req, res) {
     req.logout();
-    res.redirect('/');
+    req.flash('success', {
+      msg: `You have successfully signed out.`
+    });
+    res.redirect('/signin');
   }
 
 
