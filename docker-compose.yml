@@ -1,0 +1,28 @@
+# Docker Compose file for FreeCodeCamp
+#
+# Bootstrap with:
+#   docker-compose run --rm server npm install
+#   docker-compose run --rm server npm run only-once
+#
+# Run with:
+#   docker-compose up
+#
+version: "2"
+services:
+    db:
+        image: mongo:3.2.6
+
+    server:
+        image: node:6.2.1
+        depends_on:
+            - db
+        environment:
+            - MONGOHQ_URL=mongodb://db:27017/freecodecamp
+        volumes:
+            - .:/fcc
+        working_dir: /fcc
+        command:
+            - npm
+            - start
+        ports:
+            - "3000:3000" # Change port if needed
