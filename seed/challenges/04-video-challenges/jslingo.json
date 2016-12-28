@@ -5,7 +5,7 @@
   "challenges": [
     {
       "id": "56b15f15632298c12f31518c",
-      "title": "JavaScript Lingo: MDN and Documentation",
+      "title": "MDN and Documentation",
       "description": [
         "This is a basic intro to MDN and the concept of documentation.",
         "MDN, Mozilla Developer Network, is a fantastic open source collaboration that documents not only JavaScript, but many other languages and topics. If you haven't heard of them, you should check them out now. I get lots of information from <a href='http://developer.mozilla.org/en-US/docs/Web/JavaScript' target='_blank'>developer.mozilla.org/en-US/docs/Web/JavaScript</a>",
@@ -32,7 +32,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: MDN y Documentación",
+          "title": "MDN y Documentación",
           "description": [
             "Esta es una introducción básica a MDN y el concepto de la documentación.",
             "MDN, Mozilla Developer Network, es una fantástica colaboración de fuentes abiertas que documenta no sólo JavaScript, sino muchos otros lenguajes y temas. Si no has oído hablar de ellos, deberías darles un vistazo ahora. Personalmente obtengo mucha información de <a href='http://developer.mozilla.org/es/docs/Web/JavaScript' target='_blank'>developer.mozilla.org/es/docs/Web/JavaScript</a>",
@@ -46,7 +46,7 @@
     },
     {
       "id": "56b15f15632298c12f31518d",
-      "title": "JavaScript Lingo: Value Types",
+      "title": "Value Types",
       "description": [
         "Learn about the three most basic types of values: booleans, strings, and numbers.",
         "A boolean is a true or false value. These words are special and reserved. You can't name a variable 'true', because that word is already universal as a boolean (as is 'false').",
@@ -71,7 +71,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: Tipos de valores",
+          "title": "Tipos de valores",
           "description": [
             "Aprende sobre los tres tipos más básicos de valores: Booleanos, cadenas y números",
             "Un booleano es un valor <code>true</code> (verdadero) o <code>false</code> (falso). Estas palabras son especiales y reservadas. No puedes nombrar a una variable como \"true\", porque esa palabra es ya universal como un valor lógico (así como lo es \"false\"). ",
@@ -83,7 +83,7 @@
     },
     {
       "id": "56b15f15632298c12f31518b",
-      "title": "JavaScript Lingo: Variables & camelCase",
+      "title": "Variables & camelCase",
       "description": [
         "We are going to cover what constitutes a variable, and the reasoning behind camelCase.",
         "A variable also referred to as 'var', is the name or placeholder for a boolean, string, number, or another piece of static information.",
@@ -111,7 +111,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: Variables y capitalizaciónCamello",
+          "title": "Variables y capitalizaciónCamello",
           "description": [
             "Vamos a cubrir lo que constituye una variable, y el razonamiento detrás de la capitalizaciónCamello (<em>camelCase</em>).",
             "Una variable, también conocida como una 'var', es el nombre o el espacio para un booleano, una cadena, un número, u otra pieza de información estática.",
@@ -125,7 +125,7 @@
     },
     {
       "id": "56b15f15632298c12f31518a",
-      "title": "JavaScript Lingo: Arrays & Objects",
+      "title": "Arrays & Objects",
       "description": [
         "If you want to store more than one piece of information to a variable, you can do so by creating an array or an object.",
         "**Disclaimer: Objects in JS are not exactly the same as objects in other languages. We will discuss objects here as they pertain to JS.",
@@ -152,7 +152,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: Vectores y objetos",
+          "title": "Vectores y objetos",
           "description": [
             "Si desea almacenar más de una pieza de información en una variable, puedes hacerlo mediante la creación de un vector o de un objeto.",
             "** Exención de responsabilidad: Los objetos de JS no son exactamente lo mismo que los objetos en otros lenguajes. Vamos a discutir aquí objetos con respecto a JS. ",
@@ -166,7 +166,7 @@
     },
     {
       "id": "56b15f15632298c12f315189",
-      "title": "JavaScript Lingo: Finding and Indexing Data in Arrays",
+      "title": "Finding and Indexing Data in Arrays",
       "description": [
         "There are many reasons you might need to access a certain piece of data from within a larger set, and you do that by referencing its index.",
         "We won't get into syntax now, but you should know that the first thing in an array is actually index 0.",
@@ -191,7 +191,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: Encontrando e indexando valores en vectores",
+          "title": "Encontrando e indexando valores en vectores",
           "description": [
             "Hay muchas razones por las que puedes necesitar acceder a una determinada pieza de información al interior de un conjunto más amplio, lo cual haces referenciando su índice.",
             "No vamos a entrar en la sintaxis, pero debes saber que el primer elemento en un vector tiene en realidad el índice 0.",
@@ -202,7 +202,7 @@
     },
     {
       "id": "56b15f15632298c12f315188",
-      "title": "JavaScript Lingo: Manipulating Data",
+      "title": "Manipulating Data",
       "description": [
         "Methods and functions are ways you can manipulate variables or other sets of information.",
         "Methods are built into JavaScript, and you will become more familiar with these as you write functions for the bonfires.",
@@ -230,7 +230,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: Manipulación de los datos",
+          "title": "Manipulación de los datos",
           "description": [
             "Métodos y funciones son formas con las que puedes modificar variables u otros conjuntos de información.",
             "Los métodos están integrados en JavaScript, y te familiarizarás con estos cuando realices los desafíos sobre algoritmos.",
@@ -245,7 +245,7 @@
     },
     {
       "id": "56b15f15632298c12f315187",
-      "title": "JavaScript Lingo: Math",
+      "title": "Math",
       "description": [
         "There is a static object named 'Math' in JS with many built in properties and methods.",
         "You'll want to investigate this further whenever you're manipulating numbers. Check MDN documentation before writing your own functions, because they may already be defined there.",
@@ -273,7 +273,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: Matemáticas",
+          "title": "Matemáticas",
           "description": [
             "Hay un objeto estático de nombre 'Math' en JS con muchos propiedades y métodos incluidos.",
             "Vas a querer investigar más de este cuando manipules números. Consulta la documentación de MDN antes de escribir tus propias funciones, pues ya podrían estar definidas allí. ",
@@ -288,7 +288,7 @@
     },
     {
       "id": "56b15f15632298c12f315186",
-      "title": "JavaScript Lingo: Loops",
+      "title": "Loops",
       "description": [
         "If there's a set of data, (we'll use an array for this example, but it doesn't have to be,) and you want to perform the same manipulation to every piece in that set of data, you can use something called a loop.",
         "Loops have some complex syntax to get used to at first, but once you have it, they're extremely useful. I used loops in many of my algorithm solutions.",
@@ -313,7 +313,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: Ciclos",
+          "title": "Ciclos",
           "description": [
             "Si hay un conjunto de valores (vamos a utilizar un vector en este ejemplo, pero no tiene que ser así) y deseas realizar la misma operación a cada valor del conjunto, puedes usar algo llamado ciclo. ",
             "Los ciclos tienen una sintaxis compleja a la que inicialmente es difícil acostumbrarse, pero una vez que la entiendas, son de gran utilidad. Yo usé ciclos en muchas de mis soluciones. ",
@@ -324,7 +324,7 @@
     },
     {
       "id": "56b15f15632298c12f315185",
-      "title": "JavaScript Lingo: Regular Expressions",
+      "title": "Regular Expressions",
       "description": [
         "RegExp is not formatted like anything else in JS, and can have a steep learning curve.",
         "RegExp can also be an incredibly useful and efficient tool.",
@@ -352,7 +352,7 @@
       "challengeType": 6,
       "translations": {
         "es": {
-          "title": "JavaScript Lingo: expresiones regulares (RegExp)",
+          "title": "expresiones regulares (RegExp)",
           "description": [
             "Las RegExp no siguen el formato del resto de JS, y pueden requerir una curva de aprendizaje.",
             "Las epresiones regulares (abreviado <em>RegExp</em>) también pueden ser una herramienta muy útil y eficiente.",

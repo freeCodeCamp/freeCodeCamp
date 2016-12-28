@@ -13,7 +13,7 @@ const bindableActions = { resetUi, updateTitle };
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.shouldShowQuestions,
-  ({ challenge: { title } }, shouldShowQuestions) => ({
+  ({ title }, shouldShowQuestions) => ({
     title,
     shouldShowQuestions
   })
@@ -34,8 +34,8 @@ export class Video extends React.Component {
   };
 
   componentWillMount() {
-    const { updateTitle } = this.props;
-    updateTitle(this.props.title);
+    const { updateTitle, title } = this.props;
+    updateTitle(title);
   }
 
   componentWillUnmount() {
@@ -60,7 +60,6 @@ export class Video extends React.Component {
       title,
       shouldShowQuestions
     } = this.props;
-
     return (
       <Col xs={ 12 }>
         <header className='text-center'>

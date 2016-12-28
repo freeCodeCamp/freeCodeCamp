@@ -769,7 +769,7 @@
       "tests": [
         "assert($(\"#target1\") && $(\"#target1\").prop(\"disabled\"), 'message: Disable your <code>target1</code> button.');",
         "assert($(\"#target2\") && !$(\"#target2\").prop(\"disabled\"), 'message: Do not disable any other buttons.');",
-        "assert(!code.match(/disabled>/g), 'message: Only use jQuery to add these classes to the element.');"
+        "assert(!code.match(/disabled[^<]*>/g), 'message: Only use jQuery to add these classes to the element.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -930,8 +930,8 @@
         "</div>"
       ],
       "tests": [
-        "assert($(\"#target4\").length === 0, 'message: Use jQuery to remove your <code>target4</code> element from your page.');",
-        "assert(code.match(/id=\"target4/g), 'message: Only use jQuery to remove this element.');"
+        "assert($(\"#target4\").length === 0 && code.match(/\\$\\([\"']#target4[\"']\\).remove\\(\\)/g), 'message: Use jQuery to remove your <code>target4</code> element from your page.');",
+        "assert(code.match(/id=\"target4/g) && !code.match(/<!--.*id=\"target4\".*-->/g) && $(\"#right-well\").length > 0, 'message: Only use jQuery to remove this element.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1279,10 +1279,10 @@
       "description": [
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
-        "jQuery uses CSS Selectors to target elements. <code>target:nth-child(n)</code> css selector allows you to select all the nth elements with the target class or element type.",
+        "jQuery uses CSS Selectors to target elements. The <code>target:nth-child(n)</code> CSS selector allows you to select all the nth elements with the target class or element type.",
         "Here's how you would give the third element in each well the bounce class:",
         "<code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>",
-        "Make the second child in each of your well elements bounce. You must target the children of element with the <code>target</code> class."
+        "Make the second child in each of your well elements bounce. You must select the elements' children with the <code>target</code> class."
       ],
       "challengeSeed": [
         "fccss",

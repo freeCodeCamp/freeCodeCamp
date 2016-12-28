@@ -25,12 +25,13 @@ var Rx = require('rx'),
   // react app
   webpack = require('webpack'),
   webpackStream = require('webpack-stream'),
-  WebpackDevServer = require('webpack-dev-server'),
+  webpackDevMiddleware = require('webpack-dev-middleware'),
+  webpackHotMiddleware = require('webpack-hot-middleware'),
   webpackConfig = require('./webpack.config.js'),
 
   // server process
   nodemon = require('gulp-nodemon'),
-  sync = require('browser-sync'),
+  browserSync = require('browser-sync'),
 
   // css
   less = require('gulp-less'),
@@ -48,10 +49,18 @@ var Rx = require('rx'),
   tapSpec = require('tap-spec');
 
 Rx.config.longStackSupport = true;
+var sync = browserSync.create('fcc-sync-server');
+var reload = sync.reload.bind(sync);
 
+// user definable
 var __DEV__ = !yargs.argv.p;
-var reloadDelay = 1000;
-var reload = sync.reload;
+var port = yargs.argv.port || process.env.PORT || '3001';
+var syncPort = yargs.argv['sync-port'] || process.env.SYNC_PORT || '3000';
+// make sure sync ui port does not interfere with proxy port
+var syncUIPort = yargs.argv['sync-ui-port'] ||
+  process.env.SYNC_UI_PORT ||
+  parseInt(syncPort, 10) + 2;
+
 var paths = {
   server: './server/server.js',
   serverIgnore: [
@@ -171,25 +180,20 @@ gulp.task('serve', function(cb) {
     exec: path.join(__dirname, 'node_modules/.bin/babel-node'),
     env: {
       NODE_ENV: process.env.NODE_ENV || 'development',
-      DEBUG: process.env.DEBUG || 'fcc:*'
+      DEBUG: process.env.DEBUG || 'fcc:*',
+      PORT: port
     }
   })
     .on('start', function() {
       if (!called) {
         called = true;
-        setTimeout(function() {
-          cb();
-        }, reloadDelay);
+        cb();
       }
     })
     .on('restart', function(files) {
       if (files) {
-        debug('Files that changes: ', files);
+        debug('Nodemon will restart due to changes in: ', files);
       }
-      setTimeout(function() {
-        debug('Restarting browsers');
-        reload();
-      }, reloadDelay);
     });
 });
 
@@ -199,14 +203,34 @@ var syncDepenedents = [
   'less'
 ];
 
-gulp.task('sync', syncDepenedents, function() {
+gulp.task('dev-server', syncDepenedents, function() {
+  webpackConfig.entry.bundle = [
+    'webpack/hot/dev-server',
+    'webpack-hot-middleware/client'
+  ].concat(webpackConfig.entry.bundle);
+
+  var bundler = webpack(webpackConfig);
   sync.init(null, {
-    proxy: 'http://localhost:3000',
+    ui: {
+      port: syncUIPort
+    },
+    proxy: {
+      target: `http://localhost:${port}`,
+      reqHeaders: ({ url: { hostname } }) => ({
+        host: `${hostname}:${syncPort}`
+      })
+    },
     logLeval: 'debug',
     files: paths.syncWatch,
-    port: 3001,
+    port: syncPort,
     open: false,
-    reloadDelay: reloadDelay
+    middleware: [
+      webpackDevMiddleware(bundler, {
+        publicPath: webpackConfig.output.publicPath,
+        stats: 'errors-only'
+      }),
+      webpackHotMiddleware(bundler)
+    ]
   });
 });
 
@@ -270,46 +294,6 @@ gulp.task('clean-webpack-manifest', cleanDeps, function() {
     })
     .catch(function(err) {
       throw new gutil.PluginError('clean-webpack-manifest', err);
-    });
-});
-
-var webpackCalled = false;
-gulp.task('webpack-dev-server', function(cb) {
-  if (webpackCalled) {
-    console.log('webpack dev server already runnning');
-    return cb();
-  }
-  var devServerOptions = {
-    headers: {
-      'Access-Control-Allow-Credentials': 'true'
-    },
-    hot: true,
-    noInfo: true,
-    contentBase: false,
-    publicPath: '/js'
-  };
-  webpackConfig.entry.bundle = [
-    'webpack-dev-server/client?http://localhost:2999/',
-    'webpack/hot/dev-server'
-  ].concat(webpackConfig.entry.bundle);
-
-  var compiler = webpack(webpackConfig);
-  var devServer = new WebpackDevServer(compiler, devServerOptions);
-  devServer.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
-    next();
-  });
-  return devServer.listen('2999', 'localhost', function(err) {
-      if (err) {
-        throw new gutil.PluginError('webpack-dev-server', err);
-      }
-
-      if (!webpackCalled) {
-        gutil.log('[webpack-dev-server]', 'webpack init completed');
-        webpackCalled = true;
-        cb();
-      }
-
     });
 });
 
@@ -435,7 +419,7 @@ var watchDependents = [
   'less',
   'js',
   'serve',
-  'sync'
+  'dev-server'
 ];
 
 gulp.task('reload', function() {
@@ -453,9 +437,8 @@ gulp.task('watch', watchDependents, function() {
 gulp.task('default', [
   'less',
   'serve',
-  'webpack-dev-server',
   'watch',
-  'sync'
+  'dev-server'
 ]);
 
 gulp.task('test', function() {

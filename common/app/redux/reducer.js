@@ -3,7 +3,7 @@ import types from './types';
 
 const initialState = {
   title: 'Learn To Code | Free Code Camp',
-  shouldShowSignIn: false,
+  isSignInAttempted: false,
   user: '',
   lang: '',
   csrfToken: '',
@@ -24,7 +24,7 @@ export default handleActions(
     [types.updateThisUser]: (state, { payload: user }) => ({
       ...state,
       user,
-      shouldShowSignIn: true
+      isSignInAttempted: true
     }),
     [types.updateAppLang]: (state, { payload = 'en' }) =>({
       ...state,
@@ -36,7 +36,7 @@ export default handleActions(
     }),
     [types.showSignIn]: state => ({
       ...state,
-      shouldShowSignIn: true
+      isSignInAttempted: true
     }),
 
     [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({

@@ -2,6 +2,7 @@ import dedent from 'dedent';
 import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
+import emoji from 'node-emoji';
 
 import {
   frontEndChallengeId,
@@ -129,8 +130,8 @@ function buildDisplayChallenges(
     .reduce((output, group) => ({ ...output, ...group}), {})
     .map(groups => ({
       algorithms: groups.algorithms || [],
-      projects: groups.projects || [],
-      challenges: groups.challenges || []
+      projects: groups.projects ? groups.projects.reverse() : [],
+      challenges: groups.challenges ? groups.challenges.reverse() : []
     }));
 }
 
@@ -182,6 +183,22 @@ module.exports = function(app) {
     '/account',
     sendNonUserToMap,
     getAccount
+  );
+  router.get(
+    '/reset-my-progress',
+    sendNonUserToMap,
+    showResetProgress
+  );
+  api.post(
+    '/account/resetprogress',
+    ifNoUser401,
+    postResetProgress
+  );
+
+  api.get(
+    '/account/unlink/:social',
+    sendNonUserToMap,
+    getUnlinkSocial
   );
 
   // Ensure these are the last routes!
@@ -266,6 +283,70 @@ module.exports = function(app) {
     return res.redirect('/' + username);
   }
 
+  function getUnlinkSocial(req, res, next) {
+    const { user } = req;
+    const { username } = user;
+
+    let social = req.params.social;
+    if (!social) {
+      req.flash('errors', {
+        msg: 'No social account found'
+      });
+      return res.redirect('/' + username);
+    }
+
+    social = social.toLowerCase();
+    const validSocialAccounts = ['twitter', 'linkedin'];
+    if (validSocialAccounts.indexOf(social) === -1) {
+      req.flash('errors', {
+        msg: 'Invalid social account'
+      });
+      return res.redirect('/' + username);
+    }
+
+    if (!user[social]) {
+      req.flash('errors', {
+        msg: `No ${social} account associated`
+      });
+      return res.redirect('/' + username);
+    }
+
+    const query = {
+      where: {
+        provider: social
+      }
+    };
+
+    return user.identities(query, function(err, identities) {
+      if (err) { return next(err); }
+
+      // assumed user identity is unique by provider
+      let identity = identities.shift();
+      if (!identity) {
+        req.flash('errors', {
+          msg: 'No social account found'
+        });
+        return res.redirect('/' + username);
+      }
+
+      return identity.destroy(function(err) {
+        if (err) { return next(err); }
+
+        const updateData = { [social]: null };
+
+        return user.update$(updateData)
+          .subscribe(() => {
+            debug(`${social} has been unlinked successfully`);
+
+            req.flash('info', {
+              msg: `You\'ve successfully unlinked your ${social}.`
+            });
+            return res.redirect('/' + username);
+          }, next);
+      });
+    });
+  }
+
   function showUserProfile(req, res, next) {
     const username = req.params.username.toLowerCase();
     const { user } = req;
@@ -329,6 +410,10 @@ module.exports = function(app) {
               team@freecodecamp.com for details.
             `
           });
+        }
+
+        if (userPortfolio.bio) {
+          userPortfolio.bio = emoji.emojify(userPortfolio.bio);
         }
 
         return map$.map(({ entities }) => createNameIdMap(entities))
@@ -447,6 +532,35 @@ module.exports = function(app) {
       req.logout();
       req.flash('info', { msg: 'You\'ve successfully deleted your account.' });
       return res.redirect('/');
+    });
+  }
+
+  function showResetProgress(req, res) {
+    return res.render('account/reset-progress', { title: 'Reset My Progress!'
+    });
+  }
+
+  function postResetProgress(req, res, next) {
+    User.findById(req.user.id, function(err, user) {
+      if (err) { return next(err); }
+      return user.updateAttributes({
+        progressTimestamps: [{
+          timestamp: Date.now()
+        }],
+        currentStreak: 0,
+        longestStreak: 0,
+        currentChallengeId: '',
+        isBackEndCert: false,
+        isFullStackCert: false,
+        isDataVisCert: false,
+        isFrontEndCert: false,
+        challengeMap: {},
+        challegesCompleted: []
+      }, function(err) {
+        if (err) { return next(err); }
+        req.flash('info', { msg: 'You\'ve successfully reset your progress.' });
+        return res.redirect('/');
+      });
     });
   }
 

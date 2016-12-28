@@ -236,18 +236,19 @@
 
     "jsx-quotes": [2, "prefer-single"],
     "react/display-name": 2,
-    "react/jsx-boolean-value": [2, "always"],
-    "react/jsx-no-undef": 2,
-    "react/jsx-sort-props": [2, { "ignoreCase": true }],
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
     "react/no-did-mount-set-state": 2,
     "react/no-did-update-set-state": 2,
     "react/no-multi-comp": [2, { "ignoreStateless": true } ],
     "react/prop-types": 2,
     "react/react-in-jsx-scope": 2,
     "react/self-closing-comp": 2,
-    "react/wrap-multilines": 2,
+    "react/no-unknown-property": 2,
+    "react/jsx-boolean-value": [2, "always"],
+    "react/jsx-no-undef": 2,
+    "react/jsx-sort-props": [2, { "ignoreCase": true }],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-wrap-multilines": 2,
     "react/jsx-closing-bracket-location": [ 2, { "selfClosing": "line-aligned", "nonEmpty": "props-aligned" } ],
 
     "import/no-unresolved": 2,
@@ -255,8 +256,10 @@
     "import/namespace": 2,
     "import/default": 2,
     "import/export": 2,
-    "import/imports-first": 2,
+    "import/first": 2,
     "import/no-duplicates": 2,
-    "import/newline-after-import": 2
+    "import/newline-after-import": 2,
+    "import/unambiguous": 2,
+    "import/extensions": [ 0, "always" ]
   }
 }

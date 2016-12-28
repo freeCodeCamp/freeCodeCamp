@@ -156,8 +156,13 @@ h1, h2, h3, h4, h5, h6, p, li {
 
 .navbar > .container {
   width: auto;
-  padding-left: 0px;
   padding-right: 0px;
+
+  @media (max-width: 767px) {
+    // container default padding size
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .nav-height {
@@ -318,7 +323,7 @@ h1, h2, h3, h4, h5, h6, p, li {
   }
 }
 
-li.avatar, li.avatar > a { padding:0; margin:0 }
+li.avatar-points, li.avatar-points > a { padding:0; margin:0 }
 
 .thin-progress-bar {
   height: 8px;
@@ -474,8 +479,14 @@ thead {
 }
 
 .brownie-points-nav {
-  @media (min-width: 991px) and (max-width: 999px) {
-    margin-right: -10px;
+  @media (min-width: 991px) and (max-width: 1030px) {
+    float: none !important;
+    padding-right: 10px;
+    display: inline-block;
+  }
+  @media (min-width: 991px) {
+    float: left;
+    padding: 15px;
   }
 }
 
@@ -616,7 +627,7 @@ form.update-email .btn{
 }
 
 .testimonial-copy {
-  text-align: justify;
+  text-align: center;
   font-size: 18px !important;
   margin-left: 20px;
   margin-right: 20px;
@@ -1073,8 +1084,8 @@ code {
     color:#111;
   }
   code {
-    background-color: #999;
-    color: @brand-primary;
+    background-color: #242424;
+    color: #02a902;
   }
   .fcc-footer {
     a {
@@ -1129,10 +1140,67 @@ and (max-width : 400px)  {
   font-size: 17px;
 }
 
+
+.editorScrollDiv {
+  -webkit-overflow-scrolling: touch;
+}
+
+// Reset/Delete Account Modal Styles
+.modal-dialog {
+  margin: 80px;
+
+  .modal-content {
+    background-color: #f9f9f9;
+  }
+
+  .modal-header .close {
+    font-size: 30px;
+    padding-left: 10px;
+    margin-top: 22px;
+  }
+
+  .modal-header {
+    text-align: center;
+    padding: 5px 20px;
+  }
+
+  .modal-footer {
+    .spacer {
+      padding: 8px 0 8px 0;
+    }
+
+    .btn {
+      padding: 12px;
+    }
+
+    .btn-success {
+      color: darkgreen;
+      border-color: darkgreen;
+    }
+
+    .btn-success:hover,
+    .btn-success:focus,
+    .btn-success:active {
+      color: #eee;
+      background-color: #208e36;
+      border-color: darkgreen;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 620px;
+    margin: 150px auto;
+  }
+}
+
+
 @import "chat.less";
-@import "jobs.less";
 @import 'code-mirror.less';
 @import "challenge.less";
 @import "toastr.less";
 @import "map.less";
 @import "drawers.less";
+@import "sk-wave.less";
+@import "classic-modal.less";

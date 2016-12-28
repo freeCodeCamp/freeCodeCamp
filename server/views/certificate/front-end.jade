@@ -1,6 +1,36 @@
-include font
-#name.cert-name= name
-img#cert.img-abs(src='//i.imgur.com/ToFZKBd.jpg')
-.cert-date= date
-.cert-link verify this certification at: http://freecodecamp.com/#{username}/front-end-certification
-include script
+meta(name='viewport', content='width=device-width, initial-scale=1')
+link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+include styles
+
+.certificate-wrapper.container
+  .row
+	header
+	  .col-md-5.col-sm-12
+		.logo
+		  img(class='img-responsive', src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt="Free Code Camp's Logo")
+	  .col-md-7.col-sm-12
+		.issue-date Issued 
+		  strong #{date}
+		
+	section.information
+	  .information-container
+		h3 This certifies that
+		h1
+		  strong= name
+		h3 has successfully completed the
+		h1
+		  strong Front End Development Projects
+		h4 (400 hours of coursework & 1 of 3 Free Code Camp certificates)
+		
+	footer
+	  .row.signatures
+	    .col-md-6
+		  img(class='img-responsive', src='https://i.imgur.com/OJFVJKg.png', alt="Quincy Larson's Signature")
+			p 
+			  strong Quincy Larson
+		.col-md-6
+		  img(class='img-responsive', src='https://i.imgur.com/b0YdXS4.png', alt="Michael D. Johnson's Signature")
+			p
+			  strong Michael D. Johnson
+	  .row
+		p.verify Verify this certificate at: https://www.freecodecamp.com/#{username}/front-end-certification

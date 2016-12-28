@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
-import ReactTransitionReplace from 'react-css-transition-replace';
 import LightBox from 'react-images';
 
 import {
@@ -17,7 +16,6 @@ import {
 import { challengeSelector } from '../../redux/selectors';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 
-const transitionTimeout = 1000;
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.currentIndex,
@@ -39,8 +37,7 @@ const mapStateToProps = createSelector(
     step: description[currentIndex],
     steps: description,
     numOfSteps: description.length,
-    isLastStep: currentIndex + 1 >= description.length,
-    isGoingForward: currentIndex > previousIndex
+    isLastStep: currentIndex + 1 >= description.length
   })
 );
 
@@ -64,7 +61,6 @@ export class StepChallenge extends PureComponent {
     step: PropTypes.array,
     steps: PropTypes.array,
     isActionCompleted: PropTypes.bool,
-    isGoingForward: PropTypes.bool,
     isLastStep: PropTypes.bool,
     numOfSteps: PropTypes.number,
     stepForward: PropTypes.func,
@@ -240,23 +236,14 @@ export class StepChallenge extends PureComponent {
       step,
       steps,
       isLightBoxOpen,
-      isGoingForward,
       closeLightBoxImage
     } = this.props;
-    const transitionName = 'challenge-step-' +
-      (isGoingForward ? 'forward' : 'backward');
     return (
       <Col
         md={ 8 }
         mdOffset={ 2 }
         >
-        <ReactTransitionReplace
-          transitionEnterTimeout={ transitionTimeout }
-          transitionLeaveTimeout={ transitionTimeout }
-          transitionName={ transitionName }
-          >
-          { this.renderStep(this.props) }
-        </ReactTransitionReplace>
+        { this.renderStep(this.props) }
         <div className='hidden'>
           { this.renderImages(steps) }
         </div>

@@ -32,28 +32,24 @@ export default function sitemapRouter(app) {
   const router = app.loopback.Router();
   const challenges$ = getCachedObservable(app, 'Challenge', 'dashedName');
   const stories$ = getCachedObservable(app, 'Story', 'storyLink', dasherize);
-  const jobs$ = getCachedObservable(app, 'Job', 'id');
   function sitemap(req, res, next) {
     const now = moment(new Date()).format('YYYY-MM-DD');
     return Observable.combineLatest(
       challenges$,
       stories$,
-      jobs$,
       (
         challenges,
         stories,
-        jobs
-      ) => ({ challenges, stories, jobs })
+      ) => ({ challenges, stories })
     )
       .subscribe(
-        ({ challenges, stories, jobs }) => {
+        ({ challenges, stories }) => {
           res.header('Content-Type', 'application/xml');
           res.render('resources/sitemap', {
             appUrl,
             now,
             challenges,
-            stories,
-            jobs
+            stories
           });
         },
         next

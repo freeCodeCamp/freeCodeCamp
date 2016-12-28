@@ -24,7 +24,10 @@
         "<h1>Hello</h1>"
       ],
       "tests": [
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
+        {
+          "text": "Your <code>h1</code> element should have the text \"Hello World\".",
+          "testString": "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
+        }
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -708,7 +711,7 @@
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
         "Remember that CSS class selectors require a period at the beginning like this:",
         "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}</blockquote>",
-        "But also remember that class declarations don't use a period, like this:",
+        "But remember you don't need to use a period when attaching classes to an HTML element:",
         "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Apply the <code>red-text</code> class to your <code>h2</code> and <code>p</code> elements."
       ],
@@ -787,8 +790,7 @@
         "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
         "Create a second <code>p</code> element after the existing <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Inside the same <code>&#60;style&#62;</code> tag that contains your <code>red-text</code> class, create an entry for <code>p</code> elements and set the <code>font-size</code> to 16 pixels (<code>16px</code>).",
-        "<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge.",
-        "Also, please do not add a class attribute to your new <code>p</code> element."
+        "<strong>Note</strong><br> Please do not add a class attribute to your new <code>p</code> element."
       ],
       "challengeSeed": [
         "<style>",
@@ -807,7 +809,7 @@
         "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.');",
         "assert($(\"p:eq(0)\").attr(\"class\") === \"red-text\", 'message: The first <code>p</code> element should have the class <code>red-text</code>.');",
         "assert($(\"p:eq(1)\").attr(\"class\") === undefined, 'message: Do not add a class attribute to the second <code>p</code> element.');",
-        "assert(parseInt($(\"p:not([class])\").css(\"font-size\"), 10) > 15, 'message: Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
+        "assert(code.match(/p\\s*{\\s*font-size\\s*:\\s*16\\s*px\\s*;\\s*}/i), 'message: Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -818,8 +820,7 @@
             "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
             "Erstelle ein zweites <code>p</code> Element mit dem folgenden Kitty Ipsum Text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
             "Erstelle dann innerhalb deines <code>&#60;style&#62;</code> Elements, das auch deine <code>red-text</code> Klasse enthält, einen Eintrag für <code>p</code> Elemente und setzte <code>font-size</code> auf 16 Pixel (<code>16px</code>).",
-            "<strong>Notiz</strong><br>Aufgrund verschiedener Brower Implementierungen, könnte es sein dass du auf 100% Zoom sein musst um die Tests zu bestehen.",
-            "Füge bitte auch kein Klassenattribute zu deinem neuen <code>p</code> Element hinzu."
+            "<strong>Notiz</strong><br> Füge bitte auch kein Klassenattribute zu deinem neuen <code>p</code> Element hinzu."
           ]
         },
         "fr": {
@@ -829,8 +830,7 @@
             "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
             "Créez un second élément <code>p</code> après l'élément <code>p</code> existant avec le texte kitty ipsum suivant : <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
             "À l'intérieur de la même balise <code>&#60;style&#62;</code> qui contiens votre classe <code>.red-text</code>, créez une nouvelle entrée pour les éléments <code>p</code> et paramétrer le <code>font-size</code> à 16 pixels (<code>16px</code>).",
-            "<strong>Prenez note</strong><br>Dû aux différences entre les navigateurs Web, votre niveau de zoom devrait être à 100% pour passer les tests de ce défi.",
-            "Également, veuillez ne pas ajouter d'attributs de classe à votre nouvel élément <code>p</code>."
+            "<strong>Prenez note</strong><br> Veuillez ne pas ajouter d'attributs de classe à votre nouvel élément <code>p</code>."
           ]
         },
         "pt-br": {
@@ -851,8 +851,7 @@
             "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
             "Создайте второй элемент <code>p</code> со следующи текстом <code>kitty ipsum</code>: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
             "Внутри того же элемента <code>&#60;style&#62;</code>, который содержит ваш класс <code>red-text</code>, создайте вхождение для элементов <code>p</code> и установите свойство <code>font-size</code> равным 16 пикселей (<code>16px</code>).",
-            "<strong>Внимание</strong><br>По причине разницы в реализации браузеров, вам может понадобиться установить 100% масштаб окна браузера для прохождения этого испытания.",
-            "Также, пожалуйста, не добавляйте атрибут класс к вашему новому элементу <code>p</code>."
+            "<strong>Внимание</strong><br> Пожалуйста, не добавляйте атрибут класс к вашему новому элементу <code>p</code>."
           ]
         }
       }
@@ -959,6 +958,7 @@
       "tests": [
         "assert(new RegExp(\"googleapis\", \"gi\").test(code), 'message: Import the <code>Lobster</code> font.');",
         "assert($(\"h2\").css(\"font-family\").match(/lobster/i), 'message: Your <code>h2</code> element should use the font <code>Lobster</code>.');",
+        "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?\\s*;\\s*\\}/gi.test(code), 'message: Use an <code>h2</code> CSS selector to change the font.');",
         "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'message: Your <code>p</code> element should still use the font <code>Monospace</code>.');"
       ],
       "type": "waypoint",
@@ -1042,7 +1042,7 @@
       ],
       "tests": [
         "assert($(\"h2\").css(\"font-family\").match(/^\"?lobster/i), 'message: Your h2 element should use the font <code>Lobster</code>.');",
-        "assert($(\"h2\").css(\"font-family\").match(/lobster.*,.*monospace/i), 'message: Your h2 element should degrade to the font <code>Monospace</code> when <code>Lobster</code> is not available.');",
+        "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?,\\s*Monospace\\s*;\\s*\\}/gi.test(code), 'message: Your h2 element should degrade to the font <code>Monospace</code> when <code>Lobster</code> is not available.');",
         "assert(new RegExp(\"<!--[^fc]\", \"gi\").test(code), 'message: Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.');",
         "assert(new RegExp(\"[^fc]-->\", \"gi\").test(code), 'message: Be sure to close your comment by adding <code>--&#62;</code>.');"
       ],
@@ -1101,7 +1101,7 @@
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.",
         "Let's add an <code>alt</code> attribute to our <code>img</code> example above:",
-        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up. \"&#62</code>",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up.\"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image:",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
@@ -1211,7 +1211,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1301,7 +1301,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1404,7 +1404,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1487,7 +1487,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1570,14 +1570,14 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "tests": [
         "assert((/cat photos/gi).test($(\"a\").text()), 'message: Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\".');",
-        "assert(/http:\\/\\/freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>');",
+        "assert(/http:\\/\\/(www\\.)?freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>');",
         "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure your <code>a</code> element has a closing tag.');"
       ],
       "type": "waypoint",
@@ -1670,19 +1670,19 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<a href=\"http://www.freecatphotoapp.com\">cat photos</a>",
+        "<a href=\"http://freecatphotoapp.com\">cat photos</a>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "tests": [
-        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0, 'message: You need an <code>a</code> element that links to \"http://www.freecatphotoapp.com\".');",
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").length > 0 || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0), 'message: You need an <code>a</code> element that links to \"http://freecatphotoapp.com\".');",
         "assert($(\"a\").text().match(/cat\\sphotos/gi), 'message: Your <code>a</code> element should have the anchor text of \"cat photos\"');",
         "assert($(\"p\") && $(\"p\").length > 2, 'message: Create a new <code>p</code> element around your <code>a</code> element.');",
-        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\"), 'message: Your <code>a</code> element should be nested within your new <code>p</code> element.');",
-        "assert($(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi), 'message: Your <code>p</code> element should have the text \"View more \" (with a space after it).');",
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().is(\"p\") || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\")), 'message: Your <code>a</code> element should be nested within your new <code>p</code> element.');",
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi) || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi)), 'message: Your <code>p</code> element should have the text \"View more \" (with a space after it).');",
         "assert(!$(\"a\").text().match(/View\\smore/gi), 'message: Your <code>a</code> element should <em>not</em> have the text \"View more\".');",
         "assert(code.match(/<\\/p>/g) && code.match(/<p/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.');",
         "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.');"
@@ -1742,7 +1742,7 @@
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
-        "The <code>href</code> attribute is the quoted URL link within the <code>a</code> element. Replace the link value of your <code>a</code> element's <code>href</code> attribute with a <code>#</code>, also known as a hash symbol, to turn it into a dead link."
+        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -1774,9 +1774,9 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href=\"http://www.freecatphotoapp.com\">cat photos</a>.</p>",
+        "<p>Click here to view more <a href=\"http://freecatphotoapp.com\">cat photos</a>.</p>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1827,7 +1827,7 @@
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
         "Nest your image within an <code>a</code> element. Here's an example:",
-        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\" alt=\"Three kittens running towards the camera. \"&#62;&#60;/a&#62;</code>",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\" alt=\"Three kittens running towards the camera.\"&#62;&#60;/a&#62;</code>",
         "Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.",
         "Place the existing image element within an anchor element.",
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
@@ -1864,7 +1864,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1961,7 +1961,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -2067,7 +2067,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2181,7 +2181,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2289,7 +2289,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2392,7 +2392,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2411,7 +2411,7 @@
       "tests": [
         "assert($(\"form\") && $(\"form\").children(\"input\") && $(\"form\").children(\"input\").length > 0, 'message: Nest your text input element within a <code>form</code> element.');",
         "assert($(\"form\").attr(\"action\") === \"/submit-cat-photo\", 'message: Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>');",
-        "assert(code.match(/<\\/form>/g) && code.match(/<form/g) && code.match(/<\\/form>/g).length === code.match(/<form/g).length, 'message: Make sure your <code>form</code> element has a closing tag.');"
+        "assert(code.match(/<\\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\\/form>/g).length === code.match(/<form [^<]*>/g).length, 'message: Make sure your <code>form</code> element has well-formed open and close tags.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2495,7 +2495,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2565,7 +2565,7 @@
       "title": "Use HTML5 to Require a Field",
       "description": [
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
-        "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, you would use: <code>&#60;input type=\"text\" required&#62;</code>",
+        "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, like this: <code>&#60;input type=\"text\" required&#62;</code>",
         "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.",
         "Then try to submit the form without inputing any text. See how your HTML5 form notifies you that the field is required?",
         "Note: This field does not work in Safari."
@@ -2602,7 +2602,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2712,7 +2712,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2836,7 +2836,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2957,7 +2957,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -3068,7 +3068,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -3185,7 +3185,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -3305,7 +3305,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div class=\"silver-background\">",
         "  <p>Things cats love:</p>",
@@ -3430,7 +3430,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back. \" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div class=\"silver-background\">",
         "  <p>Things cats love:</p>",
@@ -3842,9 +3842,9 @@
       ],
       "tests": [
         "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'message: Your <code>green-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');",
         "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');"
+        "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');",
+        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -3931,9 +3931,9 @@
       ],
       "tests": [
         "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'message: Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');",
-        "assert($(\".green-box\").css(\"margin-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');",
         "assert($(\".green-box\").css(\"margin-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');",
-        "assert($(\".green-box\").css(\"margin-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');"
+        "assert($(\".green-box\").css(\"margin-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');",
+        "assert($(\".green-box\").css(\"margin-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -4304,7 +4304,7 @@
       "description": [
         "Sometimes your HTML elements will receive multiple styles that conflict with one another.",
         "For example, your <code>h1</code> element can't be both green and pink at the same time.",
-        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <code>override</code> the <code>body</code> element's <code>color: green;</code> CSS property?",
+        "Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <em>override</em> the <code>body</code> element's <code>color: green;</code> CSS property?",
         "Create a CSS class called <code>pink-text</code> that gives an element the color pink.",
         "Give your <code>h1</code> element the class of <code>pink-text</code>."
       ],
@@ -4331,7 +4331,7 @@
           "description": [
             "Manchmal werden deine HTML Elemente mehrere Styles erhalten die sich gegenseitig widersprechen.",
             "Zum Beispiel könnte dein <code>h1</code> Element nicht gleichzeitig grün und pink sein.",
-            "Schauen wir uns an was passiert wenn wir eine Klasse erstellen die Text pink macht und dann einem Element hinzufügen. Wird unsere Klasse die <code>color:green;</code> Eigenschaft unseres <code>body</code> Elements überschreiben - <code>override</code> - ?"
+            "Schauen wir uns an was passiert wenn wir eine Klasse erstellen die Text pink macht und dann einem Element hinzufügen. Wird unsere Klasse die <code>color:green;</code> Eigenschaft unseres <code>body</code> Elements überschreiben - <em>override</em> - ?"
           ]
         },
         "es": {
@@ -4339,7 +4339,7 @@
           "description": [
             "A veces los elementos HTML recibirán múltiples estilos que entran en conflicto entre sí.",
             "Por ejemplo, el elemento <code>h1</code> no puede ser verde y rosa al mismo tiempo.",
-            "Vamos a ver lo que sucede cuando creamos una clase que hace rosado el texto y luego lo aplicamos a un elemento. ¿Anulará (<code>override</code>) nuestra clase la propiedad CSS <code>color: green</code> del elemento <code>body</code>?",
+            "Vamos a ver lo que sucede cuando creamos una clase que hace rosado el texto y luego lo aplicamos a un elemento. ¿Anulará (<em>override</em>) nuestra clase la propiedad CSS <code>color: green</code> del elemento <code>body</code>?",
             "Crea una clase CSS llamada <code>pink-text</code> que le da a un elemento el color rosado.",
             "Ponle a tu elemento <code>h1</code> la clase de <code>pink-text</code>."
           ]
@@ -4349,7 +4349,7 @@
           "description": [
             "As vezes os elementos HTML recebem múltiplos estilos que entram em conflito entre si.",
             "Por exemplo, o elemento <code>h1</code> não pode ser verde e rosa ao mesmo tempo.",
-            "Vamos ver o que acontece quando criamos uma classe que faz com que o texto seja rosa e então o aplicamos a um elemento. Isso irá sobrepor (<code>override</code>) a propriedade CSS <code>color: green</code> do elemento <code>body</code> de nossa classe?",
+            "Vamos ver o que acontece quando criamos uma classe que faz com que o texto seja rosa e então o aplicamos a um elemento. Isso irá sobrepor (<em>override</em>) a propriedade CSS <code>color: green</code> do elemento <code>body</code> de nossa classe?",
             "Crie uma classe CSS chamada <code>pink-text</code>, que dê a cor rosa a um elemento.",
             "Depois, adicione a classe <code>pink-text</code> ao seu elemento <code>h1</code>."
           ]
@@ -4359,7 +4359,7 @@
           "description": [
             "Иногда вашим HTML-элементам будут присвоены множественные стили, конфликтующие друг с другом.",
             "Например, ваш элемент <code>h1</code> не может быть одновременно зелёным и розовым.",
-            "Давайте посмотрим, что произойдёт, когда мы создадим класс, который делает текст розовым, затем присвоим его элементу. <code>Переопределит</code> ли наш класс значение CSS-свойства элемента <code>body</code> равное <code>color: green;</code>?",
+            "Давайте посмотрим, что произойдёт, когда мы создадим класс, который делает текст розовым, затем присвоим его элементу. <em>Переопределит</em> ли наш класс значение CSS-свойства элемента <code>body</code> равное <code>color: green;</code>?",
             "Создайте CSS-класс <code>pink-text</code>, который назначает элементу розовый в качестве цвета.",
             "Назначьте вашему элементу <code>h1</code> класс <code>pink-text</code>."
           ]
@@ -4467,7 +4467,7 @@
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.",
         "Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:",
         "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
-        "Note: It doesn't matter whether you declare this css above or below pink-text class, since id attribute will always take precedence."
+        "Note: It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence."
       ],
       "challengeSeed": [
         "<style>",
@@ -4520,7 +4520,7 @@
             "Deja las clases <code>blue-text</code> y <code>pink-text</code> de tu elemento <code>h1</code>.",
             "Crea una declaración CSS para tu identificación <code>orange-text</code> en tu elemento <code>style</code>. He aquí un ejemplo de como se ve esto: ",
             "<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>",
-            "Nota: No importa si usted declara este css encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
+            "Nota: No importa si usted declara este CSS encima o debajo de la clase de texto de color rosa, ya atributo id siempre tendrá prioridad."
           ]
         },
         "pt-br": {
@@ -4558,7 +4558,7 @@
       "description": [
         "So we've proven that id declarations override class declarations, regardless of where they are declared in your <code>style</code> element CSS.",
         "There are other ways that you can override CSS. Do you remember inline styles?",
-        "Use an <code>in-line style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this:",
+        "Use an <code>inline style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this:",
         "<code>&#60;h1 style=\"color: green\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element."
       ],
@@ -4596,7 +4596,7 @@
           "description": [
             "Wir haben also gesehen dass Id Deklarationen die von Klassen überschreiben, egal wo sie in deinem <code>style</code> Element CSS stehen.",
             "Es gibt noch andere Wege CSS zu überschreiben. Erinnerst du dich an Inline Styles?",
-            "Benutze <code>in-line style</code> um dein <code>h1</code> Element weiß zu machen. Vergiss nicht, Inline Styles sehen so aus:",
+            "Benutze <code>inline style</code> um dein <code>h1</code> Element weiß zu machen. Vergiss nicht, Inline Styles sehen so aus:",
             "<code>&#60;h1 style=\"color: green\"&#62;</code>",
             "Lasse die <code>blue-text</code> und <code>pink-text</code> Klassen auf deinem <code>h1</code> Element."
           ]
@@ -4637,10 +4637,10 @@
       "id": "bad87fee1348bd9aedf07756",
       "title": "Override All Other Styles by using Important",
       "description": [
-        "Yay! We just proved that in-line styles will override all the CSS declarations in your <code>style</code> element.",
+        "Yay! We just proved that inline styles will override all the CSS declarations in your <code>style</code> element.",
         "But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.",
         "In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use <code>!important</code>",
-        "Let's go all the way back to our <code>pink-text</code> class declaration. Remember that our <code>pink-text</code> class was overridden by subsequent class declarations, id declarations, and in-line styles.",
+        "Let's go all the way back to our <code>pink-text</code> class declaration. Remember that our <code>pink-text</code> class was overridden by subsequent class declarations, id declarations, and inline styles.",
         "Let's add the keyword <code>!important</code> to your pink-text element's color declaration to make 100% sure that your <code>h1</code> element will be pink.",
         "An example of how to do this is:",
         "<code>color: red !important;</code>"
@@ -4730,7 +4730,7 @@
       "title": "Use Hex Code for Specific Colors",
       "description": [
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
-        "We usually use <code>decimals</code>, or base 10 numbers, which use the symbols 0 to 9 for each digit. <code>Hexadecimals</code> (or <code>hex</code>) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represents values zero to nine. Then A,B,C,D,E,F represent values ten to fifteen. Altogether, 0 to F can represent a digit in <code>hexadecimal</code>, giving us 16 total possible values. You can find more information about <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>hexadecimal numbers here</a>.",
+        "We usually use <code>decimals</code>, or base 10 numbers, which use the symbols 0 to 9 for each digit. <code>Hexadecimals</code> (or <code>hex</code>) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represent values zero to nine. Then A,B,C,D,E,F represent values ten to fifteen. Altogether, 0 to F can represent a digit in <code>hexadecimal</code>, giving us 16 total possible values. You can find more information about <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>hexadecimal numbers here</a>.",
         "In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components. For example, <code>#000000</code> is black and is also the lowest possible value. You can find more information about the <a target='_blank' href='https://en.wikipedia.org/wiki/RGB_color_model'>RGB color system here</a>.",
         "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>."
       ],
@@ -5040,7 +5040,7 @@
       "title": "Use RGB to Mix Colors",
       "description": [
         "Just like with hex code, you can mix colors in RGB by using combinations of different values.",
-        "Replace the color words in our <code>style</code> element with their correct RGB values.",
+        "Replace the hex codes in our <code>style</code> element with their correct RGB values.",
         "<table class='table table-striped'><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna</td><td><code>rgb(160, 82, 45)</code></td></tr></table>"
       ],
       "challengeSeed": [

@@ -35,10 +35,15 @@ export function getFileKey({ challengeType }) {
 
 export function createTests({ tests = [] }) {
   return tests
-    .map(test => ({
-      text: ('' + test).split('message: ').pop().replace(/\'\);/g, ''),
-      testString: test
-    }));
+    .map(test => {
+      if (typeof test === 'string') {
+        return {
+          text: ('' + test).split('message: ').pop().replace(/\'\);/g, ''),
+          testString: test
+        };
+      }
+      return test;
+    });
 }
 
 export function loggerToStr(args) {
@@ -252,7 +257,7 @@ export function getMouse(e, [dx, dy]) {
   return [pageX - dx, pageY - dy];
 }
 
-export function filterCommingSoonBetaChallenge(
+export function filterComingSoonBetaChallenge(
   isDev = false,
   { isComingSoon, isBeta }
 ) {
@@ -264,7 +269,7 @@ export function filterComingSoonBetaFromEntities(
   { challenge: challengeMap, ...rest },
   isDev = false
 ) {
-  const filter = filterCommingSoonBetaChallenge.bind(null, isDev);
+  const filter = filterComingSoonBetaChallenge.bind(null, isDev);
   return {
     ...rest,
     challenge: Object.keys(challengeMap)

@@ -25,12 +25,16 @@ export class BugModal extends PureComponent {
     } = this.props;
     return (
       <Modal
-        onHide={ closeBugModal }
         show={ isOpen }
         >
         <Modal.Header className='challenge-list-header'>
           Did you find a bug?
-          <span className='close closing-x'>×</span>
+          <span
+            className='close closing-x'
+            onClick={ closeBugModal }
+            >
+            ×
+          </span>
         </Modal.Header>
         <Modal.Body className='text-center'>
           <h3>
@@ -67,6 +71,7 @@ export class BugModal extends PureComponent {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
+            onClick={ closeBugModal }
             >
             Cancel
           </Button>

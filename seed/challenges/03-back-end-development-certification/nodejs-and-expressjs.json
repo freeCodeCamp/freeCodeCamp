@@ -8,7 +8,7 @@
       "id": "bd7153d8c441eddfaeb5bd0f",
       "title": "Manage Packages with npm",
       "description": [
-        "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
+        "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud. <strong>Note:</strong> Cloud 9 supports a <a href='https://docs.c9.io/docs/themes' target='_blank'>high-contrast theme</a> for those with visual impairments.",
         "If you don't already have a Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
         "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
         "Click on the \"+\" icon at the top right of the c9.io page to create a new workspace.",

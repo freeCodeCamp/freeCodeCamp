@@ -1,8 +1,10 @@
-![](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
+![FreeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
 [![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
 
 [![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
+[![Build Status](https://travis-ci.org/FreeCodeCamp/FreeCodeCamp.svg?branch=staging)](https://travis-ci.org/FreeCodeCamp/FreeCodeCamp)
 
 Welcome to Free Code Camp's open source codebase and curriculum!
 =======================
@@ -17,17 +19,17 @@ You start by working through our self-paced, browser-based full stack JavaScript
 ##### 1. Front End Certification
 The first section will teach you the basics of how webpages work and also introduce you to JavaScript programming.
 
-Skills you'll practice include `HTML, CSS, JavaScript, jQuery` and `Bootstrap`.
+Skills you'll practice include `HTML`, `CSS`, `JavaScript`, `jQuery` and `Bootstrap`.
 
 To earn this certification, you'll build **10 front-end projects** and implement many **JavaScript algorithms**.
 
 ##### 2. Data Visualization Certification
-The second section builds upon the first and introduces you to more advanced topics such as `Sass, React` and `D3`.
+The second section builds upon the first and introduces you to more advanced topics such as `Sass`, `React` and `D3`.
 
 To earn this certification, you'll build **5 React-apps** and **5 Data visualization apps** using `D3.js`.
 
 ##### 3. Back End Certification
-The third section introduces you to back end development using `Node.js, Express,` and `MongoDB`. It also teaches you about the important concept of source control using `Git`.
+The third section introduces you to back end development using `Node.js`, `Express,` and `MongoDB`. It also teaches you about the important concept of source control using `Git`.
 
 To earn this certification, you'll build **5 APIs** and **5 full stack apps**.
 
@@ -41,9 +43,9 @@ For this certification, you'll work on **two projects from scratch** and then **
 
 ---
 
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](http://medium.freecodecamp.com), and even a [YouTube channel](http://youtube.com/freecodecamp).
+This code is running live at [FreeCodeCamp.com](https://www.freecodecamp.com). We also have [Gitter chat rooms](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](https://medium.freecodecamp.com), and even a [YouTube channel](https://youtube.com/freecodecamp).
 
-### [Join our community here](http://www.freecodecamp.com/signin).
+### [Join our community here](https://www.freecodecamp.com/signin).
 
 Found a bug?
 ------------
@@ -62,17 +64,8 @@ We welcome pull requests from Free Code Camp campers (our students) and seasoned
 License
 -------
 
-The BSD-3-Clause
+Copyright (c) 2016 Free Code Camp.
 
-Copyright (c) 2016, Free Code Camp
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-3. Neither the name of Free Code Camp nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY FREE CODE CAMP AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+The content of this repository bound by the following LICENSE(S)
+- The computer software is licensed under the [BSD-3-Clause](./LICENSE.md).
+- The curricular content as in the `./seed/challenges` or subdirectories and our wiki are licensed under the [CC-BY-SA-4.0](./LICENCE-Free-Code-Camp-Curriculum.md)

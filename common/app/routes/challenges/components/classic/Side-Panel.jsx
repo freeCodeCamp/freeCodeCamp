@@ -35,7 +35,13 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.hintIndex,
   state => state.challengesApp.isCodeLocked,
   (
-    { challenge: { title, description, hints = [] } = {} },
+    {
+      challenge: {
+        description,
+        hints = []
+      } = {},
+      title
+    },
     windowHeight,
     navHeight,
     tests,
