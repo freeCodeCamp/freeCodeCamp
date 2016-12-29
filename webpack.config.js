@@ -57,7 +57,7 @@ module.exports = {
     // Use browser version of visionmedia-debug
     new webpack.NormalModuleReplacementPlugin(
       /debug\/node/,
-      'debug/browser'
+      'debug'
     ),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(true)
