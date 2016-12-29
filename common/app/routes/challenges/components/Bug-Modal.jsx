@@ -39,7 +39,7 @@ export class BugModal extends PureComponent {
         <Modal.Body className='text-center'>
           <h3>
             Before you submit a new issue,
-            read "Help I've Found a Bug" and
+            read "How to Report a Bug" and
             browse other issues with this challenge.
           </h3>
           <Button
@@ -49,7 +49,7 @@ export class BugModal extends PureComponent {
             href={ bugLink }
             target='_blank'
             >
-            Read "Help I've Found a Bug"
+            Read "How to Report a Bug"
           </Button>
           <Button
             block={ true }
