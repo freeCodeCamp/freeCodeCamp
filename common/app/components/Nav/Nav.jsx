@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
+  MenuItem,
   Nav,
-  NavbarBrand,
+  NavDropdown,
+  NavItem,
   Navbar,
-  NavItem
+  NavbarBrand
 } from 'react-bootstrap';
 
 import navLinks from './links.json';
@@ -76,36 +78,45 @@ export default class FCCNav extends React.Component {
     this.props.loadCurrentChallenge();
   }
 
-  renderLinks() {
-    return navLinks.map(({ content, link, react, target }, index) => {
-      if (react) {
-        return (
-          <LinkContainer
-            eventKey={ index + 2 }
-            key={ content }
-            onClick={ this[`handle${content}Click`] }
-            to={ link }
-            >
-            <NavItem
-              target={ target || null }
-              >
-              { content }
-            </NavItem>
-          </LinkContainer>
-        );
-      }
+  renderLink(isNavItem, { isReact, isDropdown, content, link, links, target }) {
+    const Component = isNavItem ? NavItem : MenuItem;
+    if (isDropdown) {
       return (
-        <NavItem
-          eventKey={ index + 1 }
-          href={ link }
+        <NavDropdown
+          id={ `nav-${content}-dropdown` }
+          key={ content }
+          noCaret={ true }
+          title={ content }
+          >
+          { links.map(this.renderLink.bind(this, false)) }
+        </NavDropdown>
+      );
+    }
+    if (isReact) {
+      return (
+        <LinkContainer
           key={ content }
           onClick={ this[`handle${content}Click`] }
-          target={ target || null }
+          to={ link }
           >
-          { content }
-        </NavItem>
+          <Component
+            target={ target || null }
+            >
+            { content }
+          </Component>
+        </LinkContainer>
       );
-    });
+    }
+    return (
+      <Component
+        href={ link }
+        key={ content }
+        onClick={ this[`handle${content}Click`] }
+        target={ target || null }
+        >
+        { content }
+      </Component>
+    );
   }
 
   renderSignIn(username, points, picture, showLoading) {
@@ -123,7 +134,6 @@ export default class FCCNav extends React.Component {
     } else {
       return (
         <NavItem
-          eventKey={ 2 }
           href='/signup'
           key='signup'
           >
@@ -140,6 +150,17 @@ export default class FCCNav extends React.Component {
       picture,
       showLoading
     } = this.props;
+    let navLinksCache;
+
+    if (this._navLinksCache) {
+      navLinksCache = this._navLinksCache;
+    } else {
+      // we cache the rendered static links on the instance
+      // these do not change for the lifetime of the app
+      navLinksCache = this._navLinksCache = navLinks.map(
+        this.renderLink.bind(this, true)
+      );
+    }
 
     return (
       <Navbar
@@ -167,7 +188,7 @@ export default class FCCNav extends React.Component {
             navbar={ true }
             pullRight={ true }
             >
-            { this.renderLinks() }
+            { navLinksCache }
             { this.renderSignIn(username, points, picture, showLoading) }
           </Nav>
         </Navbar.Collapse>

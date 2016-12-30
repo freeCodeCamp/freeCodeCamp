@@ -7,14 +7,17 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at Free Code Camp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
+            li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown' role='button' href='#' aria-haspopup='true') Community
+                ul.dropdown-menu
+                    li
+                        a(href='/about') About
+                    li
+                        a(href='https://gitter.im/freecodecamp/home' target='_blank') Chat
+                    li
+                        a(href='https://forum.freecodecamp.com', target='_blank') Forum
             li
                 a(href='/map') Map
-            li
-                a(href='https://gitter.im/freecodecamp/home' target='_blank') Chat
-            li
-                a(href='https://forum.freecodecamp.com', target='_blank') Forum
-            li
-                a(href='/about') About
             li
                 a(href='/shop') Shop
             if !user

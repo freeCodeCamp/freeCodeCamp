@@ -1,18 +1,22 @@
 [{
+  "content": "Community",
+  "isDropdown": true,
+  "links": [{
+    "content": "About",
+    "link": "/about"
+  }, {
+    "content": "Forum",
+    "link": "https://forum.freecodecamp.com/",
+    "target": "_blank"
+  }, {
+    "content": "Chat",
+    "link": "https://gitter.im/freecodecamp/home",
+    "target": "_blank"
+  }]
+},{
   "content": "Map",
   "link": "/map",
-  "react": true
-},{
-  "content": "Chat",
-  "link": "https://gitter.im/freecodecamp/home",
-  "target": "_blank"
-},{
-  "content": "Forum",
-  "link": "https://forum.freecodecamp.com/",
-  "target": "_blank"
-},{
-  "content": "About",
-  "link": "/about"
+  "isReact": true
 },{
   "content": "Shop",
   "link": "/shop"
