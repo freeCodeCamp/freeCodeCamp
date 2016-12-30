@@ -53,10 +53,9 @@ export default function({ models }) {
           return Observable.throw(
             new Error(
               dedent`
-Your GitHub is already associated with another account.
-You may have accidentally created a duplicate account.
-No worries, though. We can fix this real quick.
-Please email us with your GitHub username: team@freecodecamp.com.
+Your GitHub account is already linked to another Free Code Camp
+account. To access it, <a href='/signout'>Sign out</a> of Free Code Camp, 
+then sign in again using the "Sign in with GitHub" button.
               `.split('/n').join(' ')
             )
           );
