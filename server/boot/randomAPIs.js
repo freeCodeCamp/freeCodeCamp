@@ -24,9 +24,8 @@ module.exports = function(app) {
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get('/stories', showTestimonials);
-  router.get('/shop', showShop);
-  router.get('/shop/cancel-stickers', cancelStickers);
-  router.get('/shop/confirm-stickers', confirmStickers);
+  router.get('/cancel-stickers', cancelStickers);
+  router.get('/confirm-stickers', confirmStickers);
   router.get('/all-stories', showAllTestimonials);
   router.get('/terms', terms);
   router.get('/welcome', welcome);
@@ -115,19 +114,13 @@ module.exports = function(app) {
     });
   }
 
-  function showShop(req, res) {
-    res.render('resources/shop', {
-      title: 'Support Free Code Camp by Buying t-shirts, ' +
-        'stickers, and other goodies'
-    });
-  }
-
   function confirmStickers(req, res) {
     req.flash('success', {
-      msg: 'Thank you for supporting our community! You should receive ' +
-        'your stickers in the mail soon!'
+      msg: 'Thank you for supporting our community! Depending on how far you ' +
+        'live from San Francisco, these stickers may take several weeks ' + 
+        'to reach you.'
     });
-    res.redirect('/shop');
+    res.redirect('/map');
   }
 
   function cancelStickers(req, res) {
@@ -135,7 +128,7 @@ module.exports = function(app) {
         msg: 'You\'ve cancelled your purchase of our stickers. You can ' +
           'support our community any time by buying some.'
       });
-      res.redirect('/shop');
+      res.redirect('/map');
   }
   function submitCatPhoto(req, res) {
     res.send('Submitted!');
