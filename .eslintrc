@@ -14,7 +14,8 @@
   "parser": "babel-eslint",
   "plugins": [
     "react",
-    "import"
+    "import",
+    "prefer-object-spread"
   ],
   "settings": {
     "import/ignore": [
@@ -260,6 +261,8 @@
     "import/no-duplicates": 2,
     "import/newline-after-import": 2,
     "import/unambiguous": 2,
-    "import/extensions": [ 0, "always" ]
+    "import/extensions": [ 0, "always" ],
+
+    "prefer-object-spread/prefer-object-spread": 2
   }
 }
