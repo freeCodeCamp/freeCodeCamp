@@ -1,7 +1,7 @@
 import passport from 'passport';
 import { PassportConfigurator } from 'loopback-component-passport';
 import passportProviders from './passport-providers';
-import uuid from 'node-uuid';
+import uuid from 'uuid';
 import { generateKey } from 'loopback-component-passport/lib/models/utils';
 
 import {

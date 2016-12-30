@@ -74,7 +74,6 @@
     "morgan": "^1.6.1",
     "mousetrap": "^1.6.0",
     "node-emoji": "^1.4.1",
-    "node-uuid": "^1.4.3",
     "nodemailer": "^2.1.0",
     "nodemailer-ses-transport": "^1.3.0",
     "normalize-url": "^1.3.1",
@@ -117,6 +116,7 @@
     "sanitize-html": "^1.11.1",
     "snyk": "^1.19.1",
     "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
+    "uuid": "^3.0.1",
     "validator": "^6.0.0"
   },
   "devDependencies": {
