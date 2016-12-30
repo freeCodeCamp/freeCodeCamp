@@ -11,7 +11,7 @@
           [
             "",
             "",
-            "Today, there are many types of devices that can access the web. These range from large desktop computers to small mobile phones. These devices have different screen sizes, resolutions, and processing power.",
+            "Today, there are many types of devices that can access the web. They range from large desktop computers to small mobile phones. These devices have different screen sizes, resolutions, and processing power.",
             ""
           ],
           [
@@ -29,7 +29,7 @@
           [
             "",
             "",
-            "CSS gives you tools to write different style rules, then apply them depending on the device. This section will cover the basic ways to use CSS for Responsive Web Design.",
+            "CSS gives you the tools to write different style rules, then apply them depending on the device displaying the page. This section will cover the basic ways to use CSS for Responsive Web Design.",
             ""
           ]
         ],
@@ -56,13 +56,13 @@
       "id": "bc7123c8c441eddfaeb5bdef",
       "title": "Create a Media Query",
       "description": [
-        "Media Queries are a new technique introduced in CSS3 that let the presentation of content be changed for a specific viewport only. The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.",
-        "Media Queries consist of a media type and if that media type matches the type of device the document is being displayed on, the styles will be applied. You can have as many selectors and styles inside your media query as you want.",
-        "Here is an example of a media query that returns the content when the device's width is under 100px:",
+        "Media Queries are a new technique introduced in CSS3 that change the presentation of content based on different viewport sizes. The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.",
+        "Media Queries consist of a media type, and if that media type matches the type of device the document is displayed on, the styles are applied. You can have as many selectors and styles inside your media query as you want.",
+        "Here's an example of a media query that returns the content when the device's width is smaller than 100px:",
         "<code>@media (max-width: 100px) { /* CSS Rules */ }</code>",
-        "Remember, The CSS inside the media query will only be displayed if the media type matches that of the device being used.",
+        "Remember, the CSS inside the media query is applied only if the media type matches that of the device being used.",
         "<h4>Instructions</h4>",
-        "Add a media query, so that the <code>p</code> tag will have the <code>font-size</code> of 10px when the device's maximum height is 800px."
+        "Add a media query, so that the <code>p</code> tag has a <code>font-size</code> of 10px when the device's height is smaller than 800px."
       ],
       "challengeSeed": [
         "<style>",
@@ -73,7 +73,7 @@
       ],
       "tests": [
         "assert($('p').css('font-size') == '10px', 'message: Your <code>p</code> tag should have the <code>font-size</code> of 10px when the device <code>height</code> is smaller than 800px.');",
-        "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare a <code>@media</code> query for devices with <code>height</code> less than 800px.');"
+        "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare an <code>@media</code> query for devices with <code>height</code> less than 800px.');"
       ],
       "type": "waypoint",
       "solution": [
@@ -104,13 +104,13 @@
       "id": "bd7123c8c441eddfaeb5bdec",
       "title": "Make an Image Responsive",
       "description": [
-        "Making images responsive in CSS is actually very simple. Instead of applying an absolute width to an element:",
+        "Making images responsive with CSS is actually very simple. Instead of applying an absolute width to an element:",
         "<code>img { width: 720px; }</code>",
         "You can use:",
-        "<code>img { max-width: 720px; width: 100%; }</code>",
-        "The <code>max-width</code> property prevents the width being larger than 720px and <code>width: 100%;</code> makes sure the width isn't larger than the viewport size (100%).",
+        "<blockquote>img {<br>  max-width: 100%;<br>  display: block;<br>  height: auto;<br>}</blockquote>",
+        "The <code>max-width</code> property of 100% scales the image to fit the width of its container, but the image won't stretch wider than its original width. Setting the <code>display</code> property to block changes the image from an inline element (its default), to a block element on its own line. The <code>height</code> property of auto keeps the original aspect ratio of the image.",
         "<h4>Instructions</h4>",
-        "Set the <code>max-width</code> of the <code>img</code> tag to 300px and prevent the <code>img</code> from being larger than the device viewport."
+        "Add style rules for the <code>img</code> tag to make it responsive to the size of its container. It should display as a block-level element, it should fit the full width of its container without stretching, and it should keep its original aspect ratio."
       ],
       "challengeSeed": [
         "<style>",
@@ -120,13 +120,14 @@
         "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg\" alt=\"Free Code Camp stickers set\">"
       ],
       "tests": [
-        "assert($('img').css('max-width') == '300px', 'message: Your <code>img</code> tag should have a <code>max-width</code> of 300px.');",
-        "assert(code.match(/width:\\s*?100%;/g), 'message: Your <code>img</code> tag should not be wider than the device screen.');"
+        "assert(code.match(/max-width:\\s*?100%;/g), 'message: Your <code>img</code> tag should have a <code>max-width</code> set to 100%.');",
+        "assert($('img').css('display') == 'block', 'message: Your <code>img</code> tag should have a <code>display</code> set to block.');",
+        "assert(code.match(/height:\\s*?auto;/g), 'message: Your <code>img</code> tag should have a <code>height</code> set to auto.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
       "solutions": [
-        "<style>\n\n  img {\n    max-width: 300px;\n    width: 100%;\n  }\n\n</style>\n\n<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg\" alt=\"Free Code Camp stickers set\">"
+        "<style>\n\n  img {\n    max-width: 100%;\n    display: block;\n    height: auto;\n  }\n\n</style>\n\n<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg\" alt=\"Free Code Camp stickers set\">"
       ],
       "hints": [],
       "translations": {
@@ -156,18 +157,18 @@
         "Here is an example of an image that is only using half of the original height and width:",
         "<blockquote>&lt;style&gt;<br>  img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;A most excellent picture&quot;&gt;</blockquote>",
         "<h4>Instructions</h4>",
-        "Set the <code>width</code> and <code>height</code> of the <code>img</code> tag to half of what they originally were. In this case, both the original <code>height</code> and the original <code>width</code> were 200px each."
+        "Set the <code>width</code> and <code>height</code> of the <code>img</code> tag to half of their original values. In this case, both the original <code>height</code> and the original <code>width</code> are 200px."
       ],
       "challengeSeed": [
         "<style>",
         "  ",
         "</style>",
         "",
-        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg\" alt=\"Free Code Camp sticker saying because CamperBot cares\">"
+        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg\" alt=\"Free Code Camp sticker that says 'Because CamperBot Cares'\">"
       ],
       "tests": [
-        "assert($('img').css('width') == '100px', 'message: Your <code>img</code> tag should have the <code>width</code> of 100 pixels.');",
-        "assert($('img').css('height') == '100px', 'message: Your <code>img</code> tag should have the <code>height</code> of 100 pixels.');"
+        "assert($('img').css('width') == '100px', 'message: Your <code>img</code> tag should have a <code>width</code> of 100 pixels.');",
+        "assert($('img').css('height') == '100px', 'message: Your <code>img</code> tag should have a <code>height</code> of 100 pixels.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -198,7 +199,7 @@
       "id": "bd7123c8c441eddfaeb5bdee",
       "title": "Make Typography Responsive",
       "description": [
-        "Instead of using <code>em</code> or <code>px</code>, we can use viewport units for responsive typography. Viewport units differ from percentages because they are relative to viewport dimensions (width and height), instead of being relative to the parent container element.",
+        "Instead of using <code>em</code> or <code>px</code> to size text, you can use viewport units for responsive typography. Viewport units, like percentages, are relative units, but they are based off different items. Viewport units are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element.",
         "The four different viewport units are:",
         "<ul>",
         "<li><code>vw: 10vw</code> would be 10% of the viewport's width.</li>",

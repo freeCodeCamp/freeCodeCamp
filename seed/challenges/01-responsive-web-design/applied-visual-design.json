@@ -11,19 +11,19 @@
           [
             "",
             "",
-            "Visual Design in web development is a broad topic. It combines typography, color theory, graphics, animation, and page layout to help deliver a site's message. Many books cover these themes, and what defines good design is a well-discussed subject.",
+            "Visual Design in web development is a broad topic. It combines typography, color theory, graphics, animation, and page layout to help deliver a site's message. The definition of good design is a well-discussed subject, with many books on the theme.",
             ""
           ],
           [
             "",
             "",
-            "At a basic level, most web content provides a user with information. The Visual Design of the page can influence its presentation and a user's experience. In web development, HTML gives structure and semantics to a page's content, and CSS controls the layout and appearance of it.",
+            "At a basic level, most web content provides a user with information. The visual design of the page can influence its presentation and a user's experience. In web development, HTML gives structure and semantics to a page's content, and CSS controls the layout and appearance of it.",
             ""
           ],
           [
             "",
             "",
-            "This section's goal is to cover some of the basic CSS tools that allow developers to create their own visual designs.",
+            "This section covers some of the basic CSS tools developers use to create their own visual designs.",
             ""
           ]
         ],
@@ -50,11 +50,11 @@
       "id": "c00123c8c441eddfaeb5bdef",
       "title": "Create Visual Balance Using the Text-align Property",
       "description": [
-        "In this section of the curriculum, we will be focusing on Applied Visual Design. The first group of challenges will all build on the given card layout to illustrate a number of core principles.",
-        "Text often comprises a large portion of web content, and CSS offers several options to visually present it by using the <code>text-align</code> property. In this challenge, we will be aligning text to the center, to the left, and justifying it.",
+        "This section of the curriculum focuses on Applied Visual Design. The first group of challenges build on the given card layout to show a number of core principles.",
+        "Text is often a large part of web content. CSS has several options for how to align it with the <code>text-align</code> property. This challenge uses this property to align text to the center, to the left, and to justify it.",
         "<h4>Instructions</h4>",
         "Align the <code>h4</code> tag's text, which says \"Google\", to the center. Then justify the paragraph tag which contains information about how Google was founded. Finally, align the two anchor tags to the left by using the <code>links</code> class selector.",
-        "Note: When you align the two anchor tags, you will see no difference. This is because text is aligned to the left by default."
+        "<strong>Note</strong><br>When you align the two anchor tags, you will see no difference. This is because text is aligned to the left by default."
       ],
       "challengeSeed": [
         "<style>",
@@ -429,7 +429,7 @@
         "To underline text, you can use the <code>u</code> tag. This is often used to signify a section of text is important, or something to remember. When using the <code>u</code> tag, the browser applies the CSS of <code>text-decoration: underline;</code> to the element.",
         "<h4>Instructions</h4>",
         "Wrap the <code>u</code> tag around the two anchor tags. It should not include the parent <code>div</code> that has the class of <code>cardLinks</code>.",
-        "Note: Try to avoid using the u tag when it could be confused for a link, since anchor tags also have a default underlined formatting."
+        "<strong>Note</strong><br>Try to avoid using the <code>u</code> tag when it could be confused for a link. Anchor tags also have a default underlined formatting."
       ],
       "challengeSeed": [
         "<style>",
@@ -667,7 +667,7 @@
         "We can use the <code>hr</code> tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.",
         "<h4>Instructions</h4>",
         "Add an <code>hr</code> tag underneath our <code>h4</code> which contains the card title.",
-        "Note: In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need an end tag."
+        "<strong>Note</strong><br>In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag."
       ],
       "challengeSeed": [
         "<style>",
@@ -1090,7 +1090,7 @@
       "title": "Use the Text-transform Property to Make Text Uppercase",
       "description": [
         "The <code>text-transform</code> property in CSS is used to set text to uppercase.",
-        "Note: Other values for this property are lowercase, capitalize (transforms the first letter of each word to uppercase), initial (sets the property to the default value), inherit (inherits the property from parent element) and none (the default).",
+        "<strong>Note</strong><br>Other values for this property are lowercase, capitalize (transforms the first letter of each word to uppercase), initial (sets the property to the default value), inherit (inherits the property from parent element) and none (the default).",
         "<h4>Instructions</h4>",
         "Set the text inside the <code>h4</code> tag to be uppercase using the <code>text-transform</code> property."
       ],
@@ -1187,7 +1187,7 @@
         "In this case, we have already gone ahead and added Open Sans behind the scenes. The code to include this font is the following:",
         "<code>&lt;link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" rel=\"stylesheet\"&gt;</code>",
         "Once the link is in place, the font is available to include in your CSS by using the pattern <code>font-family: 'FONT', FAMILY_NAME;</code>.",
-        "In our case, \"FONT\" would be 'Open Sans' and \"FAMILY_NAME\" would be sans-serif. Note that quotes around 'Open Sans' are required because it has a space in its name, and capitalization matters.",
+        "In our case, \"FONT\" would be 'Open Sans' and \"FAMILY_NAME\" would be sans-serif. The quotes around 'Open Sans' are required because it has a space in its name, and capitalization matters.",
         "<h4>Instructions</h4>",
         "Set the <code>font-family</code> of the body to \"Open Sans\"."
       ],
@@ -1612,7 +1612,7 @@
         "When the position of an element is set to <code>relative</code>, it allows you to specify how CSS should move it relative to its current position in the normal flow of the page. It pairs with the CSS offset properties of <code>left</code> or <code>right</code>, and <code>top</code> or <code>bottom</code>, which say how many pixels, percentages, or ems to move the item <i>away</i> from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:",
         "<blockquote>p {<br>  position: relative;<br>  bottom: 10px;<br>}<br></blockquote>",
         "Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were there.",
-        "Note: Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and still make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.",
+        "<strong>Note</strong><br>Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.",
         "<h4>Instructions</h4>",
         "Change the <code>position</code> of the <code>h2</code> to <code>relative</code>, and use a CSS offset to move it 15 pixels away from the <code>top</code> of where it sits in the normal flow. Notice there is no impact on the positions of the surrounding h1 and p elements."
       ],
@@ -1949,9 +1949,53 @@
       "tests": [
         "assert($('.first').css('z-index') == '2', 'message: The element with class <code>first</code> should have a <code>z-index</code> value of 2.');"
       ],
-      "solutions": [
-        "<style>\n\n  .second-pic{\n    position: absolute;\n    left: 40px;\n    top: 50px;\n    z-index: 1;\n\n  }\n\n  /** Only change code above this line. **/\n\n  #avatar {\n    display: inline-block;\n    margin-top: 20px;\n  }\n  .img-rounded{\n    max-height:200px;\n  }\n\n</style>\n\n    <img class=\"img-rounded\" id=\"avatar\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Aceofspades.svg/2000px-Aceofspades.svg.png\" />\n\n  <img class=\"img-rounded second-pic\" id=\"avatar\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Playing_card_heart_A.svg/2000px-Playing_card_heart_A.svg.png\" />"
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "c84a23c8c441eddfaeb2bdef",
+      "title": "Center an Element Horizontally Using Margin",
+      "description": [
+        "Another positioning technique is to center a block element horizontally. One way to do this is to set its <code>margin</code> to a value of auto.",
+        "This method works for images, too. Images are inline elements by default, but can be changed to block elements when you set the <code>display</code> property to block.",
+        "<h4>Instructions</h4>",
+        "Center the <code>div</code> on the page by adding a <code>margin</code> property with a value of auto."
       ],
+      "challengeSeed": [
+        "<style>",
+        "  div {",
+        "    background-color: blue;",
+        "    height: 100px;",
+        "    width: 100px;",
+        "    ",
+        "  }",
+        "</style>",
+        "<div></div>"
+      ],
+      "tests": [
+        "assert(code.match(/margin:\\s*?auto;/g), 'message: The <code>div</code> should have a <code>margin</code> set to auto.');"
+      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
@@ -1978,12 +2022,12 @@
       "id": "c50123c8c441eddfaeb58def",
       "title": "Learn about Complementary Colors",
       "description": [
-        "Color theory and its impact on design is a deep topic and only the basics will be covered in the following challenges. Color can be used on a website to draw attention to content, evoke emotions, or create visual harmony. Using different combinations of colors can dramatically change the look of a website, and a lot of thought can go into picking a color palette that works with your content.",
-        "The color wheel is a useful tool to visualize how colors relate to each other - similar hues are neighbors and different hues are farther apart. When two colors are opposite each other on the wheel, they are called complementary colors. They have the characteristic that if they are combined, they effectively cancel each other out and result in a gray color. However, when placed side-by-side, these colors will make each other appear more vibrant and produce a strong visual contrast.",
+        "Color theory and its impact on design is a deep topic and only the basics are covered in the following challenges. On a website, color can draw attention to content, evoke emotions, or create visual harmony. Using different combinations of colors can really change the look of a website, and a lot of thought can go into picking a color palette that works with your content.",
+        "The color wheel is a useful tool to visualize how colors relate to each other - it's a circle where similar hues are neighbors and different hues are farther apart. When two colors are opposite each other on the wheel, they are called complementary colors. They have the characteristic that if they are combined, they \"cancel\" each other out and create a gray color. However, when placed side-by-side, these colors appear more vibrant and produce a strong visual contrast.",
         "Some examples of complementary colors with their hex codes are:",
         "<blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)<br></blockquote>",
         "There are many color picking tools available online that have an option to find the complement of a color.",
-        "Note for all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.",
+        "<strong>Note</strong><br>For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.",
         "<h4>Instructions</h4>",
         "Change the <code>background-color</code> property of the <code>blue</code> and <code>yellow</code> classes to their respective colors. Notice how the colors look different next to each other than they do compared against the white background."
       ],
@@ -2793,14 +2837,13 @@
       "id": "c44123c8c441eddfaeb5b3ef",
       "title": "Create a More Complex Shape Using CSS and HTML",
       "description": [
-        "One of the most popular shapes in the world is the heart shape and we are going to make it in raw CSS in this challenge. But first, we need to familiarize ourselves with the <code>:before</code> and <code>:after</code> selectors. These selectors are used to to add something before/after a selected element. In the following example a <code>:before</code> selector is used to add a rectangle to an element with the class <code>heart</code>:",
+        "One of the most popular shapes in the world is the heart shape and this challenge creates it with raw CSS. But first, you need to understand the <code>:before</code> and <code>:after</code> selectors. These selectors are used to add something before or after a selected element. In the following example a <code>:before</code> selector is used to add a rectangle to an element with the class <code>heart</code>:",
         "<blockquote>.heart:before {<br>  content: \"\";<br>  background-color: yellow;<br>  border-radius: 25%;<br>  position: absolute;<br>  height: 50px;<br>  width: 70px;<br>  top: -50px;<br>  left: 5px;<br>}<br></blockquote>",
-        "Note that for the <code>:before</code> and <code>:after</code> selectors to function properly, they must have a defined content property to contain contents such as photos or text; however, since we will only use the <code>:before</code> and <code>:after</code> selectors to add shapes, we can set the content property to an empty string.",
+        "For the <code>:before</code> and <code>:after</code> selectors to function properly, they must have a defined <code>content</code> property. It usually has content such as a photo or text. When the <code>:before</code> and <code>:after</code> selectors add shapes, the <code>content</code> property is still required, but it's set to an empty string.",
         "In the above example, the element with the class of <code>heart</code> has a <code>:before</code> selector that produces a yellow rectangle with <code>height</code> and <code>width</code> of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the <code>left</code> and 50px above the <code>top</code> of the element.",
-        "Let's transform the element on the right of the screen to a heart.",
         "<h4>Instructions</h4>",
-        "Start by targeting the <code>heart:after</code> selector by changing the <code>background-color</code> to pink and the <code>border-radius</code> to 50%.",
-        "Next, target the element with the class <code>heart</code> (just <code>heart</code>, not with the <code>:before</code> or <code>:after</code> pseudo-selectors) and fill in the <code>transform</code> property using the <code>rotate()</code> function with -45 degrees (it works the same way that <code>skewX()</code> and <code>skewY()</code> do).",
+        "Transform the element on the screen to a heart. In the <code>heart:after</code> selector, change the <code>background-color</code> to pink and the <code>border-radius</code> to 50%.",
+        "Next, target the element with the class <code>heart</code> (just <code>heart</code>, not with the <code>:before</code> or <code>:after</code> pseudo-selectors) and fill in the <code>transform</code> property. Use the <code>rotate()</code> function with -45 degrees. (<code>rotate()</code> works the same way that <code>skewX()</code> and <code>skewY()</code> do).",
         "Finally, in the <code>heart:before</code> selector, set its <code>content</code> property to an empty string."
       ],
       "challengeSeed": [
@@ -3746,7 +3789,7 @@
       "title": "Make Motion more Natural using a Bezier Curve",
       "description": [
         "In this challenge, we'll animate an element to replicate the movement of a ball being juggled. Prior challenges covered the linear and ease-out cubic Bezier curves, however neither depicts the juggling movement accurately. We need to customize a Bezier curve for this.",
-        "Note that the <code>animation-timing-function</code> automatically loops at every keyframe given the <code>animation-iteration-count</code> is set to infinite. Since there is a keyframe rule set in the middle of our animation duration (at <code>50%</code>), it results in two identical animation progressions at the upward and downward movement of the ball.",
+        "The <code>animation-timing-function</code> automatically loops at every keyframe when the <code>animation-iteration-count</code> is set to infinite. Since there is a keyframe rule set in the middle of our animation duration (at <code>50%</code>), it results in two identical animation progressions at the upward and downward movement of the ball.",
         "The following cubic Bezier curve simulates a juggling movement:",
         "<code>cubic-bezier(0.3, 0.4, 0.5, 1.6); </code>",
         "Notice that the value of y2 is larger than 1. Although the cubic Bezier curve is mapped on an 1 by 1 coordinate system, and it can only accept x values from 0 to 1, the y value can be set to numbers larger than one. This results in a bouncing movement that is ideal for simulating the juggling ball.",
