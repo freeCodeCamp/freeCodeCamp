@@ -67,6 +67,35 @@
               ""
             ]
           ]
+        },
+        "pt-br": {
+          "title": "Prepare-se para os Desafios de Algoritmos",
+          "description": [
+            [
+              "//i.imgur.com/sJkp30a.png",
+              "Uma imagem de um desagio de algoritmo mostrando direções, testes e o editor de código.",
+              "Nossos desafios de algoritmos vão ensinar você como pensar como um programador.",
+              ""
+            ],
+            [
+              "//i.imgur.com/d8LuRNh.png",
+              "Uma mãe pássaro chuta um bebê para fora do ninho.",
+              "Nossos desafios anteriores introduziram você aos conceitos de programação. Mas para esses desafios de algoritmos, agora você vai precisar aplicar o que você aprendeu para resolver problemas abertos.",
+              ""
+            ],
+            [
+              "//i.imgur.com/WBetuBa.jpg",
+              "Um programador atravessando a tela de seu laptop com um soco em frustração.",
+              "Nossos desafios de algoritmos são difíceis. Alguns deles podem levar algumas horas para resolver. Você vai ficar frustrado. Mas não desista.",
+              ""
+            ],
+            [
+              "//i.imgur.com/p2TpOQd.jpg",
+              "Um cachorro fofo pulando sobre um obstáculo, piscando e apontando sua pata à você.",
+              "Quendo você ficar travado, use a metodoloia Ler-Pesquisar-Perguntar.<br>Não se preocupe - você consegue.",
+              ""
+            ]
+          ]
         }
       }
     },
@@ -112,6 +141,15 @@
             "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
             "El resultado debe ser una cadena de texto",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Inverter um texto",
+          "description": [
+            "Inverta o texto fornecido.",
+            "Você pode precisar transformar o texto em uma matriz antes de poder invertê-lo.",
+            "Seu resultado deve ser um texto.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -159,6 +197,17 @@
             "Los factoriales son comúnmente representados con la notación <code>n!</code>",
             "Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Fatorial de um número",
+          "description": [
+            "Retorne o fatorial de um número inteiro fornecido.",
+            "Se o inteiro é representado pela letra n, o fatorial é o produto de todos os inteiros positivos menores ou iguais a n.",
+            "Fatoriais são comumente representados pela notação <code>n!</code>",
+            "Por exemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
+            "Apenas inteiros maior que ou iguais a zero serão fornecidos à função.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -220,6 +269,17 @@
             "También vamos a pasar cadenas con símbolos especiales, tales como <code>\"2A3*3a2\"</code>, <code>\"2A3 3a2\"</code>, y <code>\"2_A3*3#A2\"</code>.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
+        },
+        "pt-br": {
+          "title": "Procure por Palíndromos",
+          "description": [
+            "Retorne <code>true</code> se o texto fornecida é um palíndromo. Caso contrário, retorne <code>false</code>.",
+            "Um <dfn>palíndromo</dfn> é uma palavra ou sentença que é soletrada da mesma maneira tanto para a frente quanto para trás, ignorando pontuação, maiúsculas e minúsculas, e espaçamento.",
+            "<strong>Nota</strong><br>Você precisará remover <strong>todos caracteres não alfanuméricos</strong> (pontuação, espaços e símbolos) e transformar todas as letras em maiúsculas ou minúsculas para procurar por palíndromos.",
+            "Nós vamos passar textos de vários formatos, tais como <code>\"racecar\"</code>, <code>\"RaceCar\"</code> e <code>\"race CAR\"</code> entre outras.",
+            "Nós também vamos passar textos com símbolos especiais, tais como <code>\"2A3*3a2\"</code>, <code>\"2A3  3a2\"</code> e <code>\"2_A3*3#A2\"</code>.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -264,6 +324,14 @@
             "El resultado debe ser un número",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
+        },
+        "pt-br": {
+          "title": "Encontre a maior palavra num texto",
+          "description": [
+            "Retorne o tamanho da maior palavra na sentença fornecida.",
+            "Sua resposta deve ser um número.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -304,6 +372,14 @@
             "Crea una función que devuelva la cadena de texto que recibe con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
             "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Transforme o Texto em um Título",
+          "description": [
+            "Retorne o texto fornecido com a primeira letra de cada palavra em maiúsculo. Garanta que o resto da palavra esteja em formato minúsculo.",
+            "Para o propósito deste exercício, você deve transformar também palavras conectivas como \"the\" e \"of\".",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -346,6 +422,14 @@
             "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
             "Si escribes tu propio test con Chai.js, asegúrate de utilizar un operador de igualdad estricto en lugar de un operador de igualdad cuando compares arreglos. ",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Retorne os Maiores Números numa Matriz",
+          "description": [
+            "Retorne uma matriz que consiste no maior número de cada sub-matriz fornecida. Por simplicidade, a matriz fornecida conterá exatamente 4 sub-matrizes.",
+            "Lembre-se, você pode iterar sobre uma matriz com um simples laço for, e acesar cara membro com a sintaxe <code>arr[i]</code>.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -396,6 +480,14 @@
             "Verifica si una cadena de texto (primer argumento) termina con otra cadena de texto (segundo argumento).",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
+        },
+        "pt-br": {
+          "title": "Confirme o Fim",
+          "description": [
+            "Confira se um texto (primeiro argumento, <code>str</code>) termina com um texto alvo (segundo argumento, <code>target</code>).",
+            "Esse desafio <em>pode</em> ser resolvido com o método <code>.endsWith()</code>, que foi introduzido com o ES2015. Mas para o propósito deste desafio, nós gostaríamos que você usasse os métodos de substring do Javascript.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -437,6 +529,13 @@
           "description": [
             "Repite una cadena de texto dada (primer argumento) <code>num</code> veces (segundo argumento). Retorna una cadena de texto vacía si <code>num</code> es un número negativo.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Repita o Texto Repita o Texto",
+          "description": [
+            "Repita o texto dado <code>str</code> (primeiro argumento) <code>num</code> vezes (segundo argumento). Retorne um texto vazio se <code>num</code> não é for um número positivo.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -484,6 +583,15 @@
             "Si el <code>num</code es menor o igual a 3, entonces la longitud de los 3 puntos no se añade a la longitud de la cadena.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
+        },
+        "pt-br": {
+          "title": "Trunque um Texto",
+          "description": [
+            "Trunque um texto (primeiro argumento) se ela for mais longa que o comprimento máximo fornecido (segundo argumento). Retorne o texto truncada com <code>...</code> no final.",
+            "Note que os três pontos inseridos no final vão ser adicionados ao tamanho do texto.",
+            "Porém, se o tamanho máximo fornecido <code>num</code> for menor que ou igual a 3, então a adição dos três pontos não deve ser considerada no tamanho to texto truncada.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -528,6 +636,13 @@
             "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo bidimensional.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
+        },
+        "pt-br": {
+          "title": "Em Pedaços",
+          "description": [
+            "Escreva uma funcção que divide uma matriz (primeiro argumento) em grupos de tamanho <code>size</code> (segundo argumento) e os retorna em uma matriz bidimensional.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -571,7 +686,19 @@
         "Array.prototype.slice()",
         "Array.prototype.splice()"
       ],
-      "challengeType": 5
+      "challengeType": 5,
+      "translations": {
+        "pt-br": {
+          "title": "Slice e Splice",
+          "description": [
+            "É dado a você duas matrizes e um índice.",
+            "Use os métodos de matrizes <code>slice</code> e <code>splice</code> para copiar cada elemento da primeira matriz e colocar na segunda matriz, na ordem.",
+            "Comece a inserir elementos no índice <code>n</code> da segunda matriz.",
+            "Retorne a matriz resultante. As matrizes fornecidas devem permanecer inalteradas após a função ser executada.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+          ]
+        }
+      }
     },
     {
       "id": "af2170cad53daa0770fabdea",
@@ -620,6 +747,16 @@
             "Finalmente, <code>[\"Alien\", \"line\"]</code>, la función debe devolver <code>true</code> porque todas las letras en \"line\" están presentes en \"Alien\".",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
+        },
+        "pt-br": {
+          "title": "Mutações",
+          "description": [
+            "Retorne verdadeiro se o texto no primeiro elemento da matriz contém todas as letras do texto no segundo elemento da matriz.",
+            "Por exemplo, <code>[\"hello\", \"Hello\"]</code>, deve retornar verdadeiro pois todas as letras no segundo text estão presentes no primeiro texto.",
+            "Os argumentos <code>[\"hello\", \"hey\"]</code> devem retornar falso por o texto \"hello\" não contém a letra \"y\".",
+            "Por último, <code>[\"Alien\", \"line\"]</code>, deve retornar verdadeiro pois todas as letras em \"line\" estão presentes em \"Alien\".",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+          ]
         }
       }
     },
@@ -662,6 +799,14 @@
             "Remueve todos los valores falsy de un arreglo dado",
             "En javascript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Detector de Mentiras",
+          "description": [
+            "Remova todos os valores falsos de uma matriz.",
+            "Valores falsos em JavaScript são <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, e <code>NaN</code>.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -706,6 +851,14 @@
           "description": [
             "Se te proveerá un arreglo inicial (el primer argumento en la función <code>destroyer</code>), seguido por uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que el resto de argumentos.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Buscar e Destruir",
+          "description": [
+            "Será fornecido a você uma matriz inicial (o primeiro argumento da função destroyer), seguido por um ou mais argumentos. Remova todos os elementos da matriz inicial que possuem o mesmo valor desses argumentos.",
+            "<strong>Nota</strong><br> Você precisa usar o objeto <code>arguments</code>.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -753,6 +906,15 @@
             "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
             "Mientras que <code>where([20,3,5], 19)</code> debe devolver <code>2</code> porque una vez ordenado el arreglo se verá com <code>[3,5,20]</code> y <code>19</code> es menor que <code>20</code> (índice 2) y mayor que <code>5</code> (índice 1).",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Qual o Meu Lugar?",
+          "description": [
+            "Retorne o menor índice que um valor (segundo argumento) deve ser inserido em uma matriz (primeiro argumento) uma vez que esta foi ordenada. O valor retornado deve ser um número.",
+            "Por exemplo, <code>getIndexToIns([1,2,3,4], 1.5)</code> deve retornar <code>1</code> porque é maior do que <code>1</code> (índice 0), mas é menor que <code>2</code> (índice 1).",
+            "Da mesma forma, <code>getIndexToIns([20,3,5], 19)</code> deve retornar <code>2</code> porque uma vez que a matriz foi ordenada ficará da seguinte forma <code>[3,5,20]</code> e <code>19</code> é menor que <code>20</code> (índice 2) e maior que <code>5</code> (índice 1).",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -805,6 +967,16 @@
             "Crea una función que tome una cadena de texto cifrada en <a href=\"https://es.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> como argumento y que devuelva la cadena de texto decodificada.",
             "Todas las letras que se te pasen van a estar en mayúsculas. No transformes ningún caracter no-alfabético (por ejemplo: espacios, puntuación). Simplemente pásalos intactos.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+          ]
+        },
+        "pt-br": {
+          "title": "Cifra de César",
+          "description": [
+            "Uma das mais simples e mais conhecidas <dfn>cifras</dfn> é a <code>cifra de César</code>, também conhecida como <code>cifra de troca</code>. Em uma <code>cifra de troca</code> os significados das letras são deslocados por um determinado valor.",
+            "Um uso moderno comum é a cifra <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a>, aonde os valores das letras são deslocados por 13 lugares. Logo 'A' &harr; 'N', 'B' &harr;  'O' e assim por diante.",
+            "Escreva uma função que recebe um texto criptografado com <a href=\"https://en.wikipedia.org/wiki/ROT13\" target='_blank'>ROT13</a> como entrada e retorna o texto desencriptado.",
+            "Todas as letras serão maiúsculas. Não transforme nenhum caracter não alfanuméricos (como espaços, pontuação), mas passe-os adiante.",
+            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
