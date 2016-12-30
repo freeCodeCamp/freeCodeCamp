@@ -11,7 +11,6 @@ import {
 
 import navLinks from './links.json';
 import AvatarPointsNavItem from './Avatar-Points-Nav-Item.jsx';
-import NoPropsPassthrough from '../../utils/No-Props-Passthrough.jsx';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
@@ -34,10 +33,7 @@ const propTypes = {
   picture: PropTypes.string,
   signedIn: PropTypes.bool,
   username: PropTypes.string,
-  isOnMap: PropTypes.bool,
   updateNavHeight: PropTypes.func,
-  toggleMapDrawer: PropTypes.func,
-  toggleMainChat: PropTypes.func,
   showLoading: PropTypes.bool,
   trackEvent: PropTypes.func.isRequired,
   loadCurrentChallenge: PropTypes.func.isRequired
@@ -78,59 +74,6 @@ export default class FCCNav extends React.Component {
   handleLogoClick(e) {
     e.preventDefault();
     this.props.loadCurrentChallenge();
-  }
-
-  renderMapLink(isOnMap, toggleMapDrawer) {
-    if (isOnMap) {
-      return (
-        <NoPropsPassthrough>
-          <li role='presentation'>
-            <a
-              href='#'
-              onClick={ this.handleMapClickOnMap }
-              >
-              Map
-            </a>
-          </li>
-        </NoPropsPassthrough>
-      );
-    }
-    return (
-      <LinkContainer
-        eventKey={ 1 }
-        to='/map'
-        >
-        <NavItem
-          onClick={ e => {
-            if (!(e.ctrlKey || e.metaKey)) {
-              e.preventDefault();
-              toggleMapDrawer();
-            }
-          }}
-          target='/map'
-          >
-          Map
-        </NavItem>
-      </LinkContainer>
-    );
-  }
-
-  renderChat(toggleMainChat) {
-    return (
-      <NavItem
-        eventKey={ 2 }
-        href='//gitter.im/freecodecamp/freecodecamp'
-        onClick={ e => {
-          if (!(e.ctrlKey || e.metaKey)) {
-            e.preventDefault();
-            toggleMainChat();
-          }
-        }}
-        target='_blank'
-        >
-        Chat
-      </NavItem>
-    );
   }
 
   renderLinks() {
@@ -195,9 +138,6 @@ export default class FCCNav extends React.Component {
       username,
       points,
       picture,
-      isOnMap,
-      toggleMapDrawer,
-      toggleMainChat,
       showLoading
     } = this.props;
 
@@ -227,8 +167,6 @@ export default class FCCNav extends React.Component {
             navbar={ true }
             pullRight={ true }
             >
-            { this.renderMapLink(isOnMap, toggleMapDrawer) }
-            { this.renderChat(toggleMainChat) }
             { this.renderLinks() }
             { this.renderSignIn(username, points, picture, showLoading) }
           </Nav>

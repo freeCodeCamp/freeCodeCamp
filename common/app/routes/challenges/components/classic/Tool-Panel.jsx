@@ -9,25 +9,24 @@ const unlockWarning = (
     </h4>
   </Tooltip>
 );
+
+const propTypes = {
+  executeChallenge: PropTypes.func.isRequired,
+  helpChatRoom: PropTypes.string,
+  hint: PropTypes.string,
+  isCodeLocked: PropTypes.bool,
+  makeToast: PropTypes.func.isRequired,
+  openBugModal: PropTypes.func.isRequired,
+  unlockUntrustedCode: PropTypes.func.isRequired,
+  updateHint: PropTypes.func.isRequired
+};
+
 export default class ToolPanel extends PureComponent {
   constructor(...props) {
     super(...props);
     this.makeHint = this.makeHint.bind(this);
     this.makeReset = this.makeReset.bind(this);
   }
-  static displayName = 'ToolPanel';
-
-  static propTypes = {
-    executeChallenge: PropTypes.func.isRequired,
-    updateHint: PropTypes.func.isRequired,
-    hint: PropTypes.string,
-    isCodeLocked: PropTypes.bool,
-    unlockUntrustedCode: PropTypes.func.isRequired,
-    toggleHelpChat: PropTypes.func.isRequired,
-    openBugModal: PropTypes.func.isRequired,
-    makeToast: PropTypes.func.isRequired
-  };
-
   makeHint() {
     this.props.makeToast({
       message: this.props.hint,
@@ -93,10 +92,10 @@ export default class ToolPanel extends PureComponent {
 
   render() {
     const {
+      executeChallenge,
+      helpChatRoom,
       hint,
       isCodeLocked,
-      executeChallenge,
-      toggleHelpChat,
       openBugModal,
       unlockUntrustedCode
     } = this.props;
@@ -126,8 +125,9 @@ export default class ToolPanel extends PureComponent {
           <Button
             bsSize='large'
             bsStyle='primary'
-            componentClass='label'
-            onClick={ toggleHelpChat }
+            componentClass='a'
+            href={ `https://gitter.im/freecodecamp/${helpChatRoom}` }
+            target='_blank'
             >
             Help
           </Button>
@@ -145,3 +145,6 @@ export default class ToolPanel extends PureComponent {
     );
   }
 }
+
+ToolPanel.displayName = 'ToolPanel';
+ToolPanel.propTypes = propTypes;

@@ -9,8 +9,6 @@ const initialState = {
   csrfToken: '',
   windowHeight: 0,
   navHeight: 0,
-  isMainChatOpen: false,
-  isHelpChatOpen: false,
   theme: 'default'
 };
 
@@ -50,31 +48,6 @@ export default handleActions(
     [types.updateNavHeight]: (state, { payload: navHeight }) => ({
       ...state,
       navHeight
-    }),
-    [types.toggleMapDrawer]: state => ({
-      ...state,
-      isMapAlreadyLoaded: true,
-      isMapDrawerOpen: !state.isMapDrawerOpen
-    }),
-    [types.closeMapDrawer]: state => ({
-      ...state,
-      isMapDrawerOpen: false
-    }),
-    [types.toggleMainChat]: state => ({
-      ...state,
-      isMainChatOpen: !state.isMainChatOpen
-    }),
-    [types.toggleHelpChat]: state => ({
-      ...state,
-      isHelpChatOpen: !state.isHelpChatOpen
-    }),
-    [types.openHelpChat]: state => ({
-      ...state,
-      isHelpChatOpen: true
-    }),
-    [types.closeHelpChat]: state => ({
-      ...state,
-      isHelpChatOpen: false
     }),
     [types.delayedRedirect]: (state, { payload }) => ({
       ...state,

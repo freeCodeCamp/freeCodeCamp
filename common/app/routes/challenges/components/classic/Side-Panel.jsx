@@ -16,13 +16,11 @@ import {
   unlockUntrustedCode
 } from '../../redux/actions';
 import { makeToast } from '../../../../toasts/redux/actions';
-import { toggleHelpChat } from '../../../../redux/actions';
 
-const bindableActions = {
+const mapDispatchToProps = {
   makeToast,
   executeChallenge,
   updateHint,
-  toggleHelpChat,
   openBugModal,
   unlockUntrustedCode
 };
@@ -34,6 +32,7 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.output,
   state => state.challengesApp.hintIndex,
   state => state.challengesApp.isCodeLocked,
+  state => state.challengesApp.helpChatRoom,
   (
     {
       challenge: {
@@ -47,7 +46,8 @@ const mapStateToProps = createSelector(
     tests,
     output,
     hintIndex,
-    isCodeLocked
+    isCodeLocked,
+    helpChatRoom
   ) => ({
     title,
     description,
@@ -55,7 +55,8 @@ const mapStateToProps = createSelector(
     tests,
     output,
     hint: hints[hintIndex],
-    isCodeLocked
+    isCodeLocked,
+    helpChatRoom
   })
 );
 
@@ -69,17 +70,18 @@ export class SidePanel extends PureComponent {
   static propTypes = {
     description: PropTypes.arrayOf(PropTypes.string),
     height: PropTypes.number,
+    helpChatRoom: PropTypes.string,
+    hint: PropTypes.string,
+    isCodeLocked: PropTypes.bool,
+    output: PropTypes.string,
     tests: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string,
-    output: PropTypes.string,
-    hint: PropTypes.string,
-    updateHint: PropTypes.func,
-    makeToast: PropTypes.func,
-    toggleHelpChat: PropTypes.func,
+
+    executeChallenge: PropTypes.func,
     openBugModal: PropTypes.func,
+    makeToast: PropTypes.func,
     unlockUntrustedCode: PropTypes.func,
-    isCodeLocked: PropTypes.bool,
-    executeChallenge: PropTypes.func
+    updateHint: PropTypes.func
   };
 
   renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
@@ -119,7 +121,7 @@ export class SidePanel extends PureComponent {
       executeChallenge,
       updateHint,
       makeToast,
-      toggleHelpChat,
+      helpChatRoom,
       openBugModal,
       isCodeLocked,
       unlockUntrustedCode
@@ -150,11 +152,11 @@ export class SidePanel extends PureComponent {
         </div>
         <ToolPanel
           executeChallenge={ executeChallenge }
+          helpChatRoom={ helpChatRoom }
           hint={ hint }
           isCodeLocked={ isCodeLocked }
           makeToast={ makeToast }
           openBugModal={ openBugModal }
-          toggleHelpChat={ toggleHelpChat }
           unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
         />
@@ -168,5 +170,5 @@ export class SidePanel extends PureComponent {
 
 export default connect(
   mapStateToProps,
-  bindableActions
+  mapDispatchToProps
 )(SidePanel);

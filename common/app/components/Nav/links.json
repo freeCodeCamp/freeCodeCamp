@@ -1,6 +1,14 @@
 [{
+  "content": "Map",
+  "link": "/map",
+  "react": true
+},{
+  "content": "Chat",
+  "link": "https://gitter.im/freecodecamp/home",
+  "target": "_blank"
+},{
   "content": "Forum",
-  "link": "http://forum.freecodecamp.com/",
+  "link": "https://forum.freecodecamp.com/",
   "target": "_blank"
 },{
   "content": "About",
