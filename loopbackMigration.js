@@ -1,7 +1,7 @@
 /* eslint-disable no-process-exit */
 require('dotenv').load();
 var Rx = require('rx'),
-  uuid = require('node-uuid'),
+  uuid = require('uuid'),
   assign = require('lodash/object/assign'),
   mongodb = require('mongodb'),
   secrets = require('../config/secrets');
