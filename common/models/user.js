@@ -1,5 +1,5 @@
 import { Observable } from 'rx';
-import uuid from 'node-uuid';
+import uuid from 'uuid';
 import moment from 'moment';
 import dedent from 'dedent';
 import debugFactory from 'debug';
