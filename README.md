@@ -64,7 +64,7 @@ We welcome pull requests from Free Code Camp campers (our students) and seasoned
 License
 -------
 
-Copyright (c) 2016 Free Code Camp.
+Copyright (c) 2017 Free Code Camp.
 
 The content of this repository bound by the following LICENSE(S)
 - The computer software is licensed under the [BSD-3-Clause](./LICENSE.md).
