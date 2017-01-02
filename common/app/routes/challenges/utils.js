@@ -1,4 +1,6 @@
 import flow from 'lodash/flow';
+
+// import { dasherize } from '../../../../server/utils'; See note at line 311
 import { bonfire, html, js } from '../../utils/challengeTypes';
 import { decodeScriptTags } from '../../../utils/encode-decode';
 import protect from '../../utils/empty-protector';
@@ -305,6 +307,52 @@ export function filterComingSoonBetaFromEntities(
 //     }]
 //   }]
 // }
+
+/* ****************************************************************************
+* dasherized will be removed when I have found a fix for an import/export issue
+* left in place to get a review on the PR
+*******************************************************************************/
+
+function dasherize(name) {
+  return ('' + name)
+    .toLowerCase()
+    .replace(/\s/g, '-')
+    .replace(/[^a-z0-9\-\.]/gi, '')
+    .replace(/\:/g, '');
+}
+
+export function updateForLang(entities) {
+  const newEntities = Object.assign({}, entities);
+  let newChallenge = {};
+  Object.keys(newEntities.challenge)
+    .map(dashedName => newEntities.challenge[dashedName])
+    .map(challenge => {
+        const { challenges } = newEntities.block[challenge.block];
+        const index = challenges.indexOf(challenge.dashedName);
+        const newDashedName = dasherize(challenge.title);
+        // update entities.block[challenge.block].challenges
+        newEntities.block[challenge.block].challenges = [
+          ...challenges.slice(0, index),
+          newDashedName,
+          ...challenges.slice(index + 1)
+        ];
+        // update entities.challenge
+        newChallenge = {
+          ...newChallenge,
+          [newDashedName]: {
+            ...challenge,
+            dashedName: newDashedName
+          }
+        };
+    });
+  return {
+    ...newEntities,
+    challenge: {
+      ...newChallenge
+    }
+  };
+}
+
 export function createMapUi(
   { superBlock: superBlockMap, block: blockMap } = {},
   superBlocks
