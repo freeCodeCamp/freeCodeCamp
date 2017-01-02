@@ -8,8 +8,8 @@
       "id": "aff0395860f5d3034dc0bfc9",
       "title": "Validate US Telephone Numbers",
       "description": [
-        "Return <code>true</code> if the passed string is a valid US phone number.",
-        "The user may fill out the form field any way they choose as long as it is a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):",
+        "Return <code>true</code> if the passed string looks like a valid US phone number.",
+        "The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):",
         "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
         "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.",
         "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -42,7 +42,7 @@
         "assert(telephoneCheck(\"1 456 789 4444\") === true, 'message: <code>telephoneCheck(\"1 456 789 4444\")</code> should return true.');",
         "assert(telephoneCheck(\"123**&!!asdf#\") === false, 'message: <code>telephoneCheck(\"123**&!!asdf#\")</code> should return false.');",
         "assert(telephoneCheck(\"55555555\") === false, 'message: <code>telephoneCheck(\"55555555\")</code> should return false.');",
-        "assert(telephoneCheck(\"(6505552368)\") === false, 'message: <code>telephoneCheck(\"(6505552368)\")</code> should return false');",
+        "assert(telephoneCheck(\"(6054756961)\") === false, 'message: <code>telephoneCheck(\"(6054756961)\")</code> should return false');",
         "assert(telephoneCheck(\"2 (757) 622-7382\") === false, 'message: <code>telephoneCheck(\"2 (757) 622-7382\")</code> should return false.');",
         "assert(telephoneCheck(\"0 (757) 622-7382\") === false, 'message: <code>telephoneCheck(\"0 (757) 622-7382\")</code> should return false.');",
         "assert(telephoneCheck(\"-1 (757) 622-7382\") === false, 'message: <code>telephoneCheck(\"-1 (757) 622-7382\")</code> should return false');",
@@ -65,8 +65,8 @@
         "es": {
           "title": "Valida Números Telefónicos de los EEUU",
           "description": [
-            "Haz que la función devuelva true (verdadero) si el texto introducido es un número válido en los EEUU.",
-            "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando sea un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
+            "Haz que la función devuelva true (verdadero) si el texto introducido parece un número válido en los EEUU.",
+            "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando tenga el formato de un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
             "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
             "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
