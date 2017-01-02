@@ -46,16 +46,37 @@ export function createTests({ tests = [] }) {
     });
 }
 
+function logReplacer(value) {
+  if (Array.isArray(value)) {
+    const replaced = value.map(logReplacer);
+    return '[' + replaced.join(', ') + ']';
+  }
+  if (typeof value === 'string' && !value.startsWith('//')) {
+    return '"' + value + '"';
+  }
+  if (typeof value === 'number' && isNaN(value)) {
+    return value.toString();
+  }
+  if (typeof value === 'undefined') {
+    return 'undefined';
+  }
+  if (value === null) {
+    return 'null';
+  }
+  if (typeof value === 'function') {
+    return value.name;
+  }
+  if (typeof value === 'object') {
+    return JSON.stringify(value, null, 2);
+  }
+
+  return value;
+}
+
 export function loggerToStr(args) {
   args = Array.isArray(args) ? args : [args];
   return args
-    .map(arg => typeof arg === 'undefined' ? 'undefined' : arg)
-    .map(arg => {
-      if (typeof arg !== 'string') {
-        return JSON.stringify(arg);
-      }
-      return arg;
-    })
+    .map(logReplacer)
     .reduce((str, arg) => str + arg + '\n', '');
 }
 
