@@ -738,12 +738,12 @@
     },
     {
       "id": "560add56cb82ac38a17513c0",
-      "title": "Configure your Code Portfolio",
+      "title": "Configure your Profile",
       "description": [
         [
           "//i.imgur.com/tP2ccTE.gif",
-          "A gif showing how you can click your profile image in your upper right hand corner to your code portfolio and connect GitHub.",
-          "Check out your code portfolio. Click your picture in your upper right hand corner. To activate your code portfolio, you'll need to link your GitHub account with Free Code Camp. Your code portfolio shows your progress and how many Brownie Points you have. You can get Brownie Points by completing challenges and by helping other campers in our chat rooms. If you get Brownie Points on several days in a row, you'll get a streak.",
+          "A gif showing how you can click your profile image in your upper right hand corner to your profile and connect GitHub.",
+          "Check out your profile. Click your picture in your upper right hand corner. To activate your profile, you'll need to link your GitHub account with Free Code Camp. Your profile shows your progress and how many Brownie Points you have. You can get Brownie Points by completing challenges and by helping other campers in our chat rooms. If you get Brownie Points on several days in a row, you'll get a streak.",
           ""
         ]
       ],
@@ -760,21 +760,21 @@
           ""
         ]
       ],
-      "titleDe": "Erstelle dein Code Portfolio",
+      "titleDe": "Erstelle dein profile",
       "descriptionDe": [
         [
           "//i.imgur.com/tP2ccTE.gif",
-          "Ein GIF das dir zeigt wie man sein Profilbild in der rechten oberen Ecke anklickt um zu deinem Code Portfolio zu gelangen und mit GitHub zu verbinden",
-          "Schau dir dein Code Portfolio an. Klick auf dein Profilbild in der rechten oberen Ecke. Um dein Portfolio zu aktivieren musst du deinen GitHub Account mit Free Code Camp verbinden. Dein Code Portfolio zeigt deinen Fortschritt und wieviele Brownie Punkte du hast. Du bekommst Brownie Punkte wenn du Aufgaben löst oder anderen Campern im Chat hilfst. Wenn du an mehreren Tagen in Folge Brownie Punkte erhälst bekommst du einen \"streak\"",
+          "Ein GIF das dir zeigt wie man sein Profilbild in der rechten oberen Ecke anklickt um zu deinem profile zu gelangen und mit GitHub zu verbinden",
+          "Schau dir dein profile an. Klick auf dein Profilbild in der rechten oberen Ecke. Um dein Portfolio zu aktivieren musst du deinen GitHub Account mit Free Code Camp verbinden. Dein profile zeigt deinen Fortschritt und wieviele Brownie Punkte du hast. Du bekommst Brownie Punkte wenn du Aufgaben löst oder anderen Campern im Chat hilfst. Wenn du an mehreren Tagen in Folge Brownie Punkte erhälst bekommst du einen \"streak\"",
           ""
         ]
       ],
-      "titleFr": "Configurer votre code portefeuille",
+      "titleFr": "Configurer votre profile",
       "descriptionFr": [
         [
           "//i.imgur.com/tP2ccTE.gif",
-          "Un gif montrant comment vous pouvez cliquez sur l'image de votre profil dans votre coin supérieur droit à votre code portefeuille et connectez GitHub.",
-          "Vérifiez votre code portefeuille. Cliquez sur votre photo dans votre coin supérieur droit. Pour activer votre code portefeuille, vous'll nécessité de lier votre compte avec code sans GitHub Camp. Votre code portefeuille affiche votre progression et combien de bons points vous avez. Vous pouvez obtenir de bons points par remplir les défis et en aidant d'autres campeurs dans nos salles de chat. Si vous obtenez Brownie Points sur plusieurs jours d'affilée, vous'll obtenez une rayure.",
+          "Un gif montrant comment vous pouvez cliquez sur l'image de votre profil dans votre coin supérieur droit à votre profile et connectez GitHub.",
+          "Vérifiez votre profile. Cliquez sur votre photo dans votre coin supérieur droit. Pour activer votre profile, vous'll nécessité de lier votre compte avec code sans GitHub Camp. Votre profile affiche votre progression et combien de bons points vous avez. Vous pouvez obtenir de bons points par remplir les défis et en aidant d'autres campeurs dans nos salles de chat. Si vous obtenez Brownie Points sur plusieurs jours d'affilée, vous'll obtenez une rayure.",
           ""
         ]
       ],
@@ -801,7 +801,7 @@
         [
           "//i.imgur.com/fTFMjwf.gif",
           "A gif showing how you can click the link below, find your city on the list of local groups.",
-          "Find your city on this list and click it. This will take you to its Facebook page. Click the \"Join group\" button. Someone from the group should approve you shortly. If your city isn't on this list, scroll to the top of the wiki article for instructions on how you can start a group in your city.",
+          "Find your city on this list and click it. This will take you to its Facebook page. Click the \"Join group\" button. Someone from the group should approve you shortly. If your city isn't on this list, don't create one until you've read the directions.",
           "http://forum.freecodecamp.com/t/free-code-camp-city-based-local-groups/19574"
         ]
       ],
@@ -820,7 +820,7 @@
         [
           "//i.imgur.com/fTFMjwf.gif",
           "Un gif mostrándote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
-          "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve. Si tu ciudad no esta en esta lista, ve al final del articulo de la wiki para ver instrucciones de como crear un campamento para tu ciudad.",
+          "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve.",
           "http://forum.freecodecamp.com/t/free-code-camp-city-based-local-groups/19574"
         ]
       ],
@@ -835,7 +835,7 @@
         [
           "//i.imgur.com/fTFMjwf.gif",
           "Ein GIF das zeigt wie du auf den untenstehenden Link klickst, deine Stadt aus der Liste aller Campsites suchst, auf den Facebook Link klickst und der Facebook Gruppe beitrittst.",
-          "Finde deine Stadt auf dieser Liste und klick sie an. Du wirst auf die Facebook Gruppe des Campsites deiner Stadt geleitet. Klick den \"Gruppe beitreten\" Button um eine Beitrittsanfrage zu stellen. Jemand aus der Gruppe sollte dich in kürzester Zeit annehmen. Falls deine Stadt nicht auf der Liste ist, scrolle zum Ende des Wiki Artikels für eine Anleitung wie du ein Campsite für deine Stadt erstellst.",
+          "Finde deine Stadt auf dieser Liste und klick sie an. Du wirst auf die Facebook Gruppe des Campsites deiner Stadt geleitet. Klick den \"Gruppe beitreten\" Button um eine Beitrittsanfrage zu stellen. Jemand aus der Gruppe sollte dich in kürzester Zeit annehmen.",
           "http://forum.freecodecamp.com/t/free-code-camp-city-based-local-groups/19574"
         ]
       ],
@@ -862,7 +862,7 @@
         [
           "//i.imgur.com/AZNLvEC.gif",
           "A gif showing how you can click the \"follow\" button to follow Free Code Camp's publication.",
-          "Our community has a popular Medium publication where we write publish tons of helpful articles about coding and technology. Once you open the link, click the \"follow\" button in the upper right hand corner. If you don't have a Medium account, you can create one in seconds.",
+          "Our community has a popular Medium publication where we publish tons of helpful articles about coding and technology. Once you open the link, click the \"follow\" button in the upper right hand corner. If you don't have a Medium account, you can create one in seconds.",
           "https://medium.freecodecamp.com"
         ]
       ],
