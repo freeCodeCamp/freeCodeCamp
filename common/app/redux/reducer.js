@@ -52,6 +52,14 @@ export default handleActions(
     [types.delayedRedirect]: (state, { payload }) => ({
       ...state,
       delayedRedirect: payload
+    }),
+    [types.openDropdown]: state => ({
+      ...state,
+      isNavDropdownOpen: true
+    }),
+    [types.closeDropdown]: state => ({
+      ...state,
+      isNavDropdownOpen: false
     })
   },
   initialState

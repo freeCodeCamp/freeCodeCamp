@@ -9,7 +9,9 @@ import {
   updateNavHeight,
   updateAppLang,
   trackEvent,
-  loadCurrentChallenge
+  loadCurrentChallenge,
+  openDropdown,
+  closeDropdown
 } from './redux/actions';
 
 import { submitChallenge } from './routes/challenges/redux/actions';
@@ -25,16 +27,20 @@ const mapDispatchToProps = {
   submitChallenge,
   updateAppLang,
   trackEvent,
-  loadCurrentChallenge
+  loadCurrentChallenge,
+  openDropdown,
+  closeDropdown
 };
 
 const mapStateToProps = createSelector(
   userSelector,
+  state => state.app.isNavDropdownOpen,
   state => state.app.isSignInAttempted,
   state => state.app.toast,
   state => state.challengesApp.toast,
   (
     { user: { username, points, picture } },
+    isNavDropdownOpen,
     isSignInAttempted,
     toast,
   ) => ({
@@ -42,6 +48,7 @@ const mapStateToProps = createSelector(
     points,
     picture,
     toast,
+    isNavDropdownOpen,
     showLoading: !isSignInAttempted,
     isSignedIn: !!username
   })
@@ -62,7 +69,10 @@ const propTypes = {
   params: PropTypes.object,
   updateAppLang: PropTypes.func.isRequired,
   trackEvent: PropTypes.func.isRequired,
-  loadCurrentChallenge: PropTypes.func.isRequired
+  loadCurrentChallenge: PropTypes.func.isRequired,
+  openDropdown: PropTypes.func.isRequired,
+  closeDropdown: PropTypes.func.isRequired,
+  isNavDropdownOpen: PropTypes.bool
 };
 
 // export plain class for testing
@@ -102,7 +112,10 @@ export class FreeCodeCamp extends React.Component {
       picture,
       updateNavHeight,
       trackEvent,
-      loadCurrentChallenge
+      loadCurrentChallenge,
+      openDropdown,
+      closeDropdown,
+      isNavDropdownOpen
     } = this.props;
     const navProps = {
       username,
@@ -110,7 +123,10 @@ export class FreeCodeCamp extends React.Component {
       picture,
       updateNavHeight,
       trackEvent,
-      loadCurrentChallenge
+      loadCurrentChallenge,
+      openDropdown,
+      closeDropdown,
+      isNavDropdownOpen
     };
 
     return (
