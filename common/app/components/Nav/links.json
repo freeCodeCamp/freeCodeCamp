@@ -1,23 +1,46 @@
-[{
-  "content": "Community",
-  "isDropdown": true,
-  "links": [{
-    "content": "About",
-    "link": "/about"
-  }, {
-    "content": "Forum",
-    "link": "https://forum.freecodecamp.com/",
-    "target": "_blank"
-  }, {
-    "content": "Chat",
-    "link": "https://gitter.im/freecodecamp/home",
-    "target": "_blank"
-  }]
-},{
-  "content": "Map",
-  "link": "/map",
-  "isReact": true
-},{
-  "content": "Shop",
-  "link": "/shop"
-}]
+[
+  {
+    "content": "Community",
+    "isDropdown": true,
+    "links": [
+      {
+        "content": "Chat",
+        "link": "https://gitter.im/freecodecamp/home",
+        "target": "_blank"
+      },
+      {
+        "content": "Forum",
+        "link": "https://forum.freecodecamp.com/",
+        "target": "_blank"
+      },
+      {
+        "content": "Medium",
+        "link": "https://medium.freecodecamp.com",
+        "target": "_blank"
+      },
+      {
+        "content": "YouTube",
+        "link": "https://youtube.com/freecodecamp",
+        "target": "_blank"
+      },
+      {
+        "content": "In your city",
+        "link": "https://forum.freecodecamp.com/t/free-code-camp-city-based-local-groups/19574",
+        "target": "_blank"
+      },
+      {
+        "content": "About",
+        "link": "/about"
+      }
+    ]
+  },
+  {
+    "content": "Map",
+    "link": "/map",
+    "isReact": true
+  },
+  {
+    "content": "Shop",
+    "link": "/shop"
+  }
+]
