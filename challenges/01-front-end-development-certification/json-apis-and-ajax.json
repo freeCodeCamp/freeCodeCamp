@@ -367,7 +367,7 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/val.imageLink/gi), 'message: You should have used the <code>imageLink</code> property to display the images.');"
+        "assert(code.match(/val\\.imageLink/gi) || code.match(/val\\[\"imageLink\"\\]/gi), 'message: You should have used the <code>imageLink</code> property to display the images.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
