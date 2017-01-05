@@ -529,7 +529,7 @@
       "title": "Pairwise",
       "description": [
         "Given an array <code>arr</code>, find element pairs whose sum equal the second argument <code>arg</code> and return the sum of their indices.",
-        "If multiple pairs are possible that have the same numeric elements but different indices, return the smallest sum of indices. Once an element has been used, it cannot be reused to pair with another.",
+        "You may use multiple pairs that have the same numeric elements but different indices. Each pair should use the lowest possible available indices. Once an element has been used it cannot be reused to pair with another element.",
         "For example <code>pairwise([7, 9, 11, 13, 15], 20)</code> returns <code>6</code>. The pairs that sum to 20 are <code>[7, 13]</code> and <code>[9, 11]</code>. We can then write out the array with their indices and values.",
         "<table class=\"table\"><tr><th><b>Index</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
         "Below we'll take their corresponding indices and add them.",
