@@ -107,7 +107,7 @@
     "react-router-redux": "^4.0.7",
     "react-youtube": "^7.0.0",
     "redux": "^3.0.5",
-    "redux-actions": "^0.13.0",
+    "redux-actions": "^1.2.0",
     "redux-create-types": "0.0.1",
     "redux-epic": "^0.1.1",
     "redux-form": "^5.2.3",
