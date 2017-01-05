@@ -25,7 +25,7 @@
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
         "You can view this Node School module's source code on GitHub at <a href='https://github.com/evanlucas/learnyoumongo'>https://github.com/evanlucas/learnyoumongo</a>.",
         "Complete \"Mongod\"",
-        "Complete \"Connect\"<br><br><strong>Note:</strong> Use the command <code>mongod --port 27017</code> in place of <code>mongod --port 27017 --dbpath=./data</code> to avoid a duplicate parameter error.<br><br><code>--dbpath=./data</code> is already included in the <code>./mongod</code> command.",
+        "Complete \"Connect\"<br><br><strong>Note:</strong> Use the command <code>mongod --port 27017 --smallfiles</code> in place of <code>mongod --port 27017 --dbpath=./data</code> to avoid a duplicate parameter error.<br><br><code>--dbpath=./data</code> is already included in the <code>./mongod</code> command.",
         "Complete \"Find\"",
         "Complete \"Find Project\"",
         "Complete \"Insert\"",
