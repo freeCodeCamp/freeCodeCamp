@@ -93,7 +93,7 @@ export const updateUserEmail = createAction(
 // updateUserLang(username: String, lang: String) => Action
 export const updateUserLang = createAction(
   types.updateUserLang,
-  (username, lang) => ({ username, lang })
+  (username, lang) => ({ username, languageTag: lang })
 );
 
 // updateUserChallenge(
