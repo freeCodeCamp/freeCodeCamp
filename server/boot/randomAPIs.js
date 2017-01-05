@@ -171,26 +171,26 @@ module.exports = function(app) {
 
   function unsubscribeAll(req, res, next) {
     req.checkParams('email', 'Must send a valid email').isEmail();
-    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
+    var query = { email: req.params.email };
+    var params = {
+      sendQuincyEmail: false,
+      sendMonthlyEmail: false,
+      sendNotificationEmail: false
+    };
+    return User.updateAll(query, params, function(err, info) {
       if (err) { return next(err); }
-      if (!user) {
+      if (info.count === 0) {
         req.flash('info', {
           msg: 'Email address not found. ' +
           'Please update your Email preferences from your profile.'
         });
         return res.redirect('/map');
-      }
-      return user.updateAttributes({
-        sendQuincyEmail: false,
-        sendMonthlyEmail: false,
-        sendNotificationEmail: false
-      }, (err) => {
-        if (err) { return next(err); }
+      } else {
         req.flash('info', {
           msg: 'We\'ve successfully updated your Email preferences.'
         });
         return res.redirect('/unsubscribed');
-      });
+      }
     });
   }
 
