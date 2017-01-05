@@ -375,7 +375,7 @@
         "The accumulator is like a total that <code>reduce</code> keeps track of after each operation. The current value is just the next element in the array you're iterating through.",
         "<code>reduce</code> has an optional second argument which can be used to set the initial value of the accumulator. If no initial value is specified it will be the first array element and <code>currentVal</code> will start with the second array element.",
         "Here is an example of <code>reduce</code> being used to subtract all the values of an array:",
-        "<blockquote>var singleVal = array.reduce(function(previousVal, currentVal) {<br>&nbsp;&nbsp;return previousVal - currentVal;<br>}, 0);</blockquote>",
+        "<blockquote>var singleVal = array.reduce(<wbr>function(previousVal, currentVal) {<br>&nbsp;&nbsp;return previousVal - currentVal;<br>}, 0);</blockquote>",
         "Use the <code>reduce</code> method to sum all the values in <code>array</code> and assign it to <code>singleVal</code>."
       ],
       "challengeSeed": [
