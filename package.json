@@ -90,7 +90,7 @@
     "pmx": "~0.6.2",
     "react": "~15.3.2",
     "react-addons-css-transition-group": "~15.4.2",
-    "react-addons-shallow-compare": "~15.3.2",
+    "react-addons-shallow-compare": "~15.4.2",
     "react-bootstrap": "^0.30.5",
     "react-codemirror": "^0.3.0",
     "react-css-transition-replace": "^1.2.0-beta",
