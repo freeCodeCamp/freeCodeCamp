@@ -71,9 +71,9 @@ export default function EmailSettings({
             bsStyle='primary'
             className={
               classnames(
-                  'positive-20',
-                  { active: sendMonthlyEmail },
-                  'btn-toggle'
+                'positive-20',
+                { active: sendMonthlyEmail },
+                'btn-toggle'
               )
             }
             onClick={ toggleMonthlyEmail }
@@ -97,9 +97,9 @@ export default function EmailSettings({
             bsStyle='primary'
             className={
               classnames(
-                  'positive-20',
-                  { active: sendNotificationEmail },
-                  'btn-toggle'
+                'positive-20',
+                { active: sendNotificationEmail },
+                'btn-toggle'
               )
             }
             onClick={ toggleNotificationEmail }
@@ -123,9 +123,9 @@ export default function EmailSettings({
             bsStyle='primary'
             className={
               classnames(
-                  'positive-20',
-                  { active: sendQuincyEmail },
-                  'btn-toggle'
+                'positive-20',
+                { active: sendQuincyEmail },
+                'btn-toggle'
               )
             }
             onClick={ toggleQuincyEmail }
