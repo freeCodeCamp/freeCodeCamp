@@ -11,7 +11,7 @@
           [
             "",
             "",
-            "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.<br><br>Sass can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to create variables, nest CSS rules into others, and import other Sass files, among other things. The result is more compact, easier to read code.<br><br>This section will introduce the basic features of Sass.",
+            "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.<br><br>Sass can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to create variables, nest CSS rules into others, and import other Sass files, among other things. The result is more compact, easier to read code.<br><br>This section introduces the basic features of Sass.",
             ""
             ]
         ],
@@ -50,8 +50,7 @@
         "<blockquote>$main-fonts: Arial, sans-serif;<br>$headings-color: green;<br><br>//To use variables:<br>h1 {<br>&nbsp;&nbsp;font-family: $main-fonts;<br>&nbsp;&nbsp;color: $headings-color;<br>}</blockquote>",
         "One example where variables are useful is when a number of elements need to be the same color. If that color is changed, the only place to edit the code is the variable value.",
         "<h4>Instructions</h4>",
-        "Create a variable <code>$text-color</code> and set it to red.",
-        "Then change the value of the <code>color</code> property for the <code>.blog-post</code> and <code>h2</code> to the <code>$text-color</code> variable."
+        "Create a variable <code>$text-color</code> and set it to red. Then change the value of the <code>color</code> property for the <code>.blog-post</code> and <code>h2</code> to the <code>$text-color</code> variable."
       ],
       "challengeSeed": [
         "<style>",
@@ -129,10 +128,10 @@
         "Sass allows <code>nesting</code> of CSS rules, which is a useful way of organizing a style sheet.",
         "Normally, each element is targeted on a different line to style it, like so:",
         "<blockquote>nav {<br>&nbsp;&nbsp;background-color: red;<br>}<br><br>nav ul {<br>&nbsp;&nbsp;list-style: none;<br>}<br><br>li {<br>&nbsp;&nbsp;display: inline-block;<br>}</blockquote>",
-        "For a large project, the CSS file will have many lines and rules. This is where <code>nesting</code> can help organize the code by placing child style rules within the respective parent elements:",
+        "For a large project, the CSS file will have many lines and rules. This is where <code>nesting</code> can help organize your code by placing child style rules within the respective parent elements:",
         "<blockquote>nav {<br>&nbsp;&nbsp;background-color: red;<br><br>&nbsp;&nbsp;ul {<br>&nbsp;&nbsp;&nbsp;&nbsp;list-style: none;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;li {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></blockquote>",
         "<h4>Instructions</h4>",
-        "Use the <code>nesting</code> technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. The <code>h1</code> should come before the <code>p</code> element."
+        "Use the <code>nesting</code> technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. For testing purposes, the <code>h1</code> should come before the <code>p</code> element."
       ],
       "challengeSeed": [
         "<style>",
@@ -207,8 +206,7 @@
         "Now any time a <code>box-shadow</code> rule is needed, only a single line calling the <code>mixin</code> replaces having to type all the vendor prefixes. A <code>mixin</code> is called with the <code>@include</code> directive:",
         "<blockquote>div {<br>&nbsp;&nbsp;@include box-shadow(0px, 0px, 4px, #fff);<br>}</blockquote>",
         "<h4>Instructions</h4>",
-        "Write a <code>mixin</code> for <code>border-radius</code> and give it a <code>$radius</code> parameter. It should use all the vendor prefixes from the example.",
-        "Then use the <code>border-radius</code> <code>mixin</code> to give the <code>#awesome</code> element a border radius of 15px."
+        "Write a <code>mixin</code> for <code>border-radius</code> and give it a <code>$radius</code> parameter. It should use all the vendor prefixes from the example. Then use the <code>border-radius</code> <code>mixin</code> to give the <code>#awesome</code> element a border radius of 15px."
       ],
       "challengeSeed": [
         "<style>",
@@ -347,12 +345,12 @@
       ],
       "description": [
         "The <code>@for</code> directive adds styles in a loop, very similar to a <code>for</code> loop in JavaScript.",
-        "<code>@for</code> is used in two ways: \"start through end\" or \"start to end\". The main difference is that \"start to end\" excludes the end number, and \"start through end\" includes the end number.",
+        "<code>@for</code> is used in two ways: \"start through end\" or \"start to end\". The main difference is that \"start to end\" <em>excludes</em> the end number, and \"start through end\" <em>includes</em> the end number.",
         "Here's a start <b>through</b> end example:",
         "<blockquote>@for $i from 1 through 12 {<br>&nbsp;&nbsp;.col-#{$i} { width: 100%/12 * $i; }<br>}</blockquote>",
-        "Note that the syntax to combine a variable with text to make a string is <code>#{$i}</code>. When the Sass file is converted to CSS, it looks like this:",
+        "The <code>#{$i}</code> part is the syntax to combine a variable (<code>i</code>) with text to make a string. When the Sass file is converted to CSS, it looks like this:",
         "<blockquote>.col-1 {<br>&nbsp;&nbsp;width: 8.33333%;<br>}<br><br>.col-2 {<br>&nbsp;&nbsp;width: 16.66667%;<br>}<br><br>...<br><br>.col-12 {<br>&nbsp;&nbsp;width: 100%;<br>}</blockquote>",
-        "This is a powerful way to create a grid layout. Now there are twelve options for column widths available as CSS classes.",
+        "This is a powerful way to create a grid layout. Now you have twelve options for column widths available as CSS classes.",
         "<h4>Instructions</h4>",
         "Write a <code>@for</code> directive that takes a variable <code>$j</code> that goes from 1 <b>to</b> 6.",
         "It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> where each has a <code>font-size</code> set to 10px multiplied by the index."
@@ -371,7 +369,7 @@
         "<p class=\"text-5\">Hello</p>"
       ],
       "tests": [
-          "assert(code.match(/@for /g), 'message: Your code should use a <code>@for</code> directive.');",
+          "assert(code.match(/@for /g), 'message: Your code should use the <code>@for</code> directive.');",
           "assert($('.text-1').css('font-size') == '10px', 'message: Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.');",
           "assert($('.text-2').css('font-size') == '20px', 'message: Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.');",
           "assert($('.text-3').css('font-size') == '30px', 'message: Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.');",
@@ -447,7 +445,7 @@
         "<div class=\"red-bg\"></div>"
       ],
       "tests": [
-          "assert(code.match(/@each /g), 'message: Your code should use an <code>@each</code> directive.');",
+          "assert(code.match(/@each /g), 'message: Your code should use the <code>@each</code> directive.');",
           "assert($('blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'message: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');",
           "assert($('black-bg').css('background-color') == 'rgb(0, 0, 0)', 'message: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');",
           "assert($('red-bg').css('background-color') == 'rgb(255, 0, 0)', 'message: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');"
@@ -521,7 +519,7 @@
         "<p class=\"text-10\">Hello</p>"
       ],
       "tests": [
-          "assert(code.match(/@while /g), 'message: Your code should use an <code>@while</code> directive.');",
+          "assert(code.match(/@while /g), 'message: Your code should use the <code>@while</code> directive.');",
           "assert(code.match(/\\$.*:\\s*?1;/gi), 'message: Your code should set an index variable to 1 to start.');",
           "assert(code.match(/\\$(.*):\\s*?\\$\\1\\s*?\\+\\s*?1;/gi), 'message: Your code should increment the counter variable.');",
           "assert($('.text-1').css('font-size') == '5px', 'message: Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.');",
@@ -578,7 +576,7 @@
       "description": [
           "<code>Partials</code> in Sass are separate files that hold segments of CSS code. These are imported and used in other Sass files. This is a great way to group similar code into a module to keep it organized.",
           "Names for <code>partials</code> start with the underscore (<code>_</code>) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file. Also, Sass files end with the <code>.scss</code> file extension. To bring the code in the <code>partial</code> into another Sass file, use the <code>@import</code> directive.",
-          "For example, if all the <code>mixins</code> are saved in a <code>partial</code> named \"_mixins.scss\", and they are needed in the \"main.scss\" file, this is how to use them in the main file:",
+          "For example, if all your <code>mixins</code> are saved in a <code>partial</code> named \"_mixins.scss\", and they are needed in the \"main.scss\" file, this is how to use them in the main file:",
           "<blockquote>// In the main.scss file<br><br>@import 'mixins'</blockquote>",
           "Note that the underscore is not needed in the <code>import</code> statement - Sass understands it is a <code>partial</code>. Once a <code>partial</code> is imported into a file, all variables, <code>mixins</code>, and other code are available to use.",
           "<h4>Instructions</h4>",
@@ -639,7 +637,7 @@
         "For example, the below block of CSS rules style a <code>.panel</code> class. It has a <code>background-color</code>, <code>height</code> and <code>border</code>.",
         "<blockquote>.panel{<br>&nbsp;&nbsp;background-color: red;<br>&nbsp;&nbsp;height: 70px;<br>&nbsp;&nbsp;border: 2px solid green;<br>}</blockquote>",
         "Now you want another panel called <code>.big-panel</code>. It has the same base properties as <code>.panel</code>, but also needs a <code>width</code> and <code>font-size</code>.",
-        "It's possible to copy and paste the initial CSS rules from <code>.panel</code>, but the code becomes repetitive as more types of panels are added.",
+        "It's possible to copy and paste the initial CSS rules from <code>.panel</code>, but the code becomes repetitive as you add more types of panels.",
         "The <code>extend</code> directive is a simple way to reuse the rules written for one element, then add more for another:",
         "<blockquote>.big-panel{<br>&nbsp;&nbsp;@extend .panel;<br>&nbsp;&nbsp;width: 150px;<br>&nbsp;&nbsp;font-size: 2em;<br>}</blockquote>",
         "The <code>.big-panel</code> will have the same properties as <code>.panel</code> in addition to the new styles.",
