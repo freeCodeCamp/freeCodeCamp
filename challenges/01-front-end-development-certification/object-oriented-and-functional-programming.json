@@ -18,7 +18,7 @@
       "title": "Declare JavaScript Objects as Variables",
       "description": [
         "Before we dive into Object Oriented Programming, let's revisit JavaScript objects.",
-        "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
+        "Give your <code>motorBike</code> object <code>wheels</code>, <code>engines</code> and <code>seats</code> attributes and set each to a number."
       ],
       "challengeSeed": [
         "var car = {",
@@ -40,7 +40,7 @@
         "var car = {\n  \"wheels\":4,\n  \"engines\":1,\n  \"seats\":5\n};\n\nvar motorBike = {\n  \"wheels\": 4,\n  \"engines\": 1,\n  \"seats\": 2\n};"
       ],
       "tests": [
-        "assert(typeof motorBike.engines === 'number', 'message: <code>motorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof motorBike.engines === 'number', 'message: <code>motorBike</code> should have an <code>engines</code> attribute set to a number.');",
         "assert(typeof motorBike.wheels === 'number', 'message: <code>motorBike</code> should have a <code>wheels</code> attribute set to a number.');",
         "assert(typeof motorBike.seats === 'number', 'message: <code>motorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
@@ -90,7 +90,7 @@
         "var Car = function() {\n  this.wheels = 4;\n  this.engines = 1;\n  this.seats = 5;\n};\n\nvar myCar = new Car();\n\nvar MotorBike = function() {\n  this.engines = 1;\n  this.seats = 1;\n  this.wheels = 4;\n};\n\nvar myMotorBike = new MotorBike();"
       ],
       "tests": [
-        "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>MotorBike</code> should have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof (new MotorBike()).engines === 'number', 'message: <code>MotorBike</code> should have an <code>engines</code> attribute set to a number.');",
         "assert(typeof (new MotorBike()).wheels === 'number', 'message: <code>MotorBike</code> should have a <code>wheels</code> attribute set to a number.');",
         "assert(typeof (new MotorBike()).seats === 'number', 'message: <code>MotorBike</code> should have a <code>seats</code> attribute set to a number.');"
       ],
