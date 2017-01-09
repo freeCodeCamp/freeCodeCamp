@@ -10,6 +10,7 @@ import {
   Navbar,
   NavbarBrand
 } from 'react-bootstrap';
+import noop from 'lodash/noop';
 
 import navLinks from './links.json';
 import AvatarPointsNavItem from './Avatar-Points-Nav-Item.jsx';
@@ -90,6 +91,8 @@ export default class FCCNav extends React.Component {
     } = this.props;
 
     if (isDropdown) {
+      // adding a noop to NavDropdown to disable false warning
+      // about controlled component
       return (
         <NavDropdown
           id={ `nav-${content}-dropdown` }
@@ -99,6 +102,7 @@ export default class FCCNav extends React.Component {
           onClose={ closeDropdown }
           onMouseEnter={ openDropdown }
           onMouseLeave={ closeDropdown }
+          onToggle={ noop }
           open={ isNavDropdownOpen }
           title={ content }
           >
