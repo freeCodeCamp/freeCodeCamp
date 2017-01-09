@@ -7,6 +7,12 @@ import { updateMyLang } from '../redux/actions';
 import { userSelector } from '../../../redux/selectors';
 import langs from '../../../../utils/supported-languages';
 
+const propTypes = {
+  fields: PropTypes.object,
+  handleSubmit: PropTypes.func.isRequired,
+  updateMyLang: PropTypes.func.isRequired
+};
+
 const mapStateToProps = createSelector(
   userSelector,
   ({ user: { languageTag } }) => ({
@@ -14,7 +20,7 @@ const mapStateToProps = createSelector(
     initialValues: languageTag ? { lang: languageTag } : null
   })
 );
-const actions = { updateMyLang };
+const mapDispatchToProps = { updateMyLang };
 const fields = [ 'lang' ];
 const validator = values => {
   if (!langs[values.lang]) {
@@ -51,11 +57,6 @@ const options = [(
 ];
 
 export class LanguageSettings extends React.Component {
-  static propTypes = {
-    fields: PropTypes.object,
-    handleSubmit: PropTypes.func.isRequired,
-    updateMyLang: PropTypes.func.isRequired
-  };
   constructor(...props) {
     super(...props);
     this.handleChange = this.handleChange.bind(this);
@@ -80,16 +81,17 @@ export class LanguageSettings extends React.Component {
 
   render() {
     const {
-      fields: { lang }
+      fields: { lang: { name, value } }
     } = this.props;
     return (
       <FormGroup>
         <FormControl
           className='btn btn-block btn-primary btn-link-social btn-lg'
           componentClass='select'
-          { ...lang }
+          name={ name }
           onChange={ this.handleChange }
           style={{ height: '45px' }}
+          value={ value }
           >
           { options }
         </FormControl>
@@ -97,6 +99,8 @@ export class LanguageSettings extends React.Component {
     );
   }
 }
+
+LanguageSettings.propTypes = propTypes;
 
 export default reduxForm(
   {
@@ -106,5 +110,5 @@ export default reduxForm(
     overwriteOnInitialValuesChange: false
   },
   mapStateToProps,
-  actions
+  mapDispatchToProps
 )(LanguageSettings);
