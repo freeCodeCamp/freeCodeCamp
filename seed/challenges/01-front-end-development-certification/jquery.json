@@ -1286,7 +1286,7 @@
       ],
       "challengeSeed": [
         "fccss",
-        "  $(document).ready(function() {",
+        "  window.onload = function() {",
         "    $(\"#target1\").css(\"color\", \"red\");",
         "    $(\"#target1\").prop(\"disabled\", true);",
         "    $(\"#target4\").remove();",
@@ -1295,7 +1295,7 @@
         "    $(\"#target1\").parent().css(\"background-color\", \"red\");",
         "    $(\"#right-well\").children().css(\"color\", \"orange\");",
         "",
-        "  });",
+        "  };",
         "fcces",
         "",
         "<!-- Only change code above this line. -->",
