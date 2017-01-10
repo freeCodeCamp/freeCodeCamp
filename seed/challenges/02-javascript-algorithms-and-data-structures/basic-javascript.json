@@ -85,7 +85,14 @@
         ""
       ],
       "tail": [
-        "if(typeof myName !== \"undefined\"){ console.log(myName); }"
+        "try {",
+        "  myName;",
+        "  console.log(\"myName is declared.\")",
+        "} catch(e) {",
+        " if(e.name == \"ReferenceError\") {",
+        "  console.log(\"myName is not declared.\");",
+        " } ",
+        "}"
       ],
       "solutions": [
         "var myName;"
