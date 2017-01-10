@@ -18,7 +18,7 @@
       "title": "Declare JavaScript Objects as Variables",
       "description": [
         "Before we dive into Object Oriented Programming, let's revisit JavaScript objects.",
-        "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
+        "Give your <code>motorBike</code> object <code>wheels</code>, <code>engines</code>, and <code>seats</code> attributes and set each to a number"
       ],
       "challengeSeed": [
         "var car = {",
