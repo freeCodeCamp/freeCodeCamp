@@ -8,7 +8,7 @@
       "id": "bd7158d8c442eddfaeb5bd17",
       "title": "Build a JavaScript Calculator",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/rLJZrA/' target='_blank'>https://codepen.io/FreeCodeCamp/full/rLJZrA/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/rLJZrA/' target='_blank'>https://codepen.io/freeCodeCamp/full/rLJZrA/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can add, subtract, multiply and divide two numbers.",
         "<strong>User Story:</strong> I can clear the input field with a clear button.",
@@ -28,7 +28,7 @@
         "es": {
           "title": "Crea una calculadora JavaScript",
           "description": [
-            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/PNKdjo/' target='_blank'>https://codepen.io/FreeCodeCamp/full/PNKdjo/</a>.",
+            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a esta: <a href='https://codepen.io/freeCodeCamp/full/PNKdjo/' target='_blank'>https://codepen.io/freeCodeCamp/full/PNKdjo/</a>.",
             "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
             "<span class='text-info'>Regla #2:</span> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que necesites. Dale tu estilo personal.",
             "<span class='text-info'>Historia de usuario:</span> Puedo sumar, restar, multiplicar y dividir dos números.",
@@ -42,7 +42,7 @@
         "pt-br": {
           "title": "Construa uma calculadora JavaScript",
           "description": [
-            "<span class='text-info'>Objetivo:</span> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/rLJZrA/' target='_blank'>https://codepen.io/FreeCodeCamp/full/rLJZrA/</a>.",
+            "<span class='text-info'>Objetivo:</span> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/freeCodeCamp/full/rLJZrA/' target='_blank'>https://codepen.io/freeCodeCamp/full/rLJZrA/</a>.",
             "<span class='text-info'>Regra #1:</span> Não veja o código do projeto de exemplo no CodePen. Encontre a sua própria forma de fazê-lo.",
             "<span class='text-info'>Regra #2:</span> Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
             "<span class='text-info'>História de usuário:</span> Eu posso somar, subtrair, multiplicar e dividir dois números.",
@@ -59,7 +59,7 @@
       "id": "bd7158d8c442eddfaeb5bd0f",
       "title": "Build a Pomodoro Clock",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/freeCodeCamp/full/aNyxXR/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.",
         "<strong>User Story:</strong> I can reset the clock for my next pomodoro.",
@@ -79,7 +79,7 @@
         "es": {
           "title": "Crea un reloj pomodoro",
           "description": [
-            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/freeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/freeCodeCamp/full/aNyxXR/</a>.",
             "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
             "<span class='text-info'>Regla #2:</span> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites. Dale tu estilo personal.",
             "<span class='text-info'>Historia de usuario:</span> Puedo iniciar un pomodoro de 25 minutos, y el cronómetro terminará cuando pasen 25 minutos.",
@@ -93,7 +93,7 @@
         "ru": {
           "title": "Создайте таймер Pomodoro",
           "description": [
-            "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+            "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='https://codepen.io/freeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/freeCodeCamp/full/aNyxXR/</a>.",
             "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
             "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
             "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
@@ -109,7 +109,7 @@
         "pt-br": {
           "title": "Construa um relógio Pomodoro",
           "description": [
-            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/freeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/freeCodeCamp/full/aNyxXR/</a>.",
             "<span class='text-info'>Regra #1:</span> Não veja o código do projeto de exemplo no CodePen. Encontre a sua própria forma de fazê-lo.",
             "<span class='text-info'>Regra #2:</span> Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
             "<span class='text-info'>História de usuário:</span> Eu posso começar um pomodoro de 25 minutos, e o temporizador desligará quando 25 minutos tiverem passado.",
@@ -125,7 +125,7 @@
       "id": "bd7158d8c442eedfaeb5bd1c",
       "title": "Build a Tic Tac Toe Game",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/KzXQgy/' target='_blank'>https://codepen.io/FreeCodeCamp/full/KzXQgy/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/KzXQgy/' target='_blank'>https://codepen.io/freeCodeCamp/full/KzXQgy/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can play a game of Tic Tac Toe with the computer.",
         "<strong>User Story:</strong> My game will reset as soon as it's over so I can play again.",
@@ -145,7 +145,7 @@
         "es": {
           "title": "Crea un juego de Tic Tac Toe",
           "description": [
-            "<span class='text-info'>Objetivo:</span> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/KzXQgy/' target='_blank'>https://codepen.io/FreeCodeCamp/full/KzXQgy/</a>.",
+            "<span class='text-info'>Objetivo:</span> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/freeCodeCamp/full/KzXQgy/' target='_blank'>https://codepen.io/freeCodeCamp/full/KzXQgy/</a>.",
             "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
             "<span class='text-info'>Regla #2:</span> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites. Dale tu estilo personal.",
             "<span class='text-info'>Historia de usuario:</span> Puedo jugar un juego de Tic Tac Toe contra el computador.",
@@ -159,7 +159,7 @@
         "pt-br": {
           "title": "Construa um Jogo da Velha",
           "description": [
-            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/freeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/freeCodeCamp/full/aNyxXR/</a>.",
             "<span class='text-info'>Regra #1:</span> Não veja o código do projeto de exemplo no CodePen. Encontre a sua própria forma de fazê-lo.",
             "<span class='text-info'>Regra #2:</span> Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
             "<span class='text-info'>História de usuário:</span> Eu posso jogar o Jogo da Velha com o computador.",
@@ -176,7 +176,7 @@
       "id": "bd7158d8c442eddfaeb5bd1c",
       "title": "Build a Simon Game",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>https://codepen.io/FreeCodeCamp/full/obYBjE</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>https://codepen.io/freeCodeCamp/full/obYBjE</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I am presented with a random series of button presses.",
         "<strong>User Story:</strong> Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.",
@@ -222,7 +222,7 @@
         "pt-br": {
           "title": "Construa um jogo de Simon",
           "description": [
-            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNyxXR/</a>.",
+            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/freeCodeCamp/full/aNyxXR/' target='_blank'>https://codepen.io/freeCodeCamp/full/aNyxXR/</a>.",
             "<span class='text-info'>Regra #1:</span> Não veja o código do projeto de exemplo no CodePen. Encontre a sua própria forma de fazê-lo.",
             "<span class='text-info'>Regra #2:</span> Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
             "<span class='text-info'>História de usuário:</span> Eu sou apresentado a uma sequência aleatória de botões para presisonar.",
