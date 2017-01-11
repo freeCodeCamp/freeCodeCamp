@@ -2355,7 +2355,7 @@
         "function capture() {",
         "    var nativeLog = console.log;",
         "    console.log = function (message) {",
-        "        if(message) logOutput = JSON.stringify(message).trim();",
+        "        logOutput = String(JSON.stringify(message, null, 2)).trim();",
         "        if(nativeLog.apply) {",
         "          nativeLog.apply(originalConsole, arguments);",
         "        } else {",
