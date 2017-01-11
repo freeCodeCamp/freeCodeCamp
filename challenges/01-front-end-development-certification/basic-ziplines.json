@@ -192,7 +192,7 @@
       "id": "bd7158d8c442eddfaeb5bd18",
       "title": "Build a Tribute Page",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/freeCodeCamp/full/NNvBQW/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can view a tribute page with an image and text.",
         "<strong>User Story:</strong> I can click on a link that will take me to an external website with further information on the topic.",
@@ -212,7 +212,7 @@
         "es": {
           "title": "Construye una página Tributo",
           "description": [
-            "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcionalmente sea similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>",
+            "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcionalmente sea similar a esta: <a href='https://codepen.io/freeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/freeCodeCamp/full/NNvBQW/</a>",
             "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
             "<strong>Historia de usuario:</strong> Puedo ver una página tributo con una imagen y texto.",
@@ -225,7 +225,7 @@
         "pt-br": {
           "title": "Construa uma Página Tributo",
           "description": [
-            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
+            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/freeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/freeCodeCamp/full/NNvBQW/</a>.",
             "Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
             "<strong>História de usuário:</strong> Eu posso ver uma página tributo com uma imagem e um texto.",
             "<strong>História de usuário:</strong> Eu posso clicar em um link que vai me levar a um site externo com mais informações sobre o tópico.",
@@ -237,7 +237,7 @@
         "ru": {
           "title": "Создайте страницу посвященную тому что вас вдохновляет",
           "description": [
-            "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
+            "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/freeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/freeCodeCamp/full/NNvBQW/</a>.",
             "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
             "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://ru.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
             "<strong>Пользовательская история:</strong> Я могу видеть на странице изображение и текст.",
@@ -253,7 +253,7 @@
       "id": "bd7158d8c242eddfaeb5bd13",
       "title": "Build a Personal Portfolio Webpage",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/FreeCodeCamp/full/YqLyXB/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/freeCodeCamp/full/YqLyXB/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
         "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
@@ -276,7 +276,7 @@
         "es": {
           "title": "Construye una página web para tu portafolio",
           "description": [
-            "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
+            "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/freeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/freeCodeCamp/full/QNmvEL/</a>.",
             "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
             "<strong>Historia de usuario:</strong> Puedo acceder a todo el contenido de la página del portafolio con sólo desplazarme en la ventana.",
@@ -293,7 +293,7 @@
         "pt-br": {
           "title": "Construa uma Página de Portfólio Pessoal",
           "description": [
-            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/FreeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/FreeCodeCamp/full/YqLyXB/</a>.",
+            "<strong>Objetivo:</strong> Construa uma aplicação em <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuja funcionalidade seja similar a esta: <a href='https://codepen.io/freeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/freeCodeCamp/full/YqLyXB/</a>.",
             "Satisfaça as seguintes <a href='https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_usu%C3%A1rio' target='_blank'>histórias de usuário</a>. Utilize qualquer biblioteca ou API que você precisar. Dê o seu próprio estilo pessoal.",
             "<strong>História de usuário:</strong> Eu posso acessar todo o conteúdo da página somente rolando o scroll do mouse.",
             "<strong>História de usuário:</strong> Eu posso clicar em diferentes botões que vão me levar a diferentes páginas de mídias sociais do criador do portfólio.",
@@ -309,7 +309,7 @@
         "ru": {
           "title": "Создайте сайт-портфолио",
           "description": [
-            "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
+            "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/freeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/freeCodeCamp/full/QNmvEL/</a>.",
             "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
             "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://ru.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
             "<strong>Пользовательская история:</strong> Я могу получить доступ ко всей информации на странице просто прокрутив ее сверху вниз.",

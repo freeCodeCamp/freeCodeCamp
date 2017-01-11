@@ -8,7 +8,7 @@
       "id": "bd7158d8c442eddfaeb5bd13",
       "title": "Build a Random Quote Machine",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/ONjoLe/' target='_blank'>https://codepen.io/FreeCodeCamp/full/ONjoLe/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/ONjoLe/' target='_blank'>https://codepen.io/freeCodeCamp/full/ONjoLe/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can click a button to show me a new random quote.",
         "<strong>User Story:</strong> I can press a button to tweet out a quote.",
@@ -27,7 +27,7 @@
         "es": {
           "title": "Crea una máquina de frases aleatorias",
           "description": [
-            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/ONjoLe/' target='_blank'>https://codepen.io/FreeCodeCamp/full/ONjoLe/</a>.",
+            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/freeCodeCamp/full/ONjoLe/' target='_blank'>https://codepen.io/freeCodeCamp/full/ONjoLe/</a>.",
             "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
             "<span class='text-info'>Regla #2:</span> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites.",
             "<span class='text-info'>Historia de usuario:</span> Puedo pulsar un botón que me mostrará una nueva frase aleatoria.",
@@ -40,7 +40,7 @@
         "ru": {
           "title": "Создайте генератор случайных цитат",
           "description": [
-            "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='https://codepen.io/FreeCodeCamp/full/ONjoLe/' target='_blank'>https://codepen.io/FreeCodeCamp/full/ONjoLe/</a>.",
+            "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='https://codepen.io/freeCodeCamp/full/ONjoLe/' target='_blank'>https://codepen.io/freeCodeCamp/full/ONjoLe/</a>.",
             "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
             "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
             "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
@@ -59,7 +59,7 @@
       "id": "bd7158d8c442eddfaeb5bd10",
       "title": "Show the Local Weather",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/FreeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELRjV</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='http://codepen.io/freeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/freeCodeCamp/full/bELRjV</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see the weather in my current location.",
         "<strong>User Story:</strong> I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.",
@@ -80,7 +80,7 @@
         "es": {
           "title": "Muestra el clima local",
           "description": [
-            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/FreeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELRjV</a>.",
+            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='http://codepen.io/freeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/freeCodeCamp/full/bELRjV</a>.",
             "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
             "<span class='text-info'>Regla #2:</span> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites.",
             "<span class='text-info'>Historia de usuario:</span> Pedo obtener información acerca del clima en mi localización actual.",
@@ -95,7 +95,7 @@
         "ru": {
           "title": "Покажите местную погоду",
           "description": [
-            "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/FreeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/FreeCodeCamp/full/bELRjV</a>.",
+            "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='http://codepen.io/freeCodeCamp/full/bELRjV' target='_blank'>http://codepen.io/freeCodeCamp/full/bELRjV</a>.",
             "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
             "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
             "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",
@@ -115,7 +115,7 @@
       "id": "bd7158d8c442eddfaeb5bd19",
       "title": "Build a Wikipedia Viewer",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/wGqEga/' target='_blank'>https://codepen.io/FreeCodeCamp/full/wGqEga/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/wGqEga/' target='_blank'>https://codepen.io/freeCodeCamp/full/wGqEga/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.",
         "<strong>User Story:</strong> I can click a button to see a random Wikipedia entry.",
@@ -137,7 +137,7 @@
         "es": {
           "title": "Crea un buscador de Wikipedia",
           "description": [
-            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/wGqEga/' target='_blank'>https://codepen.io/FreeCodeCamp/full/wGqEga/</a>.",
+            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/freeCodeCamp/full/wGqEga/' target='_blank'>https://codepen.io/freeCodeCamp/full/wGqEga/</a>.",
             "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
             "<span class='text-info'>Regla #2:</span> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites. Dale tu estilo personal.",
             "<span class='text-info'>Historia de usuario:</span> Pedo obtener información acerca del clima en mi localización actual.",
@@ -159,7 +159,7 @@
       "id": "bd7158d8c442eddfaeb5bd1f",
       "title": "Use the Twitch.tv JSON API",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/FreeCodeCamp/full/Myvqmo/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see whether Free Code Camp is currently streaming on Twitch.tv.",
         "<strong>User Story:</strong> I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
@@ -184,7 +184,7 @@
         "es": {
           "title": "Usa el API JSON de Twitch.tv",
           "description": [
-            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/FreeCodeCamp/full/Myvqmo/</a>.",
+            "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
             "<span class='text-info'>Regla #1:</span> No veas el código del proyecto de ejemplo en CodePen. Encuentra la forma de hacerlo por tu cuenta.",
             "<span class='text-info'>Regla #2:</span> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites. Dale tu estilo personal.",
             "<span class='text-info'>Historia de usuario:</span> Puedo verificar si Free Code Camp está transmitiendo actualmente en Twitch.tv",
@@ -202,7 +202,7 @@
         "ru": {
           "title": "Используйте Twitch.tv JSON API",
           "description": [
-            "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='https://codepen.io/FreeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/FreeCodeCamp/full/Myvqmo/</a>.",
+            "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
             "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
             "<span class='text-info'>Правило #2:</span> Можете использовать любые библиотеки или API, которые потребуются.",
             "<span class='text-info'>Правило #3:</span> Воссоздайте функционал приведенного примера и не стесняйтесь добавить что-нибудь от себя.",

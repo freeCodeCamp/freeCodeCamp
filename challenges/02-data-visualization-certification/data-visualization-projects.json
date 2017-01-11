@@ -8,7 +8,7 @@
       "id": "bd7168d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Bar Chart",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/FreeCodeCamp/full/vGjLVZ</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/freeCodeCamp/full/vGjLVZ</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see US Gross Domestic Product by quarter, over time.",
         "<strong>User Story:</strong> I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.",
@@ -29,7 +29,7 @@
         "es": {
           "title": "Visualiza datos utilizando un gráfico de barras",
           "description": [
-            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/FreeCodeCamp/full/vGjLVZ</a>.",
+            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/vGjLVZ' target='_blank'>https://codepen.io/freeCodeCamp/full/vGjLVZ</a>.",
             "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
             "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
@@ -47,7 +47,7 @@
       "id": "bd7178d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Scatterplot Graph",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/ONxvaa/' target='_blank'>https://codepen.io/FreeCodeCamp/full/ONxvaa/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/ONxvaa/' target='_blank'>https://codepen.io/freeCodeCamp/full/ONxvaa/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see performance time visualized in a scatterplot graph.",
         "<strong>User Story:</strong> I can mouse over a plot to see a tooltip with additional details.",
@@ -68,7 +68,7 @@
         "es": {
           "title": "Visualiza datos utilizando un gráfico de dispersión",
           "description": [
-            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/ONxvaa/' target='_blank'>https://codepen.io/FreeCodeCamp/full/ONxvaa/</a>.",
+            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/ONxvaa/' target='_blank'>https://codepen.io/freeCodeCamp/full/ONxvaa/</a>.",
             "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
             "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
@@ -86,7 +86,7 @@
       "id": "bd7188d8c242eddfaeb5bd13",
       "title": "Visualize Data with a Heat Map",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/aNLYPp/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNLYPp/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/aNLYPp/' target='_blank'>https://codepen.io/freeCodeCamp/full/aNLYPp/</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can view a heat map with data represented both on the Y and X axis.",
         "<strong>User Story:</strong> Each cell is colored based its relationship to other data.",
@@ -108,7 +108,7 @@
         "es": {
           "title": "Visualiza datos utilizando un mapa de calor",
           "description": [
-            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/aNLYPp/' target='_blank'>https://codepen.io/FreeCodeCamp/full/aNLYPp/</a>.",
+            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/aNLYPp/' target='_blank'>https://codepen.io/freeCodeCamp/full/aNLYPp/</a>.",
             "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
             "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
@@ -127,7 +127,7 @@
       "id": "bd7198d8c242eddfaeb5bd13",
       "title": "Show National Contiguity with a Force Directed Graph",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/xVopBo' target='_blank'>https://codepen.io/FreeCodeCamp/full/xVopBo</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/xVopBo' target='_blank'>https://codepen.io/freeCodeCamp/full/xVopBo</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see a Force-directed Graph that shows which countries share borders.",
         "<strong>User Story:</strong> I can see each country's flag on its node.",
@@ -149,7 +149,7 @@
         "es": {
           "title": "Muestra asociaciones utilizando un gráfico de fuerzas dirigidas",
           "description": [
-            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/KVNNXY' target='_blank'>https://codepen.io/FreeCodeCamp/full/KVNNXY</a>.",
+            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/KVNNXY' target='_blank'>https://codepen.io/freeCodeCamp/full/KVNNXY</a>.",
             "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
             "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
@@ -170,7 +170,7 @@
       "id": "bd7108d8c242eddfaeb5bd13",
       "title": "Map Data Across the Globe",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>https://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/mVEJag' target='_blank'>https://codepen.io/freeCodeCamp/full/mVEJag</a>.",
         "Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see where all Meteorites landed on a world map.",
         "<strong>User Story:</strong> I can tell the relative size of the meteorite, just by looking at the way it's represented on the map.",
@@ -192,7 +192,7 @@
         "es": {
           "title": "Mapea datos a lo largo del Globo",
           "description": [
-            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/mVEJag' target='_blank'>https://codepen.io/FreeCodeCamp/full/mVEJag</a>.",
+            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/mVEJag' target='_blank'>https://codepen.io/freeCodeCamp/full/mVEJag</a>.",
             "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
             "<strong>Regla #3:</strong> Debes utilizar D3.js para construir este proyecto.",
