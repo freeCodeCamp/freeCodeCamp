@@ -93,7 +93,7 @@
     "react-addons-shallow-compare": "~15.4.2",
     "react-bootstrap": "^0.30.5",
     "react-codemirror": "^0.3.0",
-    "react-css-transition-replace": "^1.2.0-beta",
+    "react-css-transition-replace": "^2.1.0",
     "react-dom": "~15.4.2",
     "react-fontawesome": "^1.2.0",
     "react-images": "^0.5.1",
