@@ -8,13 +8,14 @@ const mapStateToProps = state => ({ isOpen: state.challengesApp.isBugOpen });
 const actions = { createIssue, openIssueSearch, closeBugModal };
 const bugLink = 'http://forum.freecodecamp.com/t/how-to-report-a-bug/19543';
 
+const propTypes = {
+  closeBugModal: PropTypes.func,
+  createIssue: PropTypes.func,
+  isOpen: PropTypes.bool,
+  openIssueSearch: PropTypes.func
+};
+
 export class BugModal extends PureComponent {
-  static propTypes = {
-    isOpen: PropTypes.bool,
-    closeBugModal: PropTypes.func,
-    openIssueSearch: PropTypes.func,
-    createIssue: PropTypes.func
-  };
 
   render() {
     const {
@@ -80,5 +81,8 @@ export class BugModal extends PureComponent {
     );
   }
 }
+
+BugModal.displayName = 'BugModal';
+BugModal.propTypes = propTypes;
 
 export default connect(mapStateToProps, actions)(BugModal);

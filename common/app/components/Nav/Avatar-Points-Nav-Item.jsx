@@ -3,6 +3,13 @@ import { Link } from 'react-router';
 
 // this is separated out to prevent react bootstrap's
 // NavBar from injecting unknown props to the li component
+
+const propTypes = {
+  picture: PropTypes.string,
+  points: PropTypes.number,
+  username: PropTypes.string
+};
+
 export default function AvatarPointsNavItem({ picture, points, username }) {
   return (
     <li
@@ -25,8 +32,5 @@ export default function AvatarPointsNavItem({ picture, points, username }) {
   );
 }
 
-AvatarPointsNavItem.propTypes = {
-  username: PropTypes.string,
-  picture: PropTypes.string,
-  points: PropTypes.number
-};
+AvatarPointsNavItem.displayName = 'AvatarPointsNavItem';
+AvatarPointsNavItem.propTypes = propTypes;

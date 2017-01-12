@@ -27,16 +27,15 @@ const fetchOptions = {
     return Array.isArray(superBlocks) && superBlocks.length > 1;
   }
 };
-export class ShowMap extends PureComponent {
-  static displayName = 'Map';
-  static propTypes = {
-    superBlocks: PropTypes.array,
-    height: PropTypes.number,
-    updateTitle: PropTypes.func.isRequired,
-    params: PropTypes.object,
-    fetchChallenges: PropTypes.func.isRequired
-  };
+const propTypes = {
+  fetchChallenges: PropTypes.func.isRequired,
+  height: PropTypes.number,
+  params: PropTypes.object,
+  superBlocks: PropTypes.array,
+  updateTitle: PropTypes.func.isRequired
+};
 
+export class ShowMap extends PureComponent {
   componentWillMount() {
     // if no params then map is open in drawer
     // do not update title
@@ -80,6 +79,9 @@ export class ShowMap extends PureComponent {
     );
   }
 }
+
+ShowMap.displayName = 'Map';
+ShowMap.propTypes = propTypes;
 
 export default compose(
   connect(mapStateToProps, bindableActions),

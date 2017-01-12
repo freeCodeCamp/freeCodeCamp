@@ -18,21 +18,15 @@ const mapStateToProps = createSelector(
     shouldShowQuestions
   })
 );
+const propTypes = {
+  params: PropTypes.object,
+  resetUi: PropTypes.func,
+  shouldShowQuestions: PropTypes.bool,
+  title: PropTypes.string,
+  updateTitle: PropTypes.func
+};
 
-// export plain component for testing
 export class Video extends React.Component {
-  static displayName = 'Video';
-
-  static propTypes = {
-    // actions
-    resetUi: PropTypes.func,
-    // ui
-    title: PropTypes.string,
-    params: PropTypes.object,
-    shouldShowQuestions: PropTypes.bool,
-    updateTitle: PropTypes.func
-  };
-
   componentWillMount() {
     const { updateTitle, title } = this.props;
     updateTitle(title);
@@ -78,7 +72,9 @@ export class Video extends React.Component {
   }
 }
 
-// export redux aware component
+Video.displayName = 'Video';
+Video.propTypes = propTypes;
+
 export default connect(
   mapStateToProps,
   bindableActions

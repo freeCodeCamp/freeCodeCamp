@@ -2,9 +2,8 @@ import React from 'react';
 import PureComponent from 'react-pure-render/component';
 
 const mainId = 'fcc-main-frame';
-export default class extends PureComponent {
-  static displayName = 'Preview';
 
+export default class Preview extends PureComponent {
   render() {
     return (
       <div
@@ -25,3 +24,5 @@ export default class extends PureComponent {
     );
   }
 }
+
+Preview.displayName = 'Preview';

@@ -31,20 +31,15 @@ const embedOpts = {
   width: '853',
   height: '480'
 };
+const propTypes = {
+  dashedName: PropTypes.string,
+  description: PropTypes.array,
+  id: PropTypes.string,
+  toggleQuestionView: PropTypes.func,
+  videoId: PropTypes.string
+};
 
 export class Lecture extends React.Component {
-  static displayName = 'Lecture';
-
-  static propTypes = {
-    // actions
-    toggleQuestionView: PropTypes.func,
-    // ui
-    id: PropTypes.string,
-    videoId: PropTypes.string,
-    description: PropTypes.array,
-    dashedName: PropTypes.string
-  };
-
   shouldComponentUpdate(nextProps) {
     const { props } = this;
     return nextProps.id !== props.id;
@@ -110,6 +105,9 @@ export class Lecture extends React.Component {
     );
   }
 }
+
+Lecture.displayName = 'Lecture';
+Lecture.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

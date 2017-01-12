@@ -16,13 +16,13 @@ import {
 import { submitChallenge, showProjectSubmit } from '../../redux/actions';
 
 const propTypes = {
-  isSignedIn: PropTypes.bool,
-  isSubmitting: PropTypes.bool,
-  showProjectSubmit: PropTypes.func,
   fields: PropTypes.object,
   handleSubmit: PropTypes.func,
-  submitChallenge: PropTypes.func,
-  resetForm: PropTypes.func
+  isSignedIn: PropTypes.bool,
+  isSubmitting: PropTypes.bool,
+  resetForm: PropTypes.func,
+  showProjectSubmit: PropTypes.func,
+  submitChallenge: PropTypes.func
 };
 
 const bindableActions = {

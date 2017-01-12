@@ -23,21 +23,21 @@ const mapStateToProps = state => ({
   isAllCollapsed: state.challengesApp.mapUi.isAllCollapsed,
   filter: state.challengesApp.filter
 });
+const propTypes = {
+  clearFilter: PropTypes.func,
+  collapseAll: PropTypes.func,
+  expandAll: PropTypes.func,
+  filter: PropTypes.string,
+  isAllCollapsed: PropTypes.bool,
+  updateFilter: PropTypes.func
+};
+
 export class Header extends PureComponent {
   constructor(...props) {
     super(...props);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClearButton = this.handleClearButton.bind(this);
   }
-  static displayName = 'MapHeader';
-  static propTypes = {
-    isAllCollapsed: PropTypes.bool,
-    filter: PropTypes.string,
-    clearFilter: PropTypes.func,
-    updateFilter: PropTypes.func,
-    collapseAll: PropTypes.func,
-    expandAll: PropTypes.func
-  };
 
   handleKeyDown(e) {
     if (e.keyCode === ESC) {
@@ -116,4 +116,8 @@ export class Header extends PureComponent {
     );
   }
 }
+
+Header.displayName = 'MapHeader';
+Header.propTypes = propTypes;
+
 export default connect(mapStateToProps, bindableActions)(Header);

@@ -77,23 +77,22 @@ const link = 'http://forum.freecodecamp.com/t/' +
    'guidelines-for-translating-free-code-camp' +
    '-to-any-language/19111';
 
-export class Challenges extends PureComponent {
-  static displayName = 'Challenges';
+const propTypes = {
+   areChallengesLoaded: PropTypes.bool,
+   fetchChallenges: PropTypes.func.isRequired,
+   isStep: PropTypes.bool,
+   isTranslated: PropTypes.bool,
+   lang: PropTypes.string.isRequired,
+   makeToast: PropTypes.func.isRequired,
+   params: PropTypes.object.isRequired,
+   replaceChallenge: PropTypes.func.isRequired,
+   resetUi: PropTypes.func.isRequired,
+   title: PropTypes.string,
+   updateTitle: PropTypes.func.isRequired,
+   viewType: PropTypes.string
+ };
 
-  static propTypes = {
-    title: PropTypes.string,
-    viewType: PropTypes.string,
-    isStep: PropTypes.bool,
-    fetchChallenges: PropTypes.func.isRequired,
-    replaceChallenge: PropTypes.func.isRequired,
-    params: PropTypes.object.isRequired,
-    areChallengesLoaded: PropTypes.bool,
-    resetUi: PropTypes.func.isRequired,
-    updateTitle: PropTypes.func.isRequired,
-    makeToast: PropTypes.func.isRequired,
-    lang: PropTypes.string.isRequired,
-    isTranslated: PropTypes.bool
-  };
+export class Challenges extends PureComponent {
 
   componentWillMount() {
     const { lang, isTranslated, makeToast } = this.props;
@@ -152,6 +151,9 @@ export class Challenges extends PureComponent {
     );
   }
 }
+
+Challenges.displayName = 'Challenges';
+Challenges.propTypes = propTypes;
 
 export default compose(
   connect(mapStateToProps, bindableActions),

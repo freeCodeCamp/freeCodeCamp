@@ -32,25 +32,25 @@ const options = {
   gutters: ['CodeMirror-lint-markers']
 };
 
+const defaultProps = {
+  content: '// Happy Coding!',
+  mode: 'javascript'
+};
+
+const propTypes = {
+  content: PropTypes.string,
+  executeChallenge: PropTypes.func,
+  height: PropTypes.number,
+  mode: PropTypes.string,
+  updateFile: PropTypes.func
+};
+
 export class Editor extends PureComponent {
   constructor(...args) {
     super(...args);
     this._editorContent$ = new Subject();
     this.handleChange = this.handleChange.bind(this);
   }
-  static displayName = 'Editor';
-  static propTypes = {
-    executeChallenge: PropTypes.func,
-    height: PropTypes.number,
-    content: PropTypes.string,
-    mode: PropTypes.string,
-    updateFile: PropTypes.func
-  };
-
-  static defaultProps = {
-    content: '// Happy Coding!',
-    mode: 'javascript'
-  };
 
   createOptions = createSelector(
     state => state.options,
@@ -147,5 +147,10 @@ export class Editor extends PureComponent {
     );
   }
 }
+
+Editor.defaultProps = defaultProps;
+Editor.displayName = 'Editor';
+Editor.propTypes = propTypes;
+
 
 export default connect(mapStateToProps)(Editor);

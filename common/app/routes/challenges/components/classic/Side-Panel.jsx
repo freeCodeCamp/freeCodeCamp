@@ -60,26 +60,23 @@ const mapStateToProps = createSelector(
     helpChatRoom
   })
 );
+const propTypes = {
+  description: PropTypes.arrayOf(PropTypes.string),
+  executeChallenge: PropTypes.func,
+  height: PropTypes.number,
+  helpChatRoom: PropTypes.string,
+  hint: PropTypes.string,
+  isCodeLocked: PropTypes.bool,
+  makeToast: PropTypes.func,
+  openBugModal: PropTypes.func,
+  output: PropTypes.string,
+  tests: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string,
+  unlockUntrustedCode: PropTypes.func,
+  updateHint: PropTypes.func
+};
 
 export class SidePanel extends PureComponent {
-  static displayName = 'SidePanel';
-
-  static propTypes = {
-    description: PropTypes.arrayOf(PropTypes.string),
-    height: PropTypes.number,
-    helpChatRoom: PropTypes.string,
-    hint: PropTypes.string,
-    isCodeLocked: PropTypes.bool,
-    output: PropTypes.string,
-    tests: PropTypes.arrayOf(PropTypes.object),
-    title: PropTypes.string,
-
-    executeChallenge: PropTypes.func,
-    openBugModal: PropTypes.func,
-    makeToast: PropTypes.func,
-    unlockUntrustedCode: PropTypes.func,
-    updateHint: PropTypes.func
-  };
 
   renderDescription(description = [ 'Happy Coding!' ]) {
     return description.map((line, index) => {
@@ -173,6 +170,9 @@ export class SidePanel extends PureComponent {
     );
   }
 }
+
+SidePanel.displayName = 'SidePanel';
+SidePanel.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,

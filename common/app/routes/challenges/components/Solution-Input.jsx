@@ -2,6 +2,11 @@ import React, { PropTypes } from 'react';
 import { HelpBlock, FormGroup, FormControl } from 'react-bootstrap';
 import { getValidationState, DOMOnlyProps } from '../../../utils/form';
 
+const propTypes = {
+  placeholder: PropTypes.string,
+  solution: PropTypes.object
+};
+
 export default function SolutionInput({ solution, placeholder }) {
   const validationState = getValidationState(solution);
   return (
@@ -24,7 +29,5 @@ export default function SolutionInput({ solution, placeholder }) {
   );
 }
 
-SolutionInput.propTypes = {
-  solution: PropTypes.object,
-  placeholder: PropTypes.string
-};
+SolutionInput.displayName = 'SolutionInput';
+SolutionInput.propTypes = propTypes;

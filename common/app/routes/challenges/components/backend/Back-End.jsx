@@ -19,19 +19,23 @@ import {
   createFormValidator
 } from '../../../../utils/form.js';
 
-const propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.arrayOf(PropTypes.string),
-  tests: PropTypes.array,
-  output: PropTypes.string,
-  executeChallenge: PropTypes.func.isRequired,
-  submitChallenge: PropTypes.func.isRequired,
-  // provided by redux form
-  submitting: PropTypes.bool,
+// provided by redux form
+const reduxFormPropTypes = {
   fields: PropTypes.object,
+  handleSubmit: PropTypes.func.isRequired,
   resetForm: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  submitting: PropTypes.bool
+};
+
+const propTypes = {
+  description: PropTypes.arrayOf(PropTypes.string),
+  executeChallenge: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  output: PropTypes.string,
+  submitChallenge: PropTypes.func.isRequired,
+  tests: PropTypes.array,
+  title: PropTypes.string,
+  ...reduxFormPropTypes
 };
 
 const fields = [ 'solution' ];
