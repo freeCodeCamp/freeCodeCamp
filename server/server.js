@@ -50,12 +50,12 @@ app.start = _.once(function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(
-      'FreeCodeCamp server listening on port %d in %s',
+      'freeCodeCamp server listening on port %d in %s',
       app.get('port'),
       app.get('env')
     );
     if (isBeta) {
-      console.log('Free Code Camp is in beta mode');
+      console.log('freeCodeCamp is in beta mode');
     }
   });
 });

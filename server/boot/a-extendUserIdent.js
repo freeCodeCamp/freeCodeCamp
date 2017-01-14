@@ -56,7 +56,7 @@ export default function({ models }) {
 Your GitHub is already associated with another account.
 You may have accidentally created a duplicate account.
 No worries, though. We can fix this real quick.
-Please email us with your GitHub username: team@freecodecamp.com.
+Please email us with your GitHub username: team@freeCodeCamp.com.
               `.split('/n').join(' ')
             )
           );

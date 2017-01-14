@@ -87,7 +87,7 @@
       "description": [
         "We are going to cover what constitutes a variable, and the reasoning behind camelCase.",
         "A variable also referred to as 'var', is the name or placeholder for a boolean, string, number, or another piece of static information.",
-        "You can use Google Dev Tools to inspect the Free Code Camp home page and look for some variables.",
+        "You can use Google Dev Tools to inspect the freeCodeCamp home page and look for some variables.",
         "You 'declare' variables the first time with 'var' in front of it, but those can be referenced later in your script.",
         "camelCase is the way that JavaScript pushes words together and still keeps them legible. The first letter of the first word is lowercase, along with the remainder of the word, but the first letter of every consecutive word is capitalized. There are no spaces. Examples: brianaLovesHerPets, bestFoodIsCheese, and codeIsWorthLearning.",
         "When you name variables, utilize camelCase. Also try to keep the names descriptive and short so that others (and yourself!) can tell what that variable is referring to just by the name."
@@ -115,7 +115,7 @@
           "description": [
             "Vamos a cubrir lo que constituye una variable, y el razonamiento detrás de la capitalizaciónCamello (<em>camelCase</em>).",
             "Una variable, también conocida como una 'var', es el nombre o el espacio para un booleano, una cadena, un número, u otra pieza de información estática.",
-            "Puedes usar las Herramientas de desarrollo de Google para inspeccionar la página principal de FreeCodeCamp y buscar algunas variables.",
+            "Puedes usar las Herramientas de desarrollo de Google para inspeccionar la página principal de freeCodeCamp y buscar algunas variables.",
             "Tu 'declaras' variables por primera vez con <code>var</code> en frente de ella, pero después puedes referenciarla más adelante en tu programa.",
             "capitalizaciónCamello es una forma en la que juntas varias palabras y aún así las mantienes legibles. La primera letra de la primera palabra va en minúsculas al igual que el resto de la primera palabra, pero la primera letra de cada palabra que siga se escribe en mayúsculas. No hay espacios. Ejemplos: brianaAmaSusMascotas, laMejorComidaEsElQueso, y valeLaPenaAprenderProgramacion.",
             "Al asignar un nombre de variable, usa capitalizaciónCamello. Además, trata de mantener los nombres descriptivos y cortos para que los demás (¡e incluso tu!) puedan entender a lo que se refiere la variable simplemente por el nombre."
@@ -209,7 +209,7 @@
         "I'd suggest looking through the MDN (Mozilla Developer Network that we discussed in the first video) to familiarize yourself with the sheer amount and general potential for the methods that exist. <a href='http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index' target='_blank'>developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Methods_Index</a>",
         "Examples include '.split(' ')', which will turn a string into an array and can do so in many different ways. Methods are powerful - many times when you want your script to do something, there's a method for that.",
         "Functions, like variables, are something you define and create.",
-        "During your algorithm practice at Free Code Camp, you will create functions that take a certain piece of information and manipulate it in whatever way you choose.",
+        "During your algorithm practice at freeCodeCamp, you will create functions that take a certain piece of information and manipulate it in whatever way you choose.",
         "You'll become more familiar with syntax there, but for now, just remember that with methods and functions you can do almost anything with your code."
       ],
       "challengeSeed": [
@@ -237,7 +237,7 @@
             "Me gustaría sugerirte dar un vistazo a MDN (Mozilla Developer Network que discutimos en el primer video) para que te familiarices con la cantidad y el potencial general de los métodos que existen. <a href='http://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Methods_Index' target='_blank'>developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Methods_Index</a>",
             "Los ejemplos incluyen <code>.split (' ')</code>, que convertirá una cadena en un vector y puede hacerlo de muchas maneras diferentes. Los métodos son de gran alcance - muchas veces cuando quieres que tu programa haga algo, ya habrá un método para eso.",
             "Las funciones, al igual que las variables, son algo que tu defines y creas.",
-            "Durante tu práctica con algoritmos en FreeCodeCamp, vas a crear funciones que reciben una determinada pieza de información y la manipulan de la forma que elijas.",
+            "Durante tu práctica con algoritmos en freeCodeCamp, vas a crear funciones que reciben una determinada pieza de información y la manipulan de la forma que elijas.",
             "Vas a estar más familiarizado con la sintaxis, pero por ahora, sólo recuerda que con los métodos y funciones puedes hacer casi cualquier cosa con tu código."
           ]
         }
@@ -250,7 +250,7 @@
         "There is a static object named 'Math' in JS with many built in properties and methods.",
         "You'll want to investigate this further whenever you're manipulating numbers. Check MDN documentation before writing your own functions, because they may already be defined there.",
         "Examples include Math.random() which will return a random number in a given range and Math.round() which will round the input to the nearest integer.",
-        "I used Math.random() when I built the random quote generator for the Free Code Camp front end development project.",
+        "I used Math.random() when I built the random quote generator for the freeCodeCamp front end development project.",
         "When you're working with numbers, you should also be aware that JS has an interesting attribute called 'floating-point format'.",
         "Depending on the amount of numbers, the size of those numbers, and the number of computations, JS may return something that is inaccurate by .00004.",
         "There are ways around this, and in general it doesn't pose issues, but it's something you should be aware of in the event you run into some problems that aren't making sense."
@@ -278,7 +278,7 @@
             "Hay un objeto estático de nombre 'Math' en JS con muchos propiedades y métodos incluidos.",
             "Vas a querer investigar más de este cuando manipules números. Consulta la documentación de MDN antes de escribir tus propias funciones, pues ya podrían estar definidas allí. ",
             "Los ejemplos incluyen <code>Math.random()</code> que devolverá un número aleatorio en un rango y <code>Math.round()</code> que redondeará el número decimal que reciba al entero más cercano.",
-            "Yo utilicé <code>Math.random()</code> cuando construí el generador de citas aleatorias como proyecto de desarrollo de interfaces en FreeCodeCamp.",
+            "Yo utilicé <code>Math.random()</code> cuando construí el generador de citas aleatorias como proyecto de desarrollo de interfaces en freeCodeCamp.",
             "Cuando trabajes con números, también debes estar consciente de que JS tiene un atributo interesante llamado 'formato de coma flotante'.",
             "Dependiendo de la cantidad de números, su tamaño y la cantidad de cálculos, JS puede devolver un número que es inexacto en 0,00004.",
             "Hay maneras de evitar esto, y en general no plantean problemas, pero es algo que debes tener en cuenta si te encuentras con algunos problemas que parecen no tienen sentido."
