@@ -601,7 +601,7 @@ module.exports = function(User) {
             type: 'email',
             to: user.email,
             from: 'Team@freecodecamp.com',
-            subject: 'Free Code Camp - Authentication Request!',
+            subject: 'freeCodeCamp - Authentication Request!',
             text: renderAuthEmail({
               loginEmail,
               loginToken
