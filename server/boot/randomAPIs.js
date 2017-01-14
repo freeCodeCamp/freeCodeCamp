@@ -93,7 +93,7 @@ module.exports = function(app) {
 
   function showTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy Free Code Camp Students ' +
+      title: 'Testimonials from Happy freeCodeCamp Students ' +
         'who got Software Engineer Jobs',
       stories: testimonials.slice(0, 72),
       moreStories: true
@@ -102,7 +102,7 @@ module.exports = function(app) {
 
   function showAllTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy Free Code Camp Students ' +
+      title: 'Testimonials from Happy freeCodeCamp Students ' +
         'who got Software Engineer Jobs',
       stories: testimonials,
       moreStories: false
@@ -111,7 +111,7 @@ module.exports = function(app) {
 
   function showShop(req, res) {
     res.render('resources/shop', {
-      title: 'Support Free Code Camp by Buying t-shirts, ' +
+      title: 'Support freeCodeCamp by Buying t-shirts, ' +
         'stickers, and other goodies'
     });
   }
