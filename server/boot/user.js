@@ -232,7 +232,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/signin', {
-      title: 'Sign in to Free Code Camp'
+      title: 'Sign in to freeCodeCamp'
     });
   }
 
@@ -247,7 +247,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/deprecated-signin', {
-      title: 'Sign in to Free Code Camp using a Deprecated Login'
+      title: 'Sign in to freeCodeCamp using a Deprecated Login'
     });
   }
 
@@ -265,7 +265,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/email-signin', {
-      title: 'Sign in to Free Code Camp using your Email Address'
+      title: 'Sign in to freeCodeCamp using your Email Address'
     });
   }
 
@@ -274,7 +274,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/email-signup', {
-      title: 'Sign up for Free Code Camp using your Email Address'
+      title: 'Sign up for freeCodeCamp using your Email Address'
     });
   }
 
