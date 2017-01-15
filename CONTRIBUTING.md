@@ -1,8 +1,8 @@
 # Contributor's Guide
 
-We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
+We welcome pull requests from freeCodeCamp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
-1. Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/FreeCodeCamp/FreeCodeCamp/labels/help%20wanted) tag.
+1. Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/freeCodeCamp/freeCodeCamp/labels/help%20wanted) tag.
 
 2. Let us know you are working on it by posting a comment on the issue.
 
@@ -20,7 +20,7 @@ Remember to feel free to ask for help in our [Contributors](https://gitter.im/Fr
 - [Forking The Project](#forking-the-project)
 - [Create A Branch](#create-a-branch)
 - [Setup Linting](#setup-linting)
-- [Setup FreeCodeCamp](#setup-freecodecamp)
+- [Setup freeCodeCamp](#setup-freecodecamp)
 - [Make Changes](#make-changes)
 - [Run The Test Suite](#run-the-test-suite)
 - [Squash Your Commits](#squash-your-commits)
@@ -58,19 +58,19 @@ If your versions are lower than the prerequisite versions, you should update.
 2. (Optional) [Setup an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 3. Create a parent projects directory on your system. For this guide, it will be assumed that it is `/mean/`
 
-#### Forking FreeCodeCamp
+#### Forking freeCodeCamp
 
-1. Go to the top level Free Code Camp repository: <https://github.com/FreeCodeCamp/freecodecamp>
+1. Go to the top level freeCodeCamp repository: <https://github.com/freeCodeCamp/freeCodeCamp>
 2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
-3. After the repository has been forked, you will be taken to your copy of the FCC repo at `yourUsername/freecodecamp`
+3. After the repository has been forked, you will be taken to your copy of the FCC repo at `yourUsername/freeCodeCamp`
 
 #### Cloning Your Fork
 
 1. Open a Terminal / Command Line / Bash Shell in your projects directory (_i.e.: `/yourprojectdirectory/`_)
-2. Clone your fork of FreeCodeCamp
+2. Clone your fork of freeCodeCamp
 
 ```shell
-$ git clone https://github.com/yourUsername/FreeCodeCamp.git
+$ git clone https://github.com/yourUsername/freeCodeCamp.git
 ```
 
 ##### (make sure to replace `yourUsername` with your GitHub Username)
@@ -79,11 +79,11 @@ This will download the entire FCC repo to your projects directory.
 
 #### Setup Your Upstream
 
-1. Change directory to the new FreeCodeCamp directory (`cd FreeCodeCamp`)
+1. Change directory to the new freeCodeCamp directory (`cd freeCodeCamp`)
 2. Add a remote to the official FCC repo:
 
 ```shell
-$ git remote add upstream https://github.com/FreeCodeCamp/FreeCodeCamp.git
+$ git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
 ```
 
 Congratulations, you now have a local copy of the FCC repo!
@@ -152,13 +152,13 @@ $ git push origin [name_of_your_new_branch]
 
 ### Setup Linting
 
-You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [Free Code Camp's JavaScript Style Guide](http://forum.freecodecamp.com/t/free-code-camp-javascript-style-guide/19121) (you can find a summary of those rules [here](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/.eslintrc)).
+You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.com/t/free-code-camp-javascript-style-guide/19121) (you can find a summary of those rules [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/.eslintrc)).
 
 > Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base.
 
 
-### Setup FreeCodeCamp
-Once you have FreeCodeCamp cloned, before you start the application, you first need to install all of the dependencies:
+### Setup freeCodeCamp
+Once you have freeCodeCamp cloned, before you start the application, you first need to install all of the dependencies:
 
 ```bash
 # Install NPM dependencies
@@ -193,7 +193,7 @@ Now you will need to start MongoDB, and then seed the database, then you can sta
 # Start the mongo server in a separate terminal
 mongod
 
-# Initialize Free Code Camp
+# Initialize freeCodeCamp
 # This will seed the database for the first time.
 # This command should only be run once.
 npm run only-once
@@ -205,20 +205,20 @@ gulp
 Now navigate to your browser and open
 <http://localhost:3000>. If the app loads,
 congratulations – you're all set. Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
- 
+
  ```bash
  # Remove all installed node modules
  rm -rf node_modules
- 
+
  # Reinstall npm packages
  npm install
- 
+
  # Re-run bower install
  bower install
- 
+
  # Seed the database (optional)
  node seed
- 
+
  # Re-start the application
  gulp
  ```
@@ -226,7 +226,7 @@ congratulations – you're all set. Otherwise, let us know by asking in the [Con
 ### Make Changes
 This bit is up to you!
 
-#### How to find the code in the Free Code Camp codebase to fix/edit?
+#### How to find the code in the freeCodeCamp codebase to fix/edit?
 
 The best way to find out any code you wish to change/add or remove is using
 the GitHub search bar at the top of the repository page. For example, you could
@@ -262,14 +262,14 @@ To do this, see [Squashing Your Commits](http://forum.freecodecamp.com/t/how-to-
 
 #### What is a Pull Request?
 
-A pull request (PR) is a method of submitting proposed changes to the Free Code
-Camp Repo (or any Repo, for that matter). You will make changes to copies of the
-files which make up Free Code Camp in a personal fork, then apply to have them
-accepted by Free Code Camp proper.
+A pull request (PR) is a method of submitting proposed changes to the freeCodeCamp
+Repo (or any Repo, for that matter). You will make changes to copies of the
+files which make up freeCodeCamp in a personal fork, then apply to have them
+accepted by freeCodeCamp proper.
 
 #### Need Help?
 
-Free Code Camp Issue Mods and staff are on hand to assist with Pull Request
+freeCodeCamp Issue Mods and staff are on hand to assist with Pull Request
 related issues in our [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors).
 
 #### Important: ALWAYS EDIT ON A BRANCH
@@ -282,7 +282,7 @@ fork and re-fork.
 
 #### Methods
 
-There are two methods of creating a pull request for Free Code Camp:
+There are two methods of creating a pull request for freeCodeCamp:
 
 -   Editing files on a local clone (recommended)
 -   Editing files via the GitHub Interface
@@ -290,7 +290,7 @@ There are two methods of creating a pull request for Free Code Camp:
 ##### Method 1: Editing via your Local Fork _(Recommended)_
 
 This is the recommended method. Read about [How to Setup and Maintain a Local
-Instance of Free Code Camp](#maintaining-your-fork).
+Instance of freeCodeCamp](#maintaining-your-fork).
 
 1.  Perform the maintenance step of rebasing `staging`.
 2.  Ensure you are on the `staging` branch using `git status`:
@@ -347,7 +347,7 @@ for further information
 
 3.  Submit a [pull
     request](http://forum.freecodecamp.com/t/how-to-contribute-via-a-pull-request/19368)
-    from your branch to Free Code Camp's `staging` branch.
+    from your branch to freeCodeCamp's `staging` branch.
 
 4.  The title (also called the subject) of your PR should be descriptive of your
     changes and succinctly indicates what is being fixed.
@@ -370,7 +370,7 @@ for further information
 
 ### How We Review and Merge Pull Requests
 
-Free Code Camp has a team of volunteer Issue Moderators. These Issue Moderators routinely go through open pull requests in a process called [Quality Assurance](https://en.wikipedia.org/wiki/Quality_assurance) (QA).
+freeCodeCamp has a team of volunteer Issue Moderators. These Issue Moderators routinely go through open pull requests in a process called [Quality Assurance](https://en.wikipedia.org/wiki/Quality_assurance) (QA).
 
 1. If an Issue Moderator QA's a pull request and confirms that the new code does what it is supposed without seeming to introduce any new bugs, they will comment "LGTM" which means "Looks good to me."
 
@@ -423,7 +423,7 @@ Be sure to post in the PR conversation that you have made the requested changes.
 -   [Select Issues for Contributing Using
     Labels](http://forum.freecodecamp.com/t/free-code-camp-issue-labels/19556)
 
--   [How to clone the FreeCodeCamp website on a Windows
+-   [How to clone the freeCodeCamp website on a Windows
     pc](http://forum.freecodecamp.com/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
 
 -   [How to log in to your local FCC site - using
