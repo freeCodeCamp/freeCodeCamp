@@ -1,15 +1,15 @@
-![FreeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
+![freeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
 [![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
 
 [![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
-[![Build Status](https://travis-ci.org/FreeCodeCamp/FreeCodeCamp.svg?branch=staging)](https://travis-ci.org/FreeCodeCamp/FreeCodeCamp)
+[![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
 
-Welcome to Free Code Camp's open source codebase and curriculum!
+Welcome to freeCodeCamp's open source codebase and curriculum!
 =======================
 
-Free Code Camp is a friendly open source community where you learn to code and help nonprofits.
+freeCodeCamp is a friendly open source community where you learn to code and help nonprofits.
 
 **We help our campers build job-worthy portfolios of real apps used by real people, while helping nonprofits.**
 
@@ -43,7 +43,7 @@ For this certification, you'll work on **two projects from scratch** and then **
 
 ---
 
-This code is running live at [FreeCodeCamp.com](https://www.freecodecamp.com). We also have [Gitter chat rooms](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](https://medium.freecodecamp.com), an [interactive forum](https://forum.freecodecamp.com), a [wiki knowledgebase](https://forum.freecodecamp.com/c/wiki), and even a [YouTube channel](https://youtube.com/freecodecamp).
+This code is running live at [freeCodeCamp.com](https://www.freecodecamp.com). We also have [Gitter chat rooms](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](https://medium.freecodecamp.com), an [interactive forum](https://forum.freecodecamp.com), a [wiki knowledgebase](https://forum.freecodecamp.com/c/wiki), and even a [YouTube channel](https://youtube.com/freecodecamp).
 
 ### [Join our community here](https://www.freecodecamp.com/signin).
 
@@ -59,13 +59,13 @@ Do not file an issue until you have followed these steps:
 Contributing
 ------------
 
-We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
+We welcome pull requests from freeCodeCamp campers (our students) and seasoned JavaScript developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
 
 License
 -------
 
-Copyright (c) 2017 Free Code Camp.
+Copyright (c) 2017 freeCodeCamp.
 
 The content of this repository bound by the following LICENSE(S)
 - The computer software is licensed under the [BSD-3-Clause](./LICENSE.md).
-- The curricular content as in the `./seed/challenges` or subdirectories and our wiki are licensed under the [CC-BY-SA-4.0](./LICENCE-Free-Code-Camp-Curriculum.md)
+- The curricular content as in the `./seed/challenges` or subdirectories and our wiki are licensed under the [CC-BY-SA-4.0](./LICENSE-freeCodeCamp-Curriculum.md)
