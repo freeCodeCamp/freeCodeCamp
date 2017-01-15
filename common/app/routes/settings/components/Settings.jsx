@@ -150,7 +150,7 @@ export class Settings extends React.Component {
               className='btn-link-social'
               href={ '/signout' }
               >
-              Sign me out of Free Code Camp
+              Sign me out of freeCodeCamp
             </Button>
             <Button
               block={ true }
@@ -269,7 +269,7 @@ export class Settings extends React.Component {
               className='btn-link-social'
               href='/delete-my-account'
               >
-              Delete my Free Code Camp account
+              Delete my freeCodeCamp account
             </Button>
             <Button
               block={ true }
