@@ -8,17 +8,21 @@ import { Col } from 'react-bootstrap';
 
 import MapHeader from './Header.jsx';
 import SuperBlock from './Super-Block.jsx';
-import { fetchChallenges } from '../../redux/actions';
-import { updateTitle } from '../../../../redux/actions';
+import WikiSuperBlock from './wiki/WikiSuperBlock.jsx';
 
-const bindableActions = { fetchChallenges, updateTitle };
+import { fetchChallenges } from '../../redux/actions';
+import { fetchWiki, updateTitle } from '../../../../redux/actions';
+
+const bindableActions = { fetchChallenges, fetchWiki, updateTitle };
 const mapStateToProps = createSelector(
   state => state.app.windowHeight,
   state => state.app.navHeight,
   state => state.challengesApp.superBlocks,
-  (windowHeight, navHeight, superBlocks) => ({
+  state => state.entities.wiki,
+  (windowHeight, navHeight, superBlocks, wiki) => ({
     superBlocks,
-    height: windowHeight - navHeight - 150
+    height: windowHeight - navHeight - 150,
+    isWikiLoaded: Object.keys(wiki).length > 0
   })
 );
 const fetchOptions = {
@@ -34,7 +38,9 @@ export class ShowMap extends PureComponent {
     height: PropTypes.number,
     updateTitle: PropTypes.func.isRequired,
     params: PropTypes.object,
-    fetchChallenges: PropTypes.func.isRequired
+    fetchChallenges: PropTypes.func.isRequired,
+    fetchWiki: PropTypes.func.isRequired,
+    isWikiLoaded: PropTypes.bool
   };
 
   componentWillMount() {
@@ -46,6 +52,11 @@ export class ShowMap extends PureComponent {
     this.props.updateTitle(
       'A Map to Learn to Code and Become a Software Engineer'
     );
+  }
+  componentDidMount() {
+    if (!this.props.isWikiLoaded) {
+      this.props.fetchWiki();
+    }
   }
 
   renderSuperBlocks(superBlocks) {
@@ -74,6 +85,7 @@ export class ShowMap extends PureComponent {
           style={{ height: height }}
           >
           { this.renderSuperBlocks(superBlocks) }
+          <WikiSuperBlock />
           <div className='spacer' />
         </div>
       </Col>

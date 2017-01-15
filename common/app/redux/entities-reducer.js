@@ -6,8 +6,21 @@ const initialState = {
   superBlock: {},
   block: {},
   challenge: {},
-  user: {}
+  user: {},
+  wiki: {}
 };
+
+const blocksReducer = handleActions(
+  {
+    [types.updateBlock]: (state, { payload }) => ({
+      ...state,
+      block: payload
+    }),
+    [types.updateSuperBlock]: (state, { payload }) => ({
+      ...state,
+      superBlock: payload
+    })
+  }, initialState);
 
 const userReducer = handleActions(
   {
@@ -78,6 +91,21 @@ const userReducer = handleActions(
   initialState.user
 );
 
+const wikiReducer = handleActions(
+  {
+    [types.updateWiki]:
+    (
+      state,
+      { payload: { wikiMap, wikiTopics } }
+    ) => ({
+      ...state,
+      wikiMap,
+      wikiTopics
+    })
+  },
+  initialState.wiki
+);
+
 function metaReducer(state = initialState, action) {
   if (action.meta && action.meta.entities) {
     return {
@@ -91,8 +119,19 @@ function metaReducer(state = initialState, action) {
 export default function entitiesReducer(state, action) {
   const newState = metaReducer(state, action);
   const user = userReducer(newState.user, action);
+  const wiki = wikiReducer(newState.wiki, action);
+  const blocks = blocksReducer(newState, action);
   if (newState.user !== user) {
     return { ...newState, user };
+  }
+  if (newState.wiki !== wiki) {
+    return { ...newState, wiki };
+  }
+  if (
+    newState.block !== blocks.block ||
+    newState.superBlock !== blocks.superBlock
+  ) {
+    return { ...newState, ...blocks };
   }
   return newState;
 }

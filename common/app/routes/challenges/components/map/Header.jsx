@@ -39,6 +39,10 @@ export class Header extends PureComponent {
     expandAll: PropTypes.func
   };
 
+  componentWillUnmount() {
+    this.props.clearFilter();
+  }
+
   handleKeyDown(e) {
     if (e.keyCode === ESC) {
       e.preventDefault();

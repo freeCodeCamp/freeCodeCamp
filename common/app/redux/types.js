@@ -37,5 +37,12 @@ export default createTypes([
 
   // nav
   'openDropdown',
-  'closeDropdown'
+  'closeDropdown',
+
+  // wiki
+  'fetchWiki',
+  'updateWiki',
+
+  'updateBlock',
+  'updateSuperBlock'
 ], 'app');

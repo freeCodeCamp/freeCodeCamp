@@ -150,3 +150,9 @@ export const addThemeToBody = createAction(types.addThemeToBody);
 
 export const openDropdown = createAction(types.openDropdown, noop);
 export const closeDropdown = createAction(types.closeDropdown, noop);
+
+export const fetchWiki = createAction(types.fetchWiki);
+export const updateWiki = createAction(types.updateWiki);
+
+export const updateBlock = createAction(types.updateBlock);
+export const updateSuperBlock = createAction(types.updateSuperBlock);
