@@ -1322,7 +1322,7 @@
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "// Example",
-        "var ourName = \"Free Code Camp\";",
+        "var ourName = \"freeCodeCamp\";",
         "var ourStr = \"Hello, our name is \" + ourName + \", how are you?\";",
         "",
         "// Only change code below this line",
@@ -1379,7 +1379,7 @@
       "challengeSeed": [
         "// Example",
         "var anAdjective = \"awesome!\";",
-        "var ourStr = \"Free Code Camp is \";",
+        "var ourStr = \"freeCodeCamp is \";",
         "ourStr += anAdjective;",
         "",
         "// Only change code below this line",
@@ -1405,7 +1405,7 @@
         "})();"
       ],
       "solutions": [
-        "var anAdjective = \"awesome!\";\nvar ourStr = \"Free Code Camp is \";\nourStr += anAdjective;\n\nvar someAdjective = \"neat\";\nvar myStr = \"Learning to code is \";\nmyStr += someAdjective;"
+        "var anAdjective = \"awesome!\";\nvar ourStr = \"freeCodeCamp is \";\nourStr += anAdjective;\n\nvar someAdjective = \"neat\";\nvar myStr = \"Learning to code is \";\nmyStr += someAdjective;"
       ],
       "tests": [
         "assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, 'message: <code>someAdjective</code> should be set to a string at least 3 characters long');",
@@ -4055,7 +4055,7 @@
         "The above outputs \"Hello\" to the console, returns \"World\", but <code>\"byebye\"</code> is never output, because the function exits at the <code>return</code> statement.",
         "<h4>Instructions</h4>",
         "Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.",
-        "<strong>Hint</strong><br>Remember that <a href='http://www.freecodecamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string."
+        "<strong>Hint</strong><br>Remember that <a href='http://www.freeCodeCamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4099,7 +4099,7 @@
             "Esta presenta en consola \"Hola\", retorna \"Mundo\", pero <code>\"chaochao\"</code> nunca se presenta, porque la función sale con la sentencia <code>return</code>.",
             "<h4>Instrucciones</h4>",
             "Modifica la función <code>abTest</code> de manera que si <code>a</code> o <code>b</code> son menores que <code>0</code> la función saldrá inmediatamente con un valor <code>undefined</code>.",
-            "<strong>Pista</strong><br>Recuerda que <a href='http://www.freecodecamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> es una palabra clave</a>, no una cadena."
+            "<strong>Pista</strong><br>Recuerda que <a href='http://www.freeCodeCamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> es una palabra clave</a>, no una cadena."
           ]
         }
       }
@@ -4420,7 +4420,7 @@
         "  \"name\": \"Coder\",",
         "  \"legs\": 4,",
         "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"]",
+        "  \"friends\": [\"freeCodeCamp Campers\"]",
         "};",
         "",
         "// Only change code below this line.",
@@ -4431,7 +4431,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        "var myDog = {\n  \"name\": \"Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"]\n};\nmyDog.name = \"Happy Coder\";"
+        "var myDog = {\n  \"name\": \"Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"freeCodeCamp Campers\"]\n};\nmyDog.name = \"Happy Coder\";"
       ],
       "tests": [
         "assert(/happy coder/gi.test(myDog.name), 'message: Update <code>myDog</code>&apos;s <code>\"name\"</code> property to equal \"Happy Coder\".');",
@@ -4489,7 +4489,7 @@
         "  \"name\": \"Happy Coder\",",
         "  \"legs\": 4,",
         "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"]",
+        "  \"friends\": [\"freeCodeCamp Campers\"]",
         "};",
         "",
         "// Only change code below this line.",
@@ -4499,7 +4499,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        "var myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"]\n};\nmyDog.bark = \"Woof Woof\";"
+        "var myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"freeCodeCamp Campers\"]\n};\nmyDog.bark = \"Woof Woof\";"
       ],
       "tests": [
         "assert(myDog.bark !== undefined, 'message: Add the property <code>\"bark\"</code> to <code>myDog</code>.');",
@@ -4547,7 +4547,7 @@
         "  \"name\": \"Happy Coder\",",
         "  \"legs\": 4,",
         "  \"tails\": 1,",
-        "  \"friends\": [\"Free Code Camp Campers\"],",
+        "  \"friends\": [\"freeCodeCamp Campers\"],",
         "  \"bark\": \"woof\"",
         "};",
         "",
@@ -4559,7 +4559,7 @@
         "(function(z){return z;})(myDog);"
       ],
       "solutions": [
-        "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
+        "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"freeCodeCamp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
       ],
       "tests": [
         "assert(typeof myDog === \"object\" && myDog.tails === undefined, 'message: Delete the property <code>\"tails\"</code> from <code>myDog</code>.');",
@@ -5809,7 +5809,7 @@
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>.",
-        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href='http://forum.freecodecamp.com/t/challenge-generate-random-whole-numbers-within-a-range/18187' target='_blank'>here</a>):",
+        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href='http://forum.freeCodeCamp.com/t/challenge-generate-random-whole-numbers-within-a-range/18187' target='_blank'>here</a>):",
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "challengeSeed": [
@@ -5966,7 +5966,7 @@
             "Ahora vamos a tratar de combinar algunas de las cosas que hemos aprendido para crear la lógica de una máquina tragamonedas.",
             "Para esto tendremos que generar tres números aleatorios entre <code>1</code> y <code>3</code> que representen los valores posibles de cada casilla.",
             "Guarda los tres números aleatorios en <code>slotOne</code>, <code>slotTwo</code> y <code>slotThree</code>.",
-            "Genera los números aleatorios utilizando el sistema que usamos anteriormente (puedes encontrar una explicación de la fórmula <a href=\"http://forum.freecodecamp.com/t/challenge-generate-random-whole-numbers-within-a-range/18187\">aquí</a>):",
+            "Genera los números aleatorios utilizando el sistema que usamos anteriormente (puedes encontrar una explicación de la fórmula <a href=\"http://forum.freeCodeCamp.com/t/challenge-generate-random-whole-numbers-within-a-range/18187\">aquí</a>):",
             "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
           ]
         }
