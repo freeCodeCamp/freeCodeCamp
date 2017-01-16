@@ -507,9 +507,9 @@
       "id": "bad87fee1348cd8acef08811",
       "title": "Taste the Bootstrap Button Color Rainbow",
       "description": [
-        "The <code>btn-primary</code> class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.",
-        "Add Bootstrap's <code>btn-primary</code> class to your button.",
-        "Note that this button will still need the <code>btn</code> and <code>btn-block</code> classes."
+        "The <code>btn-primary</code> class styles the app elements it is applied to as the primary action on a page.",
+        "Add Bootstrap's <code>btn-primary</code> class to your <code>Like</code> button.",
+        "Note that the <code>Like</code> button will still need the <code>btn</code> and <code>btn-block</code> classes."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -572,8 +572,8 @@
         "</div>"
       ],
       "tests": [
-        "assert($(\"button\").hasClass(\"btn-primary\"), 'message: Your button should have the class <code>btn-primary</code>.');",
-        "assert($(\"button\").hasClass(\"btn-block\") && $(\"button\").hasClass(\"btn\"), 'message: Your button should still have the <code>btn</code> and <code>btn-block</code> classes.');",
+        "assert($(\"button\").first().hasClass(\"btn-primary\"), 'message: Your <code>Like</code> button should have the class <code>btn-primary</code>.');",
+        "assert($(\"button\").first().hasClass(\"btn-block\") && $(\"button\").first().hasClass(\"btn\"), 'message: Your <code>Like</code> button should still have the <code>btn</code> and <code>btn-block</code> classes.');",
         "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure all your <code>button</code> elements have a closing tag.');"
       ],
       "type": "waypoint",
