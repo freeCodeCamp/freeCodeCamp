@@ -1,0 +1,1204 @@
+{
+  "name": "Quality Assurance and Testing with Chai",
+  "order": 2,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d824a367417b2b2512c46",
+      "title": "Learn How JavaScript Assertions Work",
+      "description": [
+        "Use assert.isNull() or assert.isNotNull() to make the tests pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isNull vs. isNotNull",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {  assert.equal(data.assertions[0].method, 'isNull', 'Null is null'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isNull vs. isNotNull",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {  assert.equal(data.assertions[1].method, 'isNotNull', '1 is not null'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824b367417b2b2512c47",
+      "title": "Test whether a Variable or Function is Defined",
+      "description": [
+        "Use assert.isDefined() or assert.isUndefined() to make the tests pass"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isDefined vs. isUndefined",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[0].method, 'isDefined', 'Null is not undefined'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isDefined vs. isUndefined",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[1].method, 'isUndefined', 'Undefined is undefined'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isDefined vs. isUndefined",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[2].method, 'isDefined', 'A string is not undefined'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824b367417b2b2512c48",
+      "title": "Use Assert.isOK and Assert.isNotOK",
+      "description": [
+        "Use assert.isOk() or assert.isNotOk() to make the tests pass.",
+        ".isOk(truthy) and .isNotOk(falsey) will pass."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isOk vs. isNotOk",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[0].method, 'isNotOk', 'Null is falsey'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isOk vs. isNotOk",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[1].method, 'isOk','A string is truthy'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isOk vs. isNotOk",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[2].method, 'isOk', 'true is truthy'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824b367417b2b2512c49",
+      "title": "Test for Truthiness",
+      "description": [
+        "Use assert.isTrue() or assert.isNotTrue() to make the tests pass.",
+        ".isTrue(true) and .isNotTrue(everything else) will pass.",
+        ".isFalse() and .isNotFalse() also exist."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isTrue vs. isNotTrue",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[0].method, 'isTrue', 'True is true'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isTrue vs. isNotTrue",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[1].method, 'isTrue', 'Double negation of a truthy value is true'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isTrue vs. isNotTrue",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[2].method, 'isNotTrue', 'A truthy object is not true - neither is a false one'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824b367417b2b2512c4a",
+      "title": "Use the Double Equals to Assert Equality",
+      "description": [
+        ".equal(), .notEqual()",
+        ".equal() compares objects using '=='"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - equal vs. notEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[0].method, 'equal', 'Numbers are coerced into strings with == '); }, xhr => { throw new Error(xhr.responseText); })"
+
+        },
+        {
+          "text": "Choose the right assertion - equal vs. notEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[1].method, 'notEqual', ' == compares object references'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - equal vs. notEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[2].method, 'equal', '6 * \\'2\\' is 12 ! It should be equal to \\'12\\''); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - equal vs. notEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[3].method, 'notEqual', '6 + \\'2\\' is \\'62\\'...'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824b367417b2b2512c4b",
+      "title": "Use the Triple Equals to Assert Strict Equality",
+      "description": [
+        ".strictEqual(), .notStrictEqual()",
+        ".strictEqual() compares objects using '==='"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - strictEqual vs. notStrictEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {  assert.equal(data.assertions[0].method, 'notStrictEqual', 'with strictEqual the type must match'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - strictEqual vs. notStrictEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {  assert.equal(data.assertions[1].method, 'strictEqual', '3*2 = 6...'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - strictEqual vs. notStrictEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {  assert.equal(data.assertions[2].method, 'strictEqual', '6 * \\'2\\' is 12. Types match !'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - strictEqual vs. notStrictEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=5').then(data => {  assert.equal(data.assertions[3].method, 'notStrictEqual', 'Even if they have the same elements, the Arrays are notStrictEqual'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824c367417b2b2512c4c",
+      "title": "Assert Deep Equality with .deepEqual and .notDeepEqual",
+      "description": [
+        ".deepEqual(), .notDeepEqual()",
+        ".deepEqual() asserts that two object are deep equal"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - deepEqual vs. notDeepEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {  assert.equal(data.assertions[0].method, 'deepEqual', 'The order of the keys does not matter'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - deepEqual vs. notDeepEqual",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {  assert.equal(data.assertions[1].method, 'notDeepEqual', 'The position of elements within an array does matter'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824c367417b2b2512c4d",
+      "title": "Compare the Properties of Two Elements",
+      "description": [
+        ".isAbove() => a > b , .isAtMost() => a <= b"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isAbove vs. isAtMost",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[0].method, 'isAtMost', '5 is at most (<=) 5'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isAbove vs. isAtMost",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[1].method, 'isAbove', '1 is greater than 0'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isAbove vs. isAtMost",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[2].method, 'isAbove', 'Math.PI = 3.14159265 is greater than 3'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isAbove vs. isAtMost",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[3].method, 'isAtMost', '1 - Math.random() is > 0 and <= 1. It is atMost 1 !'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824c367417b2b2512c4e",
+      "title": "Test whether one Value is Below or At Least as Large as Another",
+      "description": [
+        ".isBelow() => a < b , .isAtLeast =>  a >= b"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isBelow vs. isAtLeast",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isAtLeast', '5 is at least (>=) 5'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isBelow vs. isAtLeast",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isAtLeast', '2 * Math.random() is at least 0'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isBelow vs. isAtLeast",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isBelow', '1 is smaller than 2'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isBelow vs. isAtLeast",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isBelow', '2/3 (0.6666) is smaller than 1'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824c367417b2b2512c4f",
+      "title": "Test whether a Value Falls within a Specific Range",
+      "description": [
+        ".approximately",
+        ".approximately(actual, expected, range, [message])",
+        "actual = expected +/- range",
+        "Choose the minimum range (3rd parameter) to make the test always pass",
+        "it should be less than 1"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Use approximately(actual, expected, range) - Chose the correct range",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[0].method, 'isApproximately', 'weirdNumbers(0.5) is in the range (0.5, 1.5]. It\\'s within 1 +/- 0.5');  assert.equal(data.assertions[0].args[2], 0.5); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Use approximately(actual, expected, range) - Chose the correct range",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[1].method, 'isApproximately');  assert.equal(data.assertions[1].args[2], 0.8, 'weirdNumbers(0.2) is in the range (0.2, 1.2] It\\'s within 1 +/- 0.8'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824d367417b2b2512c50",
+      "title": "Test whether a Value is an Array",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isArray vs. isNotArray",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[0].method, 'isArray', 'String.prototype.split() returns an Array'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isArray vs. isNotArray",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[1].method, 'isNotArray', 'Array.prototype.indexOf() returns a number'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824d367417b2b2512c51",
+      "title": "Test whether an Array Contains an Item",
+      "description": [],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - include vs. notInclude",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[0].method, 'notInclude', 'It\\'s summer in july...'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - include vs. notInclude",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[1].method, 'include', 'JavaScript is a backend language !!'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824d367417b2b2512c52",
+      "title": "Test whether a Value is a String",
+      "description": [
+        "#isString asserts that the actual value is a string."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isString vs. isNotString",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[0].method, 'isNotString', 'A float number is not a string'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isString vs. isNotString",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[1].method, 'isString', 'environment vars are strings (or undefined)'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - isString vs. isNotString",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[2].method, 'isString', 'A JSON is a string'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824d367417b2b2512c53",
+      "title": "Test whether a String Contains a Substring",
+      "description": [
+        "#include (on #notInclude ) works for strings too !!",
+        "It asserts that the actual string contains the expected substring"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - include vs. notInclude",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[0].method, 'include', '\\'Arrow\\' contains \\'row\\'...'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - include vs. notInclude",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[1].method, 'notInclude', '... a \\'dart\\' doesn\\'t contain a \\'queue\\''); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824d367417b2b2512c54",
+      "title": "Use Regular Expressions to Test a String",
+      "description": [
+        "#match Asserts that the actual value",
+        "matches the second argument regular expression."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - match vs. notMatch",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(data => {  assert.equal(data.assertions[0].method, 'match', '\\'# name: John Doe, age: 35\\' matches the regex'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - match vs. notMatch",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(data => {  assert.equal(data.assertions[1].method, 'notMatch', '\\'# name: Paul Smith III, age: twenty-four\\' does not match the regex (the age must be numeric)'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824e367417b2b2512c55",
+      "title": "Test whether an Object has a Property",
+      "description": [
+        "#property asserts that the actual object has a given property.",
+        "Use #property or #notProperty where appropriate"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - property vs. notProperty",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[0].method, 'notProperty', 'A car has not wings'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - property vs. notProperty",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[1].method, 'property', 'planes have engines'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - property vs. notProperty",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[2].method, 'property', 'Cars have wheels'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824e367417b2b2512c56",
+      "title": "Test whether a Value is of a Specific Data Structure Type",
+      "description": [
+        "#typeOf asserts that value’s type is the given string, as determined by Object.prototype.toString.",
+        "Use #typeOf or #notTypeOf where appropriate"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - typeOf vs. notTypeOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[0].method, 'typeOf', 'myCar is typeOf Object'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - typeOf vs. notTypeOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[1].method, 'typeOf', 'Car.model is a String'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - typeOf vs. notTypeOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[1].method, 'notTypeOf', 'Plane.wings is a Number (not a String)'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - typeOf vs. notTypeOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[3].method, 'typeOf', 'Plane.engines is an Array'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - typeOf vs. notTypeOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[4].method, 'typeOf', 'Car.wheels is a Number'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824e367417b2b2512c57",
+      "title": "Test whether an Object is an Instance of a Constructor",
+      "description": [
+        "#instanceOf asserts that an object is an instance of a constructor.",
+        "Use #instanceOf or #notInstanceOf where appropriate"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - instanceOf vs. notInstanceOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[0].method, 'notInstanceOf', 'myCar is not an instance of Plane'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - instanceOf vs. notInstanceOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[1].method, 'instanceOf', 'airlinePlane is an instance of Plane'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - instanceOf vs. notInstanceOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[2].method, 'instanceOf', 'everything is an Object in JavaScript...'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "Choose the right assertion - instanceOf vs. notInstanceOf",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[3].method, 'notInstanceOf', 'myCar.wheels is not an instance of String'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824e367417b2b2512c58",
+      "title": "Run Functional Tests on API Endpoints using Chai-HTTP",
+      "description": [
+        "Replace assert.fail(). Test the status and the text.response. Make the test pass.",
+        "Don't send a name in the query, the endpoint with responds with 'hello Guest'."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.status' == 200",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(data => { assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.text' == 'hello Guest'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(data => { assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.text'); assert.equal(data.assertions[1].args[1], '\\'hello Guest\\'');}, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824f367417b2b2512c59",
+      "title": "Run Functional Tests on API Endpoints using Chai-HTTP II",
+      "description": [
+        "Replace assert.fail(). Test the status and the text.response. Make the test pass.",
+        "Send you name in the query appending ?name=<your_name>, the endpoint with responds with 'hello <your_name>'."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.status' == 200",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(data => { assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.text' == 'hello Guest'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=1').then(data => { assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.text'); assert.match(data.assertions[1].args[1], /hello [\\w\\d_-]/);}, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824f367417b2b2512c5a",
+      "title": "Run Functional Tests on an API Response using Chai-HTTP III - PUT method",
+      "description": [
+        "In the next example we'll see how to send data in a request payload (body).",
+        "We are going to test a PUT request. The '/travellers' endpoint accepts",
+        "a JSON object taking the structure :",
+        " {surname: [last name of a traveller of the past]} ,",
+        "The route responds with :",
+        " {name: [first name], surname:[last name], dates: [birth - death years]}",
+        "see the server code for more details.",
+        "Send {surname: 'Colombo'}. Replace assert.fail() and make the test pass.",
+        "Check for 1) status, 2) type, 3) body.name, 4) body.surname",
+        "Follow the assertion order above, We rely on it."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.status' to be 200",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.type' to be 'application/json'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.type'); assert.equal(data.assertions[1].args[1], '\\'application/json\\'');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.body.name' to be 'Cristoforo'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.equal(data.assertions[2].args[1], '\\'Cristoforo\\'');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.body.surname' to be 'Colombo'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.equal(data.assertions[3].args[1], '\\'Colombo\\'');}, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824f367417b2b2512c5b",
+      "title": "Run Functional Tests on an API Response using Chai-HTTP IV - PUT method redux",
+      "description": [
+        "This exercise is similar to the preceding. Look at it for the details.",
+        "Send {surname: 'da Verrazzano'}. Replace assert.fail() and make the test pass.",
+        "Check for 1) status, 2) type, 3) body.name, 4) body.surname",
+        "Follow the assertion order above, We rely on it."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.status' to be 200",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[0].method, 'equal'); assert.equal(data.assertions[0].args[0], 'res.status'); assert.equal(data.assertions[0].args[1], '200');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.type' to be 'application/json'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[1].method, 'equal'); assert.equal(data.assertions[1].args[0], 'res.type'); assert.equal(data.assertions[1].args[1], '\\'application/json\\'');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.body.name' to be 'Giovanni'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.equal(data.assertions[2].args[1], '\\'Giovanni\\'');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "You should test for 'res.body.surname' to be 'da Verrazzano'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.equal(data.assertions[3].args[1], '\\'da Verrazzano\\'');}, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d824f367417b2b2512c5c",
+      "title": "Run Functional Tests using a Headless Browser",
+      "description": [
+        "In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.",
+        "A headless browser is a web browser without a graphical user interface. These kind of tools are particularly useful for testing web pages as they are able to render and understand HTML, CSS, and JavaScript the same way a browser would.",
+        "For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Hyperdev. There are many other (more powerful) options.<br>",
+        "Look at the examples in the code for the exercise directions Follow the assertions order, We rely on it."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "assert that the headless browser request succeded",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[0].method, 'browser.success'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "assert that the text inside the element 'span#name' is 'Cristoforo'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Cristoforo\\'');}, xhr => { throw new Error(xhr.responseText); })"
+
+        },
+        {
+          "text": "assert that the text inside the element 'span#surname' is 'Colombo'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Colombo\\'');}, xhr => { throw new Error(xhr.responseText); })"
+
+        },
+        {
+          "text": "assert that the element 'span#dates' exist and its count is 1",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.responseText); })"
+
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d8250367417b2b2512c5d",
+      "title": "Run Functional Tests using a Headless Browser II",
+      "description": [
+        "This exercise is similar to the preceding.",
+        "Look at  the code for directions. Follow the assertions order, We rely on it."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All tests should pass",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": " assert that the headless browser request succeded",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[0].method, 'browser.success'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "assert that the text inside the element 'span#name' is 'Amerigo'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Amerigo\\'');}, xhr => { throw new Error(xhr.responseText); })"
+
+        },
+        {
+          "text": "assert that the text inside the element 'span#surname' is 'Vespucci'",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Vespucci\\'');}, xhr => { throw new Error(xhr.responseText); })"
+
+        },
+        {
+          "text": "assert that the element 'span#dates' exist and its count is 1",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.responseText); })"
+
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

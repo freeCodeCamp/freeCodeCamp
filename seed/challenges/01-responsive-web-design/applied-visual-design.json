@@ -1,0 +1,3766 @@
+{
+  "name": "Applied Visual Design",
+  "order": 1,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d7790367417b2b2512ab2",
+      "title": "Introduction to the Applied Visual Design Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "Visual Design in web development is a broad topic. It combines typography, color theory, graphics, animation, and page layout to help deliver a site's message. The definition of good design is a well-discussed subject, with many books on the theme.<br><br>At a basic level, most web content provides a user with information. The visual design of the page can influence its presentation and a user's experience. In web development, HTML gives structure and semantics to a page's content, and CSS controls the layout and appearance of it.<br><br>This section covers some of the basic tools developers use to create their own visual designs.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
+      "id": "587d7791367417b2b2512ab3",
+      "title": "Create Visual Balance Using the Text-align Property",
+      "description": [
+        "This section of the curriculum focuses on Applied Visual Design. The first group of challenges build on the given card layout to show a number of core principles.",
+        "Text is often a large part of web content. CSS has several options for how to align it with the <code>text-align</code> property.",
+        "<h4>Instructions</h4>",
+        "Align the <code>h4</code> tag's text, which says \"Google\", to the center. Then justify the paragraph tag which contains information about how Google was founded. Finally, align the two anchor tags to the left by using the <code>links</code> class selector.",
+        "<strong>Note</strong><br>When you align the two anchor tags, you will see no difference. This is because text is aligned to the left by default."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    ",
+        "  }",
+        "  p {",
+        "    ",
+        "  }",
+        "  .links {",
+        "    margin-right: 20px;",
+        "    ",
+        "  }",
+        "  .fullCard {",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <h4>Google</h4>",
+        "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('h4').css('text-align') == 'center', 'message: Your code should use the text-align property on the <code>h4</code> tag to set it to center.');",
+        "assert($('p').css('text-align') == 'justify', 'message: Your code should use the text-align property on the <code>p</code> tag to set it to justify.');",
+        "assert($('.links').css('text-align') == 'left', 'message: Your code should use the text-align property on the <code>a</code> tags by accessing their class <code>links</code> to set it to left.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7791367417b2b2512ab4",
+      "title": "Adjust the Width of an Element Using the Width Property",
+      "description": [
+        "You can specify the width of an element using the <code>width</code> property in CSS. Values can be given in relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:",
+        "<blockquote>img {<br>  width: 220px;<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Add a <code>width</code> property to the entire card and set it to an absolute value of 245px. Use the <code>fullCard</code> class to select the element."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    margin-right: 20px;",
+        "    text-align: left;",
+        "  }",
+        "  .fullCard {",
+        "    ",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <h4>Google</h4>",
+        "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('.fullCard').css('width') == '245px', 'message: Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7791367417b2b2512ab5",
+      "title": "Adjust the Height of an Element Using the Height Property",
+      "description": [
+        "You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:",
+        "<blockquote>img {<br>  height: 20px;<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Add a <code>height</code> property to the <code>h4</code> tag and set it to 40px."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    ",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    margin-right: 20px;",
+        "    text-align: left;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <h4>Google</h4>",
+        "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('h4').css('height') == '40px', 'message: Your code should change the <code>h4</code> <code>height</code> property to a value of 40 pixels.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7791367417b2b2512ab6",
+      "title": "Create Visual Balance with the Height of an Element",
+      "description": [
+        "This challenge changes the layout of the links by stacking them to look more like a list.",
+        "To keep everything balanced, you can make sure every element's width and height makes sense in that context.",
+        "<h4>Instructions</h4>",
+        "Change the <code>height</code> of the <code>h4</code> tag to 25px to make the card more compact and a little cleaner."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    height: 40px;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <h4>Google</h4>",
+        "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('h4').css('height') == '25px', 'message: Your code should change the <code>h4</code> height value to 25 pixels.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781a367417b2b2512ab7",
+      "title": "Use the Strong Tag to Make Text Bold",
+      "description": [
+        "To make text bold, you can use the <code>strong</code> tag. This is often used to draw attention to text and symbolize that it is important. With the <code>strong</code> tag, the browser applies the CSS of <code>font-weight: bold;</code> to the element.",
+        "<h4>Instructions</h4>",
+        "Wrap a <code>strong</code> tag around the entire <code>h4</code> element and its contents."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    height: 25px;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <h4>Google</h4>",
+        "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('strong').length == 1, 'message: Your code should add one <code>strong</code> tag to the markup.');",
+        "assert($('strong').children('h4').length == 1, 'message: The <code>strong</code> tag should wrap around the <code>h4</code> tag and its contents.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781a367417b2b2512ab8",
+      "title": "Use the u Tag to Underline Text",
+      "description": [
+        "To underline text, you can use the <code>u</code> tag. This is often used to signify that a section of text is important, or something to remember. With the <code>u</code> tag, the browser applies the CSS of <code>text-decoration: underline;</code> to the element.",
+        "<h4>Instructions</h4>",
+        "Wrap the <code>u</code> tag around the two anchor tags. It should not include the parent <code>div</code> that has the class of <code>cardLinks</code>.",
+        "<strong>Note</strong><br>Try to avoid using the <code>u</code> tag when it could be confused for a link. Anchor tags also have a default underlined formatting."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    height: 25px;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Google</h4></strong>",
+        "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('u').length == 1, 'message: Your code should add a <code>u</code> tag to the markup.');",
+        "assert($('u').children('a').length == 2, 'message: The <code>u</code> tag should wrap around and contain the two <code>a</code> tags.');",
+        "assert($('u').children('div').length == 0, 'message: The <code>u</code> tag should not wrap around the parent <code>div</code> tag.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781a367417b2b2512ab9",
+      "title": "Use the em Tag to Italicize Text",
+      "description": [
+        "To emphasize text, you can use the <code>em</code> tag. This displays text as italicized, as the browser applies the CSS of <code>font-style: italic;</code> to the element.",
+        "<h4>Instructions</h4>",
+        "Wrap an <code>em</code> tag around the paragraph tag to give it emphasis."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    height: 25px;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Google</h4></strong>",
+        "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('em').length == 1, 'message: Your code should add an <code>em</code> tag to the markup.');",
+        "assert($('em').children('p').length == 1, 'message: The <code>em</code> tag should wrap around the <code>p</code> tag and its contents.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781b367417b2b2512aba",
+      "title": "Use the del Tag to Strikethrough Text",
+      "description": [
+        "To strikethrough text, which is when a horizontal line cuts across the characters, you can use the <code>del</code> tag. It shows that a section of text is no longer valid. With the <code>del</code> tag, the browser applies the CSS of <code>text-decoration: line-through;</code> to the element.",
+        "<h4>Instructions</h4>",
+        "Wrap the <code>del</code> tag around \"Google\" inside the <code>h4</code> tag and then add the word Alphabet beside it, which should not have the strikethrough formatting."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    height: 25px;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Google</h4></strong>",
+        "      <em><p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p></em>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('del').length == 1, 'message: Your code should add one <code>del</code> tag to the markup.');",
+        "assert($('del').text().match(/Google/gi) && !$('del').text().match(/Alphabet/gi), 'message: A <code>del</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.');",
+        "assert($('h4').html().match(/Alphabet/gi), 'message: Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781b367417b2b2512abb",
+      "title": "Create a Horizontal Line Using the hr Element",
+      "description": [
+        "You can use the <code>hr</code> tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.",
+        "<h4>Instructions</h4>",
+        "Add an <code>hr</code> tag underneath the <code>h4</code> which contains the card title.",
+        "<strong>Note</strong><br>In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    height: 25px;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4><del>Google</del>Alphabet</h4></strong>",
+        "      ",
+        "      <em><p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p></em>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('hr').length == 1, 'message: Your code should add an <code>hr</code> tag to the markup.');",
+        "assert(code.match(/<\\/strong>\\s*?<hr(>|\\s*?\\/>)\\s*?<em>/gi), 'message: The <code>hr</code> tag should come between the title and the paragraph.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781b367417b2b2512abc",
+      "title": "Adjust the Background-color Property of Text",
+      "description": [
+        "Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a <code>background-color</code> to the element holding the text you want to emphasize. This challenge uses <code>rgba()</code> instead of <code>hex</code> codes or normal <code>rgb()</code>.",
+        "<blockquote>rgba stands for:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha/level of opacity</blockquote>",
+        "The rgb values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. <code>rgba()</code> is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.",
+        "You'll use <code>background-color: rgba(45, 45, 45, 0.1)</code> for this challenge. It produces a dark gray color that is nearly transparent given the low opacity value of 0.1.",
+        "<h4>Instructions</h4>",
+        "To make the text stand out more, adjust the <code>background-color</code> of the <code>h4</code> element to the given <code>rgba()</code> value.",
+        "Also for the <code>h4</code>, remove the <code>height</code> property and add <code>padding</code> of 10px."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    height: 25px;",
+        "    ",
+        "    ",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Alphabet</h4></strong>",
+        "      <hr>",
+        "      <em><p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p></em>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert(code.match(/background-color:\\s*?rgba\\(\\s*?45\\s*?,\\s*?45\\s*?,\\s*?45\\s*?,\\s*?0?\\.1\\s*?\\)/gi), 'message: Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.');",
+        "assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px', 'message: Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.');",
+        "assert(!($('h4').css('height') == '25px'), 'message: The <code>height</code> property on the <code>h4</code> element should be removed.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781b367417b2b2512abd",
+      "title": "Adjust the Size of a Header Versus a Paragraph Tag",
+      "description": [
+        "The font size of header tags (<code>h1</code> through <code>h6</code>) should generally be larger than the font size of paragraph tags. This makes it easier for the user to visually understand the layout and level of importance of everything on the page. You use the <code>font-size</code> property to adjust the size of the text in an element.",
+        "<h4>Instructions</h4>",
+        "To make the heading significantly larger than the paragraph, change the <code>font-size</code> of the <code>h4</code> tag to 27 pixels."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    background-color: rgba(45, 45, 45, 0.1);",
+        "    padding: 10px;",
+        "    ",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Alphabet</h4></strong>",
+        "      <hr>",
+        "      <em><p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p></em>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('h4').css('font-size') == '27px', 'message: Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781b367417b2b2512abe",
+      "title": "Add a Box-shadow to a Card-like Element",
+      "description": [
+        "The <code>box-shadow</code> property applies one or more shadows to an element. This technique can be used on any state of an element, but here you'll apply it on hover.",
+        "The <code>box-shadow</code> property takes values for <code>offset-x</code> (how far to push the shadow horizontally from the element), <code>offset-y</code> (how far to push the shadow vertically from the element), <code>blur-radius</code>, <code>spread-radius</code> and a color value, in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.",
+        "Here's an example of the CSS to create multiple shadows with some blur, at mostly-transparent black colors:",
+        "<blockquote>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</blockquote>",
+        "<h4>Instructions</h4>",
+        "Use the example CSS values above to place a <code>box-shadow</code> on the card. The element now has an id of <code>thumbnail</code>, use this selector to place the shadows for the hover state."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    background-color: rgba(45, 45, 45, 0.1);",
+        "    padding: 10px;",
+        "    font-size: 27px;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "  }",
+        "  ",
+        "  ",
+        "  ",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\" id=\"thumbnail\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Alphabet</h4></strong>",
+        "      <hr>",
+        "      <em><p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p></em>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert(code.match(/#thumbnail:hover\\s*?{\\s*?box-shadow/g), 'message: Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id on its hover state.');",
+        "assert(code.match(/box-shadow:\\s*?0\\s+?10px\\s+?20px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.19\\),\\s*?0\\s+?6px\\s+?6px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.23\\)/gi), 'message: You should use the given CSS for the <code>box-shadow</code> value.');"
+      ],
+      "solutions": [],
+      "hints": [
+        "Remember to use the appropriate pseudo-class selector to place the box-shadows only on the hover state."
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781c367417b2b2512abf",
+      "title": "Decrease the Opacity of an Element",
+      "description": [
+        "The <code>opacity</code> property in CSS is used to adjust the opacity, or conversely, the transparency for an item.",
+        "<blockquote>A value of 1 is opaque, which isn't transparent at all.<br>A value of 0.5 is half see-through.<br>A value of 0 is completely transparent.</blockquote>",
+        "The value given will apply to the entire element, whether that's an image with some transparency, or the foreground and background colors for a block of text.",
+        "<h4>Instructions</h4>",
+        "Set the <code>opacity</code> of the anchor tags to 0.7 using <code>links</code> class to select them."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    background-color: rgba(45, 45, 45, 0.1);",
+        "    padding: 10px;",
+        "    font-size: 27px;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "    ",
+        "  }",
+        "  #thumbnail:hover {",
+        "    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\" id=\"thumbnail\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Alphabet</h4></strong>",
+        "      <hr>",
+        "      <em><p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p></em>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('.links').css('opacity') == '0.7', 'message: Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781c367417b2b2512ac0",
+      "title": "Use the Text-transform Property to Make Text Uppercase",
+      "description": [
+        "The <code>text-transform</code> property in CSS is used to set text to uppercase.",
+        "<strong>Note</strong><br>Other values for this property are lowercase, capitalize (transforms the first letter of each word to uppercase), initial (sets the property to the default value), inherit (inherits the property from parent element) and none (the default).",
+        "<h4>Instructions</h4>",
+        "Set the text inside the <code>h4</code> tag to be uppercase using the <code>text-transform</code> property."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h4 {",
+        "    text-align: center;",
+        "    background-color: rgba(45, 45, 45, 0.1);",
+        "    padding: 10px;",
+        "    font-size: 27px;",
+        "    ",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "    opacity: 0.7;",
+        "  }",
+        "  #thumbnail:hover {",
+        "    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\" id=\"thumbnail\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Alphabet</h4></strong>",
+        "      <hr>",
+        "      <em><p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p></em>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('h4').css('text-transform') == 'uppercase', 'message: The <code>h4</code> text should be uppercase.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781c367417b2b2512ac1",
+      "title": "Use a Google Font",
+      "required": [
+        {
+          "link": "https://fonts.googleapis.com/css?family=Open+Sans",
+          "raw": true
+        }
+      ],
+      "description": [
+        "<code>Google Fonts</code> is a great way to find free fonts to use in a project.",
+        "Once you have selected the preferred font, copy the link tag that is provided and insert it into the <code>head</code> of your page.",
+        "The Open Sans font is already added for you behind the scenes, but the code to include it in your own project is the following:",
+        "<code>&lt;link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" rel=\"stylesheet\"&gt;</code>",
+        "Once the link is in place, the font is available to include in your CSS by using the pattern <code>font-family: 'FONT', FAMILY_NAME;</code>.",
+        "In this example, \"FONT\" would be 'Open Sans' and \"FAMILY_NAME\" would be sans-serif. The quotes around 'Open Sans' are required because it has a space in its name. Also, capitalization of the font name matters.",
+        "<h4>Instructions</h4>",
+        "Set the <code>font-family</code> of the body to \"Open Sans\"."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    ",
+        "  }",
+        "  h4 {",
+        "    text-align: center;",
+        "    background-color: rgba(45, 45, 45, 0.1);",
+        "    padding: 10px;",
+        "    font-size: 27px;",
+        "    text-transform: uppercase;",
+        "  }",
+        "  p {",
+        "    text-align: justify;",
+        "  }",
+        "  .links {",
+        "    text-align: left;",
+        "    color: black;",
+        "    opacity: 0.7;",
+        "  }",
+        "  #thumbnail:hover {",
+        "    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);",
+        "  }",
+        "  .fullCard {",
+        "    width: 245px;",
+        "    border: 1px solid #ccc;",
+        "    border-radius: 5px;",
+        "    margin: 10px 5px;",
+        "    padding: 4px;",
+        "  }",
+        "  .cardContent {",
+        "    padding: 10px;",
+        "  }",
+        "  .cardText {",
+        "    margin-bottom: 30px;",
+        "  }",
+        "</style>",
+        "<div class=\"fullCard\" id=\"thumbnail\">",
+        "  <div class=\"cardContent\">",
+        "    <div class=\"cardText\">",
+        "      <strong><h4>Alphabet</h4></strong>",
+        "      <hr>",
+        "      <em><p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p></em>",
+        "    </div>",
+        "    <div class=\"cardLinks\">",
+        "      <u>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
+        "        <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      </u>",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert($('body').css('font-family') == '\"Open Sans\", sans-serif', 'message: The <code>body</code> tag should have the font of \"Open Sans\".');"
+      ],
+      "solutions": [],
+      "hints": [
+        "Remember to include both the font and the family-name."
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781c367417b2b2512ac2",
+      "title": "Set the Font-size for Multiple Heading Elements",
+      "description": [
+        "The <code>font-size</code> property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, you'll set the values for all <code>h1</code> through <code>h6</code> tags to balance the heading sizes.",
+        "<h4>Instructions</h4>",
+        "<ul>",
+        "<li>Set the <code>font-size</code> of the <code>h1</code> tag to 68px.</li>",
+        "<li>Set the <code>font-size</code> of the <code>h2</code> tag to 52px.</li>",
+        "<li>Set the <code>font-size</code> of the <code>h3</code> tag to 40px.</li>",
+        "<li>Set the <code>font-size</code> of the <code>h4</code> tag to 32px.</li>",
+        "<li>Set the <code>font-size</code> of the <code>h5</code> tag to 21px.</li>",
+        "<li>Set the <code>font-size</code> of the <code>h6</code> tag to 14px.</li>",
+        "</ul>"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  ",
+        "  ",
+        "  ",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "<h1>This is h1 text</h1>",
+        "<h2>This is h2 text</h2>",
+        "<h3>This is h3 text</h3>",
+        "<h4>This is h4 text</h4>",
+        "<h5>This is h5 text</h5>",
+        "<h6>This is h6 text</h6>"
+      ],
+      "tests": [
+        "assert($('h1').css('font-size') == '68px', 'message: Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.');",
+        "assert($('h2').css('font-size') == '52px', 'message: Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.');",
+        "assert($('h3').css('font-size') == '40px', 'message: Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.');",
+        "assert($('h4').css('font-size') == '32px', 'message: Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.');",
+        "assert($('h5').css('font-size') == '21px', 'message: Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.');",
+        "assert($('h6').css('font-size') == '14px', 'message: Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781c367417b2b2512ac3",
+      "title": "Set the Font-weight for Multiple Heading Elements",
+      "description": [
+        "You set the <code>font-size</code> of each heading tag in the last challenge, here you'll adjust the <code>font-weight</code>.",
+        "The <code>font-weight</code> property sets how thick or thin characters are in a section of text.",
+        "<h4>Instructions</h4>",
+        "<ul>",
+        "<li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li>",
+        "<li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li>",
+        "<li>Set the <code>font-weight</code> of the <code>h3</code> tag to 500.</li>",
+        "<li>Set the <code>font-weight</code> of the <code>h4</code> tag to 400.</li>",
+        "<li>Set the <code>font-weight</code> of the <code>h5</code> tag to 300.</li>",
+        "<li>Set the <code>font-weight</code> of the <code>h6</code> tag to 200.</li>",
+        "</ul>"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h1 {",
+        "    font-size: 68px;",
+        "    ",
+        "  }",
+        "  h2 {",
+        "    font-size: 52px;",
+        "    ",
+        "  }",
+        "  h3 {",
+        "    font-size: 40px;",
+        "    ",
+        "  }",
+        "  h4 {",
+        "    font-size: 32px;",
+        "    ",
+        "  }",
+        "  h5 {",
+        "    font-size: 21px;",
+        "    ",
+        "  }",
+        "  h6 {",
+        "    font-size: 14px;",
+        "    ",
+        "  }",
+        "</style>",
+        "<h1>This is h1 text</h1>",
+        "<h2>This is h2 text</h2>",
+        "<h3>This is h3 text</h3>",
+        "<h4>This is h4 text</h4>",
+        "<h5>This is h5 text</h5>",
+        "<h6>This is h6 text</h6>"
+      ],
+      "tests": [
+        "assert($('h1').css('font-weight') == '800', 'message: Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.');",
+        "assert($('h2').css('font-weight') == '600', 'message: Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.');",
+        "assert($('h3').css('font-weight') == '500', 'message: Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.');",
+        "assert($('h4').css('font-weight') == '400', 'message: Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.');",
+        "assert($('h5').css('font-weight') == '300', 'message: Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.');",
+        "assert($('h6').css('font-weight') == '200', 'message: Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781c367417b2b2512ac4",
+      "title": "Set the Font-size of Paragraph Text",
+      "description": [
+        "The <code>font-size</code> property in CSS is not limited to headings, it can be applied to any element containing text.",
+        "<h4>Instructions</h4>",
+        "Change the value of the <code>font-size</code> property for the paragraph to 16px to make it more visible."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  p {",
+        "    font-size: 10px;",
+        "  }",
+        "</style>",
+        "<p>",
+        "  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "</p>"
+      ],
+      "tests": [
+        "assert($('p').css('font-size') == '16px', 'message: Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781d367417b2b2512ac5",
+      "title": "Set the Line-height of Paragraphs",
+      "description": [
+        "CSS offers the <code>line-height</code> property to change the height of each line in a block of text. As the name suggests, it changes the amount of vertical space that each line of text gets.",
+        "<h4>Instructions</h4>",
+        "Add a <code>line-height</code> property to the <code>p</code> tag and set it to 25px."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  p {",
+        "    font-size: 16px;",
+        "    ",
+        "  }",
+        "</style>",
+        "<p>",
+        "  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "</p>"
+      ],
+      "tests": [
+        "assert($('p').css('line-height') == '25px', 'message: Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781d367417b2b2512ac7",
+      "title": "Adjust the Color of an Anchor Tag",
+      "description": [
+        "You can adjust the text color of any text in an element with the <code>color</code> property.",
+        "<h4>Instructions</h4>",
+        "Change the <code>color</code> property of the anchor (<code>a</code>) tag to <code>#000</code> (black)."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "<a href=\"https://atjonathan.github.io/catphotoapp\">CatPhotoApp</a>"
+      ],
+      "tests": [
+        "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The <code>color</code> of the anchor tag text should be black.')"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781d367417b2b2512ac8",
+      "title": "Adjust the Hover State of an Anchor Tag",
+      "description": [
+        "Following from the previous challenge, the styling of the anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector.",
+        "<h4>Instructions</h4>",
+        "Change the <code>a</code> tag's CSS so when the user hovers over it, the <code>color</code> is blue and the underline is removed.",
+        "<strong>Note</strong><br>You can remove underlining of anchor tags using the <code>text-decoration</code> property set to none."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  a {",
+        "    color: #000;",
+        "  }",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "<a href=\"https://atjonathan.github.io/catphotoapp\">CatPhotoApp</a>"
+      ],
+      "tests": [
+        "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');",
+        "assert(code.match(/(?:a:hover\\s*?{\\s*?color:\\s*?blue;\\s*?text-decoration:\\s*?none;\\s*?}|a:hover\\s*?{\\s*?text-decoration:\\s*?none;\\s*?color:\\s*?blue;\\s*?})/gi), 'message: The anchor tag should have a <code>color</code> of blue and no underline on hover.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781e367417b2b2512ac9",
+      "title": "Change an Element's Relative Position",
+      "description": [
+        "CSS treats each HTML element as its own box, which is usually referred to as the <code>CSS Box Model</code>. Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline items sit within surrounding content (like images or spans). The default layout of elements in this way is called the <code>normal flow</code> of a document, but CSS offers the position property to override it.",
+        "When the position of an element is set to <code>relative</code>, it allows you to specify how CSS should move it <i>relative</i> to its current position in the normal flow of the page. It pairs with the CSS offset properties of <code>left</code> or <code>right</code>, and <code>top</code> or <code>bottom</code>. These say how many pixels, percentages, or ems to move the item <i>away</i> from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:",
+        "<blockquote>p {<br>  position: relative;<br>  bottom: 10px;<br>}</blockquote>",
+        "Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were in its default position.",
+        "<strong>Note</strong><br>Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.",
+        "<h4>Instructions</h4>",
+        "Change the <code>position</code> of the <code>h2</code> to <code>relative</code>, and use a CSS offset to move it 15 pixels away from the <code>top</code> of where it sits in the normal flow. Notice there is no impact on the positions of the surrounding h1 and p elements."
+      ],
+      "challengeSeed": [
+        "  <style>",
+        "  h2 {",
+        "    ",
+        "    ",
+        "  }",
+        "  </style>",
+        "<body>",
+        "  <h1>On Being Well-Positioned</h1>",
+        "  <h2>Move me!</h2>",
+        "  <p>I still think the h2 is where it normally sits.</p>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('h2').css('position') == 'relative', 'message: The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.');",
+        "assert($('h2').css('top') == '15px', 'message: Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781e367417b2b2512aca",
+      "title": "Move a Relatively Positioned Element with CSS Offsets",
+      "description": [
+        "The CSS offsets of <code>top</code> or <code>bottom</code>, and <code>left</code> or <code>right</code> tell the browser how far to offset an item relative to where it would sit in the normal flow of the document. This can be slightly confusing, because you're offsetting an element away from a given spot, which effectively moves it towards the opposite direction. As you saw in the last challenge, using the top offset moved the h2 downwards. Likewise, using a left offset effectively moves an item to the right.",
+        "<h4>Instructions</h4>",
+        "Use CSS offsets to move the <code>h2</code> 15 pixels to the right and 10 pixels up."
+      ],
+      "challengeSeed": [
+        "<head>",
+        "  <style>",
+        "  h2 {",
+        "    position: relative;",
+        "    ",
+        "    ",
+        "  }",
+        "  </style>",
+        "</head>",
+        "<body>",
+        "  <h1>On Being Well-Positioned</h1>",
+        "  <h2>Move me!</h2>",
+        "  <p>I still think the h2 is where it normally sits.</p>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('h2').css('bottom') == '10px', 'message: Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.');",
+        "assert($('h2').css('left') == '15px', 'message: Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781e367417b2b2512acb",
+      "title": "Lock an Element to its Parent with Absolute Positioning",
+      "description": [
+        "The next option for the CSS <code>position</code> property is <code>absolute</code>, which locks the element in place relative to its parent container. Unlike the <code>relative</code> position, this removes the element from the normal flow of the document, so surrounding items ignore it. The CSS offset properties (top or bottom and left or right) are used to adjust the position.",
+        "One nuance with absolute positioning is that it will be locked relative to its closest <em>positioned</em> ancestor. If you forget to add a position rule to the parent item, (this is typically done using <code>position: relative;</code>), the browser will keep looking up the chain and ultimately default to the body tag.",
+        "<h4>Instructions</h4>",
+        "Lock the <code>#searchbar</code> element to the top-right of its <code>section</code> parent by declaring its <code>position</code> as <code>absolute</code>. Give it <code>top</code> and <code>right</code> offsets of 0 pixels each."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  #searchbar {",
+        "    ",
+        "    ",
+        "    ",
+        "  }",
+        "  section {",
+        "    position: relative;",
+        "  }",
+        "</style>",
+        "<body>",
+        "  <h1>Welcome!</h1>",
+        "  <section>",
+        "    <form id=\"searchbar\">",
+        "      <label for=\"search\">Search:</label>",
+        "      <input type=\"search\" id=\"search\" name=\"search\">",
+        "      <input type=\"submit\" name=\"submit\" value=\"Go!\">",
+        "    </form>",
+        "  </section>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('#searchbar').css('position') == 'absolute', 'message: The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.');",
+        "assert($('#searchbar').css('top') == '0px', 'message: Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#searchbar</code> element.');",
+        "assert($('#searchbar').css('right') == '0px', 'message: Your code should use the <code>right</code> CSS offset of 0 pixels on the <code>#searchbar</code> element.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d781e367417b2b2512acc",
+      "title": "Lock an Element to the Browser Window with Fixed Positioning",
+      "description": [
+        "The next layout scheme that CSS offers is the <code>fixed</code> position, which is a type of absolute positioning that locks an element relative to the browser window. Similar to absolute positioning, it's used with the CSS offset properties and also removes the element from the normal flow of the document. Other items no longer \"realize\" where it is positioned, which may require some layout adjustments elsewhere.",
+        "One key difference from the <code>absolute</code> position is that the element won't move when the user scrolls.",
+        "<h4>Instructions</h4>",
+        "The navigation bar in the code is labeled with an id of <code>navbar</code>. Change its <code>position</code> to <code>fixed</code>, and offset it 0 pixels from the <code>top</code> and 0 pixels from the <code>left</code>. Notice the (lack of) impact to the <code>h1</code> position, it hasn't been pushed down to accommodate the navigation bar and would need to be adjusted separately."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  #navbar {",
+        "    ",
+        "    ",
+        "    ",
+        "    width: 100%;",
+        "    background-color: #767676;",
+        "  }",
+        "  nav ul {",
+        "    margin: 0px;",
+        "    padding: 5px 0px 5px 30px;",
+        "  }",
+        "  nav li {",
+        "    display: inline;",
+        "    margin-right: 20px;",
+        "  }",
+        "  a {",
+        "    text-decoration: none;",
+        "  }",
+        "</style>",
+        "<body>",
+        "  <header>",
+        "    <h1>Welcome!</h1>",
+        "    <nav id=\"navbar\">",
+        "      <ul>",
+        "        <li><a href=\"\">Home</a></li>",
+        "        <li><a href=\"\">Contact</a></li>",
+        "      </ul>",
+        "    </nav>",
+        "  </header>",
+        "  <p>I shift up when the #navbar is fixed to the browser window.</p>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('#navbar').css('position') == 'fixed', 'message: The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.');",
+        "assert($('#navbar').css('top') == '0px', 'message: Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');",
+        "assert($('#navbar').css('left') == '0px', 'message: Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a3367417b2b2512ace",
+      "title": "Push Elements Left or Right with the Float Property",
+      "description": [
+        "The next positioning tool does not actually use <code>position</code>, but sets the <code>float</code> property of an element. Floating elements are removed from the normal flow of a document and pushed to either the <code>left</code> or <code>right</code> of their containing parent element. It's commonly used with the <code>width</code> property to specify how much horizontal space the floated element requires.",
+        "<h4>Instructions</h4>",
+        "The given markup would work well as a two-column layout, with the <code>section</code> and <code>aside</code> elements next to each other. Give the <code>#left</code> item a <code>float</code> of <code>left</code> and the <code>#right</code> item a <code>float</code> of <code>right</code>."
+      ],
+      "challengeSeed": [
+        "<head>",
+        "  <style>",
+        "  #left {",
+        "    ",
+        "    width: 50%;",
+        "  }",
+        "  #right {",
+        "    ",
+        "    width: 40%;",
+        "  }",
+        "  aside, section {",
+        "    padding: 2px;",
+        "    background-color: #ccc;",
+        "  }",
+        "  </style>",
+        "</head>",
+        "<body>",
+        "  <header>",
+        "    <h1>Welcome!</h1>",
+        "  </header>",
+        "  <section id=\"left\">",
+        "    <h2>Content</h2>",
+        "    <p>Good stuff</p>",
+        "  </section>",
+        "  <aside id=\"right\">",
+        "    <h2>Sidebar</h2>",
+        "    <p>Links</p>",
+        "  </aside>",
+        "</body>"
+      ],
+      "tests": [
+        "assert($('#left').css('float') == 'left', 'message: The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.');",
+        "assert($('#right').css('float') == 'right', 'message: The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a3367417b2b2512acf",
+      "title": "Change the Position of Overlapping Elements with the Z-index Property",
+      "description": [
+        "When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the <code>z-index</code> property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the <code>z-index</code> property of an element move it higher in the stack than those with lower values.",
+        "<h4>Instructions</h4>",
+        "Add a <code>z-index</code> property to the element with the class name of <code>first</code> (the red rectangle) and set it to a value of 2 so it covers the other element (blue rectangle)."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  div {",
+        "    width: 60%;",
+        "    height:200px;",
+        "    margin-top: 20px;",
+        "  }",
+        "  ",
+        "  .first {",
+        "    background-color: red;",
+        "    position: absolute;",
+        "    ",
+        "  }",
+        "  .second {",
+        "    background-color: blue;",
+        "    position: absolute;",
+        "    left: 40px;",
+        "    top: 50px;",
+        "    z-index: 1;",
+        "  }",
+        "</style>",
+        "",
+        "<div class=\"first\"></div>",
+        "<div class=\"second\"></div>"
+      ],
+      "tests": [
+        "assert($('.first').css('z-index') == '2', 'message: The element with class <code>first</code> should have a <code>z-index</code> value of 2.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a3367417b2b2512ad0",
+      "title": "Center an Element Horizontally Using Margin",
+      "description": [
+        "Another positioning technique is to center a block element horizontally. One way to do this is to set its <code>margin</code> to a value of auto.",
+        "This method works for images, too. Images are inline elements by default, but can be changed to block elements when you set the <code>display</code> property to block.",
+        "<h4>Instructions</h4>",
+        "Center the <code>div</code> on the page by adding a <code>margin</code> property with a value of auto."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  div {",
+        "    background-color: blue;",
+        "    height: 100px;",
+        "    width: 100px;",
+        "    ",
+        "  }",
+        "</style>",
+        "<div></div>"
+      ],
+      "tests": [
+        "assert(code.match(/margin:\\s*?auto;/g), 'message: The <code>div</code> should have a <code>margin</code> set to auto.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a3367417b2b2512ad1",
+      "title": "Learn about Complementary Colors",
+      "description": [
+        "Color theory and its impact on design is a deep topic and only the basics are covered in the following challenges. On a website, color can draw attention to content, evoke emotions, or create visual harmony. Using different combinations of colors can really change the look of a website, and a lot of thought can go into picking a color palette that works with your content.",
+        "The color wheel is a useful tool to visualize how colors relate to each other - it's a circle where similar hues are neighbors and different hues are farther apart. When two colors are opposite each other on the wheel, they are called complementary colors. They have the characteristic that if they are combined, they \"cancel\" each other out and create a gray color. However, when placed side-by-side, these colors appear more vibrant and produce a strong visual contrast.",
+        "Some examples of complementary colors with their hex codes are:",
+        "<blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)</blockquote>",
+        "There are many color picking tools available online that have an option to find the complement of a color.",
+        "<strong>Note</strong><br>For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.",
+        "<h4>Instructions</h4>",
+        "Change the <code>background-color</code> property of the <code>blue</code> and <code>yellow</code> classes to their respective colors. Notice how the colors look different next to each other than they do compared against the white background."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #FFFFFF;",
+        "  }",
+        "  .blue {",
+        "    background-color: #000000;",
+        "  }",
+        "  .yellow {",
+        "    background-color: #000000;",
+        "  }",
+        "  div {",
+        "    display: inline-block;",
+        "    height: 100px;",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "<div class=\"blue\"></div>",
+        "<div class=\"yellow\"></div>"
+      ],
+      "tests": [
+        "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'message: The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');",
+        "assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'message: The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a4367417b2b2512ad2",
+      "title": "Learn about Tertiary Colors",
+      "description": [
+        "Computer monitors and device screens create different colors by combining amounts of red, green, and blue light. This is known as the RGB additive color model in modern color theory. Red (R), green (G), and blue (B) are called primary colors. Mixing two primary colors creates the secondary colors cyan (G + B), magenta (R + B), and yellow (R + G). You saw in these colors in the Complementary Colors challenge. These secondary colors happen to be the complement to the primary color not used in their creation, and are opposite to that primary color on the color wheel. For example, magenta is made with red and blue, and is the complement to green.",
+        "Tertiary colors are the result of combining a primary color with one of its secondary color neighbors. For example, red (primary) and yellow (secondary) make orange. This adds six more colors to a simple color wheel for a total of twelve.",
+        "There are various methods of selecting different colors that result in a harmonious combination in design. One example that can use tertiary colors is called the split-complementary color scheme. It starts with a base color, then pairs it with the two colors that are adjacent to its complement. The three colors provide strong visual contrast in a design, but is more subtle than using two complementary colors.",
+        "Here are three colors using the split-complement scheme:",
+        "<blockquote>cyan (#00FFFF)<br>orange (#FF7D00)<br>raspberry (#FF007D)</blockquote>",
+        "<h4>Instructions</h4>",
+        "Change the <code>background-color</code> property of the <code>orange</code>, <code>cyan</code>, and <code>raspberry</code> classes to their respective colors. Make sure to use the hex codes because the orange and raspberry in the example above are not browser-recognized color names."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #FFFFFF;",
+        "  }",
+        "  .orange {",
+        "    background-color: #000000;",
+        "  }",
+        "  .cyan {",
+        "    background-color: #000000;",
+        "  }",
+        "  .raspberry {",
+        "    background-color: #000000;",
+        "  }  ",
+        "  div {",
+        "    height: 100px;",
+        "    width: 100px;",
+        "    margin-bottom: 5px;",
+        "  }",
+        "</style>",
+        "<div class=\"orange\"></div>",
+        "<div class=\"cyan\"></div>",
+        "<div class=\"raspberry\"></div>"
+      ],
+      "tests": [
+        "assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'message: The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');",
+        "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'message: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');",
+        "assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'message: The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a4367417b2b2512ad3",
+      "title": "Adjusting the Color of Various Elements to Complementary Colors",
+      "description": [
+        "The complementary colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.",
+        "<h4>Instructions</h4>",
+        "This page will use a shade of teal (<code>#09A7A1</code>) as the dominant color, and its orange (<code>#FF790E</code>) complement to visually highlight the sign-up buttons. Change the <code>background-color</code> of both the <code>header</code> and <code>footer</code> from black to the teal color. Then change the <code>h2</code> text <code>color</code> to teal as well. Finally, change the <code>background-color</code> of the <code>button</code> to the orange color."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: white;",
+        "  }",
+        "  header {",
+        "    background-color: black;",
+        "    color: white;",
+        "    padding: 0.25em;",
+        "  }",
+        "  h2 {",
+        "    color: black;",
+        "  }  ",
+        "  button {",
+        "    background-color: white;",
+        "  }",
+        "  footer {",
+        "    background-color: black;",
+        "    color: white;",
+        "    padding: 0.5em;",
+        "  }",
+        "</style>",
+        "<header>",
+        "  <h1>Cooking with FCC!</h1>",
+        "</header>",
+        "<main>",
+        "  <article>",
+        "    <h2>Machine Learning in the Kitchen</h2>",
+        "    <p>Join this two day workshop that walks through how to implement cutting-edge snack-getting algorithms with a command line interface. Coding usually involves writing exact instructions, but sometimes you need your computer to execute flexible commands, like <code>fetch Pringles</code>.</p>",
+        "    <button>Sign Up</button>",
+        "  </article>",
+        "  <article>",
+        "    <h2>Bisection Vegetable Chopping</h2>",
+        "    <p>This week-long retreat will level-up your coding ninja skills to actual ninja skills. No longer is the humble bisection search limited to sorted arrays or coding interview questions, applying its concepts in the kitchen will have you chopping carrots in O(log n) time before you know it.</p>",
+        "    <button>Sign Up</button>",
+        "  </article>",
+        "</main>",
+        "<br>",
+        "<footer>&copy;2016 FCC Kitchen</footer>"
+      ],
+      "tests": [
+        "assert($('header').css('background-color') == 'rgb(9, 167, 161)', 'message: The <code>header</code> element should have a <code>background-color</code> of #09A7A1.');",
+        "assert($('footer').css('background-color') == 'rgb(9, 167, 161)', 'message: The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.');",
+        "assert($('h2').css('color') == 'rgb(9, 167, 161)', 'message: The <code>h2</code> element should have a <code>color</code> of #09A7A1.');",
+        "assert($('button').css('background-color') == 'rgb(255, 121, 14)', 'message: The <code>button</code> element should have a <code>background-color</code> of #FF790E.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a4367417b2b2512ad4",
+      "title": "Adjust the Hue of a Color",
+      "description": [
+        "Colors have several characteristics including hue, saturation, and lightness. CSS3 introduced the <code>hsl()</code> property as an alternative way to pick a color by directly stating these characteristics.",
+        "<b>Hue</b> is what people generally think of as 'color'. If you picture a spectrum of colors starting with red on the left, moving through green in the middle, and blue on right, the hue is where a color fits along this line. In hsl(), hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.",
+        "<b>Saturation</b> is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. This is given as a percentage with 100% being fully saturated.",
+        "<b>Lightness</b> is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.",
+        "Here are a few examples of using <code>hsl()</code> with fully-saturated, normal lightness colors:",
+        "<blockquote>/* Red */<br>hsl(0, 100%, 50%) (Red can also have a hue of 360)<br><br>/* Yellow */<br>hsl(60, 100%, 50%)<br><br>/* Green */<br>hsl(120, 100%, 50%)<br><br>/* Cyan */<br>hsl(180, 100%, 50%)<br><br>/* Blue */<br>hsl(240, 100%, 50%)<br><br>/* Magenta */<br>hsl(300, 100%, 50%)</blockquote>",
+        "<h4>Instructions</h4>",
+        "Change the <code>background-color</code> of each <code>div</code> element based on the class names (<code>green</code>, <code>cyan</code>, or <code>blue</code>) using <code>hsl()</code>. All three should have full saturation and normal lightness."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #FFFFFF;",
+        "  }",
+        "  .green {",
+        "    background-color: #000000;",
+        "  }",
+        "  .cyan {",
+        "    background-color: #000000;",
+        "  }",
+        "  .blue {",
+        "    background-color: #000000;",
+        "  }",
+        "",
+        "  div {",
+        "    display: inline-block;",
+        "    height: 100px;",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "<div class=\"green\"></div>",
+        "<div class=\"cyan\"></div>",
+        "<div class=\"blue\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/\\.green\\s*?{\\s*?background-color:\\s*?hsl/gi), 'message: Your code should use the <code>hsl()</code> property to declare the color green.');",
+        "assert(code.match(/\\.cyan\\s*?{\\s*?background-color:\\s*?hsl/gi), 'message: Your code should use the <code>hsl()</code> property to declare the color cyan.');",
+        "assert(code.match(/\\.blue\\s*?{\\s*?background-color:\\s*?hsl/gi), 'message: Your code should use the <code>hsl()</code> property to declare the color blue.');",
+        "assert($('.green').css('background-color') == 'rgb(0, 255, 0)', 'message: The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.');",
+        "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'message: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');",
+        "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'message: The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> blue.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a4367417b2b2512ad5",
+      "title": "Adjust the Tone of a Color",
+      "description": [
+        "The <code>hsl()</code> option in CSS also makes it easy to adjust the tone of a color. Mixing white with a pure hue creates a tint of that color, and adding black will make a shade. Alternatively, a tone is produced by adding gray or by both tinting and shading. Recall that the 's' and 'l' of <code>hsl()</code> stand for saturation and lightness, respectively. The saturation percent changes the amount of gray and the lightness percent determines how much white or black is in the color. This is useful when you have a base hue you like, but need different variations of it.",
+        "<h4>Instructions</h4>",
+        "The navigation bar on this site currently inherits its <code>background-color</code> from the <code>header</code> element. Starting with that color as a base, add a <code>background-color</code> to the <code>nav</code> element so it uses the same teal hue, but has 80% saturation and 25% lightness values to change its tone and shade."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  header {",
+        "    background-color: hsl(178, 90%, 35%);",
+        "    color: #FFFFFF;",
+        "  }",
+        "  nav {",
+        "",
+        "  }",
+        "  h1 {",
+        "    text-indent: 10px;",
+        "    padding-top: 10px;",
+        "  }",
+        "  nav ul {",
+        "    margin: 0px;",
+        "    padding: 5px 0px 5px 30px;",
+        "  }",
+        "  nav li {",
+        "    display: inline;",
+        "    margin-right: 20px;",
+        "  }",
+        "  a {",
+        "    text-decoration: none;",
+        "    color: inherit;",
+        "  }",
+        "</style>",
+        "<header>",
+        "  <h1>Cooking with FCC!</h1>",
+        "  <nav>",
+        "    <ul>",
+        "      <li><a href=\"\">Home</a></li>",
+        "      <li><a href=\"\">Classes</a></li>",
+        "      <li><a href=\"\">Contact</a></li>",
+        "    </ul>",
+        "  </nav>",
+        "</header>"
+      ],
+      "tests": [
+        "assert(code.match(/nav\\s*?{\\s*?background-color:\\s*?hsl\\(178,\\s*?80%,\\s*?25%\\)/gi), 'message: The <code>nav</code> element should have a <code>background-color</code> of the adjusted teal and make sure to use the <code>hsl()</code> property.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a5367417b2b2512ad6",
+      "title": "Create a Gradual CSS Linear Gradient",
+      "description": [
+        "Applying a color on HTML elements is not limited to one flat hue. CSS provides the ability to use color transitions, otherwise known as gradients, on elements. This is accessed through the <code>background</code> property's <code>linear-gradient()</code> function. Here is the general syntax:",
+        "<code>background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);</code>",
+        "The fist argument specifies the direction from which color transition starts - it can be stated as a degree, where 90deg makes a vertical gradient and 45deg is angled like a backslash. The following arguments specify the order of colors used in the gradient.",
+        "Example:",
+        "<code>background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));</code>",
+        "<h4>Instructions</h4>",
+        "Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>background</code>, and set it from a direction of 35 degrees to change the color from <code>#CCFFFF</code> to <code>#FFCCCC</code>."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "  div{ ",
+        "    border-radius: 20px;",
+        "    width: 70%;",
+        "    height: 400px;",
+        "    margin:  50 auto;",
+        "    ",
+        "  }",
+        "",
+        "</style>",
+        "",
+        "<div></div>"
+      ],
+      "tests": [
+        "assert(code.match(/background:\\s*?linear-gradient\\(35deg,\\s*?#CCFFFF,\\s*?#FFCCCC\\);/gi), 'message: The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a5367417b2b2512ad7",
+      "title": "Use a CSS Linear Gradient to Create a Striped Element",
+      "description": [
+        "The <code>repeating-linear-gradient()</code> function is very similar to <code>linear-gradient()</code> with the major difference that it repeats the specified gradient pattern. <code>repeating-linear-gradient()</code> accepts a variety of values, but for simplicity, you'll work with an angle value and color stop values in this challenge.",
+        "The angle value is the direction of the gradient. Color stops are like width values that mark where a transition takes place, and are given with a percentage or a number of pixels.",
+        "In the example demonstrated in the code editor, the gradient starts with the color <code>yellow</code> at 0 pixels which blends into the second color <code>blue</code> at 40 pixels away from the start. Since the next color stop is also at 40 pixels, the gradient immediately changes to the third color <code>green</code>, which itself blends into the fourth color value <code>red</code> as that is 80 pixels away from the beginning of the gradient.",
+        "For this example, it helps to think about the color stops as pairs where every two colors blend together.",
+        "<code>0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px</code>",
+        "If every two color stop values are the same color, the blending isn't noticeable because it's between the same color, followed by a hard transition to the next color, so you end up with stripes.",
+        "<h4>Instructions</h4>",
+        "Make stripes by changing the <code>repeating-linear-gradient()</code> to use a gradient angle of <code>45deg</code>, then set the first two color stops to <code>yellow</code>, and finally the second two color stops to <code>black</code>."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "  div{ ",
+        "    border-radius: 20px;",
+        "    width: 70%;",
+        "    height: 400px;",
+        "    margin:  50 auto;",
+        "    background: repeating-linear-gradient(",
+        "      90deg,",
+        "      yellow 0px,",
+        "      blue 40px,",
+        "      green 40px,",
+        "      red 80px",
+        "    );",
+        "  }",
+        "",
+        "</style>",
+        "",
+        "<div></div>"
+      ],
+      "tests": [
+        "assert(code.match(/background:\\s*?repeating-linear-gradient\\(\\s*?45deg/gi), 'message: The angle of the <code>repeating-linear-gradient()</code> should be 45deg.');",
+        "assert(!code.match(/90deg/gi), 'message: The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg');",
+        "assert(code.match(/yellow\\s+?0px/gi), 'message: The color stop at 0 pixels should be <code>yellow</code>.');",
+        "assert(code.match(/yellow\\s+?40px/gi), 'message: One color stop at 40 pixels should be <code>yellow</code>.');",
+        "assert(code.match(/yellow\\s+?40px,\\s*?black\\s+?40px/gi), 'message: The second color stop at 40 pixels should be <code>black</code>.');",
+        "assert(code.match(/black\\s+?80px/gi), 'message: The last color stop at 80 pixels should be <code>black</code>.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a5367417b2b2512ad8",
+      "title": "Create Texture by Adding a Subtle Pattern as a Background Image",
+      "description": [
+        "One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as you don't want the background to stand out too much, and take away from the foreground. The <code>background</code> property supports the <code>url()</code> function in order to link to an image of the chosen texture or pattern. The link address is wrapped in quotes inside the parentheses.",
+        "<h4>Instructions</h4>",
+        "Using the url of <code>https://i.imgur.com/MJAkxbh.png</code>, set the <code>background</code> of the whole page with the <code>body</code> selector."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    ",
+        "  }",
+        "</style>"
+      ],
+      "tests": [
+        "assert(code.match(/background:\\s*?url\\((\"|')https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png(\"|')\\)/gi), 'message: Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.');"
+      ],
+      "solutions": [],
+      "hints": [
+        "Remember to wrap the address in quotes within the url() function."
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a5367417b2b2512ad9",
+      "title": "Use the CSS Transform Scale Property to Change the Size of an Element",
+      "description": [
+        "To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:",
+        "<blockquote>p {<br>  transform:scale(2);<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Increase the size of the element with the id of <code>ball2</code> to 1.5 times its original size."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .ball { ",
+        "    width: 40px;",
+        "    height: 40px;",
+        "    margin: 50 auto;",
+        "    position: fixed;",
+        "    background: linear-gradient(",
+        "    35deg,",
+        "    #ccffff,",
+        "    #ffcccc",
+        "  );       ",
+        "    border-radius: 50%;",
+        "  }",
+        "  #ball1 {",
+        "    left:20%;",
+        "  }",
+        "  #ball2 {",
+        "    left:65%;",
+        "    ",
+        "    ",
+        "  }",
+        "",
+        "",
+        "</style>",
+        "",
+        "<div class=\"ball\" id= \"ball1\"></div>",
+        "<div class=\"ball\" id= \"ball2\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/#ball2\\s*?{\\s*?left:\\s*?65%;\\s*?transform:\\s*?scale\\(1\\.5\\);/gi), 'message: Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a5367417b2b2512ada",
+      "title": "Use the CSS Transform Property to Scale an Element on Hover",
+      "description": [
+        "The <code>transform</code> property has a verity of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
+        "Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:",
+        "<blockquote>p:hover {<br>  transform: scale(2.1);}<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use the <code>transform</code> property to scale the <code>div</code> element to 1.1 times its original size when a user hovers over it."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  div { ",
+        "    width: 70%;",
+        "    height: 100px;",
+        "    margin:  50px auto;",
+        "    background: linear-gradient(",
+        "      53deg,",
+        "      #ccfffc,",
+        "      #ffcccf",
+        "    );",
+        "  }",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "",
+        "<div></div>"
+      ],
+      "tests": [
+        "assert(code.match(/div:hover\\s*?{\\s*?transform:\\s*?scale\\(1\\.1\\);/gi), 'message: The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.');"
+      ],
+      "solutions": [],
+      "hints": [
+        "Make sure to apply the CSS rule to the hover state of the div, using div:hover"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a6367417b2b2512adb",
+      "title": "Use the CSS Transform Property SkewX",
+      "description": [
+        "The next function of the <code>transform</code> property is <code>skewX()</code>, which skews the selected element along its X (horizontal) axis by a given degree.",
+        "The following code skews the paragraph element by -32 degrees along the X axis.",
+        "<blockquote>p {<br>  transform: skewX(-32deg);<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Skew the element with the id of <code>bottom</code> by 24 degrees along the X axis by using the <code>transform</code> property."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  div { ",
+        "    width: 70%;",
+        "    height: 100px;",
+        "    margin:  50px auto;",
+        "  }",
+        "  #top {",
+        "    background-color: red;",
+        "  }",
+        "  #bottom {",
+        "    background-color: blue;",
+        "    ",
+        "    ",
+        "  }",
+        "</style>",
+        "",
+        "<div id=\"top\"></div>",
+        "<div id=\"bottom\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/#bottom\\s*?{\\s*?.*?\\s*?transform:\\s*?skewX\\(24deg\\);/g), 'message: The element with id <code>bottom</code> should be skewed by 24 degrees along its X axis.');"
+      ],
+      "solutions": [],
+      "hints": [
+        "Notice that there is no space between the number and \"deg\" (-32deg) when declaring the degrees value."
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a6367417b2b2512adc",
+      "title": "Use the CSS Transform Property SkewY",
+      "description": [
+        "Given that the <code>skewX()</code> function skews the selected element along the X axis by a given degree, it is no surprise that the <code>skewY()</code> property skews an element along the Y (vertical) axis.",
+        "<h4>Instructions</h4>",
+        "Skew the element with the id of <code>top</code> -10 degrees along the Y axis by using the <code>transform</code> property."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  div { ",
+        "    width: 70%;",
+        "    height: 100px;",
+        "    margin:  50px auto;",
+        "  }",
+        "  #top {",
+        "    background-color: red;",
+        "    ",
+        "    ",
+        "  }",
+        "  #bottom {",
+        "    background-color: blue;",
+        "    transform: skewX(24deg);",
+        "  }",
+        "</style>",
+        "",
+        "<div id=\"top\"></div>",
+        "<div id=\"bottom\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/#top\\s*?{\\s*?.*?\\s*?transform:\\s*?skewY\\(-10deg\\);/g), 'message: The element with id <code>top</code> should be skewed by -10 degrees along its Y axis.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a6367417b2b2512add",
+      "title": "Create a Graphic Using CSS",
+      "description": [
+        "By manipulating different selectors and properties, you can make interesting shapes. One of the easier ones to try is a crescent moon shape. For this challenge you need to work with the <code>box-shadow</code> property that sets the shadow of an element, along with the <code>border-radius</code> property that controls the roundness of the element's corners.",
+        "You will create a round, transparent object with a crisp shadow that is slightly offset to the side - the shadow is actually going to be the moon shape you see.",
+        "In order to create a round object, the <code>border-radius</code> property should be set to a value of 50%.",
+        "You may recall from an earlier challenge that the <code>box-shadow</code> property takes values for <code>offset-x</code>, <code>offset-y</code>, <code>blur-radius</code>, <code>spread-radius</code> and a color value in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.",
+        "<h4>Instructions</h4>",
+        "Manipulate the square element in the editor to create the moon shape. First, change the <code>background-color</code> to transparent, then set the <code>border-radius</code> property to 50% to make the circular shape. Finally, change the <code>box-shadow</code> property to set the <code>offset-x</code> to 25px, the <code>offset-y</code> to 10px, <code>blur-radius</code> to 0, <code>spread-radius</code> to 0, and color to blue."
+      ],
+      "challengeSeed": [
+        "<style>",
+        ".center",
+        "{",
+        "  position: absolute;",
+        "  margin: auto;",
+        "  top: 0;",
+        "  right: 0;",
+        "  bottom: 0;",
+        "  left: 0;",
+        "  width: 100px;",
+        "  height: 100px;",
+        "  ",
+        "  background-color: blue;",
+        "  border-radius: 0px;",
+        "  box-shadow: 25px 10px 10px 10px green; ",
+        "}",
+        "",
+        "</style>",
+        "<div class=\"center\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/background-color:\\s*?transparent;/gi), 'message: The value of the <code>background-color</code> property should be set to <code>transparent</code>.');",
+        "assert(code.match(/border-radius:\\s*?50%;/gi), 'message: The value of the <code>border-radius</code> property should be set to <code>50%</code>.');",
+        "assert(code.match(/box-shadow:\\s*?25px\\s+?10px\\s+?0(px)?\\s+?0(px)?\\s+?blue\\s*?;/gi), 'message: The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a6367417b2b2512ade",
+      "title": "Create a More Complex Shape Using CSS and HTML",
+      "description": [
+        "One of the most popular shapes in the world is the heart shape and this challenge creates it with raw CSS. But first, you need to understand the <code>:before</code> and <code>:after</code> selectors. These selectors are used to add something before or after a selected element. In the following example, a <code>:before</code> selector is used to add a rectangle to an element with the class <code>heart</code>:",
+        "<blockquote>.heart:before {<br>  content: \"\";<br>  background-color: yellow;<br>  border-radius: 25%;<br>  position: absolute;<br>  height: 50px;<br>  width: 70px;<br>  top: -50px;<br>  left: 5px;<br>}</blockquote>",
+        "For the <code>:before</code> and <code>:after</code> selectors to function properly, they must have a defined <code>content</code> property. It usually has content such as a photo or text. When the <code>:before</code> and <code>:after</code> selectors add shapes, the <code>content</code> property is still required, but it's set to an empty string.",
+        "In the above example, the element with the class of <code>heart</code> has a <code>:before</code> selector that produces a yellow rectangle with <code>height</code> and <code>width</code> of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the <code>left</code> and 50px above the <code>top</code> of the element.",
+        "<h4>Instructions</h4>",
+        "Transform the element on the screen to a heart. In the <code>heart:after</code> selector, change the <code>background-color</code> to pink and the <code>border-radius</code> to 50%.",
+        "Next, target the element with the class <code>heart</code> (just <code>heart</code>) and fill in the <code>transform</code> property. Use the <code>rotate()</code> function with -45 degrees. (<code>rotate()</code> works the same way that <code>skewX()</code> and <code>skewY()</code> do).",
+        "Finally, in the <code>heart:before</code> selector, set its <code>content</code> property to an empty string."
+      ],
+      "challengeSeed": [
+        "<style>",
+        ".heart {",
+        "  position: absolute;",
+        "  margin: auto;",
+        "  top: 0;",
+        "  right: 0;",
+        "  bottom: 0;",
+        "  left: 0;",
+        "  background-color: pink;",
+        "  height: 50px;",
+        "  width: 50px;",
+        "  transform: ;",
+        "}",
+        ".heart:after {",
+        "  background-color: blue;",
+        "  content: \"\";",
+        "  border-radius: 25%;",
+        "  position: absolute;",
+        "  width: 50px;",
+        "  height: 50px;",
+        "  top: 0px;",
+        "  left: 25px;",
+        "}",
+        ".heart:before {",
+        "  content: ;",
+        "  background-color: pink;",
+        "  border-radius: 50%;",
+        "  position: absolute;",
+        "  width: 50px;",
+        "  height: 50px;",
+        "  top: -25px;",
+        "  left: 0px;",
+        "}",
+        "</style>",
+        "<div class = \"heart\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/\\.heart:after\\s*?{\\s*?background-color:\\s*?pink;/gi), 'message: The <code>background-color</code> property of the <code>heart:after</code> selector should be pink.');",
+        "assert(code.match(/border-radius:\\s*?50%/gi).length == 2, 'message: The <code>border-radius</code> of the <code>heart:after</code> selector should be 50%.');",
+        "assert(code.match(/transform:\\s*?rotate\\(-45deg\\)/gi), 'message: The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.');",
+        "assert(code.match(/\\.heart:before\\s*?{\\s*?content:\\s*?(\"|')\\1;/gi), 'message: The <code>content</code> of the <code>heart:before</code> selector should be an empty string.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a7367417b2b2512adf",
+      "title": "Learn How CSS Keyframes and Animation Properties Work",
+      "description": [
+        "To animate an element, you need to know about the animation properties and the <code>@keyframes</code> rule. The animation properties control how the animation should behave and the <code>@keyframes</code> rule controls what happens during that animation. There are eight animation properties in total, this challenge will keep it simple and cover the two most important ones first:",
+        "<code>animation-name</code> sets the name of the animation, which is later used by <code>@keyframes</code> to tell CSS which rules go with which animations.",
+        "<code>animation-duration</code> sets the length of time for the animation.",
+        "<code>@keyframes</code> is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific \"frames\" during the animation, with percentages ranging from 0% to 100%. If you compare this to a movie, the CSS properties for 0% is how the element displays in the opening scene. The CSS properties for 100% is how the element appears at the end, right before the credits roll. Then CSS applies the magic to transition the element over the given duration to act out the scene. Here's an example to illustrate the usage of <code>@keyframes</code> and the animate properties:",
+        "<blockquote>#anim {<br>  animation-name: colorful;<br>  animation-duration: 3s;<br>}<br>@keyframes colorful {<br>  0% {<br>   background-color: blue;<br>  }<br>  100% {<br>    background-color: yellow;<br>  }<br>}</blockquote>",
+        "For the element with the <code>anim</code> id, the code snippet above sets the <code>animation-name</code> to <code>colorful</code> and sets the <code>animation-duration</code> to 3 seconds. Then the <code>@keyframes</code> rule links to the animation properties with the name <code>colorful</code>. It sets the color to blue at the beginning of the animation (0%) which will transition to yellow by the end of the animation (100%). You aren't limited to only beginning-end transitions, you can set properties for the element for any percentage between 0% and 100%.",
+        "<h4>Instructions</h4>",
+        "Create an animation for the element with the id <code>rect</code>, by setting the <code>animation-name</code> to rainbow and the <code>animation-duration</code> to 4 seconds. Next, declare a <code>@keyframes</code> rule, and set the <code>background-color</code> at the beginning of the animation (<code>0%</code>) to blue, the middle of the animation (<code>50%</code>) to green, and the end of the animation (<code>100%</code>) to yellow."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  div{",
+        "    height:40px;",
+        "    width: 70%;",
+        "    background:black;",
+        "    margin: 50 auto;",
+        "    border-radius: 5px;",
+        "  }",
+        "",
+        "  #rect {",
+        "    ",
+        "    ",
+        "  }",
+        "  ",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "<div id=\"rect\"></div>"
+      ],
+      "tests": [
+        "assert($('#rect').css('animation-name') == 'rainbow', 'message: The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.');",
+        "assert($('#rect').css('animation-duration') == '4s', 'message: The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.');",
+        "assert(code.match(/@keyframes\\s+?rainbow\\s*?{/g), 'message: The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.');",
+        "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?}/gi), 'message: The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.');",
+        "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?}/gi), 'message: The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.');",
+        "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?}/gi), 'message: The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.');"
+      ],
+      "solutions": [],
+      "hints": [
+        "Make sure the @keyframes rule links to the animation-name."
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a7367417b2b2512ae0",
+      "title": "Use CSS Animation to Change the Hover State of a Button",
+      "description": [
+        "You can use CSS <code>@keyframes</code> to change the color of a button in its hover state.",
+        "Here's an example of changing the height of an image on hover:",
+        "<blockquote>&lt;style&gt;<br>  img:hover {<br>    animation-name: width;<br>    animation-duration: 4s;<br>  }<br>  @keyframes width {<br>    100% {<br>      width: 40px;<br>    }<br>  }<br>&lt;/style&gt;<br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
+        "<h4>Instructions</h4>",
+        "Use CSS <code>@keyframes</code> to change the <code>background-color</code> of the <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  button {",
+        "    border-radius: 5px;",
+        "    color: white;",
+        "    background-color: #0F5897;",
+        "    padding: 5px 10px 8px 10px;",
+        "  }",
+        "  button:hover {",
+        "    animation-name: background-color;",
+        "    animation-duration: 4s;",
+        "  }",
+        "  ",
+        "  ",
+        "</style>",
+        "<button>Register</button>"
+      ],
+      "tests": [
+        "assert(code.match(/@keyframes\\s+?background-color\\s*?{/g), 'message: The @keyframes rule should use the <code>animation-name</code> background-color.');",
+        "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?#4791d0;\\s*?}/gi), 'message: There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a7367417b2b2512ae1",
+      "title": "Create Movement Using CSS Animation",
+      "description": [
+        "When elements have a specified <code>position</code>, such as <code>fixed</code> or <code>relative</code>, the CSS offset properties <code>right</code>, <code>left</code>, <code>top</code>, and <code>bottom</code> can be used in animation rules to create movement.",
+        "As shown in the example below, you can push the item downwards then upwards by setting the <code>top</code> property of the <code>50%</code> keyframe to 50px, but having it set to 0px for the first (<code>0%</code>) and the last (<code>100%</code>) keyframe.",
+        "<blockquote>@keyframes rainbow {<br>  0% {<br>    background-color: blue;<br>    top: 0px;<br>  }<br>  50% {<br>    background-color: green;<br>    top: 50px;<br>  }<br>  100% {<br>    background-color: yellow;<br>    top: 0px;<br>  }<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  div{",
+        "    height:40px;",
+        "    width: 70%;",
+        "    background:black;",
+        "    margin: 50 auto;",
+        "    border-radius: 5px;",
+        "    position: relative;",
+        "  }",
+        "",
+        "#rect {",
+        "  animation-name: rainbow;",
+        "  animation-duration: 4s;",
+        "}",
+        "",
+        "@keyframes rainbow {",
+        "  0% {",
+        "    background-color: blue;",
+        "    top: 0px;",
+        "    ",
+        "  }",
+        "  50% {",
+        "    background-color: green;",
+        "    top: 50px;",
+        "    ",
+        "  }",
+        "  100% {",
+        "    background-color: yellow;",
+        "    top: 0px;",
+        "    ",
+        "  }",
+        "}",
+        "</style>",
+        "",
+        "<div id=\"rect\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?top:\\s*?0px;\\s*?left:\\s*?0px;\\s*?}/gi), 'message: The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.');",
+        "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?top:\\s*?50px;\\s*?left:\\s*?25px;\\s*?}/gi), 'message: The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.');",
+        "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?top:\\s*?0px;\\s*?left:\\s*?-25px;\\s*?}/gi), 'message: The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a7367417b2b2512ae2",
+      "title": "Create Visual Direction by Fading an Element from Left to Right",
+      "description": [
+        "For this challenge, you'll change the <code>opacity</code> of an animated element so it gradually fades as it reaches the right side of the screen.",
+        "In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the <code>@keyframes</code> rule.",
+        "<h4>Instructions</h4>",
+        "Target the element with the id of <code>ball</code> and add the <code>opacity</code> property set to 0.1 at <code>50%</code> so the element fades as it moves to the right."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "  #ball {",
+        "    width: 70px;",
+        "    height: 70px;",
+        "    margin: 50 auto;",
+        "    position: fixed;",
+        "    left:20%;",
+        "    border-radius: 50%;",
+        "    background: linear-gradient(",
+        "      35deg,",
+        "      #ccffff,",
+        "      #ffcccc",
+        "    );",
+        "  animation-name: fade;",
+        "  animation-duration: 3s;",
+        "  }",
+        "",
+        "  @keyframes fade {",
+        "    50% {",
+        "      left:60%;",
+        "      ",
+        "    }",
+        "  }",
+        "",
+        "</style>",
+        "",
+        "<div id=\"ball\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/opacity:\\s*?0?\\.1;/gi), 'message: The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a8367417b2b2512ae3",
+      "title": "Animate Elements Continually Using an Infinite Animation Count",
+      "description": [
+        "The previous challenges covered how to use some of the animation properties and the <code>@keyframes</code> rule. Another animation property is the <code>animation-iteration-count</code>, which allows you to control how many times you would like to loop through the animation. Here's an example:",
+        "<code>animation-iteration-count: 3;</code>",
+        "The above animation will stop after running 3 times, but it's possible to make the animation run continuously by setting that value to infinite.",
+        "<h4>Instructions</h4>",
+        "To keep the ball bouncing on the right on a continuous loop, change the <code>animation-iteration-count</code> property to infinite."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "  #ball {",
+        "    width: 100px;",
+        "    height: 100px;",
+        "    margin: 50 auto;",
+        "    position: relative;",
+        "    border-radius: 50%;",
+        "    background: linear-gradient(",
+        "      35deg,",
+        "      #ccffff,",
+        "      #ffcccc",
+        "    );",
+        "    animation-name: bounce;",
+        "    animation-duration: 1s;",
+        "    animation-iteration-count: 3;",
+        "  }",
+        "",
+        "  @keyframes bounce{",
+        "    0% {",
+        "      top:0px;",
+        "    }",
+        "    50% {",
+        "      top:249px;",
+        "      width: 130px;",
+        "      height: 70px;",
+        "    }",
+        "    100% {",
+        "      top:0px;",
+        "    }",
+        "  }",
+        "</style>",
+        "<div id=\"ball\"></div>"
+      ],
+      "tests": [
+        "assert($('#ball').css('animation-iteration-count') == 'infinite', 'message: The <code>animation-iteration-count</code> property should have a value of infinite.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a8367417b2b2512ae4",
+      "title": "Make a CSS Heartbeat using an Infinite Animation Count",
+      "description": [
+        "Here's one more continuous animation example with the <code>animation-iteration-count</code> property that uses the heart you designed in a previous challenge.",
+        "The one second long heartbeat animation consists of two animated pieces. The <code>heart</code> elements (including the <code>:before</code> and <code>:after</code> pieces) are animated to change size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.",
+        "<h4>Instructions</h4>",
+        "Keep the heart beating by adding the <code>animation-iteration-count</code> property for both the <code>back</code> class and the <code>heart</code> class and setting the value to infinite. The <code>heart:before</code> and <code>heart:after</code> selectors do not need any animation properties."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .back {",
+        "    position:fixed;",
+        "    padding:0;",
+        "    margin:0;",
+        "    top:0;",
+        "    left:0;",
+        "    width: 100%;",
+        "    height: 100%;",
+        "    background:white;",
+        "    animation-name: backdiv;",
+        "    animation-duration: 1s; ",
+        "    ",
+        "  }",
+        "",
+        "  .heart {",
+        "    position: absolute;",
+        "    margin: auto;",
+        "    top: 0;",
+        "    right: 0;",
+        "    bottom: 0;",
+        "    left: 0;",
+        "    background-color: pink;",
+        "    height: 50px;",
+        "    width: 50px;",
+        "    transform: rotate(-45deg);",
+        "    animation-name: beat;",
+        "    animation-duration: 1s;",
+        "    ",
+        "  }",
+        "  .heart:after {",
+        "    background-color: pink;",
+        "    content: \"\";",
+        "    border-radius: 50%;",
+        "    position: absolute;",
+        "    width: 50px;",
+        "    height: 50px;",
+        "    top: 0px;",
+        "    left: 25px;",
+        "  }",
+        "  .heart:before {",
+        "    background-color: pink;",
+        "    content: \"\";",
+        "    border-radius: 50%;",
+        "    position: absolute;",
+        "    width: 50px;",
+        "    height: 50px;",
+        "    top: -25px;",
+        "    left: 0px;",
+        "  }",
+        "",
+        "  @keyframes backdiv {",
+        "    50% {",
+        "      background:#ffe6f2;",
+        "    }",
+        "  }",
+        "",
+        "  @keyframes beat {",
+        "    0% {",
+        "      transform: scale(1) rotate(-45deg);",
+        "    }",
+        "    50% {",
+        "      transform: scale(.6) rotate(-45deg);",
+        "    }",
+        "  }",
+        "",
+        "</style>",
+        "<div class=\"back\"></div>",
+        "<div class=\"heart\"></div>"
+      ],
+      "tests": [
+        "assert($('.heart').css('animation-iteration-count') == 'infinite', 'message: The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.');",
+        "assert($('.back').css('animation-iteration-count') == 'infinite', 'message: The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a8367417b2b2512ae5",
+      "title": "Animate Elements at Variable Rates",
+      "description": [
+        "There are a variety of ways to alter the animation rates of similarly animated elements. So far, this has been achieved by applying an <code>animation-iteration-count</code> property and setting <code>@keyframes</code> rules.",
+        "To illustrate, the animation on the right consists of two \"stars\" that each decrease in size and opacity at the 20% mark in the <code>@keyframes</code> rule, which creates the twinkle animation. You can change the <code>@keyframes</code> rule for one of the elements so the stars twinkle at different rates.",
+        "<h4>Instructions</h4>",
+        "Alter the animation rate for the element with the class name of <code>star-1</code> by changing its <code>@keyframes</code> rule to 50%."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .stars {",
+        "    background-color: white;",
+        "    height: 30px;",
+        "    width: 30px;",
+        "    border-radius: 50%;",
+        "    animation-iteration-count: infinite;",
+        "  }",
+        "",
+        "  .star-1 {",
+        "    margin-top: 15%; ",
+        "    margin-left: 60%;",
+        "    animation-duration: 1s;",
+        "    animation-name: twinkle-1;",
+        "  }",
+        "",
+        "  .star-2 {",
+        "    margin-top: 25%;",
+        "    margin-left: 25%;",
+        "    animation-duration: 1s;",
+        "    animation-name: twinkle-2;",
+        "  }",
+        "",
+        "  @keyframes twinkle-1 {",
+        "    20% {",
+        "      transform: scale(.5);",
+        "      opacity: 0.5;",
+        "    }",
+        "  }",
+        "",
+        "  @keyframes twinkle-2 {",
+        "    20% {",
+        "      transform: scale(.5);",
+        "      opacity: 0.5;",
+        "    }",
+        "  }",
+        "",
+        "  #back {",
+        "    position: fixed;",
+        "    padding: 0;",
+        "    margin: 0;",
+        "    top: 0;",
+        "    left: 0;",
+        "    width: 100%;",
+        "    height: 100%;",
+        "    background: linear-gradient(black,#000099,#66c2ff, #ffcccc, #ffeee6);",
+        "  }",
+        "</style>",
+        "",
+        "<div id=\"back\"></div>",
+        "<div class=\"star-1 stars\"></div>",
+        "<div class=\"star-2 stars\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/twinkle-1\\s*?{\\s*?50%/g), 'message: The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.');"
+      ],
+      "solutions": [],
+      "hints": [
+        "Check the animation-name declared in the star-1 class to find the right @keyframes rule to change."
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a8367417b2b2512ae6",
+      "title": "Animate Multiple Elements at Variable Rates",
+      "description": [
+        "In the previous challenge, you changed the animation rates for two similarly animated elements by altering their <code>@keyframes</code> rules. You can achieve the same goal by manipulating the <code>animation-duration</code> of multiple elements.",
+        "In the animation running in the code editor, there are three \"stars\" in the sky that twinkle at the same rate on a continuous loop. To make them twinkle at different rates, you can set the <code>animation-duration</code> property to different values for each element.",
+        "<h4>Instructions</h4>",
+        "Set the <code>animation-duration</code> of the elements with the classes <code>star-1</code>, <code>star-2</code>, and <code>star-3</code> to 1s, 0.9s, and 1.1s, respectively."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .stars {",
+        "    background-color: white;",
+        "    height: 30px;",
+        "    width: 30px;",
+        "    border-radius: 50%;",
+        "    animation-iteration-count: infinite;",
+        "  }",
+        "",
+        "  .star-1 {",
+        "    margin-top: 15%; ",
+        "    margin-left: 60%;",
+        "    animation-duration: 1s;",
+        "    animation-name: twinkle;",
+        "  }",
+        "",
+        "  .star-2 {",
+        "    margin-top: 25%;",
+        "    margin-left: 25%;",
+        "    animation-duration: 1s;",
+        "    animation-name: twinkle;",
+        "  }",
+        "",
+        "  .star-3 {",
+        "    margin-top: 10%;",
+        "    margin-left: 50%;",
+        "    animation-duration: 1s;",
+        "    animation-name: twinkle;",
+        "  }",
+        "",
+        "  @keyframes twinkle {",
+        "    20% {",
+        "      transform: scale(.5);",
+        "      opacity: 0.5;",
+        "    }",
+        "  }",
+        "",
+        "  #back {",
+        "    position: fixed;",
+        "    padding: 0;",
+        "    margin: 0;",
+        "    top: 0;",
+        "    left: 0;",
+        "    width: 100%;",
+        "    height: 100%;",
+        "    background: linear-gradient(black,#000099,#66c2ff, #ffcccc, #ffeee6);",
+        "  }",
+        "</style>",
+        "",
+        "<div id=\"back\"></div>",
+        "<div class=\"star-1 stars\"></div>",
+        "<div class=\"star-2 stars\"></div>",
+        "<div class=\"star-3 stars\"></div>"
+      ],
+      "tests": [
+        "assert($('.star-1').css('animation-duration') == '1s', 'message: The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.');",
+        "assert($('.star-2').css('animation-duration') == '0.9s', 'message: The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.');",
+        "assert($('.star-3').css('animation-duration') == '1.1s', 'message: The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a8367417b2b2512ae7",
+      "title": "Change Animation Timing with Keywords",
+      "description": [
+        "In CSS animations, the <code>animation-timing-function</code> property controls how quickly an animated element changes over the duration of the animation. If the animation is a car moving from point A to point B in a given time (your <code>animation-duration</code>), the <code>animation-timing-function</code> says how the car accelerates and decelerates over the course of the drive.",
+        "There are a number of predefined keywords available for popular options. For example, the default value is <code>linear</code>, which applies a constant animation speed throughout. Other options include <code>ease-out</code>, which is quick in the beginning then slows down, or <code>ease-in</code>, which is slow in the beginning, then speeds up at the end.",
+        "<h4>Instructions</h4>",
+        "For the elements with id of <code>ball1</code> and <code>ball2</code>, add an <code>animation-timing-function</code> property to each, and set <code>#ball1</code> to <code>linear</code>, and <code>#ball2</code> to <code>ease-out</code>. Notice the difference between how the elements move during the animation but end together, since they share the same <code>animation-duration</code> of 2 seconds."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "  .balls{",
+        "    border-radius: 50%;",
+        "    background: linear-gradient(",
+        "    35deg,",
+        "    #ccffff,",
+        "    #ffcccc",
+        "      );",
+        "    position: fixed;  ",
+        "    width: 50px;",
+        "    height: 50px;",
+        "    margin-top: 50px;",
+        "    animation-name: bounce;",
+        "    animation-duration: 2s;",
+        "    animation-iteration-count: infinite;",
+        "  }",
+        "  #ball1 { ",
+        "    left:27%;",
+        "    ",
+        "  }",
+        "  #ball2 { ",
+        "    left:56%;",
+        "    ",
+        "  }",
+        "",
+        "@keyframes bounce{",
+        "  0% {",
+        "    top:0px;",
+        "  } ",
+        "  100% {",
+        "    top:249px;",
+        "  }",
+        "} ",
+        "",
+        "</style>",
+        "",
+        "<div class=\"balls\" id=\"ball1\"></div>",
+        "<div class=\"balls\" id=\"ball2\"></div>"
+      ],
+      "tests": [
+        "assert($('#ball1').css('animation-timing-function') == 'linear', 'message: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.');",
+        "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'message: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a9367417b2b2512ae8",
+      "title": "Learn How Bezier Curves Work",
+      "description": [
+        "The last challenge introduced the <code>animation-timing-function</code> property and a few keywords that change the speed of an animation over its duration. CSS offers an option other than keywords that provides even finer control over how the animation plays out, through the use of Bezier curves.",
+        "In CSS animations, Bezier curves are used with the <code>cubic-bezier</code> function. The shape of the curve represents how the animation plays out. The curve lives on a 1 by 1 coordinate system. The X axis of this coordinate system is the duration of the animation (think of it as a time scale), and the Y axis is the change in the animation.",
+        "The <code>cubic-bezier</code> function consists of four main points that sit on this 1 by 1 grid: <code>p0</code>, <code>p1</code>, <code>p2</code>, and <code>p3</code>. <code>p0</code> and <code>p3</code> are set for you - they are the beginning and end points which are always located respectively at the origin (0, 0) and (1, 1). You set the x and y values for the other two points, and where you place them in the grid dictates the shape of the curve for the animation to follow. This is done in CSS by declaring the x and y values of the <code>p1</code> and <code>p2</code> \"anchor\" points in the form: <code>(x1, y1, x2, y2)</code>. Pulling it all together, here's an example of a Bezier curve in CSS code:",
+        "<code>animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);</code>",
+        "In the example above, the x and y values are equivalent for each point (x1 = 0.25 = y1 and x2 = 0.75 = y2), which if you remember from geometry class, results in a line that extends from the origin to point (1, 1). This animation is a linear change of an element during the length of an animation, and is the same as using the <code>linear</code> keyword. In other words, it changes at a constant speed.",
+        "<h4>Instructions</h4>",
+        "For the element with the id of <code>ball1</code>, change the value of the <code>animation-timing-function</code> property from <code>linear</code> to its equivalent <code>cubic-bezier</code> function value. Use the point values given in the example above."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "  .balls{",
+        "    border-radius: 50%;",
+        "    background: linear-gradient(",
+        "    35deg,",
+        "    #ccffff,",
+        "    #ffcccc",
+        "      );",
+        "    position: fixed;  ",
+        "    width: 50px;",
+        "    height: 50px;",
+        "    margin-top: 50px;",
+        "    animation-name: bounce;",
+        "    animation-duration: 2s;",
+        "    animation-iteration-count: infinite;",
+        "  }",
+        "  #ball1 { ",
+        "    left:27%;",
+        "    animation-timing-function: linear;",
+        "  }",
+        "  #ball2 { ",
+        "    left:56%;",
+        "    animation-timing-function: ease-out;",
+        "  }",
+        "",
+        "@keyframes bounce{",
+        "  0% {",
+        "    top:0px;",
+        "  } ",
+        "  100% {",
+        "    top:249px;",
+        "  }",
+        "} ",
+        "",
+        "</style>",
+        "",
+        "<div class=\"balls\" id=\"ball1\"></div>",
+        "<div class=\"balls\" id=\"ball2\"></div>"
+      ],
+      "tests": [
+        "assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)', 'message: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.');",
+        "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'message: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a9367417b2b2512ae9",
+      "title": "Use a Bezier Curve to Move a Graphic",
+      "description": [
+        "A previous challenge discussed the <code>ease-out</code> keyword that describes an animation change that speeds up first and then slows down at the end of the animation. On the right, the difference between the <code>ease-out</code> keyword (for the blue element) and <code>linear</code> keyword (for the red element) are demonstrated. Similar animation progressions to the <code>ease-out</code> keyword can be achieved by using a custom cubic Bezier curve function.",
+        "In general, changing the <code>p1</code> and <code>p2</code> anchor points drives the creation of different Bezier curves, which controls how the animation progresses through time. Here's an example of a Bezier curve using values to mimic the ease-out style:",
+        "<code>animation-timing-function: cubic-bezier(0, 0, 0.58, 1);</code>",
+        "Remember that all <code>cubic-bezier</code> functions start with <code>p0</code> at (0, 0) and end with <code>p3</code> at (1, 1). In this example, the curve moves faster through the Y axis (starts at 0, goes to <code>p1</code> y value of 0, then goes to <code>p2</code> y value of 1) than it moves through the X axis (0 to start, then 0 for <code>p1</code>, up to 0.58 for <code>p2</code>). As a result, the change in the animated element progresses faster than the time of the animation for that segment. Towards the end of the curve, the relationship between the change in x and y values reverses - the y value moves from 1 to 1 (no change), and the x values move from 0.58 to 1, making the animation changes progress slower compared to the animation duration.",
+        "<h4>Instructions</h4>",
+        "To see the effect of this Bezier curve in action, change the <code>animation-timing-function</code> of the element with id of <code>red</code> to a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1. This will make both elements progress through the animation similarly."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .balls{",
+        "    border-radius: 50%;",
+        "    position: fixed;  ",
+        "    width: 50px;",
+        "    height: 50px;",
+        "    margin-top: 50px;",
+        "    animation-name: bounce;",
+        "    animation-duration: 2s;",
+        "    animation-iteration-count: infinite;",
+        "  }",
+        "  #red {",
+        "    background:red;",
+        "    left:27%;",
+        "    animation-timing-function: linear;",
+        "  }",
+        "  #blue {",
+        "    background:blue;",
+        "    left:56%;",
+        "    animation-timing-function: ease-out;",
+        "  }",
+        "  @keyframes bounce{",
+        "    0% {",
+        "      top:0px;",
+        "    }",
+        "    100% {",
+        "      top:249px;",
+        "    }",
+        "  }",
+        "</style>",
+        "<div class=\"balls\" id= \"red\"></div>",
+        "<div class=\"balls\" id= \"blue\"></div>"
+      ],
+      "tests": [
+        "assert($('#red').css('animation-timing-function') == 'cubic-bezier(0, 0, 0.58, 1)', 'message: The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .');",
+        "assert($('#red').css('animation-timing-function') !== 'linear', 'message: The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.');",
+        "assert($('#blue').css('animation-timing-function') == 'ease-out', 'message: The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d78a9367417b2b2512aea",
+      "title": "Make Motion More Natural Using a Bezier Curve",
+      "description": [
+        "This challenge animates an element to replicate the movement of a ball being juggled. Prior challenges covered the <code>linear</code> and <code>ease-out</code> cubic Bezier curves, however neither depicts the juggling movement accurately. You need to customize a Bezier curve for this.",
+        "The <code>animation-timing-function</code> automatically loops at every keyframe when the <code>animation-iteration-count</code> is set to infinite. Since there is a keyframe rule set in the middle of the animation duration (at <code>50%</code>), it results in two identical animation progressions at the upward and downward movement of the ball.",
+        "The following cubic Bezier curve simulates a juggling movement:",
+        "<code>cubic-bezier(0.3, 0.4, 0.5, 1.6); </code>",
+        "Notice that the value of y2 is larger than 1. Although the cubic Bezier curve is mapped on an 1 by 1 coordinate system, and it can only accept x values from 0 to 1, the y value can be set to numbers larger than one. This results in a bouncing movement that is ideal for simulating the juggling ball.",
+        "<h4>Instructions</h4>",
+        "Change value of the <code>animation-timing-function</code> of the element with the id of <code>green</code> to a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0.311, 0.441, 0.444, 1.649."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .balls {",
+        "    border-radius: 50%;",
+        "    top:249px;",
+        "    position: fixed;  ",
+        "    width: 50px;",
+        "    height: 50px;",
+        "    top: 60%;",
+        "    animation-name: jump;",
+        "    animation-duration: 2s;",
+        "    animation-iteration-count: infinite;",
+        "  }",
+        "  #red {",
+        "    background:red;",
+        "    left:25%;",
+        "    animation-timing-function: linear;",
+        "  }",
+        "  #blue {",
+        "    background:blue;",
+        "    left:50%;",
+        "    animation-timing-function: ease-out;",
+        "  }",
+        "  #green {",
+        "    background:green;",
+        "    left:75%;",
+        "    animation-timing-function: cubic-bezier(0.69, 0.1, 1, 0.1); ",
+        "  }",
+        "",
+        "  @keyframes jump {",
+        "    50% {",
+        "      top:10%;",
+        "    }",
+        "  }",
+        "</style>",
+        "<div class=\"balls\" id=\"red\"></div>",
+        "<div class=\"balls\" id=\"blue\"></div>",
+        "<div class=\"balls\" id=\"green\"></div>"
+      ],
+      "tests": [
+        "assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)', 'message: The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

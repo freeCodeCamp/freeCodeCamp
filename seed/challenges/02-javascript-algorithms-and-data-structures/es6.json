@@ -1,0 +1,1054 @@
+{
+  "name": "ES6",
+  "order": 2,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d7b86367417b2b2512b3e",
+      "title": "Introduction to the ES6 Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "ECMAScript is a standardized version of JavaScript with the goal of unifying the language's specifications and features. As all major browsers and JavaScript-runtimes follow this specification, the term <i>ECMAScript</i> is interchangeable with the term <i>JavaScript</i>.<br><br>Most of the challenges on Free Code Camp use the ECMAScript 5 (ES5) specification of the language, finalized in 2009. But JavaScript is an evolving programming language. As features are added and revisions are made, new versions of the language are released for use by developers.<br><br>The most recent standardized version is called ECMAScript 6 (ES6), released in 2015. This new version of the language adds some powerful features that will be covered in this section of challenges, including:<br><br><ul><li>Arrow functions</li><li>Classes</li><li>Modules</li><li>Promises</li><li>Generators</li><li><code>let</code> and <code>const</code></li></ul><br><br><strong>Note</strong><br>Not all browsers support ES6 features. If you use ES6 in your own projects, you may need to use a program (transpiler) to convert your ES6 code into ES5 until browsers support ES6.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
+      "id": "587d7b87367417b2b2512b3f",
+      "title": "Problems with the var keyword",
+      "description": [
+        "One of the biggest problems with declaring variables with the var keyword is that you can overwrite variable declarations without an error.",
+        "<code>var camper = 'James'; </code>",
+        "<code>var camper = 'David'; </code>",
+        "<code>console.log(camper); </code>",
+        "<code>// logs 'David'</code>",
+        "In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidently overwrite a variable what you did not intend to overwrite. Without an error warning, searching and fixing bugs becomes more difficult.",
+        "Another problem with the var keyword is that it is hoisted to the top of your code when it compiles. This means that you can use a variable before you declare it.",
+        "<code>console.log(camper); </code>",
+        "<code>var camper = 'David'; </code>",
+        "<code>// logs undefined</code>",
+        "The code runs in the following order: the variable camper is declared as undefined, camper is loged, and then David is assigned to camper. This code will run without an error.",
+        "A new keyword was introduced in ES6 to solve the problems with the var keyword, called let. With the let keyword, all the examples we just saw will cause an error to appear. We can no longer overwrite variables or use a variable before we declare it. Some modern browsers requires you to add \"use strict\" to the top of your code before you can able to use the new features in ES6",
+        "Let's try using the let keyword;",
+        "Instructions",
+        "Fix the code so it only uses the let keyword and make the errors go away.",
+        "Note",
+        "Remember to add \"use strict\" to the top of your code."
+      ],
+      "challengeSeed": [
+        "var favorite = redNosedReindeer + \" is Santa's favorite reindeer.\";",
+        "var redNosedReindeer = \"Rudolph\";",
+        "var redNosedReindeer = \"Comet\";"
+      ],
+      "tests": [
+        "assert(redNosedReindeer === \"Rudolph\", 'message: <code>redNosedReindeer</code> should be Rudolph.');",
+        "assert(favorite === \"Rudolph is Santa's favorite reindeer.\", \"message: <code>favorite</code> should return Santa's favorite reindeer.\");"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b87367417b2b2512b40",
+      "title": "Scopes and the var keyword",
+      "description": [
+        "When you declare a variable with the var keyword, it is declared globally, or locally if inside a function.",
+        "The let keywords behaves in the same way, but with some extra features. When you declare a variable with the let keyword inside a block, statement, or expression; its scope is limited to that block, statement, or expression.",
+        "For example:",
+        "<code>var numArray = [];</code>",
+        "<code>for( var i = 0; i < 3; i++){</code>",
+        "<code>  numArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>console.log(numArray)</code>",
+        "<code>// returns [ 0, 1, 2 ]</code>",
+        "<code>console.log(i) </code>",
+        "<code>// returns 3</code>",
+        "With the var keyword, i is declared globally. So when i++ is executed, it updates the global variable. This code is similiar to the following:",
+        "<code>var numArray = [];</code>",
+        "<code>var i ;</code>",
+        "<code>for( i = 0; i < 3; i++){</code>",
+        "<code>  numArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>console.log(numArray)</code>",
+        "<code>// returns [ 0, 1, 2 ]</code>",
+        "<code>console.log(i) </code>",
+        "<code>// returns 3</code>",
+        "This behavior will cause problems when you create a function, and store it for later uses, inside the for loop that uses the i variable. This is because the stored function will always refer to the value of the updated global i variable.",
+        "<code>var printNumTwo;</code>",
+        "<code>for( var i = 0; i < 3; i++){</code>",
+        "<code>  if(i === 2){</code>",
+        "<code>      printNumTwo = function(){</code>",
+        "<code>          return i;</code>",
+        "<code>      }</code>",
+        "<code>  }</code>",
+        "<code>}</code>",
+        "<code>console.log(printNumTwo())</code>",
+        "<code>// returns 3</code>",
+        "As you can see, printNumTwo() prints 3 and not 2. This because the value to i was updated and the printNumTwo() returns the global i and not the value i had when the function was created in for loop. The let keyword does not follow this behavior;",
+        "<code>'use strict'</code>",
+        "<code>let printNumTwo;</code>",
+        "<code>for( let i = 0; i < 3; i++){</code>",
+        "<code>  if(i === 2){</code>",
+        "<code>      printNumTwo = function(){</code>",
+        "<code>          return i;</code>",
+        "<code>     }</code>",
+        "<code>  }</code>",
+        "<code>}</code>",
+        "<code>console.log(printNumTwo())</code>",
+        "<code>// returns 2</code>",
+        "<code>console.log(i)</code>",
+        "<code>// returns \"i is not defined\"</code>",
+        "i is not defined because it was not declared in the global scope. It is only declared within the for loop statement. printNumTwo() was able to print the correct value because within the loop let create 3 different i varibles with their own values.",
+        "Instructions",
+        "Fix the code so each camper shows their correct index when they are called.",
+        "Note",
+        "Remember to add \"use strict\" to the top of your code."
+      ],
+      "challengeSeed": [
+        "var newCampers = [{camper: \"Wil\"}, {camper: \"Sam\"},{camper: \"Dav\"}];",
+        "// only change code below this line",
+        "for( var i = 0; i < newCampers.length; i++){",
+        "// only change code above this line",
+        "    newCampers[i].roleCall = function(){",
+        "        return \"Camper # \" + (i + 1) + \" has arrived.\";",
+        "    };",
+        "}",
+        "// test your code",
+        "console.log(newCampers[0].roleCall());",
+        "console.log(newCampers[1].roleCall());",
+        "console.log(newCampers[2].roleCall());"
+      ],
+      "tests": [
+        "assert(newCampers[0].roleCall() === \"Camper # 1 has arrived.\", \"message: <code>newCampers[0].call()</code> should call the index of the first camper\");",
+        "assert(newCampers[1].roleCall() === \"Camper # 2 has arrived.\", \"message: <code>newCampers[0].call()</code> should call the index of the second camper\");",
+        "assert(newCampers[2].roleCall() === \"Camper # 3 has arrived.\", \"message: <code>newCampers[0].call()</code> should call the index of the third camper\");"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b87367417b2b2512b41",
+      "title": "Using the const keyword",
+      "description": [
+        "let is not the only new way to declared variables. In ES6, you can also declare variables using the const keyword.",
+        "const has all the awesome features that let has, with the added bonus that variables declared using const are read-only; they are a constant value. Which means once a variable is assigned with const, it cannot be reassigned.",
+        "<code>\"use strict\"</code>",
+        "<code>const FAV_PET = \"Cats\";</code>",
+        "<code>FAV_PET = \"Dogs\"; // returns error</code>",
+        "<code>console.log(FAV_PET);</code>",
+        "As you can see, trying to reassign a constant variable will throw an error. You should always name variables you don't want to reassign using the const keyword. This helps when you accidentally reassign a variable you did not intend to reassign. A common practice is to name your constants in all upper-cases and with an underscore to separate words.",
+        "Instructions",
+        "Change the follow code so all variables are declared using let or const. Use let when you want the variable to change, and const when you don't. Also rename const variable to conform to common practices.",
+        "Note",
+        "Don't forget to use strict mode."
+      ],
+      "challengeSeed": [
+        "// change 'var' to 'let' or 'const'",
+        "// rename constant variables",
+        "var pi = 3.14;",
+        "var radius = 10;",
+        "var calulateCircumference = function(r){",
+        "    var diameter = 2 * r;",
+        "    var result = pi * diameter;",
+        "    return result",
+        "}",
+        "// Test your code",
+        "console.log(calulateCircumference(radius))"
+      ],
+      "tests": [
+        "// Test user replaced all var keyword",
+        "// Test PI is const",
+        "// Test calculateCircumference is const",
+        "// Test pi and calulateCircumference has been renamed"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b87367417b2b2512b42",
+      "title": "An Immutable Object a const does not make",
+      "description": [
+        "const has many use-cases in modern JavaScript",
+        "Some developers prefer to assign all their variables as const by default, unless they know they need to reassign the value. Only in that case, they use let.",
+        "But, it is to be kept in mind that objects (arrays, or functions too) assigned to a variable using const are not immutable. It only prevents reassignment of the variable. You cannot use the variable and assignment operator to point to a new value.",
+        "<code>\"use strict\"</code>",
+        "<code>const s = [ 5, 6, 7 ]</code>",
+        "<code>s = [1, 2, 3]; // throws error, trying to assign a const</code>",
+        "<code>s[7] = 45; // works just as normally as it would with a regular array s, defined with var</code>",
+        "As you can see you can mutate the object itself. s still points to the array. The array s itself is not immutable, just that you cannot use the variable s to point to a different array using the assignment operator",
+        "To make an object immutable, you can use Object.freeze().",
+        "Instructions",
+        "An array is defined as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code>.",
+        "Note",
+        "Don't forget to use strict mode."
+      ],
+      "challengeSeed": [
+        "const s = [ 5, 7, 2 ];",
+        "// change code below this line",
+        "s = [2, 5, 7]",
+        "// change code above this line",
+        "// Test your code",
+        "console.log(s)"
+      ],
+      "tests": [
+        "// Test user did not replace const keyword",
+        "// Test s is const",
+        "// Test s is sorted",
+        "// Test s is still mutable, and object freeze was not invoked"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b87367417b2b2512b43",
+      "title": "Arrow functions",
+      "description": [
+        "In JS, we often, we often don't name our functions. Callback functions, for example.",
+        "Because we often create function just to pass it as argument to some other function, and we might not need to reuse this function anywhere.",
+        "To achieve this, we often use the boilerplate",
+        "<code>function(){</code>",
+        "<code>// function body</code>",
+        "<code> return ;</code>",
+        "<code>}</code>",
+        "ES6 provides you with the syntactic sugar to not having to write this. Instead, you can use arrow function syntax",
+        "<code>() => (</code>",
+        "<code>// function body</code>",
+        "<code>return ;</code>",
+        "<code>)</code>",
+        "When there is no function body, and only a return value, you can write that as a one-liner:",
+        "<code>() => (/* return value */)</code>",
+        "You don't have to write the keyword return here. You can even omit the paranthesis after =>",
+        "Instructions.",
+        "Refactor the function which returns the new Date(), to use arrow function syntax. Also make sure var is not there in the code anymore.",
+        "Note",
+        "Don't forget to use strict mode."
+      ],
+      "challengeSeed": [
+        "// change code below this line",
+        "var magic = function() {",
+        "  return new Date()",
+        "}",
+        "// change code above this line",
+        "// test your code",
+        "console.log(magic());"
+      ],
+      "tests": [
+        "// Test user did replace var keyword",
+        "// Test magic is const",
+        "// Test magic is a function",
+        "// Test magic() returns the correct date",
+        "// Test function keyword was not used",
+        "// Test arrow => was used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b88367417b2b2512b44",
+      "title": "Arrow functions with input parameters",
+      "description": [
+        "Just like a normal function, you can pass input parameters into arrow functions.",
+        "<code>const doubler = (item) => item * 2; // doubles input value and returns it</code>",
+        "You can pass more than one parameter as well",
+        "Instructions.",
+        "Write the myConcat function that appends content of the second array, passed as argument arr2 to the first array, passed as arr1.",
+        "Note",
+        "Don't forget to use strict mode."
+      ],
+      "challengeSeed": [
+        "// change code below this line",
+        "var myConcat = function(arr1, arr2) {",
+        "  return arr1.concat(arr2)",
+        "}",
+        "// change code above this line",
+        "// test your code",
+        "console.log(myConcat([1, 2], [3, 4, 5]));"
+      ],
+      "tests": [
+        "// Test user did replace var keyword",
+        "// Test myConcat is const",
+        "// Test myConcat is a function",
+        "// Test myConcat() returns the correct array",
+        "// Test function keyword was not used",
+        "// Test arrow => was used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b88367417b2b2512b45",
+      "title": "Arrow functions with higher order functions",
+      "description": [
+        "It's time we see in action how easily arrow function let us write complex data processing code",
+        "It mixes really well with higher order functions, such as map(), filter(), reduce() etc., that takes other functions as inputs for processing collections.",
+        "Read the following code:",
+        "<code>FBPosts.</code>",
+        "<code>.filter(function(post){</code>",
+        "<code>    return post.thumbnail !== null && post.shares > 100 && post.likes > 500</code>",
+        "<code>})</code>",
+        "<code>.reduce(function(acc, current){</code>",
+        "<code>    return acc + '<img alt=\"' + current.text + '\">' + current.thumbnail + '</img>'</code>",
+        "<code>})</code>",
+        "We have written this with filter() and reduce() to at least make it somewhat readable. Now compare the version with arrow functions",
+        "<code>FBPosts</code>",
+        "<code>    .filter((post) => post.thumbnail !== null && post.shares > 100 && post.likes > 500)</code>",
+        "<code>    .reduce((acc, current) => (acc + '<img alt=\"' + current.text + '\">' + current.thumbnail + '</img>'))</code>",
+        "This code is more succinct and keeps only the parts of the code where the real processing happen.",
+        "Instructions.",
+        "Use arrow function syntax to compute square of only the positive integers (fractions are not integers) in the array and return the array.",
+        "Note",
+        "Don't forget to use strict mode."
+      ],
+      "challengeSeed": [
+        "const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34]",
+        "// change code below this line",
+        "var squaredIntegers = realNumberArray",
+        "// change bcode above this line",
+        "// test your code",
+        "console.log(squaredIntegers);"
+      ],
+      "tests": [
+        "// Test user did replace var keyword",
+        "// Test squaredIntegers is const",
+        "// Test squaredIntegers is an array",
+        "// Test squaredIntegers is [16, 1764, 36]",
+        "// Test function keyword was not used",
+        "// Test arrow => was used",
+        "// Test loop was not used",
+        "// Test map and filter were used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b88367417b2b2512b46",
+      "title": "Default Parameters",
+      "description": [
+        "In order to help us create more flexible functions, ES2015 introduces default parameters for functions.",
+        "Check out this code:",
+        "<code>function greeting(name = \"Anonymous\") {</code>",
+        "<code>    return \"Hello \" + name;</code>",
+        "<code>}</code>",
+        "<code>console.log(greeting(\"John\")); // Hello John</code>",
+        "<code>console.log(greeting()); // Hello Anonymous</code>",
+        "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, when you do not provide a value for your parameter, the parameter will receive its default value. You can add default values for as many parameters as you want.",
+        "Instructions.",
+        "Modify the following code by adding a default parameter for the increment function so that it will always return a valid number and it will add 1 to the number parameter in case value is not specified.",
+        "Note",
+        "Don't forget to use strict mode."
+      ],
+      "challengeSeed": [
+        "function increment(number, value) {",
+        "    return number + value;",
+        "}",
+        "console.log(increment(5, 2)); // returns 7",
+        "console.log(increment(5)); // returns NaN"
+      ],
+      "tests": [
+        "assert(increment(5, 2) === 7, \"The result of increment(5, 2) should be 7\");",
+        "assert(increment(5) === 6, \"The result of increment(5) should be 6\");",
+        "// Test default parameter was used for 'value'"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b88367417b2b2512b47",
+      "title": "",
+      "description": [
+        "In order to help us create more flexible functions, ES2015 introduces the rest operator for function parameters. With the rest operator, you can create functions with variable number of arguments and then have those arguments available into an Array inside the function",
+        "Check out this code:",
+        "<code>function howMany(...args) {</code>",
+        "<code>    return \"You have passed \" + args.length + \" arguments.\";</code>",
+        "<code>}</code>",
+        "<code>console.log(howMany(0, 1, 2)); // You have passed 3 arguments.</code>",
+        "<code>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</code>",
+        "The rest operator eliminates the need to check the arguments object and allows us to apply map, filter and reduce on the parameters array.",
+        "Instructions.",
+        "Modify the sum function so that is uses the rest operator and it works in the same way with any number of parameters.",
+        "Note",
+        "Don't forget to use strict mode."
+      ],
+      "challengeSeed": [
+        "function sum(x, y, z) {",
+        "    const array = [ x, y, z ];",
+        "    return array.reduce((a, b) => a + b, 0);",
+        "}",
+        "console.log(sum(1, 2, 3)); // 6"
+      ],
+      "tests": [
+        "assert(sum(0,1,2) === 3, 'The result of sum(0,1,2) should be 3');",
+        "assert(sum(1,2,3,4) === 10, 'The result of sum(1,2,3,4) should be 10');",
+        "assert(sum(5) === 5, 'The result of sum(5) should be 5');",
+        "assert(sum() === 0, 'The result of sum() should be 0');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b89367417b2b2512b48",
+      "title": "Spread Operator",
+      "description": [
+        "With the Spread Operator in ES6 or ES2015; you can improve on the array literal syntax",
+        "The ES5 code uses apply to compute the maximum value in an array",
+        "<code>var arr = [6, 89, 3, 45];</code>",
+        "<code>var maximus = Math.max.apply(null, arr); // returns 89</code>",
+        "<code>We had to use Math.max.apply(null, arr), because Math.max(arr) returns NaN. Math.max expects a comma separated arguments, just not an array.</code>",
+        "However, the spread operator makes this syntax much better to read and maintain.",
+        "<code>const arr = [6, 89, 3, 45];</code>",
+        "<code>const maximus = Math.max(...arr); // returns 89</code>",
+        "...arr returns an un-packed array content. It spreads the array.",
+        "However, this is in-place; like the argument to a function. You cannot do this:",
+        "<code>const spreaded = ...arr; // will throw a syntax error</code>",
+        "Instructions.",
+        "Copy all contents of arr1 into another array arr2."
+      ],
+      "challengeSeed": [
+        "const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];",
+        "/* Alter code below this line */",
+        "const arr2 = undefined; // change this",
+        "/* Alter code above this line */",
+        "arr1.push('JUN');",
+        "console.log(arr2); // should not be affected"
+      ],
+      "tests": [
+        "// Test arr2 is correct copy of arr1",
+        "// Test arr1 has changed",
+        "// Test spread operator was used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b89367417b2b2512b49",
+      "title": "",
+      "description": [
+        "We earlier saw how spread operator can effectively spread or unpack the contents of the array.",
+        "We can do something similar with objects as well. Objects in JavaScript are a key-value pair collections.",
+        "Consider the following:",
+        "<code>const voxel = {x: 3.6, y: 7.4, z: 6.54 };</code>",
+        "<code>const x = voxel.x; // x = 3.6</code>",
+        "<code>const y = voxel.y; // y = 7.4</code>",
+        "<code>const z = voxel.z; // z = 6.54</code>",
+        "Here's the same assignment statement with ES6 destructuring syntax",
+        "<code>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</code>",
+        "If instead, you want to store the values of voxel.x into a, voxel.y into b and so on; you have that freedom as well.",
+        "<code>const { x : a, y : b, z : c } = voxel // a = 3.6, y = 7.4, z = 6.54</code>",
+        "You may read it as \"get the field x and copy the value in a\" and so on.",
+        "Instructions.",
+        "Use destructuring to obtain the length of the string greeting"
+      ],
+      "challengeSeed": [
+        "const greeting = 'itadakimasu'",
+        "/* Alter code below this line */",
+        "const len = 0; // change this",
+        "/* Alter code above this line */",
+        "console.log(len); // should be using destructuring"
+      ],
+      "tests": [
+        "// Test len is 11",
+        "// Test destructuring was used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b89367417b2b2512b4a",
+      "title": "Nested Object Destructuring",
+      "description": [
+        "We can similarly destructure nested objects",
+        "Consider the following code:",
+        "<code>const a = { start: { x: 5, y: 6}, end: { x: 6, y: -9 }};</code>",
+        "<code>const { start : { x: startX, y: startY }} = a;</code>",
+        "<code>console.log(startX, startY); // 5, 6</code>",
+        "It pulls from the first nested object. Rest of the syntax is as it was for simple object destructuring.",
+        "Instructions.",
+        "Use destructuring to obtain the max of tomorrow, which should be same as forecast.tomorrow.max"
+      ],
+      "challengeSeed": [
+        "const forecast = {",
+        "    today: { min: 72, max: 83},",
+        "    tomorrow: {min: 73.3, max: 84.6}",
+        "}",
+        "/* Alter code below this line */",
+        "const max_of_tomorrow = undefined; // change this",
+        "/* Alter code above this line */",
+        "console.log(max_of_tomorrow); // should be 84.6 destructuring"
+      ],
+      "tests": [
+        "// Test max_of_tomorrow to be 84.6",
+        "// Test destructuring was used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b89367417b2b2512b4b",
+      "title": "Array Destructuring",
+      "description": [
+        "We can also destructure arrays as easily as objects.",
+        "One key difference between spread operator and array destructuring is that, spread operators unpack all contents of array.",
+        "Consequently, you cannot pick and choose which element or set of elements you would want to assign to variables.",
+        "Destruring an array lets us do exactly that:",
+        "<code>const [a, b] = [1, 2, 3, 4, 5, 7];</code>",
+        "<code>console.log(a, b); // 1, 2</code>",
+        "The variable a assumes first value, and b takes the second value from the array.",
+        "You can also destructure in a way, that you can pick up values from any other array index position. You simply have to use commas (,).",
+        "Instructions.",
+        "Use destructuring to swap the variables a, b. Swapping is an operation, after which, a gets the value stored in b, and b receives the value stored in a"
+      ],
+      "challengeSeed": [
+        "let a = 8, b = 6;",
+        "/* Alter code below this line */",
+        "a = b;",
+        "b = a;",
+        "/* Alter code above this line */",
+        "console.log(a); // should be 6",
+        "console.log(b); // should be 8"
+      ],
+      "tests": [
+        "// Test a is 6",
+        "// Test b is 8",
+        "// Test destructuring was used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8a367417b2b2512b4c",
+      "title": "Array Destructuring with Rest Operator",
+      "description": [
+        "There are situations with destructuring an array, where we might want to collect the rest of the elements into a separate array.",
+        "Something similar to Array.prototype.slice(), as shown below:",
+        "<code>const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];</code>",
+        "<code>console.log(a, b); // 1, 2</code>",
+        "<code>console.log(arr); // [3, 4, 5, 7]</code>",
+        "The variable a assumes first value, and b takes the second value from the array. After that, because of rest operator's presence, arr gets rest of the values in the form of an array.",
+        "Note that the rest element has to be the last element in the array. As in, you cannot use rest operator to catch a subarray that leaves out last element of the original array.",
+        "Instructions.",
+        "Use destructuring with rest operator to perform an effective Array.prototype.slice() so that variable arr is sub-array of original array source, with first two elements ommitted."
+      ],
+      "challengeSeed": [
+        "const source = [1,2,3,4,5,6,7,8,9,10];",
+        "/* Alter code below this line */",
+        "const arr = source ; // change this",
+        "/* Alter code above this line */",
+        "console.log(arr); // should be [3,4,5,6,7,8,9,10]",
+        "console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];"
+      ],
+      "tests": [
+        "// Test arr is [3,4,5,6,7,8,9,10];",
+        "// Test source is [1,2,3,4,5,6,7,8,9,10];",
+        "// Test destructuring was used",
+        "// Test slice was not used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8a367417b2b2512b4d",
+      "title": "Destructuring Function Parameters",
+      "description": [
+        "In some cases, you can destructure the object in the function argument itself.",
+        "Consider the code below",
+        "<code>const profileUpdate = (profileData) => {</code>",
+        "<code>   const { name, age, sex, nationality, location } = profileData;</code>",
+        "<code>   // do something with these variables</code>",
+        "<code>}</code>",
+        "This effectively destructure the object sent into the function. However, this can also be done in-place.",
+        "const profileUpdate = ({ name, age, sex, nationality, location }) => {/* do something with these fields */}",
+        "This removes some extra linees and mainly a syntactic sugar.",
+        "This also has the added benefit of not having to send an entire object into a function; rather only those fields are copied that are needed inside the function.",
+        "Instructions.",
+        "Use destructuring within function argument to send only the max and min inside the function"
+      ],
+      "challengeSeed": [
+        "const stats = {",
+        "    max: 56.78,",
+        "    standard_deviation: 4.34,",
+        "    median: 34.54,",
+        "    mode: 23.87,",
+        "    min: -0.75,",
+        "    average: 35.85",
+        "}",
+        "/* Alter code below this line */",
+        "const half = (stats) => ((stats.max + stats.min) / 2.0); // use function argument destructurung",
+        "/* Alter code above this line */",
+        "console.log(stats); // should be object",
+        "console.log(half(stats)); // should be 28.015"
+      ],
+      "tests": [
+        "// Test stats is an object",
+        "// Test half is 28.015",
+        "// Test destructuring was used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8a367417b2b2512b4e",
+      "title": "String Interpolation using Backquotes",
+      "description": [
+        "A new feature of ES6 or ES2015, is that it allows you to use string interpolation with back-ticks.",
+        "Consider the code below",
+        "<code>const text = 'Hello World';</code>",
+        "<code>// string interpolation</code>",
+        "<code>const divText = `</code>",
+        "<code><div></code>",
+        "<code>   ${text}</code>",
+        "<code></div></code>",
+        "<code>console.log(divText); // prints </code>",
+        "<code>//<div></code>",
+        "<code>// Hello World</code>",
+        "<code>//</div></code>",
+        "A lot of thing happened in there.",
+        "First, the ${variable} syntax. It's a template literal. Basically, you won't have to use concatenation with + anymore. Just drop the variable in your string, wrapped with ${ and }.",
+        "Second, we used backticks, not quotes, to wrap around the string. Notice that the string is multi-line.",
+        "In ES6, back-ticks give you more robust string creation ability.",
+        "Instructions",
+        "Use proper template literal syntax with backticks.",
+        "The expected output is each entry of result object's failure array, wrapped inside an <li> element, with class attribute text-warning.",
+        "If you have trouble finding backticks, it's the ` key, to the left of your 1; and has ~ on it."
+      ],
+      "challengeSeed": [
+        "const result = {",
+        "    success: ['max_length', 'no-amd', 'prefer-arrow-functions'],",
+        "    failure: ['no-var', 'var-on-top', 'linebreak'],",
+        "    skipped: ['id-blacklist', 'no-dup-keys']",
+        "}",
+        "/* Alter code below this line */",
+        "const resultDisplay = undefined;",
+        "/* Alter code above this line */",
+        "console.log(resultDisplay);",
+        "/**",
+        " * ",
+        " * should look like this",
+        " * <li class=\"text-warning\">no-var</li>",
+        " *  <li class=\"text-warning\">var-on-top</li>",
+        " *  <li class=\"text-warning\">linebreak</li>",
+        " **/"
+      ],
+      "tests": [
+        "// Test resultDisplay is a string",
+        "// Test resultDisplay is the desired output",
+        "// Test template strings were used"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8a367417b2b2512b4f",
+      "title": "Enhanced Object Literals : Simple Fields",
+      "description": [
+        "ES6 adds some nice support for removing boiler-plate from object literals declaration.",
+        "Consider the following:",
+        "<code>const getMousePosition = (x, y) => {</code>",
+        "<code>   return {</code>",
+        "<code>      x: x,</code>",
+        "<code>      y: y</code>",
+        "<code>   } </code>",
+        "<code>}</code>",
+        "It's a simple function that returns an object, which has two fields.",
+        "ES6 provides a syntactic sugar to remove the redundancy from having to write x: x. You can simply write x once, and it would convert that to x : x (or some equivalent of it) under the hood.",
+        "The code now becomes:",
+        "<code>const getMousePosition = (x, y) => ({x, y})</code>",
+        "Instructions",
+        "Use object literal simplification to create and return a Person object"
+      ],
+      "challengeSeed": [
+        "/* Alter code below this line */",
+        "const createPerson = (name, age, gender) => {",
+        "    return {",
+        "        name: name,",
+        "        age: age,",
+        "        gender: gender",
+        "    }",
+        "}",
+        "/* Alter code above this line */",
+        "console.log(createPerson('Zodiac Hasbro', 56, 'male')); // returns a proper object"
+      ],
+      "tests": [
+        "// Test the output is {name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}",
+        "// Test no : was present"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8b367417b2b2512b50",
+      "title": "Enhanced Object Literals : Functions",
+      "description": [
+        "With ES6, it's possible to remove the keyword function as follows, from object literals",
+        "<code>const Container extends Component {</code>",
+        "<code>    render: function() {</code>",
+        "<code>      return {</code>",
+        "<code>        `<div>Container</div>`</code>",
+        "<code>      }</code>",
+        "<code>    }</code>",
+        "<code>}</code>",
+        "We can remove the function keyword and colon (:) altogether - and get this:",
+        " const Container extends Component {",
+        "     render() {",
+        "       return {",
+        "         `<div>Container</div>`",
+        "       }",
+        "     }",
+        " }",
+        "Instructions",
+        "Use object literal simplification to create and return a Person object"
+      ],
+      "challengeSeed": [
+        "/* Alter code below this line */",
+        "const Person = (name, age, gender) => {",
+        "    return {",
+        "        name: name,",
+        "        age: age,",
+        "        gender: gender,",
+        "        sendFriendRequest: function(person){",
+        "            console.log(`Sending request to ${person.name}`);",
+        "        }",
+        "    }",
+        "}",
+        "/* Alter code above this line */",
+        "<code>const zod = Person(\"Zodiac Hasbro\", 56, 'male');</code>",
+        "<code>const yan = Person(\"Yanoshi Mimoto\", 55, 'male');</code>",
+        "<code>zod.sendFriendRequest(yan);</code>"
+      ],
+      "tests": [
+        "// Test the output is Sending request to Yanoshi Mimoto",
+        "// Test no : was present"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8b367417b2b2512b51",
+      "title": "Enhanced Object Literals Computed Fields",
+      "description": [
+        "With ES6, you can also create a field name dynamically, like this:",
+        "<code>const prop = 'os'</code>",
+        "<code>const setup = {</code>",
+        "<code>   ['prop-' + prop] : 'darwin-64'</code>",
+        "<code>}</code>",
+        "If you inspect the object setup, you would see it's {\"prop-os\": \"darwin-64\"}",
+        "Instructions",
+        "Use object literal computed property to create an object like this",
+        "<code>{</code>",
+        "<code>  \"prop-1\": 1,</code>",
+        "<code>  \"prop-2\": 2,</code>",
+        "<code>  \"prop-3\": 3</code>",
+        "<code>}</code>"
+      ],
+      "challengeSeed": [
+        "/* Alter code below this line */",
+        "const funObject = {",
+        "}",
+        "/* Alter code above this line */",
+        "console.log(funObject);"
+      ],
+      "tests": [
+        "// Test the output is correct",
+        "// Test no = was present outside funObject = {}"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8b367417b2b2512b52",
+      "title": "Enhanced Object Literals Computed Fields",
+      "description": [
+        "With ES6, you can also create a field name dynamically, like this:",
+        "<code>const prop = 'os'</code>",
+        "<code>const setup = {</code>",
+        "<code>   ['prop-' + prop] : 'darwin-64'</code>",
+        "<code>}</code>",
+        "If you inspect the object setup, you would see it's <code>{\"prop-os\": \"darwin-64\"}</code>",
+        "Instructions",
+        "Use object literal computed property to create an object like this",
+        "<code>{</code>",
+        "<code>  \"prop-1\": 1,</code>",
+        "<code>  \"prop-2\": 2,</code>",
+        "<code>  \"prop-3\": 3</code>",
+        "<code>}</code>"
+      ],
+      "challengeSeed": [
+        "/* Alter code below this line */",
+        "const funObject = {",
+        "}",
+        "/* Alter code above this line */",
+        "console.log(funObject);"
+      ],
+      "tests": [
+        "// Test the output is correct",
+        "// Test no = was present outside funObject = {}"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8b367417b2b2512b53",
+      "title": "class Syntax",
+      "description": [
+        "ES6 provides a new syntax to help create objects, using the keyword class.",
+        "This is to be noted, that the class syntax is just a syntax, and not a full-fledged class based implementation of object oriented paradigm, unlike in languages like Java, or Python, or Ruby etc.",
+        "In ES5, we usually define a constructor function, and use the new keyword to instantiate an object.",
+        "<code> var spaceShuttle = function(targetPlanet){</code>",
+        "<code>     this.targetPlanet = targetPlanet; </code>",
+        "<code>}</code>",
+        "<code> var zeus = new spaceShuttle('Jupiter');</code>",
+        "The class syntax simply replaces the constructor function creation:",
+        "<code>class spaceShuttle {</code>",
+        "<code>  constructor(targetPlanet){</code>",
+        "<code>    this.targetPlanet = targetPlanet;</code>",
+        "<code>  }</code>",
+        "<code>}</code>",
+        "<code>const zeus = new spaceShuttle('Jupiter');</code>",
+        "Notice that the class keyword declares a new function, and a constructor was added, which would be invoked when new is called - to create a new object.",
+        "Instructions",
+        "Use class keyword and write a proper constructor to create the vegetable class.",
+        "The Vegetable lets you create a vegetable object, with a property name, to be passed to constructor."
+      ],
+      "challengeSeed": [
+        "/* Alter code below this line */",
+        "const Vegetable = undefined;",
+        "/* Alter code above this line */",
+        "const carrot = new Vegetable('carrot')",
+        "console.log(carrot.name); // => should be 'carrot'"
+      ],
+      "tests": [
+        "// Test the Vegetable is a class",
+        "// Test that class keyword was used",
+        "// Test that other objects could be created with the class"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8c367417b2b2512b54",
+      "title": "class getters and setters",
+      "description": [
+        "You can obtain values from an object, and set a value of a property within an object.",
+        "These are classically called getters and setters.",
+        "Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.",
+        "Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.",
+        "<code>class Book {</code>",
+        "<code>  constructor(author) {</code>",
+        "<code>    this._author = author;</code>",
+        "<code>  }</code>",
+        "<code>  // getter</code>",
+        "<code>  get writer(){</code>",
+        "<code>    return this._author;</code>",
+        "<code>  }</code>",
+        "<code>  // setter</code>",
+        "<code>  set writer(updatedAuthor){</code>",
+        "<code>    this._author = updatedAuthor;</code>",
+        "<code>  }</code>",
+        "<code>}</code>",
+        "<code>const lol = new Book('anonymous');</code>",
+        "<code>console.log(lol.writer);</code>",
+        "<code>lol.writer = 'wut';</code>",
+        "<code>console.log(lol.writer);</code>",
+        "Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.",
+        "Getters and setters are important, because they hide internal implementation details.",
+        "Instructions",
+        "Use class keyword to create a Thermostat class. The constructor accepts Farenheit temperature.",
+        "Now create getter and setter in the class, to obtain the temperature in Celsius scale.",
+        "Remember that <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
+        "Note",
+        "When you implement this, you would be tracking the temperature inside the class in one scale - either Fahrenheit or Celsius.",
+        "This is the power of getter or setter - you are creating an API for another user, who would get the correct result, no matter which one you track.",
+        "In other words, you are abstracting implementation details from the consumer."
+      ],
+      "challengeSeed": [
+        "/* Alter code below this line */",
+        "const Thermostat = undefined;",
+        "/* Alter code above this line */",
+        "const thermos = new Thermostat(76); // setting in Farenheit scale",
+        "let temp = thermos.temperature; // 24.44 in C",
+        "thermos.temperature = 26;",
+        "temp = thermos.temperature; // 26 in C"
+      ],
+      "tests": [
+        "// Test the Thermostat is a class",
+        "// Test that class keyword was used",
+        "// Test that other objects could be created with the class"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8c367417b2b2512b55",
+      "title": "Import vs. Require: What's the difference?",
+      "description": [
+        "In the past, the function require() would be used to import the functions and code in external files and modules. While handy, this presents a problem: some files and modules are rather large, and you may only need certain code from those external resources.",
+        "ES6 gives us a very handy tool known as import. With it, we can choose which parts of a module or file to load into a given file, saving time and memory.",
+        "Consider the following example. Imagine that math_array_functions has about 20 functions, but I only need one, countItems, in my current file. The old require() approach would force me to bring in all 20 functions. With this new import syntax, I can bring in just the desired function, like so:",
+        "<code>import { countItems } from \"math_array_functions\"</code>",
+        "A description of the above code:",
+        "<code>import { function } from \"file_path_goes_here\"</code>",
+        "//We can also import variables the same way! ",
+        "There are a few ways to write an import statement, but the above is a very common use-case. Note: the whitespace surrounding the function inside the curly braces is a best practice-it makes it easier to read the import statement.",
+        "Note: The lessons in this section handle non-browser features. Import, and the statements we introduce in the rest of these lessons, won't work on a browser directly, However, we can use various tools to create code out of this to make it work in browser.",
+        "Instructions",
+        "Add the appropriate import statement that will allow the current file to use the capitalizeString function. The file where this function lives is called \"string_functions,\" and it is in the same directory as the current file."
+      ],
+      "challengeSeed": [
+        "capitalizeString(\"hello!\");"
+      ],
+      "tests": [
+        "assert(code.match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/ig)"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8c367417b2b2512b56",
+      "title": "Export: One of Import's siblings.",
+      "description": [
+        "In the previous challenge, you learned about import and how it can be leveraged to import small amounts of code from large files. In order for this to work, though, we must utilize one of the statements that goes with import, known as export. When we want some code-a function, or a variable-to be usable in another file, we must export it in order to import it into another file. Like import, export is a non-browser feature.",
+        "The following is what we refer to as a named export. With this, we can import any code we export into another file with the import syntax you learned in the last lesson. Here's an example:",
+        "<code>const capitalizeString = (string) => {</code>",
+        "<code>  return string.charAt(0).toUpperCase() + string.slice(1);</code>",
+        "<code>} </code>",
+        "<code>export { capitalizeString } //How to export functions.</code>",
+        "<code>export const foo = \"bar\"; //How to export variables.</code>",
+        "Alternatively, if you would like to compact all your export statements into one line, you can take this approach:",
+        "<code>const capitalizeString = (string) => {</code>",
+        "<code>  return string.charAt(0).toUpperCase() + string.slice(1);</code>",
+        "<code>}</code>",
+        "<code>const foo = \"bar\";</code>",
+        "<code>export { capitalizeString, bar }</code>",
+        "Either approach is perfectly acceptable.",
+        "Instructions",
+        "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated export, export the two variables."
+      ],
+      "challengeSeed": [
+        "const foo = \"bar\";",
+        "const boo = \"far\";"
+      ],
+      "tests": [
+        "assert(code.match(/export\\s+const\\s+foo\\s+=+\\s\"bar\"/ig))",
+        "assert(code.match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/ig))"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8c367417b2b2512b57",
+      "title": "Import Everything",
+      "description": [
+        "Suppose you have a file that you wish to import all of its contents into the current file. This can be done with the import * syntax.",
+        "Here's an example where the contents of a file named \"math_functions\" are imported into a file in the same directory:",
+        "<code>import * as myMathModule from \"math_functions\"</code>",
+        "<code>myMathModule.add(2,3);</code>",
+        "<code>myMathModule.subtract(5,3);</code>",
+        "<code>And breaking down that code:</code>",
+        "<code>import * as object_with_name_of_your_choice from \"file_path_goes_here\"</code>",
+        "<code>object_with_name_of_your_choice.imported_function</code>",
+        "You may use any name following the import * as portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
+        "Instructions",
+        "The code below requires the contents of a file, \"capitalize_strings\", found in the same directory as it, imported. Add the appropriate import * statement to the top of the file, using the object provided."
+      ],
+      "challengeSeed": [
+        "myStringModule.capitalize(\"foo\");",
+        "myStringModule.lowercase(\"Foo\");"
+      ],
+      "tests": [
+        "assert(code.match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/ig))"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8c367417b2b2512b58",
+      "title": "Export Default",
+      "description": [
+        "In the export lesson, you learned about the syntax referred to as a named export. This allowed you to make multiple functions and variables available for use in other files.",
+        "There is another export syntax you need to know, known as export default. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.",
+        "Here is a quick example of export default:",
+        "<code>export default const add = (x,y) => {</code>",
+        "<code>  return x + y;</code>",
+        "<code>}</code>",
+        "There is a one major feature of export default you must never forget-since it is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file.",
+        "Instructions",
+        "The following function should be the fallback value for the module. Please add the necessary code to do so."
+      ],
+      "challengeSeed": [
+        "const subtract = (x,y) => {return x - y;}"
+      ],
+      "tests": [
+        "assert(code.match(/export\\s+default\\s+const\\s+subtract\\s+=\\s+\\(x,y\\)\\s+=>\\s+{return\\s+x\\s-\\s+y;}/ig))"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b8d367417b2b2512b59",
+      "title": "Importing a Default Export",
+      "description": [
+        "In the last challenge, you learned about export default and its uses. It is important to note that, to import a default export, you need to use a different import syntax.",
+        "In the following example, we have a function, add, that is the default export of a file, \"math_functions\". Here is how to import it:",
+        "<code>import add from \"math_functions\";</code>",
+        "<code>add(5,4); //Will return 9</code>",
+        "The syntax differs in one key place-the imported value, add, is not surrounded by curly braces, {}. Unlike exported values, the primary method if importing a default export is to simply write the value's name after import.",
+        "Instructions",
+        "In the following code, please import the default export, subtract, from the file \"math_functions\", found in the same directory as this file."
+      ],
+      "challengeSeed": [
+        "subtract(7,4);"
+      ],
+      "tests": [
+        "assert(code.match(/import\\s+subtract\\s+from\\s+\"math_functions\"/ig))"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    }
+  ]
+}
