@@ -20,6 +20,12 @@
           "#"
         ],
         [
+          "//i.imgur.com/TDT6vJ1.jpg",
+          "Your github name is used as the name on your certificates",
+          "Let's confirm that you have your github name set up and imported it on Free Code Camp. If not, you will be given instructions to import it to your Free Code Camp profile. You can't claim the certificate until you provide a name.",
+          "#"
+        ],
+        [
           "//i.imgur.com/UedoV2G.jpg",
           "An image of the text \"Front End Development Certificate requirements\"",
           "Let's confirm that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic, intermediate, and advanced front end development projects. Click the button below to verify this.",
@@ -36,15 +42,18 @@
         {
           "properties": [
             "isHonest",
+            "name",
             "isFrontEndCert"
           ],
           "apis": [
             "/certificate/honest",
+            "/certificate/verify/name",
             "/certificate/verify/front-end"
           ],
           "stepIndex": [
             1,
-            2
+            2,
+            3
           ]
         }
       ],
@@ -254,6 +263,12 @@
               "//i.imgur.com/HArFfMN.jpg",
               "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
               "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/TDT6vJ1.jpg",
+              "Tu nombre en github se utiliza como nombre en tus certificados",
+              "Vamos a confirmar que has establecido tu nombre en github y que fue importado a Free Code Camp. Si no es así, se te darán instrucciones para que lo importes a tu perfil de Free Code Camp. No podrás reclamar el certificado sino hasta que proporciones un nombre.",
               "#"
             ],
             [

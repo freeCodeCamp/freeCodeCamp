@@ -20,6 +20,12 @@
           "#"
         ],
         [
+          "//i.imgur.com/TDT6vJ1.jpg",
+          "Your github name is used as the name on your certificates",
+          "Let's confirm that you have your github name set up and imported it on Free Code Camp. If not, you will be given instructions to import it to your Free Code Camp profile. You can't claim the certificate until you provide a name.",
+          "#"
+        ],
+        [
           "//i.imgur.com/nTuA3rZ.png",
           "An image of the text \"Data Visualization Certificate requirements\"",
           "Let's confirm that you have completed our React and D3.js projects. Click the button below to verify this.",
@@ -36,15 +42,18 @@
         {
           "properties": [
             "isHonest",
+            "name",
             "isDataVisualizationCert"
           ],
           "apis": [
             "/certificate/honest",
+            "/certificate/verify/name",
             "/certificate/verify/data-visualization"
           ],
           "stepIndex": [
             1,
-            2
+            2,
+            3
           ]
         }
       ],
@@ -109,6 +118,12 @@
               "#"
             ],
             [
+              "//i.imgur.com/TDT6vJ1.jpg",
+              "Tu nombre en github se utiliza como nombre en tus certificados",
+              "Vamos a confirmar que has establecido tu nombre en github y que fue importado a Free Code Camp. Si no es así, se te darán instrucciones para que lo importes a tu perfil de Free Code Camp. No podrás reclamar el certificado sino hasta que proporciones un nombre.",
+              "#"
+            ],
+            [
               "//i.imgur.com/6b50POD.png",
               "Una imagen del texto \"Los requisitos de Certificación de Visualización de datos\"",
               "Confirmemos que has completado todos nuestros proyectos en React y D3.js. Pulsa el botón siguiente para hacer la verificación.",
@@ -135,6 +150,12 @@
               "//i.imgur.com/iFL1xR1.png",
               "Une définition du plagiat : Plagiat (nom) – copier le travail d’un autre et le présenter comme étant le tien, sans mention de l’auteur original",
               "En cliquant si dessous, je garantie que tout le code que j’ai présenté A) est mon propre code ou celui de mon collaborateur, B) vient d’un projet open-source comme jQuery, ou C) contient les mentions nécessaires des auteurs. Vous nous donnez aussi la permission de vérifier vos solutions et de révoquer votre certificat en cas de détection de plagiat.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/TDT6vJ1.jpg",
+              "Votre nom github est utilisé comme nom sur vos certificats",
+              "Nous allons confirmer que vous avez votre nom github mis en place et importés sur Free Code Camp. Sinon, vous recevrez des instructions pour l'importer à votre profil Free Code Camp. Vous ne pouvez pas demander le certificat jusqu'à ce que vous fournissez un nom.",
               "#"
             ],
             [

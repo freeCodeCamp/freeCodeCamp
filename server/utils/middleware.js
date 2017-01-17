@@ -1,3 +1,5 @@
+import dedent from 'dedent';
+
 export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {
     const { path } = req;
@@ -27,6 +29,19 @@ export function ifNoUser401(req, res, next) {
     return next();
   }
   return res.status(401).end();
+}
+
+export function isNamed(req, res, next) {
+  if (req.user.name === '') {
+    return res.status(200).send(dedent`We need your name so we can
+      put it on your
+      certificate. <a href="https://github.com/settings/profile">Add your name
+      to your GitHub account</a>, then
+      go to your <a href="https://www.freecodecamp.com/settings">
+      settings</a> page and click the "Update my portfolio from GitHub" button.
+      Then we can issue your certificate.`);
+  }
+  return next();
 }
 
 export function flashIfNotVerified(req, res, next) {

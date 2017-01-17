@@ -8,7 +8,8 @@ import debug from 'debug';
 
 import {
   ifNoUser401,
-  ifNoUserSend
+  ifNoUserSend,
+  isNamed
 } from '../utils/middleware';
 
 import { observeQuery } from '../utils/rx';
@@ -148,6 +149,13 @@ export default function certificate(app) {
     [certTypes.dataVis]: getIdsForCert$(dataVisChallengeId, Challenge),
     [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge)
   };
+
+
+  router.post(
+    '/certificate/verify/name',
+    ifNoUser401,
+    isNamed
+  );
 
   router.post(
     '/certificate/verify/front-end',
