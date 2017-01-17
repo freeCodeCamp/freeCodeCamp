@@ -1316,7 +1316,7 @@
       "description": [
         "Sometimes you will need to build a string, <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\" target=\"_blank\">Mad Libs</a> style. By using the concatenation operator (<code>+</code>), you can insert one or more variables into a string you're building.",
         "<h4>Instructions</h4>",
-        "Set <code>myName</code> to a string equal to your name and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
+        "Set <code>myName</code> to a string equal to your name and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am well!\"</code>"
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -1347,7 +1347,7 @@
         "})();"
       ],
       "solutions": [
-        "var myName = \"Bob\";\nvar myStr = \"My name is \" + myName + \" and I am swell!\";"
+        "var myName = \"Bob\";\nvar myStr = \"My name is \" + myName + \" and I am well!\";"
       ],
       "tests": [
         "assert(typeof myName !== 'undefined' && myName.length > 2, 'message: <code>myName</code> should be set to a string at least 3 characters long');",
@@ -1361,7 +1361,7 @@
           "description": [
             "A veces necesitarás construir una cadena, al estilo <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\" target=\"_blank\">Mad Libs</a>. Mediante el uso del operador concatenación (<code>+</code>), puedes insertar una o más variables dentro de una cadena que estés construyendo.",
             "<h4>Instrucciones</h4>",
-            "Asigna <code>myName</code> a una cadena igual a tu nombre y construye <code>myStr</code> con <code>myName</code> entre las cadenas <code>\"My name is \"</code> and <code>\" and I am swell!\"</code>"
+            "Asigna <code>myName</code> a una cadena igual a tu nombre y construye <code>myStr</code> con <code>myName</code> entre las cadenas <code>\"My name is \"</code> and <code>\" and I am well!\"</code>"
           ]
         }
       }
