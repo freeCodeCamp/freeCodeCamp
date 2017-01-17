@@ -1,0 +1,514 @@
+{
+  "name": "Advanced Node and Express",
+  "order": 3,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d7fb9367417b2b2512c13",
+      "title": "Authenticate as a Guest User",
+      "description": [
+        "Cool, we can see messages now, but before we let people to write messages they need to authenticate first.",
+        "We will use passport and friends for our authentications process, since its well documented and it makes things quite easier. By the end of this challenge, you should be able to login to the website as a guest user with the credentials:",
+        "username: 'guestuser'",
+        "password: 'guestuser'",
+        "You can check how passport works internally by viewing the best answer from this URL: http://stackoverflow.com/questions/11142882/how-do-cookies-and-sessions-work",
+        "Food for thought: Those have to be done all together in order to be easily testable if its too much, we must find a way of testing is passport middlewares that users initialized and validate that they work properly.",
+        "Note: This is the most difficult challenge of these series, be patient and very careful while reading the tips' documentation and have in mind that google is your friend as long as you pay Note at the date on the stackoverflow answers you come accross.",
+        "Instructions:",
+        "1) add the 'express-session', passport' and 'passport-local' modules into the package.json file",
+        "2) use express-session middleware #tip1",
+        "3) use passport.session() middleware #tip2",
+        "4) use passport.session() middleware",
+        "5) use passport.serialize() middleware",
+        "6) use passport.deserialize() middleware",
+        "7) use the passport-local.Strategy middleware #tip3",
+        "8) create a login route at POST '/auth/local' #tip2, #tip4 the route should redirect to the index page at path '/' on success or fail login",
+        "9) on the res.render('index') arguments add the session user on the 'user' key help: the session user should exist at the request object: 'req.user'",
+        "10) on the index.pug file use an if conditional expression to control what will be rendered  #tip5 if the user argument is defined, include chatInput.pug and signout.pug othewise, include authentication.pug.",
+        "Note: Make sure restart the server(do and undo any change in the code for it to auto restart) before you run the unit tests, so that the server's state is cleaned."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "express-session readme: https://github.com/expressjs/session",
+        "passport readme: https://github.com/jaredhanson/passport",
+        "passport-local readme: https://github.com/jaredhanson/passport-local",
+        "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect",
+        "pug docs: https://pugjs.org/api/getting-started.html"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fc0367417b2b2512c33",
+      "title": "Log the Guest User Out",
+      "description": [
+        "Lets continue by letting the user to logout from the app.",
+        "You can check how passport works internally by viewing the best answer from this URL: http://stackoverflow.com/questions/11142882/how-do-cookies-and-sessions-work",
+        "Instructions:",
+        "1) create a logout route at POST '/auth/logout'",
+        "2) the route should clear the user's session from the server",
+        "3) the route should redirect to the index page at path '/' after logout is performed"
+      ],
+      "challengeSeed": [],
+      "tests": [
+      ],
+      "solutions": [],
+      "hints": [
+        "passport repo: https://github.com/jaredhanson/passport",
+        "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fc0367417b2b2512c32",
+      "title": "Signup a New User",
+      "description": [
+        "Lets continue by letting a user to register to the app.",
+        "You can check how passport works internally by viewing the best answer from this URL: http://stackoverflow.com/questions/11142882/how-do-cookies-and-sessions-work",
+        "Instructions:",
+        "1) create a register route at POST '/auth/local/register'",
+        "2) the route should create a user with the User.create method",
+        "3) on successful create, the route should authenticate the user as well just like on the 'auth/local' route",
+        "4) the route should redirect to the index page at path '/' on error or success",
+        "Remember that on an express route you are able to use multiple middleware functions that are going to be called after an other.",
+        "For example: ",
+        "<code>app.post('/some/post/route',</code>",
+        "<code>  function method1(req, res, next) {</code>",
+        "<code>   console.info('I am method 1');</code>",
+        "<code>   next();</code>",
+        "<code>  },</code>",
+        "<code>  someExternalMiddleware(),</code>",
+        "<code>  function(req, res, next) {</code>",
+        "<code>   res.redirect('/');</code>",
+        "<code>  }</code>",
+        "<code>);</code>",
+        "ctrl-f '#challenge' in this file to fill in the missing code to complete this challenge"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "passport repo: https://github.com/jaredhanson/passport",
+        "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fbf367417b2b2512c31",
+      "title": "Send a New Message by Responding with a Model",
+      "description": [
+        "Lets continue by letting a user to send a message in the app.",
+        "Instructions:",
+        "1) create a messaging route at POST '/api/message'",
+        "message format expected from the database:",
+        "<code>var args = {</code>",
+        "<code>  creator: {</code>",
+        "<code>    id: sessionUser._id,</code>",
+        "<code>    name: sessionUser.name,</code>",
+        "<code>    avatarUrl: sessionUser.avatarUrl</code>",
+        "<code>  },</code>",
+        "<code>  text: body.text,</code>",
+        "<code>  geo: body.geo || {}</code>",
+        "<code>};</code>",
+        "1) Use the req.body for the request body and req.user for the session user data.",
+        "2) the route should be accessible only to authenticated users check that req.isAuthenticated() returns true or that req.user is defined",
+        "3) if the user is not authenticated the route should respond with status 403 and <code>{message: 'not authenticated'}</code> in the body",
+        "4) the route should create a message with the Message.create method",
+        "5) on error, the route should respond with status 400 and the error in the body",
+        "6) on success, the route should respond with status 201 and the message model as returned by the database in the body. The response data should follow the following format: <code>{model: messageJsonFromDB}</code>. The client should do a dummy reload to display the change."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fbf367417b2b2512c30",
+      "title": "Send a New Message with a Partial Template Compilation",
+      "description": [
+        "On the previous challenge we were reloading the page after we pushed a new message into the chat",
+        "However, thats a really bad way to handle user input.",
+        "In this challenge you will have to partially compile a template and send it back on the client.",
+        "That way the client will be able to append the html that it got into the page's DOM and the reload",
+        "will not be needed. Cool hah?",
+        "Instructions:",
+        "1) change the current success response on the api/message route. It should respond with the following format: <code>{model: messageJsonFromDB, view: htmlData}</code>",
+        "The html data should be generated with the pug package and the compileFile method. The file you will need",
+        "to compile is the chatMessage.pug which represents a single message. args required:",
+        "user: <session user>,",
+        "message: <message created>"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        " pug compileFile: https://pugjs.org/api/getting-started.html"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fbf367417b2b2512c2f",
+      "title": "Send a New Message by Making the App Realtime with Websockets",
+      "description": [
+        "So we were able to create a message and responde with its partial html so that it can directly",
+        "be appanded in the page.",
+        "But what about the other users that are into the page?",
+        "If you open two different browser windows and send a message from one of them, the other one will",
+        "need to refresh the page to see the page. That's not cool, right?",
+        "This is where websockets come into the game to make the page look realtime.",
+        "In this challenge you will emit a web socket event after a new message is created at 'api/message'",
+        "so that all connected clients can update their dom.",
+        "You will see a dublicate left aligned message on the sender's page. This is fine...for now",
+        "Instructions:",
+        "1) include the socket.io package into the server package.json & initialize socket.io",
+        "2) include the socket.io library into the client at index.pug. The socket.io package serves the client automatically at: '/socket.io/socket.io.js'",
+        "3) emit a socket event at id: 'chat.message' with data {model: messageJsonFromDB, view: htmlData}",
+        "4) For the html data, use the same method you used in the previous challenge. However, in this case do not pass a user parameter so that the template can understand that it has to generate a template for the receiver. (Received messages are left alligned.)",
+        "The html data should be generated with the pug package and the compileFile method. The file you will need to compile is the chatMessage.pug which represents a single message. args required:",
+        "user: <session user>,",
+        "message: <message created>"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "socket.io docs: http://socket.io/docs/",
+        "pug docs :: compileFile: https://pugjs.org/api/getting-started.html"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fbf367417b2b2512c2d",
+      "title": "Retrieve the Route of an Authenticated User",
+      "description": [
+        "Let's get rid of that duplicate message, shall we?",
+        "The client will look at the message model's creator emitted with the websocket and compare them with themselves. If they are not the creator they will append the message into their page.",
+        "However, the way we authenticated with passport only sends a httpOnly cookie to the client. The deal with html-only cookies, is that they are not readable from javascript for security reasons.",
+        "Therefore the client has no way of know its data, unless we server them for them.",
+        "In this challenge we will create a route where the client can retrieve their user data.",
+        "Instructions:",
+        "1) Create route GET '/api/me'",
+        "2) The route should always respond with status 200",
+        "3) The route should return {name: 'guest'} when the user is not authenticated",
+        "4) Otherwise it should return the authenticated user from the session"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fbe367417b2b2512c2c",
+      "title": "Use Geolocation by IP Route to Request Package for External Resources",
+      "description": [
+        "Things seem to work a lot better at this point, but our users would really like a message footer that would snitch each other's location.",
+        "Don't worry about the details, all you need to know is that the client will need another route from you in order to retrieve their geolocation via ip.",
+        "To do that we will query another site and we will respond with the data we get.",
+        "Instructions:",
+        "1) Include the request package into package.json",
+        "2) Create route GET '/api/geo'",
+        "3) Use the request module to query on this url: http://freegeoip.net/json/<request ip>'",
+        "4) You will need to set enable the trust proxy option for express in order to access the ip from the request object. Dont' bother too much with it, the default options will do for our case.",
+        "5) On request error the route should responde with status 500 and the error in the body",
+        "6) Othewise it should responde with the status code and body returned by the remote server"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "request readme: https://github.com/request/request",
+        "express enable: http://expressjs.com/en/api.html#app.enable"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fbe367417b2b2512c2b",
+      "title": "Get Geodata from Cookies",
+      "description": [
+        "Right now the client requests for the geolocation data by their ip and sends it to the server every time they are creating a message.",
+        "That makes sense, but it would be better to cache the geolocation data so that we do not request all the time the external api. Geolocation data do not change that often after all.",
+        "This can be done by setting a cookie on the response header. In express to do that we could use the res.cookie utility.",
+        "Instructions:",
+        "1) update route GET '/api/geo' so that it will set a cookie before responding with json. You may use res.cookie to do the job.",
+        "2) include package cookie-parser on package.json",
+        "3) update route POST '/api/message' so that it will create the message withe the geolocation taken from the cookie instead of the body of the request ctrl-f '#challenge' in this file to fill in the missing code to complete this challenge"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "express res.cookie: http://expressjs.com/en/api.html#res.cookie",
+        "express cookie parser: https://github.com/expressjs/cookie-parser"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d8246367417b2b2512c34",
+      "title": "Access the Default Avatar File Route",
+      "description": [
+        "Did you notice that broken avatar in the app?",
+        "Don't you think its about time to fixed it?",
+        "We have set the default url of the user's avatar to be be at /avatar/default.",
+        "That means that you will have to create a route that will return the file data.",
+        "Until now we used routes to return json and htmls. However in this case we are going",
+        "to pipe a read stream into the response in order to respond with the file data.",
+        "Use following line to get the path of the path of the avatar:",
+        "var avatarPath = path.join(__dirname, 'node_modules/fcc-advanced-express/img/defaultAvatar.png');",
+        "Instructions:",
+        "1) Create route GET '/avatar/default'",
+        "2) Use node's native file system library to get a read stream of the avatar file",
+        "3) pipe the read stream into the response. You may hit the route on your browser to check if u see an image.",
+        "Note: remember that piping file data to the response works with any type of file. All files contain data that if piped to the response can be sent to the browser. Try to pipe a js script and you will be able to see if on your browser if you hit the route :)"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [
+        "express res.cookie: http://expressjs.com/en/api.html#res.cookie",
+        "express cookie parser: https://github.com/expressjs/cookie-parser"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}

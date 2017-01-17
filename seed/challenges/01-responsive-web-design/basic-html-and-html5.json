@@ -1,0 +1,2322 @@
+{
+  "name": "Basic HTML and HTML5",
+  "order": 0,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "bd7123c8c441eddfaeb5bdef",
+      "title": "Say Hello to HTML Elements",
+      "description": [
+        "Welcome to Free Code Camp's first coding challenge.",
+        "You can edit <code>code</code> in your <code>text editor</code>, which we've embedded into this web page.",
+        "Do you see the code in your text editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
+        "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.",
+        "Opening tags look like this:",
+        "<code>&#60;h1&#62;</code>",
+        "Closing tags look like this:",
+        "<code>&#60;/h1&#62;</code>",
+        "Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
+        "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing, you can advance to the next challenge.",
+        "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\" instead of \"Hello\". Then click the \"Run tests\" button."
+      ],
+      "challengeSeed": [
+        "<h1>Hello</h1>"
+      ],
+      "tests": [
+        {
+          "text": "Your <code>h1</code> element should have the text \"Hello World\".",
+          "testString": "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
+        }
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [
+            "Willkommen bei der ersten Programmier-Challenge von Free Code Camp!",
+            "Mithilfe des eingebauten <code>text editor</code> kannst du den <code>code</code> bearbeiten.",
+            "Siehst du den Code <code>&#60;h1&#62;Hallo&#60;/h1&#62;</code> im Editor? Das ist ein HTML <code>element</code>",
+            "Die meisten HTML Elemente haben einen <code>opening tag</code> und einen <code>closing tag</code>.",
+            "Öffnende Tags sehen so aus:",
+            "<code>&#60;h1&#62;</code>",
+            "Schließende Tags so:",
+            "<code>&#60;/h1&#62;</code>",
+            "Beachte, dass der einzige Unterschied zwischen öffnenden und schließenden Tags ist, das schließende Tags ein Slash nach der sich öffnenden spitzen Klammer folgt.",
+            "Jede Challenge hat Tests die du jederzeit starten kannst indem du den \"Run tests\" Button drückst. Wenn alle Tests bestehen kannst du mit der nächsten Challenge fortfahren.",
+            "Um den Test dieser Challenge zu bestehen, ändere den Text deines <code>h1</code> Elements von \"Hello\" zu \"Hello World\". Klicke dann den \"Run tests\" Button."
+          ]
+        },
+        "fr": {
+          "title": "Dites bonjour aux éléments HTML",
+          "description": [
+            "Bienvenue au premier défi de code de Free Code Camp.",
+            "Vous pouvez modifier le <code>code</code> dans votre <code>éditeur texte</code>, lequel est disponible dans cette page.",
+            "Voyez-vous le code dans l'éditeur texte qui dit <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? C'est un <code>élément</code> HTML.",
+            "La plupart des éléments HTML ont une <code>balise ouvrante</code> et une <code>balise fermante</code>",
+            "Les balises ouvrantes ont cette apparence :",
+            "<code>&#60;h1&#62;</code>",
+            "Les balises fermantes ont cette apparence :",
+            "<code>&#60;/h1&#62;</code>",
+            "Notez que la seule différence entre une balise ouvrante et fermante est que la balise fermante a une barre oblique après son chevron ouvrant.",
+            "Chaque défi contient des tests que vous pouvez éxécuter en cliquant sur le bouton \"Run tests\". Lorsque tous les tests sont réussis, vous pouvez poursuivre avec le défi suivant.",
+            "Pour réussir le test de ce défi, changez le texte de l'élément <code>h1</code> pour \"Hello World\" plutôt que \"Hello\". Cliquez ensuite sur le bouton \"Run tests\"."
+          ]
+        },
+        "pt-br": {
+          "title": "Diga Olá aos Elementos HTML",
+          "description": [
+            "Seja bem vindo ao primeiro desafio de programação do Free Code Camp!",
+            "Você pode editar o seu <code>código</code> em seu <code>editor de texto</code>, que embutimos aqui nesta página da web.",
+            "Consegue ver o código que diz <code>&#60;h1&#62;Hello&#60;/h1&#62;</code> no seu editor de texto? Esse é um elemento HTML.",
+            "A maioria dos elementos HTML tem uma <code>tag de abertura</code> e uma <code>tag de fechamento</code>.",
+            "As tags de abertura são assim: <code>&#60;h1&#62;</code>. E as tags de fechamento são assim: <code>&#60;/h1&#62;</code>.",
+            "Note que a única diferença entre as tags de abertura e fechamento é que as de fechamento possuem uma barra (/) depois do sinal de abertura (<).",
+            "Cada desafio possui testes que você pode executar a qualquer momento ao clicar no botão \"Executar testes\". Quando você conseguir passar em todos os testes, poderá avançar para o próximo desafio.",
+            "Para passar nos testes deste desafio, mude o texto do elemento <code>h1</code> para que diga \"Hello World\" no lugar de \"Hello\". Depois, clique no botão \"Executar testes\"."
+          ]
+        },
+        "ru": {
+          "title": "Скажи привет HTML-элементам",
+          "description": [
+            "Добро пожаловать на первое программное испытание Free Code Camp.",
+            "Вы можете редактировать <code>код</code> в вашем <code>текстовом редакторе</code>, который мы встроили в эту web-страницу.",
+            "Видите этот код в вашем текстовом редакторе: <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Это HTML <code>элемент</code>.",
+            "Большинство HTML-элементов имеют <code>открывающую метку</code> <code>закрывающую метку</code>.",
+            "Открывающие метки выглядят так:",
+            "<code>&#60;h1&#62;</code>",
+            "Закрывающие метки выглядят следующим образом:",
+            "<code>&#60;/h1&#62;</code>",
+            "Обратите внимание, что единственная разница между открывающими и закрывающими метками заключается в наличии косой черты после открывающей треугольной скобки.",
+            "Каждое испытание имеет функцию проверки решения, которую вы можете запустить в любой момент нажатием на кнопку \"Run tests\". Как только ваше решение будет удовлетворять всем требованиям, вы сможете перейти к следующему испытанию.",
+            "Для прохождения этого испытания измените текст элемента <code>h1</code> с \"Hello\" на \"Hello World\". Затем нажмите кнопку \"Run tests\"."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf0887a",
+      "title": "Headline with the h2 Element",
+      "description": [
+        "Over the next few challenges, we'll build an HTML5 app that will look something like this:",
+        "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
+        "The <code>h2</code> element you enter will create an <code>h2</code> element on the website.",
+        "This element tells the browser about the structure of your website. <code>h1</code> elements are often used for main headings, while <code>h2</code> elements are generally used for subheadings. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements to indicate different and new sections.",
+        "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element."
+      ],
+      "challengeSeed": [
+        "<h1>Hello World</h1>"
+      ],
+      "tests": [
+        "assert(($(\"h2\").length > 0), 'message: Create an <code>h2</code> element.');",
+        "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, 'message: Make sure your <code>h2</code> element has a closing tag.');",
+        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($(\"h2\").text()), 'message: Your <code>h2</code> element should have the text \"CatPhotoApp\".');",
+        "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'message: Your <code>h1</code> element should have the text \"Hello World\".');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [
+            "In den nächsten Challenges werden wir eine HTML5 App entwickeln die ungefähr so aussehen wird:",
+            "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Klicke zum Vergrößern\" alt=\"Ein Screenshot von unserer beendeted Katzenfoto App\"></a>",
+            "Das eingetragene <code>h2</code> Element wird ein <code>h2</code> Element auf der Website erzeugen.",
+            "Dieses Element sagt dem Browser, wie die Struktur deiner Website aufgebaut ist. <code>h1</code> Elemente werden oft für Hauptüberschriften verwendet, während <code>h2</code> Elemente üblicherweise für Zwischenüberschriften verwendet werden. Es gibt auch <code>h3</code>, <code>h4</code>, <code>h5</code> und <code>h6</code> Elemente die verschiedene und neue Bereiche kennzeichnen.",
+            "Füge unter <code>h1</code> \"Hello World\" ein zweites HTML Element <code>h2</code> hinzu, in dem \"CatPhotoApp\" steht."
+          ]
+        },
+        "fr": {
+          "title": "Un titre avec l'élément h2",
+          "description": [
+            "Pour les quelques prochains défis, nous construirons une application HTML5 qui ressemblera à ceci :",
+            "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Cliquez pour agrandir\" alt=\"Une capture écran de notre application de photo de chats\"></a>",
+            "L'élément <code>h2</code> que vous entrerez créera un élément <code>h2</code> sur le site.",
+            "Cet élément renseigne votre navigateur sur la structure de votre site. Les éléments <code>h1</code> sont souvent utilisés comme titre, tandis que les éléments <code>h2</code> sont généralement utilisés comme sous-titres. Il existe également les éléments <code>h3</code>, <code>h4</code>, <code>h5</code> et <code>h6</code> qui indiquent une nouvelle et différente section.",
+            "Ajoutez une balise <code>h2</code> contenant \"CatPhotoApp\" pour créer un second <code>élément</code> HTML sous l'élément <code>h1</code> contenant \"Hello World\"."
+          ]
+        },
+        "pt-br": {
+          "title": "Cabeçalho com o Elemento h2",
+          "description": [
+            "Durante os próximos desafios, construiremos um aplicativo em HTML que se parecerá como este:",
+            "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Clique para aumentar\" alt=\"Imagem do aplicativo CatPhotoApp finalizado\"></a>",
+            "O elemento <code>h2</code> que você criar gerará um elemento <code>h2</code> na página da web.",
+            "Este elemento indica ao navegador a forma de mostrar o texto que contém.",
+            "Os elementos <code>h2</code> são ligeiramente menores que os elementos <code>h1</code>. Há também os elementos <code>h3</code>, <code>h4</code>, <code>h5</code> e <code>h6</code>.",
+            "Adicione uma tag <code>h2</code> que diga \"CatPhotoApp\" para criar um segundo <code>elemento</code> HTML abaixo de seu elemento <code>h1</code> chamado \"Hello World\"."
+          ]
+        },
+        "ru": {
+          "title": "Заголовок с применением элемента h2",
+          "description": [
+            "В результате прохождения нескольких следующих испытаний, мы построим HTML5 приложение, которое будет похоже на это:",
+            "<a href=\"//i.imgur.com/jOc1JF1.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
+            "Вводимый вами элемент <code>h2</code> создаст соответствующий элемент <code>h2</code> на web-странице.",
+            "Этот элемент сообщает браузеру о структуре вашего web-сайта. Элементы <code>h1</code> часто применяют в качестве главных заголовков, в то время как элементы <code>h2</code> обычно используют для обозначения позаголовков. Также существуют элементы <code>h3</code>, <code>h4</code>, <code>h5</code> и <code>h6</code> для обозначения отдельных секций.",
+            "Добавьте метку <code>h2</code> с текстом \"CatPhotoApp\" для создания второго HTML <code>элемента</code> под вашим элементом <code>h1</code> с текстом \"Hello World\"."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08801",
+      "title": "Inform with the Paragraph Element",
+      "description": [
+        "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
+        "You can create a <code>p</code> element like this:",
+        "<code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>",
+        "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\"."
+      ],
+      "challengeSeed": [
+        "<h1>Hello World</h1>",
+        "<h2>CatPhotoApp</h2>"
+      ],
+      "tests": [
+        "assert(($(\"p\").length > 0), 'message: Create a <code>p</code> element.');",
+        "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should have the text \"Hello Paragraph\".');",
+        "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure your <code>p</code> element has a closing tag.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [
+            "<code>p</code> Elemente sind das bevorzugte Element für normale Paragraphentexte auf einer Website. P ist die Abkürzung für \"Paragraph\".",
+            "Du kannst ein <code>p</code> Element so erzeugen:",
+            "<code>&#60;p&#62;Ich bin ein p Element!&#60;/p&#62;</code>",
+            "Erstelle ein <code>p</code> Element unter deinem <code>h2</code> Element und füge den Text \"Hello Paragraph\" ein."
+          ]
+        },
+        "fr": {
+          "title": "Informez avec l'élément paragraphe",
+          "description": [
+            "L'élément <code>p</code> est le préféré pour les textes de paragraphes de taille normale. P est l'acronyme de \"paragraphe\",",
+            "Vous pouvez créer un élément <code>p</code> comme ceci :",
+            "<code>&#60;p&#62;Je suis une balise p!&#60;/p&#62;</code>",
+            "Créez un élément <code>p</code> sous votre élément <code>h2</code> et inscrivez-y le texte \"Hello Paragraph\"."
+          ]
+        },
+        "pt-br": {
+          "title": "Informe com o Elemento Parágrafo",
+          "description": [
+            "Os elementos <code>p</code> são os preferenciais para criar parágrafos de texto com tamanho normal nas páginas da web. P significa a abreviatura de \"parágrafo\".",
+            "Você pode criar um elemento <code>p</code> assim:",
+            "<code>&#60;p&#62;Sou uma tag p!&#60;/p&#62;</code>",
+            "Crie um elemento <code>p</code> abaixo de seu elemento <code>h2</code>, e dê a ele o texto \"Hello Paragraph\"."
+          ]
+        },
+        "ru": {
+          "title": "Проинформируйте с применением элемента p",
+          "description": [
+            "Элементы <code>p</code> предпочтительно использовать для обозначения параграфов с текстом нормального размера в web-сайтах. P - сокращение от \"paragraph\".",
+            "Вы можете создать элемент <code>p</code> следующим образом:",
+            "<code>&#60;p&#62;Я метка p!&#60;/p&#62;</code>",
+            "Создайте элемент <code>p</code> под вашим элементом <code>h2</code> и присвойте ему текст \"Hello Paragraph\"."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aecf08801",
+      "title": "Introduction to HTML5 Elements",
+      "description": [
+        "HTML5 introduces more descriptive HTML tags. These include <header>, <footer>, <nav>, <video>, <article>, <section> and others.",
+        "These tags not only make your HTML easier to read, it also helps with Search Engine Optimization (SEO) and accessibility.",
+        "The <main> HTML5 tag helps search engines and other developers find the main content of your page.",
+        "Note",
+        "Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.",
+        "Instructions",
+        "Wrap the paragraph with a opening and closing main tag."
+      ],
+      "challengeSeed": [
+        "<h2>CatPhotoApp</h2>",
+        "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
+      ],
+      "tests": [
+        "assert($('main').length === 1, 'message: Your code should have one <code>main</code> element.');",
+        "assert(code.match(/<main>\\s*?<p>/g), 'message: The opening <code>main</code> tag should come before the paragraph tag.');",
+        "assert(code.match(/</p>\\s*?</main>/g), 'message: The closing <code>main</code> tag should come after your closing paragraph tag.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "bad87fee1348bd9aedf08833",
+      "title": "Fill in the Blank with Placeholder Text",
+      "description": [
+        "Web developers traditionally use <code>lorem ipsum text</code> as placeholder text. The 'lorem ipsum' text is randomly scraped from a famous passage by Cicero of Ancient Rome.",
+        "Lorem ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
+        "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called <code>kitty ipsum text</code>.",
+        "Replace the text inside your <code>p</code> element with the first few words of this kitty ipsum text: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+      ],
+      "challengeSeed": [
+        "<h1>Hello World</h1>",
+        "",
+        "<h2>CatPhotoApp</h2>",
+        "",
+        "<p>Hello Paragraph</p>"
+      ],
+      "tests": [
+        "assert.isTrue((/Kitty(\\s)+ipsum/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [
+            "Webentwickler nutzen für gewöhnlich \"Lorem Ipsum Text\" als Platzhalter. Es heißt \"Lorem Ipsum\", weil es die ersten zwei Wörter aus einer bekannten Passage von Cicero des alten Roms sind.",
+            "\"Lorem Ipsum\" Text wurde seit dem 16. Jahrhundert von Schriftsetzern als Platzhalter verwendet. Und diese Tradition setzt sich im Web fort.",
+            "Nun gut, fünf Jahrhunderte sind lange genug. Da wir eine CatPhotoApp entwickeln, lass uns stattdessen lieber <code>kitty ipsum text</code> nutzen.",
+            "Ersetze den Text in deinem <code>p</code> Element mit den ersten Wörtern des \"Kitty Ipsum\" Textes: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+          ]
+        },
+        "fr": {
+          "title": "Remplissez les blancs avec du faux-texte",
+          "description": [
+            "Les développeurs Web utilisent traditionnellement du <code>lorem ipsum</code> comme texte de substitution. Le texte lorem ipsum provient d'un extrait de Cicero, de la Rome antique.",
+            "Le texte lorem ipsum a été utilisé comme faux-texte par des typographes depuis le 16<sup>ème</sup> siècle et cette tradition se poursuit sur le Web.",
+            "Enfin, 5 siècles est suffisament long. Étant donné que nous fabriquons une application de photos de chats, utilisons plutôt du texte <code>Kitty ipsum</code>.",
+            "Remplacez le texte à l'intérieur des éléments <code>p</code> avec ces quelques mots du texte Kitty ipsum : <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+          ]
+        },
+        "pt-br": {
+          "title": "Preencha Espaços com Texto de Espaço Reservado",
+          "description": [
+            "Desenvolvedores web tradicionalmente usam <code>Lorem Ipsum</code> como texto de preenchimento. Lorem Ipsum é chamado assim pois essas são as duas primeiras palavras de uma passagem famosa de Cícero da Roma Antiga.",
+            "O texto Lorem Ipsum tem sido utilizado como texto de espaço reservado por compositores desde o século 16, e esta tradição continua na web.",
+            "Bem, 5 séculos é um tempo longo o bastante. Já que estamos desenvolvendo um aplicativo sobre fotos de gatos (CatPhotoApp), vamos usar algo chamado <code>Kitty Ipsum</code>.",
+            "Substitua o texto dentro do seu elemento <code>p</code> pelas primeiras palavras deste texto Kitty Ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+          ]
+        },
+        "ru": {
+          "title": "Заполните пустоты замещающим текстом",
+          "description": [
+            "Традиционно web-разработчики используют текст <code>lorem ipsum</code> в качестве замещающего текста. Он называется тектсом <code>lorem ipsum</code> по первым двум словам известного пассажа Цицерона из Древнего Рима.",
+            "Текст <code>lorem ipsum</code> применяется в качестве замещающего текста наборщиками с 16-го века, и эта традиция продолжается в сети.",
+            "5 веков довольно долгий период. Так как мы строим приложение CatPhotoApp, давайте используем нечто называемое текстом <code>kitty ipsum</code>.",
+            "Замените текст внутри вашего элемента <code>p</code> первыми двумя словами текста <code>kitty ipsum</code>: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08812",
+      "title": "Add Images to your Website",
+      "description": [
+        "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
+        "An example of this would be:",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.",
+        "Let's add an <code>alt</code> attribute to our <code>img</code> example above:",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up.\"&#62</code>",
+        "Note that in most cases, <code>img</code> elements are self-closing.",
+        "Try it with this image:",
+        "<code>https://bit.ly/fcc-relaxing-cat</code>"
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+      ],
+      "tests": [
+        "assert($(\"img\").length > 0, 'message: Your page should have an image element.');",
+        "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat|\\/\\/s3.amazonaws.com\\/freecodecamp\\/relaxing-cat.jpg\", \"gi\").test($(\"img\").attr(\"src\")), 'message: Your image should have a <code>src</code> attribute that points to the kitten image.');",
+        "assert(code.match(/alt\\s*?=\\s*?(\\\"|\\').*(\\\"|\\')/), 'message: Your image element <strong>must</strong> have an <code>alt</code> attribute.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [
+            "Du kannst <code>img</code> Elemente verwenden, um Bilder in deine Website einzubauen. Um zur URL des Bildes zu verweisen, benutzt du das <code>src</code> Attribut.",
+            "Ein Beispiel dafür wäre:",
+            "<code>&#60img src=\"https://www.deine-bild-quelle.com/dein-bild.jpg\"&#62</code>",
+            "Beachte dass in den meisten Fällen <code>img<code> Elemente selbstschließend sind.",
+            "Versuche es mit diesem Bild:",
+            "<code>https://bit.ly/fcc-relaxing-cat</code>"
+          ]
+        },
+        "fr": {
+          "title": "Ajouter des images à votre site Web",
+          "description": [
+            "Vous pouvez ajouter des images à votre site Web en utilisant l'élément <code>img</code> et pointer vers une URL d'image spécifique en utilisant l'attribut <code>src</code>.",
+            "Un exemple de cette procédure serait :",
+            "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
+            "Note that in most cases, <code>img</code> elements are self-closing.",
+            "Prenez note que dans la plupart des cas, les éléments <code>img</code> sont auto-fermants.",
+            "Essayez avec cette image :",
+            "<code>https://bit.ly/fcc-relaxing-cat</code>"
+          ]
+        },
+        "pt-br": {
+          "title": "Adicione Imagens em sua Página Web",
+          "description": [
+            "Você pode adicionar imagens à sua página da internet com o uso do elemento <code>img</code>, e apontar para a URL específica de uma imagem utilizando o atributo <code>src</code>.",
+            "Um exemplo para isso seria:",
+            "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
+            "Observe que na maior parte dos casos, os elementos <code>img</code> são de fechamento automático.",
+            "Agora, tente fazer isso com essa imagem:",
+            "<code>https://bit.ly/fcc-relaxing-cat</code>"
+          ]
+        },
+        "ru": {
+          "title": "Добавьте изображения к вашему сайту",
+          "description": [
+            "Вы можете добавлять изображения к вашему сайту с помощью элемента <code>img</code> и указывать ссылки определённых изображений с помощтю атрибута <code>src</code>.",
+            "Примером добавления мзображения может служить:",
+            "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
+            "Обратите внимание, что в большинстве случаев элементы <code>img</code> являются самозакрывающимися.",
+            "Попробуйте добавить изображение используя следующую ссылку:",
+            "<code>https://bit.ly/fcc-relaxing-cat</code>"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08802",
+      "title": "Uncomment HTML",
+      "description": [
+        "Commenting is a way that you can leave comments within your code without affecting the code itself.",
+        "Commenting is also a convenient way to make code inactive without having to delete it entirely.",
+        "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>",
+        "Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements."
+      ],
+      "challengeSeed": [
+        "<!--",
+        "<h1>Hello World</h1>",
+        "",
+        "<h2>CatPhotoApp</h2>",
+        "",
+        "<p>Hello Paragraph</p>",
+        "-->"
+      ],
+      "tests": [
+        "assert($(\"h1\").length > 0, 'message: Make your <code>h1</code> element visible on your page by uncommenting it.');",
+        "assert($(\"h2\").length > 0, 'message: Make your <code>h2</code> element visible on your page by uncommenting it.');",
+        "assert($(\"p\").length > 0, 'message: Make your <code>p</code> element visible on your page by uncommenting it.');",
+        "assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\\n/g,'')), 'message: Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [
+            "Kommentieren erlaubt dir Kommentare innerhalb des Codes zu hinterlassen, ohne diesen selbst zu beeinflussen.",
+            "Dies ist auch ein guter Weg, um Code inaktiv zu machen ohne diesen komplett löschen zu müssen.",
+            "Du kannst einen Kommentar mit <code>&#60;!--</code> starten und ihn mit <code>--&#62;</code> wieder beenden.",
+            "Entkommentiere deine <code>h1</code>, <code>h2</code> und <code>p</code> Elemente."
+          ]
+        },
+        "fr": {
+          "title": "Décommenter du HTML",
+          "description": [
+            "Commenter est une façon de laisser des commentaires dans votre code sans affecter le fonctionnement du code.",
+            "Commenter est aussi un moyen pratique de rendre du code inactif sans devoir le supprimer entièrement.",
+            "Vous pouvez débuter un commentaire avec <code>&#60;!--</code> et le terminer avec <code>--&#62;</code>.",
+            "Décommenter vos éléments <code>h1</code>, <code>h2</code> et <code>p</code>."
+          ]
+        },
+        "pt-br": {
+          "title": "Descomente o HTML",
+          "description": [
+            "\"Comentar\" é uma forma de deixar anotações em seu código sem afetá-lo.",
+            "Comentar também é um jeito conveniente de deixar seu código inativo sem precisar apagá-lo por completo.",
+            "Você pode iniciar um comentário com <code>&#60;!--</code> e terminar seu comentário com <code>--&#62;</code>.",
+            "Remova o comentário dos elementos <code>h1</code>, <code>h2</code> e <code>p</code>."
+          ]
+        },
+        "ru": {
+          "title": "Раскомментируйте HTML",
+          "description": [
+            "Комментирование - способ хранения заметок по коду без воздействия на сам код.",
+            "Также комментирование - неплохой метод отключения части кода без необходимости его удаления.",
+            "Вы можете начать комментарий с <code>&#60;!--</code> и закончить его <code>--&#62;</code>",
+            "Раскомментируйте свои элементы <code>h1</code>, <code>h2</code> и <code>p</code>."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08804",
+      "title": "Comment out HTML",
+      "description": [
+        "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>",
+        "Here you'll need to end the comment before your <code>h2</code> element begins.",
+        "Comment out your <code>h1</code> element and your <code>p</code> element, but leave your <code>h2</code> element uncommented."
+      ],
+      "challengeSeed": [
+        "<!--",
+        "<h1>Hello World</h1>",
+        "",
+        "<h2>CatPhotoApp</h2>",
+        "",
+        "<p>Hello Paragraph</p>",
+        "-->"
+      ],
+      "tests": [
+        "assert(($(\"h1\").length === 0), 'message: Comment out your <code>h1</code> element so that it is not visible on your page.');",
+        "assert(($(\"h2\").length > 0), 'message: Leave your <code>h2</code> element uncommented so that it is visible on your page.');",
+        "assert(($(\"p\").length === 0), 'message: Comment out your <code>p</code> element so that it is not visible on your page.');",
+        "assert(code.match(/[^fc]-->/g).length > 1, 'message: Be sure to close each of your comments with <code>--&#62;</code>.');",
+        "assert((code.match(/<([a-z0-9]){1,2}>/g)[0]===\"<h1>\" && code.match(/<([a-z0-9]){1,2}>/g)[1]===\"<h2>\" && code.match(/<([a-z0-9]){1,2}>/g)[2]===\"<p>\") , 'message: Do not change the order of the <code>h1</code> <code>h2</code> or <code>p</code> in the code.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [
+            "Denk daran, dass du einen Kommentar mit <code>&#60;!--</code> anfangen und mit <code>--&#62;</code> wieder beenden werden.",
+            "Hier wirst du deinen Kommentar vor dem <code>h2</code> Element beenden müssen.",
+            "Kommentiere die <code>h1</code> und <code>p</code> Elemente aus, aber lasse dein <code>h2</code> Element unkommentiert."
+          ]
+        },
+        "fr": {
+          "title": "Commentez du HTML",
+          "description": [
+            "Souvenez-vous que pour débuter un commentaire, vous devez utiliser <code>&#60;!--</code> et que pour le terminer, vous devez utiliser <code>--&#62;</code>.",
+            "Ici vous devrez terminer le commentaire juste avant que l'élément <code>h2</code> commence.",
+            "Commentez les éléments <code>h1</code> et <code>p</code>, mais laissez l'élément <code>h2</code> tel quel."
+          ]
+        },
+        "pt-br": {
+          "title": "Comente o HTML",
+          "description": [
+            "Lembre-se que para iniciar um comentário você precisa utilizar <code>&#60;!--</code>, e para terminar um comentário é necessário usar <code>--&#62;</code>.",
+            "Aqui, você deverá terminar o comentário antes que seu elemento <code>h2</code> inicie.",
+            "Comente o elemento <code>h1</code> e o elemento <code>p</code>, e deixe o elemento <code>h2</code> sem nenhum comentário."
+          ]
+        },
+        "ru": {
+          "title": "Закомментируйте HTML",
+          "description": [
+            "Помните, что для начала комментария вам необходимо использовать <code>&#60;!--</code>, а для завершения комментария - <code>--&#62;</code>",
+            "Тут вам необходимо завершить комментарий до начала вашего элемента <code>h2</code>.",
+            "Закомментируйте ваши элементы <code>h1</code> и <code>p</code>, но оставьте ваш элемент <code>h2</code> раскомментированным."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fed1348bd9aedf08833",
+      "title": "Delete HTML Elements",
+      "description": [
+        "Our phone doesn't have much vertical space.",
+        "Let's remove the unnecessary elements so we can start building our CatPhotoApp.",
+        "Delete your <code>h1</code> element so we can simplify our view."
+      ],
+      "challengeSeed": [
+        "<h1>Hello World</h1>",
+        "",
+        "<h2>CatPhotoApp</h2>",
+        "",
+        "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
+      ],
+      "tests": [
+        "assert(($(\"h1\").length == 0), 'message: Delete your <code>h1</code> element.');",
+        "assert(($(\"h2\").length > 0), 'message: Leave your <code>h2</code> element on the page.');",
+        "assert(($(\"p\").length > 0), 'message: Leave your <code>p</code> element on the page.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [
+            "Unser Smartphone hat nicht sehr viel vertikalen Platz.",
+            "Lass uns die unwichtigen Elemente entfernen, damit wir unsere CatPhotoApp entwickeln können.",
+            "Lösche die Elemente <code>h1</code>, damit wir etwas Ordnung schaffen."
+          ]
+        },
+        "fr": {
+          "title": "Supprimer des éléments HTML",
+          "description": [
+            "Notre téléphone n'a pas beaucoup d'espace vertical.",
+            "Enlevons les éléments superflus pour débuter la construction de notre application de photos de chats.",
+            "Supprimez l'élément <code>h1</code> afin de simplifier l'affichage."
+          ]
+        },
+        "pt-br": {
+          "title": "Apague Elementos HTML",
+          "description": [
+            "Nosso celular não possui muito espaço vertical.",
+            "Vamos eliminar os elementos desnecessários para começar a construir nosso CatPhotoApp.",
+            "Apague o elemento <code>h1</code> para simplificar o nosso espaço."
+          ]
+        },
+        "ru": {
+          "title": "Удалите HTML-элементы",
+          "description": [
+            "Наш телефон не очень большой по-вертикали.",
+            "Давайте удалим некоторые ненужные элементы, чтобы мы могли приступить к созданию приложения CatPhotoApp.",
+            "Удалите ваш <code>h1</code> элемент, чтобы упростить общий вид."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08816",
+      "title": "Link to External Pages with Anchor Elements",
+      "description": [
+        "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
+        "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+        "Here's an example:",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
+        "",
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+      ],
+      "tests": [
+        "assert((/cat photos/gi).test($(\"a\").text()), 'message: Your <code>a</code> element should have the <code>anchor text</code> of \"cat photos\".');",
+        "assert(/http:\\/\\/(www\\.)?freecatphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'message: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>');",
+        "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure your <code>a</code> element has a closing tag.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Verlinke externe Seiten mit Anker Elementen",
+          "description": [
+            "<code>a</code> Elemente, auch bekannt als <code>anchor</code> (Anker) Elemente, werden verwendet um auf Inhalte außerhalb der aktuellen Seite zu verlinken.",
+            "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "Hier ist ein Beispiel:",
+            "<code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zu Free Code Camp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
+            "Erstelle ein <code>a</code> Element, das auf <code>http://freecatphotoapp.com</code> verlinkt und den \"cat photos\" als <code>anchor text</code> (Link-Text) beinhaltet."
+          ]
+        },
+        "es": {
+          "title": "Enlaza páginas externas con elementos ancla",
+          "description": [
+            "Los elementos <code>a</code>, también conocidos como elementos <code>ancla</code>, se utilizan para enlazar a contenido fuera de la página actual.",
+            "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a> ",
+            "He aquí un ejemplo:",
+            "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+            "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"fotos de gatos\"."
+          ]
+        },
+        "pt-br": {
+          "title": "Ligue Páginas Externas com o Elemento Âncora",
+          "description": [
+            "Os elementos <code>a</code>, também conhecidos como elementos <code>âncora</code>, são utilizados para ligar conteúdo fora da página atual.",
+            "Aqui está um diagrama de um elemento <code>a</code>. Neste caso, o elemento <code>a</code> é utilizado no meio de um elemento de parágrafo, o que significa que o link externo aparecerá no meio de uma frase.",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como as tags de âncora se compõem com o texto, como na próxima linha\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "Veja um exemplo:",
+            "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+            "Crie um elemento <code>a</code> que esteja ligado ao site <code>http://freecatphotoapp.com</code> e tenha como <code>texto de âncora</code> \"fotos de gatos\"."
+          ]
+        },
+        "ru": {
+          "title": "Присоедините внешние страницы с помощью якорных элементов",
+          "description": [
+            "Элементы <code>a</code>, также известные как <code>якорные</code> элементы, применяют для связи с содержимым вне текущей страницы.",
+            "Вот диаграмма элемента <code>a</code>. В этом случае, элемент <code>a</code> использован в середине элемента параграфа, что значит, что ссылка появится в середине предложения.",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "Вот пример:",
+            "<code>&#60;p&#62;Вот &#60;a href=\"http://freecodecamp.com\"&#62; ссылка на Free Code Camp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
+            "Создайте элемент <code>a</code>, который присоединяет <code>http://freecatphotoapp.com</code> и имеет значение \"cat photos\" в качестве <code>текста якоря</code>."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad88fee1348bd9aedf08816",
+      "title": "Link to Internal Sections of a Page with Anchor Elements",
+      "description": [
+        "In addition to creating external links, anchor elements can also be used to create internal links, which are links that jump to different sections within a webpage.",
+        "The format is similar to an external link except instead of a URL, you'll use the # and a word to describe the section you want to jump to.",
+        "Here's an example:",
+        "<code><a href=\"#contact\">Go to contact section</a></code>",
+        "Next, you'll want to create a corresponding anchor link in the HTML where you want the internal link to take users. Instead of using the href attribute, you'll use the name attribute, as below.",
+        "Here's an example:",
+        "<h1>Contact</h1>",
+        "<code><a name=\"contact\"></a></code>",
+        "Now when users click the \"Go to contact section\" link, they'll be taken to the section of the webpage with the anchor name attribute \"contact\".",
+        "Instructions",
+        "Change your external link to an internal link by changing the href attribute to \"#bottom\" and the anchor text from \"cat photos\" to \"Jump to Bottom\".",
+        "Then add an anchor link with a name attribute set to \"bottom\" after the last paragraph.",
+        "Note",
+        "Additional kitty ipsum text has been added to the paragraphs to better show the effect of clicking the internal anchor link to jump to the bottom of the page."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
+        "",
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+      ],
+      "tests": [
+        "assert($('a').length == 2, 'message: There should be only two anchor tags on your page.');",
+        "assert($('a').eq(0).attr('href') == \"#bottom\", 'message: The first <code>a</code> tag should have an <code>href</code> attribute set to #bottom.');",
+        "assert($('a').eq(1).attr('name') == \"bottom\", 'message: The second <code>a</code> tag should have a <code>name</code> attribute set to bottom.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "bad87fee1348bd9aede08817",
+      "title": "Nest an Anchor Element within a Paragraph",
+      "description": [
+        "Again, here's a diagram of an <code>a</code> element for your reference:",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+        "Here's an example:",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"https://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<code>Nesting</code> just means putting one element inside of another element.",
+        "Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>h2</code> element) so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<a href=\"http://freecatphotoapp.com\">cat photos</a>",
+        "",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
+        "",
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+      ],
+      "tests": [
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").length > 0 || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0), 'message: You need an <code>a</code> element that links to \"http://freecatphotoapp.com\".');",
+        "assert($(\"a\").text().match(/cat\\sphotos/gi), 'message: Your <code>a</code> element should have the anchor text of \"cat photos\"');",
+        "assert($(\"p\") && $(\"p\").length > 2, 'message: Create a new <code>p</code> element around your <code>a</code> element.');",
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().is(\"p\") || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\")), 'message: Your <code>a</code> element should be nested within your new <code>p</code> element.');",
+        "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi) || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi)), 'message: Your <code>p</code> element should have the text \"View more \" (with a space after it).');",
+        "assert(!$(\"a\").text().match(/View\\smore/gi), 'message: Your <code>a</code> element should <em>not</em> have the text \"View more\".');",
+        "assert(code.match(/<\\/p>/g) && code.match(/<p/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'message: Make sure each of your <code>p</code> elements has a closing tag.');",
+        "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Umschließe ein Anker Element mit einem Paragraphen",
+          "description": [
+            "Hier ist nochmal ein Beispiel für ein <code>a</code> Element:",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Klick zum Vergrößern\" alt=\"Eine Darstellung wie Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "Hier ist ein Beispiel:",
+            "<code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.com\"&#62; Link zu Free Code Camp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
+            "<code>Nesting</code> bedeuted ein Element innerhalb eines anderen Elements zu schreiben",
+            "Jetzt umschließe dein <code>a</code> Element mit einem neuen <code>p</code> Element (direkt nach dem bereits existierenden <code>h2</code> Element) indem steht \"View more cat photos\", wo allerdings nur \"cat photos\" ein Link ist und der Rest normaler Text."
+          ]
+        },
+        "es": {
+          "title": "Anida un elemento de ancla dentro de un párrafo",
+          "description": [
+            "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "He aquí un ejemplo:",
+            "<code>&#60;p&#62;Aquí hay un &#60;a href=\"https://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+            "<code>Anidamiento</code> simplemente significa poner un elemento dentro de otro elemento.",
+            "Ahora anida el elemento <code>a</code> existente dentro de un nuevo elemento <code>p</code> (justo después del elemento <code>h2</code> que ya tienes) de tal forma que el párrafo que lo rodee diga \"View more cat photos\", pero que sólo \"cat photos\" sea un enlace, y el resto sea texto plano ."
+          ]
+        },
+        "pt-br": {
+          "title": "Aninhe o Elemento Âncora no Interior de um Parágrafo",
+          "description": [
+            "Outra vez, aqui está um diagrama de um elemento <code>a</code> para você usar como referência.",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "Veja um exemplo:",
+            "<code>&#60;p&#62;Este é um &#60;a href=\"https://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+            "<code>Aninhamento</code> significa ter um elemento no interior de outro elemento.",
+            "Agora, aninhe o elemento <code>a</code> existente dentro de um novo elemento <code>p</code> de forma que o parágrafo diga \"View more cat photos\", mas onde apenas \"cat photos\" seja um link, e o resto seja texto comum."
+          ]
+        },
+        "ru": {
+          "title": "Создайте вложенный якорный элемент внутри параграфа",
+          "description": [
+            "Вот диаграмма элемента <code>a</code>:",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "Вот пример:",
+            "<code>&#60;p&#62;Вот &#60;a href=\"https://freecodecamp.com\"&#62; ссылка на Free Code Camp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
+            "<code>Вложенность</code> значит установку одного элемента внутрь друго элемента.",
+            "Теперь вложите ваш существующий элемент <code>a</code> внутрь нового элемента <code>p</code> (сразу после существующего элемента <code>h2</code>) таким образом, что добавляемый параграф сообщает: \"View more cat photos\", но где только \"cat photos\" является ссылкой, а остальной текст обычный."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08817",
+      "title": "Make Dead Links using the Hash Symbol",
+      "description": [
+        "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
+        "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
+        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here to view more <a href=\"http://freecatphotoapp.com\">cat photos</a>.</p>",
+        "",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
+        "",
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+      ],
+      "tests": [
+        "assert($(\"a\").attr(\"href\") === \"#\", 'message: Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to \"#\".');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Erstelle tote Links mit dem Hash Symbol",
+          "description": [
+            "Manchmal wirst du <code>a</code> Elemente zu deiner Website hinzufügen möchten, ohne dass du das Ziel des Links kennst.",
+            "Das ist auch nützlich, wenn du die Funktion eines Links mit <code>jQuery</code> verändern willst. Das werden wir später noch behandeln.",
+            "Ersetze den Inhalt des <code>href</code> Attributs deines <code>a</code> Elements mit einem <code>#</code>, auch bekannt als Hash Symbol, um einen toten Link zu erzeugen."
+          ]
+        },
+        "es": {
+          "title": "Haz vínculos muertos utilizando el símbolo de numero",
+          "description": [
+            "A veces quieres agregar elementos <code>a</code> a tu sitio web antes de saber qué enlazarán.",
+            "Esto también es útil cuando estás cambiando el comportamiento de un enlace usando <code>jQuery</code>, lo cual aprenderemos más adelante.",
+            "Reemplaza el atributo <code>href</code> de tu elemento <code>a</code> con un <code>#</code>, también conocido como un símbolo de número o de <em>hash</em>, para convertirlo en un vínculo muerto."
+          ]
+        },
+        "pt-br": {
+          "title": "Crie Links Inativos com o Símbolo Cerquilha",
+          "description": [
+            "As vezes você pode querer adicionar elementos <code>a</code> em sua página web antes de saber o link que as ligará.",
+            "Isso também é útil quando você desejar mudar o comportamento de um link utilizando <code>jQuery</code>, o que vamos aprender mais adiante.",
+            "Substitua o atributo <code>href</code> de seu elemento <code>a</code> por um <code>#</code>, também conhecido como símbolo de <em>hash</em> ou hashtag. Isso o transformará em um link inativo."
+          ]
+        },
+        "ru": {
+          "title": "Создайте мёртвые ссылки используя хэш-символ",
+          "description": [
+            "Иногда вам нужно добавить элементы <code>a</code> к вашему сайту до того, как вы знаете куда будут вести ссылки.",
+            "Также это может оказаться полезно, когда вы меняете поведение ссылки используя <code>jQuery</code>, что мы изучим позже.",
+            "Замените значение атрибута <code>href</code> вашего элемента <code>a</code> на <code>#</code>, известное как хэш-символ, для превращения элемента в мёртвую ссылку."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08820",
+      "title": "Turn an Image into a Link",
+      "description": [
+        "You can make elements into links by nesting them within an <code>a</code> element.",
+        "Nest your image within an <code>a</code> element. Here's an example:",
+        "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\" alt=\"Three kittens running towards the camera.\"&#62;&#60;/a&#62;</code>",
+        "Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.",
+        "Place the existing image element within an anchor element.",
+        "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\">",
+        "",
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+      ],
+      "tests": [
+        "assert($(\"a\").children(\"img.smaller-image\").length > 0, 'message: Nest the existing <code>img</code> element within an <code>a</code> element.');",
+        "assert(new RegExp(\"#\").test($(\"a\").children(\"img\").parent().attr(\"href\")), 'message: Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.');",
+        "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'message: Make sure each of your <code>a</code> elements has a closing tag.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Verlinke ein Bild",
+          "description": [
+            "Du kannst jedes Element in einen Link verwandeln, indem du es mit einem <code>a</code> Element umschließt.",
+            "Umschließe dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel:",
+            "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"&#62;&#60;/a&#62;</code>",
+            "Vergewissere dich, dass du ein <code>#</code> innerhalb des <code>href</code> Attributs des <code>a</code> Elements nutzt, um daraus einen toten Link zu machen.",
+            "Sobald du das gemacht hast, kannst du mit der Maus über dein Bild fahren. Der normale Mauszeiger sollte nun zu einer Hand für Links werden. Das Bild ist jetzt ein Link."
+          ]
+        },
+        "es": {
+          "title": "Convierte una imagen en un vínculo",
+          "description": [
+            "Puedes convertir elementos en enlaces al anidarlos dentro de un elemento <code>a</code>.",
+            "Anida tu imagen dentro de un elemento <code>a</code>. He aquí un ejemplo: ",
+            "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
+            "Recuerda usar <code>#</code> como atributo <code>href</code> de tu elemento <code>a</code> con el fin de convertirlo en un vínculo muerto.",
+            "Una vez hayas hecho esto, coloca el cursor sobre tu imagen. El puntero normal de tu cursor debería convertirse en el puntero de enlace. La foto es ahora un vínculo ."
+          ]
+        },
+        "pt-br": {
+          "title": "Transforme uma Imagem em um Link",
+          "description": [
+            "Você pode transformar elementos em links ao aninhá-los com um elemento <code>a</code>.",
+            "Aninhe sua imagem dentro de um elemento <code>a</code>. Temos aqui um exemplo.",
+            "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
+            "Lembre de usar <code>#</code> como atributo <code>href</code> de seu elemento <code>a</code> para tornar o link inativo."
+          ]
+        },
+        "ru": {
+          "title": "Превратите изображение в ссылку",
+          "description": [
+            "Вы можете превратить элементы в ссылки путём их вложения внутрь элементов <code>a</code>.",
+            "Вложите ваше изображение в элемент <code>a</code>. Вот пример:",
+            "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"&#62;&#60;/a&#62;</code>",
+            "Не забывайте использовать <code>#</code> в качестве значения атрибута <code>href</code> вашего элемента <code>a</code> для превращения ссылки в мёртвую.",
+            "Как только вы это сделаете, наведите курсор мыши на ваше изображение. При этом курсор должен изменить вид с обычного на используемый при наведении на ссылки. Ваше фото теперь является ссылкой."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08827",
+      "title": "Create a Bulleted Unordered List",
+      "description": [
+        "HTML has a special element for creating <code>unordered lists</code>, or bullet point-style lists.",
+        "Unordered lists start with a <code>&#60;ul&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
+        "For example: ",
+        "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
+        "would create a bullet point-style list of \"milk\" and \"cheese\".",
+        "Remove the last two <code>p</code> elements and create an unordered list of three things that cats love at the bottom of the page."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+        "",
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+      ],
+      "tests": [
+        "assert($(\"ul\").length > 0, 'message: Create a <code>ul</code> element.');",
+        "assert($(\"ul li\").length > 2, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.');",
+        "assert(code.match(/<\\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\\/ul>/gi).length === code.match(/<ul/gi).length, 'message: Make sure your <code>ul</code> element has a closing tag.');",
+        "assert(code.match(/<\\/li>/gi) && code.match(/<li[\\s>]/gi) && code.match(/<\\/li>/gi).length === code.match(/<li[\\s>]/gi).length, 'message: Make sure your <code>li</code> elements have closing tags.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Erstelle eine ungeordnete Liste",
+          "description": [
+            "HTML hat ein spezielles Element zum Erstellen von <code>unordered lists</code> (ungeordneten Listen).",
+            "Ungeordnete Listen starten mit einem <code>&#60;ul&#62;</code> Element. Dann beinhalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
+            "Zum Beispiel:",
+            "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;Milch&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Käse&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
+            "würde eine ungeordnete Liste für \"Milch\" und \"Käse\" erstellen.",
+            "Entferne die letzten zwei <code>p</code> Elemente und erstelle eine ungeordnete Liste von drei Dingen die Katzen lieben am Ende der Seite"
+          ]
+        },
+        "es": {
+          "title": "Crea una lista no ordenada con viñetas",
+          "description": [
+            "HTML tiene un elemento especial para la creación de <code>listas no ordenadas</code>, o listas con estilo viñeta.",
+            "Las listas no ordenadas comienzan con un elemento <code>&#60;ul&#62;</code>. A continuación contienen una cantidad de elementos <code>&#60;li&#62;.</code>",
+            "Por ejemplo: ",
+            "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;leche&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;queso&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
+            "creará una lista con viñetas y con elementos \"leche\" y \"queso\".",
+            "Elimina los dos últimos elementos <code>p</code> y en la parte inferior de la página crea una lista no ordenada de tres cosas que los gatos aman."
+          ]
+        },
+        "pt-br": {
+          "title": "Crie uma Lista Não Ordenada com Marcadores",
+          "description": [
+            "O HTML possui um elemento especial para a criação de <code>listas não ordenadas</code>, ou listas com marcadores.",
+            "As listas não ordenadas iniciam com um elemento <code>&#60;ul&#62;</code>. Logo após, possuem uma série de elementos <code>&#60;li&#62;.</code>",
+            "Por exemplo:",
+            "<code>&#60;ul&#62;</code>",
+            "&nbsp;&nbsp;<code>&#60;li&#62;leite&#60;/li&#62;</code>",
+            "&nbsp;&nbsp;<code>&#60;li&#62;queijo&#60;/li&#62;</code>",
+            "<code>&#60;/ul&#62;</code>",
+            "Isso criará uma lista com marcadores que tem como elementos \"leite\" e \"queijo\".",
+            "Apague os dois últimos elementos <code>p</code> e no final da página crie uma lista não ordenada com três coisas que os gatos adoram."
+          ]
+        },
+        "ru": {
+          "title": "Создайте ненумерованный неупорядоченный список",
+          "description": [
+            "В HTML есть специальный элемент для создания <code>неупорядоченного списка</code>, или списка с точками в виде меток элементов.",
+            "Неупорядоченные списки начинаются с элемента <code>&#60;ul&#62;</code>. Затем они содержат некоторе количество элементов <code>&#60;li&#62;</code>.",
+            "Например: ",
+            "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
+            "создаст ненумерованный список из \"milk\" и \"cheese\".",
+            "Удалите последние два элемента <code>p</code> и создайте неупорядоченный список из трёх вещей, которые любят кошки."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08828",
+      "title": "Create an Ordered List",
+      "description": [
+        "HTML has a special element for creating <code>ordered lists</code>, or numbered-style lists.",
+        "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
+        "For example:",
+        "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
+        "would create a numbered list of \"Garfield\" and \"Sylvester\".",
+        "Create an ordered list of the top 3 things cats hate the most."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>"
+      ],
+      "tests": [
+        "assert((/Top 3 things cats hate:/i).test($(\"ol\").prev().text()), 'message: You should have an ordered list for \"Top 3 things cats hate:\"');",
+        "assert((/Things cats love:/i).test($(\"ul\").prev().text()), 'message: You should have an unordered list for \"Things cats love:\"');",
+        "assert.equal($(\"ul li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.');",
+        "assert.equal($(\"ol li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ol</code> element.');",
+        "assert(code.match(/<\\/ul>/g) && code.match(/<\\/ul>/g).length === code.match(/<ul>/g).length, 'message: Make sure your <code>ul</code> element has a closing tag.');",
+        "assert(code.match(/<\\/ol>/g) && code.match(/<\\/ol>/g).length === code.match(/<ol>/g).length, 'message: Make sure your <code>ol</code> element has a closing tag.');",
+        "assert(code.match(/<\\/li>/g) && code.match(/<li>/g) && code.match(/<\\/li>/g).length === code.match(/<li>/g).length, 'message: Make sure your <code>li</code> element has a closing tag.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Erstelle eine geordnete Liste",
+          "description": [
+            "HTML beinhaltet ein spezielles Element für <code>ordered lists</code> (geordnete Listen).",
+            "Geordnete Listen starten mit einem <code>&#60;ol&#62;</code> Element. Dann enthalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
+            "Zum Beispiel:",
+            "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
+            "würde eine nummerierte Liste mit \"Garfield\" und \"Sylvester\" erstellen.",
+            "Erstelle eine geordnete Liste von den drei Dingen, die Katzen am meisten hassen."
+          ]
+        },
+        "es": {
+          "title": "Crear una lista ordenada",
+          "description": [
+            "HTML tiene un elemento especial para la creación de <code>listas ordenadas</code>, o listas de estilo numerado.",
+            "Las listas ordenadas comienzan con un elemento <code>&#60;ol&#62;</code>. Luego contienen un número de elementos <code>&#60;li&#62;.</code>",
+            "Por ejemplo:",
+            "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
+            "creará una lista numerada con \"Garfield\" y \"Sylvester\".",
+            "Crea una lista ordenada de los 3 cosas que más odian los gatos."
+          ]
+        },
+        "pt-br": {
+          "title": "Crie uma Lista Ordenada",
+          "description": [
+            "O HTML possui um elemento especial para a criação de <code>listas ordenadas</code>, ou listas numeradas.",
+            "As listas ordenadas iniciam com um elemento <code>&#60;ol&#62;</code>. Logo após, contém uma série de elementos <code>&#60;li&#62;.</code>",
+            "Por exemplo:",
+            "<code>&#60;ol&#62;</code>",
+            "&nbsp;&nbsp;<code>&#60;li&#62;Garfield&#60;/li&#62;</code>",
+            "&nbsp;&nbsp;<code>&#60;li&#62;Sylvester&#60;/li&#62;</code>",
+            "<code>&#60;/ol&#62;</code>",
+            "Isso criará uma lista numerada com \"Garfield\" e \"Sylvester\".",
+            "Crie uma lista ordenada com as três coisas que os gatos mais odeiam."
+          ]
+        },
+        "ru": {
+          "title": "Создайте упорядоченный список",
+          "description": [
+            "В HTML есть специальный элемент для создания <code>упорядоченных списков</code>, или списков с номерами в качестве меток элементов.",
+            "Упорядоченные списки начинаются с элемента <code>&#60;ol&#62;</code>. Далее они содержат некоторое количество элементов <code>&#60;li&#62;</code>.",
+            "Например:",
+            "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
+            "создаст нумерованный список из \"Garfield\" и \"Sylvester\".",
+            "Создайте нумерованный список из 3-х вещей, который кошки больше всего ненавидят."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08829",
+      "title": "Create a Text Field",
+      "description": [
+        "Now let's create a web form.",
+        "Text inputs are a convenient way to get input from your user.",
+        "You can create one like this:",
+        "<code>&#60;input type=\"text\"&#62;</code>",
+        "Note that <code>input</code> elements are self-closing.",
+        "Create an <code>input</code> element of type <code>text</code> below your lists."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>"
+      ],
+      "tests": [
+        "assert($(\"input[type=text]\").length > 0, 'message: Your app should have an <code>input</code> element of type <code>text</code>.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Erstelle ein Textfeld",
+          "description": [
+            "Nun erstellen wir ein Web Formular.",
+            "Eingabefelder sind eine bewährte Möglichkeit um Daten von Usern zu erhalten.",
+            "So kannst du eines erstellen:",
+            "<code>&#60;input type=\"text\"&#62;</code>",
+            "Beachte, dass <code>input</code> Elemente selbstschließend sind.",
+            "Erstelle ein <code>input</code> Element des Typ (\"type\") <code>text</code> unter deinen Listen."
+          ]
+        },
+        "es": {
+          "title": "Crea un campo de texto",
+          "description": [
+            "Ahora vamos a crear un formulario web.",
+            "Los campos de texto son una manera conveniente de obtener retroalimentación de tu usuario.",
+            "Puedes crear uno como este:",
+            "<code>&#60;input type=\"text\"&#62;</code>",
+            "Ten en cuenta que los elementos <code>input</code> son de cierre automático.",
+            "Crea un elemento <code>input</code> de tipo <code>text</code> debajo de tus listas."
+          ]
+        },
+        "pt-br": {
+          "title": "Crie um Campo de Texto",
+          "description": [
+            "Agora vamos criar um formulário web.",
+            "Os campos de texto são uma forma conveniente de obter uma resposta do usuário.",
+            "Você pode criar um assim:",
+            "<code>&#60;input type=\"text\"&#62;</code>",
+            "Note que os elementos <code>input</code> são de fechamento automático.",
+            "Crie um elemento <code>input</code> de tipo <code>text</code> abaixo de suas listas."
+          ]
+        },
+        "ru": {
+          "title": "Создайте текстовое поле",
+          "description": [
+            "Теперь давайте создадим web-форму.",
+            "Поля текстового ввода - удобный способ получения данных от пользователя.",
+            "Вы можете создать текстовое поле следующим образом:",
+            "<code>&#60;input type=\"text\"&#62;</code>",
+            "Обратите внимание, что элементы <code>input</code> самозакрывающиеся.",
+            "Создайте элемент <code>input</code> типа <code>text</code> под вашими списками."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08830",
+      "title": "Add Placeholder Text to a Text Field",
+      "description": [
+        "Your placeholder text is what appears in your text <code>input</code> before your user has input anything.",
+        "You can create placeholder text like so:",
+        "<code>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</code>",
+        "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\"."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>",
+        "<input type=\"text\">"
+      ],
+      "tests": [
+        "assert($(\"input[placeholder]\").length > 0, 'message: Add a <code>placeholder</code> attribute to the existing text <code>input</code> element.');",
+        "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/cat\\s+photo\\s+URL/gi), 'message: Set the value of your placeholder attribute to \"cat photo URL\".');",
+        "assert($(\"input[type=text]\").length > 0 && code.match(/<input((\\s+\\w+(\\s*=\\s*(?:\".*?\"|'.*?'|[\\^'\">\\s]+))?)+\\s*|\\s*)\\/?>/gi), 'message: The finished <code>input</code> element should have valid syntax.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Füge Platzhalter zu einem Textfeld hinzu",
+          "description": [
+            "Platzhaltertexte erscheinen in deinen <code>input</code> Feldern, bevor der Nutzer etwas eingibt.",
+            "Du kannst Platzhalter auf folgende Weise erstellen:",
+            "<code>&#60;input type=\"text\" placeholder=\"Das ist ein Platzhalter.\"&#62;</code>",
+            "Setze bei deinem <code>input</code> Element den Wert für <code>placeholder</code> auf \"cat photo URL\"."
+          ]
+        },
+        "es": {
+          "title": "Agrega un texto de relleno a un campo de texto",
+          "description": [
+            "El texto de relleno es el que aparece en un campo de texto antes de que un usuario haya ingresado datos.",
+            "Puedes crear un texto de relleno de esta manera:",
+            "<code>&#60;input type=\"text\" placeholder=\"este es un texto de relleno\"&#62;</code>",
+            "Establece el valor del <code>texto de relleno</code> de tu campo de texto como \"cat photo URL\"."
+          ]
+        },
+        "pt-br": {
+          "title": "Adicione Texto Indicativo a um Campo de Texto",
+          "description": [
+            "O texto indicativo é o que aparece em um campo de texto antes que um usuário tenha escrito algo.",
+            "Você pode criar um texto indicativo assim:",
+            "<code>&#60;input type=\"text\" placeholder=\"isso é um texto indicativo\"&#62;</code>",
+            "Estabeleça o valor do <code>texto indicativo</code> do seu campo de texto como \"cat photo URL\"."
+          ]
+        },
+        "ru": {
+          "title": "Добавьте замещающий текст к текстовому полю",
+          "description": [
+            "Ваш замещающий текст - это то, что отображается в виде текста внутри <code>input</code> пока пользователь не ввёл туда что-либо.",
+            "Вы можете создать замещающий текст следующим образом:",
+            "<code>&#60;input type=\"text\" placeholder=\"это замещающий текст\"&#62;</code>",
+            "Установите значение атрибута <code>placeholder</code> вашего текстового поля <code>input</code> равными \"cat photo URL\"."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aede08830",
+      "title": "Create a Form Element",
+      "description": [
+        "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
+        "For example:",
+        "<code>&#60;form action=\"/url-where-you-want-to-submit-form-data\"&#62;&#60;/form&#62;</code>",
+        "Nest your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>",
+        "<input type=\"text\" placeholder=\"cat photo URL\">"
+      ],
+      "tests": [
+        "assert($(\"form\") && $(\"form\").children(\"input\") && $(\"form\").children(\"input\").length > 0, 'message: Nest your text input element within a <code>form</code> element.');",
+        "assert($(\"form\").attr(\"action\") === \"/submit-cat-photo\", 'message: Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>');",
+        "assert(code.match(/<\\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\\/form>/g).length === code.match(/<form [^<]*>/g).length, 'message: Make sure your <code>form</code> element has well-formed open and close tags.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Erstelle ein Formular",
+          "description": [
+            "Du kannst Web Formulare bauen, die Daten zu einem Server übertragen – und das nur mit HTML. Das wird möglich, indem du eine Aktion für dein <code>form</code> Element bestimmst.",
+            "Zum Beispiel:",
+            "<code>&#60;form action=\"/url-wohin-du-deine-formular-daten-senden-willst\"&#62;&#60;/form&#62;</code>",
+            "Umschließe dein Textfeld mit einem <code>form</code> Element. Füge anschließend das Attribut <code>action=\"/submit-cat-photo\"</code> hinzu."
+          ]
+        },
+        "es": {
+          "title": "Crea un elemento de formulario",
+          "description": [
+            "Puedes construir formularios web que realmente envíen datos a un servidor usando nada más que HTML puro. Puedes hacerlo especificando una acción en tu elemento <code>form</code>.",
+            "Por ejemplo:",
+            "<code>&#60;form action=\"/url-al-que-quieres-enviar-los-datos-del-formulario\"&#62;&#60;/form&#62;</code>",
+            "Anida tu campo de texto en un elemento <code>form</code>. Agrega el atributo <code>action=\"/submit-cat-photo\"</code> a este elemento de formulario."
+          ]
+        },
+        "pt-br": {
+          "title": "Crie um Elemento de Formulário",
+          "description": [
+            "É possível construir formulários web que realmente enviem dados a um servidor utilizando nada além de HTML puro. Você pode fazer isso especificando uma ação em seu elemento <code>form</code>.",
+            "Por exemplo:",
+            "<code>&#60;form action=\"/url-para-onde-você-quer-enviar-os-dados-do-formulário\"&#62;&#60;/form&#62;</code>",
+            "Aninhe seu campo de texto em um elemento <code>form</code>. Adicione o atributo <code>action=\"/submit-cat-photo\"</code> para este elemento de formulário."
+          ]
+        },
+        "ru": {
+          "title": "Создайте элемент типа форма",
+          "description": [
+            "Вы можете строить web-формы, которые отправляют данные серверу, не ипользуя ничего кроме HTML. Вы можете достичь этого указанием действия в атрибутах элемента <code>form</code>.",
+            "Например:",
+            "<code>&#60;form action=\"/url-куда-вы-хотите-отправить-данные-формы\"&#62;&#60;/form&#62;</code>",
+            "Вложите ваше текстовое поле в элемент <code>form</code>. Добавьте атрибут <code>action=\"/submit-cat-photo\"</code> к этому элементу формы."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedd08830",
+      "title": "Add a Submit Button to a Form",
+      "description": [
+        "Let's add a <code>submit</code> button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
+        "Here's an example submit button:",
+        "<code>&#60;button type=\"submit\"&#62;this button submits the form&#60;/button&#62;</code>",
+        "Add a submit button to your <code>form</code> element with type <code>submit</code> and \"Submit\" as its text."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>",
+        "<form action=\"/submit-cat-photo\">",
+        "  <input type=\"text\" placeholder=\"cat photo URL\">",
+        "</form>"
+      ],
+      "tests": [
+        "assert($(\"form\").children(\"button\").length > 0, 'message: Your form should have a button inside it.');",
+        "assert($(\"button\").attr(\"type\") === \"submit\", 'message: Your submit button should have the attribute <code>type</code> set to <code>submit</code>.');",
+        "assert($(\"button\").text().match(/^\\s*submit\\s*$/gi), 'message: Your submit button should only have the text \"Submit\".');",
+        "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'message: Make sure your <code>button</code> element has a closing tag.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Füge eine Button zum Senden hinzu",
+          "description": [
+            "Lass uns nun einen <code>submit</code> Button hinzufügen. Durch einen Klick auf diesen Button werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
+            "Hier ist ein Beispiel einen solchen Button:",
+            "<code>&#60;button type=\"submit\"&#62;Dieser Button überträgt die Daten des Formulars.&#60;/button&#62;</code>",
+            "Füge einen Button zum Senden mit dem Typ <code>submit</code> und \"Submit\" als Text zu deinem <code>form</code> Element hinzu."
+          ]
+        },
+        "es": {
+          "title": "Agrega un botón Enviar a un formulario",
+          "description": [
+            "Añadamos un elemento <code>submit</code> a tu formulario. Al hacer clic en este botón enviará los datos del formulario a la URL especificada en el atributo <code>action</code> de tu formulario. ",
+            "He aquí un ejemplo de un botón de envío:",
+            "<code>&#60;button type=\" submit\"&#62;este botón envía el formulario&#60;/botón&#62;</code>",
+            "Agrega un botón de enviar a tu elemento <code>form</code> con el tipo <code>submit</code> y con el texto \"Submit\"."
+          ]
+        },
+        "pt-br": {
+          "title": "Inclua um Botão de Enviar a um Formulário",
+          "description": [
+            "Vamos inserir um elemento <code>submit</code> ao seu formulário. Ao clicar neste botão, os dados inseridos serão enviados para a URL especificada no atributo <code>action</code> do formulário.",
+            "Aqui está um exemplo de um botão de enviar:",
+            "<code>&#60;button type=\" submit\"&#62;este botão enviará o formulário&#60;/button&#62;</code>",
+            "Adicione um botão de enviar ao seu elemento <code>form</code> com o tipo <code>submit</code> e com o texto \"Submit\"."
+          ]
+        },
+        "ru": {
+          "title": "Добавьте кнопку отправки к форме",
+          "description": [
+            "Давайте добавим кнопку отправки <code>submit</code> к вашей форме. Нажатие на эту кнопку отправит данные из вашей формы по адресу, указанному в атрибуте <code>action</code> вашей формы.",
+            "Вот пример кнопки отправки:",
+            "<code>&#60;button type=\"submit\"&#62;эта кнопка отправляет данные формы&#60;/button&#62;</code>",
+            "Добавьте кнопку отправки к вашему элементу <code>form</code> с указанием типа <code>submit</code> и \"Submit\" в качестве отображаемого текста."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedc08830",
+      "title": "Use HTML5 to Require a Field",
+      "description": [
+        "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
+        "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, like this: <code>&#60;input type=\"text\" required&#62;</code>",
+        "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.",
+        "Then try to submit the form without inputing any text. See how your HTML5 form notifies you that the field is required?",
+        "Note: This field does not work in Safari."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>",
+        "<form action=\"/submit-cat-photo\">",
+        "  <input type=\"text\" placeholder=\"cat photo URL\">",
+        "  <button type=\"submit\">Submit</button>",
+        "</form>"
+      ],
+      "tests": [
+        "assert($(\"input\").prop(\"required\"), 'message: Your text <code>input</code> element should have the <code>required</code> attribute.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Nutze HTML5 um ein Pflichtfeld zu erstellen",
+          "description": [
+            "Du kannst bestimmte Felder eines Formulars zu Pflichtfeldern erklären. Damit ist es deinen Usern nicht mehr möglich, das Formular abzuschicken, ohne die Pflichtfelder auszufüllen.",
+            "Um zum Beispiel ein Textfeld zum Pflichtfeld zu erklären, kannst du einfach ein <code>required</code> innerhalb deines <code>input</code> Elements hinzufügen: <code>&#60;input type=\"text\" required&#62;</code>",
+            "Mache aus deinem <code>input</code> Feld ein Pflichtfeld – \"required\" – damit deine Nutzer das Formular nicht abschicken können, ohne dieses Feld auszufüllen.",
+            "Probier dann dein Formular ohne einen Text abzuschicken. Siehst du wie dein HTML5 Formular dich darauf hinweißt dass das Feld verpflichtend ist?",
+            "Beachte: dieses Feld funktioniert nicht in Safari."
+          ]
+        },
+        "es": {
+          "title": "Utiliza HTML5 para especificar campos obligatorios",
+          "description": [
+            "Puedes especificar un campo obligatorio en un formulario para que tu usuario no pueda enviar el formulario hasta que lo haya llenado.",
+            "Por ejemplo, si quieres requerir obligatoriamente un campo de texto, puedes agregar la palabra <code>required</code> dentro de tu elemento <code>input</code>, usarías: <code>&#60;input type=\"text\" required&#62;</code> ",
+            "Haz de tu campo de texto un campo obligatorio, de manera que tu usuario no pueda enviar el formulario sin completar este campo.",
+            "Luego, intenta enviar el formulario sin ingresar texto alguno. ¿Ves cómo tu formulario HTML5 te notifica que el campo es obligatorio?",
+            "Nota: Este campo no funciona en Safari."
+          ]
+        },
+        "pt-br": {
+          "title": "Use HTML5 para Especificar Campos Obrigatórios",
+          "description": [
+            "Você pode especificar um campo como obrigatório para que seu usuário não consiga enviar o formulário até que o tenha completado.",
+            "Por exemplo, se você quiser tornar obrigatório um campo de texto, basta adicionar a palavra <code>required</code> dentro de seu elemento <code>input</code> assim: <code>&#60;input type=\"text\" required&#62;</code>",
+            "Faça com que seu campo de texto seja obrigatório, de forma que o usuário não possa enviar o formulário sem ter completado esse campo.",
+            "Após isso, tente enviar o formulário sem digitar nenhum texto no campo. Percebe como seu formulário HTML5 mostra que o campo é obrigatório?"
+          ]
+        },
+        "ru": {
+          "title": "Используйте HTML5, чтобы сделать заполнение поля обязательным",
+          "description": [
+            "Вы можете требовать заполнения определённых полей формы, таким образом пользователь не сможет отправить данные формы до их заполнения.",
+            "Например, если бы вы хотели сделать заполнение текстового поля обязательным, вы могли бы добавить слово <code>required</code> внутрь вашего элемента <code>input</code>: <code>&#60;input type=\"text\" required&#62;</code>",
+            "Сделайте ваше текстовое поле <code>input</code> обязательным <code>required</code> для заполнения, чтобы пользователь не мог отправить данные формы без заполнения этого поля.",
+            "Далее попробуйте отправить данные формы без ввода какого-либо текста. Видите как ваша HTML5-форма уведомляет вас о том, что поле обязательное для заполнения?",
+            "Внимание: это поле не работает в Safari."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08834",
+      "title": "Create a Set of Radio Buttons",
+      "description": [
+        "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer.",
+        "Radio buttons are a type of <code>input</code>",
+        "Each of your radio buttons should be nested within its own <code>label</code> element.",
+        "All related radio buttons should have the same <code>name</code> attribute.",
+        "Here's an example of a radio button:",
+        "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+        "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>",
+        "<form action=\"/submit-cat-photo\">",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
+        "</form>"
+      ],
+      "tests": [
+        "assert($('input[type=\"radio\"]').length > 1, 'message: Your page should have two radio button elements.');",
+        "assert($('label > input[type=\"radio\"]').filter(\"[name='indoor-outdoor']\").length > 1, 'message: Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.');",
+        "assert($('label > input[type=\"radio\"]:only-child').length > 1, 'message: Each of your two radio button elements should be nested in its own <code>label</code> element.');",
+        "assert((code.match(/<\\/label>/g) && code.match(/<label/g) && code.match(/<\\/label>/g).length === code.match(/<label/g).length), 'message: Make sure each of your <code>label</code> elements has a closing tag.');",
+        "assert($(\"label\").text().match(/indoor/gi), 'message: One of your radio buttons should have the label <code>indoor</code>.');",
+        "assert($(\"label\").text().match(/outdoor/gi), 'message: One of your radio buttons should have the label <code>outdoor</code>.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Erstelle ein Set von Radiobuttons",
+          "description": [
+            "Du kannst Optionsfelder, <code>radio buttons</code>, für Fragen verwenden, auf die der Nutzer nur eine Antwort geben soll.",
+            "Radiobuttons sind lediglich ein weiterer Typ von <code>input</code> Elementen.",
+            "Jeder deiner Radiobuttons sollte innerhalb eines eigenen <code>label</code> Elements liegen.",
+            "Alle Radiobuttons mit Bezug zueinander sollten das gleiche <code>name</code> Attribut teilen.",
+            "Ein Beispiel eines Radiobuttons:",
+            "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+            "Füge ein Paar Radiobuttons zu deinem Formular hinzu. Einer sollte die Option <code>indoor</code> und der andere die Option <code>outdoor</code> haben."
+          ]
+        },
+        "es": {
+          "title": "Crea un Conjunto de botones de radio",
+          "description": [
+            "Puedes usar <code>botones de radio</code> para las preguntas en las que deseas que el usuario sólo pueda dar una respuesta.",
+            "Los botones de radio son un tipo del elemento <code>input</code>",
+            "Cada uno de los botones de radio debe estar anidado dentro de su propio elemento <code>label</code>.",
+            "Todos los botones de radio relacionados deben tener el mismo atributo <code>name</code>.",
+            "He aquí un ejemplo de un botón de radio:",
+            "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"dentro-fuera\"&#62; Dentro&#60;/label&#62;</code>",
+            "Agrega un par de botones de radio a tu formulario. Uno debe tener la opción de <code>indoor</code> y el otro debe tener la opción <code>outdoor</code>. "
+          ]
+        },
+        "pt-br": {
+          "title": "Crie um Conjunto de Botões de Seleção",
+          "description": [
+            "É possível utilizar botões de seleção (botões de rádio) para perguntas nas quais o usuário deverá selecionar apenas uma resposta, dentre várias possíveis.",
+            "Os botões de seleção são um tipo de elemento <code>input</code>",
+            "Cada um dos botões de seleção deve estar contido dentro de seu próprio elemento <code>label</code>.",
+            "Todos os botões de seleção relacionados devem ter o mesmo atributo <code>name</code>.",
+            "Temos aqui um exemplo de um botão de seleção/rádio:",
+            "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+            "Adicione um par de botões de seleção ao seu formulário. Um deles deve ter a opção <code>indoor</code> enquanto o outro deve ter a opção <code>outdoor</code>."
+          ]
+        },
+        "ru": {
+          "title": "Создайте набор радио-кнопок",
+          "description": [
+            "Вы можете использовать <code>радио кнопки</code> для вопросов, которые требуют выбора одного варианта ответа из множества.",
+            "Радио-кнопки относятся к типу <code>input</code>",
+            "Каждая из ваших радио-кнопок должна быть вложена внутрь своего собственного элемента <code>label</code>.",
+            "Все относящиеся друг к другу, формирующие группу, радио-кнопки должны иметь один и тот же атрибут <code>name</code>.",
+            "Вот пример радио-кнопки:",
+            "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+            "Добавьте пару радио-кнопок к вашей форме. Одна должна соответствовать варианту <code>indoor</code>, а другая - <code>outdoor</code>."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedf08835",
+      "title": "Create a Set of Checkboxes",
+      "description": [
+        "Forms commonly use <code>checkboxes</code> for questions that may have more than one answer.",
+        "Checkboxes are a type of <code>input</code>",
+        "Each of your checkboxes should be nested within its own <code>label</code> element.",
+        "All related checkbox inputs should have the same <code>name</code> attribute.",
+        "Here's an example of a checkbox:",
+        "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
+        "Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of <code>personality</code>."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>",
+        "<form action=\"/submit-cat-photo\">",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
+        "</form>"
+      ],
+      "tests": [
+        "assert($('input[type=\"checkbox\"]').length > 2, 'message: Your page should have three checkbox elements.');",
+        "assert($('label > input[type=\"checkbox\"]:only-child').length > 2, 'message: Each of your three checkbox elements should be nested in its own <code>label</code> element.');",
+        "assert(code.match(/<\\/label>/g) && code.match(/<label/g) && code.match(/<\\/label>/g).length === code.match(/<label/g).length, 'message: Make sure each of your <code>label</code> elements has a closing tag.');",
+        "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, 'message: Give your checkboxes the <code>name</code> attribute of <code>personality</code>.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Erstelle ein paar Checkboxen",
+          "description": [
+            "Formulare nutzen Kontrollkästchen, <code>checkboxes</code> meistens für Fragen, die mehrerer Antworten bedürfen.",
+            "Checkboxen sind eine Art von <code>input</code> Elementen",
+            "Jedes deiner Checkboxen sollte innerhalb eines eigenen <code>label</code> Elements liegen.",
+            "Alle zusammengehörende Checkboxes sollten das gleiche <code>name</code> Attribut haben.",
+            "Hier ist ein Beispiel für eine Checkbox:",
+            "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
+            "Füge deinem Formular drei Checkboxen hinzu. Jedes dieser Elemente sollte innerhalb seines eigenen <code>label</code> Elements liegen. Alle sollten das gleiche <code>name</code> Attribut <code>personality</code> teilen."
+          ]
+        },
+        "es": {
+          "title": "Crea un conjunto de casillas de verificación",
+          "description": [
+            "Los formularios suelen usar <code>casillas de verificación</code> para preguntas que pueden tener más de una respuesta.",
+            "Las casillas de verificación son un tipo del elemento <code>input</code>",
+            "Cada una de tus casillas de verificación debe ser anidada dentro de su propio elemento <code>label</code>.",
+            "Todas las entradas de casillas de verificación relacionadas deben tener el mismo atributo <code>name</code>.",
+            "He aquí un ejemplo de una casilla de verificación:",
+            "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personalidad\"&#62; Cariñoso&#60;/label&#62;</code>",
+            "Añade a tu formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe estar anidada dentro de su propio elemento <code>label</code>. Las tres deben tener <code>personality</code> como su atributo <code>name</code>."
+          ]
+        },
+        "pt-br": {
+          "title": "Crie um Conjunto de Caixas de Seleção",
+          "description": [
+            "Os formulários costumam utilizar caixas de seleção para perguntas que podem ter mais de uma resposta.",
+            "As caixas de seleção são um tipo de elemento <code>input</code>",
+            "Cada uma de suas caixas de seleção deve ser aninhada dentro do próprio elemento <code>label</code>.",
+            "Todas as caixas de seleção relacionadas devem ter o mesmo atributo <code>name</code>.",
+            "Veja aqui um exemplo de uma caixa de verificação:",
+            "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Carinhoso&#60;/label&#62;</code>",
+            "Adicione ao seu formulário um conjunto de três caixas de verificação. Cada uma delas deve estar aninhada dentro de seu próprio elemento <code>label</code>. As três devem compartilhar o atributo <code>name</code>."
+          ]
+        },
+        "ru": {
+          "title": "Создайте набор флаговых кнопок",
+          "description": [
+            "Обычно формы используют <code>флаги (флаговые кнопки)</code> для вопросов, к которым может относиться несколько вариантов ответов.",
+            "Флаги относятся к типу <code>input</code>",
+            "Каждый из ваших флагов должен быть вложен в собственный элемент <code>label</code>.",
+            "Все относящиеся друг к другу флаги должны иметь одинаковый атрибут <code>name</code>.",
+            "Вот пример флаговой кнопки:",
+            "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
+            "Добавьте набор из трёх флаговых кнопок к вашей форме. Каждый флаг должен быть вложен внутрь собственного элемента <code>label</code>. Все три флага должны иметь одинаковый атрибут <code>name</code>, значение которго равно <code>personality</code>."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aedd08835",
+      "title": "Check Radio Buttons and Checkboxes by Default",
+      "description": [
+        "You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
+        "To do this, just add the word \"checked\" to the inside of an input element. For example:",
+        "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
+        "Set the first of your <code>radio buttons</code> and the first of your <code>checkboxes</code> to both be checked by default."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>",
+        "<form action=\"/submit-cat-photo\">",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
+        "</form>"
+      ],
+      "tests": [
+        "assert($('input[type=\"radio\"]').prop(\"checked\"), 'message: Your first radio button on your form should be checked by default.');",
+        "assert($('input[type=\"checkbox\"]').prop(\"checked\"), 'message: Your first checkbox on your form should be checked by default.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Standardmäßig ausgewählte Radiobuttons und Checkboxen",
+          "description": [
+            "Du kannst Checkboxen und Radiobuttons standardmäßig markiert machen, indem du das <code>checked</code> Attribut verwendest.",
+            "Das kannst du erreichen, indem du das Word \"checked\" innerhalb des Inputelements eingefügst. Zum Beispiel so:",
+            "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
+            "Stelle sicher, dass jeweils deine ersten Radiobuttons und Checkboxen standardmäßig markiert sind."
+          ]
+        },
+        "es": {
+          "title": "Marca botones de radio y casillas de verificación por omisión",
+          "description": [
+            "Puedes marcar por omisión una casilla de verificación o un botón de radio usando el atributo <code>checked</code>.",
+            "Para ello, sólo tienes que añadir la palabra \"checked\" en el interior de un elemento <code>input</code>. Por ejemplo:",
+            "<code>&#60;input type=\"radio\" name=\"nombre-de-prueba\" checked&#62;</code>",
+            "Establece como marcados por omisión el primero de tus <code>botones de radio</code> y la primera <code>casilla de verificación</code>."
+          ]
+        },
+        "pt-br": {
+          "title": "Deixe Botões e Caixas de Seleção Ativados por Padrão",
+          "description": [
+            "É possível deixar um botão ou caixa de seleção ativado por padrão ao utilizar o atributo <code>checked</code>.",
+            "Para isso, basta você acrescentar a palavra \"checked\" no interior de um elemento de entrada. Por exemplo:",
+            "<code>&#60;input type=\"radio\" name=\"nome-de-teste\" checked&#62;</code>",
+            "Estabeleça como marcados por padrão o primeiro dos seus <code>botões de seleção/rádio</code> e a primeira <code>caixa de seleção</code>."
+          ]
+        },
+        "ru": {
+          "title": "Отметьте радио-кнопки и флаговые кнопки по-умолчанию",
+          "description": [
+            "Вы можете установить флаг или радио-кнопку отмеченной по-умолчанию с помощью атрибута <code>checked</code>.",
+            "Для этого добавьте слово \"checked\" в качестве атрибута элемента input. Например:",
+            "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
+            "Установите первую <code>радио-кнопку</code> и первый <code>флаг</code> из наборов отмеченными по-умолчанию."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bad87fee1348bd9aede08835",
+      "title": "Nest Many Elements within a Single Div Element",
+      "description": [
+        "The <code>div</code> element, also known as a division element, is a general purpose container for other elements.",
+        "The <code>div</code> element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.",
+        "Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another line with <code>&#60;/div&#62;</code>.",
+        "Try putting your opening <code>div</code> tag above your \"Things cats love\" <code>p</code> element and your closing <code>div</code> tag after your closing <code>ol</code> tag so that both of your lists are within one <code>div</code>.",
+        "Nest your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
+        "",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" alt=\"A cute orange cat lying on its back.\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "",
+        "<p>Things cats love:</p>",
+        "<ul>",
+        "  <li>cat nip</li>",
+        "  <li>laser pointers</li>",
+        "  <li>lasagna</li>",
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>",
+        "<ol>",
+        "  <li>flea treatment</li>",
+        "  <li>thunder</li>",
+        "  <li>other cats</li>",
+        "</ol>",
+        "",
+        "<form action=\"/submit-cat-photo\">",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
+        "</form>"
+      ],
+      "tests": [
+        "assert($(\"div\").children(\"p\").length > 1, 'message: Nest your <code>p</code> elements inside your <code>div</code> element.');",
+        "assert($(\"div\").children(\"ul\").length > 0, 'message: Nest your <code>ul</code> element inside your <code>div</code> element.');",
+        "assert($(\"div\").children(\"ol\").length > 0, 'message: Nest your <code>ol</code> element inside your <code>div</code> element.');",
+        "assert(code.match(/<\\/div>/g) && code.match(/<\\/div>/g).length === code.match(/<div>/g).length, 'message: Make sure your <code>div</code> element has a closing tag.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "title": "Umschließe viele Elemente mit einem einzigen Div Element",
+          "description": [
+            "Das <code>div</code> Element oder \"Division\" ist ein allgemeiner Container für andere Elemente.",
+            "Das <code>div</code> Element ist wahrscheinlich das am häufigsten verwendete HTML Element. Es ist nützlich um die CSS Stile der eigenen Klasse an die enthaltenen Elemente zu vererben.",
+            "Wie jedes andere Element – das sich nicht selbst schließt –  kannst du ein <code>div</code> Element mit <code>&#60;div&#62;</code> öffnen und mit <code>&#60;/div&#62;</code> wieder schließen.",
+            "Versuche dein öffnendes <code>div</code> Element überhalb des <code>p</code> Elements von  \"Things cats love\" und das schließende <code>div</code> unterhalb des schließenden <code>ol</code> Elements zu platzieren. Damit befinden sich beide Listen innerhalb eines <code>div</code>",
+            "Umschließe deine \"Thins cats love\" und \"Things cats hate\" Listen mit einem einzelnen <code>div</code> Element."
+          ]
+        },
+        "es": {
+          "title": "Anida muchos elementos dentro de una sólo elemento Div",
+          "description": [
+            "El elemento <code>div</code>, también conocido como un elemento de división, es un contenedor de propósito general para otros elementos.",
+            "El elemento <code>div</code> es probablemente el elemento HTML más utilizado. Es útil para pasar el CSS de sus propias declaraciones de clase a todos los elementos que contiene. ",
+            "Al igual que cualquier otro elemento sin cierre automático, puedes abrir una etiqueta <code>div</code> con <code>&#60;div&#62;</code> y cerrarla en otra línea con <code>&#60;/div&#62;</code> .",
+            "Trata de poner tu etiqueta de apertura <code>div</code> por encima de elemento <code>p</code> \"Things cat love\", y tu etiqueta de cierre de <code>div</code> después de tu etiqueta de cierre de <code>ol</code>, para que cada una de tus listas estén dentro de un <code>div</code>. ",
+            "Anida tus listas \"Things cats love\" y \"Things cats hate\" dentro de un solo elemento <code>div</code>."
+          ]
+        },
+        "pt-br": {
+          "title": "Aninhe Muitos Elementos Dentro de um só Elemento Div",
+          "description": [
+            "O elemento <code>div</code>, também conhecido como elemento de divisão, é um contentor de propósito geral para outros elementos.",
+            "O elemento <code>div</code> é provavelmente o elemento HTML mais utilizado. Ele é útil para adicionar o CSS de suas próprias declarações de classe para todos os elementos que o contém.",
+            "Da mesma forma que qualquer outro elemento sem fechamento automático, você deve abrir uma tag <code>div</code> com <code>&#60;div&#62;</code> e fechá-la em outra linha com <code>&#60;/div&#62;</code>.",
+            "Tente colocar sua tag de abertura <code>div</code> acima do elemento <code>p</code> \"Things cat love\", e sua tag de fechamento de <code>div</code> depois da tag de fechamento do <code>ol</code>, para que cada uma de suas listas esteja dentro de um <code>div</code>.",
+            "Aninhe suas listas \"Things cats love\" e \"Things cats hate\" no interior de um único elemento <code>div</code>."
+          ]
+        },
+        "ru": {
+          "title": "Вложите множество элементов внутрь одного элемента div",
+          "description": [
+            "Элемент <code>div</code>, известный как элемент раздела, является контейнером общего назначения для других элементов.",
+            "Элемент <code>div</code> возможно наиболее широко используемый HTML элемент из всех возможных. Он полезен для передачи собственных CSS-свойств вниз по дереву элементов, которые он содержит.",
+            "Как и с любым другим несамозакрывающимся элементом, вы можете открыть элемент <code>div</code> меткой <code>&#60;div&#62;</code> и закрыть на следующей строке меткой <code>&#60;/div&#62;</code>.",
+            "Попробуйте разместить открывающую метку <code>div</code> над вашим элементом <code>p</code> с текстом \"Things cats love\", а закрывающую метку <code>div</code> после закрытия элемента <code>ol</code>, таким образом оба ваших списка оказываются внутри одного элемента <code>div</code>.",
+            "Вложите ваши списки \"Things cats love\" и \"Things cats hate\" внутрь одного элемента <code>div</code>."
+          ]
+        }
+      }
+    },
+    {
+      "id": "587d78aa367417b2b2512aed",
+      "title": "Declare the Doctype of an HTML Document",
+      "description": [
+        "The challenges so far have covered specific HTML tags and their uses. However, there are a few elements that give overall structure to your page, and should be included in every HTML document.",
+        "At the top of your document, you need to tell the browser which version of HTML your page is using. HTML is an evolving language, and is updated regularly. Most major browsers support the latest specification, which is HTML5. However, older web pages may use previous versions of the language. You tell the browser this information by adding the <!DOCTYPE ...> tag on the first line, where the \"...\" part is the version of HTML. For HTML5, you use <!DOCTYPE html>.",
+        "The ! and uppercase DOCTYPE is important, especially for older browsers. The html is not case sensitive.",
+        "Next, the rest of your HTML code needs to be wrapped in html tags. The opening <html> goes directly below the <!DOCTYPE html> line, and the closing </html> goes at the end of the page.",
+        "Here's an example of the page structure:",
+        "<code><!DOCTYPE html></code>",
+        "<code><html></code>",
+        "<code><!-- Your HTML code goes here --></code>",
+        "<code></html></code>",
+        "Instructions",
+        "Add a DOCTYPE tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing html tags, which wrap around an h1 heading that can include any text."
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "tests": [
+        "assert(code.match(/<!DOCTYPE\\s+?html\\s*?>/gi), 'message Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.');",
+        "assert($('html').length == 1, 'There should be one <code>html</code> element.');",
+        "assert($('html').children('h1').length == 1, 'message: The <code>html</code> tags should wrap around one <code>h1</code> element.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d78aa367417b2b2512aec",
+      "title": "Define the Head and Body of an HTML Document",
+      "description": [
+        "You can add another level of organization in your HTML document within the html tags with the head and body elements. Any markup with information about your page would go into the head tag. Then any markup with the content of the page (what displays for a user) would go into the body tag.",
+        "Metadata elements, such as link, meta, title, and style, typically go inside the head element.",
+        "Here's an example of a page's layout:",
+        "<code><!DOCTYPE html></code>",
+        "<code><html></code>",
+        "<code><head></code>",
+        "<code><!-- metadata elements --></code>",
+        "<code></head></code>",
+        "<code><body></code>",
+        "<code><!-- page contents --></code>",
+        "<code></body></code>",
+        "<code></html></code>",
+        "Instructions",
+        "Edit the markup so there's a head and a body. The head should only include the title, and the body should only include the h1 and p."
+      ],
+      "challengeSeed": [
+        "<!DOCTYPE html>",
+        "<html>",
+        "  <title>The best page ever</title>",
+        "  <h1>The best page ever</h1>",
+        "  <p>Cat ipsum dolor sit amet, jump launch to pounce upon little yarn mouse, bare fangs at toy run hide in litter box until treats are fed. Go into a room to decide you didn't want to be in there anyway. I like big cats and i can not lie kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Meow i could pee on this if i had the energy for slap owner's face at 5am until human fills food dish yet scamper. Knock dish off table head butt cant eat out of my own dish scratch the furniture. Make meme, make cute face. Sleep in the bathroom sink chase laser but pee in the shoe. Paw at your fat belly licks your face and eat grass, throw it back up kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "</html>  "
+      ],
+      "tests": [
+        "assert($('head').length == 1, 'message: There should be only one <code>head</code> element on the page.');",
+        "assert($('body').length == 1, 'message: There should be only one <code>body</code> element on the page.');",
+        "assert($('html').children('head').length == 1, 'message: The <code>head</code> element should be a child of the <code>html</code> element.');",
+        "assert($('html').children('body').length == 1, 'message: The <code>body</code> element should be a child of the <code>html</code> element.');",
+        "assert($('head').children('title').length == 1, 'message: The <code>head</code> element should wrap around the <code>title</code> element.');",
+        "assert($('body').children('h1').length == 1 && $('body').children('p').length == 1, 'message: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.');"
+      ],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {},
+      "ru": {}
+    }
+  ]
+}
