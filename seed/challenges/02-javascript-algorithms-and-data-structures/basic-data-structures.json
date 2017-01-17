@@ -1,0 +1,737 @@
+{
+  "name": "Debugging",
+  "order": 4,
+  "time": "1 hour",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d78b2367417b2b2512b0d",
+      "title": "Introduction to the Debugging Challenges",
+      "description": [
+        [
+          "http://imgs.xkcd.com/comics/debugging.png",
+          "XKCD web comic walking through the convoluted process of debugging. The programmer moves from a browser problem, to a keyboard driver issue, receives a cryptic system utility error message, and ends by finding the sword of Martin the Warrior.",
+          "Debugging is a valuable and (unfortunately) necessary tool for programmers. It follows the testing phase of checking if your code works as intended, and discovering it does not. Debugging is the process of finding exactly what isn't working and fixing it.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "After spending time creating a brilliant block of code, it is tough realizing it may have errors. These issues generally come in three forms: 1) syntax errors that prevent a program from running, 2) runtime errors when code fails to execute or has unexpected behavior, and 3) semantic (or logical) errors when code doesn't do what it's meant to.<br><br>Modern code editors (and experience) can help identify syntax errors. Semantic and runtime errors are harder to find. They may cause your program to crash, make it run forever, or give incorrect output. Think of debugging as trying to understand why your code is behaving the way it is.<br><br>Example of a syntax error - often detected by the code editor:<br><br><blockquote>funtion willNotWork( {<br>&nbsp;&nbsp;console.log(\"Yuck\");<br>}<br>// \"function\" keyword is misspelled and there's a missing parenthesis</blockquote><br><br>Here's an example of a runtime error - often detected while the program executes:<br><br><blockquote>function loopy() {<br>&nbsp;&nbsp;while(true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"Hello, world!\");<br>&nbsp;&nbsp;}<br>}<br>// Calling loopy starts an infinite loop, which may crash your browser</blockquote><br><br>Example of a semantic error - often detected after testing code output:<br><br><blockquote>function calcAreaOfRect(w, h) {<br>&nbsp;&nbsp;return w + h; // This should be w * h<br>}<br>let myRectArea = calcAreaOfRect(2, 3);<br>// Correct syntax and the program executes, but this gives the wrong answer</blockquote>",
+          ""
+        ],
+        [
+          "",
+          "",
+          "Debugging is frustrating, but it helps to develop (and follow) a step-by-step approach to review your code. This means checking the intermediate values and types of variables to see if they are what they should be. You can start with a simple process of elimination.<br><br>For example, if function A works and returns what it's supposed to, then function B may have the issue. Or start checking values in a block of code from the middle to try to cut the search space in half. A problem in one spot indicates a bug in the first half of the code. If not, it's likely in the second.<br><br>This section will cover a couple helpful tools to find bugs, and some of the common forms they take. Fortunately, debugging is a learnable skill that just requires a little patience and practice to master.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
+      "id": "587d78b2367417b2b2512b0e",
+      "title": "Add items to an array with push() and unshift()",
+      "description": [
+        "An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time. In this challenge, we will look at two methods with which we can programmatically modify an array: Array.push() and Array.unshift(). ",
+        "Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the push() method adds elements to the end of an array, and unshift() adds elements to the beginning. Consider the following:",
+        "<code>let twentyThree = 'XXIII';</code>",
+        "<code>let romanNumerals = ['XXI', 'XXII'];</code>",
+        "<code>romanNumerals.unshift('XIX', 'XX'); </code>",
+        "<code>// now equals ['XIX', 'XX', 'XXI', 'XXII']</code>",
+        "<code>romanNumerals.push(twentyThree); </code>",
+        "<code>// now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']</code>",
+        "Notice that we can also pass variables, which allows us even greater flexibility in dynamically modifying our array's data.",
+        "Instructions:",
+        "We have defined a function, mixedNumbers, which we are passing an array as an argument. Modify the function by using push() and shift() to add 'I', 2, 'three', to the beginning of the array and 7, 'VIII', '9' to the end so that the returned array contains representations of the numbers 1-9 in order."
+      ],
+      "challengeSeed": [
+        "function mixedNumbers(arr) {",
+        "    // change code below this line",
+        "    // change code above this line",
+        "    return arr;",
+        "}",
+        "// do not change code below this line",
+        "mixedNumbers(['IV', 5, 'six'])"
+      ],
+      "tests": [
+        "assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', '9'], \"<code>mixedNumbers(['IV', 5, 'six'])</code> should now return <code>['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', '9']</code>\");",
+        "assert.notStrictEqual(mixedNumbers.toString().search(/\\.push\\(/), -1, 'The <code>mixedNumbers</code> function should utilize the <code>push()</code> method.);' ",
+        "assert.notStrictEqual(mixedNumbers.toString().search(/\\.unshift\\(/), -1, \"The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method.\");"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d78b2367417b2b2512b0f",
+      "title": "Remove items from an array with pop() and shift()",
+      "description": [
+        "Both push() and unshift() have corresponding methods that are nearly functional opposites: pop() and shift(). As you may have guessed by now, instead of adding, pop() removes an element from the end of an array, while shift() removes an element from the beginning. The key difference between pop() and shift() and their cousins push() and unshift(), is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.",
+        "Let's take a look:",
+        "<code>let greetings = ['whats up?', 'hello', 'see ya!'];</code>",
+        "<code>greetings.pop() </code>",
+        "<code>// now equals ['whats up?', 'hello']</code>",
+        "<code>greetings.shift() </code>",
+        "<code>// now equals ['hello']</code>",
+        "We can also return the value of the removed element with either method like this:",
+        "<code>let popped = greetings.pop(); </code>",
+        "<code>// returns 'hello'</code>",
+        "<code>// greetings now equals []</code>",
+        "Instructions",
+        "We have defined a function, popShift, which takes an array as an argument and returns a new array. Modify the function, using pop() and shift(), to remove the first and last elements of the argument array, and assign the removed elements to their corresponding variables, so that the returned array contains their values."
+      ],
+      "challengeSeed": [
+        "function popShift(arr) {",
+        "    let popped = // change code here",
+        "    let shifted = // change code here",
+        "    return [shifted, popped];",
+        "}",
+        "// do not change code below this line",
+        "popShift(['challenge', 'is', 'not', 'complete']);"
+      ],
+      "tests": [
+        "assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), ['challenge', 'complete'], \"<code>popShift(['challenge', 'is', 'not', 'complete'])</code> should return <code>['challenge', 'complete']</code>.\");",
+        "assert.notStrictEqual(popShift.toString().search(/\\.pop\\(/), -1, \"The <code>popShift</code> function should utilize the <code>pop()</code> method.\");",
+        "assert.notStrictEqual(popShift.toString().search(/\\.shift\\(/), -1, \"The <code>popShift</code> function should utilize the <code>shift()</code> method.\");"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d78b2367417b2b2512b10",
+      "title": "Remove items using splice()",
+      "description": [
+        "Ok, so we've learned how to remove elements from the beginning and end of arrays using pop() and shift(), but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where splice() comes in. splice() allows us to do just that: remove any numnber of consecutive",
+        "elements from anywhere on an array.",
+        "splice() can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of splice() are integers which represent indexes, or postions, of the array that splice() is being called upon. And remember, arrays are zero-indexed, so to indicate the first element of an array, we would use 0. splice()'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:",
+        "<code>let array = ['today', 'was', 'not', 'so', 'great'];</code>",
+        "<code>array.splice(2, 2); </code>",
+        "<code>// indicates that splice() should remove 2 elements beginning with the 3rd element</code>",
+        "<code>// array now equals ['today', 'was', 'great']</code>",
+        "splice() not only modifies the array it is being called on, but it also returns a new array containing the value of the removed elements. For example:",
+        "<code>let array = ['today', 'was', 'not', 'so', 'great'];</code>",
+        "<code>let newArray = array.splice(3, 2); </code>",
+        "<code>// newArray equals ['so', 'great']</code>",
+        "Instructions",
+        "We've defined a function, sumOfTen, which takes an array as an argument and returns the sum of that array's elements. Modify the function, using splice(), so that it returns a value of 10."
+      ],
+      "challengeSeed": [
+        "function sumOfTen(arr) {",
+        "    // change code below this line",
+        "    // change code above this line",
+        "    return arr.reduce((a, b) => a + b);",
+        "}",
+        "// do not change code below this line",
+        "sumOfTen([2, 5, 1, 5, 2, 1]);"
+      ],
+      "tests": [
+        "assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, \"<code>sumOfTen</code> should return 10.\");",
+        "assert.notStrictEqual(sumOfTen.toString().search(/\\.splice\\(/), -1, \"The <code>sumOfTen</code> function should utilize the <code>splice()</code> method.\")"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d78b3367417b2b2512b11",
+      "title": "Add items using splice()",
+      "description": [
+        "Remember in the last challenge we mentioned that splice() can take up to three parameters? Well, we can go one step further with splice() — in addition to removing elements, we can use that third parameter, which represents one or more elements, to add them as well. This can be incredibly useful for quickly switching out an element, or a set of elements, for another. For instance, let's say you're storing a color scheme for a set of DOM elements in an array, and want to dynamically change a color based on some action:",
+        "<code>function colorChange(arr, index, newColor) {</code>",
+        "<code>  arr.splice(index, 1, newColor);</code>",
+        "<code>  return arr;</code>",
+        "<code>} </code>",
+        "<code>let colorScheme = ['#878787', '#a08794', '#bb7e8c', '#c9b6be', '#d1becf'];</code>",
+        "<code>colorScheme = colorChange(colorScheme, 2, \"#332327\");</code>",
+        "<code>// we have removed '#bb7e8c' and added '#332327' in its place</code>",
+        "<code>// colorScheme now equals ['#878787', '#a08794', '#332327', '#c9b6be', '#d1becf']</code>",
+        "This function takes an array of hex values, an index at which to remove an element, and the new color to replace the removed element with. The return value is an array containing a newly modified color scheme! While this example is a bit oversimplified, we can see the value that utilizing splice() to its maximum potential can have.",
+        "Instructions",
+        "We have defined a function, htmlColorNames, which takes an array of html colors as an argument. Modify the function using splice() to remove the first two elements of the array and add 'DarkSalmon' and 'BlanchedAlmond' in their respective places."
+      ],
+      "challengeSeed": [
+        "function htmlColorNames(arr) {",
+        "    // change code below this line",
+        "    ",
+        "    // change code above this line",
+        "    return arr;",
+        "} ",
+        "// do not change code below this line",
+        "htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']);"
+      ],
+      "tests": [
+        "assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick'], \"<code>htmlColorNames</code> should return ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']\");",
+        "assert.notStrictEqual(htmlColorNames.toString().search(/\\.splice\\(/), -1, \"The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method.\")"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7a367417b2b2512b12",
+      "title": "Copy an array with slice()",
+      "description": [
+        "The next method we will cover is slice(). slice(), rather than modifying an array, copies, or extracts, a given mumber of elements to a new array, leaving the array it is called upon untouched. slice() takes only 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:",
+        "<code>let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];</code>",
+        "<code>let todaysWeather = weatherConditions.slice(1, 3);</code>",
+        "<code>// todaysWeather equals ['snow', 'sleet'];</code>",
+        "<code>// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']</code>",
+        "In effect, we have created a new array by extracting elements from an existing array.",
+        "Instructions",
+        "Instructions: We have defined a function, forecast, that takes an array as an argument. Modify the function using slice() to extract information from the argument array and return a new array that contains the elements 'warm' and 'sunny'."
+      ],
+      "challengeSeed": [
+        "function forecast(arr) {",
+        "    // change code below this line",
+        "  ",
+        "    return arr;",
+        "}",
+        "// do not change code below this line",
+        "forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']);"
+      ],
+      "tests": [
+        "assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny'], \"<code>forecast</code> should return <code>['warm', 'sunny'].\");",
+        "assert.notStrictEqual(forecast.toString().search(/\\.slice\\(/), -1, \"The <code>forecast</code> function should utilize the <code>slice()</code> method.\");"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7b367417b2b2512b13",
+      "title": "Copy an array with spread syntax",
+      "description": [
+        "While slice() allows us to be selective about what elements of an array to copy, ammong several other useful tasks, ES6's new spread syntax allows us to easily copy all of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: ...",
+        "In practice, we can use the spread syntax to copy an array like so:",
+        "<code>let thisArray = [true, true, undefined, false, null];</code>",
+        "<code>let thatArray = [...thisArray];</code>",
+        "<code>// thatArray equals [true, true, undefined, false, null]</code>",
+        "<code>// thisArray remains unchanged, and is identical to thatArray</code>",
+        "Instructions",
+        "We have defined a function, copyMachine which takes arr (an array) and num (a number) as arguments. The function is supposed to return a new array made up of num copies of arr. We have done most of the work for you, but it doesn't work quite right yet. Modidy the function using the spead syntax so that it works correctly (hint: another method we have already covered might come in handy here!)."
+      ],
+      "challengeSeed": [
+        "function copyMachine(arr, num) {",
+        "    let newArr = [];",
+        "    while (num >= 1) {",
+        "  // change code below this line",
+        "  // change code above this line",
+        "  num--;",
+        "    }",
+        "    return newArr;",
+        "}",
+        "copyMachine([true, false, true], 2);"
+      ],
+      "tests": [
+        "assert.deepEqual(copyMachine([true, false, true], 2), [[true, false, true], [true, false, true]], \"<code>copyMachine([true, false, true], 2)</code> should return <code>[[true, false, true], [true, false, true]]</code>.\")",
+        "assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]], \"<code>copyMachine([1, 2, 3], 5)</code> should return <code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>.\");",
+        "assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]], \"<code>copyMachine([true, true, null], 1)</code> should return <code>[[true, true, null]]</code>.\");",
+        "assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']], \"<code>copyMachine(['it works'], 3)</code> should return <code>[['it works'], ['it works'], ['it works']]</code>.\");",
+        "assert.notStrictEqual(copyMachine.toString().search(/\\.\\.\\./), -1, \"The <code>copyMachine</code> function should utilize the <code>...</code> syntax.\");"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7b367417b2b2512b14",
+      "title": "Check for the presence of an element with indexOf()",
+      "description": [
+        "Since arrays can be changed, or mutated, at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, indexOf(), that allows us to quickly and easily check for the presence of an element on an array. indexOf() takes an element as a parameter, and when called, it returns the position, or index, of that element, or -1 if the element does not exist on the array.",
+        "For example:",
+        "<code>let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];</code>",
+        "<code>fruits.indexOf('dates') // returns -1</code>",
+        "<code>fruits.indexOf('oranges') // returns 2</code>",
+        "<code>fruits.indexOf('pears') // returns 1, the first index at which the element exists</code>",
+        "Instructions",
+        "indexOf() can be incredibly useful for quickly checking for the presence of an element on an array. We have defined a function, quickCheck, that takes an array and an element as arguments. Modify the function using indexOf() so that it returns true if the passed element exists on the array, and false if it does not."
+      ],
+      "challengeSeed": [
+        "function quickCheck(arr, elem) {",
+        "    if (arr.indexOf(elem) !== -1) {",
+        "  return true",
+        "    } else {",
+        "  return false;",
+        "    }",
+        "}"
+      ],
+      "tests": [
+        "assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'), false, \"<code>quickCheck(['squash', 'onions', 'shallots'], 'mushrooms')</code> should return <code>false</code>.\");",
+        "assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'onions'), true, \"<code>quickCheck(['squash', 'onions', 'shallots'], 'onions')</code> should return <code>true</code>.\");",
+        "assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true, \"<code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>.\");",
+        "assert.strictEqual(quickCheck([true, false, false], undefined), false, \"<code>quickCheck([true, false, false], undefined)</code> should return <code>false</code>.\");",
+        "assert.notStrictEqual(quickCheck.toString().search(/\\.indexOf\\(/), -1, \"The <code>quickCheck</code> function should utilize the <code>indexOf() method.</code>\");"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7b367417b2b2512b15",
+      "title": "Iterate through all the items in an array",
+      "description": [
+        "Sometimes when working with arrays, it is very handy to be able to iterate through each item to find one or more elements that we might need, or to manipulate an array based on which data items meet a certain set of requirements. JavaScript offers several built in methods that each iterate over arrays in slightly different ways to achieve different results (such as every(), forEach(), map(), etc.), however the technique which is most flexible and offers us the greatest amount of control is a simple for loop.",
+        "For example:",
+        "<code>function greaterThanTen(arr) {</code>",
+        "<code>  let newArr = [];</code>",
+        "<code>  for (let i = 0; i < arr.length; i++) {</code>",
+        "<code>    if (arr[i] > 10) {</code>",
+        "<code>      newArr.push(arr[i]);</code>",
+        "<code>    }</code>",
+        "<code>  }</code>",
+        "<code>  return newArr</code>",
+        "<code>}</code>",
+        "<code>greaterThanTen([2, 12, 8, 14, 80, 0, 1]);</code>",
+        "<code>// returns [12, 14, 80]</code>",
+        "Using a for loop, this function iterates through and accesses each element of the array, and subjects it to a simple test that we have created. In this way, we have easily and programmatically determined which data items are greater than 10, and returned a new array containing those items.",
+        "Instructions",
+        "We have defined a function, filteredArray, which takes arr, a nested array, and elem as arguments, and returns a new array. elem represents an element that may or may not be present on one or more of the arrays nested within arr. Modify the function, using a for loop, to return a filtered version of the passed array such that any array nested within arr containing elem has been removed."
+      ],
+      "challengeSeed": [
+        "function filteredArray(arr, num) {",
+        "    newArr = [];",
+        "    // change code below this line",
+        "    // change code above this line",
+        "    return newArr;",
+        "}",
+        "filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3);"
+      ],
+      "tests": [
+        "assert.deepEqual(filteredArray([ [10, 8, 3], [14, 6, 23], [3, 18, 6] ], 18), [[10, 8, 3], [14, 6, 23]], \"<code>filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)</code> should return <code>[[10, 8, 3], [14, 6, 23]]</code>\");",
+        "assert.deepEqual(filteredArray([ ['trumpets', 2], ['flutes', 4], ['saxaphones', 2] ], 2), [['flutes', 4]], \"<code>filteredArray([['trumpets', 2], ['flutes', 4], ['saxaphones'], 2], 2)</code> should return <code>[['flutes', 4]]</code>\");",
+        "assert.deepEqual(filteredArray([['amy', 'beth', 'sam'], ['dave', 'sean', 'peter']], 'peter'), [['amy', 'beth', 'sam']], \"<code>filteredArray([['amy', 'beth', 'sam'], ['dave', 'sean', 'peter']], 'peter')</code> should return [['amy', 'beth', 'sam']].\");",
+        "assert.deepEqual(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3), [], \"<code>filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3)</code> should return <code>[]</code>.\");",
+        "assert.notStrictEqual(filteredArray.toString().search(/for/), -1, \"The <code>filteredArray</code> function should utilize a <code>for</code> loop.\");"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7b367417b2b2512b16",
+      "title": "Create complex nested arrays",
+      "description": [
+        "One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become very complex data structure, Consider the following example:",
+        "<code>let nestedArray = [ // top, or first level - the outer most array</code>",
+        "<code>  ['deep'], // an array within an array, 2 levels of depth</code>",
+        "<code>  [ </code>",
+        "<code>    ['deeper'], ['deeper'] // 2 arrays nested 3 levels deep</code>",
+        "<code>  ], </code>",
+        "<code>  [ </code>",
+        "<code>    [ </code>",
+        "<code>      ['deepest'], ['deepest'] // 2 arrays nested 4 levels deep </code>",
+        "<code>    ], </code>",
+        "<code>    [ </code>",
+        "<code>      [</code>",
+        "<code>        ['deepest-est?'] // an array nested 5 levels deep</code>",
+        "<code>      ] </code>",
+        "<code>    ]</code>",
+        "<code>  ], </code>",
+        "<code>];</code>",
+        "While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data.",
+        "However, we can still very easily access the deepest levels of an array this complex with bracket notation:",
+        "<code>console.log(nestedArray[2][1][0][0][0]);</code>",
+        "<code>// logs 'deepest-est?'</code>",
+        "And now that we know where that piece of data is, we can reset it if we need to:",
+        "<code>nestedArray[2][1][0][0][0] = 'deeper still';</code>",
+        "<code>console.log(nestedArray[2][1][0][0][0]);</code>",
+        "<code>// now logs 'deeper still'</code>",
+        "Instructions",
+        "We have defined a variable, myNestedArray, set equal to an array. Modify myNestedArray, using any combination of strings, numbers, and booleans for data elements, so that it has exactly three levels of depth (remember, the outer-most array is level 1)."
+      ],
+      "challengeSeed": [
+        "let myNestedArray = [",
+        "  ",
+        "  // change code here",
+        "  ",
+        "];"
+      ],
+      "tests": [
+        "assert.strictEqual((function(arr) { let flattened = (function flatten(arr) { const flat = [].concat(...arr); return flat.some (Array.isArray) ? flatten(flat) : flat; })(arr); for (let i = 0; i < flattened.length; i++) { if ( typeof flattened[i] !== 'number' && typeof flattened[i] !== 'string' && typeof flattened[i] !== 'boolean') { return false } } return true })(myNestedArray), true, \"<code>myNestedArray</code> should contain only numbers, booleans, and strings as data elements.\");",
+        "assert((function(arr) { for (let i = 0; i < arr.length; i++) { if (Array.isArray(arr[i])) {for (let j = 0; j < arr[i].length; j++) { if (Array.isArray(arr[i][j])) { return true } } } } })(myNestedArray) === true && (function(arr) { for (let i = 0; i < arr.length; i++) { for (let j = 0; j < arr[i].length; j++) { for (let k = 0; k < arr[i][j].length; k++) { if ( Array.isArray(arr[i][j][k]) ) { return false } } } } })(myNestedArray) === undefined, \"<code>myNestedArray</code> should have exactly 3 levels of depth.\");"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7b367417b2b2512b17",
+      "title": "Combining arrays with spread syntax",
+      "description": [
+        "Another huge advantage of the spread syntax, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:",
+        "<code>let thisArray = ['sage', 'rosemary', 'parsely', 'thyme'];</code>",
+        "<code>let thatArray = ['basil', 'cilantro', ...thisArray, 'corriander'];</code>",
+        "<code>// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsely', 'thyme', 'corriander']</code>",
+        "Using spread syntax, we have just achieved an operation that would have been more more complex and more verbose had we used traditional methods.",
+        "Instructions",
+        "We have defined a function spreadOut that returns the variable sentence, modify the function using the spread syntax so that it returns the array ['learning', 'to', 'code', 'is', 'fun']."
+      ],
+      "challengeSeed": [
+        "function spreadOut() {",
+        "    let fragment = ['to', 'code'];",
+        "    let sentence = 'change code here'",
+        "    return sentence;",
+        "}",
+        "spreadOut();"
+      ],
+      "tests": [
+        "assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun'], \"<code>spreadOut</code> should return <code>['learning', 'to', 'code', 'is', 'fun']</code>.\");",
+        "assert.notStrictEqual(spreadOut.toString().search(/\\.\\.\\./), -1, \"The <code>spreadOut</code> function should utilize the spread syntax.\");"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7c367417b2b2512b18",
+      "title": "Add Key-Value Pairs to JavaScript Objects",
+      "description": [
+        "The next data structure we will discuss is the JavaScript object. Objects are a very fundamental part of JavaScript, in fact, you may have heard this line before: 'In JavaScript, everything is an object.' While an understanding of objects is important to understand the inner workings of JavaScript functions or JavaScript's object-oriented capabilities, JavaScript objects at a basic level are actually just key-value pair stores, a commonly used data structure. Here, we will confine our discussion to JavaScript objects in this capacity.",
+        "Key-value pair data structure go by different names depending on the language you are using and the specific details of the data structure. The terms dictionary, map, and hash table all refer to the notion of a data structure in which specific keys, or properties are mapped to specific values. For instance, consider the following:",
+        "<code>let FCC_User = {</code>",
+        "<code>  username: 'awesome_coder',</code>",
+        "<code>  followers: 572,</code>",
+        "<code>  points: 1741,</code>",
+        "<code>  completedProjects: 15</code>",
+        "<code>};</code>",
+        "We've just defined an object called FCC_User with four properties each of which map to a specific value. If you wanted to know the number of followers FCC_User has, you could access that property by writing FCC_User.followers — this is called dot notation. You could also access the property with brackets, like so: FCC_User['followers']. Notice with the bracket notation we enclosed followers in quotes. This is because the brackets actually allow us to pass a variable in to be evaluated as a property name. Keep this in mind for later.",
+        "Instructions: We've created a foods object here with three entries. Add three more entries: bananas with a value of 13, grapes with a value of 35, and strawberries with a value of 27."
+      ],
+      "challengeSeed": [
+        "let foods = {",
+        "  apples: 25,",
+        "  oranges: 32,",
+        "  plums: 28",
+        "};",
+        "// change code below this line"
+      ],
+      "tests": [
+        "assert(typeof foods === 'object', 'foods is an object');",
+        "assert(foods.bananas === 13, 'The foods object has a key \\'bananas\\' with a value of 13.');",
+        "assert(foods.grapes === 35, 'The foods object has a key \\'grapes\\' with a value of 35.');",
+        "assert(foods.strawberries === 27, 'The foods object has a key \\'strawberries\\' with a value of 27.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7c367417b2b2512b19",
+      "title": "",
+      "description": [
+        "Objects, and other similar key-value pair data structures, offer some very useful benefits. One clear benefit is that they allow us to structure our data in an intuitive way. They are also very flexible. For instance, you can have properties nested to an arbitrary depth. Values can also be anything, for example a key can store an array, or even another object. Objects are also the foundation for JavaScript Object Notation, JSON, which is a widely used method of sending data across the web.",
+        "Another powerful advantage of key-value pair data structures is constant lookup time. What we mean by this is when you request the value of a specific property you will get the value back in the same amount of time (theoretically) regardless of the number of entries in the object. If you had an object with 5 entries or one that held a collection of 1,000,000 entries you could still retrieve property values or check if a key exists in the same amount of time.",
+        "The reason for this fast lookup time is that internally the object is storing properties using some type of hashing mechanism which allows it to know exactly where it has stored different property values. If you want to learn more about this please take a look at the optional Advanced Data Structures challenges. All you should remember for now is that performant access to flexibly structured data make key-value stores very attractive data structures useful in a wide variety of settings.",
+        "Instructions: Here we've written an object nestedObject which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the online key to 45."
+      ],
+      "challengeSeed": [
+        "let nestedObject = {",
+        "  id: 23894201352,",
+        "  date: 'January 1, 2017',",
+        "  data: {",
+        "    totalUsers: 51,",
+        "    online: 42",
+        "  }",
+        "};",
+        "// change code below this line"
+      ],
+      "tests": [
+        "assert('id' in nestedObject && 'date' in nestedObject && 'data' in nestedObject, 'nestedObject has id, date and data properties.');",
+        "assert('totalUsers' in nestedObject.data && 'online' in nestedObject.data, 'nestedObject has a data key set to an object with keys totalUsers and online.');",
+        "assert(nestedObject.data.online === 45, 'The online property nested in the data key of nestedObject should be set to 45.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7c367417b2b2512b1a",
+      "title": " Access Property Names with Bracket Notation",
+      "description": [
+        "In the first challenge we mentioned the use of bracket notation as a way access properties values using the evaluation of a variable. For instance, if you recall our foods object from that challenge, imagine that this object is being used in a program for a supermarket cash register. We have some function that sets the selectedFood and we want to check our foods object for the presence of that food. This might look like:",
+        "<code>let selectedFood = getCurrentFood(scannedItem);</code>",
+        "<code>let inventory = foods[selectedFood];</code>",
+        "This code will evaluate the value stored in the selectedFood variable and return the value of that key in the foods object, or undefined if it is not present. Bracket notation is very useful because sometime object properties are not known before runtime or we need to access them in a more dynamic way.",
+        "Instructions: In the example code we've defined a function checkInventory which receives a scanned item as an argument. Return the current value of the scannedItem key in the foods object. You can assume that only valid keys will be provided as an argument to checkInventory."
+      ],
+      "challengeSeed": [
+        "let foods = {",
+        "  apples: 25,",
+        "  oranges: 32,",
+        "  plums: 28,",
+        "  bananas: 13,",
+        "  grapes: 35,",
+        "  strawberries: 27",
+        "};",
+        "function checkInventory(scannedItem) {",
+        "  // change code below this line",
+        "  // change code above this line",
+        "};"
+      ],
+      "tests": [
+        "assert(typeof checkInventory === 'function', 'checkInventory is a function');",
+        "assert('apples' in foods && 'oranges' in foods && 'plums' in foods && 'bananas' in foods && 'grapes' in foods && 'strawberries' in foods, 'The foods object contains the following keys: apples, oranges, plums, bananas, grapes, and strawberries.');",
+        "assert(checkInventory('apples') === 25 && checkInventory('bananas') === 13 && checkInventory('strawberries') === 27, 'The checkInventory function returns the value of the scannedItem argument in the foods object.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7c367417b2b2512b1b",
+      "title": "Use the Delete Keyword to Remove Object Properties",
+      "description": [
+        "Now you know what objects are and their basic features and advantages. In short, they are key-value stores which provide a flexible, intuitive way to structure data and they provide very fast lookup time. For the rest of these challenges, we will describe several common operations you can perform on objects so you can become comfortable applying these useful data structures in your programs.",
+        "Previously, we added and modified key-value pairs to objects. Here we will see how we can remove a key-value pair from an object. If we wanted to remove the apples key from our foods object from before, we could remove it by using the delete keyword like this:",
+        "<code>delete foods.apples;</code>",
+        "Instructions: Use the delete keyword to remove the oranges, plums, and strawberries keys from the foods object."
+      ],
+      "challengeSeed": [
+        "let foods = {",
+        "  apples: 25,",
+        "  oranges: 32,",
+        "  plums: 28,",
+        "  bananas: 13,",
+        "  grapes: 35,",
+        "  strawberries: 27",
+        "};",
+        "// change code below this line"
+      ],
+      "tests": [
+        "assert(!foods.hasOwnProperty('oranges') && !foods.hasOwnProperty('plums') && !foods.hasOwnProperty('bananas') && Object.keys(foods).length === 3, 'The foods object only has three keys: apples, grapes, and strawberries.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7d367417b2b2512b1c",
+      "title": "Check if an Object has a Property",
+      "description": [
+        "Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides two different ways to do this. One uses the hasOwnProperty method on the object and the other uses the in keyword. If we have an object users with a property of Alan, we could check for its presence in either of the following ways:",
+        "<code>users.hasOwnProperty('Alan');</code>",
+        "<code>'Alan' in users;</code>",
+        "<code>// both return true</code>",
+        "Instructions: We've created a users object here with some users in it and a function isEveryoneHere which we pass the users object to as an argument. Finish writing this function so that it returns true only if the users object contains all four names, Alan, Jeff, Sarah, and Ryan, as keys, and false otherwise."
+      ],
+      "challengeSeed": [
+        "let users = {",
+        "  Alan: {",
+        "    age: 27,",
+        "    online: true",
+        "  },",
+        "  Jeff: {",
+        "    age: 32,",
+        "    online: true",
+        "  },",
+        "  Sarah: {",
+        "    age: 48,",
+        "    online: true",
+        "  },",
+        "  Ryan: {",
+        "    age: 19,",
+        "    online: true",
+        "  }",
+        "};",
+        "function isEveryoneHere(obj) {",
+        "  // change code below this line",
+        "  // change code above this line",
+        "};"
+      ],
+      "tests": [
+        "assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4, 'The users object only contains the keys Alan, Jeff, Sarah, and Ryan.');",
+        "assert(isEveryoneHere(users) === true, 'The function isEveryoneHere returns true if Alan, Jeff, Sarah, and Ryan are properties on the users object');",
+        "assert((function() { delete users.Alan; delete users.Jeff; delete users.Sarah; delete users.Ryan; return isEveryoneHere(users) })() === false, 'The function isEveryoneHere returns false if Alan, Jeff, Sarah, and Ryan are not keys on the users object.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7d367417b2b2512b1d",
+      "title": " Iterate Through the Keys of an Object with a for...in Statement",
+      "description": [
+        "Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a for...in statement. For our users object from the last challenge, this could look like:",
+        "<code>for (let user in users) {</code>",
+        "<code>  console.log(user);</code>",
+        "<code>};</code>",
+        "In this statement, we define a variable user. This variable will be set to the key in each iteration as the statement loops through the keys in the object. Running this code would print the name of each user to the console. Note that objects do not maintain an ordering to stored keys like arrays do.",
+        "Instructions: We've defined a function countOnline that should return the number of users with the online property set to true. Use a for...in statement within this function to loop through the users in the users object and return the number of users whose online property is set to true."
+      ],
+      "challengeSeed": [
+        "let users = {",
+        "  Alan: {",
+        "    age: 27,",
+        "    online: false",
+        "  },",
+        "  Jeff: {",
+        "    age: 32,",
+        "    online: true",
+        "  },",
+        "  Sarah: {",
+        "    age: 48,",
+        "    online: false",
+        "  },",
+        "  Ryan: {",
+        "    age: 19,",
+        "    online: true",
+        "  }",
+        "};",
+        "function countOnline(obj) {",
+        "  // change code below this line",
+        "  // change code above this line",
+        "};"
+      ],
+      "tests": [
+        "assert(users.Alan.online === false && users.Jeff.online === true &&  users.Sarah.online === false &&  users.Ryan.online === true, 'The users object contains users Jeff and Ryan with online set to true and users Alan and Sarah with online set to false.');",
+        "assert((function() { users.Harry = {online: true}; users.Sam = {online: true}; users.Carl = {online: true}; return countOnline(users) })() === 5, 'The function countOnline returns the number of users with the online property set to true.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7d367417b2b2512b1e",
+      "title": "Generate an Array of All Object Keys with Object.keys()",
+      "description": [
+        "We can also generate an array which contains all the keys stored in an object using the Object.keys() method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.",
+        "Instructions: Finish writing the getArrayOfUsers function so that it returns an array containing all the properties in the object it receives as an argument."
+      ],
+      "challengeSeed": [
+        "let users = {",
+        "  Alan: {",
+        "    age: 27,",
+        "    online: false",
+        "  },",
+        "  Jeff: {",
+        "    age: 32,",
+        "    online: true",
+        "  },",
+        "  Sarah: {",
+        "    age: 48,",
+        "    online: false",
+        "  },",
+        "  Ryan: {",
+        "    age: 19,",
+        "    online: true",
+        "  }",
+        "};",
+        "function getArrayOfUsers(obj) {",
+        "  // change code below this line",
+        "  // change code above this line",
+        "};"
+      ],
+      "tests": [
+        "assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4, 'The users object only contains the keys Alan, Jeff, Sarah, and Ryan.');",
+        "assert((function() { users.Sam = {}; users.Lewis = {}; let R = getArrayOfUsers(users); return (R.indexOf('Alan') !== -1 && R.indexOf('Jeff') !== -1 && R.indexOf('Sarah') !== -1 && R.indexOf('Ryan') !== -1 && R.indexOf('Sam') !== -1 && R.indexOf('Lewis') !== -1); })() === true, 'The getArrayOfUsers function returns an array which contains all the keys in the users array.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7d367417b2b2512b1f",
+      "title": "Modify an Array Stored in an Object",
+      "description": [
+        "Now you've seen all the basic operations for JavaScript objects. You can add, modify, and remove key-value pairs, check if keys exist, and iterate over all the keys in an object. As you continue learning JavaScript you will see even more versatile applications of objects. Additionally, the optional Advanced Data Structures lessons later in the curriculum also cover the ES6 Map and Set objects, both of which are similar to ordinary objects but provide some additional features. Now that you've learned the basics of arrays and objects, you're fully prepared to begin tackling more complex problems using JavaScript!",
+        "Instructions: Take a look at the object we've provided in the code editor. The user object contains three keys. The data key contains four keys, one of which contains an array of friends. From this, you can see how flexible objects are as data structures. We've started writing a function addFriend. Finish writing it so that it takes a user object and adds the name of the friend argument to the array stored in user.data.friends."
+      ],
+      "challengeSeed": [
+        "let user = {",
+        "  name: 'Kenneth',",
+        "  age: 28,",
+        "  data: {",
+        "    username: 'kennethCodesAllDay',",
+        "    joinDate: 'March 26, 2016',",
+        "    organization: 'Free Code Camp',",
+        "    friends: [",
+        "      'Sam',",
+        "      'Kira',",
+        "      'Tomo'",
+        "    ],",
+        "    location: {",
+        "      city: 'San Francisco',",
+        "      state: 'CA',",
+        "      country: 'USA'",
+        "    }",
+        "  }",
+        "};",
+        "function addFriend(user, friend) {",
+        "  // change code below this line  ",
+        "  // change code above this line",
+        "};"
+      ],
+      "tests": [
+        "assert('name' in user && 'age' in user && 'data' in user, 'The user object has name, age, and data keys');",
+        "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'The addFriend function accepts a user object and a friend as arguments and adds the friend to the array of friends in the user object.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7e367417b2b2512b20",
+      "title": "Use an array to store a collection of data",
+      "description": [
+        "Arrays are JavaScript's most fundamental, and perhaps most common, data structure. An array is simply a collection of data, of any length (zero-indexed), arranged in a comma separated list and enclosed in brackets [ ]. While we often make the distinction in JavaScript between Objects and Arrays, it is important to note that technically, an array is a type of object.",
+        "Arrays can store any type of data supported by JavaScript, and while they are a simple and basic form of data structure, they can also be very complex and powerful - all of which depends on how the programmer utilizes them.",
+        "The below is an example of a valid array, notice it contains booleans, strings, numbers, other arrays (this is called a nested, or multi-dimensional array), and objects, among other valid data types:",
+        "<code>let myArray = [undefined, null, true, false, 'one', 2, \"III\", {'four': 5}, [6, 'seven', 8]];</code>",
+        "JavaScript offers many built in methods which allow us to access, traverse, and mutate arrays as needed, depending on our purpose. In the coming challenges, we will discuss several of the most common and useful methods, and a few other key techniques, that will help us to better understand and utilize arrays as data structures in JavaScript.",
+        "Instructions",
+        "We have defined a variable called yourArray; complete the declaration by defining an array of at least 5 elements in length. Your array should contain at least one string, one number, and one boolean."
+      ],
+      "challengeSeed": [
+        "let yourArray = // change code here;"
+      ],
+      "tests": [
+        "assert.strictEqual(Array.isArray(yourArray), true, 'yourArray is an array.');",
+        "assert(yourArray.length >= 5, 'yourArray is at least 5 elements long.')",
+        "assert(yourArray.filter( el => typeof el === 'boolean').length >= 1, '<code>yourArray</code> contains at least one boolean.');",
+        "assert(yourArray.filter( el => typeof el === 'number').length >= 1, '<code>yourArray</code> contains at least one number.');",
+        "assert(yourArray.filter( el => typeof el === 'string').length >= 1, '<code>yourArray</code> contains at least one string.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 0,
+      "translations": {}
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "name": "Data Visualization Projects",
+  "order": 3,
+  "time": "150 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "bd7168d8c242eddfaeb5bd13",
+      "title": "Visualize Data with a Bar Chart",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/GrZVaM' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/FCC_test_suites/pen/JbgXab' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/no-stack-dub-sack/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit below the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask method if you get stuck."
+      ],
+      "challengeSeed": [
+        "G6iPE6W"
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "type": "zipline",
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Visualiza datos utilizando un gráfico de barras",
+          "description": []
+        }
+      }
+    },
+    {
+      "id": "bd7178d8c242eddfaeb5bd13",
+      "title": "Visualize Data with a Scatterplot Graph",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/bgpXyK' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/FCC_test_suites/pen/JbgXab' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/no-stack-dub-sack/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit below the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask method if you get stuck."
+      ],
+      "challengeSeed": [
+        "opubu3f"
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "type": "zipline",
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Visualiza datos utilizando un gráfico de dispersión",
+          "description": []
+        }
+      }
+    },
+    {
+      "id": "bd7188d8c242eddfaeb5bd13",
+      "title": "Visualize Data with a Heat Map",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/JEXgeY' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/FCC_test_suites/pen/JbgXab' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/no-stack-dub-sack/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit below the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask method if you get stuck."
+      ],
+      "challengeSeed": [
+        "s4XtjKa"
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "type": "zipline",
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Visualiza datos utilizando un mapa de calor",
+          "description": []
+        }
+      }
+    },
+    {
+      "id": "587d7fa6367417b2b2512bbf",
+      "title": "Visualize Data with a Choropleth Map",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/EZKqza' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/FCC_test_suites/pen/JbgXab' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/no-stack-dub-sack/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit below the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask method if you get stuck."
+      ],
+      "challengeSeed": [
+        "K3qqL7U"
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 15, 2017",
+      "type": "zipline",
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "",
+          "description": []
+        }
+      }
+    },
+    {
+      "id": "587d7fa6367417b2b2512bc0",
+      "title": "Visualize Data with a Treemap Diagram",
+      "description": [
+        "This isn't ready yet. Here's the issue: https://github.com/freeCodeCamp/CurriculumExpansion/issues/65",
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/FCC_test_suites/pen/JbgXab' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/no-stack-dub-sack/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit below the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask method if you get stuck."
+      ],
+      "challengeSeed": [
+        ""
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 15, 2017",
+      "type": "zipline",
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "",
+          "description": []
+        }
+      }
+    }
+  ]
+}

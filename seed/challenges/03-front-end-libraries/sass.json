@@ -1,0 +1,708 @@
+{
+  "name": "Sass",
+  "order": 4,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d7dbd367417b2b2512bb3",
+      "title": "Introduction to the Sass Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.<br><br>Sass can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to create variables, nest CSS rules into others, and import other Sass files, among other things. The result is more compact, easier to read code.<br><br>This section introduces the basic features of Sass.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
+      "id": "587d7dbd367417b2b2512bb4",
+      "title": "Storing Data with Sass Variables",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "One feature of Sass that's different than CSS is it uses variables. They are declared and set to store data, similar to JavaScript.",
+        "In Javascript, variables are defined using the <code>let</code> and <code>const</code> keywords. In Sass, variables start with a <code>$</code> followed by the variable name.",
+        "Here are a couple examples:",
+        "<blockquote>$main-fonts: Arial, sans-serif;<br>$headings-color: green;<br><br>//To use variables:<br>h1 {<br>&nbsp;&nbsp;font-family: $main-fonts;<br>&nbsp;&nbsp;color: $headings-color;<br>}</blockquote>",
+        "One example where variables are useful is when a number of elements need to be the same color. If that color is changed, the only place to edit the code is the variable value.",
+        "<h4>Instructions</h4>",
+        "Create a variable <code>$text-color</code> and set it to red. Then change the value of the <code>color</code> property for the <code>.blog-post</code> and <code>h2</code> to the <code>$text-color</code> variable."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  ",
+        "  ",
+        "  .header{",
+        "    text-align: center;",
+        "  }",
+        "  .blog-post h2 {",
+        "    color: red;",
+        "  }",
+        "</style>",
+        "",
+        "<h1 class=\"header\">Learn Sass</h1>",
+        "<div class=\"blog-post\">",
+        "  <h2>Some random title</h2>",
+        "  <p>This is a paragraph with some random text in it</p>",
+        "</div>",
+        "<div class=\"blog-post\">",
+        "  <h2>Header #2</h2>",
+        "  <p>Here is some more random text.</p>",
+        "</div>",
+        "<div class=\"blog-post\">",
+        "  <h2>Here is another header</h2>",
+        "  <p>Even more random text within a paragraph</p>",
+        "</div>"
+      ],
+      "tests": [
+        "assert(code.match(/\\$text-color:\\s*?red;/g), 'message: Your code should have a Sass variable declared for <code>$text-color</code> with a value of red.');",
+        "assert(code.match(/color:\\s*?\\$text-color;/g), 'message: Your code should use the <code>$text-color</code> variable to change the <code>color</code> for the <code>.blog-post</code> and <code>h2</code> items.');",
+        "assert($('.blog-post').css('color') == 'rgb(255, 0, 0)', 'message: Your <code>.blog-post</code> element should have a </code>color</code> of red.');",
+        "assert($('h2').css('color') == 'rgb(255, 0, 0)', 'message: Your <code>h2</code> elements should have a </code>color</code> of red.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7dbd367417b2b2512bb5",
+      "title": "Nesting CSS with Sass",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "Sass allows <code>nesting</code> of CSS rules, which is a useful way of organizing a style sheet.",
+        "Normally, each element is targeted on a different line to style it, like so:",
+        "<blockquote>nav {<br>&nbsp;&nbsp;background-color: red;<br>}<br><br>nav ul {<br>&nbsp;&nbsp;list-style: none;<br>}<br><br>li {<br>&nbsp;&nbsp;display: inline-block;<br>}</blockquote>",
+        "For a large project, the CSS file will have many lines and rules. This is where <code>nesting</code> can help organize your code by placing child style rules within the respective parent elements:",
+        "<blockquote>nav {<br>&nbsp;&nbsp;background-color: red;<br><br>&nbsp;&nbsp;ul {<br>&nbsp;&nbsp;&nbsp;&nbsp;list-style: none;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;li {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></blockquote>",
+        "<h4>Instructions</h4>",
+        "Use the <code>nesting</code> technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. For testing purposes, the <code>h1</code> should come before the <code>p</code> element."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .blog-post {",
+        "    ",
+        "  }",
+        "  h1 {",
+        "    text-align: center;",
+        "    color: blue;",
+        "  }",
+        "  p {",
+        "    font-size: 20px;",
+        "  }",
+        "</style>",
+        "",
+        "<div class=\"blog-post\">",
+        "  <h1>Blog Title</h1>",
+        "  <p>This is a paragraph</p>",
+        "</div>"
+      ],
+      "tests": [
+        "assert(code.match(/\\.blog-post\\s*?{\\s*?h1\\s*?{\\s*?text-align:\\s*?center;\\s*?color:\\s*?blue;\\s*?}\\s*?p\\s*?{\\s*?font-size:\\s*?20px;\\s*?}\\s*?}/gi), 'message: Your code should re-organize the CSS rules so the <code>h1</code> and <code>p</code> are nested in the <code>.blog-post</code> parent element.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7dbd367417b2b2512bb6",
+      "title": "Creating Reusable CSS with Mixins",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "In Sass, a <code>mixin</code> is a group of CSS declarations that can be reused throughout the style sheet.",
+        "Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. Consider \"box-shadow\":",
+        "<blockquote>div {<br>&nbsp;&nbsp;-webkit-box-shadow: 0px 0px 4px #fff;<br>&nbsp;&nbsp;-moz-box-shadow: 0px 0px 4px #fff;<br>&nbsp;&nbsp;-ms-box-shadow: 0px 0px 4px #fff;<br>&nbsp;&nbsp;box-shadow: 0px 0px 4px #fff;<br>}</blockquote>",
+        "It's a lot of typing to re-write this rule for all the elements that have a <code>box-shadow</code>, or to change each value to test different effects.",
+        "<code>Mixins</code> are like functions for CSS. Here is how to write one:",
+        "<blockquote>@mixin box-shadow($x, $y, $blur, $c){ <br>&nbsp;&nbsp;-webkit-box-shadow: $x, $y, $blur, $c;<br>&nbsp;&nbsp;-moz-box-shadow: $x, $y, $blur, $c;<br>&nbsp;&nbsp;-ms-box-shadow: $x, $y, $blur, $c;<br>&nbsp;&nbsp;box-shadow: $x, $y, $blur, $c;<br>}</blockquote>",
+        "The definition starts with <code>@mixin</code> followed by a custom name. The parameters (the <code>$x</code>, <code>$y</code>, <code>$blur</code>, and <code>$c</code> in the example above) are optional.",
+        "Now any time a <code>box-shadow</code> rule is needed, only a single line calling the <code>mixin</code> replaces having to type all the vendor prefixes. A <code>mixin</code> is called with the <code>@include</code> directive:",
+        "<blockquote>div {<br>&nbsp;&nbsp;@include box-shadow(0px, 0px, 4px, #fff);<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Write a <code>mixin</code> for <code>border-radius</code> and give it a <code>$radius</code> parameter. It should use all the vendor prefixes from the example. Then use the <code>border-radius</code> <code>mixin</code> to give the <code>#awesome</code> element a border radius of 15px."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  ",
+        "  ",
+        "  ",
+        "  #awesome {",
+        "    width: 150px;",
+        "    height: 150px;",
+        "    background-color: green;",
+        "    ",
+        "  }",
+        "</style>",
+        "",
+        "<div id=\"awesome\"></div>",
+        "  "
+      ],
+      "tests": [
+        "assert(code.match(/@mixin\\s+?border-radius\\(\\$radius\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.');",
+        "assert(code.match(/-webkit-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
+        "assert(code.match(/-moz-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-moz-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
+        "assert(code.match(/-ms-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-ms-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
+        "assert(code.match(/border-radius:\\s*?\\$radius;/gi).length == 4, 'message: Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.');",
+        "assert(code.match(/@include\\s+?border-radius\\(15px\\);/gi), 'message: Your code should call the <code>border-radius mixin</code> using the <code>@include</code> keyword, setting it to 15px.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7dbe367417b2b2512bb8",
+      "title": "Using @if and @else.",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "The <code>@if</code> directive in Sass is useful to test for a specific case - it works just like the <code>if</code> statement in JavaScript</code>.",
+        "<blockquote>@mixin make-bold($bool) {<br>&nbsp;&nbsp;@if $bool == bold { font-weight: bold; }<br>}</blockquote>",
+        "And just like in JavaScript, <code>@else if</code> and <code>@else</code> test for more conditions:",
+        "<blockquote>@mixin text-effect($val) {<br>&nbsp;&nbsp;@if $val == danger {color: red;}<br>&nbsp;&nbsp;@else if $val == alert {color: yellow;}<br>&nbsp;&nbsp;@else if $val == success {color: green;}<br>&nbsp;&nbsp;@else {color: black;}<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Create a <code>mixin</code> called <code>border-stroke</code> that takes a parameter <code>$val</code>. The <code>mixin</code> should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:",
+        "<blockquote>light - 1px solid black<br>medium - 3px solid black<br>heavy - 6px solid black<br>none - no border</blockquote>"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  ",
+        "  ",
+        "  ",
+        "  #box {",
+        "    width: 150px;",
+        "    height: 150px;",
+        "    background-color: red;",
+        "    @include border-stroke(medium);",
+        "  }  ",
+        "</style>",
+        "",
+        "<div id=\"box\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/@mixin\\s+?border-stroke\\(\\$val\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-stroke</code> which has a parameter named <code>$val</code>.');",
+        "assert(code.match(/@if\\s+?\\$val\\s*?===?\\s*?light\\s*?{\\s*?border:\\s*?1px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.');",
+        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?medium\\s*?{\\s*?border:\\s*?3px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.');",
+        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?heavy\\s*?{\\s*?border:\\s*?6px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.');",
+        "assert(code.match(/@else\\s*?{\\s*?border:\\s*?none;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else</code> statement to set the <code>border</code> to none.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7dbe367417b2b2512bb9",
+      "title": "Continuing with @for",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "The <code>@for</code> directive adds styles in a loop, very similar to a <code>for</code> loop in JavaScript.",
+        "<code>@for</code> is used in two ways: \"start through end\" or \"start to end\". The main difference is that \"start to end\" <em>excludes</em> the end number, and \"start through end\" <em>includes</em> the end number.",
+        "Here's a start <b>through</b> end example:",
+        "<blockquote>@for $i from 1 through 12 {<br>&nbsp;&nbsp;.col-#{$i} { width: 100%/12 * $i; }<br>}</blockquote>",
+        "The <code>#{$i}</code> part is the syntax to combine a variable (<code>i</code>) with text to make a string. When the Sass file is converted to CSS, it looks like this:",
+        "<blockquote>.col-1 {<br>&nbsp;&nbsp;width: 8.33333%;<br>}<br><br>.col-2 {<br>&nbsp;&nbsp;width: 16.66667%;<br>}<br><br>...<br><br>.col-12 {<br>&nbsp;&nbsp;width: 100%;<br>}</blockquote>",
+        "This is a powerful way to create a grid layout. Now you have twelve options for column widths available as CSS classes.",
+        "<h4>Instructions</h4>",
+        "Write a <code>@for</code> directive that takes a variable <code>$j</code> that goes from 1 <b>to</b> 6.",
+        "It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> where each has a <code>font-size</code> set to 10px multiplied by the index."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "",
+        "<p class=\"text-1\">Hello</p>",
+        "<p class=\"text-2\">Hello</p>",
+        "<p class=\"text-3\">Hello</p>",
+        "<p class=\"text-4\">Hello</p>",
+        "<p class=\"text-5\">Hello</p>"
+      ],
+      "tests": [
+        "assert(code.match(/@for /g), 'message: Your code should use the <code>@for</code> directive.');",
+        "assert($('.text-1').css('font-size') == '10px', 'message: Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.');",
+        "assert($('.text-2').css('font-size') == '20px', 'message: Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.');",
+        "assert($('.text-3').css('font-size') == '30px', 'message: Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.');",
+        "assert($('.text-4').css('font-size') == '40px', 'message: Your <code>.text-4</code> class should have a <code>font-size</code> of 40px.');",
+        "assert($('.text-5').css('font-size') == '50px', 'message: Your <code>.text-5</code> class should have a <code>font-size</code> of 50px.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7dbf367417b2b2512bba",
+      "title": "Expanding with @each",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "The last challenge showed how the <code>@for</code> directive uses a starting and ending value to loop a certain number of times. Sass also offers the <code>@each</code> directive which loops over each item in a list or map.",
+        "On each iteration, the variable gets assigned to the current value from the list or map.",
+        "<blockquote>@each $color in blue, red, green {<br>&nbsp;&nbsp;.#{$color}-text {color: $color;}<br>}</blockquote>",
+        "A map has slightly different syntax. Here's an example:",
+        "<blockquote>$colors: (color1: blue, color2: red, color3: green);<br><br>@each $key, $color in $colors {<br>&nbsp;&nbsp;.#{$color}-text {color: $color;}<br>}</blockquote>",
+        "Note that the <code>$key</code> variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have <code>color1</code>, <code>color2</code>... in it.",
+        "Both of the above code examples are converted into the following CSS:",
+        "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}<br><br>.red-text {<br>&nbsp;&nbsp;color: red;<br>}<br><br>.green-text {<br>&nbsp;&nbsp;color: green;<br>}</blockquote>",
+        "<h4>Instructions</h4>",
+        "Write an <code>@each</code> directive that goes through a list: <code>blue, black, red</code> and assigns each variable to a <code>.color-bg</code> class, where the \"color\" part changes for each item.",
+        "Each class should set the <code>background-color</code> the respective color."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  ",
+        "  ",
+        "  ",
+        "  div {",
+        "    height: 200px;",
+        "    width: 200px;",
+        "  }",
+        "</style>",
+        "",
+        "<div class=\"blue-bg\"></div>",
+        "<div class=\"black-bg\"></div>",
+        "<div class=\"red-bg\"></div>"
+      ],
+      "tests": [
+        "assert(code.match(/@each /g), 'message: Your code should use the <code>@each</code> directive.');",
+        "assert($('blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'message: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');",
+        "assert($('black-bg').css('background-color') == 'rgb(0, 0, 0)', 'message: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');",
+        "assert($('red-bg').css('background-color') == 'rgb(255, 0, 0)', 'message: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7dbf367417b2b2512bbb",
+      "title": "Wrapping up with @while",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "The <code>@while</code> directive is an option with similar functionality to the JavaScript <code>while</code> loop. It creates CSS rules until a condition is met.",
+        "The <code>@for</code> challenge gave an example to create a simple grid system. This can also work with <code>@while</code>.",
+        "<blockquote>$x: 1;<br>@while $x < 13 {<br>&nbsp;&nbsp;.col-#{$x} { width: 100%/12 * $x;}<br>&nbsp;&nbsp;$x: $x + 1;<br>}</blockquote>",
+        "First, define a variable <code>$x</code> and set it to 1. Next, use the <code>@while</code> directive to create the grid system <i>while</i> <code>$x</code> is less than 13.",
+        "After setting the CSS rule for <code>width</code>, <code>$x</code> is incremented by 1 to avoid an infinite loop.",
+        "<h4>Instructions</h4>",
+        "Use <code>@while</code> to create a series of classes with different <code>font-sizes</code>.",
+        "There should be 10 different classes from <code>text-1</code> to <code>text-10</code>. Then set <code>font-size</code> to 5px multiplied by the current index number. Make sure to avoid an infinite loop!"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "",
+        "<p class=\"text-1\">Hello</p>",
+        "<p class=\"text-2\">Hello</p>",
+        "<p class=\"text-3\">Hello</p>",
+        "<p class=\"text-4\">Hello</p>",
+        "<p class=\"text-5\">Hello</p>",
+        "<p class=\"text-6\">Hello</p>",
+        "<p class=\"text-7\">Hello</p>",
+        "<p class=\"text-8\">Hello</p>",
+        "<p class=\"text-9\">Hello</p>",
+        "<p class=\"text-10\">Hello</p>"
+      ],
+      "tests": [
+        "assert(code.match(/@while /g), 'message: Your code should use the <code>@while</code> directive.');",
+        "assert(code.match(/\\$.*:\\s*?1;/gi), 'message: Your code should set an index variable to 1 to start.');",
+        "assert(code.match(/\\$(.*):\\s*?\\$\\1\\s*?\\+\\s*?1;/gi), 'message: Your code should increment the counter variable.');",
+        "assert($('.text-1').css('font-size') == '5px', 'message: Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.');",
+        "assert($('.text-2').css('font-size') == '10px', 'message: Your <code>.text-2</code> class should have a <code>font-size</code> of 10px.');",
+        "assert($('.text-3').css('font-size') == '15px', 'message: Your <code>.text-3</code> class should have a <code>font-size</code> of 15px.');",
+        "assert($('.text-4').css('font-size') == '20px', 'message: Your <code>.text-4</code> class should have a <code>font-size</code> of 20px.');",
+        "assert($('.text-5').css('font-size') == '25px', 'message: Your <code>.text-5</code> class should have a <code>font-size</code> of 25px.');",
+        "assert($('.text-6').css('font-size') == '30px', 'message: Your <code>.text-6</code> class should have a <code>font-size</code> of 30px.');",
+        "assert($('.text-7').css('font-size') == '35px', 'message: Your <code>.text-7</code> class should have a <code>font-size</code> of 35px.');",
+        "assert($('.text-8').css('font-size') == '40px', 'message: Your <code>.text-8</code> class should have a <code>font-size</code> of 40px.');",
+        "assert($('.text-9').css('font-size') == '45px', 'message: Your <code>.text-9</code> class should have a <code>font-size</code> of 45px.');",
+        "assert($('.text-10').css('font-size') == '50px', 'message: Your <code>.text-10</code> class should have a <code>font-size</code> of 50px.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7dbf367417b2b2512bbc",
+      "title": "Partials",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "<code>Partials</code> in Sass are separate files that hold segments of CSS code. These are imported and used in other Sass files. This is a great way to group similar code into a module to keep it organized.",
+        "Names for <code>partials</code> start with the underscore (<code>_</code>) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file. Also, Sass files end with the <code>.scss</code> file extension. To bring the code in the <code>partial</code> into another Sass file, use the <code>@import</code> directive.",
+        "For example, if all your <code>mixins</code> are saved in a <code>partial</code> named \"_mixins.scss\", and they are needed in the \"main.scss\" file, this is how to use them in the main file:",
+        "<blockquote>// In the main.scss file<br><br>@import 'mixins'</blockquote>",
+        "Note that the underscore is not needed in the <code>import</code> statement - Sass understands it is a <code>partial</code>. Once a <code>partial</code> is imported into a file, all variables, <code>mixins</code>, and other code are available to use.",
+        "<h4>Instructions</h4>",
+        "Write an <code>@import</code> statement to import a <code>partial</code> named <code>_variables.scss</code> into the main.scss file."
+      ],
+      "challengeSeed": [
+        "// The main.scss file",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "tests": [
+        "assert(code.match(/@import\\s+?('|\")variables\\1/gi), 'message: Your code should use the <code>@import</code> directive, and should not include the underscore in the file name.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fa5367417b2b2512bbd",
+      "title": "Extend your CSS styles",
+      "required": [
+        {
+          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "raw": true
+        }
+      ],
+      "description": [
+        "Sass has a feature called <code>extend</code> that makes it easy to borrow the CSS rules from one element and build upon them in another.",
+        "For example, the below block of CSS rules style a <code>.panel</code> class. It has a <code>background-color</code>, <code>height</code> and <code>border</code>.",
+        "<blockquote>.panel{<br>&nbsp;&nbsp;background-color: red;<br>&nbsp;&nbsp;height: 70px;<br>&nbsp;&nbsp;border: 2px solid green;<br>}</blockquote>",
+        "Now you want another panel called <code>.big-panel</code>. It has the same base properties as <code>.panel</code>, but also needs a <code>width</code> and <code>font-size</code>.",
+        "It's possible to copy and paste the initial CSS rules from <code>.panel</code>, but the code becomes repetitive as you add more types of panels.",
+        "The <code>extend</code> directive is a simple way to reuse the rules written for one element, then add more for another:",
+        "<blockquote>.big-panel{<br>&nbsp;&nbsp;@extend .panel;<br>&nbsp;&nbsp;width: 150px;<br>&nbsp;&nbsp;font-size: 2em;<br>}</blockquote>",
+        "The <code>.big-panel</code> will have the same properties as <code>.panel</code> in addition to the new styles.",
+        "<h4>Instructions</h4>",
+        "Make a class <code>.info-important</code> that extends <code>.info</code> and also has a <code>background-color</code> set to magenta."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  h3{",
+        "    text-align: center;",
+        "  }",
+        "  .info{",
+        "    width: 200px;",
+        "    border: 1px solid black;",
+        "    margin: 0 auto;",
+        "  }",
+        "  ",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "<h3>Posts</h3>",
+        "<div class=\"info-important\">",
+        "  <p>This is an important post. It should extend the class \".info\" and have its own CSS styles.</p>",
+        "</div>",
+        "",
+        "<div class=\"info\">",
+        "  <p>This is a simple post. It has basic styling and can be extended for other uses.</p>",
+        "</div>"
+      ],
+      "tests": [
+        "assert(code.match(/@extend\\s+?\\.info/g), 'message: Your code should use the <code>@extend</code> directive to extend the <code>info</code> class.');",
+        "assert($('.info-important').css('background-color') == 'rgb(255, 0, 255)', 'message: Your <code>info-important</code> class should have a <code>background-color</code> set to magenta.');",
+        "assert($('.info-important').css('width') == '200px', 'message: Your <code>info-important</code> class should inherit the styling from the <code>info</code> class.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        },
+        "es": {
+          "description": [],
+          "title": ""
+        },
+        "cn": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}
