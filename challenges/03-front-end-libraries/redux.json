@@ -1,0 +1,38 @@
+{
+  "name": "Redux",
+  "order": 6,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d7dbd367417b2b2512bb2",
+      "title": "Introduction to the Redux Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "The Redux challenges have not been ported into Free Code Camp yet. You can visit <a href=\"http://hysterical-amusement.surge.sh/\" target=\"_blank\">this link to work through the alpha version</a> of these challenges. If you have feedback, you can open an issue (or pull request) directly on <a href=\"https://github.com/bonham000/fcc-react-tests-module\" target=\"_blank\">this repository.</a>",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    }
+  ]
+}

@@ -1,0 +1,492 @@
+{
+  "name": "Managing Packages with npm",
+  "order": 1,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d7fb3367417b2b2512bfa",
+        "title": "Introduction to the Managing Packages with npm Challenges",
+        "description": [
+          [
+            "",
+            "",
+            "The Node Package Manager (npm) is a command-line tool used by developers to share and control modules (or packages) of JavaScript code written for use with Node.js.<br><br>When starting a new project, npm generates a <code>package.json</code> file. This file lists the package dependencies for your project. Since npm packages are regularly updated, the <code>package.json</code> file allows you to set specific version numbers for each dependency. This ensures that updates to a package don't break your project.<br><br>npm saves packages in a folder named <code>node_modules</code>. These packages can be installed in two ways:<br><br><ol><li>globally in a root <code>node_modules</code> folder, accessible by all projects.</li><li>locally within a project's own <code>node_modules</code> folder, accessible only to that project.</li></ol><br>Most developers prefer to install packages local to each project to create a separation between the dependencies of different projects.",
+            ""
+          ]
+        ],
+        "releasedOn": "",
+        "challengeSeed": [],
+        "tests": [],
+        "type": "Waypoint",
+        "challengeType": 7,
+        "isRequired": false,
+        "titleEs": "",
+        "descriptionEs": [
+          []
+        ],
+        "titleFr": "",
+        "descriptionFr": [
+          []
+        ],
+        "titleDe": "",
+        "descriptionDe": [
+          []
+        ]
+    },
+    {
+      "id": "587d7fb3367417b2b2512bfb",
+      "title": "Using Package.json, The Core of Any Node.js Project or npm Package",
+      "description": [
+        "The file package.json is the center of any Node.js project or npm package. It stores information about your project just like the <head>-section in a HTML document describes the content of a webpage. The package.json consists of a single JSON-object where information is stored in \"key\": value-pairs. There are only two required fields in a minimal package.json - name and version - but it’s a good practice to provide additional information about your project that could be useful to future users or maintainers.",
+        "The author-field",
+        "If you go to the HyperDev-project that you set up previously and look at on the left side of your screen, you’ll find the file tree where you can see an overview of the various files in your project. Under the file tree’s back-end section, you’ll find package.json - the file that we’ll be improving in the next couple of challenges.",
+        "One of the most common pieces of information in this file is the author-field that specifies who’s the creator of a project. It can either be a string or an object with contact details. The object is recommended for bigger projects but in our case, a simple string like the following example will do.",
+        "<code>\"author\": \"Jane Doe\",</code>",
+        "Instructions",
+        "Add your name to the author-field in the package.json of your HyperDev project.",
+        "Remember that you’re writing JSON.",
+        "All field-names must use double-quotes (\"), e.g. \"author\"",
+        "All fields must be separated with a comma (,)"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "package.json should have a valid \"author\" key" ,
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.author, '\"author\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb3367417b2b2512bfc",
+      "title": "Add a Description to Your package.json",
+      "description": [
+        "The next part of a good package.json is the description-field, where a short but informative description about your project belongs.",
+        "If you some day plan to publishing a package to npm, remember that this is the string that should sell your idea to the user when they decide whether to install your package or not. However, that’s not the only use case for the description: Since it’s a great way to summarize what a project does, it’s just as important for your normal Node.js-projects to help other developers, future maintainers or even your future self understand the project quickly.",
+        "Regardless of what you plan for your project, a description is definitely recommended. Let’s add something similar to this:",
+        "<code>\"description\": \"A project that does something awesome\",</code>",
+        "Instructions",
+        "Add a description to the package.json in your HyperDev project.",
+        "Remember to use double-quotes for field-names (\") and commas (,) to separate fields."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "package.json should have a valid \"description\" key",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.description, '\"description\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb4367417b2b2512bfd",
+      "title": "Add Keywords to Your package.json",
+      "description": [
+        "The keywords-field is where you can describe your project using related keywords.",
+        "Example",
+        "<code>\"keywords\": [ \"descriptive\", \"related\", \"words\" ],</code>",
+        "As you can see, this field is structured as an array of double-quoted strings.",
+        "Instructions",
+        "Add an array of suitable strings to the keywords-field in the package.json of your HyperDev project.",
+        "One of the keywords should be freecodecamp."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "package.json should have a valid \"keywords\" key",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, '\"keywords\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "\"keywords\" field should be an Array",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, '\"keywords\" is not an array'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "\"keywords\" should include \"freecodecamp\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, 'freecodecamp', '\"keywords\" does not include \"freecodecamp\"'); },  xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb4367417b2b2512bfe",
+      "title": "Add a license to your package.json",
+      "description": [
+        "TODO: This challenge could be used to inspire more people to develop OSS - we should really improve this description.",
+        "The license-field is where you inform users of your project what they are allowed to do with it.",
+        "Some common licenses for open source projects include MIT and BSD. http://choosealicense.com is a great resource if you want to learn more about what license could fit your project.",
+        "License information is not required. Copyright laws in most countries will give you ownership of what you create by default. However, it’s always a good practice to explicitly state what users can and can’t do.",
+        "Example",
+        "<code>\"license\": \"MIT\",</code>",
+        "Instructions",
+        "Fill the license-field in the package.json of your HyperDev project as you find suitable."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "package.json should have a valid \"license\" key",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.license, '\"license\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb4367417b2b2512bff",
+      "title": "Add a Version to Your package.json",
+      "description": [
+        "The version is together with name one of the required fields in a package.json. This field describes the current version of your project.",
+        "Example",
+        "<code>\"version\": \"1.2\",</code>",
+        "Instructions",
+        "Add a version to the package.json in your HyperDev project."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "package.json should have a valid \"version\" key",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.version, '\"version\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb4367417b2b2512c00",
+      "title": "Expand your project with external packages from npm",
+      "description": [
+        "One of the biggest reasons to use a package manager is their powerful dependency management. Instead of manually having to make sure that you get all dependencies whenever you set up a project on a new computer, npm automatically installs everything for you. But how can npm know exactly what your project needs? Meet the dependencies-section of your package.json.",
+        "In the dependencies-section, packages your project require are stored using the following format:",
+        "<code>\"dependencies\": {</code>",
+        "<code>  \"package-name\": \"version\",</code>",
+        "<code>  \"express\": \"4.14.0\"</code>",
+        "<code>}</code>",
+        "Instructions",
+        "Add version 2.14.0 of the package moment to the dependencies-field of your package.json",
+        "Moment is a handy library for working with time and dates."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" should include \"moment\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);  assert.property(packJson.dependencies, 'moment', '\"dependencies\" does not include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "\"moment\" version should be \"2.14.0\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data);  assert.match(packJson.dependencies.moment, /^[\\^\\~]?2\\.14\\.0/, 'Wrong version of \"moment\" installed. It should be 2.14.0'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb5367417b2b2512c01",
+      "title": "Manage npm Dependencies By Understanding Semantic Versioning",
+      "description": [
+        "Versions of the npm packages in the dependencies-section of your package.json follow what’s called Semantic Versioning (SemVer), an industry standard for software versioning aiming to make it easier to manage dependencies. Libraries, frameworks or other tools published on npm should use SemVer in order to clearly communicate what kind of changes that projects who depend on the package can expect if they update.",
+        "SemVer doesn’t make sense in projects without public APIs - so unless your project is similar to the examples above, use another versioning format.",
+        "So why do you need to understand SemVer?",
+        "Knowing SemVer can be useful when you develop software that use external dependencies (which you almost always do). One day, your understanding of these numbers will save you from accidentally introducing breaking changes to your project without understanding why things “that worked yesterday” suddenly doesn’t.",
+        "This is how Semantic Versioning works according to the official website:",
+        "Given a version number MAJOR.MINOR.PATCH, increment the:",
+        "MAJOR version when you make incompatible API changes,",
+        "MINOR version when you add functionality in a backwards-compatible manner, and",
+        "PATCH version when you make backwards-compatible bug fixes.",
+        "This means that PATCHes are bug fixes and MINORs add new features but neither of them break what worked before. Finally, MAJORs add changes that won’t work with earlier versions.",
+        "Example",
+        "A semantic version number: 1.3.8",
+        "Instructions",
+        "In the dependencies-section of your package.json, change the version of moment to match MAJOR version 2, MINOR version 10 and PATCH version 2"
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" should include \"moment\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" does not include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "\"moment\" version should be \"2.10.2\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^[\\^\\~]?2\\.10\\.2/, 'Wrong version of \"moment\". It should be 2.10.2'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb5367417b2b2512c02",
+      "title": "Use the tilde-character to always use the latest patch version of a dependency",
+      "description": [
+        "In the last challenge, we told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases you don’t want to miss bug fixes, since they often include important security patches and (hopefully) don’t break things in doing so.",
+        "To allow a npm dependency to get updated to the latest PATCH-version, you can prefix the dependency’s version with the tilde-character (~). In package.json, our current rule for how npm may upgrade moment is to use a specific version only (2.10.2), but we want to allow the latest 2.10.x-version.",
+        "Example",
+        "<code>\"some-package-name\": \"~1.3.8\" allows updates to any 1.3.x version.</code>",
+        "Instructions",
+        "Use the tilde-character (~) to prefix the version of moment in your dependencies and allow npm to update it to any new PATCH release.",
+        "Note that the version numbers themselves not should be changed."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" should include \"moment\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" does not include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "\"moment\" version should match \"~2.10.x\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\\~2\\.10\\./. 'Wrong version of \"moment\". It should be ~2.10.2'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb5367417b2b2512c03",
+      "title": "Use the caret-character to use the latest minor version of a dependency",
+      "description": [
+        "Similar to how the tilde (~) we learned about in the last challenge allow npm to install the latest PATCH for a dependency, the caret (^) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.",
+        "At the moment, your current version of moment should be ~2.10.2 which allows npm to install to the latest 2.10.x-version. If we instead were to use the caret (^) as our version prefix, npm would instead be allowed to update to any 2.x.x-version.",
+        "Example",
+        "<code>\"some-package-name\": \"^1.3.8\" allows updates to any 1.x.x version.</code>",
+        "Instructions",
+        "Use the caret-character (^) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.",
+        "Note that the version numbers themselves not should be changed."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" should include \"moment\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'moment', '\"dependencies\" does not include \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text": "\"moment\" version should match \"^2.x.x\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\\^2\\./, 'Wrong version of \"moment\". It should be ^2.10.2'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    },
+    {
+      "id": "587d7fb5367417b2b2512c04",
+      "title": "Remove a package from your dependencies",
+      "description": [
+        "Now you’ve tested a few ways you can manage dependencies of your project by using the package.json's dependencies-section. You’ve included external packages by adding them to the file and even told npm what types of versions you want by using special characters as the tilde (~) or the caret (^).",
+        "But what if you want to remove an external package that you no longer need? You might already have guessed it - Just remove the corresponding \"key\": value-pair for that from your dependencies.",
+        "This same method applies to removing other fields in your package.json as well",
+        "Instructions",
+        "Remove the package moment from your dependencies.",
+        "Make sure you have the right amount of commas after removing it."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "\"dependencies\" should not include \"moment\"",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.notProperty(packJson.dependencies, 'moment', '\"dependencies\" still includes \"moment\"'); }, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {
+        "de": {
+          "description": [],
+          "title": ""
+        },
+        "fr": {
+          "description": [],
+          "title": ""
+        },
+        "pt-br": {
+          "description": [],
+          "title": ""
+        },
+        "ru": {
+          "description": [],
+          "title": ""
+        }
+      }
+    }
+  ]
+}
