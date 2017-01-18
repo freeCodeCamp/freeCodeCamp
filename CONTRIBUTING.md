@@ -50,6 +50,10 @@ mongo --version
 
 If your versions are lower than the prerequisite versions, you should update.
 
+Platform-specific guides to setting up a development environment:
+- [How to clone and setup the Free Code Camp website on a Windows pc](https://forum.freecodecamp.com/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
+- [How to Clone and Setup the freeCodeCamp Website on a Mac](https://forum.freecodecamp.com/t/how-to-clone-and-setup-the-freecodecamp-website-on-a-mac/78450)
+
 ### Forking The Project
 
 #### Setting Up Your System
