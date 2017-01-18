@@ -2509,7 +2509,7 @@
       "description": [
         "Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.",
         "Here is a function <code>myTest</code> with a local variable called <code>loc</code>.",
-        "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // \"foo\"<br>console.log(loc); // \"undefined\"</blockquote>",
+        "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // logs \"foo\"<br>console.log(loc); // loc is not defined</blockquote>",
         "<code>loc</code> is not defined outside of the function.",
         "<h4>Instructions</h4>",
         "Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Run the tests and then follow the instructions commented out in the editor.",
