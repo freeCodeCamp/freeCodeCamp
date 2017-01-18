@@ -1,9 +1,12 @@
 /* eslint-disable no-self-compare */
-var fs = require('fs');
-var path = require('path');
+// no import here as this runs without babel
+const fs = require('fs');
+const path = require('path');
 
+const hiddenFile = /^(\.|\/\.)/g;
 function getFilesFor(dir) {
   return fs.readdirSync(path.join(__dirname, '/' + dir))
+    .filter(file => !hiddenFile.test(file))
     .map(function(file) {
       let superBlock;
       if (fs.statSync(path.join(__dirname, dir + '/' + file)).isFile()) {
@@ -28,7 +31,7 @@ function getFilesFor(dir) {
 }
 
 function getSupOrder(filePath) {
-  var order = parseInt((filePath || '').split('-')[0], 10);
+  const order = parseInt((filePath || '').split('-')[0], 10);
   // check for NaN
   if (order !== order) {
     return 0;
@@ -37,7 +40,7 @@ function getSupOrder(filePath) {
 }
 
 function getSupName(filePath) {
-  var order = parseInt((filePath || '').split('-')[0], 10);
+  const order = parseInt((filePath || '').split('-')[0], 10);
   // check for NaN
   if (order !== order) {
     return filePath;
@@ -50,7 +53,7 @@ module.exports = function getChallenges() {
   try {
     return getFilesFor('challenges')
       .map(function(data) {
-        var challengeSpec = require('./challenges/' + data.file);
+        const challengeSpec = require('./challenges/' + data.file);
         challengeSpec.fileName = data.file;
         challengeSpec.superBlock = getSupName(data.superBlock);
         challengeSpec.superOrder = getSupOrder(data.superBlock);
@@ -58,7 +61,7 @@ module.exports = function getChallenges() {
         return challengeSpec;
       });
   } catch (e) {
-    console.log('error', e);
+    console.error('error: ', e);
     return [];
   }
 };
