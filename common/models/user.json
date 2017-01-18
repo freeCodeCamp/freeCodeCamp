@@ -122,8 +122,8 @@
     },
     "currentChallengeId": {
       "type": "string",
-      "default": "",
-      "description": "The challenge last visited by the user"
+      "description": "The challenge last visited by the user",
+      "default": ""
     },
     "currentChallenge": {
       "type": {},
