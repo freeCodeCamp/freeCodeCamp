@@ -5,6 +5,42 @@
   "helpRoom": "Help",
   "challenges": [
     {
+      "id": "587d774b367417c4c2512a9b",
+      "title": "Introduction to the Basic HTML and HTML5 Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "HTML, or HyperText Markup Language, is a markup language to describe the structure of a web page. It uses a special syntax of elements to organize and give information about your content to the browser. Elements usually have opening and closing tags that surround and give meaning to content. For example, there are different tag options to place around text to show whether it's a heading, a paragraph, or a list.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "The HyperText part of HTML comes from the early days of the web. Pages usually contained static documents that connected to other documents with hypertext links. As web pages and web applications grow more complex, the W3 Consortium updates HTML. The latest version, or specification, is HTML5.<br><br>This section introduces how to use HTML elements to give structure and meaning to your web content.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
       "id": "bd7123c8c441eddfaeb5bdef",
       "title": "Say Hello to HTML Elements",
       "description": [
