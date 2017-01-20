@@ -44,8 +44,10 @@
       "id": "bd7123c8c441eddfaeb5bdef",
       "title": "Say Hello to HTML Elements",
       "description": [
-        "Welcome to Free Code Camp's first coding challenge.",
-        "You can edit <code>code</code> in your <code>text editor</code>, which we've embedded into this web page.",
+        "Welcome to freeCodeCamp's coding challenges. These will walk you through web development step-by-step.",
+        "We recommend you do these in order, but feel free to skip around by clicking the map on the left.",
+        "Also, if you want to save your progress, you should join our community by creating an account. In just a few minutes, you can join our chat room, forum, and even a local study group in your city.",
+        "First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>text editor</code>, which is embedded into this web page.",
         "Do you see the code in your text editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
         "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.",
         "Opening tags look like this:",
@@ -53,7 +55,8 @@
         "Closing tags look like this:",
         "<code>&#60;/h1&#62;</code>",
         "Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
-        "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing, you can advance to the next challenge.",
+        "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing (they change from red to green), you can go to the next coding challenge.",
+        "<h4>Instructions</h4>",
         "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\" instead of \"Hello\". Then click the \"Run tests\" button."
       ],
       "challengeSeed": [
@@ -256,13 +259,12 @@
       "id": "bad87fee1348bd9aecf08801",
       "title": "Introduction to HTML5 Elements",
       "description": [
-        "HTML5 introduces more descriptive HTML tags. These include <header>, <footer>, <nav>, <video>, <article>, <section> and others.",
+        "HTML5 introduces more descriptive HTML tags. These include <code>header</code>, <code>footer</code>, <code>nav</code>, <code>video</code>, <code>article</code>, <code>section</code> and others.",
         "These tags not only make your HTML easier to read, it also helps with Search Engine Optimization (SEO) and accessibility.",
-        "The <main> HTML5 tag helps search engines and other developers find the main content of your page.",
-        "Note",
-        "Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.",
-        "Instructions",
-        "Wrap the paragraph with a opening and closing main tag."
+        "The <code>main</code> HTML5 tag helps search engines and other developers find the main content of your page.",
+        "<strong>Note</strong><br>Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.",
+        "<h4>Instructions</h4>",
+        "Wrap the paragraph with an opening and closing <code>main</code> tag."
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -271,7 +273,7 @@
       "tests": [
         "assert($('main').length === 1, 'message: Your code should have one <code>main</code> element.');",
         "assert(code.match(/<main>\\s*?<p>/g), 'message: The opening <code>main</code> tag should come before the paragraph tag.');",
-        "assert(code.match(/</p>\\s*?</main>/g), 'message: The closing <code>main</code> tag should come after your closing paragraph tag.');"
+        "assert(code.match(/<\\/p>\\s*?<\\/main>/g), 'message: The closing <code>main</code> tag should come after your closing paragraph tag.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -711,19 +713,16 @@
       "title": "Link to Internal Sections of a Page with Anchor Elements",
       "description": [
         "In addition to creating external links, anchor elements can also be used to create internal links, which are links that jump to different sections within a webpage.",
-        "The format is similar to an external link except instead of a URL, you'll use the # and a word to describe the section you want to jump to.",
+        "The format is similar to an external link except instead of a URL, you'll use the <code>#</code> and a word to describe the section you want to jump to.",
         "Here's an example:",
-        "<code><a href=\"#contact\">Go to contact section</a></code>",
-        "Next, you'll want to create a corresponding anchor link in the HTML where you want the internal link to take users. Instead of using the href attribute, you'll use the name attribute, as below.",
-        "Here's an example:",
-        "<h1>Contact</h1>",
-        "<code><a name=\"contact\"></a></code>",
-        "Now when users click the \"Go to contact section\" link, they'll be taken to the section of the webpage with the anchor name attribute \"contact\".",
-        "Instructions",
-        "Change your external link to an internal link by changing the href attribute to \"#bottom\" and the anchor text from \"cat photos\" to \"Jump to Bottom\".",
-        "Then add an anchor link with a name attribute set to \"bottom\" after the last paragraph.",
-        "Note",
-        "Additional kitty ipsum text has been added to the paragraphs to better show the effect of clicking the internal anchor link to jump to the bottom of the page."
+        "<code>&lt;a href=\"#contact\"&gt;Go to contact section&lt;/a&gt;</code>",
+        "Next, you'll want to create a corresponding anchor link in the HTML where you want the internal link to take users. Instead of using the <code>href</code> attribute, you'll use the <code>name</code> attribute. Here's an example:",
+        "<blockquote>&lt;h1&gt;Contact&lt;/h1&gt;<br>&lt;a name=\"contact\"&gt;&lt;/a&gt;</blockquote>",
+        "Now when users click the \"Go to contact section\" link, they'll be taken to the section of the webpage with the anchor that has the <code>name</code> attribute \"contact\".",
+        "<h4>Instructions</h4>",
+        "Change your external link to an internal link by changing the <code>href</code> attribute to \"#bottom\" and the anchor text from \"cat photos\" to \"Jump to Bottom\".",
+        "Then add an anchor link with a <code>name</code> attribute set to \"bottom\" after the last paragraph.",
+        "<strong>Note</strong><br>Additional kitty ipsum text has been added to the paragraphs to better show the effect of clicking the internal anchor link to jump to the bottom of the page."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -754,6 +753,8 @@
         "</style>",
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "",
+        "<a href=\"http://freecatphotoapp.com\">cat photos</a>",
         "",
         "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back. \">",
         "",
@@ -2289,16 +2290,14 @@
       "title": "Declare the Doctype of an HTML Document",
       "description": [
         "The challenges so far have covered specific HTML tags and their uses. However, there are a few elements that give overall structure to your page, and should be included in every HTML document.",
-        "At the top of your document, you need to tell the browser which version of HTML your page is using. HTML is an evolving language, and is updated regularly. Most major browsers support the latest specification, which is HTML5. However, older web pages may use previous versions of the language. You tell the browser this information by adding the <!DOCTYPE ...> tag on the first line, where the \"...\" part is the version of HTML. For HTML5, you use <!DOCTYPE html>.",
-        "The ! and uppercase DOCTYPE is important, especially for older browsers. The html is not case sensitive.",
-        "Next, the rest of your HTML code needs to be wrapped in html tags. The opening <html> goes directly below the <!DOCTYPE html> line, and the closing </html> goes at the end of the page.",
+        "At the top of your document, you need to tell the browser which version of HTML your page is using. HTML is an evolving language, and is updated regularly. Most major browsers support the latest specification, which is HTML5. However, older web pages may use previous versions of the language.",
+        "You tell the browser this information by adding the <code>&lt;!DOCTYPE ...&gt;</code> tag on the first line, where the \"<code>...</code>\" part is the version of HTML. For HTML5, you use <code>&lt;!DOCTYPE html&gt;</code>.",
+        "The <code>!</code> and uppercase <code>DOCTYPE</code> is important, especially for older browsers. The <code>html</code> is not case sensitive.",
+        "Next, the rest of your HTML code needs to be wrapped in <code>html</code> tags. The opening <code>&lt;html&gt;</code> goes directly below the <code>&lt;!DOCTYPE html&gt;</code> line, and the closing <code>&lt;/html&gt;</code> goes at the end of the page.",
         "Here's an example of the page structure:",
-        "<code><!DOCTYPE html></code>",
-        "<code><html></code>",
-        "<code><!-- Your HTML code goes here --></code>",
-        "<code></html></code>",
-        "Instructions",
-        "Add a DOCTYPE tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing html tags, which wrap around an h1 heading that can include any text."
+        "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;!-- Your HTML code goes here --&gt;<br>&lt;/html&gt;</blockquote>",
+        "<h4>Instructions</h4>",
+        "Add a <code>DOCTYPE</code> tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing <code>html</code> tags, which wrap around an <code>h1</code> element. The heading can include any text."
       ],
       "challengeSeed": [
         "",
@@ -2306,9 +2305,9 @@
         ""
       ],
       "tests": [
-        "assert(code.match(/<!DOCTYPE\\s+?html\\s*?>/gi), 'message Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.');",
-        "assert($('html').length == 1, 'There should be one <code>html</code> element.');",
-        "assert($('html').children('h1').length == 1, 'message: The <code>html</code> tags should wrap around one <code>h1</code> element.');"
+        "assert(code.match(/<!DOCTYPE\\s+?html\\s*?>/gi), 'message: Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.');",
+        "assert($('html').length == 1, 'message: There should be one <code>html</code> element.');",
+        "assert(code.match(/<html>\\s*?<h1>\\s*?.*?\\s*?<\\/h1>\\s*?<\\/html>/gi), 'message: The <code>html</code> tags should wrap around one <code>h1</code> element.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2318,27 +2317,21 @@
       "id": "587d78aa367417b2b2512aec",
       "title": "Define the Head and Body of an HTML Document",
       "description": [
-        "You can add another level of organization in your HTML document within the html tags with the head and body elements. Any markup with information about your page would go into the head tag. Then any markup with the content of the page (what displays for a user) would go into the body tag.",
-        "Metadata elements, such as link, meta, title, and style, typically go inside the head element.",
+        "You can add another level of organization in your HTML document within the <code>html</code> tags with the <code>head</code> and <code>body</code> elements. Any markup with information about your page would go into the <code>head</code> tag. Then any markup with the content of the page (what displays for a user) would go into the <code>body</code> tag.",
+        "Metadata elements, such as <code>link</code>, <code>meta</code>, <code>title</code>, and <code>style</code>, typically go inside the <code>head</code> element.",
         "Here's an example of a page's layout:",
-        "<code><!DOCTYPE html></code>",
-        "<code><html></code>",
-        "<code><head></code>",
-        "<code><!-- metadata elements --></code>",
-        "<code></head></code>",
-        "<code><body></code>",
-        "<code><!-- page contents --></code>",
-        "<code></body></code>",
-        "<code></html></code>",
-        "Instructions",
-        "Edit the markup so there's a head and a body. The head should only include the title, and the body should only include the h1 and p."
+        "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- metadata elements --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- page contents --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
+        "<h4>Instructions</h4>",
+        "Edit the markup so there's a <code>head</code> and a <code>body</code>. The <code>head</code> element should only include the <code>title</code>, and the <code>body</code> element should only include the <code>h1</code> and <code>p</code>."
       ],
       "challengeSeed": [
         "<!DOCTYPE html>",
         "<html>",
         "  <title>The best page ever</title>",
+        "  ",
         "  <h1>The best page ever</h1>",
         "  <p>Cat ipsum dolor sit amet, jump launch to pounce upon little yarn mouse, bare fangs at toy run hide in litter box until treats are fed. Go into a room to decide you didn't want to be in there anyway. I like big cats and i can not lie kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Meow i could pee on this if i had the energy for slap owner's face at 5am until human fills food dish yet scamper. Knock dish off table head butt cant eat out of my own dish scratch the furniture. Make meme, make cute face. Sleep in the bathroom sink chase laser but pee in the shoe. Paw at your fat belly licks your face and eat grass, throw it back up kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "  ",
         "</html>  "
       ],
       "tests": [
@@ -2346,7 +2339,7 @@
         "assert($('body').length == 1, 'message: There should be only one <code>body</code> element on the page.');",
         "assert($('html').children('head').length == 1, 'message: The <code>head</code> element should be a child of the <code>html</code> element.');",
         "assert($('html').children('body').length == 1, 'message: The <code>body</code> element should be a child of the <code>html</code> element.');",
-        "assert($('head').children('title').length == 1, 'message: The <code>head</code> element should wrap around the <code>title</code> element.');",
+        "assert(code.match(/<head>\\s*?<title>\\s*?.*?\\s*?<\\/title>\\s*?<\\/head>/gi), 'message: The <code>head</code> element should wrap around the <code>title</code> element.');",
         "assert($('body').children('h1').length == 1 && $('body').children('p').length == 1, 'message: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.');"
       ],
       "type": "waypoint",
