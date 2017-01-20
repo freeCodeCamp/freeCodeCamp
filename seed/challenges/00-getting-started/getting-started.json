@@ -1081,12 +1081,12 @@
           ]
         },
         "it": {
-          "title": "Configura il tuo portfolio codice",
+          "title": "Configura il tuo portfolio da programmatore",
           "description": [
             [
               "//i.imgur.com/Tw5allJ.gif",
-              "Una gif che mostra come cliccare l'immagine del profilo in alto a destra per collegare a GitHub il tuo portfolio codice.",
-              "Controlla il tuo portfolio codice. Clicca l'immagine in alto a destra. Per attivare il portfolio codice, è necessario collegare il tuo account GitHub con Free Code Camp. Il tuo portfolio codice mostra i tuoi progressi e quanti Brownie Points hai. È possibile ottenere i Brownie Points completando i problemi e aiutando altri campers nelle nostre chat rooms. Se si ricevono Brownie Points per diversi giorni di fila, si otterrà uno \"Streak\". ",
+              "Una gif che mostra come puoi cliccare l'immagine del profilo in alto a destra per collegare a GitHub il tuo portfolio da programmatore.",
+              "Controlla il tuo portfolio da programmatore. Clicca l'immagine in alto a destra. Per attivare il portfolio da programmatore, è necessario collegare il tuo account GitHub con Free Code Camp. Il tuo portfolio da programmatore mostra i tuoi progressi e quanti Brownie Points hai. È possibile ottenere i Brownie Points completando i problemi e aiutando altri campers nelle nostre chat rooms. Se si ricevono Brownie Points per diversi giorni di fila, si otterrà uno \"Streak\". ",
               ""
             ]
           ]
@@ -1271,6 +1271,17 @@
               "Une gif montrant comment tu peux créer un compte sur Medium.",
               "Notre communauté a une publication sur Medium où on écrit plusieurs articles sur la programmation. Tu peux visiter la publication de Free Code Camp sur Medium et cliquer sur \"follow\". Nos campers publient plusieurs articles chaque semaine. Si tu n’as pas encore un compte Medium, utilise le lien ci-dessous  pour s’inscrire en utilisant un compte sur les médias sociaux ou en utilisant ton email (un email de confirmation sera envoyé à votre email pour terminer l’inscription). Une fois un sujet qui t’intéresse est choisi, tu peux continuer les étapes.",
               "https://www.medium.com"
+            ]
+          ]
+        },
+        "it": {
+          "title": "Leggi notizie sul mondo della programmazione nelle nostre pubblicazioni su Medium",
+          "description": [
+            [
+              "//i.imgur.com/AZNLvEC.gif",
+              "Una gif che mostra come puoi cliccare sul tasto \"follow\" per seguire le pubblicazioni di Free Code Camp.",
+              "La nostra comunità ha uno spazio su Medium dove pubblica numerosi articoli pratici che parlano di programmazione e di tecnologia. Una volta aperto il link, clicca sul tasto \"follow\" in alto a destra. Se non hai un account di Medium, puoi crearne uno in pochi secondi.",
+              "https://medium.freecodecamp.com"
             ]
           ]
         },
