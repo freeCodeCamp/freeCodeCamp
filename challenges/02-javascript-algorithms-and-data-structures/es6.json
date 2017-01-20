@@ -382,7 +382,7 @@
     },
     {
       "id": "587d7b88367417b2b2512b47",
-      "title": "",
+      "title": "No Title One",
       "description": [
         "In order to help us create more flexible functions, ES2015 introduces the rest operator for function parameters. With the rest operator, you can create functions with variable number of arguments and then have those arguments available into an Array inside the function",
         "Check out this code:",
@@ -451,7 +451,7 @@
     },
     {
       "id": "587d7b89367417b2b2512b49",
-      "title": "",
+      "title": "No Title Two",
       "description": [
         "We earlier saw how spread operator can effectively spread or unpack the contents of the array.",
         "We can do something similar with objects as well. Objects in JavaScript are a key-value pair collections.",
@@ -754,72 +754,6 @@
       "tests": [
         "// Test the output is Sending request to Yanoshi Mimoto",
         "// Test no : was present"
-      ],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7b8b367417b2b2512b51",
-      "title": "Enhanced Object Literals Computed Fields",
-      "description": [
-        "With ES6, you can also create a field name dynamically, like this:",
-        "<code>const prop = 'os'</code>",
-        "<code>const setup = {</code>",
-        "<code>   ['prop-' + prop] : 'darwin-64'</code>",
-        "<code>}</code>",
-        "If you inspect the object setup, you would see it's {\"prop-os\": \"darwin-64\"}",
-        "Instructions",
-        "Use object literal computed property to create an object like this",
-        "<code>{</code>",
-        "<code>  \"prop-1\": 1,</code>",
-        "<code>  \"prop-2\": 2,</code>",
-        "<code>  \"prop-3\": 3</code>",
-        "<code>}</code>"
-      ],
-      "challengeSeed": [
-        "/* Alter code below this line */",
-        "const funObject = {",
-        "}",
-        "/* Alter code above this line */",
-        "console.log(funObject);"
-      ],
-      "tests": [
-        "// Test the output is correct",
-        "// Test no = was present outside funObject = {}"
-      ],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7b8b367417b2b2512b52",
-      "title": "Enhanced Object Literals Computed Fields",
-      "description": [
-        "With ES6, you can also create a field name dynamically, like this:",
-        "<code>const prop = 'os'</code>",
-        "<code>const setup = {</code>",
-        "<code>   ['prop-' + prop] : 'darwin-64'</code>",
-        "<code>}</code>",
-        "If you inspect the object setup, you would see it's <code>{\"prop-os\": \"darwin-64\"}</code>",
-        "Instructions",
-        "Use object literal computed property to create an object like this",
-        "<code>{</code>",
-        "<code>  \"prop-1\": 1,</code>",
-        "<code>  \"prop-2\": 2,</code>",
-        "<code>  \"prop-3\": 3</code>",
-        "<code>}</code>"
-      ],
-      "challengeSeed": [
-        "/* Alter code below this line */",
-        "const funObject = {",
-        "}",
-        "/* Alter code above this line */",
-        "console.log(funObject);"
-      ],
-      "tests": [
-        "// Test the output is correct",
-        "// Test no = was present outside funObject = {}"
       ],
       "type": "waypoint",
       "challengeType": 0,
