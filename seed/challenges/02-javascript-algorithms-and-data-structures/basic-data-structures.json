@@ -1,51 +1,9 @@
 {
-  "name": "Debugging",
+  "name": "Basic Data Structures",
   "order": 4,
   "time": "1 hour",
   "helpRoom": "Help",
   "challenges": [
-    {
-      "id": "587d78b2367417b2b2512b0d",
-      "title": "Introduction to the Debugging Challenges",
-      "description": [
-        [
-          "http://imgs.xkcd.com/comics/debugging.png",
-          "XKCD web comic walking through the convoluted process of debugging. The programmer moves from a browser problem, to a keyboard driver issue, receives a cryptic system utility error message, and ends by finding the sword of Martin the Warrior.",
-          "Debugging is a valuable and (unfortunately) necessary tool for programmers. It follows the testing phase of checking if your code works as intended, and discovering it does not. Debugging is the process of finding exactly what isn't working and fixing it.",
-          ""
-        ],
-        [
-          "",
-          "",
-          "After spending time creating a brilliant block of code, it is tough realizing it may have errors. These issues generally come in three forms: 1) syntax errors that prevent a program from running, 2) runtime errors when code fails to execute or has unexpected behavior, and 3) semantic (or logical) errors when code doesn't do what it's meant to.<br><br>Modern code editors (and experience) can help identify syntax errors. Semantic and runtime errors are harder to find. They may cause your program to crash, make it run forever, or give incorrect output. Think of debugging as trying to understand why your code is behaving the way it is.<br><br>Example of a syntax error - often detected by the code editor:<br><br><blockquote>funtion willNotWork( {<br>&nbsp;&nbsp;console.log(\"Yuck\");<br>}<br>// \"function\" keyword is misspelled and there's a missing parenthesis</blockquote><br><br>Here's an example of a runtime error - often detected while the program executes:<br><br><blockquote>function loopy() {<br>&nbsp;&nbsp;while(true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"Hello, world!\");<br>&nbsp;&nbsp;}<br>}<br>// Calling loopy starts an infinite loop, which may crash your browser</blockquote><br><br>Example of a semantic error - often detected after testing code output:<br><br><blockquote>function calcAreaOfRect(w, h) {<br>&nbsp;&nbsp;return w + h; // This should be w * h<br>}<br>let myRectArea = calcAreaOfRect(2, 3);<br>// Correct syntax and the program executes, but this gives the wrong answer</blockquote>",
-          ""
-        ],
-        [
-          "",
-          "",
-          "Debugging is frustrating, but it helps to develop (and follow) a step-by-step approach to review your code. This means checking the intermediate values and types of variables to see if they are what they should be. You can start with a simple process of elimination.<br><br>For example, if function A works and returns what it's supposed to, then function B may have the issue. Or start checking values in a block of code from the middle to try to cut the search space in half. A problem in one spot indicates a bug in the first half of the code. If not, it's likely in the second.<br><br>This section will cover a couple helpful tools to find bugs, and some of the common forms they take. Fortunately, debugging is a learnable skill that just requires a little patience and practice to master.",
-          ""
-        ]
-      ],
-      "releasedOn": "",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
-    },
     {
       "id": "587d78b2367417b2b2512b0e",
       "title": "Add items to an array with push() and unshift()",
@@ -447,7 +405,7 @@
     },
     {
       "id": "587d7b7c367417b2b2512b19",
-      "title": "",
+      "title": "No Title 3",
       "description": [
         "Objects, and other similar key-value pair data structures, offer some very useful benefits. One clear benefit is that they allow us to structure our data in an intuitive way. They are also very flexible. For instance, you can have properties nested to an arbitrary depth. Values can also be anything, for example a key can store an array, or even another object. Objects are also the foundation for JavaScript Object Notation, JSON, which is a widely used method of sending data across the web.",
         "Another powerful advantage of key-value pair data structures is constant lookup time. What we mean by this is when you request the value of a specific property you will get the value back in the same amount of time (theoretically) regardless of the number of entries in the object. If you had an object with 5 entries or one that held a collection of 1,000,000 entries you could still retrieve property values or check if a key exists in the same amount of time.",
