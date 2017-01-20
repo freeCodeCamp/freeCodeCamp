@@ -33,7 +33,7 @@ window.common = (function(global) {
 
 <link
   rel='stylesheet'
-  href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'
+  href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
   />
 <style>
   body { padding: 0px 3px 0px 3px; }
