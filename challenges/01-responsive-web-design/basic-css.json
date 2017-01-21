@@ -5,6 +5,54 @@
   "helpRoom": "Help",
   "challenges": [
     {
+      "id": "597d7790367517u2y2517ab2",
+      "title": "Introduction to Basic CSS",
+      "description": [
+        [
+          "",
+          "",
+          "Cascading Style Sheets (CSS) tell the browser how to display the text and other content that you write in HTML.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "CSS has been adopted by all major browsers and allows you to control:<br><ul><li>color</li><li>fonts</li><li>positioning</li><li>spacing</li><li>sizing</li><li>decorations</li><li>transitions</li></ul>",
+          ""
+        ],
+        [
+          "",
+          "",
+          "CSS can be applied both as inline styles\u2014typed directly within HTML <code>style</code> tags\u2014or external style sheets\u2014typed in a separate file that is referenced from your HTML file. Most developers prefer external style sheets because they keep the styles separate from the HTML elements, therefore improving the readability and reusability of your code.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "The idea behind CSS is that you can use a selector to target an HTML element in the DOM (Document Object Model) and then apply a variety of attributes to that element to change the way it is displayed on the page.<br><br>In this section, you'll see how adding CSS styles to the elements of your CatPhotoApp can change it from simple text to something more.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
       "id": "bad87fee1348bd9aedf08803",
       "title": "Change the Color of Text",
       "description": [
