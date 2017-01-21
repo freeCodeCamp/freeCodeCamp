@@ -36,7 +36,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -73,7 +73,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -109,7 +109,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -145,7 +145,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -176,7 +176,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -213,7 +213,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -247,7 +247,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -289,7 +289,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -337,7 +337,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -366,7 +366,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -400,7 +400,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -430,7 +430,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -464,7 +464,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -492,7 +492,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -536,7 +536,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -580,7 +580,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -620,7 +620,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -661,7 +661,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     },
     {
@@ -688,7 +688,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 0,
+      "challengeType": 1,
       "translations": {}
     }
   ]
