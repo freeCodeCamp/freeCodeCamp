@@ -8,7 +8,7 @@
       "title": "Chrome Dev Tools: Elements",
       "description": [
         "This is basic info and a mini-lesson on the Elements tab of Chrome Dev Tools. Check out more in-depth documentation here: <a href='http://developers.google.com/web/tools/iterate/inspect-styles/basics' target='_blank'>developers.google.com/web/tools/iterate/inspect-styles/basics</a>",
-        "We will be using the webpage mckellen.com/ per suggestion of Free Code Camp user kmiasko.",
+        "We will be using the webpage mckellen.com/ per suggestion of freeCodeCamp user kmiasko.",
         "If you right click and select 'Inspect element', you can have access to the elements tab. You can change text, background color, text color, and any other CSS or HTML you'd like!",
         "These changes don't set up automatically, so don't use this as an IDE or a place to create or edit anything you want to save. You can set up something called 'persistent authoring' to save.",
         "Cascade, inherit, and other CSS rules still apply, so keep that in mind as you play around. Additionally, overridden styles will be shown as having a strike through them.",
@@ -298,7 +298,7 @@
       "description": [
         "The Console panel provides two primary functions: logging diagnostic information in the development process and providing a shell prompt which can be used to interact with the document and Dev Tools.",
         "When using the console, you can view raw or structured data by using standard JS statements and console-specific commands.",
-        "An example of structured data would be the information returned from an API in JSON. I used this a lot when I was building my first front end development projects for Free Code Camp.",
+        "An example of structured data would be the information returned from an API in JSON. I used this a lot when I was building my first front end development projects for freeCodeCamp.",
         "You should know that messages stack up, and you can clear them by typing and entering 'clear()'. You can also save the log by selecting 'Preserve Log'.",
         "There are different commands that will log differently, like console.log() for basic logging, console.error() & console.warn() for 'eye catching stuff'.",
         "The console can track exceptions, which basically means when something goes wrong. It can even pause the code during those exceptions, a function that you might remember from the 'Source' tab.",

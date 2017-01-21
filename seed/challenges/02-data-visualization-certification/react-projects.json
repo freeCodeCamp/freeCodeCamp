@@ -58,7 +58,7 @@
             "<strong>Заметка:</strong> Если вы хотите использовать синтаксис React JSX, вам понадобится задействовать 'Babel' в качестве препроцессора.",
             "Если что-то не получается, не забывайте пользоваться методом <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Читай-Ищи-Спрашивай</a>.",
             "Когда закончите, нажмите кнопку \"I've completed this challenge\" и укажите ссылку на вашу работу на CodePen.",
-            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
+            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице freeCodeCamp вашего города на Facebook."
           ]
         }
       }
@@ -71,7 +71,7 @@
         "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
         "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>Rule #3:</strong> You must use both Sass and React to build this project.",
-        "<strong>User Story:</strong> I can see a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.",
+        "<strong>User Story:</strong> I can see a table of the freeCodeCamp campers who've earned the most brownie points in the past 30 days.",
         "<strong>User Story:</strong> I can see how many brownie points they've earned in the past 30 days, and how many they've earned total.",
         "<strong>User Story:</strong> I can toggle between sorting the list by how many brownie points they've earned in the past 30 days and by how many brownie points they've earned total.",
         "<strong>Hint:</strong> To get the top 100 campers for the last 30 days: <a href='https://fcctop100.herokuapp.com/api/fccusers/top/recent' target='_blank'>https://fcctop100.herokuapp.com/api/fccusers/top/recent</a>.",
@@ -96,7 +96,7 @@
             "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
             "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
             "<strong>Rule #3:</strong> Debes utilizar ambos Sass y React para construir este proyecto.",
-            "<strong>Historia de usuario:</strong> Puedo ver un tablero con los campistas de Free Code Camp que han ganado más puntos de brownie en los últimos 30 días.",
+            "<strong>Historia de usuario:</strong> Puedo ver un tablero con los campistas de freeCodeCamp que han ganado más puntos de brownie en los últimos 30 días.",
             "<strong>Historia de usuario:</strong> Puedo ver cuántos puntos de brownie han ganado en los últimos 30 días, y cuántos han ganado en total.",
             "<strong>Historia de usuario:</strong> Puedo elegir entre dos formas de organizar la lista: 1) En base a cuántos puntos de brownie se han ganado en los últimos 30 días. 2) En base al número de puntos de brownie que han ganado en total.",
             "<strong>Pista:</strong> Para obtener los 100 mejores campistas para los últimos 30 días: <a href='https://fcctop100.herokuapp.com/api/fccusers/top/recent' target='_blank'>https://fcctop100.herokuapp.com/api/fccusers/top/recent</a>.",
@@ -113,14 +113,14 @@
             "<strong>Правило #1:</strong> Не подсматривайте код приложения-примера. Напишите его самостоятельно.",
             "<strong>Правило #2:</strong> Приложение должно удовлетворять нижеприведённым <a href='https://ru.wikipedia.org/wiki/Пользовательские_истории' target='_blank'>пользовательским историям</a>. Используйте любые библиотеки или API, которые потребуются. Придайте ему свой личный стиль.",
             "<strong>Правило #3:</strong> Для создания этого проекта вы должны использовать Sass и React.",
-            "<strong>Пользовательская история:</strong> Я могу видеть таблицу кемперов Free Code Camp, которые получили наибольшее количество очков за последние 30 дней.",
+            "<strong>Пользовательская история:</strong> Я могу видеть таблицу кемперов freeCodeCamp, которые получили наибольшее количество очков за последние 30 дней.",
             "<strong>Пользовательская история:</strong> Я могу видеть сколько очков они получили за последние 30 дней, и сколько они получили их всего.",
             "<strong>Пользовательская история:</strong> Я могу отсортировать список по количеству очков, которые они получили за последние 30 дней, и по общему количеству полученных очков.",
             "<strong>Подсказка:</strong> Ссылка на топ 100 кемперов за последние 30 дней в формате JSON: <a href='https://fcctop100.herokuapp.com/api/fccusers/top/recent' target='_blank'>https://fcctop100.herokuapp.com/api/fccusers/top/recent</a>.",
             "<strong>Подсказка:</strong> Ссылка на топ 100 кемперов за все время в формате JSON: <a href='http://fcctop100.herokuapp.com/api/fccusers/top/alltime' target='_blank'>http://fcctop100.herokuapp.com/api/fccusers/top/alltime</a>.",
             "Если что-то не получается, не забывайте пользоваться методом <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Читай-Ищи-Спрашивай</a>.",
             "Когда закончите, нажмите кнопку \"I've completed this challenge\" и укажите ссылку на вашу работу на CodePen.",
-            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
+            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице freeCodeCamp вашего города на Facebook."
           ]
         }
       }
@@ -186,7 +186,7 @@
             "<strong>Пользовательская история:</strong> Все новые рецепты, которые я добавил, сохранены в локальном хранилище моего браузера. Если я обновлю страницу, эти рецепты будут всё ещё там.",
             "Если что-то не получается, не забывайте пользоваться методом <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Читай-Ищи-Спрашивай</a>.",
             "Когда закончите, нажмите кнопку \"I've completed this challenge\" и укажите ссылку на вашу работу на CodePen.",
-            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
+            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице freeCodeCamp вашего города на Facebook."
           ]
         }
       }
@@ -257,7 +257,7 @@
             "<strong>Подсказка:</strong> Вот обзор правил игры \"Жизнь\" для вашего сведения: <a href='https://ru.wikipedia.org/wiki/Жизнь_(игра)' target='_blank'>https://ru.wikipedia.org/wiki/Жизнь_(игра)</a>",
             "Если что-то не получается, не забывайте пользоваться методом <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Читай-Ищи-Спрашивай</a>.",
             "Когда закончите, нажмите кнопку \"I've completed this challenge\" и укажите ссылку на вашу работу на CodePen.",
-            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
+            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице freeCodeCamp вашего города на Facebook."
           ]
         }
       }
@@ -331,7 +331,7 @@
             "<strong>Пользовательская история:</strong> Игра должна быть интересной и достаточно сложной, но теоретически проходимой.",
             "Если что-то не получается, не забывайте пользоваться методом <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Читай-Ищи-Спрашивай</a>.",
             "Когда закончите, нажмите кнопку \"I've completed this challenge\" и укажите ссылку на вашу работу на CodePen.",
-            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
+            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице freeCodeCamp вашего города на Facebook."
           ]
         }
       }
