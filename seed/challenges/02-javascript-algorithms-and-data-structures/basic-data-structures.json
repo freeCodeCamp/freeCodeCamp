@@ -5,34 +5,94 @@
   "helpRoom": "Help",
   "challenges": [
     {
+      "id": "587d7b7e367417b2b2512b20",
+      "title": "Use an array to store a collection of data",
+      "description": [
+        "Arrays are JavaScript's most fundamental, and perhaps most common, <dfn>data structure</dfn>. An <dfn>array</dfn> is simply a collection of data, of any length, arranged in a comma separated list and enclosed in brackets <code>[ ]</code>. While we often make the distinction in JavaScript between <dfn>Objects</dfn> and <dfn>Arrays</dfn>, it is important to note that technically, an <strong>array</strong> <em>is</em> a type of <strong>object</strong>.",
+        "Arrays can store any type of data supported by JavaScript, and while they are a simple and basic form of data structure, they can also be very complex and powerful - all of which depends on how the programmer utilizes them.",
+        "The below is an example of a valid array, notice it contains <dfn>booleans</dfn>, <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>objects</dfn>, and other <dfn>arrays</dfn> (this is called a nested, or multi-dimensional array), among other valid data types:",
+        "<blockquote>let ourArray = [undefined, null, false, 'one', 2, {'three': 4}, [5, 'six']];<br>console.log(ourArray.length);<br>// logs 7</blockquote>",
+        "Note that all array's have a length property, which as shown above, can be very easily accessed with the syntax <code>Array.length</code>.",
+        "JavaScript offers many built in <dfn>methods</dfn> which allow us to access, traverse, and mutate arrays as needed, depending on our purpose. In the coming challenges, we will discuss several of the most common and useful methods, and a few other key techniques, that will help us to better understand and utilize arrays as data structures in JavaScript.",
+        "<hr>",
+        "We have defined a variable called <code>yourArray</code>. Complete the declaration by defining an array of at least 5 elements in length. Your array should contain at least one <dfn>string</dfn>, one <dfn>number</dfn>, and one <dfn>boolean</dfn>."
+      ],
+      "challengeSeed": [
+        "let yourArray; // change this line"
+      ],
+      "tests": [
+        "assert.strictEqual(Array.isArray(yourArray), true, 'message: yourArray is an array');",
+        "assert.isAtLeast(yourArray.length, 5, 'message: <code>yourArray</code> is at least 5 elements long');",
+        "assert(yourArray.filter( el => typeof el === 'boolean').length >= 1, 'message: <code>yourArray</code> contains at least one <code>boolean</code>');",
+        "assert(yourArray.filter( el => typeof el === 'number').length >= 1, 'message: <code>yourArray</code> contains at least one <code>number</code>');",
+        "assert(yourArray.filter( el => typeof el === 'string').length >= 1, 'message: <code>yourArray</code> contains at least one <code>string</code>');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
+     "id": "587d78b2366415b2v2512be3",
+     "title": "Access an array's contents using bracket notation",
+     "description": [
+       "The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that data on command. So, now that we've learned how to create an array, let's begin to think about how we can access that array's information.",
+       "When we define a simple array as seen below, there are 3 items in it:",
+       "<blockquote>let ourArray = [\"a\", \"b\", \"c\"];</blockquote>",
+       "In an array, each array item has an <dfn>index</dfn>.  This index doubles as the position of that item in the array, and how you reference it. However, it is important to note, that JavaScript arrays are <dfn>zero-indexed</dfn>, meaning that the first element of an array is actually at the <em><strong>zeroth</strong></em> position, not the first.",
+       "In order to retrieve an element from an array we can enclose an index in brackets and append it to the end of an array, or more commonly, to a variable which references an array object. This is known as <dfn>bracket notation</dfn>.",
+       "For example, if we want to get the <code>\"a\"</code> from <code>ourArray</code> and assign it to a variable, we can do so with the following code:",
+       "<blockquote>let ourVariable = ourArray[0];<br>// ourVariable equals \"a\"</blockquote>",
+       "In addition to accessing the value associated with an index, you can also <em>set</em> an index to a value using the same notation:",
+       "<blockquote>ourArray[1] = \"not b anymore\";<br>// ourArray now equals [\"a\", \"not b anymore\", \"c\"];</blockquote>",
+       "Using bracket notation, we have now reset the item at index 1 from <code>\"b\"</code>, to <code>\"not b anymore\"</code>.",
+       "<hr>",
+       "In order to complete this challenge, set the 2nd position (1st index) of <code>myArray</code> to anything you want, besides <code>\"b\"</code>."
+     ],
+     "challengeSeed": [
+       "let myArray = [\"a\", \"b\", \"c\", \"d\"];",
+       "// change code below this line",
+       "",
+       "//change code above this line",
+       "console.log(myArray);"
+     ],
+     "tests": [
+       "assert.strictEqual(myArray[0], \"a\", 'message: <code>myArray[0]</code> is equal to <code>\"a\"</code>');",
+       "assert.notStrictEqual(myArray[1], \"b\", 'message: <code>myArray[1]</code> is no longer set to <code>\"b\"</code>');",
+       "assert.strictEqual(myArray[2], \"c\", 'message: <code>myArray[0]</code> is equal to <code>\"c\"</code>');",
+       "assert.strictEqual(myArray[3], \"d\", 'message: <code>myArray[0]</code> is equal to <code>\"d\"</code>');"
+     ],
+     "type": "waypoint",
+     "solutions": [],
+     "challengeType": 1,
+     "translations": {}
+    },
+    {
       "id": "587d78b2367417b2b2512b0e",
       "title": "Add items to an array with push() and unshift()",
       "description": [
-        "An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time. In this challenge, we will look at two methods with which we can programmatically modify an array: Array.push() and Array.unshift(). ",
-        "Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the push() method adds elements to the end of an array, and unshift() adds elements to the beginning. Consider the following:",
-        "<code>let twentyThree = 'XXIII';</code>",
-        "<code>let romanNumerals = ['XXI', 'XXII'];</code>",
-        "<code>romanNumerals.unshift('XIX', 'XX'); </code>",
-        "<code>// now equals ['XIX', 'XX', 'XXI', 'XXII']</code>",
-        "<code>romanNumerals.push(twentyThree); </code>",
-        "<code>// now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']</code>",
+        "An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time; in other words, arrays are <dfn>mutable</dfn>. In this challenge, we will look at two methods with which we can programmatically modify an array: <code>Array.push()</code> and <code>Array.unshift()</code>. ",
+        "Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the <code>push()</code> method adds elements to the end of an array, and <code>unshift()</code> adds elements to the beginning. Consider the following:",
+        "<blockquote>let twentyThree = 'XXIII';<br>let romanNumerals = ['XXI', 'XXII'];<br><br>romanNumerals.unshift('XIX', 'XX');<br>// now equals ['XIX', 'XX', 'XXI', 'XXII']<br><br>romanNumerals.push(twentyThree);<br>// now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']",
         "Notice that we can also pass variables, which allows us even greater flexibility in dynamically modifying our array's data.",
-        "Instructions:",
-        "We have defined a function, mixedNumbers, which we are passing an array as an argument. Modify the function by using push() and shift() to add 'I', 2, 'three', to the beginning of the array and 7, 'VIII', '9' to the end so that the returned array contains representations of the numbers 1-9 in order."
+        "<hr>",
+        "We have defined a function, <code>mixedNumbers</code>, which we are passing an array as an argument. Modify the function by using <code>push()</code> and <code>shift()</code> to add <code>'I', 2, 'three'</code>, to the beginning of the array and <code>7, 'VIII', '9'</code> to the end so that the returned array contains representations of the numbers 1-9 in order."
       ],
       "challengeSeed": [
         "function mixedNumbers(arr) {",
-        "    // change code below this line",
-        "    // change code above this line",
-        "    return arr;",
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "  return arr;",
         "}",
+        "",
         "// do not change code below this line",
-        "mixedNumbers(['IV', 5, 'six'])"
+        "console.log(mixedNumbers(['IV', 5, 'six']));"
       ],
       "tests": [
-        "assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', '9'], \"<code>mixedNumbers(['IV', 5, 'six'])</code> should now return <code>['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', '9']</code>\");",
-        "assert.notStrictEqual(mixedNumbers.toString().search(/\\.push\\(/), -1, 'The <code>mixedNumbers</code> function should utilize the <code>push()</code> method.);' ",
-        "assert.notStrictEqual(mixedNumbers.toString().search(/\\.unshift\\(/), -1, \"The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method.\");"
+        "assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', '9'], 'message: <code>mixedNumbers([\"IV\", 5, \"six\"])</code> should now return <code>[\"I\", 2, \"three\", \"IV\", 5, \"six\", 7, \"VIII\", \"9\"]</code>');",
+        "assert.notStrictEqual(mixedNumbers.toString().search(/\\.push\\(/), -1, 'message: The <code>mixedNumbers</code> function should utilize the <code>push()</code> method');",
+        "assert.notStrictEqual(mixedNumbers.toString().search(/\\.unshift\\(/), -1, 'message: The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -43,33 +103,28 @@
       "id": "587d78b2367417b2b2512b0f",
       "title": "Remove items from an array with pop() and shift()",
       "description": [
-        "Both push() and unshift() have corresponding methods that are nearly functional opposites: pop() and shift(). As you may have guessed by now, instead of adding, pop() removes an element from the end of an array, while shift() removes an element from the beginning. The key difference between pop() and shift() and their cousins push() and unshift(), is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.",
+        "Both <code>push()</code> and <code>unshift()</code> have corresponding methods that are nearly functional opposites: <code>pop()</code> and <code>shift()</code>. As you may have guessed by now, instead of adding, <code>pop()</code> <em>removes</em> an element from the end of an array, while <code>shift()</code> removes an element from the beginning. The key difference between <code>pop()</code> and <code>shift()</code> and their cousins <code>push()</code> and <code>unshift()</code>, is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.",
         "Let's take a look:",
-        "<code>let greetings = ['whats up?', 'hello', 'see ya!'];</code>",
-        "<code>greetings.pop() </code>",
-        "<code>// now equals ['whats up?', 'hello']</code>",
-        "<code>greetings.shift() </code>",
-        "<code>// now equals ['hello']</code>",
+        "<blockquote>let greetings = ['whats up?', 'hello', 'see ya!'];<br><br>greetings.pop();<br>// now equals ['whats up?', 'hello']<br><br>greetings.shift();<br>// now equals ['hello']</blockquote>",
         "We can also return the value of the removed element with either method like this:",
-        "<code>let popped = greetings.pop(); </code>",
-        "<code>// returns 'hello'</code>",
-        "<code>// greetings now equals []</code>",
-        "Instructions",
-        "We have defined a function, popShift, which takes an array as an argument and returns a new array. Modify the function, using pop() and shift(), to remove the first and last elements of the argument array, and assign the removed elements to their corresponding variables, so that the returned array contains their values."
+        "<blockquote>let popped = greetings.pop();<br>// returns 'hello'<br>// greetings now equals []</blockquote>",
+        "<hr>",
+        "We have defined a function, <code>popShift</code>, which takes an array as an argument and returns a new array. Modify the function, using <code>pop()</code> and <code>shift()</code>, to remove the first and last elements of the argument array, and assign the removed elements to their corresponding variables, so that the returned array contains their values."
       ],
       "challengeSeed": [
         "function popShift(arr) {",
-        "    let popped = // change code here",
-        "    let shifted = // change code here",
-        "    return [shifted, popped];",
+        "  let popped; // change this line",
+        "  let shifted; // change this line",
+        "  return [shifted, popped];",
         "}",
+        "",
         "// do not change code below this line",
-        "popShift(['challenge', 'is', 'not', 'complete']);"
+        "console.log(popShift(['challenge', 'is', 'not', 'complete']));"
       ],
       "tests": [
-        "assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), ['challenge', 'complete'], \"<code>popShift(['challenge', 'is', 'not', 'complete'])</code> should return <code>['challenge', 'complete']</code>.\");",
-        "assert.notStrictEqual(popShift.toString().search(/\\.pop\\(/), -1, \"The <code>popShift</code> function should utilize the <code>pop()</code> method.\");",
-        "assert.notStrictEqual(popShift.toString().search(/\\.shift\\(/), -1, \"The <code>popShift</code> function should utilize the <code>shift()</code> method.\");"
+        "assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), [\"challenge\", \"complete\"], 'message: <code>popShift([\"challenge\", \"is\", \"not\", \"complete\"])</code> should return <code>[\"challenge\", \"complete\"]</code>');",
+        "assert.notStrictEqual(popShift.toString().search(/\\.pop\\(/), -1, 'message: The <code>popShift</code> function should utilize the <code>pop()</code> method');",
+        "assert.notStrictEqual(popShift.toString().search(/\\.shift\\(/), -1, 'message: The <code>popShift</code> function should utilize the <code>shift()</code> method');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -80,32 +135,28 @@
       "id": "587d78b2367417b2b2512b10",
       "title": "Remove items using splice()",
       "description": [
-        "Ok, so we've learned how to remove elements from the beginning and end of arrays using pop() and shift(), but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where splice() comes in. splice() allows us to do just that: remove any numnber of consecutive",
-        "elements from anywhere on an array.",
-        "splice() can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of splice() are integers which represent indexes, or postions, of the array that splice() is being called upon. And remember, arrays are zero-indexed, so to indicate the first element of an array, we would use 0. splice()'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:",
-        "<code>let array = ['today', 'was', 'not', 'so', 'great'];</code>",
-        "<code>array.splice(2, 2); </code>",
-        "<code>// indicates that splice() should remove 2 elements beginning with the 3rd element</code>",
-        "<code>// array now equals ['today', 'was', 'great']</code>",
-        "splice() not only modifies the array it is being called on, but it also returns a new array containing the value of the removed elements. For example:",
-        "<code>let array = ['today', 'was', 'not', 'so', 'great'];</code>",
-        "<code>let newArray = array.splice(3, 2); </code>",
-        "<code>// newArray equals ['so', 'great']</code>",
-        "Instructions",
-        "We've defined a function, sumOfTen, which takes an array as an argument and returns the sum of that array's elements. Modify the function, using splice(), so that it returns a value of 10."
+        "Ok, so we've learned how to remove elements from the beginning and end of arrays using <code>pop()</code> and <code>shift()</code>, but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where <code>splice()</code> comes in. <code>splice()</code> allows us to do just that: <strong>remove any number of consecutive elements</strong> from anywhere on an array.",
+        "<code>splice()</code> can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of <code>splice()</code> are integers which represent indexes, or postions, of the array that <code>splice()</code> is being called upon. And remember, arrays are <em>zero-indexed</em>, so to indicate the first element of an array, we would use <code>0</code>. <code>splice()</code>'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:",
+        "<blockquote>let array = ['today', 'was', 'not', 'so', 'great'];<br><br>array.splice(2, 2);<br>// remove 2 elements beginning with the 3rd element<br>// array now equals ['today', 'was', 'great']</blockquote>",
+        "<code>splice()</code> not only modifies the array it's being called on, but it also returns a new array containing the value of the removed elements:",
+        "<blockquote>let array = ['I', 'am', 'feeling', 'really', 'happy'];<br><br>let newArray = array.splice(3, 2);<br>// newArray equals ['really', 'happy']</blockquote>",
+        "<hr>",
+        "We've defined a function, <code>sumOfTen</code>, which takes an array as an argument and returns the sum of that array's elements. Modify the function, using <code>splice()</code>, so that it returns a value of <code>10</code>."
       ],
       "challengeSeed": [
         "function sumOfTen(arr) {",
-        "    // change code below this line",
-        "    // change code above this line",
-        "    return arr.reduce((a, b) => a + b);",
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "  return arr.reduce((a, b) => a + b);",
         "}",
+        "",
         "// do not change code below this line",
-        "sumOfTen([2, 5, 1, 5, 2, 1]);"
+        "console.log(sumOfTen([2, 5, 1, 5, 2, 1]));"
       ],
       "tests": [
-        "assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, \"<code>sumOfTen</code> should return 10.\");",
-        "assert.notStrictEqual(sumOfTen.toString().search(/\\.splice\\(/), -1, \"The <code>sumOfTen</code> function should utilize the <code>splice()</code> method.\")"
+        "assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, 'message: <code>sumOfTen</code> should return 10');",
+        "assert.notStrictEqual(sumOfTen.toString().search(/\\.splice\\(/), -1, 'message: The <code>sumOfTen</code> function should utilize the <code>splice()</code> method');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -116,32 +167,26 @@
       "id": "587d78b3367417b2b2512b11",
       "title": "Add items using splice()",
       "description": [
-        "Remember in the last challenge we mentioned that splice() can take up to three parameters? Well, we can go one step further with splice() — in addition to removing elements, we can use that third parameter, which represents one or more elements, to add them as well. This can be incredibly useful for quickly switching out an element, or a set of elements, for another. For instance, let's say you're storing a color scheme for a set of DOM elements in an array, and want to dynamically change a color based on some action:",
-        "<code>function colorChange(arr, index, newColor) {</code>",
-        "<code>  arr.splice(index, 1, newColor);</code>",
-        "<code>  return arr;</code>",
-        "<code>} </code>",
-        "<code>let colorScheme = ['#878787', '#a08794', '#bb7e8c', '#c9b6be', '#d1becf'];</code>",
-        "<code>colorScheme = colorChange(colorScheme, 2, \"#332327\");</code>",
-        "<code>// we have removed '#bb7e8c' and added '#332327' in its place</code>",
-        "<code>// colorScheme now equals ['#878787', '#a08794', '#332327', '#c9b6be', '#d1becf']</code>",
-        "This function takes an array of hex values, an index at which to remove an element, and the new color to replace the removed element with. The return value is an array containing a newly modified color scheme! While this example is a bit oversimplified, we can see the value that utilizing splice() to its maximum potential can have.",
-        "Instructions",
-        "We have defined a function, htmlColorNames, which takes an array of html colors as an argument. Modify the function using splice() to remove the first two elements of the array and add 'DarkSalmon' and 'BlanchedAlmond' in their respective places."
+        "Remember in the last challenge we mentioned that <code>splice()</code> can take up to three parameters? Well, we can go one step further with <code>splice()</code> &mdash; in addition to removing elements, we can use that third parameter, which represents one or more elements, to <em>add</em> them as well. This can be incredibly useful for quickly switching out an element, or a set of elements, for another. For instance, let's say you're storing a color scheme for a set of DOM elements in an array, and want to dynamically change a color based on some action:",
+        "<blockquote>function colorChange(arr, index, newColor) {<br>&nbsp;&nbsp;arr.splice(index, 1, newColor);<br>&nbsp;&nbsp;return arr;<br>}<br><br>let colorScheme = ['#878787', '#a08794', '#bb7e8c', '#c9b6be', '#d1becf'];<br><br>colorScheme = colorChange(colorScheme, 2, '#332327');<br>// we have removed '#bb7e8c' and added '#332327' in its place<br>// colorScheme now equals ['#878787', '#a08794', '#332327', '#c9b6be', '#d1becf']</blockquote>",
+        "This function takes an array of hex values, an index at which to remove an element, and the new color to replace the removed element with. The return value is an array containing a newly modified color scheme! While this example is a bit oversimplified, we can see the value that utilizing <code>splice()</code> to its maximum potential can have.",
+        "<hr>",
+        "We have defined a function, <code>htmlColorNames</code>, which takes an array of html colors as an argument. Modify the function using <code>splice()</code> to remove the first two elements of the array and add <code>'DarkSalmon'</code> and <code>'BlanchedAlmond'</code> in their respective places."
       ],
       "challengeSeed": [
         "function htmlColorNames(arr) {",
-        "    // change code below this line",
-        "    ",
-        "    // change code above this line",
-        "    return arr;",
+        "  // change code below this line",
+        "  ",
+        "  // change code above this line",
+        "  return arr;",
         "} ",
+        " ",
         "// do not change code below this line",
-        "htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']);"
+        "console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));"
       ],
       "tests": [
-        "assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick'], \"<code>htmlColorNames</code> should return ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']\");",
-        "assert.notStrictEqual(htmlColorNames.toString().search(/\\.splice\\(/), -1, \"The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method.\")"
+        "assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick'], 'message: <code>htmlColorNames</code> should return <code>[\"DarkSalmon\", \"BlanchedAlmond\", \"LavenderBlush\", \"PaleTurqoise\", \"FireBrick\"]</code>');",
+        "assert.notStrictEqual(htmlColorNames.toString().search(/\\.splice\\(/), -1, 'message: The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -152,27 +197,25 @@
       "id": "587d7b7a367417b2b2512b12",
       "title": "Copy an array with slice()",
       "description": [
-        "The next method we will cover is slice(). slice(), rather than modifying an array, copies, or extracts, a given mumber of elements to a new array, leaving the array it is called upon untouched. slice() takes only 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:",
-        "<code>let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];</code>",
-        "<code>let todaysWeather = weatherConditions.slice(1, 3);</code>",
-        "<code>// todaysWeather equals ['snow', 'sleet'];</code>",
-        "<code>// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']</code>",
+        "The next method we will cover is <code>slice()</code>. <code>slice()</code>, rather than modifying an array, copies, or <em>extracts</em>, a given mumber of elements to a new array, leaving the array it is called upon untouched. <code>slice()</code> takes only 2 parameters &mdash; the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:",
+        "<blockquote>let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];<br><br>let todaysWeather = weatherConditions.slice(1, 3);<br>// todaysWeather equals ['snow', 'sleet'];<br>// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']<br></blockquote>",
         "In effect, we have created a new array by extracting elements from an existing array.",
-        "Instructions",
-        "Instructions: We have defined a function, forecast, that takes an array as an argument. Modify the function using slice() to extract information from the argument array and return a new array that contains the elements 'warm' and 'sunny'."
+        "<hr>",
+        "We have defined a function, <code>forecast</code>, that takes an array as an argument. Modify the function using <code>slice()</code> to extract information from the argument array and return a new array that contains the elements <code>'warm'</code> and <code>'sunny'</code>."
       ],
       "challengeSeed": [
         "function forecast(arr) {",
-        "    // change code below this line",
+        "  // change code below this line",
         "  ",
-        "    return arr;",
+        "  return arr;",
         "}",
+        "",
         "// do not change code below this line",
-        "forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']);"
+        "console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));"
       ],
       "tests": [
-        "assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny'], \"<code>forecast</code> should return <code>['warm', 'sunny'].\");",
-        "assert.notStrictEqual(forecast.toString().search(/\\.slice\\(/), -1, \"The <code>forecast</code> function should utilize the <code>slice()</code> method.\");"
+        "assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny'], 'message: <code>forecast</code> should return <code>[\"warm\", \"sunny\"]');",
+        "assert.notStrictEqual(forecast.toString().search(/\\.slice\\(/), -1, 'message: The <code>forecast</code> function should utilize the <code>slice()</code> method');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -183,33 +226,62 @@
       "id": "587d7b7b367417b2b2512b13",
       "title": "Copy an array with spread syntax",
       "description": [
-        "While slice() allows us to be selective about what elements of an array to copy, ammong several other useful tasks, ES6's new spread syntax allows us to easily copy all of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: ...",
-        "In practice, we can use the spread syntax to copy an array like so:",
-        "<code>let thisArray = [true, true, undefined, false, null];</code>",
-        "<code>let thatArray = [...thisArray];</code>",
-        "<code>// thatArray equals [true, true, undefined, false, null]</code>",
-        "<code>// thisArray remains unchanged, and is identical to thatArray</code>",
-        "Instructions",
-        "We have defined a function, copyMachine which takes arr (an array) and num (a number) as arguments. The function is supposed to return a new array made up of num copies of arr. We have done most of the work for you, but it doesn't work quite right yet. Modidy the function using the spead syntax so that it works correctly (hint: another method we have already covered might come in handy here!)."
+        "While <code>slice()</code> allows us to be selective about what elements of an array to copy, ammong several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy <em>all</em> of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: <code>...</code>",
+        "In practice, we can use the spread operator to copy an array like so:",
+        "<blockquote>let thisArray = [true, true, undefined, false, null];<br>let thatArray = [...thisArray];<br>// thatArray equals [true, true, undefined, false, null]<br>// thisArray remains unchanged, and is identical to thatArray</blockquote>",
+        "<hr>",
+        "We have defined a function, <code>copyMachine</code> which takes <code>arr</code> (an array) and <code>num</code> (a number) as arguments. The function is supposed to return a new array made up of <code>num</code> copies of <code>arr</code>. We have done most of the work for you, but it doesn't work quite right yet. Modidy the function using spread syntax so that it works correctly (hint: another method we have already covered might come in handy here!)."
       ],
       "challengeSeed": [
         "function copyMachine(arr, num) {",
-        "    let newArr = [];",
-        "    while (num >= 1) {",
-        "  // change code below this line",
-        "  // change code above this line",
-        "  num--;",
-        "    }",
-        "    return newArr;",
+        "  let newArr = [];",
+        "  while (num >= 1) {",
+        "    // change code below this line",
+        "",
+        "    // change code above this line",
+        "    num--;",
+        "  }",
+        "  return newArr;",
         "}",
-        "copyMachine([true, false, true], 2);"
+        "",
+        "// change code here to test different cases:",
+        "console.log(copyMachine([true, false, true], 2));"
       ],
       "tests": [
-        "assert.deepEqual(copyMachine([true, false, true], 2), [[true, false, true], [true, false, true]], \"<code>copyMachine([true, false, true], 2)</code> should return <code>[[true, false, true], [true, false, true]]</code>.\")",
-        "assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]], \"<code>copyMachine([1, 2, 3], 5)</code> should return <code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>.\");",
-        "assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]], \"<code>copyMachine([true, true, null], 1)</code> should return <code>[[true, true, null]]</code>.\");",
-        "assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']], \"<code>copyMachine(['it works'], 3)</code> should return <code>[['it works'], ['it works'], ['it works']]</code>.\");",
-        "assert.notStrictEqual(copyMachine.toString().search(/\\.\\.\\./), -1, \"The <code>copyMachine</code> function should utilize the <code>...</code> syntax.\");"
+        "assert.deepEqual(copyMachine([true, false, true], 2), [[true, false, true], [true, false, true]], 'message: <code>copyMachine([true, false, true], 2)</code> should return <code>[[true, false, true], [true, false, true]]</code>');",
+        "assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]], 'message: <code>copyMachine([1, 2, 3], 5)</code> should return <code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>');",
+        "assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]], 'message: <code>copyMachine([true, true, null], 1)</code> should return <code>[[true, true, null]]</code>');",
+        "assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']], 'message: <code>copyMachine([\"it works\"], 3)</code> should return <code>[[\"it works\"], [\"it works\"], [\"it works\"]]</code>');",
+        "assert.notStrictEqual(copyMachine.toString().search(/[...]/), -1, 'message: The <code>copyMachine</code> function should utilize the <code>...</code> operator');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
+      "id": "587d7b7b367417b2b2512b17",
+      "title": "Combine arrays with spread syntax",
+      "description": [
+        "Another huge advantage of the <dfn>spread</dfn> operator, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:",
+        "<blockquote>let thisArray = ['sage', 'rosemary', 'parsely', 'thyme'];<br><br>let thatArray = ['basil', 'cilantro', ...thisArray, 'corriander'];<br>// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsely', 'thyme', 'corriander']</blockquote>",
+        "Using spread syntax, we have just achieved an operation that would have been more more complex and more verbose had we used traditional methods.",
+        "<hr>",
+        "We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>, modify the function using the <dfn>spread</dfn> operator so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>."
+      ],
+      "challengeSeed": [
+        "function spreadOut() {",
+        "  let fragment = ['to', 'code'];",
+        "  let sentence; // change this line",
+        "  return sentence;",
+        "}",
+        "",
+        "// do not change code below this line",
+        "console.log(spreadOut());"
+      ],
+      "tests": [
+        "assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun'], 'message: <code>spreadOut</code> should return <code>[\"learning\", \"to\", \"code\", \"is\", \"fun\"]</code>');",
+        "assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1, 'message: The <code>spreadOut</code> function should utilize spread syntax');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -220,30 +292,28 @@
       "id": "587d7b7b367417b2b2512b14",
       "title": "Check for the presence of an element with indexOf()",
       "description": [
-        "Since arrays can be changed, or mutated, at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, indexOf(), that allows us to quickly and easily check for the presence of an element on an array. indexOf() takes an element as a parameter, and when called, it returns the position, or index, of that element, or -1 if the element does not exist on the array.",
+        "Since arrays can be changed, or <em>mutated</em>, at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, <code>indexOf()</code>, that allows us to quickly and easily check for the presence of an element on an array. <code>indexOf()</code> takes an element as a parameter, and when called, it returns the position, or index, of that element, or <code>-1</code> if the element does not exist on the array.",
         "For example:",
-        "<code>let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];</code>",
-        "<code>fruits.indexOf('dates') // returns -1</code>",
-        "<code>fruits.indexOf('oranges') // returns 2</code>",
-        "<code>fruits.indexOf('pears') // returns 1, the first index at which the element exists</code>",
-        "Instructions",
-        "indexOf() can be incredibly useful for quickly checking for the presence of an element on an array. We have defined a function, quickCheck, that takes an array and an element as arguments. Modify the function using indexOf() so that it returns true if the passed element exists on the array, and false if it does not."
+        "<blockquote>let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];<br><br>fruits.indexOf('dates') // returns -1<br>fruits.indexOf('oranges') // returns 2<br>fruits.indexOf('pears') // returns 1, the first index at which the element exists</blockquote>",
+        "<hr>",
+        "<code>indexOf()</code> can be incredibly useful for quickly checking for the presence of an element on an array. We have defined a function, <code>quickCheck</code>, that takes an array and an element as arguments. Modify the function using <code>indexOf()</code> so that it returns <code>true</code> if the passed element exists on the array, and <code>false</code> if it does not."
       ],
       "challengeSeed": [
         "function quickCheck(arr, elem) {",
-        "    if (arr.indexOf(elem) !== -1) {",
-        "  return true",
-        "    } else {",
-        "  return false;",
-        "    }",
-        "}"
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "}",
+        "",
+        "// change code here to test different cases:",
+        "console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));"
       ],
       "tests": [
-        "assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'), false, \"<code>quickCheck(['squash', 'onions', 'shallots'], 'mushrooms')</code> should return <code>false</code>.\");",
-        "assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'onions'), true, \"<code>quickCheck(['squash', 'onions', 'shallots'], 'onions')</code> should return <code>true</code>.\");",
-        "assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true, \"<code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>.\");",
-        "assert.strictEqual(quickCheck([true, false, false], undefined), false, \"<code>quickCheck([true, false, false], undefined)</code> should return <code>false</code>.\");",
-        "assert.notStrictEqual(quickCheck.toString().search(/\\.indexOf\\(/), -1, \"The <code>quickCheck</code> function should utilize the <code>indexOf() method.</code>\");"
+        "assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'), false, 'message: <code>quickCheck([\"squash\", \"onions\", \"shallots\"], \"mushrooms\")</code> should return <code>false</code>');",
+        "assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'onions'), true, 'message: <code>quickCheck([\"squash\", \"onions\", \"shallots\"], \"onions\")</code> should return <code>true</code>');",
+        "assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true, 'message: <code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>');",
+        "assert.strictEqual(quickCheck([true, false, false], undefined), false, 'message: <code>quickCheck([true, false, false], undefined)</code> should return <code>false</code>');",
+        "assert.notStrictEqual(quickCheck.toString().search(/\\.indexOf\\(/), -1, 'message: The <code>quickCheck</code> function should utilize the <code>indexOf()</code> method');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -252,40 +322,33 @@
     },
     {
       "id": "587d7b7b367417b2b2512b15",
-      "title": "Iterate through all the items in an array",
+      "title": "Iterate through all an array's items using for loops",
       "description": [
-        "Sometimes when working with arrays, it is very handy to be able to iterate through each item to find one or more elements that we might need, or to manipulate an array based on which data items meet a certain set of requirements. JavaScript offers several built in methods that each iterate over arrays in slightly different ways to achieve different results (such as every(), forEach(), map(), etc.), however the technique which is most flexible and offers us the greatest amount of control is a simple for loop.",
-        "For example:",
-        "<code>function greaterThanTen(arr) {</code>",
-        "<code>  let newArr = [];</code>",
-        "<code>  for (let i = 0; i < arr.length; i++) {</code>",
-        "<code>    if (arr[i] > 10) {</code>",
-        "<code>      newArr.push(arr[i]);</code>",
-        "<code>    }</code>",
-        "<code>  }</code>",
-        "<code>  return newArr</code>",
-        "<code>}</code>",
-        "<code>greaterThanTen([2, 12, 8, 14, 80, 0, 1]);</code>",
-        "<code>// returns [12, 14, 80]</code>",
-        "Using a for loop, this function iterates through and accesses each element of the array, and subjects it to a simple test that we have created. In this way, we have easily and programmatically determined which data items are greater than 10, and returned a new array containing those items.",
-        "Instructions",
-        "We have defined a function, filteredArray, which takes arr, a nested array, and elem as arguments, and returns a new array. elem represents an element that may or may not be present on one or more of the arrays nested within arr. Modify the function, using a for loop, to return a filtered version of the passed array such that any array nested within arr containing elem has been removed."
+        "Sometimes when working with arrays, it is very handy to be able to iterate through each item to find one or more elements that we might need, or to manipulate an array based on which data items meet a certain set of criteria. JavaScript offers several built in methods that each iterate over arrays in slightly different ways to achieve different results (such as <code>every()</code>, <code>forEach()</code>, <code>map()</code>, etc.), however the technique which is most flexible and offers us the greatest amount of control is a simple <code>for</code> loop.",
+        "Consider the following:",
+        "<blockquote>function greaterThanTen(arr) {<br>&nbsp;&nbsp;let newArr = [];<br>&nbsp;&nbsp;for (let i = 0; i < arr.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;if (arr[i] > 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newArr.push(arr[i]);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return newArr;<br>}<br><br>greaterThanTen([2, 12, 8, 14, 80, 0, 1]);<br>// returns [12, 14, 80]</blockquote>",
+        "Using a <code>for</code> loop, this function iterates through and accesses each element of the array, and subjects it to a simple test that we have created. In this way, we have easily and programmatically determined which data items are greater than <code>10</code>, and returned a new array containing those items.",
+        "<hr>",
+        "We have defined a function, <code>filteredArray</code>, which takes <code>arr</code>, a nested array, and <code>elem</code> as arguments, and returns a new array. <code>elem</code> represents an element that may or may not be present on one or more of the arrays nested within <code>arr</code>. Modify the function, using a <code>for</code> loop, to return a filtered version of the passed array such that any array nested within <code>arr</code> containing <code>elem</code> has been removed."
       ],
       "challengeSeed": [
         "function filteredArray(arr, num) {",
-        "    newArr = [];",
-        "    // change code below this line",
-        "    // change code above this line",
-        "    return newArr;",
+        "  let newArr = [];",
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "  return newArr;",
         "}",
-        "filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3);"
+        "",
+        "// change code here to test different cases:",
+        "console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));"
       ],
       "tests": [
-        "assert.deepEqual(filteredArray([ [10, 8, 3], [14, 6, 23], [3, 18, 6] ], 18), [[10, 8, 3], [14, 6, 23]], \"<code>filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)</code> should return <code>[[10, 8, 3], [14, 6, 23]]</code>\");",
-        "assert.deepEqual(filteredArray([ ['trumpets', 2], ['flutes', 4], ['saxaphones', 2] ], 2), [['flutes', 4]], \"<code>filteredArray([['trumpets', 2], ['flutes', 4], ['saxaphones'], 2], 2)</code> should return <code>[['flutes', 4]]</code>\");",
-        "assert.deepEqual(filteredArray([['amy', 'beth', 'sam'], ['dave', 'sean', 'peter']], 'peter'), [['amy', 'beth', 'sam']], \"<code>filteredArray([['amy', 'beth', 'sam'], ['dave', 'sean', 'peter']], 'peter')</code> should return [['amy', 'beth', 'sam']].\");",
-        "assert.deepEqual(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3), [], \"<code>filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3)</code> should return <code>[]</code>.\");",
-        "assert.notStrictEqual(filteredArray.toString().search(/for/), -1, \"The <code>filteredArray</code> function should utilize a <code>for</code> loop.\");"
+        "assert.deepEqual(filteredArray([ [10, 8, 3], [14, 6, 23], [3, 18, 6] ], 18), [[10, 8, 3], [14, 6, 23]], 'message: <code>filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)</code> should return <code>[ [10, 8, 3], [14, 6, 23] ]</code>');",
+        "assert.deepEqual(filteredArray([ ['trumpets', 2], ['flutes', 4], ['saxaphones', 2] ], 2), [['flutes', 4]], 'message: <code>filteredArray([ [\"trumpets\", 2], [\"flutes\", 4], [\"saxaphones\"], 2], 2)</code> should return <code>[ [\"flutes\", 4] ]</code>');",
+        "assert.deepEqual(filteredArray([['amy', 'beth', 'sam'], ['dave', 'sean', 'peter']], 'peter'), [['amy', 'beth', 'sam']], 'message: <code>filteredArray([ [\"amy\", \"beth\", \"sam\"], [\"dave\", \"sean\", \"peter\"] ], \"peter\")</code> should return <code>[ [\"amy\", \"beth\", \"sam\"] ]</code>');",
+        "assert.deepEqual(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3), [], 'message: <code>filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3)</code> should return <code>[ ]</code>');",
+        "assert.notStrictEqual(filteredArray.toString().search(/for/), -1, 'message: The <code>filteredArray</code> function should utilize a <code>for</code> loop');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -294,75 +357,36 @@
     },
     {
       "id": "587d7b7b367417b2b2512b16",
-      "title": "Create complex nested arrays",
+      "title": "Create complex multi-dimensional arrays",
       "description": [
-        "One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become very complex data structure, Consider the following example:",
-        "<code>let nestedArray = [ // top, or first level - the outer most array</code>",
-        "<code>  ['deep'], // an array within an array, 2 levels of depth</code>",
-        "<code>  [ </code>",
-        "<code>    ['deeper'], ['deeper'] // 2 arrays nested 3 levels deep</code>",
-        "<code>  ], </code>",
-        "<code>  [ </code>",
-        "<code>    [ </code>",
-        "<code>      ['deepest'], ['deepest'] // 2 arrays nested 4 levels deep </code>",
-        "<code>    ], </code>",
-        "<code>    [ </code>",
-        "<code>      [</code>",
-        "<code>        ['deepest-est?'] // an array nested 5 levels deep</code>",
-        "<code>      ] </code>",
-        "<code>    ]</code>",
-        "<code>  ], </code>",
-        "<code>];</code>",
+        "Awesome! You have just learned a ton about arrays! This has been a fairly high level overview, and there is plenty more to learn about working with arrays, much of which you will see in later sections. But before moving on to looking at <dfn>Objects</dfn>, lets take one more look, and see how arrays can become a bit more complex than what we have seen in previous challenges.",
+        "One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become very complex data structure, known as a <dfn>multi-dimensional</dfn>, or nested array. Consider the following example:",
+        "<blockquote>let nestedArray = [ // top, or first level - the outer most array<br>&nbsp;&nbsp;['deep'], // an array within an array, 2 levels of depth<br>&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;['deeper'], ['deeper'] // 2 arrays nested 3 levels deep<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['deepest'], ['deepest'] // 2 arrays nested 4 levels deep<br>&nbsp;&nbsp;&nbsp;&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['deepest-est?'] // an array nested 5 levels deep<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;]<br>];</blockquote>",
         "While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data.",
         "However, we can still very easily access the deepest levels of an array this complex with bracket notation:",
-        "<code>console.log(nestedArray[2][1][0][0][0]);</code>",
-        "<code>// logs 'deepest-est?'</code>",
+        "<blockquote>console.log(nestedArray[2][1][0][0][0]);<br>// logs: deepest-est?</blockquote>",
         "And now that we know where that piece of data is, we can reset it if we need to:",
-        "<code>nestedArray[2][1][0][0][0] = 'deeper still';</code>",
-        "<code>console.log(nestedArray[2][1][0][0][0]);</code>",
-        "<code>// now logs 'deeper still'</code>",
-        "Instructions",
-        "We have defined a variable, myNestedArray, set equal to an array. Modify myNestedArray, using any combination of strings, numbers, and booleans for data elements, so that it has exactly three levels of depth (remember, the outer-most array is level 1)."
+        "<blockquote>nestedArray[2][1][0][0][0] = 'deeper still';<br><br>console.log(nestedArray[2][1][0][0][0]);<br>// now logs: deeper still</blockquote>",
+        "<hr>",
+        "We have defined a variable, <code>myNestedArray</code>, set equal to an array. Modify <code>myNestedArray</code>, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string <code>'deep'</code>, on the fourth level, include the string <code>'deeper'</code>, and on the fifth level, include the string <code>'deepest'</code>."
       ],
       "challengeSeed": [
         "let myNestedArray = [",
-        "  ",
-        "  // change code here",
-        "  ",
+        "  // change code below this line",
+        "  ['unshift', false, 1, 2, 3, 'complex', 'nested'],",
+        "  ['loop', 'shift', 6, 7, 1000, 'method'],",
+        "  ['concat', false, true, 'spread', 'array'],",
+        "  ['mutate', 1327.98, 'splice', 'slice', 'push'],",
+        "  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']",
+        "  // change code above this line",
         "];"
       ],
       "tests": [
-        "assert.strictEqual((function(arr) { let flattened = (function flatten(arr) { const flat = [].concat(...arr); return flat.some (Array.isArray) ? flatten(flat) : flat; })(arr); for (let i = 0; i < flattened.length; i++) { if ( typeof flattened[i] !== 'number' && typeof flattened[i] !== 'string' && typeof flattened[i] !== 'boolean') { return false } } return true })(myNestedArray), true, \"<code>myNestedArray</code> should contain only numbers, booleans, and strings as data elements.\");",
-        "assert((function(arr) { for (let i = 0; i < arr.length; i++) { if (Array.isArray(arr[i])) {for (let j = 0; j < arr[i].length; j++) { if (Array.isArray(arr[i][j])) { return true } } } } })(myNestedArray) === true && (function(arr) { for (let i = 0; i < arr.length; i++) { for (let j = 0; j < arr[i].length; j++) { for (let k = 0; k < arr[i][j].length; k++) { if ( Array.isArray(arr[i][j][k]) ) { return false } } } } })(myNestedArray) === undefined, \"<code>myNestedArray</code> should have exactly 3 levels of depth.\");"
-      ],
-      "type": "waypoint",
-      "solutions": [],
-      "challengeType": 1,
-      "translations": {}
-    },
-    {
-      "id": "587d7b7b367417b2b2512b17",
-      "title": "Combining arrays with spread syntax",
-      "description": [
-        "Another huge advantage of the spread syntax, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:",
-        "<code>let thisArray = ['sage', 'rosemary', 'parsely', 'thyme'];</code>",
-        "<code>let thatArray = ['basil', 'cilantro', ...thisArray, 'corriander'];</code>",
-        "<code>// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsely', 'thyme', 'corriander']</code>",
-        "Using spread syntax, we have just achieved an operation that would have been more more complex and more verbose had we used traditional methods.",
-        "Instructions",
-        "We have defined a function spreadOut that returns the variable sentence, modify the function using the spread syntax so that it returns the array ['learning', 'to', 'code', 'is', 'fun']."
-      ],
-      "challengeSeed": [
-        "function spreadOut() {",
-        "    let fragment = ['to', 'code'];",
-        "    let sentence = 'change code here'",
-        "    return sentence;",
-        "}",
-        "spreadOut();"
-      ],
-      "tests": [
-        "assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun'], \"<code>spreadOut</code> should return <code>['learning', 'to', 'code', 'is', 'fun']</code>.\");",
-        "assert.notStrictEqual(spreadOut.toString().search(/\\.\\.\\./), -1, \"The <code>spreadOut</code> function should utilize the spread syntax.\");"
+        "assert.strictEqual((function(arr) { let flattened = (function flatten(arr) { const flat = [].concat(...arr); return flat.some (Array.isArray) ? flatten(flat) : flat; })(arr); for (let i = 0; i < flattened.length; i++) { if ( typeof flattened[i] !== 'number' && typeof flattened[i] !== 'string' && typeof flattened[i] !== 'boolean') { return false } } return true })(myNestedArray), true, 'message: <code>myNestedArray</code> should contain only numbers, booleans, and strings as data elements');",
+        "assert.strictEqual((function(arr) {let depth = 0;function arrayDepth(array, i, d) { if (Array.isArray(array[i])) {  arrayDepth(array[i], 0, d + 1);} else {  depth = (d > depth) ? d : depth;}if (i < array.length) {  arrayDepth(array, i + 1, d);}  }arrayDepth(arr, 0, 0);return depth;})(myNestedArray), 4, 'message: <code>myNestedArray</code> should have exactly 5 levels of depth');",
+        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deep').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deep')[0] === 2, 'message: <code>myNestedArray</code> should contain exactly one occurence of the string <code>\"deep\"</code> on an array nested 3 levels deep');",
+        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deeper').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deeper')[0] === 3, 'message: <code>myNestedArray</code> should contain exactly one occurence of the string <code>\"deeper\"</code> on an array nested 4 levels deep');",
+        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deepest').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deepest')[0] === 4, 'message: <code>myNestedArray</code> should contain exactly one occurence of the string <code>\"deepest\"</code> on an array nested 5 levels deep');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -382,7 +406,8 @@
         "<code>  completedProjects: 15</code>",
         "<code>};</code>",
         "We've just defined an object called FCC_User with four properties each of which map to a specific value. If you wanted to know the number of followers FCC_User has, you could access that property by writing FCC_User.followers — this is called dot notation. You could also access the property with brackets, like so: FCC_User['followers']. Notice with the bracket notation we enclosed followers in quotes. This is because the brackets actually allow us to pass a variable in to be evaluated as a property name. Keep this in mind for later.",
-        "Instructions: We've created a foods object here with three entries. Add three more entries: bananas with a value of 13, grapes with a value of 35, and strawberries with a value of 27."
+        "<hr>",
+        "We've created a foods object here with three entries. Add three more entries: bananas with a value of 13, grapes with a value of 35, and strawberries with a value of 27."
       ],
       "challengeSeed": [
         "let foods = {",
@@ -410,7 +435,8 @@
         "Objects, and other similar key-value pair data structures, offer some very useful benefits. One clear benefit is that they allow us to structure our data in an intuitive way. They are also very flexible. For instance, you can have properties nested to an arbitrary depth. Values can also be anything, for example a key can store an array, or even another object. Objects are also the foundation for JavaScript Object Notation, JSON, which is a widely used method of sending data across the web.",
         "Another powerful advantage of key-value pair data structures is constant lookup time. What we mean by this is when you request the value of a specific property you will get the value back in the same amount of time (theoretically) regardless of the number of entries in the object. If you had an object with 5 entries or one that held a collection of 1,000,000 entries you could still retrieve property values or check if a key exists in the same amount of time.",
         "The reason for this fast lookup time is that internally the object is storing properties using some type of hashing mechanism which allows it to know exactly where it has stored different property values. If you want to learn more about this please take a look at the optional Advanced Data Structures challenges. All you should remember for now is that performant access to flexibly structured data make key-value stores very attractive data structures useful in a wide variety of settings.",
-        "Instructions: Here we've written an object nestedObject which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the online key to 45."
+        "<hr>",
+        "Here we've written an object nestedObject which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the online key to 45."
       ],
       "challengeSeed": [
         "let nestedObject = {",
@@ -441,7 +467,8 @@
         "<code>let selectedFood = getCurrentFood(scannedItem);</code>",
         "<code>let inventory = foods[selectedFood];</code>",
         "This code will evaluate the value stored in the selectedFood variable and return the value of that key in the foods object, or undefined if it is not present. Bracket notation is very useful because sometime object properties are not known before runtime or we need to access them in a more dynamic way.",
-        "Instructions: In the example code we've defined a function checkInventory which receives a scanned item as an argument. Return the current value of the scannedItem key in the foods object. You can assume that only valid keys will be provided as an argument to checkInventory."
+        "<hr>",
+        "In the example code we've defined a function checkInventory which receives a scanned item as an argument. Return the current value of the scannedItem key in the foods object. You can assume that only valid keys will be provided as an argument to checkInventory."
       ],
       "challengeSeed": [
         "let foods = {",
@@ -474,7 +501,8 @@
         "Now you know what objects are and their basic features and advantages. In short, they are key-value stores which provide a flexible, intuitive way to structure data and they provide very fast lookup time. For the rest of these challenges, we will describe several common operations you can perform on objects so you can become comfortable applying these useful data structures in your programs.",
         "Previously, we added and modified key-value pairs to objects. Here we will see how we can remove a key-value pair from an object. If we wanted to remove the apples key from our foods object from before, we could remove it by using the delete keyword like this:",
         "<code>delete foods.apples;</code>",
-        "Instructions: Use the delete keyword to remove the oranges, plums, and strawberries keys from the foods object."
+        "<hr>",
+        "Use the delete keyword to remove the oranges, plums, and strawberries keys from the foods object."
       ],
       "challengeSeed": [
         "let foods = {",
@@ -503,7 +531,8 @@
         "<code>users.hasOwnProperty('Alan');</code>",
         "<code>'Alan' in users;</code>",
         "<code>// both return true</code>",
-        "Instructions: We've created a users object here with some users in it and a function isEveryoneHere which we pass the users object to as an argument. Finish writing this function so that it returns true only if the users object contains all four names, Alan, Jeff, Sarah, and Ryan, as keys, and false otherwise."
+        "<hr>",
+        "We've created a users object here with some users in it and a function isEveryoneHere which we pass the users object to as an argument. Finish writing this function so that it returns true only if the users object contains all four names, Alan, Jeff, Sarah, and Ryan, as keys, and false otherwise."
       ],
       "challengeSeed": [
         "let users = {",
@@ -548,7 +577,8 @@
         "<code>  console.log(user);</code>",
         "<code>};</code>",
         "In this statement, we define a variable user. This variable will be set to the key in each iteration as the statement loops through the keys in the object. Running this code would print the name of each user to the console. Note that objects do not maintain an ordering to stored keys like arrays do.",
-        "Instructions: We've defined a function countOnline that should return the number of users with the online property set to true. Use a for...in statement within this function to loop through the users in the users object and return the number of users whose online property is set to true."
+        "<hr>",
+        "We've defined a function countOnline that should return the number of users with the online property set to true. Use a for...in statement within this function to loop through the users in the users object and return the number of users whose online property is set to true."
       ],
       "challengeSeed": [
         "let users = {",
@@ -588,7 +618,8 @@
       "title": "Generate an Array of All Object Keys with Object.keys()",
       "description": [
         "We can also generate an array which contains all the keys stored in an object using the Object.keys() method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.",
-        "Instructions: Finish writing the getArrayOfUsers function so that it returns an array containing all the properties in the object it receives as an argument."
+        "<hr>",
+        "Finish writing the getArrayOfUsers function so that it returns an array containing all the properties in the object it receives as an argument."
       ],
       "challengeSeed": [
         "let users = {",
@@ -628,7 +659,8 @@
       "title": "Modify an Array Stored in an Object",
       "description": [
         "Now you've seen all the basic operations for JavaScript objects. You can add, modify, and remove key-value pairs, check if keys exist, and iterate over all the keys in an object. As you continue learning JavaScript you will see even more versatile applications of objects. Additionally, the optional Advanced Data Structures lessons later in the curriculum also cover the ES6 Map and Set objects, both of which are similar to ordinary objects but provide some additional features. Now that you've learned the basics of arrays and objects, you're fully prepared to begin tackling more complex problems using JavaScript!",
-        "Instructions: Take a look at the object we've provided in the code editor. The user object contains three keys. The data key contains four keys, one of which contains an array of friends. From this, you can see how flexible objects are as data structures. We've started writing a function addFriend. Finish writing it so that it takes a user object and adds the name of the friend argument to the array stored in user.data.friends."
+        "<hr>",
+        "Take a look at the object we've provided in the code editor. The user object contains three keys. The data key contains four keys, one of which contains an array of friends. From this, you can see how flexible objects are as data structures. We've started writing a function addFriend. Finish writing it so that it takes a user object and adds the name of the friend argument to the array stored in user.data.friends."
       ],
       "challengeSeed": [
         "let user = {",
@@ -658,33 +690,6 @@
       "tests": [
         "assert('name' in user && 'age' in user && 'data' in user, 'The user object has name, age, and data keys');",
         "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'The addFriend function accepts a user object and a friend as arguments and adds the friend to the array of friends in the user object.');"
-      ],
-      "type": "waypoint",
-      "solutions": [],
-      "challengeType": 1,
-      "translations": {}
-    },
-    {
-      "id": "587d7b7e367417b2b2512b20",
-      "title": "Use an array to store a collection of data",
-      "description": [
-        "Arrays are JavaScript's most fundamental, and perhaps most common, data structure. An array is simply a collection of data, of any length (zero-indexed), arranged in a comma separated list and enclosed in brackets [ ]. While we often make the distinction in JavaScript between Objects and Arrays, it is important to note that technically, an array is a type of object.",
-        "Arrays can store any type of data supported by JavaScript, and while they are a simple and basic form of data structure, they can also be very complex and powerful - all of which depends on how the programmer utilizes them.",
-        "The below is an example of a valid array, notice it contains booleans, strings, numbers, other arrays (this is called a nested, or multi-dimensional array), and objects, among other valid data types:",
-        "<code>let myArray = [undefined, null, true, false, 'one', 2, \"III\", {'four': 5}, [6, 'seven', 8]];</code>",
-        "JavaScript offers many built in methods which allow us to access, traverse, and mutate arrays as needed, depending on our purpose. In the coming challenges, we will discuss several of the most common and useful methods, and a few other key techniques, that will help us to better understand and utilize arrays as data structures in JavaScript.",
-        "Instructions",
-        "We have defined a variable called yourArray; complete the declaration by defining an array of at least 5 elements in length. Your array should contain at least one string, one number, and one boolean."
-      ],
-      "challengeSeed": [
-        "let yourArray = // change code here;"
-      ],
-      "tests": [
-        "assert.strictEqual(Array.isArray(yourArray), true, 'yourArray is an array.');",
-        "assert(yourArray.length >= 5, 'yourArray is at least 5 elements long.')",
-        "assert(yourArray.filter( el => typeof el === 'boolean').length >= 1, '<code>yourArray</code> contains at least one boolean.');",
-        "assert(yourArray.filter( el => typeof el === 'number').length >= 1, '<code>yourArray</code> contains at least one number.');",
-        "assert(yourArray.filter( el => typeof el === 'string').length >= 1, '<code>yourArray</code> contains at least one string.');"
       ],
       "type": "waypoint",
       "solutions": [],
