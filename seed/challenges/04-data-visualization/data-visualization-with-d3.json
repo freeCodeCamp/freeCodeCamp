@@ -359,7 +359,7 @@
         "<blockquote>selection.style(\"color\", (d) => {<br>  /* Logic that returns the color based on a condition */<br>});</blockquote>",
         "The <code>style()</code> method is not limited to setting the <code>color</code> - it can be used with other CSS properties as well.",
         "<h4>Instructions</h4>",
-        "Add the <code>style()</code> method to the code in the editor to set the <code>color</code> of the <code>h1</code> elements conditionally. Write the callback function so if the data value is less than 20, it returns \"red\", otherwise it returns \"green\".",
+        "Add the <code>style()</code> method to the code in the editor to set the <code>color</code> of the <code>h2</code> elements conditionally. Write the callback function so if the data value is less than 20, it returns \"red\", otherwise it returns \"green\".",
         "<strong>Note</strong><br>You can use if-else logic, or the ternary operator."
       ],
       "challengeSeed": [
