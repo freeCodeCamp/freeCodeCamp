@@ -191,6 +191,7 @@ export class StepChallenge extends PureComponent {
           >
           <Image
             alt={ imgAlt }
+            className='center-block'
             responsive={ true }
             src={ imgUrl }
           />
