@@ -1748,7 +1748,7 @@
         "}",
         "",
         "// Change the words here to test your function",
-        "wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");"
+        "console.log(wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\"));"
       ],
       "tail": [
         "var test1 = wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");",
