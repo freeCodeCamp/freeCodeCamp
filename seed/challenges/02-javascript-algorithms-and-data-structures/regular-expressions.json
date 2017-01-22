@@ -6,33 +6,33 @@
   "challenges": [
     {
       "id": "587d7db3367417b2b2512b8d",
-        "title": "Introduction to the Regular Expression Challenges",
-        "description": [
-          [
-            "https://camo.githubusercontent.com/85ac1a6783961ce77add6b2e8630dbf6521d33b2/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f726567756c61725f65787072657373696f6e732e706e67",
-            "XKCD web comic showing how regular expressions can save the day",
-            "Regular expressions are special strings that represent a search pattern. Also known as \"regex\" or \"regexp\", they help programmers match, search, and replace text. Regular expressions can appear cryptic because a few characters have special meaning. The goal is to combine the symbols and text into a pattern that matches what you want, but only what you want. This section will cover the characters, a few shortcuts, and the common uses for writing regular expressions.",
-            ""
-          ]
-        ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
-        ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
+      "title": "Introduction to the Regular Expression Challenges",
+      "description": [
+        [
+          "https://camo.githubusercontent.com/85ac1a6783961ce77add6b2e8630dbf6521d33b2/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f726567756c61725f65787072657373696f6e732e706e67",
+          "XKCD web comic showing how regular expressions can save the day",
+          "Regular expressions are special strings that represent a search pattern. Also known as \"regex\" or \"regexp\", they help programmers match, search, and replace text. Regular expressions can appear cryptic because a few characters have special meaning. The goal is to combine the symbols and text into a pattern that matches what you want, but only what you want. This section will cover the characters, a few shortcuts, and the common uses for writing regular expressions.",
+          ""
         ]
+      ],
+      "releasedOn": "January 22, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
     },
     {
       "id": "587d7db3367417b2b2512b8e",
@@ -57,6 +57,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -85,6 +86,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -116,6 +118,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -149,6 +152,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -175,6 +179,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -204,6 +209,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -237,6 +243,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -267,6 +274,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -295,6 +303,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -322,6 +331,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -348,6 +358,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -375,6 +386,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -406,6 +418,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -431,6 +444,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -468,6 +482,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -495,6 +510,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -521,6 +537,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -550,6 +567,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -578,6 +596,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -608,6 +627,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -638,6 +658,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -669,6 +690,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -696,6 +718,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -723,6 +746,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -754,6 +778,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -785,6 +810,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -815,6 +841,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -843,6 +870,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -878,6 +906,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -911,6 +940,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -940,6 +970,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -967,6 +998,7 @@
         "You can use .replace() to remove the matched items by replacing them with an empty string."
       ],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     }

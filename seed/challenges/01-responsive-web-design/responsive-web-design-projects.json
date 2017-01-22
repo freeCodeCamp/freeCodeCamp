@@ -200,7 +200,7 @@
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
-"Nk0DzQi"
+        "Nk0DzQi"
       ],
       "tests": [],
       "type": "zipline",
@@ -231,7 +231,7 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "releasedOn": "January 15, 2017",
+      "releasedOn": "January 22, 2017",
       "challengeSeed": [
         "A7Pn5zw"
       ],
@@ -251,7 +251,7 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "releasedOn": "January 15, 2017",
+      "releasedOn": "January 22, 2017",
       "challengeSeed": [
         "ExCJjAT"
       ],
@@ -271,7 +271,7 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "releasedOn": "January 15, 2017",
+      "releasedOn": "January 22, 2017",
       "challengeSeed": [
         "cDIfODs"
       ],
@@ -305,13 +305,11 @@
         },
         "pt-br": {
           "title": "Construa uma Página de Portfólio Pessoal",
-          "description": [
-          ]
+          "description": []
         },
         "ru": {
           "title": "Создайте сайт-портфолио",
-          "description": [
-          ]
+          "description": []
         }
       }
     }
