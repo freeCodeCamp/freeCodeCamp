@@ -20,6 +20,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -56,6 +57,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -88,7 +90,8 @@
         {
           "text": "helmet.frameguard() middleware should be mounted correctly",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'frameguard', 'helmet.frameguard() middleware is not mounted correctly'); }, xhr => { throw new Error(xhr.responseText); })"
-        }, {
+        },
+        {
           "text": "helmet.frameguard() 'action' should be set to 'DENY'",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.property(data.headers, 'x-frame-options'); assert.equal(data.headers['x-frame-options'], 'DENY');}, xhr => { throw new Error(xhr.responseText); })"
         }
@@ -96,6 +99,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -136,6 +140,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -172,6 +177,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -208,6 +214,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -250,6 +257,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -286,6 +294,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -322,6 +331,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -364,6 +374,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -414,6 +425,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {

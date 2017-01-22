@@ -15,10 +15,10 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "January 22, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
       "titleEs": "",
@@ -60,6 +60,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -106,6 +107,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -154,6 +156,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -205,6 +208,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -255,6 +259,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -306,6 +311,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -360,6 +366,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -407,6 +414,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -459,6 +467,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -513,6 +522,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -568,6 +578,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -619,6 +630,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -671,6 +683,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -725,6 +738,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -773,6 +787,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -828,6 +843,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -900,6 +916,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -964,6 +981,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -1021,6 +1039,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -1077,6 +1096,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -1141,6 +1161,7 @@
         "Objects inherit methods from other objects by cloning their prototype. The Object.create method will come in handy, and don't forget to reset the constructor property afterward!"
       ],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -1205,6 +1226,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -1267,6 +1289,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -1315,6 +1338,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -1359,6 +1383,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {
@@ -1413,6 +1438,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {
         "de": {

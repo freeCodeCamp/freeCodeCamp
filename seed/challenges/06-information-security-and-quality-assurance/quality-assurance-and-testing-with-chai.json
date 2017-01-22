@@ -28,6 +28,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -76,6 +77,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -125,6 +127,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -175,6 +178,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -211,7 +215,6 @@
         {
           "text": "Choose the right assertion - equal vs. notEqual",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[0].method, 'equal', 'Numbers are coerced into strings with == '); }, xhr => { throw new Error(xhr.responseText); })"
-
         },
         {
           "text": "Choose the right assertion - equal vs. notEqual",
@@ -229,6 +232,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -282,6 +286,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -327,6 +332,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -379,6 +385,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -431,6 +438,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -479,6 +487,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -521,6 +530,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -563,6 +573,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -611,6 +622,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -656,6 +668,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -701,6 +714,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -750,6 +764,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -807,6 +822,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -860,6 +876,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -905,6 +922,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -950,6 +968,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1011,6 +1030,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1066,6 +1086,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1108,22 +1129,20 @@
         {
           "text": "assert that the text inside the element 'span#name' is 'Cristoforo'",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Cristoforo\\'');}, xhr => { throw new Error(xhr.responseText); })"
-
         },
         {
           "text": "assert that the text inside the element 'span#surname' is 'Colombo'",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Colombo\\'');}, xhr => { throw new Error(xhr.responseText); })"
-
         },
         {
           "text": "assert that the element 'span#dates' exist and its count is 1",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=4').then(data => { assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.responseText); })"
-
         }
       ],
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1164,22 +1183,20 @@
         {
           "text": "assert that the text inside the element 'span#name' is 'Amerigo'",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.equal(data.assertions[1].args[0], '\\'span#name\\''); assert.equal(data.assertions[1].args[1], '\\'Amerigo\\'');}, xhr => { throw new Error(xhr.responseText); })"
-
         },
         {
           "text": "assert that the text inside the element 'span#surname' is 'Vespucci'",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.equal(data.assertions[2].args[0], '\\'span#surname\\''); assert.equal(data.assertions[2].args[1], '\\'Vespucci\\'');}, xhr => { throw new Error(xhr.responseText); })"
-
         },
         {
           "text": "assert that the element 'span#dates' exist and its count is 1",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[3].method, 'browser.element'); assert.equal(data.assertions[3].args[0], '\\'span#dates\\''); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.responseText); })"
-
         }
       ],
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {

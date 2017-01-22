@@ -21,10 +21,10 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "January 22, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
       "titleEs": "",

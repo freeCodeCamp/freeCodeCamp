@@ -5613,6 +5613,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
+      "releasedOn": "January 22, 2017",
       "translations": {}
     },
     {
@@ -5646,6 +5647,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
+      "releasedOn": "January 22, 2017",
       "translations": {}
     },
     {
@@ -5678,6 +5680,7 @@
         "assert(checkEqual(1, -1) === false, 'message: <code>checkEqual(1, -1)</code> should return false');"
       ],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -5701,6 +5704,7 @@
         "checkSign(10);"
       ],
       "tail": [],
+      "releasedOn": "January 22, 2017",
       "solutions": [],
       "tests": [
         "assert(/.+?\\s*?\\?\\s*?.+?\\s*?:\\s*?.+?\\s*?\\?\\s*?.+?\\s*?:\\s*?.+?/gi.test(code), 'message: <code>checkSign</code> should use multiple <code>conditional operators</code>');",

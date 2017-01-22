@@ -43,7 +43,8 @@
         "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect",
         "pug docs: https://pugjs.org/api/getting-started.html"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -76,14 +77,14 @@
         "3) the route should redirect to the index page at path '/' after logout is performed"
       ],
       "challengeSeed": [],
-      "tests": [
-      ],
+      "tests": [],
       "solutions": [],
       "hints": [
         "passport repo: https://github.com/jaredhanson/passport",
         "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -141,7 +142,8 @@
         "passport repo: https://github.com/jaredhanson/passport",
         "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -197,7 +199,8 @@
       "hints": [
         "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -245,7 +248,8 @@
       "hints": [
         " pug compileFile: https://pugjs.org/api/getting-started.html"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -300,7 +304,8 @@
         "socket.io docs: http://socket.io/docs/",
         "pug docs :: compileFile: https://pugjs.org/api/getting-started.html"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -345,7 +350,8 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -393,7 +399,8 @@
         "request readme: https://github.com/request/request",
         "express enable: http://expressjs.com/en/api.html#app.enable"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -438,7 +445,8 @@
         "express res.cookie: http://expressjs.com/en/api.html#res.cookie",
         "express cookie parser: https://github.com/expressjs/cookie-parser"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -489,7 +497,8 @@
         "express res.cookie: http://expressjs.com/en/api.html#res.cookie",
         "express cookie parser: https://github.com/expressjs/cookie-parser"
       ],
-      "type": "waypoint",
+      "type": "backend",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {

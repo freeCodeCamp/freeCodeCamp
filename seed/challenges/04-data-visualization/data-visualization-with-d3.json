@@ -15,10 +15,10 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "January 22, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
       "titleEs": "",
@@ -78,6 +78,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -137,6 +138,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -198,6 +200,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -265,6 +268,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -325,6 +329,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -394,6 +399,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -461,6 +467,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -538,6 +545,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -616,6 +624,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -683,6 +692,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -750,6 +760,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -821,6 +832,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -904,6 +916,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -983,6 +996,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1065,6 +1079,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1134,6 +1149,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1219,6 +1235,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1297,6 +1314,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1381,6 +1399,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1475,6 +1494,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1550,6 +1570,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1642,6 +1663,7 @@
         "The cy attribute should be the second number of the data point array subtracted from the height of the SVG."
       ],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1738,6 +1760,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1802,6 +1825,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1867,6 +1891,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1931,6 +1956,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2020,6 +2046,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2141,6 +2168,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2255,6 +2283,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "challengeType": 0,
       "translations": {
         "de": {
