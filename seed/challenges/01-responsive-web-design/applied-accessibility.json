@@ -54,7 +54,7 @@
         "<code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&gt;</code>",
         "People with visual impairments rely on screen readers to convert web content to an audio interface. They won't get information if it's only presented visually. For images, screen readers can access the <code>alt</code> attribute and read its contents to deliver key information.",
         "Good <code>alt</code> text is short but descriptive, and meant to briefly convey the meaning of the image. You should always include an <code>alt</code> attribute on your image. Per HTML5 specification, this is now considered mandatory.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat happens to be both a coding ninja and an actual ninja, and is building a website to share his knowledge. The profile picture he wants to use shows his skills, and should be appreciated by all site visitors. Add an <code>alt</code> attribute in the <code>img</code> tag, that explains Camper Cat is doing karate. (The image <code>src</code> doesn't link to an actual file, so you should see the <code>alt</code> text in the display.)"
       ],
       "challengeSeed": [
@@ -95,7 +95,7 @@
         "<code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>",
         "Background images usually fall under the 'decorative' label as well. However, they are typically applied with CSS rules, and therefore not part of the markup screen readers process.",
         "<strong>Note</strong><br>For images with a caption, you may still want to include <code>alt</code> text, since it helps search engines catalog the content of the image.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat has coded a skeleton page for the blog part of his website. He's planning to add a visual break between his two articles with a decorative image of a samurai sword. Add an <code>alt</code> attribute to the <code>img</code> tag and set it to an empty string. (Note that the image <code>src</code> doesn't link to an actual file - don't worry that there are no swords showing in the display.)"
       ],
       "challengeSeed": [
@@ -149,7 +149,7 @@
         "Headings with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.",
         "As an example, a page with an <code>h2</code> element followed by several subsections labeled with <code>h4</code> tags would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.",
         "One final point, each page should always have one (and only one) <code>h1</code> element, which is the main subject of your content. This and the other headings are used in part by search engines to understand the topic of the page.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the <code>h5</code> tags to the proper heading level to indicate they are subsections of the <code>h2</code> ones."
       ],
       "challengeSeed": [
@@ -205,7 +205,7 @@
         "By default, a browser renders these elements similarly to the humble <code>div</code>. However, using them where appropriate gives additional meaning in your markup. The tag name alone can indicate the type of information it contains, which adds semantic meaning to that content. Assistive technologies can access this information to provide better page summary or navigation options to their users.",
         "The <code>main</code> element is used to wrap (you guessed it) the main content, and there should be only one per page. It's meant to surround the information that's related to the central topic of your page. It's not meant to include items that repeat across pages, like navigation links or banners.",
         "The <code>main</code> tag also has an embedded landmark feature that assistive technology can use to quickly navigate to the main content. If you've ever seen a \"Jump to Main Content\" link at the top of a page, using a main tag automatically gives assistive devices that functionality.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat has some big ideas for his ninja weapons page. Help him set up his markup by adding opening and closing <code>main</code> tags between the <code>header</code> and <code>footer</code> (covered in other challenges). Keep the <code>main</code> tags empty for now."
       ],
       "challengeSeed": [
@@ -253,7 +253,7 @@
         "Remember that folks using assistive technologies rely on organized, semantically meaningful markup to better understand your work.",
         "<strong>Note about <code>section</code> and <code>div</code></strong><br>The <code>section</code> element is also new with HTML5, and has a slightly different semantic meaning than <code>article</code>. An <code>articles</code> is for standalone content, and a <code>section</code> is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the <code>article</code>, then each chapter is a <code>section</code>. When there's no relationship between groups of content, then use a <code>div</code>.",
         "<blockquote>&lt;div&gt; - blocks content<br>&lt;section&gt; - blocks related content<br>&lt;article&gt; - blocks independent, self-contained content<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat used <code>article</code> tags to wrap the posts on his blog page, but he forgot to use them around the top one. Change the <code>div</code> tag to use an <code>article</code> tag instead."
       ],
       "challengeSeed": [
@@ -313,7 +313,7 @@
         "The next HTML5 element that adds semantic meaning and improves accessibility is the <code>header</code> tag. It's used to wrap introductory information or navigation links for its parent tag, and works well around content that's repeated at the top on multiple pages.",
         "<code>Header</code> shares the embedded landmark feature you saw with <code>main</code>, allowing assistive technologies to quickly navigate to that content.",
         "<strong>Note</strong><br><code>Header</code> is meant for use in the <code>body</code> tag of your HTML document. This is different than the <code>head</code> element, which contains the page's title, meta information, etc.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat is writing some great articles about ninja training, and wants to add a page for them to his site. Change the top <code>div</code> that currently contains the <code>h1</code> to a <code>header</code> tag instead."
       ],
       "challengeSeed": [
@@ -377,7 +377,7 @@
       "description": [
         "The <code>nav</code> element is another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page.",
         "If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a <code>nav</code> tag as well. Using a <code>footer</code> (covered in the next challenge) is sufficient.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat included navigation links at the top of his training page, but wrapped them in a <code>div</code>. Change the <code>div</code> to a <code>nav</code> tag to improve the accessibility on his page."
       ],
       "challengeSeed": [
@@ -446,7 +446,7 @@
       "title": "Make Screen Reader Navigation Easier with the Footer Landmark",
       "description": [
         "Similar to <code>header</code> and <code>nav</code>, the <code>footer</code> element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat's training page is making good progress. Change the <code>div</code> he used to wrap his copyright information at the bottom of the page to a <code>footer</code> element."
       ],
       "challengeSeed": [
@@ -521,7 +521,7 @@
         "Here's an example:",
         "<blockquote>&lt;audio id=&quot;meowClip&quot; controls&gt;<br>    &lt;source src=&quot;audio/meow.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;<br>    &lt;source src=&quot;audio/meow.ogg&quot; type=&quot;audio/ogg&quot; /&gt;<br>&lt;/audio&gt;<br></blockquote>",
         "<strong>Note</strong><br>Multimedia content usually has both visual and auditory components. It needs synchronized captions and a transcript so users with visual and/or auditory impairments can access it. Generally, a web developer is not responsible for creating the captions or transcript, but needs to know to include them.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), a champion of accessibility and a screen reader user. To hear a clip of his screen reader in action, add an <code>audio</code> element after the <code>p</code>. Include the <code>controls</code> attribute. Then place a <code>source</code> tag inside the <code>audio</code> tags with the <code>src</code> attribute set to \"https://s3.amazonaws.com/freecodecamp/screen-reader.mp3\" and <code>type</code> attribute set to \"audio/mpeg\"."
       ],
       "challengeSeed": [
@@ -576,7 +576,7 @@
         "For data visualizations like charts, the caption can be used to briefly note the trends or conclusions for users with visual impairments. Another challenge covers how to move a table version of the chart's data off-screen (using CSS) for screen reader users.",
         "Here's an example - note that the <code>figcaption</code> goes inside the <code>figure</code> tags and can be combined with other elements:",
         "<blockquote>&lt;figure&gt;<br>  &lt;img src=&quot;roundhouseDestruction.jpeg&quot; alt=&quot;Photo of Camper Cat executing a roundhouse kick&quot;&gt;<br>  &lt;br&gt;<br>  &lt;figcaption&gt;<br>    Master Camper Cat demonstrates proper form of a roundhouse kick.<br>  &lt;/figcaption&gt;<br>&lt;/figure&gt;<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the <code>div</code> tag he used to a <code>figure</code> tag, and the <code>p</code> tag that surrounds the caption to a <code>figcaption</code> tag."
       ],
       "challengeSeed": [
@@ -660,7 +660,7 @@
         "The <code>label</code> tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The <code>for</code> attribute on a <code>label</code> tag explicitly associates that <code>label</code> with the form control and is used by screen readers.",
         "The value of the <code>for</code> attribute must be the same as the value of the <code>id</code> attribute of the form control. Here's an example:",
         "<blockquote>&lt;form&gt;<br>  &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;<br>  &lt;input type=&quottext&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;<br>&lt;/form&gt;<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat expects a lot of interest in his thoughtful blog posts, and wants to include an email sign up form. Add a <code>for</code> attribute on the email <code>label</code> that matches the <code>id</code> on its <code>input</code> field."
       ],
       "challengeSeed": [
@@ -733,7 +733,7 @@
         "The <code>fieldset</code> wrapper and <code>legend</code> tag are not necessary when the choices are self-explanatory, like a gender selection. Using a <code>label</code> with the <code>for</code> attribute for each radio button is sufficient.",
         "Here's an example:",
         "<blockquote>&lt;form&gt;<br>  &lt;fieldset&gt;<br>    &lt;legend&gt;Choose one of these three items:&lt;/legend&gt;<br>    &lt;input id=&quot;one&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;one&quot;&gt;<br>    &lt;label for=&quot;one&quot;&gt;Choice One&lt;/label&gt;&lt;br&gt;<br>    &lt;input id=&quot;two&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;two&quot;&gt;<br>    &lt;label for=&quot;two&quot;&gt;Choice Two&lt;/label&gt;&lt;br&gt;<br>    &lt;input id=&quot;three&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;three&quot;&gt;<br>    &lt;label for=&quot;three&quot;&gt;Choice Three&lt;/label&gt;<br>  &lt;/fieldset&gt;<br>&lt;/form&gt;<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons, and learned from our last lesson to use label tags with <code>for</code> attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the div tag surrounding the radio buttons to a fieldset tag, and change the p tag inside it to a legend."
       ],
       "challengeSeed": [
@@ -819,7 +819,7 @@
         "For older browsers, the type will default to <code>text</code>, so it helps to show users the expected date format in the label or as placeholder text just in case.",
         "Here's an example:",
         "<blockquote>&lt;label for=&quot;input1&quot;&gt;Enter a date (MM-DD-YYYY):&lt;/label&gt;<br>&lt;input type=&quot;date&quot; id=&quot;input1&quot; name=&quot;input1&quot;&gt;<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat is setting up a mortal combat tournament and wants to ask his competitors to see what date works best. Add an <code>input</code> tag with a <code>type</code> attribute of \"date\", an <code>id</code> attribute of \"pickdate\", and a <code>name</code> attribute of \"date\"."
       ],
       "challengeSeed": [
@@ -883,7 +883,7 @@
         "Continuing with the date theme, HTML5 also introduced the <code>time</code> element along with a <code>datetime</code> attribute to standardize times. This is an inline element that can wrap a date or time on a page. A valid format of that date is held by the <code>datetime</code> attribute. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner in the text.",
         "Here's an example:",
         "<code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat's mortal combat survey results are in! Wrap a <code>time</code> tag around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\" and add a <code>datetime</code> attribute to it set to \"2016-09-15\"."
       ],
       "challengeSeed": [
@@ -960,7 +960,7 @@
         "<li><code>display: none;</code> or <code>visibility: hidden;</code> hides content for everyone, including screen reader users</li>",
         "<li>Zero values for pixel sizes, such as <code>width: 0px; height: 0px;</code> removes that element from the flow of your document, meaning screen readers will ignore it</li>",
         "</ul>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an <code>sr-only</code> class, but the CSS rules aren't filled in yet. Give the <code>position</code> an absolute value, the <code>left</code> a -10000px value, and the <code>width</code> and <code>height</code> both 1px values."
       ],
       "challengeSeed": [
@@ -1084,7 +1084,7 @@
       "description": [
         "Low contrast between the foreground and background colors can make text difficult to read. Sufficient contrast improves the readability of your content, but what exactly does \"sufficient\" mean?",
         "The Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. The ratio is calculated by comparing the relative luminance values of two colors. This ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the strongest contrast. There are many contrast checking tools available online that calculate this ratio for you.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat's choice of light gray text on a white background for his recent blog post has a 1.5:1 contrast ratio, making it hard to read. Change the <code>color</code> of the text from the current gray (<code>#D3D3D3</code>) to a darker gray (<code>#636363</code>) to improve the contrast ratio to 6:1."
       ],
       "challengeSeed": [
@@ -1142,7 +1142,7 @@
         "Previous challenges covered having text alternatives to address the first issue. The last challenge introduced contrast checking tools to help with the second. The WCAG-recommended contrast ratio of 4.5:1 applies for color use as well as gray-scale combinations.",
         "Colorblind users have trouble distinguishing some colors from others - usually in hue but sometimes lightness as well. You may recall the contrast ratio is calculated using the relative luminance (or lightness) values of the foreground and background colors.",
         "In practice, the 4.5:1 ratio can be reached by darkening the darker color and lightening the lighter one with the aid of a color contrast checker. Darker colors on the color wheel are considered to be blues, violets, magentas, and reds, whereas lighter colors are oranges, yellows, greens, and blue-greens.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat is experimenting with using color for his blog text and background, but his current combination of a greenish <code>background-color</code> with maroon text <code>color</code> has a 2.5:1 contrast ratio. You can easily adjust the lightness of the colors since he declared them using the CSS <code>hsl()</code> property (which stands for hue, saturation, lightness) by changing the third argument. Increase the <code>background-color</code> lightness value from 35% to 55%, and decrease the <code>color</code> lightness value from 20% to 15%. This improves the contrast to 5.9:1."
       ],
       "challengeSeed": [
@@ -1199,7 +1199,7 @@
         "There are various forms of colorblindness. These can range from a reduced sensitivity to a certain wavelength of light to the inability to see color at all. The most common form is a reduced sensitivity to detect greens.",
         "For example, if two similar green colors are the foreground and background color of your content, a colorblind user may not be able to distinguish them. Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.",
         "<strong>Note</strong><br>Some online color picking tools include visual simulations of how colors appear for different types of colorblindness. These are great resources in addition to online contrast checking calculators.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat is testing different styles for an important button, but the yellow (<code>#FFFF33</code>) <code>background-color</code> and the green (<code>#33FF33</code>) text <code>color</code> are neighboring hues on the color wheel and virtually indistinguishable for some colorblind users. (Their similar lightness also fails the contrast ratio check). Change the text <code>color</code> to a dark blue (<code>#003366</code>) to solve both problems."
       ],
       "challengeSeed": [
@@ -1252,7 +1252,7 @@
       "description": [
         "Screen reader users have different options for what type of content their device reads. This includes skipping to (or over) landmark elements, jumping to the main content, or getting a page summary from the headings. Another option is to only hear the links available on a page.",
         "Screen readers do this by reading the link text, or what's between the anchor (<code>a</code>) tags. Having a list of \"click here\" or \"read more\" links isn't helpful. Instead, you should use brief but descriptive text within the <code>a</code> tags to provide more meaning for these users.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The link text that Camper Cat is using is not very descriptive without the surrounding context. Move the anchor (<code>a</code>) tags so they wrap around the text \"information about batteries\" instead of \"Click here\"."
       ],
       "challengeSeed": [
@@ -1300,7 +1300,7 @@
         "HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.",
         "Here's an example:",
         "<code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an <code>accesskey</code> attribute to both links and set the first one to \"g\" (for Garfield) and the second one to \"c\" (for Chuck Norris)."
       ],
       "challengeSeed": [
@@ -1364,7 +1364,7 @@
         "Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as <code>div</code>, <code>span</code>, and <code>p</code>, by placing a <code>tabindex=\"0\"</code> attribute on them. Here's an example:",
         "<code>&lt;div tabindex=&quot;0&quot;&gt;I need keyboard focus!&lt;/div&gt;</code>",
         "<strong>Note</strong><br>A negative <code>tabindex</code> value (typically -1) indicates that an element is focusable, but is not reachable by the keyboard. This method is generally used to bring focus to content programmatically (like when a <code>div</code> used for a pop-up window is activated), and is beyond the scope of these challenges.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat created a new survey to collect information about his users. He knows input fields automatically get keyboard focus, but he wants to make sure his keyboard users pause at the instructions while tabbing through the items. Add a <code>tabindex</code> attribute to the <code>p</code> tag and set its value to \"0\". Bonus - using <code>tabindex</code> also enables the CSS pseudo-class <code>:focus</code> to work on the <code>p</code> tag."
       ],
       "challengeSeed": [
@@ -1453,7 +1453,7 @@
         "Here's an example:",
         "<code>&lt;div tabindex=&quot;1&quot;&gt;I get keyboard focus, and I get it first!&lt;/div&gt;</code>",
         "<code>&lt;div tabindex=&quot;2&quot;&gt;I get keyboard focus, and I get it second!&lt;/div&gt;</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search <code>input</code> and submit <code>input</code> form controls to be the first two items in the tab order. Add a <code>tabindex</code> attribute set to \"1\" to the search <code>input</code>, and a <code>tabindex</code> attribute set to \"2\" to the submit <code>input</code>."
       ],
       "challengeSeed": [

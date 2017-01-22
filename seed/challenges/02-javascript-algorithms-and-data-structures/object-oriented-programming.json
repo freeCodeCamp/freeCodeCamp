@@ -44,7 +44,7 @@
         "<code>Objects</code> in JavaScript are used to model real-world objects, giving them <code>properties</code> and behavior just like their real-world counterparts. Here's an example using these concepts to create a <code>duck</code> <code>object</code>:",
         "<blockquote>let duck = {<br>&nbsp;&nbsp;name: \"Aflac\",<br>&nbsp;&nbsp;numLegs: 2<br>};</blockquote>",
         "This <code>duck</code> <code>object</code> has two property/value pairs: a <code>name</code> of \"Aflac\" and a <code>numLegs</code> of 2.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a <code>dog</code> <code>object</code> with <code>name</code> and <code>numLegs</code> properties, and set them to a string and a number, respectively."
       ],
       "challengeSeed": [
@@ -87,7 +87,7 @@
         "The last challenge created an <code>object</code> with various <code>properties</code>, now you'll see how to access the values of those <code>properties</code>. Here's an example:",
         "<blockquote>let duck = {<br>&nbsp;&nbsp;name: \"Aflac\",<br>&nbsp;&nbsp;numLegs: 2<br>};<br>console.log(duck.name);<br>// This prints \"Aflac\" to the console</blockquote>",
         "Dot notation is used on the <code>object</code> name, <code>duck</code>, followed by the name of the <code>property</code>, <code>name</code>, to access the value of \"Aflac\".",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Print both <code>properties</code> of the <code>dog</code> object below to your console."
       ],
       "challengeSeed": [
@@ -135,7 +135,7 @@
         "<blockquote>let duck = {<br>&nbsp;&nbsp;name: \"Aflac\",<br>&nbsp;&nbsp;numLegs: 2,<br>&nbsp;&nbsp;sayName: function() {return \"The name of this duck is \" + duck.name + \".\";}<br>};<br>duck.sayName();<br>// Returns \"The name of this duck is Aflac.\"</blockquote>",
         "The example adds the <code>sayName</code> <code>method</code>, which is a function that returns a sentence giving the name of the <code>duck</code>.",
         "Notice that the <code>method</code> accessed the <code>name</code> property in the return statement using <code>duck.name</code>. The next challenge will cover another way to do this.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Using the <code>dog</code> <code>object</code>, give it a method called <code>sayLegs</code>. The method should return the sentence \"This dog has 4 legs.\""
       ],
       "challengeSeed": [
@@ -185,7 +185,7 @@
         "<blockquote>let duck = {<br>&nbsp;&nbsp;name: \"Aflac\",<br>&nbsp;&nbsp;numLegs: 2,<br>&nbsp;&nbsp;sayName: function() {return \"The name of this duck is \" + this.name + \".\";}<br>};</blockquote>",
         "<code>This</code> is a deep topic, and the above example is only one way to use it. In the current context, <code>this</code> refers to the object that the method is associated with: <code>duck</code>.",
         "If the object's name is changed to <code>mallard</code>, it is not necessary to find all the references to <code>duck</code> in the code. It makes the code reusable and easier to read.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the <code>dog.sayLegs</code> method to remove any references to <code>dog</code>. Use the <code>duck</code> example for guidance."
       ],
       "challengeSeed": [
@@ -239,7 +239,7 @@
         "<li><code>Constructors</code> use the keyword <code>this</code> to set properties of the object they will create. Inside the <code>constructor</code>, <code>this</code> refers to the new object it will create.</li>",
         "<li><code>Constructors</code> define properties and behaviors instead of returning a value as other functions might.</li>",
         "</ul>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a <code>constructor</code>, <code>Dog</code>, with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> that are set to a string, a string, and a number, respectively."
       ],
       "challengeSeed": [
@@ -286,7 +286,7 @@
         "<blockquote>blueBird.name; // => Albert<br>blueBird.color; // => blue<br>blueBird.numLegs; // => 2</blockquote>",
         "Just like any other object, its properties can be accessed and modified:",
         "<blockquote>blueBird.name = 'Elvira';<br>blueBird.name; // => Elvira</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>Dog</code> constructor from the last lesson to create a new instance of <code>Dog</code>, assigning it to a variable <code>hound</code>."
       ],
       "challengeSeed": [
@@ -341,7 +341,7 @@
         "The <code>cardinal</code> has these properties:",
         "<blockquote>cardinal.name // => Bruce<br>cardinal.color // => red<br>cardinal.numLegs // => 2</blockquote>",
         "The constructor is more flexible. It's now possible to define the properties for each <code>Bird</code> at the time it is created, which is one way that JavaScript constructors are so useful. They group objects together based on shared characteristics and behavior and define a blueprint that automates their creation.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create another <code>Dog</code> constructor. This time, set it up to take the parameters <code>name</code> and <code>color</code>, and have the property <code>numLegs</code> fixed at 4. Then create a new <code>Dog</code> saved in a variable <code>terrier</code>. Pass it two strings as arguments for the <code>name</code> and <code>color</code> properties."
       ],
       "challengeSeed": [
@@ -388,7 +388,7 @@
         "<blockquote>let Bird = function(name, color) {<br>&nbsp;&nbsp;this.name = name;<br>&nbsp;&nbsp;this.color = color;<br>&nbsp;&nbsp;this.numLegs = 2;<br>}<br><br>let crow = new Bird(\"Alexis\", \"black\");<br><br>crow instanceof Bird; // => true</blockquote>",
         "If an object is created without using a constructor, <code>instanceof</code> will verify that it is not an instance of that constructor:",
         "<blockquote>let canary = {<br>&nbsp;&nbsp;name: \"Mildred\",<br>&nbsp;&nbsp;color: \"Yellow\",<br>&nbsp;&nbsp;numLegs: 2<br>};<br><br>canary instanceof Bird; // => false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a new instance of the <code>House</code> constructor, calling it <code>myHouse</code> and passing a number of bedrooms. Then, use <code>instanceof</code> to verify that it is an instance of <code>House</code>."
       ],
       "challengeSeed": [
@@ -437,7 +437,7 @@
         "In fact every instance of <code>Bird</code> will have its own copy of these properties.",
         "The following code adds all of the <code>own</code> properties of <code>duck</code> to the array <code>ownProps</code>:",
         "<blockquote>let ownProps = [];<br><br>for (let property in duck) {<br>&nbsp;&nbsp;if(duck.hasOwnProperty(property)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;ownProps.push(property);<br>&nbsp;&nbsp;}<br>}<br><br>console.log(ownProps); // prints [ \"name\", \"numLegs\" ]</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>own</code> properties of <code>canary</code> to the array <code>ownProps</code>."
       ],
       "challengeSeed": [
@@ -491,7 +491,7 @@
         "<blockquote>console.log(duck.numLegs);  // prints 2<br>console.log(canary.numLegs);  // prints 2</blockquote>",
         "Since all instances automatically have the properties on the <code>prototype</code>, think of a <code>prototype</code> as a \"recipe\" for creating objects.",
         "Note that the <code>prototype</code> for <code>duck</code> and <code>canary</code> is part of the <code>Bird</code> constructor as <code>Bird.prototype</code>. Nearly every object in JavaScript has a <code>prototype</code> property which is part of the constructor function that created it.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a <code>numLegs</code> property to the <code>prototype</code> of <code>Dog</code>"
       ],
       "challengeSeed": [
@@ -541,7 +541,7 @@
         "<blockquote>function Bird(name) {<br>&nbsp;&nbsp;this.name = name;  //own property<br>}<br><br>Bird.prototype.numLegs = 2; // prototype property<br><br>let duck = new Bird(\"Donald\");</blockquote>",
         "Here is how you add <code>duck’s</code> <code>own</code> properties to the array <code>ownProps</code> and <code>prototype</code> properties to the array <code>prototypeProps</code>:",
         "<blockquote>let ownProps = [];<br>let prototypeProps = [];<br><br>for (let property in duck) {<br>&nbsp;&nbsp;if(duck.hasOwnProperty(property)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;ownProps.push(property);<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;prototypeProps.push(property);<br>&nbsp;&nbsp;}<br>}<br><br>console.log(ownProps); // prints [\"name\"]<br>console.log(prototypeProps); // prints [\"numLegs\"]</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add all of the <code>own</code> properties of <code>beagle</code> to the array <code>ownProps</code>. Add all of the <code>prototype</code> properties of <code>Dog</code> to the array <code>prototypeProps</code>."
       ],
       "challengeSeed": [
@@ -598,7 +598,7 @@
         "The advantage of the <code>constructor</code> property is that it's possible to check for this property to find out what kind of object it is. Here's an example of how this could be used:",
         "<blockquote>function joinBirdFraternity(candidate) {<br>&nbsp;&nbsp;if (candidate.constructor === Bird) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return true;<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "<strong>Note</strong><br>Since the <code>constructor</code> property can be overwritten (which will be covered in the next two challenges) it’s generally better to use the <code>instanceof</code> method to check the type of an object.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a <code>joinDogFraternity</code> function that takes a <code>candidate</code> parameter and returns <code>true</code> if the candidate is a <code>Dog</code> and returns <code>false</code> otherwise."
       ],
       "challengeSeed": [
@@ -649,7 +649,7 @@
         "<blockquote>Bird.prototype.eat = function() {<br>&nbsp;&nbsp;console.log(\"nom nom nom\");<br>}<br><br>Bird.prototype.describe = function() {<br>&nbsp;&nbsp;console.log(\"My name is \" + this.name);<br>}</blockquote>",
         "A more efficient way is to set the <code>prototype</code> to a new object that already contains the properties. This way, the properties are added all at once:",
         "<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;numLegs: 2, <br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"nom nom nom\");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe = function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"My name is \" + this.name);<br>&nbsp;&nbsp;}<br>};</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add three properties <code>numLegs</code>, <code>eat</code>, and <code>describe</code> to the <code>prototype</code> of <code>Dog</code> by setting the <code>prototype</code> to a new object. The properties can be set to any values."
       ],
       "challengeSeed": [
@@ -699,7 +699,7 @@
         "<blockquote>console.log(duck.constructor)<br>// prints ‘undefined’ - Oops!</blockquote>",
         "To fix this, whenever a prototype is manually set to a new object, remember to define the constructor property:",
         "<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;constructor: Bird, // define the constructor property<br>&nbsp;&nbsp;numLegs: 2,<br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"nom nom nom\");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"My name is \" + this.name); <br>&nbsp;&nbsp;}<br>};</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Define the constructor property on the <code>Dog</code> <code>prototype</code>."
       ],
       "challengeSeed": [
@@ -753,7 +753,7 @@
         "<blockquote>function Bird(name) {<br>&nbsp;&nbsp;this.name = name;<br>}<br><br>let duck = new Bird(\"Donald\");</blockquote>",
         "<code>duck</code> inherits its <code>prototype</code> from the <code>Bird</code> constructor function. You can show this relationship with the <code>isPrototypeOf</code> method:",
         "<blockquote>Bird.prototype.isPrototypeOf(duck);<br>// returns true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <code>isPrototypeOf</code> to check the <code>prototype</code> of <code>beagle</code>."
       ],
       "challengeSeed": [
@@ -806,7 +806,7 @@
         "The <code>hasOwnProperty</code> method is defined in <code>Object.prototype</code>, which can be accessed by <code>Bird.prototype</code>, which can then be accessed by <code>duck</code>. This is an example of the <code>prototype</code> chain.",
         "In this <code>prototype</code> chain, <code>Bird</code> is the <code>supertype</code> for <code>duck</code>, while <code>duck</code> is the <code>subtype</code>. <code>Object</code> is a <code>supertype</code> for both <code>Bird</code> and <code>duck</code>.",
         "<code>Object</code> is a <code>supertype</code> for all objects in JavaScript. Therefore, any object can use the <code>hasOwnProperty</code> method.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the code to show the correct prototype chain."
       ],
       "challengeSeed": [
@@ -859,7 +859,7 @@
         "<blockquote>function Animal() { };<br><br>Animal.prototype = {<br>&nbsp;&nbsp;constructor: Animal, <br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"My name is \" + this.name);<br>&nbsp;&nbsp;}<br>};</blockquote>",
         "Since <code>Animal</code> includes the <code>describe</code> method, you can remove it from <code>Bird</code> and <code>Dog</code>:",
         "<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;constructor: Bird<br>};<br><br>Dog.prototype = {<br>&nbsp;&nbsp;constructor: Dog<br>};</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The <code>eat</code> method is repeated in both <code>Cat</code> and <code>Bear</code>. Edit the code in the spirit of <code>DRY</code> by moving the <code>eat</code> method to the <code>Animal</code> <code>supertype</code>."
       ],
       "challengeSeed": [
@@ -934,7 +934,7 @@
         "<blockquote>let animal = Object.create(Animal.prototype);</blockquote>",
         "<code>Object.create(obj)</code> creates a new object, and sets <code>obj</code> as the new object's <code>prototype</code>. Recall that the <code>prototype</code> is like the \"recipe\" for creating an object. By setting the <code>prototype</code> of <code>animal</code> to be <code>Animal's</code> <code>prototype</code>, you are effectively giving the <code>animal</code> instance the same \"recipe\" as any other instance of <code>Animal</code>.",
         "<blockquote>animal.eat(); // prints \"nom nom nom\"<br>animal instanceof Animal; // => true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <code>Object.create</code> to make two instances of <code>Animal</code> named <code>duck</code> and <code>beagle</code>."
       ],
       "challengeSeed": [
@@ -994,7 +994,7 @@
         "Remember that the <code>prototype</code> is like the \"recipe\" for creating an object. In a way, the recipe for <code>Bird</code> now includes all the key \"ingredients\" from <code>Animal</code>.",
         "<blockquote>let duck = new Bird(\"Donald\");<br>duck.eat(); // prints \"nom nom nom\"</blockquote>",
         "<code>duck</code> inherits all of <code>Animal's</code> properties, including the <code>eat</code> method.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the code so that instances of <code>Dog</code> inherit from <code>Animal</code>."
       ],
       "challengeSeed": [
@@ -1050,7 +1050,7 @@
         "<blockquote>function Bird() { }<br>Bird.prototype = Object.create(Animal.prototype);<br>let duck = new Bird();<br>duck.constructor // function Animal(){...}</blockquote>",
         "But <code>duck</code> and all instances of <code>Bird</code> should show that they were constructed by <code>Bird</code> and not <code>Animal</code>. To do so, you can manually set <code>Bird's</code> constructor property to the <code>Bird</code> object:",
         "<blockquote>Bird.prototype.constructor = Bird;<br>duck.constructor // function Bird(){...}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the code so <code>duck.constructor</code> and <code>beagle.constructor</code> return their respective constructors."
       ],
       "challengeSeed": [
@@ -1108,7 +1108,7 @@
         "<blockquote>Bird.prototype.fly = function() {<br>&nbsp;&nbsp;console.log(\"I'm flying!\");<br>};</blockquote>",
         "Now instances of <code>Bird</code> will have both <code>eat()</code> and <code>fly()</code> methods:",
         "<blockquote>let duck = new Bird();<br>duck.eat(); // prints \"nom nom nom\"<br>duck.fly(); // prints \"I'm flying!\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add all necessary code so the <code>Dog</code> object inherits from <code>Animal</code> and the <code>Dog's</code> <code>prototype</code> constructor is set to Dog. Then add a <code>bark()</code> method to the <code>Dog</code> object so that <code>beagle</code> can both <code>eat()</code> and <code>bark()</code>. The <code>bark()</code> method should print \"Woof!\" to the console."
       ],
       "challengeSeed": [
@@ -1177,7 +1177,7 @@
         "2. Bird => Is eat() defined here? => Yes. Execute it and stop searching.",
         "3. Animal => eat() is also defined, but JavaScript stopped searching before reaching this level.",
         "4. Object => JavaScript stopped searching before reaching this level.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Override the <code>fly()</code> method for <code>Penguin</code> so that it returns \"Alas, this is a flightless bird.\""
       ],
       "challengeSeed": [
@@ -1237,7 +1237,7 @@
         "Here <code>bird</code> and <code>plane</code> are passed into <code>flyMixin</code>, which then assigns the <code>fly</code> function to each object. Now <code>bird</code> and <code>plane</code> can both fly:",
         "<blockquote>bird.fly(); // prints \"Flying, wooosh!\"<br>plane.fly(); // prints \"Flying, wooosh!\"</blockquote>",
         "Note how the <code>mixin</code> allows for the same <code>fly</code> method to be reused by unrelated objects <code>bird</code> and <code>plane</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a <code>mixin</code> named <code>glideMixin</code> that defines a method named <code>glide</code>. Then use the <code>glideMixin</code> to give both <code>bird</code> and <code>boat</code> the ability to glide."
       ],
       "challengeSeed": [
@@ -1297,7 +1297,7 @@
         "The simplest way to make properties private is by creating a variable within the constructor function. This changes the scope of that variable to be within the constructor function versus available globally. This way, the property can only be accessed and changed by methods also within the constructor function.",
         "<blockquote>function Bird() {<br>&nbsp;&nbsp;let hatchedEgg = 10; // private property<br><br>&nbsp;&nbsp;this.getHatchedEggCount = function() { // publicly available method that a bird object can use<br>&nbsp;&nbsp;&nbsp;&nbsp;return hatchedEgg;<br>&nbsp;&nbsp;};<br>}<br>let ducky = new Bird();<br>ducky.getHatchedEggCount(); // returns 10</blockquote>",
         "Here <code>getHachedEggCount</code> is a privileged method, because it has access to the private variable <code>hatchedEgg</code>. This is possible because <code>hatchedEgg</code> is declared in the same context as <code>getHachedEggCount</code>. In JavaScript, a function always has access to the context in which it was created. This is called <code>closure</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change how <code>weight</code> is declared in the <code>Bird</code> function so it is a private variable. Then, create a method <code>getWeight</code> that returns the value of <code>weight</code>."
       ],
       "challengeSeed": [
@@ -1342,7 +1342,7 @@
         "A common pattern in JavaScript is to execute a function as soon as it is declared:",
         "<blockquote>(function () {<br>&nbsp;&nbsp;console.log(\"Chirp, chirp!\")<br>})(); // this is an anonymous function expression that executes right away<br>// Outputs \"Chirp, chirp!\" immediately</blockquote>",
         "Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an <code>immediately invoked function expression</code> or <code>IIFE</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Rewrite the function <code>makeNest</code> and remove its call so instead it's an anonymous <code>immediately invoked function expression</code> (<code>IIFE</code>)."
       ],
       "challengeSeed": [
@@ -1390,7 +1390,7 @@
         "Note that you have an <code>immediately invoked function expression</code> (<code>IIFE</code>) that returns an object <code>motionModule</code>. This returned object contains all of the <code>mixin</code> behaviors as properties of the object.",
         "The advantage of the <code>module</code> pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. Here is a example using it:",
         "<blockquote>motionModule.glideMixin(duck);<br>duck.glide();</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a <code>module</code> named <code>funModule</code> to wrap the two <code>mixins</code> <code>isCuteMixin</code> and <code>singMixin</code>. <code>funModule</code> should return an object."
       ],
       "challengeSeed": [

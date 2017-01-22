@@ -49,7 +49,7 @@
         "<blockquote>document.addEventListener('DOMContentLoaded',function() {<br><br>});</blockquote>",
         "Next, you can implement a click event handler that goes inside of the <code>DOMContentLoaded</code> function by adding the following code:",
         "<code>document.getElementById('getMessage').onclick=function(){};</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a click event handler inside of the <code>DOMContentLoaded</code> function for the element with id of <code>getMessage</code>."
       ],
       "challengeSeed": [
@@ -132,7 +132,7 @@
         "For example, when a user clicks the \"Get Message\" button, it changes the text of the element with the class <code>message</code> to say \"Here is the message\".",
         "This works by adding the following code within the click event:",
         "<code>document.getElementsByClassName('message')[0].innerHTML=\"Here is the message\";</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add code inside the <code>onclick</code> event handler to change the text inside the <code>message</code> element to say \"Here is the message\"."
       ],
       "challengeSeed": [
@@ -223,7 +223,7 @@
         "Here's a review of what each piece is doing. The JavaScript <code>XMLHttpRequest</code> object has a number of properties and methods that are used to transfer data. First, an instance of the <code>XMLHttpRequest</code> object is created and saved in the <code>req</code> variable.",
         "Next, the <code>open</code> method initializes a request - this example is requesting data from an API, therefore is a \"GET\" request. The second argument for <code>open</code> is the URL of the API you are requesting data from. The third argument is a Boolean value where <code>true</code> makes it an asynchronous request.",
         "The <code>send</code> method sends the request. Finally, the <code>onload</code> event handler parses the returned data and applies the <code>JSON.stringify</code> method to convert the JavaScript object into a string. This string is then inserted as the message text.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Update the code to create and send a \"GET\" request to the Free Code Camp Cat Photo API. Then click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the API."
       ],
       "challengeSeed": [
@@ -320,7 +320,7 @@
         "Another interesting \"key-value pair\" in the first object is <code>\"codeNames\":[\"Juggernaut\",\"Mrs. Wallace\",\"ButterCup\"]</code>. Here \"codeNames\" is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.",
         "Remember how to access data in arrays and objects. Arrays use bracket notation to access a specific index of an item. Objects use either bracket or dot notation to access the value of a given property. Here's an example that prints the \"altText\" of the first cat photo - note that the parsed JSON data in the editor is saved in a variable called <code>json</code>:",
         "<blockquote>console.log(json[0].altText);<br>// Prints \"A white cat wearing a green helmet shaped melon on it's head.\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "For the cat with the \"id\" of 2, print to the console the second value in the <code>codeNames</code> array. You should use bracket and dot notation on the object (which is saved in the variable <code>json</code>) to access the value."
       ],
       "challengeSeed": [
@@ -413,7 +413,7 @@
         "Then, loop through the JSON, adding HTML to the variable that wraps the key names in <code>strong</code> tags, followed by the value. When the loop is finished, you render it.",
         "Here's the code that does this:",
         "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;strong&gt;\" + key + \"&lt;/strong&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a <code>forEach</code> method to loop over the JSON data and create the HTML elements to display it."
       ],
       "challengeSeed": [
@@ -506,7 +506,7 @@
         "When you're looping through these objects, you can use this <code>imageLink</code> property to display this image in an <code>img</code> element.",
         "Here's the code that does this:",
         "<code>html += \"&lt;img src = '\" + val.imageLink + \"' \" + \"alt='\" + val.altText + \"'&gt;\";</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add code to use the <code>imageLink</code> and <code>altText</code> properties in an <code>img</code> tag."
       ],
       "challengeSeed": [
@@ -602,7 +602,7 @@
         "Given that the JSON data is stored in an array, you can use the <code>filter</code> method to filter out the cat whose \"id\" key has a value of 1.",
         "Here's the code to do this:",
         "<blockquote>json = json.filter(function(val) {<br>  return (val.id !== 1);<br>});</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add code to <code>filter</code> the json data to remove the cat with the \"id\" value of 1."
       ],
       "challengeSeed": [
@@ -704,7 +704,7 @@
         "Here's code that does this:",
         "<blockquote>if (navigator.geolocation){<br>  navigator.geolocation.getCurrentPosition(function(position) {<br>    document.getElementById('data').innerHTML=\"latitude: \"+ position.coords.latitude +  \"&lt;br&gt;longitude: \" +  position.coords.longitude;<br>  });<br>}</blockquote>",
         "First, it checks if the <code>navigator.geolocation</code> object exists. If it does, the <code>getCurrentPosition</code> method on that object is called, which initiates an asynchronous request for the user's position. If the request is successful, the callback function in the method runs. This function accesses the <code>position</code> object's values for latitude and longitude using dot notation and updates the HTML.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the example code inside the <code>script</code> tags to check a user's current location and insert it into the HTML."
       ],
       "challengeSeed": [
@@ -759,7 +759,7 @@
         "The <code>setRequestHeader</code> method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the <code>open</code> method, but before the <code>send</code> method. The two parameters are the name of the header and the value to set as the body of that header.",
         "Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 200 means it was a successful request. The document's HTML can be updated.",
         "Finally, the <code>send</code> method sends the request with the <code>userName</code> value, which was given by the user in the <code>input</code> field.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Update the code to create and send a \"POST\" request. Then enter your name in input box and click \"Send Message\". Your Ajax function will replace \"Reply from Server will be here.\" with the reply of the server. In this case, it is your name appended with \" loves cats\"."
       ],
       "challengeSeed": [

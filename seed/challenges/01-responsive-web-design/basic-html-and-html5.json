@@ -56,7 +56,7 @@
         "<code>&#60;/h1&#62;</code>",
         "Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
         "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing (they change from red to green), you can go to the next coding challenge.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\" instead of \"Hello\". Then click the \"Run tests\" button."
       ],
       "challengeSeed": [
@@ -263,7 +263,7 @@
         "These tags not only make your HTML easier to read, it also helps with Search Engine Optimization (SEO) and accessibility.",
         "The <code>main</code> HTML5 tag helps search engines and other developers find the main content of your page.",
         "<strong>Note</strong><br>Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Wrap the paragraph with an opening and closing <code>main</code> tag."
       ],
       "challengeSeed": [
@@ -719,7 +719,7 @@
         "Next, you'll want to create a corresponding anchor link in the HTML where you want the internal link to take users. Instead of using the <code>href</code> attribute, you'll use the <code>name</code> attribute. Here's an example:",
         "<blockquote>&lt;h1&gt;Contact&lt;/h1&gt;<br>&lt;a name=\"contact\"&gt;&lt;/a&gt;</blockquote>",
         "Now when users click the \"Go to contact section\" link, they'll be taken to the section of the webpage with the anchor that has the <code>name</code> attribute \"contact\".",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change your external link to an internal link by changing the <code>href</code> attribute to \"#bottom\" and the anchor text from \"cat photos\" to \"Jump to Bottom\".",
         "Then add an anchor link with a <code>name</code> attribute set to \"bottom\" after the last paragraph.",
         "<strong>Note</strong><br>Additional kitty ipsum text has been added to the paragraphs to better show the effect of clicking the internal anchor link to jump to the bottom of the page."
@@ -2296,7 +2296,7 @@
         "Next, the rest of your HTML code needs to be wrapped in <code>html</code> tags. The opening <code>&lt;html&gt;</code> goes directly below the <code>&lt;!DOCTYPE html&gt;</code> line, and the closing <code>&lt;/html&gt;</code> goes at the end of the page.",
         "Here's an example of the page structure:",
         "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;!-- Your HTML code goes here --&gt;<br>&lt;/html&gt;</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a <code>DOCTYPE</code> tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing <code>html</code> tags, which wrap around an <code>h1</code> element. The heading can include any text."
       ],
       "challengeSeed": [
@@ -2321,7 +2321,7 @@
         "Metadata elements, such as <code>link</code>, <code>meta</code>, <code>title</code>, and <code>style</code>, typically go inside the <code>head</code> element.",
         "Here's an example of a page's layout:",
         "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- metadata elements --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- page contents --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Edit the markup so there's a <code>head</code> and a <code>body</code>. The <code>head</code> element should only include the <code>title</code>, and the <code>body</code> element should only include the <code>h1</code> and <code>p</code>."
       ],
       "challengeSeed": [
