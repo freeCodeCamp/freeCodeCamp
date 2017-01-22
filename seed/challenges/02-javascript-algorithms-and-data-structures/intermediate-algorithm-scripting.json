@@ -1303,6 +1303,7 @@
         "Closures",
         "Details of the Object Model"
       ],
+      "isRequired": true,
       "challengeType": 5,
       "translations": {
         "es": {
@@ -1371,6 +1372,7 @@
       "MDNlinks": [
         "Math.pow()"
       ],
+      "isRequired": true,
       "challengeType": 5,
       "translations": {
         "es": {
