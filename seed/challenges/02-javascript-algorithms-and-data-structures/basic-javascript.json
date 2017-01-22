@@ -5673,10 +5673,10 @@
       "tail": [],
       "solutions": [],
       "tests": [
-        "assert(typeof(convertToInteger(\"10011\")) !== \"number\", 'message: <code>convertToInteger(\"10011\")</code> should return a number');",
+        "assert(typeof(convertToInteger(\"10011\")) === \"number\", 'message: <code>convertToInteger(\"10011\")</code> should return a number');",
         "assert(convertToInteger(\"10011\") === 19, 'message: <code>convertToInteger(\"10011\")</code> should return 19');",
         "assert(convertToInteger(\"111001\") === 57, 'message: <code>convertToInteger(\"111001\")</code> should return 57');",
-        "assert(!isNaN(convertToInteger(\"JamesBond\")); , 'message: <code>convertToInteger(\"JamesBond\")</code> should return NaN');"
+        "assert.isNaN(convertToInteger(\"JamesBond\"), 'message: <code>convertToInteger(\"JamesBond\")</code> should return NaN');"
       ],
       "type": "waypoint",
       "challengeType": 1,
