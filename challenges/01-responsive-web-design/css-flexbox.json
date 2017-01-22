@@ -40,7 +40,7 @@
       "description": [
         "This section uses alternating challenge styles to show how to use CSS to position elements in a flexible way. First, a challenge will explain theory, then a practical challenge using a simple tweet component will apply the flexbox concept.",
         "Placing the CSS property <code>display: flex;</code> on an element allows you to use other flex properties to build a responsive page.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>display</code> to both <code>#box-1</code> and <code>#box-2</code> and set each to a value of flex."
       ],
       "challengeSeed": [
@@ -102,7 +102,7 @@
       "title": "Adding Flex Superpowers to the Tweet Embed",
       "description": [
         "To the right is the tweet embed that will be used as the practical example. Some of the elements would look better with a different layout. The last challenge demonstrated <code>display: flex</code>. Here you'll add it to several components in the tweet embed to start adjusting their positioning.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>display: flex</code> to all of the following items - note that the selectors are already set up in the CSS:",
         "<code>header</code>, the header's <code>.profile-name</code>, the header's <code>.follow-btn</code>, the header's <code>h3</code> and <code>h4</code>, the <code>footer</code>, and the footer's <code>.stats</code>."
       ],
@@ -243,7 +243,7 @@
       "description": [
         "Adding <code>display: flex</code> to an element turns it into a flex container. This makes it possible to align any children of that element into rows or columns. You do this by adding the <code>flex-direction</code> property to the parent item and setting it to row or column. Creating a row will align the children horizontally, and creating a column will align the children vertically.",
         "<strong>Note</strong><br>The default value for the <code>flex-direction</code> property is row.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of row."
       ],
       "challengeSeed": [
@@ -309,7 +309,7 @@
       "title": "Applying the Flex-direction Property to Create Rows in the Tweet Embed",
       "description": [
         "The <code>header</code> and <code>footer</code> in the tweet embed example have child items that could be arranged as rows using the <code>flex-direction</code> property. This tells CSS to align the children horizontally.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>flex-direction</code> to both the <code>header</code> and <code>footer</code> and set the value to row."
       ],
       "challengeSeed": [
@@ -445,7 +445,7 @@
       "title": "Using the Flex-direction Property to Make a Column",
       "description": [
         "The last two challenges used the <code>flex-direction</code> property set to row. This property can also create a column by vertically stacking the children of a flex container.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of column."
       ],
       "challengeSeed": [
@@ -511,7 +511,7 @@
       "title": "Applying the Flex-direction Property to Create a Column in the Tweet Embed",
       "description": [
         "The tweet embed <code>header</code> and <code>footer</code> used the <code>flex-direction</code> property earlier with a row value. Similarly, the items inside the <code>.profile-name</code> element would work well stacked as a column.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>flex-direction</code> to the header's <code>.profile-name</code> element and set the value to column."
       ],
       "challengeSeed": [
@@ -652,7 +652,7 @@
         "<li><code>space-between</code>: aligns items to the center of the main axis, with extra space placed between the items. The first and last items are pushed to the very edge of the flex container. For example, in a row the first item is against the left side of the container, the last item is against the right side of the container, then the other items between them are spaced evenly.</li>",
         "<li><code>space-around</code>: similar to <code>space-between</code> but the first and last items are not locked to the edges of the container, the space is distributed around all the items</li>",
         "</ul>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "An example helps show this property in action. Add the CSS property <code>justify-content</code> to the <code>#box-container</code> element, and give it a value of center.",
         "<strong>Bonus</strong><br>Try the other options for the <code>justify-content</code> property in the code editor to see their differences. But note that a value of center is the only one that will pass this challenge."
       ],
@@ -721,7 +721,7 @@
       "title": "Using the Justify-content Property in the Tweet Embed",
       "description": [
         "The last challenge showed an example of the <code>justify-content</code> property. For the tweet embed, this property can be applied to align the items in the <code>.profile-name</code> element.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>justify-content</code> to the header's <code>.profile-name</code> element and set the value to any of the options from the last challenge."
       ],
       "challengeSeed": [
@@ -864,7 +864,7 @@
         "<li><code>stretch</code>: stretch the items to fill the flex container. For example, rows items are stretched to fill the flex container top-to-bottom.</li>",
         "<li><code>baseline</code>: align items to their baselines. Baseline is a text concept, think of it as the line that the letters sit on.</li>",
         "</ul>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "An example helps show this property in action. Add the CSS property <code>align-items</code> to the <code>#box-container</code> element, and give it a value of center.",
         "<strong>Bonus</strong><br>Try the other options for the <code>align-items</code> property in the code editor to see their differences. But note that a value of center is the only one that will pass this challenge."
       ],
@@ -933,7 +933,7 @@
       "title": "Using the Align-items Property in the Tweet Embed",
       "description": [
         "The last challenge introduced the <code>align-items</code> property and gave an example. This property can be applied to a few tweet embed elements to align the flex items inside them.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element, the header's <code>h3</code>, and the header's <code>h4</code>. Set the value to center."
       ],
       "challengeSeed": [
@@ -1077,7 +1077,7 @@
         "<li><code>wrap</code>: wraps items from left-to-right if they are in a row, or top-to-bottom if they are in a column.</li>",
         "<li><code>wrap-reverse</code>: wraps items from right-to-left if they are in a row, or bottom-to-top if they are in a column.</li>",
         "</ul>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The current layout has too many boxes for one row. Add the CSS property <code>flex-wrap</code> to the <code>#box-container</code> element, and give it a value of wrap."
       ],
       "challengeSeed": [
@@ -1171,7 +1171,7 @@
         "So far, all the properties in the challenges apply to the flex container (the parent of the flex items). However, there are several useful properties for the flex items.",
         "The first is the <code>flex-shrink</code> property. When it's used, it allows an item to shrink if the flex container is too small. Items shrink when the width of the parent container is smaller than the combined widths of all the flex items within it.",
         "The <code>flex-shrink</code> property takes numbers as values. The higher the number, the more it will shrink compared to the other items in the container. For example, if one item has a <code>flex-shrink</code> value of 1 and the other has a <code>flex-shrink</code> value of 3, the one with the value of 3 will shrink three times as much as the other.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>flex-shrink</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of 1 and <code>#box-2</code> a value of 2."
       ],
       "challengeSeed": [
@@ -1241,7 +1241,7 @@
       "description": [
         "The opposite of <code>flex-shrink</code> is the <code>flex-grow</code> property. Recall that <code>flex-shrink</code> controls the size of the items when the container shrinks. The <code>flex-grow</code> property controls the size of items when the parent container expands.",
         "Using a similar example from the last challenge, if one item has a <code>flex-grow</code> value of 1 and the other has a <code>flex-grow</code> value of 3, the one with the value of 3 will grow three times as much as the other.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>flex-grow</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of 1 and <code>#box-2</code> a value of 2."
       ],
       "challengeSeed": [
@@ -1311,7 +1311,7 @@
       "description": [
         "The previous example included <code>flex-basis</code> to help demonstrate how the <code>flex-grow</code> property works. The <code>flex-basis</code> property specifies the initial size of the item before CSS makes adjustments with <code>flex-shrink</code> or <code>flex-grow</code>.",
         "The units used by the <code>flex-basis</code> property are the same as other size properties (<code>px</code>, <code>em</code>, <code>%</code>, etc.). The value <code>auto</code> sizes items based on the content.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Set the initial size of the boxes using <code>flex-basis</code>. Add the CSS property <code>flex-basis</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of 10em and <code>#box-2</code> a value of 20em."
       ],
       "challengeSeed": [
@@ -1382,7 +1382,7 @@
         "There is a shortcut available to set several flex properties at once. The <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> properties can all be set together by using the <code>flex</code> property.",
         "For example, <code>flex: 1 0 10px;</code> will set the item to <code>flex-grow: 1;</code>, <code>flex-shrink: 0;</code>, and <code>flex-basis: 10px;</code>.",
         "The default property settings are <code>flex: 0 1 auto;</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>flex</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> the values so its <code>flex-grow</code> is 2, its <code>flex-shrink</code> is 2, and its <code>flex-basis</code> is 150px. Give <code>#box-2</code> the values so its <code>flex-grow</code> is 1, its <code>flex-shrink</code> is 1, and its <code>flex-basis</code> is 150px.",
         "These values will cause <code>#box-1</code> to be twice the size of <code>#box-2</code> when the container is greater than 300px and half the size of #box-2 when the container is less than 300px. 300px is the combined size of the <code>flex-basis</code> values of the two boxes."
       ],
@@ -1451,7 +1451,7 @@
       "title": "Using the Order Property to Rearrange Items",
       "description": [
         "The <code>order</code> property is used to tell CSS the order of how flex items appear in the flex container. By default, items will appear in the same order they come in the source HTML. The property takes numbers as values, and negative numbers can be used.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>order</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of 2 and give <code>#box-2</code> a value of 1."
       ],
       "challengeSeed": [
@@ -1521,7 +1521,7 @@
       "description": [
         "The final property for flex items is <code>align-self</code>. This property allows you to adjust each item's alignment individually, instead of setting them all at once. This is useful since other common adjustment techniques using the CSS properties <code>float</code>, <code>clear</code>, and <code>vertical-align</code> do not work on flex items.",
         "<code>align-self</code> accepts the same values as <code>align-items</code> and will override any value set by the <code>align-items</code> property.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the CSS property <code>align-self</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of center and give <code>#box-2</code> a value of flex-end."
       ],
       "challengeSeed": [

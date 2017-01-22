@@ -15,7 +15,7 @@
         "You can make a multi-line comment beginning with <code>/*</code> and ending with <code>*/</code>:",
         "<blockquote>/* This is a <br>   multi-line comment */</blockquote>",
         "<strong>Best Practice</strong><br>As you write code, you should regularly add comments to clarify the function of parts of your code. Good commenting can help communicate the intent of your code&mdash;both for others <em>and</em> for your future self.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Try creating one of each type of comment."
       ],
       "challengeSeed": [
@@ -55,7 +55,7 @@
             "<code>/*Voici un commentaire <br>   sur plusieurs lignes */</code>",
             "<strong>Conseils</strong>",
             "Lorsque vous écrivez votre code, vous devriez ajouter régulièrement des commentaires pour clarifier l'objectif de certaines parties de votre code. De bons commentaires peuvent aider les autres <em>et</em> vous-même à mieux comprendre votre code.",
-            "<h4>Instructions</h4>",
+            "<hr>",
             "Essayez de créer un commentaire de chaque type."
           ]
         }
@@ -73,7 +73,7 @@
         "<blockquote>var ourName;</blockquote>",
         "creates a <code>variable</code> called <code>ourName</code>. In JavaScript we end statements with semicolons.",
         "<code>Variable</code> names can be made up of numbers, letters, and <code>$</code> or <code>_</code>, but may not contain spaces or start with a number.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>var</code> keyword to create a variable called <code>myName</code>.",
         "<strong>Hint</strong><br>Look at the <code>ourName</code> example if you get stuck."
       ],
@@ -117,7 +117,7 @@
             "<code>var notreNom</code>;",
             "crée une <code>variable</code> appelée <code>notreNom</code>.On termine nos expressions avec un point virgule en JavaScript.",
             "Le nom d'une <code>variable</code> peut être composé de nombres, lettres et <code>$</code> ou <code>_</code>, mais ne peut contenir d'espaces ou commencer par un nombre.",
-            "<h4>Instructions</h4>",
+            "<hr>",
             "Utilisez le mot-clé <code>var</code> pour créer une variable appelée <code>monNom</code>",
             "<strong>Conseil</strong><br>Regardez à l'exemple de <code>notreNom</code> si vous vous êtes bloqué."
           ]
@@ -134,7 +134,7 @@
         "Assignment always goes from right to left. Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.",
         "<blockquote>myVar = 5;<br>myNum = myVar;</blockquote>",
         "Assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Assign the value <code>7</code> to variable <code>a</code>.",
         "Assign the contents of <code>a</code> to variable <code>b</code>."
       ],
@@ -193,7 +193,7 @@
         "It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.",
         "<code>var myVar = 0;</code>",
         "Creates a new variable called <code>myVar</code> and assigns it an initial value of <code>0</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Define a variable <code>a</code> with <code>var</code> and initialize it to a value of <code>9</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -233,7 +233,7 @@
       "title": "Understanding Uninitialized Variables",
       "description": [
         "When JavaScript variables are declared, they have an initial value of <code>undefined</code>. If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>\"Not a Number\"</dfn>. If you concatenate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>\"undefined\"</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>\"I am a\"</code> respectively so that they will not be <code>undefined</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -285,7 +285,7 @@
         "Write variable names in Javascript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.",
         "<strong>Examples:</strong>",
         "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsTooLong;</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.<br>Do not create any new variables."
       ],
       "releasedOn": "January 1, 2016",
@@ -336,11 +336,9 @@
         "<code>Number</code> is a data type in JavaScript which represents numeric data.",
         "Now let's try to add two numbers using JavaScript.",
         "JavaScript uses the <code>+</code> symbol as addition operation when placed between two numbers.",
-        "",
         "<strong>Example</strong>",
         "<blockquote>myVar = 5 + 10; // assigned 15</blockquote>",
-        "",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>0</code> so that sum will equal <code>20</code>."
       ],
       "challengeSeed": [
@@ -380,7 +378,7 @@
         "<strong>Example</strong>",
         "<blockquote>myVar = 12 - 6; // assigned 6</blockquote>",
         "",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>0</code> so the difference is <code>12</code>."
       ],
       "challengeSeed": [
@@ -422,7 +420,7 @@
         "<strong>Example</strong>",
         "<blockquote>myVar = 13 * 13; // assigned 169</blockquote>",
         "",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>0</code> so that product will equal <code>80</code>."
       ],
       "challengeSeed": [
@@ -463,7 +461,7 @@
         "<strong>Example</strong>",
         "<blockquote>myVar = 16 / 2; // assigned 8</blockquote>",
         "",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>0</code> so that the <code>quotient</code> is equal to <code>2</code>."
       ],
       "challengeSeed": [
@@ -503,7 +501,7 @@
         "is the equivalent of",
         "<code>i = i + 1;</code>",
         "<strong>Note</strong><br>The entire line becomes <code>i++;</code>, eliminating the need for the equal sign.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the code to use the <code>++</code> operator on <code>myVar</code>.",
         "<strong>Hint</strong><br>Learn more about <a href=\"https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()\" target=\"_blank\">Arithmetic operators - Increment (++)</a>."
       ],
@@ -553,7 +551,7 @@
         "is the equivalent of",
         "<code>i = i - 1;</code>",
         "<strong>Note</strong><br>The entire line becomes <code>i--;</code>, eliminating the need for the equal sign.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the code to use the <code>--</code> operator on <code>myVar</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -598,7 +596,7 @@
       "description": [
         "We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.",
         "<strong>Note</strong><br>Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. <a href=\"https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems\" target=\"_blank\">Details Here</a>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a variable <code>myDecimal</code> and give it a decimal value with a fractional part (e.g. <code>5.7</code>)."
       ],
       "challengeSeed": [
@@ -638,7 +636,7 @@
       "description": [
         "In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.",
         "Let's multiply two decimals together to get their product.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>0.0</code> so that product will equal <code>5.0</code>."
       ],
       "challengeSeed": [
@@ -675,7 +673,7 @@
       "title": "Divide one Decimal by Another with JavaScript",
       "description": [
         "Now let's divide one decimal by another.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.2</code>."
       ],
       "challengeSeed": [
@@ -716,7 +714,7 @@
         "<strong>Usage</strong><br>In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by <code>2</code>.",
         "<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>",
         "<strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as  the \"modulus\" operator. It is very similar to modulus, but does not work properly with negative numbers.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator."
       ],
       "releasedOn": "January 1, 2016",
@@ -764,7 +762,7 @@
         "to add <code>5</code> to <code>myVar</code>. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.",
         "One such operator is the <code>+=</code> operator.",
         "<blockquote>var myVar = 1;<br>myVar += 5;<br>console.log(myVar); // Returns 6</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
@@ -818,7 +816,7 @@
         "<code>myVar = myVar - 5;</code>",
         "will subtract <code>5</code> from <code>myVar</code>. This can be rewritten as: ",
         "<code>myVar -= 5;</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
@@ -872,7 +870,7 @@
         "<code>myVar = myVar * 5;</code>",
         "will multiply <code>myVar</code> by <code>5</code>. This can be rewritten as: ",
         "<code>myVar *= 5;</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>*=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
@@ -926,7 +924,7 @@
         "<code>myVar = myVar / 5;</code>",
         "Will divide <code>myVar</code> by <code>5</code>. This can be rewritten as: ",
         "<code>myVar /= 5;</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>/=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
@@ -1025,7 +1023,7 @@
         "Previously we have used the code",
         "<code>var myName = \"your name\";</code>",
         "<code>\"your name\"</code> is called a <dfn>string</dfn> <dfn>literal</dfn>. It is a string because it is a series of zero or more characters enclosed in single or double quotes.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create two new <code>string</code> variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively."
       ],
       "challengeSeed": [
@@ -1068,7 +1066,7 @@
         "<code>var sampleStr = \"Alan said, \\\"Peter is learning JavaScript\\\".\";</code>",
         "This signals to JavaScript that the following quote is not the end of the string, but should instead appear inside the string. So if you were to print this to the console, you would get:",
         "<code>Alan said, \"Peter is learning JavaScript\".</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable so that if you were to print it to the console, you would see:",
         "<code>I am a \"double quoted\" string inside \"double quotes\".</code>"
       ],
@@ -1119,7 +1117,7 @@
         "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type. Unless they are escaped, you cannot have more than one pair of whichever quote type begins a string.",
         "If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:",
         "<code>'This string has \"double quotes\" in it. And \"probably\" lots of them.'</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the provided string from double to single quotes and remove the escaping."
       ],
       "releasedOn": "January 1, 2016",
@@ -1161,7 +1159,7 @@
         "Quotes are not the only characters that can be <dfn>escaped</dfn> inside a string. There are two reasons to use escaping characters: First is to allow you to use characters you might not otherwise be able to type out, such as a backspace. Second is to allow you to represent multiple quotes in a string without JavaScript misinterpreting what you mean. We learned this in the previous challenge.",
         "<table class=\"table table-striped\"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\\'</code></td><td>single quote</td></tr><tr><td><code>\\\"</code></td><td>double quote</td></tr><tr><td><code>\\\\</code></td><td>backslash</td></tr><tr><td><code>\\n</code></td><td>newline</td></tr><tr><td><code>\\r</code></td><td>carriage return</td></tr><tr><td><code>\\t</code></td><td>tab</td></tr><tr><td><code>\\b</code></td><td>backspace</td></tr><tr><td><code>\\f</code></td><td>form feed</td></tr></tbody></table>",
         "<em>Note that the backslash itself must be escaped in order to display as a backslash.</em>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Assign the following three lines of text into the single variable <code>myStr</code> using escape sequences.",
         "<blockquote>FirstLine<br/>&nbsp;&nbsp;&nbsp;&nbsp;\\SecondLine<br/>ThirdLine</blockquote>",
         "You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.",
@@ -1211,7 +1209,7 @@
         "<strong>Example</strong>",
         "<blockquote>'My name is Alan,' + ' I concatenate.'</blockquote>",
         "<strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Build <code>myStr</code> from the strings <code>\"This is the start. \"</code> and <code>\"This is the end.\"</code> using the <code>+</code> operator."
       ],
       "releasedOn": "January 1, 2016",
@@ -1265,7 +1263,7 @@
       "description": [
         "We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.",
         "<strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Build <code>myStr</code> over several lines by concatenating these two strings:<br><code>\"This is the first sentence. \"</code> and <code>\"This is the second sentence.\"</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
@@ -1315,7 +1313,7 @@
       "title": "Constructing Strings with Variables",
       "description": [
         "Sometimes you will need to build a string, <a href=\"https://en.wikipedia.org/wiki/Mad_Libs\" target=\"_blank\">Mad Libs</a> style. By using the concatenation operator (<code>+</code>), you can insert one or more variables into a string you're building.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Set <code>myName</code> to a string equal to your name and build <code>myStr</code> with <code>myName</code> between the strings <code>\"My name is \"</code> and <code>\" and I am well!\"</code>"
       ],
       "releasedOn": "January 1, 2016",
@@ -1371,7 +1369,7 @@
       "title": "Appending Variables to Strings",
       "description": [
         "Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (<code>+=</code>) operator.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Set <code>someAdjective</code> and append it to <code>myStr</code> using the <code>+=</code> operator."
       ],
       "releasedOn": "January 1, 2016",
@@ -1430,7 +1428,7 @@
         "You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.",
         "<code>\"Alan Peter\".length; // 10</code>",
         "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string <code>\"Charles\"</code> is by using the <code>firstName.length</code> property.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable and assign it to <code>lastNameLength</code>."
       ],
       "challengeSeed": [
@@ -1480,7 +1478,7 @@
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
         "Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <dfn>bracket notation</dfn> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.",
         "<strong>Hint</strong><br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
@@ -1534,7 +1532,7 @@
         "<blockquote>var myStr = \"Bob\";<br>myStr[0] = \"J\";</blockquote>",
         "cannot change the value of <code>myStr</code> to \"Job\", because the contents of <code>myStr</code> cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change <code>myStr</code> would be to assign it with a new string, like this:",
         "<blockquote>var myStr = \"Bob\";<br>myStr = \"Job\";</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Correct the assignment to <code>myStr</code> to achieve the desired effect that is intended by <code>myStr[0] = \"H\" ;</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -1581,7 +1579,7 @@
       "description": [
         "You can also use <dfn>bracket notation</dfn> to get the character at other positions within a string.",
         "Remember that computers start counting at <code>0</code>, so the first character is actually the zeroth character.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of the <code>lastName</code> variable using bracket notation.",
         "<strong>Hint</strong><br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
@@ -1629,7 +1627,7 @@
       "description": [
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName</code> variable.",
         "<strong>Hint</strong><br>Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
@@ -1677,7 +1675,7 @@
       "description": [
         "You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <dfn>bracket notation</dfn> to find the second-to-last character in the <code>lastName</code> string.",
         "<strong>Hint</strong><br>Try looking at the <code>thirdToLastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
@@ -1776,7 +1774,7 @@
         "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
         "You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this: ",
         "<code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the new array <code>myArray</code> so that it contains both a <code>string</code> and a <code>number</code> (in that order).",
         "<strong>Hint</strong><br>Refer to the example code in the text editor if you get stuck."
       ],
@@ -1819,7 +1817,7 @@
       "title": "Nest one Array within Another Array",
       "description": [
         "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 23], [\"White Sox\", 45]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a nested array called <code>myArray</code>."
       ],
       "challengeSeed": [
@@ -1861,7 +1859,7 @@
         "<strong>Example</strong>",
         "<blockquote>var array = [1,2,3];<br>array[0]; // equals 1<br>var data = array[1];  // equals 2</blockquote>",
         "<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code> using bracket notation."
       ],
       "challengeSeed": [
@@ -1911,7 +1909,7 @@
         "<strong>Example</strong>",
         "<blockquote>var ourArray = [3,2,1];<br>ourArray[0] = 1; // equals [1,2,1]</blockquote>",
         "<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>3</code>."
       ],
       "challengeSeed": [
@@ -1960,7 +1958,7 @@
         "<strong>Example</strong>",
         "<blockquote>var arr = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br>arr[3]; // equals [[10,11,12], 13, 14]<br>arr[3][0]; // equals [10,11,12]<br>arr[3][0][1]; // equals 11</blockquote>",
         "<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0][0]</code> and even this <code>array [0] [0]</code> is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Using bracket notation select an element from <code>myArray</code> such that <code>myData</code> is equal to <code>8</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -2004,7 +2002,7 @@
         "An easy way to append data to the end of an array is via the <code>push()</code> function.",
         "<code>.push()</code> takes one or more <dfn>parameters</dfn> and \"pushes\" them onto the end of the array.",
         "<blockquote>var arr = [1,2,3];<br>arr.push(4);<br>// arr is now [1,2,3,4]</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Push <code>[\"dog\", 3]</code> onto the end of the <code>myArray</code> variable."
       ],
       "challengeSeed": [
@@ -2050,7 +2048,7 @@
         "<code>.pop()</code> is used to \"pop\" a value off of the end of an array. We can store this \"popped off\" value by assigning it to a variable. In other words, <code>.pop()</code> removes the last element from an array and returns that element.",
         "Any type of entry can be \"popped\" off of an array - numbers, strings, even nested arrays.",
         "<blockquote><code>var threeArr = [1, 4, 6];<br> var oneDown = threeArr.pop();<br> console.log(oneDown); // Returns 6<br> console.log(threeArr); // Returns [1, 4]</code></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the \"popped off\" value to <code>removedFromMyArray</code>."
       ],
       "challengeSeed": [
@@ -2099,7 +2097,7 @@
       "description": [
         "<code>pop()</code> always removes the last element of an array. What if you want to remove the first?",
         "That's where <code>.shift()</code> comes in. It works just like <code>.pop()</code>, except it removes the first element instead of the last.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>.shift()</code> function to remove the first item from <code>myArray</code>, assigning the \"shifted off\" value to <code>removedFromMyArray</code>."
       ],
       "challengeSeed": [
@@ -2146,7 +2144,7 @@
       "description": [
         "Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements to the beginning of an array i.e. add elements in front of the array.",
         "<code>.unshift()</code> works exactly like <code>.push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add <code>[\"Paul\",35]</code> to the beginning of the <code>myArray</code> variable using <code>unshift()</code>."
       ],
       "challengeSeed": [
@@ -2263,7 +2261,7 @@
         "You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:",
         "<code>functionName();</code>",
         "Each time the function is called it will print out the message <code>\"Hello World\"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "<ol><li>Create a function called <code>reusableFunction</code> which prints <code>\"Hi World\"</code> to the dev console.</li><li>Call the function.</li></ol>"
       ],
       "head": [
@@ -2345,7 +2343,7 @@
         "Then we can call <code>testFun</code>:",
         "<code>testFun(\"Hello\", \"World\");</code>",
         "We have passed two arguments, <code>\"Hello\"</code> and <code>\"World\"</code>. Inside the function, <code>param1</code> will equal \"Hello\" and <code>param2</code> will equal \"World\". Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "<ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function.</li></ol>"
       ],
       "releasedOn": "January 1, 2016",
@@ -2424,7 +2422,7 @@
       "description": [
         "In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.",
         "Variables which are used without the <code>var</code> keyword are automatically created in the <code>global</code> scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with <code>var</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Using <code>var</code>, declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.",
         "Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword."
       ],
@@ -2511,7 +2509,7 @@
         "Here is a function <code>myTest</code> with a local variable called <code>loc</code>.",
         "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // logs \"foo\"<br>console.log(loc); // loc is not defined</blockquote>",
         "<code>loc</code> is not defined outside of the function.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Run the tests and then follow the instructions commented out in the editor.",
         "<strong>Hint</strong><br>Refreshing the page may help if you get stuck."
       ],
@@ -2587,7 +2585,7 @@
         "In this example:",
         "<blockquote>var someVar = \"Hat\";<br>function myFun() {<br>  var someVar = \"Head\";<br>  return someVar;<br>}</blockquote>",
         "The function <code>myFun</code> will return <code>\"Head\"</code> because the <code>local</code> version of the variable is present.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a local variable to <code>myOutfit</code> to override the value of <code>outerWear</code> with <code>\"sweater\"</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -2638,7 +2636,7 @@
         "<strong>Example</strong>",
         "<blockquote>function plusThree(num) {<br>  return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote>",
         "<code>plusThree</code> takes an <dfn>argument</dfn> for <code>num</code> and returns a value equal to <code>num + 3</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value."
       ],
       "releasedOn": "January 1, 2016",
@@ -2688,7 +2686,7 @@
         "Assume we have pre-defined a function <code>sum</code> which adds two numbers together, then: ",
         "<code>ourSum = sum(5, 12);</code>",
         "will call <code>sum</code> function, which returns a value of <code>17</code> and assigns it to <code>ourSum</code> variable.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Call the <code>processArg</code> function with an argument of <code>7</code> and assign its return value to the variable <code>processed</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -2819,7 +2817,7 @@
       "description": [
         "Another data type is the <dfn>Boolean</dfn>. <code>Booleans</code> may only be one of two values: <code>true</code> or <code>false</code>. They are basically little on-off switches, where <code>true</code> is \"on\" and <code>false</code> is \"off.\"  These two states are mutually exclusive.",
         "<strong>Note</strong><br><code>Boolean</code> values are never written with quotes. The <code>strings</code> <code>\"true\"</code> and <code>\"false\"</code> are not <code>Boolean</code> and have no special meaning in JavaScript.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the <code>welcomeToBooleans</code> function so that it returns <code>true</code> instead of <code>false</code> when the run button is clicked."
       ],
       "challengeSeed": [
@@ -2867,7 +2865,7 @@
         "<strong>Example</strong>",
         "<blockquote>function test (myCondition) {<br>  if (myCondition) {<br>     return \"It was true\";<br>  }<br>  return \"It was false\";<br>}<br>test(true);  // returns \"It was true\"<br>test(false); // returns \"It was false\"</blockquote>",
         "When <code>test</code> is called with a value of <code>true</code>, the <code>if</code> statement evaluates <code>myCondition</code> to see if it is <code>true</code> or not. Since it is <code>true</code>, the function returns <code>\"It was true\"</code>. When we call <code>test</code> with a value of <code>false</code>, <code>myCondition</code> is <em>not</em> <code>true</code> and the statement in the curly braces is not executed and the function returns <code>\"It was false\"</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create an <code>if</code> statement inside the function to return <code>\"Yes, that was true\"</code> if the parameter <code>wasThatTrue</code> is <code>true</code> and return <code>\"No, that was false\"</code> otherwise."
       ],
       "challengeSeed": [
@@ -2934,7 +2932,7 @@
         "If <code>myVal</code> is equal to <code>10</code>, the equality operator returns <code>true</code>, so the code in the curly braces will execute, and the function will return <code>\"Equal\"</code>. Otherwise, the function will return <code>\"Not Equal\"</code>.",
         "In order for JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. Once it does, however, it can compare terms as follows:",
         "<blockquote>   1   ==  1    // true<br>   1   ==  2    // false<br>   1   == '1'   // true<br>  \"3\"  ==  3    // true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>equality operator</code> to the indicated line so that the function will return \"Equal\" when <code>val</code> is equivalent to <code>12</code>"
       ],
       "releasedOn": "January 1, 2016",
@@ -2985,7 +2983,7 @@
         "<strong>Examples</strong>",
         "<blockquote>3 === 3   // true<br>3 === '3' // false</blockquote>",
         "In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the strict equality operator in the <code>if</code> statement so the function will return \"Equal\" when <code>val</code> is strictly equal to <code>7</code>"
       ],
       "releasedOn": "January 1, 2016",
@@ -3033,7 +3031,7 @@
         "The inequality operator (<code>!=</code>) is the opposite of the equality operator. It means \"Not Equal\" and returns <code>false</code> where equality would return <code>true</code> and <em>vice versa</em>. Like the equality operator, the inequality operator will convert data types of values while comparing.",
         "<strong>Examples</strong>",
         "<blockquote>1 != 2      // true<br>1 != \"1\"    // false<br>1 != '1'    // false<br>1 != true   // false<br>0 != false  // false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the inequality operator <code>!=</code> in the <code>if</code> statement so that the function will return \"Not Equal\" when <code>val</code> is not equivalent to <code>99</code>"
       ],
       "releasedOn": "January 1, 2016",
@@ -3082,7 +3080,7 @@
         "The strict inequality operator (<code>!==</code>) is the logical opposite of the strict equality operator. It means \"Strictly Not Equal\" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.",
         "<strong>Examples</strong>",
         "<blockquote>3 !== 3   // false<br>3 !== '3' // true<br>4 !== 3   // true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>strict inequality operator</code> to the <code>if</code> statement so the function will return \"Not Equal\" when <code>val</code> is not strictly equal to <code>17</code>"
       ],
       "releasedOn": "January 1, 2016",
@@ -3139,7 +3137,7 @@
         "Like the equality operator, greater than operator will convert data types of values while comparing.",
         "<strong>Examples</strong>",
         "<blockquote> 5 > 3   // true<br> 7 > '3' // true<br> 2 > 3   // false<br>'1' > 9  // false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>greater than</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
@@ -3196,7 +3194,7 @@
         "Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.",
         "<strong>Examples</strong>",
         "<blockquote> 6  >=  6  // true<br> 7  >= '3' // true<br> 2  >=  3  // false<br>'7' >=  9  // false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>greater than or equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
@@ -3252,7 +3250,7 @@
         "The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two numbers. If the number to the left is less than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.",
         "<strong>Examples</strong>",
         "<blockquote>  2 &lt; 5  // true<br>'3' &lt; 7  // true<br>  5 &lt; 5  // false<br>  3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>less than</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
@@ -3306,7 +3304,7 @@
         "The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.",
         "<strong>Examples</strong>",
         "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>  5 &lt;= 5  // true<br>  3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>less than or equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
       "releasedOn": "January 1, 2016",
@@ -3364,7 +3362,7 @@
         "<blockquote>if (num > 5) {<br>  if (num < 10) {<br>    return \"Yes\";<br>  }<br>}<br>return \"No\";</blockquote>",
         "will only return \"Yes\" if <code>num</code> is greater than <code>5</code> and less than <code>10</code>. The same logic can be written as:",
         "<blockquote>if (num > 5 && num < 10) {<br>  return \"Yes\";<br>}<br>return \"No\";</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Combine the two if statements into one statement which will return <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>. Otherwise, will return <code>\"No\"</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -3426,7 +3424,7 @@
         "<blockquote>if (num > 10) {<br>  return \"No\";<br>}<br>if (num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "will return \"Yes\" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:",
         "<blockquote>if (num > 10 || num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Combine the two <code>if</code> statements into one statement which returns <code>\"Outside\"</code> if <code>val</code> is not between <code>10</code> and <code>20</code>, inclusive. Otherwise, return <code>\"Inside\"</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -3487,7 +3485,7 @@
       "description": [
         "When a condition for an <code>if</code> statement is true, the block of code following it is executed. What about when that condition is false?  Normally nothing would happen. With an <code>else</code> statement, an alternate block of code can be executed.",
         "<blockquote>if (num > 10) {<br>  return \"Bigger than 10\";<br>} else {<br>  return \"10 or Less\";<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Combine the <code>if</code> statements into a single <code>if/else</code> statement."
       ],
       "releasedOn": "January 1, 2016",
@@ -3544,7 +3542,7 @@
       "description": [
         "If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.",
         "<blockquote>if (num > 15) {<br>  return \"Bigger than 15\";<br>} else if (num < 5) {<br>  return \"Smaller than 5\";<br>} else {<br>  return \"Between 5 and 15\";<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Convert the logic to use <code>else if</code> statements."
       ],
       "releasedOn": "January 1, 2016",
@@ -3604,7 +3602,7 @@
         "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Less than two\";<br>  } else if (x < 1) {<br>    return \"Less than one\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
         "While these two functions look nearly identical if we pass a number to both we get different outputs.",
         "<blockquote>foo(0) // \"Less than one\"<br>bar(0) // \"Less than two\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the order of logic in the function so that it will return the correct statements in all cases."
       ],
       "challengeSeed": [
@@ -3656,7 +3654,7 @@
       "description": [
         "<code>if/else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:",
         "<blockquote>if (<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition2</em>) {<br>  <em>statement2</em><br>} else if (<em>condition3</em>) {<br>  <em>statement3</em><br>. . .<br>} else {<br>  <em>statementN</em><br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:",
         "<code>num &lt;   5</code> - return \"Tiny\"<br><code>num &lt;  10</code> - return \"Small\"<br><code>num &lt; 15</code> - return \"Medium\"<br><code>num &lt; 20</code> - return \"Large\"<br><code>num >= 20</code>  - return \"Huge\""
       ],
@@ -3766,7 +3764,7 @@
         "Here is a <dfn>pseudocode</dfn> example:",
         "<blockquote>switch (num) {<br>  case value1:<br>    statement1;<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  case valueN:<br>    statementN;<br>    break;<br>}</blockquote>",
         "<code>case</code> values are tested with strict equality (<code>===</code>). The <code>break</code> tells JavaScript to stop executing statements. If the <code>break</code> is omitted, the next statement will be executed.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a switch statement which tests <code>val</code> and sets <code>answer</code> for the following conditions:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
       ],
       "releasedOn": "January 1, 2016",
@@ -3822,7 +3820,7 @@
         "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.",
         "A <code>default</code> statement should be the last case.",
         "<blockquote>switch (num) {<br>  case value1:<br>    statement1;<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  default:<br>    defaultStatement;<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a switch statement to set <code>answer</code> for the following conditions:<br><code>\"a\"</code> - \"apple\"<br><code>\"b\"</code> - \"bird\"<br><code>\"c\"</code> - \"cat\"<br><code>default</code> - \"stuff\""
       ],
       "releasedOn": "January 1, 2016",
@@ -3876,7 +3874,7 @@
         "If the <code>break</code> statement is omitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
         "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
         "Cases for 1, 2, and 3 will all produce the same result.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
         "<strong>Note</strong><br>You will need to have a <code>case</code> statement for each number in the range."
       ],
@@ -3936,7 +3934,7 @@
         "<blockquote>if (val === 1) {<br>  answer = \"a\";<br>} else if (val === 2) {<br>  answer = \"b\";<br>} else {<br>  answer = \"c\";<br>}</blockquote>",
         "can be replaced with:",
         "<blockquote>switch (val) {<br>  case 1:<br>    answer = \"a\";<br>    break;<br>  case 2:<br>    answer = \"b\";<br>    break;<br>  default:<br>    answer = \"c\";<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the chained <code>if</code>/<code>else if</code> statements into a <code>switch</code> statement."
       ],
       "releasedOn": "January 1, 2016",
@@ -4005,7 +4003,7 @@
         "<blockquote>function isEqual(a,b) {<br>  if (a === b) {<br>    return true;<br>  } else {<br>    return false;<br>  }<br>}</blockquote>",
         "But there's a better way to do this. Since <code>===</code> returns <code>true</code> or <code>false</code>, we can return the result of the comparison:",
         "<blockquote>function isEqual(a,b) {<br>  return a === b;<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the function <code>isLess</code> to remove the <code>if/else</code> statements."
       ],
       "releasedOn": "January 1, 2016",
@@ -4058,7 +4056,7 @@
         "<strong>Example</strong>",
         "<blockquote>function myFun() {<br>  console.log(\"Hello\");<br>  return \"World\";<br>  console.log(\"byebye\")<br>}<br>myFun();</blockquote>",
         "The above outputs \"Hello\" to the console, returns \"World\", but <code>\"byebye\"</code> is never output, because the function exits at the <code>return</code> statement.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.",
         "<strong>Hint</strong><br>Remember that <a href='http://www.freecodecamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string."
       ],
@@ -4172,7 +4170,7 @@
         "Here's a sample object:",
         "<blockquote>var cat = {<br>  \"name\": \"Whiskers\",<br>  \"legs\": 4,<br>  \"tails\": 1,<br>  \"enemies\": [\"Water\", \"Dogs\"]<br>};</blockquote>",
         "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Make an object that represents a dog called <code>myDog</code> which contains the properties <code>\"name\"</code> (a string), <code>\"legs\"</code>, <code>\"tails\"</code> and <code>\"friends\"</code>.",
         "You can set these object properties to whatever values you want, as long <code>\"name\"</code> is a string, <code>\"legs\"</code> and <code>\"tails\"</code> are numbers, and <code>\"friends\"</code> is an array."
       ],
@@ -4237,7 +4235,7 @@
         "The dot operator is what you use when you know the name of the property you're trying to access ahead of time.",
         "Here is a sample of using the dot operator (<code>.</code>) to read an object property:",
         "<blockquote>var myObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>var prop1val = myObj.prop1; // val1<br>var prop2val = myObj.prop2; // val2</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Read in the property values of <code>testObj</code> using dot notation. Set the variable <code>hatValue</code> equal to the object property <code>hat</code> and set the variable <code>shirtValue</code> equal to the object property <code>shirt</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -4291,7 +4289,7 @@
         "Here is a sample of using bracket notation to read an object property:",
         "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>};<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
         "Note that property names with spaces in them must be in quotes (single or double).",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation and assign them to <code>entreeValue</code> and <code>drinkValue</code> respectively."
       ],
       "releasedOn": "January 1, 2016",
@@ -4347,7 +4345,7 @@
         "Here is one more:",
         "<blockquote>var myDog = \"Hunter\";<br>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var breed = dogs[myDog];<br>console.log(breed);// \"Doberman\"</blockquote>",
         "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>playerNumber</code> variable to lookup player <code>16</code> in <code>testObj</code> using bracket notation. Then assign that name to the <code>player</code> variable."
       ],
       "releasedOn": "January 1, 2016",
@@ -4406,7 +4404,7 @@
         "<code>ourDog.name = \"Happy Camper\";</code> or",
         "<code>ourDog[\"name\"] = \"Happy Camper\";</code>",
         "Now when we evaluate <code>ourDog.name</code>, instead of getting \"Camper\", we'll get his new name, \"Happy Camper\".",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Update the <code>myDog</code> object's name property. Let's change her name from \"Coder\" to \"Happy Coder\". You can use either dot or bracket notation."
       ],
       "challengeSeed": [
@@ -4475,7 +4473,7 @@
         "or",
         "<code>ourDog[\"bark\"] = \"bow-wow\";</code>",
         "Now when we evaluate <code>ourDog.bark</code>, we'll get his bark, \"bow-wow\".",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a <code>\"bark\"</code> property to <code>myDog</code> and set it to a dog sound, such as \"woof\". You may use either dot or bracket notation."
       ],
       "challengeSeed": [
@@ -4532,7 +4530,7 @@
       "description": [
         "We can also delete properties from objects like this:",
         "<code>delete ourDog.bark;</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Delete the <code>\"tails\"</code> property from <code>myDog</code>. You may use either dot or bracket notation."
       ],
       "challengeSeed": [
@@ -4591,7 +4589,7 @@
         "Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to \"lookup\" values rather than a <code>switch</code> statement or an <code>if/else</code> chain. This is most useful when you know that your input data is limited to a certain range.",
         "Here is an example of a simple reverse alphabet lookup:",
         "<blockquote>var alpha = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>  4:\"W\",<br>  ...<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"<br><br>var value = 2;<br>alpha[value]; // \"Y\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Convert the switch statement into a lookup table called <code>lookup</code>. Use it to lookup <code>val</code> and assign the associated string to the <code>result</code> variable."
       ],
       "releasedOn": "January 1, 2016",
@@ -4664,7 +4662,7 @@
         "Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
         "<strong>Example</strong>",
         "<blockquote>var myObj = {<br>  top: \"hat\",<br>  bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"top\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>. If the property is found, return that property's value. If not, return <code>\"Not Found\"</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -4723,7 +4721,7 @@
         "<a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
         "<blockquote>{<br>  \"artist\": \"Daft Punk\",<br>  \"title\": \"Homework\",<br>  \"release_year\": 1997,<br>  \"formats\": [ <br>    \"CD\",<br>    \"Cassette\",<br>    \"LP\"<br>  ],<br>  \"gold\": true<br>}</blockquote>",
         "<strong>Note</strong><br>You will need to place a comma after every object in the array, unless it is the last object in the array.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a new album to the <code>myMusic</code> array. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
       ],
       "releasedOn": "January 1, 2016",
@@ -4784,7 +4782,7 @@
         "The sub-properties of objects can be accessed by chaining together the dot or bracket notation.",
         "Here is a nested object:",
         "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>};<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents</code> variable. Use bracket notation for properties with a space in their name."
       ],
       "releasedOn": "January 1, 2016",
@@ -4844,7 +4842,7 @@
         "As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
         "Here is an example of how to access a nested array:",
         "<blockquote>var ourPets = [<br>  {<br>    animalType: \"cat\",<br>    names: [<br>      \"Meowzer\",<br>      \"Fluffy\",<br>      \"Kit-Cat\"<br>    ]<br>  },<br>  {<br>    animalType: \"dog\",<br>    names: [<br>      \"Spot\",<br>      \"Bowser\",<br>      \"Frankie\"<br>    ]<br>  }<br>];<br>ourPets[0].names[1]; // \"Fluffy\"<br>ourPets[1].names[0]; // \"Spot\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation."
       ],
       "releasedOn": "January 1, 2016",
@@ -5003,7 +5001,7 @@
         "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
         "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
       ],
       "challengeSeed": [
@@ -5059,7 +5057,7 @@
         "In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i &#60; 5</code> is true. We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.",
         "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 5; i++) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,1,2,3,4]</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
       ],
       "challengeSeed": [
@@ -5121,7 +5119,7 @@
         "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 10; i += 2) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.",
         "Let's change our <code>initialization</code> so we can count by odd numbers.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "challengeSeed": [
@@ -5179,7 +5177,7 @@
         "<blockquote>var ourArray = [];<br>for (var i=10; i &#62; 0; i-=2) {<br>  ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.",
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for</code> loop."
       ],
       "challengeSeed": [
@@ -5236,7 +5234,7 @@
         "A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:",
         "<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
         "Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <code>for</code> loop to add the value of each element of the <code>myArr</code> array to <code>total</code>."
       ],
       "releasedOn": "January 1, 2016",
@@ -5290,7 +5288,7 @@
         "If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:",
         "<blockquote>var arr = [<br>  [1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>  for (var j=0; j &lt; arr[i].length; j++) {<br>    console.log(arr[i][j]);<br>  }<br>}</blockquote>",
         "This outputs each sub-element in <code>arr</code> one at a time. Note that for the inner loop, we are checking the <code>.length</code> of <code>arr[i]</code>, since <code>arr[i]</code> is itself an array.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Modify function <code>multiplyAll</code> so that it multiplies the <code>product</code> variable by each number in the sub-arrays of <code>arr</code>"
       ],
       "releasedOn": "January 1, 2016",
@@ -5419,7 +5417,7 @@
         "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>",
         "<strong>Note</strong><br>Like <a href='storing-values-with-the-assignment-operator' target='_blank'>Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can <code>return</code> the value of the <code>Math.random()</code> function.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change <code>randomFraction</code> to return a random number instead of returning <code>0</code>."
       ],
       "challengeSeed": [
@@ -5468,7 +5466,7 @@
         "Putting everything together, this is what our code looks like:",
         "<code>Math.floor(Math.random() * 20);</code>",
         "We are calling <code>Math.random()</code>, multiplying the result by 20, then passing the value to <code>Math.floor()</code> function to round the value down to the nearest whole number.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use this technique to generate and return a random whole number between <code>0</code> and <code>9</code>."
       ],
       "challengeSeed": [
@@ -5522,7 +5520,7 @@
         "To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>.",
         "Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a function called <code>randomRange</code> that takes a range <code>myMin</code> and <code>myMax</code> and returns a random number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>, inclusive."
       ],
       "challengeSeed": [

@@ -61,7 +61,7 @@
         "Here's an example of a media query that returns the content when the device's width is smaller than 100px:",
         "<code>@media (max-width: 100px) { /* CSS Rules */ }</code>",
         "Remember, the CSS inside the media query is applied only if the media type matches that of the device being used.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a media query, so that the <code>p</code> tag has a <code>font-size</code> of 10px when the device's height is smaller than 800px."
       ],
       "challengeSeed": [
@@ -107,7 +107,7 @@
         "You can use:",
         "<blockquote>img {<br>  max-width: 100%;<br>  display: block;<br>  height: auto;<br>}</blockquote>",
         "The <code>max-width</code> property of 100% scales the image to fit the width of its container, but the image won't stretch wider than its original width. Setting the <code>display</code> property to block changes the image from an inline element (its default), to a block element on its own line. The <code>height</code> property of auto keeps the original aspect ratio of the image.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add style rules for the <code>img</code> tag to make it responsive to the size of its container. It should display as a block-level element, it should fit the full width of its container without stretching, and it should keep its original aspect ratio."
       ],
       "challengeSeed": [
@@ -152,7 +152,7 @@
         "The simplest way to make your images appear \"retina\" (and optimize them for retina displays) is to define their <code>width</code> and <code>height</code> values as only half of what the original file is.",
         "Here is an example of an image that is only using half of the original height and width:",
         "<blockquote>&lt;style&gt;<br>  img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;A most excellent picture&quot;&gt;</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Set the <code>width</code> and <code>height</code> of the <code>img</code> tag to half of their original values. In this case, both the original <code>height</code> and the original <code>width</code> are 200px."
       ],
       "challengeSeed": [
@@ -201,7 +201,7 @@
         "<li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension (height vs. width).</li>",
         "<li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension (height vs. width).</li>",
         "</ul>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Set the <code>width</code> of the <code>h2</code> tag to 80% of the viewport's width and the <code>width</code> of the paragraph as 75% of the viewport's smaller dimension."
       ],
       "challengeSeed": [
