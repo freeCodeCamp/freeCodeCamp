@@ -872,7 +872,7 @@
         "capitalizeString(\"hello!\");"
       ],
       "tests": [
-        "assert(code.match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/ig)"
+        "assert(code.match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/ig))"
       ],
       "type": "waypoint",
       "challengeType": 1,
