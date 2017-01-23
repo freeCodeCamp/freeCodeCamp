@@ -44,7 +44,7 @@
         "2) Pure functions - the same input always gives the same output",
         "3) Functions with limited side effects - any changes, or mutations, to the state of the program outside the function are carefully controlled",
         "<h4>Instructions</h4>",
-        "The members of Free Code Camp happen to love tea.",
+        "The members of freeCodeCamp happen to love tea.",
         "In the code editor, the <code>prepareTea</code> and <code>getTea</code> functions are already defined for you. Call the <code>getTea</code> function to get 40 cups of tea for the team, and store them in the <code>tea4TeamFCC</code> variable."
       ],
       "challengeSeed": [
@@ -1470,7 +1470,7 @@
       "description": [
         "The last several challenges covered a number of useful array and string methods that follow functional programming principles. We've also learned about <code>reduce</code>, which is a powerful method used to reduce problems to simpler forms. From computing averages to sorting, any array operation can be achieved by applying it. Recall that <code>map</code> and <code>filter</code> are special cases of <code>reduce</code>.",
         "Let's combine what we've learned to solve a practical problem.",
-        "Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes. For example, if you write a Medium post titled \"Stop Using Reduce\", it's likely the URL would have some form of the title string in it (\".../stop-using-reduce\"). You may have already noticed this on the Free Code Camp site.",
+        "Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes. For example, if you write a Medium post titled \"Stop Using Reduce\", it's likely the URL would have some form of the title string in it (\".../stop-using-reduce\"). You may have already noticed this on the freeCodeCamp site.",
         "<h4>Instructions</h4>",
         "Fill in the <code>urlSlug</code> function so it converts a string <code>title</code> and returns the hyphenated version for the URL. You can use any of the methods covered in this section, and don't use <code>replace</code>. Here are the requirements:",
         "The input is a string with spaces and title-cased words",

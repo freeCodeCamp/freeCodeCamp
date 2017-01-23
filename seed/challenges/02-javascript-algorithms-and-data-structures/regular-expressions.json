@@ -214,7 +214,7 @@
         "assert(fccRegex.test('FreeCodeCamp'), 'message: Your regex should match <code>FreeCodeCamp</code>');",
         "assert(fccRegex.test('FreecodeCamp'), 'message: Your regex should match <code>FreecodeCamp</code>');",
         "assert(fccRegex.test('FreeCodecamp'), 'message: Your regex should match <code>FreeCodecamp</code>');",
-        "assert(!fccRegex.test('Free Code Camp'), 'message: Your regex should not match <code>Free Code Camp</code>');",
+        "assert(!fccRegex.test('freeCodeCamp'), 'message: Your regex should not match <code>freeCodeCamp</code>');",
         "assert(fccRegex.test('FreeCOdeCamp'), 'message: Your regex should match <code>FreeCOdeCamp</code>');",
         "assert(!fccRegex.test('FCC'), 'message: Your regex should not match <code>FCC</code>');",
         "assert(fccRegex.test('FrEeCoDeCamp'), 'message: Your regex should match <code>FrEeCoDeCamp</code>');",

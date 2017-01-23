@@ -3643,14 +3643,14 @@
         ".clear() removes all key, value pairs",
         ".entries() returns an array of all the keys in insertion order",
         ".values() returns an array of all the values in insertion order",
-        "Instructions: Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair 'Free Code Camp', 'Awesome!' to it."
+        "Instructions: Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair 'freeCodeCamp', 'Awesome!' to it."
       ],
       "challengeSeed": [
         "// change code below this line"
       ],
       "tests": [
         "assert(typeof myMap == 'object', 'The myMap object exists.');",
-        "assert(myMap.get('Free Code Camp') == 'Awesome!', 'myMap contains the key value pair \\'Free Code Camp\\', \\'Awesome!\\'.');"
+        "assert(myMap.get('freeCodeCamp') == 'Awesome!', 'myMap contains the key value pair \\'freeCodeCamp\\', \\'Awesome!\\'.');"
       ],
       "type": "waypoint",
       "solutions": [],
