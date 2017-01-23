@@ -1,12 +1,17 @@
 const preFormattedBlockNames = {
-  'html5-and-css': 'HTML5 and CSS',
+  'api-projects': 'API Projects',
+  'basic-css': 'Basic CSS',
+  'basic-html-and-html5': 'Basic HTML and HTML5',
+  'css-flexbox': 'CSS Flexbox',
+  devops: 'DevOps',
+  es6: 'ES6',
+  'information-security-with-helmetjs': 'Information Security with HelmetJS',
   jquery: 'jQuery',
   'json-apis-and-ajax': 'JSON APIs and Ajax',
-  mongodb: 'MongoDB',
-  'api-projects': 'API Projects',
-  'the-dom': 'The DOM',
-  devops: 'DevOps'
+  'mongodb-and-mongoose': 'MongoDB and Mongoose',
+  'the-dom': 'The DOM'
 };
+
 const noFormatting = [
   'and',
   'for',

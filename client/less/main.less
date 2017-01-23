@@ -1065,10 +1065,43 @@ code {
   hr {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
   }
-  .navbar-default .navbar-nav > li > a {
-    color: #CCC;
-    &:hover {
+  .navbar-default {
+    .navbar-nav {
+      & > li > a {
+        color: #CCC;
+      }
+      .dropdown-menu {
+        background-color: @gray;
+        a {
+          color: @night-text-color !important;
+        }
+      }
+      a:focus,
+      a:hover,
+      .open #nav-Community-dropdown {
+        background-color: #666 !important;
+        color: @link-hover-color !important;
+      }
+    }
+  }
+  .navbar-toggle {
+    &:hover,
+    &:focus {
       background-color: #666;
+      color: @link-hover-color;
+      border-color: #666;
+    }
+  }
+  .modal-dialog {
+    .modal-content {
+      background-color: @gray;
+    }
+    .modal-header,
+    .modal-footer {
+      border: none;
+    }
+    .fa-check-circle {
+      color: darken(@brand-primary, 5%);
     }
   }
   a, .input-group-addon, .challenge-instructions a, .challenge-instructions #MDN-links a {
