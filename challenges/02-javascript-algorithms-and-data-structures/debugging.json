@@ -55,7 +55,7 @@
         "The <code>console.log()</code> method, which \"prints\" the output of what's within its parentheses to the console, will likely be the most helpful debugging tool. Placing it at strategic points in your code can show you the intermediate values of variables. It's good practice to have an idea of what the output should be before looking at what it is. Having check points to see the status of your calculations throughout your code will help narrow down where the problem is.",
         "Here's an example to print 'Hello world!' to the console:",
         "<code>console.log('Hello world!');</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>console.log()</code> method to print the value of the variable <code>a</code> where noted in the code."
       ],
       "challengeSeed": [
@@ -104,7 +104,7 @@
         "Here are some examples using <code>typeof</code>:",
         "<blockquote>console.log(typeof \"\"); // outputs \"string\"<br>console.log(typeof 0); // outputs \"number\"<br>console.log(typeof []); // outputs \"object\"<br>console.log(typeof {}); // outputs \"object\"</blockquote>",
         "JavaScript recognizes six primitive (immutable) data types: <code>Boolean</code>, <code>Null</code>, <code>Undefined</code>, <code>Number</code>, <code>String</code>, and <code>Symbol</code> (new with ES6) and one type for mutable items: <code>Object</code>. Note that in JavaScript, arrays are technically a type of object.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add two <code>console.log()</code> statements to check the <code>typeof</code> each of the two variables <code>seven</code> and <code>three</code> in the code."
       ],
       "challengeSeed": [
@@ -149,7 +149,7 @@
       "description": [
         "The <code>console.log()</code> and <code>typeof</code> methods are the two primary ways to check intermediate values and types of program output. Now it's time to get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error.",
         "Transposed, missing, or mis-capitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript variable and function names are case-sensitive.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the two spelling errors in the code so the <code>netWorkingCapital</code> calculation works."
       ],
       "challengeSeed": [
@@ -196,7 +196,7 @@
       "description": [
         "Another syntax error to be aware of is that all opening parentheses, brackets, curly braces, and quotes have a closing pair. Forgetting a piece tends to happen when you're editing existing code and inserting items with one of the pair types. Also, take care when nesting code blocks into others, such as adding a callback function as an argument to a method.",
         "One way to avoid this mistake is as soon as the opening character is typed, immediately include the closing match, then move the cursor back between them and continue coding. Fortunately, most modern code editors generate the second half of the pair automatically.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the two pair errors in the code."
       ],
       "challengeSeed": [
@@ -242,7 +242,7 @@
         "<blockquote>// These are correct:<br>const grouchoContraction = \"I've had a perfectly wonderful evening, but this wasn't it.\";<br>const quoteInString = \"Groucho Marx once said 'Quote me as saying I was mis-quoted.'\";<br>// This is incorrect:<br>const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';</blockquote>",
         "Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (\\) escape character:",
         "<blockquote>// Correct use of same quotes:<br>const allSameQuotes = 'I\\'ve had a perfectly wonderful evening, but this wasn\\'t it.';</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the string so it either uses different quotes for the <code>href</code> value, or escape the existing ones. Keep the double quote marks around the entire string."
       ],
       "challengeSeed": [
@@ -286,7 +286,7 @@
         "As covered in previous challenges, the assignment operator (<code>=</code>) in JavaScript assigns a value to a variable name. And the <code>==</code> and <code>===</code> operators check for equality (the triple <code>===</code> tests for strict equality, meaning both value and type are the same).",
         "The code below assigns <code>x</code> to be 2, which evaluates as <code>true</code>. Almost every value on its own in JavaScript evaluates to <code>true</code>, except what are known as the \"falsy\" values: <code>false</code>, <code>0</code>, <code>\"\"</code> (an empty string), <code>NaN</code>, <code>undefined</code>, and <code>null</code>.",
         "<blockquote>let x = 1;<br>let y = 2;<br>if (x = y) {<br>&nbsp;&nbsp;// this code block will run for any value of y (unless y were originally set as a falsy)<br>} else {<br>&nbsp;&nbsp;// this code block is what should run (but won't) in this example<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the condition so the program runs the right branch, and the appropriate value is assigned to <code>result</code>."
       ],
       "challengeSeed": [
@@ -337,7 +337,7 @@
         "When a function or method doesn't take any arguments, you may forget to include the (empty) opening and closing parentheses when calling it. Often times the result of a function call is saved in a variable for other use in your code. This error can be detected by logging variable values (or their types) to the console and seeing that one is set to a function reference, instead of the expected value the function returns.",
         "The variables in the following example are different:",
         "<blockquote>function myFunction() {<br>&nbsp;&nbsp;return \"You rock!\";<br>}<br>let varOne = myFunction; // set to equal a function<br>let varTwo = myFunction(); // set to equal the string \"You rock!\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the code so the variable <code>result</code> is set to the value returned from calling the function <code>getNine</code>."
       ],
       "challengeSeed": [
@@ -383,7 +383,7 @@
       "title": "Catch Arguments Passed in the Wrong Order When Calling a Function",
       "description": [
         "Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The following function <code>positivePowers</code> raises a base to a positive exponent. Unfortunately, it's not called properly - fix the code so the value of <code>power</code> is the expected 8."
       ],
       "challengeSeed": [
@@ -436,7 +436,7 @@
         "<code>Off by one errors</code> (sometimes called OBOE) crop up when you're trying to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them. JavaScript indexing starts at zero, not one, which means the last index is always one less than the length of the item. If you try to access an index equal to the length, the program may throw an \"index out of range\" reference error or print <code>undefined</code>.",
         "When you use string or array methods that take index ranges as arguments, it helps to read the documentation and understand if they are inclusive (the item at the given index is part of what's returned) or not. Here are some examples of off by one errors:",
         "<blockquote>let alphabet = \"abcdefghijklmnopqrstuvwxyz\";<br>let len = alphabet.length;<br>for (let i = 0; i <= len; i++) {<br>&nbsp;&nbsp;// loops one too many times at the end<br>&nbsp;&nbsp;console.log(alphabet[i]);<br>}<br>for (let j = 1; j < len; j++) {<br>&nbsp;&nbsp;// loops one too few times and misses the first character at index 0<br>&nbsp;&nbsp;console.log(alphabet[j]);<br>}<br>for (let k = 0; k < len; k++) {<br>&nbsp;&nbsp;// Goldilocks approves - this is just right<br>&nbsp;&nbsp;console.log(alphabet[k]);<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the two indexing errors in the following function so all the numbers 1 through 5 are printed to the console."
       ],
       "challengeSeed": [
@@ -486,7 +486,7 @@
       "description": [
         "Sometimes it's necessary to save information, increment counters, or re-set variables within a loop. A potential issue is when variables either should be reinitialized, and aren't, or vice versa. This is particularly dangerous if you accidentally reset the variable being used for the terminal condition, causing an infinite loop.",
         "Printing variable values with each cycle of your loop by using <code>console.log()</code> can uncover buggy behavior related to resetting, or failing to reset a variable.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The following function is supposed to create a two-dimensional array with <code>m</code> rows and <code>n</code> columns of zeroes. Unfortunately, it's not producing the expected output because the <code>row</code> variable isn't being reinitialized (set back to an empty array) in the outer loop. Fix the code so it returns a correct 3x2 array of zeroes, which looks like <code>[[0, 0], [0, 0], [0, 0]]</code>."
       ],
       "challengeSeed": [
@@ -547,7 +547,7 @@
         "There was an example of an infinite loop in the introduction to this section - it had no terminal condition to break out of the <code>while</code> loop inside <code>loopy()</code>. Do NOT call this function!",
         "<blockquote>function loopy() {<br>&nbsp;&nbsp;while(true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"Hello, world!\");<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "It's the programmer's job to ensure that the terminal condition, which tells the program when to break out of the loop code, is eventually reached. One error is incrementing or decrementing a counter variable in the wrong direction from the terminal condition. Another one is accidentally resetting a counter or index variable within the loop code, instead of incrementing or decrementing it.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The <code>myFunc()</code> function contains an infinite loop because the terminal condition <code>i != 4</code> will never evaluate to <code>false</code> (and break the looping) - <code>i</code> will increment by 2 each pass, and jump right over 4 since <code>i</code> is odd to start. Fix the comparison operator in the terminal condition so the loop only runs for <code>i</code> less than or equal to 4."
       ],
       "challengeSeed": [

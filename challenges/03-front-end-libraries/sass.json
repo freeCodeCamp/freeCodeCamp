@@ -49,7 +49,7 @@
         "Here are a couple examples:",
         "<blockquote>$main-fonts: Arial, sans-serif;<br>$headings-color: green;<br><br>//To use variables:<br>h1 {<br>&nbsp;&nbsp;font-family: $main-fonts;<br>&nbsp;&nbsp;color: $headings-color;<br>}</blockquote>",
         "One example where variables are useful is when a number of elements need to be the same color. If that color is changed, the only place to edit the code is the variable value.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a variable <code>$text-color</code> and set it to red. Then change the value of the <code>color</code> property for the <code>.blog-post</code> and <code>h2</code> to the <code>$text-color</code> variable."
       ],
       "challengeSeed": [
@@ -130,7 +130,7 @@
         "<blockquote>nav {<br>&nbsp;&nbsp;background-color: red;<br>}<br><br>nav ul {<br>&nbsp;&nbsp;list-style: none;<br>}<br><br>li {<br>&nbsp;&nbsp;display: inline-block;<br>}</blockquote>",
         "For a large project, the CSS file will have many lines and rules. This is where <code>nesting</code> can help organize your code by placing child style rules within the respective parent elements:",
         "<blockquote>nav {<br>&nbsp;&nbsp;background-color: red;<br><br>&nbsp;&nbsp;ul {<br>&nbsp;&nbsp;&nbsp;&nbsp;list-style: none;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;li {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: inline-block;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>nesting</code> technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. For testing purposes, the <code>h1</code> should come before the <code>p</code> element."
       ],
       "challengeSeed": [
@@ -205,7 +205,7 @@
         "The definition starts with <code>@mixin</code> followed by a custom name. The parameters (the <code>$x</code>, <code>$y</code>, <code>$blur</code>, and <code>$c</code> in the example above) are optional.",
         "Now any time a <code>box-shadow</code> rule is needed, only a single line calling the <code>mixin</code> replaces having to type all the vendor prefixes. A <code>mixin</code> is called with the <code>@include</code> directive:",
         "<blockquote>div {<br>&nbsp;&nbsp;@include box-shadow(0px, 0px, 4px, #fff);<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a <code>mixin</code> for <code>border-radius</code> and give it a <code>$radius</code> parameter. It should use all the vendor prefixes from the example. Then use the <code>border-radius</code> <code>mixin</code> to give the <code>#awesome</code> element a border radius of 15px."
       ],
       "challengeSeed": [
@@ -277,7 +277,7 @@
         "<blockquote>@mixin make-bold($bool) {<br>&nbsp;&nbsp;@if $bool == bold { font-weight: bold; }<br>}</blockquote>",
         "And just like in JavaScript, <code>@else if</code> and <code>@else</code> test for more conditions:",
         "<blockquote>@mixin text-effect($val) {<br>&nbsp;&nbsp;@if $val == danger {color: red;}<br>&nbsp;&nbsp;@else if $val == alert {color: yellow;}<br>&nbsp;&nbsp;@else if $val == success {color: green;}<br>&nbsp;&nbsp;@else {color: black;}<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a <code>mixin</code> called <code>border-stroke</code> that takes a parameter <code>$val</code>. The <code>mixin</code> should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:",
         "<blockquote>light - 1px solid black<br>medium - 3px solid black<br>heavy - 6px solid black<br>none - no border</blockquote>"
       ],
@@ -351,7 +351,7 @@
         "The <code>#{$i}</code> part is the syntax to combine a variable (<code>i</code>) with text to make a string. When the Sass file is converted to CSS, it looks like this:",
         "<blockquote>.col-1 {<br>&nbsp;&nbsp;width: 8.33333%;<br>}<br><br>.col-2 {<br>&nbsp;&nbsp;width: 16.66667%;<br>}<br><br>...<br><br>.col-12 {<br>&nbsp;&nbsp;width: 100%;<br>}</blockquote>",
         "This is a powerful way to create a grid layout. Now you have twelve options for column widths available as CSS classes.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a <code>@for</code> directive that takes a variable <code>$j</code> that goes from 1 <b>to</b> 6.",
         "It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> where each has a <code>font-size</code> set to 10px multiplied by the index."
       ],
@@ -425,7 +425,7 @@
         "Note that the <code>$key</code> variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have <code>color1</code>, <code>color2</code>... in it.",
         "Both of the above code examples are converted into the following CSS:",
         "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}<br><br>.red-text {<br>&nbsp;&nbsp;color: red;<br>}<br><br>.green-text {<br>&nbsp;&nbsp;color: green;<br>}</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write an <code>@each</code> directive that goes through a list: <code>blue, black, red</code> and assigns each variable to a <code>.color-bg</code> class, where the \"color\" part changes for each item.",
         "Each class should set the <code>background-color</code> the respective color."
       ],
@@ -496,7 +496,7 @@
         "<blockquote>$x: 1;<br>@while $x < 13 {<br>&nbsp;&nbsp;.col-#{$x} { width: 100%/12 * $x;}<br>&nbsp;&nbsp;$x: $x + 1;<br>}</blockquote>",
         "First, define a variable <code>$x</code> and set it to 1. Next, use the <code>@while</code> directive to create the grid system <i>while</i> <code>$x</code> is less than 13.",
         "After setting the CSS rule for <code>width</code>, <code>$x</code> is incremented by 1 to avoid an infinite loop.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <code>@while</code> to create a series of classes with different <code>font-sizes</code>.",
         "There should be 10 different classes from <code>text-1</code> to <code>text-10</code>. Then set <code>font-size</code> to 5px multiplied by the current index number. Make sure to avoid an infinite loop!"
       ],
@@ -579,7 +579,7 @@
         "For example, if all your <code>mixins</code> are saved in a <code>partial</code> named \"_mixins.scss\", and they are needed in the \"main.scss\" file, this is how to use them in the main file:",
         "<blockquote>// In the main.scss file<br><br>@import 'mixins'</blockquote>",
         "Note that the underscore is not needed in the <code>import</code> statement - Sass understands it is a <code>partial</code>. Once a <code>partial</code> is imported into a file, all variables, <code>mixins</code>, and other code are available to use.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write an <code>@import</code> statement to import a <code>partial</code> named <code>_variables.scss</code> into the main.scss file."
       ],
       "challengeSeed": [
@@ -641,7 +641,7 @@
         "The <code>extend</code> directive is a simple way to reuse the rules written for one element, then add more for another:",
         "<blockquote>.big-panel{<br>&nbsp;&nbsp;@extend .panel;<br>&nbsp;&nbsp;width: 150px;<br>&nbsp;&nbsp;font-size: 2em;<br>}</blockquote>",
         "The <code>.big-panel</code> will have the same properties as <code>.panel</code> in addition to the new styles.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Make a class <code>.info-important</code> that extends <code>.info</code> and also has a <code>background-color</code> set to magenta."
       ],
       "challengeSeed": [
