@@ -1129,7 +1129,7 @@ code {
   }
   .btn-primary {
     background-color: @brand-primary;
-    border-color: #292929;
+    border-color: #777;
     color:#CCC;
     transition: color 0.2s, background-color 0.2s;
     &:hover {
@@ -1150,6 +1150,12 @@ code {
   }
   .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     border-color: @night-text-color;
+  }
+  .btn-toggle {
+    background-color: transparent;
+  }
+  .btn-toggle.active {
+    background-color: @brand-primary;
   }
 }
 
