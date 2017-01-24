@@ -1147,10 +1147,11 @@
         "Once you have selected the preferred font, copy the link tag that is provided and insert it into the <code>head</code> of your page.",
         "The Open Sans font is already added for you behind the scenes, but the code to include it in your own project is the following:",
         "<code>&lt;link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" rel=\"stylesheet\"&gt;</code>",
-        "Once the link is in place, the font is available to include in your CSS by using the pattern <code>font-family: 'FONT', FAMILY_NAME;</code>.",
-        "In this example, \"FONT\" would be 'Open Sans' and \"FAMILY_NAME\" would be sans-serif. The quotes around 'Open Sans' are required because it has a space in its name. Also, capitalization of the font name matters.",
+        "Once the link is in place, the font is available to include in your CSS by using the pattern:<br><code>font-family: \"FAMILY_NAME\", GENERIC_NAME;</code>.",
+        "In this example, \"FAMILY_NAME\" would be <code>\"Open Sans\"</code> and GENERIC_NAME would be <code>sans-serif</code>. The generic name is a fallback font in case the other specified font is not available.",
+        "Family names are case-sensitive, but generic names are not. The quotes around \"Open Sans\" are required because it has a space in its name, but generic names do not require quotes because they are keywords in CSS.",
         "<hr>",
-        "Set the <code>font-family</code> of the body to \"Open Sans\"."
+        "Set the <code>font-family</code> of the body to use a family name of <code>\"Open Sans\"</code> and generic name of <code>sans-serif</code>."
       ],
       "challengeSeed": [
         "<style>",
@@ -1206,12 +1207,9 @@
         "</div>"
       ],
       "tests": [
-        "assert($('body').css('font-family') == '\"Open Sans\", sans-serif', 'message: The <code>body</code> tag should have the font of \"Open Sans\".');"
+        "assert($('body').css('font-family') == '\"Open Sans\", sans-serif', 'message: The <code>body</code> tag should have the family name of <code>\"Open Sans\"</code> and the generic name of <code>sans-serif</code>.');"
       ],
       "solutions": [],
-      "hints": [
-        "Remember to include both the font and the family-name."
-      ],
       "type": "waypoint",
       "challengeType": 0,
       "translations": {
