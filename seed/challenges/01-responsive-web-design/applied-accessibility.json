@@ -844,7 +844,7 @@
         "      </form>",
         "    </section>",
         "  </main>",
-        "  <footer>&copy; 2016 Camper Cat</footer>",
+        "  <footer>&copy 2016 Camper Cat</footer>",
         "</body>"
       ],
       "tests": [
