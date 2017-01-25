@@ -27,6 +27,7 @@ export default function stepChallengeEpic(actions, getState) {
       const stepFwd = currentIndex + 1;
       const stepBwd = currentIndex - 1;
       const isLastStep = stepFwd >= numOfSteps;
+      const isFirstStep = stepBwd < 0;
       if (type === types.completeAction) {
         return unlockStep(currentIndex, unlockedSteps);
       }
@@ -37,6 +38,9 @@ export default function stepChallengeEpic(actions, getState) {
         return goToStep(stepFwd, !!unlockedSteps[stepFwd]);
       }
       if (type === types.stepBackward) {
+        if (isFirstStep) {
+          return false;
+        }
         return goToStep(stepBwd, !!unlockedSteps[stepBwd]);
       }
       return null;
