@@ -5,17 +5,58 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7b7e367417b2b2512b20",
-      "title": "Use an array to store a collection of data",
+      "id": "587d7dac367417b2b2516zx5",
+      "title": "Introduction to Arrays",
       "description": [
-        "Arrays are JavaScript's most fundamental, and perhaps most common, <dfn>data structure</dfn>. An <dfn>array</dfn> is simply a collection of data, of any length, arranged in a comma separated list and enclosed in brackets <code>[ ]</code>. While we often make the distinction in JavaScript between <dfn>Objects</dfn> and <dfn>Arrays</dfn>, it is important to note that technically, an <strong>array</strong> <em>is</em> a type of <strong>object</strong>.",
-        "Arrays can store any type of data supported by JavaScript, and while they are a simple and basic form of data structure, they can also be very complex and powerful - all of which depends on how the programmer utilizes them.",
-        "The below is an example of a valid array, notice it contains <dfn>booleans</dfn>, <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>objects</dfn>, and other <dfn>arrays</dfn> (this is called a nested, or multi-dimensional array), among other valid data types:",
-        "<blockquote>let ourArray = [undefined, null, false, 'one', 2, {'three': 4}, [5, 'six']];<br>console.log(ourArray.length);<br>// logs 7</blockquote>",
-        "Note that all array's have a length property, which as shown above, can be very easily accessed with the syntax <code>Array.length</code>.",
-        "JavaScript offers many built in <dfn>methods</dfn> which allow us to access, traverse, and mutate arrays as needed, depending on our purpose. In the coming challenges, we will discuss several of the most common and useful methods, and a few other key techniques, that will help us to better understand and utilize arrays as data structures in JavaScript.",
+        [
+          "",
+          "",
+          "<dfn>Arrays</dfn> are one of JavaScript's most fundamental built-in data structures, and probably the data structure that you will work with most often throughout the course of the freeCodeCamp curriculum. The array is by no means unique to JavaScript, however &mdash; in fact, it’s probably safe to say that arrays are utilized by almost every complex program... ever.<br><br>In computer science, an array is a linear collection of elements characterized by the fact that each element has a unique <dfn>index</dfn>, or address, that can be computed and used to look up an element's position at run-time.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "In Javascript, arrays are written as comma-separated lists and are enclosed in brackets <code>[element1, element2, element3]</code>. They can be any length, and store any type of data supported by JavaScript.<br><br>Arrays can sometimes be simple and serve very basic functionalities, but they can also be complex and very powerful - all of which depends on how the programmer chooses to utilize them<br><br>From this point forward, whenever we refer to the term <dfn>array</dfn>, it will be strictly within the context of JavaScript.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "JavaScript offers many array <dfn>methods</dfn>, which are a sort of built in function, that allow us to access, traverse, and mutate arrays as needed, depending on our purpose.<br><br>In the coming challenges, we will discuss several of the most common and useful methods, and a few other key techniques, that will help you to better understand and utilize arrays as data structures in JavaScript.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
+      "id": "587d7b7e367417b2b2512b20",
+      "title": "Use an Array to Store a Collection of Data",
+      "description": [
+        "The below is an example of the simplest implementation of an array data structure. This is known as a <dfn>one-dimensional array</dfn>, meaning it only has one level, or that it does not have any other arrays nested within it. Notice it contains <dfn>booleans</dfn>, <dfn>strings</dfn>, and <dfn>numbers</dfn>, among other valid JavaScript data types:",
+        "<blockquote>let simpleArray = ['one', 2, 'three’, true, false, undefined, null];<br>console.log(simpleArray.length);<br>// logs 7</blockquote>",
+        "All array's have a length property, which as shown above, can be very easily accessed with the syntax <code>Array.length</code>.",
+        "A more complex implementation of an array can be seen below. This is known as a <dfn>multi-dimensional array</dfn>, or an array that contains other arrays. Notice that this array also contains JavaScript <dfn>objects</dfn>, which we will examine very closely in our next section, but for now, all you need to know is that arrays are also capable of storing complex objects.",
+        "<blockquote>let complexArray = [<br>  [<br>    {<br>      one: 1,<br>      two: 2<br>    },<br>    {<br>      three: 3,<br>      four: 4<br>    }<br>  ],<br>  [<br>    {<br>      a: \"a\",<br>      b: \"b\"<br>    },<br>    {<br>      c: \"c\",<br>      d: “d”<br>    }<br>  ]<br>];</blockquote>",
         "<hr>",
-        "We have defined a variable called <code>yourArray</code>. Complete the declaration by defining an array of at least 5 elements in length. Your array should contain at least one <dfn>string</dfn>, one <dfn>number</dfn>, and one <dfn>boolean</dfn>."
+        "We have defined a variable called <code>yourArray</code>. Complete the statement by assigning an array of at least 5 elements in length to the <code>yourArray</code> variable. Your array should contain at least one <dfn>string</dfn>, one <dfn>number</dfn>, and one <dfn>boolean</dfn>."
       ],
       "challengeSeed": [
         "let yourArray; // change this line"
@@ -41,7 +82,7 @@
        "<blockquote>let ourArray = [\"a\", \"b\", \"c\"];</blockquote>",
        "In an array, each array item has an <dfn>index</dfn>.  This index doubles as the position of that item in the array, and how you reference it. However, it is important to note, that JavaScript arrays are <dfn>zero-indexed</dfn>, meaning that the first element of an array is actually at the <em><strong>zeroth</strong></em> position, not the first.",
        "In order to retrieve an element from an array we can enclose an index in brackets and append it to the end of an array, or more commonly, to a variable which references an array object. This is known as <dfn>bracket notation</dfn>.",
-       "For example, if we want to get the <code>\"a\"</code> from <code>ourArray</code> and assign it to a variable, we can do so with the following code:",
+       "For example, if we want to retrieve the <code>\"a\"</code> from <code>ourArray</code> and assign it to a variable, we can do so with the following code:",
        "<blockquote>let ourVariable = ourArray[0];<br>// ourVariable equals \"a\"</blockquote>",
        "In addition to accessing the value associated with an index, you can also <em>set</em> an index to a value using the same notation:",
        "<blockquote>ourArray[1] = \"not b anymore\";<br>// ourArray now equals [\"a\", \"not b anymore\", \"c\"];</blockquote>",
@@ -136,7 +177,7 @@
       "title": "Remove Items Using splice()",
       "description": [
         "Ok, so we've learned how to remove elements from the beginning and end of arrays using <code>pop()</code> and <code>shift()</code>, but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where <code>splice()</code> comes in. <code>splice()</code> allows us to do just that: <strong>remove any number of consecutive elements</strong> from anywhere on an array.",
-        "<code>splice()</code> can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of <code>splice()</code> are integers which represent indexes, or postions, of the array that <code>splice()</code> is being called upon. And remember, arrays are <em>zero-indexed</em>, so to indicate the first element of an array, we would use <code>0</code>. <code>splice()</code>'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:",
+        "<code>splice()</code> can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of <code>splice()</code> are integers which represent indexes, or positions, of the array that <code>splice()</code> is being called upon. And remember, arrays are <em>zero-indexed</em>, so to indicate the first element of an array, we would use <code>0</code>. <code>splice()</code>'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:",
         "<blockquote>let array = ['today', 'was', 'not', 'so', 'great'];<br><br>array.splice(2, 2);<br>// remove 2 elements beginning with the 3rd element<br>// array now equals ['today', 'was', 'great']</blockquote>",
         "<code>splice()</code> not only modifies the array it's being called on, but it also returns a new array containing the value of the removed elements:",
         "<blockquote>let array = ['I', 'am', 'feeling', 'really', 'happy'];<br><br>let newArray = array.splice(3, 2);<br>// newArray equals ['really', 'happy']</blockquote>",
@@ -197,7 +238,7 @@
       "id": "587d7b7a367417b2b2512b12",
       "title": "Copy an Array with slice()",
       "description": [
-        "The next method we will cover is <code>slice()</code>. <code>slice()</code>, rather than modifying an array, copies, or <em>extracts</em>, a given mumber of elements to a new array, leaving the array it is called upon untouched. <code>slice()</code> takes only 2 parameters &mdash; the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:",
+        "The next method we will cover is <code>slice()</code>. <code>slice()</code>, rather than modifying an array, copies, or <em>extracts</em>, a given number of elements to a new array, leaving the array it is called upon untouched. <code>slice()</code> takes only 2 parameters &mdash; the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:",
         "<blockquote>let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];<br><br>let todaysWeather = weatherConditions.slice(1, 3);<br>// todaysWeather equals ['snow', 'sleet'];<br>// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']<br></blockquote>",
         "In effect, we have created a new array by extracting elements from an existing array.",
         "<hr>",
@@ -226,11 +267,11 @@
       "id": "587d7b7b367417b2b2512b13",
       "title": "Copy an Array with the Spread Operator",
       "description": [
-        "While <code>slice()</code> allows us to be selective about what elements of an array to copy, ammong several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy <em>all</em> of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: <code>...</code>",
+        "While <code>slice()</code> allows us to be selective about what elements of an array to copy, among several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy <em>all</em> of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: <code>...</code>",
         "In practice, we can use the spread operator to copy an array like so:",
         "<blockquote>let thisArray = [true, true, undefined, false, null];<br>let thatArray = [...thisArray];<br>// thatArray equals [true, true, undefined, false, null]<br>// thisArray remains unchanged, and is identical to thatArray</blockquote>",
         "<hr>",
-        "We have defined a function, <code>copyMachine</code> which takes <code>arr</code> (an array) and <code>num</code> (a number) as arguments. The function is supposed to return a new array made up of <code>num</code> copies of <code>arr</code>. We have done most of the work for you, but it doesn't work quite right yet. Modidy the function using spread syntax so that it works correctly (hint: another method we have already covered might come in handy here!)."
+        "We have defined a function, <code>copyMachine</code> which takes <code>arr</code> (an array) and <code>num</code> (a number) as arguments. The function is supposed to return a new array made up of <code>num</code> copies of <code>arr</code>. We have done most of the work for you, but it doesn't work quite right yet. Modify the function using spread syntax so that it works correctly (hint: another method we have already covered might come in handy here!)."
       ],
       "challengeSeed": [
         "function copyMachine(arr, num) {",
@@ -264,7 +305,7 @@
       "title": "Combine Arrays with the Spread Operator",
       "description": [
         "Another huge advantage of the <dfn>spread</dfn> operator, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:",
-        "<blockquote>let thisArray = ['sage', 'rosemary', 'parsely', 'thyme'];<br><br>let thatArray = ['basil', 'cilantro', ...thisArray, 'corriander'];<br>// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsely', 'thyme', 'corriander']</blockquote>",
+        "<blockquote>let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];<br><br>let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];<br>// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']</blockquote>",
         "Using spread syntax, we have just achieved an operation that would have been more more complex and more verbose had we used traditional methods.",
         "<hr>",
         "We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>, modify the function using the <dfn>spread</dfn> operator so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>."
@@ -332,7 +373,7 @@
         "We have defined a function, <code>filteredArray</code>, which takes <code>arr</code>, a nested array, and <code>elem</code> as arguments, and returns a new array. <code>elem</code> represents an element that may or may not be present on one or more of the arrays nested within <code>arr</code>. Modify the function, using a <code>for</code> loop, to return a filtered version of the passed array such that any array nested within <code>arr</code> containing <code>elem</code> has been removed."
       ],
       "challengeSeed": [
-        "function filteredArray(arr, num) {",
+        "function filteredArray(arr, elem) {",
         "  let newArr = [];",
         "  // change code below this line",
         "",
@@ -345,7 +386,7 @@
       ],
       "tests": [
         "assert.deepEqual(filteredArray([ [10, 8, 3], [14, 6, 23], [3, 18, 6] ], 18), [[10, 8, 3], [14, 6, 23]], 'message: <code>filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)</code> should return <code>[ [10, 8, 3], [14, 6, 23] ]</code>');",
-        "assert.deepEqual(filteredArray([ ['trumpets', 2], ['flutes', 4], ['saxaphones', 2] ], 2), [['flutes', 4]], 'message: <code>filteredArray([ [\"trumpets\", 2], [\"flutes\", 4], [\"saxaphones\"], 2], 2)</code> should return <code>[ [\"flutes\", 4] ]</code>');",
+        "assert.deepEqual(filteredArray([ ['trumpets', 2], ['flutes', 4], ['saxophones', 2] ], 2), [['flutes', 4]], 'message: <code>filteredArray([ [\"trumpets\", 2], [\"flutes\", 4], [\"saxophones\"], 2], 2)</code> should return <code>[ [\"flutes\", 4] ]</code>');",
         "assert.deepEqual(filteredArray([['amy', 'beth', 'sam'], ['dave', 'sean', 'peter']], 'peter'), [['amy', 'beth', 'sam']], 'message: <code>filteredArray([ [\"amy\", \"beth\", \"sam\"], [\"dave\", \"sean\", \"peter\"] ], \"peter\")</code> should return <code>[ [\"amy\", \"beth\", \"sam\"] ]</code>');",
         "assert.deepEqual(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3), [], 'message: <code>filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3)</code> should return <code>[ ]</code>');",
         "assert.notStrictEqual(filteredArray.toString().search(/for/), -1, 'message: The <code>filteredArray</code> function should utilize a <code>for</code> loop');"
@@ -384,9 +425,9 @@
       "tests": [
         "assert.strictEqual((function(arr) { let flattened = (function flatten(arr) { const flat = [].concat(...arr); return flat.some (Array.isArray) ? flatten(flat) : flat; })(arr); for (let i = 0; i < flattened.length; i++) { if ( typeof flattened[i] !== 'number' && typeof flattened[i] !== 'string' && typeof flattened[i] !== 'boolean') { return false } } return true })(myNestedArray), true, 'message: <code>myNestedArray</code> should contain only numbers, booleans, and strings as data elements');",
         "assert.strictEqual((function(arr) {let depth = 0;function arrayDepth(array, i, d) { if (Array.isArray(array[i])) {  arrayDepth(array[i], 0, d + 1);} else {  depth = (d > depth) ? d : depth;}if (i < array.length) {  arrayDepth(array, i + 1, d);}  }arrayDepth(arr, 0, 0);return depth;})(myNestedArray), 4, 'message: <code>myNestedArray</code> should have exactly 5 levels of depth');",
-        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deep').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deep')[0] === 2, 'message: <code>myNestedArray</code> should contain exactly one occurence of the string <code>\"deep\"</code> on an array nested 3 levels deep');",
-        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deeper').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deeper')[0] === 3, 'message: <code>myNestedArray</code> should contain exactly one occurence of the string <code>\"deeper\"</code> on an array nested 4 levels deep');",
-        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deepest').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deepest')[0] === 4, 'message: <code>myNestedArray</code> should contain exactly one occurence of the string <code>\"deepest\"</code> on an array nested 5 levels deep');"
+        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deep').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deep')[0] === 2, 'message: <code>myNestedArray</code> should contain exactly one occurrence of the string <code>\"deep\"</code> on an array nested 3 levels deep');",
+        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deeper').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deeper')[0] === 3, 'message: <code>myNestedArray</code> should contain exactly one occurrence of the string <code>\"deeper\"</code> on an array nested 4 levels deep');",
+        "assert((function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deepest').length === 1 && (function howDeep(array, target, depth = 0) {return array.reduce((combined, current) => {if (Array.isArray(current)) {  return combined.concat(howDeep(current, target, depth + 1));} else if (current === target) {  return combined.concat(depth);} else {  return combined;}}, []);})(myNestedArray, 'deepest')[0] === 4, 'message: <code>myNestedArray</code> should contain exactly one occurrence of the string <code>\"deepest\"</code> on an array nested 5 levels deep');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -394,18 +435,64 @@
       "translations": {}
     },
     {
+      "id": "587d7dac367417b2b25184d3",
+      "title": "Introduction to Objects",
+      "description": [
+        [
+          "",
+          "",
+          "The next data structure we will discuss is the JavaScript <dfn>object</dfn>. Like arrays, objects are a fundamental part of JavaScript. However, it is probably safe to say that objects surpass arrays in flexibility, usefulness and in their overall importance to the language &mdash; in fact, you may have heard this line before: 'In JavaScript, everything is an object.'<br><br>While an understanding of objects is important to understand the inner workings of JavaScript functions or JavaScript's object-oriented capabilities, JavaScript objects at a basic level are actually just <dfn>key-value pair</dfn> stores, a commonly used data structure across almost all programming languages. Here, we will confine our discussion to JavaScript objects in this capacity.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "Key-value pair data structures go by different names depending on the language and the specific details of the data structure. The terms <dfn>dictionary</dfn>, <dfn>map</dfn>, and <dfn>hash table</dfn> all refer to the notion of a data structure in which specific keys, or properties, are mapped to specific values.<br><br>Objects, and other similar key-value pair data structures, offer some very useful benefits. One clear benefit is that they allow us to structure our data in an intuitive way; properties can be nested to an arbitrary depth, and values can be anything, including arrays and even other objects.<br><br>Largely due to this flexibility, objects are also the foundation for <dfn>JavaScript Object Notation</dfn>, or <dfn>JSON</dfn>, which is a widely used method of sending data across the web.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "Another powerful advantage of key-value pair data structures is <dfn>constant lookup time</dfn>. What this means, is that when you request the value of a specific property, you will get the value back in the same amount of time (theoretically) regardless of the number of entries in the object. If you had an object with 5 entries or one that held a collection of 1,000,000, you could still retrieve property values or check if a key exists in the same amount of time.<br><br>The reason for this fast lookup time, is that internally, the object is storing properties using a hashing mechanism which allows it to know exactly where it has stored different property values. If you want to learn more about this please take a look at the optional Advanced Data Structures challenges. All you should remember for now is that <strong>performant access to flexibly structured data make key-value stores very attractive data structures useful in a wide variety of settings</strong>.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "<br><br>In JavaScript, objects are written as comma-separated lists of key-value pairs, wrapped in curly brackets, with each key and its assigned value separated by a colon:<br> <code>{ key1: 'val-1', key2: 'val-2' }</code><br><br>In the next few challenges, we will examine JavaScript objects more closely, and take a look at <dfn>methods</dfn> and techniques that allow us to access, store, and manipulate an object's data.<br><br>Note that throughout the scope of this discussion, and in general when considering JavaScript objects, the terms <dfn>key</dfn> and <dfn>property</dfn> will be used interchangeably.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
       "id": "587d7b7c367417b2b2512b18",
       "title": "Add Key-Value Pairs to JavaScript Objects",
       "description": [
-        "The next data structure we will discuss is the JavaScript <dfn>object</dfn>. Objects, like arrays, are a very fundamental part of JavaScript, in fact, you may have heard this line before: 'In JavaScript, everything is an object.' While an understanding of objects is important to understand the inner workings of JavaScript functions or JavaScript's object-oriented capabilities, JavaScript objects at a basic level are actually just <dfn>key-value pair</dfn> stores, a commonly used data structure across almost all programming languages. Here, we will confine our discussion to JavaScript objects in this capacity.",
-        "Key-value pair data structures go by different names depending on the language and the specific details of the data structure. The terms <dfn>dictionary</dfn>, <dfn>map</dfn>, and <dfn>hash table</dfn> all refer to the notion of a data structure in which specific keys, or properties, are mapped to specific values. For instance, consider the following:",
+        "At their most basic, objects are just collections of <dfn>key-value pairs</dfn>, or in other words, pieces of data mapped to unique identifiers that we call <dfn>properties</dfn> or <dfn>keys</dfn>. Let's take a look at a very simple example:",
         "<blockquote>let FCC_User = {<br>  username: 'awesome_coder',<br>  followers: 572,<br>  points: 1741,<br>  completedProjects: 15<br>};</blockquote>",
         "The above code defines an object called <code>FCC_User</code> that has four <dfn>properties</dfn>, each of which map to a specific value. If we wanted to know the number of <code>followers</code> <code>FCC_User</code> has, we can access that property by writing:",
         "<blockquote>let userData = FCC_User.followers;<br>// userData equals 572</blockquote>",
         "This is called <dfn>dot notation</dfn>. Alternatively, we can also access the property with brackets, like so:",
         "<blockquote>let userData = FCC_User['followers']<br>// userData equals 572</blockquote>",
         "Notice that with <dfn>bracket notation</dfn>, we enclosed <code>followers</code> in quotes. This is because the brackets actually allow us to pass a variable in to be evaluated as a property name (hint: keep this in mind for later!). Had we passed <code>followers</code> in without the quotes, the JavaScript engine would have attempted to evaluate it as a variable, and a <code>ReferenceError: followers is not defined</code> would have been thrown.",
-        "<strong>NOTE:</strong><br>Throughout the scope of this discussion, the terms <dfn>key</dfn> and <dfn>property</dfn> will be used interchangably.",
         "<hr>",
         "Using the same syntax, we can also <em><strong>add new</strong></em> key-value pairs to objects. We've created a <code>foods</code> object with three entries. Add three more entries: <code>bananas</code> with a value of <code>13</code>, <code>grapes</code> with a value of <code>35</code>, and <code>strawberries</code> with a value of <code>27</code>."
       ],
@@ -438,14 +525,14 @@
       "id": "587d7b7c367417b2b2512b19",
       "title": "Modify an Object Nested Within an Object",
       "description": [
-        "Objects, and other similar key-value pair data structures, offer some very useful benefits. One clear benefit is that they allow us to structure our data in an intuitive way. They are also very flexible. For instance, you can have properties nested to an arbitrary depth. Values can also be anything, for example a key can store an array, or even another object. Objects are also the foundation for <dfn>JavaScript Object Notation</dfn>, or <dfn>JSON</dfn>, which is a widely used method of sending data across the web.",
-        "Another powerful advantage of key-value pair data structures is <dfn>constant lookup time</dfn>. What we mean by this is when you request the value of a specific property you will get the value back in the same amount of time (theoretically) regardless of the number of entries in the object. If you had an object with 5 entries or one that held a collection of 1,000,000 entries you could still retrieve property values or check if a key exists in the same amount of time.",
-        "The reason for this fast lookup time is that internally, the object is storing properties using some type of hashing mechanism which allows it to know exactly where it has stored different property values. If you want to learn more about this please take a look at the optional Advanced Data Structures challenges. All you should remember for now is that <strong><em>performant access to flexibly structured data make key-value stores very attractive data structures useful in a wide variety of settings</em></strong>.",
+        "Now let's take a look at a slightly more complex object. Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript, including arrays and even other objects. Consider the following:",
+        "<blockquote>let nestedObject = {<br>  id: 28802695164,<br>  date: 'December 31, 2016',<br>  data: {<br>    totalUsers: 99,<br>    online: 80,<br>    onlineStatus: {<br>      active: 67,<br>      away: 13<br>    }<br>  }<br>};</blockquote>",
+        "<code>nestedObject</code> has three unique keys: <code>id</code>, whose value is a number, <code>date</code> whose value is a string, and <code>data</code>, whose value is an object which has yet another object nested within it. While structures can quickly become complex, we can still use the same notations to access the information we need.",
         "<hr>",
-        "Here we've written an object, <code>nestedObject</code>, which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the <code>online</code> key to <code>45</code>."
+        "Here we've defined an object, <code>userActivity</code>, which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the <code>online</code> key to <code>45</code>."
       ],
       "challengeSeed": [
-        "let nestedObject = {",
+        "let userActivity = {",
         "  id: 23894201352,",
         "  date: 'January 1, 2017',",
         "  data: {",
@@ -458,12 +545,12 @@
         "",
         "// change code above this line",
         "",
-        "console.log(nestedObject);"
+        "console.log(userActivity);"
       ],
       "tests": [
-        "assert('id' in nestedObject && 'date' in nestedObject && 'data' in nestedObject, 'message: <code>nestedObject</code> has <code>id</code>, <code>date</code> and <code>data</code> properties');",
-        "assert('totalUsers' in nestedObject.data && 'online' in nestedObject.data, 'message: <code>nestedObject</code> has a <code>data</code> key set to an object with keys <code>totalUsers</code> and <code>online</code>');",
-        "assert(nestedObject.data.online === 45, 'message: The <code>online</code> property nested in the <code>data</code> key of <code>nestedObject</code> should be set to <code>45</code>');",
+        "assert('id' in userActivity && 'date' in userActivity && 'data' in userActivity, 'message: <code>userActivity</code> has <code>id</code>, <code>date</code> and <code>data</code> properties');",
+        "assert('totalUsers' in userActivity.data && 'online' in userActivity.data, 'message: <code>userActivity</code> has a <code>data</code> key set to an object with keys <code>totalUsers</code> and <code>online</code>');",
+        "assert(userActivity.data.online === 45, 'message: The <code>online</code> property nested in the <code>data</code> key of <code>userActivity</code> should be set to <code>45</code>');",
         "assert.strictEqual(code.search(/online: 45/), -1, 'message: The <code>online</code> property is set using dot or bracket notation');"
       ],
       "type": "waypoint",
@@ -497,7 +584,7 @@
         "",
         "}",
         "",
-        "// change code below this line to test differnt cases:",
+        "// change code below this line to test different cases:",
         "console.log(checkInventory(\"apples\"));"
       ],
       "tests": [
