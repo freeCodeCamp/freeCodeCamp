@@ -58,6 +58,9 @@ export class Editor extends PureComponent {
       ...options,
       mode,
       extraKeys: {
+        Esc() {
+          document.activeElement.blur();
+        },
         Tab(cm) {
           if (cm.somethingSelected()) {
             return cm.indentSelection('add');
