@@ -1,5 +1,3 @@
-import dedent from 'dedent';
-
 import types from '../redux/types';
 import { closeBugModal } from '../redux/actions';
 
@@ -12,13 +10,15 @@ function filesToMarkdown(files = {}) {
     }
     const fileName = moreThenOneFile ? `\\ file: ${file.contents}` : '';
     const fileType = file.ext;
-    return fileString + dedent`
-      \`\`\`${fileType}
-      ${fileName}
-      ${file.contents}
-      \`\`\`
-      \n
-    `;
+    return fileString +
+      '\`\`\`' +
+      fileType +
+      '\n' +
+      fileName +
+      '\n' +
+      file.contents +
+      '\n' +
+      '\`\`\`\n\n';
   }, '\n');
 }
 
