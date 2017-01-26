@@ -3,7 +3,6 @@ import codeStorageSaga from './code-storage-saga.js';
 import errSaga from './err-saga.js';
 import executeChallengeSaga from './build-challenge-epic.js';
 import frameEpic from './frame-epic.js';
-import gitterSaga from './gitter-saga.js';
 import hardGoToSaga from './hard-go-to-saga.js';
 import mouseTrapSaga from './mouse-trap-saga.js';
 import nightModeSaga from './night-mode-saga.js';
