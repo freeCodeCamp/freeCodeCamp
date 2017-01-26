@@ -1,7 +1,6 @@
 import { createSelector } from 'reselect';
 
 import { viewTypes, submitTypes, getNode } from '../utils';
-import * as challengeTypes from '../../../utils/challengeTypes';
 import blockNameify from '../../../utils/blockNameify';
 import { html } from '../../../utils/challengeTypes';
 
