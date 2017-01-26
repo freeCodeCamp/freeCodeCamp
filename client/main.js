@@ -17,7 +17,7 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
-  $('img').error(function() {
+  $('img').on('error', function() {
     $(this)
       .unbind('error')
       .attr(
@@ -69,7 +69,7 @@ $(document).ready(function() {
       dataType: 'json'
     };
     return $.ajax(options)
-      .success(() => console.log('theme updated successfully'))
+      .done(() => console.log('theme updated successfully'))
       .fail(err => {
         let message;
         try {

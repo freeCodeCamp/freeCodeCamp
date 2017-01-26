@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "d3": "~3.5.5",
-    "jquery": "~2.1.4",
+    "jquery": "~3.1.1",
     "cal-heatmap": "~3.5.2",
     "bootstrap": "~3.3.4",
     "font-awesome": "~4.5.0",
