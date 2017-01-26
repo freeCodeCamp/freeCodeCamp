@@ -26,7 +26,7 @@ export function createFileStream(files = {}) {
 }
 
 const jQuery = {
-  src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js'
+  src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
 };
 const globalRequires = [
   {
