@@ -25,7 +25,7 @@ export default class CodeMirrorSkeleton extends PureComponent {
     const {
       content
     } = this.props;
-    const editorLines = content.split('\n');
+    const editorLines = (content || '').split('\n');
     return (
       <div className='ReactCodeMirror'>
         <div className='CodeMirror cm-s-monokai CodeMirror-wrap'>
