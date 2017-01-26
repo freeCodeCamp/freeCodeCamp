@@ -56,6 +56,9 @@ block content
                     if isBackEndCert
                         .button-spacer
                         a.btn.btn-primary.btn-block(href='/' + username + '/back-end-certification') View My Back End Development Certification
+                    if (user && user.username != username)
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/report-user/') Report this user's profile for abuse
     .row
       .col-xs-12.text-center
         if (badges.coreTeam && badges.coreTeam.length)
