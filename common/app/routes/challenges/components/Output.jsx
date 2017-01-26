@@ -2,7 +2,7 @@ import React, { PureComponent, PropTypes } from 'react';
 import NoSSR from 'react-no-ssr';
 import Codemirror from 'react-codemirror';
 
-import CodeMirrorSkeleton from '../skeleton/CodeMirrorSkeleton.jsx';
+import CodeMirrorSkeleton from './skeleton/CodeMirrorSkeleton.jsx';
 
 const defaultOptions = {
   lineNumbers: false,
