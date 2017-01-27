@@ -53,7 +53,7 @@
         "Here's an example that selects an unordered list, appends a list item, and adds text:",
         "<blockquote>d3.select(\"ul\")<br>    .append(\"li\")<br>    .text(\"Very important item\");</blockquote>",
         "D3 allows you to chain several methods together with periods to perform a number of actions in a row.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>select</code> method to select the <code>body</code> tag in the document. Then <code>append</code> an <code>h1</code> tag to it, and add the text \"Learning D3\" into the <code>h1</code> element."
       ],
       "challengeSeed": [
@@ -110,7 +110,7 @@
         "D3 also has the <code>selectAll()</code> method to select a group of elements. It returns an array of HTML nodes for all the items in the document that match the input string. Here's an example to select all the anchor tags in a document:",
         "<code>const anchors = d3.selectAll(\"a\");</code>",
         "Like the <code>select()</code> method, <code>selectAll()</code> supports method chaining, and you can use it with other methods.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Select all of the <code>li</code> tags in the document, and change their text to \"list item\"."
       ],
       "challengeSeed": [
@@ -173,7 +173,7 @@
         "Here is an example that selects a <code>ul</code> element and creates a new list item based on the number of entries in the array:",
         "<blockquote>&lt;body&gt;<br>  &lt;ul&gt;&lt;/ul&gt;<br>  &lt;script&gt;<br>    const dataset = [\"a\", \"b\", \"c\"];<br>    d3.select(\"ul\").selectAll(\"li\")<br>      .data(dataset)<br>      .enter()<br>      .append(\"li\")<br>      .text(\"New item\");<br>  &lt;/script&gt;<br>&lt;/body&gt;</blockquote>",
         "It may seem confusing to select elements that don't exist yet. This code is telling D3 to first select the <code>ul</code> on the page. Next, select all list items, which returns an empty selection. Then the <code>data()</code> method reviews the dataset and runs the following code three times, once for each item in the array. The <code>enter()</code> method sees there are no <code>li</code> elements on the page, but it needs 3 (one for each piece of data in <code>dataset</code>). New <code>li</code> elements are appended to the <code>ul</code> and have the text \"New item\".",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Select the <code>body</code> node, then select all <code>h2</code> elements. Have D3 create and append an <code>h2</code> tag for each item in the <code>dataset</code> array. The text in the <code>h2</code> should say \"New Title\". Your code should use the <code>data()</code> and <code>enter()</code> methods."
       ],
       "challengeSeed": [
@@ -231,7 +231,7 @@
         "The last challenge created a new <code>h2</code> for each item in the data array, but it displayed the same text (\"New Title\") for each heading. Fortunately, there is a way to access and display the actual data with callback functions.",
         "The <code>text()</code> method can take a string or a callback function as an argument. Since the data from the <code>dataset</code> array is attached to each element, the callback function has access to it. The parameter used in the callback function (<code>d</code> in the example below) is for the individual data-point itself. This callback function would set the text in the selection to the data value:",
         "<code>selection.text((d) => d)</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>text()</code> method so it does not place \"New Title\" in each heading. Instead, it displays the data from the array with a space and \"USD\". For example, the first heading should say \"12 USD\"."
       ],
       "challengeSeed": [
@@ -297,7 +297,7 @@
         "D3 lets you add inline CSS styles on dynamic elements with the <code>style()</code> method.",
         "The <code>style()</code> method takes a comma-separated key-value pair as an argument. Here's an example to set the selection's text color to blue:",
         "<code>selection.style(\"color\",\"blue\");</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>style()</code> method to the code in the editor to make all the displayed text have a <code>font-family</code> of <code>verdana</code>."
       ],
       "challengeSeed": [
@@ -358,7 +358,7 @@
         "For example, you may want to color a data point blue if has a value less than 20, and red otherwise. You can use a callback function in the <code>style()</code> method and include the conditional logic. The callback function uses the <code>d</code> parameter to represent the data point:",
         "<blockquote>selection.style(\"color\", (d) => {<br>  /* Logic that returns the color based on a condition */<br>});</blockquote>",
         "The <code>style()</code> method is not limited to setting the <code>color</code> - it can be used with other CSS properties as well.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>style()</code> method to the code in the editor to set the <code>color</code> of the <code>h2</code> elements conditionally. Write the callback function so if the data value is less than 20, it returns \"red\", otherwise it returns \"green\".",
         "<strong>Note</strong><br>You can use if-else logic, or the ternary operator."
       ],
@@ -426,7 +426,7 @@
         "Using a lot of inline styles on HTML elements gets hard to manage, even for smaller apps. It's easier to add a class to elements and style that class one time using CSS rules. D3 has the <code>attr()</code> method to add any HTML attribute to an element, including a class name.",
         "The <code>attr()</code> method works the same way that <code>style()</code> does. It takes comma-separated values, and can use a callback function. Here's an example to add a class of \"container\" to a selection:",
         "<code>selection.attr(\"class\", \"container\");</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>attr()</code> method to the code in the editor and put a class of <code>bar</code> on the <code>div</code> elements."
       ],
       "challengeSeed": [
@@ -495,7 +495,7 @@
         "2) Give each <code>div</code> a dynamic height, using a callback function in the <code>style()</code> method that sets height equal to the data value",
         "Recall the format to set a style using a callback function:",
         "<code>selection.style(\"cssProperty\", (d) => d)</code>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add the <code>style()</code> method to the code in the editor to set the <code>height</code> property for each element. Use a callback function to return the value of the data point with the string \"px\" added to it."
       ],
       "challengeSeed": [
@@ -570,7 +570,7 @@
         "The last challenge created a bar chart, but there are a couple of formatting changes that could improve it:",
         "1) Add space between each bar to visually separate them, which is done by adding a margin to the CSS for the <code>bar</code> class",
         "2) Increase the height of the bars to better show the difference in values, which is done by multiplying the value by a number to scale the height",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "First, add a <code>margin</code> of 2px to the <code>bar</code> class in the <code>style</code> tag. Next, change the callback function in the <code>style()</code> method so it returns a value 10 times the original data value (plus the \"px\").",
         "<strong>Note</strong><br>Multiplying each data point by the <em>same</em> constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data."
       ],
@@ -649,7 +649,7 @@
         "Here \"scalable\" means that, if you zoom in or out on an object, it would not appear pixelated. It scales with the display system, whether it's on a small mobile screen or a large TV monitor.",
         "SVG is used to make common geometric shapes. Since D3 maps data into a visual representation, it uses SVG to create the shapes for the visualization. SVG shapes for a web page must go within an HTML <code>svg</code> tag.",
         "CSS can be scalable when styles use relative units (such as <code>vh</code>, <code>vw</code>, or percentages), but using SVG is more flexible to build data visualizations.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add an <code>svg</code> node to the <code>body</code> using <code>append()</code>. Give it a <code>width</code> attribute of 500 and a <code>height</code> attribute of 100 using the <code>attr()</code> method for each. You'll see it in the output because there's a <code>background-color</code> of pink applied to it in the <code>style</code> tag.",
         "<strong>Note</strong><br>Width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is."
       ],
@@ -717,7 +717,7 @@
         "When you place a shape into the <code>svg</code> area, you can specify where it goes with <code>x</code> and <code>y</code> coordinates. The origin point of (0, 0) is in the upper-left corner. Positive vales for <code>x</code> push the shape to the right, and positive values for <code>y</code> push the shape down from the origin point.",
         "To place a shape in the middle of the 500 (width) x 100 (height) <code>svg</code> from last challenge, the <code>x</code> coordinate would be 250 and the <code>y</code> coordinate would be 50.",
         "An SVG <code>rect</code> has four attributes. There are the <code>x</code> and <code>y</code> coordinates for where it is placed in the <code>svg</code> area. It also has a <code>height</code> and <code>width</code> to specify the size.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add a <code>rect</code> shape to the <code>svg</code> using <code>append()</code>, and give it a <code>width</code> attribute of 25 and <code>height</code> attribute of 100. Also, give the <code>rect</code> <code>x</code> and <code>y</code> attributes each set to 0."
       ],
       "challengeSeed": [
@@ -783,7 +783,7 @@
         "A previous challenge showed the format for how to create and append a <code>div</code> for each item in <code>dataset</code>:",
         "<blockquote>d3.select(\"body\").selectAll(\"div\")<br>  .data(dataset)<br>  .enter()<br>  .append(\"div\")</blockquote>",
         "There are a few differences working with <code>rect</code> elements instead of <code>divs</code>. The <code>rects</code> must be appended to an <code>svg</code> element, not directly to the <code>body</code>. Also, you need to tell D3 where to place each <code>rect</code> within the <code>svg</code> area. The bar placement will be covered in the next challenge.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to create and append a <code>rect</code> for each item in <code>dataset</code>. The bars should display all on top of each other, this will be fixed in the next challenge."
       ],
       "challengeSeed": [
@@ -856,7 +856,7 @@
         "The <code>attr()</code> method in D3 accepts a callback function to dynamically set that attribute. The callback function takes two arguments, one for the data point itself (usually <code>d</code>) and one for the index of the data point in the array. The second argument for the index is optional. Here's the format:",
         "<blockquote>selection.attr(\"property\", (d, i) => {<br>  /* <br>  * d is the data point value<br>  * i is the index of the data point in the array<br>  */<br>})</blockquote>",
         "It's important to note that you do NOT need to write a <code>for</code> loop or use <code>forEach()</code> to iterate over the items in the data set. Recall that the <code>data()</code> method parses the data set, and any method that's chained after <code>data()</code> is run once for each item in the data set.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>x</code> attribute callback function so it returns the index times 30.",
         "<strong>Note</strong><br>Each bar has a width of 25, so increasing each <code>x</code> value by 30 adds some space between the bars. Any value greater than 25 would work in this example."
       ],
@@ -935,7 +935,7 @@
       "description": [
         "The height of each bar can be set to the value of the data point in the array, similar to how the <code>x</code> value was set dynamically.",
         "<blockquote>selection.attr(\"property\", (d, i) => {<br>  /* <br>  * d is the data point value<br>  * i is the index of the data point in the array<br>  */<br>})</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the callback function for the <code>height</code> attribute to return the data value times 3.",
         "<strong>Note</strong><br>Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example."
       ],
@@ -1017,7 +1017,7 @@
         "To make the bars right-side-up, you need to change the way the <code>y</code> coordinate is calculated. It needs to account for both the height of the bar and the total height of the SVG area.",
         "The height of the SVG area is 100. If you have a data point of 0 in the set, you would want the bar to start at the bottom of the SVG area (not the top). To do this, the <code>y</code> coordinate needs a value of 100. If the data point value were 1, you would start with a <code>y</code> coordinate of 100 to set the bar at the bottom. Then you need to account for the height of the bar of 1, so the final <code>y</code> coordinate would be 99.",
         "The <code>y</code> coordinate that is <code>y = heightOfSVG - heightOfBar</code> would place the bars right-side-up.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the callback function for the <code>y</code> attribute to set the bars right-side-up. Remember that the <code>height</code> of the bar is 3 times the data value <code>d</code>.",
         "<strong>Note</strong><br>In general, the relationship is <code>y = h - m * d</code>, where <code>m</code> is the constant that scales the data points."
       ],
@@ -1096,7 +1096,7 @@
       "description": [
         "The bars are in the right position, but they are all the same black color. SVG has a way to change the color of the bars.",
         "In SVG, a <code>rect</code> shape is colored with the <code>fill</code> attribute. It supports hex codes, color names, and rgb values, as well as more complex options like gradients and transparency.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add an <code>attr()</code> method to set the \"fill\" of all the bars to the color \"navy\"."
       ],
       "challengeSeed": [
@@ -1166,7 +1166,7 @@
         "D3 lets you label a graph element, such as a bar, using the SVG <code>text</code> element.",
         "Like the <code>rect</code> element, a <code>text</code> element needs to have <code>x</code> and <code>y</code> attributes, to place it on the SVG canvas. It also needs to access the data to display those values.",
         "D3 gives you a high level of control over how you label your bars.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The code in the editor already binds the data to each new <code>text</code> element. First, append <code>text</code> nodes to the <code>svg</code>. Next, add attributes for the <code>x</code> and <code>y</code> coordinates. They should be calculated the same way as the <code>rect</code> ones, except the <code>y</code> value for the <code>text</code> should make the label sit 3 units higher than the bar. Finally, use the D3 <code>text()</code> method to set the label equal to the data point value.",
         "<strong>Note</strong><br>For the label to sit higher than the bar, decide if the <code>y</code> value for the <code>text</code> should be 3 greater or 3 less than the <code>y</code> value for the bar."
       ],
@@ -1249,7 +1249,7 @@
       ],
       "description": [
         "D3 methods can add styles to the bar labels. The <code>fill</code> attribute sets the color of the text for a <code>text</code> node. The <code>style()</code> method sets CSS rules for other styles, such as \"font-family\" or \"font-size\".",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Set the <code>font-size</code> of the <code>text</code> elements to 25px, and the color of the text to red."
       ],
       "challengeSeed": [
@@ -1328,7 +1328,7 @@
       "description": [
         "It's possible to add effects that highlight a bar when the user hovers over it with the mouse. So far, the styling for the rectangles is applied with the built-in D3 and SVG methods, but you can use CSS as well.",
         "You set the CSS class on the SVG elements with the <code>attr()</code> method. Then the <code>:hover</code> pseudo-class for your new class holds the style rules for any hover effects.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>attr()</code> method to add a class of <code>bar</code> to all the <code>rect</code> elements. This changes the <code>fill</code> color of the bar to brown when you mouse over it."
       ],
       "challengeSeed": [
@@ -1412,7 +1412,7 @@
       "description": [
         "A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG <code>title</code> element.",
         "<code>title</code> pairs with the <code>text()</code> method to dynamically add data to the bars.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Append a <code>title</code> element under each <code>rect</code> node. Then call the <code>text()</code> method with a callback function so the text displays the data value."
       ],
       "challengeSeed": [
@@ -1506,7 +1506,7 @@
       "description": [
         "A scatter plot is another type of visualization. It usually uses circles to map data points, which have two values each. These values tie to the <code>x</code> and <code>y</code> axes, and are used to position the circle in the visualization.",
         "SVG has a <code>circle</code> tag to create the circle shape. It works a lot like the <code>rect</code> elements you used for the bar chart.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to bind <code>dataset</code> to new <code>circle</code> elements that are appended to the SVG canvas."
       ],
       "challengeSeed": [
@@ -1583,7 +1583,7 @@
         "A <code>circle</code> in SVG has three main attributes. The <code>cx</code> and <code>cy</code> attributes are the coordinates. They tell D3 where to position the <em>center</em> of the shape on the SVG canvas. The radius (<code>r</code> attribute) gives the size of the <code>circle</code>.",
         "Just like the <code>rect</code> <code>y</code> coordinate, the <code>cy</code> attribute for a <code>circle</code> is measured from the top of the SVG canvas, not from the bottom.",
         "All three attributes can use a callback function to set their values dynamically. Remember that all methods chained after <code>data(dataset)</code> run once per item in <code>dataset</code>. The <code>d</code> parameter in the callback function refers to the current item in <code>dataset</code>, which is an array for each point. You use bracket notation, like <code>d[0]</code>, to access the values in that array.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Add <code>cx</code>, <code>cy</code>, and <code>r</code> attributes to the <code>circle</code> elements. The <code>cx</code> value should be the first number in the array for each item in <code>dataset</code>. The <code>cy</code> value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The <code>r</code> value should be 5 for all circles."
       ],
       "challengeSeed": [
@@ -1674,7 +1674,7 @@
         "You can add text to create labels for the points in a scatter plot.",
         "The goal is to display the comma-separated values for the first (<code>x</code>) and second (<code>y</code>) fields of each item in <code>dataset</code>.",
         "The <code>text</code> nodes need <code>x</code> and <code>y</code> attributes to position it on the SVG canvas. In this challenge, the <code>y</code> value (which determines height) can use the same value that the <code>circle</code> uses for its <code>cy</code> attribute. The <code>x</code> value can be slightly larger than the <code>cx</code> value of the <code>circle</code>, so the label is visible. This will push the label to the right of the plotted point.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Label each point on the scatter plot using the <code>text</code> elements. The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is \"34, 78\". Set the <code>x</code> attribute so it's 5 units more than the value you used for the <code>cx</code> attribute on the <code>circle</code>. Set the <code>y</code> attribute the same way that's used for the <code>cy</code> value on the <code>circle</code>."
       ],
       "challengeSeed": [
@@ -1774,7 +1774,7 @@
         "D3 has several scale types. For a linear scale (usually used with quantitative data), there is the D3 method <code>scaleLinear()</code>:",
         "<code> const scale = d3.scaleLinear()</code>",
         "By default, a scale uses the identity relationship. The value of the input is the same as the value of the output. A separate challenge covers how to change this.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>scale</code> variable to create a linear scale. Then set the <code>output</code> variable to the scale called with an input argument of 50."
       ],
       "challengeSeed": [
@@ -1837,7 +1837,7 @@
         "The <code>domain()</code> and <code>range()</code> methods set these values for the scale. Both methods take an array of at least two elements as an argument. Here's an example:",
         "<blockquote>// Set a domain<br>// The domain covers the set of input values<br>scale.domain([50, 480]);<br>// Set a range<br>// The range covers the set of output values<br>scale.range([10, 500]);<br>scale(50) // Returns 10<br>scale(480) // Returns 500<br>scale(325) // Returns 323.37<br>scale(750) // Returns 807.67<br>d3.scaleLinear()</blockquote>",
         "Notice that the scale uses the linear relationship between the domain and range values to figure out what the output should be for a given number. The minimum value in the domain (50) maps to the minimum value (10) in the range.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a scale and set its domain to <code>[250, 500]</code> and range to <code>[10, 150]</code>.",
         "<strong>Note</strong><br>You can chain the <code>domain()</code> and <code>range()</code> methods onto the <code>scale</code> variable."
       ],
@@ -1904,7 +1904,7 @@
         "Fortunately, both the <code>min()</code> and <code>max()</code> methods take a callback function.",
         "In this example, the callback function's argument <code>d</code> is for the current inner array. The callback needs to return the element from the inner array (the x or y value) over which you want to compute the maximum or minimum. Here's an example for how to find the min and max values with an array of arrays:",
         "<blockquote>const locationData = [[1, 7],[6, 3],[8, 3]];<br>// Returns the smallest number out of the first elements<br>const minX = d3.min(locationData, (d) => d[0]);<br>// minX compared 1, 6, and 8 and is set to 1</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The <code>positionData</code> variable holds a 3-dimensional (3D) array. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the <code>output</code> variable.",
         "<strong>Note</strong><br>Fun fact - D3 can plot 3D arrays."
       ],
@@ -1966,7 +1966,7 @@
         "In the example, the domain goes from 0 to the maximum in the set. It uses the <code>max()</code> method with a callback function based on the x values in the arrays. The range uses the SVG canvas' width (<code>w</code>), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG canvas.",
         "<blockquote>const dataset = [<br>                  [ 34,    78 ],<br>                  [ 109,   280 ],<br>                  [ 310,   120 ],<br>                  [ 79,    411 ],<br>                  [ 420,   220 ],<br>                  [ 233,   145 ],<br>                  [ 333,   96 ],<br>                  [ 222,   333 ],<br>                  [ 78,    320 ],<br>                  [ 21,    123 ]<br>                ];<br>const w = 500;<br>const h = 500;<br><br>// Padding between the SVG canvas boundary and the plot<br>const padding = 30;<br>const xScale = d3.scaleLinear()<br>                 .domain([0, d3.max(dataset, (d) => d[0])])<br>                 .range([padding, w - padding]);</blockquote>",
         "The padding may be confusing at first. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG canvas). Including the padding in the <code>range()</code> method forces the plot to start at 30 along that line (instead of 0), and end at 470 (instead of 500).",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>yScale</code> variable to create a linear y-axis scale. The domain should start at zero and go to the maximum y value in the set. The range should use the SVG height (<code>h</code>) and include padding.",
         "<strong>Note</strong><br>Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height less padding) is the first argument, and the lower value is the second argument."
       ],
@@ -2053,7 +2053,7 @@
         "You set the coordinate attribute values for an SVG shape with the scaling function. This includes <code>x</code> and <code>y</code> attributes for <code>rect</code> or <code>text</code> elements, or <code>cx</code> and <code>cy</code> for <code>circles</code>. Here's an example:",
         "<blockquote>shape<br>  .attr(\"x\", (d) => xScale(d[0]))</blockquote>",
         "Scales set shape coordinate attributes to place the data points onto the SVG canvas. You don't need to apply scales when you display the actual data value, for example, in the <code>text()</code> method for a tooltip or label.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <code>xScale</code> and <code>yScale</code> to position both the <code>circle</code> and <code>text</code> shapes onto the SVG canvas. For the <code>circles</code>, apply the scales to set the <code>cx</code> and <code>cy</code> attributes. Give them a radius of 5 units, too.",
         "For the <code>text</code> elements, apply the scales to set the <code>x</code> and <code>y</code> attributes. The labels should be offset to the right of the dots. To do this, add 10 units to the x data value before passing it to the <code>xScale</code>."
       ],
@@ -2180,7 +2180,7 @@
         "<blockquote>const xAxis = d3.axisBottom(xScale);<br><br>svg.append(\"g\")<br>   .attr(\"transform\", \"translate(0, \" + (h - padding) + \")\")<br>   .call(xAxis);</blockquote>",
         "The above code places the x-axis at the bottom of the SVG canvas. Then it's passed as an argument to the <code>call()</code> method.",
         "The y-axis works is the same way, except the <code>translate</code> argument is in the form (x, 0). Because <code>translate</code> is a string in the <code>attr()</code> method above, you can use concatenation to include variable values for its arguments.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The scatter plot now has an x-axis. Create a y-axis in a variable named <code>yAxis</code> using the <code>axisLeft()</code> method. Then render the axis using a <code>g</code> element. Make sure to use a <code>transform</code> attribute to translate the axis by the amount of padding units right, and 0 units down. Remember to <code>call()</code> the axis."
       ],
       "challengeSeed": [

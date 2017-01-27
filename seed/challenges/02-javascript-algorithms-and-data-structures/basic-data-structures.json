@@ -34,7 +34,7 @@
     },
     {
      "id": "587d78b2366415b2v2512be3",
-     "title": "Access an array's contents using bracket notation",
+     "title": "Access an Array's Contents Using Bracket Notation",
      "description": [
        "The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that data on command. So, now that we've learned how to create an array, let's begin to think about how we can access that array's information.",
        "When we define a simple array as seen below, there are 3 items in it:",
@@ -69,7 +69,7 @@
     },
     {
       "id": "587d78b2367417b2b2512b0e",
-      "title": "Add items to an array with push() and unshift()",
+      "title": "Add Items to an Array with push() and unshift()",
       "description": [
         "An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time; in other words, arrays are <dfn>mutable</dfn>. In this challenge, we will look at two methods with which we can programmatically modify an array: <code>Array.push()</code> and <code>Array.unshift()</code>. ",
         "Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the <code>push()</code> method adds elements to the end of an array, and <code>unshift()</code> adds elements to the beginning. Consider the following:",
@@ -101,7 +101,7 @@
     },
     {
       "id": "587d78b2367417b2b2512b0f",
-      "title": "Remove items from an array with pop() and shift()",
+      "title": "Remove Items from an Array with pop() and shift()",
       "description": [
         "Both <code>push()</code> and <code>unshift()</code> have corresponding methods that are nearly functional opposites: <code>pop()</code> and <code>shift()</code>. As you may have guessed by now, instead of adding, <code>pop()</code> <em>removes</em> an element from the end of an array, while <code>shift()</code> removes an element from the beginning. The key difference between <code>pop()</code> and <code>shift()</code> and their cousins <code>push()</code> and <code>unshift()</code>, is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.",
         "Let's take a look:",
@@ -133,7 +133,7 @@
     },
     {
       "id": "587d78b2367417b2b2512b10",
-      "title": "Remove items using splice()",
+      "title": "Remove Items Using splice()",
       "description": [
         "Ok, so we've learned how to remove elements from the beginning and end of arrays using <code>pop()</code> and <code>shift()</code>, but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where <code>splice()</code> comes in. <code>splice()</code> allows us to do just that: <strong>remove any number of consecutive elements</strong> from anywhere on an array.",
         "<code>splice()</code> can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of <code>splice()</code> are integers which represent indexes, or postions, of the array that <code>splice()</code> is being called upon. And remember, arrays are <em>zero-indexed</em>, so to indicate the first element of an array, we would use <code>0</code>. <code>splice()</code>'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:",
@@ -165,7 +165,7 @@
     },
     {
       "id": "587d78b3367417b2b2512b11",
-      "title": "Add items using splice()",
+      "title": "Add Items Using splice()",
       "description": [
         "Remember in the last challenge we mentioned that <code>splice()</code> can take up to three parameters? Well, we can go one step further with <code>splice()</code> &mdash; in addition to removing elements, we can use that third parameter, which represents one or more elements, to <em>add</em> them as well. This can be incredibly useful for quickly switching out an element, or a set of elements, for another. For instance, let's say you're storing a color scheme for a set of DOM elements in an array, and want to dynamically change a color based on some action:",
         "<blockquote>function colorChange(arr, index, newColor) {<br>&nbsp;&nbsp;arr.splice(index, 1, newColor);<br>&nbsp;&nbsp;return arr;<br>}<br><br>let colorScheme = ['#878787', '#a08794', '#bb7e8c', '#c9b6be', '#d1becf'];<br><br>colorScheme = colorChange(colorScheme, 2, '#332327');<br>// we have removed '#bb7e8c' and added '#332327' in its place<br>// colorScheme now equals ['#878787', '#a08794', '#332327', '#c9b6be', '#d1becf']</blockquote>",
@@ -195,7 +195,7 @@
     },
     {
       "id": "587d7b7a367417b2b2512b12",
-      "title": "Copy an array with slice()",
+      "title": "Copy an Array with slice()",
       "description": [
         "The next method we will cover is <code>slice()</code>. <code>slice()</code>, rather than modifying an array, copies, or <em>extracts</em>, a given mumber of elements to a new array, leaving the array it is called upon untouched. <code>slice()</code> takes only 2 parameters &mdash; the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:",
         "<blockquote>let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];<br><br>let todaysWeather = weatherConditions.slice(1, 3);<br>// todaysWeather equals ['snow', 'sleet'];<br>// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']<br></blockquote>",
@@ -224,7 +224,7 @@
     },
     {
       "id": "587d7b7b367417b2b2512b13",
-      "title": "Copy an array with spread syntax",
+      "title": "Copy an Array with the Spread Operator",
       "description": [
         "While <code>slice()</code> allows us to be selective about what elements of an array to copy, ammong several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy <em>all</em> of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: <code>...</code>",
         "In practice, we can use the spread operator to copy an array like so:",
@@ -261,7 +261,7 @@
     },
     {
       "id": "587d7b7b367417b2b2512b17",
-      "title": "Combine arrays with spread syntax",
+      "title": "Combine Arrays with the Spread Operator",
       "description": [
         "Another huge advantage of the <dfn>spread</dfn> operator, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:",
         "<blockquote>let thisArray = ['sage', 'rosemary', 'parsely', 'thyme'];<br><br>let thatArray = ['basil', 'cilantro', ...thisArray, 'corriander'];<br>// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsely', 'thyme', 'corriander']</blockquote>",
@@ -290,7 +290,7 @@
     },
     {
       "id": "587d7b7b367417b2b2512b14",
-      "title": "Check for the presence of an element with indexOf()",
+      "title": "Check For The Presence of an Element With indexOf()",
       "description": [
         "Since arrays can be changed, or <em>mutated</em>, at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, <code>indexOf()</code>, that allows us to quickly and easily check for the presence of an element on an array. <code>indexOf()</code> takes an element as a parameter, and when called, it returns the position, or index, of that element, or <code>-1</code> if the element does not exist on the array.",
         "For example:",
@@ -322,7 +322,7 @@
     },
     {
       "id": "587d7b7b367417b2b2512b15",
-      "title": "Iterate through all an array's items using for loops",
+      "title": "Iterate Through All an Array's Items Using For Loops",
       "description": [
         "Sometimes when working with arrays, it is very handy to be able to iterate through each item to find one or more elements that we might need, or to manipulate an array based on which data items meet a certain set of criteria. JavaScript offers several built in methods that each iterate over arrays in slightly different ways to achieve different results (such as <code>every()</code>, <code>forEach()</code>, <code>map()</code>, etc.), however the technique which is most flexible and offers us the greatest amount of control is a simple <code>for</code> loop.",
         "Consider the following:",
@@ -397,17 +397,17 @@
       "id": "587d7b7c367417b2b2512b18",
       "title": "Add Key-Value Pairs to JavaScript Objects",
       "description": [
-        "The next data structure we will discuss is the JavaScript object. Objects are a very fundamental part of JavaScript, in fact, you may have heard this line before: 'In JavaScript, everything is an object.' While an understanding of objects is important to understand the inner workings of JavaScript functions or JavaScript's object-oriented capabilities, JavaScript objects at a basic level are actually just key-value pair stores, a commonly used data structure. Here, we will confine our discussion to JavaScript objects in this capacity.",
-        "Key-value pair data structure go by different names depending on the language you are using and the specific details of the data structure. The terms dictionary, map, and hash table all refer to the notion of a data structure in which specific keys, or properties are mapped to specific values. For instance, consider the following:",
-        "<code>let FCC_User = {</code>",
-        "<code>  username: 'awesome_coder',</code>",
-        "<code>  followers: 572,</code>",
-        "<code>  points: 1741,</code>",
-        "<code>  completedProjects: 15</code>",
-        "<code>};</code>",
-        "We've just defined an object called FCC_User with four properties each of which map to a specific value. If you wanted to know the number of followers FCC_User has, you could access that property by writing FCC_User.followers — this is called dot notation. You could also access the property with brackets, like so: FCC_User['followers']. Notice with the bracket notation we enclosed followers in quotes. This is because the brackets actually allow us to pass a variable in to be evaluated as a property name. Keep this in mind for later.",
+        "The next data structure we will discuss is the JavaScript <dfn>object</dfn>. Objects, like arrays, are a very fundamental part of JavaScript, in fact, you may have heard this line before: 'In JavaScript, everything is an object.' While an understanding of objects is important to understand the inner workings of JavaScript functions or JavaScript's object-oriented capabilities, JavaScript objects at a basic level are actually just <dfn>key-value pair</dfn> stores, a commonly used data structure across almost all programming languages. Here, we will confine our discussion to JavaScript objects in this capacity.",
+        "Key-value pair data structures go by different names depending on the language and the specific details of the data structure. The terms <dfn>dictionary</dfn>, <dfn>map</dfn>, and <dfn>hash table</dfn> all refer to the notion of a data structure in which specific keys, or properties, are mapped to specific values. For instance, consider the following:",
+        "<blockquote>let FCC_User = {<br>  username: 'awesome_coder',<br>  followers: 572,<br>  points: 1741,<br>  completedProjects: 15<br>};</blockquote>",
+        "The above code defines an object called <code>FCC_User</code> that has four <dfn>properties</dfn>, each of which map to a specific value. If we wanted to know the number of <code>followers</code> <code>FCC_User</code> has, we can access that property by writing:",
+        "<blockquote>let userData = FCC_User.followers;<br>// userData equals 572</blockquote>",
+        "This is called <dfn>dot notation</dfn>. Alternatively, we can also access the property with brackets, like so:",
+        "<blockquote>let userData = FCC_User['followers']<br>// userData equals 572</blockquote>",
+        "Notice that with <dfn>bracket notation</dfn>, we enclosed <code>followers</code> in quotes. This is because the brackets actually allow us to pass a variable in to be evaluated as a property name (hint: keep this in mind for later!). Had we passed <code>followers</code> in without the quotes, the JavaScript engine would have attempted to evaluate it as a variable, and a <code>ReferenceError: followers is not defined</code> would have been thrown.",
+        "<strong>NOTE:</strong><br>Throughout the scope of this discussion, the terms <dfn>key</dfn> and <dfn>property</dfn> will be used interchangably.",
         "<hr>",
-        "We've created a foods object here with three entries. Add three more entries: bananas with a value of 13, grapes with a value of 35, and strawberries with a value of 27."
+        "Using the same syntax, we can also <em><strong>add new</strong></em> key-value pairs to objects. We've created a <code>foods</code> object with three entries. Add three more entries: <code>bananas</code> with a value of <code>13</code>, <code>grapes</code> with a value of <code>35</code>, and <code>strawberries</code> with a value of <code>27</code>."
       ],
       "challengeSeed": [
         "let foods = {",
@@ -415,13 +415,19 @@
         "  oranges: 32,",
         "  plums: 28",
         "};",
-        "// change code below this line"
+        "",
+        "// change code below this line",
+        "",
+        "// change code above this line",
+        "",
+        "console.log(foods);"
       ],
       "tests": [
-        "assert(typeof foods === 'object', 'foods is an object');",
-        "assert(foods.bananas === 13, 'The foods object has a key \\'bananas\\' with a value of 13.');",
-        "assert(foods.grapes === 35, 'The foods object has a key \\'grapes\\' with a value of 35.');",
-        "assert(foods.strawberries === 27, 'The foods object has a key \\'strawberries\\' with a value of 27.');"
+        "assert(typeof foods === 'object', 'message: <code>foods</code> is an object');",
+        "assert(foods.bananas === 13, 'message: The <code>foods</code> object has a key <code>\"bananas\"</code> with a value of <code>13</code>');",
+        "assert(foods.grapes === 35, 'message: The <code>foods</code> object has a key <code>\"grapes\"</code> with a value of <code>35</code>');",
+        "assert(foods.strawberries === 27, 'message: The <code>foods</code> object has a key <code>\"strawberries\"</code> with a value of <code>27</code>');",
+        "assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1, 'message: The key-value pairs should be set using dot or bracket notation');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -430,13 +436,13 @@
     },
     {
       "id": "587d7b7c367417b2b2512b19",
-      "title": "No Title 3",
+      "title": "Modify an Object Nested Within an Object",
       "description": [
-        "Objects, and other similar key-value pair data structures, offer some very useful benefits. One clear benefit is that they allow us to structure our data in an intuitive way. They are also very flexible. For instance, you can have properties nested to an arbitrary depth. Values can also be anything, for example a key can store an array, or even another object. Objects are also the foundation for JavaScript Object Notation, JSON, which is a widely used method of sending data across the web.",
-        "Another powerful advantage of key-value pair data structures is constant lookup time. What we mean by this is when you request the value of a specific property you will get the value back in the same amount of time (theoretically) regardless of the number of entries in the object. If you had an object with 5 entries or one that held a collection of 1,000,000 entries you could still retrieve property values or check if a key exists in the same amount of time.",
-        "The reason for this fast lookup time is that internally the object is storing properties using some type of hashing mechanism which allows it to know exactly where it has stored different property values. If you want to learn more about this please take a look at the optional Advanced Data Structures challenges. All you should remember for now is that performant access to flexibly structured data make key-value stores very attractive data structures useful in a wide variety of settings.",
+        "Objects, and other similar key-value pair data structures, offer some very useful benefits. One clear benefit is that they allow us to structure our data in an intuitive way. They are also very flexible. For instance, you can have properties nested to an arbitrary depth. Values can also be anything, for example a key can store an array, or even another object. Objects are also the foundation for <dfn>JavaScript Object Notation</dfn>, or <dfn>JSON</dfn>, which is a widely used method of sending data across the web.",
+        "Another powerful advantage of key-value pair data structures is <dfn>constant lookup time</dfn>. What we mean by this is when you request the value of a specific property you will get the value back in the same amount of time (theoretically) regardless of the number of entries in the object. If you had an object with 5 entries or one that held a collection of 1,000,000 entries you could still retrieve property values or check if a key exists in the same amount of time.",
+        "The reason for this fast lookup time is that internally, the object is storing properties using some type of hashing mechanism which allows it to know exactly where it has stored different property values. If you want to learn more about this please take a look at the optional Advanced Data Structures challenges. All you should remember for now is that <strong><em>performant access to flexibly structured data make key-value stores very attractive data structures useful in a wide variety of settings</em></strong>.",
         "<hr>",
-        "Here we've written an object nestedObject which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the online key to 45."
+        "Here we've written an object, <code>nestedObject</code>, which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the <code>online</code> key to <code>45</code>."
       ],
       "challengeSeed": [
         "let nestedObject = {",
@@ -447,12 +453,18 @@
         "    online: 42",
         "  }",
         "};",
-        "// change code below this line"
+        "",
+        "// change code below this line",
+        "",
+        "// change code above this line",
+        "",
+        "console.log(nestedObject);"
       ],
       "tests": [
-        "assert('id' in nestedObject && 'date' in nestedObject && 'data' in nestedObject, 'nestedObject has id, date and data properties.');",
-        "assert('totalUsers' in nestedObject.data && 'online' in nestedObject.data, 'nestedObject has a data key set to an object with keys totalUsers and online.');",
-        "assert(nestedObject.data.online === 45, 'The online property nested in the data key of nestedObject should be set to 45.');"
+        "assert('id' in nestedObject && 'date' in nestedObject && 'data' in nestedObject, 'message: <code>nestedObject</code> has <code>id</code>, <code>date</code> and <code>data</code> properties');",
+        "assert('totalUsers' in nestedObject.data && 'online' in nestedObject.data, 'message: <code>nestedObject</code> has a <code>data</code> key set to an object with keys <code>totalUsers</code> and <code>online</code>');",
+        "assert(nestedObject.data.online === 45, 'message: The <code>online</code> property nested in the <code>data</code> key of <code>nestedObject</code> should be set to <code>45</code>');",
+        "assert.strictEqual(code.search(/online: 45/), -1, 'message: The <code>online</code> property is set using dot or bracket notation');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -461,14 +473,13 @@
     },
     {
       "id": "587d7b7c367417b2b2512b1a",
-      "title": " Access Property Names with Bracket Notation",
+      "title": "Access Property Names with Bracket Notation",
       "description": [
-        "In the first challenge we mentioned the use of bracket notation as a way access properties values using the evaluation of a variable. For instance, if you recall our foods object from that challenge, imagine that this object is being used in a program for a supermarket cash register. We have some function that sets the selectedFood and we want to check our foods object for the presence of that food. This might look like:",
-        "<code>let selectedFood = getCurrentFood(scannedItem);</code>",
-        "<code>let inventory = foods[selectedFood];</code>",
-        "This code will evaluate the value stored in the selectedFood variable and return the value of that key in the foods object, or undefined if it is not present. Bracket notation is very useful because sometime object properties are not known before runtime or we need to access them in a more dynamic way.",
+        "In the first object challenge we mentioned the use of bracket notation as a way to access property values using the evaluation of a variable. For instance, imagine that our <code>foods</code> object is being used in a program for a supermarket cash register. We have some function that sets the <code>selectedFood</code> and we want to check our <code>foods</code> object for the presence of that food. This might look like:",
+        "<blockquote>let selectedFood = getCurrentFood(scannedItem);<br>let inventory = foods[selectedFood];</blockquote>",
+        "This code will evaluate the value stored in the <code>selectedFood</code> variable and return the value of that key in the <code>foods</code> object, or <code>undefined</code> if it is not present. Bracket notation is very useful because sometimes object properties are not known before runtime or we need to access them in a more dynamic way.",
         "<hr>",
-        "In the example code we've defined a function checkInventory which receives a scanned item as an argument. Return the current value of the scannedItem key in the foods object. You can assume that only valid keys will be provided as an argument to checkInventory."
+        "We've defined a function, <code>checkInventory</code>, which receives a scanned item as an argument. Return the current value of the <code>scannedItem</code> key in the <code>foods</code> object. You can assume that only valid keys will be provided as an argument to <code>checkInventory</code>."
       ],
       "challengeSeed": [
         "let foods = {",
@@ -479,15 +490,22 @@
         "  grapes: 35,",
         "  strawberries: 27",
         "};",
+        "// do not change code above this line",
+        "",
         "function checkInventory(scannedItem) {",
         "  // change code below this line",
-        "  // change code above this line",
-        "};"
+        "",
+        "}",
+        "",
+        "// change code below this line to test differnt cases:",
+        "console.log(checkInventory(\"apples\"));"
       ],
       "tests": [
-        "assert(typeof checkInventory === 'function', 'checkInventory is a function');",
-        "assert('apples' in foods && 'oranges' in foods && 'plums' in foods && 'bananas' in foods && 'grapes' in foods && 'strawberries' in foods, 'The foods object contains the following keys: apples, oranges, plums, bananas, grapes, and strawberries.');",
-        "assert(checkInventory('apples') === 25 && checkInventory('bananas') === 13 && checkInventory('strawberries') === 27, 'The checkInventory function returns the value of the scannedItem argument in the foods object.');"
+        "assert.strictEqual(typeof checkInventory, 'function', 'message: <code>checkInventory</code> is a function');",
+        "assert.deepEqual(foods, {apples: 25, oranges: 32, plums: 28, bananas: 13, grapes: 35, strawberries: 27}, 'message: The <code>foods</code> object should have only the following key-value pairs: <code>apples: 25</code>, <code>oranges: 32</code>, <code>plums: 28</code>, <code>bananas: 13</code>, <code>grapes: 35</code>, <code>strawberries: 27</code>');",
+        "assert.strictEqual(checkInventory('apples'), 25, 'message: <code>checkInventory(\"apples\")</code> should return <code>25</code>');",
+        "assert.strictEqual(checkInventory('bananas'), 13, 'message: <code>checkInventory(\"bananas\")</code> should return <code>13</code>');",
+        "assert.strictEqual(checkInventory('strawberries'), 27, 'message: <code>checkInventory(\"strawberries\")</code> should return <code>27</code>');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -498,11 +516,12 @@
       "id": "587d7b7c367417b2b2512b1b",
       "title": "Use the Delete Keyword to Remove Object Properties",
       "description": [
-        "Now you know what objects are and their basic features and advantages. In short, they are key-value stores which provide a flexible, intuitive way to structure data and they provide very fast lookup time. For the rest of these challenges, we will describe several common operations you can perform on objects so you can become comfortable applying these useful data structures in your programs.",
-        "Previously, we added and modified key-value pairs to objects. Here we will see how we can remove a key-value pair from an object. If we wanted to remove the apples key from our foods object from before, we could remove it by using the delete keyword like this:",
-        "<code>delete foods.apples;</code>",
+        "Now you know what objects are and their basic features and advantages. In short, they are key-value stores which provide a flexible, intuitive way to structure data, <strong><em>and</em></strong>, they provide very fast lookup time. Throughout the rest of these challenges, we will describe several common operations you can perform on objects so you can become comfortable applying these useful data structures in your programs.",
+        "In earlier challenges, we have both added to and modified an object's key-value pairs. Here we will see how we can <em>remove</em> a key-value pair from an object.",
+        "Let's revisit our <code>foods</code> object example one last time. If we wanted to remove the <code>apples</code> key, we can remove it by using the <code>delete</code> keyword like this:",
+        "<blockquote>delete foods.apples;</blockquote>",
         "<hr>",
-        "Use the delete keyword to remove the oranges, plums, and strawberries keys from the foods object."
+        "Use the delete keyword to remove the <code>oranges</code>, <code>plums</code>, and <code>strawberries</code> keys from the <code>foods</code> object."
       ],
       "challengeSeed": [
         "let foods = {",
@@ -513,10 +532,16 @@
         "  grapes: 35,",
         "  strawberries: 27",
         "};",
-        "// change code below this line"
+        "",
+        "// change code below this line",
+        "",
+        "// change code above this line",
+        "",
+        "console.log(foods);"
       ],
       "tests": [
-        "assert(!foods.hasOwnProperty('oranges') && !foods.hasOwnProperty('plums') && !foods.hasOwnProperty('bananas') && Object.keys(foods).length === 3, 'The foods object only has three keys: apples, grapes, and strawberries.');"
+        "assert(!foods.hasOwnProperty('oranges') && !foods.hasOwnProperty('plums') && !foods.hasOwnProperty('strawberries') && Object.keys(foods).length === 3, 'message: The <code>foods</code> object only has three keys: <code>apples</code>, <code>grapes</code>, and <code>bananas</code>');",
+        "assert(code.search(/oranges:/) !== -1 && code.search(/plums:/) !== -1 && code.search(/strawberries:/) !== -1, 'message: The <code>oranges</code>, <code>plums</code>, and <code>strawberries</code> keys are removed using <code>delete</code>');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -527,12 +552,10 @@
       "id": "587d7b7d367417b2b2512b1c",
       "title": "Check if an Object has a Property",
       "description": [
-        "Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides two different ways to do this. One uses the hasOwnProperty method on the object and the other uses the in keyword. If we have an object users with a property of Alan, we could check for its presence in either of the following ways:",
-        "<code>users.hasOwnProperty('Alan');</code>",
-        "<code>'Alan' in users;</code>",
-        "<code>// both return true</code>",
+        "Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the <code>hasOwnProperty()</code> method and the other uses the <code>in</code> keyword. If we have an object <code>users</code> with a property of <code>Alan</code>, we could check for its presence in either of the following ways:",
+        "<blockquote>users.hasOwnProperty('Alan');<br>'Alan' in users;<br>// both return true</blockquote>",
         "<hr>",
-        "We've created a users object here with some users in it and a function isEveryoneHere which we pass the users object to as an argument. Finish writing this function so that it returns true only if the users object contains all four names, Alan, Jeff, Sarah, and Ryan, as keys, and false otherwise."
+        "We've created an object, <code>users</code>, with some users in it and a function <code>isEveryoneHere</code>, which we pass the <code>users</code> object to as an argument. Finish writing this function so that it returns <code>true</code> only if the <code>users</code> object contains all four names, <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>, as keys, and <code>false</code> otherwise."
       ],
       "challengeSeed": [
         "let users = {",
@@ -553,15 +576,19 @@
         "    online: true",
         "  }",
         "};",
+        "",
         "function isEveryoneHere(obj) {",
         "  // change code below this line",
+        "",
         "  // change code above this line",
-        "};"
+        "}",
+        "",
+        "console.log(isEveryoneHere(users));"
       ],
       "tests": [
-        "assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4, 'The users object only contains the keys Alan, Jeff, Sarah, and Ryan.');",
-        "assert(isEveryoneHere(users) === true, 'The function isEveryoneHere returns true if Alan, Jeff, Sarah, and Ryan are properties on the users object');",
-        "assert((function() { delete users.Alan; delete users.Jeff; delete users.Sarah; delete users.Ryan; return isEveryoneHere(users) })() === false, 'The function isEveryoneHere returns false if Alan, Jeff, Sarah, and Ryan are not keys on the users object.');"
+        "assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4, 'message: The <code>users</code> object only contains the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>');",
+        "assert(isEveryoneHere(users) === true, 'message: The function <code>isEveryoneHere</code> returns <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object');",
+        "assert((function() { delete users.Alan; delete users.Jeff; delete users.Sarah; delete users.Ryan; return isEveryoneHere(users) })() === false, 'message: The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are not properties on the <code>users</code> object');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -572,13 +599,12 @@
       "id": "587d7b7d367417b2b2512b1d",
       "title": " Iterate Through the Keys of an Object with a for...in Statement",
       "description": [
-        "Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a for...in statement. For our users object from the last challenge, this could look like:",
-        "<code>for (let user in users) {</code>",
-        "<code>  console.log(user);</code>",
-        "<code>};</code>",
-        "In this statement, we define a variable user. This variable will be set to the key in each iteration as the statement loops through the keys in the object. Running this code would print the name of each user to the console. Note that objects do not maintain an ordering to stored keys like arrays do.",
+        "Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our <code>users</code> object, this could look like:",
+        "<blockquote>for (let user in users) {<br>  console.log(user);<br>};<br><br>// logs:<br>Alan<br>Jeff<br>Sarah<br>Ryan</blockquote>",
+        "In this statement, we defined a variable <code>user</code>, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console.",
+        "<strong>NOTE:</strong><br>Objects do not maintain an ordering to stored keys like arrays do; thus a keys position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.",
         "<hr>",
-        "We've defined a function countOnline that should return the number of users with the online property set to true. Use a for...in statement within this function to loop through the users in the users object and return the number of users whose online property is set to true."
+        "We've defined a function, <code>countOnline</code>; use a <dfn>for...in</dfn> statement within this function to loop through the users in the <code>users</code> object and return the number of users whose <code>online</code> property is set to <code>true</code>."
       ],
       "challengeSeed": [
         "let users = {",
@@ -599,14 +625,18 @@
         "    online: true",
         "  }",
         "};",
+        "",
         "function countOnline(obj) {",
         "  // change code below this line",
+        "",
         "  // change code above this line",
-        "};"
+        "}",
+        "",
+        "console.log(countOnline(users));"
       ],
       "tests": [
-        "assert(users.Alan.online === false && users.Jeff.online === true &&  users.Sarah.online === false &&  users.Ryan.online === true, 'The users object contains users Jeff and Ryan with online set to true and users Alan and Sarah with online set to false.');",
-        "assert((function() { users.Harry = {online: true}; users.Sam = {online: true}; users.Carl = {online: true}; return countOnline(users) })() === 5, 'The function countOnline returns the number of users with the online property set to true.');"
+        "assert(users.Alan.online === false && users.Jeff.online === true &&  users.Sarah.online === false &&  users.Ryan.online === true, 'message: The <code>users</code> object contains users <code>Jeff</code> and <code>Ryan</code> with <code>online</code> set to <code>true</code> and users <code>Alan</code> and <code>Sarah</code> with <code>online</code> set to <code>false</code>');",
+        "assert((function() { users.Harry = {online: true}; users.Sam = {online: true}; users.Carl = {online: true}; return countOnline(users) })() === 5, 'message: The function <code>countOnline</code> returns the number of users with the <code>online</code> property set to <code>true</code>');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -617,9 +647,9 @@
       "id": "587d7b7d367417b2b2512b1e",
       "title": "Generate an Array of All Object Keys with Object.keys()",
       "description": [
-        "We can also generate an array which contains all the keys stored in an object using the Object.keys() method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.",
+        "We can also generate an array which contains all the keys stored in an object using the <code>Object.keys()</code> method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.",
         "<hr>",
-        "Finish writing the getArrayOfUsers function so that it returns an array containing all the properties in the object it receives as an argument."
+        "Finish writing the <code>getArrayOfUsers</code> function so that it returns an array containing all the properties in the object it receives as an argument."
       ],
       "challengeSeed": [
         "let users = {",
@@ -640,14 +670,18 @@
         "    online: true",
         "  }",
         "};",
+        "",
         "function getArrayOfUsers(obj) {",
         "  // change code below this line",
+        "",
         "  // change code above this line",
-        "};"
+        "}",
+        "",
+        "console.log(getArrayOfUsers(users));"
       ],
       "tests": [
-        "assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4, 'The users object only contains the keys Alan, Jeff, Sarah, and Ryan.');",
-        "assert((function() { users.Sam = {}; users.Lewis = {}; let R = getArrayOfUsers(users); return (R.indexOf('Alan') !== -1 && R.indexOf('Jeff') !== -1 && R.indexOf('Sarah') !== -1 && R.indexOf('Ryan') !== -1 && R.indexOf('Sam') !== -1 && R.indexOf('Lewis') !== -1); })() === true, 'The getArrayOfUsers function returns an array which contains all the keys in the users array.');"
+        "assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4, 'message: The <code>users</code> object only contains the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>');",
+        "assert((function() { users.Sam = {}; users.Lewis = {}; let R = getArrayOfUsers(users); return (R.indexOf('Alan') !== -1 && R.indexOf('Jeff') !== -1 && R.indexOf('Sarah') !== -1 && R.indexOf('Ryan') !== -1 && R.indexOf('Sam') !== -1 && R.indexOf('Lewis') !== -1); })() === true, 'message: The <code>getArrayOfUsers</code> function returns an array which contains all the keys in the <code>users</code> object');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -658,9 +692,9 @@
       "id": "587d7b7d367417b2b2512b1f",
       "title": "Modify an Array Stored in an Object",
       "description": [
-        "Now you've seen all the basic operations for JavaScript objects. You can add, modify, and remove key-value pairs, check if keys exist, and iterate over all the keys in an object. As you continue learning JavaScript you will see even more versatile applications of objects. Additionally, the optional Advanced Data Structures lessons later in the curriculum also cover the ES6 Map and Set objects, both of which are similar to ordinary objects but provide some additional features. Now that you've learned the basics of arrays and objects, you're fully prepared to begin tackling more complex problems using JavaScript!",
+        "Now you've seen all the basic operations for JavaScript objects. You can add, modify, and remove key-value pairs, check if keys exist, and iterate over all the keys in an object. As you continue learning JavaScript you will see even more versatile applications of objects. Additionally, the optional Advanced Data Structures lessons later in the curriculum also cover the ES6 <dfn>Map</dfn> and <dfn>Set</dfn> objects, both of which are similar to ordinary objects but provide some additional features. Now that you've learned the basics of arrays and objects, you're fully prepared to begin tackling more complex problems using JavaScript!",
         "<hr>",
-        "Take a look at the object we've provided in the code editor. The user object contains three keys. The data key contains four keys, one of which contains an array of friends. From this, you can see how flexible objects are as data structures. We've started writing a function addFriend. Finish writing it so that it takes a user object and adds the name of the friend argument to the array stored in user.data.friends."
+        "Take a look at the object we've provided in the code editor. The <code>user</code> object contains three keys. The <code>data</code> key contains four keys, one of which contains an array of <code>friends</code>. From this, you can see how flexible objects are as data structures. We've started writing a function <code>addFriend</code>. Finish writing it so that it takes a <code>user</code> object and adds the name of the <code>friend</code> argument to the array stored in <code>user.data.friends</code> and returns that array."
       ],
       "challengeSeed": [
         "let user = {",
@@ -682,14 +716,19 @@
         "    }",
         "  }",
         "};",
-        "function addFriend(user, friend) {",
+        "",
+        "function addFriend(userObj, friend) {",
         "  // change code below this line  ",
+        "",
         "  // change code above this line",
-        "};"
+        "}",
+        "",
+        "console.log(addFriend(user, 'Pete'));"
       ],
       "tests": [
-        "assert('name' in user && 'age' in user && 'data' in user, 'The user object has name, age, and data keys');",
-        "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'The addFriend function accepts a user object and a friend as arguments and adds the friend to the array of friends in the user object.');"
+        "assert('name' in user && 'age' in user && 'data' in user, 'message: The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys');",
+        "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'message: The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object');",
+        "assert.deepEqual((function() { delete user.data.friends; user.data.friends = ['Sam', 'Kira', 'Tomo']; return addFriend(user, 'Pete') })(), ['Sam', 'Kira', 'Tomo', 'Pete'], 'message: <code>addFriend(user, \"Pete\")</code> should return <code>[\"Sam\", \"Kira\", \"Tomo\", \"Pete\"]</code>');"
       ],
       "type": "waypoint",
       "solutions": [],

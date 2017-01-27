@@ -24,13 +24,7 @@ const initialUiState = {
   isLightBoxOpen: false,
   // project is ready to submit
   isSubmitting: false,
-  output: `/**
-  * Your output will go here.
-  * Any console.log() - type
-  * statements will appear in
-  * your browser\'s DevTools
-  * JavaScript console as well.
-  */`,
+  output: null,
   // video
   // 1 indexed
   currentQuestion: 1,

@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
 import { Col, Row } from 'react-bootstrap';
 
-import TestSuite from './Test-Suite.jsx';
-import Output from './Output.jsx';
+import TestSuite from '../Test-Suite.jsx';
+import Output from '../Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import { challengeSelector } from '../../redux/selectors';
 import {
@@ -15,6 +15,7 @@ import {
   executeChallenge,
   unlockUntrustedCode
 } from '../../redux/actions';
+import { descriptionRegex } from '../../utils';
 import { makeToast } from '../../../../toasts/redux/actions';
 
 const mapDispatchToProps = {
@@ -61,10 +62,6 @@ const mapStateToProps = createSelector(
 );
 
 export class SidePanel extends PureComponent {
-  constructor(...args) {
-    super(...args);
-    this.descriptionRegex = /\<blockquote|\<ol|\<h4|\<table/;
-  }
   static displayName = 'SidePanel';
 
   static propTypes = {
@@ -84,7 +81,7 @@ export class SidePanel extends PureComponent {
     updateHint: PropTypes.func
   };
 
-  renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
+  renderDescription(description = [ 'Happy Coding!' ]) {
     return description.map((line, index) => {
       if (descriptionRegex.test(line)) {
         return (
@@ -146,7 +143,7 @@ export class SidePanel extends PureComponent {
               className='challenge-instructions'
               xs={ 12 }
               >
-              { this.renderDescription(description, this.descriptionRegex) }
+              { this.renderDescription(description) }
             </Col>
           </Row>
         </div>
@@ -160,7 +157,16 @@ export class SidePanel extends PureComponent {
           unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
         />
-        <Output output={ output }/>
+        <Output
+          defaultOutput={
+`/**
+  * Your output will go here.
+  * Any console.log() statements
+  * will appear in here as well.
+  */`
+          }
+          output={ output }
+        />
         <br />
         <TestSuite tests={ tests } />
       </div>

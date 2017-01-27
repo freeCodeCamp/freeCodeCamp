@@ -1,20 +1,21 @@
 import { Observable } from 'rx';
 
-import types from './types';
+import types from './types.js';
 import {
   moveToNextChallenge,
   clearSavedCode
-} from './actions';
+} from './actions.js';
 
-import { challengeSelector } from './selectors';
+import { challengeSelector } from './selectors.js';
 import {
   createErrorObservable,
   updateUserPoints,
   updateUserChallenge
-} from '../../../redux/actions';
-import { backEndProject } from '../../../utils/challengeTypes';
-import { makeToast } from '../../../toasts/redux/actions';
-import { postJSON$ } from '../../../../utils/ajax-stream';
+} from '../../../redux/actions.js';
+import { backEndProject } from '../../../utils/challengeTypes.js';
+import { makeToast } from '../../../toasts/redux/actions.js';
+import { postJSON$ } from '../../../../utils/ajax-stream.js';
+import { ofType } from '../../../../utils/get-actions-of-type.js';
 
 function postChallenge(url, username, _csrf, challengeInfo) {
   const body = { ...challengeInfo, _csrf };
@@ -97,8 +98,42 @@ function submitSimpleChallenge(type, state) {
   );
 }
 
-const submitTypes = {
+function submitBackendChallenge(type, state, { solution }) {
+  const { tests } = state.challengesApp;
+  if (
+    type === types.checkChallenge &&
+    tests.length > 0 &&
+    tests.every(test => test.pass && !test.err)
+  ) {
+    /*
+    return Observable.of(
+      makeToast({
+        message: `${randomCompliment()} Go to your next challenge.`,
+        action: 'Submit',
+        actionCreator: 'submitChallenge',
+        timeout: 10000
+      })
+    );
+    */
+
+    const { challenge: { id } } = challengeSelector(state);
+    const { app: { user, csrfToken } } = state;
+    const challengeInfo = { id, solution };
+    return postChallenge(
+      '/backend-challenge-completed',
+      user,
+      csrfToken,
+      challengeInfo
+    );
+  }
+  return Observable.just(
+    makeToast({ message: 'Keep trying.' })
+  );
+}
+
+const submitters = {
   tests: submitModern,
+  backend: submitBackendChallenge,
   step: submitSimpleChallenge,
   video: submitSimpleChallenge,
   'project.frontEnd': submitProject,
@@ -108,14 +143,11 @@ const submitTypes = {
 
 export default function completionSaga(actions$, getState) {
   return actions$
-    .filter(({ type }) => (
-      type === types.checkChallenge ||
-      type === types.submitChallenge
-    ))
+    ::ofType(types.checkChallenge, types.submitChallenge)
     .flatMap(({ type, payload }) => {
       const state = getState();
       const { submitType } = challengeSelector(state);
-      const submitter = submitTypes[submitType] ||
+      const submitter = submitters[submitType] ||
         (() => Observable.just(null));
       return submitter(type, state, payload);
     });

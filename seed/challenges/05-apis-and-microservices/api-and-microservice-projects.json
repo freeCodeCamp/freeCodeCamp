@@ -5,6 +5,29 @@
   "helpRoom": "HelpBackend",
   "challenges": [
     {
+      "id": "57ed709d334ad35e8fe79acb",
+      "title": "New Backend Format",
+      "isBeta": "true",
+      "meta": "This is just a test",
+      "description": [
+        "This is just a test of the new backend challenge test framework"
+      ],
+      "tests": [{
+        "text": "website should return 200",
+        "testString": "getUserInput => $.ajax({ url: getUserInput('url'), method: 'HEAD' }).then(null, (err) => assert.fail(err));"
+      }, {
+        "text": "package.json should have a valid \"keywords\" key",
+        "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert(packJson.keywords); }, err => { throw new Error('Err: ' + err.statusText);}))"
+      }, {
+        "text": "\"keywords\" field should be an Array",
+        "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert.isArray(packJson.keywords); }, err => { throw new Error('Err: ' + err.statusText);}))"
+      }, {
+        "text": "\"keywords\" should include \"freecodecamp\"",
+        "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert.include(packJson.keywords, 'freecodecamp'); }, err => { throw new Error('Err: ' + err.statusText); }))"
+      }],
+      "type": "backend"
+    },
+    {
       "id": "bd7158d8c443edefaeb5bdef",
       "title": "Timestamp Microservice",
       "description": [

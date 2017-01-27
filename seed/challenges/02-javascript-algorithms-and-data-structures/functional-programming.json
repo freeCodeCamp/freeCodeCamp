@@ -43,7 +43,7 @@
         "1) Isolated functions - there is no dependence on the state of the program, which includes global variables that are subject to change",
         "2) Pure functions - the same input always gives the same output",
         "3) Functions with limited side effects - any changes, or mutations, to the state of the program outside the function are carefully controlled",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The members of Free Code Camp happen to love tea.",
         "In the code editor, the <code>prepareTea</code> and <code>getTea</code> functions are already defined for you. Call the <code>getTea</code> function to get 40 cups of tea for the team, and store them in the <code>tea4TeamFCC</code> variable."
       ],
@@ -116,7 +116,7 @@
         "Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called <code>first class</code> functions. In JavaScript, all functions are <code>first class</code> functions.",
         "The functions that take a function as an argument, or return a function as a return value are called <code>higher order</code> functions.",
         "When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a <code>lambda</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Prepare 27 cups of green tea and 13 cups of black tea and store them in <code>tea4GreenTeamFCC</code> and <code>tea4BlackTeamFCC</code> variables, respectively. Note that the <code>getTea</code> function has been modified so it now takes a function as the first argument.",
         "Note: The data (the number of cups of tea) is supplied as the last argument. We'll discuss this more in later lessons."
       ],
@@ -283,7 +283,7 @@
         "The previous example didn't have any complicated operations but the <code>splice</code> method changed the original array, and resulted in a bug.",
         "Recall that in functional programming, changing or altering things is called <code>mutation</code>, and the outcome is called a <code>side effect</code>. A function, ideally, should be a <code>pure function</code>, meaning that it does not cause any side effects.",
         "Let's try to master this discipline and not alter any variable or object in our code.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fill in the code for the function <code>incrementer</code> so it returns the value of the global variable <code>fixedValue</code> increased by one."
       ],
       "challengeSeed": [
@@ -337,7 +337,7 @@
         "There are several good consequences from this principle. The function is easier to test, you know exactly what input it takes, and it won't depend on anything else in your program.",
         "This can give you more confidence when you alter, remove, or add new code. You would know what you can or cannot change and you can see where the potential traps are.",
         "Finally, the function would always produce the same output for the same set of inputs, no matter what part of the code executes it.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Let's update the <code>incrementer</code> function to clearly declare its dependencies.",
         "Write the <code>incrementer</code> function so it takes an argument, and then increases the value by one."
       ],
@@ -391,7 +391,7 @@
         "1) Don't alter a variable or object - create new variables and objects and return them if need be from a function.",
         "2) Declare function arguments - any computation inside a function depends only on the arguments, and not on any global object or variable.",
         "Adding one to a number is not very exciting, but we can apply these principles when working with arrays or more complex objects.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Refactor (rewrite) the code so the global array <code>bookList</code> is not changed inside either function. The <code>add</code> function should add the given <code>bookName</code> to the end of an array. The <code>remove</code> function should remove the given <code>bookName</code> from an array. Both functions should return an array, and any new parameters should be added before the <code>bookName</code> one."
       ],
       "challengeSeed": [
@@ -470,7 +470,7 @@
         "It would make sense to be able to pass them as arguments to other functions, and return a function from another function. Functions are considered <code>First Class Objects</code> in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.",
         "Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at <code>Array.prototype.map()</code>, or more simply <code>map</code>.",
         "Remember that the <code>map</code> method is a way to iterate over each item in an array. It creates a new array (without changing the original one) after applying a callback function to every element.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The <code>watchList</code> array holds objects with information on several movies. Use <code>map</code> to pull the title and rating from <code>watchList</code> and save the new array in the <code>rating</code> variable. The code in the editor currently uses a <code>for</code> loop to do this, replace the loop functionality with your <code>map</code> expression."
       ],
       "challengeSeed": [
@@ -636,7 +636,7 @@
         "In other words, <code>map</code> is a pure function, and its output depends solely on its inputs. Plus, it takes another function as its argument.",
         "It would teach us a lot about <code>map</code> to try to implement a version of it that behaves exactly like the <code>Array.prototype.map()</code> with a <code>for</code> loop or <code>Array.prototype.forEach()</code>.",
         "Note: A pure function is allowed to alter local variables defined within its scope, although, it's preferable to avoid that as well.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write your own <code>Array.prototype.myMap()</code>, which should behave exactly like <code>Array.prototype.map()</code>. You may use a <code>for</code> loop or the <code>forEach</code> method."
       ],
       "challengeSeed": [
@@ -689,7 +689,7 @@
       "description": [
         "Another useful array function is <code>Array.prototype.filter()</code>, or simply <code>filter()</code>. The <code>filter</code> method returns a new array which is at most as long as the original array, but usually has fewer items.",
         "<code>Filter</code> doesn't alter the original array, just like <code>map</code>. It takes a callback function that applies the logic inside the callback on each element of the array. If an element returns true based on the criteria in the callback function, then it is included in the new array.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The variable <code>watchList</code> holds an array of objects with information on several movies. Use a combination of <code>filter</code> and <code>map</code> to return a new array of objects with only <code>title</code> and <code>rating</code> keys, but where <code>imdbRating</code> is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may want to convert them into numbers to perform mathematical operations on them."
       ],
       "challengeSeed": [
@@ -850,7 +850,7 @@
       "description": [
         "It would teach us a lot about the <code>filter</code> method if we try to implement a version of it that behaves exactly like <code>Array.prototype.filter()</code>. It can use either a <code>for</code> loop or <code>Array.prototype.forEach()</code>.",
         "Note: A pure function is allowed to alter local variables defined within its scope, although, it's preferable to avoid that as well.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write your own <code>Array.prototype.myFilter()</code>, which should behave exactly like <code>Array.prototype.filter()</code>. You may use a <code>for</code> loop or the <code>Array.prototype.forEach()</code> method."
       ],
       "challengeSeed": [
@@ -904,7 +904,7 @@
         "The <code>slice</code> method returns a copy of certain elements of an array. It can take two arguments, the first gives the index of where to begin the slice, the second is the index for where to end the slice (and it's non-inclusive). If the arguments are not provided, the default is to start at the beginning of the array through the end, which is an easy way to make a copy of the entire array. The <code>slice</code> method does not mutate the original array, but returns a new one.",
         "Here's an example:",
         "<blockquote>var arr = [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\"];<br>var newArray = arr.slice(1, 3);<br>// Sets newArray to [\"Dog\", \"Tiger\"]</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>slice</code> method in the <code>sliceArray</code> function to return part of the <code>anim</code> array given the provided <code>beginSlice</code> and <code>endSlice</code> indices. The function should return an array."
       ],
       "challengeSeed": [
@@ -954,7 +954,7 @@
         "A common pattern while working with arrays is when you want to remove items and keep the rest of the array. JavaScript offers the <code>splice</code> method for this, which takes arguments for the index of where to start removing items, then the number of items to remove. If the second argument is not provided, the default is to remove items through the end. However, the <code>splice</code> method mutates the original array it is called on. Here's an example:",
         "<blockquote>var cities = [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"];<br>cities.splice(3, 1); // Returns \"London\" and deletes it from the cities array<br>// cities is now [\"Chicago\", \"Delhi\", \"Islamabad\", \"Berlin\"]</blockquote>",
         "As we saw in the last challenge, the <code>slice</code> method does not mutate the original array, but returns a new one which can be saved into a variable. Recall that the <code>slice</code> method takes two arguments for the indices to begin and end the slice (the end is non-inclusive), and returns those items in a new array. Using the <code>slice</code> method instead of <code>splice</code> helps to avoid any array-mutating side effects.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Rewrite the function <code>nonMutatingSplice</code> by using <code>slice</code> instead of <code>splice</code>. It should limit the provided <code>cities</code> array to a length of 3, and return a new array with only the first three items.",
         "Do not mutate the original array provided to the function."
       ],
@@ -1003,7 +1003,7 @@
       "description": [
         "<code>Concatenation</code> means to join items end to end. JavaScript offers the <code>concat</code> method for both strings and arrays that work in the same way. For arrays, the method is called on one, then another array is provided as the argument to <code>concat</code>, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example:",
         "<blockquote>[1, 2, 3].concat([4, 5, 6]);<br>// Returns a new array [1, 2, 3, 4, 5, 6]</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>concat</code> method in the <code>nonMutatingConcat</code> function to concatenate <code>attach</code> to the end of <code>original</code>. The function should return the concatenated array."
       ],
       "challengeSeed": [
@@ -1054,7 +1054,7 @@
         "The last challenge introduced the <code>concat</code> method as a way to combine arrays into a new one without mutating the original arrays. Compare <code>concat</code> to the <code>push</code> method. <code>Push</code> adds an item to the end of the same array it is called on, which mutates that array. Here's an example:",
         "<blockquote>var arr = [1, 2, 3];<br>arr.push([4, 5, 6]);<br>// arr is changed to [1, 2, 3, 4, 5, 6]<br>// Not the functional programming way</blockquote>",
         "<code>Concat</code> offers a way to add new items to the end of an array without any mutating side effects.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the <code>nonMutatingPush</code> function so it uses <code>concat</code> to add <code>newItem</code> to the end of <code>original</code> instead of <code>push</code>. The function should return an array."
       ],
       "challengeSeed": [
@@ -1106,7 +1106,7 @@
         "This is not the case with the <code>filter</code> and <code>map</code> methods since they do not allow interaction between two different elements of the array. For example, if you want to compare elements of the array, or add them together, <code>filter</code> or <code>map</code> could not process that.",
         "The <code>reduce</code> method allows for more general forms of array processing, and it's possible to show that both <code>filter</code> and <code>map</code> can be derived as a special application of <code>reduce</code>.",
         "However, before we get there, let's practice using <code>reduce</code> first.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "The variable <code>watchList</code> holds an array of objects with information on several movies. Use <code>reduce</code> to find the average IMDB rating of the movies directed by Christopher Nolan. Recall from prior challenges how to <code>filter</code> data and <code>map</code> over it to pull what you need. You may need to create other variables, but save the final average into the variable <code>averageRating</code>. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations."
       ],
       "challengeSeed": [
@@ -1273,7 +1273,7 @@
         "For example:",
         "<blockquote>function ascendingOrder(arr) {<br>&nbsp;&nbsp;return arr.sort(function(a, b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return a - b;<br>&nbsp;&nbsp;});<br>}<br>ascendingOrder([1, 5, 2, 3, 4]);<br>// Returns [1, 2, 3, 4, 5]<br><br>function reverseAlpha(arr) {<br>&nbsp;&nbsp;return arr.sort(function(a, b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return a < b;<br>&nbsp;&nbsp;});<br>}<br>reverseAlpha(['l', 'h', 'z', 'b', 's']);<br>// Returns ['z', 's', 'l', 'h', 'b']</blockquote>",
         "Note: It's encouraged to provide a callback function to specify how to sort the array items. JavaScript's default sorting method is by string Unicode point value, which may return unexpected results.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>sort</code> method in the <code>alphabeticalOrder</code> function to sort the elements of <code>arr</code> in alphabetical order."
       ],
       "challengeSeed": [
@@ -1319,7 +1319,7 @@
       "title": "Return a Sorted Array Without Changing the Original Array",
       "description": [
         "A side effect of the <code>sort</code> method is that it changes the order of the elements in the original array. In other words, it mutates the array in place. One way to avoid this is to first concatenate an empty array to the one being sorted (remember that <code>concat</code> returns a new array), then run the <code>sort</code> method.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>sort</code> method in the <code>nonMutatingSort</code> function to sort the elements of an array in ascending order. The function should return a new array, and not mutate the <code>globalArray</code> variable."
       ],
       "challengeSeed": [
@@ -1369,7 +1369,7 @@
         "Here are two examples that split one string by spaces, then another by digits using a regular expression:",
         "<blockquote>var str = \"Hello World\";<br>var bySpace = str.split(\" \");<br>// Sets bySpace to [\"Hello\", \"World\"]<br><br>var otherString = \"How9are7you2today\";<br>var byDigits = str.split(/\\d/);<br>// Sets byDigits to [\"How\", \"are\", \"you\", \"today\"]</blockquote>",
         "Since strings are immutable, the <code>split</code> method makes it easier to work with them.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>split</code> method inside the <code>splitify</code> function to split <code>str</code> into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation."
       ],
       "challengeSeed": [
@@ -1419,7 +1419,7 @@
         "The <code>join</code> method is used to join the elements of an array together to create a string. It takes an argument for the delimiter that is used to separate the array elements in the string.",
         "Here's an example:",
         "<blockquote>var arr = [\"Hello\", \"World\"];<br>var str = arr.join(\" \");<br>// Sets str to \"Hello World\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>join</code> method (among others) inside the <code>sentensify</code> function to make a sentence from the words in the string <code>str</code>. The function should return a string. For example, \"I-like-Star-Wars\" would be converted to \"I like Star Wars\". For this challenge, do not use the <code>replace</code> method."
       ],
       "challengeSeed": [
@@ -1471,7 +1471,7 @@
         "The last several challenges covered a number of useful array and string methods that follow functional programming principles. We've also learned about <code>reduce</code>, which is a powerful method used to reduce problems to simpler forms. From computing averages to sorting, any array operation can be achieved by applying it. Recall that <code>map</code> and <code>filter</code> are special cases of <code>reduce</code>.",
         "Let's combine what we've learned to solve a practical problem.",
         "Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes. For example, if you write a Medium post titled \"Stop Using Reduce\", it's likely the URL would have some form of the title string in it (\".../stop-using-reduce\"). You may have already noticed this on the Free Code Camp site.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fill in the <code>urlSlug</code> function so it converts a string <code>title</code> and returns the hyphenated version for the URL. You can use any of the methods covered in this section, and don't use <code>replace</code>. Here are the requirements:",
         "The input is a string with spaces and title-cased words",
         "The output is a string with the spaces between words replaced by a hyphen (<code>-</code>)",
@@ -1532,7 +1532,7 @@
         "The <code>every</code> method works with arrays to check if <em>every</em> element passes a particular test. It returns a Boolean value - <code>true</code> if all values meet the criteria, <code>false</code> if not.",
         "For example, the following code would check if every element in the <code>numbers</code> array is less than 10:",
         "<blockquote>var numbers = [1, 5, 8, 0, 10, 11];<br>numbers.every(function(currentValue) {<br>&nbsp;&nbsp;return currentValue < 10;<br>});<br>// Returns false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>every</code> method inside the <code>checkPositive</code> function to check if every element in <code>arr</code> is positive. The function should return a Boolean value."
       ],
       "challengeSeed": [
@@ -1580,7 +1580,7 @@
         "The <code>some</code> method works with arrays to check if <em>any</em> element passes a particular test. It returns a Boolean value - <code>true</code> if any of the values meet the criteria, <code>false</code> if not.",
         "For example, the following code would check if any element in the <code>numbers</code> array is less than 10:",
         "<blockquote>var numbers = [10, 50, 8, 220, 110, 11];<br>numbers.some(function(currentValue) {<br>&nbsp;&nbsp;return currentValue < 10;<br>});<br>// Returns true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>some</code> method inside the <code>checkPositive</code> function to check if any element in <code>arr</code> is positive. The function should return a Boolean value."
       ],
       "challengeSeed": [
@@ -1634,7 +1634,7 @@
         "Similarly, <code>partial application</code> can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments.",
         "Here's an example:",
         "<blockquote>//Impartial function<br>function impartial(x, y, z) {<br>&nbsp;&nbsp;return x + y + z;<br>}<br>var partialFn = impartial.bind(this, 1, 2);<br>partialFn(10); // Returns 13</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fill in the body of the <code>add</code> function so it uses currying to add parameters <code>x</code>, <code>y</code>, and <code>z</code>."
       ],
       "challengeSeed": [

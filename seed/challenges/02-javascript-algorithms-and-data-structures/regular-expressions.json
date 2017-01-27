@@ -42,7 +42,7 @@
         "If you want to find the word <code>\"the\"</code> in the string <code>\"The dog chased the cat\"</code>, you could use the following regular expression: <code>/the/</code>. Notice that quote marks are not required within the regular expression.",
         "JavaScript has multiple ways to use regexes. One way to test a regex is using the <code>.test()</code> method. The <code>.test()</code> method takes the regex, applies it to a string (which is placed inside the parentheses), and returns <code>true</code> or <code>false</code> if your pattern finds something or not.",
         "<blockquote>let testStr = \"FreeCodeCamp\";<br>let testRegex = /Code/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Apply the regex <code>myRegex</code> on the string <code>myString</code> using the <code>.test()</code> method."
       ],
       "challengeSeed": [
@@ -93,7 +93,7 @@
         "<blockquote>let testStr = \"Hello, my name is Kevin.\";<br>let testRegex = /Kevin/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>",
         "Any other forms of <code>\"the\"</code> will not match. For example, the regex <code>/the/</code> will not match <code>\"The\"</code> or <code>\"THE\"</code>. A future challenge shows how to match these versions as well.",
         "<blockquote>let wrongRegex = /kevin/;<br>wrongRegex.test(testStr);<br>// Returns false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Complete the regex <code>waldoRegex</code> to find <code>\"Waldo\"</code> in the string <code>waldoIsHiding</code> with a literal match."
       ],
       "challengeSeed": [
@@ -145,7 +145,7 @@
         "This is powerful to search single strings, but it's limited to only one pattern. You can search for multiple patterns using the <code>alternation</code> or <code>OR</code> operator: <code>|</code>.",
         "This operator matches patterns either before or after it. For example, if you wanted to match <code>\"yes\"</code> or <code>\"no\"</code>, the regex you want is <code>/yes|no/</code>.",
         "You can also search for more than just two patterns. You can do this by adding more patterns with more <code>OR</code> operators separating them, like <code>/yes|no|maybe/</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Complete the regex <code>petRegex</code> to match the pets <code>\"dog\"</code>, <code>\"cat\"</code>, <code>\"bird\"</code>, or <code>\"fish\"</code>."
       ],
       "challengeSeed": [
@@ -201,7 +201,7 @@
         "Case (or sometimes letter case) is the difference between uppercase letters and lowercase letters. Examples of uppercase are <code>\"A\"</code>, <code>\"B\"</code>, and <code>\"C\"</code>. Examples of lowercase are <code>\"a\"</code>, <code>\"b\"</code>, and <code>\"c\"</code>.",
         "You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case.",
         "The flag that ignores case is the <code>i</code> flag. You can use it by appending it to the regex. An example of using this flag is <code>/ignorecase/i</code>. This regex can match the strings <code>\"ignorecase\"</code>, <code>\"igNoreCase\"</code>, and <code>\"IgnoreCase\"</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a regex <code>fccRegex</code> to match <code>\"FreeCodeCamp\"</code>, no matter its case. Your regex should not match any abbreviations or variations with spaces."
       ],
       "challengeSeed": [
@@ -259,7 +259,7 @@
         "So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the <code>.match()</code> method.",
         "To use the <code>.match()</code> method, apply the method on a string and pass in the regex inside the parentheses. Here's an example:",
         "<blockquote>\"Hello, World!\".match(/Hello/);<br>// Returns [\"Hello\"]<br>let ourStr = \"Regular expressions\";<br>let ourRegex = /expressions/;<br>ourStr.match(ourRegex);<br>// Returns [\"expressions\"]</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Apply the <code>.match()</code> method to extract the word <code>coding</code>."
       ],
       "challengeSeed": [
@@ -311,7 +311,7 @@
         "<blockquote>let testStr = \"Repeat, Repeat, Repeat\";<br>let ourRegex = /Repeat/;<br>testStr.match(ourRegex);<br>// Returns [\"Repeat\"]</blockquote>",
         "To search or extract a pattern more than once, you can use the <code>g</code> flag.",
         "<blockquote>let repeatRegex = /Repeat/g;<br>testStr.match(repeatRegex);<br>// Returns [\"Repeat\", \"Repeat\", \"Repeat\"]</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Using the regex <code>starRegex</code>, find and extract both <code>\"Twinkle\"</code> words from the string <code>twinkleStar</code>.",
         "<strong>Note</strong><br>You can have multiple flags on your regex like <code>/search/gi</code>"
       ],
@@ -364,7 +364,7 @@
         "Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: <code>.</code>",
         "The wildcard character <code>.</code> will match any one character. The wildcard is also called <code>dot</code> and <code>period</code>. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match <code>\"hug\"</code>, <code>\"huh\"</code>, <code>\"hut\"</code>, and <code>\"hum\"</code>, you can use the regex <code>/hu./</code> to match all four words.",
         "<blockquote>let humStr = \"I'll hum a song\";<br>let hugStr = \"Bear hug\";<br>let huRegex = /hu./;<br>humStr.match(huRegex); // Returns [\"hum\"]<br>hugStr.match(huRegex); // Returns [\"hug\"]</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Complete the regex <code>unRegex</code> so that it matches the strings <code>\"run\"</code>, <code>\"sun\"</code>, <code>\"fun\"</code>, <code>\"pun\"</code>, <code>\"nun\"</code>, and <code>\"bun\"</code>. Your regex should use the wildcard character."
       ],
       "challengeSeed": [
@@ -423,7 +423,7 @@
         "You can search for a literal pattern with some flexibility with <code>character classes</code>. Character classes allow you to define a group of characters you wish to match by placing them inside square (<code>[</code> and <code>]</code>) brackets.",
         "For example, you want to match <code>\"bag\"</code>, <code>\"big\"</code>, and <code>\"bug\"</code> but not <code>\"bog\"</code>. You can create the regex <code>/b[aiu]g/</code> to do this. The <code>[aiu]</code> is the character class that will only match the characters <code>\"a\"</code>, <code>\"i\"</code>, or <code>\"u\"</code>.",
         "<blockquote>let bigStr = \"big\";<br>let bagStr = \"bag\";<br>let bugStr = \"bug\";<br>let bogStr = \"bog\";<br>let bgRegex = /b[aiu]g/;<br>bigStr.match(bgRegex); // Returns [\"big\"]<br>bagStr.match(bgRegex); // Returns [\"bag\"]<br>bugStr.match(bgRegex); // Returns [\"bug\"]<br>bogStr.match(bgRegex); // Returns null</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use a character class with vowels (<code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code>) in your regex <code>vowelRegex</code> to count the number of vowels in the string <code>quoteSample</code>.",
         "<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels."
       ],
@@ -478,7 +478,7 @@
         "Inside a <code>character set</code>, you can define a range of characters to match using a <code>hyphen</code> character: <code>-</code>.",
         "For example, to match lowercase letters <code>a</code> through <code>e</code> you would use <code>[a-e]</code>.",
         "<blockquote>let catStr = \"cat\";<br>let batStr = \"bat\";<br>let matStr = \"mat\";<br>let bgRegex = /[a-e]at/;<br>catStr.match(bgRegex); // Returns [\"cat\"]<br>batStr.match(bgRegex); // Returns [\"bat\"]<br>matStr.match(bgRegex); // Returns null</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Match all the letters in the string <code>quoteSample</code>.",
         "<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels."
       ],
@@ -531,7 +531,7 @@
         "For example, <code>/[0-5]/</code> matches any number between <code>0</code> and <code>5</code>, including the <code>0</code> and <code>5</code>.",
         "Also, it is possible to combine a range of letters and numbers in a single character set.",
         "<blockquote>let jennyStr = \"Jenny8675309\";<br>let myRegex = /[a-z0-9]/ig;<br>jennyStr.match(myRegex); // matches all letters and numbers in jennyStr</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a single regex that matches a range of letters between <code>h</code> and <code>s</code>, and a range of numbers between <code>2</code> and <code>6</code>. Remember to include the appropriate flags in the regex."
       ],
       "challengeSeed": [
@@ -582,7 +582,7 @@
         "So far, you have created a set of characters that you want to match, but you could also create a set of characters that you do not want to match. These types of character sets are called <code>negated character sets</code>.",
         "To create a <code>negated character set</code>, you place a <code>caret</code> character (<code>^</code>) after the opening bracket and before the characters you do not want to match.",
         "For example, <code>/[^aeiou]/gi</code> matches all characters that are not a vowel. Note that characters like <code>.</code>, <code>!</code>, <code>[</code>, <code>@</code>, <code>/</code> and white space are matched - the negated vowel character set only excludes the vowel characters.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a single regex that matches all characters that are not a number or a vowel. Remember to include the appropriate flags in the regex."
       ],
       "challengeSeed": [
@@ -633,7 +633,7 @@
         "Sometimes, you need to match a character (or group of characters) that appears one or more times in a row. This means it occurs at least once, and may be repeated.",
         "You can use the <code>+</code> character to check if that is the case. Remember, the character or pattern has to be present consecutively. That is, the character has to repeat one after the other.",
         "For example, <code>/a+/g</code> would find one match in <code>\"abc\"</code> and return <code>[\"a\"]</code>. It would also find one match in <code>\"aabc\"</code> and return <code>[\"aa\"]</code>. If it were checking the string <code>\"abab\"</code>, it would find two matches and return <code>[\"a\", \"a\"]</code> because the <code>a</code> characters are not in a row - there is a <code>b</code> between them. Finally, since there is no <code>\"a\"</code> in the string <code>\"bcd\"</code>, it wouldn't find a match.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "You want to find matches when the letter <code>s</code> occurs one or more times in <code>\"Mississippi\"</code>. Write a regex that uses the <code>+</code> sign."
       ],
       "challengeSeed": [
@@ -684,7 +684,7 @@
         "The last challenge used the plus <code>+</code> sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.",
         "The character to do this is the <code>asterisk</code> or <code>star</code>: <code>*</code>.",
         "<blockquote>let sWord1 = \"seed\";<br>let sWord2 = \"saw\";<br>let kWord = \"kite\";<br>let sRegex = /s.*/; // Searches for words starting with s<br>sRegex.test(sWord1); // Returns true<br>sRegex.test(sWord2); // Returns true<br>sRegex.test(kWord); // Returns false<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Create a regex <code>starWarsRegex</code> that uses the <code>*</code> character to match all the movie titles that start with <code>\"Star Wars\"</code>. Your regex does not need flags."
       ],
       "challengeSeed": [
@@ -741,7 +741,7 @@
         "You can apply the regex <code>/t[a-z]*i/</code> to the string <code>\"titanic\"</code>. This regex is basically a pattern that starts with <code>t</code>, ends with <code>i</code>, and has some letters in between.",
         "Regular expressions are by default <code>greedy</code>, so the match would return <code>[\"titani\"]<c/ode>. It finds the largest sub-string possible to fit the pattern.",
         "However, you can use the <code>?</code> character to change it to <code>lazy</code> matching. <code>\"titanic\"</code> matched against the adjusted regex of <code>/t[a-z]*?i/</code> returns <code>[\"ti\"]</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Fix the regex <code>/&lt;.*&gt;/</code> to return the HTML tag <code>&lt;h1&gt;</code> and not the text <code>\"&lt;h1&gt;Winter is coming&lt;/h1&gt;\"</code>. Remember the wildcard <code>.</code> in a regular expression matches any character."
       ],
       "challengeSeed": [
@@ -793,7 +793,7 @@
         "<blockquote>\"z\"<br>\"zzzzzz\"<br>\"ABCzzzz\"<br>\"zzzzABC\"<br>\"abczzzzzzzzzzzzzzzzzzzzzabc\"</blockquote>",
         "But it does not find matches in the following strings since there are no letter <code>z</code> characters:",
         "<blockquote>\"\"<br>\"ABC\"<br>\"abcabc\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a <code>greedy</code> regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter <code>C</code>."
       ],
       "challengeSeed": [
@@ -852,7 +852,7 @@
         "Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.",
         "In an earlier challenge, you used the <code>caret</code> character (<code>^</code>) inside a <code>character set</code> to create a <code>negated character set</code> in the form <code>[^thingsThatWillNotBeMatched]</code>. Outside of a <code>character set</code>, the <code>caret</code> is used to search for patterns at the beginning of strings.",
         "<blockquote>let firstString = \"Ricky is first and can be found.\";<br>let firstRegex = /^Ricky/;<br>firstRegex.test(firstString);<br>// Returns true<br>let notFirst = \"You can't find Ricky now.\";<br>firstRegex.test(notFirst);<br>// Returns false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the <code>caret</code> character in a regex to find <code>\"Cal\"</code> only in the beginning of the string <code>rickyAndCal</code>."
       ],
       "challengeSeed": [
@@ -904,7 +904,7 @@
         "In the last challenge, you learned to use the <code>caret</code> character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.",
         "You can search the end of strings using the <code>dollar sign</code> character <code>$</code> at the end of the regex.",
         "<blockquote>let theEnding = \"This is a never ending story\";<br>let storyRegex = /story$/;<br>storyRegex.test(theEnding);<br>// Returns true<br>let noEnding = \"Sometimes a story will have to end\";<br>storyRegex.test(noEnding);<br>// Returns false<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the anchor character (<code>$</code>) to match the string <code>\"caboose\"</code> at the end of the string <code>caboose</code>."
       ],
       "challengeSeed": [
@@ -956,7 +956,7 @@
         "The closest character class in JavaScript to match the alphabet is <code>\\w</code>. This shortcut is equal to <code>[A-Za-z0-9_]</code>. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (<code>_</code>).",
         "<blockquote>let longHand = /[A-Za-z0-9_]+/;<br>let shortHand = /\\w+/;<br>let numbers = \"42\";<br>let varNames = \"important_var\";<br>longHand.test(numbers); // Returns true<br>shortHand.test(numbers); // Returns true<br>longHand.test(varNames); // Returns true<br>shortHand.test(varNames); // Returns true</blockquote>",
         "These shortcut character classes are also known as <code>shorthand character classes</code>.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the shorthand character class <code>\\w</code> to count the number of alphanumeric characters in various quotes and strings."
       ],
       "challengeSeed": [
@@ -1010,7 +1010,7 @@
         "You've learned that you can use a shortcut to match alphanumerics <code>[A-Za-z0-9_]</code> using <code>\\w</code>. A natural pattern you might want to search for is the opposite of alphanumerics.",
         "You can search for the opposite of the <code>\\w</code> with <code>\\W</code>. Note, the opposite pattern uses a capital letter. This shortcut is the same as <code>[^A-Za-z0-9_]</code>.",
         "<blockquote>let shortHand = /\\W/;<br>let numbers = \"42%\";<br>let sentence = \"Coding!\";<br>numbers.match(shortHand); // Returns [\"%\"]<br>sentence.match(shortHand); // Returns [\"!\"]<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the shorthand character class <code>\\W</code> to count the number of non-alphanumeric characters in various quotes and strings."
       ],
       "challengeSeed": [
@@ -1062,7 +1062,7 @@
       "description": [
         "You've learned shortcuts for common string patterns like alphanumerics. Another common pattern is looking for just digits or numbers.",
         "The shortcut to look for digit characters is <code>\\d</code>, with a lowercase <code>d</code>. This is equal to the character class <code>[0-9]</code>, which looks for a single character of any number between zero and nine.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the shorthand character class <code>\\d</code> to count how many digits are in movie titles. Written out numbers (\"six\" instead of 6) do not count."
       ],
       "challengeSeed": [
@@ -1117,7 +1117,7 @@
       "description": [
         "The last challenge showed how to search for digits using the shortcut <code>\\d</code> with a lowercase <code>d</code>. You can also search for non-digits using a similar shortcut that uses an uppercase <code>D</code> instead.",
         "The shortcut to look for non-digit characters is <code>\\D</code>. This is equal to the character class <code>[^0-9]</code>, which looks for a single character that is not a number between zero and nine.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use the shorthand character class for non-digits <code>\\D</code> to count how many non-digits are in movie titles."
       ],
       "challengeSeed": [
@@ -1175,7 +1175,7 @@
         "1) The only numbers in the username have to be at the end. There can be zero or more of them at the end.",
         "2) Username letters can be lowercase and uppercase.",
         "3) Usernames have to be at least two characters long. A two-letter username can only use alphabet letter characters.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the regex <code>userCheck</code> to fit the constraints listed above."
       ],
       "challengeSeed": [
@@ -1229,7 +1229,7 @@
         "The challenges so far have covered matching letters of the alphabet and numbers. You can also match the whitespace or spaces between letters.",
         "You can search for whitespace using <code>\\s</code>, which is a lowercase <code>s</code>. This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. You can think of it as similar to the character class <code>[ \\r\\t\\f\\n\\v]</code>.",
         "<blockquote>let whiteSpace = \"Whitespace. Whitespace everywhere!\"<br>let spaceRegex = /\\s/g;<br>whiteSpace.match(spaceRegex);<br>// Returns [\" \", \" \"]<br></blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the regex <code>countWhiteSpace</code> to look for multiple whitespace characters in a string."
       ],
       "challengeSeed": [
@@ -1281,7 +1281,7 @@
         "You learned about searching for whitespace using <code>\\s</code>, with a lowercase <code>s</code>. You can also search for everything except whitespace.",
         "Search for non-whitespace using <code>\\S</code>, which is an uppercase <code>s</code>. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class <code>[^ \\r\\t\\f\\n\\v]</code>.",
         "<blockquote>let whiteSpace = \"Whitespace. Whitespace everywhere!\"<br>let nonSpaceRegex = /\\S/g;<br>whiteSpace.match(nonSpaceRegex).length; // Returns 32</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the regex <code>countNonWhiteSpace</code> to look for multiple non-whitespace characters in a string."
       ],
       "challengeSeed": [
@@ -1334,7 +1334,7 @@
         "You can specify the lower and upper number of patterns with <code>quantity specifiers</code>. Quantity specifiers are used with curly brackets (<code>{</code> and <code>}</code>). You put two numbers between the curly brackets - for the lower and upper number of patterns.",
         "For example, to match only the letter <code>a</code> appearing between <code>3</code> and <code>5</code> times in the string <code>\"ah\"</code>, your regex would be <code>/a{3,5}h/</code>.",
         "<blockquote>let A4 = \"aaaah\";<br>let A2 = \"aah\";<br>let multipleA = /a{3,5}h/;<br>multipleA.test(A4); // Returns true<br>multipleA.test(A2); // Returns false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the regex <code>ohRegex</code> to match only <code>3</code> to <code>6</code> letter <code>h</code>'s in the word <code>\"Oh no\"</code>."
       ],
       "challengeSeed": [
@@ -1390,7 +1390,7 @@
         "To only specify the lower number of patterns, keep the first number followed by a comma.",
         "For example, to match only the string <code>\"hah\"</code> with the letter <code>a</code> appearing at least <code>3</code> times, your regex would be <code>/ha{3,}h/</code>.",
         "<blockquote>let A4 = \"haaaah\";<br>let A2 = \"haah\";<br>let A100 = \"h\" + \"a\".repeat(100) + \"h\";<br>let multipleA = /ha{3,}h/;<br>multipleA.test(A4); // Returns true<br>multipleA.test(A2); // Returns false<br>multipleA.test(A100); // Returns true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the regex <code>haRegex</code> to match the word <code>\"Hazzah\"</code> only when it has four or more letter <code>z</code>'s."
       ],
       "challengeSeed": [
@@ -1446,7 +1446,7 @@
         "To specify a certain number of patterns, just have that one number between the curly brackets.",
         "For example, to match only the word <code>\"hah\"</code> with the letter <code>a</code> <code>3</code> times, your regex would be <code>/ha{3}h/</code>.",
         "<blockquote>let A4 = \"haaaah\";<br>let A3 = \"haaah\";<br>let A100 = \"h\" + \"a\".repeat(100) + \"h\";<br>let multipleHA = /a{3}h/;<br>multipleHA.test(A4); // Returns false<br>multipleHA.test(A3); // Returns true<br>multipleHA.test(A100); // Returns false</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the regex <code>timRegex</code> to match the word <code>\"Timber\"</code> only when it has four letter <code>m</code>'s."
       ],
       "challengeSeed": [
@@ -1501,7 +1501,7 @@
         "You can specify the possible existence of an element with a question mark, <code>?</code>. This checks for zero or one of the preceding element. You can think of this symbol as saying the previous element is optional.",
         "For example, there are slight differences in American and British English and you can use the question mark to match both spellings.",
         "<blockquote>let american = \"color\";<br>let british = \"colour\";<br>let rainbowRegex= /colou?r/;<br>rainbowRegex.test(american); // Returns true<br>rainbowRegex.test(british); // Returns true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Change the regex <code>favRegex</code> to match both the American English (favorite) and the British English (favourite) version of the word."
       ],
       "challengeSeed": [
@@ -1558,7 +1558,7 @@
         "<blockquote>let quit = \"qu\";<br>let noquit = \"qt\";<br>let quRegex= /q(?=u)/;<br>let qRegex = /q(?!u)/;<br>quit.match(quRegex); // Returns [\"q\"]<br>noquit.match(qRegex); // Returns [\"q\"]</blockquote>",
         "A more practical use of <code>lookaheads</code> is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:",
         "<blockquote>let password = \"abc123\";<br>let checkPass = /(?=\\w{3,6})(?=\\D*\\d)/;<br>checkPass.test(password); // Returns true</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <code>lookaheads</code> in the <code>pwRegex</code> to match passwords that are greater than 5 characters long and have two consecutive digits."
       ],
       "challengeSeed": [
@@ -1616,7 +1616,7 @@
         "The example below matches any word that occurs twice separated by a space:",
         "<blockquote>let repeatStr = \"regex regex\";<br>let repeatRegex = /(\\w+)\\s\\1/;<br>repeatRegex.test(repeatStr); // Returns true<br>repeatStr.match(repeatRegex); // Returns [\"regex regex\", \"regex\"]</blockquote>",
         "Using the <code>.match()</code> method on a string will return an array with the string it matches, along with its capture group.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Use <code>capture groups</code> in <code>reRegex</code> to match numbers that appear three times in a string each separated by a space."
       ],
       "challengeSeed": [
@@ -1673,7 +1673,7 @@
         "<blockquote>let wrongText = \"The sky is silver.\";<br>let silverRegex = /silver/;<br>wrongText.replace(silverRegex, \"blue\");<br>// Returns \"The sky is blue.\"</blockquote>",
         "You can also access capture groups in the replacement string with dollar signs (<code>$</code>).",
         "<blockquote>\"Code Camp\".replace(/(\\w+)\\s(\\w+)/, '$2 $1');<br>// Returns \"Camp Code\"</blockquote>",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a regex so that it will search for the string <code>\"good\"</code>. Then update the <code>replaceText</code> variable to replace <code>\"good\"</code> with <code>\"okey-dokey\"</code>."
       ],
       "challengeSeed": [
@@ -1723,7 +1723,7 @@
       "title": "Remove Whitespace from Start and End",
       "description": [
         "Sometimes whitespace characters around strings are not wanted but are there. Typical processing of strings is to remove the whitespace at the start and end of it.",
-        "<h4>Instructions</h4>",
+        "<hr>",
         "Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.",
         "<strong>Note</strong><br>The <code>.trim()</code> method would work here, but you'll need to complete this challenge using regular expressions."
       ],

@@ -146,7 +146,7 @@
     "no-unused-expressions": 2,
     "no-unused-vars": 2,
     "no-use-before-define": 0,
-    "no-void": 2,
+    "no-void": 0,
     "no-warning-comments": [ 2, { "terms": [ "fixme" ], "location": "start" } ],
     "no-with": 2,
     "one-var": 0,

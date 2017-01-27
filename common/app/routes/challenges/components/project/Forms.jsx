@@ -6,6 +6,7 @@ import {
   FormControl
 } from 'react-bootstrap';
 
+import SolutionInput from '../Solution-Input.jsx';
 import {
   isValidURL,
   makeRequired,
@@ -41,27 +42,6 @@ const fieldValidators = {
 const backEndFieldValidators = {
   ...fieldValidators,
   githubLink: makeRequired(isValidURL)
-};
-
-export function SolutionInput({ solution, placeholder }) {
-  return (
-    <FormGroup
-      controlId='solution'
-      validationState={ getValidationState(solution) }
-      >
-      <FormControl
-        name='solution'
-        placeholder={ placeholder }
-        type='url'
-        { ...solution}
-      />
-    </FormGroup>
-  );
-}
-
-SolutionInput.propTypes = {
-  solution: PropTypes.object,
-  placeholder: PropTypes.string
 };
 
 export function _FrontEndForm({

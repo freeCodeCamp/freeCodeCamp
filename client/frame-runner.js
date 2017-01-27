@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+  var testTimeout = 5000;
   var common = parent.__common;
   var frameId = window.__frameId;
-  var frameReady = common[frameId + 'Ready$'] || { onNext() {} };
+  var frameReady = common[frameId + 'Ready'] || { onNext() {} };
   var Rx = document.Rx;
   var helpers = Rx.helpers;
   var chai = parent.chai;
   var source = document.__source;
+  var __getUserInput = document.__getUserInput || (x => x);
+  var checkChallengePayload = document.__checkChallengePayload;
 
   document.__getJsOutput = function getJsOutput() {
     if (window.__err || !common.shouldRun()) {
@@ -23,13 +26,23 @@ document.addEventListener('DOMContentLoaded', function() {
     return output;
   };
 
-  document.__runTests$ = function runTests$(tests = []) {
+  document.__runTests = function runTests(tests = []) {
     /* eslint-disable no-unused-vars */
     const editor = { getValue() { return source; } };
     const code = source;
     /* eslint-enable no-unused-vars */
     if (window.__err) {
-      return Rx.Observable.throw(window.__err);
+      return Rx.Observable.from(tests)
+        .map(test => {
+          return {
+            ...test,
+            err: window.__err.message + '\n' + window.__err.stack,
+            message: window.__err.message,
+            stack: window.__err.stack
+          };
+        })
+        .toArray()
+        .do(() => { window.__err = null; });
     }
 
     // Iterate through the test one at a time
@@ -40,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
       /* eslint-disable no-unused-vars */
       .flatMap(({ text, testString }) => {
         const assert = chai.assert;
-      /* eslint-enable no-unused-vars */
+        const getUserInput = __getUserInput;
+        /* eslint-enable no-unused-vars */
         const newTest = { text, testString };
         let test;
         let __result;
@@ -57,18 +71,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // the function could expect a callback
             // or it could return a promise/observable
             // or it could still be sync
-            if (test.length === 0) {
+            if (test.length === 1) {
               // a function with length 0 means it expects 0 args
               // We call it and store the result
               // This result may be a promise or an observable or undefined
-              __result = test();
+              __result = test(getUserInput);
             } else {
               // if function takes arguments
               // we expect it to be of the form
               // function(cb) { /* ... */ }
               // and callback has the following signature
               // function(err) { /* ... */ }
-              __result = Rx.Observable.fromNodeCallback(test)();
+              __result = Rx.Observable.fromNodeCallback(test)(getUserInput);
             }
 
             if (helpers.isPromise(__result)) {
@@ -86,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
           __result = Rx.Observable.throw(e);
         }
         return __result
+          .timeout(testTimeout)
           .map(() => {
             // we don't need the result of a promise/observable/cb here
             // all data asserts should happen further up the chain
@@ -96,7 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
           .catch(err => {
             // we catch the error here to prevent the error from bubbling up
             // and collapsing the pipe
+            let message = (err.message || '');
+            const assertIndex = message.indexOf(': expected');
+            if (assertIndex !== -1) {
+              message = message.slice(0, assertIndex);
+            }
+            message = message.replace(/<code>(.*)<\/code>/, '$1');
             newTest.err = err.message + '\n' + err.stack;
+            newTest.stack = err.stack;
+            newTest.message = message;
             // RxJS catch expects an observable as a return
             return Rx.Observable.of(newTest);
           });
@@ -106,5 +129,5 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // notify that the window methods are ready to run
-  frameReady.onNext(null);
+  frameReady.onNext({ checkChallengePayload });
 });

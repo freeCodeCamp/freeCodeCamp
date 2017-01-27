@@ -1,17 +1,12 @@
 {
-  "name": "flyer",
+  "name": "about",
+  "plural": "about",
   "base": "PersistedModel",
   "idInjection": true,
-  "trackChanges": false,
-  "properties": {
-    "message": {
-      "type": "string"
-    },
-    "isActive": {
-      "type": "boolean",
-      "default": true
-    }
+  "options": {
+    "validateUpsert": true
   },
+  "properties": {},
   "validations": [],
   "relations": {},
   "acls": [
@@ -22,10 +17,11 @@
       "permission": "DENY"
     },
     {
-      "accessType": "READ",
+      "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "ALLOW"
+      "permission": "ALLOW",
+      "property": "getActiveUsers"
     }
   ],
   "methods": {}

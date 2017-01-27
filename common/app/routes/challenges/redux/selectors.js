@@ -1,39 +1,8 @@
 import { createSelector } from 'reselect';
 
-import * as challengeTypes from '../../../utils/challengeTypes';
-import { getNode } from '../utils';
+import { viewTypes, submitTypes, getNode } from '../utils';
 import blockNameify from '../../../utils/blockNameify';
-
-const viewTypes = {
-  [ challengeTypes.html]: 'classic',
-  [ challengeTypes.js ]: 'classic',
-  [ challengeTypes.bonfire ]: 'classic',
-  [ challengeTypes.frontEndProject]: 'project',
-  [ challengeTypes.backEndProject]: 'project',
-  // might not be used anymore
-  [ challengeTypes.simpleProject]: 'project',
-  // formally hikes
-  [ challengeTypes.video ]: 'video',
-  [ challengeTypes.step ]: 'step'
-};
-
-const submitTypes = {
-  [ challengeTypes.html ]: 'tests',
-  [ challengeTypes.js ]: 'tests',
-  [ challengeTypes.bonfire ]: 'tests',
-  // requires just a button press
-  [ challengeTypes.simpleProject ]: 'project.simple',
-  // requires just a single url
-  // like codepen.com/my-project
-  [ challengeTypes.frontEndProject ]: 'project.frontEnd',
-  // requires two urls
-  // a hosted URL where the app is running live
-  // project code url like GitHub
-  [ challengeTypes.backEndProject ]: 'project.backEnd',
-  // formally hikes
-  [ challengeTypes.video ]: 'video',
-  [ challengeTypes.step ]: 'step'
-};
+import { html } from '../../../utils/challengeTypes';
 
 export const challengeSelector = createSelector(
   state => state.challengesApp.challenge,
@@ -44,6 +13,8 @@ export const challengeSelector = createSelector(
     }
     const challenge = challengeMap[challengeName];
     const challengeType = challenge && challenge.challengeType;
+    const type = challenge && challenge.type;
+    const viewType = viewTypes[type] || viewTypes[challengeType] || 'classic';
     const blockName = blockNameify(challenge.block);
     const title = blockName && challenge.title ?
                   `${blockName}: ${challenge.title}` :
@@ -51,10 +22,13 @@ export const challengeSelector = createSelector(
     return {
       challenge,
       title,
-      viewType: viewTypes[challengeType] || 'classic',
-      submitType: submitTypes[challengeType] || 'tests',
-      showPreview: challengeType === challengeTypes.html,
-      mode: challenge && challengeType === challengeTypes.html ?
+      viewType,
+      submitType:
+        submitTypes[challengeType] ||
+        submitTypes[challenge && challenge.type] ||
+        'tests',
+      showPreview: challengeType === html,
+      mode: challenge && challengeType === html ?
         'text/html' :
         'javascript'
     };
