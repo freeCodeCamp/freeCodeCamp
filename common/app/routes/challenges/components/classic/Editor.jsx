@@ -9,7 +9,7 @@ import PureComponent from 'react-pure-render/component';
 
 import MouseTrap from 'mousetrap';
 
-import CodeMirrorSkeleton from '../skeleton/CodeMirrorSkeleton.jsx';
+import CodeMirrorSkeleton from '../CodeMirrorSkeleton.jsx';
 
 const mapStateToProps = createSelector(
   state => state.app.windowHeight,
@@ -20,7 +20,7 @@ const mapStateToProps = createSelector(
 const editorDebounceTimeout = 750;
 
 const options = {
-  lint: true,
+  lint: {esversion: 6},
   lineNumbers: true,
   mode: 'javascript',
   theme: 'monokai',

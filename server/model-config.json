@@ -74,5 +74,9 @@
   "block": {
     "dataSource": "db",
     "public": true
+  },
+  "about": {
+    "dataSource": "db",
+    "public": true
   }
 }

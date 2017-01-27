@@ -110,6 +110,12 @@ export default function(app) {
     projectCompleted
   );
 
+  api.post(
+    '/backend-challenge-completed',
+    send200toNonUser,
+    backendChallengeCompleted
+  );
+
   router.get(
     '/challenges/current-challenge',
     redirectToCurrentChallenge
@@ -260,6 +266,55 @@ export default function(app) {
       });
       return res.sendStatus(403);
     }
+
+
+    return user.getChallengeMap$()
+      .flatMap(() => {
+        const {
+          alreadyCompleted,
+          updateData,
+          lastUpdated
+        } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
+
+        return user.update$(updateData)
+          .doOnNext(({ count }) => log('%s documents updated', count))
+          .doOnNext(() => {
+            if (type === 'json') {
+              return res.send({
+                alreadyCompleted,
+                points: alreadyCompleted ? user.points : user.points + 1,
+                completedDate: completedChallenge.completedDate,
+                lastUpdated
+              });
+            }
+            return res.status(200).send(true);
+          });
+      })
+      .subscribe(() => {}, next);
+  }
+
+  function backendChallengeCompleted(req, res, next) {
+    const type = accepts(req).type('html', 'json', 'text');
+    req.checkBody('id', 'id must be an ObjectId').isMongoId();
+    req.checkBody('solution', 'solution must be a URL').isURL();
+
+    const errors = req.validationErrors(true);
+
+    if (errors) {
+      if (type === 'json') {
+        return res.status(403).send({ errors });
+      }
+      log('errors', errors);
+      return res.sendStatus(403);
+    }
+
+    const { user, body = {} } = req;
+
+    const completedChallenge = _.pick(
+      body,
+      [ 'id', 'solution' ]
+    );
+    completedChallenge.completedDate = Date.now();
 
 
     return user.getChallengeMap$()

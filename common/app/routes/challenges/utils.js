@@ -1,7 +1,46 @@
 import flow from 'lodash/flow';
-import { bonfire, html, js } from '../../utils/challengeTypes';
-import { decodeScriptTags } from '../../../utils/encode-decode';
+import * as challengeTypes from '../../utils/challengeTypes';
 import protect from '../../utils/empty-protector';
+import { decodeScriptTags } from '../../../utils/encode-decode';
+
+// determine the component to view for each challenge
+export const viewTypes = {
+  [ challengeTypes.html ]: 'classic',
+  [ challengeTypes.js ]: 'classic',
+  [ challengeTypes.bonfire ]: 'classic',
+  [ challengeTypes.frontEndProject ]: 'project',
+  [ challengeTypes.backEndProject ]: 'project',
+  // might not be used anymore
+  [ challengeTypes.simpleProject ]: 'project',
+  // formally hikes
+  [ challengeTypes.video ]: 'video',
+  [ challengeTypes.step ]: 'step',
+  backend: 'backend'
+};
+
+// determine the type of submit function to use for the challenge on completion
+export const submitTypes = {
+  [ challengeTypes.html ]: 'tests',
+  [ challengeTypes.js ]: 'tests',
+  [ challengeTypes.bonfire ]: 'tests',
+  // requires just a button press
+  [ challengeTypes.simpleProject ]: 'project.simple',
+  // requires just a single url
+  // like codepen.com/my-project
+  [ challengeTypes.frontEndProject ]: 'project.frontEnd',
+  // requires two urls
+  // a hosted URL where the app is running live
+  // project code url like GitHub
+  [ challengeTypes.backEndProject ]: 'project.backEnd',
+  // formally hikes
+  [ challengeTypes.video ]: 'video',
+  [ challengeTypes.step ]: 'step',
+  backend: 'backend'
+};
+
+// determines if a line in a challenge description
+// has html that should be rendered
+export const descriptionRegex = /\<blockquote|\<ol|\<h4|\<table/;
 
 export function arrayToString(seedData = ['']) {
   seedData = Array.isArray(seedData) ? seedData : [seedData];
@@ -16,9 +55,9 @@ export function buildSeed({ challengeSeed = [] } = {}) {
 }
 
 const pathsMap = {
-  [html]: 'html',
-  [js]: 'js',
-  [bonfire]: 'js'
+  [ challengeTypes.html ]: 'html',
+  [ challengeTypes.js ]: 'js',
+  [ challengeTypes.bonfire ]: 'js'
 };
 
 export function getPreFile({ challengeType }) {

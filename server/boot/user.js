@@ -12,7 +12,8 @@ import {
 import certTypes from '../utils/certTypes.json';
 import {
   ifNoUser401,
-  ifNoUserRedirectTo
+  ifNoUserRedirectTo,
+  ifNotVerifiedRedirectToSettings
 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import {
@@ -140,6 +141,7 @@ module.exports = function(app) {
   const api = app.loopback.Router();
   const User = app.models.User;
   const Block = app.models.Block;
+  const { Email } = app.models;
   const map$ = cachedMap(Block);
   function findUserByUsername$(username, fields) {
     return observeQuery(
@@ -223,6 +225,18 @@ module.exports = function(app) {
   );
 
   router.get('/:username', showUserProfile);
+  router.get(
+    '/:username/report-user/',
+    sendNonUserToMap,
+    ifNotVerifiedRedirectToSettings,
+    getReportUserProfile
+  );
+
+  api.post(
+    '/:username/report-user/',
+    ifNoUser401,
+    postReportUserProfile
+  );
 
   app.use('/:lang', router);
   app.use(api);
@@ -629,6 +643,57 @@ module.exports = function(app) {
         ' with further instructions.'
       });
       return res.render('account/forgot');
+    });
+  }
+
+  function getReportUserProfile(req, res) {
+    const username = req.params.username.toLowerCase();
+    return res.render('account/report-profile', {
+      title: 'Report User',
+      username
+    });
+  }
+
+  function postReportUserProfile(req, res, next) {
+    const { user } = req;
+    const { username } = req.params;
+    const report = req.sanitize('reportDescription').trimTags();
+
+    if (!username || !report || report === '') {
+      req.flash('errors', {
+        msg: 'Oops, something is not right please re-check your submission.'
+      });
+      return next();
+    }
+
+    return Email.send$({
+      type: 'email',
+      to: 'Team@FreeCodeCamp.com',
+      cc: user.email,
+      from: 'Team@FreeCodeCamp.com',
+      subject: 'Abuse Report : Reporting ' + username + '\'s profile.',
+      text: dedent(`
+        Hello Team,\n
+        This is to report the profile of ${username}.\n
+        Report Details:\n
+        ${report}\n\n
+        Reported by:
+        Username: ${user.username}
+        Name: ${user.name}
+        Email: ${user.email}\n
+        Thanks and regards,
+        ${user.name}
+      `)
+    }, err => {
+      if (err) {
+        err.redirectTo = '/' + username;
+        return next(err);
+      }
+
+      req.flash('info', {
+        msg: 'A report was sent to the team with ' + user.email + ' in copy.'
+      });
+      return res.redirect('/');
     });
   }
 };

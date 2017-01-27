@@ -108,22 +108,24 @@
       "default": "{}"
     },
     "required": {
-      "type": [{
-        "type": {
-          "link": {
-            "type": "string",
-            "description": "Used for css files"
-          },
-          "src": {
-            "type": "string",
-            "description": "Used for script files"
-          },
-          "crossDomain": {
-            "type": "boolean",
-            "description": "Files coming from FreeCodeCamp must mark this true"
+      "type": [
+        {
+          "type": {
+            "link": {
+              "type": "string",
+              "description": "Used for css files"
+            },
+            "src": {
+              "type": "string",
+              "description": "Used for script files"
+            },
+            "crossDomain": {
+              "type": "boolean",
+              "description": "Files coming from FreeCodeCamp must mark this true"
+            }
           }
         }
-      }],
+      ],
       "default": []
     }
   },

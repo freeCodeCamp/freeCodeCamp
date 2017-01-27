@@ -18,6 +18,12 @@ export default function csp() {
         '*.cloudflare.com',
         'https://*.optimizely.com'
       ]),
+      connectSrc: trusted.concat([
+        'https://gomix.com',
+        'https://*.gomix.com',
+        'https://*.gomix.me',
+        'https://*.cloudflare.com'
+      ]),
       scriptSrc: [
         "'unsafe-eval'",
         "'unsafe-inline'",

@@ -48,7 +48,7 @@
         "<code>console.log(camper); </code>",
         "<code>var camper = 'David'; </code>",
         "<code>// logs undefined</code>",
-        "The code runs in the following order: the variable camper is declared as undefined, camper is loged, and then David is assigned to camper. This code will run without an error.",
+        "The code runs in the following order: the variable camper is declared as undefined, camper is logged, and then David is assigned to camper. This code will run without an error.",
         "A new keyword was introduced in ES6 to solve the problems with the var keyword, called let. With the let keyword, all the examples we just saw will cause an error to appear. We can no longer overwrite variables or use a variable before we declare it. Some modern browsers requires you to add \"use strict\" to the top of your code before you can able to use the new features in ES6",
         "Let's try using the let keyword;",
         "Instructions",
