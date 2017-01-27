@@ -60,24 +60,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb3367417b2b2512bfc",
@@ -102,24 +85,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb4367417b2b2512bfd",
@@ -152,24 +118,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb4367417b2b2512bfe",
@@ -195,24 +144,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb4367417b2b2512bff",
@@ -235,24 +167,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb4367417b2b2512c00",
@@ -283,24 +198,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb5367417b2b2512c01",
@@ -336,24 +234,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb5367417b2b2512c02",
@@ -382,24 +263,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb5367417b2b2512c03",
@@ -428,24 +292,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb5367417b2b2512c04",
@@ -469,24 +316,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     }
   ]
 }

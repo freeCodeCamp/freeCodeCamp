@@ -55,24 +55,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb6367417b2b2512c07",
@@ -111,24 +94,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb6367417b2b2512c09",
@@ -152,24 +118,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb7367417b2b2512c0a",
@@ -188,24 +137,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb7367417b2b2512c0b",
@@ -225,24 +157,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb7367417b2b2512c0c",
@@ -261,24 +176,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb7367417b2b2512c0d",
@@ -297,24 +195,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb8367417b2b2512c0e",
@@ -335,24 +216,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb8367417b2b2512c0f",
@@ -373,24 +237,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb8367417b2b2512c10",
@@ -409,24 +256,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb8367417b2b2512c11",
@@ -446,24 +276,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fb9367417b2b2512c12",
@@ -483,24 +296,7 @@
       "hints": [],
       "type": "backend",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     }
   ]
 }

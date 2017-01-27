@@ -105,24 +105,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fad367417b2b2512be2",
@@ -189,24 +172,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fae367417b2b2512be3",
@@ -287,24 +253,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fae367417b2b2512be4",
@@ -384,24 +333,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fae367417b2b2512be5",
@@ -481,24 +413,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fae367417b2b2512be6",
@@ -577,24 +492,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fae367417b2b2512be7",
@@ -676,24 +574,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7faf367417b2b2512be8",
@@ -731,24 +612,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7faf367417b2b2512be9",
@@ -828,24 +692,7 @@
       "hints": [],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        }
-      }
+      "translations": {}
     }
   ]
 }
