@@ -44,7 +44,7 @@
     "csurf": "^1.8.3",
     "debug": "^2.2.0",
     "dedent": "~0.6.0",
-    "dotenv": "^2.0.0",
+    "dotenv": "^4.0.0",
     "emmet-codemirror": "^1.2.5",
     "errorhandler": "^1.4.2",
     "es6-map": "~0.1.1",
