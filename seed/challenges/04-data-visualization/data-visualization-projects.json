@@ -101,12 +101,7 @@
       "releasedOn": "January 15, 2017",
       "type": "zipline",
       "challengeType": 3,
-      "translations": {
-        "es": {
-          "title": "",
-          "description": []
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d7fa6367417b2b2512bc0",
@@ -127,12 +122,7 @@
       "releasedOn": "January 15, 2017",
       "type": "zipline",
       "challengeType": 3,
-      "translations": {
-        "es": {
-          "title": "",
-          "description": []
-        }
-      }
+      "translations": {}
     }
   ]
 }
