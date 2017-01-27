@@ -7,7 +7,7 @@ import Codemirror from 'react-codemirror';
 import NoSSR from 'react-no-ssr';
 import PureComponent from 'react-pure-render/component';
 
-import CodeMirrorSkeleton from '../skeleton/CodeMirrorSkeleton.jsx';
+import CodeMirrorSkeleton from '../CodeMirrorSkeleton.jsx';
 
 const mapStateToProps = createSelector(
   state => state.app.windowHeight,

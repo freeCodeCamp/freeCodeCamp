@@ -422,15 +422,9 @@ var watchDependents = [
   'dev-server'
 ];
 
-gulp.task('reload', function() {
-  notify({ message: 'test changed' });
-  reload();
-});
-
 gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.lessFiles, ['less']);
   gulp.watch(paths.js.concat(paths.vendorChallenges), ['js']);
-  gulp.watch(paths.challenges, ['test-challenges', 'reload']);
   gulp.watch(paths.js, ['js']);
 });
 
