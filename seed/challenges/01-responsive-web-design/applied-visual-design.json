@@ -717,7 +717,7 @@
       "description": [
         "Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a <code>background-color</code> to the element holding the text you want to emphasize. This challenge uses <code>rgba()</code> instead of <code>hex</code> codes or normal <code>rgb()</code>.",
         "<blockquote>rgba stands for:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha/level of opacity</blockquote>",
-        "The rgb values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. <code>rgba()</code> is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.",
+        "The RGB values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. <code>rgba()</code> is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.",
         "You'll use <code>background-color: rgba(45, 45, 45, 0.1)</code> for this challenge. It produces a dark gray color that is nearly transparent given the low opacity value of 0.1.",
         "<hr>",
         "To make the text stand out more, adjust the <code>background-color</code> of the <code>h4</code> element to the given <code>rgba()</code> value.",
@@ -1143,7 +1143,7 @@
         }
       ],
       "description": [
-        "<code>Google Fonts</code> is a great way to find free fonts to use in a project.",
+        "<a href='https://fonts.google.com/' target='_blank'>Google Fonts</a> is a great way to find free fonts to use in a project.",
         "Once you have selected the preferred font, copy the link tag that is provided and insert it into the <code>head</code> of your page.",
         "The Open Sans font is already added for you behind the scenes, but the code to include it in your own project is the following:",
         "<code>&lt;link href=\"https://fonts.googleapis.com/css?family=Open+Sans\" rel=\"stylesheet\"&gt;</code>",
@@ -1562,7 +1562,6 @@
         "Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were in its default position.",
         "<strong>Note</strong><br>Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.",
         "<hr>",
-        "<a href='https://google.com' target='_top'>test</a>",
         "Change the <code>position</code> of the <code>h2</code> to <code>relative</code>, and use a CSS offset to move it 15 pixels away from the <code>top</code> of where it sits in the normal flow. Notice there is no impact on the positions of the surrounding h1 and p elements."
       ],
       "challengeSeed": [
@@ -2021,7 +2020,7 @@
       "id": "587d78a4367417b2b2512ad2",
       "title": "Learn about Tertiary Colors",
       "description": [
-        "Computer monitors and device screens create different colors by combining amounts of red, green, and blue light. This is known as the RGB additive color model in modern color theory. Red (R), green (G), and blue (B) are called primary colors. Mixing two primary colors creates the secondary colors cyan (G + B), magenta (R + B), and yellow (R + G). You saw in these colors in the Complementary Colors challenge. These secondary colors happen to be the complement to the primary color not used in their creation, and are opposite to that primary color on the color wheel. For example, magenta is made with red and blue, and is the complement to green.",
+        "Computer monitors and device screens create different colors by combining amounts of red, green, and blue light. This is known as the RGB additive color model in modern color theory. Red (R), green (G), and blue (B) are called primary colors. Mixing two primary colors creates the secondary colors cyan (G + B), magenta (R + B) and yellow (R + G). You saw these colors in the Complementary Colors challenge. These secondary colors happen to be the complement to the primary color not used in their creation, and are opposite to that primary color on the color wheel. For example, magenta is made with red and blue, and is the complement to green.",
         "Tertiary colors are the result of combining a primary color with one of its secondary color neighbors. For example, red (primary) and yellow (secondary) make orange. This adds six more colors to a simple color wheel for a total of twelve.",
         "There are various methods of selecting different colors that result in a harmonious combination in design. One example that can use tertiary colors is called the split-complementary color scheme. It starts with a base color, then pairs it with the two colors that are adjacent to its complement. The three colors provide strong visual contrast in a design, but is more subtle than using two complementary colors.",
         "Here are three colors using the split-complement scheme:",
@@ -2085,7 +2084,7 @@
       "id": "587d78a4367417b2b2512ad3",
       "title": "Adjusting the Color of Various Elements to Complementary Colors",
       "description": [
-        "The complementary colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.",
+        "The Complementary Colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.",
         "<hr>",
         "This page will use a shade of teal (<code>#09A7A1</code>) as the dominant color, and its orange (<code>#FF790E</code>) complement to visually highlight the sign-up buttons. Change the <code>background-color</code> of both the <code>header</code> and <code>footer</code> from black to the teal color. Then change the <code>h2</code> text <code>color</code> to teal as well. Finally, change the <code>background-color</code> of the <code>button</code> to the orange color."
       ],
@@ -2163,7 +2162,7 @@
       "title": "Adjust the Hue of a Color",
       "description": [
         "Colors have several characteristics including hue, saturation, and lightness. CSS3 introduced the <code>hsl()</code> property as an alternative way to pick a color by directly stating these characteristics.",
-        "<b>Hue</b> is what people generally think of as 'color'. If you picture a spectrum of colors starting with red on the left, moving through green in the middle, and blue on right, the hue is where a color fits along this line. In hsl(), hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.",
+        "<b>Hue</b> is what people generally think of as 'color'. If you picture a spectrum of colors starting with red on the left, moving through green in the middle, and blue on right, the hue is where a color fits along this line. In <code>hsl()</code>, hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.",
         "<b>Saturation</b> is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. This is given as a percentage with 100% being fully saturated.",
         "<b>Lightness</b> is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.",
         "Here are a few examples of using <code>hsl()</code> with fully-saturated, normal lightness colors:",
@@ -2304,7 +2303,7 @@
       "description": [
         "Applying a color on HTML elements is not limited to one flat hue. CSS provides the ability to use color transitions, otherwise known as gradients, on elements. This is accessed through the <code>background</code> property's <code>linear-gradient()</code> function. Here is the general syntax:",
         "<code>background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);</code>",
-        "The fist argument specifies the direction from which color transition starts - it can be stated as a degree, where 90deg makes a vertical gradient and 45deg is angled like a backslash. The following arguments specify the order of colors used in the gradient.",
+        "The first argument specifies the direction from which color transition starts - it can be stated as a degree, where 90deg makes a vertical gradient and 45deg is angled like a backslash. The following arguments specify the order of colors used in the gradient.",
         "Example:",
         "<code>background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));</code>",
         "<hr>",
@@ -2527,7 +2526,7 @@
       "id": "587d78a5367417b2b2512ada",
       "title": "Use the CSS Transform Property to Scale an Element on Hover",
       "description": [
-        "The <code>transform</code> property has a verity of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
+        "The <code>transform</code> property has a variety of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
         "Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:",
         "<blockquote>p:hover {<br>  transform: scale(2.1);}<br>}</blockquote>",
         "<hr>",
@@ -2585,10 +2584,10 @@
       "title": "Use the CSS Transform Property SkewX",
       "description": [
         "The next function of the <code>transform</code> property is <code>skewX()</code>, which skews the selected element along its X (horizontal) axis by a given degree.",
-        "The following code skews the paragraph element by -32 degrees along the X axis.",
+        "The following code skews the paragraph element by -32 degrees along the X-axis.",
         "<blockquote>p {<br>  transform: skewX(-32deg);<br>}</blockquote>",
         "<hr>",
-        "Skew the element with the id of <code>bottom</code> by 24 degrees along the X axis by using the <code>transform</code> property."
+        "Skew the element with the id of <code>bottom</code> by 24 degrees along the X-axis by using the <code>transform</code> property."
       ],
       "challengeSeed": [
         "<style>",
@@ -2611,7 +2610,7 @@
         "<div id=\"bottom\"></div>"
       ],
       "tests": [
-        "assert(code.match(/#bottom\\s*?{\\s*?.*?\\s*?transform:\\s*?skewX\\(24deg\\);/g), 'message: The element with id <code>bottom</code> should be skewed by 24 degrees along its X axis.');"
+        "assert(code.match(/#bottom\\s*?{\\s*?.*?\\s*?transform:\\s*?skewX\\(24deg\\);/g), 'message: The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.');"
       ],
       "solutions": [],
       "hints": [
@@ -2642,9 +2641,9 @@
       "id": "587d78a6367417b2b2512adc",
       "title": "Use the CSS Transform Property SkewY",
       "description": [
-        "Given that the <code>skewX()</code> function skews the selected element along the X axis by a given degree, it is no surprise that the <code>skewY()</code> property skews an element along the Y (vertical) axis.",
+        "Given that the <code>skewX()</code> function skews the selected element along the X-axis by a given degree, it is no surprise that the <code>skewY()</code> property skews an element along the Y (vertical) axis.",
         "<hr>",
-        "Skew the element with the id of <code>top</code> -10 degrees along the Y axis by using the <code>transform</code> property."
+        "Skew the element with the id of <code>top</code> -10 degrees along the Y-axis by using the <code>transform</code> property."
       ],
       "challengeSeed": [
         "<style>",
@@ -2668,7 +2667,7 @@
         "<div id=\"bottom\"></div>"
       ],
       "tests": [
-        "assert(code.match(/#top\\s*?{\\s*?.*?\\s*?transform:\\s*?skewY\\(-10deg\\);/g), 'message: The element with id <code>top</code> should be skewed by -10 degrees along its Y axis.');"
+        "assert(code.match(/#top\\s*?{\\s*?.*?\\s*?transform:\\s*?skewY\\(-10deg\\);/g), 'message: The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.');"
       ],
       "solutions": [],
       "hints": [],
@@ -2757,7 +2756,7 @@
       "id": "587d78a6367417b2b2512ade",
       "title": "Create a More Complex Shape Using CSS and HTML",
       "description": [
-        "One of the most popular shapes in the world is the heart shape and this challenge creates it with raw CSS. But first, you need to understand the <code>:before</code> and <code>:after</code> selectors. These selectors are used to add something before or after a selected element. In the following example, a <code>:before</code> selector is used to add a rectangle to an element with the class <code>heart</code>:",
+        "One of the most popular shapes in the world is the heart shape, and this challenge creates it with raw CSS. But first, you need to understand the <code>:before</code> and <code>:after</code> selectors. These selectors are used to add something before or after a selected element. In the following example, a <code>:before</code> selector is used to add a rectangle to an element with the class <code>heart</code>:",
         "<blockquote>.heart:before {<br>  content: \"\";<br>  background-color: yellow;<br>  border-radius: 25%;<br>  position: absolute;<br>  height: 50px;<br>  width: 70px;<br>  top: -50px;<br>  left: 5px;<br>}</blockquote>",
         "For the <code>:before</code> and <code>:after</code> selectors to function properly, they must have a defined <code>content</code> property. It usually has content such as a photo or text. When the <code>:before</code> and <code>:after</code> selectors add shapes, the <code>content</code> property is still required, but it's set to an empty string.",
         "In the above example, the element with the class of <code>heart</code> has a <code>:before</code> selector that produces a yellow rectangle with <code>height</code> and <code>width</code> of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the <code>left</code> and 50px above the <code>top</code> of the element.",
@@ -2836,7 +2835,7 @@
       "id": "587d78a7367417b2b2512adf",
       "title": "Learn How CSS Keyframes and Animation Properties Work",
       "description": [
-        "To animate an element, you need to know about the animation properties and the <code>@keyframes</code> rule. The animation properties control how the animation should behave and the <code>@keyframes</code> rule controls what happens during that animation. There are eight animation properties in total, this challenge will keep it simple and cover the two most important ones first:",
+        "To animate an element, you need to know about the animation properties and the <code>@keyframes</code> rule. The animation properties control how the animation should behave and the <code>@keyframes</code> rule controls what happens during that animation. There are eight animation properties in total. This challenge will keep it simple and cover the two most important ones first:",
         "<code>animation-name</code> sets the name of the animation, which is later used by <code>@keyframes</code> to tell CSS which rules go with which animations.",
         "<code>animation-duration</code> sets the length of time for the animation.",
         "<code>@keyframes</code> is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific \"frames\" during the animation, with percentages ranging from 0% to 100%. If you compare this to a movie, the CSS properties for 0% is how the element displays in the opening scene. The CSS properties for 100% is how the element appears at the end, right before the credits roll. Then CSS applies the magic to transition the element over the given duration to act out the scene. Here's an example to illustrate the usage of <code>@keyframes</code> and the animate properties:",
@@ -3169,7 +3168,7 @@
       "title": "Make a CSS Heartbeat using an Infinite Animation Count",
       "description": [
         "Here's one more continuous animation example with the <code>animation-iteration-count</code> property that uses the heart you designed in a previous challenge.",
-        "The one second long heartbeat animation consists of two animated pieces. The <code>heart</code> elements (including the <code>:before</code> and <code>:after</code> pieces) are animated to change size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.",
+        "The one-second long heartbeat animation consists of two animated pieces. The <code>heart</code> elements (including the <code>:before</code> and <code>:after</code> pieces) are animated to change size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.",
         "<hr>",
         "Keep the heart beating by adding the <code>animation-iteration-count</code> property for both the <code>back</code> class and the <code>heart</code> class and setting the value to infinite. The <code>heart:before</code> and <code>heart:after</code> selectors do not need any animation properties."
       ],
@@ -3536,7 +3535,7 @@
       "title": "Learn How Bezier Curves Work",
       "description": [
         "The last challenge introduced the <code>animation-timing-function</code> property and a few keywords that change the speed of an animation over its duration. CSS offers an option other than keywords that provides even finer control over how the animation plays out, through the use of Bezier curves.",
-        "In CSS animations, Bezier curves are used with the <code>cubic-bezier</code> function. The shape of the curve represents how the animation plays out. The curve lives on a 1 by 1 coordinate system. The X axis of this coordinate system is the duration of the animation (think of it as a time scale), and the Y axis is the change in the animation.",
+        "In CSS animations, Bezier curves are used with the <code>cubic-bezier</code> function. The shape of the curve represents how the animation plays out. The curve lives on a 1 by 1 coordinate system. The X-axis of this coordinate system is the duration of the animation (think of it as a time scale), and the Y-axis is the change in the animation.",
         "The <code>cubic-bezier</code> function consists of four main points that sit on this 1 by 1 grid: <code>p0</code>, <code>p1</code>, <code>p2</code>, and <code>p3</code>. <code>p0</code> and <code>p3</code> are set for you - they are the beginning and end points which are always located respectively at the origin (0, 0) and (1, 1). You set the x and y values for the other two points, and where you place them in the grid dictates the shape of the curve for the animation to follow. This is done in CSS by declaring the x and y values of the <code>p1</code> and <code>p2</code> \"anchor\" points in the form: <code>(x1, y1, x2, y2)</code>. Pulling it all together, here's an example of a Bezier curve in CSS code:",
         "<code>animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);</code>",
         "In the example above, the x and y values are equivalent for each point (x1 = 0.25 = y1 and x2 = 0.75 = y2), which if you remember from geometry class, results in a line that extends from the origin to point (1, 1). This animation is a linear change of an element during the length of an animation, and is the same as using the <code>linear</code> keyword. In other words, it changes at a constant speed.",
@@ -3615,10 +3614,10 @@
       "id": "587d78a9367417b2b2512ae9",
       "title": "Use a Bezier Curve to Move a Graphic",
       "description": [
-        "A previous challenge discussed the <code>ease-out</code> keyword that describes an animation change that speeds up first and then slows down at the end of the animation. On the right, the difference between the <code>ease-out</code> keyword (for the blue element) and <code>linear</code> keyword (for the red element) are demonstrated. Similar animation progressions to the <code>ease-out</code> keyword can be achieved by using a custom cubic Bezier curve function.",
+        "A previous challenge discussed the <code>ease-out</code> keyword that describes an animation change that speeds up first and then slows down at the end of the animation. On the right, the difference between the <code>ease-out</code> keyword (for the blue element) and <code>linear</code> keyword (for the red element) is demonstrated. Similar animation progressions to the <code>ease-out</code> keyword can be achieved by using a custom cubic Bezier curve function.",
         "In general, changing the <code>p1</code> and <code>p2</code> anchor points drives the creation of different Bezier curves, which controls how the animation progresses through time. Here's an example of a Bezier curve using values to mimic the ease-out style:",
         "<code>animation-timing-function: cubic-bezier(0, 0, 0.58, 1);</code>",
-        "Remember that all <code>cubic-bezier</code> functions start with <code>p0</code> at (0, 0) and end with <code>p3</code> at (1, 1). In this example, the curve moves faster through the Y axis (starts at 0, goes to <code>p1</code> y value of 0, then goes to <code>p2</code> y value of 1) than it moves through the X axis (0 to start, then 0 for <code>p1</code>, up to 0.58 for <code>p2</code>). As a result, the change in the animated element progresses faster than the time of the animation for that segment. Towards the end of the curve, the relationship between the change in x and y values reverses - the y value moves from 1 to 1 (no change), and the x values move from 0.58 to 1, making the animation changes progress slower compared to the animation duration.",
+        "Remember that all <code>cubic-bezier</code> functions start with <code>p0</code> at (0, 0) and end with <code>p3</code> at (1, 1). In this example, the curve moves faster through the Y-axis (starts at 0, goes to <code>p1</code> y value of 0, then goes to <code>p2</code> y value of 1) then it moves through the X-axis (0 to start, then 0 for <code>p1</code>, up to 0.58 for <code>p2</code>). As a result, the change in the animated element progresses faster than the time of the animation for that segment. Towards the end of the curve, the relationship between the change in x and y values reverses - the y value moves from 1 to 1 (no change), and the x values move from 0.58 to 1, making the animation changes progress slower compared to the animation duration.",
         "<hr>",
         "To see the effect of this Bezier curve in action, change the <code>animation-timing-function</code> of the element with id of <code>red</code> to a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1. This will make both elements progress through the animation similarly."
       ],
