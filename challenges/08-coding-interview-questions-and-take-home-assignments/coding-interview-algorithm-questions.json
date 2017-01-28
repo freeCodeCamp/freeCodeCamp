@@ -98,7 +98,7 @@
       "id": "a3f503de51cf954ede28891d",
       "title": "Symmetric Difference",
       "description": [
-        "Create a function that takes two or more arrays and returns an array of the iterative <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of the provided arrays. In other words, start with the first array and keep on taking symmetric differences of each the following arrays after it.",
+        "Create a function that takes two or more arrays and returns an array of the <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of the provided arrays.",
         "Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term \"symmetric difference\" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). The resulting array must contain only unique values (<em>no duplicates</em>).",
         "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
@@ -378,7 +378,6 @@
         }
       }
     },
-
     {
       "id": "a3f503de51cfab748ff001aa",
       "title": "Pairwise",
@@ -448,6 +447,198 @@
           ]
         }
       }
+    },
+    {
+      "id": "8d5123c8c441eddfaeb5bdef",
+      "title": "Implement Bubble Sort",
+      "description": [
+        "This is the first of several challenges on sorting algorithms. Given an array of unsorted items, we want to be able to return a sorted array. We will see several different methods to do this and learn some tradeoffs between these different approaches. While most modern languages have built-in sorting methods for operations like this, it is still important to understand some of the common basic approaches and learn how they can be implemented.",
+        "Here we will see bubble sort. The bubble sort method starts at the beginning of an unsorted array and 'bubbles up' unsorted values towards the end, iterating through the array until it is completely sorted. It does this by comparing adjacent items and swapping them if they are out of order. The method continues looping through the array until no swaps occur at which point the array is sorted.",
+        "This method requires multiple iterations through the array and for average and worst cases has quadratic time complexity. While simple, it is usually impractical in most situations.",
+        "<b>Instructions:</b> Write a function <code>bubbleSort</code> which takes an array of integers as input and returns an array of these integers in sorted order. We've provided a helper method to generate a random array of integer values."
+      ],
+      "challengeSeed": [
+        "// helper function to generate a randomly filled array",
+        "var array = [];",
+        "(function createArray(size) {",
+        "  array.push(+(Math.random() * 100).toFixed(0));",
+        "  return (size > 1) ? createArray(size - 1) : undefined;",
+        "})(12);",
+        "",
+        "function bubbleSort(array) {",
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "  return array;",
+        "}"
+      ],
+      "tail": [
+        "function isSorted(arr) {",
+        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+        "  return check(0);",
+        "};"
+      ],
+      "tests": [
+        "assert(typeof bubbleSort == 'function', 'message: <code>bubbleSort</code> is a function.');",
+        "assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>bubbleSort</code> returns a sorted array.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
+      "id": "587d8259367417b2b2512c85",
+      "title": "Implement Selection Sort",
+      "description": [
+        "Here we will implement selection sort. Selection sort works by selecting the minimum value in a list and swapping it with the first value in the list. It then starts at the second position, selects the smallest value in the remaining list, and swaps it with the second element. It continues iterating through the list and swapping elements until it reaches the end of the list. Now the list is sorted. Selection sort has quadratic time complexity in all cases.",
+        "Instructions: Write a function <code>selectionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order."
+      ],
+      "challengeSeed": [
+        "// helper function to generate a randomly filled array",
+        "var array = [];",
+        "(function createArray(size) {",
+        "  array.push(+(Math.random() * 100).toFixed(0));",
+        "  return (size > 1) ? createArray(size - 1) : undefined;",
+        "})(12);",
+        "",
+        "function selectionSort(array) {",
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "  return array;",
+        "}"
+      ],
+      "tail": [
+        "function isSorted(arr) {",
+        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+        "  return check(0);",
+        "};"
+      ],
+      "tests": [
+        "assert(typeof selectionSort == 'function', 'message: <code>selectionSort</code> is a function.');",
+        "assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>selectionSort</code> returns a sorted array.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
+      "id": "587d8259367417b2b2512c86",
+      "title": "Implement Insertion Sort",
+      "description": [
+        "The next sorting method we'll look at is insertion sort. This method works by building up a sorted array at the beginning of the list. It begins the sorted array with the first element. Then it inspects the next element and swaps it backwards into the sorted array until it is in sorted position. It continues iterating through the list and swapping new items backwards into the sorted portion until it reaches the end. This algorithm has quadratic time complexity in the average and worst cases.",
+        "<b>Instructions:</b> Write a function <code>insertionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order."
+      ],
+      "challengeSeed": [
+        "// helper function to generate a randomly filled array",
+        "var array = [];",
+        "(function createArray(size) {",
+        "  array.push(+(Math.random() * 100).toFixed(0));",
+        "  return (size > 1) ? createArray(size - 1) : undefined;",
+        "})(12);",
+        "",
+        "function insertionSort(array) {",
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "  return array;",
+        "}"
+      ],
+      "tail": [
+        "function isSorted(arr) {",
+        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+        "  return check(0);",
+        "};"
+      ],
+      "tests": [
+        "assert(typeof insertionSort == 'function', 'message: <code>insertionSort</code> is a function.');",
+        "assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>insertionSort</code> returns a sorted array.');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
+      "id": "587d825a367417b2b2512c89",
+      "title": "Implement Quick Sort",
+      "description": [
+        "Here we will move on to an intermediate sorting algorithm: quick sort. Quick sort is an efficient, recursive divide-and-conquer approach to sorting an array. In this method, a pivot value is chosen in the original array. The array is then partitioned into two subarrays of values less than and greater than the pivot value. We then combine the result of recursively calling the quick sort algorithm on both sub-arrays. This continues until the base case of an empty or single-item array is reached, which we return. The unwinding of the recursive calls return us the sorted array.",
+        "Quick sort is a very efficient sorting method, providing <i>O(nlog(n))</i> performance on average. It is also relatively easy to implement. These attributes make it a popular and useful sorting method.",
+        "<b>Instructions:</b> Write a function <code>quickSort</code> which takes an array of integers as input and returns an array of these integers in sorted order. While the choice of the pivot value is important, any pivot will do for our purposes here. For simplicity, the first or last element could be used."
+      ],
+      "challengeSeed": [
+        "// helper function generate a randomly filled array",
+        "var array = [];",
+        "(function createArray(size) {",
+        "  array.push(+(Math.random() * 100).toFixed(0));",
+        "  return (size > 1) ? createArray(size - 1) : undefined;",
+        "})(12);",
+        "",
+        "function quickSort(array) {",
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "  return array;",
+        "}"
+      ],
+      "tests": [
+        "assert(typeof quickSort == 'function', 'message: <code>quickSort</code> is a function.');",
+        "assert(isSorted(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>quickSort</code> returns a sorted array.');"
+      ],
+      "tail": [
+        "function isSorted(arr) {",
+        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+        "  return check(0);",
+        "};"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
+      "id": "587d825c367417b2b2512c8f",
+      "title": "Implement Merge Sort",
+      "description": [
+        "Another intermediate sorting algorithm that is very common is merge sort. Like quick sort, merge sort also uses a divide-and-conquer, recursive methodology to sort an array. It takes advantage of the fact that it is relatively easy to sort two arrays as long as each is sorted in the first place. But we'll start with only one array as input, so how do we get to two sorted arrays from that? Well, we can recursively divide the original input in two until we reach the base case of an array with one item. A single-item array is naturally sorted, so then we can start combining. This combination will unwind the recursive calls that split the original array, eventually producing a final sorted array of all the elements. The steps of merge sort, then, are:",
+        "<b>1)</b> Recursively split the input array in half until a sub-array with only one element is produced.",
+        "<b>2)</b> Merge each sorted sub-array together to produce the final sorted array.",
+        "Merge sort is an efficient sorting method, with time complexity of <i>O(nlog(n))</i>. This algorithm is popular because it is performant and relatively easy to implement.",
+        "As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.",
+        "<b>Instructions:</b> Write a function <code>mergeSort</code> which takes an array of integers as input and returns an array of these integers in sorted order. A good way to implement this is to write one function, for instance merge, which is responsible for merging two sorted arrays, and another function, for instance mergeSort, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!"
+      ],
+      "challengeSeed": [
+        "// helper function generate a randomly filled array",
+        "var array = [];",
+        "(function createArray(size) {",
+        "  array.push(+(Math.random() * 100).toFixed(0));",
+        "  return (size > 1) ? createArray(size - 1) : undefined;",
+        "})(25);",
+        "",
+        "function mergeSort(array) {",
+        "  // change code below this line",
+        "",
+        "  // change code above this line",
+        "  return array;",
+        "}"
+      ],
+      "tests": [
+        "assert(typeof mergeSort == 'function', 'message: <code>mergeSort</code> is a function.');",
+        "assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>mergeSort</code> returns a sorted array.');"
+      ],
+      "tail": [
+        "function isSorted(arr) {",
+        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+        "  return check(0);",
+        "};"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 1,
+      "translations": {}
     }
   ]
 }
