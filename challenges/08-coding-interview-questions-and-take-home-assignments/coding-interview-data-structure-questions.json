@@ -12,43 +12,18 @@
         "<code>var complexArr = [1, 5, \"2\", \"Word\", {\"name\": \"James\"}];</code>",
         "Basically what happens in the background is that your browser will automatically give the right amount of memory space for that array. It will also change as needed if you add or remove data.",
         "However, in the world of high performance and different element types, sometimes you need to be more specific on how much memory is given to an array.",
-        "Typed arrays are the answer to this problem. You are now able to say how much memory you want to give an array. Below is a basic overview of the different types of arrays available and the size in bytes for each element in that array.",
-        "<code>Type  Each element size in bytes</code>",
-        "<code>Int8Array 1</code>",
-        "<code>Uint8Array  1</code>",
-        "<code>Uint8ClampedArray 1</code>",
-        "<code>Int16Array  2</code>",
-        "<code>Uint16Array 2</code>",
-        "<code>Int32Array  4</code>",
-        "<code>Uint32Array 4</code>",
-        "<code>Float32Array  4</code>",
-        "<code>Float64Array  8</code>",
-        "There are two ways in creating these kind of arrays. One way is to create it directly. Below is how to create a 7 length Int16Array.",
-        "<code>var i8 = new Int16Array(3);</code>",
-        "<code>console.log(i8);</code>",
-        "<code>// Returns [0, 0, 0]</code>",
-        "You can also create a buffer to assign how much data (in bytes) you want the array to take up.",
-        "Note",
-        "To create typed arrays using buffers, you need to assign the number of bytes to be a multiple of the bytes listed above.",
-        "<code>// Create same Int16Array array differently</code>",
-        "<code>var byteSize = 6; // Needs to be multiple of 2</code>",
-        "<code>var buffer = new ArrayBuffer(byteSize);</code>",
-        "<code>var i8View = new Int16Array(buffer);</code>",
-        "<code>buffer.byteLength; // Returns 6</code>",
-        "<code>i8View.byteLength; // Returns 6</code>",
-        "<code>console.log(i8View); // Returns [0, 0, 0]</code>",
-        "Buffers are general purpose objects that just carry data. You cannot access them normally. To access them, you need to first create a view.",
-        "<code>i8View[0] = 42;</code>",
-        "<code>console.log(i8View); // Returns [42, 0, 0]</code>",
-        "Note",
-        "Typed arrays do not have some of the methods traditional arrays have such as .pop() or .push(). Typed arrays also fail Array.isArray() that checks if something is an array. Although simplier, this can be an advantage for less-sophisticated JavaScript engines to implement them.",
-        "Instructions",
-        "First create a buffer that is 64-bytes. Then create a Int32Array typed array with a view of it called int32View.",
-        "Here are some helpful links:",
-        "Typed arrays",
-        "The code for the table used above is:",
+        "<dfn>Typed arrays</dfn> are the answer to this problem. You are now able to say how much memory you want to give an array. Below is a basic overview of the different types of arrays available and the size in bytes for each element in that array.",
         "<table class='table table-striped'><tr><th>Type</th><th>Each element size in bytes</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></table>",
-        "The class='table table-striped' is specific to FreeCodeCamp's CSS style."
+        "There are two ways in creating these kind of arrays. One way is to create it directly. Below is how to create a 3 length <code>Int16Array</code>.",
+        "<blockquote>var i8 = new Int16Array(3);<br>console.log(i8);<br>// Returns [0, 0, 0]</blockquote>",
+        "You can also create a <dfn>buffer</dfn> to assign how much data (in bytes) you want the array to take up.",
+        "<strong>Note</strong><br>To create typed arrays using buffers, you need to assign the number of bytes to be a multiple of the bytes listed above.",
+        "<blockquote>// Create same Int16Array array differently<br>var byteSize = 6; // Needs to be multiple of 2<br>var buffer = new ArrayBuffer(byteSize);<br>var i8View = new Int16Array(buffer);<br>buffer.byteLength; // Returns 6<br>i8View.byteLength; // Returns 6<br>console.log(i8View); // Returns [0, 0, 0]</blockquote>",
+        "<dfn>Buffers</dfn> are general purpose objects that just carry data. You cannot access them normally. To access them, you need to first create a <dfn>view</dfn>.",
+        "<blockquote>i8View[0] = 42;<br>console.log(i8View); // Returns [42, 0, 0]</blockquote>",
+        "<strong>Note</strong><br>Typed arrays do not have some of the methods traditional arrays have such as <code>.pop()</code> or <code>.push()</code>. Typed arrays also fail <code>Array.isArray()</code> that checks if something is an array. Although simpler, this can be an advantage for less-sophisticated JavaScript engines to implement them.",
+        "<hr>",
+        "First create a <code>buffer</code> that is 64-bytes. Then create a <code>Int32Array</code> typed array with a view of it called <code>int32View</code>."
       ],
       "challengeSeed": [
         "var buffer;",
@@ -60,10 +35,12 @@
         "assert(i32View.length === 16, 'message: Your <code>i32View</code> view of your buffer should be 16 elements long.');"
       ],
       "type": "waypoint",
-      "solutions": [],
+      "solutions": [
+        "var buffer = new ArrayBuffer(64);\nvar i32View = new Int32Array(buffer);"
+      ],
       "challengeType": 1,
       "translations": {}
-    },    
+    },
     {
       "id": "587d8250367417b2b2512c5e",
       "title": "Learn how a Stack Works",
@@ -2700,55 +2677,54 @@
     },
     {
       "id": "587d8255367417b2b2512c76",
-      "title": "Directed and Undirected Graphs",
+      "title": "Introduction to Graphs",
       "description": [
-        "This challenge starts a series of challenges that will teach graph data structures and some algorithms involving graphs. You may be familiar with graphs with an x- and y-axis found in your math classes. However, here graphs mean a different thing.",
-        "The data structure of graphs are collections of things and the relationships or connections among them. Graphs are also known as networks.",
-        "When talking about graphs, the precise term for \"objects\" are nodes or vertices. Similarly, the precise term for \"connections\" is edges.",
-        "One example of graphs is a social network where the nodes are you and other people, and the edges are whether two people are friends with each other.",
-        "There are two major types of graphs: directed and undirected. Undirected graphs are graphs without any direction on the edges between nodes. Directed graphs, in contrast, are graphs with a direction in its edges.",
-        "An example of an undirected graph could be a social network. The nodes are people and the edges are friendship. An example of a directed network could be the internet and web page links. Here, the nodes are web pages and the directed edges are links to other pages, which might not necessarily point the other way.",
-        "Instructions",
-        "Click \"Run tests\" to go to the next challenge to find out how different ways to represent graphs in JavaScript like the one in the editor."
+        [
+          "//i.stack.imgur.com/XfuFe.gif",
+          "Picture of an X-Y coordinate graph seen in typical math classes",
+          "This challenge starts a series of challenges that will teach graph data structures and some algorithms involving graphs. You may be familiar with graphs with an x- and y-axis found in your math classes. However, here graphs mean a different thing.",
+          ""
+        ],
+        [
+          "//upload.wikimedia.org/wikipedia/commons/5/5b/6n-graf.svg",
+          "Figure of undirected network with 6 nodes",
+          "The data structure of <dfn>graphs</dfn> are collections of things and the relationships or connections among them. Graphs are also known as networks.<br><br>When talking about graphs, the precise term for \"objects\" are <dfn>nodes</dfn> or <dfn>vertices</dfn>. Similarly, the precise term for \"connections\" is <dfn>edges</dfn>.",
+          ""
+        ],
+        [
+          "//upload.wikimedia.org/wikipedia/commons/b/b6/Moreno_Sociogram_2nd_Grade.png",
+          "Figure of psychologist Moreno's social network of a 2nd grade class",
+          "One example of graphs is a social network where the <dfn>nodes</dfn> are you and other people, and the edges are whether two people are friends with each other.",
+          ""
+        ],
+        [
+          "//i.stack.imgur.com/5xkVt.png",
+          "Figures of directed graphs with arrows on edges while undirected graphs do not have directions on edges",
+          "There are two major types of graphs: <dfn>directed</dfn> and <dfn>undirected</dfn>. Undirected graphs are graphs without any direction on the edges between nodes. Directed graphs, in contrast, are graphs with a direction in its edges.<br><br>An example of an undirected graph could be a social network. The nodes are people and the edges are friendship. An example of a directed network could be the internet and web page links. Here, the nodes are web pages and the directed edges are links to other pages, which might not necessarily point the other way.",
+          ""
+        ]
       ],
-      "challengeSeed": [
-        "var undirected = {",
-        "  1: [2],",
-        "  2: [1]",
-        "};"
-      ],
-      "tests": [
-        "assert(Object.keys(undirected).length === 2, 'message: <code>undirected</code> should only contain two nodes.');"
-      ],
+      "challengeSeed": [],
+      "tests": [],
       "type": "waypoint",
       "solutions": [],
-      "challengeType": 1,
+      "challengeType": 7,
       "translations": {}
     },
     {
       "id": "587d8256367417b2b2512c77",
       "title": "Adjacency List",
       "description": [
-        "Graphs can be represented in different ways. Here we describe one way, which is called an adjacency list.",
+        "Graphs can be represented in different ways. Here we describe one way, which is called an <dfn>adjacency list</dfn>.",
         "An adjacency list is essentially a bulleted list where the left side is the node and the right side lists all the other nodes it's connected to. Below is a representation of an adjacency list.",
-        "Node1: Node2, Node3",
-        "Node2: Node1",
-        "Node3: Node1",
-        "Above is an undirected graph because Node1 is connected to Node2 and Node3, and that information is consistent with the connections Node2 and Node3 show. An adjacency list for a directed graph would mean each row of the list shows direction. If the above was directed, then Node2: Node1 would mean there the directed edge is pointing from Node2 towards Node1.",
+        "<blockquote>Node1: Node2, Node3<br>Node2: Node1<br>Node3: Node1</blockquote>",
+        "Above is an undirected graph because <code>Node1</code> is connected to <code>Node2</code> and <code>Node3</code>, and that information is consistent with the connections <code>Node2</code> and <code>Node3</code> show. An adjacency list for a directed graph would mean each row of the list shows direction. If the above was directed, then <code>Node2: Node1</code> would mean there the directed edge is pointing from <code>Node2</code> towards <code>Node1</code>.",
         "We can represent the undirected graph above as an adjacency list by putting it within a JavaScript object.",
-        "var undirectedG = {",
-        "  Node1: [\"Node2\", \"Node3\"],",
-        "  Node2: [\"Node1\"],",
-        "  Node3: [\"Node3\"]",
-        "};",
+        "<blockquote>var undirectedG = {<br>  Node1: [\"Node2\", \"Node3\"],<br>  Node2: [\"Node1\"],<br>  Node3: [\"Node3\"]<br>};</blockquote>",
         "This can also be more simply represented as an array where the nodes just have numbers rather than string labels.",
-        "var undirectedGArr = [",
-        "  [1, 2], # Node1",
-        "  [0],    # Node2",
-        "  [2]     # Node3",
-        "];",
-        "Instructions",
-        "Create a social network as an undirected graph with 4 nodes/people named James, Jill, Jenny, and Jeff. There are edges/relationships between James and Jeff, Jill and Jenny, and Jeff and Jenny."
+        "<blockquote>var undirectedGArr = [<br>  [1, 2], # Node1<br>  [0],    # Node2<br>  [2]     # Node3<br>];</blockquote>",
+        "<hr>",
+        "Create a social network as an undirected graph with 4 nodes/people named <code>James</code>, <code>Jill</code>, <code>Jenny</code>, and <code>Jeff</code>. There are edges/relationships between James and Jeff, Jill and Jenny, and Jeff and Jenny."
       ],
       "challengeSeed": [
         "var undirectedAdjList = {",
@@ -2761,7 +2737,9 @@
         "assert(undirectedAdjList.Jeff.includes(\"Jenny\") && undirectedAdjList.Jenny.includes(\"Jeff\"), 'message: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');"
       ],
       "type": "waypoint",
-      "solutions": [],
+      "solutions": [
+        "var undirectedAdjList = {\n\"James\": [\"Jeff\"],\"Jill\": [\"Jenny\"],\"Jenny\": [\"Jill\", \"Jeff\"],\n\"Jeff\": [\"James\", \"Jenny\"]\n};"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -2769,29 +2747,17 @@
       "id": "587d8256367417b2b2512c78",
       "title": "Adjacency Matrix",
       "description": [
-        "Another way to represent a graph is to put it in an adjacency matrix.",
-        "An adjacency matrix is a two-dimensional (2D) array where each nested array has the same number of elements as the outer array. In other words, it is a matrix or grid of numbers, where the numbers represent the edges. Zeros mean there is no edge or relationship.",
-        "<code>    1 2 3</code>",
-        "<code>   ------</code>",
-        "<code>1 | 0 1 1</code>",
-        "<code>2 | 1 0 0</code>",
-        "<code>3 | 1 0 0</code>",
-        "Above is a very simple, undirected graph where you have three nodes, where the first node is connected to the second and third node. Note: The numbers to the top and left of the matrix are just labels for the nodes.",
+        "Another way to represent a graph is to put it in an <dfn>adjacency matrix</dfn>.",
+        "An <dfn>adjacency matrix</dfn> is a two-dimensional (2D) array where each nested array has the same number of elements as the outer array. In other words, it is a matrix or grid of numbers, where the numbers represent the edges. Zeros mean there is no edge or relationship.",
+        "<blockquote>    1 2 3<br>   ------<br>1 | 0 1 1<br>2 | 1 0 0<br>3 | 1 0 0</blockquote>",
+        "Above is a very simple, undirected graph where you have three nodes, where the first node is connected to the second and third node. <strong>Note</strong>: The numbers to the top and left of the matrix are just labels for the nodes.",
         "Below is a JavaScript implementation of the same thing.",
-        "<code>var adjMat = [</code>",
-        "<code>  [0, 1, 1],</code>",
-        "<code>  [1, 0, 0],</code>",
-        "<code>  [1, 0, 0]</code>",
-        "<code>];</code>",
+        "<blockquote>var adjMat = [<br>  [0, 1, 1],<br>  [1, 0, 0],<br>  [1, 0, 0]<br>];</blockquote>",
         "Unlike an adjacency list, each \"row\" of the matrix has to have the same number of elements as nodes in the graph. Here we have a three by three matrix, which means we have three nodes in our graph.",
         "A directed graph would look similar. Below is a graph where the first node has an edge pointing toward the second node, and then the second node has an edge pointing to the third node.",
-        "<code>var adjMatDirected = [</code>",
-        "<code>  [0, 1, 0],</code>",
-        "<code>  [0, 0, 1],</code>",
-        "<code>  [0, 0, 0]</code>",
-        "<code>];</code>",
-        "Graphs can also have weights on their edges. So far, we have unweighted edges where just the presence and lack of edge is binary (0 or 1). You can have different weights depending on your application.",
-        "Instructions",
+        "<blockquote>var adjMatDirected = [<br>  [0, 1, 0],<br>  [0, 0, 1],<br>  [0, 0, 0]<br>];</blockquote>",
+        "Graphs can also have <dfn>weights</dfn> on their edges. So far, we have <dfn>unweighted</dfn> edges where just the presence and lack of edge is binary (<code>0</code> or <code>1</code>). You can have different weights depending on your application.",
+        "<hr>",
         "Create an adjacency matrix of an undirected graph with five nodes. This matrix should be in a multi-dimensional array. These five nodes have relationships between the first and fourth node, the first and third node, the third and fifth node, and the fourth and fifth node. All edge weights are one."
       ],
       "challengeSeed": [
@@ -2806,7 +2772,9 @@
         "assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'message: There should be an edge between the fourth and fifth node.');"
       ],
       "type": "waypoint",
-      "solutions": [],
+      "solutions": [
+        "var adjMatUndirected = [[0, 0, 1, 1, 0],[0, 0, 0, 0, 0],[1, 0, 0, 0, 1],[1, 0, 0, 0, 1],[0, 0, 1, 1, 0]];"
+      ],
       "challengeType": 1,
       "translations": {}
     },
