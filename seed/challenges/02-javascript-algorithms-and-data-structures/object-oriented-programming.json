@@ -648,7 +648,7 @@
         "This becomes tedious after more than a few properties.",
         "<blockquote>Bird.prototype.eat = function() {<br>&nbsp;&nbsp;console.log(\"nom nom nom\");<br>}<br><br>Bird.prototype.describe = function() {<br>&nbsp;&nbsp;console.log(\"My name is \" + this.name);<br>}</blockquote>",
         "A more efficient way is to set the <code>prototype</code> to a new object that already contains the properties. This way, the properties are added all at once:",
-        "<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;numLegs: 2, <br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"nom nom nom\");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe = function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"My name is \" + this.name);<br>&nbsp;&nbsp;}<br>};</blockquote>",
+        "<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;numLegs: 2, <br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"nom nom nom\");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"My name is \" + this.name);<br>&nbsp;&nbsp;}<br>};</blockquote>",
         "<hr>",
         "Add three properties <code>numLegs</code>, <code>eat</code>, and <code>describe</code> to the <code>prototype</code> of <code>Dog</code> by setting the <code>prototype</code> to a new object. The properties can be set to any values."
       ],
