@@ -10,6 +10,42 @@
   ],
   "challenges": [
     {
+      "id": "bad87fee1348bd9acdeb9212",
+      "title": "Introduction to the Bootstrap Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "Bootstrap is a front-end framework used to design responsive web pages and web applications. It takes a mobile-first approach to web development. Bootstrap includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          ""
+        ],
+        [
+          "",
+          "",
+          "Bootstrap uses a responsive 12 column grid layout and has design templates for:<br><br><ul><li>buttons</li><li>images</li><li>tables</li><li>forms</li><li>navigation</li></ul><br>This section introduces some of the ways to use Bootstrap in your web projects.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
       "id": "bad87fee1348bd9acde08712",
       "title": "Use Responsive Design with Bootstrap Fluid Containers",
       "description": [
