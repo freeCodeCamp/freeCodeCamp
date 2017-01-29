@@ -1,6 +1,7 @@
 var successRedirect = '/';
 var failureRedirect = '/signin';
 var linkFailureRedirect = '/account';
+var githubProfileSuccessRedirect = '/settings';
 
 export default {
   local: {
@@ -143,7 +144,6 @@ export default {
     failureRedirect: failureRedirect,
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
-    scope: ['email'],
     failureFlash: true
   },
   'github-link': {
@@ -153,12 +153,14 @@ export default {
     authPath: '/link/github',
     callbackURL: '/auth/github/callback/link',
     callbackPath: '/auth/github/callback/link',
-    successRedirect: successRedirect,
+    successRedirect: githubProfileSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
-    scope: ['email'],
     link: true,
-    failureFlash: true
+    failureFlash: true,
+    successFlash: [ 'We\'ve updated your profile based ',
+                    'on your your GitHub account.'
+                  ].join('')
   }
 };

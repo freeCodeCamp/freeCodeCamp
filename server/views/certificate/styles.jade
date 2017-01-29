@@ -1,0 +1,208 @@
+style.
+  @media print {
+    * {
+      display: none !important;
+    }
+  }
+
+  @font-face {
+    font-family: "Sax Mono";
+    src: url("/fonts/saxmono.ttf") format("truetype");
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1500px;
+    width: 100%;
+    padding: 30px;
+    border: darkgreen 15px solid;
+    border-radius: 3px;
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .col-sm-12 {
+    padding: 0;
+  }
+
+  .certificate-wrapper {
+    top: 0;
+    position: relative;
+    font-family: "Sax Mono", monospace;
+  }
+
+  header {
+    width: 100%;
+    height: 140px;
+    /*background-image: url('https://i.imgur.com/1FK6aaN.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;*/
+    background-color: darkgreen;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 140px;
+    margin-left: 100px;
+  }
+
+  .logo img {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .issue-date {
+    line-height: 140px;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 100px;
+    color: #fff;
+  }
+
+  .information {
+    margin-top: -20px;
+    height: 380px;
+    background-color: #efefef;
+  }
+
+  .information-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0px 100px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h3  {
+    font-size: 30px;
+  }
+
+  h4 {
+    margin-top: 25px;
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 40px;
+    color: #006400;
+  }
+
+  .signatures .col-md-6 {
+    text-align: center;
+    margin: 0 auto;
+    background-color: #efefef;
+  }
+
+  .signatures img {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .signatures p {
+    font-size: 18px;
+    padding-top: 10px;
+  }
+
+  .verify {
+    padding: 30px 0;
+    font-size: 15px;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: #efefef;
+  }
+
+  /*adds vertical alignment when the height is bigger than required to display everything*/
+  @media screen and (min-height: 700px) {
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+  }
+
+  /*mobile media queries*/
+  @media screen and (max-width: 992px) {
+    header {
+      height: 160px;
+    }
+
+    .logo {
+      margin-left: 0;
+      padding: 20px;
+      justify-content: center;
+      height: 80px;
+    }
+
+    .logo img {
+      margin-top: 20px;
+    }
+
+    .issue-date {
+      margin-top: 10px;
+      margin-right: 0;
+      text-align: center;
+      line-height: 0px;
+      word-wrap: break-word;
+    }
+
+    .issue-date strong {
+      display: block;
+      margin-top: 15px;
+      line-height: 25px;
+    }
+
+    .information {
+      height: 300px;
+    }
+
+    .information-container {
+      margin: 0px 15px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+    h1  {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .container {
+      padding: 0;
+      border: 0;
+    }
+
+    header {
+      height: 190px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+
+    h1  {
+      font-size: 17px;
+    }
+
+    h4 {
+      font-size: 15px;
+      margin-top: 20px;
+    }
+  }

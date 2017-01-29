@@ -1,0 +1,36 @@
+// original source:
+// https://github.com/tobiasahlin/SpinKit
+@duration: 3s;
+@delayRange: 1s;
+
+.create-wave-child(@numOfCol, @iter: 2) when (@iter <= @numOfCol) {
+  div:nth-child(@{iter}) {
+    animation-delay: -(@duration - (@delayRange / (@numOfCol - 1)) * (@iter - 1));
+  }
+  .create-wave-child(@numOfCol, (@iter + 1));
+}
+
+.sk-wave {
+  height: 100px;
+  margin: 100px auto;
+  text-align: center;
+  width: 50px;
+  > div {
+    animation: sk-stretchdelay @duration infinite ease-in-out;
+    background-color: @brand-primary;
+    display: inline-block;
+    height: 100%;
+    margin-right: 2px;
+    width: 6px;
+  }
+  .create-wave-child(5)
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1.0);
+  }
+}

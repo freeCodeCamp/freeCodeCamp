@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-
 import Youtube from 'react-youtube';
 import PureComponent from 'react-pure-render/component';
 import { Col } from 'react-bootstrap';
+
 import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import BugModal from '../Bug-Modal.jsx';
@@ -17,10 +17,10 @@ const mapStateToProps = createSelector(
     {
       challenge: {
         id,
-        title,
         description,
         challengeSeed: [ videoId = '' ] = []
-      } = {}
+      } = {},
+      title
     }
   ) => ({
     id,
@@ -48,7 +48,6 @@ export class Project extends PureComponent {
       isCompleted,
       description
     } = this.props;
-
     return (
       <div>
         <Col md={ 4 }>

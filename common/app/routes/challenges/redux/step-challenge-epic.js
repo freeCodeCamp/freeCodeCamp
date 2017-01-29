@@ -1,26 +1,44 @@
 import types from './types';
-import { goToStep, submitChallenge } from './actions';
+import { goToStep, submitChallenge, updateUnlockedSteps } from './actions';
 import { challengeSelector } from './selectors';
 import getActionsOfType from '../../../../utils/get-actions-of-type';
+
+function unlockStep(step, unlockedSteps) {
+  if (!step) {
+    return null;
+  }
+  const updatedSteps = [ ...unlockedSteps ];
+  updatedSteps[step] = true;
+  return updateUnlockedSteps(updatedSteps);
+}
 
 export default function stepChallengeEpic(actions, getState) {
   return getActionsOfType(
     actions,
     types.stepForward,
-    types.stepBackward
+    types.stepBackward,
+    types.completeAction
   )
     .map(({ type }) => {
       const state = getState();
       const { challenge: { description = [] } } = challengeSelector(state);
-      const { challengesApp: { currentIndex } } = state;
+      const { challengesApp: { currentIndex, unlockedSteps } } = state;
       const numOfSteps = description.length;
-      const isLastStep = currentIndex + 1 >= numOfSteps;
+      const stepFwd = currentIndex + 1;
+      const stepBwd = currentIndex - 1;
+      const isLastStep = stepFwd >= numOfSteps;
+      if (type === types.completeAction) {
+        return unlockStep(currentIndex, unlockedSteps);
+      }
       if (type === types.stepForward) {
         if (isLastStep) {
           return submitChallenge();
         }
-        return goToStep(currentIndex + 1);
+        return goToStep(stepFwd, !!unlockedSteps[stepFwd]);
       }
-      return goToStep(currentIndex - 1);
+      if (type === types.stepBackward) {
+        return goToStep(stepBwd, !!unlockedSteps[stepBwd]);
+      }
+      return null;
     });
 }

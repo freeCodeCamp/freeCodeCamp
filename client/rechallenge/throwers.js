@@ -48,6 +48,16 @@ const throwForJsHtml = {
           throw new Error('Invalid if (null) console.log(1); detected');
         }
       }
+    }, {
+      name: 'hyperdev in code',
+      description: 'Code with the URL hyperdev.com ' +
+        'should not be allowed to run',
+      detectHyperdevInCode: /hyperdev\.com/gi,
+      thrower: function checkForHyperdev({ contents }) {
+        if (contents.match(this.detectHyperdevInCode)) {
+          throw new Error('Hyperdev.com should not be in the code');
+        }
+      }
     }
   ]
 };

@@ -53,3 +53,4 @@ public/js/frame-runner*
 public/css/main*
 
 server/rev-manifest.json
+google-credentials.json

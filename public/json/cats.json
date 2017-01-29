@@ -2,7 +2,7 @@
   {
     "id": 0,
     "imageLink": "https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
-    "altText": "A white cat wearing a green helmet shaped melon on it's head. ",
+    "altText": "A white cat wearing a green, helmet shaped melon on it's head. ",
     "codeNames": [
       "Juggernaut",
       "Mrs. Wallace",
@@ -12,7 +12,7 @@
   {
     "id": 1,
     "imageLink": "https://s3.amazonaws.com/freecodecamp/grumpy-cat.jpg",
-    "altText": "A white cat with blue eys, looking very grumpy. ",
+    "altText": "A white cat with blue eyes, looking very grumpy. ",
     "codeNames": [
       "Oscar",
       "Scrooge",

@@ -1,5 +1,5 @@
 import { Observable } from 'rx';
-import uuid from 'node-uuid';
+import uuid from 'uuid';
 import moment from 'moment';
 import dedent from 'dedent';
 import debugFactory from 'debug';
@@ -212,7 +212,7 @@ module.exports = function(User) {
       text: `
         Hello,\n\n
         This email is confirming that you requested to
-        reset your password for your Free Code Camp account.
+        reset your password for your freeCodeCamp account.
         This is your email: ${ info.email }.
         Go to ${ url } to reset your password.
         \n
@@ -441,7 +441,7 @@ module.exports = function(User) {
           type: 'email',
           to: email,
           from: 'Team@freecodecamp.com',
-          subject: 'Welcome to Free Code Camp!',
+          subject: 'Welcome to freeCodeCamp!',
           protocol: isDev ? null : 'https',
           host: isDev ? 'localhost' : 'freecodecamp.com',
           port: isDev ? null : 443,

@@ -90,6 +90,7 @@
     color: @code-color;
     background-color: @code-bg;
     border-radius: @border-radius-base;
+    padding: 1px 5px;
   }
   & a, #MDN-links a {
     color: #31708f;
@@ -116,6 +117,7 @@
   font-family: "Ubuntu Mono";
   margin-top: 8px;
   line-height:20px;
+  word-wrap: break-word;
 }
 
 .grayed-out-test-output {
@@ -144,6 +146,10 @@
     background-color: #242424;
     border-color: #515151;
     color: #ABABAB
+  }
+  .challenge-instructions dfn {
+    background-color: #242424;
+    color: #02a902;
   }
   .CodeMirror {
     background-color:#242424;
@@ -217,4 +223,9 @@ iframe.iphone {
   @media (min-width: 1200px) and (max-width: 1250px){
     right: -207px;
   }
+}
+
+// YouTube embed
+.embed-responsive-item {
+  max-width: 100%;
 }

@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
 import { Col, Row } from 'react-bootstrap';
 
-import TestSuite from './Test-Suite.jsx';
-import Output from './Output.jsx';
+import TestSuite from '../Test-Suite.jsx';
+import Output from '../Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import { challengeSelector } from '../../redux/selectors';
 import {
@@ -15,14 +15,13 @@ import {
   executeChallenge,
   unlockUntrustedCode
 } from '../../redux/actions';
+import { descriptionRegex } from '../../utils';
 import { makeToast } from '../../../../toasts/redux/actions';
-import { toggleHelpChat } from '../../../../redux/actions';
 
-const bindableActions = {
+const mapDispatchToProps = {
   makeToast,
   executeChallenge,
   updateHint,
-  toggleHelpChat,
   openBugModal,
   unlockUntrustedCode
 };
@@ -34,14 +33,22 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.output,
   state => state.challengesApp.hintIndex,
   state => state.challengesApp.isCodeLocked,
+  state => state.challengesApp.helpChatRoom,
   (
-    { challenge: { title, description, hints = [] } = {} },
+    {
+      challenge: {
+        description,
+        hints = []
+      } = {},
+      title
+    },
     windowHeight,
     navHeight,
     tests,
     output,
     hintIndex,
-    isCodeLocked
+    isCodeLocked,
+    helpChatRoom
   ) => ({
     title,
     description,
@@ -49,34 +56,32 @@ const mapStateToProps = createSelector(
     tests,
     output,
     hint: hints[hintIndex],
-    isCodeLocked
+    isCodeLocked,
+    helpChatRoom
   })
 );
 
 export class SidePanel extends PureComponent {
-  constructor(...args) {
-    super(...args);
-    this.descriptionRegex = /\<blockquote|\<ol|\<h4|\<table/;
-  }
   static displayName = 'SidePanel';
 
   static propTypes = {
     description: PropTypes.arrayOf(PropTypes.string),
     height: PropTypes.number,
+    helpChatRoom: PropTypes.string,
+    hint: PropTypes.string,
+    isCodeLocked: PropTypes.bool,
+    output: PropTypes.string,
     tests: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string,
-    output: PropTypes.string,
-    hint: PropTypes.string,
-    updateHint: PropTypes.func,
-    makeToast: PropTypes.func,
-    toggleHelpChat: PropTypes.func,
+
+    executeChallenge: PropTypes.func,
     openBugModal: PropTypes.func,
+    makeToast: PropTypes.func,
     unlockUntrustedCode: PropTypes.func,
-    isCodeLocked: PropTypes.bool,
-    executeChallenge: PropTypes.func
+    updateHint: PropTypes.func
   };
 
-  renderDescription(description = [ 'Happy Coding!' ], descriptionRegex) {
+  renderDescription(description = [ 'Happy Coding!' ]) {
     return description.map((line, index) => {
       if (descriptionRegex.test(line)) {
         return (
@@ -113,7 +118,7 @@ export class SidePanel extends PureComponent {
       executeChallenge,
       updateHint,
       makeToast,
-      toggleHelpChat,
+      helpChatRoom,
       openBugModal,
       isCodeLocked,
       unlockUntrustedCode
@@ -138,21 +143,30 @@ export class SidePanel extends PureComponent {
               className='challenge-instructions'
               xs={ 12 }
               >
-              { this.renderDescription(description, this.descriptionRegex) }
+              { this.renderDescription(description) }
             </Col>
           </Row>
         </div>
         <ToolPanel
           executeChallenge={ executeChallenge }
+          helpChatRoom={ helpChatRoom }
           hint={ hint }
           isCodeLocked={ isCodeLocked }
           makeToast={ makeToast }
           openBugModal={ openBugModal }
-          toggleHelpChat={ toggleHelpChat }
           unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
         />
-        <Output output={ output }/>
+        <Output
+          defaultOutput={
+`/**
+  * Your output will go here.
+  * Any console.log() statements
+  * will appear in here as well.
+  */`
+          }
+          output={ output }
+        />
         <br />
         <TestSuite tests={ tests } />
       </div>
@@ -162,5 +176,5 @@ export class SidePanel extends PureComponent {
 
 export default connect(
   mapStateToProps,
-  bindableActions
+  mapDispatchToProps
 )(SidePanel);

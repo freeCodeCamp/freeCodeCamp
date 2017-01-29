@@ -1,7 +1,46 @@
 import flow from 'lodash/flow';
-import { bonfire, html, js } from '../../utils/challengeTypes';
-import { decodeScriptTags } from '../../../utils/encode-decode';
+import * as challengeTypes from '../../utils/challengeTypes';
 import protect from '../../utils/empty-protector';
+import { decodeScriptTags } from '../../../utils/encode-decode';
+
+// determine the component to view for each challenge
+export const viewTypes = {
+  [ challengeTypes.html ]: 'classic',
+  [ challengeTypes.js ]: 'classic',
+  [ challengeTypes.bonfire ]: 'classic',
+  [ challengeTypes.frontEndProject ]: 'project',
+  [ challengeTypes.backEndProject ]: 'project',
+  // might not be used anymore
+  [ challengeTypes.simpleProject ]: 'project',
+  // formally hikes
+  [ challengeTypes.video ]: 'video',
+  [ challengeTypes.step ]: 'step',
+  backend: 'backend'
+};
+
+// determine the type of submit function to use for the challenge on completion
+export const submitTypes = {
+  [ challengeTypes.html ]: 'tests',
+  [ challengeTypes.js ]: 'tests',
+  [ challengeTypes.bonfire ]: 'tests',
+  // requires just a button press
+  [ challengeTypes.simpleProject ]: 'project.simple',
+  // requires just a single url
+  // like codepen.com/my-project
+  [ challengeTypes.frontEndProject ]: 'project.frontEnd',
+  // requires two urls
+  // a hosted URL where the app is running live
+  // project code url like GitHub
+  [ challengeTypes.backEndProject ]: 'project.backEnd',
+  // formally hikes
+  [ challengeTypes.video ]: 'video',
+  [ challengeTypes.step ]: 'step',
+  backend: 'backend'
+};
+
+// determines if a line in a challenge description
+// has html that should be rendered
+export const descriptionRegex = /\<blockquote|\<ol|\<h4|\<table/;
 
 export function arrayToString(seedData = ['']) {
   seedData = Array.isArray(seedData) ? seedData : [seedData];
@@ -16,9 +55,9 @@ export function buildSeed({ challengeSeed = [] } = {}) {
 }
 
 const pathsMap = {
-  [html]: 'html',
-  [js]: 'js',
-  [bonfire]: 'js'
+  [ challengeTypes.html ]: 'html',
+  [ challengeTypes.js ]: 'js',
+  [ challengeTypes.bonfire ]: 'js'
 };
 
 export function getPreFile({ challengeType }) {
@@ -35,22 +74,48 @@ export function getFileKey({ challengeType }) {
 
 export function createTests({ tests = [] }) {
   return tests
-    .map(test => ({
-      text: ('' + test).split('message: ').pop().replace(/\'\);/g, ''),
-      testString: test
-    }));
+    .map(test => {
+      if (typeof test === 'string') {
+        return {
+          text: ('' + test).split('message: ').pop().replace(/\'\);/g, ''),
+          testString: test
+        };
+      }
+      return test;
+    });
+}
+
+function logReplacer(value) {
+  if (Array.isArray(value)) {
+    const replaced = value.map(logReplacer);
+    return '[' + replaced.join(', ') + ']';
+  }
+  if (typeof value === 'string' && !value.startsWith('//')) {
+    return '"' + value + '"';
+  }
+  if (typeof value === 'number' && isNaN(value)) {
+    return value.toString();
+  }
+  if (typeof value === 'undefined') {
+    return 'undefined';
+  }
+  if (value === null) {
+    return 'null';
+  }
+  if (typeof value === 'function') {
+    return value.name;
+  }
+  if (typeof value === 'object') {
+    return JSON.stringify(value, null, 2);
+  }
+
+  return value;
 }
 
 export function loggerToStr(args) {
   args = Array.isArray(args) ? args : [args];
   return args
-    .map(arg => typeof arg === 'undefined' ? 'undefined' : arg)
-    .map(arg => {
-      if (typeof arg !== 'string') {
-        return JSON.stringify(arg);
-      }
-      return arg;
-    })
+    .map(logReplacer)
     .reduce((str, arg) => str + arg + '\n', '');
 }
 
@@ -252,7 +317,7 @@ export function getMouse(e, [dx, dy]) {
   return [pageX - dx, pageY - dy];
 }
 
-export function filterCommingSoonBetaChallenge(
+export function filterComingSoonBetaChallenge(
   isDev = false,
   { isComingSoon, isBeta }
 ) {
@@ -264,7 +329,7 @@ export function filterComingSoonBetaFromEntities(
   { challenge: challengeMap, ...rest },
   isDev = false
 ) {
-  const filter = filterCommingSoonBetaChallenge.bind(null, isDev);
+  const filter = filterComingSoonBetaChallenge.bind(null, isDev);
   return {
     ...rest,
     challenge: Object.keys(challengeMap)
@@ -275,6 +340,16 @@ export function filterComingSoonBetaFromEntities(
         return challengeMap;
       }, {})
   };
+}
+
+export function searchableChallengeTitles({ challenge: challengeMap } = {}) {
+  return Object.keys(challengeMap)
+    .map(dashedName => challengeMap[dashedName])
+    .reduce((accu, current) => {
+        accu[current.dashedName] = current.title;
+        return accu;
+      }
+    , {});
 }
 
 // interface Node {
@@ -302,7 +377,8 @@ export function filterComingSoonBetaFromEntities(
 // }
 export function createMapUi(
   { superBlock: superBlockMap, block: blockMap } = {},
-  superBlocks
+  superBlocks,
+  searchNameMap
 ) {
   if (!superBlocks || !superBlockMap || !blockMap) {
     return {};
@@ -321,6 +397,7 @@ export function createMapUi(
             children: protect(blockMap[block]).challenges.map(challenge => {
               return {
                 name: challenge,
+                title: searchNameMap[challenge],
                 isHidden: false,
                 children: null
               };
@@ -429,7 +506,7 @@ export function applyFilterToMap(tree, filterRegex) {
       // if leaf (challenge) then test if regex is a match
       if (!Array.isArray(node.children)) {
         // does challenge name meet filter criteria?
-        if (filterRegex.test(node.name)) {
+        if (filterRegex.test(node.title)) {
           // is challenge currently hidden?
           if (node.isHidden) {
             // unhide challenge, it matches

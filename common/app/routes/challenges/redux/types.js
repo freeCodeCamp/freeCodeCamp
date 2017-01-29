@@ -8,6 +8,7 @@ export default createTypes([
   'completeAction',
   'openLightBoxImage',
   'closeLightBoxImage',
+  'updateUnlockedSteps',
 
   // challenges
   'fetchChallenge',
@@ -21,6 +22,8 @@ export default createTypes([
   'updateHint',
   'lockUntrustedCode',
   'unlockUntrustedCode',
+  'closeChallengeModal',
+  'updateSuccessMessage',
 
   // map
   'updateFilter',

@@ -1,9 +1,9 @@
-import errorHanlder from 'errorhandler';
+import errorHandler from 'errorhandler';
 import accepts from 'accepts';
 
 export default function prodErrorHandler() {
   if (process.env.NODE_ENV === 'development') {
-    return errorHanlder({ log: true });
+    return errorHandler({ log: true });
   }
   // error handling in production.
   // disabling eslint due to express parity rules for error handlers

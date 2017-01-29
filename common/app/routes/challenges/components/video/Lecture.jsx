@@ -27,6 +27,11 @@ const mapStateToProps = createSelector(
   })
 );
 
+const embedOpts = {
+  width: '853',
+  height: '480'
+};
+
 export class Lecture extends React.Component {
   static displayName = 'Lecture';
 
@@ -75,6 +80,7 @@ export class Lecture extends React.Component {
               className='embed-responsive-item'
               id={ id }
               onError={ this.handleError }
+              opts={ embedOpts }
               videoId={ videoId }
             />
           </div>
@@ -85,6 +91,7 @@ export class Lecture extends React.Component {
             mdOffset={ 1 }
             xs={ 12 }
             >
+            <div className='spacer' />
             <article>
               { this.renderTranscript(description, dashedName) }
             </article>

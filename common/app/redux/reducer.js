@@ -2,15 +2,13 @@ import { handleActions } from 'redux-actions';
 import types from './types';
 
 const initialState = {
-  title: 'Learn To Code | Free Code Camp',
-  shouldShowSignIn: false,
+  title: 'Learn To Code | freeCodeCamp',
+  isSignInAttempted: false,
   user: '',
   lang: '',
   csrfToken: '',
   windowHeight: 0,
   navHeight: 0,
-  isMainChatOpen: false,
-  isHelpChatOpen: false,
   theme: 'default'
 };
 
@@ -18,13 +16,13 @@ export default handleActions(
   {
     [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
       ...state,
-      title: payload + ' | Free Code Camp'
+      title: payload + ' | freeCodeCamp'
     }),
 
     [types.updateThisUser]: (state, { payload: user }) => ({
       ...state,
       user,
-      shouldShowSignIn: true
+      isSignInAttempted: true
     }),
     [types.updateAppLang]: (state, { payload = 'en' }) =>({
       ...state,
@@ -36,7 +34,7 @@ export default handleActions(
     }),
     [types.showSignIn]: state => ({
       ...state,
-      shouldShowSignIn: true
+      isSignInAttempted: true
     }),
 
     [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
@@ -51,34 +49,17 @@ export default handleActions(
       ...state,
       navHeight
     }),
-    [types.toggleMapDrawer]: state => ({
-      ...state,
-      isMapAlreadyLoaded: true,
-      isMapDrawerOpen: !state.isMapDrawerOpen
-    }),
-    [types.closeMapDrawer]: state => ({
-      ...state,
-      isMapDrawerOpen: false
-    }),
-    [types.toggleMainChat]: state => ({
-      ...state,
-      isMainChatOpen: !state.isMainChatOpen
-    }),
-    [types.toggleHelpChat]: state => ({
-      ...state,
-      isHelpChatOpen: !state.isHelpChatOpen
-    }),
-    [types.openHelpChat]: state => ({
-      ...state,
-      isHelpChatOpen: true
-    }),
-    [types.closeHelpChat]: state => ({
-      ...state,
-      isHelpChatOpen: false
-    }),
     [types.delayedRedirect]: (state, { payload }) => ({
       ...state,
       delayedRedirect: payload
+    }),
+    [types.openDropdown]: state => ({
+      ...state,
+      isNavDropdownOpen: true
+    }),
+    [types.closeDropdown]: state => ({
+      ...state,
+      isNavDropdownOpen: false
     })
   },
   initialState

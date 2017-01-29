@@ -5,7 +5,8 @@ import classnames from 'classnames';
 export default function LockSettings({ isLocked, toggle }) {
   const className = classnames({
     'positive-20': true,
-    active: isLocked
+    active: isLocked,
+    'btn-toggle': true
   });
   return (
     <Row>

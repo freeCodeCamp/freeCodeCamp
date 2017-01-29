@@ -3,21 +3,20 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
-import ReactTransitionReplace from 'react-css-transition-replace';
 import LightBox from 'react-images';
 
 import {
-  stepForward,
-  stepBackward,
+  closeLightBoxImage,
   completeAction,
-  submitChallenge,
   openLightBoxImage,
-  closeLightBoxImage
+  stepBackward,
+  stepForward,
+  submitChallenge,
+  updateUnlockedSteps
 } from '../../redux/actions';
 import { challengeSelector } from '../../redux/selectors';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 
-const transitionTimeout = 1000;
 const mapStateToProps = createSelector(
   challengeSelector,
   state => state.challengesApp.currentIndex,
@@ -39,18 +38,35 @@ const mapStateToProps = createSelector(
     step: description[currentIndex],
     steps: description,
     numOfSteps: description.length,
-    isLastStep: currentIndex + 1 >= description.length,
-    isGoingForward: currentIndex > previousIndex
+    isLastStep: currentIndex + 1 >= description.length
   })
 );
 
 const dispatchActions = {
-  stepForward,
-  stepBackward,
+  closeLightBoxImage,
   completeAction,
-  submitChallenge,
   openLightBoxImage,
-  closeLightBoxImage
+  stepBackward,
+  stepForward,
+  submitChallenge,
+  updateUnlockedSteps
+};
+
+const propTypes = {
+  closeLightBoxImage: PropTypes.func.isRequired,
+  completeAction: PropTypes.func.isRequired,
+  currentIndex: PropTypes.number,
+  isActionCompleted: PropTypes.bool,
+  isLastStep: PropTypes.bool,
+  isLightBoxOpen: PropTypes.bool,
+  numOfSteps: PropTypes.number,
+  openLightBoxImage: PropTypes.func.isRequired,
+  step: PropTypes.array,
+  steps: PropTypes.array,
+  stepBackward: PropTypes.func,
+  stepForward: PropTypes.func,
+  submitChallenge: PropTypes.func.isRequired,
+  updateUnlockedSteps: PropTypes.func.isRequired
 };
 
 export class StepChallenge extends PureComponent {
@@ -58,28 +74,28 @@ export class StepChallenge extends PureComponent {
     super(...args);
     this.handleLightBoxOpen = this.handleLightBoxOpen.bind(this);
   }
-  static displayName = 'StepChallenge';
-  static propTypes = {
-    currentIndex: PropTypes.number,
-    step: PropTypes.array,
-    steps: PropTypes.array,
-    isActionCompleted: PropTypes.bool,
-    isGoingForward: PropTypes.bool,
-    isLastStep: PropTypes.bool,
-    numOfSteps: PropTypes.number,
-    stepForward: PropTypes.func,
-    stepBackward: PropTypes.func,
-    completeAction: PropTypes.func.isRequired,
-    submitChallenge: PropTypes.func.isRequired,
-    isLightBoxOpen: PropTypes.bool,
-    openLightBoxImage: PropTypes.func.isRequired,
-    closeLightBoxImage: PropTypes.func.isRequired
-  };
 
   handleLightBoxOpen(e) {
     if (!(e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       this.props.openLightBoxImage();
+    }
+  }
+
+  componentWillMount() {
+    const { updateUnlockedSteps } = this.props;
+    updateUnlockedSteps([]);
+  }
+
+  componentWillUnmount() {
+    const { updateUnlockedSteps } = this.props;
+    updateUnlockedSteps([]);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { steps, updateUnlockedSteps } = this.props;
+    if (nextProps.steps !== steps) {
+      updateUnlockedSteps([]);
     }
   }
 
@@ -175,6 +191,7 @@ export class StepChallenge extends PureComponent {
           >
           <Image
             alt={ imgAlt }
+            className='center-block'
             responsive={ true }
             src={ imgUrl }
           />
@@ -240,23 +257,14 @@ export class StepChallenge extends PureComponent {
       step,
       steps,
       isLightBoxOpen,
-      isGoingForward,
       closeLightBoxImage
     } = this.props;
-    const transitionName = 'challenge-step-' +
-      (isGoingForward ? 'forward' : 'backward');
     return (
       <Col
         md={ 8 }
         mdOffset={ 2 }
         >
-        <ReactTransitionReplace
-          transitionEnterTimeout={ transitionTimeout }
-          transitionLeaveTimeout={ transitionTimeout }
-          transitionName={ transitionName }
-          >
-          { this.renderStep(this.props) }
-        </ReactTransitionReplace>
+        { this.renderStep(this.props) }
         <div className='hidden'>
           { this.renderImages(steps) }
         </div>
@@ -272,5 +280,8 @@ export class StepChallenge extends PureComponent {
     );
   }
 }
+
+StepChallenge.displayName = 'StepChallenge';
+StepChallenge.propTypes = propTypes;
 
 export default connect(mapStateToProps, dispatchActions)(StepChallenge);

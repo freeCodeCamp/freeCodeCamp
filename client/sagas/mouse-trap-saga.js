@@ -3,12 +3,10 @@ import MouseTrap from 'mousetrap';
 import { push } from 'react-router-redux';
 import {
   toggleNightMode,
-  toggleMapDrawer,
-  toggleMainChat,
   hardGoTo
 } from '../../common/app/redux/actions';
 
-function bindKey$(key, actionCreator) {
+function bindKey(key, actionCreator) {
   return Observable.fromEventPattern(
     h => MouseTrap.bind(key, h),
     h => MouseTrap.unbind(key, h)
@@ -27,18 +25,16 @@ const softRedirects = {
 export default function mouseTrapSaga(actions$) {
   const traps$ = [
     ...Object.keys(softRedirects)
-      .map(key => bindKey$(key, () => push(softRedirects[key]))),
-    bindKey$(
+      .map(key => bindKey(key, () => push(softRedirects[key]))),
+    bindKey(
       'g n r',
       () => hardGoTo('https://github.com/freecodecamp/freecodecamp')
     ),
-    bindKey$(
+    bindKey(
       'g n w',
       () => hardGoTo('http://forum.freecodecamp.com')
     ),
-    bindKey$('g m', toggleMapDrawer),
-    bindKey$('g t n', toggleNightMode),
-    bindKey$('g c', toggleMainChat)
+    bindKey('g t n', toggleNightMode)
   ];
   return Observable.merge(traps$).takeUntil(actions$.last());
 }

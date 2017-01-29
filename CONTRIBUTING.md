@@ -1,87 +1,170 @@
 # Contributor's Guide
 
-## Table of Contents
+We welcome pull requests from freeCodeCamp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
--   [I want to help!](#i-want-to-help)
--   [Contribution Guidelines](#contribution-guidelines)
--   [Prerequisites](#prerequisites)
--   [Getting Started](#getting-started)
--   [Linting Setup](#linting-setup)
--   [Found a bug?](#found-a-bug)
--   [Creating Pull Requests](#creating-pull-requests)
--   [Common Steps](#common-steps)
--   [Next Steps](#next-steps)
+1. Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/freeCodeCamp/freeCodeCamp/labels/help%20wanted) tag.
 
-### I want to help!
+2. Let us know you are working on it by posting a comment on the issue.
 
-We welcome pull requests from Free Code Camp campers (our students) and seasoned
-JavaScript developers alike! Follow these steps to contribute:
+3. Follow the [Contribution Guidelines](#contribution-guidelines) to start working on the issue.
 
-1.  Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/FreeCodeCamp/FreeCodeCamp/labels/help%20wanted) tag.
+Remember to feel free to ask for help in our [Contributors](https://gitter.im/FreeCodeCamp/Contributors) Gitter room.
 
-2.  Let us know you are working on it by posting a comment on the issue.
+###### If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
 
-3.  Feel free to ask for help in our [Help
-    Contributors](https://gitter.im/FreeCodeCamp/HelpContributors) Gitter room.
+--------------------------------------------------------------------------------
 
-If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
+## Contribution Guidelines
 
-### Contribution Guidelines
-
-1.  Fork the project: [How To Fork And Maintain a Local Instance of Free Code
-    Camp](http://forum.freecodecamp.com/t/how-to-fork-and-maintain-a-local-instance-of-free-code-camp/19116)
-
-2.  Create a branch specific to the issue or feature you are working on. Push
-    your work to that branch. ([Need help with
-    branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
-
-3.  Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a
-    short description of the changes or feature you are attempting to add. For
-    example `fix/email-login` would be a branch where I fix something specific
-    to email login.
-
-4.  [Set up Linting](#linting-setup) to run as you make changes.
-
-5.  When you are ready to share your code, run the test suite `npm test` and
-    ensure all tests pass.  For Windows contributors, skip the jsonlint pretest
-    run by using `npm run test-challenges`, as jsonlint will always fail on
-    Windows, given the wildcard parameters.
-
-6.  Squash your Commits. Ref: [rebasing](http://forum.freecodecamp.com/t/how-to-use-git-rebase/13226)
-
-7.  Submit a [pull
-    request](http://forum.freecodecamp.com/t/how-to-make-a-pull-request-on-free-code-camp/19114)
-    from your branch to Free Code Camp's `staging` branch.  [Travis
-    CI](https://travis-ci.org/FreeCodeCamp/FreeCodeCamp) will then take your
-    code and run `npm test`.  Make sure this passes, then we'll do a quick code
-    review and give you feedback, then iterate from there.
+- [Prerequisites](#prerequisites)
+- [Forking The Project](#forking-the-project)
+- [Create A Branch](#create-a-branch)
+- [Setup Linting](#setup-linting)
+- [Setup freeCodeCamp](#setup-freecodecamp)
+- [Make Changes](#make-changes)
+- [Run The Test Suite](#run-the-test-suite)
+- [Squash Your Commits](#squash-your-commits)
+- [Creating A Pull Request](#creating-a-pull-request)
+- [Common Steps](#common-steps)
+- [How We Review and Merge Pull Requests](#how-we-review-and-merge-pull-requests)
+- [How We Close Stale Issues](#how-we-close-stale-issues)
+- [Next Steps](#next-steps)
+- [Other resources](#other-resources)
 
 ### Prerequisites
 
 | Prerequisite                                | Version |
 | ------------------------------------------- | ------- |
 | [MongoDB](http://www.mongodb.org/downloads) | `~ ^3`  |
-| [Node.js](http://nodejs.org)                | `~ ^4`  |
-| npm (comes with Node)                       | `~ ^2`  |
+| [Node.js](http://nodejs.org)                | `~ ^6`  |
+| npm (comes with Node)                       | `~ ^3`  |
 
 > _Updating to the latest releases is recommended_.
 
-### Getting Started
+If Node or MongoDB is already installed in your machine, run the following commands to validate the versions:
 
-Note: If this is your first time working with a node-gyp dependent module,
-please follow the [node-gyp installation
-guide](https://github.com/nodejs/node-gyp#installation) to ensure a working npm
-build.
+```shell
+node -v
+mongo --version
+```
 
-The easiest way to get started is to clone the repository:
+If your versions are lower than the prerequisite versions, you should update.
+
+Platform-specific guides to setting up a development environment:
+- [How to clone and setup the Free Code Camp website on a Windows pc](https://forum.freecodecamp.com/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
+- [How to Clone and Setup the freeCodeCamp Website on a Mac](https://forum.freecodecamp.com/t/how-to-clone-and-setup-the-freecodecamp-website-on-a-mac/78450)
+
+### Forking The Project
+
+#### Setting Up Your System
+
+1. Install [Git](https://git-scm.com/) or your favorite Git client.
+2. (Optional) [Setup an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+3. Create a parent projects directory on your system. For this guide, it will be assumed that it is `/mean/`
+
+#### Forking freeCodeCamp
+
+1. Go to the top level freeCodeCamp repository: <https://github.com/freeCodeCamp/freeCodeCamp>
+2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+3. After the repository has been forked, you will be taken to your copy of the FCC repo at `yourUsername/freeCodeCamp`
+
+#### Cloning Your Fork
+
+1. Open a Terminal / Command Line / Bash Shell in your projects directory (_i.e.: `/yourprojectdirectory/`_)
+2. Clone your fork of freeCodeCamp
+
+```shell
+$ git clone https://github.com/yourUsername/freeCodeCamp.git
+```
+
+##### (make sure to replace `yourUsername` with your GitHub Username)
+
+This will download the entire FCC repo to your projects directory.
+
+#### Setup Your Upstream
+
+1. Change directory to the new freeCodeCamp directory (`cd freeCodeCamp`)
+2. Add a remote to the official FCC repo:
+
+```shell
+$ git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+```
+
+Congratulations, you now have a local copy of the FCC repo!
+
+#### Maintaining Your Fork
+
+Now that you have a copy of your fork, there is work you will need to do to keep it current.
+
+##### **Rebasing from Upstream**
+
+Do this prior to every time you create a branch for a PR:
+
+1. Make sure you are on the `staging` branch
+
+  > ```shell
+  > $ git status
+  > On branch staging
+  > Your branch is up-to-date with 'origin/staging'.
+  > ```
+
+  > If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
+
+  > ```shell
+  > $ git checkout staging
+  > ```
+
+2. Do A Pull with Rebase Against `upstream`
+
+  > ```shell
+  > $ git pull --rebase upstream staging
+  > ```
+
+  > This will pull down all of the changes to the official staging branch, without making an additional commit in your local repo.
+
+3. (_Optional_) Force push your updated staging branch to your GitHub fork
+
+  > ```shell
+  > $ git push origin staging --force
+  > ```
+
+  > This will overwrite the staging branch of your fork.
+
+### Create A Branch
+
+Before you start working, you will need to create a separate branch specific to the issue / feature you're working on. You will push your work to this branch.
+
+#### Naming Your Branch
+
+Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a short description of the changes or feature you are attempting to add. For example `fix/email-login` would be a branch where you fix something specific to email login.
+
+#### Adding Your Branch
+
+To create a branch on your local machine (and switch to this branch):
+
+```shell
+$ git checkout -b [name_of_your_new_branch]
+```
+
+and to push to GitHub:
+
+```shell
+$ git push origin [name_of_your_new_branch]
+```
+
+##### If you need more help with branching, take a look at _[this](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)_.
+
+### Setup Linting
+
+You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.com/t/free-code-camp-javascript-style-guide/19121) (you can find a summary of those rules [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/.eslintrc)).
+
+> Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base.
+
+
+### Setup freeCodeCamp
+Once you have freeCodeCamp cloned, before you start the application, you first need to install all of the dependencies:
 
 ```bash
-# Get the latest snapshot
-git clone --depth=1 https://github.com/freecodecamp/freecodecamp.git freecodecamp
-
-# Change directory
-cd freecodecamp
-
 # Install NPM dependencies
 npm install
 
@@ -95,30 +178,26 @@ npm install -g bower
 bower install
 ```
 
-_Private Environment Variables (API Keys)_
+Then you need to add the private environment variables (API Keys):
 
 ```bash
 # Create a copy of the "sample.env" and name it as ".env".
 # Populate it with the necessary API keys and secrets:
 cp sample.env .env
 ```
+Then edit the `.env` file and modify the API keys only for services that you will use.
 
-Edit your `.env` file and modify the API keys only for services that you will
-use.
+Note: Not all keys are required, to run the app locally, however `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the sample.env should work fine.
 
-Note : Not all keys are required, to run the app locally, however `MONGOHQ_URL`
-is the most important one. Unless you have MongoDB running in a setup different
-than the defaults, the URL in the `sample.env` should work fine.
+You can leave the other keys as they are. Keep in mind if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the .env file.
 
-You can leave the other keys as they are. Keep in mind if you want to use more
-services you'll have to get your own API keys for those services and edit those
-entries accordingly in the `.env` file.
+Now you will need to start MongoDB, and then seed the database, then you can start the application:
 
 ```bash
 # Start the mongo server in a separate terminal
 mongod
 
-# Initialize Free Code Camp
+# Initialize freeCodeCamp
 # This will seed the database for the first time.
 # This command should only be run once.
 npm run only-once
@@ -128,59 +207,74 @@ gulp
 ```
 
 Now navigate to your browser and open
-<http://localhost:3001>. If the app loads,
-congratulations – you're all set. Otherwise, let us know by opening a GitHub
-issue and with your error.
+<http://localhost:3000>. If the app loads,
+congratulations – you're all set. Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
 
-### Linting Setup
+ ```bash
+ # Remove all installed node modules
+ rm -rf node_modules
 
-You should have [ESLint running in your
-editor](http://eslint.org/docs/user-guide/integrations.html), and it will
-highlight anything doesn't conform to [Free Code Camp's JavaScript Style
-Guide](http://forum.freecodecamp.com/t/free-code-camp-javascript-style-guide/19121)
-(you can find a summary of those rules
-[here](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/.eslintrc).
-Please do not ignore any linting errors, as they are meant to **help** you and
-to ensure a clean and simple code base. Make sure none of your JavaScript is
-longer than 80 characters per line.  The reason we enforce this is because one
-of our dependent NPM modules, [jsonlint](https://github.com/zaach/jsonlint),
-does not fully support wildcard paths in Windows.
+ # Reinstall npm packages
+ npm install
 
-### Found a bug?
+ # Re-run bower install
+ bower install
 
-Do not file an issue until you have followed these steps:
+ # Seed the database (optional)
+ node seed
 
-1.  Read [Help I've Found a
-    Bug](http://forum.freecodecamp.com/t/how-to-report-a-bug/19543)
-    wiki page and follow the instructions there.
+ # Re-start the application
+ gulp
+ ```
 
-2.  Asked for confirmation in the appropriate [Help Room](http://forum.freecodecamp.com/t/free-code-camp-official-chat-rooms/19390/2)
+### Make Changes
+This bit is up to you!
 
-3.  Please _do not_ open an issue without a 3rd party confirmation of your
-    problem.
-
-### Creating Pull Requests
-
-#### What is a Pull Request?
-
-A pull request (PR) is a method of submitting proposed changes to the Free Code
-Camp Repo (or any Repo, for that matter). You will make changes to copies of the
-files which make up Free Code Camp in a personal fork, then apply to have them
-accepted by Free Code Camp proper.
-
-#### Need Help?
-
-Free Code Camp Issue Mods and staff are on hand to assist with Pull Request
-related issues on our Help Contributors Chat Room
-
-#### How to find the code in the Free Code Camp codebase to fix/edit?
+#### How to find the code in the freeCodeCamp codebase to fix/edit?
 
 The best way to find out any code you wish to change/add or remove is using
-the GitHub search bar at the top of the repository page. For example, you could 
-search for a challenge name and the results will display all the files along 
+the GitHub search bar at the top of the repository page. For example, you could
+search for a challenge name and the results will display all the files along
 with line numbers. Then you can proceed to the files and verify this is the area
 that you were looking forward to edit. Always feel free to reach out to the chat
 room when you are not certain of any thing specific in the code.
+
+#### Changes to the seed files
+If you made changes to any file in the `/seed` directory, you need to run
+```shell
+$ node seed
+```
+in order to see the changes.
+
+### Run The Test Suite
+When you're ready to share your code, run the test suite:
+
+```shell
+$ npm test
+```
+
+and ensure all tests pass.
+
+### Squash Your Commits
+When you make a pull request, all of your changes need to be in one commit.
+
+If you have made more then one commit, then you will need to _squash_ your commits.
+
+To do this, see [Squashing Your Commits](http://forum.freecodecamp.com/t/how-to-squash-multiple-commits-into-one-with-git/13231).
+
+### Creating A Pull Request
+
+#### What is a Pull Request?
+
+A pull request (PR) is a method of submitting proposed changes to the freeCodeCamp
+Repo (or any Repo, for that matter). You will make changes to copies of the
+files which make up freeCodeCamp in a personal fork, then apply to have them
+accepted by freeCodeCamp proper.
+
+#### Need Help?
+
+freeCodeCamp Issue Mods and staff are on hand to assist with Pull Request
+related issues in our [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors).
 
 #### Important: ALWAYS EDIT ON A BRANCH
 
@@ -192,15 +286,15 @@ fork and re-fork.
 
 #### Methods
 
-There are two methods of creating a pull request for Free Code Camp:
+There are two methods of creating a pull request for freeCodeCamp:
 
+-   Editing files on a local clone (recommended)
 -   Editing files via the GitHub Interface
--   Editing files on a local clone
 
 ##### Method 1: Editing via your Local Fork _(Recommended)_
 
-This is the recommended method. Read about How to Setup and Maintain a Local
-Instance of Free Code Camp.
+This is the recommended method. Read about [How to Setup and Maintain a Local
+Instance of freeCodeCamp](#maintaining-your-fork).
 
 1.  Perform the maintenance step of rebasing `staging`.
 2.  Ensure you are on the `staging` branch using `git status`:
@@ -229,7 +323,7 @@ nothing to commit, working directory clean
     add .` to add all unstaged files. Take care, though, because you can
     accidentally add files you don't want added. Review your `git status` first.
 
-6.  Commit your edits: `git commit -m "Brief Description of Commit"`
+6.  Commit your edits: `git commit -m "Brief Description of Commit"`. Do not add the issue number in the commit message.
 
 7.  Squash your commits, if there are more than one.
 
@@ -257,12 +351,12 @@ for further information
 
 3.  Submit a [pull
     request](http://forum.freecodecamp.com/t/how-to-contribute-via-a-pull-request/19368)
-    from your branch to Free Code Camp's `staging` branch.
+    from your branch to freeCodeCamp's `staging` branch.
 
 4.  The title (also called the subject) of your PR should be descriptive of your
     changes and succinctly indicates what is being fixed.
 
-    -   **Do not add the issue number in the PR title**.
+    -   **Do not add the issue number in the PR title or commit message.**
 
     -   Examples: `Add Test Cases to Bonfire Drop It` `Correct typo in Waypoint
         Size Your Images`
@@ -276,6 +370,25 @@ for further information
         close the existing issue, if the PR is merged.
 
 6.  Indicate if you have tested on a local copy of the site or not.
+
+
+### How We Review and Merge Pull Requests
+
+freeCodeCamp has a team of volunteer Issue Moderators. These Issue Moderators routinely go through open pull requests in a process called [Quality Assurance](https://en.wikipedia.org/wiki/Quality_assurance) (QA).
+
+1. If an Issue Moderator QA's a pull request and confirms that the new code does what it is supposed without seeming to introduce any new bugs, they will comment "LGTM" which means "Looks good to me."
+
+2. Another Issue Moderator will QA the same pull request. Once they have also confirmed that the new code does what it is supposed to without seeming to introduce any new bugs, they will merge the pull request.
+
+If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@BerkeleyTrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
+
+
+### How We Close Stale Issues
+
+We will close any issues or pull requests that have been inactive for more than 15 days, except those that match the following criteria:
+- bugs that are confirmed
+- pull requests that are waiting on other pull requests to be merged
+- features that are a part of a GitHub project
 
 ### Next Steps
 
@@ -314,14 +427,14 @@ Be sure to post in the PR conversation that you have made the requested changes.
 -   [Select Issues for Contributing Using
     Labels](http://forum.freecodecamp.com/t/free-code-camp-issue-labels/19556)
 
--   [How to clone the FreeCodeCamp website on a Windows
+-   [How to clone the freeCodeCamp website on a Windows
     pc](http://forum.freecodecamp.com/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
 
 -   [How to log in to your local FCC site - using
     GitHub](http://forum.freecodecamp.com/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
 
 -   [Writing great git commit
-    message](http://forum.freecodecamp.com/t/writing-good-git-commit-messages/13210)
+    messages](http://forum.freecodecamp.com/t/writing-good-git-commit-messages/13210)
 
 -   [Contributor Chat Support - For the FCC Repositories, and running a local
-    instance](https://gitter.im/FreeCodeCamp/HelpContributors)
+    instance](https://gitter.im/FreeCodeCamp/Contributors)
