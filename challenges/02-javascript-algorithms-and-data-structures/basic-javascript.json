@@ -1111,12 +1111,12 @@
       "title": "Quoting Strings with Single Quotes",
       "description": [
         "<dfn>String</dfn> values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote. Unlike some languages, single and double quotes are functionally identical in JavaScript.",
-        "<code>\"This string has \\\"double quotes\\\" in it\"</code>",
+        "<blockquote>\"This string has \\\"double quotes\\\" in it\"</blockquote>",
         "The value in using one or the other has to do with the need to <dfn>escape</dfn> quotes of the same type. Unless they are escaped, you cannot have more than one pair of whichever quote type begins a string.",
         "If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:",
-        "<code>'This string has \"double quotes\" in it. And \"probably\" lots of them.'</code>",
+        "<blockquote>'This string has \"double quotes\" in it. And \"probably\" lots of them.'</blockquote>",
         "<hr>",
-        "Change the provided string from double to single quotes and remove the escaping."
+        "Change the provided string from double to single quotes and remove the escaping. Do not change anything else."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -1128,12 +1128,13 @@
         "(function() { return \"myStr = \" + myStr; })();"
       ],
       "solutions": [
-        "var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"
+        "/* head */ 'use strict'; /* solution */ var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>'; /* tail */ (function() { return \"myStr = \" + myStr; })();"
       ],
       "tests": [
         "assert(!/\\\\/g.test(code) && myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
-        "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
+        "assert(code.match(/\"/g).length === 6 && code.match(/'/g).length === 4, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
       ],
+
       "type": "waypoint",
       "challengeType": 1,
       "translations": {
