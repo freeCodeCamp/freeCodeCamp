@@ -10,12 +10,30 @@ export function filterComingSoonBetaChallenge(
 }
 
 export function filterComingSoonBetaFromEntities(
-  { challenge: challengeMap, ...rest },
+  { challenge: challengeMap, block: blockMap, ...rest },
   isDev = false
 ) {
   const filter = filterComingSoonBetaChallenge.bind(null, isDev);
   return {
     ...rest,
+    block: Object.keys(blockMap)
+      .map(dashedName => {
+        const block = blockMap[dashedName];
+
+        const filteredChallenges = block.challenges
+          .map(dashedName => challengeMap[dashedName])
+          .filter(filter)
+          .map(challenge => challenge.dashedName);
+
+        return {
+          ...block,
+          challenges: [ ...filteredChallenges ]
+        };
+      })
+      .reduce((blockMap, block) => {
+        blockMap[block.dashedName] = block;
+        return blockMap;
+      }, {}),
     challenge: Object.keys(challengeMap)
       .map(dashedName => challengeMap[dashedName])
       .filter(filter)
