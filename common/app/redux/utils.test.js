@@ -37,7 +37,7 @@ test.test('filterComingSoonBetaChallenge', t => {
 test.test('filterComingSoonBetaFromEntities', t => {
   t.plan(2);
   t.test('should filter isBeta|coming-soon by default', t => {
-    t.plan(2);
+    t.plan(4);
     const normalChallenge = { dashedName: 'normal-challenge' };
     const entities = {
       challenge: {
@@ -48,8 +48,23 @@ test.test('filterComingSoonBetaFromEntities', t => {
           isBeta: true
         },
         [normalChallenge.dashedName]: normalChallenge
+      },
+      block: {
+        'coming-soon': {
+          dashedName: 'coming-soon',
+          challenges: ['coming-soon']
+        },
+        'is-beta': {
+          dashedName: 'is-beta',
+          challenges: ['is-beta']
+        },
+        normal: {
+          dashedName: 'normal',
+          challenges: [normalChallenge.dashedName]
+        }
       }
     };
+
     const actual = filterComingSoonBetaFromEntities(entities);
     t.isEqual(
       Object.keys(actual.challenge).length,
@@ -60,6 +75,23 @@ test.test('filterComingSoonBetaFromEntities', t => {
       actual.challenge[normalChallenge.dashedName],
       normalChallenge,
       'did not return the correct challenge'
+    );
+
+    const challengesFromBlocks = [];
+    Object.keys(actual.block)
+      .forEach(block => {
+        const challenges = actual.block[block].challenges;
+        challenges.forEach(challenge => challengesFromBlocks.push(challenge));
+      });
+    t.isEqual(
+      challengesFromBlocks.length,
+      1,
+      'did not filter the correct amount of challenges from blocks'
+    );
+    t.isEqual(
+      challengesFromBlocks[0],
+      normalChallenge.dashedName,
+      'did not return the correct challenge from blocks'
     );
   });
   t.test('should not filter isBeta|coming-soon when isDev', t => {
@@ -80,6 +112,24 @@ test.test('filterComingSoonBetaFromEntities', t => {
           isBeta: true
         },
         [normalChallenge.dashedName]: normalChallenge
+      },
+      block: {
+        'coming-soon': {
+          dashedName: 'coming-soon',
+          challenges: ['coming-soon']
+        },
+        'is-beta': {
+          dashedName: 'is-beta',
+          challenges: ['is-beta']
+        },
+        'is-both': {
+          dashedName: 'is-both',
+          challenges: ['is-both']
+        },
+        normal: {
+          dashedName: 'normal',
+          challenges: [normalChallenge.dashedName]
+        }
       }
     };
     const actual = filterComingSoonBetaFromEntities(entities, true);
@@ -87,6 +137,16 @@ test.test('filterComingSoonBetaFromEntities', t => {
       Object.keys(actual.challenge).length,
       4,
       'filtered challenges'
+    );
+    let challengesFromBlocksCount = 0;
+    Object.keys(actual.block)
+      .forEach(block => {
+        challengesFromBlocksCount += actual.block[block].challenges.length;
+      });
+    t.isEqual(
+      challengesFromBlocksCount,
+      4,
+      'filtered challenges from blocks'
     );
   });
 });
