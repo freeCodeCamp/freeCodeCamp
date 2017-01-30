@@ -1724,7 +1724,7 @@
       ],
       "tests": [
         "assert($('text').length == 10, 'message: Your code should have 10 <code>text</code> elements.');",
-        "assert($('text').eq(0).text() == '34, 78' && $('text').eq(0).attr('x') == '39' && $('text').eq(0).attr('y') == '422', 'message: The first label should have text of \"34, 78\", an <code>x</code> value of 34, and a <code>y</code> value of 422.');",
+        "assert($('text').eq(0).text() == '34, 78' && $('text').eq(0).attr('x') == '39' && $('text').eq(0).attr('y') == '422', 'message: The first label should have text of \"34, 78\", an <code>x</code> value of 39, and a <code>y</code> value of 422.');",
         "assert($('text').eq(1).text() == '109, 280' && $('text').eq(1).attr('x') == '114' && $('text').eq(1).attr('y') == '220', 'message: The second label should have text of \"109, 280\", an <code>x</code> value of 114, and a <code>y</code> value of 220.');",
         "assert($('text').eq(2).text() == '310, 120' && $('text').eq(2).attr('x') == '315' && $('text').eq(2).attr('y') == '380', 'message: The third label should have text of \"310, 120\", an <code>x</code> value of 315, and a <code>y</code> value of 380.');",
         "assert($('text').eq(3).text() == '79, 411' && $('text').eq(3).attr('x') == '84' && $('text').eq(3).attr('y') == '89', 'message: The fourth label should have text of \"79, 411\", an <code>x</code> value of 84, and a <code>y</code> value of 89.');",
