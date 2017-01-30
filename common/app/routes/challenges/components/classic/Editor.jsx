@@ -7,6 +7,8 @@ import Codemirror from 'react-codemirror';
 import NoSSR from 'react-no-ssr';
 import PureComponent from 'react-pure-render/component';
 
+import MouseTrap from 'mousetrap';
+
 import CodeMirrorSkeleton from '../CodeMirrorSkeleton.jsx';
 
 const mapStateToProps = createSelector(
@@ -58,6 +60,9 @@ export class Editor extends PureComponent {
       ...options,
       mode,
       extraKeys: {
+        Esc() {
+          document.activeElement.blur();
+        },
         Tab(cm) {
           if (cm.somethingSelected()) {
             return cm.indentSelection('add');
@@ -99,6 +104,10 @@ export class Editor extends PureComponent {
         updateFile,
         err => { throw err; }
       );
+
+    MouseTrap.bind('e', () => {
+      this.refs.editor.focus();
+    }, 'keyup');
   }
 
   componentWillUnmount() {
@@ -106,6 +115,7 @@ export class Editor extends PureComponent {
       this._subscription.dispose();
       this._subscription = null;
     }
+    MouseTrap.unbind('e', 'keyup');
   }
 
   handleChange(value) {
@@ -129,6 +139,7 @@ export class Editor extends PureComponent {
           <Codemirror
             onChange={ this.handleChange }
             options={ this.createOptions({ executeChallenge, mode, options }) }
+            ref='editor'
             value={ content }
           />
         </NoSSR>
