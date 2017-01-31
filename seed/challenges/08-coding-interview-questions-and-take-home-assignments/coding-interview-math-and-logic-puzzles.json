@@ -1,0 +1,35 @@
+{
+  "name": "Coding Interview Math and Logic Puzzles",
+  "order": 3,
+  "time": "1 hour",
+  "helpRoom": "HelpJavaScript",
+  "challenges": [
+    {
+      "id": "589110f76386f80f36799821",
+      "title": "The 100 doors problem",
+      "description": [
+        "There are 100 doors in a row that are all initially closed.",
+        "You make 100 passes by the doors.",
+        "The first time through, visit every door and toggle the door (if the door is closed, open it; if it is open, close it).",
+        "The second time, only visit every 2nd door (door #2, #4, #6, ...), and toggle it.",
+        "The third time, visit every 3rd door (door #3, #6, #9, ...), etc, until you only visit the 100th door."
+      ],
+      "challengeSeed": [
+        "function one_hundred_doors(doors) {",
+        "  // your code here!",
+        "}",
+        " one_hundred_doors(100); // should return [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]"
+      ],
+      "solutions": [],
+      "tests": [
+        "assert(typeof one_hundred_doors(100) === 'object', 'message: <code>one_hundred_doors(100)</code> should return an array of open doors.');",
+        "assert(one_hundred_doors(100) === [1, 4, 9, 16, 25, 36, 49, 64, 81, 100], 'message: <code>one_hundred_doors(100)</code> should return <code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</code>.');",
+        "assert(one_hundred_doors(1000) === [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961], 'message: <code>one_hundred_doors(1000)</code> should return <code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961]</code>.');"
+      ],
+      "type": "bonfire",
+      "MDNlinks": [],
+      "challengeType": 5,
+      "translations": {}
+    }
+  ]
+}
