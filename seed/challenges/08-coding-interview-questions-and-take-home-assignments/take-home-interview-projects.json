@@ -330,7 +330,7 @@
       ],
       "tests": [],
       "type": "zipline",
-      "isRequired": true,
+      "isRequired": false,
       "challengeType": 3,
       "titleRu": "Создайте хранилище рецептов",
       "descriptionRu": [
@@ -389,7 +389,7 @@
       ],
       "tests": [],
       "type": "zipline",
-      "isRequired": true,
+      "isRequired": false,
       "challengeType": 3,
       "titleRu": "Создайте игру \"Жизнь\"",
       "descriptionRu": [

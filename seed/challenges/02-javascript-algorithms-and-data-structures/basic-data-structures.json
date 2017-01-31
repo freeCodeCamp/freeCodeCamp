@@ -27,24 +27,12 @@
           ""
         ]
       ],
-      "releasedOn": "",
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "releasedOn": "January 22, 2017"
     },
     {
       "id": "587d7b7e367417b2b2512b20",
@@ -106,7 +94,8 @@
      "type": "waypoint",
      "solutions": [],
      "challengeType": 1,
-     "translations": {}
+     "translations": {},
+     "releasedOn": ""
     },
     {
       "id": "587d78b2367417b2b2512b0e",
@@ -473,24 +462,13 @@
           ""
         ]
       ],
-      "releasedOn": "",
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "type": "waypoint",
       "releasedOn": "January 22, 2017",
       "solutions": [],
-      "challengeType": 1,
       "translations": {}
     },
     {
@@ -833,32 +811,6 @@
       "tests": [
         "assert('name' in user && 'age' in user && 'data' in user, 'The user object has name, age, and data keys');",
         "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'The addFriend function accepts a user object and a friend as arguments and adds the friend to the array of friends in the user object.');"
-      ],
-      "type": "waypoint",
-      "releasedOn": "January 22, 2017",
-      "solutions": [],
-      "challengeType": 1,
-      "translations": {}
-    },
-    {
-      "id": "587d7b7e367417b2b2512b20",
-      "title": "Use an array to store a collection of data",
-      "description": [
-        "Arrays are JavaScript's most fundamental, and perhaps most common, data structure. An array is simply a collection of data, of any length (zero-indexed), arranged in a comma separated list and enclosed in brackets [ ]. While we often make the distinction in JavaScript between Objects and Arrays, it is important to note that technically, an array is a type of object.",
-        "Arrays can store any type of data supported by JavaScript, and while they are a simple and basic form of data structure, they can also be very complex and powerful - all of which depends on how the programmer utilizes them.",
-        "The below is an example of a valid array, notice it contains booleans, strings, numbers, other arrays (this is called a nested, or multi-dimensional array), and objects, among other valid data types:",
-        "<code>let myArray = [undefined, null, true, false, 'one', 2, \"III\", {'four': 5}, [6, 'seven', 8]];</code>",
-        "JavaScript offers many built in methods which allow us to access, traverse, and mutate arrays as needed, depending on our purpose. In the coming challenges, we will discuss several of the most common and useful methods, and a few other key techniques, that will help us to better understand and utilize arrays as data structures in JavaScript.",
-        "Instructions",
-        "We have defined a variable called yourArray; complete the declaration by defining an array of at least 5 elements in length. Your array should contain at least one string, one number, and one boolean."
-      ],
-      "challengeSeed": [
-        "let yourArray = // change code here;"
-      ],
-      "tests": [
-        "assert('name' in user && 'age' in user && 'data' in user, 'message: The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys');",
-        "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'message: The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object');",
-        "assert.deepEqual((function() { delete user.data.friends; user.data.friends = ['Sam', 'Kira', 'Tomo']; return addFriend(user, 'Pete') })(), ['Sam', 'Kira', 'Tomo', 'Pete'], 'message: <code>addFriend(user, \"Pete\")</code> should return <code>[\"Sam\", \"Kira\", \"Tomo\", \"Pete\"]</code>');"
       ],
       "type": "waypoint",
       "releasedOn": "January 22, 2017",
