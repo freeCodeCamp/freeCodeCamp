@@ -484,6 +484,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -521,6 +522,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -559,6 +561,7 @@
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
+      "releasedOn": "January 22, 2017",
       "translations": {}
     },
     {
@@ -596,6 +599,7 @@
       ],
       "type": "waypoint",
       "solutions": [],
+      "releasedOn": "January 22, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -636,6 +640,7 @@
         "};"
       ],
       "type": "waypoint",
+      "releasedOn": "January 22, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
