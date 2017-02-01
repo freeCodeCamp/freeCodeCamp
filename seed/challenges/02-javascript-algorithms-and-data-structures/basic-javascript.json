@@ -84,7 +84,14 @@
         ""
       ],
       "tail": [
-        "if(typeof myName !== \"undefined\"){(function(v){return v;})(myName);}"
+        "try {",
+        "  myName;",
+        "  console.log(\"myName is declared.\")",
+        "} catch(e) {",
+        " if(e.name == \"ReferenceError\") {",
+        "  console.log(\"myName is not declared.\");",
+        " } ",
+        "}"
       ],
       "solutions": [
         "var myName;"
@@ -155,7 +162,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b){return \"a = \" + a + \", b = \" + b;})(a,b);"
+        "console.log(\"a = \" + a + \", b = \" + b)"
       ],
       "solutions": [
         "var a;\nvar b = 2;\na = 7;\nb = a;"
@@ -204,7 +211,7 @@
         ""
       ],
       "tail": [
-        "if(typeof a !== 'undefined') {(function(a){return \"a = \" + a;})(a);} else { (function() {return 'a is undefined';})(); }"
+        "if(typeof a !== 'undefined') { console.log(\"a = \" + a); } else { console.log('a is undefined'); }"
       ],
       "solutions": [
         "var a = 9;"
@@ -250,7 +257,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
+        "console.log(\"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\");"
       ],
       "solutions": [
         "var a = 5;\nvar b = 10;\nvar c = \"I am a\";\na = a + 1;\nb = b + 5;\nc = c + \" String!\";"
@@ -345,7 +352,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'sum = '+z;})(sum);"
+        "console.log('sum = ' + sum);"
       ],
       "solutions": [
         "var sum = 10 + 10;"
@@ -386,7 +393,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'difference = '+z;})(difference);"
+        "console.log('difference = ' + difference);"
       ],
       "solutions": [
         "var difference = 45 - 33;"
@@ -428,7 +435,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'product = '+z;})(product);"
+        "console.log('product = ' + product);"
       ],
       "solutions": [
         "var product = 8 * 10;"
@@ -469,7 +476,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'quotient = '+z;})(quotient);"
+        "console.log('quotient = ' + quotient);"
       ],
       "solutions": [
         "var quotient = 66 / 33;"
@@ -513,7 +520,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'myVar = ' + z;})(myVar);"
+        "console.log('myVar = ' + myVar);"
       ],
       "solutions": [
         "var myVar = 87;\nmyVar++;"
@@ -562,7 +569,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'myVar = ' + z;})(myVar);"
+        "console.log('myVar = ' + myVar);"
       ],
       "solutions": [
         "var myVar = 11;\nmyVar--;"
@@ -606,7 +613,7 @@
         ""
       ],
       "tail": [
-        "(function(){if(typeof myDecimal !== \"undefined\"){return myDecimal;}})();"
+        "if(typeof myDecimal !== \"undefined\"){console.log('myDecimal = ' + myDecimal);}"
       ],
       "solutions": [
         "var myDecimal = 9.9;"
@@ -644,7 +651,7 @@
         ""
       ],
       "tail": [
-        "(function(y){return 'product = '+y;})(product);"
+        "console.log('product = ' + product);"
       ],
       "solutions": [
         "var product = 2.0 * 2.5;"
@@ -681,7 +688,7 @@
         ""
       ],
       "tail": [
-        "(function(y){return 'quotient = '+y;})(quotient);"
+        "console.log('quotient = ' + quotient);"
       ],
       "solutions": [],
       "tests": [
@@ -723,7 +730,7 @@
         ""
       ],
       "tail": [
-        "(function(y){return 'remainder = '+y;})(remainder);"
+        "console.log('remainder = '+ remainder);"
       ],
       "solutions": [
         "var remainder =  11 % 3;"
@@ -777,7 +784,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+        "console.log(\"a = \" + a + \", b = \" + b + \", c = \" + c);"
       ],
       "solutions": [
         "var a = 3;\nvar b = 17;\nvar c = 12;\n\na += 12;\nb += 9;\nc += 7;"
@@ -832,7 +839,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+        "console.log(\"a = \" + a + \", b = \" + b + \", c = \" + c);"
       ],
       "solutions": [
         "var a = 11;\nvar b = 9;\nvar c = 3;\n\na -= 6;\nb -= 15;\nc -= 1;\n\n"
@@ -886,7 +893,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+        "console.log(\"a = \" + a + \", b = \" + b + \", c = \" + c);"
       ],
       "solutions": [
         "var a = 5;\nvar b = 12;\nvar c = 4.6;\n\na *= 5;\nb *= 3;\nc *= 10;"
@@ -939,7 +946,7 @@
         ""
       ],
       "tail": [
-        "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+        "console.log(\"a = \" + a + \", b = \" + b + \", c = \" + c);"
       ],
       "solutions": [
         "var a = 48;\nvar b = 108;\nvar c = 33;\n\na /= 12;\nb /= 4;\nc /= 11;"
@@ -1034,7 +1041,7 @@
         ""
       ],
       "tail": [
-        "if(typeof myFirstName !== \"undefined\" && typeof myLastName !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
+        "if(typeof myFirstName !== \"undefined\" && typeof myLastName !== \"undefined\"){ console.log('myFirstName + ', ' + myLastName'); }"
       ],
       "solutions": [
         "var myFirstName = \"Alan\";\nvar myLastName = \"Turing\";"
@@ -1125,7 +1132,7 @@
         ""
       ],
       "tail": [
-        "(function() { return \"myStr = \" + myStr; })();"
+        "console.log(\"myStr = \" + myStr);"
       ],
       "solutions": [
         "/* head */ 'use strict'; /* solution */ var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>'; /* tail */ (function() { return \"myStr = \" + myStr; })();"
@@ -1225,9 +1232,9 @@
       "tail": [
         "(function(){",
         "  if(typeof myStr === 'string') {",
-        "    return 'myStr = \"' + myStr + '\"';",
+        "    console.log('myStr = \"' + myStr + '\"');",
         "  } else {",
-        "    return 'myStr is not a string';",
+        "    console.log('myStr is not a string');",
         "  }",
         "})();"
       ],
@@ -1280,9 +1287,9 @@
       "tail": [
         "(function(){",
         "  if(typeof myStr === 'string') {",
-        "    return 'myStr = \"' + myStr + '\"';",
+        "    console.log('myStr = \"' + myStr + '\"');",
         "  } else {",
-        "    return 'myStr is not a string';",
+        "    console.log('myStr is not a string');",
         "  }",
         "})();"
       ],
@@ -1340,7 +1347,7 @@
         "  } else {",
         "    output.push('myStr is not a string');",
         "  }",
-        "  return output.join('\\n');",
+        "  console.log(output.join('\\n'));",
         "})();"
       ],
       "solutions": [
@@ -1397,7 +1404,7 @@
         "  } else {",
         "    output.push('myStr is not a string');",
         "  }",
-        "  return output.join('\\n');",
+        "  console.log(output.join('\\n'));",
         "})();"
       ],
       "solutions": [
@@ -1448,7 +1455,7 @@
         ""
       ],
       "tail": [
-        "if(typeof lastNameLength !== \"undefined\"){(function(){return lastNameLength;})();}"
+        "if(typeof lastNameLength !== \"undefined\"){console.log(lastNameLength);}"
       ],
       "solutions": [
         "var firstNameLength = 0;\nvar firstName = \"Ada\";\nfirstNameLength = firstName.length;\n\nvar lastNameLength = 0;\nvar lastName = \"Lovelace\";\nlastNameLength = lastName.length;"
@@ -1498,7 +1505,7 @@
         ""
       ],
       "tail": [
-        "(function(v){return v;})(firstLetterOfLastName);"
+        "console.log(firstLetterOfLastName);"
       ],
       "solutions": [
         "var firstLetterOfLastName = \"\";\nvar lastName = \"Lovelace\";\n\n// Only change code below this line\nfirstLetterOfLastName = lastName[0];"
@@ -1546,7 +1553,7 @@
         ""
       ],
       "tail": [
-        "(function(v){return \"myStr = \" + v;})(myStr);"
+        "console.log(\"myStr = \" + myStr);"
       ],
       "solutions": [
         "var myStr = \"Jello World\";\nmyStr = \"Hello World\";"
@@ -1596,7 +1603,7 @@
         ""
       ],
       "tail": [
-        "(function(v){return v;})(thirdLetterOfLastName);"
+        "console.log(thirdLetterOfLastName);"
       ],
       "solutions": [
         "var lastName = \"Lovelace\";\nvar thirdLetterOfLastName = lastName[2];"
@@ -1644,7 +1651,7 @@
         ""
       ],
       "tail": [
-        "(function(v){return v;})(lastLetterOfLastName);"
+        "console.log(lastLetterOfLastName);"
       ],
       "solutions": [
         "var firstName = \"Ada\";\nvar lastLetterOfFirstName = firstName[firstName.length - 1];\n\nvar lastName = \"Lovelace\";\nvar lastLetterOfLastName = lastName[lastName.length - 1];"
@@ -1692,7 +1699,7 @@
         ""
       ],
       "tail": [
-        "(function(v){return v;})(secondToLastLetterOfLastName);"
+        "console.log(secondToLastLetterOfLastName);"
       ],
       "solutions": [
         "var firstName = \"Ada\";\nvar thirdToLastLetterOfFirstName = firstName[firstName.length - 3];\n\nvar lastName = \"Lovelace\";\nvar secondToLastLetterOfLastName = lastName[lastName.length - 2];"
@@ -1738,7 +1745,7 @@
         "}",
         "",
         "// Change the words here to test your function",
-        "wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");"
+        "console.log(wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\"));"
       ],
       "tail": [
         "var test1 = wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");",
@@ -1786,7 +1793,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return z;})(myArray);"
+        "console.log(myArray);"
       ],
       "solutions": [
         "var myArray = [\"The Answer\", 42];"
@@ -1828,7 +1835,7 @@
         ""
       ],
       "tail": [
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){console.log(myArray);}"
       ],
       "solutions": [
         "var myArray = [[1,2,3]];"
@@ -1873,7 +1880,7 @@
         ""
       ],
       "tail": [
-        "if(typeof myArray !== \"undefined\" && typeof myData !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
+        "if(typeof myArray !== \"undefined\" && typeof myData !== \"undefined\"){ console.log('myArray = ' + JSON.stringify(myArray) + ', myData = ' + JSON.stringify(myData));}"
       ],
       "solutions": [
         "var myArray = [1,2,3];\nvar myData = myArray[0];"
@@ -1924,7 +1931,7 @@
         ""
       ],
       "tail": [
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){ console.log(myArray); }"
       ],
       "solutions": [
         "var myArray = [1,2,3];\nmyArray[0] = 3;"
@@ -1970,7 +1977,7 @@
         ""
       ],
       "tail": [
-        "if(typeof myArray !== \"undefined\"){(function(){return \"myData: \" + myData + \" myArray: \" + JSON.stringify(myArray);})();}"
+        "if(typeof myArray !== \"undefined\"){ console.log(\"myData: \" + myData + \" myArray: \" + JSON.stringify(myArray));}"
       ],
       "solutions": [
         "var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];\nvar myData = myArray[2][1];"
@@ -2018,7 +2025,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
+        "console.log('myArray = ' + JSON.stringify(myArray));"
       ],
       "solutions": [
         "var myArray = [[\"John\", 23], [\"cat\", 2]];\nmyArray.push([\"dog\",3]);"
@@ -2065,7 +2072,7 @@
         ""
       ],
       "tail": [
-        "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+        "console.log('myArray = ' + JSON.stringify(myArray) + ' & removedFromMyArray = ' + JSON.stringify(removedFromMyArray));"
       ],
       "solutions": [
         "var myArray = [[\"John\", 23], [\"cat\", 2]];\nvar removedFromMyArray = myArray.pop();"
@@ -2114,7 +2121,7 @@
         ""
       ],
       "tail": [
-        "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+        "console.log('myArray = ' + JSON.stringify(myArray) + ' & removedFromMyArray = ' + JSON.stringify(removedFromMyArray));"
       ],
       "solutions": [
         "var myArray = [[\"John\", 23], [\"dog\", 3]];\n\n// Only change code below this line.\nvar removedFromMyArray = myArray.shift();"
@@ -2162,7 +2169,7 @@
         ""
       ],
       "tail": [
-        "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
+        "console.log('myArray = ' + JSON.stringify(myArray));"
       ],
       "solutions": [
         "var myArray = [[\"John\", 23], [\"dog\", 3]];\nmyArray.shift();\nmyArray.unshift([\"Paul\", 35]);"
@@ -2220,9 +2227,9 @@
         "      });",
         "    }",
         "    count = myList.length;",
-        "    return JSON.stringify(myList);",
+        "    console.log(JSON.stringify(myList));",
         "  } else {",
-        "    return \"myList is not an array\";",
+        "    console.log(\"myList is not an array\");",
         "  }",
         "",
         "})(myList);"
@@ -2300,9 +2307,9 @@
         "uncapture();",
         "",
         "if (typeof reusableFunction !== \"function\") { ",
-        "  (function() { return \"reusableFunction is not defined\"; })();",
+        "  console.log(\"reusableFunction is not defined\");",
         "} else {",
-        "  (function() { return logOutput || \"console.log never called\"; })();",
+        "  console.log(logOutput || \"console.log was never called\");",
         "}"
       ],
       "solutions": [
@@ -2383,9 +2390,9 @@
         "uncapture();",
         "",
         "if (typeof functionWithArgs !== \"function\") { ",
-        "  (function() { return \"functionWithArgs is not defined\"; })();",
+        "  console.log(\"functionWithArgs is not defined\");",
         "} else {",
-        "  (function() { return logOutput || \"console.log never called\"; })();",
+        "  console.log(logOutput || \"console.log never called\");",
         "}"
       ],
       "solutions": [
@@ -2470,10 +2477,10 @@
         "}"
       ],
       "tail": [
-        "fun1();",
-        "fun2();",
-        "uncapture();",
-        "(function() { return logOutput || \"console.log never called\"; })();"
+        "console.log(fun1());",
+        "console.log(fun2());",
+        "console.log(uncapture());",
+        "console.log(logOutput || \"console.log never called\");"
       ],
       "solutions": [
         "// Declare your variable here\nvar myGlobal = 10;\n\nfunction fun1() {\n  // Assign 5 to oopsGlobal Here\n  oopsGlobal = 5;\n}\n\n// Only change code above this line\nfunction fun2() {\n  var output = \"\";\n  if(typeof myGlobal != \"undefined\") {\n    output += \"myGlobal: \" + myGlobal;\n  }\n  if(typeof oopsGlobal != \"undefined\") {\n    output += \" oopsGlobal: \" + oopsGlobal;\n  }\n  console.log(output);\n}"
@@ -2551,7 +2558,7 @@
       ],
       "tail": [
         "typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());",
-        "(function() { return logOutput || \"console.log never called\"; })();"
+        "console.log(logOutput || \"console.log never called\");"
       ],
       "solutions": [
         "function myLocalScope() {\n  'use strict';\n  \n  var myVar;\n  console.log(myVar);\n}\nmyLocalScope();"
@@ -2650,7 +2657,7 @@
         ""
       ],
       "tail": [
-        "(function() { if(typeof timesFive === 'function'){ return \"timesfive(5) === \" + timesFive(5); } else { return \"timesFive is not a function\"} })();"
+        "if(typeof timesFive === 'function'){ console.log(\"timesfive(5) === \" + timesFive(5)); } else { console.log(\"timesFive is not a function\");}"
       ],
       "solutions": [
         "function timesFive(num) {\n  return num * 5;\n}"
@@ -2711,7 +2718,7 @@
         ""
       ],
       "tail": [
-        "(function(){return \"processed = \" + processed})();"
+        "console.log(\"processed = \" + processed);"
       ],
       "solutions": [
         "var processed = 0;\n\nfunction processArg(num) {\n  return (num + 3) / 5;\n}\n\nprocessed = processArg(7);"
@@ -2786,7 +2793,7 @@
       "tail": [
         "uncapture();",
         "testArr = [1,2,3,4,5];",
-        "(function() { return logOutput.join(\"\\n\");})();"
+        "console.log(logOutput.join(\"\\n\"));"
       ],
       "solutions": [
         "var testArr = [ 1,2,3,4,5];\n\nfunction nextInLine(arr, item) {\n    arr.push(item);\n    return arr.shift();\n}"
@@ -2830,7 +2837,7 @@
         "}"
       ],
       "tail": [
-        "welcomeToBooleans();"
+        "console.log(welcomeToBooleans());"
       ],
       "solutions": [
         "function welcomeToBooleans() {\n  return true; // Change this line\n}"
@@ -4192,7 +4199,7 @@
         "};"
       ],
       "tail": [
-        "(function(z){return z;})(myDog);"
+        "console.log(myDog);"
       ],
       "solutions": [
         "var myDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"]  \n};"
@@ -4252,7 +4259,7 @@
         "var shirtValue = testObj;    // Change this line"
       ],
       "tail": [
-        "(function(a,b) { return \"hatValue = '\" + a + \"', shirtValue = '\" + b + \"'\"; })(hatValue,shirtValue);"
+        "console.log(\"hatValue = '\" + hatValue + \"', shirtValue = '\" + shirtValue + \"'\");"
       ],
       "solutions": [
         "var testObj = {\n  \"hat\": \"ballcap\",\n  \"shirt\": \"jersey\",\n  \"shoes\": \"cleats\"\n};\n\nvar hatValue = testObj.hat;  \nvar shirtValue = testObj.shirt;"
@@ -4306,7 +4313,7 @@
         "var drinkValue = testObj;    // Change this line"
       ],
       "tail": [
-        "(function(a,b) { return \"entreeValue = '\" + a + \"', drinkValue = '\" + b + \"'\"; })(entreeValue,drinkValue);"
+        "console.log(\"entreeValue = '\" + entreeValue + \"', drinkValue = '\" + drinkValue + \"'\");"
       ],
       "solutions": [
         "var testObj = {\n  \"an entree\": \"hamburger\",\n  \"my side\": \"veggies\",\n  \"the drink\": \"water\"\n};\nvar entreeValue = testObj[\"an entree\"];\nvar drinkValue = testObj['the drink'];"
@@ -4362,7 +4369,7 @@
         "var player = testObj;   // Change this Line"
       ],
       "tail": [
-        "if(typeof player !== \"undefined\"){(function(v){return v;})(player);}"
+        "if(typeof player !== \"undefined\"){ console.log(player); }"
       ],
       "solutions": [
         "var testObj = {\n  12: \"Namath\",\n  16: \"Montana\",\n  19: \"Unitas\"\n};\nvar playerNumber = 16;\nvar player = testObj[playerNumber];"
@@ -4430,7 +4437,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return z;})(myDog);"
+        "console.log(myDog);"
       ],
       "solutions": [
         "var myDog = {\n  \"name\": \"Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"]\n};\nmyDog.name = \"Happy Coder\";"
@@ -4498,7 +4505,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return z;})(myDog);"
+        "console.log(myDog);"
       ],
       "solutions": [
         "var myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"]\n};\nmyDog.bark = \"Woof Woof\";"
@@ -4558,7 +4565,7 @@
         ""
       ],
       "tail": [
-        "(function(z){return z;})(myDog);"
+        "console.log(myDog);"
       ],
       "solutions": [
         "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"Free Code Camp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
@@ -4742,7 +4749,13 @@
         ""
       ],
       "tail": [
-        "(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return \"myMusic is not an array\"})(myMusic);"
+        "(function(x) { ",
+        "  if (Array.isArray(x)) {",
+        "    console.log(JSON.stringify(x));",
+        "  } else { ",
+        "    console.log(\"myMusic is not an array\");",
+        "  }",
+        "}(myMusic))"
       ],
       "solutions": [
         "var myMusic = [\n  {\n    \"artist\": \"Billy Joel\",\n    \"title\": \"Piano Man\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\" ],\n    \"gold\": true\n  }, \n  {\n    \"artist\": \"ABBA\",\n    \"title\": \"Ring Ring\",\n    \"release_year\": 1973,\n    \"formats\": [ \n      \"CS\", \n      \"8T\", \n      \"LP\",\n    \"CD\",\n  ]\n  }\n];"
@@ -4777,7 +4790,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244cc",
-      "title": "Accessing Nested Objects",
+      "title": "Access Nested Objects",
       "description": [
         "The sub-properties of objects can be accessed by chaining together the dot or bracket notation.",
         "Here is a nested object:",
@@ -4808,9 +4821,10 @@
       "tail": [
         "(function(x) { ",
         "  if(typeof x != 'undefined') { ",
-        "    return \"gloveBoxContents = \" + x;",
+        "    console.log(\"gloveBoxContents = \" + x);",
+        "  } else {",
+        "    console.log(\"gloveBoxContents is undefined\");",
         "  }",
-        "  return \"gloveBoxContents is undefined\";",
         "})(gloveBoxContents);"
       ],
       "solutions": [
@@ -4837,7 +4851,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
-      "title": "Accessing Nested Arrays",
+      "title": "Access Nested Arrays",
       "description": [
         "As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
         "Here is an example of how to access a nested array:",
@@ -4875,9 +4889,10 @@
       "tail": [
         "(function(x) { ",
         "  if(typeof x != 'undefined') { ",
-        "    return \"secondTree = \" + x;",
+        "    console.log(\"secondTree = \" + x);",
+        "  } else {",
+        "    console.log(\"secondTree is undefined\");",
         "  }",
-        "  return \"secondTree is undefined\";",
         "})(secondTree);"
       ],
       "solutions": [
@@ -4961,7 +4976,7 @@
         ""
       ],
       "tail": [
-        ";(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
+        "(function(x){ console.log(\"collection = \\n\" + JSON.stringify(x, '\\n', 2)); }(collection))"
       ],
       "solutions": [
         "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction updateRecords(id, prop, value) {\n  if(value === \"\") delete collection[id][prop];\n  else if(prop === \"tracks\") {\n    collection[id][prop] = collection[id][prop] || [];\n    collection[id][prop].push(value);\n  } else {\n    collection[id][prop] = value;\n  }\n  \n  return collection;\n}"
@@ -5013,7 +5028,7 @@
         ""
       ],
       "tail": [
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){console.log(myArray)}"
       ],
       "solutions": [
         "var myArray = [];\nvar i = 0;\nwhile(i < 5) {\n  myArray.push(i);\n  i++;\n}"
@@ -5076,7 +5091,7 @@
         ""
       ],
       "tail": [
-        "if (typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+        "if (typeof myArray !== \"undefined\"){console.log(myArray);}"
       ],
       "solutions": [
         "var ourArray = [];\nfor (var i = 0; i < 5; i++) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 1; i < 6; i++) {\n  myArray.push(i);\n}"
@@ -5138,7 +5153,7 @@
         ""
       ],
       "tail": [
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){console.log(myArray);}"
       ],
       "solutions": [
         "var ourArray = [];\nfor (var i = 0; i < 10; i += 2) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 1; i < 10; i += 2) {\n  myArray.push(i);\n}"
@@ -5196,7 +5211,7 @@
         ""
       ],
       "tail": [
-        "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+        "if(typeof myArray !== \"undefined\"){console.log(myArray);}"
       ],
       "solutions": [
         "var ourArray = [];\nfor (var i = 10; i > 0; i -= 2) {\n  ourArray.push(i);\n}\nvar myArray = [];\nfor (var i = 9; i > 0; i -= 2) {\n  myArray.push(i);\n}"
@@ -5255,7 +5270,13 @@
         ""
       ],
       "tail": [
-        "(function(){if(typeof total !== 'undefined') { return \"total = \" + total; } else { return \"total is undefined\";}})()"
+        "(function(){",
+        "  if(typeof total !== 'undefined') {",
+        "    console.log(\"total = \" + total);",
+        "  } else {",
+        "    console.log(\"total is undefined\");",
+        "  }",
+        "})();"
       ],
       "solutions": [
         "var ourArr = [ 9, 10, 11, 12];\nvar ourTotal = 0;\n\nfor (var i = 0; i < ourArr.length; i++) {\n  ourTotal += ourArr[i];\n}\n\nvar myArr = [ 2, 3, 4, 5, 6];\nvar total = 0;\n\nfor (var i = 0; i < myArr.length; i++) {\n  total += myArr[i];\n}"
@@ -5431,7 +5452,7 @@
         "}"
       ],
       "tail": [
-        "(function(){return randomFraction();})();"
+        "console.log(randomFraction());"
       ],
       "solutions": [
         "function randomFraction() {\n  return Math.random();\n}"
@@ -5480,7 +5501,7 @@
         "}"
       ],
       "tail": [
-        "(function(){return randomWholeNum();})();"
+        "console.log(randomWholeNum());"
       ],
       "solutions": [
         "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);\nfunction randomWholeNum() {\n  return Math.floor(Math.random() * 10);\n}"
@@ -5553,9 +5574,9 @@
         "}",
         "(function(){",
         "  if(typeof myRandom === 'number') {",
-        "    return \"myRandom = \" + myRandom;",
+        "    console.log(\"myRandom = \" + myRandom);",
         "  } else {",
-        "    return \"myRandom undefined\";",
+        "    console.log(\"myRandom undefined\");",
         "  }",
         "})();"
       ],
