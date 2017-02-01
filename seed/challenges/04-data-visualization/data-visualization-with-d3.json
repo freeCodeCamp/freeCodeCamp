@@ -2104,7 +2104,7 @@
         "       .data(dataset)",
         "       .enter()",
         "       .append(\"text\")",
-        "       .text((d) =>  (d[0] + ",
+        "       .text((d) =>  (d[0] + \", \"",
         " + d[1]))",
         "       // Add your code below this line",
         "       ",
