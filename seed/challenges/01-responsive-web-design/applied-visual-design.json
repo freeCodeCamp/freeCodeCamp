@@ -832,10 +832,11 @@
       "id": "587d781c367417b2b2512ac0",
       "title": "Use the Text-transform Property to Make Text Uppercase",
       "description": [
-        "The <code>text-transform</code> property in CSS is used to set text to uppercase.",
-        "<strong>Note</strong><br>Other values for this property are lowercase, capitalize (transforms the first letter of each word to uppercase), initial (sets the property to the default value), inherit (inherits the property from parent element) and none (the default).",
+        "The <code>text-transform</code> property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.",
+        "The following table shows how the different <code>text-transform</code>values change the example text \"Transform me\".",
+        "<table class=\"table table-striped\"><thead><th>Value<th>Result<tbody><tr><td><code>lowercase</code><td>\"transform me\"<tr><td><code>uppercase</code><td>\"TRANSFORM ME\"<tr><td><code>capitalize</code><td>\"Transform Me\"<tr><td><code>initial</code><td>Use the default value<tr><td><code>inherit</code><td>Use the <code>text-transform</code> value from the parent element<tr><td><code>none</code><td><strong>Default:</strong> Use the original text</td></table>",
         "<hr>",
-        "Set the text inside the <code>h4</code> tag to be uppercase using the <code>text-transform</code> property."
+        "Transform the text of the <code>h4</code> to be uppercase using the <code>text-transform</code> property."
       ],
       "challengeSeed": [
         "<style>",
@@ -888,7 +889,8 @@
         "</div>"
       ],
       "tests": [
-        "assert($('h4').css('text-transform') == 'uppercase', 'message: The <code>h4</code> text should be uppercase.');"
+        "assert($('h4').css('text-transform') === 'uppercase', 'message: The <code>h4</code> text should be uppercase.');",
+        "assert(($('h4').text() !== $('h4').text().toUpperCase()), 'message: The original text of the h4 should not be changed.');"
       ],
       "solutions": [],
       "hints": [],
