@@ -26,5 +26,8 @@
     "chai": "~3.4.1",
     "clipboard": "~1.5.5",
     "mousetrap": "~1.5.3"
+  },
+  "resolutions": {
+    "jquery": "~3.1.1"
   }
 }
