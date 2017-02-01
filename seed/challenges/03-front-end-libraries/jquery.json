@@ -821,6 +821,7 @@
         "<code>$(\"h3\").html(\"&#60;em&#62;jQuery Playground&#60;/em&#62;\");</code>",
         "jQuery also has a similar function called <code>.text()</code> that only alters text without adding tags. In other words, this function will not evaluate any HTML tags passed to it, but will instead treat it as the text you want to replace the existing content with.",
         "Change the button with id <code>target4</code> by emphasizing its text.",
+        "Check this <a href=\"https://developer.mozilla.org/en/docs/Web/HTML/Element/em\" target=\"_blank\">link</a> to know more on the difference between <code>&#60;i&#62;</code> and <code>&#60;em&#62;</code> and their uses.",
         "Note that while the <code>&#60;i&#62;</code> tag has traditionally been used to emphasize text, it has since been coopted for use as a tag for icons. The <code>&#60;em&#62;</code> tag is now widely accepted as the tag for emphasis. Either will work for this challenge."
       ],
       "releasedOn": "November 18, 2015",
@@ -857,8 +858,8 @@
         "</div>"
       ],
       "tests": [
-        "assert.isTrue((/<em>|<i>#target4<\\/em>|<\\/i>/gi).test($(\"#target4\").html()), 'message: Emphasize the text in your <code>target4</code> button by adding HTML tags.');",
-        "assert($(\"#target4\") && $(\"#target4\").text() === '#target4', 'message: Make sure the text is otherwise unchanged.');",
+        "assert.isTrue((/<em>|<i>\\s*#target4\\s*<\\/em>|<\\/i>/gi).test($(\"#target4\").html()), 'message: Emphasize the text in your <code>target4</code> button by adding HTML tags.');",
+        "assert($(\"#target4\") && $(\"#target4\").text().trim() === '#target4', 'message: Make sure the text is otherwise unchanged.');",
         "assert.isFalse((/<em>|<i>/gi).test($(\"h3\").html()), 'message: Do not alter any other text.');",
         "assert(code.match(/\\.html\\(/g), 'message: Make sure you are using <code>.html()</code> and not <code>.text()</code>.');",
         "assert(code.match(/\\$\\(\\s*?(\\\"|\\')#target4(\\\"|\\')\\s*?\\)\\.html\\(/), 'message: Make sure to select <code>button id=\"target4\"</code> with jQuery.');"
