@@ -72,27 +72,7 @@
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "challengeType": 4,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": []
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d8249367417b2b2512c42",
@@ -142,27 +122,7 @@
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "challengeType": 4,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": []
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d824a367417b2b2512c43",
@@ -220,27 +180,7 @@
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "challengeType": 4,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": []
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d824a367417b2b2512c44",
@@ -286,27 +226,7 @@
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "challengeType": 4,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": []
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d824a367417b2b2512c45",
@@ -372,27 +292,7 @@
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "challengeType": 4,
-      "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
-        "es": {
-          "description": []
-        }
-      }
+      "translations": {}
     }
   ]
 }

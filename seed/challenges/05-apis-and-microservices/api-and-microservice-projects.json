@@ -56,22 +56,6 @@
       "releasedOn": "January 1, 2016",
       "challengeType": 4,
       "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
         "es": {
           "title": "Microservicio de Marca Temporal",
           "description": [
@@ -100,22 +84,6 @@
       "releasedOn": "January 1, 2016",
       "challengeType": 4,
       "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
         "es": {
           "title": "Microservicio para analizar el encabezado de una petición",
           "description": [
@@ -152,22 +120,6 @@
       "releasedOn": "January 1, 2016",
       "challengeType": 4,
       "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
         "es": {
           "title": "Microservicio para acortar URLs",
           "description": [
@@ -212,22 +164,6 @@
       "releasedOn": "January 1, 2016",
       "challengeType": 4,
       "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
         "es": {
           "title": "Capa de abstracción para buscar imágenes",
           "description": [
@@ -260,22 +196,6 @@
       "releasedOn": "January 1, 2016",
       "challengeType": 4,
       "translations": {
-        "de": {
-          "description": [],
-          "title": ""
-        },
-        "fr": {
-          "description": [],
-          "title": ""
-        },
-        "pt-br": {
-          "description": [],
-          "title": ""
-        },
-        "ru": {
-          "description": [],
-          "title": ""
-        },
         "es": {
           "title": "Microservicio de metadatos de archivos",
           "description": [

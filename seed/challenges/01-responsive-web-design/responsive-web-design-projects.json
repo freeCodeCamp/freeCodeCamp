@@ -239,16 +239,7 @@
       "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
-      "translations": {
-        "es": {
-          "title": "",
-          "description": []
-        },
-        "ru": {
-          "title": "",
-          "description": []
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d78af367417b2b2512b04",
@@ -268,16 +259,7 @@
       "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
-      "translations": {
-        "es": {
-          "title": "",
-          "description": []
-        },
-        "ru": {
-          "title": "",
-          "description": []
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d78b0367417b2b2512b05",
@@ -297,16 +279,7 @@
       "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
-      "translations": {
-        "es": {
-          "title": "",
-          "description": []
-        },
-        "ru": {
-          "title": "",
-          "description": []
-        }
-      }
+      "translations": {}
     },
     {
       "id": "587d78b0367417b2b2512b06",
