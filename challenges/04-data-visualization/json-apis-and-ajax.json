@@ -16,7 +16,7 @@
         [
           "http://imgs.xkcd.com/comics/api.png",
           "XKCD web comic with a user sitting at a computer reading the instructions for an API Guide for a site. The text below notes \"If you do things right, it can take people awhile to realize that your 'API documentation' is just instructions for how to look at your website.\"",
-          "Similar to how User Interfaces help people use programs, Application Programming Interfaces (APIs) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data. You can use API functionality in your page once you understand how to make requests and process data from it. Programmers often use Ajax technologies when working with APIs.<br><br>The term Ajax originated as an acronym for Asynchronous JavaScript And XML. It refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. An asynchronous process has a couple key properties. The browser does not stop loading a page to wait for the server's response. Also, the browser inserts updated data into part of the page without having to refresh the entire page.<br><br>User experience benefits from asynchronous processes in several ways. Pages load faster since the browser isn't waiting for the server to respond in the middle of a page render. Requests and transfers happen in the background, without interrupting what the user is doing. When the browser receives new data, only the necessary area of the page refreshes. These qualities especially enhance the user experience for single page applications.<br><br>The data transferred between the browser and server is often in a format called JavaScript Object Notation (JSON). JSON resembles JavaScript object literal syntax, except that it's transferred as a string. Once received, it can be converted into an object and used in a script.<br><br>This section covers how to transfer and use data using Ajax technologies with a Free Code Camp API.",
+          "Similar to how User Interfaces help people use programs, Application Programming Interfaces (APIs) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data. You can use API functionality in your page once you understand how to make requests and process data from it. Programmers often use Ajax technologies when working with APIs.<br><br>The term Ajax originated as an acronym for Asynchronous JavaScript And XML. It refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. An asynchronous process has a couple key properties. The browser does not stop loading a page to wait for the server's response. Also, the browser inserts updated data into part of the page without having to refresh the entire page.<br><br>User experience benefits from asynchronous processes in several ways. Pages load faster since the browser isn't waiting for the server to respond in the middle of a page render. Requests and transfers happen in the background, without interrupting what the user is doing. When the browser receives new data, only the necessary area of the page refreshes. These qualities especially enhance the user experience for single page applications.<br><br>The data transferred between the browser and server is often in a format called JavaScript Object Notation (JSON). JSON resembles JavaScript object literal syntax, except that it's transferred as a string. Once received, it can be converted into an object and used in a script.<br><br>This section covers how to transfer and use data using Ajax technologies with a freeCodeCamp API.",
           ""
         ]
       ],
@@ -184,13 +184,13 @@
         "JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a <code>{</code> and a <code>}</code>.",
         "These properties and their values are often referred to as \"key-value pairs\".",
         "However, JSON transmitted by APIs are sent as <code>bytes</code>, and your application receives it as a <code>string</code>. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The <code>JSON.parse</code> method parses the string and constructs the JavaScript object described by it.",
-        "You can request the JSON from Free Code Camp's Cat Photo API. Here's the code you can put in your click event to do this:",
+        "You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:",
         "<blockquote>req=new XMLHttpRequest();<br>req.open(\"GET\",'/json/cats.json',true);<br>req.send();<br>req.onload=function(){<br>  json=JSON.parse(req.responseText);<br>  document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);<br>};</blockquote>",
         "Here's a review of what each piece is doing. The JavaScript <code>XMLHttpRequest</code> object has a number of properties and methods that are used to transfer data. First, an instance of the <code>XMLHttpRequest</code> object is created and saved in the <code>req</code> variable.",
         "Next, the <code>open</code> method initializes a request - this example is requesting data from an API, therefore is a \"GET\" request. The second argument for <code>open</code> is the URL of the API you are requesting data from. The third argument is a Boolean value where <code>true</code> makes it an asynchronous request.",
         "The <code>send</code> method sends the request. Finally, the <code>onload</code> event handler parses the returned data and applies the <code>JSON.stringify</code> method to convert the JavaScript object into a string. This string is then inserted as the message text.",
         "<hr>",
-        "Update the code to create and send a \"GET\" request to the Free Code Camp Cat Photo API. Then click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the API."
+        "Update the code to create and send a \"GET\" request to the freeCodeCamp Cat Photo API. Then click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the API."
       ],
       "challengeSeed": [
         "<script>",
@@ -241,7 +241,7 @@
       ],
       "tests": [
         "assert(code.match(/new\\s+?XMLHttpRequest\\(\\s*?\\)/g), 'message: Your code should create a new <code>XMLHttpRequest</code>.');",
-        "assert(code.match(/\\.open\\(\\s*?('|\")GET\\1\\s*?,\\s*?('|\")\\/json\\/cats\\.json\\2\\s*?,\\s*?true\\s*?\\)/g), 'message: Your code should use the <code>open</code> method to initialize a \"GET\" request to the Free Code Camp Cat Photo API.');",
+        "assert(code.match(/\\.open\\(\\s*?('|\")GET\\1\\s*?,\\s*?('|\")\\/json\\/cats\\.json\\2\\s*?,\\s*?true\\s*?\\)/g), 'message: Your code should use the <code>open</code> method to initialize a \"GET\" request to the freeCodeCamp Cat Photo API.');",
         "assert(code.match(/\\.send\\(\\s*\\)/g), 'message: Your code should use the <code>send</code> method to send the request.');",
         "assert(code.match(/\\.onload=function\\(\\s*?\\)\\s*?{/g), 'message: Your code should have an <code>onload</code> event handler set to a function.');",
         "assert(code.match(/JSON\\.parse\\(.*\\.responseText\\)/g), 'message: Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.');",
@@ -259,11 +259,11 @@
       "id": "587d7fae367417b2b2512be4",
       "title": "Access the JSON Data from an API",
       "description": [
-        "In the previous challenge, you saw how to get JSON data from the Free Code Camp Cat Photo API.",
+        "In the previous challenge, you saw how to get JSON data from the freeCodeCamp Cat Photo API.",
         "Now you'll take a closer look at the returned data to better understand the JSON format. Recall some notation in JavaScript:",
         "<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>\" \" -> Double quotes represent a string. They are also used for key names in JSON</blockquote>",
         "Understanding the structure of the data that an API returns is important because it influences how you retrieve the values you need.",
-        "On the right, click the \"Get Message\" button to load the Free Code Camp Cat Photo API JSON into the HTML.",
+        "On the right, click the \"Get Message\" button to load the freeCodeCamp Cat Photo API JSON into the HTML.",
         "The first and last character you see in the JSON data are square brackets <code>[ ]</code>. This means that the returned data is an array. The second character in the JSON data is a curly <code>{</code> bracket, which starts an object. Looking closely, you can see that there are three separate objects. The JSON data is an array of three objects, where each object contains information about a cat photo.",
         "You learned earlier that objects contain \"key-value pairs\" that are separated by commas. In the Cat Photo example, the first object has <code>\"id\":0</code> where \"id\" is a key and 0 is its corresponding value. Similarly, there are keys for \"imageLink\", \"altText\", and \"codeNames\". Each cat photo object has these same keys, but with different values.",
         "Another interesting \"key-value pair\" in the first object is <code>\"codeNames\":[\"Juggernaut\",\"Mrs. Wallace\",\"ButterCup\"]</code>. Here \"codeNames\" is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.",
@@ -498,7 +498,7 @@
       "id": "587d7fae367417b2b2512be7",
       "title": "Pre-filter JSON",
       "description": [
-        "If you don't want to render every cat photo you get from the Free Code Camp Cat Photo API, you can pre-filter the JSON before looping through it.",
+        "If you don't want to render every cat photo you get from the freeCodeCamp Cat Photo API, you can pre-filter the JSON before looping through it.",
         "Given that the JSON data is stored in an array, you can use the <code>filter</code> method to filter out the cat whose \"id\" key has a value of 1.",
         "Here's the code to do this:",
         "<blockquote>json = json.filter(function(val) {<br>  return (val.id !== 1);<br>});</blockquote>",

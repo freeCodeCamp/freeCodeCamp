@@ -648,7 +648,7 @@
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to freeCodeCamp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freeCodeCamp.com\"&#62; link to freeCodeCamp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<hr>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
@@ -679,7 +679,7 @@
             "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Hier ist ein Beispiel:",
-            "<code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freeCodeCamp.com\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
             "<hr>",
             "Erstelle ein <code>a</code> Element, das auf <code>http://freecatphotoapp.com</code> verlinkt und den \"cat photos\" als <code>anchor text</code> (Link-Text) beinhaltet."
           ]
@@ -691,7 +691,7 @@
             "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a> ",
             "He aquí un ejemplo:",
-            "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freecodecamp.com\"&#62; enlace a freeCodeCamp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freeCodeCamp.com\"&#62; enlace a freeCodeCamp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
             "<hr>",
             "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"fotos de gatos\"."
           ]
@@ -703,7 +703,7 @@
             "Aqui está um diagrama de um elemento <code>a</code>. Neste caso, o elemento <code>a</code> é utilizado no meio de um elemento de parágrafo, o que significa que o link externo aparecerá no meio de uma frase.",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como as tags de âncora se compõem com o texto, como na próxima linha\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Veja um exemplo:",
-            "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freecodecamp.com\"&#62; link ligado ao freeCodeCamp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freeCodeCamp.com\"&#62; link ligado ao freeCodeCamp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
             "<hr>",
             "Crie um elemento <code>a</code> que esteja ligado ao site <code>http://freecatphotoapp.com</code> e tenha como <code>texto de âncora</code> \"fotos de gatos\"."
           ]
@@ -715,7 +715,7 @@
             "Вот диаграмма элемента <code>a</code>. В этом случае, элемент <code>a</code> использован в середине элемента параграфа, что значит, что ссылка появится в середине предложения.",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Вот пример:",
-            "<code>&#60;p&#62;Вот &#60;a href=\"http://freecodecamp.com\"&#62; ссылка на freeCodeCamp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Вот &#60;a href=\"http://freeCodeCamp.com\"&#62; ссылка на freeCodeCamp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
             "<hr>",
             "Создайте элемент <code>a</code>, который присоединяет <code>http://freecatphotoapp.com</code> и имеет значение \"cat photos\" в качестве <code>текста якоря</code>."
           ]
@@ -767,7 +767,7 @@
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"https://freecodecamp.com\"&#62; link to freeCodeCamp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"https://freeCodeCamp.com\"&#62; link to freeCodeCamp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<code>Nesting</code> just means putting one element inside of another element.",
         "<hr>",
         "Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>main</code> element) so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
@@ -803,7 +803,7 @@
             "Hier ist nochmal ein Beispiel für ein <code>a</code> Element:",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Klick zum Vergrößern\" alt=\"Eine Darstellung wie Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Hier ist ein Beispiel:",
-            "<code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.com\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freeCodeCamp.com\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
             "<code>Nesting</code> bedeuted ein Element innerhalb eines anderen Elements zu schreiben",
             "<hr>",
             "Jetzt umschließe dein <code>a</code> Element mit einem neuen <code>p</code> Element (direkt nach dem bereits existierenden <code>main</code> Element) indem steht \"View more cat photos\", wo allerdings nur \"cat photos\" ein Link ist und der Rest normaler Text."
@@ -815,7 +815,7 @@
             "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "He aquí un ejemplo:",
-            "<code>&#60;p&#62;Aquí hay un &#60;a href=\"https://freecodecamp.com\"&#62; enlace a freeCodeCamp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Aquí hay un &#60;a href=\"https://freeCodeCamp.com\"&#62; enlace a freeCodeCamp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
             "<code>Anidamiento</code> simplemente significa poner un elemento dentro de otro elemento.",
             "<hr>",
             "Ahora anida el elemento <code>a</code> existente dentro de un nuevo elemento <code>p</code> (justo después del elemento <code>main</code> que ya tienes) de tal forma que el párrafo que lo rodee diga \"View more cat photos\", pero que sólo \"cat photos\" sea un enlace, y el resto sea texto plano ."
@@ -827,7 +827,7 @@
             "Outra vez, aqui está um diagrama de um elemento <code>a</code> para você usar como referência.",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Veja um exemplo:",
-            "<code>&#60;p&#62;Este é um &#60;a href=\"https://freecodecamp.com\"&#62; link ligado ao freeCodeCamp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Este é um &#60;a href=\"https://freeCodeCamp.com\"&#62; link ligado ao freeCodeCamp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
             "<code>Aninhamento</code> significa ter um elemento no interior de outro elemento.",
             "<hr>",
             "Agora, aninhe o elemento <code>a</code> existente dentro de um novo elemento <code>p</code> de forma que o parágrafo diga \"View more cat photos\", mas onde apenas \"cat photos\" seja um link, e o resto seja texto comum."
@@ -839,7 +839,7 @@
             "Вот диаграмма элемента <code>a</code>:",
             "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Вот пример:",
-            "<code>&#60;p&#62;Вот &#60;a href=\"https://freecodecamp.com\"&#62; ссылка на freeCodeCamp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Вот &#60;a href=\"https://freeCodeCamp.com\"&#62; ссылка на freeCodeCamp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
             "<code>Вложенность</code> значит установку одного элемента внутрь друго элемента.",
             "<hr>",
             "Теперь вложите ваш существующий элемент <code>a</code> внутрь нового элемента <code>p</code> (сразу после существующего элемента <code>main</code>) таким образом, что добавляемый параграф сообщает: \"View more cat photos\", но где только \"cat photos\" является ссылкой, а остальной текст обычный."

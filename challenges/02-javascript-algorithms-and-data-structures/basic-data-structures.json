@@ -790,7 +790,7 @@
         "  data: {",
         "    username: 'kennethCodesAllDay',",
         "    joinDate: 'March 26, 2016',",
-        "    organization: 'Free Code Camp',",
+        "    organization: 'freeCodeCamp',",
         "    friends: [",
         "      'Sam',",
         "      'Kira',",
