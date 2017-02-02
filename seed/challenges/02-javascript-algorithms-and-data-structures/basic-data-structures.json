@@ -88,7 +88,7 @@
        "<blockquote>ourArray[1] = \"not b anymore\";<br>// ourArray now equals [\"a\", \"not b anymore\", \"c\"];</blockquote>",
        "Using bracket notation, we have now reset the item at index 1 from <code>\"b\"</code>, to <code>\"not b anymore\"</code>.",
        "<hr>",
-       "In order to complete this challenge, set the 2nd position (1st index) of <code>myArray</code> to anything you want, besides <code>\"b\"</code>."
+       "In order to complete this challenge, set the 2nd position (index <code>1</code>) of <code>myArray</code> to anything you want, besides <code>\"b\"</code>."
      ],
      "challengeSeed": [
        "let myArray = [\"a\", \"b\", \"c\", \"d\"];",
