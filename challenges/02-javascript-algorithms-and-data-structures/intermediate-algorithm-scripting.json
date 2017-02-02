@@ -517,7 +517,9 @@
         "assert.deepEqual(translatePigLatin(\"paragraphs\"), \"aragraphspay\", 'message: <code>translatePigLatin(\"paragraphs\")</code> should return \"aragraphspay\".');",
         "assert.deepEqual(translatePigLatin(\"glove\"), \"oveglay\", 'message: <code>translatePigLatin(\"glove\")</code> should return \"oveglay\".');",
         "assert.deepEqual(translatePigLatin(\"algorithm\"), \"algorithmway\", 'message: <code>translatePigLatin(\"algorithm\")</code> should return \"algorithmway\".');",
-        "assert.deepEqual(translatePigLatin(\"eight\"), \"eightway\", 'message: <code>translatePigLatin(\"eight\")</code> should return \"eightway\".');"
+        "assert.deepEqual(translatePigLatin(\"eight\"), \"eightway\", 'message: <code>translatePigLatin(\"eight\")</code> should return \"eightway\".');",
+        "assert.deepEqual(translatePigLatin(\"schwartz\"), \"artzschway\", 'message: Should handle words where the first vowel comes in the end of the word.');",
+        "assert.deepEqual(translatePigLatin(\"rhythm\"), \"rhythmay\", 'message: Should handle words without vowels.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
