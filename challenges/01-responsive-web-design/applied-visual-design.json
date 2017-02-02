@@ -820,7 +820,7 @@
         "</div>"
       ],
       "tests": [
-        "assert($('.links').css('opacity') == '0.7', 'message: Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.');"
+        "assert.approximately(parseFloat($('.links').css('opacity')), 0.7, 0.1, 'message: Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.');"
       ],
       "solutions": [],
       "hints": [],
