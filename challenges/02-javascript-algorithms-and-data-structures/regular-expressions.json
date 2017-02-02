@@ -448,12 +448,12 @@
       ],
       "challengeSeed": [
         "// example crowd gathering",
-        "let crowd = 'P1P2P3P4P5P6CCCP7P8P9'",
+        "let crowd = 'P1P2P3P4P5P6CCCP7P8P9';",
         "",
-        "let reCriminals = /./ // Change this line",
+        "let reCriminals = /./; // Change this line",
         "",
-        "let matchedCriminals = crowd.match(reCriminals)",
-        "console.log(matchedCriminals)"
+        "let matchedCriminals = crowd.match(reCriminals);",
+        "console.log(matchedCriminals);"
       ],
       "tests": [
         "assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C', 'message: Your regex should match <em>one</em> criminal (\"<code>C</code>\") in <code>\"C\"</code>');",
