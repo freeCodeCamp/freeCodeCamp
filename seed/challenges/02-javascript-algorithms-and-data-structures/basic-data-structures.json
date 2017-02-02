@@ -227,7 +227,9 @@
       ],
       "tests": [
         "assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick'], 'message: <code>htmlColorNames</code> should return <code>[\"DarkSalmon\", \"BlanchedAlmond\", \"LavenderBlush\", \"PaleTurqoise\", \"FireBrick\"]</code>');",
-        "assert.notStrictEqual(htmlColorNames.toString().search(/\\.splice\\(/), -1, 'message: The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method');"
+        "assert(/.splice/.test(code), 'message: The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method');",
+        "assert(!/shift|unshift/.test(code), 'message: You should not use <code>shift()</code> or <code>unshift()</code>.');",
+        "assert(!/\\[\\d\\]\\s*=/.test(code), 'message: You should not use array bracket notation.');"
       ],
       "type": "waypoint",
       "solutions": [],
