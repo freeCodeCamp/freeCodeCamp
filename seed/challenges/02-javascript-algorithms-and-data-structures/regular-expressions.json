@@ -41,7 +41,7 @@
         "Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.",
         "If you want to find the word <code>\"the\"</code> in the string <code>\"The dog chased the cat\"</code>, you could use the following regular expression: <code>/the/</code>. Notice that quote marks are not required within the regular expression.",
         "JavaScript has multiple ways to use regexes. One way to test a regex is using the <code>.test()</code> method. The <code>.test()</code> method takes the regex, applies it to a string (which is placed inside the parentheses), and returns <code>true</code> or <code>false</code> if your pattern finds something or not.",
-        "<blockquote>let testStr = \"FreeCodeCamp\";<br>let testRegex = /Code/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>",
+        "<blockquote>let testStr = \"freeCodeCamp\";<br>let testRegex = /Code/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>",
         "<hr>",
         "Apply the regex <code>myRegex</code> on the string <code>myString</code> using the <code>.test()</code> method."
       ],
@@ -127,15 +127,15 @@
         "You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case.",
         "The flag that ignores case is the <code>i</code> flag. You can use it by appending it to the regex. An example of using this flag is <code>/ignorecase/i</code>. This regex can match the strings <code>\"ignorecase\"</code>, <code>\"igNoreCase\"</code>, and <code>\"IgnoreCase\"</code>.",
         "<hr>",
-        "Write a regex <code>fccRegex</code> to match <code>\"FreeCodeCamp\"</code>, no matter its case. Your regex should not match any abbreviations or variations with spaces."
+        "Write a regex <code>fccRegex</code> to match <code>\"freeCodeCamp\"</code>, no matter its case. Your regex should not match any abbreviations or variations with spaces."
       ],
       "challengeSeed": [
-        "let myString = \"FreeCodeCamp\";",
+        "let myString = \"freeCodeCamp\";",
         "let fccRegex = /change/; // Change this line",
         "let result = fccRegex.test(myString);"
       ],
       "tests": [
-        "assert(fccRegex.test('freecodecamp'), 'message: Your regex should match <code>freecodecamp</code>');",
+        "assert(fccRegex.test('freeCodeCamp'), 'message: Your regex should match <code>freeCodeCamp</code>');",
         "assert(fccRegex.test('FreeCodeCamp'), 'message: Your regex should match <code>FreeCodeCamp</code>');",
         "assert(fccRegex.test('FreecodeCamp'), 'message: Your regex should match <code>FreecodeCamp</code>');",
         "assert(fccRegex.test('FreeCodecamp'), 'message: Your regex should match <code>FreeCodecamp</code>');",

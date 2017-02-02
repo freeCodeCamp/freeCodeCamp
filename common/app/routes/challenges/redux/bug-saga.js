@@ -41,7 +41,7 @@ export default function bugSaga(actions$, getState, { window }) {
       } = window;
       if (type === types.openIssueSearch) {
         window.open(
-          'https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
+          'https://github.com/freeCodeCamp/freeCodeCamp/issues?q=' +
           'is:issue is:all ' +
           challengeName
         );

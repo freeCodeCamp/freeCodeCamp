@@ -49,7 +49,7 @@
       "id": "bad87fee1348bd9acde08712",
       "title": "Use Responsive Design with Bootstrap Fluid Containers",
       "description": [
-        "In the HTML5 and CSS section of FreeCodeCamp we built a Cat Photo App. Now let's go back to it. This time, we'll style it using the popular Bootstrap responsive CSS framework.",
+        "In the HTML5 and CSS section of freeCodeCamp we built a Cat Photo App. Now let's go back to it. This time, we'll style it using the popular Bootstrap responsive CSS framework.",
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
         "You can add Bootstrap to any app by adding the following code to the top of your HTML:",

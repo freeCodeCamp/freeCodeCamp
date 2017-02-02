@@ -12,7 +12,7 @@
         "The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):",
         "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
         "For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function telephoneCheck(str) {",
@@ -69,7 +69,7 @@
             "El usuario debe llenar el campo del formulario de la forma que desee siempre y cuando tenga el formato de un número válido en los EEUU. Los números mostrados a continuación tienen formatos válidos en los EEUU:",
             "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
             "Para esta prueba se te presentará una cadena de texto como por ejemplo: <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Tu trabajo consiste en validar o rechazar el número telefónico tomando como base cualquier combinación de los formatos anteriormente presentados. El código de área es requrido. Si el código de país es provisto, debes confirmar que este es <code>1</code>. La función debe devolver true si la cadena de texto es un número telefónico válido en los EEUU; de lo contrario, debe devolver false.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "it": {
@@ -79,7 +79,7 @@
             "L'utente può digitare qualunque stringa nel campo di inserimento, purchè sia un numero di telefono valido negli Stati Uniti. Qui sotto alcuni esempi di numeri di telefono validi negli Stati Uniti (fai riferimento ai test per le altre varianti):",
             "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
             "In questo problema ti saranno presentate delle stringe come <code>800-692-7753</code> o <code>8oo-six427676;laskdjf</code>. Il tuo obiettivo è di validare o rigettare il numero di telefono basato su una qualunque combinazione dei formati specificati sopra. Il prefisso di zona è obbligatorio. Se il prefisso nazionale è presente, devi confermare che corrisponda a <code>1</code>. Ritorna <code>true</code> se la stringa è un numero di telefono valido negli Stati Uniti; altrimenti ritorna <code>false</code>.",
-            "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+            "Ricorda di usare <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
         },
         "pt-br": {
@@ -89,7 +89,7 @@
             "O usuário pode preencher o campo de qualquer maneira com tanto que seja um número válido nos EUA. Os seguintes exemplos são formatos válidos para números de telefone nos EUA (baseie-se nos testes abaixo para outras variações):",
             "<blockquote>555-555-5555\n(555)555-5555\n(555) 555-5555\n555 555 5555\n5555555555\n1 555 555 5555</blockquote>",
             "Para esse desafio será dado a você uma string como <code>800-692-7753</code> ou <code>8oo-six427676;laskdjf</code>. Seu trabalho é validar ou rejeitar o número de telefone dos EUA baseado nos exmplos de formatos fornecidos acima. O código de área é obrigatório. Se o código do país for fornecido, você deve confirmar que o código do país é <code>1</code>. Retorne <code>true</code> se a string é um número válido nos EUA; caso contrário retorne <code>false</code>.",
-            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+            "Lembre-se de usar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }
@@ -100,7 +100,7 @@
       "description": [
         "Create a function that takes two or more arrays and returns an array of the <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of the provided arrays.",
         "Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term \"symmetric difference\" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). The resulting array must contain only unique values (<em>no duplicates</em>).",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function sym(args) {",
@@ -140,7 +140,7 @@
           "description": [
             "Crea una función que acepte dos o más arreglos y que devuelva un arreglo conteniendo la diferenia simétrica entre ambos",
             "En Matemáticas, el término 'diferencia simétrica' se refiere a los elementos en dos conjuntos que están en el primer conjunto o en el segundo, pero no en ambos.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "it": {
@@ -148,7 +148,7 @@
           "description": [
             "Crea una funzione che accetti due o più array e che ritorni un array contenente la <dfn>differenza simmetrica</dfn> (<code>&xutri;</code> o <code>&oplus;</code>) degli stessi.",
             "Dati due insiemi (per esempio l'insieme <code>A = {1, 2, 3}<code> e l'insieme <code>B = {2, 3, 4}</code>, il termine matematico \"differenza simmetrica\" di due insiemi è l'insieme degli elementi che sono in almeno uno dei due insiemi, ma non in entrambi (<code>A &xutri; B = C = {1, 4}</code>). Per ogni differenza simmetrica aggiuntiva che fai (per esempio su un insieme <code>D = {2, 3}</code>), devi prendere l'insieme degli elementi che sono in almeno uno dei due insiemi ma non in entrambi (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>).",
-            "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+            "Ricorda di usare <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
         },
         "pt-br": {
@@ -156,7 +156,7 @@
           "description": [
             "Crie uma função que recebe duas ou mais matrizes e retorna a matriz <dfn>diferença simétrica</dfn> (<code>&xutri;</code> ou <code>&oplus;</code>) das matrizes fornecidas.",
             "Dado dois conjuntos (por exemplo conjunto <code>A = {1, 2, 3}</code> e conjunto <code>B = {2, 3, 4}</code>), o termo matemático \"diferença simétrica\" dos dois cojuntos é o conjunto dos elementos que estão em um dos conjuntos, mas não nos dois (<code>A &xutri; B = C = {1, 4}</code>). Para cada diferença simétrica adicional que você faz (digamos em um terceiro conjunto <code>D = {2, 3}</code>), voce deve retornar o conjunto no qual os elementos estão em um dos conjuntos mas não nos dois (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). O conjunto final deve ter somentes valores únicos (<em>sem números repetidos</em>).",
-            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+            "Lembre-se de usar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }
@@ -169,7 +169,7 @@
         "<code>cid</code> is a 2D array listing available currency.",
         "Return the string <code>\"Insufficient Funds\"</code> if cash-in-drawer is less than the change due or if you cannot return the exact change. Return the string <code>\"Closed\"</code> if cash-in-drawer is equal to the change due.",
         "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.",
+        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.",
         "<table class='table table-striped'><tr><th>Currency Unit</th><th>Amount</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.1 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1 (DOLLAR)</td></tr><tr><td>Five Dollars</td><td>$5 (FIVE)</td></tr><tr><td>Ten Dollars</td><td>$10 (TEN)</td></tr><tr><td>Twenty Dollars</td><td>$20 (TWENTY)</td></tr><tr><td>One-hundred Dollars</td><td>$100 (ONE HUNDRED)</td></tr></table>"
       ],
       "challengeSeed": [
@@ -219,7 +219,7 @@
             "cid es un arreglo bidimensional que lista la cantidad de dinero disponible",
             "La función debe devolver la cadena de texto \"Insufficient Funds\" si el cid es menor al cambio requerido. También debe devolver \"Closed\" si el cid es igual al cambio",
             "De no ser el caso, devuelve el cambio en monedas y billetes, ordenados de mayor a menor denominación.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "it": {
@@ -229,7 +229,7 @@
             "<code>cid</code> è un array a due dimensioni che contiene la quantità di monete e banconote disponibili.",
             "Ritorna la stringa <code>\"Insufficient Funds\"</code> se la quantità di denaro disponibile nel registratore di cassa non è abbastanza per restituire il resto. Ritorna la stringa <code>\"Closed\"</code> se il denaro disponibile è esattamente uguale al resto.",
             "Altrimenti, ritorna il resto in monete e banconote, ordinate da quelle con valore maggiore a quelle con valore minore.",
-            "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+            "Ricorda di usare <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
         },
         "pt-br": {
@@ -239,7 +239,7 @@
             "<code>cid</code> é uma matriz bidimensional que lista o dinheiro disponível.",
             "Retorne a string <code>\"Insufficient Funds\"</code> se o dinheiro na caixa registradora é menor do que o troco ou se não é possível retornar o troco exato. Retorne a string <code>\"Closed\"</code> se o dinheiro na caixa é igual ao troco.",
             "Case cotrário, retorne o troco em moedas e notas, ordenado do maior para menor.",
-            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código.",
+            "Lembre-se de usar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código.",
             "<table class='table table-striped'><tr><th>Currency Unit</th><th>Amount</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.1 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1 (DOLLAR)</td></tr><tr><td>Five Dollars</td><td>$5 (FIVE)</td></tr><tr><td>Ten Dollars</td><td>$10 (TEN)</td></tr><tr><td>Twenty Dollars</td><td>$20 (TWENTY)</td></tr><tr><td>One-hundred Dollars</td><td>$100 (ONE HUNDRED)</td></tr></table>"
           ]
         }
@@ -250,7 +250,7 @@
       "title": "Inventory Update",
       "description": [
         "Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities (in <code>arr1</code>). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by item.",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function updateInventory(arr1, arr2) {",
@@ -296,21 +296,21 @@
           "title": "Actualizando el Inventario",
           "description": [
             "Compara y actualiza el inventario actual, almacenado en un arreglo bidimensional, contra otro arreglo bidimensional de inventario nuevo. Actualiza las cantidades en el inventario actual y, en caso de recibir una nueva mercancía, añade su nombre y la cantidad recibida al arreglo del inventario en orden alfabético.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "it": {
           "title": "Aggiornamento dell'Inventario",
           "description": [
             "Confronta e aggiorna l'inventario, contenuto in un array bidimensionale, con un secondo array bidimensionale relativo ad una nuova consegna. Aggiorna le quantità disponibili in inventario (dentro <code>arr1</code>). Se uno degli articoli non è presente nell'inventario, aggiungi allo stesso il nuovo articolo e la sua quantità. Ritorna un array con l'inventario aggiornato, che deve essere ordinato alfabeticamente per articolo.",
-            "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+            "Ricorda di usare <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
         },
         "pt-br": {
           "title": "Atualizando Inventário",
           "description": [
             "Compare e atualize o inventário armazenado em um matriz 2D contra uma segunda matriz 2D de uma entrega recente. Atualize a quantidade de itens no inventário atual (em <code>arr1</code>). Se um item não pode ser encontrado, adicione um novo item e a sua quantidade na matriz do inventário. O inventário retornado deve estar em ordem alfabética por item.",
-            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+            "Lembre-se de usar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }
@@ -321,7 +321,7 @@
       "description": [
         "Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.",
         "For example, <code>aab</code> should return 2 because it has 6 total permutations (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), but only 2 of them (<code>aba</code> and <code>aba</code>) don't have the same letter (in this case <code>a</code>) repeating.",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function permAlone(str) {",
@@ -357,7 +357,7 @@
           "description": [
             "Crea una función que devuelva el número total de permutaciones de las letras en la cadena de texto provista, en las cuales no haya letras consecutivas repetidas",
             "Por ejemplo, 'aab' debe retornar 2 porque, del total de 6 permutaciones posibles, solo 2 de ellas no tienen repetida la misma letra (en este caso 'a').",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "it": {
@@ -365,7 +365,7 @@
           "description": [
             "Ritorna il numero totale di permutazioni della stringa passata che non hanno lettere consecutive riptetute. Assumi che tutti i caratteri nella stringa passata siano unici.",
             "Per esempio, <code>aab</code> deve ritornare 2, perchè la stringa ha 6 permutazioni possibili in totale (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), ma solo 2 di loro (<code>aba</code> e <code>aba</code>) non contengono la stessa lettera (in questo caso <code>a</code> ripetuta).",
-            "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+            "Ricorda di usare <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
         },
         "pt-br": {
@@ -373,7 +373,7 @@
           "description": [
             "Retorne o número total de permutações da string fornecida que não tem letras consecutivas repetidas. Assuma que todos os caracteres na string fornecida são únicos.",
             "Por exemplo, <code>aab</code> deve retornar 2 porque tem um total de 6 permutações (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), mas somente duas delas (<code>aba</code> and <code>aba</code>) não tem a mesma letra (nesse caso <code>a</code>) se repetindo.",
-            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+            "Lembre-se de usar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }
@@ -388,7 +388,7 @@
         "<table class=\"table\"><tr><th><b>Index</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
         "Below we'll take their corresponding indices and add them.",
         "7 + 13 = 20 &#8594; Indices 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indices 1 + 2 = 3<br>3 + 3 = 6 &#8594 Return <code>6</code>",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function pairwise(arr, arg) {",
@@ -419,7 +419,7 @@
             "Crea una función que devuelva la suma de todos los índices de los elementos de 'arr' que pueden ser emparejados con otro elemento de tal forma que la suma de ambos equivalga al valor del segundo argumento, 'arg'. Si varias combinaciones son posibles, devuelve la menor suma de índices. Una vez un elemento ha sido usado, no puede ser usado de nuevo para emparejarlo con otro elemento.",
             "Por ejemplo, pairwise([1, 4, 2, 3, 0, 5], 7) debe devolver 11 porque 4, 2, 3 y 5 pueden ser emparejados para obtener una suma de 7",
             "pairwise([1, 3, 2, 4], 4) devolvería el valor de 1, porque solo los primeros dos elementos pueden ser emparejados para sumar 4. ¡Recuerda que el primer elemento tiene un índice de 0!",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "it": {
@@ -431,7 +431,7 @@
             "<table class=\"table\"><tr><th><b>Indice</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Valore</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
             "Qui sotto prendiamo gli indici corrispondenti e li sommiamo.",
             "7 + 13 = 20 &#8594; Indici 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indici 1 + 2 = 3<br>3 + 3 = 6 &#8594 Ritorna <code>6</code>",
-            "Ricorda di usare <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
+            "Ricorda di usare <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
           ]
         },
         "pt-br": {
@@ -443,7 +443,7 @@
             "<table class=\"table\"><tr><th><b>Index</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
             "Abaixo nós pegamos os índices correspondentes e somá-los.",
             "7 + 13 = 20 &#8594; Indices 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indices 1 + 2 = 3<br>3 + 3 = 6 &#8594 Retorna <code>6</code>",
-            "Lembre-se de usar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
+            "Lembre-se de usar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
       }

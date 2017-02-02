@@ -799,14 +799,14 @@
         "<code>.clear()</code> removes all key, value pairs",
         "<code>.entries()</code> returns an array of all the keys in insertion order",
         "<code>.values()</code> returns an array of all the values in insertion order",
-        "Instructions: Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair <code>Free Code Camp</code>, <code>Awesome!</code> to it."
+        "Instructions: Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair <code>freeCodeCamp</code>, <code>Awesome!</code> to it."
       ],
       "challengeSeed": [
         "// change code below this line"
       ],
       "tests": [
         "assert(typeof myMap === 'object', 'message: The myMap object exists.');",
-        "assert(myMap.get('Free Code Camp') === 'Awesome!', 'message: myMap contains the key value pair <code>Free Code Camp</code>, <code>Awesome!</code>.');"
+        "assert(myMap.get('freeCodeCamp') === 'Awesome!', 'message: myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');"
       ],
       "type": "waypoint",
       "solutions": [],

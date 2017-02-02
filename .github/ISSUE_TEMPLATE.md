@@ -1,4 +1,4 @@
-<!-- FreeCodeCamp Issue Template -->
+<!-- freeCodeCamp Issue Template -->
 
 <!-- Please provide as much detail as possible for us to fix your issue -->
 <!-- Remove any heading sections you did not fill out -->
@@ -21,9 +21,9 @@
 #### Your Code
 <!-- If relevant, paste all of your challenge code in here -->
 ```js
- 
- 
- 
+
+
+
 ```
 #### Screenshot
 <!-- Add a screenshot of your issue -->

@@ -182,7 +182,7 @@ export default class FCCNav extends React.Component {
               onClick={ this.handleLogoClick }
               >
               <img
-                alt='learn to code javascript at Free Code Camp logo'
+                alt='learn to code javascript at freeCodeCamp logo'
                 className='img-responsive nav-logo'
                 src={ fCClogo }
               />

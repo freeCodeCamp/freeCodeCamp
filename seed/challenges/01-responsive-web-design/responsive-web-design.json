@@ -98,7 +98,7 @@
         "  ",
         "</style>",
         "",
-        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg\" alt=\"Free Code Camp stickers set\">"
+        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg\" alt=\"freeCodeCamp stickers set\">"
       ],
       "tests": [
         "assert(code.match(/max-width:\\s*?100%;/g), 'message: Your <code>img</code> tag should have a <code>max-width</code> set to 100%.');",
@@ -126,7 +126,7 @@
         "  ",
         "</style>",
         "",
-        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg\" alt=\"Free Code Camp sticker that says 'Because CamperBot Cares'\">"
+        "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg\" alt=\"freeCodeCamp sticker that says 'Because CamperBot Cares'\">"
       ],
       "tests": [
         "assert($('img').css('width') == '100px', 'message: Your <code>img</code> tag should have a <code>width</code> of 100 pixels.');",
