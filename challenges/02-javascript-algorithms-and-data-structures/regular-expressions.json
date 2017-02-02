@@ -481,7 +481,7 @@
         "Use the <code>caret</code> character in a regex to find <code>\"Cal\"</code> only in the beginning of the string <code>rickyAndCal</code>."
       ],
       "challengeSeed": [
-        "let rickyAndCal = \"Cal and Ricky both like racing.\"",
+        "let rickyAndCal = \"Cal and Ricky both like racing.\";",
         "let calRegex = /change/; // Change this line",
         "let result = calRegex.test(rickyAndCal);"
       ],
