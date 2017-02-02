@@ -44,7 +44,7 @@
         "2) Pure functions - the same input always gives the same output",
         "3) Functions with limited side effects - any changes, or mutations, to the state of the program outside the function are carefully controlled",
         "<hr>",
-        "The members of Free Code Camp happen to love tea.",
+        "The members of freeCodeCamp happen to love tea.",
         "In the code editor, the <code>prepareTea</code> and <code>getTea</code> functions are already defined for you. Call the <code>getTea</code> function to get 40 cups of tea for the team, and store them in the <code>tea4TeamFCC</code> variable."
       ],
       "challengeSeed": [
@@ -170,7 +170,7 @@
         "A Window object is made up of tabs, and you usually have more than one Window open. The titles of each open site in each Window object is held in an array. After working in the browser (opening new tabs, merging windows, and closing tabs), you want to print the tabs that are still open. Closed tabs are removed from the array and new tabs (for simplicity) get added to the end of it.",
         "The code editor shows an implementation of this functionality with functions for <code>tabOpen()</code>, <code>tabClose()</code>, and <code>join()</code>. The array <code>tabs</code> is part of the Window object that stores the name of the open pages.",
         "<h4>Instructions<h4>",
-        "Run the code in the editor. It's using a method that has side effects in the program, causing incorrect output. The final list of open tabs should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'FreeCodeCamp', 'new tab']</code> but the output will be slightly different.",
+        "Run the code in the editor. It's using a method that has side effects in the program, causing incorrect output. The final list of open tabs should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code> but the output will be slightly different.",
         "Work through the code and see if you can figure out the problem, then advance to the next challenge to learn more."
       ],
       "challengeSeed": [
@@ -201,7 +201,7 @@
         " };",
         "",
         "// Let's create three browser windows",
-        "var workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'FreeCodeCamp']); // Your mailbox, drive, and other work sites",
+        "var workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']); // Your mailbox, drive, and other work sites",
         "var socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // Social sites",
         "var videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); //  Entertainment sites",
         "",
@@ -1147,7 +1147,7 @@
       "description": [
         "The last several challenges covered a number of useful array and string methods that follow functional programming principles. We've also learned about <code>reduce</code>, which is a powerful method used to reduce problems to simpler forms. From computing averages to sorting, any array operation can be achieved by applying it. Recall that <code>map</code> and <code>filter</code> are special cases of <code>reduce</code>.",
         "Let's combine what we've learned to solve a practical problem.",
-        "Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes. For example, if you write a Medium post titled \"Stop Using Reduce\", it's likely the URL would have some form of the title string in it (\".../stop-using-reduce\"). You may have already noticed this on the Free Code Camp site.",
+        "Many content management sites (CMS) have the titles of a post added to part of the URL for simple bookmarking purposes. For example, if you write a Medium post titled \"Stop Using Reduce\", it's likely the URL would have some form of the title string in it (\".../stop-using-reduce\"). You may have already noticed this on the freeCodeCamp site.",
         "<hr>",
         "Fill in the <code>urlSlug</code> function so it converts a string <code>title</code> and returns the hyphenated version for the URL. You can use any of the methods covered in this section, and don't use <code>replace</code>. Here are the requirements:",
         "The input is a string with spaces and title-cased words",

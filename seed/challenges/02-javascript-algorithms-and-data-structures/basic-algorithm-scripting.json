@@ -106,7 +106,7 @@
         "Reverse the provided string.",
         "You may need to turn the string into an array before you can reverse it.",
         "Your result must be a string.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function reverseString(str) {",
@@ -140,7 +140,7 @@
             "Invierte la cadena de texto que se te provee",
             "Puede que necesites convertir la cadena de texto en un arreglo antes de que puedas invertirla",
             "El resultado debe ser una cadena de texto",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -149,7 +149,7 @@
             "Inverta o texto fornecido.",
             "Você pode precisar transformar o texto em uma matriz antes de poder invertê-lo.",
             "Seu resultado deve ser um texto.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -163,7 +163,7 @@
         "Factorials are often represented with the shorthand notation <code>n!</code>",
         "For example: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
         "Only integers greater than or equal to zero will be supplied to the function.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function factorialize(num) {",
@@ -196,7 +196,7 @@
             "El factorial de un número entero positivo n es la multiplicación de todos los enteros positivos menores o iguales a n",
             "Los factoriales son comúnmente representados con la notación <code>n!</code>",
             "Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -207,7 +207,7 @@
             "Fatoriais são comumente representados pela notação <code>n!</code>",
             "Por exemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
             "Apenas inteiros maior que ou iguais a zero serão fornecidos à função.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -218,7 +218,7 @@
       "description": [
         "Return the length of the longest word in the provided sentence.",
         "Your response should be a number.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function findLongestWord(str) {",
@@ -251,7 +251,7 @@
           "description": [
             "Crea una función que devuelva la longitud de la palabra más larga en una frase dada",
             "El resultado debe ser un número",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -259,7 +259,7 @@
           "description": [
             "Retorne o tamanho da maior palavra na sentença fornecida.",
             "Sua resposta deve ser um número.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -270,7 +270,7 @@
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax <code>arr[i]</code>.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function largestOfFour(arr) {",
@@ -301,7 +301,7 @@
             "Crea una función que devuelva un arreglo que contenga el mayor de los números de cada sub-arreglo que recibe. Para simplificar las cosas, el arreglo que recibirá tendrá exactamente 4 sub-arreglos",
             "Recuerda que puedes iterar a través de un arreglo con un búcle simple, y acceder a cada miembro utilizando la sintaxis arr[i].",
             "Si escribes tu propio test con Chai.js, asegúrate de utilizar un operador de igualdad estricto en lugar de un operador de igualdad cuando compares arreglos. ",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -309,7 +309,7 @@
           "description": [
             "Retorne uma matriz que consiste no maior número de cada sub-matriz fornecida. Por simplicidade, a matriz fornecida conterá exatamente 4 sub-matrizes.",
             "Lembre-se, você pode iterar sobre uma matriz com um simples laço for, e acesar cara membro com a sintaxe <code>arr[i]</code>.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -320,7 +320,7 @@
       "description": [
         "Check if a string (first argument, <code>str</code>) ends with the given target string (second argument, <code>target</code>).",
         "This challenge <em>can</em> be solved with the <code>.endsWith()</code> method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function confirmEnding(str, target) {",
@@ -358,7 +358,7 @@
           "title": "Confirma la terminación",
           "description": [
             "Verifica si una cadena de texto (primer argumento) termina con otra cadena de texto (segundo argumento).",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -366,7 +366,7 @@
           "description": [
             "Confira se um texto (primeiro argumento, <code>str</code>) termina com um texto alvo (segundo argumento, <code>target</code>).",
             "Esse desafio <em>pode</em> ser resolvido com o método <code>.endsWith()</code>, que foi introduzido com o ES2015. Mas para o propósito deste desafio, nós gostaríamos que você usasse os métodos de substring do Javascript.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -376,7 +376,7 @@
       "title": "Repeat a String Repeat a String",
       "description": [
         "Repeat a given string <code>str</code> (first argument) for <code>num</code> times (second argument). Return an empty string if <code>num</code> is not a positive number.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function repeatStringNumTimes(str, num) {",
@@ -409,14 +409,14 @@
           "title": "Repite el Texto Repite el Texto",
           "description": [
             "Repite una cadena de texto dada (primer argumento) <code>num</code> veces (segundo argumento). Retorna una cadena de texto vacía si <code>num</code> es un número negativo.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
           "title": "Repita o Texto Repita o Texto",
           "description": [
             "Repita o texto dado <code>str</code> (primeiro argumento) <code>num</code> vezes (segundo argumento). Retorne um texto vazio se <code>num</code> não é for um número positivo.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -428,7 +428,7 @@
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a <code>...</code> ending.",
         "Note that inserting the three dots to the end will add to the string length.",
         "However, if the given maximum string length <code>num</code> is less than or equal to 3, then the addition of the three dots does not add to the string length in determining the truncated string.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function truncateString(str, num) {",
@@ -462,7 +462,7 @@
             "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
             "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
             "Si el <code>num</code es menor o igual a 3, entonces la longitud de los 3 puntos no se añade a la longitud de la cadena.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -471,7 +471,7 @@
             "Trunque um texto (primeiro argumento) se ela for mais longa que o comprimento máximo fornecido (segundo argumento). Retorne o texto truncada com <code>...</code> no final.",
             "Note que os três pontos inseridos no final vão ser adicionados ao tamanho do texto.",
             "Porém, se o tamanho máximo fornecido <code>num</code> for menor que ou igual a 3, então a adição dos três pontos não deve ser considerada no tamanho to texto truncada.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -481,7 +481,7 @@
       "title": "Finders Keepers",
       "description": [
         "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function findElement(arr, func) {",
@@ -509,14 +509,14 @@
           "title": "Buscando la verdad",
           "description": [
             "Crea una función que busque dentro de un vector (primer argumento) y que devuelva el primer elemento que pase una prueba de verdad (segundo argumento).",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "fr": {
           "title": "Détecteur de mensonges",
           "description": [
             "Crée une fonction qui parcourt un tableau (premier argument) et renvoie le premier élément du tableau qui passe le test (second argument).",
-            "N'oublie pas d'utiliser <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+            "N'oublie pas d'utiliser <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
           ]
         }
       }
@@ -527,7 +527,7 @@
       "description": [
         "Check if a value is classified as a boolean primitive. Return true or false.",
         "Boolean primitives are true and false.",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function booWho(bool) {",
@@ -564,7 +564,7 @@
           "description": [
             "Crea una función que verifique si el valor que se le pasa es de tipo booleano. Haz que la función devuelva true o false según corresponda.",
             "Los primitivos booleanos primitivos son: true y false",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "fr": {
@@ -572,7 +572,7 @@
           "description": [
             "Crée une fonction qui vérifie qu'une valeur est de type booléen. Renvoie true ou false.",
             "Les primitives booléennes sont true ou false.",
-            "N'oublie pas d'utiliser <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
+            "N'oublie pas d'utiliser <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
           ]
         }
       }
@@ -583,7 +583,7 @@
       "description": [
         "Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.",
         "For the purpose of this exercise, you should also capitalize connecting words like \"the\" and \"of\".",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function titleCase(str) {",
@@ -613,7 +613,7 @@
           "description": [
             "Crea una función que devuelva la cadena de texto que recibe con la primera letra de cada palabra en mayúscula. Asegúrate de que el resto de las letras sean minúsculas",
             "Para este ejercicio, también debes poner en mayúscula conectores como \"the\" y \"of\".",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -621,7 +621,7 @@
           "description": [
             "Retorne o texto fornecido com a primeira letra de cada palavra em maiúsculo. Garanta que o resto da palavra esteja em formato minúsculo.",
             "Para o propósito deste exercício, você deve transformar também palavras conectivas como \"the\" e \"of\".",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -634,7 +634,7 @@
         "Use the array methods <code>slice</code> and <code>splice</code> to copy each element of the first array into the second array, in order.",
         "Begin inserting elements at index <code>n</code> of the second array.",
         "Return the resulting array. The input arrays should remain the same after the function runs.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function frankenSplice(arr1, arr2, n) {",
@@ -675,7 +675,7 @@
             "Use os métodos de matrizes <code>slice</code> e <code>splice</code> para copiar cada elemento da primeira matriz e colocar na segunda matriz, na ordem.",
             "Comece a inserir elementos no índice <code>n</code> da segunda matriz.",
             "Retorne a matriz resultante. As matrizes fornecidas devem permanecer inalteradas após a função ser executada.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -687,7 +687,7 @@
         "Remove all falsy values from an array.",
         "Falsy values in JavaScript are <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, and <code>NaN</code>.",
         "Hint: Try converting each value to a Boolean.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function bouncer(arr) {",
@@ -719,7 +719,7 @@
           "description": [
             "Remueve todos los valores falsy de un arreglo dado",
             "En javascript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -727,7 +727,7 @@
           "description": [
             "Remova todos os valores falsos de uma matriz.",
             "Valores falsos em JavaScript são <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, e <code>NaN</code>.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -739,7 +739,7 @@
         "Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.",
         "For example, <code>getIndexToIns([1,2,3,4], 1.5)</code> should return <code>1</code> because it is greater than <code>1</code> (index 0), but less than <code>2</code> (index 1).",
         "Likewise, <code>getIndexToIns([20,3,5], 19)</code> should return <code>2</code> because once the array has been sorted it will look like <code>[3,5,20]</code> and <code>19</code> is less than <code>20</code> (index 2) and greater than <code>5</code> (index 1).",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function getIndexToIns(arr, num) {",
@@ -774,7 +774,7 @@
             "Devuelve el menor índice en el que un valor (segundo argumento) debe ser insertado en un arreglo (primer argumento) una vez ha sido ordenado.",
             "Por ejemplo, where([1,2,3,4], 1.5) debe devolver 1 porque el segundo argumento de la función (1.5) es mayor que 1 (con índice 0 en el arreglo), pero menor que 2 (con índice 1).",
             "Mientras que <code>where([20,3,5], 19)</code> debe devolver <code>2</code> porque una vez ordenado el arreglo se verá com <code>[3,5,20]</code> y <code>19</code> es menor que <code>20</code> (índice 2) y mayor que <code>5</code> (índice 1).",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -783,7 +783,7 @@
             "Retorne o menor índice que um valor (segundo argumento) deve ser inserido em uma matriz (primeiro argumento) uma vez que esta foi ordenada. O valor retornado deve ser um número.",
             "Por exemplo, <code>getIndexToIns([1,2,3,4], 1.5)</code> deve retornar <code>1</code> porque é maior do que <code>1</code> (índice 0), mas é menor que <code>2</code> (índice 1).",
             "Da mesma forma, <code>getIndexToIns([20,3,5], 19)</code> deve retornar <code>2</code> porque uma vez que a matriz foi ordenada ficará da seguinte forma <code>[3,5,20]</code> e <code>19</code> é menor que <code>20</code> (índice 2) e maior que <code>5</code> (índice 1).",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -796,7 +796,7 @@
         "For example, <code>[\"hello\", \"Hello\"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.",
         "The arguments <code>[\"hello\", \"hey\"]</code> should return false because the string \"hello\" does not contain a \"y\".",
         "Lastly, <code>[\"Alien\", \"line\"]</code>, should return true because all of the letters in \"line\" are present in \"Alien\".",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function mutation(arr) {",
@@ -833,7 +833,7 @@
             "Por ejemplo, <code>[\"hello\", \"Hello\"]</code>, debe devolver <code>true</code> porque todas las letras en la segunda cadena de texto están presentes en la primera, sin distinguir entre mayúsculas y minúsculas.",
             "En el caso de <code>[\"hello\", \"hey\"]</code> la función debe devolver false porque la cadena de texto \"hello\" no contiene una \"y\".",
             "Finalmente, <code>[\"Alien\", \"line\"]</code>, la función debe devolver <code>true</code> porque todas las letras en \"line\" están presentes en \"Alien\".",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
@@ -843,7 +843,7 @@
             "Por exemplo, <code>[\"hello\", \"Hello\"]</code>, deve retornar verdadeiro pois todas as letras no segundo text estão presentes no primeiro texto.",
             "Os argumentos <code>[\"hello\", \"hey\"]</code> devem retornar falso por o texto \"hello\" não contém a letra \"y\".",
             "Por último, <code>[\"Alien\", \"line\"]</code>, deve retornar verdadeiro pois todas as letras em \"line\" estão presentes em \"Alien\".",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
@@ -853,7 +853,7 @@
       "title": "Chunky Monkey",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a two-dimensional array.",
-        "Remember to use <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
+        "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function chunkArrayInGroups(arr, size) {",
@@ -887,14 +887,14 @@
           "title": "En mil Pedazos",
           "description": [
             "Escribe una función que parta un arreglo (primer argumento) en fragmentos de una longitud dada (segundo argumento) y los devuelva en forma de un arreglo bidimensional.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
+            "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
         "pt-br": {
           "title": "Em Pedaços",
           "description": [
             "Escreva uma funcção que divide uma matriz (primeiro argumento) em grupos de tamanho <code>size</code> (segundo argumento) e os retorna em uma matriz bidimensional.",
-            "Lembre-se de usar <a href=\"http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
+            "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
       }
