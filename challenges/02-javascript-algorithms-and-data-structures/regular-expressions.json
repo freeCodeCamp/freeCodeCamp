@@ -413,7 +413,7 @@
       "description": [
         "In regular expressions, a <code>greedy</code> match finds the longest possible part of a string that fits the regex pattern and returns it as a match. The alternative is called a <code>lazy</code> match, which finds the smallest possible part of the string that satisfies the regex pattern.",
         "You can apply the regex <code>/t[a-z]*i/</code> to the string <code>\"titanic\"</code>. This regex is basically a pattern that starts with <code>t</code>, ends with <code>i</code>, and has some letters in between.",
-        "Regular expressions are by default <code>greedy</code>, so the match would return <code>[\"titani\"]<c/ode>. It finds the largest sub-string possible to fit the pattern.",
+        "Regular expressions are by default <code>greedy</code>, so the match would return <code>[\"titani\"]</code>. It finds the largest sub-string possible to fit the pattern.",
         "However, you can use the <code>?</code> character to change it to <code>lazy</code> matching. <code>\"titanic\"</code> matched against the adjusted regex of <code>/t[a-z]*?i/</code> returns <code>[\"ti\"]</code>.",
         "<hr>",
         "Fix the regex <code>/&lt;.*&gt;/</code> to return the HTML tag <code>&lt;h1&gt;</code> and not the text <code>\"&lt;h1&gt;Winter is coming&lt;/h1&gt;\"</code>. Remember the wildcard <code>.</code> in a regular expression matches any character."
