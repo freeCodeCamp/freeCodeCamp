@@ -248,7 +248,7 @@
         "For example, you want to match <code>\"bag\"</code>, <code>\"big\"</code>, and <code>\"bug\"</code> but not <code>\"bog\"</code>. You can create the regex <code>/b[aiu]g/</code> to do this. The <code>[aiu]</code> is the character class that will only match the characters <code>\"a\"</code>, <code>\"i\"</code>, or <code>\"u\"</code>.",
         "<blockquote>let bigStr = \"big\";<br>let bagStr = \"bag\";<br>let bugStr = \"bug\";<br>let bogStr = \"bog\";<br>let bgRegex = /b[aiu]g/;<br>bigStr.match(bgRegex); // Returns [\"big\"]<br>bagStr.match(bgRegex); // Returns [\"bag\"]<br>bugStr.match(bgRegex); // Returns [\"bug\"]<br>bogStr.match(bgRegex); // Returns null</blockquote>",
         "<hr>",
-        "Use a character class with vowels (<code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code>) in your regex <code>vowelRegex</code> to count the number of vowels in the string <code>quoteSample</code>.",
+        "Use a character class with vowels (<code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code>) in your regex <code>vowelRegex</code> to find all the vowels in the string <code>quoteSample</code>.",
         "<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels."
       ],
       "challengeSeed": [
@@ -257,7 +257,7 @@
         "let result = vowelRegex; // Change this line"
       ],
       "tests": [
-        "assert(result.length == 25, 'message: The number of vowels you counted should be 25.');",
+        "assert(result.length == 25, 'message: You should find all 25 vowels.');",
         "assert(/\\[.*\\]/.test(vowelRegex.source), 'message: Your regex <code>vowelRegex</code> should use a character class.');",
         "assert(vowelRegex.flags.match(/g/).length == 1, 'message: Your regex <code>vowelRegex</code> should use the global flag.');",
         "assert(vowelRegex.flags.match(/i/).length == 1, 'message: Your regex <code>vowelRegex</code> should use the case insensitive flag.');",
