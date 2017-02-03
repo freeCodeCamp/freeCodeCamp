@@ -1180,10 +1180,12 @@
         "var myStr = \"FirstLine\\n\\t\\\\SecondLine\\nThirdLine\";"
       ],
       "tests": [
-        "assert(myStr === \"FirstLine\\n\\t\\\\SecondLine\\nThirdLine\", 'message: <code>myStr</code> should have encoded text with the proper escape sequences and no spacing.');",
-        "assert(myStr.match(/\\n/g).length == 2, 'message: <code>myStr</code> should have two newline characters <code>\\n</code>');",
-        "assert(myStr.match(/\\t/g).length == 1, 'message: <code>myStr</code> should have one tab character <code>\\t</code>');",
-        "assert(myStr.match(/\\\\/g).length == 1, 'message: <code>myStr</code> should have one correctly escaped backslash character <code>\\\\</code>');"
+        "assert(!/ /.test(myStr), 'message: <code>myStr</code> should not contain any spaces');",
+        "assert(/FirstLine/.test(myStr) && /SecondLine/.test(myStr) && /ThirdLine/.test(myStr), 'message: <code>myStr</code> should contain the strings <code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> (remember case sensitivity)');",
+        "assert(/FirstLine\\n/.test(myStr), 'message: <code>FirstLine</code> should be followed by the newline character <code>\\n</code>');",
+        "assert(/\\n\\t/.test(myStr), 'message: <code>myStr</code> should contain a tab character <code>\\t</code> which follows a newline character');",
+        "assert(/\\SecondLine/.test(myStr), 'message: <code>SecondLine</code> should be preceded by the backslash character <code>\\\\</code>');",
+        "assert(/SecondLine\\nThirdLine/.test(myStr), 'message: There should be a newline character between <code>SecondLine</code> and <code>ThirdLine</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1,
