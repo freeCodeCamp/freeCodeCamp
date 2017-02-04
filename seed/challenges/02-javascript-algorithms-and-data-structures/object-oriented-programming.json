@@ -367,11 +367,10 @@
         "  this.name = name;",
         "}",
         "",
-        "let beagle = new Dog(\"Snoopy\");",
-        "// Add your code below this line",
         "",
         "",
-        ""
+        "// Add your code above this line",
+        "let beagle = new Dog(\"Snoopy\");"
       ],
       "tests": [
         "assert(beagle.numLegs !== undefined, 'message: <code>beagle</code> should have a <code>numLegs</code> property.');",
