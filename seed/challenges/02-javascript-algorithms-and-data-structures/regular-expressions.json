@@ -420,7 +420,7 @@
         "Fix the regex <code>/&lt;.*&gt;/</code> to return the HTML tag <code>&lt;h1&gt;</code> and not the text <code>\"&lt;h1&gt;Winter is coming&lt;/h1&gt;\"</code>. Remember the wildcard <code>.</code> in a regular expression matches any character."
       ],
       "challengeSeed": [
-        "let text = \"<h1>Winter is coming</h1>\"",
+        "let text = \"<h1>Winter is coming</h1>\";",
         "let myRegex = /<.*>/; // Change this line",
         "let result = text.match(myRegex);"
       ],
