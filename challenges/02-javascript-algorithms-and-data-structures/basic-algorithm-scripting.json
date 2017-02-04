@@ -426,8 +426,6 @@
       "title": "Truncate a String",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a <code>...</code> ending.",
-        "Note that inserting the three dots to the end will add to the string length.",
-        "However, if the given maximum string length <code>num</code> is less than or equal to 3, then the addition of the three dots does not add to the string length in determining the truncated string.",
         "Remember to use <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -436,11 +434,11 @@
         "  return str;",
         "}",
         "",
-        "truncateString(\"A-tisket a-tasket A green and yellow basket\", 11);"
+        "truncateString(\"A-tisket a-tasket A green and yellow basket\", 8);"
       ],
       "tests": [
-        "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", 11) === \"A-tisket...\", 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 11)</code> should return \"A-tisket...\".');",
-        "assert(truncateString(\"Peter Piper picked a peck of pickled peppers\", 14) === \"Peter Piper...\", 'message: <code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 14)</code> should return \"Peter Piper...\".');",
+        "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", 8) === \"A-tisket...\", 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> should return \"A-tisket...\".');",
+        "assert(truncateString(\"Peter Piper picked a peck of pickled peppers\", 11) === \"Peter Piper...\", 'message: <code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> should return \"Peter Piper...\".');",
         "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
         "assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
         "assert(truncateString(\"A-\", 1) === \"A...\", 'message: <code>truncateString(\"A-\", 1)</code> should return \"A...\".');",
@@ -449,7 +447,7 @@
       "type": "bonfire",
       "isRequired": true,
       "solutions": [
-        "function truncateString(str, num) {\n  if(str.length > num ) {\n    if(num > 3) {\n      return str.slice(0, num - 3) + '...';\n    } else {\n      return str.slice(0,num) + '...';\n    }\n  } \n  return str;\n}"
+        "function truncateString(str, num) {\n  if (num >= str.length) {\n    return str;\n  }\n  return str.slice(0, num) + '...';\n}"
       ],
       "MDNlinks": [
         "String.prototype.slice()"
@@ -460,8 +458,6 @@
           "title": "Trunca una Cadena de Texto",
           "description": [
             "Trunca una cadena de texto (primer argumento) si su longitud es mayor que un máximo de caracteres dado (segundo argumento). Devuelve la cadena de texto truncada con una terminación \"...\".",
-            "Ten en cuenta que los tres puntos al final también se cuentan dentro de la longitud de la cadena de texto.",
-            "Si el <code>num</code es menor o igual a 3, entonces la longitud de los 3 puntos no se añade a la longitud de la cadena.",
             "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
@@ -469,8 +465,6 @@
           "title": "Trunque um Texto",
           "description": [
             "Trunque um texto (primeiro argumento) se ela for mais longa que o comprimento máximo fornecido (segundo argumento). Retorne o texto truncada com <code>...</code> no final.",
-            "Note que os três pontos inseridos no final vão ser adicionados ao tamanho do texto.",
-            "Porém, se o tamanho máximo fornecido <code>num</code> for menor que ou igual a 3, então a adição dos três pontos não deve ser considerada no tamanho to texto truncada.",
             "Lembre-se de usar <a href=\"http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se você ficar travado. Escreva seu próprio código."
           ]
         }
