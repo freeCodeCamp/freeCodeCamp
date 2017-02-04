@@ -473,7 +473,7 @@
         "A more efficient way is to set the <code>prototype</code> to a new object that already contains the properties. This way, the properties are added all at once:",
         "<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;numLegs: 2, <br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"nom nom nom\");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"My name is \" + this.name);<br>&nbsp;&nbsp;}<br>};</blockquote>",
         "<hr>",
-        "Add three properties <code>numLegs</code>, <code>eat</code>, and <code>describe</code> to the <code>prototype</code> of <code>Dog</code> by setting the <code>prototype</code> to a new object. The properties can be set to any values."
+        "Add the property <code>numLegs</code> and the two methods <code>eat()</code> and <code>describe()</code> to the <code>prototype</code> of <code>Dog</code> by setting the <code>prototype</code> to a new object."
       ],
       "challengeSeed": [
         "function Dog(name) {",
@@ -488,8 +488,8 @@
       "tests": [
         "assert((/Dog\\.prototype\\s*?=\\s*?{/).test(code), 'message: <code>Dog.prototype</code> should be set to a new object.');",
         "assert(Dog.prototype.numLegs !== undefined, 'message: <code>Dog.prototype</code> should have the property <code>numLegs</code>.');",
-        "assert(Dog.prototype.eat !== undefined, 'message: <code>Dog.prototype</code> should have the property <code>eat</code>.'); ",
-        "assert(Dog.prototype.describe !== undefined, 'message: <code>Dog.prototype</code> should have the property <code>describe</code>.'); "
+        "assert(typeof Dog.prototype.eat === 'function', 'message: <code>Dog.prototype</code> should have the method <code>eat()</code>.'); ",
+        "assert(typeof Dog.prototype.describe === 'function', 'message: <code>Dog.prototype</code> should have the method <code>describe()</code>.'); "
       ],
       "solutions": [
         "function Dog(name) {\n  this.name = name; \n}\nDog.prototype = {\nnumLegs: 4,\n  eat () {\n    console.log('nom nom nom');\n  },\n  describe () {\n    console.log('My name is ' + this.name);\n  }\n};"
