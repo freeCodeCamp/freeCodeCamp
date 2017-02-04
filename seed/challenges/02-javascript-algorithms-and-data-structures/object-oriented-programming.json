@@ -318,7 +318,8 @@
         ""
       ],
       "tests": [
-        "assert(ownProps.includes('name') && ownProps.includes('numLegs'), 'message: <code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');"
+        "assert(ownProps.includes('name') && ownProps.includes('numLegs'), 'message: <code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');",
+        "assert(!/\\Object.keys/.test(code), 'message: Solve this challenge without using the built in method <code>Object.keys()</code>.');"
       ],
       "solutions": [],
       "hints": [],
