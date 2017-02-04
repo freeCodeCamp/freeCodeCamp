@@ -273,9 +273,12 @@
         "Create a new instance of the <code>House</code> constructor, calling it <code>myHouse</code> and passing a number of bedrooms. Then, use <code>instanceof</code> to verify that it is an instance of <code>House</code>."
       ],
       "challengeSeed": [
-        "let House = function(numBedrooms) {",
+        "/* jshint expr: true */",
+        "",
+        "function House(numBedrooms) {",
         "  this.numBedrooms = numBedrooms;",
         "}",
+        "",
         "// Add your code below this line",
         "",
         "",
