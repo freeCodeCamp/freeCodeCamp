@@ -57,7 +57,9 @@
         "assert(typeof(dog.name) === 'string', 'message: <code>dog</code> should have a <code>name</code> property set to a <code>string</code>.');",
         "assert(typeof(dog.numLegs) === 'number', 'message: <code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "let dog = {\n  name: '',\n  numLegs: 4\n};"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -86,7 +88,9 @@
         "assert(code.match(/console\\.log\\(dog\\.name\\)/g), 'message: Your code should use a <code>console.log</code> statement to print the value for the <code>name</code> property of the <code>dog</code> object.');",
         "assert(code.match(/console\\.log\\(dog\\.numLegs\\)/g), 'message: Your code should use a <code>console.log</code> statement to print the value for the <code>numLegs</code> property of the <code>dog</code> object.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "let dog = {\n  name: \"Spot\",\n  numLegs: 4\n};\nconsole.log(dog.name);\nconsole.log(dog.numLegs);"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -117,7 +121,9 @@
         "assert(typeof(dog.sayLegs) === 'function', 'message: <code>dog.sayLegs()</code> should be a function.');",
         "assert(dog.sayLegs() === 'This dog has 4 legs.', 'message: <code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "let dog = {\n  name: \"Spot\",\n  numLegs: 4,\n  sayLegs () {\n    return 'This dog has ' + this.numLegs + ' legs.';\n  }\n};\n\ndog.sayLegs();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -151,7 +157,9 @@
         "assert(dog.sayLegs() === 'This dog has 4 legs.', 'message: <code>dog.sayLegs()</code> should return the given string.');",
         "assert(code.match(/this\\.numLegs/g), 'message: Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "let dog = {\n  name: \"Spot\",\n  numLegs: 4,\n  sayLegs () {\n    return 'This dog has ' + this.numLegs + ' legs.';\n  }\n};\n\ndog.sayLegs();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -184,7 +192,9 @@
         "assert(typeof (new Dog()).color === 'string', 'message: <code>Dog</code> should have a <code>color</code> property set to a string.');",
         "assert(typeof (new Dog()).numLegs === 'number', 'message: <code>Dog</code> should have a <code>numLegs</code> property set to a number.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog (name, color, numLegs) {\n  this.name = 'name';\n  this.color = 'color';\n  this.numLegs = 4;\n}"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -218,7 +228,9 @@
         "assert(hound instanceof Dog, 'message: <code>hound</code> should be created using the <code>Dog</code> constructor.');",
         "assert(code.match(/new/g), 'message: Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog() {\n  this.name = \"Rupert\";\n  this.color = \"brown\";\n  this.numLegs = 4;\n}\nconst hound = new Dog();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -255,7 +267,9 @@
         "assert((new Dog('Clifford')).numLegs === 4, 'message: <code>Dog</code> should have property <code>numLegs</code> set to 4.');",
         "assert(terrier instanceof Dog, 'message: <code>terrier</code> should be created using the <code>Dog</code> constructor.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog (name, color) {\n  this.numLegs = 4;\n  this.name = name;\n  this.color = color;\n}\n\nconst terrier = new Dog();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -286,9 +300,11 @@
       ],
       "tests": [
         "assert(typeof myHouse.numBedrooms === 'number', 'message: <code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.');",
-        "assert(editor.getValue().match(/(myHouse instanceof House)/), 'message: Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.');"
+        "assert(/myHouse\\s*instanceof\\s*House/.test(code), 'message: Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function House(numBedrooms) {\n  this.numBedrooms = numBedrooms;\n}\nconst myHouse = new House(4);\nconsole.log(myHouse instanceof House);"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -323,7 +339,9 @@
       "tests": [
         "assert(ownProps.includes('name') && ownProps.includes('numLegs'), 'message: <code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Bird(name) {\n  this.name = name;\n  this.numLegs = 2;\n}\n\nlet canary = new Bird(\"Tweety\");\nfunction getOwnProps (obj) {\n  const props = [];\n  \n  for (let prop in obj) {\n    if (obj.hasOwnProperty(prop)) {\n      props.push(prop);\n    }\n  }\n  \n  return props;\n}\n\nconst ownProps = getOwnProps(canary);"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -360,7 +378,9 @@
         "assert(typeof(beagle.numLegs) === 'number' , 'message: <code>beagle.numLegs</code> should be a number.');",
         "assert(beagle.hasOwnProperty('numLegs') === false, 'message: <code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog (name) {\n  this.name = name;\n}\nDog.prototype.numLegs = 4;\nlet beagle = new Dog(\"Snoopy\");"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -398,7 +418,9 @@
         "assert(ownProps.includes('name'), 'message: The <code>ownProps</code> array should include <code>\"name\"</code>.');",
         "assert(prototypeProps.includes('numLegs'), 'message: The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog(name) {\n  this.name = name;\n}\n\nDog.prototype.numLegs = 4;\n\nlet beagle = new Dog(\"Snoopy\");\n\nlet ownProps = [];\nlet prototypeProps = [];\nfor (let prop in beagle) {\n  if (beagle.hasOwnProperty(prop)) {\n    ownProps.push(prop);\n  } else {\n    prototypeProps.push(prop);\n  }\n}"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -432,7 +454,9 @@
         "assert(typeof(joinDogFraternity) === 'function', 'message: <code>joinDogFraternity</code> should be defined as a function.');",
         "assert(joinDogFraternity(new Dog(\"\")) === true, 'message: <code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog(name) {\n  this.name = name;\n}\nfunction joinDogFraternity(candidate) {\n  return candidate.constructor === Dog;\n}"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -467,7 +491,9 @@
         "assert(Dog.prototype.eat !== undefined, 'message: <code>Dog.prototype</code> should have the property <code>eat</code>.'); ",
         "assert(Dog.prototype.describe !== undefined, 'message: <code>Dog.prototype</code> should have the property <code>describe</code>.'); "
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog(name) {\n  this.name = name; \n}\nDog.prototype = {\nnumLegs: 4,\n  eat () {\n    console.log('nom nom nom');\n  },\n  describe () {\n    console.log('My name is ' + this.name);\n  }\n};"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -504,7 +530,9 @@
       "tests": [
         "assert(Dog.prototype.constructor === Dog, 'message: <code>Dog.prototype</code> should set the <code>constructor</code> property.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog(name) {\n  this.name = name; \n}\nDog.prototype = {\n  constructor: Dog,\n  numLegs: 2, \n  eat: function() {\n    console.log(\"nom nom nom\"); \n  }, \n  describe: function() {\n    console.log(\"My name is \" + this.name); \n  }\n};"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -535,7 +563,9 @@
       "tests": [
         "assert(/Dog\\.prototype\\.isPrototypeOf\\(beagle\\)/.test(code), 'message: Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog(name) {\n  this.name = name;\n}\nlet beagle = new Dog(\"Snoopy\");\nDog.prototype.isPrototypeOf(beagle);"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -573,7 +603,9 @@
       "tests": [
         "assert(/Object\\.prototype\\.isPrototypeOf/.test(code), \"message: Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>\");"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Dog(name) {\n  this.name = name;\n}\nlet beagle = new Dog(\"Snoopy\");\nDog.prototype.isPrototypeOf(beagle);\nObject.prototype.isPrototypeOf(Dog.prototype);"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -628,7 +660,9 @@
         "assert(!(Bear.prototype.hasOwnProperty('eat')), 'message: <code>Bear.prototype</code> should not have the <code>eat</code> property.');",
         "assert(!(Cat.prototype.hasOwnProperty('eat')), 'message: <code>Cat.prototype</code> should not have the <code>eat</code> property.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Cat(name) {\n  this.name = name; \n}\n\nCat.prototype = {\n  constructor: Cat\n};\n\nfunction Bear(name) {\n  this.name = name; \n}\n\nBear.prototype = {\n  constructor: Bear\n};\n\nfunction Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal,\n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -675,7 +709,9 @@
         "assert(duck instanceof Animal, 'message: <code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.');",
         "assert(beagle instanceof Animal, 'message: <code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal, \n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};\nlet duck = Object.create(Animal.prototype);\nlet beagle = Object.create(Animal.prototype);\n\nduck.eat();\nbeagle.eat();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -715,7 +751,9 @@
       "tests": [
         "assert(Animal.prototype.isPrototypeOf(Dog.prototype), 'message: <code>Dog.prototype</code> should be an instance of <code>Animal</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal,\n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};\n\nfunction Dog() { }\nDog.prototype = Object.create(Animal.prototype);\n\nlet beagle = new Dog();\nbeagle.eat();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -754,7 +792,9 @@
         "assert(Animal.prototype.isPrototypeOf(Dog.prototype), 'message: <code>Dog.prototype</code> should be an instance of <code>Animal</code>.');",
         "assert(beagle.constructor === Dog, 'message: <code>beagle.constructor</code> should return <code>Dog</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Animal() { }\nfunction Bird() { }\nfunction Dog() { }\nBird.prototype = Object.create(Animal.prototype);\nDog.prototype = Object.create(Animal.prototype);\nDog.prototype.constructor = Dog;\nBird.prototype.constructor = Bird;\nlet duck = new Bird();\nlet beagle = new Dog();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -799,7 +839,9 @@
         "assert(beagle instanceof Animal, 'message: <code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.');",
         "assert(beagle.constructor === Dog, 'message: The constructor for <code>beagle</code> should be set to <code>Dog</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Animal() { }\nAnimal.prototype.eat = function() { console.log(\"nom nom nom\"); };\n\nfunction Dog() { }\nDog.prototype = Object.create(Animal.prototype);\nDog.prototype.constructor = Dog;\nDog.prototype.bark = function () {\n  console.log('Woof!');\n};\nlet beagle = new Dog();\n\nbeagle.eat();\nbeagle.bark();"
+      ],
       "hints": [
         "Objects inherit methods from other objects by cloning their prototype. The Object.create method will come in handy, and don't forget to reset the constructor property afterward!"
       ],
@@ -848,7 +890,9 @@
         "assert(penguin.fly() === \"Alas, this is a flightless bird.\", 'message: <code>penguin.fly()</code> should return the string \"Alas, this is a flightless bird.\"');",
         "assert((new Bird()).fly() === \"I am flying!\", 'message: The <code>bird.fly()</code> method should return \"I am flying!\"');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Bird() { }\n\nBird.prototype.fly = function() { return \"I am flying!\"; };\n\nfunction Penguin() { }\nPenguin.prototype = Object.create(Bird.prototype);\nPenguin.prototype.constructor = Penguin;\nPenguin.prototype.fly = () => 'Alas, this is a flightless bird.';\nlet penguin = new Penguin();\nconsole.log(penguin.fly());"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -893,7 +937,9 @@
         "assert(typeof bird.glide === \"function\", 'message: Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.');",
         "assert(typeof boat.glide === \"function\", 'message: Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "let bird = {\n  name: \"Donald\",\n  numLegs: 2\n};\n\nlet boat = {\n  name: \"Warrior\",\n  type: \"race-boat\"\n};\nfunction glideMixin (obj) {\n  obj.glide = () => 'Gliding!';\n}\n\nglideMixin(bird);\nglideMixin(boat);"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -924,7 +970,9 @@
         "assert(!code.match(/this\\.weight/g), 'message: The <code>weight</code> property should be a private variable.');",
         "assert((new Bird()).getWeight() === 15, 'message: Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "function Bird() {\n  let weight = 15;\n  \n  this.getWeight = () => weight;\n}"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -951,7 +999,9 @@
         "assert(/\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?{/.test(code), 'message: The function should be anonymous.');",
         "assert(/}\\s*?\\)\\s*?\\(\\s*?\\)/.test(code), 'message: Your function should have parentheses at the end of the expression to call it immediately.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "(function () {\n  console.log(\"A cozy nest is ready\");\n})();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
@@ -988,7 +1038,9 @@
         "assert(typeof funModule.isCuteMixin === \"function\", 'message: <code>funModule.isCuteMixin</code> should access a function.');",
         "assert(typeof funModule.singMixin === \"function\", 'message: <code>funModule.singMixin</code> should access a function.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const funModule = (function () {\n  return {\n    isCuteMixin: obj => {\n      obj.isCute = () => true;\n    },\n    singMixin: obj => {\n      obj.sing = () => console.log(\"Singing to an awesome tune\");\n    }\n  };\n})();"
+      ],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
