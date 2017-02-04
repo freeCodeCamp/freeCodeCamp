@@ -660,8 +660,8 @@
         "",
         "// Add your code below this line",
         "",
-        "let duck",
-        "let beagle",
+        "let duck; // Change this line",
+        "let beagle; // Change this line",
         "",
         "duck.eat(); // Should print \"nom nom nom\"",
         "beagle.eat(); // Should print \"nom nom nom\" "
