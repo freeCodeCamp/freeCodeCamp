@@ -689,14 +689,14 @@
         "fearNotLetter(\"abce\");"
       ],
       "solutions": [
-        "function fearNotLetter(str) {\n  var s = str.split('').map(function(c) {return c.charCodeAt(0);});\n  for (var i = 1; i < s.length; i++) {\n    if (s[i]-1 != s[i-1]) {\n      return String.fromCharCode(s[i]-1);\n    }\n  }\n}"
+        "function fearNotLetter (str) {\n  for (var i = str.charCodeAt(0); i <= str.charCodeAt(str.length - 1); i++) {\n    var letter = String.fromCharCode(i);\n    if (str.indexOf(letter) === -1) {\n      return letter;\n    }\n  }\n  \n  return undefined;\n}"
       ],
       "tests": [
-        "assert.deepEqual(fearNotLetter(\"abce\"), \"d\", 'message: <code>fearNotLetter(\"abce\")</code> should return \"d\".');",
-        "assert.deepEqual(fearNotLetter(\"abcdefghjklmno\"), \"i\", 'message: <code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".');",
-        "assert.deepEqual(fearNotLetter(\"stvwx\"), \"u\", 'message: <code>fearNotLetter(\"stvwx\")</code> should return \"u\".');",
-        "assert.isUndefined(fearNotLetter(\"bcd\"), 'message: <code>fearNotLetter(\"bcd\")</code> should return undefined.');",
-        "assert.isUndefined(fearNotLetter(\"yz\"), 'message: <code>fearNotLetter(\"yz\")</code> should return undefined.');"
+        "assert.deepEqual(fearNotLetter('abce'), 'd', 'message: <code>fearNotLetter(\"abce\")</code> should return \"d\".');",
+        "assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i', 'message: <code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".');",
+        "assert.deepEqual(fearNotLetter('stvwx'), 'u', 'message: <code>fearNotLetter(\"stvwx\")</code> should return \"u\".');",
+        "assert.deepEqual(fearNotLetter('bcdf'), 'e', 'message: <code>fearNotLetter(\"bcdf\")</code> should return \"e\".');",
+        "assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'), 'message: <code>fearNotLetter(\"abcdefghjklmnopqrstuvwxyz\")</code> should return undefined.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
