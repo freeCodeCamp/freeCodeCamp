@@ -416,7 +416,8 @@
       ],
       "tests": [
         "assert(ownProps.includes('name'), 'message: The <code>ownProps</code> array should include <code>\"name\"</code>.');",
-        "assert(prototypeProps.includes('numLegs'), 'message: The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.');"
+        "assert(prototypeProps.includes('numLegs'), 'message: The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.');",
+        "assert(!/\\Object.keys/.test(code), 'message: Solve this challenge without using the built in method <code>Object.keys()</code>.');"
       ],
       "solutions": [
         "function Dog(name) {\n  this.name = name;\n}\n\nDog.prototype.numLegs = 4;\n\nlet beagle = new Dog(\"Snoopy\");\n\nlet ownProps = [];\nlet prototypeProps = [];\nfor (let prop in beagle) {\n  if (beagle.hasOwnProperty(prop)) {\n    ownProps.push(prop);\n  } else {\n    prototypeProps.push(prop);\n  }\n}"
