@@ -337,7 +337,8 @@
         ""
       ],
       "tests": [
-        "assert(ownProps.includes('name') && ownProps.includes('numLegs'), 'message: <code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');"
+        "assert(ownProps.includes('name') && ownProps.includes('numLegs'), 'message: <code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');",
+        "assert(!/\\Object.keys/.test(code), 'message: Solve this challenge without using the built in method <code>Object.keys()</code>.');"
       ],
       "solutions": [
         "function Bird(name) {\n  this.name = name;\n  this.numLegs = 2;\n}\n\nlet canary = new Bird(\"Tweety\");\nfunction getOwnProps (obj) {\n  const props = [];\n  \n  for (let prop in obj) {\n    if (obj.hasOwnProperty(prop)) {\n      props.push(prop);\n    }\n  }\n  \n  return props;\n}\n\nconst ownProps = getOwnProps(canary);"
