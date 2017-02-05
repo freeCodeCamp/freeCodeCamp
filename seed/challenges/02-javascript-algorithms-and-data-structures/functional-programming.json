@@ -745,7 +745,7 @@
         "  // Add your code above this line",
         "}",
         "var inputAnim = [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"];",
-        "sliceArray(tempArray, 1, 3);"
+        "sliceArray(inputAnim, 1, 3);"
       ],
       "tests": [
         "assert(code.match(/\\.slice/g), 'message: Your code should use the <code>slice</code> method.');",
