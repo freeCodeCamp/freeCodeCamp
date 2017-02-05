@@ -683,7 +683,7 @@
         "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'message: The <code>watchList</code> variable should not change.');",
         "assert(code.match(/\\.filter/g), 'message: Your code should use the <code>filter</code> method.');",
         "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'message: Your code should not use a <code>for</code> loop.');",
-        "assert(JSON.stringify(filteredList) === JSON.stringify([{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]), 'message: <code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.');"
+        "assert.deepEqual(filteredList, [{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}], 'message: <code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.');"
       ],
       "solutions": [],
       "hints": [],
