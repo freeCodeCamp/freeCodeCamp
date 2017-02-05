@@ -2638,7 +2638,7 @@
         "<blockquote>function plusThree(num) {<br>  return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote>",
         "<code>plusThree</code> takes an <dfn>argument</dfn> for <code>num</code> and returns a value equal to <code>num + 3</code>.",
         "<hr>",
-        "Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value."
+        "Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value. See the last line in the editor for an example of how you can test your <code>timesFive</code> function."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -2649,11 +2649,11 @@
         "",
         "// Only change code below this line",
         "",
-        ""
+        "",
+        "",
+        "console.log(minusSeven(10));"
       ],
-      "tail": [
-        "(function() { if(typeof timesFive === 'function'){ return \"timesfive(5) === \" + timesFive(5); } else { return \"timesFive is not a function\"} })();"
-      ],
+      "tail": [],
       "solutions": [
         "function timesFive(num) {\n  return num * 5;\n}"
       ],
