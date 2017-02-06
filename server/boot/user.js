@@ -258,7 +258,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
 
-    return User.requestAuthLink(req.body.email, 'user-request-sign-in.ejs')
+    return User.requestAuthLink(req.body.email)
       .then(msg => {
           return res.status(200).send({ message: msg });
       })

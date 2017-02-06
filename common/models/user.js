@@ -570,11 +570,7 @@ module.exports = function(User) {
     };
     return User.findOrCreate$({ where: { email }}, userObj)
       .map(([ err, user, isCreated ]) => {
-        if (err) {
-          return dedent`
-            Oops, something is not right, please try again later.
-          `;
-        }
+        if (err) { throw err; }
 
         const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
         if (minutesLeft) {
@@ -596,13 +592,15 @@ module.exports = function(User) {
 
           const { id: loginToken } = token;
           const loginEmail = user.email;
-
+          const host = isDev ?
+            'http://localhost:3000' : 'https://freecodecamp.com';
           const mailOptions = {
             type: 'email',
             to: user.email,
             from: 'Team@freecodecamp.com',
             subject: 'freeCodeCamp - Authentication Request!',
             text: renderAuthEmail({
+              host,
               loginEmail,
               loginToken
             })
@@ -622,14 +620,16 @@ module.exports = function(User) {
             this.emailAuthLinkTTL = emailAuthLinkTTL;
           });
 
-          return dedent`
-            If you entered a valid email, a magic link is on its way.
-            Please follow that link to sign in.
-          `;
         });
       })
-      .map((msg) => {
-        if (msg) { return msg; }
+      .map(() => {
+        return dedent`
+          If you entered a valid email, a magic link is on its way.
+          Please follow that link to sign in.
+        `;
+      })
+      .catch(err => {
+        if (err) { debug(err); }
         return dedent`
           Oops, something is not right, please try again later.
         `;
