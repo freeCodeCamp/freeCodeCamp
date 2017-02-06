@@ -683,9 +683,9 @@
         "    }",
         "}",
         "/* Alter code above this line */",
-        "<code>const zod = Person(\"Zodiac Hasbro\", 56, 'male');</code>",
-        "<code>const yan = Person(\"Yanoshi Mimoto\", 55, 'male');</code>",
-        "<code>zod.sendFriendRequest(yan);</code>"
+        "const zod = Person(\"Zodiac Hasbro\", 56, 'male');",
+        "const yan = Person(\"Yanoshi Mimoto\", 55, 'male');",
+        "zod.sendFriendRequest(yan);"
       ],
       "tests": [
         "// Test the output is Sending request to Yanoshi Mimoto",
