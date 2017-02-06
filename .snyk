@@ -1,5 +1,7 @@
-version: v1.5.2
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.0
 ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:marked:20150520':
     - gulp-notify > node-notifier > cli-usage > marked:
@@ -9,8 +11,6 @@ patch:
   'npm:minimatch:20160620':
     - gulp > vinyl-fs > glob-stream > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
-      jsonlint-cli > minimatch:
-        patched: '2016-10-27T21:56:34.219Z'
     - gulp > vinyl-fs > glob-stream > glob > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
     - rev-del > mocha > glob > minimatch:
@@ -69,6 +69,8 @@ patch:
         patched: '2016-09-20T18:38:48.774Z'
     - loopback > loopback-connector-remote > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
         patched: '2016-09-20T18:38:48.774Z'
+    - jsonlint-cli > minimatch:
+        patched: '2016-10-27T21:56:34.219Z'
   'npm:uglify-js:20151024':
     - jade > transformers > uglify-js:
         patched: '2016-07-29T23:00:15.905Z'
