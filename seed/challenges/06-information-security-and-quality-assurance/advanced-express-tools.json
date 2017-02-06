@@ -5,340 +5,391 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7fb9367417b2b2512c13",
-      "title": "Authenticate as a Guest User",
+      "id": "5895f6fff9fc0f352b528e62",
+        "title": "Advanced Node/Express Introduction",
+        "description": [
+          [
+            "",
+            "",
+            "<em>Authentication</em> is the process or action of verifying the identity of a user or process. Up to this point you have not been able to create an app utilizing this key concept.<br>The most common and easiest to use authentication middleware for Node.js is <a href='http://passportjs.org/'>Passport</a>. It is easy to learn, light-weight, and extremely flexible allowing for many <em>strategies</em>, which we will talk about in later challenges. In addition to authentication we will also look at template engines which allow for use of <em>Pug</em> and web sockets which allow for real time communication between all your clients and your server. Working on these challenges will involve you writing your code on Gomix off our our starter project. After completing each challenge you can copy your public gomix url (to the homepage of your app) into the challenge screen and test it! Open the starter project below and hit <b>Remix it</b> to create your own private version to get started!",
+            "https://gomix.com/#!/project/fcc-advanced"
+          ]
+        ],
+        "releasedOn": "",
+        "challengeSeed": [],
+        "tests": [],
+        "type": "Waypoint",
+        "challengeType": 7,
+        "isRequired": false,
+        "titleEs": "",
+        "descriptionEs": [
+          []
+        ],
+        "titleFr": "",
+        "descriptionFr": [
+          []
+        ],
+        "titleDe": "",
+        "descriptionDe": [
+          []
+        ]
+    },
+    {
+      "id": "5895f700f9fc0f352b528e63",
+      "title": "Setting up a Template Engine",
       "description": [
-        "Cool, we can see messages now, but before we let people to write messages they need to authenticate first.",
-        "We will use passport and friends for our authentications process, since its well documented and it makes things quite easier. By the end of this challenge, you should be able to login to the website as a guest user with the credentials:",
-        "username: 'guestuser'",
-        "password: 'guestuser'",
-        "You can check how passport works internally by viewing the best answer from this URL: http://stackoverflow.com/questions/11142882/how-do-cookies-and-sessions-work",
-        "Food for thought: Those have to be done all together in order to be easily testable if its too much, we must find a way of testing is passport middlewares that users initialized and validate that they work properly.",
-        "Note: This is the most difficult challenge of these series, be patient and very careful while reading the tips' documentation and have in mind that google is your friend as long as you pay Note at the date on the stackoverflow answers you come accross.",
-        "Instructions:",
-        "1) add the 'express-session', passport' and 'passport-local' modules into the package.json file",
-        "2) use express-session middleware #tip1",
-        "3) use passport.session() middleware #tip2",
-        "4) use passport.session() middleware",
-        "5) use passport.serialize() middleware",
-        "6) use passport.deserialize() middleware",
-        "7) use the passport-local.Strategy middleware #tip3",
-        "8) create a login route at POST '/auth/local' #tip2, #tip4 the route should redirect to the index page at path '/' on success or fail login",
-        "9) on the res.render('index') arguments add the session user on the 'user' key help: the session user should exist at the request object: 'req.user'",
-        "10) on the index.pug file use an if conditional expression to control what will be rendered  #tip5 if the user argument is defined, include chatInput.pug and signout.pug othewise, include authentication.pug.",
-        "Note: Make sure restart the server(do and undo any change in the code for it to auto restart) before you run the unit tests, so that the server's state is cleaned."
+        "A template engine enables you to use static template files (such as those written in <em>Pug</em>) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server, and transforms the template into a static HTML file that is then sent to the client. This approach makes it easier to design an HTML page and allows for displaying of variables on the page without needing to make an API call from the client.",
+        "To set up <em>Pug</em> for use in your project, you will need to add it as a dependancy first in your package.json. <code>\"pug\": \"^0.1.0\"</code>",
+        "Now to tell Node/Express to use the templating engine you will have to tell your express <b>app</b> to <b>set</b> 'pug' as the 'view-engine'. <code>app.set('view engine', 'pug')</code>",
+        "Lastly, we should change our response to the request for the index route to <code>res.render</code> with the path to the view <em>views/pug/index.pug</em>.",
+        "If all went as planned, you should refresh your apps home page and see a small message saying you're successfully rending the Pug from our Pug file! Submit your page when you think you've got it right."
       ],
       "challengeSeed": [],
       "tests": [
         {
-          "text": "",
-          "testString": ""
-        }
-      ],
-      "solutions": [],
-      "hints": [
-        "express-session readme: https://github.com/expressjs/session",
-        "passport readme: https://github.com/jaredhanson/passport",
-        "passport-local readme: https://github.com/jaredhanson/passport-local",
-        "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect",
-        "pug docs: https://pugjs.org/api/getting-started.html"
-      ],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7fc0367417b2b2512c33",
-      "title": "Log the Guest User Out",
-      "description": [
-        "Lets continue by letting the user to logout from the app.",
-        "You can check how passport works internally by viewing the best answer from this URL: http://stackoverflow.com/questions/11142882/how-do-cookies-and-sessions-work",
-        "Instructions:",
-        "1) create a logout route at POST '/auth/logout'",
-        "2) the route should clear the user's session from the server",
-        "3) the route should redirect to the index page at path '/' after logout is performed"
-      ],
-      "challengeSeed": [],
-      "tests": [
-      ],
-      "solutions": [],
-      "hints": [
-        "passport repo: https://github.com/jaredhanson/passport",
-        "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
-      ],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7fc0367417b2b2512c32",
-      "title": "Signup a New User",
-      "description": [
-        "Lets continue by letting a user to register to the app.",
-        "You can check how passport works internally by viewing the best answer from this URL: http://stackoverflow.com/questions/11142882/how-do-cookies-and-sessions-work",
-        "Instructions:",
-        "1) create a register route at POST '/auth/local/register'",
-        "2) the route should create a user with the User.create method",
-        "3) on successful create, the route should authenticate the user as well just like on the 'auth/local' route",
-        "4) the route should redirect to the index page at path '/' on error or success",
-        "Remember that on an express route you are able to use multiple middleware functions that are going to be called after an other.",
-        "For example: ",
-        "<code>app.post('/some/post/route',</code>",
-        "<code>  function method1(req, res, next) {</code>",
-        "<code>   console.info('I am method 1');</code>",
-        "<code>   next();</code>",
-        "<code>  },</code>",
-        "<code>  someExternalMiddleware(),</code>",
-        "<code>  function(req, res, next) {</code>",
-        "<code>   res.redirect('/');</code>",
-        "<code>  }</code>",
-        "<code>);</code>",
-        "ctrl-f '#challenge' in this file to fill in the missing code to complete this challenge"
-      ],
-      "challengeSeed": [],
-      "tests": [
+          "text": "Pug is a dependency",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'pug', 'Your project should list \"pug\" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
         {
-          "text": "",
-          "testString": ""
-        }
-      ],
-      "solutions": [],
-      "hints": [
-        "passport repo: https://github.com/jaredhanson/passport",
-        "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
-      ],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7fbf367417b2b2512c31",
-      "title": "Send a New Message by Responding with a Model",
-      "description": [
-        "Lets continue by letting a user to send a message in the app.",
-        "Instructions:",
-        "1) create a messaging route at POST '/api/message'",
-        "message format expected from the database:",
-        "<code>var args = {</code>",
-        "<code>  creator: {</code>",
-        "<code>    id: sessionUser._id,</code>",
-        "<code>    name: sessionUser.name,</code>",
-        "<code>    avatarUrl: sessionUser.avatarUrl</code>",
-        "<code>  },</code>",
-        "<code>  text: body.text,</code>",
-        "<code>  geo: body.geo || {}</code>",
-        "<code>};</code>",
-        "1) Use the req.body for the request body and req.user for the session user data.",
-        "2) the route should be accessible only to authenticated users check that req.isAuthenticated() returns true or that req.user is defined",
-        "3) if the user is not authenticated the route should respond with status 403 and <code>{message: 'not authenticated'}</code> in the body",
-        "4) the route should create a message with the Message.create method",
-        "5) on error, the route should respond with status 400 and the error in the body",
-        "6) on success, the route should respond with status 201 and the message model as returned by the database in the body. The response data should follow the following format: <code>{model: messageJsonFromDB}</code>. The client should do a dummy reload to display the change."
-      ],
-      "challengeSeed": [],
-      "tests": [
+          "text": "View engine is Pug",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|\")view engine('|\"),( |)('|\")pug('|\")/gi, 'Your project should set Pug as a view engine'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
         {
-          "text": "",
-          "testString": ""
-        }
-      ],
-      "solutions": [],
-      "hints": [
-        "res.redirect: https://expressjs.com/en/4x/api.html#res.redirect"
-      ],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7fbf367417b2b2512c30",
-      "title": "Send a New Message with a Partial Template Compilation",
-      "description": [
-        "On the previous challenge we were reloading the page after we pushed a new message into the chat",
-        "However, thats a really bad way to handle user input.",
-        "In this challenge you will have to partially compile a template and send it back on the client.",
-        "That way the client will be able to append the html that it got into the page's DOM and the reload",
-        "will not be needed. Cool hah?",
-        "Instructions:",
-        "1) change the current success response on the api/message route. It should respond with the following format: <code>{model: messageJsonFromDB, view: htmlData}</code>",
-        "The html data should be generated with the pug package and the compileFile method. The file you will need",
-        "to compile is the chatMessage.pug which represents a single message. args required:",
-        "user: <session user>,",
-        "message: <message created>"
-      ],
-      "challengeSeed": [],
-      "tests": [
-        {
-          "text": "",
-          "testString": ""
-        }
-      ],
-      "solutions": [],
-      "hints": [
-        " pug compileFile: https://pugjs.org/api/getting-started.html"
-      ],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7fbf367417b2b2512c2f",
-      "title": "Send a New Message by Making the App Realtime with Websockets",
-      "description": [
-        "So we were able to create a message and responde with its partial html so that it can directly",
-        "be appanded in the page.",
-        "But what about the other users that are into the page?",
-        "If you open two different browser windows and send a message from one of them, the other one will",
-        "need to refresh the page to see the page. That's not cool, right?",
-        "This is where websockets come into the game to make the page look realtime.",
-        "In this challenge you will emit a web socket event after a new message is created at 'api/message'",
-        "so that all connected clients can update their dom.",
-        "You will see a dublicate left aligned message on the sender's page. This is fine...for now",
-        "Instructions:",
-        "1) include the socket.io package into the server package.json & initialize socket.io",
-        "2) include the socket.io library into the client at index.pug. The socket.io package serves the client automatically at: '/socket.io/socket.io.js'",
-        "3) emit a socket event at id: 'chat.message' with data {model: messageJsonFromDB, view: htmlData}",
-        "4) For the html data, use the same method you used in the previous challenge. However, in this case do not pass a user parameter so that the template can understand that it has to generate a template for the receiver. (Received messages are left alligned.)",
-        "The html data should be generated with the pug package and the compileFile method. The file you will need to compile is the chatMessage.pug which represents a single message. args required:",
-        "user: <session user>,",
-        "message: <message created>"
-      ],
-      "challengeSeed": [],
-      "tests": [
-        {
-          "text": "",
-          "testString": ""
-        }
-      ],
-      "solutions": [],
-      "hints": [
-        "socket.io docs: http://socket.io/docs/",
-        "pug docs :: compileFile: https://pugjs.org/api/getting-started.html"
-      ],
-      "type": "waypoint",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7fbf367417b2b2512c2d",
-      "title": "Retrieve the Route of an Authenticated User",
-      "description": [
-        "Let's get rid of that duplicate message, shall we?",
-        "The client will look at the message model's creator emitted with the websocket and compare them with themselves. If they are not the creator they will append the message into their page.",
-        "However, the way we authenticated with passport only sends a httpOnly cookie to the client. The deal with html-only cookies, is that they are not readable from javascript for security reasons.",
-        "Therefore the client has no way of know its data, unless we server them for them.",
-        "In this challenge we will create a route where the client can retrieve their user data.",
-        "Instructions:",
-        "1) Create route GET '/api/me'",
-        "2) The route should always respond with status 200",
-        "3) The route should return {name: 'guest'} when the user is not authenticated",
-        "4) Otherwise it should return the authenticated user from the session"
-      ],
-      "challengeSeed": [],
-      "tests": [
-        {
-          "text": "",
-          "testString": ""
+          "text": "Pug is working",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /pug-success-message/gi, 'Your projects home page should now be rendered by pug with the projects .pug file unaltered'); }, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
+      "type": "backend",
       "challengeType": 0,
       "translations": {}
     },
     {
-      "id": "587d7fbe367417b2b2512c2c",
-      "title": "Use Geolocation by IP Route to Request Package for External Resources",
+      "id": "5895f70bf9fc0f352b528e64",
+      "title": "Using a Template Engine's Powers",
       "description": [
-        "Things seem to work a lot better at this point, but our users would really like a message footer that would snitch each other's location.",
-        "Don't worry about the details, all you need to know is that the client will need another route from you in order to retrieve their geolocation via ip.",
-        "To do that we will query another site and we will respond with the data we get.",
-        "Instructions:",
-        "1) Include the request package into package.json",
-        "2) Create route GET '/api/geo'",
-        "3) Use the request module to query on this url: http://freegeoip.net/json/<request ip>'",
-        "4) You will need to set enable the trust proxy option for express in order to access the ip from the request object. Dont' bother too much with it, the default options will do for our case.",
-        "5) On request error the route should responde with status 500 and the error in the body",
-        "6) Othewise it should responde with the status code and body returned by the remote server"
+        "One of the greatest features of using a template engine is being able to pass variables from the server to the template file before rendering it to HTML.",
+        "In your Pug file, you're about to use a variable by referencing the variable name as <code>#{variable_name}</code> inline with other text on an element or by using an equal side on the element without a space such as <code>p= variable_name</code> which sets that p elements text to equal the variable.",
+        "We strongly recomend looking at the syntax and structure of Pug <a href='https://github.com/pugjs/pug'>here</a> on their Githubs README. Pug is all about using whitespace and tabs to show nested elements and cutting down on the amount of code needed to make a beautiful site.",
+        "Looking at our pug file 'index.pug' included in your project, we used the variables <em>title</em> and <em>message</em>",
+        "To pass those alone from our server, you will need to add an object as a second argument to your <em>res.render</em> with the variables and their value. For example, pass this object along setting the variables for your index view: <code>{title: 'Hello', message: 'Please login'</code>",
+        "It should look like: <code>res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});</code>",
+        "Now refresh your page and you should see those values rendered in your view in the correct spot as layed out in your index.pug file! Submit your page when you think you've got it right."
       ],
       "challengeSeed": [],
       "tests": [
         {
-          "text": "",
-          "testString": ""
+          "text": "Pug render variables correct",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /pug-variable(\"|')>Please login/gi, 'Your projects home page should now be rendered by pug with the projects .pug file unaltered'); }, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
       "solutions": [],
-      "hints": [
-        "request readme: https://github.com/request/request",
-        "express enable: http://expressjs.com/en/api.html#app.enable"
-      ],
-      "type": "waypoint",
+      "hints": [],
+      "type": "backend",
       "challengeType": 0,
       "translations": {}
     },
     {
-      "id": "587d7fbe367417b2b2512c2b",
-      "title": "Get Geodata from Cookies",
+      "id": "5895f70cf9fc0f352b528e65",
+      "title": "Setting up Passport",
       "description": [
-        "Right now the client requests for the geolocation data by their ip and sends it to the server every time they are creating a message.",
-        "That makes sense, but it would be better to cache the geolocation data so that we do not request all the time the external api. Geolocation data do not change that often after all.",
-        "This can be done by setting a cookie on the response header. In express to do that we could use the res.cookie utility.",
-        "Instructions:",
-        "1) update route GET '/api/geo' so that it will set a cookie before responding with json. You may use res.cookie to do the job.",
-        "2) include package cookie-parser on package.json",
-        "3) update route POST '/api/message' so that it will create the message withe the geolocation taken from the cookie instead of the body of the request ctrl-f '#challenge' in this file to fill in the missing code to complete this challenge"
+        "It's time to set up <em>Passport</em> so we can finally start allowing a user to register or login to an account! In addition to Passport, we will use Express-session to handle sessions. Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the <em>key</em> to access the data stored on the server.",
+        "To set up Passport for use in your project, you will need to add it as a dependancy first in your package.json. <code>\"passport\": \"^0.3.2\"</code>",
+        "In addition, add Express-session as a dependancy now as well. Express-session has a ton of advanced features you can use but for now we're just going to use the basics! <code>\"express-session\": \"^1.15.0\"</code>",
+        "You will need to set up the session settings now and initilize Passport. Be sure to first create the variables 'session' and 'passport' to require 'express-session' and 'passport' respectively.",
+        "To set up your express app to use use the session we'll define just a few basic options. Be sure to add 'SESSION_SECRET' to your .env file and give it a random value. This is used to compute the hash used to encrypt your cookie!",
+        "<pre>app.use(session({\n  secret: process.env.SESSION_SECRET,\n  resave: true,\n  saveUninitialized: true,\n}));</pre>",
+        "As well you can go ahead and tell your express app to <b>use</b> 'passport.initialize()' and 'passport.session()'. (For example, <code>app.use(passport.initialize());</code>)",
+        "Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/338a9c5a326923c3826a666d430e65c3'>here</a>."
       ],
       "challengeSeed": [],
       "tests": [
         {
-          "text": "",
-          "testString": ""
+          "text": "Passort and Express-session are dependencies",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'passport', 'Your project should list \"passport\" as a dependency'); assert.property(packJson.dependencies, 'express-session', 'Your project should list \"express-session\" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Dependencies correctly required",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*(\"|')passport(\"|')/gi, 'You should have required passport'); assert.match(data, /require.*(\"|')express-session(\"|')/gi, 'You should have required express-session'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Express app uses new dependencies",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.initialize/gi, 'Your express app should use \"passport.initialize()\"'); assert.match(data, /passport.session/gi, 'Your express app should use \"passport.session()\"'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Session and session secret correctly set up",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /secret:( |)process.env.SESSION_SECRET/gi, 'Your express app should have express-session set up with your secret as process.env.SESSION_SECRET'); }, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
       "solutions": [],
-      "hints": [
-        "express res.cookie: http://expressjs.com/en/api.html#res.cookie",
-        "express cookie parser: https://github.com/expressjs/cookie-parser"
-      ],
-      "type": "waypoint",
+      "hints": [],
+      "type": "backend",
       "challengeType": 0,
       "translations": {}
     },
     {
-      "id": "587d8246367417b2b2512c34",
-      "title": "Access the Default Avatar File Route",
+      "id": "5895f70cf9fc0f352b528e66",
+      "title": "Serialization of a User Object",
       "description": [
-        "Did you notice that broken avatar in the app?",
-        "Don't you think its about time to fixed it?",
-        "We have set the default url of the user's avatar to be be at /avatar/default.",
-        "That means that you will have to create a route that will return the file data.",
-        "Until now we used routes to return json and htmls. However in this case we are going",
-        "to pipe a read stream into the response in order to respond with the file data.",
-        "Use following line to get the path of the path of the avatar:",
-        "var avatarPath = path.join(__dirname, 'node_modules/fcc-advanced-express/img/defaultAvatar.png');",
-        "Instructions:",
-        "1) Create route GET '/avatar/default'",
-        "2) Use node's native file system library to get a read stream of the avatar file",
-        "3) pipe the read stream into the response. You may hit the route on your browser to check if u see an image.",
-        "Note: remember that piping file data to the response works with any type of file. All files contain data that if piped to the response can be sent to the browser. Try to pipe a js script and you will be able to see if on your browser if you hit the route :)"
+        "Serialization and deserialization are important concept in reguards to authentication. To serialize an object means to convert its contents into a small <em>key</em> essentially that can then be deserialized into the original object. This is what allows us to know whos communicated with the server without having to send the authentication data like username and password at each request for a new page.",
+        "To set this up properly, we need to have a serialize function and a deserialize function. In passport we create these with <code>passport.serializeUser( OURFUNCTION )</code> and <code>passport.dederializeUser( OURFUNCTION )</code>",
+        "The serializeUser is called with 2 arguments, the full user object and a callback used by passport. Returned in the callback should be a unique key to identify that user- the easiest one to use being the users _id in the object as it should be unique as it generated by MongoDb. Similarly deserializeUser is called with that key and a callback function for passport as well, but this time we have to take that key and return the users full object to the callback. To make a query search for a Mongo _id you will have to create <code>const ObjectID = require('mongodb').ObjectID;</code>, and then to use it you call <code>new ObjectID(THE_ID)</code>. Be sure to add MongoDB as a dependency. You can see this in the examples below:",
+        "<pre>passport.serializeUser((user, done) => {\n   done(null, user._id);\n });</pre><br><pre>passport.deserializeUser((id, done) => {\n        db.collection('users').findOne(\n            {_id: new ObjectID(id)},\n            (err, doc) => {\n                done(null, doc);\n            }\n        );\n    });</pre>",
+        "NOTE: This deserializeUser will throw an error until we set up the DB in the next step so comment out the whole block and just call <code>done(null, null)</code> in the function deserializeUser.",
+        "Submit your page when you think you've got it right."
       ],
       "challengeSeed": [],
       "tests": [
         {
-          "text": "",
-          "testString": ""
+          "text": "Serialize user function correct",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.serializeUser/gi, 'You should have created your passport.serializeUser function'); assert.match(data, /null, user._id/gi, 'There should be a callback in your serializeUser with (null, user._id)'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Deserialize user function corrent",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.deserializeUser/gi, 'You should have created your passport.deserializeUser function'); assert.match(data, /null,( |)null/gi, 'There should be a callback in your deserializeUser with (null, null) for now'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "MongoDB is a dependency",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'mongodb', 'Your project should list \"mongodb\" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Mongodb properly required including the ObjectId",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*(\"|')mongodb(\"|')/gi, 'You should have required mongodb'); assert.match(data, /new ObjectID.*id/gi, 'Even though the block is commented out, you should use new ObjectID(id) for when we add the database'); }, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
       "solutions": [],
-      "hints": [
-        "express res.cookie: http://expressjs.com/en/api.html#res.cookie",
-        "express cookie parser: https://github.com/expressjs/cookie-parser"
-      ],
-      "type": "waypoint",
+      "hints": [],
+      "type": "backend",
       "challengeType": 0,
       "translations": {}
-    }
+    },
+    {
+      "id": "5895f70cf9fc0f352b528e67",
+      "title": "Implement the Serialization of a Passport User",
+      "description": [
+        "Right now we're not loading an actually users object since we havn't set up our database. This can be done many different ways, but for our project we will connect to the database once when we start the server and keep a persistant connection for the full life-cycle of the app.",
+        "To do this, add MongoDB as a depenacy and require it in your server. (<code>const mongo = require('mongodb').MongoClient;</code>)",
+        "Now we want to the connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish you will want to encompass your serialization and your app listener in the following:",
+        "<pre>mongo.connect(process.env.DATABASE, (err, db) => {\n    if(err) {\n        console.log('Database error: ' + err);\n    } else {\n        console.log('Successful database connection');\n\n        //serialization and app.listen\n\n}});</pre>",
+        "You can now uncomment the block in deserializeUser and remove your <code>done(null, null)</code>. Be sure to set <em>DATABASE</em> in your .env file to your database's connection string (for example: <code>DATABASE=mongodb://admin:pass@mlab.com:12345/my-project</code>). You can set up a free database on <a href='https://mlab.com/welcome/'>mLab</a>. Congratulations- you've finished setting up serialization!",
+        "Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/e192e809a1d27cb80dc2c6d3467b7477'>here</a>."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Database connection is present",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /mongo.connect/gi, 'You should have created a connection to your database'); assert.match(data, /mongo.connect[^]*app.listen[^]*}[^]*}/gi, 'You should have your app.listen nested at within your database connection at the bottom'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Deserialization is now correctly using the DB and <code>done(null, null)</code> is erased",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.notMatch(data, /null,( |)null/gi, 'The callback in deserializeUser of (null, null) should be completely removed for the db block uncommented out'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "5895f70df9fc0f352b528e68",
+      "title": "Authentication Strategies",
+      "description": [
+        "A strategy is a a way of authenticating a user. You can use a strategy for allowing users to authenticate based on localally saved infomation(if you have them register first) or from a variety of providers such as Google or Github. For this project we will set up a local strategy. To see a list of the 100's of strategies, visit Passports site <a href='http://passportjs.org/'>here</a>.",
+        "Add <em>passport-local</em> as a dependancy and add it to your server as follows: <code>const LocalStrategy = require('passport-local');</code>",
+        "Now you will have to tell passport to <b>use</b> an instantiated LocalStartegy object with a few settings defined. Make sure this as well as everything from this point on is encapuled in the database connection since it relys on it! <pre>passport.use(new LocalStrategy(\n  function(username, password, done) {\n    db.collection('users').findOne({ username: username }, function (err, user) {\n      console.log('User '+ username +' attempted to log in.');\n      if (err) { return done(err); }\n      if (!user) { return done(null, false); }\n      if (password !== user.password) { return done(null, false); }\n      return done(null, user);\n    });\n  }\n));</pre> This is defining the process to take when we try to authenticate someone locally. First it trys to find a user in our database with the username entered, then it checks for the password to match, then finally if no errors have popped up that we checked for, like an incorrect password, the users object is returned and they are authenticated.",
+        "Many strategies are set up using different settings, general it is easy to set it up based on the README in that strategies repository though. A good example of this is the Github strategy where we don't need to worry about a username or password because the user will be sent to Github's auth page to authenticate and as long as they are logged in and agree then Github returns their profile for us to use.",
+        "In the next step we will set up how to actually call the authentication strategy to validate a user based on form data! Submit your page when you think you've got it right up to this point."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Passport-local is a dependency",
+          "testString": " getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'passport-local', 'Your project should list \"passport-local \" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Passport-local correctly required and setup",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*(\"|')passport-local(\"|')/gi, 'You should have required passport-local'); assert.match(data, /new LocalStrategy/gi, 'You should have told passport to use a new strategy'); assert.match(data, /findOne/gi, 'Your new local strategy should use the findOne query to find a username based on the inputs'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "5895f70df9fc0f352b528e69",
+      "title": "Using Passport Strategies",
+      "description": [
+        "In the index.pug file supplied theres actually a login form. It has previously been hidden because of the inline javascript <code>if showLogin</code> with the form indented after it. Before showLogin as a variable was never defined, it never rendered the code block containing the form. Go ahead and on the res.render for that page add a new variable to the object <code>showLogin: true</code>. When you refresh your page, you should then see the form! This form is set up to <b>POST</b> on <em>/login</em> so this is where we should set up to accept the POST and authenticate the user.",
+        "For this challenge you should add the route /login to accept a POST request. To authenticate on this route you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before your <code>function(req,res)</code> with your response! The middleware to use is <code>passport.authenticate('local')</code>.",
+        "<em>passport.authenticate</em> can also take some options as an argument such as: <code>{ failureRedirect: '/' }</code> which is incredibly useful so be sure to add that in as well. As a response after useing the middleware (which will only be called if the authentication middleware passes) should be to redirect the user to <em>/profile</em> and that route should render the view 'profile.pug'.",
+        "If the authentication was successful, the user object will be saved in <em>req.user</em>.",
+        "Now at this point if you enter a username and password in the form, it should redirect to the home page <em>/</em> and in the console of your server should be 'User {USERNAME} attempted to log in.' since we currently cannot login a user who isn't registered.",
+        "Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/8a335d1a68ed9170da02bb9d8f5b71d5'>here</a>."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "All steps correctly impl in the server.js",
+          "testString": " getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /showLogin:( |)true/gi, 'You should be passing the variable \"showLogin\" as true to your render function for the homepage'); assert.match(data, /failureRedirect:( |)('|\")\\/('|\")/gi, 'Your code should include a failureRedirect to the \"/\" route'); assert.match(data, /login[^]*post[^]*local/gi, 'You should have a route for login which accepts a POST and passport.authenticates local'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "A POST request to /login correctly redirects to /",
+          "testString": "getUserInput => $.post(getUserInput('url')+ '/login') .then(data => { assert.match(data, /Home page/gi, 'A login attempt at this point should redirect to the homepage since we do not have any registered users'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "5895f70df9fc0f352b528e6a",
+      "title": "Creating New Middleware",
+      "description": [
+        "As in, any user can just go to /profile whether they authenticated or not by typeing in the url. We want to prevent this by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.",
+        "The challenge here is creating the middleware function <code>ensureAuthenticated(req, res, next)</code>, which will check if a user is authenticated by calling passports isAuthenticated on the <em>request</em> which in turn checks for <em>req.user</em> is to be defined. If it is then <em>next()</em> should be called, otherwise we can just respond to the request with a redirect to our homepage to login. An implimentation of this middle ware is:",
+        "<pre>function ensureAuthenticated(req, res, next) {\n  if (req.isAuthenticated()) {\n      return next();\n  }\n  res.redirect('/');\n};</pre>",
+        "Now add <em>ensureAuthenticated</em> as a middleware to the request for the profile page before the argument to the get request containing the function that renders the page.",
+        "<pre>app.route('/profile')\n  .get(ensureAuthenticated, (req,res) => {\n       res.render(process.cwd() + '/views/pug/profile');\n  });</pre>",
+        "Submit your page when you think you've got it right."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Middleware ensureAuthenticated should be impl and on our /profile route",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /ensureAuthenticated[^]*req.isAuthenticated/gi, 'Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function'); assert.match(data, /profile[^]*get[^]*ensureAuthenticated/gi, 'Your ensureAuthenticated middleware should be attached to the /profile route'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "A Get request to /profile correctly redirects to / since we are not authenticated",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/profile') .then(data => { assert.match(data, /Home page/gi, 'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "5895f70ef9fc0f352b528e6b",
+      "title": "Putting a Profile Together",
+      "description": [
+        "Now that we can ensure the user accessing the <em>/profile</em> is authenticated, we can use the infomation contained in 'req.user' on our page!",
+        "Go ahead and pass the object containing the variable <em>username</em> equaling 'req.user.username' into the render method of the profile view. Then go to youre 'profile.pug' view and add the line <code>h2.center#welcome Welcome, #{username}!</code> creating the h2 element with the class 'center' and id 'welcome' containing the text 'Welcome, ' and the username!",
+        "Also in the profile, add a link to <em>/logout</em>. That route will host the logic to unauthenticate a user. <code>a(href='/logout') Logout</code>",
+        "Submit your page when you think you've got it right."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Correctly added a Pug render variable to /profile",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /\\/views\\/pug\\/profile[^]*username:( |)req.user.username/gi, 'You should be passing the variable username with req.user.username into the render function of the profile page'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "58965611f9fc0f352b528e6c",
+      "title": "Logging a User Out",
+      "description": [
+        "Creating the logout logic is easy. The route should just unauthenticate the user and redirect to the home page instead of rendering any view.",
+        "In passport, unauthenticating a user is as easy as just calling <code>req.logout();</code> before redirecting.",
+        "<pre>app.route('/logout')\n  .get((req, res) => {\n      req.logout();\n      res.redirect('/');\n  });</pre>",
+        "You may have noticed we also we're not handling missing pages (404), the common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:",
+        "<pre>app.use((req, res, next) => {\n  res.status(404)\n    .type('text')\n    .send('Not Found');\n});</pre>",
+        "Submit your page when you think you've got it right."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Logout route",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /req.logout/gi, 'You should be call req.logout() in youre /logout route'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Logout should redirect to the home page /",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/logout') .then(data => { assert.match(data, /Home page/gi, 'When a user logs out they should be redirected to the homepage'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "58966a17f9fc0f352b528e6d",
+      "title": "Registration of New Users",
+      "description": [
+        "Now we need to allow a new user on our site to register an account. On the res.render for the home page add a new variable to the object passed along- <code>showRegistration: true</code>. When you refresh your page, you should then see the registration form that was already ctreated in your index.pug file! This form is set up to <b>POST</b> on <em>/register</em> so this is where we should set up to accept the POST and create the user object in the database.",
+        "The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile",
+        "The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home <em>OR</em> if user is undefined and no error occurs then 'insertOne' into the database with the username and password and as long as no errors occur then call <em>next</em> to go to step 2, authenticating the new user, which we've already written the logic for in our POST /login route.",
+        "<pre>app.route('/register')\n  .post((req, res, next) => {\n      db.collection('users').findOne({ username: req.body.username }, function (err, user) {\n          if(err) {\n              next(err);\n          } else if (user) {\n              res.redirect('/');\n          } else {\n              db.collection('users').insertOne(\n                {username: req.body.username,\n                 password: req.body.password},\n                (err, doc) => {\n                    if(err) {\n                        res.redirect('/');\n                    } else {\n                        next(null, user);\n                    }\n                }\n              )\n          }\n      })},\n    passport.authenticate('local', { failureRedirect: '/' }),\n    (req, res, next) => {\n        res.redirect('/profile');\n    }\n);</pre>",
+        "Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/6c47bee7df34df9f11820803608071ed'>here</a>."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Register route and display on home",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /showRegistration:( |)true/gi, 'You should be passing the variable \"showRegistration\" as true to your render function for the homepage'); assert.match(data, /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi, 'You should have a route accepted a post request on register that querys the db with findone and the query being \"username: req.body.username\"'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Registering should work",
+          "testString": "getUserInput => $.ajax({url: getUserInput('url')+ '/register',data: {username: 'freeCodeCampTester', password: 'freeCodeCampTester'},crossDomain: true, type: 'POST', xhrFields: { withCredentials: true }}) .then(data => { assert.match(data, /Profile/gi, 'I should be able to register and it direct me to my profile. CLEAR YOUR DATABASE if this test fails (each time until its right!)'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Login should work",
+          "testString": "getUserInput => $.ajax({url: getUserInput('url')+ '/login',data: {username: 'freeCodeCampTester', password: 'freeCodeCampTester'}, type: 'POST', xhrFields: { withCredentials: true }}) .then(data => { assert.match(data, /Profile/gi, 'Login should work if previous test was done successfully and redirect successfully to the profile. Check your work and clear your DB'); assert.match(data, /freeCodeCampTester/gi, 'The profile should properly display the welcome to the user logged in'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Logout should work",
+          "testString": "getUserInput => $.ajax({url: getUserInput('url')+ '/logout', type: 'GET', xhrFields: { withCredentials: true }}) .then(data => { assert.match(data, /Home/gi, 'Logout should redirect to home'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Profile should no longer work after logout",
+          "testString": "getUserInput => $.ajax({url: getUserInput('url')+ '/profile', type: 'GET', crossDomain: true, xhrFields: { withCredentials: true }}) .then(data => { assert.match(data, /Home/gi, 'Profile should redirect to home when we are logged out now again'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "589690e6f9fc0f352b528e6e",
+      "title": "Clean Up Your Project with Modules",
+      "description": [
+        "Right now everything you have is in your server.js file. This can lead to hard to manage code that isn't very expandable.",
+        "Create 2 new files: Routes.js and Auth.js",
+        "Both should start with the following code: <pre>module.exports = function (app, db) {\n\n\n}</pre>",
+        "Now in the top of your server file, require these files like such: <code>const routes = require('./routes.js');</code>",
+        "Right after you establish a successful connect with the database instanciate each of them like such: <code>routes(app, db)</code>",
+        "Finally, take all of the routes in your server and paste them into your new files and remove them from your server file. Also take the ensureAuthenticated since we created that middleware function for routing specifically. You will have to now correctly add the dependencies in that are used, such as <code>const passport = require('passport');</code>, at the very top above the export line in your routes.js file.",
+        "Keep adding them untill no more errors exist, and your server file no longer has any routing!",
+        "Now do the same thing in your auth.js file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Be sure to add the dependencies in and call <code>auth(app,db)</code> in the server in the same spot.",
+        "Congratulations- youre at the end of this section of Advanced Node and Express and have some beautiful code to show for it! Submit your page when you think you've got it right. If you're running into errors, you can check out an example of the completed project <a href='https://gomix.com/#!/project/delicious-herring'>here</a>."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Modules present",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*(\"|').\\/routes.js(\"|')/gi, 'You should have required your new files'); assert.match(data, /mongo.connect[^]*routes/gi, 'Your new modules should be called after your connection to the database'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    }  
   ]
 }
