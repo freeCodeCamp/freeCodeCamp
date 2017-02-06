@@ -651,22 +651,10 @@
       "id": "587d7b8b367417b2b2512b50",
       "title": "Enhanced Object Literals : Functions",
       "description": [
-        "With ES6, it's possible to remove the keyword function as follows, from object literals",
-        "<code>const Container extends Component {</code>",
-        "<code>    render: function() {</code>",
-        "<code>      return {</code>",
-        "<code>        `<div>Container</div>`</code>",
-        "<code>      }</code>",
-        "<code>    }</code>",
-        "<code>}</code>",
+        "With ES6, it's possible to remove the keyword function as follows, from object literals:",
+        "<blockquote>const Container extends Component {<br>&nbsp;&nbsp;render: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "We can remove the function keyword and colon (:) altogether - and get this:",
-        " const Container extends Component {",
-        "     render() {",
-        "       return {",
-        "         `<div>Container</div>`",
-        "       }",
-        "     }",
-        " }",
+        "<blockquote>const Container extends Component {<br>&nbsp;&nbsp;render() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "Instructions",
         "Use object literal simplification to create and return a Person object"
       ],
@@ -683,9 +671,9 @@
         "    }",
         "}",
         "/* Alter code above this line */",
-        "<code>const zod = Person(\"Zodiac Hasbro\", 56, 'male');</code>",
-        "<code>const yan = Person(\"Yanoshi Mimoto\", 55, 'male');</code>",
-        "<code>zod.sendFriendRequest(yan);</code>"
+        "const zod = Person(\"Zodiac Hasbro\", 56, 'male');",
+        "const yan = Person(\"Yanoshi Mimoto\", 55, 'male');",
+        "zod.sendFriendRequest(yan);"
       ],
       "tests": [
         "// Test the output is Sending request to Yanoshi Mimoto",
