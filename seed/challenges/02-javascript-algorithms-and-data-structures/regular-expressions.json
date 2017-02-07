@@ -64,10 +64,11 @@
       "id": "587d7db3367417b2b2512b8f",
       "title": "Match Literal Strings",
       "description": [
-        "In the last challenge, you searched for the word <code>\"the\"</code> using the regular expression <code>/the/</code>. This regex is searching for a literal match of the string <code>\"the\"</code>. Here's another example:",
+        "In the last challenge, you searched for the word <code>\"the\"</code> using the regular expression <code>/the/</code>. That regex searched for a literal match of the string <code>\"the\"</code>. Here's another example searching for a literal match of the string <code>\"Kevin\"</code>:",
         "<blockquote>let testStr = \"Hello, my name is Kevin.\";<br>let testRegex = /Kevin/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>",
-        "Any other forms of <code>\"the\"</code> will not match. For example, the regex <code>/the/</code> will not match <code>\"The\"</code> or <code>\"THE\"</code>. A future challenge shows how to match these versions as well.",
+        "Any other forms of <code>\"Kevin\"</code> will not match. For example, the regex <code>/Kevin/</code> will not match <code>\"kevin\"</code> or <code>\"KEVIN\"</code>.",
         "<blockquote>let wrongRegex = /kevin/;<br>wrongRegex.test(testStr);<br>// Returns false</blockquote>",
+        "A future challenge will show how to match those other forms as well.",
         "<hr>",
         "Complete the regex <code>waldoRegex</code> to find <code>\"Waldo\"</code> in the string <code>waldoIsHiding</code> with a literal match."
       ],
