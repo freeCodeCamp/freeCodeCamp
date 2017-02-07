@@ -418,6 +418,9 @@ Be sure to post in the PR conversation that you have made the requested changes.
 
 ### Other resources
 
+-   [Style Guide for freeCodeCamp
+    Challenges](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/seed/challenge-style-guide.md)
+
 -   [Searching for Your Issue on
     GitHub](http://forum.freecodecamp.com/t/searching-for-existing-issues/19139)
 
