@@ -542,7 +542,6 @@
       ],
       "tests": [
         "assert(alphabetRegexV2.global, 'message: Your regex should use the global flag.');",
-        "assert(/i/.test(alphabetRegexV2.flags), 'message: Your regex should use the case insensitive flag.');",
         "assert(\"The five boxing wizards jump quickly.\".match(alphabetRegexV2).length === 31, 'message: Your regex should find 31 alphanumeric characters in <code>\"The five boxing wizards jump quickly.\"</code>');",
         "assert(\"Pack my box with five dozen liquor jugs.\".match(alphabetRegexV2).length === 32, 'message: Your regex should find 32 alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>');",
         "assert(\"How vexingly quick daft zebras jump!\".match(alphabetRegexV2).length === 30, 'message: Your regex should find 30 alphanumeric characters in <code>\"How vexingly quick daft zebras jump!\"</code>');",
