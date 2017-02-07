@@ -1,4 +1,6 @@
 import { Observable } from 'rx';
+import store from 'store';
+
 import { postJSON$ } from '../../common/utils/ajax-stream';
 import types from '../../common/app/redux/types';
 import {
@@ -6,6 +8,10 @@ import {
   updateTheme,
   createErrorObservable
 } from '../../common/app/redux/actions';
+
+function persistTheme(theme) {
+  store.set('fcc-theme', theme);
+}
 
 export default function nightModeSaga(
   actions,
@@ -17,6 +23,8 @@ export default function nightModeSaga(
     .doOnNext(({ payload: theme }) => {
       if (theme === 'night') {
         body.classList.add('night');
+        // catch existing night mode users
+        persistTheme(theme);
       } else {
         body.classList.remove('night');
       }
@@ -29,6 +37,7 @@ export default function nightModeSaga(
     .flatMap(() => {
       const { app: { theme } } = getState();
       const newTheme = !theme || theme === 'default' ? 'night' : 'default';
+      persistTheme(newTheme);
       return Observable.of(
         updateTheme(newTheme),
         addThemeToBody(newTheme)
