@@ -258,7 +258,7 @@
       ],
       "tests": [
         "assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny'], 'message: <code>forecast</code> should return <code>[\"warm\", \"sunny\"]');",
-        "assert.notStrictEqual(forecast.toString().search(/\\.slice\\(/), -1, 'message: The <code>forecast</code> function should utilize the <code>slice()</code> method');"
+        "assert(/\\.slice\\(/.test(code), 'message: The <code>forecast</code> function should utilize the <code>slice()</code> method');"
       ],
       "type": "waypoint",
       "solutions": [],
