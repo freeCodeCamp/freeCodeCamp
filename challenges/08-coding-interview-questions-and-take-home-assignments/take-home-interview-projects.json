@@ -379,7 +379,7 @@
       "id": "bd7150d8c442eddfafb5bd1c",
       "title": "P2P Video Chat Application",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://hyperdev.com' target='_blank'>Hyperdev</a> app that is functionally similar to this: <a href='https://unequaled-cement.hyperdev.space' target='_blank'>https://unequaled-cement.hyperdev.space</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://gomix.com' target='_blank'>Gomix</a> app that is functionally similar to this: <a href='https://unequaled-cement.gomix.me' target='_blank'>https://unequaled-cement.gomix.me</a>.",
         "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> Upon arriving, the browser will prompt me to access my camera and microphone. ",
         "<strong>User Story:</strong> After I give it permission, I am prompted to type in a room name.",
@@ -391,7 +391,7 @@
         "<strong>User Story:</strong> When I choose to cancel the room name input step, or if I type in no name, or just spaces, it should again ask me again to type in a valid room name. ",
         "<strong>User Story:</strong> If one of the two people in the room get disconnected, they can reconnect to the same room and continue chatting.",
         "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
-        "When you are finished, click the \"I've completed this challenge\" button and include a link to your Hyperdev App.",
+        "When you are finished, click the \"I've completed this challenge\" button and include a link to your Gomix App.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "challengeSeed": [],

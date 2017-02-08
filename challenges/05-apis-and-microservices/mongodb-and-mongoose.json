@@ -74,7 +74,7 @@
         "more fields, use simple validators like required or unique,",
         "and set default values. See the <a href='http://mongoosejs.com/docs/guide.html'>mongoose docs</a>.",
         "[C]RUD Part I - CREATE",
-        "Note: HyperDev is a real server, and in real servers the interactions with the db happen in handler functions. These function are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The done() function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating or deleting. It’s following the Node convention and should be called as done(null, data) on success, or done(err) on error.",
+        "Note: Gomix is a real server, and in real servers the interactions with the db happen in handler functions. These function are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The done() function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating or deleting. It’s following the Node convention and should be called as done(null, data) on success, or done(err) on error.",
         "Warning - When interacting with remote services, errors may occur !",
         "<code>/* Example */</code>",
         "<code>var someFunc = function(done) {</code>",
