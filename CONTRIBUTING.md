@@ -10,6 +10,8 @@ We welcome pull requests from freeCodeCamp campers (our students) and seasoned J
 
 Remember to feel free to ask for help in our [Contributors](https://gitter.im/FreeCodeCamp/Contributors) Gitter room.
 
+Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+
 ###### If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
 
 --------------------------------------------------------------------------------
