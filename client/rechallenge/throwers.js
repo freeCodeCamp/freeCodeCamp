@@ -49,13 +49,13 @@ const throwForJsHtml = {
         }
       }
     }, {
-      name: 'hyperdev in code',
-      description: 'Code with the URL hyperdev.com ' +
+      name: 'gomix in code',
+      description: 'Code with the URL gomix.me ' +
         'should not be allowed to run',
-      detectHyperdevInCode: /hyperdev\.com/gi,
-      thrower: function checkForHyperdev({ contents }) {
-        if (contents.match(this.detectHyperdevInCode)) {
-          throw new Error('Hyperdev.com should not be in the code');
+      detectGomixInCode: /gomix\.me/gi,
+      thrower: function checkForGomix({ contents }) {
+        if (contents.match(this.detectGomixInCode)) {
+          throw new Error('Gomix.me should not be in the code');
         }
       }
     }
