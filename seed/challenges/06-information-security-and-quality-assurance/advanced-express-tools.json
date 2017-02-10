@@ -390,6 +390,117 @@
       "type": "backend",
       "challengeType": 0,
       "translations": {}
-    }  
+    },  
+    {
+      "id": "589a69f5f9fc0f352b528e6f",
+      "title": "Social Authentication with OAuth",
+      "description": [
+        [
+          "",
+          "",
+          "OAuth 2.0 is the industry-standard authorization and is used accross the internet for social login such as letting you login to freeCodeCamp with your Github account.<br>Implementing social login with passport using OAuth is extremely easy to do beause of the <a href='http://passportjs.org/'>300+ modules</a> already on npm for adding new strategies to your app. In addition to the ease of installation, it is also easier to use because you do not have to deal with a seperate <em>registration</em> or any user imput.<br>To assist in learning to implement this kind of authentication, we've prepared a sample project below currently missing the strategy- you just need to remix it and go to the next challenge to begin! Be sure to enter your database in the .env file- it can be the same one from last project since we're using a new collection!",
+          "https://gomix.com/#!/project/fcc-social"
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
+    {
+      "id": "589a69f5f9fc0f352b528e70",
+      "title": "Implementation of Social Authentication",
+      "description": [
+        "The basic path this kind of authentication will follow in your app is: <ol><li>User clicks a button or link sending them to our route to authenticate using a specific strategy (EG. Github)</li><li>Your route calls <code>passport.authenticate('github')</code> which redirects them to Github.</li><li>The page the user lands on, on Github, allows them to login if they aren't already then asks them to approve access to their profile from our app.</li><li>The user is then returned to our app at a specific callback url with their profile if they approved.</li><li>They are now authenticated and your app should check if it is a returning profile, or save it in your database if it is not.</li></ol>",
+        "Strategies with OAuth require you to have atleast a <em>Client ID</em> and a <em>Client Secret</em> which is a way for them to verify who the authentication request is coming from and if it is valid. These are obtained from the site you are trying to implement authentication with, such as Github, and are unique to your app- <b>THEY ARE NOT TO BE SHARED</b> and should never be uploaded to a public repository or written directly in your code. A common practice is to put them in your <em>.env</em> file and reference them like: <code>process.env.GITHUB_CLIENT_ID</code>. For this challenge we're going to use the Github strategy.",
+        "Obtaining your <em>Client ID and Secret<em> from Github is done in your account profile settings under 'developer settings', then '<a href='https://github.com/settings/developers'>OAuth applications</a>'. Click 'Register a new application', name your app, paste in the url to your gomix homepage (<b>Not the project code's url</b>), and lastly for the callback url, paste in the same url as the homepage but with '/auth/github/callback' added on. This is where users will be redirected to for us to handle after authenticating on Github. Save the returned information as 'GITHUB_CLIENT_ID' and 'GITHUB_CLIENT_SECRET' in your .env file.",
+        "On your remixed project, create 2 routes accepting GET requests: /auth/github and /auth/github/callback. The first should only call passport to authenticate 'github' and the second should call passport to authenticate 'github' with a failure redirect to '/' and then if that is succesful redirect to '/profile' (similar to our last project).",
+        "An example of how '/auth/github/callback' should look is similar to how we handled a normal login in our last project: <pre>app.route('/login')\n  .post(passport.authenticate('local', { failureRedirect: '/' }), (req,res) => { \n    res.redirect('/profile'); \n  });</pre>",
+        "Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/28ea2cae7e1dc6a53d7f0c42d987313b'>here</a>."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Route /auth/github correct",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|\")\\/auth\\/github('|\")[^]*get.*passport.authenticate.*github/gi, 'Route auth/github should only call passport.authenticate with github'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Route /auth/github/callback correct",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|\")\\/auth\\/github\\/callback('|\")[^]*get.*passport.authenticate.*github.*failureRedirect:( |)(\"|')\\/(\"|')/gi, 'Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "589a69f5f9fc0f352b528e71",
+      "title": "Implementation of Social Authentication II",
+      "description": [
+        "The last part of setting up your Github authentication is to create the strategy itself. For this, you will need to add the dependency of 'passport-github' to your project and require it as GithubStrategy like <code>const GitHubStrategy = require('passport-github').Strategy;</code>.",
+        "To set up the Github strategy, you have to tell <b>passport</b> to <b>use</b> an instantiated <b>GithubStrategy</b>, which accepts 2 arguments: An object (containing <em>clientID</em>, <em>clientSecret</em>, and <em>callbackURL</em>) and a function to be called when a user is successfully authenticated which we will determine if the user is new and what fields to save initially in the user's database object. This is common across many strategies but some may require more information as outlined in that specific stategy's github README; for example, Google requires a <em>scope</em> as well which determines what kind of information your request is asking returned and asks the user to approve such access. The current strategy we are implementing has its usage outlined <a>here</a>, but we're going through it all right here on freeCodeCamp!",
+        "Heres how your new strategy should look at this point: <pre>passport.use(new GitHubStrategy({\n    clientID: process.env.GITHUB_CLIENT_ID,\n    clientSecret: process.env.GITHUB_CLIENT_SECRET,\n    callbackURL: /*INSERT CALLBACK URL ENTERED INTO GITHUB HERE*/\n  },\n  function(accessToken, refreshToken, profile, cb) {\n      console.log(profile);\n      //Database logic here with callback containing our user object\n  }\n));</pre>",
+        "Your authentication won't be successful yet, and actually throw an error, without the database logic and callback, but it should log to your console your Github profile if you try it!",
+        "Submit your page when you think you've got it right."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Dependency added",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'passport-github', 'Your project should list \"passport-github\" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Dependency required",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*(\"|')passport-github(\"|')/gi, 'You should have required passport-github'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "Github strategy setup correctly thus far",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.use.*new GitHubStrategy/gi, 'Passport should use a new GitHubStrategy'); assert.match(data, /callbackURL:( |)(\"|').*(\"|')/gi, 'You should have a callbackURL'); assert.match(data, /process.env.GITHUB_CLIENT_SECRET/g, 'You should use process.env.GITHUB_CLIENT_SECRET'); assert.match(data, /process.env.GITHUB_CLIENT_ID/g, 'You should use process.env.GITHUB_CLIENT_ID'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "589a8eb3f9fc0f352b528e72",
+      "title": "Implementation of Social Authentication III",
+      "description": [
+        "The final part of the strategy is handling the profile returned from Github. We need to load the users database object if it exists or create one if it doesn't and populate the fields from the profile, then return the user's object. Github supplies us a unique <em>id</em> within each profile which we can use to search with to serialize the user with (already implemented). Below is an example imeplentation you can use in your project- it goes within the function that is the second argument for the new strategy, right below the <code>console.log(profile);</code> currently is:",
+        "<pre>db.collection('socialusers').findAndModify(\n    {id: profile.id},\n    {},\n    {$setOnInsert:{\n        id: profile.id,\n        name: profile.displayName || 'John Doe',\n        photo: profile.photos[0].value || '',\n        email: profile.emails[0].value || 'No public email',\n        created_on: new Date(),\n        provider: profile.provider || ''\n    },$set:{\n        last_login: new Date()\n    },$inc:{\n        login_count: 1\n    }},\n    {upsert:true, new: true},\n    (err, doc) => {\n        return cb(null, doc.value);\n    }\n);</pre>",
+        "With a findAndModify, it allows you to search for an object and update it, as well as upsert the object if it doesn't exist and recieve the new object back each time in our callback function. In this example, we always set the last_login as now, we always increment the login_count by 1, and only when we insert a new object(new user) do we populate the majority of the fields. Something to notice also is the use of default values. Sometimes a profile returned wont have all the information filled out or it will have been chosen by the user to remain private; so in this case we have to handle it to prevent an error.",
+        "You should be able to login to your app now- try it! Submit your page when you think you've got it right. If you're running into errors, you can check out an example of this mini-project's finished code <a href='https://gomix.com/#!/project/guttural-birch'>here</a>."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Github strategy setup complete",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, 'Strategy should use now use the database to search for the user'); assert.match(data, /GitHubStrategy[^]*socialusers/gi, 'Strategy should use \"socialusers\" as db collection'); assert.match(data, /GitHubStrategy[^]*return cb/gi, 'Strategy should return the callback function \"cb\"'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    }      
   ]
 }
