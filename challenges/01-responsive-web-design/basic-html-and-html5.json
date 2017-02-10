@@ -570,8 +570,11 @@
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up.\"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "<hr>",
-        "Try it with this image:",
-        "<code>https://bit.ly/fcc-relaxing-cat</code>"
+        "Let's try to add an image to our website:",
+        "Insert an <code>img</code> tag, before the <code>h2</code> element.",
+        "Now set the <code>src</code> attribute so that it points to this url:",
+        "<code>https://bit.ly/fcc-relaxing-cat</code>",
+        "Finally don't forget to give your image an <code>alt</code> text."
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
