@@ -62,18 +62,22 @@
         "<code>@media (max-width: 100px) { /* CSS Rules */ }</code>",
         "Remember, the CSS inside the media query is applied only if the media type matches that of the device being used.",
         "<hr>",
-        "Add a media query, so that the <code>p</code> tag has a <code>font-size</code> of 10px when the device's height is smaller than 800px."
+        "Add a media query, so that the <code>p</code> tag has a <code>font-size</code> of 10px when the device's height is less than or equal to 800px."
       ],
       "challengeSeed": [
         "<style>",
+        "  p {",
+        "    font-size: 20px;",
+        "  }",
+        "  /* Add media query below */",
         "  ",
         "</style>",
         "",
         "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
       ],
       "tests": [
-        "assert($('p').css('font-size') == '10px', 'message: Your <code>p</code> tag should have the <code>font-size</code> of 10px when the device <code>height</code> is smaller than 800px.');",
-        "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare an <code>@media</code> query for devices with <code>height</code> less than 800px.');"
+        "assert($('p').css('font-size') == '10px', 'message: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');",
+        "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare an <code>@media</code> query for devices with <code>heights</code> less than or equal to 800px.');"
       ],
       "type": "waypoint",
       "solution": [],
