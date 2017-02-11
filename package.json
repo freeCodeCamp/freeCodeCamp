@@ -55,7 +55,6 @@
     "express-validator": "^3.0.0",
     "fetchr": "~0.5.12",
     "frameguard": "^3.0.0",
-    "gitter-sidecar": "^1.2.3",
     "googleapis": "16.1.0",
     "helmet": "^3.1.0",
     "helmet-csp": "^2.1.0",
