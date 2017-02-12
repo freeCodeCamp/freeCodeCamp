@@ -62,40 +62,40 @@
       "translations": {}
     },
     {
-     "id": "587d78b2366415b2v2512be3",
-     "title": "Access an Array's Contents Using Bracket Notation",
-     "description": [
-       "The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that data on command. So, now that we've learned how to create an array, let's begin to think about how we can access that array's information.",
-       "When we define a simple array as seen below, there are 3 items in it:",
-       "<blockquote>let ourArray = [\"a\", \"b\", \"c\"];</blockquote>",
-       "In an array, each array item has an <dfn>index</dfn>.  This index doubles as the position of that item in the array, and how you reference it. However, it is important to note, that JavaScript arrays are <dfn>zero-indexed</dfn>, meaning that the first element of an array is actually at the <em><strong>zeroth</strong></em> position, not the first.",
-       "In order to retrieve an element from an array we can enclose an index in brackets and append it to the end of an array, or more commonly, to a variable which references an array object. This is known as <dfn>bracket notation</dfn>.",
-       "For example, if we want to retrieve the <code>\"a\"</code> from <code>ourArray</code> and assign it to a variable, we can do so with the following code:",
-       "<blockquote>let ourVariable = ourArray[0];<br>// ourVariable equals \"a\"</blockquote>",
-       "In addition to accessing the value associated with an index, you can also <em>set</em> an index to a value using the same notation:",
-       "<blockquote>ourArray[1] = \"not b anymore\";<br>// ourArray now equals [\"a\", \"not b anymore\", \"c\"];</blockquote>",
-       "Using bracket notation, we have now reset the item at index 1 from <code>\"b\"</code>, to <code>\"not b anymore\"</code>.",
-       "<hr>",
-       "In order to complete this challenge, set the 2nd position (1st index) of <code>myArray</code> to anything you want, besides <code>\"b\"</code>."
-     ],
-     "challengeSeed": [
-       "let myArray = [\"a\", \"b\", \"c\", \"d\"];",
-       "// change code below this line",
-       "",
-       "//change code above this line",
-       "console.log(myArray);"
-     ],
-     "tests": [
-       "assert.strictEqual(myArray[0], \"a\", 'message: <code>myArray[0]</code> is equal to <code>\"a\"</code>');",
-       "assert.notStrictEqual(myArray[1], \"b\", 'message: <code>myArray[1]</code> is no longer set to <code>\"b\"</code>');",
-       "assert.strictEqual(myArray[2], \"c\", 'message: <code>myArray[0]</code> is equal to <code>\"c\"</code>');",
-       "assert.strictEqual(myArray[3], \"d\", 'message: <code>myArray[0]</code> is equal to <code>\"d\"</code>');"
-     ],
-     "type": "waypoint",
-     "solutions": [],
-     "challengeType": 1,
-     "translations": {},
-     "releasedOn": ""
+      "id": "587d78b2366415b2v2512be3",
+      "title": "Access an Array's Contents Using Bracket Notation",
+      "description": [
+        "The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that data on command. So, now that we've learned how to create an array, let's begin to think about how we can access that array's information.",
+        "When we define a simple array as seen below, there are 3 items in it:",
+        "<blockquote>let ourArray = [\"a\", \"b\", \"c\"];</blockquote>",
+        "In an array, each array item has an <dfn>index</dfn>.  This index doubles as the position of that item in the array, and how you reference it. However, it is important to note, that JavaScript arrays are <dfn>zero-indexed</dfn>, meaning that the first element of an array is actually at the <em><strong>zeroth</strong></em> position, not the first.",
+        "In order to retrieve an element from an array we can enclose an index in brackets and append it to the end of an array, or more commonly, to a variable which references an array object. This is known as <dfn>bracket notation</dfn>.",
+        "For example, if we want to retrieve the <code>\"a\"</code> from <code>ourArray</code> and assign it to a variable, we can do so with the following code:",
+        "<blockquote>let ourVariable = ourArray[0];<br>// ourVariable equals \"a\"</blockquote>",
+        "In addition to accessing the value associated with an index, you can also <em>set</em> an index to a value using the same notation:",
+        "<blockquote>ourArray[1] = \"not b anymore\";<br>// ourArray now equals [\"a\", \"not b anymore\", \"c\"];</blockquote>",
+        "Using bracket notation, we have now reset the item at index 1 from <code>\"b\"</code>, to <code>\"not b anymore\"</code>.",
+        "<hr>",
+        "In order to complete this challenge, set the 2nd position (1st index) of <code>myArray</code> to anything you want, besides <code>\"b\"</code>."
+      ],
+      "challengeSeed": [
+        "let myArray = [\"a\", \"b\", \"c\", \"d\"];",
+        "// change code below this line",
+        "",
+        "//change code above this line",
+        "console.log(myArray);"
+      ],
+      "tests": [
+        "assert.strictEqual(myArray[0], \"a\", 'message: <code>myArray[0]</code> is equal to <code>\"a\"</code>');",
+        "assert.notStrictEqual(myArray[1], \"b\", 'message: <code>myArray[1]</code> is no longer set to <code>\"b\"</code>');",
+        "assert.strictEqual(myArray[2], \"c\", 'message: <code>myArray[0]</code> is equal to <code>\"c\"</code>');",
+        "assert.strictEqual(myArray[3], \"d\", 'message: <code>myArray[0]</code> is equal to <code>\"d\"</code>');"
+      ],
+      "type": "waypoint",
+      "solutions": [],
+      "challengeType": 1,
+      "translations": {},
+      "releasedOn": ""
     },
     {
       "id": "587d78b2367417b2b2512b0e",
@@ -809,8 +809,9 @@
         "console.log(addFriend(user, 'Pete'));"
       ],
       "tests": [
-        "assert('name' in user && 'age' in user && 'data' in user, 'The user object has name, age, and data keys');",
-        "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'The addFriend function accepts a user object and a friend as arguments and adds the friend to the array of friends in the user object.');"
+        "assert('name' in user && 'age' in user && 'data' in user, 'message: The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys');",
+        "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'message: The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object');",
+        "assert.deepEqual((function() { delete user.data.friends; user.data.friends = ['Sam', 'Kira', 'Tomo']; return addFriend(user, 'Pete') })(), ['Sam', 'Kira', 'Tomo', 'Pete'], 'message: <code>addFriend(user, \"Pete\")</code> should return <code>[\"Sam\", \"Kira\", \"Tomo\", \"Pete\"]</code>');"
       ],
       "type": "waypoint",
       "releasedOn": "January 22, 2017",
