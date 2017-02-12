@@ -1,12 +1,33 @@
 # A guide to designing freeCodeCamp coding challenges
 
-> “Talk is cheap. Show me the code.” — Linus Torvalds
+> "Talk is cheap. Show me the code." — Linus Torvalds
 
 freeCodeCamp offers 1,200 hours of interactive coding challenges. These are 100% focused on the practical skill of building software. You code the entire time. You learn to code by coding.
 
 You can learn theory through free online university courses. freeCodeCamp will focus instead on helping you learn to code and practice by building apps.
 
 With that practical focus in mind, let’s talk about the requirements for our coding challenges. (Note that these requirements do not apply to our algorithm challenges, checkpoint challenges, or projects.)
+
+**Table of Contents**
+
+- [Proper nouns](#proper-nouns)
+- [The 2 minute rule](#the-2-minute-rule)
+- [Modularity](#modularity)
+- [Naming challenges](#naming-challenges)
+- [Writing tests](#writing-tests)
+- [Writing instructions](#writing-instructions)
+- [Formatting challenge text](#formatting-challenge-text)
+- [Formatting seed code](#formatting-seed-code)
+- [Why do we have all these rules?](#why-do-we-have-all-these-rules)
+
+## Proper nouns
+
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
+
+- JavaScript (capital letters in "J" and "S" and no abbreviations)
+- Node.js
+
+Front-end development (adjective form with a dash) is when you working on the front end (noun form with no dash). The same goes with the back end, full stack, and many other compound terms.
 
 ## The 2 minute rule
 
@@ -74,6 +95,7 @@ Here are specific formatting guidelines for challenge text and examples:
 - Multi-line code examples go in `<blockquote>` tags, and use the `<br>` tag to separate lines. For HTML examples, remember to use escape characters to represent the angle brackets
 - A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
 - Additional information in the form of a note should be formatted `<strong>Note</strong><br>Rest of note text...`
+- Use double quotes where applicable
 
 ## Formatting seed code
 
@@ -81,6 +103,7 @@ Here are specific formatting guidelines for the challenge seed code:
 
 - Use two spaces to indent
 - JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
 ## Why do we have all these rules?
 
