@@ -285,20 +285,15 @@
     },
     {
       "id": "587d7b88367417b2b2512b46",
-      "title": "Default Parameters",
+      "title": "Write Functions with Default Parameters",
       "description": [
-        "In order to help us create more flexible functions, ES2015 introduces default parameters for functions.",
+        "In order to help us create more flexible functions, ES6 introduces <dfn>default parameters</dfn> for functions.",
         "Check out this code:",
-        "<code>function greeting(name = \"Anonymous\") {</code>",
-        "<code>    return \"Hello \" + name;</code>",
-        "<code>}</code>",
-        "<code>console.log(greeting(\"John\")); // Hello John</code>",
-        "<code>console.log(greeting()); // Hello Anonymous</code>",
-        "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, when you do not provide a value for your parameter, the parameter will receive its default value. You can add default values for as many parameters as you want.",
-        "Instructions.",
-        "Modify the following code by adding a default parameter for the increment function so that it will always return a valid number and it will add 1 to the number parameter in case value is not specified.",
-        "Note",
-        "Don't forget to use strict mode."
+        "<blockquote>function greeting(name = \"Anonymous\") {<br>  return \"Hello \" + name;<br>}<br>console.log(greeting(\"John\")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>",
+        "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>\"Anonymous\"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.",
+        "<hr>",
+        "Modify the function <code>increment</code> by adding default parameters so it will always return a valid number and it will add 1 to <code>number</code> if <code>value</code> is not specified.",
+        "<strong>Note</strong><br>Don't forget to use strict mode."
       ],
       "challengeSeed": [
         "function increment(number, value) {",
@@ -318,20 +313,15 @@
     },
     {
       "id": "587d7b88367417b2b2512b47",
-      "title": "No Title One",
+      "title": "Use the Rest Operator with Function Parameters",
       "description": [
-        "In order to help us create more flexible functions, ES2015 introduces the rest operator for function parameters. With the rest operator, you can create functions with variable number of arguments and then have those arguments available into an Array inside the function",
+        "In order to help us create more flexible functions, ES6 introduces the <dfn>rest operator</dfn> for function parameters. With the rest operator, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.",
         "Check out this code:",
-        "<code>function howMany(...args) {</code>",
-        "<code>    return \"You have passed \" + args.length + \" arguments.\";</code>",
-        "<code>}</code>",
-        "<code>console.log(howMany(0, 1, 2)); // You have passed 3 arguments.</code>",
-        "<code>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</code>",
-        "The rest operator eliminates the need to check the arguments object and allows us to apply map, filter and reduce on the parameters array.",
-        "Instructions.",
-        "Modify the sum function so that is uses the rest operator and it works in the same way with any number of parameters.",
-        "Note",
-        "Don't forget to use strict mode."
+        "<blockquote>function howMany(...args) {<br>  return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>",
+        "The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.",
+        "<hr>",
+        "Modify the function <code>sum</code> so that is uses the rest operator and it works in the same way with any number of parameters.",
+        "<strong>Note</strong><br>Don't forget to use strict mode."
       ],
       "challengeSeed": [
         "function sum(x, y, z) {",
@@ -352,29 +342,28 @@
     },
     {
       "id": "587d7b89367417b2b2512b48",
-      "title": "Spread Operator",
+      "title": "Use the Spread Operator",
       "description": [
-        "With the Spread Operator in ES6 or ES2015; you can improve on the array literal syntax",
-        "The ES5 code uses apply to compute the maximum value in an array",
-        "<code>var arr = [6, 89, 3, 45];</code>",
-        "<code>var maximus = Math.max.apply(null, arr); // returns 89</code>",
-        "<code>We had to use Math.max.apply(null, arr), because Math.max(arr) returns NaN. Math.max expects a comma separated arguments, just not an array.</code>",
-        "However, the spread operator makes this syntax much better to read and maintain.",
-        "<code>const arr = [6, 89, 3, 45];</code>",
-        "<code>const maximus = Math.max(...arr); // returns 89</code>",
-        "...arr returns an un-packed array content. It spreads the array.",
-        "However, this is in-place; like the argument to a function. You cannot do this:",
-        "<code>const spreaded = ...arr; // will throw a syntax error</code>",
-        "Instructions.",
-        "Copy all contents of arr1 into another array arr2."
+        "ES6 introduces the <dfn>spread operator</dfn>, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.",
+        "The ES5 code below uses <code>apply()</code> to compute the maximum value in an array:",
+        "<blockquote>var arr = [6, 89, 3, 45];<br>var maximus = Math.max.apply(null, arr); // returns 89</blockquote>",
+        "We had to use <code>Math.max.apply(null, arr)</code> because <code>Math.max(arr)</code> returns <code>NaN</code>. <code>Math.max()</code> expects comma-separated arguments, but not an array.",
+        "The spread operator makes this syntax much better to read and maintain.",
+        "<blockquote>const arr = [6, 89, 3, 45];<br>const maximus = Math.max(...arr); // returns 89</blockquote>",
+        "<code>...arr</code> returns an unpacked array. In other words, it <em>spreads</em> the array.",
+        "However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:",
+        "<blockquote>const spreaded = ...arr; // will throw a syntax error</blockquote>",
+        "<hr>",
+        "Copy all contents of <code>arr1</code> into another array <code>arr2</code> using the spread operator."
       ],
       "challengeSeed": [
         "const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];",
-        "/* Alter code below this line */",
-        "const arr2 = undefined; // change this",
-        "/* Alter code above this line */",
+        "const arr2 = [];",
+        "// change code below this line",
+        
+        "// change code above this line",
         "arr1.push('JUN');",
-        "console.log(arr2); // should not be affected"
+        "console.log(arr2); // arr2 should not be affected"
       ],
       "tests": [
         "// Test arr2 is correct copy of arr1",
@@ -387,29 +376,26 @@
     },
     {
       "id": "587d7b89367417b2b2512b49",
-      "title": "No Title Two",
+      "title": "Use Destructuring Assignment with Objects",
       "description": [
-        "We earlier saw how spread operator can effectively spread or unpack the contents of the array.",
-        "We can do something similar with objects as well. Objects in JavaScript are a key-value pair collections.",
-        "Consider the following:",
-        "<code>const voxel = {x: 3.6, y: 7.4, z: 6.54 };</code>",
-        "<code>const x = voxel.x; // x = 3.6</code>",
-        "<code>const y = voxel.y; // y = 7.4</code>",
-        "<code>const z = voxel.z; // z = 6.54</code>",
-        "Here's the same assignment statement with ES6 destructuring syntax",
-        "<code>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</code>",
-        "If instead, you want to store the values of voxel.x into a, voxel.y into b and so on; you have that freedom as well.",
-        "<code>const { x : a, y : b, z : c } = voxel // a = 3.6, y = 7.4, z = 6.54</code>",
-        "You may read it as \"get the field x and copy the value in a\" and so on.",
-        "Instructions.",
-        "Use destructuring to obtain the length of the string greeting"
+        "We earlier saw how spread operator can effectively spread, or unpack, the contents of the array.",
+        "We can do something similar with objects as well. <dfn>Destructuring assignment</dfn> is special syntax for neatly assigning values taken directly from an object to variables.",
+        "Consider the following ES5 code:",
+        "<blockquote>const voxel = {x: 3.6, y: 7.4, z: 6.54 };<br>const x = voxel.x; // x = 3.6<br>const y = voxel.y; // y = 7.4<br>const z = voxel.z; // z = 6.54</blockquote>",
+        "Here's the same assignment statement with ES6 destructuring syntax:",
+        "<blockquote>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</blockquote>",
+        "If instead you want to store the values of <code>voxel.x</code> into <code>a</code>, <code>voxel.y</code> into <code>b</code>, and <code>voxel.z</code> into <code>c</code>, you have that freedom as well.",
+        "<blockquote>const { x : a, y : b, z : c } = voxel // a = 3.6, y = 7.4, z = 6.54</blockquote>",
+        "You may read it as \"get the field <code>x</code> and copy the value into <code>a</code>,\" and so on.",
+        "<hr>",
+        "Use destructuring to obtain the length of the string <code>greeting</code>"
       ],
       "challengeSeed": [
         "const greeting = 'itadakimasu'",
-        "/* Alter code below this line */",
-        "const len = 0; // change this",
-        "/* Alter code above this line */",
-        "console.log(len); // should be using destructuring"
+        "// change code below this line",
+        "const length = 0; // change this",
+        "// change code above this line",
+        "console.log(length); // should be using destructuring"
       ],
       "tests": [
         "// Test len is 11",
