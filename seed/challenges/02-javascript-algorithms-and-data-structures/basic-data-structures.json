@@ -811,8 +811,9 @@
         "console.log(addFriend(user, 'Pete'));"
       ],
       "tests": [
-        "assert('name' in user && 'age' in user && 'data' in user, 'The user object has name, age, and data keys');",
-        "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'The addFriend function accepts a user object and a friend as arguments and adds the friend to the array of friends in the user object.');"
+        "assert('name' in user && 'age' in user && 'data' in user, 'message: The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys');",
+        "assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'message: The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object');",
+        "assert.deepEqual((function() { delete user.data.friends; user.data.friends = ['Sam', 'Kira', 'Tomo']; return addFriend(user, 'Pete') })(), ['Sam', 'Kira', 'Tomo', 'Pete'], 'message: <code>addFriend(user, \"Pete\")</code> should return <code>[\"Sam\", \"Kira\", \"Tomo\", \"Pete\"]</code>');"
       ],
       "type": "waypoint",
       "releasedOn": "January 22, 2017",
