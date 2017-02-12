@@ -365,7 +365,7 @@
       "challengeSeed": [
         "let difficultSpelling = \"Mississippi\";",
         "let myRegex = /change/; // Change this line",
-        "let result = difficultSpelling.match(myRegex)"
+        "let result = difficultSpelling.match(myRegex);"
       ],
       "tests": [
         "assert(/\\+/.test(myRegex.source), 'message: Your regex <code>myRegex</code> should use the <code>+</code> sign to match one or more <code>s</code> characters.');",
