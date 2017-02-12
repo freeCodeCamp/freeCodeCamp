@@ -51,15 +51,14 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "waypoint",
       "isRequired": true,
       "releasedOn": "January 1, 2016",
       "challengeType": 4,
       "translations": {
         "es": {
           "title": "Microservicio de Marca Temporal",
-          "description": [
-          ]
+          "description": []
         }
       }
     },
@@ -86,8 +85,7 @@
       "translations": {
         "es": {
           "title": "Microservicio para analizar el encabezado de una petición",
-          "description": [
-          ]
+          "description": []
         }
       }
     },
@@ -122,19 +120,19 @@
       "translations": {
         "es": {
           "title": "Microservicio para acortar URLs",
-          "description": [
-          ]
+          "description": []
         }
       }
     },
     {
-      "id": "bd7158d8c443edefaeb5bdee",
+      "id": "58847113fe4cef36a848631f",
       "title": "Exercise Tracker",
       "description": [
         "Build a full stack JavaScript app that is functionally similar to this: <a href='https://fuschia-custard.gomix.me/' target='_blank'>https://fuschia-custard.gomix.me/</a> on GoMix or on your own publicly accessible domain.",
         "Start by remixing this boilerplate GoMix project: <a href='https://gomix.com/#!/project/fcc-message'>https://gomix.com/#!/project/fcc-message</a>. Then get all the tests for the below user stories to pass."
       ],
       "challengeSeed": [],
+      "releasedOn": "January 22, 2017",
       "tests": [
         {
           "text": "I can create a user by posting form data username to /api/exercise/new-user and returned will be an object with username and <code>_id</code>.",
@@ -161,13 +159,11 @@
       "hints": [],
       "type": "basejump",
       "isRequired": true,
-      "releasedOn": "January 1, 2016",
       "challengeType": 4,
       "translations": {
         "es": {
           "title": "Capa de abstracción para buscar imágenes",
-          "description": [
-          ]
+          "description": []
         }
       }
     },
@@ -198,8 +194,7 @@
       "translations": {
         "es": {
           "title": "Microservicio de metadatos de archivos",
-          "description": [
-          ]
+          "description": []
         }
       }
     }
