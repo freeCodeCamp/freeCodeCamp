@@ -2345,7 +2345,7 @@
         "<code>testFun(\"Hello\", \"World\");</code>",
         "We have passed two arguments, <code>\"Hello\"</code> and <code>\"World\"</code>. Inside the function, <code>param1</code> will equal \"Hello\" and <code>param2</code> will equal \"World\". Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.",
         "<hr>",
-        "<ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function.</li></ol>"
+        "<ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function with two numbers as arguments.</li></ol>"
       ],
       "releasedOn": "January 1, 2016",
       "head": [
@@ -2397,7 +2397,7 @@
         "assert(typeof functionWithArgs === 'function', 'message: <code>functionWithArgs</code> should be a function');",
         "if(typeof functionWithArgs === \"function\") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3, 'message: <code>functionWithArgs(1,2)</code> should output <code>3</code>');",
         "if(typeof functionWithArgs === \"function\") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16, 'message: <code>functionWithArgs(7,9)</code> should output <code>16</code>');",
-        "assert(/^\\s*functionWithArgs\\s*\\([\\w\\W]+\\)\\s*;/m.test(code), 'message: Call <code>functionWithArgs</code> after you define it.');"
+        "assert(/^\\s*functionWithArgs\\s*\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), 'message: Call <code>functionWithArgs</code> with two numbers after you define it.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
