@@ -1,4 +1,5 @@
 import * as babel from 'babel-core';
+import 'babel-polyfill';
 import presetEs2015 from 'babel-preset-es2015';
 import presetReact from 'babel-preset-react';
 import { Observable } from 'rx';
@@ -7,7 +8,6 @@ import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
 
 import { updateContents } from '../../common/utils/polyvinyl';
-import 'babel-polyfill';
 
 const babelOptions = { presets: [ presetEs2015, presetReact ] };
 loopProtect.hit = function hit(line) {
