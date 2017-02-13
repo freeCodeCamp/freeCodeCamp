@@ -968,53 +968,6 @@
       }
     },
     {
-      "id": "56533eb9ac21ba0edf2244b3",
-      "title": "Convert Celsius to Fahrenheit",
-      "description": [
-        "To test your learning, you will create a solution \"from scratch\". Place your code between the indicated lines and it will be tested against multiple test cases.",
-        "The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times <code>9/5</code>, plus <code>32</code>.",
-        "You are given a variable <code>celsius</code> representing a temperature in Celsius. Use the variable <code>fahrenheit</code> already defined and apply the algorithm to assign it the corresponding temperature in Fahrenheit.",
-        "<strong>Note</strong><br>Don't worry too much about the <code>function</code> and <code>return</code> statements as they will be covered in future challenges. For now, only use operators that you have already learned."
-      ],
-      "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "function convertToF(celsius) {",
-        "  var fahrenheit;",
-        "  // Only change code below this line",
-        "  ",
-        "  ",
-        "  // Only change code above this line",
-        "  return fahrenheit;",
-        "}",
-        "",
-        "// Change the inputs below to test your code",
-        "convertToF(30);"
-      ],
-      "solutions": [
-        "function convertToF(celsius) {\n  var fahrenheit = celsius * 9/5 + 32;\n  if ( typeof fahrenheit !== 'undefined' ) {\n  return fahrenheit;\n  } else {\n    return 'fahrenheit not defined';\n  }\n}"
-      ],
-      "tests": [
-        "assert(typeof convertToF(0) === 'number', 'message: <code>convertToF(0)</code> should return a number');",
-        "assert(convertToF(-30) === -22, 'message: <code>convertToF(-30)</code> should return a value of <code>-22</code>');",
-        "assert(convertToF(-10) === 14, 'message: <code>convertToF(-10)</code> should return a value of <code>14</code>');",
-        "assert(convertToF(0) === 32, 'message: <code>convertToF(0)</code> should return a value of <code>32</code>');",
-        "assert(convertToF(20) === 68, 'message: <code>convertToF(20)</code> should return a value of <code>68</code>');",
-        "assert(convertToF(30) === 86, 'message: <code>convertToF(30)</code> should return a value of <code>86</code>');"
-      ],
-      "type": "checkpoint",
-      "challengeType": 1,
-      "translations": {
-        "es": {
-          "title": "Convierte celsius a fahrenheit",
-          "description": [
-            "Para probar tu aprendizaje, crearás una solucion \"desde cero\". Coloca tu código entre las líneas indicadas y este será probado contra multiples casos de prueba.",
-            "El algoritmo para convertir de Celsius a Fahrenheit consiste en multiplicar la temperatura en grados Celsius por 9/5 y al resultado agregarle 32.",
-            "Se te da una variable <code>celsius</code> representando una temperatura en Celsius. Crea una variable <code>fahrenheit</code> y aplica el algoritmo para asignar la correspondiente temperatura en Fahrenheit."
-          ]
-        }
-      }
-    },
-    {
       "id": "bd7123c9c444eddfaeb5bdef",
       "title": "Declare String Variables",
       "description": [
