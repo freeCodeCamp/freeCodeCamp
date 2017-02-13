@@ -1,5 +1,5 @@
-import * as babel from 'babel-core';
 import 'babel-polyfill';
+import * as babel from 'babel-core';
 import presetEs2015 from 'babel-preset-es2015';
 import presetReact from 'babel-preset-react';
 import { Observable } from 'rx';
