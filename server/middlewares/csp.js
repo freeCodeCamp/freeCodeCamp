@@ -6,7 +6,8 @@ let trusted = [
 
 if (process.env.NODE_ENV !== 'production') {
   trusted = trusted.concat([
-    'ws://localhost:3000'
+    'ws://localhost:*',
+    'http://localhost:*'
   ]);
 }
 
