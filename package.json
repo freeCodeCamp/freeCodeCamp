@@ -126,6 +126,7 @@
     "babel-istanbul": "^0.12.1",
     "babel-loader": "^6.2.1",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-polyfill": "^6.22.0",
     "babel-preset-stage-0": "^6.3.13",
     "browser-sync": "^2.9.12",
     "chunk-manifest-webpack-plugin": "0.1.0",

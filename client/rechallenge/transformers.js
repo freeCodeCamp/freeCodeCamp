@@ -7,6 +7,7 @@ import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
 
 import { updateContents } from '../../common/utils/polyvinyl';
+import 'babel-polyfill';
 
 const babelOptions = { presets: [ presetEs2015, presetReact ] };
 loopProtect.hit = function hit(line) {
