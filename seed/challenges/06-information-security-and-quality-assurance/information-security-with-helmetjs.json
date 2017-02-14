@@ -69,10 +69,10 @@
       "id": "587d8247367417b2b2512c39",
       "title": "Mitigate the risk of Cross Site Scripting (XSS) Attacks - helmet.xssFilter()",
       "description": [
-        "Cross-site scripting (XSS) is a frequent type of attack where malicious script are injected into vulnerable pages, on the purpouse of stealing sensitive data like session cookies, or passwords.",
+        "Cross-site scripting (XSS) is a frequent type of attack where malicious script are injected into vulnerable pages, on the purpose of stealing sensitive data like session cookies, or passwords.",
         "The basic rule to lower the risk of an XSS attack is simple: “Never trust user’s input”. As a developer you should always sanitize all the input coming from the outside. This includes data coming from forms, GET query urls, and even from POST bodies. Sanitizing means that you should find and encode the characters that may be dangerous e.g. <, >.",
         "Modern browsers can help mitigating the risk by adopting better software strategies. Often these are configurable via http headers.",
-        "The X-XSS-Protection HTTP header is a basic protection. The browser detects a potential injected script using an heuristic filter. If the header is enabled, the browser changes the script code, neutralizing it.",
+        "The X-XSS-Protection HTTP header is a basic protection. The browser detects a potential injected script using a heuristic filter. If the header is enabled, the browser changes the script code, neutralizing it.",
         "It still has limited support."
       ],
       "challengeSeed": [],
@@ -193,7 +193,7 @@
       "id": "587d8249367417b2b2512c3f",
       "title": "Set a Content Security Policy - helmet.contentSecurityPolicy()",
       "description": [
-        "This challenge highlights one promising new defense that can significantly reduce the risk and impact of many type of attacks in modern browsers. By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect protect your app from XSS vulnerabilities, undesidered tracking, malicious frames, and much more. CSP works by defining a whitelist of content sources which are trusted. You can configure them for each kind of resource a web page may need (scripts, stylesheets, fonts, frames, media, and so on…). There are multiple directives available, so a website owner can have a granular control. See HTML 5 Rocks, KeyCDN for more details. Unfortunately CSP in unsupported by older browser.",
+        "This challenge highlights one promising new defense that can significantly reduce the risk and impact of many type of attacks in modern browsers. By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect your app from XSS vulnerabilities, undesired tracking, malicious frames, and much more. CSP works by defining a whitelist of content sources which are trusted. You can configure them for each kind of resource a web page may need (scripts, stylesheets, fonts, frames, media, and so on…). There are multiple directives available, so a website owner can have a granular control. See HTML 5 Rocks, KeyCDN for more details. Unfortunately CSP in unsupported by older browser.",
         "By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet supports both defaultSrc and default-src naming styles. The fallback applies for most of the unspecified directives. In this exercise, use helmet.contentSecurityPolicy(), and configure it setting the defaultSrc directive to [\"self\"] (the list of allowed sources must be in an array), in order to trust only your website address by default. Set also the scriptSrc directive so that you will allow scripts to be downloaded from your website, and from the domain 'trusted-cdn.com'.",
         "Hint: in the \"'self'\" keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working."
       ],
