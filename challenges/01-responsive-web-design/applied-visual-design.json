@@ -1882,7 +1882,7 @@
       "description": [
         "The <code>transform</code> property has a variety of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
         "Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:",
-        "<blockquote>p:hover {<br>  transform: scale(2.1);}<br>}</blockquote>",
+        "<blockquote>p:hover {<br>  transform: scale(2.1);<br>}</blockquote>",
         "<hr>",
         "Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use the <code>transform</code> property to scale the <code>div</code> element to 1.1 times its original size when a user hovers over it."
       ],
