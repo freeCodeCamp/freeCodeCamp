@@ -33,6 +33,7 @@
   "dependencies": {
     "accepts": "^1.3.0",
     "babel-core": "^6.18.1",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.3.0",
