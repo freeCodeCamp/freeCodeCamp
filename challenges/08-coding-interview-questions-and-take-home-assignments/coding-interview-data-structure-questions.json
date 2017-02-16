@@ -227,15 +227,10 @@
       "title": "Create a Set Class",
       "description": [
         "In the next few exercises we are going to create a function to emulate a data structure called a \"Set\". A Set is like an array, but it cannot contain duplicate values. The typical use for a Set is to simply check for the presence of an item. This can be implemented with an object, for instance:",
-        "<code>var set = new Object();</code>",
-        "<code>set.foo = true;</code>",
-        "<code>// See if foo exists in our set:</code>",
-        "<code>console.log(set.foo) // true</code>",
+        "<blockquote>var set = new Object();<br>set.foo = true;<br>// See if foo exists in our set:<br>console.log(set.foo) // true</blockquote>",
         "In the next few exercises, we will build a full featured Set from scratch.",
-        "In this exercise you will add a function to add a value to our set collection:",
-        "<code>this.add = function(){</code>",
-        "<code>  //some code to add value to the set</code>",
-        "<code>}</code>"
+        "For this exercise, create a function that will add a value to our set collection as long as the value does not already exist in the set. For example:",
+        "<blockquote>this.add = function(element) {<br>  //some code to add value to the set<br>}</blockquote>"
       ],
       "challengeSeed": [
         "function Set() {",
