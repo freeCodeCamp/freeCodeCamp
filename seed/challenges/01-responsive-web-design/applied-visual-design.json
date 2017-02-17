@@ -73,8 +73,8 @@
         "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -129,8 +129,8 @@
         "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -184,8 +184,8 @@
         "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -242,8 +242,8 @@
         "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -299,8 +299,8 @@
         "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -359,8 +359,8 @@
         "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at <strong>Stanford University</strong>.</p>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -418,8 +418,8 @@
         "      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -476,8 +476,8 @@
         "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -537,8 +537,8 @@
         "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -602,8 +602,8 @@
         "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -664,8 +664,8 @@
         "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -730,8 +730,8 @@
         "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -797,8 +797,8 @@
         "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -864,8 +864,8 @@
         "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -945,8 +945,8 @@
         "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
         "    </div>",
         "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" class=\"links\">Sergey Brin</a>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
+        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
         "    </div>",
         "  </div>",
         "</div>"
@@ -1137,7 +1137,7 @@
         "  ",
         "  ",
         "</style>",
-        "<a href=\"https://atjonathan.github.io/catphotoapp\">CatPhotoApp</a>"
+        "<a href=\"https://atjonathan.github.io/catphotoapp\" target=\"_blank\">CatPhotoApp</a>"
       ],
       "tests": [
         "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The <code>color</code> of the anchor tag text should be black.')"
@@ -1166,7 +1166,7 @@
         "  ",
         "  ",
         "</style>",
-        "<a href=\"https://atjonathan.github.io/catphotoapp\">CatPhotoApp</a>"
+        "<a href=\"https://atjonathan.github.io/catphotoapp\" target=\"_blank\">CatPhotoApp</a>"
       ],
       "tests": [
         "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');",
