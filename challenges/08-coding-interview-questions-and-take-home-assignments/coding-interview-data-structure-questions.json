@@ -1027,11 +1027,13 @@
       ],
       "tests": [
         "assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>remove</code> method.');",
-        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'message: Your <code>Remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');",
-        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.length() === 1}()), 'message: Your <code>Remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');",
-        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'}()), 'message: Your <code>Remove</code> method should reassign the reference of the previous node of the removed node to the removed node's <code>next</code> reference ');"
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'message: Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.size() === 1})(), 'message: Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'})(), 'message: Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "class Node {\n  constructor (element) {\n    this.element = element;\n    this.next = null;\n  }\n}\n\nclass LinkedList {\n  constructor () {\n    this._length = 0;\n    this._head = null;\n  }\n\n  head () {\n    return this._head;\n  }\n\n  size () {\n    return this._length;\n  }\n\n  add (element) {\n    const node = new Node(element);\n\n    if (this._head === null) {\n      this._head = node;\n    } else {\n      let current = this._head;\n\n      while (current.next !== null) {\n        current = current.next;\n      }\n\n      current.next = node; \n    }\n    \n    ++this._length;\n  }\n  \n  remove (element) {\n    if (this._head === null) return;\n    \n    let previous;\n    let current = this._head;\n    \n    while (current.next !== null && current.element !== element) {\n      previous = current;\n      current = current.next;\n    }\n    \n    if (previous) {\n      previous.next = current.next;\n    } else {\n      this._head = current.next;\n    }\n    \n    --this._length;\n  }\n}"
+      ],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
