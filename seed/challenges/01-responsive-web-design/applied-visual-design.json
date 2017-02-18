@@ -1137,7 +1137,7 @@
         "  ",
         "  ",
         "</style>",
-        "<a href=\"https://atjonathan.github.io/catphotoapp\" target=\"_blank\">CatPhotoApp</a>"
+        "<a href=\"http://freecatphotoapp.com/\" target=\"_blank\">CatPhotoApp</a>"
       ],
       "tests": [
         "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The <code>color</code> of the anchor tag text should be black.')"
@@ -1166,7 +1166,7 @@
         "  ",
         "  ",
         "</style>",
-        "<a href=\"https://atjonathan.github.io/catphotoapp\" target=\"_blank\">CatPhotoApp</a>"
+        "<a href=\"http://freecatphotoapp.com/\" target=\"_blank\">CatPhotoApp</a>"
       ],
       "tests": [
         "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');",
