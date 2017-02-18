@@ -15,24 +15,13 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "Feb 17, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "translations": {}
     },
     {
       "id": "587d7dac367417b2b2512b73",
@@ -62,6 +51,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -93,6 +83,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -126,6 +117,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -162,6 +154,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -197,6 +190,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -233,6 +227,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -272,6 +267,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -307,6 +303,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -345,6 +342,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -383,6 +381,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -424,6 +423,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -461,6 +461,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -498,6 +499,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -537,6 +539,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -570,6 +573,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -610,6 +614,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -667,6 +672,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -716,6 +722,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -758,6 +765,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -799,6 +807,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -848,6 +857,7 @@
         "Objects inherit methods from other objects by cloning their prototype. The Object.create method will come in handy, and don't forget to reset the constructor property afterward!"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -897,6 +907,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -944,6 +955,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -977,6 +989,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -1006,6 +1019,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -1045,6 +1059,7 @@
       ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     }

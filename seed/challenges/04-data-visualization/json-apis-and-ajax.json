@@ -20,24 +20,13 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "Feb 17, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "translations": {}
     },
     {
       "id": "587d7fad367417b2b2512be1",
@@ -104,6 +93,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -171,6 +161,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -247,11 +238,10 @@
         "assert(code.match(/JSON\\.parse\\(.*\\.responseText\\)/g), 'message: Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.');",
         "assert(code.match(/document\\.getElementsByClassName\\(\\s*?('|\")message\\1\\s*?\\)\\[0\\]\\.innerHTML\\s*?=\\s*?JSON\\.stringify\\(.+?\\)/g), 'message: Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.');"
       ],
-      "solutions": [
-
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -332,6 +322,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -412,6 +403,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -491,6 +483,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -573,6 +566,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -611,6 +605,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -691,6 +686,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     }

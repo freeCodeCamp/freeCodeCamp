@@ -6,33 +6,22 @@
   "challenges": [
     {
       "id": "587d7fb0367417b2b2512bec",
-        "title": "Introduction to the Basic Node and Express Challenges",
-        "description": [
-          [
-            "",
-            "",
-            "Node.js is a JavaScript tool that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules&mdash;small, independent programs&mdash;that help facilitate this purpose. Some of the core modules include:<br><br><ul><li>HTTP: a module that acts as a server</li><li>File System: a module that reads and modifies files</li><li>Path: a module for working with directory and file paths</li><li>Assertion Testing: a module that checks code against prescribed constraints</li></ul><br>Express, while not included with Node.js, is another module often used with it. Express runs between the server created by Node.js and the frontend pages of a web application. Express also handles an application's routing. Routing directs users to the correct page based on their interaction with the application.<br><br>While there are alternatives to using Express, its simplicity makes it a good place to begin when learning the interaction between a backend powered by Node.js and the frontend.",
-            ""
-          ]
-        ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
-        ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
+      "title": "Introduction to the Basic Node and Express Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "Node.js is a JavaScript tool that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules&mdash;small, independent programs&mdash;that help facilitate this purpose. Some of the core modules include:<br><br><ul><li>HTTP: a module that acts as a server</li><li>File System: a module that reads and modifies files</li><li>Path: a module for working with directory and file paths</li><li>Assertion Testing: a module that checks code against prescribed constraints</li></ul><br>Express, while not included with Node.js, is another module often used with it. Express runs between the server created by Node.js and the frontend pages of a web application. Express also handles an application's routing. Routing directs users to the correct page based on their interaction with the application.<br><br>While there are alternatives to using Express, its simplicity makes it a good place to begin when learning the interaction between a backend powered by Node.js and the frontend.",
+          ""
         ]
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
     },
     {
       "id": "587d7fb0367417b2b2512bed",
@@ -44,8 +33,8 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "<code>\"Hello World\"</code> should be in the console",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/hello-console').then(data => { assert.isTrue(data.passed, '\"Hello World\" is not in the server console'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "<code>\"Hello World\"</code> should be in the console",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/hello-console').then(data => { assert.isTrue(data.passed, '\"Hello World\" is not in the server console'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -70,8 +59,8 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Your app should serve the string 'Hello Express'",
-          "testString" : "getUserInput => $.get(getUserInput('url')).then(data => { assert.equal(data, 'Hello Express', 'Your app does not serve the text \"Hello Express\"'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Your app should serve the string 'Hello Express'",
+          "testString": "getUserInput => $.get(getUserInput('url')).then(data => { assert.equal(data, 'Hello Express', 'Your app does not serve the text \"Hello Express\"'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -93,8 +82,8 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Your app should serve the file views/index.html",
-          "testString" : "getUserInput => $.get(getUserInput('url')).then(data => { assert.match(data, /<h1>.*<\\/h1>/, 'Your app does not serve the expected HTML'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Your app should serve the file views/index.html",
+          "testString": "getUserInput => $.get(getUserInput('url')).then(data => { assert.match(data, /<h1>.*<\\/h1>/, 'Your app does not serve the expected HTML'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -114,8 +103,8 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Your app should serve asset files from the <code>/public</code> directory",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/style.css').then(data => { assert.match(data, /body\\s*\\{[^\\}]*\\}/, 'Your app does not serve static assets'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Your app should serve asset files from the <code>/public</code> directory",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/style.css').then(data => { assert.match(data, /body\\s*\\{[^\\}]*\\}/, 'Your app does not serve static assets'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -135,8 +124,8 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The endpoint <code>/json</code> should serve the json object <code>{\"message\": \"Hello json\"}</code>",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/json').then(data => { assert.equal(data.message, 'Hello json', 'The \\'/json\\' endpoint does not serve the right data'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "The endpoint <code>/json</code> should serve the json object <code>{\"message\": \"Hello json\"}</code>",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/json').then(data => { assert.equal(data.message, 'Hello json', 'The \\'/json\\' endpoint does not serve the right data'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -156,8 +145,8 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The response of the endpoint <code>/json</code> should change according to the environment variable <code>MESSAGE_STYLE</code>",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/use-env-vars').then(data => { assert.isTrue(data.passed, 'The response of \"/json\" does not change according to MESSAGE_STYLE'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "The response of the endpoint <code>/json</code> should change according to the environment variable <code>MESSAGE_STYLE</code>",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/use-env-vars').then(data => { assert.isTrue(data.passed, 'The response of \"/json\" does not change according to MESSAGE_STYLE'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -184,8 +173,8 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Root level logger middleware should be active",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/root-middleware-logger').then(data => { assert.isTrue(data.passed, 'root-level logger is not working as expected'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Root level logger middleware should be active",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/root-middleware-logger').then(data => { assert.isTrue(data.passed, 'root-level logger is not working as expected'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -213,12 +202,12 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The /now endpoint should have mounted middleware",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { assert.equal(data.stackLength, 2, '\"/now\" route has no mounted middleware'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "The /now endpoint should have mounted middleware",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { assert.equal(data.stackLength, 2, '\"/now\" route has no mounted middleware'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text" : "The /now endpoint should return a time that is +/- 20 secs from now",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000, 'the returned time is not between +- 20 secs from now'); }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "The /now endpoint should return a time that is +/- 20 secs from now",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/chain-middleware-time').then(data => { var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000, 'the returned time is not between +- 20 secs from now'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -240,12 +229,12 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Test 1 : Your echo server should repeat words correctly",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/eChOtEsT/echo').then(data => { assert.equal(data.echo, 'eChOtEsT', 'Test 1: the echo server is not working as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Test 1 : Your echo server should repeat words correctly",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/eChOtEsT/echo').then(data => { assert.equal(data.echo, 'eChOtEsT', 'Test 1: the echo server is not working as expected') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text" : "Test 2 : Your echo server should repeat words correctly",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/ech0-t3st/echo').then(data => { assert.equal(data.echo, 'ech0-t3st', 'Test 2: the echo server is not working as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Test 2 : Your echo server should repeat words correctly",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/ech0-t3st/echo').then(data => { assert.equal(data.echo, 'ech0-t3st', 'Test 2: the echo server is not working as expected') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -268,12 +257,12 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Test 1 : Your API endpoint should respond with the correct name",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/name?first=Mick&last=Jagger').then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Test 1 : Your API endpoint should respond with the correct name",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/name?first=Mick&last=Jagger').then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text" : "Test 2 : Your APi endpoint should respond with the correct name",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/name?last=Richards&first=Keith').then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Test 2 : Your APi endpoint should respond with the correct name",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/name?last=Richards&first=Keith').then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"GET /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -303,8 +292,8 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "The 'body-parser' middleware should be mounted",
-          "testString" : "getUserInput => $.get(getUserInput('url') + '/_api/add-body-parser').then(data => { assert.isAbove(data.mountedAt, 0, '\"body-parser\" is not mounted correctly') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "The 'body-parser' middleware should be mounted",
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/add-body-parser').then(data => { assert.isAbove(data.mountedAt, 0, '\"body-parser\" is not mounted correctly') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -332,12 +321,12 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text" : "Test 1 : Your API endpoint should respond with the correct name",
-          "testString" : "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Mick', last: 'Jagger'}).then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Test 1 : Your API endpoint should respond with the correct name",
+          "testString": "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Mick', last: 'Jagger'}).then(data => { assert.equal(data.name, 'Mick Jagger', 'Test 1: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
-          "text" : "Test 2 : Your API endpoint should respond with the correct name",
-          "testString" : "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Keith', last: 'Richards'}).then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
+          "text": "Test 2 : Your API endpoint should respond with the correct name",
+          "testString": "getUserInput => $.post(getUserInput('url') + '/name', {first: 'Keith', last: 'Richards'}).then(data => { assert.equal(data.name, 'Keith Richards', 'Test 2: \"POST /name\" route does not behave as expected') }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],

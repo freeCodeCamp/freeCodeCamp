@@ -1,7 +1,7 @@
 {
   "name": "Coding Interview Algorithm Questions",
-  "order": 10,
-  "time": "50 hours",
+  "order": 1,
+  "time": "",
   "helpRoom": "HelpJavaScript",
   "challenges": [
     {
@@ -485,7 +485,8 @@
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "releasedOn": "February 17, 2017"
     },
     {
       "id": "587d8259367417b2b2512c85",
@@ -522,7 +523,8 @@
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "releasedOn": "February 17, 2017"
     },
     {
       "id": "587d8259367417b2b2512c86",
@@ -559,7 +561,8 @@
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "releasedOn": "February 17, 2017"
     },
     {
       "id": "587d825a367417b2b2512c89",
@@ -597,7 +600,8 @@
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "releasedOn": "February 17, 2017"
     },
     {
       "id": "587d825c367417b2b2512c8f",
@@ -638,7 +642,8 @@
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "releasedOn": "February 17, 2017"
     }
   ]
 }

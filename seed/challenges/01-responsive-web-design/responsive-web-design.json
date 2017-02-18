@@ -33,24 +33,13 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "Feb 17, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "translations": {}
     },
     {
       "id": "587d78b0367417b2b2512b08",
@@ -80,6 +69,7 @@
         "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare an <code>@media</code> query for devices with <code>heights</code> less than or equal to 800px.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solution": [],
       "hints": [],
       "challengeType": 0,
@@ -110,6 +100,7 @@
         "assert(code.match(/height:\\s*?auto;/g), 'message: Your <code>img</code> tag should have a <code>height</code> set to auto.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "solutions": [],
       "hints": [],
@@ -137,6 +128,7 @@
         "assert($('img').css('height') == '100px', 'message: Your <code>img</code> tag should have a <code>height</code> of 100 pixels.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "solutions": [],
       "hints": [],
@@ -170,6 +162,7 @@
         "assert(code.match(/p\\s*?{\\s*?width:\\s*?75vmin;\\s*?}/g), 'message: Your <code>p</code> tag should have a <code>width</code> of 75vmin.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "hints": [],
       "challengeType": 0,

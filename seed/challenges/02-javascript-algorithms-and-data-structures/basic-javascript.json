@@ -1087,7 +1087,6 @@
         "assert(!/\\\\/g.test(code) && myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
         "assert(code.match(/\"/g).length === 6 && code.match(/'/g).length === 4, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
       ],
-
       "type": "waypoint",
       "challengeType": 1,
       "translations": {
@@ -5568,7 +5567,8 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "releasedOn": "February 17, 2017"
     },
     {
       "id": "587d7b7e367417b2b2512b22",
@@ -5601,6 +5601,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
+      "releasedOn": "February 17, 2017",
       "translations": {}
     },
     {
@@ -5634,6 +5635,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
+      "releasedOn": "February 17, 2017",
       "translations": {}
     },
     {
@@ -5665,6 +5667,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
+      "releasedOn": "February 17, 2017",
       "translations": {}
     }
   ]
