@@ -27,24 +27,13 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "Feb 17, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "translations": {}
     },
     {
       "id": "587d7b83367417b2b2512b33",
@@ -71,11 +60,10 @@
       "tests": [
         "assert(code.match(/console\\.log\\(a\\)/g), 'message: Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.');"
       ],
-      "solutions": [
-
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -102,10 +90,10 @@
         "assert(code.match(/typeof[\\( ]seven\\)?/g), 'message: Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.');",
         "assert(code.match(/typeof[\\( ]three\\)?/g), 'message: Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -131,11 +119,10 @@
         "assert(!code.match(/payable;/g), 'message: There should be no instances of mis-spelled variables in the code.');",
         "assert(code.match(/payables/g).length == 2, 'message: The <code>payables</code> variable should be declared and used properly in the code.');"
       ],
-      "solutions": [
-
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -157,10 +144,10 @@
         "assert(code.match(/myArray\\s*?=\\s*?\\[\\s*?1\\s*?,\\s*?2\\s*?,\\s*?3\\s*?\\];/g), 'message: Your code should fix the missing piece of the array.');",
         "assert(arraySum === 6, 'message: Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -185,10 +172,10 @@
         "assert(code.match(/<a href=\\s*?('|\\\\\")#Home\\1\\s*?>/g), 'message: Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.');",
         "assert(code.match(/\"<p>.*?<\\/p>\";/g), 'message: Your code should keep the double quotes around the entire string.');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -221,10 +208,10 @@
         "assert(result == \"Not equal!\", 'message: Your code should fix the condition so it checks for equality, instead of using assignment.');",
         "assert(code.match(/x\\s*?===?\\s*?y/g), 'message: The condition can use either <code>==</code> or <code>===</code> to test for equality.');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -252,10 +239,10 @@
         "assert(result == 9, 'message: Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.');",
         "assert(code.match(/getNine\\(\\)/g).length == 2, 'message: Your code should call the <code>getNine</code> function.');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -286,10 +273,10 @@
         "assert(power == 8, 'message: Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');",
         "assert(code.match(/positivePowers\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'message: Your code should use the correct order of the arguments for the <code>positivePowers</code> function call.');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -320,10 +307,10 @@
         "assert(code.match(/i\\s*?<\\s*?len\\s*?;/g).length == 1, 'message: Your code should set the terminal condition of the loop so it stops at the last index.');",
         "assert(!code.match(/i\\s*?<=\\s*?len;/g), 'message: Your code should fix the terminal condition of the loop.');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -362,10 +349,10 @@
         "assert(matrix.length == 3, 'message: The <code>matrix</code> variable should have 3 rows.');",
         "assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'message: The <code>matrix</code> variable should have 2 columns in each row.');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -391,10 +378,10 @@
         "assert(code.match(/i\\s*?<=\\s*?4;/g).length == 1, 'message: Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.');",
         "assert(!code.match(/i\\s*?!=\\s*?4;/g), 'message: Your code should fix the comparison operator in the terminal condition of the loop.');"
       ],
-      "solutions": [
-      ],
+      "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     }
