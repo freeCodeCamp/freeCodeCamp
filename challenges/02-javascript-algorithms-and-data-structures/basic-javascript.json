@@ -1486,7 +1486,7 @@
         "cannot change the value of <code>myStr</code> to \"Job\", because the contents of <code>myStr</code> cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change <code>myStr</code> would be to assign it with a new string, like this:",
         "<blockquote>var myStr = \"Bob\";<br>myStr = \"Job\";</blockquote>",
         "<hr>",
-        "Correct the assignment to <code>myStr</code> to achieve the desired effect that is intended by <code>myStr[0] = \"H\" ;</code>."
+        "Correct the assignment to <code>myStr</code> so it contains the string value of <code>Hello World</code> using the approach shown in the example above."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
