@@ -15,24 +15,13 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "Feb 17, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "translations": {}
     },
     {
       "id": "587d7791367417b2b2512ab3",
@@ -87,6 +76,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -141,6 +131,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -196,6 +187,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -254,6 +246,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -313,6 +306,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -373,6 +367,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -431,6 +426,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -490,6 +486,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -550,6 +547,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -616,6 +614,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -676,6 +675,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -743,6 +743,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -809,6 +810,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -877,6 +879,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -956,6 +959,7 @@
       ],
       "solutions": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1001,6 +1005,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1065,6 +1070,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1092,6 +1098,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1120,6 +1127,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1145,6 +1153,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1175,6 +1184,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1210,6 +1220,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1244,6 +1255,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1286,6 +1298,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1340,6 +1353,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1389,6 +1403,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1431,6 +1446,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1460,6 +1476,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1503,6 +1520,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1550,6 +1568,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1610,6 +1629,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1662,6 +1682,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1716,6 +1737,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1752,6 +1774,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1800,6 +1823,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1826,6 +1850,7 @@
         "Remember to wrap the address in quotes within the url() function."
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1873,6 +1898,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1913,6 +1939,7 @@
         "Make sure to apply the CSS rule to the hover state of the div, using div:hover"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1954,6 +1981,7 @@
         "Notice that there is no space between the number and \"deg\" (-32deg) when declaring the degrees value."
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -1992,6 +2020,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2035,6 +2064,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2097,6 +2127,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2147,6 +2178,7 @@
         "Make sure the @keyframes rule links to the animation-name."
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2184,6 +2216,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2242,6 +2275,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2290,6 +2324,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2344,6 +2379,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2434,6 +2470,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2508,6 +2545,7 @@
         "Check the animation-name declared in the star-1 class to find the right @keyframes rule to change."
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2583,6 +2621,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2643,6 +2682,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2706,6 +2746,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2762,6 +2803,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -2822,6 +2864,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     }

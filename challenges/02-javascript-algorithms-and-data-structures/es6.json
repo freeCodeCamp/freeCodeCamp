@@ -15,24 +15,13 @@
           ""
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "Feb 17, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "translations": {}
     },
     {
       "id": "587d7b87367417b2b2512b3f",
@@ -62,6 +51,7 @@
         "assert(favorite === \"Rudolph is Santa's favorite reindeer.\", \"message: <code>favorite</code> should return Santa's favorite reindeer.\");"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -104,6 +94,7 @@
         "assert(checkScope() === \"function scope\", 'message: <code>checkScope()</code> should return \"function scope\"');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -139,6 +130,7 @@
         "// Test pi and calulateCircumference has been renamed"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -171,6 +163,7 @@
         "// Test s is still mutable, and object freeze was not invoked"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -209,6 +202,7 @@
         "// Test arrow => was used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -242,6 +236,7 @@
         "// Test arrow => was used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -280,6 +275,7 @@
         "// Test map and filter were used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -308,6 +304,7 @@
         "// Test default parameter was used for 'value'"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -337,6 +334,7 @@
         "assert(sum() === 0, 'The result of sum() should be 0');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -360,7 +358,6 @@
         "const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];",
         "const arr2 = [];",
         "// change code below this line",
-        
         "// change code above this line",
         "arr1.push('JUN');",
         "console.log(arr2); // arr2 should not be affected"
@@ -371,6 +368,7 @@
         "// Test spread operator was used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -402,6 +400,7 @@
         "// Test destructuring was used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -433,6 +432,7 @@
         "// Test destructuring was used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -466,6 +466,7 @@
         "// Test destructuring was used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -498,6 +499,7 @@
         "// Test slice was not used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -539,6 +541,7 @@
         "// Test destructuring was used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -591,6 +594,7 @@
         "// Test template strings were used"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -630,6 +634,7 @@
         "// Test no : was present"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -666,6 +671,7 @@
         "// Test no : was present"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -705,6 +711,7 @@
         "// Test that other objects could be created with the class"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -759,6 +766,7 @@
         "// Test that other objects could be created with the class"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -785,6 +793,7 @@
         "assert(code.match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/ig)"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -818,6 +827,7 @@
         "assert(code.match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/ig))"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -845,6 +855,7 @@
         "assert(code.match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/ig))"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -869,6 +880,7 @@
         "assert(code.match(/export\\s+default\\s+const\\s+subtract\\s+=\\s+\\(x,y\\)\\s+=>\\s+{return\\s+x\\s-\\s+y;}/ig))"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -891,6 +903,7 @@
         "assert(code.match(/import\\s+subtract\\s+from\\s+\"math_functions\"/ig))"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     }
