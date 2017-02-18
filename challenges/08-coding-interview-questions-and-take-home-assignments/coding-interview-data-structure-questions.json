@@ -214,11 +214,18 @@
         "  }"
       ],
       "tests": [
-        "assert((function(){var test = new CircularQueuee(); test.enqueue('a'); test.enqueue('b'); test.enqueue('c'); test.enqueue('d'); test.enqueue('e'); test.enqueue('f');  return (test.printCollection === ['f', 'b', 'c', 'd', 'e'])}()), 'message: Your <code>Queue</code> class should have a <code>enqueue</code> method.');",
-        "assert((function(){var test = new CircularQueuee(); test.enqueue('a'); test.enqueue('b'); test.enqueue('c'); test.enqueue('d'); test.enqueue('e'); test.enqueue('f'); test.dequeue;  return (test.printCollection === ['', 'b', 'c', 'd', 'e'])}()), 'message: Your <code>dequeue</code> method did not remove the first item.');"
+        "assert(typeof new CircularQueue().enqueue === 'function', 'message: Your <code>CircularQueue</code> class should have a <code>enqueue</code> method.');",
+        "assert.deepEqual((function(){var test = new CircularQueue(); test.enqueue('a'); test.enqueue('b'); test.enqueue('c'); test.enqueue('d'); test.enqueue('e'); test.enqueue('f');  return test.printCollection(); })(), ['f', 'b', 'c', 'd', 'e'], 'message: Your <code>enqueue</code> method should add items to the position of the write pointer, looping back to the beginning once the queue is filled.');",
+        "assert(typeof new CircularQueue().dequeue === 'function', 'message: Your <code>CircularQueue</code> class should have a <code>dequeue</code> method.');",
+        "assert.deepEqual((function(){var test = new CircularQueue(); test.enqueue('a'); test.enqueue('b'); test.enqueue('c'); test.enqueue('d'); test.enqueue('e'); test.enqueue('f'); test.dequeue();  return test.printCollection(); })(), ['', 'b', 'c', 'd', 'e'], 'message: Your <code>dequeue</code> method should read the item at the current read pointer position and remove it from the queue.');",
+        "assert((function(){ var test = new CircularQueue(); test.enqueue('a'); test.enqueue('b'); return test.dequeue() === 'a' && test.dequeue() === 'b'; })(), 'message: Your <code>dequeue</code> method should return the value being removed.');",
+        "assert(typeof new CircularQueue().front === 'function', 'message: Your <code>CircularQueue</code> class should have a <code>front</code> method.');",
+        "assert((function(){ var test = new CircularQueue(); test.enqueue('a'); test.enqueue('b'); return test.front() === 'a' && test.front() === 'a'; })(), 'message: Your <code>front</code> method should return the item at the current read pointer position, without removing it.');"
       ],
       "type": "waypoint",
-      "solutions": [],
+      "solutions": [
+        "class CircularQueue {\n  constructor () {\n    this._cq = ['', '', '', '', ''];\n    this._reader = 0;\n    this._writer = 0;\n  }\n  \n  printCollection () {\n    return this._cq;\n  }\n  \n  _updatePointer (id) {\n    if (++this[id] === this._cq.length) {\n      this[id] = 0;\n    }\n  }\n  \n  enqueue (item) {\n    if (Array.isArray(item)) {\n      for (const x of item) {\n        this.enqueue(x);\n      }\n\n      return;\n    }\n    \n    this._cq[this._writer] = item;\n    \n    this._updatePointer('_writer');\n  }\n  \n  dequeue () {\n    const item = this._cq[this._reader];\n    this._cq[this._reader] = '';\n    \n    this._updatePointer('_reader');\n    return item;\n  }\n  \n  front () {\n    return this._cq[this._reader];\n  }\n}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
