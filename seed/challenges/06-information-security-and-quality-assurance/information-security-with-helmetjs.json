@@ -246,6 +246,107 @@
       "type": "backend",
       "challengeType": 0,
       "translations": {}
-    }
+    },
+    {
+      "id": "58a25bcef9fc0f352b528e7b",
+        "title": "Data Protection with BCrypt",
+        "description": [
+          [
+            "",
+            "",
+            "The safest way to protect a password is to never even store it- even encrypted. The solution to this security problem is hashing. Unlike encryptions, hashes cannot be transformed back into the original data. So how do you use a hash? A hash is used to verify data like a password again at a later point in time without actually knowing what it is in the future by hashing the entered password in the same manner as the original and comparing the results; if they match then you can be sure it is the same data. A widely used library for this is <em>BCrypt</em>. With how easy BCrypt is to implement into your web applications, you should never have any excuse to store a plain text password in your databases. Open the starter project below and hit <b>Remix it</b> to create your own private version to get started!",
+            "https://gomix.com/#!/project/fcc-bcrypt"
+          ]
+        ],
+        "releasedOn": "",
+        "challengeSeed": [],
+        "tests": [],
+        "type": "Waypoint",
+        "challengeType": 7,
+        "isRequired": false,
+        "titleEs": "",
+        "descriptionEs": [
+          []
+        ],
+        "titleFr": "",
+        "descriptionFr": [
+          []
+        ],
+        "titleDe": "",
+        "descriptionDe": [
+          []
+        ]
+    },      
+    {
+      "id": "58a25bcef9fc0f352b528e7c",
+      "title": "Understanding BCrypt Hashes",
+      "description": [
+        "BCrypt hashes are very secure. A hash is basically a fingerprint of the original data- always unique. This is accomplished by feeding the original data into a algorithm and having returned a fixed length result. To further complicate this process and make it more secure, you can also <em>salt</em> your hash. Salting your hash involves adding random data to the original data before the hashing process which makes it even harder to crack the hash.",
+        "BCrypt hashes will always looks like <code>$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code> which does have a structure. The first small bit of data <code>$2a</code> is defining what kind of hash algorithm was used. The next portion <code>$13</code> defines the <em>cost</em>. Cost is about how much power it takes to compute the hash. It is on a logarithmic scale of 2^cost and determines how many times the data is put through the hashing algorithm. For example, at a cost of 10 you are able to hash 10 passwords a second on an average computer, however at a cost of 15 it takes 3 seconds per hash... and to take it further, at a cost of 31 it would takes multiple days to complete a hash. A cost of 12 is considered very secure at this time. The last portion of your hash <code>$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code>, looks like 1 large string of numbers, periods, and letters but it is actually 2 seperate peices of infomation. The first 22 characters is the salt in plain text, and the rest is the hashed password!",
+        "<hr>To begin using BCrypt, add it as a dependency in your project and require it as 'bcrypt' in your server.",
+        "Submit your page when you think you've got it right."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "BCyrpt is a dependency",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'bcrypt', 'Your project should list \"bcrypt\" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })"
+        },
+        {
+          "text": "BCrypt has been properly required",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /bcrypt.*=.*require.*('|\")bcrypt('|\")/gi, 'You should correctly require and instanciate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "58a25bcff9fc0f352b528e7d",
+      "title": "Hashing and Comparing Asynchronously",
+      "description": [
+        "As hashing is designed to be computationally intensive, it is recommended to do so asyncronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call <code>bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => { /*Store hash in your db*/ });</code>",
+        "<hr>Add this hashing function to your server(we've already defined the variables used in the function for you to use) and log it to the console for you to see! At this point you would normally save the hash to your database.",
+        "Now when you need to figure out if a new input is the same data as the hash you would just use the compare function <code>bcrypt.compare(myPlaintextPassword, hash, (err, res) => { /*res == true or false*/ });</code>. Add this into your existing hash function(since you need to wait for the hash to complete before calling the compare function) after you log the completed hash and log 'res' to the console within the compare. You should see in the console a hash then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword' then it should say false.",
+        "<pre>bcrypt.hash('passw0rd!', 13, (err, hash) => {\n  console.log(hash); //$2a$12$Y.PHPE15wR25qrrtgGkiYe2sXo98cjuMCG1YwSI5rJW1DSJp0gEYS\n  bcrypt.compare('passw0rd!', hash, (err, res) => {\n      console.log(res); //true\n  });\n});</pre>",
+        "Submit your page when you think you've got it right."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Async hash generated and correctly compared",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /START_ASYNC[^]*bcrypt.hash.*myPlaintextPassword( |),( |)saltRounds( |),( |).*err( |),( |)hash[^]*END_ASYNC/gi, 'You should call bcrypt.hash on myPlaintextPassword and saltRounds and handle err and hash as a result in the callback'); assert.match(data, /START_ASYNC[^]*bcrypt.hash[^]*bcrypt.compare.*myPlaintextPassword( |),( |)hash( |),( |).*err( |),( |)res[^]*}[^]*}[^]*END_ASYNC/gi, 'Nested within the hash function should be the compare function comparing myPlaintextPassword to hash'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "58a25bcff9fc0f352b528e7e",
+      "title": "Hashing and Comparing Synchronously",
+      "description": [
+        "Hashing synchronously is just as easy to do but can cause lag if using it server side with a high cost or with hashing done very often. Hashing with this method is as easy as calling <code>var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);</code>",
+        "<hr>Add this method of hashing to your code and then log the result to the console. Again, the variables used are already defined in the server so you wont need to adjust them. You may notice even though you are hashing the same password as in the async function, the result in the console is different- this is due to the salt being randomly generated each time as seen by the first 22 characters in the third string of the hash.",
+        "Now to compare a password input with the new sync hash, you would use the compareSync method: <code>var result = bcrypt.compareSync(myPlaintextPassword, hash);</code> with the result being a boolean true or false. Add this function in and log to the console the result to see it working.",
+        "Submit your page when you think you've got it right. If you ran into errors during these challenges you can take a look at the example completed code <a href='https://gist.github.com/JosephLivengood/9a2698fb63e42d9d8b4b84235c08b4c4'>here</a>."
+      ],
+      "challengeSeed": [],
+      "tests": [
+        {
+          "text": "Sync hash generated and correctly compared",
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /START_SYNC[^]*hash.*=.*bcrypt.hashSync.*myPlaintextPassword( |),( |)saltRounds[^]*END_SYNC/gi, 'You should call bcrypt.hashSync on myPlaintextPassword with saltRounds'); assert.match(data, /START_SYNC[^]*result.*=.*bcrypt.compareSync.*myPlaintextPassword( |),( |)hash[^]*END_SYNC/gi, 'You should call bcrypt.compareSync on myPlaintextPassword with the hash generated in the last line'); }, xhr => { throw new Error(xhr.statusText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "backend",
+      "challengeType": 0,
+      "translations": {}
+    }     
   ]
 }
