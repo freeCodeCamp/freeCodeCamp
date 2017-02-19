@@ -2188,8 +2188,9 @@
       "description": [
         "You can use CSS <code>@keyframes</code> to change the color of a button in its hover state.",
         "Here's an example of changing the height of an image on hover:",
-        "<blockquote>&lt;style&gt;<br>  img:hover {<br>    animation-name: width;<br>    animation-duration: 4s;<br>  }<br>  @keyframes width {<br>    100% {<br>      width: 40px;<br>    }<br>  }<br>&lt;/style&gt;<br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
+        "<blockquote>&lt;style&gt;<br>  img:hover {<br>    animation-name: width;<br>    animation-duration: 500ms;<br>  }<br>  @keyframes width {<br>    100% {<br>      width: 40px;<br>    }<br>  }<br>&lt;/style&gt;<br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
         "<hr>",
+        "Note that <code>ms</code> stands for milliseconds, which are 1/1000 of a second.",
         "Use CSS <code>@keyframes</code> to change the <code>background-color</code> of the <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>."
       ],
       "challengeSeed": [
@@ -2202,7 +2203,7 @@
         "  }",
         "  button:hover {",
         "    animation-name: background-color;",
-        "    animation-duration: 4s;",
+        "    animation-duration: 500ms;",
         "  }",
         "  ",
         "  ",
@@ -2217,6 +2218,46 @@
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
+      "id": "58a7a6ebf9a6318348e2d5aa",
+      "title": "Modify Fill Mode of an Animation",
+      "description": [
+        "That's great, but it doesn't work right yet. Notice how the animation resets after <code>500ms</code> has passed, causing the button to revert back to the original color. You want the button to stay highlighted.",
+        "This can be done by setting the <code>animation-fill-mode</code> property to <code>forwards</code>. The <code>animation-fill-mode</code> specifies the style applied to an element when the animation has finished. You can set it like so:",
+        "<code>animation-fill-mode: forwards;</code>",
+        "<hr>",
+        "Set the <code>animation-fill-mode</code> property of <code>button:hover</code> to <code>forwards</code> so the button stays highlighted when a user hovers over it."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  button {",
+        "    border-radius: 5px;",
+        "    color: white;",
+        "    background-color: #0F5897;",
+        "    padding: 5px 10px 8px 10px;",
+        "  }",
+        "  button:hover {",
+        "    animation-name: background-color;",
+        "    animation-duration: 500ms;",
+        "    ",
+        "  }",
+        "  @keyframes background-color {",
+        "    100% {",
+        "      background-color: #4791d0;",
+        "    }",
+        "  }",
+        "</style>",
+        "<button>Register</button>"
+      ],
+      "tests": [
+        "assert(code.match(/button:hover\\s*?{\\s*?animation-name:\\s*?background-color;\\s*?animation-duration:\\s*?500ms;\\s*?animation-fill-mode:\\s*?forwards;\\s*?}/gi), 'message: <code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
       "challengeType": 0,
       "translations": {}
     },
