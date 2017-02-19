@@ -892,7 +892,7 @@
       "description": [
         "Another common data structure is the linked list. In a linked list, elements are stored in a node. The node contains two key pieces of information: the element itself, and a reference to the next node.",
         "Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line, they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.",
-        "Instructions",
+        "<hr>",
         "In the code, we've create two nodes, Kitten and Puppy, and we've manually connected the Kitten node to the Puppy node.",
         "Create a Cat and Dog node and manually add them to the line."
       ],
@@ -908,7 +908,7 @@
         "// only add code below this line",
         "",
         "// test your code",
-        "console.log(Kitten.next)"
+        "console.log(Kitten.next);"
       ],
       "tests": [
         "assert(Puppy.next.element === \"Cat\", 'message: Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.');",
