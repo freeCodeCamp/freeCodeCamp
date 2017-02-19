@@ -812,8 +812,8 @@
         "For example, if you wanted an element to use the <code>Helvetica</code> font, but also degrade to the <code>Sans-Serif</code> font when <code>Helvetica</code> wasn't available, you could use this CSS style:",
         "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
         "<hr>",
-        "Now comment out your call to Google Fonts, so that the <code>Lobster</code> font isn't available. Notice how it degrades to the <code>Monospace</code> font.",
-        "<strong>Note</strong><br>If you have the Lobster font installed on your computer, you wont see the degradation because your browser is able to find the font."
+        "Now comment out your call to Google Fonts, so that the <code>Lobster</code> font isn't available. You'll also have to make sure the heading font gets degraded to <code>Monospace</code>. Some CSS changes will be necessary for this.",
+        "<strong>Note</strong><br>If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -823,7 +823,7 @@
         "  }",
         "",
         "  h2 {",
-        "    font-family: Lobster, Monospace;",
+        "    font-family: Lobster;",
         "  }",
         "",
         "  p {",
