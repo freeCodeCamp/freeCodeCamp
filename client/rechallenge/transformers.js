@@ -25,7 +25,7 @@ const transformersForHtmlJS = {
       name: 'add-loop-protect',
       transformer: function addLoopProtect(file) {
         const _contents = file.contents.toLowerCase();
-        if (file.ext === 'html' && !_contents.includes('<script>')) {
+        if (file.ext === 'html' && _contents.indexOf('<script>') === -1) {
           // No JavaScript in user code, so no need for loopProtect
           return updateContents(file.contents, file);
         }
