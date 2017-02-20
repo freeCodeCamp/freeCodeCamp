@@ -773,7 +773,7 @@
       "id": "587d7db1367417b2b2512b86",
       "title": "Reset an Inherited Constructor Property",
       "description": [
-        "When an object inherits its <code>prototype</code> from another object, it also inherits the <code>supertype’s</code> constructor property.",
+        "When an object inherits its <code>prototype</code> from another object, it also inherits the <code>supertype</code>'s constructor property.",
         "Here's an example:",
         "<blockquote>function Bird() { }<br>Bird.prototype = Object.create(Animal.prototype);<br>let duck = new Bird();<br>duck.constructor // function Animal(){...}</blockquote>",
         "But <code>duck</code> and all instances of <code>Bird</code> should show that they were constructed by <code>Bird</code> and not <code>Animal</code>. To do so, you can manually set <code>Bird's</code> constructor property to the <code>Bird</code> object:",
