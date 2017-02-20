@@ -6,33 +6,22 @@
   "challenges": [
     {
       "id": "587d7fb3367417b2b2512bfa",
-        "title": "Introduction to the Managing Packages with npm Challenges",
-        "description": [
-          [
-            "",
-            "",
-            "The Node Package Manager (npm) is a command-line tool used by developers to share and control modules (or packages) of JavaScript code written for use with Node.js.<br><br>When starting a new project, npm generates a <code>package.json</code> file. This file lists the package dependencies for your project. Since npm packages are regularly updated, the <code>package.json</code> file allows you to set specific version numbers for each dependency. This ensures that updates to a package don't break your project.<br><br>npm saves packages in a folder named <code>node_modules</code>. These packages can be installed in two ways:<br><br><ol><li>globally in a root <code>node_modules</code> folder, accessible by all projects.</li><li>locally within a project's own <code>node_modules</code> folder, accessible only to that project.</li></ol><br>Most developers prefer to install packages local to each project to create a separation between the dependencies of different projects.",
-            ""
-          ]
-        ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
-        ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
+      "title": "Introduction to the Managing Packages with npm Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "The Node Package Manager (npm) is a command-line tool used by developers to share and control modules (or packages) of JavaScript code written for use with Node.js.<br><br>When starting a new project, npm generates a <code>package.json</code> file. This file lists the package dependencies for your project. Since npm packages are regularly updated, the <code>package.json</code> file allows you to set specific version numbers for each dependency. This ensures that updates to a package don't break your project.<br><br>npm saves packages in a folder named <code>node_modules</code>. These packages can be installed in two ways:<br><br><ol><li>globally in a root <code>node_modules</code> folder, accessible by all projects.</li><li>locally within a project's own <code>node_modules</code> folder, accessible only to that project.</li></ol><br>Most developers prefer to install packages local to each project to create a separation between the dependencies of different projects.",
+          ""
         ]
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
     },
     {
       "id": "587d7fb3367417b2b2512bfb",
@@ -52,7 +41,7 @@
       "challengeSeed": [],
       "tests": [
         {
-          "text": "package.json should have a valid \"author\" key" ,
+          "text": "package.json should have a valid \"author\" key",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.author, '\"author\" is missing'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],

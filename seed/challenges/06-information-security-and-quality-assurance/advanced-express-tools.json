@@ -6,33 +6,22 @@
   "challenges": [
     {
       "id": "5895f6fff9fc0f352b528e62",
-        "title": "Advanced Node/Express Introduction",
-        "description": [
-          [
-            "",
-            "",
-            "<em>Authentication</em> is the process or action of verifying the identity of a user or process. Up to this point you have not been able to create an app utilizing this key concept.<br>The most common and easiest to use authentication middleware for Node.js is <a href='http://passportjs.org/'>Passport</a>. It is easy to learn, light-weight, and extremely flexible allowing for many <em>strategies</em>, which we will talk about in later challenges. In addition to authentication we will also look at template engines which allow for use of <em>Pug</em> and web sockets which allow for real time communication between all your clients and your server. Working on these challenges will involve you writing your code on Gomix off our our starter project. After completing each challenge you can copy your public gomix url (to the homepage of your app) into the challenge screen and test it! Open the starter project below and hit <b>Remix it</b> to create your own private version to get started!",
-            "https://gomix.com/#!/project/fcc-advanced"
-          ]
-        ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
-        ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
+      "title": "Advanced Node/Express Introduction",
+      "description": [
+        [
+          "",
+          "",
+          "<em>Authentication</em> is the process or action of verifying the identity of a user or process. Up to this point you have not been able to create an app utilizing this key concept.<br>The most common and easiest to use authentication middleware for Node.js is <a href='http://passportjs.org/'>Passport</a>. It is easy to learn, light-weight, and extremely flexible allowing for many <em>strategies</em>, which we will talk about in later challenges. In addition to authentication we will also look at template engines which allow for use of <em>Pug</em> and web sockets which allow for real time communication between all your clients and your server. Working on these challenges will involve you writing your code on Gomix off our our starter project. After completing each challenge you can copy your public gomix url (to the homepage of your app) into the challenge screen and test it! Open the starter project below and hit <b>Remix it</b> to create your own private version to get started!",
+          "https://gomix.com/#!/project/fcc-advanced"
         ]
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
     },
     {
       "id": "5895f700f9fc0f352b528e63",
@@ -363,7 +352,7 @@
       "type": "backend",
       "challengeType": 0,
       "translations": {}
-    }, 
+    },
     {
       "id": "58a25c98f9fc0f352b528e7f",
       "title": "Hashing your Passwords",
@@ -390,7 +379,7 @@
       "type": "backend",
       "challengeType": 0,
       "translations": {}
-    },   
+    },
     {
       "id": "589690e6f9fc0f352b528e6e",
       "title": "Clean Up Your Project with Modules",
@@ -417,7 +406,7 @@
       "type": "backend",
       "challengeType": 0,
       "translations": {}
-    },  
+    },
     {
       "id": "589a69f5f9fc0f352b528e6f",
       "title": "Social Authentication with OAuth",
@@ -429,24 +418,13 @@
           "https://gomix.com/#!/project/fcc-social"
         ]
       ],
-      "releasedOn": "",
+      "releasedOn": "Feb 17, 2017",
       "challengeSeed": [],
       "tests": [],
-      "type": "Waypoint",
+      "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "translations": {}
     },
     {
       "id": "589a69f5f9fc0f352b528e70",
@@ -528,48 +506,48 @@
       "type": "backend",
       "challengeType": 0,
       "translations": {}
-    }, 
+    },
     {
       "id": "589fc820f9fc0f352b528e73",
-        "title": "Socket.IO Introduction",
-        "description": [
-          [
-            "",
-            "",
-            "<dfn>Socket.IO</dfn> enables real-time, reliable, speedy communication between your server and clients from all devices and browsers. It listens for connects on your server that come from the client which connects with a single javascript statement. The whole library is based on emitting, broadcasting, and recieving events that contain an event name and some data which can include things like strings, objects, arrays, and even blobs like files or video. This is used for all sorts of purposes including instant messaging online, real-time analytics, streaming, and document collaboration.<br>Minimal changes need to be made with your recent project to set it up to create a chat room for authenticated Github users- Open the starter project below and hit <strong>Remix it</strong> to create your own private version to get started!",
-            "https://gomix.com/#!/project/fcc-socket"
-          ],
-          [
-            "",
-            "",
-            "To set up this project to get started now in the .env file:<ol><li>Create a random session secret</li><li>Fill in the database (it may be the same as the last few projects since this will use a new collection)</li><li>Obtain another set of Github OAuth credentials with the callback once again pointed at '/auth/github/callback' and add it in</li></ol>",
-            ""
-          ],
-          [
-            "",
-            "",
-            "A few changes have been made to this starter.<br>Instead of <code>app.listen</code>, you now have <pre>const http = require('http').Server(app);\n\nhttp.listen(process.env.PORT || 3000);</pre> This is required because for the initial handshake between the server and client, http is used. Setting up our server like this allows us to have both processes use a single port.<br>Also, we have declared <code>const sessionStore = new session.MemoryStore();</code> and used <code>sessionStore</code> as the store in our express session. In our previous apps we have not done this because by default it is done automattically. It is not this way so we can reference/use the <code>sessionStore</code> in other parts of our code now. In addition, we've given our session a key to reference it easier.",
-            ""
-          ]
+      "title": "Socket.IO Introduction",
+      "description": [
+        [
+          "",
+          "",
+          "<dfn>Socket.IO</dfn> enables real-time, reliable, speedy communication between your server and clients from all devices and browsers. It listens for connects on your server that come from the client which connects with a single javascript statement. The whole library is based on emitting, broadcasting, and recieving events that contain an event name and some data which can include things like strings, objects, arrays, and even blobs like files or video. This is used for all sorts of purposes including instant messaging online, real-time analytics, streaming, and document collaboration.<br>Minimal changes need to be made with your recent project to set it up to create a chat room for authenticated Github users- Open the starter project below and hit <strong>Remix it</strong> to create your own private version to get started!",
+          "https://gomix.com/#!/project/fcc-socket"
         ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
+        [
+          "",
+          "",
+          "To set up this project to get started now in the .env file:<ol><li>Create a random session secret</li><li>Fill in the database (it may be the same as the last few projects since this will use a new collection)</li><li>Obtain another set of Github OAuth credentials with the callback once again pointed at '/auth/github/callback' and add it in</li></ol>",
+          ""
         ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
+        [
+          "",
+          "",
+          "A few changes have been made to this starter.<br>Instead of <code>app.listen</code>, you now have <pre>const http = require('http').Server(app);\n\nhttp.listen(process.env.PORT || 3000);</pre> This is required because for the initial handshake between the server and client, http is used. Setting up our server like this allows us to have both processes use a single port.<br>Also, we have declared <code>const sessionStore = new session.MemoryStore();</code> and used <code>sessionStore</code> as the store in our express session. In our previous apps we have not done this because by default it is done automattically. It is not this way so we can reference/use the <code>sessionStore</code> in other parts of our code now. In addition, we've given our session a key to reference it easier.",
+          ""
         ]
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
     },
     {
       "id": "589fc830f9fc0f352b528e74",
@@ -755,33 +733,33 @@
     },
     {
       "id": "58a0b2caf9fc0f352b528e7a",
-        "title": "Continuing your Live Chat",
-        "description": [
-          [
-            "",
-            "",
-            "From this point, you could choose to implement a plethora of features with just the knowledge you have learned up to this point! Some ideas you could choose to continue this project on with include, but aren't limited to the following:<ul><li>Displaying the users profile picture next to the messages</li><li>Displaying a time stamp on messages</li><li>Saving the most recent messages so when a new user connects they can see the most recent messages sent before they connected</li><li>Add a sidebar showing active users</li><li>Create a {user} is typing feature</li><li>Turn the client into a React component you can add to any of your previous projects</li></ul>",
-            ""
-          ]
-        ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
-        ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
+      "title": "Continuing your Live Chat",
+      "description": [
+        [
+          "",
+          "",
+          "From this point, you could choose to implement a plethora of features with just the knowledge you have learned up to this point! Some ideas you could choose to continue this project on with include, but aren't limited to the following:<ul><li>Displaying the users profile picture next to the messages</li><li>Displaying a time stamp on messages</li><li>Saving the most recent messages so when a new user connects they can see the most recent messages sent before they connected</li><li>Add a sidebar showing active users</li><li>Create a {user} is typing feature</li><li>Turn the client into a React component you can add to any of your previous projects</li></ul>",
+          ""
         ]
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
     }
   ]
 }

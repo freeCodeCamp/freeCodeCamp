@@ -1,8 +1,8 @@
 {
   "name": "Coding Interview Data Structure Questions",
-  "order": 9,
-  "time": "50 hours",
-  "helpRoom": "Help",
+  "order": 2,
+  "time": "",
+  "helpRoom": "HelpJavaScript",
   "challenges": [
     {
       "id": "587d8253367417b2b2512c6a",
@@ -35,6 +35,7 @@
         "assert(i32View.length === 16, 'message: Your <code>i32View</code> view of your buffer should be 16 elements long.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [
         "var buffer = new ArrayBuffer(64);\nvar i32View = new Int32Array(buffer);"
       ],
@@ -66,6 +67,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -105,6 +107,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -143,6 +146,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -181,6 +185,7 @@
         "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 1]);test.enqueue(['Jon Snow', 1]); return (test.dequeue() === 'David Brown' && test.dequeue() === 'Jon Snow')}()), 'message: Your code did not correctly prioritize the incoming items. If 2 items have the same priority the older item remains infront of new items');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -214,11 +219,19 @@
         "  }"
       ],
       "tests": [
-        "assert((function(){var test = new CircularQueuee(); test.enqueue('a'); test.enqueue('b'); test.enqueue('c'); test.enqueue('d'); test.enqueue('e'); test.enqueue('f');  return (test.printCollection === ['f', 'b', 'c', 'd', 'e'])}()), 'message: Your <code>Queue</code> class should have a <code>enqueue</code> method.');",
-        "assert((function(){var test = new CircularQueuee(); test.enqueue('a'); test.enqueue('b'); test.enqueue('c'); test.enqueue('d'); test.enqueue('e'); test.enqueue('f'); test.dequeue;  return (test.printCollection === ['', 'b', 'c', 'd', 'e'])}()), 'message: Your <code>dequeue</code> method did not remove the first item.');"
+        "assert(typeof new CircularQueue().enqueue === 'function', 'message: Your <code>CircularQueue</code> class should have a <code>enqueue</code> method.');",
+        "assert.deepEqual((function(){var test = new CircularQueue(); test.enqueue('a'); test.enqueue('b'); test.enqueue('c'); test.enqueue('d'); test.enqueue('e'); test.enqueue('f');  return test.printCollection(); })(), ['f', 'b', 'c', 'd', 'e'], 'message: Your <code>enqueue</code> method should add items to the position of the write pointer, looping back to the beginning once the queue is filled.');",
+        "assert(typeof new CircularQueue().dequeue === 'function', 'message: Your <code>CircularQueue</code> class should have a <code>dequeue</code> method.');",
+        "assert.deepEqual((function(){var test = new CircularQueue(); test.enqueue('a'); test.enqueue('b'); test.enqueue('c'); test.enqueue('d'); test.enqueue('e'); test.enqueue('f'); test.dequeue();  return test.printCollection(); })(), ['', 'b', 'c', 'd', 'e'], 'message: Your <code>dequeue</code> method should read the item at the current read pointer position and remove it from the queue.');",
+        "assert((function(){ var test = new CircularQueue(); test.enqueue('a'); test.enqueue('b'); return test.dequeue() === 'a' && test.dequeue() === 'b'; })(), 'message: Your <code>dequeue</code> method should return the value being removed.');",
+        "assert(typeof new CircularQueue().front === 'function', 'message: Your <code>CircularQueue</code> class should have a <code>front</code> method.');",
+        "assert((function(){ var test = new CircularQueue(); test.enqueue('a'); test.enqueue('b'); return test.front() === 'a' && test.front() === 'a'; })(), 'message: Your <code>front</code> method should return the item at the current read pointer position, without removing it.');"
       ],
       "type": "waypoint",
-      "solutions": [],
+      "releasedOn": "Feb 17, 2017",
+      "solutions": [
+        "class CircularQueue {\n  constructor () {\n    this._cq = ['', '', '', '', ''];\n    this._reader = 0;\n    this._writer = 0;\n  }\n  \n  printCollection () {\n    return this._cq;\n  }\n  \n  _updatePointer (id) {\n    if (++this[id] === this._cq.length) {\n      this[id] = 0;\n    }\n  }\n  \n  enqueue (item) {\n    if (Array.isArray(item)) {\n      for (const x of item) {\n        this.enqueue(x);\n      }\n\n      return;\n    }\n    \n    this._cq[this._writer] = item;\n    \n    this._updatePointer('_writer');\n  }\n  \n  dequeue () {\n    const item = this._cq[this._reader];\n    this._cq[this._reader] = '';\n    \n    this._updatePointer('_reader');\n    return item;\n  }\n  \n  front () {\n    return this._cq[this._reader];\n  }\n}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -256,6 +269,7 @@
         "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'message: Your <code>Set</code> should return <code>false</code> when the user tries to add a duplicate value.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -295,6 +309,7 @@
         "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\"); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your code should remove the item from');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -343,6 +358,7 @@
         "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\");return (test.size() === 1)}()), 'message: The <code>size</code> method should return the number of elements in the collection.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -396,6 +412,7 @@
         "assert((function(){var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -461,6 +478,7 @@
         "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.values() === [ 'c' ])}), 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -537,6 +555,7 @@
         "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var differenceSetAB = setA.difference(setB);return (differenceSetAB.values() === [ 'a', 'b' ])}), 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -624,6 +643,7 @@
         "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setB.add(\"b\");  setB.add(\"c\");  setB.add(\"a\");  setB.add(\"d\");  var subSetSetAB = setA.subset(setB);return (subSetSetAB === true)}), 'message: The first Set() was contained in the second Set');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -659,6 +679,7 @@
         "assert((function(){var test = checkSet(); var testArr = [...test];  testArr === [ 1, 2, 3, 'Taco', 'Cat', 'Awesome'])}, 'message: Your Set was returned correctly!');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -688,6 +709,7 @@
         "assert((function(){var test = checkSet(); var testArr = [...test];  testArr === [ 2, 3 ])}, 'message: Your Set was returned correctly!');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -716,6 +738,7 @@
         "assert((function(){var test = checkSet([1,2,3], 2); test === [ true, 3 ])}, 'message: Your Set was returned correctly!');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -745,6 +768,7 @@
         "assert((function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ])}, 'message: Your Set was returned correctly!');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -781,6 +805,7 @@
         "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('b','b'); test.add('c','d'); test.remove('asdfas'); var init = test.size(); test.clear(); return (init == 2 && test.size() == 0)})(), 'message: The clear method empties the map and the size method returns the number of items present in the map.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -807,6 +832,7 @@
         "assert(myMap.get('freeCodeCamp') === 'Awesome!', 'message: myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -822,13 +848,13 @@
         "Be sure to write your code to account for collisions!"
       ],
       "head": [
-      "  var called = 0;",
-      "    var hash = (string) => {",
-      "     called++;",
-      "      var hash = 0;",
-      "      for (var i = 0; i < string.length; i++) { hash += string.charCodeAt(i); };",
-      "      return hash;",
-      "    };"
+        "  var called = 0;",
+        "    var hash = (string) => {",
+        "     called++;",
+        "      var hash = 0;",
+        "      for (var i = 0; i < string.length; i++) { hash += string.charCodeAt(i); };",
+        "      return hash;",
+        "    };"
       ],
       "challengeSeed": [
         "var called = 0;",
@@ -855,6 +881,7 @@
         "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('1key','value2'); test.add('ke1y','value3'); return (test.lookup('key1') === 'value1' && test.lookup('1key') == 'value2' && test.lookup('ke1y') == 'value3')})(), 'message: The hash table handles collisions.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -865,7 +892,7 @@
       "description": [
         "Another common data structure is the linked list. In a linked list, elements are stored in a node. The node contains two key pieces of information: the element itself, and a reference to the next node.",
         "Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line, they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.",
-        "Instructions",
+        "<hr>",
         "In the code, we've create two nodes, Kitten and Puppy, and we've manually connected the Kitten node to the Puppy node.",
         "Create a Cat and Dog node and manually add them to the line."
       ],
@@ -881,7 +908,7 @@
         "// only add code below this line",
         "",
         "// test your code",
-        "console.log(Kitten.next)"
+        "console.log(Kitten.next);"
       ],
       "tests": [
         "assert(Puppy.next.element === \"Cat\", 'message: Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.');",
@@ -890,6 +917,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -939,6 +967,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -998,13 +1027,16 @@
       ],
       "tests": [
         "assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>remove</code> method.');",
-        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'message: Your <code>Remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');",
-        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.length() === 1}()), 'message: Your <code>Remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');",
-        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'}()), 'message: Your <code>Remove</code> method should reassign the reference of the previous node of the removed node to the removed node's <code>next</code> reference ');"
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'message: Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.size() === 1})(), 'message: Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');",
+        "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'})(), 'message: Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "class Node {\n  constructor (element) {\n    this.element = element;\n    this.next = null;\n  }\n}\n\nclass LinkedList {\n  constructor () {\n    this._length = 0;\n    this._head = null;\n  }\n\n  head () {\n    return this._head;\n  }\n\n  size () {\n    return this._length;\n  }\n\n  add (element) {\n    const node = new Node(element);\n\n    if (this._head === null) {\n      this._head = node;\n    } else {\n      let current = this._head;\n\n      while (current.next !== null) {\n        current = current.next;\n      }\n\n      current.next = node; \n    }\n    \n    ++this._length;\n  }\n  \n  remove (element) {\n    if (this._head === null) return;\n    \n    let previous;\n    let current = this._head;\n    \n    while (current.next !== null && current.element !== element) {\n      previous = current;\n      current = current.next;\n    }\n    \n    if (previous) {\n      previous.next = current.next;\n    } else {\n      this._head = current.next;\n    }\n    \n    --this._length;\n  }\n}"
+      ],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -1084,6 +1116,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -1164,6 +1197,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -1228,6 +1262,7 @@
       "solutions": [],
       "hints": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {}
     },
@@ -1296,6 +1331,7 @@
         "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(60); return ( test.print().join('') == '2535' ) })(), 'message: The last item can be removed from the list.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -1376,6 +1412,7 @@
         "};"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -1445,6 +1482,7 @@
         "};"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -1508,6 +1546,7 @@
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); return test.add(4) == null; })(), 'message: Adding an element that already exists returns null');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -1572,6 +1611,7 @@
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })(), 'message: isPresent handles cases where the tree is empty.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -1641,6 +1681,7 @@
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced(); })(), 'message: The isBalanced method returns true if the tree is a balanced binary search tree.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -1715,6 +1756,7 @@
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.postorder !== 'function') { return false; }; return (test.postorder() == null); })(), 'message: The postorder method returns null for an empty tree.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -1783,6 +1825,7 @@
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; return (test.reverseLevelOrder() == null); })(), 'message: The reverseLevelOrder method returns null for an empty tree.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -1898,6 +1941,7 @@
         "};"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -2051,6 +2095,7 @@
         "};"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -2220,6 +2265,7 @@
         "};"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -2300,6 +2346,7 @@
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; return (test.invert() == null); })(), 'message: Inverting an empty tree returns null.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -2342,6 +2389,7 @@
         "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('hop'); test.add('hops'); test.add('hopped'); test.add('hoppy'); test.add('hope'); return (test.isWord('hop') && !test.isWord('ho') && test.isWord('hopped') && !test.isWord('hopp') && test.isWord('hoppy') && !test.isWord('hoping')); }()), 'message: The isWord method returns true only for words added to the trie and false for all other words.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -2379,6 +2427,7 @@
         "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })(), 'message: The insert method adds elements according to the max heap property.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -2407,6 +2456,7 @@
         "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(30); test.insert(300); test.insert(500); test.insert(10); let result = []; result.push(test.remove()); result.push(test.remove()); result.push(test.remove()); result.push(test.remove());  return (result.join('') == '5003003010') })(), 'The remove method removes the greatest element from the max heap while maintaining the max heap property.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -2444,6 +2494,7 @@
         "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; test.insert(3); test.insert(12); test.insert(5); test.insert(10); test.insert(1); test.insert(27); test.insert(42); test.insert(57); test.insert(5); var result = test.sort(); return (isSorted(result)); })(), 'message: The sort method returns an array containing all items added to the min heap in sorted order.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
       "translations": {}
@@ -2480,6 +2531,7 @@
       "challengeSeed": [],
       "tests": [],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 7,
       "translations": {}
@@ -2510,6 +2562,7 @@
         "assert(undirectedAdjList.Jeff.includes(\"Jenny\") && undirectedAdjList.Jenny.includes(\"Jeff\"), 'message: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [
         "var undirectedAdjList = {\n\"James\": [\"Jeff\"],\"Jill\": [\"Jenny\"],\"Jenny\": [\"Jill\", \"Jeff\"],\n\"Jeff\": [\"James\", \"Jenny\"]\n};"
       ],
@@ -2545,6 +2598,7 @@
         "assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'message: There should be an edge between the fourth and fifth node.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [
         "var adjMatUndirected = [[0, 0, 1, 1, 0],[0, 0, 0, 0, 0],[1, 0, 0, 0, 1],[1, 0, 0, 0, 1],[0, 0, 1, 1, 0]];"
       ],
@@ -2584,6 +2638,7 @@
         "assert((incMatUndirected[1][3] === 1) && (incMatUndirected[3][3] === 1), 'message: There should be a fourth edge between the second and fourth node.');"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [
         "var incMatUndirected = [[1, 0, 0, 0],[1, 1, 0, 1],[0, 1, 1, 0],[0, 0, 0, 1],[0, 0, 1, 0]];"
       ],
@@ -2654,6 +2709,7 @@
         "}"
       ],
       "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function bfs(graph, root) {\n// Distance object returned\nvar nodesLen = {};\n// Set all distances to infinity\nfor (var i = 0; i < graph.length; i++) {\nnodesLen[i] = Infinity;\n}\nnodesLen[root] = 0; // ...except root node\nvar queue = [root]; // Keep track of nodes to visit\nvar current; // Current node traversing\n// Keep on going until no more nodes to traverse\nwhile (queue.length !== 0) {\ncurrent = queue.shift();\n// Get adjacent nodes from current node\nvar curConnected = graph[current]; // Get layer of edges from current\nvar neighborIdx = []; // List of nodes with edges\nvar idx = curConnected.indexOf(1); // Get first edge connection\nwhile (idx !== -1) {\nneighborIdx.push(idx); // Add to list of neighbors\nidx = curConnected.indexOf(1, idx + 1); // Keep on searching\n}\n// Loop through neighbors and get lengths\nfor (var j = 0; j < neighborIdx.length; j++) {\n// Increment distance for nodes traversed\nif (nodesLen[neighborIdx[j]] === Infinity) {\nnodesLen[neighborIdx[j]] = nodesLen[current] + 1;\nqueue.push(neighborIdx[j]); // Add new neighbors to queue\n}\n}\n}\nreturn nodesLen;}"
       ],
@@ -2664,20 +2720,21 @@
       "id": "587d825d367417b2b2512c96",
       "title": "Depth-First Search",
       "description": [
-        "Similar to breadth-first search, here we will learn about another graph traversal algorithm called depth-first search.",
-        "Whereas the breadth-first search searches incremental edge lengths away from the source node, depth-first search first goes down a path of edges as far as it can.",
+        "Similar to <dfn>breadth-first search</dfn>, here we will learn about another graph traversal algorithm called <dfn>depth-first search</dfn>.",
+        "Whereas the breadth-first search searches incremental edge lengths away from the source node, <dfn>depth-first search</dfn> first goes down a path of edges as far as it can.",
         "Once it reaches one end of a path, the search will backtrack to the last node with an un-visited edge path and continue searching.",
         "Visually, this is what the algorithm is doing where the top node is the starting point of the search.",
-        "<img src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966'>",
+        "<img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966'>",
         "A simple output of this algorithm is a list of nodes which are reachable from a given node. So when implementing this algorithm, you'll need to keep track of the nodes you visit.",
-        "Instructions",
-        "Write a function dfs() that takes an undirected, adjacency matrix graph and a node label root as parameters. The node label will just be the numeric value of the node between 0 and n - 1, where n is the total number of nodes in the graph.",
-        "Your function should output an array of all nodes reachable from root."
+        "<hr>",
+        "Write a function <code>dfs()</code> that takes an undirected, adjacency matrix <code>graph</code> and a node label <code>root</code> as parameters. The node label will just be the numeric value of the node between <code>0</code> and <code>n - 1</code>, where <code>n</code> is the total number of nodes in the graph.",
+        "Your function should output an array of all nodes reachable from <code>root</code>."
       ],
       "challengeSeed": [
         "function dfs(graph, root) {",
         "  ",
-        "};",
+        "}",
+        "",
         "var exDFSGraph = [",
         "  [0, 1, 0, 0],",
         "  [1, 0, 1, 0],",
@@ -2687,13 +2744,20 @@
         "console.log(dfs(exDFSGraph, 3));"
       ],
       "tests": [
-        "assert.deepEqual((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 1);})(), [0, 1, 2, 3], 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return <code>[0, 1, 2, 3]</code>.');",
-        "assert.deepEqual((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; return dfs(graph, 3);})(), [3], 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>1</code> should return <code>[3]</code>.');",
-        "assert.deepEqual((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 3);})(), [2, 3], 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return <code>[2, 3]</code>.');",
-        "assert.deepEqual((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 0);})(), [0, 1], 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return <code>[0, 1]</code>.');"
+        "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 1);})(), [0, 1, 2, 3], 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with <code>0</code>, <code>1</code>, <code>2</code>, and <code>3</code>.');",
+        "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 1);})().length === 4, 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with four elements.');",
+        "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; return dfs(graph, 3);})(), [3], 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with <code>3</code>.');",
+        "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; return dfs(graph, 3);})().length === 1, 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with one element.');",
+        "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 3);})(), [2, 3], 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with <code>2</code> and <code>3</code>.');",
+        "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 3);})().length === 2, 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with two elements.');",
+        "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 0);})(), [0, 1], 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with <code>0</code> and <code>1</code>.');",
+        "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 0);})().length === 2, 'message: The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with two elements.');"
       ],
       "type": "waypoint",
-      "solutions": [],
+      "releasedOn": "Feb 17, 2017",
+      "solutions": [
+        "function dfs(graph, root) { var stack = []; var tempV; var visited = []; var tempVNeighbors = []; stack.push(root); while (stack.length > 0) { tempV = stack.pop(); if (visited.indexOf(tempV) == -1) { visited.push(tempV); tempVNeighbors = graph[tempV]; for (var i = 0; i < tempVNeighbors.length; i++) { if (tempVNeighbors[i] == 1) { stack.push(i); }}}} return visited;}"
+      ],
       "challengeType": 1,
       "translations": {}
     }

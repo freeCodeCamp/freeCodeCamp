@@ -6,33 +6,22 @@
   "challenges": [
     {
       "id": "587d7fb5367417b2b2512c05",
-        "title": "Introduction to the MongoDB and Mongoose Challenges",
-        "description": [
-          [
-            "",
-            "",
-            "MongoDB is a database that stores data records (documents) for use by an application. Mongo is a non-relational, \"NoSQL\" database. This means Mongo stores all data associated within one record, instead of storing it across many preset tables as in a SQL database. Some benefits of this storage model are:<br><br><ul><li>Scalability: by default, non-relational databases are split (or \"sharded\") across many systems instead of only one. This makes it easier to improve performance at a lower cost.</li><li>Flexibility: new datasets and properties can be added to a document without the need to make a new table for that data.</li><li>Replication: copies of the database run in parallel so if one goes down, one of the copies becomes the new primary data source.</li></ul><br>While there are many non-relational databases, Mongo's use of JSON as its document storage structure makes it a logical choice when learning backend JavaScript. Accessing documents and their properties is like accessing objects in JavaScript.<br><br>Mongoose.js is an npm module for Node.js that allows you to write objects for Mongo as you would in JavaScript. This can make is easier to construct documents for storage in Mongo.",
-            ""
-          ]
-        ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
-        ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
+      "title": "Introduction to the MongoDB and Mongoose Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "MongoDB is a database that stores data records (documents) for use by an application. Mongo is a non-relational, \"NoSQL\" database. This means Mongo stores all data associated within one record, instead of storing it across many preset tables as in a SQL database. Some benefits of this storage model are:<br><br><ul><li>Scalability: by default, non-relational databases are split (or \"sharded\") across many systems instead of only one. This makes it easier to improve performance at a lower cost.</li><li>Flexibility: new datasets and properties can be added to a document without the need to make a new table for that data.</li><li>Replication: copies of the database run in parallel so if one goes down, one of the copies becomes the new primary data source.</li></ul><br>While there are many non-relational databases, Mongo's use of JSON as its document storage structure makes it a logical choice when learning backend JavaScript. Accessing documents and their properties is like accessing objects in JavaScript.<br><br>Mongoose.js is an npm module for Node.js that allows you to write objects for Mongo as you would in JavaScript. This can make is easier to construct documents for storage in Mongo.",
+          ""
         ]
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
     },
     {
       "id": "587d7fb6367417b2b2512c06",

@@ -1087,7 +1087,6 @@
         "assert(!/\\\\/g.test(code) && myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
         "assert(code.match(/\"/g).length === 6 && code.match(/'/g).length === 4, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
       ],
-
       "type": "waypoint",
       "challengeType": 1,
       "translations": {
@@ -1487,7 +1486,7 @@
         "cannot change the value of <code>myStr</code> to \"Job\", because the contents of <code>myStr</code> cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change <code>myStr</code> would be to assign it with a new string, like this:",
         "<blockquote>var myStr = \"Bob\";<br>myStr = \"Job\";</blockquote>",
         "<hr>",
-        "Correct the assignment to <code>myStr</code> to achieve the desired effect that is intended by <code>myStr[0] = \"H\" ;</code>."
+        "Correct the assignment to <code>myStr</code> so it contains the string value of <code>Hello World</code> using the approach shown in the example above."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -5568,7 +5567,8 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "releasedOn": "February 17, 2017"
     },
     {
       "id": "587d7b7e367417b2b2512b22",
@@ -5601,6 +5601,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
+      "releasedOn": "February 17, 2017",
       "translations": {}
     },
     {
@@ -5634,6 +5635,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
+      "releasedOn": "February 17, 2017",
       "translations": {}
     },
     {
@@ -5665,6 +5667,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
+      "releasedOn": "February 17, 2017",
       "translations": {}
     }
   ]

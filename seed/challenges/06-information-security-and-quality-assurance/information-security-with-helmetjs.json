@@ -20,6 +20,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -39,6 +40,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -54,7 +56,8 @@
         {
           "text": "helmet.frameguard() middleware should be mounted correctly",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'frameguard', 'helmet.frameguard() middleware is not mounted correctly'); }, xhr => { throw new Error(xhr.responseText); })"
-        }, {
+        },
+        {
           "text": "helmet.frameguard() 'action' should be set to 'DENY'",
           "testString": "getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.property(data.headers, 'x-frame-options'); assert.equal(data.headers['x-frame-options'], 'DENY');}, xhr => { throw new Error(xhr.responseText); })"
         }
@@ -62,6 +65,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -85,6 +89,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -104,6 +109,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -123,6 +129,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -148,6 +155,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -167,6 +175,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -186,6 +195,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -211,6 +221,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -244,39 +255,40 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
     {
       "id": "58a25bcef9fc0f352b528e7b",
-        "title": "Data Protection with BCrypt",
-        "description": [
-          [
-            "",
-            "",
-            "The safest way to protect a password is to never even store it- even encrypted. The solution to this security problem is hashing. Unlike encryptions, hashes cannot be transformed back into the original data. So how do you use a hash? A hash is used to verify data like a password again at a later point in time without actually knowing what it is in the future by hashing the entered password in the same manner as the original and comparing the results; if they match then you can be sure it is the same data. A widely used library for this is <em>BCrypt</em>. With how easy BCrypt is to implement into your web applications, you should never have any excuse to store a plain text password in your databases. Open the starter project below and hit <b>Remix it</b> to create your own private version to get started!",
-            "https://gomix.com/#!/project/fcc-bcrypt"
-          ]
-        ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
-        ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
+      "title": "Data Protection with BCrypt",
+      "description": [
+        [
+          "",
+          "",
+          "The safest way to protect a password is to never even store it- even encrypted. The solution to this security problem is hashing. Unlike encryptions, hashes cannot be transformed back into the original data. So how do you use a hash? A hash is used to verify data like a password again at a later point in time without actually knowing what it is in the future by hashing the entered password in the same manner as the original and comparing the results; if they match then you can be sure it is the same data. A widely used library for this is <em>BCrypt</em>. With how easy BCrypt is to implement into your web applications, you should never have any excuse to store a plain text password in your databases. Open the starter project below and hit <b>Remix it</b> to create your own private version to get started!",
+          "https://gomix.com/#!/project/fcc-bcrypt"
         ]
-    },      
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "titleEs": "",
+      "descriptionEs": [
+        []
+      ],
+      "titleFr": "",
+      "descriptionFr": [
+        []
+      ],
+      "titleDe": "",
+      "descriptionDe": [
+        []
+      ]
+    },
     {
       "id": "58a25bcef9fc0f352b528e7c",
       "title": "Understanding BCrypt Hashes",
@@ -300,6 +312,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -323,6 +336,7 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
     },
@@ -345,8 +359,9 @@
       "solutions": [],
       "hints": [],
       "type": "backend",
+      "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {}
-    }     
+    }
   ]
 }

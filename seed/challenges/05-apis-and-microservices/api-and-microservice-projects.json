@@ -12,19 +12,24 @@
       "description": [
         "This is just a test of the new backend challenge test framework"
       ],
-      "tests": [{
-        "text": "website should return 200",
-        "testString": "getUserInput => $.ajax({ url: getUserInput('url'), method: 'HEAD' }).then(null, (err) => assert.fail(err));"
-      }, {
-        "text": "package.json should have a valid \"keywords\" key",
-        "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert(packJson.keywords); }, err => { throw new Error('Err: ' + err.statusText);}))"
-      }, {
-        "text": "\"keywords\" field should be an Array",
-        "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert.isArray(packJson.keywords); }, err => { throw new Error('Err: ' + err.statusText);}))"
-      }, {
-        "text": "\"keywords\" should include \"freecodecamp\"",
-        "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert.include(packJson.keywords, 'freecodecamp'); }, err => { throw new Error('Err: ' + err.statusText); }))"
-      }],
+      "tests": [
+        {
+          "text": "website should return 200",
+          "testString": "getUserInput => $.ajax({ url: getUserInput('url'), method: 'HEAD' }).then(null, (err) => assert.fail(err));"
+        },
+        {
+          "text": "package.json should have a valid \"keywords\" key",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert(packJson.keywords); }, err => { throw new Error('Err: ' + err.statusText);}))"
+        },
+        {
+          "text": "\"keywords\" field should be an Array",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert.isArray(packJson.keywords); }, err => { throw new Error('Err: ' + err.statusText);}))"
+        },
+        {
+          "text": "\"keywords\" should include \"freecodecamp\"",
+          "testString": "getUserInput => ($.get(getUserInput('url') + '/_api/package.json').then(function(data){ var packJson = JSON.parse(data); assert.include(packJson.keywords, 'freecodecamp'); }, err => { throw new Error('Err: ' + err.statusText); }))"
+        }
+      ],
       "type": "backend"
     },
     {
@@ -58,8 +63,7 @@
       "translations": {
         "es": {
           "title": "Microservicio de Marca Temporal",
-          "description": [
-          ]
+          "description": []
         }
       }
     },
@@ -86,8 +90,7 @@
       "translations": {
         "es": {
           "title": "Microservicio para analizar el encabezado de una petición",
-          "description": [
-          ]
+          "description": []
         }
       }
     },
@@ -122,8 +125,7 @@
       "translations": {
         "es": {
           "title": "Microservicio para acortar URLs",
-          "description": [
-          ]
+          "description": []
         }
       }
     },
@@ -161,13 +163,12 @@
       "hints": [],
       "type": "basejump",
       "isRequired": true,
-      "releasedOn": "January 1, 2016",
+      "releasedOn": "February 17, 2017",
       "challengeType": 4,
       "translations": {
         "es": {
           "title": "Capa de abstracción para buscar imágenes",
-          "description": [
-          ]
+          "description": []
         }
       }
     },
@@ -198,8 +199,7 @@
       "translations": {
         "es": {
           "title": "Microservicio de metadatos de archivos",
-          "description": [
-          ]
+          "description": []
         }
       }
     }
