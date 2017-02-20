@@ -181,21 +181,24 @@
   overflow: hidden;
 }
 
-@media only screen and (min-width: 993px) {
+@media only screen and (min-width: 1031px) {
   .iframe-scroll {
     z-index: 1;
   }
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1030px) {
   .iframe-scroll {
     height: auto;
     overflow: auto;
+  }
+  .iphone-position {
+    display: none;
   }
 }
 
 iframe.iphone {
   border: none;
-  @media(min-width: 992px) {
+  @media(min-width: 1031px) {
     width: 280px;
     height: 497px;
     position: absolute;
@@ -203,7 +206,7 @@ iframe.iphone {
     right: 35px;
     overflow-y: scroll;
   }
-  @media(max-width: 991px) {
+  @media(max-width: 1030px) {
     width: 100%;
     border-radius: 5px;
     overflow-y: visible;
