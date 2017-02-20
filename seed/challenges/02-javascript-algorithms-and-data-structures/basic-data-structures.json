@@ -90,8 +90,8 @@
       "tests": [
         "assert.strictEqual(myArray[0], \"a\", 'message: <code>myArray[0]</code> is equal to <code>\"a\"</code>');",
         "assert.notStrictEqual(myArray[1], \"b\", 'message: <code>myArray[1]</code> is no longer set to <code>\"b\"</code>');",
-        "assert.strictEqual(myArray[2], \"c\", 'message: <code>myArray[0]</code> is equal to <code>\"c\"</code>');",
-        "assert.strictEqual(myArray[3], \"d\", 'message: <code>myArray[0]</code> is equal to <code>\"d\"</code>');"
+        "assert.strictEqual(myArray[2], \"c\", 'message: <code>myArray[2]</code> is equal to <code>\"c\"</code>');",
+        "assert.strictEqual(myArray[3], \"d\", 'message: <code>myArray[3]</code> is equal to <code>\"d\"</code>');"
       ],
       "type": "waypoint",
       "solutions": [],
