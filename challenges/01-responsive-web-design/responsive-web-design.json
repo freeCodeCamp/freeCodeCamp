@@ -39,7 +39,38 @@
       "type": "waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Introdução aos Desafios de Web Design Responsivo",
+          "description": [
+            [
+              "",
+              "",
+              "Hoje em dia há muitos dispositivos que podem acessar a web. Eles vão de computadores grandes de mesa até os pequenos celulares. Estes dispositivos tem diferentes tamanhos de tela, resoluções e capacidade de processamento.",
+              ""
+            ],
+            [
+              "",
+              "",
+              "O Web Design Responsivo é uma abordagem para o design the conteúdo para a web que responde às limitações dos diferentes dispositivos. A estrutura das páginas e as regras CSS devem ser flexíveis para acomodar estas diferenças.",
+              ""
+            ],
+            [
+              "",
+              "",
+              "Em geral, foque o design do CSS de sua página em seu público alvo. Se você espera que a maior parte dos seus usuários utilizem seus celulares, use uma abordagem 'mobile-first.' E então adicione regras condicionais para as telas maiores. Se seus usuários utilizam computadores de mesa, foque o design em telas maiores e utilize regras condicionais para tamanhos menores.",
+              ""
+            ],
+            [
+              "",
+              "",
+              "CSS lhe dá as ferramentas para escrever regras de estilo diversas, e então aplicá-las dependendo do dispositivo que estiver acessando a página. Esta seção cobrirá as maneiras básicas de utilizar CSS para o Web Design Responsivo.",
+              ""
+            ]
+          ]
+
+        }
+      }
     },
     {
       "id": "587d78b0367417b2b2512b08",
@@ -73,7 +104,20 @@
       "solution": [],
       "hints": [],
       "challengeType": 0,
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Criando uma Media Query",
+          "description": [
+            "Media Queries são uma nova técnica introduzida no CSS3 que mudam a apresentação do conteúdo de acordo com os diferentes tamanhos de janela de exibição. A janela de exibição é a área visível de uma página da web, e é diferente dependendo do dispositivo utilizado para acessar o site.",
+            "Media Queries consistem em um tipo de mídia, e se o tipo de mídia corresponder com o dispositivo no qual o documento está sendo exibido, os estilos são aplicados. Você pode colocar quantos seletores e estilos quanto desejar dentro de suas media queries.",
+            "Segue um exemplo de media query que retorna seu conteúdo quando a largura do dispositivo é menor que 100px:",
+            "<code>@media (max-width: 100px) { /* Regras do CSS  */ }</code>",
+            "Lembre-se, o CSS dentro da media query só é aplicado se o tipo de mídia corresponder ao dispositivo em uso.",
+            "<hr>",
+            "Adicione uma media query para que o tag <code>p</code> tenha um <code>font-size</code> de 10px quando a altura do dispositivo for menor ou igual a 800px."
+          ]
+        }
+      }
     },
     {
       "id": "587d78b1367417b2b2512b09",
@@ -104,7 +148,20 @@
       "challengeType": 0,
       "solutions": [],
       "hints": [],
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Torne uma Imagem Responsiva",
+          "description": [
+            "Fazer com que imagens sejam responsivas é muito simples com CSS. Ao invés de aplicar uma largura absoluta a um elemento:",
+            "<code>img { width: 720px; }</code>",
+            "Você pode usar:",
+            "<blockquote>img {<br>  max-width: 100%;<br>  display: block;<br>  height: auto;<br>}</blockquote>",
+            "A propriedade <code>max-width</code> em 100% ajusta o tamanho da imagem para preencher a largura de seu container, mas a imagem não irá esticar mais que sua largura original. Ajustando a propriedade <code>display</code> como block muda imagem de elemento inline (o padrão) para um elemento block com uma linha própria. A propriedade <code>height</code> na configuração auto mantem a proporção original da imagem.",
+            "<hr>",
+            "Adicione regras de estilo para a tag <code>img</code> para torná-la responsiva com relação ao tamanho do seu container. Ela deve ser exibida como um elemento de nível block, e deve preencher toda a largura de seu container sem esticar, mantendo as proporções originais."
+          ]
+        }
+      }
     },
     {
       "id": "587d78b1367417b2b2512b0a",
@@ -132,7 +189,18 @@
       "challengeType": 0,
       "solutions": [],
       "hints": [],
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Use uma Imagem Retina para Telas de Alta Resolução",
+          "description": [
+            "A maneira mais simples de fazer com que suas imagens tenham uma aparência \"retina\" (e otimizadas para telas retina) é definindo seus valores de <code>width</code> e <code>height</code> como somente metade do tamanho original dos arquivos.",
+            "Segue um exemplo de imagem que possui somente metade dos valores originais de altura e largura:",
+            "<blockquote>&lt;style&gt;<br>  img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;A most excellent picture&quot;&gt;</blockquote>",
+            "<hr>",
+            "Configure os valores de <code>width</code> e <code>height</code> da tag <code>img</code> como metade do seu tamanho original. Nesse caso, o valor original de <code>height</code> e o valor original de <code>width</code> são de 200px."
+          ]
+        }
+      }
     },
     {
       "id": "587d78b1367417b2b2512b0c",
@@ -166,7 +234,23 @@
       "solutions": [],
       "hints": [],
       "challengeType": 0,
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Torne a Tipografia Responsiva",
+          "description": [
+            "Ao invés de utilizar <code>em</code> ou <code>px</code> para alterar o tamanho do texto, você pode usar unidades da janela de exibição para obter tipografia responsiva. Unidades da janela de exibição, assim como porcentagens, são unidades relativas, mas que são baseadas em ítens diferentes. Unidades da janela de exibição são relativas às dimensões da janela de exibição (largura ou altura) de um dispositivo, enquanto que porcentagens são relativas ao tamanho do container do elemento pai.",
+            "As quatro unidades da janela de exibição são",
+            "<ul>",
+            "<li><code>vw: 10vw</code> seria 10% da largura da janela de exibição.</li>",
+            "<li><code>vh: 3vh</code> seria 3% da altura da janela de exibição.</li>",
+            "<li><code>vmin: 70vmin</code> seria 70% da menor dimensão da janela de exibição (largura ou altura).</li>",
+            "<li><code>vmax: 100vmax</code> seria 100% da maior dimensão da janela de exibição (largura ou altura).</li>",
+            "</ul>",
+            "<hr>",
+            "Ajuste o <code>width</code> da tag <code>h2</code> para 80% da largura da janela de exibição e a <code>width</code> do parágrafo para 75% da menor dimensão da janela de exibição."
+          ]
+        }
+      }
     }
   ]
 }
