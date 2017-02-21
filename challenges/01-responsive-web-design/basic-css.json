@@ -49,7 +49,7 @@
         "We can do this by changing the <code>style</code> of your <code>h2</code> element.",
         "The style that is responsible for the color of an element's text is the \"color\" style.",
         "Here's how you would set your <code>h2</code> element's text color to blue:",
-        "<code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "<code>&#60;h2 style=\"color: blue;\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "<hr>",
         "Change your <code>h2</code> element's style so that its text color is red."
       ],
@@ -87,7 +87,7 @@
         "</main>"
       ],
       "tests": [
-        "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'message: Your <code>h2</code> element should be red.');"
+        "assert(code.match(/<h2\\s+style=\"color:\\s*rgb\\(255,\\s*0,\\s*0\\)\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/) || code.match(/<h2\\s+style=\"color:\\s*red\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
