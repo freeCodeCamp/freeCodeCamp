@@ -115,19 +115,19 @@
         "// rename constant variables",
         "var pi = 3.14;",
         "var radius = 10;",
-        "var calulateCircumference = function(r) {",
+        "var calculateCircumference = function(r) {",
         "  var diameter = 2 * r;",
         "  var result = pi * diameter;",
         "  return result;",
         "};",
         "// Test your code",
-        "console.log(calulateCircumference(radius));"
+        "console.log(calculateCircumference(radius));"
       ],
       "tests": [
         "// Test user replaced all var keyword",
         "// Test PI is const",
         "// Test calculateCircumference is const",
-        "// Test pi and calulateCircumference has been renamed"
+        "// Test pi and calculateCircumference has been renamed"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
