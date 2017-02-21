@@ -2579,9 +2579,9 @@
       ],
       "tests": [
         "assert(Object.keys(undirectedAdjList).length === 4, 'message: <code>undirectedAdjList</code> should only contain four nodes.');",
-        "assert(undirectedAdjList.James.includes(\"Jeff\") && undirectedAdjList.Jeff.includes(\"James\"), 'message: There should be an edge between <code>Jeff</code> and <code>James</code>.');",
-        "assert(undirectedAdjList.Jill.includes(\"Jenny\") && undirectedAdjList.Jill.includes(\"Jenny\"), 'message: There should be an edge between <code>Jill</code> and <code>Jenny</code>.');",
-        "assert(undirectedAdjList.Jeff.includes(\"Jenny\") && undirectedAdjList.Jenny.includes(\"Jeff\"), 'message: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');"
+        "assert(undirectedAdjList.James.indexOf(\"Jeff\") !== -1 && undirectedAdjList.Jeff.indexOf(\"James\") !== -1, 'message: There should be an edge between <code>Jeff</code> and <code>James</code>.');",
+        "assert(undirectedAdjList.Jill.indexOf(\"Jenny\") !== -1 && undirectedAdjList.Jill.indexOf(\"Jenny\") !== -1, 'message: There should be an edge between <code>Jill</code> and <code>Jenny</code>.');",
+        "assert(undirectedAdjList.Jeff.indexOf(\"Jenny\") !== -1 && undirectedAdjList.Jenny.indexOf(\"Jeff\") !== -1, 'message: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
