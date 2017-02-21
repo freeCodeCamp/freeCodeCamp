@@ -451,16 +451,18 @@
       "challengeSeed": [
         "let a = 8, b = 6;",
         "// change code below this line",
-        "a = b;",
-        "b = a;",
+        "",
         "// change code above this line",
-        "console.log(a); // should be 6",
-        "console.log(b); // should be 8"
+        "<blockquote>const [a, b] = [1, 2, 3, 4, 5, 7];<br>console.log(a, b); // 1, 2</blockquote>",
+        "The variable a assumes first value, and b takes the second value from the array.",
+        "You can also destructure in a way, that you can pick up values from any other array index position. You simply have to use commas (,).",
+        "Instructions.",
+        "Use destructuring to swap the variables a, b. Swapping is an operation, after which, a gets the value stored in b, and b receives the value stored in a"
       ],
       "tests": [
-        "// Test a is 6",
-        "// Test b is 8",
-        "// Test destructuring was used"
+        "assert(a === 6, 'message: Value of <code>a</code> should be 6, after swapping.');",
+        "assert(b === 8, 'message: Value of <code>b</code> should be 8, after swapping.');",
+        "// assert(/\\[\\s*(\\w)\\s*,\\s*(\\w)\\s*\\]\\s*=\\s*\\[\\s*\\2\\s*,\\s*\\1\\s*\\]/g.test(code), 'message: Use array destructuring to swap a and b.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
