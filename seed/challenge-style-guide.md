@@ -104,6 +104,9 @@ Here are specific formatting guidelines for the challenge seed code:
 - Use two spaces to indent
 - JavaScript statements end with a semicolon
 - Use double quotes where applicable
+- Comments made should have a space between the comment characters and the comment themselves
+
+    `// Fix this line`
 
 ## Why do we have all these rules?
 
