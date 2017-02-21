@@ -334,7 +334,7 @@
         ""
       ],
       "tests": [
-        "assert(ownProps.includes('name') && ownProps.includes('numLegs'), 'message: <code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');",
+        "assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1, 'message: <code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');",
         "assert(!/\\Object.keys/.test(code), 'message: Solve this challenge without using the built in method <code>Object.keys()</code>.');"
       ],
       "solutions": [
@@ -414,8 +414,8 @@
         ""
       ],
       "tests": [
-        "assert(ownProps.includes('name'), 'message: The <code>ownProps</code> array should include <code>\"name\"</code>.');",
-        "assert(prototypeProps.includes('numLegs'), 'message: The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.');",
+        "assert(ownProps.indexOf('name') !== -1, 'message: The <code>ownProps</code> array should include <code>\"name\"</code>.');",
+        "assert(prototypeProps.indexOf('numLegs') !== -1, 'message: The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.');",
         "assert(!/\\Object.keys/.test(code), 'message: Solve this challenge without using the built in method <code>Object.keys()</code>.');"
       ],
       "solutions": [

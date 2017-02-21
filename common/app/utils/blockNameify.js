@@ -28,7 +28,7 @@ export default function blockNameify(phrase) {
   }
   return phrase.split('-')
     .map((word) => {
-      if (noFormatting.includes(word)) {
+      if (noFormatting.indexOf(word) !== -1) {
         return word;
       }
       if (word === 'javascript') {
