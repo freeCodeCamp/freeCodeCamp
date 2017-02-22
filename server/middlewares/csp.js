@@ -4,9 +4,12 @@ let trusted = [
   "'self'"
 ];
 
+const host = process.env.HOST || 'localhost';
+const port = process.env.PORT || process.env.SYNC_PORT || '3000';
+
 if (process.env.NODE_ENV !== 'production') {
   trusted = trusted.concat([
-    'ws://localhost:3000'
+    `ws://${host}:${port}`
   ]);
 }
 

@@ -1,5 +1,6 @@
 // enable debug for gulp
 process.env.DEBUG = process.env.DEBUG || 'fcc:*';
+require('dotenv').load();
 
 require('babel-core/register');
 var Rx = require('rx'),
@@ -53,6 +54,7 @@ var sync = browserSync.create('fcc-sync-server');
 
 // user definable
 var __DEV__ = !yargs.argv.p;
+var host = process.env.HOST || 'localhost';
 var port = yargs.argv.port || process.env.PORT || '3001';
 var syncPort = yargs.argv['sync-port'] || process.env.SYNC_PORT || '3000';
 // make sure sync ui port does not interfere with proxy port
@@ -215,7 +217,7 @@ gulp.task('dev-server', syncDepenedents, function() {
       port: syncUIPort
     },
     proxy: {
-      target: `http://localhost:${port}`,
+      target: `http://${host}:${port}`,
       reqHeaders: ({ url: { hostname } }) => ({
         host: `${hostname}:${syncPort}`
       })
