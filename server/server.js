@@ -22,7 +22,7 @@ if (!requireProto.hasOwnProperty('ensure')) {
           callback(this);
         },
         writable: false,
-        enumarble: false
+        enumerable: false
       }
     }
   );
