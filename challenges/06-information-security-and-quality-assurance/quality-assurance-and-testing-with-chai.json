@@ -54,7 +54,7 @@
     },
     {
       "id": "587d824b367417b2b2512c47",
-      "title": "Test whether a Variable or Function is Defined",
+      "title": "Test if a Variable or Function is Defined",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Use assert.isDefined() or assert.isUndefined() to make the tests pass"
@@ -299,7 +299,7 @@
     },
     {
       "id": "587d824c367417b2b2512c4e",
-      "title": "Test whether one Value is Below or At Least as Large as Another",
+      "title": "Test if One Value is Below or At Least as Large as Another",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".isBelow() => a < b , .isAtLeast =>  a >= b"
@@ -336,7 +336,7 @@
     },
     {
       "id": "587d824c367417b2b2512c4f",
-      "title": "Test whether a Value Falls within a Specific Range",
+      "title": "Test if a Value Falls within a Specific Range",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".approximately",
@@ -369,7 +369,7 @@
     },
     {
       "id": "587d824d367417b2b2512c50",
-      "title": "Test whether a Value is an Array",
+      "title": "Test if a Value is an Array",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>."
       ],
@@ -397,7 +397,7 @@
     },
     {
       "id": "587d824d367417b2b2512c51",
-      "title": "Test whether an Array Contains an Item",
+      "title": "Test if an Array Contains an Item",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>."
       ],
@@ -425,7 +425,7 @@
     },
     {
       "id": "587d824d367417b2b2512c52",
-      "title": "Test whether a Value is a String",
+      "title": "Test if a Value is a String",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#isString asserts that the actual value is a string."
@@ -458,7 +458,7 @@
     },
     {
       "id": "587d824d367417b2b2512c53",
-      "title": "Test whether a String Contains a Substring",
+      "title": "Test if a String Contains a Substring",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#include (on #notInclude ) works for strings too !!",
@@ -518,7 +518,7 @@
     },
     {
       "id": "587d824e367417b2b2512c55",
-      "title": "Test whether an Object has a Property",
+      "title": "Test if an Object has a Property",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#property asserts that the actual object has a given property.",
@@ -552,7 +552,7 @@
     },
     {
       "id": "587d824e367417b2b2512c56",
-      "title": "Test whether a Value is of a Specific Data Structure Type",
+      "title": "Test if a Value is of a Specific Data Structure Type",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#typeOf asserts that value’s type is the given string, as determined by Object.prototype.toString.",
@@ -594,7 +594,7 @@
     },
     {
       "id": "587d824e367417b2b2512c57",
-      "title": "Test whether an Object is an Instance of a Constructor",
+      "title": "Test if an Object is an Instance of a Constructor",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#instanceOf asserts that an object is an instance of a constructor.",
