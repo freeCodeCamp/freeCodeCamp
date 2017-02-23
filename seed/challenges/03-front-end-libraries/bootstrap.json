@@ -627,7 +627,7 @@
     },
     {
       "id": "bad87fee1348cd8acef08813",
-      "title": "Call out Optional Actions with Button Info",
+      "title": "Call out Optional Actions with btn-info",
       "description": [
         "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-info</code> class is used to call attention to optional actions that the user can take.",
         "Create a new block-level Bootstrap button below your \"Like\" button with the text \"Info\", and add Bootstrap's <code>btn-info</code> and <code>btn-block</code> classes to it.",
@@ -722,7 +722,7 @@
     },
     {
       "id": "bad87fee1348ce8acef08814",
-      "title": "Warn your Users of a Dangerous Action",
+      "title": "Warn Your Users of a Dangerous Action with btn-danger",
       "description": [
         "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-danger</code> class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.",
         "Create a button with the text \"Delete\" and give it the class <code>btn-danger</code>.",
@@ -1039,7 +1039,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08845",
-      "title": "Use Spans for Inline Elements",
+      "title": "Use a span to Target Inline Elements",
       "description": [
         "You can use spans to create inline elements. Remember when we used the <code>btn-block</code> class to make the button fill the entire row?",
         "This image illustrates the difference between <code>inline</code> elements and <code>block-level</code> elements:",
@@ -1932,7 +1932,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908746",
-      "title": "House our page within a Bootstrap Container Fluid Div",
+      "title": "House our page within a Bootstrap container-fluid div",
       "description": [
         "Now let's make sure all the content on your page is mobile-responsive.",
         "Let's nest your <code>h3</code> element within a <code>div</code> element with the class <code>container-fluid</code>."
@@ -2007,7 +2007,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908847",
-      "title": "Split your Bootstrap Row",
+      "title": "Split Your Bootstrap Row",
       "description": [
         "Now that we have a Bootstrap Row, let's split it into two columns to house our elements.",
         "Create two <code>div</code> elements within your row, both with the class <code>col-xs-6</code>."
@@ -2090,7 +2090,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908849",
-      "title": "Add Elements within your Bootstrap Wells",
+      "title": "Add Elements within Your Bootstrap Wells",
       "description": [
         "Now we're several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.",
         "Nest three <code>button</code> elements within each of your <code>well</code> <code>div</code> elements."
@@ -2243,7 +2243,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908853",
-      "title": "Add ID Attributes to Bootstrap Elements",
+      "title": "Add id Attributes to Bootstrap Elements",
       "description": [
         "Recall that in addition to class attributes, you can give each of your elements an <code>id</code> attribute.",
         "Each id must be unique to a specific element and used only once per page.",
@@ -2364,7 +2364,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908855",
-      "title": "Give Each Element a Unique ID",
+      "title": "Give Each Element a Unique id",
       "description": [
         "We will also want to be able to use jQuery to target each button by its unique id.",
         "Give each of your buttons a unique id, starting with <code>target1</code> and ending with <code>target6</code>.",

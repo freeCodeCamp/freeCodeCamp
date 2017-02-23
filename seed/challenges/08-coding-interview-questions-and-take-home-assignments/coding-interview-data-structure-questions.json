@@ -674,7 +674,7 @@
     },
     {
       "id": "587d8254367417b2b2512c70",
-      "title": "Creating and Adding to Sets in ES6",
+      "title": "Create and Add to Sets in ES6",
       "description": [
         "Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure <code>Set</code> so many of the operations you wrote by hand are now included for you. Let's take a look:",
         "To create a new empty set:",
@@ -713,7 +713,7 @@
     },
     {
       "id": "587d8254367417b2b2512c71",
-      "title": "Removing items from a set in ES6",
+      "title": "Remove items from a set in ES6",
       "description": [
         "Now we will see how we can remove items from an ES6 Set.",
         "Let's create a Set:",
@@ -743,7 +743,7 @@
     },
     {
       "id": "587d8255367417b2b2512c72",
-      "title": "Using .has and .size on an ES6 Set",
+      "title": "Use .has and .size on an ES6 Set",
       "description": [
         "Now we will look at the .has and .size methods available on the Set object.",
         "var set = new Set([1,2,3]);",
@@ -772,7 +772,7 @@
     },
     {
       "id": "587d8255367417b2b2512c73",
-      "title": "Using Spread and Notes for ES5 Set() Integration",
+      "title": "Use Spread and Notes for ES5 Set() Integration",
       "description": [
         "Next up is one of the coolest things in ES6!",
         "The noble spread operator! '...' can take iterable objects in ES6 and turn them into arrays",

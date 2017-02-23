@@ -25,7 +25,7 @@
     },
     {
       "id": "587d78ab367417b2b2512af0",
-      "title": "Using display: flex with Two Boxes",
+      "title": "Use display: flex to Position Two Boxes",
       "description": [
         "This section uses alternating challenge styles to show how to use CSS to position elements in a flexible way. First, a challenge will explain theory, then a practical challenge using a simple tweet component will apply the flexbox concept.",
         "Placing the CSS property <code>display: flex;</code> on an element allows you to use other flex properties to build a responsive page.",
@@ -69,7 +69,7 @@
     },
     {
       "id": "587d78ab367417b2b2512af1",
-      "title": "Adding Flex Superpowers to the Tweet Embed",
+      "title": "Add Flex Superpowers to the Tweet Embed",
       "description": [
         "To the right is the tweet embed that will be used as the practical example. Some of the elements would look better with a different layout. The last challenge demonstrated <code>display: flex</code>. Here you'll add it to several components in the tweet embed to start adjusting their positioning.",
         "<hr>",
@@ -185,7 +185,7 @@
     },
     {
       "id": "587d78ab367417b2b2512af2",
-      "title": "Using the Flex-direction Property to Make a Row",
+      "title": "Use the flex-direction Property to Make a Row",
       "description": [
         "Adding <code>display: flex</code> to an element turns it into a flex container. This makes it possible to align any children of that element into rows or columns. You do this by adding the <code>flex-direction</code> property to the parent item and setting it to row or column. Creating a row will align the children horizontally, and creating a column will align the children vertically.",
         "Other options for <code>flex-direction</code> are row-reverse and column-reverse.",
@@ -229,7 +229,7 @@
     },
     {
       "id": "587d78ab367417b2b2512af3",
-      "title": "Applying the Flex-direction Property to Create Rows in the Tweet Embed",
+      "title": "Apply the flex-direction Property to Create Rows in the Tweet Embed",
       "description": [
         "The <code>header</code> and <code>footer</code> in the tweet embed example have child items that could be arranged as rows using the <code>flex-direction</code> property. This tells CSS to align the children horizontally.",
         "<hr>",
@@ -341,7 +341,7 @@
     },
     {
       "id": "587d78ac367417b2b2512af4",
-      "title": "Using the Flex-direction Property to Make a Column",
+      "title": "Use the flex-direction Property to Make a Column",
       "description": [
         "The last two challenges used the <code>flex-direction</code> property set to row. This property can also create a column by vertically stacking the children of a flex container.",
         "<hr>",
@@ -383,7 +383,7 @@
     },
     {
       "id": "587d78ac367417b2b2512af5",
-      "title": "Applying the Flex-direction Property to Create a Column in the Tweet Embed",
+      "title": "Apply the flex-direction Property to Create a Column in the Tweet Embed",
       "description": [
         "The tweet embed <code>header</code> and <code>footer</code> used the <code>flex-direction</code> property earlier with a row value. Similarly, the items inside the <code>.profile-name</code> element would work well stacked as a column.",
         "<hr>",
@@ -491,7 +491,7 @@
     },
     {
       "id": "587d78ac367417b2b2512af6",
-      "title": "Aligning Elements Using the Justify-content Property",
+      "title": "Align Elements Using the justify-content Property",
       "description": [
         "Sometimes the flex items within a flex container do not fill all the space in the container. It is common to want to tell CSS how to align and space out the flex items a certain way. Fortunately, the <code>justify-content</code> property has several options to do this. But first, there is some important terminology to understand before reviewing those options.",
         "<a href=\"https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg\" target=\"_blank\">Here is a useful image showing a row to illustrate the concepts below.</a>",
@@ -545,7 +545,7 @@
     },
     {
       "id": "587d78ac367417b2b2512af7",
-      "title": "Using the Justify-content Property in the Tweet Embed",
+      "title": "Use the justify-content Property in the Tweet Embed",
       "description": [
         "The last challenge showed an example of the <code>justify-content</code> property. For the tweet embed, this property can be applied to align the items in the <code>.profile-name</code> element.",
         "<hr>",
@@ -654,7 +654,7 @@
     },
     {
       "id": "587d78ad367417b2b2512af8",
-      "title": "Aligning Elements Using the Align-items Property",
+      "title": "Align Elements Using the align-items Property",
       "description": [
         "The <code>align-items</code> property is similar to <code>justify-content</code>. Recall that the <code>justify-content</code> property aligned flex items along the main axis. For rows, the main axis is a horizontal line and for columns it is a vertical line.",
         "Flex containers also have a <strong>cross axis</strong> which is the opposite of the main axis. For rows, the cross axis is vertical and for columns, the cross axis is horizontal.",
@@ -709,7 +709,7 @@
     },
     {
       "id": "587d78ad367417b2b2512af9",
-      "title": "Using the Align-items Property in the Tweet Embed",
+      "title": "Use the align-items Property in the Tweet Embed",
       "description": [
         "The last challenge introduced the <code>align-items</code> property and gave an example. This property can be applied to a few tweet embed elements to align the flex items inside them.",
         "<hr>",
@@ -822,7 +822,7 @@
     },
     {
       "id": "587d78ad367417b2b2512afa",
-      "title": "Using the Flex-wrap Property to Wrap a Row or Column",
+      "title": "Use the flex-wrap Property to Wrap a Row or Column",
       "description": [
         "CSS flexbox has a feature to split a flex item into multiple rows (or columns). By default, a flex container will fit all flex items together. For example, a row will all be on one line.",
         "However, using the <code>flex-wrap</code> property, it tells CSS to wrap items. This means extra items move into a new row or column. The break point of where the wrapping happens depends on the size of the items and the size of the container.",
@@ -897,7 +897,7 @@
     },
     {
       "id": "587d78ad367417b2b2512afb",
-      "title": "Using the Flex-shrink Property to Shrink Items",
+      "title": "Use the flex-shrink Property to Shrink Items",
       "description": [
         "So far, all the properties in the challenges apply to the flex container (the parent of the flex items). However, there are several useful properties for the flex items.",
         "The first is the <code>flex-shrink</code> property. When it's used, it allows an item to shrink if the flex container is too small. Items shrink when the width of the parent container is smaller than the combined widths of all the flex items within it.",
@@ -944,7 +944,7 @@
     },
     {
       "id": "587d78ae367417b2b2512afc",
-      "title": "Using the Flex-grow Property to Expand Items",
+      "title": "Use the flex-grow Property to Expand Items",
       "description": [
         "The opposite of <code>flex-shrink</code> is the <code>flex-grow</code> property. Recall that <code>flex-shrink</code> controls the size of the items when the container shrinks. The <code>flex-grow</code> property controls the size of items when the parent container expands.",
         "Using a similar example from the last challenge, if one item has a <code>flex-grow</code> value of 1 and the other has a <code>flex-grow</code> value of 3, the one with the value of 3 will grow three times as much as the other.",
@@ -990,7 +990,7 @@
     },
     {
       "id": "587d78ae367417b2b2512afd",
-      "title": "Using the Flex-basis Property to Set the Initial Size of an Item",
+      "title": "Use the flex-basis Property to Set the Initial Size of an Item",
       "description": [
         "The previous example included <code>flex-basis</code> to help demonstrate how the <code>flex-grow</code> property works. The <code>flex-basis</code> property specifies the initial size of the item before CSS makes adjustments with <code>flex-shrink</code> or <code>flex-grow</code>.",
         "The units used by the <code>flex-basis</code> property are the same as other size properties (<code>px</code>, <code>em</code>, <code>%</code>, etc.). The value <code>auto</code> sizes items based on the content.",
@@ -1036,7 +1036,7 @@
     },
     {
       "id": "587d78ae367417b2b2512afe",
-      "title": "Using the Flex Shorthand Property",
+      "title": "Use the flex Shorthand Property",
       "description": [
         "There is a shortcut available to set several flex properties at once. The <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> properties can all be set together by using the <code>flex</code> property.",
         "For example, <code>flex: 1 0 10px;</code> will set the item to <code>flex-grow: 1;</code>, <code>flex-shrink: 0;</code>, and <code>flex-basis: 10px;</code>.",
@@ -1083,7 +1083,7 @@
     },
     {
       "id": "587d78ae367417b2b2512aff",
-      "title": "Using the Order Property to Rearrange Items",
+      "title": "Use the order Property to Rearrange Items",
       "description": [
         "The <code>order</code> property is used to tell CSS the order of how flex items appear in the flex container. By default, items will appear in the same order they come in the source HTML. The property takes numbers as values, and negative numbers can be used.",
         "<hr>",
@@ -1128,7 +1128,7 @@
     },
     {
       "id": "587d78af367417b2b2512b00",
-      "title": "Using the Align-self Property",
+      "title": "Use the align-self Property",
       "description": [
         "The final property for flex items is <code>align-self</code>. This property allows you to adjust each item's alignment individually, instead of setting them all at once. This is useful since other common adjustment techniques using the CSS properties <code>float</code>, <code>clear</code>, and <code>vertical-align</code> do not work on flex items.",
         "<code>align-self</code> accepts the same values as <code>align-items</code> and will override any value set by the <code>align-items</code> property.",

@@ -25,7 +25,7 @@
     },
     {
       "id": "587d7791367417b2b2512ab3",
-      "title": "Create Visual Balance Using the Text-align Property",
+      "title": "Create Visual Balance Using the text-align Property",
       "description": [
         "This section of the curriculum focuses on Applied Visual Design. The first group of challenges build on the given card layout to show a number of core principles.",
         "Text is often a large part of web content. CSS has several options for how to align it with the <code>text-align</code> property.",
@@ -82,7 +82,7 @@
     },
     {
       "id": "587d7791367417b2b2512ab4",
-      "title": "Adjust the Width of an Element Using the Width Property",
+      "title": "Adjust the Width of an Element Using the width Property",
       "description": [
         "You can specify the width of an element using the <code>width</code> property in CSS. Values can be given in relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:",
         "<blockquote>img {<br>  width: 220px;<br>}</blockquote>",
@@ -137,7 +137,7 @@
     },
     {
       "id": "587d7791367417b2b2512ab5",
-      "title": "Adjust the Height of an Element Using the Height Property",
+      "title": "Adjust the Height of an Element Using the height Property",
       "description": [
         "You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:",
         "<blockquote>img {<br>  height: 20px;<br>}</blockquote>",
@@ -252,7 +252,7 @@
     },
     {
       "id": "587d781a367417b2b2512ab7",
-      "title": "Use the Strong Tag to Make Text Bold",
+      "title": "Use the strong Tag to Make Text Bold",
       "description": [
         "To make text bold, you can use the <code>strong</code> tag. This is often used to draw attention to text and symbolize that it is important. With the <code>strong</code> tag, the browser applies the CSS of <code>font-weight: bold;</code> to the element.",
         "<hr>",
@@ -553,7 +553,7 @@
     },
     {
       "id": "587d781b367417b2b2512abc",
-      "title": "Adjust the Background-color Property of Text",
+      "title": "Adjust the background-color Property of Text",
       "description": [
         "Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a <code>background-color</code> to the element holding the text you want to emphasize. This challenge uses <code>rgba()</code> instead of <code>hex</code> codes or normal <code>rgb()</code>.",
         "<blockquote>rgba stands for:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha/level of opacity</blockquote>",
@@ -681,7 +681,7 @@
     },
     {
       "id": "587d781b367417b2b2512abe",
-      "title": "Add a Box-shadow to a Card-like Element",
+      "title": "Add a box-shadow to a Card-like Element",
       "description": [
         "The <code>box-shadow</code> property applies one or more shadows to an element.",
         "The <code>box-shadow</code> property takes values for <code>offset-x</code> (how far to push the shadow horizontally from the element), <code>offset-y</code> (how far to push the shadow vertically from the element), <code>blur-radius</code>, <code>spread-radius</code> and a color value, in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.",
@@ -816,7 +816,7 @@
     },
     {
       "id": "587d781c367417b2b2512ac0",
-      "title": "Use the Text-transform Property to Make Text Uppercase",
+      "title": "Use the text-transform Property to Make Text Uppercase",
       "description": [
         "The <code>text-transform</code> property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.",
         "The following table shows how the different <code>text-transform</code>values change the example text \"Transform me\".",
@@ -965,7 +965,7 @@
     },
     {
       "id": "587d781c367417b2b2512ac2",
-      "title": "Set the Font-size for Multiple Heading Elements",
+      "title": "Set the font-size for Multiple Heading Elements",
       "description": [
         "The <code>font-size</code> property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, you'll set the values for all <code>h1</code> through <code>h6</code> tags to balance the heading sizes.",
         "<hr>",
@@ -1011,7 +1011,7 @@
     },
     {
       "id": "587d781c367417b2b2512ac3",
-      "title": "Set the Font-weight for Multiple Heading Elements",
+      "title": "Set the font-weight for Multiple Heading Elements",
       "description": [
         "You set the <code>font-size</code> of each heading tag in the last challenge, here you'll adjust the <code>font-weight</code>.",
         "The <code>font-weight</code> property sets how thick or thin characters are in a section of text.",
@@ -1076,7 +1076,7 @@
     },
     {
       "id": "587d781c367417b2b2512ac4",
-      "title": "Set the Font-size of Paragraph Text",
+      "title": "Set the font-size of Paragraph Text",
       "description": [
         "The <code>font-size</code> property in CSS is not limited to headings, it can be applied to any element containing text.",
         "<hr>",
@@ -1104,7 +1104,7 @@
     },
     {
       "id": "587d781d367417b2b2512ac5",
-      "title": "Set the Line-height of Paragraphs",
+      "title": "Set the line-height of Paragraphs",
       "description": [
         "CSS offers the <code>line-height</code> property to change the height of each line in a block of text. As the name suggests, it changes the amount of vertical space that each line of text gets.",
         "<hr>",
@@ -1360,7 +1360,7 @@
     },
     {
       "id": "587d78a3367417b2b2512ace",
-      "title": "Push Elements Left or Right with the Float Property",
+      "title": "Push Elements Left or Right with the float Property",
       "description": [
         "The next positioning tool does not actually use <code>position</code>, but sets the <code>float</code> property of an element. Floating elements are removed from the normal flow of a document and pushed to either the <code>left</code> or <code>right</code> of their containing parent element. It's commonly used with the <code>width</code> property to specify how much horizontal space the floated element requires.",
         "<hr>",
@@ -1410,7 +1410,7 @@
     },
     {
       "id": "587d78a3367417b2b2512acf",
-      "title": "Change the Position of Overlapping Elements with the Z-index Property",
+      "title": "Change the Position of Overlapping Elements with the z-index Property",
       "description": [
         "When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the <code>z-index</code> property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the <code>z-index</code> property of an element move it higher in the stack than those with lower values.",
         "<hr>",
@@ -1453,7 +1453,7 @@
     },
     {
       "id": "587d78a3367417b2b2512ad0",
-      "title": "Center an Element Horizontally Using Margin",
+      "title": "Center an Element Horizontally Using the margin Property",
       "description": [
         "Another positioning technique is to center a block element horizontally. One way to do this is to set its <code>margin</code> to a value of auto.",
         "This method works for images, too. Images are inline elements by default, but can be changed to block elements when you set the <code>display</code> property to block.",
@@ -1580,7 +1580,7 @@
     },
     {
       "id": "587d78a4367417b2b2512ad3",
-      "title": "Adjusting the Color of Various Elements to Complementary Colors",
+      "title": "Adjust the Color of Various Elements to Complementary Colors",
       "description": [
         "The Complementary Colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.",
         "<hr>",
@@ -1862,7 +1862,7 @@
     },
     {
       "id": "587d78a5367417b2b2512ad9",
-      "title": "Use the CSS Transform Scale Property to Change the Size of an Element",
+      "title": "Use the CSS Transform scale Property to Change the Size of an Element",
       "description": [
         "To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:",
         "<blockquote>p {<br>  transform:scale(2);<br>}</blockquote>",
@@ -1910,7 +1910,7 @@
     },
     {
       "id": "587d78a5367417b2b2512ada",
-      "title": "Use the CSS Transform Property to Scale an Element on Hover",
+      "title": "Use the CSS Transform scale Property to Scale an Element on Hover",
       "description": [
         "The <code>transform</code> property has a variety of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
         "Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:",
@@ -1951,7 +1951,7 @@
     },
     {
       "id": "587d78a6367417b2b2512adb",
-      "title": "Use the CSS Transform Property SkewX",
+      "title": "Use the CSS Transform Property skewX to Skew an Element Along the X-Axis",
       "description": [
         "The next function of the <code>transform</code> property is <code>skewX()</code>, which skews the selected element along its X (horizontal) axis by a given degree.",
         "The following code skews the paragraph element by -32 degrees along the X-axis.",
@@ -1993,7 +1993,7 @@
     },
     {
       "id": "587d78a6367417b2b2512adc",
-      "title": "Use the CSS Transform Property SkewY",
+      "title": "Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis",
       "description": [
         "Given that the <code>skewX()</code> function skews the selected element along the X-axis by a given degree, it is no surprise that the <code>skewY()</code> property skews an element along the Y (vertical) axis.",
         "<hr>",
@@ -2139,7 +2139,7 @@
     },
     {
       "id": "587d78a7367417b2b2512adf",
-      "title": "Learn How CSS Keyframes and Animation Properties Work",
+      "title": "Learn How the CSS @keyframes and animation Properties Work",
       "description": [
         "To animate an element, you need to know about the animation properties and the <code>@keyframes</code> rule. The animation properties control how the animation should behave and the <code>@keyframes</code> rule controls what happens during that animation. There are eight animation properties in total. This challenge will keep it simple and cover the two most important ones first:",
         "<code>animation-name</code> sets the name of the animation, which is later used by <code>@keyframes</code> to tell CSS which rules go with which animations.",

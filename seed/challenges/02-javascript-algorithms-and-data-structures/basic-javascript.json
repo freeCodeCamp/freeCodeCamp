@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "bd7123c9c441eddfaeb4bdef",
-      "title": "Comment your JavaScript Code",
+      "title": "Comment Your JavaScript Code",
       "description": [
         "Comments are lines of code that JavaScript will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.",
         "There are two ways to write comments in JavaScript:",
@@ -3710,7 +3710,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244dd",
-      "title": "Selecting from many options with Switch Statements",
+      "title": "Selecting from Many Options with Switch Statements",
       "description": [
         "If you have many options to choose from, use a <code>switch</code> statement. A <code>switch</code> statement tests a value and can have many <code>case</code> statements which define various possible values. Statements are executed from the first matched <code>case</code> value until a <code>break</code> is encountered.",
         "Here is a <dfn>pseudocode</dfn> example:",
@@ -3767,7 +3767,7 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244de",
-      "title": "Adding a default option in Switch statements",
+      "title": "Adding a Default Option in Switch Statements",
       "description": [
         "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.",
         "A <code>default</code> statement should be the last case.",

@@ -1,5 +1,5 @@
 {
-  "name": "JSON APIs and Ajax",
+  "name": "JSON APIs and AJAX",
   "order": 2,
   "time": "2 hours",
   "helpRoom": "Help",
@@ -11,12 +11,12 @@
   "challenges": [
     {
       "id": "587d7fad367417b2b2512be0",
-      "title": "Introduction to the JSON APIs and Ajax Challenges",
+      "title": "Introduction to the JSON APIs and AJAX Challenges",
       "description": [
         [
           "http://imgs.xkcd.com/comics/api.png",
           "XKCD web comic with a user sitting at a computer reading the instructions for an API Guide for a site. The text below notes \"If you do things right, it can take people awhile to realize that your 'API documentation' is just instructions for how to look at your website.\"",
-          "Similar to how User Interfaces help people use programs, Application Programming Interfaces (APIs) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data. You can use API functionality in your page once you understand how to make requests and process data from it. Programmers often use Ajax technologies when working with APIs.<br><br>The term Ajax originated as an acronym for Asynchronous JavaScript And XML. It refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. An asynchronous process has a couple key properties. The browser does not stop loading a page to wait for the server's response. Also, the browser inserts updated data into part of the page without having to refresh the entire page.<br><br>User experience benefits from asynchronous processes in several ways. Pages load faster since the browser isn't waiting for the server to respond in the middle of a page render. Requests and transfers happen in the background, without interrupting what the user is doing. When the browser receives new data, only the necessary area of the page refreshes. These qualities especially enhance the user experience for single page applications.<br><br>The data transferred between the browser and server is often in a format called JavaScript Object Notation (JSON). JSON resembles JavaScript object literal syntax, except that it's transferred as a string. Once received, it can be converted into an object and used in a script.<br><br>This section covers how to transfer and use data using Ajax technologies with a freeCodeCamp API.",
+          "Similar to how User Interfaces help people use programs, Application Programming Interfaces (APIs) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data. You can use API functionality in your page once you understand how to make requests and process data from it. Programmers often use AJAX technologies when working with APIs.<br><br>The term AJAX originated as an acronym for Asynchronous JavaScript And XML. It refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. An asynchronous process has a couple key properties. The browser does not stop loading a page to wait for the server's response. Also, the browser inserts updated data into part of the page without having to refresh the entire page.<br><br>User experience benefits from asynchronous processes in several ways. Pages load faster since the browser isn't waiting for the server to respond in the middle of a page render. Requests and transfers happen in the background, without interrupting what the user is doing. When the browser receives new data, only the necessary area of the page refreshes. These qualities especially enhance the user experience for single page applications.<br><br>The data transferred between the browser and server is often in a format called JavaScript Object Notation (JSON). JSON resembles JavaScript object literal syntax, except that it's transferred as a string. Once received, it can be converted into an object and used in a script.<br><br>This section covers how to transfer and use data using AJAX technologies with a freeCodeCamp API.",
           ""
         ]
       ],
@@ -30,10 +30,10 @@
     },
     {
       "id": "587d7fad367417b2b2512be1",
-      "title": "Trigger Click Events with JavaScript",
+      "title": "Trigger click Events with JavaScript",
       "description": [
         "This section covers how to get data from APIs. APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
-        "You'll learn how to update HTML with the data we get from these APIs using a technology called Ajax.",
+        "You'll learn how to update HTML with the data we get from these APIs using a technology called AJAX.",
         "You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:",
         "<blockquote>document.addEventListener('DOMContentLoaded',function() {<br><br>});</blockquote>",
         "Next, you can implement a click event handler that goes inside of the <code>DOMContentLoaded</code> function by adding the following code:",
@@ -99,7 +99,7 @@
     },
     {
       "id": "587d7fad367417b2b2512be2",
-      "title": "Change Text with Click Events",
+      "title": "Change Text with click Events",
       "description": [
         "When the click event happens, you can use JavaScript to update an HTML element.",
         "For example, when a user clicks the \"Get Message\" button, it changes the text of the element with the class <code>message</code> to say \"Here is the message\".",
@@ -181,7 +181,7 @@
         "Next, the <code>open</code> method initializes a request - this example is requesting data from an API, therefore is a \"GET\" request. The second argument for <code>open</code> is the URL of the API you are requesting data from. The third argument is a Boolean value where <code>true</code> makes it an asynchronous request.",
         "The <code>send</code> method sends the request. Finally, the <code>onload</code> event handler parses the returned data and applies the <code>JSON.stringify</code> method to convert the JavaScript object into a string. This string is then inserted as the message text.",
         "<hr>",
-        "Update the code to create and send a \"GET\" request to the freeCodeCamp Cat Photo API. Then click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the API."
+        "Update the code to create and send a \"GET\" request to the freeCodeCamp Cat Photo API. Then click the \"Get Message\" button. Your AJAX function will replace the \"The message will go here\" text with the raw JSON output from the API."
       ],
       "challengeSeed": [
         "<script>",
@@ -489,7 +489,7 @@
     },
     {
       "id": "587d7fae367417b2b2512be7",
-      "title": "Pre-filter JSON",
+      "title": "Pre-filter JSON to Get the Data You Need",
       "description": [
         "If you don't want to render every cat photo you get from the freeCodeCamp Cat Photo API, you can pre-filter the JSON before looping through it.",
         "Given that the JSON data is stored in an array, you can use the <code>filter</code> method to filter out the cat whose \"id\" key has a value of 1.",
@@ -572,7 +572,7 @@
     },
     {
       "id": "587d7faf367417b2b2512be8",
-      "title": "Get Geolocation Data",
+      "title": "Get Geolocation Data to Find A User's GPS Coordinates",
       "description": [
         "Another cool thing you can do is access your user's current location. Every browser has a built in navigator that can give you this information.",
         "The navigator will get the user's current longitude and latitude.",
@@ -613,7 +613,7 @@
       "id": "587d7faf367417b2b2512be9",
       "title": "Post Data with the JavaScript XMLHttpRequest Method",
       "description": [
-        "In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports Ajax requests and you know the URL.",
+        "In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.",
         "JavaScript's <code>XMLHttpRequest</code> method is also used to post data to a server. Here's an example:",
         "<blockquote>req=new XMLHttpRequest();<br>req.open(\"POST\",url,true);<br>req.setRequestHeader('Content-Type','text/plain');<br>req.onreadystatechange=function(){<br>  if(req.readyState==4 && req.status==200){<br>    document.getElementsByClassName('message')[0].innerHTML=req.responseText;<br>  }<br>};<br>req.send(userName);</blockquote>",
         "You've seen several of these methods before. Here the <code>open</code> method initializes the request as a \"POST\" to the given URL of the external resource, and uses the <code>true</code> Boolean to make it asynchronous.",
@@ -621,7 +621,7 @@
         "Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 200 means it was a successful request. The document's HTML can be updated.",
         "Finally, the <code>send</code> method sends the request with the <code>userName</code> value, which was given by the user in the <code>input</code> field.",
         "<hr>",
-        "Update the code to create and send a \"POST\" request. Then enter your name in input box and click \"Send Message\". Your Ajax function will replace \"Reply from Server will be here.\" with the reply of the server. In this case, it is your name appended with \" loves cats\"."
+        "Update the code to create and send a \"POST\" request. Then enter your name in input box and click \"Send Message\". Your AJAX function will replace \"Reply from Server will be here.\" with the reply of the server. In this case, it is your name appended with \" loves cats\"."
       ],
       "challengeSeed": [
         "<script>",

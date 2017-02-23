@@ -595,7 +595,7 @@
     },
     {
       "id": "587d7b7c367417b2b2512b1b",
-      "title": "Use the Delete Keyword to Remove Object Properties",
+      "title": "Use the delete Keyword to Remove Object Properties",
       "description": [
         "Now you know what objects are and their basic features and advantages. In short, they are key-value stores which provide a flexible, intuitive way to structure data, <strong><em>and</em></strong>, they provide very fast lookup time. Throughout the rest of these challenges, we will describe several common operations you can perform on objects so you can become comfortable applying these useful data structures in your programs.",
         "In earlier challenges, we have both added to and modified an object's key-value pairs. Here we will see how we can <em>remove</em> a key-value pair from an object.",

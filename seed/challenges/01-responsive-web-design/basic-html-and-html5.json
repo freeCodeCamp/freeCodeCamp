@@ -549,7 +549,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08812",
-      "title": "Add Images to your Website",
+      "title": "Add Images to Your Website",
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
         "An example of this would be:",
@@ -841,7 +841,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08817",
-      "title": "Make Dead Links using the Hash Symbol",
+      "title": "Make Dead Links Using the Hash Symbol",
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
@@ -1882,7 +1882,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08835",
-      "title": "Nest Many Elements within a Single Div Element",
+      "title": "Nest Many Elements within a Single div Element",
       "description": [
         "The <code>div</code> element, also known as a division element, is a general purpose container for other elements.",
         "The <code>div</code> element is probably the most commonly used HTML element of all.",
@@ -1932,7 +1932,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Umschließe viele Elemente mit einem einzigen Div Element",
+          "title": "Umschließe viele Elemente mit einem einzigen div Element",
           "description": [
             "Das <code>div</code> Element oder \"Division\" ist ein allgemeiner Container für andere Elemente.",
             "Das <code>div</code> Element ist wahrscheinlich das am häufigsten verwendete HTML Element.",
@@ -1943,7 +1943,7 @@
           ]
         },
         "es": {
-          "title": "Anida muchos elementos dentro de una sólo elemento Div",
+          "title": "Anida muchos elementos dentro de una sólo elemento div",
           "description": [
             "El elemento <code>div</code>, también conocido como un elemento de división, es un contenedor de propósito general para otros elementos.",
             "El elemento <code>div</code> es probablemente el elemento HTML más utilizado.",
@@ -1954,7 +1954,7 @@
           ]
         },
         "pt-br": {
-          "title": "Aninhe Muitos Elementos Dentro de um só Elemento Div",
+          "title": "Aninhe Muitos Elementos Dentro de um só Elemento div",
           "description": [
             "O elemento <code>div</code>, também conhecido como elemento de divisão, é um contentor de propósito geral para outros elementos.",
             "O elemento <code>div</code> é provavelmente o elemento HTML mais utilizado.",
