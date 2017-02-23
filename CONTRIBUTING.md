@@ -12,7 +12,7 @@ Remember to feel free to ask for help in our [Contributors](https://gitter.im/Fr
 
 Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
-###### If you've found a bug that is not on the board, [follow these steps](#found-a-bug).
+###### If you've found a bug that is not on the board, [follow these steps](README.md#found-a-bug).
 
 --------------------------------------------------------------------------------
 
@@ -116,7 +116,7 @@ Do this prior to every time you create a branch for a PR:
   > $ git checkout staging
   > ```
 
-2. Do A Pull with Rebase Against `upstream`
+2. Do a pull with rebase against `upstream`
 
   > ```shell
   > $ git pull --rebase upstream staging
