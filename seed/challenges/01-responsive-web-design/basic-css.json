@@ -812,7 +812,8 @@
         "For example, if you wanted an element to use the <code>Helvetica</code> font, but also degrade to the <code>Sans-Serif</code> font when <code>Helvetica</code> wasn't available, you could use this CSS style:",
         "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
         "<hr>",
-        "Now comment out your call to Google Fonts, so that the <code>Lobster</code> font isn't available. You'll also have to make sure the heading font gets degraded to <code>Monospace</code>. Some CSS changes will be necessary for this.",
+        "To begin with, apply the <code>Monospace</code> font to the <code>h2</code> element, so that it now has two fonts - <code>Lobster</code> and <code>Monospace</code>.",
+        "In the last challenge, you imported the <code>Lobster</code> font using the <code>link</code> tag. Now comment out that import of the <code>Lobster</code> font from Google Fonts so that it isn't available anymore. Notice how your <code>h2</code> element degrades to the <code>Monospace</code> font.",
         "<strong>Note</strong><br>If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font."
       ],
       "challengeSeed": [
