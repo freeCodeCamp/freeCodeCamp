@@ -765,17 +765,17 @@
       "id": "587d7b8c367417b2b2512b55",
       "title": "Import vs. Require: What's the difference?",
       "description": [
-        "In the past, the function require() would be used to import the functions and code in external files and modules. While handy, this presents a problem: some files and modules are rather large, and you may only need certain code from those external resources.",
-        "ES6 gives us a very handy tool known as import. With it, we can choose which parts of a module or file to load into a given file, saving time and memory.",
-        "Consider the following example. Imagine that math_array_functions has about 20 functions, but I only need one, countItems, in my current file. The old require() approach would force me to bring in all 20 functions. With this new import syntax, I can bring in just the desired function, like so:",
-        "<code>import { countItems } from \"math_array_functions\"</code>",
+        "In the past, the function <code>require()</code> would be used to import the functions and code in external files and modules. While handy, this presents a problem: some files and modules are rather large, and you may only need certain code from those external resources.",
+        "ES6 gives us a very handy tool known as <dfn>import</dfn>. With it, we can choose which parts of a module or file to load into a given file, saving time and memory.",
+        "Consider the following example. Imagine that <code>math_array_functions</code> has about 20 functions, but I only need one, <code>countItems</code>, in my current file. The old <code>require()</code> approach would force me to bring in all 20 functions. With this new <code>import</code> syntax, I can bring in just the desired function, like so:",
+        "<blockquote>import { countItems } from \"math_array_functions\"</blockquote>",
         "A description of the above code:",
-        "<code>import { function } from \"file_path_goes_here\"</code>",
-        "//We can also import variables the same way! ",
-        "There are a few ways to write an import statement, but the above is a very common use-case. Note: the whitespace surrounding the function inside the curly braces is a best practice-it makes it easier to read the import statement.",
-        "Note: The lessons in this section handle non-browser features. Import, and the statements we introduce in the rest of these lessons, won't work on a browser directly, However, we can use various tools to create code out of this to make it work in browser.",
-        "Instructions",
-        "Add the appropriate import statement that will allow the current file to use the capitalizeString function. The file where this function lives is called \"string_functions,\" and it is in the same directory as the current file."
+        "<blockquote>import { function } from \"file_path_goes_here\"<br>// We can also import variables the same way!</blockquote>",
+        "There are a few ways to write an <code>import</code> statement, but the above is a very common use-case.",
+        "<strong>Note</strong><br>the whitespace surrounding the function inside the curly braces is a best practice - it makes it easier to read the <code>import</code> statement.",
+        "<strong>Note</strong><br>The lessons in this section handle non-browser features. <code>import</code>, and the statements we introduce in the rest of these lessons, won't work on a browser directly, However, we can use various tools to create code out of this to make it work in browser.",
+        "<hr>",
+        "Add the appropriate <code>import</code> statement that will allow the current file to use the <code>capitalizeString</code> function. The file where this function lives is called <code>\"string_functions\"</code>, and it is in the same directory as the current file."
       ],
       "challengeSeed": [
         "capitalizeString(\"hello!\");"
@@ -792,22 +792,14 @@
       "id": "587d7b8c367417b2b2512b56",
       "title": "Export: One of Import's siblings.",
       "description": [
-        "In the previous challenge, you learned about import and how it can be leveraged to import small amounts of code from large files. In order for this to work, though, we must utilize one of the statements that goes with import, known as export. When we want some code-a function, or a variable-to be usable in another file, we must export it in order to import it into another file. Like import, export is a non-browser feature.",
-        "The following is what we refer to as a named export. With this, we can import any code we export into another file with the import syntax you learned in the last lesson. Here's an example:",
-        "<code>const capitalizeString = (string) => {</code>",
-        "<code>  return string.charAt(0).toUpperCase() + string.slice(1);</code>",
-        "<code>} </code>",
-        "<code>export { capitalizeString } //How to export functions.</code>",
-        "<code>export const foo = \"bar\"; //How to export variables.</code>",
-        "Alternatively, if you would like to compact all your export statements into one line, you can take this approach:",
-        "<code>const capitalizeString = (string) => {</code>",
-        "<code>  return string.charAt(0).toUpperCase() + string.slice(1);</code>",
-        "<code>}</code>",
-        "<code>const foo = \"bar\";</code>",
-        "<code>export { capitalizeString, bar }</code>",
+        "In the previous challenge, you learned about <code>import</code> and how it can be leveraged to import small amounts of code from large files. In order for this to work, though, we must utilize one of the statements that goes with <code>import</code>, known as <dfn>export</dfn>. When we want some code - a function, or a variable - to be usable in another file, we must export it in order to import it into another file. Like <code>import</code>, <code>export</code> is a non-browser feature.",
+        "The following is what we refer to as a <dfn>named export</dfn>. With this, we can import any code we export into another file with the <code>import</code> syntax you learned in the last lesson. Here's an example:",
+        "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>export { capitalizeString } //How to export functions.<br>export const foo = \"bar\"; //How to export variables.</blockquote>",
+        "Alternatively, if you would like to compact all your <code>export</code> statements into one line, you can take this approach:",
+        "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>const foo = \"bar\";<br>export { capitalizeString, bar }</blockquote>",
         "Either approach is perfectly acceptable.",
-        "Instructions",
-        "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated export, export the two variables."
+        "<hr>",
+        "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated <code>export</code>, export the two variables."
       ],
       "challengeSeed": [
         "const foo = \"bar\";",
@@ -826,17 +818,14 @@
       "id": "587d7b8c367417b2b2512b57",
       "title": "Import Everything",
       "description": [
-        "Suppose you have a file that you wish to import all of its contents into the current file. This can be done with the import * syntax.",
-        "Here's an example where the contents of a file named \"math_functions\" are imported into a file in the same directory:",
-        "<code>import * as myMathModule from \"math_functions\"</code>",
-        "<code>myMathModule.add(2,3);</code>",
-        "<code>myMathModule.subtract(5,3);</code>",
-        "<code>And breaking down that code:</code>",
-        "<code>import * as object_with_name_of_your_choice from \"file_path_goes_here\"</code>",
-        "<code>object_with_name_of_your_choice.imported_function</code>",
-        "You may use any name following the import * as portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
-        "Instructions",
-        "The code below requires the contents of a file, \"capitalize_strings\", found in the same directory as it, imported. Add the appropriate import * statement to the top of the file, using the object provided."
+        "Suppose you have a file that you wish to import all of its contents into the current file. This can be done with the <dfn>import *</dfn> syntax.",
+        "Here's an example where the contents of a file named <code>\"math_functions\"</code> are imported into a file in the same directory:",
+        "<blockquote>import * as myMathModule from \"math_functions\"<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>",
+        "And breaking down that code:",
+        "<blockquote>import * as object_with_name_of_your_choice from \"file_path_goes_here\"<br>object_with_name_of_your_choice.imported_function</blockquote>",
+        "You may use any name following the <code>import *</code> as portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
+        "<hr>",
+        "The code below requires the contents of a file, <code>\"capitalize_strings\"</code>, found in the same directory as it, imported. Add the appropriate <code>import *</code> statement to the top of the file, using the object provided."
       ],
       "challengeSeed": [
         "myStringModule.capitalize(\"foo\");",
@@ -854,14 +843,12 @@
       "id": "587d7b8c367417b2b2512b58",
       "title": "Export Default",
       "description": [
-        "In the export lesson, you learned about the syntax referred to as a named export. This allowed you to make multiple functions and variables available for use in other files.",
-        "There is another export syntax you need to know, known as export default. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.",
-        "Here is a quick example of export default:",
-        "<code>export default const add = (x,y) => {</code>",
-        "<code>  return x + y;</code>",
-        "<code>}</code>",
-        "There is a one major feature of export default you must never forget-since it is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file.",
-        "Instructions",
+        "In the <code>export</code> lesson, you learned about the syntax referred to as a <dfn>named export</dfn>. This allowed you to make multiple functions and variables available for use in other files.",
+        "There is another <code>export</code> syntax you need to know, known as <dfn>export default</dfn>. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.",
+        "Here is a quick example of <code>export default</code>:",
+        "<blockquote>export default const add = (x,y) => {<br>  return x + y;<br>}</blockquote>",
+        "There is a one major feature of <code>export default</code> you must never forget - since it is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file.",
+        "<hr>",
         "The following function should be the fallback value for the module. Please add the necessary code to do so."
       ],
       "challengeSeed": [
@@ -879,13 +866,12 @@
       "id": "587d7b8d367417b2b2512b59",
       "title": "Importing a Default Export",
       "description": [
-        "In the last challenge, you learned about export default and its uses. It is important to note that, to import a default export, you need to use a different import syntax.",
-        "In the following example, we have a function, add, that is the default export of a file, \"math_functions\". Here is how to import it:",
-        "<code>import add from \"math_functions\";</code>",
-        "<code>add(5,4); //Will return 9</code>",
-        "The syntax differs in one key place-the imported value, add, is not surrounded by curly braces, {}. Unlike exported values, the primary method if importing a default export is to simply write the value's name after import.",
-        "Instructions",
-        "In the following code, please import the default export, subtract, from the file \"math_functions\", found in the same directory as this file."
+        "In the last challenge, you learned about <code>export default</code> and its uses. It is important to note that, to import a default export, you need to use a different <code>import</code> syntax.",
+        "In the following example, we have a function, <code>add</code>, that is the default export of a file, <code>\"math_functions\"</code>. Here is how to import it:",
+        "<blockquote>import add from \"math_functions\";<br>add(5,4); //Will return 9</blockquote>",
+        "The syntax differs in one key place - the imported value, <code>add</code>, is not surrounded by curly braces, <code>{}</code>. Unlike exported values, the primary method of importing a default export is to simply write the value's name after <code>import</code>.",
+        "<hr>",
+        "In the following code, please import the default export, <code>subtract</code>, from the file <code>\"math_functions\"</code>, found in the same directory as this file."
       ],
       "challengeSeed": [
         "subtract(7,4);"
