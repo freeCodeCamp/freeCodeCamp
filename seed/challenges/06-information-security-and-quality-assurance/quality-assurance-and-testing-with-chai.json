@@ -5,9 +5,29 @@
   "helpRoom": "Help",
   "challenges": [
     {
+      "id": "58af0b4b4bbe015e85a91dbe",
+      "title": "Quality Assurance Introduction",
+      "description": [
+        [
+          "",
+          "",
+          "Working on these challenges will involve you writing your code on Gomix on our starter project. After completing each challenge you can copy your public gomix url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.<br>Start this project on Gomix using <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>this repository</a> on GitHub! If you use Gomix, remember to save the link to your project somewhere safe!",
+          ""
+        ]
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
       "id": "587d824a367417b2b2512c46",
       "title": "Learn How JavaScript Assertions Work",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Use assert.isNull() or assert.isNotNull() to make the tests pass."
       ],
       "challengeSeed": [],
@@ -36,6 +56,7 @@
       "id": "587d824b367417b2b2512c47",
       "title": "Test whether a Variable or Function is Defined",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Use assert.isDefined() or assert.isUndefined() to make the tests pass"
       ],
       "challengeSeed": [],
@@ -68,6 +89,7 @@
       "id": "587d824b367417b2b2512c48",
       "title": "Use Assert.isOK and Assert.isNotOK",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Use assert.isOk() or assert.isNotOk() to make the tests pass.",
         ".isOk(truthy) and .isNotOk(falsey) will pass."
       ],
@@ -101,6 +123,7 @@
       "id": "587d824b367417b2b2512c49",
       "title": "Test for Truthiness",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Use assert.isTrue() or assert.isNotTrue() to make the tests pass.",
         ".isTrue(true) and .isNotTrue(everything else) will pass.",
         ".isFalse() and .isNotFalse() also exist."
@@ -135,6 +158,7 @@
       "id": "587d824b367417b2b2512c4a",
       "title": "Use the Double Equals to Assert Equality",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".equal(), .notEqual()",
         ".equal() compares objects using '=='"
       ],
@@ -172,6 +196,7 @@
       "id": "587d824b367417b2b2512c4b",
       "title": "Use the Triple Equals to Assert Strict Equality",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".strictEqual(), .notStrictEqual()",
         ".strictEqual() compares objects using '==='"
       ],
@@ -209,6 +234,7 @@
       "id": "587d824c367417b2b2512c4c",
       "title": "Assert Deep Equality with .deepEqual and .notDeepEqual",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".deepEqual(), .notDeepEqual()",
         ".deepEqual() asserts that two object are deep equal"
       ],
@@ -238,6 +264,7 @@
       "id": "587d824c367417b2b2512c4d",
       "title": "Compare the Properties of Two Elements",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".isAbove() => a > b , .isAtMost() => a <= b"
       ],
       "challengeSeed": [],
@@ -274,6 +301,7 @@
       "id": "587d824c367417b2b2512c4e",
       "title": "Test whether one Value is Below or At Least as Large as Another",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".isBelow() => a < b , .isAtLeast =>  a >= b"
       ],
       "challengeSeed": [],
@@ -310,6 +338,7 @@
       "id": "587d824c367417b2b2512c4f",
       "title": "Test whether a Value Falls within a Specific Range",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".approximately",
         ".approximately(actual, expected, range, [message])",
         "actual = expected +/- range",
@@ -341,7 +370,9 @@
     {
       "id": "587d824d367417b2b2512c50",
       "title": "Test whether a Value is an Array",
-      "description": [],
+      "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>."
+      ],
       "challengeSeed": [],
       "tests": [
         {
@@ -367,7 +398,9 @@
     {
       "id": "587d824d367417b2b2512c51",
       "title": "Test whether an Array Contains an Item",
-      "description": [],
+      "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>."
+      ],
       "challengeSeed": [],
       "tests": [
         {
@@ -394,6 +427,7 @@
       "id": "587d824d367417b2b2512c52",
       "title": "Test whether a Value is a String",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#isString asserts that the actual value is a string."
       ],
       "challengeSeed": [],
@@ -426,6 +460,7 @@
       "id": "587d824d367417b2b2512c53",
       "title": "Test whether a String Contains a Substring",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#include (on #notInclude ) works for strings too !!",
         "It asserts that the actual string contains the expected substring"
       ],
@@ -455,6 +490,7 @@
       "id": "587d824d367417b2b2512c54",
       "title": "Use Regular Expressions to Test a String",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#match Asserts that the actual value",
         "matches the second argument regular expression."
       ],
@@ -484,6 +520,7 @@
       "id": "587d824e367417b2b2512c55",
       "title": "Test whether an Object has a Property",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#property asserts that the actual object has a given property.",
         "Use #property or #notProperty where appropriate"
       ],
@@ -517,6 +554,7 @@
       "id": "587d824e367417b2b2512c56",
       "title": "Test whether a Value is of a Specific Data Structure Type",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#typeOf asserts that value’s type is the given string, as determined by Object.prototype.toString.",
         "Use #typeOf or #notTypeOf where appropriate"
       ],
@@ -558,6 +596,7 @@
       "id": "587d824e367417b2b2512c57",
       "title": "Test whether an Object is an Instance of a Constructor",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#instanceOf asserts that an object is an instance of a constructor.",
         "Use #instanceOf or #notInstanceOf where appropriate"
       ],
@@ -595,6 +634,7 @@
       "id": "587d824e367417b2b2512c58",
       "title": "Run Functional Tests on API Endpoints using Chai-HTTP",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Replace assert.fail(). Test the status and the text.response. Make the test pass.",
         "Don't send a name in the query, the endpoint with responds with 'hello Guest'."
       ],
@@ -624,6 +664,7 @@
       "id": "587d824f367417b2b2512c59",
       "title": "Run Functional Tests on API Endpoints using Chai-HTTP II",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Replace assert.fail(). Test the status and the text.response. Make the test pass.",
         "Send you name in the query appending ?name=<your_name>, the endpoint with responds with 'hello <your_name>'."
       ],
@@ -653,6 +694,7 @@
       "id": "587d824f367417b2b2512c5a",
       "title": "Run Functional Tests on an API Response using Chai-HTTP III - PUT method",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "In the next example we'll see how to send data in a request payload (body).",
         "We are going to test a PUT request. The '/travellers' endpoint accepts",
         "a JSON object taking the structure :",
@@ -698,6 +740,7 @@
       "id": "587d824f367417b2b2512c5b",
       "title": "Run Functional Tests on an API Response using Chai-HTTP IV - PUT method redux",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "This exercise is similar to the preceding. Look at it for the details.",
         "Send {surname: 'da Verrazzano'}. Replace assert.fail() and make the test pass.",
         "Check for 1) status, 2) type, 3) body.name, 4) body.surname",
@@ -737,6 +780,7 @@
       "id": "587d824f367417b2b2512c5c",
       "title": "Run Functional Tests using a Headless Browser",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.",
         "A headless browser is a web browser without a graphical user interface. These kind of tools are particularly useful for testing web pages as they are able to render and understand HTML, CSS, and JavaScript the same way a browser would.",
         "For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Gomix. There are many other (more powerful) options.<br>",
@@ -776,6 +820,7 @@
       "id": "587d8250367417b2b2512c5d",
       "title": "Run Functional Tests using a Headless Browser II",
       "description": [
+        "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "This exercise is similar to the preceding.",
         "Look at  the code for directions. Follow the assertions order, We rely on it."
       ],
