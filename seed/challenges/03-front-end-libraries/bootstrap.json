@@ -42,9 +42,10 @@
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
         "You can add Bootstrap to any app by adding the following code to the top of your HTML:",
-        "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\"/&#62;</code>",
+        "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"/&#62;</code>",
         "In this case, we've already added it for you to this page behind the scenes.",
-        "To get started, we should nest all of our HTML in a <code>div</code> element with the class <code>container-fluid</code>."
+        "To get started, we should nest all of our HTML in a <code>div</code> element with the class <code>container-fluid</code>.",
+        "<strong>Note</strong><br>Using either of both <code>></code> or <code>/></code> to close the <code>link</code> tag are acceptable."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
