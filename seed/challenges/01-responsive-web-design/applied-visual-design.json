@@ -126,7 +126,7 @@
         "</div>"
       ],
       "tests": [
-        "assert($('.fullCard').css('width') == '245px', 'message: Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.');"
+        "assert(code.match(/.fullCard\\s*{[\\s\\S][^}]*\\n*^\\s*width\\s*:\\s*245px\\s*;/gm), 'message: Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.');"
       ],
       "solutions": [],
       "hints": [],
