@@ -36,7 +36,7 @@
       "id": "bd7158d8c443edefaeb5bdef",
       "title": "Timestamp Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://curse-arrow.gomix.me/' target='_blank'>https://curse-arrow.gomix.me/</a> on GoMix or on your own publicly accessible domain.",
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://curse-arrow.gomix.com/' target='_blank'>https://curse-arrow.gomix.com/</a> on GoMix or on your own publicly accessible domain.",
         "Start by remixing this boilerplate GoMix project: <a href='https://gomix.com/#!/project/shimmer-ripper'>https://gomix.com/#!/project/shimmer-ripper</a>. Then get all the tests for the below user stories to pass."
       ],
       "challengeSeed": [],
@@ -71,7 +71,7 @@
       "id": "bd7158d8c443edefaeb5bdff",
       "title": "Request Header Parser Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://dandelion-roar.gomix.me/' target='_blank'>https://dandelion-roar.gomix.me/</a> on GoMix or on your own publicly accessible domain.",
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://dandelion-roar.gomix.com/' target='_blank'>https://dandelion-roar.gomix.com/</a> on GoMix or on your own publicly accessible domain.",
         "Start by remixing this boilerplate GoMix project: <a href='https://gomix.com/#!/project/shimmer-ripper'>https://gomix.com/#!/project/shimmer-ripper</a>. Then get all the tests for the below user stories to pass."
       ],
       "challengeSeed": [],
@@ -98,7 +98,7 @@
       "id": "bd7158d8c443edefaeb5bd0e",
       "title": "URL Shortener Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://thread-paper.gomix.me/' target='_blank'>https://thread-paper.gomix.me/</a> on GoMix or on your own publicly accessible domain.",
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://thread-paper.gomix.com/' target='_blank'>https://thread-paper.gomix.com/</a> on GoMix or on your own publicly accessible domain.",
         "Start by remixing this boilerplate GoMix project: <a href='https://gomix.com/#!/project/shimmer-ripper'>https://gomix.com/#!/project/shimmer-ripper</a>. Then get all the tests for the below user stories to pass."
       ],
       "challengeSeed": [],
@@ -133,7 +133,7 @@
       "id": "bd7158d8c443edefaeb5bdee",
       "title": "Exercise Tracker",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://fuschia-custard.gomix.me/' target='_blank'>https://fuschia-custard.gomix.me/</a> on GoMix or on your own publicly accessible domain.",
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://fuschia-custard.gomix.com/' target='_blank'>https://fuschia-custard.gomix.com/</a> on GoMix or on your own publicly accessible domain.",
         "Start by remixing this boilerplate GoMix project: <a href='https://gomix.com/#!/project/fcc-message'>https://gomix.com/#!/project/fcc-message</a>. Then get all the tests for the below user stories to pass."
       ],
       "challengeSeed": [],
@@ -176,7 +176,7 @@
       "id": "bd7158d8c443edefaeb5bd0f",
       "title": "File Metadata Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://purple-paladin.gomix.me/' target='_blank'>https://purple-paladin.gomix.me/</a> on GoMix or on your own publicly accessible domain.",
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://purple-paladin.gomix.com/' target='_blank'>https://purple-paladin.gomix.com/</a> on GoMix or on your own publicly accessible domain.",
         "Start by remixing this boilerplate GoMix project: <a href='https://gomix.com/#!/project/shimmer-ripper'>https://gomix.com/#!/project/shimmer-ripper</a>. Then get all the tests for the below user stories to pass."
       ],
       "challengeSeed": [],

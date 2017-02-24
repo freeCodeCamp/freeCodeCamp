@@ -50,12 +50,12 @@ const throwForJsHtml = {
       }
     }, {
       name: 'gomix in code',
-      description: 'Code with the URL gomix.me ' +
+      description: 'Code with the URL gomix.com ' +
         'should not be allowed to run',
-      detectGomixInCode: /gomix\.me/gi,
+      detectGomixInCode: /gomix\.(com|me)/gi,
       thrower: function checkForGomix({ contents }) {
         if (contents.match(this.detectGomixInCode)) {
-          throw new Error('Gomix.me should not be in the code');
+          throw new Error('Gomix.com or Gomix.me should not be in the code');
         }
       }
     }
