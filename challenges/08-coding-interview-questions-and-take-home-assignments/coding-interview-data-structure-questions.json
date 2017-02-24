@@ -300,7 +300,7 @@
       "id": "587d8253367417b2b2512c6b",
       "title": "Remove from a Set",
       "description": [
-        "In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and remove that value from the set."
+        "In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -324,11 +324,12 @@
         "    };",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'message: Your <code>Set</code> class should have a <code>remove</code> method.');",
-        "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\"); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your code should remove the item from');"
+        "assert.deepEqual((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"c\"); return test.values(); })(), [\"a\", \"b\"], 'message: Your <code>remove</code> method should only remove items that are present in the set.');",
+        "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\"); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your <code>remove</code> method should remove the given item from the set.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
