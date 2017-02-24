@@ -440,7 +440,7 @@
       "description": [
         "ES6 makes destructuring arrays as easy as destructuring objects.",
         "One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick and choose which elements or you want to assign to variables.",
-        "Destruring an array lets us do exactly that:",
+        "Destructuring an array lets us do exactly that:",
         "<blockquote>const [a, b] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b); // 1, 2</blockquote>",
         "The variable <code>a</code> is assigned the first value of the array, and <code>b</code> is assigned the second value of the array.",
         "We can also access the value at any index in an array with destructuring by using commas to reach the desired index:",
@@ -453,11 +453,8 @@
         "// change code below this line",
         "",
         "// change code above this line",
-        "<blockquote>const [a, b] = [1, 2, 3, 4, 5, 7];<br>console.log(a, b); // 1, 2</blockquote>",
-        "The variable a assumes first value, and b takes the second value from the array.",
-        "You can also destructure in a way, that you can pick up values from any other array index position. You simply have to use commas (,).",
-        "Instructions.",
-        "Use destructuring to swap the variables a, b. Swapping is an operation, after which, a gets the value stored in b, and b receives the value stored in a"
+        "console.log(a); // should be 6",
+        "console.log(b); // should be 8"
       ],
       "tests": [
         "assert(a === 6, 'message: Value of <code>a</code> should be 6, after swapping.');",
