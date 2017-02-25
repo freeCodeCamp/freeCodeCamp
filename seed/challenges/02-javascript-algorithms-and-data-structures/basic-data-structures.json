@@ -107,7 +107,7 @@
         "<blockquote>let twentyThree = 'XXIII';<br>let romanNumerals = ['XXI', 'XXII'];<br><br>romanNumerals.unshift('XIX', 'XX');<br>// now equals ['XIX', 'XX', 'XXI', 'XXII']<br><br>romanNumerals.push(twentyThree);<br>// now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']",
         "Notice that we can also pass variables, which allows us even greater flexibility in dynamically modifying our array's data.",
         "<hr>",
-        "We have defined a function, <code>mixedNumbers</code>, which we are passing an array as an argument. Modify the function by using <code>push()</code> and <code>unshift()</code> to add <code>'I', 2, 'three'</code> to the beginning of the array and <code>7, 'VIII', '9'</code> to the end so that the returned array contains representations of the numbers 1-9 in order."
+        "We have defined a function, <code>mixedNumbers</code>, which we are passing an array as an argument. Modify the function by using <code>push()</code> and <code>unshift()</code> to add <code>'I', 2, 'three'</code> to the beginning of the array and <code>7, 'VIII', 9</code> to the end so that the returned array contains representations of the numbers 1-9 in order."
       ],
       "challengeSeed": [
         "function mixedNumbers(arr) {",
@@ -121,7 +121,7 @@
         "console.log(mixedNumbers(['IV', 5, 'six']));"
       ],
       "tests": [
-        "assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', '9'], 'message: <code>mixedNumbers([\"IV\", 5, \"six\"])</code> should now return <code>[\"I\", 2, \"three\", \"IV\", 5, \"six\", 7, \"VIII\", \"9\"]</code>');",
+        "assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', 9], 'message: <code>mixedNumbers([\"IV\", 5, \"six\"])</code> should now return <code>[\"I\", 2, \"three\", \"IV\", 5, \"six\", 7, \"VIII\", 9]</code>');",
         "assert.notStrictEqual(mixedNumbers.toString().search(/\\.push\\(/), -1, 'message: The <code>mixedNumbers</code> function should utilize the <code>push()</code> method');",
         "assert.notStrictEqual(mixedNumbers.toString().search(/\\.unshift\\(/), -1, 'message: The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method');"
       ],
