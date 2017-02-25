@@ -1084,7 +1084,7 @@
         "/* head */ 'use strict'; /* solution */ var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>'; /* tail */ (function() { return \"myStr = \" + myStr; })();"
       ],
       "tests": [
-        "assert(!/\\\\/g.test(code) && myStr === '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>', 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
+        "assert(!/\\\\/g.test(code) && myStr.match('\\\\s*<a href\\\\s*=\\\\s*\"http://www.example.com\"\\\\s*target\\\\s*=\\\\s*\"_blank\">\\\\s*Link\\\\s*</a>\\\\s*'), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
         "assert(code.match(/\"/g).length === 6 && code.match(/'/g).length === 4, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
       ],
       "type": "waypoint",
