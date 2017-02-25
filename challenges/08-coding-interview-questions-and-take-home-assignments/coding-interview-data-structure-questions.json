@@ -429,7 +429,7 @@
         "    // change code below this line",
         "",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.union === 'function')})(), 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
@@ -495,7 +495,7 @@
         "    };",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'message: Your <code>Set</code> class should have a <code>intersection</code> method.');",
@@ -572,7 +572,7 @@
         "    };",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.difference === 'function')}, 'message: Your <code>Set</code> class should have a <code>difference</code> method.');",
@@ -660,7 +660,7 @@
         "    };",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.subset === 'function')}, 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
@@ -729,7 +729,7 @@
         "   var set = new Set([1,2,3,3,2,1,2,3,1]);",
         "   // change code below this line",
         "   // change code above this line",
-        "   console.log(set)",
+        "   console.log(set);",
         "}"
       ],
       "tests": [
@@ -758,7 +758,7 @@
         "   // change code below this line",
         "",
         "   // change code above this line",
-        "   console.log(set)",
+        "   console.log(set);",
         "}"
       ],
       "tests": [
@@ -789,7 +789,7 @@
         "   // change code below this line",
         "",
         "   // change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ])}, 'message: Your Set was returned correctly!');"
@@ -888,7 +888,7 @@
         "var hash = (string) => {",
         "  called++;",
         "  var hash = 0;",
-        "  for (var i = 0; i < string.length; i++) { hash += string.charCodeAt(i); };",
+        "  for (var i = 0; i < string.length; i++) { hash += string.charCodeAt(i); }",
         "  return hash;",
         "};",
         "var HashTable = function() {",
@@ -983,7 +983,7 @@
         "",
         "    // Only change code above this line",
         "  };",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>add</code> method.');",
@@ -1050,7 +1050,7 @@
         "",
         "    // Only change code above this line",
         "  };",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>remove</code> method.');",
@@ -1131,7 +1131,7 @@
         "  // Only change code below this line",
         "",
         "  // Only change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>indexOf</code> method.');",
@@ -1212,7 +1212,7 @@
         "  // Only change code below this line",
         "",
         "  // Only change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new LinkedList(); return (typeof test.removeAt === 'function')}()), 'message: Your <code>LinkedList</code> class should have a <code>removeAt</code> method.');",
@@ -1279,7 +1279,7 @@
         "",
         "  // Only change code above this line",
         "",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.head().element === 'cat'}()), 'message: Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.');",
@@ -1462,12 +1462,12 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "function BinarySearchTree() {",
         "    this.root = null;",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'message: The BinarySearchTree data structure exists.');",
@@ -1529,12 +1529,12 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "function BinarySearchTree() {",
         "    this.root = null;",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tail": [
         "BinarySearchTree.prototype = {",
@@ -1593,12 +1593,12 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "function BinarySearchTree() {    ",
         "    this.root = null;",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tail": [
         "BinarySearchTree.prototype = {",
@@ -1659,12 +1659,12 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "function BinarySearchTree() {",
         "    this.root = null;",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tail": [
         "BinarySearchTree.prototype = {",
@@ -1732,12 +1732,12 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "function BinarySearchTree() {",
         "    this.root = null;",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tail": [
         "BinarySearchTree.prototype = {",
@@ -1804,12 +1804,12 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "function BinarySearchTree() {",
         "    this.root = null;",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tail": [
         "BinarySearchTree.prototype = {",
@@ -1877,12 +1877,12 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "",
         "function BinarySearchTree() {",
         "    this.root = null;",
         "    // case 1: target has no children, change code below this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'message: The BinarySearchTree data structure exists.');",
@@ -1989,7 +1989,7 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "",
         "function BinarySearchTree() {",
         "    this.root = null;",
@@ -2034,7 +2034,7 @@
         "            };",
         "        }",
         "        // case 2: target has one child, change code below this line",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'message: The BinarySearchTree data structure exists.');",
@@ -2142,7 +2142,7 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "",
         "function BinarySearchTree() {",
         "    this.root = null;",
@@ -2202,7 +2202,7 @@
         "        }",
         "        // case 3: target has two children, change code below this line",
         "    };",
-        "};"
+        "}"
       ],
       "tests": [
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'message: The BinarySearchTree data structure exists.');",
@@ -2310,12 +2310,12 @@
         "    this.value = value;",
         "    this.left = null;",
         "    this.right = null;",
-        "};",
+        "}",
         "function BinarySearchTree() {",
         "    this.root = null;",
         "    // change code below this line",
         "    // change code above this line",
-        "};"
+        "}"
       ],
       "tail": [
         "BinarySearchTree.prototype = {",
@@ -2502,7 +2502,7 @@
         "function isSorted(arr) {",
         "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
         "  return check(0);",
-        "};",
+        "}",
         "// generate a randomly filled array",
         "var array = new Array();",
         "(function createArray(size = 5) {",
@@ -2696,7 +2696,7 @@
         "  var nodesLen = {};",
         "  ",
         "  return nodesLen;",
-        "}",
+        "};",
         "",
         "var exBFSGraph = [",
         "  [0, 1, 0, 0],",
