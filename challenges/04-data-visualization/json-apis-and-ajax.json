@@ -88,7 +88,7 @@
       ],
       "tests": [
         "assert(code.match(/document\\.getElementById\\(\\s*?('|\")getMessage\\1\\s*?\\)/g), 'message: Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.');",
-        "assert(code.match(/\\.onclick=function\\(\\s*?\\)\\s*?{\\s*?};/g), 'message: Your code should add an <code>onclick</code> event handler.');"
+        "assert(typeof document.getElementById('getMessage').onclick === 'function', 'message: Your code should add an <code>onclick</code> event handler.');"
       ],
       "solutions": [],
       "hints": [],
