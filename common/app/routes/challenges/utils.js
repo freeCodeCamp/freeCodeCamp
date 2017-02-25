@@ -15,7 +15,8 @@ export const viewTypes = {
   // formally hikes
   [ challengeTypes.video ]: 'video',
   [ challengeTypes.step ]: 'step',
-  backend: 'backend'
+  backend: 'backend',
+  modern: 'modern'
 };
 
 // determine the type of submit function to use for the challenge on completion

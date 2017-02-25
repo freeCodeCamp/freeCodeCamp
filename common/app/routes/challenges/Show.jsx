@@ -10,6 +10,7 @@ import Step from './views/step';
 import Project from './views/project';
 import Video from './views/video';
 import BackEnd from './views/backend';
+import Modern from './views/modern';
 
 import {
   fetchChallenge,
@@ -24,6 +25,7 @@ import { makeToast } from '../../toasts/redux/actions';
 const views = {
   backend: BackEnd,
   classic: Classic,
+  modern: Modern,
   project: Project,
   simple: Project,
   step: Step,
