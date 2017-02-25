@@ -6,6 +6,7 @@ import {
 import NotFound from '../components/NotFound/index.jsx';
 import { addLang } from '../utils/lang';
 import settingsRoute from './settings';
+import youtubeRoute from './youtube';
 
 export default function createChildRoute(deps) {
   return {
@@ -22,6 +23,7 @@ export default function createChildRoute(deps) {
       modernChallengesRoute(deps),
       mapRoute(deps),
       settingsRoute(deps),
+      youtubeRoute(deps),
       {
         path: '*',
         component: NotFound

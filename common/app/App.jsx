@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import ns from './ns.json';
 import {
   fetchUser,
+  fetchYoutube,
   updateAppLang,
   trackEvent,
   loadCurrentChallenge,
@@ -22,6 +23,7 @@ import { userSelector } from './redux/selectors';
 const mapDispatchToProps = {
   closeDropdown,
   fetchUser,
+  fetchYoutube,
   loadCurrentChallenge,
   openDropdown,
   submitChallenge,
@@ -35,11 +37,13 @@ const mapStateToProps = createSelector(
   state => state.app.isSignInAttempted,
   state => state.app.toast,
   state => state.challengesApp.toast,
+  state => state.entities.youtube,
   (
     { user: { username, points, picture } },
     isNavDropdownOpen,
     isSignInAttempted,
     toast,
+    youtube
   ) => ({
     username,
     points,
@@ -47,7 +51,8 @@ const mapStateToProps = createSelector(
     toast,
     isNavDropdownOpen,
     showLoading: !isSignInAttempted,
-    isSignedIn: !!username
+    isSignedIn: !!username,
+    isYoutubeLoaded: Object.keys(youtube).length > 0
   })
 );
 
@@ -55,8 +60,10 @@ const propTypes = {
   children: PropTypes.node,
   closeDropdown: PropTypes.func.isRequired,
   fetchUser: PropTypes.func,
+  fetchYoutube: PropTypes.func.isRequired,
   isNavDropdownOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool,
+  isYoutubeLoaded: PropTypes.bool,
   loadCurrentChallenge: PropTypes.func.isRequired,
   openDropdown: PropTypes.func.isRequired,
   params: PropTypes.object,
@@ -81,6 +88,9 @@ export class FreeCodeCamp extends React.Component {
   componentDidMount() {
     if (!this.props.isSignedIn) {
       this.props.fetchUser();
+    }
+    if (!this.props.isYoutubeLoaded) {
+      this.props.fetchYoutube();
     }
   }
 

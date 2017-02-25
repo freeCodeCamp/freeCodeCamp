@@ -39,6 +39,10 @@ export class Header extends PureComponent {
     this.handleClearButton = this.handleClearButton.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearFilter();
+  }
+
   handleKeyDown(e) {
     if (e.keyCode === ESC) {
       e.preventDefault();

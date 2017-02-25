@@ -7,6 +7,7 @@ import { Col, Row } from 'react-bootstrap';
 
 import MapHeader from './Header.jsx';
 import SuperBlock from './Super-Block.jsx';
+import YoutubeSuperBlock from './youtube/YoutubeSuperBlock.jsx';
 import { fetchChallenges } from '../../redux/actions';
 import { updateTitle } from '../../../../redux/actions';
 
@@ -22,12 +23,12 @@ const fetchOptions = {
 };
 const propTypes = {
   fetchChallenges: PropTypes.func.isRequired,
+  isYoutubeLoaded: PropTypes.bool,
   params: PropTypes.object,
   superBlocks: PropTypes.array,
   updateTitle: PropTypes.func.isRequired
 };
-
-export class ShowMap extends PureComponent {
+class ShowMap extends PureComponent {
   componentWillMount() {
     // if no params then map is open in drawer
     // do not update title
@@ -43,12 +44,23 @@ export class ShowMap extends PureComponent {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
       return <div>No Super Blocks</div>;
     }
-    return superBlocks.map(dashedName => (
-      <SuperBlock
-        dashedName={ dashedName }
-        key={ dashedName }
-      />
-    ));
+    return superBlocks.map(dashedName => {
+      if (dashedName === 'youtube') {
+        return (
+        <YoutubeSuperBlock
+          dashedName={ dashedName }
+          key={ dashedName }
+        />
+        );
+      }
+      return (
+        <SuperBlock
+          dashedName={ dashedName }
+          key={ dashedName }
+        />
+      );
+    }
+    );
   }
 
   render() {
