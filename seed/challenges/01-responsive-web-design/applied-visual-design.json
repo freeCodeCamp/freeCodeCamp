@@ -29,6 +29,7 @@
       "description": [
         "This section of the curriculum focuses on Applied Visual Design. The first group of challenges build on the given card layout to show a number of core principles.",
         "Text is often a large part of web content. CSS has several options for how to align it with the <code>text-align</code> property.",
+        "The <code>justify</code> property causes all lines of text except the last line to meet the left and right edges of the line box.",
         "<hr>",
         "Align the <code>h4</code> tag's text, which says \"Google\", to the center. Then justify the paragraph tag which contains information about how Google was founded. Finally, align the two anchor tags to the left by using the <code>links</code> class selector.",
         "<strong>Note</strong><br>When you align the two anchor tags, you will see no difference. This is because text is aligned to the left by default."
