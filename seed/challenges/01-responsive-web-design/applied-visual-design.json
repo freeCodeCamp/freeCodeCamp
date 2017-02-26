@@ -1161,10 +1161,11 @@
       "id": "587d781d367417b2b2512ac8",
       "title": "Adjust the Hover State of an Anchor Tag",
       "description": [
-        "Following from the previous challenge, the styling of the anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector.",
+        "This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.",
+        "Following from the previous challenge, the styling of the anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector. Here's an example that changes the color of the anchor tag to red during its hover state:",
+        "<blockquote>a:hover {<br>  color: red;<br>}</blockquote>",
         "<hr>",
-        "Change the <code>a</code> tag's CSS so when the user hovers over it, the <code>color</code> is blue and the underline is removed.",
-        "<strong>Note</strong><br>You can remove underlining of anchor tags using the <code>text-decoration</code> property set to none."
+        "Change the <code>a</code> tag's CSS so that when the user hovers over it, the <code>color</code> is blue."
       ],
       "challengeSeed": [
         "<style>",
@@ -1179,7 +1180,7 @@
       ],
       "tests": [
         "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');",
-        "assert(code.match(/(?:a:hover\\s*?{\\s*?color:\\s*?blue;\\s*?text-decoration:\\s*?none;\\s*?}|a:hover\\s*?{\\s*?text-decoration:\\s*?none;\\s*?color:\\s*?blue;\\s*?})/gi), 'message: The anchor tag should have a <code>color</code> of blue and no underline on hover.');"
+        "assert(code.match(/a:hover\\s*?{\\s*?color:\\s*?blue;\\s*?}/gi), 'message: The anchor tag should have a <code>color</code> of blue on hover.');"
       ],
       "solutions": [],
       "hints": [],
