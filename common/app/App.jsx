@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 
 import {
   fetchUser,
+  fetchWiki,
   initWindowHeight,
   updateNavHeight,
   updateAppLang,
@@ -24,6 +25,7 @@ const mapDispatchToProps = {
   initWindowHeight,
   updateNavHeight,
   fetchUser,
+  fetchWiki,
   submitChallenge,
   updateAppLang,
   trackEvent,
@@ -38,11 +40,13 @@ const mapStateToProps = createSelector(
   state => state.app.isSignInAttempted,
   state => state.app.toast,
   state => state.challengesApp.toast,
+  state => state.entities.wiki,
   (
     { user: { username, points, picture } },
     isNavDropdownOpen,
     isSignInAttempted,
     toast,
+    wiki
   ) => ({
     username,
     points,
@@ -50,7 +54,8 @@ const mapStateToProps = createSelector(
     toast,
     isNavDropdownOpen,
     showLoading: !isSignInAttempted,
-    isSignedIn: !!username
+    isSignedIn: !!username,
+    isWikiLoaded: Object.keys(wiki).length > 0
   })
 );
 
@@ -72,7 +77,9 @@ const propTypes = {
   loadCurrentChallenge: PropTypes.func.isRequired,
   openDropdown: PropTypes.func.isRequired,
   closeDropdown: PropTypes.func.isRequired,
-  isNavDropdownOpen: PropTypes.bool
+  isNavDropdownOpen: PropTypes.bool,
+  isWikiLoaded: PropTypes.bool,
+  fetchWiki: PropTypes.func.isRequired
 };
 
 // export plain class for testing
@@ -87,6 +94,9 @@ export class FreeCodeCamp extends React.Component {
     this.props.initWindowHeight();
     if (!this.props.isSignedIn) {
       this.props.fetchUser();
+    }
+    if (!this.props.isWikiLoaded) {
+      this.props.fetchWiki();
     }
   }
 

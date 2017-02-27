@@ -64,7 +64,6 @@ export default function createApp({
     ...sideEnhancers
   ];
   const reducer = createReducer(sideReducers);
-
   // create composed store enhancer
   // use store enhancer function to enhance `createStore` function
   // call enhanced createStore function with reducer and initialState
