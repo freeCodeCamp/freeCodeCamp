@@ -37,7 +37,7 @@
     },
     {
       "id": "587d774c367417b2b2512a9c",
-      "title": "Add Alt Text to Images for Visually Impaired Accessibility",
+      "title": "Add a Text Alternative to Images for Visually Impaired Accessibility",
       "description": [
         "It's likely you've seen an <code>alt</code> attribute on an <code>img</code> tag in other challenges. <code>Alt</code> text describes the content of the image and provides a text-alternative. This helps in case the image fails to load or can't be seen by a user. It's also used by search engines to understand what an image contains to include it in search results. Here's an example:",
         "<code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&gt;</code>",
@@ -140,7 +140,7 @@
     },
     {
       "id": "587d774e367417b2b2512a9f",
-      "title": "Jump Straight to the Content Using the Main Element",
+      "title": "Jump Straight to the Content Using the main Element",
       "description": [
         "HTML5 introduced a number of new elements that give developers more options while also incorporating accessibility features. These tags include <code>main</code>, <code>header</code>, <code>footer</code>, <code>nav</code>, <code>article</code>, and <code>section</code>, among others.",
         "By default, a browser renders these elements similarly to the humble <code>div</code>. However, using them where appropriate gives additional meaning in your markup. The tag name alone can indicate the type of information it contains, which adds semantic meaning to that content. Assistive technologies can access this information to provide better page summary or navigation options to their users.",
@@ -171,9 +171,9 @@
     },
     {
       "id": "587d774e367417b2b2512aa0",
-      "title": "Wrap Content in the Article Element",
+      "title": "Wrap Content in the article Element",
       "description": [
-        "<code>Article</code> is another one of the new HTML5 elements that adds semantic meaning to your markup. <code>Article</code> is a sectioning element, and is used to wrap independent, self-contained content. The tag works well with blog entries, forum posts, or news articles.",
+        "<code>article</code> is another one of the new HTML5 elements that adds semantic meaning to your markup. <code>Article</code> is a sectioning element, and is used to wrap independent, self-contained content. The tag works well with blog entries, forum posts, or news articles.",
         "Determining whether content can stand alone is usually a judgement call, but there are a couple simple tests you can use. Ask yourself if you removed all surrounding context, would that content still make sense? Similarly for text, would the content hold up if it were in an RSS feed?",
         "Remember that folks using assistive technologies rely on organized, semantically meaningful markup to better understand your work.",
         "<strong>Note about <code>section</code> and <code>div</code></strong><br>The <code>section</code> element is also new with HTML5, and has a slightly different semantic meaning than <code>article</code>. An <code>article</code> is for standalone content, and a <code>section</code> is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the <code>article</code>, then each chapter is a <code>section</code>. When there's no relationship between groups of content, then use a <code>div</code>.",
@@ -217,11 +217,11 @@
     },
     {
       "id": "587d7787367417b2b2512aa1",
-      "title": "Make Screen Reader Navigation Easier with the Header Landmark",
+      "title": "Make Screen Reader Navigation Easier with the header Landmark",
       "description": [
         "The next HTML5 element that adds semantic meaning and improves accessibility is the <code>header</code> tag. It's used to wrap introductory information or navigation links for its parent tag, and works well around content that's repeated at the top on multiple pages.",
-        "<code>Header</code> shares the embedded landmark feature you saw with <code>main</code>, allowing assistive technologies to quickly navigate to that content.",
-        "<strong>Note</strong><br><code>Header</code> is meant for use in the <code>body</code> tag of your HTML document. This is different than the <code>head</code> element, which contains the page's title, meta information, etc.",
+        "<code>header</code> shares the embedded landmark feature you saw with <code>main</code>, allowing assistive technologies to quickly navigate to that content.",
+        "<strong>Note</strong><br><code>header</code> is meant for use in the <code>body</code> tag of your HTML document. This is different than the <code>head</code> element, which contains the page's title, meta information, etc.",
         "<hr>",
         "Camper Cat is writing some great articles about ninja training, and wants to add a page for them to his site. Change the top <code>div</code> that currently contains the <code>h1</code> to a <code>header</code> tag instead."
       ],
@@ -266,7 +266,7 @@
     },
     {
       "id": "587d7788367417b2b2512aa2",
-      "title": "Make Screen Reader Navigation Easier with the Nav Landmark",
+      "title": "Make Screen Reader Navigation Easier with the nav Landmark",
       "description": [
         "The <code>nav</code> element is another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page.",
         "If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a <code>nav</code> tag as well. Using a <code>footer</code> (covered in the next challenge) is sufficient.",
@@ -320,7 +320,7 @@
     },
     {
       "id": "587d7788367417b2b2512aa3",
-      "title": "Make Screen Reader Navigation Easier with the Footer Landmark",
+      "title": "Make Screen Reader Navigation Easier with the footer Landmark",
       "description": [
         "Similar to <code>header</code> and <code>nav</code>, the <code>footer</code> element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.",
         "<hr>",
@@ -375,7 +375,7 @@
     },
     {
       "id": "587d7789367417b2b2512aa4",
-      "title": "Improve Accessibility of Audio Content with the Audio Element",
+      "title": "Improve Accessibility of Audio Content with the audio Element",
       "description": [
         "HTML5's <code>audio</code> element gives semantic meaning when it wraps sound or audio stream content in your markup. Audio content also needs a text alternative to be accessible to the deaf or hard of hearing. This can be done with nearby text on the page or a link to a transcript.",
         "The <code>audio</code> tag supports the <code>controls</code> attribute. This shows the browser default play, pause, and other controls, and supports keyboard functionality. This is a boolean attribute, meaning it doesn't need a value, it's presence on the tag turns the setting on.",
@@ -415,7 +415,7 @@
     },
     {
       "id": "587d778a367417b2b2512aa5",
-      "title": "Improve Chart Accessibility with the Figure Element",
+      "title": "Improve Chart Accessibility with the figure Element",
       "description": [
         "HTML5 introduced the <code>figure</code> element, along with the related <code>figcaption</code>. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the <code>figure</code>.",
         "For data visualizations like charts, the caption can be used to briefly note the trends or conclusions for users with visual impairments. Another challenge covers how to move a table version of the chart's data off-screen (using CSS) for screen reader users.",
@@ -483,7 +483,7 @@
     },
     {
       "id": "587d778a367417b2b2512aa6",
-      "title": "Improve Form Field Accessibility with the Label Element",
+      "title": "Improve Form Field Accessibility with the label Element",
       "description": [
         "Improving accessibility with semantic HTML markup applies to using both appropriate tag names as well as attributes. The next several challenges cover some important scenarios using attributes in forms.",
         "The <code>label</code> tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The <code>for</code> attribute on a <code>label</code> tag explicitly associates that <code>label</code> with the form control and is used by screen readers.",
@@ -539,7 +539,7 @@
     },
     {
       "id": "587d778b367417b2b2512aa7",
-      "title": "Wrap Radio Buttons in a Fieldset Element for Better Accessibility",
+      "title": "Wrap Radio Buttons in a fieldset Element for Better Accessibility",
       "description": [
         "The next form topic covers accessibility of radio buttons. Each choice is given a <code>label</code> with a <code>for</code> attribute tying to the <code>id</code> of the corresponding item as covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set.",
         "The <code>fieldset</code> tag surrounds the entire grouping of radio buttons to achieve this. It often uses a <code>legend</code> tag to provide a description for the grouping, which is read by screen readers for each choice in the <code>fieldset</code> element.",
@@ -659,7 +659,7 @@
     },
     {
       "id": "587d778c367417b2b2512aa9",
-      "title": "Standardize Times with the HTML5 Datetime Attribute",
+      "title": "Standardize Times with the HTML5 datetime Attribute",
       "description": [
         "Continuing with the date theme, HTML5 also introduced the <code>time</code> element along with a <code>datetime</code> attribute to standardize times. This is an inline element that can wrap a date or time on a page. A valid format of that date is held by the <code>datetime</code> attribute. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner in the text.",
         "Here's an example:",
@@ -1027,7 +1027,7 @@
     },
     {
       "id": "587d7790367417b2b2512ab0",
-      "title": "Use Tabindex to Add keyboard Focus to an Element",
+      "title": "Use tabindex to Add Keyboard Focus to an Element",
       "description": [
         "The HTML <code>tabindex</code> attribute has three distinct functions relating to an element's keyboard focus. When it's on a tag, it indicates that element can be focused on. The value (an integer that's positive, negative, or zero) determines the behavior.",
         "Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as <code>div</code>, <code>span</code>, and <code>p</code>, by placing a <code>tabindex=\"0\"</code> attribute on them. Here's an example:",
@@ -1098,7 +1098,7 @@
     },
     {
       "id": "587d7790367417b2b2512ab1",
-      "title": "Use Tabindex to Specify the Order of Keyboard Focus for Several Elements",
+      "title": "Use tabindex to Specify the Order of Keyboard Focus for Several Elements",
       "description": [
         "The <code>tabindex</code> attribute also specifies the exact tab order of elements. This is achieved when the value of the attribute is set to a positive number of 1 or higher.",
         "Setting a tabindex=\"1\" will bring keyboard focus to that element first. Then it cycles through the sequence of specified <code>tabindex</code> values (2, 3, etc.), before moving to default and <code>tabindex=\"0\"</code> items.",

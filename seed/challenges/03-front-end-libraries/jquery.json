@@ -11,7 +11,7 @@
   "challenges": [
     {
       "id": "bad87fee1348bd9acdd08826",
-      "title": "Learn how Script Tags and Document Ready Work",
+      "title": "Learn How Script Tags and Document Ready Work",
       "description": [
         "Now we're ready to learn jQuery, the most popular JavaScript tool of all time. Don't worry about JavaScript itself - we will cover it soon.",
         "Before we can start using jQuery, we need to add some things to our HTML.",
@@ -281,7 +281,7 @@
     },
     {
       "id": "bad87fee1348bd9aeda08826",
-      "title": "Target Elements by ID Using jQuery",
+      "title": "Target Elements by id Using jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -337,7 +337,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Elemente anhand der ID mit jQuery auswählen",
+          "title": "Elemente anhand der id mit jQuery auswählen",
           "description": [
             "Du kannst Elemente auch anhand deren ID-Attributs auswählen.",
             "Wähle als erstes dein <code>Button</code> Element mit der ID <code>target3</code>, indem du den <code>$(\"#target3\")</code> Selektor nutzt.",
@@ -348,7 +348,7 @@
           ]
         },
         "es": {
-          "title": "Elige elementos por ID usando jQuery",
+          "title": "Elige elementos por id usando jQuery",
           "description": [
             "También puedes elegir un elemento por su atributo id.",
             "Primero selecciona tu elemento <code>button</code> con el id <code>target3</code> mediante el uso del selector <code>$(\"#target3\")</code>.",
@@ -359,7 +359,7 @@
           ]
         },
         "fr": {
-          "title": "Cibler les éléments par ID avec jQuery",
+          "title": "Cibler les éléments par id avec jQuery",
           "description": [
             "Vous pouvez également cibler les éléments à l'aide de leurs attributs id.",
             "Premièrement, cibler votre élément <code>button</code> avec l'id <code>target3</code> en utilisant le sélecteur <code>$(\"#target\")</code>.",
@@ -373,7 +373,7 @@
     },
     {
       "id": "bad87fee1348bd9aeda08726",
-      "title": "Delete your jQuery Functions",
+      "title": "Delete Your jQuery Functions",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -452,7 +452,7 @@
     },
     {
       "id": "bad87fee1348bd9aed908626",
-      "title": "Target the same element with multiple jQuery Selectors",
+      "title": "Target the Same Element with Multiple jQuery Selectors",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
@@ -545,7 +545,7 @@
     },
     {
       "id": "bad87fee1348bd9aed918626",
-      "title": "Remove Classes from an element with jQuery",
+      "title": "Remove Classes from an Element with jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"

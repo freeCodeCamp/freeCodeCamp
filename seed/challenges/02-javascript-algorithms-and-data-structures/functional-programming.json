@@ -361,7 +361,7 @@
     },
     {
       "id": "587d7b8f367417b2b2512b61",
-      "title": "Use Map to Extract Data from an Array",
+      "title": "Use the map Method to Extract Data from an Array",
       "description": [
         "So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its input arguments.",
         "This is only the beginning. As its name suggests, functional programming is centered around a theory of functions.",
@@ -511,7 +511,7 @@
     },
     {
       "id": "587d7b8f367417b2b2512b62",
-      "title": "Implement Map on a Prototype",
+      "title": "Implement map on a Prototype",
       "description": [
         "As you have seen from applying <code>Array.prototype.map()</code>, or simply <code>map()</code> earlier, the <code>map</code> method returns an array of the same length as the one it was called on. It also doesn't alter the original array, as long as its callback function doesn't.",
         "In other words, <code>map</code> is a pure function, and its output depends solely on its inputs. Plus, it takes another function as its argument.",
@@ -549,7 +549,7 @@
     },
     {
       "id": "587d7b8f367417b2b2512b63",
-      "title": "Use Filter to Extract Data from an Array",
+      "title": "Use the filter Method to Extract Data from an Array",
       "description": [
         "Another useful array function is <code>Array.prototype.filter()</code>, or simply <code>filter()</code>. The <code>filter</code> method returns a new array which is at most as long as the original array, but usually has fewer items.",
         "<code>Filter</code> doesn't alter the original array, just like <code>map</code>. It takes a callback function that applies the logic inside the callback on each element of the array. If an element returns true based on the criteria in the callback function, then it is included in the new array.",
@@ -693,7 +693,7 @@
     },
     {
       "id": "587d7b8f367417b2b2512b64",
-      "title": "Implement the Filter Function on a Prototype",
+      "title": "Implement the filter Method on a Prototype",
       "description": [
         "It would teach us a lot about the <code>filter</code> method if we try to implement a version of it that behaves exactly like <code>Array.prototype.filter()</code>. It can use either a <code>for</code> loop or <code>Array.prototype.forEach()</code>.",
         "Note: A pure function is allowed to alter local variables defined within its scope, although, it's preferable to avoid that as well.",
@@ -729,7 +729,7 @@
     },
     {
       "id": "587d7b90367417b2b2512b65",
-      "title": "Return Part of an Array Using the Slice Method",
+      "title": "Return Part of an Array Using the slice Method",
       "description": [
         "The <code>slice</code> method returns a copy of certain elements of an array. It can take two arguments, the first gives the index of where to begin the slice, the second is the index for where to end the slice (and it's non-inclusive). If the arguments are not provided, the default is to start at the beginning of the array through the end, which is an easy way to make a copy of the entire array. The <code>slice</code> method does not mutate the original array, but returns a new one.",
         "Here's an example:",
@@ -762,7 +762,7 @@
     },
     {
       "id": "9d7123c8c441eeafaeb5bdef",
-      "title": "Remove Elements from an Array Using Slice Instead of Splice",
+      "title": "Remove Elements from an Array Using slice Instead of splice",
       "description": [
         "A common pattern while working with arrays is when you want to remove items and keep the rest of the array. JavaScript offers the <code>splice</code> method for this, which takes arguments for the index of where to start removing items, then the number of items to remove. If the second argument is not provided, the default is to remove items through the end. However, the <code>splice</code> method mutates the original array it is called on. Here's an example:",
         "<blockquote>var cities = [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"];<br>cities.splice(3, 1); // Returns \"London\" and deletes it from the cities array<br>// cities is now [\"Chicago\", \"Delhi\", \"Islamabad\", \"Berlin\"]</blockquote>",
@@ -795,7 +795,7 @@
     },
     {
       "id": "587d7da9367417b2b2512b66",
-      "title": "Combine Two Arrays Using the Concat Method",
+      "title": "Combine Two Arrays Using the concat Method",
       "description": [
         "<code>Concatenation</code> means to join items end to end. JavaScript offers the <code>concat</code> method for both strings and arrays that work in the same way. For arrays, the method is called on one, then another array is provided as the argument to <code>concat</code>, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example:",
         "<blockquote>[1, 2, 3].concat([4, 5, 6]);<br>// Returns a new array [1, 2, 3, 4, 5, 6]</blockquote>",
@@ -827,7 +827,7 @@
     },
     {
       "id": "587d7da9367417b2b2512b67",
-      "title": "Add Elements to the End of an Array Using Concat Instead of Push",
+      "title": "Add Elements to the End of an Array Using concat Instead of push",
       "description": [
         "Functional programming is all about creating and using non-mutating functions.",
         "The last challenge introduced the <code>concat</code> method as a way to combine arrays into a new one without mutating the original arrays. Compare <code>concat</code> to the <code>push</code> method. <code>Push</code> adds an item to the end of the same array it is called on, which mutates that array. Here's an example:",
@@ -862,7 +862,7 @@
     },
     {
       "id": "587d7da9367417b2b2512b68",
-      "title": "Use the Reduce Method to Analyze Data",
+      "title": "Use the reduce Method to Analyze Data",
       "description": [
         "<code>Array.prototype.reduce()</code>, or simply <code>reduce()</code>, is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the <code>reduce</code> method.",
         "This is not the case with the <code>filter</code> and <code>map</code> methods since they do not allow interaction between two different elements of the array. For example, if you want to compare elements of the array, or add them together, <code>filter</code> or <code>map</code> could not process that.",
@@ -1012,7 +1012,7 @@
     },
     {
       "id": "587d7da9367417b2b2512b69",
-      "title": "Sort an Array Alphabetically using the Sort Method",
+      "title": "Sort an Array Alphabetically using the sort Method",
       "description": [
         "The <code>sort</code> method sorts the elements of an array according to the callback function.",
         "For example:",
@@ -1074,7 +1074,7 @@
     },
     {
       "id": "587d7daa367417b2b2512b6b",
-      "title": "Split a String into an Array Using the Split Method",
+      "title": "Split a String into an Array Using the split Method",
       "description": [
         "The <code>split</code> method splits a string into an array of strings. It takes an argument for the delimiter, which can be a character to use to break up the string or a regular expression. For example, if the delimiter is a space, you get an array of words, and if the delimiter is an empty string, you get an array of each character in the string.",
         "Here are two examples that split one string by spaces, then another by digits using a regular expression:",
@@ -1108,7 +1108,7 @@
     },
     {
       "id": "587d7daa367417b2b2512b6c",
-      "title": "Combine an Array into a String Using the Join Method",
+      "title": "Combine an Array into a String Using the join Method",
       "description": [
         "The <code>join</code> method is used to join the elements of an array together to create a string. It takes an argument for the delimiter that is used to separate the array elements in the string.",
         "Here's an example:",
@@ -1187,7 +1187,7 @@
     },
     {
       "id": "587d7dab367417b2b2512b6e",
-      "title": "Use the Every Method to Check that Every Element in an Array Meets a Criteria",
+      "title": "Use the every Method to Check that Every Element in an Array Meets a Criteria",
       "description": [
         "The <code>every</code> method works with arrays to check if <em>every</em> element passes a particular test. It returns a Boolean value - <code>true</code> if all values meet the criteria, <code>false</code> if not.",
         "For example, the following code would check if every element in the <code>numbers</code> array is less than 10:",
@@ -1218,7 +1218,7 @@
     },
     {
       "id": "587d7dab367417b2b2512b6f",
-      "title": "Use the Some Method to Check that Any Elements in an Array Meet a Criteria",
+      "title": "Use the some Method to Check that Any Elements in an Array Meet a Criteria",
       "description": [
         "The <code>some</code> method works with arrays to check if <em>any</em> element passes a particular test. It returns a Boolean value - <code>true</code> if any of the values meet the criteria, <code>false</code> if not.",
         "For example, the following code would check if any element in the <code>numbers</code> array is less than 10:",

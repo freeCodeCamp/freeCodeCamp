@@ -100,7 +100,7 @@
     },
     {
       "id": "587d7b87367417b2b2512b41",
-      "title": "Use the const Keyword",
+      "title": "Declare a Read-Only Variable with the const Keyword",
       "description": [
         "<code>let</code> is not the only new way to declare variables. In ES6, you can also declare variables using the <code>const</code> keyword.",
         "<code>const</code> has all the awesome features that <code>let</code> has, with the added bonus that variables declared using <code>const</code> are read-only. They are a constant value, which means that once a variable is assigned with <code>const</code>, it cannot be reassigned.",
@@ -169,7 +169,7 @@
     },
     {
       "id": "587d7b87367417b2b2512b43",
-      "title": "Write Arrow Functions",
+      "title": "Use Arrow Functions to Write Concise Anonymous Functions",
       "description": [
         "In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.",
         "To achieve this, we often use the following syntax:",
@@ -242,7 +242,7 @@
     },
     {
       "id": "587d7b88367417b2b2512b45",
-      "title": "Write Arrow Functions with Higher Order Functions",
+      "title": "Write Higher Order Arrow Functions",
       "description": [
         "It's time we see how powerful arrow functions are when processing data.",
         "Arrow functions work really well with higher order functions, such as <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>, that take other functions as arguments for processing collections of data.",
@@ -281,7 +281,7 @@
     },
     {
       "id": "587d7b88367417b2b2512b46",
-      "title": "Write Functions with Default Parameters",
+      "title": "Set Default Parameters for Your Functions",
       "description": [
         "In order to help us create more flexible functions, ES6 introduces <dfn>default parameters</dfn> for functions.",
         "Check out this code:",
@@ -340,7 +340,7 @@
     },
     {
       "id": "587d7b89367417b2b2512b48",
-      "title": "Use the Spread Operator",
+      "title": "Use the Spread Operator to Evaluate Arrays In-Place",
       "description": [
         "ES6 introduces the <dfn>spread operator</dfn>, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.",
         "The ES5 code below uses <code>apply()</code> to compute the maximum value in an array:",
@@ -374,7 +374,7 @@
     },
     {
       "id": "587d7b89367417b2b2512b49",
-      "title": "Use Destructuring Assignment with Objects",
+      "title": "Use Destructuring Assignment to Assign Variables from Objects",
       "description": [
         "We earlier saw how spread operator can effectively spread, or unpack, the contents of the array.",
         "We can do something similar with objects as well. <dfn>Destructuring assignment</dfn> is special syntax for neatly assigning values taken directly from an object to variables.",
@@ -406,7 +406,7 @@
     },
     {
       "id": "587d7b89367417b2b2512b4a",
-      "title": "Use Destructuring Assignment with Nested Objects",
+      "title": "Use Destructuring Assignment to Assign Variables from Nested Objects",
       "description": [
         "We can similarly destructure <em>nested</em> objects into variables.",
         "Consider the following code:",
@@ -436,7 +436,7 @@
     },
     {
       "id": "587d7b89367417b2b2512b4b",
-      "title": "Use Destructuring Assignment with Arrays",
+      "title": "Use Destructuring Assignment to Assign Variables from Arrays",
       "description": [
         "ES6 makes destructuring arrays as easy as destructuring objects.",
         "One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick and choose which elements or you want to assign to variables.",
@@ -468,7 +468,7 @@
     },
     {
       "id": "587d7b8a367417b2b2512b4c",
-      "title": "Use Destructuring Assignment with the Rest Operator",
+      "title": "Use Destructuring Assignment with the Rest Operator to Reassign Array Elements",
       "description": [
         "In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.",
         "The result is similar to <code>Array.prototype.slice()</code>, as shown below:",
@@ -499,7 +499,7 @@
     },
     {
       "id": "587d7b8a367417b2b2512b4d",
-      "title": "Use Destructuring Assignment on Function Parameters",
+      "title": "Use Destructuring Assignment to Pass an Object as a Function's Parameters",
       "description": [
         "In some cases, you can destructure the object in a function argument itself.",
         "Consider the code below:",
@@ -538,7 +538,7 @@
     },
     {
       "id": "587d7b8a367417b2b2512b4e",
-      "title": "String Interpolation using Backquotes",
+      "title": "Interpolate a String Using Backquotes",
       "description": [
         "A new feature of ES6 or ES2015, is that it allows you to use string interpolation with back-ticks.",
         "Consider the code below",
@@ -591,7 +591,7 @@
     },
     {
       "id": "587d7b8a367417b2b2512b4f",
-      "title": "Enhanced Object Literals : Simple Fields",
+      "title": "Write Concise Object Literal Declarations Using Simple Fields",
       "description": [
         "ES6 adds some nice support for removing boiler-plate from object literals declaration.",
         "Consider the following:",
@@ -631,7 +631,7 @@
     },
     {
       "id": "587d7b8b367417b2b2512b50",
-      "title": "Enhanced Object Literals : Functions",
+      "title": "Write Concise Declarative Functions with ES6",
       "description": [
         "With ES6, it's possible to remove the keyword function as follows, from object literals:",
         "<blockquote>const Container extends Component {<br>&nbsp;&nbsp;render: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Container<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>}</blockquote>",
@@ -668,7 +668,7 @@
     },
     {
       "id": "587d7b8b367417b2b2512b53",
-      "title": "class Syntax",
+      "title": "Use class Syntax to Define a Constructor Function",
       "description": [
         "ES6 provides a new syntax to help create objects, using the keyword <dfn>class</dfn>.",
         "This is to be noted, that the <code>class</code> syntax is just a syntax, and not a full-fledged class based implementation of object oriented paradigm, unlike in languages like Java, or Python, or Ruby etc.",
@@ -700,7 +700,7 @@
     },
     {
       "id": "587d7b8c367417b2b2512b54",
-      "title": "class getters and setters",
+      "title": "Use getters and setters to Control Access to an Object",
       "description": [
         "You can obtain values from an object, and set a value of a property within an object.",
         "These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.",
@@ -739,7 +739,7 @@
     },
     {
       "id": "587d7b8c367417b2b2512b55",
-      "title": "Import vs. Require: What's the difference?",
+      "title": "Understand the Differences Between import and require",
       "description": [
         "In the past, the function <code>require()</code> would be used to import the functions and code in external files and modules. While handy, this presents a problem: some files and modules are rather large, and you may only need certain code from those external resources.",
         "ES6 gives us a very handy tool known as <dfn>import</dfn>. With it, we can choose which parts of a module or file to load into a given file, saving time and memory.",
@@ -766,7 +766,7 @@
     },
     {
       "id": "587d7b8c367417b2b2512b56",
-      "title": "Export: One of Import's siblings.",
+      "title": "Use export to Reuse a Code Block",
       "description": [
         "In the previous challenge, you learned about <code>import</code> and how it can be leveraged to import small amounts of code from large files. In order for this to work, though, we must utilize one of the statements that goes with <code>import</code>, known as <dfn>export</dfn>. When we want some code - a function, or a variable - to be usable in another file, we must export it in order to import it into another file. Like <code>import</code>, <code>export</code> is a non-browser feature.",
         "The following is what we refer to as a <dfn>named export</dfn>. With this, we can import any code we export into another file with the <code>import</code> syntax you learned in the last lesson. Here's an example:",
@@ -792,7 +792,7 @@
     },
     {
       "id": "587d7b8c367417b2b2512b57",
-      "title": "Import Everything",
+      "title": "Use * to Import Everything from a File",
       "description": [
         "Suppose you have a file that you wish to import all of its contents into the current file. This can be done with the <dfn>import *</dfn> syntax.",
         "Here's an example where the contents of a file named <code>\"math_functions\"</code> are imported into a file in the same directory:",
@@ -817,7 +817,7 @@
     },
     {
       "id": "587d7b8c367417b2b2512b58",
-      "title": "Export Default",
+      "title": "Create an Export Fallback with export default",
       "description": [
         "In the <code>export</code> lesson, you learned about the syntax referred to as a <dfn>named export</dfn>. This allowed you to make multiple functions and variables available for use in other files.",
         "There is another <code>export</code> syntax you need to know, known as <dfn>export default</dfn>. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.",
@@ -840,7 +840,7 @@
     },
     {
       "id": "587d7b8d367417b2b2512b59",
-      "title": "Importing a Default Export",
+      "title": "Import a Default Export",
       "description": [
         "In the last challenge, you learned about <code>export default</code> and its uses. It is important to note that, to import a default export, you need to use a different <code>import</code> syntax.",
         "In the following example, we have a function, <code>add</code>, that is the default export of a file, <code>\"math_functions\"</code>. Here is how to import it:",
