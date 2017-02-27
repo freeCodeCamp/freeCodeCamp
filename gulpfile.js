@@ -177,7 +177,7 @@ gulp.task('serve', function(cb) {
     script: paths.server,
     ext: '.jsx .js .json',
     ignore: paths.serverIgnore,
-    exec: path.join(__dirname, 'node_modules/.bin/babel-node'),
+    exec: path.normalize('node_modules/.bin/babel-node'),
     env: {
       NODE_ENV: process.env.NODE_ENV || 'development',
       DEBUG: process.env.DEBUG || 'fcc:*',
