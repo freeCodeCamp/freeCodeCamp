@@ -4753,9 +4753,7 @@
         "  }",
         "};",
         "",
-        "// Only change code below this line",
-        "",
-        "var gloveBoxContents = \"\"; // Change this line",
+        "var gloveBoxContents = undefined; // Change this line",
         ""
       ],
       "tail": [
