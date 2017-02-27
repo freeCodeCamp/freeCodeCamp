@@ -25,7 +25,7 @@
     },
     {
       "id": "587d7dbd367417b2b2512bb4",
-      "title": "Storing Data with Sass Variables",
+      "title": "Store Data with Sass Variables",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
@@ -82,7 +82,7 @@
     },
     {
       "id": "587d7dbd367417b2b2512bb5",
-      "title": "Nesting CSS with Sass",
+      "title": "Nest CSS with Sass",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
@@ -129,7 +129,7 @@
     },
     {
       "id": "587d7dbd367417b2b2512bb6",
-      "title": "Creating Reusable CSS with Mixins",
+      "title": "Create Reusable CSS with Mixins",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
@@ -182,7 +182,7 @@
     },
     {
       "id": "587d7dbe367417b2b2512bb8",
-      "title": "Using @if and @else.",
+      "title": "Use @if and @else to Add Logic To Your Styles",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
@@ -229,7 +229,7 @@
     },
     {
       "id": "587d7dbe367417b2b2512bb9",
-      "title": "Continuing with @for",
+      "title": "Use @for to Create a Sass Loop",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
@@ -278,7 +278,7 @@
     },
     {
       "id": "587d7dbf367417b2b2512bba",
-      "title": "Expanding with @each",
+      "title": "Use @each to Map Over Items in a List",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
@@ -328,7 +328,7 @@
     },
     {
       "id": "587d7dbf367417b2b2512bbb",
-      "title": "Wrapping up with @while",
+      "title": "Apply a Style Until a Condition is Met with @while",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
@@ -387,7 +387,7 @@
     },
     {
       "id": "587d7dbf367417b2b2512bbc",
-      "title": "Partials",
+      "title": "Split Your Styles into Smaller Chunks with Partials",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
@@ -422,7 +422,7 @@
     },
     {
       "id": "587d7fa5367417b2b2512bbd",
-      "title": "Extend your CSS styles",
+      "title": "Extend One Set of CSS Styles to Another Element",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",

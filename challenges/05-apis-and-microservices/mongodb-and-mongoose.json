@@ -117,7 +117,7 @@
     },
     {
       "id": "587d7fb7367417b2b2512c0a",
-      "title": "Create Many Records with Model.create()",
+      "title": "Create Many Records with model.create()",
       "description": [
         "Sometimes you need to create many instances of your models, e.g. when seeding a database with initial data. Model.create() takes an array of objects like [{name: 'John', ...}, {...}, ...] as the first argument, and saves them all in the db. Create many people with Model.create(), using the function argument arrayOfPeople."
       ],
@@ -136,7 +136,7 @@
     },
     {
       "id": "587d7fb7367417b2b2512c0b",
-      "title": "Use Model.find()",
+      "title": "Use model.find() to Search Your Database",
       "description": [
         "Find all the people having a given name, using Model.find() -> [Person]",
         "In its simplest usage, Model.find() accepts a query document (a JSON object ) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Check it in the docs. Use the function argument personName as search key."
@@ -156,7 +156,7 @@
     },
     {
       "id": "587d7fb7367417b2b2512c0c",
-      "title": "Use Model.findOne()",
+      "title": "Use model.findOne() to Return a Single Matching Document from Your Database",
       "description": [
         "Model.findOne() behaves like .find(), but it returns only one document (not an array), even if there are items. It is especially useful when searching by properties that you have declared as unique. Find just one person which has a certain food in her favorites, using Model.findOne() -> Person. Use the function argument food as search key."
       ],
@@ -175,7 +175,7 @@
     },
     {
       "id": "587d7fb7367417b2b2512c0d",
-      "title": "Use Model.findById()",
+      "title": "Use model.findById() to Search Your Database By _id",
       "description": [
         "When saving a document, mongodb automatically adds the field _id, and set it to a unique alphanumeric key. Searching by _id is an extremely frequent operation, so moongose provides a dedicated method for it. Find the (only!!) person having a given _id, using Model.findById() -> Person. Use the function argument personId as search key."
       ],
@@ -215,7 +215,7 @@
     },
     {
       "id": "587d7fb8367417b2b2512c0f",
-      "title": "Perform New Updates Using Model.findOneAndUpdate()",
+      "title": "Perform New Updates on a Document Using model.findOneAndUpdate()",
       "description": [
         "Recent versions of mongoose have methods to simplify documents updating. Some more advanced features (i.e. pre/post hooks, validation) behave differently with this approach, so the Classic method is still useful in many situations. findByIdAndUpdate() can be used when searching by Id.",
         "Find a person by Name and set her age to 20. Use the function parameter personName as search key.",
@@ -236,7 +236,7 @@
     },
     {
       "id": "587d7fb8367417b2b2512c10",
-      "title": "Delete one Record",
+      "title": "Delete One Document Using model.findByIdAndRemove",
       "description": [
         "Delete one person by her _id. You should use one of the methods findByIdAndRemove() or findOneAndRemove(). They are like the previous update methods. They pass the removed document to the cb. As usual, use the function argument personId as search key."
       ],
@@ -255,7 +255,7 @@
     },
     {
       "id": "587d7fb8367417b2b2512c11",
-      "title": "Delete Many Records with Model.remove()",
+      "title": "Delete Many Documents with model.remove()",
       "description": [
         "Model.remove() is useful to delete all the documents matching given criteria. Delete all the people whose name is “Mary”, using Model.remove(). Pass to it a query ducument with the “name” field set, and of course a callback.",
         "Note: Model.remove() doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the done() callback, since we use it in tests."
@@ -275,7 +275,7 @@
     },
     {
       "id": "587d7fb9367417b2b2512c12",
-      "title": "Chain Search Query Helpers",
+      "title": "Chain Search Query Helpers to Narrow Search Results",
       "description": [
         "If you don’t pass the callback as the last argument to Model.find() (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method .exec(). Pass your callback to this last method. There are many query helpers, here we’ll use the most ‘famous’ ones.",
         "Find people who like \"burrito\". Sort them by name, limit the results to two documents, and hide their age. Chain .find(), .sort(), .limit(), .select(), and then .exec(). Pass the done(err, data) callback to exec()."

@@ -31,7 +31,7 @@
     },
     {
       "id": "587d7fb3367417b2b2512bfb",
-      "title": "Using Package.json, The Core of Any Node.js Project or npm Package",
+      "title": "How to Use package.json, the Core of Any Node.js Project or npm Package",
       "description": [
         "The file package.json is the center of any Node.js project or npm package. It stores information about your project just like the <head>-section in a HTML document describes the content of a webpage. The package.json consists of a single JSON-object where information is stored in \"key\": value-pairs. There are only two required fields in a minimal package.json - name and version - but it’s a good practice to provide additional information about your project that could be useful to future users or maintainers.",
         "The author-field",
@@ -117,7 +117,7 @@
     },
     {
       "id": "587d7fb4367417b2b2512bfe",
-      "title": "Add a license to your package.json",
+      "title": "Add a License to Your package.json",
       "description": [
         "TODO: This challenge could be used to inspire more people to develop OSS - we should really improve this description.",
         "The license-field is where you inform users of your project what they are allowed to do with it.",
@@ -166,7 +166,7 @@
     },
     {
       "id": "587d7fb4367417b2b2512c00",
-      "title": "Expand your project with external packages from npm",
+      "title": "Expand Your Project with External Packages from npm",
       "description": [
         "One of the biggest reasons to use a package manager is their powerful dependency management. Instead of manually having to make sure that you get all dependencies whenever you set up a project on a new computer, npm automatically installs everything for you. But how can npm know exactly what your project needs? Meet the dependencies-section of your package.json.",
         "In the dependencies-section, packages your project require are stored using the following format:",
@@ -233,7 +233,7 @@
     },
     {
       "id": "587d7fb5367417b2b2512c02",
-      "title": "Use the tilde-character to always use the latest patch version of a dependency",
+      "title": "Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency",
       "description": [
         "In the last challenge, we told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases you don’t want to miss bug fixes, since they often include important security patches and (hopefully) don’t break things in doing so.",
         "To allow a npm dependency to get updated to the latest PATCH-version, you can prefix the dependency’s version with the tilde-character (~). In package.json, our current rule for how npm may upgrade moment is to use a specific version only (2.10.2), but we want to allow the latest 2.10.x-version.",
@@ -262,7 +262,7 @@
     },
     {
       "id": "587d7fb5367417b2b2512c03",
-      "title": "Use the caret-character to use the latest minor version of a dependency",
+      "title": "Use the Caret-Character to Use the Latest Minor Version of a Dependency",
       "description": [
         "Similar to how the tilde (~) we learned about in the last challenge allow npm to install the latest PATCH for a dependency, the caret (^) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.",
         "At the moment, your current version of moment should be ~2.10.2 which allows npm to install to the latest 2.10.x-version. If we instead were to use the caret (^) as our version prefix, npm would instead be allowed to update to any 2.x.x-version.",
@@ -291,7 +291,7 @@
     },
     {
       "id": "587d7fb5367417b2b2512c04",
-      "title": "Remove a package from your dependencies",
+      "title": "Remove a Package from Your Dependencies",
       "description": [
         "Now you’ve tested a few ways you can manage dependencies of your project by using the package.json's dependencies-section. You’ve included external packages by adding them to the file and even told npm what types of versions you want by using special characters as the tilde (~) or the caret (^).",
         "But what if you want to remove an external package that you no longer need? You might already have guessed it - Just remove the corresponding \"key\": value-pair for that from your dependencies.",

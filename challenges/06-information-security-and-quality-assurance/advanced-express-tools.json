@@ -25,7 +25,7 @@
     },
     {
       "id": "5895f700f9fc0f352b528e63",
-      "title": "Setting up a Template Engine",
+      "title": "Set up a Template Engine",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.",
         "A template engine enables you to use static template files (such as those written in <em>Pug</em>) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server, and transforms the template into a static HTML file that is then sent to the client. This approach makes it easier to design an HTML page and allows for displaying of variables on the page without needing to make an API call from the client.",
@@ -57,7 +57,7 @@
     },
     {
       "id": "5895f70bf9fc0f352b528e64",
-      "title": "Using a Template Engine's Powers",
+      "title": "Use a Template Engine's Powers",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.",
         "One of the greatest features of using a template engine is being able to pass variables from the server to the template file before rendering it to HTML.",
@@ -83,7 +83,7 @@
     },
     {
       "id": "5895f70cf9fc0f352b528e65",
-      "title": "Setting up Passport",
+      "title": "Set up Passport",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.",
         "It's time to set up <em>Passport</em> so we can finally start allowing a user to register or login to an account! In addition to Passport, we will use Express-session to handle sessions. Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the <em>key</em> to access the data stored on the server.",
@@ -216,7 +216,7 @@
     },
     {
       "id": "5895f70df9fc0f352b528e69",
-      "title": "Using Passport Strategies",
+      "title": "How to Use Passport Strategies",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.",
         "In the index.pug file supplied there is actually a login form. It has previously been hidden because of the inline javascript <code>if showLogin</code> with the form indented after it. Before showLogin as a variable was never defined, it never rendered the code block containing the form. Go ahead and on the res.render for that page add a new variable to the object <code>showLogin: true</code>. When you refresh your page, you should then see the form! This form is set up to <b>POST</b> on <em>/login</em> so this is where we should set up to accept the POST and authenticate the user.",
@@ -245,7 +245,7 @@
     },
     {
       "id": "5895f70df9fc0f352b528e6a",
-      "title": "Creating New Middleware",
+      "title": "Create New Middleware",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.",
         "As in, any user can just go to /profile whether they authenticated or not by typing in the url. We want to prevent this by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.",
@@ -274,7 +274,7 @@
     },
     {
       "id": "5895f70ef9fc0f352b528e6b",
-      "title": "Putting a Profile Together",
+      "title": "How to Put a Profile Together",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.",
         "Now that we can ensure the user accessing the <em>/profile</em> is authenticated, we can use the information contained in 'req.user' on our page!",
@@ -366,7 +366,7 @@
     },
     {
       "id": "58a25c98f9fc0f352b528e7f",
-      "title": "Hashing your Passwords",
+      "title": "Hashing Your Passwords",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.",
         "Going back to the information security section you may remember that storing plaintext passwords is <em>never</em> okay. Now it is time to implement BCrypt to solve this issue.",
@@ -567,7 +567,7 @@
     },
     {
       "id": "589fc830f9fc0f352b528e74",
-      "title": "Setting up the Enviroment",
+      "title": "Set up the Enviroment",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.",
         "Add Socket.IO as a dependency and require/instanciate it in your server defined as 'io' with the http server as an argument. <code>const io = require('socket.io')(http);</code>",
@@ -605,7 +605,7 @@
     },
     {
       "id": "589fc831f9fc0f352b528e75",
-      "title": "Communicating by Emitting",
+      "title": "Communicate by Emitting",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.",
         "<dfn>Emit</dfn> is the most common way of communicating you will use. When you emit something from the server to 'io', you send an event's name and data to all the connected sockets. A good example of this concept would be emiting the current count of connected users each time a new user connects!",
@@ -639,7 +639,7 @@
     },
     {
       "id": "589fc831f9fc0f352b528e76",
-      "title": "Handling a disconnect",
+      "title": "Handle a Disconnect",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.",
         "You may notice that up to now you have only been increasing the user count. Handling a user disconnecting is just as easy as handling the initial connect except the difference is you have to listen for it on each socket versus on the whole server.",
@@ -699,7 +699,7 @@
     },
     {
       "id": "589fc832f9fc0f352b528e78",
-      "title": "Announcing New Users",
+      "title": "Announce New Users",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.",
         "Many chat rooms are able to annouce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such feature. The most logical way of doing so is sending 3 pieces of data with the event: name of the user connected/disconnected, the current user count, and if that name connected or disconnected.",
@@ -727,7 +727,7 @@
     },
     {
       "id": "589fc832f9fc0f352b528e79",
-      "title": "Sending and Displaying Chat Messages",
+      "title": "Send and Display Chat Messages",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Gomix</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.",
         "It's time you start allowing clients to send a chat message to the server to emit to all the clients! Already in your client.js file you should see there is already a block of code handling when the messgae form is submitted! (<code>$('form').submit(function(){ /*logic*/ });</code>)",
@@ -755,7 +755,7 @@
     },
     {
       "id": "58a0b2caf9fc0f352b528e7a",
-      "title": "Continuing your Live Chat",
+      "title": "Continuing Your Live Chat",
       "description": [
         [
           "",

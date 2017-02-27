@@ -923,7 +923,7 @@
     },
     {
       "id": "bad87fee1348bd9acdf08812",
-      "title": "Size your Images",
+      "title": "Size Your Images",
       "description": [
         "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
         "For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:",
@@ -1038,7 +1038,7 @@
     },
     {
       "id": "bad87fee1348bd9bedf08813",
-      "title": "Add Borders Around your Elements",
+      "title": "Add Borders Around Your Elements",
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:",
@@ -1168,7 +1168,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08814",
-      "title": "Add Rounded Corners with a Border Radius",
+      "title": "Add Rounded Corners with border-radius",
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
         "<hr>",
@@ -1242,7 +1242,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge abgerundete Ecken mit Border Radius hinzu",
+          "title": "Füge abgerundete Ecken mit border-radius hinzu",
           "description": [
             "Dein Katzenfoto hat momentan spitze Ecken. Wir können diese Ecken mit dem CSS Attribut <code>border-radius</code> abrunden.",
             "<hr>",
@@ -1251,7 +1251,7 @@
           ]
         },
         "es": {
-          "title": "Agrega esquinas redondeadas usando Border Radius",
+          "title": "Agrega esquinas redondeadas usando border-radius",
           "description": [
             "Tu foto del gato tiene actualmente esquinas angulares. Podemos redondear esas esquinas con una propiedad CSS llamada <code>border-radius</code>.",
             "<hr>",
@@ -1260,7 +1260,7 @@
           ]
         },
         "pt-br": {
-          "title": "Insira Bordas Arredondadas com o Border Radius",
+          "title": "Insira Bordas Arredondadas com o border-radius",
           "description": [
             "Sua foto com o gato possui cantos pontiagudos. Podemos arredondar os cantos com uma propriedade CSS chamado <code>border-radius</code>.",
             "<hr>",
@@ -1281,7 +1281,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08815",
-      "title": "Make Circular Images with a Border Radius",
+      "title": "Make Circular Images with a border-radius",
       "description": [
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage.",
         "<hr>",
@@ -1355,7 +1355,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Erstelle runde Bilder mit einem Border Radius",
+          "title": "Erstelle runde Bilder mit einem border-radius",
           "description": [
             "Du kannst einem <code>border-radius</code> neben Pixeln auch Prozentwerte zuweisen.",
             "<hr>",
@@ -1363,7 +1363,7 @@
           ]
         },
         "es": {
-          "title": "Crea imágenes circulares usando Border Radius",
+          "title": "Crea imágenes circulares usando border-radius",
           "description": [
             "Además de pixeles, puedes especificar un <code>border-radius</code> usando porcentajes.",
             "<hr>",
@@ -1371,7 +1371,7 @@
           ]
         },
         "pt-br": {
-          "title": "Deixe as Imagens Circulares com o Border Radius",
+          "title": "Deixe as Imagens Circulares com o border-radius",
           "description": [
             "Assim como pixels, você também pode usar o <code>border-radius</code> com porcentagens.",
             "<hr>",
@@ -1390,7 +1390,7 @@
     },
     {
       "id": "bad87fed1348bd9aede07836",
-      "title": "Give a Background Color to a Div Element",
+      "title": "Give a Background Color to a div Element",
       "description": [
         "You can set an element's background color with the <code>background-color</code> property.",
         "For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:",
@@ -1466,7 +1466,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Gib einem Div Element eine Hintergrundfarbe",
+          "title": "Gib einem div Element eine Hintergrundfarbe",
           "description": [
             "Du kannst die Hintergrundfarbe von einem Element mit dem <code>background-color</code> Attribut setzen",
             "Wenn du zum Beispiel die Hintergrundfarbe von einem Element <code>green</code> machen willst, schreibe dies in dein <code>style</code> Element:",
@@ -1476,7 +1476,7 @@
           ]
         },
         "es": {
-          "title": "Da un color de fondo a un elemento Div",
+          "title": "Da un color de fondo a un elemento div",
           "description": [
             "Puedes fijar el color de fondo de un elemento con la propiedad <code>background-color</code>.",
             "Por ejemplo, si quieres que el color de fondo de un elemento sea verde (<code>green</code>), dentro de tu elemento <code>style</code> pondrías:",
@@ -1486,7 +1486,7 @@
           ]
         },
         "pt-br": {
-          "title": "Dê uma Cor de Fundo a um Elemento Div",
+          "title": "Dê uma Cor de Fundo a um Elemento div",
           "description": [
             "Você pode acrescentar uma cor de fundo de um elemento com a propriedade <code>background-color</code>.",
             "Por exemplo, se você quiser que a cor de fundo de um elemento seja verde (<code>green</code>), dentro de seu elemento <code>style</code> seria assim:",
@@ -1511,7 +1511,7 @@
     },
     {
       "id": "bad87eee1348bd9aede07836",
-      "title": "Set the ID of an Element",
+      "title": "Set the id of an Element",
       "description": [
         "In addition to classes, each HTML element can also have an <code>id</code> attribute.",
         "There are several benefits to using <code>id</code> attributes: You can use an <code>id</code> to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.",
@@ -1643,7 +1643,7 @@
     },
     {
       "id": "bad87dee1348bd9aede07836",
-      "title": "Use an ID Attribute to Style an Element",
+      "title": "Use an id Attribute to Style an Element",
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
         "However, an <code>id</code> is not reusable and should only be applied to one element. An <code>id</code> also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the <code>id</code> will be applied.",
@@ -1776,7 +1776,7 @@
     },
     {
       "id": "bad88fee1348bd9aedf08825",
-      "title": "Adjusting the Padding of an Element",
+      "title": "Adjust the Padding of an Element",
       "description": [
         "Now let's put our Cat Photo App away for a little while and learn more about styling HTML.",
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
