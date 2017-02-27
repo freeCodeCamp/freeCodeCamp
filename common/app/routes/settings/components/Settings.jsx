@@ -58,25 +58,25 @@ const mapStateToProps = createSelector(
 );
 const propTypes = {
   children: PropTypes.element,
-  username: PropTypes.string,
-  isLocked: PropTypes.bool,
-  isGithubCool: PropTypes.bool,
-  isTwitter: PropTypes.bool,
-  isLinkedIn: PropTypes.bool,
-  showLoading: PropTypes.bool,
   email: PropTypes.string,
+  initialLang: PropTypes.string,
+  isGithubCool: PropTypes.bool,
+  isLinkedIn: PropTypes.bool,
+  isLocked: PropTypes.bool,
+  isTwitter: PropTypes.bool,
+  lang: PropTypes.string,
   sendMonthlyEmail: PropTypes.bool,
   sendNotificationEmail: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
-  updateTitle: PropTypes.func.isRequired,
-  toggleNightMode: PropTypes.func.isRequired,
+  showLoading: PropTypes.bool,
   toggleIsLocked: PropTypes.func.isRequired,
-  toggleQuincyEmail: PropTypes.func.isRequired,
   toggleMonthlyEmail: PropTypes.func.isRequired,
+  toggleNightMode: PropTypes.func.isRequired,
   toggleNotificationEmail: PropTypes.func.isRequired,
-  lang: PropTypes.string,
-  initialLang: PropTypes.string,
-  updateMyLang: PropTypes.func
+  toggleQuincyEmail: PropTypes.func.isRequired,
+  updateMyLang: PropTypes.func,
+  updateTitle: PropTypes.func.isRequired,
+  username: PropTypes.string
 };
 
 export class Settings extends React.Component {

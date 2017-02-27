@@ -56,23 +56,23 @@ const mapStateToProps = createSelector(
 
 const propTypes = {
   children: PropTypes.node,
-  username: PropTypes.string,
-  isSignedIn: PropTypes.bool,
-  points: PropTypes.number,
-  picture: PropTypes.string,
-  toast: PropTypes.object,
-  updateNavHeight: PropTypes.func,
-  initWindowHeight: PropTypes.func,
-  submitChallenge: PropTypes.func,
+  closeDropdown: PropTypes.func.isRequired,
   fetchUser: PropTypes.func,
-  showLoading: PropTypes.bool,
-  params: PropTypes.object,
-  updateAppLang: PropTypes.func.isRequired,
-  trackEvent: PropTypes.func.isRequired,
+  initWindowHeight: PropTypes.func,
+  isNavDropdownOpen: PropTypes.bool,
+  isSignedIn: PropTypes.bool,
   loadCurrentChallenge: PropTypes.func.isRequired,
   openDropdown: PropTypes.func.isRequired,
-  closeDropdown: PropTypes.func.isRequired,
-  isNavDropdownOpen: PropTypes.bool
+  params: PropTypes.object,
+  picture: PropTypes.string,
+  points: PropTypes.number,
+  showLoading: PropTypes.bool,
+  submitChallenge: PropTypes.func,
+  toast: PropTypes.object,
+  trackEvent: PropTypes.func.isRequired,
+  updateAppLang: PropTypes.func.isRequired,
+  updateNavHeight: PropTypes.func,
+  username: PropTypes.string
 };
 
 // export plain class for testing

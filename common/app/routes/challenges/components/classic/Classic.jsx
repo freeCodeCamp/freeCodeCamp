@@ -57,24 +57,23 @@ const bindableActions = {
   updateSuccessMessage
 };
 
-export class Challenge extends PureComponent {
-  static displayName = 'Challenge';
+const propTypes = {
+  closeChallengeModal: PropTypes.func,
+  content: PropTypes.string,
+  executeChallenge: PropTypes.func,
+  file: PropTypes.object,
+  id: PropTypes.string,
+  isChallengeModalOpen: PropTypes.bool,
+  loadCode: PropTypes.func,
+  mode: PropTypes.string,
+  showPreview: PropTypes.bool,
+  submitChallenge: PropTypes.func,
+  successMessage: PropTypes.string,
+  updateFile: PropTypes.func,
+  updateSuccessMessage: PropTypes.func
+};
 
-  static propTypes = {
-    id: PropTypes.string,
-    showPreview: PropTypes.bool,
-    content: PropTypes.string,
-    mode: PropTypes.string,
-    file: PropTypes.object,
-    updateFile: PropTypes.func,
-    executeChallenge: PropTypes.func,
-    loadCode: PropTypes.func,
-    submitChallenge: PropTypes.func,
-    isChallengeModalOpen: PropTypes.bool,
-    closeChallengeModal: PropTypes.func,
-    successMessage: PropTypes.string,
-    updateSuccessMessage: PropTypes.func
-  };
+export class Challenge extends PureComponent {
 
   componentDidMount() {
     this.props.loadCode();
@@ -147,5 +146,8 @@ export class Challenge extends PureComponent {
     );
   }
 }
+
+Challenge.displayName = 'Challenge';
+Challenge.propTypes = propTypes;
 
 export default connect(mapStateToProps, bindableActions)(Challenge);

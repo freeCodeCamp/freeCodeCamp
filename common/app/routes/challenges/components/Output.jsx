@@ -12,6 +12,11 @@ const defaultOptions = {
   lineWrapping: true
 };
 
+const propTypes = {
+  defaultOutput: PropTypes.string,
+  output: PropTypes.string
+};
+
 export default class Output extends PureComponent {
   render() {
     const { output, defaultOutput } = this.props;
@@ -29,7 +34,4 @@ export default class Output extends PureComponent {
 }
 
 Output.displayName = 'Output';
-Output.propTypes = {
-  output: PropTypes.string,
-  defaultOutput: PropTypes.string
-};
+Output.propTypes = propTypes;

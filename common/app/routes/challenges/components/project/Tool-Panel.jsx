@@ -17,11 +17,11 @@ import {
 } from '../../../../utils/challengeTypes';
 
 const propTypes = {
+  helpChatRoom: PropTypes.string.isRequired,
+  isFrontEnd: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   isSimple: PropTypes.bool,
-  isFrontEnd: PropTypes.bool,
   isSubmitting: PropTypes.bool,
-  helpChatRoom: PropTypes.string.isRequired,
   openBugModal: PropTypes.func.isRequired,
   submitChallenge: PropTypes.func.isRequired
 };
@@ -109,8 +109,8 @@ export class ToolPanel extends PureComponent {
   }
 }
 
+ToolPanel.displayName = 'ProjectToolPanel';
 ToolPanel.propTypes = propTypes;
-ToolPanel.displayName = 'ToolPanel';
 
 export default connect(
   mapStateToProps,

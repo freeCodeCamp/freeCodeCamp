@@ -29,22 +29,21 @@ const makeMapStateToProps = () => createSelector(
     };
   }
 );
+const propTypes = {
+  challenges: PropTypes.array,
+  dashedName: PropTypes.string,
+  isHidden: PropTypes.bool,
+  isOpen: PropTypes.bool,
+  time: PropTypes.string,
+  title: PropTypes.string,
+  toggleThisPanel: PropTypes.func
+};
+
 export class Block extends PureComponent {
   constructor(...props) {
     super(...props);
     this.handleSelect = this.handleSelect.bind(this);
   }
-  static displayName = 'Block';
-  static propTypes = {
-    title: PropTypes.string,
-    dashedName: PropTypes.string,
-    time: PropTypes.string,
-    isOpen: PropTypes.bool,
-    isHidden: PropTypes.bool,
-    challenges: PropTypes.array,
-    toggleThisPanel: PropTypes.func
-  };
-
   handleSelect(eventKey, e) {
     e.preventDefault();
     this.props.toggleThisPanel(eventKey);
@@ -107,5 +106,8 @@ export class Block extends PureComponent {
     );
   }
 }
+
+Block.displayName = 'Block';
+Block.propTypes = propTypes;
 
 export default connect(makeMapStateToProps, dispatchActions)(Block);

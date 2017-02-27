@@ -29,17 +29,15 @@ const mapStateToProps = createSelector(
     description
   })
 );
+const propTypes = {
+  description: PropTypes.arrayOf(PropTypes.string),
+  id: PropTypes.string,
+  isCompleted: PropTypes.bool,
+  title: PropTypes.string,
+  videoId: PropTypes.string
+};
 
 export class Project extends PureComponent {
-  static displayName = 'Project';
-  static propTypes = {
-    id: PropTypes.string,
-    videoId: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.arrayOf(PropTypes.string),
-    isCompleted: PropTypes.bool
-  };
-
   render() {
     const {
       id,
@@ -77,6 +75,9 @@ export class Project extends PureComponent {
     );
   }
 }
+
+Project.displayName = 'Project';
+Project.propTypes = propTypes;
 
 export default connect(
   mapStateToProps

@@ -133,7 +133,7 @@
     "eslint": "^3.1.0",
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-prefer-object-spread": "^1.1.0",
-    "eslint-plugin-react": "^6.2.0",
+    "eslint-plugin-react": "^6.9.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.0",

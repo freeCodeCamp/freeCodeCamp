@@ -2,14 +2,14 @@ import React, { PropTypes } from 'react';
 
 import PureComponent from 'react-pure-render/component';
 
-export default class SidePanel extends PureComponent {
-  static propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.arrayOf(PropTypes.string),
-    isCompleted: PropTypes.bool,
-    isSignedIn: PropTypes.bool
-  };
+const propTypes = {
+  description: PropTypes.arrayOf(PropTypes.string),
+  isCompleted: PropTypes.bool,
+  isSignedIn: PropTypes.bool,
+  title: PropTypes.string
+};
 
+export default class SidePanel extends PureComponent {
   renderIcon(isCompleted) {
     if (!isCompleted) {
       return null;
@@ -48,3 +48,6 @@ export default class SidePanel extends PureComponent {
     );
   }
 }
+
+SidePanel.displayName = 'ProjectSidePanel';
+SidePanel.propTypes = propTypes;

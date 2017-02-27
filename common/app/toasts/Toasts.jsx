@@ -58,18 +58,16 @@ const addDispatchableActionsToToast = createSelector(
     };
   })
 );
+const propTypes = {
+  dispatch: PropTypes.func,
+  toasts: PropTypes.arrayOf(PropTypes.object)
+};
 
 export class Toasts extends React.Component {
   constructor(...props) {
     super(...props);
     this.handleDismiss = this.handleDismiss.bind(this);
   }
-  static displayName = 'Toasts';
-  static propTypes = {
-    toasts: PropTypes.arrayOf(PropTypes.object),
-    dispatch: PropTypes.func
-  };
-
   styleFactory(index, style) {
     return { ...style, bottom: `${4 + index * 8}rem` };
   }
@@ -92,5 +90,8 @@ export class Toasts extends React.Component {
     );
   }
 }
+
+Toasts.displayName = 'Toasts';
+Toasts.propTypes = propTypes;
 
 export default connect(mapStateToProps)(Toasts);

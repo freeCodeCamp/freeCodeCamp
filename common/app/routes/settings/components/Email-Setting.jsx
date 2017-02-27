@@ -4,6 +4,16 @@ import { Button, Row, Col } from 'react-bootstrap';
 import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
+const propTypes = {
+  email: PropTypes.string,
+  sendMonthlyEmail: PropTypes.bool,
+  sendNotificationEmail: PropTypes.bool,
+  sendQuincyEmail: PropTypes.bool,
+  toggleMonthlyEmail: PropTypes.func.isRequired,
+  toggleNotificationEmail: PropTypes.func.isRequired,
+  toggleQuincyEmail: PropTypes.func.isRequired
+};
+
 export function UpdateEmailButton() {
   return (
     <Link
@@ -138,12 +148,5 @@ export default function EmailSettings({
   );
 }
 
-EmailSettings.propTypes = {
-  email: PropTypes.string,
-  sendMonthlyEmail: PropTypes.bool,
-  sendNotificationEmail: PropTypes.bool,
-  sendQuincyEmail: PropTypes.bool,
-  toggleMonthlyEmail: PropTypes.func.isRequired,
-  toggleNotificationEmail: PropTypes.func.isRequired,
-  toggleQuincyEmail: PropTypes.func.isRequired
-};
+EmailSettings.displayName = 'EmailSettings';
+EmailSettings.propTypes = propTypes;

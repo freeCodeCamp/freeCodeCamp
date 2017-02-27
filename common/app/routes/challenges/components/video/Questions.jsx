@@ -47,27 +47,22 @@ const mapStateToProps = createSelector(
     isSignedIn
   })
 );
+const propTypes = {
+  answerQuestion: PropTypes.func,
+  currentQuestion: PropTypes.number,
+  delta: PropTypes.array,
+  grabQuestion: PropTypes.func,
+  isCorrect: PropTypes.bool,
+  isPressed: PropTypes.bool,
+  isSignedIn: PropTypes.bool,
+  mouse: PropTypes.array,
+  moveQuestion: PropTypes.func,
+  releaseQuestion: PropTypes.func,
+  shouldShakeQuestion: PropTypes.bool,
+  tests: PropTypes.array
+};
 
 class Question extends React.Component {
-  static displayName = 'Questions';
-
-  static propTypes = {
-    // actions
-    answerQuestion: PropTypes.func,
-    releaseQuestion: PropTypes.func,
-    moveQuestion: PropTypes.func,
-    grabQuestion: PropTypes.func,
-    // ui state
-    tests: PropTypes.array,
-    mouse: PropTypes.array,
-    delta: PropTypes.array,
-    isCorrect: PropTypes.bool,
-    isPressed: PropTypes.bool,
-    isSignedIn: PropTypes.bool,
-    currentQuestion: PropTypes.number,
-    shouldShakeQuestion: PropTypes.bool
-  };
-
   handleMouseUp(e, answer, info) {
     e.stopPropagation();
     if (!this.props.isPressed) {
@@ -190,5 +185,8 @@ class Question extends React.Component {
     );
   }
 }
+
+Question.displayName = 'Question';
+Question.propTypes = propTypes;
 
 export default connect(mapStateToProps, actionsToBind)(Question);

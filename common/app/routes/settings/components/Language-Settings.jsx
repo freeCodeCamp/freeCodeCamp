@@ -100,6 +100,7 @@ export class LanguageSettings extends React.Component {
   }
 }
 
+LanguageSettings.displayName = 'LanguageSettings';
 LanguageSettings.propTypes = propTypes;
 
 export default reduxForm(

@@ -3,6 +3,12 @@ import { Button } from 'react-bootstrap';
 import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
+const propTypes = {
+  isGithubCool: PropTypes.bool,
+  isLinkedIn: PropTypes.bool,
+  isTwitter: PropTypes.bool
+};
+
 export default function SocialSettings({
   isGithubCool,
   isTwitter,
@@ -65,8 +71,5 @@ export default function SocialSettings({
   return (<div>{ buttons }</div>);
 }
 
-SocialSettings.propTypes = {
-  isGithubCool: PropTypes.bool,
-  isTwitter: PropTypes.bool,
-  isLinkedIn: PropTypes.bool
-};
+SocialSettings.displayName = 'SocialSettings';
+SocialSettings.propTypes = propTypes;

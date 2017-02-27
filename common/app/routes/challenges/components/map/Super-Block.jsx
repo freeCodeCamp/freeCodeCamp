@@ -36,22 +36,21 @@ const makeMapStateToProps = () => {
   );
 };
 
+const propTypes = {
+  blocks: PropTypes.array,
+  dashedName: PropTypes.string,
+  isHidden: PropTypes.bool,
+  isOpen: PropTypes.bool,
+  message: PropTypes.string,
+  title: PropTypes.string,
+  toggleThisPanel: PropTypes.func
+};
+
 export class SuperBlock extends PureComponent {
   constructor(...props) {
     super(...props);
     this.handleSelect = this.handleSelect.bind(this);
   }
-  static displayName = 'SuperBlock';
-  static propTypes = {
-    title: PropTypes.string,
-    dashedName: PropTypes.string,
-    blocks: PropTypes.array,
-    isOpen: PropTypes.bool,
-    isHidden: PropTypes.bool,
-    message: PropTypes.string,
-    toggleThisPanel: PropTypes.func
-  };
-
   handleSelect(eventKey, e) {
     e.preventDefault();
     this.props.toggleThisPanel(eventKey);
@@ -125,6 +124,9 @@ export class SuperBlock extends PureComponent {
     );
   }
 }
+
+SuperBlock.displayName = 'SuperBlock';
+SuperBlock.propTypes = propTypes;
 
 export default connect(
   makeMapStateToProps,

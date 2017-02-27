@@ -62,9 +62,9 @@ const propTypes = {
   numOfSteps: PropTypes.number,
   openLightBoxImage: PropTypes.func.isRequired,
   step: PropTypes.array,
-  steps: PropTypes.array,
   stepBackward: PropTypes.func,
   stepForward: PropTypes.func,
+  steps: PropTypes.array,
   submitChallenge: PropTypes.func.isRequired,
   updateUnlockedSteps: PropTypes.func.isRequired
 };
