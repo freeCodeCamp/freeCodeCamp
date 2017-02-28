@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>RxJS-Lite</id>
+    <title>Reactive Extensions for JavaScript - Lite Library</title>
+    <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+    <version>$version$</version>
+    <authors>Microsoft Corporation</authors>
+    <description>Reactive Extensions for JavaScript main library used to express complex event processing queries over observable sequences.</description>
+    <projectUrl>http://rx.codeplex.com</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <language>en-US</language>
+    <tags>Rx RxJS Reactive Extensions Observable</tags>
+  </metadata>
+  <files>
+    <file src="..\..\dist\rx.lite.js" target="content\Scripts\rx.lite.js" />
+    <file src="..\..\dist\rx.lite.min.js" target="content\Scripts\rx.lite.min.js" />
+    <file src="..\..\dist\rx.lite.compat.js" target="content\Scripts\rx.lite.compat.js" />
+    <file src="..\..\dist\rx.lite.compat.min.js" target="content\Scripts\rx.lite.compat.min.js" />
+    <file src="..\..\dist\rx.lite.extras.js" target="content\Scripts\rx.lite.extras.js" />
+    <file src="..\..\dist\rx.lite.extras.min.js" target="content\Scripts\rx.lite.extras.min.js" />
+    <file src="..\..\ts\rx.lite.d.ts" target="content\Scripts\rx.lite.d.ts" />
+    <file src="..\..\ts\rx.lite.es6.d.ts" target="content\Scripts\rx.lite.es6.d.ts" />
+    <file src="..\..\ts\rx.lite.extras.d.ts" target="content\Scripts\rx.lite.extras.d.ts" />
+    <file src="..\..\ts\rx.lite.extras.es6.d.ts" target="content\Scripts\rx.lite.extras.es6.d.ts" />
+  </files>
+</package>

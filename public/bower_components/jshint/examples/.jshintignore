@@ -1,0 +1,4 @@
+ignored.js
+another.js
+ignoreimmediatechildren/*.js
+ignoreincludingsubdirectories/**

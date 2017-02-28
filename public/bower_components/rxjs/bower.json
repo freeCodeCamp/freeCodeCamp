@@ -1,0 +1,23 @@
+{
+  "name": "rxjs",
+  "main": "dist/rx.all.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reactive-Extensions/RxJS.git"
+  },
+  "license": "Apache-2.0",
+  "ignore": [
+    ".sh",
+    ".*",
+    "*.bat",
+    "*.md",
+    "*.txt",
+    "*.log",
+    "package.json",
+    "node_modules",
+    "doc",
+    "examples",
+    "src",
+    "tests"
+  ]
+}

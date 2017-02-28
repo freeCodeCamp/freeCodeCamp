@@ -1,0 +1,5 @@
+/node_modules/
+/jscoverage/
+/coverage/
+/report/
+.DS_Store

@@ -1,0 +1,2 @@
+/* jshint undef:false */
+foo();

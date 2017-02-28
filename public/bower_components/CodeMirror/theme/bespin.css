@@ -1,0 +1,34 @@
+/*
+
+    Name:       Bespin
+    Author:     Mozilla / Jan T. Sott
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+.cm-s-bespin.CodeMirror {background: #28211c; color: #9d9b97;}
+.cm-s-bespin div.CodeMirror-selected {background: #36312e !important;}
+.cm-s-bespin .CodeMirror-gutters {background: #28211c; border-right: 0px;}
+.cm-s-bespin .CodeMirror-linenumber {color: #666666;}
+.cm-s-bespin .CodeMirror-cursor {border-left: 1px solid #797977 !important;}
+
+.cm-s-bespin span.cm-comment {color: #937121;}
+.cm-s-bespin span.cm-atom {color: #9b859d;}
+.cm-s-bespin span.cm-number {color: #9b859d;}
+
+.cm-s-bespin span.cm-property, .cm-s-bespin span.cm-attribute {color: #54be0d;}
+.cm-s-bespin span.cm-keyword {color: #cf6a4c;}
+.cm-s-bespin span.cm-string {color: #f9ee98;}
+
+.cm-s-bespin span.cm-variable {color: #54be0d;}
+.cm-s-bespin span.cm-variable-2 {color: #5ea6ea;}
+.cm-s-bespin span.cm-def {color: #cf7d34;}
+.cm-s-bespin span.cm-error {background: #cf6a4c; color: #797977;}
+.cm-s-bespin span.cm-bracket {color: #9d9b97;}
+.cm-s-bespin span.cm-tag {color: #cf6a4c;}
+.cm-s-bespin span.cm-link {color: #9b859d;}
+
+.cm-s-bespin .CodeMirror-matchingbracket { text-decoration: underline; color: white !important;}
+.cm-s-bespin .CodeMirror-activeline-background { background: #404040; }

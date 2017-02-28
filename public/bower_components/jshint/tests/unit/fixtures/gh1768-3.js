@@ -1,0 +1,3 @@
+/*jshint
+undef:false*/
+foo();

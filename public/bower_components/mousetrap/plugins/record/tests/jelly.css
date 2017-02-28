@@ -1,0 +1,18 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    line-height: 20px;
+}
+
+kbd {
+    background-color: #ccc;
+    display: inline-block;
+    padding: 0.5ex 1em;
+}
+
+.test-record-result {
+  margin-top: 20px;
+}
+
+.test-record-result span:nth-child(n+2) {
+    margin-left: 10px;
+}

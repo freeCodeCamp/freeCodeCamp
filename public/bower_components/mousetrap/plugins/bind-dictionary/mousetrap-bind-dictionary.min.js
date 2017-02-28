@@ -1,0 +1,1 @@
+(function(b){var c=b.prototype.bind,a;b.prototype.bind=function(){a=arguments;if("string"==typeof a[0]||a[0]instanceof Array)return c.call(this,a[0],a[1],a[2]);for(var b in a[0])a[0].hasOwnProperty(b)&&c.call(this,b,a[0][b],a[1])};b.init()})(Mousetrap);

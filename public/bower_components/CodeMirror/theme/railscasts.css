@@ -1,0 +1,34 @@
+/*
+
+    Name:       Railscasts
+    Author:     Ryan Bates (http://railscasts.com)
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+.cm-s-railscasts.CodeMirror {background: #2b2b2b; color: #f4f1ed;}
+.cm-s-railscasts div.CodeMirror-selected {background: #272935 !important;}
+.cm-s-railscasts .CodeMirror-gutters {background: #2b2b2b; border-right: 0px;}
+.cm-s-railscasts .CodeMirror-linenumber {color: #5a647e;}
+.cm-s-railscasts .CodeMirror-cursor {border-left: 1px solid #d4cfc9 !important;}
+
+.cm-s-railscasts span.cm-comment {color: #bc9458;}
+.cm-s-railscasts span.cm-atom {color: #b6b3eb;}
+.cm-s-railscasts span.cm-number {color: #b6b3eb;}
+
+.cm-s-railscasts span.cm-property, .cm-s-railscasts span.cm-attribute {color: #a5c261;}
+.cm-s-railscasts span.cm-keyword {color: #da4939;}
+.cm-s-railscasts span.cm-string {color: #ffc66d;}
+
+.cm-s-railscasts span.cm-variable {color: #a5c261;}
+.cm-s-railscasts span.cm-variable-2 {color: #6d9cbe;}
+.cm-s-railscasts span.cm-def {color: #cc7833;}
+.cm-s-railscasts span.cm-error {background: #da4939; color: #d4cfc9;}
+.cm-s-railscasts span.cm-bracket {color: #f4f1ed;}
+.cm-s-railscasts span.cm-tag {color: #da4939;}
+.cm-s-railscasts span.cm-link {color: #b6b3eb;}
+
+.cm-s-railscasts .CodeMirror-matchingbracket { text-decoration: underline; color: white !important;}
+.cm-s-railscasts .CodeMirror-activeline-background { background: #303040; }

@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - 0.10
+
+matrix:
+  include:
+    - node_js: 0.10
+      env:
+        - COVERALLS=1
+
+before_script:
+  - npm install -g grunt-cli
+  - echo "# for coveralls
+    src_dir:./" > .coveralls.yml
+
+after_script:
+  - sh -c "if [ '$COVERALLS' = '1' ]; then grunt coveralls --verbose; fi"

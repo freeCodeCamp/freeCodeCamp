@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+var shjs = require("shelljs");
+var url  = "https://github.com/jshint/jshint/pull/" + process.argv[2] + ".diff";
+
+shjs.exec('curl "' + url + '" | git apply');

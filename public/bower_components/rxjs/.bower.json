@@ -1,0 +1,34 @@
+{
+  "name": "rxjs",
+  "main": "dist/rx.all.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reactive-Extensions/RxJS.git"
+  },
+  "license": "Apache-2.0",
+  "ignore": [
+    ".sh",
+    ".*",
+    "*.bat",
+    "*.md",
+    "*.txt",
+    "*.log",
+    "package.json",
+    "node_modules",
+    "doc",
+    "examples",
+    "src",
+    "tests"
+  ],
+  "homepage": "https://github.com/Reactive-Extensions/RxJS",
+  "version": "4.0.8",
+  "_release": "4.0.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.8",
+    "commit": "7445fa8bffcfad591660a1413e7751ac1bffe1e4"
+  },
+  "_source": "https://github.com/Reactive-Extensions/RxJS.git",
+  "_target": "~4.0.6",
+  "_originalSource": "rxjs"
+}

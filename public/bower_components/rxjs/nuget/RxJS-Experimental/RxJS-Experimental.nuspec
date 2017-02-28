@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>RxJS-Experimental</id>
+    <title>Reactive Extensions for JavaScript - Experimental</title>
+    <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+    <version>$version$</version>
+    <authors>Microsoft Corporation</authors>
+    <description>Reactive Extensions for JavaScript library with experimental operators.</description>
+    <projectUrl>http://rx.codeplex.com</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <language>en-US</language>
+    <tags>Rx RxJS Reactive Extensions Observable</tags>
+    <dependencies>
+      <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+      <dependency id="RxJS-Main" version="$version$" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\dist\rx.experimental.js" target="content\Scripts\rx.experimental.js" />
+    <file src="..\..\dist\rx.experimental.min.js" target="content\Scripts\rx.experimental.min.js" />
+    <file src="..\..\ts\rx.experimental.d.ts" target="content\Scripts\rx.experimental.d.ts" />
+    <file src="..\..\ts\rx.experimental.es6.d.ts" target="content\Scripts\rx.experimental.es6.d.ts" />
+  </files>
+</package>

@@ -1,0 +1,34 @@
+/* Taken from the popular Visual Studio Vibrant Ink Schema */
+
+.cm-s-vibrant-ink.CodeMirror { background: black; color: white; }
+.cm-s-vibrant-ink div.CodeMirror-selected { background: #35493c; }
+.cm-s-vibrant-ink .CodeMirror-line::selection, .cm-s-vibrant-ink .CodeMirror-line > span::selection, .cm-s-vibrant-ink .CodeMirror-line > span > span::selection { background: rgba(53, 73, 60, 0.99); }
+.cm-s-vibrant-ink .CodeMirror-line::-moz-selection, .cm-s-vibrant-ink .CodeMirror-line > span::-moz-selection, .cm-s-vibrant-ink .CodeMirror-line > span > span::-moz-selection { background: rgba(53, 73, 60, 0.99); }
+
+.cm-s-vibrant-ink .CodeMirror-gutters { background: #002240; border-right: 1px solid #aaa; }
+.cm-s-vibrant-ink .CodeMirror-guttermarker { color: white; }
+.cm-s-vibrant-ink .CodeMirror-guttermarker-subtle { color: #d0d0d0; }
+.cm-s-vibrant-ink .CodeMirror-linenumber { color: #d0d0d0; }
+.cm-s-vibrant-ink .CodeMirror-cursor { border-left: 1px solid white; }
+
+.cm-s-vibrant-ink .cm-keyword { color: #CC7832; }
+.cm-s-vibrant-ink .cm-atom { color: #FC0; }
+.cm-s-vibrant-ink .cm-number { color:  #FFEE98; }
+.cm-s-vibrant-ink .cm-def { color: #8DA6CE; }
+.cm-s-vibrant-ink span.cm-variable-2, .cm-s-vibrant span.cm-tag { color: #FFC66D; }
+.cm-s-vibrant-ink span.cm-variable-3, .cm-s-vibrant span.cm-def { color: #FFC66D; }
+.cm-s-vibrant-ink .cm-operator { color: #888; }
+.cm-s-vibrant-ink .cm-comment { color: gray; font-weight: bold; }
+.cm-s-vibrant-ink .cm-string { color:  #A5C25C; }
+.cm-s-vibrant-ink .cm-string-2 { color: red; }
+.cm-s-vibrant-ink .cm-meta { color: #D8FA3C; }
+.cm-s-vibrant-ink .cm-builtin { color: #8DA6CE; }
+.cm-s-vibrant-ink .cm-tag { color: #8DA6CE; }
+.cm-s-vibrant-ink .cm-attribute { color: #8DA6CE; }
+.cm-s-vibrant-ink .cm-header { color: #FF6400; }
+.cm-s-vibrant-ink .cm-hr { color: #AEAEAE; }
+.cm-s-vibrant-ink .cm-link { color: blue; }
+.cm-s-vibrant-ink .cm-error { border-bottom: 1px solid red; }
+
+.cm-s-vibrant-ink .CodeMirror-activeline-background { background: #27282E; }
+.cm-s-vibrant-ink .CodeMirror-matchingbracket { outline:1px solid grey; color:white !important; }

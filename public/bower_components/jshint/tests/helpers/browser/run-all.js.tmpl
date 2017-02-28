@@ -1,0 +1,56 @@
+(function() {
+  "use strict";
+  var nodeunit = require("nodeunit");
+  var callPhantom = window.callPhantom;
+  var tests;
+
+  /**
+   * `window.callPhantom` is used as the control flow communication channel
+   * between the document and the PhantomJS context (where available). Because
+   * of this, it should not be available to other scripts on the page.
+   */
+  window.callPhantom = null;
+
+  /**
+   * Nodeunit's "browser" reporter expects Nodeunit to be available on the
+   * global scope. Expose it in all cases to promote consistency between the
+   * PhantomJS and "true" browser execution contexts.
+   */
+  window.nodeunit = nodeunit;
+
+  tests = {
+    {{ INJECT_TEST_INCLUDES }}
+  };
+
+  function runHeadless() {
+    /**
+     * Source:
+     * https://github.com/caolan/nodeunit/blob/60b7d67250a8005fcca6d71a18697c9bdc6613bd/bin/nodeunit.json
+     */
+    var colors = {
+      error_prefix: "\u001B[31m",
+      error_suffix: "\u001B[39m",
+      ok_prefix: "\u001B[32m",
+      ok_suffix: "\u001B[39m",
+      bold_prefix: "\u001B[1m",
+      bold_suffix: "\u001B[22m",
+      assertion_prefix: "\u001B[35m",
+      assertion_suffix: "\u001B[39m"
+    };
+    nodeunit.reporters.default.run(tests, colors, function(err) {
+      callPhantom(err ? err : null);
+    });
+  }
+
+  function runHeadful() {
+    var reporter = require("nodeunit/lib/reporters/browser");
+
+    reporter.run(tests);
+  }
+
+  if (/PhantomJS/.test(navigator.userAgent)) {
+    runHeadless();
+  } else {
+    runHeadful();
+  }
+}());

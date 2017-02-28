@@ -1,0 +1,22 @@
+{
+  "name": "clipboard",
+  "version": "1.5.16",
+  "description": "Modern copy to clipboard. No Flash. Just 2kb",
+  "license": "MIT",
+  "main": "dist/clipboard.js",
+  "ignore": [
+    "/.*/",
+    "/demo/",
+    "/test/",
+    "/.*",
+    "/bower.json",
+    "/karma.conf.js",
+    "/src",
+    "/lib"
+  ],
+  "keywords": [
+    "clipboard",
+    "copy",
+    "cut"
+  ]
+}

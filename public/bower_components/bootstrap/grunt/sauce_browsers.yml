@@ -1,0 +1,82 @@
+[
+  # Docs: https://saucelabs.com/docs/platforms/webdriver
+
+  {
+    browserName: "safari",
+    platform: "OS X 10.10"
+  },
+  {
+    browserName: "chrome",
+    platform: "OS X 10.10"
+  },
+  {
+    browserName: "firefox",
+    platform: "OS X 10.10"
+  },
+
+  # Mac Opera not currently supported by Sauce Labs
+
+  {
+    browserName: "internet explorer",
+    version: "11",
+    platform: "Windows 8.1"
+  },
+  {
+    browserName: "internet explorer",
+    version: "10",
+    platform: "Windows 8"
+  },
+  {
+    browserName: "internet explorer",
+    version: "9",
+    platform: "Windows 7"
+  },
+  {
+    browserName: "internet explorer",
+    version: "8",
+    platform: "Windows 7"
+  },
+
+  # { # Unofficial
+  #   browserName: "internet explorer",
+  #   version: "7",
+  #   platform: "Windows XP"
+  # },
+
+  {
+    browserName: "chrome",
+    platform: "Windows 8.1"
+  },
+  {
+    browserName: "firefox",
+    platform: "Windows 8.1"
+  },
+
+  # Win Opera 15+ not currently supported by Sauce Labs
+
+  {
+    browserName: "iphone",
+    platform: "OS X 10.10",
+    version: "9.2"
+  },
+
+  # iOS Chrome not currently supported by Sauce Labs
+
+  # Linux (unofficial)
+  {
+    browserName: "chrome",
+    platform: "Linux"
+  },
+  {
+    browserName: "firefox",
+    platform: "Linux"
+  }
+
+  # Android Chrome not currently supported by Sauce Labs
+
+  # { # Android Browser (super-unofficial)
+  #   browserName: "android",
+  #   version: "4.0",
+  #   platform: "Linux"
+  # }
+]

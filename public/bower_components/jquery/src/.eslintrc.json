@@ -1,0 +1,18 @@
+{
+	// Support: IE <=9 only, Android <=4.0 only
+	// The above browsers are failing a lot of tests in the ES5
+	// test suite at http://test262.ecmascript.org.
+	"parserOptions": {
+		"ecmaVersion": 3
+	},
+	"globals": {
+		"window": true,
+		"jQuery": true,
+		"define": true,
+		"module": true,
+		"noGlobal": true
+	},
+	"rules": {
+		"strict": ["error", "function"]
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "moment-timezone",
+  "description" : "Parse and display moments in any timezone.",
+  "license" : "MIT",
+  "main": "builds/moment-timezone-with-data-2010-2020.js",
+  "dependencies" : {
+    "moment" : ">= 2.6.0"
+  },
+  "ignore": [
+    "**/.*",
+    "tests",
+    "tasks",
+    "data/*/20*.json",
+    "contributing.md",
+    "Gruntfile.js",
+    "index.js",
+    "package.json"
+  ]
+}

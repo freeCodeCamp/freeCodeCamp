@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>RxJS-VirtualTime</id>
+    <title>Reactive Extensions for JavaScript - Virtual Time-Based Schedulers</title>
+    <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+    <version>$version$</version>
+    <authors>Microsoft Corporation</authors>
+    <description>Reactive Extensions for JavaScript library with virtual time based schedulers.</description>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkID=179929</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkID=265024</licenseUrl>
+    <language>en-US</language>
+    <tags>Rx RxJS Reactive Extensions Observable</tags>
+    <dependencies>
+      <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+      <dependency id="RxJS-Main" version="$version$" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\dist\rx.virtualtime.js" target="content\Scripts\rx.virtualtime.js" />
+    <file src="..\..\dist\rx.virtualtime.min.js" target="content\Scripts\rx.virtualtime.min.js" />
+    <file src="..\..\ts\rx.virtualtime.d.ts" target="content\Scripts\rx.virtualtime.d.ts" />
+    <file src="..\..\ts\rx.virtualtime.es6.d.ts" target="content\Scripts\rx.virtualtime.es6.d.ts" />
+  </files>
+</package>

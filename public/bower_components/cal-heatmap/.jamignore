@@ -1,0 +1,10 @@
+/build.cal-heatmap.min.js
+/node_modules/
+/.DS_Store
+/src/
+/test/
+/report/
+/coverage/
+/temp/
+/Gruntfile.js
+/karma.conf.js

@@ -1,0 +1,15 @@
+{
+  "name": "cal-heatmap",
+  "version": "3.5.2",
+  "repository": "kamisama/cal-heatmap",
+  "dependencies": {
+    "mbostock/d3": ">= 3.0.6"
+  },
+  "main": "cal-heatmap.js",
+  "scripts": [
+    "cal-heatmap.js"
+  ],
+  "styles": [
+    "cal-heatmap.css"
+  ]
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>RxJS-All</id>
+    <title>Reactive Extensions for JavaScript - All Libraries</title>
+    <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+    <version>$version$</version>
+    <authors>Microsoft Corporation</authors>
+    <description>Reactive Extensions for JavaScript libraries.</description>
+    <projectUrl>http://rx.codeplex.com</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <language>en-US</language>
+    <tags>Rx RxJS Reactive Extensions Observable</tags>
+    <dependencies>
+      <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+      <dependency id="RxJS-Main" version="$version$" />
+      <dependency id="RxJS-Aggregates" version="$version$" />
+      <dependency id="RxJS-Binding" version="$version$" />
+      <dependency id="RxJS-Coincidence" version="$version$" />
+      <dependency id="RxJS-JoinPatterns" version="$version$" />
+      <dependency id="RxJS-Time" version="$version$" />
+      <dependency id="RxJS-Experimental" version="$version$" />
+      <dependency id="RxJS-Testing" version="$version$" />
+      <dependency id="RxJS-VirtualTime" version="$version$" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\dist\rx.all.js" target="content\Scripts\rx.all.js" />
+    <file src="..\..\dist\rx.all.compat.js" target="content\Scripts\rx.all.compat.js" />
+    <file src="..\..\ts\rx.all.d.ts" target="content\Scripts\rx.all.d.ts" />
+    <file src="..\..\ts\rx.all.es6.d.ts" target="content\Scripts\rx.all.es6.d.ts" />
+  </files>
+</package>
