@@ -41,7 +41,6 @@
     "cal-heatmap": "~3.5.2",
     "chai": "~3.4.1",
     "classnames": "^2.1.2",
-    "clipboard": "~1.5.15",
     "codemirror": "~5.15.2",
     "compression": "^1.6.0",
     "connect-mongo": "^1.3.2",
