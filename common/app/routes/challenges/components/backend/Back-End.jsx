@@ -120,7 +120,7 @@ export class BackEnd extends PureComponent {
           mdOffset={ 3 }
           xs={ 12 }
           >
-          <Row>
+          <Row className='challenge-instructions'>
             <h3>{ title }</h3>
             { this.renderDescription(description) }
           </Row>
