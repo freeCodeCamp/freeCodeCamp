@@ -25,7 +25,6 @@ node_modules
 *.iml
 .DS_Store
 Thumbs.db
-bower_components
 main.css
 bundle.js
 coverage
