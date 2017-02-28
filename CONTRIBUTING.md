@@ -213,9 +213,6 @@ congratulations – you're all set. Otherwise, let us know by asking in the [Con
  # Reinstall npm packages
  npm install
 
- # Re-run bower install
- bower install
-
  # Seed the database (optional)
  node seed
 
