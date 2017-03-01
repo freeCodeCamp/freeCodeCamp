@@ -3,6 +3,9 @@
 <!-- Please provide as much detail as possible for us to fix your issue -->
 <!-- Remove any heading sections you did not fill out -->
 
+<!-- NOTE: If your issue is CodePen Project / Test Suite related, please open it using the below URL instead -->
+<!-- https://github.com/freeCodeCamp/testable-projects-fcc/issues/new -->
+
 #### Challenge Name
 <!-- Insert link to challenge below -->
 
