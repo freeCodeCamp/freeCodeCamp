@@ -79,10 +79,7 @@ export class Header extends PureComponent {
       'Hide all challenges';
     return (
       <div>
-        <div
-          className='text-center map-fixed-header'
-          style={{ top: '50px' }}
-          >
+        <div className='text-center'>
           <p>Challenges required for certifications are marked with a *</p>
           <Row className='map-buttons'>
             <Button

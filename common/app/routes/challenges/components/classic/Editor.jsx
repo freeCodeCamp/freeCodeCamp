@@ -1,7 +1,6 @@
 import { Subject } from 'rx';
 import React, { PropTypes } from 'react';
 import { createSelector } from 'reselect';
-import { connect } from 'react-redux';
 
 import Codemirror from 'react-codemirror';
 import NoSSR from 'react-no-ssr';
@@ -10,12 +9,6 @@ import PureComponent from 'react-pure-render/component';
 import MouseTrap from 'mousetrap';
 
 import CodeMirrorSkeleton from '../CodeMirrorSkeleton.jsx';
-
-const mapStateToProps = createSelector(
-  state => state.app.windowHeight,
-  state => state.app.navHeight,
-  (windowHeight, navHeight) => ({ height: windowHeight - navHeight - 50 })
-);
 
 const editorDebounceTimeout = 750;
 
@@ -40,12 +33,11 @@ const defaultProps = {
 const propTypes = {
   content: PropTypes.string,
   executeChallenge: PropTypes.func,
-  height: PropTypes.number,
   mode: PropTypes.string,
   updateFile: PropTypes.func
 };
 
-export class Editor extends PureComponent {
+export default class Editor extends PureComponent {
   constructor(...args) {
     super(...args);
     this._editorContent$ = new Subject();
@@ -125,16 +117,13 @@ export class Editor extends PureComponent {
   }
 
   render() {
-    const { executeChallenge, content, height, mode } = this.props;
-    const style = {};
-    if (height) {
-      style.height = height + 'px';
-    }
+    const {
+      content,
+      executeChallenge,
+      mode
+    } = this.props;
     return (
-      <div
-        className='challenges-editor'
-        style={ style }
-        >
+      <div className='challenges-editor'>
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
             onChange={ this.handleChange }
@@ -151,6 +140,3 @@ export class Editor extends PureComponent {
 Editor.defaultProps = defaultProps;
 Editor.displayName = 'Editor';
 Editor.propTypes = propTypes;
-
-
-export default connect(mapStateToProps)(Editor);

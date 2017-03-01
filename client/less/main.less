@@ -54,26 +54,20 @@ html {
   border-color: @brand-primary;
 }
 
-body.full-screen-body-background {
+.full-screen-body-background {
   background-color: @body-bg;
 }
 
-body.top-and-bottom-margins {
-  padding-top: 80px;
-  margin-bottom: 60px;
-}
-
-body.no-top-and-bottom-margins {
+.no-top-and-bottom-margins {
   margin: 75px 20px 0px 20px;
 }
 
-body.react-layout {
-  margin-top: 75px;
+.main-container {
   margin-bottom: 15px;
-  width: auto;
-  padding-left: 15px;
-  padding-right: 15px;
   min-height: 650px;
+  overflow: hidden;
+  width: 100%;
+  &:extend(.clearfix all);
 }
 
 h1, h2 {

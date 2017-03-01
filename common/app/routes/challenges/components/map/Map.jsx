@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import { compose } from 'redux';
 import { contain } from 'redux-epic';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 import { Col } from 'react-bootstrap';
 
@@ -11,16 +10,10 @@ import SuperBlock from './Super-Block.jsx';
 import { fetchChallenges } from '../../redux/actions';
 import { updateTitle } from '../../../../redux/actions';
 
-const bindableActions = { fetchChallenges, updateTitle };
-const mapStateToProps = createSelector(
-  state => state.app.windowHeight,
-  state => state.app.navHeight,
-  state => state.challengesApp.superBlocks,
-  (windowHeight, navHeight, superBlocks) => ({
-    superBlocks,
-    height: windowHeight - navHeight - 150
-  })
-);
+const mapStateToProps = state => ({
+  superBlocks: state.challengesApp.superBlocks
+});
+const mapDispatchToProps = { fetchChallenges, updateTitle };
 const fetchOptions = {
   fetchAction: 'fetchChallenges',
   isPrimed({ superBlocks }) {
@@ -29,7 +22,6 @@ const fetchOptions = {
 };
 const propTypes = {
   fetchChallenges: PropTypes.func.isRequired,
-  height: PropTypes.number,
   params: PropTypes.object,
   superBlocks: PropTypes.array,
   updateTitle: PropTypes.func.isRequired
@@ -61,17 +53,10 @@ export class ShowMap extends PureComponent {
 
   render() {
     const { superBlocks } = this.props;
-    let height = 'auto';
-    if (!this.props.params) {
-      height = this.props.height + 'px';
-    }
     return (
       <Col xs={ 12 }>
         <MapHeader />
-        <div
-          className='map-accordion center-block'
-          style={{ height: height }}
-          >
+        <div className='map-accordion center-block'>
           { this.renderSuperBlocks(superBlocks) }
           <div className='spacer' />
         </div>
@@ -84,6 +69,6 @@ ShowMap.displayName = 'Map';
 ShowMap.propTypes = propTypes;
 
 export default compose(
-  connect(mapStateToProps, bindableActions),
+  connect(mapStateToProps, mapDispatchToProps),
   contain(fetchOptions)
 )(ShowMap);

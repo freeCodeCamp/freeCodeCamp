@@ -27,8 +27,6 @@ const mapDispatchToProps = {
 };
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.app.windowHeight,
-  state => state.app.navHeight,
   state => state.challengesApp.tests,
   state => state.challengesApp.output,
   state => state.challengesApp.hintIndex,
@@ -42,8 +40,6 @@ const mapStateToProps = createSelector(
       } = {},
       title
     },
-    windowHeight,
-    navHeight,
     tests,
     output,
     hintIndex,
@@ -52,7 +48,6 @@ const mapStateToProps = createSelector(
   ) => ({
     title,
     description,
-    height: windowHeight - navHeight - 20,
     tests,
     output,
     hint: hints[hintIndex],
@@ -63,7 +58,6 @@ const mapStateToProps = createSelector(
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   executeChallenge: PropTypes.func,
-  height: PropTypes.number,
   helpChatRoom: PropTypes.string,
   hint: PropTypes.string,
   isCodeLocked: PropTypes.bool,
@@ -108,7 +102,6 @@ export class SidePanel extends PureComponent {
     const {
       title,
       description,
-      height,
       tests = [],
       output,
       hint,
@@ -120,15 +113,10 @@ export class SidePanel extends PureComponent {
       isCodeLocked,
       unlockUntrustedCode
     } = this.props;
-    const style = {};
-    if (height) {
-      style.height = height + 'px';
-    }
     return (
       <div
         className='challenges-instructions-panel'
         ref='panel'
-        style={ style }
         >
         <div>
           <h4 className='text-center challenge-instructions-title'>

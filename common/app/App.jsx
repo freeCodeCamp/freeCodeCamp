@@ -1,12 +1,10 @@
 import React, { PropTypes } from 'react';
-import { Button, Row } from 'react-bootstrap';
+import { Grid, Button, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import {
   fetchUser,
-  initWindowHeight,
-  updateNavHeight,
   updateAppLang,
   trackEvent,
   loadCurrentChallenge,
@@ -21,15 +19,13 @@ import Toasts from './toasts/Toasts.jsx';
 import { userSelector } from './redux/selectors';
 
 const mapDispatchToProps = {
-  initWindowHeight,
-  updateNavHeight,
+  closeDropdown,
   fetchUser,
-  submitChallenge,
-  updateAppLang,
-  trackEvent,
   loadCurrentChallenge,
   openDropdown,
-  closeDropdown
+  submitChallenge,
+  trackEvent,
+  updateAppLang
 };
 
 const mapStateToProps = createSelector(
@@ -58,7 +54,6 @@ const propTypes = {
   children: PropTypes.node,
   closeDropdown: PropTypes.func.isRequired,
   fetchUser: PropTypes.func,
-  initWindowHeight: PropTypes.func,
   isNavDropdownOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   loadCurrentChallenge: PropTypes.func.isRequired,
@@ -71,7 +66,6 @@ const propTypes = {
   toast: PropTypes.object,
   trackEvent: PropTypes.func.isRequired,
   updateAppLang: PropTypes.func.isRequired,
-  updateNavHeight: PropTypes.func,
   username: PropTypes.string
 };
 
@@ -84,7 +78,6 @@ export class FreeCodeCamp extends React.Component {
   }
 
   componentDidMount() {
-    this.props.initWindowHeight();
     if (!this.props.isSignedIn) {
       this.props.fetchUser();
     }
@@ -110,7 +103,6 @@ export class FreeCodeCamp extends React.Component {
       username,
       points,
       picture,
-      updateNavHeight,
       trackEvent,
       loadCurrentChallenge,
       openDropdown,
@@ -121,7 +113,6 @@ export class FreeCodeCamp extends React.Component {
       username,
       points,
       picture,
-      updateNavHeight,
       trackEvent,
       loadCurrentChallenge,
       openDropdown,
@@ -132,9 +123,11 @@ export class FreeCodeCamp extends React.Component {
     return (
       <div>
         <Nav { ...navProps }/>
-        <Row>
-          { this.props.children }
-        </Row>
+        <Grid fluid={ true }>
+          <Row>
+            { this.props.children }
+          </Row>
+        </Grid>
         <Toasts />
       </div>
     );

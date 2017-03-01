@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
@@ -41,7 +40,6 @@ const propTypes = {
   showLoading: PropTypes.bool,
   signedIn: PropTypes.bool,
   trackEvent: PropTypes.func.isRequired,
-  updateNavHeight: PropTypes.func,
   username: PropTypes.string
 };
 
@@ -53,11 +51,6 @@ export default class FCCNav extends React.Component {
     navLinks.forEach(({ content }) => {
       this[`handle${content}Click`] = handleNavLinkEvent.bind(this, content);
     });
-  }
-
-  componentDidMount() {
-    const navBar = ReactDOM.findDOMNode(this);
-    this.props.updateNavHeight(navBar.clientHeight);
   }
 
   handleMapClickOnMap(e) {
@@ -172,7 +165,7 @@ export default class FCCNav extends React.Component {
     return (
       <Navbar
         className='nav-height'
-        fixedTop={ true }
+        staticTop={ true }
         >
         <Navbar.Header>
           <Navbar.Toggle children={ toggleButtonChild } />
