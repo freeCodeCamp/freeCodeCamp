@@ -969,14 +969,7 @@
       "description": [
         "The <code>font-size</code> property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, you'll set the values for all <code>h1</code> through <code>h6</code> tags to balance the heading sizes.",
         "<hr>",
-        "<ul>",
-        "<li>Set the <code>font-size</code> of the <code>h1</code> tag to 68px.</li>",
-        "<li>Set the <code>font-size</code> of the <code>h2</code> tag to 52px.</li>",
-        "<li>Set the <code>font-size</code> of the <code>h3</code> tag to 40px.</li>",
-        "<li>Set the <code>font-size</code> of the <code>h4</code> tag to 32px.</li>",
-        "<li>Set the <code>font-size</code> of the <code>h5</code> tag to 21px.</li>",
-        "<li>Set the <code>font-size</code> of the <code>h6</code> tag to 14px.</li>",
-        "</ul>"
+        "<ul><li>Set the <code>font-size</code> of the <code>h1</code> tag to 68px.</li><li>Set the <code>font-size</code> of the <code>h2</code> tag to 52px.</li><li>Set the <code>font-size</code> of the <code>h3</code> tag to 40px.</li><li>Set the <code>font-size</code> of the <code>h4</code> tag to 32px.</li><li>Set the <code>font-size</code> of the <code>h5</code> tag to 21px.</li><li>Set the <code>font-size</code> of the <code>h6</code> tag to 14px.</li></ul>"
       ],
       "challengeSeed": [
         "<style>",
@@ -1016,14 +1009,7 @@
         "You set the <code>font-size</code> of each heading tag in the last challenge, here you'll adjust the <code>font-weight</code>.",
         "The <code>font-weight</code> property sets how thick or thin characters are in a section of text.",
         "<hr>",
-        "<ul>",
-        "<li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li>",
-        "<li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li>",
-        "<li>Set the <code>font-weight</code> of the <code>h3</code> tag to 500.</li>",
-        "<li>Set the <code>font-weight</code> of the <code>h4</code> tag to 400.</li>",
-        "<li>Set the <code>font-weight</code> of the <code>h5</code> tag to 300.</li>",
-        "<li>Set the <code>font-weight</code> of the <code>h6</code> tag to 200.</li>",
-        "</ul>"
+        "<ul><li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li><li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li><li>Set the <code>font-weight</code> of the <code>h3</code> tag to 500.</li><li>Set the <code>font-weight</code> of the <code>h4</code> tag to 400.</li><li>Set the <code>font-weight</code> of the <code>h5</code> tag to 300.</li><li>Set the <code>font-weight</code> of the <code>h6</code> tag to 200.</li></ul>"
       ],
       "challengeSeed": [
         "<style>",

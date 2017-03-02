@@ -208,12 +208,7 @@
       "description": [
         "Instead of using <code>em</code> or <code>px</code> to size text, you can use viewport units for responsive typography. Viewport units, like percentages, are relative units, but they are based off different items. Viewport units are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element.",
         "The four different viewport units are:",
-        "<ul>",
-        "<li><code>vw: 10vw</code> would be 10% of the viewport's width.</li>",
-        "<li><code>vh: 3vh</code> would be 3% of the viewport's height.</li>",
-        "<li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension (height vs. width).</li>",
-        "<li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension (height vs. width).</li>",
-        "</ul>",
+        "<ul><li><code>vw: 10vw</code> would be 10% of the viewport's width.</li><li><code>vh: 3vh</code> would be 3% of the viewport's height.</li><li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension (height vs. width).</li><li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension (height vs. width).</li></ul>",
         "<hr>",
         "Set the <code>width</code> of the <code>h2</code> tag to 80% of the viewport's width and the <code>width</code> of the paragraph as 75% of the viewport's smaller dimension."
       ],
@@ -240,12 +235,7 @@
           "description": [
             "Ao invés de utilizar <code>em</code> ou <code>px</code> para alterar o tamanho do texto, você pode usar unidades da janela de exibição para obter tipografia responsiva. Unidades da janela de exibição, assim como porcentagens, são unidades relativas, mas que são baseadas em ítens diferentes. Unidades da janela de exibição são relativas às dimensões da janela de exibição (largura ou altura) de um dispositivo, enquanto que porcentagens são relativas ao tamanho do container do elemento pai.",
             "As quatro unidades da janela de exibição são",
-            "<ul>",
-            "<li><code>vw: 10vw</code> seria 10% da largura da janela de exibição.</li>",
-            "<li><code>vh: 3vh</code> seria 3% da altura da janela de exibição.</li>",
-            "<li><code>vmin: 70vmin</code> seria 70% da menor dimensão da janela de exibição (largura ou altura).</li>",
-            "<li><code>vmax: 100vmax</code> seria 100% da maior dimensão da janela de exibição (largura ou altura).</li>",
-            "</ul>",
+            "<ul><li><code>vw: 10vw</code> seria 10% da largura da janela de exibição.</li><li><code>vh: 3vh</code> seria 3% da altura da janela de exibição.</li><li><code>vmin: 70vmin</code> seria 70% da menor dimensão da janela de exibição (largura ou altura).</li><li><code>vmax: 100vmax</code> seria 100% da maior dimensão da janela de exibição (largura ou altura).</li></ul>",
             "<hr>",
             "Ajuste o <code>width</code> da tag <code>h2</code> para 80% da largura da janela de exibição e a <code>width</code> do parágrafo para 75% da menor dimensão da janela de exibição."
           ]
