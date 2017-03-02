@@ -1158,6 +1158,35 @@
       "translations": {}
     },
     {
+      "id": "587d781d367417b2b2517d0a",
+      "title": "Adjust the Text Format of an Anchor Tag",
+      "description": [
+        "You can adjust the text format of any text in an element using CSS. By default, the links created with the anchor tag are underlined. We can use the <code>text-decoration</code> property to remove the underline on our anchor tag.",
+        "<hr>",
+        "Set the <code>text-decoration</code> property of the anchor tag to <code>none</code>."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  a {",
+        "    color: #000;",
+        "  }",
+        "  ",
+        "  ",
+        "  ",
+        "</style>",
+        "<a href=\"http://freecatphotoapp.com/\" target=\"_blank\">CatPhotoApp</a>"
+      ],
+      "tests": [
+        "assert($('a').css('text-decoration') == 'none', 'message: The text in the anchor tag should not be underlined.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 0,
+      "translations": {}
+    },
+    {
       "id": "587d781d367417b2b2512ac8",
       "title": "Adjust the Hover State of an Anchor Tag",
       "description": [
@@ -1171,6 +1200,7 @@
         "<style>",
         "  a {",
         "    color: #000;",
+        "    text-decoration: none;",
         "  }",
         "  ",
         "  ",
