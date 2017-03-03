@@ -78,7 +78,7 @@
       "description": [
         "Media Queries are a new technique introduced in CSS3 that change the presentation of content based on different viewport sizes. The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.",
         "Media Queries consist of a media type, and if that media type matches the type of device the document is displayed on, the styles are applied. You can have as many selectors and styles inside your media query as you want.",
-        "Here's an example of a media query that returns the content when the device's width is smaller than 100px:",
+        "Here's an example of a media query that returns the content when the device's width is less than or equal to 100px:",
         "<code>@media (max-width: 100px) { /* CSS Rules */ }</code>",
         "Remember, the CSS inside the media query is applied only if the media type matches that of the device being used.",
         "<hr>",
@@ -89,15 +89,16 @@
         "  p {",
         "    font-size: 20px;",
         "  }",
+        "  ",
         "  /* Add media query below */",
         "  ",
         "</style>",
-        "",
+        "  ",
         "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
       ],
       "tests": [
-        "assert($('p').css('font-size') == '10px', 'message: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');",
-        "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare an <code>@media</code> query for devices with <code>heights</code> less than or equal to 800px.');"
+        "assert(code.match(/p\\s*\\{\\s*font-size:\\s*10px;\\s*\\}/g), 'message: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');",
+        "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
