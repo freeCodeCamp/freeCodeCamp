@@ -1553,9 +1553,9 @@
         "<div class=\"raspberry\"></div>"
       ],
       "tests": [
-        "assert(code.match(/.orange\\s*\\{\\s*background-color:\\s*#FF7D00;?\\s*\\}/g), 'message: The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');",
-        "assert(code.match(/.cyan\\s*\\{\\s*background-color:\\s*#00FFFF;?\\s*\\}/g), 'message: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');",
-        "assert(code.match(/.raspberry\\s*\\{\\s*background-color:\\s*#FF007D;?\\s*\\}/g), 'message: The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');"
+        "assert(code.match(/.orange\\s*\\{\\s*background-color:\\s*(#FF7D00|#ff7d00);?\\s*\\}/g), 'message: The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');",
+        "assert(code.match(/.cyan\\s*\\{\\s*background-color:\\s*(#00FFFF|#00ffff);?\\s*\\}/g), 'message: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');",
+        "assert(code.match(/.raspberry\\s*\\{\\s*background-color:\\s*(#FF007D|#ff007d);?\\s*\\}/g), 'message: The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');"
       ],
       "solutions": [],
       "hints": [],
