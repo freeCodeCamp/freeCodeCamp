@@ -696,7 +696,7 @@
         "assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i', 'message: <code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".');",
         "assert.deepEqual(fearNotLetter('stvwx'), 'u', 'message: <code>fearNotLetter(\"stvwx\")</code> should return \"u\".');",
         "assert.deepEqual(fearNotLetter('bcdf'), 'e', 'message: <code>fearNotLetter(\"bcdf\")</code> should return \"e\".');",
-        "assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'), 'message: <code>fearNotLetter(\"abcdefghjklmnopqrstuvwxyz\")</code> should return undefined.');"
+        "assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'), 'message: <code>fearNotLetter(\"abcdefghijklmnopqrstuvwxyz\")</code> should return undefined.');"
       ],
       "type": "bonfire",
       "MDNlinks": [
