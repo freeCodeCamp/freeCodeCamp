@@ -311,7 +311,7 @@
       "id": "bd7155d8c242eddfaeb5bd13",
       "title": "Build a Recipe Box",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/xVXWag/' target='_blank'>https://codepen.io/FreeCodeCamp/full/xVXWag/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/dNVazZ/' target='_blank'>https://codepen.io/freeCodeCamp/full/dNVazZ/</a>.",
         "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can create recipes that have names and ingredients.",
         "<strong>User Story:</strong> I can see an index view where the names of all the recipes are visible.",
@@ -334,7 +334,7 @@
       "challengeType": 3,
       "titleRu": "Создайте хранилище рецептов",
       "descriptionRu": [
-        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a>, функционал которого схож с этим: <a href='https://codepen.io/FreeCodeCamp/full/xVXWag/' target='_blank'>https://codepen.io/FreeCodeCamp/full/xVXWag/</a>.",
+        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a>, функционал которого схож с этим: <a href='https://codepen.io/freeCodeCamp/full/dNVazZ/' target='_blank'>https://codepen.io/freeCodeCamp/full/dNVazZ/</a>.",
         "<strong>Правило #1:</strong> Не подсматривайте код приложения-примера. Напишите его самостоятельно.",
         "<strong>Правило #2:</strong> Приложение должно удовлетворять нижеприведённым <a href='https://ru.wikipedia.org/wiki/Пользовательские_истории' target='_blank'>пользовательским историям</a>. Используйте любые библиотеки или API, которые потребуются. Придайте ему свой личный стиль.",
         "<strong>Правило #3:</strong> Для создания этого проекта вы должны использовать Sass и React.",
@@ -350,7 +350,7 @@
       ],
       "titleEs": "Crea una caja de recetas",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/xVXWag/' target='_blank'>https://codepen.io/FreeCodeCamp/full/xVXWag/</a>.",
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/dNVazZ/' target='_blank'>https://codepen.io/freeCodeCamp/full/dNVazZ/</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
         "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
         "<strong>Rule #3:</strong> Debes utilizar ambos Sass y React para construir este proyecto.",
@@ -369,7 +369,7 @@
       "id": "bd7154d8c242eddfaeb5bd13",
       "title": "Build the Game of Life",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/reGdqx/' target='_blank'>https://codepen.io/FreeCodeCamp/full/reGdqx/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/BpwMZv/' target='_blank'>https://codepen.io/freeCodeCamp/full/BpwMZv/</a>.",
         "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> When I first arrive at the game, it will randomly generate a board and start playing.",
         "<strong>User Story:</strong> I can start and stop the board.",
@@ -393,7 +393,7 @@
       "challengeType": 3,
       "titleRu": "Создайте игру \"Жизнь\"",
       "descriptionRu": [
-        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a>, функционал которого схож с этим: <a href='https://codepen.io/FreeCodeCamp/full/reGdqx/' target='_blank'>https://codepen.io/FreeCodeCamp/full/reGdqx/</a>.",
+        "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a>, функционал которого схож с этим: <a href='https://codepen.io/freeCodeCamp/full/BpwMZv/' target='_blank'>https://codepen.io/freeCodeCamp/full/BpwMZv/</a>.",
         "<strong>Правило #1:</strong> Не подсматривайте код приложения-примера. Напишите его самостоятельно.",
         "<strong>Правило #2:</strong> Приложение должно удовлетворять нижеприведённым <a href='https://ru.wikipedia.org/wiki/Пользовательские_истории' target='_blank'>пользовательским историям</a>. Используйте любые библиотеки или API, которые потребуются. Придайте ему свой личный стиль.",
         "<strong>Правило #3:</strong> Для создания этого проекта вы должны использовать Sass и React.",
@@ -411,7 +411,7 @@
       ],
       "titleEs": "Crea un Juego de la vida",
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/FreeCodeCamp/full/reGdqx/' target='_blank'>https://codepen.io/FreeCodeCamp/full/reGdqx/</a>.",
+        "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/BpwMZv/' target='_blank'>https://codepen.io/freeCodeCamp/full/BpwMZv/</a>.",
         "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
         "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
         "<strong>Rule #3:</strong> Debes utilizar ambos Sass y React para construir este proyecto.",
@@ -432,7 +432,7 @@
       "id": "bd7153d8c242eddfaeb5bd13",
       "title": "Build a Roguelike Dungeon Crawler Game",
       "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/PNJRyd/' target='_blank'>https://codepen.io/freeCodeCamp/full/PNJRyd/</a>.",
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/apLXEJ/' target='_blank'>https://codepen.io/freeCodeCamp/full/apLXEJ/</a>.",
         "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I have health, a level, and a weapon. I can pick up a better weapon. I can pick up health items.",
         "<strong>User Story:</strong> All the items and enemies on the map are arranged at random.",
@@ -459,7 +459,7 @@
         "es": {
           "title": "Crea un juego de dragones al estilo Rogue",
           "description": [
-            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/PNJRyd/' target='_blank'>https://codepen.io/freeCodeCamp/full/PNJRyd/</a>.",
+            "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/apLXEJ/' target='_blank'>https://codepen.io/freeCodeCamp/full/apLXEJ/</a>.",
             "Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o API que sea necesaria. ¡Ponle un toque personal!.",
             "<strong>Historia de usuario:</strong> Tengo energía, nivel de habilidad y un arma. Puedo recoger un arma mejor. Puedo recoger ítems que recuperan mi energía.",
             "<strong>Historia de usuario:</strong> Todos los ítems y los enemigos en el mapa están colocados aleatoriamente.",
@@ -478,7 +478,7 @@
         "ru": {
           "title": "Создайте Roguelike-подобную игру Подземелье",
           "description": [
-            "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a>, функционал которого схож с этим: <a href='https://codepen.io/freeCodeCamp/full/PNJRyd/' target='_blank'>https://codepen.io/freeCodeCamp/full/PNJRyd/</a>.",
+            "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a>, функционал которого схож с этим: <a href='https://codepen.io/freeCodeCamp/full/apLXEJ/' target='_blank'>https://codepen.io/freeCodeCamp/full/apLXEJ/</a>.",
             "Приложение должно удовлетворять нижеприведённым <a href='https://ru.wikipedia.org/wiki/Пользовательские_истории' target='_blank'>пользовательским историям</a>. Используйте любые библиотеки или API, которые потребуются. Придайте ему свой личный стиль.",
             "<strong>Пользовательская история:</strong> У меня есть жизни, уровень и оружие. Я могу подобрать оружие получше. Я могу подобрать очки здоровья.",
             "<strong>Пользовательская история:</strong> Все предметы и враги располагаются на карте случайным образом.",
