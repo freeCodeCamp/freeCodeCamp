@@ -1,0 +1,16 @@
+// should match ./ns.json value and filename
+@ns: app;
+
+.@{ns}-container {
+  .column();
+  height: 100vh;
+  width: 100vw;
+}
+
+.@{ns}-content {
+  .center(@value: @container-xl, @padding: @grid-gutter-width);
+  flex: 1 0 0px;
+}
+
+
+&{ @import "./routes/index.less"; }

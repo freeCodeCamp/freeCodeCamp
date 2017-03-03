@@ -2,10 +2,13 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
-import { createIssue, openIssueSearch, closeBugModal } from '../redux/actions';
+
+import ns from './ns.json';
+
+import { createIssue, openIssueSearch, closeBugModal } from './redux/actions';
 
 const mapStateToProps = state => ({ isOpen: state.challengesApp.isBugOpen });
-const actions = { createIssue, openIssueSearch, closeBugModal };
+const mapDispatchToProps = { createIssue, openIssueSearch, closeBugModal };
 const bugLink = 'http://forum.freecodecamp.com/t/how-to-report-a-bug/19543';
 
 const propTypes = {
@@ -16,7 +19,6 @@ const propTypes = {
 };
 
 export class BugModal extends PureComponent {
-
   render() {
     const {
       isOpen,
@@ -28,7 +30,7 @@ export class BugModal extends PureComponent {
       <Modal
         show={ isOpen }
         >
-        <Modal.Header className='challenge-list-header'>
+        <Modal.Header className={ `${ns}-list-header` }>
           Did you find a bug?
           <span
             className='close closing-x'
@@ -85,4 +87,4 @@ export class BugModal extends PureComponent {
 BugModal.displayName = 'BugModal';
 BugModal.propTypes = propTypes;
 
-export default connect(mapStateToProps, actions)(BugModal);
+export default connect(mapStateToProps, mapDispatchToProps)(BugModal);

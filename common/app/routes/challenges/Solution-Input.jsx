@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { HelpBlock, FormGroup, FormControl } from 'react-bootstrap';
-import { getValidationState, DOMOnlyProps } from '../../../utils/form';
+import { getValidationState, DOMOnlyProps } from '../../utils/form';
 
 const propTypes = {
   placeholder: PropTypes.string,

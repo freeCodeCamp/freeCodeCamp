@@ -5,32 +5,32 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 
-import Classic from './classic/Classic.jsx';
-import Step from './step/Step.jsx';
-import Project from './project/Project.jsx';
-import Video from './video/Video.jsx';
-import BackEnd from './backend/Back-End.jsx';
+import Classic from './views/classic';
+import Step from './views/step';
+import Project from './views/project';
+import Video from './views/video';
+import BackEnd from './views/backend';
 
 import {
   fetchChallenge,
   fetchChallenges,
   replaceChallenge,
   resetUi
-} from '../redux/actions';
-import { challengeSelector } from '../redux/selectors';
-import { updateTitle } from '../../../redux/actions';
-import { makeToast } from '../../../toasts/redux/actions';
+} from './redux/actions';
+import { challengeSelector } from './redux/selectors';
+import { updateTitle } from '../../redux/actions';
+import { makeToast } from '../../toasts/redux/actions';
 
 const views = {
-  step: Step,
+  backend: BackEnd,
   classic: Classic,
   project: Project,
   simple: Project,
-  video: Video,
-  backend: BackEnd
+  step: Step,
+  video: Video
 };
 
-const bindableActions = {
+const mapDispatchToProps = {
   fetchChallenge,
   fetchChallenges,
   makeToast,
@@ -78,21 +78,21 @@ const link = 'http://forum.freecodecamp.com/t/' +
    '-to-any-language/19111';
 
 const propTypes = {
-   areChallengesLoaded: PropTypes.bool,
-   fetchChallenges: PropTypes.func.isRequired,
-   isStep: PropTypes.bool,
-   isTranslated: PropTypes.bool,
-   lang: PropTypes.string.isRequired,
-   makeToast: PropTypes.func.isRequired,
-   params: PropTypes.object.isRequired,
-   replaceChallenge: PropTypes.func.isRequired,
-   resetUi: PropTypes.func.isRequired,
-   title: PropTypes.string,
-   updateTitle: PropTypes.func.isRequired,
-   viewType: PropTypes.string
+  areChallengesLoaded: PropTypes.bool,
+  fetchChallenges: PropTypes.func.isRequired,
+  isStep: PropTypes.bool,
+  isTranslated: PropTypes.bool,
+  lang: PropTypes.string.isRequired,
+  makeToast: PropTypes.func.isRequired,
+  params: PropTypes.object.isRequired,
+  replaceChallenge: PropTypes.func.isRequired,
+  resetUi: PropTypes.func.isRequired,
+  title: PropTypes.string,
+  updateTitle: PropTypes.func.isRequired,
+  viewType: PropTypes.string
  };
 
-export class Challenges extends PureComponent {
+export class Show extends PureComponent {
 
   componentWillMount() {
     const { lang, isTranslated, makeToast } = this.props;
@@ -137,25 +137,17 @@ export class Challenges extends PureComponent {
     }
   }
 
-  renderView(viewType) {
+  render() {
+    const { viewType } = this.props;
     const View = views[viewType] || Classic;
     return <View />;
   }
-
-  render() {
-    const { viewType } = this.props;
-    return (
-      <div>
-        { this.renderView(viewType) }
-      </div>
-    );
-  }
 }
 
-Challenges.displayName = 'Challenges';
-Challenges.propTypes = propTypes;
+Show.displayName = 'Show(ChallengeView)';
+Show.propTypes = propTypes;
 
 export default compose(
-  connect(mapStateToProps, bindableActions),
+  connect(mapStateToProps, mapDispatchToProps),
   contain(fetchOptions)
-)(Challenges);
+)(Show);

@@ -5,8 +5,10 @@ import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
 import { Col, Row } from 'react-bootstrap';
 
-import TestSuite from '../Test-Suite.jsx';
-import Output from '../Output.jsx';
+import ns from './ns.json';
+
+import TestSuite from '../../Test-Suite.jsx';
+import Output from '../../Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import { challengeSelector } from '../../redux/selectors';
 import {
@@ -115,17 +117,17 @@ export class SidePanel extends PureComponent {
     } = this.props;
     return (
       <div
-        className='challenges-instructions-panel'
+        className={ `${ns}-instructions-panel` }
         ref='panel'
         >
         <div>
-          <h4 className='text-center challenge-instructions-title'>
+          <h4 className={ `text-center ${ns}-instructions-title` }>
             { title || 'Happy Coding!' }
           </h4>
           <hr />
           <Row>
             <Col
-              className='challenge-instructions'
+              className={ `${ns}-instructions` }
               xs={ 12 }
               >
               { this.renderDescription(description) }

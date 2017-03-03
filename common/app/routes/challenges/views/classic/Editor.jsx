@@ -5,10 +5,10 @@ import { createSelector } from 'reselect';
 import Codemirror from 'react-codemirror';
 import NoSSR from 'react-no-ssr';
 import PureComponent from 'react-pure-render/component';
-
 import MouseTrap from 'mousetrap';
 
-import CodeMirrorSkeleton from '../CodeMirrorSkeleton.jsx';
+import ns from './ns.json';
+import CodeMirrorSkeleton from '../../Code-Mirror-Skeleton.jsx';
 
 const editorDebounceTimeout = 750;
 
@@ -123,7 +123,7 @@ export default class Editor extends PureComponent {
       mode
     } = this.props;
     return (
-      <div className='challenges-editor'>
+      <div className={ `${ns}-editor` }>
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
             onChange={ this.handleChange }

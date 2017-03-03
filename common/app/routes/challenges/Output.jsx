@@ -2,14 +2,15 @@ import React, { PureComponent, PropTypes } from 'react';
 import NoSSR from 'react-no-ssr';
 import Codemirror from 'react-codemirror';
 
-import CodeMirrorSkeleton from './CodeMirrorSkeleton.jsx';
+import ns from './ns.json';
+import CodeMirrorSkeleton from './Code-Mirror-Skeleton.jsx';
 
 const defaultOptions = {
   lineNumbers: false,
+  lineWrapping: true,
   mode: 'javascript',
-  theme: 'monokai',
   readOnly: 'nocursor',
-  lineWrapping: true
+  theme: 'monokai'
 };
 
 const propTypes = {
@@ -21,7 +22,7 @@ export default class Output extends PureComponent {
   render() {
     const { output, defaultOutput } = this.props;
     return (
-      <div className='challenge-log'>
+      <div className={ `${ns}-log` }>
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ output } /> }>
           <Codemirror
             options={ defaultOptions }

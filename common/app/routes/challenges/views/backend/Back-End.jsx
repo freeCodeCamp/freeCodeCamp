@@ -7,9 +7,9 @@ import {
   Row
 } from 'react-bootstrap';
 
-import SolutionInput from '../Solution-Input.jsx';
-import TestSuite from '../Test-Suite.jsx';
-import Output from '../Output.jsx';
+import SolutionInput from '../../Solution-Input.jsx';
+import TestSuite from '../../Test-Suite.jsx';
+import Output from '../../Output.jsx';
 import { submitChallenge, executeChallenge } from '../../redux/actions.js';
 import { challengeSelector } from '../../redux/selectors.js';
 import { descriptionRegex } from '../../utils.js';

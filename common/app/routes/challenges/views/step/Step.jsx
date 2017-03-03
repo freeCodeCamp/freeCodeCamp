@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 import LightBox from 'react-images';
 
+import ns from './ns.json';
 import {
   closeLightBoxImage,
   completeAction,
@@ -180,10 +181,7 @@ export class StepChallenge extends PureComponent {
     }
     const [imgUrl, imgAlt, info, action] = step;
     return (
-      <div
-        className=''
-        key={ imgUrl }
-        >
+      <div key={ imgUrl }>
         <a
           href={ imgUrl }
           onClick={ this.handleLightBoxOpen }
@@ -206,17 +204,17 @@ export class StepChallenge extends PureComponent {
             xs={ 12 }
             >
             <p
-              className='challenge-step-description'
+              className={ `${ns}-description` }
               dangerouslySetInnerHTML={{ __html: info }}
             />
           </Col>
         </Row>
         <div className='spacer' />
-        <div className='challenge-button-block'>
+        <div className={ `${ns}-button-block` }>
           { this.renderActionButton(action, completeAction) }
           { this.renderBackButton(currentIndex, stepBackward) }
           <Col
-            className='challenge-step-counter large-p text-center'
+            className={ `${ns}-counter large-p text-center` }
             sm={ 4 }
             xs={ 12 }
             >

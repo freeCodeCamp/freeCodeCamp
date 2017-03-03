@@ -2,6 +2,8 @@ import React, { PropTypes, PureComponent } from 'react';
 import classnames from 'classnames';
 import { Col, Row } from 'react-bootstrap';
 
+import ns from './ns.json';
+
 const propTypes = {
   tests: PropTypes.arrayOf(PropTypes.object)
 };
@@ -41,7 +43,7 @@ export default class TestSuite extends PureComponent {
     const { tests } = this.props;
     return (
       <div
-        className='challenge-test-suite'
+        className={ `${ns}-test-suite` }
         style={{ marginTop: '10px' }}
         >
         { this.renderTests(tests) }

@@ -5,6 +5,7 @@ import { Grid, Col, Row } from 'react-bootstrap';
 const propTypes = {
   content: PropTypes.string
 };
+
 export default class CodeMirrorSkeleton extends PureComponent {
 
   renderLine(line, i) {

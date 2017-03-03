@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
-import { Grid, Button, Row } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
+import ns from './ns.json';
 import {
   fetchUser,
   updateAppLang,
@@ -110,24 +111,24 @@ export class FreeCodeCamp extends React.Component {
       isNavDropdownOpen
     } = this.props;
     const navProps = {
-      username,
-      points,
-      picture,
-      trackEvent,
+      closeDropdown,
+      isNavDropdownOpen,
       loadCurrentChallenge,
       openDropdown,
-      closeDropdown,
-      isNavDropdownOpen
+      picture,
+      points,
+      trackEvent,
+      username
     };
 
     return (
-      <div>
+      <div className={ `${ns}-container` }>
         <Nav { ...navProps }/>
-        <Grid fluid={ true }>
+        <div className={ `${ns}-content` }>
           <Row>
             { this.props.children }
           </Row>
-        </Grid>
+        </div>
         <Toasts />
       </div>
     );

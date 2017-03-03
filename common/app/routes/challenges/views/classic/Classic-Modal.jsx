@@ -3,6 +3,8 @@ import { Button, Modal } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 import FontAwesome from 'react-fontawesome';
 
+import ns from './ns.json';
+
 const propTypes = {
   close: PropTypes.func,
   open: PropTypes.bool.isRequired,
@@ -22,10 +24,10 @@ export default class ClassicModal extends PureComponent {
       e.keyCode === 13 &&
       (e.ctrlKey || e.meta) &&
       open
-      ) {
-        e.preventDefault();
-        submitChallenge();
-      }
+    ) {
+      e.preventDefault();
+      submitChallenge();
+    }
   }
 
   render() {
@@ -38,14 +40,14 @@ export default class ClassicModal extends PureComponent {
     return (
       <Modal
         animation={ false }
-        dialogClassName='challenge-success-modal'
+        dialogClassName={ `${ns}-success-modal` }
         keyboard={ true }
         onHide={ close }
         onKeyDown={ this.handleKeyDown }
         show={ open }
         >
         <Modal.Header
-          className='challenge-list-header'
+          className={ `${ns}-list-header` }
           closeButton={ true }
           >
           <Modal.Title>{ successMessage }</Modal.Title>

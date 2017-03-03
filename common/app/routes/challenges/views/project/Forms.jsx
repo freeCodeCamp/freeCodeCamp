@@ -6,7 +6,7 @@ import {
   FormControl
 } from 'react-bootstrap';
 
-import SolutionInput from '../Solution-Input.jsx';
+import SolutionInput from '../../Solution-Input.jsx';
 import {
   isValidURL,
   makeRequired,
