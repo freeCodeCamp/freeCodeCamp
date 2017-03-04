@@ -73,3 +73,45 @@
 
   .padding-mixin(@padding);
 }
+
+.between(@min; @max; @rules) {
+  // BS logic to do string building with conditions
+  .condition-wrapper(@new) {
+    .redefine-condition() {
+      @condition: @new;
+    }
+  }
+  .init-condition() {
+    .condition-wrapper('only screen');
+  }
+  .init-condition();
+  .add-min-media(@min) when (iskeyword(@min)) {
+    .redefine-condition();
+    .condition-wrapper(%('%s and (min-width: @{screen-%s})', @condition, @min));
+  }
+
+  .add-max-media(@max) when (iskeyword(@max)) {
+    .redefine-condition();
+    .condition-wrapper(%('%s and (max-width: @{screen-%s})', @condition, @max));
+  }
+  .add-min-media(@min);
+  .add-max-media(@max);
+
+  .add-query() {
+    .redefine-condition();
+    @query: e(@condition);
+    @media @query {
+      @rules();
+    }
+  }
+
+  .add-query();
+}
+
+.below(@max, @rules) {
+  .between(@empty; @max; @rules);
+}
+
+.above(@min, @rules) {
+  .between(@min; @empty; @rules);
+}

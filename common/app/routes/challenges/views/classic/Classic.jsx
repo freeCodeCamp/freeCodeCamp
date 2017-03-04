@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 
@@ -116,7 +116,7 @@ export class Challenge extends PureComponent {
     } = this.props;
 
     return (
-      <div id='foo'>
+      <Row>
         <Col
           lg={ showPreview ? 3 : 4 }
           md={ showPreview ? 3 : 4 }
@@ -142,7 +142,7 @@ export class Challenge extends PureComponent {
           submitChallenge={ submitChallenge }
           successMessage={ successMessage }
         />
-      </div>
+      </Row>
     );
   }
 }

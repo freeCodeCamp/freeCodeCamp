@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Button, Row } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -125,9 +125,7 @@ export class FreeCodeCamp extends React.Component {
       <div className={ `${ns}-container` }>
         <Nav { ...navProps }/>
         <div className={ `${ns}-content` }>
-          <Row>
-            { this.props.children }
-          </Row>
+          { this.props.children }
         </div>
         <Toasts />
       </div>
