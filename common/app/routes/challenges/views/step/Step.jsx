@@ -258,23 +258,25 @@ export class StepChallenge extends PureComponent {
       closeLightBoxImage
     } = this.props;
     return (
-      <Col
-        md={ 8 }
-        mdOffset={ 2 }
-        >
-        { this.renderStep(this.props) }
-        <div className='hidden'>
-          { this.renderImages(steps) }
-        </div>
-        <LightBox
-          backdropClosesModal={ true }
-          images={ [ { src: step[0] } ] }
-          isOpen={ isLightBoxOpen }
-          onClose={ closeLightBoxImage }
-          showImageCount={ false }
-        />
-        <div className='spacer' />
-      </Col>
+      <Row>
+        <Col
+          md={ 8 }
+          mdOffset={ 2 }
+          >
+          { this.renderStep(this.props) }
+          <div className='hidden'>
+            { this.renderImages(steps) }
+          </div>
+          <LightBox
+            backdropClosesModal={ true }
+            images={ [ { src: step[0] } ] }
+            isOpen={ isLightBoxOpen }
+            onClose={ closeLightBoxImage }
+            showImageCount={ false }
+          />
+          <div className='spacer' />
+        </Col>
+      </Row>
     );
   }
 }

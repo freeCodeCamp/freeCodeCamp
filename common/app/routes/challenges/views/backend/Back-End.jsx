@@ -14,9 +14,9 @@ import { submitChallenge, executeChallenge } from '../../redux/actions.js';
 import { challengeSelector } from '../../redux/selectors.js';
 import { descriptionRegex } from '../../utils.js';
 import {
+  createFormValidator,
   isValidURL,
-  makeRequired,
-  createFormValidator
+  makeRequired
 } from '../../../../utils/form.js';
 
 // provided by redux form
@@ -114,7 +114,7 @@ export class BackEnd extends PureComponent {
       'Submit and go to my next challenge' :
       "I've completed this challenge";
     return (
-      <div>
+      <Row>
         <Col
           md={ 6 }
           mdOffset={ 3 }
@@ -158,7 +158,7 @@ export class BackEnd extends PureComponent {
             <TestSuite tests={ tests } />
           </Row>
         </Col>
-      </div>
+      </Row>
     );
   }
 }

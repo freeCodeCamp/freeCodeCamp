@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Youtube from 'react-youtube';
 import PureComponent from 'react-pure-render/component';
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
@@ -47,7 +47,7 @@ export class Project extends PureComponent {
       description
     } = this.props;
     return (
-      <div>
+      <Row>
         <Col md={ 4 }>
           <SidePanel
             description={ description }
@@ -71,7 +71,7 @@ export class Project extends PureComponent {
           <br />
           <BugModal />
         </Col>
-      </div>
+      </Row>
     );
   }
 }

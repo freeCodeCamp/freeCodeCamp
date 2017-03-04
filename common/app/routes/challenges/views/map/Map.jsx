@@ -3,7 +3,7 @@ import { compose } from 'redux';
 import { contain } from 'redux-epic';
 import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 import MapHeader from './Header.jsx';
 import SuperBlock from './Super-Block.jsx';
@@ -54,13 +54,15 @@ export class ShowMap extends PureComponent {
   render() {
     const { superBlocks } = this.props;
     return (
-      <Col xs={ 12 }>
-        <MapHeader />
-        <div className='map-accordion center-block'>
-          { this.renderSuperBlocks(superBlocks) }
-          <div className='spacer' />
-        </div>
-      </Col>
+      <Row>
+        <Col xs={ 12 }>
+          <MapHeader />
+          <div className='map-accordion center-block'>
+            { this.renderSuperBlocks(superBlocks) }
+            <div className='spacer' />
+          </div>
+        </Col>
+      </Row>
     );
   }
 }
