@@ -1,5 +1,6 @@
 import analyticsSaga from './analytics-saga.js';
 import codeStorageSaga from './code-storage-saga.js';
+import challengeSeedChangedSaga from './challenge-seed-changed-saga';
 import errSaga from './err-saga.js';
 import executeChallengeSaga from './build-challenge-epic.js';
 import frameEpic from './frame-epic.js';
@@ -11,6 +12,7 @@ import windowSaga from './window-saga.js';
 
 export default [
   analyticsSaga,
+  challengeSeedChangedSaga,
   codeStorageSaga,
   errSaga,
   executeChallengeSaga,

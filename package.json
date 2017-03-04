@@ -155,6 +155,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-reduce-file": "0.0.1",
     "gulp-rev": "^7.0.0",
+    "gulp-shell": "^0.5.2",
     "gulp-sourcemaps": "^2.2.1",
     "gulp-tape": "0.0.9",
     "gulp-uglify": "^2.0.0",
@@ -176,6 +177,7 @@
     "webpack-hot-middleware": "^2.12.2",
     "webpack-manifest-plugin": "^1.0.0",
     "webpack-stream": "^3.1.0",
+    "ws": "^2.0.3",
     "yargs": "^6.1.1"
   },
   "snyk": true

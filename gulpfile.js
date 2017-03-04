@@ -21,6 +21,8 @@ var Rx = require('rx'),
   babel = require('gulp-babel'),
   sourcemaps = require('gulp-sourcemaps'),
   gulpif = require('gulp-if'),
+  shell = require('gulp-shell'),
+  WebSocket = require('ws'),
 
   // react app
   webpack = require('webpack'),
@@ -215,6 +217,7 @@ gulp.task('dev-server', syncDepenedents, function() {
     },
     proxy: {
       target: `http://localhost:${port}`,
+      ws: true,
       reqHeaders: ({ url: { hostname } }) => ({
         host: `${hostname}:${syncPort}`
       })
@@ -421,17 +424,51 @@ var watchDependents = [
   'dev-server'
 ];
 
+gulp.task('shell-command', shell.task(['node seed']));
+
+var wss;
+var clients = [];
+
+gulp.task('open-sockets', function() {
+  wss = new WebSocket.Server({
+    port: 4000,
+    perMessageDeflate: false,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'X-Requested-With'
+    }
+  });
+  wss.on('connection', function(client) {
+    client.on('message', function(msg) {
+      gutil.log(gutil.colors.green('New client ' + msg));
+      clients = clients.concat([client]);
+    });
+  });
+  gutil.log(gutil.colors.green('sockets open'));
+});
+
+gulp.task('seed-changed', [ 'shell-command' ], function() {
+  clients.map(client => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send('seedChanged');
+    }
+  });
+  gutil.log(gutil.colors.green('seedChanged broadcasted to all clients'));
+});
+
 gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.lessFiles, ['less']);
   gulp.watch(paths.js.concat(paths.vendorChallenges), ['js']);
   gulp.watch(paths.js, ['js']);
+  gulp.watch('./seed/challenges/**/*.json', ['seed-changed']);
 });
 
 gulp.task('default', [
   'less',
   'serve',
   'watch',
-  'dev-server'
+  'dev-server',
+  'open-sockets'
 ]);
 
 gulp.task('test', function() {
