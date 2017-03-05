@@ -57,10 +57,10 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 1, 2016",
-      "challengeType": 4,
+      "challengeType": 7,
       "translations": {
         "es": {
           "title": "Microservicio de Marca Temporal",
@@ -85,10 +85,10 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 1, 2016",
-      "challengeType": 4,
+      "challengeType": 7,
       "translations": {
         "es": {
           "title": "Microservicio para analizar el encabezado de una petición",
@@ -121,10 +121,10 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 1, 2016",
-      "challengeType": 4,
+      "challengeType": 7,
       "translations": {
         "es": {
           "title": "Microservicio para acortar URLs",
@@ -165,10 +165,10 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "February 17, 2017",
-      "challengeType": 4,
+      "challengeType": 7,
       "translations": {
         "es": {
           "title": "Capa de abstracción para buscar imágenes",
@@ -197,10 +197,10 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 1, 2016",
-      "challengeType": 4,
+      "challengeType": 7,
       "translations": {
         "es": {
           "title": "Microservicio de metadatos de archivos",
