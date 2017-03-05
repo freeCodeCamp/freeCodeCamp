@@ -72,6 +72,7 @@ export default function nextChallengeSaga(actions$, getState) {
             push('/map')
           );
         }
+        console.log(nextChallenge);
         return Observable.of(
           updateCurrentChallenge(nextChallenge),
           resetUi(),

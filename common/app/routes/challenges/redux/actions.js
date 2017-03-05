@@ -11,6 +11,8 @@ export const goToStep = createAction(
   types.goToStep,
   (step, isUnlocked) => ({ step, isUnlocked })
 );
+export const bindStepKeys = createAction(types.bindStepKeys);
+export const unbindStepKeys = createAction(types.unbindStepKeys);
 export const completeAction = createAction(types.completeAction);
 export const updateUnlockedSteps = createAction(types.updateUnlockedSteps);
 export const openLightBoxImage = createAction(types.openLightBoxImage);
