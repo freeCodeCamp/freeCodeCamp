@@ -1,0 +1,43 @@
+/*
+ICEcoder default theme by Matt Pass, used in code editor available at https://icecoder.net
+*/
+
+.cm-s-icecoder { color: #666; background: #1d1d1b; }
+
+.cm-s-icecoder span.cm-keyword { color: #eee; font-weight:bold; }  /* off-white 1 */
+.cm-s-icecoder span.cm-atom { color: #e1c76e; }                    /* yellow */
+.cm-s-icecoder span.cm-number { color: #6cb5d9; }                  /* blue */
+.cm-s-icecoder span.cm-def { color: #b9ca4a; }                     /* green */
+
+.cm-s-icecoder span.cm-variable { color: #6cb5d9; }                /* blue */
+.cm-s-icecoder span.cm-variable-2 { color: #cc1e5c; }              /* pink */
+.cm-s-icecoder span.cm-variable-3 { color: #f9602c; }              /* orange */
+
+.cm-s-icecoder span.cm-property { color: #eee; }                   /* off-white 1 */
+.cm-s-icecoder span.cm-operator { color: #9179bb; }                /* purple */
+.cm-s-icecoder span.cm-comment { color: #97a3aa; }                 /* grey-blue */
+
+.cm-s-icecoder span.cm-string { color: #b9ca4a; }                  /* green */
+.cm-s-icecoder span.cm-string-2 { color: #6cb5d9; }                /* blue */
+
+.cm-s-icecoder span.cm-meta { color: #555; }                       /* grey */
+
+.cm-s-icecoder span.cm-qualifier { color: #555; }                  /* grey */
+.cm-s-icecoder span.cm-builtin { color: #214e7b; }                 /* bright blue */
+.cm-s-icecoder span.cm-bracket { color: #cc7; }                    /* grey-yellow */
+
+.cm-s-icecoder span.cm-tag { color: #e8e8e8; }                     /* off-white 2 */
+.cm-s-icecoder span.cm-attribute { color: #099; }                  /* teal */
+
+.cm-s-icecoder span.cm-header { color: #6a0d6a; }                  /* purple-pink */
+.cm-s-icecoder span.cm-quote { color: #186718; }                   /* dark green */
+.cm-s-icecoder span.cm-hr { color: #888; }                         /* mid-grey */
+.cm-s-icecoder span.cm-link { color: #e1c76e; }                    /* yellow */
+.cm-s-icecoder span.cm-error { color: #d00; }                      /* red */
+
+.cm-s-icecoder .CodeMirror-cursor { border-left: 1px solid white; }
+.cm-s-icecoder div.CodeMirror-selected { color: #fff; background: #037; }
+.cm-s-icecoder .CodeMirror-gutters { background: #1d1d1b; min-width: 41px; border-right: 0; }
+.cm-s-icecoder .CodeMirror-linenumber { color: #555; cursor: default; }
+.cm-s-icecoder .CodeMirror-matchingbracket { color: #fff !important; background: #555 !important; }
+.cm-s-icecoder .CodeMirror-activeline-background { background: #000; }

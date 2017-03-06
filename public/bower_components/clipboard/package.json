@@ -1,0 +1,48 @@
+{
+  "name": "clipboard",
+  "version": "1.5.16",
+  "description": "Modern copy to clipboard. No Flash. Just 2kb",
+  "repository": "zenorocha/clipboard.js",
+  "license": "MIT",
+  "main": "lib/clipboard.js",
+  "keywords": [
+    "clipboard",
+    "copy",
+    "cut"
+  ],
+  "dependencies": {
+    "good-listener": "^1.2.0",
+    "select": "^1.0.6",
+    "tiny-emitter": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-plugin-transform-es2015-modules-umd": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "bannerify": "Vekat/bannerify#feature-option",
+    "browserify": "^13.0.0",
+    "chai": "^3.4.1",
+    "install": "^0.8.1",
+    "karma": "^1.3.0",
+    "karma-browserify": "^5.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.2.0",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sinon": "^1.0.4",
+    "mocha": "^3.1.2",
+    "phantomjs-prebuilt": "^2.1.4",
+    "sinon": "^1.17.2",
+    "uglify-js": "^2.4.24",
+    "watchify": "^3.4.0"
+  },
+  "scripts": {
+    "build": "npm run build-debug && npm run build-min",
+    "build-debug": "browserify src/clipboard.js -s Clipboard -t [babelify] -p [bannerify --file .banner ] -o dist/clipboard.js",
+    "build-min": "uglifyjs dist/clipboard.js --comments '/!/' -m screw_ie8=true -c screw_ie8=true,unused=false -o dist/clipboard.min.js",
+    "build-watch": "watchify src/clipboard.js -s Clipboard -t [babelify] -o dist/clipboard.js -v",
+    "test": "karma start --single-run",
+    "prepublish": "babel src --out-dir lib"
+  }
+}

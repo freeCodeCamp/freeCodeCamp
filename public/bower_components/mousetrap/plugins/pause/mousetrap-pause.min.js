@@ -1,0 +1,1 @@
+(function(a){var b=a.prototype.stopCallback;a.prototype.stopCallback=function(a,c,d){return this.paused?!0:b.call(this,a,c,d)};a.prototype.pause=function(){this.paused=!0};a.prototype.unpause=function(){this.paused=!1};a.init()})(Mousetrap);

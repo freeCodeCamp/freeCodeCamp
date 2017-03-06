@@ -1,0 +1,2 @@
+JSON.somthing();
+myglobal.somthing();

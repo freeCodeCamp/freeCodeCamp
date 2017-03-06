@@ -1,0 +1,40 @@
+{
+  "name": "lightbox2",
+  "version": "2.8.2",
+  "author": "Lokesh Dhakar <lokesh.dhakar@gmail.com>",
+  "description": "The original Lightbox script. Uses jQuery.",
+  "keywords": [
+    "lightbox",
+    "lightbox2",
+    "overlay",
+    "gallery",
+    "slideshow",
+    "images"
+  ],
+  "homepage": "http://lokeshdhakar.com/projects/lightbox2/",
+  "main": "./dist/js/lightbox.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lokesh/lightbox2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lokesh/lightbox2/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/lokesh/lightbox2/master/LICENSE"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-jscs": "^1.8.0"
+  }
+}

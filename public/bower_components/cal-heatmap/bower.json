@@ -1,0 +1,33 @@
+{
+  "name": "cal-heatmap",
+  "description": "Cal-Heatmap is a javascript module to create calendar heatmap to visualize time series data",
+  "keywords": [
+    "calendar",
+    "graph",
+    "d3js",
+    "heat map"
+  ],
+  "version": "3.5.3",
+  "main": ["./cal-heatmap.js", "./cal-heatmap.css"],
+  "dependencies": {
+    "d3": ">= v3.0.6"
+  },
+  "location": "https://github.com/kamisama/cal-heatmap",
+  "licence": "MIT",
+  "ignore": [
+    "test/",
+    "src/",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "package.json"
+  ],
+  "author": {
+    "name": "Wan Qi Chen",
+    "url": "http://www.kamisama.me"
+  },
+  "homepage": "https://github.com/kamisama/cal-heatmap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamisama/cal-heatmap.git"
+  }
+}

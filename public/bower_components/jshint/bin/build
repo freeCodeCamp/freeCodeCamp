@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+/*jshint shelljs:true */
+
+"use strict";
+
+var path       = require("path");
+var build      = require("../scripts/build");
+require("shelljs/make");
+
+var distDir    = path.join(__dirname, "../dist");
+
+if (!test("-e", distDir))
+  mkdir(distDir);
+
+build("web", function(err, version, src) {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+
+  src.to(distDir + "/jshint.js");
+  console.log("Built: " + version + " (web)");
+});
+
+build("rhino", function(err, version, src) {
+  var dest;
+
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+
+  dest  = distDir + "/jshint-rhino.js";
+  chmod("+x", dest);
+
+  src.to(dest);
+  console.log("Built: " + version + " (Rhino)");
+});

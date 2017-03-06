@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log
+
+# TextMate 2 properties file.
+.tm_properties
+
+# File with my local one-off experiments.
+demo.js
+
+.idea
+
+coverage/

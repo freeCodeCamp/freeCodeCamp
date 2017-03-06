@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>bootstrap.less</id>
+    <version>3.3.7</version>
+    <title>Bootstrap Less</title>
+    <authors>Twitter, Inc.</authors>
+    <owners>bootstrap</owners>
+    <description>The most popular front-end framework for developing responsive, mobile first projects on the web.</description>
+    <releaseNotes>http://blog.getbootstrap.com</releaseNotes>
+    <summary>Bootstrap framework in Less. Includes fonts and JavaScript</summary>
+    <language>en-us</language>
+    <projectUrl>http://getbootstrap.com</projectUrl>
+    <iconUrl>http://getbootstrap.com/apple-touch-icon.png</iconUrl>
+    <licenseUrl>https://github.com/twbs/bootstrap/blob/master/LICENSE</licenseUrl>
+    <copyright>Copyright 2016</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="jQuery" version="[1.9.1,4)" />
+    </dependencies>
+    <tags>css js less mobile-first responsive front-end framework web</tags>
+  </metadata>
+  <files>
+    <file src="less\**\*.less" target="content\Content\bootstrap" />
+    <file src="fonts\*.*" target="content\Content\fonts" />
+    <file src="dist\js\bootstrap*.js" target="content\Scripts" />
+  </files>
+</package>

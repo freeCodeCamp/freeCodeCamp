@@ -1,0 +1,34 @@
+{
+	"camelcase": true,
+	"curly":	 true,
+	"eqeqeq":	 true,
+	"forin": 	 true,
+	"immed":	 true,
+	"indent":	 4,
+	"newcap": 	 true,
+	"noarg":	 true,
+	"noempty":	 true,
+	"nonew":	 true,
+	"quotmark":	 "double",
+	"undef":	 true,
+	"unused": 	 true,
+	"strict":    true,
+	"trailing":	 true,
+	"maxparams": 6,
+	"maxdepth":  3,
+	"maxstatements": 40,
+	"maxcomplexity": 18,
+
+	"boss":	 true,
+
+	"browser":	 true,
+	"devel":	 true,
+	"jquery":	 true,
+	"phantom":	 true,
+	"node":		 true,
+
+	"globals" : {
+		"d3": true,
+		"define": true
+	}
+}

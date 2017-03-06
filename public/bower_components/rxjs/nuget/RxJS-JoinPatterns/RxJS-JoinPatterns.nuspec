@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>RxJS-JoinPatterns</id>
+    <title>Reactive Extensions for JavaScript - Join Patterns</title>
+    <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+    <version>$version$</version>
+    <authors>Microsoft Corporation</authors>
+    <description>Reactive Extensions for JavaScript library with join patterns event processing query operations.</description>
+    <projectUrl>http://rx.codeplex.com</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <language>en-US</language>
+    <tags>Rx RxJS Reactive Extensions Observable</tags>
+    <dependencies>
+      <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+      <dependency id="RxJS-Main" version="$version$" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\dist\rx.joinpatterns.js" target="content\Scripts\rx.joinpatterns.js" />
+    <file src="..\..\dist\rx.joinpatterns.min.js" target="content\Scripts\rx.joinpatterns.min.js" />
+    <file src="..\..\ts\rx.joinpatterns.d.ts" target="content\Scripts\rx.joinpatterns.d.ts" />
+    <file src="..\..\ts\rx.joinpatterns.es6.d.ts" target="content\Scripts\rx.joinpatterns.es6.d.ts" />
+  </files>
+</package>

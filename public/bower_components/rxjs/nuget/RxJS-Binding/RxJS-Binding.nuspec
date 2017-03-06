@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>RxJS-Binding</id>
+    <title>Reactive Extensions for JavaScript - Binding</title>
+    <version>$version$</version>
+    <authors>Microsoft Corporation</authors>
+    <description>Reactive Extensions for JavaScript library with binding operationrs.</description>
+    <projectUrl>http://rx.codeplex.com</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <language>en-US</language>
+    <tags>Rx RxJS Reactive Extensions Observable</tags>
+    <dependencies>
+      <dependency id="RxJS-Main" version="$version$" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\dist\rx.binding.js" target="content\Scripts\rx.binding.js" />
+    <file src="..\..\dist\rx.binding.min.js" target="content\Scripts\rx.binding.min.js" />
+    <file src="..\..\ts\rx.binding.d.ts" target="content\Scripts\rx.binding.d.ts" />
+    <file src="..\..\ts\rx.binding.es6.d.ts" target="content\Scripts\rx.binding.es6.d.ts" />
+  </files>
+</package>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>RxJS-Coincidence</id>
+    <title>Reactive Extensions for JavaScript - Coincidence</title>
+    <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+    <version>$version$</version>
+    <authors>Microsoft Corporation</authors>
+    <description>Reactive Extensions for JavaScript library with reactive coincidence join event processing query operations.</description>
+    <projectUrl>http://rx.codeplex.com</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <language>en-US</language>
+    <tags>Rx RxJS Reactive Extensions Observable</tags>
+    <dependencies>
+      <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+      <dependency id="RxJS-Main" version="$version$" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\dist\rx.coincidence.js" target="content\Scripts\rx.coincidence.js" />
+    <file src="..\..\dist\rx.coincidence.min.js" target="content\Scripts\rx.coincidence.min.js" />
+    <file src="..\..\ts\rx.coincidence.d.ts" target="content\Scripts\rx.coincidence.d.ts" />
+    <file src="..\..\ts\rx.coincidence.es6.d.ts" target="content\Scripts\rx.coincidence.es6.d.ts" />
+  </files>
+</package>

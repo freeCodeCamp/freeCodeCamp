@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>RxJS-BackPressure</id>
+    <title>Reactive Extensions for JavaScript - BackPressure-Based Operations</title>
+    <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+    <version>$version$</version>
+    <authors>Microsoft Corporation</authors>
+    <description>Reactive Extensions for JavaScript library with async-based event processing query operations.</description>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkID=179929</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkID=265024</licenseUrl>
+    <language>en-US</language>
+    <tags>Rx RxJS Reactive Extensions Observable</tags>
+    <dependencies>
+      <!-- Automatically updated by build, keeping fixed dev build number here in case of local build -->
+      <dependency id="RxJS-Main" version="$version$" />
+      <dependency id="RxJS-Lite" version="$version$" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\dist\rx.backpressure.js" target="content\Scripts\rx.backpressure.js" />
+    <file src="..\..\dist\rx.backpressure.min.js" target="content\Scripts\rx.backpressure.min.js" />
+    <file src="..\..\ts\rx.backpressure.d.ts" target="content\Scripts\rx.backpressure.d.ts" />
+    <file src="..\..\ts\rx.backpressure.es6.d.ts" target="content\Scripts\rx.backpressure.es6.d.ts" />
+  </files>
+</package>

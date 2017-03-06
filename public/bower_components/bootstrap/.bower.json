@@ -1,0 +1,44 @@
+{
+  "name": "bootstrap",
+  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "homepage": "http://getbootstrap.com",
+  "license": "MIT",
+  "moduleType": "globals",
+  "main": [
+    "less/bootstrap.less",
+    "dist/js/bootstrap.js"
+  ],
+  "ignore": [
+    "/.*",
+    "_config.yml",
+    "CNAME",
+    "composer.json",
+    "CONTRIBUTING.md",
+    "docs",
+    "js/tests",
+    "test-infra"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1 - 3"
+  },
+  "version": "3.3.7",
+  "_release": "3.3.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.3.7",
+    "commit": "0b9c4a4007c44201dce9a6cc1a38407005c26c86"
+  },
+  "_source": "https://github.com/twbs/bootstrap.git",
+  "_target": "~3.3.4",
+  "_originalSource": "bootstrap"
+}

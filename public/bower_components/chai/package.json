@@ -1,0 +1,51 @@
+{
+  "author": "Jake Luer <jake@alogicalparadox.com>",
+  "name": "chai",
+  "description": "BDD/TDD assertion library for node.js and the browser. Test framework agnostic.",
+  "keywords": [
+    "test",
+    "assertion",
+    "assert",
+    "testing",
+    "chai"
+  ],
+  "homepage": "http://chaijs.com",
+  "license": "MIT",
+  "contributors": [
+    "Jake Luer <jake@alogicalparadox.com>",
+    "Domenic Denicola <domenic@domenicdenicola.com> (http://domenicdenicola.com)",
+    "Veselin Todorov <hi@vesln.com>",
+    "John Firebaugh <john.firebaugh@gmail.com>"
+  ],
+  "version": "3.4.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaijs/chai"
+  },
+  "bugs": {
+    "url": "https://github.com/chaijs/chai/issues"
+  },
+  "main": "./index",
+  "scripts": {
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "dependencies": {
+    "assertion-error": "^1.0.1",
+    "deep-eql": "^0.1.3",
+    "type-detect": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "bump-cli": "^1.1.3",
+    "karma": "^0.12.0",
+    "karma-mocha": "^0.1.10",
+    "karma-sauce-launcher": "^0.2.11",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "mocha": "^2.2.5",
+    "istanbul": "^0.3.14"
+  }
+}

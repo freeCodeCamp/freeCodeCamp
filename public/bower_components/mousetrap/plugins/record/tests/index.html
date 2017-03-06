@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Jelly</title>
+        <meta charset=utf-8>
+        <link href="jelly.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>Jelly</h1>
+
+        <h2>For testing the <strong>record</strong> extension</h2>
+
+        <p>Click "Record" to test recording a sequence.</p>
+        <button class="test-record">Record</button>
+        <div class="test-record-result"></div>
+
+        <script type="text/javascript" src="../../../tests/libs/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="../../../mousetrap.js"></script>
+        <script type="text/javascript" src="../mousetrap-record.js"></script>
+        <script type="text/javascript" src="jelly.js"></script>
+
+        <script type="text/javascript">
+            Jelly.spread();
+        </script>
+    </body>
+
+</html>

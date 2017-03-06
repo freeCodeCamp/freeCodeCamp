@@ -1,0 +1,6 @@
+/*jshint undef:false*/
+foo();
+
+
+
+
