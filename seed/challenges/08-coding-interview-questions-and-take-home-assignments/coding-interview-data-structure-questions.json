@@ -917,11 +917,11 @@
       "id": "587d8251367417b2b2512c61",
       "title": "Work with Nodes in a Linked List",
       "description": [
-        "Another common data structure is the linked list. In a linked list, elements are stored in a node. The node contains two key pieces of information: the element itself, and a reference to the next node.",
-        "Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line, they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.",
+        "Another common data structure you'll run into in computer science is the <dfn>linked list</dfn>. A linked list is a linear collection of data elements, called 'nodes', each of which points to the next. Each <dfn>node</dfn> in a linked list contains two key pieces of information: the <code>element</code> itself, and a reference to the next <code>node</code>.",
+        "Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line: they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.",
         "<hr>",
-        "In the code, we've create two nodes, Kitten and Puppy, and we've manually connected the Kitten node to the Puppy node.",
-        "Create a Cat and Dog node and manually add them to the line."
+        "In our code editor, we've created two nodes, <code>Kitten</code> and <code>Puppy</code>, and we've manually connected the <code>Kitten</code> node to the <code>Puppy</code> node.",
+        "Create a <code>Cat</code> and <code>Dog</code> node and manually add them to the line."
       ],
       "challengeSeed": [
         "var Node = function(element){",
@@ -952,13 +952,14 @@
       "id": "587d8251367417b2b2512c62",
       "title": "Create a Linked List Class",
       "description": [
-        "Let's create a linked list class. Every linked list has a head and length. The head is the first node added to the linked list. The length is the size of the linked list. When an element is added to the linked list, the length should increment by one.",
-        "The first method of a linked list is the add method. When an element is added to a linked list, a new node is created. If is it the first node created, it is assigned to the head of the linked list. If it is not the first node, the previous node should reference the new created node.",
-        "Instructions",
-        "Write an add method that assigns head to the first node push to the linked list, and after that, every node should be referenced by the previous node.",
-        "We've added a head and size helper method.",
+        "Let's create a <code>linked list</code> class. Every linked list should start out with a few basic properties: a <code>head</code> (the first item in your list) and a <code>length</code> (number of items in your list). Sometimes you'll see implementations of linked lists that incorporate a <code>tail</code> for the last element of the list, but for now we'll just stick with these two. Whenever we add an element to the linked list, our <code>length</code> property should be incremented by one.",
+        "We'll want to have a way to add items to our linked list, so the first method we'll want to create is the <code>add</code> method.",
+        "If our list is empty, adding an element to our linked list is straightforward enough: we just wrap that element in a <code>Node</code> class, and we assign that node to the <code>head</code> of our linked list." ,
+        "But what if our list already has one or more members? How do we add an element to the list? Recall that each node in a linked list has a <code>next</code> property. To add a node to the list, find the last node in the list, and point that last node's <code>next</code> property at our new node. (Hint: you know you've reached the end of a linked list when a node's <code>next</code> property is <code>null</node>.)",
+        "<hr>",
+        "Write an add method that assigns the first node you push to the linked list to the <code>head</code>; after that, whenever adding a node, every node should be referenced by the previous node's <code>next</code> property.",
         "Note",
-        "Length should increase by one every time an element is pushed to the linked list."
+        "Your list's <code>length</code> should increase by one every time an element is added to the linked list."
       ],
       "challengeSeed": [
         "function LinkedList() { ",
@@ -1002,13 +1003,14 @@
       "id": "587d8251367417b2b2512c63",
       "title": "Remove Elements from a Linked List",
       "description": [
-        "The next important method of a linked list is the remove method. The remove method takes an element and searches the linked list to find and remove the node containing that element. When a node is removed, the previous node that had reference to removed node, now has reference to the node that the removed node once referenced.",
-        "This might sound really confusing, but let's return to the conga line example. You're in conga line, and the person straight ahead of you leaves the line. The person leaving the line, no longer has his hands on any one in line and you no longer have hands on the person that left. You step forward and put your hands on next person you see.",
-        "If the element being removed is the head element, the head is reassigned to the second node of the linked list.",
-        "Instructions",
-        "Write a remove method that takes an element and removes it from the linked list.",
+        "The next important method that any implementation of a linked list will need is a <code>remove</code> method. This method should take the element we want to remove as an argument, and then search the list to find and remove the node that contains that element.",
+        "Whenever we remove a node from a linked list, it's important that we don't accidentally orphan the rest of the list in doing so. Recall that every node's <code>next</code> property points to the node that follows it in the list. If we're removing the middle element, say, we'll want to make sure that we have a connection from that element's previous node's <code>next</code> property to the middle element's <code>next</code> property (which is the next node in the list!)",
+        "This might sound really confusing, so let's return to the conga line example so we have a good conceptual model. Picture yourself in a conga line, and the person directly in front of you leaves the line. The person who just left the line no longer has her hands on anyone in line--and you no longer have your hands on the person that left. You step forward and put your hands on next person you see.",
+        "If the element we wish to remove is the <code>head</code> element, we reassign the <code>head</code> to the second node of the linked list.",
+        "<hr>",
+        "Write a <code>remove</code> method that takes an element and removes it from the linked list.",
         "Note",
-        "Length should decrease by one every time an element is removed from the linked list."
+        "The <code>length</code> of the list should decrease by one every time an element is removed from the linked list."
       ],
       "challengeSeed": [
         "function LinkedList() { ",
@@ -1071,10 +1073,11 @@
       "id": "587d8251367417b2b2512c64",
       "title": "Search within a Linked List",
       "description": [
-        "Let's add a few more useful methods to our linked list class. Like the stack and queue classes, we should add an isEmpty method to check if the linked list is empty.",
-        "We also want to find elements in our linked list. Let's create a indexOf method that takes an element and returns the indexs of it in the linked list. The method should return -1 if the element is not found in the linked list. We also need an elementAt method that takes an index and returns the element at the given index. The method should return undefined if no element is found.",
-        "Instructions",
-        "Write isEmpty method that checks if the linked list is empty, a size method that returns the length of the linked list, a indexOf method that returns the index of a given element, and an elementAt that returns an element at a given index."
+        "Let's add a few more useful methods to our linked list class. Wouldn't it be useful if we could tell if our list was empty or not, as with our <code>Stack</code> and <code>Queue</code> classes?",
+        "We should also be able to find specific elements in our linked list. Traversing through data structures is something you'll want to get a lot of practice with! Let's create an <code>indexOf</code> method that takes an <code>element</code> as an argument, and returns that element's <code>index</code> in the linked list. If the element is not found in the linked list, return <code>-1</code>.",
+        "Let's also implement a method that does the opposite: an <code>elementAt</code> method that takes an <code>index</code> as an argument and returns the <code>element</code> at the given <code>index</code>. If no <code>element</code> is found, return <code>undefined</code>.",
+        "<hr>",
+        "Write an <code>isEmpty</code> method that checks if the linked list is empty, an <code>indexOf</code> method that returns the <code>index</code> of a given element, and an <code>elementAt</code> that returns an <code>element</code> at a given <code>index."
       ],
       "challengeSeed": [
         "function LinkedList() { ",
@@ -1151,11 +1154,14 @@
       "id": "587d8251367417b2b2512c65",
       "title": "Remove Elements from a Linked List by Index",
       "description": [
-        "Now we need to create a remove method that removes the element at a given index. The method should be called removeAt(index). To remove an element at a certain index we need to keep count of each node as we move along the linked list. Starting at the head of the linked list, our currentIndex should be 0. The currentIndex should increment by one for each node we pass. Just like the remove(element) method, we need to reconnect the nodes. The node that has reference to the removed node should now have reference to the next node.",
-        "Instructions",
-        "Write a removeAt(index) method that removes and returns a node at a given index. The method should return null if the given index is a negative or is more than or equal to the length of the linked list.",
+        "Before we move on to another data structure, let's get a couple of last bits of practice with linked lists.",
+        "Let's write a <code>removeAt</code> method that removes the <code>element</code> at a given <code>index</code>. The method should be called <code>removeAt(index)</code>. To remove an <code>element</code> at a certain <code>index</code>, we'll need to keep a running count of each node as we move along the linked list.",
+        "A common technique used to iterate through the elements of a linked list involves a <dfn>'runner'</dfn>, or sentinel, that 'points' at the nodes that your code is comparing. In our case, starting at the <code>head</code> of our list, we start with a <code>currentIndex</code> variable that starts at <code>0</code>. The <code>currentIndex</code> should increment by one for each node we pass.",
+        "Just like our <code>remove(element)</code> method, we need to be careful not to orphan the rest of our list when we remove the node in our removeAt(index) method. We keep our nodes contiguous by making sure that the node that has reference to the removed node has a reference to the next node.",
+        "<hr>",
+        "Write a <code>removeAt(index)</code> method that removes and returns a node at a given <code>index</code>. The method should return <code>null</code> if the given <code>index</code> is either negative, or greater than or equal to the <code>length</code> of the linked list.",
         "Note",
-        "Remember to keep count of the currentIndex."
+        "Remember to keep count of the <code>currentIndex</code>."
       ],
       "challengeSeed": [
         "function LinkedList() { ",
