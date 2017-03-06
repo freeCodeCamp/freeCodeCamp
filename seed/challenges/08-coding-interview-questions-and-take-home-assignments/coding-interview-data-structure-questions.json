@@ -138,7 +138,7 @@
         "assert((function(){var test = new Queue();  return (typeof test.dequeue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>dequeue</code> method.');",
         "assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>front</code> method.');",
         "assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>size</code> method.');",
-        "assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>isEmpty</code> method.');",
+        "assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have an <code>isEmpty</code> method.');",
         "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.dequeue() === 'Smith')}()), 'message: The <code>dequeue</code> method should remove and return the front element of the queue');",
         "assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()), 'message: The <code>front</code> method should return value of the front element of the queue');",
         "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()), 'message: The <code>size</code> method should return the length of the queue');",
@@ -155,19 +155,19 @@
       "id": "587d8255367417b2b2512c74",
       "title": "Create a Priority Queue Class",
       "description": [
-        "In this challenge you will be creating a Priority Queue. A Priority Queue is a special type of Queue with one primary difference, that you can set the priority in the queue as either high represented by 0 or low represented by an integer greater than 0 during the enqueue process. Item priority will override the placement order: that is, an item enqueue with a higher priority than any preceding items will be moved to the front of the queue. If items have equal priority, then placement order will decide their dequeue order. For instance:",
-        "collection = [['taco',1]]",
-        "PriorityQueue.enqueue(['kitten', 1]);",
-        "console.log([...PriorityQueue])",
-        "// would be [['taco', 1], ['kitten', 1]]",
-        "// not [['kitten', 1], ['taco', 1]]",
-        "For this challenge, you will create an object called PriorityQueue. You will need to add an enqueue method for adding items with a priority, a dequeue method for popping off the front item, a size method to return the number of items in the queue, and finally an isEmpty method that will return true or false if the queue is empty."
+        "In this challenge you will be creating a Priority Queue. A Priority Queue is a special type of Queue in which items may have additional information which specifies their priority. This could be simply represented with an integer. Item priority will override placement order in determining the sequence items are dequeued. If an item with a higher priority is enqueued after items with lower priority, the higher priority item will be dequeued before all the others.",
+        "For instance, let’s imagine we have a priority queue with three items:",
+        "<code>[[’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>",
+        "Here the second value (an integer) represents item priority. If we enqueue <code>[‘human’, 1]</code> with a priority of <code>1</code> (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would like this:",
+        "<code>[[‘human’, 1], [’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>.",
+        "We’ve starting writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing items, a <code>size</code> method to return the number of items in the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> or <code>false</code> if the queue is empty.",
+        "The <code>enqueue</code> should accept items with the format shown above (<code>['human', 1]</code>) where <code>1</code> represents the priority. The <code>dequeue</code> should return only the current item, not its priority."
       ],
       "challengeSeed": [
         "function PriorityQueue () {",
         "    this.collection = [];",
         "    this.printCollection = function() {",
-        "      (console.log(this.collection));",
+        "      console.log(this.collection);",
         "    };",
         "    // Only change code below this line",
         "",
@@ -177,17 +177,17 @@
       "tests": [
         "assert((function(){var test = new PriorityQueue();  return (typeof test.enqueue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>enqueue</code> method.');",
         "assert((function(){var test = new PriorityQueue();  return (typeof test.dequeue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>dequeue</code> method.');",
-        "assert((function(){var test = new PriorityQueue();  return (typeof test.front === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>front</code> method.');",
         "assert((function(){var test = new PriorityQueue();  return (typeof test.size === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>size</code> method.');",
-        "assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>isEmpty</code> method.');",
-        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]);test.enqueue(['Jon Snow', 1]); return (test.size()===2)}()), 'message: Your code did not correctly add the incoming items.');",
-        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]);test.enqueue(['Jon Snow', 1]);test.dequeue(); return (test.size()===1)}()), 'message: Your code did not correctly dequeue 1 item.');",
-        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]);test.enqueue(['Jon Snow', 1]);test.dequeue();test.dequeue(); return (test.isEmpty()===true)}()), 'message: Your code is not correctly reporting that the queue is empty.');",
-        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 1]);test.enqueue(['Jon Snow', 1]); return (test.dequeue() === 'David Brown' && test.dequeue() === 'Jon Snow')}()), 'message: Your code did not correctly prioritize the incoming items. If 2 items have the same priority the older item remains infront of new items');"
+        "assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have an <code>isEmpty</code> method.');",
+        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]); test.enqueue(['Jon Snow', 1]); var size1 = test.size(); test.dequeue(); var size2 = test.size(); test.enqueue(['A', 3]); test.enqueue(['B', 3]); test.enqueue(['C', 3]); return (size1 === 2 && size2 === 1 && test.size() === 4)}()), 'message: Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.');",
+        "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 1]); test.enqueue(['B', 1]); test.dequeue(); var first = test.isEmpty(); test.dequeue(); return (!first && test.isEmpty()); }()), 'message: The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.');",
+        "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 5]); test.enqueue(['B', 5]); test.enqueue(['C', 5]); test.enqueue(['D', 3]); test.enqueue(['E', 1]); test.enqueue(['F', 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join('') === 'EDABCF';}()), 'message: The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function PriorityQueue () { \n this.collection = []; \n this.printCollection = function(){ \n console.log(this.collection); \n }; \n this.size = function() { \n return this.collection.length; \n }; \n this.isEmpty = function() { \n return this.size() > 0 ? false : true; \n }; \n this.enqueue = function(newItem) { \n if (this.isEmpty()) { \n this.collection.push(newItem) \n } else { \n let inserted = false; \n var updated = this.collection.reduce((newCollection, item, index, current) => { \n if (newItem[1] < item[1] && !inserted) { \n newCollection.push(newItem); \n inserted = true; \n } \n newCollection.push(item); \n if (newItem[1] === item[1] && index < current.length - 1 && newItem[1] !== current[index + 1][1] && !inserted) { \n newCollection.push(newItem); \n inserted = true; \n } \n return newCollection; \n }, []); \n if (!inserted) { \n updated.push(newItem); \n } \n this.collection = updated; \n }; \n }; \n this.dequeue = function() { \n if (!this.isEmpty()) { \n return this.collection.shift()[0]; \n } else { \n return 'The queue is empty.' \n } \n }; \n }"
+      ],
       "challengeType": 1,
       "translations": {}
     },
