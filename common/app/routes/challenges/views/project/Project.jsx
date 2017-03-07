@@ -59,13 +59,10 @@ export class Project extends PureComponent {
           md={ 8 }
           xs={ 12 }
           >
-          <div className='embed-responsive embed-responsive-16by9'>
-            <Youtube
-              className='embed-responsive-item'
-              id={ id }
-              videoId={ videoId }
-            />
-          </div>
+          <Youtube
+            id={ id }
+            videoId={ videoId }
+          />
           <br />
           <ToolPanel />
           <br />

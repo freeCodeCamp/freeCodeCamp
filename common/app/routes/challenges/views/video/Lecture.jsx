@@ -70,15 +70,12 @@ export class Lecture extends React.Component {
     return (
       <Col xs={ 12 }>
         <Row>
-          <div className='embed-responsive embed-responsive-16by9'>
-            <Youtube
-              className='embed-responsive-item'
-              id={ id }
-              onError={ this.handleError }
-              opts={ embedOpts }
-              videoId={ videoId }
-            />
-          </div>
+          <Youtube
+            id={ id }
+            onError={ this.handleError }
+            opts={ embedOpts }
+            videoId={ videoId }
+          />
         </Row>
         <Row>
           <Col

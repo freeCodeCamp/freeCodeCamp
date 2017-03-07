@@ -1,6 +1,5 @@
-import React, { PropTypes } from 'react';
-
-import PureComponent from 'react-pure-render/component';
+import React, { PropTypes, PureComponent } from 'react';
+import ChallengeTitle from '../../Challenge-Title.jsx';
 
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
@@ -10,18 +9,6 @@ const propTypes = {
 };
 
 export default class SidePanel extends PureComponent {
-  renderIcon(isCompleted) {
-    if (!isCompleted) {
-      return null;
-    }
-    return (
-      <i
-        className='ion-checkmark-circled text-primary'
-        title='Completed'
-      />
-    );
-  }
-
   renderDescription(title = '', description = []) {
     return description.map((line, index) => (
       <li
@@ -36,11 +23,9 @@ export default class SidePanel extends PureComponent {
     const { title, description, isCompleted } = this.props;
     return (
       <div>
-        <h4 className='text-center challenge-instructions-title'>
+        <ChallengeTitle isCompleted={ isCompleted }>
           { title }
-          { this.renderIcon(isCompleted) }
-        </h4>
-        <hr />
+        </ChallengeTitle>
         <ul>
           { this.renderDescription(title, description) }
         </ul>

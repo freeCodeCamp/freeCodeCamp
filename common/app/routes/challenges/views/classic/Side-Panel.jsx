@@ -7,6 +7,7 @@ import { Col, Row } from 'react-bootstrap';
 
 import ns from './ns.json';
 
+import ChallengeTitle from '../../Challenge-Title.jsx';
 import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
@@ -121,10 +122,9 @@ export class SidePanel extends PureComponent {
         ref='panel'
         >
         <div>
-          <h4 className={ `text-center ${ns}-instructions-title` }>
-            { title || 'Happy Coding!' }
-          </h4>
-          <hr />
+          <ChallengeTitle>
+            { title }
+          </ChallengeTitle>
           <Row>
             <Col
               className={ `${ns}-instructions` }

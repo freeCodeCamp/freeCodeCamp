@@ -7,6 +7,7 @@ import {
   Row
 } from 'react-bootstrap';
 
+import ChallengeTitle from '../../Challenge-Title.jsx';
 import SolutionInput from '../../Solution-Input.jsx';
 import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
@@ -121,7 +122,7 @@ export class BackEnd extends PureComponent {
           xs={ 12 }
           >
           <Row className='challenge-instructions'>
-            <h3>{ title }</h3>
+            <ChallengeTitle>{ title }</ChallengeTitle>
             { this.renderDescription(description) }
           </Row>
           <Row>
