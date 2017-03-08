@@ -1,8 +1,9 @@
 // enable debug for gulp
+/* eslint-disable prefer-object-spread/prefer-object-spread */
 process.env.DEBUG = process.env.DEBUG || 'fcc:*';
 
 require('babel-core/register');
-var Rx = require('rx'),
+const Rx = require('rx'),
   gulp = require('gulp'),
   path = require('path'),
   debug = require('debug')('fcc:gulp'),
@@ -49,18 +50,26 @@ var Rx = require('rx'),
   tapSpec = require('tap-spec');
 
 Rx.config.longStackSupport = true;
-var sync = browserSync.create('fcc-sync-server');
+const sync = browserSync.create('fcc-sync-server');
+
+function resolve(filepath, thisString, withThisString) {
+  const newPath = require.resolve(filepath);
+  if (thisString && withThisString) {
+    return newPath.replace(thisString, withThisString);
+  }
+  return newPath;
+}
 
 // user definable
-var __DEV__ = !yargs.argv.p;
-var port = yargs.argv.port || process.env.PORT || '3001';
-var syncPort = yargs.argv['sync-port'] || process.env.SYNC_PORT || '3000';
+const __DEV__ = !yargs.argv.p;
+const port = yargs.argv.port || process.env.PORT || '3001';
+const syncPort = yargs.argv['sync-port'] || process.env.SYNC_PORT || '3000';
 // make sure sync ui port does not interfere with proxy port
-var syncUIPort = yargs.argv['sync-ui-port'] ||
+const syncUIPort = yargs.argv['sync-ui-port'] ||
   process.env.SYNC_UI_PORT ||
   parseInt(syncPort, 10) + 2;
 
-var paths = {
+const paths = {
   server: './server/server.js',
   serverIgnore: [
     'gulpfile.js',
@@ -87,32 +96,36 @@ var paths = {
   },
 
   vendorChallenges: [
-    require.resolve('jshint').replace('src', 'dist'),
-    require.resolve('chai').replace('index.js', 'chai.js'),
-    require.resolve('codemirror'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'addon/comment/comment.js'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'addon/edit/closebrackets.js'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'addon/edit/matchbrackets.js'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'addon/lint/lint.js'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'addon/lint/javascript-lint.js'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'mode/javascript/javascript.js'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'mode/xml/xml.js'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'mode/css/css.js'),
-    require.resolve('codemirror').replace('lib/codemirror.js', 'mode/htmlmixed/htmlmixed.js'),
-    require.resolve('emmet-codemirror'),
+    resolve('jshint', 'src', 'dist'),
+    resolve('chai', 'index.js', 'chai.js'),
+    resolve('codemirror'),
+    resolve('codemirror', 'lib/codemirror.js', 'addon/comment/comment.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'addon/edit/closebrackets.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'addon/edit/matchbrackets.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'addon/lint/lint.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'addon/lint/javascript-lint.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'mode/javascript/javascript.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'mode/xml/xml.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'mode/css/css.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'mode/htmlmixed/htmlmixed.js'),
+    resolve('emmet-codemirror'),
     'public/js/lib/loop-protect/loop-protect.js'
   ],
 
   vendorMain: [
-    require.resolve('jquery').replace('.js', '.min.js'),
-    require.resolve('bootstrap').replace('npm.js', 'bootstrap.min.js'),
-    require.resolve('d3').replace('.js', '.min.js'),
-    require.resolve('cal-heatmap'),
-    require.resolve('moment').replace('.js', '.min.js'),
-    require.resolve('moment-timezone').replace('index.js', 'builds/moment-timezone-with-data.min.js'),
-    require.resolve('mousetrap').replace('.js', '.min.js'),
-    require.resolve('lightbox2').replace('.js', '.min.js'),
-    require.resolve('rx').replace('index.js', 'dist/rx.all.min.js')
+    resolve('jquery', '.js', '.min.js'),
+    resolve('bootstrap', 'npm.js', 'bootstrap.min.js'),
+    resolve('d3', '.js', '.min.js'),
+    resolve('cal-heatmap'),
+    resolve('moment', '.js', '.min.js'),
+    resolve(
+      'moment-timezone',
+      'index.js',
+      'builds/moment-timezone-with-data.min.js'
+    ),
+    resolve('mousetrap', '.js', '.min.js'),
+    resolve('lightbox2', '.js', '.min.js'),
+    resolve('rx', 'index.js', 'dist/rx.all.min.js')
   ],
 
   js: [
@@ -143,19 +156,18 @@ var paths = {
   ]
 };
 
-var webpackOptions = {
+const webpackOptions = {
   devtool: 'inline-source-map'
 };
 
-function errorHandler() {
-  var args = Array.prototype.slice.call(arguments);
+const errorNotifier = notify.onError({
+  title: 'Compile Error',
+  message: '<%= error %>'
+});
 
+function errorHandler(...args) {
   // Send error to notification center with gulp-notify
-  notify.onError({
-    title: 'Compile Error',
-    message: '<%= error %>'
-  }).apply(this, args);
-
+  errorNotifier.apply(this, args);
   // Keep gulp from hanging on this task
   this.emit('end');
 }
@@ -172,7 +184,7 @@ function delRev(dest, manifestName) {
 }
 
 gulp.task('serve', function(cb) {
-  var called = false;
+  const called = false;
   nodemon({
     script: paths.server,
     ext: '.jsx .js .json',
@@ -197,7 +209,7 @@ gulp.task('serve', function(cb) {
     });
 });
 
-var syncDepenedents = [
+const syncDepenedents = [
   'serve',
   'js',
   'less'
@@ -209,7 +221,7 @@ gulp.task('dev-server', syncDepenedents, function() {
     'webpack-hot-middleware/client'
   ].concat(webpackConfig.entry.bundle);
 
-  var bundler = webpack(webpackConfig);
+  const bundler = webpack(webpackConfig);
   sync.init(null, {
     ui: {
       port: syncUIPort
@@ -259,14 +271,14 @@ gulp.task('pack-client', function() {
   if (!__DEV__) { console.log('\n\nbundling production\n\n'); }
 
   function condition(file) {
-    var filepath = file.relative;
+    const filepath = file.relative;
     return __DEV__ || (/json$/).test('' + filepath);
   }
 
-  var dest = webpackConfig.output.path;
+  const dest = webpackConfig.output.path;
 
   return gulp.src(webpackConfig.entry.bundle)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(webpackStream(Object.assign(
       {},
       webpackConfig,
@@ -276,15 +288,15 @@ gulp.task('pack-client', function() {
     .pipe(gulp.dest(dest));
 });
 
-var webpackManifestFiles = [ 'react-manifest.json', 'chunk-manifest.json' ];
+const webpackManifestFiles = [ 'react-manifest.json', 'chunk-manifest.json' ];
 gulp.task('move-webpack-manifest', ['pack-client'], function() {
-  var files = webpackManifestFiles.map(function(filename) {
+  const files = webpackManifestFiles.map(function(filename) {
     return path.join(webpackConfig.output.path, filename);
   });
   return gulp.src(files).pipe(gulp.dest(paths.manifest));
 });
 
-var cleanDeps = ['pack-client', 'move-webpack-manifest'];
+const cleanDeps = ['pack-client', 'move-webpack-manifest'];
 gulp.task('clean-webpack-manifest', cleanDeps, function() {
   return del(webpackManifestFiles.map(function(filename) {
     return path.join(webpackConfig.output.path, filename);
@@ -298,10 +310,10 @@ gulp.task('clean-webpack-manifest', cleanDeps, function() {
 });
 
 gulp.task('less', function() {
-  var manifestName = 'css-manifest.json';
-  var dest = paths.css;
+  const manifestName = 'css-manifest.json';
+  const dest = paths.css;
   return gulp.src(paths.less)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
     // compile
     .pipe(less({
@@ -341,10 +353,10 @@ function getFilesGlob(files) {
 }
 
 gulp.task('js', function() {
-  var manifestName = 'js-manifest.json';
-  var dest = paths.publicJs;
+  const manifestName = 'js-manifest.json';
+  const dest = paths.publicJs;
 
-  var jsFiles = merge(
+  const jsFiles = merge(
 
     gulp.src(getFilesGlob(paths.vendorMain))
       .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
@@ -366,7 +378,7 @@ gulp.task('js', function() {
       ),
 
     gulp.src(paths.js)
-      .pipe(plumber({ errorHandler: errorHandler }))
+      .pipe(plumber({ errorHandler }))
       .pipe(babel())
       .pipe(__DEV__ ? gutil.noop() : uglify())
   );
@@ -396,7 +408,7 @@ function done(manifest) {
   return sortKeys(manifest);
 }
 
-var buildDependents = [
+const buildDependents = [
   'less',
   'js',
   'pack-client',
@@ -418,7 +430,7 @@ gulp.task('build', [
   'build-manifest'
 ]);
 
-var watchDependents = [
+const watchDependents = [
   'less',
   'js',
   'serve',
