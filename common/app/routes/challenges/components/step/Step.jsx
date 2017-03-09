@@ -220,7 +220,7 @@ export class StepChallenge extends PureComponent {
             sm={ 4 }
             xs={ 12 }
             >
-            ( { currentIndex + 1 } / { numOfSteps })
+            ( { currentIndex + 1 } / { numOfSteps } )
           </Col>
           {
             this.renderNextButton(
