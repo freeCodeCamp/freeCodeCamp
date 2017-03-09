@@ -63,7 +63,8 @@
       "tests": [
         "assert(homeworkStack.length === 4, 'message: <code>homeworkStack</code> should only contain 4 elements.');",
         "assert(homeworkStack[3] === 'CS50', 'message: The last element in <code>homeworkStack</code> should be <code>\"CS50\"</code>.');",
-        "assert(homeworkStack.indexOf('PSY44') === -1, 'message: <code>homeworkStack</code> should not contain <code>\"PSY44\"</code>.');"
+        "assert(homeworkStack.indexOf('PSY44') === -1, 'message: <code>homeworkStack</code> should not contain <code>\"PSY44\"</code>.');",
+        "assert(code.match(/=/g).length === 1 && /homeworkStack\\s*=\\s*\\[\"BIO12\"\\s*,\\s*\"HIS80\"\\s*,\\s*\"MAT122\"\\s*,\\s*\"PSY44\"\\]/.test(code)), 'message: The initial declaration of the <code>homeworkStack</code> should not be changed.');"
       ],
       "solutions": [],
       "hints": [],
