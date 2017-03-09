@@ -400,43 +400,43 @@
             [
               "//i.imgur.com/6ibIavQ.jpg",
               "Imagem dos 4 benefícios do freeCodeCamp: Conecte-se, Aprenda Javascript, Construa seu Portfolio, Ajude Organizações Sem Fins Lucrativos",
-              "Bem-vindo ao freeCodeCamp. Nós somos uma comunidade Open Source cujo objetivo é ajudá-lo(a) a aprender a programar e praticar através da construção de projetos para organizações sem fins lucrativos.",
+              "Bem-vindo ao freeCodeCamp. Nós somos uma comunidade open source cujo objetivo é ajudá-lo(a) a aprender a programar, e a praticar através da construção de projetos para organizações sem fins lucrativos.",
               ""
             ],
             [
               "//i.imgur.com/Elb3dfj.jpg",
               "Um screenshot de alguns dos nossos campistas programando em Toronto.",
-              "<bold>Aprender a programar é difícil.</bold> Para ter sucesso, você precisará de muita prática e suporte. É por isto que criamos um rigoroso programa de estudos e uma comunidade com bastante suporte.",
+              "<bold>Aprender a programar é difícil.</bold> Para ter sucesso, você precisará de muita prática e apoio. É por isto que criamos um rigoroso programa de estudos e uma comunidade bastante acolhedora.",
               ""
             ],
             [
               "//i.imgur.com/WD3STY6.jpg",
               "Foto de três campistas que conseguiram emprego depois de aprender a programar através do freeCodeCamp.",
-              "freeCodeCamp é o caminho certo em direção ao seu primeiro emprego como desenvolvedor de software. Várias empresas já contrataram milhares de pessoas como você que aprenderam a programar através do freeCodeCamp.",
+              "freeCodeCamp é o caminho certo em direção ao seu primeiro emprego como desenvolvedor(a) de software. Várias empresas já contrataram milhares de pessoas como você que aprenderam a programar através do freeCodeCamp.",
               ""
             ],
             [
               "//i.imgur.com/D7Y5luw.jpg",
-              "Gráfico da taxa de crescimento de emprego em relação ao crescimento de formandos em ciência da computação. Existem 1.4 milhões vagas de emprego e apenas 400 mil pessoas para preenche-las.",
-              "Existem milhares de vagas de emprego para desenvolvedores de softwares atualmente não preenchidas e a demanda para programadores cresce a cada ano.",
+              "Gráfico da taxa de crescimento das vagas de emprego em relação ao crescimento do total de formandos em ciências da computação. Existem 1.4 milhões vagas de emprego e apenas 400 mil pessoas para preenchê-las.",
+              "Existem milhares de vagas de emprego não preenchidas para desenvolvedores de softwares e a demanda para programadores cresce a cada ano.",
               ""
             ],
             [
               "//i.imgur.com/vLNso6h.jpg",
-              "Uma ilustração mostrando que você aprenderá HTML5, CSS3, JavaScript, Banco de Dados, Git, Node.js, React e D3.",
-              "Nós temos centenas de desafios opcionais de programação que o(a) ensinarão as principais tecnologias de desenvolvimento web como HTML5, Node.js e banco de dados.",
+              "Uma ilustração mostrando que você aprenderá HTML5, CSS3, JavaScript, Bancos de Dados, Git, Node.js, React e D3.",
+              "Nós temos centenas de desafios opcionais de programação que o(a) ensinarão as principais tecnologias de desenvolvimento web como HTML5, Node.js e bancos de dados.",
               ""
             ],
             [
               "//i.imgur.com/UVB9hxp.jpg",
               "Imagem de um campista numa cafeteria construindo projetos no freeCodeCamp.",
-              "Nós acreditamos que as pessoas aprendem mais ao praticar, portanto você gastará a maior parte do seu tempo de fato construindo projetos. Nós proveremos a você uma lista de espeficicações (agile user stories), e você dará um jeito de como construir aplicações que satisfaçam a essas espeficações.",
+              "Nós acreditamos que as pessoas aprendem melhor na prática, portanto você gastará a maior parte do seu tempo de fato construindo projetos. Nós proveremos a você uma lista de espeficicações (agile user stories), e você dará um jeito de construir aplicações que satisfaçam essas espeficações.",
               ""
             ],
             [
               "//i.imgur.com/pbW7K5S.jpg",
-              "Uma imagem mostrando nossos certificados de front-end, back-end e visualização de dados (400 horas cada), nossos projetos sem fins lucrativos (800 horas) e uma preparação para entrevista (80 horas) para um total de 2.080 horas de experiência em programação.",
-              "Nosso programa de estudos está dividido em 4 certificações. Estas certificações são padronizadas e instantaneamente verificadas por seus clientes freelance e futuros empregadores. Assim como tudo no freeCodeCamp, essas certificações são gratuitas. Nós recomendamos que as mesmas sejam feitas em ordem mas você está livre para explorar ao seu modo. As primeiras três certificações levam 400 horas cada e a cetificação final leva 800 horas e envolve a construção de projetos reais para organizações sem fins lucrativos.",
+              "Uma imagem mostrando nossos certificados de front-end, back-end e visualização de dados (400 horas cada), nossos projetos sem fins lucrativos (800 horas) e preparação para entrevista (80 horas), totalizando 2.080 horas de experiência em programação.",
+              "Nosso programa de estudos está dividido em 4 certificações. Estas certificações são padronizadas e podem ser verificadas a qualquer momento por seus clientes freelance e futuros empregadores. Assim como tudo no freeCodeCamp, essas certificações são gratuitas. Nós recomendamos que elas sejam feitas em ordem, mas você é livre para fazê-las como preferir. As primeiras três certificações levam 400 horas cada e a certificação final leva 800 horas e envolve a construção de projetos reais para organizações sem fins lucrativos.",
               ""
             ],
             [
@@ -454,19 +454,19 @@
             [
               "//i.imgur.com/8HCk1Od.jpg",
               "Uma foto de nossa certificação de desenvolvimento Back End",
-              "Para ganhar nossa certificação verificada de desenvolvimento Back End, você terá que construir 10 projetos usando Node.js, Express e MongoDB. Você usará Git e Heroku para implanta-los na nuvem.",
+              "Para ganhar nossa certificação verificada de desenvolvimento Back End, você terá que construir 10 projetos usando Node.js, Express e MongoDB. Você usará Git e Heroku para implementá-los na nuvem.",
               ""
             ],
             [
               "//i.imgur.com/yXyxbDd.jpg",
               "Uma foto de nosso diretório de projetos sem fins lucrativos.",
-              "Após você completar todos os três certificados, você formará uma equipe com outro campista e usará metodologias ágeis de desenvolvimento de software para construir dois projetos reais para organizações sem fins lucrativos. Você também adicionará funcionalidades a dois antigos projetos sem fins lucrativos. Quando você terminar, você terá um portfolio com projetos reais que pessoas usam todos os dias.",
+              "Após você completar todos os três certificados, você formará uma equipe com outro campista e usará metodologias ágeis de desenvolvimento de software para construir dois projetos reais para organizações sem fins lucrativos. Você também adicionará funcionalidades a dois projetos sem fins lucrativos pré-existentes. Quando terminar, você terá um portfolio com projetos reais que pessoas usam todos os dias.",
               ""
             ],
             [
               "//i.imgur.com/PDGQ9ZM.jpg",
-              "Uma imagem de campistas construindo projetos em Seoul.",
-              "Se você completar todas as 2.080 horas válidas de desafios e projetos, você ganhará nosso certificado de desenvolvimento Full Stack. Nós o(a) oferecemos prática gratuita para entrevistas de programação. Nós oferecemos ainda um espaço de trabalho onde empregadores espeficamente contratam campistas que conseguiram certificações no freeCodeCamp.",
+              "Uma imagem de campistas construindo projetos juntos em Seoul.",
+              "Se você completar todas as 2.080 horas de desafios e projetos, você ganhará nosso certificado de desenvolvimento Full Stack. Nós lhe ofereceremos prática gratuita para entrevistas de programação. Nós ofereceremos ainda um portal de empregos onde empregadores especificamente contratam campistas que conseguiram certificações no freeCodeCamp.",
               ""
             ]
           ]
@@ -993,31 +993,31 @@
             [
               "//i.imgur.com/EAR7Lvh.jpg",
               "Um screenshot de uma de nossas salas de bate-papo Gitter.",
-              "Antes de começarmos a programar, vamos nos juntar às salas de bate-papo do freeCodeCamp. Você pode vir aqui a qualquer momento do dia para socializar, fazer perguntas ou encontar outro campista para programar em dupla. Primeiro, você precisará de uma conta no GitHub.",
+              "Antes de começarmos a programar, vamos nos juntar às salas de bate-papo do freeCodeCamp. Você pode vir aqui a qualquer hora do dia para socializar, fazer perguntas ou encontar outro campista para programar em dupla. Primeiro, você precisará de uma conta no GitHub.",
               ""
             ],
             [
               "//i.imgur.com/n6GeSEm.gif",
-              "Um gif mostrando a você para clicar no botão abaixo para ir ao site do GitHub. Preencha os campos necessários em clique em submeter. Então acesse sua caixa de e-mails e encontre um e-mail enviado por GitHub para que você verifique sua conta.",
-              "Clique no botão \"Abrir link em nova aba\" abaixo para abrir o GitHub. Crie uma conta ao preencher o formulário. Certifique-se que você está usando seu verdadeiro e-mail - GitHub manterá sua informação em segredo. Então acesse sua caixa de e-mails e encontre um e-mail enviado por GitHub para que você verifique sua conta. Abra-o e clique no botão \"Verifique seu e-mail\" dentro do e-mail recebido. <br><div class=\"small\">Nota: Se você já possui ma conta no GitHub, você pode pular este passo ao clicar em \"Abrir link em nova aba\", fechar a nova aba que abrirá e então clicar em \"avançar para o próximo passo\". Nós removemos nosso botão \"pular passo\" porque muitas pessoas estavam apenas clicando nele repetidamente sem seguir os importantes passos.</div>",
+              "Um gif mostrando o processo para você clicar no botão abaixo para ir ao site do GitHub. Preencha os campos necessários em clique em enviar. Então acesse sua caixa de e-mails e encontre um e-mail enviado pelo GitHub para que você verifique sua conta.",
+              "Clique no botão \"Abrir link em nova aba\" abaixo para abrir o GitHub. Crie uma conta ao preencher o formulário. Certifique-se que você está usando seu e-mail real - o GitHub o manterá em sigilo. Então acesse sua caixa de e-mails e encontre um e-mail enviado pelo GitHub para que você verifique sua conta. Abra-o e clique no botão \"Verifique seu e-mail\" dentro do e-mail recebido. <br><div class=\"small\">Nota: Se você já possui uma conta no GitHub, pode pular este passo clicando em \"Abrir link em nova aba\", fechando a nova aba que abrirá e então clicando em \"avançar para o próximo passo\". Nós removemos o botão \"pular passo\" porque muitas pessoas estavam clicando nele repetidamente sem seguir as instruções.</div>",
               "https://github.com/join"
             ],
             [
               "//i.imgur.com/hFqAEr8.gif",
-              "Um gif mostrando a você para clicar na sua foto de perfil no canto superior direito na página do GitHub. Faça o upload de uma foto sua ou você continuará a usar a foto automaticamente gerada (arte em pixel). Preencha os campos restantes no formulário e clique em submeter.",
-              "Clique na foto (arte em pixel) no canto superior direito na página do GitHub e clique em opções. Faça o upload de uma foto sua. Uma foto de seu rosto é o que funciona melhor. É assim que seus amigos campistas vão ver você nas salas de bate-papo. Você pode adicionar sua cidade e seu nome se você quiser.",
+              "Um gif mostrando como clicar na sua foto de perfil no canto superior direito na página do GitHub. Faça o upload de uma foto sua ou você continuará a usar a foto gerada automaticamente. Preencha os campos restantes no formulário e clique em enviar.",
+              "Clique na foto no canto superior direito na página do GitHub e clique em opções. Faça o upload de uma foto sua. Recomendamos uma foto de seu rosto. É assim que você será visto(a) por seus amigos campistas nas salas de bate-papo. Você pode adicionar sua cidade e seu nome se quiser.",
               "https://github.com/settings/profile"
             ],
             [
               "//i.imgur.com/pYk0wOk.gif",
-              "Um gif mostrando o repositório do freeCodeCamp.",
-              "Abra o repositório open-source so freeCodeCamp. É lá que nossa equipe voluntária colabora em construir o freeCodeCamp.",
+              "Um gif mostrando o repositório do freeCodeCamp no GitHub.",
+              "Abra o repositório open-source do freeCodeCamp. É lá que nossa equipe voluntária colabora em construir o freeCodeCamp.",
               "https://github.com/freeCodeCamp/freeCodeCamp"
             ],
             [
               "//i.imgur.com/OmRmLB4.gif",
-              "Um gif mostrando como clicar no link abaixo para ir à nossa sala de bate-papo e clicando no botão \"entre com GitHub\". Em seguida, você pode clicar no campo de entrada de texto e digitar uma mensagem para os seus colegas campistas.",
-              "Agora que você tem uma conta GitHub, você pode se juntar à nossa sala de chat principal, fazendo login com GitHub. Apresente-se, dizendo \"Hello world! \" e diga a seus colegas campistas como você encontrou freeCodeCamp. Também diga-nos por que você quer aprender a programar.",
+              "Um gif mostrando como clicar no link abaixo para ir à nossa sala de bate-papo e clicar no botão \"entre com GitHub\". Em seguida, você pode clicar no campo de entrada de texto e digitar uma mensagem para os seus colegas campistas.",
+              "Agora que você tem uma conta GitHub, você pode se juntar à nossa sala de chat principal, fazendo login com GitHub. Apresente-se, diga \"Hello world! \" e diga a seus colegas campistas como você encontrou o freeCodeCamp. Também diga-nos por que você quer aprender a programar.",
               "https://gitter.im/FreeCodeCamp/FreeCodeCamp"
             ],
             [
@@ -1028,14 +1028,14 @@
             ],
             [
               "//i.imgur.com/T0bGJPe.gif",
-              "Um gif mostrando como você pode clicar em uma imagem de perfil para iniciar uma mensagem privada com outro usuário.",
+              "Um gif mostrando como você pode clicar em uma imagem de perfil para iniciar uma conversa em particular com outro usuário.",
               "Por favor, note que todas as nossas salas de chat são visíveis ao público. Se você precisa compartilhar informações pessoais, tais como um endereço de e-mail ou número de telefone, compartilhe através de uma mensagem privada.",
               ""
             ],
             [
               "//i.imgur.com/vDTMJSh.gif",
-              "Um gif mostrando que você pode ir e voltar pros desafios e nossas salas de chat.",
-              "Mantenha a nossa sala de chat aberta enquanto você trabalha em um de nossos desafios. Dessa forma, você pode pedir ajuda se você não conseguir avançar. Você também pode socializar com outros campistas quando você sentir vontade de fazer uma pausa.",
+              "Um gif mostrando que você pode alternar entre os desafios e nossas salas de chat.",
+              "Mantenha a nossa sala de chat aberta enquanto você trabalha nos desafios. Dessa forma, você pode pedir ajuda se ficar empacado(a) numa parte difícil. Você também pode socializar com outros campistas quando quiser fazer uma pausa.",
               ""
             ],
             [
@@ -1227,12 +1227,12 @@
           ]
         },
         "pt-br": {
-          "title": "Configure o seu portifólio de código",
+          "title": "Configure o seu portfolio de código",
           "description": [
             [
               "//i.imgur.com/tP2ccTE.gif",
-              "Um gif mostrando como você pode clicar em sua imagem de perfil no canto superior direito do seu portifólio de código e se conectar com GitHub.",
-              "Confira seu portifólio de código. Clique na sua imagem no canto superior direito. Para ativar seu portifólio de código, você precisa vincular sua conta do GitHub com freeCodeCamp. Seu portfólio de código mostra o seu progresso e quantos Brownie Points você tem. Você pode obter Brownie Points completando desafios e ajudando outros campistas em nossas salas de chat. Se você receber Brownie Points em vários dias em seguida, você vai ter um \"Streak\".",
+              "Um gif mostrando como você pode clicar em sua imagem de perfil no canto superior direito para seu portifólio de código e se conectar com GitHub.",
+              "Confira seu portfolio de código. Clique na sua imagem no canto superior direito. Para ativar seu portfolio de código, você precisa vincular sua conta do GitHub com o freeCodeCamp. Seu portfolio de código mostra o seu progresso e quantos Brownie Points você tem. Você pode obter Brownie Points completando desafios e ajudando outros campistas em nossas salas de chat. Se você receber Brownie Points em vários dias seguidos, você vai ter um \"streak\".",
               ""
             ]
           ]
@@ -1346,7 +1346,7 @@
             [
               "//i.imgur.com/fTFMjwf.gif",
               "Um gif mostrando como você pode clicar no link abaixo e encontrar a sua cidade na lista de grupos locais.",
-              "Encontre sua cidade na lista e clique nela. Isto irá levá-lo à sua respectiva página do Facebook. Clique no botão \"Entrar no grupo\". Alguém do grupo irá aprová-lo em breve. Se a sua cidade não está nesta lista, percorra ao topo do artigo wiki para obter instruções sobre como você pode começar um grupo em sua cidade.",
+              "Encontre sua cidade na lista e clique nela. Isto irá levá-lo à sua respectiva página do Facebook. Clique no botão \"Entrar no grupo\". Alguém do grupo irá aprová-lo em breve. Se a sua cidade não está nesta lista, vá ao topo do artigo wiki para obter instruções sobre como você pode começar um grupo em sua cidade.",
               "http://forum.freeCodeCamp.com/t/free-code-camp-city-based-local-groups/19574"
             ]
           ]
@@ -1449,12 +1449,12 @@
           ]
         },
         "pt-br": {
-          "title": "Leia notícias sobre programação em nossas publicações nas plataforma Medium",
+          "title": "Leia notícias sobre programação em nossas publicações no Medium",
           "description": [
             [
               "//i.imgur.com/AZNLvEC.gif",
-              "Um gif mostrando como você pode clicar no botão \"seguir\" para acompanhar publicações do freeCodeCamp.",
-              "Nossa comunidade possui um espaço na plataforma Medium onde publicamos toneladas de artigos úteis sobre programação e tecnologia. Uma vez que você abrir o link, clique no botão \"seguir\" no canto superior direito. Se você não tiver uma conta no Medium, você pode criar uma em segundos.",
+              "Um gif mostrando como você pode clicar no botão \"seguir\" para acompanhar as publicações do freeCodeCamp.",
+              "Nossa comunidade possui um espaço na plataforma Medium onde publicamos um monte de artigos úteis sobre programação e tecnologia. Uma vez que você abrir o link, clique no botão \"seguir\" no canto superior direito. Se você não tiver uma conta no Medium, pode criar uma rapidamente.",
               "https://medium.freecodecamp.com"
             ]
           ]
@@ -1755,17 +1755,17 @@
           ]
         },
         "pt-br": {
-          "title": "Aprenda o que fazer se você não conseguir avançar",
+          "title": "Aprenda o que fazer se você ficar empacado(a)",
           "description": [
             [
               "//i.imgur.com/lzKvwU2.jpg",
               "A frase \"Programar é difícil.\"",
-              "Programar é difícil. Você não vai conseguir sair do lugar. Até mesmo desenvolvedores experientes ficam presos. A chave é saber como conseguir sair do lugar.",
+              "Programar é difícil. Em alguns momentos você não vai conseguir sair do lugar. Acontece até com desenvolvedores experientes. A chave é saber como desempacar.",
               ""
             ],
             [
               "//i.imgur.com/sfsidp6.jpg",
-              "A frase \"Leva tempo para saber como ficar bom em programação\"",
+              "A frase \"Leva tempo para ficar bom em programação\"",
               "Leva-se tempo para ficar bom em programação. Você não esperaria vencer um mestre de xadrez depois de jogar por apenas 3 meses. Não espere conseguir construir o próximo Facebook após programar por apenas 3 meses.",
               ""
             ],
@@ -1778,31 +1778,31 @@
             [
               "//i.imgur.com/EWWZBag.jpg",
               "Uma imagem com o texto \"1. Leia o erro 2. Pesquisa no Google 3. Peça ajuda.\"",
-              "Toda vez que você ficar preso ou não saber o que fazer a seguir: Leia-Pesquise-Pergunte",
+              "Toda vez que você ficar preso ou não souber o que fazer: Leia-Pesquise-Pergunte.",
               ""
             ],
             [
               "//i.imgur.com/99BfAcK.jpg",
-              "Uma imagem mostrando documentação jQuery",
-              "Primeiro, leia a documentação ou mensagem de erro. A habilidade fundamental que os bons programadores têm é a capacidade de interpretar e, em seguida, seguir as instruções.",
+              "Uma imagem mostrando a documentação do jQuery",
+              "Primeiro, leia a documentação ou mensagem de erro. Uma habilidade fundamental que  bons programadores têm é a capacidade de interpretar e, em seguida, seguir instruções.",
               ""
             ],
             [
               "//i.imgur.com/GxvrsFb.gif",
-              "Um gif mostrando-nos como fazer uma pesquisa avançada no Google. Primeiro, inserimos a consulta \"jquery não executa quando a minha página carrega\". Em seguida, clique no botão ferramentas de pesquisa e altere a caixa de seleção de \"Qualquer momento\" para \"Ano passado\". Em seguida, clique em um resultado, leia o artigo e encontre a nossa resposta.",
-              "Se isso não ajudar, pesquise no Google. Boas consultas no Google levam bastante tempo de prática. Quando você pesquisa no Google, você geralmente deseja incluir a linguagem de programação ou framework que você está usando. Você também quer limitar os resultados para um período recente.",
+              "Um gif mostrando como fazer uma pesquisa avançada no Google. Primeiro, inserimos a consulta \"jquery não executa quando a minha página carrega\". Em seguida, clique no botão ferramentas de pesquisa e altere a caixa de seleção de \"Qualquer momento\" para \"Ano passado\". Em seguida, clique em um resultado, leia o artigo e encontre a nossa resposta.",
+              "Se isso não ajudar, pesquise no Google. Pesquisar no Google de maneira eficiente requer prática. Quando você pesquisa no Google, é aconselhável incluir a linguagem de programação ou framework que você está usando, e tambem limitar os resultados para um período recente.",
               ""
             ],
             [
               "//i.imgur.com/LZYU7p2.gif",
-              "Um gif mostrando-nos usando link abaixo para ir a sala de bate-papo de ajuda e perguntas \"jquery não executa quando a minha página carrega\".",
-              "Se isso não ajudar, pergunte a seus amigos. Se você tiver problemas, você pode perguntar a seus companheiros campistas na nossa sala de bate-papo para ajuda.",
+              "Um gif mostrando-nos usando link abaixo para ir na sala de bate-papo de ajuda e dizendo que \"jquery não executa quando a minha página carrega\".",
+              "Se isso não ajudar, pergunte a seus amigos. Se você tiver problemas, você pode perguntar a seus companheiros campistas na nossa sala de ajuda no bate-papo.",
               "https://gitter.im/FreeCodeCamp/Help"
             ],
             [
               "//i.imgur.com/ZRgXraT.gif",
               "Um gif mostrando a navegação no nosso mapa de desafios.",
-              "Agora você está pronto para começar a programar. O botão \"Mapa\" no canto superior direito irá mostrar-lhe o nosso mapa de desafios. Recomendamos que você complete estes desafios de cima para baixo, em um ritmo adequado. Nossa comunidade open source está constantemente melhorando os nossos desafios por isso não se surpreenda se os desafios mudarem. Não se preocupe em voltar - apenas continue seguindo em frente.",
+              "Agora você está pronto para começar a programar. O botão \"Mapa\" no canto superior direito irá mostrar o nosso mapa de desafios. Recomendamos que você complete estes desafios de cima para baixo, em um ritmo adequado. Nossa comunidade open source está constantemente melhorando os nossos desafios por isso não se surpreenda se os desafios mudarem. Não se preocupe em voltar - apenas continue seguindo em frente.",
               ""
             ]
           ]
