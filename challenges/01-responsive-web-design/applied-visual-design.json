@@ -31,8 +31,7 @@
         "Text is often a large part of web content. CSS has several options for how to align it with the <code>text-align</code> property.",
         "The <code>justify</code> property causes all lines of text except the last line to meet the left and right edges of the line box.",
         "<hr>",
-        "Align the <code>h4</code> tag's text, which says \"Google\", to the center. Then justify the paragraph tag which contains information about how Google was founded. Finally, align the two anchor tags to the left by using the <code>links</code> class selector.",
-        "<strong>Note</strong><br>When you align the two anchor tags, you will see no difference. This is because text is aligned to the left by default."
+        "Align the <code>h4</code> tag's text, which says \"Google\", to the center. Then justify the paragraph tag which contains information about how Google was founded."
       ],
       "challengeSeed": [
         "<style>",
@@ -71,8 +70,7 @@
       ],
       "tests": [
         "assert($('h4').css('text-align') == 'center', 'message: Your code should use the text-align property on the <code>h4</code> tag to set it to center.');",
-        "assert($('p').css('text-align') == 'justify', 'message: Your code should use the text-align property on the <code>p</code> tag to set it to justify.');",
-        "assert($('.links').css('text-align') == 'left', 'message: Your code should use the text-align property on the <code>a</code> tags by accessing their class <code>links</code> to set it to left.');"
+        "assert($('p').css('text-align') == 'justify', 'message: Your code should use the text-align property on the <code>p</code> tag to set it to justify.');"
       ],
       "solutions": [],
       "hints": [],
