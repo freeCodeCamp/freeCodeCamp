@@ -286,10 +286,10 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'message: Your <code>Set</code> class should have a <code>add</code> method.');",
-        "assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); console.log(vals); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'message: Your <code>Set</code> should not add duplicate values.');",
-        "assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'message: Your <code>Set</code> should return <code>true</code> when a value has been successfully added.');",
-        "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'message: Your <code>Set</code> should return <code>false</code> when the user tries to add a duplicate value.');"
+        "assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'message: Your <code>Set</code> class should have an <code>add</code> method.');",
+        "assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'message: Your <code>add</code> method should not add duplicate values.');",
+        "assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'message: Your <code>add</code> method should return <code>true</code> when a value has been successfully added.');",
+        "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'message: Your <code>add</code> method should return <code>false</code> when a duplicate value is added.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -301,7 +301,7 @@
       "id": "587d8253367417b2b2512c6b",
       "title": "Remove from a Set",
       "description": [
-        "In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set."
+        "In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set, and return true. Otherwise, return false."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -329,8 +329,8 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'message: Your <code>Set</code> class should have a <code>remove</code> method.');",
-        "assert.deepEqual((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"c\"); return test.values(); })(), [\"a\", \"b\"], 'message: Your <code>remove</code> method should only remove items that are present in the set.');",
-        "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\"); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your <code>remove</code> method should remove the given item from the set.');"
+        "assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b'], 'message: Your <code>remove</code> method should only remove items that are present in the set.');",
+        "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your <code>remove</code> method should remove the given item from the set.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -342,7 +342,7 @@
       "id": "8d1923c8c441eddfaeb5bdef",
       "title": "Size of the Set",
       "description": [
-        "In this exercise we are going to create a size function for our Set. This function should be named this.size and it should return the size of the collection."
+        "In this exercise we are going to create a size function for our Set. This function should be named <code>this.size</code> and it should return the size of the collection."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -379,7 +379,7 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.size === 'function')}()), 'message: Your <code>Set</code> class should have a <code>size</code> method.');",
-        "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\");return (test.size() === 1)}()), 'message: The <code>size</code> method should return the number of elements in the collection.');"
+        "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()), 'message: The <code>size</code> method should return the number of elements in the collection.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -391,7 +391,7 @@
       "id": "587d8253367417b2b2512c6c",
       "title": "Perform a Union on Two Sets",
       "description": [
-        "In this exercise we are going to perform a union on two sets of data. We will create a method on our Set data structure called <code>union</code>. This method should take another set as an argument and update the set you called the method on to be the union of the two sets, excluding any duplicate values."
+        "In this exercise we are going to perform a union on two sets of data. We will create a method on our <code>Set</code> data structure called <code>union</code>. This method should take another set as an argument and update the set you called the method on to be the union of the two sets, excluding any duplicate values."
       ],
       "challengeSeed": [
         "function Set() {",
