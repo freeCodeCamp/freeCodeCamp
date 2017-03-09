@@ -293,7 +293,9 @@
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "this.add = function(element) {\nif (!this.has(element)) {\ncollection.push(element);\nreturn true;\n} else {\nreturn false;\n}\n};"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -334,7 +336,9 @@
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "this.remove = function(element) {\nif(this.has(element)) {\nvar i = collection.indexOf(element);\ncollection.splice(i, 1);\nreturn true;\n}\nreturn false;\n};"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -383,7 +387,9 @@
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "this.size = function() {\nreturn collection.length;\n};"
+    ],
       "challengeType": 1,
       "translations": {}
     },
@@ -391,7 +397,8 @@
       "id": "587d8253367417b2b2512c6c",
       "title": "Perform a Union on Two Sets",
       "description": [
-        "In this exercise we are going to perform a union on two sets of data. We will create a method on our <code>Set</code> data structure called <code>union</code>. This method should take another set as an argument and update the set you called the method on to be the union of the two sets, excluding any duplicate values."
+        "In this exercise we are going to perform a union on two sets of data. We will create a method on our <code>Set</code> data structure called <code>union</code>. This method should take another <code>Set</code> as an argument and return the <code>union</code> of the two sets, excluding any duplicate values.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the union of setA and setB is: <code>setA.union(setB) = ['a', 'b', 'c', 'd', 'e']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -433,11 +440,13 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.union === 'function')})(), 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
-        "assert((function(){var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'message: The proper collection was returned');"
+        "assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "this.union = function(set) {\nvar u = new Set();\nvar c = this.values();\nvar s = set.values();\nc.forEach(function(element){\nu.add(element);\n});\ns.forEach(function(element){\nu.add(element);\n});\nreturn u;\n};"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -445,7 +454,8 @@
       "id": "587d8253367417b2b2512c6d",
       "title": "Perform an Intersection on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform an intersection on 2 sets of data. An intersection of sets represents all values that are common to two or more sets. This method should be called this.intersection. This method should return a new set containing the intersection of the sets the method was called against."
+        "In this exercise we are going to perform an intersection on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>intersection</code>. An intersection of sets represents all values that are common to two or more sets. This method should take another <code>Set</code> as an argument and return the <code>intersection</code> of the two sets.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the intersection of setA and setB is: <code>setA.intersection(setB) = ['a', 'b']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -498,12 +508,14 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'message: Your <code>Set</code> class should have a <code>intersection</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.values() === [ 'c' ])}), 'message: The proper collection was returned');"
+        "assert(function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'message: Your <code>Set</code> class should have a <code>intersection</code> method.');",
+        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')}, 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "this.intersection = function(set) {\nvar i = new Set();\nvar c = this.values();\nc.forEach(function(element){\nif(s.has(element)) i.add(element);\n});\n};"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -511,7 +523,8 @@
       "id": "587d8254367417b2b2512c6e",
       "title": "Perform a Difference on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform a difference on 2 sets of data. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should be called this.difference and should return a new set containing only the items that result from taking the difference of two sets."
+        "In this exercise we are going to perform a difference on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>difference</code>. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should take another <code>Set</code> as an argument and return the <code>difference</code> of the two sets.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the difference of setA and setB is: <code>setA.difference(setB) = ['c']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -575,8 +588,8 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.difference === 'function')}, 'message: Your <code>Set</code> class should have a <code>difference</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var differenceSetAB = setA.difference(setB);return (differenceSetAB.values() === [ 'a', 'b' ])}), 'message: The proper collection was returned');"
+        "assert(function(){var test = new Set(); return (typeof test.difference === 'function')}, 'message: Your <code>Set</code> class should have a <code>difference</code> method.');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ 'a', 'b' ])}, 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -588,7 +601,8 @@
       "id": "587d8254367417b2b2512c6f",
       "title": "Perform a Subset Check on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform a subset test on 2 sets of data. This will compare the first set, against the second and if the first set is fully contained within the Second then it will return true. This method should be called this.subset. At this point, we have added a lot of useful functionality to our Set data structure. This will complete the challenges for the set data structure."
+        "In this exercise we are going to perform a subset test on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>subset</code>. This will compare the first set, against the second and if the first set is fully contained within the Second then it will return true.",
+        "For example, if <code>setA = ['a','b']</code> and <code>setB = ['a','b','c','d']</code>, then the subset of setA and setB is: <code>setA.subset(setB)</code> should be <code>true</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -663,12 +677,18 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.subset === 'function')}, 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setB.add(\"b\");  setB.add(\"c\");  setB.add(\"a\");  setB.add(\"d\");  var subSetSetAB = setA.subset(setB);return (subSetSetAB === true)}), 'message: The first Set() was contained in the second Set');"
+        "assert(function(){var test = new Set(); return (typeof test.subset === 'function')}, 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)}, 'message: The first Set() was contained in the second Set');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('a'); setB.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, \"message: <code>['a', 'b'].subset(['a', 'b', 'c', 'd'])</code> should return <code>true</code>\");",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('a'); setB.add('b'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"message: <code>['a', 'b', 'c'].subset(['a', 'b'])</code> should return <code>false</code>\");",
+        "assert(function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, 'message: <code>[].subset([])</code> should return <code>true</code>');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"message: <code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>\");"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "this.subset = function(set) {\nvar isSubset = true;\nvar c = this.values();\nc.forEach(function(e){\nif(!set.has(e)) isSubset = false;\n});\nreturn isSubset;\n};"
+      ],
       "challengeType": 1,
       "translations": {}
     },
