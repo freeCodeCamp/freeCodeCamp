@@ -290,7 +290,7 @@
         "assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]], 'message: <code>copyMachine([1, 2, 3], 5)</code> should return <code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>');",
         "assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]], 'message: <code>copyMachine([true, true, null], 1)</code> should return <code>[[true, true, null]]</code>');",
         "assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']], 'message: <code>copyMachine([\"it works\"], 3)</code> should return <code>[[\"it works\"], [\"it works\"], [\"it works\"]]</code>');",
-        "assert.notStrictEqual(copyMachine.toString().search(/[...]/), -1, 'message: The <code>copyMachine</code> function should utilize the <code>...</code> operator');"
+        "assert.notStrictEqual(copyMachine.toString().indexOf('.concat(_toConsumableArray(arr))'), -1, 'message: The <code>copyMachine</code> function should utilize the <code>spread operator</code> with array <code>arr</code>');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
