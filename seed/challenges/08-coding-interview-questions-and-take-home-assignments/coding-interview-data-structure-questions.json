@@ -723,11 +723,13 @@
         "checkSet();"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');})(), 'message: Your <code>Set</code> only contains the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
+        "assert(function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');}, 'message: Your <code>Set</code> should only contains the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(){var set = new Set([1,2,3,'Taco','Cat','Awesome']);\nreturn set;}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -735,29 +737,31 @@
       "id": "587d8254367417b2b2512c71",
       "title": "Remove items from a set in ES6",
       "description": [
-        "Now we will see how we can remove items from an ES6 Set.",
-        "Let's create a Set:",
-        "var set = new Set([1,2,3]);",
-        "Once you have created a set object, you can remove values you no longer want with delete. For example:",
-        "var set = new Set([1,2,3]);",
-        "set.delete(1);",
-        "console.log([...set]) // should return [ 2, 3 ]",
-        "In this exercise we will return a Set with the passed parameter."
+        "Let's practice removimg items from an ES6 Set using the <code>delete</code> method.",
+        "First, create an ES6 Set",
+        "<code>var set = new Set([1,2,3]);</code>",
+        "Now remove an item from your Set with the <code>delete</code> method.",
+        "<blockquote>set.delete(1);<br>console.log([...set]) // should return [ 2, 3 ]<blockquote>",
+        "<hr>",
+        "Now, create a set with the integers 1, 2, 3, 4, & 5. \n Remove the values 2 and 5, and then return the set."
       ],
       "challengeSeed": [
-        "function checkSet(itemToRemove){",
-        "   var set = new Set([1,2,3,3,2,1,2,3,1]);",
-        "   // change code below this line",
-        "   // change code above this line",
-        "   console.log(set);",
+        "function checkSet(){",
+        "   var set = //Create a set with values 1, 2, 3, 4, & 5",
+        "   //Remove the value 2",
+        "   //Remove the value 5",
+        "   //Return the set",
+        "   return set;",
         "}"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(); var testArr = [...test];  testArr === [ 2, 3 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, 'message: Your Set should contain the values 1, 3, & 4');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(){\nvar set = new Set([1,2,3,4,5]);\nset.delete(2);\nset.delete(5);\nreturn set;}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -765,28 +769,35 @@
       "id": "587d8255367417b2b2512c72",
       "title": "Use .has and .size on an ES6 Set",
       "description": [
-        "Now we will look at the .has and .size methods available on the Set object.",
-        "var set = new Set([1,2,3]);",
-        "var hasTwo = set.has(2); // will return true or false",
-        "var howBig = set.size; // will return an integer representing the size of the Array",
-        "console.log(\"Has a 2: \" + hasTwo); // should be true",
-        "console.log(\"Length of Set: \" + howBig); // should show 3",
-        "In this exercise we will pass in an array of a values and a value to check for. We will return a new array with (true or false) for the presence of the value and the size of the Set."
+        "Let's look at the .has and .size methods available on the ES6 Set object.",
+        "First, create an ES6 Set",
+        "<code>var set = new Set([1,2,3]);</code>",
+        "The .has method will check if the value is contained within the set.",
+        "<code>var hasTwo = set.has(2);</code>",
+        "The .size method will return an integer representing the size of the Set",
+        "<code>var howBig = set.size;</code>",
+        "<hr>",
+        "In this exercise we will pass an array and a value to the checkSet() function. Your function should create an ES6 set from the array argument. Find if the set contains the value argument. Find the size of the set. And return those two values in an array."
       ],
       "challengeSeed": [
         "function checkSet(arrToBeSet, checkValue){",
+        "",
         "   // change code below this line",
         "",
         "   // change code above this line",
-        "   console.log(set);",
-        "}"
+        "",
+        "}",
+        "",
+        "checkSet([ 1, 2, 3], 2); // Should return [ true, 3 ]"
       ],
       "tests": [
-        "assert((function(){var test = checkSet([1,2,3], 2); test === [ true, 3 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, 'message: <code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(arrToBeSet, checkValue){\nvar set = new Set(arrToBeSet);\nvar result = [\nset.has(checkValue),\nset.size\n];\nreturn result;\n}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
