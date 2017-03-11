@@ -294,7 +294,7 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
-        "this.add = function(element) {\nif (!this.has(element)) {\ncollection.push(element);\nreturn true;\n} else {\nreturn false;\n}\n};"
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};}"
       ],
       "challengeType": 1,
       "translations": {}
@@ -337,7 +337,7 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
-        "this.remove = function(element) {\nif(this.has(element)) {\nvar i = collection.indexOf(element);\ncollection.splice(i, 1);\nreturn true;\n}\nreturn false;\n};"
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};}"
       ],
       "challengeType": 1,
       "translations": {}
@@ -388,7 +388,7 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
-        "this.size = function() {\nreturn collection.length;\n};"
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};}"
     ],
       "challengeType": 1,
       "translations": {}
@@ -445,7 +445,7 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
-        "this.union = function(set) {\nvar u = new Set();\nvar c = this.values();\nvar s = set.values();\nc.forEach(function(element){\nu.add(element);\n});\ns.forEach(function(element){\nu.add(element);\n});\nreturn u;\n};"
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};}"
       ],
       "challengeType": 1,
       "translations": {}
@@ -514,7 +514,7 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
-        "this.intersection = function(set) {\nvar i = new Set();\nvar c = this.values();\nc.forEach(function(element){\nif(s.has(element)) i.add(element);\n});\n};"
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};}"
       ],
       "challengeType": 1,
       "translations": {}
@@ -593,7 +593,9 @@
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -687,7 +689,7 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
-        "this.subset = function(set) {\nvar isSubset = true;\nvar c = this.values();\nc.forEach(function(e){\nif(!set.has(e)) isSubset = false;\n});\nreturn isSubset;\n};"
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};this.subset = function(set) {var isSubset = true;var c = this.values();c.forEach(function(e){if(!set.has(e)) isSubset = false;});return isSubset;};}"
       ],
       "challengeType": 1,
       "translations": {}
