@@ -805,15 +805,13 @@
       "id": "587d8255367417b2b2512c73",
       "title": "Use Spread and Notes for ES5 Set() Integration",
       "description": [
-        "Next up is one of the coolest things in ES6!",
-        "The noble spread operator! '...' can take iterable objects in ES6 and turn them into arrays",
+        "Do you remember the ES6 spread operator <code>...</code>?",
+        "<code>...</code> can take iterable objects in ES6 and turn them into arrays.",
         "Let's create a Set, and check out the spread function.",
-        "var set = new Set([1,2,3]);",
-        "var setToArr = [...set]",
-        "console.log(setToArr) // returns [ 1, 2, 3 ]",
-        "Awesome, right!?",
-        "In this exercise we will pass in a set object. We will return an array with the values of the Set.",
-        "The ES5 Set() function we created, can be used to perform union, intersection, difference and subset functions using the new ES6 Sets with very little modification."
+        "<blockquote>var set = new Set([1,2,3]);<br>var setToArr = [...set]<br>console.log(setToArr) // returns [ 1, 2, 3 ]</blockquote>",
+        "<hr>",
+        "In this exercise we will pass a set object to the <code>checkSet</code> function. It should return an array containing the values of the Set.",
+        "Now you've successfully learned how to use the ES6 <code>Set()</code> object, good job!"
       ],
       "challengeSeed": [
         "function checkSet(set){",
@@ -823,11 +821,13 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ]}, 'message: Your Set was returned correctly!');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(set){\nreturn [...set];}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
