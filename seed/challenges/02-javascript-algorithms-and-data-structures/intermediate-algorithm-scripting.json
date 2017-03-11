@@ -1348,7 +1348,7 @@
       "description": [
         "Return a new array that transforms the element's average altitude into their orbital periods.",
         "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
-        "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
+        "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on Wikipedia</a>.",
         "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
         "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
         "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -1380,7 +1380,7 @@
           "description": [
             "Crea una función que devuelva un nuevo arreglo que transforme la altitud promedio del elemento en su período orbital.",
             "El arreglo debe contener objetos en el formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
-            "Puedes leer acerca de períodos orbitales <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>en wikipedia</a>.",
+            "Puedes leer acerca de períodos orbitales <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>en Wikipedia</a>.",
             "Los valores deben estar redondeados al número entero más próximo. El cuerpo orbitado es la Tierra",
             "El radio de la Tierra es 6367.4447 kilómetros, y el valor GM del planeta es de 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
             "Recuerda utilizar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
@@ -1391,7 +1391,7 @@
           "description": [
             "Ritorna un nuovo array che trasformi l'altitudine media degli elementi nel loro periodo orbitale.",
             "L'array conterrà oggetti in formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
-            "Puoi leggere riguardo i periodi orbitali <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>su wikipedia</a>.",
+            "Puoi leggere riguardo i periodi orbitali <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>su Wikipedia</a>.",
             "I valori devono essere arrotondati al numero intero più vicino. Il corpo attorno a cui orbitano gli elementi è la Terra.",
             "Il raggio della Terra è di 6367.4447 kilometri, e il valore GM della Terra è di 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
             "Ricorda di usare <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
@@ -1402,7 +1402,7 @@
           "description": [
             "Retorne uma nova matriz que transforma a altitude média do elemento em seu período orbital.",
             "A matriz vai conter objetos no formato <code>{name: 'name', avgAlt: avgAlt}</code>.",
-            "Você pode ler sobre período orbital <a href=\"https://pt.wikipedia.org/wiki/Per%C3%ADodo_orbital\" target='_blank'>na wikipedia</a>.",
+            "Você pode ler sobre período orbital <a href=\"https://pt.wikipedia.org/wiki/Per%C3%ADodo_orbital\" target='_blank'>na Wikipedia</a>.",
             "Os valores devem ser arredondados para número inteiro mais próximo. O corpe sendo orbitado é a Terra.",
             "O raio da terra é 6367.4447 quilômetros, e o valor GM da terra é 398600.4418 km<sup>3</sup>s<sup>-2</sup>.",
             "Lembre-se de usar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
