@@ -920,8 +920,11 @@
       "tests": [
         "assert(reRegex.source.match(/\\\\d/), 'message: Your regex should use the shorthand character class for digits.');",
         "assert(reRegex.source.match(/\\\\\\d/g).length === 2, 'message: Your regex should reuse the capture group twice.');",
+        "assert(reRegex.source.match(/\\\\s/g).length === 2, 'message: Your regex should have two spaces separating the three numbers.');",
         "assert(reRegex.test(\"42 42 42\"), 'message: Your regex should match <code>\"42 42 42\"</code>.');",
         "assert(reRegex.test(\"100 100 100\"), 'message: Your regex should match <code>\"100 100 100\"</code>.');",
+        "assert.equal((\"42 42 42 42\").match(reRegex.source)[0], (\"42 42 42\"), 'message: Your regex should not match <code>\"42 42 42 42\"</code>.');",
+        "assert.equal((\"42 42\").match(reRegex.source), null, 'message: Your regex should not match <code>\"42 42\"</code>.');",
         "assert(!reRegex.test(\"101 102 103\"), 'message: Your regex should not match <code>\"101 102 103\"</code>.');",
         "assert(!reRegex.test(\"1 2 3\"), 'message: Your regex should not match <code>\"1 2 3\"</code>.');",
         "assert(reRegex.test(\"10 10 10\"), 'message: Your regex should match <code>\"10 10 10\"</code>.');"
