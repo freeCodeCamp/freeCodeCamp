@@ -4,6 +4,8 @@ export default createTypes([
   // step
   'stepForward',
   'stepBackward',
+  'bindStepKeys',
+  'unbindStepKeys',
   'goToStep',
   'completeAction',
   'openLightBoxImage',

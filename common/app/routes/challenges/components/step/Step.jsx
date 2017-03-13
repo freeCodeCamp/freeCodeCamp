@@ -6,12 +6,14 @@ import PureComponent from 'react-pure-render/component';
 import LightBox from 'react-images';
 
 import {
+  bindStepKeys,
   closeLightBoxImage,
   completeAction,
   openLightBoxImage,
   stepBackward,
   stepForward,
   submitChallenge,
+  unbindStepKeys,
   updateUnlockedSteps
 } from '../../redux/actions';
 import { challengeSelector } from '../../redux/selectors';
@@ -43,16 +45,19 @@ const mapStateToProps = createSelector(
 );
 
 const dispatchActions = {
+  bindStepKeys,
   closeLightBoxImage,
   completeAction,
   openLightBoxImage,
   stepBackward,
   stepForward,
   submitChallenge,
+  unbindStepKeys,
   updateUnlockedSteps
 };
 
 const propTypes = {
+  bindStepKeys: PropTypes.func.isRequired,
   closeLightBoxImage: PropTypes.func.isRequired,
   completeAction: PropTypes.func.isRequired,
   currentIndex: PropTypes.number,
@@ -66,6 +71,7 @@ const propTypes = {
   stepForward: PropTypes.func,
   steps: PropTypes.array,
   submitChallenge: PropTypes.func.isRequired,
+  unbindStepKeys: PropTypes.func.isRequired,
   updateUnlockedSteps: PropTypes.func.isRequired
 };
 
@@ -83,13 +89,21 @@ export class StepChallenge extends PureComponent {
   }
 
   componentWillMount() {
-    const { updateUnlockedSteps } = this.props;
+    const {
+      updateUnlockedSteps,
+      bindStepKeys
+    } = this.props;
     updateUnlockedSteps([]);
+    bindStepKeys();
   }
 
   componentWillUnmount() {
-    const { updateUnlockedSteps } = this.props;
+    const {
+      updateUnlockedSteps,
+      unbindStepKeys
+    } = this.props;
     updateUnlockedSteps([]);
+    unbindStepKeys();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -259,6 +273,7 @@ export class StepChallenge extends PureComponent {
       isLightBoxOpen,
       closeLightBoxImage
     } = this.props;
+    console.log(step);
     return (
       <Col
         md={ 8 }
