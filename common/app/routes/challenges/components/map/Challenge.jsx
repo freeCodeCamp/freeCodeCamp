@@ -140,6 +140,10 @@ export class Challenge extends PureComponent {
         challengeClassName
       );
     }
+    // do not render any challenges without a title.
+    if (!title) {
+      return null;
+    }
     return (
       <p
         className={ challengeClassName }
