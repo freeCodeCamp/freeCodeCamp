@@ -113,11 +113,6 @@ export const delayedRedirect = createAction(types.delayedRedirect);
 // hardGoTo(path: String) => Action
 export const hardGoTo = createAction(types.hardGoTo);
 
-export const initWindowHeight = createAction(types.initWindowHeight);
-export const updateWindowHeight = createAction(types.updateWindowHeight);
-export const updateNavHeight = createAction(types.updateNavHeight);
-
-
 // data
 export const updateChallengesData = createAction(types.updateChallengesData);
 export const updateHikesData = createAction(types.updateHikesData);

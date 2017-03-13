@@ -1,5 +1,5 @@
-import Show from './components/Show.jsx';
-import ShowMap from './components/map/Map.jsx';
+import Show from './Show.jsx';
+import _Map from './views/map';
 
 export function challengesRoute() {
   return {
@@ -24,6 +24,6 @@ export function modernChallengesRoute() {
 export function mapRoute() {
   return {
     path: 'map',
-    component: ShowMap
+    component: _Map
   };
 }

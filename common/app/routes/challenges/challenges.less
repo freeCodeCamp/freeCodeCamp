@@ -1,0 +1,81 @@
+// should be the same as the filename and ./ns.json
+@ns: challenges;
+
+
+.@{ns}-title {
+  margin-top: 0;
+  i {
+    margin-left: 5px;
+    line-height: 20px;
+  }
+}
+
+.@{ns}-grayed-out-test-output {
+  color: @gray-light;
+}
+
+.@{ns}-test-suite {
+  margin-top: 10px;
+  & .row {
+    margin: 0!important;
+  }
+
+  .big-icon {
+    font-size: 30px;
+  }
+
+  .error-icon {
+    color: @brand-danger;
+    top: 50%;
+  }
+
+  .success-icon {
+    color: @brand-primary;
+  }
+
+  .refresh-icon {
+    color: @icon-gray;
+  }
+}
+
+.night {
+  .@{ns}-instructions blockquote {
+    background-color: #242424;
+    border-color: #515151;
+    color: #ABABAB
+  }
+  .@{ns}-instructions dfn {
+    background-color: #242424;
+    color: #02a902;
+  }
+  .@{ns}-editor .CodeMirror {
+    background-color:#242424;
+    color:#ABABAB;
+    &-gutters {
+      background-color:#242424;
+      color:#ABABAB;
+    }
+    .cm-bracket, .cm-tag {
+      color:#5CAFD6;
+    }
+    .cm-property, .cm-string {
+      color:#B5753A;
+    }
+    .cm-keyword, .cm-attribute {
+      color:#9BBBDC;
+    }
+  }
+  .refresh-icon {
+    color: @icon-light-gray;
+  }
+}
+
+.@{ns}-test-output {
+  font-size: 15px;
+  font-family: "Ubuntu Mono";
+  margin-top: 8px;
+  line-height:20px;
+  word-wrap: break-word;
+}
+
+&{ @import "./views/index.less"; }

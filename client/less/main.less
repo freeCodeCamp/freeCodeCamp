@@ -1,8 +1,9 @@
-@import "lib/bootstrap/bootstrap";
-@import "lib/bootstrap-social/bootstrap-social";
-@import "lib/ionicons/ionicons";
-@import "lib/animate";
-@import "lib/bootstrap/variables";
+@import "./lib/bootstrap/bootstrap";
+@import "./lib/bootstrap-social/bootstrap-social";
+@import "./lib/ionicons/ionicons";
+@import "./lib/animate";
+@import "./lib/bootstrap/variables";
+@import "./flexgrid.less";
 
 html,body,div,span,a,li,td,th {
   font-family: 'Lato', sans-serif;
@@ -34,13 +35,6 @@ pre.wrappable {
   word-wrap: break-word;      /* IE 5+ */
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-  // hack to prevent horizontal overflow problem on showHTML view
-  overflow-x: hidden;
-}
-
 //input[type=checkbox] {
 //  /* Double-sized Checkboxes */
 //  -ms-transform: scale(2); /* IE */
@@ -54,26 +48,12 @@ html {
   border-color: @brand-primary;
 }
 
-body.full-screen-body-background {
+.full-screen-body-background {
   background-color: @body-bg;
 }
 
-body.top-and-bottom-margins {
-  padding-top: 80px;
-  margin-bottom: 60px;
-}
-
-body.no-top-and-bottom-margins {
+.no-top-and-bottom-margins {
   margin: 75px 20px 0px 20px;
-}
-
-body.react-layout {
-  margin-top: 75px;
-  margin-bottom: 15px;
-  width: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  min-height: 650px;
 }
 
 h1, h2 {
@@ -165,9 +145,12 @@ h1, h2, h3, h4, h5, h6, p, li {
   }
 }
 
+// defined in bootstrap
+@navbar-total-height: @navbar-height + @navbar-margin-bottom;
 .nav-height {
-  height: 50px;
   border: none;
+  height: @navbar-height;
+  width: 100%;
 }
 
 .landing-icon {
@@ -1241,11 +1224,14 @@ and (max-width : 400px)  {
   }
 }
 
-
-@import "code-mirror.less";
-@import "challenge.less";
-@import "toastr.less";
-@import "map.less";
-@import "sk-wave.less";
-@import "classic-modal.less";
-@import "skeleton-shimmer.less";
+// surrounding downstream import with &{}
+// creates locally scoped imports
+// and prevents vaiables from overwriting each other
+&{ @import "./code-mirror.less"; }
+&{ @import "./challenge.less"; }
+&{ @import "./toastr.less"; }
+&{ @import "./map.less"; }
+&{ @import "./sk-wave.less"; }
+&{ @import "./classic-modal.less"; }
+&{ @import "./skeleton-shimmer.less"; }
+&{ @import "../../common/index.less"; }

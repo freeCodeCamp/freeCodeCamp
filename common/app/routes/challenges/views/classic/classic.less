@@ -1,0 +1,109 @@
+// should match filename and ./ns.json
+@ns: classic;
+
+// make the height no larger than (window - navbar)
+.max-element-height(up-to) {
+  max-height: e(%('calc(100vh - %s)', @navbar-total-height));
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.max-element-height(always) {
+  height: e(%('calc(100vh - %s)', @navbar-total-height));
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.@{ns}-instructions-panel {
+  .max-element-height(always);
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.@{ns}-instructions {
+  margin-bottom: 5px;
+  h4 {
+    margin-bottom: 0;
+  }
+  blockquote {
+    font-size: 90%;
+    font-family: @font-family-monospace;
+    color: @code-color;
+    background-color: #fffbe5;
+    border-radius: @border-radius-base;
+    border: 1px solid @pre-border-color;
+    white-space: pre;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    overflow: auto;
+  }
+  dfn {
+    font-family: @font-family-monospace;
+    color: @code-color;
+    background-color: @code-bg;
+    border-radius: @border-radius-base;
+    padding: 1px 5px;
+  }
+  & a, #MDN-links a {
+    color: #31708f;
+  }
+  & a::after, #MDN-links a::after {
+    font-size: 70%;
+    font-family: FontAwesome;
+    content: " \f08e";
+  }
+  ol {
+    font-size: 16px;
+  }
+}
+
+
+.night {
+  .@{ns}-instructions blockquote {
+    background-color: #242424;
+    border-color: #515151;
+    color: #ABABAB
+  }
+  .@{ns}-instructions dfn {
+    background-color: #242424;
+    color: #02a902;
+  }
+  .@{ns}-editor .CodeMirror {
+    background-color:#242424;
+    color:#ABABAB;
+    &-gutters {
+      background-color:#242424;
+      color:#ABABAB;
+    }
+    .cm-bracket, .cm-tag {
+      color:#5CAFD6;
+    }
+    .cm-property, .cm-string {
+      color:#B5753A;
+    }
+    .cm-keyword, .cm-attribute {
+      color:#9BBBDC;
+    }
+  }
+}
+
+.@{ns}-editor {
+  .max-element-height(always);
+  width: 100%;
+}
+
+.@{ns}-preview {
+  .max-element-height(always);
+  width: 100%;
+}
+
+.@{ns}-preview-frame {
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: @gray-lighter;
+  height: 99%;
+  overflow: hidden;
+  width: 100%;
+}

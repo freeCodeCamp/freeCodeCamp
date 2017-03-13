@@ -1,6 +1,7 @@
 //
 // Variables
 // --------------------------------------------------
+@empty: ~'';
 
 
 //== Colors
@@ -20,8 +21,8 @@
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
-@icon-grey:             #575757;
-@icon-light-grey:       #888888;
+@icon-gray:             #575757;
+@icon-light-gray:       #888888;
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -305,6 +306,10 @@
 //** Deprecated `@screen-lg-desktop` as of v3.0.1
 @screen-lg-desktop:          @screen-lg-min;
 
+// Large screen / wide desktop
+@screen-xl:                  1400px;
+@screen-lg-min:              @screen-lg;
+
 // So media queries don't overlap when required, provide a maximum
 @screen-xs-max:              (@screen-sm-min - 1);
 @screen-sm-max:              (@screen-md-min - 1);
@@ -344,6 +349,8 @@
 @container-large-desktop:      (1140px + @grid-gutter-width);
 //** For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
+
+@container-xl:                 (1340px + @grid-gutter-width);
 
 
 //== Navbar

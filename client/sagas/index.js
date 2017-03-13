@@ -7,7 +7,6 @@ import hardGoToSaga from './hard-go-to-saga.js';
 import mouseTrapSaga from './mouse-trap-saga.js';
 import nightModeSaga from './night-mode-saga.js';
 import titleSaga from './title-saga.js';
-import windowSaga from './window-saga.js';
 
 export default [
   analyticsSaga,
@@ -18,6 +17,5 @@ export default [
   hardGoToSaga,
   mouseTrapSaga,
   nightModeSaga,
-  titleSaga,
-  windowSaga
+  titleSaga
 ];

@@ -22,10 +22,6 @@ export default createTypes([
   'hardGoTo',
   'delayedRedirect',
 
-  'initWindowHeight',
-  'updateWindowHeight',
-  'updateNavHeight',
-
   // data handling
   'updateChallengesData',
   'updateHikesData',
