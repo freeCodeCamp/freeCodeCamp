@@ -41,6 +41,13 @@ function refreshFrame(frame) {
   return frame;
 }
 
+function refreshTests(testId) {
+  let frame = document.getElementById(testId);
+  if (frame && frame.parentNode) {
+    frame.parentNode.removeChild(frame);
+  }
+}
+
 function getFrameDocument(document, id = mainId) {
   let frame = document.getElementById(id);
   if (!frame) {
@@ -73,6 +80,7 @@ function frameMain({ build } = {}, document, proxyLogger) {
 }
 
 function frameTests({ build, source, checkChallengePayload } = {}, document) {
+  refreshTests(testId);
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
