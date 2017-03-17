@@ -151,7 +151,7 @@
     "gulp-jsonlint": "^1.1.0",
     "gulp-less": "^3.0.3",
     "gulp-nodemon": "^2.0.3",
-    "gulp-notify": "^2.2.0",
+    "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-reduce-file": "0.0.1",
     "gulp-rev": "^7.0.0",
