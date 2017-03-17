@@ -825,7 +825,7 @@
         "assert(!timRegex.test(\"Timmber\"), 'message: Your regex should not match <code>\"Timmber\"</code>');",
         "assert(!timRegex.test(\"Timmmber\"), 'message: Your regex should not match <code>\"Timmmber\"</code>');",
         "assert(timRegex.test(\"Timmmmber\"), 'message: Your regex should match <code>\"Timmmmber\"</code>');",
-        "assert(!timRegex.test(\"Ti\" + \"m\".repeat(30) + \"ber\"), 'message: Your regex should match <code>\"Timber\"</code> with 30 <code>m</code>\\'s in it.');"
+        "assert(!timRegex.test(\"Ti\" + \"m\".repeat(30) + \"ber\"), 'message: Your regex should not match <code>\"Timber\"</code> with 30 <code>m</code>\\'s in it.');"
       ],
       "solutions": [],
       "hints": [],
