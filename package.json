@@ -167,7 +167,7 @@
     "proxyquire": "^1.7.10",
     "react-hot-loader": "^1.3.0",
     "rev-del": "^1.0.5",
-    "sinon": "^1.17.3",
+    "sinon": "^2.0.0",
     "sort-keys": "^1.1.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.2.2",
