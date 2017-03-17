@@ -58,6 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const newTest = { text, testString };
         let test;
         let __result;
+
+        // uncomment the following line to inspect
+        // the framerunner as it runs tests
+        // make sure the dev tools console is open
+        // debugger;
         try {
           /* eslint-disable no-eval */
           // eval test string to actual JavaScript

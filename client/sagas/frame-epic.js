@@ -72,12 +72,14 @@ function frameMain({ build } = {}, document, proxyLogger) {
   main.close();
 }
 
-function frameTests({ build, source, checkChallengePayload } = {}, document) {
+function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
-  tests.__source = source;
-  tests.__getUserInput = key => source[key];
+  // default for classic challenges
+  // should not be used for modern
+  tests.__source = sources['index'] || '';
+  tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
   tests.open();
   tests.write(createHeader(testId) + build);
