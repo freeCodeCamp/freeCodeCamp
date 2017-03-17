@@ -547,7 +547,7 @@
         "<code>const divText = `</code>",
         "<code><div></code>",
         "<code>   ${text}</code>",
-        "<code></div></code>",
+        "<code>const divText = `</code>",
         "<code>console.log(divText); // prints </code>",
         "<code>//<div></code>",
         "<code>// Hello World</code>",
