@@ -387,12 +387,12 @@ export function createMapUi(
     children: superBlocks.map(superBlock => {
       return {
         name: superBlock,
-        isOpen: true,
+        isOpen: false,
         isHidden: false,
         children: protect(superBlockMap[superBlock]).blocks.map(block => {
           return {
             name: block,
-            isOpen: true,
+            isOpen: false,
             isHidden: false,
             children: protect(blockMap[block]).challenges.map(challenge => {
               return {
