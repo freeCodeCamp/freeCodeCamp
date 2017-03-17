@@ -4,7 +4,7 @@ import { ajax$ } from '../../common/utils/ajax-stream';
 // value used to break browser ajax caching
 const cacheBreakerValue = Math.random();
 
-export function fetchScript(
+export function _fetchScript(
   {
     src,
     cacheBreaker = false,
@@ -33,16 +33,16 @@ export function fetchScript(
   this.cache.set(src, script);
   return script;
 }
-fetchScript.cache = new Map();
+export const fetchScript = _fetchScript.bind({ cache: new Map() });
 
-export function fetchLink(
+export function _fetchLink(
   {
     link: href,
     raw = false,
     crossDomain = true
   } = {},
 ) {
-  if (!link) {
+  if (!href) {
     return Observable.throw(new Error('No source provided for link'));
   }
   if (this.cache.has(href)) {
@@ -71,4 +71,4 @@ export function fetchLink(
   return link;
 }
 
-fetchLink.cache = new Map();
+export const fetchLink = _fetchLink.bind({ cache: new Map() });
