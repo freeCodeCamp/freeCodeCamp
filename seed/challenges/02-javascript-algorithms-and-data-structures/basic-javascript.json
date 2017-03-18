@@ -1810,18 +1810,18 @@
         "We can access the data inside arrays using <code>indexes</code>.",
         "Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array is element <code>0</code>.",
         "<strong>Example</strong>",
-        "<blockquote>var array = [1,2,3];<br>array[0]; // equals 1<br>var data = array[1];  // equals 2</blockquote>",
+        "<blockquote>var array = [50,60,70];<br>array[0]; // equals 50<br>var data = array[1];  // equals 60</blockquote>",
         "<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.",
         "<hr>",
         "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code> using bracket notation."
       ],
       "challengeSeed": [
         "// Example",
-        "var ourArray = [1,2,3];",
-        "var ourData = ourArray[0]; // equals 1",
+        "var ourArray = [50,60,70];",
+        "var ourData = ourArray[0]; // equals 50",
         "",
         "// Setup",
-        "var myArray = [1,2,3];",
+        "var myArray = [50,60,70];",
         "",
         "// Only change code below this line.",
         ""
@@ -1830,7 +1830,7 @@
         "if(typeof myArray !== \"undefined\" && typeof myData !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
       ],
       "solutions": [
-        "var myArray = [1,2,3];\nvar myData = myArray[0];"
+        "var myArray = [50,60,70];\nvar myData = myArray[0];"
       ],
       "tests": [
         "assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');",
@@ -1860,18 +1860,18 @@
       "description": [
         "Unlike strings, the entries of arrays are <dfn>mutable</dfn> and can be changed freely.",
         "<strong>Example</strong>",
-        "<blockquote>var ourArray = [3,2,1];<br>ourArray[0] = 1; // equals [1,2,1]</blockquote>",
+        "<blockquote>var ourArray = [50,40,30];<br>ourArray[0] = 15; // equals [15,40,30]</blockquote>",
         "<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.",
         "<hr>",
-        "Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>3</code>."
+        "Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>45</code>."
       ],
       "challengeSeed": [
         "// Example",
-        "var ourArray = [1,2,3];",
-        "ourArray[1] = 3; // ourArray now equals [1,3,3].",
+        "var ourArray = [18,64,99];",
+        "ourArray[1] = 45; // ourArray now equals [18,45,99].",
         "",
         "// Setup",
-        "var myArray = [1,2,3];",
+        "var myArray = [18,64,99];",
         "",
         "// Only change code below this line.",
         "",
@@ -1881,10 +1881,10 @@
         "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
       "solutions": [
-        "var myArray = [1,2,3];\nmyArray[0] = 3;"
+        "var myArray = [18,64,99];\nmyArray[0] = 45;"
       ],
       "tests": [
-        "assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [3,2,3].');",
+        "assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 45 && myArray[1] == 64 && myArray[2] == 99){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [45,64,99].');",
         "assert((function(){if(code.match(/myArray\\[0\\]\\s*=\\s*/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
       ],
       "type": "waypoint",
