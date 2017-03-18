@@ -287,14 +287,16 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'message: Your <code>Set</code> class should have a <code>add</code> method.');",
-        "assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); console.log(vals); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'message: Your <code>Set</code> should not add duplicate values.');",
-        "assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'message: Your <code>Set</code> should return <code>true</code> when a value has been successfully added.');",
-        "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'message: Your <code>Set</code> should return <code>false</code> when the user tries to add a duplicate value.');"
+        "assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'message: Your <code>Set</code> class should have an <code>add</code> method.');",
+        "assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'message: Your <code>add</code> method should not add duplicate values.');",
+        "assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'message: Your <code>add</code> method should return <code>true</code> when a value has been successfully added.');",
+        "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'message: Your <code>add</code> method should return <code>false</code> when a duplicate value is added.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -302,7 +304,7 @@
       "id": "587d8253367417b2b2512c6b",
       "title": "Remove from a Set",
       "description": [
-        "In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set."
+        "In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set, and return true. Otherwise, return false."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -330,12 +332,14 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'message: Your <code>Set</code> class should have a <code>remove</code> method.');",
-        "assert.deepEqual((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"c\"); return test.values(); })(), [\"a\", \"b\"], 'message: Your <code>remove</code> method should only remove items that are present in the set.');",
-        "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\"); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your <code>remove</code> method should remove the given item from the set.');"
+        "assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b'], 'message: Your <code>remove</code> method should only remove items that are present in the set.');",
+        "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your <code>remove</code> method should remove the given item from the set.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -343,7 +347,7 @@
       "id": "8d1923c8c441eddfaeb5bdef",
       "title": "Size of the Set",
       "description": [
-        "In this exercise we are going to create a size function for our Set. This function should be named this.size and it should return the size of the collection."
+        "In this exercise we are going to create a size function for our Set. This function should be named <code>this.size</code> and it should return the size of the collection."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -380,11 +384,13 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.size === 'function')}()), 'message: Your <code>Set</code> class should have a <code>size</code> method.');",
-        "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\");return (test.size() === 1)}()), 'message: The <code>size</code> method should return the number of elements in the collection.');"
+        "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()), 'message: The <code>size</code> method should return the number of elements in the collection.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};}"
+    ],
       "challengeType": 1,
       "translations": {}
     },
@@ -392,7 +398,8 @@
       "id": "587d8253367417b2b2512c6c",
       "title": "Perform a Union on Two Sets",
       "description": [
-        "In this exercise we are going to perform a union on two sets of data. We will create a method on our Set data structure called <code>union</code>. This method should take another set as an argument and update the set you called the method on to be the union of the two sets, excluding any duplicate values."
+        "In this exercise we are going to perform a union on two sets of data. We will create a method on our <code>Set</code> data structure called <code>union</code>. This method should take another <code>Set</code> as an argument and return the <code>union</code> of the two sets, excluding any duplicate values.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the union of setA and setB is: <code>setA.union(setB) = ['a', 'b', 'c', 'd', 'e']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -434,11 +441,13 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.union === 'function')})(), 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
-        "assert((function(){var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'message: The proper collection was returned');"
+        "assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -446,7 +455,8 @@
       "id": "587d8253367417b2b2512c6d",
       "title": "Perform an Intersection on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform an intersection on 2 sets of data. An intersection of sets represents all values that are common to two or more sets. This method should be called this.intersection. This method should return a new set containing the intersection of the sets the method was called against."
+        "In this exercise we are going to perform an intersection on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>intersection</code>. An intersection of sets represents all values that are common to two or more sets. This method should take another <code>Set</code> as an argument and return the <code>intersection</code> of the two sets.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the intersection of setA and setB is: <code>setA.intersection(setB) = ['a', 'b']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -499,12 +509,14 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'message: Your <code>Set</code> class should have a <code>intersection</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.values() === [ 'c' ])}), 'message: The proper collection was returned');"
+        "assert(function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'message: Your <code>Set</code> class should have a <code>intersection</code> method.');",
+        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')}, 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -512,7 +524,8 @@
       "id": "587d8254367417b2b2512c6e",
       "title": "Perform a Difference on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform a difference on 2 sets of data. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should be called this.difference and should return a new set containing only the items that result from taking the difference of two sets."
+        "In this exercise we are going to perform a difference on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>difference</code>. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should take another <code>Set</code> as an argument and return the <code>difference</code> of the two sets.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the difference of setA and setB is: <code>setA.difference(setB) = ['c']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -576,12 +589,14 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.difference === 'function')}, 'message: Your <code>Set</code> class should have a <code>difference</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var differenceSetAB = setA.difference(setB);return (differenceSetAB.values() === [ 'a', 'b' ])}), 'message: The proper collection was returned');"
+        "assert(function(){var test = new Set(); return (typeof test.difference === 'function')}, 'message: Your <code>Set</code> class should have a <code>difference</code> method.');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ 'a', 'b' ])}, 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -589,7 +604,8 @@
       "id": "587d8254367417b2b2512c6f",
       "title": "Perform a Subset Check on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform a subset test on 2 sets of data. This will compare the first set, against the second and if the first set is fully contained within the Second then it will return true. This method should be called this.subset. At this point, we have added a lot of useful functionality to our Set data structure. This will complete the challenges for the set data structure."
+        "In this exercise we are going to perform a subset test on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>subset</code>. This will compare the first set, against the second and if the first set is fully contained within the Second then it will return true.",
+        "For example, if <code>setA = ['a','b']</code> and <code>setB = ['a','b','c','d']</code>, then the subset of setA and setB is: <code>setA.subset(setB)</code> should be <code>true</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -664,12 +680,18 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.subset === 'function')}, 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setB.add(\"b\");  setB.add(\"c\");  setB.add(\"a\");  setB.add(\"d\");  var subSetSetAB = setA.subset(setB);return (subSetSetAB === true)}), 'message: The first Set() was contained in the second Set');"
+        "assert(function(){var test = new Set(); return (typeof test.subset === 'function')}, 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)}, 'message: The first Set() was contained in the second Set');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('a'); setB.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, \"message: <code>['a', 'b'].subset(['a', 'b', 'c', 'd'])</code> should return <code>true</code>\");",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('a'); setB.add('b'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"message: <code>['a', 'b', 'c'].subset(['a', 'b'])</code> should return <code>false</code>\");",
+        "assert(function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, 'message: <code>[].subset([])</code> should return <code>true</code>');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"message: <code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>\");"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};this.subset = function(set) {var isSubset = true;var c = this.values();c.forEach(function(e){if(!set.has(e)) isSubset = false;});return isSubset;};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -704,11 +726,13 @@
         "checkSet();"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');})(), 'message: Your <code>Set</code> only contains the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
+        "assert(function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');}, 'message: Your <code>Set</code> should only contains the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(){var set = new Set([1,2,3,'Taco','Cat','Awesome']);\nreturn set;}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -716,29 +740,31 @@
       "id": "587d8254367417b2b2512c71",
       "title": "Remove items from a set in ES6",
       "description": [
-        "Now we will see how we can remove items from an ES6 Set.",
-        "Let's create a Set:",
-        "var set = new Set([1,2,3]);",
-        "Once you have created a set object, you can remove values you no longer want with delete. For example:",
-        "var set = new Set([1,2,3]);",
-        "set.delete(1);",
-        "console.log([...set]) // should return [ 2, 3 ]",
-        "In this exercise we will return a Set with the passed parameter."
+        "Let's practice removimg items from an ES6 Set using the <code>delete</code> method.",
+        "First, create an ES6 Set",
+        "<code>var set = new Set([1,2,3]);</code>",
+        "Now remove an item from your Set with the <code>delete</code> method.",
+        "<blockquote>set.delete(1);<br>console.log([...set]) // should return [ 2, 3 ]<blockquote>",
+        "<hr>",
+        "Now, create a set with the integers 1, 2, 3, 4, & 5. \n Remove the values 2 and 5, and then return the set."
       ],
       "challengeSeed": [
-        "function checkSet(itemToRemove){",
-        "   var set = new Set([1,2,3,3,2,1,2,3,1]);",
-        "   // change code below this line",
-        "   // change code above this line",
-        "   console.log(set);",
+        "function checkSet(){",
+        "   var set = //Create a set with values 1, 2, 3, 4, & 5",
+        "   //Remove the value 2",
+        "   //Remove the value 5",
+        "   //Return the set",
+        "   return set;",
         "}"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(); var testArr = [...test];  testArr === [ 2, 3 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, 'message: Your Set should contain the values 1, 3, & 4');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(){\nvar set = new Set([1,2,3,4,5]);\nset.delete(2);\nset.delete(5);\nreturn set;}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -746,28 +772,35 @@
       "id": "587d8255367417b2b2512c72",
       "title": "Use .has and .size on an ES6 Set",
       "description": [
-        "Now we will look at the .has and .size methods available on the Set object.",
-        "var set = new Set([1,2,3]);",
-        "var hasTwo = set.has(2); // will return true or false",
-        "var howBig = set.size; // will return an integer representing the size of the Array",
-        "console.log(\"Has a 2: \" + hasTwo); // should be true",
-        "console.log(\"Length of Set: \" + howBig); // should show 3",
-        "In this exercise we will pass in an array of a values and a value to check for. We will return a new array with (true or false) for the presence of the value and the size of the Set."
+        "Let's look at the .has and .size methods available on the ES6 Set object.",
+        "First, create an ES6 Set",
+        "<code>var set = new Set([1,2,3]);</code>",
+        "The .has method will check if the value is contained within the set.",
+        "<code>var hasTwo = set.has(2);</code>",
+        "The .size method will return an integer representing the size of the Set",
+        "<code>var howBig = set.size;</code>",
+        "<hr>",
+        "In this exercise we will pass an array and a value to the checkSet() function. Your function should create an ES6 set from the array argument. Find if the set contains the value argument. Find the size of the set. And return those two values in an array."
       ],
       "challengeSeed": [
         "function checkSet(arrToBeSet, checkValue){",
+        "",
         "   // change code below this line",
         "",
         "   // change code above this line",
-        "   console.log(set);",
-        "}"
+        "",
+        "}",
+        "",
+        "checkSet([ 1, 2, 3], 2); // Should return [ true, 3 ]"
       ],
       "tests": [
-        "assert((function(){var test = checkSet([1,2,3], 2); test === [ true, 3 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, 'message: <code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(arrToBeSet, checkValue){\nvar set = new Set(arrToBeSet);\nvar result = [\nset.has(checkValue),\nset.size\n];\nreturn result;\n}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -775,15 +808,13 @@
       "id": "587d8255367417b2b2512c73",
       "title": "Use Spread and Notes for ES5 Set() Integration",
       "description": [
-        "Next up is one of the coolest things in ES6!",
-        "The noble spread operator! '...' can take iterable objects in ES6 and turn them into arrays",
+        "Do you remember the ES6 spread operator <code>...</code>?",
+        "<code>...</code> can take iterable objects in ES6 and turn them into arrays.",
         "Let's create a Set, and check out the spread function.",
-        "var set = new Set([1,2,3]);",
-        "var setToArr = [...set]",
-        "console.log(setToArr) // returns [ 1, 2, 3 ]",
-        "Awesome, right!?",
-        "In this exercise we will pass in a set object. We will return an array with the values of the Set.",
-        "The ES5 Set() function we created, can be used to perform union, intersection, difference and subset functions using the new ES6 Sets with very little modification."
+        "<blockquote>var set = new Set([1,2,3]);<br>var setToArr = [...set]<br>console.log(setToArr) // returns [ 1, 2, 3 ]</blockquote>",
+        "<hr>",
+        "In this exercise we will pass a set object to the <code>checkSet</code> function. It should return an array containing the values of the Set.",
+        "Now you've successfully learned how to use the ES6 <code>Set()</code> object, good job!"
       ],
       "challengeSeed": [
         "function checkSet(set){",
@@ -793,11 +824,13 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ]}, 'message: Your Set was returned correctly!');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(set){\nreturn [...set];}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
