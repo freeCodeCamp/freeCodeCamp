@@ -30,14 +30,12 @@
     },
     {
       "id": "587d7fad367417b2b2512be1",
-      "title": "Trigger click Events with JavaScript",
+      "title": "Handle Click Events with JavaScript using the onclick property",
       "description": [
-        "This section covers how to get data from APIs. APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
-        "You'll learn how to update HTML with the data we get from these APIs using a technology called AJAX.",
         "You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:",
         "<blockquote>document.addEventListener('DOMContentLoaded',function() {<br><br>});</blockquote>",
-        "Next, you can implement a click event handler that goes inside of the <code>DOMContentLoaded</code> function by adding the following code:",
-        "<code>document.getElementById('getMessage').onclick=function(){};</code>",
+        "You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:",
+        "<blockquote>document.getElementById('getMessage').onclick=function(){};</blockquote>",
         "<hr>",
         "Add a click event handler inside of the <code>DOMContentLoaded</code> function for the element with id of <code>getMessage</code>."
       ],
@@ -170,7 +168,7 @@
       "title": "Get JSON with the JavaScript XMLHttpRequest Method",
       "description": [
         "You can also request data from an external source. This is where APIs come into play.",
-        "Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
+        "Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another. You'll learn how to update HTML with the data we get from APIs using a technology called AJAX.",
         "Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.",
         "JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a <code>{</code> and a <code>}</code>.",
         "These properties and their values are often referred to as \"key-value pairs\".",
