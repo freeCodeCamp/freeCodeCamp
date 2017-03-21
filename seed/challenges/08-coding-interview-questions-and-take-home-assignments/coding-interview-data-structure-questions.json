@@ -161,7 +161,7 @@
         "<code>[[’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>",
         "Here the second value (an integer) represents item priority. If we enqueue <code>[‘human’, 1]</code> with a priority of <code>1</code> (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would like this:",
         "<code>[[‘human’, 1], [’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>.",
-        "We’ve starting writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing items, a <code>size</code> method to return the number of items in the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> or <code>false</code> if the queue is empty.",
+        "We’ve started writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing items, a <code>size</code> method to return the number of items in the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> if the queue is empty or <code>false</code> if it is not.",
         "The <code>enqueue</code> should accept items with the format shown above (<code>['human', 1]</code>) where <code>1</code> represents the priority. The <code>dequeue</code> should return only the current item, not its priority."
       ],
       "challengeSeed": [
