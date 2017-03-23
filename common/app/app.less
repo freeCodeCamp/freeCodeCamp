@@ -1,0 +1,14 @@
+// should match ./ns.json value and filename
+@ns: app;
+
+.@{ns}-container {
+  .column();
+  width: 100vw;
+}
+
+.@{ns}-content {
+  .center(@value: @container-xl, @padding: @grid-gutter-width);
+  // makes the inital content height 0px
+  // then lets it grow to fit the rest of the space
+  flex: 1 0 0px;
+}

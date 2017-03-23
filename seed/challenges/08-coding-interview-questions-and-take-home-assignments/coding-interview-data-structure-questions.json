@@ -63,7 +63,8 @@
       "tests": [
         "assert(homeworkStack.length === 4, 'message: <code>homeworkStack</code> should only contain 4 elements.');",
         "assert(homeworkStack[3] === 'CS50', 'message: The last element in <code>homeworkStack</code> should be <code>\"CS50\"</code>.');",
-        "assert(homeworkStack.indexOf('PSY44') === -1, 'message: <code>homeworkStack</code> should not contain <code>\"PSY44\"</code>.');"
+        "assert(homeworkStack.indexOf('PSY44') === -1, 'message: <code>homeworkStack</code> should not contain <code>\"PSY44\"</code>.');",
+        "assert(code.match(/=/g).length === 1 && /homeworkStack\\s*=\\s*\\[\"BIO12\"\\s*,\\s*\"HIS80\"\\s*,\\s*\"MAT122\"\\s*,\\s*\"PSY44\"\\]/.test(code)), 'message: The initial declaration of the <code>homeworkStack</code> should not be changed.');"
       ],
       "solutions": [],
       "hints": [],
@@ -138,7 +139,7 @@
         "assert((function(){var test = new Queue();  return (typeof test.dequeue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>dequeue</code> method.');",
         "assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>front</code> method.');",
         "assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>size</code> method.');",
-        "assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>isEmpty</code> method.');",
+        "assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have an <code>isEmpty</code> method.');",
         "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.dequeue() === 'Smith')}()), 'message: The <code>dequeue</code> method should remove and return the front element of the queue');",
         "assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()), 'message: The <code>front</code> method should return value of the front element of the queue');",
         "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()), 'message: The <code>size</code> method should return the length of the queue');",
@@ -155,19 +156,19 @@
       "id": "587d8255367417b2b2512c74",
       "title": "Create a Priority Queue Class",
       "description": [
-        "In this challenge you will be creating a Priority Queue. A Priority Queue is a special type of Queue with one primary difference, that you can set the priority in the queue as either high represented by 0 or low represented by an integer greater than 0 during the enqueue process. Item priority will override the placement order: that is, an item enqueue with a higher priority than any preceding items will be moved to the front of the queue. If items have equal priority, then placement order will decide their dequeue order. For instance:",
-        "collection = [['taco',1]]",
-        "PriorityQueue.enqueue(['kitten', 1]);",
-        "console.log([...PriorityQueue])",
-        "// would be [['taco', 1], ['kitten', 1]]",
-        "// not [['kitten', 1], ['taco', 1]]",
-        "For this challenge, you will create an object called PriorityQueue. You will need to add an enqueue method for adding items with a priority, a dequeue method for popping off the front item, a size method to return the number of items in the queue, and finally an isEmpty method that will return true or false if the queue is empty."
+        "In this challenge you will be creating a Priority Queue. A Priority Queue is a special type of Queue in which items may have additional information which specifies their priority. This could be simply represented with an integer. Item priority will override placement order in determining the sequence items are dequeued. If an item with a higher priority is enqueued after items with lower priority, the higher priority item will be dequeued before all the others.",
+        "For instance, let’s imagine we have a priority queue with three items:",
+        "<code>[[’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>",
+        "Here the second value (an integer) represents item priority. If we enqueue <code>[‘human’, 1]</code> with a priority of <code>1</code> (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would like this:",
+        "<code>[[‘human’, 1], [’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>.",
+        "We’ve started writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing items, a <code>size</code> method to return the number of items in the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> if the queue is empty or <code>false</code> if it is not.",
+        "The <code>enqueue</code> should accept items with the format shown above (<code>['human', 1]</code>) where <code>1</code> represents the priority. The <code>dequeue</code> should return only the current item, not its priority."
       ],
       "challengeSeed": [
         "function PriorityQueue () {",
         "    this.collection = [];",
         "    this.printCollection = function() {",
-        "      (console.log(this.collection));",
+        "      console.log(this.collection);",
         "    };",
         "    // Only change code below this line",
         "",
@@ -177,17 +178,17 @@
       "tests": [
         "assert((function(){var test = new PriorityQueue();  return (typeof test.enqueue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>enqueue</code> method.');",
         "assert((function(){var test = new PriorityQueue();  return (typeof test.dequeue === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>dequeue</code> method.');",
-        "assert((function(){var test = new PriorityQueue();  return (typeof test.front === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>front</code> method.');",
         "assert((function(){var test = new PriorityQueue();  return (typeof test.size === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>size</code> method.');",
-        "assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have a <code>isEmpty</code> method.');",
-        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]);test.enqueue(['Jon Snow', 1]); return (test.size()===2)}()), 'message: Your code did not correctly add the incoming items.');",
-        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]);test.enqueue(['Jon Snow', 1]);test.dequeue(); return (test.size()===1)}()), 'message: Your code did not correctly dequeue 1 item.');",
-        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]);test.enqueue(['Jon Snow', 1]);test.dequeue();test.dequeue(); return (test.isEmpty()===true)}()), 'message: Your code is not correctly reporting that the queue is empty.');",
-        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 1]);test.enqueue(['Jon Snow', 1]); return (test.dequeue() === 'David Brown' && test.dequeue() === 'Jon Snow')}()), 'message: Your code did not correctly prioritize the incoming items. If 2 items have the same priority the older item remains infront of new items');"
+        "assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()), 'message: Your <code>Queue</code> class should have an <code>isEmpty</code> method.');",
+        "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]); test.enqueue(['Jon Snow', 1]); var size1 = test.size(); test.dequeue(); var size2 = test.size(); test.enqueue(['A', 3]); test.enqueue(['B', 3]); test.enqueue(['C', 3]); return (size1 === 2 && size2 === 1 && test.size() === 4)}()), 'message: Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.');",
+        "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 1]); test.enqueue(['B', 1]); test.dequeue(); var first = test.isEmpty(); test.dequeue(); return (!first && test.isEmpty()); }()), 'message: The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.');",
+        "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 5]); test.enqueue(['B', 5]); test.enqueue(['C', 5]); test.enqueue(['D', 3]); test.enqueue(['E', 1]); test.enqueue(['F', 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join('') === 'EDABCF';}()), 'message: The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function PriorityQueue () { \n this.collection = []; \n this.printCollection = function(){ \n console.log(this.collection); \n }; \n this.size = function() { \n return this.collection.length; \n }; \n this.isEmpty = function() { \n return this.size() > 0 ? false : true; \n }; \n this.enqueue = function(newItem) { \n if (this.isEmpty()) { \n this.collection.push(newItem) \n } else { \n let inserted = false; \n var updated = this.collection.reduce((newCollection, item, index, current) => { \n if (newItem[1] < item[1] && !inserted) { \n newCollection.push(newItem); \n inserted = true; \n } \n newCollection.push(item); \n if (newItem[1] === item[1] && index < current.length - 1 && newItem[1] !== current[index + 1][1] && !inserted) { \n newCollection.push(newItem); \n inserted = true; \n } \n return newCollection; \n }, []); \n if (!inserted) { \n updated.push(newItem); \n } \n this.collection = updated; \n }; \n }; \n this.dequeue = function() { \n if (!this.isEmpty()) { \n return this.collection.shift()[0]; \n } else { \n return 'The queue is empty.' \n } \n }; \n }"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -286,14 +287,16 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'message: Your <code>Set</code> class should have a <code>add</code> method.');",
-        "assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); console.log(vals); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'message: Your <code>Set</code> should not add duplicate values.');",
-        "assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'message: Your <code>Set</code> should return <code>true</code> when a value has been successfully added.');",
-        "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'message: Your <code>Set</code> should return <code>false</code> when the user tries to add a duplicate value.');"
+        "assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'message: Your <code>Set</code> class should have an <code>add</code> method.');",
+        "assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'message: Your <code>add</code> method should not add duplicate values.');",
+        "assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'message: Your <code>add</code> method should return <code>true</code> when a value has been successfully added.');",
+        "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'message: Your <code>add</code> method should return <code>false</code> when a duplicate value is added.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -301,7 +304,7 @@
       "id": "587d8253367417b2b2512c6b",
       "title": "Remove from a Set",
       "description": [
-        "In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set."
+        "In this exercises we are going to create a delete function for our set. The function should be named <code>this.remove</code>. This function should accept a value and check if it exists in the set. If it does, remove that value from the set, and return true. Otherwise, return false."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -329,12 +332,14 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'message: Your <code>Set</code> class should have a <code>remove</code> method.');",
-        "assert.deepEqual((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"c\"); return test.values(); })(), [\"a\", \"b\"], 'message: Your <code>remove</code> method should only remove items that are present in the set.');",
-        "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\"); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your <code>remove</code> method should remove the given item from the set.');"
+        "assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b'], 'message: Your <code>remove</code> method should only remove items that are present in the set.');",
+        "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'message: Your <code>remove</code> method should remove the given item from the set.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -342,7 +347,7 @@
       "id": "8d1923c8c441eddfaeb5bdef",
       "title": "Size of the Set",
       "description": [
-        "In this exercise we are going to create a size function for our Set. This function should be named this.size and it should return the size of the collection."
+        "In this exercise we are going to create a size function for our Set. This function should be named <code>this.size</code> and it should return the size of the collection."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -379,11 +384,13 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.size === 'function')}()), 'message: Your <code>Set</code> class should have a <code>size</code> method.');",
-        "assert((function(){var test = new Set(); test.add(\"a\");test.add(\"b\");test.remove(\"a\");return (test.size() === 1)}()), 'message: The <code>size</code> method should return the number of elements in the collection.');"
+        "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()), 'message: The <code>size</code> method should return the number of elements in the collection.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};}"
+    ],
       "challengeType": 1,
       "translations": {}
     },
@@ -391,7 +398,8 @@
       "id": "587d8253367417b2b2512c6c",
       "title": "Perform a Union on Two Sets",
       "description": [
-        "In this exercise we are going to perform a union on two sets of data. We will create a method on our Set data structure called <code>union</code>. This method should take another set as an argument and update the set you called the method on to be the union of the two sets, excluding any duplicate values."
+        "In this exercise we are going to perform a union on two sets of data. We will create a method on our <code>Set</code> data structure called <code>union</code>. This method should take another <code>Set</code> as an argument and return the <code>union</code> of the two sets, excluding any duplicate values.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the union of setA and setB is: <code>setA.union(setB) = ['a', 'b', 'c', 'd', 'e']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -433,11 +441,13 @@
       ],
       "tests": [
         "assert((function(){var test = new Set(); return (typeof test.union === 'function')})(), 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
-        "assert((function(){var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'message: The proper collection was returned');"
+        "assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -445,7 +455,8 @@
       "id": "587d8253367417b2b2512c6d",
       "title": "Perform an Intersection on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform an intersection on 2 sets of data. An intersection of sets represents all values that are common to two or more sets. This method should be called this.intersection. This method should return a new set containing the intersection of the sets the method was called against."
+        "In this exercise we are going to perform an intersection on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>intersection</code>. An intersection of sets represents all values that are common to two or more sets. This method should take another <code>Set</code> as an argument and return the <code>intersection</code> of the two sets.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the intersection of setA and setB is: <code>setA.intersection(setB) = ['a', 'b']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -498,12 +509,14 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'message: Your <code>Set</code> class should have a <code>intersection</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.values() === [ 'c' ])}), 'message: The proper collection was returned');"
+        "assert(function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'message: Your <code>Set</code> class should have a <code>intersection</code> method.');",
+        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')}, 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -511,7 +524,8 @@
       "id": "587d8254367417b2b2512c6e",
       "title": "Perform a Difference on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform a difference on 2 sets of data. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should be called this.difference and should return a new set containing only the items that result from taking the difference of two sets."
+        "In this exercise we are going to perform a difference on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>difference</code>. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should take another <code>Set</code> as an argument and return the <code>difference</code> of the two sets.",
+        "For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the difference of setA and setB is: <code>setA.difference(setB) = ['c']</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -575,12 +589,14 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.difference === 'function')}, 'message: Your <code>Set</code> class should have a <code>difference</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setA.add(\"b\");  setA.add(\"c\");  setB.add(\"c\");  setB.add(\"d\");  var differenceSetAB = setA.difference(setB);return (differenceSetAB.values() === [ 'a', 'b' ])}), 'message: The proper collection was returned');"
+        "assert(function(){var test = new Set(); return (typeof test.difference === 'function')}, 'message: Your <code>Set</code> class should have a <code>difference</code> method.');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ 'a', 'b' ])}, 'message: The proper collection was returned');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -588,7 +604,8 @@
       "id": "587d8254367417b2b2512c6f",
       "title": "Perform a Subset Check on Two Sets of Data",
       "description": [
-        "In this exercise we are going to perform a subset test on 2 sets of data. This will compare the first set, against the second and if the first set is fully contained within the Second then it will return true. This method should be called this.subset. At this point, we have added a lot of useful functionality to our Set data structure. This will complete the challenges for the set data structure."
+        "In this exercise we are going to perform a subset test on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>subset</code>. This will compare the first set, against the second and if the first set is fully contained within the Second then it will return true.",
+        "For example, if <code>setA = ['a','b']</code> and <code>setB = ['a','b','c','d']</code>, then the subset of setA and setB is: <code>setA.subset(setB)</code> should be <code>true</code>."
       ],
       "challengeSeed": [
         "function Set() {",
@@ -663,12 +680,18 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = new Set(); return (typeof test.subset === 'function')}, 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
-        "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add(\"a\");  setB.add(\"b\");  setB.add(\"c\");  setB.add(\"a\");  setB.add(\"d\");  var subSetSetAB = setA.subset(setB);return (subSetSetAB === true)}), 'message: The first Set() was contained in the second Set');"
+        "assert(function(){var test = new Set(); return (typeof test.subset === 'function')}, 'message: Your <code>Set</code> class should have a <code>union</code> method.');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)}, 'message: The first Set() was contained in the second Set');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('a'); setB.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, \"message: <code>['a', 'b'].subset(['a', 'b', 'c', 'd'])</code> should return <code>true</code>\");",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('a'); setB.add('b'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"message: <code>['a', 'b', 'c'].subset(['a', 'b'])</code> should return <code>false</code>\");",
+        "assert(function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, 'message: <code>[].subset([])</code> should return <code>true</code>');",
+        "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"message: <code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>\");"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};this.subset = function(set) {var isSubset = true;var c = this.values();c.forEach(function(e){if(!set.has(e)) isSubset = false;});return isSubset;};}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -703,11 +726,13 @@
         "checkSet();"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');})(), 'message: Your <code>Set</code> only contains the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
+        "assert(function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');}, 'message: Your <code>Set</code> should only contains the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(){var set = new Set([1,2,3,'Taco','Cat','Awesome']);\nreturn set;}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -715,29 +740,31 @@
       "id": "587d8254367417b2b2512c71",
       "title": "Remove items from a set in ES6",
       "description": [
-        "Now we will see how we can remove items from an ES6 Set.",
-        "Let's create a Set:",
-        "var set = new Set([1,2,3]);",
-        "Once you have created a set object, you can remove values you no longer want with delete. For example:",
-        "var set = new Set([1,2,3]);",
-        "set.delete(1);",
-        "console.log([...set]) // should return [ 2, 3 ]",
-        "In this exercise we will return a Set with the passed parameter."
+        "Let's practice removimg items from an ES6 Set using the <code>delete</code> method.",
+        "First, create an ES6 Set",
+        "<code>var set = new Set([1,2,3]);</code>",
+        "Now remove an item from your Set with the <code>delete</code> method.",
+        "<blockquote>set.delete(1);<br>console.log([...set]) // should return [ 2, 3 ]<blockquote>",
+        "<hr>",
+        "Now, create a set with the integers 1, 2, 3, 4, & 5. \n Remove the values 2 and 5, and then return the set."
       ],
       "challengeSeed": [
-        "function checkSet(itemToRemove){",
-        "   var set = new Set([1,2,3,3,2,1,2,3,1]);",
-        "   // change code below this line",
-        "   // change code above this line",
-        "   console.log(set);",
+        "function checkSet(){",
+        "   var set = //Create a set with values 1, 2, 3, 4, & 5",
+        "   //Remove the value 2",
+        "   //Remove the value 5",
+        "   //Return the set",
+        "   return set;",
         "}"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(); var testArr = [...test];  testArr === [ 2, 3 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, 'message: Your Set should contain the values 1, 3, & 4');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(){\nvar set = new Set([1,2,3,4,5]);\nset.delete(2);\nset.delete(5);\nreturn set;}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -745,28 +772,35 @@
       "id": "587d8255367417b2b2512c72",
       "title": "Use .has and .size on an ES6 Set",
       "description": [
-        "Now we will look at the .has and .size methods available on the Set object.",
-        "var set = new Set([1,2,3]);",
-        "var hasTwo = set.has(2); // will return true or false",
-        "var howBig = set.size; // will return an integer representing the size of the Array",
-        "console.log(\"Has a 2: \" + hasTwo); // should be true",
-        "console.log(\"Length of Set: \" + howBig); // should show 3",
-        "In this exercise we will pass in an array of a values and a value to check for. We will return a new array with (true or false) for the presence of the value and the size of the Set."
+        "Let's look at the .has and .size methods available on the ES6 Set object.",
+        "First, create an ES6 Set",
+        "<code>var set = new Set([1,2,3]);</code>",
+        "The .has method will check if the value is contained within the set.",
+        "<code>var hasTwo = set.has(2);</code>",
+        "The .size method will return an integer representing the size of the Set",
+        "<code>var howBig = set.size;</code>",
+        "<hr>",
+        "In this exercise we will pass an array and a value to the checkSet() function. Your function should create an ES6 set from the array argument. Find if the set contains the value argument. Find the size of the set. And return those two values in an array."
       ],
       "challengeSeed": [
         "function checkSet(arrToBeSet, checkValue){",
+        "",
         "   // change code below this line",
         "",
         "   // change code above this line",
-        "   console.log(set);",
-        "}"
+        "",
+        "}",
+        "",
+        "checkSet([ 1, 2, 3], 2); // Should return [ true, 3 ]"
       ],
       "tests": [
-        "assert((function(){var test = checkSet([1,2,3], 2); test === [ true, 3 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, 'message: <code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(arrToBeSet, checkValue){\nvar set = new Set(arrToBeSet);\nvar result = [\nset.has(checkValue),\nset.size\n];\nreturn result;\n}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -774,15 +808,13 @@
       "id": "587d8255367417b2b2512c73",
       "title": "Use Spread and Notes for ES5 Set() Integration",
       "description": [
-        "Next up is one of the coolest things in ES6!",
-        "The noble spread operator! '...' can take iterable objects in ES6 and turn them into arrays",
+        "Do you remember the ES6 spread operator <code>...</code>?",
+        "<code>...</code> can take iterable objects in ES6 and turn them into arrays.",
         "Let's create a Set, and check out the spread function.",
-        "var set = new Set([1,2,3]);",
-        "var setToArr = [...set]",
-        "console.log(setToArr) // returns [ 1, 2, 3 ]",
-        "Awesome, right!?",
-        "In this exercise we will pass in a set object. We will return an array with the values of the Set.",
-        "The ES5 Set() function we created, can be used to perform union, intersection, difference and subset functions using the new ES6 Sets with very little modification."
+        "<blockquote>var set = new Set([1,2,3]);<br>var setToArr = [...set]<br>console.log(setToArr) // returns [ 1, 2, 3 ]</blockquote>",
+        "<hr>",
+        "In this exercise we will pass a set object to the <code>checkSet</code> function. It should return an array containing the values of the Set.",
+        "Now you've successfully learned how to use the ES6 <code>Set()</code> object, good job!"
       ],
       "challengeSeed": [
         "function checkSet(set){",
@@ -792,11 +824,13 @@
         "}"
       ],
       "tests": [
-        "assert((function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ])}, 'message: Your Set was returned correctly!');"
+        "assert(function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ]}, 'message: Your Set was returned correctly!');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": [
+        "function checkSet(set){\nreturn [...set];}"
+      ],
       "challengeType": 1,
       "translations": {}
     },
@@ -917,11 +951,11 @@
       "id": "587d8251367417b2b2512c61",
       "title": "Work with Nodes in a Linked List",
       "description": [
-        "Another common data structure is the linked list. In a linked list, elements are stored in a node. The node contains two key pieces of information: the element itself, and a reference to the next node.",
-        "Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line, they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.",
+        "Another common data structure you'll run into in computer science is the <dfn>linked list</dfn>. A linked list is a linear collection of data elements, called 'nodes', each of which points to the next. Each <dfn>node</dfn> in a linked list contains two key pieces of information: the <code>element</code> itself, and a reference to the next <code>node</code>.",
+        "Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line: they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.",
         "<hr>",
-        "In the code, we've create two nodes, Kitten and Puppy, and we've manually connected the Kitten node to the Puppy node.",
-        "Create a Cat and Dog node and manually add them to the line."
+        "In our code editor, we've created two nodes, <code>Kitten</code> and <code>Puppy</code>, and we've manually connected the <code>Kitten</code> node to the <code>Puppy</code> node.",
+        "Create a <code>Cat</code> and <code>Dog</code> node and manually add them to the line."
       ],
       "challengeSeed": [
         "var Node = function(element){",
@@ -952,13 +986,14 @@
       "id": "587d8251367417b2b2512c62",
       "title": "Create a Linked List Class",
       "description": [
-        "Let's create a linked list class. Every linked list has a head and length. The head is the first node added to the linked list. The length is the size of the linked list. When an element is added to the linked list, the length should increment by one.",
-        "The first method of a linked list is the add method. When an element is added to a linked list, a new node is created. If is it the first node created, it is assigned to the head of the linked list. If it is not the first node, the previous node should reference the new created node.",
-        "Instructions",
-        "Write an add method that assigns head to the first node push to the linked list, and after that, every node should be referenced by the previous node.",
-        "We've added a head and size helper method.",
+        "Let's create a <code>linked list</code> class. Every linked list should start out with a few basic properties: a <code>head</code> (the first item in your list) and a <code>length</code> (number of items in your list). Sometimes you'll see implementations of linked lists that incorporate a <code>tail</code> for the last element of the list, but for now we'll just stick with these two. Whenever we add an element to the linked list, our <code>length</code> property should be incremented by one.",
+        "We'll want to have a way to add items to our linked list, so the first method we'll want to create is the <code>add</code> method.",
+        "If our list is empty, adding an element to our linked list is straightforward enough: we just wrap that element in a <code>Node</code> class, and we assign that node to the <code>head</code> of our linked list." ,
+        "But what if our list already has one or more members? How do we add an element to the list? Recall that each node in a linked list has a <code>next</code> property. To add a node to the list, find the last node in the list, and point that last node's <code>next</code> property at our new node. (Hint: you know you've reached the end of a linked list when a node's <code>next</code> property is <code>null</node>.)",
+        "<hr>",
+        "Write an add method that assigns the first node you push to the linked list to the <code>head</code>; after that, whenever adding a node, every node should be referenced by the previous node's <code>next</code> property.",
         "Note",
-        "Length should increase by one every time an element is pushed to the linked list."
+        "Your list's <code>length</code> should increase by one every time an element is added to the linked list."
       ],
       "challengeSeed": [
         "function LinkedList() { ",
@@ -1002,13 +1037,14 @@
       "id": "587d8251367417b2b2512c63",
       "title": "Remove Elements from a Linked List",
       "description": [
-        "The next important method of a linked list is the remove method. The remove method takes an element and searches the linked list to find and remove the node containing that element. When a node is removed, the previous node that had reference to removed node, now has reference to the node that the removed node once referenced.",
-        "This might sound really confusing, but let's return to the conga line example. You're in conga line, and the person straight ahead of you leaves the line. The person leaving the line, no longer has his hands on any one in line and you no longer have hands on the person that left. You step forward and put your hands on next person you see.",
-        "If the element being removed is the head element, the head is reassigned to the second node of the linked list.",
-        "Instructions",
-        "Write a remove method that takes an element and removes it from the linked list.",
+        "The next important method that any implementation of a linked list will need is a <code>remove</code> method. This method should take the element we want to remove as an argument, and then search the list to find and remove the node that contains that element.",
+        "Whenever we remove a node from a linked list, it's important that we don't accidentally orphan the rest of the list in doing so. Recall that every node's <code>next</code> property points to the node that follows it in the list. If we're removing the middle element, say, we'll want to make sure that we have a connection from that element's previous node's <code>next</code> property to the middle element's <code>next</code> property (which is the next node in the list!)",
+        "This might sound really confusing, so let's return to the conga line example so we have a good conceptual model. Picture yourself in a conga line, and the person directly in front of you leaves the line. The person who just left the line no longer has her hands on anyone in line--and you no longer have your hands on the person that left. You step forward and put your hands on next person you see.",
+        "If the element we wish to remove is the <code>head</code> element, we reassign the <code>head</code> to the second node of the linked list.",
+        "<hr>",
+        "Write a <code>remove</code> method that takes an element and removes it from the linked list.",
         "Note",
-        "Length should decrease by one every time an element is removed from the linked list."
+        "The <code>length</code> of the list should decrease by one every time an element is removed from the linked list."
       ],
       "challengeSeed": [
         "function LinkedList() { ",
@@ -1071,10 +1107,11 @@
       "id": "587d8251367417b2b2512c64",
       "title": "Search within a Linked List",
       "description": [
-        "Let's add a few more useful methods to our linked list class. Like the stack and queue classes, we should add an isEmpty method to check if the linked list is empty.",
-        "We also want to find elements in our linked list. Let's create a indexOf method that takes an element and returns the indexs of it in the linked list. The method should return -1 if the element is not found in the linked list. We also need an elementAt method that takes an index and returns the element at the given index. The method should return undefined if no element is found.",
-        "Instructions",
-        "Write isEmpty method that checks if the linked list is empty, a size method that returns the length of the linked list, a indexOf method that returns the index of a given element, and an elementAt that returns an element at a given index."
+        "Let's add a few more useful methods to our linked list class. Wouldn't it be useful if we could tell if our list was empty or not, as with our <code>Stack</code> and <code>Queue</code> classes?",
+        "We should also be able to find specific elements in our linked list. Traversing through data structures is something you'll want to get a lot of practice with! Let's create an <code>indexOf</code> method that takes an <code>element</code> as an argument, and returns that element's <code>index</code> in the linked list. If the element is not found in the linked list, return <code>-1</code>.",
+        "Let's also implement a method that does the opposite: an <code>elementAt</code> method that takes an <code>index</code> as an argument and returns the <code>element</code> at the given <code>index</code>. If no <code>element</code> is found, return <code>undefined</code>.",
+        "<hr>",
+        "Write an <code>isEmpty</code> method that checks if the linked list is empty, an <code>indexOf</code> method that returns the <code>index</code> of a given element, and an <code>elementAt</code> that returns an <code>element</code> at a given <code>index."
       ],
       "challengeSeed": [
         "function LinkedList() { ",
@@ -1151,11 +1188,14 @@
       "id": "587d8251367417b2b2512c65",
       "title": "Remove Elements from a Linked List by Index",
       "description": [
-        "Now we need to create a remove method that removes the element at a given index. The method should be called removeAt(index). To remove an element at a certain index we need to keep count of each node as we move along the linked list. Starting at the head of the linked list, our currentIndex should be 0. The currentIndex should increment by one for each node we pass. Just like the remove(element) method, we need to reconnect the nodes. The node that has reference to the removed node should now have reference to the next node.",
-        "Instructions",
-        "Write a removeAt(index) method that removes and returns a node at a given index. The method should return null if the given index is a negative or is more than or equal to the length of the linked list.",
+        "Before we move on to another data structure, let's get a couple of last bits of practice with linked lists.",
+        "Let's write a <code>removeAt</code> method that removes the <code>element</code> at a given <code>index</code>. The method should be called <code>removeAt(index)</code>. To remove an <code>element</code> at a certain <code>index</code>, we'll need to keep a running count of each node as we move along the linked list.",
+        "A common technique used to iterate through the elements of a linked list involves a <dfn>'runner'</dfn>, or sentinel, that 'points' at the nodes that your code is comparing. In our case, starting at the <code>head</code> of our list, we start with a <code>currentIndex</code> variable that starts at <code>0</code>. The <code>currentIndex</code> should increment by one for each node we pass.",
+        "Just like our <code>remove(element)</code> method, we need to be careful not to orphan the rest of our list when we remove the node in our removeAt(index) method. We keep our nodes contiguous by making sure that the node that has reference to the removed node has a reference to the next node.",
+        "<hr>",
+        "Write a <code>removeAt(index)</code> method that removes and returns a node at a given <code>index</code>. The method should return <code>null</code> if the given <code>index</code> is either negative, or greater than or equal to the <code>length</code> of the linked list.",
         "Note",
-        "Remember to keep count of the currentIndex."
+        "Remember to keep count of the <code>currentIndex</code>."
       ],
       "challengeSeed": [
         "function LinkedList() { ",
@@ -1986,60 +2026,61 @@
       "challengeSeed": [
         "var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));",
         "function Node(value) {",
-        "    this.value = value;",
-        "    this.left = null;",
-        "    this.right = null;",
+        "  this.value = value;",
+        "  this.left = null;",
+        "  this.right = null;",
         "}",
         "",
         "function BinarySearchTree() {",
-        "    this.root = null;",
-        "    this.remove = function(value) {",
-        "        if (this.root == null) {",
-        "            return null;",
-        "        };",
-        "        var target;",
-        "        var parent = null;",
-        "        // find the target value and its parent",
-        "        (function findValue(node = this.root) {",
-        "            if (value == node.value) {",
-        "                target = node;",
-        "            } else if (value < node.value && node.left != null) {",
-        "                parent = node;",
-        "                return findValue(node.left);",
-        "            } else if (value < node.value && node.left == null) {",
-        "                return null;",
-        "            } else if (value > node.value && node.right != null) {",
-        "                parent = node;",
-        "                return findValue(node.right);",
-        "            } else {",
-        "                return null;",
-        "            };",
-        "        }).bind(this)();",
-        "        if (target == null) {",
-        "            return null;",
+        "  this.root = null;",
+        "  this.remove = function(value) {",
+        "    if (this.root === null) {",
+        "      return null;",
+        "    }",
+        "    var target;",
+        "    var parent = null;",
+        "    // find the target value and its parent",
+        "    (function findValue(node = this.root) {",
+        "      if (value == node.value) {",
+        "        target = node;",
+        "      } else if (value < node.value && node.left !== null) {",
+        "        parent = node;",
+        "        return findValue(node.left);",
+        "      } else if (value < node.value && node.left === null) {",
+        "        return null;",
+        "      } else if (value > node.value && node.right !== null) {",
+        "        parent = node;",
+        "        return findValue(node.right);",
+        "      } else {",
+        "        return null;",
+        "      }",
+        "    }).bind(this)();",
+        "    if (target === null) {",
+        "      return null;",
+        "    }",
+        "    // count the children of the target to delete",
+        "    var children = (target.left !== null ? 1 : 0) + (target.right !== null ? 1 : 0);",
+        "    // case 1: target has no children",
+        "    if (children === 0) {",
+        "      if (target == this.root) {",
+        "        this.root = null;",
+        "      }",
+        "      else {",
+        "        if (parent.left == target) {",
+        "          parent.left = null;",
+        "        } else {",
+        "          parent.right = null;",
         "        }",
-        "        // count the children of the target to delete",
-        "        var children = (target.left != null ? 1 : 0) + (target.right != null ? 1 : 0);",
-        "        // case 1: target has no children",
-        "        if (children == 0) {",
-        "            if (target == this.root) {",
-        "                this.root = null;",
-        "            }",
-        "            else {",
-        "                if (parent.left == target) {",
-        "                    parent.left = null;",
-        "                } else {",
-        "                    parent.right = null;",
-        "                };",
-        "            };",
-        "        }",
-        "        // case 2: target has one child, change code below this line",
+        "      }",
+        "    }",
+        "    // case 2: target has one child, change code below this line",
+        "  };",
         "}"
       ],
       "tests": [
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'message: The BinarySearchTree data structure exists.');",
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})(), 'message: The binary search tree has a method called remove.');",
-        "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })(), 'message: Trying to remove an element that doesn\\'t exist returns null.');",
+        "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })(), 'message: Trying to remove an element that does not exist returns null.');",
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })(), 'message: If the root node has no children, deleting it sets the root to null.');",
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'message: The remove method removes leaf nodes from the tree');",
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return (test.inorder().join('') == '-1'); })(), 'message: The remove method removes nodes with one child.');",
@@ -2139,75 +2180,75 @@
       "challengeSeed": [
         "var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));",
         "function Node(value) {",
-        "    this.value = value;",
-        "    this.left = null;",
-        "    this.right = null;",
+        "  this.value = value;",
+        "  this.left = null;",
+        "  this.right = null;",
         "}",
         "",
         "function BinarySearchTree() {",
-        "    this.root = null;",
-        "    this.remove = function(value) {",
-        "        if (this.root == null) {",
-        "            return null;",
-        "        };",
-        "        var target;",
-        "        var parent = null;",
-        "        // find the target value and its parent",
-        "        (function findValue(node = this.root) {",
-        "            if (value == node.value) {",
-        "                target = node;",
-        "            } else if (value < node.value && node.left != null) {",
-        "                parent = node;",
-        "                return findValue(node.left);",
-        "            } else if (value < node.value && node.left == null) {",
-        "                return null;",
-        "            } else if (value > node.value && node.right != null) {",
-        "                parent = node;",
-        "                return findValue(node.right);",
-        "            } else {",
-        "                return null;",
-        "            };",
-        "        }).bind(this)();",
-        "        if (target == null) {",
-        "            return null;",
+        "  this.root = null;",
+        "  this.remove = function(value) {",
+        "    if (this.root === null) {",
+        "      return null;",
+        "    }",
+        "    var target;",
+        "    var parent = null;",
+        "    // find the target value and its parent",
+        "    (function findValue(node = this.root) {",
+        "      if (value == node.value) {",
+        "        target = node;",
+        "      } else if (value < node.value && node.left !== null) {",
+        "        parent = node;",
+        "        return findValue(node.left);",
+        "      } else if (value < node.value && node.left === null) {",
+        "        return null;",
+        "      } else if (value > node.value && node.right !== null) {",
+        "        parent = node;",
+        "        return findValue(node.right);",
+        "      } else {",
+        "        return null;",
+        "      }",
+        "    }).bind(this)();",
+        "    if (target === null) {",
+        "      return null;",
+        "    }",
+        "    // count the children of the target to delete",
+        "    var children = (target.left !== null ? 1 : 0) + (target.right !== null ? 1 : 0);",
+        "    // case 1: target has no children",
+        "    if (children === 0) {",
+        "      if (target == this.root) {",
+        "        this.root = null;",
+        "      }",
+        "      else {",
+        "        if (parent.left == target) {",
+        "          parent.left = null;",
+        "        } else {",
+        "          parent.right = null;",
         "        }",
-        "        // count the children of the target to delete",
-        "        var children = (target.left != null ? 1 : 0) + (target.right != null ? 1 : 0);",
-        "        // case 1: target has no children",
-        "        if (children == 0) {",
-        "            if (target == this.root) {",
-        "                this.root = null;",
-        "            }",
-        "            else {",
-        "                if (parent.left == target) {",
-        "                    parent.left = null;",
-        "                } else {",
-        "                    parent.right = null;",
-        "                };",
-        "            };",
-        "        }",
-        "        // case 2: target has one child",
-        "        else if (children == 1) {",
-        "            var newChild = (target.left != null) ? target.left : target.right;",
-        "            if (parent == null) {",
-        "                target.value = newChild.value;",
-        "                target.left = null;",
-        "                target.right = null;",
-        "            } else if (newChild.value < parent.value) {",
-        "                parent.left = newChild;",
-        "            } else {",
-        "                parent.right = newChild;",
-        "            }",
-        "            target = null;",
-        "        }",
-        "        // case 3: target has two children, change code below this line",
-        "    };",
+        "      }",
+        "    }",
+        "    // case 2: target has one child",
+        "    else if (children == 1) {",
+        "      var newChild = (target.left !== null) ? target.left : target.right;",
+        "      if (parent === null) {",
+        "        target.value = newChild.value;",
+        "        target.left = null;",
+        "        target.right = null;",
+        "      } else if (newChild.value < parent.value) {",
+        "        parent.left = newChild;",
+        "      } else {",
+        "        parent.right = newChild;",
+        "      }",
+        "      target = null;",
+        "    }",
+        "    // case 3: target has two children, change code below this line",
+        "  };",
         "}"
       ],
       "tests": [
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'message: The BinarySearchTree data structure exists.');",
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})(), 'message: The binary search tree has a method called remove.');",
-        "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function') ? (test.remove(100) == null) : false})(), 'message: Trying to remove an element that doesn\\'t exist returns null.');",
+        "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function') ? (test.remove(100) == null) : false})(), 'message: Trying to remove an element that does not exist returns null.');",
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.add(500); test.remove(500); return (typeof test.remove == 'function') ? (test.inorder() == null) : false})(), 'message: If the root node has no children, deleting it sets the root to null.');",
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (typeof test.remove == 'function') ? (test.inorder().join('') == '567') : false})(), 'message: The remove method removes leaf nodes from the tree');",
         "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return (test.inorder().join('') == '-1'); })(), 'message: The remove method removes nodes with one child.');",

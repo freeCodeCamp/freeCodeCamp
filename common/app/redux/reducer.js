@@ -7,8 +7,6 @@ const initialState = {
   user: '',
   lang: '',
   csrfToken: '',
-  windowHeight: 0,
-  navHeight: 0,
   theme: 'default'
 };
 
@@ -40,14 +38,6 @@ export default handleActions(
     [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
       ...state,
       points
-    }),
-    [types.updateWindowHeight]: (state, { payload: windowHeight }) => ({
-      ...state,
-      windowHeight
-    }),
-    [types.updateNavHeight]: (state, { payload: navHeight }) => ({
-      ...state,
-      navHeight
     }),
     [types.delayedRedirect]: (state, { payload }) => ({
       ...state,

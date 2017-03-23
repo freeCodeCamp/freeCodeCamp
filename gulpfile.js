@@ -50,7 +50,6 @@ var Rx = require('rx'),
 
 Rx.config.longStackSupport = true;
 var sync = browserSync.create('fcc-sync-server');
-var reload = sync.reload.bind(sync);
 
 // user definable
 var __DEV__ = !yargs.argv.p;
@@ -111,7 +110,6 @@ var paths = {
     require.resolve('cal-heatmap'),
     require.resolve('moment').replace('.js', '.min.js'),
     require.resolve('moment-timezone').replace('index.js', 'builds/moment-timezone-with-data.min.js'),
-
     require.resolve('mousetrap').replace('.js', '.min.js'),
     require.resolve('lightbox2').replace('.js', '.min.js'),
     require.resolve('rx').replace('index.js', 'dist/rx.all.min.js')
@@ -124,7 +122,10 @@ var paths = {
   ],
 
   less: './client/less/main.less',
-  lessFiles: './client/less/**/*.less',
+  lessFiles: [
+    './client/**/*.less',
+    './common/**/*.less'
+  ],
 
   manifest: 'server/manifests/',
 
@@ -304,7 +305,10 @@ gulp.task('less', function() {
     .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
     // compile
     .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
+      paths: [
+        path.join(__dirname, 'client', 'less'),
+        path.join(__dirname, 'common')
+      ]
     }))
     .pipe(__DEV__ ?
       sourcemaps.write({ sourceRoot: '/less' }) :

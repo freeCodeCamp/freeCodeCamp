@@ -34,7 +34,7 @@
       "title": "Say Hello to HTML Elements",
       "description": [
         "Welcome to freeCodeCamp's coding challenges. These will walk you through web development step-by-step.",
-        "We recommend you do these in order, but feel free to skip around by clicking the map on the left.",
+        "We recommend you do these in order, but feel free to skip around by clicking the map in the menu above.",
         "Also, if you want to save your progress, you should join our community by creating an account. In just a few minutes, you can join our chat room, forum, and even a local study group in your city.",
         "First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>text editor</code>, which is embedded into this web page.",
         "Do you see the code in your text editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
@@ -1596,7 +1596,7 @@
         "Here's an example of a radio button:",
         "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
         "<hr>",
-        "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>."
+        "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>. Both should share the <code>name</code> attribute of <code>indoor-outdoor</code>."
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",

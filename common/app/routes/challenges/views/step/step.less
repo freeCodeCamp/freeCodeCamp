@@ -1,0 +1,54 @@
+// should match ./ns.json value and filename
+@ns: step;
+
+.@{ns}-description {
+  font-size: 1.5em;
+}
+.@{ns}-counter {
+  font-size: 20px;
+  line-height: 44px;
+}
+
+.@{ns}-forward-leave {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.@{ns}-forward-leave-active {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+.@{ns}-forward-enter {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.@{ns}-forward-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.@{ns}-backward-leave {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.@{ns}-backward-leave-active {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.@{ns}-backward-enter {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+.@{ns}-backward-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
