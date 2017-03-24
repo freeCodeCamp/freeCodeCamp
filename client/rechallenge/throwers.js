@@ -49,13 +49,13 @@ const throwForJsHtml = {
         }
       }
     }, {
-      name: 'gomix in code',
-      description: 'Code with the URL gomix.me ' +
+      name: 'glitch in code',
+      description: 'Code with the URL glitch.com or glitch.me' +
         'should not be allowed to run',
-      detectGomixInCode: /gomix\.me/gi,
-      thrower: function checkForGomix({ contents }) {
-        if (contents.match(this.detectGomixInCode)) {
-          throw new Error('Gomix.me should not be in the code');
+      detectGlitchInCode: /glitch\.(com|me)/gi,
+      thrower: function checkForGlitch({ contents }) {
+        if (contents.match(this.detectGlitchInCode)) {
+          throw new Error('Glitch.com or Glitch.me should not be in the code');
         }
       }
     }

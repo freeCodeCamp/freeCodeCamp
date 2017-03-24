@@ -17,7 +17,7 @@
         [
           "",
           "",
-          "Working on these challenges will involve you writing your code on Gomix on our starter project. After completing each challenge you can copy your public gomix url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.<br>Start this project on Gomix using <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-npm'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub! If you use Gomix, remember to save the link to your project somewhere safe!",
+          "Working on these challenges will involve you writing your code on Glitch on our starter project. After completing each challenge you can copy your public glitch url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-npm'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!",
           ""
         ]
       ],
@@ -35,11 +35,11 @@
       "description": [
         "The file package.json is the center of any Node.js project or npm package. It stores information about your project just like the <head>-section in a HTML document describes the content of a webpage. The package.json consists of a single JSON-object where information is stored in \"key\": value-pairs. There are only two required fields in a minimal package.json - name and version - but it’s a good practice to provide additional information about your project that could be useful to future users or maintainers.",
         "The author-field",
-        "If you go to the Gomix project that you set up previously and look at on the left side of your screen, you’ll find the file tree where you can see an overview of the various files in your project. Under the file tree’s back-end section, you’ll find package.json - the file that we’ll be improving in the next couple of challenges.",
+        "If you go to the Glitch project that you set up previously and look at on the left side of your screen, you’ll find the file tree where you can see an overview of the various files in your project. Under the file tree’s back-end section, you’ll find package.json - the file that we’ll be improving in the next couple of challenges.",
         "One of the most common pieces of information in this file is the author-field that specifies who’s the creator of a project. It can either be a string or an object with contact details. The object is recommended for bigger projects but in our case, a simple string like the following example will do.",
         "<code>\"author\": \"Jane Doe\",</code>",
         "Instructions",
-        "Add your name to the author-field in the package.json of your Gomix project.",
+        "Add your name to the author-field in the package.json of your Glitch project.",
         "Remember that you’re writing JSON.",
         "All field-names must use double-quotes (\"), e.g. \"author\"",
         "All fields must be separated with a comma (,)"
@@ -65,7 +65,7 @@
         "Regardless of what you plan for your project, a description is definitely recommended. Let’s add something similar to this:",
         "<code>\"description\": \"A project that does something awesome\",</code>",
         "Instructions",
-        "Add a description to the package.json in your Gomix project.",
+        "Add a description to the package.json in your Glitch project.",
         "Remember to use double-quotes for field-names (\") and commas (,) to separate fields."
       ],
       "challengeSeed": [],
@@ -89,7 +89,7 @@
         "<code>\"keywords\": [ \"descriptive\", \"related\", \"words\" ],</code>",
         "As you can see, this field is structured as an array of double-quoted strings.",
         "Instructions",
-        "Add an array of suitable strings to the keywords-field in the package.json of your Gomix project.",
+        "Add an array of suitable strings to the keywords-field in the package.json of your Glitch project.",
         "One of the keywords should be freecodecamp."
       ],
       "challengeSeed": [],
@@ -123,7 +123,7 @@
         "Example",
         "<code>\"license\": \"MIT\",</code>",
         "Instructions",
-        "Fill the license-field in the package.json of your Gomix project as you find suitable."
+        "Fill the license-field in the package.json of your Glitch project as you find suitable."
       ],
       "challengeSeed": [],
       "tests": [
@@ -145,7 +145,7 @@
         "Example",
         "<code>\"version\": \"1.2\",</code>",
         "Instructions",
-        "Add a version to the package.json in your Gomix project."
+        "Add a version to the package.json in your Glitch project."
       ],
       "challengeSeed": [],
       "tests": [
