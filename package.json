@@ -120,7 +120,7 @@
     "redux-epic": "^0.1.1",
     "redux-form": "^5.2.3",
     "request": "^2.65.0",
-    "reselect": "^2.0.2",
+    "reselect": "^3.0.0",
     "rx": "~4.0.8",
     "sanitize-html": "^1.11.1",
     "snyk": "^1.19.1",
