@@ -87,7 +87,7 @@
         "</main>"
       ],
       "tests": [
-        "assert(code.match(/<h2\\s+style=\"color:\\s*rgb\\(255,\\s*0,\\s*0\\)\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/) || code.match(/<h2\\s+style=\"color:\\s*red\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
+        "assert(code.match(/<h2\\s+style\\s*=\\s*\"\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
