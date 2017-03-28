@@ -184,7 +184,7 @@ function delRev(dest, manifestName) {
 }
 
 gulp.task('serve', function(cb) {
-  const called = false;
+  let called = false;
   nodemon({
     script: paths.server,
     ext: '.jsx .js .json',
