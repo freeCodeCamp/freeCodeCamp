@@ -15,7 +15,7 @@
     "lint-resources": "jsonlint-cli server/resources/*.json",
     "lint-utils": "jsonlint-cli server/utils/*.json",
     "prelint-js": "npm run create-rev",
-    "lint-js": "eslint --ext=.js,.jsx server/ common/ config/ client/",
+    "lint-js": "eslint --ext=.js,.jsx gulpfile.js server/ common/ config/ client/",
     "lint-json": "npm run lint-server && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
     "pretest": "npm run create-rev && npm run lint",
     "snyk-protect": "snyk protect",
