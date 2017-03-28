@@ -213,7 +213,7 @@
           "//i.imgur.com/CxcBk9C.png",
           "Help us pay for servers and other costs. Set up a monthly donation you can afford.",
           "freeCodeCamp is a small nonprofit that helps busy people learn to code for free. Help us pay for servers and other costs. Set up a monthly donation you can afford.",
-          "/donate?r=fcc"
+          "/donate"
         ]
       ],
       "challengeSeed": [],
