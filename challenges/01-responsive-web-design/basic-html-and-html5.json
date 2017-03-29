@@ -640,7 +640,7 @@
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freeCodeCamp.com\"&#62; link to freeCodeCamp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freeCodeCamp.com\"&#62; link to freeCodeCamp.com&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<hr>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
