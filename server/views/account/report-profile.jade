@@ -1,0 +1,29 @@
+extends ../layout
+block content
+    #modal-dialog.modal
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    a.close(href='/settings', data-dismiss='modal', aria-hidden='true') ×
+                    h3 Do you want to report #{username}'s profile for abuse?
+                .modal-body
+                    p We will notify the community moderators' team,
+                      | and a send copy of this report to your email:
+                      strong  #{user.email}
+                      | . We may get back to you for more information, if required.
+                .modal-footer
+                    form(action='/' + username +'/report-user/', method='POST')
+                        input(type='hidden', name='_csrf', value=_csrf)
+                        div
+                          textarea.modal-textarea(name='reportDescription', cols='40', rows='5')
+                        .spacer
+                        button.btn.btn-danger.btn-block(type='submit')
+                            | Yes, submit my report about this user's profile.
+                        .spacer
+                        a.btn.btn-success.btn-block(href='/settings', data-dismiss='modal', aria-hidden='true')
+                            | Nevermind, I don't want to report this user.
+    script.
+      document.addEventListener('DOMContentLoaded', function() {
+        const modal$ = document.getElementById('modal-dialog');
+        modal$.classList.add('show');
+      });

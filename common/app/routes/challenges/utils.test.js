@@ -4,7 +4,7 @@ import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock,
-  filterCommingSoonBetaChallenge,
+  filterComingSoonBetaChallenge,
   filterComingSoonBetaFromEntities,
   createMapUi,
   traverseMapUi,
@@ -860,29 +860,29 @@ test('common/app/routes/challenges/utils', function(t) {
       );
     });
   });
-  t.test('filterCommingSoonBetaChallenge', t => {
+  t.test('filterComingSoonBetaChallenge', t => {
     t.plan(4);
     t.test('should return true when not coming-soon/beta', t => {
       let isDev;
-      t.ok(filterCommingSoonBetaChallenge(isDev, {}));
-      t.ok(filterCommingSoonBetaChallenge(true, {}));
+      t.ok(filterComingSoonBetaChallenge(isDev, {}));
+      t.ok(filterComingSoonBetaChallenge(true, {}));
       t.end();
     });
     t.test('should return false when isComingSoon', t => {
       let isDev;
-      t.notOk(filterCommingSoonBetaChallenge(isDev, { isComingSoon: true }));
+      t.notOk(filterComingSoonBetaChallenge(isDev, { isComingSoon: true }));
       t.end();
     });
     t.test('should return false when isBeta', t => {
       let isDev;
-      t.notOk(filterCommingSoonBetaChallenge(isDev, { isBeta: true }));
+      t.notOk(filterComingSoonBetaChallenge(isDev, { isBeta: true }));
       t.end();
     });
     t.test('should always return true when in dev', t => {
       let isDev = true;
-      t.ok(filterCommingSoonBetaChallenge(isDev, { isBeta: true }));
-      t.ok(filterCommingSoonBetaChallenge(isDev, { isComingSoon: true }));
-      t.ok(filterCommingSoonBetaChallenge(
+      t.ok(filterComingSoonBetaChallenge(isDev, { isBeta: true }));
+      t.ok(filterComingSoonBetaChallenge(isDev, { isComingSoon: true }));
+      t.ok(filterComingSoonBetaChallenge(
         isDev,
         { isBeta: true, isCompleted: true }
       ));
@@ -989,7 +989,10 @@ test('common/app/routes/challenges/utils', function(t) {
             ]
           }
         }
-      }, ['superBlockA']);
+      },
+      ['superBlockA'],
+      { challengeA: 'ChallengeA title'}
+    );
       t.plan(3);
       t.equal(actual.children[0].name, expected.children[0].name);
       t.equal(
@@ -1155,21 +1158,21 @@ test('common/app/routes/challenges/utils', function(t) {
     });
     t.test('should update child that is hidden', t => {
       t.plan(1);
-      const expected = { name: 'bar', isHidden: false };
-      const input = { name: 'bar', isHidden: true };
+      const expected = { title: 'bar', isHidden: false };
+      const input = { title: 'bar', isHidden: true };
       const actual = applyFilterToMap(input, /bar/);
       t.deepLooseEqual(actual, expected);
     });
     t.test('should unhide child that matches filter regex', t => {
       t.plan(1);
-      const expected = { name: 'foo' };
-      const actual = applyFilterToMap({ name: 'foo' }, /foo/);
+      const expected = { title: 'foo' };
+      const actual = applyFilterToMap({ title: 'foo' }, /foo/);
       t.deepLooseEqual(actual, expected);
     });
     t.test('should hide child that does not match filter', t => {
       t.plan(1);
-      const expected = { name: 'bar', isHidden: true };
-      const actual = applyFilterToMap({ name: 'bar' }, /foo/);
+      const expected = { title: 'bar', isHidden: true };
+      const actual = applyFilterToMap({ title: 'bar' }, /foo/);
       t.deepLooseEqual(actual, expected);
     });
     t.test('should not touch node that is already hidden', t => {
@@ -1191,8 +1194,8 @@ test('common/app/routes/challenges/utils', function(t) {
         name: 'bar',
         isHidden: false,
         children: [
-          { name: 'baz', isHidden: true },
-          { name: 'foo', isHidden: false }
+          { title: 'baz', isHidden: true },
+          { title: 'foo', isHidden: false }
         ]
       };
       const actual = applyFilterToMap(expected, /foo/);
@@ -1225,16 +1228,16 @@ test('common/app/routes/challenges/utils', function(t) {
         name: 'bar',
         isHidden: true,
         children: [
-          { name: 'baz', isHidden: true },
-          { name: 'foo', isHidden: false }
+          { title: 'baz', isHidden: true },
+          { title: 'foo', isHidden: false }
         ]
       };
       const expected = {
         name: 'bar',
         isHidden: false,
         children: [
-          { name: 'baz', isHidden: true },
-          { name: 'foo', isHidden: false }
+          { title: 'baz', isHidden: true },
+          { title: 'foo', isHidden: false }
         ]
       };
       const actual = applyFilterToMap(input, /foo/);
@@ -1258,4 +1261,3 @@ test('common/app/routes/challenges/utils', function(t) {
     });
   });
 });
-

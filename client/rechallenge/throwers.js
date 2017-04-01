@@ -48,6 +48,16 @@ const throwForJsHtml = {
           throw new Error('Invalid if (null) console.log(1); detected');
         }
       }
+    }, {
+      name: 'glitch in code',
+      description: 'Code with the URL glitch.com or glitch.me' +
+        'should not be allowed to run',
+      detectGlitchInCode: /glitch\.(com|me)/gi,
+      thrower: function checkForGlitch({ contents }) {
+        if (contents.match(this.detectGlitchInCode)) {
+          throw new Error('Glitch.com or Glitch.me should not be in the code');
+        }
+      }
     }
   ]
 };

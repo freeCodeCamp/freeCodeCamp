@@ -16,6 +16,7 @@ import flashToToast from './utils/flash-to-toast';
 
 import createApp from '../common/app';
 import provideStore from '../common/app/provide-store';
+import { getLangFromPath } from '../common/app/utils/lang';
 
 // client specific sagas
 import sagas from './sagas';
@@ -28,20 +29,23 @@ import {
 
 const isDev = Rx.config.longStackSupport = debug.enabled('fcc:*');
 const log = debug('fcc:client');
-const hotReloadTimeout = 5000;
-const csrfToken = window.__fcc__.csrf.token;
+const hotReloadTimeout = 2000;
+const { csrf: { token: csrfToken } = {} } = window.__fcc__;
 const DOMContainer = document.getElementById('fcc');
 const initialState = isColdStored() ?
   getColdStorage() :
   window.__fcc__.data;
+const primaryLang = getLangFromPath(window.location.pathname);
+
 initialState.app.csrfToken = csrfToken;
 initialState.toasts = flashToToast(window.__fcc__.flash);
 
-delete window.__fcc__;
+// make empty object so hot reload works
+window.__fcc__ = {};
 
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
-const history = useLangRoutes(createHistory)();
+const history = useLangRoutes(createHistory, primaryLang)();
 sendPageAnalytics(history, window.ga);
 
 const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
@@ -69,7 +73,10 @@ createApp({
   })
   .doOnNext(({ store }) => {
     if (module.hot && typeof module.hot.accept === 'function') {
-      module.hot.accept('../common/app', function() {
+      module.hot.accept(err => {
+        if (err) { console.error(err); }
+        log('saving state and refreshing.');
+        log('ignore react ssr warning.');
         saveToColdStorage(store.getState());
         setTimeout(() => window.location.reload(), hotReloadTimeout);
       });

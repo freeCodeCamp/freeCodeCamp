@@ -7,8 +7,12 @@ import types from './types';
 // step
 export const stepForward = createAction(types.stepForward);
 export const stepBackward = createAction(types.stepBackward);
-export const goToStep = createAction(types.goToStep);
+export const goToStep = createAction(
+  types.goToStep,
+  (step, isUnlocked) => ({ step, isUnlocked })
+);
 export const completeAction = createAction(types.completeAction);
+export const updateUnlockedSteps = createAction(types.updateUnlockedSteps);
 export const openLightBoxImage = createAction(types.openLightBoxImage);
 export const closeLightBoxImage = createAction(types.closeLightBoxImage);
 
@@ -22,6 +26,7 @@ export const fetchChallengeCompleted = createAction(
   (_, challenge) => challenge,
   entities => ({ entities })
 );
+export const closeChallengeModal = createAction(types.closeChallengeModal);
 export const resetUi = createAction(types.resetUi);
 export const updateHint = createAction(types.updateHint);
 export const lockUntrustedCode = createAction(types.lockUntrustedCode);
@@ -29,7 +34,7 @@ export const unlockUntrustedCode = createAction(
   types.unlockUntrustedCode,
   () => null
 );
-
+export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 export const fetchChallenges = createAction(types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
   types.fetchChallengesCompleted,
@@ -91,7 +96,10 @@ export const moveToNextChallenge = createAction(types.moveToNextChallenge);
 // code storage
 export const saveCode = createAction(types.saveCode);
 export const loadCode = createAction(types.loadCode);
-export const savedCodeFound = createAction(types.savedCodeFound);
+export const savedCodeFound = createAction(
+  types.savedCodeFound,
+  (files, challenge) => ({ files, challenge })
+);
 export const clearSavedCode = createAction(types.clearSavedCode);
 
 

@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { hardGoTo } from '../../redux/actions';
 
-export class NotFound extends React.Component {
-  static displayName = 'NotFound';
+const propTypes = {
+  hardGoTo: PropTypes.func,
+  location: PropTypes.object
+};
 
-  static propTypes = {
-    location: PropTypes.object,
-    hardGoTo: PropTypes.func
-  };
+export class NotFound extends React.Component {
+
 
   componentWillMount() {
     this.props.hardGoTo(this.props.location.pathname);
@@ -18,5 +18,8 @@ export class NotFound extends React.Component {
     return <span />;
   }
 }
+
+NotFound.displayName = 'NotFound';
+NotFound.propTypes = propTypes;
 
 export default connect(null, { hardGoTo })(NotFound);

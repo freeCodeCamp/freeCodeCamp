@@ -9,7 +9,7 @@ const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
 const log = debug('fcc:services:map');
 
 // if challenge is not isComingSoon or isBeta => load
-// if challenge is commingSoon we are in beta||dev => load
+// if challenge is ComingSoon we are in beta||dev => load
 // if challenge is beta and we are in beta||dev => load
 // else hide
 function loadComingSoonOrBetaChallenge({

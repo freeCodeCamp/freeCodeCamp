@@ -1,17 +1,18 @@
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
+  MenuItem,
   Nav,
-  NavbarBrand,
+  NavDropdown,
+  NavItem,
   Navbar,
-  NavItem
+  NavbarBrand
 } from 'react-bootstrap';
+import noop from 'lodash/noop';
 
 import navLinks from './links.json';
-import PointsNavItem from './Points-Nav-Item.jsx';
-import AvatarNavItem from './Avatar-Nav-Item.jsx';
+import AvatarPointsNavItem from './Avatar-Points-Nav-Item.jsx';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
@@ -29,7 +30,20 @@ function handleNavLinkEvent(content) {
   });
 }
 
-export default class extends React.Component {
+const propTypes = {
+  closeDropdown: PropTypes.func.isRequired,
+  isNavDropdownOpen: PropTypes.bool,
+  loadCurrentChallenge: PropTypes.func.isRequired,
+  openDropdown: PropTypes.func.isRequired,
+  picture: PropTypes.string,
+  points: PropTypes.number,
+  showLoading: PropTypes.bool,
+  signedIn: PropTypes.bool,
+  trackEvent: PropTypes.func.isRequired,
+  username: PropTypes.string
+};
+
+export default class FCCNav extends React.Component {
   constructor(...props) {
     super(...props);
     this.handleMapClickOnMap = this.handleMapClickOnMap.bind(this);
@@ -37,25 +51,6 @@ export default class extends React.Component {
     navLinks.forEach(({ content }) => {
       this[`handle${content}Click`] = handleNavLinkEvent.bind(this, content);
     });
-  }
-  static displayName = 'Nav';
-  static propTypes = {
-    points: PropTypes.number,
-    picture: PropTypes.string,
-    signedIn: PropTypes.bool,
-    username: PropTypes.string,
-    isOnMap: PropTypes.bool,
-    updateNavHeight: PropTypes.func,
-    toggleMapDrawer: PropTypes.func,
-    toggleMainChat: PropTypes.func,
-    shouldShowSignIn: PropTypes.bool,
-    trackEvent: PropTypes.func.isRequired,
-    loadCurrentChallenge: PropTypes.func.isRequired
-  };
-
-  componentDidMount() {
-    const navBar = ReactDOM.findDOMNode(this);
-    this.props.updateNavHeight(navBar.clientHeight);
   }
 
   handleMapClickOnMap(e) {
@@ -80,117 +75,76 @@ export default class extends React.Component {
     this.props.loadCurrentChallenge();
   }
 
-  renderMapLink(isOnMap, toggleMapDrawer) {
-    if (isOnMap) {
+  renderLink(isNavItem, { isReact, isDropdown, content, link, links, target }) {
+    const Component = isNavItem ? NavItem : MenuItem;
+    const {
+      isNavDropdownOpen,
+      openDropdown,
+      closeDropdown
+    } = this.props;
+
+    if (isDropdown) {
+      // adding a noop to NavDropdown to disable false warning
+      // about controlled component
       return (
-        <li role='presentation'>
-          <a
-            href='#'
-            onClick={ this.handleMapClickOnMap }
-            >
-            Map
-          </a>
-        </li>
+        <NavDropdown
+          id={ `nav-${content}-dropdown` }
+          key={ content }
+          noCaret={ true }
+          onClick={ openDropdown }
+          onClose={ closeDropdown }
+          onMouseEnter={ openDropdown }
+          onMouseLeave={ closeDropdown }
+          onToggle={ noop }
+          open={ isNavDropdownOpen }
+          title={ content }
+          >
+          { links.map(this.renderLink.bind(this, false)) }
+        </NavDropdown>
       );
     }
-    return (
-      <LinkContainer
-        eventKey={ 1 }
-        to='/map'
-        >
-        <NavItem
-          onClick={ e => {
-            if (!(e.ctrlKey || e.metaKey)) {
-              e.preventDefault();
-              toggleMapDrawer();
-            }
-          }}
-          target='/map'
-          >
-          Map
-        </NavItem>
-      </LinkContainer>
-    );
-  }
-
-  renderChat(toggleMainChat) {
-    return (
-      <NavItem
-        eventKey={ 2 }
-        href='//gitter.im/freecodecamp/freecodecamp'
-        onClick={ e => {
-          if (!(e.ctrlKey || e.metaKey)) {
-            e.preventDefault();
-            toggleMainChat();
-          }
-        }}
-        target='_blank'
-        >
-        Chat
-      </NavItem>
-    );
-  }
-
-  renderLinks() {
-    return navLinks.map(({ content, link, react, target }, index) => {
-      if (react) {
-        return (
-          <LinkContainer
-            eventKey={ index + 2 }
-            key={ content }
-            onClick={ this[`handle${content}Click`] }
-            to={ link }
-            >
-            <NavItem
-              target={ target || null }
-              >
-              { content }
-            </NavItem>
-          </LinkContainer>
-        );
-      }
+    if (isReact) {
       return (
-        <NavItem
-          eventKey={ index + 1 }
-          href={ link }
+        <LinkContainer
           key={ content }
           onClick={ this[`handle${content}Click`] }
-          target={ target || null }
+          to={ link }
           >
-          { content }
-        </NavItem>
+          <Component
+            target={ target || null }
+            >
+            { content }
+          </Component>
+        </LinkContainer>
       );
-    });
-  }
-
-  renderPoints(username, points, shouldShowSignIn) {
-    if (!username || !shouldShowSignIn) {
-      return null;
     }
     return (
-      <LinkContainer
-        eventKey={ navLinks.length + 1 }
-        key='points'
-        to='/settings'
+      <Component
+        href={ link }
+        key={ content }
+        onClick={ this[`handle${content}Click`] }
+        target={ target || null }
         >
-        <PointsNavItem
-          className='brownie-points-nav'
-          points={ points }
-        />
-      </LinkContainer>
+        { content }
+      </Component>
     );
   }
 
-  renderSignIn(username, picture, shouldShowSignIn) {
-    if (!shouldShowSignIn) {
+  renderSignIn(username, points, picture, showLoading) {
+    if (showLoading) {
       return null;
     }
     if (username) {
-      return <AvatarNavItem picture={ picture } />;
+      return (
+        <AvatarPointsNavItem
+          picture={ picture }
+          points={ points }
+          username={ username }
+        />
+      );
     } else {
       return (
         <NavItem
-          eventKey={ 2 }
           href='/signup'
           key='signup'
           >
@@ -205,44 +159,47 @@ export default class extends React.Component {
       username,
       points,
       picture,
-      isOnMap,
-      toggleMapDrawer,
-      toggleMainChat,
-      shouldShowSignIn
+      showLoading
     } = this.props;
 
     return (
       <Navbar
         className='nav-height'
-        fixedTop={ true }
+        staticTop={ true }
         >
-        <NavbarBrand>
-          <a
-            href='/challenges/current-challenge'
-            onClick={ this.handleLogoClick }
-            >
-            <img
-              alt='learn to code javascript at Free Code Camp logo'
-              className='img-responsive nav-logo'
-              src={ fCClogo }
-            />
-          </a>
-        </NavbarBrand>
-        <Navbar.Toggle children={ toggleButtonChild } />
+        <Navbar.Header>
+          <Navbar.Toggle children={ toggleButtonChild } />
+          <NavbarBrand>
+            <a
+              href='/challenges/current-challenge'
+              onClick={ this.handleLogoClick }
+              >
+              <img
+                alt='learn to code javascript at freeCodeCamp logo'
+                className='img-responsive nav-logo'
+                src={ fCClogo }
+              />
+            </a>
+          </NavbarBrand>
+        </Navbar.Header>
         <Navbar.Collapse>
           <Nav
             className='hamburger-dropdown'
             navbar={ true }
             pullRight={ true }
             >
-            { this.renderMapLink(isOnMap, toggleMapDrawer) }
-            { this.renderChat(toggleMainChat) }
-            { this.renderLinks() }
-            { this.renderPoints(username, points, shouldShowSignIn) }
-            { this.renderSignIn(username, picture, shouldShowSignIn) }
+            {
+              navLinks.map(
+                this.renderLink.bind(this, true)
+              )
+            }
+            { this.renderSignIn(username, points, picture, showLoading) }
           </Nav>
         </Navbar.Collapse>
       </Navbar>
     );
   }
 }
+
+FCCNav.displayName = 'FCCNav';
+FCCNav.propTypes = propTypes;

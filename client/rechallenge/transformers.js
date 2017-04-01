@@ -10,12 +10,12 @@ import { updateContents } from '../../common/utils/polyvinyl';
 
 const babelOptions = { presets: [ presetEs2015, presetReact ] };
 loopProtect.hit = function hit(line) {
-  var err = 'Error: Exiting potential infinite loop at line ' +
+  var err = 'Exiting potential infinite loop at line ' +
     line +
-    '. To disable loop protection, write: \n\\/\\/ noprotect\nas the first' +
-    'line. Beware that if you do have an infinite loop in your code' +
+    '. To disable loop protection, write: \n\/\/ noprotect\nas the first ' +
+    'line. Beware that if you do have an infinite loop in your code, ' +
     'this will crash your browser.';
-  console.error(err);
+  throw new Error(err);
 };
 
 const transformersForHtmlJS = {
@@ -24,7 +24,22 @@ const transformersForHtmlJS = {
     {
       name: 'add-loop-protect',
       transformer: function addLoopProtect(file) {
+        const _contents = file.contents.toLowerCase();
+        if (file.ext === 'html' && _contents.indexOf('<script>') === -1) {
+          // No JavaScript in user code, so no need for loopProtect
+          return updateContents(file.contents, file);
+        }
         return updateContents(loopProtect(file.contents), file);
+      }
+    },
+    {
+      name: 'replace-nbsp',
+      nbspRegExp: new RegExp(String.fromCharCode(160), 'g'),
+      transformer: function replaceNBSP(file) {
+        return updateContents(
+           file.contents.replace(this.nbspRegExp, ' '),
+           file
+         );
       }
     }
   ]

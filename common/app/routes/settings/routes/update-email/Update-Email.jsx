@@ -35,22 +35,20 @@ const mapStateToProps = state => {
     isVerified: !!emailVerified
   };
 };
+const propTypes = {
+  fields: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  isEmailThere: PropTypes.bool,
+  isVerified: PropTypes.bool,
+  submitting: PropTypes.bool,
+  updateMyEmail: PropTypes.func.isRequired
+};
 
 export class UpdateEmail extends React.Component {
   constructor(...props) {
     super(...props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  static displayName = 'UpdateEmail';
-  static propTypes = {
-    isEmailThere: PropTypes.bool,
-    isVerified: PropTypes.bool,
-    fields: PropTypes.object.isRequired,
-    submitting: PropTypes.bool,
-    handleSubmit: PropTypes.func.isRequired,
-    updateMyEmail: PropTypes.func.isRequired
-  };
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.handleSubmit(({ email }) => this.props.updateMyEmail(email))(e);
@@ -132,6 +130,9 @@ export class UpdateEmail extends React.Component {
     );
   }
 }
+
+UpdateEmail.displayName = 'UpdateEmail';
+UpdateEmail.propTypes = propTypes;
 
 export default reduxForm(
   {

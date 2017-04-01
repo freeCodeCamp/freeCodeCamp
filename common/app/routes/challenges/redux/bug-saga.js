@@ -1,5 +1,3 @@
-import dedent from 'dedent';
-
 import types from '../redux/types';
 import { closeBugModal } from '../redux/actions';
 
@@ -12,13 +10,15 @@ function filesToMarkdown(files = {}) {
     }
     const fileName = moreThenOneFile ? `\\ file: ${file.contents}` : '';
     const fileType = file.ext;
-    return fileString + dedent`
-      \`\`\`${fileType}
-      ${fileName}
-      ${file.contents}
-      \`\`\`
-      \n
-    `;
+    return fileString +
+      '\`\`\`' +
+      fileType +
+      '\n' +
+      fileName +
+      '\n' +
+      file.contents +
+      '\n' +
+      '\`\`\`\n\n';
   }, '\n');
 }
 
@@ -41,7 +41,7 @@ export default function bugSaga(actions$, getState, { window }) {
       } = window;
       if (type === types.openIssueSearch) {
         window.open(
-          'https://github.com/FreeCodeCamp/FreeCodeCamp/issues?q=' +
+          'https://github.com/freeCodeCamp/freeCodeCamp/issues?q=' +
           'is:issue is:all ' +
           challengeName
         );

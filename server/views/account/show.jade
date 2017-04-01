@@ -1,7 +1,6 @@
 extends ../layout
 block content
     include ../partials/flyer
-    script(src="/bower_components/cal-heatmap/cal-heatmap.min.js")
     script.
         var challengeName = 'Profile View';
     if (user && user.username === username)
@@ -15,7 +14,7 @@ block content
                 | Update your settings
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/signout')
-                | Sign me out of Free Code Camp
+                | Sign me out of freeCodeCamp
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
                 | Email us at team@freecodecamp.com
@@ -56,6 +55,13 @@ block content
                     if isBackEndCert
                         .button-spacer
                         a.btn.btn-primary.btn-block(href='/' + username + '/back-end-certification') View My Back End Development Certification
+                    if (user && user.username != username)
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/report-user/') Report this user's profile for abuse
+    .row
+      .col-xs-12.text-center
+        if (badges.coreTeam && badges.coreTeam.length)
+            h4 Core Team #{badges.coreTeam.reverse().join(', ')}
 
     .spacer
     .col-md-12

@@ -1,0 +1,41 @@
+@keyframes skeletonShimmer{
+   0% {
+     transform: translateX(-48px);
+   }
+   100% {
+     transform: translateX(1000px);
+   }
+}
+
+.shimmer {
+  position: relative;
+  min-height: 18px;
+
+  .row {
+    height: 18px;
+
+    .col-xs-12 {
+      padding-right: 12px;
+      height: 17px;
+    }
+  }
+
+  .sprite-wrapper {
+    background-color: #333;
+    height: 17px;
+    width: 75%;
+  }
+
+  .sprite {
+    animation-name: skeletonShimmer;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    background: white;
+    box-shadow: 0 0 3px 2px;
+    height: 17px;
+    width: 2px;
+    z-index: 5;
+  }
+}
