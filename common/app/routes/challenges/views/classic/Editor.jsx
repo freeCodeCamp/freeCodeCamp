@@ -11,14 +11,17 @@ import CodeMirrorSkeleton from '../../Code-Mirror-Skeleton.jsx';
 import {
   executeChallenge,
   classicEditorUpdated,
-
   challengeMetaSelector,
   filesSelector,
   keySelector
 } from '../../redux';
 
+const envProps = typeof window !== 'undefined' ? Object.keys(window) : [];
 const options = {
-  lint: { esversion: 6 },
+  lint: {
+    esversion: 6,
+    predef: envProps
+  },
   lineNumbers: true,
   mode: 'javascript',
   theme: 'freecodecamp',
