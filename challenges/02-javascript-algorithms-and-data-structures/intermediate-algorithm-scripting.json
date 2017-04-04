@@ -1346,7 +1346,7 @@
       "id": "af4afb223120f7348cdfc9fd",
       "title": "Map the Debris",
       "description": [
-        "Return a new array that transforms the element's average altitude into their orbital periods.",
+        "Return a new array that transforms the element's average altitude into their orbital periods (in seconds).",
         "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
         "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on Wikipedia</a>.",
         "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
