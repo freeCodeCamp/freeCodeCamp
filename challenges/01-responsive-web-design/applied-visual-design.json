@@ -1037,40 +1037,14 @@
       "translations": {}
     },
     {
-      "id": "587d781d367417b2b2512ac7",
-      "title": "Adjust the Color of an Anchor Tag",
-      "description": [
-        "You can adjust the text color of any text in an element with the <code>color</code> property.",
-        "<hr>",
-        "Change the <code>color</code> property of the anchor (<code>a</code>) tag to <code>#000</code> (black)."
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  ",
-        "  ",
-        "  ",
-        "</style>",
-        "<a href=\"http://freecatphotoapp.com/\" target=\"_blank\">CatPhotoApp</a>"
-      ],
-      "tests": [
-        "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The <code>color</code> of the anchor tag text should be black.')"
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "releasedOn": "Feb 17, 2017",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
       "id": "587d781d367417b2b2512ac8",
       "title": "Adjust the Hover State of an Anchor Tag",
       "description": [
         "This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.",
-        "Following from the previous challenge, the styling of the anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector. Here's an example that changes the color of the anchor tag to red during its hover state:",
+        "For example, the styling of an anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector. Here's the CSS to change the <code>color</code> of the anchor tag to red during its hover state:",
         "<blockquote>a:hover {<br>  color: red;<br>}</blockquote>",
         "<hr>",
-        "Change the <code>a</code> tag's CSS so that when the user hovers over it, the <code>color</code> is blue."
+        "The code editor has a CSS rule to style all <code>a</code> tags black. Add a rule so that when the user hovers over the <code>a</code> tag, the <code>color</code> is blue."
       ],
       "challengeSeed": [
         "<style>",
