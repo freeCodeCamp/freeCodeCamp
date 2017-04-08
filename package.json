@@ -102,7 +102,7 @@
     "react-addons-shallow-compare": "~15.4.2",
     "react-bootstrap": "^0.30.5",
     "react-codemirror": "^0.3.0",
-    "react-dom": "~15.4.2",
+    "react-dom": "~15.5.2",
     "react-fontawesome": "^1.2.0",
     "react-images": "^0.5.1",
     "react-motion": "~0.4.2",
