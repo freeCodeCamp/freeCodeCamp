@@ -2161,7 +2161,7 @@
         "As shown in the example below, you can push the item downwards then upwards by setting the <code>top</code> property of the <code>50%</code> keyframe to 50px, but having it set to 0px for the first (<code>0%</code>) and the last (<code>100%</code>) keyframe.",
         "<blockquote>@keyframes rainbow {<br>  0% {<br>    background-color: blue;<br>    top: 0px;<br>  }<br>  50% {<br>    background-color: green;<br>    top: 50px;<br>  }<br>  100% {<br>    background-color: yellow;<br>    top: 0px;<br>  }<br>}</blockquote>",
         "<hr>",
-        "Add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>."
+        "Add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>. Don't replace the <code>top</code> property in the editor - the animation should have both vertical and horizontal motion."
       ],
       "challengeSeed": [
         "<style>",
