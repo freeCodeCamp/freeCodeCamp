@@ -141,7 +141,7 @@
         "You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:",
         "<blockquote>img {<br>  height: 20px;<br>}</blockquote>",
         "<hr>",
-        "Add a <code>height</code> property to the <code>h4</code> tag and set it to 40px."
+        "Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px."
       ],
       "challengeSeed": [
         "<style>",
@@ -181,66 +181,7 @@
         "</div>"
       ],
       "tests": [
-        "assert($('h4').css('height') == '40px', 'message: Your code should change the <code>h4</code> <code>height</code> property to a value of 40 pixels.');"
-      ],
-      "solutions": [],
-      "hints": [],
-      "type": "waypoint",
-      "releasedOn": "Feb 17, 2017",
-      "challengeType": 0,
-      "translations": {}
-    },
-    {
-      "id": "587d7791367417b2b2512ab6",
-      "title": "Create Visual Balance with the Height of an Element",
-      "description": [
-        "This challenge changes the layout of the links by stacking them to look more like a list.",
-        "To keep everything balanced, you can make sure every element's width and height makes sense in that context.",
-        "<hr>",
-        "Change the <code>height</code> of the <code>h4</code> tag to 25px to make the card more compact and a little cleaner."
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  h4 {",
-        "    text-align: center;",
-        "    height: 40px;",
-        "  }",
-        "  p {",
-        "    text-align: justify;",
-        "  }",
-        "  .links {",
-        "    text-align: left;",
-        "    color: black;",
-        "  }",
-        "  .fullCard {",
-        "    width: 245px;",
-        "    border: 1px solid #ccc;",
-        "    border-radius: 5px;",
-        "    margin: 10px 5px;",
-        "    padding: 4px;",
-        "  }",
-        "  .cardContent {",
-        "    padding: 10px;",
-        "  }",
-        "  .cardText {",
-        "    margin-bottom: 30px;",
-        "  }",
-        "</style>",
-        "<div class=\"fullCard\">",
-        "  <div class=\"cardContent\">",
-        "    <div class=\"cardText\">",
-        "      <h4>Google</h4>",
-        "      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>",
-        "    </div>",
-        "    <div class=\"cardLinks\">",
-        "      <a href=\"https://en.wikipedia.org/wiki/Larry_Page\" target=\"_blank\" class=\"links\">Larry Page</a><br><br>",
-        "      <a href=\"https://en.wikipedia.org/wiki/Sergey_Brin\" target=\"_blank\" class=\"links\">Sergey Brin</a>",
-        "    </div>",
-        "  </div>",
-        "</div>"
-      ],
-      "tests": [
-        "assert($('h4').css('height') == '25px', 'message: Your code should change the <code>h4</code> height value to 25 pixels.');"
+        "assert($('h4').css('height') == '25px', 'message: Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.');"
       ],
       "solutions": [],
       "hints": [],
