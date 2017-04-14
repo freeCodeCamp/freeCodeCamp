@@ -9,10 +9,12 @@ export { commitGoals };
 
 export function completeCommitment$(user) {
   const {
-    isFrontEndCert,
+    isRespWebDesignCert,
+    isFrontEndLibsCert,
+    isJsAlgoDataStructCert,
     isDataVisCert,
-    isBackEndCert,
-    isFullStackCert
+    isApisMicroservicesCert,
+    isInfosecQaCert
   } = user;
 
   return Observable.fromNodeCallback(user.pledge, user)()
@@ -24,10 +26,13 @@ export function completeCommitment$(user) {
       const { goal } = pledge;
 
       if (
-        (isFrontEndCert && goal === commitGoals.frontEndCert) ||
+        (isRespWebDesignCert && goal === commitGoals.respWebDesignCert) ||
+        (isFrontEndLibsCert && goal === commitGoals.frontEndLibsCert) ||
+        (isJsAlgoDataStructCert && goal === commitGoals.jsAlgoDataStructCert) ||
         (isDataVisCert && goal === commitGoals.dataVisCert) ||
-        (isBackEndCert && goal === commitGoals.backEndCert) ||
-        (isFullStackCert && goal === commitGoals.fullStackCert)
+        (isApisMicroservicesCert &&
+        goal === commitGoals.apisMicroservicesCert) ||
+        (isInfosecQaCert && goal === commitGoals.infosecQaCert)
       ) {
         debug('marking goal complete');
         pledge.isCompleted = true;

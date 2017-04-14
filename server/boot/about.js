@@ -16,11 +16,14 @@ function getCertCount(userCount, cert) {
     ::timeCache(2, 'hours');
 }
 
-function getAllThreeCertsCount(userCount) {
+function getAllSixCertsCount(userCount) {
   return userCount({
-    isFrontEndCert: true,
+    isRespWebDesignCert: true,
+    isFrontEndLibsCert: true,
+    isJsAlgoDataStructCert: true,
     isDataVisCert: true,
-    isBackEndCert: true
+    isApisMicroservicesCert: true,
+    isInfosecQaCert: true
   })
     ::timeCache(2, 'hours');
 }
@@ -29,42 +32,62 @@ export default function about(app) {
   const router = app.loopback.Router();
   const User = app.models.User;
   const userCount = observeMethod(User, 'count');
-  const frontEndCount$ = getCertCount(userCount, 'isFrontEndCert');
+  const respWebDesignCount$ = getCertCount(userCount, 'isRespWebDesignCert');
+  const frontEndLibsCount$ = getCertCount(userCount, 'isFrontEndLibsCert');
+  const jsAlgoDataStructCount$ =
+  getCertCount(userCount, 'isJsAlgoDataStructCert');
   const dataVisCount$ = getCertCount(userCount, 'isDataVisCert');
-  const backEndCount$ = getCertCount(userCount, 'isBackEndCert');
-  const allThreeCount$ = getAllThreeCertsCount(userCount);
+  const apisMicroservicesCount$ =
+  getCertCount(userCount, 'isApisMicroservicesCert');
+  const infosecQaCount$ = getCertCount(userCount, 'isInfosecQaCert');
+  const allSixCount$ = getAllSixCertsCount(userCount);
 
   function showAbout(req, res, next) {
     const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
     Observable.combineLatest(
-      frontEndCount$,
+      respWebDesignCount$,
+      frontEndLibsCount$,
+      jsAlgoDataStructCount$,
       dataVisCount$,
-      backEndCount$,
-      allThreeCount$,
+      apisMicroservicesCount$,
+      infosecQaCount$,
+      allSixCount$,
       (
-        frontEndCount = 0,
+        respWebDesignCount = 0,
+        frontEndLibsCount = 0,
+        jsAlgoDataStructCount = 0,
         dataVisCount = 0,
-        backEndCount = 0,
-        allThreeCount = 0
+        apisMicroservicesCount = 0,
+        infosecQaCount = 0,
+        allSixCount = 0
       ) => ({
-        frontEndCount,
+        respWebDesignCount,
+        frontEndLibsCount,
+        jsAlgoDataStructCount,
         dataVisCount,
-        backEndCount,
-        allThreeCount
+        apisMicroservicesCount,
+        infosecQaCount,
+        allSixCount
       })
     )
       .doOnNext(({
-        frontEndCount,
+        respWebDesignCount,
+        frontEndLibsCount,
+        jsAlgoDataStructCount,
         dataVisCount,
-        backEndCount,
-        allThreeCount
+        apisMicroservicesCount,
+        infosecQaCount,
+        allSixCount
       }) => {
         res.render('resources/about', {
-          frontEndCount: numberWithCommas(frontEndCount),
+          respWebDesignCount: numberWithCommas(respWebDesignCount),
+          frontEndLibsCount: numberWithCommas(frontEndLibsCount),
+          jsAlgoDataStructCount: numberWithCommas(jsAlgoDataStructCount),
           dataVisCount: numberWithCommas(dataVisCount),
-          backEndCount: numberWithCommas(backEndCount),
-          allThreeCount: numberWithCommas(allThreeCount),
+          apisMicroservicesCount: numberWithCommas(apisMicroservicesCount),
+          infosecQaCount: numberWithCommas(infosecQaCount),
+          allSixCount: numberWithCommas(allSixCount),
           daysRunning,
           title: dedent`
             About our Open Source Community, our social media presence,
