@@ -159,8 +159,8 @@
       "tests": [
         "// Test user did not replace const keyword",
         "// Test s is const",
-        "// Test s is sorted",
-        "// Test s is still mutable, and object freeze was not invoked"
+        "assert.deepEqual(s, [2, 5, 7], 'message: <code>s</code> should be equal to <code>[2, 5, 7]</code>.');",
+        "assert(!Object.isFrozen(s), 'message: <code>s</code> should not be frozen.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
