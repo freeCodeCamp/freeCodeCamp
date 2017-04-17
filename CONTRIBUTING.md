@@ -251,7 +251,7 @@ and ensure all tests pass.
 ### Squash Your Commits
 When you make a pull request, all of your changes need to be in one commit.
 
-If you have made more then one commit, then you will need to _squash_ your commits.
+If you have made more than one commit, then you will need to _squash_ your commits.
 
 To do this, see [Squashing Your Commits](http://forum.freecodecamp.com/t/how-to-squash-multiple-commits-into-one-with-git/13231).
 
@@ -271,7 +271,7 @@ related issues in our [Contributors chat room](https://gitter.im/FreeCodeCamp/Co
 
 #### Important: ALWAYS EDIT ON A BRANCH
 
-Take away only one thing from this document, it should be this: Never, **EVER**
+Take away only one thing from this document: Never, **EVER**
 make edits to the `staging` branch. ALWAYS make a new branch BEFORE you edit
 files. This is critical, because if your PR is not accepted, your copy of
 staging will be forever sullied and the only way to fix it is to delete your
@@ -357,7 +357,7 @@ for further information
 5.  In the body of your PR include a more detailed summary of the changes you
     made and why.
 
-    -   If the PR is meant to fix an existing bug/issue, then, at the end of
+    -   If the PR is meant to fix an existing bug/issue then, at the end of
         your PR's description, append the keyword `closes` and #xxxx (where xxxx
         is the issue number). Example: `closes #1337`. This tells GitHub to
         close the existing issue, if the PR is merged.

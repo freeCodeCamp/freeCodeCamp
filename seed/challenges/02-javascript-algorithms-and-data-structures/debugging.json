@@ -252,26 +252,21 @@
       "description": [
         "Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.",
         "<hr>",
-        "The following function <code>positivePowers</code> raises a base to a positive exponent. Unfortunately, it's not called properly - fix the code so the value of <code>power</code> is the expected 8."
+        "The function <code>raiseToPower</code> raises a base to an exponent. Unfortunately, it's not called properly - fix the code so the value of <code>power</code> is the expected 8."
       ],
       "challengeSeed": [
-        "function positivePowers(b, e) {",
-        "  let result = 1;",
-        "  if (e <= 0) return result;",
-        "  for (let i = 1; i <= e; i++) {",
-        "    result *= b;",
-        "  }",
-        "  return result;",
+        "function raiseToPower(b, e) {",
+        "  return Math.pow(b, e);",
         "}",
         "",
         "let base = 2;",
         "let exp = 3;",
-        "let power = positivePowers(exp, base);",
+        "let power = raiseToPower(exp, base);",
         "console.log(power);"
       ],
       "tests": [
         "assert(power == 8, 'message: Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');",
-        "assert(code.match(/positivePowers\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'message: Your code should use the correct order of the arguments for the <code>positivePowers</code> function call.');"
+        "assert(code.match(/raiseToPower\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'message: Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.');"
       ],
       "solutions": [],
       "hints": [],

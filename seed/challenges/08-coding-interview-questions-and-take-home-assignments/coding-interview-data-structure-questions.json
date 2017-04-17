@@ -23,7 +23,7 @@
         "<blockquote>i8View[0] = 42;<br>console.log(i8View); // Returns [42, 0, 0]</blockquote>",
         "<strong>Note</strong><br>Typed arrays do not have some of the methods traditional arrays have such as <code>.pop()</code> or <code>.push()</code>. Typed arrays also fail <code>Array.isArray()</code> that checks if something is an array. Although simpler, this can be an advantage for less-sophisticated JavaScript engines to implement them.",
         "<hr>",
-        "First create a <code>buffer</code> that is 64-bytes. Then create a <code>Int32Array</code> typed array with a view of it called <code>int32View</code>."
+        "First create a <code>buffer</code> that is 64-bytes. Then create a <code>Int32Array</code> typed array with a view of it called <code>i32View</code>."
       ],
       "challengeSeed": [
         "var buffer;",
@@ -53,7 +53,7 @@
         "This data storage scheme is called a <dfn>Stack</dfn>. In particular, we would have to implement the <code>push()</code> method that pushes JavaScript objects at the top of the stack; and <code>pop()</code> method, that removes the JavaScript object that's at the top of the stack at the current moment.",
         "<hr>",
         "Here we have a stack of homework assignments represented as an array: <code>\"BIO12\"</code> is at the base, and <code>\"PSY44\"</code> is at the top of the stack.",
-        "Modify the given array and treat it like a <code>stack</code> using the JavaScript methods mentioned above. Remove the top element <code>\"BIO12\"</code> from the stack. Then add <code>\"CS50\"</code> to be the new top element of the stack."
+        "Modify the given array and treat it like a <code>stack</code> using the JavaScript methods mentioned above. Remove the top element <code>\"PSY44\"</code> from the stack. Then add <code>\"CS50\"</code> to be the new top element of the stack."
       ],
       "challengeSeed": [
         "var homeworkStack = [\"BIO12\",\"HIS80\",\"MAT122\",\"PSY44\"];",
@@ -161,7 +161,7 @@
         "<code>[[’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>",
         "Here the second value (an integer) represents item priority. If we enqueue <code>[‘human’, 1]</code> with a priority of <code>1</code> (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would like this:",
         "<code>[[‘human’, 1], [’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>.",
-        "We’ve starting writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing items, a <code>size</code> method to return the number of items in the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> or <code>false</code> if the queue is empty.",
+        "We’ve started writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing items, a <code>size</code> method to return the number of items in the queue, a <code>front</code> method to return the element at the front of the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> if the queue is empty or <code>false</code> if it is not.",
         "The <code>enqueue</code> should accept items with the format shown above (<code>['human', 1]</code>) where <code>1</code> represents the priority. The <code>dequeue</code> should return only the current item, not its priority."
       ],
       "challengeSeed": [
@@ -187,7 +187,7 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
-        "function PriorityQueue () { \n this.collection = []; \n this.printCollection = function(){ \n console.log(this.collection); \n }; \n this.size = function() { \n return this.collection.length; \n }; \n this.isEmpty = function() { \n return this.size() > 0 ? false : true; \n }; \n this.enqueue = function(newItem) { \n if (this.isEmpty()) { \n this.collection.push(newItem) \n } else { \n let inserted = false; \n var updated = this.collection.reduce((newCollection, item, index, current) => { \n if (newItem[1] < item[1] && !inserted) { \n newCollection.push(newItem); \n inserted = true; \n } \n newCollection.push(item); \n if (newItem[1] === item[1] && index < current.length - 1 && newItem[1] !== current[index + 1][1] && !inserted) { \n newCollection.push(newItem); \n inserted = true; \n } \n return newCollection; \n }, []); \n if (!inserted) { \n updated.push(newItem); \n } \n this.collection = updated; \n }; \n }; \n this.dequeue = function() { \n if (!this.isEmpty()) { \n return this.collection.shift()[0]; \n } else { \n return 'The queue is empty.' \n } \n }; \n }"
+        "function PriorityQueue () { \n this.collection = []; \n this.printCollection = function(){ \n console.log(this.collection); \n }; \n this.size = function() { \n return this.collection.length; \n }; \n this.isEmpty = function() { \n return this.size() > 0 ? false : true; \n }; \n this.enqueue = function (newitem) {\n  if (this.isEmpty()) {\n    return this.collection.push(newitem);\n  }\n\n  this.collection = this.collection.reverse();\n  var found_index = this.collection.findIndex(function (item) {\n    return newitem[1] >= item[1];\n  });\n  if (found_index === -1) {\n    this.collection.push(newitem);\n  } else {\n    this.collection.splice(found_index, 0, newitem);\n  }\n  this.collection = this.collection.reverse();\n}; \n this.dequeue = function() { \n if (!this.isEmpty()) { \n return this.collection.shift()[0]; \n } else { \n return 'The queue is empty.' \n } \n }; \n }"
       ],
       "challengeType": 1,
       "translations": {}

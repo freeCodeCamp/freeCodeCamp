@@ -5,13 +5,13 @@
 .max-element-height(up-to) {
   max-height: e(%('calc(100vh - %s)', @navbar-total-height));
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .max-element-height(always) {
   height: e(%('calc(100vh - %s)', @navbar-total-height));
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .@{ns}-instructions-panel {

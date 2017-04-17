@@ -36,9 +36,9 @@
       "id": "bd7158d8c443edefaeb5bdef",
       "title": "Timestamp Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://curse-arrow.gomix.me/' target='_blank'>https://curse-arrow.gomix.me/</a>.",
-        "Working on this project will involve you writing your code on Gomix on our starter project. After completing this project you can copy your public gomix url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
-        "Start this project on Gomix using <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-project-timestamp/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-timestamp/'>this repository</a> on GitHub! If you use Gomix, remember to save the link to your project somewhere safe!"
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://curse-arrow.glitch.me/' target='_blank'>https://curse-arrow.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-timestamp/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-timestamp/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
       "challengeSeed": [],
       "tests": [
@@ -72,9 +72,9 @@
       "id": "bd7158d8c443edefaeb5bdff",
       "title": "Request Header Parser Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://dandelion-roar.gomix.me/' target='_blank'>https://dandelion-roar.gomix.me/</a>.",
-        "Working on this project will involve you writing your code on Gomix on our starter project. After completing this project you can copy your public gomix url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
-        "Start this project on Gomix using <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-project-headerparser/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>this repository</a> on GitHub! If you use Gomix, remember to save the link to your project somewhere safe!"
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://dandelion-roar.glitch.me/' target='_blank'>https://dandelion-roar.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-headerparser/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
       "challengeSeed": [],
       "tests": [
@@ -100,9 +100,9 @@
       "id": "bd7158d8c443edefaeb5bd0e",
       "title": "URL Shortener Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://thread-paper.gomix.me/' target='_blank'>https://thread-paper.gomix.me/</a>.",
-        "Working on this project will involve you writing your code on Gomix on our starter project. After completing this project you can copy your public gomix url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
-        "Start this project on Gomix using <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-project-urlshortener/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>this repository</a> on GitHub! If you use Gomix, remember to save the link to your project somewhere safe!"
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://thread-paper.glitch.me/' target='_blank'>https://thread-paper.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-urlshortener/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
       "challengeSeed": [],
       "tests": [
@@ -136,9 +136,9 @@
       "id": "bd7158d8c443edefaeb5bdee",
       "title": "Exercise Tracker",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://fuschia-custard.gomix.me/' target='_blank'>https://fuschia-custard.gomix.me/</a>.",
-        "Working on this project will involve you writing your code on Gomix on our starter project. After completing this project you can copy your public gomix url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
-        "Start this project on Gomix using <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-project-exercisetracker/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>this repository</a> on GitHub! If you use Gomix, remember to save the link to your project somewhere safe!"
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://fuschia-custard.glitch.me/' target='_blank'>https://fuschia-custard.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-exercisetracker/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
       "challengeSeed": [],
       "tests": [
@@ -180,9 +180,9 @@
       "id": "bd7158d8c443edefaeb5bd0f",
       "title": "File Metadata Microservice",
       "description": [
-        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://purple-paladin.gomix.me/' target='_blank'>https://purple-paladin.gomix.me/</a>.",
-        "Working on this project will involve you writing your code on Gomix on our starter project. After completing this project you can copy your public gomix url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
-        "Start this project on Gomix using <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-project-filemetadata/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-filemetadata/'>this repository</a> on GitHub! If you use Gomix, remember to save the link to your project somewhere safe!"
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://purple-paladin.glitch.me/' target='_blank'>https://purple-paladin.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-filemetadata/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-filemetadata/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
       "challengeSeed": [],
       "tests": [

@@ -11,7 +11,7 @@
         [
           "",
           "",
-          "Cascading Style Sheets (CSS) tell the browser how to display the text and other content that you write in HTML.",
+          "Cascading Style Sheets (CSS) tell the browser how to display the text and other content that you write in HTML.<br><br>Note that CSS is case-sensitive so be careful with your capitalization.",
           ""
         ],
         [
@@ -87,7 +87,7 @@
         "</main>"
       ],
       "tests": [
-        "assert(code.match(/<h2\\s+style=\"color:\\s*rgb\\(255,\\s*0,\\s*0\\)\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/) || code.match(/<h2\\s+style=\"color:\\s*red\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
+        "assert(code.match(/<h2\\s+style\\s*=\\s*\"\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2312,7 +2312,8 @@
         "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'message: Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.');",
         "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.');",
         "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');"
+        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');",
+        "assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'message: You should use the clockwise notation to set the padding of <code>green-box</code> class.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
