@@ -118,7 +118,7 @@
     "redux-actions": "^2.0.2",
     "redux-create-types": "0.0.1",
     "redux-epic": "^0.1.1",
-    "redux-form": "^5.2.3",
+    "redux-form": "^6.1.0",
     "request": "^2.65.0",
     "reselect": "^2.0.2",
     "rx": "~4.0.8",
