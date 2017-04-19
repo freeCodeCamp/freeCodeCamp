@@ -11,6 +11,8 @@
 Welcome to freeCodeCamp's open source codebase and curriculum!
 =======================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/freeCodeCamp/freeCodeCamp.svg)](https://greenkeeper.io/)
+
 freeCodeCamp is a friendly open source community where you learn to code and help nonprofits.
 
 **We help our campers build job-worthy portfolios of real apps used by real people, while helping nonprofits.**
