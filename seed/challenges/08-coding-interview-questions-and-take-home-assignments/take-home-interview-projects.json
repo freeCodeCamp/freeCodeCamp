@@ -114,7 +114,7 @@
         "<strong>User Story:</strong> if a Twitch user is currently streaming, I can see additional details about what they are streaming.",
         "<strong>User Story:</strong> I will see a placeholder notification if a streamer has closed their Twitch account (or the account never existed). You can verify this works by adding brunofin and comster404 to your array of Twitch streamers.",
         "<strong>Hint:</strong> See an example call to Twitch.tv's JSONP API at <a href='http://forum.freeCodeCamp.com/t/use-the-twitchtv-json-api/19541' target='_blank'>http://forum.freeCodeCamp.com/t/use-the-twitchtv-json-api/19541</a>.",
-        "<strong>Hint:</strong> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
+        "<strong>Hint:</strong> The relevant documentation about this API call is here: <a href='https://dev.twitch.tv/docs/v5/reference/streams/#get-stream-by-user' target='_blank'>https://dev.twitch.tv/docs/v5/reference/streams/#get-stream-by-user</a>.",
         "<strong>Hint:</strong> Here's an array of the Twitch.tv usernames of people who regularly stream: <code>[\"ESL_SC2\", \"OgamingSC2\", \"cretetion\", \"freecodecamp\", \"storbeck\", \"habathcx\", \"RobotCaleb\", \"noobs2ninjas\"]</code>",
         "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
