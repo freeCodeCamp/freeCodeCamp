@@ -355,7 +355,6 @@ module.exports = function(User) {
       });
   });
 
-<<<<<<< HEAD
   User.on('resetPasswordRequest', function(info) {
     if (!isEmail(info.email)) {
       console.error(createEmailError());
@@ -399,8 +398,6 @@ module.exports = function(User) {
     });
   });
 
-=======
->>>>>>> Remove reset-password logic
   User.beforeRemote('login', function(ctx, notUsed, next) {
     const { body } = ctx.req;
     if (body && typeof body.email === 'string') {
@@ -570,7 +567,11 @@ module.exports = function(User) {
     };
     return User.findOrCreate$({ where: { email }}, userObj)
       .map(([ err, user, isCreated ]) => {
-        if (err) { throw err; }
+        if (err) {
+          return dedent`
+            Oops, something is not right, please try again later.
+          `;
+        }
 
         const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
         if (minutesLeft) {
@@ -592,15 +593,13 @@ module.exports = function(User) {
 
           const { id: loginToken } = token;
           const loginEmail = user.email;
-          const host = isDev ?
-            'http://localhost:3000' : 'https://freecodecamp.com';
+
           const mailOptions = {
             type: 'email',
             to: user.email,
             from: 'Team@freecodecamp.com',
-            subject: 'freeCodeCamp - Authentication Request!',
+            subject: 'Free Code Camp - Authentication Request!',
             text: renderAuthEmail({
-              host,
               loginEmail,
               loginToken
             })
@@ -620,16 +619,14 @@ module.exports = function(User) {
             this.emailAuthLinkTTL = emailAuthLinkTTL;
           });
 
+          return dedent`
+            If you entered a valid email, a magic link is on its way.
+            Please follow that link to sign in.
+          `;
         });
       })
-      .map(() => {
-        return dedent`
-          If you entered a valid email, a magic link is on its way.
-          Please follow that link to sign in.
-        `;
-      })
-      .catch(err => {
-        if (err) { debug(err); }
+      .map((msg) => {
+        if (msg) { return msg; }
         return dedent`
           Oops, something is not right, please try again later.
         `;
