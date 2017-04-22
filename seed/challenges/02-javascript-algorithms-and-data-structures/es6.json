@@ -145,7 +145,7 @@
         "As you can see, you can mutate the object (<code>[5, 6, 7]</code>) itself and the variable identifier (<code>s</code>) will still point to the altered array. Like all arrays, the array assigned to <code>s</code> is mutable, but because <code>const</code> was used, you cannot use the variable identifier, <code>s</code>, to point to a different array using the assignment operator.",
         "To make an object immutable, you can use <code>Object.freeze()</code>.",
         "<hr>",
-        "An array is delcared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code>.",
+        "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code>.",
         "<strong>Note</strong><br>Don't forget to add <code>\"use strict\";</code> to the top of your code."
       ],
       "challengeSeed": [
