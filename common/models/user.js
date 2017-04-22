@@ -355,52 +355,6 @@ module.exports = function(User) {
       });
   });
 
-<<<<<<< HEAD
-  User.on('resetPasswordRequest', function(info) {
-    if (!isEmail(info.email)) {
-      console.error(createEmailError());
-      return null;
-    }
-    let url;
-    const host = User.app.get('host');
-    const { id: token } = info.accessToken;
-    if (process.env.NODE_ENV === 'development') {
-      const port = User.app.get('port');
-      url = `http://${host}:${port}/reset-password?access_token=${token}`;
-    } else {
-      url =
-        `http://freecodecamp.com/reset-password?access_token=${token}`;
-    }
-
-    // the email of the requested user
-    debug(info.email);
-    // the temp access token to allow password reset
-    debug(info.accessToken.id);
-    // requires AccessToken.belongsTo(User)
-    var mailOptions = {
-      to: info.email,
-      from: 'Team@freecodecamp.com',
-      subject: 'Password Reset Request',
-      text: `
-        Hello,\n\n
-        This email is confirming that you requested to
-        reset your password for your freeCodeCamp account.
-        This is your email: ${ info.email }.
-        Go to ${ url } to reset your password.
-        \n
-        Happy Coding!
-        \n
-      `
-    };
-
-    return User.app.models.Email.send(mailOptions, function(err) {
-      if (err) { console.error(err); }
-      debug('email reset sent');
-    });
-  });
-
-=======
->>>>>>> Remove reset-password logic
   User.beforeRemote('login', function(ctx, notUsed, next) {
     const { body } = ctx.req;
     if (body && typeof body.email === 'string') {
@@ -570,7 +524,11 @@ module.exports = function(User) {
     };
     return User.findOrCreate$({ where: { email }}, userObj)
       .map(([ err, user, isCreated ]) => {
-        if (err) { throw err; }
+        if (err) {
+          return dedent`
+            Oops, something is not right, please try again later.
+          `;
+        }
 
         const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
         if (minutesLeft) {
@@ -592,15 +550,13 @@ module.exports = function(User) {
 
           const { id: loginToken } = token;
           const loginEmail = user.email;
-          const host = isDev ?
-            'http://localhost:3000' : 'https://freecodecamp.com';
+
           const mailOptions = {
             type: 'email',
             to: user.email,
             from: 'Team@freecodecamp.com',
-            subject: 'freeCodeCamp - Authentication Request!',
+            subject: 'Free Code Camp - Authentication Request!',
             text: renderAuthEmail({
-              host,
               loginEmail,
               loginToken
             })
@@ -620,16 +576,14 @@ module.exports = function(User) {
             this.emailAuthLinkTTL = emailAuthLinkTTL;
           });
 
+          return dedent`
+            If you entered a valid email, a magic link is on its way.
+            Please follow that link to sign in.
+          `;
         });
       })
-      .map(() => {
-        return dedent`
-          If you entered a valid email, a magic link is on its way.
-          Please follow that link to sign in.
-        `;
-      })
-      .catch(err => {
-        if (err) { debug(err); }
+      .map((msg) => {
+        if (msg) { return msg; }
         return dedent`
           Oops, something is not right, please try again later.
         `;
