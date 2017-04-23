@@ -290,12 +290,8 @@ module.exports = function(app) {
 
        const userId = authToken.userId;
        return User.findById(userId, (err, user) => {
-         if (err) {
+         if (err || !user || user.email !== authEmailId) {
            debug(err);
-           req.flash('info', { msg: defaultErrorMsg });
-           return res.redirect('/email-signin');
-         }
-         if (user.email !== authEmailId) {
            req.flash('info', { msg: defaultErrorMsg });
            return res.redirect('/email-signin');
          }
