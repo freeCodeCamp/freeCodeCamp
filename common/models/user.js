@@ -107,7 +107,10 @@ module.exports = function(User) {
     User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
     User.update$ = Observable.fromNodeCallback(User.updateAll, User);
     User.count$ = Observable.fromNodeCallback(User.count, User);
-    User.findOrCreate$ = Observable.fromCallback(User.findOrCreate, User);
+    User.findOrCreate$ = Observable.fromNodeCallback(User.findOrCreate, User);
+    User.prototype.createAccessToken$ = Observable.fromNodeCallback(
+      User.prototype.createAccessToken
+    );
   });
 
   User.beforeRemote('create', function({ req }) {
@@ -566,30 +569,25 @@ module.exports = function(User) {
       emailVerified: false
     };
     return User.findOrCreate$({ where: { email }}, userObj)
-      .map(([ err, user, isCreated ]) => {
-        if (err) {
-          return dedent`
-            Oops, something is not right, please try again later.
-          `;
-        }
+      .flatMap(([ user, isCreated ]) => {
 
         const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
-        if (minutesLeft) {
+        if (minutesLeft > 0) {
           const timeToWait = minutesLeft ?
             `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
             'a few seconds';
           debug('request before wait time : ' + timeToWait);
-          return dedent`
+          return Observable.of(dedent`
             Please wait ${timeToWait} to resend an authentication link.
-          `;
+          `);
         }
 
         const renderAuthEmail = isCreated ?
           renderSignUpEmail : renderSignInEmail;
 
-        // create a temporary access token with ttl for 1 hour
-        return user.createAccessToken({ ttl: 60 * 60 * 1000 }, (err, token) => {
-          if (err) { throw err; }
+        // create a temporary access token with ttl for 15 minutes
+        return user.createAccessToken$({ ttl: 15 * 60 * 1000 })
+          .flatMap(token => {
 
           const { id: loginToken } = token;
           const loginEmail = user.email;
@@ -597,29 +595,27 @@ module.exports = function(User) {
           const mailOptions = {
             type: 'email',
             to: user.email,
-<<<<<<< HEAD
-            from: 'Team@freecodecamp.com',
-            subject: 'Free Code Camp - Authentication Request!',
-=======
             from: isDev ?
               process.env.EMAIL_SENDER : 'team@freecodecamp.com',
             subject: 'freeCodeCamp - Authentication Request!',
->>>>>>> fix(email): allow sender email var for development
             text: renderAuthEmail({
               loginEmail,
               loginToken
             })
           };
 
-          this.email.send(mailOptions, err =>{
-            if (err) { throw err; }
-          });
-          const emailAuthLinkTTL = token.created;
-          this.update$({
-            emailAuthLinkTTL
-          })
-          .do(() => {
-            this.emailAuthLinkTTL = emailAuthLinkTTL;
+          return this.email.send$(mailOptions)
+            .flatMap(() => {
+              const emailAuthLinkTTL = token.created;
+              return this.update$({
+                emailAuthLinkTTL
+            })
+            .map(() => {
+              return dedent`
+                If you entered a valid email, a magic link is on its way.
+                Please follow that link to sign in.
+              `;
+            });
           });
 
           return dedent`
@@ -628,8 +624,8 @@ module.exports = function(User) {
           `;
         });
       })
-      .map((msg) => {
-        if (msg) { return msg; }
+      .catch(err => {
+        if (err) { debug(err); }
         return dedent`
           Oops, something is not right, please try again later.
         `;
