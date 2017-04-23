@@ -597,20 +597,23 @@ module.exports = function(User) {
           const mailOptions = {
             type: 'email',
             to: user.email,
+<<<<<<< HEAD
             from: 'Team@freecodecamp.com',
             subject: 'Free Code Camp - Authentication Request!',
+=======
+            from: isDev ?
+              process.env.EMAIL_SENDER : 'team@freecodecamp.com',
+            subject: 'freeCodeCamp - Authentication Request!',
+>>>>>>> fix(email): allow sender email var for development
             text: renderAuthEmail({
               loginEmail,
               loginToken
             })
           };
-          if (!isDev) {
-            this.email.send(mailOptions, err =>{
-              if (err) { throw err; }
-            });
-          } else {
-            console.log('~~~~\n' + mailOptions.text + '~~~~\n');
-          }
+
+          this.email.send(mailOptions, err =>{
+            if (err) { throw err; }
+          });
           const emailAuthLinkTTL = token.created;
           this.update$({
             emailAuthLinkTTL
