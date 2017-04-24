@@ -166,12 +166,12 @@
         "  "
       ],
       "tests": [
-        "assert(code.match(/@mixin\\s+?border-radius\\(\\$radius\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.');",
+        "assert(code.match(/@mixin\\s+?border-radius\\(\\s*?\\$radius\\s*?\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.');",
         "assert(code.match(/-webkit-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
         "assert(code.match(/-moz-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-moz-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
         "assert(code.match(/-ms-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-ms-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
         "assert(code.match(/border-radius:\\s*?\\$radius;/gi).length == 4, 'message: Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.');",
-        "assert(code.match(/@include\\s+?border-radius\\(15px\\);/gi), 'message: Your code should call the <code>border-radius mixin</code> using the <code>@include</code> keyword, setting it to 15px.');"
+        "assert(code.match(/@include\\s+?border-radius\\(\\s*?15px\\s*?\\);/gi), 'message: Your code should call the <code>border-radius mixin</code> using the <code>@include</code> keyword, setting it to 15px.');"
       ],
       "solutions": [],
       "hints": [],
