@@ -15,6 +15,7 @@ const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 const isDev = process.env.NODE_ENV !== 'production';
 const devHost = process.env.HOST || 'localhost';
+const emailSender = process.env.EMAIL_SENDER || 'team@freecodecamp.org';
 
 const createEmailError = () => new Error(
  'Please check to make sure the email is a valid email address.'
@@ -595,8 +596,7 @@ module.exports = function(User) {
           const mailOptions = {
             type: 'email',
             to: user.email,
-            from: isDev ?
-              process.env.EMAIL_SENDER : 'team@freecodecamp.com',
+            from: emailSender,
             subject: 'freeCodeCamp - Authentication Request!',
             text: renderAuthEmail({
               loginEmail,
@@ -662,14 +662,14 @@ module.exports = function(User) {
     }
 
     const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
-    if (ownEmail && minutesLeft) {
+    if (ownEmail && minutesLeft > 0) {
       const timeToWait = minutesLeft ?
         `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
         'a few seconds';
       debug('request before wait time : ' + timeToWait);
-      return Observable.throw(new Error(
-        `Please wait ${timeToWait} to resend email verification.`
-      ));
+      return Observable.of(dedent`
+        Please wait ${timeToWait} to resend an authentication link.
+      `);
     }
 
     return Observable.fromPromise(User.doesExist(null, email))
@@ -697,8 +697,8 @@ module.exports = function(User) {
         const mailOptions = {
           type: 'email',
           to: email,
-          from: 'team@freecodecamp.org',
-          subject: 'Welcome to freeCodeCamp!',
+          from: emailSender,
+          subject: 'freeCodeCamp - Email Update Requested',
           protocol: isDev ? null : 'https',
           host: isDev ? devHost : 'freecodecamp.org',
           port: isDev ? null : 443,
