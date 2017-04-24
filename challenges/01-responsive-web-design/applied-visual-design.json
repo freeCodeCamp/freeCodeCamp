@@ -2079,10 +2079,10 @@
       "title": "Use CSS Animation to Change the Hover State of a Button",
       "description": [
         "You can use CSS <code>@keyframes</code> to change the color of a button in its hover state.",
-        "Here's an example of changing the height of an image on hover:",
-        "<blockquote>&lt;style&gt;<br>  img:hover {<br>    animation-name: width;<br>    animation-duration: 500ms;<br>  }<br>  @keyframes width {<br>    100% {<br>      width: 40px;<br>    }<br>  }<br>&lt;/style&gt;<br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
+        "Here's an example of changing the width of an image on hover:",
+        "<blockquote>&lt;style&gt;<br>  img:hover {<br>    animation-name: width;<br>    animation-duration: 500ms;<br>  }<br><br>  @keyframes width {<br>    100% {<br>      width: 40px;<br>    }<br>  }<br>&lt;/style&gt;<br><br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
         "<hr>",
-        "Note that <code>ms</code> stands for milliseconds, which are 1/1000 of a second.",
+        "Note that <code>ms</code> stands for milliseconds, where 1000ms is equal to 1s.",
         "Use CSS <code>@keyframes</code> to change the <code>background-color</code> of the <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>."
       ],
       "challengeSeed": [
@@ -2093,6 +2093,7 @@
         "    background-color: #0F5897;",
         "    padding: 5px 10px 8px 10px;",
         "  }",
+        "  ",
         "  button:hover {",
         "    animation-name: background-color;",
         "    animation-duration: 500ms;",
@@ -2100,6 +2101,7 @@
         "  ",
         "  ",
         "</style>",
+        "  ",
         "<button>Register</button>"
       ],
       "tests": [
