@@ -106,13 +106,13 @@ export function isEmpty(poly) {
 }
 
 // setContent(contents: String, poly: PolyVinyl) => PolyVinyl
+// setContent will loose source if set
 export function setContent(contents, poly) {
   checkPoly(poly);
   return {
     ...poly,
-    // if no source exist, set the original contents as source
-    source: poly.source || poly.contents,
-    contents
+    contents,
+    source: null
   };
 }
 
@@ -178,11 +178,17 @@ export function compileHeadTail(padding = '', poly) {
 //   wrap: (contents: String) => String,
 //   poly: PolyVinyl
 // ) => PolyVinyl
+// transformContents will keep a copy of the original
+// code in the `source` property. If the original polyvinyl
+// already contains a source, this version will continue as
+// the source property
 export function transformContents(wrap, poly) {
-  return setContent(
+  const newPoly = setContent(
     wrap(poly.contents),
     poly
   );
+  // if no source exist, set the original contents as source
+  newPoly.source = poly.contents || poly.contents;
 }
 
 // transformHeadTailAndContents(
