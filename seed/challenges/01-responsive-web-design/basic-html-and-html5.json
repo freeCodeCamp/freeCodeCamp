@@ -43,10 +43,10 @@
         "<code>&#60;h1&#62;</code>",
         "Closing tags look like this:",
         "<code>&#60;/h1&#62;</code>",
-        "Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
-        "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing (they change from red to green), you can go to the next coding challenge.",
+        "The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.",
+        "Each challenge has tests you can run at any time by clicking the \"Run tests\" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.",
         "<hr>",
-        "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\" instead of \"Hello\". Then click the \"Run tests\" button."
+        "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\"."
       ],
       "challengeSeed": [
         "<h1>Hello</h1>"
