@@ -10,12 +10,16 @@ import loopback from 'loopback';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
+import {
+  getServerFullURL,
+  getEmailSender,
+  getProtocol,
+  getHost,
+  getPort
+} from '../../server/utils/url-utils.js';
 
 const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
-const isDev = process.env.NODE_ENV !== 'production';
-const devHost = process.env.HOST || 'localhost';
-const emailSender = process.env.EMAIL_SENDER || 'team@freecodecamp.com';
 
 const createEmailError = () => new Error(
  'Please check to make sure the email is a valid email address.'
@@ -549,11 +553,11 @@ module.exports = function(User) {
 
           const { id: loginToken } = token;
           const loginEmail = user.email;
-
+          const host = getServerFullURL();
           const mailOptions = {
             type: 'email',
             to: user.email,
-            from: emailSender,
+            from: getEmailSender(),
             subject: 'freeCodeCamp - Authentication Request!',
             text: renderAuthEmail({
               loginEmail,
@@ -654,11 +658,11 @@ module.exports = function(User) {
         const mailOptions = {
           type: 'email',
           to: email,
-          from: emailSender,
+          from: getEmailSender(),
           subject: 'freeCodeCamp - Email Update Request!',
-          protocol: isDev ? null : 'https',
-          host: isDev ? devHost : 'freecodecamp.com',
-          port: isDev ? null : 443,
+          protocol: getProtocol(),
+          host: getHost(),
+          port: getPort(),
           template: path.join(
             __dirname,
             '..',
