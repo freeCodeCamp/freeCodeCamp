@@ -39,7 +39,7 @@
           ""
         ],
         [
-          "//i.imgur.com/oLYs8EA.gif",
+          "//i.imgur.com/xHoCEt2.gif",
           "A gif showing the process of adding Bootstrap to your pen.",
           "Click the gear in the upper left hand corner of the CSS box, then copy this link <code>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css</code> inside the text box. Now give your <code>h1</code> element the class of <code>text-primary</code> to change its color and prove that Bootstrap is now available. Note that by using the dropdown menu and selecting \"Bootstrap\", the Alpha v.4 will be added instead.",
           ""
