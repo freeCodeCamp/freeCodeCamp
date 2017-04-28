@@ -189,6 +189,7 @@ export function transformContents(wrap, poly) {
   );
   // if no source exist, set the original contents as source
   newPoly.source = poly.contents || poly.contents;
+  return newPoly;
 }
 
 // transformHeadTailAndContents(
