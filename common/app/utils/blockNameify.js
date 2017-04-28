@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 const preFormattedBlockNames = {
   'api-projects': 'API Projects',
   'basic-css': 'Basic CSS',
