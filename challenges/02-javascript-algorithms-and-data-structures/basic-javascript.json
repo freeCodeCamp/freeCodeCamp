@@ -80,7 +80,7 @@
         "// Example",
         "var ourName;",
         "",
-        "// Define myName below this line",
+        "// Declare myName below this line",
         ""
       ],
       "tail": [
