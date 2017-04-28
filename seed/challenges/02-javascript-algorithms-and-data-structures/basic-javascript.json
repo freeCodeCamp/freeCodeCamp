@@ -4796,6 +4796,8 @@
         "<blockquote>var ourPets = [<br>  {<br>    animalType: \"cat\",<br>    names: [<br>      \"Meowzer\",<br>      \"Fluffy\",<br>      \"Kit-Cat\"<br>    ]<br>  },<br>  {<br>    animalType: \"dog\",<br>    names: [<br>      \"Spot\",<br>      \"Bowser\",<br>      \"Frankie\"<br>    ]<br>  }<br>];<br>ourPets[0].names[1]; // \"Fluffy\"<br>ourPets[1].names[0]; // \"Spot\"</blockquote>",
         "<hr>",
         "Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation."
+        "<strong>Hint</strong><br>Check your punctuation."
+
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
