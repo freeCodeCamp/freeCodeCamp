@@ -7,7 +7,7 @@ var __DEV__ = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
-    bundle: './client'
+    bundle: ['babel-polyfill', './client']
   },
   devtool: __DEV__ ? 'inline-source-map' : null,
   node: {
