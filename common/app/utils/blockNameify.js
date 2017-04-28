@@ -1,7 +1,7 @@
 const preFormattedBlockNames = {
   'api-projects': 'API Projects',
-  'basic-css': 'Basic CSS',
   'basic-html-and-html5': 'Basic HTML and HTML5',
+  'basic-css': 'Basic CSS',
   'css-flexbox': 'CSS Flexbox',
   devops: 'DevOps',
   es6: 'ES6',
