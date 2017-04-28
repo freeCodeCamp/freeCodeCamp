@@ -15,12 +15,12 @@
   "plugins": [
     "react",
     "import",
-    "prefer-object-spread"
+    "prefer-object-spread",
+    "json"
   ],
   "settings": {
     "import/ignore": [
-      "node_modules",
-      "\\.json$"
+      "node_modules"
     ],
     "import/extensions": [
       ".js",
