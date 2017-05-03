@@ -846,7 +846,8 @@
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
         "<hr>",
-        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link."
+        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link.",
+        "For example: <code>href=\"#\"</code>"
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
