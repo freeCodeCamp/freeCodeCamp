@@ -30,6 +30,9 @@ export default function reactSubRouter(app) {
     (req, res) => res.redirect(`/challenges/${req.params.dashedName}`)
   );
 
+  // youtube data not available on app load, send to the map
+  router.get(/youtube.*/, (req, res) => res.redirect('/map'));
+
   // These routes are in production
   routes.forEach((route) => {
     router.get(route, serveReactApp);

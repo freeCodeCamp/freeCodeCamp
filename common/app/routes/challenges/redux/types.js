@@ -24,6 +24,7 @@ export default createTypes([
   'unlockUntrustedCode',
   'closeChallengeModal',
   'updateSuccessMessage',
+  'updateSuperBlocks',
 
   // map
   'updateFilter',

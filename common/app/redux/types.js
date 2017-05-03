@@ -17,6 +17,12 @@ export default createTypes([
   'loadCurrentChallenge',
   'updateMyCurrentChallenge',
 
+  'fetchYoutube',
+  'updateYoutube',
+
+  'updateBlock',
+  'updateSuperBlock',
+
   'handleError',
   // used to hit the server
   'hardGoTo',
