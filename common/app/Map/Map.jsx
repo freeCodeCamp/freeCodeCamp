@@ -7,8 +7,7 @@ import { Col, Row } from 'react-bootstrap';
 
 import MapHeader from './Header.jsx';
 import SuperBlock from './Super-Block.jsx';
-import { fetchChallenges } from '../../redux/actions';
-import { updateTitle } from '../../../../redux/actions';
+import { updateTitle, fetchChallenges } from '../redux';
 
 const mapStateToProps = state => ({
   superBlocks: state.challengesApp.superBlocks

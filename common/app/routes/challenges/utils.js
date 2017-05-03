@@ -317,32 +317,7 @@ export function getMouse(e, [dx, dy]) {
   return [pageX - dx, pageY - dy];
 }
 
-export function filterComingSoonBetaChallenge(
-  isDev = false,
-  { isComingSoon, isBeta }
-) {
-  return !(isComingSoon || isBeta) ||
-    isDev;
-}
-
-export function filterComingSoonBetaFromEntities(
-  { challenge: challengeMap, ...rest },
-  isDev = false
-) {
-  const filter = filterComingSoonBetaChallenge.bind(null, isDev);
-  return {
-    ...rest,
-    challenge: Object.keys(challengeMap)
-      .map(dashedName => challengeMap[dashedName])
-      .filter(filter)
-      .reduce((challengeMap, challenge) => {
-        challengeMap[challenge.dashedName] = challenge;
-        return challengeMap;
-      }, {})
-  };
-}
-
-export function searchableChallengeTitles({ challenge: challengeMap } = {}) {
+export function searchableChallengeTitles(challengeMap = {}) {
   return Object.keys(challengeMap)
     .map(dashedName => challengeMap[dashedName])
     .reduce((accu, current) => {
@@ -376,13 +351,22 @@ export function searchableChallengeTitles({ challenge: challengeMap } = {}) {
 //   }]
 // }
 export function createMapUi(
-  { superBlock: superBlockMap, block: blockMap } = {},
-  superBlocks,
-  searchNameMap
+  {
+    superBlock: superBlockMap,
+    block: blockMap,
+    challenge: challengeMap
+  } = {},
+  superBlocks
 ) {
-  if (!superBlocks || !superBlockMap || !blockMap) {
+  if (
+    !superBlocks ||
+    !superBlockMap ||
+    !blockMap ||
+    !challengeMap
+  ) {
     return {};
   }
+  const searchNameMap = searchableChallengeTitles(challengeMap);
   return {
     children: superBlocks.map(superBlock => {
       return {

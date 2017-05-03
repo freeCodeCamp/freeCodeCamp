@@ -1,4 +1,7 @@
 import React, { PropTypes } from 'react';
+import noop from 'lodash/noop';
+import { connect } from 'react-redux';
+
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col,
@@ -9,12 +12,47 @@ import {
   Navbar,
   NavbarBrand
 } from 'react-bootstrap';
-import noop from 'lodash/noop';
 
 import navLinks from './links.json';
 import AvatarPointsNavItem from './Avatar-Points-Nav-Item.jsx';
+import {
+  clickOnLogo,
+  openDropdown,
+  closeDropdown,
+
+  dropdownSelector
+} from './redux';
+import {
+  trackEvent,
+
+  userSelector,
+  signInLoadingSelector
+} from '../redux';
+
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
+
+const mapStateToProps = state => {
+  const { user: { username, picture, points } } = userSelector(state);
+  return {
+    picture,
+    points,
+    username,
+    isSignedIn: !!username,
+    isDropdownOpen: dropdownSelector(state),
+    showLoading: signInLoadingSelector(state)
+  };
+};
+
+const mapDispatchToProps = {
+  clickOnLogo: e => {
+    e.preventDefault();
+    return clickOnLogo();
+  },
+  closeDropdown,
+  openDropdown,
+  trackEvent
+};
 
 const toggleButtonChild = (
   <Col xs={ 12 }>
@@ -31,9 +69,9 @@ function handleNavLinkEvent(content) {
 }
 
 const propTypes = {
+  clickOnLogo: PropTypes.func.isRequired,
   closeDropdown: PropTypes.func.isRequired,
-  isNavDropdownOpen: PropTypes.bool,
-  loadCurrentChallenge: PropTypes.func.isRequired,
+  isDropdownOpen: PropTypes.bool,
   openDropdown: PropTypes.func.isRequired,
   picture: PropTypes.string,
   points: PropTypes.number,
@@ -43,7 +81,7 @@ const propTypes = {
   username: PropTypes.string
 };
 
-export default class FCCNav extends React.Component {
+export class FCCNav extends React.Component {
   constructor(...props) {
     super(...props);
     this.handleMapClickOnMap = this.handleMapClickOnMap.bind(this);
@@ -70,15 +108,10 @@ export default class FCCNav extends React.Component {
     });
   }
 
-  handleLogoClick(e) {
-    e.preventDefault();
-    this.props.loadCurrentChallenge();
-  }
-
   renderLink(isNavItem, { isReact, isDropdown, content, link, links, target }) {
     const Component = isNavItem ? NavItem : MenuItem;
     const {
-      isNavDropdownOpen,
+      isDropdownOpen,
       openDropdown,
       closeDropdown
     } = this.props;
@@ -96,7 +129,7 @@ export default class FCCNav extends React.Component {
           onMouseEnter={ openDropdown }
           onMouseLeave={ closeDropdown }
           onToggle={ noop }
-          open={ isNavDropdownOpen }
+          open={ isDropdownOpen }
           title={ content }
           >
           { links.map(this.renderLink.bind(this, false)) }
@@ -156,6 +189,7 @@ export default class FCCNav extends React.Component {
 
   render() {
     const {
+      clickOnLogo,
       username,
       points,
       picture,
@@ -172,7 +206,7 @@ export default class FCCNav extends React.Component {
           <NavbarBrand>
             <a
               href='/challenges/current-challenge'
-              onClick={ this.handleLogoClick }
+              onClick={ clickOnLogo }
               >
               <img
                 alt='learn to code javascript at freeCodeCamp logo'
@@ -203,3 +237,8 @@ export default class FCCNav extends React.Component {
 
 FCCNav.displayName = 'FCCNav';
 FCCNav.propTypes = propTypes;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FCCNav);

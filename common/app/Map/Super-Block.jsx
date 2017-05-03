@@ -6,11 +6,12 @@ import FA from 'react-fontawesome';
 import { Panel } from 'react-bootstrap';
 
 import Block from './Block.jsx';
-import { toggleThisPanel } from '../../redux/actions';
 import {
+  toggleThisPanel,
+
   makePanelOpenSelector,
   makePanelHiddenSelector
-} from '../../redux/selectors';
+} from './redux';
 
 const dispatchActions = { toggleThisPanel };
 // make selectors unique to each component

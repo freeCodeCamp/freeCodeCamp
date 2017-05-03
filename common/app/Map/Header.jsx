@@ -5,19 +5,19 @@ import { InputGroup, FormControl, Button, Row } from 'react-bootstrap';
 import classnames from 'classnames';
 import {
   clearFilter,
-  updateFilter,
   collapseAll,
-  expandAll
-} from '../../redux/actions';
+  expandAll,
+  updateFilter
+} from './redux';
 
 const ESC = 27;
 const clearIcon = <i className='fa fa-times' />;
 const searchIcon = <i className='fa fa-search' />;
 const bindableActions = {
   clearFilter,
-  updateFilter,
   collapseAll,
-  expandAll
+  expandAll,
+  updateFilter
 };
 const mapStateToProps = state => ({
   isAllCollapsed: state.challengesApp.mapUi.isAllCollapsed,

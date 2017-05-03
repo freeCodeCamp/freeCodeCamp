@@ -6,13 +6,17 @@ import PureComponent from 'react-pure-render/component';
 import classnames from 'classnames';
 import debug from 'debug';
 
-import { updateCurrentChallenge } from '../../redux/actions';
-import { makePanelHiddenSelector } from '../../redux/selectors';
-import { userSelector } from '../../../../redux/selectors';
+import {
+  clickOnChallenge,
+
+  makePanelHiddenSelector
+} from './redux';
+import { userSelector } from '../redux';
 
 const propTypes = {
   block: PropTypes.string,
   challenge: PropTypes.object,
+  clickOnChallenge: PropTypes.func.isRequired,
   dashedName: PropTypes.string,
   isComingSoon: PropTypes.bool,
   isCompleted: PropTypes.bool,
@@ -20,10 +24,9 @@ const propTypes = {
   isHidden: PropTypes.bool,
   isLocked: PropTypes.bool,
   isRequired: PropTypes.bool,
-  title: PropTypes.string,
-  updateCurrentChallenge: PropTypes.func.isRequired
+  title: PropTypes.string
 };
-const mapDispatchToProps = { updateCurrentChallenge };
+const mapDispatchToProps = { clickOnChallenge };
 const makeMapStateToProps = () => createSelector(
   userSelector,
   (_, props) => props.dashedName,
@@ -62,7 +65,7 @@ export class Challenge extends PureComponent {
   }
 
   handleChallengeClick() {
-    this.props.updateCurrentChallenge(this.props.challenge);
+    this.props.clickOnChallenge(this.props.challenge);
   }
 
   renderCompleted(isCompleted, isLocked) {

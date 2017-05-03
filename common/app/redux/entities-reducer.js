@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import types from './types';
+import { types } from './';
 
 const initialState = {
   superBlock: {},

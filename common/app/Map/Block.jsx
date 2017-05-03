@@ -6,11 +6,12 @@ import PureComponent from 'react-pure-render/component';
 import { Panel } from 'react-bootstrap';
 
 import Challenge from './Challenge.jsx';
-import { toggleThisPanel } from '../../redux/actions';
 import {
+  toggleThisPanel,
+
   makePanelOpenSelector,
   makePanelHiddenSelector
-} from '../../redux/selectors';
+} from './redux';
 
 const dispatchActions = { toggleThisPanel };
 const makeMapStateToProps = () => createSelector(

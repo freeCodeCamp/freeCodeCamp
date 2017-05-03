@@ -12,10 +12,15 @@ import EmailSettings from './Email-Setting.jsx';
 import LanguageSettings from './Language-Settings.jsx';
 import SettingsSkeleton from './SettingsSkeleton.jsx';
 
-
 import { toggleUserFlag } from '../redux/actions.js';
-import { userSelector } from '../../../redux/selectors.js';
-import { toggleNightMode, updateTitle } from '../../../redux/actions.js';
+import {
+  toggleNightMode,
+  updateTitle,
+
+  signInLoadingSelector,
+  userSelector
+} from '../../../redux';
+
 
 const mapDispatchToProps = {
   updateTitle,
@@ -29,7 +34,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  state => state.app.isSignInAttempted,
+  signInLoadingSelector,
   (
     {
       user: {
@@ -45,9 +50,9 @@ const mapStateToProps = createSelector(
         sendQuincyEmail
       }
     },
-    isSignInAttempted
+    showLoading,
   ) => ({
-    showLoading: isSignInAttempted,
+    showLoading,
     username,
     email,
     isAvailableForHire,

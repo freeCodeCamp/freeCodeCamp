@@ -17,15 +17,6 @@ export const openLightBoxImage = createAction(types.openLightBoxImage);
 export const closeLightBoxImage = createAction(types.closeLightBoxImage);
 
 // challenges
-export const fetchChallenge = createAction(
-  types.fetchChallenge,
-  (dashedName, block) => ({ dashedName, block })
-);
-export const fetchChallengeCompleted = createAction(
-  types.fetchChallengeCompleted,
-  (_, challenge) => challenge,
-  entities => ({ entities })
-);
 export const closeChallengeModal = createAction(types.closeChallengeModal);
 export const resetUi = createAction(types.resetUi);
 export const updateHint = createAction(types.updateHint);
@@ -35,13 +26,6 @@ export const unlockUntrustedCode = createAction(
   () => null
 );
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
-export const fetchChallenges = createAction(types.fetchChallenges);
-export const fetchChallengesCompleted = createAction(
-  types.fetchChallengesCompleted,
-  (_, superBlocks) => superBlocks,
-  entities => ({ entities })
-);
-
 export const updateCurrentChallenge = createAction(
   types.updateCurrentChallenge
 );

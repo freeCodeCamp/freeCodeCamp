@@ -2,15 +2,15 @@ import { Observable } from 'rx';
 import debug from 'debug';
 import { push } from 'react-router-redux';
 
-import types from './types';
 import {
+  types,
+
   updateMyCurrentChallenge,
-  createErrorObservable
-} from './actions';
-import {
+  createErrorObservable,
+
   userSelector,
   firstChallengeSelector
-} from './selectors';
+} from './';
 import { updateCurrentChallenge } from '../routes/challenges/redux/actions';
 import getActionsOfType from '../../utils/get-actions-of-type';
 import combineSagas from '../../utils/combine-sagas';
@@ -18,10 +18,7 @@ import { postJSON$ } from '../../utils/ajax-stream';
 
 const log = debug('fcc:app/redux/load-current-challenge-saga');
 export function updateMyCurrentChallengeSaga(actions, getState) {
-  const updateChallenge$ = getActionsOfType(
-    actions,
-    updateCurrentChallenge.toString()
-  )
+  const updateChallenge$ = actions.ofType(types.updateCurrentChallenge)
     .map(({ payload: { id } }) => id)
     .filter(() => {
       const { app: { user: username } } = getState();
