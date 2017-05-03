@@ -4,22 +4,22 @@ import {
   buildClassic,
   buildBackendChallenge
 } from '../utils/build.js';
-import { ofType } from '../../common/utils/get-actions-of-type.js';
 import {
-  challengeSelector
-} from '../../common/app/routes/challenges/redux/selectors';
-import types from '../../common/app/routes/challenges/redux/types';
-import { createErrorObservable } from '../../common/app/redux/actions';
+  types,
+  createErrorObservable
+} from '../../common/app/redux';
 import {
   frameMain,
   frameTests,
   initOutput,
-  saveCode
-} from '../../common/app/routes/challenges/redux/actions';
+  saveCode,
 
-export default function buildChallengeEpic(actions, getState) {
+  challengeSelector
+} from '../../common/app/routes/challenges/redux';
+
+export default function buildChallengeEpic(actions, { getState }) {
   return actions
-    ::ofType(types.executeChallenge, types.updateMain)
+    .ofType(types.executeChallenge, types.updateMain)
     // if isCodeLocked do not run challenges
     .filter(() => !getState().challengesApp.isCodeLocked)
     .debounce(750)

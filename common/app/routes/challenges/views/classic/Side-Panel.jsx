@@ -20,7 +20,7 @@ import {
   challengeSelector
 } from '../../redux';
 import { descriptionRegex } from '../../utils';
-import { makeToast } from '../../../../Toasts/redux/actions.js';
+import { makeToast } from '../../../../Toasts/redux';
 
 const mapDispatchToProps = {
   makeToast,

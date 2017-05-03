@@ -2,11 +2,9 @@ import Settings from './components/Settings.jsx';
 import updateEmailRoute from './routes/update-email';
 
 export default function settingsRoute(deps) {
-  return {
+  return [{
     path: 'settings',
     component: Settings,
-    childRoutes: [
-      updateEmailRoute(deps)
-    ]
-  };
+    childRoutes: updateEmailRoute(deps)
+  }];
 }

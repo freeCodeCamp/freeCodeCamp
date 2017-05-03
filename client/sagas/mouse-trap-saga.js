@@ -4,7 +4,7 @@ import { push } from 'react-router-redux';
 import {
   toggleNightMode,
   hardGoTo
-} from '../../common/app/redux/actions';
+} from '../../common/app/redux';
 
 function bindKey(key, actionCreator) {
   return Observable.fromEventPattern(

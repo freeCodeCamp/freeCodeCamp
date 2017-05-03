@@ -8,12 +8,14 @@ import {
   delayedRedirect,
   fetchChallengeCompleted,
   fetchChallengesCompleted,
-  updateCurrentChallenge,
 
   langSelector
 } from './';
 import { shapeChallenges } from './utils';
-import { challengeSelector } from '../routes/challenges/redux/selectors.js';
+import {
+  updateCurrentChallenge,
+  challengeSelector
+} from '../routes/challenges/redux';
 
 const isDev = debug.enabled('fcc:*');
 

@@ -2,12 +2,14 @@ import { Observable } from 'rx';
 import store from 'store';
 
 import { postJSON$ } from '../../common/utils/ajax-stream';
-import types from '../../common/app/redux/types';
 import {
+  types,
+
   addThemeToBody,
   updateTheme,
+
   createErrorObservable
-} from '../../common/app/redux/actions';
+} from '../../common/app/redux';
 
 function persistTheme(theme) {
   store.set('fcc-theme', theme);

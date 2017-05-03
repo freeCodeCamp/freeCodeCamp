@@ -1,9 +1,7 @@
-import types from '../../common/app/redux/types';
+import { types } from '../../common/app/redux';
 
-const { hardGoTo } = types;
-export default function hardGoToSaga(action$, getState, { history }) {
-  return action$
-    .filter(({ type }) => type === hardGoTo)
+export default function hardGoToSaga(actions, getState, { history }) {
+  return actions.ofType(types.hardGoTo)
     .map(({ payload = '/settings' }) => {
       history.pushState(history.state, null, payload);
       return null;

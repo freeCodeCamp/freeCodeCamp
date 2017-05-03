@@ -21,7 +21,7 @@ function filesToMarkdown(files = {}) {
   }, '\n');
 }
 
-export default function bugEpic(actions, getState, { window }) {
+export default function bugEpic(actions, { getState }, { window }) {
   return actions.ofType(types.openIssueSearch, types.createIssue)
     .map(({ type }) => {
       const {

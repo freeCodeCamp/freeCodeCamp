@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { NotificationStack } from 'react-notification';
 
-import { removeToast } from './redux/actions';
+import { removeToast } from './redux';
 import {
   submitChallenge,
   resetChallenge
-} from '../routes/challenges/redux/actions';
+} from '../routes/challenges/redux';
 
 const registeredActions = {
   submitChallenge,

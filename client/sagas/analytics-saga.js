@@ -1,5 +1,5 @@
 import { Observable } from 'rx';
-import { createErrorObservable } from '../../common/app/redux/actions';
+import { createErrorObservable } from '../../common/app/redux';
 import capitalize from 'lodash/capitalize';
 
 // analytics types

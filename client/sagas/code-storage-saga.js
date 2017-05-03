@@ -2,21 +2,20 @@ import { Observable } from 'rx';
 import store from 'store';
 
 import { removeCodeUri, getCodeUri } from '../utils/code-uri';
-import { ofType } from '../../common/utils/get-actions-of-type';
+
 import { setContent } from '../../common/utils/polyvinyl';
 import combineSagas from '../../common/utils/combine-sagas';
 
-import { userSelector } from '../../common/app/redux/selectors';
-import { makeToast } from '../../common/app/toasts/redux/actions';
-import types from '../../common/app/routes/challenges/redux/types';
+import { userSelector } from '../../common/app/redux';
+import { makeToast } from '../../common/app/Toasts/redux';
 import {
+  types,
   savedCodeFound,
   updateMain,
-  lockUntrustedCode
-} from '../../common/app/routes/challenges/redux/actions';
-import {
+  lockUntrustedCode,
+
   challengeSelector
-} from '../../common/app/routes/challenges/redux/selectors';
+} from '../../common/app/routes/challenges/redux';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -56,7 +55,7 @@ function legacyToFile(code, files, key) {
 
 export function clearCodeSaga(actions, getState) {
   return actions
-    ::ofType(types.clearSavedCode)
+    .ofType(types.clearSavedCode)
     .map(() => {
       const { challengesApp: { id = '' } } = getState();
       store.remove(id);
@@ -65,7 +64,7 @@ export function clearCodeSaga(actions, getState) {
 }
 export function saveCodeSaga(actions, getState) {
   return actions
-    ::ofType(types.saveCode)
+    .ofType(types.saveCode)
     // do not save challenge if code is locked
     .filter(() => !getState().challengesApp.isCodeLocked)
     .map(() => {
@@ -77,7 +76,7 @@ export function saveCodeSaga(actions, getState) {
 
 export function loadCodeSaga(actions, getState, { window, location }) {
   return actions
-    ::ofType(types.loadCode)
+    .ofType(types.loadCode)
     .flatMap(() => {
       let finalFiles;
       const state = getState();

@@ -4,7 +4,7 @@ import { reduxForm } from 'redux-form';
 import { FormControl, FormGroup } from 'react-bootstrap';
 
 import { updateMyLang } from '../redux/actions';
-import { userSelector } from '../../../redux/selectors';
+import { userSelector } from '../../../redux';
 import langs from '../../../../utils/supported-languages';
 
 const propTypes = {

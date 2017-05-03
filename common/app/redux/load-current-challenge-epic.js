@@ -11,13 +11,12 @@ import {
   userSelector,
   firstChallengeSelector
 } from './';
-import { updateCurrentChallenge } from '../routes/challenges/redux/actions';
-import getActionsOfType from '../../utils/get-actions-of-type';
+import { updateCurrentChallenge } from '../routes/challenges/redux';
 import combineSagas from '../../utils/combine-sagas';
 import { postJSON$ } from '../../utils/ajax-stream';
 
 const log = debug('fcc:app/redux/load-current-challenge-saga');
-export function updateMyCurrentChallengeSaga(actions, getState) {
+export function updateMyCurrentChallengeEpic(actions, { getState }) {
   const updateChallenge$ = actions.ofType(types.updateCurrentChallenge)
     .map(({ payload: { id } }) => id)
     .filter(() => {
@@ -43,8 +42,8 @@ export function updateMyCurrentChallengeSaga(actions, getState) {
   return Observable.merge(optimistic, ajaxUpdate);
 }
 
-export function loadCurrentChallengeSaga(actions, getState) {
-  return getActionsOfType(actions, types.loadCurrentChallenge)
+export function loadCurrentChallengeEpic(actions, getState) {
+  return actions.ofType(types.loadCurrentChallenge)
     .flatMap(() => {
       let finalChallenge;
       const state = getState();
@@ -84,6 +83,6 @@ export function loadCurrentChallengeSaga(actions, getState) {
 }
 
 export default combineSagas(
-  updateMyCurrentChallengeSaga,
-  loadCurrentChallengeSaga
+  updateMyCurrentChallengeEpic,
+  loadCurrentChallengeEpic
 );

@@ -1,13 +1,13 @@
 import { Observable } from 'rx';
-import types from './types';
 import {
+  types,
+
   updateCurrentChallenge,
   updateMain
-} from './actions';
+} from './';
 
-export default function resetChallengeSaga(actions$, getState) {
-  return actions$
-    .filter(({ type }) => type === types.resetChallenge)
+export default function resetChallengeEpic(actions, { getState }) {
+  return actions.ofType(types.resetChallenge)
     .flatMap(() => {
       const {
         challengesApp: { challenge: dashedName },

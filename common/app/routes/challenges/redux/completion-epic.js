@@ -1,19 +1,20 @@
 import { Observable } from 'rx';
 
-import types from './types.js';
 import {
-  moveToNextChallenge,
-  clearSavedCode
-} from './actions.js';
+  types,
 
-import { challengeSelector } from './selectors.js';
+  moveToNextChallenge,
+  clearSavedCode,
+  challengeSelector
+} from './';
+
 import {
   createErrorObservable,
   updateUserPoints,
   updateUserChallenge
-} from '../../../redux/actions.js';
+} from '../../../redux';
 import { backEndProject } from '../../../utils/challengeTypes.js';
-import { makeToast } from '../../../toasts/redux/actions.js';
+import { makeToast } from '../../../Toasts/redux';
 import { postJSON$ } from '../../../../utils/ajax-stream.js';
 import { ofType } from '../../../../utils/get-actions-of-type.js';
 

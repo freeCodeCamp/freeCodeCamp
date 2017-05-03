@@ -1,17 +1,6 @@
 import flowRight from 'lodash/flowRight';
+import createNameIdMap from '../../utils/create-name-id-map.js';
 
-// createNameIdMap(entities: Object) => Object
-export function createNameIdMap(entities) {
-  const { challenge } = entities;
-  return {
-    ...entities,
-    challengeIdToName: Object.keys(challenge)
-      .reduce((map, challengeName) => {
-        map[challenge[challengeName].id] = challenge[challengeName].dashedName;
-        return map;
-      }, {})
-  };
-}
 
 export function filterComingSoonBetaChallenge(
   isDev = false,

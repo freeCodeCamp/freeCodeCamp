@@ -2,15 +2,17 @@ import { Observable } from 'rx';
 import { push } from 'react-router-redux';
 
 import { types } from './actions';
-import { makeToast } from '../../../toasts/redux/actions';
-import { fetchChallenges } from '../../challenges/redux/actions';
+import { makeToast } from '../../../Toasts/redux';
 import {
+  fetchChallenges,
+  doActionOnError,
   updateUserFlag,
   updateUserEmail,
   updateUserLang,
-  doActionOnError
-} from '../../../redux/actions';
-import { userSelector } from '../../../redux/selectors';
+
+  userSelector
+} from '../../../redux';
+
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import langs from '../../../../utils/supported-languages';
 import combineSagas from '../../../../utils/combine-sagas';

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { hardGoTo } from '../redux/actions';
+import { hardGoTo } from '../redux';
 
 const propTypes = {
   hardGoTo: PropTypes.func,

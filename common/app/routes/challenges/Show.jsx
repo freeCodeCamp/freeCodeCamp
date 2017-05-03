@@ -21,7 +21,7 @@ import {
   fetchChallenge,
   fetchChallenges
 } from '../../redux';
-import { makeToast } from '../../Toasts/redux/actions.js';
+import { makeToast } from '../../Toasts/redux';
 
 const views = {
   backend: BackEnd,

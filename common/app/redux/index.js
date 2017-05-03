@@ -4,15 +4,15 @@ import { combineTypes, createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
 
-import fetchUserSaga from './fetch-user-saga';
-import loadCurrentChallengeSaga from './load-current-challenge-saga';
+import fetchUserEpic from './fetch-user-epic.js';
+import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
 import ns from '../ns.json';
 import { types as map } from '../Map/redux';
 
 
-export const sagas = [
-  fetchUserSaga,
-  loadCurrentChallengeSaga
+export const epics = [
+  fetchUserEpic,
+  loadCurrentChallengeEpic
 ];
 
 

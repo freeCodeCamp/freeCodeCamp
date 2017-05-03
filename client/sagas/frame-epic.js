@@ -2,13 +2,13 @@ import Rx, { Observable, Subject } from 'rx';
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
-import { ofType } from '../../common/utils/get-actions-of-type';
-import types from '../../common/app/routes/challenges/redux/types';
 import {
+  types,
+
   updateOutput,
   checkChallenge,
   updateTests
-} from '../../common/app/routes/challenges/redux/actions';
+} from '../../common/app/routes/challenges/redux';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -95,8 +95,7 @@ export default function frameEpic(actions, getState, { window, document }) {
   const proxyLogger = new Subject();
   // frameReady will let us know when the test iframe is ready to run
   const frameReady = window.__common[testId + 'Ready'] = new Subject();
-  const result = actions
-    ::ofType(types.frameMain, types.frameTests)
+  const result = actions.ofType(types.frameMain, types.frameTests)
     // if isCodeLocked is true do not frame user code
     .filter(() => !getState().challengesApp.isCodeLocked)
     .map(action => {

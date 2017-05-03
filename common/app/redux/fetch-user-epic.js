@@ -1,18 +1,18 @@
 import { Observable } from 'rx';
-import types from './types';
 import {
+  types,
+
   addUser,
   updateThisUser,
   createErrorObservable,
   showSignIn,
   updateTheme,
   addThemeToBody
-} from './actions';
+} from './';
 
-const { fetchUser } = types;
-export default function getUserSaga(action$, getState, { services }) {
-  return action$
-    .filter(action => action.type === fetchUser)
+export default function getUserEpic(actions, { getState }, { services }) {
+  return actions
+    .ofType(types.fetchUser)
     .flatMap(() => {
       return services.readService$({ service: 'user' })
         .flatMap(({ entities, result })=> {

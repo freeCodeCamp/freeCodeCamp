@@ -16,7 +16,7 @@ function unlockStep(step, unlockedSteps) {
   return updateUnlockedSteps(updatedSteps);
 }
 
-export default function stepChallengeEpic(actions, getState) {
+export default function stepChallengeEpic(actions, { getState }) {
   return actions.ofType(
     types.stepForward,
     types.stepBackward,

@@ -13,14 +13,13 @@ import {
   getFirstChallengeOfNextSuperBlock
 } from '../utils';
 import { createErrorObservable } from '../../../redux';
-import { makeToast } from '../../../Toasts/redux/actions';
+import { makeToast } from '../../../Toasts/redux';
 
 const isDev = debug.enabled('fcc:*');
 const { moveToNextChallenge } = types;
 
-export default function nextChallengeSaga(actions$, getState) {
-  return actions$
-    .filter(({ type }) => type === moveToNextChallenge)
+export default function nextChallengeEpic(actions, { getState }) {
+  return actions.ofType(moveToNextChallenge)
     .flatMap(() => {
       let nextChallenge;
       // let message = '';

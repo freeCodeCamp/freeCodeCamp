@@ -1,8 +1,8 @@
 import UpdateEmail from './Update-Email.jsx';
 
 export default function updateEmailRoute() {
-  return {
+  return [{
     path: 'update-email',
     component: UpdateEmail
-  };
+  }];
 }

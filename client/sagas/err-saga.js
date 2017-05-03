@@ -1,8 +1,7 @@
-import { makeToast } from '../../common/app/toasts/redux/actions';
+import { makeToast } from '../../common/app/Toasts/redux';
 
-export default function errorSaga(action$) {
-  return action$
-    .filter(({ error }) => !!error)
+export default function errorSaga(actions) {
+  return actions.filter(({ error }) => !!error)
     .map(({ error }) => error)
     .doOnNext(error => console.error(error))
     .map(() => makeToast({
