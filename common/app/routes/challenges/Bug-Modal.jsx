@@ -4,8 +4,11 @@ import { Button, Modal } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 
 import ns from './ns.json';
-
-import { createIssue, openIssueSearch, closeBugModal } from './redux/actions';
+import {
+  createIssue,
+  openIssueSearch,
+  closeBugModal
+} from './redux';
 
 const mapStateToProps = state => ({ isOpen: state.challengesApp.isBugOpen });
 const mapDispatchToProps = { createIssue, openIssueSearch, closeBugModal };

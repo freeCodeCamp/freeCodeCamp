@@ -7,19 +7,20 @@ import { Col, Row } from 'react-bootstrap';
 
 import ns from './ns.json';
 
+import ToolPanel from './Tool-Panel.jsx';
 import ChallengeTitle from '../../Challenge-Title.jsx';
 import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
-import ToolPanel from './Tool-Panel.jsx';
-import { challengeSelector } from '../../redux/selectors';
 import {
   openBugModal,
   updateHint,
   executeChallenge,
-  unlockUntrustedCode
-} from '../../redux/actions';
+  unlockUntrustedCode,
+
+  challengeSelector
+} from '../../redux';
 import { descriptionRegex } from '../../utils';
-import { makeToast } from '../../../../toasts/redux/actions';
+import { makeToast } from '../../../../Toasts/redux/actions.js';
 
 const mapDispatchToProps = {
   makeToast,

@@ -9,15 +9,16 @@ import SidePanel from './Side-Panel.jsx';
 import Preview from './Preview.jsx';
 import BugModal from '../../Bug-Modal.jsx';
 import ClassicModal from './Classic-Modal.jsx';
-import { challengeSelector } from '../../redux/selectors';
 import {
   executeChallenge,
   updateFile,
   loadCode,
   submitChallenge,
   closeChallengeModal,
-  updateSuccessMessage
-} from '../../redux/actions';
+  updateSuccessMessage,
+
+  challengeSelector
+} from '../../redux';
 import { randomCompliment } from '../../../../utils/get-words';
 
 const mapStateToProps = createSelector(

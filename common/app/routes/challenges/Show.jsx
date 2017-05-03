@@ -8,26 +8,27 @@ import PureComponent from 'react-pure-render/component';
 import Classic from './views/classic';
 import Step from './views/step';
 import Project from './views/project';
-import Video from './views/video';
 import BackEnd from './views/backend';
 
 import {
-  fetchChallenge,
-  fetchChallenges,
   replaceChallenge,
-  resetUi
-} from './redux/actions';
-import { challengeSelector } from './redux/selectors';
-import { updateTitle } from '../../redux/actions';
-import { makeToast } from '../../toasts/redux/actions';
+  resetUi,
+
+  challengeSelector
+} from './redux';
+import {
+  updateTitle,
+  fetchChallenge,
+  fetchChallenges
+} from '../../redux';
+import { makeToast } from '../../Toasts/redux/actions.js';
 
 const views = {
   backend: BackEnd,
   classic: Classic,
   project: Project,
   simple: Project,
-  step: Step,
-  video: Video
+  step: Step
 };
 
 const mapDispatchToProps = {

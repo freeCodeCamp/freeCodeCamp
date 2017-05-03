@@ -11,8 +11,11 @@ import ChallengeTitle from '../../Challenge-Title.jsx';
 import SolutionInput from '../../Solution-Input.jsx';
 import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
-import { submitChallenge, executeChallenge } from '../../redux/actions.js';
-import { challengeSelector } from '../../redux/selectors.js';
+import {
+  submitChallenge,
+  executeChallenge,
+  challengeSelector
+} from '../../redux';
 import { descriptionRegex } from '../../utils.js';
 import {
   createFormValidator,

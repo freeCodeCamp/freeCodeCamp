@@ -1,7 +1,11 @@
-import types from './types';
-import { goToStep, submitChallenge, updateUnlockedSteps } from './actions';
-import { challengeSelector } from './selectors';
-import getActionsOfType from '../../../../utils/get-actions-of-type';
+import {
+  types,
+  goToStep,
+  submitChallenge,
+  updateUnlockedSteps,
+
+  challengeSelector
+} from './';
 
 function unlockStep(step, unlockedSteps) {
   if (!step) {
@@ -13,8 +17,7 @@ function unlockStep(step, unlockedSteps) {
 }
 
 export default function stepChallengeEpic(actions, getState) {
-  return getActionsOfType(
-    actions,
+  return actions.ofType(
     types.stepForward,
     types.stepBackward,
     types.completeAction

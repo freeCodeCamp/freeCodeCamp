@@ -9,8 +9,11 @@ import {
   BackEndForm
 } from './Forms.jsx';
 
-import { submitChallenge, openBugModal } from '../../redux/actions';
-import { challengeSelector } from '../../redux/selectors';
+import {
+  submitChallenge,
+  openBugModal,
+  challengeSelector
+} from '../../redux';
 import {
   simpleProject,
   frontEndProject

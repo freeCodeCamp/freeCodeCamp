@@ -13,9 +13,10 @@ import {
   stepBackward,
   stepForward,
   submitChallenge,
-  updateUnlockedSteps
-} from '../../redux/actions';
-import { challengeSelector } from '../../redux/selectors';
+  updateUnlockedSteps,
+
+  challengeSelector
+} from '../../redux';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 
 const mapStateToProps = createSelector(

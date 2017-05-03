@@ -2,7 +2,8 @@ import { Observable, config } from 'rx';
 import test from 'tape';
 import proxy from 'proxyquire';
 import sinon from 'sinon';
-import types from './types';
+
+import { types } from './';
 
 config.longStackSupport = true;
 const challengeSelectorStub = {};

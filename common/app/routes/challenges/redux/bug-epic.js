@@ -1,5 +1,4 @@
-import types from '../redux/types';
-import { closeBugModal } from '../redux/actions';
+import { types, closeBugModal } from '../redux';
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;
@@ -22,12 +21,8 @@ function filesToMarkdown(files = {}) {
   }, '\n');
 }
 
-export default function bugSaga(actions$, getState, { window }) {
-  return actions$
-    .filter(({ type }) => (
-      type === types.openIssueSearch ||
-      type === types.createIssue
-    ))
+export default function bugEpic(actions, getState, { window }) {
+  return actions.ofType(types.openIssueSearch, types.createIssue)
     .map(({ type }) => {
       const {
         challengesApp: {

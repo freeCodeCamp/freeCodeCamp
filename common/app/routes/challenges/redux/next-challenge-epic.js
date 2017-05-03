@@ -1,15 +1,19 @@
+import debug from 'debug';
 import { Observable } from 'rx';
 import { push } from 'react-router-redux';
-import types from './types';
-import { resetUi, updateCurrentChallenge } from './actions';
-import { createErrorObservable } from '../../../redux/actions';
-import { makeToast } from '../../../toasts/redux/actions';
+
+import {
+  types,
+  resetUi,
+  updateCurrentChallenge
+} from './';
 import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock
 } from '../utils';
-import debug from 'debug';
+import { createErrorObservable } from '../../../redux';
+import { makeToast } from '../../../Toasts/redux/actions';
 
 const isDev = debug.enabled('fcc:*');
 const { moveToNextChallenge } = types;

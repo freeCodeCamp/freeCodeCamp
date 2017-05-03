@@ -8,7 +8,7 @@ import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import BugModal from '../../Bug-Modal.jsx';
 
-import { challengeSelector } from '../../redux/selectors';
+import { challengeSelector } from '../../redux';
 
 const mapStateToProps = createSelector(
   challengeSelector,
