@@ -1,8 +1,6 @@
 import request from 'request';
-
 import constantStrings from '../utils/constantStrings.json';
 import testimonials from '../resources/testimonials.json';
-import { serveYoutubeApiResponse } from '../openApi';
 
 const githubClient = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
@@ -12,7 +10,6 @@ module.exports = function(app) {
   const User = app.models.User;
   const noLangRouter = app.loopback.Router();
   noLangRouter.get('/api/github', githubCalls);
-  noLangRouter.get('/api/youtube', serveYoutubeApiResponse);
   noLangRouter.get('/chat', chat);
   noLangRouter.get('/twitch', twitch);
   noLangRouter.get('/unsubscribe/:email', unsubscribeAll);

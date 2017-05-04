@@ -145,9 +145,3 @@ export const addThemeToBody = createAction(types.addThemeToBody);
 
 export const openDropdown = createAction(types.openDropdown, noop);
 export const closeDropdown = createAction(types.closeDropdown, noop);
-
-export const fetchYoutube = createAction(types.fetchYoutube);
-export const updateYoutube = createAction(types.updateYoutube);
-
-export const updateBlock = createAction(types.updateBlock);
-export const updateSuperBlock = createAction(types.updateSuperBlock);

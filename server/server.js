@@ -9,8 +9,7 @@ var _ = require('lodash'),
     boot = require('loopback-boot'),
     expressState = require('express-state'),
     path = require('path'),
-    setupPassport = require('./component-passport'),
-    openApi = require('./openApi');
+    setupPassport = require('./component-passport');
 
 // polyfill for webpack bundle splitting
 const requireProto = Object.getPrototypeOf(require);
@@ -50,7 +49,6 @@ setupPassport(app);
 app.start = _.once(function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
-    openApi.startSubscription();
     console.log(
       'freeCodeCamp server listening on port %d in %s',
       app.get('port'),

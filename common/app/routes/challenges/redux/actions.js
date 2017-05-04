@@ -26,7 +26,6 @@ export const fetchChallengeCompleted = createAction(
   (_, challenge) => challenge,
   entities => ({ entities })
 );
-export const updateSuperBlocks = createAction(types.updateSuperBlocks);
 export const closeChallengeModal = createAction(types.closeChallengeModal);
 export const resetUi = createAction(types.resetUi);
 export const updateHint = createAction(types.updateHint);

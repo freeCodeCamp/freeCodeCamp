@@ -134,11 +134,7 @@ const mainReducer = handleActions(
     }),
     [types.fetchChallengesCompleted]: (state, { payload = [] }) => ({
       ...state,
-      superBlocks: [ ...payload ]
-    }),
-    [types.updateSuperBlocks]: (state, { payload = [] }) => ({
-      ...state,
-      superBlocks: [ ...payload ]
+      superBlocks: payload
     }),
 
     // step
