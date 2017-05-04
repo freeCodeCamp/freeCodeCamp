@@ -19,6 +19,7 @@ import {
   submitTypes,
   viewTypes
 } from '../utils';
+import { types as app } from '../../../redux';
 import { bonfire, html, js } from '../../../utils/challengeTypes';
 import blockNameify from '../../../utils/blockNameify';
 import { createPoly, setContent } from '../../../../utils/polyvinyl';
@@ -35,10 +36,6 @@ export const epics = [
 
 export const types = createTypes([
   // challenges
-  'fetchChallenge',
-  'fetchChallenges',
-  'fetchChallengeCompleted',
-  'fetchChallengesCompleted',
   'updateCurrentChallenge',
   'resetChallenge',
   'replaceChallenge',
@@ -189,8 +186,9 @@ export const challengeSelector = createSelector(
     const viewType = viewTypes[type] || viewTypes[challengeType] || 'classic';
     const blockName = blockNameify(challenge.block);
     const title = blockName && challenge.title ?
-                  `${blockName}: ${challenge.title}` :
-                  challenge.title;
+      `${blockName}: ${challenge.title}` :
+      challenge.title;
+
     return {
       challenge,
       title,
@@ -209,7 +207,7 @@ export const challengeSelector = createSelector(
 
 const mainReducer = handleActions(
   {
-    [types.fetchChallengeCompleted]: (state, { payload = '' }) => ({
+    [app.fetchChallengeCompleted]: (state, { payload = '' }) => ({
       ...state,
       challenge: payload
     }),
