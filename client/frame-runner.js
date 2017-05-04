@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (assertIndex !== -1) {
               message = message.slice(0, assertIndex);
             }
-            message = message.replace(/<code>(.*)<\/code>/, '$1');
+            message = message.replace(/<code>(.*?)<\/code>/g, '$1');
             newTest.err = err.message + '\n' + err.stack;
             newTest.stack = err.stack;
             newTest.message = message;
