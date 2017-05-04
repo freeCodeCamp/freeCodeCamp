@@ -15,7 +15,7 @@ import {
 
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import langs from '../../../../utils/supported-languages';
-import combineSagas from '../../../../utils/combine-sagas';
+import combineEpics from '../../../../utils/combine-epics.js';
 
 const urlMap = {
   isLocked: 'lockdown',
@@ -116,7 +116,7 @@ export function updateUserFlagEpic(actions, { getState }) {
   return Observable.merge(optimistic, serverUpdate);
 }
 
-export default combineSagas(
+export default combineEpics(
   updateUserFlagEpic,
   updateUserEmailEpic,
   updateUserLangEpic

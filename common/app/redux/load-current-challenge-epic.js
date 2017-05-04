@@ -12,7 +12,7 @@ import {
   firstChallengeSelector
 } from './';
 import { updateCurrentChallenge } from '../routes/challenges/redux';
-import combineSagas from '../../utils/combine-sagas';
+import combineEpics from '../../utils/combine-epics.js';
 import { postJSON$ } from '../../utils/ajax-stream';
 
 const log = debug('fcc:app/redux/load-current-challenge-saga');
@@ -82,7 +82,7 @@ export function loadCurrentChallengeEpic(actions, getState) {
     });
 }
 
-export default combineSagas(
+export default combineEpics(
   updateMyCurrentChallengeEpic,
   loadCurrentChallengeEpic
 );

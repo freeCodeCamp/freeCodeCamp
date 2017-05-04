@@ -5,7 +5,7 @@ import { compose, createStore, applyMiddleware } from 'redux';
 import { createEpic } from 'redux-epic';
 import createReducer from './create-reducer';
 import createRoutes from './create-routes.js';
-import sagas from './sagas';
+import epics from './epics';
 
 import servicesCreator from '../utils/services-creator';
 
@@ -21,7 +21,7 @@ const createRouteProps = Observable.fromNodeCallback(match);
 //   middlewares?: Function[],
 //   sideReducers?: Object
 //   enhancers?: Function[],
-//   sagas?: Function[],
+//   epics?: Function[],
 // }) => Observable
 //
 // Either location or history must be defined
@@ -35,23 +35,23 @@ export default function createApp({
   middlewares: sideMiddlewares = [],
   enhancers: sideEnhancers = [],
   reducers: sideReducers = {},
-  sagas: sideSagas = [],
-  sagaOptions: sideSagaOptions = {}
+  epics: sideEpics = [],
+  epicOptions: sideEpicOptions = {}
 }) {
-  const sagaOptions = {
-    ...sideSagaOptions,
+  const epicOptions = {
+    ...sideEpicOptions,
     services: servicesCreator(serviceOptions)
   };
 
-  const sagaMiddleware = createEpic(
-    sagaOptions,
-    ...sagas,
-    ...sideSagas
+  const epicMiddleware = createEpic(
+    epicOptions,
+    ...epics,
+    ...sideEpics
   );
   const enhancers = [
     applyMiddleware(
       ...sideMiddlewares,
-      sagaMiddleware
+      epicMiddleware
     ),
     // enhancers must come after middlewares
     // on client side these are things like Redux DevTools
@@ -79,6 +79,6 @@ export default function createApp({
       props,
       reducer,
       store,
-      epic: sagaMiddleware
+      epic: epicMiddleware
     }));
 }

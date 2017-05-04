@@ -114,7 +114,7 @@ export const fetchChallengesCompleted = createAction(
 export const updateTitle = createAction(types.updateTitle);
 
 // fetchUser() => Action
-// used in combination with fetch-user-saga
+// used in combination with fetch-user-epic
 export const fetchUser = createAction(types.fetchUser);
 
 // addUser(
