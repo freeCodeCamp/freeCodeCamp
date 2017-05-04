@@ -6,8 +6,9 @@ import {
   FormControl
 } from 'react-bootstrap';
 
+import { showProjectSubmit } from './redux';
 import SolutionInput from '../../Solution-Input.jsx';
-import { submitChallenge, showProjectSubmit } from '../../redux';
+import { submitChallenge } from '../../redux';
 import {
   isValidURL,
   makeRequired,

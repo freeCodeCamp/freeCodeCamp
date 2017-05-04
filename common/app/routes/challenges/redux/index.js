@@ -24,7 +24,8 @@ import { bonfire, html, js } from '../../../utils/challengeTypes';
 import blockNameify from '../../../utils/blockNameify';
 import { createPoly, setContent } from '../../../../utils/polyvinyl';
 
-export projectNormalizer from './project-normalizer';
+// this is not great but is ok until we move to a different form type
+export projectNormalizer from '../views/project/redux';
 
 export const epics = [
   bugEpic,
@@ -69,7 +70,6 @@ export const types = createTypes([
   'updateTests',
   'checkChallenge',
   'showChallengeComplete',
-  'showProjectSubmit',
   'submitChallenge',
   'moveToNextChallenge',
 
@@ -129,8 +129,6 @@ export const updateOutput = createAction(types.updateOutput, loggerToStr);
 
 export const checkChallenge = createAction(types.checkChallenge);
 
-export const showProjectSubmit = createAction(types.showProjectSubmit);
-
 export const submitChallenge = createAction(types.submitChallenge);
 export const moveToNextChallenge = createAction(types.moveToNextChallenge);
 
@@ -150,8 +148,6 @@ export const openIssueSearch = createAction(types.openIssueSearch);
 export const createIssue = createAction(types.createIssue);
 
 const initialUiState = {
-  // project is ready to submit
-  isSubmitting: false,
   output: null,
   isChallengeModalOpen: false,
   successMessage: 'Happy Coding!'
@@ -259,10 +255,6 @@ const mainReducer = handleActions(
     [types.showChallengeComplete]: (state, { payload: toast }) => ({
       ...state,
       toast
-    }),
-    [types.showProjectSubmit]: state => ({
-      ...state,
-      isSubmitting: true
     }),
     [types.resetUi]: (state) => ({
       ...state,
