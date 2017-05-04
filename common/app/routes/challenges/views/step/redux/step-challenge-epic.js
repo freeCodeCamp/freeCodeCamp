@@ -1,11 +1,12 @@
 import {
   types,
   goToStep,
-  submitChallenge,
-  updateUnlockedSteps,
-
-  challengeSelector
+  updateUnlockedSteps
 } from './';
+import {
+  submitChallenge,
+  challengeSelector
+} from '../../../redux';
 
 function unlockStep(step, unlockedSteps) {
   if (!step) {

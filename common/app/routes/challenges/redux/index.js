@@ -6,10 +6,9 @@ import bugEpic from './bug-epic';
 import completionEpic from './completion-epic';
 import nextChallengeEpic from './next-challenge-epic';
 import resetChallengeEpic from './reset-challenge-epic';
-import stepChallengeEpic from './step-challenge-epic';
-
 
 import ns from '../ns.json';
+import { epics as stepEpics } from '../views/step/redux';
 import {
   arrayToString,
   buildSeed,
@@ -31,19 +30,10 @@ export const epics = [
   completionEpic,
   nextChallengeEpic,
   resetChallengeEpic,
-  stepChallengeEpic
+  ...stepEpics
 ];
 
 export const types = createTypes([
-  // step
-  'stepForward',
-  'stepBackward',
-  'goToStep',
-  'completeAction',
-  'openLightBoxImage',
-  'closeLightBoxImage',
-  'updateUnlockedSteps',
-
   // challenges
   'fetchChallenge',
   'fetchChallenges',
@@ -92,40 +82,12 @@ export const types = createTypes([
   'savedCodeFound',
   'clearSavedCode',
 
-  // video challenges
-  'toggleQuestionView',
-  'grabQuestion',
-  'releaseQuestion',
-  'moveQuestion',
-
-  'answerQuestion',
-
-  'startShake',
-  'endShake',
-
-  'primeNextQuestion',
-  'goToNextQuestion',
-  'transitionVideo',
-  'videoCompleted',
-
   // bug
   'openBugModal',
   'closeBugModal',
   'openIssueSearch',
   'createIssue'
 ], ns);
-
-// step
-export const stepForward = createAction(types.stepForward);
-export const stepBackward = createAction(types.stepBackward);
-export const goToStep = createAction(
-  types.goToStep,
-  (step, isUnlocked) => ({ step, isUnlocked })
-);
-export const completeAction = createAction(types.completeAction);
-export const updateUnlockedSteps = createAction(types.updateUnlockedSteps);
-export const openLightBoxImage = createAction(types.openLightBoxImage);
-export const closeLightBoxImage = createAction(types.closeLightBoxImage);
 
 // challenges
 export const closeChallengeModal = createAction(types.closeChallengeModal);
@@ -191,31 +153,11 @@ export const openIssueSearch = createAction(types.openIssueSearch);
 export const createIssue = createAction(types.createIssue);
 
 const initialUiState = {
-  hintIndex: 0,
-  // step index tracing
-  currentIndex: 0,
-  previousIndex: -1,
-  // step action
-  isActionCompleted: false,
-  isLightBoxOpen: false,
   // project is ready to submit
   isSubmitting: false,
   output: null,
-  // video
-  // 1 indexed
-  currentQuestion: 1,
-  // [ xPosition, yPosition ]
-  mouse: [ 0, 0 ],
-  // change in mouse position since pressed
-  // [ xDelta, yDelta ]
-  delta: [ 0, 0 ],
-  isPressed: false,
-  isCorrect: false,
-  shouldShakeQuestion: false,
-  shouldShowQuestions: false,
   isChallengeModalOpen: false,
-  successMessage: 'Happy Coding!',
-  unlockedSteps: []
+  successMessage: 'Happy Coding!'
 };
 
 const initialState = {
@@ -329,44 +271,6 @@ const mainReducer = handleActions(
       ...initialUiState
     }),
 
-    // map
-    [types.updateFilter]: (state, { payload = ''}) => ({
-      ...state,
-      filter: payload
-    }),
-    [types.clearFilter]: (state) => ({
-      ...state,
-      filter: ''
-    }),
-    [types.fetchChallengesCompleted]: (state, { payload = [] }) => ({
-      ...state,
-      superBlocks: payload
-    }),
-
-    // step
-    [types.goToStep]: (state, { payload: { step = 0, isUnlocked }}) => ({
-      ...state,
-      currentIndex: step,
-      previousIndex: state.currentIndex,
-      isActionCompleted: isUnlocked
-    }),
-    [types.completeAction]: state => ({
-      ...state,
-      isActionCompleted: true
-    }),
-    [types.updateUnlockedSteps]: (state, { payload }) => ({
-      ...state,
-      unlockedSteps: payload
-    }),
-    [types.openLightBoxImage]: state => ({
-      ...state,
-      isLightBoxOpen: true
-    }),
-    [types.closeLightBoxImage]: state => ({
-      ...state,
-      isLightBoxOpen: false
-    }),
-
     // classic/modern
     [types.initOutput]: (state, { payload: output }) => ({
       ...state,
@@ -375,49 +279,6 @@ const mainReducer = handleActions(
     [types.updateOutput]: (state, { payload: output }) => ({
       ...state,
       output: (state.output || '') + output
-    }),
-    // video
-    [types.toggleQuestionView]: state => ({
-      ...state,
-      shouldShowQuestions: !state.shouldShowQuestions,
-      currentQuestion: 1
-    }),
-
-    [types.grabQuestion]: (state, { payload: { delta, mouse } }) => ({
-      ...state,
-      isPressed: true,
-      delta,
-      mouse
-    }),
-
-    [types.releaseQuestion]: state => ({
-      ...state,
-      isPressed: false,
-      mouse: [ 0, 0 ]
-    }),
-
-    [types.moveQuestion]: (state, { payload: mouse }) => ({ ...state, mouse }),
-    [types.startShake]: state => ({ ...state, shouldShakeQuestion: true }),
-    [types.endShake]: state => ({ ...state, shouldShakeQuestion: false }),
-
-    [types.primeNextQuestion]: (state, { payload: userAnswer }) => ({
-      ...state,
-      currentQuestion: state.currentQuestion + 1,
-      mouse: [ userAnswer ? 1000 : -1000, 0],
-      isPressed: false
-    }),
-
-    [types.goToNextQuestion]: state => ({
-      ...state,
-      mouse: [ 0, 0 ]
-    }),
-
-    [types.videoCompleted]: (state, { payload: userAnswer }) => ({
-      ...state,
-      isCorrect: true,
-      isPressed: false,
-      delta: [ 0, 0 ],
-      mouse: [ userAnswer ? 1000 : -1000, 0]
     }),
 
     [types.openBugModal]: state => ({ ...state, isBugOpen: true }),

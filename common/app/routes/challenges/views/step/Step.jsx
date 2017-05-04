@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 import LightBox from 'react-images';
+import { Button, Col, Image, Row } from 'react-bootstrap';
 
 import ns from './ns.json';
 import {
@@ -12,12 +13,12 @@ import {
   openLightBoxImage,
   stepBackward,
   stepForward,
+  updateUnlockedSteps
+} from './redux';
+import {
   submitChallenge,
-  updateUnlockedSteps,
-
   challengeSelector
 } from '../../redux';
-import { Button, Col, Image, Row } from 'react-bootstrap';
 
 const mapStateToProps = createSelector(
   challengeSelector,
