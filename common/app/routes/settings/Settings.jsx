@@ -10,16 +10,16 @@ import JobSettings from './Job-Settings.jsx';
 import SocialSettings from './Social-Settings.jsx';
 import EmailSettings from './Email-Setting.jsx';
 import LanguageSettings from './Language-Settings.jsx';
-import SettingsSkeleton from './SettingsSkeleton.jsx';
+import SettingsSkeleton from './Settings-Skeleton.jsx';
 
-import { toggleUserFlag } from '../redux/actions.js';
+import { toggleUserFlag } from './redux';
 import {
   toggleNightMode,
   updateTitle,
 
   signInLoadingSelector,
   userSelector
-} from '../../../redux';
+} from '../../redux';
 
 
 const mapDispatchToProps = {

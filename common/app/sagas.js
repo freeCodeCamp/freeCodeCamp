@@ -1,9 +1,9 @@
-import { epics as appEpics } from './redux';
-import { epics as challengeEpics } from './routes/challenges/redux';
-import { sagas as settingsSagas } from './routes/settings/redux';
+import { epics as app } from './redux';
+import { epics as challenge } from './routes/challenges/redux';
+import { epics as settings } from './routes/settings/redux';
 
 export default [
-  ...appEpics,
-  ...challengeEpics,
-  ...settingsSagas
+  ...app,
+  ...challenge,
+  ...settings
 ];

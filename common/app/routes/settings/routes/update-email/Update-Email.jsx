@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { reduxForm } from 'redux-form';
 import { isEmail } from 'validator';
 import { getValidationState } from '../../../../utils/form';
-import { updateMyEmail } from '../../redux/actions';
+import { updateMyEmail } from '../../redux';
 
 const actions = {
   updateMyEmail

@@ -1,7 +1,7 @@
 import { Observable } from 'rx';
 import { push } from 'react-router-redux';
 
-import { types } from './actions';
+import { types } from './';
 import { makeToast } from '../../../Toasts/redux';
 import {
   fetchChallenges,
@@ -25,9 +25,8 @@ const urlMap = {
   sendMonthlyEmail: 'announcement-email'
 };
 
-export function updateUserEmailSaga(actions$, getState) {
-  return actions$
-    .filter(({ type }) => type === types.updateMyEmail)
+export function updateUserEmailEpic(actions, { getState }) {
+  return actions.ofType(types.updateMyEmail)
     .flatMap(({ payload: email }) => {
       const {
         app: { user: username, csrfToken: _csrf },
@@ -35,21 +34,21 @@ export function updateUserEmailSaga(actions$, getState) {
       } = getState();
       const { email: oldEmail } = userMap[username] || {};
       const body = { _csrf, email };
-      const optimisticUpdate$ = Observable.just(
+      const optimisticUpdate = Observable.just(
         updateUserEmail(username, email)
       );
-      const ajaxUpdate$ = postJSON$('/update-my-email', body)
+      const ajaxUpdate = postJSON$('/update-my-email', body)
         .map(({ message }) => makeToast({ message }))
         .catch(doActionOnError(() => oldEmail ?
           updateUserFlag(username, oldEmail) :
           null
         ));
-      return Observable.merge(optimisticUpdate$, ajaxUpdate$);
+      return Observable.merge(optimisticUpdate, ajaxUpdate);
     });
 }
 
-export function updateUserLangSaga(actions$, getState) {
-  const updateLang$ = actions$
+export function updateUserLangEpic(actions, { getState }) {
+  const updateLang = actions
     .filter(({ type, payload }) => (
       type === types.updateMyLang && !!langs[payload]
     ))
@@ -58,7 +57,7 @@ export function updateUserLangSaga(actions$, getState) {
       const { user: { languageTag } } = userSelector(state);
       return { lang: payload, oldLang: languageTag };
     });
-  const ajaxUpdate$ = updateLang$
+  const ajaxUpdate = updateLang
     .debounce(250)
     .flatMap(({ lang, oldLang }) => {
       const { app: { user: username, csrfToken: _csrf } } = getState();
@@ -78,22 +77,22 @@ export function updateUserLangSaga(actions$, getState) {
           return updateUserLang(username, oldLang);
         }));
     });
-  const optimistic$ = updateLang$
+  const optimistic = updateLang
     .map(({ lang }) => {
       const { app: { user: username } } = getState();
       return updateUserLang(username, lang);
     });
-  return Observable.merge(ajaxUpdate$, optimistic$);
+  return Observable.merge(ajaxUpdate, optimistic);
 }
-export function updateUserFlagSaga(actions$, getState) {
-  const toggleFlag$ = actions$
+export function updateUserFlagEpic(actions, { getState }) {
+  const toggleFlag = actions
     .filter(({ type, payload }) => type === types.toggleUserFlag && payload)
     .map(({ payload }) => payload);
-  const optimistic$ = toggleFlag$.map(flag => {
+  const optimistic = toggleFlag.map(flag => {
     const { app: { user: username } } = getState();
     return updateUserFlag(username, flag);
   });
-  const serverUpdate$ = toggleFlag$
+  const serverUpdate = toggleFlag
     .debounce(500)
     .flatMap(flag => {
       const url = `/toggle-${urlMap[ flag ]}`;
@@ -114,11 +113,11 @@ export function updateUserFlagSaga(actions$, getState) {
           return updateUserFlag(username, currentValue);
         }));
     });
-  return Observable.merge(optimistic$, serverUpdate$);
+  return Observable.merge(optimistic, serverUpdate);
 }
 
 export default combineSagas(
-  updateUserFlagSaga,
-  updateUserEmailSaga,
-  updateUserLangSaga
+  updateUserFlagEpic,
+  updateUserEmailEpic,
+  updateUserLangEpic
 );
