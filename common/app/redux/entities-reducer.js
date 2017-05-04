@@ -6,31 +6,8 @@ const initialState = {
   superBlock: {},
   block: {},
   challenge: {},
-  user: {},
-  youtube: {}
+  user: {}
 };
-
-const blocksReducer = handleActions(
-  {
-    [types.updateBlock]: (state, { payload }) => ({
-      ...state,
-      block: payload
-    }),
-    [types.updateSuperBlock]: (state, { payload }) => ({
-      ...state,
-      superBlock: payload
-    })
-  }, initialState
-  );
-
-const youtubeReducer = handleActions(
-  {
-    [types.updateYoutube]: (state, { payload }) => ({
-      ...state,
-      ...payload
-    })
-  }, initialState.youtube
-  );
 
 const userReducer = handleActions(
   {
@@ -114,19 +91,8 @@ function metaReducer(state = initialState, action) {
 export default function entitiesReducer(state, action) {
   const newState = metaReducer(state, action);
   const user = userReducer(newState.user, action);
-  const youtube = youtubeReducer(newState.youtube, action);
-  const blocks = blocksReducer(newState, action);
   if (newState.user !== user) {
     return { ...newState, user };
-  }
-  if (
-    newState.block !== blocks.block ||
-    newState.superBlock !== blocks.superBlock
-  ) {
-    return { ...newState, ...blocks };
-  }
-  if (newState.youtube !== youtube) {
-    return { ...newState, youtube };
   }
   return newState;
 }

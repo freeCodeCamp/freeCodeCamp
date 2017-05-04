@@ -506,7 +506,7 @@ export function applyFilterToMap(tree, filterRegex) {
       // if leaf (challenge) then test if regex is a match
       if (!Array.isArray(node.children)) {
         // does challenge name meet filter criteria?
-        if (filterRegex.test(node.title) || filterRegex.test(node.name)) {
+        if (filterRegex.test(node.title)) {
           // is challenge currently hidden?
           if (node.isHidden) {
             // unhide challenge, it matches
