@@ -9,7 +9,8 @@
     },
     "rest": {
       "normalizeHttpPath": false,
-      "xml": false
+      "xml": false,
+      "handleErrors": false
     },
     "json": {
       "strict": false,
@@ -22,9 +23,6 @@
     "cors": {
       "origin": true,
       "credentials": true
-    },
-    "errorHandler": {
-      "disableStackTrace": false
     }
   }
 }

@@ -54,6 +54,12 @@
   "files": {},
   "final:after": {
     "./middlewares/keymetrics": {},
-    "./middlewares/error-handlers": {}
+    "./middlewares/error-handlers": {},
+    "strong-error-handler": {
+      "params": {
+         "debug": false,
+         "log": true
+       }
+    }
   }
 }
