@@ -47,6 +47,7 @@
     "compression": "^1.6.0",
     "connect-mongo": "^1.3.2",
     "cookie-parser": "^1.4.0",
+    "cors": "^2.8.3",
     "csurf": "^1.8.3",
     "d3": "~3.5.17",
     "debug": "^2.2.0",

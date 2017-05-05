@@ -16,6 +16,13 @@
     "compression": {},
     "morgan": {
       "params": ":status :method :response-time ms - :url"
+    },
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
     }
   },
   "session": {
