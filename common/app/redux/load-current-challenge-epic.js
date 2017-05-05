@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import { combineEpics, ofType } from 'redux-epic';
 import debug from 'debug';
 import { push } from 'react-router-redux';
 
@@ -12,12 +13,11 @@ import {
   firstChallengeSelector
 } from './';
 import { updateCurrentChallenge } from '../routes/challenges/redux';
-import combineEpics from '../../utils/combine-epics.js';
 import { postJSON$ } from '../../utils/ajax-stream';
 
-const log = debug('fcc:app/redux/load-current-challenge-saga');
+const log = debug('fcc:app/redux/load-current-challenge-epic');
 export function updateMyCurrentChallengeEpic(actions, { getState }) {
-  const updateChallenge$ = actions.ofType(types.updateCurrentChallenge)
+  const updateChallenge$ = actions::ofType(types.updateCurrentChallenge)
     .map(({ payload: { id } }) => id)
     .filter(() => {
       const { app: { user: username } } = getState();
@@ -42,8 +42,8 @@ export function updateMyCurrentChallengeEpic(actions, { getState }) {
   return Observable.merge(optimistic, ajaxUpdate);
 }
 
-export function loadCurrentChallengeEpic(actions, getState) {
-  return actions.ofType(types.loadCurrentChallenge)
+export function loadCurrentChallengeEpic(actions, { getState }) {
+  return actions::ofType(types.loadCurrentChallenge)
     .flatMap(() => {
       let finalChallenge;
       const state = getState();

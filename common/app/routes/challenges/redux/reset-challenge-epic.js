@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import { ofType } from 'redux-epic';
 import {
   types,
 
@@ -7,7 +8,7 @@ import {
 } from './';
 
 export default function resetChallengeEpic(actions, { getState }) {
-  return actions.ofType(types.resetChallenge)
+  return actions::ofType(types.resetChallenge)
     .flatMap(() => {
       const {
         challengesApp: { challenge: dashedName },

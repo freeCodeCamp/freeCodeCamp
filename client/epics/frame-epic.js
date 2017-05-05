@@ -1,4 +1,5 @@
 import Rx, { Observable, Subject } from 'rx';
+import { ofType } from 'redux-epic';
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
@@ -86,7 +87,7 @@ function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   tests.close();
 }
 
-export default function frameEpic(actions, getState, { window, document }) {
+export default function frameEpic(actions, { getState }, { window, document }) {
   // we attach a common place for the iframes to pull in functions from
   // the main process
   window.__common = {};
@@ -95,7 +96,7 @@ export default function frameEpic(actions, getState, { window, document }) {
   const proxyLogger = new Subject();
   // frameReady will let us know when the test iframe is ready to run
   const frameReady = window.__common[testId + 'Ready'] = new Subject();
-  const result = actions.ofType(types.frameMain, types.frameTests)
+  const result = actions::ofType(types.frameMain, types.frameTests)
     // if isCodeLocked is true do not frame user code
     .filter(() => !getState().challengesApp.isCodeLocked)
     .map(action => {

@@ -1,4 +1,5 @@
 import { Scheduler, Observable } from 'rx';
+import { ofType } from 'redux-epic';
 
 import {
   buildClassic,
@@ -18,8 +19,7 @@ import {
 } from '../../common/app/routes/challenges/redux';
 
 export default function buildChallengeEpic(actions, { getState }) {
-  return actions
-    .ofType(types.executeChallenge, types.updateMain)
+  return actions::ofType(types.executeChallenge, types.updateMain)
     // if isCodeLocked do not run challenges
     .filter(() => !getState().challengesApp.isCodeLocked)
     .debounce(750)

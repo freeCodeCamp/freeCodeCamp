@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import { ofType } from 'redux-epic';
 import debug from 'debug';
 
 import {
@@ -20,7 +21,7 @@ import {
 const isDev = debug.enabled('fcc:*');
 
 export function fetchChallengeEpic(actions, { getState }, { services }) {
-  return actions.ofType(types.fetchChallenge)
+  return actions::ofType(types.fetchChallenge)
     .flatMap(({ payload: { dashedName, block } }) => {
       const lang = langSelector(getState());
       const options = {
@@ -49,7 +50,7 @@ export default function fetchChallengesSaga(
   { getState },
   { services }
 ) {
-  return actions.ofType(types.fetchChallenges)
+  return actions::ofType(types.fetchChallenges)
     .flatMap(() => {
       const lang = langSelector(getState());
       const options = {
@@ -76,7 +77,7 @@ export default function fetchChallengesSaga(
 }
 
 export function replaceChallengeEpic(actions, { getState }) {
-  return actions.ofType(types.replaceChallenge)
+  return actions::ofType(types.replaceChallenge)
     .map(({ payload: { dashedName } = {} }) => {
       const state = getState();
       const { challenge: newChallenge } = challengeSelector({

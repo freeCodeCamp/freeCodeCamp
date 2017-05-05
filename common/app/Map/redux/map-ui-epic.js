@@ -1,8 +1,9 @@
+import { ofType } from 'redux-epic';
 import { types, initMap } from './';
 import { unfilterMapUi, applyFilterToMap } from './utils';
 
 export default function mapUiEpic(actions, { getState }) {
-  return actions.ofType(types.updateFilter, types.clearFilter)
+  return actions::ofType(types.updateFilter, types.clearFilter)
     .debounce(250)
     .map(({ payload: filter = '' }) => filter)
     .distinctUntilChanged()

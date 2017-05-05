@@ -1,3 +1,4 @@
+import { ofType } from 'redux-epic';
 import {
   types,
   goToStep,
@@ -18,7 +19,7 @@ function unlockStep(step, unlockedSteps) {
 }
 
 export default function stepChallengeEpic(actions, { getState }) {
-  return actions.ofType(
+  return actions::ofType(
     types.stepForward,
     types.stepBackward,
     types.completeAction

@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import { ofType } from 'redux-epic';
 
 import {
   types,
@@ -16,7 +17,6 @@ import {
 import { backEndProject } from '../../../utils/challengeTypes.js';
 import { makeToast } from '../../../Toasts/redux';
 import { postJSON$ } from '../../../../utils/ajax-stream.js';
-import { ofType } from '../../../../utils/get-actions-of-type.js';
 
 function postChallenge(url, username, _csrf, challengeInfo) {
   const body = { ...challengeInfo, _csrf };
@@ -142,9 +142,8 @@ const submitters = {
   'project.simple': submitSimpleChallenge
 };
 
-export default function completionSaga(actions$, getState) {
-  return actions$
-    ::ofType(types.checkChallenge, types.submitChallenge)
+export default function completionSaga(actions, { getState }) {
+  return actions::ofType(types.checkChallenge, types.submitChallenge)
     .flatMap(({ type, payload }) => {
       const state = getState();
       const { submitType } = challengeSelector(state);

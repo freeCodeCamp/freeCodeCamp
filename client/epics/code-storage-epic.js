@@ -1,10 +1,10 @@
 import { Observable } from 'rx';
+import { combineEpics, ofType } from 'redux-epic';
 import store from 'store';
 
 import { removeCodeUri, getCodeUri } from '../utils/code-uri';
 
 import { setContent } from '../../common/utils/polyvinyl';
-import combineSagas from '../../common/utils/combine-sagas';
 
 import { userSelector } from '../../common/app/redux';
 import { makeToast } from '../../common/app/Toasts/redux';
@@ -53,18 +53,16 @@ function legacyToFile(code, files, key) {
   return { [key]: setContent(code, files[key]) };
 }
 
-export function clearCodeSaga(actions, getState) {
-  return actions
-    .ofType(types.clearSavedCode)
+export function clearCodeEpic(actions, { getState }) {
+  return actions::ofType(types.clearSavedCode)
     .map(() => {
       const { challengesApp: { id = '' } } = getState();
       store.remove(id);
       return null;
     });
 }
-export function saveCodeSaga(actions, getState) {
-  return actions
-    .ofType(types.saveCode)
+export function saveCodeEpic(actions, { getState }) {
+  return actions::ofType(types.saveCode)
     // do not save challenge if code is locked
     .filter(() => !getState().challengesApp.isCodeLocked)
     .map(() => {
@@ -74,9 +72,8 @@ export function saveCodeSaga(actions, getState) {
     });
 }
 
-export function loadCodeSaga(actions, getState, { window, location }) {
-  return actions
-    .ofType(types.loadCode)
+export function loadCodeEpic(actions, { getState }, { window, location }) {
+  return actions::ofType(types.loadCode)
     .flatMap(() => {
       let finalFiles;
       const state = getState();
@@ -148,4 +145,4 @@ export function loadCodeSaga(actions, getState, { window, location }) {
     });
 }
 
-export default combineSagas(saveCodeSaga, loadCodeSaga, clearCodeSaga);
+export default combineEpics(saveCodeEpic, loadCodeEpic, clearCodeEpic);

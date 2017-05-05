@@ -1,3 +1,4 @@
+import { ofType } from 'redux-epic';
 import { types, closeBugModal } from '../redux';
 
 function filesToMarkdown(files = {}) {
@@ -22,7 +23,7 @@ function filesToMarkdown(files = {}) {
 }
 
 export default function bugEpic(actions, { getState }, { window }) {
-  return actions.ofType(types.openIssueSearch, types.createIssue)
+  return actions::ofType(types.openIssueSearch, types.createIssue)
     .map(({ type }) => {
       const {
         challengesApp: {

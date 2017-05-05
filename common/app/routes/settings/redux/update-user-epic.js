@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import { combineEpics, ofType } from 'redux-epic';
 import { push } from 'react-router-redux';
 
 import { types } from './';
@@ -15,7 +16,6 @@ import {
 
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import langs from '../../../../utils/supported-languages';
-import combineEpics from '../../../../utils/combine-epics.js';
 
 const urlMap = {
   isLocked: 'lockdown',
@@ -26,7 +26,7 @@ const urlMap = {
 };
 
 export function updateUserEmailEpic(actions, { getState }) {
-  return actions.ofType(types.updateMyEmail)
+  return actions::ofType(types.updateMyEmail)
     .flatMap(({ payload: email }) => {
       const {
         app: { user: username, csrfToken: _csrf },

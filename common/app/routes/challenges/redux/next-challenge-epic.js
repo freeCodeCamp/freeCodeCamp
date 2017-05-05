@@ -1,5 +1,6 @@
 import debug from 'debug';
 import { Observable } from 'rx';
+import { ofType } from 'redux-epic';
 import { push } from 'react-router-redux';
 
 import {
@@ -19,7 +20,7 @@ const isDev = debug.enabled('fcc:*');
 const { moveToNextChallenge } = types;
 
 export default function nextChallengeEpic(actions, { getState }) {
-  return actions.ofType(moveToNextChallenge)
+  return actions::ofType(moveToNextChallenge)
     .flatMap(() => {
       let nextChallenge;
       // let message = '';
