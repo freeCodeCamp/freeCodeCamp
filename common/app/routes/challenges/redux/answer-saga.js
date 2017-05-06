@@ -7,7 +7,7 @@ import { createErrorObservable } from '../../../redux/actions';
 import { makeToast } from '../../../toasts/redux/actions';
 import { challengeSelector } from './selectors';
 
-export default function answerSaga(action$, getState) {
+export default function answerSaga(action$, { getState }) {
   return action$
     .filter(action => action.type === types.answerQuestion)
     .flatMap(({

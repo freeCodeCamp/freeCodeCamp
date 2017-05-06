@@ -24,7 +24,7 @@ const isDev = debug.enabled('fcc:*');
 
 const { fetchChallenge, fetchChallenges, replaceChallenge } = types;
 
-export default function fetchChallengesSaga(action$, getState, { services }) {
+export default function fetchChallengesSaga(action$, { getState }, { services }) {
   return action$
     .filter(({ type }) => (
       type === fetchChallenges ||
