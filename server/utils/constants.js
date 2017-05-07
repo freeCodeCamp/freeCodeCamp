@@ -16,7 +16,6 @@ export const blacklistedUsernames = [
   'completed-field-guide',
   'jobs',
   'nonprofits',
-  'api',
   'sitemap.xml',
   'get-help',
   'chat',
