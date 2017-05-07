@@ -43,10 +43,10 @@
         "<code>&#60;h1&#62;</code>",
         "Closing tags look like this:",
         "<code>&#60;/h1&#62;</code>",
-        "Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
-        "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing (they change from red to green), you can go to the next coding challenge.",
+        "The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.",
+        "Each challenge has tests you can run at any time by clicking the \"Run tests\" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.",
         "<hr>",
-        "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\" instead of \"Hello\". Then click the \"Run tests\" button."
+        "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\"."
       ],
       "challengeSeed": [
         "<h1>Hello</h1>"
@@ -640,7 +640,7 @@
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freeCodeCamp.com\"&#62; link to freeCodeCamp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freeCodeCamp.com\"&#62; link to freeCodeCamp.com&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<hr>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
@@ -846,7 +846,8 @@
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
         "<hr>",
-        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link."
+        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link.",
+        "For example: <code>href=\"#\"</code>"
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -1506,7 +1507,7 @@
         "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, like this: <code>&#60;input type=\"text\" required&#62;</code>",
         "<hr>",
         "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.",
-        "Then try to submit the form without inputing any text. See how your HTML5 form notifies you that the field is required?",
+        "Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required?",
         "<strong>Note</strong><br>This field does not work in Safari."
       ],
       "challengeSeed": [
@@ -1629,7 +1630,8 @@
         "assert($('label > input[type=\"radio\"]:only-child').length > 1, 'message: Each of your two radio button elements should be nested in its own <code>label</code> element.');",
         "assert((code.match(/<\\/label>/g) && code.match(/<label/g) && code.match(/<\\/label>/g).length === code.match(/<label/g).length), 'message: Make sure each of your <code>label</code> elements has a closing tag.');",
         "assert($(\"label\").text().match(/indoor/gi), 'message: One of your radio buttons should have the label <code>indoor</code>.');",
-        "assert($(\"label\").text().match(/outdoor/gi), 'message: One of your radio buttons should have the label <code>outdoor</code>.');"
+        "assert($(\"label\").text().match(/outdoor/gi), 'message: One of your radio buttons should have the label <code>outdoor</code>.');",
+        "assert($(\"label\").parent().get(0).tagName.match('FORM'), 'message: Each of your radio button elements should be added within the <code>form</code> tag.');"
       ],
       "type": "waypoint",
       "challengeType": 0,

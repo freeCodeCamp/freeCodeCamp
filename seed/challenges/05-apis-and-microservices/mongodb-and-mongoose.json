@@ -17,7 +17,7 @@
         [
           "",
           "",
-          "Working on these challenges will involve you writing your code on Gomix on our starter project. After completing each challenge you can copy your public gomix url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.<br>Start this project on Gomix using <a href='https://gomix.com/#!/import/github/freeCodeCamp/boilerplate-mongomongoose/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-mongomongoose/'>this repository</a> on GitHub! If you use Gomix, remember to save the link to your project somewhere safe!",
+          "Working on these challenges will involve you writing your code on Glitch on our starter project. After completing each challenge you can copy your public glitch url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mongomongoose/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-mongomongoose/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!",
           ""
         ]
       ],
@@ -68,7 +68,7 @@
         "more fields, use simple validators like required or unique,",
         "and set default values. See the <a href='http://mongoosejs.com/docs/guide.html'>mongoose docs</a>.",
         "[C]RUD Part I - CREATE",
-        "Note: Gomix is a real server, and in real servers the interactions with the db happen in handler functions. These function are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The done() function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating or deleting. It’s following the Node convention and should be called as done(null, data) on success, or done(err) on error.",
+        "Note: Glitch is a real server, and in real servers the interactions with the db happen in handler functions. These function are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The done() function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating or deleting. It’s following the Node convention and should be called as done(null, data) on success, or done(err) on error.",
         "Warning - When interacting with remote services, errors may occur !",
         "<code>/* Example */</code>",
         "<code>var someFunc = function(done) {</code>",

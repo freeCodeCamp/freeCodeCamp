@@ -5,6 +5,7 @@ import path from 'path';
 
 const debug = debugFactory('fcc:user:remote');
 const isDev = process.env.NODE_ENV !== 'production';
+const devHost = process.env.HOST || 'localhost';
 
 function destroyAllRelated(id, Model) {
   return Observable.fromNodeCallback(
@@ -77,7 +78,7 @@ module.exports = function(app) {
       from: 'Team@freecodecamp.com',
       subject: 'Welcome to freeCodeCamp!',
       protocol: isDev ? null : 'https',
-      host: isDev ? 'localhost' : 'freecodecamp.com',
+      host: isDev ? devHost : 'freecodecamp.com',
       port: isDev ? null : 443,
       template: path.join(
         __dirname,

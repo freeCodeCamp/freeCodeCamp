@@ -11,7 +11,7 @@
         [
           "",
           "",
-          "Cascading Style Sheets (CSS) tell the browser how to display the text and other content that you write in HTML.",
+          "Cascading Style Sheets (CSS) tell the browser how to display the text and other content that you write in HTML.<br><br>Note that CSS is case-sensitive so be careful with your capitalization.",
           ""
         ],
         [
@@ -87,7 +87,7 @@
         "</main>"
       ],
       "tests": [
-        "assert(code.match(/<h2\\s+style=\"color:\\s*rgb\\(255,\\s*0,\\s*0\\)\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/) || code.match(/<h2\\s+style=\"color:\\s*red\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
+        "assert(code.match(/<h2\\s+style\\s*=\\s*\"\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2312,7 +2312,8 @@
         "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'message: Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.');",
         "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.');",
         "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');"
+        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');",
+        "assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'message: You should use the clockwise notation to set the padding of <code>green-box</code> class.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2459,6 +2460,93 @@
           ]
         }
       }
+    },
+    {
+      "id": "58c383d33e2e3259241f3076",
+      "title": "Use Attribute Selectors to Style Elements",
+      "description": [
+        "You have been giving <code>id</code> or <code>class</code> attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.",
+        "Let's bring out CatPhotoApp again to practice using CSS Selectors.",
+        "For this challenge, you will use the <code>[attr=value]</code> attribute selector to style the checkboxes in CatPhotoApp. This selector matches and style elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute <code>type</code> and a corresponding value of <code>radio</code>:",
+        "<blockquote>[type='radio'] {<br>  margin: 20px 0px 20px 0px;<br>}</blockquote>",
+        "<hr>",
+        "Using the <code>type</code> attribute selector, try to give the checkboxes in CatPhotoApp a top margin of 10px and a bottom margin of 15px."
+      ],
+      "challengeSeed": [
+        "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
+        "<style>",
+        "  .red-text {",
+        "    color: red;",
+        "  }",
+        "",
+        "  h2 {",
+        "    font-family: Lobster, Monospace;",
+        "  }",
+        "",
+        "  p {",
+        "    font-size: 16px;",
+        "    font-family: Monospace;",
+        "  }",
+        "",
+        "  .thick-green-border {",
+        "    border-color: green;",
+        "    border-width: 10px;",
+        "    border-style: solid;",
+        "    border-radius: 50%;",
+        "  }",
+        "",
+        "  .smaller-image {",
+        "    width: 100px;",
+        "  }",
+        "",
+        "  .silver-background {",
+        "    background-color: silver;",
+        "  }",
+        "</style>",
+        "",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
+        "<main>",
+        "  <p class=\"red-text\">Click here to view more <a href=\"#\">cat photos</a>.</p>",
+        "  ",
+        "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
+        "  ",
+        "  <div class=\"silver-background\">",
+        "    <p>Things cats love:</p>",
+        "    <ul>",
+        "      <li>cat nip</li>",
+        "      <li>laser pointers</li>",
+        "      <li>lasagna</li>",
+        "    </ul>",
+        "    <p>Top 3 things cats hate:</p>",
+        "    <ol>",
+        "      <li>flea treatment</li>",
+        "      <li>thunder</li>",
+        "      <li>other cats</li>",
+        "    </ol>",
+        "  </div>",
+        "  ",
+        "  <form action=\"/submit-cat-photo\" id=\"cat-photo-form\">",
+        "    <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+        "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+        "    <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+        "    <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+        "    <label><input type=\"checkbox\" name=\"personality\"> Energetic</label><br>",
+        "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "    <button type=\"submit\">Submit</button>",
+        "  </form>",
+        "</main>"
+      ],
+      "tests": [
+        "assert(code.match(/<style>[\\s\\S]*?\\[type=(\"|')checkbox\\1\\]\\s*?{[\\s\\S]*?}[\\s\\S]*?<\\/style>/gi),'message: The <code>type</code> attribute selector should be used to select the checkboxes.');",
+        "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()),'message: The top margins of the checkboxes should be 10px.');",
+        "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()),'message: The bottom margins of the checkboxes should be 15px.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 0,
+      "translations": {}
     },
     {
       "id": "bad82fee1322bd9aedf08721",

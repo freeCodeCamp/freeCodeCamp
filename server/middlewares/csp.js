@@ -4,9 +4,12 @@ let trusted = [
   "'self'"
 ];
 
+const host = process.env.HOST || 'localhost';
+const port = process.env.SYNC_PORT || '3000';
+
 if (process.env.NODE_ENV !== 'production') {
   trusted = trusted.concat([
-    'ws://localhost:3000'
+    `ws://${host}:${port}`
   ]);
 }
 
@@ -19,9 +22,9 @@ export default function csp() {
         'https://*.optimizely.com'
       ]),
       connectSrc: trusted.concat([
-        'https://gomix.com',
-        'https://*.gomix.com',
-        'https://*.gomix.me',
+        'https://glitch.com',
+        'https://*.glitch.com',
+        'https://*.glitch.me',
         'https://*.cloudflare.com'
       ]),
       scriptSrc: [

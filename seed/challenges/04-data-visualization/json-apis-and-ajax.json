@@ -30,14 +30,12 @@
     },
     {
       "id": "587d7fad367417b2b2512be1",
-      "title": "Trigger click Events with JavaScript",
+      "title": "Handle Click Events with JavaScript using the onclick property",
       "description": [
-        "This section covers how to get data from APIs. APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
-        "You'll learn how to update HTML with the data we get from these APIs using a technology called AJAX.",
         "You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:",
         "<blockquote>document.addEventListener('DOMContentLoaded',function() {<br><br>});</blockquote>",
-        "Next, you can implement a click event handler that goes inside of the <code>DOMContentLoaded</code> function by adding the following code:",
-        "<code>document.getElementById('getMessage').onclick=function(){};</code>",
+        "You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:",
+        "<blockquote>document.getElementById('getMessage').onclick=function(){};</blockquote>",
         "<hr>",
         "Add a click event handler inside of the <code>DOMContentLoaded</code> function for the element with id of <code>getMessage</code>."
       ],
@@ -170,7 +168,7 @@
       "title": "Get JSON with the JavaScript XMLHttpRequest Method",
       "description": [
         "You can also request data from an external source. This is where APIs come into play.",
-        "Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another.",
+        "Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another. You'll learn how to update HTML with the data we get from APIs using a technology called AJAX.",
         "Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.",
         "JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a <code>{</code> and a <code>}</code>.",
         "These properties and their values are often referred to as \"key-value pairs\".",
@@ -258,7 +256,7 @@
         "You learned earlier that objects contain \"key-value pairs\" that are separated by commas. In the Cat Photo example, the first object has <code>\"id\":0</code> where \"id\" is a key and 0 is its corresponding value. Similarly, there are keys for \"imageLink\", \"altText\", and \"codeNames\". Each cat photo object has these same keys, but with different values.",
         "Another interesting \"key-value pair\" in the first object is <code>\"codeNames\":[\"Juggernaut\",\"Mrs. Wallace\",\"ButterCup\"]</code>. Here \"codeNames\" is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.",
         "Remember how to access data in arrays and objects. Arrays use bracket notation to access a specific index of an item. Objects use either bracket or dot notation to access the value of a given property. Here's an example that prints the \"altText\" of the first cat photo - note that the parsed JSON data in the editor is saved in a variable called <code>json</code>:",
-        "<blockquote>console.log(json[0].altText);<br>// Prints \"A white cat wearing a green helmet shaped melon on it's head.\"</blockquote>",
+        "<blockquote>console.log(json[0].altText);<br>// Prints \"A white cat wearing a green helmet shaped melon on its head.\"</blockquote>",
         "<hr>",
         "For the cat with the \"id\" of 2, print to the console the second value in the <code>codeNames</code> array. You should use bracket and dot notation on the object (which is saved in the variable <code>json</code>) to access the value."
       ],
@@ -339,7 +337,7 @@
         "<hr>",
         "Add a <code>forEach</code> method to loop over the JSON data and create the HTML elements to display it.",
         "Here is some example JSON",
-        "<blockquote>[</br>  {</br>    \"id\":0,</br>    \"imageLink\":\"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg\",</br>    \"altText\":\"A white cat wearing a green helmet shaped melon on it's head. \",</br>    \"codeNames\":[</br>      \"Juggernaut\",</br>      \"Mrs. Wallace\",</br>      \"Buttercup\"</br>    ]</br>  }</br>]</blockquote>"
+        "<blockquote>[</br>  {</br>    \"id\":0,</br>    \"imageLink\":\"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg\",</br>    \"altText\":\"A white cat wearing a green helmet shaped melon on its head. \",</br>    \"codeNames\":[</br>      \"Juggernaut\",</br>      \"Mrs. Wallace\",</br>      \"Buttercup\"</br>    ]</br>  }</br>]</blockquote>"
       ],
       "challengeSeed": [
         "<script>",

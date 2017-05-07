@@ -80,7 +80,7 @@
         "// Example",
         "var ourName;",
         "",
-        "// Define myName below this line",
+        "// Declare myName below this line",
         ""
       ],
       "tail": [
@@ -129,10 +129,10 @@
       "description": [
         "In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator.",
         "<code>myVariable = 5;</code>",
-        "Assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.",
+        "This assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.",
         "Assignment always goes from right to left. Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.",
         "<blockquote>myVar = 5;<br>myNum = myVar;</blockquote>",
-        "Assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
+        "This assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.",
         "<hr>",
         "Assign the value <code>7</code> to variable <code>a</code>.",
         "Assign the contents of <code>a</code> to variable <code>b</code>."
@@ -256,8 +256,8 @@
         "var a = 5;\nvar b = 10;\nvar c = \"I am a\";\na = a + 1;\nb = b + 5;\nc = c + \" String!\";"
       ],
       "tests": [
-        "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and have a value of <code>6</code>');",
-        "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and have a value of <code>15</code>');",
+        "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and evaluated to have the value of <code>6</code>');",
+        "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and evaluated to have the value of <code>15</code>');",
         "assert(!/undefined/.test(c) && c === \"I am a String!\", 'message: <code>c</code> should not contain <code>undefined</code> and should have a value of \"I am a String!\"');",
         "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
       ],
@@ -393,8 +393,7 @@
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
-        "assert((code).match(/difference/g).length === 1,'message: Only change the first line');",
-        "assert(/\\d+\\s*-\\s*\\d+/.test(code),'message: Use the <code>-</code> operator');"
+        "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*33;?/.test(code),'message: Only subtract one number from 45.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -3253,7 +3252,7 @@
       "id": "56533eb9ac21ba0edf2244d7",
       "title": "Comparison with the Less Than Or Equal To Operator",
       "description": [
-        "The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.",
+        "The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.",
         "<strong>Examples</strong>",
         "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>  5 &lt;= 5  // true<br>  3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
         "<hr>",
@@ -4182,14 +4181,14 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c7",
-      "title": "Accessing Objects Properties with the Dot Operator",
+      "title": "Accessing Object Properties with the Dot Operator",
       "description": [
         "There are two ways to access the properties of an object: the dot operator (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.",
         "The dot operator is what you use when you know the name of the property you're trying to access ahead of time.",
-        "Here is a sample of using the dot operator (<code>.</code>) to read an object property:",
+        "Here is a sample of using the dot operator (<code>.</code>) to read an object's property:",
         "<blockquote>var myObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>var prop1val = myObj.prop1; // val1<br>var prop2val = myObj.prop2; // val2</blockquote>",
         "<hr>",
-        "Read in the property values of <code>testObj</code> using dot notation. Set the variable <code>hatValue</code> equal to the object property <code>hat</code> and set the variable <code>shirtValue</code> equal to the object property <code>shirt</code>."
+        "Read in the property values of <code>testObj</code> using dot notation. Set the variable <code>hatValue</code> equal to the object's property <code>hat</code> and set the variable <code>shirtValue</code> equal to the object's property <code>shirt</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4236,10 +4235,10 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c8",
-      "title": "Accessing Objects Properties with Bracket Notation",
+      "title": "Accessing Object Properties with Bracket Notation",
       "description": [
-        "The second way to access the properties of an object is bracket notation (<code>[]</code>). If the property of the object you are trying to access has a space in it's name, you will need to use bracket notation.",
-        "Here is a sample of using bracket notation to read an object property:",
+        "The second way to access the properties of an object is bracket notation (<code>[]</code>). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.",
+        "Here is a sample of using bracket notation to read an object's property:",
         "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\"<br>};<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock</blockquote>",
         "Note that property names with spaces in them must be in quotes (single or double).",
         "<hr>",
@@ -4290,16 +4289,16 @@
     },
     {
       "id": "56533eb9ac21ba0edf2244c9",
-      "title": "Accessing Objects Properties with Variables",
+      "title": "Accessing Object Properties with Variables",
       "description": [
         "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for iterating through lists of the object properties or for doing the lookup.",
         "Here is an example of using a variable to access a property:",
-        "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >}<br>myObj[someProp]; // \"Some Value\"</blockquote>",
+        "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >};<br>myObj[someProp]; // \"Some Value\"</blockquote>",
         "Here is one more:",
-        "<blockquote>var myDog = \"Hunter\";<br>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var breed = dogs[myDog];<br>console.log(breed);// \"Doberman\"</blockquote>",
-        "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>",
+        "<blockquote>var myDog = \"Hunter\";<br>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br >};<br>var breed = dogs[myDog];<br>console.log(breed);// \"Doberman\"</blockquote>",
+        "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>.",
         "<hr>",
-        "Use the <code>playerNumber</code> variable to lookup player <code>16</code> in <code>testObj</code> using bracket notation. Then assign that name to the <code>player</code> variable."
+        "Use the <code>playerNumber</code> variable to look up player <code>16</code> in <code>testObj</code> using bracket notation. Then assign that name to the <code>player</code> variable."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -4543,7 +4542,7 @@
         "Here is an example of a simple reverse alphabet lookup:",
         "<blockquote>var alpha = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>  4:\"W\",<br>  ...<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"<br><br>var value = 2;<br>alpha[value]; // \"Y\"</blockquote>",
         "<hr>",
-        "Convert the switch statement into an object called <code>lookup</code>. Use it to lookup <code>val</code> and assign the associated string to the <code>result</code> variable."
+        "Convert the switch statement into an object called <code>lookup</code>. Use it to look up <code>val</code> and assign the associated string to the <code>result</code> variable."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [

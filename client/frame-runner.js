@@ -58,6 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const newTest = { text, testString };
         let test;
         let __result;
+
+        // uncomment the following line to inspect
+        // the framerunner as it runs tests
+        // make sure the dev tools console is open
+        // debugger;
         try {
           /* eslint-disable no-eval */
           // eval test string to actual JavaScript
@@ -116,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (assertIndex !== -1) {
               message = message.slice(0, assertIndex);
             }
-            message = message.replace(/<code>(.*)<\/code>/, '$1');
+            message = message.replace(/<code>(.*?)<\/code>/g, '$1');
             newTest.err = err.message + '\n' + err.stack;
             newTest.stack = err.stack;
             newTest.message = message;
