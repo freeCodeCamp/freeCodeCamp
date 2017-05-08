@@ -383,7 +383,7 @@
         "Given an array <code>arr</code>, find element pairs whose sum equal the second argument <code>arg</code> and return the sum of their indices.",
         "You may use multiple pairs that have the same numeric elements but different indices. Each pair should use the lowest possible available indices. Once an element has been used it cannot be reused to pair with another element.",
         "For example <code>pairwise([7, 9, 11, 13, 15], 20)</code> returns <code>6</code>. The pairs that sum to 20 are <code>[7, 13]</code> and <code>[9, 11]</code>. We can then write out the array with their indices and values.",
-        "<table class=\"table\"><tr><th><b>Index</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
+        "<table class=\"table\"><tr><th><strong>Index</strong></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
         "Below we'll take their corresponding indices and add them.",
         "7 + 13 = 20 &#8594; Indices 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indices 1 + 2 = 3<br>3 + 3 = 6 &#8594 Return <code>6</code>",
         "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
@@ -426,7 +426,7 @@
             "Dato un array <code>arr</code>, trova le coppie di elementi la cui somma è uguale al secondo argomento passato <code>arg</code>. Ritorna quindi la somma dei loro indici.",
             "Se ci sono più coppie possibili che hanno lo stesso valore numerico ma indici differenti, ritorna la somma degli indici minore. Una volta usato un elemento, lo stesso non può essere riutilizzato per essere accoppiato con un altro.",
             "Per esempio <code>pairwise([7, 9, 11, 13, 15], 20)</code> ritorna <code>6</code>. Le coppia la cui somma è 20 sono <code>[7, 13]</code> e <code>[9, 11]</code>. Possiamo quindi osservare l'array con i loro indici e valori.",
-            "<table class=\"table\"><tr><th><b>Indice</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Valore</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
+            "<table class=\"table\"><tr><th><strong>Indice</strong></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Valore</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
             "Qui sotto prendiamo gli indici corrispondenti e li sommiamo.",
             "7 + 13 = 20 &#8594; Indici 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indici 1 + 2 = 3<br>3 + 3 = 6 &#8594 Ritorna <code>6</code>",
             "Ricorda di usare <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
@@ -438,7 +438,7 @@
             "Dado uma matriz <code>arr</code>, encontre pares de elementos no qual a soma é igual ao segundo argumento <code>arg</code> e retorne a soma dos seus indices.",
             "Se multiplos pares tem o mesmo elemento numérico mas indices diferentes, retorne a soma dos menores indices. Uma vez que um elemento é usado, este não pode ser emparelhado novamente com outro elemento.",
             "Por exemplo <code>pairwise([7, 9, 11, 13, 15], 20)</code> retorna <code>6</code>. Os pares que somam 20 são <code>[7, 13]</code> e <code>[9, 11]</code>. Nós podemos então criar a matriz com seus indices e valores.",
-            "<table class=\"table\"><tr><th><b>Index</b></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
+            "<table class=\"table\"><tr><th><strong>Index</strong></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
             "Abaixo nós pegamos os índices correspondentes e somá-los.",
             "7 + 13 = 20 &#8594; Indices 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indices 1 + 2 = 3<br>3 + 3 = 6 &#8594 Retorna <code>6</code>",
             "Lembre-se de usar <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
@@ -453,22 +453,19 @@
         "This is the first of several challenges on sorting algorithms. Given an array of unsorted items, we want to be able to return a sorted array. We will see several different methods to do this and learn some tradeoffs between these different approaches. While most modern languages have built-in sorting methods for operations like this, it is still important to understand some of the common basic approaches and learn how they can be implemented.",
         "Here we will see bubble sort. The bubble sort method starts at the beginning of an unsorted array and 'bubbles up' unsorted values towards the end, iterating through the array until it is completely sorted. It does this by comparing adjacent items and swapping them if they are out of order. The method continues looping through the array until no swaps occur at which point the array is sorted.",
         "This method requires multiple iterations through the array and for average and worst cases has quadratic time complexity. While simple, it is usually impractical in most situations.",
-        "<b>Instructions:</b> Write a function <code>bubbleSort</code> which takes an array of integers as input and returns an array of these integers in sorted order. We've provided a helper method to generate a random array of integer values."
+        "<strong>Instructions:</strong> Write a function <code>bubbleSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
       ],
       "challengeSeed": [
-        "// helper function to generate a randomly filled array",
-        "var array = [];",
-        "(function createArray(size) {",
-        "  array.push(+(Math.random() * 100).toFixed(0));",
-        "  return (size > 1) ? createArray(size - 1) : undefined;",
-        "})(12);",
-        "",
         "function bubbleSort(array) {",
         "  // change code below this line",
         "",
         "  // change code above this line",
         "  return array;",
-        "}"
+        "}",
+        "",
+        "// test array:",
+        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
       ],
       "tail": [
         "function isSorted(arr) {",
@@ -478,7 +475,9 @@
       ],
       "tests": [
         "assert(typeof bubbleSort == 'function', 'message: <code>bubbleSort</code> is a function.');",
-        "assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>bubbleSort</code> returns a sorted array.');"
+        "assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>bubbleSort</code> returns a sorted array (least to greatest).');",
+        "assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>bubbleSort</code> returns an array that is unchanged except for order.');",
+        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -491,22 +490,19 @@
       "title": "Implement Selection Sort",
       "description": [
         "Here we will implement selection sort. Selection sort works by selecting the minimum value in a list and swapping it with the first value in the list. It then starts at the second position, selects the smallest value in the remaining list, and swaps it with the second element. It continues iterating through the list and swapping elements until it reaches the end of the list. Now the list is sorted. Selection sort has quadratic time complexity in all cases.",
-        "Instructions: Write a function <code>selectionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order."
+        "<stong>Instructions</stong>: Write a function <code>selectionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
       ],
       "challengeSeed": [
-        "// helper function to generate a randomly filled array",
-        "var array = [];",
-        "(function createArray(size) {",
-        "  array.push(+(Math.random() * 100).toFixed(0));",
-        "  return (size > 1) ? createArray(size - 1) : undefined;",
-        "})(12);",
-        "",
         "function selectionSort(array) {",
         "  // change code below this line",
         "",
         "  // change code above this line",
         "  return array;",
-        "}"
+        "}",
+        "",
+        "// test array:",
+        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
       ],
       "tail": [
         "function isSorted(arr) {",
@@ -516,7 +512,9 @@
       ],
       "tests": [
         "assert(typeof selectionSort == 'function', 'message: <code>selectionSort</code> is a function.');",
-        "assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>selectionSort</code> returns a sorted array.');"
+        "assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>selectionSort</code> returns a sorted array (least to greatest).');",
+        "assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>selectionSort</code> returns an array that is unchanged except for order.');",
+        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>selectionSort</code> should not use the built-in <code>.sort()</code> method.');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -529,22 +527,19 @@
       "title": "Implement Insertion Sort",
       "description": [
         "The next sorting method we'll look at is insertion sort. This method works by building up a sorted array at the beginning of the list. It begins the sorted array with the first element. Then it inspects the next element and swaps it backwards into the sorted array until it is in sorted position. It continues iterating through the list and swapping new items backwards into the sorted portion until it reaches the end. This algorithm has quadratic time complexity in the average and worst cases.",
-        "<b>Instructions:</b> Write a function <code>insertionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order."
+        "<strong>Instructions:</strong> Write a function <code>insertionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
       ],
       "challengeSeed": [
-        "// helper function to generate a randomly filled array",
-        "var array = [];",
-        "(function createArray(size) {",
-        "  array.push(+(Math.random() * 100).toFixed(0));",
-        "  return (size > 1) ? createArray(size - 1) : undefined;",
-        "})(12);",
-        "",
         "function insertionSort(array) {",
         "  // change code below this line",
         "",
         "  // change code above this line",
         "  return array;",
-        "}"
+        "}",
+        "",
+        "// test array:",
+        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
       ],
       "tail": [
         "function isSorted(arr) {",
@@ -554,7 +549,9 @@
       ],
       "tests": [
         "assert(typeof insertionSort == 'function', 'message: <code>insertionSort</code> is a function.');",
-        "assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>insertionSort</code> returns a sorted array.');"
+        "assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>insertionSort</code> returns a sorted array (least to greatest).');",
+        "assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>insertionSort</code> returns an array that is unchanged except for order.');",
+        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>insertionSort</code> should not use the built-in <code>.sort()</code> method.');"
       ],
       "type": "waypoint",
       "solutions": [],
@@ -568,26 +565,25 @@
       "description": [
         "Here we will move on to an intermediate sorting algorithm: quick sort. Quick sort is an efficient, recursive divide-and-conquer approach to sorting an array. In this method, a pivot value is chosen in the original array. The array is then partitioned into two subarrays of values less than and greater than the pivot value. We then combine the result of recursively calling the quick sort algorithm on both sub-arrays. This continues until the base case of an empty or single-item array is reached, which we return. The unwinding of the recursive calls return us the sorted array.",
         "Quick sort is a very efficient sorting method, providing <i>O(nlog(n))</i> performance on average. It is also relatively easy to implement. These attributes make it a popular and useful sorting method.",
-        "<b>Instructions:</b> Write a function <code>quickSort</code> which takes an array of integers as input and returns an array of these integers in sorted order. While the choice of the pivot value is important, any pivot will do for our purposes here. For simplicity, the first or last element could be used."
+        "<strong>Instructions:</strong> Write a function <code>quickSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. While the choice of the pivot value is important, any pivot will do for our purposes here. For simplicity, the first or last element could be used.",
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
       ],
       "challengeSeed": [
-        "// helper function generate a randomly filled array",
-        "var array = [];",
-        "(function createArray(size) {",
-        "  array.push(+(Math.random() * 100).toFixed(0));",
-        "  return (size > 1) ? createArray(size - 1) : undefined;",
-        "})(12);",
-        "",
         "function quickSort(array) {",
         "  // change code below this line",
         "",
         "  // change code above this line",
         "  return array;",
-        "}"
+        "}",
+        "",
+        "// test array:",
+        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
       ],
       "tests": [
         "assert(typeof quickSort == 'function', 'message: <code>quickSort</code> is a function.');",
-        "assert(isSorted(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>quickSort</code> returns a sorted array.');"
+        "assert(isSorted(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>quickSort</code> returns a sorted array (least to greatest).');",
+        "assert.sameMembers(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>quickSort</code> returns an array that is unchanged except for order.');",
+        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>quickSort</code> should not use the built-in <code>.sort()</code> method.');"
       ],
       "tail": [
         "function isSorted(arr) {",
@@ -606,30 +602,29 @@
       "title": "Implement Merge Sort",
       "description": [
         "Another intermediate sorting algorithm that is very common is merge sort. Like quick sort, merge sort also uses a divide-and-conquer, recursive methodology to sort an array. It takes advantage of the fact that it is relatively easy to sort two arrays as long as each is sorted in the first place. But we'll start with only one array as input, so how do we get to two sorted arrays from that? Well, we can recursively divide the original input in two until we reach the base case of an array with one item. A single-item array is naturally sorted, so then we can start combining. This combination will unwind the recursive calls that split the original array, eventually producing a final sorted array of all the elements. The steps of merge sort, then, are:",
-        "<b>1)</b> Recursively split the input array in half until a sub-array with only one element is produced.",
-        "<b>2)</b> Merge each sorted sub-array together to produce the final sorted array.",
+        "<strong>1)</strong> Recursively split the input array in half until a sub-array with only one element is produced.",
+        "<strong>2)</strong> Merge each sorted sub-array together to produce the final sorted array.",
         "Merge sort is an efficient sorting method, with time complexity of <i>O(nlog(n))</i>. This algorithm is popular because it is performant and relatively easy to implement.",
         "As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.",
-        "<b>Instructions:</b> Write a function <code>mergeSort</code> which takes an array of integers as input and returns an array of these integers in sorted order. A good way to implement this is to write one function, for instance merge, which is responsible for merging two sorted arrays, and another function, for instance mergeSort, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!"
+        "<strong>Instructions:</strong> Write a function <code>mergeSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance <code>merge</code>, which is responsible for merging two sorted arrays, and another function, for instance <code>mergeSort</code>, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!",
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
       ],
       "challengeSeed": [
-        "// helper function generate a randomly filled array",
-        "var array = [];",
-        "(function createArray(size) {",
-        "  array.push(+(Math.random() * 100).toFixed(0));",
-        "  return (size > 1) ? createArray(size - 1) : undefined;",
-        "})(25);",
-        "",
         "function mergeSort(array) {",
         "  // change code below this line",
         "",
         "  // change code above this line",
         "  return array;",
-        "}"
+        "}",
+        "",
+        "// test array:",
+        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
       ],
       "tests": [
         "assert(typeof mergeSort == 'function', 'message: <code>mergeSort</code> is a function.');",
-        "assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>mergeSort</code> returns a sorted array.');"
+        "assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>mergeSort</code> returns a sorted array (least to greatest).');",
+        "assert.sameMembers(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>mergeSort</code> returns an array that is unchanged except for order.');",
+        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>mergeSort</code> should not use the built-in <code>.sort()</code> method.');"
       ],
       "tail": [
         "function isSorted(arr) {",
