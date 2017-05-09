@@ -13,8 +13,7 @@ import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
 import {
   submitChallenge,
-  executeChallenge,
-  challengeSelector
+  executeChallenge
 } from '../../redux';
 import { descriptionRegex } from '../../utils.js';
 import {
@@ -22,6 +21,7 @@ import {
   isValidURL,
   makeRequired
 } from '../../../../utils/form.js';
+import { challengeSelector } from '../../../../redux';
 
 // provided by redux form
 const reduxFormPropTypes = {
@@ -54,11 +54,9 @@ const mapStateToProps = createSelector(
   state => state.challengesApp.tests,
   (
     {
-      challenge: {
-        id,
-        title,
-        description
-      } = {}
+      id,
+      title,
+      description
     },
     output,
     tests

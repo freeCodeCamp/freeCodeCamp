@@ -17,21 +17,27 @@ import {
   closeChallengeModal,
   updateSuccessMessage,
 
-  challengeSelector
+  challengeMetaSelector,
+  testsSelector,
+  filesSelector,
+  keySelector,
+  challengeModalSelector,
+  successMessageSelector
 } from '../../redux';
+import { challengeSelector } from '../../../../redux';
 import { randomCompliment } from '../../../../utils/get-words';
 
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.id,
-  state => state.challengesApp.tests,
-  state => state.challengesApp.files,
-  state => state.challengesApp.key,
-  state => state.challengesApp.isChallengeModalOpen,
-  state => state.challengesApp.successMessage,
+  challengeMetaSelector,
+  testsSelector,
+  filesSelector,
+  keySelector,
+  challengeModalSelector,
+  successMessageSelector,
   (
+    { id },
     { showPreview, mode },
-    id,
     tests,
     files = {},
     key = '',

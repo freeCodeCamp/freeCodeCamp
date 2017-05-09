@@ -12,6 +12,7 @@ const initialState = {
   // project is ready to submit
   isSubmitting: false
 };
+export const submittingSelector = state => state[ns].isSubmitting;
 
 const reducer = handleActions({
   [types.showProjectSubmit]: state => ({

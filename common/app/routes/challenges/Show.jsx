@@ -14,12 +14,16 @@ import {
   replaceChallenge,
   resetUi,
 
-  challengeSelector
+  challengeMetaSelector
 } from './redux';
 import {
   updateTitle,
   fetchChallenge,
-  fetchChallenges
+  fetchChallenges,
+
+  areChallengesLoadedSelector,
+  challengeSelector,
+  langSelector
 } from '../../redux';
 import { makeToast } from '../../Toasts/redux';
 
@@ -42,25 +46,21 @@ const mapDispatchToProps = {
 
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.challenge,
-  state => state.challengesApp.superBlocks,
-  state => state.app.lang,
+  challengeMetaSelector,
+  areChallengesLoadedSelector,
+  langSelector,
   (
-    {
-      challenge: { isTranslated } = {},
-      viewType,
-      title
-    },
-    challenge,
-    superBlocks = [],
+    { dashedName, isTranslated },
+    { viewType, title },
+    areChallengesLoaded,
     lang
   ) => ({
     lang,
     isTranslated,
     title,
-    challenge,
+    challenge: dashedName,
     viewType,
-    areChallengesLoaded: superBlocks.length > 0
+    areChallengesLoaded
   })
 );
 

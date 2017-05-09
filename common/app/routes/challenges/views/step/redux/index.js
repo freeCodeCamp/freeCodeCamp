@@ -39,6 +39,13 @@ const initialState = {
   unlockedSteps: []
 };
 
+export const getNS = state => state[ns];
+export const currentIndexSelector = state => getNS(state).currentIndex;
+export const previousIndexSelector = state => getNS(state).previousIndex;
+export const unlockedStepsSelector = state => getNS(state).unlockedSteps;
+export const lightBoxSelector = state => getNS(state).isLightBoxOpen;
+export const actionCompletedSelector = state => getNS(state).isActionCompleted;
+
 const reducer = handleActions({
   [types.goToStep]: (state, { payload: { step = 0, isUnlocked }}) => ({
     ...state,

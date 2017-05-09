@@ -1,25 +1,27 @@
 import { Observable } from 'rx';
-import { createTypes } from 'redux-create-types';
+import { createTypes, createAsyncTypes } from 'redux-create-types';
 import { combineTypes, createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
-import noop from 'lodash/noop';
 
+import { getNS as entitiesSelector } from './entities-reducer.js';
 import fetchUserEpic from './fetch-user-epic.js';
 import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
-import ns from '../ns.json';
-import { types as map } from '../Map/redux';
 
+import ns from '../ns.json';
 
 export const epics = [
   fetchUserEpic,
   loadCurrentChallengeEpic
 ];
 
-
 export const types = createTypes([
   'analytics',
   'updateTitle',
   'updateAppLang',
+
+  createAsyncTypes('fetchChallenge'),
+  createAsyncTypes('fetchChallenges'),
+  'updateCurrentChallenge',
 
   'fetchUser',
   'addUser',
@@ -38,18 +40,10 @@ export const types = createTypes([
   'hardGoTo',
   'delayedRedirect',
 
-  // data handling
-  'updateChallengesData',
-  'updateHikesData',
-
   // night mode
   'toggleNightMode',
   'updateTheme',
-  'addThemeToBody',
-
-  // nav
-  'openDropdown',
-  'closeDropdown'
+  'addThemeToBody'
 ], ns);
 
 const throwIfUndefined = () => {
@@ -99,13 +93,13 @@ export const fetchChallenge = createAction(
   (dashedName, block) => ({ dashedName, block })
 );
 export const fetchChallengeCompleted = createAction(
-  types.fetchChallengeCompleted,
-  (_, challenge) => challenge,
+  types.fetchChallenge.complete,
+  (_, result) => result,
   entities => ({ entities })
 );
 export const fetchChallenges = createAction(types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
-  types.fetchChallengesCompleted,
+  types.fetchChallenges.complete,
   (entities, results) => ({ entities, results }),
   entities => ({ entities })
 );
@@ -179,10 +173,6 @@ export const delayedRedirect = createAction(types.delayedRedirect);
 // hardGoTo(path: String) => Action
 export const hardGoTo = createAction(types.hardGoTo);
 
-// data
-export const updateChallengesData = createAction(types.updateChallengesData);
-export const updateHikesData = createAction(types.updateHikesData);
-
 export const createErrorObservable = error => Observable.just({
   type: types.handleError,
   error
@@ -209,9 +199,6 @@ export const updateTheme = createAction(types.updateTheme);
 // addThemeToBody(theme: /night|default/) => Action
 export const addThemeToBody = createAction(types.addThemeToBody);
 
-export const openDropdown = createAction(types.openDropdown, noop);
-export const closeDropdown = createAction(types.closeDropdown, noop);
-
 const initialState = {
   title: 'Learn To Code | freeCodeCamp',
   isSignInAttempted: false,
@@ -220,29 +207,47 @@ const initialState = {
   csrfToken: '',
   theme: 'default',
   // eventually this should be only in the user object
-  currentChallenge: ''
+  currentChallenge: '',
+  superBlocks: [],
+  areChallengesLoaded: false
 };
 
 export const getNS = state => state[ns];
 export const langSelector = state => getNS(state).lang;
 
 export const currentChallengeSelector = state => getNS(state).currentChallenge;
+export const superBlocksSelector = state => getNS(state).superBlocks;
 export const signInLoadingSelector = state => !getNS(state).isSignInAttempted;
+export const areChallengesLoadedSelector =
+  state => getNS(state).areChallengesLoaded;
 
 export const userSelector = createSelector(
   state => getNS(state).user,
-  state => state.entities.user,
+  state => entitiesSelector(state).user,
   (username, userMap) => ({
     user: userMap[username] || {}
   })
 );
 
+export const challengeSelector = createSelector(
+  currentChallengeSelector,
+  state => entitiesSelector(state).challenge,
+  (challengeName, challengeMap = {}) => {
+    return challengeMap[challengeName] || {};
+  }
+);
+
 export const firstChallengeSelector = createSelector(
-  state => state.entities.challenge,
-  state => state.entities.block,
-  state => state.entities.superBlock,
-  state => state.challengesApp.superBlocks,
-  (challengeMap, blockMap, superBlockMap, superBlocks) => {
+  entitiesSelector,
+  superBlocksSelector,
+  (
+    {
+      challengeMap,
+      blockMap,
+      superBlockMap
+    },
+    superBlocks
+  ) => {
     if (
       !challengeMap ||
       !blockMap ||
@@ -266,7 +271,7 @@ export const firstChallengeSelector = createSelector(
   }
 );
 
-export default handleActions(
+const reducer = handleActions(
   {
     [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
       ...state,
@@ -276,6 +281,19 @@ export default handleActions(
     [types.updateThisUser]: (state, { payload: user }) => ({
       ...state,
       user
+    }),
+    [types.fetchChallenge.complete]: (state, { payload }) => ({
+      ...state,
+      currentChallenge: payload.result
+    }),
+    [types.fetchChallenges.complete]: (state, { payload }) => ({
+      ...state,
+      superBlocks: payload.result,
+      areChallengesLoaded: payload.result.length > 0
+    }),
+    [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
+      ...state,
+      currentChallenge: payload
     }),
     [types.updateAppLang]: (state, { payload = 'en' }) =>({
       ...state,
@@ -297,20 +315,11 @@ export default handleActions(
     [types.delayedRedirect]: (state, { payload }) => ({
       ...state,
       delayedRedirect: payload
-    }),
-    [types.openDropdown]: state => ({
-      ...state,
-      isNavDropdownOpen: true
-    }),
-    [types.closeDropdown]: state => ({
-      ...state,
-      isNavDropdownOpen: false
-    }),
-
-    [map.clickOnChallenge]: (state, { payload: currentChallenge = '' }) => ({
-      ...state,
-      currentChallenge
     })
   },
   initialState
 );
+
+reducer.toString = () => ns;
+
+export default reducer;

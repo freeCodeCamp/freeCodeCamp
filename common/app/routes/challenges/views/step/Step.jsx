@@ -13,23 +13,24 @@ import {
   openLightBoxImage,
   stepBackward,
   stepForward,
-  updateUnlockedSteps
+  updateUnlockedSteps,
+
+  currentIndexSelector,
+  actionCompletedSelector,
+  previousIndexSelector,
+  lightBoxSelector
 } from './redux';
-import {
-  submitChallenge,
-  challengeSelector
-} from '../../redux';
+import { submitChallenge } from '../../redux';
+import { challengeSelector } from '../../../../redux';
 
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.currentIndex,
-  state => state.challengesApp.previousIndex,
-  state => state.challengesApp.isActionCompleted,
-  state => state.challengesApp.isLightBoxOpen,
+  currentIndexSelector,
+  previousIndexSelector,
+  actionCompletedSelector,
+  lightBoxSelector,
   (
-    {
-      challenge: { description = [] }
-    },
+    { description = [] },
     currentIndex,
     previousIndex,
     isActionCompleted,

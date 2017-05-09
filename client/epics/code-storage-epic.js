@@ -6,7 +6,10 @@ import { removeCodeUri, getCodeUri } from '../utils/code-uri';
 
 import { setContent } from '../../common/utils/polyvinyl';
 
-import { userSelector } from '../../common/app/redux';
+import {
+  userSelector,
+  challengeSelector
+} from '../../common/app/redux';
 import { makeToast } from '../../common/app/Toasts/redux';
 import {
   types,
@@ -14,7 +17,9 @@ import {
   updateMain,
   lockUntrustedCode,
 
-  challengeSelector
+  keySelector,
+  filesSelector,
+  codeLockedSelector
 } from '../../common/app/routes/challenges/redux';
 
 const legacyPrefixes = [
@@ -56,20 +61,21 @@ function legacyToFile(code, files, key) {
 export function clearCodeEpic(actions, { getState }) {
   return actions::ofType(types.clearSavedCode)
     .map(() => {
-      const { challengesApp: { id = '' } } = getState();
+      const { id } = challengeSelector(getState());
       store.remove(id);
-      return null;
-    });
+    })
+    .ignoreElements();
 }
 export function saveCodeEpic(actions, { getState }) {
   return actions::ofType(types.saveCode)
     // do not save challenge if code is locked
-    .filter(() => !getState().challengesApp.isCodeLocked)
+    .filter(() => !codeLockedSelector(getState()))
     .map(() => {
-      const { challengesApp: { id = '', files = {} } } = getState();
+      const { id } = challengeSelector(getState());
+      const files = filesSelector(getState());
       store.set(id, files);
-      return null;
-    });
+    })
+    .ignoreElements();
 }
 
 export function loadCodeEpic(actions, { getState }, { window, location }) {
@@ -78,15 +84,13 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
       let finalFiles;
       const state = getState();
       const { user } = userSelector(state);
-      const { challenge } = challengeSelector(state);
+      const challenge = challengeSelector(state);
+      const key = keySelector(state);
+      const files = filesSelector(state);
       const {
-        challengesApp: {
-          id = '',
-          files = {},
-          legacyKey = '',
-          key
-        }
-      } = state;
+        id,
+        name: legacyKey
+      } = challenge;
       const codeUriFound = getCodeUri(
         location,
         window.decodeURIComponent

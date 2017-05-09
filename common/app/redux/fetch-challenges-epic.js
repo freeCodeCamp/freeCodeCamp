@@ -1,5 +1,5 @@
 import { Observable } from 'rx';
-import { ofType } from 'redux-epic';
+import { combineEpics, ofType } from 'redux-epic';
 import debug from 'debug';
 
 import {
@@ -7,16 +7,13 @@ import {
 
   createErrorObservable,
   delayedRedirect,
+
   fetchChallengeCompleted,
   fetchChallengesCompleted,
 
   langSelector
 } from './';
 import { shapeChallenges } from './utils';
-import {
-  updateCurrentChallenge,
-  challengeSelector
-} from '../routes/challenges/redux';
 
 const isDev = debug.enabled('fcc:*');
 
@@ -37,7 +34,6 @@ export function fetchChallengeEpic(actions, { getState }, { services }) {
         .flatMap(({ entities, result, redirect } = {}) => {
           return Observable.of(
             fetchChallengeCompleted(entities, result),
-            updateCurrentChallenge(entities.challenge[result.challenge]),
             redirect ? delayedRedirect(redirect) : null
           );
         })
@@ -45,7 +41,7 @@ export function fetchChallengeEpic(actions, { getState }, { services }) {
     });
 }
 
-export default function fetchChallengesSaga(
+export function fetchChallengesEpic(
   actions,
   { getState },
   { services }
@@ -76,20 +72,4 @@ export default function fetchChallengesSaga(
     });
 }
 
-export function replaceChallengeEpic(actions, { getState }) {
-  return actions::ofType(types.replaceChallenge)
-    .map(({ payload: { dashedName } = {} }) => {
-      const state = getState();
-      const { challenge: newChallenge } = challengeSelector({
-        ...state,
-        challengesApp: {
-          ...state.challengesApp,
-          challenge: dashedName
-        }
-      });
-      if (state.challengesApp.challenge !== newChallenge.dashedName) {
-        return Observable.just(updateCurrentChallenge(newChallenge));
-      }
-      return Observable.just(null);
-    });
-}
+export default combineEpics(fetchChallengeEpic, fetchChallengesEpic);

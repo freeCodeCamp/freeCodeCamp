@@ -2,6 +2,9 @@ import { handleActions } from 'redux-actions';
 
 import { types } from './';
 
+export const ns = 'entities';
+export const getNS = state => state[ns];
+
 const initialState = {
   superBlock: {},
   block: {},
@@ -96,3 +99,5 @@ export default function entitiesReducer(state, action) {
   }
   return newState;
 }
+
+entitiesReducer.toString = () => ns;

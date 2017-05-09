@@ -17,9 +17,16 @@ import {
   executeChallenge,
   unlockUntrustedCode,
 
-  challengeSelector
+  challengeMetaSelector,
+  testsSelector,
+  outputSelector,
+  hintIndexSelector,
+  codeLockedSelector,
+  chatRoomSelector
 } from '../../redux';
+
 import { descriptionRegex } from '../../utils';
+import { challengeSelector } from '../../../../redux';
 import { makeToast } from '../../../../Toasts/redux';
 
 const mapDispatchToProps = {
@@ -31,19 +38,18 @@ const mapDispatchToProps = {
 };
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.tests,
-  state => state.challengesApp.output,
-  state => state.challengesApp.hintIndex,
-  state => state.challengesApp.isCodeLocked,
-  state => state.challengesApp.helpChatRoom,
+  challengeMetaSelector,
+  testsSelector,
+  outputSelector,
+  hintIndexSelector,
+  codeLockedSelector,
+  chatRoomSelector,
   (
     {
-      challenge: {
-        description,
-        hints = []
-      } = {},
-      title
+      description,
+      hints = []
     },
+    { title },
     tests,
     output,
     hintIndex,

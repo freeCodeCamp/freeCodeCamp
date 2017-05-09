@@ -17,10 +17,9 @@ import { createErrorObservable } from '../../../redux';
 import { makeToast } from '../../../Toasts/redux';
 
 const isDev = debug.enabled('fcc:*');
-const { moveToNextChallenge } = types;
 
 export default function nextChallengeEpic(actions, { getState }) {
-  return actions::ofType(moveToNextChallenge)
+  return actions::ofType(types.moveToNextChallenge)
     .flatMap(() => {
       let nextChallenge;
       // let message = '';

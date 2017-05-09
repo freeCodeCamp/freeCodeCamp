@@ -8,19 +8,19 @@ import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import BugModal from '../../Bug-Modal.jsx';
 
-import { challengeSelector } from '../../redux';
+import { challengeMetaSelector } from '../../redux';
+import { challengeSelector } from '../../../../redux';
 
 const mapStateToProps = createSelector(
   challengeSelector,
+  challengeMetaSelector,
   (
     {
-      challenge: {
-        id,
-        description,
-        image
-      } = {},
-      title
-    }
+      id,
+      description,
+      image
+    },
+    { title }
   ) => ({
     id,
     image,

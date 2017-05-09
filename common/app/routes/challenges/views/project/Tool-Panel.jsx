@@ -9,11 +9,19 @@ import {
   BackEndForm
 } from './Forms.jsx';
 
+import { submittingSelector } from './redux';
+
 import {
   submitChallenge,
   openBugModal,
-  challengeSelector
+
+  chatRoomSelector
 } from '../../redux';
+
+import {
+  signInLoadingSelector,
+  challengeSelector
+} from '../../../../redux';
 import {
   simpleProject,
   frontEndProject
@@ -34,16 +42,16 @@ const mapDispatchToProps = {
 };
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.app.isSignedIn,
-  state => state.challengesApp.isSubmitting,
-  state => state.challengesApp.helpChatRoom,
+  signInLoadingSelector,
+  submittingSelector,
+  chatRoomSelector,
   (
-    { challenge: { challengeType = simpleProject } },
-    isSignedIn,
+    { challengeType = simpleProject },
+    showLoading,
     isSubmitting,
     helpChatRoom,
   ) => ({
-    isSignedIn,
+    isSignedIn: !showLoading,
     isSubmitting,
     helpChatRoom,
     isSimple: challengeType === simpleProject,

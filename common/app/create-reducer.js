@@ -1,18 +1,15 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-import { default as app } from './redux';
-import { default as toasts } from './Toasts/redux';
-import entitiesReducer from './redux/entities-reducer';
-import {
-  default as challenges,
-  projectNormalizer
-} from './routes/challenges/redux';
+import app from './redux';
+import toasts from './Toasts/redux';
+import entities from './redux/entities-reducer';
+import challenges, { projectNormalizer } from './routes/challenges/redux';
 
 export default function createReducer(sideReducers = {}) {
   return combineReducers({
     ...sideReducers,
-    entities: entitiesReducer,
+    [entities]: entities,
     [app]: app,
     [toasts]: toasts,
     [challenges]: challenges,

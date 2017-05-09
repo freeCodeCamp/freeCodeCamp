@@ -2,12 +2,13 @@ import { ofType } from 'redux-epic';
 import {
   types,
   goToStep,
-  updateUnlockedSteps
+  updateUnlockedSteps,
+
+  unlockedStepsSelector,
+  currentIndexSelector
 } from './';
-import {
-  submitChallenge,
-  challengeSelector
-} from '../../../redux';
+import { submitChallenge } from '../../../redux';
+import { challengeSelector } from '../../../../../redux';
 
 function unlockStep(step, unlockedSteps) {
   if (!step) {
@@ -26,8 +27,9 @@ export default function stepChallengeEpic(actions, { getState }) {
   )
     .map(({ type }) => {
       const state = getState();
-      const { challenge: { description = [] } } = challengeSelector(state);
-      const { challengesApp: { currentIndex, unlockedSteps } } = state;
+      const { description = [] } = challengeSelector(state);
+      const currentIndex = currentIndexSelector(state);
+      const unlockedSteps = unlockedStepsSelector(state);
       const numOfSteps = description.length;
       const stepFwd = currentIndex + 1;
       const stepBwd = currentIndex - 1;

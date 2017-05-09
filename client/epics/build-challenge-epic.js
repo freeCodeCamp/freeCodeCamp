@@ -7,7 +7,9 @@ import {
 } from '../utils/build.js';
 import {
   types,
-  createErrorObservable
+  createErrorObservable,
+
+  challengeSelector
 } from '../../common/app/redux';
 import {
   frameMain,
@@ -15,7 +17,7 @@ import {
   initOutput,
   saveCode,
 
-  challengeSelector
+  filesSelector
 } from '../../common/app/routes/challenges/redux';
 
 export default function buildChallengeEpic(actions, { getState }) {
@@ -26,12 +28,10 @@ export default function buildChallengeEpic(actions, { getState }) {
     .flatMapLatest(({ type }) => {
       const shouldProxyConsole = type === types.updateMain;
       const state = getState();
-      const { files } = state.challengesApp;
+      const files = filesSelector(state);
       const {
-        challenge: {
-          required = [],
-          type: challengeType
-        }
+        required = [],
+        type: challengeType
       } = challengeSelector(state);
       if (challengeType === 'backend') {
         return buildBackendChallenge(state)

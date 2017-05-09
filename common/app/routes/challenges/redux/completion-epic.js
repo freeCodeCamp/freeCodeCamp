@@ -6,13 +6,16 @@ import {
 
   moveToNextChallenge,
   clearSavedCode,
-  challengeSelector
+
+  challengeMetaSelector
 } from './';
 
 import {
   createErrorObservable,
   updateUserPoints,
-  updateUserChallenge
+  updateUserChallenge,
+
+  challengeSelector
 } from '../../../redux';
 import { backEndProject } from '../../../utils/challengeTypes.js';
 import { makeToast } from '../../../Toasts/redux';
@@ -45,7 +48,7 @@ function submitModern(type, state) {
     }
 
     if (type === types.submitChallenge) {
-      const { challenge: { id } } = challengeSelector(state);
+      const { id } = challengeSelector(state);
       const {
         app: { user, csrfToken },
         challengesApp: { files }
@@ -65,9 +68,7 @@ function submitModern(type, state) {
 }
 
 function submitProject(type, state, { solution, githubLink }) {
-  const {
-    challenge: { id, challengeType }
-  } = challengeSelector(state);
+  const { id, challengeType } = challengeSelector(state);
   const {
     app: { user, csrfToken }
   } = state;
@@ -84,9 +85,7 @@ function submitProject(type, state, { solution, githubLink }) {
 }
 
 function submitSimpleChallenge(type, state) {
-  const {
-    challenge: { id }
-  } = challengeSelector(state);
+  const { id } = challengeSelector(state);
   const {
     app: { user, csrfToken }
   } = state;
@@ -117,7 +116,7 @@ function submitBackendChallenge(type, state, { solution }) {
     );
     */
 
-    const { challenge: { id } } = challengeSelector(state);
+    const { id } = challengeSelector(state);
     const { app: { user, csrfToken } } = state;
     const challengeInfo = { id, solution };
     return postChallenge(
@@ -146,7 +145,7 @@ export default function completionSaga(actions, { getState }) {
   return actions::ofType(types.checkChallenge, types.submitChallenge)
     .flatMap(({ type, payload }) => {
       const state = getState();
-      const { submitType } = challengeSelector(state);
+      const { submitType } = challengeMetaSelector(state);
       const submitter = submitters[submitType] ||
         (() => Observable.just(null));
       return submitter(type, state, payload);

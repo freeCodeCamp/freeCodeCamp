@@ -19,7 +19,11 @@ import {
   submitTypes,
   viewTypes
 } from '../utils';
-import { types as app } from '../../../redux';
+import {
+  types as app,
+
+  challengeSelector
+} from '../../../redux';
 import { bonfire, html, js } from '../../../utils/challengeTypes';
 import blockNameify from '../../../utils/blockNameify';
 import { createPoly, setContent } from '../../../../utils/polyvinyl';
@@ -150,7 +154,9 @@ export const createIssue = createAction(types.createIssue);
 const initialUiState = {
   output: null,
   isChallengeModalOpen: false,
-  successMessage: 'Happy Coding!'
+  successMessage: 'Happy Coding!',
+  hintIndex: 0,
+  numOfHints: 0
 };
 
 const initialState = {
@@ -169,14 +175,25 @@ const initialState = {
   ...initialUiState
 };
 
-export const challengeSelector = createSelector(
-  state => state.challengesApp.challenge,
-  state => state.entities.challenge,
-  (challengeName, challengeMap) => {
-    if (!challengeName || !challengeMap) {
+export const getNS = state => state[ns];
+export const keySelector = state => getNS(state).key;
+export const filesSelector = state => getNS(state).files;
+export const testsSelector = state => getNS(state).tests;
+
+export const outputSelector = state => getNS(state).output;
+export const successMessageSelector = state => getNS(state).successMessage;
+export const hintIndexSelector = state => getNS(state).hintIndex;
+export const codeLockedSelector = state => getNS(state).isCodeLocked;
+export const chatRoomSelector = state => getNS(state).helpChatRoom;
+export const challengeModalSelector =
+  state => getNS(state).isChallengeModalOpen;
+
+export const challengeMetaSelector = createSelector(
+  challengeSelector,
+  challenge => {
+    if (!challenge.id) {
       return {};
     }
-    const challenge = challengeMap[challengeName];
     const challengeType = challenge && challenge.challengeType;
     const type = challenge && challenge.type;
     const viewType = viewTypes[type] || viewTypes[challengeType] || 'classic';
@@ -186,7 +203,6 @@ export const challengeSelector = createSelector(
       challenge.title;
 
     return {
-      challenge,
       title,
       viewType,
       submitType:
@@ -203,21 +219,19 @@ export const challengeSelector = createSelector(
 
 const mainReducer = handleActions(
   {
-    [app.fetchChallengeCompleted]: (state, { payload = '' }) => ({
-      ...state,
-      challenge: payload
-    }),
-    [types.updateCurrentChallenge]: (state, { payload: challenge = {} }) => ({
-      ...state,
-      id: challenge.id,
-      // used mainly to find code storage
-      legacyKey: challenge.name,
-      challenge: challenge.dashedName,
-      key: getFileKey(challenge),
-      tests: createTests(challenge),
-      helpChatRoom: challenge.helpRoom || 'Help',
-      numOfHints: Array.isArray(challenge.hints) ? challenge.hints.length : 0
-    }),
+    [app.fetchChallengeCompleted]: (state, { payload }) => {
+      const { entities, result } = payload;
+      const challenge = entities.challenge[result.challenge];
+      return {
+        ...state,
+        id: challenge.id,
+        challenge: challenge.dashedName,
+        key: getFileKey(challenge),
+        tests: createTests(challenge),
+        helpChatRoom: challenge.helpRoom || 'Help',
+        numOfHints: Array.isArray(challenge.hints) ? challenge.hints.length : 0
+      };
+    },
     [types.updateTests]: (state, { payload: tests }) => ({
       ...state,
       tests,
@@ -347,3 +361,5 @@ export default function challengeReducers(state, action) {
   }
   return newState;
 }
+
+challengeReducers.toString = () => ns;
