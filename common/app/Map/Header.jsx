@@ -1,31 +1,50 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PureComponent from 'react-pure-render/component';
 import { InputGroup, FormControl, Button, Row } from 'react-bootstrap';
 import classnames from 'classnames';
 import {
-  clearFilter,
+  clearFilterPressed,
   collapseAll,
+  escapeKeyInFilter,
   expandAll,
-  updateFilter
+  updateFilter,
+
+  allColapsedSelector,
+  filterSelector
 } from './redux';
 
 const ESC = 27;
 const clearIcon = <i className='fa fa-times' />;
 const searchIcon = <i className='fa fa-search' />;
-const bindableActions = {
-  clearFilter,
-  collapseAll,
-  expandAll,
-  updateFilter
-};
+
 const mapStateToProps = state => ({
-  isAllCollapsed: state.challengesApp.mapUi.isAllCollapsed,
-  filter: state.challengesApp.filter
+  isAllCollapsed: allColapsedSelector(state),
+  filter: filterSelector(state)
 });
+
+function mapDispatchToProps(dispatch) {
+  const dispatchers = bindActionCreators({
+    collapseAll,
+    expandAll,
+    updateFilter
+  }, dispatch);
+  dispatchers.escapeKeyInFilter = e => {
+    if (e.keyCode === ESC) {
+      e.preventDefault();
+      dispatch(escapeKeyInFilter());
+    }
+  };
+  dispatchers.clearFilterPressed = e => {
+    e.preventDefault();
+    dispatch(clearFilterPressed());
+  };
+  return () => dispatchers;
+}
 const propTypes = {
-  clearFilter: PropTypes.func,
+  clearFilterPressed: PropTypes.func,
   collapseAll: PropTypes.func,
+  escapeKeyInFilter: PropTypes.func,
   expandAll: PropTypes.func,
   filter: PropTypes.string,
   isAllCollapsed: PropTypes.bool,
@@ -33,38 +52,22 @@ const propTypes = {
 };
 
 export class Header extends PureComponent {
-  constructor(...props) {
-    super(...props);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleClearButton = this.handleClearButton.bind(this);
-  }
-
-  handleKeyDown(e) {
-    if (e.keyCode === ESC) {
-      e.preventDefault();
-      this.props.clearFilter();
-    }
-  }
-
-  handleClearButton(e) {
-    e.preventDefault();
-    this.props.clearFilter();
-  }
-
-  renderSearchAddon(filter) {
+  renderSearchAddon(filter, clearFilterPressed) {
     if (!filter) {
       return searchIcon;
     }
-    return <span onClick={this.handleClearButton }>{ clearIcon }</span>;
+    return <span onClick={ clearFilterPressed }>{ clearIcon }</span>;
   }
 
   render() {
     const {
-      filter,
-      updateFilter,
+      clearFilterPressed,
       collapseAll,
+      escapeKeyInFilter,
       expandAll,
-      isAllCollapsed
+      filter,
+      isAllCollapsed,
+      updateFilter
     } = this.props;
     const inputClass = classnames({
       'map-filter': true,
@@ -88,7 +91,7 @@ export class Header extends PureComponent {
               className={ buttonClass }
               onClick={ isAllCollapsed ? expandAll : collapseAll }
               >
-                { buttonCopy }
+              { buttonCopy }
             </Button>
           </Row>
           <Row className='map-buttons'>
@@ -97,13 +100,13 @@ export class Header extends PureComponent {
                 autoComplete='off'
                 className={ inputClass }
                 onChange={ updateFilter }
-                onKeyDown={ this.handleKeyDown }
+                onKeyDown={ escapeKeyInFilter }
                 placeholder='Type a challenge name'
                 type='text'
                 value={ filter }
               />
               <InputGroup.Addon>
-                { this.renderSearchAddon(filter) }
+                { this.renderSearchAddon(filter, clearFilterPressed) }
               </InputGroup.Addon>
             </InputGroup>
           </Row>
@@ -117,4 +120,4 @@ export class Header extends PureComponent {
 Header.displayName = 'MapHeader';
 Header.propTypes = propTypes;
 
-export default connect(mapStateToProps, bindableActions)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

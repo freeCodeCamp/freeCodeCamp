@@ -1,5 +1,5 @@
 import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import { createAction, combineTypes, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 
 import * as utils from './utils.js';
@@ -8,10 +8,13 @@ import ns from '../ns.json';
 export const types = createTypes([
   'initMap',
 
-  'clearFilter',
+  'clearFilterPressed',
+  'escapeKeyInFilter',
   'updateFilter',
 
   'toggleThisPanel',
+
+  'isAllCollapsed',
   'collapseAll',
   'expandAll',
 
@@ -23,7 +26,8 @@ export const updateFilter = createAction(
   types.updateFilter,
   e => e.target.value
 );
-export const clearFilter = createAction(types.clearFilter);
+export const clearFilterPressed = createAction(types.clearButtonPressed);
+export const escapeKeyInFilter = createAction(types.escapeKeyInFilter);
 
 export const toggleThisPanel = createAction(types.toggleThisPanel);
 export const collapseAll = createAction(types.collapseAll);
@@ -38,8 +42,11 @@ const initialState = {
 };
 
 export const getNS = state => state[ns];
+export const allColapsedSelector = state => state[ns].isAllCollapsed;
+export const filterSelector = state => state[ns].filter;
+export const mapSelector = state => getNS(state).mapUi;
 export const makePanelOpenSelector = () => createSelector(
-  state => getNS(state).mapUi,
+  mapSelector,
   (_, props) => props.dashedName,
   (mapUi, name) => {
     const node = utils.getNode(mapUi, name);
@@ -77,7 +84,12 @@ export default handleActions(
       ...state,
       filter: payload
     }),
-    [types.clearFilter]: (state) => ({
+    [
+      combineTypes(
+        types.clearFilterPressed,
+        types.escapeKeyInFilter
+      )
+    ]: (state) => ({
       ...state,
       filter: ''
     }),

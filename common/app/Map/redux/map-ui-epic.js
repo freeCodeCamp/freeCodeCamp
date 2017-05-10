@@ -1,5 +1,10 @@
 import { ofType } from 'redux-epic';
-import { types, initMap } from './';
+import {
+  types,
+  initMap,
+
+  mapSelector
+} from './';
 import { unfilterMapUi, applyFilterToMap } from './utils';
 
 export default function mapUiEpic(actions, { getState }) {
@@ -8,7 +13,7 @@ export default function mapUiEpic(actions, { getState }) {
     .map(({ payload: filter = '' }) => filter)
     .distinctUntilChanged()
     .map(filter => {
-      const { challengesApp: { mapUi = {} } } = getState();
+      const mapUi = mapSelector(getState());
       let newMapUi;
       if (filter.length <= 3) {
         newMapUi = unfilterMapUi(mapUi);
