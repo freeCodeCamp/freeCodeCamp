@@ -3,9 +3,8 @@ import { createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 
 import bugEpic from './bug-epic';
-import completionEpic from './completion-epic';
-import nextChallengeEpic from './next-challenge-epic';
-import resetChallengeEpic from './reset-challenge-epic';
+import completionEpic from './completion-epic.js';
+import challengeEpic from './challenge-epic.js';
 
 import ns from '../ns.json';
 import { epics as stepEpics } from '../views/step/redux';
@@ -20,8 +19,6 @@ import {
   viewTypes
 } from '../utils';
 import {
-  types as app,
-
   challengeSelector
 } from '../../../redux';
 import { bonfire, html, js } from '../../../utils/challengeTypes';
@@ -34,14 +31,13 @@ export projectNormalizer from '../views/project/redux';
 export const epics = [
   bugEpic,
   completionEpic,
-  nextChallengeEpic,
-  resetChallengeEpic,
+  challengeEpic,
   ...stepEpics
 ];
 
 export const types = createTypes([
   // challenges
-  'updateCurrentChallenge',
+  'challengeUpdated',
   'resetChallenge',
   'replaceChallenge',
   'resetUi',
@@ -50,14 +46,6 @@ export const types = createTypes([
   'unlockUntrustedCode',
   'closeChallengeModal',
   'updateSuccessMessage',
-
-  // map
-  'updateFilter',
-  'clearFilter',
-  'initMap',
-  'toggleThisPanel',
-  'collapseAll',
-  'expandAll',
 
   // files
   'updateFile',
@@ -100,8 +88,8 @@ export const unlockUntrustedCode = createAction(
   () => null
 );
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
-export const updateCurrentChallenge = createAction(
-  types.updateCurrentChallenge
+export const challengeUpdated = createAction(
+  types.challengeUpdated
 );
 export const resetChallenge = createAction(types.resetChallenge);
 // replaceChallenge(dashedname) => Action
@@ -219,9 +207,7 @@ export const challengeMetaSelector = createSelector(
 
 const mainReducer = handleActions(
   {
-    [app.fetchChallengeCompleted]: (state, { payload }) => {
-      const { entities, result } = payload;
-      const challenge = entities.challenge[result.challenge];
+    [types.challengeUpdated]: (state, { payload: challenge }) => {
       return {
         ...state,
         id: challenge.id,
@@ -327,7 +313,7 @@ const filesReducer = handleActions(
         })
       };
     },
-    [types.updateCurrentChallenge]: (state, { payload: challenge = {} }) => {
+    [types.challengeUpdated]: (state, { payload: challenge = {} }) => {
       if (challenge.type === 'mod') {
         return challenge.files;
       }

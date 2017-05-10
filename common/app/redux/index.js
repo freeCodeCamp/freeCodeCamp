@@ -5,13 +5,13 @@ import { createSelector } from 'reselect';
 
 import { getNS as entitiesSelector } from './entities-reducer.js';
 import fetchUserEpic from './fetch-user-epic.js';
-import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
+import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 
 import ns from '../ns.json';
 
 export const epics = [
   fetchUserEpic,
-  loadCurrentChallengeEpic
+  updateMyCurrentChallengeEpic
 ];
 
 export const types = createTypes([
@@ -32,7 +32,6 @@ export const types = createTypes([
   'updateUserLang',
   'updateUserChallenge',
   'showSignIn',
-  'loadCurrentChallenge',
   'updateMyCurrentChallenge',
 
   'handleError',
@@ -103,6 +102,9 @@ export const fetchChallengesCompleted = createAction(
   (entities, results) => ({ entities, results }),
   entities => ({ entities })
 );
+export const updateCurrentChallenge = createAction(
+  types.updateCurrentChallenge
+);
 
 // updateTitle(title: String) => Action
 export const updateTitle = createAction(types.updateTitle);
@@ -121,15 +123,6 @@ export const addUser = createAction(
 );
 export const updateThisUser = createAction(types.updateThisUser);
 export const showSignIn = createAction(types.showSignIn);
-export const loadCurrentChallenge = createAction(
-  types.loadCurrentChallenge,
-  null,
-  () => createEventMeta({
-    category: 'Nav',
-    action: 'clicked',
-    label: 'fcc logo clicked'
-  })
-);
 export const updateMyCurrentChallenge = createAction(
   types.updateMyCurrentChallenge,
   (username, currentChallengeId) => ({ username, currentChallengeId })

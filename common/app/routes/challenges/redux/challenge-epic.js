@@ -1,24 +1,53 @@
 import debug from 'debug';
 import { Observable } from 'rx';
-import { ofType } from 'redux-epic';
+import { combineEpics, ofType } from 'redux-epic';
 import { push } from 'react-router-redux';
 
 import {
   types,
+
   resetUi,
-  updateCurrentChallenge
+  updateMain,
+  challengeUpdated
 } from './';
 import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock
 } from '../utils';
-import { createErrorObservable } from '../../../redux';
+import {
+  types as app,
+
+  createErrorObservable,
+  updateCurrentChallenge,
+
+  currentChallengeSelector,
+  challengeSelector
+} from '../../../redux';
 import { makeToast } from '../../../Toasts/redux';
 
 const isDev = debug.enabled('fcc:*');
 
-export default function nextChallengeEpic(actions, { getState }) {
+export function challengeUpdatedEpic(actions, { getState }) {
+  return actions::ofType(app.updateCurrentChallenge)
+    .map(() => challengeUpdated(
+      challengeSelector(getState())
+    ));
+}
+
+// used to reset users code on request
+export function resetChallengeEpic(actions, { getState }) {
+  return actions::ofType(types.resetChallenge)
+    .flatMap(() => {
+      const currentChallenge = currentChallengeSelector(getState());
+      return Observable.of(
+        updateCurrentChallenge(currentChallenge),
+        updateMain()
+      );
+    });
+}
+
+export function nextChallengeEpic(actions, { getState }) {
   return actions::ofType(types.moveToNextChallenge)
     .flatMap(() => {
       let nextChallenge;
@@ -76,7 +105,7 @@ export default function nextChallengeEpic(actions, { getState }) {
           );
         }
         return Observable.of(
-          updateCurrentChallenge(nextChallenge),
+          updateCurrentChallenge(nextChallenge.dashedName),
           resetUi(),
           makeToast({ message: 'Your next challenge has arrived.' }),
           push(`/challenges/${nextChallenge.block}/${nextChallenge.dashedName}`)
@@ -86,3 +115,9 @@ export default function nextChallengeEpic(actions, { getState }) {
       }
     });
 }
+
+export default combineEpics(
+  challengeUpdatedEpic,
+  nextChallengeEpic,
+  resetChallengeEpic
+);
