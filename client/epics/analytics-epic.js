@@ -27,7 +27,7 @@ function formatFields({ type, ...fields }) {
   }, { type });
 }
 
-export default function analyticsSaga(actions, getState, { window }) {
+export default function analyticsSaga(actions, { getState }, { window }) {
   const { ga } = window;
   if (typeof ga !== 'function') {
     console.log('GA not found');
@@ -39,5 +39,6 @@ export default function analyticsSaga(actions, getState, { window }) {
     .filter(Boolean)
     // ga always returns undefined
     .map(({ type, ...fields }) => ga('send', type, fields))
+    .ignoreElements()
     .catch(createErrorObservable);
 }

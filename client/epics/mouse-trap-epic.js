@@ -21,8 +21,8 @@ const softRedirects = {
   'g n o': '/settings'
 };
 
-export default function mouseTrapSaga(actions$) {
-  const traps$ = [
+export default function mouseTrapSaga(actions) {
+  const traps = [
     ...Object.keys(softRedirects)
       .map(key => bindKey(key, () => push(softRedirects[key]))),
     bindKey(
@@ -39,5 +39,5 @@ export default function mouseTrapSaga(actions$) {
     ),
     bindKey('g t n', toggleNightMode)
   ];
-  return Observable.merge(traps$).takeUntil(actions$.last());
+  return Observable.merge(traps).takeUntil(actions.last());
 }

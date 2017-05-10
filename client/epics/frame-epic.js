@@ -8,7 +8,10 @@ import {
 
   updateOutput,
   checkChallenge,
-  updateTests
+  updateTests,
+
+  codeLockedSelector,
+  testsSelector
 } from '../../common/app/routes/challenges/redux';
 
 // we use two different frames to make them all essentially pure functions
@@ -98,7 +101,7 @@ export default function frameEpic(actions, { getState }, { window, document }) {
   const frameReady = window.__common[testId + 'Ready'] = new Subject();
   const result = actions::ofType(types.frameMain, types.frameTests)
     // if isCodeLocked is true do not frame user code
-    .filter(() => !getState().challengesApp.isCodeLocked)
+    .filter(() => !codeLockedSelector(getState()))
     .map(action => {
       if (action.type === types.frameMain) {
         return frameMain(action.payload, document, proxyLogger);
@@ -111,7 +114,7 @@ export default function frameEpic(actions, { getState }, { window, document }) {
     proxyLogger.map(updateOutput),
     frameReady.flatMap(({ checkChallengePayload }) => {
       const { frame } = getFrameDocument(document, testId);
-      const { tests } = getState().challengesApp;
+      const { tests } = testsSelector(getState());
       const postTests = Observable.of(
         updateOutput('// tests completed'),
         checkChallenge(checkChallengePayload)

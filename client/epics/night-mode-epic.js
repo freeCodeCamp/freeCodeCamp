@@ -8,7 +8,10 @@ import {
   addThemeToBody,
   updateTheme,
 
-  createErrorObservable
+  createErrorObservable,
+
+  themeSelector,
+  csrfSelector
 } from '../../common/app/redux';
 
 function persistTheme(theme) {
@@ -17,7 +20,7 @@ function persistTheme(theme) {
 
 export default function nightModeSaga(
   actions,
-  getState,
+  { getState },
   { document: { body } }
 ) {
   const toggleBodyClass = actions
@@ -37,7 +40,7 @@ export default function nightModeSaga(
 
   const optimistic = toggle
     .flatMap(() => {
-      const { app: { theme } } = getState();
+      const { theme } = themeSelector(getState());
       const newTheme = !theme || theme === 'default' ? 'night' : 'default';
       persistTheme(newTheme);
       return Observable.of(
@@ -49,7 +52,8 @@ export default function nightModeSaga(
   const ajax = toggle
     .debounce(250)
     .flatMapLatest(() => {
-      const { app: { theme, csrfToken: _csrf } } = getState();
+      const _csrf = csrfSelector(getState());
+      const theme = themeSelector(getState());
       return postJSON$('/update-my-theme', { _csrf, theme })
         .catch(createErrorObservable);
     });
