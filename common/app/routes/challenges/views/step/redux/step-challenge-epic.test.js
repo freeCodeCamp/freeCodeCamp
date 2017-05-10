@@ -4,6 +4,7 @@ import proxy from 'proxyquire';
 import sinon from 'sinon';
 
 import { types } from './';
+import ns from '../ns.json';
 
 config.longStackSupport = true;
 const challengeSelectorStub = {};
@@ -34,7 +35,7 @@ test(file, function(t) {
   t.test('steps back', t => {
     const actions = Observable.of({ type: types.stepBackward });
     const state = {
-      challengesApp: {
+      [ns]: {
         currentIndex: 1,
         unlockedSteps: [ true, undefined ] // eslint-disable-line no-undefined
       }
@@ -74,7 +75,7 @@ test(file, function(t) {
   t.test('steps forward', t => {
     const actions = Observable.of({ type: types.stepForward });
     const state = {
-      challengesApp: {
+      [ns]: {
         currentIndex: 0,
         unlockedSteps: []
       }
@@ -113,7 +114,7 @@ test(file, function(t) {
   });
   t.test('submits on last step forward', t => {
     const actions = Observable.of({ type: types.stepForward });
-    const state = { challengesApp: { currentIndex: 1 } };
+    const state = { [ns]: { currentIndex: 1 } };
     const onNextSpy = sinon.spy();
     challengeSelectorStub.challengeSelector = sinon.spy(_state => {
       t.assert(_state === state, 'challenge selector not called with state');

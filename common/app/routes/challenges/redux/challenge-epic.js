@@ -10,6 +10,7 @@ import {
   updateMain,
   challengeUpdated
 } from './';
+import { getNS as entitiesSelector } from '../../../redux/entities-reducer.js';
 import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,
@@ -22,7 +23,8 @@ import {
   updateCurrentChallenge,
 
   currentChallengeSelector,
-  challengeSelector
+  challengeSelector,
+  superBlocksSelector
 } from '../../../redux';
 import { makeToast } from '../../../Toasts/redux';
 
@@ -56,8 +58,9 @@ export function nextChallengeEpic(actions, { getState }) {
       // let isNewSuperBlock = false;
       try {
         const state = getState();
-        const { challenge, superBlocks } = state.challengesApp;
-        const { entities } = state;
+        const superBlocks = superBlocksSelector(state);
+        const challenge = currentChallengeSelector(state);
+        const entities = entitiesSelector(state);
         nextChallenge = getNextChallenge(challenge, entities, { isDev });
         // block completed.
         if (!nextChallenge) {

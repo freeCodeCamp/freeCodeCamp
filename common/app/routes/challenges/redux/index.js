@@ -176,6 +176,8 @@ export const chatRoomSelector = state => getNS(state).helpChatRoom;
 export const challengeModalSelector =
   state => getNS(state).isChallengeModalOpen;
 
+export const bugModalSelector = state => getNS(state).isBugOpen;
+
 export const challengeMetaSelector = createSelector(
   challengeSelector,
   challenge => {

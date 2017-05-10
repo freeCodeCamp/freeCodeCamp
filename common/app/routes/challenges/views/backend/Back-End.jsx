@@ -13,7 +13,9 @@ import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
 import {
   submitChallenge,
-  executeChallenge
+  executeChallenge,
+  testsSelector,
+  outputSelector
 } from '../../redux';
 import { descriptionRegex } from '../../utils.js';
 import {
@@ -50,8 +52,8 @@ const fieldValidators = {
 
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.output,
-  state => state.challengesApp.tests,
+  outputSelector,
+  testsSelector,
   (
     {
       id,

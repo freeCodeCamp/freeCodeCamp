@@ -207,6 +207,7 @@ const initialState = {
 
 export const getNS = state => state[ns];
 export const langSelector = state => getNS(state).lang;
+export const csrfSelector = state => getNS(state).csrfToken;
 
 export const currentChallengeSelector = state => getNS(state).currentChallenge;
 export const superBlocksSelector = state => getNS(state).superBlocks;

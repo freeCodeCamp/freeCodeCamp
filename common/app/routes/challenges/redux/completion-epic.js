@@ -7,7 +7,9 @@ import {
   moveToNextChallenge,
   clearSavedCode,
 
-  challengeMetaSelector
+  challengeMetaSelector,
+  filesSelector,
+  testsSelector
 } from './';
 
 import {
@@ -15,7 +17,9 @@ import {
   updateUserPoints,
   updateUserChallenge,
 
-  challengeSelector
+  challengeSelector,
+  csrfSelector,
+  userSelector
 } from '../../../redux';
 import { backEndProject } from '../../../utils/challengeTypes.js';
 import { makeToast } from '../../../Toasts/redux';
@@ -41,7 +45,7 @@ function postChallenge(url, username, _csrf, challengeInfo) {
 }
 
 function submitModern(type, state) {
-  const { tests } = state.challengesApp;
+  const tests = testsSelector(state);
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
     if (type === types.checkChallenge) {
       return Observable.just(null);
@@ -49,16 +53,14 @@ function submitModern(type, state) {
 
     if (type === types.submitChallenge) {
       const { id } = challengeSelector(state);
-      const {
-        app: { user, csrfToken },
-        challengesApp: { files }
-      } = state;
-      const challengeInfo = { id, files };
+      const files = filesSelector(state);
+      const { username } = userSelector(state);
+      const csrfToken = csrfSelector(state);
       return postChallenge(
         '/modern-challenge-completed',
-        user,
+        username,
         csrfToken,
-        challengeInfo
+        { id, files }
       );
     }
   }
@@ -69,16 +71,15 @@ function submitModern(type, state) {
 
 function submitProject(type, state, { solution, githubLink }) {
   const { id, challengeType } = challengeSelector(state);
-  const {
-    app: { user, csrfToken }
-  } = state;
+  const { username } = userSelector(state);
+  const csrfToken = csrfSelector(state);
   const challengeInfo = { id, challengeType, solution };
   if (challengeType === backEndProject) {
     challengeInfo.githubLink = githubLink;
   }
   return postChallenge(
     '/project-completed',
-    user,
+    username,
     csrfToken,
     challengeInfo
   );
@@ -86,20 +87,19 @@ function submitProject(type, state, { solution, githubLink }) {
 
 function submitSimpleChallenge(type, state) {
   const { id } = challengeSelector(state);
-  const {
-    app: { user, csrfToken }
-  } = state;
+  const { username } = userSelector(state);
+  const csrfToken = csrfSelector(state);
   const challengeInfo = { id };
   return postChallenge(
     '/challenge-completed',
-    user,
+    username,
     csrfToken,
     challengeInfo
   );
 }
 
 function submitBackendChallenge(type, state, { solution }) {
-  const { tests } = state.challengesApp;
+  const tests = testsSelector(state);
   if (
     type === types.checkChallenge &&
     tests.length > 0 &&
@@ -115,13 +115,13 @@ function submitBackendChallenge(type, state, { solution }) {
       })
     );
     */
-
     const { id } = challengeSelector(state);
-    const { app: { user, csrfToken } } = state;
+    const { username } = userSelector(state);
+    const csrfToken = csrfSelector(state);
     const challengeInfo = { id, solution };
     return postChallenge(
       '/backend-challenge-completed',
-      user,
+      username,
       csrfToken,
       challengeInfo
     );

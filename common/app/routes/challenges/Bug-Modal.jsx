@@ -7,10 +7,12 @@ import ns from './ns.json';
 import {
   createIssue,
   openIssueSearch,
-  closeBugModal
+  closeBugModal,
+
+  bugModalSelector
 } from './redux';
 
-const mapStateToProps = state => ({ isOpen: state.challengesApp.isBugOpen });
+const mapStateToProps = state => ({ isOpen: bugModalSelector(state) });
 const mapDispatchToProps = { createIssue, openIssueSearch, closeBugModal };
 const bugLink = 'http://forum.freecodecamp.com/t/how-to-report-a-bug/19543';
 

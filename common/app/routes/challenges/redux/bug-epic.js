@@ -1,5 +1,12 @@
 import { ofType } from 'redux-epic';
-import { types, closeBugModal } from '../redux';
+import {
+  types,
+  closeBugModal,
+
+  filesSelector
+} from '../redux';
+
+import { currentChallengeSelector } from '../../../redux';
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;
@@ -25,12 +32,9 @@ function filesToMarkdown(files = {}) {
 export default function bugEpic(actions, { getState }, { window }) {
   return actions::ofType(types.openIssueSearch, types.createIssue)
     .map(({ type }) => {
-      const {
-        challengesApp: {
-          legacyKey: challengeName,
-          files
-        }
-      } = getState();
+      const state = getState();
+      const files = filesSelector(state);
+      const challengeName = currentChallengeSelector(state);
       const {
         navigator: { userAgent },
         location: { href }
