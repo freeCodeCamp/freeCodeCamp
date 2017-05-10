@@ -29,7 +29,7 @@ export default function loadCurrentChallengeEpic(actions, { getState }) {
         }
       } = state;
       const firstChallenge = firstChallengeSelector(state);
-      const { user: { currentChallengeId } } = userSelector(state);
+      const { currentChallengeId } = userSelector(state);
       const isOnAChallenge = (/^\/[^\/]{2,6}\/challenges/).test(pathname);
 
       if (!currentChallengeId) {

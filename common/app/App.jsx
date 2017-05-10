@@ -18,7 +18,7 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = state => {
-  const { user: { username } } = userSelector(state);
+  const { username } = userSelector(state);
   return {
     toast: state.app.toast,
     isSignedIn: !!username

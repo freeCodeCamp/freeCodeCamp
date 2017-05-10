@@ -83,7 +83,7 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
     .flatMap(() => {
       let finalFiles;
       const state = getState();
-      const { user } = userSelector(state);
+      const user = userSelector(state);
       const challenge = challengeSelector(state);
       const key = keySelector(state);
       const files = filesSelector(state);

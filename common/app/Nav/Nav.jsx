@@ -33,7 +33,7 @@ import {
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
 const mapStateToProps = state => {
-  const { user: { username, picture, points } } = userSelector(state);
+  const { username, picture, points } = userSelector(state);
   return {
     picture,
     points,

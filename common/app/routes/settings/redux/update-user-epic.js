@@ -54,7 +54,7 @@ export function updateUserLangEpic(actions, { getState }) {
     ))
     .map(({ payload }) => {
       const state = getState();
-      const { user: { languageTag } } = userSelector(state);
+      const { languageTag } = userSelector(state);
       return { lang: payload, oldLang: languageTag };
     });
   const ajaxUpdate = updateLang

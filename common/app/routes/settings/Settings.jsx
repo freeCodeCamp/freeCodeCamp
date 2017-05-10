@@ -37,18 +37,16 @@ const mapStateToProps = createSelector(
   signInLoadingSelector,
   (
     {
-      user: {
-        username,
-        email,
-        isAvailableForHire,
-        isLocked,
-        isGithubCool,
-        isTwitter,
-        isLinkedIn,
-        sendMonthlyEmail,
-        sendNotificationEmail,
-        sendQuincyEmail
-      }
+      username,
+      email,
+      isAvailableForHire,
+      isLocked,
+      isGithubCool,
+      isTwitter,
+      isLinkedIn,
+      sendMonthlyEmail,
+      sendNotificationEmail,
+      sendQuincyEmail
     },
     showLoading,
   ) => ({

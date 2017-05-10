@@ -15,7 +15,7 @@ const propTypes = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ user: { languageTag } }) => ({
+  ({ languageTag }) => ({
     // send null to prevent redux-form from initialize empty
     initialValues: languageTag ? { lang: languageTag } : null
   })

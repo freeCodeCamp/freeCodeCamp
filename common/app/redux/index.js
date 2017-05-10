@@ -220,9 +220,7 @@ export const areChallengesLoadedSelector =
 export const userSelector = createSelector(
   state => getNS(state).user,
   state => entitiesSelector(state).user,
-  (username, userMap) => ({
-    user: userMap[username] || {}
-  })
+  (username, userMap) => userMap[username] || {}
 );
 
 export const challengeSelector = createSelector(

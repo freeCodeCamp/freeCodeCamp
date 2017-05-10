@@ -33,7 +33,7 @@ const makeMapStateToProps = () => createSelector(
   state => state.entities.challenge,
   makePanelHiddenSelector(),
   (
-    { user: { challengeMap: userChallengeMap } },
+    { challengeMap: userChallengeMap },
     dashedName,
     challengeMap,
     isHidden
