@@ -1,5 +1,5 @@
 import { createTypes } from 'redux-create-types';
-import { createAction, combineTypes, handleActions } from 'redux-actions';
+import { createAction, combineActions, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 
 import * as utils from './utils.js';
@@ -85,7 +85,7 @@ export default handleActions(
       filter: payload
     }),
     [
-      combineTypes(
+      combineActions(
         types.clearFilterPressed,
         types.escapeKeyInFilter
       )

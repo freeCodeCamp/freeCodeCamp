@@ -1,6 +1,6 @@
 import { Observable } from 'rx';
 import { createTypes, createAsyncTypes } from 'redux-create-types';
-import { combineTypes, createAction, handleActions } from 'redux-actions';
+import { combineActions, createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 
 import { entitiesSelector } from '../entities';
@@ -262,7 +262,7 @@ const reducer = handleActions(
       ...state,
       theme: payload
     }),
-    [combineTypes(types.showSignIn, types.updateThisUser)]: state => ({
+    [combineActions(types.showSignIn, types.updateThisUser)]: state => ({
       ...state,
       isSignInAttempted: true
     }),
