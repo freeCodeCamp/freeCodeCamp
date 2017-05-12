@@ -10,7 +10,7 @@ import {
   updateMain,
   challengeUpdated
 } from './';
-import { getNS as entitiesSelector } from '../../../redux/entities-reducer.js';
+import { getNS as entitiesSelector } from '../../../entities';
 import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,

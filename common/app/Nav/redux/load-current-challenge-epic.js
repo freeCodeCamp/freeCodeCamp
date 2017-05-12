@@ -11,7 +11,7 @@ import {
   challengeSelector
 } from '../../redux';
 // not ideal but will fix in next commit
-import { getNS as entitesSelector } from '../../redux/entities-reducer.js';
+import { entitiesSelector } from '../../entities';
 
 export default function loadCurrentChallengeEpic(actions, { getState }) {
   return actions::ofType(types.clickOnLogo)
@@ -22,7 +22,7 @@ export default function loadCurrentChallengeEpic(actions, { getState }) {
       const {
         challenge: challengeMap,
         challengeIdToName
-      } = entitesSelector(state);
+      } = entitiesSelector(state);
       const {
         routing: {
           locationBeforeTransition: { pathname } = {}

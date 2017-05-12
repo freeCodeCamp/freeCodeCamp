@@ -14,13 +14,15 @@ import {
 
 import {
   createErrorObservable,
-  updateUserPoints,
-  updateUserChallenge,
 
   challengeSelector,
   csrfSelector,
   userSelector
 } from '../../../redux';
+import {
+  updateUserPoints,
+  updateUserChallenge
+} from '../../../entities';
 import { backEndProject } from '../../../utils/challengeTypes.js';
 import { makeToast } from '../../../Toasts/redux';
 import { postJSON$ } from '../../../../utils/ajax-stream.js';

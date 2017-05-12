@@ -7,12 +7,14 @@ import { makeToast } from '../../../Toasts/redux';
 import {
   fetchChallenges,
   doActionOnError,
-  updateUserFlag,
-  updateUserEmail,
-  updateUserLang,
 
   userSelector
 } from '../../../redux';
+import {
+  updateUserFlag,
+  updateUserEmail,
+  updateUserLang
+} from '../../../entities';
 
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import langs from '../../../../utils/supported-languages';

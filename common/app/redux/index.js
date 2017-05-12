@@ -3,7 +3,7 @@ import { createTypes, createAsyncTypes } from 'redux-create-types';
 import { combineTypes, createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 
-import { getNS as entitiesSelector } from './entities-reducer.js';
+import { entitiesSelector } from '../entities';
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 
@@ -26,11 +26,6 @@ export const types = createTypes([
   'fetchUser',
   'addUser',
   'updateThisUser',
-  'updateUserPoints',
-  'updateUserFlag',
-  'updateUserEmail',
-  'updateUserLang',
-  'updateUserChallenge',
   'showSignIn',
   'updateMyCurrentChallenge',
 
@@ -126,36 +121,6 @@ export const showSignIn = createAction(types.showSignIn);
 export const updateMyCurrentChallenge = createAction(
   types.updateMyCurrentChallenge,
   (username, currentChallengeId) => ({ username, currentChallengeId })
-);
-
-// updateUserPoints(username: String, points: Number) => Action
-export const updateUserPoints = createAction(
-  types.updateUserPoints,
-  (username, points) => ({ username, points })
-);
-// updateUserFlag(username: String, flag: String) => Action
-export const updateUserFlag = createAction(
-  types.updateUserFlag,
-  (username, flag) => ({ username, flag })
-);
-// updateUserEmail(username: String, email: String) => Action
-export const updateUserEmail = createAction(
-  types.updateUserFlag,
-  (username, email) => ({ username, email })
-);
-// updateUserLang(username: String, lang: String) => Action
-export const updateUserLang = createAction(
-  types.updateUserLang,
-  (username, lang) => ({ username, languageTag: lang })
-);
-
-// updateUserChallenge(
-//   username: String,
-//   challengeInfo: Object
-// ) => Action
-export const updateUserChallenge = createAction(
-  types.updateUserChallenge,
-  (username, challengeInfo) => ({ username, challengeInfo })
 );
 
 export const updateAppLang = createAction(types.updateAppLang);

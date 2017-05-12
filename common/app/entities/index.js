@@ -1,9 +1,47 @@
-import { handleActions } from 'redux-actions';
-
-import { types } from './';
+import { createTypes } from 'redux-create-types';
+import { createAction, handleActions } from 'redux-actions';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
+export const entitiesSelector = getNS;
+export const types = createTypes([
+  'updateUserPoints',
+  'updateUserFlag',
+  'updateUserEmail',
+  'updateUserLang',
+  'updateUserChallenge'
+], ns);
+
+// updateUserPoints(username: String, points: Number) => Action
+export const updateUserPoints = createAction(
+  types.updateUserPoints,
+  (username, points) => ({ username, points })
+);
+// updateUserFlag(username: String, flag: String) => Action
+export const updateUserFlag = createAction(
+  types.updateUserFlag,
+  (username, flag) => ({ username, flag })
+);
+// updateUserEmail(username: String, email: String) => Action
+export const updateUserEmail = createAction(
+  types.updateUserFlag,
+  (username, email) => ({ username, email })
+);
+// updateUserLang(username: String, lang: String) => Action
+export const updateUserLang = createAction(
+  types.updateUserLang,
+  (username, lang) => ({ username, languageTag: lang })
+);
+
+// updateUserChallenge(
+//   username: String,
+//   challengeInfo: Object
+// ) => Action
+export const updateUserChallenge = createAction(
+  types.updateUserChallenge,
+  (username, challengeInfo) => ({ username, challengeInfo })
+);
+
 
 const initialState = {
   superBlock: {},

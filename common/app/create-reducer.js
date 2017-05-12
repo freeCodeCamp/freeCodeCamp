@@ -3,7 +3,7 @@ import { reducer as formReducer } from 'redux-form';
 
 import app from './redux';
 import toasts from './Toasts/redux';
-import entities from './redux/entities-reducer';
+import entities from './entities';
 import challenges, { projectNormalizer } from './routes/challenges/redux';
 
 export default function createReducer(sideReducers = {}) {
