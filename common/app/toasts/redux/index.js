@@ -1,6 +1,8 @@
 import { createTypes } from 'redux-create-types';
 import { createAction, handleActions } from 'redux-actions';
 
+import ns from '../ns.json';
+
 export const types = createTypes([
   'makeToast',
   'removeToast'
@@ -27,7 +29,7 @@ export const removeToast = createAction(
 
 const initialState = [];
 
-export default handleActions({
+const reducer = handleActions({
   [types.makeToast]: (state, { payload: toast }) => [
     ...state,
     toast
@@ -36,3 +38,6 @@ export default handleActions({
     toast => toast.key !== key
   )
 }, initialState);
+
+reducer.toString = () => ns;
+export default reducer;

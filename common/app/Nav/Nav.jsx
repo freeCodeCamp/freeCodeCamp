@@ -85,7 +85,6 @@ export class FCCNav extends React.Component {
   constructor(...props) {
     super(...props);
     this.handleMapClickOnMap = this.handleMapClickOnMap.bind(this);
-    this.handleLogoClick = this.handleLogoClick.bind(this);
     navLinks.forEach(({ content }) => {
       this[`handle${content}Click`] = handleNavLinkEvent.bind(this, content);
     });

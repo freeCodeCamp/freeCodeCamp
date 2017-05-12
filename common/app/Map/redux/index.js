@@ -78,7 +78,7 @@ export const makePanelHiddenSelector = () => createSelector(
 //     }]
 //   }
 // }
-export default handleActions(
+export const reducer = handleActions(
   {
     [types.updateFilter]: (state, { payload = '' }) => ({
       ...state,
@@ -126,3 +126,6 @@ export default handleActions(
   },
   initialState
 );
+
+reducer.toString = () => ns;
+export default reducer;
