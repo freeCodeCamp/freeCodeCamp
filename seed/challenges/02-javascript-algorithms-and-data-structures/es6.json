@@ -288,7 +288,7 @@
         "<blockquote>function greeting(name = \"Anonymous\") {<br>  return \"Hello \" + name;<br>}<br>console.log(greeting(\"John\")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>",
         "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>\"Anonymous\"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.",
         "<hr>",
-        "Modify the function <code>increment</code> by adding default parameters so it will always return a valid number and it will add 1 to <code>number</code> if <code>value</code> is not specified.",
+        "Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified.",
         "<strong>Note</strong><br>Don't forget to use strict mode."
       ],
       "challengeSeed": [
