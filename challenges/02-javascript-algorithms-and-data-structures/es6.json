@@ -748,7 +748,7 @@
         "The following is what we refer to as a <dfn>named export</dfn>. With this, we can import any code we export into another file with the <code>import</code> syntax you learned in the last lesson. Here's an example:",
         "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>export { capitalizeString } //How to export functions.<br>export const foo = \"bar\"; //How to export variables.</blockquote>",
         "Alternatively, if you would like to compact all your <code>export</code> statements into one line, you can take this approach:",
-        "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>const foo = \"bar\";<br>export { capitalizeString, bar }</blockquote>",
+        "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>const foo = \"bar\";<br>export { capitalizeString, foo }</blockquote>",
         "Either approach is perfectly acceptable.",
         "<hr>",
         "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated <code>export</code>, export the two variables."
