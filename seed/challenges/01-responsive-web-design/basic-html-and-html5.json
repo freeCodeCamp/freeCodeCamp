@@ -727,6 +727,7 @@
         "Now when users click the \"Go to contact section\" link, they'll be taken to the section of the webpage with the anchor that has the <code>name</code> attribute \"contact\".",
         "<hr>",
         "Change your external link to an internal link by changing the <code>href</code> attribute to \"#bottom\" and the anchor text from \"cat photos\" to \"Jump to Bottom\".",
+        "Don't forget to remove the <code>target=\"_blank\"</code> attribute since this causes the linked document to open in a new window tab.",
         "Then add an anchor link with a <code>name</code> attribute set to \"bottom\" after the last paragraph.",
         "<strong>Note</strong><br>Additional kitty ipsum text has been added to the paragraphs to better show the effect of clicking the internal anchor link to jump to the bottom of the page. Also, this change will only apply to this challenge. The next challenge goes back to showing your external link."
       ],
