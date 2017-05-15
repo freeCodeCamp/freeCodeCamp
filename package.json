@@ -51,6 +51,7 @@
     "dedent": "~0.7.0",
     "dotenv": "^4.0.0",
     "emmet-codemirror": "^1.2.5",
+    "enzyme": "^2.8.2",
     "errorhandler": "^1.4.2",
     "es6-map": "~0.1.1",
     "express": "^4.13.3",
