@@ -1,4 +1,5 @@
 import Rx, { Observable, Subject } from 'rx';
+import { shallow, mount } from 'enzyme'
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
@@ -18,6 +19,9 @@ const mainId = 'fcc-main-frame';
 const testId = 'fcc-test-frame';
 
 const createHeader = (id = mainId) => `
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js">
+  </script>
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg, url, ln, col, err) {
@@ -76,6 +80,9 @@ function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
+  // add Enzyme methods for testing React components
+  tests.mount = mount;
+  tests.shallow = shallow;
   // default for classic challenges
   // should not be used for modern
   tests.__source = sources['index'] || '';
