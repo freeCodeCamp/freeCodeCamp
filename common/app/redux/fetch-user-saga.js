@@ -10,7 +10,7 @@ import {
 } from './actions';
 
 const { fetchUser } = types;
-export default function getUserSaga(action$, getState, { services }) {
+export default function getUserSaga(action$, { getState }, { services }) {
   return action$
     .filter(action => action.type === fetchUser)
     .flatMap(() => {

@@ -103,7 +103,7 @@ function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   tests.close();
 }
 
-export default function frameEpic(actions, getState, { window, document }) {
+export default function frameEpic(actions, { getState }, { window, document }) {
   // we attach a common place for the iframes to pull in functions from
   // the main process
   window.__common = {};

@@ -17,7 +17,7 @@ import combineSagas from '../../utils/combine-sagas';
 import { postJSON$ } from '../../utils/ajax-stream';
 
 const log = debug('fcc:app/redux/load-current-challenge-saga');
-export function updateMyCurrentChallengeSaga(actions, getState) {
+export function updateMyCurrentChallengeSaga(actions, { getState }) {
   const updateChallenge$ = getActionsOfType(
     actions,
     updateCurrentChallenge.toString()
@@ -46,7 +46,7 @@ export function updateMyCurrentChallengeSaga(actions, getState) {
   return Observable.merge(optimistic, ajaxUpdate);
 }
 
-export function loadCurrentChallengeSaga(actions, getState) {
+export function loadCurrentChallengeSaga(actions, { getState }) {
   return getActionsOfType(actions, types.loadCurrentChallenge)
     .flatMap(() => {
       let finalChallenge;

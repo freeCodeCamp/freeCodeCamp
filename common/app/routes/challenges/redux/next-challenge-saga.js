@@ -14,7 +14,7 @@ import debug from 'debug';
 const isDev = debug.enabled('fcc:*');
 const { moveToNextChallenge } = types;
 
-export default function nextChallengeSaga(actions$, getState) {
+export default function nextChallengeSaga(actions$, { getState }) {
   return actions$
     .filter(({ type }) => type === moveToNextChallenge)
     .flatMap(() => {
