@@ -83,7 +83,7 @@ export const trackSocial = createAction(
 );
 
 export const fetchChallenge = createAction(
-  types.fetchChallenge,
+  '' + types.fetchChallenge,
   (dashedName, block) => ({ dashedName, block })
 );
 export const fetchChallengeCompleted = createAction(
@@ -91,7 +91,7 @@ export const fetchChallengeCompleted = createAction(
   (_, result) => result,
   entities => ({ entities })
 );
-export const fetchChallenges = createAction(types.fetchChallenges);
+export const fetchChallenges = createAction('' + types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
   types.fetchChallenges.complete,
   (entities, results) => ({ entities, results }),
