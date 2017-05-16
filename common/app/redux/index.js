@@ -6,11 +6,13 @@ import { createSelector } from 'reselect';
 import { entitiesSelector } from '../entities';
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
+import fetchChallengesEpic from './fetch-challenges-epic.js';
 
 import ns from '../ns.json';
 
 export const epics = [
   fetchUserEpic,
+  fetchChallengesEpic,
   updateMyCurrentChallengeEpic
 ];
 
@@ -247,8 +249,8 @@ const reducer = handleActions(
     }),
     [types.fetchChallenges.complete]: (state, { payload }) => ({
       ...state,
-      superBlocks: payload.result,
-      areChallengesLoaded: payload.result.length > 0
+      superBlocks: payload.results,
+      areChallengesLoaded: payload.results.length > 0
     }),
     [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
       ...state,

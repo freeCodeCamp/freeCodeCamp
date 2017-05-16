@@ -18,7 +18,7 @@ import { shapeChallenges } from './utils';
 const isDev = debug.enabled('fcc:*');
 
 export function fetchChallengeEpic(actions, { getState }, { services }) {
-  return actions::ofType(types.fetchChallenge)
+  return actions::ofType('' + types.fetchChallenge)
     .flatMap(({ payload: { dashedName, block } }) => {
       const lang = langSelector(getState());
       const options = {
@@ -46,7 +46,7 @@ export function fetchChallengesEpic(
   { getState },
   { services }
 ) {
-  return actions::ofType(types.fetchChallenges)
+  return actions::ofType('' + types.fetchChallenges)
     .flatMap(() => {
       const lang = langSelector(getState());
       const options = {
@@ -62,7 +62,7 @@ export function fetchChallengesEpic(
           ),
           ...res
         }))
-        .flatMap(({ entities, result } = {}) => {
+        .map(({ entities, result } = {}) => {
           return fetchChallengesCompleted(
             entities,
             result
