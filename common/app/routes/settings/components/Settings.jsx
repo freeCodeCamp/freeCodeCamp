@@ -9,7 +9,7 @@ import LockedSettings from './Locked-Settings.jsx';
 import SocialSettings from './Social-Settings.jsx';
 import EmailSettings from './Email-Setting.jsx';
 import LanguageSettings from './Language-Settings.jsx';
-import SKWave from '../../../components/SK-Wave.jsx';
+import SettingsSkeleton from './SettingsSkeleton.jsx';
 
 
 import { toggleUserFlag } from '../redux/actions.js';
@@ -115,7 +115,7 @@ export class Settings extends React.Component {
       toggleNotificationEmail
     } = this.props;
     if (!username && !showLoading) {
-      return <SKWave />;
+      return <SettingsSkeleton />;
     }
     if (children) {
       return (
