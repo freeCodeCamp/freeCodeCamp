@@ -5,7 +5,7 @@ import {
   updateMain
 } from './actions';
 
-export default function resetChallengeSaga(actions$, getState) {
+export default function resetChallengeSaga(actions$, { getState }) {
   return actions$
     .filter(({ type }) => type === types.resetChallenge)
     .flatMap(() => {

@@ -15,7 +15,7 @@ function persistTheme(theme) {
 
 export default function nightModeSaga(
   actions,
-  getState,
+  { getState },
   { document: { body } }
 ) {
   const toggleBodyClass = actions
