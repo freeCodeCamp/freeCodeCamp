@@ -18,6 +18,7 @@ export default createTypes([
   'updateMyCurrentChallenge',
 
   'handleError',
+  'babelError',
   // used to hit the server
   'hardGoTo',
   'delayedRedirect',

@@ -1,5 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider, connect } from 'react-redux';
 import Rx, { Observable, Subject } from 'rx';
-import { shallow, mount } from 'enzyme'
+import { shallow, mount } from 'enzyme';
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
@@ -19,9 +23,6 @@ const mainId = 'fcc-main-frame';
 const testId = 'fcc-test-frame';
 
 const createHeader = (id = mainId) => `
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js">
-  </script>
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg, url, ln, col, err) {
@@ -30,7 +31,6 @@ const createHeader = (id = mainId) => `
     };
   </script>
 `;
-
 
 function createFrame(document, id = mainId) {
   const frame = document.createElement('iframe');
@@ -51,6 +51,16 @@ function getFrameDocument(document, id = mainId) {
     frame = createFrame(document, id);
   }
   frame.contentWindow.loopProtect = loopProtect;
+
+  /* Bind React & Redux depenendencies to content window to they are
+   * in scope during code evaluation and testing. These could also
+   * be injected as CDN in the header created above. */
+  frame.contentWindow.React = React;
+  frame.contentWindow.ReactDOM = ReactDOM;
+  frame.contentWindow.createStore = createStore;
+  frame.contentWindow.Provider = Provider;
+  frame.contentWindow.connect = connect;
+
   return {
     frame: frame.contentDocument || frame.contentWindow.document,
     frameWindow: frame.contentWindow
