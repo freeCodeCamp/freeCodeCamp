@@ -1,0 +1,37 @@
+// should be the same as the filename and ./ns.json
+@ns: settings;
+
+@skeleton-gray: #b0bdb7;
+
+@keyframes pulsingOverlay {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.@{ns}-skeleton {
+  background-color: #fff;
+  z-index: 10;
+  animation-name:  pulsingOverlay;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+
+  .placeholder-string {
+    background-color: @skeleton-gray;
+    box-shadow: 0px 0px 12px 6px @skeleton-gray;
+    color: @skeleton-gray;
+  }
+  .btn-link-social {
+    background-color: @skeleton-gray;
+    border-color: @skeleton-gray;
+    box-shadow: 0px 0px 12px 6px @skeleton-gray;
+  }
+}
