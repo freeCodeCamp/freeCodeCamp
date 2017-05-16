@@ -49,8 +49,8 @@ const mapDispatchToProps = {
     e.preventDefault();
     return clickOnLogo();
   },
-  closeDropdown,
-  openDropdown,
+  closeDropdown: () => closeDropdown(),
+  openDropdown: () => openDropdown(),
   trackEvent
 };
 
