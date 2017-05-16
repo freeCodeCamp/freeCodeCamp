@@ -15,19 +15,19 @@ export default function getUserEpic(actions, { getState }, { services }) {
   return actions::ofType(types.fetchUser)
     .flatMap(() => {
       return services.readService$({ service: 'user' })
+        .filter(({ entities, result }) => entities && !!result)
         .flatMap(({ entities, result })=> {
-          if (!entities || !result) {
-            return Observable.just(showSignIn());
-          }
           const user = entities.user[result];
           const isNightMode = user.theme === 'night';
-          return Observable.of(
+          const actions = [
             addUser(entities),
             updateThisUser(result),
             isNightMode ? updateTheme(user.theme) : null,
             isNightMode ? addThemeToBody(user.theme) : null
-          );
+          ];
+          return Observable.from(actions).filter(Boolean);
         })
+        .defaultIfEmpty(showSignIn())
         .catch(createErrorObservable);
     });
 }
