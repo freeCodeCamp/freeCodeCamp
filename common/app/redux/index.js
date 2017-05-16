@@ -245,7 +245,7 @@ const reducer = handleActions(
     }),
     [types.fetchChallenge.complete]: (state, { payload }) => ({
       ...state,
-      currentChallenge: payload.result
+      currentChallenge: payload.challenge
     }),
     [types.fetchChallenges.complete]: (state, { payload }) => ({
       ...state,

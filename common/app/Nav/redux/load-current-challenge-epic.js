@@ -1,6 +1,4 @@
-import { Observable } from 'rx';
 import { ofType } from 'redux-epic';
-import { push } from 'react-router-redux';
 
 import { types } from './';
 import {
@@ -10,12 +8,12 @@ import {
   firstChallengeSelector,
   challengeSelector
 } from '../../redux';
-// not ideal but will fix in next commit
 import { entitiesSelector } from '../../entities';
 
 export default function loadCurrentChallengeEpic(actions, { getState }) {
   return actions::ofType(types.clickOnLogo)
-    .flatMap(() => {
+    .debounce(500)
+    .map(() => {
       let finalChallenge;
       const state = getState();
       const { id: currentlyLoadedChallengeId } = challengeSelector(state);
@@ -25,7 +23,7 @@ export default function loadCurrentChallengeEpic(actions, { getState }) {
       } = entitiesSelector(state);
       const {
         routing: {
-          locationBeforeTransition: { pathname } = {}
+          locationBeforeTransitions: { pathname } = {}
         }
       } = state;
       const firstChallenge = firstChallengeSelector(state);
@@ -39,21 +37,25 @@ export default function loadCurrentChallengeEpic(actions, { getState }) {
           challengeIdToName[ currentChallengeId ]
         ];
       }
-      if (
-        // data might not be there yet, ignore for now
-        !finalChallenge ||
-        // are we already on that challenge?
-        (isOnAChallenge && finalChallenge.id === currentlyLoadedChallengeId)
-      ) {
-        // don't reload if the challenge is already loaded.
-        // This may change to toast to avoid user confusion
-        return Observable.empty();
-      }
-      return Observable.of(
-        updateCurrentChallenge(finalChallenge.dashedName),
-        push(
-          `/challenges/${finalChallenge.block}/${finalChallenge.dashedName}`
-        )
-      );
+      return {
+        finalChallenge,
+        isOnAChallenge,
+        currentlyLoadedChallengeId
+      };
+    })
+    .filter(({
+      finalChallenge,
+      isOnAChallenge,
+      currentlyLoadedChallengeId
+    }) => (
+      // data might not be there yet, filter out for now
+      !!finalChallenge &&
+      // are we already on that challenge? if not load challenge
+      (!isOnAChallenge || finalChallenge.id !== currentlyLoadedChallengeId)
+      // don't reload if the challenge is already loaded.
+      // This may change to toast to avoid user confusion
+    ))
+    .map(({ finalChallenge }) => {
+      return updateCurrentChallenge(finalChallenge.dashedName);
     });
 }

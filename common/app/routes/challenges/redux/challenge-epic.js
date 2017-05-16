@@ -31,10 +31,17 @@ import { makeToast } from '../../../Toasts/redux';
 const isDev = debug.enabled('fcc:*');
 
 export function challengeUpdatedEpic(actions, { getState }) {
-  return actions::ofType(app.updateCurrentChallenge)
-    .map(() => challengeUpdated(
-      challengeSelector(getState())
-    ));
+  return actions::ofType(
+      app.updateCurrentChallenge,
+      app.fetchChallenge.complete
+    )
+    .flatMap(() => {
+      const challenge = challengeSelector(getState());
+      return Observable.of(
+        challengeUpdated(challenge),
+        push(`/challenges/${challenge.block}/${challenge.dashedName}`)
+      );
+    });
 }
 
 // used to reset users code on request
@@ -110,8 +117,7 @@ export function nextChallengeEpic(actions, { getState }) {
         return Observable.of(
           updateCurrentChallenge(nextChallenge.dashedName),
           resetUi(),
-          makeToast({ message: 'Your next challenge has arrived.' }),
-          push(`/challenges/${nextChallenge.block}/${nextChallenge.dashedName}`)
+          makeToast({ message: 'Your next challenge has arrived.' })
         );
       } catch (err) {
         return createErrorObservable(err);

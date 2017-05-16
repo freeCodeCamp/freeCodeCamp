@@ -1,8 +1,13 @@
 import { createTypes } from 'redux-create-types';
 import { createAction, handleActions } from 'redux-actions';
 
+import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
 import ns from '../ns.json';
 import { createEventMeta } from '../../redux';
+
+export const epics = [
+  loadCurrentChallengeEpic
+];
 
 export const types = createTypes([
   'clickOnLogo',
