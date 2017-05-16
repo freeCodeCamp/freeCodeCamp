@@ -19,7 +19,6 @@ export const challengeSelector = createSelector(
     const title = blockName && challenge.title ?
                   `${blockName}: ${challenge.title}` :
                   challenge.title;
-
     return {
       challenge,
       title,
@@ -29,9 +28,11 @@ export const challengeSelector = createSelector(
         submitTypes[challenge && challenge.type] ||
         'tests',
       showPreview: challengeType === html,
+      /* eslint-disable no-nested-ternary */
       mode: challenge && challengeType === html ?
-        'text/html' :
+        'text/html' : challengeType === 8 ? 'jsx' :
         'javascript'
+      /* eslint-enable no-nested-ternary */
     };
   }
 );

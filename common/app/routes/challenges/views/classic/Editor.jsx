@@ -2,13 +2,18 @@ import { Subject } from 'rx';
 import React, { PropTypes } from 'react';
 import { createSelector } from 'reselect';
 
-import Codemirror from 'react-codemirror';
 import NoSSR from 'react-no-ssr';
 import PureComponent from 'react-pure-render/component';
 import MouseTrap from 'mousetrap';
 
 import ns from './ns.json';
 import CodeMirrorSkeleton from '../../Code-Mirror-Skeleton.jsx';
+
+let CodeMirror = null;
+if (typeof window !== 'undefined' && typeof window.navigator !== 'undefined') {
+  CodeMirror = require('react-codemirror');
+  require('react-codemirror/node_modules/codemirror/mode/jsx/jsx');
+}
 
 const editorDebounceTimeout = 750;
 
@@ -37,7 +42,7 @@ const propTypes = {
   updateFile: PropTypes.func
 };
 
-export default class Editor extends PureComponent {
+  export default class Editor extends PureComponent {
   constructor(...args) {
     super(...args);
     this._editorContent$ = new Subject();
@@ -51,6 +56,8 @@ export default class Editor extends PureComponent {
     (options, executeChallenge, mode) => ({
       ...options,
       mode,
+      /* disable linting for React challenges for now... */
+      lint: !(mode === 'jsx'),
       extraKeys: {
         Esc() {
           document.activeElement.blur();
@@ -125,7 +132,7 @@ export default class Editor extends PureComponent {
     return (
       <div className={ `${ns}-editor` }>
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
-          <Codemirror
+          <CodeMirror
             onChange={ this.handleChange }
             options={ this.createOptions({ executeChallenge, mode, options }) }
             ref='editor'
