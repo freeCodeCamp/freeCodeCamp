@@ -129,6 +129,8 @@ function metaReducer(state = initialState, action) {
   return state;
 }
 
+export const challengeMapSelector = state => getNS(state).challenge;
+
 export default function entitiesReducer(state, action) {
   const newState = metaReducer(state, action);
   const user = userReducer(newState.user, action);

@@ -12,6 +12,7 @@ import {
   makePanelHiddenSelector
 } from './redux';
 import { userSelector } from '../redux';
+import { challengeMapSelector } from '../entities';
 
 const propTypes = {
   block: PropTypes.string,
@@ -26,11 +27,20 @@ const propTypes = {
   isRequired: PropTypes.bool,
   title: PropTypes.string
 };
-const mapDispatchToProps = { clickOnChallenge };
+function mapDispatchToProps(dispatch, { dashedName }) {
+  const dispatchers = {
+    clickOnChallenge: e => {
+      e.preventDefault();
+      return dispatch(clickOnChallenge(dashedName));
+    }
+  };
+  return () => dispatchers;
+}
+
 const makeMapStateToProps = () => createSelector(
   userSelector,
-  (_, props) => props.dashedName,
-  state => state.entities.challenge,
+  (_, { dashedName }) => dashedName,
+  challengeMapSelector,
   makePanelHiddenSelector(),
   (
     { challengeMap: userChallengeMap },
@@ -38,36 +48,30 @@ const makeMapStateToProps = () => createSelector(
     challengeMap,
     isHidden
   ) => {
-    const challenge = challengeMap[dashedName] || {};
-    let isCompleted = false;
-    if (userChallengeMap) {
-      isCompleted = !!userChallengeMap[challenge.id];
-    }
+    const {
+      id,
+      title,
+      block,
+      isLocked,
+      isRequired,
+      isComingSoon
+    } = challengeMap[dashedName] || {};
+    const isCompleted = userChallengeMap ? !!userChallengeMap[id] : false;
     return {
       dashedName,
-      challenge,
       isHidden,
       isCompleted,
-      title: challenge.title,
-      block: challenge.block,
-      isLocked: challenge.isLocked,
-      isRequired: challenge.isRequired,
-      isComingSoon: challenge.isComingSoon,
+      title,
+      block,
+      isLocked,
+      isRequired,
+      isComingSoon,
       isDev: debug.enabled('fcc:*')
     };
   }
 );
 
 export class Challenge extends PureComponent {
-  constructor(...args) {
-    super(...args);
-    this.handleChallengeClick = this.handleChallengeClick.bind(this);
-  }
-
-  handleChallengeClick() {
-    this.props.clickOnChallenge(this.props.challenge);
-  }
-
   renderCompleted(isCompleted, isLocked) {
     if (isLocked || !isCompleted) {
       return null;
@@ -112,15 +116,16 @@ export class Challenge extends PureComponent {
 
   render() {
     const {
-      title,
-      dashedName,
       block,
+      clickOnChallenge,
+      dashedName,
+      isComingSoon,
+      isCompleted,
+      isDev,
+      isHidden,
       isLocked,
       isRequired,
-      isCompleted,
-      isComingSoon,
-      isDev,
-      isHidden
+      title
     } = this.props;
     if (isHidden) {
       return null;
@@ -149,7 +154,7 @@ export class Challenge extends PureComponent {
         key={ title }
         >
         <Link to={ `/challenges/${block}/${dashedName}` }>
-          <span onClick={ this.handleChallengeClick }>
+          <span onClick={ clickOnChallenge }>
             { title }
             { this.renderCompleted(isCompleted, isLocked) }
             { this.renderRequired(isRequired) }
