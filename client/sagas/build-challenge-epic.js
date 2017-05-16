@@ -9,7 +9,10 @@ import {
   challengeSelector
 } from '../../common/app/routes/challenges/redux/selectors';
 import types from '../../common/app/routes/challenges/redux/types';
-import { createErrorObservable } from '../../common/app/redux/actions';
+import {
+  createErrorObservable,
+  createBabelErrorObservable
+} from '../../common/app/redux/actions';
 import {
   frameMain,
   frameTests,
@@ -30,6 +33,7 @@ export default function buildChallengeEpic(actions, getState) {
       const {
         challenge: {
           required = [],
+          challengeType: challengeNumber,
           type: challengeType
         }
       } = challengeSelector(state);
@@ -38,6 +42,39 @@ export default function buildChallengeEpic(actions, getState) {
           .map(frameTests)
           .startWith(initOutput('// running test'));
       }
+      /* this is a React Challenge: */
+      if (challengeNumber === 8) {
+        return buildClassic(files, required, shouldProxyConsole)
+          .flatMap(payload => {
+            const actions = [
+              frameMain(payload)
+            ];
+            if (type === types.executeChallenge) {
+              actions.push(saveCode(), frameTests(payload));
+            }
+            return Observable.from(actions, null, null, Scheduler.default);
+          })
+          .startWith((
+            type === types.executeChallenge ?
+              initOutput('// running test') :
+              null
+          ))
+          .catch(e => {
+            const { name } = e;
+            /* Catch any errors from above. If they look like a
+             * transpilation error, throw an error toast for the
+             * user. This allows us to avoid having a test for
+             * successful code transilation on every challenge. */
+            if (name === 'SyntaxError' || name === 'TypeError') {
+              return createBabelErrorObservable(e);
+            } else {
+              console.log(name);
+              console.warn('HEY! There is a new error!');
+              return Observable.empty();
+            }
+          });
+      }
+
       return buildClassic(files, required, shouldProxyConsole)
         .flatMap(payload => {
           const actions = [

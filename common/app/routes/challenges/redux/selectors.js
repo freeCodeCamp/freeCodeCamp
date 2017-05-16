@@ -19,6 +19,7 @@ export const challengeSelector = createSelector(
     const title = blockName && challenge.title ?
                   `${blockName}: ${challenge.title}` :
                   challenge.title;
+
     return {
       challenge,
       title,
