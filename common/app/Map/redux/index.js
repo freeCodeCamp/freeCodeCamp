@@ -26,7 +26,7 @@ export const updateFilter = createAction(
   types.updateFilter,
   e => e.target.value
 );
-export const clearFilterPressed = createAction(types.clearButtonPressed);
+export const clearFilterPressed = createAction(types.clearFilterPressed);
 export const escapeKeyInFilter = createAction(types.escapeKeyInFilter);
 
 export const toggleThisPanel = createAction(types.toggleThisPanel);
