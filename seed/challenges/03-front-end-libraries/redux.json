@@ -84,6 +84,32 @@
       "challengeType": 8,
       "isRequired": false,
       "translations": {}
+    },
+    {
+      "id": "bdv123c01os1eddzaeb418aq",
+      "title": "",
+      "description": [
+        "",
+        "",
+        ""
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "tail": [
+       ""
+      ],
+      "solutions": [],
+      "tests": [
+        "assert((function(){ try { }; catch(e) { }; return true })(), 'message: ');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
     }
   ]
 }
