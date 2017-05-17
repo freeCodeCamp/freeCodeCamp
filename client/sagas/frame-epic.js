@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider, connect } from 'react-redux';
 import Rx, { Observable, Subject } from 'rx';
 import { shallow, mount } from 'enzyme';
@@ -53,11 +53,13 @@ function getFrameDocument(document, id = mainId) {
   frame.contentWindow.loopProtect = loopProtect;
 
   /* Bind React & Redux depenendencies to content window to they are
-   * in scope during code evaluation and testing. These could also
-   * be injected as CDN in the header created above. */
+   * in scope during code evaluation and testing. These imports will
+   * add a lot of code to the app bundle... can they be provided
+   * by a CDN to the client to avoid this? */
   frame.contentWindow.React = React;
   frame.contentWindow.ReactDOM = ReactDOM;
   frame.contentWindow.createStore = createStore;
+  frame.contentWindow.combineReducers = combineReducers;
   frame.contentWindow.Provider = Provider;
   frame.contentWindow.connect = connect;
 
