@@ -63,6 +63,55 @@
       "translations": {}
     },
     {
+      "id": "zd7123czi8s1eddzaeu413aq",
+      "title": "Learn About Self-Closing JSX Tags",
+      "description": [
+        "<strong>Intro:</strong> So far, you’ve seen how JSX differs from HTML in a key way with the use of <code>className</code> vs. <code>class</code> for defining HTML classes. Another important way in which JSX differs from HTML is in the idea of the self-closing tag.",
+        "In HTML, almost all tags have both an opening and closing tag: <code>&lt;div&gt;&lt;/div&gt;</code>; the closing tag always has a forward slash before the tag name that you are closing. However, there are special instances in HTML called “self-closing tags”, or tags that don’t require both an opening and closing tag before another tag can start. For example the line-break tag can be written as <code>&lt;br&gt;</code> or as <code>&lt;br /&gt;</code>, but should never be written as <code>&lt;br&gt;&lt;/br&gt;</code>, since it doesn't contain any content.",
+        "In JSX, the rules are a little different. Any JSX element can be written with a self-closing tag, and every element must be closed. The line-break tag, for example, must always be written as <code>&lt;br /&gt;</code> in order to be valid JSX that can be transpiled. A <code>&lt;div&gt;</code>, on the other hand, can be written as <code>&lt;div /&gt;</code> or <code>&lt;div&gt;&lt;/div&gt;</code>. The difference is that in the first syntax version there is no way to include anything in the <code>&lt;div /&gt;</code>. You will see in later challenges that this syntax is useful when rendering React components.",
+        "<strong>Instructions:</strong> Fix the errors in the code editor so that it is valid JSX and successfully transpiles. Make sure you don't change any of the content - you only need to close tags where they are needed."
+      ],
+      "head": [
+        "var testNode = document.createElement('div');",
+        "testNode.id = 'challenge-node';",
+        "document.body.appendChild(testNode);"
+      ],
+      "challengeSeed": [
+        "",
+        "var JSX = (",
+        "<div>",
+        " {/* change code below this line */}",
+        " <h2>Welcome to React!</h2> <br >",
+        " <p>Be sure to close all tags!</p>",
+        " <hr >",
+        " {/* change code above this line */}",
+        "</div>",
+        ");",
+        "",
+        "ReactDOM.render(JSX, document.getElementById('challenge-node'));",
+        ""
+      ],
+      "tail": [
+        "var mountedNode = document.getElementById('challenge-node');",
+        "var Mock;",
+        "try { Mock = eval(JSX); } catch(e) { Mock = null; }",
+        "var ShallowComponent;",
+        "try { ShallowComponent = document.shallow(Mock); } catch(e) { ShallowComponent = null; };"
+      ],
+      "solutions": [],
+      "tests": [
+        "assert(Mock.type === 'div', 'message: The JSX variable should return a <code>div</code> element.');",
+        "assert(ShallowComponent.contains(React.createElement('hr')), 'message: The <code>div</code> should contain an <code>hr</code> tag.');",
+        "assert(ShallowComponent.contains(React.createElement('br')), 'message: The <code>div</code> should contain a <code>br</code> tag.');",
+        "assert((function() { var node = mountedNode.childNodes[0].innerHTML.replace(/\\s/g,''); return (node.includes('<h2>WelcometoReact!</h2>') && node.includes('<p>Besuretoclosealltags!</p>')); })(), 'message: The provided JSX element should render as is to the DOM node with id <code>challenge-node</code>.');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
       "id": "bd7123c9c441eddfaeb413av",
       "title": "Create a Stateless Functional Component",
       "description": [
