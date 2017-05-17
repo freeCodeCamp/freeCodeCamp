@@ -111,7 +111,7 @@
       "translations": {}
     },
     {
-      "id": "bd7123c9c441eddfaeb413aq",
+      "id": "bd7123c9c441eddfaeb413gq",
       "title": "Create a React Component",
       "description": [
         "<strong>Intro:</strong> The other way to define a React component is with the ES6 <code>class</code> syntax. In the following example, <code>Kitten</code> extends <code>React.Component</code>:",
@@ -155,7 +155,7 @@
       "translations": {}
     },
     {
-      "id": "bd7123cfda41eddfaeb413aq",
+      "id": "bd7123cfda41eddfaeb413aj",
       "title": "Bind 'this' with an ES6 Arrow Function",
       "description": [
         "<strong>Intro:</strong> There is another way to bind <code>this</code> when writing methods in React component classes. A useful, concise way is to use an ES6 arrow function. It does not assign its own value for <code>this</code>, but instead adopts the value of <code>this</code> from the context surrounding the function when it is written. In other words, an arrow function binds <code>this</code> automatically from its surrounding context.",
@@ -203,7 +203,7 @@
       "translations": {}
     },
     {
-      "id": "bd7123c01os1eddzaeb413aq",
+      "id": "zd7123c01os1eddzaeu413aq",
       "title": "",
       "description": [
         "",

@@ -5,7 +5,7 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7dbc367417b2b2512bb0",
+      "id": "587d7dbc367417b2b25x2bb0",
       "title": "Introduction to the React and Redux Challenges",
       "description": [
         [
@@ -15,7 +15,7 @@
           ""
         ]
       ],
-      "releasedOn": "Feb 17, 2017",
+      "releasedOn": "May 25, 2017",
       "challengeSeed": [],
       "tests": [],
       "type": "waypoint",
@@ -24,8 +24,8 @@
       "translations": {}
     },
     {
-      "id": "bd7m23c01os1ed1za3b413aq",
-      "title": "",
+      "id": "bjfhdy287lm1ed1za37413aq",
+      "title": "React Redux 1",
       "description": [
         "",
         "",
