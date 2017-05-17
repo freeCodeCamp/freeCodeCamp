@@ -150,7 +150,6 @@
       ],
       "solutions": [],
       "tests": [
-        "assert((function(){ return true })(), 'message: Your code does not transpile.');",
         "assert(Mock.find('div').length === 1 && Mock.find('div').children().nodes[0].tagName === 'BUTTON' && Mock.find('div').children().nodes[1].tagName === 'H1', 'message: MyComponent should return a div element which wraps two elements, a <code>button</code> and an <code>h1</code> element, in that order.');",
         "assert(Mock.state('message') === 'Hello!', 'message: The state of MyComponent should initialize with a message containing the string <code>Hello!<code>');",
         "assert((function() {Mock.setState({message: 'InitialState!'});var before = Mock.state('message');Mock.find('button').simulate('click');var after = Mock.state('message');return (before === 'InitialState!' && after === 'Goodbye!'); })(), 'message: Clicking the button element should run the <code>setMessage</code> method and upate the message property in the state to say <code>Goodbye!</code>');",
@@ -169,7 +168,7 @@
         ""
       ],
       "challengeSeed": [
-       "class MyComponent extends React.Component {"
+       ""
       ],
       "tail": [
        "var MyComponent; try { MyComponent = eval(MyComponent); } catch (err) { console.warn(err); }",
@@ -177,7 +176,30 @@
       ],
       "solutions": [],
       "tests": [
-        "assert((function(){ try { ShallowComponent = document.shallow(React.createElement(MyComponent)); } catch(e) { return false; } console.log(ShallowComponent); return true })(), 'message: Your code does not transpile.');"
+        "assert((function(){ try { }; catch(e) { }; return true })(), 'message: .');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "bd7123c01os1eddzaeb413aq",
+      "title": "",
+      "description": [
+        ""
+      ],
+      "challengeSeed": [
+       ""
+      ],
+      "tail": [
+       "var MyComponent; try { MyComponent = eval(MyComponent); } catch (err) { console.warn(err); }",
+       "var ShallowComponent;"
+      ],
+      "solutions": [],
+      "tests": [
+        "assert((function(){ try { }; catch(e) { }; return true })(), 'message: .');"
       ],
       "releasedOn": "May 25, 2017",
       "type": "waypoint",
