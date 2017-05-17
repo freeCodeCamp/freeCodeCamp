@@ -52,10 +52,13 @@ function getFrameDocument(document, id = mainId) {
   }
   frame.contentWindow.loopProtect = loopProtect;
 
-  /* Bind React & Redux depenendencies to content window to they are
+  /* NOTE: provisioning depenendencies:
+   * Bind React & Redux depenendencies to content window so they are
    * in scope during code evaluation and testing. These imports will
-   * add a lot of code to the app bundle... can they be provided
-   * by a CDN to the client to avoid this? */
+   * add a lot of code to the app bundle... however, I believe that
+   * they can be included via the script tag header above to simply
+   * load them dynamically from CDNs and into this frame when it
+   * loads on the client */
   frame.contentWindow.React = React;
   frame.contentWindow.ReactDOM = ReactDOM;
   frame.contentWindow.createStore = createStore;
