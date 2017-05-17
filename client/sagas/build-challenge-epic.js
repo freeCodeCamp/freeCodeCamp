@@ -44,6 +44,8 @@ export default function buildChallengeEpic(actions, { getState }) {
       }
       /* this is a React Challenge: */
       if (challengeNumber === 8) {
+        /* this could become a different function, if needed,
+         * e.g. buildReact() */
         return buildClassic(files, required, shouldProxyConsole)
           .flatMap(payload => {
             /* add the original code string to the payload for some tests  */
