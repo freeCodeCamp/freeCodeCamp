@@ -50,6 +50,20 @@ const initialState = {
   user: {}
 };
 
+export const challengeMapSelector = state => getNS(state).challenge || {};
+export function makeBlockSelector(block) {
+  return state => {
+    const blockMap = getNS(state).block || {};
+    return blockMap[block] || {};
+  };
+}
+export function makeSuperBlockSelector(name) {
+  return state => {
+    const superBlock = getNS(state).superBlock || {};
+    return superBlock[name] || {};
+  };
+}
+
 const userReducer = handleActions(
   {
     [types.updateUserPoints]: (state, { payload: { username, points } }) => ({
@@ -128,8 +142,6 @@ function metaReducer(state = initialState, action) {
   }
   return state;
 }
-
-export const challengeMapSelector = state => getNS(state).challenge;
 
 export default function entitiesReducer(state, action) {
   const newState = metaReducer(state, action);

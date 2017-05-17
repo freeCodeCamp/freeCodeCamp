@@ -13,23 +13,26 @@ import {
   makePanelHiddenSelector
 } from './redux';
 
+import { makeBlockSelector } from '../entities';
+
 const dispatchActions = { toggleThisPanel };
-const makeMapStateToProps = () => createSelector(
-  (_, props) => props.dashedName,
-  (state, props) => state.entities.block[props.dashedName],
-  makePanelOpenSelector(),
-  makePanelHiddenSelector(),
-  (dashedName, block, isOpen, isHidden) => {
-    return {
-      isOpen,
-      isHidden,
-      dashedName,
-      title: block.title,
-      time: block.time,
-      challenges: block.challenges
-    };
-  }
-);
+function makeMapStateToProps(_, { dashedName }) {
+  return createSelector(
+    makeBlockSelector(dashedName),
+    makePanelOpenSelector(dashedName),
+    makePanelHiddenSelector(dashedName),
+    (block, isOpen, isHidden) => {
+      return {
+        isOpen,
+        isHidden,
+        dashedName,
+        title: block.title,
+        time: block.time,
+        challenges: block.challenges
+      };
+    }
+  );
+}
 const propTypes = {
   challenges: PropTypes.array,
   dashedName: PropTypes.string,

@@ -45,23 +45,25 @@ export const getNS = state => state[ns];
 export const allColapsedSelector = state => state[ns].isAllCollapsed;
 export const filterSelector = state => state[ns].filter;
 export const mapSelector = state => getNS(state).mapUi;
-export const makePanelOpenSelector = () => createSelector(
-  mapSelector,
-  (_, props) => props.dashedName,
-  (mapUi, name) => {
-    const node = utils.getNode(mapUi, name);
-    return node ? node.isOpen : true;
-  }
-);
+export function makePanelOpenSelector(name) {
+  return createSelector(
+    mapSelector,
+    mapUi => {
+      const node = utils.getNode(mapUi, name);
+      return node ? node.isOpen : true;
+    }
+  );
+}
 
-export const makePanelHiddenSelector = () => createSelector(
-  state => getNS(state).mapUi,
-  (_, props) => props.dashedName,
-  (mapUi, name) => {
-    const node = utils.getNode(mapUi, name);
-    return node ? node.isHidden : false;
-  }
-);
+export function makePanelHiddenSelector(name) {
+  return createSelector(
+    mapSelector,
+    mapUi => {
+      const node = utils.getNode(mapUi, name);
+      return node ? node.isHidden : false;
+    }
+  );
+}
 // interface Map{
 //   children: [...{
 //     name: (superBlock: String),

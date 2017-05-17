@@ -12,21 +12,19 @@ import {
   makePanelOpenSelector,
   makePanelHiddenSelector
 } from './redux';
+import { makeSuperBlockSelector } from '../entities';
 
 const dispatchActions = { toggleThisPanel };
 // make selectors unique to each component
 // see
 // reactjs/reselect
 // sharing-selectors-with-props-across-multiple-components
-const makeMapStateToProps = () => {
-  const panelOpenSelector = makePanelOpenSelector();
-  const panelHiddenSelector = makePanelHiddenSelector();
+function makeMapStateToProps(_, { dashedName }) {
   return createSelector(
-    (_, props) => props.dashedName,
-    (state, props) => state.entities.superBlock[props.dashedName],
-    panelOpenSelector,
-    panelHiddenSelector,
-    (dashedName, superBlock, isOpen, isHidden) => ({
+    makeSuperBlockSelector(dashedName),
+    makePanelOpenSelector(dashedName),
+    makePanelHiddenSelector(dashedName),
+    (superBlock, isOpen, isHidden) => ({
       isOpen,
       isHidden,
       dashedName,
@@ -35,7 +33,7 @@ const makeMapStateToProps = () => {
       message: superBlock.message
     })
   );
-};
+}
 
 const propTypes = {
   blocks: PropTypes.array,

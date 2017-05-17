@@ -37,39 +37,39 @@ function mapDispatchToProps(dispatch, { dashedName }) {
   return () => dispatchers;
 }
 
-const makeMapStateToProps = () => createSelector(
-  userSelector,
-  (_, { dashedName }) => dashedName,
-  challengeMapSelector,
-  makePanelHiddenSelector(),
-  (
-    { challengeMap: userChallengeMap },
-    dashedName,
-    challengeMap,
-    isHidden
-  ) => {
-    const {
-      id,
-      title,
-      block,
-      isLocked,
-      isRequired,
-      isComingSoon
-    } = challengeMap[dashedName] || {};
-    const isCompleted = userChallengeMap ? !!userChallengeMap[id] : false;
-    return {
-      dashedName,
-      isHidden,
-      isCompleted,
-      title,
-      block,
-      isLocked,
-      isRequired,
-      isComingSoon,
-      isDev: debug.enabled('fcc:*')
-    };
-  }
-);
+function makeMapStateToProps(_, { dashedName }) {
+  return createSelector(
+    userSelector,
+    challengeMapSelector,
+    makePanelHiddenSelector(dashedName),
+    (
+      { challengeMap: userChallengeMap },
+      challengeMap,
+      isHidden
+    ) => {
+      const {
+        id,
+        title,
+        block,
+        isLocked,
+        isRequired,
+        isComingSoon
+      } = challengeMap[dashedName] || {};
+      const isCompleted = userChallengeMap ? !!userChallengeMap[id] : false;
+      return {
+        dashedName,
+        isHidden,
+        isCompleted,
+        title,
+        block,
+        isLocked,
+        isRequired,
+        isComingSoon,
+        isDev: debug.enabled('fcc:*')
+      };
+    }
+  );
+}
 
 export class Challenge extends PureComponent {
   renderCompleted(isCompleted, isLocked) {
