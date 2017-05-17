@@ -7,6 +7,7 @@ import conforms from 'lodash/conforms';
 import * as babel from 'babel-core';
 import presetEs2015 from 'babel-preset-es2015';
 import presetReact from 'babel-preset-react';
+import stage2 from 'babel-preset-stage-2';
 import { Observable } from 'rx';
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
@@ -18,7 +19,13 @@ import {
 } from '../../common/utils/polyvinyl.js';
 import castToObservable from '../../common/app/utils/cast-to-observable.js';
 
-const babelOptions = { presets: [ presetEs2015, presetReact ] };
+/* NOTE: About stage-2 preset:
+ * Add stage-2 transform to enable es2016 class properties transform,
+ * i.e. to allow React class methods to be written as arrow functions.
+ * This is only needed in the React challenges, and since these are
+ * isolated in the buildChallengeEpic they could be fed with separate
+ * Babel presets. However, enabling everywhere is faster for now: */
+const babelOptions = { presets: [ presetEs2015, presetReact, stage2 ] };
 loopProtect.hit = function hit(line) {
   var err = 'Exiting potential infinite loop at line ' +
     line +

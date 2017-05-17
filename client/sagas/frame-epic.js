@@ -86,13 +86,21 @@ function frameMain({ build } = {}, document, proxyLogger) {
   main.close();
 }
 
-function frameTests({ build, sources, checkChallengePayload } = {}, document) {
+function frameTests({
+  build,
+  originalCode,
+  sources,
+  checkChallengePayload
+} = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
   // add Enzyme methods for testing React components
   tests.mount = mount;
   tests.shallow = shallow;
+  // provide the original (pre-tranpsilation) code string
+  // for use in some React tests
+  tests.__original = originalCode;
   // default for classic challenges
   // should not be used for modern
   tests.__source = sources['index'] || '';

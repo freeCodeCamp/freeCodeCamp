@@ -115,6 +115,75 @@
       "challengeType": 8,
       "isRequired": false,
       "translations": {}
+    },
+    {
+      "id": "bd7123cfda41eddfaeb413aq",
+      "title": "Bind 'this' with an ES6 Arrow Function",
+      "description": [
+        "There is another way to bind <code>this</code> when writing methods in React component classes. A useful, concise way is to use an ES6 arrow function. It does not assign its own value for <code>this</code>, but instead adopts the value of <code>this</code> from the context surrounding the function when it is written. In other words, an arrow function binds <code>this</code> automatically from its surrounding context.",
+        "The use of an arrow function as a class property like this is technically still an experimental feature of JavaScript (ES7 property initializers) but can be enabled through pre-processing. It's very useful because of its conciseness, but keep in mind that it is not part of the official language yet. Using this syntax means you can define a class method as an arrow function and not have to explicitly bind <code>this</code> in the constructor.",
+        "Initialize the <code>state</code> of <code>MyComponent</code> so there is a <code>message</code> key with a value of <code>Hello!</code>. The component renders a <code>button</code> that, when clicked, triggers a <code>setMessage()</code> method. Define this method with an ES6 arrow function. It should change the <code>state</code> of <code>message</code> to <code>Goodbye!</code>. Note that to pass the tests the arrow function must be written without any arguments."
+      ],
+      "challengeSeed": [
+        " class MyComponent extends React.Component {",
+        "   constructor(props) {",
+        "     super(props);",
+        "     // change code below this line",
+        "",
+        "     // change code above this line",
+        "   }",
+        "   // change code below this line",
+        "",
+        "   // change code above this line",
+        "   render() {",
+        "     return (",
+        "       <div>",
+        "         <button onClick = {this.setMessage}>Click Me</button>",
+        "         <h1>{this.state.message}</h1>",
+        "       </div>",
+        "     );",
+        "   }",
+        " };"
+      ],
+      "tail": [
+       "var Mock; try { Mock = document.mount(React.createElement(eval(MyComponent))); } catch (err) { console.warn(err); }"
+      ],
+      "solutions": [],
+      "tests": [
+        "assert((function(){ return true })(), 'message: Your code does not transpile.');",
+        "assert(Mock.find('div').length === 1 && Mock.find('div').children().nodes[0].tagName === 'BUTTON' && Mock.find('div').children().nodes[1].tagName === 'H1', 'message: MyComponent should return a div element which wraps two elements, a <code>button</code> and an <code>h1</code> element, in that order.');",
+        "assert(Mock.state('message') === 'Hello!', 'message: The state of MyComponent should initialize with a message containing the string <code>Hello!<code>');",
+        "assert((function() {Mock.setState({message: 'InitialState!'});var before = Mock.state('message');Mock.find('button').simulate('click');var after = Mock.state('message');return (before === 'InitialState!' && after === 'Goodbye!'); })(), 'message: Clicking the button element should run the <code>setMessage</code> method and upate the message property in the state to say <code>Goodbye!</code>');",
+        "assert((function() { console.log(document.__original); var noSpace = document.__original.replace(/\\s/g,''); return (noSpace.includes('setMessage=()=>{')); })(), 'message: The <code>setMessage</code> method should be defined with a fat arrow function.');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "bd7123c01os1eddfaeb413aq",
+      "title": "",
+      "description": [
+        ""
+      ],
+      "challengeSeed": [
+       "class MyComponent extends React.Component {"
+      ],
+      "tail": [
+       "var MyComponent; try { MyComponent = eval(MyComponent); } catch (err) { console.warn(err); }",
+       "var ShallowComponent;"
+      ],
+      "solutions": [],
+      "tests": [
+        "assert((function(){ try { ShallowComponent = document.shallow(React.createElement(MyComponent)); } catch(e) { return false; } console.log(ShallowComponent); return true })(), 'message: Your code does not transpile.');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
     }
   ]
 }
