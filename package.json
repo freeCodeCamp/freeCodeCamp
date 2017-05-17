@@ -7,6 +7,7 @@
     "create-rev": "node -e \"var fs = require('fs'); fs.access('./server/rev-manifest.json', function(err) { if (err) { console.log('\\n\\ncreating manifest\\n\\n'); return fs.writeFileSync('server/rev-manifest.json', '{}'); } console.log('\\n\\nrev-manifest present\\n\\n'); });\"",
     "build": "NODE_ENV=production gulp build -p",
     "start": "babel-node server/server.js",
+    "restart": "npm run only-once && gulp",
     "prestart-production": "gulp build -p",
     "start-production": "node pm2Start",
     "lint": "npm run lint-js && npm run lint-json",
