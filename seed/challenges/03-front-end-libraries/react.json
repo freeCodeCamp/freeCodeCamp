@@ -41,7 +41,9 @@
         "<strong>Instructions:</strong> The current code uses JSX to assign a <code>div</code> element to the constant <code>JSX</code>. Replace the <code>div</code> with an <code>h1</code> element and add the text <code>Hello JSX!</code> inside it."
       ],
       "challengeSeed": [
-        "var JSX = <div></div>;"
+        "",
+        "var JSX = <div></div>;",
+        ""
       ],
       "tail": [
         "var jsx; try { jsx = eval(JSX); } catch (err) { console.warn(err); }"
@@ -74,19 +76,20 @@
         "<strong>Note:</strong>&nbsp;The text is considered a child of the <code>div</code> element, so you will not be able to use a self-closing tag."
       ],
       "challengeSeed": [
+        "",
         "var MyComponent = function() {",
         "// change code below this line",
         "",
         "",
         "",
         "// change code above this line",
-        "}"
+        "}",
+        ""
       ],
       "tail": [
        "var Mock; try { Mock = eval(MyComponent); } catch (err) { console.warn(err); }",
        "var output;",
-       "try { output = Mock(); } catch(e) { console.warn(e); }",
-       "console.log(output); console.log(Mock);"
+       "try { output = Mock(); } catch(e) { console.warn(e); }"
       ],
       "solutions": [
         "var MyComponent = function() {",
@@ -111,9 +114,15 @@
       "id": "bd7123c9c441eddfaeb413aq",
       "title": "Create a React Component",
       "description": [
-        ""
+        "<strong>Intro:</strong> The other way to define a React component is with the ES6 <code>class</code> syntax. In the following example, <code>Kitten</code> extends <code>React.Component</code>:",
+        "<blockquote><br>class Kitten extends React.Component {<br> constructor(props) {<br>  super(props);<br> }<br><br> render() {<br>  return (<br>   &lt;h1&gt;Hi&lt;/h1&gt;<br>  );<br> }<br>}</blockquote>",
+        "This creates an ES6 class <code>Kitten</code> which extends the <code>React.Component</code> class. So the <code>Kitten</code> class now has access to many useful React features, such as local state and lifecycle hooks. Don't worry if you aren't familiar with these terms yet, they will be covered in greater detail in later challenges.",
+        "Also notice the <code>Kitten</code> class has a <code>constructor</code> defined within it that calls <code>super()</code>. It uses <code>super()</code> to call the constructor of the parent class, in this case <code>React.Component</code>. The constructor is a special method used during the initialization of objects that are created with the <code>class</code> keyword. It is best practice to call a component's <code>constructor</code> with <code>super</code>, and pass <code>props</code> to both. This makes sure the component is initialized properly. For now, know that it is standard for this code to be included. Soon you will see other uses for the constructor as well as <code>props</code>.",
+        "<hr>",
+        "<strong>Insstructions:</strong> <code>MyComponent</code> is defined in the code editor using class syntax. Finish writing the <code>render</code> method so it returns a <code>div</code> element that contains an <code>h1</code> with the text <code>Hello React!</code>."
       ],
       "challengeSeed": [
+       "",
        "class MyComponent extends React.Component {",
        " constructor(props) {",
        "  super(props);",
@@ -125,7 +134,8 @@
        "",
        "  // change code above this line",
        " }",
-       "};"
+       "};",
+       ""
       ],
       "tail": [
        "var MyComponent; try { MyComponent = eval(MyComponent); } catch (err) { console.warn(err); }",
@@ -135,8 +145,8 @@
       "tests": [
         "assert((function(){ try { ShallowComponent = document.shallow(React.createElement(MyComponent)); } catch(e) { return false; } console.log(ShallowComponent); return true })(), 'message: Your code does not transpile.');",
         "assert.strictEqual(ShallowComponent.type(), 'div', 'message: The React component should return a <code>div</code> element.');",
-        "assert.strictEqual(ShallowComponent.children().type(), 'h1', 'message: The returned div should render an h1 tag within it.');",
-        "assert.strictEqual(ShallowComponent.node.props.children.props.children, 'Hello React!', 'message: The h1 tag should include the string <code>Hello React!</code>');"
+        "assert.strictEqual(ShallowComponent.children().type(), 'h1', 'message: The returned <code>div</code> should render an <code>h1</code> tag within it.');",
+        "assert.strictEqual(ShallowComponent.node.props.children.props.children, 'Hello React!', 'message: The <code>h1</code> tag should include the string <code>Hello React!</code>');"
       ],
       "releasedOn": "May 25, 2017",
       "type": "waypoint",
@@ -154,6 +164,7 @@
         "<strong>Instructions:</strong> Initialize the <code>state</code> of <code>MyComponent</code> so there is a <code>message</code> key with a value of <code>Hello!</code>. The component renders a <code>button</code> that, when clicked, triggers a <code>setMessage()</code> method. Define this method with an ES6 arrow function. It should change the <code>state</code> of <code>message</code> to <code>Goodbye!</code>. Note that to pass the tests the arrow function must be written without any arguments."
       ],
       "challengeSeed": [
+        "",
         " class MyComponent extends React.Component {",
         "   constructor(props) {",
         "     super(props);",
@@ -172,7 +183,8 @@
         "       </div>",
         "     );",
         "   }",
-        " };"
+        " };",
+        ""
       ],
       "tail": [
        "var Mock; try { Mock = document.mount(React.createElement(eval(MyComponent))); } catch (err) { console.warn(err); }"
@@ -181,31 +193,8 @@
       "tests": [
         "assert(Mock.find('div').length === 1 && Mock.find('div').children().nodes[0].tagName === 'BUTTON' && Mock.find('div').children().nodes[1].tagName === 'H1', 'message: MyComponent should return a div element which wraps two elements, a <code>button</code> and an <code>h1</code> element, in that order.');",
         "assert(Mock.state('message') === 'Hello!', 'message: The state of MyComponent should initialize with a message containing the string <code>Hello!<code>');",
-        "assert((function() {Mock.setState({message: 'InitialState!'});var before = Mock.state('message');Mock.find('button').simulate('click');var after = Mock.state('message');return (before === 'InitialState!' && after === 'Goodbye!'); })(), 'message: Clicking the button element should run the <code>setMessage</code> method and upate the message property in the state to say <code>Goodbye!</code>');",
-        "assert((function() { console.log(document.__original); var noSpace = document.__original.replace(/\\s/g,''); return (noSpace.includes('setMessage=()=>{')); })(), 'message: The <code>setMessage</code> method should be defined with a fat arrow function.');"
-      ],
-      "releasedOn": "May 25, 2017",
-      "type": "waypoint",
-      "challengeType": 8,
-      "isRequired": false,
-      "translations": {}
-    },
-    {
-      "id": "bd7123c01os1eddfaeb413aq",
-      "title": "",
-      "description": [
-        ""
-      ],
-      "challengeSeed": [
-       ""
-      ],
-      "tail": [
-       "var MyComponent; try { MyComponent = eval(MyComponent); } catch (err) { console.warn(err); }",
-       "var ShallowComponent;"
-      ],
-      "solutions": [],
-      "tests": [
-        "assert((function(){ try { }; catch(e) { }; return true })(), 'message: .');"
+        "assert((function() { Mock.setState({message: 'InitialState!'});var before = Mock.state('message');Mock.find('button').simulate('click');var after = Mock.state('message');return (before === 'InitialState!' && after === 'Goodbye!'); })(), 'message: Clicking the button element should run the <code>setMessage</code> method and upate the message property in the state to say <code>Goodbye!</code>');",
+        "assert((function() { var noSpace = document.__original.replace(/\\s/g,''); return (noSpace.includes('setMessage=()=>{')); })(), 'message: The <code>setMessage</code> method should be defined with a fat arrow function.');"
       ],
       "releasedOn": "May 25, 2017",
       "type": "waypoint",
@@ -217,10 +206,14 @@
       "id": "bd7123c01os1eddzaeb413aq",
       "title": "",
       "description": [
+        "",
+        "",
         ""
       ],
       "challengeSeed": [
-       ""
+        "",
+        "",
+        ""
       ],
       "tail": [
        "var MyComponent; try { MyComponent = eval(MyComponent); } catch (err) { console.warn(err); }",
