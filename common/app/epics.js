@@ -2,10 +2,12 @@ import { epics as app } from './redux';
 import { epics as challenge } from './routes/challenges/redux';
 import { epics as settings } from './routes/settings/redux';
 import { epics as nav } from './Nav/redux';
+import { epics as map } from './Map/redux';
 
 export default [
   ...app,
   ...challenge,
   ...settings,
-  ...nav
+  ...nav,
+  ...map
 ];

@@ -2,8 +2,16 @@ import { createTypes } from 'redux-create-types';
 import { createAction, combineActions, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 
+import mapUiEpic from './map-ui-epic.js';
+import selectChallengeEpic from './select-challenge-epic.js';
+
 import * as utils from './utils.js';
 import ns from '../ns.json';
+
+export const epics = [
+  mapUiEpic,
+  selectChallengeEpic
+];
 
 export const types = createTypes([
   'initMap',
