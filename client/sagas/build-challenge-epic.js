@@ -46,6 +46,8 @@ export default function buildChallengeEpic(actions, { getState }) {
       if (challengeNumber === 8) {
         return buildClassic(files, required, shouldProxyConsole)
           .flatMap(payload => {
+            /* add the original code string to the payload for some tests  */
+            payload.originalCode = files.indexjs.contents;
             const actions = [
               frameMain(payload)
             ];
