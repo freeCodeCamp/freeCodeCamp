@@ -1,4 +1,5 @@
 import { Scheduler, Observable } from 'rx';
+
 import { ofType } from 'redux-epic';
 
 import {
@@ -6,12 +7,13 @@ import {
   buildBackendChallenge
 } from '../utils/build.js';
 import {
-  types,
   createErrorObservable,
 
   challengeSelector
 } from '../../common/app/redux';
 import {
+  types,
+
   frameMain,
   frameTests,
   initOutput,
@@ -21,8 +23,9 @@ import {
   codeLockedSelector
 } from '../../common/app/routes/challenges/redux';
 
-export default function buildChallengeEpic(actions, { getState }) {
+export default function executeChallengeEpic(actions, { getState }) {
   return actions::ofType(types.executeChallenge, types.updateMain)
+    .do(() => { console.log('executing'); })
     // if isCodeLocked do not run challenges
     .filter(() => !codeLockedSelector(getState()))
     .debounce(750)

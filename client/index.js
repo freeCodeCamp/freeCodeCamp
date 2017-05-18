@@ -66,7 +66,7 @@ createApp({
     serviceOptions,
     initialState,
     middlewares: [ routerMiddleware(history) ],
-    epics: [...epics ],
+    epics,
     epicOptions,
     reducers: { routing },
     enhancers: [ devTools ]
