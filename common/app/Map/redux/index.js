@@ -1,12 +1,15 @@
 import { createTypes } from 'redux-create-types';
 import { createAction, combineActions, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
+import identity from 'lodash/identity';
+import capitalize from 'lodash/capitalize';
 
 import mapUiEpic from './map-ui-epic.js';
 import selectChallengeEpic from './select-challenge-epic.js';
 
 import * as utils from './utils.js';
 import ns from '../ns.json';
+import { createEventMetaCreator } from '../../redux';
 
 export const epics = [
   mapUiEpic,
@@ -41,7 +44,15 @@ export const toggleThisPanel = createAction(types.toggleThisPanel);
 export const collapseAll = createAction(types.collapseAll);
 
 export const expandAll = createAction(types.expandAll);
-export const clickOnChallenge = createAction(types.clickOnChallenge);
+export const clickOnChallenge = createAction(
+  types.clickOnChallenge,
+  identity,
+  createEventMetaCreator({
+    category: capitalize(ns),
+    action: 'click',
+    label: types.clickOnChallenge
+  })
+);
 
 const initialState = {
   mapUi: { isAllCollapsed: false },

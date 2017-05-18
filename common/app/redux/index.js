@@ -46,12 +46,27 @@ const throwIfUndefined = () => {
   throw new TypeError('Argument must not be of  type `undefined`');
 };
 
-export const createEventMeta = ({
+// createEventMetaCreator({
+//   category: String,
+//   action: String,
+//   label?: String,
+//   value?: Number
+// }) => () => Object
+export const createEventMetaCreator = ({
+  // categories are features or namespaces of the app (capitalized):
+  //   Map, Nav, Challenges, and so on
   category = throwIfUndefined,
+  // can be a one word the event
+  // click, play, toggle.
+  // This is not a hard and fast rule
   action = throwIfUndefined,
+  // any additional information
+  // when in doubt use redux action type
+  // or a short sentence describing the action
   label,
+  // used to tack some specific value for a GA event
   value
-} = throwIfUndefined) => ({
+} = throwIfUndefined) => () => ({
   analytics: {
     type: 'event',
     category,
@@ -60,29 +75,6 @@ export const createEventMeta = ({
     value
   }
 });
-
-export const trackEvent = createAction(
-  types.analytics,
-  null,
-  createEventMeta
-);
-
-export const trackSocial = createAction(
-  types.analytics,
-  null,
-  (
-    network = throwIfUndefined,
-    action = throwIfUndefined,
-    target = throwIfUndefined
-  ) => ({
-    analytics: {
-      type: 'event',
-      network,
-      action,
-      target
-    }
-  })
-);
 
 export const fetchChallenge = createAction(
   '' + types.fetchChallenge,

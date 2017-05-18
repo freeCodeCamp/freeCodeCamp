@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
-import noop from 'lodash/noop';
 import { connect } from 'react-redux';
+import noop from 'lodash/noop';
+import capitalize from 'lodash/capitalize';
 
 import { LinkContainer } from 'react-router-bootstrap';
 import {
@@ -19,12 +20,11 @@ import {
   clickOnLogo,
   openDropdown,
   closeDropdown,
+  createNavLinkActionCreator,
 
   dropdownSelector
 } from './redux';
 import {
-  trackEvent,
-
   userSelector,
   signInLoadingSelector
 } from '../redux';
@@ -44,15 +44,21 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = {
-  clickOnLogo: e => {
-    e.preventDefault();
-    return clickOnLogo();
+const mapDispatchToProps = navLinks.reduce(
+  (mdtp, { content }) => {
+    const handler = `handle${capitalize(content)}Click`;
+    mdtp[handler] = createNavLinkActionCreator(content);
+    return mdtp;
   },
-  closeDropdown: () => closeDropdown(),
-  openDropdown: () => openDropdown(),
-  trackEvent
-};
+  {
+    clickOnLogo: e => {
+      e.preventDefault();
+      return clickOnLogo();
+    },
+    closeDropdown: () => closeDropdown(),
+    openDropdown: () => openDropdown()
+  }
+);
 
 const toggleButtonChild = (
   <Col xs={ 12 }>
@@ -60,53 +66,26 @@ const toggleButtonChild = (
   </Col>
 );
 
-function handleNavLinkEvent(content) {
-  this.props.trackEvent({
-    category: 'Nav',
-    action: 'clicked',
-    label: `${content} link`
-  });
-}
-
-const propTypes = {
-  clickOnLogo: PropTypes.func.isRequired,
-  closeDropdown: PropTypes.func.isRequired,
-  isDropdownOpen: PropTypes.bool,
-  openDropdown: PropTypes.func.isRequired,
-  picture: PropTypes.string,
-  points: PropTypes.number,
-  showLoading: PropTypes.bool,
-  signedIn: PropTypes.bool,
-  trackEvent: PropTypes.func.isRequired,
-  username: PropTypes.string
-};
+const propTypes = navLinks.reduce(
+  (pt, { content }) => {
+    const handler = `handle${capitalize(content)}Click`;
+    pt[handler] = PropTypes.func.isRequired;
+    return pt;
+  },
+  {
+    clickOnLogo: PropTypes.func.isRequired,
+    closeDropdown: PropTypes.func.isRequired,
+    isDropdownOpen: PropTypes.bool,
+    openDropdown: PropTypes.func.isRequired,
+    picture: PropTypes.string,
+    points: PropTypes.number,
+    showLoading: PropTypes.bool,
+    signedIn: PropTypes.bool,
+    username: PropTypes.string
+  }
+);
 
 export class FCCNav extends React.Component {
-  constructor(...props) {
-    super(...props);
-    this.handleMapClickOnMap = this.handleMapClickOnMap.bind(this);
-    navLinks.forEach(({ content }) => {
-      this[`handle${content}Click`] = handleNavLinkEvent.bind(this, content);
-    });
-  }
-
-  handleMapClickOnMap(e) {
-    e.preventDefault();
-    this.props.trackEvent({
-      category: 'Nav',
-      action: 'clicked',
-      label: 'map clicked while on map'
-    });
-  }
-
-  handleNavClick() {
-    this.props.trackEvent({
-      category: 'Nav',
-      action: 'clicked',
-      label: 'map clicked while on map'
-    });
-  }
-
   renderLink(isNavItem, { isReact, isDropdown, content, link, links, target }) {
     const Component = isNavItem ? NavItem : MenuItem;
     const {
@@ -139,7 +118,7 @@ export class FCCNav extends React.Component {
       return (
         <LinkContainer
           key={ content }
-          onClick={ this[`handle${content}Click`] }
+          onClick={ this.props[`handle${content}Click`] }
           to={ link }
           >
           <Component
@@ -154,7 +133,7 @@ export class FCCNav extends React.Component {
       <Component
         href={ link }
         key={ content }
-        onClick={ this[`handle${content}Click`] }
+        onClick={ this.props[`handle${content}Click`] }
         target={ target || null }
         >
         { content }

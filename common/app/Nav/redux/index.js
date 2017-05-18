@@ -1,9 +1,11 @@
+import capitalize from 'lodash/capitalize';
 import { createTypes } from 'redux-create-types';
 import { createAction, handleActions } from 'redux-actions';
+import noop from 'lodash/noop';
 
 import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
 import ns from '../ns.json';
-import { createEventMeta } from '../../redux';
+import { createEventMetaCreator } from '../../redux';
 
 export const epics = [
   loadCurrentChallengeEpic
@@ -11,6 +13,7 @@ export const epics = [
 
 export const types = createTypes([
   'clickOnLogo',
+  'navLinkClicked',
 
   'closeDropdown',
   'openDropdown'
@@ -18,7 +21,8 @@ export const types = createTypes([
 
 export const clickOnLogo = createAction(
   types.clickOnLogo,
-  () => createEventMeta({
+  noop,
+  createEventMetaCreator({
     category: 'Nav',
     action: 'clicked',
     label: 'fcc logo clicked'
@@ -27,6 +31,17 @@ export const clickOnLogo = createAction(
 
 export const closeDropdown = createAction(types.closeDropdown);
 export const openDropdown = createAction(types.openDropdown);
+export function createNavLinkActionCreator(link) {
+  return createAction(
+    types.navLinkClicked,
+    noop,
+    createEventMetaCreator({
+      category: capitalize(ns),
+      action: 'click',
+      label: `${link} link`
+    })
+  );
+}
 
 const initialState = {
   isDropdownOpen: false
