@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
-import classnames from 'classnames';
+import React, { PropTypes, PureComponent } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 import { createSelector } from 'reselect';
-import PureComponent from 'react-pure-render/component';
 import LightBox from 'react-images';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 
@@ -10,7 +10,7 @@ import ns from './ns.json';
 import {
   closeLightBoxImage,
   completeAction,
-  openLightBoxImage,
+  clickOnImage,
   stepBackward,
   stepForward,
   updateUnlockedSteps,
@@ -46,17 +46,27 @@ const mapStateToProps = createSelector(
   })
 );
 
-const dispatchActions = {
-  closeLightBoxImage,
-  completeAction,
-  openLightBoxImage,
-  stepBackward,
-  stepForward,
-  submitChallenge,
-  updateUnlockedSteps
-};
+function mapDispatchToProps(dispatch) {
+  const dispatchers = bindActionCreators({
+    closeLightBoxImage,
+    completeAction,
+    stepBackward,
+    stepForward,
+    submitChallenge,
+    updateUnlockedSteps
+  }, dispatch);
+  dispatchers.clickOnImage = e => {
+    if (!(e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      return dispatch(clickOnImage());
+    }
+    return null;
+  };
+  return () => dispatchers;
+}
 
 const propTypes = {
+  clickOnImage: PropTypes.func.isRequired,
   closeLightBoxImage: PropTypes.func.isRequired,
   completeAction: PropTypes.func.isRequired,
   currentIndex: PropTypes.number,
@@ -64,7 +74,6 @@ const propTypes = {
   isLastStep: PropTypes.bool,
   isLightBoxOpen: PropTypes.bool,
   numOfSteps: PropTypes.number,
-  openLightBoxImage: PropTypes.func.isRequired,
   step: PropTypes.array,
   stepBackward: PropTypes.func,
   stepForward: PropTypes.func,
@@ -74,18 +83,6 @@ const propTypes = {
 };
 
 export class StepChallenge extends PureComponent {
-  constructor(...args) {
-    super(...args);
-    this.handleLightBoxOpen = this.handleLightBoxOpen.bind(this);
-  }
-
-  handleLightBoxOpen(e) {
-    if (!(e.ctrlKey || e.metaKey)) {
-      e.preventDefault();
-      this.props.openLightBoxImage();
-    }
-  }
-
   componentWillMount() {
     const { updateUnlockedSteps } = this.props;
     updateUnlockedSteps([]);
@@ -170,14 +167,15 @@ export class StepChallenge extends PureComponent {
   }
 
   renderStep({
-    step,
-    currentIndex,
-    numOfSteps,
-    isActionCompleted,
+    clickOnImage,
     completeAction,
+    currentIndex,
+    isActionCompleted,
     isLastStep,
-    stepForward,
-    stepBackward
+    numOfSteps,
+    step,
+    stepBackward,
+    stepForward
   }) {
     if (!Array.isArray(step)) {
       return null;
@@ -187,7 +185,7 @@ export class StepChallenge extends PureComponent {
       <div key={ imgUrl }>
         <a
           href={ imgUrl }
-          onClick={ this.handleLightBoxOpen }
+          onClick={ clickOnImage }
           target='_blank'
           >
           <Image
@@ -242,7 +240,7 @@ export class StepChallenge extends PureComponent {
     if (!Array.isArray(steps)) {
       return null;
     }
-    return steps.map(([imgUrl, imgAlt]) => (
+    return steps.map(([ imgUrl, imgAlt ]) => (
       <div key={ imgUrl }>
         <Image
           alt={ imgAlt }
@@ -287,4 +285,7 @@ export class StepChallenge extends PureComponent {
 StepChallenge.displayName = 'StepChallenge';
 StepChallenge.propTypes = propTypes;
 
-export default connect(mapStateToProps, dispatchActions)(StepChallenge);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StepChallenge);

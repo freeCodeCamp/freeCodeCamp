@@ -1,5 +1,6 @@
 import { createTypes } from 'redux-create-types';
 import { createAction, handleActions } from 'redux-actions';
+import noop from 'lodash/noop';
 
 import ns from '../ns.json';
 import stepChallengeEpic from './step-challenge-epic.js';
@@ -13,20 +14,29 @@ export const types = createTypes([
   'stepBackward',
   'goToStep',
   'completeAction',
-  'openLightBoxImage',
+  'clickOnImage',
   'closeLightBoxImage',
   'updateUnlockedSteps'
 ], ns);
 
-export const stepForward = createAction(types.stepForward);
-export const stepBackward = createAction(types.stepBackward);
+export const stepForward = createAction(
+  types.stepForward,
+  noop
+);
+export const stepBackward = createAction(
+  types.stepBackward,
+  noop
+);
 export const goToStep = createAction(
   types.goToStep,
   (step, isUnlocked) => ({ step, isUnlocked })
 );
-export const completeAction = createAction(types.completeAction);
+export const completeAction = createAction(
+  types.completeAction,
+  noop
+);
 export const updateUnlockedSteps = createAction(types.updateUnlockedSteps);
-export const openLightBoxImage = createAction(types.openLightBoxImage);
+export const clickOnImage = createAction(types.clickOnImage);
 export const closeLightBoxImage = createAction(types.closeLightBoxImage);
 
 const initialState = {
@@ -61,7 +71,7 @@ const reducer = handleActions({
     ...state,
     unlockedSteps: payload
   }),
-  [types.openLightBoxImage]: state => ({
+  [types.clickOnImage]: state => ({
     ...state,
     isLightBoxOpen: true
   }),
