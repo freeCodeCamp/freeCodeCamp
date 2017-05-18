@@ -29,7 +29,7 @@ import { postJSON$ } from '../../../../utils/ajax-stream.js';
 
 function postChallenge(url, username, _csrf, challengeInfo) {
   const body = { ...challengeInfo, _csrf };
-  const saveChallenge$ = postJSON$(url, body)
+  const saveChallenge = postJSON$(url, body)
     .retry(3)
     .flatMap(({ points, lastUpdated, completedDate }) => {
       return Observable.of(
@@ -42,15 +42,15 @@ function postChallenge(url, username, _csrf, challengeInfo) {
       );
     })
     .catch(createErrorObservable);
-  const challengeCompleted$ = Observable.of(moveToNextChallenge());
-  return Observable.merge(saveChallenge$, challengeCompleted$);
+  const challengeCompleted = Observable.of(moveToNextChallenge());
+  return Observable.merge(saveChallenge, challengeCompleted);
 }
 
 function submitModern(type, state) {
   const tests = testsSelector(state);
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
     if (type === types.checkChallenge) {
-      return Observable.just(null);
+      return Observable.empty();
     }
 
     if (type === types.submitChallenge) {
@@ -143,13 +143,12 @@ const submitters = {
   'project.simple': submitSimpleChallenge
 };
 
-export default function completionSaga(actions, { getState }) {
+export default function completionEpic(actions, { getState }) {
   return actions::ofType(types.checkChallenge, types.submitChallenge)
     .flatMap(({ type, payload }) => {
       const state = getState();
       const { submitType } = challengeMetaSelector(state);
-      const submitter = submitters[submitType] ||
-        (() => Observable.just(null));
+      const submitter = submitters[submitType] || (() => Observable.empty());
       return submitter(type, state, payload);
     });
 }
