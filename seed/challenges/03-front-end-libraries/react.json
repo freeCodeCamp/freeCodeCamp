@@ -49,7 +49,7 @@
         "var jsx; try { jsx = eval(JSX); } catch (err) { console.warn(err); }"
       ],
       "solutions": [
-        "var JSX = <h1>Hello JSX!</h1>;"
+        ""
       ],
       "tests": [
         "assert((function(){ var jsx; try { jsx = eval(JSX); } catch(e) { return false; } return true })(), 'message: Your code does not transpile.');",
@@ -141,13 +141,7 @@
        "var output;",
        "try { output = Mock(); } catch(e) { console.warn(e); }"
       ],
-      "solutions": [
-        "var MyComponent = function() {",
-        "// change code below this line",
-        "return (<div>Demo Solution</div>);",
-        "// change code above this line",
-        "}"
-      ],
+      "solutions": [],
       "tests": [
         "assert(typeof MyComponent === 'function', 'message: <code>MyComponent</code> should be a function.');",
         "assert(typeof output === 'object', 'message: <code>MyComponent</code> should return a JSX element.');",
