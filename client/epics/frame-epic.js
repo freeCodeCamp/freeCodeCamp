@@ -114,7 +114,7 @@ export default function frameEpic(actions, { getState }, { window, document }) {
     proxyLogger.map(updateOutput),
     frameReady.flatMap(({ checkChallengePayload }) => {
       const { frame } = getFrameDocument(document, testId);
-      const { tests } = testsSelector(getState());
+      const tests = testsSelector(getState());
       const postTests = Observable.of(
         updateOutput('// tests completed'),
         checkChallenge(checkChallengePayload)
