@@ -32,14 +32,15 @@ export function fetchChallengeEpic(actions, { getState }, { services }) {
           ...rest
         }))
         .flatMap(({ entities, result, redirect } = {}) => {
-          return Observable.of(
+          const actions = [
             fetchChallengeCompleted({
               entities,
               currentChallenge: result.challenge,
               challenge: entities.challenge[result.challenge]
             }),
             redirect ? delayedRedirect(redirect) : null
-          );
+          ];
+          return Observable.from(actions).filter(Boolean);
         })
         .catch(createErrorObservable);
     });
