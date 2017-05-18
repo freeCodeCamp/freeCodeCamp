@@ -31,10 +31,7 @@ import { makeToast } from '../../../Toasts/redux';
 const isDev = debug.enabled('fcc:*');
 
 export function challengeUpdatedEpic(actions, { getState }) {
-  return actions::ofType(
-      app.updateCurrentChallenge,
-      app.fetchChallenge.complete
-    )
+  return actions::ofType(app.updateCurrentChallenge)
     .flatMap(() => {
       const challenge = challengeSelector(getState());
       return Observable.of(

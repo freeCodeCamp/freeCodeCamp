@@ -1,6 +1,7 @@
 import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import { createAction, combineActions, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
+import noop from 'lodash/noop';
 
 import bugEpic from './bug-epic';
 import completionEpic from './completion-epic.js';
@@ -19,6 +20,7 @@ import {
   viewTypes
 } from '../utils';
 import {
+  types as app,
   challengeSelector
 } from '../../../redux';
 import { bonfire, html, js } from '../../../utils/challengeTypes';
@@ -89,7 +91,8 @@ export const unlockUntrustedCode = createAction(
 );
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 export const challengeUpdated = createAction(
-  types.challengeUpdated
+  types.challengeUpdated,
+  challenge => ({ challenge })
 );
 export const resetChallenge = createAction(types.resetChallenge);
 // replaceChallenge(dashedname) => Action
@@ -106,7 +109,7 @@ export const updateFiles = createAction(types.updateFiles);
 // rechallenge
 export const executeChallenge = createAction(
   types.executeChallenge,
-  () => null
+  noop,
 );
 
 export const updateMain = createAction(types.updateMain);
@@ -207,9 +210,14 @@ export const challengeMetaSelector = createSelector(
   }
 );
 
+const setChallengeType = combineActions(
+  types.challengeUpdated,
+  app.fetchChallenge.complete
+);
+
 const mainReducer = handleActions(
   {
-    [types.challengeUpdated]: (state, { payload: challenge }) => {
+    [setChallengeType]: (state, { payload: { challenge } }) => {
       return {
         ...state,
         id: challenge.id,
@@ -315,7 +323,7 @@ const filesReducer = handleActions(
         })
       };
     },
-    [types.challengeUpdated]: (state, { payload: challenge = {} }) => {
+    [setChallengeType]: (state, { payload: { challenge } }) => {
       if (challenge.type === 'mod') {
         return challenge.files;
       }

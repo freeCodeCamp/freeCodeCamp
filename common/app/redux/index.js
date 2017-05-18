@@ -3,6 +3,7 @@ import { createTypes, createAsyncTypes } from 'redux-create-types';
 import { combineActions, createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
+import identity from 'lodash/identity';
 
 import { entitiesSelector } from '../entities';
 import fetchUserEpic from './fetch-user-epic.js';
@@ -82,8 +83,8 @@ export const fetchChallenge = createAction(
 );
 export const fetchChallengeCompleted = createAction(
   types.fetchChallenge.complete,
-  (_, result) => result,
-  entities => ({ entities })
+  null,
+  identity
 );
 export const fetchChallenges = createAction('' + types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
@@ -233,7 +234,7 @@ const reducer = handleActions(
     }),
     [types.fetchChallenge.complete]: (state, { payload }) => ({
       ...state,
-      currentChallenge: payload.challenge
+      currentChallenge: payload.currentChallenge
     }),
     [types.fetchChallenges.complete]: (state, { payload }) => ({
       ...state,
