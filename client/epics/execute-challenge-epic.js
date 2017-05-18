@@ -25,7 +25,6 @@ import {
 
 export default function executeChallengeEpic(actions, { getState }) {
   return actions::ofType(types.executeChallenge, types.updateMain)
-    .do(() => { console.log('executing'); })
     // if isCodeLocked do not run challenges
     .filter(() => !codeLockedSelector(getState()))
     .debounce(750)
@@ -57,6 +56,7 @@ export default function executeChallengeEpic(actions, { getState }) {
             initOutput('// running test') :
             null
         ))
+        .filter(Boolean)
         .catch(createErrorObservable);
     });
 }
