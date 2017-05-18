@@ -2,6 +2,7 @@ import { Observable } from 'rx';
 import { createTypes, createAsyncTypes } from 'redux-create-types';
 import { combineActions, createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
+import noop from 'lodash/noop';
 
 import { entitiesSelector } from '../entities';
 import fetchUserEpic from './fetch-user-epic.js';
@@ -29,7 +30,6 @@ export const types = createTypes([
   'addUser',
   'updateThisUser',
   'showSignIn',
-  'updateMyCurrentChallenge',
 
   'handleError',
   // used to hit the server
@@ -107,15 +107,11 @@ export const fetchUser = createAction(types.fetchUser);
 // ) => Action
 export const addUser = createAction(
   types.addUser,
-  () => {},
+  noop,
   entities => ({ entities })
 );
 export const updateThisUser = createAction(types.updateThisUser);
 export const showSignIn = createAction(types.showSignIn);
-export const updateMyCurrentChallenge = createAction(
-  types.updateMyCurrentChallenge,
-  (username, currentChallengeId) => ({ username, currentChallengeId })
-);
 
 export const updateAppLang = createAction(types.updateAppLang);
 

@@ -9,7 +9,8 @@ export const types = createTypes([
   'updateUserFlag',
   'updateUserEmail',
   'updateUserLang',
-  'updateUserChallenge'
+  'updateUserChallenge',
+  'updateUserCurrentChallenge'
 ], ns);
 
 // updateUserPoints(username: String, points: Number) => Action
@@ -40,6 +41,10 @@ export const updateUserLang = createAction(
 export const updateUserChallenge = createAction(
   types.updateUserChallenge,
   (username, challengeInfo) => ({ username, challengeInfo })
+);
+
+export const updateUserCurrentChallenge = createAction(
+  types.updateUserCurrentChallenge
 );
 
 
@@ -100,7 +105,7 @@ const userReducer = handleActions(
           languageTag
         }
     }),
-    [types.updateMyCurrentChallenge]:
+    [types.updateUserCurrentChallenge]:
     (
       state,
       {

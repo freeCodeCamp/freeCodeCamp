@@ -4,40 +4,45 @@ import debug from 'debug';
 
 import {
   types,
-
-  updateMyCurrentChallenge,
   createErrorObservable,
 
-  userSelector,
-  challengeSelector
+  challengeSelector,
+  csrfSelector,
+  userSelector
 } from './';
+import { updateUserCurrentChallenge } from '../entities';
 import { postJSON$ } from '../../utils/ajax-stream';
 
-const log = debug('fcc:app/redux/up-my-challenge-challenge-epic');
+const log = debug('fcc:app:redux:up-my-challenge-epic');
 export default function updateMyCurrentChallengeEpic(actions, { getState }) {
   const updateChallenge = actions::ofType(types.updateCurrentChallenge)
-    .filter(() => {
-      const { username } = userSelector(getState());
-      return !!username;
+    .map(() => {
+      const state = getState();
+      const { username } = userSelector(state);
+      const { id } = challengeSelector(state);
+      const csrf = csrfSelector(state);
+      return {
+        username,
+        csrf,
+        currentChallengeId: id
+      };
     })
-    .distinctUntilChanged();
-  const optimistic = updateChallenge.map(() => {
-    const state = getState();
-    const { username } = userSelector(state);
-    const { id } = challengeSelector(state);
-    return updateMyCurrentChallenge(username, id);
-  });
+    .filter(({ username }) => !!username)
+    .distinctUntilChanged(x => x.currentChallengeId);
+  const optimistic = updateChallenge.map(updateUserCurrentChallenge);
   const ajaxUpdate = updateChallenge
     .debounce(250)
-    .flatMapLatest(currentChallengeId => {
-      const { app: { csrfToken: _csrf } } = getState();
+    .flatMapLatest(({ csrf, currentChallengeId }) => {
       return postJSON$(
         '/update-my-current-challenge',
-        { _csrf, currentChallengeId }
+        {
+          currentChallengeId,
+          _csrf: csrf
+        }
       )
         .map(({ message }) => log(message))
+        .ignoreElements()
         .catch(createErrorObservable);
-    })
-    .ignoreElements();
+    });
   return Observable.merge(optimistic, ajaxUpdate);
 }
