@@ -14,12 +14,14 @@ const initialState = {
 };
 export const submittingSelector = state => state[ns].isSubmitting;
 
-const reducer = handleActions({
-  [types.showProjectSubmit]: state => ({
-    ...state,
-    isSubmitting: true
-  })
-}, initialState);
+export default function createReducer() {
+  const reducer = handleActions({
+    [types.showProjectSubmit]: state => ({
+      ...state,
+      isSubmitting: true
+    })
+  }, initialState);
 
-reducer.toString = () => ns;
-export default reducer;
+  reducer.toString = () => ns;
+  return [ reducer ];
+}

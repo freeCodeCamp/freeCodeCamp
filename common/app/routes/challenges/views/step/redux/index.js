@@ -2,8 +2,9 @@ import { createTypes } from 'redux-create-types';
 import { createAction, handleActions } from 'redux-actions';
 import noop from 'lodash/noop';
 
-import ns from '../ns.json';
 import stepChallengeEpic from './step-challenge-epic.js';
+import ns from '../ns.json';
+import { types as challenges } from '../../../redux';
 
 export const epics = [
   stepChallengeEpic
@@ -56,30 +57,36 @@ export const unlockedStepsSelector = state => getNS(state).unlockedSteps;
 export const lightBoxSelector = state => getNS(state).isLightBoxOpen;
 export const actionCompletedSelector = state => getNS(state).isActionCompleted;
 
-const reducer = handleActions({
-  [types.goToStep]: (state, { payload: { step = 0, isUnlocked }}) => ({
-    ...state,
-    currentIndex: step,
-    previousIndex: state.currentIndex,
-    isActionCompleted: isUnlocked
-  }),
-  [types.completeAction]: state => ({
-    ...state,
-    isActionCompleted: true
-  }),
-  [types.updateUnlockedSteps]: (state, { payload }) => ({
-    ...state,
-    unlockedSteps: payload
-  }),
-  [types.clickOnImage]: state => ({
-    ...state,
-    isLightBoxOpen: true
-  }),
-  [types.closeLightBoxImage]: state => ({
-    ...state,
-    isLightBoxOpen: false
-  })
-}, initialState);
+export default function createReducers() {
+  const reducer = handleActions({
+    [challenges.challengeUpdated]: () => {
+      console.log('updating step ui');
+      return initialState;
+    },
+    [types.goToStep]: (state, { payload: { step = 0, isUnlocked }}) => ({
+      ...state,
+      currentIndex: step,
+      previousIndex: state.currentIndex,
+      isActionCompleted: isUnlocked
+    }),
+    [types.completeAction]: state => ({
+      ...state,
+      isActionCompleted: true
+    }),
+    [types.updateUnlockedSteps]: (state, { payload }) => ({
+      ...state,
+      unlockedSteps: payload
+    }),
+    [types.clickOnImage]: state => ({
+      ...state,
+      isLightBoxOpen: true
+    }),
+    [types.closeLightBoxImage]: state => ({
+      ...state,
+      isLightBoxOpen: false
+    })
+  }, initialState);
 
-reducer.toString = () => ns;
-export default reducer;
+  reducer.toString = () => ns;
+  return [ reducer ];
+}

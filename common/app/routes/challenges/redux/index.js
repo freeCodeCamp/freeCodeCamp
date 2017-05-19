@@ -8,7 +8,6 @@ import completionEpic from './completion-epic.js';
 import challengeEpic from './challenge-epic.js';
 
 import ns from '../ns.json';
-import { epics as stepEpics } from '../views/step/redux';
 import {
   arrayToString,
   buildSeed,
@@ -26,6 +25,8 @@ import {
 import { bonfire, html, js } from '../../../utils/challengeTypes';
 import blockNameify from '../../../utils/blockNameify';
 import { createPoly, setContent } from '../../../../utils/polyvinyl';
+import createStepReducer, { epics as stepEpics } from '../views/step/redux';
+import createProjectReducer from '../views/project/redux';
 
 // this is not great but is ok until we move to a different form type
 export projectNormalizer from '../views/project/redux';
@@ -41,8 +42,6 @@ export const types = createTypes([
   // challenges
   'challengeUpdated',
   'resetChallenge',
-  'replaceChallenge',
-  'resetUi',
   'updateHint',
   'lockUntrustedCode',
   'unlockUntrustedCode',
@@ -63,7 +62,6 @@ export const types = createTypes([
   'initOutput',
   'updateTests',
   'checkChallenge',
-  'showChallengeComplete',
   'submitChallenge',
   'moveToNextChallenge',
 
@@ -82,7 +80,6 @@ export const types = createTypes([
 
 // challenges
 export const closeChallengeModal = createAction(types.closeChallengeModal);
-export const resetUi = createAction(types.resetUi);
 export const updateHint = createAction(types.updateHint);
 export const lockUntrustedCode = createAction(types.lockUntrustedCode);
 export const unlockUntrustedCode = createAction(
@@ -95,9 +92,6 @@ export const challengeUpdated = createAction(
   challenge => ({ challenge })
 );
 export const resetChallenge = createAction(types.resetChallenge);
-// replaceChallenge(dashedname) => Action
-export const replaceChallenge = createAction(types.replaceChallenge);
-
 // files
 export const updateFile = createAction(
   types.updateFile,
@@ -145,6 +139,7 @@ export const createIssue = createAction(types.createIssue);
 const initialUiState = {
   output: null,
   isChallengeModalOpen: false,
+  isBugOpen: false,
   successMessage: 'Happy Coding!',
   hintIndex: 0,
   numOfHints: 0
@@ -155,14 +150,12 @@ const initialState = {
   id: '',
   challenge: '',
   helpChatRoom: 'Help',
-  isBugOpen: false,
   // old code storage key
   legacyKey: '',
   files: {},
   // map
   superBlocks: [],
   // misc
-  toast: 0,
   ...initialUiState
 };
 
@@ -210,152 +203,154 @@ export const challengeMetaSelector = createSelector(
   }
 );
 
-const setChallengeType = combineActions(
-  types.challengeUpdated,
-  app.fetchChallenge.complete
-);
+export default function createReducers() {
+  const setChallengeType = combineActions(
+    types.challengeUpdated,
+    app.fetchChallenge.complete
+  );
 
-const mainReducer = handleActions(
-  {
-    [setChallengeType]: (state, { payload: { challenge } }) => {
-      return {
+  const mainReducer = handleActions(
+    {
+      [setChallengeType]: (state, { payload: { challenge } }) => {
+        return {
+          ...state,
+          ...initialUiState,
+          id: challenge.id,
+          challenge: challenge.dashedName,
+          key: getFileKey(challenge),
+          tests: createTests(challenge),
+          helpChatRoom: challenge.helpRoom || 'Help',
+          numOfHints: Array.isArray(challenge.hints) ?
+            challenge.hints.length :
+            0
+        };
+      },
+      [types.updateTests]: (state, { payload: tests }) => ({
         ...state,
-        id: challenge.id,
-        challenge: challenge.dashedName,
-        key: getFileKey(challenge),
-        tests: createTests(challenge),
-        helpChatRoom: challenge.helpRoom || 'Help',
-        numOfHints: Array.isArray(challenge.hints) ? challenge.hints.length : 0
-      };
-    },
-    [types.updateTests]: (state, { payload: tests }) => ({
-      ...state,
-      tests,
-      isChallengeModalOpen: (
-        tests.length > 0 &&
-        tests.every(test => test.pass && !test.err)
-      )
-    }),
-    [types.closeChallengeModal]: state => ({
-      ...state,
-      isChallengeModalOpen: false
-    }),
-    [types.updateSuccessMessage]: (state, { payload }) => ({
-      ...state,
-      successMessage: payload
-    }),
-    [types.updateHint]: state => ({
-      ...state,
-      hintIndex: state.hintIndex + 1 >= state.numOfHints ?
+        tests,
+        isChallengeModalOpen: (
+          tests.length > 0 &&
+          tests.every(test => test.pass && !test.err)
+        )
+      }),
+      [types.closeChallengeModal]: state => ({
+        ...state,
+        isChallengeModalOpen: false
+      }),
+      [types.updateSuccessMessage]: (state, { payload }) => ({
+        ...state,
+        successMessage: payload
+      }),
+      [types.updateHint]: state => ({
+        ...state,
+        hintIndex: state.hintIndex + 1 >= state.numOfHints ?
         0 :
         state.hintIndex + 1
-    }),
-    [types.lockUntrustedCode]: state => ({
-      ...state,
-      isCodeLocked: true
-    }),
-    [types.unlockUntrustedCode]: state => ({
-      ...state,
-      isCodeLocked: false
-    }),
-    [types.executeChallenge]: state => ({
-      ...state,
-      tests: state.tests.map(test => ({ ...test, err: false, pass: false }))
-    }),
-    [types.showChallengeComplete]: (state, { payload: toast }) => ({
-      ...state,
-      toast
-    }),
-    [types.resetUi]: (state) => ({
-      ...state,
-      ...initialUiState
-    }),
+      }),
+      [types.lockUntrustedCode]: state => ({
+        ...state,
+        isCodeLocked: true
+      }),
+      [types.unlockUntrustedCode]: state => ({
+        ...state,
+        isCodeLocked: false
+      }),
+      [types.executeChallenge]: state => ({
+        ...state,
+        tests: state.tests.map(test => ({ ...test, err: false, pass: false }))
+      }),
 
-    // classic/modern
-    [types.initOutput]: (state, { payload: output }) => ({
-      ...state,
-      output
-    }),
-    [types.updateOutput]: (state, { payload: output }) => ({
-      ...state,
-      output: (state.output || '') + output
-    }),
+      // classic/modern
+      [types.initOutput]: (state, { payload: output }) => ({
+        ...state,
+        output
+      }),
+      [types.updateOutput]: (state, { payload: output }) => ({
+        ...state,
+        output: (state.output || '') + output
+      }),
 
-    [types.openBugModal]: state => ({ ...state, isBugOpen: true }),
-    [types.closeBugModal]: state => ({ ...state, isBugOpen: false })
-  },
-  initialState
-);
-
-const filesReducer = handleActions(
-  {
-    [types.updateFile]: (state, { payload: file }) => ({
-      ...state,
-      [file.key]: file
-    }),
-    [types.updateFiles]: (state, { payload: files }) => {
-      return files
-        .reduce((files, file) => {
-          files[file.key] = file;
-          return files;
-        }, { ...state });
+      [types.openBugModal]: state => ({ ...state, isBugOpen: true }),
+      [types.closeBugModal]: state => ({ ...state, isBugOpen: false })
     },
-    [types.savedCodeFound]: (state, { payload: { files, challenge } }) => {
-      if (challenge.type === 'mod') {
-        // this may need to change to update head/tail
-        return challenge.files;
+    initialState
+  );
+
+  const filesReducer = handleActions(
+    {
+      [types.updateFile]: (state, { payload: file }) => ({
+        ...state,
+        [file.key]: file
+      }),
+      [types.updateFiles]: (state, { payload: files }) => {
+        return files
+          .reduce((files, file) => {
+            files[file.key] = file;
+            return files;
+          }, { ...state });
+      },
+      [types.savedCodeFound]: (state, { payload: { files, challenge } }) => {
+        if (challenge.type === 'mod') {
+          // this may need to change to update head/tail
+          return challenge.files;
+        }
+        if (
+          challenge.challengeType !== html &&
+          challenge.challengeType !== js &&
+          challenge.challengeType !== bonfire
+        ) {
+          return {};
+        }
+        // classic challenge to modern format
+        const preFile = getPreFile(challenge);
+        return {
+          [preFile.key]: createPoly({
+            ...files[preFile.key],
+            // make sure head/tail are always fresh
+            head: arrayToString(challenge.head),
+            tail: arrayToString(challenge.tail)
+          })
+        };
+      },
+      [setChallengeType]: (state, { payload: { challenge } }) => {
+        if (challenge.type === 'mod') {
+          return challenge.files;
+        }
+        if (
+          challenge.challengeType !== html &&
+          challenge.challengeType !== js &&
+          challenge.challengeType !== bonfire
+        ) {
+          return {};
+        }
+        // classic challenge to modern format
+        const preFile = getPreFile(challenge);
+        return {
+          [preFile.key]: createPoly({
+            ...preFile,
+            contents: buildSeed(challenge),
+            head: arrayToString(challenge.head),
+            tail: arrayToString(challenge.tail)
+          })
+        };
       }
-      if (
-        challenge.challengeType !== html &&
-        challenge.challengeType !== js &&
-        challenge.challengeType !== bonfire
-      ) {
-        return {};
-      }
-      // classic challenge to modern format
-      const preFile = getPreFile(challenge);
-      return {
-        [preFile.key]: createPoly({
-          ...files[preFile.key],
-          // make sure head/tail are always fresh
-          head: arrayToString(challenge.head),
-          tail: arrayToString(challenge.tail)
-        })
-      };
     },
-    [setChallengeType]: (state, { payload: { challenge } }) => {
-      if (challenge.type === 'mod') {
-        return challenge.files;
-      }
-      if (
-        challenge.challengeType !== html &&
-        challenge.challengeType !== js &&
-        challenge.challengeType !== bonfire
-      ) {
-        return {};
-      }
-      // classic challenge to modern format
-      const preFile = getPreFile(challenge);
-      return {
-        [preFile.key]: createPoly({
-          ...preFile,
-          contents: buildSeed(challenge),
-          head: arrayToString(challenge.head),
-          tail: arrayToString(challenge.tail)
-        })
-      };
+    {}
+  );
+
+  function reducer(state, action) {
+    const newState = mainReducer(state, action);
+    const files = filesReducer(state && state.files || {}, action);
+    if (newState.files !== files) {
+      return { ...newState, files };
     }
-  },
-  {}
-);
-
-export default function challengeReducers(state, action) {
-  const newState = mainReducer(state, action);
-  const files = filesReducer(state && state.files || {}, action);
-  if (newState.files !== files) {
-    return { ...newState, files };
+    return newState;
   }
-  return newState;
-}
 
-challengeReducers.toString = () => ns;
+  reducer.toString = () => ns;
+  return [
+    reducer,
+    ...createStepReducer(),
+    ...createProjectReducer()
+  ];
+}

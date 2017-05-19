@@ -49,17 +49,18 @@ const initialState = {
 
 export const dropdownSelector = state => state[ns].isDropdownOpen;
 
-const reducer = handleActions({
-  [types.closeDropdown]: state => ({
-    ...state,
-    isDropdownOpen: false
-  }),
-  [types.openDropdown]: state => ({
-    ...state,
-    isDropdownOpen: true
-  })
-}, initialState);
+export default function createReducer() {
+  const reducer = handleActions({
+    [types.closeDropdown]: state => ({
+      ...state,
+      isDropdownOpen: false
+    }),
+    [types.openDropdown]: state => ({
+      ...state,
+      isDropdownOpen: true
+    })
+  }, initialState);
 
-reducer.toString = () => ns;
-
-export default reducer;
+  reducer.toString = () => ns;
+  return reducer;
+}

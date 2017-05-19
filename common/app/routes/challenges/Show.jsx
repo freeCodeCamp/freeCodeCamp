@@ -10,12 +10,7 @@ import Step from './views/step';
 import Project from './views/project';
 import BackEnd from './views/backend';
 
-import {
-  replaceChallenge,
-  resetUi,
-
-  challengeMetaSelector
-} from './redux';
+import { challengeMetaSelector } from './redux';
 import {
   updateTitle,
   fetchChallenge,
@@ -39,8 +34,6 @@ const mapDispatchToProps = {
   fetchChallenge,
   fetchChallenges,
   makeToast,
-  replaceChallenge,
-  resetUi,
   updateTitle
 };
 
@@ -86,8 +79,6 @@ const propTypes = {
   lang: PropTypes.string.isRequired,
   makeToast: PropTypes.func.isRequired,
   params: PropTypes.object.isRequired,
-  replaceChallenge: PropTypes.func.isRequired,
-  resetUi: PropTypes.func.isRequired,
   title: PropTypes.string,
   updateTitle: PropTypes.func.isRequired,
   viewType: PropTypes.string
@@ -115,19 +106,13 @@ export class Show extends PureComponent {
     }
   }
 
-  componentWillUnmount() {
-    this.props.resetUi();
-  }
-
   componentWillReceiveProps(nextProps) {
     const { title } = nextProps;
-    const { block, dashedName } = nextProps.params;
+    const { dashedName } = nextProps.params;
     const { lang, isTranslated } = nextProps;
-    const { resetUi, updateTitle, replaceChallenge, makeToast } = this.props;
+    const { updateTitle, makeToast } = this.props;
     if (this.props.params.dashedName !== dashedName) {
       updateTitle(title);
-      resetUi();
-      replaceChallenge({ dashedName, block });
       if (lang !== 'en' && !isTranslated) {
         makeToast({
           message: 'We haven\'t translated this challenge yet.',

@@ -29,15 +29,17 @@ export const removeToast = createAction(
 
 const initialState = [];
 
-const reducer = handleActions({
-  [types.makeToast]: (state, { payload: toast }) => [
-    ...state,
-    toast
-  ],
-  [types.removeToast]: (state, { payload: key }) => state.filter(
-    toast => toast.key !== key
-  )
-}, initialState);
+export default function createReducer() {
+  const reducer = handleActions({
+    [types.makeToast]: (state, { payload: toast }) => [
+      ...state,
+      toast
+    ],
+    [types.removeToast]: (state, { payload: key }) => state.filter(
+      toast => toast.key !== key
+    )
+  }, initialState);
 
-reducer.toString = () => ns;
-export default reducer;
+  reducer.toString = () => ns;
+  return reducer;
+}

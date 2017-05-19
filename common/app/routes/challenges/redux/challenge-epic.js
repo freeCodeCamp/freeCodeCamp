@@ -6,7 +6,6 @@ import { push } from 'react-router-redux';
 import {
   types,
 
-  resetUi,
   updateMain,
   challengeUpdated
 } from './';
@@ -113,7 +112,6 @@ export function nextChallengeEpic(actions, { getState }) {
         }
         return Observable.of(
           updateCurrentChallenge(nextChallenge.dashedName),
-          resetUi(),
           makeToast({ message: 'Your next challenge has arrived.' })
         );
       } catch (err) {

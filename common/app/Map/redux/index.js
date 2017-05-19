@@ -99,54 +99,56 @@ export function makePanelHiddenSelector(name) {
 //     }]
 //   }
 // }
-export const reducer = handleActions(
-  {
-    [types.updateFilter]: (state, { payload = '' }) => ({
-      ...state,
-      filter: payload
-    }),
-    [
-      combineActions(
-        types.clearFilterPressed,
-        types.escapeKeyInFilter
-      )
-    ]: (state) => ({
-      ...state,
-      filter: ''
-    }),
-    [types.fetchChallengesCompleted]: (state, { payload }) => {
-      const { entities, results } = payload;
-      return {
+export default function createReducer() {
+  const reducer = handleActions(
+    {
+      [types.updateFilter]: (state, { payload = '' }) => ({
         ...state,
-        mapUi: utils.createMapUi(entities, results)
-      };
-    },
+        filter: payload
+      }),
+      [
+        combineActions(
+          types.clearFilterPressed,
+          types.escapeKeyInFilter
+        )
+      ]: (state) => ({
+        ...state,
+        filter: ''
+      }),
+      [types.fetchChallengesCompleted]: (state, { payload }) => {
+        const { entities, results } = payload;
+        return {
+          ...state,
+          mapUi: utils.createMapUi(entities, results)
+        };
+      },
 
-    [types.toggleThisPanel]: (state, { payload: name }) => {
-      return {
-        ...state,
-        mapUi: utils.toggleThisPanel(state, name)
-      };
+      [types.toggleThisPanel]: (state, { payload: name }) => {
+        return {
+          ...state,
+          mapUi: utils.toggleThisPanel(state, name)
+        };
+      },
+      [types.collapseAll]: state => {
+        const mapUi = utils.collapseAllPanels(state);
+        mapUi.isAllCollapsed = true;
+        return {
+          ...state,
+          mapUi
+        };
+      },
+      [types.expandAll]: state => {
+        const mapUi = utils.expandAllPanels(state);
+        mapUi.isAllCollapsed = false;
+        return {
+          ...state,
+          mapUi
+        };
+      }
     },
-    [types.collapseAll]: state => {
-      const mapUi = utils.collapseAllPanels(state);
-      mapUi.isAllCollapsed = true;
-      return {
-        ...state,
-        mapUi
-      };
-    },
-    [types.expandAll]: state => {
-      const mapUi = utils.expandAllPanels(state);
-      mapUi.isAllCollapsed = false;
-      return {
-        ...state,
-        mapUi
-      };
-    }
-  },
-  initialState
-);
+    initialState
+  );
 
-reducer.toString = () => ns;
-export default reducer;
+  reducer.toString = () => ns;
+  return reducer;
+}

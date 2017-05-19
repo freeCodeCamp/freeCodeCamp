@@ -221,55 +221,56 @@ export const firstChallengeSelector = createSelector(
   }
 );
 
-const reducer = handleActions(
-  {
-    [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
-      ...state,
-      title: payload + ' | freeCodeCamp'
-    }),
+export default function createReducer() {
+  const reducer = handleActions(
+    {
+      [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
+        ...state,
+        title: payload + ' | freeCodeCamp'
+      }),
 
-    [types.updateThisUser]: (state, { payload: user }) => ({
-      ...state,
-      user
-    }),
-    [types.fetchChallenge.complete]: (state, { payload }) => ({
-      ...state,
-      currentChallenge: payload.currentChallenge
-    }),
-    [types.fetchChallenges.complete]: (state, { payload }) => ({
-      ...state,
-      superBlocks: payload.results,
-      areChallengesLoaded: payload.results.length > 0
-    }),
-    [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
-      ...state,
-      currentChallenge: payload
-    }),
-    [types.updateAppLang]: (state, { payload = 'en' }) =>({
-      ...state,
-      lang: payload
-    }),
-    [types.updateTheme]: (state, { payload = 'default' }) => ({
-      ...state,
-      theme: payload
-    }),
-    [combineActions(types.showSignIn, types.updateThisUser)]: state => ({
-      ...state,
-      isSignInAttempted: true
-    }),
+      [types.updateThisUser]: (state, { payload: user }) => ({
+        ...state,
+        user
+      }),
+      [types.fetchChallenge.complete]: (state, { payload }) => ({
+        ...state,
+        currentChallenge: payload.currentChallenge
+      }),
+      [types.fetchChallenges.complete]: (state, { payload }) => ({
+        ...state,
+        superBlocks: payload.results,
+        areChallengesLoaded: payload.results.length > 0
+      }),
+      [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
+        ...state,
+        currentChallenge: payload
+      }),
+      [types.updateAppLang]: (state, { payload = 'en' }) =>({
+        ...state,
+        lang: payload
+      }),
+      [types.updateTheme]: (state, { payload = 'default' }) => ({
+        ...state,
+        theme: payload
+      }),
+      [combineActions(types.showSignIn, types.updateThisUser)]: state => ({
+        ...state,
+        isSignInAttempted: true
+      }),
 
-    [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
-      ...state,
-      points
-    }),
-    [types.delayedRedirect]: (state, { payload }) => ({
-      ...state,
-      delayedRedirect: payload
-    })
-  },
-  initialState
-);
+      [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
+        ...state,
+        points
+      }),
+      [types.delayedRedirect]: (state, { payload }) => ({
+        ...state,
+        delayedRedirect: payload
+      })
+    },
+    initialState
+  );
 
-reducer.toString = () => ns;
-
-export default reducer;
+  reducer.toString = () => ns;
+  return reducer;
+}
