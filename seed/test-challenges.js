@@ -18,6 +18,8 @@ import presetEs2015 from 'babel-preset-es2015';
 import presetReact from 'babel-preset-react';
 import stage2 from 'babel-preset-stage-2';
 
+import jsdom from 'jsdom-global';
+
 const reactDependencies = {
   React,
   ReactDOM,
@@ -29,7 +31,9 @@ const reactDependencies = {
   mount
 };
 
-const options = { presets: [ presetEs2015, presetReact, stage2 ] };
+const options = { presets:
+  [ presetEs2015, presetReact, stage2 ]
+};
 const transform = function(code) {
   return babel.transform(code, options).code;
 };
@@ -97,7 +101,8 @@ function createTest({
   connect,
   shallow,
   mount
-} = {}) {
+  /* eslint-enable no-unused-vars */
+} = {}, jsdom = {}) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
   head = head.join('\n');
@@ -126,9 +131,9 @@ function createTest({
         /* eslint-disable no-unused-vars */
         // assert and code used within the eval
         .doOnNext(assert => {
-          let isReact = challengeType === 8;
           solutions.forEach(solution => {
             tests.forEach(test => {
+              let isReact = challengeType === 8;
               let codeString;
               let code = solution;
               const editor = { getValue() { return code; } };
@@ -137,14 +142,19 @@ function createTest({
               try {
                 (() => {
                   if (isReact) {
-                    /* transpile the React code,
-                     * then run the tests */
-                    return eval(transform(
+                    /* Mock the DOM for ReactDOM challenges */
+                    jsdom();
+                    /* We preserve the original code string for certain tests,
+                     * and attach it to the mocked document to mimick the app's
+                     * browser testing environment. Then, we transpile the code
+                     * with babel and feed this to eval to run the test. */
+                    const codeString = (
                       head + '\n;;' +
                       solution + '\n;;' +
-                      tail + '\n;;' +
-                      test)
+                      tail + '\n;;'
                     );
+                    document.__originalCode = codeString;
+                    return eval(transform(codeString + test));
                   } else {
                     /* run regular tests */
                     return eval(
@@ -173,7 +183,7 @@ Observable.from(getChallenges())
     const isReact = challenge.challengeType === 8;
     if (isReact) {
       /* pass in the React depenendencies */
-      return createTest(challenge, reactDependencies);
+      return createTest(challenge, reactDependencies, jsdom);
     } else {
       return createTest(challenge);
     }

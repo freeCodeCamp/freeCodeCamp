@@ -70,14 +70,19 @@
         "",
         "const rootReducer = // define the root reducer here",
         "",
-        "const store = Redux.createStore(rootReducer);"
+        "const store = createStore(rootReducer);"
       ],
-      "solutions": [],
+      "tail": [
+        "var originalCode = document.__originalCode;"
+      ],
+      "solutions": [
+        "const INCREMENT = 'INCREMENT'; const DECREMENT = 'DECREMENT'; const counterReducer = function(state = 0, action) {switch(action.type) {case INCREMENT:return state + 1;case DECREMENT:return state - 1;default:return state;}}; const LOGIN = 'LOGIN'; const LOGOUT = 'LOGOUT'; const authReducer = function(state = {authenticated: false}, action) {switch(action.type) {case LOGIN:return {authenticated: true};case LOGOUT:return {authenticated: false};default:return state;}}; const rootReducer = combineReducers({count: counterReducer,auth: authReducer}); const store = createStore(rootReducer);"
+      ],
       "tests": [
         "assert((function(){ var initalState = store.getState().count; store.dispatch({type: INCREMENT}); store.dispatch({type: INCREMENT}); var firstState = store.getState().count; store.dispatch({type: DECREMENT}); var secondState = store.getState().count; return (firstState === initalState + 2 && secondState === firstState - 1); })(), 'message: The <code>counterReducer</code> should increment and decrement the state.');",
         "assert((function() { store.dispatch({type: LOGIN}); var loggedIn = store.getState().auth.authenticated; store.dispatch({type: LOGOUT}); var loggedOut = store.getState().auth.authenticated; return (loggedIn === true && loggedOut === false); })(), 'message: The <code>authReducer</code> should toggle the state of authenticated between <code>true</code> and <code>false</code>.');",
         "assert((function() { var state = store.getState(); return (typeof state.auth === 'object' && typeof state.auth.authenticated === 'boolean' && typeof state.count === 'number'); })(), 'message: The store state should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.');",
-        "assert((function() { var noWhiteSpace = document.__original.replace(/\\s/g,''); return (typeof rootReducer === 'function' && noWhiteSpace.includes('combineReducers')); })(), 'message: The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.');"
+        "assert((function() { var noWhiteSpace = originalCode.replace(/\\s/g,''); return (typeof rootReducer === 'function' && noWhiteSpace.includes('combineReducers')); })(), 'message: The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.');"
       ],
       "releasedOn": "May 25, 2017",
       "type": "waypoint",

@@ -46,13 +46,15 @@
         ""
       ],
       "tail": [
-        "var jsx; try { jsx = eval(JSX); } catch (err) { console.warn(err); }"
+        "var jsx = eval(JSX);"
       ],
       "solutions": [
         "var JSX = <h1>Hello JSX!</h1>;"
       ],
+      "tail": [
+        "var jsx = eval(JSX);"
+      ],
       "tests": [
-        "assert((function(){ var jsx; try { jsx = eval(JSX); } catch(e) { return false; } return true })(), 'message: Your code does not transpile.');",
         "assert.strictEqual(jsx.type, 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
         "assert(jsx.props.children === 'Hello JSX!', 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
@@ -94,12 +96,12 @@
       ],
       "tail": [
         "var mountedNode = document.getElementById('challenge-node');",
-        "var Mock;",
-        "try { Mock = eval(JSX); } catch(e) { Mock = null; }",
-        "var ShallowComponent;",
-        "try { ShallowComponent = document.shallow(Mock); } catch(e) { ShallowComponent = null; };"
+        "var Mock = eval(JSX);",
+        "var ShallowComponent = shallow(Mock);"
       ],
-      "solutions": [],
+      "solutions": [
+        "const JSX = (<div><h2>Welcome to React!</h2> <br /><p>Be sure to close all tags!</p><hr /></div>);ReactDOM.render(JSX, document.getElementById('challenge-node'));"
+      ],
       "tests": [
         "assert(Mock.type === 'div', 'message: The JSX variable should return a <code>div</code> element.');",
         "assert(ShallowComponent.contains(React.createElement('hr')), 'message: The <code>div</code> should contain an <code>hr</code> tag.');",
@@ -137,11 +139,12 @@
         ""
       ],
       "tail": [
-       "var Mock; try { Mock = eval(MyComponent); } catch (err) { console.warn(err); }",
-       "var output;",
-       "try { output = Mock(); } catch(e) { console.warn(e); }"
+       "var Mock = eval(MyComponent);",
+       "var output = Mock();"
       ],
-      "solutions": [],
+      "solutions": [
+        "const MyComponent = function() {return (<div>Demo Solution</div>);}"
+      ],
       "tests": [
         "assert(typeof MyComponent === 'function', 'message: <code>MyComponent</code> should be a function.');",
         "assert(typeof output === 'object', 'message: <code>MyComponent</code> should return a JSX element.');",
@@ -182,12 +185,13 @@
        ""
       ],
       "tail": [
-       "var MyComponent; try { MyComponent = eval(MyComponent); } catch (err) { console.warn(err); }",
-       "var ShallowComponent;"
+       "var Mock = eval(MyComponent)",
+       "var ShallowComponent = shallow(React.createElement(Mock));"
       ],
-      "solutions": [],
+      "solutions": [
+        "class MyComponent extends React.Component {constructor(props) {super(props);}render() {return (<div><h1>Hello React!</h1></div>);}};"
+      ],
       "tests": [
-        "assert((function(){ try { ShallowComponent = document.shallow(React.createElement(MyComponent)); } catch(e) { return false; } console.log(ShallowComponent); return true })(), 'message: Your code does not transpile.');",
         "assert.strictEqual(ShallowComponent.type(), 'div', 'message: The React component should return a <code>div</code> element.');",
         "assert.strictEqual(ShallowComponent.children().type(), 'h1', 'message: The returned <code>div</code> should render an <code>h1</code> tag within it.');",
         "assert.strictEqual(ShallowComponent.node.props.children.props.children, 'Hello React!', 'message: The <code>h1</code> tag should include the string <code>Hello React!</code>');"
@@ -231,14 +235,17 @@
         ""
       ],
       "tail": [
-       "var Mock; try { Mock = document.mount(React.createElement(eval(MyComponent))); } catch (err) { console.warn(err); }"
+       "var originalCode = document.__originalCode;",
+       "var Mock = mount(React.createElement(eval(MyComponent)));"
       ],
-      "solutions": [],
+      "solutions": [
+        "class MyComponent extends React.Component { constructor(props) { super(props); this.state = { message: 'Hello!' }; this.setMessage = this.setMessage.bind(this); /* setMessage=()=>{ */ } setMessage() { this.setState({ message: 'Goodbye!' }); } render() { return (<div><button onClick = {this.setMessage}>Click Me</button><h1>{this.state.message}</h1></div>); }};"
+      ],
       "tests": [
         "assert(Mock.find('div').length === 1 && Mock.find('div').children().nodes[0].tagName === 'BUTTON' && Mock.find('div').children().nodes[1].tagName === 'H1', 'message: MyComponent should return a div element which wraps two elements, a <code>button</code> and an <code>h1</code> element, in that order.');",
         "assert(Mock.state('message') === 'Hello!', 'message: The state of MyComponent should initialize with a message containing the string <code>Hello!<code>');",
         "assert((function() { Mock.setState({message: 'InitialState!'});var before = Mock.state('message');Mock.find('button').simulate('click');var after = Mock.state('message');return (before === 'InitialState!' && after === 'Goodbye!'); })(), 'message: Clicking the button element should run the <code>setMessage</code> method and upate the message property in the state to say <code>Goodbye!</code>');",
-        "assert((function() { var noSpace = document.__original.replace(/\\s/g,''); return (noSpace.includes('setMessage=()=>{')); })(), 'message: The <code>setMessage</code> method should be defined with a fat arrow function.');"
+        "assert((function() { var noSpace = originalCode.replace(/\\s/g,''); return (noSpace.includes('setMessage=()=>{')); })(), 'message: The <code>setMessage</code> method should be defined with a fat arrow function.');"
       ],
       "releasedOn": "May 25, 2017",
       "type": "waypoint",
@@ -260,7 +267,7 @@
         ""
       ],
       "tail": [
-       "var MyComponent; try { MyComponent = eval(MyComponent); } catch (err) { console.warn(err); }",
+       "var Mock = eval(MyComponent);",
        "var ShallowComponent;"
       ],
       "solutions": [],

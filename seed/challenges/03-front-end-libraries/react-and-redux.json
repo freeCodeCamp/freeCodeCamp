@@ -123,22 +123,22 @@
         ""
       ],
       "tail": [
-        "var MountedComponent;",
-        "try { MountedComponent = document.mount(React.createElement(eval(AppWrapper))); } catch(e) { MountedComponent = null; };",
-        "var PresentationalComponent;",
+        "var originalCode = document.__originalCode;",
+        "var MountedComponent = mount(React.createElement(eval(AppWrapper)));",
+        "var PresentationalComponent = MountedComponent.find('Presentational');;",
         "var props;"
       ],
       "solutions": [],
       "tests": [
         "assert(MountedComponent.find('AppWrapper').length === 1, 'message: The <code>AppWrapper</code> should render to the page.');",
         "assert(MountedComponent.find('Presentational').length === 1, 'message: The Presentational component should render to the page.');",
-        "assert((function() { PresentationalComponent = MountedComponent.find('Presentational'); return (PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1); })(), 'message: The Presentational component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');",
+        "assert((function() { return (PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1); })(), 'message: The Presentational component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');",
         "assert(Array.isArray(PresentationalComponent.node.props.messages), 'message: The Presentational component should receive <code>messages</code> from the Redux store as a prop.');",
         "assert(typeof PresentationalComponent.node.props.submitNewMessage === 'function', 'message: The Presentational component should receive the <code>submitMessage()</code> action creator as a prop.');",
         "assert((function() { var PresentationalState = MountedComponent.find('Presentational').node.state; return (PresentationalState.input === ''); })(), 'message: The state of the Presentational component should contain one property, <code>input</code>, which is initialized to an empty string.');",
         "assert((function() { var initialState = MountedComponent.find('Presentational').node.state; MountedComponent.find('input').simulate('change', {target: {value: '__MOCK__INPUT__'}}); var updatedState = MountedComponent.find('Presentational').node.state; return (initialState.input === '' && updatedState.input === '__MOCK__INPUT__'); })(), 'message: Typing in the <code>input</code> element should update the state of the Presentational component.');",
         "assert((function() { var beforeProps = MountedComponent.find('Presentational').node.props; MountedComponent.find('input').simulate('change', {target: {value: '__TEST__MESSAGE__'}}); MountedComponent.find('Presentational').node.submitMessage(); var afterProps = MountedComponent.find('Presentational').node.props; var afterState = MountedComponent.find('Presentational').node.state; return (beforeProps.messages[0] !== afterProps.messages[0] && afterProps.messages[0] === '__TEST__MESSAGE__' && afterState.input === ''); })(), 'message: Dispatching <code>submitMessage()</code> on the Presentational component should update Redux store and clear the input in local state.');",
-        "((function() { var ulBefore = MountedComponent.find('ul').children(); MountedComponent.find('input').simulate('change', {target: {value: '__TEST__MESSAGE__2__'}}); MountedComponent.find('Presentational').node.submitMessage(); var ulAfter = MountedComponent.find('ul').children(); return (document.__original.replace(/\\s/g,'').includes('this.props.messages.map') === true && ulAfter.length === ulBefore.length + 1 && ulBefore.node.innerText === '__TEST__MESSAGE__' && ulAfter.nodes[1].innerText === '__TEST__MESSAGE__2__'); })(), 'message: The Presentational component should render the messages from the Redux store.');"
+        "((function() { var ulBefore = MountedComponent.find('ul').children(); MountedComponent.find('input').simulate('change', {target: {value: '__TEST__MESSAGE__2__'}}); MountedComponent.find('Presentational').node.submitMessage(); var ulAfter = MountedComponent.find('ul').children(); return (originalCode.replace(/\\s/g,'').includes('this.props.messages.map') === true && ulAfter.length === ulBefore.length + 1 && ulBefore.node.innerText === '__TEST__MESSAGE__' && ulAfter.nodes[1].innerText === '__TEST__MESSAGE__2__'); })(), 'message: The Presentational component should render the messages from the Redux store.');"
       ],
       "releasedOn": "May 25, 2017",
       "type": "waypoint",

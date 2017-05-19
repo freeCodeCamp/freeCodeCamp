@@ -65,6 +65,9 @@ function getFrameDocument(document, id = mainId) {
   frame.contentWindow.combineReducers = combineReducers;
   frame.contentWindow.Provider = Provider;
   frame.contentWindow.connect = connect;
+  // Provision Enzyme methods for testing React components
+  frame.contentWindow.mount = mount;
+  frame.contentWindow.shallow = shallow;
 
   return {
     frame: frame.contentDocument || frame.contentWindow.document,
@@ -93,21 +96,16 @@ function frameMain({ build } = {}, document, proxyLogger) {
 
 function frameTests({
   build,
-  originalCode,
   sources,
+  originalCode,
   checkChallengePayload
 } = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
-  // add Enzyme methods for testing React components
-  tests.mount = mount;
-  tests.shallow = shallow;
-  // provide the original (pre-tranpsilation) code string
-  // for use in some React tests
-  tests.__original = originalCode;
-  // default for classic challenges
-  // should not be used for modern
+  // default for classic challenges should not be used for modern
+  // attach the original code string to the document for us in some challenges
+  tests.__originalCode = originalCode;
   tests.__source = sources['index'] || '';
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
