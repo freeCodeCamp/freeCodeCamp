@@ -4,6 +4,35 @@ import { Observable } from 'rx';
 import tape from 'tape';
 import getChallenges from './getChallenges';
 
+/* NOTE: The following depenendencies are used for transpiling
+ * the code in the React challenges and running the associated
+  * tests: */
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore, combineReducers } from 'redux';
+import { Provider, connect } from 'react-redux';
+import { shallow, mount } from 'enzyme';
+
+import * as babel from 'babel-core';
+import presetEs2015 from 'babel-preset-es2015';
+import presetReact from 'babel-preset-react';
+import stage2 from 'babel-preset-stage-2';
+
+const reactDependencies = {
+  React,
+  ReactDOM,
+  createStore,
+  combineReducers,
+  Provider,
+  connect,
+  shallow,
+  mount
+};
+
+const options = { presets: [ presetEs2015, presetReact, stage2 ] };
+const transform = function(code) {
+  return babel.transform(code, options).code;
+};
 
 function createIsAssert(t, isThing) {
   const { assert } = t;
@@ -52,12 +81,23 @@ function fillAssert(t) {
 }
 
 function createTest({
+  challengeType,
   title,
   tests = [],
   solutions = [],
   head = [],
   tail = []
-}) {
+}, {
+  /* eslint-disable no-unused-vars */
+  React,
+  ReactDOM,
+  createStore,
+  combineReducers,
+  Provider,
+  connect,
+  shallow,
+  mount
+} = {}) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
   head = head.join('\n');
@@ -81,24 +121,39 @@ function createTest({
         });
       }
 
-
       return Observable.just(t)
         .map(fillAssert)
         /* eslint-disable no-unused-vars */
         // assert and code used within the eval
         .doOnNext(assert => {
+          let isReact = challengeType === 8;
           solutions.forEach(solution => {
             tests.forEach(test => {
-              const code = solution;
+              let codeString;
+              let code = solution;
               const editor = { getValue() { return code; } };
               /* eslint-enable no-unused-vars */
+
               try {
                 (() => {
-                  return eval(
-                    head + '\n;;' +
-                    solution + '\n;;' +
-                    tail + '\n;;' +
-                    test);
+                  if (isReact) {
+                    /* transpile the React code,
+                     * then run the tests */
+                    return eval(transform(
+                      head + '\n;;' +
+                      solution + '\n;;' +
+                      tail + '\n;;' +
+                      test)
+                    );
+                  } else {
+                    /* run regular tests */
+                    return eval(
+                      head + '\n;;' +
+                      solution + '\n;;' +
+                      tail + '\n;;' +
+                      test
+                    );
+                  }
                 })();
               } catch (e) {
                 t.fail(e);
@@ -115,7 +170,13 @@ Observable.from(getChallenges())
     return Observable.from(challengeSpec.challenges);
   })
   .flatMap(challenge => {
-    return createTest(challenge);
+    const isReact = challenge.challengeType === 8;
+    if (isReact) {
+      /* pass in the React depenendencies */
+      return createTest(challenge, reactDependencies);
+    } else {
+      return createTest(challenge);
+    }
   })
   .map(({ title, type }) => {
     if (type === 'missing') {
@@ -135,4 +196,3 @@ Observable.from(getChallenges())
     err => { throw err; },
     () => process.exit(0)
   );
-

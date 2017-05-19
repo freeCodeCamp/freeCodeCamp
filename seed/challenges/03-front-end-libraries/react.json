@@ -49,7 +49,7 @@
         "var jsx; try { jsx = eval(JSX); } catch (err) { console.warn(err); }"
       ],
       "solutions": [
-        ""
+        "var JSX = <h1>Hello JSX!</h1>;"
       ],
       "tests": [
         "assert((function(){ var jsx; try { jsx = eval(JSX); } catch(e) { return false; } return true })(), 'message: Your code does not transpile.');",
