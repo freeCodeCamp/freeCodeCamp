@@ -79,3 +79,6 @@ patch:
   'npm:uglify-js:20150824':
     - jade > transformers > uglify-js:
         patched: '2016-07-29T23:00:15.905Z'
+  'npm:marked:20170112':
+    - gitter-sidecar > marked:
+        patched: '2017-02-10T14:20:28.683Z'
