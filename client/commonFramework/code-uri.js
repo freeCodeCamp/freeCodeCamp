@@ -11,6 +11,8 @@ window.common = (function(global) {
   const {
     replaceScriptTags,
     replaceSafeTags,
+    replaceFormTags,
+    replaceSafeFormTags,
     replaceFormActionAttr,
     replaceFccfaaAttr,
     replaceNoprotect
@@ -18,11 +20,13 @@ window.common = (function(global) {
 
   const queryRegex = /^(\?|#\?)/;
   function encodeFcc(val) {
-    return replaceScriptTags(replaceFormActionAttr(replaceNoprotect(val)));
+    return replaceScriptTags(
+      replaceFormActionAttr(replaceFormTags(replaceNoprotect(val)))
+    );
   }
 
   function decodeFcc(val) {
-    return replaceSafeTags(replaceFccfaaAttr(val));
+    return replaceSafeTags(replaceFccfaaAttr(replaceSafeFormTags(val)));
   }
 
   var codeUri = {

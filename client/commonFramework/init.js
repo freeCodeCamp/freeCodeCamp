@@ -61,6 +61,18 @@ window.common = (function(global) {
     });
   };
 
+  common.replaceFormTags = function replaceFormTags(value) {
+    return value
+      .replace(/form/gi, 'fccsf')
+      .replace(/<\/form>/gi, 'fccef');
+  };
+
+  common.replaceSafeFormTags = function replaceSafeFormTags(value) {
+    return value
+      .replace(/fccsf/gi, 'form')
+      .replace(/fccef/gi, '</form>');
+  };
+
   common.scopejQuery = function scopejQuery(str) {
     return str
       .replace(/\$/gi, 'j$')
