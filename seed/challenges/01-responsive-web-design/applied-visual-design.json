@@ -1000,7 +1000,7 @@
       ],
       "tests": [
         "assert($('a').css('color') == 'rgb(0, 0, 0)', 'message: The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');",
-        "assert(code.match(/a:hover\\s*?{\\s*?color:\\s*?blue;\\s*?}/gi), 'message: The anchor tag should have a <code>color</code> of blue on hover.');"
+        "assert(code.match(/a:hover\\s*?{\\s*?color:\\s*?(blue|#0000ff|#00f|rgb\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?255*\\s*?\\))\\s*;\\s*?}/gi), 'message: The anchor tag should have a <code>color</code> of blue on hover.');"
       ],
       "solutions": [],
       "hints": [],
