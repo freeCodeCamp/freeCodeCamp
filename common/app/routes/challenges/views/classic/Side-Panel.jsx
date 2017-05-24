@@ -3,11 +3,11 @@ import ReactDom from 'react-dom';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
-import { Col, Row } from 'react-bootstrap';
 
 import ns from './ns.json';
 
 import ChallengeTitle from '../../Challenge-Title.jsx';
+import ChallengeDescription from '../../Challenge-Description.jsx';
 import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
 import ToolPanel from './Tool-Panel.jsx';
@@ -125,14 +125,9 @@ export class SidePanel extends PureComponent {
           <ChallengeTitle>
             { title }
           </ChallengeTitle>
-          <Row>
-            <Col
-              className={ `${ns}-instructions` }
-              xs={ 12 }
-              >
-              { this.renderDescription(description) }
-            </Col>
-          </Row>
+          <ChallengeDescription>
+            { this.renderDescription(description) }
+          </ChallengeDescription>
         </div>
         <ToolPanel
           executeChallenge={ executeChallenge }
