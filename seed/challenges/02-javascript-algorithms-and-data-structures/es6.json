@@ -111,7 +111,7 @@
         "<strong>Note</strong><br>Don't forget to add <code>\"use strict\";</code> to the top of your code."
       ],
       "challengeSeed": [
-        "// change 'var' to 'let' or 'const'",
+        "// declare variables as 'let' or 'const'",
         "// rename constant variables",
         "var pi = 3.14;",
         "var radius = 10;",
@@ -124,10 +124,11 @@
         "console.log(calculateCircumference(radius));"
       ],
       "tests": [
-        "// Test user replaced all var keyword",
-        "// Test PI is const",
-        "// Test calculateCircumference is const",
-        "// Test pi and calculateCircumference has been renamed"
+        "assert.strictEqual(es6.search(/var(?!iables)/), -1, 'message: There should be no variable declared with the <code>var</code> keyword.');",
+        "assert.notStrictEqual(es6.search(/const\\s+pi|const\\s+PI/), -1, 'message: The variable that represents pi should be declared with the <code>const</code> keyword.');",
+        "assert.notStrictEqual(es6.search(/const\\s+calculateCircumference|const\\s+CALCULATE_CIRCUMFERENCE/), -1, 'message: The function that calculates circumference should be declared with the <code>const</code> keyword.');",
+        "assert.notStrictEqual(es6.search(/PI/), -1, 'message: The variable that represents pi should be declared using best practice naming conventions.');",
+        "assert.notStrictEqual(es6.search(/CALCULATE_CIRCUMFERENCE/), -1, 'message: The function that calculates circumference should be declared using best practice naming conventions.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -194,12 +195,11 @@
         "console.log(magic());"
       ],
       "tests": [
-        "// Test user did replace var keyword",
-        "// Test magic is const",
-        "// Test magic is a function",
-        "// Test magic() returns the correct date",
-        "// Test function keyword was not used",
-        "// Test arrow => was used"
+        "assert.strictEqual(es6.search(/var/), -1, 'message: There should be no variables declared with the <code>var</code> keyword.');",
+        "assert.notStrictEqual(es6.search(/const\\s+magic|const\\s+MAGIC/), -1, 'message: <code>magic</code> should be declared with the <code>const</code> keyword.');",
+        "assert.isFunction(magic, 'message: <code>magic</code> should be a function.');",
+        "assert.strictEqual(es6.search(/function/), -1, 'message: The <code>function</code> keyword should not be used.');",
+        "assert.notStrictEqual(es6.search(/=>/), -1, 'message: Arrow function syntax, <code>=></code>, should be used to declare the function.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
