@@ -123,7 +123,7 @@
     "reselect": "^3.0.0",
     "rx": "~4.0.8",
     "sanitize-html": "^1.11.1",
-    "snyk": "^1.19.1",
+    "snyk": "^1.30.1",
     "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
     "uuid": "^3.0.1",
     "validator": "^6.0.0"
