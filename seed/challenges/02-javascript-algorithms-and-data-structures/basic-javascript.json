@@ -393,6 +393,7 @@
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
+        "assert(code.match(/difference/).length === 1,'message: Only change the first line');",
         "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*33;?/.test(code),'message: Only subtract one number from 45.');"
       ],
       "type": "waypoint",
