@@ -30,7 +30,7 @@
           "//i.imgur.com/G1saeDt.gif",
           "A gif showing how to create a Codepen account.",
           "For our front end project challenges, we'll use a popular browser-based code editor called CodePen. Click the \"Open link in new tab\" button below to open CodePen's signup page. Fill out the form and click \"Sign up\". <br><div class=\"small\">Note: If you already have a CodePen account, you can skip this step by clicking \"Open link in new tab\", closing the new tab that opens, then clicking \"go to my next step\". We removed our \"skip step\" button because many people would just click it repeatedly without doing these important steps.</div>",
-          "https://codepen.io/signup/free"
+          "https://codepen.io/accounts/signup/user/free"
         ],
         [
           "//i.imgur.com/U4y9RJ1.gif",
@@ -80,7 +80,7 @@
           "//i.imgur.com/G1saeDt.gif",
           "Гифка показывающая как зарегистрироваться на CodePen.",
           "Для заданий по фронтенд разработке, мы будем использовать популярный браузерный редактор кода под названием CodePen. Откройте страницу регистрации на сайте CodePen, нажав на расположенную чуть ниже кнопку \"Open link in new tab\". Заполните форму и нажмите \"Sign up\". <br><div class=\"small\">Замечание: Если у вас уже есть аккаунт CodePen, то этот шаг можно пропустить: нажмите на кнопку \"Open link in new tab\", закройте появившуюся вкладку и затем кликните \"go to my next step\". Мы убрали кнопку \"skip step\", ввиду того что большинство людей просто нажимали бы ее несколько раз подряд и пропускали бы эти важные инструкции.</div>",
-          "https://codepen.io/signup/free"
+          "https://codepen.io/accounts/signup/user/free"
         ],
         [
           "//i.imgur.com/U4y9RJ1.gif",
@@ -119,7 +119,7 @@
           "//i.imgur.com/G1saeDt.gif",
           "Un gif que muestra cómo crear una cuenta en Codepen.",
           "Para nuestros desafíos de interfaces, usaremos un editor de código basado en el navegador que es muy famoso llamado Codepen. Pulsa en el botón de abajo \"Open link in new tab\" para abrir la página de registro de CodePen. Rellena el formulario y pulsa \"Sign up\". <br><div class=\"small\">Nota: Si ya tienes una cuenta de CodePen, puedes omitir este paso pulsando \"Open link in new tab\", cierra la nueva pestaña que se abre, entonces pulsa \"go to my next step\". Eliminamos nuestro botón \"skip step\" porque mucha gente solamente pulsa el botón sin realizar estos importantes pasos.</div>",
-          "https://codepen.io/signup/free"
+          "https://codepen.io/accounts/signup/user/free"
         ],
         [
           "//i.imgur.com/U4y9RJ1.gif",
@@ -140,8 +140,7 @@
       "title": "Build a Tribute Page",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/NNvBQW/' target='_blank'>https://codepen.io/FreeCodeCamp/full/NNvBQW/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can view a tribute page with an image and text.",
         "<strong>User Story:</strong> I can click on a link that will take me to an external website with further information on the topic.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck.",
@@ -184,9 +183,7 @@
       "title": "Build a Personal Portfolio Webpage",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/FreeCodeCamp/full/YqLyXB/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
-        "<strong>Rule #3:</strong> You can use Bootstrap, or any other framework of your choice.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
         "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
         "<strong>User Story:</strong> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",

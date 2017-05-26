@@ -79,6 +79,92 @@
       ]
     },
     {
+      "id": "56533eb9ac21ba0edf2244cf",
+      "title": "Record Collection",
+      "description": [
+        "You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.",
+        "Write a function which takes an album's <code>id</code> (like <code>2548</code>), a property <code>prop</code> (like <code>\"artist\"</code> or <code>\"tracks\"</code>), and a <code>value</code> (like <code>\"Addicted to Love\"</code>) to modify the data in this collection.",
+        "If <code>prop</code> isn't <code>\"tracks\"</code> and <code>value</code> isn't empty (<code>\"\"</code>), update or set the <code>value</code> for that record album's property.",
+        "Your function must always return the entire collection object.",
+        "There are several rules for handling incomplete data:",
+        "If <code>prop</code> is <code>\"tracks\"</code> but the album doesn't have a <code>\"tracks\"</code> property, create an empty array before adding the new value to the album's corresponding property.",
+        "If <code>prop</code> is <code>\"tracks\"</code> and <code>value</code> isn't empty (<code>\"\"</code>), push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.",
+        "If <code>value</code> is empty (<code>\"\"</code>), delete the given <code>prop</code> property from the album.",
+        "<strong>Hints</strong><br>Use <code>bracket notation</code> when <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accessing object properties with variables</a>.",
+        "Push is an array method you can read about on <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push\">Mozilla Developer Network</a>.",
+        "You may refer back to <a href=\"manipulating-complex-objects\">Manipulating Complex Objects</a> Introducing JavaScript Object Notation (JSON) for a refresher."
+      ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [
+        "// Setup",
+        "var collection = {",
+        "    \"2548\": {",
+        "      \"album\": \"Slippery When Wet\",",
+        "      \"artist\": \"Bon Jovi\",",
+        "      \"tracks\": [ ",
+        "        \"Let It Rock\", ",
+        "        \"You Give Love a Bad Name\" ",
+        "      ]",
+        "    },",
+        "    \"2468\": {",
+        "      \"album\": \"1999\",",
+        "      \"artist\": \"Prince\",",
+        "      \"tracks\": [ ",
+        "        \"1999\", ",
+        "        \"Little Red Corvette\" ",
+        "      ]",
+        "    },",
+        "    \"1245\": {",
+        "      \"artist\": \"Robert Palmer\",",
+        "      \"tracks\": [ ]",
+        "    },",
+        "    \"5439\": {",
+        "      \"album\": \"ABBA Gold\"",
+        "    }",
+        "};",
+        "// Keep a copy of the collection for tests",
+        "var collectionCopy = JSON.parse(JSON.stringify(collection));",
+        "",
+        "// Only change code below this line",
+        "function updateRecords(id, prop, value) {",
+        "  ",
+        "  ",
+        "  return collection;",
+        "}",
+        "",
+        "// Alter values below to test your code",
+        "updateRecords(5439, \"artist\", \"ABBA\");",
+        ""
+      ],
+      "tail": [
+        ";(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
+      ],
+      "solutions": [
+        "var collection = {\n    2548: {\n      album: \"Slippery When Wet\",\n      artist: \"Bon Jovi\",\n      tracks: [ \n        \"Let It Rock\", \n        \"You Give Love a Bad Name\" \n      ]\n    },\n    2468: {\n      album: \"1999\",\n      artist: \"Prince\",\n      tracks: [ \n        \"1999\", \n        \"Little Red Corvette\" \n      ]\n    },\n    1245: {\n      artist: \"Robert Palmer\",\n      tracks: [ ]\n    },\n    5439: {\n      album: \"ABBA Gold\"\n    }\n};\n// Keep a copy of the collection for tests\nvar collectionCopy = JSON.parse(JSON.stringify(collection));\n\n// Only change code below this line\nfunction updateRecords(id, prop, value) {\n  if(value === \"\") delete collection[id][prop];\n  else if(prop === \"tracks\") {\n    collection[id][prop] = collection[id][prop] || [];\n    collection[id][prop].push(value);\n  } else {\n    collection[id][prop] = value;\n  }\n  \n  return collection;\n}"
+      ],
+      "tests": [
+        "collection = collectionCopy; assert(updateRecords(5439, \"artist\", \"ABBA\")[5439][\"artist\"] === \"ABBA\", 'message: After <code>updateRecords(5439, \"artist\", \"ABBA\")</code>, <code>artist</code> should be <code>\"ABBA\"</code>');",
+        "assert(updateRecords(5439, \"tracks\", \"Take a Chance on Me\")[5439][\"tracks\"].pop() === \"Take a Chance on Me\", 'message: After <code>updateRecords(5439, \"tracks\", \"Take a Chance on Me\")</code>, <code>tracks</code> should have <code>\"Take a Chance on Me\"</code> as the last element.');",
+        "updateRecords(2548, \"artist\", \"\"); assert(!collection[2548].hasOwnProperty(\"artist\"), 'message: After <code>updateRecords(2548, \"artist\", \"\")</code>, <code>artist</code> should not be set');",
+        "assert(updateRecords(1245, \"tracks\", \"Addicted to Love\")[1245][\"tracks\"].pop() === \"Addicted to Love\", 'message: After <code>updateRecords(1245, \"tracks\", \"Addicted to Love\")</code>, <code>tracks</code> should have <code>\"Addicted to Love\"</code> as the last element.');",
+        "assert(updateRecords(2468, \"tracks\", \"Free\")[2468][\"tracks\"][0] === \"1999\", 'message: After <code>updateRecords(2468, \"tracks\", \"Free\")</code>, <code>tracks</code> should have <code>\"1999\"</code> as the first element.');",
+        "updateRecords(2548, \"tracks\", \"\"); assert(!collection[2548].hasOwnProperty(\"tracks\"), 'message: After <code>updateRecords(2548, \"tracks\", \"\")</code>, <code>tracks</code> should not be set');"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "titleEs": "Colección de registros",
+      "descriptionEs": [
+        "Se te da un objeto que representa (una pequeña parte de) tu colección de grabaciones. Cada álbum es identificado por un número id único y tiene varias propiedades. No todos los álbumes tienen la información completa.",
+        "Escribe una función que reciba un <code>id</code>, una propiedad (<code>prop</code>) y un valor (<code>value</code>).",
+        "Para el <code>id</code> dado, en la colección <code>collection</code>:",
+        "Si el valor <code>value</code> no está en blanco (<code>value !== \"\"</code>) y <code>prop</code> no es <code>\"tracks\"</code> entonces actualiza o establece el valor de la propiedad <code>prop</code>.",
+        "Si la propiedad <code>prop</code> es <code>\"tracks\"</code> y <code>value</code> no está en blanco, empuja (<em>push</em>) el valor <code>value</code> al final del vector <code>tracks</code>.",
+        "Si el valor <code>value</code> está en blanco, elimina esa <code>prop</code>.",
+        "Siempre retorna el objeto <code>collection</code> entero.",
+        "<strong>Nota</strong><br>No olvides usar <code>notación corchete</code> cuando <a href=\"accessing-objects-properties-with-variables\" target=\"_blank\">accedes a propiedades de objetos con variables</a>."
+      ]
+    },
+    {
       "id": "a3f503de51cf954ede28891d",
       "title": "Symmetric Difference",
       "description": [
@@ -299,67 +385,6 @@
       ]
     },
     {
-      "id": "a19f0fbe1872186acd434d5a",
-      "title": "Friendly Date Ranges",
-      "description": [
-        "Convert a date range consisting of two dates formatted as <code>YYYY-MM-DD</code> into a more readable format.",
-        "The friendly display should use month names instead of numbers and ordinal dates instead of cardinal (<code>1st</code> instead of <code>1</code>).",
-        "Do not display information that is redundant or that can be inferred by the user: if the date range ends in <em>less than a year</em> from when it begins, do not display the <em>ending year</em>.",
-        "Additionally, if the date range begins in the <em>current year</em> (i.e. it is currently the year 2016) and ends within one year, the year should not be displayed at the <em>beginning</em> of the friendly range.",
-        "If the range ends in the <em>same month</em> that it begins, do not display the <em>ending year or month</em>.",
-        "Examples:",
-        "<code>makeFriendlyDates([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>",
-        "<code>makeFriendlyDates([\"2016-07-01\", \"2018-07-04\"])</code> should return <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
-      ],
-      "challengeSeed": [
-        "function makeFriendlyDates(arr) {",
-        "  return arr;",
-        "}",
-        "",
-        "makeFriendlyDates(['2016-07-01', '2016-07-04']);"
-      ],
-      "solutions": [
-        "function makeFriendlyDates(str) {\n  var thisYear = new Date().getFullYear();\n  var dates = str.map(function(s) {return s.split('-').map(Number);});\n  var start = dates[0];\n  var end = dates[1];\n  if (str[0] === str[1]) {\n     return [readable(start)];\n  }\n  if (start[0] !== end[0]) {\n    if (start[0] + 1 === end[0]){\n      if (start[1] > end[1]){\n        end[0] = undefined;\n      }\n      if (start[1] === end[1] && start[2] > end[2]){\n        end[0] = undefined;\n      }\n      if (start[0] === thisYear){\n        start[0] = undefined;\n      }\n    }\n    return dates.map(readable);\n  }\n  end[0] = undefined;\n  if (start[0] === thisYear){\n    start[0] = undefined;\n  }\n  if (start[1] === end[1]) {\n    end[1] = undefined;\n  }\n  return dates.map(readable);\n}\n\nfunction readable(arr) {\n  var ordD = arr[2] + nth(arr[2]);\n  if (!arr[1]) {\n    return ordD;\n  }\n  return MONTH[arr[1]] + \" \" + ordD + (!arr[0] ? \"\" : \", \" + arr[0]);\n}\n\nvar MONTH = {1: \"January\",\n             2: \"February\",\n             3: \"March\",\n             4: \"April\",\n             5: \"May\",\n             6: \"June\",\n             7: \"July\",\n             8: \"August\",\n             9: \"September\",\n             10: \"October\",\n             11: \"November\",\n             12: \"December\"};\n\nfunction nth(d) {\n  if(d>3 && d<21) return 'th';\n  switch (d % 10) {\n    case 1: return \"st\";\n    case 2: return \"nd\";\n    case 3: return \"rd\";\n    default: return \"th\";\n  }\n}"
-      ],
-      "tests": [
-        "assert.deepEqual(makeFriendlyDates(['2016-07-01', '2016-07-04']), ['July 1st','4th'], 'message: <code>makeFriendlyDates([\"2016-07-01\", \"2016-07-04\"])</code> should return <code>[\"July 1st\",\"4th\"]</code>.');",
-        "assert.deepEqual(makeFriendlyDates(['2016-12-01', '2017-02-03']), ['December 1st','February 3rd'], 'message: <code>makeFriendlyDates([\"2016-12-01\", \"2017-02-03\"])</code> should return <code>[\"December 1st\",\"February 3rd\"]</code>.');",
-        "assert.deepEqual(makeFriendlyDates(['2016-12-01', '2018-02-03']), ['December 1st, 2016','February 3rd, 2018'], 'message: <code>makeFriendlyDates([\"2016-12-01\", \"2018-02-03\"])</code> should return <code>[\"December 1st, 2016\",\"February 3rd, 2018\"]</code>.');",
-        "assert.deepEqual(makeFriendlyDates(['2017-03-01', '2017-05-05']), ['March 1st, 2017','May 5th'], 'message: <code>makeFriendlyDates([\"2017-03-01\", \"2017-05-05\"])</code> should return <code>[\"March 1st, 2017\",\"May 5th\"]</code>');",
-        "assert.deepEqual(makeFriendlyDates(['2018-01-13', '2018-01-13']), ['January 13th, 2018'], 'message: <code>makeFriendlyDates([\"2018-01-13\", \"2018-01-13\"])</code> should return <code>[\"January 13th, 2018\"]</code>.');",
-        "assert.deepEqual(makeFriendlyDates(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th'], 'message: <code>makeFriendlyDates([\"2022-09-05\", \"2023-09-04\"])</code> should return <code>[\"September 5th, 2022\",\"September 4th\"]</code>.');",
-        "assert.deepEqual(makeFriendlyDates(['2022-09-05', '2023-09-05']), ['September 5th, 2022','September 5th, 2023'], 'message: <code>makeFriendlyDates([\"2022-09-05\", \"2023-09-05\"])</code> should return <code>[\"September 5th, 2022\",\"September 5th, 2023\"]</code>.');"
-      ],
-      "type": "bonfire",
-      "MDNlinks": [
-        "String.prototype.split()",
-        "String.prototype.substr()",
-        "parseInt()"
-      ],
-      "challengeType": 5,
-      "titleEs": "Rangos de fechas amigables",
-      "descriptionEs": [
-        "Convierte un rango de fecha que conste de dos fechas en formato AAAA-MM-DD a un formato más legible",
-        "",
-        "La presentación amigable debería usar nombres de meses en inglés en lugar de números y fechas ordinales en lugar de cardinales (\"1st\" en lugar de \"1\").",
-        "No presentes información redundante o que pueda ser inferida por el usuario: si el rango de fechas termina en menos de un año desde la fecha incial, no presentes el año final.  Si el rango termina en el mismo mes de la fecha inicial, no presentes ni el mes ni el año final.",
-        "Además, si el rango de fechas comienza en el año actual y termina en un año o menos, no debes presentar el año al comienzo del rango amigable."
-      ],
-      "titleIt": "Intervalli di date leggibili",
-      "descriptionIt": [
-        "Converti un intervallo di date composto da due date in formato <code>YYYY-MM-DD</code> in un formato più leggibile.",
-        "Il formato leggibile deve usare i nomi dei mesi (in inglese) e le i numeri dei giorni in formato ordinale invece che cardinale (sempre in inglese. Ad esempio <code>1st</code> invece di <code>1</code>).",
-        "Non mostrare informazioni ridondanti o che siano ricavabili dall'utente: se l'intervallo di date termina in <em>meno di un anno</em> da quando inizia, non mostrare l'<em>anno in cui l'intervallo termina</em>.",
-        "In più, se l'intervallo di date incomincia nell'<em>anno corrente</em> (siamo nell'anno 2016) e finisce nel giro di un anno, l'anno non deve essere mostrato all'<em>inizio</em> del risultato.",
-        "Se l'intervallo di date finisce nello <em>stesso mese</em> in cui incomincia, non mostrare l'<em>anno di termine nè il mese</em>.",
-        "Esempi:",
-        "<code>makeFriendlyDates([\"2016-07-01\", \"2016-07-04\"])</code> deve ritornare <code>[\"July 1st\",\"4th\"]</code>",
-        "<code>makeFriendlyDates([\"2016-07-01\", \"2018-07-04\"])</code> deve ritornare <code>[\"July 1st, 2016\", \"July 4th, 2018\"]</code>.",
-        "Ricorda di usare <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Leggi-Cerca-Chiedi</a> se rimani bloccato. Prova a programmare in coppia. Scrivi il codice da te."
-      ]
-    },
-    {
       "id": "a2f1d72d9b908d0bd72bb9f6",
       "title": "Make a Person",
       "description": [
@@ -372,6 +397,10 @@
       ],
       "challengeSeed": [
         "var Person = function(firstAndLast) {",
+        "    // Complete the method below and implement the others similarly",
+        "    this.getFullName = function() {",
+        "      return \"\";",
+        "    };",
         "    return firstAndLast;",
         "};",
         "",

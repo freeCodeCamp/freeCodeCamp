@@ -17,15 +17,18 @@ module.exports = function(app) {
   router.get('/unsubscribe/:email', unsubscribeMonthly);
   router.get('/unsubscribe-notifications/:email', unsubscribeNotifications);
   router.get('/unsubscribe-quincy/:email', unsubscribeQuincy);
+  router.get('/unsubscribed/:email', unsubscribed);
   router.get('/unsubscribed', unsubscribed);
+  router.get('/resubscribe/:email', resubscribe);
+  router.get('/resubscribe', resubscribe);
   router.get('/get-started', getStarted);
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get('/stories', showTestimonials);
-  router.get('/shop', showShop);
-  router.get('/shop/cancel-stickers', cancelStickers);
-  router.get('/shop/confirm-stickers', confirmStickers);
+  router.get('/cancel-stickers', cancelStickers);
+  router.get('/confirm-stickers', confirmStickers);
   router.get('/all-stories', showAllTestimonials);
   router.get('/terms', terms);
+  router.get('/welcome', welcome);
   router.get('/privacy', privacy);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get(
@@ -55,6 +58,12 @@ module.exports = function(app) {
       res.render('resources/privacy', {
           title: 'Privacy policy'
       });
+  }
+
+  function welcome(req, res) {
+    res.render('resources/welcome', {
+      title: 'Welcome to Free Code Camp!'
+    });
   }
 
   function howNonprofitProjectsWork(req, res) {
@@ -105,19 +114,13 @@ module.exports = function(app) {
     });
   }
 
-  function showShop(req, res) {
-    res.render('resources/shop', {
-      title: 'Support Free Code Camp by Buying t-shirts, ' +
-        'stickers, and other goodies'
-    });
-  }
-
   function confirmStickers(req, res) {
     req.flash('success', {
-      msg: 'Thank you for supporting our community! You should receive ' +
-        'your stickers in the mail soon!'
+      msg: 'Thank you for supporting our community! Depending on how far you ' +
+        'live from San Francisco, these stickers may take several weeks ' + 
+        'to reach you.'
     });
-    res.redirect('/shop');
+    res.redirect('/map');
   }
 
   function cancelStickers(req, res) {
@@ -125,7 +128,7 @@ module.exports = function(app) {
         msg: 'You\'ve cancelled your purchase of our stickers. You can ' +
           'support our community any time by buying some.'
       });
-      res.redirect('/shop');
+      res.redirect('/map');
   }
   function submitCatPhoto(req, res) {
     res.send('Submitted!');
@@ -166,7 +169,15 @@ module.exports = function(app) {
   }
 
   function unsubscribeMonthly(req, res, next) {
-    req.checkParams('email', 'Must send a valid email').isEmail();
+    req.checkParams(
+      'email',
+      `"${req.params.email}" isn't a valid email address.`
+    ).isEmail();
+    const errors = req.validationErrors(true);
+    if (errors) {
+      req.flash('error', { msg: errors.email.msg });
+      return res.redirect('/map');
+    }
     return User.findOne({ where: { email: req.params.email } }, (err, user) => {
       if (err) { return next(err); }
       if (!user) {
@@ -185,13 +196,21 @@ module.exports = function(app) {
         req.flash('info', {
           msg: 'We\'ve successfully updated your Email preferences.'
         });
-        return res.redirect('/unsubscribed');
+        return res.redirect('/unsubscribed/' + req.params.email);
       });
     });
   }
 
   function unsubscribeNotifications(req, res, next) {
-    req.checkParams('email', 'Must send a valid email').isEmail();
+    req.checkParams(
+      'email',
+      `"${req.params.email}" isn't a valid email address.`
+    ).isEmail();
+    const errors = req.validationErrors(true);
+    if (errors) {
+      req.flash('error', { msg: errors.email.msg });
+      return res.redirect('/map');
+    }
     return User.findOne({ where: { email: req.params.email } }, (err, user) => {
       if (err) { return next(err); }
       if (!user) {
@@ -212,7 +231,15 @@ module.exports = function(app) {
   }
 
   function unsubscribeQuincy(req, res, next) {
-    req.checkParams('email', 'Must send a valid email').isEmail();
+    req.checkParams(
+      'email',
+      `"${req.params.email}" isn't a valid email address.`
+    ).isEmail();
+    const errors = req.validationErrors(true);
+    if (errors) {
+      req.flash('error', { msg: errors.email.msg });
+      return res.redirect('/map');
+    }
     return User.findOne({ where: { email: req.params.email } }, (err, user) => {
       if (err) { return next(err); }
       if (!user) {
@@ -237,10 +264,46 @@ module.exports = function(app) {
   }
 
   function unsubscribed(req, res) {
+    req.checkParams('email', 'Must send a valid email').isEmail();
     res.render('resources/unsubscribed', {
-      title: 'You have been unsubscribed'
+      title: 'You have been unsubscribed',
+      email: req.params.email
     });
   }
+
+  function resubscribe(req, res, next) {
+    req.checkParams(
+      'email',
+      `"${req.params.email}" isn't a valid email address.`
+    ).isEmail();
+    const errors = req.validationErrors(true);
+    if (errors) {
+      req.flash('error', { msg: errors.email.msg });
+      return res.redirect('/map');
+    }
+    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
+      if (err) { return next(err); }
+      if (!user) {
+        req.flash('info', {
+          msg: 'Email address not found. ' +
+          'Please update your Email preferences from your profile.'
+        });
+        return res.redirect('/map');
+      }
+      return user.updateAttributes({
+        sendMonthlyEmail: true,
+        sendQuincyEmail: true,
+        sendNotificationEmail: true
+      }, (err) => {
+        if (err) { return next(err); }
+        req.flash('info', {
+          msg: 'We\'ve successfully updated your Email preferences.'
+        });
+        return res.redirect('/map');
+      });
+    });
+  }
+
 
   function getStarted(req, res) {
     res.render('resources/get-started', {

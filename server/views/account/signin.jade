@@ -1,30 +1,23 @@
 extends ../layout
 block content
     .text-center
-        h2 New to Free Code Camp?
-          br
-          .button-spacer
-          | Sign up now:
+        h2 Are you new to Free Code Camp?
+        .spacer
         a.btn.btn-lg.btn-block.btn-social.btn-primary(href='/email-signup')
             i.fa.fa-envelope
             | Sign up with Email
-        a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
-            i.fa.fa-github
-            | Sign up with GitHub
         .spacer
         hr
         .spacer
         h2 Are you a returning camper?
-          br
-          .button-spacer
-          | Sign in with one of these options:
+        .spacer
         a.btn.btn-lg.btn-block.btn-social.btn-primary(href='/email-signin')
             i.fa.fa-envelope
             | Sign in with Email
         a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
             i.fa.fa-github
             | Sign in with GitHub
-        br
+        .button-spacer
         p
             a(href="/deprecated-signin") Click here if you previously signed in using a different method.
 
