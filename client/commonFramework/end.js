@@ -24,7 +24,6 @@ $(document).ready(function() {
     code$.subscribe(
         code => {
           common.codeStorage.updateStorage(common.challengeName, code);
-          common.codeUri.querify(code);
         },
         err => console.error(err)
       );
@@ -72,7 +71,6 @@ $(document).ready(function() {
           return common.updateOutputDisplay('' + err);
         }
         common.codeStorage.updateStorage(challengeName, originalCode);
-        common.codeUri.querify(originalCode);
         common.displayTestResults(tests, true);
         common.updateOutputDisplay(output);
         return null;
