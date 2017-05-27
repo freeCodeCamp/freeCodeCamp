@@ -265,14 +265,14 @@
         "console.log(squaredIntegers);"
       ],
       "tests": [
-        "// Test user did replace var keyword",
-        "// Test squaredIntegers is const",
-        "// Test squaredIntegers is an array",
-        "// Test squaredIntegers is [16, 1764, 36]",
-        "// Test function keyword was not used",
-        "// Test arrow => was used",
-        "// Test loop was not used",
-        "// Test map and filter were used"
+        "// Test user did replace <code>var</code> keyword",
+        "// Test <code>squaredIntegers</code> is <code>const</code>",
+        "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an array');",
+        "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, 'message: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');",
+        "// Test <code>function</code> keyword was not used",
+        "// Test arrow <code>=></code> was used",
+        "assert(!code.match(/(for)|(while)/g), 'message: loop should not be used');",
+        "assert(code.match(/map/g) && code.match(/filter/g), 'message: <code>map</code> and <code>filter</code> should be used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
