@@ -72,7 +72,7 @@
     "jsonlint-cli": "^1.0.1",
     "lightbox2": "~2.8.2",
     "lodash": "^4.1.0",
-    "loopback": "^2.22.0",
+    "loopback": "^3.6.0",
     "loopback-boot": "^2.13.0",
     "loopback-component-passport": "^2.0.0",
     "loopback-connector-mongodb": "1.17.0",
