@@ -230,7 +230,7 @@
       "tests": [
         "// Test user did replace var keyword",
         "// Test myConcat is const",
-        "// Test myConcat is a function",
+        "assert(typeof myConcat === \"function\", 'message: <code>myConcat</code> should be a function');",
         "// Test myConcat() returns the correct array",
         "// Test function keyword was not used",
         "// Test arrow => was used"
