@@ -61,7 +61,7 @@
     "fetchr": "~0.5.12",
     "font-awesome": "~4.5.0",
     "frameguard": "^3.0.0",
-    "googleapis": "16.1.0",
+    "googleapis": "19.0.0",
     "helmet": "^3.1.0",
     "helmet-csp": "^2.1.0",
     "history": "^3.2.1",
