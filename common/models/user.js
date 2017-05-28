@@ -778,7 +778,6 @@ module.exports = function(User) {
   User.remoteMethod(
     'updateTheme',
     {
-      isStatic: false,
       description: 'updates the users chosen theme',
       accepts: [
         {
