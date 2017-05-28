@@ -4,9 +4,6 @@
   "port": 3000,
   "legacyExplorer": false,
   "remoting": {
-    "context": {
-      "enableHttpContext": false
-    },
     "rest": {
       "handleErrors": false,
       "normalizeHttpPath": false,
