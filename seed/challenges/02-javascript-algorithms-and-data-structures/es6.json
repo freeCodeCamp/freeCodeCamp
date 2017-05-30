@@ -437,7 +437,7 @@
       "title": "Use Destructuring Assignment to Assign Variables from Arrays",
       "description": [
         "ES6 makes destructuring arrays as easy as destructuring objects.",
-        "One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick and choose which elements or you want to assign to variables.",
+        "One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables.",
         "Destructuring an array lets us do exactly that:",
         "<blockquote>const [a, b] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b); // 1, 2</blockquote>",
         "The variable <code>a</code> is assigned the first value of the array, and <code>b</code> is assigned the second value of the array.",
