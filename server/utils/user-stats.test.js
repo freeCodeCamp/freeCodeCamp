@@ -285,12 +285,12 @@ test('Longest streak calculation', function(t) {
     calcLongestStreak(
       prepUniqueDays([
         moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
-        moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
-        moment.utc('9/12/2015 15:30', 'M/D/YYYY H:mm').valueOf(),
+        moment.utc('9/10/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
+        moment.utc('9/11/2015 15:30', 'M/D/YYYY H:mm').valueOf(),
         moment.utc(moment.utc('9/12/2015 15:30', 'M/D/YYYY H:mm')
           .add(37, 'hours')).valueOf(),
 
-        moment.utc('9/14/2015 22:00', 'M/D/YYYY H:mm').valueOf(),
+        moment.utc('9/14/2015 23:59', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/15/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('10/3/2015 2:00', 'M/D/YYYY H:mm').valueOf()
       ])
@@ -419,8 +419,8 @@ test('Longest streak calculation', function(t) {
         1454519128123, moment.utc().valueOf()
       ])
     ),
-    4,
-    'should return 4 when there is a break in UTC (but no break in PST)'
+    16,
+    'should return 16 when there is a break in UTC (but no break in PST)'
   );
 });
 

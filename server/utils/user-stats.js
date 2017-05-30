@@ -2,7 +2,7 @@ import _ from 'lodash';
 import moment from 'moment-timezone';
 import { dayCount } from '../utils/date-utils';
 
-const daysBetween = 1.5;
+const daysBetween = 2;
 
 export function prepUniqueDays(cals, tz = 'UTC') {
 
@@ -16,7 +16,7 @@ export function prepUniqueDays(cals, tz = 'UTC') {
 export function calcCurrentStreak(cals, tz = 'UTC') {
 
   let prev = _.last(cals);
-  if (moment().tz(tz).startOf('day').diff(prev, 'days') > daysBetween) {
+  if (moment().tz(tz).diff(prev, 'days') > daysBetween) {
     return 0;
   }
   let currentStreak = 0;
