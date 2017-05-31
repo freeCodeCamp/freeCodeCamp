@@ -1,5 +1,15 @@
 import protect from '../../utils/empty-protector';
 
+const throwIfUndefined = () => {
+  throw new Error('Challenge does not have a title');
+};
+
+export function createSearchTitle(
+  name = throwIfUndefined(),
+  challengeMap = {}
+) {
+  return challengeMap[name] || name;
+}
 // interface Node {
 //   isHidden: Boolean,
 //   children: Void|[ ...Node ],
@@ -24,9 +34,12 @@ import protect from '../../utils/empty-protector';
 //   }]
 // }
 export function createMapUi(
-  { superBlock: superBlockMap, block: blockMap } = {},
-  superBlocks,
-  searchNameMap
+  {
+    block: blockMap,
+    challenge: challengeMap,
+    superBlock: superBlockMap
+  } = {},
+  superBlocks
 ) {
   if (!superBlocks || !superBlockMap || !blockMap) {
     return {};
@@ -45,7 +58,7 @@ export function createMapUi(
             children: protect(blockMap[block]).challenges.map(challenge => {
               return {
                 name: challenge,
-                title: searchNameMap[challenge],
+                title: createSearchTitle(challenge, challengeMap),
                 isHidden: false,
                 children: null
               };

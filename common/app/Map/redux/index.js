@@ -9,7 +9,10 @@ import selectChallengeEpic from './select-challenge-epic.js';
 
 import * as utils from './utils.js';
 import ns from '../ns.json';
-import { createEventMetaCreator } from '../../redux';
+import {
+  types as app,
+  createEventMetaCreator
+} from '../../redux';
 
 export const epics = [
   mapUiEpic,
@@ -115,22 +118,14 @@ export default function createReducer() {
         ...state,
         filter: ''
       }),
-      [types.fetchChallengesCompleted]: (state, { payload }) => {
-        const { entities, results } = payload;
-        return {
-          ...state,
-          mapUi: utils.createMapUi(entities, results)
-        };
-      },
-
       [types.toggleThisPanel]: (state, { payload: name }) => {
         return {
           ...state,
-          mapUi: utils.toggleThisPanel(state, name)
+          mapUi: utils.toggleThisPanel(state.mapUi, name)
         };
       },
       [types.collapseAll]: state => {
-        const mapUi = utils.collapseAllPanels(state);
+        const mapUi = utils.collapseAllPanels(state.mapUi);
         mapUi.isAllCollapsed = true;
         return {
           ...state,
@@ -138,11 +133,18 @@ export default function createReducer() {
         };
       },
       [types.expandAll]: state => {
-        const mapUi = utils.expandAllPanels(state);
+        const mapUi = utils.expandAllPanels(state.mapUi);
         mapUi.isAllCollapsed = false;
         return {
           ...state,
           mapUi
+        };
+      },
+      [app.fetchChallenges.complete]: (state, { payload }) => {
+        const { entities, results } = payload;
+        return {
+          ...state,
+          mapUi: utils.createMapUi(entities, results)
         };
       }
     },
