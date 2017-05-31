@@ -1699,9 +1699,8 @@
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {",
-        "  var result = \"\";",
         "  // Your code below this line",
-        "  ",
+        "  var result = \"\";",
         "",
         "  // Your code above this line",
         "  return result;",
