@@ -45,6 +45,10 @@ module.exports = {
   },
   externals: {
     codemirror: 'CodeMirror',
+    cheerio: 'window',
+    'react/addons': true,
+    'react/lib/ReactContext': true,
+    'react/lib/ExecutionEnvironment': true,
     'loop-protect': 'loopProtect'
   },
   plugins: [

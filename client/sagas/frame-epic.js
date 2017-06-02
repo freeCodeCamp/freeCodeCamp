@@ -1,4 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore, combineReducers } from 'redux';
+import { Provider, connect } from 'react-redux';
 import Rx, { Observable, Subject } from 'rx';
+import { shallow, mount } from 'enzyme';
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
@@ -27,7 +32,6 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-
 function createFrame(document, id = mainId) {
   const frame = document.createElement('iframe');
   frame.id = id;
@@ -47,6 +51,21 @@ function getFrameDocument(document, id = mainId) {
     frame = createFrame(document, id);
   }
   frame.contentWindow.loopProtect = loopProtect;
+
+  /* NOTE: provisioning depenendencies:
+   * Bind React & Redux depenendencies to content window so they are
+   * in scope during code evaluation and testing. These imports will
+   * add a lot of code to the app bundle... however, I believe that
+   * they can be included via the script tag header above to simply
+   * load them dynamically from CDNs and into this frame when it
+   * loads on the client */
+  frame.contentWindow.React = React;
+  frame.contentWindow.ReactDOM = ReactDOM;
+  frame.contentWindow.createStore = createStore;
+  frame.contentWindow.combineReducers = combineReducers;
+  frame.contentWindow.Provider = Provider;
+  frame.contentWindow.connect = connect;
+
   return {
     frame: frame.contentDocument || frame.contentWindow.document,
     frameWindow: frame.contentWindow
@@ -72,10 +91,21 @@ function frameMain({ build } = {}, document, proxyLogger) {
   main.close();
 }
 
-function frameTests({ build, sources, checkChallengePayload } = {}, document) {
+function frameTests({
+  build,
+  originalCode,
+  sources,
+  checkChallengePayload
+} = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
+  // add Enzyme methods for testing React components
+  tests.mount = mount;
+  tests.shallow = shallow;
+  // provide the original (pre-tranpsilation) code string
+  // for use in some React tests
+  tests.__original = originalCode;
   // default for classic challenges
   // should not be used for modern
   tests.__source = sources['index'] || '';
@@ -86,7 +116,7 @@ function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   tests.close();
 }
 
-export default function frameEpic(actions, getState, { window, document }) {
+export default function frameEpic(actions, { getState }, { window, document }) {
   // we attach a common place for the iframes to pull in functions from
   // the main process
   window.__common = {};

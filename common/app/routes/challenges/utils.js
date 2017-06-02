@@ -7,6 +7,7 @@ import { decodeScriptTags } from '../../../utils/encode-decode';
 export const viewTypes = {
   [ challengeTypes.html ]: 'classic',
   [ challengeTypes.js ]: 'classic',
+  [ challengeTypes.react ]: 'classic',
   [ challengeTypes.bonfire ]: 'classic',
   [ challengeTypes.frontEndProject ]: 'project',
   [ challengeTypes.backEndProject ]: 'project',
@@ -22,6 +23,7 @@ export const viewTypes = {
 export const submitTypes = {
   [ challengeTypes.html ]: 'tests',
   [ challengeTypes.js ]: 'tests',
+  [ challengeTypes.react ]: 'tests',
   [ challengeTypes.bonfire ]: 'tests',
   // requires just a button press
   [ challengeTypes.simpleProject ]: 'project.simple',
@@ -57,6 +59,7 @@ export function buildSeed({ challengeSeed = [] } = {}) {
 const pathsMap = {
   [ challengeTypes.html ]: 'html',
   [ challengeTypes.js ]: 'js',
+  [ challengeTypes.react ]: 'js',
   [ challengeTypes.bonfire ]: 'js'
 };
 

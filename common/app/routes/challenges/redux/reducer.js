@@ -2,7 +2,7 @@ import { handleActions } from 'redux-actions';
 import { createPoly } from '../../../../utils/polyvinyl';
 
 import types from './types';
-import { bonfire, html, js } from '../../../utils/challengeTypes';
+import { bonfire, html, js, react } from '../../../utils/challengeTypes';
 import {
   arrayToString,
   buildSeed,
@@ -241,6 +241,7 @@ const filesReducer = handleActions(
       if (
         challenge.challengeType !== html &&
         challenge.challengeType !== js &&
+        challenge.challengeType !== react &&
         challenge.challengeType !== bonfire
       ) {
         return {};
@@ -263,6 +264,7 @@ const filesReducer = handleActions(
       if (
         challenge.challengeType !== html &&
         challenge.challengeType !== js &&
+        challenge.challengeType !== react &&
         challenge.challengeType !== bonfire
       ) {
         return {};

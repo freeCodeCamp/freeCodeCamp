@@ -54,7 +54,7 @@ function legacyToFile(code, files, key) {
   return { [key]: setContent(code, files[key]) };
 }
 
-export function clearCodeSaga(actions, getState) {
+export function clearCodeSaga(actions, { getState }) {
   return actions
     ::ofType(types.clearSavedCode)
     .map(() => {
@@ -75,7 +75,7 @@ export function saveCodeSaga(actions, getState) {
     });
 }
 
-export function loadCodeSaga(actions, getState, { window, location }) {
+export function loadCodeSaga(actions, { getState }, { window, location }) {
   return actions
     ::ofType(types.loadCode)
     .flatMap(() => {
