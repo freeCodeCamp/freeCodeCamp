@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import Youtube from 'react-youtube';
 import PureComponent from 'react-pure-render/component';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row, Image } from 'react-bootstrap';
 
 import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
@@ -18,13 +17,13 @@ const mapStateToProps = createSelector(
       challenge: {
         id,
         description,
-        challengeSeed: [ videoId = '' ] = []
+        image
       } = {},
       title
     }
   ) => ({
     id,
-    videoId,
+    image,
     title,
     description
   })
@@ -32,9 +31,9 @@ const mapStateToProps = createSelector(
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   id: PropTypes.string,
+  image: PropTypes.string,
   isCompleted: PropTypes.bool,
-  title: PropTypes.string,
-  videoId: PropTypes.string
+  title: PropTypes.string
 };
 
 export class Project extends PureComponent {
@@ -42,10 +41,11 @@ export class Project extends PureComponent {
     const {
       id,
       title,
-      videoId,
+      image,
       isCompleted,
       description
     } = this.props;
+    const imageURL = '//i.imgur.com/' + image + '.png';
     return (
       <Row>
         <Col md={ 4 }>
@@ -59,9 +59,10 @@ export class Project extends PureComponent {
           md={ 8 }
           xs={ 12 }
           >
-          <Youtube
+          <Image
             id={ id }
-            videoId={ videoId }
+            responsive={ true }
+            src={ imageURL }
           />
           <br />
           <ToolPanel />
