@@ -16,9 +16,9 @@ block content
               form(method='POST', action='/passwordless-auth')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .form-group
-                      input.input-lg.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
+                      input.input-lg.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true, required)
                   .button-spacer
-                  button.btn.btn-primary.btn-lg.btn-block(type='submit')
+                  button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
                     span.fa.fa-envelope
                     | Get a magic link to sign in.
         .row
@@ -27,17 +27,31 @@ block content
               p.text-center
                 | freeCodeCamp uses passwordless authentication.
                 br
-                | If you are a new camper just use any email, and sign up instantly,
-                | or use your existing email with us, if you already have an account.
+                | Sign up instantly, using a valid email address, or Sign in
+                | using your existing email with us, if you already have an account.
               br
               p.text-center
                   a(href="/signin") Or click here if you want to sign in with other options.
 
         script.
            $(document).ready(function() {
+
+             function disableMagicButton (isDisabled) {
+               if (isDisabled) {
+                 $('#magic-btn')
+                   .html('<span class="fa fa-circle-o-notch fa-spin fa-fw"></span>')
+                   .prop('disabled', true);
+               } else {
+                 $('#magic-btn')
+                   .html('<span class="fa.fa-envelope">Get a magic link to sign in.</span>')
+                   .prop('disabled', false);
+               }
+            }
+
             $('form').submit(function(event){
               event.preventDefault();
               $('#flash-board').hide();
+              disableMagicButton(true);
               var $form = $(event.target);
               $.ajax({
                   type        : 'POST',
@@ -56,6 +70,7 @@ block content
                       .removeClass('alert-success')
                       .addClass('alert-info')
                       .fadeIn();
+                    disableMagicButton(false);
                   }
               })
               .done(data =>{
@@ -65,6 +80,7 @@ block content
                       .removeClass('alert-info')
                       .addClass('alert-success')
                       .fadeIn();
+                  disableMagicButton(false);
                 }
               });
             });
