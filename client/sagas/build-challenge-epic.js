@@ -17,7 +17,7 @@ import {
   saveCode
 } from '../../common/app/routes/challenges/redux/actions';
 
-export default function buildChallengeEpic(actions, getState) {
+export default function buildChallengeEpic(actions, { getState }) {
   return actions
     ::ofType(types.executeChallenge, types.updateMain)
     // if isCodeLocked do not run challenges

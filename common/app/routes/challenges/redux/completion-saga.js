@@ -141,7 +141,7 @@ const submitters = {
   'project.simple': submitSimpleChallenge
 };
 
-export default function completionSaga(actions$, getState) {
+export default function completionSaga(actions$, { getState }) {
   return actions$
     ::ofType(types.checkChallenge, types.submitChallenge)
     .flatMap(({ type, payload }) => {

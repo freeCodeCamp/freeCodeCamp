@@ -1,4 +1,4 @@
-export default function titleSage(action$, getState, { document }) {
+export default function titleSaga(action$, { getState }, { document }) {
   return action$
     .filter(action => action.type === 'app.updateTitle')
     .map(() => {
