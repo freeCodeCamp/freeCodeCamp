@@ -1509,7 +1509,7 @@
         "<hr>",
         "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.",
         "Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required?",
-        "<strong>Note</strong><br>This field does not work in Safari."
+        "<strong>Note</strong><br>This field may not work in Safari Browser."
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
