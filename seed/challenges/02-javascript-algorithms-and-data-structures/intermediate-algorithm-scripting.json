@@ -997,9 +997,8 @@
       "id": "a5deed1811a43193f9f1c841",
       "title": "Drop it",
       "description": [
-        "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns <code>true</code>.",
-        "The second argument, <code>func</code>, is a function you'll use to test the first elements of the array to decide if you should drop it or not.",
-        "Return the rest of the array, otherwise return an empty array.",
+        "Given the array <code>arr</code>, iterate through and remove each element starting from the first element (the 0 index) until the function <code>func</code> returns <code>true</code> when the iterated element is passed through it.",
+        "Then return the rest of the array once the condition is satisfied, otherwise, <code>arr</code> should be returned as an empty array.",
         "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
