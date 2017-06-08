@@ -22,7 +22,7 @@ export default class ClassicModal extends PureComponent {
     const { open, submitChallenge } = this.props;
     if (
       e.keyCode === 13 &&
-      (e.ctrlKey || e.meta) &&
+      (e.ctrlKey || e.meta || e.keyCode === 17) &&
       open
     ) {
       e.preventDefault();
