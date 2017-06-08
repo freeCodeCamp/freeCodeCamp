@@ -43,7 +43,6 @@ const Rx = require('rx'),
   revDel = require('rev-del'),
 
   // lint
-  jsonlint = require('gulp-jsonlint'),
   eslint = require('gulp-eslint'),
 
   // unit-tests
@@ -264,8 +263,8 @@ gulp.task('lint-js', function() {
 
 gulp.task('lint-json', function() {
   return gulp.src(paths.challenges)
-    .pipe(jsonlint())
-    .pipe(jsonlint.reporter());
+    .pipe(eslint())
+    .pipe(eslint.format());
 });
 
 gulp.task('test-challenges', ['lint-json']);
