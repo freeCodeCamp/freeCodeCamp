@@ -115,13 +115,13 @@ export class BackEnd extends PureComponent {
       'Submit and go to my next challenge' :
       "I've completed this challenge";
     return (
-      <Row>
+      <Row className="classic-intstructions-panel">
         <Col
           md={ 6 }
           mdOffset={ 3 }
           xs={ 12 }
           >
-          <Row className='challenge-instructions'>
+          <Row className='classic-instructions'>
             <ChallengeTitle>{ title }</ChallengeTitle>
             { this.renderDescription(description) }
           </Row>
