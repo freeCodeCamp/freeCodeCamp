@@ -18,6 +18,9 @@ import {
   outputSelector
 } from '../../redux';
 import { descriptionRegex } from '../../utils.js';
+
+import Panes from '../../../../Panes';
+import _Map from '../../../../Map';
 import {
   createFormValidator,
   isValidURL,
@@ -117,7 +120,7 @@ export class BackEnd extends PureComponent {
     const buttonCopy = submitting ?
       'Submit and go to my next challenge' :
       "I've completed this challenge";
-    return (
+    const renderChallenge = () => (
       <Row>
         <Col
           md={ 6 }
@@ -164,6 +167,20 @@ export class BackEnd extends PureComponent {
           </Row>
         </Col>
       </Row>
+    );
+    return (
+      <Panes
+        panes={[
+          {
+            ident: 'Map',
+            component: _Map
+          },
+          {
+            ident: 'Challenge',
+            render: renderChallenge
+          }
+        ]}
+      />
     );
   }
 }
