@@ -52,9 +52,7 @@ export class FreeCodeCamp extends React.Component {
     return (
       <div className={ `${ns}-container` }>
         <Nav />
-        <div className={ `${ns}-content` }>
-          { this.props.children }
-        </div>
+        { this.props.children }
         <Toasts />
       </div>
     );

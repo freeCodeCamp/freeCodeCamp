@@ -22,6 +22,7 @@ import {
 } from './redux';
 import { submitChallenge } from '../../redux';
 import { challengeSelector } from '../../../../redux';
+import ChildContainer from '../../../../Child-Container.jsx';
 
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -259,25 +260,27 @@ export class StepChallenge extends PureComponent {
       closeLightBoxImage
     } = this.props;
     return (
-      <Row>
-        <Col
-          md={ 8 }
-          mdOffset={ 2 }
-          >
-          { this.renderStep(this.props) }
-          <div className='hidden'>
-            { this.renderImages(steps) }
-          </div>
-          <LightBox
-            backdropClosesModal={ true }
-            images={ [ { src: step[0] } ] }
-            isOpen={ isLightBoxOpen }
-            onClose={ closeLightBoxImage }
-            showImageCount={ false }
-          />
-          <div className='spacer' />
-        </Col>
-      </Row>
+      <ChildContainer>
+        <Row>
+          <Col
+            md={ 8 }
+            mdOffset={ 2 }
+            >
+            { this.renderStep(this.props) }
+            <div className='hidden'>
+              { this.renderImages(steps) }
+            </div>
+            <LightBox
+              backdropClosesModal={ true }
+              images={ [ { src: step[0] } ] }
+              isOpen={ isLightBoxOpen }
+              onClose={ closeLightBoxImage }
+              showImageCount={ false }
+            />
+            <div className='spacer' />
+          </Col>
+        </Row>
+      </ChildContainer>
     );
   }
 }

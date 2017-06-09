@@ -20,6 +20,7 @@ import {
   signInLoadingSelector,
   userSelector
 } from '../../redux';
+import ChildContainer from '../../Child-Container.jsx';
 
 
 const mapDispatchToProps = {
@@ -130,18 +131,13 @@ export class Settings extends React.Component {
     }
     if (children) {
       return (
-        <Row>
-          <Col
-            sm={ 4 }
-            smOffset={ 4 }
-            >
-            { children }
-          </Col>
-        </Row>
+        <ChildContainer>
+          { children }
+        </ChildContainer>
       );
     }
     return (
-      <div>
+      <ChildContainer>
         <Row>
           <Col xs={ 12 }>
             <Button
@@ -309,7 +305,7 @@ export class Settings extends React.Component {
             </Button>
           </Col>
         </Row>
-      </div>
+      </ChildContainer>
     );
   }
 }

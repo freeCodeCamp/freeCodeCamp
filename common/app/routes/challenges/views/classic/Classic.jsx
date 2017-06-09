@@ -26,6 +26,7 @@ import {
 } from '../../redux';
 import { challengeSelector } from '../../../../redux';
 import { randomCompliment } from '../../../../utils/get-words';
+import ChildContainer from '../../../../Child-Container.jsx';
 
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -124,33 +125,35 @@ export class Challenge extends PureComponent {
     } = this.props;
 
     return (
-      <Row>
-        <Col
-          lg={ showPreview ? 3 : 4 }
-          md={ showPreview ? 3 : 4 }
-          >
-          <SidePanel />
-        </Col>
-        <Col
-          lg={ showPreview ? 6 : 8 }
-          md={ showPreview ? 5 : 8 }
-          >
-          <Editor
-            content={ content }
-            executeChallenge={ executeChallenge }
-            mode={ mode }
-            updateFile={ content => updateFile(content, file) }
+      <ChildContainer>
+        <Row>
+          <Col
+            lg={ showPreview ? 3 : 4 }
+            md={ showPreview ? 3 : 4 }
+            >
+            <SidePanel />
+          </Col>
+          <Col
+            lg={ showPreview ? 6 : 8 }
+            md={ showPreview ? 5 : 8 }
+            >
+            <Editor
+              content={ content }
+              executeChallenge={ executeChallenge }
+              mode={ mode }
+              updateFile={ content => updateFile(content, file) }
+            />
+          </Col>
+          { this.renderPreview(showPreview) }
+          <BugModal />
+          <ClassicModal
+            close={ closeChallengeModal }
+            open={ isChallengeModalOpen }
+            submitChallenge={ submitChallenge }
+            successMessage={ successMessage }
           />
-        </Col>
-        { this.renderPreview(showPreview) }
-        <BugModal />
-        <ClassicModal
-          close={ closeChallengeModal }
-          open={ isChallengeModalOpen }
-          submitChallenge={ submitChallenge }
-          successMessage={ successMessage }
-        />
-      </Row>
+        </Row>
+      </ChildContainer>
     );
   }
 }

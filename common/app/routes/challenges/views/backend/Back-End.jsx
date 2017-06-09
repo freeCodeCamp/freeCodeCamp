@@ -27,6 +27,7 @@ import {
   makeRequired
 } from '../../../../utils/form.js';
 import { challengeSelector } from '../../../../redux';
+import ChildContainer from '../../../../Child-Container.jsx';
 
 // provided by redux form
 const reduxFormPropTypes = {
@@ -169,18 +170,20 @@ export class BackEnd extends PureComponent {
       </Row>
     );
     return (
-      <Panes
-        panes={[
-          {
-            ident: 'Map',
-            component: _Map
-          },
-          {
-            ident: 'Challenge',
-            render: renderChallenge
-          }
-        ]}
-      />
+      <ChildContainer>
+        <Panes
+          panes={[
+            {
+              ident: 'Map',
+              component: _Map
+            },
+            {
+              ident: 'Challenge',
+              render: renderChallenge
+            }
+          ]}
+        />
+      </ChildContainer>
     );
   }
 }
