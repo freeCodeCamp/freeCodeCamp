@@ -170,7 +170,7 @@ export class BackEnd extends PureComponent {
       </Row>
     );
     return (
-      <ChildContainer>
+      <ChildContainer isFullWidth={ true }>
         <Panes
           panes={[
             {

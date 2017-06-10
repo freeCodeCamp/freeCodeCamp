@@ -7,33 +7,21 @@ import {
   panesUpdated,
   panesWillMount,
 
-  panesByIdSelector,
-  masterKeySelector,
+  dividerPositionsSelector,
+  heightSelector,
   widthSelector
 } from './redux';
 import Pane from './Pane.jsx';
+import Divider from './Divider.jsx';
 
 const mapStateToProps = createSelector(
-  (_, { panes }) => panes,
-  panesByIdSelector,
-  masterKeySelector,
+  dividerPositionsSelector,
+  heightSelector,
   widthSelector,
-  (userPanes, panesById, masterKey, width) => {
-    let nextOffset = 0;
-    const numOfPanes = userPanes.length;
-    const config = userPanes.map(userPane => {
-      const { ratio = (1 / numOfPanes) } = panesById[userPanes.key] || {};
-      const offset = nextOffset;
-      nextOffset = nextOffset + (ratio * width);
-      return {
-        ...userPane,
-        left: 0 + offset,
-        right: 0 + offset + (ratio * width)
-      };
-    });
+  (dividerPositions, height, width) => {
     return {
-      config,
-      masterKey,
+      dividerPositions,
+      height,
       width
     };
   }
@@ -46,10 +34,9 @@ const mapDispatchToProps = {
 };
 
 const propTypes = {
-  config: PropTypes.array.isRequired,
-  masterKey: PropTypes.string,
+  dividerPositions: PropTypes.array.isRequired,
+  height: PropTypes.number.isRequired,
   panes: PropTypes.array.isRequired,
-  panesKey: PropTypes.string,
   panesMounted: PropTypes.func.isRequired,
   panesUpdated: PropTypes.func.isRequired,
   panesWillMount: PropTypes.func.isRequired,
@@ -58,45 +45,66 @@ const propTypes = {
 
 export class Panes extends PureComponent {
   componentWillMount() {
-    this.props.panesWillMount(this.props.panes.map(({ ident }) => ident));
+    this.props.panesWillMount(this.props.panes.length);
   }
 
   componentDidMount() {
     this.props.panesMounted();
   }
 
-  getPanes() {
-    return this.props.panes.map(({ ident }) => ident);
-  }
-
   componentWillReceiveProps(nextProps) {
-    const newMasterKey = nextProps.panes.reduce(
-      (masterKey, { ident }) => ('' + masterKey + ident),
-      ''
-    );
-    if (
-      nextProps.panes.length !== this.props.panes.length ||
-      newMasterKey !== this.props.masterKey
-    ) {
-      this.props.panesUpdated(this.getPanes());
+    if (nextProps.panes.length !== this.props.panes.length) {
+      this.props.panesUpdated(nextProps.panes.length);
     }
   }
 
-  render() {
+  renderPanes() {
     const {
-      config,
+      panes,
+      dividerPositions,
       width
     } = this.props;
-    const panes = config.map(({ component, render, ...rest }) => {
+    const numOfPanes = panes.length;
+    let lastDividerPosition = 0;
+    const dividerRatio = (8 / width) * 100;
+    return panes.map(({ component, render, ident }, index) => {
       const element = component ? createElement(component) : render();
-      return (
-        <Pane key={ rest.ident} { ...rest } >
+      const dividerLeft = dividerPositions[index] || 0;
+      const left = lastDividerPosition;
+      const right = index + 1 === numOfPanes ?
+        0 :
+        100 - dividerLeft - dividerRatio;
+      lastDividerPosition = dividerLeft;
+      const divider = index + 1 < numOfPanes ?
+        (
+          <Divider
+            index={ index }
+            key={ index }
+            left={ dividerLeft }
+          />
+        ) :
+        null;
+
+      return [
+        <Pane
+          index={ index }
+          key={ ident }
+          left={ left }
+          right={ right }
+          >
           { element }
-        </Pane>
-      );
-    });
+        </Pane>,
+        divider
+      ];
+    }).reduce((panes, pane) => panes.concat(pane), [])
+      .filter(Boolean);
+  }
+
+  render() {
+    const { height, width } = this.props;
     const outerStyle = {
       position: 'relative',
+      height,
       width
     };
     const innerStyle = {
@@ -104,12 +112,12 @@ export class Panes extends PureComponent {
       top: 0,
       bottom: 0,
       left: 0,
-      width
+      right: 0
     };
     return (
       <div style={outerStyle}>
         <div style={innerStyle}>
-          { panes }
+          { this.renderPanes() }
         </div>
       </div>
     );
