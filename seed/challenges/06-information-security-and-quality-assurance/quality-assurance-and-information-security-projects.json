@@ -72,7 +72,6 @@
       "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 7,
       "translations": {}
     },
     {
@@ -123,7 +122,6 @@
       "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 7,
       "translations": {}
     },
     {
@@ -182,7 +180,6 @@
       "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 7,
       "translations": {}
     },
     {
@@ -229,7 +226,6 @@
       "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 7,
       "translations": {}
     },
     {
@@ -296,7 +292,6 @@
       "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 7,
       "translations": {}
     }
   ]
