@@ -1,13 +1,23 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import { dividerClicked } from './redux';
+
 const mapStateToProps = null;
-const mapDispatchToProps = null;
+function mapDispatchToProps(dispatch, { index }) {
+  const dispatchers = {
+    dividerClicked: () => dispatch(dividerClicked(index))
+  };
+  return () => dispatchers;
+}
+
 const propTypes = {
+  dividerClicked: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
   left: PropTypes.number.isRequired
 };
 
-export function Divider({ left }) {
+export function Divider({ left, dividerClicked }) {
   const style = {
     borderLeft: '1px solid #ccc',
     bottom: 0,
@@ -20,8 +30,12 @@ export function Divider({ left }) {
     width: '8px',
     zIndex: 999999
   };
+  // use onMouseDown as onClick does not fire
+  // until onMouseUp
+  // note(berks): do we need touch support?
   return (
     <div
+      onMouseDown={ dividerClicked }
       style={ style }
     />
   );
