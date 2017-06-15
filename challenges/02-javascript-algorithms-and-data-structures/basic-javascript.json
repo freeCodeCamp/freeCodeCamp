@@ -536,7 +536,7 @@
       ],
       "tests": [
         "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
-        "assert(/myVar\\s*\\=.*myVar\\s*\\+\\s*1/.test(code) === false, 'message: <code>myVar = myVar + 1;</code> should be changed');",
+        "assert(/var\\s*myVar\\s*=\\s*87;\\s*\\/*.*\\s*myVar\\+\\+;/.test(code), 'message: <code>myVar = myVar + 1;</code> should be changed');",
         "assert(/[+]{2}\\s*myVar|myVar\\s*[+]{2}/.test(code), 'message: Use the <code>++</code> operator');",
         "assert(/var myVar = 87;/.test(code), 'message: Do not change code above the line');"
       ],
@@ -585,6 +585,7 @@
       ],
       "tests": [
         "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
+        "assert(/var\\s*myVar\\s*=\\s*11;\\s*\\/*.*\\s*myVar--;/.test(code), 'message: <code>myVar = myVar - 1;</code> should be changed');",
         "assert(/[-]{2}\\s*myVar|myVar\\s*[-]{2}/.test(code), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
         "assert(/var myVar = 11;/.test(code), 'message: Do not change code above the line');"
       ],
