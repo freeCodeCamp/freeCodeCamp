@@ -15,11 +15,13 @@ export function Pane({
   right
 }) {
   const style = {
-    position: 'absolute',
-    top: 0,
     bottom: 0,
     left: left + '%',
-    right: right + '%'
+    overflowX: 'hidden',
+    overflowY: 'auto',
+    position: 'absolute',
+    right: right + '%',
+    top: 0
   };
   return (
     <div style={ style }>

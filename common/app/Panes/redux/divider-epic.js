@@ -17,14 +17,12 @@ export function dividerReleasedEpic(actions, _, { document }) {
       .map(() => mouseReleased())
       // allow mouse up on divider to go first
       .delay(1)
-      .do((x) => console.log('mouseup', x))
       .takeUntil(actions::ofType(types.mouseReleased))
     );
 }
 
 export function dividerMovedEpic(actions, { getState }, { document }) {
   return actions::ofType(types.dividerClicked)
-    .do(x => console.log('x: ', x))
     .switchMap(() => Observable.fromEvent(document, 'mousemove')
       // prevent mouse drags from highlighting text
       .do(e => e.preventDefault())
