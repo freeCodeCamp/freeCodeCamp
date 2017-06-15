@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import ns from './ns.json';
 import {
+  appMounted,
   fetchUser,
   updateAppLang,
 
@@ -13,6 +14,7 @@ import Nav from './Nav';
 import Toasts from './Toasts';
 
 const mapDispatchToProps = {
+  appMounted,
   fetchUser,
   updateAppLang
 };
@@ -26,6 +28,7 @@ const mapStateToProps = state => {
 };
 
 const propTypes = {
+  appMounted: PropTypes.func.isRequired,
   children: PropTypes.node,
   fetchUser: PropTypes.func,
   isSignedIn: PropTypes.bool,
@@ -43,6 +46,7 @@ export class FreeCodeCamp extends React.Component {
   }
 
   componentDidMount() {
+    this.props.appMounted();
     if (!this.props.isSignedIn) {
       this.props.fetchUser();
     }

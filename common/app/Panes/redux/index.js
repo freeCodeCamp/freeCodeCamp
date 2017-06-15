@@ -21,7 +21,10 @@ export const types = createTypes([
   'dividerClicked',
   'dividerMoved',
   'mouseReleased',
-  'windowResized'
+  'windowResized',
+
+  // commands
+  'updateNavHeight'
 ], ns);
 
 export const panesMounted = createAction(types.panesMounted);
@@ -33,7 +36,11 @@ export const dividerMoved = createAction(types.dividerMoved);
 export const mouseReleased = createAction(types.mouseReleased);
 export const windowResized = createAction(types.windowResized);
 
+// commands
+export const updateNavHeight = createAction(types.updateNavHeight);
+
 const initialState = {
+  navHeight: 50,
   height: 600,
   width: 800,
   dividerPositions: [],
@@ -42,7 +49,11 @@ const initialState = {
 
 export const getNS = state => state[ns];
 export const dividerPositionsSelector = state => getNS(state).dividerPositions;
-export const heightSelector = state => getNS(state).height;
+export const heightSelector = state => {
+  const { navHeight, height } = getNS(state);
+  return height - navHeight;
+};
+
 export const pressedDividerSelector =
   state => getNS(state).pressedDivider;
 export const widthSelector = state => getNS(state).width;
@@ -94,7 +105,11 @@ export default function makeReducer() {
         ...state,
         dividerPositions
       };
-    }
+    },
+    [types.updateNavHeight]: (state, { payload: navHeight }) => ({
+      ...state,
+      navHeight
+    })
   }, initialState);
 
   reducer.toString = () => ns;

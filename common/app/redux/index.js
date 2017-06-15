@@ -9,16 +9,19 @@ import { entitiesSelector } from '../entities';
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
+import navSizeEpic from './nav-size-epic.js';
 
 import ns from '../ns.json';
 
 export const epics = [
   fetchUserEpic,
   fetchChallengesEpic,
-  updateMyCurrentChallengeEpic
+  updateMyCurrentChallengeEpic,
+  navSizeEpic
 ];
 
 export const types = createTypes([
+  'appMounted',
   'analytics',
   'updateTitle',
   'updateAppLang',
@@ -77,6 +80,7 @@ export const createEventMetaCreator = ({
   }
 });
 
+export const appMounted = createAction(types.appMounted);
 export const fetchChallenge = createAction(
   '' + types.fetchChallenge,
   (dashedName, block) => ({ dashedName, block })

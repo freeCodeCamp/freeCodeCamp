@@ -177,6 +177,7 @@ export class FCCNav extends React.Component {
     return (
       <Navbar
         className='nav-height'
+        id='navbar'
         staticTop={ true }
         >
         <Navbar.Header>
