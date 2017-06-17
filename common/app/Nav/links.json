@@ -35,11 +35,6 @@
     ]
   },
   {
-    "content": "Map",
-    "link": "/map",
-    "isReact": true
-  },
-  {
     "content": "Donate",
     "link": "https://www.freecodecamp.com/donate"
   }

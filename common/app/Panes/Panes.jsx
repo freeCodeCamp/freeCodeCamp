@@ -8,6 +8,7 @@ import {
   panesWillMount,
 
   dividerPositionsSelector,
+  hiddenPanesSelector,
   heightSelector,
   widthSelector
 } from './redux';
@@ -15,12 +16,16 @@ import Pane from './Pane.jsx';
 import Divider from './Divider.jsx';
 
 const mapStateToProps = createSelector(
+  (_, { panes }) => panes,
   dividerPositionsSelector,
+  hiddenPanesSelector,
   heightSelector,
   widthSelector,
-  (dividerPositions, height, width) => {
+  (panes, dividerPositions, hiddenPanes, height, width) => {
+    const config = panes.filter(({ ident }) => !hiddenPanes[ident]);
     return {
       dividerPositions,
+      config,
       height,
       width
     };
@@ -34,6 +39,7 @@ const mapDispatchToProps = {
 };
 
 const propTypes = {
+  config: PropTypes.array.isRequired,
   dividerPositions: PropTypes.array.isRequired,
   height: PropTypes.number.isRequired,
   panes: PropTypes.array.isRequired,
@@ -60,14 +66,14 @@ export class Panes extends PureComponent {
 
   renderPanes() {
     const {
-      panes,
+      config,
       dividerPositions,
       width
     } = this.props;
-    const numOfPanes = panes.length;
+    const numOfPanes = config.length;
     let lastDividerPosition = 0;
     const dividerRatio = (8 / width) * 100;
-    return panes.map(({ component, render, ident }, index) => {
+    return config.map(({ component, render, ident }, index) => {
       const element = component ? createElement(component) : render();
       const dividerLeft = dividerPositions[index] || 0;
       const left = lastDividerPosition;

@@ -15,7 +15,8 @@ import {
 } from 'react-bootstrap';
 
 import navLinks from './links.json';
-import AvatarPointsNavItem from './Avatar-Points-Nav-Item.jsx';
+import SignUp from './Sign-Up.jsx';
+import BinButton from './Bin-Button.jsx';
 import {
   clickOnLogo,
   openDropdown,
@@ -141,30 +142,6 @@ export class FCCNav extends React.Component {
     );
   }
 
-  renderSignIn(username, points, picture, showLoading) {
-    if (showLoading) {
-      return null;
-    }
-    if (username) {
-      return (
-        <AvatarPointsNavItem
-          picture={ picture }
-          points={ points }
-          username={ username }
-        />
-      );
-    } else {
-      return (
-        <NavItem
-          href='/signup'
-          key='signup'
-          >
-          Sign Up
-        </NavItem>
-      );
-    }
-  }
-
   render() {
     const {
       clickOnLogo,
@@ -201,12 +178,18 @@ export class FCCNav extends React.Component {
             navbar={ true }
             pullRight={ true }
             >
+            <BinButton />
             {
               navLinks.map(
                 this.renderLink.bind(this, true)
               )
             }
-            { this.renderSignIn(username, points, picture, showLoading) }
+            <SignUp
+              picture={ picture }
+              points={ points }
+              showLoading={ showLoading }
+              username={ username }
+            />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

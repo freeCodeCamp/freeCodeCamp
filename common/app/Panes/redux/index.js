@@ -24,7 +24,8 @@ export const types = createTypes([
   'windowResized',
 
   // commands
-  'updateNavHeight'
+  'updateNavHeight',
+  'hidePane'
 ], ns);
 
 export const panesMounted = createAction(types.panesMounted);
@@ -38,13 +39,15 @@ export const windowResized = createAction(types.windowResized);
 
 // commands
 export const updateNavHeight = createAction(types.updateNavHeight);
+export const hidePane = createAction(types.hidePane);
 
 const initialState = {
   navHeight: 50,
   height: 600,
   width: 800,
   dividerPositions: [],
-  pressedDivider: null
+  pressedDivider: null,
+  hiddenPanes: {}
 };
 
 export const getNS = state => state[ns];
@@ -57,6 +60,7 @@ export const heightSelector = state => {
 export const pressedDividerSelector =
   state => getNS(state).pressedDivider;
 export const widthSelector = state => getNS(state).width;
+export const hiddenPanesSelector = state => getNS(state).hiddenPanes;
 
 export default function makeReducer() {
   const reducer = handleActions({
@@ -109,6 +113,13 @@ export default function makeReducer() {
     [types.updateNavHeight]: (state, { payload: navHeight }) => ({
       ...state,
       navHeight
+    }),
+    [types.hidePane]: (state, { payload: paneIdent }) => ({
+      ...state,
+      hiddenPanes: {
+        ...state.hiddenPanes,
+        [paneIdent]: !state.hiddenPanes[paneIdent]
+      }
     })
   }, initialState);
 

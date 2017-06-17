@@ -4,15 +4,18 @@ import { createAction, handleActions } from 'redux-actions';
 import noop from 'lodash/noop';
 
 import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
+import binEpic from './bin-epic.js';
 import ns from '../ns.json';
 import { createEventMetaCreator } from '../../redux';
 
 export const epics = [
-  loadCurrentChallengeEpic
+  loadCurrentChallengeEpic,
+  binEpic
 ];
 
 export const types = createTypes([
   'clickOnLogo',
+  'clickOnMap',
   'navLinkClicked',
 
   'closeDropdown',
@@ -26,6 +29,16 @@ export const clickOnLogo = createAction(
     category: 'Nav',
     action: 'clicked',
     label: 'fcc logo clicked'
+  })
+);
+
+export const clickOnMap = createAction(
+  types.clickOnMap,
+  noop,
+  createEventMetaCreator({
+    category: 'Nav',
+    action: 'clicked',
+    label: 'map button clicked'
   })
 );
 
