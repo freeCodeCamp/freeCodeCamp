@@ -1591,7 +1591,7 @@
       "id": "bad87fee1348bd9aedf08834",
       "title": "Create a Set of Radio Buttons",
       "description": [
-        "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer.",
+        "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer out of multiple options.",
         "Radio buttons are a type of <code>input</code>",
         "Each of your radio buttons should be nested within its own <code>label</code> element.",
         "All related radio buttons should have the same <code>name</code> attribute.",
