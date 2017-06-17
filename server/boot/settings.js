@@ -82,6 +82,11 @@ export default function settingsController(app) {
   }
 
   api.post(
+    '/toggle-available-for-hire',
+    ifNoUser401,
+    toggleUserFlag('isAvailableForHire')
+  );
+  api.post(
     '/toggle-lockdown',
     ifNoUser401,
     toggleUserFlag('isLocked')

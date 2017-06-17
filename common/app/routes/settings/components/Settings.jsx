@@ -6,6 +6,7 @@ import { Button, Row, Col } from 'react-bootstrap';
 import FA from 'react-fontawesome';
 
 import LockedSettings from './Locked-Settings.jsx';
+import JobSettings from './Job-Settings.jsx';
 import SocialSettings from './Social-Settings.jsx';
 import EmailSettings from './Email-Setting.jsx';
 import LanguageSettings from './Language-Settings.jsx';
@@ -19,6 +20,7 @@ import { toggleNightMode, updateTitle } from '../../../redux/actions.js';
 const mapDispatchToProps = {
   updateTitle,
   toggleNightMode,
+  toggleIsAvailableForHire: () => toggleUserFlag('isAvailableForHire'),
   toggleIsLocked: () => toggleUserFlag('isLocked'),
   toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
   toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
@@ -33,6 +35,7 @@ const mapStateToProps = createSelector(
       user: {
         username,
         email,
+        isAvailableForHire,
         isLocked,
         isGithubCool,
         isTwitter,
@@ -47,6 +50,7 @@ const mapStateToProps = createSelector(
     showLoading: isSignInAttempted,
     username,
     email,
+    isAvailableForHire,
     isLocked,
     isGithubCool,
     isTwitter,
@@ -60,6 +64,7 @@ const propTypes = {
   children: PropTypes.element,
   email: PropTypes.string,
   initialLang: PropTypes.string,
+  isAvailableForHire: PropTypes.bool,
   isGithubCool: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
   isLocked: PropTypes.bool,
@@ -69,6 +74,7 @@ const propTypes = {
   sendNotificationEmail: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
+  toggleIsAvailableForHire: PropTypes.func.isRequired,
   toggleIsLocked: PropTypes.func.isRequired,
   toggleMonthlyEmail: PropTypes.func.isRequired,
   toggleNightMode: PropTypes.func.isRequired,
@@ -99,6 +105,7 @@ export class Settings extends React.Component {
     const {
       children,
       username,
+      isAvailableForHire,
       isLocked,
       isGithubCool,
       isTwitter,
@@ -108,6 +115,7 @@ export class Settings extends React.Component {
       sendMonthlyEmail,
       sendNotificationEmail,
       sendQuincyEmail,
+      toggleIsAvailableForHire,
       toggleNightMode,
       toggleIsLocked,
       toggleQuincyEmail,
@@ -215,6 +223,22 @@ export class Settings extends React.Component {
             <LockedSettings
               isLocked={ isLocked }
               toggle={ toggleIsLocked }
+            />
+          </Col>
+        </Row>
+        <div className='spacer' />
+        <h2 className='text-center'>Job Search Settings</h2>
+        <Row>
+          <Col
+            md={ 6 }
+            mdOffset={ 3 }
+            sm={ 8 }
+            smOffset={ 2 }
+            xs={ 12 }
+            >
+            <JobSettings
+              isAvailableForHire={ isAvailableForHire }
+              toggle={ toggleIsAvailableForHire }
             />
           </Col>
         </Row>

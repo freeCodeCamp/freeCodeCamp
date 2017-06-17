@@ -463,6 +463,7 @@ module.exports = function(app) {
           isGithubCool: true,
           isCheater: true,
           isLocked: true,
+          isAvailableForHire: true,
           isFrontEndCert: true,
           isDataVisCert: true,
           isBackEndCert: true,
