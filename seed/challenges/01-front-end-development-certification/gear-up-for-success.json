@@ -1,6 +1,6 @@
 {
   "name": "Gear up for Success",
-  "order": 4,
+  "order": 3,
   "time": "20 minutes",
   "challenges": [
     {
@@ -163,6 +163,22 @@
       ]
     },
     {
+      "id": "58d9cc820ce2197370032a13",
+      "title": "Become a Supporter",
+      "description": [
+        [
+          "//i.imgur.com/CxcBk9C.png",
+          "Help us pay for servers and other costs. Set up a monthly donation you can afford.",
+          "freeCodeCamp is a small nonprofit that helps busy people learn to code for free. Help us pay for servers and other costs. Set up a monthly donation you can afford.",
+          "/donate"
+        ]
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7
+    },
+    {
       "id": "570add8ccb82ac38a17513c3",
       "title": "Join our LinkedIn Alumni Network",
       "description": [
@@ -204,22 +220,6 @@
           "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
       ]
-    },
-    {
-      "id": "58d9cc820ce2197370032a13",
-      "title": "Become a Supporter",
-      "description": [
-        [
-          "//i.imgur.com/CxcBk9C.png",
-          "Help us pay for servers and other costs. Set up a monthly donation you can afford.",
-          "freeCodeCamp is a small nonprofit that helps busy people learn to code for free. Help us pay for servers and other costs. Set up a monthly donation you can afford.",
-          "/donate"
-        ]
-      ],
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7
     }
   ]
 }
