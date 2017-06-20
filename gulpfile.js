@@ -188,7 +188,7 @@ function delRev(dest, manifestName) {
 
 gulp.task('serve', function(cb) {
   let called = false;
-  nodemon({
+  const monitor = nodemon({
     script: paths.server,
     ext: '.jsx .js .json',
     ignore: paths.serverIgnore,
@@ -209,6 +209,14 @@ gulp.task('serve', function(cb) {
       if (files) {
         debug('Nodemon will restart due to changes in: ', files);
       }
+    });
+
+    process.once('SIGINT', () => {
+      monitor.once('exit', () => {
+        /* eslint-disable no-process-exit */
+        process.exit(0);
+        /* eslint-enable no-process-exit */
+      });
     });
 });
 
