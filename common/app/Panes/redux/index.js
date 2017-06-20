@@ -42,27 +42,48 @@ export const updateNavHeight = createAction(types.updateNavHeight);
 export const hidePane = createAction(types.hidePane);
 
 const initialState = {
-  navHeight: 50,
   height: 600,
   width: 800,
-  dividerPositions: [],
-  pressedDivider: null,
-  hiddenPanes: {}
+  navHeight: 50,
+  panes: [],
+  panesByName: {},
+  pressedDivider: null
 };
-
 export const getNS = state => state[ns];
-export const dividerPositionsSelector = state => getNS(state).dividerPositions;
 export const heightSelector = state => {
   const { navHeight, height } = getNS(state);
   return height - navHeight;
 };
 
+export const panesSelector = state => getNS(state).panes;
+export const panesByNameSelector = state => getNS(state).panesByName;
 export const pressedDividerSelector =
   state => getNS(state).pressedDivider;
 export const widthSelector = state => getNS(state).width;
 export const hiddenPanesSelector = state => getNS(state).hiddenPanes;
 
-export default function makeReducer() {
+function isPanesAction({ type } = {}, panesMap) {
+  return !!panesMap[type];
+}
+
+export default function createPanesAspects(panesMap) {
+  function middleware() {
+    return next => action => {
+      let finalAction = action;
+      if (isPanesAction(action, panesMap)) {
+        finalAction = {
+          ...action,
+          meta: {
+            ...action.meta,
+            isOpening: true,
+            isClosing: true
+          }
+        };
+      }
+      return next(finalAction);
+    };
+  }
+
   const reducer = handleActions({
     [types.dividerClicked]: (state, { payload: divider }) => ({
       ...state,
@@ -86,43 +107,55 @@ export default function makeReducer() {
       };
     },
     [types.mouseReleased]: state => ({ ...state, pressedDivider: null }),
-    [types.windowResized]: (state, { payload: { height, width } }) => ({
+    [types.windowResized]: (state, { payload: { height } }) => ({
       ...state,
-      height,
-      width
+      height
     }),
     [
       combineActions(
         panesWillMount,
         panesUpdated
       )
-    ]: (state, { payload: numOfPanes }) => {
-      let dividerPositions = [];
-      const numOfDividers = numOfPanes - 1;
-      if (numOfDividers === 1) {
-        dividerPositions.push(25);
-      } else if (numOfDividers > 1) {
-        dividerPositions = (new Array(numOfDividers))
-          .map(() => (1 / numOfDividers));
-      }
+    ]: (state, { payload: panes }) => {
+      const numOfPanes = panes.length;
       return {
         ...state,
-        dividerPositions
+        panes,
+        panesByName: panes.reduce((panes, name, index) => {
+          let dividerLeft = null;
+          if (numOfPanes > 1 && numOfPanes !== index + 1) {
+            dividerLeft = (100 / numOfPanes) * index + 1;
+          }
+          panes[name] = {
+            name,
+            dividerLeft,
+            isHidden: false
+          };
+          return panes;
+        }, {})
       };
     },
     [types.updateNavHeight]: (state, { payload: navHeight }) => ({
       ...state,
       navHeight
-    }),
-    [types.hidePane]: (state, { payload: paneIdent }) => ({
-      ...state,
-      hiddenPanes: {
-        ...state.hiddenPanes,
-        [paneIdent]: !state.hiddenPanes[paneIdent]
-      }
     })
   }, initialState);
+  function metaReducer(state = initialState, action) {
+    if (panesMap[action.type]) {
+      // const name = panesMap[action.type];
+      return {
+        ...state
+      };
+    }
+    return state;
+  }
 
-  reducer.toString = () => ns;
-  return [ reducer ];
+  function finalReducer(state, action) {
+    return reducer(metaReducer(state, action), action);
+  }
+  finalReducer.toString = () => ns;
+  return {
+    reducer: finalReducer,
+    middleware
+  };
 }

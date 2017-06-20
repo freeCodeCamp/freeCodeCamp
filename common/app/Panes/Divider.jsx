@@ -4,17 +4,17 @@ import { connect } from 'react-redux';
 import { dividerClicked } from './redux';
 
 const mapStateToProps = null;
-function mapDispatchToProps(dispatch, { index }) {
+function mapDispatchToProps(dispatch, { name }) {
   const dispatchers = {
-    dividerClicked: () => dispatch(dividerClicked(index))
+    dividerClicked: () => dispatch(dividerClicked(name))
   };
   return () => dispatchers;
 }
 
 const propTypes = {
   dividerClicked: PropTypes.func.isRequired,
-  index: PropTypes.number.isRequired,
-  left: PropTypes.number.isRequired
+  left: PropTypes.number.isRequired,
+  name: PropTypes.number.isRequired
 };
 
 export function Divider({ left, dividerClicked }) {

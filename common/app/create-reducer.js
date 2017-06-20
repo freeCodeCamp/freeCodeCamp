@@ -7,11 +7,10 @@ import map from './Map/redux';
 import nav from './Nav/redux';
 import routes from './routes/redux';
 import toasts from './Toasts/redux';
-import panes from './Panes/redux';
 // not ideal but should go away once we move to react-redux-form
 import { projectNormalizer } from './routes/challenges/redux';
 
-export default function createReducer(sideReducers = []) {
+export default function createReducer(sideReducers) {
   // reducers exported from features need to be factories
   // this helps avoid cyclic requires messing up reducer creation
   // We end up with exports from files being undefined as node tries
@@ -25,8 +24,7 @@ export default function createReducer(sideReducers = []) {
     map,
     nav,
     routes,
-    toasts,
-    panes
+    toasts
   ]
     .map(createReducer => createReducer())
     .reduce((arr, cur) => arr.concat(cur), [])

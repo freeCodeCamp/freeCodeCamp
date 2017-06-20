@@ -19,15 +19,12 @@ import {
 } from '../../redux';
 import { descriptionRegex } from '../../utils.js';
 
-import Panes from '../../../../Panes';
-import _Map from '../../../../Map';
 import {
   createFormValidator,
   isValidURL,
   makeRequired
 } from '../../../../utils/form.js';
 import { challengeSelector } from '../../../../redux';
-import ChildContainer from '../../../../Child-Container.jsx';
 
 // provided by redux form
 const reduxFormPropTypes = {
@@ -81,7 +78,6 @@ const mapDispatchToActions = {
 };
 
 export class BackEnd extends PureComponent {
-
   renderDescription(description) {
     if (!Array.isArray(description)) {
       return null;
@@ -121,7 +117,7 @@ export class BackEnd extends PureComponent {
     const buttonCopy = submitting ?
       'Submit and go to my next challenge' :
       "I've completed this challenge";
-    const renderChallenge = () => (
+    return (
       <Row>
         <Col
           md={ 6 }
@@ -168,22 +164,6 @@ export class BackEnd extends PureComponent {
           </Row>
         </Col>
       </Row>
-    );
-    return (
-      <ChildContainer isFullWidth={ true }>
-        <Panes
-          panes={[
-            {
-              ident: 'Map',
-              component: _Map
-            },
-            {
-              ident: 'Challenge',
-              render: renderChallenge
-            }
-          ]}
-        />
-      </ChildContainer>
     );
   }
 }

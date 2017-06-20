@@ -5,6 +5,8 @@ import settings from './settings';
 import NotFound from '../NotFound';
 import { addLang } from '../utils/lang';
 
+export { createPanesMap } from './challenges';
+
 export default function createChildRoute(deps) {
   return {
     path: '/:lang',

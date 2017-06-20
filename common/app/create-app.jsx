@@ -5,6 +5,8 @@ import { compose, createStore, applyMiddleware } from 'redux';
 import { createEpic } from 'redux-epic';
 import createReducer from './create-reducer';
 import createRoutes from './create-routes.js';
+import createPanesMap from './create-panes-map.js';
+import createPanesAspects from './Panes/redux';
 import epics from './epics';
 
 import servicesCreator from '../utils/services-creator';
@@ -48,22 +50,32 @@ export default function createApp({
     ...epics,
     ...sideEpics
   );
-  const enhancers = [
+  const {
+    reducer: panesReducer,
+    middleware: panesMiddleware
+  } = createPanesAspects(createPanesMap());
+  const enhancer = compose(
     applyMiddleware(
-      ...sideMiddlewares,
-      epicMiddleware
+      panesMiddleware,
+      epicMiddleware,
+      ...sideMiddlewares
     ),
     // enhancers must come after middlewares
     // on client side these are things like Redux DevTools
     ...sideEnhancers
-  ];
-  const reducer = createReducer(sideReducers);
+  );
+  const reducer = createReducer(
+    {
+      [panesReducer]: panesReducer,
+      ...sideReducers
+    },
+  );
 
   // create composed store enhancer
   // use store enhancer function to enhance `createStore` function
   // call enhanced createStore function with reducer and initialState
   // to create store
-  const store = compose(...enhancers)(createStore)(reducer, initialState);
+  const store = createStore(reducer, initialState, enhancer);
   // sync history client side with store.
   // server side this is an identity function and history is undefined
   history = syncHistoryWithStore(history, store, syncOptions);
