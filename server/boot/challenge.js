@@ -32,7 +32,8 @@ function buildUserUpdate(
     finalChallenge = {
       ...completedChallenge,
       completedDate: oldChallenge.completedDate,
-      lastUpdated: completedChallenge.completedDate
+      lastUpdated: completedChallenge.completedDate,
+      numOfAttempts: oldChallenge.numOfAttempts + 1
     };
   } else {
     updateData.$push = {
