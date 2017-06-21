@@ -9,75 +9,21 @@
       "title": "Learn how Free Code Camp Works",
       "description": [
         [
-          "//i.imgur.com/6ibIavQ.jpg",
-          "A picture of Free Code Camp's 4 benefits: Get connected, Learn JavaScript, Build your Portfolio, Help nonprofits",
-          "Welcome to Free Code Camp. We're an open source community that helps you learn to code, then practice by building projects for nonprofits.",
+          "//i.imgur.com/ZMOCvg9.jpg",
+          "A picture of six freeCodeCamp campers sitting around a table coding together.",
+          "Welcome. You're now part of a supportive coding community. You can code online or in-person with people in thousands of cities around the world.",
           ""
         ],
         [
-          "//i.imgur.com/Elb3dfj.jpg",
-          "A screenshot of some of our campers coding together in Toronto.",
-          "<bold>Learning to code is hard.</bold> To succeed, you'll need lots of practice and support. That's why we've created a rigorous curriculum and supportive community.",
+          "//i.imgur.com/EUyHs60.jpg",
+          "A picture of the technologies you'll learn: HTML5, CSS, JavaScript, Databases, Git & GitHub, Node.js, React.js, D3.js.",
+          "You'll learn to code by completing coding challenges and building projects. You'll also earn verified certificates along the way.",
           ""
         ],
         [
-          "//i.imgur.com/WD3STY6.jpg",
-          "Photos of three campers who got jobs after learning to code at Free Code Camp.",
-          "Free Code Camp is a proven path to your first software developer job. Companies have hired thousands of people like you who have learned to code through Free Code Camp.",
-          ""
-        ],
-        [
-          "//i.imgur.com/D7Y5luw.jpg",
-          "A graph of the rate of job growth against growth in computer science degree graduates. There are 1.4 million jobs and only 400 thousand people to fill them.",
-          "There are thousands of software developer jobs currently going unfilled, and the demand for coders grows every year.",
-          ""
-        ],
-        [
-          "//i.imgur.com/vLNso6h.jpg",
-          "An illustration showing that you will learn HTML5, CSS3, JavaScript, Databases, Git, Node.js, React and D3.",
-          "We have hundreds of optional coding challenges that will teach you fundamental web development technologies like HTML5, Node.js and databases.",
-          ""
-        ],
-        [
-          "//i.imgur.com/UVB9hxp.jpg",
-          "An image of a camper at a cafe building projects on Free Code Camp.",
-          "We believe humans learn best by doing. So you'll spend most of your time actually building projects. We'll give you a list of specifications (agile user stories), and you'll figure out how to build apps that fulfill those specifications.",
-          ""
-        ],
-        [
-          "//i.imgur.com/pbW7K5S.jpg",
-          "An image of showing our front end, back end, and data visualization certifications (400 hours each), our nonprofit projects (800 hours), and interview prep (80 hours) for a total of 2,080 hours of coding experience.",
-          "Our curriculum is divided into 4 certifications. These certifications are standardized, and instantly verifiable by your freelance clients and future employers. Like everything else at Free Code Camp, these certifications are free. We recommend doing them in order, but you are free to jump around. The first three certifications take 400 hours each, and the final certification takes 800 hours, and involves building real-life projects for nonprofits.",
-          ""
-        ],
-        [
-          "//i.imgur.com/akGfLoa.jpg",
-          "A screenshot of our Front End Development Certificate",
-          "To earn our verified Front End Development Certification, you'll build 10 projects using HTML, CSS, jQuery, and JavaScript.",
-          ""
-        ],
-        [
-          "//i.imgur.com/ocEL0D3.jpg",
-          "A screenshot of our Data Visualization Certificate",
-          "To earn our Data Visualization Certification, you'll build 10 projects using React, Sass and D3.js.",
-          ""
-        ],
-        [
-          "//i.imgur.com/8HCk1Od.jpg",
-          "A screenshot of our Back End Development Certificate",
-          "To earn our Back End Development Certification, you'll build 10 projects using Node.js, Express, and MongoDB. You'll use Git and Heroku to deploy them to the cloud.",
-          ""
-        ],
-        [
-          "//i.imgur.com/yXyxbDd.jpg",
-          "A screen shot of our nonprofit project directory.",
-          "After you complete all three of these certificates, you'll team up with another camper and use agile software development methodologies to build two real-life projects for nonprofits. You'll also add functionality to two legacy code nonprofit projects. By the time you finish, you'll have a portfolio of real apps that people use every day.",
-          ""
-        ],
-        [
-          "//i.imgur.com/PDGQ9ZM.jpg",
-          "An image of campers building projects together in a cafe in Seoul.",
-          "If you complete all 2,080 hours worth of challenges and projects, you'll earn our Full Stack Development Certification. We'll offer you free coding interview practice. We even offer a job board where employers specifically hire campers who've earned Free Code Camp certifications.",
+          "//i.imgur.com/uejBz2H.jpg",
+          "An image of our open source projects on GitHub.",
+          "You'll get experience by contributing to open source projects used by nonprofits. This will help prepare you for a coding job.",
           ""
         ]
       ],
