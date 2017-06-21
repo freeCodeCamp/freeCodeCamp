@@ -85,25 +85,33 @@ export default function createPanesAspects(panesMap) {
   }
 
   const reducer = handleActions({
-    [types.dividerClicked]: (state, { payload: divider }) => ({
+    [types.dividerClicked]: (state, { payload: name }) => ({
       ...state,
-      pressedDivider: divider
+      pressedDivider: name
     }),
     [types.dividerMoved]: (state, { payload: clientX }) => {
-      const { width, pressedDivider, dividerPositions } = state;
+      const { width, pressedDivider: paneName } = state;
       const dividerBuffer = (200 / width) * 100;
-      const rightBound = dividerPositions[pressedDivider - 1] || 100;
-      const leftBound = dividerPositions[pressedDivider + 1] || 0;
+      const paneIndex = state.panes.indexOf(paneName);
+      const currentPane = state.panesByName[paneName];
+      const rightPane = state.panesByName[state.panes[paneIndex + 1]] || {};
+      const leftPane = state.panesByName[state.panes[paneIndex - 1]] || {};
+      const rightBound = (rightPane.dividerLeft || 100) - dividerBuffer;
+      const leftBound = (leftPane.dividerLeft || 0) + dividerBuffer;
       const newPosition = clamp(
         (clientX / width) * 100,
-        leftBound + dividerBuffer,
-        rightBound - dividerBuffer
+        leftBound,
+        rightBound
       );
-      const newPositions = [ ...dividerPositions ];
-      newPositions[pressedDivider] = newPosition;
       return {
         ...state,
-        dividerPositions: newPositions
+        panesByName: {
+          ...state.panesByName,
+          [currentPane.name]: {
+            ...currentPane,
+            dividerLeft: newPosition
+          }
+        }
       };
     },
     [types.mouseReleased]: state => ({ ...state, pressedDivider: null }),

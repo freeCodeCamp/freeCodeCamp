@@ -14,7 +14,7 @@ function mapDispatchToProps(dispatch, { name }) {
 const propTypes = {
   dividerClicked: PropTypes.func.isRequired,
   left: PropTypes.number.isRequired,
-  name: PropTypes.number.isRequired
+  name: PropTypes.string.isRequired
 };
 
 export function Divider({ left, dividerClicked }) {
