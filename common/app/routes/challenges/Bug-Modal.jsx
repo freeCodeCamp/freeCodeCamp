@@ -68,7 +68,7 @@ export class BugModal extends PureComponent {
             bsStyle='primary'
             onClick={ createIssue }
             >
-            Create my GitHub issue
+            Create topic for issue in community forum
           </Button>
           <Button
             block={ true }
