@@ -34,10 +34,12 @@ const mapStateToProps = createSelector(
           lastDividerPosition = dividerLeft;
           return {
             ...pane,
-            left,
+            left: index === 0 ?
+              0 :
+              left + dividerRatio,
             right: index + 1 === numOfPanes ?
               0 :
-              100 - dividerLeft - dividerRatio
+              100 - dividerLeft
           };
         }, {}),
       height

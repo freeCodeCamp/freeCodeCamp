@@ -107,9 +107,10 @@ export default function createPanesAspects(panesMap) {
       };
     },
     [types.mouseReleased]: state => ({ ...state, pressedDivider: null }),
-    [types.windowResized]: (state, { payload: { height } }) => ({
+    [types.windowResized]: (state, { payload: { height, width } }) => ({
       ...state,
-      height
+      height,
+      width
     }),
     [
       combineActions(
@@ -124,7 +125,7 @@ export default function createPanesAspects(panesMap) {
         panesByName: panes.reduce((panes, name, index) => {
           let dividerLeft = null;
           if (numOfPanes > 1 && numOfPanes !== index + 1) {
-            dividerLeft = (100 / numOfPanes) * index + 1;
+            dividerLeft = (100 / numOfPanes) * (index + 1);
           }
           panes[name] = {
             name,
