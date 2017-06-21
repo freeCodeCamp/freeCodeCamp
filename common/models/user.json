@@ -120,6 +120,11 @@
       "description": "Campers profile does not show challenges/certificates to the public",
       "default": false
     },
+    "isAvailableForHire": {
+      "type": "boolean",
+      "description": "Camper is available for hire",
+      "default": false
+    },
     "currentChallengeId": {
       "type": "string",
       "description": "The challenge last visited by the user",

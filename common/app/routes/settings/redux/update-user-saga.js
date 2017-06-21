@@ -17,6 +17,7 @@ import combineSagas from '../../../../utils/combine-sagas';
 
 const urlMap = {
   isLocked: 'lockdown',
+  isAvailableForHire: 'available-for-hire',
   sendQuincyEmail: 'quincy-email',
   sendNotificationEmail: 'notification-email',
   sendMonthlyEmail: 'announcement-email'

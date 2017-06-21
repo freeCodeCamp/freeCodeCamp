@@ -16,6 +16,7 @@ const publicUserProps = [
   'isGithubCool',
 
   'isLocked',
+  'isAvailableForHire',
   'isFrontEndCert',
   'isBackEndCert',
   'isDataVisCert',
