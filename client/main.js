@@ -1,4 +1,4 @@
-import { donateUrl } from '../common/utils/constantStrings.json';
+import { aboutUrl, donateUrl } from '../common/utils/constantStrings.json';
 
 var main = window.main || {};
 
@@ -106,7 +106,7 @@ $(document).ready(function() {
   });
   window.Mousetrap.bind('g n a', () => {
     // About
-    window.location = '/about';
+    window.location = aboutUrl;
   });
   window.Mousetrap.bind('g n d', () => {
     // Donate

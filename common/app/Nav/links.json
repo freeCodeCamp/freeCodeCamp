@@ -30,7 +30,8 @@
       },
       {
         "content": "About",
-        "link": "/about"
+        "link": "https://www.freecodecamp.org/about",
+        "target": "_blank"
       }
     ]
   },

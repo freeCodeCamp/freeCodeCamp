@@ -1,4 +1,7 @@
 {
+  "aboutUrl": "https://www.freecodecamp.org/about",
   "defaultProfileImage": "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png",
-  "donateUrl": "https://www.freecodecamp.org/donate"
+  "donateUrl": "https://www.freecodecamp.org/donate",
+  "forumUrl": "https://forum.freecodecamp.org",
+  "githubUrl": "https://github.com/freecodecamp/freecodecamp"
 }
