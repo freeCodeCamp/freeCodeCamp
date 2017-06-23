@@ -1,30 +1,19 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 import { NavItem } from 'react-bootstrap';
 
-import { clickOnMap } from './redux';
-
-const mapStateToProps = null;
-const mapDispatchToProps = {
-  clickOnMap
-};
 const propTypes = {
-  clickOnMap: PropTypes.func.isRequired
+  content: PropTypes.string,
+  handleClick: PropTypes.func.isRequired
 };
 
-export function BinButton({ clickOnMap }) {
+export default function BinButton({ content, handleClick }) {
   return (
     <NavItem
-      onClick={ clickOnMap }
+      onClick={ handleClick }
       >
-      Map
+      { content }
     </NavItem>
   );
 }
 BinButton.displayName = 'BinButton';
 BinButton.propTypes = propTypes;
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BinButton);

@@ -10,7 +10,7 @@ const propTypes = {};
 
 export const panesMap = {
   [types.toggleMap]: 'Map',
-  [types.ToggleMain]: 'Main'
+  [types.toggleMain]: 'Main'
 };
 
 const nameToComponentDef = {

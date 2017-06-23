@@ -75,7 +75,11 @@ export const types = createTypes([
   'openBugModal',
   'closeBugModal',
   'openIssueSearch',
-  'createIssue'
+  'createIssue',
+
+  // panes
+  'toggleMap',
+  'toggleMain'
 ], ns);
 
 // challenges

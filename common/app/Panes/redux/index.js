@@ -47,7 +47,9 @@ const initialState = {
   navHeight: 50,
   panes: [],
   panesByName: {},
-  pressedDivider: null
+  pressedDivider: null,
+  typeToName: {},
+  nameToType: {}
 };
 export const getNS = state => state[ns];
 export const heightSelector = state => {
@@ -60,23 +62,33 @@ export const panesByNameSelector = state => getNS(state).panesByName;
 export const pressedDividerSelector =
   state => getNS(state).pressedDivider;
 export const widthSelector = state => getNS(state).width;
-export const hiddenPanesSelector = state => getNS(state).hiddenPanes;
+export const nameToTypeSelector = state => getNS(state).nameToType;
 
-function isPanesAction({ type } = {}, panesMap) {
-  return !!panesMap[type];
+function isPanesAction({ type } = {}, typeToName) {
+  return !!typeToName[type];
 }
 
-export default function createPanesAspects(panesMap) {
+export default function createPanesAspects(typeToName) {
+  const nameToType = Object.keys(typeToName).reduce((map, type) => {
+    map[typeToName[type]] = type;
+    return map;
+  }, {});
+  function getInitialState() {
+    return {
+      ...initialState,
+      nameToType
+    };
+  }
+
   function middleware() {
     return next => action => {
       let finalAction = action;
-      if (isPanesAction(action, panesMap)) {
+      if (isPanesAction(action, typeToName)) {
         finalAction = {
           ...action,
           meta: {
             ...action.meta,
-            isOpening: true,
-            isClosing: true
+            isPaneAction: true
           }
         };
       }
@@ -148,12 +160,20 @@ export default function createPanesAspects(panesMap) {
       ...state,
       navHeight
     })
-  }, initialState);
-  function metaReducer(state = initialState, action) {
-    if (panesMap[action.type]) {
-      // const name = panesMap[action.type];
+  }, getInitialState());
+  function metaReducer(state = getInitialState(), action) {
+    if (action.meta && action.meta.isPaneAction) {
+      const name = typeToName[action.type];
+      const pane = state.panesByName[name];
       return {
-        ...state
+        ...state,
+        panesByName: {
+          ...state.panesByName,
+          [name]: {
+            ...pane,
+            isHidden: !pane.isHidden
+          }
+        }
       };
     }
     return state;
