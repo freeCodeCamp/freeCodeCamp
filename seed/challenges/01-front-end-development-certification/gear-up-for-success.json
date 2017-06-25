@@ -1,103 +1,11 @@
 {
   "name": "Gear up for Success",
   "order": 3,
-  "time": "20 minutes",
+  "time": "5 minutes",
   "challenges": [
     {
-      "id": "573c96eac9a6be092d7830c1",
-      "title": "Join our Forum",
-      "description": [
-        [
-          "//i.imgur.com/y0XxmxQ.gif",
-          "A gif showing how you can join Free Code Camp's forum by clicking the \"sign up\" button, authenticating using GitHub, and verifying your email address.",
-          "Our forum is the best place for deep discussions about various programming resources: books, online courses, coding events, and more. You can also get help with these resources from your fellow campers. Click the button below to open up our forum, then click the \"Sign up\" button. Once you've created an account using GitHub, you'll need to confirm your email address. Now you're able to join discussions on our forum!",
-          "http://forum.freecodecamp.com/"
-        ],
-        [
-          "//i.imgur.com/GxCpl7x.gif",
-          "A gif showing how you can upload your profile picture.",
-          "We recommend that you also add a custom profile picture of your face. You can do this in the settings section of the forum.",
-          ""
-        ],
-        [
-          "//i.imgur.com/Gop2PmJ.gif",
-          "A gif showing how you can introduce yourself on our self introduction forum thread.",
-          "You can make your first forum post right now by clicking the button below to go to the introduction thread. You can reply to the original post with: who you are, why you're learning to code, and how you've been learning to code so far. Then feel free to explore the various discussions and jump in with your own thoughts.",
-          "https://forum.freecodecamp.com/t/welcome-to-freecodecamps-forum/92385"
-        ]
-      ],
-      "releasedOn": "May 17, 2016",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "titleEs": "Join our Forum",
-      "descriptionEs": [
-        [
-          "//i.imgur.com/y0XxmxQ.gif",
-          "A gif showing how you can join Free Code Camp's forum by clicking the \"sign up\" button, authenticating using GitHub, and verifying your email address.",
-          "Our forum is the best place for deep discussions about various programming resources: books, online courses, coding events, and more. You can also get help with these resources from your fellow campers. Click the button below to open up our forum, then click the \"Sign up\" button. Once you've created an account using GitHub, you'll need to confirm your email address. Now you're able to join discussions on our forum!",
-          "http://forum.freecodecamp.com/"
-        ],
-        [
-          "//i.imgur.com/GxCpl7x.gif",
-          "A gif showing how you can upload your profile picture.",
-          "We recommend that you also add a custom profile picture of your face. You can do this in the settings section of the forum.",
-          ""
-        ],
-        [
-          "//i.imgur.com/Gop2PmJ.gif",
-          "A gif showing how you can introduce yourself on our self introduction forum thread.",
-          "You can make your first forum post right now by clicking the button below to go to the introduction thread. You can reply to the original post with: who you are, why you're learning to code, and how you've been learning to code so far. Then feel free to explore the various discussions and jump in with your own thoughts.",
-          "https://forum.freecodecamp.com/t/welcome-to-freecodecamps-forum/92385"
-        ]
-      ],
-      "titleFr": "Join our Forum",
-      "descriptionFr": [
-        [
-          "//i.imgur.com/y0XxmxQ.gif",
-          "A gif showing how you can join Free Code Camp's forum by clicking the \"sign up\" button, authenticating using GitHub, and verifying your email address.",
-          "Our forum is the best place for deep discussions about various programming resources: books, online courses, coding events, and more. You can also get help with these resources from your fellow campers. Click the button below to open up our forum, then click the \"Sign up\" button. Once you've created an account using GitHub, you'll need to confirm your email address. Now you're able to join discussions on our forum!",
-          "http://forum.freecodecamp.com/"
-        ],
-        [
-          "//i.imgur.com/GxCpl7x.gif",
-          "A gif showing how you can upload your profile picture.",
-          "We recommend that you also add a custom profile picture of your face. You can do this in the settings section of the forum.",
-          ""
-        ],
-        [
-          "//i.imgur.com/Gop2PmJ.gif",
-          "A gif showing how you can introduce yourself on our self introduction forum thread.",
-          "You can make your first forum post right now by clicking the button below to go to the introduction thread. You can reply to the original post with: who you are, why you're learning to code, and how you've been learning to code so far. Then feel free to explore the various discussions and jump in with your own thoughts.",
-          "https://forum.freecodecamp.com/t/welcome-to-freecodecamps-forum/92385"
-        ]
-      ],
-      "titleDe": "Join our Forum",
-      "descriptionDe": [
-        [
-          "//i.imgur.com/y0XxmxQ.gif",
-          "A gif showing how you can join Free Code Camp's forum by clicking the \"sign up\" button, authenticating using GitHub, and verifying your email address.",
-          "Our forum is the best place for deep discussions about various programming resources: books, online courses, coding events, and more. You can also get help with these resources from your fellow campers. Click the button below to open up our forum, then click the \"Sign up\" button. Once you've created an account using GitHub, you'll need to confirm your email address. Now you're able to join discussions on our forum!",
-          "http://forum.freecodecamp.com/"
-        ],
-        [
-          "//i.imgur.com/GxCpl7x.gif",
-          "A gif showing how you can upload your profile picture.",
-          "We recommend that you also add a custom profile picture of your face. You can do this in the settings section of the forum.",
-          ""
-        ],
-        [
-          "//i.imgur.com/Gop2PmJ.gif",
-          "A gif showing how you can introduce yourself on our self introduction forum thread.",
-          "You can make your first forum post right now by clicking the button below to go to the introduction thread. You can reply to the original post with: who you are, why you're learning to code, and how you've been learning to code so far. Then feel free to explore the various discussions and jump in with your own thoughts.",
-          "https://forum.freecodecamp.com/t/welcome-to-freecodecamps-forum/92385"
-        ]
-      ]
-    },
-    {
       "id": "560add71cb82ac38a17513c2",
-      "title": "Join a Free Code Camp Group in Your City",
+      "title": "Join a freeCodeCamp Study Group in Your City",
       "description": [
         [
           "//i.imgur.com/WBVydfk.jpg",
@@ -107,8 +15,8 @@
         ],
         [
           "//i.imgur.com/IqBnnuFr.jpg",
-          "A picture of some of our campers meeting in a local cafe.",
-          "Find your local study group and click it. This will take you to its Facebook page. Click the \"Join group\" button. Someone from the group should approve you shortly.",
+          "A picture of our study group directory.",
+          "Click the button below to open our study group directory. <br><br>Find your local study group and click it. This will take you to its Facebook page. <br><br>Click the \"Join group\" button. Someone from the group should approve you shortly.",
           "https://www.freecodecamp.com/study-group-directory/"
         ]
       ],
@@ -163,30 +71,58 @@
       ]
     },
     {
-      "id": "58d9cc820ce2197370032a13",
-      "title": "Become a Supporter",
+      "id": "560ade65cb82ac38a17513c2",
+      "title": "Watch Coding Videos on the freeCodeCamp YouTube Channel",
       "description": [
         [
-          "//i.imgur.com/CxcBk9C.png",
-          "Help us pay for servers and other costs. Set up a monthly donation you can afford.",
-          "freeCodeCamp is a small nonprofit that helps busy people learn to code for free. Help us pay for servers and other costs. Set up a monthly donation you can afford.",
-          "/donate"
+          "//i.imgur.com/kA6uW8H.gif",
+          "A gif showing that you should click the \"subscribe\" button on freeCodeCamp YouTube channel, then click the bell icon, the notification confirmation box, then the \"Save\" button.",
+          "We publish new coding videos on YouTube every day. <br><br>Click the button below to open our YouTube channel. Then click the red <bold>subscribe</bold> button. Then click the <bold>bell</bold> that appears. Check the box in the message that pops up, then click <bold>save</bold>.",
+          "https://www.youtube.com/freecodecamp"
         ]
       ],
+      "releasedOn": "April 15, 2016",
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
-      "challengeType": 7
+      "challengeType": 7,
+      "titleEs": "Miranos programar en vivo por YouTube",
+      "descriptionEs": [
+        [
+          "//i.imgur.com/4jUhEsb.jpg",
+          "An image of Briana at the whiteboard teaching in a YouTube video.",
+          "Our community's YouTube channel features video tutorials and demos of projects that campers have built for nonprofits. We add new videos every week. The button below will take you to our YouTube channel, where you can subscribe for free.",
+          "https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ?sub_confirmation=1"
+        ]
+      ],
+      "titleFr": "Regarde nous coder en direct sur Twitch.tv",
+      "descriptionFr": [
+        [
+          "//i.imgur.com/8rtyRY1.gif",
+          "Une gif montrant comment tu peux créer un compte sur Twitch.tv et suivre notre chaîne.",
+          "Nos campers codent fréquemment en direct sur Twitch.tv, un site de streaming populaire. Tu peux créer un compte en moins d’une minute, et suivre la chaîne de Free Code Camp. Une fois suivi, tu auras l’option de recevoir un email à chaque fois qu’un de nos campers est en direct. Et donc tu peux rejoindre plusieurs campers pour regarder et interagir sur le salon de chat. C’est une façon d’apprendre en regardant les autres coder.",
+          "https://twitch.tv/freecodecamp"
+        ]
+      ],
+      "titleDe": "Schaue uns auf Twitch.tv Live beim Programmieren zu",
+      "descriptionDe": [
+        [
+          "//i.imgur.com/8rtyRY1.gif",
+          "Ein GIF, das dir zeigt, wie du dich bei Twitch.tv anmelden und unserem Kanal folgen kannst.",
+          "Unsere Camper programmieren oft Live auf Twitch.tv, einer populären Streaming-Website. Du kannst in weniger als einer Minute einen Account anlegen und dann dem Kanal von Free Code Camp folgen. Wenn du dem Kanal folgst, hast du die Option E-Mail Benachrichtigungen zu bekommen, sobald einer unserer Camper live geht. Dann kannst du Dutzenden Campern folgen und ihnen beim Programmieren zusehen sowie in Chats interagieren. Das ist eine lustige und lockere Art und Weise, um von anderen Personen zu lernen, wie sie ihre Projekte umsetzen.",
+          "https://twitch.tv/freecodecamp"
+        ]
+      ]
     },
     {
       "id": "570add8ccb82ac38a17513c3",
-      "title": "Join our LinkedIn Alumni Network",
+      "title": "Join the freeCodeCamp LinkedIn Alumni Network",
       "description": [
         [
-          "//i.imgur.com/vJyiXzU.gif",
-          "A gif showing how you can click the link below and fill in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
-          "LinkedIn recognizes Free Code Camp as a university. You can gain access to our large alumni network by adding Free Code Camp to your LinkedIn profile's education section. Set your graduation date as next year. For \"Degree\", type \"Full Stack Web Development Certification\". For \"Field of study\", type \"Computer Software Engineering\". Then click \"Save Changes\".",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
+          "//i.imgur.com/NtczsLE.png",
+          "A screenshot showing filling in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
+          "LinkedIn recognizes Free Code Camp as a university. You can gain access to our large alumni network by adding Free Code Camp to your LinkedIn profile's education section. <br><br>Set <bold>freeCodeCamp</bold> as your school. <b><br>For \"Degree\", type \"Full Stack Web Development Certificate\". <b><br>For \"Field of study\", type \"Computer Software Engineering\".<b><br>Then click \"Save Changes\".",
+          "https://www.linkedin.com/in/quincy-tester-9a0b17145/edit/education/new/"
         ]
       ],
       "challengeSeed": [],
@@ -220,6 +156,22 @@
           "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
       ]
+    },
+    {
+      "id": "58d9cc820ce2197370032a13",
+      "title": "Become a Supporter",
+      "description": [
+        [
+          "//i.imgur.com/CxcBk9C.png",
+          "Help us pay for servers and other costs. Set up a monthly donation you can afford.",
+          "freeCodeCamp is a small nonprofit that helps busy people learn to code for free. Help us pay for servers and other costs. Set up a monthly donation you can afford.",
+          "/donate"
+        ]
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7
     }
   ]
 }

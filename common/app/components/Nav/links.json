@@ -1,10 +1,6 @@
 [{
   "content": "Map",
   "link": "/map"
-}, {
-  "content": "Chat",
-  "link": "//gitter.im/FreeCodeCamp/FreeCodeCamp",
-  "target": "_blank"
 },{
   "content": "Forum",
   "link": "http://forum.freecodecamp.com/",
@@ -13,6 +9,6 @@
   "content": "About",
   "link": "/about"
 },{
-  "content": "Shop",
-  "link": "/shop"
+  "content": "Donate",
+  "link": "/donate"
 }]
