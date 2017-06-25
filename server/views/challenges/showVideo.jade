@@ -25,10 +25,6 @@ block content
                 a.btn.btn-big.btn-primary.btn-block(href='/challenges/next-challenge?id=' + id) I've completed this challenge (ctrl + enter)
                 script.
                     var userLoggedIn = true;
-            .button-spacer
-            .btn-group.input-group.btn-group-justified
-                .btn.btn-primary.btn-big#challenge-help-btn Get help
-                .btn.btn-primary.btn-big#trigger-issue-modal Report a bug
             if (!user)
                 .button-spacer
                 a.btn.btn-big.signup-btn.btn-block(href='/signin') Sign in so you can save your progress

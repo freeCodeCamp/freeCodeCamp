@@ -30,19 +30,12 @@ block content
                                         ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
                             .button-spacer
                 if (user)
-                button.btn.btn-primary.btn-block.btn-lg#submitButton
+                button.btn-big.btn.btn-primary.btn-block#submitButton
                         | Run tests (ctrl + enter)
                 .button-spacer
-                .btn-group.input-group.btn-group-justified
-                    .btn-group
-                        button.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-reset-modal
-                            | &nbsp; Reset
-                    .btn-group
-                        button.btn.btn-primary.btn-primary-ghost.btn-lg#challenge-help-btn
-                            | &nbsp; Help
-                    .btn-group
-                        button.btn.btn-primary.btn-primary-ghost.btn-lg#trigger-issue-modal
-                            | &nbsp; Bug
+                button.btn-big.btn.btn-primary.btn-block#trigger-reset-modal Reset your code
+                .button-spacer                    
+                a.btn-big.btn.btn-primary.btn-block(href="https://forum.freecodecamp.com/t/freecodecamp-algorithm-challenge-guide-" + dashedName target="_blank") Get a hint
                 if (!user)
                     .button-spacer
                     a.btn.signup-btn.btn-block.btn-block(href='/login') Sign in so you can save your progress
