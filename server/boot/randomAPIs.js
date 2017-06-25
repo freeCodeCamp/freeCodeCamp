@@ -32,8 +32,6 @@ module.exports = function(app) {
   router.get('/stories', showTestimonials);
   router.get('/shop', showShop);
   router.get('/all-stories', showAllTestimonials);
-  router.get('/terms', terms);
-  router.get('/privacy', privacy);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get(
       '/software-resources-for-nonprofits',
@@ -47,18 +45,6 @@ module.exports = function(app) {
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function terms(req, res) {
-      res.render('resources/terms-of-service', {
-            title: 'Terms of Service'
-      });
-  }
-
-  function privacy(req, res) {
-      res.render('resources/privacy', {
-          title: 'Privacy policy'
-      });
   }
 
   function howNonprofitProjectsWork(req, res) {
