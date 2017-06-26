@@ -16,7 +16,7 @@
         [
           "//i.imgur.com/IqBnnuFr.jpg",
           "A picture of our study group directory.",
-          "Click the button below to open our study group directory. <br><br>Find your local study group and click it. This will take you to its Facebook page. <br><br>Click the \"Join group\" button. Someone from the group should approve you shortly.",
+          "Click the button below to open our study group directory. <br><br>Find your local study group and click it. This will take you to their Facebook group. <br><br>Click the <bold>Join group</bold> button. Once someone from the group approves your join request, and you'll get a notification within Facebook, and can go back and introduce yourself.",
           "https://www.freecodecamp.com/study-group-directory/"
         ]
       ],
@@ -111,49 +111,6 @@
           "Ein GIF, das dir zeigt, wie du dich bei Twitch.tv anmelden und unserem Kanal folgen kannst.",
           "Unsere Camper programmieren oft Live auf Twitch.tv, einer populären Streaming-Website. Du kannst in weniger als einer Minute einen Account anlegen und dann dem Kanal von Free Code Camp folgen. Wenn du dem Kanal folgst, hast du die Option E-Mail Benachrichtigungen zu bekommen, sobald einer unserer Camper live geht. Dann kannst du Dutzenden Campern folgen und ihnen beim Programmieren zusehen sowie in Chats interagieren. Das ist eine lustige und lockere Art und Weise, um von anderen Personen zu lernen, wie sie ihre Projekte umsetzen.",
           "https://twitch.tv/freecodecamp"
-        ]
-      ]
-    },
-    {
-      "id": "570add8ccb82ac38a17513c3",
-      "title": "Join the freeCodeCamp LinkedIn Alumni Network",
-      "description": [
-        [
-          "//i.imgur.com/NtczsLE.png",
-          "A screenshot showing filling in the necessary fields to add your Free Code Camp studies to your LinkedIn profile.",
-          "LinkedIn recognizes Free Code Camp as a university. You can gain access to our large alumni network by adding Free Code Camp to your LinkedIn profile's education section. <br><br>Set <bold>freeCodeCamp</bold> as your school. <b><br>For \"Degree\", type \"Full Stack Web Development Certificate\". <b><br>For \"Field of study\", type \"Computer Software Engineering\".<b><br>Then click \"Save Changes\".",
-          "https://www.linkedin.com/in/quincy-tester-9a0b17145/edit/education/new/"
-        ]
-      ],
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "titleEs": "Únete a nuestra red de alumnos en LinkedIn",
-      "descriptionEs": [
-        [
-          "//i.imgur.com/vJyiXzU.gif",
-          "Un gif mostrando como puedes pulsar el enlace de abajo y llenar todos los campos necesarios para agregar los estudios de Free Code Camp a tu perfil de LinkedIn",
-          "LinkedIn reconoce a Free Code Camp como una universidad. Puedes obtener acceso a nuestra larga red de alumnos agregando Free Code Camp a la sección de educación de tu LinkedIn. Define tu fecha de graduación para el siguiente año. En el campo \"Grado\", escribe \"Certificación de Desarrollo Web Full Stack\". En \"Campo de estudio\", escribe \"Ingeniería de Software\". Después pulsa \"Guardar Cambios\".",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
-        ]
-      ],
-      "titleFr": "Rejoignez notre réseau de lauréats sur Linkedin",
-      "descriptionFr": [
-        [
-          "//i.imgur.com/vJyiXzU.gif",
-          "Une gif qui montre comment tu peux cliquer sur le lien ci-dessous et remplir les champs nécessaires pour ajouter le certificat de Free Code Camp à votre profil LinkedIn.",
-          "LinkedIn reconnait Free Code Camp comme une université. Tu peux avoir accès à notre large réseau de lauréats en ajoutant Free Code Camp à la section éducation de ton profil LinkedIn. L’année d’obtention du diplôme est la prochaine année. Pour le \"Degré\", c’est  \"Full Stack Web Development Certification\". Pour le \"Domaine d’études\", c’est \"Computer Software Engineering\". Puis sauvegardez les changements.",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
-        ]
-      ],
-      "titleDe": "Tritt unserem LinkedIn Alumni Netzwerk bei",
-      "descriptionDe": [
-        [
-          "//i.imgur.com/vJyiXzU.gif",
-          "Ein GIF, das dir zeigt, wie du den unten stehenden Link anklicken kannst und welche Felder du ausfüllen musst, damit du Free Code Camp zu deinem LinkedIn Profil hinzufügst.",
-          "LinkedIn erkennt Free Code Camp als Universität an. Du bekommst auf unser großes Alumni Netzwerk zugriff, indem du Free Code Camp zum Ausbildungsbereich deines LinkedIn Profils hinzufügst. Setze deinen Abschlusszeitpunkt auf das nächste Jahr. In das Feld \"Abschluss\" schreibe \"Full Stack Web Development Certification\". In das Feld \"Studienfach\" schreibe \"Computer Software Engineering\". Dann klicke auf den \"Speichern\" Button.",
-          "https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp"
         ]
       ]
     },
