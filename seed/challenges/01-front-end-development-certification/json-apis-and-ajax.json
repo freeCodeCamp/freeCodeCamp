@@ -136,7 +136,7 @@
         "Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.",
         "You've already been using JSON whenever you create a JavaScript object. JSON is nothing more than object properties and their current values, sandwiched between a <code>{</code> and a <code>}</code>.",
         "These properties and their values are often referred to as \"key-value pairs\".",
-        "Let's get the JSON from Free Code Camp's Cat Photo API.",
+        "Let's get the JSON from freeCodeCamp's Cat Photo API.",
         "Here's the code you can put in your click event to do this:",
         "<blockquote>$.getJSON(\"/json/cats.json\", function(json) {<br>  $(\".message\").html(JSON.stringify(json));<br>});</blockquote>",
         "Once you've added this, click the \"Get Message\" button. Your Ajax function will replace the \"The message will go here\" text with the raw JSON output from the Free Code Camp Cat Photo API."
@@ -363,7 +363,7 @@
       "id": "56bbb991ad1ed5201cd392d9",
       "title": "Prefilter JSON",
       "description": [
-        "If we don't want to render every cat photo we get from our Free Code Camp's Cat Photo JSON API, we can pre-filter the json before we loop through it.",
+        "If we don't want to render every cat photo we get from our freeCodeCamp Cat Photo JSON API, we can pre-filter the json before we loop through it.",
         "Let's filter out the cat whose \"id\" key has a value of 1.",
         "Here's the code to do this:",
         "<blockquote>json = json.filter(function(val) {</br>  return (val.id !== 1);</br>});</blockquote>"
