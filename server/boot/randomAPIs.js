@@ -32,14 +32,11 @@ module.exports = function(app) {
   router.get('/stories', showTestimonials);
   router.get('/shop', showShop);
   router.get('/all-stories', showAllTestimonials);
-  router.get('/terms', terms);
-  router.get('/privacy', privacy);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get(
       '/software-resources-for-nonprofits',
       softwareResourcesForNonprofits
   );
-  router.get('/code-of-conduct', codeOfConduct);
   router.get('/academic-honesty', academicHonesty);
 
   app.use(noLangRouter);
@@ -47,18 +44,6 @@ module.exports = function(app) {
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function terms(req, res) {
-      res.render('resources/terms-of-service', {
-            title: 'Terms of Service'
-      });
-  }
-
-  function privacy(req, res) {
-      res.render('resources/privacy', {
-          title: 'Privacy policy'
-      });
   }
 
   function howNonprofitProjectsWork(req, res) {
@@ -71,12 +56,6 @@ module.exports = function(app) {
     res.render('resources/software-resources-for-nonprofits', {
       title: 'Software Resources for Nonprofits'
     });
-  }
-
-  function codeOfConduct(req, res) {
-      res.render('resources/code-of-conduct', {
-          title: 'Code of Conduct'
-      });
   }
 
   function academicHonesty(req, res) {

@@ -31,7 +31,7 @@ export default function bugSaga(actions$, getState, { window }) {
     .map(({ type }) => {
       const {
         challengesApp: {
-          challenge: challengeName,
+          legacyKey: challengeName,
           files
         }
       } = getState();
@@ -39,34 +39,45 @@ export default function bugSaga(actions$, getState, { window }) {
         navigator: { userAgent },
         location: { href }
       } = window;
+      let titleText = challengeName;
       if (type === types.openIssueSearch) {
         window.open(
-          'https://github.com/freeCodeCamp/freeCodeCamp/issues?q=' +
-          'is:issue is:all ' +
-          challengeName
+          'https://forum.freecodecamp.com/search?q=' +
+          window.encodeURIComponent(titleText)
+        );
+      } else {
+        titleText = 'Need assistance in ' + challengeName;
+        let textMessage = [
+          '#### Challenge Name\n',
+          '[',
+          challengeName,
+          '](',
+          href,
+          ') has an issue.\n',
+          '#### Issue Description\n',
+          '<!-- Describe below when the issue happens and how to ',
+          'reproduce it -->\n\n\n',
+          '#### Browser Information\n',
+          '<!-- Describe your workspace in which you are having issues-->\n',
+          'User Agent is: <code>',
+          userAgent,
+          '</code>.\n\n',
+          '#### Screenshot\n',
+          '<!-- Add a screenshot of your issue -->\n\n\n',
+          '#### Your Code'
+        ].join('');
+        const body = filesToMarkdown(files);
+        if (body.length > 10) {
+          textMessage = textMessage + body;
+        }
+        window.open(
+          'https://forum.freecodecamp.com/new-topic?category=General&title=' +
+          window.encodeURIComponent(titleText) + '&body=' +
+          window.encodeURIComponent(textMessage),
+          '_blank'
         );
       }
-      let textMessage = [
-        'Challenge [',
-        challengeName,
-        '](',
-        href,
-        ') has an issue.\n',
-        'User Agent is: <code>',
-        userAgent,
-        '</code>.\n',
-        'Please describe how to reproduce this issue, and include ',
-        'links to screenshots if possible.\n\n'
-      ].join('');
-      const body = filesToMarkdown(files);
-      if (body.length > 10) {
-        textMessage = textMessage + body;
-      }
-      window.open(
-        'https://github.com/freecodecamp/freecodecamp/issues/new?&body=' +
-        window.encodeURIComponent(textMessage),
-        '_blank'
-      );
+
       return closeBugModal();
     });
 }

@@ -40,7 +40,7 @@
     "isReact": true
   },
   {
-    "content": "Shop",
-    "link": "/shop"
+    "content": "Donate",
+    "link": "https://www.freecodecamp.com/donate"
   }
 ]

@@ -3,7 +3,7 @@ import store from 'store';
 
 import { removeCodeUri, getCodeUri } from '../utils/code-uri';
 import { ofType } from '../../common/utils/get-actions-of-type';
-import { updateContents } from '../../common/utils/polyvinyl';
+import { setContent } from '../../common/utils/polyvinyl';
 import combineSagas from '../../common/utils/combine-sagas';
 
 import { userSelector } from '../../common/app/redux/selectors';
@@ -51,7 +51,7 @@ function getLegacyCode(legacy) {
 }
 
 function legacyToFile(code, files, key) {
-  return { [key]: updateContents(code, files[key]) };
+  return { [key]: setContent(code, files[key]) };
 }
 
 export function clearCodeSaga(actions, getState) {

@@ -8,7 +8,7 @@
       "id": "a3566b1109230028080c9345",
       "title": "Sum All Numbers in a Range",
       "description": [
-        "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
+        "We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them.",
         "The lowest number will not always come first.",
         "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
@@ -252,8 +252,8 @@
       "id": "a8e512fbe388ac2f9198f0fa",
       "title": "Wherefore art thou",
       "description": [
-        "Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching property and value pairs (second argument). Each property and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.",
-        "For example, if the first argument is <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, and the second argument is <code>{ last: \"Capulet\" }</code>, then you must return the third object from the array (the first argument), because it contains the property and its value, that was passed on as the second argument.",
+        "Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching name and value pairs (second argument). Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.",
+        "For example, if the first argument is <code>[{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }]</code>, and the second argument is <code>{ last: \"Capulet\" }</code>, then you must return the third object from the array (the first argument), because it contains the name and its value, that was passed on as the second argument.",
         "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -997,9 +997,8 @@
       "id": "a5deed1811a43193f9f1c841",
       "title": "Drop it",
       "description": [
-        "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns <code>true</code>.",
-        "The second argument, <code>func</code>, is a function you'll use to test the first elements of the array to decide if you should drop it or not.",
-        "Return the rest of the array, otherwise return an empty array.",
+        "Given the array <code>arr</code>, iterate through and remove each element starting from the first element (the 0 index) until the function <code>func</code> returns <code>true</code> when the iterated element is passed through it.",
+        "Then return the rest of the array once the condition is satisfied, otherwise, <code>arr</code> should be returned as an empty array.",
         "Remember to use <a href='http://forum.freeCodeCamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -1277,11 +1276,11 @@
       ],
       "challengeSeed": [
         "var Person = function(firstAndLast) {",
-        "    // Complete the method below and implement the others similarly",
-        "    this.getFullName = function() {",
-        "      return \"\";",
-        "    };",
-        "    return firstAndLast;",
+        "  // Complete the method below and implement the others similarly",
+        "  this.getFullName = function() {",
+        "    return \"\";",
+        "  };",
+        "  return firstAndLast;",
         "};",
         "",
         "var bob = new Person('Bob Ross');",

@@ -43,10 +43,10 @@
         "<code>&#60;h1&#62;</code>",
         "Closing tags look like this:",
         "<code>&#60;/h1&#62;</code>",
-        "Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
-        "Each challenge has tests that you can run at any time by clicking the \"Run tests\" button. Once you get all tests passing (they change from red to green), you can go to the next coding challenge.",
+        "The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.",
+        "Each challenge has tests you can run at any time by clicking the \"Run tests\" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.",
         "<hr>",
-        "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\" instead of \"Hello\". Then click the \"Run tests\" button."
+        "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\"."
       ],
       "challengeSeed": [
         "<h1>Hello</h1>"
@@ -727,6 +727,7 @@
         "Now when users click the \"Go to contact section\" link, they'll be taken to the section of the webpage with the anchor that has the <code>name</code> attribute \"contact\".",
         "<hr>",
         "Change your external link to an internal link by changing the <code>href</code> attribute to \"#bottom\" and the anchor text from \"cat photos\" to \"Jump to Bottom\".",
+        "Don't forget to remove the <code>target=\"_blank\"</code> attribute since this causes the linked document to open in a new window tab.",
         "Then add an anchor link with a <code>name</code> attribute set to \"bottom\" after the last paragraph.",
         "<strong>Note</strong><br>Additional kitty ipsum text has been added to the paragraphs to better show the effect of clicking the internal anchor link to jump to the bottom of the page. Also, this change will only apply to this challenge. The next challenge goes back to showing your external link."
       ],
@@ -779,7 +780,7 @@
       "tests": [
         "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").length > 0 || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").length > 0), 'message: You need an <code>a</code> element that links to \"http://freecatphotoapp.com\".');",
         "assert($(\"a\").text().match(/cat\\sphotos/gi), 'message: Your <code>a</code> element should have the anchor text of \"cat photos\"');",
-        "assert($(\"p\") && $(\"p\").length > 2, 'message: Create a new <code>p</code> element around your <code>a</code> element.');",
+        "assert($(\"p\") && $(\"p\").length > 2, 'message: Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.');",
         "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().is(\"p\") || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().is(\"p\")), 'message: Your <code>a</code> element should be nested within your new <code>p</code> element.');",
         "assert(($(\"a[href=\\\"http://freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi) || $(\"a[href=\\\"http://www.freecatphotoapp.com\\\"]\").parent().text().match(/View\\smore\\s/gi)), 'message: Your <code>p</code> element should have the text \"View more \" (with a space after it).');",
         "assert(!$(\"a\").text().match(/View\\smore/gi), 'message: Your <code>a</code> element should <em>not</em> have the text \"View more\".');",
@@ -846,7 +847,8 @@
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
         "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
         "<hr>",
-        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link."
+        "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link.",
+        "For example: <code>href=\"#\"</code>"
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -1506,8 +1508,8 @@
         "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, like this: <code>&#60;input type=\"text\" required&#62;</code>",
         "<hr>",
         "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.",
-        "Then try to submit the form without inputing any text. See how your HTML5 form notifies you that the field is required?",
-        "<strong>Note</strong><br>This field does not work in Safari."
+        "Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required?",
+        "<strong>Note</strong><br>This field may not work in Safari Browser."
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",

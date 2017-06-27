@@ -5,6 +5,23 @@
   "helpRoom": "HelpJavaScript",
   "challenges": [
     {
+      "id": "bd6123c9c441eddfaeb4bdef",
+      "title": "Introduction to JavaScript",
+      "description": [
+        [
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png",
+          "A yellow square with the letters, JS, in the bottom right to represent the JS logo",
+          "JavaScript (JS) is a high-level programming language that all modern web browsers support. It is also one of the core technologies of the web, along with HTML and CSS that you may have learned previously. This section will cover basic programming concepts in JavaScript, which range from variables and arithemtic to objects and loops."
+        ]
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
       "id": "bd7123c9c441eddfaeb4bdef",
       "title": "Comment Your JavaScript Code",
       "description": [
@@ -80,7 +97,7 @@
         "// Example",
         "var ourName;",
         "",
-        "// Define myName below this line",
+        "// Declare myName below this line",
         ""
       ],
       "tail": [
@@ -256,8 +273,8 @@
         "var a = 5;\nvar b = 10;\nvar c = \"I am a\";\na = a + 1;\nb = b + 5;\nc = c + \" String!\";"
       ],
       "tests": [
-        "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and have a value of <code>6</code>');",
-        "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and have a value of <code>15</code>');",
+        "assert(typeof a === 'number' && a === 6, 'message: <code>a</code> should be defined and evaluated to have the value of <code>6</code>');",
+        "assert(typeof b === 'number' && b === 15, 'message: <code>b</code> should be defined and evaluated to have the value of <code>15</code>');",
         "assert(!/undefined/.test(c) && c === \"I am a String!\", 'message: <code>c</code> should not contain <code>undefined</code> and should have a value of \"I am a String!\"');",
         "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'message: Do not change code below the line');"
       ],
@@ -393,8 +410,7 @@
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
-        "assert((code).match(/difference/g).length === 1,'message: Only change the first line');",
-        "assert(/\\d+\\s*-\\s*\\d+/.test(code),'message: Use the <code>-</code> operator');"
+        "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*33;?/.test(code),'message: Only subtract one number from 45.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1683,9 +1699,8 @@
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
         "function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {",
-        "  var result = \"\";",
         "  // Your code below this line",
-        "  ",
+        "  var result = \"\";",
         "",
         "  // Your code above this line",
         "  return result;",
@@ -4294,9 +4309,9 @@
       "description": [
         "Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for iterating through lists of the object properties or for doing the lookup.",
         "Here is an example of using a variable to access a property:",
-        "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >}<br>myObj[someProp]; // \"Some Value\"</blockquote>",
+        "<blockquote>var someProp = \"propName\";<br>var myObj = {<br>  propName: \"Some Value\"<br >};<br>myObj[someProp]; // \"Some Value\"</blockquote>",
         "Here is one more:",
-        "<blockquote>var myDog = \"Hunter\";<br>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var breed = dogs[myDog];<br>console.log(breed);// \"Doberman\"</blockquote>",
+        "<blockquote>var myDog = \"Hunter\";<br>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br >};<br>var breed = dogs[myDog];<br>console.log(breed);// \"Doberman\"</blockquote>",
         "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>.",
         "<hr>",
         "Use the <code>playerNumber</code> variable to look up player <code>16</code> in <code>testObj</code> using bracket notation. Then assign that name to the <code>player</code> variable."
@@ -4326,6 +4341,7 @@
         "assert(typeof player === 'string', 'message: The variable <code>player</code> should be a string');",
         "assert(player === 'Montana', 'message: The value of <code>player</code> should be \"Montana\"');",
         "assert(/testObj\\s*?\\[.*?\\]/.test(code),'message: You should use bracket notation to access <code>testObj</code>');",
+        "assert(!code.match(/player\\s*=\\s*\"|\\'\\s*Montana\\s*\"|\\'\\s*;/gi),'message: You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.');",
         "assert(/testObj\\s*?\\[\\s*playerNumber\\s*\\]/.test(code),'message: You should be using the variable <code>playerNumber</code> in your bracket notation');"
       ],
       "type": "waypoint",
@@ -4685,7 +4701,7 @@
         "    \"title\": \"Piano Man\",",
         "    \"release_year\": 1973,",
         "    \"formats\": [ ",
-        "      \"CS\",",
+        "      \"CD\",",
         "      \"8T\",",
         "      \"LP\"",
         "    ],",
@@ -4950,7 +4966,7 @@
       "title": "Iterate with JavaScript While Loops",
       "description": [
         "You can run the same code multiple times by using a loop.",
-        "Another type of JavaScript loop is called a \"<code>while loop</code>\", because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
+        "The first type of loop we will learn is called a \"<code>while</code>\" loop because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
         "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
         "<hr>",

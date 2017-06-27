@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { updateContents } from '../../../../utils/polyvinyl';
+import { setContent } from '../../../../utils/polyvinyl';
 import { getMouse, loggerToStr } from '../utils';
 
 import types from './types';
@@ -65,7 +65,7 @@ export const clearFilter = createAction(types.clearFilter);
 // files
 export const updateFile = createAction(
   types.updateFile,
-  (content, file) => updateContents(content, file)
+  (content, file) => setContent(content, file)
 );
 
 export const updateFiles = createAction(types.updateFiles);

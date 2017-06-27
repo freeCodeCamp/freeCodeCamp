@@ -265,14 +265,14 @@
         "console.log(squaredIntegers);"
       ],
       "tests": [
-        "// Test user did replace var keyword",
-        "// Test squaredIntegers is const",
-        "// Test squaredIntegers is an array",
-        "// Test squaredIntegers is [16, 1764, 36]",
-        "// Test function keyword was not used",
-        "// Test arrow => was used",
-        "// Test loop was not used",
-        "// Test map and filter were used"
+        "// Test user did replace <code>var</code> keyword",
+        "// Test <code>squaredIntegers</code> is <code>const</code>",
+        "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an array');",
+        "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, 'message: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');",
+        "// Test <code>function</code> keyword was not used",
+        "// Test arrow <code>=></code> was used",
+        "assert(!code.match(/(for)|(while)/g), 'message: loop should not be used');",
+        "assert(code.match(/map/g) && code.match(/filter/g), 'message: <code>map</code> and <code>filter</code> should be used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -288,7 +288,7 @@
         "<blockquote>function greeting(name = \"Anonymous\") {<br>  return \"Hello \" + name;<br>}<br>console.log(greeting(\"John\")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>",
         "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>\"Anonymous\"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.",
         "<hr>",
-        "Modify the function <code>increment</code> by adding default parameters so it will always return a valid number and it will add 1 to <code>number</code> if <code>value</code> is not specified.",
+        "Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified.",
         "<strong>Note</strong><br>Don't forget to use strict mode."
       ],
       "challengeSeed": [
@@ -437,7 +437,7 @@
       "title": "Use Destructuring Assignment to Assign Variables from Arrays",
       "description": [
         "ES6 makes destructuring arrays as easy as destructuring objects.",
-        "One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick and choose which elements or you want to assign to variables.",
+        "One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables.",
         "Destructuring an array lets us do exactly that:",
         "<blockquote>const [a, b] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b); // 1, 2</blockquote>",
         "The variable <code>a</code> is assigned the first value of the array, and <code>b</code> is assigned the second value of the array.",
@@ -748,7 +748,7 @@
         "The following is what we refer to as a <dfn>named export</dfn>. With this, we can import any code we export into another file with the <code>import</code> syntax you learned in the last lesson. Here's an example:",
         "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>export { capitalizeString } //How to export functions.<br>export const foo = \"bar\"; //How to export variables.</blockquote>",
         "Alternatively, if you would like to compact all your <code>export</code> statements into one line, you can take this approach:",
-        "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>const foo = \"bar\";<br>export { capitalizeString, bar }</blockquote>",
+        "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>const foo = \"bar\";<br>export { capitalizeString, foo }</blockquote>",
         "Either approach is perfectly acceptable.",
         "<hr>",
         "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated <code>export</code>, export the two variables."
