@@ -1,6 +1,12 @@
 require('dotenv').load();
-var pmx = require('pmx');
-pmx.init();
+
+if (process.env.OPBEAT_ID) {
+  require('opbeat').start({
+    appId: process.env.OPBEAT_ID,
+    organizationId: process.env.OPBEAT_ORG_ID,
+    secretToken: process.env.OPBEAT_SECRET
+  });
+}
 
 var _ = require('lodash'),
     loopback = require('loopback'),
