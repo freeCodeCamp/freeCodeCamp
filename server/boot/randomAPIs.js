@@ -35,7 +35,6 @@ module.exports = function(app) {
       '/software-resources-for-nonprofits',
       softwareResourcesForNonprofits
   );
-  router.get('/code-of-conduct', codeOfConduct);
   router.get('/academic-honesty', academicHonesty);
   router.get(
     '/the-fastest-web-page-on-the-internet',
@@ -76,12 +75,6 @@ module.exports = function(app) {
     res.render('resources/software-resources-for-nonprofits', {
       title: 'Software Resources for Nonprofits'
     });
-  }
-
-  function codeOfConduct(req, res) {
-      res.render('resources/code-of-conduct', {
-          title: 'Code of Conduct'
-      });
   }
 
   function academicHonesty(req, res) {
