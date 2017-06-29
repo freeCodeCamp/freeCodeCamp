@@ -116,7 +116,7 @@
           "description": [
             "Bem-vindo(a) aos desafios de programação do freeCodeCamp. Eles vão te guiar pelo desenvolvimento web passo a passo.",
             "Nós recomendamos que você os resolva em ordem, mas fique à vontade para navegar pelos desafios clicando em \"map\" no menu acima.",
-            "Além disso, se você quiser salvar seu progresso, você deve entrar para nossa comunidade criando uma conta. Em apenas alguns minutos, você pode entrar na nossa sala de chat, fórum e até mesmo um grupo de estudos da sua cidade.",
+            "Além disso, se você quiser salvar seu progresso, você deve entrar para nossa comunidade criando uma conta. Em apenas alguns minutos, você pode entrar na nossa sala de chat, fórum e até mesmo em um grupo de estudos da sua cidade.",
             "Primeiramente, você vai começar construindo uma página da web simples com HTML. Você pode editar o <code>código</code> no seu <code>editor de texto</code>, que está embutido nessa página.",
             "Você está vendo o código no seu editor de texto que contém <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Esse é um <code>elemento</code> HTML.",
             "A maioria dos elementos HTML têm uma <code>tag de abertura</code> e uma <code>tag de fechamento</code>.",
@@ -572,11 +572,11 @@
           "title": "Introdução aos elementos HTML5",
           "description": [
             "O HTML5 introduziu tags mais descritivas, como <code>header</code> (cabeçalho), <code>footer</code> (rodapé), <code>nav</code> (navegação), <code>video</code> (vídeo), <code>article</code> (artigo), <code>section</code> (seção), entre outras.",
-            "Essas tags deixam seu HTML mais fácil de ler e também ajudam com Search Engine Optimization (SEO) e acessibilidade.",
+            "Essas tags deixam seu HTML mais fácil de ler e também ajudam na otimização para motores de busca (SEO) e acessibilidade.",
             "A tag HTML5 <code>main</code> (principal) ajuda mecanismos de busca e outros desenvolvedores a encontrar o conteúdo principal da sua página.",
             "<strong>Nota</strong><br>Várias das novas tags HTML5 e seus benefícios são discutidos na seção de Acessibilidade aplicada.",
             "<hr>",
-            "Crie um segundo elemento <code>p</code> depois dos elementos <code>p</code> existente com o seguinte texto gatinho ipsum: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+            "Crie um segundo elemento <code>p</code> depois dos elementos <code>p</code> existentes com o seguinte texto gatinho ipsum: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
             "Coloque tags <code>main</code> de abertura e fechamento ao redor dos parágrafos."
           ]
         }
@@ -1017,7 +1017,7 @@
           ]
         },
         "pt-br": {
-          "title": "Transforme uma imagem num link",
+          "title": "Transforme uma imagem em um link",
           "description": [
             "Você pode transformar elementos em links aninhando-os a um elemento <code>a</code>.",
             "Aninhe sua imagem a um elemento <code>a</code>. Aqui está um exemplo:",
@@ -1920,7 +1920,7 @@
           "title": "Faça botões de opção e caixas de seleção estarem marcados por padrão",
           "description": [
             "Você pode fazer uma caixa de seleção ou botão de opção estar marcado por padrão usando o atributo <code>checked</code>.",
-            "Para fazer isso, apenas insira a palavra \"checked\" num elemento <code>input</code>. Por exemplo:",
+            "Para fazer isso, apenas insira a palavra \"checked\" em um elemento <code>input</code>. Por exemplo:",
             "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
             "<hr>",
             "Faça o primeiro dos seus <code>botões de opção</code> e a primeira das suas <code>caixas de seleção</code> estarem ambos marcados por padrão."
