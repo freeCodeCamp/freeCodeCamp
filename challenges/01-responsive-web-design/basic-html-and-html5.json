@@ -27,7 +27,25 @@
       "type": "Waypoint",
       "challengeType": 7,
       "isRequired": false,
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Introdução aos desafios básicos de HTML e HTML5",
+          "description": [
+            [
+              "",
+              "",
+              "HTML, do inglês HyperText Markup Language (Linguagem de Marcação de Hipertexto), é uma linguagem de marcação usada para descrever a estrutura de uma página da web. Ela usa uma sintaxe especial de elementos para organizar seu conteúdo e dar ao seu navegador informações sobre ele. Esses elementos geralmente possuem tags (marcadores) de abertura e fechamento que delimitam uma parte do conteúdo e dão significado a ela. Por exemplo, para delimitar texto, existem diferentes opções de tags que mostram se esse texto é um título, um parágrafo ou uma lista.",
+              ""
+            ],
+            [
+              "",
+              "",
+              "A parte de \"hipertexto\" do HTML vem dos primórdios da web. As páginas geralmente eram documentos estáticos que se conectavam a outros documentos por meio de links de hipertexto. Conforme as páginas e aplicações web ficam mais complexas, o consórcio W3 atualiza o HTML. A última versão, ou especificação, é o HTML5.<br><br>Essa seção apresenta como usar os elementos do HTML para dar estrutura e significado ao seu conteúdo na web.",
+              ""
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "bd7123c8c441eddfaeb5bdef",
@@ -94,17 +112,22 @@
           ]
         },
         "pt-br": {
-          "title": "Diga Olá aos Elementos HTML",
+          "title": "Diga oi para os elementos HTML",
           "description": [
-            "Seja bem vindo ao primeiro desafio de programação do freeCodeCamp!",
-            "Você pode editar o seu <code>código</code> em seu <code>editor de texto</code>, que embutimos aqui nesta página da web.",
-            "Consegue ver o código que diz <code>&#60;h1&#62;Hello&#60;/h1&#62;</code> no seu editor de texto? Esse é um elemento HTML.",
-            "A maioria dos elementos HTML tem uma <code>tag de abertura</code> e uma <code>tag de fechamento</code>.",
-            "As tags de abertura são assim: <code>&#60;h1&#62;</code>. E as tags de fechamento são assim: <code>&#60;/h1&#62;</code>.",
-            "Note que a única diferença entre as tags de abertura e fechamento é que as de fechamento possuem uma barra (/) depois do sinal de abertura (<).",
-            "Cada desafio possui testes que você pode executar a qualquer momento ao clicar no botão \"Executar testes\". Quando você conseguir passar em todos os testes, poderá avançar para o próximo desafio.",
+            "Bem-vindo(a) aos desafios de programação do freeCodeCamp. Eles vão te guiar pelo desenvolvimento web passo a passo.",
+            "Nós recomendamos que você os resolva em ordem, mas fique à vontade para navegar pelos desafios clicando em \"map\" no menu acima.",
+            "Além disso, se você quiser salvar seu progresso, você deve entrar para nossa comunidade criando uma conta. Em apenas alguns minutos, você pode entrar na nossa sala de chat, fórum e até mesmo em um grupo de estudos da sua cidade.",
+            "Primeiramente, você vai começar construindo uma página da web simples com HTML. Você pode editar o <code>código</code> no seu <code>editor de texto</code>, que está embutido nessa página.",
+            "Você está vendo o código no seu editor de texto que contém <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Esse é um <code>elemento</code> HTML.",
+            "A maioria dos elementos HTML têm uma <code>tag de abertura</code> e uma <code>tag de fechamento</code>.",
+            "As tags de abertura são assim:",
+            "<code>&#60;h1&#62;</code>",
+            "As tags de fechamento são assim:",
+            "<code>&#60;/h1&#62;</code>",
+            "A única diferença entre tags de abertura e fechamento é que as tags de fechamento possuem uma barra (/) depois do sinal de menor (<).",
+            "Cada desafio possui testes que você pode rodar a qualquer momento clicando no botão \"Run tests\". Quando seu código passar em todos os testes, você poderá enviar sua solução e avançar para o próximo desafio.",
             "<hr>",
-            "Para passar nos testes deste desafio, mude o texto do elemento <code>h1</code> para que diga \"Hello World\" no lugar de \"Hello\". Depois, clique no botão \"Executar testes\"."
+            "Para passar no teste desse desafio, mude o texto do seu elemento <code>h1</code> para \"Hello World\"."
           ]
         },
         "ru": {
@@ -171,15 +194,14 @@
           ]
         },
         "pt-br": {
-          "title": "Cabeçalho com o Elemento h2",
+          "title": "Título com o elemento h2",
           "description": [
-            "Durante os próximos desafios, construiremos um aplicativo em HTML que se parecerá como este:",
-            "<a href=\"//i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Clique para aumentar\" alt=\"Imagem do aplicativo CatPhotoApp finalizado\"></a>",
-            "O elemento <code>h2</code> que você criar gerará um elemento <code>h2</code> na página da web.",
-            "Este elemento indica ao navegador a forma de mostrar o texto que contém.",
-            "Os elementos <code>h2</code> são ligeiramente menores que os elementos <code>h1</code>. Há também os elementos <code>h3</code>, <code>h4</code>, <code>h5</code> e <code>h6</code>.",
+            "Nas próximas duas seções, nós vamos construir um app HTML5 que vai ficar mais ou menos assim:",
+            "<a href=\"//i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Clique para ampliar\" alt=\"Um screenshot do app de fotos de gatos terminado\"></a>",
+            "O elemento <code>h2</code> que você vai adicionar vai criar um elemento <code>h2</code> na página.",
+            "Esse elemento indica ao navegador a estrutura do seu site. Elementos <code>h1</code> são geralmente usados para os títulos principais, enquanto elementos <code>h2</code> são usados para subtítulos. Também existem os elementos <code>h3</code>, <code>h4</code>, <code>h5</code> e <code>h6</code>, que indicam seções novas e diferentes.",
             "<hr>",
-            "Adicione uma tag <code>h2</code> que diga \"CatPhotoApp\" para criar um segundo <code>elemento</code> HTML abaixo de seu elemento <code>h1</code> chamado \"Hello World\"."
+            "Adicione uma tag <code>h2</code> com o texto \"CatPhotoApp\" para criar um segundo <code>elemento</code> HTML abaixo do seu elemento <code>h1</code> com o texto \"Hello World\"."
           ]
         },
         "ru": {
@@ -237,13 +259,13 @@
           ]
         },
         "pt-br": {
-          "title": "Informe com o Elemento Parágrafo",
+          "title": "Informe com o elemento de parágrafo",
           "description": [
-            "Os elementos <code>p</code> são os preferenciais para criar parágrafos de texto com tamanho normal nas páginas da web. P significa a abreviatura de \"parágrafo\".",
+            "Elementos <code>p</code> são os elementos preferenciais para parágrafos de texto de tamanho normal em sites. P é a abreviação de \"parágrafo\".",
             "Você pode criar um elemento <code>p</code> assim:",
-            "<code>&#60;p&#62;Sou uma tag p!&#60;/p&#62;</code>",
+            "<code>&#60;p&#62;Eu sou uma tag p!&#60;/p&#62;</code>",
             "<hr>",
-            "Crie um elemento <code>p</code> abaixo de seu elemento <code>h2</code>, e dê a ele o texto \"Hello Paragraph\"."
+            "Crie um elemento <code>p</code> abaixo do seu elemento <code>h2</code>, e dê a ele o texto \"Hello Paragraph\"."
           ]
         },
         "ru": {
@@ -301,13 +323,13 @@
           ]
         },
         "pt-br": {
-          "title": "Preencha Espaços com Texto de Espaço Reservado",
+          "title": "Preencha o vazio com texto de exemplo",
           "description": [
-            "Desenvolvedores web tradicionalmente usam <code>Lorem Ipsum</code> como texto de preenchimento. Lorem Ipsum é chamado assim pois essas são as duas primeiras palavras de uma passagem famosa de Cícero da Roma Antiga.",
-            "O texto Lorem Ipsum tem sido utilizado como texto de espaço reservado por compositores desde o século 16, e esta tradição continua na web.",
-            "Bem, 5 séculos é um tempo longo o bastante. Já que estamos desenvolvendo um aplicativo sobre fotos de gatos (CatPhotoApp), vamos usar algo chamado <code>Kitty Ipsum</code>.",
+            "Desenvolvedores web tradicionalmente usam <code>lorem ipsum</code> como texto de exemplo. Os textos 'lorem ipsum' são partes retiradas aleatoriamente de uma passagem famosa escrita por Cícero na Roma Antiga.",
+            "Esses textos têm sido usados como texto de exemplo por tipógrafos desde o século 16, e essa tradição continua na web.",
+            "Bem, 5 séculos é tempo suficiente. Já que estamos construindo um app de fotos de gatos, vamos usar um novo texto chamado de <code>gatinho ipsum</code>.",
             "<hr>",
-            "Substitua o texto dentro do seu elemento <code>p</code> pelas primeiras palavras deste texto Kitty Ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+            "Substitua o texto dentro do seu elemento <code>p</code> com as primeiras palavras desse gatinho ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
           ]
         },
         "ru": {
@@ -372,11 +394,11 @@
         "pt-br": {
           "title": "Descomente o HTML",
           "description": [
-            "\"Comentar\" é uma forma de deixar anotações em seu código sem afetá-lo.",
-            "Comentar também é um jeito conveniente de deixar seu código inativo sem precisar apagá-lo por completo.",
-            "Você pode iniciar um comentário com <code>&#60;!--</code> e terminar seu comentário com <code>--&#62;</code>.",
+            "Comentar é uma forma de deixar comentários no meio do seu código sem afetar o código em si.",
+            "Comentar também é uma forma conveniente de deixar uma parte do código inativa sem ter que deletá-la completamente.",
+            "Você pode começar um comentário com <code>&#60;!--</code> e terminá-lo com <code>--&#62;</code>",
             "<hr>",
-            "Remova o comentário dos elementos <code>h1</code>, <code>h2</code> e <code>p</code>."
+            "Descomente seus elementos <code>h1</code>, <code>h2</code> e <code>p</code>."
           ]
         },
         "ru": {
@@ -439,10 +461,10 @@
         "pt-br": {
           "title": "Comente o HTML",
           "description": [
-            "Lembre-se que para iniciar um comentário você precisa utilizar <code>&#60;!--</code>, e para terminar um comentário é necessário usar <code>--&#62;</code>.",
-            "Aqui, você deverá terminar o comentário antes que seu elemento <code>h2</code> inicie.",
+            "Lembre-se de que, para começar um comentário, você precisa usar <code>&#60;!--</code> e para terminá-lo, você precisa usar <code>--&#62;</code>",
+            "Aqui, você vai precisar terminar o comentário antes do começo do seu elemento <code>h2</code>.",
             "<hr>",
-            "Comente o elemento <code>h1</code> e o elemento <code>p</code>, e deixe o elemento <code>h2</code> sem nenhum comentário."
+            "Comente seus elementos <code>h1</code> e <code>p</code>, mas deixe seu elemento <code>h2</code> descomentado."
           ]
         },
         "ru": {
@@ -498,12 +520,12 @@
           ]
         },
         "pt-br": {
-          "title": "Apague Elementos HTML",
+          "title": "Delete elementos HTML",
           "description": [
-            "Nosso celular não possui muito espaço vertical.",
-            "Vamos eliminar os elementos desnecessários para começar a construir nosso CatPhotoApp.",
+            "Nosso celular não tem muito espaço vertical.",
+            "Vamos remover os elementos desnecessários para podermos começar a construir nosso app de fotos de gatinhos.",
             "<hr>",
-            "Apague o elemento <code>h1</code> para simplificar o nosso espaço."
+            "Delete seu elemento <code>h1</code> para podermos simplificar nossa tela."
           ]
         },
         "ru": {
@@ -545,7 +567,20 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Introdução aos elementos HTML5",
+          "description": [
+            "O HTML5 introduziu tags mais descritivas, como <code>header</code> (cabeçalho), <code>footer</code> (rodapé), <code>nav</code> (navegação), <code>video</code> (vídeo), <code>article</code> (artigo), <code>section</code> (seção), entre outras.",
+            "Essas tags deixam seu HTML mais fácil de ler e também ajudam na otimização para motores de busca (SEO) e acessibilidade.",
+            "A tag HTML5 <code>main</code> (principal) ajuda mecanismos de busca e outros desenvolvedores a encontrar o conteúdo principal da sua página.",
+            "<strong>Nota</strong><br>Várias das novas tags HTML5 e seus benefícios são discutidos na seção de Acessibilidade aplicada.",
+            "<hr>",
+            "Crie um segundo elemento <code>p</code> depois dos elementos <code>p</code> existentes com o seguinte texto gatinho ipsum: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+            "Coloque tags <code>main</code> de abertura e fechamento ao redor dos parágrafos."
+          ]
+        }
+      }
     },
     {
       "id": "bad87fee1348bd9aedf08812",
@@ -607,15 +642,21 @@
           ]
         },
         "pt-br": {
-          "title": "Adicione Imagens em sua Página Web",
+          "title": "Adicione imagens à sua página web",
           "description": [
-            "Você pode adicionar imagens à sua página da internet com o uso do elemento <code>img</code>, e apontar para a URL específica de uma imagem utilizando o atributo <code>src</code>.",
-            "Um exemplo para isso seria:",
-            "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
-            "Observe que na maior parte dos casos, os elementos <code>img</code> são de fechamento automático.",
+            "Você pode adicionar imagens ao seu site usando o elemento <code>img</code> e apontando para a URL de uma imagem específica no atributo <code>src</code>.",
+            "Um exemplo disso seria:",
+            "<code>&#60img src=\"https://www.a-fonte-da-sua-imagem.com/sua-imagem.jpg\"&#62</code>",
+            "Note que na maioria dos casos, elementos <code>img</code> possuem auto-fechamento (não precisam de tag de fechamento).",
+            "Todos os elementos <code>img</code> <strong>devem</strong> ter um atributo <code>alt</code>. O texto do atributo <code>alt</code> é usado por leitores de tela para melhorar a acessibilidade e é mostrado no lugar da imagem se ela não puder ser carregada.",
+            "Vamos adicionar um atributo <code>alt</code> ao nosso exemplo acima:",
+            "<code>&#60img src=\"https://www.a-fonte-da-sua-imagem.com/sua-imagem.jpg\" alt=\"Autor numa praia fazendo joinha.\"&#62</code>",
             "<hr>",
-            "Agora, tente fazer isso com essa imagem:",
-            "<code>https://bit.ly/fcc-relaxing-cat</code>"
+            "Vamos tentar adicionar uma imagem ao nosso site:",
+            "Insira uma tag <code>img</code>, antes do elemento <code>h2</code>.",
+            "Agora coloque essa URL no seu atributo <code>src</code>:",
+            "<code>https://bit.ly/fcc-relaxing-cat</code>",
+            "Finalmente, não esqueça de dar à sua imagem um texto <code>alt</code>."
           ]
         },
         "ru": {
@@ -689,15 +730,15 @@
           ]
         },
         "pt-br": {
-          "title": "Ligue Páginas Externas com o Elemento Âncora",
+          "title": "Crie links para páginas externas com elementos âncora",
           "description": [
-            "Os elementos <code>a</code>, também conhecidos como elementos <code>âncora</code>, são utilizados para ligar conteúdo fora da página atual.",
-            "Aqui está um diagrama de um elemento <code>a</code>. Neste caso, o elemento <code>a</code> é utilizado no meio de um elemento de parágrafo, o que significa que o link externo aparecerá no meio de uma frase.",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como as tags de âncora se compõem com o texto, como na próxima linha\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
-            "Veja um exemplo:",
-            "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freeCodeCamp.com\"&#62; link ligado ao freeCodeCamp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+            "Elementos <code>a</code>, também conhecidos como elementos <code>âncora</code>, são usados para criar links para conteúdo de fora da página atual.",
+            "Aqui está um diagrama de um elemento <code>a</code>. Nesse caso, o elemento <code>a</code> é usado no meio de um elemento de parágrafo, o que significa que esse link vai aparecer no meio de uma frase.",
+            "<a href=\"//i.imgur.com/QSCIiNH.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"um diagrama de como tags âncora são compostas com o mesmo texto assim como na linha seguinte\" src=\"//i.imgur.com/QSCIiNH.png\"></a>",
+            "Aqui está um exemplo:",
+            "<code>&#60;p&#62;Aqui está um &#60;a href=\"http://freeCodeCamp.com\"&#62; link para o freeCodeCamp.com&#60;/a&#62; para você clicar.&#60;/p&#62;</code>",
             "<hr>",
-            "Crie um elemento <code>a</code> que esteja ligado ao site <code>http://freecatphotoapp.com</code> e tenha como <code>texto de âncora</code> \"fotos de gatos\"."
+            "Crie um elemento <code>a</code> que vá para <code>http://freecatphotoapp.com</code> e tenha \"cat photos\" como seu <code>texto âncora</code>."
           ]
         },
         "ru": {
@@ -751,7 +792,24 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Crie links para seções internas de uma página com elementos âncora",
+          "description": [
+            "Além de criar links externos, elementos âncora também podem ser usados para criar links internos, que são links que pulam para diferentes seções dentro de uma mesma página.",
+            "O formato é parecido com um link externo, só que, ao invés de uma URL no atributo <code>href</code>, você usa o símbolo <code>#</code> e uma palavra para descrever a seção para a qual você quer pular.",
+            "Aqui está um exemplo:",
+            "<code>&lt;a href=\"#contact\"&gt;Ir para a seção de contato&lt;/a&gt;</code>",
+            "Em seguida, você precisa criar no seu HTML um elemento âncora correspondente no lugar em que você quer que seus usuários cheguem quando clicarem no seu link interno. Ao invés de usar o atributo <code>href</code>, você deve usar o atributo <code>name</code>. Aqui está um exemplo:",
+            "<blockquote>&lt;h1&gt;Contato&lt;/h1&gt;<br>&lt;a name=\"contact\"&gt;&lt;/a&gt;</blockquote>",
+            "Agora, quando seus usuários clicarem no link \"Ir para a seção de contato\", eles serão levados para a seção da página em que está o elemento âncora que tenha \"contact\" no seu atributo <code>name</code>.",
+            "<hr>",
+            "Mude seu link externo para um link interno trocando seu atributo <code>href</code> para \"#bottom\" e o texto âncora de \"cat photos\" para \"Pular para o final\".",
+            "Então, adicione um elemento âncora com o atributo <code>name</code> como \"bottom\" depois do último parágrafo.",
+            "<strong>Nota</strong><br>Adicionamos mais texto gatinho ipsum para os parágrafos para mostrar melhor o efeito de clicar no link interno para pular para o final da página. Além disso, essa mudança só vai se aplicar para esse desafio. O próximo desafio vai voltar a mostrar seu link externo."
+          ]
+        }
+      }
     },
     {
       "id": "bad87fee1348bd9aede08817",
@@ -815,15 +873,15 @@
           ]
         },
         "pt-br": {
-          "title": "Aninhe o Elemento Âncora no Interior de um Parágrafo",
+          "title": "Aninhe um elemento âncora a um parágrafo",
           "description": [
-            "Outra vez, aqui está um diagrama de um elemento <code>a</code> para você usar como referência.",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "Novamente, aqui está um diagrama de um elemento <code>a</code> para você usar como referência:",
+            "<a href=\"//i.imgur.com/QSCIiNH.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"um diagrama de como tags âncora são compostas com o mesmo texto assim como na linha seguinte\" src=\"//i.imgur.com/QSCIiNH.png\"></a>",
             "Veja um exemplo:",
-            "<code>&#60;p&#62;Este é um &#60;a href=\"https://freeCodeCamp.com\"&#62; link ligado ao freeCodeCamp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
-            "<code>Aninhamento</code> significa ter um elemento no interior de outro elemento.",
+            "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freeCodeCamp.com\"&#62; link para o freeCodeCamp&#60;/a&#62; para você clicar.&#60;/p&#62;</code>",
+            "<code>Aninhar</code> significa colocar um elemento dentro de outro.",
             "<hr>",
-            "Agora, aninhe o elemento <code>a</code> existente dentro de um novo elemento <code>p</code> de forma que o parágrafo diga \"View more cat photos\", mas onde apenas \"cat photos\" seja um link, e o resto seja texto comum."
+            "Agora, aninhe seu elemento <code>a</code> existente a um novo elemento <code>p</code> (logo em seguida do elemento <code>main</code> existente), de forma que o parágrafo ao redor tenha o texto \"View more cat photos\", mas apenas a parte \"cat photos\" seja um link e o resto seja apenas texto."
           ]
         },
         "ru": {
@@ -886,12 +944,12 @@
           ]
         },
         "pt-br": {
-          "title": "Crie Links Inativos com o Símbolo Cerquilha",
+          "title": "Crie links mortos com hashtags",
           "description": [
-            "As vezes você pode querer adicionar elementos <code>a</code> em sua página web antes de saber o link que as ligará.",
-            "Isso também é útil quando você desejar mudar o comportamento de um link utilizando <code>jQuery</code>, o que vamos aprender mais adiante.",
+            "Às vezes você vai querer adicionar elementos <code>a</code> ao seu site antes de saber para onde eles vão linkar.",
+            "Isso também é útil para quando você está mudando o comportamento de um link usando <code>jQuery</code>, que nós vamos aprender mais tarde.",
             "<hr>",
-            "Substitua o atributo <code>href</code> de seu elemento <code>a</code> por um <code>#</code>, também conhecido como símbolo de <em>hash</em> ou hashtag. Isso o transformará em um link inativo."
+            "O valor atual do atributo <code>href</code> é \"http://freecatphotoapp.com\". Substitua esse valor por <code>#</code>, também conhecido como hashtag, para criar um link morto."
           ]
         },
         "ru": {
@@ -959,13 +1017,15 @@
           ]
         },
         "pt-br": {
-          "title": "Transforme uma Imagem em um Link",
+          "title": "Transforme uma imagem em um link",
           "description": [
-            "Você pode transformar elementos em links ao aninhá-los com um elemento <code>a</code>.",
+            "Você pode transformar elementos em links aninhando-os a um elemento <code>a</code>.",
+            "Aninhe sua imagem a um elemento <code>a</code>. Aqui está um exemplo:",
+            "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\" alt=\"Três gatinhos correndo em direção à câmera.\"&#62;&#60;/a&#62;</code>",
+            "Lembre-se de usar <code>#</code> no atributo <code>href</code> do seu elemento <code>a</code> para que o link esteja morto.",
             "<hr>",
-            "Aninhe sua imagem dentro de um elemento <code>a</code>. Temos aqui um exemplo.",
-            "<code>&#60;a href=\"#\"&#62;&#60;img src=\"https://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>",
-            "Lembre de usar <code>#</code> como atributo <code>href</code> de seu elemento <code>a</code> para tornar o link inativo."
+            "Coloque a imagem existente dentro de um elemento âncora.",
+            "Depois de fazer isso, coloque o cursor do mouse sobre sua imagem. O seu cursor normal deve virar um cursor de clique. A foto agora é um link."
           ]
         },
         "ru": {
@@ -1038,18 +1098,15 @@
           ]
         },
         "pt-br": {
-          "title": "Crie uma Lista Não Ordenada com Marcadores",
+          "title": "Crie uma lista não ordenada com marcadores",
           "description": [
-            "O HTML possui um elemento especial para a criação de <code>listas não ordenadas</code>, ou listas com marcadores.",
-            "As listas não ordenadas iniciam com um elemento <code>&#60;ul&#62;</code>. Logo após, possuem uma série de elementos <code>&#60;li&#62;.</code>",
-            "Por exemplo:",
-            "<code>&#60;ul&#62;</code>",
-            "&nbsp;&nbsp;<code>&#60;li&#62;leite&#60;/li&#62;</code>",
-            "&nbsp;&nbsp;<code>&#60;li&#62;queijo&#60;/li&#62;</code>",
-            "<code>&#60;/ul&#62;</code>",
-            "Isso criará uma lista com marcadores que tem como elementos \"leite\" e \"queijo\".",
+            "O HTML tem um elemento especial para criar <code>listas não ordenadas</code>, ou listas com marcadores.",
+            "Listas não ordenadas começam com um elemento <code>ul</code> e contêm diversos elementos <code>li</code> aninhados a ele.",
+            "Por exemplo: ",
+            "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;leite&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;queijo&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
+            "criaria uma lista com marcadores contendo \"leite\" e \"queijo\".",
             "<hr>",
-            "Apague os dois últimos elementos <code>p</code> e no final da página crie uma lista não ordenada com três coisas que os gatos adoram."
+            "Remova os dois últimos elementos <code>p</code> e crie no final da página uma lista não ordenada de três coisas que gatos adoram."
           ]
         },
         "ru": {
@@ -1132,18 +1189,15 @@
           ]
         },
         "pt-br": {
-          "title": "Crie uma Lista Ordenada",
+          "title": "Crie uma lista ordenada",
           "description": [
-            "O HTML possui um elemento especial para a criação de <code>listas ordenadas</code>, ou listas numeradas.",
-            "As listas ordenadas iniciam com um elemento <code>&#60;ol&#62;</code>. Logo após, contém uma série de elementos <code>&#60;li&#62;.</code>",
+            "O HTML tem um elemento especial para criar <code>listas ordenadas</code>, ou listas numeradas.",
+            "Listas ordenadas começam com um elemento <code>ol</code> e contêm diversos elementos <code>li</code> aninhados a ele.",
             "Por exemplo:",
-            "<code>&#60;ol&#62;</code>",
-            "&nbsp;&nbsp;<code>&#60;li&#62;Garfield&#60;/li&#62;</code>",
-            "&nbsp;&nbsp;<code>&#60;li&#62;Sylvester&#60;/li&#62;</code>",
-            "<code>&#60;/ol&#62;</code>",
-            "Isso criará uma lista numerada com \"Garfield\" e \"Sylvester\".",
+            "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Frajola&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
+            "criaria uma lista numerada contendo \"Garfield\" e \"Frajola\".",
             "<hr>",
-            "Crie uma lista ordenada com as três coisas que os gatos mais odeiam."
+            "Crie uma lista ordenada com as 3 coisas que os gatos mais odeiam."
           ]
         },
         "ru": {
@@ -1226,15 +1280,15 @@
           ]
         },
         "pt-br": {
-          "title": "Crie um Campo de Texto",
+          "title": "Crie um campo de texto",
           "description": [
             "Agora vamos criar um formulário web.",
-            "Os campos de texto são uma forma conveniente de obter uma resposta do usuário.",
+            "Campos de texto são uma forma conveniente de obter dados do seu usuário.",
             "Você pode criar um assim:",
             "<code>&#60;input type=\"text\"&#62;</code>",
-            "Note que os elementos <code>input</code> são de fechamento automático.",
+            "Note que elementos <code>input</code> têm auto-fechamento.",
             "<hr>",
-            "Crie um elemento <code>input</code> de tipo <code>text</code> abaixo de suas listas."
+            "Crie um elemento <code>input</code> de tipo <code>text</code> abaixo das suas listas."
           ]
         },
         "ru": {
@@ -1312,13 +1366,13 @@
           ]
         },
         "pt-br": {
-          "title": "Adicione Texto Indicativo a um Campo de Texto",
+          "title": "Adicione um placeholder a um campo de texto",
           "description": [
-            "O texto indicativo é o que aparece em um campo de texto antes que um usuário tenha escrito algo.",
-            "Você pode criar um texto indicativo assim:",
-            "<code>&#60;input type=\"text\" placeholder=\"isso é um texto indicativo\"&#62;</code>",
+            "O placeholder é o texto que aparece no seu <code>input</code> quando ele está vazio.",
+            "Você pode adicionar um placeholder ao seu campo de texto assim:",
+            "<code>&#60;input type=\"text\" placeholder=\"esse é o placeholder\"&#62;</code>",
             "<hr>",
-            "Estabeleça o valor do <code>texto indicativo</code> do seu campo de texto como \"cat photo URL\"."
+            "Coloque o placeholder \"cat photo URL\" no seu <code>input</code> de texto."
           ]
         },
         "ru": {
@@ -1394,13 +1448,13 @@
           ]
         },
         "pt-br": {
-          "title": "Crie um Elemento de Formulário",
+          "title": "Crie um elemento de formulário",
           "description": [
-            "É possível construir formulários web que realmente enviem dados a um servidor utilizando nada além de HTML puro. Você pode fazer isso especificando uma ação em seu elemento <code>form</code>.",
+            "Você pode construir formulários web que realmente enviam dados para um servidor usando nada mais que HTML puro. Para isso, você precisa especificar uma URL no atributo <code>action</code> do seu elemento <code>form</code>.",
             "Por exemplo:",
-            "<code>&#60;form action=\"/url-para-onde-você-quer-enviar-os-dados-do-formulário\"&#62;&#60;/form&#62;</code>",
+            "<code>&#60;form action=\"/url-para-onde-voce-quer-enviar-os-dados\"&#62;&#60;/form&#62;</code>",
             "<hr>",
-            "Aninhe seu campo de texto em um elemento <code>form</code>. Adicione o atributo <code>action=\"/submit-cat-photo\"</code> para este elemento de formulário."
+            "Aninhe o seu campo de texto a um elemento <code>form</code>. Adicione o atributo <code>action=\"/submit-cat-photo\"</code> a esse <code>form</code>."
           ]
         },
         "ru": {
@@ -1479,13 +1533,13 @@
           ]
         },
         "pt-br": {
-          "title": "Inclua um Botão de Enviar a um Formulário",
+          "title": "Adicione um botão de enviar a um formulário",
           "description": [
-            "Vamos inserir um elemento <code>submit</code> ao seu formulário. Ao clicar neste botão, os dados inseridos serão enviados para a URL especificada no atributo <code>action</code> do formulário.",
-            "Aqui está um exemplo de um botão de enviar:",
-            "<code>&#60;button type=\" submit\"&#62;este botão enviará o formulário&#60;/button&#62;</code>",
+            "Vamos adicionar um botão de enviar (<code>submit</code>) ao seu formulário. Quando seu usuário clicar nesse botão, os dados do formulário serão enviados para a URL que você especificou no atributo <code>action</code> do seu formulário.",
+            "Aqui está um botão de exemplo:",
+            "<code>&#60;button type=\"submit\"&#62;esse botão envia o formulário&#60;/button&#62;</code>",
             "<hr>",
-            "Adicione um botão de enviar ao seu elemento <code>form</code> com o tipo <code>submit</code> e com o texto \"Submit\"."
+            "Adicione um botão de enviar ao seu elemento <code>form</code> com tipo <code>submit</code> e com texto \"Submit\"."
           ]
         },
         "ru": {
@@ -1565,13 +1619,14 @@
           ]
         },
         "pt-br": {
-          "title": "Use HTML5 para Especificar Campos Obrigatórios",
+          "title": "Use HTML5 para tornar campos obrigatórios",
           "description": [
-            "Você pode especificar um campo como obrigatório para que seu usuário não consiga enviar o formulário até que o tenha completado.",
-            "Por exemplo, se você quiser tornar obrigatório um campo de texto, basta adicionar a palavra <code>required</code> dentro de seu elemento <code>input</code> assim: <code>&#60;input type=\"text\" required&#62;</code>",
+            "Você pode tornar obrigatórios campos específicos do seu formulário, assim seu usuário não conseguirá enviar os dados sem preencher esses campos.",
+            "Por exemplo, se você quiser que um campo de texto seja obrigatório, basta adicionar a palavra <code>required</code> ao seu elemento <code>input</code>, assim: <code>&#60;input type=\"text\" required&#62;</code>",
             "<hr>",
-            "Faça com que seu campo de texto seja obrigatório, de forma que o usuário não possa enviar o formulário sem ter completado esse campo.",
-            "Após isso, tente enviar o formulário sem digitar nenhum texto no campo. Percebe como seu formulário HTML5 mostra que o campo é obrigatório?"
+            "Torne seu campo de texto obrigatório, de forma que seu usuário não consiga enviar o formulário sem preencher esse campo.",
+            "Então, tente enviar o formulário sem preencher esse campo. Viu como o formulário HTML5 avisa que o campo é obrigatório?",
+            "<strong>Nota</strong><br>Esse campo não funciona no Safari."
           ]
         },
         "ru": {
@@ -1664,16 +1719,16 @@
           ]
         },
         "pt-br": {
-          "title": "Crie um Conjunto de Botões de Seleção",
+          "title": "Crie um conjunto de botões de opção",
           "description": [
-            "É possível utilizar botões de seleção (botões de rádio) para perguntas nas quais o usuário deverá selecionar apenas uma resposta, dentre várias possíveis.",
-            "Os botões de seleção são um tipo de elemento <code>input</code>",
-            "Cada um dos botões de seleção deve estar contido dentro de seu próprio elemento <code>label</code>.",
-            "Todos os botões de seleção relacionados devem ter o mesmo atributo <code>name</code>.",
-            "Temos aqui um exemplo de um botão de seleção/rádio:",
+            "Você pode usar <code>botões de opção</code> (botões de rádio) para perguntas em que você quer dar opções ao usuário, mas quer que ele escolha apenas uma.",
+            "Botões de opção são um tipo de <code>input</code>.",
+            "Cada um dos botões de opção deve ser aninhado ao seu elemento <code>label</code>.",
+            "Todos os botões de opção relacionados devem ter o mesmo atributo <code>name</code>.",
+            "Aqui está um exemplo de um botão de opção:",
             "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
             "<hr>",
-            "Adicione um par de botões de seleção ao seu formulário. Um deles deve ter a opção <code>indoor</code> enquanto o outro deve ter a opção <code>outdoor</code>."
+            "Adicione um par de botões de opção ao seu formulário. Um deles deve ser a opção <code>indoor</code> e o outro deve ser a opção <code>outdoor</code>. Ambos devem ter o atributo <code>name</code> de <code>indoor-outdoor</code>."
           ]
         },
         "ru": {
@@ -1767,16 +1822,16 @@
           ]
         },
         "pt-br": {
-          "title": "Crie um Conjunto de Caixas de Seleção",
+          "title": "Crie um conjunto de caixas de seleção",
           "description": [
-            "Os formulários costumam utilizar caixas de seleção para perguntas que podem ter mais de uma resposta.",
-            "As caixas de seleção são um tipo de elemento <code>input</code>",
-            "Cada uma de suas caixas de seleção deve ser aninhada dentro do próprio elemento <code>label</code>.",
+            "Formulários geralmente usam <code>caixas de seleção</code> (checkboxes) para perguntas que podem ter mais de uma resposta.",
+            "Caixas de seleção são um tipo de <code>input</code>.",
+            "Cada uma das suas caixas de seleção deve estar aninhada a seu próprio elemento <code>label</code>.",
             "Todas as caixas de seleção relacionadas devem ter o mesmo atributo <code>name</code>.",
-            "Veja aqui um exemplo de uma caixa de verificação:",
-            "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Carinhoso&#60;/label&#62;</code>",
+            "Aqui está um exemplo de uma caixa de seleção: ",
+            "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Amável&#60;/label&#62;</code>",
             "<hr>",
-            "Adicione ao seu formulário um conjunto de três caixas de verificação. Cada uma delas deve estar aninhada dentro de seu próprio elemento <code>label</code>. As três devem compartilhar o atributo <code>name</code>."
+            "Adicione ao seu formulário um conjunto de três caixas de seleção. Cada caixa deve estar aninhada a seu próprio elemento <code>label</code>. Todas elas devem ter o mesmo atributo <code>name</code> de <code>personality</code>."
           ]
         },
         "ru": {
@@ -1862,13 +1917,13 @@
           ]
         },
         "pt-br": {
-          "title": "Deixe Botões e Caixas de Seleção Ativados por Padrão",
+          "title": "Faça botões de opção e caixas de seleção estarem marcados por padrão",
           "description": [
-            "É possível deixar um botão ou caixa de seleção ativado por padrão ao utilizar o atributo <code>checked</code>.",
-            "Para isso, basta você acrescentar a palavra \"checked\" no interior de um elemento de entrada. Por exemplo:",
-            "<code>&#60;input type=\"radio\" name=\"nome-de-teste\" checked&#62;</code>",
+            "Você pode fazer uma caixa de seleção ou botão de opção estar marcado por padrão usando o atributo <code>checked</code>.",
+            "Para fazer isso, apenas insira a palavra \"checked\" em um elemento <code>input</code>. Por exemplo:",
+            "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
             "<hr>",
-            "Estabeleça como marcados por padrão o primeiro dos seus <code>botões de seleção/rádio</code> e a primeira <code>caixa de seleção</code>."
+            "Faça o primeiro dos seus <code>botões de opção</code> e a primeira das suas <code>caixas de seleção</code> estarem ambos marcados por padrão."
           ]
         },
         "ru": {
@@ -1957,14 +2012,14 @@
           ]
         },
         "pt-br": {
-          "title": "Aninhe Muitos Elementos Dentro de um só Elemento div",
+          "title": "Aninhe diversos elementos a um único elemento div",
           "description": [
-            "O elemento <code>div</code>, também conhecido como elemento de divisão, é um contentor de propósito geral para outros elementos.",
-            "O elemento <code>div</code> é provavelmente o elemento HTML mais utilizado.",
-            "Da mesma forma que qualquer outro elemento sem fechamento automático, você deve abrir uma tag <code>div</code> com <code>&#60;div&#62;</code> e fechá-la em outra linha com <code>&#60;/div&#62;</code>.",
+            "O elemento <code>div</code>, também conhecido como elemento de divisão, é um contâiner de propósito geral para outros elementos.",
+            "O elemento <code>div</code> provavelmente é o elemento HTML mais usado de todos.",
+            "Da mesma forma que qualquer outro elemento que não tem auto-fechamento, você pode abrir um elemento <code>div</code> com <code>&#60;div&#62;</code> e fechá-lo em outra linha com <code>&#60;/div&#62;</code>.",
             "<hr>",
-            "Tente colocar sua tag de abertura <code>div</code> acima do elemento <code>p</code> \"Things cat love\", e sua tag de fechamento de <code>div</code> depois da tag de fechamento do <code>ol</code>, para que cada uma de suas listas esteja dentro de um <code>div</code>.",
-            "Aninhe suas listas \"Things cats love\" e \"Things cats hate\" no interior de um único elemento <code>div</code>."
+            "Tente colocar sua tag <code>div</code> de abertura acima do seu elemento <code>p</code> \"Things cats love\" e sua tag <code>div</code> de fechamento depois da sua tag <code>ol</code> de fechamento, de forma que ambas as suas listas estejam dentro da mesma <code>div</code>.",
+            "Aninhe as listas \"Things cats love\" e \"Things cats hate\" dentro do mesmo elemento <code>div</code>."
           ]
         },
         "ru": {
@@ -2006,7 +2061,22 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {}
+      "translations": {
+        "pt-br": {
+          "title": "Declare o DOCTYPE de um documento HTML",
+          "description": [
+            "Os desafios até agora trataram de tags HTML específicas e seus usos. No entanto, há alguns elementos que determinam a estrutura geral da sua página e devem ser incluídos em todos os documentos HTML.",
+            "No começo do seu documento, você precisa dizer ao navegador qual versão do HTML sua página está usando. O HTML é uma linguagem em evolução e é atualizado regularmente. A maioria dos navegadores mais populares suporta a última especificação, que é o HTML5. No entanto, páginas mais antigas podem estar usando versões anteriores da linguagem.",
+            "Você pode dar ao navegador essa informação adicionando a tag <code>&lt;!DOCTYPE ...&gt;</code> na primeira linha, onde a parte \"<code>...</code>\" é a versão do HTML. Para o HTML5, o código é <code>&lt;!DOCTYPE html&gt;</code>.",
+            "O <code>!</code> e o <code>DOCTYPE</code> todo em maiúsculas são importantes, especialmente para navegadores mais velhos. O <code>html</code> não é sensível a maiúsculas e minúsculas.",
+            "Em seguida, o resto do seu código HTML deve estar delimitado por tags <code>html</code>. A tag <code>&lt;html&gt;</code> vai diretamente abaixo da linha <code>&lt;!DOCTYPE html&gt;</code>, e a tag <code>&lt;/html&gt;</code> vai no final da página.",
+            "Aqui está um exemplo da estrutura de uma página:",
+            "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;!-- Seu código HTML vai aqui --&gt;<br>&lt;/html&gt;</blockquote>",
+            "<hr>",
+            "Adicione uma tag <code>DOCTYPE</code> para HTML5 no topo do documento HTML em branco no editor de texto. Abaixo dela, adicione tags <code>html</code> de abertura e fechamento, ao redor de um elemento <code>h1</code>. O texto do <code>h1</code> pode ser qualquer um."
+          ]
+        }
+      }
     },
     {
       "id": "587d78aa367417b2b2512aec",
@@ -2039,7 +2109,19 @@
       ],
       "type": "waypoint",
       "challengeType": 0,
-      "translations": {},
+      "translations": {
+        "pt-br": {
+          "title": "Defina cabeça e corpo de um documento HTML",
+          "description": [
+            "Você pode adicionar mais um nível de organização ao seu documento HTML dentro da tag <code>html</code> com os elementos <code>head</code> (cabeça) e <code>body</code> (corpo). Qualquer código com informações sobre a sua página deve estar dentro da tag <code>head</code>. Assim, qualquer código com o conteúdo da sua página (o que aparece para o usuário) deve estar dentro da tag <code>body</code>.",
+            "Elementos de metadados, como <code>link</code>, <code>meta</code>, <code>title</code> e <code>style</code>, tipicamente aparecem dentro do elemento <code>head</code>.",
+            "Aqui está um exemplo da estrutura de uma página:",
+            "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- elementos de metadados --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- conteúdo da página --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
+            "<hr>",
+            "Edite o código para que tenha uma <code>head</code> e um <code>body</code>. O elemento <code>head</code> deve incluir apenas o <code>title</code>, e o elemento <code>body</code> deve conter apenas o <code>h1</code> e o <code>p</code>."
+          ]
+        }
+      },
       "ru": {}
     }
   ]
