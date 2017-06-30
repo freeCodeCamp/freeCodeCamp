@@ -22,7 +22,8 @@
     "./middlewares/sessions.js": {}
   },
   "auth:before": {
-    "./middlewares/add-return-to": {}
+    "./middlewares/add-return-to": {},
+    "./middlewares/redirect-to-org": {}
   },
   "auth": {
   },
