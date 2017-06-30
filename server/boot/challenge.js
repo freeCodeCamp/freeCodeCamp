@@ -446,9 +446,9 @@ module.exports = function(app) {
           req.flash('info', {
             msg: `We coudn't find a challenge with the id ${challengeId}`
           });
-          res.redirect('/map');
+          return res.redirect('/map');
         }
-        res.redirect('/challenges/' + dashedName);
+        return res.redirect('/challenges/' + dashedName);
       })
       .subscribe(() => {}, next);
   }
