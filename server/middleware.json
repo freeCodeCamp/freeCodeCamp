@@ -39,6 +39,7 @@
   },
   "routes:before": {
     "express-flash": {},
+    "./middlewares/coming-from-com": {},
     "helmet#xssFilter": {},
     "helmet#noSniff": {},
     "helmet#frameguard": {},
