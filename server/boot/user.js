@@ -143,6 +143,7 @@ module.exports = function(app) {
     res.redirect(301, '/signout');
   });
   router.get('/signin', getSignin);
+  router.get('/signin-com', getSigninCom);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   router.post('/forgot', postForgot);
@@ -221,6 +222,15 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/signin', {
+      title: 'Sign in to freeCodeCamp'
+    });
+  }
+
+  function getSigninCom(req, res) {
+    if (req.user) {
+      return res.redirect('/');
+    }
+    return res.render('account/signin-com', {
       title: 'Sign in to freeCodeCamp'
     });
   }

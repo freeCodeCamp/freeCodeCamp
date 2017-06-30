@@ -4,10 +4,7 @@ export default () => {
       !req.user &&
       req.query.ref === 'com'
     ) {
-      req.flash('info', {
-        msg: 'Welcome to freecodecamp.org'
-      });
-      return res.redirect('/signin');
+      return res.redirect('/signin-com');
     }
     return next();
   };
