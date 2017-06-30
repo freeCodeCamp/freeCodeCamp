@@ -17,15 +17,21 @@ export default () => {
     const method = req.method;
     const path = req.path;
     const group = Math.random();
+    log('method: ', method);
     log('path: ', path);
     log('group: ', group);
-    log('is acceptable: ', paths.some(_path => _path.test(path)));
     if (
       method === 'GET' &&
       paths.some(_path => _path.test(path)) &&
       group < percent
     ) {
-      const redirectTo = `https://www.freecodecamp.org${path}`;
+      const paramsString = req.url.split('?')[1];
+      let params = 'ref=com';
+      if (paramsString) {
+        params = paramsString + '&ref=com';
+      }
+      const redirectTo = `https://www.freecodecamp.org${path}?${params}`;
+      log('redirecting to: ', redirectTo);
       return res.redirect(redirectStatus, redirectTo);
     }
 
