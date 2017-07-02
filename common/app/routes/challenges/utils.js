@@ -90,7 +90,7 @@ function logReplacer(value) {
     const replaced = value.map(logReplacer);
     return '[' + replaced.join(', ') + ']';
   }
-  if (typeof value === 'string' && !value.startsWith('//')) {
+  if (typeof value === 'string' && !(/^\/\//).test(value)) {
     return '"' + value + '"';
   }
   if (typeof value === 'number' && isNaN(value)) {
