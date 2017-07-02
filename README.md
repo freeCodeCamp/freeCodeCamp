@@ -41,17 +41,17 @@ For this certification, you'll work on **two projects from scratch** and then **
 
 ---
 
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](http://medium.freecodecamp.com), and even a [YouTube channel](http://youtube.com/freecodecamp).
+This code is running live at [freecodecamp.org](http://www.freecodecamp.org). We also have [Gitter chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](http://medium.freecodecamp.org), and even a [YouTube channel](http://youtube.com/freecodecamp).
 
-### [Join our community here](http://www.freecodecamp.com/signin).
+### [Join our community here](http://www.freecodecamp.org/signin).
 
 Found a bug?
 ------------
 
 Do not file an issue until you have followed these steps:
 
-1. Read the [Help I've Found a Bug](http://forum.freecodecamp.com/t/how-to-report-a-bug/19543) article and follow its instructions.
-2. Ask for confirmation in the appropriate [Help Room](http://forum.freecodecamp.com/t/free-code-camp-official-chat-rooms/19390/2).
+1. Read the [Help I've Found a Bug](http://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+2. Ask for confirmation in the appropriate [Help Room](http://forum.freecodecamp.org/t/free-code-camp-official-chat-rooms/19390/2).
 3. Please *do not* open an issue without a 3rd party confirmation of your problem.
 
 Contributing

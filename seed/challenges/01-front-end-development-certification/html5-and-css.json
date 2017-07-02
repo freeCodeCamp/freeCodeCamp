@@ -1,9 +1,37 @@
 {
   "name": "HTML5 and CSS",
-  "order": 2,
+  "order": 1,
   "time": "5 hours",
   "helpRoom": "Help",
   "challenges": [
+    {
+      "id": "560add10cb82ac38a17513be",
+      "title": "Learn How freeCodeCamp Works",
+      "description": [
+        [
+          "//i.imgur.com/ZMOCvg9.jpg",
+          "A picture of six freeCodeCamp campers sitting around a table coding together.",
+          "Welcome. You're now part of a supportive coding community. You can code online or in-person with people in thousands of cities around the world.",
+          ""
+        ],
+        [
+          "//i.imgur.com/EUyHs60.jpg",
+          "A picture of the technologies you'll learn: HTML5, CSS, JavaScript, Databases, Git & GitHub, Node.js, React.js, D3.js.",
+          "You'll learn to code by completing coding challenges and building projects. You'll also earn verified certificates along the way.",
+          ""
+        ],
+        [
+          "//i.imgur.com/LRnNMU5.png",
+          "An image of our open source projects on GitHub.",
+          "Then you'll get experience by contributing to open source projects used by nonprofits. This will help prepare you for a coding job. Let's get started!",
+          ""
+        ]
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7
+    },
     {
       "id": "bd7123c8c441eddfaeb5bdef",
       "descriptionPtBR": [
@@ -651,7 +679,7 @@
         "Remarquez que nous avons créer une classe CSS nommée <code>blue-text</code> à l'intérieur de notre balise <code>&#60;style&#62;</code>.",
         "Vous pouvez appliquer une classe à un élément HTML comme ceci :",
         "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
-        "Prenez note que que dans votre élément CSS <code>style</code>, les classes doivent débuter par un point. Dans les déclarations de classes à l'intérieur des éléments HTML, on doit omettre le point du début.",        
+        "Prenez note que que dans votre élément CSS <code>style</code>, les classes doivent débuter par un point. Dans les déclarations de classes à l'intérieur des éléments HTML, on doit omettre le point du début.",
         "À l'intérieur de votre élément <code>style</code>, changez le sélecteur du <code>h2</code> pour <code>.red-text</code> et changez la couleur, passant de <code>blue</code> à <code>red</code>.",
         "Donnez à votre élément <code>h2</code> l'attribut de classe la valeur de <code>red-text</code>."
       ],
@@ -731,14 +759,14 @@
         "Примените класс <code>red-text</code> к вашим элементам <code>h2</code> и <code>p</code>."
       ],
       "titleFR": "Stylez plusieurs éléments avec une classe CSS",
-      "descriptionFR": [        
-        "Souvenez-vous que vous pouvez ajouter des classes aux éléments HTML en utilisant <code>class=\"votre-classe-ici\"</code> à l'intérieur de la balise ouvrante correspondante.",        
+      "descriptionFR": [
+        "Souvenez-vous que vous pouvez ajouter des classes aux éléments HTML en utilisant <code>class=\"votre-classe-ici\"</code> à l'intérieur de la balise ouvrante correspondante.",
         "Souvenez-vous que les sélecteurs CSS nécessitent un point au début comme ceci :",
-        "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}</blockquote>",        
+        "<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}</blockquote>",
         "Rappelez-vous également que les déclarations de classes n'ont pas de point, comme ceci :",
-        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",        
+        "<code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Appliquez la classe <code>red-text</code> à vos éléments <code>h2</code> et <code>p</code>."
-      ],      
+      ],
       "title": "Style Multiple Elements with a CSS Class",
       "description": [
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
@@ -807,14 +835,14 @@
         "Также, пожалуйста, не добавляйте атрибут класс к вашему новому элементу <code>p</code>."
       ],
       "titleFR": "Changez la taille de police d'un élément",
-      "descriptionFR": [        
+      "descriptionFR": [
         "La taille de police est contrôlée par la propriété CSS <code>font-size</code>, comme ceci :",
-        "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",        
-        "Créez un second élément <code>p</code> après l'élément <code>p</code> existant avec le texte kitty ipsum suivant : <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",        
-        "À l'intérieur de la même balise <code>&#60;style&#62;</code> qui contiens votre classe <code>.red-text</code>, créez une nouvelle entrée pour les éléments <code>p</code> et paramétrer le <code>font-size</code> à 16 pixels (<code>16px</code>).",        
-        "<strong>Prenez note</strong><br>Dû aux différences entre les navigateurs Web, votre niveau de zoom devrait être à 100% pour passer les tests de ce défi.",        
+        "<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>",
+        "Créez un second élément <code>p</code> après l'élément <code>p</code> existant avec le texte kitty ipsum suivant : <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "À l'intérieur de la même balise <code>&#60;style&#62;</code> qui contiens votre classe <code>.red-text</code>, créez une nouvelle entrée pour les éléments <code>p</code> et paramétrer le <code>font-size</code> à 16 pixels (<code>16px</code>).",
+        "<strong>Prenez note</strong><br>Dû aux différences entre les navigateurs Web, votre niveau de zoom devrait être à 100% pour passer les tests de ce défi.",
         "Également, veuillez ne pas ajouter d'attributs de classe à votre nouvel élément <code>p</code>."
-      ],      
+      ],
       "title": "Change the Font Size of an Element",
       "description": [
         "Font size is controlled by the <code>font-size</code> CSS property, like this:",
@@ -881,12 +909,12 @@
         "Присвойте шрифт <code>Monospace</code> всем вашим элементам <code>p</code>."
       ],
       "titleFR": "Paramétrer la famille de police d'un élément",
-      "descriptionFR": [        
-        "Vous pouvez paramétrer la police d'un élément en utilisant la propriété <code>font-family</code>.",        
+      "descriptionFR": [
+        "Vous pouvez paramétrer la police d'un élément en utilisant la propriété <code>font-family</code>.",
         "Par exemple, si vous voulez paramétrer la police de votre élément <code>h2</code> à <code>Sans-serif</code>, vous devez utiliser le CSS suivant :",
-        "<blockquote>h2 {<br>&nbsp;&nbsp;font-family: Sans-serif;<br>}</blockquote>",                
+        "<blockquote>h2 {<br>&nbsp;&nbsp;font-family: Sans-serif;<br>}</blockquote>",
         "Faites en sorte que tous vos éléments <code>p</code> aient la police <code>Monospace</code>."
-      ],      
+      ],
       "title": "Set the Font Family of an Element",
       "description": [
         "You can set an element's font by using the <code>font-family</code> property.",
@@ -952,13 +980,13 @@
         "Примените свойство <code>font-family</code> со значением <code>Lobster</code> к вашему элементу <code>h2</code>."
       ],
       "titleFR": "Importer une police de Google",
-      "descriptionFR": [        
-        "Maintenant, importons et appliquons une police de Google (prenez note que si Google est interdit d'accès dans votre pays, vous devrez omettre ce défi).",        
-        "Premièrement, vous devrez faire un <code>appel</code> vers Google pour prendre la police <code>Lobster</code> et la charger dans votre HTML.",        
-        "Copier l'extrait de code suivant et coller le dans le haut de votre éditeur de code :",                
-        "Maintenant vous pouvez paramétrer <code>Lobster</code> comme valeur de police de votre élément <code>h2</code>.",        
+      "descriptionFR": [
+        "Maintenant, importons et appliquons une police de Google (prenez note que si Google est interdit d'accès dans votre pays, vous devrez omettre ce défi).",
+        "Premièrement, vous devrez faire un <code>appel</code> vers Google pour prendre la police <code>Lobster</code> et la charger dans votre HTML.",
+        "Copier l'extrait de code suivant et coller le dans le haut de votre éditeur de code :",
+        "Maintenant vous pouvez paramétrer <code>Lobster</code> comme valeur de police de votre élément <code>h2</code>.",
         "Appliquer la valeur <code>Lobster</code> à la <code>font-family</code> de votre élément <code>h2</code>."
-      ],      
+      ],
       "title": "Import a Google Font",
       "description": [
         "Now, let's import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).",
@@ -1031,13 +1059,13 @@
         "Теперь закомментируйте ваш запрос к Google Fonts, таким образом шрифт <code>Lobster</code> становится недоступен. Обратите внимание как происходит деградация до шрифта <code>Monospace</code>."
       ],
       "titleFR": "Spécifier comment vos polices devraient dégrader",
-      "descriptionFR": [        
-        "Il y a plusieurs polices par défaut qui sont disponible dans tous les navigateurs Web. Ceci comprend <code>Monospace</code>, <code>Serif</code> et <code>Sans-Serif</code>.",        
-        "Quand une police n'est pas disponible, vous pouvez demander au navigateur de \"dégrader\" vers une autre police.",        
+      "descriptionFR": [
+        "Il y a plusieurs polices par défaut qui sont disponible dans tous les navigateurs Web. Ceci comprend <code>Monospace</code>, <code>Serif</code> et <code>Sans-Serif</code>.",
+        "Quand une police n'est pas disponible, vous pouvez demander au navigateur de \"dégrader\" vers une autre police.",
         "Par exemple, si vous voulez qu'un élément utilise la police <code>Helvetica</code>, mais également dégrader vers <code>Sans-Serif</code> lorsque la police <code>Helvetica</code> n'est pas disponible, vous pouvez utiliser le style CSS suivant :",
-        "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",        
+        "<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, Sans-Serif;<br>}</blockquote>",
         "Maintenant, commenter votre appel vers les polices de Google, pour que la police <code>Lobster</code> ne soit pas disponible. Regardez comment la police se dégrade vers <code>Monospace</code>."
-      ],      
+      ],
       "title": "Specify How Fonts Should Degrade",
       "description": [
         "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>",
@@ -1115,15 +1143,15 @@
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
       ],
       "titleFR": "Ajouter des images à votre site Web",
-      "descriptionFR": [        
-        "Vous pouvez ajouter des images à votre site Web en utilisant l'élément <code>img</code> et pointer vers une URL d'image spécifique en utilisant l'attribut <code>src</code>.",        
+      "descriptionFR": [
+        "Vous pouvez ajouter des images à votre site Web en utilisant l'élément <code>img</code> et pointer vers une URL d'image spécifique en utilisant l'attribut <code>src</code>.",
         "Un exemple de cette procédure serait :",
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "Prenez note que dans la plupart des cas, les éléments <code>img</code> sont auto-fermants.",
         "Essayez avec cette image :",
         "<code>https://bit.ly/fcc-relaxing-cat</code>"
-      ],      
+      ],
       "title": "Add Images to your Website",
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
@@ -1205,13 +1233,13 @@
         "<strong>Внимание</strong><br>По причине разницы в реализации браузеров, вам может понадобиться установить 100% масштаб окна браузера для прохождения этого испытания."
       ],
       "titleFR": "Redimensionner vos images",
-      "descriptionFR": [        
-        "Le CSS a une propriété nommé <code>width</code> qui contrôle la largeur d'un élément. Comme pour les polices, nous utiliserons <code>px</code> (pixels) pour déterminer la largeur d'une image.",        
+      "descriptionFR": [
+        "Le CSS a une propriété nommé <code>width</code> qui contrôle la largeur d'un élément. Comme pour les polices, nous utiliserons <code>px</code> (pixels) pour déterminer la largeur d'une image.",
         "Par exemple, si nous voulons créer une classe CSS nommée <code>larger-image</code> qui donnne aux éléments une largeur de 500 pixels, nous utilisons :",
-        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",        
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
         "Créez une classe nommée <code>smaller-image</code> et utilisez la pour redimensionner l'image pour qu'elle ai 100 pixels de large.",
-        "<strong>Prenez note</strong><br>Dû aux différences entre les navigateurs Web, votre niveau de zoom devrait être à 100% pour passer les tests de ce défi."          
-      ],      
+        "<strong>Prenez note</strong><br>Dû aux différences entre les navigateurs Web, votre niveau de zoom devrait être à 100% pour passer les tests de ce défi."
+      ],
       "title": "Size your Images",
       "description": [
         "CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.",
@@ -1295,14 +1323,14 @@
         "<code>&lt;img class=\"class1 class2\"&gt;</code>"
       ],
       "titleFR": "Ajouter des bordures autour de vos éléments",
-      "descriptionFR": [        
-        "Les bordures CSS ont des propriétés comme <code>style</code>, <code>color</code> et <code>width</code>",        
+      "descriptionFR": [
+        "Les bordures CSS ont des propriétés comme <code>style</code>, <code>color</code> et <code>width</code>",
         "Par exemple, si nous voulons créer une bordure de 5 pixel rouge autour d'un élément HTML, nous pouvons utiliser cette classe :",
-        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",        
-        "Créer une classe nommée <code>thick-green-border</code> qui ajoute une bordure verte de 10 pixel avec un style <code>solid</code> autour d'un élément HTML. Appliquez ensuite cette classe sur votre photo de chat.",        
+        "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
+        "Créer une classe nommée <code>thick-green-border</code> qui ajoute une bordure verte de 10 pixel avec un style <code>solid</code> autour d'un élément HTML. Appliquez ensuite cette classe sur votre photo de chat.",
         "Souvenez-vous que vous pouvez appliquer plus d'une classe sur un élément en les séparant par un espace, le tout dans l'attribut <code>class</code> de l'élément. Par exemple :",
         "<code>&lt;img class=\"class1 class2\"&gt;</code>"
-      ],      
+      ],
       "title": "Add Borders Around your Elements",
       "description": [
         "CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>",
@@ -1509,7 +1537,7 @@
         "Aqui está um diagrama de um elemento <code>a</code>. Neste caso, o elemento <code>a</code> é utilizado no meio de um elemento de parágrafo, o que significa que o link externo aparecerá no meio de uma frase.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como as tags de âncora se compõem com o texto, como na próxima linha\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Veja um exemplo:",
-        "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freecodecamp.org\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
         "Crie um elemento <code>a</code> que esteja ligado ao site <code>http://freecatphotoapp.com</code> e tenha como <code>texto de âncora</code> \"fotos de gatos\"."
       ],
       "namePtBR": "Ligue Páginas Externas com o Elemento Âncora",
@@ -1518,7 +1546,7 @@
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Hier ist ein Beispiel:",
-        "<code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zu Free Code Camp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.org\"&#62; Link zu Free Code Camp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
         "Erstelle ein <code>a</code> Element, das auf <code>http://freecatphotoapp.com</code> verlinkt und den \"cat photos\" als <code>anchor text</code> (Link-Text) beinhaltet."
       ],
       "titleRU": "Присоедините внешние страницы с помощью якорных элементов",
@@ -1527,7 +1555,7 @@
         "Вот диаграмма элемента <code>a</code>. В этом случае, элемент <code>a</code> использован в середине элемента параграфа, что значит, что ссылка появится в середине предложения.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Вот пример:",
-        "<code>&#60;p&#62;Вот &#60;a href=\"http://freecodecamp.com\"&#62; ссылка на Free Code Camp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Вот &#60;a href=\"http://freecodecamp.org\"&#62; ссылка на Free Code Camp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
         "Создайте элемент <code>a</code>, который присоединяет <code>http://freecatphotoapp.com</code> и имеет значение \"cat photos\" в качестве <code>текста якоря</code>."
       ],
       "title": "Link to External Pages with Anchor Elements",
@@ -1536,7 +1564,7 @@
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.org\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
       "challengeSeed": [
@@ -1586,7 +1614,7 @@
         "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a> ",
         "He aquí un ejemplo:",
-        "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freecodecamp.org\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
         "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"fotos de gatos\"."
       ],
       "titleDe": "Verlinke externe Seiten mit Anker Elementen",
@@ -1598,7 +1626,7 @@
         "Outra vez, aqui está um diagrama de um elemento <code>a</code> para você usar como referência.",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"diagrama de como são as tags de âncora com o texto como na linha seguinte\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Veja um exemplo:",
-        "<code>&#60;p&#62;Este é um &#60;a href=\"https://freecodecamp.com\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Este é um &#60;a href=\"https://freecodecamp.org\"&#62; link ligado ao Free Code Camp&#60;/a&#62; para que você o siga.&#60;/p&#62;</code>",
         "<code>Aninhamento</code> significa ter um elemento no interior de outro elemento.",
         "Agora, aninhe o elemento <code>a</code> existente dentro de um novo elemento <code>p</code> de forma que o parágrafo diga \"View more cat photos\", mas onde apenas \"cat photos\" seja um link, e o resto seja texto comum."
       ],
@@ -1607,7 +1635,7 @@
         "Hier ist nochmal ein Beispiel für ein <code>a</code> Element:",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Klick zum Vergrößern\" alt=\"Eine Darstellung wie Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Hier ist ein Beispiel:",
-        "<code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.com\"&#62; Link zu Free Code Camp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.org\"&#62; Link zu Free Code Camp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
         "<code>Nesting</code> bedeuted ein Element innerhalb eines anderen Elements zu schreiben",
         "Jetzt umschließe dein <code>a</code> Element mit einem neuen <code>p</code> Element (direkt nach dem bereits existierenden <code>h2</code> Element) indem steht \"View more cat photos\", wo allerdings nur \"cat photos\" ein Link ist und der Rest normaler Text."
       ],
@@ -1616,7 +1644,7 @@
         "Вот диаграмма элемента <code>a</code>:",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Вот пример:",
-        "<code>&#60;p&#62;Вот &#60;a href=\"https://freecodecamp.com\"&#62; ссылка на Free Code Camp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Вот &#60;a href=\"https://freecodecamp.org\"&#62; ссылка на Free Code Camp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
         "<code>Вложенность</code> значит установку одного элемента внутрь друго элемента.",
         "Теперь вложите ваш существующий элемент <code>a</code> внутрь нового элемента <code>p</code> (сразу после существующего элемента <code>h2</code>) таким образом, что добавляемый параграф сообщает: \"View more cat photos\", но где только \"cat photos\" является ссылкой, а остальной текст обычный."
       ],
@@ -1625,7 +1653,7 @@
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"https://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Here's a &#60;a href=\"https://freecodecamp.org\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
         "<code>Nesting</code> just means putting one element inside of another element.",
         "Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>h2</code> element) so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
       ],
@@ -1682,7 +1710,7 @@
         "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
         "<a href=\"//i.imgur.com/hviuZwe.png\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
         "He aquí un ejemplo:",
-        "<code>&#60;p&#62;Aquí hay un &#60;a href=\"https://freecodecamp.com\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
+        "<code>&#60;p&#62;Aquí hay un &#60;a href=\"https://freecodecamp.org\"&#62; enlace a Free Code Camp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
         "<code>Anidamiento</code> simplemente significa poner un elemento dentro de otro elemento.",
         "Ahora anida el elemento <code>a</code> existente dentro de un nuevo elemento <code>p</code> (justo después del elemento <code>h2</code> que ya tienes) de tal forma que el párrafo que lo rodee diga \"View more cat photos\", pero que sólo \"cat photos\" sea un enlace, y el resto sea texto plano ."
       ],

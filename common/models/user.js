@@ -197,7 +197,7 @@ module.exports = function(User) {
       url = `http://${host}:${port}/reset-password?access_token=${token}`;
     } else {
       url =
-        `http://freecodecamp.com/reset-password?access_token=${token}`;
+        `https://www.freecodecamp.org/reset-password?access_token=${token}`;
     }
 
     // the email of the requested user
@@ -207,12 +207,12 @@ module.exports = function(User) {
     // requires AccessToken.belongsTo(User)
     var mailOptions = {
       to: info.email,
-      from: 'Team@freecodecamp.com',
+      from: 'team@freecodecamp.org',
       subject: 'Password Reset Request',
       text: `
         Hello,\n\n
         This email is confirming that you requested to
-        reset your password for your Free Code Camp account.
+        reset your password for your freeCodeCamp account.
         This is your email: ${ info.email }.
         Go to ${ url } to reset your password.
         \n
@@ -439,10 +439,10 @@ module.exports = function(User) {
           var mailOptions = {
             type: 'email',
             to: email,
-            from: 'Team@freecodecamp.com',
-            subject: 'Welcome to Free Code Camp!',
+            from: 'team@freecodecamp.org',
+            subject: 'Welcome to freeCodeCamp!',
             protocol: isDev ? null : 'https',
-            host: isDev ? 'localhost' : 'freecodecamp.com',
+            host: isDev ? 'localhost' : 'freecodecamp.org',
             port: isDev ? null : 443,
             template: path.join(
               __dirname,

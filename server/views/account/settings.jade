@@ -5,31 +5,38 @@ block content
         h2.text-center Actions
         .row
           .col-xs-12
-            a#night-mode.btn.btn-lg.btn-block.btn-primary.btn-link-social Night Mode
-        .row
-          .col-xs-12
               if (!user.isGithubCool)
-                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
+                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='https://forum.freecodecamp.org/t/how-to-create-a-github-account-and-link-it-with-your-freecodecamp-account/132154' target='_blank')
                       i.fa.fa-github
                       | Link my GitHub to enable my public profile
               else
                   a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
                       i.fa.fa-github
-                      | Update my portfolio from GitHub
+                      | Update my profile from GitHub
                   if (!user.twitter)
                       a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
                           i.fa.fa-twitter
-                          | Add my Twitter to my portfolio
+                          | Add my Twitter to my profile
                   if (!user.linkedin)
                       a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/link/linkedin')
                           i.fa.fa-linkedin
-                          | Add my LinkedIn to my portfolio
+                          | Add my LinkedIn to my profile
+              a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='https://forum.freecodecamp.org/t/how-to-add-freecodecamp-to-your-linkedin-profile/132159' target='_blank')
+                  | Read thousands of coding articles
+              a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='https://forum.freecodecamp.org/t/how-to-add-freecodecamp-to-your-linkedin-profile/132159' target='_blank')
+                  | Add freeCodeCamp to my LinkedIn
+              a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='https://forum.freecodecamp.org/t/how-to-join-freecodecamps-chat-rooms-on-gitter/132177' target='_blank')
+                  | Chat with other campers in real time
+
         .spacer
         h2.text-center Account Settings
         .row
           .col-xs-12
+            a#night-mode.btn.btn-lg.btn-block.btn-primary.btn-link-social Night Mode
+        .row
+          .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/commit')
-                | Edit my pledge
+                | Edit my commit pledge
         .spacer
         h2.text-center Privacy Settings
         .row
@@ -124,7 +131,7 @@ block content
                           p This will really delete all your data, including all your progress and brownie points.
                           p We won't be able to recover any of it for you later, even if you change your mind.
                           p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
-                              a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
+                              a(href="mailto:team@freecodecamp.org") team@freecodecamp.org
                               | .
                       .modal-footer
                           a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')

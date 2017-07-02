@@ -103,6 +103,7 @@ window.common = (function(global) {
     let editorValue;
     if (common.codeUri.isAlive()) {
       editorValue = common.codeUri.parse();
+      common.codeUri.removeCodeUri(location, window.history);
     } else {
       editorValue = common.codeStorage.isAlive(common.challengeName) ?
         common.codeStorage.getStoredValue(common.challengeName) :

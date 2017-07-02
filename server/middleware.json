@@ -39,6 +39,7 @@
   },
   "routes:before": {
     "express-flash": {},
+    "./middlewares/coming-from-com": {},
     "helmet#xssFilter": {},
     "helmet#noSniff": {},
     "helmet#frameguard": {},
@@ -59,7 +60,7 @@
   "final": {
   },
   "final:after": {
-    "./middlewares/keymetrics": {},
+    "./middlewares/production-metrics": {},
     "./middlewares/error-handlers": {}
   }
 }

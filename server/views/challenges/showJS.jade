@@ -35,15 +35,12 @@ block content
                             .form-group.text-center
                                 .col-xs-12
                                     // extra field to distract password tools like lastpass from injecting css into our username field
-                    button.btn.btn-primary.btn-big.btn-block#submitButton Run tests (ctrl + enter)
+                    button.btn-big.btn.btn-primary.btn-block#submitButton
+                        | Run tests (ctrl + enter)
                     .button-spacer
-                    .btn-group.input-group.btn-group-justified
-                        .btn-group
-                            button.btn.btn-primary.btn-lg#trigger-reset-modal Reset
-                        .btn-group
-                            button.btn.btn-primary.btn-lg#challenge-help-btn Help
-                        .btn-group
-                            button.btn.btn-primary.btn-lg#trigger-issue-modal Bug
+                    button.btn-big.btn.btn-primary.btn-block#trigger-reset-modal Reset your code
+                    .button-spacer                    
+                    a.btn-big.btn.btn-primary.btn-block(href="https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-" + dashedName target="_blank") Get a hint
                     if (!user)
                         .button-spacer
                         a.btn.signup-btn.btn-block.btn-block(href='/signin') Sign in so you can save your progress

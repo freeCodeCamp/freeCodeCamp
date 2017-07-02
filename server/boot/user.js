@@ -143,6 +143,7 @@ module.exports = function(app) {
     res.redirect(301, '/signout');
   });
   router.get('/signin', getSignin);
+  router.get('/signin-com', getSigninCom);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   router.post('/forgot', postForgot);
@@ -221,7 +222,16 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/signin', {
-      title: 'Sign in to Free Code Camp'
+      title: 'Sign in to freeCodeCamp'
+    });
+  }
+
+  function getSigninCom(req, res) {
+    if (req.user) {
+      return res.redirect('/');
+    }
+    return res.render('account/signin-com', {
+      title: 'Sign in to freeCodeCamp'
     });
   }
 
@@ -239,7 +249,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/deprecated-signin', {
-      title: 'Sign in to Free Code Camp using a Deprecated Login'
+      title: 'Sign in to freeCodeCamp using a Deprecated Login'
     });
   }
 
@@ -257,7 +267,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/email-signin', {
-      title: 'Sign in to Free Code Camp using your Email Address'
+      title: 'Sign in to freeCodeCamp using your Email Address'
     });
   }
 
@@ -266,7 +276,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/email-signup', {
-      title: 'Sign up for Free Code Camp using your Email Address'
+      title: 'Sign up for freeCodeCamp using your Email Address'
     });
   }
 
@@ -344,7 +354,7 @@ module.exports = function(app) {
             msg: dedent`
               Upon review, this account has been flagged for academic
               dishonesty. If you’re the owner of this account contact
-              team@freecodecamp.com for details.
+              team@freecodecamp.org for details.
             `
           });
         }

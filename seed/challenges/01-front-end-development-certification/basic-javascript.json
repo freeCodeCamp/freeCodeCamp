@@ -3747,7 +3747,7 @@
         "The above outputs \"Hello\" to the console, returns \"World\", but <code>\"byebye\"</code> is never output, because the function exits at the <code>return</code> statement.",
         "<h4>Instructions</h4>",
         "Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.",
-        "<strong>Hint</strong><br>Remember that <a href='http://www.freecodecamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string."
+        "<strong>Hint</strong><br>Remember that <a href='http://www.freecodecamp.org/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
@@ -3789,7 +3789,7 @@
         "Esta presenta en consola \"Hola\", retorna \"Mundo\", pero <code>\"chaochao\"</code> nunca se presenta, porque la función sale con la sentencia <code>return</code>.",
         "<h4>Instrucciones</h4>",
         "Modifica la función <code>abTest</code> de manera que si <code>a</code> o <code>b</code> son menores que <code>0</code> la función saldrá inmediatamente con un valor <code>undefined</code>.",
-        "<strong>Pista</strong><br>Recuerda que <a href='http://www.freecodecamp.com/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> es una palabra clave</a>, no una cadena."
+        "<strong>Pista</strong><br>Recuerda que <a href='http://www.freecodecamp.org/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> es una palabra clave</a>, no una cadena."
       ]
     },
     {
@@ -5299,7 +5299,7 @@
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
         "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>.",
-        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation' target='_blank'>here</a>):",
+        "Generate the random numbers by using the system we used earlier (an explanation of the formula can be found <a href='https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-generate-random-whole-numbers-within-a-range/18187' target='_blank'>here</a>):",
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "challengeSeed": [
@@ -5454,7 +5454,7 @@
         "Ahora vamos a tratar de combinar algunas de las cosas que hemos aprendido para crear la lógica de una máquina tragamonedas.",
         "Para esto tendremos que generar tres números aleatorios entre <code>1</code> y <code>3</code> que representen los valores posibles de cada casilla.",
         "Guarda los tres números aleatorios en <code>slotOne</code>, <code>slotTwo</code> y <code>slotThree</code>.",
-        "Genera los números aleatorios utilizando el sistema que usamos anteriormente (puedes encontrar una explicación de la fórmula <a href=\"https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Waypoint-Generate-Random-Whole-Numbers-within-a-Range#explanation\">aquí</a>):",
+        "Genera los números aleatorios utilizando el sistema que usamos anteriormente (puedes encontrar una explicación de la fórmula <a href=\"https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-generate-random-whole-numbers-within-a-range/18187\">aquí</a>):",
         "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ]
     },

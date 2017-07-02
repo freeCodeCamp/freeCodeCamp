@@ -1,0 +1,16 @@
+extends ../layout
+block content
+    .text-center
+        h2 Welcome to our new freecodecamp.ORG address.
+        h4 We sent you here from our old freecodecamp.COM address.
+        h4 Please sign in again to continue coding. Thanks!
+        .spacer
+        a.btn.btn-lg.btn-block.btn-social.btn-primary(href='/email-signin')
+            i.fa.fa-envelope
+            | Sign in with Email
+        a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
+            i.fa.fa-github
+            | Sign in with GitHub
+        .button-spacer
+        p
+            a(href="/deprecated-signin") Click here if you previously signed in using a different method.

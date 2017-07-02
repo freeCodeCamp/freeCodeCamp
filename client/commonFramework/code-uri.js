@@ -134,6 +134,20 @@ window.common = (function(global) {
         (location.search || location.hash).replace(queryRegex, ''),
         'run'
       );
+    },
+    removeCodeUri: function(location, history) {
+      if (
+        typeof location.href.split !== 'function' ||
+        typeof history.replaceState !== 'function'
+      ) {
+        return false;
+      }
+      history.replaceState(
+        history.state,
+        null,
+        location.href.split('#')[0]
+      );
+      return true;
     }
   };
 
