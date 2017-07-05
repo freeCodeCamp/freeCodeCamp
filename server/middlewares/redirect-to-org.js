@@ -8,7 +8,9 @@ const redirectStatus = parseInt(process.env.REDIRECT_PERMENT || '0', 10) ?
 const orgUrl = 'https://www.freecodecamp.org';
 const paths = [
   /^\/$/i,
-  /^\/challenges\/.*/ig
+  /^\/challenges\/.*/ig,
+  /signin$/i,
+  /signup$/i
 ];
 
 log('redirect precentage: ', percent);
