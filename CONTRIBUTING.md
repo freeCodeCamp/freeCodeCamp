@@ -316,13 +316,22 @@ nothing to commit, working directory clean
     add .` to add all unstaged files. Take care, though, because you can
     accidentally add files you don't want added. Review your `git status` first.
 
-6.  Commit your edits: `git commit -m "Brief Description of Commit"`. Do not add the issue number in the commit message.
+6.  Commit your edits (follow any one of the below methods):
+
+    a. Using the inbuilt script (_recommended_):
+       - We have a [tool](https://commitizen.github.io/cz-cli/) that helps you to make standard commit messages. Simply execute `npm run commit` after you have added the necessary files as mentioned in the step earlier.
+
+    b. Using Commitizen CLI:
+       - If you are already using [commitizen](http://commitizen.github.io/cz-cli/), simply doing a `git cz` works as expected too!
 
 7.  Squash your commits, if there are more than one.
 
-8.  Push your commits to your GitHub Fork: `git push -u origin branch/name-here`
+8.  If you would want to add/remove changes to previous commit simply add the files as in Step 5 earlier,
+    and use `git commit --amend` or `git commit --amend --no-edit` (for keeping the same commit message).
 
-9.  Go to [Common Steps](#common-steps)
+9.  Push your commits to your GitHub Fork: `git push -u origin branch/name-here`
+
+10.  Go to [Common Steps](#common-steps)
 
 ##### Method 2: Editing via the GitHub Interface
 

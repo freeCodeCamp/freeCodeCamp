@@ -27,7 +27,8 @@
     "test-js-server": "tape -r babel-register \"server/**/*.test.js\" | tap-spec",
     "test": "npm run test-js && npm run test-challenges",
     "cover": "babel-node ./node_modules/.bin/babel-istanbul cover tape common/**/*.test.js",
-    "coveralls": "npm run cover && istanbul-coveralls"
+    "coveralls": "npm run cover && istanbul-coveralls",
+    "commit": "git-cz"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
@@ -138,6 +139,8 @@
     "babel-preset-stage-0": "^6.3.13",
     "browser-sync": "^2.9.12",
     "chunk-manifest-webpack-plugin": "0.1.0",
+    "commitizen": "^2.9.6",
+    "cz-freecodecamp": "^1.0.0",
     "del": "^2.2.0",
     "eslint": "^3.1.0",
     "eslint-plugin-import": "^2.0.1",
@@ -178,5 +181,10 @@
     "webpack-stream": "^3.1.0",
     "yargs": "^7.0.1"
   },
-  "snyk": true
+  "snyk": true,
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-freecodecamp"
+    }
+  }
 }
