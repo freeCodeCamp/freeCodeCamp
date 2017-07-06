@@ -1784,10 +1784,10 @@
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
         "Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.",
         "An element's <code>padding</code> controls the amount of space between the element's content and its <code>border</code>.",
-        "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the green box.",
-        "When you increase the green box's <code>padding</code>, it will increase the distance between the text <code>padding</code> and the border around it.",
+        "Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the blue box.",
+        "When you increase the blue box's <code>padding</code>, it will increase the distance between the text <code>padding</code> and the border around it.",
         "<hr>",
-        "Change the <code>padding</code> of your green box to match that of your red box."
+        "Change the <code>padding</code> of your blue box to match that of your red box."
       ],
       "challengeSeed": [
         "<style>",
@@ -1813,8 +1813,8 @@
         "    padding: 20px;",
         "  }",
         "",
-        "  .green-box {",
-        "    background-color: green;",
+        "  .blue-box {",
+        "    background-color: blue;",
         "    padding: 10px;",
         "  }",
         "</style>",
@@ -1822,11 +1822,11 @@
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"padding-top\") === \"20px\", 'message: Your <code>green-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
+        "assert($(\".blue-box\").css(\"padding-top\") === \"20px\", 'message: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1838,9 +1838,9 @@
             "Du hast vielleicht schon bemerkt, dass alle HTML Elemente im Prinzip kleine Rechtecke sind.",
             "Drei wichtige CSS-Eigenschaften beeinflussen den Platz den jedes HTML Element umgibt: <code>padding</code>, <code>margin</code> und <code>border</code>.",
             "<code>padding</code> kontrolliert den Raum oder Abstand zwischen dem Inhalt eines Elements und dessen Rahmen – <code>border</code>",
-            "Wir sehen in diesem Beispiel, dass sich die grüne Box und die rote Box innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>padding</code> hat als die grüne Box.",
+            "Wir sehen in diesem Beispiel, dass sich die blaue Box und die rote Box innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>padding</code> hat als die blaue Box.",
             "<hr>",
-            "Ändere das <code>padding</code> der grünen Box um es an die rote Box anzugleichen."
+            "Ändere das <code>padding</code> der blauen Box um es an die rote Box anzugleichen."
           ]
         },
         "es": {
