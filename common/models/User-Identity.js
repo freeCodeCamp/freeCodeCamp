@@ -8,6 +8,7 @@ import {
   getSocialProvider
 } from '../../server/utils/auth';
 import { defaultProfileImage } from '../utils/constantStrings.json';
+import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 
 const githubRegex = (/github/i);
 const debug = debugFactory('fcc:models:userIdent');
@@ -73,10 +74,14 @@ export default function(UserIdent) {
 
         const userObj = options.profileToUser(provider, profile, options);
         if (getSocialProvider(provider) !== 'github') {
-          const err = new Error(createAccountMessage);
-          err.userMessage = createAccountMessage;
-          err.messageType = 'info';
-          err.redirectTo = '/signin';
+          const err = wrapHandledError(
+            new Error(createAccountMessage),
+            {
+              message: createAccountMessage,
+              type: 'info',
+              redirectTo: '/signin'
+            }
+          );
           return process.nextTick(() => cb(err));
         }
 
