@@ -1,5 +1,5 @@
-import loopback from 'loopback';
 import debugFactory from 'debug';
+import dedent from 'dedent';
 
 import {
   setProfileFromGithub,
@@ -16,8 +16,6 @@ const debug = debugFactory('fcc:models:userIdent');
 export default function(UserIdent) {
   // original source
   // github.com/strongloop/loopback-component-passport
-  const createAccountMessage =
-    'Accounts can only be created using GitHub or though email';
   UserIdent.login = function(
     provider,
     authScheme,
@@ -33,91 +31,51 @@ export default function(UserIdent) {
     }
     const userIdentityModel = UserIdent;
     profile.id = profile.id || profile.openid;
-    const filter = {
+    const query = {
       where: {
         provider: getSocialProvider(provider),
         externalId: profile.id
       }
     };
-    return userIdentityModel.findOne(filter)
+    return userIdentityModel.findOne(query)
       .then(identity => {
-        // identity already exists
-        // find user and log them in
-        if (identity) {
-          identity.credentials = credentials;
-          const options = {
-            profile: profile,
-            credentials: credentials,
-            modified: new Date()
-          };
-          return identity.updateAttributes(options)
-            // grab user associated with identity
-            .then(() => identity.user())
-            .then(user => {
-              // Create access token for user
-              const options = {
-                created: new Date(),
-                ttl: user.constructor.settings.ttl
-              };
-              return user.accessTokens.create(options)
-                .then(token => ({ user, token }));
-            })
-            .then(({ token, user })=> {
-              cb(null, user, identity, token);
-            })
-            .catch(err => cb(err));
-        }
-        // Find the user model
-        const userModel = userIdentityModel.relations.user &&
-          userIdentityModel.relations.user.modelTo ||
-          loopback.getModelByType(loopback.User);
-
-        const userObj = options.profileToUser(provider, profile, options);
-        if (getSocialProvider(provider) !== 'github') {
-          const err = wrapHandledError(
-            new Error(createAccountMessage),
+        if (!identity) {
+          throw wrapHandledError(
+            new Error('user identity account not found'),
             {
-              message: createAccountMessage,
+              message: dedent`
+                New accounts can only be created using an email address.
+                Please create an account below
+              `,
               type: 'info',
-              redirectTo: '/signin'
+              redirectTo: '/signup'
             }
           );
-          return process.nextTick(() => cb(err));
         }
-
-        let query;
-        if (userObj.email) {
-          query = { or: [
-            { username: userObj.username },
-            { email: userObj.email }
-          ]};
-        } else {
-          query = { username: userObj.username };
-        }
-        return userModel.findOrCreate({ where: query }, userObj)
-          .then(([ user ]) => {
-            const promises = [
-              userIdentityModel.create({
-                provider: getSocialProvider(provider),
-                externalId: profile.id,
-                authScheme: authScheme,
-                profile: profile,
-                credentials: credentials,
-                userId: user.id,
-                created: new Date(),
-                modified: new Date()
-              }),
-              user.accessTokens.create({
-                created: new Date(),
-                ttl: user.constructor.settings.ttl
-              })
-            ];
-            return Promise.all(promises)
-              .then(([ identity, token ]) => ({ user, identity, token }));
-          })
-          .then(({ user, token, identity }) => cb(null, user, identity, token))
-          .catch(err => cb(err));
-      });
+        // identity already exists
+        // find user and log them in
+        identity.credentials = credentials;
+        const options = {
+          // we no longer want to keep the profile
+          // this is information we do not need or use
+          profile: null,
+          credentials: credentials,
+          modified: new Date()
+        };
+        return identity.updateAttributes(options)
+          // grab user associated with identity
+          .then(identity => {
+            const user = identity.user();
+            // Create access token for user
+            const options = {
+              created: new Date(),
+              ttl: user.constructor.settings.ttl
+            };
+            return user.accessTokens.create(options)
+              .then(token => cb(null, user, identity, token));
+          });
+      })
+      .catch(cb);
   };
 
   UserIdent.observe('before save', function(ctx, next) {
