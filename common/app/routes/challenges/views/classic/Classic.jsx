@@ -78,6 +78,7 @@ export class Challenge extends PureComponent {
   componentDidMount() {
     this.props.loadCode();
     this.props.updateSuccessMessage(randomCompliment());
+    window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps(nextProps) {
