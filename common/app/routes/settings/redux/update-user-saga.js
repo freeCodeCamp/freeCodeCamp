@@ -23,7 +23,7 @@ const urlMap = {
   sendMonthlyEmail: 'announcement-email'
 };
 
-export function updateUserEmailSaga(actions$, getState) {
+export function updateUserEmailSaga(actions$, { getState }) {
   return actions$
     .filter(({ type }) => type === types.updateMyEmail)
     .flatMap(({ payload: email }) => {
@@ -46,7 +46,7 @@ export function updateUserEmailSaga(actions$, getState) {
     });
 }
 
-export function updateUserLangSaga(actions$, getState) {
+export function updateUserLangSaga(actions$, { getState }) {
   const updateLang$ = actions$
     .filter(({ type, payload }) => (
       type === types.updateMyLang && !!langs[payload]
@@ -83,7 +83,7 @@ export function updateUserLangSaga(actions$, getState) {
     });
   return Observable.merge(ajaxUpdate$, optimistic$);
 }
-export function updateUserFlagSaga(actions$, getState) {
+export function updateUserFlagSaga(actions$, { getState }) {
   const toggleFlag$ = actions$
     .filter(({ type, payload }) => type === types.toggleUserFlag && payload)
     .map(({ payload }) => payload);

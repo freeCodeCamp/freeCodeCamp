@@ -121,6 +121,12 @@ export const createErrorObservable = error => Observable.just({
   type: types.handleError,
   error
 });
+
+export const createBabelErrorObservable = error => Observable.just({
+  type: types.babelError,
+  error
+});
+
 // doActionOnError(
 //   actionCreator: (() => Action|Null)
 // ) => (error: Error) => Observable[Action]

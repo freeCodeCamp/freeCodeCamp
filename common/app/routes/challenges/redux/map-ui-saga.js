@@ -2,7 +2,7 @@ import types from './types';
 import { initMap } from './actions';
 import { unfilterMapUi, applyFilterToMap } from '../utils';
 
-export default function mapUiSaga(actions$, getState) {
+export default function mapUiSaga(actions$, { getState }) {
   return actions$
     .filter(({ type }) => (
       type === types.updateFilter ||

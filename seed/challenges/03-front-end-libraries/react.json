@@ -1,7 +1,7 @@
 {
   "name": "React",
   "order": 5,
-  "time": "5 hours",
+  "time": "25 hours",
   "helpRoom": "Help",
   "challenges": [
     {
@@ -17,15 +17,266 @@
         [
           "",
           "",
-          "The React challenges have not been ported into freeCodeCamp yet. You can visit <a href=\"http://hysterical-amusement.surge.sh/\" target=\"_blank\">this link to work through the alpha version</a> of these challenges. If you have feedback, you can open an issue (or pull request) directly on <a href=\"https://github.com/bonham000/fcc-react-tests-module\" target=\"_blank\">this repository.</a>",
+          "The React challenges are being developed!",
           ""
         ]
       ],
-      "releasedOn": "Feb 17, 2017",
+      "releasedOn": "May 25, 2017",
       "challengeSeed": [],
       "tests": [],
       "type": "waypoint",
       "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "bd7123c9c441eddfaeb4bdez",
+      "title": "Create a Simple JSX Element",
+      "description": [
+        "<strong>Intro:</strong> React is an Open Source view library created and maintained by Facebook. It's a great tool to render the User Interface (UI) of modern web applications.",
+        "React uses a syntax extension of JavaScript called JSX that allows you to write HTML directly within JavaScript. This has several benefits. It lets you use the full programmatic power of JavaScript within HTML, and helps to keep your code readable. For the most part, JSX is similar to the HTML that you have already learned, however there are a few key differences that will be covered throughout these challenges.",
+        "For instance, because JSX is a syntactic extension of JavaScript, you can actually write JavaScript directly within JSX. To do this, you simply include the code you want to be treated as JavaScript within curly braces: <code>{ 'this is treated as JavaScript code' }</code>. Keep this in mind, since it's used in several future challenges.",
+        "However, because JSX is not valid JavaScript, JSX code must be compiled into JavaScript. The transpiler Babel is a popular tool for this process. For your convenience, it's already added behind the scenes for these challenges. If you happen to write syntactically invalid JSX, you will see the first test in these challenges fail.",
+        "<hr>",
+        "<strong>Instructions:</strong> The current code uses JSX to assign a <code>div</code> element to the constant <code>JSX</code>. Replace the <code>div</code> with an <code>h1</code> element and add the text <code>Hello JSX!</code> inside it."
+      ],
+      "challengeSeed": [
+        "",
+        "var JSX = <div></div>;",
+        ""
+      ],
+      "tail": [
+        "var jsx = eval(JSX);"
+      ],
+      "solutions": [
+        "var JSX = <h1>Hello JSX!</h1>;"
+      ],
+      "tail": [
+        "var jsx = eval(JSX);"
+      ],
+      "tests": [
+        "assert.strictEqual(jsx.type, 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
+        "assert(jsx.props.children === 'Hello JSX!', 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "zd7123czi8s1eddzaeu413aq",
+      "title": "Learn About Self-Closing JSX Tags",
+      "description": [
+        "<strong>Intro:</strong> So far, you’ve seen how JSX differs from HTML in a key way with the use of <code>className</code> vs. <code>class</code> for defining HTML classes. Another important way in which JSX differs from HTML is in the idea of the self-closing tag.",
+        "In HTML, almost all tags have both an opening and closing tag: <code>&lt;div&gt;&lt;/div&gt;</code>; the closing tag always has a forward slash before the tag name that you are closing. However, there are special instances in HTML called “self-closing tags”, or tags that don’t require both an opening and closing tag before another tag can start. For example the line-break tag can be written as <code>&lt;br&gt;</code> or as <code>&lt;br /&gt;</code>, but should never be written as <code>&lt;br&gt;&lt;/br&gt;</code>, since it doesn't contain any content.",
+        "In JSX, the rules are a little different. Any JSX element can be written with a self-closing tag, and every element must be closed. The line-break tag, for example, must always be written as <code>&lt;br /&gt;</code> in order to be valid JSX that can be transpiled. A <code>&lt;div&gt;</code>, on the other hand, can be written as <code>&lt;div /&gt;</code> or <code>&lt;div&gt;&lt;/div&gt;</code>. The difference is that in the first syntax version there is no way to include anything in the <code>&lt;div /&gt;</code>. You will see in later challenges that this syntax is useful when rendering React components.",
+        "<hr>",
+        "<strong>Instructions:</strong> Fix the errors in the code editor so that it is valid JSX and successfully transpiles. Make sure you don't change any of the content - you only need to close tags where they are needed."
+      ],
+      "head": [
+        "var testNode = document.createElement('div');",
+        "testNode.id = 'challenge-node';",
+        "document.body.appendChild(testNode);"
+      ],
+      "challengeSeed": [
+        "",
+        "var JSX = (",
+        "<div>",
+        " {/* change code below this line */}",
+        " <h2>Welcome to React!</h2> <br >",
+        " <p>Be sure to close all tags!</p>",
+        " <hr >",
+        " {/* change code above this line */}",
+        "</div>",
+        ");",
+        "",
+        "ReactDOM.render(JSX, document.getElementById('challenge-node'));",
+        ""
+      ],
+      "tail": [
+        "var mountedNode = document.getElementById('challenge-node');",
+        "var Mock = eval(JSX);",
+        "var ShallowComponent = shallow(Mock);"
+      ],
+      "solutions": [
+        "const JSX = (<div><h2>Welcome to React!</h2> <br /><p>Be sure to close all tags!</p><hr /></div>);ReactDOM.render(JSX, document.getElementById('challenge-node'));"
+      ],
+      "tests": [
+        "assert(Mock.type === 'div', 'message: The JSX variable should return a <code>div</code> element.');",
+        "assert(ShallowComponent.contains(React.createElement('hr')), 'message: The <code>div</code> should contain an <code>hr</code> tag.');",
+        "assert(ShallowComponent.contains(React.createElement('br')), 'message: The <code>div</code> should contain a <code>br</code> tag.');",
+        "assert((function() { var node = mountedNode.childNodes[0].innerHTML.replace(/\\s/g,''); return (node.includes('<h2>WelcometoReact!</h2>') && node.includes('<p>Besuretoclosealltags!</p>')); })(), 'message: The provided JSX element should render as is to the DOM node with id <code>challenge-node</code>.');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "bd7123c9c441eddfaeb413av",
+      "title": "Create a Stateless Functional Component",
+      "description": [
+        "<strong>Intro:</strong> Components are the core of React. Everything in React is a component and here you will learn how to create one.",
+        "There are two ways to create a React component. The first way is to use a JavaScript function. Defining a component in this way creates a <em>stateless functional component</em>. The concept of state in an application will be covered in later challenges. For now, think of a stateless component as one that can receive data and render it, but does not manage or track changes to that data. (We'll cover the second way to create a React component in the next challenge.)",
+        "To create a component with a function, you simply write a JavaScript function that returns either JSX or <code>null</code>. One important thing to note is that React requires your function name to begin with a capital letter. Here's an example of a stateless functional component that assigns an HTML class in JSX:",
+        "<blockquote>// After being transpiled,the &lt;div&gt;<br>will have a CSS class of 'customClass'<br>const DemoComponent = function() {<br> return (<br>  &lt;div className='customClass' /&gt;<br> );<br>};<br></blockquote>",
+        "Because a JSX component represents HTML, you could put several components together to create a more complex HTML page. This is one of the key advantages of the component architecture React provides. It allows you to compose your UI from many separate, isolated components. This makes it easier to build and maintain complex user interfaces.",
+        "<hr>",
+        "<strong>Instructions:</strong> The code editor has a function called <code>MyComponent</code>. Complete this function so it returns a single <code>div</code> element which contains some string of text.",
+        "<strong>Note:</strong>&nbsp;The text is considered a child of the <code>div</code> element, so you will not be able to use a self-closing tag."
+      ],
+      "challengeSeed": [
+        "",
+        "var MyComponent = function() {",
+        "// change code below this line",
+        "",
+        "",
+        "",
+        "// change code above this line",
+        "}",
+        ""
+      ],
+      "tail": [
+       "var Mock = eval(MyComponent);",
+       "var output = Mock();"
+      ],
+      "solutions": [
+        "const MyComponent = function() {return (<div>Demo Solution</div>);}"
+      ],
+      "tests": [
+        "assert(typeof MyComponent === 'function', 'message: <code>MyComponent</code> should be a function.');",
+        "assert(typeof output === 'object', 'message: <code>MyComponent</code> should return a JSX element.');",
+        "assert(output.type === 'div', 'message: <code>MyComponent</code> should return a <code>div</code> element.');",
+        "assert(output.props.children.length !== 0, 'message: The <code>div</code> element should contain a string of text.');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "bd7123c9c441eddfaeb413gq",
+      "title": "Create a React Component",
+      "description": [
+        "<strong>Intro:</strong> The other way to define a React component is with the ES6 <code>class</code> syntax. In the following example, <code>Kitten</code> extends <code>React.Component</code>:",
+        "<blockquote><br>class Kitten extends React.Component {<br> constructor(props) {<br>  super(props);<br> }<br><br> render() {<br>  return (<br>   &lt;h1&gt;Hi&lt;/h1&gt;<br>  );<br> }<br>}</blockquote>",
+        "This creates an ES6 class <code>Kitten</code> which extends the <code>React.Component</code> class. So the <code>Kitten</code> class now has access to many useful React features, such as local state and lifecycle hooks. Don't worry if you aren't familiar with these terms yet, they will be covered in greater detail in later challenges.",
+        "Also notice the <code>Kitten</code> class has a <code>constructor</code> defined within it that calls <code>super()</code>. It uses <code>super()</code> to call the constructor of the parent class, in this case <code>React.Component</code>. The constructor is a special method used during the initialization of objects that are created with the <code>class</code> keyword. It is best practice to call a component's <code>constructor</code> with <code>super</code>, and pass <code>props</code> to both. This makes sure the component is initialized properly. For now, know that it is standard for this code to be included. Soon you will see other uses for the constructor as well as <code>props</code>.",
+        "<hr>",
+        "<strong>Insstructions:</strong> <code>MyComponent</code> is defined in the code editor using class syntax. Finish writing the <code>render</code> method so it returns a <code>div</code> element that contains an <code>h1</code> with the text <code>Hello React!</code>."
+      ],
+      "challengeSeed": [
+       "",
+       "class MyComponent extends React.Component {",
+       " constructor(props) {",
+       "  super(props);",
+       " }",
+       " render() {",
+       "  // change code below this line",
+       "",
+       "",
+       "",
+       "  // change code above this line",
+       " }",
+       "};",
+       ""
+      ],
+      "tail": [
+       "var Mock = eval(MyComponent)",
+       "var ShallowComponent = shallow(React.createElement(Mock));"
+      ],
+      "solutions": [
+        "class MyComponent extends React.Component {constructor(props) {super(props);}render() {return (<div><h1>Hello React!</h1></div>);}};"
+      ],
+      "tests": [
+        "assert.strictEqual(ShallowComponent.type(), 'div', 'message: The React component should return a <code>div</code> element.');",
+        "assert.strictEqual(ShallowComponent.children().type(), 'h1', 'message: The returned <code>div</code> should render an <code>h1</code> tag within it.');",
+        "assert.strictEqual(ShallowComponent.node.props.children.props.children, 'Hello React!', 'message: The <code>h1</code> tag should include the string <code>Hello React!</code>');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "bd7123cfda41eddfaeb413aj",
+      "title": "Bind 'this' with an ES6 Arrow Function",
+      "description": [
+        "<strong>Intro:</strong> There is another way to bind <code>this</code> when writing methods in React component classes. A useful, concise way is to use an ES6 arrow function. It does not assign its own value for <code>this</code>, but instead adopts the value of <code>this</code> from the context surrounding the function when it is written. In other words, an arrow function binds <code>this</code> automatically from its surrounding context.",
+        "The use of an arrow function as a class property like this is technically still an experimental feature of JavaScript (ES7 property initializers) but can be enabled through pre-processing. It's very useful because of its conciseness, but keep in mind that it is not part of the official language yet. Using this syntax means you can define a class method as an arrow function and not have to explicitly bind <code>this</code> in the constructor.",
+        "<hr>",
+        "<strong>Instructions:</strong> Initialize the <code>state</code> of <code>MyComponent</code> so there is a <code>message</code> key with a value of <code>Hello!</code>. The component renders a <code>button</code> that, when clicked, triggers a <code>setMessage()</code> method. Define this method with an ES6 arrow function. It should change the <code>state</code> of <code>message</code> to <code>Goodbye!</code>. Note that to pass the tests the arrow function must be written without any arguments."
+      ],
+      "challengeSeed": [
+        "",
+        " class MyComponent extends React.Component {",
+        "   constructor(props) {",
+        "     super(props);",
+        "     // change code below this line",
+        "",
+        "     // change code above this line",
+        "   }",
+        "   // change code below this line",
+        "",
+        "   // change code above this line",
+        "   render() {",
+        "     return (",
+        "       <div>",
+        "         <button onClick = {this.setMessage}>Click Me</button>",
+        "         <h1>{this.state.message}</h1>",
+        "       </div>",
+        "     );",
+        "   }",
+        " };",
+        ""
+      ],
+      "tail": [
+       "var originalCode = document.__originalCode;",
+       "var Mock = mount(React.createElement(eval(MyComponent)));"
+      ],
+      "solutions": [
+        "class MyComponent extends React.Component { constructor(props) { super(props); this.state = { message: 'Hello!' }; this.setMessage = this.setMessage.bind(this); /* setMessage=()=>{ */ } setMessage() { this.setState({ message: 'Goodbye!' }); } render() { return (<div><button onClick = {this.setMessage}>Click Me</button><h1>{this.state.message}</h1></div>); }};"
+      ],
+      "tests": [
+        "assert(Mock.find('div').length === 1 && Mock.find('div').children().nodes[0].tagName === 'BUTTON' && Mock.find('div').children().nodes[1].tagName === 'H1', 'message: MyComponent should return a div element which wraps two elements, a <code>button</code> and an <code>h1</code> element, in that order.');",
+        "assert(Mock.state('message') === 'Hello!', 'message: The state of MyComponent should initialize with a message containing the string <code>Hello!<code>');",
+        "assert((function() { Mock.setState({message: 'InitialState!'});var before = Mock.state('message');Mock.find('button').simulate('click');var after = Mock.state('message');return (before === 'InitialState!' && after === 'Goodbye!'); })(), 'message: Clicking the button element should run the <code>setMessage</code> method and upate the message property in the state to say <code>Goodbye!</code>');",
+        "assert((function() { var noSpace = originalCode.replace(/\\s/g,''); return (noSpace.includes('setMessage=()=>{')); })(), 'message: The <code>setMessage</code> method should be defined with a fat arrow function.');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "zd7123c01os1eddzaeu413aq",
+      "title": "React Challenge Template",
+      "description": [
+        "",
+        "",
+        ""
+      ],
+      "challengeSeed": [
+        "",
+        "",
+        ""
+      ],
+      "tail": [
+       "var Mock = eval(MyComponent);",
+       "var ShallowComponent;"
+      ],
+      "solutions": [],
+      "tests": [
+        "assert((function(){ try { }; catch(e) { }; return true })(), 'message: .');"
+      ],
+      "releasedOn": "May 25, 2017",
+      "type": "waypoint",
+      "challengeType": 8,
       "isRequired": false,
       "translations": {}
     }

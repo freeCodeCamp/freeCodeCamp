@@ -22,7 +22,7 @@ function filesToMarkdown(files = {}) {
   }, '\n');
 }
 
-export default function bugSaga(actions$, getState, { window }) {
+export default function bugSaga(actions$, { getState }, { window }) {
   return actions$
     .filter(({ type }) => (
       type === types.openIssueSearch ||

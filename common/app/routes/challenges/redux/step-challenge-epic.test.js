@@ -16,7 +16,7 @@ test(file, function(t) {
   t.test('does not respond to random actions', t => {
     const actions = Observable.of({ type: 'NotTheMomma' });
     let called = false;
-    stepChallengeEpic(actions, () => {})
+    stepChallengeEpic(actions, {})
       .subscribe(
         () => { called = true; },
         e => t.fail(e),
@@ -47,7 +47,7 @@ test(file, function(t) {
         }
       };
     });
-    stepChallengeEpic(actions, () => state)
+    stepChallengeEpic(actions, { getState: () => state })
       .subscribe(
         onNextSpy,
         e => {
@@ -87,7 +87,7 @@ test(file, function(t) {
         }
       };
     });
-    stepChallengeEpic(actions, () => state)
+    stepChallengeEpic(actions, { getState: () => state })
       .subscribe(
         onNextSpy,
         e => {
@@ -122,7 +122,7 @@ test(file, function(t) {
         }
       };
     });
-    stepChallengeEpic(actions, () => state)
+    stepChallengeEpic(actions, { getState: () => state })
       .subscribe(
         onNextSpy,
         e => {
