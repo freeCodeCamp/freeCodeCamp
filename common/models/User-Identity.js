@@ -1,5 +1,6 @@
 import debugFactory from 'debug';
 import dedent from 'dedent';
+import { Observable } from 'rx';
 
 import {
   setProfileFromGithub,
@@ -8,6 +9,7 @@ import {
   getSocialProvider
 } from '../../server/utils/auth';
 import { defaultProfileImage } from '../utils/constantStrings.json';
+import { observeMethod, observeQuery } from '../../server/utils/rx';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 
 const githubRegex = (/github/i);
@@ -132,4 +134,83 @@ export default function(UserIdent) {
       return next();
   });
  });
+
+  UserIdent.link = function(
+    userId,
+    provider,
+    authScheme,
+    profile,
+    credentials,
+    options = {},
+    cb
+  ) {
+    if (typeof options === 'function' && !cb) {
+      cb = options;
+      options = {};
+    }
+    const findIdent = observeMethod(UserIdent, 'findOne');
+    const createIdent = observeMethod(UserIdent, 'create');
+    const query = {
+      where: {
+        provider: getSocialProvider(provider),
+        externalId: profile.id
+      }
+    };
+
+    debug('link identity query', query);
+    return findIdent(query)
+      .flatMap(identity => {
+        const modified = new Date();
+        if (!identity) {
+          return createIdent({
+            provider: getSocialProvider(provider),
+            externalId: profile.id,
+            authScheme,
+            // we no longer want to keep the profile
+            // this is information we do not need or use
+            profile: null,
+            credentials,
+            userId,
+            created: modified,
+            modified
+          });
+        }
+        if (identity.userId.toString() !== userId.toString()) {
+          return Observable.throw(
+            new Error(
+              dedent`
+Your GitHub is already associated with another account.
+You may have accidentally created a duplicate account.
+No worries, though. We can fix this real quick.
+Please email us with your GitHub username: team@freecodecamp.com.
+              `.split('/n').join(' ')
+            )
+          );
+        }
+        identity.credentials = credentials;
+        return Observable.combineLatest(
+          observeQuery(
+            identity,
+            'updateAttributes',
+            {
+              profile,
+              credentials,
+              modified
+            }
+          ),
+          Observable.fromPromise(identity.user()),
+          (identity, user ) => ({ identity, user })
+        );
+      })
+      .subscribe(
+        ({ identity, user }) => {
+          cb(null, user, identity);
+        },
+        cb
+      );
+  };
+  UserIdent.getApp((_, app) => {
+    const UserCredential = app.models.UserCredential;
+    UserCredential.link = UserIdent.link.bind(UserIdent);
+  });
 }
