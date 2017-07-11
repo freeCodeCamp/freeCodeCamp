@@ -150,7 +150,12 @@ module.exports = function(app) {
 
   function unsubscribeAll(req, res, next) {
     req.checkParams('email', 'Must send a valid email').isEmail();
-    var query = { email: req.params.email };
+    var query = {
+      or: [
+        {email: req.params.email},
+        {username: req.params.email}
+      ]
+    };
     var params = {
       sendQuincyEmail: false,
       sendMonthlyEmail: false,
