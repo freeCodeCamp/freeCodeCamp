@@ -68,6 +68,14 @@ function isPanesAction({ type } = {}, typeToName) {
   return !!typeToName[type];
 }
 
+function getDividerLeft(numOfPanes, index) {
+  let dividerLeft = null;
+  if (numOfPanes > 1 && numOfPanes !== index + 1) {
+    dividerLeft = (100 / numOfPanes) * (index + 1);
+  }
+  return dividerLeft;
+}
+
 export default function createPanesAspects(typeToName) {
   const nameToType = Object.keys(typeToName).reduce((map, type) => {
     map[typeToName[type]] = type;
@@ -143,10 +151,7 @@ export default function createPanesAspects(typeToName) {
         ...state,
         panes,
         panesByName: panes.reduce((panes, name, index) => {
-          let dividerLeft = null;
-          if (numOfPanes > 1 && numOfPanes !== index + 1) {
-            dividerLeft = (100 / numOfPanes) * (index + 1);
-          }
+          const dividerLeft = getDividerLeft(numOfPanes, index);
           panes[name] = {
             name,
             dividerLeft,
@@ -164,16 +169,33 @@ export default function createPanesAspects(typeToName) {
   function metaReducer(state = getInitialState(), action) {
     if (action.meta && action.meta.isPaneAction) {
       const name = typeToName[action.type];
-      const pane = state.panesByName[name];
+      const oldPane = state.panesByName[name];
+      const pane = {
+        ...oldPane,
+        isHidden: !oldPane.isHidden
+      };
+      const panesByName = {
+        ...state.panesByName,
+        [name]: pane
+      };
+      const numOfPanes = state.panes.reduce((sum, name) => {
+        return panesByName[name].isHidden ? sum : sum + 1;
+      }, 0);
       return {
         ...state,
-        panesByName: {
-          ...state.panesByName,
-          [name]: {
-            ...pane,
-            isHidden: !pane.isHidden
-          }
-        }
+        panesByName: state.panes.reduce(
+          (panesByName, name, index) => {
+            if (!panesByName[name].isHidden) {
+              const dividerLeft = getDividerLeft(numOfPanes, index);
+              panesByName[name] = {
+                ...panesByName[name],
+                dividerLeft
+              };
+            }
+            return panesByName;
+          },
+          panesByName
+        )
       };
     }
     return state;
