@@ -5,6 +5,7 @@ import PureComponent from 'react-pure-render/component';
 import FA from 'react-fontawesome';
 import { Panel } from 'react-bootstrap';
 
+import ns from './ns.json';
 import Block from './Block.jsx';
 import {
   toggleThisPanel,
@@ -72,7 +73,7 @@ export class SuperBlock extends PureComponent {
       return null;
     }
     return (
-      <div className='challenge-block-description'>
+      <div className={ `${ns}-block-description` }>
         { message }
       </div>
     );
@@ -104,7 +105,7 @@ export class SuperBlock extends PureComponent {
     }
     return (
       <Panel
-        bsClass='map-accordion-panel'
+        bsClass={ `${ns}-accordion-panel` }
         collapsible={ true }
         eventKey={ dashedName || title }
         expanded={ isOpen }
@@ -114,9 +115,7 @@ export class SuperBlock extends PureComponent {
         onSelect={ this.handleSelect }
         >
         { this.renderMessage(message) }
-        <div
-          className='map-accordion-block'
-          >
+        <div className={ `${ns}-accordion-block` }>
           { this.renderBlocks(blocks) }
         </div>
       </Panel>

@@ -1,10 +1,9 @@
 import { createTypes } from 'redux-create-types';
-import { createAction, combineActions, handleActions } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 import identity from 'lodash/identity';
 import capitalize from 'lodash/capitalize';
 
-import mapUiEpic from './map-ui-epic.js';
 import selectChallengeEpic from './select-challenge-epic.js';
 
 import * as utils from './utils.js';
@@ -15,16 +14,11 @@ import {
 } from '../../redux';
 
 export const epics = [
-  mapUiEpic,
   selectChallengeEpic
 ];
 
 export const types = createTypes([
   'initMap',
-
-  'clearFilterPressed',
-  'escapeKeyInFilter',
-  'updateFilter',
 
   'toggleThisPanel',
 
@@ -36,12 +30,6 @@ export const types = createTypes([
 ], ns);
 
 export const initMap = createAction(types.initMap);
-export const updateFilter = createAction(
-  types.updateFilter,
-  e => e.target.value
-);
-export const clearFilterPressed = createAction(types.clearFilterPressed);
-export const escapeKeyInFilter = createAction(types.escapeKeyInFilter);
 
 export const toggleThisPanel = createAction(types.toggleThisPanel);
 export const collapseAll = createAction(types.collapseAll);
@@ -59,13 +47,11 @@ export const clickOnChallenge = createAction(
 
 const initialState = {
   mapUi: { isAllCollapsed: false },
-  filter: '',
   superBlocks: []
 };
 
 export const getNS = state => state[ns];
 export const allColapsedSelector = state => state[ns].isAllCollapsed;
-export const filterSelector = state => state[ns].filter;
 export const mapSelector = state => getNS(state).mapUi;
 export function makePanelOpenSelector(name) {
   return createSelector(
@@ -105,19 +91,6 @@ export function makePanelHiddenSelector(name) {
 export default function createReducer() {
   const reducer = handleActions(
     {
-      [types.updateFilter]: (state, { payload = '' }) => ({
-        ...state,
-        filter: payload
-      }),
-      [
-        combineActions(
-          types.clearFilterPressed,
-          types.escapeKeyInFilter
-        )
-      ]: (state) => ({
-        ...state,
-        filter: ''
-      }),
       [types.toggleThisPanel]: (state, { payload: name }) => {
         return {
           ...state,

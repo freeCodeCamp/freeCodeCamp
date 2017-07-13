@@ -8,9 +8,7 @@ import {
   updateSingleNode,
   toggleThisPanel,
   expandAllPanels,
-  collapseAllPanels,
-  applyFilterToMap,
-  unfilterMapUi
+  collapseAllPanels
 } from './utils.js';
 
 test('createMapUi', t => {
@@ -212,119 +210,5 @@ test('toggleAllPanels', t => {
     t.plan(2);
     t.deepLooseEqual(actual, expected);
     t.equal(actual.children[0].children[1], leaf);
-  });
-});
-test('applyFilterToMap', t => {
-  t.test('should not touch child that is already hidden', t => {
-    t.plan(1);
-    const expected = { name: 'bar', isHidden: true };
-    const actual = applyFilterToMap(
-      expected,
-      /foo/
-    );
-    t.equal(actual, expected);
-  });
-  t.test('should update child that is hidden', t => {
-    t.plan(1);
-    const expected = { title: 'bar', isHidden: false };
-    const input = { title: 'bar', isHidden: true };
-    const actual = applyFilterToMap(input, /bar/);
-    t.deepLooseEqual(actual, expected);
-  });
-  t.test('should unhide child that matches filter regex', t => {
-    t.plan(1);
-    const expected = { title: 'foo' };
-    const actual = applyFilterToMap({ title: 'foo' }, /foo/);
-    t.deepLooseEqual(actual, expected);
-  });
-  t.test('should hide child that does not match filter', t => {
-    t.plan(1);
-    const expected = { title: 'bar', isHidden: true };
-    const actual = applyFilterToMap({ title: 'bar' }, /foo/);
-    t.deepLooseEqual(actual, expected);
-  });
-  t.test('should not touch node that is already hidden', t => {
-    t.plan(1);
-    const expected = {
-      name: 'bar',
-      isHidden: true,
-      children: [
-        { name: 'baz', isHidden: true },
-        { name: 'baz2', isHidden: true }
-      ]
-    };
-    const actual = applyFilterToMap(expected, /foo/);
-    t.equal(actual, expected);
-  });
-  t.test('should not touch node that is unhidden', t => {
-    t.plan(1);
-    const expected = {
-      name: 'bar',
-      isHidden: false,
-      children: [
-        { title: 'baz', isHidden: true },
-        { title: 'foo', isHidden: false }
-      ]
-    };
-    const actual = applyFilterToMap(expected, /foo/);
-    t.equal(actual, expected);
-  });
-  t.test('should hide node if all children are hidden', t => {
-    t.plan(1);
-    const input = {
-      name: 'bar',
-      isHidden: false,
-      children: [
-        { name: 'baz' },
-        { name: 'baz2', isHidden: false }
-      ]
-    };
-    const expected = {
-      name: 'bar',
-      isHidden: true,
-      children: [
-        { name: 'baz', isHidden: true },
-        { name: 'baz2', isHidden: true }
-      ]
-    };
-    const actual = applyFilterToMap(input, /foo/);
-    t.deepLooseEqual(actual, expected);
-  });
-  t.test('should unhide node some children unhidden', t => {
-    t.plan(1);
-    const input = {
-      name: 'bar',
-      isHidden: true,
-      children: [
-        { title: 'baz', isHidden: true },
-        { title: 'foo', isHidden: false }
-      ]
-    };
-    const expected = {
-      name: 'bar',
-      isHidden: false,
-      children: [
-        { title: 'baz', isHidden: true },
-        { title: 'foo', isHidden: false }
-      ]
-    };
-    const actual = applyFilterToMap(input, /foo/);
-    t.deepLooseEqual(actual, expected);
-  });
-});
-test('unfilterMapUi', t => {
-  t.test('should not touch node that is already hidden', t => {
-    const expected = { isHidden: false };
-    const actual = unfilterMapUi(expected);
-    t.plan(1);
-    t.equal(actual, expected);
-  });
-  t.test('should update node that is not hidden', t => {
-    const expected = { isHidden: false };
-    const input = { isHidden: true };
-    const actual = unfilterMapUi(input);
-    t.plan(2);
-    t.notEqual(actual, input);
-    t.deepLooseEqual(actual, expected);
   });
 });

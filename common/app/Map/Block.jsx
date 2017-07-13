@@ -5,6 +5,7 @@ import FA from 'react-fontawesome';
 import PureComponent from 'react-pure-render/component';
 import { Panel } from 'react-bootstrap';
 
+import ns from './ns.json';
 import Challenge from './Challenge.jsx';
 import {
   toggleThisPanel,
@@ -64,7 +65,7 @@ export class Block extends PureComponent {
           <span>
             { title }
           </span>
-          <span className='challenge-block-time'>({ time })</span>
+          <span className={ `${ns}-block-time` }>({ time })</span>
         </h3>
       </div>
     );
@@ -96,7 +97,7 @@ export class Block extends PureComponent {
     }
     return (
       <Panel
-        bsClass='map-accordion-panel-nested'
+        bsClass={ `${ns}-accordion-panel-nested` }
         collapsible={ true }
         eventKey={ dashedName || title }
         expanded={ isOpen }

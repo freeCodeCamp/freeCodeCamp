@@ -1,96 +1,43 @@
-/*
- * based off of https://github.com/gitterHQ/sidecar
- * license: MIT
- */
-.map-buttons {
-  margin-top: -10px;
-  & button,
-  & .input-group{
-    width:300px;
-  }
-  .input-group{
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+// should be the same as the filename and ./ns.json
+@ns: map;
 
-.map-filter {
-    background:#fff;
-    border-color: darkgreen;
-}
-
-.map-filter + .input-group-addon {
-  min-width: inherit;
-  width: 40px;
-  color: darkgreen;
-  background-color: #fff;
-  border-color: darkgreen;
-  .fa {
-    position:absolute;
-    top:50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    right:10px;
-  }
-}
-
-.map-filter.filled + span.input-group-addon {
-  background: darkgreen;
-  border-color: #000d00;
-  color: #fff;
-  cursor: pointer;
-  padding: 0;
-  span {
-    display: inline-block;
-    min-height: 30px;
-    width: 100%;
-  }
-}
-
-.map-wrapper {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-
-.map-accordion {
+.@{ns}-accordion {
   max-width: 700px;
   overflow-y: auto;
   width: 100%;
 
-  .map-accordion-panel-title {
+  .@{ns}-accordion-panel-title {
     padding-bottom: 0px;
   }
 
-  .map-accordion-panel-collapse {
+  .@{ns}-accordion-panel-collapse {
     transition: height 0.001s;
   }
 
-  .map-accordion-panel-nested-collapse {
+  .@{ns}-accordion-panel-nested-collapse {
     transition: height 0.001s;
   }
 
-  .map-accordion-panel-nested {
+  .@{ns}-accordion-panel-nested {
     margin: 0 20px;
   }
 
-  .map-accordion-panel-nested-body {
+  .@{ns}-accordion-panel-nested-body {
     padding-left: 36px;
   }
 
-  .map-accordion-panel-nested-title > a {
+  .@{ns}-accordion-panel-nested-title > a {
     cursor: pointer;
   }
 
   @media (max-width: 400px) {
-    .map-accordion-panel-nested {
+    .@{ns}-accordion-panel-nested {
       margin: 0;
     }
-    .map-accordion-panel-nested-title {
+    .@{ns}-accordion-panel-nested-title {
       padding-left: 9px;
     }
-    .map-accordion-panel-nested-body {
+    .@{ns}-accordion-panel-nested-body {
       padding-left: 18px;
     }
   }
@@ -120,7 +67,7 @@
     display: block;
   }
 
-  .map-accordion-block {
+  .@{ns}-accordion-block {
     :before {
       margin-right: 15px;
     }
@@ -168,7 +115,7 @@
     }
   }
 
-  .challenge-block-description {
+  .@{ns}-block-description {
     margin:0;
     margin-top:-10px;
     padding:0 15px 23px 30px;
@@ -183,7 +130,7 @@
   }
 }
 
-.challenge-block-time {
+.@{ns}-block-time {
   font-size: 18px;
   color: #BBBBBB;
   margin-bottom: 20px;
@@ -194,43 +141,15 @@
   }
 }
 
-#noneFound {
-  display:none;
-  margin:60px 30px 0;
-  font-size:30px;
-  text-align: center;
-  color:darkgreen;
-  .fa {
-    display:block;
-    font-size:300px;
-  }
-}
-
-
 .night {
-  .map-fixed-header {
-    background-color: @night-body-bg;
-  }
-  #map-filter, .input-group-addon {
-    border-color: #292929;
-    background-color: #666;
-    color:#ABABAB;
-  }
-  .map-accordion span.no-link-underline {
+  .@{ns}-accordion span.no-link-underline {
     color: @brand-primary;
   }
-  .map-accordion h2 > a {
+  .@{ns}-accordion h2 > a {
     background:#666;
   }
-  .map-accordion a:focus, #noneFound {
+  .@{ns}-accordion a:focus, #noneFound {
     color: #ABABAB;
-  }
-  .input-group-addon {
-    &.filled{
-      background: @gray;
-      border-color: #292929;
-      color: white;
-    }
   }
   .challenge-title {
     color: @night-text-color;

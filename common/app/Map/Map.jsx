@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
 import { Col, Row } from 'react-bootstrap';
 
-import MapHeader from './Header.jsx';
+import ns from './ns.json';
 import SuperBlock from './Super-Block.jsx';
 import {
   updateTitle,
@@ -61,8 +61,7 @@ export class ShowMap extends PureComponent {
     return (
       <Row>
         <Col xs={ 12 }>
-          <MapHeader />
-          <div className='map-accordion center-block'>
+          <div className={ `${ns}-accordion center-block` }>
             { this.renderSuperBlocks(superBlocks) }
             <div className='spacer' />
           </div>
