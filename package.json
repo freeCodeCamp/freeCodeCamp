@@ -175,7 +175,7 @@
     "sort-keys": "^1.1.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.2.2",
-    "webpack": "^1.9.12",
+    "webpack": "^2.4.1",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-manifest-plugin": "^1.0.0",
