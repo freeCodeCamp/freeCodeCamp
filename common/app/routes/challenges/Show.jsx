@@ -13,6 +13,7 @@ import BackEnd from './views/backend';
 import { challengeMetaSelector } from './redux';
 import {
   updateTitle,
+  updateCurrentChallenge,
   fetchChallenge,
   fetchChallenges,
 
@@ -34,6 +35,7 @@ const mapDispatchToProps = {
   fetchChallenge,
   fetchChallenges,
   makeToast,
+  updateCurrentChallenge,
   updateTitle
 };
 
@@ -80,6 +82,7 @@ const propTypes = {
   makeToast: PropTypes.func.isRequired,
   params: PropTypes.object.isRequired,
   title: PropTypes.string,
+  updateCurrentChallenge: PropTypes.func.isRequired,
   updateTitle: PropTypes.func.isRequired,
   viewType: PropTypes.string
  };
@@ -110,8 +113,9 @@ export class Show extends PureComponent {
     const { title } = nextProps;
     const { dashedName } = nextProps.params;
     const { lang, isTranslated } = nextProps;
-    const { updateTitle, makeToast } = this.props;
+    const { updateTitle, updateCurrentChallenge, makeToast } = this.props;
     if (this.props.params.dashedName !== dashedName) {
+      updateCurrentChallenge(dashedName);
       updateTitle(title);
       if (lang !== 'en' && !isTranslated) {
         makeToast({
