@@ -8,6 +8,7 @@
       "enableHttpContext": false
     },
     "rest": {
+      "handleErrors": false,
       "normalizeHttpPath": false,
       "xml": false
     },
@@ -22,9 +23,6 @@
     "cors": {
       "origin": true,
       "credentials": true
-    },
-    "errorHandler": {
-      "disableStackTrace": false
     }
   }
 }

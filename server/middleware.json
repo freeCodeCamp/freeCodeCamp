@@ -53,7 +53,7 @@
   },
   "files": {},
   "final:after": {
-    "./middlewares/keymetrics": {},
+    "./middlewares/error-reporter": {},
     "./middlewares/error-handlers": {}
   }
 }

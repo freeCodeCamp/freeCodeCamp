@@ -6,13 +6,25 @@ import debugFactory from 'debug';
 import { isEmail } from 'validator';
 import path from 'path';
 
-import { saveUser, observeMethod } from '../../server/utils/rx';
-import { blacklistedUsernames } from '../../server/utils/constants';
+import { saveUser, observeMethod } from '../../server/utils/rx.js';
+import { blacklistedUsernames } from '../../server/utils/constants.js';
+import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 
 const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 const isDev = process.env.NODE_ENV !== 'production';
 const devHost = process.env.HOST || 'localhost';
+
+const createEmailError = () => new Error(
+ 'Please check to make sure the email is a valid email address.'
+);
+
+function destroyAll(id, Model) {
+  return Observable.fromNodeCallback(
+    Model.destroyAll,
+    Model
+  )({ userId: id });
+}
 
 function getAboutProfile({
   username,
@@ -64,10 +76,99 @@ module.exports = function(User) {
     User.count$ = Observable.fromNodeCallback(User.count, User);
   });
 
+  User.beforeRemote('create', function({ req }) {
+    const body = req.body;
+    // note(berks): we now require all new users to supply an email
+    // this was not always the case
+    if (
+      typeof body.email !== 'string' ||
+      !isEmail(body.email)
+    ) {
+      return Promise.reject(createEmailError());
+    }
+    // assign random username to new users
+    // actual usernames will come from github
+    body.username = 'fcc' + uuid.v4();
+    if (body) {
+      // this is workaround for preventing a server crash
+      // we do this on create and on save
+      // refer strongloop/loopback/#1364
+      if (body.password === '') {
+        body.password = null;
+      }
+      // set email verified false on user email signup
+      // should not be set with oauth signin methods
+      body.emailVerified = false;
+    }
+    return User.doesExist(null, body.email)
+      .catch(err => {
+        throw wrapHandledError(err, { redirectTo: '/email-signup' });
+      })
+      .then(exists => {
+        if (!exists) {
+          return null;
+        }
+        const err = wrapHandledError(
+          new Error('user already exists'),
+          {
+            redirectTo: '/email-signin',
+            message: dedent`
+      The ${body.email} email address is already associated with an account.
+      Try signing in with it here instead.
+              `
+          }
+        );
+        throw err;
+      });
+  });
+
+  // send welcome email to new camper
+  User.afterRemote('create', function({ req, res }, user, next) {
+    debug('user created, sending email');
+    if (!user.email || !isEmail(user.email)) { return next(); }
+    const redirect = req.session && req.session.returnTo ?
+      req.session.returnTo :
+      '/';
+
+    var mailOptions = {
+      type: 'email',
+      to: user.email,
+      from: 'team@freecodecamp.com',
+      subject: 'Welcome to freeCodeCamp!',
+      protocol: isDev ? null : 'https',
+      host: isDev ? devHost : 'freecodecamp.com',
+      port: isDev ? null : 443,
+      template: path.join(
+        __dirname,
+        '..',
+        '..',
+        'server',
+        'views',
+        'emails',
+        'a-extend-user-welcome.ejs'
+      ),
+      redirect: '/email-signin'
+    };
+
+    debug('sending welcome email');
+    return user.verify(mailOptions, function(err) {
+      if (err) { return next(err); }
+      req.flash('success', {
+        msg: [ 'Congratulations ! We\'ve created your account. ',
+               'Please check your email. We sent you a link that you can ',
+               'click to verify your email address and then login.'
+             ].join('')
+      });
+      return res.redirect(redirect);
+    });
+  });
+
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
+      // Some old accounts will not have emails associated with theme
+      // we verify only if the email field is populated
       if (user.email && !isEmail(user.email)) {
-        return next(new Error('Email format is not valid'));
+        return next(createEmailError());
       }
       user.username = user.username.trim().toLowerCase();
       user.email = typeof user.email === 'string' ?
@@ -82,12 +183,47 @@ module.exports = function(User) {
         user.progressTimestamps.push({ timestamp: Date.now() });
       }
       // this is workaround for preventing a server crash
+      // we do this on save and on create
       // refer strongloop/loopback/#1364
       if (user.password === '') {
         user.password = null;
       }
     }
     return next();
+  });
+
+  // remove lingering user identities before deleting user
+  User.observe('before delete', function(ctx, next) {
+    const UserIdentity = User.app.models.UserIdentity;
+    const UserCredential = User.app.models.UserCredential;
+    debug('removing user', ctx.where);
+    var id = ctx.where && ctx.where.id ? ctx.where.id : null;
+    if (!id) {
+      return next();
+    }
+    return Observable.combineLatest(
+      destroyAll(id, UserIdentity),
+      destroyAll(id, UserCredential),
+      function(identData, credData) {
+        return {
+          identData: identData,
+          credData: credData
+        };
+      }
+    )
+      .subscribe(
+        function(data) {
+          debug('deleted', data);
+        },
+        function(err) {
+          debug('error deleting user %s stuff', id, err);
+          next(err);
+        },
+        function() {
+          debug('user stuff deleted for user %s', id);
+          next();
+        }
+      );
   });
 
   debug('setting up user hooks');
@@ -153,41 +289,9 @@ module.exports = function(User) {
     return ctx.res.redirect(redirect);
   });
 
-  User.beforeRemote('create', function({ req, res }, _, next) {
-    req.body.username = 'fcc' + uuid.v4().slice(0, 8);
-    if (!req.body.email) {
-      return next();
-    }
-    if (!isEmail(req.body.email)) {
-      return next(new Error('Email format is not valid'));
-    }
-    return User.doesExist(null, req.body.email)
-      .then(exists => {
-        if (!exists) {
-          return next();
-        }
-
-        req.flash('error', {
-          msg: dedent`
-      The ${req.body.email} email address is already associated with an account.
-      Try signing in with it here instead.
-          `
-        });
-
-        return res.redirect('/email-signin');
-      })
-      .catch(err => {
-        console.error(err);
-        req.flash('error', {
-          msg: 'Oops, something went wrong, please try again later'
-        });
-        return res.redirect('/email-signup');
-      });
-  });
-
   User.on('resetPasswordRequest', function(info) {
     if (!isEmail(info.email)) {
-      console.error(new Error('Email format is not valid'));
+      console.error(createEmailError());
       return null;
     }
     let url;
@@ -232,7 +336,7 @@ module.exports = function(User) {
     const { body } = ctx.req;
     if (body && typeof body.email === 'string') {
       if (!isEmail(body.email)) {
-        return next(new Error('Email format is not valid'));
+        return next(createEmailError());
       }
       body.email = body.email.toLowerCase();
     }
@@ -392,9 +496,7 @@ module.exports = function(User) {
       true;
 
     if (!isEmail('' + email)) {
-      return Observable.throw(
-        new Error('The submitted email not valid.')
-      );
+      return Observable.throw(createEmailError());
     }
     // email is already associated and verified with this account
     if (ownEmail && this.emailVerified) {
@@ -588,11 +690,13 @@ module.exports = function(User) {
 
   User.prototype.updateTheme = function updateTheme(theme) {
     if (!this.constructor.themes[theme]) {
-      const err = new Error(
-        'Theme is not valid.'
+      const err = wrapHandledError(
+        new Error('Theme is not valid.'),
+        {
+          Type: 'info',
+          message: err.message
+        }
       );
-      err.messageType = 'info';
-      err.userMessage = err.message;
       return Promise.reject(err);
     }
     return this.update$({ theme })
