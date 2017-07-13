@@ -28,7 +28,8 @@
     "test": "npm run test-js && npm run test-challenges",
     "cover": "babel-node ./node_modules/.bin/babel-istanbul cover tape common/**/*.test.js",
     "coveralls": "npm run cover && istanbul-coveralls",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "commitmsg": "validate-commit-msg"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
@@ -66,6 +67,7 @@
     "helmet": "^3.1.0",
     "helmet-csp": "^2.1.0",
     "history": "^3.2.1",
+    "husky": "^0.14.3",
     "invariant": "^2.2.1",
     "jade": "^1.11.0",
     "jquery": "~3.1.1",
@@ -175,6 +177,7 @@
     "sort-keys": "^1.1.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.2.2",
+    "validate-commit-msg": "^2.12.2",
     "webpack": "^1.9.12",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2",
