@@ -16,6 +16,7 @@ export const types = createTypes([
   'panesMounted',
   'panesUpdated',
   'panesWillMount',
+  'panesWillUnmount',
   'updateSize',
 
   'dividerClicked',
@@ -31,6 +32,7 @@ export const types = createTypes([
 export const panesMounted = createAction(types.panesMounted);
 export const panesUpdated = createAction(types.panesUpdated);
 export const panesWillMount = createAction(types.panesWillMount);
+export const panesWillUnmount = createAction(types.panesWillUnmount);
 
 export const dividerClicked = createAction(types.dividerClicked);
 export const dividerMoved = createAction(types.dividerMoved);
@@ -139,6 +141,13 @@ export default function createPanesAspects(typeToName) {
       ...state,
       height,
       width
+    }),
+    // used to clear bin buttons
+    [types.panesWillUnmount]: state => ({
+      ...state,
+      panes: [],
+      panesByName: {},
+      pressedDivider: null
     }),
     [
       combineActions(

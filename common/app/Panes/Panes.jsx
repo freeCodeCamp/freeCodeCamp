@@ -6,6 +6,7 @@ import {
   panesMounted,
   panesUpdated,
   panesWillMount,
+  panesWillUnmount,
 
   panesSelector,
   panesByNameSelector,
@@ -50,7 +51,8 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   panesMounted,
   panesUpdated,
-  panesWillMount
+  panesWillMount,
+  panesWillUnmount
 };
 
 const propTypes = {
@@ -59,7 +61,8 @@ const propTypes = {
   panes: PropTypes.array,
   panesMounted: PropTypes.func.isRequired,
   panesUpdated: PropTypes.func.isRequired,
-  panesWillMount: PropTypes.func.isRequired
+  panesWillMount: PropTypes.func.isRequired,
+  panesWillUnmount: PropTypes.func.isRequired
 };
 
 export class Panes extends PureComponent {
@@ -69,6 +72,10 @@ export class Panes extends PureComponent {
 
   componentDidMount() {
     this.props.panesMounted();
+  }
+
+  componentWillUnmount() {
+    this.props.panesWillUnmount();
   }
 
   componentWillReceiveProps(nextProps) {
