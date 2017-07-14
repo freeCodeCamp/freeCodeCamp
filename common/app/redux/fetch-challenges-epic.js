@@ -51,8 +51,12 @@ export function fetchChallengesEpic(
   { getState },
   { services }
 ) {
-  return actions::ofType('' + types.fetchChallenges)
-    .flatMap(() => {
+  return actions::ofType(
+      // async type
+      '' + types.fetchChallenges,
+      types.appMounted
+    )
+    .flatMapLatest(() => {
       const lang = langSelector(getState());
       const options = {
         lang,
@@ -73,6 +77,7 @@ export function fetchChallengesEpic(
             result
           );
         })
+        .startWith({ type: types.fetchChallenges.start })
         .catch(createErrorObservable);
     });
 }

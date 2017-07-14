@@ -15,9 +15,7 @@ import {
   updateTitle,
   updateCurrentChallenge,
   fetchChallenge,
-  fetchChallenges,
 
-  areChallengesLoadedSelector,
   challengeSelector,
   langSelector
 } from '../../redux';
@@ -33,7 +31,6 @@ const views = {
 
 const mapDispatchToProps = {
   fetchChallenge,
-  fetchChallenges,
   makeToast,
   updateCurrentChallenge,
   updateTitle
@@ -42,20 +39,17 @@ const mapDispatchToProps = {
 const mapStateToProps = createSelector(
   challengeSelector,
   challengeMetaSelector,
-  areChallengesLoadedSelector,
   langSelector,
   (
     { dashedName, isTranslated },
     { viewType, title },
-    areChallengesLoaded,
     lang
   ) => ({
     lang,
     isTranslated,
     title,
     challenge: dashedName,
-    viewType,
-    areChallengesLoaded
+    viewType
   })
 );
 
@@ -70,12 +64,11 @@ const fetchOptions = {
 };
 
 const link = 'http://forum.freecodecamp.com/t/' +
-   'guidelines-for-translating-free-code-camp' +
-   '-to-any-language/19111';
+  'guidelines-for-translating-free-code-camp' +
+  '-to-any-language/19111';
 
 const propTypes = {
   areChallengesLoaded: PropTypes.bool,
-  fetchChallenges: PropTypes.func.isRequired,
   isStep: PropTypes.bool,
   isTranslated: PropTypes.bool,
   lang: PropTypes.string.isRequired,
@@ -88,7 +81,6 @@ const propTypes = {
  };
 
 export class Show extends PureComponent {
-
   componentWillMount() {
     const { lang, isTranslated, makeToast } = this.props;
     if (lang !== 'en' && !isTranslated) {
@@ -101,9 +93,6 @@ export class Show extends PureComponent {
   }
 
   componentDidMount() {
-    if (!this.props.areChallengesLoaded) {
-      this.props.fetchChallenges();
-    }
     if (this.props.title) {
       this.props.updateTitle(this.props.title);
     }
