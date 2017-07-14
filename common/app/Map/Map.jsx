@@ -8,7 +8,6 @@ import { Col, Row } from 'react-bootstrap';
 import ns from './ns.json';
 import SuperBlock from './Super-Block.jsx';
 import {
-  updateTitle,
   fetchChallenges,
 
   superBlocksSelector
@@ -18,7 +17,7 @@ const mapStateToProps = state => ({
   superBlocks: superBlocksSelector(state)
 });
 
-const mapDispatchToProps = { fetchChallenges, updateTitle };
+const mapDispatchToProps = { fetchChallenges };
 const fetchOptions = {
   fetchAction: 'fetchChallenges',
   isPrimed({ superBlocks }) {
@@ -28,22 +27,10 @@ const fetchOptions = {
 const propTypes = {
   fetchChallenges: PropTypes.func.isRequired,
   params: PropTypes.object,
-  superBlocks: PropTypes.array,
-  updateTitle: PropTypes.func.isRequired
+  superBlocks: PropTypes.array
 };
 
 export class ShowMap extends PureComponent {
-  componentWillMount() {
-    // if no params then map is open in drawer
-    // do not update title
-    if (!this.props.params) {
-      return;
-    }
-    this.props.updateTitle(
-      'A Map to Learn to Code and Become a Software Engineer'
-    );
-  }
-
   renderSuperBlocks(superBlocks) {
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
       return <div>No Super Blocks</div>;
