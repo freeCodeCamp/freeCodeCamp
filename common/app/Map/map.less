@@ -6,80 +6,14 @@
   overflow-y: auto;
   width: 100%;
 
-  .@{ns}-accordion-panel-title {
-    padding-bottom: 0px;
-  }
-
-  .@{ns}-accordion-panel-collapse {
-    transition: height 0.001s;
-  }
-
-  .@{ns}-accordion-panel-nested-collapse {
-    transition: height 0.001s;
-  }
-
-  .@{ns}-accordion-panel-nested {
-    margin: 0 20px;
-  }
-
-  .@{ns}-accordion-panel-nested-body {
-    padding-left: 36px;
-  }
-
-  .@{ns}-accordion-panel-nested-title > a {
-    cursor: pointer;
-  }
-
-  @media (max-width: 400px) {
-    .@{ns}-accordion-panel-nested {
-      margin: 0;
-    }
-    .@{ns}-accordion-panel-nested-title {
-      padding-left: 9px;
-    }
-    .@{ns}-accordion-panel-nested-body {
-      padding-left: 18px;
-    }
-  }
-
   a:focus {
     text-decoration: none;
     color:darkgreen;
   }
+
   a:focus:hover {
     text-decoration: underline;
     color:#001800;
-  }
-
-  h2 > a {
-    width:100%;
-    display:block;
-    background:#efefef;
-    padding:10px 0;
-    padding-left:50px;
-    padding-right:20px;
-    cursor: pointer;
-  }
-
-  a > h3 {
-    padding-left: 40px;
-    padding-bottom: 10px;
-    display: block;
-  }
-
-  .@{ns}-accordion-block {
-    :before {
-      margin-right: 15px;
-    }
-
-    p {
-      text-indent: -15px;
-      margin-left: 60px;
-      padding-right: 20px;
-      @media (max-width: 400px) {
-          margin-left:30px;
-      }
-    }
   }
 
   @media (max-width: 720px) {
@@ -115,38 +49,65 @@
     }
   }
 
-  .@{ns}-block-description {
-    margin:0;
-    margin-top:-10px;
-    padding:0 15px 23px 30px;
-  }
-
-  span.no-link-underline {
-    margin-left:-30px;
-    color: #666;
-  }
-  div > div:last-child {
-    margin-bottom:30px
+  .@{ns}-caret {
+    color: @gray-dark;
+    text-decoration: none;
+    // make sure all carats are fixed width
+    width: 10px;
   }
 }
 
+
+.@{ns}-accordion-block .@{ns}-accordion-panel-heading {
+  padding-left: 26px;
+}
+
+.@{ns}-challenge-title, .@{ns}-accordion-panel-heading {
+  background: @body-bg;
+  line-height: 26px;
+  padding: 4px 12px 4px 10px;
+  width:100%;
+}
+
+.@{ns}-challenge-title {
+  &::before {
+    padding-right: 6px;
+  }
+  padding-left: 40px;
+  a {
+    cursor: pointer;
+  }
+}
+
+.@{ns}-accordion-panel-heading a {
+  cursor: pointer;
+  display: block;
+}
+
+.@{ns}-accordion-panel-collapse {
+  transition: height 0.001s;
+}
+
 .@{ns}-block-time {
-  font-size: 18px;
   color: #BBBBBB;
-  margin-bottom: 20px;
   @media (min-width: 721px) {
-    // margin-right: 20px;
-    // margin-top: -30px;
     float: right;
   }
 }
 
+.@{ns}-block-description {
+  margin:0;
+  margin-top:-10px;
+  padding:0 15px 23px 30px;
+}
+
+
 .night {
-  .@{ns}-accordion span.no-link-underline {
+  .@{ns}-accordion .no-link-underline {
     color: @brand-primary;
   }
   .@{ns}-accordion h2 > a {
-    background:#666;
+    background: #666;
   }
   .@{ns}-accordion a:focus, #noneFound {
     color: #ABABAB;

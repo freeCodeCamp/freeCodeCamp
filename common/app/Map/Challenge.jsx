@@ -133,8 +133,7 @@ export class Challenge extends PureComponent {
     const challengeClassName = classnames({
       'text-primary': true,
       'padded-ionic-icon': true,
-      'negative-15': true,
-      'challenge-title': true,
+      'map-challenge-title': true,
       'ion-checkmark-circled faded': !(isLocked || isComingSoon) && isCompleted,
       'ion-ios-circle-outline': !(isLocked || isComingSoon) && !isCompleted,
       'ion-locked': isLocked || isComingSoon,
@@ -149,7 +148,7 @@ export class Challenge extends PureComponent {
       );
     }
     return (
-      <p
+      <div
         className={ challengeClassName }
         key={ title }
         >
@@ -160,7 +159,7 @@ export class Challenge extends PureComponent {
             { this.renderRequired(isRequired) }
           </span>
         </Link>
-      </p>
+      </div>
     );
   }
 }

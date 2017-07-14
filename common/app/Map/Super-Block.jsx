@@ -81,13 +81,14 @@ export class SuperBlock extends PureComponent {
 
   renderHeader(isOpen, title, isCompleted) {
     return (
-      <h2 className={ isCompleted ? 'faded' : '' }>
+      <div className={ isCompleted ? 'faded' : '' }>
         <FA
-          className='no-link-underline'
+          className={ `${ns}-caret` }
           name={ isOpen ? 'caret-down' : 'caret-right' }
+          size='lg'
         />
         { title }
-      </h2>
+      </div>
     );
   }
 

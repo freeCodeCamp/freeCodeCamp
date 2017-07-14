@@ -56,17 +56,16 @@ export class Block extends PureComponent {
 
   renderHeader(isOpen, title, time, isCompleted) {
     return (
-      <div>
-        <h3 className={ isCompleted ? 'faded clear-fix' : 'clear-fix' }>
-          <FA
-            className='no-link-underline'
-            name={ isOpen ? 'caret-down' : 'caret-right' }
-          />
-          <span>
-            { title }
-          </span>
-          <span className={ `${ns}-block-time` }>({ time })</span>
-        </h3>
+      <div className={ isCompleted ? 'faded' : '' }>
+        <FA
+          className='map-caret'
+          name={ isOpen ? 'caret-down' : 'caret-right' }
+          size='lg'
+        />
+        <span>
+        { title }
+        </span>
+        <span className={ `${ns}-block-time` }>({ time })</span>
       </div>
     );
   }
@@ -97,7 +96,7 @@ export class Block extends PureComponent {
     }
     return (
       <Panel
-        bsClass={ `${ns}-accordion-panel-nested` }
+        bsClass={ `${ns}-accordion-panel` }
         collapsible={ true }
         eventKey={ dashedName || title }
         expanded={ isOpen }
