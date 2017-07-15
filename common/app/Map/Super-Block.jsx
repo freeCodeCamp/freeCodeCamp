@@ -29,8 +29,8 @@ function makeMapStateToProps(_, { dashedName }) {
       isOpen,
       isHidden,
       dashedName,
-      title: superBlock.title,
-      blocks: superBlock.blocks,
+      title: dashedName || superBlock.title,
+      blocks: superBlock.blocks || [],
       message: superBlock.message
     })
   );
@@ -58,7 +58,7 @@ export class SuperBlock extends PureComponent {
 
   renderBlocks(blocks) {
     if (!Array.isArray(blocks) || !blocks.length) {
-      return <div>No Blocks Found</div>;
+      return null;
     }
     return blocks.map(dashedName => (
       <Block

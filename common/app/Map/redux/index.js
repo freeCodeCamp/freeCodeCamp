@@ -58,7 +58,7 @@ export function makePanelOpenSelector(name) {
     mapSelector,
     mapUi => {
       const node = utils.getNode(mapUi, name);
-      return node ? node.isOpen : true;
+      return node ? node.isOpen : false;
     }
   );
 }
