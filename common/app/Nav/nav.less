@@ -1,0 +1,223 @@
+.navbar {
+  background-color: @brand-primary;
+}
+
+.navbar-nav > li > a {
+  color: @body-bg;
+  &:hover {
+    color: @brand-primary;
+  }
+}
+
+.btn-nav {
+  margin-top: 10px;
+}
+
+.navbar-brand {
+  font-size: 26px;
+}
+
+.navbar > .container {
+  width: auto;
+  padding-right: 0px;
+
+  @media (max-width: 767px) {
+    // container default padding size
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.nav-height {
+  border: none;
+  height: @navbar-height;
+  width: 100%;
+}
+
+.nav-logo {
+  height: 40px;
+  margin-top: -10px;
+
+  @media (max-width: 397px) {
+    height: 30px;
+    margin-top: -5px;
+  }
+  @media (max-width: 335px) {
+    height: 25px;
+    margin-top: -2px;
+  }
+}
+
+.navbar-right {
+  @media (min-width: 767px) {
+    margin-right:0;
+  }
+  @media (max-width: 991px) and (min-width: 767px) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-right: 0px;
+    white-space: nowrap;
+  }
+  background-color: @brand-primary;
+  text-align: center;
+}
+.navbar {
+  white-space: nowrap;
+  border: none;
+  line-height: 1;
+  @media (min-width: 767px) {
+    padding-left: 15px;
+    padding-right: 30px;
+  }
+}
+
+li.avatar-points, li.avatar-points > a { padding:0; margin:0 }
+
+
+.brownie-points-nav {
+  @media (min-width: 991px) and (max-width: 1030px) {
+    float: none !important;
+    padding-right: 10px;
+    display: inline-block;
+  }
+  @media (min-width: 991px) {
+    float: left;
+    padding: 15px;
+  }
+}
+
+.navbar-nav a {
+  color: @body-bg;
+  font-size: 20px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+.navbar-toggle {
+  color: @body-bg;
+
+  &:hover,
+  &:focus {
+    color: #4a2b0f;
+  }
+}
+
+
+.signup-btn-nav {
+  margin-top: -2px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  margin-right: -12px;
+  @media (min-width: 991px) and (max-width: 1010px) {
+    margin-left: -10px;
+    margin-right: -5px;
+  }
+}
+
+a[href="/email-signup"], a[href="/email-signin"] {
+  &.btn-social.btn-lg > :first-child {
+    line-height:43px;
+    font-size:26px;
+  }
+}
+
+.public-profile-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.navbar-collapse {
+  border-top: 0;
+}
+
+@media (max-width: 991px) {
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .navbar-nav {
+    margin-top: 0;
+  }
+
+  .navbar-nav > li {
+    float: none;
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .navbar-text {
+    float: none;
+    margin: 15px 0;
+  }
+
+  /* since 3.1.0 */
+  .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+
+  .collapsing {
+    overflow: hidden !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+.navbar-toggle {
+  width: 80px;
+  padding-left: 0;
+  padding-right: 8px;
+  margin: 7px 2px 7px 0;
+  text-align: left;
+  font-size: 10px;
+}
+
+.hamburger-text {
+  line-height: 0.75em;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+
+.night {
+  .navbar-default {
+    .navbar-nav {
+      & > li > a {
+        color: #CCC;
+      }
+      .dropdown-menu {
+        background-color: @gray;
+        a {
+          color: @night-text-color !important;
+        }
+      }
+      a:focus,
+      a:hover,
+      .open #nav-Community-dropdown {
+        background-color: #666 !important;
+        color: @link-hover-color !important;
+      }
+    }
+  }
+  .navbar-toggle {
+    &:hover,
+    &:focus {
+      background-color: #666;
+      color: @link-hover-color;
+      border-color: #666;
+    }
+  }
+}

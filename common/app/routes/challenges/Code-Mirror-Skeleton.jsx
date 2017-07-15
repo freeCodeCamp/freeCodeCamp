@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import PureComponent from 'react-pure-render/component';
 import { Grid, Col, Row } from 'react-bootstrap';
 
+import ns from './ns.json';
+
 const propTypes = {
   content: PropTypes.string
 };
@@ -10,7 +12,7 @@ export default class CodeMirrorSkeleton extends PureComponent {
 
   renderLine(line, i) {
     return (
-      <div className='shimmer' key={ i }>
+      <div className={ `${ns}-shimmer` } key={ i }>
         <Row>
           <Col xs={ 12 }>
             <div className='sprite-wrapper'>
