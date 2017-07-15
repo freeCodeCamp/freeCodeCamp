@@ -114,10 +114,10 @@ export default function createReducer() {
         };
       },
       [app.fetchChallenges.complete]: (state, { payload }) => {
-        const { entities, results } = payload;
+        const { entities, result } = payload;
         return {
           ...state,
-          mapUi: utils.createMapUi(entities, results)
+          mapUi: utils.createMapUi(entities, result)
         };
       }
     },

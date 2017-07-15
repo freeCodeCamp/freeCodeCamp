@@ -39,7 +39,7 @@ export function createMapUi(
     challenge: challengeMap,
     superBlock: superBlockMap
   } = {},
-  superBlocks
+  { superBlocks } = {}
 ) {
   if (!superBlocks || !superBlockMap || !blockMap) {
     return {};

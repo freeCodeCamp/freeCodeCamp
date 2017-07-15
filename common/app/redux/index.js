@@ -93,7 +93,7 @@ export const fetchChallengeCompleted = createAction(
 export const fetchChallenges = createAction('' + types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
   types.fetchChallenges.complete,
-  (entities, results) => ({ entities, results }),
+  (entities, result) => ({ entities, result }),
   entities => ({ entities })
 );
 export const updateCurrentChallenge = createAction(
@@ -161,8 +161,7 @@ const initialState = {
   theme: 'default',
   // eventually this should be only in the user object
   currentChallenge: '',
-  superBlocks: [],
-  areChallengesLoaded: false
+  superBlocks: []
 };
 
 export const getNS = state => state[ns];
@@ -174,8 +173,6 @@ export const titleSelector = state => getNS(state).title;
 export const currentChallengeSelector = state => getNS(state).currentChallenge;
 export const superBlocksSelector = state => getNS(state).superBlocks;
 export const signInLoadingSelector = state => !getNS(state).isSignInAttempted;
-export const areChallengesLoadedSelector =
-  state => getNS(state).areChallengesLoaded;
 
 export const userSelector = createSelector(
   state => getNS(state).user,
@@ -241,10 +238,12 @@ export default function createReducer() {
         ...state,
         currentChallenge: payload.currentChallenge
       }),
-      [types.fetchChallenges.complete]: (state, { payload }) => ({
+      [combineActions(
+        types.fetchChallenge.complete,
+        types.fetchChallenges.complete
+      )]: (state, { payload }) => ({
         ...state,
-        superBlocks: payload.results,
-        areChallengesLoaded: payload.results.length > 0
+        superBlocks: payload.result.superBlocks
       }),
       [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
         ...state,

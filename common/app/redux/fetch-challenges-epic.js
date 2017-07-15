@@ -36,7 +36,8 @@ export function fetchChallengeEpic(actions, { getState }, { services }) {
             fetchChallengeCompleted({
               entities,
               currentChallenge: result.challenge,
-              challenge: entities.challenge[result.challenge]
+              challenge: entities.challenge[result.challenge],
+              result
             }),
             redirect ? delayedRedirect(redirect) : null
           ];

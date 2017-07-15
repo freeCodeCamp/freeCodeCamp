@@ -21,20 +21,17 @@ const mapSchema = valuesOf(superBlock);
 let mapObservableCache;
 /*
  * interface ChallengeMap {
- *   result: [superBlockDashedName: String]
+ *   result: {
+ *     superBlocks: [ ...superBlockDashedName: String ]
+*    },
  *   entities: {
  *     superBlock: {
- *       [superBlockDashedName: String]: {
- *          blocks: [blockDashedName: String]
- *        }
+ *       [ ...superBlockDashedName: String ]: SuperBlock
  *     },
  *     block: {
- *       [blockDashedName: String]: {
- *         challenges: [challengeDashedName: String]
- *       }
- *     },
+ *       [ ...blockDashedName: String ]: Block,
  *     challenge: {
- *       [challengeDashedName: String]: Challenge
+ *       [ ...challengeDashedName: String ]: Challenge
  *     }
  *   }
  * }
@@ -88,14 +85,16 @@ export function cachedMap(Block) {
     })
     .map(map => {
       // re-order superBlocks result
-      const result = Object.keys(map.result).reduce((result, supName) => {
+      const superBlocks = Object.keys(map.result).reduce((result, supName) => {
         const index = map.entities.superBlock[supName].order;
         result[index] = supName;
         return result;
       }, []);
       return {
         ...map,
-        result
+        result: {
+          superBlocks
+        }
       };
     })
     .shareReplay();
