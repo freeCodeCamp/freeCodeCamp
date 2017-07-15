@@ -1056,7 +1056,7 @@
         "    this.next = null; ",
         "  }; ",
         "",
-        "  this.length = function(){",
+        "  this.size = function(){",
         "    return length;",
         "  };",
         "",
