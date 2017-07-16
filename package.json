@@ -19,7 +19,6 @@
     "lint-json": "npm run lint-server && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
     "pretest": "npm run create-rev && npm run lint",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect",
     "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
     "test-js": "npm run test-js-client && npm run test-js-common && npm run test-js-server",
     "test-js-client": "tape -r babel-register \"client/**/*.test.js\" | tap-spec",
