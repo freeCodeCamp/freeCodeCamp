@@ -65,6 +65,9 @@
     "description": {
       "type": "array"
     },
+    "image": {
+      "type": "string"
+    },
     "tests": {
       "type": "array"
     },
