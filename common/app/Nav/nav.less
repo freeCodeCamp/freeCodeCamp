@@ -1,5 +1,6 @@
 .navbar {
   background-color: @brand-primary;
+  font-size: 14px;
 }
 
 .navbar-nav > li > a {
@@ -9,17 +10,9 @@
   }
 }
 
-.btn-nav {
-  margin-top: 10px;
-}
-
-.navbar-brand {
-  font-size: 26px;
-}
-
 .navbar > .container {
-  width: auto;
   padding-right: 0px;
+  width: auto;
 
   @media (max-width: 767px) {
     // container default padding size
@@ -34,34 +27,33 @@
   width: 100%;
 }
 
-.nav-logo {
-  height: 40px;
-  margin-top: -10px;
+@navbar-logo-height: 25px;
+@navbar-logo-padding: (@navbar-height - @navbar-logo-height) / 2;
+.navbar-brand {
+  padding-top: @navbar-logo-padding;
+  padding-bottom: @navbar-logo-padding;
+}
 
-  @media (max-width: 397px) {
-    height: 30px;
-    margin-top: -5px;
-  }
-  @media (max-width: 335px) {
-    height: 25px;
-    margin-top: -2px;
-  }
+.nav-logo {
+  height: @navbar-logo-height;
 }
 
 .navbar-right {
-  @media (min-width: 767px) {
-    margin-right:0;
-  }
-  @media (max-width: 991px) and (min-width: 767px) {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-right: 0px;
-    white-space: nowrap;
-  }
   background-color: @brand-primary;
   text-align: center;
+
+  @media (min-width: @screen-md-min) {
+    margin-right:0;
+  }
+  @media (min-width: @screen-md-max) and (max-width: 991px) {
+    left: 0;
+    margin-right: 0;
+    position: absolute;
+    right: 0;
+    white-space: nowrap;
+  }
 }
+
 .navbar {
   white-space: nowrap;
   border: none;
@@ -72,24 +64,46 @@
   }
 }
 
-li.avatar-points, li.avatar-points > a { padding:0; margin:0 }
-
-
-.brownie-points-nav {
-  @media (min-width: 991px) and (max-width: 1030px) {
-    float: none !important;
-    padding-right: 10px;
+// li is used here to get more specific
+// and win against navbar.less#273
+li.nav-avatar {
+  span {
     display: inline-block;
   }
-  @media (min-width: 991px) {
-    float: left;
-    padding: 15px;
+  @media (min-width: @screen-sm-min) {
+    height: @navbar-height;
+    margin: 0;
+    padding: 0;
+
+    > a {
+      margin: 0;
+      padding: 0 @navbar-padding-horizontal 0 @navbar-padding-horizontal;
+    }
   }
+}
+
+.nav-username {
+  padding-right: @navbar-padding-horizontal;
+}
+
+.nav-points {
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    padding: @navbar-padding-vertical 0 @navbar-padding-vertical 0;
+  }
+  @media (min-width: @screen-md-min) {
+    padding: @navbar-padding-vertical @navbar-padding-horizontal @navbar-padding-vertical 0;
+  }
+}
+
+.nav-picture {
+  margin-top: @navbar-logo-padding;
+  margin-bottom: @navbar-logo-padding;
+  height: @navbar-logo-height;
+  width: @navbar-logo-height;
 }
 
 .navbar-nav a {
   color: @body-bg;
-  font-size: 20px;
   margin-top: -5px;
   margin-bottom: -5px;
 }
@@ -103,36 +117,11 @@ li.avatar-points, li.avatar-points > a { padding:0; margin:0 }
   }
 }
 
-
-.signup-btn-nav {
-  margin-top: -2px !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  margin-right: -12px;
-  @media (min-width: 991px) and (max-width: 1010px) {
-    margin-left: -10px;
-    margin-right: -5px;
-  }
-}
-
-a[href="/email-signup"], a[href="/email-signin"] {
-  &.btn-social.btn-lg > :first-child {
-    line-height:43px;
-    font-size:26px;
-  }
-}
-
-.public-profile-img {
-  height: 200px;
-  width: 200px;
-  border-radius: 5px;
-}
-
 .navbar-collapse {
   border-top: 0;
 }
 
-@media (max-width: 991px) {
+@media (max-width: @screen-xs-max) {
   .navbar-header {
     float: none;
   }
@@ -175,22 +164,6 @@ a[href="/email-signup"], a[href="/email-signin"] {
     right: 0;
   }
 }
-
-.navbar-toggle {
-  width: 80px;
-  padding-left: 0;
-  padding-right: 8px;
-  margin: 7px 2px 7px 0;
-  text-align: left;
-  font-size: 10px;
-}
-
-.hamburger-text {
-  line-height: 0.75em;
-  margin-top: 10px;
-  font-size: 18px;
-}
-
 
 .night {
   .navbar-default {

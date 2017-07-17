@@ -28,7 +28,7 @@ export function Divider({ left, dividerClicked }) {
     right: 'auto',
     top: 0,
     width: '8px',
-    zIndex: 999999
+    zIndex: 100
   };
   // use onMouseDown as onClick does not fire
   // until onMouseUp

@@ -33,17 +33,15 @@ export default function SignUpButton({
   }
   return (
     <li
-      className='avatar-points'
+      className='nav-avatar'
       key='user'
       >
       <Link to='/settings'>
-        <span className='brownie-points-nav'>
-          <span className='hidden-md hidden-lg'> { username } </span>
-          <span className='brownie-points'> [ { points || 1 } ] </span>
-        </span>
-        <span className='hidden-xs hidden-sm avatar'>
+        <span className='nav-username hidden-md hidden-lg'> { username } </span>
+        <span className='nav-points'> [ { points || 1 } ] </span>
+        <span className='nav-picture-container hidden-xs hidden-sm'>
           <img
-            className='profile-picture float-right'
+            className='nav-picture float-right'
             src={ picture }
           />
         </span>

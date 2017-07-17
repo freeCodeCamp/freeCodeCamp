@@ -7,7 +7,6 @@ import { createSelector } from 'reselect';
 
 import { LinkContainer } from 'react-router-bootstrap';
 import {
-  Col,
   MenuItem,
   Nav,
   NavDropdown,
@@ -100,12 +99,6 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
     panes
   };
 }
-
-const toggleButtonChild = (
-  <Col xs={ 12 }>
-    <span className='hamburger-text'>Menu</span>
-  </Col>
-);
 
 const propTypes = navLinks.reduce(
   (pt, { content }) => {
@@ -200,7 +193,7 @@ export class FCCNav extends React.Component {
         staticTop={ true }
         >
         <Navbar.Header>
-          <Navbar.Toggle children={ toggleButtonChild } />
+          <Navbar.Toggle children={ 'Menu' } />
           <NavbarBrand>
             <a
               href='/challenges/current-challenge'
@@ -216,7 +209,6 @@ export class FCCNav extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav
-            className='hamburger-dropdown'
             navbar={ true }
             pullRight={ true }
             >

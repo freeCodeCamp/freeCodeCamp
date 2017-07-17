@@ -8,7 +8,7 @@ export function checkMapData(
       superBlock,
       challengeIdToName
     },
-    result
+    result: { superBlocks }
   }
 ) {
   if (
@@ -16,11 +16,11 @@ export function checkMapData(
     !block ||
     !superBlock ||
     !challengeIdToName ||
-    !result ||
-    !result.length
+    !superBlocks ||
+    !superBlocks.length
   ) {
     throw new Error(
-      'entities not found, db may not be properly seeded. Crashing hard'
+      'entities not found, db may not be properly seeded'
     );
   }
 }
