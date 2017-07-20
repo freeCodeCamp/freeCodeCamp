@@ -19,7 +19,7 @@ import {
 
 export default function buildChallengeEpic(actions, getState) {
   return actions
-    ::ofType(types.executeChallenge, types.updateMain)
+    ::ofType(types.executeChallenge, types.updateMain, types.loadCode)
     // if isCodeLocked do not run challenges
     .filter(() => !getState().challengesApp.isCodeLocked)
     .debounce(750)
