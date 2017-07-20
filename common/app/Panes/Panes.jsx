@@ -3,11 +3,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import {
-  panesMounted,
-  panesUpdated,
-  panesWillMount,
-  panesWillUnmount,
-
   panesSelector,
   panesByNameSelector,
   heightSelector,
@@ -48,42 +43,15 @@ const mapStateToProps = createSelector(
   }
 );
 
-const mapDispatchToProps = {
-  panesMounted,
-  panesUpdated,
-  panesWillMount,
-  panesWillUnmount
-};
+const mapDispatchToProps = null;
 
 const propTypes = {
   height: PropTypes.number.isRequired,
   nameToComponent: PropTypes.object.isRequired,
-  panes: PropTypes.array,
-  panesMounted: PropTypes.func.isRequired,
-  panesUpdated: PropTypes.func.isRequired,
-  panesWillMount: PropTypes.func.isRequired,
-  panesWillUnmount: PropTypes.func.isRequired
+  panes: PropTypes.array
 };
 
 export class Panes extends PureComponent {
-  componentWillMount() {
-    this.props.panesWillMount(Object.keys(this.props.nameToComponent));
-  }
-
-  componentDidMount() {
-    this.props.panesMounted();
-  }
-
-  componentWillUnmount() {
-    this.props.panesWillUnmount();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.nameToComponent !== this.props.nameToComponent) {
-      this.props.panesUpdated(Object.keys(nextProps.nameToComponent));
-    }
-  }
-
   renderPanes() {
     const {
       nameToComponent,
