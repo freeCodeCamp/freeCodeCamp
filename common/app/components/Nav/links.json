@@ -3,12 +3,18 @@
   "link": "/map"
 },{
   "content": "Forum",
-  "link": "http://forum.freecodecamp.org/",
+  "link": "https://forum.freecodecamp.org/",
+  "target": "_blank"
+},{
+  "content": "Contribute",
+  "link": "/contribute",
   "target": "_blank"
 },{
   "content": "About",
-  "link": "/about"
+  "link": "/about",
+  "target": "_blank"
 },{
   "content": "Donate",
-  "link": "/donate"
+  "link": "/donate",
+  "target": "_blank"
 }]
