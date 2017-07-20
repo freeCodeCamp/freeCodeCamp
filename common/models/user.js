@@ -177,9 +177,9 @@ module.exports = function(User) {
       to: user.email,
       from: 'team@freecodecamp.org',
       subject: 'Welcome to freeCodeCamp!',
-      protocol: isDev ? null : 'https',
-      host: isDev ? devHost : 'freecodecamp.org',
-      port: isDev ? null : 443,
+      protocol: getProtocol(),
+      host: getHost(),
+      port: getPort(),
       template: path.join(
         __dirname,
         '..',
@@ -603,6 +603,7 @@ module.exports = function(User) {
             from: getEmailSender(),
             subject: 'freeCodeCamp - Authentication Request!',
             text: renderAuthEmail({
+              host,
               loginEmail,
               loginToken
             })
@@ -621,11 +622,6 @@ module.exports = function(User) {
               `;
             });
           });
-
-          return dedent`
-            If you entered a valid email, a magic link is on its way.
-            Please follow that link to sign in.
-          `;
         });
       })
       .catch(err => {
