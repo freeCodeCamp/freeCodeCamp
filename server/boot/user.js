@@ -3,7 +3,6 @@ import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
 import emoji from 'node-emoji';
-import uuid from 'node-uuid';
 
 import {
   frontEndChallengeId,
@@ -420,20 +419,6 @@ module.exports = function(app) {
     }
     return res.render('account/email-signin', {
       title: 'Sign in to freeCodeCamp using your Email Address'
-    });
-  }
-
-  function getEmailSignup(req, res) {
-    if (req.user) {
-      return res.redirect('/');
-    }
-    if (isSignUpDisabled) {
-      return res.render('account/beta', {
-        title: 'New sign ups are disabled'
-      });
-    }
-    return res.render('account/email-signup', {
-      title: 'Sign up for freeCodeCamp using your Email Address'
     });
   }
 
