@@ -53,10 +53,14 @@ export class FreeCodeCamp extends React.Component {
   }
 
   render() {
+    // we render nav after the content
+    // to allow the panes to update
+    // redux store, which will update the bin
+    // buttons in the nav
     return (
       <div className={ `${ns}-container` }>
-        <Nav />
         { this.props.children }
+        <Nav />
         <Toasts />
       </div>
     );
