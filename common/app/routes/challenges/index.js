@@ -1,8 +1,12 @@
 import Show from './Show.jsx';
-import { panesMap } from './views/backend';
+import { panesMap as backendPanesMap } from './views/backend';
+import { panesMap as classicPanesMap } from './views/classic';
 
 export function createPanesMap() {
-  return panesMap;
+  return {
+    ...backendPanesMap,
+    ...classicPanesMap
+  };
 }
 
 export default function challengesRoutes() {
