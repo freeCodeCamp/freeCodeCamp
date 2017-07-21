@@ -10,7 +10,7 @@ import ns from './ns.json';
 import CodeMirrorSkeleton from '../../Code-Mirror-Skeleton.jsx';
 import {
   executeChallenge,
-  updateFile,
+  classicEditorUpdated,
 
   challengeMetaSelector,
   filesSelector,
@@ -47,28 +47,21 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   executeChallenge,
-  updateFile
+  classicEditorUpdated
 };
 
-const mergeProps = (stateProps, dispatchProps) => ({
-  ...stateProps,
-  ...dispatchProps,
-  updateFile: content => dispatchProps.updateFile(content, stateProps.file)
-});
-
 const propTypes = {
+  classicEditorUpdated: PropTypes.func.isRequired,
   content: PropTypes.string,
-  executeChallenge: PropTypes.func,
-  mode: PropTypes.string,
-  updateFile: PropTypes.func
+  executeChallenge: PropTypes.func.isRequired,
+  mode: PropTypes.string
 };
 
 export class Editor extends PureComponent {
   createOptions = createSelector(
-    state => state.options,
     state => state.executeChallenge,
     state => state.mode,
-    (options, executeChallenge, mode) => ({
+    (executeChallenge, mode) => ({
       ...options,
       mode,
       extraKeys: {
@@ -121,15 +114,15 @@ export class Editor extends PureComponent {
     const {
       content,
       executeChallenge,
-      updateFile,
+      classicEditorUpdated,
       mode
     } = this.props;
     return (
       <div className={ `${ns}-editor` }>
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
-            onChange={ updateFile }
-            options={ this.createOptions({ executeChallenge, mode, options }) }
+            onChange={ classicEditorUpdated }
+            options={ this.createOptions({ executeChallenge, mode }) }
             ref='editor'
             value={ content }
           />
@@ -144,6 +137,5 @@ Editor.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
-  mergeProps
+  mapDispatchToProps
 )(Editor);

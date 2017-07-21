@@ -6,6 +6,7 @@ import noop from 'lodash/noop';
 import bugEpic from './bug-epic';
 import completionEpic from './completion-epic.js';
 import challengeEpic from './challenge-epic.js';
+import editorEpic from './editor-epic.js';
 
 import ns from '../ns.json';
 import {
@@ -35,11 +36,14 @@ export const epics = [
   bugEpic,
   completionEpic,
   challengeEpic,
+  editorEpic,
   ...stepEpics
 ];
 
 export const types = createTypes([
   // challenges
+  // |- classic
+  'classicEditorUpdated',
   'challengeUpdated',
   'resetChallenge',
   'updateHint',
@@ -82,6 +86,8 @@ export const types = createTypes([
   'toggleMain'
 ], ns);
 
+// classic
+export const classicEditorUpdated = createAction(types.classicEditorUpdated);
 // challenges
 export const closeChallengeModal = createAction(types.closeChallengeModal);
 export const updateHint = createAction(types.updateHint);
@@ -97,11 +103,7 @@ export const challengeUpdated = createAction(
 );
 export const resetChallenge = createAction(types.resetChallenge);
 // files
-export const updateFile = createAction(
-  types.updateFile,
-  (content, file) => setContent(content, file)
-);
-
+export const updateFile = createAction(types.updateFile);
 export const updateFiles = createAction(types.updateFiles);
 
 // rechallenge
@@ -282,9 +284,9 @@ export default function createReducers() {
 
   const filesReducer = handleActions(
     {
-      [types.updateFile]: (state, { payload: file }) => ({
+      [types.updateFile]: (state, { payload: { key, content }}) => ({
         ...state,
-        [file.key]: file
+        [key]: setContent(content, state[key])
       }),
       [types.updateFiles]: (state, { payload: files }) => {
         return files
