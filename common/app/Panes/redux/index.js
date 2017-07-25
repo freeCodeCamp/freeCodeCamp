@@ -7,6 +7,7 @@ import ns from '../ns.json';
 import windowEpic from './window-epic.js';
 import dividerEpic from './divider-epic.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
 export const epics = [
   windowEpic,
   dividerEpic
@@ -50,7 +51,6 @@ const initialState = {
   panes: [],
   panesByName: {},
   pressedDivider: null,
-  typeToName: {},
   nameToType: {}
 };
 export const getNS = state => state[ns];
@@ -79,6 +79,15 @@ function getDividerLeft(numOfPanes, index) {
 }
 
 export default function createPanesAspects(typeToName) {
+  if (isDev) {
+    Object.keys(typeToName).forEach(actionType => {
+      if (actionType === 'undefined') {
+        throw new Error(
+          `action type for ${typeToName[actionType]} is undefined`
+        );
+      }
+    });
+  }
   const nameToType = Object.keys(typeToName).reduce((map, type) => {
     map[typeToName[type]] = type;
     return map;
@@ -190,16 +199,22 @@ export default function createPanesAspects(typeToName) {
       const numOfPanes = state.panes.reduce((sum, name) => {
         return panesByName[name].isHidden ? sum : sum + 1;
       }, 0);
+      let numOfHidden = 0;
       return {
         ...state,
         panesByName: state.panes.reduce(
           (panesByName, name, index) => {
             if (!panesByName[name].isHidden) {
-              const dividerLeft = getDividerLeft(numOfPanes, index);
+              const dividerLeft = getDividerLeft(
+                numOfPanes,
+                index - numOfHidden
+              );
               panesByName[name] = {
                 ...panesByName[name],
                 dividerLeft
               };
+            } else {
+              numOfHidden = numOfHidden + 1;
             }
             return panesByName;
           },
