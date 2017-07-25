@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 
+import CompletionModal from './Completion-Modal.jsx';
 import Classic from './views/classic';
 import Step from './views/step';
 import Project from './views/project';
@@ -119,7 +120,12 @@ export class Show extends PureComponent {
   render() {
     const { viewType } = this.props;
     const View = views[viewType] || Classic;
-    return <View />;
+    return (
+      <div>
+        <View />
+        <CompletionModal />
+      </div>
+    );
   }
 }
 
