@@ -50,6 +50,8 @@ node -v
 mongo --version
 ```
 
+To check your MongoDB version on Windows, you have to locate the installation directory. It is probably located at something like `C:\Program Files\MongoDB\Server\3.4\` where 3.4 is your version number.
+
 If your versions are lower than the prerequisite versions, you should update.
 
 Platform-specific guides to setting up a development environment:
@@ -191,7 +193,12 @@ Now you will need to start MongoDB, and then seed the database, then you can sta
 
 ```bash
 # Start the mongo server in a separate terminal
+# On OS X:
 mongod
+
+# If you are using Windows, you have to instead specify the full path to the mongod binary
+# Make sure to replace 3.4 with the version you have installed
+"C:\Program Files\MongoDB\Server\3.4\bin\mongod"
 
 # Initialize freeCodeCamp
 # This will seed the database for the first time.
