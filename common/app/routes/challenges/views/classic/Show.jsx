@@ -12,8 +12,8 @@ const propTypes = {};
 
 export const panesMap = {
   [types.toggleMap]: 'Map',
-  [types.toggleSidePanel]: 'SidePanel',
-  [types.toggleEditor]: 'Editor',
+  [types.toggleSidePanel]: 'Side Panel',
+  [types.toggleClassicEditor]: 'Editor',
   [types.togglePreview]: 'Preview'
 };
 
@@ -21,7 +21,7 @@ const nameToComponent = {
   Map: {
     Component: _Map
   },
-  SidePanel: {
+  'Side Panel': {
     Component: SidePanel
   },
   Editor: {

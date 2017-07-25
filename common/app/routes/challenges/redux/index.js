@@ -82,8 +82,11 @@ export const types = createTypes([
   'createIssue',
 
   // panes
+  'toggleClassicEditor',
+  'toggleMain',
   'toggleMap',
-  'toggleMain'
+  'togglePreview',
+  'toggleSidePanel'
 ], ns);
 
 // classic
