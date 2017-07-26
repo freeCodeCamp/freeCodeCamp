@@ -942,7 +942,7 @@
         ""
       ],
       "tests": [
-        "assert(typeof glideMixin === \"function\", 'message: Your code should declare a <code>glideMixin</code> variable that is a function.');",
+        "assert(typeof glideMixin === \"function\" && glideMixin.name === \"glideMixin\", 'message: Your code should declare a <code>glideMixin</code> variable that is a function.');",
         "assert(typeof bird.glide === \"function\", 'message: Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.');",
         "assert(typeof boat.glide === \"function\", 'message: Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.');"
       ],
