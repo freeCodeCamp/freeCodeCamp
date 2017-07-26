@@ -2195,7 +2195,7 @@
         "<div id=\"ball\"></div>"
       ],
       "tests": [
-        "assert(code.match(/opacity:\\s*?0?\\.1;/gi), 'message: The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
+        "assert(code.match(/@keyframes fade\\s*?{\\s*?50%\\s*?{\\s*?(?:left:\\s*?60%;\\s*?opacity:\\s*?0?\\.1;|opacity:\\s*?0?\\.1;\\s*?left:\\s*?60%;)/gi), 'message: The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
       ],
       "solutions": [],
       "hints": [],
