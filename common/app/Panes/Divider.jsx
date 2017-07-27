@@ -19,11 +19,12 @@ const propTypes = {
 
 export function Divider({ left, dividerClicked }) {
   const style = {
-    borderLeft: '1px solid #ccc',
+    borderLeft: '1px solid rgb(204, 204, 204)',
     bottom: 0,
     cursor: 'col-resize',
     height: '100%',
     left: left + '%',
+    marginLeft: '-4px',
     position: 'absolute',
     right: 'auto',
     top: 0,

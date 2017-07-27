@@ -11,15 +11,13 @@ import {
 import Pane from './Pane.jsx';
 import Divider from './Divider.jsx';
 
-const getDividerRatio = width => (8 / width) * 100;
 const mapStateToProps = createSelector(
   panesSelector,
   panesByNameSelector,
   heightSelector,
   widthSelector,
-  (panes, panesByName, height, width) => {
+  (panes, panesByName, height) => {
     let lastDividerPosition = 0;
-    const dividerRatio = getDividerRatio(width);
     return {
       panes: panes
         .map(name => panesByName[name])
@@ -30,12 +28,8 @@ const mapStateToProps = createSelector(
           lastDividerPosition = dividerLeft;
           return {
             ...pane,
-            left: index === 0 ?
-              0 :
-              left + dividerRatio,
-            right: index + 1 === numOfPanes ?
-              0 :
-              100 - dividerLeft
+            left: index === 0 ? 0 : left,
+            right: index + 1 === numOfPanes ? 0 : 100 - dividerLeft
           };
         }, {}),
       height
@@ -87,8 +81,8 @@ export class Panes extends PureComponent {
   render() {
     const { height } = this.props;
     const outerStyle = {
-      position: 'relative',
       height,
+      position: 'relative',
       width: '100%'
     };
     const innerStyle = {
