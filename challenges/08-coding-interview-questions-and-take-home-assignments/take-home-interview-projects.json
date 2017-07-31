@@ -641,7 +641,7 @@
       "id": "bd7158d8c443eddfaeb5bdee",
       "title": "Build a Pinterest Clone",
       "description": [
-        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://midnight-dust.hyperdev.space' target='_blank'>https://midnight-dust.hyperdev.space</a> and deploy it to Heroku.",
+        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://midnight-dust.glitch.me' target='_blank'>https://midnight-dust.glitch.me</a> and deploy it to Heroku.",
         "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Here are the specific user stories you should implement for this project:",
         "<strong>User Story:</strong> As an unauthenticated user, I can login with Twitter.",
@@ -661,7 +661,7 @@
       "type": "basejump",
       "challengeType": 4,
       "descriptionEs": [
-        "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='https://midnight-dust.hyperdev.space/' target='_blank'>https://midnight-dust.hyperdev.space/</a> y despliégalo en Heroku.",
+        "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='https://midnight-dust.glitch.me/' target='_blank'>https://midnight-dust.glitch.me/</a> y despliégalo en Heroku.",
         "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
         "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
         "<strong>Historia de usuario:</strong> Como usuario autenticado, puedo acceder a mi cuenta con Twitter.",
