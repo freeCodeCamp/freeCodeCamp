@@ -26,7 +26,14 @@ export default function buildChallengeEpic(actions, getState) {
     .flatMapLatest(({ type }) => {
       const shouldProxyConsole = type === types.updateMain;
       const state = getState();
-      const { files } = state.challengesApp;
+      const {
+        files,
+        files: {
+          indexjs: {
+            contents: originalCode
+          }
+        }
+      } = state.challengesApp;
       const {
         challenge: {
           required = [],
@@ -44,7 +51,7 @@ export default function buildChallengeEpic(actions, getState) {
             frameMain(payload)
           ];
           if (type === types.executeChallenge) {
-            actions.push(saveCode(), frameTests(payload));
+            actions.push(saveCode(), frameTests({ ...payload, originalCode }));
           }
           return Observable.from(actions, null, null, Scheduler.default);
         })

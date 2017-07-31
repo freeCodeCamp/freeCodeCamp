@@ -72,12 +72,18 @@ function frameMain({ build } = {}, document, proxyLogger) {
   main.close();
 }
 
-function frameTests({ build, sources, checkChallengePayload } = {}, document) {
+function frameTests({
+  build,
+  sources,
+  originalCode,
+  checkChallengePayload
+} = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
-  // default for classic challenges
-  // should not be used for modern
+  // default for classic challenges should not be used for modern
+  // attach the original code string for use in challneges that use ES6 syntax
+  tests.__originalCode = originalCode;
   tests.__source = sources['index'] || '';
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;

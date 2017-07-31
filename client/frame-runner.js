@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var helpers = Rx.helpers;
   var chai = parent.chai;
   var source = document.__source;
+  var originalCode = document.__originalCode;
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
 
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /* eslint-disable no-unused-vars */
     const editor = { getValue() { return source; } };
     const code = source;
+    const es6 = originalCode;
     /* eslint-enable no-unused-vars */
     if (window.__err) {
       return Rx.Observable.from(tests)
