@@ -86,7 +86,8 @@ export const types = createTypes([
   'toggleMain',
   'toggleMap',
   'togglePreview',
-  'toggleSidePanel'
+  'toggleSidePanel',
+  'toggleStep'
 ], ns);
 
 // classic

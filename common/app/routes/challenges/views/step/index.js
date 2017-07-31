@@ -1,1 +1,1 @@
-export default from './Step.jsx';
+export { default, panesMap } from './Show.jsx';

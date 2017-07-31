@@ -1,11 +1,13 @@
 import Show from './Show.jsx';
 import { panesMap as backendPanesMap } from './views/backend';
 import { panesMap as classicPanesMap } from './views/classic';
+import { panesMap as stepPanesMap } from './views/step';
 
 export function createPanesMap() {
   return {
     ...backendPanesMap,
-    ...classicPanesMap
+    ...classicPanesMap,
+    ...stepPanesMap
   };
 }
 
