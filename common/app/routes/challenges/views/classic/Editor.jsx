@@ -21,7 +21,7 @@ const options = {
   lint: { esversion: 6 },
   lineNumbers: true,
   mode: 'javascript',
-  theme: 'monokai',
+  theme: 'freecodecamp',
   runnable: true,
   matchBrackets: true,
   autoCloseBrackets: true,
