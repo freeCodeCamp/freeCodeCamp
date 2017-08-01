@@ -29,7 +29,7 @@ function makeMapStateToProps(_, { dashedName }) {
       isOpen,
       isHidden,
       dashedName,
-      title: dashedName || superBlock.title,
+      title: superBlock.title || dashedName,
       blocks: superBlock.blocks || [],
       message: superBlock.message
     })
