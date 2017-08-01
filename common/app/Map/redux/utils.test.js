@@ -56,7 +56,7 @@ test('createMapUi', t => {
         }
       }
     },
-    ['superBlockA'],
+    { superBlocks: ['superBlockA'] },
     { challengeA: 'ChallengeA title'}
   );
     t.plan(3);
@@ -82,7 +82,7 @@ test('createMapUi', t => {
             ]
           }
         }
-      }, ['superBlockA']).children[0].children.length,
+      }, { superBlocks: ['superBlockA'] }).children[0].children.length,
       0
     );
     t.equal(
@@ -95,7 +95,8 @@ test('createMapUi', t => {
           }
         },
         block: {}
-      }, ['superBlockA']).children[0].children[0].children.length,
+      },
+      { superBlocks: ['superBlockA'] }).children[0].children[0].children.length,
       0
     );
   });
