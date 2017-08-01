@@ -20,7 +20,7 @@ export default function challengesRoutes() {
     onEnter(nextState, replace) {
       // redirect /challenges to /map
       if (nextState.location.pathname === '/challenges') {
-        replace('/map');
+        replace('/challenges/current-challenge');
       }
     }
   }, {
