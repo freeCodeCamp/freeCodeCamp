@@ -1,8 +1,20 @@
 import Show from './Show.jsx';
-import _Map from './views/map';
+import { panesMap as backendPanesMap } from './views/backend';
+import { panesMap as classicPanesMap } from './views/classic';
+import { panesMap as stepPanesMap } from './views/step';
+import { panesMap as projectPanesMap } from './views/project';
 
-export function challengesRoute() {
+export function createPanesMap() {
   return {
+    ...backendPanesMap,
+    ...classicPanesMap,
+    ...stepPanesMap,
+    ...projectPanesMap
+  };
+}
+
+export default function challengesRoutes() {
+  return [{
     path: 'challenges(/:dashedName)',
     component: Show,
     onEnter(nextState, replace) {
@@ -11,19 +23,8 @@ export function challengesRoute() {
         replace('/map');
       }
     }
-  };
-}
-
-export function modernChallengesRoute() {
-  return {
+  }, {
     path: 'challenges/:block/:dashedName',
     component: Show
-  };
-}
-
-export function mapRoute() {
-  return {
-    path: 'map',
-    component: _Map
-  };
+  }];
 }

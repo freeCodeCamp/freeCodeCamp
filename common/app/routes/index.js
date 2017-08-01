@@ -1,11 +1,11 @@
-import {
-  modernChallengesRoute,
-  mapRoute,
-  challengesRoute
-} from './challenges';
-import NotFound from '../components/NotFound/index.jsx';
+import challenges from './challenges';
+import map from './map';
+import settings from './settings';
+
+import NotFound from '../NotFound';
 import { addLang } from '../utils/lang';
-import settingsRoute from './settings';
+
+export { createPanesMap } from './challenges';
 
 export default function createChildRoute(deps) {
   return {
@@ -18,14 +18,10 @@ export default function createChildRoute(deps) {
       }
     },
     childRoutes: [
-      challengesRoute(deps),
-      modernChallengesRoute(deps),
-      mapRoute(deps),
-      settingsRoute(deps),
-      {
-        path: '*',
-        component: NotFound
-      }
+      ...challenges(deps),
+      ...map(deps),
+      ...settings(deps),
+      { path: '*', component: NotFound }
     ]
   };
 }

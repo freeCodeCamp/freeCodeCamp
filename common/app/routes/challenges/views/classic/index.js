@@ -1,1 +1,1 @@
-export default from './Classic.jsx';
+export { default, panesMap } from './Show.jsx';

@@ -18,8 +18,8 @@ import createApp from '../common/app';
 import provideStore from '../common/app/provide-store';
 import { getLangFromPath } from '../common/app/utils/lang';
 
-// client specific sagas
-import sagas from './sagas';
+// client specific epics
+import epics from './epics';
 
 import {
   isColdStored,
@@ -51,7 +51,7 @@ sendPageAnalytics(history, window.ga);
 const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 const adjustUrlOnReplay = !!window.devToolsExtension;
 
-const sagaOptions = {
+const epicOptions = {
   isDev,
   window,
   document: window.document,
@@ -66,8 +66,8 @@ createApp({
     serviceOptions,
     initialState,
     middlewares: [ routerMiddleware(history) ],
-    sagas: [...sagas ],
-    sagaOptions,
+    epics,
+    epicOptions,
     reducers: { routing },
     enhancers: [ devTools ]
   })

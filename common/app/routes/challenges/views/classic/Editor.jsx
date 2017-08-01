@@ -1,54 +1,67 @@
-import { Subject } from 'rx';
-import React, { PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import Codemirror from 'react-codemirror';
 import NoSSR from 'react-no-ssr';
-import PureComponent from 'react-pure-render/component';
 import MouseTrap from 'mousetrap';
 
 import ns from './ns.json';
 import CodeMirrorSkeleton from '../../Code-Mirror-Skeleton.jsx';
+import {
+  executeChallenge,
+  classicEditorUpdated,
 
-const editorDebounceTimeout = 750;
+  challengeMetaSelector,
+  filesSelector,
+  keySelector
+} from '../../redux';
 
 const options = {
-  lint: {esversion: 6},
+  lint: { esversion: 6 },
   lineNumbers: true,
   mode: 'javascript',
-  theme: 'monokai',
+  theme: 'freecodecamp',
   runnable: true,
   matchBrackets: true,
   autoCloseBrackets: true,
   scrollbarStyle: 'null',
   lineWrapping: true,
-  gutters: ['CodeMirror-lint-markers']
+  gutters: [ 'CodeMirror-lint-markers' ]
 };
 
-const defaultProps = {
-  content: '// Happy Coding!',
-  mode: 'javascript'
+const mapStateToProps = createSelector(
+  filesSelector,
+  challengeMetaSelector,
+  keySelector,
+  (
+    files = {},
+    { mode = 'javascript'},
+    key
+  ) => ({
+    content: files[key] && files[key].contents || '// Happy Coding!',
+    file: files[key],
+    mode
+  })
+);
+
+const mapDispatchToProps = {
+  executeChallenge,
+  classicEditorUpdated
 };
 
 const propTypes = {
+  classicEditorUpdated: PropTypes.func.isRequired,
   content: PropTypes.string,
-  executeChallenge: PropTypes.func,
-  mode: PropTypes.string,
-  updateFile: PropTypes.func
+  executeChallenge: PropTypes.func.isRequired,
+  mode: PropTypes.string
 };
 
-export default class Editor extends PureComponent {
-  constructor(...args) {
-    super(...args);
-    this._editorContent$ = new Subject();
-    this.handleChange = this.handleChange.bind(this);
-  }
-
+export class Editor extends PureComponent {
   createOptions = createSelector(
-    state => state.options,
     state => state.executeChallenge,
     state => state.mode,
-    (options, executeChallenge, mode) => ({
+    (executeChallenge, mode) => ({
       ...options,
       mode,
       extraKeys: {
@@ -88,46 +101,28 @@ export default class Editor extends PureComponent {
   );
 
   componentDidMount() {
-    const { updateFile = (() => {}) } = this.props;
-    this._subscription = this._editorContent$
-      .debounce(editorDebounceTimeout)
-      .distinctUntilChanged()
-      .subscribe(
-        updateFile,
-        err => { throw err; }
-      );
-
     MouseTrap.bind('e', () => {
       this.refs.editor.focus();
     }, 'keyup');
   }
 
   componentWillUnmount() {
-    if (this._subscription) {
-      this._subscription.dispose();
-      this._subscription = null;
-    }
     MouseTrap.unbind('e', 'keyup');
-  }
-
-  handleChange(value) {
-    if (this._subscription) {
-      this._editorContent$.onNext(value);
-    }
   }
 
   render() {
     const {
       content,
       executeChallenge,
+      classicEditorUpdated,
       mode
     } = this.props;
     return (
       <div className={ `${ns}-editor` }>
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
-            onChange={ this.handleChange }
-            options={ this.createOptions({ executeChallenge, mode, options }) }
+            onChange={ classicEditorUpdated }
+            options={ this.createOptions({ executeChallenge, mode }) }
             ref='editor'
             value={ content }
           />
@@ -137,6 +132,10 @@ export default class Editor extends PureComponent {
   }
 }
 
-Editor.defaultProps = defaultProps;
 Editor.displayName = 'Editor';
 Editor.propTypes = propTypes;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Editor);

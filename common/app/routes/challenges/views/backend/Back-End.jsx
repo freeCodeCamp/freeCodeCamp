@@ -11,14 +11,20 @@ import ChallengeTitle from '../../Challenge-Title.jsx';
 import SolutionInput from '../../Solution-Input.jsx';
 import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
-import { submitChallenge, executeChallenge } from '../../redux/actions.js';
-import { challengeSelector } from '../../redux/selectors.js';
+import {
+  submitChallenge,
+  executeChallenge,
+  testsSelector,
+  outputSelector
+} from '../../redux';
 import { descriptionRegex } from '../../utils.js';
+
 import {
   createFormValidator,
   isValidURL,
   makeRequired
 } from '../../../../utils/form.js';
+import { challengeSelector } from '../../../../redux';
 
 // provided by redux form
 const reduxFormPropTypes = {
@@ -47,15 +53,13 @@ const fieldValidators = {
 
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.output,
-  state => state.challengesApp.tests,
+  outputSelector,
+  testsSelector,
   (
     {
-      challenge: {
-        id,
-        title,
-        description
-      } = {}
+      id,
+      title,
+      description
     },
     output,
     tests
@@ -74,7 +78,6 @@ const mapDispatchToActions = {
 };
 
 export class BackEnd extends PureComponent {
-
   renderDescription(description) {
     if (!Array.isArray(description)) {
       return null;

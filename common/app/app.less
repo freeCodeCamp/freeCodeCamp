@@ -2,13 +2,22 @@
 @ns: app;
 
 .@{ns}-container {
-  .column();
+  // we invert the nav and content since
+  // the content needs to render first
+  // Here we invert the order in which
+  // they are painted using css so the
+  // nav is on top again
+  .grid(@direction: column-reverse);
   width: 100vw;
 }
 
 .@{ns}-content {
-  .center(@value: @container-xl, @padding: @grid-gutter-width);
   // makes the inital content height 0px
   // then lets it grow to fit the rest of the space
   flex: 1 0 0px;
+}
+
+.@{ns}-centered {
+  .center(@value: @container-xl, @padding: @grid-gutter-width);
+  margin-top: @navbar-margin-bottom;
 }

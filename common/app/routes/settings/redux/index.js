@@ -1,8 +1,21 @@
-import userUpdateSaga from './update-user-saga';
+import { createTypes } from 'redux-create-types';
+import { createAction } from 'redux-actions';
 
-export { types } from './actions';
-export * as actions from './actions';
+import userUpdateEpic from './update-user-epic.js';
 
-export const sagas = [
-  userUpdateSaga
+export const epics = [
+  userUpdateEpic
 ];
+
+export const types = createTypes([
+  'toggleUserFlag',
+  'updateMyEmail',
+  'updateMyLang'
+], 'settings');
+
+export const toggleUserFlag = createAction(types.toggleUserFlag);
+export const updateMyEmail = createAction(types.updateMyEmail);
+export const updateMyLang = createAction(
+  types.updateMyLang,
+  (values) => values.lang
+);

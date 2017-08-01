@@ -6,14 +6,15 @@ import {
   FormControl
 } from 'react-bootstrap';
 
+import { showProjectSubmit } from './redux';
 import SolutionInput from '../../Solution-Input.jsx';
+import { submitChallenge } from '../../redux';
 import {
   isValidURL,
   makeRequired,
   createFormValidator,
   getValidationState
 } from '../../../../utils/form';
-import { submitChallenge, showProjectSubmit } from '../../redux/actions';
 
 const propTypes = {
   fields: PropTypes.object,

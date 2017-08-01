@@ -2,17 +2,13 @@ import { Observable } from 'rx';
 import { match } from 'react-router';
 import { compose, createStore, applyMiddleware } from 'redux';
 
-// main app
-import App from './App.jsx';
-// app routes
-import createChildRoute from './routes';
-
-// redux
 import { createEpic } from 'redux-epic';
 import createReducer from './create-reducer';
-import sagas from './sagas';
+import createRoutes from './create-routes.js';
+import createPanesMap from './create-panes-map.js';
+import createPanesAspects from './Panes/redux';
+import epics from './epics';
 
-// general utils
 import servicesCreator from '../utils/services-creator';
 
 const createRouteProps = Observable.fromNodeCallback(match);
@@ -27,7 +23,7 @@ const createRouteProps = Observable.fromNodeCallback(match);
 //   middlewares?: Function[],
 //   sideReducers?: Object
 //   enhancers?: Function[],
-//   sagas?: Function[],
+//   epics?: Function[],
 // }) => Observable
 //
 // Either location or history must be defined
@@ -41,44 +37,49 @@ export default function createApp({
   middlewares: sideMiddlewares = [],
   enhancers: sideEnhancers = [],
   reducers: sideReducers = {},
-  sagas: sideSagas = [],
-  sagaOptions: sideSagaOptions = {}
+  epics: sideEpics = [],
+  epicOptions: sideEpicOptions = {}
 }) {
-  const sagaOptions = {
-    ...sideSagaOptions,
+  const epicOptions = {
+    ...sideEpicOptions,
     services: servicesCreator(serviceOptions)
   };
 
-  const sagaMiddleware = createEpic(
-    sagaOptions,
-    ...sagas,
-    ...sideSagas
+  const epicMiddleware = createEpic(
+    epicOptions,
+    ...epics,
+    ...sideEpics
   );
-  const enhancers = [
+  const {
+    reducer: panesReducer,
+    middleware: panesMiddleware
+  } = createPanesAspects(createPanesMap());
+  const enhancer = compose(
     applyMiddleware(
-      ...sideMiddlewares,
-      sagaMiddleware
+      panesMiddleware,
+      epicMiddleware,
+      ...sideMiddlewares
     ),
     // enhancers must come after middlewares
     // on client side these are things like Redux DevTools
     ...sideEnhancers
-  ];
-  const reducer = createReducer(sideReducers);
+  );
+  const reducer = createReducer(
+    {
+      [panesReducer]: panesReducer,
+      ...sideReducers
+    },
+  );
 
   // create composed store enhancer
   // use store enhancer function to enhance `createStore` function
   // call enhanced createStore function with reducer and initialState
   // to create store
-  const store = compose(...enhancers)(createStore)(reducer, initialState);
+  const store = createStore(reducer, initialState, enhancer);
   // sync history client side with store.
   // server side this is an identity function and history is undefined
   history = syncHistoryWithStore(history, store, syncOptions);
-  const routes = {
-    components: App,
-    ...createChildRoute({
-      getState() { return store.getState(); }
-    })
-  };
+  const routes = createRoutes(store);
   // createRouteProps({
   //   redirect: LocationDescriptor,
   //   history: History,
@@ -90,6 +91,6 @@ export default function createApp({
       props,
       reducer,
       store,
-      epic: sagaMiddleware
+      epic: epicMiddleware
     }));
 }

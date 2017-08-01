@@ -1,10 +1,17 @@
 import React, { PropTypes } from 'react';
-import { Button, HelpBlock, FormControl, FormGroup } from 'react-bootstrap';
+import {
+  Button,
+  Col,
+  FormControl,
+  FormGroup,
+  HelpBlock,
+  Row
+} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { reduxForm } from 'redux-form';
 import { isEmail } from 'validator';
 import { getValidationState } from '../../../../utils/form';
-import { updateMyEmail } from '../../redux/actions';
+import { updateMyEmail } from '../../redux';
 
 const actions = {
   updateMyEmail
@@ -65,68 +72,73 @@ export class UpdateEmail extends React.Component {
       'Update my Email' :
       'Verify Email';
     return (
-      <div>
-        <h2 className='text-center'>Update your email address here:</h2>
-        <form
-          name='update-email'
-          onSubmit={ this.handleSubmit }
+      <Row>
+        <Col
+          sm={ 4 }
+          smOffset={ 4 }
           >
-          <FormGroup
-            bsSize='lg'
-            controlId='email'
-            validationState={ getValidationState(email) }
+          <h2 className='text-center'>Update your email address here:</h2>
+          <form
+            name='update-email'
+            onSubmit={ this.handleSubmit }
             >
-            <FormControl
-              autofocus={ true }
-              placeholder='Enter your new email'
-              type='email'
-              { ...email }
-            />
-            {
-              !email.error ?
-                null :
-                <HelpBlock>{ email.error }</HelpBlock>
-            }
-          </FormGroup>
-          <FormGroup
-            bsSize='lg'
-            controlId='duplicate'
-            validationState={ getValidationState(duplicate) }
-            >
-            <FormControl
-              placeholder='re-type your email address'
-              type='email'
-              { ...duplicate }
-            />
-            {
-              !duplicate.error ?
-                null :
-                <HelpBlock>{ duplicate.error }</HelpBlock>
-            }
-          </FormGroup>
-          <FormGroup>
-            <Button
-              block={ true }
+            <FormGroup
               bsSize='lg'
-              bsStyle='primary'
-              disabled={ submitting }
-              type='submit'
+              controlId='email'
+              validationState={ getValidationState(email) }
               >
-              { buttonCopy }
-            </Button>
-            <div className='button-spacer' />
-            <LinkContainer to='/settings'>
+              <FormControl
+                autofocus={ true }
+                placeholder='Enter your new email'
+                type='email'
+                { ...email }
+              />
+              {
+                !email.error ?
+                  null :
+                  <HelpBlock>{ email.error }</HelpBlock>
+              }
+            </FormGroup>
+            <FormGroup
+              bsSize='lg'
+              controlId='duplicate'
+              validationState={ getValidationState(duplicate) }
+              >
+              <FormControl
+                placeholder='re-type your email address'
+                type='email'
+                { ...duplicate }
+              />
+              {
+                !duplicate.error ?
+                  null :
+                  <HelpBlock>{ duplicate.error }</HelpBlock>
+              }
+            </FormGroup>
+            <FormGroup>
               <Button
                 block={ true }
                 bsSize='lg'
                 bsStyle='primary'
+                disabled={ submitting }
+                type='submit'
                 >
-                Go back to Settings
+                { buttonCopy }
               </Button>
-            </LinkContainer>
-          </FormGroup>
-        </form>
-      </div>
+              <div className='button-spacer' />
+              <LinkContainer to='/settings'>
+                <Button
+                  block={ true }
+                  bsSize='lg'
+                  bsStyle='primary'
+                  >
+                  Go back to Settings
+                </Button>
+              </LinkContainer>
+            </FormGroup>
+          </form>
+        </Col>
+      </Row>
     );
   }
 }

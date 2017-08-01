@@ -2,25 +2,25 @@ import React, { PropTypes } from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
-import { Col, Row, Image } from 'react-bootstrap';
+import { Col, Image } from 'react-bootstrap';
 
 import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import BugModal from '../../Bug-Modal.jsx';
 
-import { challengeSelector } from '../../redux/selectors';
+import { challengeMetaSelector } from '../../redux';
+import { challengeSelector } from '../../../../redux';
 
 const mapStateToProps = createSelector(
   challengeSelector,
+  challengeMetaSelector,
   (
     {
-      challenge: {
-        id,
-        description,
-        image
-      } = {},
-      title
-    }
+      id,
+      description,
+      image
+    },
+    { title }
   ) => ({
     id,
     image,
@@ -47,29 +47,25 @@ export class Project extends PureComponent {
     } = this.props;
     const imageURL = '//i.imgur.com/' + image + '.png';
     return (
-      <Row>
-        <Col md={ 4 }>
-          <SidePanel
-            description={ description }
-            isCompleted={ isCompleted }
-            title={ title }
-          />
-        </Col>
-        <Col
-          md={ 8 }
-          xs={ 12 }
-          >
-          <Image
-            id={ id }
-            responsive={ true }
-            src={ imageURL }
-          />
-          <br />
-          <ToolPanel />
-          <br />
-          <BugModal />
-        </Col>
-      </Row>
+      <Col
+        md={ 8 }
+        xs={ 12 }
+        >
+        <SidePanel
+          description={ description }
+          isCompleted={ isCompleted }
+          title={ title }
+        />
+        <Image
+          id={ id }
+          responsive={ true }
+          src={ imageURL }
+        />
+        <br />
+        <ToolPanel />
+        <br />
+        <BugModal />
+      </Col>
     );
   }
 }

@@ -1,73 +1,40 @@
 import React, { PropTypes } from 'react';
-import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 
 import ns from './ns.json';
 import {
+  appMounted,
   fetchUser,
   updateAppLang,
-  trackEvent,
-  loadCurrentChallenge,
-  openDropdown,
-  closeDropdown
-} from './redux/actions';
 
-import { submitChallenge } from './routes/challenges/redux/actions';
+  userSelector
+} from './redux';
 
-import Nav from './components/Nav';
-import Toasts from './toasts/Toasts.jsx';
-import { userSelector } from './redux/selectors';
+import Nav from './Nav';
+import Toasts from './Toasts';
 
 const mapDispatchToProps = {
-  closeDropdown,
+  appMounted,
   fetchUser,
-  loadCurrentChallenge,
-  openDropdown,
-  submitChallenge,
-  trackEvent,
   updateAppLang
 };
 
-const mapStateToProps = createSelector(
-  userSelector,
-  state => state.app.isNavDropdownOpen,
-  state => state.app.isSignInAttempted,
-  state => state.app.toast,
-  state => state.challengesApp.toast,
-  (
-    { user: { username, points, picture } },
-    isNavDropdownOpen,
-    isSignInAttempted,
-    toast,
-  ) => ({
-    username,
-    points,
-    picture,
-    toast,
-    isNavDropdownOpen,
-    showLoading: !isSignInAttempted,
+const mapStateToProps = state => {
+  const { username } = userSelector(state);
+  return {
+    toast: state.app.toast,
     isSignedIn: !!username
-  })
-);
+  };
+};
 
 const propTypes = {
+  appMounted: PropTypes.func.isRequired,
   children: PropTypes.node,
-  closeDropdown: PropTypes.func.isRequired,
   fetchUser: PropTypes.func,
-  isNavDropdownOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool,
-  loadCurrentChallenge: PropTypes.func.isRequired,
-  openDropdown: PropTypes.func.isRequired,
   params: PropTypes.object,
-  picture: PropTypes.string,
-  points: PropTypes.number,
-  showLoading: PropTypes.bool,
-  submitChallenge: PropTypes.func,
   toast: PropTypes.object,
-  trackEvent: PropTypes.func.isRequired,
-  updateAppLang: PropTypes.func.isRequired,
-  username: PropTypes.string
+  updateAppLang: PropTypes.func.isRequired
 };
 
 // export plain class for testing
@@ -79,54 +46,21 @@ export class FreeCodeCamp extends React.Component {
   }
 
   componentDidMount() {
+    this.props.appMounted();
     if (!this.props.isSignedIn) {
       this.props.fetchUser();
     }
   }
 
-  renderChallengeComplete() {
-    const { submitChallenge } = this.props;
-    return (
-      <Button
-        block={ true }
-        bsSize='small'
-        bsStyle='primary'
-        className='animated fadeIn'
-        onClick={ submitChallenge }
-        >
-        Submit and go to my next challenge
-      </Button>
-    );
-  }
-
   render() {
-    const {
-      username,
-      points,
-      picture,
-      trackEvent,
-      loadCurrentChallenge,
-      openDropdown,
-      closeDropdown,
-      isNavDropdownOpen
-    } = this.props;
-    const navProps = {
-      closeDropdown,
-      isNavDropdownOpen,
-      loadCurrentChallenge,
-      openDropdown,
-      picture,
-      points,
-      trackEvent,
-      username
-    };
-
+    // we render nav after the content
+    // to allow the panes to update
+    // redux store, which will update the bin
+    // buttons in the nav
     return (
       <div className={ `${ns}-container` }>
-        <Nav { ...navProps }/>
-        <div className={ `${ns}-content` }>
-          { this.props.children }
-        </div>
+        { this.props.children }
+        <Nav />
         <Toasts />
       </div>
     );

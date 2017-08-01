@@ -34,45 +34,45 @@ function getFirstChallenge(challengeMap$) {
 
 // this is a hard search
 // falls back to soft search
-function getChallengeAndBlock(
+function getChallenge(
   challengeDashedName,
   blockDashedName,
   challengeMap$,
   lang
 ) {
   return challengeMap$
-    .flatMap(({ entities }) => {
+    .flatMap(({ entities, result: { superBlocks } }) => {
       const block = entities.block[blockDashedName];
       const challenge = entities.challenge[challengeDashedName];
-      if (
-        !block ||
-        !challenge ||
-        !loadComingSoonOrBetaChallenge(challenge)
-      ) {
-        return getChallengeByDashedName(
-          challengeDashedName,
-          challengeMap$,
-          lang
-        );
-      }
-      return Observable.just({
-        redirect: block.dashedName !== blockDashedName ?
-          `/challenges/${block.dashedName}/${challenge.dashedName}` :
-          false,
-        entities: {
-          challenge: {
-            [challenge.dashedName]: mapChallengeToLang(challenge, lang)
+      return Observable.if(
+        () => (
+          !blockDashedName ||
+          !block ||
+          !challenge ||
+          !loadComingSoonOrBetaChallenge(challenge)
+        ),
+        getChallengeByDashedName(challengeDashedName, challengeMap$),
+        Observable.just(challenge)
+      )
+        .map(challenge => ({
+          redirect: challenge.block !== blockDashedName ?
+            `/challenges/${block.dashedName}/${challenge.dashedName}` :
+            false,
+          entities: {
+            challenge: {
+              [challenge.dashedName]: mapChallengeToLang(challenge, lang)
+            }
+          },
+          result: {
+            block: block.dashedName,
+            challenge: challenge.dashedName,
+            superBlocks
           }
-        },
-        result: {
-          block: block.dashedName,
-          challenge: challenge.dashedName
-        }
-      });
+        }));
     });
 }
 
-function getChallengeByDashedName(dashedName, challengeMap$, lang) {
+function getChallengeByDashedName(dashedName, challengeMap$) {
   const challengeName = unDasherize(dashedName)
     .replace(challengesRegex, '');
   const testChallengeName = new RegExp(challengeName, 'i');
@@ -94,40 +94,22 @@ function getChallengeByDashedName(dashedName, challengeMap$, lang) {
         return Observable.just(challengeOrNull);
       }
       return getFirstChallenge(challengeMap$);
-    })
-    .map(challenge => ({
-      redirect:
-        `/challenges/${challenge.block}/${challenge.dashedName}`,
-      entities: {
-        challenge: {
-          [challenge.dashedName]: mapChallengeToLang(challenge, lang)
-        }
-      },
-      result: {
-        challenge: challenge.dashedName,
-        block: challenge.block
-      }
-    }));
+    });
 }
 
 export default function mapService(app) {
   const Block = app.models.Block;
-  const challengeMap$ = cachedMap(Block);
+  const challengeMap = cachedMap(Block);
   return {
     name: 'map',
     read: (req, resource, { lang, block, dashedName } = {}, config, cb) => {
       log(`${lang} language requested`);
-      if (block && dashedName) {
-        return getChallengeAndBlock(dashedName, block, challengeMap$, lang)
-          .subscribe(challenge => cb(null, challenge), cb);
-      }
-      if (dashedName) {
-        return getChallengeByDashedName(dashedName, challengeMap$, lang)
-          .subscribe(challenge => cb(null, challenge), cb);
-      }
-      return challengeMap$
-        .map(getMapForLang(lang))
-        .subscribe(map => cb(null, map), cb);
+      return Observable.if(
+        () => !!dashedName,
+        getChallenge(dashedName, block, challengeMap, lang),
+        challengeMap.map(getMapForLang(lang))
+      )
+        .subscribe(results => cb(null, results), cb);
     }
   };
 }

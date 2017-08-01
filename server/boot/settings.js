@@ -1,5 +1,6 @@
-import { ifNoUser401 } from '../utils/middleware';
 import { isMongoId } from 'validator';
+
+import { ifNoUser401 } from '../utils/middleware';
 import supportedLanguages from '../../common/utils/supported-languages.js';
 
 export default function settingsController(app) {

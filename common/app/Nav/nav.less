@@ -1,0 +1,196 @@
+.navbar {
+  background-color: @brand-primary;
+  font-size: 14px;
+}
+
+.navbar-nav > li > a {
+  color: @body-bg;
+  &:hover {
+    color: @brand-primary;
+  }
+}
+
+.navbar > .container {
+  padding-right: 0px;
+  width: auto;
+
+  @media (max-width: 767px) {
+    // container default padding size
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.nav-height {
+  border: none;
+  height: @navbar-height;
+  width: 100%;
+}
+
+@navbar-logo-height: 25px;
+@navbar-logo-padding: (@navbar-height - @navbar-logo-height) / 2;
+.navbar-brand {
+  padding-top: @navbar-logo-padding;
+  padding-bottom: @navbar-logo-padding;
+}
+
+.nav-logo {
+  height: @navbar-logo-height;
+}
+
+.navbar-right {
+  background-color: @brand-primary;
+  text-align: center;
+
+  @media (min-width: @screen-md-min) {
+    margin-right:0;
+  }
+  @media (min-width: @screen-md-max) and (max-width: 991px) {
+    left: 0;
+    margin-right: 0;
+    position: absolute;
+    right: 0;
+    white-space: nowrap;
+  }
+}
+
+.navbar {
+  white-space: nowrap;
+  border: none;
+  line-height: 1;
+  @media (min-width: 767px) {
+    padding-left: 15px;
+    padding-right: 30px;
+  }
+}
+
+// li is used here to get more specific
+// and win against navbar.less#273
+li.nav-avatar {
+  span {
+    display: inline-block;
+  }
+  @media (min-width: @screen-sm-min) {
+    height: @navbar-height;
+    margin: 0;
+    padding: 0;
+
+    > a {
+      margin: 0;
+      padding: 0 @navbar-padding-horizontal 0 @navbar-padding-horizontal;
+    }
+  }
+}
+
+.nav-username {
+  padding-right: @navbar-padding-horizontal;
+}
+
+.nav-points {
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    padding: @navbar-padding-vertical 0 @navbar-padding-vertical 0;
+  }
+  @media (min-width: @screen-md-min) {
+    padding: @navbar-padding-vertical @navbar-padding-horizontal @navbar-padding-vertical 0;
+  }
+}
+
+.nav-picture {
+  margin-top: @navbar-logo-padding;
+  margin-bottom: @navbar-logo-padding;
+  height: @navbar-logo-height;
+  width: @navbar-logo-height;
+}
+
+.navbar-nav a {
+  color: @body-bg;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+.navbar-toggle {
+  color: @body-bg;
+
+  &:hover,
+  &:focus {
+    color: #4a2b0f;
+  }
+}
+
+.navbar-collapse {
+  border-top: 0;
+}
+
+@media (max-width: @screen-xs-max) {
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .navbar-nav {
+    margin-top: 0;
+  }
+
+  .navbar-nav > li {
+    float: none;
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .navbar-text {
+    float: none;
+    margin: 15px 0;
+  }
+
+  /* since 3.1.0 */
+  .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+
+  .collapsing {
+    overflow: hidden !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+.night {
+  .navbar-default {
+    .navbar-nav {
+      & > li > a {
+        color: #CCC;
+      }
+      .dropdown-menu {
+        background-color: @gray;
+        a {
+          color: @night-text-color !important;
+        }
+      }
+      a:focus,
+      a:hover,
+      .open #nav-Community-dropdown {
+        background-color: #666 !important;
+        color: @link-hover-color !important;
+      }
+    }
+  }
+  .navbar-toggle {
+    &:hover,
+    &:focus {
+      background-color: #666;
+      color: @link-hover-color;
+      border-color: #666;
+    }
+  }
+}

@@ -4,10 +4,15 @@ import { Button, Modal } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 
 import ns from './ns.json';
+import {
+  createIssue,
+  openIssueSearch,
+  closeBugModal,
 
-import { createIssue, openIssueSearch, closeBugModal } from './redux/actions';
+  bugModalSelector
+} from './redux';
 
-const mapStateToProps = state => ({ isOpen: state.challengesApp.isBugOpen });
+const mapStateToProps = state => ({ isOpen: bugModalSelector(state) });
 const mapDispatchToProps = { createIssue, openIssueSearch, closeBugModal };
 const bugLink = 'http://forum.freecodecamp.com/t/how-to-report-a-bug/19543';
 

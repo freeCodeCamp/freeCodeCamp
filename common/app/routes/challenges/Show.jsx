@@ -5,61 +5,52 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PureComponent from 'react-pure-render/component';
 
+import CompletionModal from './Completion-Modal.jsx';
 import Classic from './views/classic';
 import Step from './views/step';
 import Project from './views/project';
-import Video from './views/video';
 import BackEnd from './views/backend';
 
+import { challengeMetaSelector } from './redux';
 import {
+  updateTitle,
+  updateCurrentChallenge,
   fetchChallenge,
-  fetchChallenges,
-  replaceChallenge,
-  resetUi
-} from './redux/actions';
-import { challengeSelector } from './redux/selectors';
-import { updateTitle } from '../../redux/actions';
-import { makeToast } from '../../toasts/redux/actions';
+
+  challengeSelector,
+  langSelector
+} from '../../redux';
+import { makeToast } from '../../Toasts/redux';
 
 const views = {
   backend: BackEnd,
   classic: Classic,
   project: Project,
   simple: Project,
-  step: Step,
-  video: Video
+  step: Step
 };
 
 const mapDispatchToProps = {
   fetchChallenge,
-  fetchChallenges,
   makeToast,
-  replaceChallenge,
-  resetUi,
+  updateCurrentChallenge,
   updateTitle
 };
 
 const mapStateToProps = createSelector(
   challengeSelector,
-  state => state.challengesApp.challenge,
-  state => state.challengesApp.superBlocks,
-  state => state.app.lang,
+  challengeMetaSelector,
+  langSelector,
   (
-    {
-      challenge: { isTranslated } = {},
-      viewType,
-      title
-    },
-    challenge,
-    superBlocks = [],
+    { dashedName, isTranslated },
+    { viewType, title },
     lang
   ) => ({
     lang,
     isTranslated,
     title,
-    challenge,
-    viewType,
-    areChallengesLoaded: superBlocks.length > 0
+    challenge: dashedName,
+    viewType
   })
 );
 
@@ -74,26 +65,23 @@ const fetchOptions = {
 };
 
 const link = 'http://forum.freecodecamp.com/t/' +
-   'guidelines-for-translating-free-code-camp' +
-   '-to-any-language/19111';
+  'guidelines-for-translating-free-code-camp' +
+  '-to-any-language/19111';
 
 const propTypes = {
   areChallengesLoaded: PropTypes.bool,
-  fetchChallenges: PropTypes.func.isRequired,
   isStep: PropTypes.bool,
   isTranslated: PropTypes.bool,
   lang: PropTypes.string.isRequired,
   makeToast: PropTypes.func.isRequired,
   params: PropTypes.object.isRequired,
-  replaceChallenge: PropTypes.func.isRequired,
-  resetUi: PropTypes.func.isRequired,
   title: PropTypes.string,
+  updateCurrentChallenge: PropTypes.func.isRequired,
   updateTitle: PropTypes.func.isRequired,
   viewType: PropTypes.string
  };
 
 export class Show extends PureComponent {
-
   componentWillMount() {
     const { lang, isTranslated, makeToast } = this.props;
     if (lang !== 'en' && !isTranslated) {
@@ -106,27 +94,19 @@ export class Show extends PureComponent {
   }
 
   componentDidMount() {
-    if (!this.props.areChallengesLoaded) {
-      this.props.fetchChallenges();
-    }
     if (this.props.title) {
       this.props.updateTitle(this.props.title);
     }
   }
 
-  componentWillUnmount() {
-    this.props.resetUi();
-  }
-
   componentWillReceiveProps(nextProps) {
     const { title } = nextProps;
-    const { block, dashedName } = nextProps.params;
+    const { dashedName } = nextProps.params;
     const { lang, isTranslated } = nextProps;
-    const { resetUi, updateTitle, replaceChallenge, makeToast } = this.props;
+    const { updateTitle, updateCurrentChallenge, makeToast } = this.props;
     if (this.props.params.dashedName !== dashedName) {
+      updateCurrentChallenge(dashedName);
       updateTitle(title);
-      resetUi();
-      replaceChallenge({ dashedName, block });
       if (lang !== 'en' && !isTranslated) {
         makeToast({
           message: 'We haven\'t translated this challenge yet.',
@@ -140,7 +120,12 @@ export class Show extends PureComponent {
   render() {
     const { viewType } = this.props;
     const View = views[viewType] || Classic;
-    return <View />;
+    return (
+      <div>
+        <View />
+        <CompletionModal />
+      </div>
+    );
   }
 }
 
