@@ -47,5 +47,6 @@ export default function stepChallengeEpic(actions, { getState }) {
         return goToStep(stepBwd, !!unlockedSteps[stepBwd]);
       }
       return null;
-    });
+    })
+    .filter(Boolean);
 }

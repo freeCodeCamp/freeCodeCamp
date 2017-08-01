@@ -3,14 +3,17 @@ import test from 'tape';
 import proxy from 'proxyquire';
 import sinon from 'sinon';
 
-import { types } from './';
 import ns from '../ns.json';
+// import challenges.redux to get around
+// circular dependency
+import { types as app } from '../../../redux';
+import { types } from './';
 
 config.longStackSupport = true;
 const challengeSelectorStub = {};
 const stepChallengeEpic = proxy(
   './step-challenge-epic',
-  { './selectors': challengeSelectorStub }
+  { '../../../../../redux': challengeSelectorStub }
 );
 
 const file = 'common/app/routes/challenges/redux/step-challenge-epic';
@@ -44,12 +47,10 @@ test(file, function(t) {
     challengeSelectorStub.challengeSelector = sinon.spy(_state => {
       t.assert(_state === state, 'challenge selector not called with state');
       return {
-        challenge: {
-          description: new Array(2)
-        }
+        description: new Array(2)
       };
     });
-    stepChallengeEpic(actions, () => state)
+    stepChallengeEpic(actions, { getState: () => state })
       .subscribe(
         onNextSpy,
         e => {
@@ -84,12 +85,10 @@ test(file, function(t) {
     challengeSelectorStub.challengeSelector = sinon.spy(_state => {
       t.assert(_state === state, 'challenge selector not called with state');
       return {
-        challenge: {
-          description: new Array(2)
-        }
+        description: new Array(2)
       };
     });
-    stepChallengeEpic(actions, () => state)
+    stepChallengeEpic(actions, { getState: () => state })
       .subscribe(
         onNextSpy,
         e => {
@@ -119,12 +118,10 @@ test(file, function(t) {
     challengeSelectorStub.challengeSelector = sinon.spy(_state => {
       t.assert(_state === state, 'challenge selector not called with state');
       return {
-        challenge: {
-          description: new Array(2)
-        }
+        description: new Array(2)
       };
     });
-    stepChallengeEpic(actions, () => state)
+    stepChallengeEpic(actions, { getState: () => state })
       .subscribe(
         onNextSpy,
         e => {
@@ -137,7 +134,7 @@ test(file, function(t) {
           );
           t.assert(
             onNextSpy.calledWithMatch({
-              type: types.submitChallenge
+              type: app.submitChallenge
             }),
             'Epic did not return the expected action'
           );
