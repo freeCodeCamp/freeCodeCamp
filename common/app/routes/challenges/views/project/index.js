@@ -1,1 +1,1 @@
-export default from './Project.jsx';
+export { default, panesMap } from './Show.jsx';

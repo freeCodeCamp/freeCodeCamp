@@ -10,7 +10,6 @@ import BugModal from '../../Bug-Modal.jsx';
 
 import { challengeMetaSelector } from '../../redux';
 import { challengeSelector } from '../../../../redux';
-import ChildContainer from '../../../../Child-Container.jsx';
 
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -48,31 +47,29 @@ export class Project extends PureComponent {
     } = this.props;
     const imageURL = '//i.imgur.com/' + image + '.png';
     return (
-      <ChildContainer>
-        <Row>
-          <Col md={ 4 }>
-            <SidePanel
-              description={ description }
-              isCompleted={ isCompleted }
-              title={ title }
-            />
-          </Col>
-          <Col
-            md={ 8 }
-            xs={ 12 }
-            >
-            <Image
-              id={ id }
-              responsive={ true }
-              src={ imageURL }
-            />
-            <br />
-            <ToolPanel />
-            <br />
-            <BugModal />
-          </Col>
-        </Row>
-      </ChildContainer>
+      <Row>
+        <Col md={ 4 }>
+          <SidePanel
+            description={ description }
+            isCompleted={ isCompleted }
+            title={ title }
+          />
+        </Col>
+        <Col
+          md={ 8 }
+          xs={ 12 }
+          >
+          <Image
+            id={ id }
+            responsive={ true }
+            src={ imageURL }
+          />
+          <br />
+          <ToolPanel />
+          <br />
+          <BugModal />
+        </Col>
+      </Row>
     );
   }
 }

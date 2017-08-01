@@ -2,12 +2,14 @@ import Show from './Show.jsx';
 import { panesMap as backendPanesMap } from './views/backend';
 import { panesMap as classicPanesMap } from './views/classic';
 import { panesMap as stepPanesMap } from './views/step';
+import { panesMap as projectPanesMap } from './views/project';
 
 export function createPanesMap() {
   return {
     ...backendPanesMap,
     ...classicPanesMap,
-    ...stepPanesMap
+    ...stepPanesMap,
+    ...projectPanesMap
   };
 }
 
