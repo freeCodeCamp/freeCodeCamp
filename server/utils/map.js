@@ -1,15 +1,19 @@
 import _ from 'lodash';
 import { Observable } from 'rx';
 
-import { nameify } from '../utils';
+import { unDasherize, nameify } from '../utils';
 import supportedLanguages from '../../common/utils/supported-languages';
 import {
-  checkMapData,
   addNameIdMap as _addNameIdToMap,
-  getFirstChallenge
+  checkMapData,
+  getFirstChallenge as _getFirstChallenge
 } from '../../common/utils/map.js';
 
+const isDev = process.env.NODE_ENV !== 'production';
+const isBeta = !!process.env.BETA;
+const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint)/i;
 const addNameIdMap = _.once(_addNameIdToMap);
+const getFirstChallenge = _.once(_getFirstChallenge);
 /*
  * interface ChallengeMap {
  *   result: {
@@ -183,3 +187,88 @@ export function getChallengeInfo(map) {
       challengeIdToName
     }));
 }
+
+// if challenge is not isComingSoon or isBeta => load
+// if challenge is ComingSoon we are in beta||dev => load
+// if challenge is beta and we are in beta||dev => load
+// else hide
+function loadComingSoonOrBetaChallenge({
+  isComingSoon,
+  isBeta: challengeIsBeta
+}) {
+  return !(isComingSoon || challengeIsBeta) || isDev || isBeta;
+}
+
+// this is a hard search
+// falls back to soft search
+export function getChallenge(
+  challengeDashedName,
+  blockDashedName,
+  map,
+  lang
+) {
+  return map
+    .flatMap(({ entities, result: { superBlocks } }) => {
+      const block = entities.block[blockDashedName];
+      const challenge = entities.challenge[challengeDashedName];
+      return Observable.if(
+        () => (
+          !blockDashedName ||
+          !block ||
+          !challenge ||
+          !loadComingSoonOrBetaChallenge(challenge)
+        ),
+        getChallengeByDashedName(challengeDashedName, map),
+        Observable.just({ block, challenge })
+      )
+        .map(({ challenge, block }) => ({
+          redirect: challenge.block !== blockDashedName ?
+            `/challenges/${block.dashedName}/${challenge.dashedName}` :
+            false,
+          entities: {
+            challenge: {
+              [challenge.dashedName]: mapChallengeToLang(challenge, lang)
+            }
+          },
+          result: {
+            block: block.dashedName,
+            challenge: challenge.dashedName,
+            superBlocks
+          }
+        }));
+    });
+}
+
+export function getBlockForChallenge(map, challenge) {
+  return map.map(({ entities: { block } }) => block[challenge.block]);
+}
+
+export function getChallengeByDashedName(dashedName, map) {
+  const challengeName = unDasherize(dashedName)
+    .replace(challengesRegex, '');
+  const testChallengeName = new RegExp(challengeName, 'i');
+
+  return map
+    .map(({ entities }) => entities.challenge)
+    .flatMap(challengeMap => {
+      return Observable.from(Object.keys(challengeMap))
+        .map(key => challengeMap[key]);
+    })
+    .filter(challenge => {
+      return loadComingSoonOrBetaChallenge(challenge) &&
+        testChallengeName.test(challenge.name);
+    })
+    .last({ defaultValue: null })
+    .flatMap(challengeOrNull => {
+      return Observable.if(
+        () => !!challengeOrNull,
+        Observable.just(challengeOrNull),
+        map.map(getFirstChallenge)
+      );
+    })
+    .flatMap(challenge => {
+      return getBlockForChallenge(map, challenge)
+        .map(block => ({ challenge, block }));
+    });
+}
+
