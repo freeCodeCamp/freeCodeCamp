@@ -1,6 +1,5 @@
 import flowRight from 'lodash/flowRight';
-import createNameIdMap from '../../utils/create-name-id-map.js';
-
+import { createNameIdMap } from '../../utils/map.js';
 
 export function filterComingSoonBetaChallenge(
   isDev = false,
@@ -29,5 +28,8 @@ export function filterComingSoonBetaFromEntities(
 
 export const shapeChallenges = flowRight(
   filterComingSoonBetaFromEntities,
-  createNameIdMap
+  entities => ({
+    ...entities,
+    ...createNameIdMap(entities)
+  })
 );

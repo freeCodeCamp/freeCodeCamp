@@ -1,7 +1,12 @@
 import { Observable } from 'rx';
 import debug from 'debug';
 import { unDasherize } from '../utils';
-import { mapChallengeToLang, cachedMap, getMapForLang } from '../utils/map';
+import {
+  cachedMap,
+  getFirstChallenge,
+  getMapForLang,
+  mapChallengeToLang
+} from '../utils/map';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
@@ -17,19 +22,6 @@ function loadComingSoonOrBetaChallenge({
   isBeta: challengeIsBeta
 }) {
   return !(isComingSoon || challengeIsBeta) || isDev || isBeta;
-}
-
-function getFirstChallenge(challengeMap$) {
-  return challengeMap$
-    .map(({ entities: { superBlock, block, challenge }, result }) => {
-      return challenge[
-        block[
-          superBlock[
-            result[0]
-          ].blocks[0]
-        ].challenges[0]
-      ];
-    });
 }
 
 // this is a hard search
@@ -98,8 +90,7 @@ function getChallengeByDashedName(dashedName, challengeMap$) {
 }
 
 export default function mapService(app) {
-  const Block = app.models.Block;
-  const challengeMap = cachedMap(Block);
+  const challengeMap = cachedMap(app.models);
   return {
     name: 'map',
     read: (req, resource, { lang, block, dashedName } = {}, config, cb) => {
