@@ -11,7 +11,7 @@ import {
 import { entitiesSelector } from '../../entities';
 
 export default function loadCurrentChallengeEpic(actions, { getState }) {
-  return actions::ofType(types.clickOnLogo)
+  return actions::ofType(types.clickOnLogo, types.clickOnMap)
     .debounce(500)
     .map(() => {
       let finalChallenge;
