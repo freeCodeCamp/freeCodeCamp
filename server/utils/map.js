@@ -5,11 +5,11 @@ import { nameify } from '../utils';
 import supportedLanguages from '../../common/utils/supported-languages';
 import {
   checkMapData,
-  addNameIdMap,
+  addNameIdMap as _addNameIdToMap,
   getFirstChallenge
 } from '../../common/utils/map.js';
 
-let mapObservableCache;
+const addNameIdMap = _.once(_addNameIdToMap);
 /*
  * interface ChallengeMap {
  *   result: {
@@ -27,10 +27,7 @@ let mapObservableCache;
  *   }
  * }
  */
-export function cachedMap({ Block, Challenge }) {
-  if (mapObservableCache) {
-    return mapObservableCache;
-  }
+export function _cachedMap({ Block, Challenge }) {
   const challenges = Challenge.find$({
     order: [ 'order ASC', 'suborder ASC' ]
   });
@@ -91,7 +88,7 @@ export function cachedMap({ Block, Challenge }) {
       .map(key => superBlockMap[key])
       .map(({ dashedName }) => dashedName);
   });
-  const map = Observable.combineLatest(
+  return Observable.combineLatest(
     superBlockMap,
     blockMap,
     challengeMap,
@@ -109,9 +106,9 @@ export function cachedMap({ Block, Challenge }) {
   )
     .do(checkMapData)
     .shareReplay();
-  mapObservableCache = map;
-  return map;
 }
+
+export const cachedMap = _.once(_cachedMap);
 
 export function mapChallengeToLang(
   { translations = {}, ...challenge },
