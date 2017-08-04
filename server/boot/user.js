@@ -22,8 +22,7 @@ import {
   calcLongestStreak
 } from '../utils/user-stats';
 import supportedLanguages from '../../common/utils/supported-languages';
-import createNameIdMap from '../../common/utils/create-name-id-map';
-import { cachedMap } from '../utils/map';
+import { getChallengeInfo, cachedMap } from '../utils/map';
 
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
@@ -97,7 +96,7 @@ function getChallengeGroup(challenge) {
 //   challenges: Array
 // }]
 function buildDisplayChallenges(
-  { challenge: challengeMap = {}, challengeIdToName },
+  { challengeMap, challengeIdToName },
   userChallengeMap = {},
   timezone
 ) {
@@ -139,10 +138,8 @@ function buildDisplayChallenges(
 module.exports = function(app) {
   const router = app.loopback.Router();
   const api = app.loopback.Router();
-  const User = app.models.User;
-  const Block = app.models.Block;
-  const { Email } = app.models;
-  const map$ = cachedMap(Block);
+  const { User, Email } = app.models;
+  const map$ = cachedMap(app.models);
   function findUserByUsername$(username, fields) {
     return observeQuery(
       User,
@@ -436,9 +433,9 @@ module.exports = function(app) {
           userPortfolio.bio = emoji.emojify(userPortfolio.bio);
         }
 
-        return map$.map(({ entities }) => createNameIdMap(entities))
-          .flatMap(entities => buildDisplayChallenges(
-            entities,
+        return getChallengeInfo(map$)
+          .flatMap(challengeInfo => buildDisplayChallenges(
+            challengeInfo,
             userPortfolio.challengeMap,
             timezone
           ))

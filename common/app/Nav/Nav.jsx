@@ -20,6 +20,7 @@ import SignUp from './Sign-Up.jsx';
 import BinButton from './Bin-Button.jsx';
 import {
   clickOnLogo,
+  clickOnMap,
   openDropdown,
   closeDropdown,
   createNavLinkActionCreator,
@@ -73,6 +74,10 @@ function mapDispatchToProps(dispatch) {
       return mdtp;
     },
     {
+      clickOnMap: e => {
+        e.preventDefault();
+        return clickOnMap();
+      },
       clickOnLogo: e => {
         e.preventDefault();
         return clickOnLogo();
@@ -180,12 +185,14 @@ export class FCCNav extends React.Component {
     const {
       panes,
       clickOnLogo,
+      clickOnMap,
       username,
       points,
       picture,
       showLoading
     } = this.props;
 
+    const shouldShowMapButton = panes.length === 0;
     return (
       <Navbar
         className='nav-height'
@@ -220,6 +227,14 @@ export class FCCNav extends React.Component {
                   key={ content }
                 />
               ))
+            }
+            { shouldShowMapButton ?
+                <BinButton
+                  content='Map'
+                  handleClick={ clickOnMap }
+                  key='Map'
+                /> :
+                null
             }
             {
               navLinks.map(
