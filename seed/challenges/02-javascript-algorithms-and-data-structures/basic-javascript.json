@@ -2625,7 +2625,7 @@
       ],
       "tests": [
         "assert(typeof timesFive === 'function', 'message: <code>timesFive</code> should be a function');",
-        "assert(code.match(/timesFive\\(\\s*\\d+\\s*\\)/g), 'message: function <code>timesFive</code> should be called with a number');",        
+        "assert(code.match(/timesFive\\(\\s*\\d+\\s*\\)/g), 'message: function <code>timesFive</code> should be called with a number');",
         "assert(timesFive(5) === 25, 'message: <code>timesFive(5)</code> should return <code>25</code>');",
         "assert(timesFive(2) === 10, 'message: <code>timesFive(2)</code> should return <code>10</code>');",
         "assert(timesFive(0) === 0, 'message: <code>timesFive(0)</code> should return <code>0</code>');"
@@ -3680,10 +3680,11 @@
         "In the game of <a href=\"https://en.wikipedia.org/wiki/Golf\" target=\"_blank\">golf</a> each hole has a <code>par</code> meaning the average number of <code>strokes</code> a golfer is expected to make in order to sink the ball in a hole to complete the play. Depending on how far above or below <code>par</code> your <code>strokes</code> are, there is a different nickname.",
         "Your function will be passed <code>par</code> and <code>strokes</code> arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):",
         "<table class=\"table table-striped\"><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>\"Hole-in-one!\"</td></tr><tr><td>&lt;= par - 2</td><td>\"Eagle\"</td></tr><tr><td>par - 1</td><td>\"Birdie\"</td></tr><tr><td>par</td><td>\"Par\"</td></tr><tr><td>par + 1</td><td>\"Bogey\"</td></tr><tr><td>par + 2</td><td>\"Double Bogey\"</td></tr><tr><td>&gt;= par + 3</td><td>\"Go Home!\"</td></tr></tbody></table>",
-        "<code>par</code> and <code>strokes</code> will always be numeric and positive."
+        "<code>par</code> and <code>strokes</code> will always be numeric and positive. We have added an array of all the names for your convenience."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
+        "var names = [\"Hole-in-one!\", \"Eagle\", \"Birdie\", \"Par\", \"Bogey\", \"Double Bogey\", \"Go Home!\"];",
         "function golfScore(par, strokes) {",
         "  // Only change code below this line",
         "  ",
