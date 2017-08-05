@@ -34,8 +34,10 @@ block content
                         | Run tests (ctrl + enter)
                 .button-spacer
                 button.btn-big.btn.btn-primary.btn-block#trigger-reset-modal Reset your code
-                .button-spacer                    
+                .button-spacer
                 a.btn-big.btn.btn-primary.btn-block(href="https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-guide-" + dashedName target="_blank") Get a hint
+                .button-spacer
+                button.btn-big.btn.btn-primary.btn-block#trigger-ask-for-help-modal Ask for help on the forum
                 if (!user)
                     .button-spacer
                     a.btn.signup-btn.btn-block.btn-block(href='/login') Sign in so you can save your progress
