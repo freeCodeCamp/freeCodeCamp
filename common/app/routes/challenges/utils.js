@@ -14,6 +14,7 @@ export const viewTypes = {
   // formally hikes
   [ challengeTypes.video ]: 'video',
   [ challengeTypes.step ]: 'step',
+  [ challengeTypes.quiz ]: 'quiz',
   backend: 'backend'
 };
 
@@ -34,6 +35,7 @@ export const submitTypes = {
   // formally hikes
   [ challengeTypes.video ]: 'video',
   [ challengeTypes.step ]: 'step',
+  [ challengeTypes.quiz ]: 'quiz',
   backend: 'backend'
 };
 

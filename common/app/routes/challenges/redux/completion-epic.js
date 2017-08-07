@@ -138,6 +138,7 @@ const submitters = {
   backend: submitBackendChallenge,
   step: submitSimpleChallenge,
   video: submitSimpleChallenge,
+  quiz: submitSimpleChallenge,
   'project.frontEnd': submitProject,
   'project.backEnd': submitProject,
   'project.simple': submitSimpleChallenge
