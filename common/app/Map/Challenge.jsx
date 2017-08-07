@@ -127,7 +127,7 @@ export class Challenge extends PureComponent {
       isRequired,
       title
     } = this.props;
-    if (isHidden) {
+    if (isHidden || !title) {
       return null;
     }
     const challengeClassName = classnames({
