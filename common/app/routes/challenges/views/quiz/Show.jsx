@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Main from './Project.jsx';
+import Main from './Quiz.jsx';
 import { types } from '../../redux';
 import Panes from '../../../../Panes';
 import _Map from '../../../../Map';
@@ -21,7 +21,7 @@ const nameToComponent = {
   }
 };
 
-export default function ShowProject() {
+export default function ShowQuiz() {
   return (
     <ChildContainer isFullWidth={ true }>
       <Panes nameToComponent={ nameToComponent }/>
@@ -29,5 +29,5 @@ export default function ShowProject() {
   );
 }
 
-ShowProject.displayName = 'ShowProject';
-ShowProject.propTypes = propTypes;
+ShowQuiz.displayName = 'ShowQuiz';
+ShowQuiz.propTypes = propTypes;

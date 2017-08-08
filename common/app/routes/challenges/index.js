@@ -3,13 +3,15 @@ import { panesMap as backendPanesMap } from './views/backend';
 import { panesMap as classicPanesMap } from './views/classic';
 import { panesMap as stepPanesMap } from './views/step';
 import { panesMap as projectPanesMap } from './views/project';
+import { panesMap as quizPanesMap } from './views/quiz';
 
 export function createPanesMap() {
   return {
     ...backendPanesMap,
     ...classicPanesMap,
     ...stepPanesMap,
-    ...projectPanesMap
+    ...projectPanesMap,
+    ...quizPanesMap
   };
 }
 

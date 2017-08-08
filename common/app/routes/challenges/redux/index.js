@@ -27,6 +27,7 @@ import { bonfire, html, js } from '../../../utils/challengeTypes';
 import blockNameify from '../../../utils/blockNameify';
 import { createPoly, setContent } from '../../../../utils/polyvinyl';
 import createStepReducer, { epics as stepEpics } from '../views/step/redux';
+import createQuizReducer from '../views/quiz/redux';
 import createProjectReducer from '../views/project/redux';
 
 // this is not great but is ok until we move to a different form type
@@ -361,6 +362,7 @@ export default function createReducers() {
   return [
     reducer,
     ...createStepReducer(),
-    ...createProjectReducer()
+    ...createProjectReducer(),
+    ...createQuizReducer()
   ];
 }

@@ -10,6 +10,7 @@ import Classic from './views/classic';
 import Step from './views/step';
 import Project from './views/project';
 import BackEnd from './views/backend';
+import Quiz from './views/quiz';
 
 import { challengeMetaSelector } from './redux';
 import {
@@ -27,7 +28,8 @@ const views = {
   classic: Classic,
   project: Project,
   simple: Project,
-  step: Step
+  step: Step,
+  quiz: Quiz
 };
 
 const mapDispatchToProps = {
