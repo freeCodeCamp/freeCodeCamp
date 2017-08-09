@@ -20,7 +20,7 @@ window.common = (function({ common = { init: [] } }) {
 
       $('#ask-for-help-modal').modal('hide');
       window.open(
-        'http://forum.freecodecamp.org/new-topic?title='
+        'https://forum.freecodecamp.org/new-topic?title='
         + helpTitle
         + '&body='
         + helpMessage
