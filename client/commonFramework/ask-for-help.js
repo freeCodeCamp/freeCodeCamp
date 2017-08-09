@@ -3,14 +3,14 @@ window.common = (function({ common = { init: [] } }) {
     $('#ask-for-help-button').on('click', function() {
       var helpTitle = common.challengeName;
       var helpMessage = [
-        '**Whats happening**\n\n\n',
-        '**My code so far**\n',
+        '**Tell us what\'s happening:**\n\n\n\n',
+        '**Your code so far**\n',
         '```' + common.editor.getValue() + '```\n',
-        '**My browser information**\n\n',
-        'User Agent is: ```',
+        '**Your browser information:**\n\n',
+        'Your Browser User Agent is: ```',
         navigator.userAgent,
         '```.\n\n',
-        '**Link to the challenge**\n\n',
+        '**Link to the challenge:**\n',
         window.location.href + '\n'
 
       ].join('');
