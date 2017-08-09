@@ -75,26 +75,27 @@ block content
           div.margin-left-10(id = 'collapse-full-stack-development-certification' class = "collapse in map-collapse no-transition certBlock")
               #nested
                 a(data-toggle='collapse', data-parent='#nested', href='#nested-collapse-nonprofit-projects')
-                div.margin-left-10(class = "chapterBlock")
+                div
                     .challengeBlockDescription Once you feel ready, you can get real-world experience by contributing to these open source tools used by nonprofits.
-                    p.challenge-title.text-primary.fa.fa-envelope-o.negative-15(name="Mail for Good")
-                      a(href="https://github.com/FreeCodeCamp/mail-for-good" target="_blank")
-                        span Mail for Good
-                    p.challenge-title.text-primary.fa.fa-cutlery.negative-15(name="Pantry for Good")
-                      a(href="https://github.com/FreeCodeCamp/pantry-for-good" target="_blank")
-                        span Pantry for Good
-                    p.challenge-title.text-primary.fa.fa-globe.negative-15(name="Meeting for Good")
-                      a(href="https://github.com/FreeCodeCamp/meeting-for-good" target="_blank")
-                        span Meeting for Good
-                    p.challenge-title.text-primary.fa.fa-futbol-o.negative-15(name="League for Good")
-                      a(href="https://github.com/FreeCodeCamp/league-for-good" target="_blank")
-                        span League for Good
-                    p.challenge-title.text-primary.fa.fa-users.negative-15(name="Conference for Good")
-                      a(href="https://github.com/FreeCodeCamp/conference-for-good" target="_blank")
-                        span Conference for Good
-                    p.challenge-title.text-primary.fa.fa-heart.negative-15(name="freeCodeCamp")
-                      a(href="https://github.com/FreeCodeCamp/freecodecamp" target="_blank")
-                        span freeCodeCamp
+                    .osfg-container
+                      p.challenge-title.text-primary.fa.fa-envelope-o.osfg-item(name="Mail for Good")
+                        a(href="https://github.com/FreeCodeCamp/mail-for-good" target="_blank")
+                          span Mail for Good
+                      p.challenge-title.text-primary.fa.fa-cutlery.osfg-item(name="Pantry for Good")
+                        a(href="https://github.com/FreeCodeCamp/pantry-for-good" target="_blank")
+                          span Pantry for Good
+                      p.challenge-title.text-primary.fa.fa-globe.osfg-item(name="Meeting for Good")
+                        a(href="https://github.com/FreeCodeCamp/meeting-for-good" target="_blank")
+                          span Meeting for Good
+                      p.challenge-title.text-primary.fa.fa-futbol-o.osfg-item(name="League for Good")
+                        a(href="https://github.com/FreeCodeCamp/league-for-good" target="_blank")
+                          span League for Good
+                      p.challenge-title.text-primary.fa.fa-users.osfg-item(name="Conference for Good")
+                        a(href="https://github.com/FreeCodeCamp/conference-for-good" target="_blank")
+                          span Conference for Good
+                      p.challenge-title.text-primary.fa.fa-heart.osfg-item(name="freeCodeCamp")
+                        a(href="https://github.com/FreeCodeCamp/freecodecamp" target="_blank")
+                          span freeCodeCamp
           h2
             a(data-toggle='collapse', data-parent='#accordion', href='#collapse-coding-interview-preparation')
               span.no-link-underline

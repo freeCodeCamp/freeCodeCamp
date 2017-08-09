@@ -483,3 +483,20 @@
     color: @night-text-color;
   }
 }
+.osfg-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 35px;
+}
+.osfg-item {
+  &:before {
+    margin-right: 15px;
+  }
+  width: 32.3%;
+  @media (max-width: @screen-xs-max) {
+    width: 45%;
+  }
+  @media (max-width: @screen-xs) {
+    width: 100%;
+  }
+}
