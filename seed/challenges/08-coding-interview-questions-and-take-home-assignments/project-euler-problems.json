@@ -637,22 +637,26 @@
       "type": "bonfire",
       "title": "Problem 20: Factorial digit sum",
       "tests": [
-        "assert.strictEqual(euler20(), 648, 'message: \u003ccode\u003eeuler20()\u003c/code\u003e should return 648.');"
+        "assert.strictEqual(sumFactorialDigits(10), 27, 'message: \u003ccode\u003esumFactorialDigits(10)\u003c/code\u003e should return 27.');",
+        "assert.strictEqual(sumFactorialDigits(25), 72, 'message: \u003ccode\u003esumFactorialDigits(25)\u003c/code\u003e should return 72.');",
+        "assert.strictEqual(sumFactorialDigits(50), 216, 'message: \u003ccode\u003esumFactorialDigits(50)\u003c/code\u003e should return 216.');",
+        "assert.strictEqual(sumFactorialDigits(75), 432, 'message: \u003ccode\u003esumFactorialDigits(75)\u003c/code\u003e should return 432.');",
+        "assert.strictEqual(sumFactorialDigits(100), 648, 'message: \u003ccode\u003esumFactorialDigits(100)\u003c/code\u003e should return 648.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler20() {",
+        "function sumFactorialDigits(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler20();"
+        "sumFactorialDigits(100);"
       ],
       "description": [
         "n! means n × (n − 1) × ... × 3 × 2 × 1",
         "For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.",
-        "Find the sum of the digits in the number 100!"
+        "Find the sum of the digits n!"
       ]
     },
     {
