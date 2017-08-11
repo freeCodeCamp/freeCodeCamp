@@ -169,6 +169,10 @@ window.common = (function(global) {
       $('#help-modal').modal('show');
     });
 
+    $('#trigger-ask-for-help-modal').on('click', function() {
+      $('#ask-for-help-modal').modal('show');
+    });
+
     $('#trigger-reset-modal').on('click', function() {
       $('#reset-modal').modal('show');
     });

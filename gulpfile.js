@@ -130,6 +130,7 @@ var paths = {
     'output-display',
     'phone-scroll-lock',
     'report-issue',
+    'ask-for-help',
     'run-tests-stream',
     'show-completion',
     'step-challenge',
