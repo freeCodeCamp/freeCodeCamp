@@ -138,29 +138,30 @@
       "id": "587d7b87367417b2b2512b42",
       "title": "Mutate an Array Declared with const",
       "description": [
-        "The <code>const</code> declaration has many use-cases in modern JavaScript.",
+        "The <code>const</code> declaration has many use cases in modern JavaScript.",
         "Some developers prefer to assign all their variables using <code>const</code> by default, unless they know they will need to reassign the value. Only in that case, they use <code>let</code>.",
         "However, it is important to understand that objects (including arrays and functions) assigned to a variable using <code>const</code> are still mutable. Using the <code>const</code> declaration only prevents reassignment of the variable identifier.",
-        "<blockquote>\"use strict\";<br>const s = [5, 6, 7];<br>s = [1, 2, 3]; // throws error, trying to assign a const<br>s[7] = 45; // works just as it would with an array declared with var</blockquote>",
-        "As you can see, you can mutate the object (<code>[5, 6, 7]</code>) itself and the variable identifier (<code>s</code>) will still point to the altered array. Like all arrays, the array assigned to <code>s</code> is mutable, but because <code>const</code> was used, you cannot use the variable identifier, <code>s</code>, to point to a different array using the assignment operator.",
-        "To make an object immutable, you can use <code>Object.freeze()</code>.",
+        "<blockquote>\"use strict\";<br>const s = [5, 6, 7];<br>s = [1, 2, 3]; // throws error, trying to assign a const<br>s[2] = 45; // works just as it would with an array declared with var or let<br>console.log(s); // returns [5, 6, 45]</blockquote>",
+        "As you can see, you can mutate the object <code>[5, 6, 7]</code> itself and the variable <code>s</code> will still point to the altered array <code>[5, 6, 45]</code>. Like all arrays, the array elements in <code>s</code> are mutable, but because <code>const</code> was used, you cannot use the variable identifier <code>s</code> to point to a different array using the assignment operator.",
         "<hr>",
-        "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code>.",
+        "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignment.",
         "<strong>Note</strong><br>Don't forget to add <code>\"use strict\";</code> to the top of your code."
       ],
       "challengeSeed": [
-        "const s = [ 5, 7, 2 ];",
+        "const s = [5, 7, 2];",
         "// change code below this line",
+        "",
         "s = [2, 5, 7];",
+        "",
         "// change code above this line",
         "// Test your code",
         "console.log(s);"
       ],
       "tests": [
-        "// Test user did not replace const keyword",
-        "// Test s is const",
-        "assert.deepEqual(s, [2, 5, 7], 'message: <code>s</code> should be equal to <code>[2, 5, 7]</code>.');",
-        "assert(!Object.isFrozen(s), 'message: <code>s</code> should not be frozen.');"
+        "assert(code.match(/const/g), 'message: Do not replace <code>const</code> keyword.');",
+        "assert(code.match(/const\\s+s/g), 'message: <code>s</code> is declared with <code>const</code>.');",
+        "assert(code.match(/const\\s+s\\s*?=\\s*?\\[\\s*?2\\s*?,\\s*?5\\s*?,\\s*?7\\s*?\\]\\s*?;/g), 'message: Do not change the original array declaration.');",
+        "assert.deepEqual(s, [2, 5, 7], 'message: <code>s</code> should be equal to <code>[2, 5, 7]</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
