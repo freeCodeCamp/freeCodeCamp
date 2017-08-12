@@ -50,6 +50,7 @@
         "The style that is responsible for the color of an element's text is the \"color\" style.",
         "Here's how you would set your <code>h2</code> element's text color to blue:",
         "<code>&#60;h2 style=\"color: blue;\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Note that it is a good practice to end inline <code>style</code> declarations with a <code>;</code> .",
         "<hr>",
         "Change your <code>h2</code> element's style so that its text color is red."
       ],
@@ -87,7 +88,8 @@
         "</main>"
       ],
       "tests": [
-        "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;?(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
+        "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;?(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');",
+        "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/),' message: Your <code>style</code> declaration should end with a <code>;</code> .');"
       ],
       "type": "waypoint",
       "challengeType": 0,
