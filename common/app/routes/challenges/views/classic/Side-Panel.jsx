@@ -127,6 +127,7 @@ export class SidePanel extends PureComponent {
       <div
         className={ `${ns}-instructions-panel` }
         ref='panel'
+        role='complementary'
         >
         <div>
           <ChallengeTitle>
