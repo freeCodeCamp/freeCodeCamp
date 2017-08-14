@@ -780,7 +780,7 @@
         "  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>",
         "  <p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, especially couch or lay on arms while you're using the keyboard. Missing until dinner time toy mouse squeak roll over. With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>",
-        "  <p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as door open yet destroy couch.</p>",                
+        "  <p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. Get video posted to internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as door open yet destroy couch.</p>",
         "  ",
         "</main>",
         "  ",
@@ -790,8 +790,8 @@
         "assert($('a').length == 1, 'message: There should be only one anchor tag on your page.');",
         "assert($('footer').length == 1, 'message: There should be only one <code>footer</code> tag on your page.');",
         "assert($('a').eq(0).attr('href') == \"#footer\", 'message: The <code>a</code> tag should have an <code>href</code> attribute set to \"#footer\".');",
-        "assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true, 'message: The <code>a</code> tag should not have a <code>target</code> attribute');",        
-        "assert($('a').eq(0).text().match(/Jump to Bottom/gi), 'message: The <code>a</code> text should be \"Jump to Bottom\".');",        
+        "assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true, 'message: The <code>a</code> tag should not have a <code>target</code> attribute');",
+        "assert($('a').eq(0).text().match(/Jump to Bottom/gi), 'message: The <code>a</code> text should be \"Jump to Bottom\".');",
         "assert($('footer').eq(0).attr('id') == \"footer\", 'message: The <code>footer</code> tag should have an <code>id</code> attribute set to \"footer\".');"
       ],
       "type": "waypoint",
@@ -1159,6 +1159,8 @@
       "tests": [
         "assert((/Top 3 things cats hate:/i).test($(\"ol\").prev().text()), 'message: You should have an ordered list for \"Top 3 things cats hate:\"');",
         "assert((/Things cats love:/i).test($(\"ul\").prev().text()), 'message: You should have an unordered list for \"Things cats love:\"');",
+        "assert.equal($(\"ul\").length, 1, 'message: You should have only one <code>ul</code> element.');",
+        "assert.equal($(\"ol\").length, 1, 'message: You should have only one <code>ol</code> element.');",
         "assert.equal($(\"ul li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ul</code> element.');",
         "assert.equal($(\"ol li\").length, 3, 'message: You should have three <code>li</code> elements within your <code>ol</code> element.');",
         "assert(code.match(/<\\/ul>/g) && code.match(/<\\/ul>/g).length === code.match(/<ul>/g).length, 'message: Make sure your <code>ul</code> element has a closing tag.');",
