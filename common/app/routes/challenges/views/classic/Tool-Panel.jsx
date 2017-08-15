@@ -96,7 +96,6 @@ export default class ToolPanel extends PureComponent {
       helpChatRoom,
       hint,
       isCodeLocked,
-      openBugModal,
       unlockUntrustedCode
     } = this.props;
     return (
@@ -134,8 +133,9 @@ export default class ToolPanel extends PureComponent {
           <Button
             bsSize='large'
             bsStyle='primary'
-            componentClass='label'
-            onClick={ openBugModal }
+            componentClass='a'
+            href={ 'https://github.com/freeCodeCamp/freeCodeCamp/issues/new' }
+            target='_blank'
             >
             Bug
           </Button>
