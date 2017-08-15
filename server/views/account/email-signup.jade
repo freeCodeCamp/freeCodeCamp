@@ -2,7 +2,7 @@ extends ../layout
 block content
     script.
       var challengeName = 'Email Signup'
-    h2.text-center Sign up with an email address here:
+    h2.text-center Sign up with an email address here , it's easy!   
     form.form-horizontal(method='POST', action='/api/users', name="signupForm")
         .row
             .col-sm-6.col-sm-offset-3
@@ -14,7 +14,7 @@ block content
               .form-group
                   button.btn.btn-lg.btn-primary.btn-block(type='submit')
                     span.ion-person-add
-                    | Signup
+                    | Signup Now!
     .row
         .col-sm-6.col-sm-offset-3
             p.text-center
