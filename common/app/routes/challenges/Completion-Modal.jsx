@@ -27,10 +27,14 @@ const mapDispatchToProps = function(dispatch) {
   const dispatchers = {
     close: () => dispatch(closeChallengeModal()),
     submitChallenge: (e) => {
-      if (
-        e.keyCode === 13 &&
-        (e.ctrlKey || e.meta)
-      ) {
+      if (e.type === 'keydown') {
+        if (
+          e.keyCode === 13 &&
+          (e.ctrlKey || e.meta)
+        ) {
+          dispatch(submitChallenge());
+        }
+      } else if (e.type === 'click') {
         dispatch(submitChallenge());
       }
     }
