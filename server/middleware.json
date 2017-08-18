@@ -60,7 +60,7 @@
   "final": {
   },
   "final:after": {
-    "./middlewares/production-metrics": {},
+    "./middlewares/error-reporter": {},
     "./middlewares/error-handlers": {}
   }
 }
