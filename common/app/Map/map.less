@@ -121,7 +121,14 @@
   .@{ns}-accordion a:focus, #noneFound {
     color: #ABABAB;
   }
-  .challenge-title {
+  .@{ns}-challenge-title, .@{ns}-accordion-panel-heading {
+    background: @night-body-bg;
+    color: @night-text-color;
+    a {
+      color: @night-text-color;
+    }
+  }
+  .@{ns}-caret {
     color: @night-text-color;
   }
 }
