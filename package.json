@@ -103,7 +103,7 @@
     "react": "~15.4.2",
     "react-addons-css-transition-group": "~15.4.2",
     "react-addons-shallow-compare": "~15.4.2",
-    "react-bootstrap": "^0.30.5",
+    "react-bootstrap": "~0.31.2",
     "react-codemirror": "^0.3.0",
     "react-dom": "~15.4.2",
     "react-fontawesome": "^1.2.0",
