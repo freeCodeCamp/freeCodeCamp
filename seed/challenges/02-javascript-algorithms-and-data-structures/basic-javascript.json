@@ -2898,7 +2898,7 @@
         "The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.",
         "<blockquote>function equalityTest(myVal) {<br>  if (myVal == 10) {<br>     return \"Equal\";<br>  }<br>  return \"Not Equal\";<br>}</blockquote>",
         "If <code>myVal</code> is equal to <code>10</code>, the equality operator returns <code>true</code>, so the code in the curly braces will execute, and the function will return <code>\"Equal\"</code>. Otherwise, the function will return <code>\"Not Equal\"</code>.",
-        "In order for JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. Once it does, however, it can compare terms as follows:",
+        "In order for JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. This is known as \"Type Coercion\". Once it does, however, it can compare terms as follows:",
         "<blockquote>   1   ==  1    // true<br>   1   ==  2    // false<br>   1   == '1'   // true<br>  \"3\"  ==  3    // true</blockquote>",
         "<hr>",
         "Add the <code>equality operator</code> to the indicated line so that the function will return \"Equal\" when <code>val</code> is equivalent to <code>12</code>"
@@ -2947,7 +2947,8 @@
       "id": "56533eb9ac21ba0edf2244d1",
       "title": "Comparison with the Strict Equality Operator",
       "description": [
-        "Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). Unlike the equality operator, strict equality tests both the <code>data type</code> and value of the compared elements.",
+        "Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.",
+        "If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.",
         "<strong>Examples</strong>",
         "<blockquote>3 === 3   // true<br>3 === '3' // false</blockquote>",
         "In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.",
@@ -2991,6 +2992,44 @@
           ]
         }
       }
+    },
+    {
+      "id": "599a789b454f2bbd91a3ff4d",
+      "title": "Practice comparing different values",
+      "description": [
+        "In the last two challenges, we learned about the equality operator (<code>==</code>) and the strict equality operator (<code>===</code>). Let's do a quick review and practice using these operators some more.",
+        "If the values being compared are not of the same type, the equality operator will perform a type conversion, and then evaluate the values. However, the strict equalty operator will compare both the data type and value as-is, without converting one type to the other.",
+        "<strong>Examples</strong>",
+        "<blockquote>3 == '3'  // returns true because JavaScript performs type converstion from string to number<br>3 === '3' // returns false because the types are different and type conversion is not performed</blockquote>",
+        "<strong>Note</strong><br>In JavaScript, you can determine the type of a variable or a value with the <code>typeof</code> operator, as follows:",
+        "<blockquote>typeof 3   // returns 'number'<br>typeof '3' // returns 'string'</blockquote>",
+        "<hr>",
+        "The <code>compareEquality</code> function in the editor compares two values using the <code>equality operator</code>. Modify the function so that it returns \"Equal\" only when the values are strictly equal."
+      ],
+      "releasedOn": "August 21, 2017",
+      "challengeSeed": [
+        "// Setup",
+        "function compareEquality(a, b) {",
+        "  if (a == b) { // Change this line",
+        "    return \"Equal\";",
+        "  }",
+        "  return \"Not Equal\";",
+        "}",
+        "",
+        "// Change this value to test",
+        "compareEquality(10, \"10\");"
+      ],
+      "solutions": [
+        "function compareEquality(a,b) {\n  if (a === b) {\n    return \"Equal\";\n  }\n  return \"Not Equal\";\n}"
+      ],
+      "tests": [
+        "assert(compareEquality(10, \"10\") === \"Not Equal\", 'message: <code>compareEquality(10, \"10\")</code> should return \"Not Equal\"');",
+        "assert(compareEquality(\"20\", 20) === \"Not Equal\", 'message: <code>compareEquality(\"20\", 20)</code> should return \"Not Equal\"');",
+        "assert(code.match(/===/g), 'message: You should use the <code>===</code> operator');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {}
     },
     {
       "id": "56533eb9ac21ba0edf2244d2",
