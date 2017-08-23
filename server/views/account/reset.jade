@@ -7,10 +7,10 @@ block content
       input(type='hidden', name='_csrf', value=_csrf)
       .form-group
         label(for='password') New Password
-        input.form-control(type='password', name='password', value='', placeholder='New password', autofocus=true)
+        input.form-control(type='password', name='password', value='', placeholder='New password', autofocus=true, required)
       .form-group
         label(for='confirm') Confirm Password
-        input.form-control(type='password', name='confirm', value='', placeholder='Confirm password')
+        input.form-control(type='password', name='confirm', value='', placeholder='Confirm password', required)
       .form-group
         button.btn.btn-primary.btn-reset(type='submit')
           i.fa.fa-keyboard-o

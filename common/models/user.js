@@ -9,11 +9,15 @@ import path from 'path';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
+import {
+  getEmailSender,
+  getProtocol,
+  getHost,
+  getPort
+} from '../../server/utils/url-utils';
 
 const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
-const isDev = process.env.NODE_ENV !== 'production';
-const devHost = process.env.HOST || 'localhost';
 
 const createEmailError = () => new Error(
  'Please check to make sure the email is a valid email address.'
@@ -50,6 +54,23 @@ module.exports = function(User) {
   // see:
   // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
   delete User.validations.email;
+  // Updated workaround for email validation
+  // see:
+  // https://github.com/strongloop/loopback/issues/1137#issuecomment-271437926
+  User.validate('email', function(err) {
+    if (this.email && !isEmail(this.email)) {
+      // Here err is a callback
+      // See loopback api docs loopback-datasource-juggler/#validatable-validate
+      debug(err());
+    }
+  }, {
+    message: 'Please check to make sure the email is a valid email address.'
+  });
+  // Adds email uniqueness validation
+  User.validatesUniquenessOf('email', {
+    message: 'Duplicate email exists, please contact team@freeCodeCamp.com'
+  });
+
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
   // set user.rand to random number
@@ -133,11 +154,11 @@ module.exports = function(User) {
     var mailOptions = {
       type: 'email',
       to: user.email,
-      from: 'team@freecodecamp.com',
+      from: getEmailSender(),
       subject: 'Welcome to freeCodeCamp!',
-      protocol: isDev ? null : 'https',
-      host: isDev ? devHost : 'freecodecamp.com',
-      port: isDev ? null : 443,
+      protocol: getProtocol(),
+      host: getHost(),
+      port: getPort(),
       template: path.join(
         __dirname,
         '..',
@@ -294,16 +315,11 @@ module.exports = function(User) {
       console.error(createEmailError());
       return null;
     }
-    let url;
-    const host = User.app.get('host');
+
+    const host = getHost();
     const { id: token } = info.accessToken;
-    if (process.env.NODE_ENV === 'development') {
-      const port = User.app.get('port');
-      url = `http://${host}:${port}/reset-password?access_token=${token}`;
-    } else {
-      url =
-        `http://freecodecamp.com/reset-password?access_token=${token}`;
-    }
+    const port = getPort();
+    let url = `http://${host}:${port}/reset-password?access_token=${token}`;
 
     // the email of the requested user
     debug(info.email);
@@ -312,7 +328,7 @@ module.exports = function(User) {
     // requires AccessToken.belongsTo(User)
     var mailOptions = {
       to: info.email,
-      from: 'Team@freecodecamp.com',
+      from: getEmailSender(),
       subject: 'Password Reset Request',
       text: `
         Hello,\n\n
@@ -543,11 +559,11 @@ module.exports = function(User) {
         const mailOptions = {
           type: 'email',
           to: email,
-          from: 'Team@freecodecamp.com',
+          from: getEmailSender(),
           subject: 'Welcome to freeCodeCamp!',
-          protocol: isDev ? null : 'https',
-          host: isDev ? devHost : 'freecodecamp.com',
-          port: isDev ? null : 443,
+          protocol: getProtocol(),
+          host: getHost(),
+          port: getPort(),
           template: path.join(
             __dirname,
             '..',

@@ -605,7 +605,14 @@ module.exports = function(app) {
     return User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
       return user.updateAttribute('password', password, function(err) {
-        if (err) { return next(err); }
+        if (err) {
+          debug(err);
+          req.flash('error', {
+            msg: err.message ||
+                 'Oops, something went wrong, please try again later'
+          });
+          return res.redirect('/');
+        }
 
         debug('password reset processed successfully');
         req.flash('info', { msg: 'You\'ve successfully reset your password.' });
