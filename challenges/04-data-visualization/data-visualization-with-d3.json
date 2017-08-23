@@ -168,12 +168,14 @@
         }
       ],
       "description": [
-        "The last couple challenges covered the tools used to display dynamic data. They introduced the <code>data()</code> and <code>enter()</code> methods. These functions take a data set, then for each item in the set, create a new element with that piece of data attached to it.",
-        "The last challenge created a new <code>h2</code> for each item in the data array, but it displayed the same text (\"New Title\") for each heading. Fortunately, there is a way to access and display the actual data with callback functions.",
-        "The <code>text()</code> method can take a string or a callback function as an argument. Since the data from the <code>dataset</code> array is attached to each element, the callback function has access to it. The parameter used in the callback function (<code>d</code> in the example below) is for the individual data-point itself. This callback function would set the text in the selection to the data value:",
+        "The last two challenges cover the basics of displaying data dynamically with D3 using the <code>data()</code> and <code>enter()</code> methods. These methods take a data set and, together with the <code>append()</code> method, create a new DOM element for each entry in the data set.",
+        "In the previous challenge, you created a new <code>h2</code> element for each item in the <code>dataset</code> array, but they all contained the same text, \"New Title\". This is because you have not made use of the data that is bound to each of the <code>h2</code> elements.",
+        "The D3 <code>text()</code> method can take a string or a callback function as an argument:",
         "<code>selection.text((d) => d)</code>",
+        "In the example above, the parameter <code>d</code> refers to a single entry in the dataset that a selection is bound to.",
+        "Using the current example as context, the first <code>h2</code> element is bound to 12, the second <code>h2</code> element is bound to 31, the third <code>h2</code> element is bound to 22, and so on.",
         "<hr>",
-        "Change the <code>text()</code> method so it does not place \"New Title\" in each heading. Instead, it displays the data from the array with a space and \"USD\". For example, the first heading should say \"12 USD\"."
+        "Change the <code>text()</code> method so that each <code>h2</code> element displays the corresponding value from the <code>dataset</code> array with a single space and \"USD\". For example, the first heading should be \"12 USD\"."
       ],
       "challengeSeed": [
         "<body>",
