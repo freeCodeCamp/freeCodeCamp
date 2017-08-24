@@ -1,6 +1,12 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { Button, Row, Col } from 'react-bootstrap';
+import {
+  ToggleButtonGroup,
+  ToggleButton,
+  Button,
+  Row,
+  Col
+} from 'react-bootstrap';
 import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
@@ -57,7 +63,7 @@ export default function EmailSettings({
     );
   }
   return (
-    <div>
+    <div className='email-settings'>
       <Row>
         <p className='large-p text-center'>
           <em>{ email }</em>
@@ -67,81 +73,153 @@ export default function EmailSettings({
         <UpdateEmailButton />
       </Row>
       <Row>
-        <Col xs={ 9 }>
+        <Col sm={ 8 }>
           <p className='large-p'>
             Send me announcement emails
             <br />
             (we'll send you these every Thursday)
           </p>
         </Col>
-        <Col xs={ 3 }>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            className={
-              classnames(
-                'positive-20',
-                { active: sendMonthlyEmail },
-                'btn-toggle'
-              )
-            }
-            onClick={ toggleMonthlyEmail }
+        <Col sm={ 4 }>
+          <ToggleButtonGroup
+            className='toggle-btn-group'
+            name='monthly-email'
+            onChange={ toggleMonthlyEmail }
+            type='radio'
             >
-            { sendMonthlyEmail ? 'On' : 'Off' }
-          </Button>
+            <ToggleButton
+              bsSize='lg'
+              bsStyle='primary'
+              className={
+                classnames(
+                  'positive-20',
+                  { active: sendMonthlyEmail },
+                  'btn-toggle'
+                )
+              }
+              disabled={ sendMonthlyEmail }
+              type='radio'
+              value={ 1 }
+              >
+              On
+            </ToggleButton>
+            <ToggleButton
+              bsSize='lg'
+              bsStyle='primary'
+              className={
+                classnames(
+                  'positive-20',
+                  { active: !sendMonthlyEmail },
+                  'btn-toggle'
+                )
+              }
+              disabled={ !sendMonthlyEmail }
+              type='radio'
+              value={ 2 }
+              >
+              Off
+            </ToggleButton>
+          </ToggleButtonGroup>
         </Col>
       </Row>
       <Row>
-        <Col xs={ 9 }>
+        <Col sm={ 8 }>
           <p className='large-p'>
             Send me notification emails
             <br />
             (these will pertain to your account)
           </p>
         </Col>
-        <Col xs={ 3 }>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            className={
-              classnames(
-                'positive-20',
-                { active: sendNotificationEmail },
-                'btn-toggle'
-              )
-            }
-            onClick={ toggleNotificationEmail }
+        <Col sm={ 4 }>
+          <ToggleButtonGroup
+            className='toggle-btn-group'
+            name='notification-email'
+            onChange={ toggleNotificationEmail }
+            type='radio'
             >
-            { sendNotificationEmail ? 'On' : 'Off' }
-          </Button>
+            <ToggleButton
+              bsSize='lg'
+              bsStyle='primary'
+              className={
+                classnames(
+                  'positive-20',
+                  { active: sendNotificationEmail },
+                  'btn-toggle'
+                )
+              }
+              disabled={ sendNotificationEmail }
+              type='radio'
+              value={ 1 }
+              >
+              On
+            </ToggleButton>
+            <ToggleButton
+              bsSize='lg'
+              bsStyle='primary'
+              className={
+                classnames(
+                  'positive-20',
+                  { active: !sendNotificationEmail },
+                  'btn-toggle'
+                )
+              }
+              disabled={ !sendNotificationEmail }
+              type='radio'
+              value={ 2 }
+              >
+              Off
+            </ToggleButton>
+          </ToggleButtonGroup>
         </Col>
       </Row>
       <Row>
-        <Col xs={ 9 }>
+        <Col sm={ 8 }>
           <p className='large-p'>
             Send me Quincy's weekly email
             <br />
             (with new articles every Tuesday)
           </p>
         </Col>
-        <Col xs={ 3 }>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            className={
-              classnames(
-                'positive-20',
-                { active: sendQuincyEmail },
-                'btn-toggle'
-              )
-            }
-            onClick={ toggleQuincyEmail }
+        <Col sm={ 4 }>
+          <ToggleButtonGroup
+            className='toggle-btn-group'
+            name='quincy-email'
+            onChange={ toggleQuincyEmail }
+            type='radio'
             >
-            { sendQuincyEmail ? 'On' : 'Off' }
-          </Button>
+            <ToggleButton
+              bsSize='lg'
+              bsStyle='primary'
+              className={
+                classnames(
+                  'positive-20',
+                  { active: sendQuincyEmail },
+                  'btn-toggle'
+                )
+              }
+              disabled={ sendQuincyEmail }
+              type='radio'
+              value={ 1 }
+              >
+              On
+            </ToggleButton>
+            <ToggleButton
+              bsSize='lg'
+              bsStyle='primary'
+              className={
+                classnames(
+                  'positive-20',
+                  { active: !sendQuincyEmail },
+                  'btn-toggle'
+                )
+              }
+              disabled={ !sendQuincyEmail }
+              type='radio'
+              value={ 2 }
+              >
+              Off
+            </ToggleButton>
+          </ToggleButtonGroup>
         </Col>
       </Row>
     </div>
