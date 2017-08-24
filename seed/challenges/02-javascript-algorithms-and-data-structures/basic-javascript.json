@@ -2477,7 +2477,7 @@
         "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // logs \"foo\"<br>console.log(loc); // loc is not defined</blockquote>",
         "<code>loc</code> is not defined outside of the function.",
         "<hr>",
-        "Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Run the tests and then follow the instructions commented out in the editor.",
+        "Declare a local variable <code>myVar</code> inside <code>myLocalScope</code> with a value of <code>100</code>. Run the tests and then follow the instructions commented out in the editor.",
         "<strong>Hint</strong><br>Refreshing the page may help if you get stuck."
       ],
       "releasedOn": "January 1, 2016",
@@ -2506,13 +2506,13 @@
         "function myLocalScope() {",
         "  'use strict'; // you shouldn't need to edit this line",
         "  ",
-        "  console.log(myVar);",
+        "  console.log('local', myVar);",
         "}",
         "myLocalScope();",
         "",
         "// Run and check the console",
         "// myVar is not defined outside of myLocalScope",
-        "console.log(myVar);",
+        "console.log('global', myVar);",
         "",
         "// Now remove the console log line to pass the test",
         ""
@@ -2522,11 +2522,11 @@
         "(function() { return logOutput || \"console.log never called\"; })();"
       ],
       "solutions": [
-        "function myLocalScope() {\n  'use strict';\n  \n  var myVar;\n  console.log(myVar);\n}\nmyLocalScope();"
+        "function myLocalScope() {\n  'use strict';\n  \n  var myVar = 100;\n  console.log(myVar);\n}\nmyLocalScope();"
       ],
       "tests": [
         "assert(typeof myVar === 'undefined', 'message: No global <code>myVar</code> variable');",
-        "assert(/var\\s+myVar/.test(code), 'message: Add a local <code>myVar</code> variable');"
+        "assert(/^[^\\/\\n]*var[^\\S\\n]+myVar[^\\S\\n]*=[^\\S\\n]*100[^\\S\\n]*;?.*$/m.test(code), 'message: Add a local <code>myVar</code> variable with a value of <code>100</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1,
