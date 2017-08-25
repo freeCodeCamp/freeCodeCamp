@@ -64,17 +64,33 @@
       "type": "bonfire",
       "title": "Problem 3: Largest prime factor",
       "tests": [
-        "assert.strictEqual(euler3(), 6857, 'message: <code>euler3()</code> should return 6857.');"
+        "assert.strictEqual(largestPrimeFactor(2), 2, 'message: <code>largestPrimeFactor(2)</code> should return 2.');"
+        "assert.strictEqual(largestPrimeFactor(3), 3, 'message: <code>largestPrimeFactor(3)</code> should return 3.');"
+        "assert.strictEqual(largestPrimeFactor(5), 5, 'message: <code>largestPrimeFactor(5)</code> should return 5.');"
+        "assert.strictEqual(largestPrimeFactor(7), 7, 'message: <code>largestPrimeFactor(7)</code> should return 7.');"
+        "assert.strictEqual(largestPrimeFactor(13195), 29, 'message: <code>largestPrimeFactor(13195)</code> should return 29.');"
+        "assert.strictEqual(largestPrimeFactor(600851475143), 6857, 'message: <code>largestPrimeFactor(600851475143)</code> should return 6857.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const largestPrimeFactor = (number)=>{",
+        "  let largestFactor = number;",
+        "  for(let i = 2;i<largestFactor;i++){",
+        "    if(!(largestFactor%i)){",
+        "      largestFactor = largestFactor/i;",
+        "      largestPrimeFactor(largestFactor);",
+        "    }",
+        "  }",
+        "  return largestFactor;",
+        "}"
+      ],
       "translations": {},
       "challengeSeed": [
-        "function euler3() {",
+        "function largestPrimeFactor(number) {",
         "  // Good luck!",
-        "  return true;",
+        "  return number;",
         "}",
         "",
-        "euler3();"
+        "largestPrimeFactor(number);"
       ],
       "description": [
         "The prime factors of 13195 are 5, 7, 13 and 29.",
@@ -87,17 +103,20 @@
       "type": "bonfire",
       "title": "Problem 4: Largest palindrome product",
       "tests": [
-        "assert.strictEqual(euler4(), 906609, 'message: <code>euler4()</code> should return 906609.');"
+        "assert.strictEqual(largestPalindromeProduct(2), 9009, 'message: <code>euler4()</code> should return 9009.');",
+        "assert.strictEqual(largestPalindromeProduct(3), 906609, 'message: <code>euler4()</code> should return 906609.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const largestPalindromeProduct = (digit)=>{\n  let start = 1;\n  let end = Number(`1e${digit}`) - 1;\n  let palindrome = [];\n  for(let i=start;i<=end;i++){\n    for(let j=start;j<=end;j++){\n      let product = i*j;\n      let palindromeRegex = /\\b(\\d)(\\d?)(\\d?).?\\3\\2\\1\\b/gi;\n      palindromeRegex.test(product) && palindrome.push(product);\n    }\n  }\n  return Math.max(...palindrome);\n}"
+      ],
       "translations": {},
       "challengeSeed": [
-        "function euler4() {",
+        "function largestPalindromeProduct(digit) {",
         "  // Good luck!",
-        "  return true;",
+        "  return digit;",
         "}",
         "",
-        "euler4();"
+        "largestPalindromeProduct(2);"
       ],
       "description": [
         "A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.",
