@@ -42,7 +42,7 @@ export default function bugEpic(actions, { getState }, { window }) {
       let titleText = challengeName;
       if (type === types.openIssueSearch) {
         window.open(
-          'https://forum.freecodecamp.com/search?q=' +
+          'https://forum.freecodecamp.org/search?q=' +
           window.encodeURIComponent(titleText)
         );
       } else {
@@ -71,7 +71,7 @@ export default function bugEpic(actions, { getState }, { window }) {
           textMessage = textMessage + body;
         }
         window.open(
-          'https://forum.freecodecamp.com/new-topic?category=General&title=' +
+          'https://forum.freecodecamp.org/new-topic?category=General&title=' +
           window.encodeURIComponent(titleText) + '&body=' +
           window.encodeURIComponent(textMessage),
           '_blank'

@@ -424,7 +424,7 @@ module.exports = function(app) {
             msg: dedent`
               Upon review, this account has been flagged for academic
               dishonesty. If you’re the owner of this account contact
-              team@freecodecamp.com for details.
+              team@freecodecamp.org for details.
             `
           });
         }
@@ -672,9 +672,9 @@ module.exports = function(app) {
 
     return Email.send$({
       type: 'email',
-      to: 'Team@FreeCodeCamp.com',
+      to: 'team@freecodecamp.org',
       cc: user.email,
-      from: 'Team@FreeCodeCamp.com',
+      from: 'team@freecodecamp.org',
       subject: 'Abuse Report : Reporting ' + username + '\'s profile.',
       text: dedent(`
         Hello Team,\n

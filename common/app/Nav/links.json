@@ -10,12 +10,12 @@
       },
       {
         "content": "Forum",
-        "link": "https://forum.freecodecamp.com/",
+        "link": "https://forum.freecodecamp.org/",
         "target": "_blank"
       },
       {
         "content": "Medium",
-        "link": "https://medium.freecodecamp.com",
+        "link": "https://medium.freecodecamp.org",
         "target": "_blank"
       },
       {
@@ -25,7 +25,7 @@
       },
       {
         "content": "In your city",
-        "link": "https://forum.freecodecamp.com/t/free-code-camp-city-based-local-groups/19574",
+        "link": "https://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574",
         "target": "_blank"
       },
       {
@@ -36,6 +36,6 @@
   },
   {
     "content": "Donate",
-    "link": "https://www.freecodecamp.com/donate"
+    "link": "https://www.freecodecamp.org/donate"
   }
 ]

@@ -14,7 +14,7 @@ import {
 
 const mapStateToProps = state => ({ isOpen: bugModalSelector(state) });
 const mapDispatchToProps = { createIssue, openIssueSearch, closeBugModal };
-const bugLink = 'http://forum.freecodecamp.com/t/how-to-report-a-bug/19543';
+const bugLink = 'http://forum.freecodecamp.org/t/how-to-report-a-bug/19543';
 
 const propTypes = {
   closeBugModal: PropTypes.func,

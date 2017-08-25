@@ -164,9 +164,9 @@ export class Settings extends React.Component {
               bsSize='lg'
               bsStyle='primary'
               className='btn-link-social'
-              href={ 'mail:team@freecodecamp.com' }
+              href={ 'mail:team@freecodecamp.org' }
               >
-              Email us at team@freecodecamp.com
+              Email us at team@freecodecamp.org
             </Button>
           </Col>
         </Row>
