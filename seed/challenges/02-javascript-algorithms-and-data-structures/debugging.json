@@ -68,6 +68,44 @@
       "translations": {}
     },
     {
+      "id": "587d7b83367417b2b2512b37",
+      "title": "Understanding the Differences between the freeCodeCamp and Browser Console",
+      "description": [
+        "You may have noticed that some freeCodeCamp JavaScript challenges include their own console.  This console behaves a little differently than the browser console you used in the last challenge.",
+        "The following challenge is meant to highlight some of the differences between the freeCodeCamp console and the browser console.",
+        "First, the browser console.  When you load and run an ordinary JavaScript file in your browser the <code>console.log()</code> statements will print exactly what you tell them to print to the browser console the exact number of times you requested. In your in-browser text editor the process is slightly different and can be confusing at first.",
+        "Values passed to a <code>console.log</code> in the text editor block run each set of tests as well as one more time for any function calls that you have in you code, i.e. <code>returnSum();</code>",
+        "This lends itself to some interesting behavior and might trip you up in the beginning, because a logged value that you expect to see only once may print out many more times depending on the number of tests and the values being passed to those tests.",
+        "If you would like to see only your single output and not have to worry about running through the test cycles, you can use <code>console.clear()</code>.",
+        "The fCC console on the other hand is used for feedback while passing the test cases in fCC and does not print your <code>console.logs()</code>",
+        "<hr>",
+        "Use <code>console.log()</code> to print the variables in the code where indicated.",
+        "",
+        "Interested in learning more: Try figuring out how to print only one variable. Experiment with <code>console.clear()</code> in between your <code>console.logs()</code> and make a note of which statement prints."
+      ],
+      "challengeSeed": [
+        "// Open your browser console",
+        "let outputTwo = \"This will print to the browser console 2 times\";",
+        "// Use console.log() to print the outputTwo variable",
+        "let outputFour = \"This will print to the browser console 4 times, twice for the logs times two tests\";",
+        "// Use console.log() to print the outputFour variable",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "tests": [
+        "assert(code.match(/console\\.log\\(outputTwice\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.');",
+        "assert(code.match(/console\\.log\\(outputFour\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputFour</code> variable.  In your Browser Console this should print out the value of the variable four times.');"
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
       "id": "587d7b84367417b2b2512b34",
       "title": "Use typeof to Check the Type of a Variable",
       "description": [
