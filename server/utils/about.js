@@ -85,7 +85,7 @@ export function createActiveUsers() {
       ({ totalsForAllResults } = {}) => totalsForAllResults['rt:activeUsers']
     )
     .map(toBoundInt)
-    // print errors to error log for logging, duh
+    // print errors to error log for logging
     .do(null, err => console.error(err))
     // always send a number down
     .catch(() => Observable.of(0))
