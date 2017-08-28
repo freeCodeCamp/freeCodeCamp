@@ -7,8 +7,8 @@ block content
                 for nonprofit in nonprofits
                     .col-xs-12.col-sm-6.col-md-4.height-400
                         .text-center
-                            h2= nonprofit.displayName
+							a.text-center(href='/commit?nonprofit=#{nonprofit.name}') Commit to #{nonprofit.displayName}
                             img.testimonial-image.img-responsive.img-center(src=nonprofit.imgUrl)
                             .button-spacer
-                            a.text-center(href='/commit?nonprofit=#{nonprofit.name}') Commit to #{nonprofit.displayName}
+                            h2= nonprofit.displayName
                             p= nonprofit.description
