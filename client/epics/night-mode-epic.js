@@ -35,12 +35,13 @@ export default function nightModeSaga(
       }
     })
     .filter(() => false);
+
   const toggle = actions
     .filter(({ type }) => types.toggleNightMode === type);
 
   const optimistic = toggle
     .flatMap(() => {
-      const { theme } = themeSelector(getState());
+      const theme = themeSelector(getState());
       const newTheme = !theme || theme === 'default' ? 'night' : 'default';
       persistTheme(newTheme);
       return Observable.of(
