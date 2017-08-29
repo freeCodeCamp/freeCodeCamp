@@ -1,19 +1,19 @@
 extends ../layout
 block content
     .text-center
-        h2 Are you a returning camper?
+        h2 Welcome to freeCodeCamp!
           br
           .button-spacer
-          | Sign in with one of these options:
+          | Sign in or Sign up with one of these options:
         a.btn.btn-lg.btn-block.btn-social.btn-primary(href='/email-signin')
             i.fa.fa-envelope
-            | Sign in with Email
+            | Continue with Email
         a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
             i.fa.fa-github
-            | Sign in with GitHub
+            | Continue with GitHub
         br
         p
-            a(href="/deprecated-signin") Click here if you previously signed in using a different method.
+            a(href="/deprecated-signin") Or click here if you previously signed up using a different method.
 
     script.
       $(document).ready(function() {
@@ -43,7 +43,7 @@ block content
           $(this).removeClass('active');
           obj.methodClass = $(this).attr('class').split(' ').pop();
           obj.method = $(this).text();
-          if(obj.method === "Sign in with Email" || obj.method === "Sign in with GitHub") {
+          if(obj.method === "Continue with Email" || obj.method === "Continue in with GitHub") {
             localStorage.setItem('lastSigninMethod', JSON.stringify(obj));
           } else {
             localStorage.removeItem('lastSigninMethod');
