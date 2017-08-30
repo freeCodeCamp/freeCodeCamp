@@ -1,4 +1,5 @@
-import React, { PropTypes, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
 import {

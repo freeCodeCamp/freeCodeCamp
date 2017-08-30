@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDom from 'react-dom';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';

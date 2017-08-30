@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, ButtonGroup, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import PureComponent from 'react-pure-render/component';
 
