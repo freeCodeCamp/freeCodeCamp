@@ -1,52 +1,35 @@
 window.common = (function({ common = { init: [] } }) {
   common.init.push(function($) {
     $('#report-issue').on('click', function() {
+      var title = common.challengeName || window.location.pathname;
+
       var textMessage = [
-        'Challenge [',
-        (common.challengeName || window.location.pathname),
+        '#### Challenge Name\n',
+        '[',
+        title,
         '](',
         window.location.origin + window.location.pathname,
         ') has an issue.\n',
+        '#### Issue Description\n',
+        '<!-- Describe below when the issue happens and how to ',
+        'reproduce it -->\n\n\n',
+        '#### Browser Information\n',
+        '<!-- Describe your workspace in which you are having issues-->\n',
         'User Agent is: <code>',
         navigator.userAgent,
-        '</code>.\n',
-        'Please describe how to reproduce this issue, and include ',
-        'links to screenshots if possible.\n\n'
-      ].join('');
-
-      if (
-        common.editor &&
-        typeof common.editor.getValue === 'function' &&
-        common.editor.getValue().trim()
-      ) {
-        var type;
-        switch (common.challengeType) {
-          case common.challengeTypes.HTML:
-            type = 'html';
-            break;
-          case common.challengeTypes.JS:
-          case common.challengeTypes.BONFIRE:
-            type = 'javascript';
-            break;
-          default:
-            type = '';
-        }
-
-        textMessage += [
-          'My code:\n```',
-          type,
-          '\n',
-          common.editor.getValue(),
-          '\n```\n\n'
+        '</code>.\n\n',
+        '#### Screenshot\n',
+        '<!-- Add a screenshot of your issue -->\n\n\n',
+        '#### Your Code'
         ].join('');
-      }
 
       textMessage = encodeURIComponent(textMessage);
 
       $('#issue-modal').modal('hide');
       window.open(
-        'https://github.com/freecodecamp/freecodecamp/issues/new?&body=' +
-          textMessage,
+        'https://forum.freecodecamp.com/new-topic?category=General&title=' +
+        window.encodeURIComponent(title) + '&body=' +
+        textMessage,
         '_blank'
       );
     });
