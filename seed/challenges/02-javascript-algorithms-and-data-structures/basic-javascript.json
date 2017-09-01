@@ -1887,8 +1887,8 @@
         "",
         "// Setup",
         "var myArray = [18,64,99];",
-        "",
         "// Only change code below this line.",
+        "",
         "",
         ""
       ],
@@ -1900,7 +1900,9 @@
       ],
       "tests": [
         "assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 45 && myArray[1] == 64 && myArray[2] == 99){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [45,64,99].');",
-        "assert((function(){if(code.match(/myArray\\[0\\]\\s*=\\s*/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
+        "assert((function(){if(code.match(/myArray\\[0\\]\\s*=\\s*/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');",
+        "assert(code.match(/var\\s+myArray\\s*=\\s*\\[\\s*18\\s*,\\s*64\\s*,\\s*99\\s*\\]/g), 'message: The initial <code>myArray</code> line should not be changed.');",
+        "assert(code.match(/var\\s+myArray/g).length === 1, 'message: <code>myArray</code> should only be declared once.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
