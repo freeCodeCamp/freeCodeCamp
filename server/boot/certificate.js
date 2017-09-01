@@ -111,8 +111,8 @@ function sendCertifiedEmail(
 
   const notifyTeam = {
     type: 'email',
-    to: 'Michael@FreeCodeCamp.com',
-    from: 'Team@FreeCodeCamp.com',
+    to: 'michael@freecodecamp.org',
+    from: 'team@freecodecamp.org',
     subject: 'A new user has arrived!',
     text: renderNotifyEmail({
       username,
@@ -125,7 +125,7 @@ function sendCertifiedEmail(
   const notifyUser = {
     type: 'email',
     to: email,
-    from: 'Michael@FreeCodeCamp.com',
+    from: 'michael@freecodecamp.org',
     subject: 'Congratulation on gaining your third certification!',
     text: renderCertifedEmail({
       username,
@@ -238,7 +238,7 @@ export default function certificate(app) {
                   We need your name so we can put it on your certificate. 
                   <a href="https://github.com/settings/profile">Add your
                   name to your GitHub account</a>, then go to your
-                  <a href="https://www.freecodecamp.com/settings">settings
+                  <a href="https://www.freecodecamp.org/settings">settings
                   page</a> and click the "update my portfolio from GitHub"
                   button. Then we can issue your certificate.
                   `

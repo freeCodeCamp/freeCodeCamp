@@ -55,8 +55,8 @@ To check your MongoDB version on Windows, you have to locate the installation di
 If your versions are lower than the prerequisite versions, you should update.
 
 Platform-specific guides to setting up a development environment:
-- [How to clone and setup the freeCodeCamp website on a Windows pc](https://forum.freecodecamp.com/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
-- [How to Clone and Setup the freeCodeCamp Website on a Mac](https://forum.freecodecamp.com/t/how-to-clone-and-setup-the-freecodecamp-website-on-a-mac/78450)
+- [How to clone and setup the freeCodeCamp website on a Windows pc](https://forum.freecodecamp.org/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
+- [How to Clone and Setup the freeCodeCamp Website on a Mac](https://forum.freecodecamp.org/t/how-to-clone-and-setup-the-freecodecamp-website-on-a-mac/78450)
 
 ### Forking The Project
 
@@ -160,7 +160,7 @@ $ git push origin [name_of_your_new_branch]
 
 ### Setup Linting
 
-You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.com/t/free-code-camp-javascript-style-guide/19121) (you can find a summary of those rules [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/.eslintrc)).
+You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) (you can find a summary of those rules [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/.eslintrc)).
 
 > Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base.
 
@@ -260,7 +260,7 @@ When you make a pull request, all of your changes need to be in one commit.
 
 If you have made more than one commit, then you will need to _squash_ your commits.
 
-To do this, see [Squashing Your Commits](http://forum.freecodecamp.com/t/how-to-squash-multiple-commits-into-one-with-git/13231).
+To do this, see [Squashing Your Commits](http://forum.freecodecamp.org/t/how-to-squash-multiple-commits-into-one-with-git/13231).
 
 ### Creating A Pull Request
 
@@ -347,7 +347,7 @@ possible to update your fork via GitHub's interface without deleting and
 recreating your fork.
 
 Read the [Wiki
-article](http://forum.freecodecamp.com/t/how-to-make-a-pull-request-on-free-code-camp/19114)
+article](http://forum.freecodecamp.org/t/how-to-make-a-pull-request-on-free-code-camp/19114)
 for further information
 
 ### Common Steps
@@ -359,7 +359,7 @@ for further information
     branch.
 
 3.  Submit a [pull
-    request](http://forum.freecodecamp.com/t/how-to-contribute-via-a-pull-request/19368)
+    request](http://forum.freecodecamp.org/t/how-to-contribute-via-a-pull-request/19368)
     from your branch to freeCodeCamp's `staging` branch.
 
 4.  The title (also called the subject) of your PR should be descriptive of your
@@ -431,22 +431,22 @@ Be sure to post in the PR conversation that you have made the requested changes.
     Challenges](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/seed/challenge-style-guide.md)
 
 -   [Searching for Your Issue on
-    GitHub](http://forum.freecodecamp.com/t/searching-for-existing-issues/19139)
+    GitHub](http://forum.freecodecamp.org/t/searching-for-existing-issues/19139)
 
 -   [Creating a New GitHub
-    Issue](http://forum.freecodecamp.com/t/creating-a-new-github-issue/18392)
+    Issue](http://forum.freecodecamp.org/t/creating-a-new-github-issue/18392)
 
 -   [Select Issues for Contributing Using
-    Labels](http://forum.freecodecamp.com/t/free-code-camp-issue-labels/19556)
+    Labels](http://forum.freecodecamp.org/t/free-code-camp-issue-labels/19556)
 
 -   [How to clone the freeCodeCamp website on a Windows
-    pc](http://forum.freecodecamp.com/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
+    pc](http://forum.freecodecamp.org/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
 
 -   [How to log in to your local FCC site - using
-    GitHub](http://forum.freecodecamp.com/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
+    GitHub](http://forum.freecodecamp.org/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
 
 -   [Writing great git commit
-    messages](http://forum.freecodecamp.com/t/writing-good-git-commit-messages/13210)
+    messages](http://forum.freecodecamp.org/t/writing-good-git-commit-messages/13210)
 
 -   [Contributor Chat Support - For the FCC Repositories, and running a local
     instance](https://gitter.im/FreeCodeCamp/Contributors)

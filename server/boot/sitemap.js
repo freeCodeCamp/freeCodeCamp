@@ -4,7 +4,7 @@ import { timeCache, observeQuery } from '../utils/rx';
 import { dasherize } from '../utils';
 
 const cacheTimeout = [ 24, 'hours' ];
-const appUrl = 'https://www.freecodecamp.com';
+const appUrl = 'https://www.freecodecamp.org';
 
 // getCachedObservable(
 //   app: ExpressApp,
