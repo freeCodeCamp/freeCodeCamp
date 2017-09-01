@@ -97,7 +97,7 @@
         "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
       ],
       "tests": [
-        "assert(code.match(/p\\s*\\{\\s*font-size:\\s*10px;\\s*\\}/g), 'message: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');",
+        "assert($('p').css('font-size') == '10px', 'message: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');",
         "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');"
       ],
       "type": "waypoint",
