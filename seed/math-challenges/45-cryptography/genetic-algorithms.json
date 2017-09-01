@@ -1,0 +1,19 @@
+{
+  "name": "Genetic algorithms",
+  "order": 19,
+  "challenges": [
+    {
+      "id": "59a5801209a6acac5983b684",
+      "title": "Lower bounds on the complexity of genetic algorithms",
+      "description": [
+        ""
+      ],
+      "challengeSeed": [
+        ""
+      ],
+      "tests": [
+        ""
+      ]
+    }
+  ]
+}
