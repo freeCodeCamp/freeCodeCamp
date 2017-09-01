@@ -1,0 +1,32 @@
+{
+  "name": "Matrix group and symmetry",
+  "order": 10,
+  "challenges": [
+    {
+      "id": "59a5801209a6acac5983b632",
+      "title": "Matrix groups",
+      "description": [
+        ""
+      ],
+      "challengeSeed": [
+        ""
+      ],
+      "tests": [
+        ""
+      ]
+    },
+    {
+      "id": "59a5801209a6acac5983b017",
+      "title": "Symmetry",
+      "description": [
+        ""
+      ],
+      "challengeSeed": [
+        ""
+      ],
+      "tests": [
+        ""
+      ]
+    }
+  ]
+}
