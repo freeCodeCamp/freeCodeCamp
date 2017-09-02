@@ -172,7 +172,7 @@
       "id": "598f48a36c8c40764b4e52b3",
       "title": "Prevent Object Mutation",
       "description": [
-        "As seen in previous challenge, <code>const</code> declration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
+        "As seen in previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
         "Once the object is freezed, you can no longer add/update/delete properties from it. Any attempt at changing the object will be rejected without any error.",
         "<blockquote>\nlet obj = {\n  name:\"FreeCodeCamp\"\n  review:\"Awesome\"\n};\nObject.freeze(obj);\nobj.review = \"bad\"; //will be ignored. Mutation not allowed\nobj.newProp = \"Test\"; // will be ignored. Mutation not allowed\nconsole.log(obj); \n// { name: \"FreeCodeCamp\", review:\"Awesome\"}\n</blockquote>",
         "<hr>",
@@ -186,7 +186,7 @@
         "",
         "",
         "// change code above this line",
-        "MATH_CONSTANTS.PI = 99",
+        "MATH_CONSTANTS.PI = 99;",
         "// Test your code",
         "console.log(MATH_CONSTANTS.PI);// should show 3.14"
       ],
