@@ -11,14 +11,17 @@ import CodeMirrorSkeleton from '../../Code-Mirror-Skeleton.jsx';
 import {
   executeChallenge,
   classicEditorUpdated,
-
   challengeMetaSelector,
   filesSelector,
   keySelector
 } from '../../redux';
 
+const envProps = typeof window !== 'undefined' ? Object.keys(window) : [];
 const options = {
-  lint: { esversion: 6 },
+  lint: {
+    esversion: 6,
+    predef: envProps
+  },
   lineNumbers: true,
   mode: 'javascript',
   theme: 'freecodecamp',
@@ -118,7 +121,10 @@ export class Editor extends PureComponent {
       mode
     } = this.props;
     return (
-      <div className={ `${ns}-editor` }>
+      <div
+        className={ `${ns}-editor` }
+        role='main'
+        >
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
             onChange={ classicEditorUpdated }

@@ -66,7 +66,7 @@ const fetchOptions = {
   }
 };
 
-const link = 'http://forum.freecodecamp.com/t/' +
+const link = 'http://forum.freecodecamp.org/t/' +
   'guidelines-for-translating-free-code-camp' +
   '-to-any-language/19111';
 

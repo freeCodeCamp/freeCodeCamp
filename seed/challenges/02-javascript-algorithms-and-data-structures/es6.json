@@ -169,6 +169,39 @@
       "translations": {}
     },
     {
+      "id": "598f48a36c8c40764b4e52b3",
+      "title": "Prevent Object Mutation",
+      "description": [
+        "As seen in previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
+        "Once the object is freezed, you can no longer add/update/delete properties from it. Any attempt at changing the object will be rejected without any error.",
+        "<blockquote>\nlet obj = {\n  name:\"FreeCodeCamp\"\n  review:\"Awesome\"\n};\nObject.freeze(obj);\nobj.review = \"bad\"; //will be ignored. Mutation not allowed\nobj.newProp = \"Test\"; // will be ignored. Mutation not allowed\nconsole.log(obj); \n// { name: \"FreeCodeCamp\", review:\"Awesome\"}\n</blockquote>",
+        "<hr>",
+        "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze <code>MATH_CONSTANTS</code> object so that noone is able alter the value of <code>PI</code> or add any more properties to it."
+      ],
+      "challengeSeed": [
+        "const MATH_CONSTANTS = {",
+        "  PI: 3.14",
+        "};",
+        "// change code below this line",
+        "",
+        "",
+        "// change code above this line",
+        "MATH_CONSTANTS.PI = 99;",
+        "// Test your code",
+        "console.log(MATH_CONSTANTS.PI);// should show 3.14"
+      ],
+      "tests": [
+        "// Do not replace <code>const</code> keyword.",
+        "// <code>MATH_CONSTANTS</code> is declared with <code>const</code>.",
+        "// Do not change original <code>MATH_CONSTANTS</code>",
+        "assert.deepEqual(MATH_CONSTANTS, {PI: 3.14}, 'message: <code>MATH_CONSTANTS.PI</code> should be equal to <code>3.14</code>.');"
+      ],
+      "type": "waypoint",
+      "releasedOn": "Aug 12, 2017",
+      "challengeType": 1,
+      "translations": {}
+    },
+    {
       "id": "587d7b87367417b2b2512b43",
       "title": "Use Arrow Functions to Write Concise Anonymous Functions",
       "description": [

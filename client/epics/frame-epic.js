@@ -35,7 +35,7 @@ const createHeader = (id = mainId) => `
 function createFrame(document, id = mainId) {
   const frame = document.createElement('iframe');
   frame.id = id;
-  frame.setAttribute('style', 'display: none');
+  frame.className = 'hide-test-frame';
   document.body.appendChild(frame);
   return frame;
 }

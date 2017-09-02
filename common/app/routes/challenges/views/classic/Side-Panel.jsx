@@ -6,6 +6,7 @@ import PureComponent from 'react-pure-render/component';
 
 import ns from './ns.json';
 
+import BugModal from '../../Bug-Modal.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import ChallengeTitle from '../../Challenge-Title.jsx';
 import ChallengeDescription from '../../Challenge-Description.jsx';
@@ -127,6 +128,7 @@ export class SidePanel extends PureComponent {
       <div
         className={ `${ns}-instructions-panel` }
         ref='panel'
+        role='complementary'
         >
         <div>
           <ChallengeTitle>
@@ -146,6 +148,7 @@ export class SidePanel extends PureComponent {
           unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
         />
+        <BugModal />
         <Output
           defaultOutput={
 `/**

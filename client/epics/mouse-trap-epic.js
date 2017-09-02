@@ -31,11 +31,11 @@ export default function mouseTrapSaga(actions) {
     ),
     bindKey(
       'g n d',
-      () => hardGoTo('https://www.freecodecamp.com/donate')
+      () => hardGoTo('https://www.freecodecamp.org/donate')
     ),
     bindKey(
       'g n w',
-      () => hardGoTo('http://forum.freecodecamp.com')
+      () => hardGoTo('http://forum.freecodecamp.org')
     ),
     bindKey('g t n', toggleNightMode)
   ];
