@@ -2024,7 +2024,7 @@
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
@@ -2335,7 +2335,7 @@
             "<code>padding: 10px 20px 10px 20px;</code>",
             "Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado de las cuatro instrucciones de relleno.",
             "<hr>",
-            "Usa la notación en sentido horario para dar a la clase \"<code>.green-box</code>\" un relleno de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
+            "Usa la notación en sentido horario para dar a la clase \"<code>.blue-box</code>\" un relleno de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
           ]
         },
         "pt-br": {
@@ -2345,7 +2345,7 @@
             "<code>padding: 10px 20px 10px 20px;</code>",
             "Estes quatro valores funcionam como um relógio: cima, direita, baixo e esquerda, e produzirão o mesmo resultado das quatro instruções de preenchimento.",
             "<hr>",
-            "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.green-box</code>\" um preenchimento de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
+            "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.blue-box</code>\" um preenchimento de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
           ]
         },
         "ru": {
@@ -2355,7 +2355,7 @@
             "<code>padding: 10px 20px 10px 20px;</code>",
             "Установка значений работает по часовой стрелке: сверху, справа, снизу, слева, и приводит к ровно такому же результату, как и использование других инструкций.",
             "<hr>",
-            "Используйте систему ссылок по часовой стрелке для установки для класса \".green-box\" значения отступа содержимого <code>padding</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
+            "Используйте систему ссылок по часовой стрелке для установки для класса \".blue-box\" значения отступа содержимого <code>padding</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
           ]
         }
       }
@@ -2434,7 +2434,7 @@
             "<code>margin: 10px 20px 10px 20px;</code>",
             "Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado de las cuatro instrucciones que especifican el margen.",
             "<hr>",
-            "Usa <code>notación en sentido horario</code> para dar al elemento con la clase <code>green-box</code> un margen de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
+            "Usa <code>notación en sentido horario</code> para dar al elemento con la clase <code>blue-box</code> un margen de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
           ]
         },
         "pt-br": {
@@ -2445,7 +2445,7 @@
             "<code>margin: 10px 20px 10px 20px;</code>",
             "Estes quatro valores funcionam como um relógio: cima, direita, baixo e esquerda, e produzirão o mesmo resultado das quatro instruções de margem.",
             "<hr>",
-            "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.green-box</code>\" uma margem de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
+            "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.blue-box</code>\" uma margem de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
           ]
         },
         "ru": {
@@ -2456,7 +2456,7 @@
             "<code>margin: 10px 20px 10px 20px;</code>",
             "Установка значений работает по часовой стрелке: сверху, справа, снизу, слева, и приводит к ровно такому же результату, как и использование других инструкций.",
             "<hr>",
-            "Используйте систему ссылок по часовой стрелке для установки для класса <code>green-box</code> значения отступа <code>margin</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
+            "Используйте систему ссылок по часовой стрелке для установки для класса <code>blue-box</code> значения отступа <code>margin</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
           ]
         }
       }
