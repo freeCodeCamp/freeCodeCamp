@@ -95,7 +95,7 @@ test.test('filterComingSoonBetaFromEntities', t => {
     );
   });
   t.test('should not filter isBeta|coming-soon when isDev', t => {
-    t.plan(1);
+    t.plan(2);
     const normalChallenge = { dashedName: 'normal-challenge' };
     const entities = {
       challenge: {
