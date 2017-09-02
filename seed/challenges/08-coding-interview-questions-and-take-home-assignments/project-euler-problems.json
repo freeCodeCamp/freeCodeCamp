@@ -64,17 +64,24 @@
       "type": "bonfire",
       "title": "Problem 3: Largest prime factor",
       "tests": [
-        "assert.strictEqual(euler3(), 6857, 'message: <code>euler3()</code> should return 6857.');"
+        "assert.strictEqual(largestPrimeFactor(2), 2, 'message: <code>largestPrimeFactor(2)</code> should return 2.');",
+        "assert.strictEqual(largestPrimeFactor(3), 3, 'message: <code>largestPrimeFactor(3)</code> should return 3.');",
+        "assert.strictEqual(largestPrimeFactor(5), 5, 'message: <code>largestPrimeFactor(5)</code> should return 5.');",
+        "assert.strictEqual(largestPrimeFactor(7), 7, 'message: <code>largestPrimeFactor(7)</code> should return 7.');",
+        "assert.strictEqual(largestPrimeFactor(13195), 29, 'message: <code>largestPrimeFactor(13195)</code> should return 29.');",
+        "assert.strictEqual(largestPrimeFactor(600851475143), 6857, 'message: <code>largestPrimeFactor(600851475143)</code> should return 6857.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const largestPrimeFactor = (number)=>{\n  let largestFactor = number;\n  for(let i = 2;i<largestFactor;i++){\n  if(!(largestFactor%i)){\n    largestFactor = largestFactor/i;\n    largestPrimeFactor(largestFactor);\n  }\n  }\n  return largestFactor;\n}"
+      ],
       "translations": {},
       "challengeSeed": [
-        "function euler3() {",
+        "function largestPrimeFactor(number) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler3();"
+        "largestPrimeFactor(13195);"
       ],
       "description": [
         "The prime factors of 13195 are 5, 7, 13 and 29.",
