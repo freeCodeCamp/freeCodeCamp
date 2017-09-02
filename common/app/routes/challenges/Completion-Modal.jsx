@@ -26,13 +26,13 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = function(dispatch) {
   const dispatchers = {
     close: () => dispatch(closeChallengeModal()),
-    submitChallenge: (e) => {
-      if (
-        e.keyCode === 13 &&
-        (e.ctrlKey || e.meta)
-      ) {
+    handleKeypress: (e) => {
+      if (e.keyCode === 13 && (e.ctrlKey || e.meta)) {
         dispatch(submitChallenge());
       }
+    },
+    submitChallenge: () => {
+        dispatch(submitChallenge());
     }
   };
   return () => dispatchers;
@@ -40,6 +40,7 @@ const mapDispatchToProps = function(dispatch) {
 
 const propTypes = {
   close: PropTypes.func.isRequired,
+  handleKeypress: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired
@@ -51,6 +52,7 @@ export class CompletionModal extends PureComponent {
       close,
       isOpen,
       submitChallenge,
+      handleKeypress,
       message
     } = this.props;
     return (
@@ -59,7 +61,7 @@ export class CompletionModal extends PureComponent {
         dialogClassName={ `${ns}-success-modal` }
         keyboard={ true }
         onHide={ close }
-        onKeyDown={ isOpen ? submitChallenge : noop }
+        onKeyDown={ isOpen ? handleKeypress : noop }
         show={ isOpen }
         >
         <Modal.Header
