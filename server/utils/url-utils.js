@@ -2,7 +2,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
 
 export function getEmailSender() {
-  return process.env.EMAIL_SENDER || 'team@freecodecamp.com';
+  return process.env.EMAIL_SENDER || 'team@freecodecamp.org';
 }
 
 export function getPort() {
@@ -20,7 +20,7 @@ export function getHost() {
   if (isDev) {
     return process.env.HOST || 'localhost';
   }
-  return isBeta ? 'beta.freecodecamp.com' : 'freecodecamp.com';
+  return isBeta ? 'beta.freecodecamp.org' : 'freecodecamp.org';
 }
 
 export function getServerFullURL() {
