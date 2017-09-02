@@ -5,15 +5,21 @@ import dedent from 'dedent';
 import debugFactory from 'debug';
 import { isEmail } from 'validator';
 import path from 'path';
+import loopback from 'loopback';
 
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
+import {
+  getServerFullURL,
+  getEmailSender,
+  getProtocol,
+  getHost,
+  getPort
+} from '../../server/utils/url-utils.js';
 
 const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
-const isDev = process.env.NODE_ENV !== 'production';
-const devHost = process.env.HOST || 'localhost';
 
 const createEmailError = () => new Error(
  'Please check to make sure the email is a valid email address.'
@@ -25,6 +31,26 @@ function destroyAll(id, Model) {
     Model
   )({ userId: id });
 }
+
+const renderSignUpEmail = loopback.template(path.join(
+  __dirname,
+  '..',
+  '..',
+  'server',
+  'views',
+  'emails',
+  'user-request-sign-up.ejs'
+));
+
+const renderSignInEmail = loopback.template(path.join(
+  __dirname,
+  '..',
+  '..',
+  'server',
+  'views',
+  'emails',
+  'user-request-sign-in.ejs'
+));
 
 function getAboutProfile({
   username,
@@ -44,6 +70,18 @@ function nextTick(fn) {
   return process.nextTick(fn);
 }
 
+function getWaitPeriod(ttl) {
+  const fiveMinutesAgo = moment().subtract(5, 'minutes');
+  const lastEmailSentAt = moment(new Date(ttl || null));
+  const isWaitPeriodOver = ttl ?
+    lastEmailSentAt.isBefore(fiveMinutesAgo) : true;
+  if (!isWaitPeriodOver) {
+    const minutesLeft = 5 -
+      (moment().minutes() - lastEmailSentAt.minutes());
+    return minutesLeft;
+  }
+  return 0;
+}
 module.exports = function(User) {
   // NOTE(berks): user email validation currently not needed but build in. This
   // work around should let us sneak by
@@ -74,6 +112,10 @@ module.exports = function(User) {
     User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
     User.update$ = Observable.fromNodeCallback(User.updateAll, User);
     User.count$ = Observable.fromNodeCallback(User.count, User);
+    User.findOrCreate$ = Observable.fromNodeCallback(User.findOrCreate, User);
+    User.prototype.createAccessToken$ = Observable.fromNodeCallback(
+      User.prototype.createAccessToken
+    );
   });
 
   User.beforeRemote('create', function({ req }) {
@@ -135,9 +177,9 @@ module.exports = function(User) {
       to: user.email,
       from: 'team@freecodecamp.org',
       subject: 'Welcome to freeCodeCamp!',
-      protocol: isDev ? null : 'https',
-      host: isDev ? devHost : 'freecodecamp.org',
-      port: isDev ? null : 443,
+      protocol: getProtocol(),
+      host: getHost(),
+      port: getPort(),
       template: path.join(
         __dirname,
         '..',
@@ -250,7 +292,7 @@ module.exports = function(User) {
         if (!user.verificationToken && !user.emailVerified) {
           ctx.req.flash('info', {
             msg: dedent`Looks like we have your email. But you haven't
-             verified it yet, please login and request a fresh verification
+             verified it yet, please sign in and request a fresh verification
              link.`
           });
           return ctx.res.redirect(redirect);
@@ -259,7 +301,7 @@ module.exports = function(User) {
         if (!user.verificationToken && user.emailVerified) {
           ctx.req.flash('info', {
             msg: dedent`Looks like you have already verified your email.
-             Please login to continue.`
+             Please sign in to continue.`
           });
           return ctx.res.redirect(redirect);
         }
@@ -267,7 +309,7 @@ module.exports = function(User) {
         if (user.verificationToken && user.verificationToken !== token) {
           ctx.req.flash('info', {
             msg: dedent`Looks like you have clicked an invalid link.
-             Please login and request a fresh one.`
+             Please sign in and request a fresh one.`
           });
           return ctx.res.redirect(redirect);
         }
@@ -287,6 +329,38 @@ module.exports = function(User) {
       ]
     });
     return ctx.res.redirect(redirect);
+  });
+
+  User.beforeRemote('create', function({ req, res }, _, next) {
+    req.body.username = 'fcc' + uuid.v4().slice(0, 8);
+    if (!req.body.email) {
+      return next();
+    }
+    if (!isEmail(req.body.email)) {
+      return next(new Error('Email format is not valid'));
+    }
+    return User.doesExist(null, req.body.email)
+      .then(exists => {
+        if (!exists) {
+          return next();
+        }
+
+        req.flash('error', {
+          msg: dedent`
+      The ${req.body.email} email address is already associated with an account.
+      Try signing in with it here instead.
+          `
+        });
+
+        return res.redirect('/email-signin');
+      })
+      .catch(err => {
+        console.error(err);
+        req.flash('error', {
+          msg: 'Oops, something went wrong, please try again later'
+        });
+        return res.redirect('/email-signin');
+      });
   });
 
   User.on('resetPasswordRequest', function(info) {
@@ -487,14 +561,96 @@ module.exports = function(User) {
     }
   );
 
-  User.prototype.updateEmail = function updateEmail(email) {
-    const fiveMinutesAgo = moment().subtract(5, 'minutes');
-    const lastEmailSentAt = moment(new Date(this.emailVerifyTTL || null));
-    const ownEmail = email === this.email;
-    const isWaitPeriodOver = this.emailVerifyTTL ?
-      lastEmailSentAt.isBefore(fiveMinutesAgo) :
-      true;
+  User.requestAuthLink = function requestAuthLink(email) {
+    if (!isEmail(email)) {
+      return Promise.reject(
+        new Error('The submitted email not valid.')
+      );
+    }
 
+    var userObj = {
+      username: 'fcc' + uuid.v4().slice(0, 8),
+      email: email,
+      emailVerified: false
+    };
+    return User.findOrCreate$({ where: { email }}, userObj)
+      .flatMap(([ user, isCreated ]) => {
+
+        const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
+        if (minutesLeft > 0) {
+          const timeToWait = minutesLeft ?
+            `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+            'a few seconds';
+          debug('request before wait time : ' + timeToWait);
+          return Observable.of(dedent`
+            Please wait ${timeToWait} to resend an authentication link.
+          `);
+        }
+
+        const renderAuthEmail = isCreated ?
+          renderSignUpEmail : renderSignInEmail;
+
+        // create a temporary access token with ttl for 15 minutes
+        return user.createAccessToken$({ ttl: 15 * 60 * 1000 })
+          .flatMap(token => {
+
+          const { id: loginToken } = token;
+          const loginEmail = user.email;
+          const host = getServerFullURL();
+          const mailOptions = {
+            type: 'email',
+            to: user.email,
+            from: getEmailSender(),
+            subject: 'freeCodeCamp - Authentication Request!',
+            text: renderAuthEmail({
+              host,
+              loginEmail,
+              loginToken
+            })
+          };
+
+          return this.email.send$(mailOptions)
+            .flatMap(() => {
+              const emailAuthLinkTTL = token.created;
+              return this.update$({
+                emailAuthLinkTTL
+            })
+            .map(() => {
+              return dedent`
+                If you entered a valid email, a magic link is on its way.
+                Please follow that link to sign in.
+              `;
+            });
+          });
+        });
+      })
+      .catch(err => {
+        if (err) { debug(err); }
+        return dedent`
+          Oops, something is not right, please try again later.
+        `;
+      })
+      .toPromise();
+  };
+
+  User.remoteMethod(
+    'requestAuthLink',
+    {
+      description: 'request a link on email with temporary token to sign in',
+      accepts: [{
+        arg: 'email', type: 'string', required: true
+      }],
+      returns: [{
+        arg: 'message', type: 'string'
+      }],
+      http: {
+        path: '/request-auth-link', verb: 'POST'
+      }
+    }
+  );
+
+  User.prototype.updateEmail = function updateEmail(email) {
+    const ownEmail = email === this.email;
     if (!isEmail('' + email)) {
       return Observable.throw(createEmailError());
     }
@@ -505,17 +661,15 @@ module.exports = function(User) {
       ));
     }
 
-    if (ownEmail && !isWaitPeriodOver) {
-      const minutesLeft = 5 -
-        (moment().minutes() - lastEmailSentAt.minutes());
-
+    const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
+    if (ownEmail && minutesLeft > 0) {
       const timeToWait = minutesLeft ?
         `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
         'a few seconds';
-
-      return Observable.throw(new Error(
-        `Please wait ${timeToWait} to resend email verification.`
-      ));
+      debug('request before wait time : ' + timeToWait);
+      return Observable.of(dedent`
+        Please wait ${timeToWait} to resend an authentication link.
+      `);
     }
 
     return Observable.fromPromise(User.doesExist(null, email))
@@ -543,11 +697,11 @@ module.exports = function(User) {
         const mailOptions = {
           type: 'email',
           to: email,
-          from: 'team@freecodecamp.org',
-          subject: 'Welcome to freeCodeCamp!',
-          protocol: isDev ? null : 'https',
-          host: isDev ? devHost : 'freecodecamp.org',
-          port: isDev ? null : 443,
+          from: getEmailSender(),
+          subject: 'freeCodeCamp - Email Update Requested',
+          protocol: getProtocol(),
+          host: getHost(),
+          port: getPort(),
           template: path.join(
             __dirname,
             '..',

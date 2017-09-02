@@ -28,12 +28,12 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
                 a(href='https://www.freecodecamp.org/donate') Donate
             if !user
                 li
-                    a(href='/signup') Sign Up
+                    a(href='/signin') Sign In
             else
                 li.avatar-points
                   a(href='/settings')
                     span.brownie-points-nav
-                      span.hidden-md.hidden-lg #{user.username} 
+                      span.hidden-md.hidden-lg #{user.username}
                       span.brownie-points [&thinsp;#{user.points}&thinsp;]
                     span.hidden-xs.hidden-sm.avatar
                       img.profile-picture.float-right(src='#{user.picture}')
