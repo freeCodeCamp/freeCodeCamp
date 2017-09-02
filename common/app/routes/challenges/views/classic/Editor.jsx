@@ -118,7 +118,10 @@ export class Editor extends PureComponent {
       mode
     } = this.props;
     return (
-      <div className={ `${ns}-editor` }>
+      <div
+        className={ `${ns}-editor` }
+        role='main'
+        >
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
             onChange={ classicEditorUpdated }
