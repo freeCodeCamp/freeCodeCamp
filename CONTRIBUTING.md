@@ -445,6 +445,9 @@ Be sure to post in the PR conversation that you have made the requested changes.
 -   [How to log in to your local FCC site - using
     GitHub](http://forum.freecodecamp.org/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
 
+-   [How to log in to your local FCC site using 
+    Passwordless Authentication](https://forum.freecodecamp.org/t/logging-into-local-freecodecamp-installation-with-passwordless-authentication/145841)
+
 -   [Writing great git commit
     messages](http://forum.freecodecamp.org/t/writing-good-git-commit-messages/13210)
 
