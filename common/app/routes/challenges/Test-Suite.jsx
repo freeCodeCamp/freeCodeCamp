@@ -8,6 +8,20 @@ const propTypes = {
   tests: PropTypes.arrayOf(PropTypes.object)
 };
 
+function getAccessibleText(err, pass, text) {
+  let accessibleText = 'Waiting';
+
+  // Determine test status (i.e. icon)
+  if (err) {
+    accessibleText = 'Error';
+  } else if (pass) {
+    accessibleText = 'Pass';
+  }
+
+  // Append the text itself
+  return accessibleText + ' - ' + text;
+}
+
 export default class TestSuite extends PureComponent {
   renderTests(tests = []) {
     // err && pass > invalid state
@@ -22,14 +36,22 @@ export default class TestSuite extends PureComponent {
         'ion-refresh refresh-icon': !err && !pass
       });
       return (
-        <Row key={ text.slice(-6) + index }>
+        <Row
+          aria-label={ getAccessibleText(err, pass, text) }
+          key={ text.slice(-6) + index }
+          tabIndex='0'
+          >
           <Col
             className='text-center'
             xs={ 2 }
             >
-            <i className={ iconClass } />
+            <i
+              aria-hidden='true'
+              className={ iconClass }
+            />
           </Col>
           <Col
+            aria-hidden='true'
             className='test-output'
             dangerouslySetInnerHTML={{ __html: text }}
             xs={ 10 }
