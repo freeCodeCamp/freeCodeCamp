@@ -1184,3 +1184,24 @@ and (max-width : 400px)  {
 ul > li {
   list-style-type: disc;
 }
+
+
+.navbar-nav{
+  li.community-dropdown{
+    .caret{
+      margin: 0 10px;
+    }
+
+    li{
+      list-style-type: none;
+    }
+
+    cursor: pointer;
+  }
+
+  li.community-dropdown.open{
+    .dropdown-toggle{
+      color:darkgreen;
+    }
+  }
+} 
