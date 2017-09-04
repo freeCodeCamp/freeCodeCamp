@@ -21,13 +21,15 @@ function buildUserUpdate(
   const oldChallenge = challengeMap[challengeId];
   const alreadyCompleted = !!oldChallenge;
 
-
   if (alreadyCompleted) {
     // add data from old challenge
-    finalChallenge = {
+      const attempts = oldChallenge.numOfAttempts;
+      const numOfAttempts = attempts ? attempts + 1 : 0;
+      finalChallenge = {
       ...completedChallenge,
       completedDate: oldChallenge.completedDate,
-      lastUpdated: completedChallenge.completedDate
+      lastUpdated: completedChallenge.completedDate,
+      numOfAttempts: numOfAttempts
     };
   } else {
     updateData.$push = {
@@ -36,7 +38,10 @@ function buildUserUpdate(
         completedChallenge: challengeId
       }
     };
-    finalChallenge = completedChallenge;
+    finalChallenge = {
+      ...completedChallenge,
+      numOfAttempts: 1
+    };
   }
 
   updateData.$set = {
