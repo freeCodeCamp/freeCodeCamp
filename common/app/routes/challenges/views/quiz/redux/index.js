@@ -1,5 +1,8 @@
-import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import {
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
+import { createAction } from 'redux-actions';
 import noop from 'lodash/noop';
 
 import ns from '../ns.json';
@@ -48,8 +51,8 @@ export const currentIndexSelector = state => getNS(state).currentIndex;
 export const selectedChoiceSelector = state => getNS(state).selectedChoice;
 export const correctSelector = state => getNS(state).correct;
 
-export default function createReducers() {
-  const reducer = handleActions({
+export default handleActions(
+  () => ({
     [types.nextQuestion]: state => ({
       ...state,
       currentIndex: state.currentIndex + 1
@@ -72,8 +75,7 @@ export default function createReducers() {
       ...state,
       selectedChoice: null
     })
-  }, initialState);
-
-  reducer.toString = () => ns;
-  return [ reducer ];
-}
+  }),
+  initialState,
+  ns
+);

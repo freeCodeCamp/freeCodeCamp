@@ -8,11 +8,12 @@ import {
   HelpBlock,
   Row
 } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import Link from 'redux-first-router-link';
 import { reduxForm } from 'redux-form';
 import { isEmail } from 'validator';
+
 import { getValidationState } from '../../../../utils/form';
-import { updateMyEmail } from '../../redux';
+import { clickOnSettingsLink, updateMyEmail } from '../../redux';
 
 const actions = {
   updateMyEmail
@@ -127,7 +128,7 @@ export class UpdateEmail extends React.Component {
                 { buttonCopy }
               </Button>
               <div className='button-spacer' />
-              <LinkContainer to='/settings'>
+              <Link to={ clickOnSettingsLink() }>
                 <Button
                   block={ true }
                   bsSize='lg'
@@ -135,7 +136,7 @@ export class UpdateEmail extends React.Component {
                   >
                   Go back to Settings
                 </Button>
-              </LinkContainer>
+              </Link>
             </FormGroup>
           </form>
         </Col>

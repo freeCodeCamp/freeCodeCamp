@@ -21,7 +21,7 @@ import {
 
   filesSelector,
   codeLockedSelector
-} from '../../common/app/routes/challenges/redux';
+} from '../../common/app/routes/Challenges/redux';
 
 export default function executeChallengeEpic(actions, { getState }) {
   return actions::ofType(types.executeChallenge, types.updateMain)

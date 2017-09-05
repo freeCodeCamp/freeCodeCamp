@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Link } from 'react-router';
+import { Link } from 'redux-first-router';
 import PureComponent from 'react-pure-render/component';
 import classnames from 'classnames';
 import debug from 'debug';
@@ -12,7 +12,7 @@ import {
 
   makePanelHiddenSelector
 } from './redux';
-import { userSelector } from '../redux';
+import { routeOnHome, userSelector } from '../redux';
 import { challengeMapSelector } from '../entities';
 
 const propTypes = {
@@ -153,7 +153,7 @@ export class Challenge extends PureComponent {
         className={ challengeClassName }
         key={ title }
         >
-        <Link to={ `/challenges/${block}/${dashedName}` }>
+          <Link to={routeOnHome({ dashedName, block })}>
           <span onClick={ clickOnChallenge }>
             { title }
             { this.renderCompleted(isCompleted, isLocked) }

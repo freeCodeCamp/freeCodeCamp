@@ -16,7 +16,7 @@ const stepChallengeEpic = proxy(
   { '../../../../../redux': challengeSelectorStub }
 );
 
-const file = 'common/app/routes/challenges/redux/step-challenge-epic';
+const file = 'common/app/routes/Challenges/redux/step-challenge-epic';
 test(file, function(t) {
   t.test('does not respond to random actions', t => {
     const actions = Observable.of({ type: 'NotTheMomma' });

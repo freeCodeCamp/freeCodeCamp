@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { contain } from 'redux-epic';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import PureComponent from 'react-pure-render/component';
+
+import { challengeMetaSelector } from './redux';
 
 import CompletionModal from './Completion-Modal.jsx';
 import Classic from './views/classic';
@@ -13,7 +14,6 @@ import Project from './views/project';
 import BackEnd from './views/backend';
 import Quiz from './views/quiz';
 
-import { challengeMetaSelector } from './redux';
 import {
   updateTitle,
   updateCurrentChallenge,
@@ -82,9 +82,10 @@ const propTypes = {
   updateCurrentChallenge: PropTypes.func.isRequired,
   updateTitle: PropTypes.func.isRequired,
   viewType: PropTypes.string
- };
+};
 
 export class Show extends PureComponent {
+
   componentWillMount() {
     const { lang, isTranslated, makeToast } = this.props;
     if (lang !== 'en' && !isTranslated) {

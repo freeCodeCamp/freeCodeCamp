@@ -1,6 +1,11 @@
 import { Observable } from 'rx';
-import { createTypes, createAsyncTypes } from 'redux-create-types';
-import { combineActions, createAction, handleActions } from 'redux-actions';
+import {
+  combineActions,
+  createAsyncTypes,
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
+import { createAction } from 'redux-actions';
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
 import identity from 'lodash/identity';
@@ -21,6 +26,8 @@ export const epics = [
 ];
 
 export const types = createTypes([
+  'routeOnHome',
+
   'appMounted',
   'analytics',
   'updateTitle',
@@ -80,6 +87,7 @@ export const createEventMetaCreator = ({
   }
 });
 
+export const routeOnHome = createAction(types.routeOnHome);
 export const appMounted = createAction(types.appMounted);
 export const fetchChallenge = createAction(
   '' + types.fetchChallenge,
@@ -222,58 +230,54 @@ export const firstChallengeSelector = createSelector(
   }
 );
 
-export default function createReducer() {
-  const reducer = handleActions(
-    {
-      [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
-        ...state,
-        title: payload + ' | freeCodeCamp'
-      }),
+export default handleActions(
+  () => ({
+    [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
+      ...state,
+      title: payload + ' | freeCodeCamp'
+    }),
 
-      [types.updateThisUser]: (state, { payload: user }) => ({
-        ...state,
-        user
-      }),
-      [types.fetchChallenge.complete]: (state, { payload }) => ({
-        ...state,
-        currentChallenge: payload.currentChallenge
-      }),
-      [combineActions(
-        types.fetchChallenge.complete,
-        types.fetchChallenges.complete
-      )]: (state, { payload }) => ({
-        ...state,
-        superBlocks: payload.result.superBlocks
-      }),
-      [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
-        ...state,
-        currentChallenge: payload
-      }),
-      [types.updateAppLang]: (state, { payload = 'en' }) =>({
-        ...state,
-        lang: payload
-      }),
-      [types.updateTheme]: (state, { payload = 'default' }) => ({
-        ...state,
-        theme: payload
-      }),
-      [combineActions(types.showSignIn, types.updateThisUser)]: state => ({
-        ...state,
-        isSignInAttempted: true
-      }),
+    [types.updateThisUser]: (state, { payload: user }) => ({
+      ...state,
+      user
+    }),
+    [types.fetchChallenge.complete]: (state, { payload }) => ({
+      ...state,
+      currentChallenge: payload.currentChallenge
+    }),
+    [combineActions(
+      types.fetchChallenge.complete,
+      types.fetchChallenges.complete
+    )]: (state, { payload }) => ({
+      ...state,
+      superBlocks: payload.result.superBlocks
+    }),
+    [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
+      ...state,
+      currentChallenge: payload
+    }),
+    [types.updateAppLang]: (state, { payload = 'en' }) =>({
+      ...state,
+      lang: payload
+    }),
+    [types.updateTheme]: (state, { payload = 'default' }) => ({
+      ...state,
+      theme: payload
+    }),
+    [combineActions(types.showSignIn, types.updateThisUser)]: state => ({
+      ...state,
+      isSignInAttempted: true
+    }),
 
-      [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
-        ...state,
-        points
-      }),
-      [types.delayedRedirect]: (state, { payload }) => ({
-        ...state,
-        delayedRedirect: payload
-      })
-    },
-    initialState
-  );
-
-  reducer.toString = () => ns;
-  return reducer;
-}
+    [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
+      ...state,
+      points
+    }),
+    [types.delayedRedirect]: (state, { payload }) => ({
+      ...state,
+      delayedRedirect: payload
+    })
+  }),
+  initialState,
+  ns
+);

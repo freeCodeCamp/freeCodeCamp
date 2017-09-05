@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
+import { Link } from 'redux-first-router-link';
 import { NavItem } from 'react-bootstrap';
+import { routeOnSettings } from '../routes/Settings/redux';
 
 // this is separated out to prevent react bootstrap's
 // NavBar from injecting unknown props to the li component
@@ -37,7 +38,7 @@ export default function SignUpButton({
       className='nav-avatar'
       key='user'
       >
-      <Link to='/settings'>
+      <Link to={ routeOnSettings }>
         <span className='nav-username hidden-sm'> { username } </span>
         <span className='nav-points'> [ { points || 1 } ] </span>
         <span className='nav-picture-container'>

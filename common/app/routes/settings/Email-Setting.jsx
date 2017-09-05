@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router';
 import {
   ToggleButtonGroup,
   ToggleButton,
@@ -8,8 +7,11 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
+import Link from 'redux-first-router';
 import FA from 'react-fontawesome';
 import classnames from 'classnames';
+
+import { clickOnUpdateEmailLink } from './redux';
 
 const propTypes = {
   email: PropTypes.string,
@@ -25,7 +27,7 @@ export function UpdateEmailButton() {
   return (
     <Link
       style={{ textDecoration: 'none' }}
-      to='/settings/update-email'
+      to={ clickOnUpdateEmailLink() }
       >
       <Button
         block={ true }

@@ -1,5 +1,10 @@
-import { createTypes } from 'redux-create-types';
-import { createAction, combineActions, handleActions } from 'redux-actions';
+import {
+  combineActions,
+  combineReducers,
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
+import { createAction } from 'redux-actions';
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
 
@@ -26,9 +31,9 @@ import {
 import { bonfire, html, js } from '../../../utils/challengeTypes';
 import blockNameify from '../../../utils/blockNameify';
 import { createPoly, setContent } from '../../../../utils/polyvinyl';
-import createStepReducer, { epics as stepEpics } from '../views/step/redux';
-import createQuizReducer from '../views/quiz/redux';
-import createProjectReducer from '../views/project/redux';
+import stepReducer, { epics as stepEpics } from '../views/step/redux';
+import quizReducer from '../views/quiz/redux';
+import projectReducer from '../views/project/redux';
 
 // this is not great but is ok until we move to a different form type
 export projectNormalizer from '../views/project/redux';
@@ -214,15 +219,15 @@ export const challengeMetaSelector = createSelector(
   }
 );
 
-export default function createReducers() {
-  const setChallengeType = combineActions(
-    types.challengeUpdated,
-    app.fetchChallenge.complete
-  );
-
-  const mainReducer = handleActions(
-    {
-      [setChallengeType]: (state, { payload: { challenge } }) => {
+export default combineReducers(
+  handleActions(
+    () => ({
+      [
+        combineActions(
+          types.challengeUpdated,
+          app.fetchChallenge.complete
+        )
+      ]: (state, { payload: { challenge } }) => {
         return {
           ...state,
           ...initialUiState,
@@ -232,8 +237,8 @@ export default function createReducers() {
           tests: createTests(challenge),
           helpChatRoom: challenge.helpRoom || 'Help',
           numOfHints: Array.isArray(challenge.hints) ?
-            challenge.hints.length :
-            0
+          challenge.hints.length :
+          0
         };
       },
       [types.updateTests]: (state, { payload: tests }) => ({
@@ -283,12 +288,12 @@ export default function createReducers() {
 
       [types.openBugModal]: state => ({ ...state, isBugOpen: true }),
       [types.closeBugModal]: state => ({ ...state, isBugOpen: false })
-    },
-    initialState
-  );
-
-  const filesReducer = handleActions(
-    {
+    }),
+    initialState,
+    ns
+  ),
+  handleActions(
+    () => ({
       [types.updateFile]: (state, { payload: { key, content }}) => ({
         ...state,
         [key]: setContent(content, state[key])
@@ -323,7 +328,12 @@ export default function createReducers() {
           })
         };
       },
-      [setChallengeType]: (state, { payload: { challenge } }) => {
+      [
+        combineActions(
+          types.challengeUpdated,
+          app.fetchChallenge.complete
+        )
+      ]: (state, { payload: { challenge } }) => {
         if (challenge.type === 'mod') {
           return challenge.files;
         }
@@ -345,24 +355,11 @@ export default function createReducers() {
           })
         };
       }
-    },
-    {}
-  );
-
-  function reducer(state, action) {
-    const newState = mainReducer(state, action);
-    const files = filesReducer(state && state.files || {}, action);
-    if (newState.files !== files) {
-      return { ...newState, files };
-    }
-    return newState;
-  }
-
-  reducer.toString = () => ns;
-  return [
-    reducer,
-    ...createStepReducer(),
-    ...createProjectReducer(),
-    ...createQuizReducer()
-  ];
-}
+    }),
+    {},
+    ns + '.files'
+  ),
+  stepReducer,
+  quizReducer,
+  projectReducer
+);

@@ -1,5 +1,9 @@
-import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import {
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
+import { createAction } from 'redux-actions';
+
 import noop from 'lodash/noop';
 
 import stepChallengeEpic from './step-challenge-epic.js';
@@ -57,8 +61,8 @@ export const unlockedStepsSelector = state => getNS(state).unlockedSteps;
 export const lightBoxSelector = state => getNS(state).isLightBoxOpen;
 export const actionCompletedSelector = state => getNS(state).isActionCompleted;
 
-export default function createReducers() {
-  const reducer = handleActions({
+export default handleActions(
+  () => ({
     [challenges.challengeUpdated]: () => {
       console.log('updating step ui');
       return initialState;
@@ -85,8 +89,7 @@ export default function createReducers() {
       ...state,
       isLightBoxOpen: false
     })
-  }, initialState);
-
-  reducer.toString = () => ns;
-  return [ reducer ];
-}
+  }),
+  initialState,
+  ns
+);

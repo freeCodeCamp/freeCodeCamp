@@ -20,7 +20,7 @@ import {
   keySelector,
   filesSelector,
   codeLockedSelector
-} from '../../common/app/routes/challenges/redux';
+} from '../../common/app/routes/Challenges/redux';
 
 const legacyPrefixes = [
   'Bonfire: ',

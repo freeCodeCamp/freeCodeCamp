@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import capitalize from 'lodash/capitalize';
 import { createSelector } from 'reselect';
 
-import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'redux-first-router-link';
 import {
   MenuItem,
   Nav,
@@ -155,7 +155,7 @@ export class FCCNav extends React.Component {
     }
     if (isReact) {
       return (
-        <LinkContainer
+        <Link
           key={ content }
           onClick={ this.props[`handle${content}Click`] }
           to={ link }
@@ -165,7 +165,7 @@ export class FCCNav extends React.Component {
             >
             { content }
           </Component>
-        </LinkContainer>
+        </Link>
       );
     }
     return (

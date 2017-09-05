@@ -65,6 +65,7 @@ const mapStateToProps = createSelector(
     sendQuincyEmail
   })
 );
+
 const propTypes = {
   children: PropTypes.element,
   email: PropTypes.string,

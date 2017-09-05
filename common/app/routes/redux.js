@@ -1,7 +1,9 @@
-import createChallengesReducer from './challenges/redux';
+import { combineReducers } from 'berkeleys-redux-utils';
 
-export default function createReducers() {
-  return [
-    ...createChallengesReducer()
-  ];
-}
+import challengeReducer from './Challenges/redux';
+import settingsReducer from './Settings/redux';
+
+export default combineReducers(
+  challengeReducer,
+  settingsReducer
+);
