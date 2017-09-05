@@ -122,6 +122,7 @@ export default function createPanesAspects(typeToName) {
   }
 
   const reducer = composeReducers(
+    ns,
     handleActions(
       () => ({
         [types.dividerClicked]: (state, { payload: name }) => ({
@@ -233,8 +234,7 @@ export default function createPanesAspects(typeToName) {
         };
       }
       return state;
-    },
-    ns
+    }
   );
 
   return {

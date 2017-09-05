@@ -2,7 +2,7 @@ import { routes as challengesRoutes } from './Challenges';
 import { routes as mapRoutes } from './Map';
 import { routes as settingsRoutes } from './Settings';
 
-import { addLang } from '../utils/lang';
+// import { addLang } from '../utils/lang';
 
 export { createPanesMap } from './Challenges';
 

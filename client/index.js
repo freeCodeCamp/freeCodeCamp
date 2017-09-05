@@ -2,7 +2,7 @@ import './es6-shims';
 import Rx from 'rx';
 import debug from 'debug';
 import { render } from 'redux-epic';
-import { createHistory } from 'history';
+import createHistory from 'history/createBrowserHistory';
 import useLangRoutes from './utils/use-lang-routes';
 import sendPageAnalytics from './utils/send-page-analytics';
 import flashToToast from './utils/flash-to-toast';

@@ -17,7 +17,6 @@ import servicesCreator from '../utils/services-creator';
 //   defaultState?: Object|Void,
 //   serviceOptions?: Object,
 //   middlewares?: Function[],
-//   sideReducers?: Object
 //   enhancers?: Function[],
 //   epics?: Function[],
 // }) => Observable
@@ -29,7 +28,6 @@ export default function createApp({
   serviceOptions = {},
   middlewares: sideMiddlewares = [],
   enhancers: sideEnhancers = [],
-  reducers: sideReducers = {},
   epics: sideEpics = [],
   epicOptions: sideEpicOptions = {}
 }) {
@@ -73,8 +71,7 @@ export default function createApp({
   const reducer = combineReducers(
     appReducer,
     panesReducer,
-    routesReducer,
-    ...sideReducers
+    routesReducer
   );
 
   // create composed store enhancer
