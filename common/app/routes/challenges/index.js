@@ -8,14 +8,14 @@ import { panesMap as projectPanesMap } from './views/project';
 import { panesMap as quizPanesMap } from './views/quiz';
 
 export const routes = {
-  [types.routeOnChallengeRoot]: {
+  [types.onRouteChallengeRoot]: {
     path: '/challenges',
     thunk: (dispatch) => {
-      return dispatch(redirect({ type: types.routeOnCurrentChallenge }));
+      return dispatch(redirect({ type: types.onRouteCurrentChallenge }));
     }
   },
-  [types.routeOnChallenges]: '/challenges/:block/:dashedName',
-  [types.routeOnCurrentChallenge]: '/challenges/current-challenge'
+  [types.onRouteChallenges]: '/challenges/:block/:dashedName',
+  [types.onRouteCurrentChallenge]: '/challenges/current-challenge'
 };
 
 export function createPanesMap() {
@@ -27,3 +27,5 @@ export function createPanesMap() {
     ...quizPanesMap
   };
 }
+
+export { default } from './Show.jsx';

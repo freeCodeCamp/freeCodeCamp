@@ -47,6 +47,9 @@ export const epics = [
 ];
 
 export const types = createTypes([
+  'onRouteChallengeRoot',
+  'onRouteChallenges',
+  'onRouteChallengeRoot',
   // challenges
   // |- classic
   'classicEditorUpdated',
