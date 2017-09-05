@@ -60,7 +60,6 @@ export class FreeCodeCamp extends React.Component {
     // buttons in the nav
     return (
       <div className={ `${ns}-container` }>
-        { this.props.children }
         <Nav />
         <Toasts />
       </div>

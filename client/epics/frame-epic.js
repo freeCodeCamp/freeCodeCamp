@@ -12,7 +12,7 @@ import {
 
   codeLockedSelector,
   testsSelector
-} from '../../common/app/routes/challenges/redux';
+} from '../../common/app/routes/Challenges/redux';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the

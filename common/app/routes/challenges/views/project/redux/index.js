@@ -1,5 +1,8 @@
-import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import {
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
+import { createAction } from 'redux-actions';
 import ns from '../ns.json';
 
 export const types = createTypes([
@@ -14,14 +17,13 @@ const initialState = {
 };
 export const submittingSelector = state => state[ns].isSubmitting;
 
-export default function createReducer() {
-  const reducer = handleActions({
+export default handleActions(
+  () => ({
     [types.showProjectSubmit]: state => ({
       ...state,
       isSubmitting: true
     })
-  }, initialState);
-
-  reducer.toString = () => ns;
-  return [ reducer ];
-}
+  }),
+  initialState,
+  ns
+);

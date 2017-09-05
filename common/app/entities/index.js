@@ -1,5 +1,9 @@
-import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import {
+  composeReducers,
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
+import { createAction } from 'redux-actions';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
@@ -69,9 +73,10 @@ export function makeSuperBlockSelector(name) {
   };
 }
 
-export default function createReducer() {
-  const userReducer = handleActions(
-    {
+export default composeReducers(
+  ns,
+  handleActions(
+    () => ({
       [types.updateUserPoints]: (state, { payload: { username, points } }) => ({
         ...state,
         [username]: {
@@ -135,10 +140,9 @@ export default function createReducer() {
           }
         }
       })
-    },
+    }),
     initialState.user
-  );
-
+  ),
   function metaReducer(state = initialState, action) {
     if (action.meta && action.meta.entities) {
       return {
@@ -148,16 +152,4 @@ export default function createReducer() {
     }
     return state;
   }
-
-  function entitiesReducer(state, action) {
-    const newState = metaReducer(state, action);
-    const user = userReducer(newState.user, action);
-    if (newState.user !== user) {
-      return { ...newState, user };
-    }
-    return newState;
-  }
-
-  entitiesReducer.toString = () => ns;
-  return entitiesReducer;
-}
+);

@@ -1,10 +1,8 @@
-import Settings from './Settings.jsx';
-import updateEmailRoute from './routes/update-email';
+import { types } from './redux';
 
-export default function settingsRoute(deps) {
-  return [{
-    path: 'settings',
-    component: Settings,
-    childRoutes: updateEmailRoute(deps)
-  }];
-}
+export { default } from './Settings.jsx';
+
+export const routes = () => ({
+  [types.onRouteSettings]: '/settings',
+  [types.onRouteUpdateEmail]: '/settings/update-email'
+});

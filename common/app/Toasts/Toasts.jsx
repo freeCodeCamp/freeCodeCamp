@@ -8,7 +8,7 @@ import { removeToast } from './redux';
 import {
   submitChallenge,
   resetChallenge
-} from '../routes/challenges/redux';
+} from '../routes/Challenges/redux';
 
 const registeredActions = {
   submitChallenge,

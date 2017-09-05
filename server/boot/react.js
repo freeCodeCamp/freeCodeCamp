@@ -1,11 +1,11 @@
 import React from 'react';
-import { RouterContext } from 'react-router';
 import debug from 'debug';
-import { renderToString } from 'redux-epic';
+import { renderToString } from 'react-dom/server';
+import createMemoryHistory from 'history/lib/createMemoryHistory';
 
-import createApp from '../../common/app';
-import provideStore from '../../common/app/provide-store';
-
+import { createApp, provideStore, App } from '../../common/app';
+import waitForEpics from '../../common/utils/wait-for-epics.js';
+import { titleSelector } from '../../common/app/redux';
 
 const log = debug('fcc:react-server');
 
@@ -48,55 +48,40 @@ export default function reactSubRouter(app) {
     const serviceOptions = { req };
     createApp({
       serviceOptions,
-      location: req.originalUrl,
-      initialState: { app: { lang } }
+      history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
+      defaultStaet: { app: { lang } }
     })
-      // if react-router does not find a route send down the chain
-      .filter(({ redirect, props }) => {
-        if (!props && redirect) {
-          log('react router found a redirect');
-          return res.redirect(redirect.pathname + redirect.search);
-        }
-        if (!props) {
-          log(`react tried to find ${req.path} but got 404`);
-          return next();
-        }
-        return !!props;
-      })
-      .flatMap(({ props, store, epic }) => {
-        log('render react markup and pre-fetch data');
-
-        return renderToString(
-          provideStore(React.createElement(RouterContext, props), store),
-          epic
-        )
-          .map(({ markup }) => ({ markup, store, epic }));
-      })
-      .filter(({ store, epic }) => {
-        const { delayedRedirect } = store.getState().app;
-        if (delayedRedirect) {
-          res.redirect(delayedRedirect);
-          epic.dispose();
+      .filter(({ redirect, notFound }) => {
+        if (redirect) {
+          log('found a redirect');
+          res.redirect(redirect.pathname + redirect.search);
           return false;
         }
+
+        if (notFound) {
+          log(`tried to find ${req.path} but got 404`);
+          next();
+          return false;
+        }
+
         return true;
       })
-      .flatMap(function({ markup, store, epic }) {
+      .flatMap(({ store, epic }) => {
+        return waitForEpics(epic)
+          .map(() => renderToString(
+            provideStore(React.createElement(App), store)
+          ))
+          .map((markup) => ({ markup, store, epic }));
+      })
+      .do(({ markup, store, epic }) => {
         log('react markup rendered, data fetched');
         const state = store.getState();
-        const { title } = state.app;
+        const title = titleSelector(state);
         epic.dispose();
         res.expose(state, 'data');
         res.expose(req.flash(), 'flash');
-        return res.render$(
-          'layout-react',
-          { markup, title }
-        );
+        res.render('layout-react', { markup, title });
       })
-      .doOnNext(markup => res.send(markup))
-      .subscribe(
-        () => log('html rendered and ready to send'),
-        next
-      );
+      .subscribe(() => log('html rendered and sent'), next);
   }
 }
