@@ -13,6 +13,10 @@ import {
 
 import Nav from './Nav';
 import Toasts from './Toasts';
+import { mainRouteSelector } from './routes/redux';
+import Challenges from './routes/Challenges';
+import Settings from './routes/Settings';
+import NotFound from './NotFound';
 
 const mapDispatchToProps = {
   appMounted,
@@ -22,9 +26,11 @@ const mapDispatchToProps = {
 
 const mapStateToProps = state => {
   const { username } = userSelector(state);
+  const route = mainRouteSelector(state);
   return {
     toast: state.app.toast,
-    isSignedIn: !!username
+    isSignedIn: !!username,
+    route
   };
 };
 
@@ -34,8 +40,14 @@ const propTypes = {
   fetchUser: PropTypes.func,
   isSignedIn: PropTypes.bool,
   params: PropTypes.object,
+  route: PropTypes.string,
   toast: PropTypes.object,
   updateAppLang: PropTypes.func.isRequired
+};
+
+const routes = {
+  challenges: Challenges,
+  settings: Settings
 };
 
 // export plain class for testing
@@ -54,12 +66,17 @@ export class FreeCodeCamp extends React.Component {
   }
 
   render() {
+    const {
+      route
+    } = this.props;
+    const Child = routes[route] || NotFound;
     // we render nav after the content
     // to allow the panes to update
     // redux store, which will update the bin
     // buttons in the nav
     return (
       <div className={ `${ns}-container` }>
+        <Child />
         <Nav />
         <Toasts />
       </div>

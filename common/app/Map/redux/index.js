@@ -21,6 +21,7 @@ export const epics = [
 ];
 
 export const types = createTypes([
+  'routeOnMap',
   'initMap',
 
   'toggleThisPanel',
