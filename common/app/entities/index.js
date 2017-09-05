@@ -52,7 +52,7 @@ export const updateUserCurrentChallenge = createAction(
 );
 
 
-const initialState = {
+const defaultState = {
   superBlock: {},
   block: {},
   challenge: {},
@@ -75,6 +75,15 @@ export function makeSuperBlockSelector(name) {
 
 export default composeReducers(
   ns,
+  function metaReducer(state = defaultState, action) {
+    if (action.meta && action.meta.entities) {
+      return {
+        ...state,
+        ...action.meta.entities
+      };
+    }
+    return state;
+  },
   handleActions(
     () => ({
       [types.updateUserPoints]: (state, { payload: { username, points } }) => ({
@@ -141,15 +150,6 @@ export default composeReducers(
         }
       })
     }),
-    initialState.user
-  ),
-  function metaReducer(state = initialState, action) {
-    if (action.meta && action.meta.entities) {
-      return {
-        ...state,
-        ...action.meta.entities
-      };
-    }
-    return state;
-  }
+    defaultState
+  )
 );

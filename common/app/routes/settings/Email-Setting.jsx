@@ -11,7 +11,7 @@ import Link from 'redux-first-router';
 import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
-import { clickOnUpdateEmailLink } from './redux';
+import { onRouteUpdateEmail } from './redux';
 
 const propTypes = {
   email: PropTypes.string,
@@ -27,7 +27,7 @@ export function UpdateEmailButton() {
   return (
     <Link
       style={{ textDecoration: 'none' }}
-      to={ clickOnUpdateEmailLink() }
+      to={ onRouteUpdateEmail() }
       >
       <Button
         block={ true }

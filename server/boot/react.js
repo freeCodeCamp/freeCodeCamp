@@ -1,7 +1,6 @@
-import React from 'react';
 import debug from 'debug';
 import { renderToString } from 'react-dom/server';
-import createMemoryHistory from 'history/lib/createMemoryHistory';
+import createMemoryHistory from 'history/createMemoryHistory';
 
 import { createApp, provideStore, App } from '../../common/app';
 import waitForEpics from '../../common/utils/wait-for-epics.js';
@@ -69,7 +68,7 @@ export default function reactSubRouter(app) {
       .flatMap(({ store, epic }) => {
         return waitForEpics(epic)
           .map(() => renderToString(
-            provideStore(React.createElement(App), store)
+            provideStore(App, store)
           ))
           .map((markup) => ({ markup, store, epic }));
       })
