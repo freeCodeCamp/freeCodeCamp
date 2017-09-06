@@ -78,7 +78,6 @@ export default function(UserIdent) {
 We couldn't find a freeCodeCamp account
 associated with your ${provider} account.
 Try signing in with a different service or with an email address.
-.
                   `
                 }
               );
