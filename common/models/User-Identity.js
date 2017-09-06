@@ -53,7 +53,7 @@ export default function(UserIdent) {
                 Please create an account below
               `,
               type: 'info',
-              redirectTo: '/signup'
+              redirectTo: '/signin'
             }
           );
         }
@@ -73,7 +73,7 @@ export default function(UserIdent) {
                 new Error('user identity is not associated with a user'),
                 {
                   type: 'info',
-                  redirectTo: '/signup',
+                  redirectTo: '/signin',
                   message: dedent`
   The user account associated with the ${provider} user ${username || 'Anon'}
   no longer exists.
