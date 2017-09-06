@@ -15,6 +15,7 @@
     "react"
   ],
   "globals": {
+    "Symbol": true,
     "Promise": true,
     "window": true,
     "$": true,

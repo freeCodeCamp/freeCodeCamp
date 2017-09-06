@@ -1,6 +1,7 @@
-var successRedirect = '/';
-var failureRedirect = '/signin';
-var linkFailureRedirect = '/account';
+const successRedirect = '/';
+const failureRedirect = '/signin';
+const linkSuccessRedirect = '/settings';
+const linkFailureRedirect = '/settings';
 module.exports = {
   local: {
     provider: 'local',
@@ -34,7 +35,7 @@ module.exports = {
     authPath: '/link/facebook',
     callbackURL: '/link/facebook/callback',
     callbackPath: '/link/facebook/callback',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     scope: ['email', 'user_likes'],
     link: true,
@@ -63,7 +64,7 @@ module.exports = {
     authPath: '/link/google',
     callbackURL: '/link/google/callback',
     callbackPath: '/link/google/callback',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     scope: ['email', 'profile'],
     link: true,
@@ -89,7 +90,7 @@ module.exports = {
     authPath: '/link/twitter',
     callbackURL: '/link/twitter/callback',
     callbackPath: '/link/twitter/callback',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     consumerKey: process.env.TWITTER_KEY,
     consumerSecret: process.env.TWITTER_SECRET,
@@ -120,7 +121,7 @@ module.exports = {
     authPath: '/link/linkedin',
     callbackURL: '/link/linkedin/callback',
     callbackPath: '/link/linkedin/callback',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
@@ -152,7 +153,7 @@ module.exports = {
     authPath: '/link/github',
     callbackURL: '/auth/github/callback/link',
     callbackPath: '/auth/github/callback/link',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,

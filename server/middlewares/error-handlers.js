@@ -1,7 +1,9 @@
 import errorHanlder from 'errorhandler';
 import accepts from 'accepts';
 
-export default function prodErrorHandler() {
+import { unwrapHandledError } from '../utils/create-handled-error.js';
+
+export default function errorHandler() {
   if (process.env.NODE_ENV === 'development') {
     return errorHanlder({ log: true });
   }
@@ -22,20 +24,23 @@ export default function prodErrorHandler() {
     var accept = accepts(req);
     var type = accept.type('html', 'json', 'text');
 
-    var message = 'Oops! Something went wrong. Please try again later';
+    const handled = unwrapHandledError(err);
+
+    const redirectTo = handled.redirectTo || '/map';
+    const message = handled.message ||
+      'Oops! Something went wrong. Please try again later';
     if (type === 'html') {
       if (typeof req.flash === 'function') {
-        req.flash(err.messageType || 'errors', {
-          msg: err.userMessage || message
-        });
+        req.flash(
+          handled.type || 'errors',
+          { msg: message }
+        );
       }
-      return res.redirect(err.redirectTo || '/map');
+      return res.redirect(redirectTo);
       // json
     } else if (type === 'json') {
       res.setHeader('Content-Type', 'application/json');
-      return res.send({
-        message: message
-      });
+      return res.send({ message });
       // plain text
     } else {
       res.setHeader('Content-Type', 'text/plain');
