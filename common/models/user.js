@@ -75,7 +75,7 @@ module.exports = function(User) {
     User.count$ = Observable.fromNodeCallback(User.count, User);
   });
 
-  User.beforeRemote('create', function({ req }) {
+  User.beforeRemote('create', function({ req }, _, next) {
     const body = req.body;
     // note(berks): we now require all new users to supply an email
     // this was not always the case
@@ -83,7 +83,7 @@ module.exports = function(User) {
       typeof body.email !== 'string' ||
       !isEmail(body.email)
     ) {
-      return Promise.reject(createEmailError());
+      next(createEmailError());
     }
     // assign random username to new users
     // actual usernames will come from github
@@ -99,7 +99,7 @@ module.exports = function(User) {
       // should not be set with oauth signin methods
       body.emailVerified = false;
     }
-    return User.doesExist(null, body.email)
+    User.doesExist(null, body.email)
       .catch(err => {
         throw wrapHandledError(err, { redirectTo: '/email-signup' });
       })
@@ -118,7 +118,9 @@ module.exports = function(User) {
           }
         );
         throw err;
-      });
+      })
+      .then(() => next(), next);
+    return null;
   });
 
   // send welcome email to new camper
