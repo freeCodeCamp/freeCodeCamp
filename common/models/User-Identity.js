@@ -75,8 +75,10 @@ export default function(UserIdent) {
                   type: 'info',
                   redirectTo: '/signin',
                   message: dedent`
-  The user account associated with the ${provider} user ${username || 'Anon'}
-  no longer exists.
+We couldn't find a freeCodeCamp account
+associated with your ${provider} account.
+Try signing in with a different service or with an email address.
+.
                   `
                 }
               );
