@@ -14,8 +14,9 @@ function buildUserUpdate(
   completedChallenge,
   timezone
 ) {
-  const updateData = { $set: {} };
   let finalChallenge;
+  let numOfAttempts = 1;
+  const updateData = { $set: {} };
   const { timezone: userTimezone, challengeMap = {} } = user;
 
   const oldChallenge = challengeMap[challengeId];
@@ -23,13 +24,14 @@ function buildUserUpdate(
 
   if (alreadyCompleted) {
     // add data from old challenge
-      const attempts = oldChallenge.numOfAttempts;
-      const numOfAttempts = attempts ? attempts + 1 : 0;
-      finalChallenge = {
+    if (oldChallenge.numOfAttempts) {
+      numOfAttempts = oldChallenge.numOfAttempts + 1;
+    }
+    finalChallenge = {
       ...completedChallenge,
       completedDate: oldChallenge.completedDate,
       lastUpdated: completedChallenge.completedDate,
-      numOfAttempts: numOfAttempts
+      numOfAttempts
     };
   } else {
     updateData.$push = {
@@ -40,7 +42,7 @@ function buildUserUpdate(
     };
     finalChallenge = {
       ...completedChallenge,
-      numOfAttempts: 1
+      numOfAttempts
     };
   }
 
