@@ -89,9 +89,11 @@ function sendCertifiedEmail(
   const notifyUser = {
     type: 'email',
     to: email,
-    from: 'quincy@freecodecamp.org',
-    subject: dedent`Congratulations on completing all of the
-      freeCodeCamp certificates!`,
+    from: 'team@freeCodeCamp.org',
+    subject: dedent`
+      Congratulations on completing all of the
+      freeCodeCamp certificates!
+    `,
     text: renderCertifedEmail({
       username,
       name
@@ -196,7 +198,7 @@ export default function certificate(app) {
             if (user.name === '') {
               return res.status(200).send(
                 dedent`
-                  We need your name so we can put it on your certificate. 
+                  We need your name so we can put it on your certificate.
                   <a href="https://github.com/settings/profile">Add your
                   name to your GitHub account</a>, then go to your
                   <a href="https://www.freecodecamp.org/settings">settings
