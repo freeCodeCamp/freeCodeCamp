@@ -182,6 +182,7 @@
         {
           "completedDate": "number",
           "lastUpdated": "number",
+          "numOfAttempts": "number",
           "id": "string",
           "name": "string",
           "completedWith": "string",
