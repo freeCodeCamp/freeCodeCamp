@@ -232,7 +232,7 @@
         "assert(code.match(/new\\s+?XMLHttpRequest\\(\\s*?\\)/g), 'message: Your code should create a new <code>XMLHttpRequest</code>.');",
         "assert(code.match(/\\.open\\(\\s*?('|\")GET\\1\\s*?,\\s*?('|\")\\/json\\/cats\\.json\\2\\s*?,\\s*?true\\s*?\\)/g), 'message: Your code should use the <code>open</code> method to initialize a \"GET\" request to the freeCodeCamp Cat Photo API.');",
         "assert(code.match(/\\.send\\(\\s*\\)/g), 'message: Your code should use the <code>send</code> method to send the request.');",
-        "assert(code.match(/\\.onload=function\\(\\s*?\\)\\s*?{/g), 'message: Your code should have an <code>onload</code> event handler set to a function.');",
+        "assert(code.match(/\\.onload\\s*=\\s*function\\(\\s*?\\)\\s*?{/g), 'message: Your code should have an <code>onload</code> event handler set to a function.');",
         "assert(code.match(/JSON\\.parse\\(.*\\.responseText\\)/g), 'message: Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.');",
         "assert(code.match(/document\\.getElementsByClassName\\(\\s*?('|\")message\\1\\s*?\\)\\[0\\]\\.innerHTML\\s*?=\\s*?JSON\\.stringify\\(.+?\\)/g), 'message: Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.');"
       ],
