@@ -760,17 +760,20 @@
       "type": "bonfire",
       "title": "Problem 25: 1000-digit Fibonacci number",
       "tests": [
-        "assert.strictEqual(euler25(), 4782, 'message: <code>euler25()</code> should return 4782.');"
+        "assert(digitFibonacci(5) == 20, 'message: <code>digitFibonacci(5)</code> should return 20.');",
+        "assert(digitFibonacci(10) == 44, 'message: <code>digitFibonacci(10)</code> should return 44.');",
+        "assert(digitFibonacci(15) == 68, 'message: <code>digitFibonacci(15)</code> should return 68.');",
+        "assert(digitFibonacci(20) == 92, 'message: <code>digitFibonacci(20)</code> should return 92.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler25() {",
+        "function digitFibonacci(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler25();"
+        "digitFibonacci(20);"
       ],
       "description": [
         "The Fibonacci sequence is defined by the recurrence relation:",
@@ -789,7 +792,7 @@
         "F11 = 89",
         "F12 = 144",
         "The 12th term, F12, is the first term to contain three digits.",
-        "What is the index of the first term in the Fibonacci sequence to contain 1000 digits?"
+        "What is the index of the first term in the Fibonacci sequence to contain n digits?"
       ]
     },
     {
