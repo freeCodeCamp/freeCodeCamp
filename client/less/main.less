@@ -686,6 +686,26 @@ code {
  z-index: 20000 !important;
 }
 
+.email-settings {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.toggle-btn-group {
+  float: right;
+  .btn[disabled] {
+    opacity: 1;
+  }
+  @media (max-width: 768px) {
+    float: none;
+    .btn-toggle {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
 
 //uncomment this to see the dimensions of all elements outlined in red
 //* {
