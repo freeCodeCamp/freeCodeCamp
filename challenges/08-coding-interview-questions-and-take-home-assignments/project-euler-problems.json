@@ -736,22 +736,25 @@
       "type": "bonfire",
       "title": "Problem 24: Lexicographic permutations",
       "tests": [
-        "assert.strictEqual(euler24(), 2783915460, 'message: <code>euler24()</code> should return 2783915460.');"
+        "assert(lexicographicPermutations(699999) == 1938246570, 'message: <code>lexicographicPermutations(699999)</code> should return 1938246570.');",
+        "assert(lexicographicPermutations(899999) == 2536987410, 'message: <code>lexicographicPermutations(899999)</code> should return 2536987410.');",
+        "assert(lexicographicPermutations(900000) == 2537014689, 'message: <code>lexicographicPermutations(900000)</code> should return 2537014689.');",
+        "assert(lexicographicPermutations(999999) == 2783915460, 'message: <code>lexicographicPermutations(999999)</code> should return 2783915460.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler24() {",
+        "function lexicographicPermutations(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler24();"
+        "lexicographicPermutations(999999);"
       ],
       "description": [
         "A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:",
         "012   021   102   120   201   210",
-        "What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?"
+        "What is the n-th lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?"
       ]
     },
     {
