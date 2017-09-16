@@ -82,6 +82,10 @@ const propTypes = {
 };
 
 export class SidePanel extends PureComponent {
+  constructor() {
+    super();
+    this.bindTopDiv = this.bindTopDiv.bind(this);
+  }
 
   renderDescription(description = [ 'Happy Coding!' ]) {
     return description.map((line, index) => {
@@ -103,9 +107,15 @@ export class SidePanel extends PureComponent {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.title !== nextProps.title) {
-      ReactDom.findDOMNode(this).scrollTop = 0;
+  bindTopDiv(node) {
+    this.descriptionTop = node;
+  }
+
+  componentWillUpdate(nextProps) {
+    const { title } = this.props;
+    if (title !== nextProps.title) {
+      const node = ReactDom.findDOMNode(this.descriptionTop);
+      setTimeout(() => { node.scrollIntoView({ behavior: 'smooth'}); }, 0);
     }
   }
 
@@ -130,6 +140,7 @@ export class SidePanel extends PureComponent {
         ref='panel'
         role='complementary'
         >
+        <div ref={ this.bindTopDiv } />
         <div>
           <ChallengeTitle>
             { title }
