@@ -14,6 +14,8 @@ import {
   testsSelector
 } from '../../common/app/routes/challenges/redux';
 
+import StripComments from 'strip-comments';
+
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
 // console.log
@@ -85,6 +87,7 @@ function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   tests.__source = sources['index'] || '';
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
+  tests.__stripComments = StripComments;
   tests.open();
   tests.write(createHeader(testId) + build);
   tests.close();
