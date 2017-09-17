@@ -163,8 +163,8 @@ module.exports = function(app) {
   router.get('/logout', function(req, res) {
     res.redirect(301, '/signout');
   });
-  router.get('/signup', getSignin);
-  router.get('/signin', getSignin);
+  router.get('/signup', getEmailSignin);
+  router.get('/signin', getEmailSignin);
   router.get('/signout', signout);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
@@ -239,15 +239,6 @@ module.exports = function(app) {
 
   app.use('/:lang', router);
   app.use(api);
-
-  function getSignin(req, res) {
-    if (req.user) {
-      return res.redirect('/');
-    }
-    return res.render('account/signin', {
-      title: 'Sign in to freeCodeCamp'
-    });
-  }
 
   const defaultErrorMsg = [ 'Oops, something is not right, please request a ',
   'fresh link to sign in / sign up.' ].join('');
