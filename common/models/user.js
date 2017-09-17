@@ -164,47 +164,6 @@ module.exports = function(User) {
       });
   });
 
-  // send welcome email to new camper
-  User.afterRemote('create', function({ req, res }, user, next) {
-    debug('user created, sending email');
-    if (!user.email || !isEmail(user.email)) { return next(); }
-    const redirect = req.session && req.session.returnTo ?
-      req.session.returnTo :
-      '/';
-
-    var mailOptions = {
-      type: 'email',
-      to: user.email,
-      from: getEmailSender(),
-      subject: 'Welcome to freeCodeCamp!',
-      protocol: getProtocol(),
-      host: getHost(),
-      port: getPort(),
-      template: path.join(
-        __dirname,
-        '..',
-        '..',
-        'server',
-        'views',
-        'emails',
-        'a-extend-user-welcome.ejs'
-      ),
-      redirect: '/email-signin'
-    };
-
-    debug('sending welcome email');
-    return user.verify(mailOptions, function(err) {
-      if (err) { return next(err); }
-      req.flash('success', {
-        msg: [ 'Congratulations ! We\'ve created your account. ',
-               'Please check your email. We sent you a link that you can ',
-               'click to verify your email address and then login.'
-             ].join('')
-      });
-      return res.redirect(redirect);
-    });
-  });
-
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
       // Some old accounts will not have emails associated with theme
