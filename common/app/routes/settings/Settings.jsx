@@ -126,7 +126,7 @@ export class Settings extends React.Component {
       toggleMonthlyEmail,
       toggleNotificationEmail
     } = this.props;
-    if (!username && !showLoading) {
+    if (!username && showLoading) {
       return <SettingsSkeleton />;
     }
     if (children) {
