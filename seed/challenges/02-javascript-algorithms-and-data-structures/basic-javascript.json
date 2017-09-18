@@ -1697,9 +1697,12 @@
       "description": [
         "We will now use our knowledge of strings to build a \"<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>\" style word game we're calling \"Word Blanks\". You will create an (optionally humorous) \"Fill in the Blanks\" style sentence. Here's an example of an incomplete sentence.",
         "<code>\"The ______ ______ looked around ______ then ______ into the house\"</code>",
-        "These four blanks would be filled in this order: (adjective) (noun) (adverb) (verb)",
-        "You will need to use string concatenation to build a new string, <code>result</code>, using the variables <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>. These variables are passed to the function as parameters. Don't change these parameter names in the function.",
-        "Include additional strings and spaces (which will not change) in between the provided variables to make a complete sentence."
+        "These four blanks would be filled in this order: (adjective) (noun) (adverb) (verb). The completed sentence can then be assigned to a variable as follows:",
+        "<blockquote>var sentence = \"The frightended child looked around anxiously then walked into the house.\";</blockquote>",
+        "<hr>",
+        "In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.",
+        "You will need to use the string concatenation operator <code>+</code> to build a new string, using the provided variables: <code>myNoun</code>, <code>myAdjective</code>, <code>myVerb</code>, and <code>myAdverb</code>. These variables are passed to the function as parameters. Don't change these parameter names in the function.",
+        "You will then assign the completed sentence to the <code>result</code> variable. You also need to account for spaces in your string, so that the final sentence has spaces between all the words."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
