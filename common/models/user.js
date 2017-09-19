@@ -14,8 +14,13 @@ const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 const isDev = process.env.NODE_ENV !== 'production';
 
-const createEmailError = () => new Error(
- 'Please check to make sure the email is a valid email address.'
+const createEmailError = options => wrapHandledError(
+  new Error('invalid email address'),
+  {
+    message: 'Please check to make sure the email is a valid email address.',
+    redirectTo: '/email-sigin',
+    ...options
+  }
 );
 
 function destroyAll(id, Model) {
@@ -83,7 +88,7 @@ module.exports = function(User) {
       typeof body.email !== 'string' ||
       !isEmail(body.email)
     ) {
-      next(createEmailError());
+      next(createEmailError({ redirectTo: '/email-signup' }));
     }
     // assign random username to new users
     // actual usernames will come from github
@@ -438,18 +443,22 @@ module.exports = function(User) {
   User.about = function about(username, cb) {
     if (!username) {
       // Zalgo!!
-      return nextTick(() => {
-        cb(new TypeError(
-            `username should be a string but got ${ username }`
-        ));
-      });
+      return nextTick(() => cb(
+        wrapHandledError(
+          new TypeError('username should be of type string'),
+          { message: 'username should be a string' }
+        )
+      ));
     }
     return User.findOne({ where: { username } }, (err, user) => {
       if (err) {
         return cb(err);
       }
       if (!user || user.username !== username) {
-        return cb(new Error(`no user found for ${ username }`));
+        return cb(wrapHandledError(
+          new Error('no user found'),
+          { message: `no user found for ${ username }` }
+        ));
       }
       const aboutUser = getAboutProfile(user);
       return cb(null, aboutUser);
@@ -488,14 +497,13 @@ module.exports = function(User) {
       true;
 
     if (!isEmail(email)) {
-      return Promise.reject(
-        new Error(createEmailError())
-      );
+      return Promise.reject(createEmailError());
     }
     // email is already associated and verified with this account
     if (ownEmail && this.emailVerified) {
-      return Promise.reject(new Error(
-        `${email} is already associated with this account.`
+      return Promise.reject(wrapHandledError(
+        new Error('email already assigned'),
+        { message: `${email} is already associated with this account.` }
       ));
     }
 
@@ -507,8 +515,9 @@ module.exports = function(User) {
         `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
         'a few seconds';
 
-      return Promise.reject(new Error(
-        `Please wait ${timeToWait} to resend email verification.`
+      return Promise.reject(wrapHandledError(
+        new Error('updateEmail ratelimit hit by user'),
+        { message: `Please wait ${timeToWait} to resend email verification.` }
       ));
     }
 
@@ -516,9 +525,10 @@ module.exports = function(User) {
       .then(exists => {
         // not associated with this account, but is associated with another
         if (!ownEmail && exists) {
-          return Promise.reject(
-            new Error(`${email} is already associated with another account.`)
-          );
+          return Promise.reject(wrapHandledError(
+            new Error('email is already in use'),
+            { message: `${email} is already associated with another account.` }
+          ));
         }
 
         const emailVerified = false;
@@ -557,11 +567,9 @@ module.exports = function(User) {
           Please check your email.
           We sent you a link that you can click to verify your email address.
         `)
-        .catch(error => {
-          debug(error);
-          return Observable.throw(
-            'Oops, something went wrong, please try again later.'
-          );
+        .catch(err => {
+          console.error(err);
+          return Observable.throw(err);
         })
         .toPromise();
       });
@@ -596,16 +604,16 @@ module.exports = function(User) {
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
       const findUser = observeMethod(User, 'findOne');
       if (!receiver) {
-        return nextTick(() => {
-          cb(
-            new TypeError(`receiver should be a string but got ${ receiver }`)
-          );
-        });
+        return nextTick(() => cb(wrapHandledError(
+          new TypeError('receiver should be a string'),
+          { message: `receiver should be a string but got ${ receiver }` }
+        )));
       }
       if (!giver) {
-        return nextTick(() => {
-          cb(new TypeError(`giver should be a string but got ${ giver }`));
-        });
+        return nextTick(() => cb(wrapHandledError(
+          new TypeError('giver should be a string'),
+          { message: `giver should be a string but got ${ giver }` }
+        )));
       }
       let temp = moment();
       const browniePoints = temp
@@ -616,7 +624,10 @@ module.exports = function(User) {
       return user$
         .tapOnNext((user) => {
           if (!user) {
-            throw new Error(`could not find receiver for ${ receiver }`);
+            throw wrapHandledError(
+              new Error('no user found for receiver'),
+              { message: `could not find receiver for ${ receiver }` }
+            );
           }
         })
         .flatMap(({ progressTimestamps = [] }) => {
@@ -647,9 +658,10 @@ module.exports = function(User) {
               return saveUser(user);
             });
           }
-          return Observable.throw(
-            new Error(`${ giver } already gave ${ receiver } points`)
-          );
+          return Observable.throw(wrapHandledError(
+            new Error('thanks rate limit hit by user'),
+            { message: `${ giver } already gave ${ receiver } points` }
+          ));
         })
         .subscribe(
           (user) => {
@@ -764,7 +776,7 @@ module.exports = function(User) {
         typeof updateData !== 'object' ||
         !Object.keys(updateData).length
     ) {
-      return Observable.throw(new Error(
+      return Observable.throw(new TypeError(
         dedent`
           updateData must be an object with at least one key,
           but got ${updateData} with ${Object.keys(updateData).length}
