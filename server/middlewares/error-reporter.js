@@ -8,6 +8,7 @@ import {
 
 const log = debug('fcc:middlewares:error-reporter');
 
+const isOpbeatDisabled = !opbeat.appId;
 export default function errrorReporter() {
   if (process.env.NODE_ENV !== 'production') {
     return (err, req, res, next) => {
@@ -22,7 +23,7 @@ export default function errrorReporter() {
   return (err, req, res, next) => {
     // handled errors do not need to be reported
     // the report a message and redirect the user
-    if (isHandledError(err)) {
+    if (isOpbeatDisabled || isHandledError(err)) {
       return next(err);
     }
     return opbeat.captureError(err, { request: req }, () => next(err));
