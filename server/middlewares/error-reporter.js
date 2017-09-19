@@ -23,7 +23,12 @@ export default function errrorReporter() {
   return (err, req, res, next) => {
     // handled errors do not need to be reported
     // the report a message and redirect the user
-    if (isOpbeatDisabled || isHandledError(err)) {
+    if (
+      isOpbeatDisabled ||
+      isHandledError(err) ||
+      // errors with status codes shouldn't be reported
+      err.statusCode
+    ) {
       return next(err);
     }
     return opbeat.captureError(err, { request: req }, () => next(err));
