@@ -27,7 +27,8 @@ export default function errrorReporter() {
       isOpbeatDisabled ||
       isHandledError(err) ||
       // errors with status codes shouldn't be reported
-      err.statusCode
+      err.statusCode ||
+      err.status
     ) {
       return next(err);
     }
