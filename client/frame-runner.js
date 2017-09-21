@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var source = document.__source;
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
+  var strip = document.__stripComments;
 
   document.__getJsOutput = function getJsOutput() {
     if (window.__err || !common.shouldRun()) {
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.__runTests = function runTests(tests = []) {
     /* eslint-disable no-unused-vars */
     const editor = { getValue() { return source; } };
-    const code = source;
+    const code = strip(source);
     /* eslint-enable no-unused-vars */
     if (window.__err) {
       return Rx.Observable.from(tests)
