@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { contain } from 'redux-epic';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -56,16 +54,6 @@ const mapStateToProps = createSelector(
     viewType
   })
 );
-
-const fetchOptions = {
-  fetchAction: 'fetchChallenge',
-  getActionArgs({ params: { block, dashedName } }) {
-    return [ dashedName, block ];
-  },
-  isPrimed({ challenge }) {
-    return !!challenge;
-  }
-};
 
 const link = 'http://forum.freecodecamp.org/t/' +
   'guidelines-for-translating-free-code-camp' +
@@ -136,7 +124,4 @@ export class Show extends PureComponent {
 Show.displayName = 'Show(ChallengeView)';
 Show.propTypes = propTypes;
 
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
-  contain(fetchOptions)
-)(Show);
+export default connect(mapStateToProps, mapDispatchToProps)(Show);
