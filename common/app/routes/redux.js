@@ -8,11 +8,10 @@ import { routes as challengeRoutes } from './Challenges';
 import { routes as settingsRoutes } from './Settings';
 
 const ns = 'mainRouter';
-const defaultState = '';
 
-export const mainRouteSelector = (state) => state[ns];
+export const mainRouteSelector = state => state[ns];
 
-export function mainRouter(state = defaultState, action) {
+export function mainRouter(state = 'NotFound', action) {
   if (!isLocationAction(action)) {
     return state;
   }
