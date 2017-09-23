@@ -21,6 +21,7 @@ import {
   langSelector
 } from '../../redux';
 import { makeToast } from '../../Toasts/redux';
+import { paramsSelector } from '../../location/redux';
 
 const views = {
   backend: BackEnd,
@@ -42,15 +43,18 @@ const mapStateToProps = createSelector(
   challengeSelector,
   challengeMetaSelector,
   langSelector,
+  paramsSelector,
   (
     { dashedName, isTranslated },
     { viewType, title },
-    lang
-  ) => ({
     lang,
-    isTranslated,
-    title,
+    params,
+  ) => ({
     challenge: dashedName,
+    isTranslated,
+    lang,
+    params,
+    title,
     viewType
   })
 );
@@ -65,7 +69,10 @@ const propTypes = {
   isTranslated: PropTypes.bool,
   lang: PropTypes.string.isRequired,
   makeToast: PropTypes.func.isRequired,
-  params: PropTypes.object.isRequired,
+  params: PropTypes.shape({
+    dashedName: PropTypes.string,
+    block: PropTypes.string
+  }),
   title: PropTypes.string,
   updateCurrentChallenge: PropTypes.func.isRequired,
   updateTitle: PropTypes.func.isRequired,

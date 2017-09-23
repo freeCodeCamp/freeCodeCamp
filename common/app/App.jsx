@@ -13,10 +13,11 @@ import {
 
 import Nav from './Nav';
 import Toasts from './Toasts';
+import NotFound from './NotFound';
+import { paramsSelector } from './location/redux';
 import { mainRouteSelector } from './routes/redux';
 import Challenges from './routes/Challenges';
 import Settings from './routes/Settings';
-import NotFound from './NotFound';
 
 const mapDispatchToProps = {
   appMounted,
@@ -27,10 +28,12 @@ const mapDispatchToProps = {
 const mapStateToProps = state => {
   const { username } = userSelector(state);
   const route = mainRouteSelector(state);
+  const params = paramsSelector(state);
   return {
     toast: state.app.toast,
     isSignedIn: !!username,
-    route
+    route,
+    params
   };
 };
 
@@ -39,7 +42,9 @@ const propTypes = {
   children: PropTypes.node,
   fetchUser: PropTypes.func,
   isSignedIn: PropTypes.bool,
-  params: PropTypes.object,
+  params: PropTypes.shape({
+    lang: PropTypes.string
+  }),
   route: PropTypes.string,
   toast: PropTypes.object,
   updateAppLang: PropTypes.func.isRequired
