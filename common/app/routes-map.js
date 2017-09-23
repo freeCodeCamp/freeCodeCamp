@@ -2,7 +2,7 @@ import reduce from 'lodash/reduce';
 import { types } from './redux';
 import routes from './routes';
 
-const base = '/:en';
+const base = '/:lang';
 
 export default {
   ...reduce(routes, (routes, route, type) => {
@@ -15,5 +15,5 @@ export default {
     routes[type] = newRoute;
     return routes;
   }, {}),
-  [types.routeOnHome]: '/:en'
+  [types.routeOnHome]: base
 };
