@@ -49,7 +49,7 @@ export const epics = [
 export const types = createTypes([
   'onRouteChallengeRoot',
   'onRouteChallenges',
-  'onRouteChallengeRoot',
+  'onRouteCurrentChallenge',
   // challenges
   // |- classic
   'classicEditorUpdated',
@@ -98,6 +98,9 @@ export const types = createTypes([
   'toggleSidePanel',
   'toggleStep'
 ], ns);
+
+// routes
+export const onRouteChallenges = createAction(types.onRouteChallenges);
 
 // classic
 export const classicEditorUpdated = createAction(types.classicEditorUpdated);
