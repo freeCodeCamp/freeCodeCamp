@@ -101,7 +101,6 @@
       "type": "bonfire",
       "MDNlinks": [
         "Comparison Operators",
-        "Array.prototype.slice()",
         "Array.prototype.filter()",
         "Array.prototype.indexOf()",
         "Array.prototype.concat()"
