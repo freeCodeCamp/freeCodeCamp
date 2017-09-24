@@ -6,7 +6,7 @@ import { types as challenges } from '../Challenges/redux';
 export const routes = {
   [map.routeOnMap]: {
     type: map.routeOnMap,
-    path: 'map',
+    path: '/map',
     thunk: dispatch => dispatch(
       redirect({ type: challenges.routeOnCurrentChallenge })
     )
