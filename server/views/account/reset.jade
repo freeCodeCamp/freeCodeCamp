@@ -10,8 +10,10 @@ block content
         input.form-control(type='password', name='password', value='', placeholder='New password', autofocus=true)
       .form-group
         label(for='confirm') Confirm Password
-        input.form-control(type='password', name='confirm', value='', placeholder='Confirm password')
+        input.form-control(type='password', name='confirm', value='', placeholder='Confirm password',id='passConfirm')
       .form-group
         button.btn.btn-primary.btn-reset(type='submit')
+            script(type='text/javascript').
+            document.getElementById('passConfirm').willValidate;
           i.fa.fa-keyboard-o
           | Change Password
