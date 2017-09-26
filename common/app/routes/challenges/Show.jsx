@@ -21,7 +21,7 @@ import {
   langSelector
 } from '../../redux';
 import { makeToast } from '../../Toasts/redux';
-import { paramsSelector } from '../../location/redux';
+import { paramsSelector } from '../../Router/redux';
 
 const views = {
   backend: BackEnd,

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import Link from 'redux-first-router-link';
 import PureComponent from 'react-pure-render/component';
 import classnames from 'classnames';
 import debug from 'debug';
@@ -14,6 +13,7 @@ import {
 } from './redux';
 import { userSelector } from '../redux';
 import { challengeMapSelector } from '../entities';
+import { Link } from '../Router';
 import { onRouteChallenges } from '../routes/Challenges/redux';
 
 const propTypes = {

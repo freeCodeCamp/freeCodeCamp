@@ -14,7 +14,7 @@ import {
 import Nav from './Nav';
 import Toasts from './Toasts';
 import NotFound from './NotFound';
-import { paramsSelector } from './location/redux';
+import { paramsSelector } from './Router/redux';
 import { mainRouteSelector } from './routes/redux';
 import Challenges from './routes/Challenges';
 import Settings from './routes/Settings';
