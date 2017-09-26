@@ -10,12 +10,12 @@ import { langSelector } from './redux';
 const propTypes = {
   children: PropTypes.element,
   dispatch: PropTypes.func,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   redirect: PropTypes.bool,
   replace: PropTypes.bool,
   shouldDispatch: PropTypes.bool,
   target: PropTypes.string,
-  to: PropTypes.oneOf([PropTypes.object, PropTypes.string])
+  to: PropTypes.oneOfType([ PropTypes.object, PropTypes.string ]).isRequired
 };
 
 export const Link = (
