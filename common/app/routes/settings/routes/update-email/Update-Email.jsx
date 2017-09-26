@@ -8,10 +8,10 @@ import {
   HelpBlock,
   Row
 } from 'react-bootstrap';
-import Link from 'redux-first-router-link';
 import { reduxForm } from 'redux-form';
 import { isEmail } from 'validator';
 
+import { Link } from '../../../../Router';
 import { getValidationState } from '../../../../utils/form';
 import { clickOnSettingsLink, updateMyEmail } from '../../redux';
 

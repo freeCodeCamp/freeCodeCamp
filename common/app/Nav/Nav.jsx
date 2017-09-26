@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import capitalize from 'lodash/capitalize';
 import { createSelector } from 'reselect';
 
-import { Link } from 'redux-first-router-link';
 import {
   MenuItem,
   Nav,
@@ -15,6 +14,7 @@ import {
   NavbarBrand
 } from 'react-bootstrap';
 
+import { Link } from '../Router';
 import navLinks from './links.json';
 import SignUp from './Sign-Up.jsx';
 import BinButton from './Bin-Button.jsx';

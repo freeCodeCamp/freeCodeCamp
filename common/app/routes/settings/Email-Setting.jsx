@@ -7,11 +7,11 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-import Link from 'redux-first-router';
 import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
 import { onRouteUpdateEmail } from './redux';
+import { Link } from '../../Router';
 
 const propTypes = {
   email: PropTypes.string,

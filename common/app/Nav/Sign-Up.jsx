@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'redux-first-router-link';
 import { NavItem } from 'react-bootstrap';
+
+import { Link } from '../Router';
 import { routeOnSettings } from '../routes/Settings/redux';
 
 // this is separated out to prevent react bootstrap's
