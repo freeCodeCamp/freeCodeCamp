@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import noop from 'lodash/noop';
 import capitalize from 'lodash/capitalize';
 import { createSelector } from 'reselect';
 
@@ -143,10 +142,9 @@ export class FCCNav extends React.Component {
           key={ content }
           noCaret={ true }
           onClick={ openDropdown }
-          onClose={ closeDropdown }
           onMouseEnter={ openDropdown }
           onMouseLeave={ closeDropdown }
-          onToggle={ noop }
+          onToggle={ isDropdownOpen ? closeDropdown : openDropdown }
           open={ isDropdownOpen }
           title={ content }
           >
