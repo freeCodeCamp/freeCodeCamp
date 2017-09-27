@@ -26,7 +26,7 @@ export const epics = [
 ];
 
 export const types = createTypes([
-  'routeOnHome',
+  'onRouteHome',
 
   'appMounted',
   'analytics',
@@ -86,7 +86,7 @@ export const createEventMetaCreator = ({
   }
 });
 
-export const routeOnHome = createAction(types.routeOnHome);
+export const onRouteHome = createAction(types.onRouteHome);
 export const appMounted = createAction(types.appMounted);
 export const fetchChallenge = createAction(
   '' + types.fetchChallenge,

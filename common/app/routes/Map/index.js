@@ -1,14 +1,12 @@
 import { redirect } from 'redux-first-router';
 
 import { types as map } from '../../Map/redux';
-import { types as challenges } from '../Challenges/redux';
+import { onRouteCurrentChallenge } from '../Challenges/redux';
 
 export const routes = {
-  [map.routeOnMap]: {
-    type: map.routeOnMap,
+  [map.onRouteMap]: {
+    type: map.onRouteMap,
     path: '/map',
-    thunk: dispatch => dispatch(
-      redirect({ type: challenges.routeOnCurrentChallenge })
-    )
+    thunk: dispatch => dispatch(redirect(onRouteCurrentChallenge()))
   }
 };
