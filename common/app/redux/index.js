@@ -31,7 +31,6 @@ export const types = createTypes([
   'appMounted',
   'analytics',
   'updateTitle',
-  'updateAppLang',
 
   createAsyncTypes('fetchChallenge'),
   createAsyncTypes('fetchChallenges'),
@@ -126,8 +125,6 @@ export const addUser = createAction(
 export const updateThisUser = createAction(types.updateThisUser);
 export const showSignIn = createAction(types.showSignIn);
 
-export const updateAppLang = createAction(types.updateAppLang);
-
 // used when server needs client to redirect
 export const delayedRedirect = createAction(types.delayedRedirect);
 
@@ -164,7 +161,6 @@ const initialState = {
   title: 'Learn To Code | freeCodeCamp',
   isSignInAttempted: false,
   user: '',
-  lang: '',
   csrfToken: '',
   theme: 'default',
   // eventually this should be only in the user object
@@ -173,7 +169,6 @@ const initialState = {
 };
 
 export const getNS = state => state[ns];
-export const langSelector = state => getNS(state).lang;
 export const csrfSelector = state => getNS(state).csrfToken;
 export const themeSelector = state => getNS(state).theme;
 export const titleSelector = state => getNS(state).title;
@@ -255,10 +250,6 @@ export default handleActions(
     [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
       ...state,
       currentChallenge: payload
-    }),
-    [types.updateAppLang]: (state, { payload = 'en' }) =>({
-      ...state,
-      lang: payload
     }),
     [types.updateTheme]: (state, { payload = 'default' }) => ({
       ...state,
