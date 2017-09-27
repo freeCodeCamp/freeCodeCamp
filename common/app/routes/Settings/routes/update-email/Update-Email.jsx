@@ -13,7 +13,10 @@ import { isEmail } from 'validator';
 
 import { Link } from '../../../../Router';
 import { getValidationState } from '../../../../utils/form';
-import { clickOnSettingsLink, updateMyEmail } from '../../redux';
+import {
+  onRouteSettings,
+  updateMyEmail
+} from '../../redux';
 
 const actions = {
   updateMyEmail
@@ -128,7 +131,7 @@ export class UpdateEmail extends React.Component {
                 { buttonCopy }
               </Button>
               <div className='button-spacer' />
-              <Link to={ clickOnSettingsLink() }>
+              <Link to={ onRouteSettings() }>
                 <Button
                   block={ true }
                   bsSize='lg'
