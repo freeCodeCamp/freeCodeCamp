@@ -87,8 +87,8 @@ export default function reactSubRouter(app) {
         const state = store.getState();
         const title = titleSelector(state);
         epic.dispose();
-        res.expose(state, 'data');
-        res.expose(req.flash(), 'flash');
+        res.expose(state, 'data', { isJSON: true });
+        res.expose(req.flash(), 'flash', { isJSON: true });
         res.render('layout-react', { markup, title });
       })
       .subscribe(() => log('html rendered and sent'), next);
