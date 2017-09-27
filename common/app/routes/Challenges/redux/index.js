@@ -101,6 +101,8 @@ export const types = createTypes([
 
 // routes
 export const onRouteChallenges = createAction(types.onRouteChallenges);
+export const onRouteCurrentChallenge =
+  createAction(types.onRouteCurrentChallenge);
 
 // classic
 export const classicEditorUpdated = createAction(types.classicEditorUpdated);
