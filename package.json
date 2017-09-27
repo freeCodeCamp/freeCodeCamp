@@ -122,7 +122,6 @@
     "redux-create-types": "0.0.1",
     "redux-epic": "^0.3.0",
     "redux-first-router": "^1.9.19",
-    "redux-first-router-link": "^1.3.0",
     "redux-form": "^5.2.3",
     "request": "^2.65.0",
     "reselect": "^3.0.0",
