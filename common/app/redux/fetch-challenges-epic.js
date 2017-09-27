@@ -9,10 +9,10 @@ import {
   delayedRedirect,
 
   fetchChallengeCompleted,
-  fetchChallengesCompleted,
-
-  langSelector
+  fetchChallengesCompleted
 } from './';
+
+import { langSelector } from '../Router/redux';
 import { shapeChallenges } from './utils';
 
 const isDev = debug.enabled('fcc:*');

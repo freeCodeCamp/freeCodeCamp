@@ -17,8 +17,7 @@ import {
   updateCurrentChallenge,
   fetchChallenge,
 
-  challengeSelector,
-  langSelector
+  challengeSelector
 } from '../../redux';
 import { makeToast } from '../../Toasts/redux';
 import { paramsSelector } from '../../Router/redux';
@@ -42,17 +41,14 @@ const mapDispatchToProps = {
 const mapStateToProps = createSelector(
   challengeSelector,
   challengeMetaSelector,
-  langSelector,
   paramsSelector,
   (
     { dashedName, isTranslated },
     { viewType, title },
-    lang,
     params,
   ) => ({
     challenge: dashedName,
     isTranslated,
-    lang,
     params,
     title,
     viewType
@@ -67,11 +63,11 @@ const propTypes = {
   areChallengesLoaded: PropTypes.bool,
   isStep: PropTypes.bool,
   isTranslated: PropTypes.bool,
-  lang: PropTypes.string.isRequired,
   makeToast: PropTypes.func.isRequired,
   params: PropTypes.shape({
+    block: PropTypes.string,
     dashedName: PropTypes.string,
-    block: PropTypes.string
+    lang: PropTypes.string.isRequired
   }),
   title: PropTypes.string,
   updateCurrentChallenge: PropTypes.func.isRequired,
@@ -82,7 +78,7 @@ const propTypes = {
 export class Show extends PureComponent {
 
   componentWillMount() {
-    const { lang, isTranslated, makeToast } = this.props;
+    const { params: { lang }, isTranslated, makeToast } = this.props;
     if (lang !== 'en' && !isTranslated) {
       makeToast({
         message: 'We haven\'t translated this challenge yet.',
@@ -100,8 +96,8 @@ export class Show extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     const { title } = nextProps;
-    const { dashedName } = nextProps.params;
-    const { lang, isTranslated } = nextProps;
+    const { lang, dashedName } = nextProps.params;
+    const { isTranslated } = nextProps;
     const { updateTitle, updateCurrentChallenge, makeToast } = this.props;
     if (this.props.params.dashedName !== dashedName) {
       updateCurrentChallenge(dashedName);
