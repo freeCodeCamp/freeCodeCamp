@@ -2,11 +2,16 @@ import debug from 'debug';
 import { renderToString } from 'react-dom/server';
 import createMemoryHistory from 'history/createMemoryHistory';
 
+import {
+  loggerMiddleware,
+  errorThrowerMiddleware
+} from '../utils/react.js';
 import { createApp, provideStore, App } from '../../common/app';
 import waitForEpics from '../../common/utils/wait-for-epics.js';
 import { titleSelector } from '../../common/app/redux';
 
 const log = debug('fcc:react-server');
+const isDev = process.env.NODE_ENV !== 'production';
 
 // add routes here as they slowly get reactified
 // remove their individual controllers
@@ -20,6 +25,10 @@ const routes = [
 
 const devRoutes = [];
 
+const middlewares = [
+  isDev ? loggerMiddleware : null,
+  isDev ? errorThrowerMiddleware : null
+].filter(Boolean);
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 
@@ -47,6 +56,7 @@ export default function reactSubRouter(app) {
     const serviceOptions = { req };
     createApp({
       serviceOptions,
+      middlewares,
       history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
       defaultStaet: { app: { lang } }
     })
