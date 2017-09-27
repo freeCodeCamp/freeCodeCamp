@@ -197,7 +197,8 @@ export const challengeModalSelector =
 export const bugModalSelector = state => getNS(state).isBugOpen;
 
 export const challengeMetaSelector = createSelector(
-  challengeSelector,
+  // use closure to get around circular deps
+  (...args) => challengeSelector(...args),
   challenge => {
     if (!challenge.id) {
       return {};

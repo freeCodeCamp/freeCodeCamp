@@ -12,18 +12,18 @@ import {
   fetchChallengesCompleted
 } from './';
 
-import { langSelector } from '../Router/redux';
 import { shapeChallenges } from './utils';
+import { types as challenge } from '../routes/Challenges/redux';
+import { langSelector } from '../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
 
 export function fetchChallengeEpic(actions, { getState }, { services }) {
-  return actions::ofType('' + types.fetchChallenge)
-    .flatMap(({ payload: { dashedName, block } }) => {
-      const lang = langSelector(getState());
+  return actions::ofType(challenge.onRouteChallenges)
+    .flatMap(({ payload: params }) => {
       const options = {
         service: 'map',
-        params: { block, dashedName, lang }
+        params
       };
       return services.readService$(options)
         .retry(3)
