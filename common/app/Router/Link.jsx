@@ -8,7 +8,7 @@ import createHandler from './handle-press.js';
 import { langSelector } from './redux';
 
 const propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
   dispatch: PropTypes.func,
   onClick: PropTypes.func,
   redirect: PropTypes.bool,
