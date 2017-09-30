@@ -10,6 +10,7 @@ import createPanesMap from './create-panes-map.js';
 import createPanesAspects from './Panes/redux';
 import epics from './epics';
 
+import { onBeforeChange } from './utils/redux-first-router.js';
 import servicesCreator from '../utils/services-creator';
 
 // createApp(settings: {
@@ -46,7 +47,7 @@ export default function createApp({
     reducer: routesReducer,
     middleware: routesMiddleware,
     enhancer: routesEnhancer
-  } = connectRoutes(history, routesMap);
+  } = connectRoutes(history, routesMap, { onBeforeChange });
 
   routesReducer.toString = () => 'location';
 

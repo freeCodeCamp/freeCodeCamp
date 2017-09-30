@@ -9,7 +9,7 @@ export default (to, routesMap, lang = 'en') => {
   }
 
   if (typeof to === 'object') {
-    const action = to;
+    const { payload = {}, ...action } = to;
 
     try {
       const { querySerializer } = getOptions();
@@ -17,14 +17,15 @@ export default (to, routesMap, lang = 'en') => {
         {
           ...action,
           payload: {
-            ...action.payload,
-            lang: action.payload.lang || lang
+            ...payload,
+            lang: payload.lang || lang
           }
         },
         routesMap,
         querySerializer
       );
     } catch (e) {
+      console.error(e);
       console.warn(
         '[Link] could not create path from action:',
         action,

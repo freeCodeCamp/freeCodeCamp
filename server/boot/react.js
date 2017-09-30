@@ -62,13 +62,13 @@ export default function reactSubRouter(app) {
     })
       .filter(({ redirect, notFound }) => {
         if (redirect) {
-          log('found a redirect');
-          res.redirect(redirect.pathname + redirect.search);
+          log('react found a redirect');
+          res.redirect(redirect.pathname);
           return false;
         }
 
         if (notFound) {
-          log(`tried to find ${req.path} but got 404`);
+          log(`react tried to find ${req.path} but got 404`);
           next();
           return false;
         }
