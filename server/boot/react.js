@@ -1,6 +1,7 @@
 import debug from 'debug';
 import { renderToString } from 'react-dom/server';
 import createMemoryHistory from 'history/createMemoryHistory';
+import { NOT_FOUND } from 'redux-first-router';
 
 import {
   loggerMiddleware,
@@ -60,14 +61,20 @@ export default function reactSubRouter(app) {
       history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
       defaultStaet: { app: { lang } }
     })
-      .filter(({ redirect, notFound }) => {
-        if (redirect) {
+      .filter(({
+        location: {
+          type,
+          kind,
+          pathname
+        } = {}
+      }) => {
+        if (kind === 'redirect') {
           log('react found a redirect');
-          res.redirect(redirect.pathname);
+          res.redirect(pathname);
           return false;
         }
 
-        if (notFound) {
+        if (type === NOT_FOUND) {
           log(`react tried to find ${req.path} but got 404`);
           next();
           return false;

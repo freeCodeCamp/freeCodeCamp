@@ -92,7 +92,7 @@ export default function createApp({
   return Observable.of({
     store,
     epic: epicMiddleware,
-    redirect: location.kind === 'redirect' ? location : false,
+    location,
     notFound: false
   });
 }
