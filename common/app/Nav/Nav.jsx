@@ -201,7 +201,7 @@ export class FCCNav extends React.Component {
           <Navbar.Toggle children={ 'Menu' } />
           <NavbarBrand>
             <a
-              href='/challenges/current-challenge'
+              href='/'
               onClick={ clickOnLogo }
               >
               <img
