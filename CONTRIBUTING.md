@@ -38,6 +38,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 | Prerequisite                                | Version |
 | ------------------------------------------- | ------- |
 | [MongoDB](http://www.mongodb.org/downloads) | `~ ^3`  |
+| [MailHog](https://github.com/mailhog/MailHog) | `~ ^1` |
 | [Node.js](http://nodejs.org)                | `~ ^6`  |
 | npm (comes with Node)                       | `~ ^3`  |
 
@@ -188,6 +189,14 @@ Then edit the `.env` file and modify the API keys only for services that you wil
 Note: Not all keys are required, to run the app locally, however `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the sample.env should work fine.
 
 You can leave the other keys as they are. Keep in mind if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the .env file.
+
+Next you should setup MailHog, a local SMTP mail server that will catch all the outgoing freeCodeCamp messages generated locally. How you start up MailHog is dependent upon your OS, but here's an example for MacOS with Brew.
+
+```bash
+brew services start mailhog
+```
+ 
+To access your MailHog inbox, open your browser and navigate to [http://localhost:8025](http://localhost:8025). For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.   
 
 Now you will need to start MongoDB, and then seed the database, then you can start the application:
 
