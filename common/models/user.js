@@ -164,47 +164,6 @@ module.exports = function(User) {
       });
   });
 
-  // send welcome email to new camper
-  User.afterRemote('create', function({ req, res }, user, next) {
-    debug('user created, sending email');
-    if (!user.email || !isEmail(user.email)) { return next(); }
-    const redirect = req.session && req.session.returnTo ?
-      req.session.returnTo :
-      '/';
-
-    var mailOptions = {
-      type: 'email',
-      to: user.email,
-      from: 'team@freecodecamp.org',
-      subject: 'Welcome to freeCodeCamp!',
-      protocol: getProtocol(),
-      host: getHost(),
-      port: getPort(),
-      template: path.join(
-        __dirname,
-        '..',
-        '..',
-        'server',
-        'views',
-        'emails',
-        'a-extend-user-welcome.ejs'
-      ),
-      redirect: '/email-signin'
-    };
-
-    debug('sending welcome email');
-    return user.verify(mailOptions, function(err) {
-      if (err) { return next(err); }
-      req.flash('success', {
-        msg: [ 'Congratulations ! We\'ve created your account. ',
-               'Please check your email. We sent you a link that you can ',
-               'click to verify your email address and then login.'
-             ].join('')
-      });
-      return res.redirect(redirect);
-    });
-  });
-
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
       // Some old accounts will not have emails associated with theme
@@ -361,49 +320,6 @@ module.exports = function(User) {
         });
         return res.redirect('/email-signin');
       });
-  });
-
-  User.on('resetPasswordRequest', function(info) {
-    if (!isEmail(info.email)) {
-      console.error(createEmailError());
-      return null;
-    }
-    let url;
-    const host = User.app.get('host');
-    const { id: token } = info.accessToken;
-    if (process.env.NODE_ENV === 'development') {
-      const port = User.app.get('port');
-      url = `http://${host}:${port}/reset-password?access_token=${token}`;
-    } else {
-      url =
-        `http://freecodecamp.org/reset-password?access_token=${token}`;
-    }
-
-    // the email of the requested user
-    debug(info.email);
-    // the temp access token to allow password reset
-    debug(info.accessToken.id);
-    // requires AccessToken.belongsTo(User)
-    var mailOptions = {
-      to: info.email,
-      from: 'team@freecodecamp.org',
-      subject: 'Password Reset Request',
-      text: `
-        Hello,\n\n
-        This email is confirming that you requested to
-        reset your password for your freeCodeCamp account.
-        This is your email: ${ info.email }.
-        Go to ${ url } to reset your password.
-        \n
-        Happy Coding!
-        \n
-      `
-    };
-
-    return User.app.models.Email.send(mailOptions, function(err) {
-      if (err) { console.error(err); }
-      debug('email reset sent');
-    });
   });
 
   User.beforeRemote('login', function(ctx, notUsed, next) {
