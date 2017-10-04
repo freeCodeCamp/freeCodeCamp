@@ -41,7 +41,7 @@ export const submitTypes = {
 
 // determines if a line in a challenge description
 // has html that should be rendered
-export const descriptionRegex = /\<blockquote|\<ol|\<h4|\<table/;
+export const descriptionRegex = /\<blockquote|\<ol|\<h4|\<table|\<ul|\<li/;
 
 export function arrayToString(seedData = ['']) {
   seedData = Array.isArray(seedData) ? seedData : [seedData];
