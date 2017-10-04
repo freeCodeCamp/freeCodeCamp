@@ -22,9 +22,11 @@
 
 #### Checklist:
 <!-- Go over all points below, and after creating the PR, tick the checkboxes that apply. -->
-<!-- If you're unsure about any of these, don't hesitate to ask in the Help Contributors room linked above. We're here to help! -->
+<!-- If you're unsure about any of these, don't hesitate to ask in the Contributors room linked above. We're here to help! -->
 - [ ] Tested changes locally.
-- [ ] Closes currently open issue (replace XXXX with an issue no): Closes #XXXX
+- [ ] Addressed currently open issue (replace XXXXX with an issue no in next line)
+
+Closes #XXXXX
 
 #### Description
 <!-- Describe your changes in detail -->
