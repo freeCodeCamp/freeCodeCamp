@@ -1,34 +1,34 @@
 $(document).ready(function () {
-  var bootcamps = ''
-  $.getJSON('/json/bootcamps.json', function(data) {
+  var bootcamps = ""
+  $.getJSON("/json/bootcamps.json", function(data) {
     bootcamps = data;
   });
   var city = "";
   $("body").data("state", "stacked");
-  $('#city-buttons').on("click", "button", function () {
-    $(this).addClass('animated pulse');
+  $("#city-buttons").on("click", "button", function () {
+    $(this).addClass("animated pulse");
     city = $(this).attr("id");
-    $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function (txt) {
+    $("#chosen").text("Coming from " + city.replace(/-/g, " ").replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-      }) + ', and making $_______, your true costs will be:');
+      }) + ", and making $_______, your true costs will be:");
     setTimeout(function () {
-      $('#city-buttons').hide();
-      $('#income').addClass('animated fadeIn').show();
+      $("#city-buttons").hide();
+      $("#income").addClass("animated fadeIn").show();
     }, 1000);
   });
-  $('#income').on("click", "button", function () {
-    $(this).addClass('animated pulse');
+  $("#income").on("click", "button", function () {
+    $(this).addClass("animated pulse");
     setTimeout(function () {
-      $('#income').hide();
-      $('#chart').addClass('animated fadeIn').show();
-      $('#chart-controls').addClass('animated fadeIn').show();
-      $('#explanation').addClass('animated fadeIn').show();
+      $("#income").hide();
+      $("#chart").addClass("animated fadeIn").show();
+      $("#chart-controls").addClass("animated fadeIn").show();
+      $("#explanation").addClass("animated fadeIn").show();
     }, 1000);
     var lastYearsIncome = parseInt($(this).attr("id"));
-    $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function (txt) {
+    $("#chosen").text("Coming from " + city.replace(/-/g, " ").replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-      }) + ', and making $' + lastYearsIncome.toString().replace(/0000$/, '0,000') + ', your true costs will be:');
-    var categoryNames = ['Lost Wages', 'Financing Cost', 'Housing Cost', 'Tuition / Est. Wage Garnishing'];
+      }) + ", and making $" + lastYearsIncome.toString().replace(/0000$/, "0,000") + ", your true costs will be:");
+    var categoryNames = ["Lost Wages", "Financing Cost", "Housing Cost", "Tuition / Est. Wage Garnishing"];
     bootcamps.forEach(function (camp) {
       var x0 = 0;
       if (camp.cities.indexOf(city) > -1) {
@@ -38,25 +38,25 @@ $(document).ready(function () {
       }
       camp.mapping = [{
         name: camp.name,
-        label: 'Tuition / Est. Wage Garnishing',
+        label: "Tuition / Est. Wage Garnishing",
         value: +camp.cost,
         x0: x0,
         x1: x0 += +camp.cost
       }, {
         name: camp.name,
-        label: 'Financing Cost',
+        label: "Financing Cost",
         value: +Math.floor(camp.cost * .09519),
         x0: +camp.cost,
         x1: camp.finance ? x0 += +Math.floor(camp.cost * .09519) : 0
       }, {
         name: camp.name,
-        label: 'Housing Cost',
+        label: "Housing Cost",
         value: +weeklyHousing * camp.weeks,
         x0: camp.finance ? +Math.floor(camp.cost * 1.09519) : camp.cost,
         x1: x0 += weeklyHousing * camp.weeks
       }, {
         name: camp.name,
-        label: 'Lost Wages',
+        label: "Lost Wages",
         value: +(Math.floor(camp.weeks * lastYearsIncome / 50)),
         x0: camp.finance ? +(Math.floor(camp.cost * 1.09519) + weeklyHousing * camp.weeks) : +camp.cost + weeklyHousing * camp.weeks,
         x1: x0 += +(Math.floor(camp.weeks * lastYearsIncome / 50))
@@ -147,10 +147,10 @@ $(document).ready(function () {
         return xScale((d.x1) - (d.x0));
       });
     d3.selectAll("#transform").on("click", function () {
-      $('#transform').addClass('animated pulse');
+      $("#transform").addClass("animated pulse");
       change();
       setTimeout(function () {
-        $('#transform').removeClass('animated pulse');
+        $("#transform").removeClass("animated pulse");
       }, 1000);
     });
 
@@ -225,7 +225,7 @@ $(document).ready(function () {
       .text("Cost in $USD");
     //tooltips
     function removePopovers() {
-      $('.popover').each(function () {
+      $(".popover").each(function () {
         $(this).remove();
       });
     }
@@ -233,9 +233,9 @@ $(document).ready(function () {
     function showPopover(d) {
       $(this).popover({
         title: d.name,
-        placement: 'auto top',
-        container: 'body',
-        trigger: 'manual',
+        placement: "auto top",
+        container: "body",
+        trigger: "manual",
         html: true,
         content: function () {
           return d.label +
@@ -243,7 +243,7 @@ $(document).ready(function () {
             d3.format(",")(d.value ? d.value : d.x1 - d.x0);
         }
       });
-      $(this).popover('show');
+      $(this).popover("show");
     }
 
     //legends
