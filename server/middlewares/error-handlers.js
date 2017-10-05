@@ -40,7 +40,9 @@ export default function errorHandler() {
       // json
     } else if (type === 'json') {
       res.setHeader('Content-Type', 'application/json');
-      return res.send({ message });
+      return res.send({
+        error: { message: message }
+      });
       // plain text
     } else {
       res.setHeader('Content-Type', 'text/plain');
