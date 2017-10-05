@@ -26,6 +26,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 - [Make Changes](#make-changes)
 - [Run The Test Suite](#run-the-test-suite)
 - [Squash Your Commits](#squash-your-commits)
+- [Commit Message](#commit-message)
 - [Creating A Pull Request](#creating-a-pull-request)
 - [Common Steps](#common-steps)
 - [How We Review and Merge Pull Requests](#how-we-review-and-merge-pull-requests)
@@ -195,7 +196,7 @@ Next you should setup MailHog, a local SMTP mail server that will catch all the 
 ```bash
 brew services start mailhog
 ```
- 
+
 To access your MailHog inbox, open your browser and navigate to [http://localhost:8025](http://localhost:8025). For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.   
 
 Now you will need to start MongoDB, and then seed the database, then you can start the application:
@@ -270,6 +271,21 @@ When you make a pull request, all of your changes need to be in one commit.
 If you have made more than one commit, then you will need to _squash_ your commits.
 
 To do this, see [Squashing Your Commits](http://forum.freecodecamp.org/t/how-to-squash-multiple-commits-into-one-with-git/13231).
+
+### Commit Message
+When you commit your changes, please use conventional commit messages.
+
+The commit message should be structured as follows:
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer]
+```
+For help writing your commit message, execute `npm run commit` from the command line and the [commitizen](http://commitizen.github.io/cz-cli/) CLI tool will assist you in creating a conventional commit message.
+
+Learn more at [Conventional Commits](http://conventionalcommits.org).
 
 ### Creating A Pull Request
 
