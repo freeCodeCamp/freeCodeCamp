@@ -4656,7 +4656,7 @@
         "assert(phoneticLookup(\"foxtrot\") === 'Frank', 'message: <code>phoneticLookup(\"foxtrot\")</code> should equal <code>\"Frank\"</code>');",
         "assert(typeof phoneticLookup(\"\") === 'undefined', 'message: <code>phoneticLookup(\"\")</code> should equal <code>undefined</code>');",
         "assert(code.match(/return\\sresult;/), 'message: You should not modify the <code>return</code> statement');",
-        "assert(!/case|switch|if/g.test(code), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
+        "assert(!/case|switch|if/g.test(code.replace(/\\/\\/.+/g, '').replace(/\\/\\*[\\s\\S]+\\*\\//g, '')), 'message: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
       ],
       "type": "waypoint",
       "challengeType": 1,
