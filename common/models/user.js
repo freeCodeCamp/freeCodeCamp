@@ -625,7 +625,7 @@ module.exports = function(User) {
             'server',
             'views',
             'emails',
-            'user-email-verify.ejs'
+            'user-request-update-email.ejs'
           )
         };
         return this.verify(mailOptions);
