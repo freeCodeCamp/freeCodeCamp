@@ -8,6 +8,7 @@ import appReducer from './reducer.js';
 import routesMap from './routes-map.js';
 import createPanesMap from './create-panes-map.js';
 import createPanesAspects from './Panes/redux';
+import addLangToRoutesEnhancer from './Router/redux/add-lang-enhancer.js';
 import epics from './epics';
 
 import { onBeforeChange } from './utils/redux-first-router.js';
@@ -57,6 +58,7 @@ export default function createApp({
   } = createPanesAspects(createPanesMap());
 
   const enhancer = compose(
+    addLangToRoutesEnhancer(routesMap),
     routesEnhancer,
     applyMiddleware(
       routesMiddleware,
