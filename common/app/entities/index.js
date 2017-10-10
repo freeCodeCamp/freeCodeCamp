@@ -73,6 +73,9 @@ export function makeSuperBlockSelector(name) {
   };
 }
 
+export const isChallengeLoaded = (state, { dashedName }) =>
+  !!challengeMapSelector(state)[dashedName];
+
 export default composeReducers(
   ns,
   function metaReducer(state = defaultState, action) {
