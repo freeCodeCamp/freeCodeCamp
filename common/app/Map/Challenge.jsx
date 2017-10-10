@@ -31,10 +31,7 @@ const propTypes = {
 };
 function mapDispatchToProps(dispatch, { dashedName }) {
   const dispatchers = {
-    clickOnChallenge: e => {
-      e.preventDefault();
-      return dispatch(clickOnChallenge(dashedName));
-    }
+    clickOnChallenge: () => dispatch(clickOnChallenge(dashedName))
   };
   return () => dispatchers;
 }
