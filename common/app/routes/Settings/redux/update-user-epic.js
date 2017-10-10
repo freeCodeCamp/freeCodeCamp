@@ -1,8 +1,7 @@
 import { Observable } from 'rx';
 import { combineEpics, ofType } from 'redux-epic';
-import { push } from 'react-router-redux';
 
-import { types } from './';
+import { types, onRouteSettings } from './';
 import { makeToast } from '../../../Toasts/redux';
 import {
   fetchChallenges,
@@ -70,7 +69,7 @@ export function updateUserLangEpic(actions, { getState }) {
             // show user that we have updated their lang
             makeToast({ message }),
             // update url to reflect change
-            push(`/${lang}/settings`),
+            onRouteSettings({ lang }),
             // refetch challenges in new language
             fetchChallenges()
           );
