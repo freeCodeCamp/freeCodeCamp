@@ -11,6 +11,7 @@ import {
   fetchChallengeCompleted,
   fetchChallengesCompleted
 } from './';
+import { isChallengeLoaded } from '../entities/index.js';
 
 import { shapeChallenges } from './utils';
 import { types as challenge } from '../routes/Challenges/redux';
@@ -20,7 +21,8 @@ const isDev = debug.enabled('fcc:*');
 
 export function fetchChallengeEpic(actions, { getState }, { services }) {
   return actions::ofType(challenge.onRouteChallenges)
-    .flatMap(({ payload: params }) => {
+    .filter(({ payload }) => !isChallengeLoaded(getState(), payload))
+    .flatMapLatest(({ payload: params }) => {
       const options = {
         service: 'map',
         params
