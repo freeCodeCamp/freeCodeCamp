@@ -1,13 +1,14 @@
 import debug from 'debug';
 import { Observable } from 'rx';
 import { combineEpics, ofType } from 'redux-epic';
-import { push } from 'react-router-redux';
 
 import {
   types,
 
   updateMain,
-  challengeUpdated
+  challengeUpdated,
+  onRouteChallenges,
+  onRouteCurrentChallenge
 } from './';
 import { getNS as entitiesSelector } from '../../../entities';
 import {
@@ -26,6 +27,7 @@ import {
   superBlocksSelector
 } from '../../../redux';
 import { makeToast } from '../../../Toasts/redux';
+import { langSelector } from '../../../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
 
@@ -33,9 +35,10 @@ export function challengeUpdatedEpic(actions, { getState }) {
   return actions::ofType(app.updateCurrentChallenge)
     .flatMap(() => {
       const challenge = challengeSelector(getState());
+      const lang = langSelector(getState());
       return Observable.of(
         challengeUpdated(challenge),
-        push(`/challenges/${challenge.block}/${challenge.dashedName}`)
+        onRouteChallenges({ lang, ...challenge })
       );
     });
 }
@@ -107,7 +110,7 @@ export function nextChallengeEpic(actions, { getState }) {
               'that have not been passed yet. ',
               timeout: 15000
             }),
-            push('/map')
+            onRouteCurrentChallenge()
           );
         }
         return Observable.of(
