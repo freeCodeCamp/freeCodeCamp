@@ -154,8 +154,11 @@ export class Challenge extends PureComponent {
         className={ challengeClassName }
         key={ title }
         >
-          <Link to={ onRouteChallenges({ dashedName, block }) }>
-          <span onClick={ clickOnChallenge }>
+        <Link
+          onClick={ clickOnChallenge }
+          to={ onRouteChallenges({ dashedName, block }) }
+          >
+          <span >
             { title }
             { this.renderCompleted(isCompleted, isLocked) }
             { this.renderRequired(isRequired) }
