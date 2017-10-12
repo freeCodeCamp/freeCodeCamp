@@ -15,11 +15,7 @@ import editorEpic from './editor-epic.js';
 
 import ns from '../ns.json';
 import {
-  arrayToString,
-  buildSeed,
   createTests,
-  getFileKey,
-  getPreFile,
   loggerToStr,
   submitTypes,
   viewTypes
@@ -28,9 +24,9 @@ import {
   types as app,
   challengeSelector
 } from '../../../redux';
-import { bonfire, html, js } from '../../../utils/challengeTypes';
-import blockNameify from '../../../utils/blockNameify';
-import { createPoly, setContent } from '../../../../utils/polyvinyl';
+import { html } from '../../../utils/challengeTypes.js';
+import blockNameify from '../../../utils/blockNameify.js';
+import { getFileKey } from '../../../utils/classic-file.js';
 import stepReducer, { epics as stepEpics } from '../views/step/redux';
 import quizReducer from '../views/quiz/redux';
 import projectReducer from '../views/project/redux';
@@ -61,10 +57,6 @@ export const types = createTypes([
   'closeChallengeModal',
   'updateSuccessMessage',
 
-  // files
-  'updateFile',
-  'updateFiles',
-
   // rechallenge
   'executeChallenge',
   'updateMain',
@@ -77,12 +69,6 @@ export const types = createTypes([
   'checkChallenge',
   'submitChallenge',
   'moveToNextChallenge',
-
-  // code storage
-  'saveCode',
-  'loadCode',
-  'savedCodeFound',
-  'clearSavedCode',
 
   // bug
   'openBugModal',
@@ -120,9 +106,6 @@ export const challengeUpdated = createAction(
   challenge => ({ challenge })
 );
 export const resetChallenge = createAction(types.resetChallenge);
-// files
-export const updateFile = createAction(types.updateFile);
-export const updateFiles = createAction(types.updateFiles);
 
 // rechallenge
 export const executeChallenge = createAction(
@@ -144,15 +127,6 @@ export const checkChallenge = createAction(types.checkChallenge);
 
 export const submitChallenge = createAction(types.submitChallenge);
 export const moveToNextChallenge = createAction(types.moveToNextChallenge);
-
-// code storage
-export const saveCode = createAction(types.saveCode);
-export const loadCode = createAction(types.loadCode);
-export const savedCodeFound = createAction(
-  types.savedCodeFound,
-  (files, challenge) => ({ files, challenge })
-);
-export const clearSavedCode = createAction(types.clearSavedCode);
 
 // bug
 export const openBugModal = createAction(types.openBugModal);
@@ -176,7 +150,6 @@ const initialState = {
   helpChatRoom: 'Help',
   // old code storage key
   legacyKey: '',
-  files: {},
   // map
   superBlocks: [],
   // misc
@@ -185,7 +158,6 @@ const initialState = {
 
 export const getNS = state => state[ns];
 export const keySelector = state => getNS(state).key;
-export const filesSelector = state => getNS(state).files;
 export const testsSelector = state => getNS(state).tests;
 
 export const outputSelector = state => getNS(state).output;
@@ -300,73 +272,6 @@ export default combineReducers(
     }),
     initialState,
     ns
-  ),
-  handleActions(
-    () => ({
-      [types.updateFile]: (state, { payload: { key, content }}) => ({
-        ...state,
-        [key]: setContent(content, state[key])
-      }),
-      [types.updateFiles]: (state, { payload: files }) => {
-        return files
-          .reduce((files, file) => {
-            files[file.key] = file;
-            return files;
-          }, { ...state });
-      },
-      [types.savedCodeFound]: (state, { payload: { files, challenge } }) => {
-        if (challenge.type === 'mod') {
-          // this may need to change to update head/tail
-          return challenge.files;
-        }
-        if (
-          challenge.challengeType !== html &&
-          challenge.challengeType !== js &&
-          challenge.challengeType !== bonfire
-        ) {
-          return {};
-        }
-        // classic challenge to modern format
-        const preFile = getPreFile(challenge);
-        return {
-          [preFile.key]: createPoly({
-            ...files[preFile.key],
-            // make sure head/tail are always fresh
-            head: arrayToString(challenge.head),
-            tail: arrayToString(challenge.tail)
-          })
-        };
-      },
-      [
-        combineActions(
-          types.challengeUpdated,
-          app.fetchChallenge.complete
-        )
-      ]: (state, { payload: { challenge } }) => {
-        if (challenge.type === 'mod') {
-          return challenge.files;
-        }
-        if (
-          challenge.challengeType !== html &&
-          challenge.challengeType !== js &&
-          challenge.challengeType !== bonfire
-        ) {
-          return {};
-        }
-        // classic challenge to modern format
-        const preFile = getPreFile(challenge);
-        return {
-          [preFile.key]: createPoly({
-            ...preFile,
-            contents: buildSeed(challenge),
-            head: arrayToString(challenge.head),
-            tail: arrayToString(challenge.tail)
-          })
-        };
-      }
-    }),
-    {},
-    ns + '.files'
   ),
   stepReducer,
   quizReducer,

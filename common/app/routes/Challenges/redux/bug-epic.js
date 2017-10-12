@@ -1,11 +1,10 @@
 import { ofType } from 'redux-epic';
 import {
   types,
-  closeBugModal,
-
-  filesSelector
+  closeBugModal
 } from '../redux';
 
+import { filesSelector } from '../../../files';
 import { currentChallengeSelector } from '../../../redux';
 
 function filesToMarkdown(files = {}) {

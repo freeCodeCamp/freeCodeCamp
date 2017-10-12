@@ -2,10 +2,10 @@ import { ofType } from 'redux-epic';
 
 import {
   types,
-  updateFile,
-
   keySelector
 } from './';
+
+import { updateFile } from '../../../files';
 
 export default function editorEpic(actions, { getState }) {
   return actions::ofType(types.classicEditorUpdated)

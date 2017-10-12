@@ -13,14 +13,14 @@ import {
 import { makeToast } from '../../common/app/Toasts/redux';
 import {
   types,
-  savedCodeFound,
   updateMain,
   lockUntrustedCode,
 
   keySelector,
-  filesSelector,
   codeLockedSelector
 } from '../../common/app/routes/Challenges/redux';
+
+import { filesSelector, savedCodeFound } from '../../common/app/files';
 
 const legacyPrefixes = [
   'Bonfire: ',

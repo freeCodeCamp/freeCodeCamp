@@ -5,10 +5,8 @@ import {
   types,
 
   moveToNextChallenge,
-  clearSavedCode,
 
   challengeMetaSelector,
-  filesSelector,
   testsSelector
 } from './';
 
@@ -23,6 +21,7 @@ import {
   updateUserPoints,
   updateUserChallenge
 } from '../../../entities';
+import { filesSelector, clearSavedCode } from '../../../files';
 import { backEndProject } from '../../../utils/challengeTypes.js';
 import { makeToast } from '../../../Toasts/redux';
 import { postJSON$ } from '../../../../utils/ajax-stream.js';

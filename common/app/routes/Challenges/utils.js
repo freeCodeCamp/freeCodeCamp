@@ -1,6 +1,4 @@
-import flow from 'lodash/flow';
 import * as challengeTypes from '../../utils/challengeTypes';
-import { decodeScriptTags } from '../../../utils/encode-decode';
 
 // determine the component to view for each challenge
 export const viewTypes = {
@@ -42,36 +40,6 @@ export const submitTypes = {
 // determines if a line in a challenge description
 // has html that should be rendered
 export const descriptionRegex = /\<blockquote|\<ol|\<h4|\<table/;
-
-export function arrayToString(seedData = ['']) {
-  seedData = Array.isArray(seedData) ? seedData : [seedData];
-  return seedData.reduce((seed, line) => '' + seed + line + '\n', '\n');
-}
-
-export function buildSeed({ challengeSeed = [] } = {}) {
-  return flow(
-    arrayToString,
-    decodeScriptTags
-  )(challengeSeed);
-}
-
-const pathsMap = {
-  [ challengeTypes.html ]: 'html',
-  [ challengeTypes.js ]: 'js',
-  [ challengeTypes.bonfire ]: 'js'
-};
-
-export function getPreFile({ challengeType }) {
-  return {
-    name: 'index',
-    ext: pathsMap[challengeType] || 'html',
-    key: getFileKey({ challengeType })
-  };
-}
-
-export function getFileKey({ challengeType }) {
-  return 'index' + (pathsMap[challengeType] || 'html');
-}
 
 export function createTests({ tests = [] }) {
   return tests
