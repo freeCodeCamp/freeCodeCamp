@@ -17,11 +17,14 @@ import {
   frameMain,
   frameTests,
   initOutput,
-  saveCode,
 
-  filesSelector,
   codeLockedSelector
 } from '../../common/app/routes/Challenges/redux';
+
+import {
+  filesSelector,
+  saveCode
+} from '../../common/app/files';
 
 export default function executeChallengeEpic(actions, { getState }) {
   return actions::ofType(types.executeChallenge, types.updateMain)

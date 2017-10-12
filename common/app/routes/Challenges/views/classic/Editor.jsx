@@ -13,9 +13,10 @@ import {
   executeChallenge,
   classicEditorUpdated,
   challengeMetaSelector,
-  filesSelector,
   keySelector
 } from '../../redux';
+
+import { filesSelector } from '../../../../files';
 
 const envProps = typeof window !== 'undefined' ? Object.keys(window) : [];
 const options = {
