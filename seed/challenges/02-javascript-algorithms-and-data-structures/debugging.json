@@ -77,26 +77,28 @@
         "Values passed to a <code>console.log</code> in the text editor block run each set of tests as well as one more time for any function calls that you have in you code, i.e. <code>returnSum();</code>",
         "This lends itself to some interesting behavior and might trip you up in the beginning, because a logged value that you expect to see only once may print out many more times depending on the number of tests and the values being passed to those tests.",
         "If you would like to see only your single output and not have to worry about running through the test cycles, you can use <code>console.clear()</code>.",
-        "The fCC console on the other hand is used for feedback while passing the test cases in fCC and does not print your <code>console.logs()</code>",
+        "The fCC console on the other hand is used for feedback while passing the test cases in fCC and does not print your <code>console.logs()</code>.",
         "<hr>",
         "Use <code>console.log()</code> to print the variables in the code where indicated.",
-        "",
-        "Interested in learning more: Try figuring out how to print only one variable. Experiment with <code>console.clear()</code> in between your <code>console.logs()</code> and make a note of which statement prints."
+        ""
       ],
       "challengeSeed": [
         "// Open your browser console",
         "let outputTwo = \"This will print to the browser console 2 times\";",
         "// Use console.log() to print the outputTwo variable",
-        "let outputFour = \"This will print to the browser console 4 times, twice for the logs times two tests\";",
-        "// Use console.log() to print the outputFour variable",
         "",
         "",
+        "let outputOne = \"Try to get this to log only once to the browser console\";",
+        "// Use console api in the next line to print the outputOne only once",
+        "",
+        "// Use console.log() to print the outputOne variable",
         "",
         ""
       ],
       "tests": [
-        "assert(code.match(/console\\.log\\(outputTwice\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.');",
-        "assert(code.match(/console\\.log\\(outputFour\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputFour</code> variable.  In your Browser Console this should print out the value of the variable four times.');"
+        "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.');",
+        "assert(code.match(/console\\.log\\(outputOne\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputOne</code>.');",
+        "assert(code.match(/console\\.clear\\(\\)/g), 'message: Use <code>console.clear()</code> to modify your output so that <code>outputOnce</code> only outputs once.');"
       ],
       "solutions": [],
       "hints": [],
