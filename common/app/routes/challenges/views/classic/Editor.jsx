@@ -24,7 +24,6 @@ const options = {
   },
   lineNumbers: true,
   mode: 'javascript',
-  theme: 'freecodecamp',
   runnable: true,
   matchBrackets: true,
   autoCloseBrackets: true,
