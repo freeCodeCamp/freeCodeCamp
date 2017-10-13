@@ -47,10 +47,7 @@ const mapStateToProps = createSelector(
   codeLockedSelector,
   chatRoomSelector,
   (
-    {
-      description,
-      hints = []
-    },
+    { description },
     { title },
     tests,
     output,
@@ -62,7 +59,6 @@ const mapStateToProps = createSelector(
     description,
     tests,
     output,
-    hint: hints[hintIndex],
     isCodeLocked,
     helpChatRoom
   })
