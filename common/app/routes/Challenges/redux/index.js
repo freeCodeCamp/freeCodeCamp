@@ -138,9 +138,7 @@ const initialUiState = {
   output: null,
   isChallengeModalOpen: false,
   isBugOpen: false,
-  successMessage: 'Happy Coding!',
-  hintIndex: 0,
-  numOfHints: 0
+  successMessage: 'Happy Coding!'
 };
 
 const initialState = {
@@ -216,10 +214,7 @@ export default combineReducers(
           challenge: challenge.dashedName,
           key: getFileKey(challenge),
           tests: createTests(challenge),
-          helpChatRoom: challenge.helpRoom || 'Help',
-          numOfHints: Array.isArray(challenge.hints) ?
-          challenge.hints.length :
-          0
+          helpChatRoom: challenge.helpRoom || 'Help'
         };
       },
       [types.updateTests]: (state, { payload: tests }) => ({
@@ -237,12 +232,6 @@ export default combineReducers(
       [types.updateSuccessMessage]: (state, { payload }) => ({
         ...state,
         successMessage: payload
-      }),
-      [types.updateHint]: state => ({
-        ...state,
-        hintIndex: state.hintIndex + 1 >= state.numOfHints ?
-        0 :
-        state.hintIndex + 1
       }),
       [types.lockUntrustedCode]: state => ({
         ...state,
