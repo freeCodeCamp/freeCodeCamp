@@ -36,8 +36,8 @@ block content
           .fail(error => {
             if (error.responseText){
                 var data = JSON.parse(error.responseText);
-                if(data.error && data.error.message)
-                $('#flash-content').html(data.error.message);
+                if(data.message)
+                $('#flash-content').html(data.message);
                 $('#flash-board')
                   .removeClass('alert-success')
                   .addClass('alert-info')
