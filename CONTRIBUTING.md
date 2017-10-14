@@ -158,6 +158,14 @@ and to push to GitHub:
 $ git push origin [name_of_your_new_branch]
 ```
 
+#### Working on Production
+`staging` reflects the site on beta.freecodecamp.com. To contribute to production please branch off `backup/master`.
+
+```
+git checkout --track origin/backup/master
+```
+all commands above to create a bunch work for this branch.
+
 ##### If you need more help with branching, take a look at _[this](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)_.
 
 ### Setup Linting
