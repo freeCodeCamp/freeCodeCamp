@@ -2,12 +2,11 @@ import { ofType } from 'redux-epic';
 
 import { types } from './';
 import {
-  updateCurrentChallenge,
-
   userSelector,
   firstChallengeSelector,
   challengeSelector
 } from '../../redux';
+import { onRouteChallenges } from '../../routes/Challenges/redux';
 import { entitiesSelector } from '../../entities';
 
 export default function loadCurrentChallengeEpic(actions, { getState }) {
@@ -55,7 +54,5 @@ export default function loadCurrentChallengeEpic(actions, { getState }) {
       // don't reload if the challenge is already loaded.
       // This may change to toast to avoid user confusion
     ))
-    .map(({ finalChallenge }) => {
-      return updateCurrentChallenge(finalChallenge.dashedName);
-    });
+    .map(({ finalChallenge }) => onRouteChallenges(finalChallenge));
 }

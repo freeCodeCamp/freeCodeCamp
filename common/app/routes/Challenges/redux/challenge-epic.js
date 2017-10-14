@@ -5,10 +5,10 @@ import { combineEpics, ofType } from 'redux-epic';
 import {
   types,
 
-  updateMain,
   challengeUpdated,
   onRouteChallenges,
-  onRouteCurrentChallenge
+  onRouteCurrentChallenge,
+  updateMain
 } from './';
 import { getNS as entitiesSelector } from '../../../entities';
 import {
@@ -17,42 +17,41 @@ import {
   getFirstChallengeOfNextSuperBlock
 } from '../utils';
 import {
-  types as app,
-
   createErrorObservable,
-  updateCurrentChallenge,
-
   currentChallengeSelector,
   challengeSelector,
   superBlocksSelector
 } from '../../../redux';
 import { makeToast } from '../../../Toasts/redux';
-import { langSelector } from '../../../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
 
+// When we change challenge, update the current challenge
+// UI data.
 export function challengeUpdatedEpic(actions, { getState }) {
-  return actions::ofType(app.updateCurrentChallenge)
-    .flatMap(() => {
-      const challenge = challengeSelector(getState());
-      const lang = langSelector(getState());
-      return Observable.of(
-        challengeUpdated(challenge),
-        onRouteChallenges({ lang, ...challenge })
-      );
-    });
+  return actions::ofType(types.onRouteChallenges)
+    // prevent subsequent onRouteChallenges to cause UI to refresh
+    .distinctUntilChanged(({ payload: { dashedName }}) => dashedName)
+    .map(() => challengeSelector(getState()))
+    //  if the challenge isn't loaded in the current state,
+    //  this will be an empty object
+    //  We wait instead for the fetchChallenge.complete to complete the UI state
+    .filter(({ dashedName }) => !!dashedName)
+    .flatMap(challenge =>
+      // send the challenge to update UI and update main iframe with inital
+      // challenge
+      Observable.of(challengeUpdated(challenge), updateMain())
+    );
 }
 
 // used to reset users code on request
 export function resetChallengeEpic(actions, { getState }) {
-  return actions::ofType(types.resetChallenge)
-    .flatMap(() => {
-      const currentChallenge = currentChallengeSelector(getState());
-      return Observable.of(
-        updateCurrentChallenge(currentChallenge),
+  return actions::ofType(types.clickOnReset)
+    .flatMap(() =>
+      Observable.of(
+        challengeUpdated(challengeSelector(getState())),
         updateMain()
-      );
-    });
+      ));
 }
 
 export function nextChallengeEpic(actions, { getState }) {
@@ -114,7 +113,7 @@ export function nextChallengeEpic(actions, { getState }) {
           );
         }
         return Observable.of(
-          updateCurrentChallenge(nextChallenge.dashedName),
+          onRouteChallenges(nextChallenge),
           makeToast({ message: 'Your next challenge has arrived.' })
         );
       } catch (err) {

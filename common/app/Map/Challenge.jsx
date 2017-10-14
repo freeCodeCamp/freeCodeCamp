@@ -29,12 +29,7 @@ const propTypes = {
   isRequired: PropTypes.bool,
   title: PropTypes.string
 };
-function mapDispatchToProps(dispatch, { dashedName }) {
-  const dispatchers = {
-    clickOnChallenge: () => dispatch(clickOnChallenge(dashedName))
-  };
-  return () => dispatchers;
-}
+const mapDispatchToProps = { clickOnChallenge };
 
 function makeMapStateToProps(_, { dashedName }) {
   return createSelector(

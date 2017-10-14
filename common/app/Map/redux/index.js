@@ -7,8 +7,6 @@ import { createSelector } from 'reselect';
 import identity from 'lodash/identity';
 import capitalize from 'lodash/capitalize';
 
-import selectChallengeEpic from './select-challenge-epic.js';
-
 import * as utils from './utils.js';
 import ns from '../ns.json';
 import {
@@ -16,9 +14,7 @@ import {
   createEventMetaCreator
 } from '../../redux';
 
-export const epics = [
-  selectChallengeEpic
-];
+export const epics = [];
 
 export const types = createTypes([
   'onRouteMap',

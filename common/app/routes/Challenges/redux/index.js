@@ -50,7 +50,7 @@ export const types = createTypes([
   // |- classic
   'classicEditorUpdated',
   'challengeUpdated',
-  'resetChallenge',
+  'clickOnReset',
   'updateHint',
   'lockUntrustedCode',
   'unlockUntrustedCode',
@@ -105,7 +105,7 @@ export const challengeUpdated = createAction(
   types.challengeUpdated,
   challenge => ({ challenge })
 );
-export const resetChallenge = createAction(types.resetChallenge);
+export const clickOnReset = createAction(types.clickOnReset);
 
 // rechallenge
 export const executeChallenge = createAction(

@@ -13,8 +13,6 @@ import BackEnd from './views/backend';
 import Quiz from './views/quiz';
 
 import {
-  updateTitle,
-  updateCurrentChallenge,
   fetchChallenge,
 
   challengeSelector
@@ -33,9 +31,7 @@ const views = {
 
 const mapDispatchToProps = {
   fetchChallenge,
-  makeToast,
-  updateCurrentChallenge,
-  updateTitle
+  makeToast
 };
 
 const mapStateToProps = createSelector(
@@ -44,13 +40,12 @@ const mapStateToProps = createSelector(
   paramsSelector,
   (
     { dashedName, isTranslated },
-    { viewType, title },
+    { viewType },
     params,
   ) => ({
     challenge: dashedName,
     isTranslated,
     params,
-    title,
     viewType
   })
 );
@@ -58,10 +53,8 @@ const mapStateToProps = createSelector(
 const link = 'http://forum.freecodecamp.org/t/' +
   'guidelines-for-translating-free-code-camp' +
   '-to-any-language/19111';
-
+const helpUsTranslate = <a href={ link } target='_blank'>Help Us</a>;
 const propTypes = {
-  areChallengesLoaded: PropTypes.bool,
-  isStep: PropTypes.bool,
   isTranslated: PropTypes.bool,
   makeToast: PropTypes.func.isRequired,
   params: PropTypes.shape({
@@ -69,46 +62,36 @@ const propTypes = {
     dashedName: PropTypes.string,
     lang: PropTypes.string.isRequired
   }),
-  title: PropTypes.string,
-  updateCurrentChallenge: PropTypes.func.isRequired,
-  updateTitle: PropTypes.func.isRequired,
   viewType: PropTypes.string
 };
 
 export class Show extends PureComponent {
 
-  componentWillMount() {
-    const { params: { lang }, isTranslated, makeToast } = this.props;
-    if (lang !== 'en' && !isTranslated) {
-      makeToast({
-        message: 'We haven\'t translated this challenge yet.',
-        action: <a href={ link } target='_blank'>Help Us</a>,
-        timeout: 15000
-      });
-    }
+  isNotTranslated({ isTranslated, params: { lang } }) {
+    return lang !== 'en' && !isTranslated;
+  }
+
+  makeTranslateToast() {
+    this.props.makeToast({
+      message: 'We haven\'t translated this challenge yet.',
+      action: helpUsTranslate,
+      timeout: 15000
+    });
   }
 
   componentDidMount() {
-    if (this.props.title) {
-      this.props.updateTitle(this.props.title);
+    if (this.isNotTranslated(this.props)) {
+      this.makeTranslateToast();
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    const { title } = nextProps;
-    const { lang, dashedName } = nextProps.params;
-    const { isTranslated } = nextProps;
-    const { updateTitle, updateCurrentChallenge, makeToast } = this.props;
-    if (this.props.params.dashedName !== dashedName) {
-      updateCurrentChallenge(dashedName);
-      updateTitle(title);
-      if (lang !== 'en' && !isTranslated) {
-        makeToast({
-          message: 'We haven\'t translated this challenge yet.',
-          action: <a href={ link } target='_blank'>Help Us</a>,
-          timeout: 15000
-        });
-      }
+    const { params: { dashedName } } = nextProps;
+    if (
+      this.props.params.dashedName !== dashedName &&
+      this.isNotTranslated(nextProps)
+    ) {
+      this.makeTranslateToast();
     }
   }
 
