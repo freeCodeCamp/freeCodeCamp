@@ -12,12 +12,15 @@ import {
 } from './';
 import { updateUserCurrentChallenge } from '../entities';
 import { postJSON$ } from '../../utils/ajax-stream';
+import { types as challenges } from '../routes/Challenges/redux';
 
 const log = debug('fcc:app:redux:up-my-challenge-epic');
 export default function updateMyCurrentChallengeEpic(actions, { getState }) {
-  const updateChallenge = actions::ofType(types.updateCurrentChallenge)
+  const updateChallenge = actions::ofType(types.appMounted)
+    .flatMapLatest(() => actions::ofType(challenges.onRouteChallenges))
     .map(() => {
       const state = getState();
+      // username is never defined SSR
       const { username } = userSelector(state);
       const { id } = challengeSelector(state);
       const csrf = csrfSelector(state);

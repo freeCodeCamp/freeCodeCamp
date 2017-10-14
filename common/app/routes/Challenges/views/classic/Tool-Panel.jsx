@@ -40,7 +40,7 @@ export default class ToolPanel extends PureComponent {
     this.props.makeToast({
       message: 'This will restore your code editor to its original state.',
       action: 'clear my code',
-      actionCreator: 'resetChallenge',
+      actionCreator: 'clickOnReset',
       timeout: 4000
     });
   }

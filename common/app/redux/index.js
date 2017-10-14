@@ -15,6 +15,7 @@ import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
 import navSizeEpic from './nav-size-epic.js';
+import { types as challenges } from '../routes/Challenges/redux';
 
 import ns from '../ns.json';
 
@@ -34,7 +35,6 @@ export const types = createTypes([
 
   createAsyncTypes('fetchChallenge'),
   createAsyncTypes('fetchChallenges'),
-  'updateCurrentChallenge',
 
   'fetchUser',
   'addUser',
@@ -102,9 +102,6 @@ export const fetchChallengesCompleted = createAction(
   types.fetchChallenges.complete,
   (entities, result) => ({ entities, result }),
   entities => ({ entities })
-);
-export const updateCurrentChallenge = createAction(
-  types.updateCurrentChallenge
 );
 
 // updateTitle(title: String) => Action
@@ -236,10 +233,6 @@ export default handleActions(
       ...state,
       user
     }),
-    [types.fetchChallenge.complete]: (state, { payload }) => ({
-      ...state,
-      currentChallenge: payload.currentChallenge
-    }),
     [combineActions(
       types.fetchChallenge.complete,
       types.fetchChallenges.complete
@@ -247,9 +240,9 @@ export default handleActions(
       ...state,
       superBlocks: payload.result.superBlocks
     }),
-    [types.updateCurrentChallenge]: (state, { payload = '' }) => ({
+    [challenges.onRouteChallenges]: (state, { payload: { dashedName } }) => ({
       ...state,
-      currentChallenge: payload
+      currentChallenge: dashedName
     }),
     [types.updateTheme]: (state, { payload = 'default' }) => ({
       ...state,

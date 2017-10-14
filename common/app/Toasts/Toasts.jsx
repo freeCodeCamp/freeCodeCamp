@@ -7,12 +7,12 @@ import { NotificationStack } from 'react-notification';
 import { removeToast } from './redux';
 import {
   submitChallenge,
-  resetChallenge
+  clickOnReset
 } from '../routes/Challenges/redux';
 
 const registeredActions = {
   submitChallenge,
-  resetChallenge
+  clickOnReset
 };
 const mapStateToProps = state => ({ toasts: state.toasts });
 // we use styles here to overwrite those built into the library
