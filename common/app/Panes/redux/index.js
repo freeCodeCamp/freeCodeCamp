@@ -2,10 +2,10 @@ import clamp from 'lodash/clamp';
 import {
   combineActions,
   composeReducers,
+  createAction,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
-import { createAction } from 'redux-actions';
 
 import ns from '../ns.json';
 

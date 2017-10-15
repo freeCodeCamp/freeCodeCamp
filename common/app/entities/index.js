@@ -1,27 +1,22 @@
 import {
   composeReducers,
+  createAction,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
-import { createAction } from 'redux-actions';
+
+import { types as app } from '../routes/Challenges/redux';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
 export const entitiesSelector = getNS;
 export const types = createTypes([
-  'updateUserPoints',
   'updateUserFlag',
   'updateUserEmail',
   'updateUserLang',
-  'updateUserChallenge',
   'updateUserCurrentChallenge'
 ], ns);
 
-// updateUserPoints(username: String, points: Number) => Action
-export const updateUserPoints = createAction(
-  types.updateUserPoints,
-  (username, points) => ({ username, points })
-);
 // updateUserFlag(username: String, flag: String) => Action
 export const updateUserFlag = createAction(
   types.updateUserFlag,
@@ -36,15 +31,6 @@ export const updateUserEmail = createAction(
 export const updateUserLang = createAction(
   types.updateUserLang,
   (username, lang) => ({ username, languageTag: lang })
-);
-
-// updateUserChallenge(
-//   username: String,
-//   challengeInfo: Object
-// ) => Action
-export const updateUserChallenge = createAction(
-  types.updateUserChallenge,
-  (username, challengeInfo) => ({ username, challengeInfo })
 );
 
 export const updateUserCurrentChallenge = createAction(
@@ -89,11 +75,17 @@ export default composeReducers(
   },
   handleActions(
     () => ({
-      [types.updateUserPoints]: (state, { payload: { username, points } }) => ({
+      [
+        app.submitChallenge.complete
+      ]: (state, { payload: { username, points, challengeInfo } }) => ({
         ...state,
         [username]: {
           ...state[username],
-          points
+          points,
+          challengeMap: {
+            ...state[username].challengeMap,
+            [challengeInfo.id]: challengeInfo
+          }
         }
       }),
       [types.updateUserFlag]: (state, { payload: { username, flag } }) => ({
@@ -134,22 +126,6 @@ export default composeReducers(
         [username]: {
           ...state[username],
           currentChallengeId
-        }
-      }),
-      [types.updateUserChallenge]:
-      (
-        state,
-        {
-          payload: { username, challengeInfo }
-        }
-      ) => ({
-        ...state,
-        [username]: {
-          ...state[username],
-          challengeMap: {
-            ...state[username].challengeMap,
-            [challengeInfo.id]: challengeInfo
-          }
         }
       })
     }),

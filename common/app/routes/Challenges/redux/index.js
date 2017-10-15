@@ -1,10 +1,11 @@
 import {
   combineActions,
   combineReducers,
+  createAction,
+  createAsyncTypes,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
-import { createAction } from 'redux-actions';
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
 
@@ -67,7 +68,7 @@ export const types = createTypes([
   'initOutput',
   'updateTests',
   'checkChallenge',
-  'submitChallenge',
+  createAsyncTypes('submitChallenge'),
   'moveToNextChallenge',
 
   // bug
@@ -126,6 +127,11 @@ export const updateOutput = createAction(types.updateOutput, loggerToStr);
 export const checkChallenge = createAction(types.checkChallenge);
 
 export const submitChallenge = createAction(types.submitChallenge);
+export const submitChallengeComplete = createAction(
+  types.submitChallenge.complete,
+  (username, points, challengeInfo) => ({ username, points, challengeInfo })
+);
+
 export const moveToNextChallenge = createAction(types.moveToNextChallenge);
 
 // bug

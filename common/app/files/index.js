@@ -1,9 +1,9 @@
 import {
   combineActions,
+  createAction,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
-import { createAction } from 'redux-actions';
 
 import { bonfire, html, js } from '../utils/challengeTypes.js';
 import { createPoly, setContent } from '../../utils/polyvinyl.js';
@@ -16,21 +16,15 @@ const ns = 'files';
 export const types = createTypes([
   'updateFile',
   'updateFiles',
-  'saveCode',
-  'loadCode',
-  'savedCodeFound',
-  'clearSavedCode'
+  'savedCodeFound'
 ], ns);
 
 export const updateFile = createAction(types.updateFile);
 export const updateFiles = createAction(types.updateFiles);
-export const saveCode = createAction(types.saveCode);
-export const loadCode = createAction(types.loadCode);
 export const savedCodeFound = createAction(
   types.savedCodeFound,
   (files, challenge) => ({ files, challenge })
 );
-export const clearSavedCode = createAction(types.clearSavedCode);
 
 export const filesSelector = state => state[ns];
 

@@ -1,8 +1,8 @@
 import {
+  createAction,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
-import { createAction } from 'redux-actions';
 import { createSelector } from 'reselect';
 import identity from 'lodash/identity';
 import capitalize from 'lodash/capitalize';
