@@ -4,7 +4,7 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
-import identity from 'lodash/identity';
+import noop from 'lodash/noop';
 import capitalize from 'lodash/capitalize';
 
 import * as utils from './utils.js';
@@ -37,7 +37,7 @@ export const collapseAll = createAction(types.collapseAll);
 export const expandAll = createAction(types.expandAll);
 export const clickOnChallenge = createAction(
   types.clickOnChallenge,
-  identity,
+  noop,
   createEventMetaCreator({
     category: capitalize(ns),
     action: 'click',
