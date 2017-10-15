@@ -6,7 +6,7 @@ import sinon from 'sinon';
 import ns from '../ns.json';
 // import challenges.redux to get around
 // circular dependency
-import { types as app } from '../../../redux';
+import { types as challenge } from '../../../redux';
 import { types } from './';
 
 config.longStackSupport = true;
@@ -134,7 +134,7 @@ test(file, function(t) {
           );
           t.assert(
             onNextSpy.calledWithMatch({
-              type: app.submitChallenge
+              type: challenge.submitChallenge.toString()
             }),
             'Epic did not return the expected action'
           );

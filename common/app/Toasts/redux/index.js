@@ -1,8 +1,8 @@
 import {
+  createAction,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
-import { createAction } from 'redux-actions';
 
 import ns from '../ns.json';
 

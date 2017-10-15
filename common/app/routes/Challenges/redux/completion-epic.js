@@ -2,47 +2,45 @@ import { Observable } from 'rx';
 import { ofType } from 'redux-epic';
 
 import {
-  types,
-
-  moveToNextChallenge,
-
   challengeMetaSelector,
-  testsSelector
+  moveToNextChallenge,
+  submitChallengeComplete,
+  testsSelector,
+  types
 } from './';
 
 import {
-  createErrorObservable,
-
   challengeSelector,
+  createErrorObservable,
   csrfSelector,
   userSelector
 } from '../../../redux';
-import {
-  updateUserPoints,
-  updateUserChallenge
-} from '../../../entities';
-import { filesSelector, clearSavedCode } from '../../../files';
+import { filesSelector } from '../../../files';
 import { backEndProject } from '../../../utils/challengeTypes.js';
 import { makeToast } from '../../../Toasts/redux';
 import { postJSON$ } from '../../../../utils/ajax-stream.js';
 
 function postChallenge(url, username, _csrf, challengeInfo) {
-  const body = { ...challengeInfo, _csrf };
-  const saveChallenge = postJSON$(url, body)
-    .retry(3)
-    .flatMap(({ points, lastUpdated, completedDate }) => {
-      return Observable.of(
-        updateUserPoints(username, points),
-        updateUserChallenge(
-          username,
-          { ...challengeInfo, lastUpdated, completedDate }
-        ),
-        clearSavedCode()
-      );
-    })
-    .catch(createErrorObservable);
-  const challengeCompleted = Observable.of(moveToNextChallenge());
-  return Observable.merge(saveChallenge, challengeCompleted);
+  return Observable.if(
+    () => !!username,
+    Observable.defer(() => {
+      const body = { ...challengeInfo, _csrf };
+      const saveChallenge = postJSON$(url, body)
+        .retry(3)
+        .map(({ points, lastUpdated, completedDate }) =>
+          submitChallengeComplete(
+            username,
+            points,
+            { ...challengeInfo, lastUpdated, completedDate }
+          )
+        )
+        .catch(createErrorObservable);
+      const challengeCompleted = Observable.of(moveToNextChallenge());
+      return Observable.merge(saveChallenge, challengeCompleted)
+        .startWith({ type: types.submitChallenge.start });
+    }),
+    Observable.of(moveToNextChallenge())
+  );
 }
 
 function submitModern(type, state) {
@@ -52,7 +50,7 @@ function submitModern(type, state) {
       return Observable.empty();
     }
 
-    if (type === types.submitChallenge) {
+    if (type === types.submitChallenge.toString()) {
       const { id } = challengeSelector(state);
       const files = filesSelector(state);
       const { username } = userSelector(state);
@@ -144,7 +142,7 @@ const submitters = {
 };
 
 export default function completionEpic(actions, { getState }) {
-  return actions::ofType(types.checkChallenge, types.submitChallenge)
+  return actions::ofType(types.checkChallenge, types.submitChallenge.toString())
     .flatMap(({ type, payload }) => {
       const state = getState();
       const { submitType } = challengeMetaSelector(state);

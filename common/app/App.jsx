@@ -7,7 +7,7 @@ import {
   appMounted,
   fetchUser,
 
-  userSelector
+  isSignedInSelector
 } from './redux';
 
 import Nav from './Nav';
@@ -23,11 +23,11 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = state => {
-  const { username } = userSelector(state);
+  const isSignedIn = isSignedInSelector(state);
   const route = mainRouteSelector(state);
   return {
     toast: state.app.toast,
-    isSignedIn: !!username,
+    isSignedIn,
     route
   };
 };

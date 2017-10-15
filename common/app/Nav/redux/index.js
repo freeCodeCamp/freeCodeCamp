@@ -1,10 +1,10 @@
 import capitalize from 'lodash/capitalize';
 import noop from 'lodash/noop';
 import {
+  createAction,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
-import { createAction } from 'redux-actions';
 
 import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
 import binEpic from './bin-epic.js';

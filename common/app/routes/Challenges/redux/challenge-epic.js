@@ -22,6 +22,7 @@ import {
   challengeSelector,
   superBlocksSelector
 } from '../../../redux';
+import { langSelector } from '../../../Router/redux';
 import { makeToast } from '../../../Toasts/redux';
 
 const isDev = debug.enabled('fcc:*');
@@ -66,6 +67,7 @@ export function nextChallengeEpic(actions, { getState }) {
         const superBlocks = superBlocksSelector(state);
         const challenge = currentChallengeSelector(state);
         const entities = entitiesSelector(state);
+        const lang = langSelector(state);
         nextChallenge = getNextChallenge(challenge, entities, { isDev });
         // block completed.
         if (!nextChallenge) {
@@ -113,7 +115,11 @@ export function nextChallengeEpic(actions, { getState }) {
           );
         }
         return Observable.of(
-          onRouteChallenges(nextChallenge),
+          // normally we wouldn't need to add the lang as
+          // addLangToRoutesEnhancer should add langs for us, but the way
+          // enhancers/middlewares and RFR orders things this action will not
+          // see addLangToRoutesEnhancer and cause RFR to render NotFound
+          onRouteChallenges({ lang, ...nextChallenge }),
           makeToast({ message: 'Your next challenge has arrived.' })
         );
       } catch (err) {

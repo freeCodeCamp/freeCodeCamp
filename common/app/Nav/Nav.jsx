@@ -29,6 +29,7 @@ import {
 } from './redux';
 import {
   userSelector,
+  isSignedInSelector,
   signInLoadingSelector
 } from '../redux';
 import { nameToTypeSelector, panesSelector } from '../Panes/redux';
@@ -38,12 +39,14 @@ const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
 const mapStateToProps = createSelector(
   userSelector,
+  isSignedInSelector,
   dropdownSelector,
   signInLoadingSelector,
   panesSelector,
   nameToTypeSelector,
   (
     { username, picture, points },
+    isSignedIn,
     isDropdownOpen,
     showLoading,
     panes,
@@ -57,7 +60,7 @@ const mapStateToProps = createSelector(
         };
       }, {}),
       isDropdownOpen,
-      isSignedIn: !!username,
+      isSignedIn,
       picture,
       points,
       showLoading,

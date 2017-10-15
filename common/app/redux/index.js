@@ -1,11 +1,11 @@
 import { Observable } from 'rx';
 import {
   combineActions,
+  createAction,
   createAsyncTypes,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
-import { createAction } from 'redux-actions';
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
 import identity from 'lodash/identity';
@@ -179,6 +179,8 @@ export const userSelector = createSelector(
   state => entitiesSelector(state).user,
   (username, userMap) => userMap[username] || {}
 );
+
+export const isSignedInSelector = state => !!userSelector(state).username;
 
 export const challengeSelector = createSelector(
   currentChallengeSelector,
