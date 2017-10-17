@@ -10,6 +10,31 @@
   ],
   "challenges": [
     {
+      "id": "5e7d674br67419c4cd512b9b",
+      "title": "Introduction to jQuery",
+      "description": [
+        [
+          "//i.imgur.com/hzACiml.png",
+          "The logo of jQuery that has three blue sound waves that increase in size with the text \"jQuery write less, do more.\" written on it.",
+          "jQuery is one of the many libraries for JavaScript. It is designed to simplify scripting done on the client side.",
+          ""
+        ],
+        [
+          "//i.imgur.com/OHtxVL0.png",
+          "A screenshot of the general syntax. A dollar sign followed by the selector with a dot and an action.",
+          "jQuery's most recognizable characteristic is the dollar sign syntax. With it, you can easily manipulate elements, create animations and handle input events.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
       "id": "bad87fee1348bd9acdd08826",
       "title": "Learn How Script Tags and Document Ready Work",
       "description": [
