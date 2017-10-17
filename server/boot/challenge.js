@@ -352,7 +352,7 @@ export default function(app) {
         if (!dashedName || !block) {
           // this should normally not be hit if database is properly seeded
           throw new Error(dedent`
-            Attemped to find '${dashedName}'
+            Attempted to find '${dashedName}'
             from '${ challengeId || 'no challenge id found'}'
             but came up empty.
             db may not be properly seeded.
