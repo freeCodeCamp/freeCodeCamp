@@ -83,11 +83,6 @@ function getWaitPeriod(ttl) {
   return 0;
 }
 module.exports = function(User) {
-  // NOTE(berks): user email validation currently not needed but build in. This
-  // work around should let us sneak by
-  // see:
-  // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
-  delete User.validations.email;
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
   // set user.rand to random number
