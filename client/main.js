@@ -289,7 +289,7 @@ $(document).ready(function() {
   var mapFilter = $('#map-filter');
   var mapShowAll = $('#showAll');
 
-  $('#nav-map-btn').on('click', function(event) {
+  $('#nav-map-btn').add('#nav-map-btn-sm').on('click', function(event) {
       if (!(event.ctrlKey || event.metaKey)) {
           toggleMap();
       }
