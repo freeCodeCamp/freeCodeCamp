@@ -140,17 +140,21 @@
       "type": "bonfire",
       "title": "Problem 6: Sum square difference",
       "tests": [
-        "assert.strictEqual(euler6(), 25164150, 'message: <code>euler6()</code> should return 25164150.');"
+        "assert.strictEqual(sumSquareDifference(10), 2640, 'message: <code>sumSquareDifference(10)</code> should return 2640.');",
+        "assert.strictEqual(sumSquareDifference(20), 41230, 'message: <code>sumSquareDifference(20)</code> should return 41230.');",
+        "assert.strictEqual(sumSquareDifference(100), 25164150, 'message: <code>sumSquareDifference(100)</code> should return 25164150.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const sumSquareDifference = (number)=>{\n  let squareOfSum = Math.pow(sumOfArithmeticSeries(1,1,number),2);\n  let sumOfSquare = sumOfSquareOfNumbers(number);\n return squareOfSum - sumOfSquare;\n}\n\nfunction sumOfArithmeticSeries(a,d,n){\n  return (n/2)*(2*a+(n-1)*d);\n}\n\nfunction sumOfSquareOfNumbers(n){\n return (n*(n+1)*(2*n+1))/6;\n}"
+      ],
       "translations": {},
       "challengeSeed": [
-        "function euler6() {",
+        "function sumSquareDifference(number) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler6();"
+        "sumSquareDifference(100);"
       ],
       "description": [
         "The sum of the squares of the first ten natural numbers is,",
