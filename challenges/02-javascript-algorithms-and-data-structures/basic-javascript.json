@@ -2655,6 +2655,51 @@
       }
     },
     {
+      "id": "598e8944f009e646fc236146",
+      "title": "Understanding Undefined Value returned from a Function",
+      "description": [
+        "A function can include the <code>return</code> statement but it does not have to. In the case that the function doesn't have a <code>return</code> statement, when you call it, the function processes the inner code but the returned value is <code>undefined</code>.",
+        "<strong>Example</strong>",
+        "<blockquote>var sum = 0;<br>function addSum(num) {<br>  sum = sum + num;<br>}<br>var returnedValue = addSum(3); // sum will be modified but returned value is undefined</blockquote>",
+        "<code>addSum</code> is a function without a <code>return</code> statement. The function will change the global <code>sum</code> variable but the returned value of the function is <code>undefined</code>",
+        "<hr>",
+        "Create a function <code>addFive</code> without any arguments. This function adds 5 to the <code>sum</code> variable, but its returned value is <code>undefined</code>."
+      ],
+      "releasedOn": "August 11, 2017",
+      "challengeSeed": [
+        "// Example",
+        "var sum = 0;",
+        "function addThree() {",
+        "  sum = sum + 3;",
+        "}",
+        "",
+        "// Only change code below this line",
+        "",
+        "",
+        "",
+        "// Only change code above this line",
+        "var returnedValue = addFive();"
+      ],
+      "tail": [
+        "var sum = 0;",
+        "function addThree() {sum = sum + 3;}",
+        "addThree();",
+        "addFive();"
+      ],
+      "solutions": [
+        "function addFive() {\n sum = sum + 5;\n}"
+      ],
+      "tests": [
+        "assert(typeof addFive === 'function', 'message: <code>addFive</code> should be a function');",
+        "assert(sum === 8, 'message: <code>sum</code> should be equal to 8');",
+        "assert(addFive() === undefined, 'message: Returned value from <code>addFive</code> should be <code>undefined</code>');",
+        "assert(code.match(/(sum\\s*\\=\\s*sum\\s*\\+\\s*5)|(sum\\s*\\+\\=\\s*5)/g).length === 1, 'message: Inside of your functions, add 5 to the <code>sum</code> variable');"
+      ],
+      "type": "waypoint",
+      "challengeType": 1,
+      "translations": {}      
+    },    
+    {
       "id": "56533eb9ac21ba0edf2244c3",
       "title": "Assignment with a Returned Value",
       "description": [
