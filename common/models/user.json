@@ -277,7 +277,7 @@
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "updateEmail"
+      "property": "requestUpdateEmail"
     },
     {
       "accessType": "EXECUTE",
@@ -298,7 +298,7 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "requestAuthLink"
+      "property": "requestAuthEmail"
     }
   ],
   "methods": {}

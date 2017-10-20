@@ -21,7 +21,7 @@ export default function settingsController(app) {
 
   function updateMyEmail(req, res, next) {
     const { user, body: { email } } = req;
-    return user.updateEmail(email)
+    return user.requestUpdateEmail(email)
       .subscribe(
         (message) => res.json({ message }),
         next

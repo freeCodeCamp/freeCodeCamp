@@ -472,7 +472,7 @@ module.exports = function(User) {
     }
   );
 
-  User.requestAuthLink = function requestAuthLink(email) {
+  User.requestAuthEmail = function requestAuthEmail(email) {
     if (!isEmail(email)) {
       return Promise.reject(
         new Error('The submitted email not valid.')
@@ -545,7 +545,7 @@ module.exports = function(User) {
   };
 
   User.remoteMethod(
-    'requestAuthLink',
+    'requestAuthEmail',
     {
       description: 'request a link on email with temporary token to sign in',
       accepts: [{
@@ -560,7 +560,7 @@ module.exports = function(User) {
     }
   );
 
-  User.prototype.updateEmail = function updateEmail(email) {
+  User.prototype.requestUpdateEmail = function requestUpdateEmail(email) {
     const ownEmail = email === this.email;
     if (!isEmail('' + email)) {
       return Observable.throw(createEmailError());
