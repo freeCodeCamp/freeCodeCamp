@@ -396,7 +396,9 @@
         "</p>"
       ],
       "tests": [
-        "assert(code.match(/json\\.forEach/g), 'message: Your code should use a <code>forEach</code> method to loop over the JSON data from the API.');"
+        "assert(code.match(/html\\s+?(\\+=|=\\shtml\\s\\+)/g), 'message: Your code should store the data in the <code>html</code> variable');",
+        "assert(code.match(/json\\.forEach/g), 'message: Your code should use a <code>forEach</code> method to loop over the JSON data from the API.');",
+        "assert(code.match(/<strong>.+<\\/strong>/g), 'message: Your code should wrap the key names in <code>strong</code> tags.');"
       ],
       "solutions": [],
       "hints": [],
