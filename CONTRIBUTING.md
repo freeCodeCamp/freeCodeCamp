@@ -89,7 +89,10 @@ This will download the entire FCC repo to your projects directory.
 
 #### Setup Your Upstream
 
-1. Change directory to the new freeCodeCamp directory (`cd freeCodeCamp`)
+1. Change directory to the new freeCodeCamp directory  
+```bash
+cd freeCodeCamp
+```  
 2. Add a remote to the official FCC repo:
 
 ```shell
