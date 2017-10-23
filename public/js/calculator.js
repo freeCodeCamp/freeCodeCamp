@@ -92,7 +92,7 @@ $(document).ready(function () {
       },
       width = 800 - margin.left - margin.right,
       height = 1200 - margin.top - margin.bottom;
-    var barHeight = 20;
+    var barHeight = 21;
     var xScale = d3.scale.linear()
       .domain([0, xStackMax])
       .rangeRound([0, width]);
