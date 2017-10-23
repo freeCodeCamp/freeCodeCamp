@@ -107,7 +107,7 @@
         "var myName;"
       ],
       "tests": [
-        "assert(/var\\s+myName\\s*;/.test(code), 'message: You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon');"
+        "assert(/var|const\\s+myName\\s*;/.test(code), 'message: You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -178,7 +178,7 @@
         "var a;\nvar b = 2;\na = 7;\nb = a;"
       ],
       "tests": [
-        "assert(/var a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
+        "assert(/var|const a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
         "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
         "assert(typeof b === 'number' && b === 7, 'message: <code>b</code> should have a value of 7');",
         "assert(/b\\s*=\\s*a\\s*;/g.test(code), 'message: <code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
@@ -227,7 +227,7 @@
         "var a = 9;"
       ],
       "tests": [
-        "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
+        "assert(/var|const\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -410,7 +410,7 @@
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
-        "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*33;?/.test(code),'message: Only subtract one number from 45.');"
+        "assert(/var|const\\s*difference\\s*=\\s*45\\s*-\\s*33;?/.test(code),'message: Only subtract one number from 45.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -536,9 +536,9 @@
       ],
       "tests": [
         "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
-        "assert(/var\\s*myVar\\s*=\\s*87;\\s*\\/*.*\\s*myVar\\+\\+;/.test(code), 'message: <code>myVar = myVar + 1;</code> should be changed');",
+        "assert(/var|const\\s*myVar\\s*=\\s*87;\\s*\\/*.*\\s*myVar\\+\\+;/.test(code), 'message: <code>myVar = myVar + 1;</code> should be changed');",
         "assert(/[+]{2}\\s*myVar|myVar\\s*[+]{2}/.test(code), 'message: Use the <code>++</code> operator');",
-        "assert(/var myVar = 87;/.test(code), 'message: Do not change code above the line');"
+        "assert(/var|const myVar = 87;/.test(code), 'message: Do not change code above the line');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -585,9 +585,9 @@
       ],
       "tests": [
         "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
-        "assert(/var\\s*myVar\\s*=\\s*11;\\s*\\/*.*\\s*myVar--;/.test(code), 'message: <code>myVar = myVar - 1;</code> should be changed');",
+        "assert(/var|const\\s*myVar\\s*=\\s*11;\\s*\\/*.*\\s*myVar--;/.test(code), 'message: <code>myVar = myVar - 1;</code> should be changed');",
         "assert(/[-]{2}\\s*myVar|myVar\\s*[-]{2}/.test(code), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
-        "assert(/var myVar = 11;/.test(code), 'message: Do not change code above the line');"
+        "assert(/var|const myVar = 11;/.test(code), 'message: Do not change code above the line');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -746,7 +746,7 @@
         "var remainder =  11 % 3;"
       ],
       "tests": [
-        "assert(/var\\s+?remainder/.test(code), 'message: The variable <code>remainder</code> should be initialized');",
+        "assert(/var|const\\s+?remainder/.test(code), 'message: The variable <code>remainder</code> should be initialized');",
         "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
         "assert(/\\s+?remainder\\s*?=\\s*?.*%.*;/.test(code), 'message: You should use the <code>%</code> operator');"
       ],
@@ -804,7 +804,7 @@
         "assert(b === 26, 'message: <code>b</code> should equal <code>26</code>');",
         "assert(c === 19, 'message: <code>c</code> should equal <code>19</code>');",
         "assert(code.match(/\\+=/g).length === 3, 'message: You should use the <code>+=</code> operator for each variable');",
-        "assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'message: Do not modify the code above the line');"
+        "assert(/var|const a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -859,7 +859,7 @@
         "assert(b === -6, 'message: <code>b</code> should equal <code>-6</code>');",
         "assert(c === 2, 'message: <code>c</code> should equal <code>2</code>');",
         "assert(code.match(/-=/g).length === 3, 'message: You should use the <code>-=</code> operator for each variable');",
-        "assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'message: Do not modify the code above the line');"
+        "assert(/var|const a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -913,7 +913,7 @@
         "assert(b === 36, 'message: <code>b</code> should equal <code>36</code>');",
         "assert(c === 46, 'message: <code>c</code> should equal <code>46</code>');",
         "assert(code.match(/\\*=/g).length === 3, 'message: You should use the <code>*=</code> operator for each variable');",
-        "assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'message: Do not modify the code above the line');"
+        "assert(/var|const a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -966,7 +966,7 @@
         "assert(b === 27, 'message: <code>b</code> should equal <code>27</code>');",
         "assert(c === 3, 'message: <code>c</code> should equal <code>3</code>');",
         "assert(code.match(/\\/=/g).length === 3, 'message: You should use the <code>/=</code> operator for each variable');",
-        "assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'message: Do not modify the code above the line');"
+        "assert(/var|const a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'message: Do not modify the code above the line');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1212,7 +1212,7 @@
       "tests": [
         "assert(myStr === \"This is the start. This is the end.\", 'message: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');",
         "assert(code.match(/([\"']).*([\"'])\\s*\\+\\s*([\"']).*([\"'])/g).length > 1, 'message: Use the <code>+</code> operator to build <code>myStr</code>');",
-        "assert(/var\\s+myStr/.test(code), 'message: <code>myStr</code> should be created using the <code>var</code> keyword.');",
+        "assert(/var|const\\s+myStr/.test(code), 'message: <code>myStr</code> should be created using the <code>var</code> keyword.');",
         "assert(/myStr\\s*=/.test(code), 'message: Make sure to assign the result to the <code>myStr</code> variable.');"
       ],
       "type": "waypoint",
@@ -2458,7 +2458,7 @@
       "tests": [
         "assert(typeof myGlobal != \"undefined\", 'message: <code>myGlobal</code> should be defined');",
         "assert(myGlobal === 10, 'message: <code>myGlobal</code> should have a value of <code>10</code>');",
-        "assert(/var\\s+myGlobal/.test(code), 'message: <code>myGlobal</code> should be declared using the <code>var</code> keyword');",
+        "assert(/var|const\\s+myGlobal/.test(code), 'message: <code>myGlobal</code> should be declared using the <code>var</code> keyword');",
         "assert(typeof oopsGlobal != \"undefined\" && oopsGlobal === 5, 'message: <code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>');"
       ],
       "type": "waypoint",
@@ -2534,7 +2534,7 @@
       ],
       "tests": [
         "assert(typeof myVar === 'undefined', 'message: No global <code>myVar</code> variable');",
-        "assert(/var\\s+myVar/.test(code), 'message: Add a local <code>myVar</code> variable');"
+        "assert(/var|const\\s+myVar/.test(code), 'message: Add a local <code>myVar</code> variable');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -3581,7 +3581,7 @@
         "assert(testElse(5) === \"5 or Smaller\", 'message: <code>testElse(5)</code> should return \"5 or Smaller\"');",
         "assert(testElse(6) === \"Bigger than 5\", 'message: <code>testElse(6)</code> should return \"Bigger than 5\"');",
         "assert(testElse(10) === \"Bigger than 5\", 'message: <code>testElse(10)</code> should return \"Bigger than 5\"');",
-        "assert(/var result = \"\";/.test(code) && /return result;/.test(code), 'message: Do not change the code above or below the lines.');"
+        "assert(/var|const result = \"\";/.test(code) && /return result;/.test(code), 'message: Do not change the code above or below the lines.');"
       ],
       "type": "waypoint",
       "challengeType": 1,
