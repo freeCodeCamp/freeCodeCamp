@@ -78,11 +78,7 @@ export class Editor extends PureComponent {
           return cm.replaceSelection(spaces);
         },
         'Shift-Tab': function(cm) {
-          if (cm.somethingSelected()) {
-            return cm.indentSelection('subtract');
-          }
-          const spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
-          return cm.replaceSelection(spaces);
+          return cm.indentSelection('subtract');
         },
         'Ctrl-Enter': function() {
           executeChallenge();
