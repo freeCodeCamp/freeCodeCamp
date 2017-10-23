@@ -1,6 +1,6 @@
 # Contributor's Guide
 
-We welcome pull requests from freeCodeCamp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
+We welcome pull requests from FreeCodeCamp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
 1. Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/freeCodeCamp/freeCodeCamp/labels/help%20wanted) tag.
 
@@ -263,7 +263,7 @@ When you're ready to share your code, run the test suite:
 $ npm test
 ```
 
-and ensure all tests pass.
+and then ensure all tests pass.
 
 ### Squash Your Commits
 When you make a pull request, all of your changes need to be in one commit.
