@@ -16,6 +16,9 @@
         }
       }
     },
+    "emailUpdateNew":{
+      "type": "string"
+    },
     "emailVerifyTTL": {
       "type": "date"
     },

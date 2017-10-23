@@ -560,15 +560,17 @@ module.exports = function(User) {
     }
   );
 
-  User.prototype.requestUpdateEmail = function requestUpdateEmail(email) {
-    const ownEmail = email === this.email;
-    if (!isEmail('' + email)) {
+  User.prototype.requestUpdateEmail = function requestUpdateEmail(
+    emailUpdateNew
+  ) {
+    const ownEmail = emailUpdateNew === this.email;
+    if (!isEmail('' + emailUpdateNew)) {
       return Observable.throw(createEmailError());
     }
     // email is already associated and verified with this account
     if (ownEmail && this.emailVerified) {
       return Observable.throw(new Error(
-        `${email} is already associated with this account.`
+        `${emailUpdateNew} is already associated with this account.`
       ));
     }
 
@@ -583,23 +585,25 @@ module.exports = function(User) {
       `);
     }
 
-    return Observable.fromPromise(User.doesExist(null, email))
+    return Observable.fromPromise(User.doesExist(null, emailUpdateNew))
       .flatMap(exists => {
         // not associated with this account, but is associated with another
         if (!ownEmail && exists) {
           return Promise.reject(
-            new Error(`${email} is already associated with another account.`)
+            new Error(
+              `${emailUpdateNew} is already associated with another account.`
+            )
           );
         }
 
         const emailVerified = false;
         return this.update$({
-          email,
+          emailUpdateNew,
           emailVerified,
           emailVerifyTTL: new Date()
         })
         .do(() => {
-          this.email = email;
+          this.emailUpdateNew = emailUpdateNew;
           this.emailVerified = emailVerified;
           this.emailVerifyTTL = new Date();
         });
@@ -607,7 +611,7 @@ module.exports = function(User) {
       .flatMap(() => {
         const mailOptions = {
           type: 'email',
-          to: email,
+          to: emailUpdateNew,
           from: getEmailSender(),
           subject: 'freeCodeCamp - Email Update Requested',
           protocol: getProtocol(),
