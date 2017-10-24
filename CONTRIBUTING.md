@@ -108,33 +108,32 @@ Do this prior to every time you create a branch for a PR:
 
 1. Make sure you are on the `staging` branch
 
-  > ```shell
-  > $ git status
-  > On branch staging
-  > Your branch is up-to-date with 'origin/staging'.
-  > ```
+   ```shell
+   $ git status
+   On branch staging
+   Your branch is up-to-date with 'origin/staging'.
+   ```  
+   If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
 
-  > If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
-
-  > ```shell
-  > $ git checkout staging
-  > ```
+   ```shell
+   $ git checkout staging
+   ```
 
 2. Do a pull with rebase against `upstream`
 
-  > ```shell
-  > $ git pull --rebase upstream staging
-  > ```
+   ```shell
+   $ git pull --rebase upstream staging
+   ```
 
-  > This will pull down all of the changes to the official staging branch, without making an additional commit in your local repo.
+   This will pull down all of the changes to the official staging branch, without making an additional commit in your local repo.
 
 3. (_Optional_) Force push your updated staging branch to your GitHub fork
 
-  > ```shell
-  > $ git push origin staging --force
-  > ```
+   ```shell
+   $ git push origin staging --force
+   ```
 
-  > This will overwrite the staging branch of your fork.
+   This will overwrite the staging branch of your fork.
 
 ### Create A Branch
 
