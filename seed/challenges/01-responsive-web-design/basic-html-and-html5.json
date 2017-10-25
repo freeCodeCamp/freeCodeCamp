@@ -88,7 +88,7 @@
             "<code>&#60;h1&#62;</code>",
             "Schließende Tags so:",
             "<code>&#60;/h1&#62;</code>",
-            "Beachte, dass der einzige Unterschied zwischen öffnenden und schließenden Tags ist, dass schließende Tags ein Slash nach der sich öffnenden spitzen Klammer folgt.",
+            "Beachte, dass der einzige Unterschied zwischen öffnenden und schließenden Tags ist, dass bei schließenden Tags ein Slash nach der sich öffnenden spitzen Klammer folgt.",
             "Jede Challenge hat Tests die du jederzeit starten kannst indem du den \"Run tests\" Button drückst. Wenn alle Tests bestehen kannst du mit der nächsten Challenge fortfahren.",
             "<hr>",
             "Um den Test dieser Challenge zu bestehen, ändere den Text deines <code>h1</code> Elements von \"Hello\" zu \"Hello World\". Klicke dann den \"Run tests\" Button."
