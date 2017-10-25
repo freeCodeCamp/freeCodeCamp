@@ -1088,21 +1088,24 @@
       "type": "bonfire",
       "title": "Problem 36: Double-base palindromes",
       "tests": [
-        "assert.strictEqual(euler36(), 872187, 'message: <code>euler36()</code> should return 872187.');"
+        "assert(doubleBasePalindromes(1000) == 1772, 'message: <code>doubleBasePalindromes(1000)</code> should return 1772.');",
+        "assert(doubleBasePalindromes(50000) == 105795, 'message: <code>doubleBasePalindromes(50000)</code> should return 105795.');",
+        "assert(doubleBasePalindromes(500000) == 286602, 'message: <code>doubleBasePalindromes(500000)</code> should return 286602.');",
+        "assert(doubleBasePalindromes(1000000) == 872187, 'message: <code>doubleBasePalindromes(1000000)</code> should return 872187.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler36() {",
+        "function doubleBasePalindromes(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler36();"
+        "doubleBasePalindromes(1000000);"
       ],
       "description": [
         "The decimal number, 585 = 10010010012 (binary), is palindromic in both bases.",
-        "Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.",
+        "Find the sum of all numbers, less than n, whereas 1000 <= n <= 1000000, which are palindromic in base 10 and base 2.",
         "(Please note that the palindromic number, in either base, may not include leading zeros.)"
       ]
     },
