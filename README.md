@@ -45,7 +45,7 @@ For this certification, you'll work on **two projects from scratch** and then **
 
 ---
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org). We also have [Gitter chat rooms](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](https://medium.freecodecamp.org), an [interactive forum](https://forum.freecodecamp.org), a [wiki knowledgebase](https://forum.freecodecamp.org/c/wiki), local [FaceBook groups] (https://study-group-directory.freecodecamp.org/), and even a [YouTube channel](https://youtube.com/freecodecamp).
+This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org). We also have [Gitter chat rooms](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](https://medium.freecodecamp.org), an [interactive forum](https://forum.freecodecamp.org), a [wiki knowledgebase](https://forum.freecodecamp.org/c/wiki), local [FaceBook groups](https://study-group-directory.freecodecamp.org/), and even a [YouTube channel](https://youtube.com/freecodecamp).
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
 
