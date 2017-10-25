@@ -443,7 +443,7 @@
       "translations": {
         "de": {
           "description": [
-            "Denk daran, dass du einen Kommentar mit <code>&#60;!--</code> anfangen und mit <code>--&#62;</code> wieder beendest.",
+            "Denk daran, dass ein Kommentar mit <code>&#60;!--</code> beginnt und mit <code>--&#62;</code> endet.",
             "Hier wirst du deinen Kommentar vor dem <code>h2</code> Element beenden müssen.",
             "<hr>",
             "Kommentiere die <code>h1</code> und <code>p</code> Elemente aus, aber lasse dein <code>h2</code> Element unkommentiert."
