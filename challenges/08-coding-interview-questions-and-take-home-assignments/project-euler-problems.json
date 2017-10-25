@@ -1059,22 +1059,27 @@
       "type": "bonfire",
       "title": "Problem 35: Circular primes",
       "tests": [
-        "assert.strictEqual(euler35(), 55, 'message: <code>euler35()</code> should return 55.');"
+        "assert(circularPrimes(100) == 13, 'message: <code>circularPrimes(100)</code> should return 13.');",
+        "assert(circularPrimes(100000) == 43, 'message: <code>circularPrimes(100000)</code> should return 43.');",
+        "assert(circularPrimes(250000) == 45, 'message: <code>circularPrimes(250000)</code> should return 45.');",
+        "assert(circularPrimes(500000) == 49, 'message: <code>circularPrimes(500000)</code> should return 49.');",
+        "assert(circularPrimes(750000) == 49, 'message: <code>circularPrimes(750000)</code> should return 49.');",
+        "assert(circularPrimes(1000000) == 55, 'message: <code>circularPrimes(1000000)</code> should return 55.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler35() {",
+        "function circularPrimes(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler35();"
+        "circularPrimes(1000000);"
       ],
       "description": [
         "The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.",
         "There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.",
-        "How many circular primes are there below one million?"
+        "How many circular primes are there below n, whereas 100 <= n <= 1000000?"
       ]
     },
     {
