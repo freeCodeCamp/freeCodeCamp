@@ -804,17 +804,20 @@
       "type": "bonfire",
       "title": "Problem 26: Reciprocal cycles",
       "tests": [
-        "assert.strictEqual(euler26(), 983, 'message: <code>euler26()</code> should return 983.');"
+        "assert(reciprocalCycles(700) == 659, 'message: <code>reciprocalCycles(700)</code> should return 659.');",
+        "assert(reciprocalCycles(800) == 743, 'message: <code>reciprocalCycles(800)</code> should return 743.');",
+        "assert(reciprocalCycles(900) == 887, 'message: <code>reciprocalCycles(900)</code> should return 887.');",
+        "assert(reciprocalCycles(1000) == 983, 'message: <code>reciprocalCycles(1000)</code> should return 983.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler26() {",
+        "function reciprocalCycles(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler26();"
+        "reciprocalCycles(1000);"
       ],
       "description": [
         "A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:",
@@ -830,7 +833,7 @@
         "1/10= 0.1",
         "",
         "Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.",
-        "Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part."
+        "Find the value of d < n for which 1/d contains the longest recurring cycle in its decimal fraction part."
       ]
     },
     {
