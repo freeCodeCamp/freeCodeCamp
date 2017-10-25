@@ -87,9 +87,12 @@ $ git clone https://github.com/yourUsername/freeCodeCamp.git
 
 This will download the entire FCC repo to your projects directory.
 
-#### Setup Your Upstream
+#### Setup Your Upstream  
 
-1. Change directory to the new freeCodeCamp directory (`cd freeCodeCamp`)
+1. Change directory to the new freeCodeCamp directory  
+```shell
+cd freeCodeCamp
+```
 2. Add a remote to the official FCC repo:
 
 ```shell
@@ -169,7 +172,7 @@ You should have [ESLint running in your editor](http://eslint.org/docs/user-guid
 ### Setup freeCodeCamp
 Once you have freeCodeCamp cloned, before you start the application, you first need to install all of the dependencies:
 
-```bash
+```shell
 # Install NPM dependencies
 npm install
 
@@ -179,7 +182,7 @@ npm install -g gulp
 
 Then you need to add the private environment variables (API Keys):
 
-```bash
+```shell
 # Create a copy of the "sample.env" and name it as ".env".
 # Populate it with the necessary API keys and secrets:
 cp sample.env .env
@@ -192,7 +195,7 @@ You can leave the other keys as they are. Keep in mind if you want to use more s
 
 Next you should setup MailHog, a local SMTP mail server that will catch all the outgoing freeCodeCamp messages generated locally. How you start up MailHog is dependent upon your OS, but here's an example for MacOS with Brew.
 
-```bash
+```shell
 brew services start mailhog
 ```
 
@@ -200,7 +203,7 @@ To access your MailHog inbox, open your browser and navigate to [http://localhos
 
 Now you will need to start MongoDB, and then seed the database, then you can start the application:
 
-```bash
+```shell
 # Start the mongo server in a separate terminal
 # On OS X:
 mongod
@@ -222,7 +225,7 @@ Now navigate to your browser and open
 <http://localhost:3000>. If the app loads,
 congratulations – you're all set. Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
 
- ```bash
+ ```shell
  # Remove all installed node modules
  rm -rf node_modules
 
@@ -323,7 +326,7 @@ Instance of freeCodeCamp](#maintaining-your-fork).
 1.  Perform the maintenance step of rebasing `staging`.
 2.  Ensure you are on the `staging` branch using `git status`:
 
-```bash
+```shell
 $ git status
 On branch staging
 Your branch is up-to-date with 'origin/staging'.
