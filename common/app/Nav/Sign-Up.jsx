@@ -37,9 +37,9 @@ export default function SignUpButton({
       key='user'
       >
       <Link to='/settings'>
-        <span className='nav-username hidden-md hidden-lg'> { username } </span>
+        <span className='nav-username hidden-sm'> { username } </span>
         <span className='nav-points'> [ { points || 1 } ] </span>
-        <span className='nav-picture-container hidden-xs hidden-sm'>
+        <span className='nav-picture-container'>
           <img
             className='nav-picture float-right'
             src={ picture }
