@@ -1262,7 +1262,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Ein Textfeld erstellen",
+          "title": "Erstelle ein Textfeld",
           "description": [
             "Nun erstellen wir ein Web Formular.",
             "Eingabefelder sind eine beliebte Möglichkeit um Daten von Usern zu erhalten.",
