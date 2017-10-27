@@ -246,6 +246,19 @@ $(document).ready(function() {
     collapseCaret(item);
   }
 
+  // map toggle caret
+  $('.map-collapse').on('show.bs.collapse', function(e) {
+    if ($(this).is(e.target)) {
+      expandCaret(this);
+    }
+  });
+
+  $('.map-collapse').on('hide.bs.collapse', function(e) {
+    if ($(this).is(e.target)) {
+      collapseCaret(this);
+    }
+  });
+
   $.each($('.sr-only'), function(i, span) {
     if ($(span).text() === ' Complete') {
       $(span).parents('p').addClass('manip-hidden');
