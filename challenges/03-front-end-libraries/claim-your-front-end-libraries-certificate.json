@@ -101,6 +101,35 @@
               ""
             ]
           ]
+        },
+        "pt-br": {
+          "title": "Solicite seu Certificado de Bibliotecas Front End",
+          "description": [
+            [
+              "//i.imgur.com/k8btNUB.jpg",
+              "Uma imagem do nosso Certificado de Bibliotecas Front End",
+              "Este desafio lhe dará seu certificado verificado de bibliotecas Front End. Antes de emitir o seu certificado, precisamos verificar que você completou todos os nossos desafios de algoritmos básicos e intermediários e todos os nossos projetos básicos, intermediários e avançados de desenvolvimento. Você também deve aceitar nosso Compromisso de Honestidade Acadêmica. Clique no botão abaixo para iniciar este processo.",
+              ""
+            ],
+            [
+              "//i.imgur.com/uLPsUko.jpg",
+              "A definição de plágio: Plágio (substantivo) - copiar o trabalho de outra pessoa e apresentá-lo como seu sem creditar o autor",
+              "Ao clicar abaixo, você declara que todo o seu código enviado A) foi escrito por você ou pelo seu par pessoalmente, ou B) vem de bibliotecas de código aberto como o jQuery ou C) foi claramente atribuído a seus autores originais. Você também nos dá permissão para auditar suas soluções de desafios e revogar o seu certificado se descobrirmos evidências de plágio.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/UedoV2G.jpg",
+              "Uma imagem do texto \"Requisitos do Certificado de Desenvolvimento Front-End\"",
+              "Vamos confirmar que você completou todos os nossos desafios de algoritmos básicos e intermediários e todos os nossos projetos básicos, intermediários e avançados de desenvolvimento. Clique no botão abaixo para verificar.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/Q5Za9U6.jpg",
+              "Uma imagem da palavra \"Parabéns\"",
+              "Parabéns! Adicionamos o seu Certificado de Bibliotecas Front End à sua página de portfólio. A menos que você opte por esconder suas soluções, este certificado permanecerá publicamente visível e verificável.",
+              ""
+            ]
+          ]
         }
       }
     }
