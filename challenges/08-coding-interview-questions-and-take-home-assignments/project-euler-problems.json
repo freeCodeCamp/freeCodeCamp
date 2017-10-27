@@ -171,17 +171,23 @@
       "type": "bonfire",
       "title": "Problem 7: 10001st prime",
       "tests": [
-        "assert.strictEqual(euler7(), 104743, 'message: <code>euler7()</code> should return 104743.');"
+        "assert.strictEqual(nthPrime(6), 13, 'message: <code>nthPrime(6)</code> should return 13.');",
+        "assert.strictEqual(nthPrime(10), 29, 'message: <code>nthPrime(10)</code> should return 29.');",
+        "assert.strictEqual(nthPrime(100), 541, 'message: <code>nthPrime(100)</code> should return 541.');",
+        "assert.strictEqual(nthPrime(1000), 7919, 'message: <code>nthPrime(1000)</code> should return 7919.');",
+        "assert.strictEqual(nthPrime(10001), 104743, 'message: <code>nthPrime(10001)</code> should return 104743.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const nthPrime = (number)=>{\n let pN = 2;\n let step = 0;\n while (step<number) {\n   let isPrime = true;\n   for(let i = 2;i<pN;i++){\n      if(!(pN%i)){\n        isPrime = false;\n        break;\n      }\n   }\n   isPrime ? step++ : '';\n    pN++;\n }\n return pN-1;\n}"
+      ],
       "translations": {},
       "challengeSeed": [
-        "function euler7() {",
+        "function nthPrime(number) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler7();"
+        "nthPrime(10001);"
       ],
       "description": [
         "By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.",
