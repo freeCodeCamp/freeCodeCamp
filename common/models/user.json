@@ -16,7 +16,7 @@
         }
       }
     },
-    "emailUpdateNew":{
+    "newEmail":{
       "type": "string"
     },
     "emailVerifyTTL": {

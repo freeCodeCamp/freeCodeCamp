@@ -236,7 +236,7 @@ module.exports = function(User) {
 
     return User.findById(uid, (err, user) => {
 
-        if (err || !user) {
+        if (err || !user || !user.newEmail) {
           ctx.req.flash('error', {
             msg: dedent`Oops, something went wrong, please try again later`
           });
@@ -268,7 +268,16 @@ module.exports = function(User) {
           return ctx.res.redirect(redirect);
         }
 
-        return next();
+        return user.update$({
+          email: user.newEmail,
+          newEmail: null,
+          emailVerifyTTL: null
+        })
+        .do(() => {
+          return next();
+        })
+        .toPromise();
+
     });
   });
 
@@ -561,16 +570,16 @@ module.exports = function(User) {
   );
 
   User.prototype.requestUpdateEmail = function requestUpdateEmail(
-    emailUpdateNew
+    newEmail
   ) {
-    const ownEmail = emailUpdateNew === this.email;
-    if (!isEmail('' + emailUpdateNew)) {
+    const ownEmail = newEmail === this.email;
+    if (!isEmail('' + newEmail)) {
       return Observable.throw(createEmailError());
     }
     // email is already associated and verified with this account
     if (ownEmail && this.emailVerified) {
       return Observable.throw(new Error(
-        `${emailUpdateNew} is already associated with this account.`
+        `${newEmail} is already associated with this account.`
       ));
     }
 
@@ -585,25 +594,25 @@ module.exports = function(User) {
       `);
     }
 
-    return Observable.fromPromise(User.doesExist(null, emailUpdateNew))
+    return Observable.fromPromise(User.doesExist(null, newEmail))
       .flatMap(exists => {
         // not associated with this account, but is associated with another
         if (!ownEmail && exists) {
           return Promise.reject(
             new Error(
-              `${emailUpdateNew} is already associated with another account.`
+              `${newEmail} is already associated with another account.`
             )
           );
         }
 
         const emailVerified = false;
         return this.update$({
-          emailUpdateNew,
+          newEmail,
           emailVerified,
           emailVerifyTTL: new Date()
         })
         .do(() => {
-          this.emailUpdateNew = emailUpdateNew;
+          this.newEmail = newEmail;
           this.emailVerified = emailVerified;
           this.emailVerifyTTL = new Date();
         });
@@ -611,7 +620,7 @@ module.exports = function(User) {
       .flatMap(() => {
         const mailOptions = {
           type: 'email',
-          to: emailUpdateNew,
+          to: newEmail,
           from: getEmailSender(),
           subject: 'freeCodeCamp - Email Update Requested',
           protocol: getProtocol(),
