@@ -115,18 +115,19 @@ AAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==');
 
 
   common.updatePreview$ = function updatePreview$(code = '') {
-    const preview = common.getIframe('preview');
-
-    return Observable.combineLatest(
-      iFrameScript$,
-      jQueryScript$,
-      (iframe, jQuery) => ({
-        iframeScript: `<script>${iframe}</script>`,
-        jQuery: `<script>${jQuery}</script>`
-      })
-    )
+    return common.reloadIframe('preview')
+      .flatMap(() => Observable.combineLatest(
+        iFrameScript$,
+        jQueryScript$,
+        (iframe, jQuery) => ({
+          iframeScript: `<script>${iframe}</script>`,
+          jQuery: `<script>${jQuery}</script>`
+        })
+      ))
       .first()
       .flatMap(({ iframeScript, jQuery }) => {
+        const preview = common.getIframeDocument('preview');
+
         // we make sure to override the last value in the
         // subject to false here.
         common.previewReady$.onNext(false);
