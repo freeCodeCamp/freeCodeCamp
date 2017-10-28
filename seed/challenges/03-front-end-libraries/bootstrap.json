@@ -855,7 +855,7 @@
         "  }",
         "</style>",
         "",
-        "<div class=\"container-fluid\">",
+        "<div>",
         "  <h2 class=\"red-text text-center\">CatPhotoApp</h2>",
         "",
         "  <p>Click here for <a href=\"#\">cat photos</a>.</p>",
