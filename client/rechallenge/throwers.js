@@ -66,7 +66,6 @@ const ThrowIfUnfinishedFunction = cond([
   passToNext
 ]);
 
-
 // console call stops tests scripts from running
 const unsafeConsoleCallReg = /if\s\(null\)\sconsole\.log\(1\);/gi;
 const throwIfUnsafeConsoleCall = cond([
