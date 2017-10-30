@@ -60,7 +60,6 @@ Do not file an issue until you have followed these steps:
 
 Contributing
 ------------
-
 We welcome pull requests from freeCodeCamp campers (our students) and seasoned JavaScript developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
 
 License
