@@ -404,7 +404,6 @@ for further information
 
 6.  Indicate if you have tested on a local copy of the site or not.
 
-
 ### How We Review and Merge Pull Requests
 
 freeCodeCamp has a team of volunteer Issue Moderators. These Issue Moderators routinely go through open pull requests in a process called [Quality Assurance](https://en.wikipedia.org/wiki/Quality_assurance) (QA).
