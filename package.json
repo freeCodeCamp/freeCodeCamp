@@ -110,7 +110,7 @@
     "react-images": "^0.5.1",
     "react-motion": "~0.4.2",
     "react-no-ssr": "^1.0.1",
-    "react-notification": "https://github.com/BerkeleyTrue/react-notification#freecodecamp",
+    "react-notification": "git+https://github.com/BerkeleyTrue/react-notification.git#freecodecamp",
     "react-pure-render": "^1.0.2",
     "react-redux": "^4.0.6",
     "react-router": "^3.0.0",
@@ -128,7 +128,7 @@
     "rx-dom": "^7.0.3",
     "sanitize-html": "^1.11.1",
     "snyk": "^1.30.1",
-    "store": "https://github.com/berkeleytrue/store.js.git#feature/noop-server",
+    "store": "git+https://github.com/berkeleytrue/store.js.git#feature/noop-server",
     "uuid": "^3.0.1",
     "validator": "^6.0.0"
   },

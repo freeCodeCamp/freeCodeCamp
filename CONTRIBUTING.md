@@ -40,8 +40,8 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 | ------------------------------------------- | ------- |
 | [MongoDB](http://www.mongodb.org/downloads) | `~ ^3`  |
 | [MailHog](https://github.com/mailhog/MailHog) | `~ ^1` |
-| [Node.js](http://nodejs.org)                | `~ ^6`  |
-| npm (comes with Node)                       | `~ ^3`  |
+| [Node.js](http://nodejs.org)                | `~ ^8`  |
+| npm (comes with Node)                       | `~ ^5`  |
 
 > _Updating to the latest releases is recommended_.
 
