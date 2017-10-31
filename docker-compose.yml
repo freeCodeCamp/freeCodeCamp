@@ -13,7 +13,7 @@ services:
         image: mongo:3.2.6
 
     server:
-        image: node:6.2.1
+        image: node:8.9.0
         depends_on:
             - db
         environment:
