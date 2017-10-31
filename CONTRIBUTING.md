@@ -218,6 +218,13 @@ npm run only-once
 gulp
 ```
 
+If `/data/db` does not exist you will need to add it and give yourself permissin to write to it:
+```bash
+# On OS X:
+sudo mkdir -p /data/db
+sudo chmod a+w /data/db
+```
+
 Now navigate to your browser and open
 <http://localhost:3000>. If the app loads,
 congratulations – you're all set. Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
