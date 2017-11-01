@@ -80,15 +80,15 @@
       "translations": {
         "de": {
           "description": [
-            "Willkommen bei der ersten Programmier-Challenge von freeCodeCamp!",
-            "Mithilfe des eingebauten <code>text editor</code> kannst du den <code>code</code> bearbeiten.",
+            "Willkommen bei deiner ersten Programmier-Challenge von freeCodeCamp!",
+            "Mithilfe des eingebauten <code>text editors</code> kannst du den <code>code</code> bearbeiten.",
             "Siehst du den Code <code>&#60;h1&#62;Hallo&#60;/h1&#62;</code> im Editor? Das ist ein HTML <code>element</code>",
             "Die meisten HTML Elemente haben einen <code>opening tag</code> und einen <code>closing tag</code>.",
             "Öffnende Tags sehen so aus:",
             "<code>&#60;h1&#62;</code>",
             "Schließende Tags so:",
             "<code>&#60;/h1&#62;</code>",
-            "Beachte, dass der einzige Unterschied zwischen öffnenden und schließenden Tags ist, das schließende Tags ein Slash nach der sich öffnenden spitzen Klammer folgt.",
+            "Beachte, dass der einzige Unterschied zwischen öffnenden und schließenden Tags ist, dass bei schließenden Tags ein Slash nach der sich öffnenden spitzen Klammer folgt.",
             "Jede Challenge hat Tests die du jederzeit starten kannst indem du den \"Run tests\" Button drückst. Wenn alle Tests bestehen kannst du mit der nächsten Challenge fortfahren.",
             "<hr>",
             "Um den Test dieser Challenge zu bestehen, ändere den Text deines <code>h1</code> Elements von \"Hello\" zu \"Hello World\". Klicke dann den \"Run tests\" Button."
@@ -306,7 +306,7 @@
         "de": {
           "description": [
             "Webentwickler nutzen für gewöhnlich \"Lorem Ipsum Text\" als Platzhalter. Es heißt \"Lorem Ipsum\", weil es die ersten zwei Wörter aus einer bekannten Passage von Cicero des alten Roms sind.",
-            "\"Lorem Ipsum\" Text wurde seit dem 16. Jahrhundert von Schriftsetzern als Platzhalter verwendet. Und diese Tradition setzt sich im Web fort.",
+            "\"Lorem Ipsum\" Text wurde seit dem 16. Jahrhundert von Schriftsetzern als Platzhalter verwendet. Diese Tradition setzt sich im Web fort.",
             "Nun gut, fünf Jahrhunderte sind lange genug. Da wir eine CatPhotoApp entwickeln, lass uns stattdessen lieber <code>kitty ipsum text</code> nutzen.",
             "<hr>",
             "Ersetze den Text in deinem <code>p</code> Element mit den ersten Wörtern des \"Kitty Ipsum\" Textes: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
@@ -374,7 +374,7 @@
       "translations": {
         "de": {
           "description": [
-            "Kommentieren erlaubt dir Kommentare innerhalb des Codes zu hinterlassen, ohne diesen selbst zu beeinflussen.",
+            "Kommentieren erlaubt es dir, Kommentare innerhalb des Codes zu hinterlassen, ohne diesen selbst zu beeinflussen.",
             "Dies ist auch ein guter Weg, um Code inaktiv zu machen ohne diesen komplett löschen zu müssen.",
             "Du kannst einen Kommentar mit <code>&#60;!--</code> starten und ihn mit <code>--&#62;</code> wieder beenden.",
             "<hr>",
@@ -443,7 +443,7 @@
       "translations": {
         "de": {
           "description": [
-            "Denk daran, dass du einen Kommentar mit <code>&#60;!--</code> anfangen und mit <code>--&#62;</code> wieder beenden werden.",
+            "Denk daran, dass ein Kommentar mit <code>&#60;!--</code> beginnt und mit <code>--&#62;</code> endet.",
             "Hier wirst du deinen Kommentar vor dem <code>h2</code> Element beenden müssen.",
             "<hr>",
             "Kommentiere die <code>h1</code> und <code>p</code> Elemente aus, aber lasse dein <code>h2</code> Element unkommentiert."
@@ -507,7 +507,7 @@
             "Unser Smartphone hat nicht sehr viel vertikalen Platz.",
             "Lass uns die unwichtigen Elemente entfernen, damit wir unsere CatPhotoApp entwickeln können.",
             "<hr>",
-            "Lösche die Elemente <code>h1</code>, damit wir etwas Ordnung schaffen."
+            "Lösche die Elemente <code>h1</code>, um etwas Ordnung zu schaffen."
           ]
         },
         "fr": {
@@ -622,7 +622,7 @@
             "Du kannst <code>img</code> Elemente verwenden, um Bilder in deine Website einzubauen. Um zur URL des Bildes zu verweisen, benutzt du das <code>src</code> Attribut.",
             "Ein Beispiel dafür wäre:",
             "<code>&#60img src=\"https://www.deine-bild-quelle.com/dein-bild.jpg\"&#62</code>",
-            "Beachte dass in den meisten Fällen <code>img<code> Elemente selbstschließend sind.",
+            "Beachte, dass <code>img<code> Elemente in den meisten Fällen selbstschließend sind.",
             "<hr>",
             "Versuche es mit diesem Bild:",
             "<code>https://bit.ly/fcc-relaxing-cat</code>"
@@ -708,13 +708,13 @@
         "de": {
           "title": "Verlinke externe Seiten mit Anker Elementen",
           "description": [
-            "<code>a</code> Elemente, auch bekannt als <code>anchor</code> (Anker) Elemente, werden verwendet um auf Inhalte außerhalb der aktuellen Seite zu verlinken.",
+            "<code>a</code> Elemente, auch bekannt als <code>anchor</code> (Anker) Elemente, werden verwendet um auf Inhalte außerhalb der aktuellen Seite zu verweisen.",
             "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente mit dem gleichen Text wie in der folgenden Zeile erstellt\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Hier ist ein Beispiel:",
             "<code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.org\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
             "<hr>",
-            "Erstelle ein <code>a</code> Element, das auf <code>http://freecatphotoapp.com</code> verlinkt und den \"cat photos\" als <code>anchor text</code> (Link-Text) beinhaltet."
+            "Erstelle ein <code>a</code> Element, das auf <code>http://freecatphotoapp.com</code> verweist und den \"cat photos\" als <code>anchor text</code> (Link-Text) beinhaltet."
           ]
         },
         "es": {
@@ -853,13 +853,13 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Umschließe ein Anker Element mit einem Paragraphen",
+          "title": "Anker Element mit einem Paragraphen umschließen",
           "description": [
             "Hier ist nochmal ein Beispiel für ein <code>a</code> Element:",
             "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Klick zum Vergrößern\" alt=\"Eine Darstellung wie Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Hier ist ein Beispiel:",
             "<code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.org\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
-            "<code>Nesting</code> bedeuted ein Element innerhalb eines anderen Elements zu schreiben",
+            "<code>Nesting</code> bedeutet, ein Element innerhalb eines anderen Elements zu schreiben",
             "<hr>",
             "Jetzt umschließe dein <code>a</code> Element mit einem neuen <code>p</code> Element (direkt nach dem bereits existierenden <code>main</code> Element) indem steht \"View more cat photos\", wo allerdings nur \"cat photos\" ein Link ist und der Rest normaler Text."
           ]
@@ -1173,7 +1173,7 @@
         "de": {
           "title": "Erstelle eine geordnete Liste",
           "description": [
-            "HTML beinhaltet ein spezielles Element für <code>ordered lists</code> (geordnete Listen).",
+            "HTML beinhaltet auch ein spezielles Element für <code>ordered lists</code> (geordnete/nummerierte Listen).",
             "Geordnete Listen starten mit einem <code>&#60;ol&#62;</code> Element. Dann enthalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
             "Zum Beispiel:",
             "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
@@ -1519,10 +1519,10 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge eine Button zum Senden hinzu",
+          "title": "Füge einen Button zum Senden hinzu",
           "description": [
             "Lass uns nun einen <code>submit</code> Button hinzufügen. Durch einen Klick auf diesen Button werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
-            "Hier ist ein Beispiel einen solchen Button:",
+            "Hier ist ein Beispiel für einen solchen Button:",
             "<code>&#60;button type=\"submit\"&#62;Dieser Button überträgt die Daten des Formulars.&#60;/button&#62;</code>",
             "<hr>",
             "Füge einen Button zum Senden mit dem Typ <code>submit</code> und \"Submit\" als Text zu deinem <code>form</code> Element hinzu."
@@ -1704,7 +1704,7 @@
             "Du kannst Optionsfelder, <code>radio buttons</code>, für Fragen verwenden, auf die der Nutzer nur eine Antwort geben soll.",
             "Radiobuttons sind lediglich ein weiterer Typ von <code>input</code> Elementen.",
             "Jeder deiner Radiobuttons sollte innerhalb eines eigenen <code>label</code> Elements liegen.",
-            "Alle Radiobuttons mit Bezug zueinander sollten das gleiche <code>name</code> Attribut teilen.",
+            "Alle Radiobuttons die in einem Bezug zueinander stehen sollten das gleiche <code>name</code> Attribut teilen.",
             "Ein Beispiel eines Radiobuttons:",
             "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
             "<hr>",
@@ -1905,11 +1905,11 @@
         "de": {
           "title": "Standardmäßig ausgewählte Radiobuttons und Checkboxen",
           "description": [
-            "Du kannst Checkboxen und Radiobuttons standardmäßig markiert machen, indem du das <code>checked</code> Attribut verwendest.",
-            "Das kannst du erreichen, indem du das Word \"checked\" innerhalb des Inputelements eingefügst. Zum Beispiel so:",
+            "Du kannst Checkboxen und Radiobuttons standardmäßig markieren, indem du das <code>checked</code> Attribut verwendest.",
+            "Das kannst du erreichen, indem du das Word \"checked\" innerhalb des Inputelements einfügst. Zum Beispiel so:",
             "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
             "<hr>",
-            "Stelle sicher, dass jeweils deine ersten Radiobuttons und Checkboxen standardmäßig markiert sind."
+            "Stelle sicher, dass jeweils dein erster Radiobutton und deine erste Checkbox standardmäßig markiert sind."
           ]
         },
         "es": {
@@ -2003,7 +2003,7 @@
             "Wie jedes andere Element – das sich nicht selbst schließt –  kannst du ein <code>div</code> Element mit <code>&#60;div&#62;</code> öffnen und mit <code>&#60;/div&#62;</code> wieder schließen.",
             "<hr>",
             "Versuche dein öffnendes <code>div</code> Element überhalb des <code>p</code> Elements von  \"Things cats love\" und das schließende <code>div</code> unterhalb des schließenden <code>ol</code> Elements zu platzieren. Damit befinden sich beide Listen innerhalb eines <code>div</code>",
-            "Umschließe deine \"Thins cats love\" und \"Things cats hate\" Listen mit einem einzelnen <code>div</code> Element."
+            "Umschließe deine \"Things cats love\" und \"Things cats hate\" Listen mit einem einzelnen <code>div</code> Element."
           ]
         },
         "es": {

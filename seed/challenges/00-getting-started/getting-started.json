@@ -97,26 +97,26 @@
           "description": [
             [
               "//i.imgur.com/6ibIavQ.jpg",
-              "Ein Bild von den 4 Vorteilen von freeCodeCamp: Vernetz Dich, Lerne Javascript, Bau ein Portfolio auf, Hilf Non-Profit-Organisationen",
-              "Willkommen bei freeCodeCamp. Wir sind eine Open Source Gemeinschaft von motivierten Leuten, die programmieren lernen und Non-Profit-Organisationen helfen",
+              "Ein Bild von den 4 Vorteilen von freeCodeCamp: Vernetz Dich, Lerne Javascript, erstelle dein eigenes Portfolio, hilf aktiv bei Non-Profit-Organisationen mit",
+              "Willkommen bei freeCodeCamp. Wir sind eine Open Source Gemeinschaft bestehend aus motivierten Leuten, die programmieren lernen und Non-Profit-Organisationen helfen",
               ""
             ],
             [
               "//i.imgur.com/Elb3dfj.jpg",
               "Ein Screenshot von einigen unserer Camper beim gemeinsamen Programmieren in Toronto.",
-              "<bold>Programmieren zu lernen ist hart.</bold> Um erfolgreich zu sein brauchst du viel Übung und Unterstützung. Deswegen haben wir ein umfangreiches Curriculum und eine unterstützende Gemeinschaft geschaffen.",
+              "<bold>Programmieren zu lernen ist schwierig.</bold> Um erfolgreich zu sein brauchst du viel Übung und Unterstützung. Deswegen haben wir ein umfangreiches Curriculum und eine unterstützende Gemeinschaft geschaffen.",
               ""
             ],
             [
               "//i.imgur.com/D7Y5luw.jpg",
-              "Ein Graph vom Verhältnis der Wachstumsrate von Jobs gegenüber der Abschlüsse von Informatik Studien. Es gibts 1,4 Millionen Jobs aber nur 400.000 Leute um diese zu füllen.",
-              "Es gibt tausende von unbesetzen Programmierjobs und die Nachfrage wächst jedes Jahr",
+              "Ein Diagramm des Verhältnisses der Wachstumsrate von Jobs gegenüber der Abschlüsse von Informatik Studenten. Es gibt 1,4 Millionen Jobs aber nur 400.000 Bewerber.",
+              "Es gibt Tausende von unbesetzten Programmierjobs und die Nachfrage wächst jedes Jahr",
               ""
             ],
             [
               "//i.imgur.com/WD3STY6.jpg",
-              "Foto von drei Campern die einen Job bekommen haben nachdem sie bei freeCodeCamp programmieren gelernt haben",
-              "freeCodeCamp ist ein sicherer Weg zu deinem ersten Programmierjob. Tatsächlich hat noch niemand unser komplettes Programm beendet, weil Campers bereits davor Jobs finden.",
+              "Foto von drei Campern die einen Job bekommen haben nachdem sie bei freeCodeCamp das Programmieren gelernt haben",
+              "freeCodeCamp ist ein sicherer Weg zu deinem ersten Programmierjob. Tatsächlich hat noch niemand unser komplettes Programm beendet, weil alle Camper bereits davor einen Job finden.",
               ""
             ],
             [
@@ -128,13 +128,13 @@
             [
               "//i.imgur.com/UVB9hxp.jpg",
               "Ein Foto von einem Camper in einem Cafe der an freeCodeCamp Projekten arbeitet.",
-              "Wir glauben dass Menschen am Besten beim Tun lernen. Deswegen wirst du die meiste Zeit damit beschäftigt sein an tatsächlichen Projekten zu arbeiten. Wir werden dir eine Liste an Anforderungen (agile User Stories) geben und du wirst dich damit auseinander setzen diese zu erfüllen.",
+              "Wir glauben, dass Menschen am Besten durch aktives Anwenden lernen. Deswegen wirst du die meiste Zeit damit beschäftigt sein an tatsächlichen Projekten zu arbeiten. Dazu geben wir dir eine Liste mit Anforderungen (agile User Stories) und deine Aufgabe ist es, diese umzusetzen.",
               ""
             ],
             [
               "//i.imgur.com/pbW7K5S.jpg",
               "Ein Bild auf dem man unsere Frontend-, Backend- und Daten Visualisierungzertifikate (je 400 Stunden), unsere Non-Profit-Projekte (800 Stunden) und Bewerbungsgesprächsvorbereitung (80 Stunden) sieht mit einer Summe von 2080 Stunden Programmiererfahrung.",
-              "Unser Curriculum ist in 4 Zertifikate aufgeteilt. Diese Zertifikate sind standardisiert und jederzeit von deinen Kunden oder zukünftigen Arbeitgeber überprüfbar. Wie alles andere auch bei freeCodeCamp sind die Zertifikate gratis. Wir empfehlen sie in der vorgesehenen Reihenfolge zu machen, aber es steht dir offen frei zu wählen. Die ersten drei Zertifikate dauern jeweils 400 Stunden. Das letzte Zertifikat dauert 800 Stunden und beinhaltet die Umsetzung eines echten Projektes für eine Non-Profit-Organisation.",
+              "Unser Curriculum ist in 4 Zertifikate aufgeteilt. Diese Zertifikate sind standardisiert und jederzeit von deinen Kunden oder zukünftigen Arbeitgeber einsehbar. Wie alles andere auch sind die Zertifikate des freeCodeCamps gratis. Wir empfehlen sie in der vorgesehenen Reihenfolge zu absolvieren, aber es steht dir offen frei zu wählen. Die ersten drei Zertifikate dauern jeweils 400 Stunden. Das letzte Zertifikat dauert 800 Stunden und beinhaltet die Umsetzung eines echten Projektes für eine Non-Profit-Organisation.",
               ""
             ],
             [
@@ -146,7 +146,7 @@
             [
               "//i.imgur.com/ocEL0D3.jpg",
               "Ein Screenshot von unserem Datenvisualisierungszertifikat",
-              "Für unser Datenvisualisierungszertifikat, wirst du 10 Projekte mit React, Sass und D3.js umsetzen.",
+              "Für unser Datenvisualisierungszertifikat wirst du 10 Projekte mit React, Sass und D3.js umsetzen.",
               ""
             ],
             [
@@ -158,13 +158,13 @@
             [
               "//i.imgur.com/yXyxbDd.jpg",
               "Ein Screenshot von unserem Non-Profit-Verzeichnis",
-              "Nachdem du alle drei von diesen Zertifikaten abgeschlossen hast, wirst du mit einem anderen Camper zusammen Methoden der agilen Softwareentwicklung verwenden und zwei echte Projekte für Non-Profit-Organisationen umsetzen. Außerdem wirst du zwei bereits existierende Non-Profit-Projekte um neue Funktionalität erweitern. Wenn du fertig bist, wirst du ein Portfolio mit zwei echten Apps besitzen, die täglich von Leuten genutzt werden.",
+              "Nachdem du alle drei dieser Zertifikate abgeschlossen hast, wirst du mit einem anderen Camper zusammen Methoden der agilen Softwareentwicklung verwenden und zwei echte Projekte für Non-Profit-Organisationen umsetzen. Außerdem wirst du zwei bereits existierende Non-Profit-Projekte um neue Funktionalität erweitern. Wenn du fertig bist, wirst du ein Portfolio mit zwei echten Apps besitzen, die täglich von Leuten genutzt werden.",
               ""
             ],
             [
               "//i.imgur.com/PDGQ9ZM.jpg",
               "Ein Foto von Campern die zusammen in einem Cafe in Seoul an einem Projekt arbeiten.",
-              "Wenn du alle 2080 Stunden an Aufgaben und Projekten absolviert hast, hast du dir unser Full Stack Development Zertifikat verdient. Wir bieten dir dann ein gratis Bewerbungstraining an. Außerdem haben wir eine Jobbörse, wo Arbeitsgeber Camper einstellen die freeCodeCamp Zertifikate erhalten haben.",
+              "Wenn du alle 2080 Stunden an Aufgaben und Projekten absolviert hast, hast du dir unser Full Stack Development Zertifikat verdient. Wir bieten dir dann ein gratis Bewerbungstraining an. Außerdem haben wir eine Jobbörse, in der Arbeitsgeber die Camper einstellen können, die freeCodeCamp Zertifikate erhalten haben.",
               ""
             ]
           ]
