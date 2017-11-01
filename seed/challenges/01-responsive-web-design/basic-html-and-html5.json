@@ -1519,7 +1519,7 @@
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge eine Button zum Senden hinzu",
+          "title": "Füge einen Button zum Senden hinzu",
           "description": [
             "Lass uns nun einen <code>submit</code> Button hinzufügen. Durch einen Klick auf diesen Button werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
             "Hier ist ein Beispiel für einen solchen Button:",
