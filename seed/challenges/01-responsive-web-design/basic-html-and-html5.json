@@ -1265,7 +1265,7 @@
           "title": "Erstelle ein Textfeld",
           "description": [
             "Nun erstellen wir ein Web Formular.",
-            "Eingabefelder sind eine beliebte Möglichkeit um Daten von Usern zu erhalten.",
+            "Eingabefelder sind eine bewährte Möglichkeit um Daten von Usern zu erhalten.",
             "So kannst du eines erstellen:",
             "<code>&#60;input type=\"text\"&#62;</code>",
             "Beachte, dass <code>input</code> Elemente selbstschließend sind.",
