@@ -374,7 +374,7 @@
       "translations": {
         "de": {
           "description": [
-            "Kommentieren erlaubt es dir, Bemerkungen innerhalb des Codes zu hinterlassen, ohne diesen selbst zu beeinflussen.",
+            "Kommentieren erlaubt es dir, Kommentare innerhalb des Codes zu hinterlassen, ohne diesen selbst zu beeinflussen.",
             "Dies ist auch ein guter Weg, um Code inaktiv zu machen ohne diesen komplett löschen zu müssen.",
             "Du kannst einen Kommentar mit <code>&#60;!--</code> starten und ihn mit <code>--&#62;</code> wieder beenden.",
             "<hr>",
