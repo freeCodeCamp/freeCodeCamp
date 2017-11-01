@@ -710,7 +710,7 @@
           "description": [
             "<code>a</code> Elemente, auch bekannt als <code>anchor</code> (Anker) Elemente, werden verwendet um auf Inhalte außerhalb der aktuellen Seite zu verweisen.",
             "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente mit dem gleichen Text wie in der folgenden Zeile erstellt\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
             "Hier ist ein Beispiel:",
             "<code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.org\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
             "<hr>",
