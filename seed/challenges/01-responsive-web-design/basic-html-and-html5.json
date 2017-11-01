@@ -1905,7 +1905,7 @@
         "de": {
           "title": "Standardmäßig ausgewählte Radiobuttons und Checkboxen",
           "description": [
-            "Du kannst Checkboxen und Radiobuttons standardmäßig markiert machen, indem du das <code>checked</code> Attribut verwendest.",
+            "Du kannst Checkboxen und Radiobuttons standardmäßig markieren, indem du das <code>checked</code> Attribut verwendest.",
             "Das kannst du erreichen, indem du das Word \"checked\" innerhalb des Inputelements einfügst. Zum Beispiel so:",
             "<code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>",
             "<hr>",
