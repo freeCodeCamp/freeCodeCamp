@@ -204,7 +204,7 @@ export class StepChallenge extends PureComponent {
             smOffset={ 1 }
             xs={ 12 }
             >
-            <p
+            <div
               className={ `${ns}-description` }
               dangerouslySetInnerHTML={{ __html: info }}
             />
