@@ -17,7 +17,7 @@ import {
 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import {
-  prepUniqueDays,
+  prepUniqueDaysByHours,
   calcCurrentStreak,
   calcLongestStreak
 } from '../utils/user-stats';
@@ -492,7 +492,7 @@ module.exports = function(app) {
     // not of the profile she is viewing
     const timezone = user && user.timezone ?
       user.timezone :
-      'UTC';
+      'EST';
 
     const query = {
       where: { username },
@@ -517,10 +517,10 @@ module.exports = function(app) {
               objOrNum.timestamp;
           });
 
-        const uniqueDays = prepUniqueDays(timestamps, timezone);
+        const uniqueHours = prepUniqueDaysByHours(timestamps, timezone);
 
-        userPortfolio.currentStreak = calcCurrentStreak(uniqueDays, timezone);
-        userPortfolio.longestStreak = calcLongestStreak(uniqueDays, timezone);
+        userPortfolio.currentStreak = calcCurrentStreak(uniqueHours, timezone);
+        userPortfolio.longestStreak = calcLongestStreak(uniqueHours, timezone);
 
         const calender = userPortfolio
           .progressTimestamps
