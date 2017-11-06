@@ -66,8 +66,8 @@ export class FreeCodeCamp extends React.Component {
     // buttons in the nav
     return (
       <div className={ `${ns}-container` }>
-        <Child />
         <Nav />
+        <Child />
         <Toasts />
       </div>
     );
