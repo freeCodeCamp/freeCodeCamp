@@ -10,9 +10,8 @@ import { panesMap as quizPanesMap } from './views/quiz';
 export const routes = {
   [types.onRouteChallengeRoot]: {
     path: '/challenges',
-    thunk: (dispatch) => {
-      return dispatch(redirect({ type: types.onRouteCurrentChallenge }));
-    }
+    thunk: (dispatch) =>
+      dispatch(redirect({ type: types.onRouteCurrentChallenge }))
   },
   [types.onRouteChallenges]: '/challenges/:block/:dashedName',
   [types.onRouteCurrentChallenge]: '/challenges/current-challenge'
@@ -20,11 +19,14 @@ export const routes = {
 
 export function createPanesMap() {
   return {
-    ...backendPanesMap,
-    ...classicPanesMap,
-    ...stepPanesMap,
-    ...projectPanesMap,
-    ...quizPanesMap
+    // the route to use this panes map on
+    [types.onRouteChallenges]: {
+      [backendPanesMap]: backendPanesMap,
+      [classicPanesMap]: classicPanesMap,
+      [stepPanesMap]: stepPanesMap,
+      [projectPanesMap]: projectPanesMap,
+      [quizPanesMap]: quizPanesMap
+    }
   };
 }
 

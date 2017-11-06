@@ -21,7 +21,7 @@ const mapStateToProps = createSelector(
     let lastDividerPosition = 0;
     return {
       panes: panes
-        .map(name => panesByName[name])
+        .map(({ name }) => panesByName[name])
         .filter(({ isHidden })=> !isHidden)
         .map((pane, index, { length: numOfPanes }) => {
           const dividerLeft = pane.dividerLeft || 0;

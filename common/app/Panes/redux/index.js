@@ -1,6 +1,6 @@
-import clamp from 'lodash/clamp';
+import { isLocationAction } from 'redux-first-router';
+import _ from 'lodash';
 import {
-  combineActions,
   composeReducers,
   createAction,
   createTypes,
@@ -11,6 +11,7 @@ import ns from '../ns.json';
 
 import windowEpic from './window-epic.js';
 import dividerEpic from './divider-epic.js';
+import { challengeMetaSelector } from '../../routes/challenges/redux';
 
 const isDev = process.env.NODE_ENV !== 'production';
 export const epics = [
@@ -83,9 +84,37 @@ function getDividerLeft(numOfPanes, index) {
   return dividerLeft;
 }
 
-export default function createPanesAspects(typeToName) {
+function forEachConfig(config, cb) {
+  return _.forEach(config, (val, key) => {
+    // val is a sub config
+    if (_.isObject(val) && !val.name) {
+      return forEachConfig(val, cb);
+    }
+    return cb(config, key);
+  });
+}
+
+function reduceConfig(config, cb, acc = {}) {
+  return _.reduce(config, (acc, val, key) => {
+    if (_.isObject(val) && !val.name) {
+      return reduceConfig(val, cb, acc);
+    }
+    return cb(acc, val, key);
+  }, acc);
+}
+
+const getPaneName = (panes, index) => panes[index].name;
+
+export const createPaneMap = (ns, getPanesMap, filter = _.stubTrue) => {
+  return Object.defineProperties(getPanesMap(), {
+    toString: { value: () => ns },
+    filter: { value: filter }
+  });
+};
+
+export default function createPanesAspects(config) {
   if (isDev) {
-    Object.keys(typeToName).forEach(actionType => {
+    forEachConfig(config, (typeToName, actionType) => {
       if (actionType === 'undefined') {
         throw new Error(
           `action type for ${typeToName[actionType]} is undefined`
@@ -93,27 +122,36 @@ export default function createPanesAspects(typeToName) {
       }
     });
   }
-  const nameToType = Object.keys(typeToName).reduce((map, type) => {
-    map[typeToName[type]] = type;
-    return map;
-  }, {});
+  const typeToName = reduceConfig(config, (acc, val, type) => {
+    const name = _.isObject(val) ? val.name : val;
+    acc[type] = name;
+    return acc;
+  });
 
-  function getInitialState() {
-    return {
-      ...initialState,
-      nameToType
-    };
-  }
-
-  function middleware() {
+  function middleware({ getState }) {
+    // show panes on challenge route
+    // select panes map on viewType (this is state dependent)
+    // filter panes out on state
     return next => action => {
-      let finalAction = action;
+      let finalAction = { ...action };
+      if (isLocationAction(action)) {
+        // location matches a panes route
+        if (config[action.type]) {
+          const paneMap = config[action.type];
+          const view = challengeMetaSelector(getState());
+          const viewMap = paneMap[view] || {};
+          finalAction.meta.panesView = viewMap;
+        } else {
+          finalAction.meta.panesView = {};
+        }
+      }
       if (isPanesAction(action, typeToName)) {
         finalAction = {
           ...action,
           meta: {
             ...action.meta,
-            isPaneAction: true
+            isPaneAction: true,
+            paneName: typeToName[action.type]
           }
         };
       }
@@ -132,13 +170,16 @@ export default function createPanesAspects(typeToName) {
         [types.dividerMoved]: (state, { payload: clientX }) => {
           const { width, pressedDivider: paneName } = state;
           const dividerBuffer = (200 / width) * 100;
-          const paneIndex = state.panes.indexOf(paneName);
+          const paneIndex =
+            _.findIndex(state.panes, ({ name }) => paneName === name);
           const currentPane = state.panesByName[paneName];
-          const rightPane = state.panesByName[state.panes[paneIndex + 1]] || {};
-          const leftPane = state.panesByName[state.panes[paneIndex - 1]] || {};
+          const rightPane =
+            state.panesByName[getPaneName(state.panes, paneIndex + 1)] || {};
+          const leftPane =
+            state.panesByName[getPaneName(state.panes, paneIndex - 1)] || {};
           const rightBound = (rightPane.dividerLeft || 100) - dividerBuffer;
           const leftBound = (leftPane.dividerLeft || 0) + dividerBuffer;
-          const newPosition = clamp(
+          const newPosition = _.clamp(
             (clientX / width) * 100,
             leftBound,
             rightBound
@@ -167,37 +208,34 @@ export default function createPanesAspects(typeToName) {
           panesByName: {},
           pressedDivider: null
         }),
-        [
-          combineActions(
-            panesWillMount,
-            panesUpdated
-          )
-        ]: (state, { payload: panes }) => {
-          const numOfPanes = panes.length;
-          return {
-            ...state,
-            panes,
-            panesByName: panes.reduce((panes, name, index) => {
-              const dividerLeft = getDividerLeft(numOfPanes, index);
-              panes[name] = {
-                name,
-                dividerLeft,
-                isHidden: false
-              };
-              return panes;
-            }, {})
-          };
-        },
         [types.updateNavHeight]: (state, { payload: navHeight }) => ({
           ...state,
           navHeight
         })
       }),
-      getInitialState()
+      initialState,
     ),
-    function metaReducer(state = getInitialState(), action) {
+    function metaReducer(state = initialState, action) {
+      if (action.meta && action.meta.panesView) {
+        const panesView = action.meta.panesView;
+        const panes = _.map(panesView, ({ name }, type) => ({ name, type }));
+        const numOfPanes = Object.keys(panes).length;
+        return {
+          ...state,
+          panes,
+          panesByName: panes.reduce((panes, { name }, index) => {
+            const dividerLeft = getDividerLeft(numOfPanes, index);
+            panes[name] = {
+              name,
+              dividerLeft,
+              isHidden: false
+            };
+            return panes;
+          }, {})
+        };
+      }
       if (action.meta && action.meta.isPaneAction) {
-        const name = typeToName[action.type];
+        const name = action.meta.paneName;
         const oldPane = state.panesByName[name];
         const pane = {
           ...oldPane,
@@ -207,14 +245,14 @@ export default function createPanesAspects(typeToName) {
           ...state.panesByName,
           [name]: pane
         };
-        const numOfPanes = state.panes.reduce((sum, name) => {
+        const numOfPanes = state.panes.reduce((sum, { name }) => {
           return panesByName[name].isHidden ? sum : sum + 1;
         }, 0);
         let numOfHidden = 0;
         return {
           ...state,
           panesByName: state.panes.reduce(
-            (panesByName, name, index) => {
+            (panesByName, { name }, index) => {
               if (!panesByName[name].isHidden) {
                 const dividerLeft = getDividerLeft(
                   numOfPanes,

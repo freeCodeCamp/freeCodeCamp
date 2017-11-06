@@ -27,23 +27,6 @@ const propTypes = {
 };
 
 export class PanesContainer extends PureComponent {
-  componentWillMount() {
-    this.props.panesWillMount(Object.keys(this.props.nameToComponent));
-  }
-  componentDidMount() {
-    this.props.panesMounted();
-  }
-
-  componentWillUnmount() {
-    this.props.panesWillUnmount();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.nameToComponent !== this.props.nameToComponent) {
-      this.props.panesUpdated(Object.keys(nextProps.nameToComponent));
-    }
-  }
-
   render() {
     return (
       <Panes { ...this.props } />

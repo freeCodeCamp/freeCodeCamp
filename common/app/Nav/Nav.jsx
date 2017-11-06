@@ -32,7 +32,7 @@ import {
   isSignedInSelector,
   signInLoadingSelector
 } from '../redux';
-import { nameToTypeSelector, panesSelector } from '../Panes/redux';
+import { panesSelector } from '../Panes/redux';
 
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
@@ -43,20 +43,18 @@ const mapStateToProps = createSelector(
   dropdownSelector,
   signInLoadingSelector,
   panesSelector,
-  nameToTypeSelector,
   (
     { username, picture, points },
     isSignedIn,
     isDropdownOpen,
     showLoading,
     panes,
-    nameToType
   ) => {
     return {
-      panes: panes.map(name => {
+      panes: panes.map(({ name, type }) => {
         return {
           content: name,
-          action: nameToType[name]
+          action: type
         };
       }, {}),
       isDropdownOpen,

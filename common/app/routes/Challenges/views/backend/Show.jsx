@@ -3,15 +3,19 @@ import React from 'react';
 import BackEnd from './Back-End.jsx';
 import { types } from '../../redux';
 import Panes from '../../../../Panes';
+import { createPaneMap } from '../../../../Panes/redux';
 import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
 
-export const panesMap = {
-  [types.toggleMap]: 'Map',
-  [types.toggleMain]: 'Main'
-};
+export const panesMap = createPaneMap(
+  'backend',
+  () => ({
+    [types.toggleMap]: 'Map',
+    [types.toggleMain]: 'Main'
+  })
+);
 
 const nameToComponentDef = {
   Map: {
