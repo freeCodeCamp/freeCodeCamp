@@ -11,7 +11,7 @@ import ns from '../ns.json';
 
 import windowEpic from './window-epic.js';
 import dividerEpic from './divider-epic.js';
-import { challengeMetaSelector } from '../../routes/challenges/redux';
+import { challengeMetaSelector } from '../../routes/Challenges/redux';
 import { types as app } from '../../redux';
 
 const isDev = process.env.NODE_ENV !== 'production';

@@ -106,25 +106,19 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
   };
 }
 
-const propTypes = navLinks.reduce(
-  (pt, { content }) => {
-    const handler = `handle${capitalize(content)}Click`;
-    pt[handler] = PropTypes.func.isRequired;
-    return pt;
-  },
-  {
-    panes: PropTypes.array,
-    clickOnLogo: PropTypes.func.isRequired,
-    closeDropdown: PropTypes.func.isRequired,
-    isDropdownOpen: PropTypes.bool,
-    openDropdown: PropTypes.func.isRequired,
-    picture: PropTypes.string,
-    points: PropTypes.number,
-    showLoading: PropTypes.bool,
-    signedIn: PropTypes.bool,
-    username: PropTypes.string
-  }
-);
+const propTypes = {
+  clickOnLogo: PropTypes.func.isRequired,
+  clickOnMap: PropTypes.func.isRequired,
+  closeDropdown: PropTypes.func.isRequired,
+  isDropdownOpen: PropTypes.bool,
+  openDropdown: PropTypes.func.isRequired,
+  panes: PropTypes.array,
+  picture: PropTypes.string,
+  points: PropTypes.number,
+  showLoading: PropTypes.bool,
+  signedIn: PropTypes.bool,
+  username: PropTypes.string
+};
 
 export class FCCNav extends React.Component {
   renderLink(isNavItem, { isReact, isDropdown, content, link, links, target }) {
