@@ -5,12 +5,9 @@ import { dayCount } from '../utils/date-utils';
 const daysBetween = 1.5;
 
 export function prepUniqueDays(cals, tz = 'UTC') {
-
-  return _(cals)
-    .map(ts => moment(ts).tz(tz).startOf('day').valueOf())
-    .uniq()
-    .sort()
-    .value();
+  return _.uniq(
+    _.map(cals, ts => moment(ts).tz(tz).startOf('day').valueOf())
+  ).sort();
 }
 
 export function calcCurrentStreak(cals, tz = 'UTC') {
