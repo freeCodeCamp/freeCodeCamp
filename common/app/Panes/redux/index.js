@@ -112,7 +112,7 @@ function reduceConfig(config, cb, acc = {}) {
 
 const getPaneName = (panes, index) => panes[index].name;
 
-export const createPaneMap = (ns, getPanesMap, filter = _.stubTrue) => {
+export const createPaneMap = (ns, getPanesMap) => {
   const panesMap = _.reduce(getPanesMap(), (map, val, key) => {
     let paneConfig = val;
     if (typeof val === 'string') {
@@ -123,10 +123,7 @@ export const createPaneMap = (ns, getPanesMap, filter = _.stubTrue) => {
     map[key] = paneConfig;
     return map;
   }, {});
-  return Object.defineProperties(panesMap, {
-    toString: { value: () => ns },
-    filter: { value: filter }
-  });
+  return Object.defineProperty(panesMap, 'toString', { value: () => ns });
 };
 
 export default function createPanesAspects(config) {
