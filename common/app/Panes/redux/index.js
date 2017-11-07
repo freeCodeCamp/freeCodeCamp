@@ -154,8 +154,8 @@ export default function createPanesAspects(config) {
         // location matches a panes route
         if (config[action.type]) {
           const paneMap = previousMap = config[action.type];
-          const view = challengeMetaSelector(getState());
-          const viewMap = paneMap[view] || {};
+          const meta = challengeMetaSelector(getState());
+          const viewMap = paneMap[meta.viewType] || {};
           finalAction.meta.panesView = viewMap;
         } else {
           finalAction.meta.panesView = {};
