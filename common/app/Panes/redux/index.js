@@ -113,7 +113,17 @@ function reduceConfig(config, cb, acc = {}) {
 const getPaneName = (panes, index) => panes[index].name;
 
 export const createPaneMap = (ns, getPanesMap, filter = _.stubTrue) => {
-  return Object.defineProperties(getPanesMap(), {
+  const panesMap = _.reduce(getPanesMap(), (map, val, key) => {
+    let paneConfig = val;
+    if (typeof val === 'string') {
+      paneConfig = {
+        name: val
+      };
+    }
+    map[key] = paneConfig;
+    return map;
+  }, {});
+  return Object.defineProperties(panesMap, {
     toString: { value: () => ns },
     filter: { value: filter }
   });
