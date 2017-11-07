@@ -73,8 +73,7 @@ function sendCertifiedEmail(
     username,
     isFrontEndCert,
     isBackEndCert,
-    isDataVisCert,
-    challengeMap
+    isDataVisCert
   },
   send$
 ) {
