@@ -110,7 +110,7 @@ function reduceConfig(config, cb, acc = {}) {
   }, acc);
 }
 
-const getPaneName = (panes, index) => panes[index].name;
+const getPaneName = (panes, index) => (panes[index] || {}).name || '';
 
 export const createPaneMap = (ns, getPanesMap) => {
   const panesMap = _.reduce(getPanesMap(), (map, val, key) => {
