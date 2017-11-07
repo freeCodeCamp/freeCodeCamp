@@ -2,6 +2,7 @@ import debug from 'debug';
 import { renderToString } from 'react-dom/server';
 import createMemoryHistory from 'history/createMemoryHistory';
 import { NOT_FOUND } from 'redux-first-router';
+import devtoolsEnhancer from 'remote-redux-devtools';
 
 import {
   loggerMiddleware,
@@ -58,6 +59,9 @@ export default function reactSubRouter(app) {
     createApp({
       serviceOptions,
       middlewares,
+      enhancers: [
+        devtoolsEnhancer({ name: 'server' })
+      ],
       history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
       defaultStaet: { app: { lang } }
     })
