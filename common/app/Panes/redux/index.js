@@ -12,6 +12,7 @@ import ns from '../ns.json';
 import windowEpic from './window-epic.js';
 import dividerEpic from './divider-epic.js';
 import { challengeMetaSelector } from '../../routes/challenges/redux';
+import { types as app } from '../../redux';
 
 const isDev = process.env.NODE_ENV !== 'production';
 export const epics = [
@@ -20,6 +21,7 @@ export const epics = [
 ];
 
 export const types = createTypes([
+  'panesUpdatedThroughFetch',
   'panesMounted',
   'panesUpdated',
   'panesWillMount',
@@ -36,6 +38,11 @@ export const types = createTypes([
   'hidePane'
 ], ns);
 
+export const panesUpdatedThroughFetch = createAction(
+  types.panesUpdatedThroughFetch,
+  null,
+  panesView => ({ panesView })
+);
 export const panesMounted = createAction(types.panesMounted);
 export const panesUpdated = createAction(types.panesUpdated);
 export const panesWillMount = createAction(types.panesWillMount);
@@ -129,6 +136,8 @@ export default function createPanesAspects(config) {
   });
 
   function middleware({ getState }) {
+    // we cache the previous map so that we can attach it to the fetchChallenge
+    let previousMap;
     // show panes on challenge route
     // select panes map on viewType (this is state dependent)
     // filter panes out on state
@@ -137,7 +146,7 @@ export default function createPanesAspects(config) {
       if (isLocationAction(action)) {
         // location matches a panes route
         if (config[action.type]) {
-          const paneMap = config[action.type];
+          const paneMap = previousMap = config[action.type];
           const view = challengeMetaSelector(getState());
           const viewMap = paneMap[view] || {};
           finalAction.meta.panesView = viewMap;
@@ -155,7 +164,13 @@ export default function createPanesAspects(config) {
           }
         };
       }
-      return next(finalAction);
+      const result = next(finalAction);
+      if (action.type === app.fetchChallenge.complete) {
+        const meta = challengeMetaSelector(getState());
+        const viewMap = previousMap[meta.viewType] || {};
+        next(panesUpdatedThroughFetch(viewMap));
+      }
+      return result;
     };
   }
 
