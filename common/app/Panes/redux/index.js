@@ -126,6 +126,7 @@ export const createPaneMap = (ns, getPanesMap) => {
   return Object.defineProperty(panesMap, 'toString', { value: () => ns });
 };
 
+
 export default function createPanesAspects(config) {
   if (isDev) {
     forEachConfig(config, (typeToName, actionType) => {
@@ -143,6 +144,12 @@ export default function createPanesAspects(config) {
   });
 
   function middleware({ getState }) {
+    const filterPanes = panesMap => _.reduce(panesMap, (panes, pane, type) => {
+      if (typeof pane.filter !== 'function' || pane.filter(getState())) {
+        panes[type] = pane;
+      }
+      return panes;
+    }, {});
     // we cache the previous map so that we can attach it to the fetchChallenge
     let previousMap;
     // show panes on challenge route
@@ -156,7 +163,7 @@ export default function createPanesAspects(config) {
           const paneMap = previousMap = config[action.type];
           const meta = challengeMetaSelector(getState());
           const viewMap = paneMap[meta.viewType] || {};
-          finalAction.meta.panesView = viewMap;
+          finalAction.meta.panesView = filterPanes(viewMap);
         } else {
           finalAction.meta.panesView = {};
         }
@@ -175,7 +182,7 @@ export default function createPanesAspects(config) {
       if (action.type === app.fetchChallenge.complete) {
         const meta = challengeMetaSelector(getState());
         const viewMap = previousMap[meta.viewType] || {};
-        next(panesUpdatedThroughFetch(viewMap));
+        next(panesUpdatedThroughFetch(filterPanes(viewMap)));
       }
       return result;
     };
