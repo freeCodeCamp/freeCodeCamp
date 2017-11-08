@@ -10,7 +10,7 @@ import {
 import { LinkContainer } from 'react-router-bootstrap';
 import { reduxForm } from 'redux-form';
 import { isEmail } from 'validator';
-import { getValidationState } from '../../../../utils/form';
+import { getValidationState, DOMOnlyProps } from '../../../../utils/form';
 import { updateMyEmail } from '../../redux';
 
 const actions = {
@@ -88,10 +88,10 @@ export class UpdateEmail extends React.Component {
               validationState={ getValidationState(email) }
               >
               <FormControl
-                autofocus={ true }
+                autoFocus={ true }
                 placeholder='Enter your new email'
                 type='email'
-                { ...email }
+                { ...DOMOnlyProps(email) }
               />
               {
                 !email.error ?
@@ -107,7 +107,7 @@ export class UpdateEmail extends React.Component {
               <FormControl
                 placeholder='re-type your email address'
                 type='email'
-                { ...duplicate }
+                { ...DOMOnlyProps(duplicate) }
               />
               {
                 !duplicate.error ?
