@@ -5,6 +5,7 @@ import { renderToString } from 'redux-epic';
 
 import createApp from '../../common/app';
 import provideStore from '../../common/app/provide-store';
+import { ifNoUserRedirectTo } from '../utils/middleware';
 
 
 const log = debug('fcc:react-server');
@@ -32,6 +33,10 @@ export default function reactSubRouter(app) {
 
   // These routes are in production
   routes.forEach((route) => {
+    if (route.startsWith('/settings')) {
+      router.get(route, ifNoUserRedirectTo('/map'), serveReactApp);
+      return;
+    }
     router.get(route, serveReactApp);
   });
 
