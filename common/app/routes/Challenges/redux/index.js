@@ -204,6 +204,9 @@ export const challengeMetaSelector = createSelector(
   }
 );
 
+export const showPreviewSelector = state =>
+  !!challengeMetaSelector(state).showPreview;
+
 export default combineReducers(
   handleActions(
     () => ({

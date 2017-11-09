@@ -1,6 +1,8 @@
-import { isLocationAction } from 'redux-first-router';
 import _ from 'lodash';
+import invariant from 'invariant';
+import { isLocationAction } from 'redux-first-router';
 import {
+  addNS,
   composeReducers,
   createAction,
   createTypes,
@@ -14,7 +16,6 @@ import dividerEpic from './divider-epic.js';
 import { challengeMetaSelector } from '../../routes/Challenges/redux';
 import { types as app } from '../../redux';
 
-const isDev = process.env.NODE_ENV !== 'production';
 export const epics = [
   windowEpic,
   dividerEpic
@@ -41,7 +42,7 @@ export const types = createTypes([
 export const panesUpdatedThroughFetch = createAction(
   types.panesUpdatedThroughFetch,
   null,
-  panesView => ({ panesView })
+  panesMap => ({ panesMap })
 );
 export const panesMounted = createAction(types.panesMounted);
 export const panesUpdated = createAction(types.panesUpdated);
@@ -57,14 +58,15 @@ export const windowResized = createAction(types.windowResized);
 export const updateNavHeight = createAction(types.updateNavHeight);
 export const hidePane = createAction(types.hidePane);
 
-const initialState = {
+const defaultState = {
   height: 600,
   width: 800,
   navHeight: 50,
   panes: [],
   panesByName: {},
   pressedDivider: null,
-  nameToType: {}
+  viewMap: {},
+  typeToName: {}
 };
 export const getNS = state => state[ns];
 export const heightSelector = state => {
@@ -77,7 +79,8 @@ export const panesByNameSelector = state => getNS(state).panesByName;
 export const pressedDividerSelector =
   state => getNS(state).pressedDivider;
 export const widthSelector = state => getNS(state).width;
-export const nameToTypeSelector = state => getNS(state).nameToType;
+export const viewMapSelector = state => getNS(state).viewMap;
+export const typeToNameSelector = state => getNS(state).typeToName;
 
 function isPanesAction({ type } = {}, typeToName) {
   return !!typeToName[type];
@@ -91,67 +94,33 @@ function getDividerLeft(numOfPanes, index) {
   return dividerLeft;
 }
 
-function forEachConfig(config, cb) {
-  return _.forEach(config, (val, key) => {
-    // val is a sub config
-    if (_.isObject(val) && !val.name) {
-      return forEachConfig(val, cb);
-    }
-    return cb(config, key);
+function checkForTypeKeys(panesMap) {
+  _.forEach(panesMap, (_, actionType) => {
+    invariant(
+      actionType !== 'undefined',
+      `action type for ${panesMap[actionType]} is undefined`
+    );
   });
-}
-
-function reduceConfig(config, cb, acc = {}) {
-  return _.reduce(config, (acc, val, key) => {
-    if (_.isObject(val) && !val.name) {
-      return reduceConfig(val, cb, acc);
-    }
-    return cb(acc, val, key);
-  }, acc);
+  return panesMap;
 }
 
 const getPaneName = (panes, index) => (panes[index] || {}).name || '';
 
-export const createPaneMap = (ns, getPanesMap) => {
-  const panesMap = _.reduce(getPanesMap(), (map, val, key) => {
-    let paneConfig = val;
-    if (typeof val === 'string') {
-      paneConfig = {
-        name: val
-      };
-    }
-    map[key] = paneConfig;
-    return map;
-  }, {});
-  return Object.defineProperty(panesMap, 'toString', { value: () => ns });
-};
+export const createPaneMap = (ns, mapStateToPanes) => addNS(ns, state =>
+  checkForTypeKeys(mapStateToPanes(state)));
 
-
-export default function createPanesAspects(config) {
-  if (isDev) {
-    forEachConfig(config, (typeToName, actionType) => {
-      if (actionType === 'undefined') {
-        throw new Error(
-          `action type for ${typeToName[actionType]} is undefined`
-        );
-      }
-    });
-  }
-  const typeToName = reduceConfig(config, (acc, val, type) => {
-    const name = _.isObject(val) ? val.name : val;
+export const createTypeToName = panesMap =>
+  _.reduce(panesMap, (acc, name, type) => {
     acc[type] = name;
     return acc;
-  });
+  }, {});
+
+export default function createPanesAspects(config) {
+  checkForTypeKeys(config);
 
   function middleware({ getState }) {
-    const filterPanes = panesMap => _.reduce(panesMap, (panes, pane, type) => {
-      if (typeof pane.filter !== 'function' || pane.filter(getState())) {
-        panes[type] = pane;
-      }
-      return panes;
-    }, {});
-    // we cache the previous map so that we can attach it to the fetchChallenge
     let previousMap;
+    // we cache the previous map so that we can attach it to the fetchChallenge
     // show panes on challenge route
     // select panes map on viewType (this is state dependent)
     // filter panes out on state
@@ -160,14 +129,18 @@ export default function createPanesAspects(config) {
       if (isLocationAction(action)) {
         // location matches a panes route
         if (config[action.type]) {
-          const paneMap = previousMap = config[action.type];
+          const viewMap = previousMap = config[action.type];
           const meta = challengeMetaSelector(getState());
-          const viewMap = paneMap[meta.viewType] || {};
-          finalAction.meta.panesView = filterPanes(viewMap);
+          const mapStateToPanes = viewMap[meta.viewType] || _.stubObject;
+          const panesMap = mapStateToPanes(getState());
+          finalAction.meta.panesMap = panesMap;
+          finalAction.meta.typeToName = createTypeToName(panesMap);
         } else {
-          finalAction.meta.panesView = {};
+          finalAction.meta.panesMap = {};
+          finalAction.meta.typeToName = {};
         }
       }
+      const typeToName = typeToNameSelector(getState());
       if (isPanesAction(action, typeToName)) {
         finalAction = {
           ...action,
@@ -181,8 +154,9 @@ export default function createPanesAspects(config) {
       const result = next(finalAction);
       if (action.type === app.fetchChallenge.complete) {
         const meta = challengeMetaSelector(getState());
-        const viewMap = previousMap[meta.viewType] || {};
-        next(panesUpdatedThroughFetch(filterPanes(viewMap)));
+        const mapStateToPanes = previousMap[meta.viewType] || _.stubObject;
+        const panesMap = mapStateToPanes(getState());
+        next(panesUpdatedThroughFetch(panesMap));
       }
       return result;
     };
@@ -242,12 +216,12 @@ export default function createPanesAspects(config) {
           navHeight
         })
       }),
-      initialState,
+      defaultState,
     ),
-    function metaReducer(state = initialState, action) {
-      if (action.meta && action.meta.panesView) {
-        const panesView = action.meta.panesView;
-        const panes = _.map(panesView, ({ name }, type) => ({ name, type }));
+    function metaReducer(state = defaultState, action) {
+      if (action.meta && action.meta.panesMap) {
+        const panesMap = action.meta.panesMap;
+        const panes = _.map(panesMap, (name, type) => ({ name, type }));
         const numOfPanes = Object.keys(panes).length;
         return {
           ...state,
