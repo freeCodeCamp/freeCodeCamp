@@ -156,18 +156,7 @@ export default function createPanesAspects(config) {
     // select panes map on viewType (this is state dependent)
     // filter panes out on state
     return next => action => {
-      let finalAction = { ...action };
-      if (isLocationAction(action)) {
-        // location matches a panes route
-        if (config[action.type]) {
-          const paneMap = previousMap = config[action.type];
-          const meta = challengeMetaSelector(getState());
-          const viewMap = paneMap[meta.viewType] || {};
-          finalAction.meta.panesView = filterPanes(viewMap);
-        } else {
-          finalAction.meta.panesView = {};
-        }
-      }
+      let finalAction = action;
       if (isPanesAction(action, typeToName)) {
         finalAction = {
           ...action,
@@ -179,6 +168,17 @@ export default function createPanesAspects(config) {
         };
       }
       const result = next(finalAction);
+      if (isLocationAction(action)) {
+        // location matches a panes route
+        if (config[action.type]) {
+          const paneMap = previousMap = config[action.type];
+          const meta = challengeMetaSelector(getState());
+          const viewMap = paneMap[meta.viewType] || {};
+          next(panesUpdatedThroughFetch(filterPanes(viewMap)));
+        } else {
+          next(panesUpdatedThroughFetch({}));
+        }
+      }
       if (action.type === app.fetchChallenge.complete) {
         const meta = challengeMetaSelector(getState());
         const viewMap = previousMap[meta.viewType] || {};
