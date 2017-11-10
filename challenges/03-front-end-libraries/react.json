@@ -6,27 +6,33 @@
   "challenges": [
     {
       "id": "587d7dbc367417b2b2512bb1",
-      "title": "Introduction to the React Challenges",
+      "title": "Create a Simple JSX Element",
       "description": [
-        [
-          "",
-          "",
-          "React is a JavaScript library designed to make it easier to build complex user interfaces. React does this in a few ways:<br><br><ol><li>React allows HTML to render from a JavaScript file.</li><li>React breaks a website's parts into Components that can then be combined to build pages.</li><li>React Components can pass data to each other as properties</li></ol><br><br>React uses a virtual Document Object Model. Instead of changing the DOM directly, React makes a simplified copy of the DOM (the virtual DOM) when the page loads. This allows React to make changes to elements on the page without re-rendering the entire page. This can improve the responsiveness and functionality of single-page applications.<br><br>While not part of the React library and not required, JSX is often paired with React. JSX is a preprocessor for JavaScript written in a syntax akin to XML that results in more readable code.<br><br><strong>Fun fact:</strong> freeCodeCamp is built using React.",
-          ""
-        ],
-        [
-          "",
-          "",
-          "The React challenges have not been ported into freeCodeCamp yet. You can visit <a href=\"http://hysterical-amusement.surge.sh/\" target=\"_blank\">this link to work through the alpha version</a> of these challenges. If you have feedback, you can open an issue (or pull request) directly on <a href=\"https://github.com/bonham000/fcc-react-tests-module\" target=\"_blank\">this repository.</a>",
-          ""
-        ]
+        "<strong>Intro:</strong> React is an Open Source view library created and maintained by Facebook. It's a great tool to render the User Interface (UI) of modern web applications.",
+        "React uses a syntax extension of JavaScript called JSX that allows you to write HTML directly within JavaScript. This has several benefits. It lets you use the full programmatic power of JavaScript within HTML, and helps to keep your code readable. For the most part, JSX is similar to the HTML that you have already learned, however there are a few key differences that will be covered throughout these challenges.",
+        "For instance, because JSX is a syntactic extension of JavaScript, you can actually write JavaScript directly within JSX. To do this, you simply include the code you want to be treated as JavaScript within curly braces: <code>{ 'this is treated as JavaScript code' }</code>. Keep this in mind, since it's used in several future challenges.",
+        "However, because JSX is not valid JavaScript, JSX code must be compiled into JavaScript. The transpiler Babel is a popular tool for this process. For your convenience, it's already added behind the scenes for these challenges. If you happen to write syntactically invalid JSX, you will see the first test in these challenges fail.",
+        "<hr>",
+        "<strong>Instructions:</strong> The current code uses JSX to assign a <code>div</code> element to the constant <code>JSX</code>. Replace the <code>div</code> with an <code>h1</code> element and add the text <code>Hello JSX!</code> inside it."
       ],
-      "releasedOn": "Feb 17, 2017",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
-      "challengeType": 7,
-      "isRequired": false,
+      "files": {
+        "indexjsx": {
+          "key": "indexjxs",
+          "ext": "jsx",
+          "name": "index",
+          "contents": [
+            "",
+            "var jsx = <div></div>;",
+            ""
+          ]
+        }
+      },
+      "tests": [
+        "assert(Enzyme.shallow(jsx).type === 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
+        "assert(Enzyme.shallow(jsx).children() === 'Hello JSX!', 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
+      ],
+      "type": "modern",
+      "isRequired": true,
       "translations": {}
     }
   ]
