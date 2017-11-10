@@ -1292,17 +1292,17 @@
       "type": "bonfire",
       "title": "Problem 43: Sub-string divisibility",
       "tests": [
-        "assert.strictEqual(euler43(), 16695334890, 'message: <code>euler43()</code> should return 16695334890.');"
+        "assert.deepEqual(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ], 'message: <code>substringDivisibility()</code> should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler43() {",
+        "function substringDivisibility() {",
         "  // Good luck!",
-        "  return true;",
+        "  return [];",
         "}",
         "",
-        "euler43();"
+        "substringDivisibility();"
       ],
       "description": [
         "The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.",
@@ -1314,7 +1314,7 @@
         "d6d7d8=572 is divisible by 11",
         "d7d8d9=728 is divisible by 13",
         "d8d9d10=289 is divisible by 17",
-        "Find the sum of all 0 to 9 pandigital numbers with this property."
+        "Find the numbers of all 0 to 9 pandigital numbers with this property."
       ]
     },
     {
