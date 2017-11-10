@@ -1194,22 +1194,25 @@
       "type": "bonfire",
       "title": "Problem 39: Integer right triangles",
       "tests": [
-        "assert.strictEqual(euler39(), 840, 'message: <code>euler39()</code> should return 840.');"
+        "assert(intRightTriangles(500) == 420, 'message: <code>intRightTriangles(500)</code> should return 420.');",
+        "assert(intRightTriangles(800) == 420, 'message: <code>intRightTriangles(800)</code> should return 420.');",
+        "assert(intRightTriangles(900) == 840, 'message: <code>intRightTriangles(900)</code> should return 840.');",
+        "assert(intRightTriangles(1000) == 840, 'message: <code>intRightTriangles(1000)</code> should return 840.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler39() {",
+        "function intRightTriangles(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler39();"
+        "intRightTriangles(1000);"
       ],
       "description": [
         "If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.",
         "{20,48,52}, {24,45,51}, {30,40,50}",
-        "For which value of p ≤ 1000, is the number of solutions maximised?"
+        "For which value of p ≤ n, is the number of solutions maximised?"
       ]
     },
     {
