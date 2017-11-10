@@ -7,20 +7,21 @@ import { removeCodeUri, getCodeUri } from '../utils/code-uri';
 import { setContent } from '../../common/utils/polyvinyl';
 
 import {
+  types as app,
   userSelector,
   challengeSelector
 } from '../../common/app/redux';
 import { makeToast } from '../../common/app/Toasts/redux';
 import {
   types,
-  savedCodeFound,
   updateMain,
   lockUntrustedCode,
 
   keySelector,
-  filesSelector,
   codeLockedSelector
-} from '../../common/app/routes/challenges/redux';
+} from '../../common/app/routes/Challenges/redux';
+
+import { filesSelector, savedCodeFound } from '../../common/app/files';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -59,18 +60,19 @@ function legacyToFile(code, files, key) {
 }
 
 export function clearCodeEpic(actions, { getState }) {
-  return actions::ofType(types.clearSavedCode)
-    .map(() => {
+  return actions::ofType(types.submitChallenge.complete)
+    .do(() => {
       const { id } = challengeSelector(getState());
       store.remove(id);
     })
     .ignoreElements();
 }
+
 export function saveCodeEpic(actions, { getState }) {
-  return actions::ofType(types.saveCode)
+  return actions::ofType(types.executeChallenge)
     // do not save challenge if code is locked
     .filter(() => !codeLockedSelector(getState()))
-    .map(() => {
+    .do(() => {
       const { id } = challengeSelector(getState());
       const files = filesSelector(getState());
       store.set(id, files);
@@ -79,7 +81,11 @@ export function saveCodeEpic(actions, { getState }) {
 }
 
 export function loadCodeEpic(actions, { getState }, { window, location }) {
-  return actions::ofType(types.loadCode)
+  return Observable.merge(
+      actions::ofType(app.appMounted),
+      actions::ofType(types.onRouteChallenges)
+        .distinctUntilChanged(({ payload: { dashedName } }) => dashedName)
+    )
     .flatMap(() => {
       let finalFiles;
       const state = getState();

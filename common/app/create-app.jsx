@@ -1,42 +1,35 @@
 import { Observable } from 'rx';
-import { match } from 'react-router';
 import { compose, createStore, applyMiddleware } from 'redux';
+import { selectLocationState, connectRoutes } from 'redux-first-router';
+import { combineReducers } from 'berkeleys-redux-utils';
 
 import { createEpic } from 'redux-epic';
-import createReducer from './create-reducer';
-import createRoutes from './create-routes.js';
+import appReducer from './reducer.js';
+import routesMap from './routes-map.js';
 import createPanesMap from './create-panes-map.js';
 import createPanesAspects from './Panes/redux';
+import addLangToRoutesEnhancer from './Router/redux/add-lang-enhancer.js';
 import epics from './epics';
 
+import { onBeforeChange } from './utils/redux-first-router.js';
 import servicesCreator from '../utils/services-creator';
 
-const createRouteProps = Observable.fromNodeCallback(match);
-
-//
 // createApp(settings: {
-//   location?: Location|String,
 //   history?: History,
-//   syncHistoryWithStore?: ((history, store) => history) = (x) => x,
-//   initialState?: Object|Void,
+//   defaultState?: Object|Void,
 //   serviceOptions?: Object,
 //   middlewares?: Function[],
-//   sideReducers?: Object
 //   enhancers?: Function[],
 //   epics?: Function[],
 // }) => Observable
 //
 // Either location or history must be defined
 export default function createApp({
-  location,
   history,
-  syncHistoryWithStore = (x) => x,
-  syncOptions = {},
-  initialState,
+  defaultState,
   serviceOptions = {},
   middlewares: sideMiddlewares = [],
   enhancers: sideEnhancers = [],
-  reducers: sideReducers = {},
   epics: sideEpics = [],
   epicOptions: sideEpicOptions = {}
 }) {
@@ -50,12 +43,25 @@ export default function createApp({
     ...epics,
     ...sideEpics
   );
+
+  const {
+    reducer: routesReducer,
+    middleware: routesMiddleware,
+    enhancer: routesEnhancer
+  } = connectRoutes(history, routesMap, { onBeforeChange });
+
+  routesReducer.toString = () => 'location';
+
   const {
     reducer: panesReducer,
     middleware: panesMiddleware
   } = createPanesAspects(createPanesMap());
+
   const enhancer = compose(
+    addLangToRoutesEnhancer(routesMap),
+    routesEnhancer,
     applyMiddleware(
+      routesMiddleware,
       panesMiddleware,
       epicMiddleware,
       ...sideMiddlewares
@@ -64,33 +70,31 @@ export default function createApp({
     // on client side these are things like Redux DevTools
     ...sideEnhancers
   );
-  const reducer = createReducer(
-    {
-      [panesReducer]: panesReducer,
-      ...sideReducers
-    },
+
+  const reducer = combineReducers(
+    appReducer,
+    panesReducer,
+    routesReducer
   );
 
   // create composed store enhancer
   // use store enhancer function to enhance `createStore` function
-  // call enhanced createStore function with reducer and initialState
+  // call enhanced createStore function with reducer and defaultState
   // to create store
-  const store = createStore(reducer, initialState, enhancer);
-  // sync history client side with store.
-  // server side this is an identity function and history is undefined
-  history = syncHistoryWithStore(history, store, syncOptions);
-  const routes = createRoutes(store);
-  // createRouteProps({
-  //   redirect: LocationDescriptor,
-  //   history: History,
-  //   routes: Object
-  // }) => Observable
-  return createRouteProps({ routes, location, history })
-    .map(([ redirect, props ]) => ({
-      redirect,
-      props,
-      reducer,
-      store,
-      epic: epicMiddleware
-    }));
+  const store = createStore(reducer, defaultState, enhancer);
+  const location = selectLocationState(store.getState());
+
+  // ({
+  //   redirect,
+  //   props,
+  //   reducer,
+  //   store,
+  //   epic: epicMiddleware
+  // }));
+  return Observable.of({
+    store,
+    epic: epicMiddleware,
+    location,
+    notFound: false
+  });
 }

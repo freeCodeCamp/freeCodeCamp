@@ -1,12 +1,15 @@
-import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import {
+  createAction,
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
 
 import ns from '../ns.json';
 
 export const types = createTypes([
   'makeToast',
   'removeToast'
-], 'toast');
+], ns);
 
 let key = 0;
 export const makeToast = createAction(
@@ -29,8 +32,8 @@ export const removeToast = createAction(
 
 const initialState = [];
 
-export default function createReducer() {
-  const reducer = handleActions({
+export default handleActions(
+  () => ({
     [types.makeToast]: (state, { payload: toast }) => [
       ...state,
       toast
@@ -38,8 +41,7 @@ export default function createReducer() {
     [types.removeToast]: (state, { payload: key }) => state.filter(
       toast => toast.key !== key
     )
-  }, initialState);
-
-  reducer.toString = () => ns;
-  return reducer;
-}
+  }),
+  initialState,
+  ns
+);

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { NotificationStack } from 'react-notification';
@@ -6,12 +7,12 @@ import { NotificationStack } from 'react-notification';
 import { removeToast } from './redux';
 import {
   submitChallenge,
-  resetChallenge
-} from '../routes/challenges/redux';
+  clickOnReset
+} from '../routes/Challenges/redux';
 
 const registeredActions = {
   submitChallenge,
-  resetChallenge
+  clickOnReset
 };
 const mapStateToProps = state => ({ toasts: state.toasts });
 // we use styles here to overwrite those built into the library

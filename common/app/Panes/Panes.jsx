@@ -1,4 +1,5 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -20,7 +21,7 @@ const mapStateToProps = createSelector(
     let lastDividerPosition = 0;
     return {
       panes: panes
-        .map(name => panesByName[name])
+        .map(({ name }) => panesByName[name])
         .filter(({ isHidden })=> !isHidden)
         .map((pane, index, { length: numOfPanes }) => {
           const dividerLeft = pane.dividerLeft || 0;

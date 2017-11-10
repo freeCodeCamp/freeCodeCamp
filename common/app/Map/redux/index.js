@@ -1,10 +1,11 @@
-import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import {
+  createAction,
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
-import identity from 'lodash/identity';
+import noop from 'lodash/noop';
 import capitalize from 'lodash/capitalize';
-
-import selectChallengeEpic from './select-challenge-epic.js';
 
 import * as utils from './utils.js';
 import ns from '../ns.json';
@@ -13,11 +14,10 @@ import {
   createEventMetaCreator
 } from '../../redux';
 
-export const epics = [
-  selectChallengeEpic
-];
+export const epics = [];
 
 export const types = createTypes([
+  'onRouteMap',
   'initMap',
 
   'toggleThisPanel',
@@ -37,7 +37,7 @@ export const collapseAll = createAction(types.collapseAll);
 export const expandAll = createAction(types.expandAll);
 export const clickOnChallenge = createAction(
   types.clickOnChallenge,
-  identity,
+  noop,
   createEventMetaCreator({
     category: capitalize(ns),
     action: 'click',
@@ -88,42 +88,38 @@ export function makePanelHiddenSelector(name) {
 //     }]
 //   }
 // }
-export default function createReducer() {
-  const reducer = handleActions(
-    {
-      [types.toggleThisPanel]: (state, { payload: name }) => {
-        return {
-          ...state,
-          mapUi: utils.toggleThisPanel(state.mapUi, name)
-        };
-      },
-      [types.collapseAll]: state => {
-        const mapUi = utils.collapseAllPanels(state.mapUi);
-        mapUi.isAllCollapsed = true;
-        return {
-          ...state,
-          mapUi
-        };
-      },
-      [types.expandAll]: state => {
-        const mapUi = utils.expandAllPanels(state.mapUi);
-        mapUi.isAllCollapsed = false;
-        return {
-          ...state,
-          mapUi
-        };
-      },
-      [app.fetchChallenges.complete]: (state, { payload }) => {
-        const { entities, result } = payload;
-        return {
-          ...state,
-          mapUi: utils.createMapUi(entities, result)
-        };
-      }
+export default handleActions(
+  ()=> ({
+    [types.toggleThisPanel]: (state, { payload: name }) => {
+      return {
+        ...state,
+        mapUi: utils.toggleThisPanel(state.mapUi, name)
+      };
     },
-    initialState
-  );
-
-  reducer.toString = () => ns;
-  return reducer;
-}
+    [types.collapseAll]: state => {
+      const mapUi = utils.collapseAllPanels(state.mapUi);
+      mapUi.isAllCollapsed = true;
+      return {
+        ...state,
+        mapUi
+      };
+    },
+    [types.expandAll]: state => {
+      const mapUi = utils.expandAllPanels(state.mapUi);
+      mapUi.isAllCollapsed = false;
+      return {
+        ...state,
+        mapUi
+      };
+    },
+    [app.fetchChallenges.complete]: (state, { payload }) => {
+      const { entities, result } = payload;
+      return {
+        ...state,
+        mapUi: utils.createMapUi(entities, result)
+      };
+    }
+  }),
+  initialState,
+  ns
+);

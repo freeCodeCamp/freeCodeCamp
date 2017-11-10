@@ -1,23 +1,22 @@
-import { createTypes } from 'redux-create-types';
-import { createAction, handleActions } from 'redux-actions';
+import {
+  composeReducers,
+  createAction,
+  createTypes,
+  handleActions
+} from 'berkeleys-redux-utils';
+
+import { types as app } from '../routes/Challenges/redux';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
 export const entitiesSelector = getNS;
 export const types = createTypes([
-  'updateUserPoints',
   'updateUserFlag',
   'updateUserEmail',
   'updateUserLang',
-  'updateUserChallenge',
   'updateUserCurrentChallenge'
 ], ns);
 
-// updateUserPoints(username: String, points: Number) => Action
-export const updateUserPoints = createAction(
-  types.updateUserPoints,
-  (username, points) => ({ username, points })
-);
 // updateUserFlag(username: String, flag: String) => Action
 export const updateUserFlag = createAction(
   types.updateUserFlag,
@@ -34,21 +33,12 @@ export const updateUserLang = createAction(
   (username, lang) => ({ username, languageTag: lang })
 );
 
-// updateUserChallenge(
-//   username: String,
-//   challengeInfo: Object
-// ) => Action
-export const updateUserChallenge = createAction(
-  types.updateUserChallenge,
-  (username, challengeInfo) => ({ username, challengeInfo })
-);
-
 export const updateUserCurrentChallenge = createAction(
   types.updateUserCurrentChallenge
 );
 
 
-const initialState = {
+const defaultState = {
   superBlock: {},
   block: {},
   challenge: {},
@@ -69,14 +59,33 @@ export function makeSuperBlockSelector(name) {
   };
 }
 
-export default function createReducer() {
-  const userReducer = handleActions(
-    {
-      [types.updateUserPoints]: (state, { payload: { username, points } }) => ({
+export const isChallengeLoaded = (state, { dashedName }) =>
+  !!challengeMapSelector(state)[dashedName];
+
+export default composeReducers(
+  ns,
+  function metaReducer(state = defaultState, action) {
+    if (action.meta && action.meta.entities) {
+      return {
+        ...state,
+        ...action.meta.entities
+      };
+    }
+    return state;
+  },
+  handleActions(
+    () => ({
+      [
+        app.submitChallenge.complete
+      ]: (state, { payload: { username, points, challengeInfo } }) => ({
         ...state,
         [username]: {
           ...state[username],
-          points
+          points,
+          challengeMap: {
+            ...state[username].challengeMap,
+            [challengeInfo.id]: challengeInfo
+          }
         }
       }),
       [types.updateUserFlag]: (state, { payload: { username, flag } }) => ({
@@ -118,46 +127,8 @@ export default function createReducer() {
           ...state[username],
           currentChallengeId
         }
-      }),
-      [types.updateUserChallenge]:
-      (
-        state,
-        {
-          payload: { username, challengeInfo }
-        }
-      ) => ({
-        ...state,
-        [username]: {
-          ...state[username],
-          challengeMap: {
-            ...state[username].challengeMap,
-            [challengeInfo.id]: challengeInfo
-          }
-        }
       })
-    },
-    initialState.user
-  );
-
-  function metaReducer(state = initialState, action) {
-    if (action.meta && action.meta.entities) {
-      return {
-        ...state,
-        ...action.meta.entities
-      };
-    }
-    return state;
-  }
-
-  function entitiesReducer(state, action) {
-    const newState = metaReducer(state, action);
-    const user = userReducer(newState.user, action);
-    if (newState.user !== user) {
-      return { ...newState, user };
-    }
-    return newState;
-  }
-
-  entitiesReducer.toString = () => ns;
-  return entitiesReducer;
-}
+    }),
+    defaultState
+  )
+);

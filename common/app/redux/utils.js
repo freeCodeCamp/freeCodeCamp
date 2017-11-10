@@ -10,7 +10,7 @@ export function filterComingSoonBetaChallenge(
 }
 
 export function filterComingSoonBetaFromEntities(
-  { challenge: challengeMap, block: blockMap, ...rest },
+  { challenge: challengeMap, block: blockMap = {}, ...rest },
   isDev = false
 ) {
   const filter = filterComingSoonBetaChallenge.bind(null, isDev);

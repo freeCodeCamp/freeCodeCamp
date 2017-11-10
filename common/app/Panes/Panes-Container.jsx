@@ -1,48 +1,24 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Panes from './Panes.jsx';
-import {
-  panesMounted,
-  panesUpdated,
-  panesWillMount,
-  panesWillUnmount
-} from './redux';
+import { panesMounted } from './redux';
 
 const mapStateToProps = null;
 const mapDispatchToProps = {
-  panesMounted,
-  panesUpdated,
-  panesWillMount,
-  panesWillUnmount
+  panesMounted
 };
 
 const propTypes = {
   nameToComponent: PropTypes.object.isRequired,
-  panesMounted: PropTypes.func.isRequired,
-  panesUpdated: PropTypes.func.isRequired,
-  panesWillMount: PropTypes.func.isRequired,
-  panesWillUnmount: PropTypes.func.isRequired
+  panesMounted: PropTypes.func.isRequired
 };
 
 export class PanesContainer extends PureComponent {
-  componentWillMount() {
-    this.props.panesWillMount(Object.keys(this.props.nameToComponent));
-  }
   componentDidMount() {
     this.props.panesMounted();
   }
-
-  componentWillUnmount() {
-    this.props.panesWillUnmount();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.nameToComponent !== this.props.nameToComponent) {
-      this.props.panesUpdated(Object.keys(nextProps.nameToComponent));
-    }
-  }
-
   render() {
     return (
       <Panes { ...this.props } />

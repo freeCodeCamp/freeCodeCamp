@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PureComponent from 'react-pure-render/component';
 import { Col, Row } from 'react-bootstrap';

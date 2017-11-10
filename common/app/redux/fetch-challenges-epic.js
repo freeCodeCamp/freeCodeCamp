@@ -9,21 +9,23 @@ import {
   delayedRedirect,
 
   fetchChallengeCompleted,
-  fetchChallengesCompleted,
-
-  langSelector
+  fetchChallengesCompleted
 } from './';
+import { isChallengeLoaded } from '../entities/index.js';
+
 import { shapeChallenges } from './utils';
+import { types as challenge } from '../routes/Challenges/redux';
+import { langSelector } from '../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
 
 export function fetchChallengeEpic(actions, { getState }, { services }) {
-  return actions::ofType('' + types.fetchChallenge)
-    .flatMap(({ payload: { dashedName, block } }) => {
-      const lang = langSelector(getState());
+  return actions::ofType(challenge.onRouteChallenges)
+    .filter(({ payload }) => !isChallengeLoaded(getState(), payload))
+    .flatMapLatest(({ payload: params }) => {
       const options = {
         service: 'map',
-        params: { block, dashedName, lang }
+        params
       };
       return services.readService$(options)
         .retry(3)
@@ -52,11 +54,7 @@ export function fetchChallengesEpic(
   { getState },
   { services }
 ) {
-  return actions::ofType(
-      // async type
-      '' + types.fetchChallenges,
-      types.appMounted
-    )
+  return actions::ofType(types.appMounted)
     .flatMapLatest(() => {
       const lang = langSelector(getState());
       const options = {

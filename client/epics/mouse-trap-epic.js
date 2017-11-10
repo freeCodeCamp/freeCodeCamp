@@ -1,6 +1,6 @@
 import { Observable } from 'rx';
 import MouseTrap from 'mousetrap';
-import { push } from 'react-router-redux';
+import { push } from 'redux-first-router';
 import {
   toggleNightMode,
   hardGoTo

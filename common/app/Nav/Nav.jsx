@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import capitalize from 'lodash/capitalize';
 import { createSelector } from 'reselect';
 
-import { LinkContainer } from 'react-router-bootstrap';
 import {
   MenuItem,
   Nav,
@@ -14,6 +14,7 @@ import {
   NavbarBrand
 } from 'react-bootstrap';
 
+import { Link } from '../Router';
 import navLinks from './links.json';
 import SignUp from './Sign-Up.jsx';
 import BinButton from './Bin-Button.jsx';
@@ -28,35 +29,36 @@ import {
 } from './redux';
 import {
   userSelector,
+  isSignedInSelector,
   signInLoadingSelector
 } from '../redux';
-import { nameToTypeSelector, panesSelector } from '../Panes/redux';
+import { panesSelector } from '../Panes/redux';
 
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
 const mapStateToProps = createSelector(
   userSelector,
+  isSignedInSelector,
   dropdownSelector,
   signInLoadingSelector,
   panesSelector,
-  nameToTypeSelector,
   (
     { username, picture, points },
+    isSignedIn,
     isDropdownOpen,
     showLoading,
     panes,
-    nameToType
   ) => {
     return {
-      panes: panes.map(name => {
+      panes: panes.map(({ name, type }) => {
         return {
           content: name,
-          action: nameToType[name]
+          action: type
         };
       }, {}),
       isDropdownOpen,
-      isSignedIn: !!username,
+      isSignedIn,
       picture,
       points,
       showLoading,
@@ -104,25 +106,19 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
   };
 }
 
-const propTypes = navLinks.reduce(
-  (pt, { content }) => {
-    const handler = `handle${capitalize(content)}Click`;
-    pt[handler] = PropTypes.func.isRequired;
-    return pt;
-  },
-  {
-    panes: PropTypes.array,
-    clickOnLogo: PropTypes.func.isRequired,
-    closeDropdown: PropTypes.func.isRequired,
-    isDropdownOpen: PropTypes.bool,
-    openDropdown: PropTypes.func.isRequired,
-    picture: PropTypes.string,
-    points: PropTypes.number,
-    showLoading: PropTypes.bool,
-    signedIn: PropTypes.bool,
-    username: PropTypes.string
-  }
-);
+const propTypes = {
+  clickOnLogo: PropTypes.func.isRequired,
+  clickOnMap: PropTypes.func.isRequired,
+  closeDropdown: PropTypes.func.isRequired,
+  isDropdownOpen: PropTypes.bool,
+  openDropdown: PropTypes.func.isRequired,
+  panes: PropTypes.array,
+  picture: PropTypes.string,
+  points: PropTypes.number,
+  showLoading: PropTypes.bool,
+  signedIn: PropTypes.bool,
+  username: PropTypes.string
+};
 
 export class FCCNav extends React.Component {
   renderLink(isNavItem, { isReact, isDropdown, content, link, links, target }) {
@@ -154,7 +150,7 @@ export class FCCNav extends React.Component {
     }
     if (isReact) {
       return (
-        <LinkContainer
+        <Link
           key={ content }
           onClick={ this.props[`handle${content}Click`] }
           to={ link }
@@ -164,7 +160,7 @@ export class FCCNav extends React.Component {
             >
             { content }
           </Component>
-        </LinkContainer>
+        </Link>
       );
     }
     return (

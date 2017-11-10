@@ -11,7 +11,7 @@ import {
   addThemeToBody
 } from './';
 
-export default function getUserEpic(actions, { getState }, { services }) {
+export default function getUserEpic(actions, _, { services }) {
   return actions::ofType(types.fetchUser)
     .flatMap(() => {
       return services.readService$({ service: 'user' })
