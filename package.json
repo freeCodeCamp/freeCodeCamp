@@ -37,7 +37,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-register": "^6.3.0",
-    "berkeleys-redux-utils": "^3.2.0",
+    "berkeleys-redux-utils": "^4.0.0",
     "body-parser": "^1.13.2",
     "bootstrap": "~3.3.7",
     "cal-heatmap": "~3.5.2",
