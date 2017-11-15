@@ -42,7 +42,7 @@ export default handleActions(
         }, { ...state });
     },
     [types.savedCodeFound]: (state, { payload: { files, challenge } }) => {
-      if (challenge.type === 'mod') {
+      if (challenge.type === 'modern') {
         // this may need to change to update head/tail
         return challenge.files;
       }
@@ -70,7 +70,7 @@ export default handleActions(
         app.fetchChallenge.complete
       )
     ]: (state, { payload: { challenge } }) => {
-      if (challenge.type === 'mod') {
+      if (challenge.type === 'modern') {
         return challenge.files;
       }
       if (
