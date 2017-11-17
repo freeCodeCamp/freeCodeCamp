@@ -55,7 +55,7 @@ export default function createApp({
   const {
     reducer: panesReducer,
     middleware: panesMiddleware
-  } = createPanesAspects(createPanesMap());
+  } = createPanesAspects({ createPanesMap });
 
   const enhancer = compose(
     addLangToRoutesEnhancer(routesMap),

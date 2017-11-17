@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import invariant from 'invariant';
-import { isLocationAction } from 'redux-first-router';
 import {
   addNS,
   composeReducers,
@@ -13,8 +12,6 @@ import ns from '../ns.json';
 
 import windowEpic from './window-epic.js';
 import dividerEpic from './divider-epic.js';
-import { challengeMetaSelector } from '../../routes/Challenges/redux';
-import { types as app } from '../../redux';
 
 export const epics = [
   windowEpic,
@@ -107,15 +104,28 @@ const getPaneName = (panes, index) => (panes[index] || {}).name || '';
 export const createPaneMap = (ns, mapStateToPanes) => addNS(ns, state =>
   checkForTypeKeys(mapStateToPanes(state)));
 
-export default function createPanesAspects(config) {
-  checkForTypeKeys(config);
+function normalizePanesMapCreator(createPanesMap) {
+  invariant(
+    _.isFunction(createPanesMap),
+    'createPanesMap should be a function but got %s',
+    createPanesMap
+  );
+  const panesMap = createPanesMap({}, { type: '@@panes/test' });
+  if (typeof panesMap === 'function') {
+    return normalizePanesMapCreator(panesMap);
+  }
+  invariant(
+    !panesMap,
+    'panesMap test should return undefined or null on test action but got %s',
+    panesMap
+  );
+  return createPanesMap;
+}
+
+export default function createPanesAspects({ createPanesMap }) {
+  createPanesMap = normalizePanesMapCreator(createPanesMap);
 
   function middleware({ getState }) {
-    let previousMap;
-    // we cache the previous map so that we can attach it to the fetchChallenge
-    // show panes on challenge route
-    // select panes map on viewType (this is state dependent)
-    // filter panes out on state
     return next => action => {
       let finalAction = action;
       const panesMap = panesMapSelector(getState());
@@ -130,22 +140,9 @@ export default function createPanesAspects(config) {
         };
       }
       const result = next(finalAction);
-      if (isLocationAction(action)) {
-        let finalPanesMap = {};
-        // location matches a panes route
-        if (config[action.type]) {
-          const viewMap = previousMap = config[action.type];
-          const meta = challengeMetaSelector(getState());
-          const mapStateToPanes = viewMap[meta.viewType] || _.stubObject;
-          finalPanesMap = mapStateToPanes(getState());
-        }
-        next(panesUpdatedThroughFetch(finalPanesMap));
-      }
-      if (action.type === app.fetchChallenge.complete) {
-        const meta = challengeMetaSelector(getState());
-        const mapStateToPanes = previousMap[meta.viewType] || _.stubObject;
-        const panesMap = mapStateToPanes(getState());
-        next(panesUpdatedThroughFetch(panesMap));
+      const nextPanesMap = createPanesMap(getState(), action);
+      if (nextPanesMap) {
+        next(panesUpdatedThroughFetch(nextPanesMap));
       }
       return result;
     };
