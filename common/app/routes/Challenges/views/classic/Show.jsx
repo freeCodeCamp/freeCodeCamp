@@ -1,17 +1,17 @@
 import React from 'react';
+import { addNS } from 'berkeleys-redux-utils';
 
 import SidePanel from './Side-Panel.jsx';
 import Editor from './Editor.jsx';
 import Preview from './Preview.jsx';
 import { types, showPreviewSelector } from '../../redux';
 import Panes from '../../../../Panes';
-import { createPaneMap } from '../../../../Panes/redux';
 import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
 
-export const panesMap = createPaneMap(
+export const panesMap = addNS(
   'classic',
   state => {
     const panesMap = {

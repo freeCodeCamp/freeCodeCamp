@@ -1,13 +1,13 @@
 import React from 'react';
+import { addNS } from 'berkeleys-redux-utils';
 
 import { types, showPreviewSelector } from '../../redux';
-import { createPaneMap } from '../../../../Panes/redux';
 
 import ns from './ns.json';
 
 const propTypes = {};
 
-export const panesMap = createPaneMap(
+export const panesMap = addNS(
   ns,
   state => {
     // create panes map here

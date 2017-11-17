@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import invariant from 'invariant';
 import {
-  addNS,
   composeReducers,
   createAction,
   createTypes,
@@ -101,9 +100,6 @@ function checkForTypeKeys(panesMap) {
 
 const getPaneName = (panes, index) => (panes[index] || {}).name || '';
 
-export const createPaneMap = (ns, mapStateToPanes) => addNS(ns, state =>
-  checkForTypeKeys(mapStateToPanes(state)));
-
 function normalizePanesMapCreator(createPanesMap) {
   invariant(
     _.isFunction(createPanesMap),
@@ -142,6 +138,7 @@ export default function createPanesAspects({ createPanesMap }) {
       const result = next(finalAction);
       const nextPanesMap = createPanesMap(getState(), action);
       if (nextPanesMap) {
+        checkForTypeKeys(nextPanesMap);
         next(panesUpdatedThroughFetch(nextPanesMap));
       }
       return result;

@@ -1,15 +1,15 @@
 import React from 'react';
+import { addNS } from 'berkeleys-redux-utils';
 
 import BackEnd from './Back-End.jsx';
 import { types } from '../../redux';
 import Panes from '../../../../Panes';
-import { createPaneMap } from '../../../../Panes/redux';
 import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
 
-export const panesMap = createPaneMap(
+export const panesMap = addNS(
   'backend',
   () => ({
     [types.toggleMap]: 'Map',
