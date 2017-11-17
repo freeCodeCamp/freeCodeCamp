@@ -7,7 +7,7 @@ import ns from './ns.json';
 
 const propTypes = {};
 
-export const panesMap = addNS(
+export const mapStateToPanes = addNS(
   ns,
   state => {
     // create panes map here

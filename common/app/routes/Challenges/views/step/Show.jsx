@@ -9,7 +9,7 @@ import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
-export const panesMap = addNS(
+export const mapStateToPanes = addNS(
   ns,
   () => ({
     [types.toggleMap]: 'Map',

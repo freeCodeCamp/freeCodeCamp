@@ -2,11 +2,11 @@ import _ from 'lodash';
 import { isLocationAction, redirect } from 'redux-first-router';
 
 import { types, challengeMetaSelector } from './redux';
-import { panesMap as backendPanesMap } from './views/backend';
-import { panesMap as classicPanesMap } from './views/classic';
-import { panesMap as stepPanesMap } from './views/step';
-import { panesMap as projectPanesMap } from './views/project';
-import { panesMap as quizPanesMap } from './views/quiz';
+import { mapStateToPanes as backendPanesMap } from './views/backend';
+import { mapStateToPanes as classicPanesMap } from './views/classic';
+import { mapStateToPanes as stepPanesMap } from './views/step';
+import { mapStateToPanes as projectPanesMap } from './views/project';
+import { mapStateToPanes as quizPanesMap } from './views/quiz';
 import { types as app } from '../../redux';
 import { locationTypeSelector } from '../../Router/redux';
 

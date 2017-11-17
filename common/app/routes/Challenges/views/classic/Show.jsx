@@ -11,7 +11,7 @@ import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
 
-export const panesMap = addNS(
+export const mapStateToPanes = addNS(
   'classic',
   state => {
     const panesMap = {
