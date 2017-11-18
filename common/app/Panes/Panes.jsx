@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import {
   panesSelector,
   panesByNameSelector,
+  panesMounted,
   heightSelector,
   widthSelector
 } from './redux';
@@ -38,15 +39,19 @@ const mapStateToProps = createSelector(
   }
 );
 
-const mapDispatchToProps = null;
+const mapDispatchToProps = { panesMounted };
 
 const propTypes = {
   height: PropTypes.number.isRequired,
   nameToComponent: PropTypes.object.isRequired,
-  panes: PropTypes.array
+  panes: PropTypes.array,
+  panesMounted: PropTypes.func.isRequired
 };
 
 export class Panes extends PureComponent {
+  componentDidMount() {
+    this.props.panesMounted();
+  }
   renderPanes() {
     const {
       nameToComponent,

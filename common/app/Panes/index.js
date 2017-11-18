@@ -1,1 +1,1 @@
-export default from './Panes-Container.jsx';
+export default from './Panes.jsx';
