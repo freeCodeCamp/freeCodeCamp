@@ -1247,21 +1247,24 @@
       "type": "bonfire",
       "title": "Problem 41: Pandigital prime",
       "tests": [
-        "assert.strictEqual(euler41(), 7652413, 'message: <code>euler41()</code> should return 7652413.');"
+        "assert(pandigitalPrime(4) == 4231, 'message: <code>pandigitalPrime(4)</code> should return 4231.');",
+        "assert(pandigitalPrime(5) == 0, 'message: <code>pandigitalPrime(5)</code> should return 0.');",
+        "assert(pandigitalPrime(6) == 0, 'message: <code>pandigitalPrime(6)</code> should return 0.');",
+        "assert(pandigitalPrime(7) == 7652413, 'message: <code>pandigitalPrime(7)</code> should return 7652413.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler41() {",
+        "function pandigitalPrime(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler41();"
+        "pandigitalPrime(7);"
       ],
       "description": [
         "We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is also prime.",
-        "What is the largest n-digit pandigital prime that exists?"
+        "What is the largest n-length digit pandigital prime that exists?"
       ]
     },
     {
