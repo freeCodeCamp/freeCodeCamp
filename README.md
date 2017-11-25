@@ -69,5 +69,5 @@ License
 Copyright (c) 2017 freeCodeCamp.
 
 The content of this repository bound by the following LICENSE(S)
-- The computer software is licensed under the [BSD-3-Clause](./LICENSE).
-- The curricular content as in the [`/seed`](/seed) and subdirectories are licensed under the [CC-BY-SA-4.0](./Curriculum-LICENSE.md)
+- The computer software is licensed under the [BSD-3-Clause](./LICENSE.md).
+- The curricular content in the [`/seed`](/seed) and subdirectories are licensed under the [CC-BY-SA-4.0](./seed/LICENSE.md)
