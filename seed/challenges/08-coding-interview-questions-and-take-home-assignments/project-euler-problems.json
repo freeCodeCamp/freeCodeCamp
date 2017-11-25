@@ -117,17 +117,20 @@
       "type": "bonfire",
       "title": "Problem 5: Smallest multiple",
       "tests": [
-        "assert.strictEqual(euler5(), 232792560, 'message: <code>euler5()</code> should return 232792560.');"
+        "assert.strictEqual(smallestMultiple(1,10), 2520, 'message: <code>smallestMultiple(1,10)</code> should return 2520.');",
+        "assert.strictEqual(smallestMultiple(1,20), 232792560, 'message: <code>smallestMultiple(1,20)</code> should return 232792560.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const smallestMultiple = (start,end)=>{\n  let smallestMultiple = start;\n for(let i = start+1;i<=end;i++){\n    smallestMultiple = (smallestMultiple*i)/gcd(smallestMultiple,i);\n  }\n return  smallestMultiple;\n}\n\nfunction gcd(x,y){\n  let numerator = y;\n  let denominator = x;\n  let temp = 1;\n while (denominator) {\n   temp = denominator;\n   denominator = numerator%denominator;\n    numerator = temp;\n }\n return numerator;\n}"
+      ],
       "translations": {},
       "challengeSeed": [
-        "function euler5() {",
+        "function smallestMultiple(start,end) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler5();"
+        "smallestMultiple(1,20);"
       ],
       "description": [
         "2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.",
