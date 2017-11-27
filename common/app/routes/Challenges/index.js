@@ -7,6 +7,7 @@ import { mapStateToPanes as classicPanesMap } from './views/classic';
 import { mapStateToPanes as stepPanesMap } from './views/step';
 import { mapStateToPanes as projectPanesMap } from './views/project';
 import { mapStateToPanes as quizPanesMap } from './views/quiz';
+import { mapStateToPanes as modernPanesMap } from './views/Modern';
 import { types as app } from '../../redux';
 import { locationTypeSelector } from '../../Router/redux';
 
@@ -26,7 +27,8 @@ export function createPanesMap() {
     [classicPanesMap]: classicPanesMap,
     [stepPanesMap]: stepPanesMap,
     [projectPanesMap]: projectPanesMap,
-    [quizPanesMap]: quizPanesMap
+    [quizPanesMap]: quizPanesMap,
+    [modernPanesMap]: modernPanesMap
   };
   return (state, action) => {
     // if a location action has dispatched then we must update the panesmap

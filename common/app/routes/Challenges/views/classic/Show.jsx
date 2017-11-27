@@ -28,24 +28,21 @@ export const mapStateToPanes = addNS(
 );
 
 const nameToComponent = {
-  Map: {
-    Component: _Map
-  },
-  'Side Panel': {
-    Component: SidePanel
-  },
-  Editor: {
-    Component: Editor
-  },
-  Preview: {
-    Component: Preview
-  }
+  Map: _Map,
+  'Side Panel': SidePanel,
+  Editor: Editor,
+  Preview: Preview
+};
+
+const renderPane = name => {
+  const Comp = nameToComponent[name];
+  return Comp ? <Comp /> : <span>Pane for { name } not found</span>;
 };
 
 export default function ShowClassic() {
   return (
     <ChildContainer isFullWidth={ true }>
-      <Panes nameToComponent={ nameToComponent }/>
+      <Panes render={ renderPane }/>
     </ChildContainer>
   );
 }

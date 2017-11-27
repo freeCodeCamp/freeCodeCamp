@@ -2,6 +2,9 @@ import React from 'react';
 import { addNS } from 'berkeleys-redux-utils';
 
 import { types, showPreviewSelector } from '../../redux';
+import Panes from '../../../../Panes';
+import _Map from '../../../../Map';
+import ChildContainer from '../../../../Child-Container.jsx';
 
 import ns from './ns.json';
 
@@ -26,9 +29,20 @@ export const mapStateToPanes = addNS(
   }
 );
 
+const nameToComponent = {
+  Map: _Map
+};
+
+const renderPane = name => {
+  const Comp = nameToComponent[name];
+  return Comp ? <Comp /> : <span>Pane { name } not found</span>;
+};
+
 export default function ShowModern() {
   return (
-    <div>hello berks</div>
+    <ChildContainer isFullWidth={ true }>
+      <Panes render={ renderPane }/>
+    </ChildContainer>
   );
 }
 

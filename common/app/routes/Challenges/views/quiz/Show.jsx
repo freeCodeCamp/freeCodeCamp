@@ -18,18 +18,19 @@ export const mapStateToPanes = addNS(
 );
 
 const nameToComponent = {
-  Map: {
-    Component: _Map
-  },
-  Main: {
-    Component: Main
-  }
+  Map: _Map,
+  Main: Main
+};
+
+const renderPane = name => {
+  const Comp = nameToComponent[name];
+  return Comp ? <Comp /> : <span>Pane { name } not found</span>;
 };
 
 export default function ShowQuiz() {
   return (
     <ChildContainer isFullWidth={ true }>
-      <Panes nameToComponent={ nameToComponent }/>
+      <Panes render={ renderPane }/>
     </ChildContainer>
   );
 }

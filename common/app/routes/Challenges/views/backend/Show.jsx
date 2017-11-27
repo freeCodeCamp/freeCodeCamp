@@ -17,21 +17,20 @@ export const mapStateToPanes = addNS(
   })
 );
 
-const nameToComponentDef = {
-  Map: {
-    Component: _Map,
-    defaultSize: 25
-  },
-  Main: {
-    Component: BackEnd,
-    defaultSize: 50
-  }
+const nameToComponent = {
+  Map: _Map,
+  Main: BackEnd
+};
+
+const renderPane = name => {
+  const Comp = nameToComponent[name];
+  return Comp ? <Comp /> : <span>Pane { name } not found</span>;
 };
 
 export default function ShowBackEnd() {
   return (
     <ChildContainer isFullWidth={ true }>
-      <Panes nameToComponent={ nameToComponentDef } />
+      <Panes render={ renderPane } />
     </ChildContainer>
   );
 }
