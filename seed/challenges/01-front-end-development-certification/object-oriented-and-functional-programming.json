@@ -392,7 +392,6 @@
       "description": [
         "The <code>filter</code> method is used to iterate through an array and filter out elements where a given condition is not true.",
         "<code>filter</code> is passed a callback function which takes the current value (we've called that <code>val</code>) as an argument.",
-        "The callback may also take the <code>index</code> of the current element and the original <code>array</code> as arguments.",
         "Any array element for which the callback returns true will be kept and elements that return false will be filtered out.",
         "The following code is an example of using <code>filter</code> to remove array elements that are equal to five:",
         "Note: We omit the second and third arguments since we only need the value",
