@@ -7,12 +7,12 @@ import PureComponent from 'react-pure-render/component';
 
 import ns from './ns.json';
 
-import BugModal from '../../Bug-Modal.jsx';
+import BugModal from './Bug-Modal.jsx';
 import ToolPanel from './Tool-Panel.jsx';
-import ChallengeTitle from '../../Challenge-Title.jsx';
-import ChallengeDescription from '../../Challenge-Description.jsx';
-import TestSuite from '../../Test-Suite.jsx';
-import Output from '../../Output.jsx';
+import ChallengeTitle from './Challenge-Title.jsx';
+import ChallengeDescription from './Challenge-Description.jsx';
+import TestSuite from './Test-Suite.jsx';
+import Output from './Output.jsx';
 import {
   openBugModal,
   updateHint,
@@ -25,11 +25,11 @@ import {
   hintIndexSelector,
   codeLockedSelector,
   chatRoomSelector
-} from '../../redux';
+} from './redux';
 
-import { descriptionRegex } from '../../utils';
-import { challengeSelector } from '../../../../redux';
-import { makeToast } from '../../../../Toasts/redux';
+import { descriptionRegex } from './utils';
+import { challengeSelector } from '../../redux';
+import { makeToast } from '../../Toasts/redux';
 
 const mapDispatchToProps = {
   makeToast,

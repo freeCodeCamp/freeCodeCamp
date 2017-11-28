@@ -2,6 +2,7 @@ import React from 'react';
 import { addNS } from 'berkeleys-redux-utils';
 
 import { types, showPreviewSelector } from '../../redux';
+import SidePanel from '../../Side-Panel.jsx';
 import Panes from '../../../../Panes';
 import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
@@ -30,7 +31,8 @@ export const mapStateToPanes = addNS(
 );
 
 const nameToComponent = {
-  Map: _Map
+  Map: _Map,
+  'Side Panel': SidePanel
 };
 
 const renderPane = name => {

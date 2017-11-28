@@ -1,10 +1,10 @@
 import React from 'react';
 import { addNS } from 'berkeleys-redux-utils';
 
-import SidePanel from './Side-Panel.jsx';
 import Editor from './Editor.jsx';
 import Preview from './Preview.jsx';
 import { types, showPreviewSelector } from '../../redux';
+import SidePanel from '../../Side-Panel.jsx';
 import Panes from '../../../../Panes';
 import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
