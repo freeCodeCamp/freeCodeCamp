@@ -17,7 +17,7 @@
       ],
       "files": {
         "indexjsx": {
-          "key": "indexjxs",
+          "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
           "contents": [
@@ -32,7 +32,7 @@
         "assert(Enzyme.shallow(jsx).children() === 'Hello JSX!', 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
       "type": "modern",
-      "isRequired": true,
+      "isRequired": false,
       "translations": {}
     }
   ]
