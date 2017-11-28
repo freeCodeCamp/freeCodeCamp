@@ -28,6 +28,10 @@ export const savedCodeFound = createAction(
 );
 
 export const filesSelector = state => state[ns];
+export const createFileSelector = keySelector => (state, props) => {
+  const files = filesSelector(state);
+  return files[keySelector(state, props)] || {};
+};
 
 export default handleActions(
   () => ({
