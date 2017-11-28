@@ -82,6 +82,17 @@ Observable.combineLatest(
               )
             );
 
+            if (challenge.files) {
+              challenge.files = _.reduce(challenge.files, (map, file) => {
+                map[file.key] = {
+                  ...file,
+                  contents: Array.isArray(file.contents) ?
+                    file.contents.join('\n') :
+                    file.contents
+                };
+                return map;
+              }, {});
+            }
             challenge.fileName = fileName;
             challenge.helpRoom = helpRoom;
             challenge.order = order;
