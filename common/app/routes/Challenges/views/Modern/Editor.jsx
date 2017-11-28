@@ -38,11 +38,11 @@ const mapStateToProps = createSelector(
   challengeMetaSelector,
   (
     file,
-    { mode = 'javascript'}
+    { mode }
   ) => ({
     content: file.contents || '// Happy Coding!',
     file: file,
-    mode
+    mode: file.ext || mode || 'javascript'
   })
 );
 
@@ -66,6 +66,9 @@ export class Editor extends PureComponent {
     (executeChallenge, mode) => ({
       ...options,
       mode,
+      // JSHint only works with javascript
+      // we will need to switch to eslint to make this work with jsx
+      lint: mode === 'javascript' ? options.lint : false,
       extraKeys: {
         Esc() {
           document.activeElement.blur();
