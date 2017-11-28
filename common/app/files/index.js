@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   combineActions,
   createAction,
@@ -71,7 +72,10 @@ export default handleActions(
       )
     ]: (state, { payload: { challenge } }) => {
       if (challenge.type === 'modern') {
-        return challenge.files;
+        return _.reduce(challenge.files, (files, file) => {
+          files[file.key] = createPoly(file);
+          return files;
+        }, {});
       }
       if (
         challenge.challengeType !== html &&
