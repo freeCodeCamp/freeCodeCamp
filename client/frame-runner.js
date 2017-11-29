@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var source = document.__source;
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
+  if (document.Enzyme) {
+    window.Enzyme = document.Enzyme;
+  }
 
   document.__getJsOutput = function getJsOutput() {
     if (window.__err || !common.shouldRun()) {
