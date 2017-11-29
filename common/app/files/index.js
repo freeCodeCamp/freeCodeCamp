@@ -49,7 +49,10 @@ export default handleActions(
     [types.savedCodeFound]: (state, { payload: { files, challenge } }) => {
       if (challenge.type === 'modern') {
         // this may need to change to update head/tail
-        return challenge.files;
+        return _.reduce(files, (files, file) => {
+          files[file.key] = createPoly(file);
+          return files;
+        }, {});
       }
       if (
         challenge.challengeType !== html &&
