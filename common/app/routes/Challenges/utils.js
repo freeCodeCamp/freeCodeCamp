@@ -35,7 +35,8 @@ export const submitTypes = {
   [ challengeTypes.video ]: 'video',
   [ challengeTypes.step ]: 'step',
   [ challengeTypes.quiz ]: 'quiz',
-  backend: 'backend'
+  backend: 'backend',
+  modern: 'tests'
 };
 
 // determines if a line in a challenge description
