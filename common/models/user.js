@@ -515,7 +515,7 @@ module.exports = function(User) {
           .flatMap(token => {
 
           const { id: loginToken } = token;
-          const loginEmail = user.email;
+          const loginEmail = new Buffer(user.email).toString('base64');
           const host = getServerFullURL();
           const mailOptions = {
             type: 'email',
