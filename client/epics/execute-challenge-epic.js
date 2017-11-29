@@ -3,7 +3,7 @@ import { Scheduler, Observable } from 'rx';
 import { ofType } from 'redux-epic';
 
 import {
-  buildClassic,
+  buildFromFiles,
   buildBackendChallenge
 } from '../utils/build.js';
 import {
@@ -41,7 +41,7 @@ export default function executeChallengeEpic(actions, { getState }) {
           .map(frameTests)
           .startWith(initOutput('// running test'));
       }
-      return buildClassic(files, required, shouldProxyConsole)
+      return buildFromFiles(files, required, shouldProxyConsole)
         .flatMap(payload => {
           const actions = [
             frameMain(payload)

@@ -35,7 +35,7 @@ const globalRequires = [
   jQuery
 ];
 
-export function buildClassic(files, required, shouldProxyConsole) {
+export function buildFromFiles(files, required, shouldProxyConsole) {
   const finalRequires = [...globalRequires, ...required ];
   return createFileStream(files)
     ::pipe(throwers)
