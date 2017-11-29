@@ -23,6 +23,8 @@ var createChallenges =
 var Block = app.models.Block;
 var destroyBlocks = Observable.fromNodeCallback(Block.destroyAll, Block);
 var createBlocks = Observable.fromNodeCallback(Block.create, Block);
+const arrToString = arr =>
+  Array.isArray(arr) ? arr.join('\n') : _.toString(arr);
 
 Observable.combineLatest(
   destroyChallenges(),
@@ -86,9 +88,9 @@ Observable.combineLatest(
               challenge.files = _.reduce(challenge.files, (map, file) => {
                 map[file.key] = {
                   ...file,
-                  contents: Array.isArray(file.contents) ?
-                    file.contents.join('\n') :
-                    file.contents
+                  head: arrToString(file.head),
+                  contents: arrToString(file.contents),
+                  tail: arrToString(file.tail)
                 };
                 return map;
               }, {});
