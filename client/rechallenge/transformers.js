@@ -1,8 +1,4 @@
-import cond from 'lodash/cond';
-import identity from 'lodash/identity';
-import matchesProperty from 'lodash/matchesProperty';
-import stubTrue from 'lodash/stubTrue';
-import conforms from 'lodash/conforms';
+import _ from 'lodash';
 
 import * as babel from 'babel-core';
 import presetEs2015 from 'babel-preset-es2015';
@@ -14,7 +10,8 @@ import loopProtect from 'loop-protect';
 
 import {
   transformHeadTailAndContents,
-  setContent
+  setContent,
+  setExt
 } from '../../common/utils/polyvinyl.js';
 import castToObservable from '../../common/app/utils/cast-to-observable.js';
 
@@ -30,12 +27,12 @@ loopProtect.hit = function hit(line) {
 
 // const sourceReg =
 //  /(<!-- fcc-start-source -->)([\s\S]*?)(?=<!-- fcc-end-source -->)/g;
-const HTML$JSReg = /html|js/;
 const console$logReg = /(?:\b)console(\.log\S+)/g;
 const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
-const testHTMLJS = conforms({ ext: (ext) => HTML$JSReg.test(ext) });
-const testJS = matchesProperty('ext', 'js');
+const isJS = _.matchesProperty('ext', 'js');
+const testHTMLJS = _.overSome(isJS, _.matchesProperty('ext', 'html'));
+const testJS$JSX = _.overSome(isJS, _.matchesProperty('ext', 'jsx'));
 
 // if shouldProxyConsole then we change instances of console log
 // to `window.__console.log`
@@ -51,7 +48,7 @@ export function proxyLoggerTransformer(file) {
   );
 }
 
-export const addLoopProtect = cond([
+export const addLoopProtect = _.cond([
   [
     testHTMLJS,
     function(file) {
@@ -63,33 +60,33 @@ export const addLoopProtect = cond([
       return setContent(loopProtect(file.contents), file);
     }
   ],
-  [ stubTrue, identity ]
+  [ _.stubTrue, _.identity ]
 ]);
-export const replaceNBSP = cond([
+export const replaceNBSP = _.cond([
   [
     testHTMLJS,
     function(file) {
       return setContent(
-      file.contents.replace(NBSPReg, ' '),
+        file.contents.replace(NBSPReg, ' '),
         file
-    );
+      );
     }
   ],
-  [ stubTrue, identity ]
+  [ _.stubTrue, _.identity ]
 ]);
 
-export const babelTransformer = cond([
+export const babelTransformer = _.cond([
   [
-    testJS,
+    testJS$JSX,
     function(file) {
       const result = babel.transform(file.contents, babelOptions);
-      return setContent(
-      result.code,
-        file
-    );
+      return _.flow(
+        _.partial(setContent, result.code),
+        _.partial(setExt, 'js')
+      )(file);
     }
   ],
-  [ stubTrue, identity ]
+  [ _.stubTrue, _.identity ]
 ]);
 
 export const _transformers = [

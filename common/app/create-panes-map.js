@@ -1,7 +1,1 @@
-import { createPanesMap as routesPanes } from './routes/';
-
-export default function createPanesMap() {
-  return {
-    ...routesPanes()
-  };
-}
+export { createPanesMap as default } from './routes/';

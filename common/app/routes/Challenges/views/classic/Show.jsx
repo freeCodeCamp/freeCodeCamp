@@ -1,48 +1,48 @@
 import React from 'react';
+import { addNS } from 'berkeleys-redux-utils';
 
-import SidePanel from './Side-Panel.jsx';
 import Editor from './Editor.jsx';
 import Preview from './Preview.jsx';
-import { types, challengeMetaSelector } from '../../redux';
+import { types, showPreviewSelector } from '../../redux';
+import SidePanel from '../../Side-Panel.jsx';
 import Panes from '../../../../Panes';
-import { createPaneMap } from '../../../../Panes/redux';
 import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
 
-export const panesMap = createPaneMap(
+export const mapStateToPanes = addNS(
   'classic',
-  () => ({
-    [types.toggleMap]: 'Map',
-    [types.toggleSidePanel]: 'Side Panel',
-    [types.toggleClassicEditor]: 'Editor',
-    [types.togglePreview]: {
-      name: 'Preview',
-      filter: state => !!challengeMetaSelector(state).showPreview
+  state => {
+    const panesMap = {
+      [types.toggleMap]: 'Map',
+      [types.toggleSidePanel]: 'Side Panel',
+      [types.toggleClassicEditor]: 'Editor'
+    };
+
+    if (showPreviewSelector(state)) {
+      panesMap[types.togglePreview] = 'Preview';
     }
-  })
+    return panesMap;
+  }
 );
 
 const nameToComponent = {
-  Map: {
-    Component: _Map
-  },
-  'Side Panel': {
-    Component: SidePanel
-  },
-  Editor: {
-    Component: Editor
-  },
-  Preview: {
-    Component: Preview
-  }
+  Map: _Map,
+  'Side Panel': SidePanel,
+  Editor: Editor,
+  Preview: Preview
+};
+
+const renderPane = name => {
+  const Comp = nameToComponent[name];
+  return Comp ? <Comp /> : <span>Pane for { name } not found</span>;
 };
 
 export default function ShowClassic() {
   return (
     <ChildContainer isFullWidth={ true }>
-      <Panes nameToComponent={ nameToComponent }/>
+      <Panes render={ renderPane }/>
     </ChildContainer>
   );
 }

@@ -1,15 +1,15 @@
 import React from 'react';
+import { addNS } from 'berkeleys-redux-utils';
 
 import BackEnd from './Back-End.jsx';
 import { types } from '../../redux';
 import Panes from '../../../../Panes';
-import { createPaneMap } from '../../../../Panes/redux';
 import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
 
-export const panesMap = createPaneMap(
+export const mapStateToPanes = addNS(
   'backend',
   () => ({
     [types.toggleMap]: 'Map',
@@ -17,21 +17,20 @@ export const panesMap = createPaneMap(
   })
 );
 
-const nameToComponentDef = {
-  Map: {
-    Component: _Map,
-    defaultSize: 25
-  },
-  Main: {
-    Component: BackEnd,
-    defaultSize: 50
-  }
+const nameToComponent = {
+  Map: _Map,
+  Main: BackEnd
+};
+
+const renderPane = name => {
+  const Comp = nameToComponent[name];
+  return Comp ? <Comp /> : <span>Pane { name } not found</span>;
 };
 
 export default function ShowBackEnd() {
   return (
     <ChildContainer isFullWidth={ true }>
-      <Panes nameToComponent={ nameToComponentDef } />
+      <Panes render={ renderPane } />
     </ChildContainer>
   );
 }

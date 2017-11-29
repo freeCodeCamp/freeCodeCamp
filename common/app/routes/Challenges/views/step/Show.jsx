@@ -1,15 +1,15 @@
 import React from 'react';
+import { addNS } from 'berkeleys-redux-utils';
 
 import ns from './ns.json';
 import Step from './Step.jsx';
 import { types } from '../../redux';
 import Panes from '../../../../Panes';
-import { createPaneMap } from '../../../../Panes/redux';
 import _Map from '../../../../Map';
 import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
-export const panesMap = createPaneMap(
+export const mapStateToPanes = addNS(
   ns,
   () => ({
     [types.toggleMap]: 'Map',
@@ -18,18 +18,19 @@ export const panesMap = createPaneMap(
 );
 
 const nameToComponent = {
-  Map: {
-    Component: _Map
-  },
-  Step: {
-    Component: Step
-  }
+  Map: _Map,
+  Step: Step
+};
+
+const renderPane = name => {
+  const Comp = nameToComponent[name];
+  return Comp ? <Comp /> : <span>Pane { name } not found</span>;
 };
 
 export default function ShowStep() {
   return (
     <ChildContainer isFullWidth={ true }>
-      <Panes nameToComponent={ nameToComponent }/>
+      <Panes render={ renderPane }/>
     </ChildContainer>
   );
 }

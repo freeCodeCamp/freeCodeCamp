@@ -1,4 +1,4 @@
-import { ofType } from 'redux-epic';
+import { ofType, combineEpics } from 'redux-epic';
 
 import {
   types,
@@ -7,7 +7,7 @@ import {
 
 import { updateFile } from '../../../files';
 
-export default function editorEpic(actions, { getState }) {
+export function classicEditorEpic(actions, { getState }) {
   return actions::ofType(types.classicEditorUpdated)
     .pluck('payload')
     .map(content => updateFile({
@@ -15,3 +15,11 @@ export default function editorEpic(actions, { getState }) {
       key: keySelector(getState())
     }));
 }
+
+export function modernEditorEpic(actions) {
+  return actions::ofType(types.modernEditorUpdated)
+    .pluck('payload')
+    .map(updateFile);
+}
+
+export default combineEpics(classicEditorEpic, modernEditorEpic);

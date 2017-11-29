@@ -3,6 +3,8 @@ import { ofType } from 'redux-epic';
 /* eslint-disable import/no-unresolved */
 import loopProtect from 'loop-protect';
 /* eslint-enable import/no-unresolved */
+import { ShallowWrapper, ReactWrapper } from 'enzyme';
+import Adapter15 from 'enzyme-adapter-react-15';
 import {
   types,
 
@@ -80,6 +82,19 @@ function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
+  // add enzyme
+  // TODO: do programatically
+  // TODO: webpack lazyload this
+  tests.Enzyme = {
+    shallow: (node, options) => new ShallowWrapper(node, null, {
+      ...options,
+      adapter: new Adapter15()
+    }),
+    mount: (node, options) => new ReactWrapper(node, null, {
+      ...options,
+      adapter: new Adapter15()
+    })
+  };
   // default for classic challenges
   // should not be used for modern
   tests.__source = sources['index'] || '';

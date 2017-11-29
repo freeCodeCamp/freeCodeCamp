@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   combineActions,
   createAction,
@@ -27,6 +28,10 @@ export const savedCodeFound = createAction(
 );
 
 export const filesSelector = state => state[ns];
+export const createFileSelector = keySelector => (state, props) => {
+  const files = filesSelector(state);
+  return files[keySelector(state, props)] || {};
+};
 
 export default handleActions(
   () => ({
@@ -42,9 +47,12 @@ export default handleActions(
         }, { ...state });
     },
     [types.savedCodeFound]: (state, { payload: { files, challenge } }) => {
-      if (challenge.type === 'mod') {
+      if (challenge.type === 'modern') {
         // this may need to change to update head/tail
-        return challenge.files;
+        return _.reduce(files, (files, file) => {
+          files[file.key] = createPoly(file);
+          return files;
+        }, {});
       }
       if (
         challenge.challengeType !== html &&
@@ -70,8 +78,11 @@ export default handleActions(
         app.fetchChallenge.complete
       )
     ]: (state, { payload: { challenge } }) => {
-      if (challenge.type === 'mod') {
-        return challenge.files;
+      if (challenge.type === 'modern') {
+        return _.reduce(challenge.files, (files, file) => {
+          files[file.key] = createPoly(file);
+          return files;
+        }, {});
       }
       if (
         challenge.challengeType !== html &&

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup, Tooltip, OverlayTrigger } from 'react-bootstrap';
-import PureComponent from 'react-pure-render/component';
 
 const unlockWarning = (
   <Tooltip id='tooltip'>

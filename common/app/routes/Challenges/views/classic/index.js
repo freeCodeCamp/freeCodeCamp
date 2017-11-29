@@ -1,1 +1,1 @@
-export { default, panesMap } from './Show.jsx';
+export { default, mapStateToPanes } from './Show.jsx';

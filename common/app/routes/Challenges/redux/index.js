@@ -57,6 +57,8 @@ export const types = createTypes([
   'unlockUntrustedCode',
   'closeChallengeModal',
   'updateSuccessMessage',
+  // |- modern
+  'modernEditorUpdated',
 
   // rechallenge
   'executeChallenge',
@@ -83,7 +85,8 @@ export const types = createTypes([
   'toggleMap',
   'togglePreview',
   'toggleSidePanel',
-  'toggleStep'
+  'toggleStep',
+  'toggleModernEditor'
 ], ns);
 
 // routes
@@ -93,6 +96,11 @@ export const onRouteCurrentChallenge =
 
 // classic
 export const classicEditorUpdated = createAction(types.classicEditorUpdated);
+// modern
+export const modernEditorUpdated = createAction(
+  types.modernEditorUpdated,
+  (key, content) => ({ key, content })
+);
 // challenges
 export const closeChallengeModal = createAction(types.closeChallengeModal);
 export const updateHint = createAction(types.updateHint);
@@ -203,6 +211,9 @@ export const challengeMetaSelector = createSelector(
     };
   }
 );
+
+export const showPreviewSelector = state =>
+  !!challengeMetaSelector(state).showPreview;
 
 export default combineReducers(
   handleActions(

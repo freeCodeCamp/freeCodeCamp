@@ -11,6 +11,7 @@ import Step from './views/step';
 import Project from './views/project';
 import BackEnd from './views/backend';
 import Quiz from './views/quiz';
+import Modern from './views/Modern';
 
 import {
   fetchChallenge,
@@ -23,10 +24,11 @@ import { paramsSelector } from '../../Router/redux';
 const views = {
   backend: BackEnd,
   classic: Classic,
+  modern: Modern,
   project: Project,
+  quiz: Quiz,
   simple: Project,
-  step: Step,
-  quiz: Quiz
+  step: Step
 };
 
 const mapDispatchToProps = {
