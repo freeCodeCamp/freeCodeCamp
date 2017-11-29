@@ -70,6 +70,8 @@ block content
                 $(document).ready(function () {
                     var cal = new CalHeatMap();
                     var calendar = !{JSON.stringify(calender)};
+                    var rectSelector = "#cal-heatmap > svg > svg.graph-legend > g > rect.r";
+                    var calLegendTitles = ["0 items", "1 item", "2 items", "3 or more items"]
                     cal.init({
                         itemSelector: "#cal-heatmap",
                         domain: "month",
@@ -88,6 +90,9 @@ block content
                         label: {
                             position: "top"
                         }
+                    });
+                    calLegendTitles.forEach(function(title, i) {
+                        document.querySelector(rectSelector + (i + 1).toString() + '> title').innerHTML = title;
                     });
                 });
         .row
