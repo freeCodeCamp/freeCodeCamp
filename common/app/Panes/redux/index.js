@@ -18,7 +18,7 @@ export const epics = [
 ];
 
 export const types = createTypes([
-  'panesUpdatedThroughFetch',
+  'panesMapUpdated',
   'panesMounted',
   'panesUpdated',
   'panesWillMount',
@@ -35,10 +35,10 @@ export const types = createTypes([
   'hidePane'
 ], ns);
 
-export const panesUpdatedThroughFetch = createAction(
-  types.panesUpdatedThroughFetch,
+export const panesMapUpdated = createAction(
+  types.panesMapUpdated,
   null,
-  panesMap => ({ panesMap })
+  (type, panesMap) => ({ trigger: type, panesMap })
 );
 export const panesMounted = createAction(types.panesMounted);
 export const panesUpdated = createAction(types.panesUpdated);
@@ -139,7 +139,7 @@ export default function createPanesAspects({ createPanesMap }) {
       const nextPanesMap = createPanesMap(getState(), action);
       if (nextPanesMap) {
         checkForTypeKeys(nextPanesMap);
-        next(panesUpdatedThroughFetch(nextPanesMap));
+        next(panesMapUpdated(action.type, nextPanesMap));
       }
       return result;
     };
