@@ -269,7 +269,7 @@ module.exports = function(app) {
     }
 
     const authTokenId = req.query.token;
-    const authEmailId = req.query.email;
+    const authEmailId = new Buffer(req.query.email, 'base64').toString();
 
     return AccessToken.findOne$({ where: {id: authTokenId} })
      .map(authToken => {
@@ -319,7 +319,7 @@ module.exports = function(app) {
       return res.redirect('/email-signin');
     }
 
-    const email = req.query.email;
+    const email = new Buffer(req.query.email, 'base64').toString();
 
     return User.findOne$({ where: { email }})
       .map(user => {
