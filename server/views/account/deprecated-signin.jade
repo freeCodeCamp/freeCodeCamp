@@ -3,6 +3,9 @@ block content
     .text-center
         h2 Sign in with one of these options if you used them as your original login methods :
         br
+        a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
+            i.fa.fa-github
+            | Sign in with GitHub
         a.btn.btn-lg.btn-block.btn-social.btn-facebook(href='/auth/facebook')
             i.fa.fa-facebook
             | Sign in with Facebook
@@ -15,6 +18,10 @@ block content
         a.btn.btn-lg.btn-block.btn-social.btn-twitter(href='/auth/twitter')
             i.fa.fa-twitter
             | Sign in with Twitter
+        br
+        h4 Note: We are unable to create new accounts using these methods now on.
+        h4 If you haven't updated your email with us, you should do that as soon as possible,
+         | after you login here, to avoid losing access to your account.
         br
         p
           a(href="/signin") Or click here to go back.
