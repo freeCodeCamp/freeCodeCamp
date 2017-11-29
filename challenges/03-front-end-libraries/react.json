@@ -3,6 +3,11 @@
   "order": 5,
   "time": "5 hours",
   "helpRoom": "Help",
+  "required": [
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/16.1.1/umd/react.development.js"
+    }
+  ],
   "challenges": [
     {
       "id": "587d7dbc367417b2b2512bb1",
@@ -17,7 +22,7 @@
       ],
       "files": {
         "indexjsx": {
-          "key": "indexjxs",
+          "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
           "contents": [
@@ -28,11 +33,11 @@
         }
       },
       "tests": [
-        "assert(Enzyme.shallow(jsx).type === 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
-        "assert(Enzyme.shallow(jsx).children() === 'Hello JSX!', 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
+        "assert(Enzyme.shallow(jsx).type() === 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
+        "assert(Enzyme.shallow(jsx).contains( 'Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
       "type": "modern",
-      "isRequired": true,
+      "isRequired": false,
       "translations": {}
     }
   ]
