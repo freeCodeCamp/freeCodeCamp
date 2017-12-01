@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { Observable } from 'rx';
 import {
   combineActions,
@@ -7,8 +8,6 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
-import noop from 'lodash/noop';
-import identity from 'lodash/identity';
 
 import { entitiesSelector } from '../entities';
 import fetchUserEpic from './fetch-user-epic.js';
@@ -16,6 +15,8 @@ import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
 import navSizeEpic from './nav-size-epic.js';
 import { types as challenges } from '../routes/Challenges/redux';
+import { challengeToFiles } from '../routes/Challenges/utils.js';
+import { createFilesMetaCreator } from '../files';
 
 import ns from '../ns.json';
 
@@ -95,7 +96,10 @@ export const fetchChallenge = createAction(
 export const fetchChallengeCompleted = createAction(
   types.fetchChallenge.complete,
   null,
-  identity
+  meta => ({
+    ...meta,
+    ..._.flow(challengeToFiles, createFilesMetaCreator)(meta.challenge)
+  })
 );
 export const fetchChallenges = createAction('' + types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
@@ -116,7 +120,7 @@ export const fetchUser = createAction(types.fetchUser);
 // ) => Action
 export const addUser = createAction(
   types.addUser,
-  noop,
+  _.noop,
   entities => ({ entities })
 );
 export const updateThisUser = createAction(types.updateThisUser);

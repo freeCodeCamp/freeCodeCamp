@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   combineActions,
   combineReducers,
@@ -12,14 +13,19 @@ import noop from 'lodash/noop';
 import bugEpic from './bug-epic';
 import completionEpic from './completion-epic.js';
 import challengeEpic from './challenge-epic.js';
-import editorEpic from './editor-epic.js';
 
 import ns from '../ns.json';
+import stepReducer, { epics as stepEpics } from '../views/step/redux';
+import quizReducer from '../views/quiz/redux';
+import projectReducer from '../views/project/redux';
+
 import {
   createTests,
   loggerToStr,
   submitTypes,
-  viewTypes
+  viewTypes,
+  getFileKey,
+  challengeToFiles
 } from '../utils';
 import {
   types as app,
@@ -27,10 +33,7 @@ import {
 } from '../../../redux';
 import { html } from '../../../utils/challengeTypes.js';
 import blockNameify from '../../../utils/blockNameify.js';
-import { getFileKey } from '../../../utils/classic-file.js';
-import stepReducer, { epics as stepEpics } from '../views/step/redux';
-import quizReducer from '../views/quiz/redux';
-import projectReducer from '../views/project/redux';
+import { updateFileMetaCreator, createFilesMetaCreator } from '../../../files';
 
 // this is not great but is ok until we move to a different form type
 export projectNormalizer from '../views/project/redux';
@@ -39,7 +42,6 @@ export const epics = [
   bugEpic,
   completionEpic,
   challengeEpic,
-  editorEpic,
   ...stepEpics
 ];
 
@@ -53,7 +55,6 @@ export const types = createTypes([
   'challengeUpdated',
   'clickOnReset',
   'updateHint',
-  'lockUntrustedCode',
   'unlockUntrustedCode',
   'closeChallengeModal',
   'updateSuccessMessage',
@@ -86,7 +87,10 @@ export const types = createTypes([
   'togglePreview',
   'toggleSidePanel',
   'toggleStep',
-  'toggleModernEditor'
+  'toggleModernEditor',
+
+  // code storage
+  'storedCodeFound'
 ], ns);
 
 // routes
@@ -95,24 +99,32 @@ export const onRouteCurrentChallenge =
   createAction(types.onRouteCurrentChallenge);
 
 // classic
-export const classicEditorUpdated = createAction(types.classicEditorUpdated);
+export const classicEditorUpdated = createAction(
+  types.classicEditorUpdated,
+  null,
+  updateFileMetaCreator
+);
 // modern
 export const modernEditorUpdated = createAction(
   types.modernEditorUpdated,
-  (key, content) => ({ key, content })
+  null,
+  createFilesMetaCreator
 );
 // challenges
 export const closeChallengeModal = createAction(types.closeChallengeModal);
 export const updateHint = createAction(types.updateHint);
-export const lockUntrustedCode = createAction(types.lockUntrustedCode);
 export const unlockUntrustedCode = createAction(
   types.unlockUntrustedCode,
-  () => null
+  _.noop
 );
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 export const challengeUpdated = createAction(
   types.challengeUpdated,
-  challenge => ({ challenge })
+  challenge => ({ challenge }),
+  _.flow(
+    challengeToFiles,
+    createFilesMetaCreator
+  )
 );
 export const clickOnReset = createAction(types.clickOnReset);
 
@@ -148,6 +160,16 @@ export const closeBugModal = createAction(types.closeBugModal);
 export const openIssueSearch = createAction(types.openIssueSearch);
 export const createIssue = createAction(types.createIssue);
 
+// code storage
+export const storedCodeFound = createAction(
+  types.storedCodeFound,
+  null,
+  _.flow(
+    challengeToFiles,
+    createFilesMetaCreator
+  )
+);
+
 const initialUiState = {
   output: null,
   isChallengeModalOpen: false,
@@ -157,6 +179,7 @@ const initialUiState = {
 
 const initialState = {
   isCodeLocked: false,
+  isJSEnabled: true,
   id: '',
   challenge: '',
   helpChatRoom: 'Help',
@@ -176,6 +199,7 @@ export const outputSelector = state => getNS(state).output;
 export const successMessageSelector = state => getNS(state).successMessage;
 export const hintIndexSelector = state => getNS(state).hintIndex;
 export const codeLockedSelector = state => getNS(state).isCodeLocked;
+export const isCodeLockedSelector = state => getNS(state).isCodeLocked;
 export const chatRoomSelector = state => getNS(state).helpChatRoom;
 export const challengeModalSelector =
   state => getNS(state).isChallengeModalOpen;
@@ -250,8 +274,9 @@ export default combineReducers(
         ...state,
         successMessage: payload
       }),
-      [types.lockUntrustedCode]: state => ({
+      [types.storedCodeFound]: state => ({
         ...state,
+        isJSEnabled: false,
         isCodeLocked: true
       }),
       [types.unlockUntrustedCode]: state => ({
@@ -260,6 +285,7 @@ export default combineReducers(
       }),
       [types.executeChallenge]: state => ({
         ...state,
+        isJSEnabled: true,
         tests: state.tests.map(test => ({ ...test, err: false, pass: false }))
       }),
 

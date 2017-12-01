@@ -15,13 +15,13 @@ import { makeToast } from '../../common/app/Toasts/redux';
 import {
   types,
   updateMain,
-  lockUntrustedCode,
+  storedCodeFound,
 
   keySelector,
   codeLockedSelector
 } from '../../common/app/routes/Challenges/redux';
 
-import { filesSelector, savedCodeFound } from '../../common/app/files';
+import { filesSelector } from '../../common/app/files';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -105,11 +105,10 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
         finalFiles = legacyToFile(codeUriFound, files, key);
         removeCodeUri(location, window.history);
         return Observable.of(
-          lockUntrustedCode(),
           makeToast({
             message: 'I found code in the URI. Loading now.'
           }),
-          savedCodeFound(finalFiles, challenge)
+          storedCodeFound(challenge, finalFiles)
         );
       }
 
@@ -128,7 +127,7 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
           makeToast({
             message: 'I found some saved work. Loading now.'
           }),
-          savedCodeFound(finalFiles, challenge),
+          storedCodeFound(challenge, finalFiles),
           updateMain()
         );
       }
@@ -145,7 +144,7 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
             makeToast({
               message: 'I found a previous solved solution. Loading now.'
             }),
-            savedCodeFound(finalFiles, challenge),
+            storedCodeFound(challenge, finalFiles),
             updateMain()
           );
         }
