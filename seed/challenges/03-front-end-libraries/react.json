@@ -36,6 +36,11 @@
         "assert(Enzyme.shallow(jsx).type() === 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
         "assert(Enzyme.shallow(jsx).contains( 'Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
+      "tail": [],
+      "solutions": [
+        "const jsx = <h1>Hello JSX!</h1>;"
+      ],
+      "react": true,
       "type": "modern",
       "isRequired": false,
       "translations": {}
