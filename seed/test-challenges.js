@@ -4,7 +4,6 @@ import { Observable } from 'rx';
 import tape from 'tape';
 import getChallenges from './getChallenges';
 
-
 function createIsAssert(t, isThing) {
   const { assert } = t;
   return function() {
@@ -56,7 +55,8 @@ function createTest({
   tests = [],
   solutions = [],
   head = [],
-  tail = []
+  tail = [],
+  react = false,
 }) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
@@ -81,7 +81,6 @@ function createTest({
         });
       }
 
-
       return Observable.just(t)
         .map(fillAssert)
         /* eslint-disable no-unused-vars */
@@ -89,7 +88,31 @@ function createTest({
         .doOnNext(assert => {
           solutions.forEach(solution => {
             tests.forEach(test => {
-              const code = solution;
+              let code = solution;
+
+              /* NOTE: UGLY code to provide dependencies for running tests against
+               * solutions of React challenges. Relying on new key-value pair
+               * { react: true } on challenge JSON body. Dependencies are provided
+               * here and solution code is transpiled by Babel. Solution passes!
+               * 
+               * Rock on.
+               * 
+               * */
+
+              let React, Enzyme;
+              if (react) {
+                // Provide dependencies:
+                React = require('react');
+                Enzyme = require('enzyme');
+                const Adapter15 = require('enzyme-adapter-react-15');
+                Enzyme.configure({ adapter: new Adapter15() });
+                
+                // Transpile solution code:
+                const transform = require('babel-standalone').transform;
+                code = transform(solution, { presets: [ 'es2015', 'react' ] }).code;
+                solution = code;
+              }
+
               const editor = { getValue() { return code; } };
               /* eslint-enable no-unused-vars */
               try {
