@@ -95,7 +95,7 @@ function createTest({
                * { react: true } on challenge JSON body. Dependencies are provided
                * here and solution code is transpiled by Babel. Solution passes!
                * 
-               * Rock on.
+               * Berkeley feel free to refactor this.
                * 
                * */
 
