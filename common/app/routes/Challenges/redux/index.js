@@ -288,6 +288,15 @@ export default combineReducers(
         isJSEnabled: true,
         tests: state.tests.map(test => ({ ...test, err: false, pass: false }))
       }),
+      [
+        combineActions(
+          types.classicEditorUpdated,
+          types.modernEditorUpdated
+        )
+      ]: state => ({
+        ...state,
+        isJSEnabled: false
+      }),
 
       // classic/modern
       [types.initOutput]: (state, { payload: output }) => ({
