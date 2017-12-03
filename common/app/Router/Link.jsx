@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { selectLocationState } from 'redux-first-router';
+import { createSelector } from 'reselect';
 
 import toUrl from './to-url.js';
 import createHandler from './handle-press.js';
-import { langSelector } from './redux';
+import { routesMapSelector, langSelector } from './redux';
+
+const mapStateToProps = createSelector(
+  langSelector,
+  routesMapSelector,
+  (lang, routesMap) => ({ lang, routesMap })
+);
 
 const propTypes = {
   children: PropTypes.node,
   dispatch: PropTypes.func,
+  lang: PropTypes.string,
   onClick: PropTypes.func,
   redirect: PropTypes.bool,
   replace: PropTypes.bool,
+  routesMap: PropTypes.object,
   shouldDispatch: PropTypes.bool,
   target: PropTypes.string,
   to: PropTypes.oneOfType([ PropTypes.object, PropTypes.string ]).isRequired
@@ -22,19 +30,16 @@ export const Link = (
   {
     children,
     dispatch,
+    lang,
     onClick,
     redirect,
     replace,
+    routesMap,
     shouldDispatch = true,
     target,
     to
-  },
-  { store }
+  }
 ) => {
-  const state = store.getState();
-  const lang = langSelector(state);
-  const location = selectLocationState(state);
-  const { routesMap } = location;
   const url = toUrl(to, routesMap, lang);
   const handler = createHandler(
     url,
@@ -77,4 +82,4 @@ Link.contextTypes = {
 };
 Link.propTypes = propTypes;
 
-export default connect()(Link);
+export default connect(mapStateToProps)(Link);
