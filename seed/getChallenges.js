@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const hiddenFile = /^(\.|\/\.)/g;
+const hiddenFile = /(^(\.|\/\.))|(.md$)/g;
 function getFilesFor(dir) {
   return fs.readdirSync(path.join(__dirname, '/' + dir))
     .filter(file => !hiddenFile.test(file))
