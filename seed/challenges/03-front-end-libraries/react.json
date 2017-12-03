@@ -44,6 +44,105 @@
       "type": "modern",
       "isRequired": false,
       "translations": {}
+    },
+    {
+      "id": "587d7dbc367417b2b2512bb2",
+      "title": "Create a Complex JSX Element",
+      "releasedOn": "December 25, 2017",
+      "description": [
+        "The last challenge was a simple example of JSX, but JSX can represent more complex HTML as well.",
+        "One important thing to know about nested JSX is that it must return a single element.",
+        "This one parent element would wrap all of the other levels of nested elements.",
+        "For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.",
+        "Here's an example:",
+        "",
+        "",
+        "",
+        "<b>Valid JSX:</b>",
+        "",
+        "<blockquote>&lt;div&gt;<br>  &lt;p&gt;Paragraph One&lt;/p&gt;<br>  &lt;p&gt;Paragraph Two&lt;/p&gt;<br>  &lt;p&gt;Paragraph Three&lt;/p&gt;<br>&lt;/div&gt;</blockquote>",
+        "",
+        "",
+        "",
+        "",
+        "<b>Invalid JSX:</b>",
+        "",
+        "<blockquote>&lt;p&gt;Paragraph One&lt;/p&gt;<br>&lt;p&gt;Paragraph Two&lt;/p&gt;<br>&lt;p&gt;Paragraph Three&lt;/p&gt;<br></blockquote>",
+        "<hr>",
+        "Define a new constant <code>jsx</code> that renders a <code>div</code> which contains the following elements in order:",
+        "An <code>h1</code>, a <code>p</code>, and an unordered list that contains three <code>li</code> items. You can include any text you want within each element.",
+        "",
+        "<strong>Note:</strong>&nbsp;When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a <code>div</code> tag to wrap all the child elements within a single parent element. If you remove the <code>div</code>, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components."
+      ],
+      "files": {
+        "indexjsx": {
+          "key": "indexjsx",
+          "ext": "jsx",
+          "name": "index",
+          "contents": [
+            "// write your code here",
+            ""
+          ]
+        }
+      },
+      "tests": [
+        "assert(jsx.type === 'div', 'message: The constant JSX should return a div element.');",
+        "assert(jsx.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
+        "assert(jsx.props.children[2].type === 'ul', 'message: The div should contain a ul tag as the third element.');",
+        "assert(jsx.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
+        "assert(jsx.props.children[2].props.children.length === 3, 'message: The ul should contain three li elements.');"
+      ],
+      "head": [],
+      "tail": [],
+      "solutions": [
+        "const jsx = (\n<div>\n  <h1>Hello JSX!</h1>\n  <p>Some info</p>\n  <ul>\n    <li>An item</li>\n    <li>Another item</li>\n    <li>A third item</li>\n  </ul>\n</div>);"
+      ],
+      "type": "modern",
+      "react": true,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "587d7dbc367417b2b2512bb3",
+      "title": "Add Comments in JSX",
+      "releasedOn": "December 25, 2017",
+      "description": [
+        "JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, JSX has its own way to do this.",
+        "",
+        "To put comments inside JSX, you use the syntax <code>{/* */}</code> to wrap around the comment text.",
+        "<hr>",
+        "The code editor has a jsx element similar to what you created in the last challenge. Add a comment somewhere within the provided <code>div</code> element, without",
+        "modifying the existing <code>h1</code> or <code>p</code> elements."
+      ],
+      "files": {
+        "indexjsx": {
+          "key": "indexjsx",
+          "ext": "jsx",
+          "name": "index",
+          "contents": [
+            "const jsx = (",
+            "<div>",
+            "  <h1>This is a block of JSX</h1>",
+            "  <p>Here's a subtitle</p>",
+            "</div>);"
+          ]
+        }
+      },
+      "tests": [
+        "assert(jsx.type === 'div', 'message: The constant JSX should return a div element.');",
+        "assert(jsx.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
+        "assert(jsx.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
+        "assert(editor.getValue().includes('/*') && editor.getValue().includes('*/'), 'message: The JSX should include a comment.');"
+      ],
+      "head": [],
+      "tail": [],
+      "solutions": [
+        "const jsx = (\n<div>\n  <h1>This is a block of JSX</h1>\n  { /* this is a JSX comment */ }\n  <p>Here's a subtitle</p>\n</div>);"
+      ],
+      "type": "modern",
+      "react": true,
+      "isRequired": false,
+      "translations": {}
     }
   ]
 }

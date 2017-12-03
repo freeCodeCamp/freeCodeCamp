@@ -87,6 +87,7 @@ function createTest({
         // assert and code used within the eval
         .doOnNext(assert => {
           solutions.forEach(solution => {
+            const originalCode = solution; // original code string
             tests.forEach(test => {
               let code = solution;
 
@@ -99,10 +100,11 @@ function createTest({
                * 
                * */
 
-              let React, Enzyme;
+              let React, ReactDOM, Enzyme;
               if (react) {
                 // Provide dependencies:
                 React = require('react');
+                ReactDOM = require('react-dom');
                 Enzyme = require('enzyme');
                 const Adapter15 = require('enzyme-adapter-react-15');
                 Enzyme.configure({ adapter: new Adapter15() });
@@ -113,7 +115,12 @@ function createTest({
                 solution = code;
               }
 
-              const editor = { getValue() { return code; } };
+              /* NOTE: Some React/Redux challenges need to access the original code string
+               * before it is transpiled for some of the tests.
+               * */
+              const editor = {
+                getValue() { return react ? originalCode : code; },
+              };
               /* eslint-enable no-unused-vars */
               try {
                 (() => {
