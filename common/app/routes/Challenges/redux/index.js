@@ -200,6 +200,7 @@ export const successMessageSelector = state => getNS(state).successMessage;
 export const hintIndexSelector = state => getNS(state).hintIndex;
 export const codeLockedSelector = state => getNS(state).isCodeLocked;
 export const isCodeLockedSelector = state => getNS(state).isCodeLocked;
+export const isJSEnabledSelector = state => getNS(state).isJSEnabled;
 export const chatRoomSelector = state => getNS(state).helpChatRoom;
 export const challengeModalSelector =
   state => getNS(state).isChallengeModalOpen;
