@@ -74,6 +74,7 @@
     "invariant": "^2.2.1",
     "jade": "^1.11.0",
     "jquery": "~3.1.1",
+    "jsdom": "^11.5.1",
     "jshint": "~2.9.4",
     "jsonlint-cli": "^1.0.1",
     "lightbox2": "~2.8.2",
