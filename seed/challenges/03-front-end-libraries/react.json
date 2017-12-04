@@ -6,6 +6,9 @@
   "required": [
     {
       "src": "https://cdnjs.cloudflare.com/ajax/libs/react/16.1.1/umd/react.development.js"
+    },
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.development.js"
     }
   ],
   "challenges": [
@@ -138,6 +141,58 @@
       "tail": [],
       "solutions": [
         "const jsx = (\n<div>\n  <h1>This is a block of JSX</h1>\n  { /* this is a JSX comment */ }\n  <p>Here's a subtitle</p>\n</div>);"
+      ],
+      "type": "modern",
+      "react": true,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "587d7dbc367417b2b2512bb4",
+      "title": "Render HTML Elements to the DOM",
+      "releasedOn": "December 25, 2017",
+      "description": [
+        "So far, you've learned that JSX is a convenient tool to write readable HTML within JavaScript. With React, we can render this JSX directly to the HTML DOM using React's rendering API known as ReactDOM.",
+        "",
+        "ReactDOM offers a simple method to render React elements to the DOM which looks like this: <code>ReactDOM.render(componentToRender, targetNode)</code>.",
+        "",
+        "<ul>",
+        "<li>The first argument is the React element or component that you want to render.</li>",
+        "<li>The second argument is the DOM node that you want to render the component within.</li>",
+        "</ul>",
+        "",
+        "As you would expect, <code>ReactDOM.render()</code> must be called after the JSX element declarations, just like how you must declare variables before using them.",
+        "<hr>",
+        "The code editor has a simple JSX component. Use the <code>ReactDOM.render()</code> method to render this component to the page. You can pass defined JSX elements directly in as the first argument and use <code>document.getElementById()</code>",
+        "to select the DOM node to render them to. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use. Make sure you don't change the <code>JSX</code> constant."
+      ],
+      "files": {
+        "indexjsx": {
+          "key": "indexjsx",
+          "ext": "jsx",
+          "name": "index",
+          "contents": [
+            "const jsx = (",
+            "<div>",
+            "  <h1>Hello World</h1>",
+            "  <p>Lets render this to the DOM</p>",
+            "</div>",
+            ");",
+            "// change code below this line",
+            ""
+          ]
+        }
+      },
+      "tests": [
+        "assert(jsx.type === 'div', 'message: The constant JSX should return a div element.');",
+        "assert(jsx.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
+        "assert(jsx.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
+        "assert(document.getElementById('challenge-node').childNodes[0].innerHTML === '<h1>Hello World</h1><p>Lets render this to the DOM</p>', `message: The provided JSX element should render to the DOM node with id 'challenge-node'.`);"
+      ],
+      "head": [],
+      "tail": [],
+      "solutions": [
+        "const jsx = (\n<div>\n  <h1>Hello World</h1>\n  <p>Lets render this to the DOM</p>\n</div>\n);\n// change code below this line\nReactDOM.render(jsx, document.getElementById('challenge-node'));"
       ],
       "type": "modern",
       "react": true,

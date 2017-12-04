@@ -100,7 +100,7 @@ function createTest({
                * 
                * */
 
-              let React, ReactDOM, Enzyme;
+              let React, ReactDOM, Enzyme, document;
               if (react) {
                 // Provide dependencies:
                 React = require('react');
@@ -113,6 +113,16 @@ function createTest({
                 const transform = require('babel-standalone').transform;
                 code = transform(solution, { presets: [ 'es2015', 'react' ] }).code;
                 solution = code;
+
+                const { JSDOM } = require('jsdom');
+                const jsdom = new JSDOM('<!doctype html><html><body><div id="challenge-node"></div></body></html>');
+                const { window } = jsdom;
+
+                // Mock DOM for ReactDOM tests:
+                document = window.document;
+                global.window = window;
+                global.document = window.document;
+
               }
 
               /* NOTE: Some React/Redux challenges need to access the original code string
