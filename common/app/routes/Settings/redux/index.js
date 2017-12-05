@@ -1,7 +1,8 @@
+import { isLocationAction } from 'redux-first-router';
 import {
+  addNS,
   createAction,
-  createTypes,
-  handleActions
+  createTypes
 } from 'berkeleys-redux-utils';
 
 import userUpdateEpic from './update-user-epic.js';
@@ -19,6 +20,7 @@ export const types = createTypes([
   'onRouteUpdateEmail'
 ], 'settings');
 
+
 export const onRouteSettings = createAction(types.onRouteSettings);
 export const onRouteUpdateEmail = createAction(types.onRouteUpdateEmail);
 export const toggleUserFlag = createAction(types.toggleUserFlag);
@@ -33,10 +35,28 @@ const defaultState = {
   showUpdateEmailView: false
 };
 
-export default handleActions(
-  () => ({
-    [types.onRouteSettings]: state => ({ ...state, showUpdateEmailView: true })
-  }),
-  defaultState,
-  ns
+const getNS = state => state[ns];
+export const showUpdateEmailViewSelector =
+  state => getNS(state).showUpdateEmailView;
+
+export default addNS(
+  ns,
+  function settingsRouteReducer(state = defaultState, action) {
+    if (isLocationAction(action)) {
+      const { type } = action;
+      if (type === types.onRouteUpdateEmail) {
+        return {
+          ...state,
+          showUpdateEmailView: true
+        };
+      }
+      if (state.showUpdateEmailView) {
+        return {
+          ...state,
+          showUpdateEmailView: false
+        };
+      }
+    }
+    return state;
+  }
 );

@@ -1,7 +1,7 @@
 import { langSelector } from './';
 
 // This enhancers sole purpose is to add the lang prop to route actions so that
-// they do not need to be explicitally added when using a RFR route action.
+// they do not need to be explicitly added when using a RFR route action.
 export default function addLangToRouteEnhancer(routesMap) {
   return createStore => (...args) => {
     const store = createStore(...args);
@@ -11,7 +11,7 @@ export default function addLangToRouteEnhancer(routesMap) {
       dispatch(action) {
         if (
           routesMap[action.type] &&
-          (action && action.payload && !action.payload.lang)
+          (!action.payload || !action.payload.lang)
         ) {
           action = {
             ...action,

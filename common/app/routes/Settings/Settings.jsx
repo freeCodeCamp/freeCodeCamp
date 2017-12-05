@@ -12,8 +12,9 @@ import SocialSettings from './Social-Settings.jsx';
 import EmailSettings from './Email-Setting.jsx';
 import LanguageSettings from './Language-Settings.jsx';
 import SettingsSkeleton from './Settings-Skeleton.jsx';
+import UpdateEmail from './routes/update-email';
 
-import { toggleUserFlag } from './redux';
+import { toggleUserFlag, showUpdateEmailViewSelector } from './redux';
 import {
   toggleNightMode,
   updateTitle,
@@ -23,20 +24,10 @@ import {
 } from '../../redux';
 import ChildContainer from '../../Child-Container.jsx';
 
-
-const mapDispatchToProps = {
-  updateTitle,
-  toggleNightMode,
-  toggleIsAvailableForHire: () => toggleUserFlag('isAvailableForHire'),
-  toggleIsLocked: () => toggleUserFlag('isLocked'),
-  toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
-  toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
-  toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail')
-};
-
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
+  showUpdateEmailViewSelector,
   (
     {
       username,
@@ -51,20 +42,32 @@ const mapStateToProps = createSelector(
       sendQuincyEmail
     },
     showLoading,
+    showUpdateEmailView
   ) => ({
-    showLoading,
-    username,
     email,
     isAvailableForHire,
-    isLocked,
     isGithubCool,
-    isTwitter,
     isLinkedIn,
+    isLocked,
+    isTwitter,
     sendMonthlyEmail,
     sendNotificationEmail,
-    sendQuincyEmail
+    sendQuincyEmail,
+    showLoading,
+    showUpdateEmailView,
+    username
   })
 );
+
+const mapDispatchToProps = {
+  toggleIsAvailableForHire: () => toggleUserFlag('isAvailableForHire'),
+  toggleIsLocked: () => toggleUserFlag('isLocked'),
+  toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail'),
+  toggleNightMode,
+  toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
+  toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
+  updateTitle
+};
 
 const propTypes = {
   children: PropTypes.element,
@@ -80,6 +83,7 @@ const propTypes = {
   sendNotificationEmail: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
+  showUpdateEmailView: PropTypes.bool,
   toggleIsAvailableForHire: PropTypes.func.isRequired,
   toggleIsLocked: PropTypes.func.isRequired,
   toggleMonthlyEmail: PropTypes.func.isRequired,
@@ -109,34 +113,30 @@ export class Settings extends React.Component {
 
   render() {
     const {
-      children,
-      username,
-      isAvailableForHire,
-      isLocked,
-      isGithubCool,
-      isTwitter,
-      isLinkedIn,
-      showLoading,
       email,
+      isAvailableForHire,
+      isGithubCool,
+      isLinkedIn,
+      isLocked,
+      isTwitter,
       sendMonthlyEmail,
       sendNotificationEmail,
       sendQuincyEmail,
+      showLoading,
+      showUpdateEmailView,
       toggleIsAvailableForHire,
-      toggleNightMode,
       toggleIsLocked,
-      toggleQuincyEmail,
       toggleMonthlyEmail,
-      toggleNotificationEmail
+      toggleNightMode,
+      toggleNotificationEmail,
+      toggleQuincyEmail,
+      username
     } = this.props;
     if (!username && !showLoading) {
       return <SettingsSkeleton />;
     }
-    if (children) {
-      return (
-        <ChildContainer>
-          { children }
-        </ChildContainer>
-      );
+    if (showUpdateEmailView) {
+      return <UpdateEmail />;
     }
     return (
       <ChildContainer>
