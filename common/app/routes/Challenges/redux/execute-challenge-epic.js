@@ -10,7 +10,7 @@ import {
   createErrorObservable,
 
   challengeSelector
-} from '../../common/app/redux';
+} from '../../../redux';
 import {
   types,
 
@@ -19,9 +19,9 @@ import {
   initOutput,
 
   codeLockedSelector
-} from '../../common/app/routes/Challenges/redux';
+} from './';
 
-import { filesSelector } from '../../common/app/files';
+import { filesSelector } from '../../../files';
 
 export default function executeChallengeEpic(actions, { getState }) {
   return actions::ofType(types.executeChallenge, types.updateMain)

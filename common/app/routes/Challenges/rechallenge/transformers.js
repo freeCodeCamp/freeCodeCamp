@@ -4,26 +4,23 @@ import * as babel from 'babel-core';
 import presetEs2015 from 'babel-preset-es2015';
 import presetReact from 'babel-preset-react';
 import { Observable } from 'rx';
-/* eslint-disable import/no-unresolved */
-import loopProtect from 'loop-protect';
-/* eslint-enable import/no-unresolved */
 
 import {
   transformHeadTailAndContents,
   setContent,
   setExt
-} from '../../common/utils/polyvinyl.js';
-import castToObservable from '../../common/app/utils/cast-to-observable.js';
+} from '../../../../utils/polyvinyl.js';
+import castToObservable from '../../../utils/cast-to-observable.js';
 
 const babelOptions = { presets: [ presetEs2015, presetReact ] };
-loopProtect.hit = function hit(line) {
+function loopProtectHit(line) {
   var err = 'Exiting potential infinite loop at line ' +
     line +
     '. To disable loop protection, write: \n\/\/ noprotect\nas the first ' +
     'line. Beware that if you do have an infinite loop in your code, ' +
     'this will crash your browser.';
   throw new Error(err);
-};
+}
 
 // const sourceReg =
 //  /(<!-- fcc-start-source -->)([\s\S]*?)(?=<!-- fcc-end-source -->)/g;
@@ -57,6 +54,10 @@ export const addLoopProtect = _.cond([
         // No JavaScript in user code, so no need for loopProtect
         return file;
       }
+      /* eslint-disable import/no-unresolved */
+      const loopProtect = require('loop-protect');
+      /* eslint-enable import/no-unresolved */
+      loopProtect.hit = loopProtectHit;
       return setContent(loopProtect(file.contents), file);
     }
   ],

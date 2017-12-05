@@ -15,7 +15,7 @@ import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
 import navSizeEpic from './nav-size-epic.js';
 import { types as challenges } from '../routes/Challenges/redux';
-import { challengeToFiles } from '../routes/Challenges/utils.js';
+import { challengeToFiles } from '../routes/Challenges/utils';
 import { createFilesMetaCreator } from '../files';
 
 import ns from '../ns.json';

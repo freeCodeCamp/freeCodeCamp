@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
-import * as challengeTypes from '../../utils/challengeTypes.js';
-import { createPoly } from '../../../utils/polyvinyl.js';
-import { decodeScriptTags } from '../../../utils/encode-decode.js';
+import * as challengeTypes from '../../../utils/challengeTypes.js';
+import { createPoly } from '../../../../utils/polyvinyl.js';
+import { decodeScriptTags } from '../../../../utils/encode-decode.js';
 
 // turn challengeType to file ext
 const pathsMap = {
