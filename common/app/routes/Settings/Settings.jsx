@@ -184,7 +184,7 @@ export class Settings extends React.Component {
                 className='btn-link-social'
                 onClick={ toggleNightMode }
                 >
-                NightMode
+                Toggle Night Mode
               </Button>
             </Col>
           </Row>
