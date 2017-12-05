@@ -1,7 +1,15 @@
-import { Scheduler, Observable } from 'rx';
+import { combineEpics, ofType } from 'redux-epic';
 
-import { ofType } from 'redux-epic';
+import {
+  types,
 
+  frameMain,
+  frameTests,
+  initOutput,
+
+  codeLockedSelector,
+  showPreviewSelector
+} from './';
 import {
   buildFromFiles,
   buildBackendChallenge
@@ -11,25 +19,34 @@ import {
 
   challengeSelector
 } from '../../../redux';
-import {
-  types,
-
-  frameMain,
-  frameTests,
-  initOutput,
-
-  codeLockedSelector
-} from './';
 
 import { filesSelector } from '../../../files';
 
-export default function executeChallengeEpic(actions, { getState }) {
+const executeDebounceTimeout = 750;
+export function updateMainEpic(actions, { getState }) {
   return actions::ofType(types.executeChallenge, types.updateMain)
     // if isCodeLocked do not run challenges
+    .filter(() => (
+      !codeLockedSelector(getState()) &&
+      showPreviewSelector(getState())
+    ))
+    .debounce(executeDebounceTimeout)
+    .map(() => getState())
+    .flatMapLatest(state => {
+      const files = filesSelector(state);
+      const { required = [] } = challengeSelector(state);
+      return buildFromFiles(files, required, true)
+        .map(frameMain)
+        .catch(createErrorObservable);
+    });
+}
+
+export function executeChallengeEpic(actions, { getState }) {
+  return actions::ofType(types.executeChallenge)
+    // if isCodeLocked do not run challenges
     .filter(() => !codeLockedSelector(getState()))
-    .debounce(750)
-    .flatMapLatest(({ type }) => {
-      const shouldProxyConsole = type === types.updateMain;
+    .debounce(executeDebounceTimeout)
+    .flatMapLatest(() => {
       const state = getState();
       const files = filesSelector(state);
       const {
@@ -41,22 +58,11 @@ export default function executeChallengeEpic(actions, { getState }) {
           .map(frameTests)
           .startWith(initOutput('// running test'));
       }
-      return buildFromFiles(files, required, shouldProxyConsole)
-        .flatMap(payload => {
-          const actions = [
-            frameMain(payload)
-          ];
-          if (type === types.executeChallenge) {
-            actions.push(frameTests(payload));
-          }
-          return Observable.from(actions, null, null, Scheduler.default);
-        })
-        .startWith((
-          type === types.executeChallenge ?
-            initOutput('// running test') :
-            null
-        ))
-        .filter(Boolean)
+      return buildFromFiles(files, required, false)
+        .map(frameTests)
+        .startWith(initOutput('// running test'))
         .catch(createErrorObservable);
     });
 }
+
+export default combineEpics(executeChallengeEpic, updateMainEpic);
