@@ -57,6 +57,8 @@ function createTest({
   head = [],
   tail = [],
   react = false,
+  redux = false,
+  reactRedux = false,
 }) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
@@ -125,11 +127,21 @@ function createTest({
 
               }
 
+              let Redux;
+              if (redux) {
+                Redux = require('redux');
+              }
+
+              let reactRedux;
+              if (reactRedux) {
+                reactRedux = require('react-redux');
+              }
+
               /* NOTE: Some React/Redux challenges need to access the original code string
-               * before it is transpiled for some of the tests.
-               * */
+               * before it is transpiled for some of the tests. */
+              const provideOriginalCode = react || redux || reactRedux;
               const editor = {
-                getValue() { return react ? originalCode : code; },
+                getValue() { return provideOriginalCode ? originalCode : code; },
               };
               /* eslint-enable no-unused-vars */
               try {

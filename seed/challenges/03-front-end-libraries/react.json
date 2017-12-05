@@ -31,19 +31,19 @@
           "name": "index",
           "contents": [
             "",
-            "var jsx = <div></div>;",
+            "var JSX = <div></div>;",
             ""
           ]
         }
       },
       "tests": [
-        "assert(Enzyme.shallow(jsx).type() === 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
-        "assert(Enzyme.shallow(jsx).contains( 'Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
+        "assert(Enzyme.shallow(JSX).type() === 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
+        "assert(Enzyme.shallow(JSX).contains( 'Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
       "head": [],
       "tail": [],
       "solutions": [
-        "const jsx = <h1>Hello JSX!</h1>;"
+        "const JSX = <h1>Hello JSX!</h1>;"
       ],
       "type": "modern",
       "isRequired": false,
@@ -81,16 +81,16 @@
         }
       },
       "tests": [
-        "assert(jsx.type === 'div', 'message: The constant JSX should return a div element.');",
-        "assert(jsx.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
-        "assert(jsx.props.children[2].type === 'ul', 'message: The div should contain a ul tag as the third element.');",
-        "assert(jsx.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
-        "assert(jsx.props.children[2].props.children.length === 3, 'message: The ul should contain three li elements.');"
+        "assert(JSX.type === 'div', 'message: The constant JSX should return a div element.');",
+        "assert(JSX.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
+        "assert(JSX.props.children[2].type === 'ul', 'message: The div should contain a ul tag as the third element.');",
+        "assert(JSX.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
+        "assert(JSX.props.children[2].props.children.length === 3, 'message: The ul should contain three li elements.');"
       ],
       "head": [],
       "tail": [],
       "solutions": [
-        "const jsx = (\n<div>\n  <h1>Hello JSX!</h1>\n  <p>Some info</p>\n  <ul>\n    <li>An item</li>\n    <li>Another item</li>\n    <li>A third item</li>\n  </ul>\n</div>);"
+        "const JSX = (\n<div>\n  <h1>Hello JSX!</h1>\n  <p>Some info</p>\n  <ul>\n    <li>An item</li>\n    <li>Another item</li>\n    <li>A third item</li>\n  </ul>\n</div>);"
       ],
       "type": "modern",
       "isRequired": false,
@@ -122,15 +122,15 @@
         }
       },
       "tests": [
-        "assert(jsx.type === 'div', 'message: The constant JSX should return a div element.');",
-        "assert(jsx.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
-        "assert(jsx.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
+        "assert(JSX.type === 'div', 'message: The constant JSX should return a div element.');",
+        "assert(JSX.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
+        "assert(JSX.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
         "assert(editor.getValue().includes('/*') && editor.getValue().includes('*/'), 'message: The JSX should include a comment.');"
       ],
       "head": [],
       "tail": [],
       "solutions": [
-        "const jsx = (\n<div>\n  <h1>This is a block of JSX</h1>\n  { /* this is a JSX comment */ }\n  <p>Here's a subtitle</p>\n</div>);"
+        "const JSX = (\n<div>\n  <h1>This is a block of JSX</h1>\n  { /* this is a JSX comment */ }\n  <p>Here's a subtitle</p>\n</div>);"
       ],
       "type": "modern",
       "isRequired": false,
@@ -170,15 +170,15 @@
         }
       },
       "tests": [
-        "assert(jsx.type === 'div', 'message: The constant JSX should return a div element.');",
-        "assert(jsx.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
-        "assert(jsx.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
+        "assert(JSX.type === 'div', 'message: The constant JSX should return a div element.');",
+        "assert(JSX.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
+        "assert(JSX.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
         "assert(document.getElementById('challenge-node').childNodes[0].innerHTML === '<h1>Hello World</h1><p>Lets render this to the DOM</p>', `message: The provided JSX element should render to the DOM node with id 'challenge-node'.`);"
       ],
       "head": [],
       "tail": [],
       "solutions": [
-        "const jsx = (\n<div>\n  <h1>Hello World</h1>\n  <p>Lets render this to the DOM</p>\n</div>\n);\n// change code below this line\nReactDOM.render(jsx, document.getElementById('challenge-node'));"
+        "const JSX = (\n<div>\n  <h1>Hello World</h1>\n  <p>Lets render this to the DOM</p>\n</div>\n);\n// change code below this line\nReactDOM.render(JSX, document.getElementById('challenge-node'));"
       ],
       "type": "modern",
       "isRequired": false,
@@ -295,7 +295,12 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(typeof MyComponent === 'function', 'message: <code>MyComponent</code> should be a function.');",
+        "assert(typeof MyComponent() === 'object', 'message: <code>MyComponent</code> should return a React element.');",
+        "assert(MyComponent().type === 'div', 'message: <code>MyComponent</code> should return a <code>div</code> element.');",
+        "assert(MyComponent().props.children.length !== 0, 'message: The <code>div</code> element should contain a string of text.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
