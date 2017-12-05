@@ -58,7 +58,7 @@ function createTest({
   tail = [],
   react = false,
   redux = false,
-  reactRedux = false,
+  reactRedux = false
 }) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
@@ -89,38 +89,51 @@ function createTest({
         // assert and code used within the eval
         .doOnNext(assert => {
           solutions.forEach(solution => {
-            const originalCode = solution; // original code string
+            // original code string
+            const originalCode = solution;
             tests.forEach(test => {
               let code = solution;
 
-              /* NOTE: UGLY code to provide dependencies for running tests against
-               * solutions of React challenges. Relying on new key-value pair
-               * { react: true } on challenge JSON body. Dependencies are provided
-               * here and solution code is transpiled by Babel. Solution passes!
-               * 
+              /* NOTE: UGLY code to provide dependencies for running tests
+               * against solutions of React challenges. Relying on new key-value
+               * pair { react: true } on challenge JSON body. Dependencies
+               * are provided here and solution code is transpiled by Babel.
+               *
                * Berkeley feel free to refactor this.
-               * 
+               *
                * */
 
               let React, ReactDOM, Enzyme, document;
               if (react) {
-                // Provide dependencies:
+                // Provide dependencies
                 React = require('react');
                 ReactDOM = require('react-dom');
                 Enzyme = require('enzyme');
                 const Adapter15 = require('enzyme-adapter-react-15');
                 Enzyme.configure({ adapter: new Adapter15() });
-                
-                // Transpile solution code:
+
+                /* Transpile ALL the code
+                 * (we may use JSX in head or tail or tests, too): */
                 const transform = require('babel-standalone').transform;
-                code = transform(solution, { presets: [ 'es2015', 'react' ] }).code;
-                solution = code;
+                const options = { presets: [ 'es2015', 'react' ] };
+
+                head = transform(head, options).code;
+                solution = transform(solution, options).code;
+                tail = transform(tail, options).code;
+                test = transform(test, options).code;
 
                 const { JSDOM } = require('jsdom');
-                const jsdom = new JSDOM('<!doctype html><html><body><div id="challenge-node"></div></body></html>');
+                // Mock DOM document for ReactDOM.render method
+                const jsdom = new JSDOM(`<!doctype html>
+                  <html>
+                    <body>
+                      <div id="challenge-node"></div>
+                    </body>
+                  </html>
+                `);
                 const { window } = jsdom;
 
-                // Mock DOM for ReactDOM tests:
+                // Mock DOM for ReactDOM tests
                 document = window.document;
                 global.window = window;
                 global.document = window.document;
@@ -132,16 +145,16 @@ function createTest({
                 Redux = require('redux');
               }
 
-              let reactRedux;
+              let ReactRedux;
               if (reactRedux) {
-                reactRedux = require('react-redux');
+                ReactRedux = require('react-redux');
               }
 
-              /* NOTE: Some React/Redux challenges need to access the original code string
-               * before it is transpiled for some of the tests. */
+              /* NOTE: Some React/Redux challenges need to access the original
+               * code string before it is transpiled for some of the tests. */
               const provideOriginalCode = react || redux || reactRedux;
               const editor = {
-                getValue() { return provideOriginalCode ? originalCode : code; },
+                getValue() { return provideOriginalCode ? originalCode : code; }
               };
               /* eslint-enable no-unused-vars */
               try {

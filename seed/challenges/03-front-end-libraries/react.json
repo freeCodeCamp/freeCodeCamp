@@ -345,9 +345,15 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(shallowRender.type() === 'div', 'message: The React component should return a <code>div</code> element.');",
+        "assert(shallowRender.children().type() === 'h1', 'message: The returned <code>div</code> should render an <code>h1</code> tag within it.');",
+        "assert(shallowRender.contains(<h1>Hello React!</h1>), 'message: The h1 tag should include the string Hello React!');"
+      ],
       "head": [],
-      "tail": [],
+      "tail": [
+        "var shallowRender = Enzyme.shallow(React.createElement(MyComponent));"
+      ],
       "solutions": [
         "\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    return (\n      <div>\n        <h1>Hello React!</h1>\n      </div>\n    );\n    // change code above this line\n  }\n};"
       ],
