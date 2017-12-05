@@ -25,6 +25,7 @@
     "test-js-common": "tape -r babel-register \"common/**/*.test.js\" | tap-spec",
     "test-js-server": "tape -r babel-register \"server/**/*.test.js\" | tap-spec",
     "test": "npm run test-js && npm run test-challenges",
+    "rr": "npm run test-challenges",
     "cover": "babel-node ./node_modules/.bin/babel-istanbul cover tape common/**/*.test.js",
     "coveralls": "npm run cover && istanbul-coveralls",
     "commit": "git-cz",

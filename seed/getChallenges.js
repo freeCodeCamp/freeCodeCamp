@@ -52,6 +52,7 @@ function getSupName(filePath) {
 module.exports = function getChallenges() {
   try {
     return getFilesFor('challenges')
+      .filter(data => data.superBlock === '03-front-end-libraries') // TODO: REMOVE
       .map(function(data) {
         const challengeSpec = require('./challenges/' + data.file);
         challengeSpec.fileName = data.file;
