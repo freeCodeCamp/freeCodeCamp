@@ -14,6 +14,7 @@ import {
   updateTests,
 
   codeLockedSelector,
+  isJSEnabledSelector,
   testsSelector
 } from '../../common/app/routes/Challenges/redux';
 
@@ -44,6 +45,7 @@ function createFrame(document, id) {
 }
 
 const getFrameDocument = (getState, id) => document => {
+  const isJSEnabled = isJSEnabledSelector(getState());
   let frame = document.getElementById(id);
   if (!frame) {
     frame = createFrame(document, id);
@@ -51,6 +53,11 @@ const getFrameDocument = (getState, id) => document => {
     // erase content of window
     // NOTE(berks): This does not remove const variables
     frame.src = 'about:blank';
+  }
+  if (!isJSEnabled) {
+    frame.sandbox = '';
+  } else {
+    delete frame.sandbox;
   }
   const context = {
     frame: frame.contentDocument || frame.contentWindow.document,
