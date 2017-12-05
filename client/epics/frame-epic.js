@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Rx, { Observable, Subject } from 'rx';
 import { ofType } from 'redux-epic';
 /* eslint-disable import/no-unresolved */
@@ -34,7 +35,7 @@ const createHeader = (id = mainId) => `
 `;
 
 
-function createFrame(document, id = mainId) {
+function createFrame(document, id) {
   const frame = document.createElement('iframe');
   frame.id = id;
   frame.className = 'hide-test-frame';
@@ -42,46 +43,39 @@ function createFrame(document, id = mainId) {
   return frame;
 }
 
-function refreshFrame(frame) {
-  frame.src = 'about:blank';
-  return frame;
-}
-
-function getFrameDocument(document, id = mainId) {
+const getFrameDocument = (getState, id) => document => {
   let frame = document.getElementById(id);
   if (!frame) {
     frame = createFrame(document, id);
+  } else {
+    // erase content of window
+    // NOTE(berks): This does not remove const variables
+    frame.src = 'about:blank';
   }
-  frame.contentWindow.loopProtect = loopProtect;
-  return {
+  const context = {
     frame: frame.contentDocument || frame.contentWindow.document,
     frameWindow: frame.contentWindow
   };
-}
+  context.frame.Rx = Rx;
+  context.frame.loopProtect = loopProtect;
+  return context;
+};
 
-function buildProxyConsole(window, proxyLogger) {
-  const oldLog = window.console.log.bind(console);
-  window.__console = {};
-  window.__console.log = function proxyConsole(...args) {
+const buildProxyConsole = proxyLogger => context => {
+  const oldLog = context.frameWindow.console.log.bind(console);
+  context.frameWindow.__console = {};
+  context.frameWindow.__console.log = function proxyConsole(...args) {
     proxyLogger.onNext(args);
     return oldLog(...args);
   };
-}
+  return context;
+};
 
-function frameMain({ build } = {}, document, proxyLogger) {
-  const { frame: main, frameWindow } = getFrameDocument(document);
-  refreshFrame(main);
-  buildProxyConsole(frameWindow, proxyLogger);
-  main.Rx = Rx;
-  main.open();
-  main.write(createHeader() + build);
-  main.close();
-}
-
-function frameTests({ build, sources, checkChallengePayload } = {}, document) {
-  const { frame: tests } = getFrameDocument(document, testId);
-  refreshFrame(tests);
-  tests.Rx = Rx;
+const writeTestAssetsToWindow = ({
+  sources,
+  checkChallengePayload
+}) => context => {
+  const { frame: tests } = context;
   // add enzyme
   // TODO: do programatically
   // TODO: webpack lazyload this
@@ -100,10 +94,18 @@ function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   tests.__source = sources['index'] || '';
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
-  tests.open();
-  tests.write(createHeader(testId) + build);
-  tests.close();
+  return context;
+};
+
+function writeToFrame(content, frame) {
+  frame.open();
+  frame.write(content);
+  frame.close();
+  return frame;
 }
+
+const frameBuild = ({ build, frameId })=> ({ frame }) =>
+  writeToFrame(createHeader(frameId) + build, frame);
 
 export default function frameEpic(actions, { getState }, { window, document }) {
   // we attach a common place for the iframes to pull in functions from
@@ -117,19 +119,27 @@ export default function frameEpic(actions, { getState }, { window, document }) {
   const result = actions::ofType(types.frameMain, types.frameTests)
     // if isCodeLocked is true do not frame user code
     .filter(() => !codeLockedSelector(getState()))
-    .map(action => {
-      if (action.type === types.frameMain) {
-        return frameMain(action.payload, document, proxyLogger);
-      }
-      return frameTests(action.payload, document);
-    })
+    .map(({ type, payload }) => ({
+      ...payload,
+      proxyLogger,
+      isMain: type === types.frameMain,
+      frameId: type === types.frameMain ? mainId : testId
+    }))
+    .do(ctx => _.flow(
+        getFrameDocument(getState, ctx.frameId),
+        ctx.isMain ?
+          buildProxyConsole(proxyLogger) :
+          writeTestAssetsToWindow(ctx),
+        frameBuild(ctx)
+      )(document)
+    )
     .ignoreElements();
 
   return Observable.merge(
     proxyLogger.map(updateOutput),
     frameReady.flatMap(({ checkChallengePayload }) => {
-      const { frame } = getFrameDocument(document, testId);
       const tests = testsSelector(getState());
+      const { frame } = getFrameDocument(getState, testId)(document);
       const postTests = Observable.of(
         updateOutput('// tests completed'),
         checkChallenge(checkChallengePayload)
