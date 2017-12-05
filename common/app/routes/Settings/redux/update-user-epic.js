@@ -6,7 +6,6 @@ import { makeToast } from '../../../Toasts/redux';
 import {
   fetchChallenges,
   doActionOnError,
-
   userSelector
 } from '../../../redux';
 import {
@@ -41,7 +40,7 @@ export function updateUserEmailEpic(actions, { getState }) {
       const ajaxUpdate = postJSON$('/update-my-email', body)
         .map(({ message }) => makeToast({ message }))
         .catch(doActionOnError(() => oldEmail ?
-          updateUserFlag(username, oldEmail) :
+          updateUserEmail(username, oldEmail) :
           null
         ));
       return Observable.merge(optimisticUpdate, ajaxUpdate);

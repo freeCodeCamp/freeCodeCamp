@@ -574,6 +574,7 @@ module.exports = function(User) {
   ) {
     const ownEmail = newEmail === this.email;
     if (!isEmail('' + newEmail)) {
+      debug('invalid email:', newEmail );
       return Observable.throw(createEmailError());
     }
     // email is already associated and verified with this account
