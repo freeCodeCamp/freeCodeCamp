@@ -24,13 +24,18 @@ import { filesSelector } from '../../../files';
 
 const executeDebounceTimeout = 750;
 export function updateMainEpic(actions, { getState }) {
-  return actions::ofType(types.executeChallenge, types.updateMain)
+  return actions::ofType(
+    types.modernEditorUpdated,
+    types.classicEditorUpdated,
+    types.executeChallenge,
+    types.updateMain
+  )
     // if isCodeLocked do not run challenges
+    .debounce(executeDebounceTimeout)
     .filter(() => (
       !codeLockedSelector(getState()) &&
       showPreviewSelector(getState())
     ))
-    .debounce(executeDebounceTimeout)
     .map(() => getState())
     .flatMapLatest(state => {
       const files = filesSelector(state);
@@ -44,8 +49,8 @@ export function updateMainEpic(actions, { getState }) {
 export function executeChallengeEpic(actions, { getState }) {
   return actions::ofType(types.executeChallenge)
     // if isCodeLocked do not run challenges
-    .filter(() => !codeLockedSelector(getState()))
     .debounce(executeDebounceTimeout)
+    .filter(() => !codeLockedSelector(getState()))
     .flatMapLatest(() => {
       const state = getState();
       const files = filesSelector(state);
