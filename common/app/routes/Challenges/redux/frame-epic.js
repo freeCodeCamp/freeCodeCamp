@@ -1,9 +1,6 @@
 import _ from 'lodash';
 import Rx, { Observable, Subject } from 'rx';
 import { ofType } from 'redux-epic';
-/* eslint-disable import/no-unresolved */
-import loopProtect from 'loop-protect';
-/* eslint-enable import/no-unresolved */
 import { ShallowWrapper, ReactWrapper } from 'enzyme';
 import Adapter15 from 'enzyme-adapter-react-15';
 import {
@@ -16,7 +13,7 @@ import {
   codeLockedSelector,
   isJSEnabledSelector,
   testsSelector
-} from '../../common/app/routes/Challenges/redux';
+} from './';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -45,6 +42,7 @@ function createFrame(document, id) {
 }
 
 const getFrameDocument = (getState, id) => document => {
+
   const isJSEnabled = isJSEnabledSelector(getState());
   let frame = document.getElementById(id);
   if (!frame) {
@@ -64,7 +62,13 @@ const getFrameDocument = (getState, id) => document => {
     frameWindow: frame.contentWindow
   };
   context.frame.Rx = Rx;
-  context.frame.loopProtect = loopProtect;
+
+  // using require here prevents nodejs issues as loop-protect
+  // is added to the window object by webpack and not available to
+  // us server side.
+  /* eslint-disable import/no-unresolved */
+  context.frame.loopProtect = require('loop-protect');
+  /* eslint-enable import/no-unresolved */
   return context;
 };
 
@@ -80,7 +84,8 @@ const buildProxyConsole = proxyLogger => context => {
 
 const writeTestAssetsToWindow = ({
   sources,
-  checkChallengePayload
+  checkChallengePayload,
+  frameReady
 }) => context => {
   const { frame: tests } = context;
   // add enzyme
@@ -101,6 +106,7 @@ const writeTestAssetsToWindow = ({
   tests.__source = sources['index'] || '';
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
+  tests.__frameReady = frameReady;
   return context;
 };
 
@@ -114,55 +120,57 @@ function writeToFrame(content, frame) {
 const frameBuild = ({ build, frameId })=> ({ frame }) =>
   writeToFrame(createHeader(frameId) + build, frame);
 
-export default function frameEpic(actions, { getState }, { window, document }) {
-  // we attach a common place for the iframes to pull in functions from
-  // the main process
-  window.__common = {};
-  window.__common.shouldRun = () => true;
-  // this will proxy console.log calls
-  const proxyLogger = new Subject();
-  // frameReady will let us know when the test iframe is ready to run
-  const frameReady = window.__common[testId + 'Ready'] = new Subject();
-  const result = actions::ofType(types.frameMain, types.frameTests)
-    // if isCodeLocked is true do not frame user code
-    .filter(() => !codeLockedSelector(getState()))
-    .map(({ type, payload }) => ({
-      ...payload,
-      proxyLogger,
-      isMain: type === types.frameMain,
-      frameId: type === types.frameMain ? mainId : testId
-    }))
-    .do(ctx => _.flow(
-        getFrameDocument(getState, ctx.frameId),
-        ctx.isMain ?
-          buildProxyConsole(proxyLogger) :
-          writeTestAssetsToWindow(ctx),
-        frameBuild(ctx)
-      )(document)
-    )
-    .ignoreElements();
+export default function frameEpic(actions, { getState }, { document }) {
+  return Observable.of(document)
+    // if document is not defined then none of this epic will run
+    // this prevents issues during SSR
+    .filter(Boolean)
+    .flatMapLatest(document => {
+      // this will proxy console.log calls in the main iframe
+      const proxyLogger = new Subject();
+      // frameReady will let us know when the test iframe is ready to run
+      const frameReady = new Subject();
+      const result = actions::ofType(types.frameMain, types.frameTests)
+      // if isCodeLocked is true do not frame user code
+        .filter(() => !codeLockedSelector(getState()))
+        .map(({ type, payload }) => ({
+          ...payload,
+          proxyLogger,
+          frameReady,
+          isMain: type === types.frameMain,
+          frameId: type === types.frameMain ? mainId : testId
+        }))
+        .do(ctx => _.flow(
+          getFrameDocument(getState, ctx.frameId),
+          ctx.isMain ?
+            buildProxyConsole(proxyLogger) :
+            writeTestAssetsToWindow(ctx),
+          frameBuild(ctx)
+        )(document))
+        .ignoreElements();
 
-  return Observable.merge(
-    proxyLogger.map(updateOutput),
-    frameReady.flatMap(({ checkChallengePayload }) => {
-      const tests = testsSelector(getState());
-      const { frame } = getFrameDocument(getState, testId)(document);
-      const postTests = Observable.of(
-        updateOutput('// tests completed'),
-        checkChallenge(checkChallengePayload)
-      ).delay(250);
-      // run the tests within the test iframe
-      return frame.__runTests(tests)
-        .do(tests => {
-          tests.forEach(test => {
-            if (typeof test.message === 'string') {
-              proxyLogger.onNext(test.message);
-            }
-          });
-        })
-        .map(updateTests)
-        .concat(postTests);
-    }),
-    result
-  );
+      return Observable.merge(
+        proxyLogger.map(updateOutput),
+        frameReady.flatMap(({ checkChallengePayload }) => {
+          const tests = testsSelector(getState());
+          const { frame } = getFrameDocument(getState, testId)(document);
+          const postTests = Observable.of(
+            updateOutput('// tests completed'),
+            checkChallenge(checkChallengePayload)
+          ).delay(250);
+          // run the tests within the test iframe
+          return frame.__runTests(tests)
+            .do(tests => {
+              tests.forEach(test => {
+                if (typeof test.message === 'string') {
+                  proxyLogger.onNext(test.message);
+                }
+              });
+            })
+            .map(updateTests)
+            .concat(postTests);
+        }),
+        result
+      );
+    });
 }

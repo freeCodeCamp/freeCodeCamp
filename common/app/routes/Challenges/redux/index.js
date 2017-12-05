@@ -13,6 +13,7 @@ import noop from 'lodash/noop';
 import bugEpic from './bug-epic';
 import completionEpic from './completion-epic.js';
 import challengeEpic from './challenge-epic.js';
+import frameEpic from './frame-epic.js';
 
 import ns from '../ns.json';
 import stepReducer, { epics as stepEpics } from '../views/step/redux';
@@ -42,6 +43,7 @@ export const epics = [
   bugEpic,
   completionEpic,
   challengeEpic,
+  frameEpic,
   ...stepEpics
 ];
 
