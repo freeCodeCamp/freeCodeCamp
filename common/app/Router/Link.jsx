@@ -22,6 +22,7 @@ const propTypes = {
   replace: PropTypes.bool,
   routesMap: PropTypes.object,
   shouldDispatch: PropTypes.bool,
+  style: PropTypes.object,
   target: PropTypes.string,
   to: PropTypes.oneOfType([ PropTypes.object, PropTypes.string ]).isRequired
 };
@@ -36,6 +37,7 @@ export const Link = (
     replace,
     routesMap,
     shouldDispatch = true,
+    style,
     target,
     to
   }
@@ -70,6 +72,7 @@ export const Link = (
   return (
     <a
       onClick={ handler }
+      style={ style }
       { ...localProps }
       >
       {children}
