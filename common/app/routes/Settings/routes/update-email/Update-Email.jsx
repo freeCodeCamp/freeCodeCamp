@@ -131,7 +131,10 @@ export class UpdateEmail extends React.Component {
                 { buttonCopy }
               </Button>
               <div className='button-spacer' />
-              <Link to={ onRouteSettings() }>
+              <Link
+                style={{ textDecoration: 'none' }}
+                to={ onRouteSettings() }
+                >
                 <Button
                   block={ true }
                   bsSize='lg'
