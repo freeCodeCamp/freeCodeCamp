@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import Rx, { Observable, Subject } from 'rx';
-import { ofType } from 'redux-epic';
+import { combineEpics, ofType } from 'redux-epic';
 import { ShallowWrapper, ReactWrapper } from 'enzyme';
 import Adapter15 from 'enzyme-adapter-react-15';
 import {
@@ -32,17 +32,20 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-const createFrame = (document, getState, id) => {
+const createFrame = (document, getState, id) => ctx => {
   const isJSEnabled = isJSEnabledSelector(getState());
   const frame = document.createElement('iframe');
   frame.id = id;
   if (!isJSEnabled) {
     frame.sandbox = 'allow-same-origin';
   }
-  return frame;
+  return {
+    ...ctx,
+    element: frame
+  };
 };
 
-const mountFrame = document => element => {
+const mountFrame = document => ({ element, ...rest })=> {
   const oldFrame = document.getElementById(element.id);
   if (oldFrame) {
     element.className = oldFrame.className || 'hide-test-frame';
@@ -51,9 +54,10 @@ const mountFrame = document => element => {
     document.body.appendChild(element);
   }
   return {
+    ...rest,
+    element,
     document: element.contentDocument,
-    window: element.contentWindow,
-    element
+    window: element.contentWindow
   };
 };
 
@@ -79,12 +83,12 @@ const buildProxyConsole = proxyLogger => ctx => {
   return ctx;
 };
 
-const writeTestDepsToDocument = ({
-  sources,
-  checkChallengePayload,
-  frameReady
-}) => ctx => {
-  const { document: tests } = ctx;
+const writeTestDepsToDocument = frameReady => ctx => {
+  const {
+    document: tests,
+    sources,
+    checkChallengePayload
+  } = ctx;
   // add enzyme
   // TODO: do programatically
   // TODO: webpack lazyload this
@@ -114,12 +118,12 @@ function writeToFrame(content, frame) {
   return frame;
 }
 
-const writeContentToFrame = ({ build })=> ctx => {
-  writeToFrame(createHeader(ctx.element.id) + build, ctx.document);
+const writeContentToFrame = ctx => {
+  writeToFrame(createHeader(ctx.element.id) + ctx.build, ctx.document);
   return ctx;
 };
 
-export default function frameEpic(actions, { getState }, { document }) {
+export function mainFrameEpic(actions, { getState }, { document }) {
   return Observable.of(document)
     // if document is not defined then none of this epic will run
     // this prevents issues during SSR
@@ -127,31 +131,50 @@ export default function frameEpic(actions, { getState }, { document }) {
     .flatMapLatest(document => {
       // this will proxy console.log calls in the main iframe
       const proxyLogger = new Subject();
-      // frameReady will let us know when the test iframe is ready to run
-      const frameReady = new Subject();
-      const result = actions::ofType(types.frameMain, types.frameTests)
+      const createAndMountFrame = _.flow(
+        createFrame(document, getState, mainId),
+        mountFrame(document),
+        addDepsToDocument,
+        buildProxyConsole(proxyLogger),
+        writeContentToFrame,
+      );
+      const result = actions::ofType(types.frameMain)
       // if isCodeLocked is true do not frame user code
         .filter(() => !codeLockedSelector(getState()))
-        .map(({ type, payload }) => ({
-          ...payload,
-          proxyLogger,
-          frameReady,
-          isMain: type === types.frameMain,
-          frameId: type === types.frameMain ? mainId : testId
-        }))
-        .do(ctx => _.flow(
-          createFrame,
-          mountFrame(document),
-          addDepsToDocument,
-          ctx.isMain ?
-            buildProxyConsole(proxyLogger) :
-            writeTestDepsToDocument(ctx),
-          writeContentToFrame(ctx),
-        )(document, getState, ctx.frameId))
+        .map(({ payload }) => payload)
+        .do(createAndMountFrame)
         .ignoreElements();
 
       return Observable.merge(
         proxyLogger.map(updateOutput),
+        result
+      );
+    });
+}
+
+export function testFrameEpic(actions, { getState }, { document }) {
+  return Observable.of(document)
+    // if document is not defined then none of this epic will run
+    // this prevents issues during SSR
+    .filter(Boolean)
+    .flatMapLatest(document => {
+      // frameReady will let us know when the test iframe is ready to run
+      const frameReady = new Subject();
+      const createAndMountFrame = _.flow(
+        createFrame(document, getState, testId),
+        mountFrame(document),
+        addDepsToDocument,
+        writeTestDepsToDocument(frameReady),
+        writeContentToFrame,
+      );
+      const result = actions::ofType(types.frameTests)
+      // if isCodeLocked is true do not frame user code
+        .filter(() => !codeLockedSelector(getState()))
+        .map(({ payload }) => payload)
+        .do(createAndMountFrame)
+        .ignoreElements();
+
+      return Observable.merge(
         frameReady.flatMap(({ checkChallengePayload }) => {
           const tests = testsSelector(getState());
           const { contentDocument: frame } = document.getElementById(testId);
@@ -161,17 +184,18 @@ export default function frameEpic(actions, { getState }, { document }) {
           ).delay(250);
           // run the tests within the test iframe
           return frame.__runTests(tests)
-            .do(tests => {
-              tests.forEach(test => {
-                if (typeof test.message === 'string') {
-                  proxyLogger.onNext(test.message);
-                }
-              });
+            .flatMap(tests => {
+              const message = tests
+                .map(({ message }) => _.toString(message) ? message : '')
+                .join('\n');
+              return Observable.of(updateTests(tests))
+                .startWith(updateOutput(message));
             })
-            .map(updateTests)
             .concat(postTests);
         }),
         result
       );
     });
 }
+
+export default combineEpics(testFrameEpic, mainFrameEpic);
