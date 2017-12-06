@@ -187,11 +187,12 @@ export function testFrameEpic(actions, { getState }, { document }) {
           // run the tests within the test iframe
           return frame.__runTests(tests)
             .flatMap(tests => {
-              const message = tests
-                .map(({ message }) => _.toString(message) ? message : '')
-                .join('\n');
-              return Observable.of(updateTests(tests))
-                .startWith(updateOutput(message));
+              return Observable.from(tests)
+                .map(({ message }) => message)
+                // make sure that the test message is a non empty string
+                .filter(_.overEvery(_.isString, Boolean))
+                .map(updateOutput)
+                .concat(Observable.of(updateTests(tests)));
             })
             .concat(postTests);
         }),
