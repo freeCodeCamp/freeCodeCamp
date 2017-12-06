@@ -32,62 +32,59 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-
-function createFrame(document, id) {
+const createFrame = (document, getState, id) => {
+  const isJSEnabled = isJSEnabledSelector(getState());
   const frame = document.createElement('iframe');
   frame.id = id;
-  frame.className = 'hide-test-frame';
-  document.body.appendChild(frame);
-  return frame;
-}
-
-const getFrameDocument = (getState, id) => document => {
-
-  const isJSEnabled = isJSEnabledSelector(getState());
-  let frame = document.getElementById(id);
-  if (!frame) {
-    frame = createFrame(document, id);
-  } else {
-    // erase content of window
-    // NOTE(berks): This does not remove const variables
-    frame.src = 'about:blank';
-  }
   if (!isJSEnabled) {
-    frame.sandbox = '';
-  } else {
-    delete frame.sandbox;
+    frame.sandbox = 'allow-same-origin';
   }
-  const context = {
-    frame: frame.contentDocument || frame.contentWindow.document,
-    frameWindow: frame.contentWindow
+  return frame;
+};
+
+const mountFrame = document => element => {
+  const oldFrame = document.getElementById(element.id);
+  if (oldFrame) {
+    element.className = oldFrame.className || 'hide-test-frame';
+    oldFrame.parentNode.replaceChild(element, oldFrame);
+  } else {
+    document.body.appendChild(element);
+  }
+  return {
+    document: element.contentDocument,
+    window: element.contentWindow,
+    element
   };
-  context.frame.Rx = Rx;
+};
+
+const addDepsToDocument = ctx => {
+  ctx.document.Rx = Rx;
 
   // using require here prevents nodejs issues as loop-protect
   // is added to the window object by webpack and not available to
   // us server side.
   /* eslint-disable import/no-unresolved */
-  context.frame.loopProtect = require('loop-protect');
+  ctx.document.loopProtect = require('loop-protect');
   /* eslint-enable import/no-unresolved */
-  return context;
+  return ctx;
 };
 
-const buildProxyConsole = proxyLogger => context => {
-  const oldLog = context.frameWindow.console.log.bind(console);
-  context.frameWindow.__console = {};
-  context.frameWindow.__console.log = function proxyConsole(...args) {
+const buildProxyConsole = proxyLogger => ctx => {
+  const oldLog = ctx.window.console.log.bind(ctx.window.console);
+  ctx.window.__console = {};
+  ctx.window.__console.log = function proxyConsole(...args) {
     proxyLogger.onNext(args);
     return oldLog(...args);
   };
-  return context;
+  return ctx;
 };
 
-const writeTestAssetsToWindow = ({
+const writeTestDepsToDocument = ({
   sources,
   checkChallengePayload,
   frameReady
-}) => context => {
-  const { frame: tests } = context;
+}) => ctx => {
+  const { document: tests } = ctx;
   // add enzyme
   // TODO: do programatically
   // TODO: webpack lazyload this
@@ -107,7 +104,7 @@ const writeTestAssetsToWindow = ({
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
   tests.__frameReady = frameReady;
-  return context;
+  return ctx;
 };
 
 function writeToFrame(content, frame) {
@@ -117,8 +114,10 @@ function writeToFrame(content, frame) {
   return frame;
 }
 
-const frameBuild = ({ build, frameId })=> ({ frame }) =>
-  writeToFrame(createHeader(frameId) + build, frame);
+const writeContentToFrame = ({ build })=> ctx => {
+  writeToFrame(createHeader(ctx.element.id) + build, ctx.document);
+  return ctx;
+};
 
 export default function frameEpic(actions, { getState }, { document }) {
   return Observable.of(document)
@@ -141,19 +140,21 @@ export default function frameEpic(actions, { getState }, { document }) {
           frameId: type === types.frameMain ? mainId : testId
         }))
         .do(ctx => _.flow(
-          getFrameDocument(getState, ctx.frameId),
+          createFrame,
+          mountFrame(document),
+          addDepsToDocument,
           ctx.isMain ?
             buildProxyConsole(proxyLogger) :
-            writeTestAssetsToWindow(ctx),
-          frameBuild(ctx)
-        )(document))
+            writeTestDepsToDocument(ctx),
+          writeContentToFrame(ctx),
+        )(document, getState, ctx.frameId))
         .ignoreElements();
 
       return Observable.merge(
         proxyLogger.map(updateOutput),
         frameReady.flatMap(({ checkChallengePayload }) => {
           const tests = testsSelector(getState());
-          const { frame } = getFrameDocument(getState, testId)(document);
+          const { contentDocument: frame } = document.getElementById(testId);
           const postTests = Observable.of(
             updateOutput('// tests completed'),
             checkChallenge(checkChallengePayload)
