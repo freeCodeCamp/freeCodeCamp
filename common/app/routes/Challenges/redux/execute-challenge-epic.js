@@ -25,6 +25,7 @@ import { filesSelector } from '../../../files';
 const executeDebounceTimeout = 750;
 export function updateMainEpic(actions, { getState }) {
   return actions::ofType(
+    types.unlockUntrustedCode,
     types.modernEditorUpdated,
     types.classicEditorUpdated,
     types.executeChallenge,
