@@ -3,7 +3,7 @@ import {
   getNextChallenge,
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock
-} from './utils.js';
+} from './';
 
 test('getNextChallenge', t => {
   t.plan(7);
