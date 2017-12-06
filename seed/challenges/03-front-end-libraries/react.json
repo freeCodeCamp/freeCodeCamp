@@ -31,13 +31,13 @@
           "name": "index",
           "contents": [
             "",
-            "var JSX = <div></div>;",
+            "const JSX = <div></div>;",
             ""
           ]
         }
       },
       "tests": [
-        "assert(Enzyme.shallow(JSX).type() === 'h1', 'message: The constant JSX should return an <code>h1</code> element.');",
+        "assert(Enzyme.shallow(JSX).type() === 'h1', 'message: The constant <code>JSX</code> should return an <code>h1</code> element.');",
         "assert(Enzyme.shallow(JSX).contains( 'Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
       "head": [],
@@ -81,11 +81,11 @@
         }
       },
       "tests": [
-        "assert(JSX.type === 'div', 'message: The constant JSX should return a div element.');",
-        "assert(JSX.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
-        "assert(JSX.props.children[2].type === 'ul', 'message: The div should contain a ul tag as the third element.');",
-        "assert(JSX.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
-        "assert(JSX.props.children[2].props.children.length === 3, 'message: The ul should contain three li elements.');"
+        "assert(JSX.type === 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
+        "assert(JSX.props.children[1].type === 'p', 'message: The <code>div</code> should contain a <code>p</code> tag as the second element.');",
+        "assert(JSX.props.children[2].type === 'ul', 'message: The <code>div</code> should contain a <code>ul</code> tag as the third element.');",
+        "assert(JSX.props.children[0].type === 'h1', 'message: The <code>div</code> should contain an <code>h1</code> tag as the first element.');",
+        "assert(JSX.props.children[2].props.children.length === 3, 'message: The <code>ul</code> should contain three <code>li</code> elements.');"
       ],
       "head": [],
       "tail": [],
@@ -122,9 +122,9 @@
         }
       },
       "tests": [
-        "assert(JSX.type === 'div', 'message: The constant JSX should return a div element.');",
-        "assert(JSX.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
-        "assert(JSX.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
+        "assert(JSX.type === 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
+        "assert(JSX.props.children[0].type === 'h1', 'message: The <code>div</code> should contain an <code>h1</code> tag as the first element.');",
+        "assert(JSX.props.children[1].type === 'p', 'message: The <code>div</code> should contain a <code>p</code> tag as the second element.');",
         "assert(editor.getValue().includes('/*') && editor.getValue().includes('*/'), 'message: The JSX should include a comment.');"
       ],
       "head": [],
@@ -170,10 +170,10 @@
         }
       },
       "tests": [
-        "assert(JSX.type === 'div', 'message: The constant JSX should return a div element.');",
-        "assert(JSX.props.children[0].type === 'h1', 'message: The div should contain an h1 tag as the first element.');",
-        "assert(JSX.props.children[1].type === 'p', 'message: The div should contain a p tag as the second element.');",
-        "assert(document.getElementById('challenge-node').childNodes[0].innerHTML === '<h1>Hello World</h1><p>Lets render this to the DOM</p>', `message: The provided JSX element should render to the DOM node with id 'challenge-node'.`);"
+        "assert(JSX.type === 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
+        "assert(JSX.props.children[0].type === 'h1', 'message: The <code>div</code> should contain an <code>h1</code> tag as the first element.');",
+        "assert(JSX.props.children[1].type === 'p', 'message: The <code>div</code> should contain a <code>p</code> tag as the second element.');",
+        "assert(document.getElementById('challenge-node').childNodes[0].innerHTML === '<h1>Hello World</h1><p>Lets render this to the DOM</p>', `message: The provided JSX element should render to the DOM node with id <code>challenge-node</code>.`);"
       ],
       "head": [],
       "tail": [],
@@ -210,7 +210,10 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert.strictEqual(JSX.type, 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
+        "assert.strictEqual(JSX.props.className, 'myDiv', 'message: The <code>div</code> has a class of <code>myDiv</code>.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
