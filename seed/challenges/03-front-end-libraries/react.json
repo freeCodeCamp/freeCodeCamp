@@ -411,9 +411,15 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(shallowRender.type() === 'div', 'message: The React component should return a single <code>div</code> element.');",
+        "assert(shallowRender.children().length === 2, 'message: The component should return two nested elements.');",
+        "assert((function() { return 'TO DO'; })(), 'message: The component should return the ChildComponent as its second child.');"
+      ],
       "head": [],
-      "tail": [],
+      "tail": [
+        "var shallowRender = Enzyme.shallow(React.createElement(ParentComponent));"
+      ],
       "solutions": [
         "const ChildComponent = () => {\n  return (\n    <div>\n      <p>I am the child</p>\n    </div>\n  );\n};\n\nclass ParentComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>I am the parent</h1>\n        { /* change code below this line */ }\n        <ChildComponent />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
