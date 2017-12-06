@@ -23,7 +23,7 @@ export class Preview extends PureComponent {
       <div className={ `${ns}-preview` }>
         {
           !isJSEnabled && (
-            <span className={ `${ns}-'preview-js-warning'` }>
+            <span className={ `${ns}-preview-js-warning` }>
               JavaScript is disabled. Execute code to enable
             </span>
           )
