@@ -3,7 +3,7 @@ import moment from 'moment-timezone';
 import sinon from 'sinon';
 
 import {
-  prepUniqueDays,
+  prepUniqueDaysByHours,
   calcCurrentStreak,
   calcLongestStreak
 } from './user-stats';
@@ -17,48 +17,48 @@ test('Prepare calendar items', function(t) {
   t.plan(5);
 
   t.deepEqual(
-    prepUniqueDays([
+    prepUniqueDaysByHours([
       moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
       moment.utc('8/3/2015 14:00', 'M/D/YYYY H:mm').valueOf(),
       moment.utc('8/3/2015 20:00', 'M/D/YYYY H:mm').valueOf()
     ]),
-    [1438560000000],
+    [1438567200000],
     'should return correct epoch when all entries fall into one day in UTC'
   );
 
   t.deepEqual(
-    prepUniqueDays([
+    prepUniqueDaysByHours([
       moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
       moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf()
     ]),
-    [1438560000000],
+    [1438567200000],
     'should return correct epoch when given two identical dates'
   );
 
 
   t.deepEqual(
-    prepUniqueDays([
+    prepUniqueDaysByHours([
       // 8/2/2015 in America/Los_Angeles
       moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
       moment.utc('8/3/2015 14:00', 'M/D/YYYY H:mm').valueOf(),
       moment.utc('8/3/2015 20:00', 'M/D/YYYY H:mm').valueOf()
     ], PST),
-    [1438498800000, 1438585200000],
+    [1438567200000, 1438610400000],
     'should return 2 epochs when dates fall into two days in PST'
   );
 
   t.deepEqual(
-    prepUniqueDays([
+    prepUniqueDaysByHours([
       moment.utc('8/1/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
       moment.utc('3/3/2015 14:00', 'M/D/YYYY H:mm').valueOf(),
       moment.utc('9/30/2014 20:00', 'M/D/YYYY H:mm').valueOf()
     ]),
-    [1412035200000, 1425340800000, 1438387200000],
+    [1412107200000, 1425391200000, 1438394400000],
     'should return 3 epochs when dates fall into three days'
   );
 
   t.deepEqual(
-    prepUniqueDays([
+    prepUniqueDaysByHours([
       1438387200000, 1425340800000, 1412035200000
     ]),
     [1412035200000, 1425340800000, 1438387200000],
@@ -73,7 +73,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ])
     ),
@@ -83,7 +83,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf(),
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ])
@@ -94,7 +94,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf()
       ])
     ),
@@ -104,7 +104,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(1, 'days')).valueOf(),
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ])
@@ -115,7 +115,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 1:00', 'M/D/YYYY H:mm').valueOf(),
@@ -135,7 +135,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(47, 'hours')).valueOf(),
         moment.utc(moment.utc().subtract(11, 'hours')).valueOf()
       ])
@@ -147,7 +147,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(40, 'hours')).valueOf(),
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ])
@@ -159,7 +159,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf(),
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ])
@@ -171,7 +171,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(1, 'days')).valueOf(),
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ], PST),
@@ -184,7 +184,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         1453174506164, 1453175436725, 1453252466853, 1453294968225,
         1453383782844, 1453431903117, 1453471373080, 1453594733026,
         1453645014058, 1453746762747, 1453747659197, 1453748029416,
@@ -201,7 +201,7 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         1453174506164, 1453175436725, 1453252466853, 1453294968225,
         1453383782844, 1453431903117, 1453471373080, 1453594733026,
         1453645014058, 1453746762747, 1453747659197, 1453748029416,
@@ -221,7 +221,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('9/12/2015 4:00', 'M/D/YYYY H:mm').valueOf()
       ])
     ),
@@ -231,7 +231,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/13/2015 3:00', 'M/D/YYYY H:mm').valueOf(),
@@ -245,7 +245,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ])
     ),
@@ -255,7 +255,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(1, 'days')).valueOf(),
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ])
@@ -266,7 +266,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
@@ -283,7 +283,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 15:30', 'M/D/YYYY H:mm').valueOf(),
@@ -302,7 +302,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 1:00', 'M/D/YYYY H:mm').valueOf(),
@@ -323,7 +323,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 1:00', 'M/D/YYYY H:mm').valueOf(),
@@ -346,14 +346,14 @@ test('Longest streak calculation', function(t) {
   }
 
   t.equal(
-    calcLongestStreak(prepUniqueDays(cals)),
+    calcLongestStreak(prepUniqueDaysByHours(cals)),
     n,
     'should return correct longest streak when there is a very long period'
   );
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc(moment.utc().subtract(1, 'days')).valueOf(),
         moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
       ])
@@ -365,7 +365,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/13/2015 3:00', 'M/D/YYYY H:mm').valueOf(),
@@ -379,7 +379,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         moment.utc('9/11/2015 23:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/13/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
@@ -393,7 +393,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         1453174506164, 1453175436725, 1453252466853, 1453294968225,
         1453383782844, 1453431903117, 1453471373080, 1453594733026,
         1453645014058, 1453746762747, 1453747659197, 1453748029416,
@@ -410,7 +410,7 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDays([
+      prepUniqueDaysByHours([
         1453174506164, 1453175436725, 1453252466853, 1453294968225,
         1453383782844, 1453431903117, 1453471373080, 1453594733026,
         1453645014058, 1453746762747, 1453747659197, 1453748029416,
