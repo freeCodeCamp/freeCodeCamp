@@ -2,26 +2,26 @@ import { Observable } from 'rx';
 import { combineEpics, ofType } from 'redux-epic';
 import store from 'store';
 
-import { removeCodeUri, getCodeUri } from '../utils/code-uri';
-
-import { setContent } from '../../common/utils/polyvinyl';
-
-import {
-  types as app,
-  userSelector,
-  challengeSelector
-} from '../../common/app/redux';
-import { makeToast } from '../../common/app/Toasts/redux';
 import {
   types,
   updateMain,
   storedCodeFound,
+  noStoredCodeFound,
+  previousSolutionFound,
 
   keySelector,
   codeLockedSelector
-} from '../../common/app/routes/Challenges/redux';
+} from './';
+import { removeCodeUri, getCodeUri } from '../utils/code-uri.js';
 
-import { filesSelector } from '../../common/app/files';
+import {
+  types as app,
+  challengeSelector,
+  previousSolutionSelector
+} from '../../../redux';
+import { filesSelector } from '../../../files';
+import { makeToast } from '../../../Toasts/redux';
+import { setContent } from '../../../../utils/polyvinyl.js';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -86,10 +86,11 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
       actions::ofType(types.onRouteChallenges)
         .distinctUntilChanged(({ payload: { dashedName } }) => dashedName)
     )
+    // make sure we are not SSR
+    .filter(() => !!window)
     .flatMap(() => {
       let finalFiles;
       const state = getState();
-      const user = userSelector(state);
       const challenge = challengeSelector(state);
       const key = keySelector(state);
       const files = filesSelector(state);
@@ -132,8 +133,8 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
         );
       }
 
-      if (user.challengeMap && user.challengeMap[id]) {
-        const userChallenge = user.challengeMap[id];
+      if (previousSolutionSelector(getState())) {
+        const userChallenge = previousSolutionSelector(getState());
         if (userChallenge.files) {
           finalFiles = userChallenge.files;
         } else if (userChallenge.solution) {
@@ -144,14 +145,50 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
             makeToast({
               message: 'I found a previous solved solution. Loading now.'
             }),
-            storedCodeFound(challenge, finalFiles),
+            previousSolutionFound(challenge, finalFiles),
             updateMain()
           );
         }
       }
 
+      return Observable.of(noStoredCodeFound());
+    });
+}
+
+export function findPreviousSolutionEpic(actions, { getState }) {
+  return Observable.combineLatest(
+    actions::ofType(types.noStoredCodeFound),
+    actions::ofType(app.addUser)
+  )
+    .map(() => previousSolutionSelector(getState()))
+    .filter(Boolean)
+    .flatMap(userChallenge => {
+      const challenge = challengeSelector(getState());
+      let finalFiles;
+      if (userChallenge.files) {
+        finalFiles = userChallenge.files;
+      } else if (userChallenge.solution) {
+        const files = filesSelector(getState());
+        const key = keySelector(getState());
+        finalFiles = legacyToFile(userChallenge.solution, files, key);
+      }
+      if (finalFiles) {
+        return Observable.of(
+          makeToast({
+            message: 'I found a previous solved solution. Loading now.'
+          }),
+          previousSolutionFound(challenge, finalFiles),
+          updateMain()
+        );
+      }
       return Observable.empty();
     });
 }
 
-export default combineEpics(saveCodeEpic, loadCodeEpic, clearCodeEpic);
+
+export default combineEpics(
+  saveCodeEpic,
+  loadCodeEpic,
+  clearCodeEpic,
+  findPreviousSolutionEpic
+);

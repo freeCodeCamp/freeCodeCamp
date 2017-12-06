@@ -9,14 +9,15 @@ import {
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
 
-import { entitiesSelector } from '../entities';
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
 import navSizeEpic from './nav-size-epic.js';
+
+import { createFilesMetaCreator } from '../files';
+import { entitiesSelector } from '../entities';
 import { types as challenges } from '../routes/Challenges/redux';
 import { challengeToFiles } from '../routes/Challenges/utils';
-import { createFilesMetaCreator } from '../files';
 
 import ns from '../ns.json';
 
@@ -186,13 +187,17 @@ export const userSelector = createSelector(
 
 export const isSignedInSelector = state => !!userSelector(state).username;
 
-export const challengeSelector = createSelector(
-  currentChallengeSelector,
-  state => entitiesSelector(state).challenge,
-  (challengeName, challengeMap = {}) => {
-    return challengeMap[challengeName] || {};
-  }
-);
+export const challengeSelector = state => {
+  const challengeName = currentChallengeSelector(state);
+  const challengeMap = entitiesSelector(state).challenge || {};
+  return challengeMap[challengeName] || {};
+};
+
+export const previousSolutionSelector = state => {
+  const { id } = challengeSelector(state);
+  const { challengeMap = {} } = userSelector(state);
+  return challengeMap[id];
+};
 
 export const firstChallengeSelector = createSelector(
   entitiesSelector,

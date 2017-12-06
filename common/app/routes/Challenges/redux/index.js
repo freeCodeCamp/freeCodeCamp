@@ -15,6 +15,7 @@ import completionEpic from './completion-epic.js';
 import challengeEpic from './challenge-epic.js';
 import frameEpic from './frame-epic.js';
 import executeChallengeEpic from './execute-challenge-epic.js';
+import codeStorageEpic from './code-storage-epic.js';
 
 import ns from '../ns.json';
 import stepReducer, { epics as stepEpics } from '../views/step/redux';
@@ -40,10 +41,14 @@ import { updateFileMetaCreator, createFilesMetaCreator } from '../../../files';
 // this is not great but is ok until we move to a different form type
 export projectNormalizer from '../views/project/redux';
 
+const challengeToFilesMetaCreator =
+  _.flow(challengeToFiles, createFilesMetaCreator);
+
 export const epics = [
   bugEpic,
-  completionEpic,
   challengeEpic,
+  codeStorageEpic,
+  completionEpic,
   executeChallengeEpic,
   frameEpic,
   ...stepEpics
@@ -94,7 +99,9 @@ export const types = createTypes([
   'toggleModernEditor',
 
   // code storage
-  'storedCodeFound'
+  'storedCodeFound',
+  'noStoredCodeFound',
+  'previousSolutionFound'
 ], ns);
 
 // routes
@@ -125,10 +132,7 @@ export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 export const challengeUpdated = createAction(
   types.challengeUpdated,
   challenge => ({ challenge }),
-  _.flow(
-    challengeToFiles,
-    createFilesMetaCreator
-  )
+  challengeToFilesMetaCreator
 );
 export const clickOnReset = createAction(types.clickOnReset);
 
@@ -168,10 +172,13 @@ export const createIssue = createAction(types.createIssue);
 export const storedCodeFound = createAction(
   types.storedCodeFound,
   null,
-  _.flow(
-    challengeToFiles,
-    createFilesMetaCreator
-  )
+  challengeToFilesMetaCreator,
+);
+export const noStoredCodeFound = createAction(types.noStoredCodeFound);
+export const previousSolutionFound = createAction(
+  types.previousSolutionFound,
+  null,
+  challengeToFilesMetaCreator
 );
 
 const initialUiState = {
