@@ -45,12 +45,14 @@ const createFrame = (document, getState, id) => ctx => {
   };
 };
 
+const hiddenFrameClassname = 'hide-test-frame';
 const mountFrame = document => ({ element, ...rest })=> {
   const oldFrame = document.getElementById(element.id);
   if (oldFrame) {
-    element.className = oldFrame.className || 'hide-test-frame';
+    element.className = oldFrame.className || hiddenFrameClassname;
     oldFrame.parentNode.replaceChild(element, oldFrame);
   } else {
+    element.className = hiddenFrameClassname;
     document.body.appendChild(element);
   }
   return {
