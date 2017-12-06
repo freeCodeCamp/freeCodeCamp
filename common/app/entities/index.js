@@ -24,7 +24,7 @@ export const updateUserFlag = createAction(
 );
 // updateUserEmail(username: String, email: String) => Action
 export const updateUserEmail = createAction(
-  types.updateUserFlag,
+  types.updateUserEmail,
   (username, email) => ({ username, email })
 );
 // updateUserLang(username: String, lang: String) => Action

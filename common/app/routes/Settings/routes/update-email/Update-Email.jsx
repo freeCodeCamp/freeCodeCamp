@@ -12,7 +12,7 @@ import { reduxForm } from 'redux-form';
 import { isEmail } from 'validator';
 
 import { Link } from '../../../../Router';
-import { getValidationState } from '../../../../utils/form';
+import { getValidationState, DOMOnlyProps } from '../../../../utils/form';
 import {
   onRouteSettings,
   updateMyEmail
@@ -93,10 +93,10 @@ export class UpdateEmail extends React.Component {
               validationState={ getValidationState(email) }
               >
               <FormControl
-                autofocus={ true }
+                autoFocus={ true }
                 placeholder='Enter your new email'
                 type='email'
-                { ...email }
+                { ...DOMOnlyProps(email) }
               />
               {
                 !email.error ?
@@ -112,7 +112,7 @@ export class UpdateEmail extends React.Component {
               <FormControl
                 placeholder='re-type your email address'
                 type='email'
-                { ...duplicate }
+                { ...DOMOnlyProps(duplicate) }
               />
               {
                 !duplicate.error ?
@@ -131,7 +131,10 @@ export class UpdateEmail extends React.Component {
                 { buttonCopy }
               </Button>
               <div className='button-spacer' />
-              <Link to={ onRouteSettings() }>
+              <Link
+                style={{ textDecoration: 'none' }}
+                to={ onRouteSettings() }
+                >
                 <Button
                   block={ true }
                   bsSize='lg'
