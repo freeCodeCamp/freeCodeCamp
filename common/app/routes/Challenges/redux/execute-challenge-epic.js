@@ -45,7 +45,7 @@ export function updateMainEpic(actions, { getState }, { document }) {
         types.modernEditorUpdated,
         types.classicEditorUpdated,
         types.executeChallenge,
-        types.updateMain
+        types.challengeUpdated
       )
         .debounce(executeDebounceTimeout)
         // if isCodeLocked do not run challenges

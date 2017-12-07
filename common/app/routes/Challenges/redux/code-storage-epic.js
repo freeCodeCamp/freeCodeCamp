@@ -4,7 +4,6 @@ import store from 'store';
 
 import {
   types,
-  updateMain,
   storedCodeFound,
   noStoredCodeFound,
   previousSolutionFound,
@@ -128,8 +127,7 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
           makeToast({
             message: 'I found some saved work. Loading now.'
           }),
-          storedCodeFound(challenge, finalFiles),
-          updateMain()
+          storedCodeFound(challenge, finalFiles)
         );
       }
 
@@ -145,8 +143,7 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
             makeToast({
               message: 'I found a previous solved solution. Loading now.'
             }),
-            previousSolutionFound(challenge, finalFiles),
-            updateMain()
+            previousSolutionFound(challenge, finalFiles)
           );
         }
       }
@@ -177,8 +174,7 @@ export function findPreviousSolutionEpic(actions, { getState }) {
           makeToast({
             message: 'I found a previous solved solution. Loading now.'
           }),
-          previousSolutionFound(challenge, finalFiles),
-          updateMain()
+          previousSolutionFound(challenge, finalFiles)
         );
       }
       return Observable.empty();

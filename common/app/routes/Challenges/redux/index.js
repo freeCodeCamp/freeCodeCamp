@@ -70,8 +70,6 @@ export const types = createTypes([
 
   // rechallenge
   'executeChallenge',
-  'updateMain',
-  'runTests',
   'updateOutput',
   'initOutput',
   'updateTests',
@@ -138,9 +136,6 @@ export const executeChallenge = createAction(
   noop,
 );
 
-export const updateMain = createAction(types.updateMain);
-
-export const runTests = createAction(types.runTests);
 export const updateTests = createAction(types.updateTests);
 
 export const initOutput = createAction(types.initOutput, loggerToStr);
