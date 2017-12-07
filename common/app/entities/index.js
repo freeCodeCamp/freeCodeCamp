@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   composeReducers,
   createAction,
@@ -5,12 +6,13 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 
-import { types as app } from '../routes/Challenges/redux';
+import { types as challenges } from '../routes/Challenges/redux';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
 export const entitiesSelector = getNS;
 export const types = createTypes([
+  'updateTheme',
   'updateUserFlag',
   'updateUserEmail',
   'updateUserLang',
@@ -37,6 +39,17 @@ export const updateUserCurrentChallenge = createAction(
   types.updateUserCurrentChallenge
 );
 
+// entity meta creators
+const getEntityAction = _.property('meta.entitiesAction');
+export const updateThemeMetacreator = (username, theme) => ({
+  entitiesAction: {
+    type: types.updateTheme,
+    payload: {
+      username,
+      theme: !theme || theme === 'default' ? 'night' : 'default'
+    }
+  }
+});
 
 const defaultState = {
   superBlock: {},
@@ -73,10 +86,26 @@ export default composeReducers(
     }
     return state;
   },
+  function(state = defaultState, action) {
+    if (getEntityAction(action)) {
+      const { payload: { username, theme } } = getEntityAction(action);
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            theme
+          }
+        }
+      };
+    }
+    return state;
+  },
   handleActions(
     () => ({
       [
-        app.submitChallenge.complete
+        challenges.submitChallenge.complete
       ]: (state, { payload: { username, points, challengeInfo } }) => ({
         ...state,
         [username]: {

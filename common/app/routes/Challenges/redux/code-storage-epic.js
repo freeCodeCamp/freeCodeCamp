@@ -158,7 +158,7 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
 export function findPreviousSolutionEpic(actions, { getState }) {
   return Observable.combineLatest(
     actions::ofType(types.noStoredCodeFound),
-    actions::ofType(app.addUser)
+    actions::ofType(app.fetchUser.complete)
   )
     .map(() => previousSolutionSelector(getState()))
     .filter(Boolean)

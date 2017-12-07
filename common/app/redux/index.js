@@ -15,7 +15,7 @@ import fetchChallengesEpic from './fetch-challenges-epic.js';
 import navSizeEpic from './nav-size-epic.js';
 
 import { createFilesMetaCreator } from '../files';
-import { entitiesSelector } from '../entities';
+import { updateThemeMetacreator, entitiesSelector } from '../entities';
 import { types as challenges } from '../routes/Challenges/redux';
 import { challengeToFiles } from '../routes/Challenges/utils';
 
@@ -38,9 +38,7 @@ export const types = createTypes([
   createAsyncTypes('fetchChallenge'),
   createAsyncTypes('fetchChallenges'),
 
-  'fetchUser',
-  'addUser',
-  'updateThisUser',
+  createAsyncTypes('fetchUser'),
   'showSignIn',
 
   'handleError',
@@ -50,8 +48,7 @@ export const types = createTypes([
 
   // night mode
   'toggleNightMode',
-  'updateTheme',
-  'addThemeToBody'
+  'postThemeComplete'
 ], ns);
 
 const throwIfUndefined = () => {
@@ -115,16 +112,12 @@ export const updateTitle = createAction(types.updateTitle);
 // fetchUser() => Action
 // used in combination with fetch-user-epic
 export const fetchUser = createAction(types.fetchUser);
-
-// addUser(
-//   entities: { [userId]: User }
-// ) => Action
-export const addUser = createAction(
-  types.addUser,
-  _.noop,
-  entities => ({ entities })
+export const fetchUserComplete = createAction(
+  types.fetchUser.complete,
+  ({ result }) => result,
+  _.identity
 );
-export const updateThisUser = createAction(types.updateThisUser);
+
 export const showSignIn = createAction(types.showSignIn);
 
 // used when server needs client to redirect
@@ -150,21 +143,20 @@ export const doActionOnError = actionCreator => error => Observable.of(
 
 export const toggleNightMode = createAction(
   types.toggleNightMode,
-  // we use this function to avoid hanging onto the eventObject
-  // so that react can recycle it
-  () => null
+  null,
+  updateThemeMetacreator
 );
-// updateTheme(theme: /night|default/) => Action
-export const updateTheme = createAction(types.updateTheme);
-// addThemeToBody(theme: /night|default/) => Action
-export const addThemeToBody = createAction(types.addThemeToBody);
+export const postThemeComplete = createAction(
+  types.postThemeComplete,
+  null,
+  updateThemeMetacreator
+);
 
-const initialState = {
+const defaultState = {
   title: 'Learn To Code | freeCodeCamp',
   isSignInAttempted: false,
   user: '',
   csrfToken: '',
-  theme: 'default',
   // eventually this should be only in the user object
   currentChallenge: '',
   superBlocks: []
@@ -172,17 +164,22 @@ const initialState = {
 
 export const getNS = state => state[ns];
 export const csrfSelector = state => getNS(state).csrfToken;
-export const themeSelector = state => getNS(state).theme;
 export const titleSelector = state => getNS(state).title;
 
 export const currentChallengeSelector = state => getNS(state).currentChallenge;
 export const superBlocksSelector = state => getNS(state).superBlocks;
 export const signInLoadingSelector = state => !getNS(state).isSignInAttempted;
 
+export const usernameSelector = state => getNS(state).username || '';
 export const userSelector = createSelector(
   state => getNS(state).user,
   state => entitiesSelector(state).user,
   (username, userMap) => userMap[username] || {}
+);
+
+export const themeSelector = _.flow(
+  userSelector,
+  user => user.theme || 'theme'
 );
 
 export const isSignedInSelector = state => !!userSelector(state).username;
@@ -240,7 +237,7 @@ export default handleActions(
       title: payload + ' | freeCodeCamp'
     }),
 
-    [types.updateThisUser]: (state, { payload: user }) => ({
+    [types.fetchUser.complete]: (state, { payload: user }) => ({
       ...state,
       user
     }),
@@ -255,11 +252,9 @@ export default handleActions(
       ...state,
       currentChallenge: dashedName
     }),
-    [types.updateTheme]: (state, { payload = 'default' }) => ({
-      ...state,
-      theme: payload
-    }),
-    [combineActions(types.showSignIn, types.updateThisUser)]: state => ({
+    [
+      combineActions(types.showSignIn, types.fetchUser.complete)
+    ]: state => ({
       ...state,
       isSignInAttempted: true
     }),
@@ -273,6 +268,6 @@ export default handleActions(
       delayedRedirect: payload
     })
   }),
-  initialState,
+  defaultState,
   ns
 );
