@@ -109,27 +109,36 @@ export default composeReducers(
         challenges.submitChallenge.complete
       ]: (state, { payload: { username, points, challengeInfo } }) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          points,
-          challengeMap: {
-            ...state[username].challengeMap,
-            [challengeInfo.id]: challengeInfo
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            points,
+            challengeMap: {
+              ...state.user[username].challengeMap,
+              [challengeInfo.id]: challengeInfo
+            }
           }
         }
       }),
       [types.updateUserFlag]: (state, { payload: { username, flag } }) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          [flag]: !state[username][flag]
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            [flag]: !state.user[username][flag]
+          }
         }
       }),
       [types.updateUserEmail]: (state, { payload: { username, email } }) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          email
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            email
+          }
         }
       }),
       [types.updateUserLang]:
@@ -140,9 +149,12 @@ export default composeReducers(
         }
       ) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          languageTag
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            languageTag
+          }
         }
       }),
       [types.updateUserCurrentChallenge]:
@@ -153,9 +165,12 @@ export default composeReducers(
         }
       ) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          currentChallengeId
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            currentChallengeId
+          }
         }
       })
     }),
