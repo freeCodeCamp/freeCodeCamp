@@ -3,7 +3,8 @@ import { Observable } from 'rx';
 import { ofType } from 'redux-epic';
 import store from 'store';
 
-import { postJSON$ } from '../../common/utils/ajax-stream';
+import { themes } from '../../common/utils/themes.js';
+import { postJSON$ } from '../../common/utils/ajax-stream.js';
 import {
   types,
 
@@ -34,10 +35,10 @@ export default function nightModeSaga(
     // catch existing night mode users
     .do(persistTheme)
     .do(theme => {
-      if (theme === 'night') {
-        body.classList.add('night');
+      if (theme === themes.night) {
+        body.classList.add(themes.night);
       } else {
-        body.classList.remove('night');
+        body.classList.remove(themes.night);
       }
     })
     .ignoreElements();

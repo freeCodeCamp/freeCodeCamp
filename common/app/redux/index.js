@@ -21,6 +21,8 @@ import { challengeToFiles } from '../routes/Challenges/utils';
 
 import ns from '../ns.json';
 
+import { themes, invertTheme } from '../../utils/themes.js';
+
 export const epics = [
   fetchUserEpic,
   fetchChallengesEpic,
@@ -144,7 +146,7 @@ export const doActionOnError = actionCreator => error => Observable.of(
 export const toggleNightMode = createAction(
   types.toggleNightMode,
   null,
-  updateThemeMetacreator
+  (username, theme) => updateThemeMetacreator(username, invertTheme(theme))
 );
 export const postThemeComplete = createAction(
   types.postThemeComplete,
@@ -170,7 +172,7 @@ export const currentChallengeSelector = state => getNS(state).currentChallenge;
 export const superBlocksSelector = state => getNS(state).superBlocks;
 export const signInLoadingSelector = state => !getNS(state).isSignInAttempted;
 
-export const usernameSelector = state => getNS(state).username || '';
+export const usernameSelector = state => getNS(state).user || '';
 export const userSelector = createSelector(
   state => getNS(state).user,
   state => entitiesSelector(state).user,
@@ -179,7 +181,7 @@ export const userSelector = createSelector(
 
 export const themeSelector = _.flow(
   userSelector,
-  user => user.theme || 'theme'
+  user => user.theme || themes.default
 );
 
 export const isSignedInSelector = state => !!userSelector(state).username;

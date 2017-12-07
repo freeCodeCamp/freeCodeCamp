@@ -6,6 +6,7 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 
+import { themes } from '../../utils/themes';
 import { types as challenges } from '../routes/Challenges/redux';
 
 export const ns = 'entities';
@@ -46,7 +47,7 @@ export const updateThemeMetacreator = (username, theme) => ({
     type: types.updateTheme,
     payload: {
       username,
-      theme: !theme || theme === 'default' ? 'night' : 'default'
+      theme: !theme || theme === themes.default ? themes.default : themes.night
     }
   }
 });

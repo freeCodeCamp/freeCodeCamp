@@ -7,6 +7,7 @@ import { isEmail } from 'validator';
 import path from 'path';
 import loopback from 'loopback';
 
+import { themes } from '../utils/themes';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
@@ -762,10 +763,7 @@ module.exports = function(User) {
     }
   );
 
-  User.themes = {
-    night: true,
-    default: true
-  };
+  User.themes = themes;
 
   User.prototype.updateTheme = function updateTheme(theme) {
     if (!this.constructor.themes[theme]) {
