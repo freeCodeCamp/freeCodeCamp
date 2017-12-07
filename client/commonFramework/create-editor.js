@@ -44,6 +44,10 @@ window.common = (function(global) {
     (handler) => editor.off('keyup', handler)
   );
 
+  editor.on('mousedown', function() {
+    editor.refresh();
+  } );
+
   editor.setOption('extraKeys', {
     Tab: function(cm) {
       if (cm.somethingSelected()) {
