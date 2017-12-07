@@ -1,19 +1,8 @@
 import _ from 'lodash';
-import Rx, { Observable, Subject } from 'rx';
-import { combineEpics, ofType } from 'redux-epic';
+import Rx, { Observable } from 'rx';
 import { ShallowWrapper, ReactWrapper } from 'enzyme';
 import Adapter15 from 'enzyme-adapter-react-15';
-import {
-  types,
-
-  updateOutput,
-  checkChallenge,
-  updateTests,
-
-  codeLockedSelector,
-  isJSEnabledSelector,
-  testsSelector
-} from './';
+import { isJSEnabledSelector } from '../redux';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -31,6 +20,11 @@ const createHeader = (id = mainId) => `
     };
   </script>
 `;
+
+export const runTestsInTestFrame = (document, tests) => Observable.defer(() => {
+  const { contentDocument: frame } = document.getElementById(testId);
+  return frame.__runTests(tests);
+});
 
 const createFrame = (document, getState, id) => ctx => {
   const isJSEnabled = isJSEnabledSelector(getState());
@@ -125,80 +119,18 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export function mainFrameEpic(actions, { getState }, { document }) {
-  return Observable.of(document)
-    // if document is not defined then none of this epic will run
-    // this prevents issues during SSR
-    .filter(Boolean)
-    .flatMapLatest(document => {
-      // this will proxy console.log calls in the main iframe
-      const proxyLogger = new Subject();
-      const createAndMountFrame = _.flow(
-        createFrame(document, getState, mainId),
-        mountFrame(document),
-        addDepsToDocument,
-        buildProxyConsole(proxyLogger),
-        writeContentToFrame,
-      );
-      const result = actions::ofType(types.frameMain)
-      // if isCodeLocked is true do not frame user code
-        .filter(() => !codeLockedSelector(getState()))
-        .map(({ payload }) => payload)
-        .do(createAndMountFrame)
-        .ignoreElements();
+export const createMainFramer = (document, getState, proxyLogger) => _.flow(
+  createFrame(document, getState, mainId),
+  mountFrame(document),
+  addDepsToDocument,
+  buildProxyConsole(proxyLogger),
+  writeContentToFrame,
+);
 
-      return Observable.merge(
-        proxyLogger.map(updateOutput),
-        result
-      );
-    });
-}
-
-export function testFrameEpic(actions, { getState }, { document }) {
-  return Observable.of(document)
-    // if document is not defined then none of this epic will run
-    // this prevents issues during SSR
-    .filter(Boolean)
-    .flatMapLatest(document => {
-      // frameReady will let us know when the test iframe is ready to run
-      const frameReady = new Subject();
-      const createAndMountFrame = _.flow(
-        createFrame(document, getState, testId),
-        mountFrame(document),
-        addDepsToDocument,
-        writeTestDepsToDocument(frameReady),
-        writeContentToFrame,
-      );
-      const result = actions::ofType(types.frameTests)
-      // if isCodeLocked is true do not frame user code
-        .filter(() => !codeLockedSelector(getState()))
-        .map(({ payload }) => payload)
-        .do(createAndMountFrame)
-        .ignoreElements();
-
-      return Observable.merge(
-        frameReady.flatMap(({ checkChallengePayload }) => {
-          const tests = testsSelector(getState());
-          const { contentDocument: frame } = document.getElementById(testId);
-          const postTests = Observable.of(
-            updateOutput('// tests completed'),
-            checkChallenge(checkChallengePayload)
-          ).delay(250);
-          // run the tests within the test iframe
-          return frame.__runTests(tests)
-            .flatMap(tests => {
-              return Observable.from(tests)
-                .map(({ message }) => message)
-                // make sure that the test message is a non empty string
-                .filter(_.overEvery(_.isString, Boolean))
-                .map(updateOutput)
-                .concat(Observable.of(updateTests(tests)));
-            })
-            .concat(postTests);
-        }),
-        result
-      );
-    });
-}
-
-export default combineEpics(testFrameEpic, mainFrameEpic);
+export const createTestFramer = (document, getState, frameReady) => _.flow(
+  createFrame(document, getState, testId),
+  mountFrame(document),
+  addDepsToDocument,
+  writeTestDepsToDocument(frameReady),
+  writeContentToFrame,
+);

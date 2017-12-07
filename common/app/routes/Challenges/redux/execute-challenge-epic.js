@@ -1,19 +1,28 @@
+import _ from 'lodash';
+import { Observable, Subject } from 'rx';
 import { combineEpics, ofType } from 'redux-epic';
 
 import {
   types,
 
-  frameMain,
-  frameTests,
   initOutput,
+  updateOutput,
+  updateTests,
+  checkChallenge,
 
   codeLockedSelector,
-  showPreviewSelector
+  showPreviewSelector,
+  testsSelector
 } from './';
 import {
   buildFromFiles,
   buildBackendChallenge
 } from '../utils/build.js';
+import {
+  runTestsInTestFrame,
+  createTestFramer,
+  createMainFramer
+} from '../utils/frame.js';
 import {
   createErrorObservable,
 
@@ -23,51 +32,100 @@ import {
 import { filesSelector } from '../../../files';
 
 const executeDebounceTimeout = 750;
-export function updateMainEpic(actions, { getState }) {
-  return actions::ofType(
-    types.unlockUntrustedCode,
-    types.modernEditorUpdated,
-    types.classicEditorUpdated,
-    types.executeChallenge,
-    types.updateMain
-  )
-    // if isCodeLocked do not run challenges
-    .debounce(executeDebounceTimeout)
-    .filter(() => (
-      !codeLockedSelector(getState()) &&
-      showPreviewSelector(getState())
-    ))
-    .map(() => getState())
-    .flatMapLatest(state => {
-      const files = filesSelector(state);
-      const { required = [] } = challengeSelector(state);
-      return buildFromFiles(files, required, true)
-        .map(frameMain)
-        .catch(createErrorObservable);
+export function updateMainEpic(actions, { getState }, { document }) {
+  return Observable.of(document)
+    // if document is not defined then none of this epic will run
+    // this prevents issues during SSR
+    .filter(Boolean)
+    .flatMapLatest(() => {
+      const proxyLogger = new Subject();
+      const frameMain = createMainFramer(document, getState, proxyLogger);
+      const buildAndFrameMain = actions::ofType(
+        types.unlockUntrustedCode,
+        types.modernEditorUpdated,
+        types.classicEditorUpdated,
+        types.executeChallenge,
+        types.updateMain
+      )
+        .debounce(executeDebounceTimeout)
+        // if isCodeLocked do not run challenges
+        .filter(() => (
+          !codeLockedSelector(getState()) &&
+          showPreviewSelector(getState())
+        ))
+        .map(getState)
+        .flatMapLatest(state => {
+          const files = filesSelector(state);
+          const { required = [] } = challengeSelector(state);
+          return buildFromFiles(files, required, true)
+            .map(frameMain)
+            .ignoreElements()
+            .catch(createErrorObservable);
+        });
+      return Observable.merge(buildAndFrameMain, proxyLogger.map(updateOutput));
     });
 }
 
-export function executeChallengeEpic(actions, { getState }) {
-  return actions::ofType(types.executeChallenge)
-    // if isCodeLocked do not run challenges
-    .debounce(executeDebounceTimeout)
-    .filter(() => !codeLockedSelector(getState()))
+
+export function executeChallengeEpic(actions, { getState }, { document }) {
+  return Observable.of(document)
+    // if document is not defined then none of this epic will run
+    // this prevents issues during SSR
+    .filter(Boolean)
     .flatMapLatest(() => {
-      const state = getState();
-      const files = filesSelector(state);
-      const {
-        required = [],
-        type: challengeType
-      } = challengeSelector(state);
-      if (challengeType === 'backend') {
-        return buildBackendChallenge(state)
-          .map(frameTests)
-          .startWith(initOutput('// running test'));
-      }
-      return buildFromFiles(files, required, false)
-        .map(frameTests)
-        .startWith(initOutput('// running test'))
-        .catch(createErrorObservable);
+      const frameReady = new Subject();
+      const frameTests = createTestFramer(document, getState, frameReady);
+      const challengeResults = frameReady
+        .pluck('checkChallengePayload')
+        .map(checkChallengePayload => ({
+          checkChallengePayload,
+          tests: testsSelector(getState())
+        }))
+        .flatMap(({ checkChallengePayload, tests }) => {
+          const postTests = Observable.of(
+            updateOutput('// tests completed'),
+            checkChallenge(checkChallengePayload)
+          ).delay(250);
+          // run the tests within the test iframe
+          return runTestsInTestFrame(document, tests)
+            .flatMap(tests => {
+              return Observable.from(tests)
+                .map(({ message }) => message)
+              // make sure that the test message is a non empty string
+                .filter(_.overEvery(_.isString, Boolean))
+                .map(updateOutput)
+                .concat(Observable.of(updateTests(tests)));
+            })
+            .concat(postTests);
+        });
+      const buildAndFrameChallenge = actions::ofType(types.executeChallenge)
+        .debounce(executeDebounceTimeout)
+        // if isCodeLocked do not run challenges
+        .filter(() => !codeLockedSelector(getState()))
+        .flatMapLatest(() => {
+          const state = getState();
+          const files = filesSelector(state);
+          const {
+            required = [],
+            type: challengeType
+          } = challengeSelector(state);
+          if (challengeType === 'backend') {
+            return buildBackendChallenge(state)
+              .do(frameTests)
+              .ignoreElements()
+              .startWith(initOutput('// running test'))
+              .catch(createErrorObservable);
+          }
+          return buildFromFiles(files, required, false)
+            .do(frameTests)
+            .ignoreElements()
+            .startWith(initOutput('// running test'))
+            .catch(createErrorObservable);
+        });
+      return Observable.merge(
+        buildAndFrameChallenge,
+        challengeResults
+      );
     });
 }
 

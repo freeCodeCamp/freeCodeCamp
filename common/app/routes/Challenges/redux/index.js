@@ -13,7 +13,6 @@ import noop from 'lodash/noop';
 import bugEpic from './bug-epic';
 import completionEpic from './completion-epic.js';
 import challengeEpic from './challenge-epic.js';
-import frameEpic from './frame-epic.js';
 import executeChallengeEpic from './execute-challenge-epic.js';
 import codeStorageEpic from './code-storage-epic.js';
 
@@ -50,7 +49,6 @@ export const epics = [
   codeStorageEpic,
   completionEpic,
   executeChallengeEpic,
-  frameEpic,
   ...stepEpics
 ];
 
@@ -74,8 +72,6 @@ export const types = createTypes([
   'executeChallenge',
   'updateMain',
   'runTests',
-  'frameMain',
-  'frameTests',
   'updateOutput',
   'initOutput',
   'updateTests',
@@ -143,8 +139,6 @@ export const executeChallenge = createAction(
 );
 
 export const updateMain = createAction(types.updateMain);
-export const frameMain = createAction(types.frameMain);
-export const frameTests = createAction(types.frameTests);
 
 export const runTests = createAction(types.runTests);
 export const updateTests = createAction(types.updateTests);
