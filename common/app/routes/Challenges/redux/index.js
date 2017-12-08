@@ -229,7 +229,10 @@ export const challengeMetaSelector = createSelector(
         submitTypes[challengeType] ||
         submitTypes[challenge && challenge.type] ||
         'tests',
-      showPreview: challengeType === html,
+      showPreview: (
+        challengeType === html ||
+        type === 'modern'
+      ),
       mode: challenge && challengeType === html ?
         'text/html' :
         'javascript'
