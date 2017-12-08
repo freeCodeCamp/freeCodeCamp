@@ -38,7 +38,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 
 | Prerequisite                                | Version |
 | ------------------------------------------- | ------- |
-| [MongoDB](http://www.mongodb.org/downloads) | `~ ^3`  |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `~ ^3`  |
 | [MailHog](https://github.com/mailhog/MailHog) | `~ ^1` |
 | [Node.js](http://nodejs.org)                | `~ ^8`  |
 | npm (comes with Node)                       | `~ ^5`  |
