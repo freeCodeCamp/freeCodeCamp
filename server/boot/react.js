@@ -5,7 +5,6 @@ import { NOT_FOUND } from 'redux-first-router';
 import devtoolsEnhancer from 'remote-redux-devtools';
 
 import {
-  loggerMiddleware,
   errorThrowerMiddleware
 } from '../utils/react.js';
 import { createApp, provideStore, App } from '../../common/app';
@@ -27,10 +26,7 @@ const routes = [
 
 const devRoutes = [];
 
-const middlewares = [
-  isDev ? loggerMiddleware : null,
-  isDev ? errorThrowerMiddleware : null
-].filter(Boolean);
+const middlewares = isDev ? [errorThrowerMiddleware] : [];
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 

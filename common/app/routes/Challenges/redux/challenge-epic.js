@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import debug from 'debug';
 import { Observable } from 'rx';
 import { combineEpics, ofType } from 'redux-epic';
@@ -7,8 +8,7 @@ import {
 
   challengeUpdated,
   onRouteChallenges,
-  onRouteCurrentChallenge,
-  updateMain
+  onRouteCurrentChallenge
 } from './';
 import { getNS as entitiesSelector } from '../../../entities';
 import {
@@ -38,21 +38,15 @@ export function challengeUpdatedEpic(actions, { getState }) {
     //  this will be an empty object
     //  We wait instead for the fetchChallenge.complete to complete the UI state
     .filter(({ dashedName }) => !!dashedName)
-    .flatMap(challenge =>
-      // send the challenge to update UI and update main iframe with inital
-      // challenge
-      Observable.of(challengeUpdated(challenge), updateMain())
-    );
+    // send the challenge to update UI and trigger main iframe to update
+    // use unary to prevent index from being passed to func
+    .map(_.unary(challengeUpdated));
 }
 
 // used to reset users code on request
 export function resetChallengeEpic(actions, { getState }) {
   return actions::ofType(types.clickOnReset)
-    .flatMap(() =>
-      Observable.of(
-        challengeUpdated(challengeSelector(getState())),
-        updateMain()
-      ));
+    .map(_.flow(getState, challengeSelector, challengeUpdated));
 }
 
 export function nextChallengeEpic(actions, { getState }) {
@@ -88,7 +82,7 @@ export function nextChallengeEpic(actions, { getState }) {
             { isDev }
           );
         }
-        /* this requires user data not available yet
+        /* // TODO(berks): get this to work
         if (isNewSuperBlock || isNewBlock) {
           const getName = isNewSuperBlock ?
             getCurrentSuperBlockName :

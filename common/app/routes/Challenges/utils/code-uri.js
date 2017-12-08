@@ -1,5 +1,5 @@
-import flow from 'lodash/flow';
-import { decodeFcc } from '../../common/utils/encode-decode';
+import _ from 'lodash';
+import { decodeFcc } from '../../../../utils/encode-decode';
 
 const queryRegex = /^(\?|#\?)/;
 export function legacyIsInQuery(query, decode) {
@@ -42,7 +42,7 @@ export function getKeyInQuery(query, keyToFind = '') {
 }
 
 export function getLegacySolutionFromQuery(query = '', decode) {
-  return flow(
+  return _.flow(
     getKeyInQuery,
     decode,
     decodeFcc

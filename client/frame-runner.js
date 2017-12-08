@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   var testTimeout = 5000;
-  var common = parent.__common;
-  var frameId = window.__frameId;
-  var frameReady = common[frameId + 'Ready'] || { onNext() {} };
   var Rx = document.Rx;
+  var frameReady = document.__frameReady;
   var helpers = Rx.helpers;
   var chai = parent.chai;
   var source = document.__source;
@@ -14,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.__getJsOutput = function getJsOutput() {
-    if (window.__err || !common.shouldRun()) {
-      return window.__err || 'source disabled';
+    if (window.__err) {
+      return window.__err;
     }
     let output;
     try {

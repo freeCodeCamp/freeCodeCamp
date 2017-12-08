@@ -1,5 +1,15 @@
-import * as challengeTypes from '../../utils/challengeTypes';
+import _ from 'lodash';
 
+import * as challengeTypes from '../../../utils/challengeTypes.js';
+import { createPoly } from '../../../../utils/polyvinyl.js';
+import { decodeScriptTags } from '../../../../utils/encode-decode.js';
+
+// turn challengeType to file ext
+const pathsMap = {
+  [ challengeTypes.html ]: 'html',
+  [ challengeTypes.js ]: 'js',
+  [ challengeTypes.bonfire ]: 'js'
+};
 // determine the component to view for each challenge
 export const viewTypes = {
   [ challengeTypes.html ]: 'classic',
@@ -42,6 +52,66 @@ export const submitTypes = {
 // determines if a line in a challenge description
 // has html that should be rendered
 export const descriptionRegex = /\<blockquote|\<ol|\<h4|\<table/;
+
+export function arrayToString(seedData = ['']) {
+  seedData = Array.isArray(seedData) ? seedData : [seedData];
+  return seedData.reduce((seed, line) => '' + seed + line + '\n', '\n');
+}
+
+export function buildSeed({ challengeSeed = [] } = {}) {
+  return _.flow(
+    arrayToString,
+    decodeScriptTags
+  )(challengeSeed);
+}
+
+export function getFileKey({ challengeType }) {
+  return 'index' + (pathsMap[challengeType] || 'html');
+}
+
+export function getPreFile({ challengeType }) {
+  return {
+    name: 'index',
+    ext: pathsMap[challengeType] || 'html',
+    key: getFileKey({ challengeType })
+  };
+}
+
+export function challengeToFiles(challenge, files) {
+  const previousWork = !!files;
+  files = files || challenge.files || {};
+  if (challenge.type === 'modern') {
+    return _.reduce(files, (files, file) => {
+      // TODO(berks): need to make sure head/tail are fresh from fCC
+      files[file.key] = createPoly(file);
+      return files;
+    }, {});
+  }
+  if (
+    challenge.challengeType !== challengeTypes.html &&
+    challenge.challengeType !== challengeTypes.js &&
+    challenge.challengeType !== challengeTypes.bonfire
+  ) {
+    return {};
+  }
+  // classic challenge to modern format
+  const preFile = getPreFile(challenge);
+  const contents = previousWork ?
+    // get previous contents
+    _.property([ preFile.key, 'contents' ])(files) :
+    // otherwise start fresh
+    buildSeed(challenge);
+  return {
+    [preFile.key]: createPoly({
+      ...files[preFile.key],
+      ...preFile,
+      contents,
+      // make sure head/tail are always fresh from fCC
+      head: arrayToString(challenge.head),
+      tail: arrayToString(challenge.tail)
+    })
+  };
+}
 
 export function createTests({ tests = [] }) {
   return tests

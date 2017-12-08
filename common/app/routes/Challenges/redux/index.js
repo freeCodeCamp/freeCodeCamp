@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   combineActions,
   combineReducers,
@@ -12,14 +13,21 @@ import noop from 'lodash/noop';
 import bugEpic from './bug-epic';
 import completionEpic from './completion-epic.js';
 import challengeEpic from './challenge-epic.js';
-import editorEpic from './editor-epic.js';
+import executeChallengeEpic from './execute-challenge-epic.js';
+import codeStorageEpic from './code-storage-epic.js';
 
 import ns from '../ns.json';
+import stepReducer, { epics as stepEpics } from '../views/step/redux';
+import quizReducer from '../views/quiz/redux';
+import projectReducer from '../views/project/redux';
+
 import {
   createTests,
   loggerToStr,
   submitTypes,
-  viewTypes
+  viewTypes,
+  getFileKey,
+  challengeToFiles
 } from '../utils';
 import {
   types as app,
@@ -27,19 +35,20 @@ import {
 } from '../../../redux';
 import { html } from '../../../utils/challengeTypes.js';
 import blockNameify from '../../../utils/blockNameify.js';
-import { getFileKey } from '../../../utils/classic-file.js';
-import stepReducer, { epics as stepEpics } from '../views/step/redux';
-import quizReducer from '../views/quiz/redux';
-import projectReducer from '../views/project/redux';
+import { updateFileMetaCreator, createFilesMetaCreator } from '../../../files';
 
 // this is not great but is ok until we move to a different form type
 export projectNormalizer from '../views/project/redux';
 
+const challengeToFilesMetaCreator =
+  _.flow(challengeToFiles, createFilesMetaCreator);
+
 export const epics = [
   bugEpic,
-  completionEpic,
   challengeEpic,
-  editorEpic,
+  codeStorageEpic,
+  completionEpic,
+  executeChallengeEpic,
   ...stepEpics
 ];
 
@@ -53,7 +62,6 @@ export const types = createTypes([
   'challengeUpdated',
   'clickOnReset',
   'updateHint',
-  'lockUntrustedCode',
   'unlockUntrustedCode',
   'closeChallengeModal',
   'updateSuccessMessage',
@@ -62,10 +70,6 @@ export const types = createTypes([
 
   // rechallenge
   'executeChallenge',
-  'updateMain',
-  'runTests',
-  'frameMain',
-  'frameTests',
   'updateOutput',
   'initOutput',
   'updateTests',
@@ -86,7 +90,12 @@ export const types = createTypes([
   'togglePreview',
   'toggleSidePanel',
   'toggleStep',
-  'toggleModernEditor'
+  'toggleModernEditor',
+
+  // code storage
+  'storedCodeFound',
+  'noStoredCodeFound',
+  'previousSolutionFound'
 ], ns);
 
 // routes
@@ -95,24 +104,29 @@ export const onRouteCurrentChallenge =
   createAction(types.onRouteCurrentChallenge);
 
 // classic
-export const classicEditorUpdated = createAction(types.classicEditorUpdated);
+export const classicEditorUpdated = createAction(
+  types.classicEditorUpdated,
+  null,
+  updateFileMetaCreator
+);
 // modern
 export const modernEditorUpdated = createAction(
   types.modernEditorUpdated,
-  (key, content) => ({ key, content })
+  null,
+  createFilesMetaCreator
 );
 // challenges
 export const closeChallengeModal = createAction(types.closeChallengeModal);
 export const updateHint = createAction(types.updateHint);
-export const lockUntrustedCode = createAction(types.lockUntrustedCode);
 export const unlockUntrustedCode = createAction(
   types.unlockUntrustedCode,
-  () => null
+  _.noop
 );
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 export const challengeUpdated = createAction(
   types.challengeUpdated,
-  challenge => ({ challenge })
+  challenge => ({ challenge }),
+  challengeToFilesMetaCreator
 );
 export const clickOnReset = createAction(types.clickOnReset);
 
@@ -122,11 +136,6 @@ export const executeChallenge = createAction(
   noop,
 );
 
-export const updateMain = createAction(types.updateMain);
-export const frameMain = createAction(types.frameMain);
-export const frameTests = createAction(types.frameTests);
-
-export const runTests = createAction(types.runTests);
 export const updateTests = createAction(types.updateTests);
 
 export const initOutput = createAction(types.initOutput, loggerToStr);
@@ -148,6 +157,19 @@ export const closeBugModal = createAction(types.closeBugModal);
 export const openIssueSearch = createAction(types.openIssueSearch);
 export const createIssue = createAction(types.createIssue);
 
+// code storage
+export const storedCodeFound = createAction(
+  types.storedCodeFound,
+  null,
+  challengeToFilesMetaCreator,
+);
+export const noStoredCodeFound = createAction(types.noStoredCodeFound);
+export const previousSolutionFound = createAction(
+  types.previousSolutionFound,
+  null,
+  challengeToFilesMetaCreator
+);
+
 const initialUiState = {
   output: null,
   isChallengeModalOpen: false,
@@ -157,6 +179,7 @@ const initialUiState = {
 
 const initialState = {
   isCodeLocked: false,
+  isJSEnabled: true,
   id: '',
   challenge: '',
   helpChatRoom: 'Help',
@@ -176,6 +199,8 @@ export const outputSelector = state => getNS(state).output;
 export const successMessageSelector = state => getNS(state).successMessage;
 export const hintIndexSelector = state => getNS(state).hintIndex;
 export const codeLockedSelector = state => getNS(state).isCodeLocked;
+export const isCodeLockedSelector = state => getNS(state).isCodeLocked;
+export const isJSEnabledSelector = state => getNS(state).isJSEnabled;
 export const chatRoomSelector = state => getNS(state).helpChatRoom;
 export const challengeModalSelector =
   state => getNS(state).isChallengeModalOpen;
@@ -204,7 +229,10 @@ export const challengeMetaSelector = createSelector(
         submitTypes[challengeType] ||
         submitTypes[challenge && challenge.type] ||
         'tests',
-      showPreview: challengeType === html,
+      showPreview: (
+        challengeType === html ||
+        type === 'modern'
+      ),
       mode: challenge && challengeType === html ?
         'text/html' :
         'javascript'
@@ -250,8 +278,9 @@ export default combineReducers(
         ...state,
         successMessage: payload
       }),
-      [types.lockUntrustedCode]: state => ({
+      [types.storedCodeFound]: state => ({
         ...state,
+        isJSEnabled: false,
         isCodeLocked: true
       }),
       [types.unlockUntrustedCode]: state => ({
@@ -260,7 +289,17 @@ export default combineReducers(
       }),
       [types.executeChallenge]: state => ({
         ...state,
+        isJSEnabled: true,
         tests: state.tests.map(test => ({ ...test, err: false, pass: false }))
+      }),
+      [
+        combineActions(
+          types.classicEditorUpdated,
+          types.modernEditorUpdated
+        )
+      ]: state => ({
+        ...state,
+        isJSEnabled: false
       }),
 
       // classic/modern

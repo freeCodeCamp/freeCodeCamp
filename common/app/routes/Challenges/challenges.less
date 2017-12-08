@@ -1,6 +1,13 @@
 // should be the same as the filename and ./ns.json
 @ns: challenges;
 
+// challenge panes are bound to the pane size which in turn is
+// bound to the total height minus navbar height
+.max-element-height() {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
 .@{ns}-title {
   margin-top: 0;
@@ -196,6 +203,17 @@
       margin-right: 0;
     }
   }
+}
+
+.@{ns}-preview {
+  .max-element-height();
+  width: 100%;
+}
+
+.@{ns}-preview-frame {
+  .max-element-height();
+  border: none;
+  width: 100%;
 }
 
 &{ @import "./views/index.less"; }

@@ -2,7 +2,7 @@ import { Observable } from 'rx';
 import { getValues } from 'redux-form';
 import identity from 'lodash/identity';
 
-import { fetchScript } from '../utils/fetch-and-cache.js';
+import { fetchScript } from './fetch-and-cache.js';
 import throwers from '../rechallenge/throwers';
 import {
   applyTransformers,
@@ -16,7 +16,7 @@ import {
 import {
   createFileStream,
   pipe
-} from '../../common/utils/polyvinyl.js';
+} from '../../../../utils/polyvinyl.js';
 
 
 const jQuery = {

@@ -1,16 +1,18 @@
+import _ from 'lodash';
 import { Observable } from 'rx';
+import { ofType } from 'redux-epic';
 import store from 'store';
 
-import { postJSON$ } from '../../common/utils/ajax-stream';
+import { themes } from '../../common/utils/themes.js';
+import { postJSON$ } from '../../common/utils/ajax-stream.js';
 import {
   types,
 
-  addThemeToBody,
-  updateTheme,
-
+  postThemeComplete,
   createErrorObservable,
 
   themeSelector,
+  usernameSelector,
   csrfSelector
 } from '../../common/app/redux';
 
@@ -24,40 +26,34 @@ export default function nightModeSaga(
   { document: { body } }
 ) {
   const toggleBodyClass = actions
-    .filter(({ type }) => types.addThemeToBody === type)
-    .doOnNext(({ payload: theme }) => {
-      if (theme === 'night') {
-        body.classList.add('night');
-        // catch existing night mode users
-        persistTheme(theme);
+    ::ofType(
+      types.fetchUser.complete,
+      types.toggleNightMode,
+      types.postThemeComplete
+    )
+    .map(_.flow(getState, themeSelector))
+    // catch existing night mode users
+    .do(persistTheme)
+    .do(theme => {
+      if (theme === themes.night) {
+        body.classList.add(themes.night);
       } else {
-        body.classList.remove('night');
+        body.classList.remove(themes.night);
       }
     })
-    .filter(() => false);
+    .ignoreElements();
 
-  const toggle = actions
-    .filter(({ type }) => types.toggleNightMode === type);
-
-  const optimistic = toggle
-    .flatMap(() => {
-      const theme = themeSelector(getState());
-      const newTheme = !theme || theme === 'default' ? 'night' : 'default';
-      persistTheme(newTheme);
-      return Observable.of(
-        updateTheme(newTheme),
-        addThemeToBody(newTheme)
-      );
-    });
-
-  const ajax = toggle
+  const postThemeEpic = actions::ofType(types.toggleNightMode)
     .debounce(250)
     .flatMapLatest(() => {
       const _csrf = csrfSelector(getState());
       const theme = themeSelector(getState());
+      const username = usernameSelector(getState());
       return postJSON$('/update-my-theme', { _csrf, theme })
+        .pluck('updatedTo')
+        .map(theme => postThemeComplete(username, theme))
         .catch(createErrorObservable);
     });
 
-  return Observable.merge(optimistic, toggleBodyClass, ajax);
+  return Observable.merge(toggleBodyClass, postThemeEpic);
 }

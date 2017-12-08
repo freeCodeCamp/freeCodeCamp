@@ -4,7 +4,7 @@ import identity from 'lodash/identity';
 import stubTrue from 'lodash/stubTrue';
 import conforms from 'lodash/conforms';
 
-import castToObservable from '../../common/app/utils/cast-to-observable.js';
+import castToObservable from '../../../utils/cast-to-observable.js';
 
 const HTML$JSReg = /html|js/;
 

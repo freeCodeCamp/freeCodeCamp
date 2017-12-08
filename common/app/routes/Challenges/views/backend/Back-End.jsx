@@ -19,7 +19,7 @@ import {
   testsSelector,
   outputSelector
 } from '../../redux';
-import { descriptionRegex } from '../../utils.js';
+import { descriptionRegex } from '../../utils';
 
 import {
   createFormValidator,

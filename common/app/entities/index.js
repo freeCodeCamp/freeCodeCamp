@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   composeReducers,
   createAction,
@@ -5,12 +6,14 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 
-import { types as app } from '../routes/Challenges/redux';
+import { themes } from '../../utils/themes';
+import { types as challenges } from '../routes/Challenges/redux';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
 export const entitiesSelector = getNS;
 export const types = createTypes([
+  'updateTheme',
   'updateUserFlag',
   'updateUserEmail',
   'updateUserLang',
@@ -37,6 +40,17 @@ export const updateUserCurrentChallenge = createAction(
   types.updateUserCurrentChallenge
 );
 
+// entity meta creators
+const getEntityAction = _.property('meta.entitiesAction');
+export const updateThemeMetacreator = (username, theme) => ({
+  entitiesAction: {
+    type: types.updateTheme,
+    payload: {
+      username,
+      theme: !theme || theme === themes.default ? themes.default : themes.night
+    }
+  }
+});
 
 const defaultState = {
   superBlock: {},
@@ -73,33 +87,58 @@ export default composeReducers(
     }
     return state;
   },
+  function(state = defaultState, action) {
+    if (getEntityAction(action)) {
+      const { payload: { username, theme } } = getEntityAction(action);
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            theme
+          }
+        }
+      };
+    }
+    return state;
+  },
   handleActions(
     () => ({
       [
-        app.submitChallenge.complete
+        challenges.submitChallenge.complete
       ]: (state, { payload: { username, points, challengeInfo } }) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          points,
-          challengeMap: {
-            ...state[username].challengeMap,
-            [challengeInfo.id]: challengeInfo
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            points,
+            challengeMap: {
+              ...state.user[username].challengeMap,
+              [challengeInfo.id]: challengeInfo
+            }
           }
         }
       }),
       [types.updateUserFlag]: (state, { payload: { username, flag } }) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          [flag]: !state[username][flag]
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            [flag]: !state.user[username][flag]
+          }
         }
       }),
       [types.updateUserEmail]: (state, { payload: { username, email } }) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          email
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            email
+          }
         }
       }),
       [types.updateUserLang]:
@@ -110,9 +149,12 @@ export default composeReducers(
         }
       ) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          languageTag
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            languageTag
+          }
         }
       }),
       [types.updateUserCurrentChallenge]:
@@ -123,9 +165,12 @@ export default composeReducers(
         }
       ) => ({
         ...state,
-        [username]: {
-          ...state[username],
-          currentChallengeId
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            currentChallengeId
+          }
         }
       })
     }),

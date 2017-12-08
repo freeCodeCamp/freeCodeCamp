@@ -6,3 +6,4 @@ export const locationTypeSelector =
 export const langSelector = state => paramsSelector(state).lang || 'en';
 export const routesMapSelector = state =>
   selectLocationState(state).routesMap || {};
+export const pathnameSelector = state => selectLocationState(state).pathname;
