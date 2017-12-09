@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // This return can be a function
           // i.e. function() { assert(true, 'happy coding'); }
           test = eval(testString);
-          
+
           if (helpers.isPromise(test)) {
             // Test is async and needs some time to execute correctly.
             // Patiently wait for it:

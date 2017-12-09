@@ -62,6 +62,14 @@ function createTest({
 }) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
+
+  if (tests.join('').includes('async')) {
+    /* NOTE: Refactor
+     * No support for async test... simply do not test */
+    console.log('Bailing on async tests...');
+    tests = [];
+  }
+
   head = head.join('\n');
   tail = tail.join('\n');
   const plan = tests.length;
