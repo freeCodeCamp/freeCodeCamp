@@ -72,9 +72,18 @@ document.addEventListener('DOMContentLoaded', function() {
           // This return can be a function
           // i.e. function() { assert(true, 'happy coding'); }
           test = eval(testString);
-          /* eslint-enable no-eval */
-          if (typeof test === 'function') {
-
+          
+          if (helpers.isPromise(test)) {
+            // Test is async and needs some time to execute correctly.
+            // Patiently wait for it:
+            __result = Rx.Observable.fromPromise(test).map(asyncResult => {
+              if (!asyncResult) {
+                throw Rx.Observable.throw('Async test failed!');
+              } else {
+                return Rx.Observable.of(null);
+              }
+            });
+          } else if (typeof test === 'function') {
             // we know that the test eval'ed to a function
             // the function could expect a callback
             // or it could return a promise/observable
