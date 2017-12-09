@@ -300,7 +300,7 @@
         "<h4>Best Practice</h4>",
         "Write variable names in Javascript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.",
         "<strong>Examples:</strong>",
-        "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsTooLong;</blockquote>",
+        "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsSoLong;</blockquote>",
         "<hr>",
         "Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.<br>Do not create any new variables."
       ],
