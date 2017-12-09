@@ -87,7 +87,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
 
   each challenge in challenges
     url
-      loc #{appUrl}/challenges/#{challenge}
+      loc #{appUrl}/challenges/#{challenge.block}/#{challenge.dashedName}
       lastmod= now
       changefreq weekly
       priority= 0.9
