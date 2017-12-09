@@ -747,7 +747,15 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().type() === 'div'; })(), 'message: The <code>ToDo</code> component should return a single outer <code>div</code>.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(2).name() === 'List'; })(), 'message: The <code>ToDo</code> component's third child should be an instance of the <code>List</code> component.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(4).name() === 'List'; })(), 'message: The <code>ToDo</code> component's fifth child should be an instance of the <code>List</code> component.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return Array.isArray(mockedComponent.find('List').get(0).props.tasks) && Array.isArray(mockedComponent.find('List').get(1).props.tasks); })(), 'message: Both instances of the <code>List</code> component should have a property called <code>tasks</code> and <code>tasks</code> should be of type array.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(0).props.tasks.length >= 2; })(), 'message: The first <code>List</code> component representing Today's tasks should have 2 or more items.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(1).props.tasks.length >= 3; })(), 'message: The second <code>List</code> component representing Tomorrow's tasks should have 3 or more items.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('p').get(0).props.children === mockedComponent.find('List').get(0).props.tasks.join(', ') && mockedComponent.find('p').get(1).props.children === mockedComponent.find('List').get(1).props.tasks.join(', '); })(), 'message: The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
