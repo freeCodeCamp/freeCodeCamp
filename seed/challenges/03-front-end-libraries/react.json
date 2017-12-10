@@ -5,10 +5,10 @@
   "helpRoom": "Help",
   "required": [
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/16.1.1/umd/react.development.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.0/react.js"
     },
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.1/umd/react-dom.development.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.0/react-dom.js"
     }
   ],
   "challenges": [
@@ -37,8 +37,8 @@
         }
       },
       "tests": [
-        "assert(Enzyme.shallow(JSX).type() === 'h1', 'message: The constant <code>JSX</code> should return an <code>h1</code> element.');",
-        "assert(Enzyme.shallow(JSX).contains( 'Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
+        "assert(JSX.type === 'h1', 'message: The constant <code>JSX</code> should return an <code>h1</code> element.');",
+        "assert(Enzyme.shallow(JSX).contains('Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
       "head": [],
       "tail": [],
@@ -114,10 +114,11 @@
           "name": "index",
           "contents": [
             "const JSX = (",
-            "<div>",
-            "  <h1>This is a block of JSX</h1>",
-            "  <p>Here's a subtitle</p>",
-            "</div>);"
+            "  <div>",
+            "    <h1>This is a block of JSX</h1>",
+            "    <p>Here's a subtitle</p>",
+            "  </div>",
+            ");"
           ]
         }
       },
@@ -204,9 +205,10 @@
           "name": "index",
           "contents": [
             "const JSX = (",
-            "<div>",
-            "  <h1>Add a class to this div</h1>",
-            "</div>);"
+            "  <div>",
+            "    <h1>Add a class to this div</h1>",
+            "  </div>",
+            ");"
           ]
         }
       },
@@ -257,7 +259,12 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert.strictEqual(JSX.type, 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
+        "assert(Enzyme.shallow(JSX).contains(<br/>), 'message: The <code>div</code> should contain a <code>br</code> tag.');",
+        "assert(Enzyme.shallow(JSX).contains(<hr/>), 'message: The <code>div</code> should contain an <code>hr</code> tag.');",
+        "assert((() => { const testDiv = document.getElementById('challenge-node').childNodes[0].innerHTML.replace(/\\s/g,''); return testDiv.includes('<h2>WelcometoReact!</h2>') && testDiv.includes('<p>Besuretoclosealltags!</p>'); })(), 'message: The provided JSX element should render as is to the DOM node with <code>id</code> of <code>challenge-node</code>.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
@@ -349,14 +356,12 @@
         }
       },
       "tests": [
-        "assert(shallowRender.type() === 'div', 'message: The React component should return a <code>div</code> element.');",
-        "assert(shallowRender.children().type() === 'h1', 'message: The returned <code>div</code> should render an <code>h1</code> tag within it.');",
-        "assert(shallowRender.contains(<h1>Hello React!</h1>), 'message: The h1 tag should include the string Hello React!');"
+        "assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div', 'message: The React component should return a <code>div</code> element.');",
+        "assert(Enzyme.shallow(React.createElement(MyComponent)).children().type() === 'h1', 'message: The returned <code>div</code> should render an <code>h1</code> header within it.');",
+        "assert(Enzyme.shallow(React.createElement(MyComponent)).contains(<h1>Hello React!</h1>), 'message: The <code>h1</code> tag should include the string <code>Hello React!</code>');"
       ],
       "head": [],
-      "tail": [
-        "var shallowRender = Enzyme.shallow(React.createElement(MyComponent));"
-      ],
+      "tail": [],
       "solutions": [
         "\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    return (\n      <div>\n        <h1>Hello React!</h1>\n      </div>\n    );\n    // change code above this line\n  }\n};"
       ],
