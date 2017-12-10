@@ -6,7 +6,7 @@
   "required": [
     {
       "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"
-    },
+    }
   ],
   "challenges": [
     {
