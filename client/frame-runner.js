@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var helpers = Rx.helpers;
   var chai = parent.chai;
   var source = document.__source;
+  var originalCode = document.__originalCode;
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
   if (document.Enzyme) {
@@ -29,7 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.__runTests = function runTests(tests = []) {
     /* eslint-disable no-unused-vars */
-    const editor = { getValue() { return source; } };
+    const editor = {
+      getValue() { return source; },
+      getOriginalCode() { return originalCode; }
+    };
     const code = source;
     /* eslint-enable no-unused-vars */
     if (window.__err) {

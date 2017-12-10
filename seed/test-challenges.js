@@ -97,7 +97,7 @@ function createTest({
         // assert and code used within the eval
         .doOnNext(assert => {
           solutions.forEach(solution => {
-            // original code string
+            // Original code string
             const originalCode = solution;
             tests.forEach(test => {
               let code = solution;
@@ -158,11 +158,9 @@ function createTest({
                 ReactRedux = require('react-redux');
               }
 
-              /* NOTE: Some React/Redux challenges need to access the original
-               * code string before it is transpiled for some of the tests. */
-              const provideOriginalCode = react || redux || reactRedux;
               const editor = {
-                getValue() { return provideOriginalCode ? originalCode : code; }
+                getValue() { return code },
+                getOriginalCode() { return originalCode; }
               };
               /* eslint-enable no-unused-vars */
               try {

@@ -15,9 +15,6 @@
     },
     {
       "src": "https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.6/react-redux.js"
-    },
-    {
-      "src": "https://wzrd.in/standalone/deep-freeze@latest"
     }
   ],
   "challenges": [
@@ -49,7 +46,11 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })(), 'message: The <code>DisplayMessages</code> component should render an empty <code>div</code> element.');",
+        "assert((function() { const noWhiteSpace = editor.getOriginalCode().replace(/ /g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'message: The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === 'object' && initialState.input === '' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), 'message: The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: \"\", messages: []}</code>');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
@@ -58,7 +59,7 @@
       "type": "modern",
       "isRequired": false,
       "translations": {},
-      "reactRedux": true
+      "react": true
     },
     {
       "id": "5a24c314108439a4d4036142",
