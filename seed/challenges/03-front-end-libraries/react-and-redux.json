@@ -198,13 +198,15 @@
             "      input: '',",
             "      messages: []",
             "    }",
+            "    this.handleChange = this.handleChange.bind(this);",
+            "    this.submitMessage = this.submitMessage.bind(this);",
             "  }",
-            "  handleChange = (event) => {",
+            "  handleChange(event) {",
             "    this.setState({",
             "      input: event.target.value",
             "    });",
             "  }",
-            "  submitMessage = () => {",
+            "  submitMessage() {",
             "    const currentMessage = this.state.input;",
             "    this.setState({",
             "      input: '',",
@@ -242,11 +244,16 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'message: The <code>AppWrapper</code> should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return editor.getOriginalCode().replace(/ /g,'').includes('<Providerstore={store}>'); })(), 'message: The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })(), 'message: <code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })(), 'message: The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "// Redux Code:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React Code:\n\nclass DisplayMessages extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n  }\n  handleChange = (event) => {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage = () => {\n    const currentMessage = this.state.input;\n    this.setState({\n      input: '',\n      messages: this.state.messages.concat(currentMessage)\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.state.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n\nconst Provider = ReactRedux.Provider;\n\nclass AppWrapper extends React.Component {\n  // change code below this line\n  render() {\n    return (\n      <Provider store = {store}>\n        <DisplayMessages/>\n      </Provider>\n    );\n  }\n  // change code above this line\n};"
+        "// Redux Code:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React Code:\n\nclass DisplayMessages extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n this.handleChange = this.handleChange.bind(this); \n this.submitMessage = this.submitMessage.bind(this); \n }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    const currentMessage = this.state.input;\n    this.setState({\n      input: '',\n      messages: this.state.messages.concat(currentMessage)\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.state.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n\nconst Provider = ReactRedux.Provider;\n\nclass AppWrapper extends React.Component {\n  // change code below this line\n  render() {\n    return (\n      <Provider store = {store}>\n        <DisplayMessages/>\n      </Provider>\n    );\n  }\n  // change code above this line\n};"
       ],
       "type": "modern",
       "isRequired": false,
