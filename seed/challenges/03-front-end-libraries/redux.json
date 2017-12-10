@@ -197,7 +197,11 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(loginAction().type === 'LOGIN', 'message: Calling the function loginAction should return an object with type property set to the string <code>LOGIN</code>.');",
+        "assert(store.getState().login === false, 'message: The store should be initialized with an object with property login set to false.');",
+        "assert((function() {  let noWhiteSpace = editor.getOriginalCode().replace(/ /g,''); return noWhiteSpace.includes('store.dispatch(loginAction())') || noWhiteSpace.includes('store.dispatch({type: \\'LOGIN\\'})') === true })(), 'message: The store.dispatch() method should be used to dispatch an action of type <code>LOGIN</code>.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
