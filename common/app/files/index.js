@@ -44,6 +44,7 @@ export default addNS(
         const files = getFilePayload(action);
         return _.reduce(files, (files, file) => {
           files[file.key] = createPoly(file);
+          console.log(files);
           return files;
         }, { ...state });
       }

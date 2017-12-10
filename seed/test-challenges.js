@@ -150,6 +150,7 @@ function createTest({
 
               let Redux;
               if (redux) {
+                // Provide dependencies
                 Redux = require('redux');
                 console.log(test);
                 const transform = require('babel-standalone').transform;
@@ -163,7 +164,23 @@ function createTest({
 
               let ReactRedux;
               if (reactRedux) {
+                // Provide dependencies
+                React = require('react');
+                ReactDOM = require('react-dom');
+                Redux = require('redux');
                 ReactRedux = require('react-redux');
+                Enzyme = require('enzyme');
+                const Adapter15 = require('enzyme-adapter-react-15');
+                Enzyme.configure({ adapter: new Adapter15() });
+                /* Transpile ALL the code
+                 * (we may use JSX in head or tail or tests, too): */
+                const transform = require('babel-standalone').transform;
+                const options = { presets: [ 'es2015', 'react' ] };
+
+                head = transform(head, options).code;
+                solution = transform(solution, options).code;
+                tail = transform(tail, options).code;
+                test = transform(test, options).code;
               }
 
               const editor = {

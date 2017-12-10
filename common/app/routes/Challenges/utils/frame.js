@@ -104,8 +104,6 @@ const writeTestDepsToDocument = frameReady => ctx => {
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
   tests.__frameReady = frameReady;
-  // Provide original code string in test environment:
-  // tests.__originalCode = originalCode;
   return ctx;
 };
 
