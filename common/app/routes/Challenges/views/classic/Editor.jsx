@@ -45,6 +45,7 @@ const mapStateToProps = createSelector(
   ) => ({
     content: files[key] && files[key].contents || '// Happy Coding!',
     file: files[key],
+    fileKey: key,
     mode
   })
 );
@@ -58,6 +59,7 @@ const propTypes = {
   classicEditorUpdated: PropTypes.func.isRequired,
   content: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
+  fileKey: PropTypes.string.isRequired,
   mode: PropTypes.string
 };
 
@@ -114,6 +116,7 @@ export class Editor extends PureComponent {
     const {
       content,
       executeChallenge,
+      fileKey,
       classicEditorUpdated,
       mode
     } = this.props;
@@ -124,7 +127,7 @@ export class Editor extends PureComponent {
         >
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
-            onChange={ classicEditorUpdated }
+            onChange={ change => classicEditorUpdated(fileKey, change) }
             options={ this.createOptions({ executeChallenge, mode }) }
             ref='editor'
             value={ content }

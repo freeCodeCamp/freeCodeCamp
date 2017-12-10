@@ -20,12 +20,14 @@ import {
   updateTitle,
 
   signInLoadingSelector,
-  userSelector
+  userSelector,
+  themeSelector
 } from '../../redux';
 import ChildContainer from '../../Child-Container.jsx';
 
 const mapStateToProps = createSelector(
   userSelector,
+  themeSelector,
   signInLoadingSelector,
   showUpdateEmailViewSelector,
   (
@@ -41,9 +43,11 @@ const mapStateToProps = createSelector(
       sendNotificationEmail,
       sendQuincyEmail
     },
+    theme,
     showLoading,
     showUpdateEmailView
   ) => ({
+    currentTheme: theme,
     email,
     isAvailableForHire,
     isGithubCool,
@@ -71,6 +75,7 @@ const mapDispatchToProps = {
 
 const propTypes = {
   children: PropTypes.element,
+  currentTheme: PropTypes.string,
   email: PropTypes.string,
   initialLang: PropTypes.string,
   isAvailableForHire: PropTypes.bool,
@@ -113,6 +118,7 @@ export class Settings extends React.Component {
 
   render() {
     const {
+      currentTheme,
       email,
       isAvailableForHire,
       isGithubCool,
@@ -182,7 +188,7 @@ export class Settings extends React.Component {
                 bsSize='lg'
                 bsStyle='primary'
                 className='btn-link-social'
-                onClick={ toggleNightMode }
+                onClick={ () => toggleNightMode(username, currentTheme) }
                 >
                 Toggle Night Mode
               </Button>

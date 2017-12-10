@@ -7,14 +7,14 @@ import partial from 'lodash/partial';
 import stubTrue from 'lodash/stubTrue';
 
 import {
-  compileHeadTail,
-  setExt,
-  transformContents
-} from '../../common/utils/polyvinyl';
-import {
   fetchScript,
   fetchLink
 } from '../utils/fetch-and-cache.js';
+import {
+  compileHeadTail,
+  setExt,
+  transformContents
+} from '../../../../utils/polyvinyl';
 
 const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';

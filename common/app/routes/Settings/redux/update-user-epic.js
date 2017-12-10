@@ -42,7 +42,8 @@ export function updateUserEmailEpic(actions, { getState }) {
         .catch(doActionOnError(() => oldEmail ?
           updateUserEmail(username, oldEmail) :
           null
-        ));
+        ))
+        .filter(Boolean);
       return Observable.merge(optimisticUpdate, ajaxUpdate);
     });
 }
@@ -109,6 +110,7 @@ export function updateUserFlagEpic(actions, { getState }) {
           }
           return updateUserFlag(username, flag);
         })
+        .filter(Boolean)
         .catch(doActionOnError(() => {
           return updateUserFlag(username, currentValue);
         }));

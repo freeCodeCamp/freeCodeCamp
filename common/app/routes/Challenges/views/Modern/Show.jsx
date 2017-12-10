@@ -9,8 +9,9 @@ import ns from './ns.json';
 import Editor from './Editor.jsx';
 import { showPreviewSelector, types } from '../../redux';
 import SidePanel from '../../Side-Panel.jsx';
-import Panes from '../../../../Panes';
+import Preview from '../../Preview.jsx';
 import _Map from '../../../../Map';
+import Panes from '../../../../Panes';
 import ChildContainer from '../../../../Child-Container.jsx';
 import { filesSelector } from '../../../../files';
 
@@ -62,7 +63,8 @@ export const mapStateToPanes = addNS(
 
 const nameToComponent = {
   Map: _Map,
-  'Side Panel': SidePanel
+  'Side Panel': SidePanel,
+  Preview: Preview
 };
 
 export function ShowModern({ nameToFileKey }) {
