@@ -389,9 +389,26 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'message: The <code>Presentational</code> component should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })(), 'message: The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })(), 'message: The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.');"
+      ],
       "head": [],
-      "tail": [],
+      "tail": [
+        "const store = Redux.createStore(",
+        "  (state = '__INITIAL__STATE__', action) => state",
+        ");",
+        "class AppWrapper extends React.Component {",
+        "  render() {",
+        "    return (",
+        "      <ReactRedux.Provider store = {store}>",
+        "        <ConnectedComponent/>",
+        "      </ReactRedux.Provider>",
+        "    );",
+        "  }",
+        "};"
+      ],
       "solutions": [
         "const addMessage = (message) => {\n  return {\n    type: 'ADD',\n    message: message\n  }\n};\n\nconst mapStateToProps = (state) => {\n  return {\n    messages: state\n  }\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message));\n    }\n  }\n};\n\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <h3>This is a Presentational Component</h3>\n  }\n};\n\nconst connect = ReactRedux.connect;\n// change code below this line\n\nconst ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational)"
       ],
