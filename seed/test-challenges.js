@@ -159,7 +159,7 @@ function createTest({
               }
 
               const editor = {
-                getValue() { return code },
+                getValue() { return code; },
                 getOriginalCode() { return originalCode; }
               };
               /* eslint-enable no-unused-vars */
@@ -206,4 +206,3 @@ Observable.from(getChallenges())
     err => { throw err; },
     () => process.exit(0)
   );
-

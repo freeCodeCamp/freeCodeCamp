@@ -5,10 +5,10 @@
   "helpRoom": "Help",
   "required": [
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.0/react.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"
     },
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/15.6.0/react-dom.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.js"
     }
   ],
   "challenges": [
@@ -490,7 +490,12 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(Enzyme.shallow(React.createElement(TypesOfFood)).type() === 'div', 'message: The <code>TypesOfFood</code> component should return a single <code>div</code> element');",
+        "assert(Enzyme.shallow(React.createElement(TypesOfFood)).props().children[1].type.name === 'Fruits', 'message: The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.');",
+        "assert(Enzyme.mount(React.createElement(TypesOfFood)).find('h2').html() === '<h2>Fruits:</h2>', 'message: The <code>Fruits</code> component should return the <code>TypesOfFruit</code> component.');",
+        "assert(Enzyme.mount(React.createElement(TypesOfFood)).find('ul').text() === 'ApplesBlueberriesStrawberriesBananas', 'message: The <code>TypesOfFruit</code> component should return the <code>h2</code> and <code>ul</code> elements');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
@@ -1093,7 +1098,7 @@
             "  constructor(props) {",
             "    super(props);",
             "    this.state = {",
-            "      name: 'Free Code Camp'",
+            "      name: 'freeCodeCamp'",
             "    }",
             "  }",
             "  render() {",
@@ -1109,11 +1114,15 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(Enzyme.mount(React.createElement(MyComponent)).state('name') === 'freeCodeCamp', 'message: <code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.');",
+        "assert(Enzyme.mount(React.createElement(MyComponent)).childAt(0).type() === 'div' && Enzyme.mount(React.createElement(MyComponent)).childAt(0).childAt(0).type() === 'h1', 'message: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.');",
+        "(async function() { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' });   return waitForIt(() => mockedComponent.contains('TestName')); }; const firstValue = await first(); return firstValue; })(); // message: The rendered <code>h1</code> header should contain text rendered from the component's state."
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'Free Code Camp'\n    }\n  }\n  render() {\n    return (\n      <div>\n        { /* change code below this line */ }\n        <h1>{this.state.name}</h1>\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
+        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp'\n    }\n  }\n  render() {\n    return (\n      <div>\n        { /* change code below this line */ }\n        <h1>{this.state.name}</h1>\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
