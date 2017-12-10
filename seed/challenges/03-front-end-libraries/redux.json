@@ -40,7 +40,10 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(typeof store.getState === 'function', 'message: The redux store exists.');",
+        "assert(store.getState()=== 5, 'message: The redux store has a value of 5 for the state.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
