@@ -246,13 +246,13 @@
           "name": "index",
           "contents": [
             "const JSX = (",
-            "<div>",
-            "  {/* change code below this line */}",
-            "  <h2>Welcome to React!</h2> <br >",
-            "  <p>Be sure to close all tags!</p>",
-            "  <hr >",
-            "  {/* change code above this line */}",
-            "</div>",
+            "  <div>",
+            "    {/* remove comment and change code below this line",
+            "    <h2>Welcome to React!</h2> <br >",
+            "    <p>Be sure to close all tags!</p>",
+            "    <hr >",
+            "    remove comment and change code above this line */}",
+            "  </div>",
             ");",
             "",
             "ReactDOM.render(JSX, document.getElementById('challenge-node'));"
@@ -261,8 +261,8 @@
       },
       "tests": [
         "assert.strictEqual(JSX.type, 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
-        "assert(Enzyme.shallow(JSX).contains(<br/>), 'message: The <code>div</code> should contain a <code>br</code> tag.');",
-        "assert(Enzyme.shallow(JSX).contains(<hr/>), 'message: The <code>div</code> should contain an <code>hr</code> tag.');",
+        "assert(Enzyme.shallow(JSX).find('br').length === 1, 'message: The <code>div</code> should contain a <code>br</code> tag.');",
+        "assert(Enzyme.shallow(JSX).find('hr').length === 1, 'message: The <code>div</code> should contain an <code>hr</code> tag.');",
         "assert((() => { const testDiv = document.getElementById('challenge-node').childNodes[0].innerHTML.replace(/\\s/g,''); return testDiv.includes('<h2>WelcometoReact!</h2>') && testDiv.includes('<p>Besuretoclosealltags!</p>'); })(), 'message: The provided JSX element should render as is to the DOM node with <code>id</code> of <code>challenge-node</code>.');"
       ],
       "head": [],
@@ -357,8 +357,8 @@
       },
       "tests": [
         "assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div', 'message: The React component should return a <code>div</code> element.');",
-        "assert(Enzyme.shallow(React.createElement(MyComponent)).children().type() === 'h1', 'message: The returned <code>div</code> should render an <code>h1</code> header within it.');",
-        "assert(Enzyme.shallow(React.createElement(MyComponent)).contains(<h1>Hello React!</h1>), 'message: The <code>h1</code> tag should include the string <code>Hello React!</code>');"
+        "assert(/<div><h1>.*<\\/h1><\\/div>/.test(Enzyme.shallow(React.createElement(MyComponent)).html()), 'message: The returned <code>div</code> should render an <code>h1</code> header within it.');",
+        "assert(Enzyme.shallow(React.createElement(MyComponent)).html() === '<div><h1>Hello React!</h1></div>', 'message: The <code>h1</code> header should contain the string <code>Hello React!</code>');"
       ],
       "head": [],
       "tail": [],
