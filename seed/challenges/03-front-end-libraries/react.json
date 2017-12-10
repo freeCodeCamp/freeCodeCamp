@@ -1068,7 +1068,7 @@
       "head": [],
       "tail": [],
       "solutions": [
-        "\nclass StatefulComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'Free Code Camp!'\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.name}</h1>\n      </div>\n    );\n  }\n};"
+        "\nclass StatefulComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp!'\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.name}</h1>\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
@@ -1116,8 +1116,8 @@
       },
       "tests": [
         "assert(Enzyme.mount(React.createElement(MyComponent)).state('name') === 'freeCodeCamp', 'message: <code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.');",
-        "assert(Enzyme.mount(React.createElement(MyComponent)).childAt(0).type() === 'div' && Enzyme.mount(React.createElement(MyComponent)).childAt(0).childAt(0).type() === 'h1', 'message: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.');",
-        "(async function() { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' });   return waitForIt(() => mockedComponent.contains('TestName')); }; const firstValue = await first(); return firstValue; })(); // message: The rendered <code>h1</code> header should contain text rendered from the component's state."
+        "assert(/<div><h1>.*<\\/h1><\\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), 'message: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.');",
+        "(async function() { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); return firstValue === '<div><h1>TestName</h1></div>'; })(); // message: The rendered <code>h1</code> header should contain text rendered from the component's state."
       ],
       "head": [],
       "tail": [],
@@ -1149,7 +1149,7 @@
             "  constructor(props) {",
             "    super(props);",
             "    this.state = {",
-            "      name: 'Free Code Camp'",
+            "      name: 'freeCodeCamp'",
             "    }",
             "  }",
             "  render() {",
@@ -1168,11 +1168,16 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(Enzyme.mount(React.createElement(MyComponent)).state('name') === 'freeCodeCamp', 'message: <code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.');",
+        "assert(/<div><h1>.*<\\/h1><\\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), 'message: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.');",
+        "assert(/<h1>\\n*\\s*\\{\\s*name\\s*\\}\\s*\\n*<\\/h1>/.test(editor.getOriginalCode()), 'message: The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.');",
+        "(async function() { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); return firstValue === '<div><h1>TestName</h1></div>'; })(); // message: The rendered <code>h1</code> header should contain text rendered from the component's state."
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'Free Code Camp'\n    }\n  }\n  render() {\n    // change code below this line\n    const name = this.state.name;\n    // change code above this line\n    return (\n      <div>\n        { /* change code below this line */ }\n        <h1>{name}</h1>\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
+        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp'\n    }\n  }\n  render() {\n    // change code below this line\n    const name = this.state.name;\n    // change code above this line\n    return (\n      <div>\n        { /* change code below this line */ }\n        <h1>{name}</h1>\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
