@@ -46,6 +46,17 @@ export default function executeChallengeEpic(actions, { getState }) {
           const actions = [
             frameMain(payload)
           ];
+
+          /* Provide original, un-transpiled code string
+           * Limit to React challenges now, should provide for all?
+           */
+          if (files.indexjsx) {
+            const originalCode = files.indexjsx.contents;
+            if (originalCode) {
+              payload.originalCode = originalCode;
+            }
+          }
+
           if (type === types.executeChallenge) {
             actions.push(frameTests(payload));
           }

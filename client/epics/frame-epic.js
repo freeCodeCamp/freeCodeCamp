@@ -78,7 +78,7 @@ function frameMain({ build } = {}, document, proxyLogger) {
   main.close();
 }
 
-function frameTests({ build, sources, checkChallengePayload } = {}, document) {
+function frameTests({ build, sources, originalCode, checkChallengePayload } = {}, document) {
   const { frame: tests } = getFrameDocument(document, testId);
   refreshFrame(tests);
   tests.Rx = Rx;
@@ -100,6 +100,8 @@ function frameTests({ build, sources, checkChallengePayload } = {}, document) {
   tests.__source = sources['index'] || '';
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
+  // Provide original code string in test environment:
+  tests.__originalCode = originalCode;
   tests.open();
   tests.write(createHeader(testId) + build);
   tests.close();
