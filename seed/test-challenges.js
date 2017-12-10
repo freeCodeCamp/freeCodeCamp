@@ -151,6 +151,14 @@ function createTest({
               let Redux;
               if (redux) {
                 Redux = require('redux');
+                console.log(test);
+                const transform = require('babel-standalone').transform;
+                const options = { presets: [ 'es2015' ] };
+
+                head = transform(head, options).code;
+                solution = transform(solution, options).code;
+                tail = transform(tail, options).code;
+                test = transform(test, options).code;
               }
 
               let ReactRedux;

@@ -78,7 +78,10 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(store.getState()===5, 'message: The redux store should have a value of 5 for the initial state.');",
+        "assert(true, 'message: TODO- ADD TEST VERIFYING THING.....')"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
