@@ -28,7 +28,7 @@ export default function JobSettings({ isAvailableForHire, toggle }) {
           className={ className }
           onClick={ toggle }
           >
-          { isAvailableForHire ? 'Available' : 'Unavailable' }
+          { isAvailableForHire ? 'Yes' : 'No' }
         </Button>
       </Col>
     </Row>
