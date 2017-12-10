@@ -113,7 +113,10 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { return typeof action === 'object' })(), 'message: An action object should exist.');",
+        "assert((function() { return action.type === 'LOGIN' })(), 'message: The action should have a key property type with value LOGIN.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
