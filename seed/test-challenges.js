@@ -111,11 +111,14 @@ function createTest({
                *
                * */
 
-              let React, ReactDOM, Enzyme, document;
-              if (react) {
-                // Provide dependencies
+              let React, ReactDOM, Redux, ReduxThunk, ReactRedux, Enzyme, document;
+              if (react | redux | reactRedux) {
+                // Provide dependencies, just provide all of them
                 React = require('react');
                 ReactDOM = require('react-dom');
+                Redux = require('redux');
+                ReduxThunk = require('redux-thunk');
+                ReactRedux = require('react-redux');
                 Enzyme = require('enzyme');
                 const Adapter15 = require('enzyme-adapter-react-15');
                 Enzyme.configure({ adapter: new Adapter15() });
@@ -146,41 +149,6 @@ function createTest({
                 global.window = window;
                 global.document = window.document;
 
-              }
-
-              let Redux;
-              if (redux) {
-                // Provide dependencies
-                Redux = require('redux');
-                console.log(test);
-                const transform = require('babel-standalone').transform;
-                const options = { presets: [ 'es2015' ] };
-
-                head = transform(head, options).code;
-                solution = transform(solution, options).code;
-                tail = transform(tail, options).code;
-                test = transform(test, options).code;
-              }
-
-              let ReactRedux;
-              if (reactRedux) {
-                // Provide dependencies
-                React = require('react');
-                ReactDOM = require('react-dom');
-                Redux = require('redux');
-                ReactRedux = require('react-redux');
-                Enzyme = require('enzyme');
-                const Adapter15 = require('enzyme-adapter-react-15');
-                Enzyme.configure({ adapter: new Adapter15() });
-                /* Transpile ALL the code
-                 * (we may use JSX in head or tail or tests, too): */
-                const transform = require('babel-standalone').transform;
-                const options = { presets: [ 'es2015', 'react' ] };
-
-                head = transform(head, options).code;
-                solution = transform(solution, options).code;
-                tail = transform(tail, options).code;
-                test = transform(test, options).code;
               }
 
               const editor = {
