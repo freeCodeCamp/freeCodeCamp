@@ -30,10 +30,10 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
                 li
                     a(href='/signin') Sign In
             else
-                li.avatar-points
+                li.nav-avatar
                   a(href='/settings')
-                    span.brownie-points-nav
-                      span.hidden-md.hidden-lg #{user.username}
-                      span.brownie-points [&thinsp;#{user.points}&thinsp;]
-                    span.hidden-xs.hidden-sm.avatar
-                      img.profile-picture.float-right(src='#{user.picture}')
+                    span
+                      span.nav-username.hidden-md.hidden-lg #{user.username}
+                      span.nav-points [&thinsp;#{user.points}&thinsp;]
+                    span.hidden-xs.hidden-sm(style='height:0')
+                      img.nav-picture.float-right(src='#{user.picture}')
