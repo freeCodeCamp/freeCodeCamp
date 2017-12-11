@@ -117,7 +117,7 @@
             "Bootstrap determina qué tan ancha es la pantalla y adapta correspondientemente el tamaño de tus elementos HTML - por eso es que se llama <code>Diseño adaptativo</code> (responsive design).",
             "Con diseño adaptativo, no hay necesidad de diseñar una versión móvil para tu sitio web. Se verá bien en dispositivos con pantallas de cualquier tamaño.",
             "Puedes agregar Bootstrap a cualquier aplicación simplemente incluyendo el siguiente código al inicio de tu HTML:",
-            "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\"/&#62;</code>",
+            "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\" integrity=\"sha384-8+rznmq/k0KZkJlZhnuPEVkbRD7tA0wcFEjY48dajGWn3Xc1MasJwS8/tJ7OEsKW\" crossorigin=\"anonymous\"/&#62;</code>",
             "En este caso, lo hemos agregado a esta página por ti.",
             "Para iniciar, debemos anidar todo nuestro HTML en un elemento <code>div</code> con la clase <code>container-fluid</code>."
           ]
