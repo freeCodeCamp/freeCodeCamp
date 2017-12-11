@@ -1680,8 +1680,9 @@
             "    this.state = {",
             "      inputValue: ''",
             "    }",
+            "    this.handleChange = this.handleChange.bind(this);",
             "  }",
-            "  handleChange = (event) => {",
+            "  handleChange(event) {",
             "    this.setState({",
             "      inputValue: event.target.value",
             "    });",
@@ -1729,11 +1730,17 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1; })(), 'message: The <code>MyApp</code> component should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('GetInput').length === 1; })(), 'message: The <code>GetInput</code> component should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('RenderInput').length === 1; })(), 'message: The <code>RenderInput</code> component should render.');",
+        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''}); return waitForIt(() => mockedComponent.state() )}; const state_2 = () => { mockedComponent.find('input').simulate('change', {target: {value: 'TestInput'}}); return waitForIt(() => mockedComponent.state() )}; const updated_1 = await state_1(); const updated_2 = await state_2(); return(updated_1.inputValue === '' && updated_2.inputValue === 'TestInput'); })(); // The <code>GetInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props and contain an <code>input</code> element which modifies <code>MyApp</code> state.",
+        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: 'TestName'}); return waitForIt(() => mockedComponent )}; const updated_1 = await state_1(); return(updated_1.find('p').text().includes('TestName')); })(); // The <code>RenderInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props."
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class MyApp extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      inputValue: ''\n    }\n  }\n  handleChange = (event) => {\n    this.setState({\n      inputValue: event.target.value\n    });\n  }\n  render() {\n    return (\n       <div>\n         <GetInput\n           input={this.state.inputValue}\n           handleInput={this.handleChange}/>\n         <RenderInput\n           input={this.state.inputValue}/>\n       </div>\n    );\n  }\n};\n\nclass GetInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Get Input:</h3>\n        <input\n          value={this.props.input}\n          onChange={this.props.handleInput}/>\n      </div>\n    );\n  }\n};\n\nclass RenderInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Input Render:</h3>\n        <p>{this.props.input}</p>\n      </div>\n    );\n  }\n};"
+        "class MyApp extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      inputValue: ''\n    }\n  this.handleChange = this.handleChange.bind(this);  \n  }\n  handleChange(event) {\n    this.setState({\n      inputValue: event.target.value\n    });\n  }\n  render() {\n    return (\n       <div>\n         <GetInput\n           input={this.state.inputValue}\n           handleInput={this.handleChange}/>\n         <RenderInput\n           input={this.state.inputValue}/>\n       </div>\n    );\n  }\n};\n\nclass GetInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Get Input:</h3>\n        <input\n          value={this.props.input}\n          onChange={this.props.handleInput}/>\n      </div>\n    );\n  }\n};\n\nclass RenderInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Input Render:</h3>\n        <p>{this.props.input}</p>\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
