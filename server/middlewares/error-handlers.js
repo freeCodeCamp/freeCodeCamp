@@ -1,12 +1,7 @@
-import errorHandler from 'errorhandler';
 import accepts from 'accepts';
 import { unwrapHandledError } from '../utils/create-handled-error.js';
 
 export default function prodErrorHandler() {
-  if (process.env.NODE_ENV === 'development') {
-    return errorHandler({ log: true });
-  }
-  // error handling in production.
   // disabling eslint due to express parity rules for error handlers
   return function(err, req, res, next) { // eslint-disable-line
     // respect err.status
@@ -22,7 +17,11 @@ export default function prodErrorHandler() {
     // parse res type
     const accept = accepts(req);
     const type = accept.type('html', 'json', 'text');
-    const handled = unwrapHandledError(err);
+
+    // If err is array then use the unwrap function,
+    // otherwise it wasn't wrapped so we build the handled object.
+    const handled = err.constructor === Array ? unwrapHandledError(err) :
+      { message: err.message, stack: err.stack };
 
     const redirectTo = handled.redirectTo || '/map';
     const message = handled.message ||
