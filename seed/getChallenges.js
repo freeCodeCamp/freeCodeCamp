@@ -52,32 +52,13 @@ function getSupName(filePath) {
 module.exports = function getChallenges() {
   try {
     return getFilesFor('challenges')
-      .filter(data => data.superBlock === '03-front-end-libraries') // TODO: REMOVE
+      // TODO: REMOVE
+      .filter(data => data.superBlock === '03-front-end-libraries')
       .map(function(data) {
         const challengeSpec = require('./challenges/' + data.file);
         challengeSpec.fileName = data.file;
         challengeSpec.superBlock = getSupName(data.superBlock);
         challengeSpec.superOrder = getSupOrder(data.superBlock);
-
-        /* NOTE: There were some weird errors being thrown by npm test
-         * seemingly related to challenges with no tests present.
-         *
-         * Also, we want to hijack are async/await tests here and force
-         * them to pass the automated tests because there is no support
-         * for async testing here yet.
-         * */
-        const challengeCopy = challengeSpec.challenges.slice();
-        challengeSpec.challenges = challengeCopy
-          .filter(({ tests }) => tests.length)
-          .map(challenge => {
-            const { tests, title } = challenge;
-            const isAsync = s => s.includes('(async () => '); // must be written as arrow fn
-            if (isAsync(tests.join(''))) {
-              console.log(`Replacing Async Tests for Challenge ${title}`);
-              challenge.tests = tests.map(t => isAsync(t) ? "assert(true, 'message: great');" : t);
-            }
-            return challenge;
-          });
 
         return challengeSpec;
       });
