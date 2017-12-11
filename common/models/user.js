@@ -9,6 +9,7 @@ import path from 'path';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
+import { defaultProfileImage } from '../../common/utils/constantStrings.json';
 
 const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
@@ -169,6 +170,7 @@ module.exports = function(User) {
       if (user.email && !isEmail(user.email)) {
         return next(createEmailError());
       }
+      user.picture = user.picture || defaultProfileImage;
       user.username = user.username.trim().toLowerCase();
       user.email = typeof user.email === 'string' ?
         user.email.trim().toLowerCase() :
