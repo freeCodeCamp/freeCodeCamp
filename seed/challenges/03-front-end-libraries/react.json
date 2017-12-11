@@ -306,10 +306,9 @@
         }
       },
       "tests": [
-        "assert(typeof MyComponent === 'function', 'message: <code>MyComponent</code> should be a function.');",
-        "assert(typeof MyComponent() === 'object', 'message: <code>MyComponent</code> should return a React element.');",
-        "assert(MyComponent().type === 'div', 'message: <code>MyComponent</code> should return a <code>div</code> element.');",
-        "assert(MyComponent().props.children.length !== 0, 'message: The <code>div</code> element should contain a string of text.');"
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })(), 'message: <code>MyComponent</code> should return JSX.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === 'div' })(), 'message: <code>MyComponent</code> should return a <code>div</code> element.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').text() !== ''; })(), 'message: The <code>div</code> element should contain a string of text.');"
       ],
       "head": [],
       "tail": [],
