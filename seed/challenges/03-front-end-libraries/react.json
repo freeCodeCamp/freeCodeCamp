@@ -2248,8 +2248,9 @@
             "    this.state = {",
             "      display: true",
             "    }",
+            "    this.toggleDisplay = this.toggleDisplay.bind(this);",
             "  }",
-            "  toggleDisplay = () => {",
+            "  toggleDisplay() {",
             "    this.setState({",
             "      display: !this.state.display",
             "    });",
@@ -2268,11 +2269,16 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length === 1; })(), 'message: <code>MyComponent</code> should exist and render.');",
+        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 2 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 1, ); })(), 'message: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.');",
+        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 0, ); })(), 'message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.');",
+        "assert(editor.getOriginalCode().includes('if') === true && editor.getOriginalCode().includes('else') === true, 'message: The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n  }\n  toggleDisplay = () => {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    if (this.state.display) {\n      return (\n         <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n           <h1>Displayed!</h1>\n         </div>\n      );\n    } else {\n      return (\n        <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n         </div>\n      );\n    }\n  }\n};"
+        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n this.toggleDisplay = this.toggleDisplay.bind(this); \n }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    if (this.state.display) {\n      return (\n         <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n           <h1>Displayed!</h1>\n         </div>\n      );\n    } else {\n      return (\n        <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n         </div>\n      );\n    }\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
