@@ -2086,7 +2086,11 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === 'div'; })(), 'message: The component should render a <code>div</code> element.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })(), 'message: The <code>div</code> element should have a color of <code>red</code>.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })(), 'message: The <code>div</code> element should have a font size of <code>72px</code>.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
