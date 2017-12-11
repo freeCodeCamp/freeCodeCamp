@@ -1270,7 +1270,7 @@
             "      itemCount: 0",
             "    };",
             "    // change code below this line",
-            "     this.addItem = this.addItem.bind(this);",
+            "",
             "    // change code above this line",
             "  }",
             "  addItem() {",
@@ -1282,7 +1282,7 @@
             "    return (",
             "      <div>",
             "        { /* change code below this line */ }",
-            "        <button onClick={this.addItem}>Click Me</button>",
+            "        <button>Click Me</button>",
             "        { /* change code above this line */ }",
             "        <h1>Current Item Count: {this.state.itemCount}</h1>",
             "      </div>",
@@ -1366,7 +1366,7 @@
         "<code>MyComponent</code> has a <code>visibility</code> property which is initialized to <code>false</code>. The render method returns one view if the value of <code>visibility</code> is true, and a different view if it is false.",
         "Currently, there is no way of updating the <code>visibility</code> property in the component's <code>state</code>. The value should toggle back and forth between true and false. There is a click handler on the button which triggers a class method called <code>toggleVisibility()</code>. Define this method so the <code>state</code> of <code>visibility</code> toggles to the opposite value when the method is called. If <code>visibility</code> is <code>false</code>, the method sets it to <code>true</code>, and vice versa.",
         "Finally, click the button to see the conditional rendering of the component based on its <code>state</code>.",
-        "<strong>Hint:</strong>&nbsp;Make sure to either explicitly bind the <code>this</code> keyword to the method, or use an ES6 arrow function."
+        "<strong>Hint:</strong>&nbsp;Don't forget to bind the <code>this</code> keyword to the method in the constructor!"
       ],
       "files": {
         "indexjsx": {
@@ -1380,6 +1380,9 @@
             "    this.state = {",
             "      visibility: false",
             "    };",
+            "    // change code below this line",
+            "",
+            "    // change code above this line",
             "  }",
             "  // change code below this line",
             "",
@@ -1388,14 +1391,14 @@
             "    if (this.state.visibility) {",
             "      return (",
             "        <div>",
-            "          <button onClick = {this.toggleVisibility}>Click Me</button>",
+            "          <button onClick={this.toggleVisibility}>Click Me</button>",
             "          <h1>Now you see me!</h1>",
             "        </div>",
             "      );",
             "    } else {",
             "      return (",
             "        <div>",
-            "          <button onClick = {this.toggleVisibility}>Click Me</button>",
+            "          <button onClick={this.toggleVisibility}>Click Me</button>",
             "        </div>",
             "      );",
             "    }",
@@ -1404,11 +1407,15 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find('div').find('button').length, 1, 'message: <code>MyComponent</code> should return a <code>div</code> element which contains a <code>button</code>.');",
+        "assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).state('visibility'), false, 'message: The state of <code>MyComponent</code> should initialize with a <code>visibility</code> property set to <code>false</code>.');",
+        "(async function() { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ visibility: false }); return waitForIt(() => mockedComponent.state('visibility')); }; const second = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent.state('visibility')); }; const third = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent.state('visibility')); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); return !firstValue && secondValue && !thirdValue; })(); // message: Clicking the button element should toggle the <code>visibility</code> property in state between <code>true</code> and <code>false</code>."
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      visibility: false\n    };\n  }\n  toggleVisibility = () => {\n    this.setState({\n      visibility: !this.state.visibility\n    });\n  }\n  render() {\n    if (this.state.visibility) {\n      return (\n        <div>\n          <button onClick = {this.toggleVisibility}>Click Me</button>\n          <h1>Now you see me!</h1>\n        </div>\n      );\n    } else {\n      return (\n        <div>\n          <button onClick = {this.toggleVisibility}>Click Me</button>\n        </div>\n      );\n    }\n  }\n};"
+        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      visibility: false\n    };\n    this.toggleVisibility = this.toggleVisibility.bind(this);\n   }\n  toggleVisibility() {\n    this.setState({\n      visibility: !this.state.visibility\n    });\n  }\n  render() {\n    if (this.state.visibility) {\n      return (\n        <div>\n          <button onClick = {this.toggleVisibility}>Click Me</button>\n          <h1>Now you see me!</h1>\n        </div>\n      );\n    } else {\n      return (\n        <div>\n          <button onClick = {this.toggleVisibility}>Click Me</button>\n        </div>\n      );\n    }\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
