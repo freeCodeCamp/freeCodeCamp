@@ -2354,8 +2354,9 @@
             "    this.state = {",
             "      display: true",
             "    }",
+            "    this.toggleDisplay = this.toggleDisplay.bind(this);",
             "  }",
-            "  toggleDisplay = () => {",
+            "  toggleDisplay() {",
             "    this.setState({",
             "      display: !this.state.display",
             "    });",
@@ -2382,11 +2383,15 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Parent)); return mockedComponent.find('Parent').length === 1; })(), 'message: The <code>Parent</code> component should exist and render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Parent)); return mockedComponent.find('Child').length === 1; })(), 'message: The <code>Child</code> component should exist and render.');",
+        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(Parent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( updated.find('div').length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 1 ); })(), 'message: When display is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class Parent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n  }\n  toggleDisplay = () => {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    return (\n       <div>\n         <button onClick={this.toggleDisplay}>Toggle Display</button>\n         <Child display={this.state.display}/>\n       </div>\n    );\n  }\n};\n\nclass Child extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    if (this.props.display) {\n      return <h1>Display!</h1>\n    } else {\n      return null;\n    }\n  }\n}"
+        "class Parent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n  this.toggleDisplay = this.toggleDisplay.bind(this); \n  }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    return (\n       <div>\n         <button onClick={this.toggleDisplay}>Toggle Display</button>\n         <Child display={this.state.display}/>\n       </div>\n    );\n  }\n};\n\nclass Child extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    if (this.props.display) {\n      return <h1>Display!</h1>\n    } else {\n      return null;\n    }\n  }\n}"
       ],
       "type": "modern",
       "isRequired": false,
