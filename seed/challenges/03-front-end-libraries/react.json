@@ -2705,7 +2705,13 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Frameworks)); return mockedComponent.find('Frameworks').length === 1; })(), 'message: The <code>Frameworks</code> component should exist and render to the page.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Frameworks)); return mockedComponent.find('h1').length === 1; })(), 'message: <code>Frameworks</code> should render an <code>h1</code> element.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Frameworks)); return mockedComponent.find('ul').length === 1; })(), 'message: <code>Frameworks</code> should render a <code>ul</code> element.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Frameworks)); return (mockedComponent.find('ul').children().length === 6 && mockedComponent.find('ul').childAt(0).name() === 'li' && mockedComponent.find('li').length === 6); })(), 'message: The <code>ul</code> tag should render 6 child <code>li</code> elements.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Frameworks)); const ul = mockedComponent.find('ul'); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key(), ul.childAt(4).key(), ul.childAt(5).key(), ]); return keys.size === 6; })(), 'message: Each list item element should have a unique <code>key</code> attribute.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [

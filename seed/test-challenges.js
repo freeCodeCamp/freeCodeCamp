@@ -63,7 +63,7 @@ function createTest({
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
 
-  if (tests.join('').includes('async')) {
+  if (tests.join('').includes('(async function()')) {
     /* NOTE: Refactor
      * No support for async test... simply do not test */
     console.log('Bailing on async tests...');
