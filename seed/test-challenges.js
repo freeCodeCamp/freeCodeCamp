@@ -62,14 +62,6 @@ function createTest({
 }) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
-
-  if (tests.join('').includes('(async function()')) {
-    /* NOTE: Refactor
-     * No support for async test... simply do not test */
-    console.log('Bailing on async tests...');
-    tests = [];
-  }
-
   head = head.join('\n');
   tail = tail.join('\n');
   const plan = tests.length;
@@ -112,7 +104,7 @@ function createTest({
                * */
 
               let React, ReactDOM, Redux, ReduxThunk, ReactRedux, Enzyme, document;
-              if (react | redux | reactRedux) {
+              if (react || redux || reactRedux) {
                 // Provide dependencies, just provide all of them
                 React = require('react');
                 ReactDOM = require('react-dom');
