@@ -103,7 +103,14 @@ function createTest({
                *
                * */
 
-              let React, ReactDOM, Redux, ReduxThunk, ReactRedux, Enzyme, document;
+              let React,
+                  ReactDOM,
+                  Redux,
+                  ReduxThunk,
+                  ReactRedux,
+                  Enzyme,
+                  document;
+
               if (react || redux || reactRedux) {
                 // Provide dependencies, just provide all of them
                 React = require('react');
@@ -154,7 +161,8 @@ function createTest({
                     head + '\n;;' +
                     solution + '\n;;' +
                     tail + '\n;;' +
-                    test);
+                    test
+                  );
                 })();
               } catch (e) {
                 t.fail(e);
