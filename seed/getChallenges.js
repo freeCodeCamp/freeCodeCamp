@@ -66,14 +66,15 @@ module.exports = function getChallenges() {
          * them to pass the automated tests because there is no support
          * for async testing here yet.
          * */
-        challengeSpec.challenges = challengeSpec.challenges.slice()
+        const challengeCopy = challengeSpec.challenges.slice();
+        challengeSpec.challenges = challengeCopy
           .filter(({ tests }) => tests.length)
           .map(challenge => {
             const { tests, title } = challenge;
-            const asyncSignature = '(async function';
-            if (tests.join('').includes(asyncSignature)) {
-              console.log(`Updating Async Tests for Challenge: "${title}".`);
-              challenge.tests = tests.map(t => asyncSignature ? "assert(true, 'message: great');" : t);
+            const isAsync = s => s.includes('(async () => '); // must be written as arrow fn
+            if (isAsync(tests.join(''))) {
+              console.log(`Replacing Async Tests for Challenge ${title}`);
+              challenge.tests = tests.map(t => isAsync(t) ? "assert(true, 'message: great');" : t);
             }
             return challenge;
           });
