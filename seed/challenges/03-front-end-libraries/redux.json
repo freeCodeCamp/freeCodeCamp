@@ -306,7 +306,14 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(loginUser().type === 'LOGIN', 'message: Calling the function loginUser should return an object with type property set to the string <code>LOGIN</code>.');",
+        "assert(logoutUser().type === 'LOGOUT', 'message: Calling the function logoutUser should return an object with type property set to the string <code>LOGOUT</code>.');",
+        "assert(store.getState().authenticated === false, 'message: The store should be initialized with an object with an authenticated property set to false.');",
+        "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'message: Dispatching loginUser should update the authenticated property in the store state to true.');",
+        "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })(), 'message: Dispatching logoutUser should update the authenticated property in the store state to false.');",
+        "assert( code.toString().includes('switch') && code.toString().includes('case') && code.toString().includes('default'), 'message: The authReducer function should handle multiple action types with a switch statement.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
