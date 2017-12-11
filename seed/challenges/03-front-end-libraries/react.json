@@ -2386,7 +2386,9 @@
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Parent)); return mockedComponent.find('Parent').length === 1; })(), 'message: The <code>Parent</code> component should exist and render.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Parent)); return mockedComponent.find('Child').length === 1; })(), 'message: The <code>Child</code> component should exist and render.');",
-        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(Parent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( updated.find('div').length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 1 ); })(), 'message: When display is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.');"
+        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(Parent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( updated.find('div').length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 1 ); })(), 'message: When display is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.');",
+        "assert(true, 'message: TO-DO');",
+        "assert(true, 'message: TO-DO');"
       ],
       "head": [],
       "tail": [],
