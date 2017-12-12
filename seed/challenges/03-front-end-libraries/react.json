@@ -911,8 +911,14 @@
           ]
         }
       },
-      "tests": [],
-      "head": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })(), 'message: The <code>ShoppingCart</code> component should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })(), 'message: The <code>Items</code> component should render.');",
+        "assert((function() { const noWhiteSpace = editor.getOriginalCode().replace(/ /g, ''); return noWhiteSpace.includes('quantity:PropTypes.number.isRequired') && noWhiteSpace.includes('Items.propTypes='); })(), 'message: The <code>Items</code> component should include a <code>propTypes</code> check that requires <code>quantity</code> to be a <code>number</code>.');"
+      ],
+      "head": [
+        "var PropTypes = { number: { isRequired: true } };"
+      ],
       "tail": [],
       "solutions": [
         "const Items = (props) => {\n  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>\n};\n\n// change code below this line\nItems.propTypes = {\n  quantity: PropTypes.number.isRequired\n};\n// change code above this line\n\nItems.defaultProps = {\n  quantity: 0\n};\n\nclass ShoppingCart extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <Items />\n  }\n};"
