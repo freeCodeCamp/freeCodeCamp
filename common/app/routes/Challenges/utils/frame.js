@@ -101,6 +101,7 @@ const writeTestDepsToDocument = frameReady => ctx => {
   // default for classic challenges
   // should not be used for modern
   tests.__source = sources['index'] || '';
+  tests.__originalCode = sources['originalCode'] || '';
   tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
   tests.__frameReady = frameReady;

@@ -126,7 +126,7 @@
         "assert(JSX.type === 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
         "assert(JSX.props.children[0].type === 'h1', 'message: The <code>div</code> should contain an <code>h1</code> tag as the first element.');",
         "assert(JSX.props.children[1].type === 'p', 'message: The <code>div</code> should contain a <code>p</code> tag as the second element.');",
-        "assert(editor.getOriginalCode().includes('/*') && editor.getOriginalCode().includes('*/'), 'message: The JSX should include a comment.');"
+        "assert(editor.getOriginalCode().includes('/*') && editor.getOriginalCode().includes('*/'), 'message: The <code>JSX</code> should include a comment.');"
       ],
       "head": [],
       "tail": [],
@@ -2370,8 +2370,8 @@
       },
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length === 1; })(), 'message: <code>MyComponent</code> should exist and render.');",
-        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 2 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 1, ); })(), 'message: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.');",
-        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 0, ); })(), 'message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.');",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 2 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 1 ); })(); // message: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 0 ); })(); // message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.",
         "assert(editor.getOriginalCode().includes('if') === true && editor.getOriginalCode().includes('else') === true, 'message: The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.');"
       ],
       "head": [],
@@ -2429,8 +2429,8 @@
       },
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length; })(), 'message: <code>MyComponent</code> should exist and render.');",
-        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( updated.find('div').length === 1 && updated.find('div').children().length === 2 && updated.find('button').length === 1 && updated.find('h1').length === 1 ); })(); // message: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.",
-        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert( updated.find('div').length === 1 && updated.find('div').children().length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 0, ); })(); // message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return (updated.find('div').length === 1 && updated.find('div').children().length === 2 && updated.find('button').length === 1 && updated.find('h1').length === 1); })(); // message: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return (updated.find('div').length === 1 && updated.find('div').children().length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 0); })(); // message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.",
         "assert(editor.getOriginalCode().includes('&&'), 'message: The render method should use the && logical operator to check the condition of this.state.display.');"
       ],
       "head": [],
@@ -2497,7 +2497,7 @@
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Parent)); return mockedComponent.find('Parent').length === 1; })(), 'message: The <code>Parent</code> component should exist and render.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Parent)); return mockedComponent.find('Child').length === 1; })(), 'message: The <code>Child</code> component should exist and render.');",
-        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(Parent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( updated.find('div').length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 1 ); })(), 'message: When display is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.');",
+        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(Parent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( updated.find('div').length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 1 ); })(), // message: When display is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.",
         "assert(true, 'message: TO-DO');",
         "assert(true, 'message: TO-DO');"
       ],
@@ -2982,7 +2982,7 @@
         }
       },
       "tests": [
-        "assert(true, 'message: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.');"
+        "assert(editor.getOriginalCode().replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div', 'message: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.');"
       ],
       "head": [
         "var ReactDOMServer = { renderToString(x) { return null; } };"
