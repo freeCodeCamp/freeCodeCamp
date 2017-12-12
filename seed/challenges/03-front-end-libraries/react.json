@@ -967,7 +967,10 @@
         "assert((function() { const noWhiteSpace = editor.getOriginalCode().replace(/ /g, ''); return noWhiteSpace.includes('quantity:PropTypes.number.isRequired') && noWhiteSpace.includes('Items.propTypes='); })(), 'message: The <code>Items</code> component should include a <code>propTypes</code> check that requires <code>quantity</code> to be a <code>number</code>.');"
       ],
       "head": [
-        "var PropTypes = { number: { isRequired: true } };"
+        "var PropTypes = {",
+        "  number: { isRequired: true }",
+        "};",
+        ""
       ],
       "tail": [],
       "solutions": [
