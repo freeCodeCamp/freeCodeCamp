@@ -117,7 +117,15 @@ export function executeChallengeEpic(actions, { getState }, { document }) {
               .catch(createErrorObservable);
           }
           return buildFromFiles(files, required, false)
-            .do(frameTests)
+            .do(build => {
+              // Hack in original code for tests:
+              let originalCode;
+              if (files && files.indexjsx && files.indexjsx.contents) {
+                originalCode = files.indexjsx.contents;
+                build.sources.originalCode = originalCode;
+              }
+              return frameTests(build);
+            })
             .ignoreElements()
             .startWith(initOutput('// running test'))
             .catch(createErrorObservable);

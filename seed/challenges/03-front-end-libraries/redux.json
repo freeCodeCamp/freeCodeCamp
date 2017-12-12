@@ -198,9 +198,9 @@
         }
       },
       "tests": [
-        "assert(loginAction().type === 'LOGIN', 'message: Calling the function loginAction should return an object with type property set to the string <code>LOGIN</code>.');",
-        "assert(store.getState().login === false, 'message: The store should be initialized with an object with property login set to false.');",
-        "assert((function() {  let noWhiteSpace = editor.getOriginalCode().replace(/ /g,''); return noWhiteSpace.includes('store.dispatch(loginAction())') || noWhiteSpace.includes('store.dispatch({type: \\'LOGIN\\'})') === true })(), 'message: The store.dispatch() method should be used to dispatch an action of type <code>LOGIN</code>.');"
+        "assert(loginAction().type === 'LOGIN', 'message: Calling the function <code>loginAction</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.');",
+        "assert(store.getState().login === false, 'message: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');",
+        "assert((function() {  let noWhiteSpace = editor.getOriginalCode().replace(/ /g,''); return noWhiteSpace.includes('store.dispatch(loginAction())') || noWhiteSpace.includes('store.dispatch({type: \\'LOGIN\\'})') === true })(), 'message: The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.');"
       ],
       "head": [],
       "tail": [],
@@ -386,13 +386,13 @@
         }
       },
       "tests": [
-        "assert(loginUser().type === 'LOGIN', 'message: Calling the function loginUser should return an object with type property set to the string <code>LOGIN</code>.');",
-        "assert(logoutUser().type === 'LOGOUT', 'message: Calling the function logoutUser should return an object with type property set to the string <code>LOGOUT</code>.');",
-        "assert(store.getState().authenticated === false, 'message: The store should be initialized with an object with property login set to false.');",
-        "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'message: Dispatching loginUser should update the login property in the store state to true.');",
-        "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false })(), 'message: Dispatching logoutUser should update the login property in the store state to false.');",
-        "assert((function() { return typeof authReducer === 'function' && editor.getOriginalCode().toString().includes('switch') && editor.getOriginalCode().toString().includes('case') && editor.getOriginalCode().toString().includes('default') })(), 'message: The authReducer function should handle multiple action types with a switch statement.');",
-        "assert((function() {  const noWhiteSpace = editor.getOriginalCode().toString().replace(/ /g,''); return (noWhiteSpace.includes('constLOGIN=\\'LOGIN\\'') || noWhiteSpace.includes('constLOGIN=\"LOGIN\"')) && (noWhiteSpace.includes('constLOGOUT=\\'LOGOUT\\'') || noWhiteSpace.includes('constLOGOUT=\"LOGOUT\"')) })(), 'message: LOGIN and LOGOUT should be declared as const values and should be assigned strings of <code>LOGIN</code>and <code>LOGOUT\\'.');",
+        "assert(loginUser().type === 'LOGIN', 'message: Calling the function <code>loginUser</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.');",
+        "assert(logoutUser().type === 'LOGOUT', 'message: Calling the function <code>logoutUser</code> should return an object with <code>type</code> property set to the string <code>LOGOUT</code>.');",
+        "assert(store.getState().authenticated === false, 'message: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');",
+        "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'message: Dispatching <code>loginUser</code> should update the <code>login</code> property in the store state to <code>true</code>.');",
+        "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false })(), 'message: Dispatching <code>logoutUser</code> should update the <code>login</code> property in the store state to <code>false</code>.');",
+        "assert((function() { return typeof authReducer === 'function' && editor.getOriginalCode().toString().includes('switch') && editor.getOriginalCode().toString().includes('case') && editor.getOriginalCode().toString().includes('default') })(), 'message: The <code>authReducer</code> function should handle multiple action types with a switch statement.');",
+        "assert((function() {  const noWhiteSpace = editor.getOriginalCode().toString().replace(/ /g,''); return (noWhiteSpace.includes('constLOGIN=\\'LOGIN\\'') || noWhiteSpace.includes('constLOGIN=\"LOGIN\"')) && (noWhiteSpace.includes('constLOGOUT=\\'LOGOUT\\'') || noWhiteSpace.includes('constLOGOUT=\"LOGOUT\"')) })(), 'message: <code>LOGIN</code> and <code>LOGOUT</code> should be declared as <code>const</code> values and should be assigned strings of <code>LOGIN</code>and <code>LOGOUT\\'.');",
         "assert((function() { const noWhiteSpace = editor.getOriginalCode().toString().replace(/ /g,''); return noWhiteSpace.includes('caseLOGIN:') && noWhiteSpace.includes('caseLOGOUT:') && noWhiteSpace.includes('type:LOGIN') && noWhiteSpace.includes('type:LOGOUT') })(), 'message: The action creators and the reducer should reference the <code>LOGIN</code> and <code>LOGOUT</code> constants.');"
       ],
       "head": [],
