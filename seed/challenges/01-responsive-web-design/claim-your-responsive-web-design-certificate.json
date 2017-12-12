@@ -36,11 +36,11 @@
         {
           "properties": [
             "isHonest",
-            "isFrontEndCert"
+            "isRespWebDesignCert"
           ],
           "apis": [
             "/certificate/honest",
-            "/certificate/verify/front-end"
+            "/certificate/verify/responsive-web-design"
           ],
           "stepIndex": [
             1,

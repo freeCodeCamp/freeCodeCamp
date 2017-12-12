@@ -21,6 +21,11 @@ const publicUserProps = [
   'isBackEndCert',
   'isDataVisCert',
   'isFullStackCert',
+  'isRespWebDesignCert',
+  'isFrontEndLibsCert',
+  'isJsAlgoDataStructCert',
+  'isApisMicroservicesCert',
+  'isInfosecQaCert',
 
   'githubURL',
   'sendMonthlyEmail',
