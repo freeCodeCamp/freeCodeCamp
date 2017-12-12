@@ -8,6 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
   var originalCode = document.__originalCode;
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
+
+  // Hardcode Deep Freeze dependency
+  var DeepFreeze = (o) => {
+    Object.freeze(o);
+    Object.getOwnPropertyNames(o).forEach(function(prop) {
+      if (o.hasOwnProperty(prop)
+      && o[prop] !== null
+      && (
+        typeof o[prop] === 'object' ||
+        typeof o[prop] === 'function'
+      )
+      && !Object.isFrozen(o[prop])) {
+        DeepFreeze(o[prop]);
+      }
+    });
+    return o;
+  };
+
   if (document.Enzyme) {
     window.Enzyme = document.Enzyme;
   }

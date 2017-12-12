@@ -134,7 +134,14 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(ADD === 'ADD', 'message: The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>');",
+        "assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })(), 'message: The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.');",
+        "assert(typeof messageReducer === 'function', 'message: <code>messageReducer</code> should be a function.');",
+        "assert((function() { const initialState = store.getState(); return typeof store === 'object' && initialState.length === 0; })(), 'message: The store should exist and have an initial state set to an empty array.');",
+        "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })(), 'message: Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.');",
+        "assert((function() { const addState = store.getState(); store.dispatch({type: 'FAKE_ACTION'}); const testState = store.getState(); return (addState === testState); })(), 'message: The <code>messageReducer</code> should return the current state if called with any other actions.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [

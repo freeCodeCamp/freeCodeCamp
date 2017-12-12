@@ -118,6 +118,23 @@ function createTest({
                   Enzyme,
                   document;
 
+              // Hardcode Deep Freeze dependency
+              const DeepFreeze = (o) => {
+                Object.freeze(o);
+                Object.getOwnPropertyNames(o).forEach(function(prop) {
+                  if (o.hasOwnProperty(prop)
+                  && o[prop] !== null
+                  && (
+                    typeof o[prop] === 'object' ||
+                    typeof o[prop] === 'function'
+                  )
+                  && !Object.isFrozen(o[prop])) {
+                    DeepFreeze(o[prop]);
+                  }
+                });
+                return o;
+              };
+
               if (react || redux || reactRedux) {
                 // Provide dependencies, just provide all of them
                 React = require('react');
