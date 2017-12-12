@@ -42,9 +42,19 @@ export default addNS(
       }
       if (getFileAction(action) === types.createFiles) {
         const files = getFilePayload(action);
+        // @TEMPORARY remove lines 46 - 55
+        if (action.payload) {
+          if (files.indexjsx) {
+            if (action.payload.head && action.payload.tail) {
+              files.indexjsx.head = action.payload.head.join('\n');
+              files.indexjsx.tail = action.payload.tail.join('\n');
+            }
+          }
+        }
+        console.warn(action);
+        console.warn(files);
         return _.reduce(files, (files, file) => {
           files[file.key] = createPoly(file);
-          console.log(files);
           return files;
         }, { ...state });
       }
