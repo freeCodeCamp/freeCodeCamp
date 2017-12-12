@@ -1032,8 +1032,16 @@
           ]
         }
       },
-      "tests": [],
-      "head": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('CampSite').length === 1; })(), 'message: The <code>CampSite</code> component should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('Camper').length === 1; })(), 'message: The <code>Camper</code> component should render.');",
+        "assert((function() { const noWhiteSpace = editor.getOriginalCode().replace(/ /g, '').replace(/\\r?\\n|\\r/g, ''); const verify1 = 'Camper.defaultProps={name:\\'CamperBot\\'}'; const verify2 = 'Camper.defaultProps={name:\"CamperBot\"}'; return (noWhiteSpace.includes(verify1) || noWhiteSpace.includes(verify2)); })(), 'message: The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); const noWhiteSpace = editor.getOriginalCode().replace(/ /g, '').replace(/\\r?\\n|\\r/g, ''); const verifyDefaultProps = 'Camper.propTypes={name:PropTypes.string.isRequired'; return noWhiteSpace.includes(verifyDefaultProps); })(), 'message: The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.contains(<p>{mockedComponent.find('Camper').props().name}</p>); })(), 'message: The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.');"
+      ],
+      "head": [
+        "var PropTypes = { string: { isRequired: true } }"
+      ],
       "tail": [],
       "solutions": [
         "class CampSite extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <Camper/>\n      </div>\n    );\n  }\n};\n// change code below this line\n\nconst Camper = (props) => {\n   return (\n     <div>\n       <p>{props.name}</p>\n     </div>\n   );\n};\n\nCamper.propTypes = {\n  name: PropTypes.string.isRequired\n};\n\nCamper.defaultProps = {\n  name: 'CamperBot'\n};\n"
