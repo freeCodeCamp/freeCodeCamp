@@ -3,8 +3,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { Button, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col, FormControl, ControlLabel, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import FA from 'react-fontawesome';
+import classnames from 'classnames';
 
 import ns from './ns.json';
 import LockedSettings from './Locked-Settings.jsx';
@@ -143,28 +144,245 @@ export class Settings extends React.Component {
     if (!username && showLoading) {
       return <SettingsSkeleton />;
     }
+    if (showUpdateEmailView) {
+      return <UpdateEmail />;
+    }
+    // TEMP PROPS - IMPORT PROPERLY
+    let privateProfile = false;
+    let togglePrivateProfile = () => {};
+    let nightMode = false;
+    // TEMP PROPS - IMPORT PROPERLY
     return (
-      <div className={ `${ns}-container` }>
-        <Row>
-          <Col xs={ 12 }>
-            <Button
-              block={ true }
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-link-social'
-              href={ `/${username}` }
+      <ChildContainer>
+        <div className='container'>
+          { /* BIO ROW */ } { /* PROFILE PICTURE, TITLE, UPDATE FROM GITHUB, BIO TEXTAREA */ }
+          <Row>
+            <Col xs={ 8 }>
+              <ControlLabel htmlFor='name'>
+                Name
+              </ControlLabel>
+            </Col>
+            <Col xs={ 4 }>
+              <FormControl
+                bsSize='sm'
+                value=''
+                placeholder='name'
+                type='input'
+                id='name'
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={ 8 }>
+              <ControlLabel htmlFor='username'>
+                Username
+              </ControlLabel>
+            </Col>
+            <Col xs={ 4 }>
+              <FormControl
+                bsSize='sm'
+                value=''
+                placeholder='username'
+                type='input'
+                id='username'
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={ 8 }>
+              <ControlLabel htmlFor='location'>
+                Location
+              </ControlLabel>
+            </Col>
+            <Col xs={ 4 }>
+              <FormControl
+                bsSize='sm'
+                value=''
+                placeholder='location'
+                type='input'
+                id='location'
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={ 8 }>
+              <p className='large-p'>
+                Make my profile private
+                <br />
+                (this disables your certificates)
+              </p>
+            </Col>
+            <Col sm={ 4 }>
+              <ToggleButtonGroup
+                className='toggle-btn-group'
+                name='profile-private'
+                onChange={ togglePrivateProfile }
+                type='radio'
               >
-              <FA name='user' />
-              Show me my public profile
-            </Button>
-            <Button
-              block={ true }
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-link-social'
-              href={ '/signout' }
+                <ToggleButton
+                  bsSize='lg'
+                  bsStyle='primary'
+                  className={
+                    classnames(
+                      'positive-20',
+                      { active: privateProfile },
+                      'btn-toggle'
+                    )
+                  }
+                  disabled={ privateProfile }
+                  type='radio'
+                  value={ 1 }
+                >
+                  Yes
+                </ToggleButton>
+                <ToggleButton
+                  bsSize='lg'
+                  bsStyle='primary'
+                  className={
+                    classnames(
+                      'positive-20',
+                      { active: !privateProfile },
+                      'btn-toggle'
+                    )
+                  }
+                  disabled={ !privateProfile }
+                  type='radio'
+                  value={ 2 }
+                >
+                  No
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={ 8 }>
+              <p className='large-p'>
+                Night mode
+              </p>
+            </Col>
+            <Col sm={ 4 }>
+              <ToggleButtonGroup
+                className='toggle-btn-group'
+                name='night-mode'
+                onChange={ toggleNightMode }
+                type='radio'
               >
-              Sign me out of freeCodeCamp
+                <ToggleButton
+                  bsSize='lg'
+                  bsStyle='primary'
+                  className={
+                    classnames(
+                      'positive-20',
+                      { active: nightMode },
+                      'btn-toggle'
+                    )
+                  }
+                  disabled={ nightMode }
+                  type='radio'
+                  value={ 1 }
+                >
+                  On
+                </ToggleButton>
+                <ToggleButton
+                  bsSize='lg'
+                  bsStyle='primary'
+                  className={
+                    classnames(
+                      'positive-20',
+                      { active: !nightMode },
+                      'btn-toggle'
+                    )
+                  }
+                  disabled={ !nightMode }
+                  type='radio'
+                  value={ 2 }
+                >
+                  Off
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Col>
+          </Row>
+
+
+
+
+
+
+
+
+
+
+
+
+          <Row>
+            <Col xs={ 12 }>
+              <Button
+                block={ true }
+                bsSize='lg'
+                bsStyle='primary'
+                className='btn-link-social'
+                href={ `/${username}` }
+                >
+                <FA name='user' />
+                Show me my public profile
+              </Button>
+              <Button
+                block={ true }
+                bsSize='lg'
+                bsStyle='primary'
+                className='btn-link-social'
+                href={ '/signout' }
+                >
+                Sign me out of freeCodeCamp
+              </Button>
+              <Button
+                block={ true }
+                bsSize='lg'
+                bsStyle='primary'
+                className='btn-link-social'
+                href={ 'mail:team@freecodecamp.com' }
+                >
+                Email us at team@freecodecamp.com
+              </Button>
+            </Col>
+          </Row>
+          <h1 className='text-center'>Settings for your Account</h1>
+          <h2 className='text-center'>Actions</h2>
+          <Row>
+            <Col xs={ 12 }>
+              <SocialSettings
+                isGithubCool={ isGithubCool }
+                isLinkedIn={ isLinkedIn }
+                isTwitter={ isTwitter }
+              />
+            </Col>
+          </Row>
+          <div className='spacer' />
+          <h2 className='text-center'>Account Settings</h2>
+          <Row>
+            <Col xs={ 12 }>
+              <Button
+                block={ true }
+                bsSize='lg'
+                bsStyle='primary'
+                className='btn-link-social'
+                href='/commit'
+                >
+                Edit my pledge
+              </Button>
+            </Col>
+          </Row>
+          <div className='spacer' />
+          <h2 className='text-center'>Privacy Settings</h2>
+          <Row>
+            <Col
+              md={ 6 }
+              mdOffset={ 3 }
+              sm={ 8 }
+              smOffset={ 2 }
+              xs={ 12 }
+              >
+              Email us at team@freecodecamp.com
             </Button>
           </Col>
         </Row>
