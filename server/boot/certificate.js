@@ -65,8 +65,6 @@ function getIdsForCert$(id, Challenge) {
 //   {
 //     email: String,
 //     username: String,
-//     isFrontEndCert: Boolean,
-//     isBackEndCert: Boolean,
 //     isRespWebDesignCert: Boolean,
 //     isFrontEndLibsCert: Boolean,
 //     isJsAlgoDataStructCert: Boolean,
@@ -81,21 +79,17 @@ function sendCertifiedEmail(
     email,
     name,
     username,
-    isFrontEndCert,
-    isBackEndCert,
     isRespWebDesignCert,
     isFrontEndLibsCert,
     isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
-    isInfosecQaCert,
+    isInfosecQaCert
   },
   send$
 ) {
   if (
     !isEmail(email) ||
-    !isFrontEndCert ||
-    !isBackEndCert ||
     !isRespWebDesignCert ||
     !isFrontEndLibsCert ||
     !isJsAlgoDataStructCert ||
