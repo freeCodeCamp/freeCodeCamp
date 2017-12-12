@@ -802,7 +802,10 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })(), 'message: The <code>ShoppingCart</code> component should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); mockedComponent.setProps({items: undefined}); return mockedComponent.find('ShoppingCart').props().items === 0; })(), 'message: The <code>ShoppingCart</code> component should have a default prop of <code>{ items: 0 }</code>');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
