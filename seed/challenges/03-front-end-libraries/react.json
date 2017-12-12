@@ -853,7 +853,11 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })(), 'message: The component <code>ShoppingCart</code> should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })(), 'message: The component <code>Items</code> should render.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').props().quantity == 10 && editor.getOriginalCode().replace(/ /g,'').includes('<Itemsquantity={10}/>'); })(), 'message: The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
