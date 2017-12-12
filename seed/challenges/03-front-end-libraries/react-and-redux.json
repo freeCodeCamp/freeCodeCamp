@@ -291,7 +291,12 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(Array.isArray(state) && state.length === 0, 'message: The const <code>state</code> should be an empty array.');",
+        "assert(typeof mapStateToProps === 'function', 'message: <code>mapStateToProps</code> should be a function.');",
+        "assert(typeof mapStateToProps() === 'object', 'message: <code>mapStateToProps</code> should return an object.');",
+        "assert(mapStateToProps(['messages']).messages.pop() === 'messages', 'message: Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
