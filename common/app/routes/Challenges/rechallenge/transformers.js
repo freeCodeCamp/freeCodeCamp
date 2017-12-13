@@ -5,11 +5,7 @@ import presetEs2015 from 'babel-preset-es2015';
 import presetReact from 'babel-preset-react';
 import { Observable } from 'rx';
 
-import {
-  transformHeadTailAndContents,
-  setContent,
-  setExt
-} from '../../../../utils/polyvinyl.js';
+import * as vinyl from '../../../../utils/polyvinyl.js';
 import castToObservable from '../../../utils/cast-to-observable.js';
 
 const babelOptions = { presets: [ presetEs2015, presetReact ] };
@@ -35,43 +31,47 @@ const testJS$JSX = _.overSome(isJS, _.matchesProperty('ext', 'jsx'));
 // to `window.__console.log`
 // this let's us tap into logging into the console.
 // currently we only do this to the main window and not the test window
-export function proxyLoggerTransformer(file) {
-  return transformHeadTailAndContents(
-    (source) => (
+export const proxyLoggerTransformer = _.partial(
+  vinyl.transformHeadTailAndContents,
+  source => (
       source.replace(console$logReg, (match, methodCall) => {
       return 'window.__console' + methodCall;
-    })),
-    file
-  );
-}
+  })),
+);
 
-export const addLoopProtect = _.cond([
+const addLoopProtect = _.partial(
+  vinyl.transformContents,
+  contents => {
+    /* eslint-disable import/no-unresolved */
+    const loopProtect = require('loop-protect');
+    /* eslint-enable import/no-unresolved */
+    loopProtect.hit = loopProtectHit;
+    return loopProtect(contents);
+  }
+);
+
+export const addLoopProtectHtmlJsJsx = _.cond([
   [
-    testHTMLJS,
-    function(file) {
-      const _contents = file.contents.toLowerCase();
-      if (file.ext === 'html' && !_contents.indexOf('<script>') !== -1) {
-        // No JavaScript in user code, so no need for loopProtect
-        return file;
-      }
-      /* eslint-disable import/no-unresolved */
-      const loopProtect = require('loop-protect');
-      /* eslint-enable import/no-unresolved */
-      loopProtect.hit = loopProtectHit;
-      return setContent(loopProtect(file.contents), file);
-    }
+    _.overEvery(
+      testHTMLJS,
+      _.partial(
+        vinyl.testContents,
+        contents => contents.toLowerCase().contians('<script>')
+      )
+    ),
+    addLoopProtect
   ],
+  [ testJS$JSX, addLoopProtect ],
   [ _.stubTrue, _.identity ]
 ]);
+
 export const replaceNBSP = _.cond([
   [
     testHTMLJS,
-    function(file) {
-      return setContent(
-        file.contents.replace(NBSPReg, ' '),
-        file
-      );
-    }
+    _.partial(
+      vinyl.transformContents,
+      contents => contents.replace(NBSPReg, ' ')
+    )
   ],
   [ _.stubTrue, _.identity ]
 ]);
@@ -79,19 +79,19 @@ export const replaceNBSP = _.cond([
 export const babelTransformer = _.cond([
   [
     testJS$JSX,
-    function(file) {
-      const result = babel.transform(file.contents, babelOptions);
-      return _.flow(
-        _.partial(setContent, result.code),
-        _.partial(setExt, 'js')
-      )(file);
-    }
+    _.flow(
+      _.partial(
+        vinyl.transformContents,
+        contents => babel.transform(contents, babelOptions).code
+      ),
+      _.partial(vinyl.setExt, 'js')
+    )
   ],
   [ _.stubTrue, _.identity ]
 ]);
 
 export const _transformers = [
-  addLoopProtect,
+  addLoopProtectHtmlJsJsx,
   replaceNBSP,
   babelTransformer
 ];
