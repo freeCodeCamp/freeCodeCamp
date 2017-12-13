@@ -61,7 +61,7 @@
       "description": [
         "The Redux store object provides several methods that allow you to interact with it. For example, you can retrieve the current <code>state</code> held in the Redux store object with the <code>getState()</code> method.",
         "<hr>",
-        "The code from the previous challenge is re-written more concisely in the code editor. Use <code>store.getState()</code> to retrieve the <code>state</code> from the <code>store</code>, and log this value to the console. Try modifying the store's initial <code>state</code> and check the result."
+        "The code from the previous challenge is re-written more concisely in the code editor. Use <code>store.getState()</code> to retrieve the <code>state</code> from the <code>store</code>, and assign this to a new variable <code>currentState</code>."
       ],
       "files": {
         "indexjsx": {
@@ -80,12 +80,12 @@
       },
       "tests": [
         "assert(store.getState()===5, 'message: The redux store should have a value of 5 for the initial state.');",
-        "assert(true, 'message: TODO- ADD TEST VERIFYING THING.....')"
+        "assert(currentState === 5 && editor.getOriginalCode().includes('store.getState()'), 'message: A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.');"
       ],
       "head": [],
       "tail": [],
       "solutions": [
-        "const store = Redux.createStore(\n  (state = 5) => state\n);\n\n// change code below this line\nconsole.log(store.getState());"
+        "const store = Redux.createStore(\n  (state = 5) => state\n);\n\n// change code below this line\nconst currentState = store.getState();"
       ],
       "type": "modern",
       "isRequired": false,
