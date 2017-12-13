@@ -413,6 +413,7 @@
       ],
       "head": [],
       "tail": [
+        "",
         "const store = Redux.createStore(",
         "  (state = '__INITIAL__STATE__', action) => state",
         ");",
@@ -427,7 +428,7 @@
         "};"
       ],
       "solutions": [
-        "const addMessage = (message) => {\n  return {\n    type: 'ADD',\n    message: message\n  }\n};\n\nconst mapStateToProps = (state) => {\n  return {\n    messages: state\n  }\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message));\n    }\n  }\n};\n\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <h3>This is a Presentational Component</h3>\n  }\n};\n\nconst connect = ReactRedux.connect;\n// change code below this line\n\nconst ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational)"
+        "const addMessage = (message) => {\n  return {\n    type: 'ADD',\n    message: message\n  }\n};\n\nconst mapStateToProps = (state) => {\n  return {\n    messages: state\n  }\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message));\n    }\n  }\n};\n\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <h3>This is a Presentational Component</h3>\n  }\n};\n\nconst connect = ReactRedux.connect;\n// change code below this line\n\nconst ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational); \n"
       ],
       "type": "modern",
       "isRequired": false,
