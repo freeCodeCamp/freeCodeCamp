@@ -1573,9 +1573,9 @@
         "Your application may have more complex interactions between <code>state</code> and the rendered UI. For example, form control elements for text input, such as <code>input</code> and <code>textarea</code>, maintain their own state in the DOM as the user types. With React, you can move this mutatable state into a React component's <code>state</code>. The user's input becomes part of the application <code>state</code>, so React controls the value of that input field. Typically, if you have React components with input fields the user can type into, it will be a controlled input form.",
         "<hr>",
         "The code editor has the skeleton of a component called <code>ControlledInput</code> to create a controlled <code>input</code> element. The component's <code>state</code> is already initialized with an <code>input</code> property that holds an empty string. This value represents the text a user types into the <code>input</code> field.",
-        "First, create a method called <code>handleInput()</code> that has a parameter called <code>event</code>. When the method is called, it receives an <code>event</code> object that contains a string of text from the <code>input</code> element. You can access this string with <code>event.target.value</code> inside the method. Update the <code>input</code> property of the component's <code>state</code> with this new string.",
-        "In the render method, create the <code>input</code> element above the <code>p</code> tag. Add a <code>value</code> attribute which is equal to the <code>input</code> property of the component's <code>state</code>. Then add an <code>onChange()</code> event handler set to the <code>handleInput()</code> method.",
-        "When you type in the input box, that text is processed by the <code>handleInput()</code> method, set as the <code>input</code> property in the local <code>state</code>, and rendered as the value in the <code>input</code> box on the page. The component <code>state</code> is the single source of truth regarding the input data."
+        "First, create a method called <code>handleChange()</code> that has a parameter called <code>event</code>. When the method is called, it receives an <code>event</code> object that contains a string of text from the <code>input</code> element. You can access this string with <code>event.target.value</code> inside the method. Update the <code>input</code> property of the component's <code>state</code> with this new string.",
+        "In the render method, create the <code>input</code> element above the <code>h4</code> tag. Add a <code>value</code> attribute which is equal to the <code>input</code> property of the component's <code>state</code>. Then add an <code>onChange()</code> event handler set to the <code>handleChange()</code> method.",
+        "When you type in the input box, that text is processed by the <code>handleChange()</code> method, set as the <code>input</code> property in the local <code>state</code>, and rendered as the value in the <code>input</code> box on the page. The component <code>state</code> is the single source of truth regarding the input data."
       ],
       "files": {
         "indexjsx": {
@@ -1599,7 +1599,8 @@
             "        { /* change code below this line */}",
             "",
             "        { /* change code above this line */}",
-            "        <p>Input: {this.state.input}</p>",
+            "        <h4>Controlled Input:</h4>",
+            "        <p>{this.state.input}</p>",
             "      </div>",
             "    );",
             "  }",
@@ -1607,11 +1608,15 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('input').length === 1 && Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('p').length === 1, 'message: <code>ControlledInput</code> should return a <code>div</code> element which contains an <code>input</code> and a <code>p</code> tag.');",
+        "assert.strictEqual(Enzyme.mount(React.createElement(ControlledInput)).state('input'), '', 'message: The state of <code>ControlledInput</code> should initialize with an <code>input</code> property set to an empty string.');",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(ControlledInput)); const _1 = () => { mockedComponent.setState({ input: '' }); return waitForIt(() => mockedComponent.state('input'))}; const _2 = () => { mockedComponent.find('input').simulate('change', { target: { value: 'TestInput' }}); return waitForIt(() => ({ state: mockedComponent.state('input'), text: mockedComponent.find('p').text(), inputVal: mockedComponent.find('input').props().value }))}; const before = await _1(); const after = await _2(); return before === '' && after.state === 'TestInput' && after.text === 'TestInput' && after.inputVal === 'TestInput'; })(); // message: Typing in the input element should update the state and the value of the input, and the <code>p</code> element should render this state as you type."
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class ControlledInput extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n  }\n  handleInput = (event) => {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  render() {\n    return (\n      <div>\n        <input\n          value={this.state.input}\n          onChange={this.handleInput} />\n        <p>Input: {this.state.input}</p>\n      </div>\n    );\n  }\n};"
+        "class ControlledInput extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  render() {\n    return (\n      <div>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange} />\n        <h4>Controlled Input:</h4>\n\n        <p>{this.state.input}</p>\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
