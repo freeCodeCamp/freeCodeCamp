@@ -168,8 +168,8 @@ export function clearHeadTail(poly) {
 
 // compileHeadTail(contents: String, poly: PolyVinyl) => PolyVinyl
 export function compileHeadTail(padding = '', poly) {
-  return clearHeadTail(setContent(
-    [ poly.head, poly.contents, poly.tail ].join(padding),
+  return clearHeadTail(transformContents(
+    () => [ poly.head, poly.contents, poly.tail ].join(padding),
     poly
   ));
 }
@@ -188,7 +188,7 @@ export function transformContents(wrap, poly) {
     poly
   );
   // if no source exist, set the original contents as source
-  newPoly.source = poly.contents || poly.contents;
+  newPoly.source = poly.source || poly.contents;
   return newPoly;
 }
 
@@ -205,4 +205,8 @@ export function transformHeadTailAndContents(wrap, poly) {
     head: wrap(poly.head),
     tail: wrap(poly.tail)
   };
+}
+
+export function testContents(predicate, poly) {
+  return !!predicate(poly.contents);
 }

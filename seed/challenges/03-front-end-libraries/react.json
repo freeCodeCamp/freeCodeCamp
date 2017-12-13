@@ -27,7 +27,7 @@
           "name": "index",
           "contents": [
             "",
-            "var jsx = <div></div>;",
+            "const jsx = <div></div>;",
             ""
           ]
         }
@@ -39,6 +39,40 @@
       "type": "modern",
       "isRequired": false,
       "translations": {}
+    },
+    {
+      "id": "5a24c314108439a4d4036168",
+      "title": "Write a React Component from Scratch",
+      "releasedOn": "December 25, 2017",
+      "description": [
+        "Now that you've learned the basics of JSX and React components, it's time to write a component on your own. React components are the core building blocks of React applications so it's important to become very familiar with writing them. Remember, a typical React component is an ES6 <code>class</code> which extends <code>React.Component</code>. It has a render method that returns HTML (from JSX) or <code>null</code>. This is the basic form of a React component. Once you understand this well, you will be prepared to start building more complex React projects.",
+        "<hr>",
+        "Define a class <code>MyComponent</code> that extends <code>React.Component</code>. Its render method should return a <code>div</code> that contains an <code>h1</code> tag with the text: <code>My First React Component!</code> in it. Use this text exactly, the case and punctuation matter. Make sure to call the constructor for your component, too.",
+        "Render this component to the DOM using <code>ReactDOM.render()</code>. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use."
+      ],
+      "files": {
+        "indexjsx": {
+          "key": "indexjsx",
+          "ext": "jsx",
+          "name": "index",
+          "contents": [
+            "// change code below this line",
+            ""
+          ]
+        }
+      },
+      "backup-tests": [
+        "(getUserInput) => assert(getUserInput('index').replace(/\\s/g, '').includes('classMyComponentextendsReact.Component{'), 'message: There should be a React component called MyComponent')"
+      ],
+      "head": [],
+      "tail": [],
+      "solutions": [
+        "// change code below this line\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>My First React Component!</h1>\n      </div>\n    );\n  }\n};\n\nReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));"
+      ],
+      "type": "modern",
+      "isRequired": false,
+      "translations": {},
+      "react": true
     }
   ]
 }
