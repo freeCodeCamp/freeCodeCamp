@@ -1445,55 +1445,6 @@
       "react": true
     },
     {
-      "id": "5a24c314108439a4d4036175",
-      "title": "Bind 'this' with an ES6 Arrow Function",
-      "releasedOn": "December 25, 2017",
-      "description": [
-        "There is another way to bind <code>this</code> when writing methods in React component classes. A useful, concise way is to use an ES6 arrow function. It does not assign its own value for <code>this</code>, but instead adopts the value of <code>this</code> from the context surrounding the function when it is written. In other words, an arrow function binds <code>this</code> automatically from its surrounding context.",
-        "The use of an arrow function as a class property like this is technically still an experimental feature of JavaScript (ES7 property initializers) but can be enabled through pre-processing. It's very useful because of its conciseness, but keep in mind that it is not part of the official language yet. Using this syntax means you can define a class method as an arrow function and not have to explicitly bind <code>this</code> in the constructor.",
-        "<hr>",
-        "Initialize the <code>state</code> of <code>MyComponent</code> so there is a <code>message</code> key with a value of <code>Hello!</code>. The component renders a <code>button</code> that, when clicked, triggers a <code>setMessage()</code> method. Define this method with an ES6 arrow function. It should change the <code>state</code> of <code>message</code> to <code>Goodbye!</code>. Note that to pass the tests the arrow function must be written without any arguments."
-      ],
-      "files": {
-        "indexjsx": {
-          "key": "indexjsx",
-          "ext": "jsx",
-          "name": "index",
-          "contents": [
-            "class MyComponent extends React.Component {",
-            "  constructor(props) {",
-            "    super(props);",
-            "    // change code below this line",
-            "",
-            "    // change code above this line",
-            "  }",
-            "  // change code below this line",
-            "",
-            "  // change code above this line",
-            "  render() {",
-            "    return (",
-            "      <div>",
-            "        <button onClick = {this.setMessage}>Click Me</button>",
-            "        <h1>{this.state.message}</h1>",
-            "      </div>",
-            "    );",
-            "  }",
-            "};"
-          ]
-        }
-      },
-      "tests": [],
-      "head": [],
-      "tail": [],
-      "solutions": [
-        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: 'Hello!'\n    };\n  }\n  setMessage = () => {\n    this.setState({\n      message: 'Goodbye!'\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick = {this.setMessage}>Click Me</button>\n        <h1>{this.state.message}</h1>\n      </div>\n    );\n  }\n};"
-      ],
-      "type": "modern",
-      "isRequired": false,
-      "translations": {},
-      "react": true
-    },
-    {
       "id": "5a24c314108439a4d4036176",
       "title": "Use State to Toggle an Element",
       "releasedOn": "December 25, 2017",
@@ -2509,74 +2460,6 @@
       "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n this.toggleDisplay = this.toggleDisplay.bind(this); \n  }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    return (\n       <div>\n         <button onClick={this.toggleDisplay}>Toggle Display</button>\n         {this.state.display && <h1>Displayed!</h1>}\n       </div>\n    );\n  }\n};"
-      ],
-      "type": "modern",
-      "isRequired": false,
-      "translations": {},
-      "react": true
-    },
-    {
-      "id": "5a24c314108439a4d4036186",
-      "title": "Return null to Prevent Rendering",
-      "releasedOn": "December 25, 2017",
-      "description": [
-        "There are situations when you may not want to render a child element. React won't render a component if that component's <code>render()</code> method returns <code>null</code>. This is useful when you don't want to render components based on conditional logic.",
-        "<hr>",
-        "The code editor has an example similar to the last two challenges. However, the <code>h1</code> element renders in the <code>Child</code> component instead of the top-level <code>Parent</code> component. The <code>display</code> condition is passed as <code>props</code> to the <code>Child</code> component. In the <code>Child</code> component's <code>render()</code> method, check the value of <code>display</code>. If it is <code>true</code>, render an <code>h1</code> element with any text in it, and if it is <code>false</code>, return <code>null</code>.",
-        "You have now accomplished the same behavior in three different ways. This should begin to show you the versatility of using JavaScript to write your UIs. React gives you a lot of control over what and how you render your views."
-      ],
-      "files": {
-        "indexjsx": {
-          "key": "indexjsx",
-          "ext": "jsx",
-          "name": "index",
-          "contents": [
-            "class Parent extends React.Component {",
-            "  constructor(props) {",
-            "    super(props);",
-            "    this.state = {",
-            "      display: true",
-            "    }",
-            "    this.toggleDisplay = this.toggleDisplay.bind(this);",
-            "  }",
-            "  toggleDisplay() {",
-            "    this.setState({",
-            "      display: !this.state.display",
-            "    });",
-            "  }",
-            "  render() {",
-            "    return (",
-            "       <div>",
-            "         <button onClick={this.toggleDisplay}>Toggle Display</button>",
-            "         <Child display={this.state.display}/>",
-            "       </div>",
-            "    );",
-            "  }",
-            "};",
-            "",
-            "class Child extends React.Component {",
-            "  constructor(props) {",
-            "    super(props);",
-            "  }",
-            "  render() {",
-            "    // change code below this line",
-            "",
-            "  }",
-            "}"
-          ]
-        }
-      },
-      "tests": [
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Parent)); return mockedComponent.find('Parent').length === 1; })(), 'message: The <code>Parent</code> component should exist and render.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Parent)); return mockedComponent.find('Child').length === 1; })(), 'message: The <code>Child</code> component should exist and render.');",
-        "(async () => { const mockedComponent = Enzyme.mount(React.createElement(Parent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( updated.find('div').length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 1 ); })(), // message: When display is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.",
-        "assert(true, 'message: TO-DO');",
-        "assert(true, 'message: TO-DO');"
-      ],
-      "head": [],
-      "tail": [],
-      "solutions": [
-        "class Parent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n  this.toggleDisplay = this.toggleDisplay.bind(this); \n  }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    return (\n       <div>\n         <button onClick={this.toggleDisplay}>Toggle Display</button>\n         <Child display={this.state.display}/>\n       </div>\n    );\n  }\n};\n\nclass Child extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    if (this.props.display) {\n      return <h1>Display!</h1>\n    } else {\n      return null;\n    }\n  }\n}"
       ],
       "type": "modern",
       "isRequired": false,
