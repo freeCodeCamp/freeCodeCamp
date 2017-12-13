@@ -30,124 +30,124 @@ export default function AccountSettings({
   return (
     <div className='account-settings'>
       <Row>
-            <Col xs={ 8 }>
-                <ControlLabel htmlFor='name'>
-                    Name
-                </ControlLabel>
-            </Col>
-            <Col xs={ 4 }>
-                <FormControl
-                    bsSize='sm'
-                    value=''
-                    placeholder='name'
-                    type='input'
-                    id='name'
-                />
-            </Col>
-        </Row>
-        <Row>
-            <Col xs={ 8 }>
-                <ControlLabel htmlFor='username'>
-                Username
-                </ControlLabel>
-            </Col>
-            <Col xs={ 4 }>
-                <FormControl
-                    bsSize='sm'
-                    value=''
-                    placeholder='username'
-                    type='input'
-                    id='username'
-                />
-            </Col>
-        </Row>
-        <Row>
         <Col xs={ 8 }>
-            <ControlLabel htmlFor='location'>
-            Location
-            </ControlLabel>
+          <ControlLabel htmlFor='name'>
+            Name
+          </ControlLabel>
         </Col>
         <Col xs={ 4 }>
-            <FormControl
+          <FormControl
             bsSize='sm'
             value=''
-            placeholder='location'
+            placeholder='name'
             type='input'
-            id='location'
-            />
+            id='name'
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={ 8 }>
+          <ControlLabel htmlFor='username'>
+          Username
+          </ControlLabel>
+        </Col>
+        <Col xs={ 4 }>
+          <FormControl
+              bsSize='sm'
+              value=''
+              placeholder='username'
+              type='input'
+              id='username'
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={ 8 }>
+          <ControlLabel htmlFor='location'>
+          Location
+          </ControlLabel>
+        </Col>
+        <Col xs={ 4 }>
+          <FormControl
+          bsSize='sm'
+          value=''
+          placeholder='location'
+          type='input'
+          id='location'
+          />
         </Col>
         </Row>
-        {/* <Row>  
-            <Col sm={ 8 }>
-                <p className='large-p'>
-                Make my profile private
-                <br />
-                (this disables your certificates)
-                </p>
-            </Col>
-            <Col sm={ 4 }>
-                <ToggleButtonGroup
-                className='toggle-btn-group'
-                name='profile-private'
-                onChange={ togglePrivateProfile }
-                type='radio'
-                >
-                <ToggleButton
-                    bsSize='lg'
-                    bsStyle='primary'
-                    className={
-                    classnames(
-                        'positive-20',
-                        { active: privateProfile },
-                        'btn-toggle'
-                    )
-                    }
-                    disabled={ privateProfile }
-                    type='radio'
-                    value={ 1 }
-                >
-                    Yes
-                </ToggleButton>
-                <ToggleButton
-                    bsSize='lg'
-                    bsStyle='primary'
-                    className={
-                    classnames(
-                        'positive-20',
-                        { active: !privateProfile },
-                        'btn-toggle'
-                    )
-                    }
-                    disabled={ !privateProfile }
-                    type='radio'
-                    value={ 2 }
-                >
-                    No
-                </ToggleButton>
-                </ToggleButtonGroup>
-            </Col>
+        {/* <Row>
+          <Col sm={ 8 }>
+            <p className='large-p'>
+            Make my profile private
+            <br />
+            (this disables your certificates)
+            </p>
+          </Col>
+          <Col sm={ 4 }>
+            <ToggleButtonGroup
+            className='toggle-btn-group'
+            name='profile-private'
+            onChange={ togglePrivateProfile }
+            type='radio'
+            >
+            <ToggleButton
+              bsSize='lg'
+              bsStyle='primary'
+              className={
+              classnames(
+                  'positive-20',
+                  { active: privateProfile },
+                  'btn-toggle'
+              )
+              }
+              disabled={ privateProfile }
+              type='radio'
+              value={ 1 }
+            >
+              Yes
+            </ToggleButton>
+            <ToggleButton
+              bsSize='lg'
+              bsStyle='primary'
+              className={
+              classnames(
+                  'positive-20',
+                  { active: !privateProfile },
+                  'btn-toggle'
+              )
+              }
+              disabled={ !privateProfile }
+              type='radio'
+              value={ 2 }
+            >
+              No
+            </ToggleButton>
+            </ToggleButtonGroup>
+          </Col>
         </Row> */}
         <LockedSettings
-            isLocked={ isLocked }
-            toggle={ toggleIsLocked }
+          isLocked={ isLocked }
+          toggle={ toggleIsLocked }
         />
         <Row>
-            <Col sm={ 8 }>
-                <ControlLabel>
-                    Night mode
-                </ControlLabel>
-            </Col>
-            <Col sm={ 4 }>
-                <Button
-                    block={ true }
-                    bsSize='lg'
-                    bsStyle='primary'
-                    className='btn-link-social'
-                    onClick={ toggleNightMode }
-                    >
-                    Toggle
-                </Button>
-            </Col>
+          <Col sm={ 8 }>
+            <ControlLabel>
+              Night mode
+            </ControlLabel>
+          </Col>
+          <Col sm={ 4 }>
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-link-social'
+              onClick={ toggleNightMode }
+              >
+              Toggle
+            </Button>
+          </Col>
         </Row>
     </div>
   );
