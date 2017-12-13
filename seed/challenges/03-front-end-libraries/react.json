@@ -1936,7 +1936,10 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').length === 1; })(), 'message: <code>MyComponent</code> should render a <code>div</code> element.');",
+        "assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''); return lifecycle.includes('console.log('); })(), 'message: <code>console.log</code> should be called in <code>componentWillMount</code>.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
