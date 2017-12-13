@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import PureComponent from 'react-pure-render/component';
 import { Col, Image } from 'react-bootstrap';
 
 import SidePanel from './Side-Panel.jsx';

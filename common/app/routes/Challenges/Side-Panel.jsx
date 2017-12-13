@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ReactDom from 'react-dom';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import PureComponent from 'react-pure-render/component';
 
 import ns from './ns.json';
 
