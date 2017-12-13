@@ -61,7 +61,7 @@
           ]
         }
       },
-      "tests": [
+      "backup-tests": [
         "(getUserInput) => assert(getUserInput('index').replace(/\\s/g, '').includes('classMyComponentextendsReact.Component{'), 'message: There should be a React component called MyComponent')"
       ],
       "head": [],
