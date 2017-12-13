@@ -1,10 +1,11 @@
+import _ from 'lodash';
 import { Observable, Scheduler } from 'rx';
 import { ObjectID } from 'mongodb';
 import debug from 'debug';
 
 import idMap from '../utils/bad-id-map';
 
-const log = debug('freecc:migrate');
+const log = debug('fcc:migrate');
 const challengeTypes = {
   html: 0,
   js: 1,
@@ -62,7 +63,10 @@ function updateId(challenge) {
 //  completedChallenges: Object[],
 //  User: User
 // ) => Observable
-function buildChallengeMap(userId, completedChallenges = [], User) {
+function buildChallengeMap(user, completedChallenges = []) {
+  completedChallenges = typeof completedChallenges.toJSON === 'function' ?
+    completedChallenges.toJSON() :
+    completedChallenges;
   return Observable.from(
     completedChallenges,
     null,
@@ -83,19 +87,10 @@ function buildChallengeMap(userId, completedChallenges = [], User) {
       challengeMap[id] = challenge;
       return challengeMap;
     }, {})
-    .flatMap(challengeMap => {
-      const updateData = {
-        $set: {
-          challengeMap,
-          isChallengeMapMigrated: true
-        }
-      };
-      return Observable.fromNodeCallback(User.updateAll, User)(
-        { id: userId },
-        updateData,
-        { allowExtendedOperators: true }
-      );
-    });
+    .flatMap(challengeMap => user.update$({
+      challengeMap,
+      isChallengeMapMigrated: true
+    }));
 }
 
 export default function migrateCompletedChallenges() {
@@ -107,14 +102,19 @@ export default function migrateCompletedChallenges() {
     const id = user.id.toString();
     return User.findOne$({
       where: { id },
-      fields: { completedChallenges: true }
+      fields: {
+        challengeMap: true,
+        completedChallenges: true
+      }
     })
-      .map(({ completedChallenges = [] } = {}) => completedChallenges)
-      .flatMap(completedChallenges => {
-        return buildChallengeMap(
-          id,
-          completedChallenges,
-          User
+      .flatMap(({ challengeMap = {}, completedChallenges = [] } = {}) => {
+        return Observable.if(
+          () => !_.isEmpty(challengeMap) || _.isEmpty(completedChallenges),
+          user.update$({ isChallengeMapMigrated: true }),
+          buildChallengeMap(
+            user,
+            completedChallenges
+          )
         );
       })
       .subscribe(

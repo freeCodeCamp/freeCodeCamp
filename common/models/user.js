@@ -9,6 +9,7 @@ import path from 'path';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
+import { defaultProfileImage } from '../../common/utils/constantStrings.json';
 
 const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
@@ -169,6 +170,7 @@ module.exports = function(User) {
       if (user.email && !isEmail(user.email)) {
         return next(createEmailError());
       }
+      user.picture = user.picture || defaultProfileImage;
       user.username = user.username.trim().toLowerCase();
       user.email = typeof user.email === 'string' ?
         user.email.trim().toLowerCase() :
@@ -768,22 +770,25 @@ module.exports = function(User) {
   );
 
   // user.updateTo$(updateData: Object) => Observable[Number]
+  // the default for loopback is to use a $set operator
   User.prototype.update$ = function update$(updateData) {
-    const id = this.getId();
-    const updateOptions = { allowExtendedOperators: true };
-    if (
+    return Observable.defer(() => {
+      const id = this.getId();
+      const updateOptions = { allowExtendedOperators: true };
+      if (
         !updateData ||
         typeof updateData !== 'object' ||
         !Object.keys(updateData).length
-    ) {
-      return Observable.throw(new TypeError(
-        dedent`
-          updateData must be an object with at least one key,
-          but got ${updateData} with ${Object.keys(updateData).length}
-        `.split('\n').join(' ')
-      ));
-    }
-    return this.constructor.update$({ id }, updateData, updateOptions);
+      ) {
+        return Observable.throw(new TypeError(
+          dedent`
+            updateData must be an object with at least one key,
+            but got ${updateData} with ${Object.keys(updateData).length}
+          `.split('\n').join(' ')
+        ));
+      }
+      return this.constructor.update$({ id }, updateData, updateOptions);
+    });
   };
   User.prototype.getPoints$ = function getPoints$() {
     const id = this.getId();
