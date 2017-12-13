@@ -113,7 +113,7 @@ export const classicEditorUpdated = createAction(
 export const modernEditorUpdated = createAction(
   types.modernEditorUpdated,
   null,
-  createFilesMetaCreator
+  updateFileMetaCreator
 );
 // challenges
 export const closeChallengeModal = createAction(types.closeChallengeModal);
