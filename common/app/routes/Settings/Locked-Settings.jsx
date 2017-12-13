@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col, ControlLabel } from 'react-bootstrap';
 import classnames from 'classnames';
 
 const propTypes = {
@@ -16,14 +16,14 @@ export default function LockSettings({ isLocked, toggle }) {
   });
   return (
     <Row>
-      <Col xs={ 9 }>
-        <p className='large-p'>
+      <Col xs={ 8 }>
+        <ControlLabel>
           Make all of my solutions private
           <br />
-          (this disables your certificates)
-        </p>
+          <em>(this disables your certificates)</em>
+        </ControlLabel>
       </Col>
-      <Col xs={ 3 }>
+      <Col xs={ 4 }>
         <Button
           block={ true }
           bsSize='lg'
