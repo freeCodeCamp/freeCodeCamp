@@ -1942,7 +1942,11 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return (mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1); })(), 'message: MyComponent should render a div element which wraps an h1 tag.');",
+        "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return new RegExp('setTimeout(.|\\n)+setState(.|\\n)+activeUsers').test(String(mockedComponent.instance().componentDidMount)); })(), 'message: Component state should be updated with a timeout function in componentDidMount.');",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ activeUsers: 1237 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const second = () => { mockedComponent.setState({ activeUsers: 1000 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const firstValue = await first(); const secondValue = await second(); return new RegExp('1237').test(firstValue) && new RegExp('1000').test(secondValue); })(); // message: The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>'s state."
+      ],
       "head": [],
       "tail": [],
       "solutions": [
