@@ -76,6 +76,8 @@ export function concactHtml(required) {
     .map(source => `
       <body style='margin:8px;'>
         <!-- fcc-start-source -->
+        <!-- DOM node for React challenges: -->
+        <div id='challenge-node'></div>
           ${source}
         <!-- fcc-end-source -->
       </body>
