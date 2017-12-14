@@ -223,7 +223,7 @@ module.exports = function(app) {
     (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
   );
 
-  router.get('/:username', showUserProfile);
+  // router.get('/:username', showUserProfile);
   router.get(
     '/:username/report-user/',
     sendNonUserToMap,

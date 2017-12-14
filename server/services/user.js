@@ -6,10 +6,12 @@ const publicUserProps = [
   'name',
   'username',
   'bio',
+  'location',
   'theme',
   'picture',
   'points',
   'email',
+  'website',
   'languageTag',
 
   'isCheater',
