@@ -4,7 +4,6 @@ import { Observable } from 'rx';
 import tape from 'tape';
 import getChallenges from './getChallenges';
 
-
 function createIsAssert(t, isThing) {
   const { assert } = t;
   return function() {
@@ -56,10 +55,20 @@ function createTest({
   tests = [],
   solutions = [],
   head = [],
-  tail = []
+  tail = [],
+  react = false,
+  redux = false,
+  reactRedux = false
 }) {
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
+
+  const isAsync = s => s.includes('(async () => ');
+  if (isAsync(tests.join(''))) {
+    console.log(`Replacing Async Tests for Challenge ${title}`);
+    tests = tests.map(t => isAsync(t) ? "assert(true, 'message: great');" : t);
+  }
+
   head = head.join('\n');
   tail = tail.join('\n');
   const plan = tests.length;
@@ -81,16 +90,94 @@ function createTest({
         });
       }
 
-
       return Observable.just(t)
         .map(fillAssert)
         /* eslint-disable no-unused-vars */
         // assert and code used within the eval
         .doOnNext(assert => {
           solutions.forEach(solution => {
+            // Original code string
+            const originalCode = solution;
             tests.forEach(test => {
-              const code = solution;
-              const editor = { getValue() { return code; } };
+              let code = solution;
+
+              /* NOTE: UGLY code to provide dependencies for running tests
+               * against solutions of React challenges. Relying on new key-value
+               * pair { react: true } on challenge JSON body. Dependencies
+               * are provided here and solution code is transpiled by Babel.
+               *
+               * Berkeley feel free to refactor this.
+               *
+               * */
+
+              let React,
+                  ReactDOM,
+                  Redux,
+                  ReduxThunk,
+                  ReactRedux,
+                  Enzyme,
+                  document;
+
+              // Hardcode Deep Freeze dependency
+              const DeepFreeze = (o) => {
+                Object.freeze(o);
+                Object.getOwnPropertyNames(o).forEach(function(prop) {
+                  if (o.hasOwnProperty(prop)
+                  && o[prop] !== null
+                  && (
+                    typeof o[prop] === 'object' ||
+                    typeof o[prop] === 'function'
+                  )
+                  && !Object.isFrozen(o[prop])) {
+                    DeepFreeze(o[prop]);
+                  }
+                });
+                return o;
+              };
+
+              if (react || redux || reactRedux) {
+                // Provide dependencies, just provide all of them
+                React = require('react');
+                ReactDOM = require('react-dom');
+                Redux = require('redux');
+                ReduxThunk = require('redux-thunk');
+                ReactRedux = require('react-redux');
+                Enzyme = require('enzyme');
+                const Adapter15 = require('enzyme-adapter-react-15');
+                Enzyme.configure({ adapter: new Adapter15() });
+
+                /* Transpile ALL the code
+                 * (we may use JSX in head or tail or tests, too): */
+                const transform = require('babel-standalone').transform;
+                const options = { presets: [ 'es2015', 'react' ] };
+
+                head = transform(head, options).code;
+                solution = transform(solution, options).code;
+                tail = transform(tail, options).code;
+                test = transform(test, options).code;
+
+                const { JSDOM } = require('jsdom');
+                // Mock DOM document for ReactDOM.render method
+                const jsdom = new JSDOM(`<!doctype html>
+                  <html>
+                    <body>
+                      <div id="challenge-node"></div>
+                    </body>
+                  </html>
+                `);
+                const { window } = jsdom;
+
+                // Mock DOM for ReactDOM tests
+                document = window.document;
+                global.window = window;
+                global.document = window.document;
+
+              }
+
+              const editor = {
+                getValue() { return code; },
+                getOriginalCode() { return originalCode; }
+              };
               /* eslint-enable no-unused-vars */
               try {
                 (() => {
@@ -98,7 +185,8 @@ function createTest({
                     head + '\n;;' +
                     solution + '\n;;' +
                     tail + '\n;;' +
-                    test);
+                    test
+                  );
                 })();
               } catch (e) {
                 t.fail(e);
@@ -135,4 +223,3 @@ Observable.from(getChallenges())
     err => { throw err; },
     () => process.exit(0)
   );
-

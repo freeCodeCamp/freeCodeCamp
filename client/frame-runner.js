@@ -5,8 +5,27 @@ document.addEventListener('DOMContentLoaded', function() {
   var helpers = Rx.helpers;
   var chai = parent.chai;
   var source = document.__source;
+  var originalCode = document.__originalCode;
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
+
+  // Hardcode Deep Freeze dependency
+  var DeepFreeze = (o) => {
+    Object.freeze(o);
+    Object.getOwnPropertyNames(o).forEach(function(prop) {
+      if (o.hasOwnProperty(prop)
+      && o[prop] !== null
+      && (
+        typeof o[prop] === 'object' ||
+        typeof o[prop] === 'function'
+      )
+      && !Object.isFrozen(o[prop])) {
+        DeepFreeze(o[prop]);
+      }
+    });
+    return o;
+  };
+
   if (document.Enzyme) {
     window.Enzyme = document.Enzyme;
   }
@@ -29,7 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.__runTests = function runTests(tests = []) {
     /* eslint-disable no-unused-vars */
-    const editor = { getValue() { return source; } };
+    const editor = {
+      getValue() { return source; },
+      getOriginalCode() { return originalCode; }
+    };
     const code = source;
     /* eslint-enable no-unused-vars */
     if (window.__err) {
@@ -70,8 +92,17 @@ document.addEventListener('DOMContentLoaded', function() {
           // This return can be a function
           // i.e. function() { assert(true, 'happy coding'); }
           test = eval(testString);
-          /* eslint-enable no-eval */
-          if (typeof test === 'function') {
+
+          if (helpers.isPromise(test)) {
+            // Test is async and needs some time to execute correctly.
+            __result = Rx.Observable.fromPromise(test).map(asyncResult => {
+              if (!asyncResult) {
+                throw Rx.Observable.throw('Async test failed!');
+              } else {
+                return Rx.Observable.of(null);
+              }
+            });
+          } else {
 
             // all async tests must return a promise or observable
             // sync tests can return Any type
@@ -81,11 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
               // turn promise into an observable
               __result = Rx.Observable.fromPromise(__result);
             }
-          }
 
-          if (!__result || typeof __result.subscribe !== 'function') {
-            // make sure result is an observable
-            __result = Rx.Observable.of(null);
+            if (!__result || typeof __result.subscribe !== 'function') {
+              // make sure result is an observable
+              __result = Rx.Observable.of(null);
+            }
           }
         } catch (e) {
           // something threw an uncaught error

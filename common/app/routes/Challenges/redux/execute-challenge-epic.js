@@ -66,7 +66,6 @@ export function updateMainEpic(actions, { getState }, { document }) {
     });
 }
 
-
 export function executeChallengeEpic(actions, { getState }, { document }) {
   return Observable.of(document)
     // if document is not defined then none of this epic will run
@@ -117,7 +116,15 @@ export function executeChallengeEpic(actions, { getState }, { document }) {
               .catch(createErrorObservable);
           }
           return buildFromFiles(files, required, false)
-            .do(frameTests)
+            .do(build => {
+              // Hack in original code for tests:
+              let originalCode;
+              if (files && files.indexjsx && files.indexjsx.contents) {
+                originalCode = files.indexjsx.contents;
+                build.sources.originalCode = originalCode;
+              }
+              return frameTests(build);
+            })
             .ignoreElements()
             .startWith(initOutput('// running test'))
             .catch(createErrorObservable);
