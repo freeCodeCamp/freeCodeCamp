@@ -135,6 +135,8 @@ function createTest({
                 return o;
               };
 
+              const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
               if (react || redux || reactRedux) {
                 // Provide dependencies, just provide all of them
                 React = require('react');
