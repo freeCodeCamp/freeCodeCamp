@@ -8,11 +8,17 @@ import {
 } from 'react-bootstrap';
 
 const propTypes = {
-  githubURL: PropTypes.string
+  githubURL: PropTypes.string,
+  linkedin: PropTypes.string,
+  twitter: PropTypes.string,
+  website: PropTypes.string
 };
 
 export default function InternetSettings({
-  githubURL
+  githubURL,
+  linkedin,
+  twitter,
+  website
 }) {
   return (
     <div className='internet-settings'>
@@ -28,14 +34,14 @@ export default function InternetSettings({
             id='twitter'
             placeholder='username'
             type='input'
-            value=''
+            value={ twitter }
           />
         </Col>
       </Row>
       <Row>
         <Col sm={ 8 } xs={ 12 }>
           <ControlLabel htmlFor='github'>
-            GitHub
+            Github
           </ControlLabel>
         </Col>
         <Col sm={ 4 } xs={ 12 }>
@@ -43,7 +49,7 @@ export default function InternetSettings({
             bsSize='sm'
             disabled = { true }
             id='github'
-            placeholder='GitHub URL'
+            placeholder='Github URL'
             type='input'
             value={ githubURL }
           />
@@ -61,7 +67,7 @@ export default function InternetSettings({
             id='linkedin'
             placeholder='full profile URL'
             type='input'
-            value=''
+            value={ linkedin }
           />
         </Col>
       </Row>
@@ -77,7 +83,7 @@ export default function InternetSettings({
             id='personalWebsite'
             placeholder='URL'
             type='input'
-            value=''
+            value={ website }
           />
         </Col>
       </Row>
