@@ -28,6 +28,16 @@ import {
   hardGoTo
 } from '../../redux';
 
+const mapDispatchToProps = {
+  updateTitle,
+  toggleNightMode,
+  toggleIsAvailableForHire: () => toggleUserFlag('isAvailableForHire'),
+  toggleIsLocked: () => toggleUserFlag('isLocked'),
+  toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
+  toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
+  toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail')
+};
+
 const mapStateToProps = createSelector(
   userSelector,
   themeSelector,
@@ -35,9 +45,14 @@ const mapStateToProps = createSelector(
   (
     {
       username,
+      name,
+      bio,
+      picture,
+      githubURL,
       email,
       isAvailableForHire,
       isLocked,
+      theme,
       isGithubCool,
       isTwitter,
       isLinkedIn,
@@ -49,8 +64,16 @@ const mapStateToProps = createSelector(
     showLoading,
   ) => ({
     currentTheme: theme,
+    isAvailableForHire,
+    showLoading,
+    username,
+    name,
+    bio,
+    picture,
+    githubURL,
     email,
     isAvailableForHire,
+    isLocked,
     isGithubCool,
     isLinkedIn,
     isLocked,
@@ -59,6 +82,7 @@ const mapStateToProps = createSelector(
     sendNotificationEmail,
     sendQuincyEmail,
     showLoading,
+    showUpdateEmailView,
     username
   })
 );
@@ -79,11 +103,13 @@ const propTypes = {
   currentTheme: PropTypes.string,
   email: PropTypes.string,
   hardGoTo: PropTypes.func.isRequired,
+  githubURL: PropTypes.string,
   initialLang: PropTypes.string,
   isAvailableForHire: PropTypes.bool,
   isGithubCool: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
   isLocked: PropTypes.bool,
+  theme: PropTypes.string,
   isTwitter: PropTypes.bool,
   lang: PropTypes.string,
   sendMonthlyEmail: PropTypes.bool,
@@ -98,7 +124,10 @@ const propTypes = {
   toggleQuincyEmail: PropTypes.func.isRequired,
   updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
-  username: PropTypes.string
+  username: PropTypes.string,
+  name: PropTypes.string,
+  bio: PropTypes.string,
+  picture: PropTypes.string
 };
 
 export class Settings extends React.Component {
@@ -124,9 +153,15 @@ export class Settings extends React.Component {
 
   render() {
     const {
-      currentTheme,
-      email,
+      children,
+      username,
+      name,
+      bio,
+      picture,
+      githubURL,
       isAvailableForHire,
+      isLocked,
+      theme,
       isGithubCool,
       isLinkedIn,
       isLocked,
@@ -158,15 +193,22 @@ export class Settings extends React.Component {
 
     return (
       <ChildContainer>
-        <div className='container'>
+        <div className='container settings-container'>
           <h2>Account Settings</h2>
+          <br />
           <AccountSettings
             toggleNightMode={ toggleNightMode }
+            theme={ theme }
             isLocked={ isLocked }
             toggleIsLocked={ toggleIsLocked }
+            username={ username }
+            name={ name }
+            bio={ bio }
+            picture={ picture }
           />
           <hr />
           <h2>Email Settings</h2>
+          <br />
           <EmailSettings
             email={ email }
             sendMonthlyEmail={ sendMonthlyEmail }
@@ -177,21 +219,22 @@ export class Settings extends React.Component {
             toggleQuincyEmail={ toggleQuincyEmail }
           />
           <hr />
-          <h2>YOUR INTERNET PRESENCE</h2>
-          { /* Give InternetSettings component the requires properties */ }
+          <h2>Your internet presence</h2>
+          <br />
           <InternetSettings
-
+            githubURL={ githubURL }
           />
           <hr />
 
           { /* Split the below into other files */ }
-          <h2>YOUR FREECODECAMP PROJECT</h2>
+          <h2>Your FreeCodeCamp Projects</h2>
+          <br />
           <p>
             Add links to the live demos of your projects as you finish them.
-            Then, once you've added all 5 projects required for a certificate,
+            Then, once you have added all 5 projects required for a certificate,
             you can claim it.
           </p>
-          <h3>RESPONSIVE WEB DESIGN CERTIFICATE</h3>
+          <h3>Responsive Web Design Certificate</h3>
           <Row>
             <Col xs={ 8 }>
               <ControlLabel htmlFor='tributePage'>
@@ -272,19 +315,19 @@ export class Settings extends React.Component {
               />
             </Col>
           </Row>
+          <br />
           <Button
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-            className=''
           >
             Claim
           </Button>
-          <h3>JAVASCRIPT ALGORITHMS AND DATA STRUCTURES CERTIFICATE</h3>
+          <h3>JavaScript Algorithms and Data Structures Certificate</h3>
           <Row>
             <Col xs={ 8 }>
-              <ControlLabel htmlFor='project1'>
-                Project 1
+              <ControlLabel htmlFor='palindromeChecker'>
+                Palindrome Checker
               </ControlLabel>
             </Col>
             <Col xs={ 4 }>
@@ -293,14 +336,14 @@ export class Settings extends React.Component {
                 value=''
                 placeholder='URL'
                 type='input'
-                id='project1'
+                id='palindromeChecker'
               />
             </Col>
           </Row>
           <Row>
             <Col xs={ 8 }>
-              <ControlLabel htmlFor='project2'>
-                Project 2
+              <ControlLabel htmlFor='romanNumeralConverter'>
+                Roman Numeral Converter
               </ControlLabel>
             </Col>
             <Col xs={ 4 }>
@@ -309,14 +352,14 @@ export class Settings extends React.Component {
                 value=''
                 placeholder='URL'
                 type='input'
-                id='project2'
+                id='romanNumeralConverter'
               />
             </Col>
           </Row>
           <Row>
             <Col xs={ 8 }>
-              <ControlLabel htmlFor='project2'>
-                Project 2
+              <ControlLabel htmlFor='ceasarsCypher'>
+                Ceasar's Cypher
               </ControlLabel>
             </Col>
             <Col xs={ 4 }>
@@ -325,14 +368,14 @@ export class Settings extends React.Component {
                 value=''
                 placeholder='URL'
                 type='input'
-                id='project2'
+                id='ceasarsCypher'
               />
             </Col>
           </Row>
           <Row>
             <Col xs={ 8 }>
-              <ControlLabel htmlFor='project4'>
-                Project 4
+              <ControlLabel htmlFor='telephoneNumberValidator'>
+                Telephone Number Validator
               </ControlLabel>
             </Col>
             <Col xs={ 4 }>
@@ -341,14 +384,14 @@ export class Settings extends React.Component {
                 value=''
                 placeholder='URL'
                 type='input'
-                id='project4'
+                id='telephoneNumberValidator'
               />
             </Col>
           </Row>
           <Row>
             <Col xs={ 8 }>
-              <ControlLabel htmlFor='project5'>
-                Project 5
+              <ControlLabel htmlFor='cashRegister'>
+                Cash Register
               </ControlLabel>
             </Col>
             <Col xs={ 4 }>
@@ -357,19 +400,19 @@ export class Settings extends React.Component {
                 value=''
                 placeholder='URL'
                 type='input'
-                id='project5'
+                id='cashRegister'
               />
             </Col>
           </Row>
+          <br />
           <Button
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-            className=''
           >
             Claim
           </Button>
-          <h3>FRONT END LIBRARIES CERTIFICATE</h3>
+          <h3>Front End Libraries Certificate</h3>
           <Row>
             <Col xs={ 8 }>
               <ControlLabel htmlFor='randomQuoteMachine'>
@@ -450,15 +493,15 @@ export class Settings extends React.Component {
               />
             </Col>
           </Row>
+          <br />
           <Button
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-            className=''
           >
             Claim
           </Button>
-          <h3>DATA VISUALISATION CERTIFICATE</h3>
+          <h3>Data Visualization Certificate</h3>
           <Row>
             <Col xs={ 8 }>
               <ControlLabel htmlFor='visualiseBarChart'>
@@ -539,15 +582,15 @@ export class Settings extends React.Component {
               />
             </Col>
           </Row>
+          <br />
           <Button
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-            className=''
           >
             Claim
           </Button>
-          <h3>APIS AND MICROSERVICES CERTIFICATE</h3>
+          <h3>Apis and Microservices Certificate</h3>
           <Row>
             <Col xs={ 8 }>
               <ControlLabel htmlFor='timestampMicroservice'>
@@ -628,15 +671,15 @@ export class Settings extends React.Component {
               />
             </Col>
           </Row>
+          <br />
           <Button
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-            className=''
           >
             Claim
           </Button>
-          <h3>INFORMATION SECURITYAND QUALITYASSURANCE CERTIFICATE</h3>
+          <h3>Information Security and Quality Assurance Certificate</h3>
           <Row>
             <Col xs={ 8 }>
               <ControlLabel htmlFor='metricImperialConverter'>
@@ -717,22 +760,23 @@ export class Settings extends React.Component {
               />
             </Col>
           </Row>
+          <br />
           <Button
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-            className=''
           >
             Claim
           </Button>
+          <br />
           <hr />
-          <h2>YOUR PORTFOLIO</h2>
+          <h2>Your Portfolio</h2>
           <p>
             Share your non-FreeCodeCamp projects, articles or accepted
             pull requests:
           </p>
           <Row>
-            <Col xs={ 4 }>
+            <Col xs={ 5 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -740,19 +784,6 @@ export class Settings extends React.Component {
                 type='input'
                 id='portfolio1Title'
               />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 6 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='description'
-                type='input'
-                id='portfolio1Description'
-              />
-            </Col>
-            <Col xs={ 4 } xsPush={ 1 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -761,9 +792,17 @@ export class Settings extends React.Component {
                 id='portfolio1Url'
               />
             </Col>
+            <Col xs={ 7 }>
+              <FormControl
+                componentClass='textarea'
+                placeholder='Description'
+                className='portfolio-description'
+                id='portfolio1Description'
+              />
+            </Col>
           </Row>
           <Row>
-            <Col xs={ 4 }>
+            <Col xs={ 5 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -771,19 +810,6 @@ export class Settings extends React.Component {
                 type='input'
                 id='portfolio2Title'
               />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 6 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='description'
-                type='input'
-                id='portfolio2Description'
-              />
-            </Col>
-            <Col xs={ 4 } xsPush={ 1 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -792,9 +818,17 @@ export class Settings extends React.Component {
                 id='portfolio2Url'
               />
             </Col>
+            <Col xs={ 7 }>
+              <FormControl
+                componentClass='textarea'
+                placeholder='Description'
+                className='portfolio-description'
+                id='portfolio2Description'
+              />
+            </Col>
           </Row>
           <Row>
-            <Col xs={ 4 }>
+            <Col xs={ 5 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -802,19 +836,6 @@ export class Settings extends React.Component {
                 type='input'
                 id='portfolio3Title'
               />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 6 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='description'
-                type='input'
-                id='portfolio3Description'
-              />
-            </Col>
-            <Col xs={ 4 } xsPush={ 1 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -823,9 +844,17 @@ export class Settings extends React.Component {
                 id='portfolio3Url'
               />
             </Col>
+            <Col xs={ 7 }>
+              <FormControl
+                componentClass='textarea'
+                placeholder='Description'
+                className='portfolio-description'
+                id='portfolio3Description'
+              />
+            </Col>
           </Row>
           <Row>
-            <Col xs={ 4 }>
+            <Col xs={ 5 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -833,19 +862,6 @@ export class Settings extends React.Component {
                 type='input'
                 id='portfolio4Title'
               />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 6 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='description'
-                type='input'
-                id='portfolio4Description'
-              />
-            </Col>
-            <Col xs={ 4 } xsPush={ 1 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -854,9 +870,17 @@ export class Settings extends React.Component {
                 id='portfolio4Url'
               />
             </Col>
+            <Col xs={ 7 }>
+              <FormControl
+                componentClass='textarea'
+                placeholder='Description'
+                className='portfolio-description'
+                id='portfolio4Description'
+              />
+            </Col>
           </Row>
           <Row>
-            <Col xs={ 4 }>
+            <Col xs={ 5 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -864,19 +888,6 @@ export class Settings extends React.Component {
                 type='input'
                 id='portfolio5Title'
               />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 6 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='description'
-                type='input'
-                id='portfolio5Description'
-              />
-            </Col>
-            <Col xs={ 4 } xsPush={ 1 }>
               <FormControl
                 bsSize='sm'
                 value=''
@@ -885,9 +896,17 @@ export class Settings extends React.Component {
                 id='portfolio5Url'
               />
             </Col>
+            <Col xs={ 7 }>
+              <FormControl
+                componentClass='textarea'
+                placeholder='Description'
+                className='portfolio-description'
+                id='portfolio5Description'
+              />
+            </Col>
           </Row>
           <hr />
-          <h2>TIMELINE</h2>
+          <h2>Timeline</h2>
 
 
 

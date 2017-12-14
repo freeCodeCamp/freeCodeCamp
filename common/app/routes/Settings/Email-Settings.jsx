@@ -63,8 +63,8 @@ export default function EmailSettings({
     <div className={ `${ns}-email-container` }>
       <Row>
         <Col sm={ 8 }>
-          <p className='large-p'>
-            { email }
+          <p>
+            <strong>{ email }</strong>
           </p>
         </Col>
         <Col sm={ 4 }>
@@ -73,8 +73,8 @@ export default function EmailSettings({
       </Row>
       <Row>
         <Col sm={ 8 }>
-          <p className='large-p'>
-            Send me announcement emails
+          <p>
+            <strong>Send me announcement emails</strong>
           </p>
         </Col>
         <Col sm={ 4 }>
@@ -87,8 +87,8 @@ export default function EmailSettings({
       </Row>
       <Row>
         <Col sm={ 8 }>
-          <p className='large-p'>
-            Send me notification emails
+          <p>
+            <strong>Send me notification emails</strong>
           </p>
         </Col>
         <Col sm={ 4 }>
@@ -101,8 +101,8 @@ export default function EmailSettings({
       </Row>
       <Row>
         <Col sm={ 8 }>
-          <p className='large-p'>
-            Send me Quincy's weekly email
+          <p>
+            <strong>Send me Quincy's weekly email</strong>
           </p>
         </Col>
         <Col sm={ 4 }>
