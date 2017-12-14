@@ -10,22 +10,19 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
 import LockedSettings from './Locked-Settings.jsx';
 
-import { Link } from '../../Router';
-
 const propTypes = {
-    toggleNightMode: PropTypes.func.isRequired,
+    bio: PropTypes.string,
     currentTheme: PropTypes.string,
     isLocked: PropTypes.bool,
-    toggleIsLocked: PropTypes.func.isRequired,
-    username: PropTypes.string,
     name: PropTypes.string,
-    bio: PropTypes.string,
-    picture: PropTypes.string
+    picture: PropTypes.string,
+    toggleIsLocked: PropTypes.func.isRequired,
+    toggleNightMode: PropTypes.func.isRequired,
+    username: PropTypes.string
 };
 
 export default function AccountSettings({
@@ -47,7 +44,7 @@ export default function AccountSettings({
             bsSize='lg'
             bsStyle='primary'
             href='/link/github'
-          >
+            >
             Update from GitHub
           </Button>
         </Col>
@@ -55,20 +52,20 @@ export default function AccountSettings({
       <br />
       <Row>
         <Col md={ 2 } xs={ 12 }>
-          <Image src={ picture }  className='avatar' thumbnail />
+          <Image className='avatar' src={ picture } thumbnail={ true } />
         </Col>
         <Col md={ 10 } xs = { 12 }>
           <FormControl
-            componentClass='textarea'
-            placeholder='About me'
             className='about-me'
+            componentClass='textarea'
+            disabled={ true }
+            placeholder='About me'
             value={ bio }
-            disabled
           />
         </Col>
       </Row>
       <br />
-      <Row> 
+      <Row>
         <Col sm={ 8 } xs={ 12 }>
           <ControlLabel htmlFor='name'>
             Name
@@ -77,11 +74,11 @@ export default function AccountSettings({
         <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
-            value={ name }
+            disabled={ true }
+            id='name'
             placeholder='name'
             type='input'
-            id='name'
-            disabled
+            value={ name }
           />
         </Col>
       </Row>
@@ -94,11 +91,11 @@ export default function AccountSettings({
         <Col sm={ 4 } xs={ 12 }>
           <FormControl
               bsSize='sm'
-              value={ username }
+              disabled={ true }
+              id='username'
               placeholder='username'
               type='input'
-              id='username'
-              disabled
+              value={ username }
           />
         </Col>
       </Row>
@@ -111,10 +108,11 @@ export default function AccountSettings({
         <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
-            value=''
+            disabled={ true }
+            id='location'
             placeholder='location'
             type='input'
-            id='location'
+            value={ '' }
           />
         </Col>
         </Row>
@@ -141,11 +139,11 @@ export default function AccountSettings({
                 className={
                   classnames(
                     'positive-20',
-                    { active: currentTheme == 'night' },
+                    { active: currentTheme === 'night' },
                     'btn-toggle'
                   )
                 }
-                disabled={ currentTheme == 'night' }
+                disabled={ currentTheme === 'night' }
                 type='radio'
                 value={ 1 }
                 >
@@ -157,11 +155,11 @@ export default function AccountSettings({
                 className={
                   classnames(
                     'positive-20',
-                    { active: currentTheme == 'default' },
+                    { active: currentTheme === 'default' },
                     'btn-toggle'
                   )
                 }
-                disabled={ currentTheme == 'default' }
+                disabled={ currentTheme === 'default' }
                 type='radio'
                 value={ 2 }
                 >

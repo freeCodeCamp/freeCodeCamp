@@ -1,18 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
-  ToggleButtonGroup,
-  ToggleButton,
   ControlLabel,
   FormControl,
-  Button,
   Row,
   Col
 } from 'react-bootstrap';
-import FA from 'react-fontawesome';
-import classnames from 'classnames';
-
-import { Link } from '../../Router';
 
 const propTypes = {
   githubURL: PropTypes.string
@@ -32,10 +25,10 @@ export default function InternetSettings({
         <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
-            value=''
+            id='twitter'
             placeholder='username'
             type='input'
-            id='twitter'
+            value=''
           />
         </Col>
       </Row>
@@ -48,11 +41,11 @@ export default function InternetSettings({
         <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
-            value={ githubURL }
+            disabled = { true }
+            id='github'
             placeholder='GitHub URL'
             type='input'
-            id='github'
-            disabled
+            value={ githubURL }
           />
         </Col>
       </Row>
@@ -65,10 +58,10 @@ export default function InternetSettings({
         <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
-            value=''
+            id='linkedin'
             placeholder='full profile URL'
             type='input'
-            id='linkedin'
+            value=''
           />
         </Col>
       </Row>
@@ -81,10 +74,10 @@ export default function InternetSettings({
         <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
-            value=''
+            id='personalWebsite'
             placeholder='URL'
             type='input'
-            id='personalWebsite'
+            value=''
           />
         </Col>
       </Row>
