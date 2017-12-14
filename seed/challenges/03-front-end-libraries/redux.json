@@ -703,7 +703,14 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert(incAction().type ===INCREMENT, 'message: The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>');",
+        "assert(decAction().type === DECREMENT, 'message: The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>');",
+        "assert(store.getState() === 0, 'message: The Redux store should initialize with a <code>state</code> of 0.');",
+        "assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })(), 'message: Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.');",
+        "assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })(), 'message: Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.');",
+        "assert(typeof counterReducer === 'function', 'message: <code>counterReducer</code> should be a function');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
