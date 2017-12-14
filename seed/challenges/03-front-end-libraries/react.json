@@ -2072,8 +2072,9 @@
             "    this.state = {",
             "      message: 'First Message'",
             "    };",
+            "    this.changeMessage = this.changeMessage.bind(this);",
             "  }",
-            "  changeMessage = () => {",
+            "  changeMessage() {",
             "    this.setState({",
             "      message: 'Second Message'",
             "    });",
@@ -2090,11 +2091,16 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('Dialog').length === 1; })(), 'message: The <code>Controller</code> component should render the <code>Dialog</code> component as a child.');",
+        "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); return lifecycleChild.includes('console.log') && lifecycleChild.includes('this.props') })(), 'message: The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>this.props</code> to the console.');",
+        "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); const nextPropsAsParameterTest = \/componentWillReceiveProps(| *?= *?)(\\(|)nextProps(\\)|)( *?=> *?{| *?{|{)\/; const nextPropsInConsoleLogTest = \/console\\.log\\(.*?nextProps\\b.*?\\)\/; return ( lifecycleChild.includes('console.log') && nextPropsInConsoleLogTest.test(lifecycleChild) && nextPropsAsParameterTest.test(lifecycleChild) ); })(), 'message: The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>nextProps</code> to the console.');",
+        "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentDidUpdate.toString().replace(/ /g,''); return lifecycleChild.length !== 'undefined' && lifecycleChild.includes('console.log'); })(), 'message: The <code>Dialog</code> component should call the <code>componentDidUpdate</code> method and log a message to the console.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class Dialog extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  componentWillUpdate() {\n    console.log('Component is about to update...');\n  }\n  // change code below this line\n  componentWillReceiveProps(nextProps) {\n    console.log(this.props, nextProps);\n  }\n  componentDidUpdate() {\n    console.log('Component re-rendered');\n  }\n  // change code above this line\n  render() {\n    return <h1>{this.props.message}</h1>\n  }\n};\n\nclass Controller extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: 'First Message'\n    };\n  }\n  changeMessage = () => {\n    this.setState({\n      message: 'Second Message'\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick={this.changeMessage}>Update</button>\n        <Dialog message={this.state.message}/>\n      </div>\n    );\n  }\n};"
+        "class Dialog extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  componentWillUpdate() {\n    console.log('Component is about to update...');\n  }\n  // change code below this line\n  componentWillReceiveProps(nextProps) {\n    console.log(this.props, nextProps);\n  }\n  componentDidUpdate() {\n    console.log('Component re-rendered');\n  }\n  // change code above this line\n  render() {\n    return <h1>{this.props.message}</h1>\n  }\n};\n\nclass Controller extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: 'First Message'\n    };\n this.changeMessage = this.changeMessage.bind(this); \n  }\n  changeMessage() {\n    this.setState({\n      message: 'Second Message'\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick={this.changeMessage}>Update</button>\n        <Dialog message={this.state.message}/>\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
