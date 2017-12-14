@@ -1748,7 +1748,11 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1 && mockedComponent.find('Navbar').length === 1; })(), 'message: The <code>MyApp</code> component should render with a <code>Navbar</code> component inside.');",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const setState = () => { mockedComponent.setState({name: 'TestName'}); return waitForIt(() => mockedComponent.find('Navbar').props() )}; const navProps = await setState(); return navProps.name === 'TestName'; })(); // message: The <code>Navbar</code> component should receive the <code>MyApp</code> state property <code>name</code> as props.",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const navH1Before = mockedComponent.find('Navbar').find('h1').text(); const setState = () => { mockedComponent.setState({name: 'TestName'}); return waitForIt(() => mockedComponent.find('Navbar').find('h1').text() )}; const navH1After = await setState(); return new RegExp('TestName').test(navH1After) && navH1After !== navH1Before; })(); // message: The <code>h1</code> element in <code>Navbar</code> should render the <code>name</code> prop."
+      ],
       "head": [],
       "tail": [],
       "solutions": [
@@ -1766,7 +1770,7 @@
       "description": [
         "You can pass <code>state</code> as props to child components, but you're not limited to passing data. You can also pass handler functions or any method that's defined on a React component to a child component. This is how you allow child components to interact with their parent components. You pass methods to a child just like a regular prop. It's assigned a name and you have access to that method name under <code>this.props</code> in the child component.",
         "<hr>",
-        "There are three components outlined in the code editor. The <code>MyApp</code> component is the parent that will render the <code>GetInput</code> and <code>RenderInput</code> child components. Add the <code>GetInput</code> component to the render method in <code>MyApp</code>, then pass it a prop called <code>input</code> assigned to <code>inputValue</code> from <code>MyApp</code>'s <code>state</code>. Also create a prop called <code>handleInput</code> and pass the input handler <code>handleChange</code> to it.",
+        "There are three components outlined in the code editor. The <code>MyApp</code> component is the parent that will render the <code>GetInput</code> and <code>RenderInput</code> child components. Add the <code>GetInput</code> component to the render method in <code>MyApp</code>, then pass it a prop called <code>input</code> assigned to <code>inputValue</code> from <code>MyApp</code>'s <code>state</code>. Also create a prop called <code>handleChange</code> and pass the input handler <code>handleChange</code> to it.",
         "Next, add <code>RenderInput</code> to the render method in <code>MyApp</code>, then create a prop called <code>input</code> and pass the <code>inputValue</code> from <code>state</code> to it. Once you are finished you will be able to type in the <code>input</code> field in the <code>GetInput</code> component, which then calls the handler method in its parent via props. This updates the input in the <code>state</code> of the parent, which is passed as props to both children. Observe how the data flows between the components and how the single source of truth remains the <code>state</code> of the parent component. Admittedly, this example is a bit contrived, but should serve to illustrate how data and callbacks can be passed between React components."
       ],
       "files": {
@@ -1809,7 +1813,7 @@
             "        <h3>Get Input:</h3>",
             "        <input",
             "          value={this.props.input}",
-            "          onChange={this.props.handleInput}/>",
+            "          onChange={this.props.handleChange}/>",
             "      </div>",
             "    );",
             "  }",
@@ -1841,7 +1845,7 @@
       "head": [],
       "tail": [],
       "solutions": [
-        "class MyApp extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      inputValue: ''\n    }\n  this.handleChange = this.handleChange.bind(this);  \n  }\n  handleChange(event) {\n    this.setState({\n      inputValue: event.target.value\n    });\n  }\n  render() {\n    return (\n       <div>\n         <GetInput\n           input={this.state.inputValue}\n           handleInput={this.handleChange}/>\n         <RenderInput\n           input={this.state.inputValue}/>\n       </div>\n    );\n  }\n};\n\nclass GetInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Get Input:</h3>\n        <input\n          value={this.props.input}\n          onChange={this.props.handleInput}/>\n      </div>\n    );\n  }\n};\n\nclass RenderInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Input Render:</h3>\n        <p>{this.props.input}</p>\n      </div>\n    );\n  }\n};"
+        "class MyApp extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      inputValue: ''\n    }\n  this.handleChange = this.handleChange.bind(this);  \n  }\n  handleChange(event) {\n    this.setState({\n      inputValue: event.target.value\n    });\n  }\n  render() {\n    return (\n       <div>\n         <GetInput\n           input={this.state.inputValue}\n           handleChange={this.handleChange}/>\n         <RenderInput\n           input={this.state.inputValue}/>\n       </div>\n    );\n  }\n};\n\nclass GetInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Get Input:</h3>\n        <input\n          value={this.props.input}\n          onChange={this.props.handleChange}/>\n      </div>\n    );\n  }\n};\n\nclass RenderInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Input Render:</h3>\n        <p>{this.props.input}</p>\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
@@ -1980,6 +1984,8 @@
             "    this.state = {",
             "      message: ''",
             "    };",
+            "    this.handleEnter = this.handleEnter.bind(this);",
+            "    this.handleKeyPress = this.handleKeyPress.bind(this);",
             "  }",
             "  // change code below this line",
             "  componentDidMount() {",
@@ -1989,12 +1995,12 @@
             "",
             "  }",
             "  // change code above this line",
-            "  handleEnter = () => {",
+            "  handleEnter() {",
             "    this.setState({",
             "      message: this.state.message + 'You pressed the enter key! '",
             "    });",
             "  }",
-            "  handleKeyPress = (event) => {",
+            "  handleKeyPress(event) {",
             "    if (event.keyCode === 13) {",
             "      this.handleEnter();",
             "    }",
@@ -2010,11 +2016,16 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').children().find('h1').length === 1; })(), 'message: <code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.');",
+        "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp('document\\.addEventListener(.|\\n|\\r)+keydown(.|\\n|\\r)+this\\.handleKeyPress').test(didMountString); })(), 'message: A keydown listener should be attached to the document in <code>componentDidMount</code>.');",
+        "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp('document\\.removeEventListener(.|\\n|\\r)+keydown(.|\\n|\\r)+this\\.handleKeyPress').test(willUnmountString); })(), 'message: The keydown listener should be removed from the document in <code>componentWillUnmount</code>.');",
+        "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state('message'); const beforeText = mockedComponent.find('h1').text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state('message'), text: mockedComponent.find('h1').text()}; });}; const afterKeyPress = await pressEnterKey(); return beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text; })(); // message: Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag."
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: ''\n    };\n  }\n  componentDidMount() {\n    // change code below this line\n    document.addEventListener('keydown', this.handleKeyPress);\n    // change code above this line\n  }\n  componentWillUnmount() {\n    // change code below this line\n    document.removeEventListener('keydown', this.handleKeyPress);\n    // change code above this line\n  }\n  handleEnter = () => {\n    this.setState({\n      message: this.state.message + 'You pressed the enter key! '\n    });\n  }\n  handleKeyPress = (event) => {\n    if (event.keyCode === 13) {\n      this.handleEnter();\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.message}</h1>\n      </div>\n    );\n  }\n};"
+        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: ''\n    };\n    this.handleKeyPress = this.handleKeyPress.bind(this);\n    this.handleEnter = this.handleEnter.bind(this);  }\n  componentDidMount() {\n    // change code below this line\n    document.addEventListener('keydown', this.handleKeyPress);\n    // change code above this line\n  }\n  componentWillUnmount() {\n    // change code below this line\n    document.removeEventListener('keydown', this.handleKeyPress);\n    // change code above this line\n  }\n  handleEnter() {\n    this.setState({\n      message: this.state.message + 'You pressed the enter key! '\n    });\n  }\n  handleKeyPress(event) {\n    if (event.keyCode === 13) {\n      this.handleEnter();\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.message}</h1>\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
@@ -2650,9 +2661,9 @@
             "    this.state = {",
             "      input: ''",
             "    };",
-            "    this.handleInput = this.handleInput.bind(this);",
+            "    this.handleChange = this.handleChange.bind(this);",
             "  }",
-            "  handleInput(event) {",
+            "  handleChange(event) {",
             "    this.setState({ input: event.target.value })",
             "  }",
             "  render() {",
@@ -2669,7 +2680,7 @@
             "          type=\"text\"",
             "          style={inputStyle}",
             "          value={this.state.input}",
-            "          onChange={this.handleInput} />",
+            "          onChange={this.handleChange} />",
             "      </div>",
             "    );",
             "  }",
@@ -2687,7 +2698,7 @@
       "head": [],
       "tail": [],
       "solutions": [
-        "\nclass GateKeeper extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleInput = this.handleInput.bind(this);\n  }\n  handleInput(event) {\n    this.setState({ input: event.target.value })\n  }\n  render() {\n    let inputStyle = {\n      border: '1px solid black'\n    };\n    if (this.state.input.length > 15) {\n      inputStyle.border = '3px solid red';\n    };\n    return (\n      <div>\n        <h3>Don't Type Too Much:</h3>\n        <input\n          type=\"text\"\n          style={inputStyle}\n          value={this.state.input}\n          onChange={this.handleInput} />\n      </div>\n    );\n  }\n};"
+        "\nclass GateKeeper extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(event) {\n    this.setState({ input: event.target.value })\n  }\n  render() {\n    let inputStyle = {\n      border: '1px solid black'\n    };\n    if (this.state.input.length > 15) {\n      inputStyle.border = '3px solid red';\n    };\n    return (\n      <div>\n        <h3>Don't Type Too Much:</h3>\n        <input\n          type=\"text\"\n          style={inputStyle}\n          value={this.state.input}\n          onChange={this.handleChange} />\n      </div>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
