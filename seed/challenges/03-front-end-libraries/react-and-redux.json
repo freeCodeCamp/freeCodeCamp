@@ -628,13 +628,15 @@
             "      input: '',",
             "      messages: []",
             "    }",
+            "    this.handleChange = this.handleChange.bind(this);",
+            "    this.submitMessage = this.submitMessage.bind(this);",
             "  }",
-            "  handleChange = (event) => {",
+            "  handleChange(event) {",
             "    this.setState({",
             "      input: event.target.value",
             "    });",
             "  }",
-            "  submitMessage = () => {",
+            "  submitMessage() {",
             "    this.setState({",
             "      input: '',",
             "      messages: this.state.messages.concat(this.state.input)",
@@ -688,11 +690,17 @@
           ]
         }
       },
-      "tests": [],
+      "tests": [
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'message: The <code>AppWrapper</code> should render to the page.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'message: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })(), 'message: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), 'message: The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), 'message: The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.');"
+      ],
       "head": [],
       "tail": [],
       "solutions": [
-        "// Redux:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message: message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React:\nconst Provider = ReactRedux.Provider;\nconst connect = ReactRedux.connect;\n\n// Change code below this line\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    }\n  }\n  handleChange = (event) => {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage = () => {\n    this.props.submitNewMessage(this.state.input);\n    this.setState({\n      input: ''\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.props.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n// Change code above this line\n\nconst mapStateToProps = (state) => {\n  return {messages: state}\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message))\n    }\n  }\n};\n\nconst Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);\n\nclass AppWrapper extends React.Component {\n  render() {\n    return (\n      <Provider store={store}>\n        <Container/>\n      </Provider>\n    );\n  }\n};"
+        "// Redux:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message: message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React:\nconst Provider = ReactRedux.Provider;\nconst connect = ReactRedux.connect;\n\n// Change code below this line\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    }\n this.handleChange = this.handleChange.bind(this); \n this.submitMessage = this.submitMessage.bind(this); \n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    this.props.submitNewMessage(this.state.input);\n    this.setState({\n      input: ''\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.props.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n// Change code above this line\n\nconst mapStateToProps = (state) => {\n  return {messages: state}\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message))\n    }\n  }\n};\n\nconst Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);\n\nclass AppWrapper extends React.Component {\n  render() {\n    return (\n      <Provider store={store}>\n        <Container/>\n      </Provider>\n    );\n  }\n};"
       ],
       "type": "modern",
       "isRequired": false,
