@@ -15,24 +15,21 @@ import classnames from 'classnames';
 import { Link } from '../../Router';
 
 const propTypes = {
-  twitter: PropTypes.string,
-  github: PropTypes.string,
-  linkedin: PropTypes.string,
-  personalWebsite: PropTypes.string,
+  githubURL: PropTypes.string
 };
 
 export default function InternetSettings({
-
+  githubURL
 }) {
   return (
     <div className='internet-settings'>
       <Row>
-        <Col xs={ 8 }>
+        <Col sm={ 8 } xs={ 12 }>
           <ControlLabel htmlFor='twitter'>
             Twitter
           </ControlLabel>
         </Col>
-        <Col xs={ 4 }>
+        <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
             value=''
@@ -43,28 +40,29 @@ export default function InternetSettings({
         </Col>
       </Row>
       <Row>
-        <Col xs={ 8 }>
+        <Col sm={ 8 } xs={ 12 }>
           <ControlLabel htmlFor='github'>
             GitHub
           </ControlLabel>
         </Col>
-        <Col xs={ 4 }>
+        <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
-            value=''
-            placeholder='username'
+            value={ githubURL }
+            placeholder='GitHub URL'
             type='input'
             id='github'
+            disabled
           />
         </Col>
       </Row>
       <Row>
-        <Col xs={ 8 }>
+        <Col sm={ 8 } xs={ 12 }>
           <ControlLabel htmlFor='linkedin'>
             LinkedIn
           </ControlLabel>
         </Col>
-        <Col xs={ 4 }>
+        <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
             value=''
@@ -75,12 +73,12 @@ export default function InternetSettings({
         </Col>
       </Row>
       <Row>
-        <Col xs={ 8 }>
+        <Col sm={ 8 } xs={ 12 }>
           <ControlLabel htmlFor='personalWebsite'>
             Personal Website
           </ControlLabel>
         </Col>
-        <Col xs={ 4 }>
+        <Col sm={ 4 } xs={ 12 }>
           <FormControl
             bsSize='sm'
             value=''
