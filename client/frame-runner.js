@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
 
+  // Fake Deep Equal dependency
+  const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
   // Hardcode Deep Freeze dependency
   var DeepFreeze = (o) => {
     Object.freeze(o);

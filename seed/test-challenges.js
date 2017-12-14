@@ -118,6 +118,9 @@ function createTest({
                   Enzyme,
                   document;
 
+              // Fake Deep Equal dependency
+              const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
               // Hardcode Deep Freeze dependency
               const DeepFreeze = (o) => {
                 Object.freeze(o);
@@ -134,8 +137,6 @@ function createTest({
                 });
                 return o;
               };
-
-              const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
               if (react || redux || reactRedux) {
                 // Provide dependencies, just provide all of them

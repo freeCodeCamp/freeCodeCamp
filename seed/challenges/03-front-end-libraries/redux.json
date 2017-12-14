@@ -948,66 +948,6 @@
       "isRequired": false,
       "translations": {},
       "redux": true
-    },
-    {
-      "id": "5a24c314108439a4d403615c",
-      "title": "Use the ES6 Spread Operator with Objects",
-      "releasedOn": "December 25, 2017",
-      "description": [
-        "The <code>Object.assign()</code> method works well for most operations on objects you will encounter in Redux. Plus, it has been standardized as a part of ES6. There is another syntax that may become standardized in a future version of JavaScript that's introduced here. It is the spread operator applied to objects. This is currently a proposed language feature that you can take advantage of with the Babel transpiler. It's enabled here so you can test it out.",
-        "The object spread operator allows you to spread out object properties much like when you used the spread operator to spread out array values. For example, you have the following object:",
-        "<blockquote>const user = {<br> authenticated: true<br> username: Jeff<br>}</blockquote>",
-        "Now if you write the following:",
-        "<blockquote>const updatedUser = {<br> ...user,<br> authenticated: false<br>}</blockquote>",
-        "The <code>updatedUser</code> object will equal the following:",
-        "<blockquote>{<br> username: Jeff<br> authenticated: false<br>}</blockquote>",
-        "You've 'spread' the <code>user</code> object properties into a new object and then added the new properties. Similar to <code>Object.assign()</code>, properties with matching names are overwritten. The proposed object spread syntax provides a very concise way to return new objects from existing objects, especially if you are interested in only modifying a few keys. Note that the ordering of keys in the examples above is not important because JavaScript objects are unordered collections of properties. This syntax is encountered quite often, so it's good to be familiar with it, even if you don't use it yourself.",
-        "<hr>",
-        "The example from last challenge is in the code editor. Use the object spread operator to return a new state object when the <code>ONLINE</code> action is dispatched."
-      ],
-      "files": {
-        "indexjsx": {
-          "key": "indexjsx",
-          "ext": "jsx",
-          "name": "index",
-          "contents": [
-            "const defaultState = {",
-            "  user: 'CamperBot',",
-            "  status: 'offline',",
-            "  friends: '732,982',",
-            "  community: 'freeCodeCamp'",
-            "};",
-            "",
-            "const immutableReducer = (state = defaultState, action) => {",
-            "  switch(action.type) {",
-            "    case 'ONLINE':",
-            "      // don't mutate state here or the tests will fail",
-            "      return",
-            "    default:",
-            "      return state;",
-            "  }",
-            "};",
-            "",
-            "const wakeUp = () => {",
-            "  return {",
-            "    type: 'ONLINE',",
-            "  }",
-            "};",
-            "",
-            "const store = Redux.createStore(immutableReducer);"
-          ]
-        }
-      },
-      "tests": [],
-      "head": [],
-      "tail": [],
-      "solutions": [
-        "const defaultState = {\n  user: 'CamperBot',\n  status: 'offline',\n  friends: '732,982',\n  community: 'freeCodeCamp'\n};\n\nconst immutableReducer = (state = defaultState, action) => {\n  switch(action.type) {\n    case 'ONLINE':\n      return {\n        ...state,\n        status: 'online'\n      };\n    default:\n      return state;\n  }\n};\n\nconst wakeUp = () => {\n  return {\n    type: 'ONLINE',\n  }\n};\n\nconst store = Redux.createStore(immutableReducer);"
-      ],
-      "type": "modern",
-      "isRequired": false,
-      "translations": {},
-      "redux": true
     }
   ]
 }
