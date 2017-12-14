@@ -27,24 +27,18 @@ import {
 
   dropdownSelector
 } from './redux';
-import {
-  userSelector,
-  isSignedInSelector,
-  signInLoadingSelector
-} from '../redux';
+import { isSignedInSelector, signInLoadingSelector } from '../redux';
 import { panesSelector } from '../Panes/redux';
 
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 
 const mapStateToProps = createSelector(
-  userSelector,
   isSignedInSelector,
   dropdownSelector,
   signInLoadingSelector,
   panesSelector,
   (
-    { username, picture, points },
     isSignedIn,
     isDropdownOpen,
     showLoading,
@@ -59,10 +53,7 @@ const mapStateToProps = createSelector(
       }, {}),
       isDropdownOpen,
       isSignedIn,
-      picture,
-      points,
-      showLoading,
-      username
+      showLoading
     };
   }
 );
@@ -111,13 +102,11 @@ const propTypes = {
   clickOnMap: PropTypes.func.isRequired,
   closeDropdown: PropTypes.func.isRequired,
   isDropdownOpen: PropTypes.bool,
+  isSignedIn: PropTypes.bool,
   openDropdown: PropTypes.func.isRequired,
   panes: PropTypes.array,
-  picture: PropTypes.string,
-  points: PropTypes.number,
   showLoading: PropTypes.bool,
-  signedIn: PropTypes.bool,
-  username: PropTypes.string
+  signedIn: PropTypes.bool
 };
 
 export class FCCNav extends React.Component {
@@ -178,11 +167,9 @@ export class FCCNav extends React.Component {
   render() {
     const {
       panes,
+      isSignedIn,
       clickOnLogo,
       clickOnMap,
-      username,
-      points,
-      picture,
       showLoading
     } = this.props;
 
@@ -236,10 +223,8 @@ export class FCCNav extends React.Component {
               )
             }
             <SignUp
-              picture={ picture }
-              points={ points }
               showLoading={ showLoading }
-              username={ username }
+              showSignUp={ !isSignedIn }
             />
           </Nav>
         </Navbar.Collapse>

@@ -64,7 +64,7 @@
     "express-state": "^1.2.0",
     "express-validator": "^3.0.0",
     "fetchr": "~0.5.12",
-    "font-awesome": "~4.5.0",
+    "font-awesome": "^4.7.0",
     "frameguard": "^3.0.0",
     "googleapis": "16.1.0",
     "helmet": "^3.1.0",
