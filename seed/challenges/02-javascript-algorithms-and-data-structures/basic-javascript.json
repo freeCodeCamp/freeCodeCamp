@@ -410,7 +410,7 @@
       ],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
-        "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*33;?/.test(code),'message: Only subtract one number from 45.');"
+        "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*[0-9]*;(?!\\s*[a-zA-Z0-9]+)/.test(code),'message: Only subtract one number from 45.');"
       ],
       "type": "waypoint",
       "challengeType": 1,

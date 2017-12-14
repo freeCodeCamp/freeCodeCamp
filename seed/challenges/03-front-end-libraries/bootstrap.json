@@ -42,7 +42,7 @@
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
         "You can add Bootstrap to any app by adding the following code to the top of your HTML:",
-        "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"/&#62;</code>",
+        "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\"/&#62;</code>",
         "In this case, we've already added it for you to this page behind the scenes. Note that using either <code>></code> or <code>/></code> to close the <code>link</code> tag is acceptable.",
         "To get started, we should nest all of our HTML (except the <code>link</code> tag and the <code>style</code> element) in a <code>div</code> element with the class <code>container-fluid</code>."
       ],
@@ -129,7 +129,7 @@
             "Bootstrap saura reconnaître la largeur de notre écran et s'y adapter en redimensionnant les éléments HTML - d'où le nom <code>Responsive Design</code> (design adaptatif).",
             "Avec le design responsive, il n'y a pas besoin de créer de version mobile de votre site. Il restera bien sur tous les appareils quelle que soit la taille de leurs écrans.",
             "Vous pouvez ajouter Bootstrap à n'importe quelle application simplement en incluant le code suivant en haut de votre HTML:",
-            "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\"/&#62;</code>",
+            "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\" integrity=\"sha384-8+rznmq/k0KZkJlZhnuPEVkbRD7tA0wcFEjY48dajGWn3Xc1MasJwS8/tJ7OEsKW\" crossorigin=\"anonymous\">/&#62;</code>",
             "Ici, nous l'avons déjà ajouté à la page pour vous dans l'arrière-boutique.",
             "Pour commencer, nous devons envelopper nos éléments HTML dans un élément <code>div</code> possédant la classe <code>container-fluid</code>"
           ]
@@ -1258,7 +1258,7 @@
       "description": [
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
         "You can include Font Awesome in any app by adding the following code to the top of your HTML:",
-        "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\"/&#62;</code>",
+        "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\" integrity=\"sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+\" crossorigin=\"anonymous\"&#62;</code>",
         "In this case, we've already added it for you to this page behind the scenes.",
         "The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:",
         "<code>&lt;i class=\"fa fa-info-circle\"&gt;&lt;/i&gt;</code>",
@@ -1338,7 +1338,7 @@
           "description": [
             "Font Awesome es una librería de iconos muy conveniente. Estos iconos son imágenes vectoriales, almacenadas en formato <code>.svg</code>, y son tratados como si fueran fuentes. Puedes especificar su tamaño usando pixeles, y tomarán el tamaño de fuente de su elemento HTML padre.",
             "Puedes añadir Font Awesome a cualquier aplicación sólo incluyendo y agregando el siguiente código al comienzo de tu HTML:",
-            "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\"/&#62;</code>",
+            "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\" integrity=\"sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+\" crossorigin=\"anonymous\"/&#62;</code>",
             "En este caso, ya lo hemos agregado por tí a esta página tras bambalinas.",
             "El elemento <code>i</code> originalmente era usado para hacer textos en itálicas, pero ahora comunmente se usa para iconos.  Le agregas clases de Font Awesome al elemento <code>i</code> para convertirlo en un ícono, por ejemplo:",
             "<code>&lt;i class=\"fa fa-info-circle\"&gt;&lt;/i&gt;</code>",
@@ -1350,7 +1350,7 @@
           "description": [
             "Font Awesome est une librairie d'icônes très pratique. Ces icones sont des images vectorielles, stockées en format <code>.svg</code>. Ces icônes sont traités exactemeent comme des polices. Vous pouvez choisir leur taille en pixel, et ils prendront la taille de police de leur élémment parent HTML.",
             "Vous poyvez ajouter Font Awesome à n'importe quell application en ajoutant le code suivant en haut de votre HTML:",
-            "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\"/&#62;</code>",
+            "<code>&#60;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\" integrity=\"sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+\" crossorigin=\"anonymous\">/&#62;</code>",
             "Ici, nous l'avons déjà ajouté pour vous dans le back-office.",
             "La balise <code>i</code> eétait utilisé à la base pour mettre les autres éléments en italique, mais maintenant elle est utilisée pour les icones. Vous ajoutez des classes Font Awesome à un élément <code>i</code> pour les les transformer en icones, par exemple:",
             "<code>&lt;i class=\"fa fa-info-circle\"&gt;&lt;/i&gt;</code>",

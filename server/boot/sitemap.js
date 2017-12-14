@@ -10,19 +10,19 @@ const appUrl = 'https://www.freecodecamp.org';
 //   app: ExpressApp,
 //   modelName: String,
 //   nameProp: String,
+//   blockProp: String,
 //   map: (nameProp: String) => String
 // ) => Observable[models]
-function getCachedObservable(app, modelName, nameProp, map) {
+function getCachedObservable(app, modelName, nameProp, blockProp, map) {
   return observeQuery(
     app.models[modelName],
     'find',
-    { fields: { [nameProp]: true } }
+    { fields: { [nameProp]: true, [blockProp]: true } }
   )
     .flatMap(models => {
       return Observable.from(models, null, null, Scheduler.default);
     })
-    .filter(model => !!model[nameProp])
-    .map(model => model[nameProp])
+    .filter(model => !!model[nameProp] && !!model[blockProp])
     .map(map ? map : (x) => x)
     .toArray()
     ::timeCache(cacheTimeout[0], cacheTimeout[1]);
@@ -30,7 +30,8 @@ function getCachedObservable(app, modelName, nameProp, map) {
 
 export default function sitemapRouter(app) {
   const router = app.loopback.Router();
-  const challenges$ = getCachedObservable(app, 'Challenge', 'dashedName');
+  const challengeProps = ['dashedName', 'block'];
+  const challenges$ = getCachedObservable(app, 'Challenge', ...challengeProps);
   const stories$ = getCachedObservable(app, 'Story', 'storyLink', dasherize);
   function sitemap(req, res, next) {
     const now = moment(new Date()).format('YYYY-MM-DD');

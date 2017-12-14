@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
           if (helpers.isPromise(test)) {
             // Test is async and needs some time to execute correctly.
-            // Patiently wait for it:
             __result = Rx.Observable.fromPromise(test).map(asyncResult => {
               if (!asyncResult) {
                 throw Rx.Observable.throw('Async test failed!');
@@ -103,33 +102,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 return Rx.Observable.of(null);
               }
             });
-          } else if (typeof test === 'function') {
-            // we know that the test eval'ed to a function
-            // the function could expect a callback
-            // or it could return a promise/observable
-            // or it could still be sync
-            if (test.length === 1) {
-              // a function with length 0 means it expects 0 args
-              // We call it and store the result
-              // This result may be a promise or an observable or undefined
-              __result = test(getUserInput);
-            } else {
-              // if function takes arguments
-              // we expect it to be of the form
-              // function(cb) { /* ... */ }
-              // and callback has the following signature
-              // function(err) { /* ... */ }
-              __result = Rx.Observable.fromNodeCallback(test)(getUserInput);
-            }
+          } else {
+
+            // all async tests must return a promise or observable
+            // sync tests can return Any type
+            __result = test(getUserInput);
 
             if (helpers.isPromise(__result)) {
               // turn promise into an observable
               __result = Rx.Observable.fromPromise(__result);
             }
-          } else {
-            // test is not a function
-            // fill result with for compatibility
-            __result = Rx.Observable.of(null);
+
+            if (!__result || typeof __result.subscribe !== 'function') {
+              // make sure result is an observable
+              __result = Rx.Observable.of(null);
+            }
           }
         } catch (e) {
           // something threw an uncaught error
