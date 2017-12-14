@@ -54,7 +54,6 @@ const mapStateToProps = createSelector(
       email,
       isAvailableForHire,
       isLocked,
-      theme,
       isGithubCool,
       isTwitter,
       isLinkedIn,
@@ -71,21 +70,18 @@ const mapStateToProps = createSelector(
     showLoading,
     username,
     name,
-    bio,
-    picture,
-    githubURL,
     email,
-    isAvailableForHire,
-    isLocked,
+    isLocked,    
     isGithubCool,
+    githubURL,        
     isLinkedIn,
-    isLocked,
     isTwitter,
     sendMonthlyEmail,
     sendNotificationEmail,
     sendQuincyEmail,
     showUpdateEmailView,
-    username
+    bio,
+    picture
   })
 );
 
@@ -162,12 +158,12 @@ export class Settings extends React.Component {
       bio,
       picture,
       githubURL,
+      currentTheme,
+      email,
+      isLocked,      
       isAvailableForHire,
-      isLocked,
-      theme,
       isGithubCool,
       isLinkedIn,
-      isLocked,
       isTwitter,
       sendMonthlyEmail,
       sendNotificationEmail,
@@ -179,11 +175,10 @@ export class Settings extends React.Component {
       toggleMonthlyEmail,
       toggleNightMode,
       toggleNotificationEmail,
-      toggleQuincyEmail,
-      username
+      toggleQuincyEmail
     } = this.props;
 
-    if (!username && showLoading) {
+    if (!username && !showLoading) {
       return <SettingsSkeleton />;
     }
 
@@ -202,7 +197,7 @@ export class Settings extends React.Component {
           <br />
           <AccountSettings
             toggleNightMode={ toggleNightMode }
-            theme={ theme }
+            currentTheme={ currentTheme }
             isLocked={ isLocked }
             toggleIsLocked={ toggleIsLocked }
             username={ username }
