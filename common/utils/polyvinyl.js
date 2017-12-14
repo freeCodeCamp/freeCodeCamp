@@ -169,9 +169,7 @@ export function clearHeadTail(poly) {
 // compileHeadTail(contents: String, poly: PolyVinyl) => PolyVinyl
 export function compileHeadTail(padding = '', poly) {
   return clearHeadTail(setContent(
-    // @TEMPORARY remove line 173
-    [ poly.contents ].join(padding),
-    // [ poly.head, poly.contents, poly.tail ].join(padding),
+    [ poly.head, poly.contents, poly.tail ].join(padding),
     poly
   ));
 }

@@ -80,10 +80,7 @@ export const babelTransformer = _.cond([
   [
     testJS$JSX,
     function(file) {
-      // @TEMPORARY remove next 2 lines
-      const code = file.head + file.contents + file.tail;
-      const result = babel.transform(code, babelOptions);
-      // const result = babel.transform(file.contents, babelOptions);
+      const result = babel.transform(file.contents, babelOptions);
       return _.flow(
         _.partial(setContent, result.code),
         _.partial(setExt, 'js')

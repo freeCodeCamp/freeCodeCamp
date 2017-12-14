@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var checkChallengePayload = document.__checkChallengePayload;
 
   // Fake Deep Equal dependency
+  /* eslint-disable no-unused-vars */
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
   // Hardcode Deep Freeze dependency
@@ -106,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return Rx.Observable.of(null);
               }
             });
+
           } else if (typeof test === 'function') {
             // we know that the test eval'ed to a function
             // the function could expect a callback
