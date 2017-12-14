@@ -154,9 +154,9 @@
         }
       },
       "tests": [
-        "assert(typeof actionCreator === 'function', 'message: The function actionCreator should exist.');",
-        "assert(typeof action === 'object', 'message: Running the actionCreator function should return the action object.');",
-        "assert(action.type === 'LOGIN', 'message: The returned action should have a key property type with value LOGIN.');"
+        "assert(typeof actionCreator === 'function', 'message: The function <code>actionCreator</code> should exist.');",
+        "assert(typeof action === 'object', 'message: Running the <code>actionCreator</code> function should return the action object.');",
+        "assert(action.type === 'LOGIN', 'message: The returned action should have a key property type with value <code>LOGIN</code>.');"
       ],
       "head": [],
       "tail": [],
@@ -252,9 +252,9 @@
         }
       },
       "tests": [
-        "assert(loginAction().type === 'LOGIN', 'message: Calling the function loginAction should return an object with type property set to the string <code>LOGIN</code>.');",
-        "assert(store.getState().login === false, 'message: The store should be initialized with an object with property login set to false.');",
-        "assert((function() {  const initialState = store.getState(); store.dispatch(loginAction()); const afterState = store.getState(); return initialState.login === false && afterState.login === true })(), 'message: Dispatching loginAction should update the login property in the store state to true.');",
+        "assert(loginAction().type === 'LOGIN', 'message: Calling the function <code>loginAction</code> should return an object with type property set to the string <code>LOGIN</code>.');",
+        "assert(store.getState().login === false, 'message: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');",
+        "assert((function() {  const initialState = store.getState(); store.dispatch(loginAction()); const afterState = store.getState(); return initialState.login === false && afterState.login === true })(), 'message: Dispatching <code>loginAction</code> should update the <code>login</code> property in the store state to <code>true</code>.');",
         "assert((function() { store.dispatch({type: '__TEST__ACTION__'}); let afterTest = store.getState(); return typeof afterTest === 'object' && afterTest.hasOwnProperty('login') })(), 'message: If the action is not of type <code>LOGIN</code>, the store should return the current state.');"
       ],
       "head": [],
@@ -310,12 +310,12 @@
         }
       },
       "tests": [
-        "assert(loginUser().type === 'LOGIN', 'message: Calling the function loginUser should return an object with type property set to the string <code>LOGIN</code>.');",
-        "assert(logoutUser().type === 'LOGOUT', 'message: Calling the function logoutUser should return an object with type property set to the string <code>LOGOUT</code>.');",
-        "assert(store.getState().authenticated === false, 'message: The store should be initialized with an object with an authenticated property set to false.');",
-        "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'message: Dispatching loginUser should update the authenticated property in the store state to true.');",
-        "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })(), 'message: Dispatching logoutUser should update the authenticated property in the store state to false.');",
-        "assert( editor.getOriginalCode().toString().includes('switch') && editor.getOriginalCode().toString().includes('case') && editor.getOriginalCode().toString().includes('default'), 'message: The authReducer function should handle multiple action types with a switch statement.');"
+        "assert(loginUser().type === 'LOGIN', 'message: Calling the function <code>loginUser</code> should return an object with type property set to the string <code>LOGIN</code>.');",
+        "assert(logoutUser().type === 'LOGOUT', 'message: Calling the function <code>logoutUser</code> should return an object with type property set to the string <code>LOGOUT</code>.');",
+        "assert(store.getState().authenticated === false, 'message: The store should be initialized with an object with an <code>authenticated</code> property set to <code>false</code>.');",
+        "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'message: Dispatching <code>loginUser</code> should update the <code>authenticated</code> property in the store state to <code>true</code>.');",
+        "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })(), 'message: Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.');",
+        "assert( editor.getOriginalCode().toString().includes('switch') && editor.getOriginalCode().toString().includes('case') && editor.getOriginalCode().toString().includes('default'), 'message: The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.');"
       ],
       "head": [],
       "tail": [],
