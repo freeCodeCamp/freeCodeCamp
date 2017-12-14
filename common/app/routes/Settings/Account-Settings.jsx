@@ -18,6 +18,7 @@ const propTypes = {
     bio: PropTypes.string,
     currentTheme: PropTypes.string,
     isLocked: PropTypes.bool,
+    location: PropTypes.string,
     name: PropTypes.string,
     picture: PropTypes.string,
     toggleIsLocked: PropTypes.func.isRequired,
@@ -29,6 +30,7 @@ export default function AccountSettings({
     toggleNightMode,
     currentTheme,
     isLocked,
+    location,
     toggleIsLocked,
     username,
     name,
@@ -112,7 +114,7 @@ export default function AccountSettings({
             id='location'
             placeholder='location'
             type='input'
-            value={ '' }
+            value={ location }
           />
         </Col>
         </Row>

@@ -50,6 +50,8 @@ const mapStateToProps = createSelector(
     {
       username,
       bio,
+      location,
+      linkedin,
       name,
       picture,
       githubURL,
@@ -61,7 +63,9 @@ const mapStateToProps = createSelector(
       isLinkedIn,
       sendMonthlyEmail,
       sendNotificationEmail,
-      sendQuincyEmail
+      sendQuincyEmail,
+      twitter,
+      website
     },
     theme,
     showLoading,
@@ -78,12 +82,18 @@ const mapStateToProps = createSelector(
     githubURL,
     isLinkedIn,
     isTwitter,
+    linkedin,
+    location,
     sendMonthlyEmail,
     sendNotificationEmail,
     sendQuincyEmail,
     showUpdateEmailView,
+    twitter,
+    username,
+    name,
     bio,
-    picture
+    picture,
+    website
   })
 );
 
@@ -112,6 +122,8 @@ const propTypes = {
   isLocked: PropTypes.bool,
   isTwitter: PropTypes.bool,
   lang: PropTypes.string,
+  linkedin: PropTypes.string,
+  location: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.string,
   sendMonthlyEmail: PropTypes.bool,
@@ -126,9 +138,11 @@ const propTypes = {
   toggleNightMode: PropTypes.func.isRequired,
   toggleNotificationEmail: PropTypes.func.isRequired,
   toggleQuincyEmail: PropTypes.func.isRequired,
+  twitter: PropTypes.string,
   updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
-  username: PropTypes.string
+  username: PropTypes.string,
+  website: PropTypes.string
 };
 
 export class Settings extends React.Component {
@@ -163,6 +177,8 @@ export class Settings extends React.Component {
       // isGithubCool,
       // isLinkedIn,
       // isTwitter,
+      linkedin,
+      location,
       name,
       picture,
       sendMonthlyEmail,
@@ -176,7 +192,9 @@ export class Settings extends React.Component {
       toggleNightMode,
       toggleNotificationEmail,
       toggleQuincyEmail,
-      username
+      twitter,
+      username,
+      website
     } = this.props;
 
     if (!username && !showLoading) {
@@ -202,6 +220,7 @@ export class Settings extends React.Component {
             bio={ bio }
             currentTheme={ currentTheme }
             isLocked={ isLocked }
+            location={ location }
             name={ name }
             picture={ picture }
             toggleIsLocked={ toggleIsLocked }
@@ -231,7 +250,10 @@ export class Settings extends React.Component {
 
           <br />
 
-          <InternetSettings githubURL={ githubURL } />
+          <InternetSettings
+            githubURL={ githubURL }
+            website={ website }
+          />
 
           <hr />
 
