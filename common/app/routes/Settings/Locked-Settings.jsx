@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Button, Row, Col, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import {
+  Row,
+  Col,
+  ToggleButton,
+  ToggleButtonGroup
+} from 'react-bootstrap';
 import classnames from 'classnames';
 
 const propTypes = {
@@ -9,12 +14,6 @@ const propTypes = {
 };
 
 export default function LockSettings({ isLocked, toggleIsLocked }) {
-  const className = classnames({
-    'positive-20': true,
-    active: isLocked,
-    'btn-toggle': true
-  });
-
   return (
     <Row>
       <Col sm={ 8 } xs={ 12 }>
@@ -27,15 +26,6 @@ export default function LockSettings({ isLocked, toggleIsLocked }) {
         </p>
       </Col>
       <Col sm={ 4 } xs={ 12 }>
-        {/* <Button
-          block={ true }
-          bsSize='lg'
-          bsStyle='primary'
-          className={ className }
-          onClick={ toggle }
-          >
-          { isLocked ? 'On' : 'Off' }
-        </Button> */}
         <ToggleButtonGroup
           className='toggle-btn-group'
           name='monthly-email'

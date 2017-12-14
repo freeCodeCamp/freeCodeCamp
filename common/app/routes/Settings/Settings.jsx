@@ -3,17 +3,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { Button, Row, Col, FormControl, ControlLabel, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
-import FA from 'react-fontawesome';
-import classnames from 'classnames';
+import {
+  Button,
+  Row,
+  Col,
+  FormControl,
+  ControlLabel
+} from 'react-bootstrap';
 
 import AccountSettings from './Account-Settings.jsx';
-import LockedSettings from './Locked-Settings.jsx';
-import JobSettings from './Job-Settings.jsx';
-import SocialSettings from './Social-Settings.jsx';
 import EmailSettings from './Email-Settings.jsx';
 import InternetSettings from './Internet-Settings.jsx';
-import LanguageSettings from './Language-Settings.jsx';
 import SettingsSkeleton from './Settings-Skeleton.jsx';
 import UpdateEmail from './routes/update-email';
 
@@ -47,8 +47,8 @@ const mapStateToProps = createSelector(
   (
     {
       username,
-      name,
       bio,
+      name,
       picture,
       githubURL,
       email,
@@ -73,7 +73,7 @@ const mapStateToProps = createSelector(
     email,
     isLocked,    
     isGithubCool,
-    githubURL,        
+    githubURL,
     isLinkedIn,
     isTwitter,
     sendMonthlyEmail,
@@ -97,6 +97,7 @@ const mapDispatchToProps = {
 };
 
 const propTypes = {
+  bio: PropTypes.string,
   children: PropTypes.element,
   currentTheme: PropTypes.string,
   email: PropTypes.string,
@@ -107,14 +108,16 @@ const propTypes = {
   isGithubCool: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
   isLocked: PropTypes.bool,
-  theme: PropTypes.string,
   isTwitter: PropTypes.bool,
   lang: PropTypes.string,
+  name: PropTypes.string,
+  picture: PropTypes.string,
   sendMonthlyEmail: PropTypes.bool,
   sendNotificationEmail: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
   showUpdateEmailView: PropTypes.bool,
+  theme: PropTypes.string,
   toggleIsAvailableForHire: PropTypes.func.isRequired,
   toggleIsLocked: PropTypes.func.isRequired,
   toggleMonthlyEmail: PropTypes.func.isRequired,
@@ -123,10 +126,7 @@ const propTypes = {
   toggleQuincyEmail: PropTypes.func.isRequired,
   updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
-  username: PropTypes.string,
-  name: PropTypes.string,
-  bio: PropTypes.string,
-  picture: PropTypes.string
+  username: PropTypes.string
 };
 
 export class Settings extends React.Component {
@@ -152,30 +152,29 @@ export class Settings extends React.Component {
 
   render() {
     const {
-      children,
-      username,
-      name,
       bio,
-      picture,
-      githubURL,
       currentTheme,
       email,
-      isLocked,      
-      isAvailableForHire,
-      isGithubCool,
-      isLinkedIn,
-      isTwitter,
+      githubURL,
+      isLocked,
+      // isAvailableForHire,
+      // isGithubCool,
+      // isLinkedIn,
+      // isTwitter,
+      name,
+      picture,
       sendMonthlyEmail,
       sendNotificationEmail,
       sendQuincyEmail,
       showLoading,
       showUpdateEmailView,
-      toggleIsAvailableForHire,
+      // toggleIsAvailableForHire,
       toggleIsLocked,
       toggleMonthlyEmail,
       toggleNightMode,
       toggleNotificationEmail,
-      toggleQuincyEmail
+      toggleQuincyEmail,
+      username
     } = this.props;
 
     if (!username && !showLoading) {
@@ -189,25 +188,31 @@ export class Settings extends React.Component {
         </ChildContainer>
       );
     }
-    
+
     return (
       <ChildContainer>
         <div className='container settings-container'>
           <h2>Account Settings</h2>
+
           <br />
+
           <AccountSettings
-            toggleNightMode={ toggleNightMode }
+            bio={ bio }
             currentTheme={ currentTheme }
             isLocked={ isLocked }
-            toggleIsLocked={ toggleIsLocked }
-            username={ username }
             name={ name }
-            bio={ bio }
             picture={ picture }
+            toggleIsLocked={ toggleIsLocked }
+            toggleNightMode={ toggleNightMode }
+            username={ username }
           />
+
           <hr />
+
           <h2>Email Settings</h2>
+
           <br />
+
           <EmailSettings
             email={ email }
             sendMonthlyEmail={ sendMonthlyEmail }
@@ -217,15 +222,17 @@ export class Settings extends React.Component {
             toggleNotificationEmail={ toggleNotificationEmail }
             toggleQuincyEmail={ toggleQuincyEmail }
           />
-          <hr />
-          <h2>Your internet presence</h2>
-          <br />
-          <InternetSettings
-            githubURL={ githubURL }
-          />
+
           <hr />
 
-          { /* Split the below into other files */ }
+          <h2>Your internet presence</h2>
+
+          <br />
+
+          <InternetSettings githubURL={ githubURL } />
+
+          <hr />
+
           <h2>Your FreeCodeCamp Projects</h2>
           <br />
           <p>
@@ -243,10 +250,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='tributePage'
                 placeholder='URL'
                 type='input'
-                id='tributePage'
+                value=''
               />
             </Col>
           </Row>
@@ -259,10 +266,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='surveyForm'
                 placeholder='URL'
                 type='input'
-                id='surveyForm'
+                value=''
               />
             </Col>
           </Row>
@@ -275,10 +282,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='productLandingPage'
                 placeholder='URL'
                 type='input'
-                id='productLandingPage'
+                value=''
               />
             </Col>
           </Row>
@@ -291,10 +298,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='technicalDocumentationPage'
                 placeholder='URL'
                 type='input'
-                id='technicalDocumentationPage'
+                value=''
               />
             </Col>
           </Row>
@@ -307,10 +314,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='personalPortfolioPage'
                 placeholder='URL'
                 type='input'
-                id='personalPortfolioPage'
+                value=''
               />
             </Col>
           </Row>
@@ -319,7 +326,7 @@ export class Settings extends React.Component {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-          >
+            >
             Claim
           </Button>
           <h3>JavaScript Algorithms and Data Structures Certificate</h3>
@@ -332,10 +339,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='palindromeChecker'
                 placeholder='URL'
                 type='input'
-                id='palindromeChecker'
+                value=''
               />
             </Col>
           </Row>
@@ -348,10 +355,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='romanNumeralConverter'
                 placeholder='URL'
                 type='input'
-                id='romanNumeralConverter'
+                value=''
               />
             </Col>
           </Row>
@@ -364,10 +371,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='ceasarsCypher'
                 placeholder='URL'
                 type='input'
-                id='ceasarsCypher'
+                value=''
               />
             </Col>
           </Row>
@@ -380,10 +387,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='telephoneNumberValidator'
                 placeholder='URL'
                 type='input'
-                id='telephoneNumberValidator'
+                value=''
               />
             </Col>
           </Row>
@@ -396,10 +403,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='cashRegister'
                 placeholder='URL'
                 type='input'
-                id='cashRegister'
+                value=''
               />
             </Col>
           </Row>
@@ -408,7 +415,7 @@ export class Settings extends React.Component {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-          >
+            >
             Claim
           </Button>
           <h3>Front End Libraries Certificate</h3>
@@ -421,10 +428,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='randomQuoteMachine'
                 placeholder='URL'
                 type='input'
-                id='randomQuoteMachine'
+                value=''
               />
             </Col>
           </Row>
@@ -437,10 +444,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='markdownPreviewer'
                 placeholder='URL'
                 type='input'
-                id='markdownPreviewer'
+                value=''
               />
             </Col>
           </Row>
@@ -453,10 +460,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='drumMachine'
                 placeholder='URL'
                 type='input'
-                id='drumMachine'
+                value=''
               />
             </Col>
           </Row>
@@ -469,10 +476,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='javascriptCalculator'
                 placeholder='URL'
                 type='input'
-                id='javascriptCalculator'
+                value=''
               />
             </Col>
           </Row>
@@ -485,10 +492,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='pomodoroClock'
                 placeholder='URL'
                 type='input'
-                id='pomodoroClock'
+                value=''
               />
             </Col>
           </Row>
@@ -497,7 +504,7 @@ export class Settings extends React.Component {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-          >
+            >
             Claim
           </Button>
           <h3>Data Visualization Certificate</h3>
@@ -510,10 +517,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='visualiseBarChart'
                 placeholder='URL'
                 type='input'
-                id='visualiseBarChart'
+                value=''
               />
             </Col>
           </Row>
@@ -526,10 +533,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='visualiseScatterplotGraph'
                 placeholder='URL'
                 type='input'
-                id='visualiseScatterplotGraph'
+                value=''
               />
             </Col>
           </Row>
@@ -542,10 +549,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='visualiseHeatmap'
                 placeholder='URL'
                 type='input'
-                id='visualiseHeatmap'
+                value=''
               />
             </Col>
           </Row>
@@ -558,10 +565,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='visualiseChoroplethMap'
                 placeholder='URL'
                 type='input'
-                id='visualiseChoroplethMap'
+                value=''
               />
             </Col>
           </Row>
@@ -574,10 +581,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='visualiseTreemapDiagram'
                 placeholder='URL'
                 type='input'
-                id='visualiseTreemapDiagram'
+                value=''
               />
             </Col>
           </Row>
@@ -586,7 +593,7 @@ export class Settings extends React.Component {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-          >
+            >
             Claim
           </Button>
           <h3>Apis and Microservices Certificate</h3>
@@ -599,10 +606,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='timestampMicroservice'
                 placeholder='URL'
                 type='input'
-                id='timestampMicroservice'
+                value=''
               />
             </Col>
           </Row>
@@ -615,10 +622,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='requestHeaderParserMicroservice'
                 placeholder='URL'
                 type='input'
-                id='requestHeaderParserMicroservice'
+                value=''
               />
             </Col>
           </Row>
@@ -631,26 +638,26 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='urlShortnerMicroservice'
                 placeholder='URL'
                 type='input'
-                id='urlShortnerMicroservice'
+                value=''
               />
             </Col>
           </Row>
           <Row>
             <Col xs={ 8 }>
-              <ControlLabel htmlFor='exersiceTrackerMicroservice'>
+              <ControlLabel htmlFor='exerciseTrackerMicroservice'>
                 Exercise Tracker Microservice
               </ControlLabel>
             </Col>
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='exerciseTrackerMicroservice'
                 placeholder='URL'
                 type='input'
-                id='exersiceTrackerMicroservice'
+                value=''
               />
             </Col>
           </Row>
@@ -663,10 +670,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='fileMetadataMicroservice'
                 placeholder='URL'
                 type='input'
-                id='fileMetadataMicroservice'
+                value=''
               />
             </Col>
           </Row>
@@ -675,7 +682,7 @@ export class Settings extends React.Component {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-          >
+            >
             Claim
           </Button>
           <h3>Information Security and Quality Assurance Certificate</h3>
@@ -688,10 +695,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='metricImperialConverter'
                 placeholder='URL'
                 type='input'
-                id='metricImperialConverter'
+                value=''
               />
             </Col>
           </Row>
@@ -704,10 +711,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='issueTracker'
                 placeholder='URL'
                 type='input'
-                id='issueTracker'
+                value=''
               />
             </Col>
           </Row>
@@ -720,10 +727,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='personalLibrary'
                 placeholder='URL'
                 type='input'
-                id='personalLibrary'
+                value=''
               />
             </Col>
           </Row>
@@ -736,10 +743,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='stockPriceChecker'
                 placeholder='URL'
                 type='input'
-                id='stockPriceChecker'
+                value=''
               />
             </Col>
           </Row>
@@ -752,10 +759,10 @@ export class Settings extends React.Component {
             <Col xs={ 4 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                id='anonymousMessageBoard'
                 placeholder='URL'
                 type='input'
-                id='anonymousMessageBoard'
+                value=''
               />
             </Col>
           </Row>
@@ -764,11 +771,14 @@ export class Settings extends React.Component {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-          >
+            >
             Claim
           </Button>
+
           <br />
+
           <hr />
+
           <h2>Your Portfolio</h2>
           <p>
             Share your non-FreeCodeCamp projects, articles or accepted
@@ -778,137 +788,32 @@ export class Settings extends React.Component {
             <Col xs={ 5 }>
               <FormControl
                 bsSize='sm'
-                value=''
+                className='portfolio-title'
                 placeholder='title'
                 type='input'
-                id='portfolio1Title'
+                value=''
               />
               <FormControl
                 bsSize='sm'
-                value=''
-                placeholder='URL'
+                className='portfolio-url'
+                placeholder='title'
                 type='input'
-                id='portfolio1Url'
+                value=''
               />
             </Col>
             <Col xs={ 7 }>
               <FormControl
-                componentClass='textarea'
-                placeholder='Description'
                 className='portfolio-description'
+                componentClass='textarea'
                 id='portfolio1Description'
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 5 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='title'
-                type='input'
-                id='portfolio2Title'
-              />
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='URL'
-                type='input'
-                id='portfolio2Url'
-              />
-            </Col>
-            <Col xs={ 7 }>
-              <FormControl
-                componentClass='textarea'
                 placeholder='Description'
-                className='portfolio-description'
-                id='portfolio2Description'
               />
             </Col>
           </Row>
-          <Row>
-            <Col xs={ 5 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='title'
-                type='input'
-                id='portfolio3Title'
-              />
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='URL'
-                type='input'
-                id='portfolio3Url'
-              />
-            </Col>
-            <Col xs={ 7 }>
-              <FormControl
-                componentClass='textarea'
-                placeholder='Description'
-                className='portfolio-description'
-                id='portfolio3Description'
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 5 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='title'
-                type='input'
-                id='portfolio4Title'
-              />
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='URL'
-                type='input'
-                id='portfolio4Url'
-              />
-            </Col>
-            <Col xs={ 7 }>
-              <FormControl
-                componentClass='textarea'
-                placeholder='Description'
-                className='portfolio-description'
-                id='portfolio4Description'
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 5 }>
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='title'
-                type='input'
-                id='portfolio5Title'
-              />
-              <FormControl
-                bsSize='sm'
-                value=''
-                placeholder='URL'
-                type='input'
-                id='portfolio5Url'
-              />
-            </Col>
-            <Col xs={ 7 }>
-              <FormControl
-                componentClass='textarea'
-                placeholder='Description'
-                className='portfolio-description'
-                id='portfolio5Description'
-              />
-            </Col>
-          </Row>
+
           <hr />
+
           <h2>Timeline</h2>
-
-
-
         </div>
       </ChildContainer>
     );

@@ -7,7 +7,6 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
 import { onRouteUpdateEmail } from './redux';
