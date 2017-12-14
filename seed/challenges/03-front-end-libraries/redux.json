@@ -415,7 +415,7 @@
       "description": [
         "Another method you have access to on the Redux <code>store</code> object is <code>store.subscribe()</code>. This allows you to subscribe listener functions to the store, which are called whenever an action is dispatched against the store. One simple use for this method is to subscribe a function to your store that simply logs a message every time an action is received and the store is updated.",
         "<hr>",
-        "Write a callback function that logs a message to the console every time the store receives an action, and pass this function in to the <code>store.subscribe()</code> method. You'll see that <code>store.dispatch()</code> is called three times in a row, each time directly passing in an action object. Set up your listener function and watch the console as your code runs."
+        "Write a callback function that increments the global variable <code>count</code> every time the store receives an action, and pass this function in to the <code>store.subscribe()</code> method. You'll see that <code>store.dispatch()</code> is called three times in a row, each time directly passing in an action object. Watch the console output between the action dispatches to see the updates take place."
       ],
       "files": {
         "indexjsx": {
@@ -436,21 +436,33 @@
             "",
             "const store = Redux.createStore(reducer);",
             "",
+            "// global count variable:",
+            "let count = 0;",
+            "",
             "// change code below this line",
             "",
             "// change code above this line",
             "",
             "store.dispatch({type: ADD});",
+            "console.log(count);",
             "store.dispatch({type: ADD});",
-            "store.dispatch({type: ADD});"
+            "console.log(count);",
+            "store.dispatch({type: ADD});",
+            "console.log(count);"
           ]
         }
       },
-      "tests": [],
-      "head": [],
+      "tests": [
+        "assert((function() { const initialState = store.getState(); store.dispatch({ type: 'ADD' }); const newState = store.getState(); return newState === (initialState + 1); })(), 'message: Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.');",
+        "assert(editor.getOriginalCode().includes('store.subscribe('), 'message: There should be a listener function subscribed to the store using <code>store.subscribe</code>.');",
+        "assert(store.getState() === count, 'message: The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.');"
+      ],
+      "head": [
+        "count = 0;"
+      ],
       "tail": [],
       "solutions": [
-        "const ADD = 'ADD';\n\nconst reducer = (state = 0, action) => {\n  switch(action.type) {\n    case ADD:\n      return state + 1;\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(reducer);\n\n// change code below this line\n\nstore.subscribe( () =>\n  console.log('Received an action, state updated: ' + store.getState())\n);\n\n// change code above this line\n\nstore.dispatch({type: ADD});\nstore.dispatch({type: ADD});\nstore.dispatch({type: ADD});"
+        "const ADD = 'ADD';\n\nconst reducer = (state = 0, action) => {\n  switch(action.type) {\n    case ADD:\n      return state + 1;\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(reducer);\n let count = 0; \n// change code below this line\n\nstore.subscribe( () =>\n { \n count++; \n } \n);\n\n// change code above this line\n\nstore.dispatch({type: ADD});\nstore.dispatch({type: ADD});\nstore.dispatch({type: ADD});"
       ],
       "type": "modern",
       "isRequired": false,
