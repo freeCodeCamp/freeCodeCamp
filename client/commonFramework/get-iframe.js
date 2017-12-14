@@ -1,5 +1,6 @@
 window.common = (function(global) {
   const {
+    Rx: { Observable },
     common = { init: [] },
     document: doc
   } = global;
@@ -15,8 +16,22 @@ window.common = (function(global) {
       doc.body.appendChild(previewFrame);
     }
 
+    return previewFrame;
+  };
+
+  common.getIframeDocument = function getIframeDocument(id) {
+    const previewFrame = common.getIframe(id);
+
     return previewFrame.contentDocument ||
       previewFrame.contentWindow.document;
+  };
+
+  common.reloadIframe = function reloadIframe(id) {
+    const previewFrame = common.getIframe(id);
+
+    previewFrame.contentWindow.location.reload(true);
+
+    return Observable.fromEvent(previewFrame, 'load').first();
   };
 
   return common;
