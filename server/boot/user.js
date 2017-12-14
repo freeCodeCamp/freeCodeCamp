@@ -238,7 +238,7 @@ module.exports = function(app) {
     showCert.bind(null, certTypes.infosecQa)
   );
 
-  router.get('/:username', showUserProfile);
+  // router.get('/:username', showUserProfile);
   router.get(
     '/:username/report-user/',
     sendNonUserToMap,
