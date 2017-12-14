@@ -63,6 +63,7 @@ function createTest({
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
 
+  // No support for async tests
   const isAsync = s => s.includes('(async () => ');
   if (isAsync(tests.join(''))) {
     console.log(`Replacing Async Tests for Challenge ${title}`);
@@ -101,14 +102,9 @@ function createTest({
             tests.forEach(test => {
               let code = solution;
 
-              /* NOTE: UGLY code to provide dependencies for running tests
-               * against solutions of React challenges. Relying on new key-value
-               * pair { react: true } on challenge JSON body. Dependencies
-               * are provided here and solution code is transpiled by Babel.
-               *
-               * Berkeley feel free to refactor this.
-               *
-               * */
+              /* NOTE: Provide dependencies for React/Redux challenges
+               * and configure testing environment
+               */
 
               let React,
                   ReactDOM,

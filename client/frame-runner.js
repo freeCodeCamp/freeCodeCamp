@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var checkChallengePayload = document.__checkChallengePayload;
 
   // Fake Deep Equal dependency
+  /* eslint-disable no-unused-vars */
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
   // Hardcode Deep Freeze dependency
