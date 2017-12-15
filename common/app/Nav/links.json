@@ -37,6 +37,7 @@
   },
   {
     "content": "Donate",
-    "link": "https://www.freecodecamp.org/donate"
+    "link": "https://www.freecodecamp.org/donate",
+    "target": "_blank"
   }
 ]

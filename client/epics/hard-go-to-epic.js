@@ -1,10 +1,14 @@
-import { types } from '../../common/app/redux';
+import _ from 'lodash';
 import { ofType } from 'redux-epic';
 
-export default function hardGoToSaga(actions, _, { history }) {
+import { types } from '../../common/app/redux';
+
+export default function hardGoToSaga(actions, store, { location }) {
   return actions::ofType(types.hardGoTo)
-    .map(({ payload = '/settings' }) => {
-      history.pushState(history.state, null, payload);
-      return null;
-    });
+    .pluck('payload')
+    .filter(_.isString)
+    .do((payload = '/') => {
+      location.pathname = payload;
+    })
+    .ignoreElements();
 }

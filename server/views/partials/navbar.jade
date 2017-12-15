@@ -1,4 +1,5 @@
 nav.navbar.navbar-default.navbar-static-top.nav-height
+
     .navbar-header
         button.hamburger.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
             .col-xs-12
@@ -25,10 +26,10 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
             li
                 a(href='/map') Map
             li
-                a(href='https://www.freecodecamp.org/donate') Donate
+                a(href='https://www.freecodecamp.org/donate', target='_blank') Donate
             if !user
                 li
-                    a(href='/signin') Sign In
+                    a(href='/signin') Sign Up
             else
                 li.nav-avatar
                   a(href='/settings')

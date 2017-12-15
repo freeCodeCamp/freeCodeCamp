@@ -5,26 +5,16 @@ import { NavItem } from 'react-bootstrap';
 import { Link } from '../Router';
 import { onRouteSettings } from '../routes/Settings/redux';
 
-// this is separated out to prevent react bootstrap's
-// NavBar from injecting unknown props to the li component
-
 const propTypes = {
-  picture: PropTypes.string,
-  points: PropTypes.number,
   showLoading: PropTypes.bool,
-  username: PropTypes.string
+  showSignUp: PropTypes.bool
 };
 
-export default function SignUpButton({
-  picture,
-  points,
-  showLoading,
-  username
-}) {
+export default function SignUpButton({ showLoading, showSignUp }) {
   if (showLoading) {
     return null;
   }
-  if (!username) {
+  if (showSignUp) {
     return (
       <NavItem
         href='/signup'
@@ -40,14 +30,7 @@ export default function SignUpButton({
       key='user'
       >
       <Link to={ onRouteSettings() }>
-        <span className='nav-username hidden-sm'> { username } </span>
-        <span className='nav-points'> [ { points || 1 } ] </span>
-        <span className='nav-picture-container'>
-          <img
-            className='nav-picture float-right'
-            src={ picture }
-          />
-        </span>
+        My Profile
       </Link>
     </li>
   );

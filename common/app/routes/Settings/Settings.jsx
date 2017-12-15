@@ -21,7 +21,8 @@ import {
 
   signInLoadingSelector,
   userSelector,
-  themeSelector
+  themeSelector,
+  hardGoTo
 } from '../../redux';
 import ChildContainer from '../../Child-Container.jsx';
 
@@ -64,6 +65,7 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = {
+  hardGoTo,
   toggleIsAvailableForHire: () => toggleUserFlag('isAvailableForHire'),
   toggleIsLocked: () => toggleUserFlag('isLocked'),
   toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail'),
@@ -77,6 +79,7 @@ const propTypes = {
   children: PropTypes.element,
   currentTheme: PropTypes.string,
   email: PropTypes.string,
+  hardGoTo: PropTypes.func.isRequired,
   initialLang: PropTypes.string,
   isAvailableForHire: PropTypes.bool,
   isGithubCool: PropTypes.bool,
@@ -115,6 +118,11 @@ export class Settings extends React.Component {
   componentWillMount() {
     this.props.updateTitle('Settings');
   }
+  componentWillReceiveProps({ username, showLoading, hardGoTo }) {
+    if (!username && !showLoading) {
+      hardGoTo('/signup');
+    }
+  }
 
   render() {
     const {
@@ -138,7 +146,7 @@ export class Settings extends React.Component {
       toggleQuincyEmail,
       username
     } = this.props;
-    if (!username && !showLoading) {
+    if (!username && showLoading) {
       return <SettingsSkeleton />;
     }
     if (showUpdateEmailView) {
