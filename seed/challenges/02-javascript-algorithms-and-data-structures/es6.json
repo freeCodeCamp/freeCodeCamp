@@ -111,8 +111,6 @@
         "<strong>Note</strong><br>Don't forget to add <code>\"use strict\";</code> to the top of your code."
       ],
       "challengeSeed": [
-        "// change 'var' to 'let' or 'const'",
-        "// rename constant variables",
         "var pi = 3.14;",
         "var radius = 10;",
         "var calculateCircumference = function(r) {",
@@ -121,13 +119,15 @@
         "  return result;",
         "};",
         "// Test your code",
+        "console.log(calculateCircumference(radius));",
+        "radius = 5;",
         "console.log(calculateCircumference(radius));"
       ],
       "tests": [
-        "// Test user replaced all var keyword",
-        "// Test PI is const",
-        "// Test calculateCircumference is const",
-        "// Test pi and calculateCircumference has been renamed"
+        "assert(!/var/g.test(code),'message: Var does not exist in code.');",
+        "assert(code.match(/(const pi)/g), 'message: PI is const.');",
+        "assert(code.match(/(const calculateCircumference)/g), 'message: calculateCircumference is const.');",
+        "assert(code.match(/(let radius)/g), 'message: radius is let.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
