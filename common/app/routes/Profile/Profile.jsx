@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import FontAwesome from 'react-fontawesome';
 
 import {
   Button,
@@ -104,6 +105,7 @@ export class Profile extends React.Component {
       bio,
       location,
       name,
+      picture,
       points,
       showLoading,
       username
@@ -117,30 +119,68 @@ export class Profile extends React.Component {
       <ChildContainer>
         <div className='container profile-container'>
           <div>
+            <Row>
+              <Col md={ 4 }>
+                <Button
+                  block={ true }
+                  bsSize='lg'
+                  bsStyle='primary'
+                  href='/settings'
+                  >
+                  Update my settings
+                </Button>
+              </Col>
+              <Col md={ 4 } mdPush={ 2 }>
+                <Button
+                  block={ true }
+                  bsSize='lg'
+                  bsStyle='primary'
+                  href='/logout'
+                  >
+                  Sign me out of freeCodeCamp
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={ 4 } smOffset={ 4 }>
+                <img alt={ username + '\' profile picture' } src={ picture }/>
+              </Col>
+            </Row>
+          { /* Social media links */ }
           <Row>
-            <Col md={ 4 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                href='/settings'
-                >
-                Update my settings
-              </Button>
-            </Col>
-            <Col md={ 4 } mdPush={ 2 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                href='/logout'
-                >
-                Sign me out of freeCodeCamp
-              </Button>
+            <Col className='text-center' sm={ 2 } smOffset={ 5 }>
+              <a href={ 'mailto:' }>
+                <FontAwesome
+                  name='envelope-o'
+                  size='2x'
+                />
+              </a>
+              <a href={ 'https://linkedin.com/' }>
+                <FontAwesome
+                  name='linkedin'
+                  size='2x'
+                />
+              </a>
+              <a href={ 'https://github.com/' }>
+                <FontAwesome
+                  name='github'
+                  size='2x'
+                />
+              </a>
+              <a href={ '' }>
+                <FontAwesome
+                  name='link'
+                  size='2x'
+                />
+              </a>
+              <a href={ 'https://twitter.com/' }>
+                <FontAwesome
+                  name='twitter'
+                  size='2x'
+                />
+              </a>
             </Col>
           </Row>
-          { /* Profile image */ }
-          { /* Social media links */ }
           <h2 className='text-center'>{ name }</h2>
           <h2 className='text-center'>@{ username }</h2>
           <h2 className='text-center'>{ points } points</h2>
@@ -271,9 +311,121 @@ export class Profile extends React.Component {
         </div>
         <div>
           <h1 className='text-center'>Portfolio</h1>
+          <Row>
+            <Col sm={ 3 }>
+              <img alt={ 'Screenshot' } src={ 'test' }/>
+            </Col>
+            <Col sm={ 6 }>
+              <h3>Title</h3>
+              <p>
+                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
+                Sed vulputate. Morbi massa nunc, convallis a, commodo
+                gravida, tincidunt sed, turpis. Aenean ornare viverra
+              </p>
+              <a href={ 'url' }>url</a>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={ 3 }>
+              <img alt={ 'Screenshot' } src={ 'test' }/>
+            </Col>
+            <Col sm={ 6 }>
+              <h3>Title</h3>
+              <p>
+                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
+                Sed vulputate. Morbi massa nunc, convallis a, commodo
+                gravida, tincidunt sed, turpis. Aenean ornare viverra
+              </p>
+              <a href={ 'url' }>url</a>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={ 3 }>
+              <img alt={ 'Screenshot' } src={ 'test' }/>
+            </Col>
+            <Col sm={ 6 }>
+              <h3>Title</h3>
+              <p>
+                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
+                Sed vulputate. Morbi massa nunc, convallis a, commodo
+                gravida, tincidunt sed, turpis. Aenean ornare viverra
+              </p>
+              <a href={ 'url' }>url</a>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={ 3 }>
+              <img alt={ 'Screenshot' } src={ 'test' }/>
+            </Col>
+            <Col sm={ 6 }>
+              <h3>Title</h3>
+              <p>
+                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
+                Sed vulputate. Morbi massa nunc, convallis a, commodo
+                gravida, tincidunt sed, turpis. Aenean ornare viverra
+              </p>
+              <a href={ 'url' }>url</a>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={ 3 }>
+              <img alt={ 'Screenshot' } src={ 'test' }/>
+            </Col>
+            <Col sm={ 6 }>
+              <h3>Title</h3>
+              <p>
+                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
+                Sed vulputate. Morbi massa nunc, convallis a, commodo
+                gravida, tincidunt sed, turpis. Aenean ornare viverra
+              </p>
+              <a href={ 'url' }>url</a>
+            </Col>
+          </Row>
         </div>
         <div>
           <h1 className='text-center'>Timeline</h1>
+          <Row>
+            <Col sm={ 2 } smOffset={ 3 }>
+              <p>9/2015 - 5/2017</p>
+            </Col>
+            <Col sm={ 1 }>
+              <span className='dot'/>
+            </Col>
+            <Col sm={ 3 }>
+              <h3>Name the achievement</h3>
+              <p>
+                Morbi ipsum ipsum, adipiscing eget, tincidun
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={ 2 } smOffset={ 3 }>
+              <p>9/2015 - 5/2017</p>
+            </Col>
+            <Col sm={ 1 }>
+              <span className='dot'/>
+            </Col>
+            <Col sm={ 3 }>
+              <h3>Name the achievement</h3>
+              <p>
+                Morbi ipsum ipsum, adipiscing eget, tincidun
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={ 2 } smOffset={ 3 }>
+              <p>9/2015 - 5/2017</p>
+            </Col>
+            <Col sm={ 1 }>
+              <span className='dot'/>
+            </Col>
+            <Col sm={ 3 }>
+              <h3>Name the achievement</h3>
+              <p>
+                Morbi ipsum ipsum, adipiscing eget, tincidun
+              </p>
+            </Col>
+          </Row>
         </div>
       </div>
       </ChildContainer>
