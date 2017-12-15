@@ -36,14 +36,37 @@
   }
 }
 
-.settings-container {
+.profile-container {
   .row {
     margin-bottom: 15px;
   }
-  .about-me, .avatar {
+  .avatar {
     height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .social-media-icons {
+    a {
+      &:first-child {
+        margin-left: 0;
+      }
+
+      margin-left: 32px;
+    }
+  }
+  h2, h3 {
+    &.name, &.username, &.points, &.location {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
   .portfolio-description {
     height: 62px;
+  }
+  > div {
+    &:nth-of-type(odd) {
+      background-color: #f5f5f5;
+    }
   }
 }
