@@ -40,8 +40,6 @@
         "assert(JSX.type === 'h1', 'message: The constant <code>JSX</code> should return an <code>h1</code> element.');",
         "assert(Enzyme.shallow(JSX).contains('Hello JSX!'), 'message: The <code>h1</code> tag should include the text <code>Hello JSX!</code>');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const JSX = <h1>Hello JSX!</h1>;"
       ],
@@ -87,8 +85,6 @@
         "assert(JSX.props.children[0].type === 'h1', 'message: The <code>div</code> should contain an <code>h1</code> tag as the first element.');",
         "assert(JSX.props.children[2].props.children.length === 3, 'message: The <code>ul</code> should contain three <code>li</code> elements.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const JSX = (\n<div>\n  <h1>Hello JSX!</h1>\n  <p>Some info</p>\n  <ul>\n    <li>An item</li>\n    <li>Another item</li>\n    <li>A third item</li>\n  </ul>\n</div>);"
       ],
@@ -128,8 +124,6 @@
         "assert(JSX.props.children[1].type === 'p', 'message: The <code>div</code> should contain a <code>p</code> tag as the second element.');",
         "assert(editor.getOriginalCode().includes('/*') && editor.getOriginalCode().includes('*/'), 'message: The <code>JSX</code> should include a comment.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const JSX = (\n<div>\n  <h1>This is a block of JSX</h1>\n  { /* this is a JSX comment */ }\n  <p>Here's a subtitle</p>\n</div>);"
       ],
@@ -176,8 +170,6 @@
         "assert(JSX.props.children[1].type === 'p', 'message: The <code>div</code> should contain a <code>p</code> tag as the second element.');",
         "assert(document.getElementById('challenge-node').childNodes[0].innerHTML === '<h1>Hello World</h1><p>Lets render this to the DOM</p>', 'message: The provided JSX element should render to the DOM node with id <code>challenge-node</code>.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const JSX = (\n<div>\n  <h1>Hello World</h1>\n  <p>Lets render this to the DOM</p>\n</div>\n);\n// change code below this line\nReactDOM.render(JSX, document.getElementById('challenge-node'));"
       ],
@@ -216,8 +208,6 @@
         "assert.strictEqual(JSX.type, 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
         "assert.strictEqual(JSX.props.className, 'myDiv', 'message: The <code>div</code> has a class of <code>myDiv</code>.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const JSX = (\n<div className = 'myDiv'>\n  <h1>Add a class to this div</h1>\n</div>);"
       ],
@@ -265,8 +255,6 @@
         "assert(Enzyme.shallow(JSX).find('hr').length === 1, 'message: The <code>div</code> should contain an <code>hr</code> tag.');",
         "assert((() => { const testDiv = document.getElementById('challenge-node').childNodes[0].innerHTML.replace(/\\s/g,''); return testDiv.includes('<h2>WelcometoReact!</h2>') && testDiv.includes('<p>Besuretoclosealltags!</p>'); })(), 'message: The provided JSX element should render as is to the DOM node with <code>id</code> of <code>challenge-node</code>.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const JSX = (\n<div>\n  {/* change code below this line */}\n  <h2>Welcome to React!</h2> <br />\n  <p>Be sure to close all tags!</p>\n  <hr />\n  {/* change code above this line */}\n</div>\n);\n\nReactDOM.render(JSX, document.getElementById('challenge-node'));"
       ],
@@ -310,8 +298,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === 'div' })(), 'message: <code>MyComponent</code> should return a <code>div</code> element.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').text() !== ''; })(), 'message: The <code>div</code> element should contain a string of text.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nconst MyComponent = function() {\n  // change code below this line\n  return (\n    <div>\n      Demo Solution\n    </div>\n  );\n  // change code above this line\n}"
       ],
@@ -359,8 +345,6 @@
         "assert(/<div><h1>.*<\\/h1><\\/div>/.test(Enzyme.shallow(React.createElement(MyComponent)).html()), 'message: The returned <code>div</code> should render an <code>h1</code> header within it.');",
         "assert(Enzyme.shallow(React.createElement(MyComponent)).html() === '<div><h1>Hello React!</h1></div>', 'message: The <code>h1</code> header should contain the string <code>Hello React!</code>.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    return (\n      <div>\n        <h1>Hello React!</h1>\n      </div>\n    );\n    // change code above this line\n  }\n};"
       ],
@@ -420,8 +404,6 @@
         "assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.children().length === 2; })(), 'message: The component should return two nested elements.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ParentComponent)); return mockedComponent.find('ParentComponent').find('ChildComponent').length === 1; })(), 'message: The component should return the ChildComponent as its second child.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const ChildComponent = () => {\n  return (\n    <div>\n      <p>I am the child</p>\n    </div>\n  );\n};\n\nclass ParentComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>I am the parent</h1>\n        { /* change code below this line */ }\n        <ChildComponent />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
@@ -495,8 +477,6 @@
         "assert(Enzyme.mount(React.createElement(TypesOfFood)).find('h2').html() === '<h2>Fruits:</h2>', 'message: The <code>Fruits</code> component should return the <code>TypesOfFruit</code> component.');",
         "assert(Enzyme.mount(React.createElement(TypesOfFood)).find('ul').text() === 'ApplesBlueberriesStrawberriesBananas', 'message: The <code>TypesOfFruit</code> component should return the <code>h2</code> and <code>ul</code> elements.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const TypesOfFruit = () => {\n  return (\n    <div>\n      <h2>Fruits:</h2>\n      <ul>\n        <li>Apples</li>\n        <li>Blueberries</li>\n        <li>Strawberries</li>\n        <li>Bananas</li>\n      </ul>\n    </div>\n  );\n};\n\nconst Fruits = () => {\n  return (\n    <div>\n      { /* change code below this line */ }\n        <TypesOfFruit />\n      { /* change code above this line */ }\n    </div>\n  );\n};\n\nclass TypesOfFood extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n\n  render() {\n    return (\n      <div>\n        <h1>Types of Food:</h1>\n        { /* change code below this line */ }\n        <Fruits />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
@@ -520,6 +500,52 @@
           "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
+          "head": [
+            "class NonCitrus extends React.Component {",
+              "  render() {",
+              "    return (",
+              "      <div>",
+              "        <h4>Non-Citrus:</h4>",
+              "        <ul>",
+              "          <li>Apples</li>",
+              "          <li>Blueberries</li>",
+              "          <li>Strawberries</li>",
+              "          <li>Bananas</li>",
+              "        </ul>",
+              "      </div>",
+              "    );",
+              "  }",
+              "};",
+              "class Citrus extends React.Component {",
+              "  render() {",
+              "    return (",
+              "      <div>",
+              "        <h4>Citrus:</h4>",
+              "        <ul>",
+              "          <li>Lemon</li>",
+              "          <li>Lime</li>",
+              "          <li>Orange</li>",
+              "          <li>Grapefruit</li>",
+              "        </ul>",
+              "      </div>",
+              "    );",
+              "  }",
+              "};",
+              "class Vegetables extends React.Component {",
+              "  render() {",
+              "    return (",
+              "      <div>",
+              "        <h2>Vegetables:</h2>",
+              "        <ul>",
+              "          <li>Brussel Sprouts</li>",
+              "          <li>Broccoli</li>",
+              "          <li>Squash</li>",
+              "        </ul>",
+              "      </div>",
+              "    );",
+              "     }",
+              "};"
+          ],
           "contents": [
             "class Fruits extends React.Component {",
             "  constructor(props) {",
@@ -562,53 +588,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return (mockedComponent.find('Fruits').children().find('NonCitrus') && mockedComponent.find('Fruits').children().find('Citrus')); })(), 'message: The <code>Fruits</code> component should return the <code>NonCitrus</code> component and the <code>Citrus</code> component.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(2).name() === 'Vegetables'; })(), 'message: The <code>TypesOfFood</code> component should return the <code>Vegetables</code> component below the <code>Fruits</code> component.');"
       ],
-      "head": [
-        "class NonCitrus extends React.Component {",
-          "  render() {",
-          "    return (",
-          "      <div>",
-          "        <h4>Non-Citrus:</h4>",
-          "        <ul>",
-          "          <li>Apples</li>",
-          "          <li>Blueberries</li>",
-          "          <li>Strawberries</li>",
-          "          <li>Bananas</li>",
-          "        </ul>",
-          "      </div>",
-          "    );",
-          "  }",
-          "};",
-          "class Citrus extends React.Component {",
-          "  render() {",
-          "    return (",
-          "      <div>",
-          "        <h4>Citrus:</h4>",
-          "        <ul>",
-          "          <li>Lemon</li>",
-          "          <li>Lime</li>",
-          "          <li>Orange</li>",
-          "          <li>Grapefruit</li>",
-          "        </ul>",
-          "      </div>",
-          "    );",
-          "  }",
-          "};",
-          "class Vegetables extends React.Component {",
-          "  render() {",
-          "    return (",
-          "      <div>",
-          "        <h2>Vegetables:</h2>",
-          "        <ul>",
-          "          <li>Brussel Sprouts</li>",
-          "          <li>Broccoli</li>",
-          "          <li>Squash</li>",
-          "        </ul>",
-          "      </div>",
-          "    );",
-          "     }",
-          "};"
-      ],
-      "tail": [],
       "solutions": [
         "class Fruits extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h2>Fruits:</h2>\n        { /* change code below this line */ }\n        <NonCitrus />\n        <Citrus />\n        { /* change code above this line */ }\n      </div>\n    )\n  }\n}\n\nclass TypesOfFood extends React.Component {\n  constructor(props) {\n     super(props);\n  }\n    render() {\n      return (\n        <div>\n        <h1>Types of Food:</h1>\n          { /* change code below this line */ }\n          <Fruits />\n          { /* change code above this line */ }\n          <Vegetables />\n        </div>\n      );\n    }\n};"
       ],
@@ -633,6 +612,43 @@
           "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
+          "head": [
+            "",
+            "const Fruits = () => {",
+              "  return (",
+                "    <div>",
+                "      <h2>Fruits:</h2>",
+                "      <h4>Non-Citrus:</h4>",
+                "        <ul>",
+                "          <li>Apples</li>",
+                "          <li>Blueberries</li>",
+                "          <li>Strawberries</li>",
+                "          <li>Bananas</li>",
+                "        </ul>",
+                "      <h4>Citrus:</h4>",
+                "        <ul>",
+                "          <li>Lemon</li>",
+                "          <li>Lime</li>",
+                "          <li>Orange</li>",
+                "          <li>Grapefruit</li>",
+                "        </ul>",
+                "    </div>",
+                "  );",
+                "};",
+                "const Vegetables = () => {",
+                  "  return (",
+                    "    <div>",
+                    "      <h2>Vegetables:</h2>",
+                    "      <ul>",
+                    "        <li>Brussel Sprouts</li>",
+                    "        <li>Broccoli</li>",
+                    "        <li>Squash</li>",
+                    "      </ul>",
+                    "    </div>",
+                    "  );",
+                    "};",
+                    ""
+          ],
           "contents": [
             "",
             "class TypesOfFood extends React.Component {",
@@ -662,44 +678,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(2).name() === 'Vegetables'; })(), 'message: The <code>TypesOfFood</code> component should render the <code>Vegetables</code> component after <code>Fruits</code>.');",
         "assert((function() { const html = document.getElementById('challenge-node').childNodes[0].innerHTML; return (html === '<h1>Types of Food:</h1><div><h2>Fruits:</h2><h4>Non-Citrus:</h4><ul><li>Apples</li><li>Blueberries</li><li>Strawberries</li><li>Bananas</li></ul><h4>Citrus:</h4><ul><li>Lemon</li><li>Lime</li><li>Orange</li><li>Grapefruit</li></ul></div><div><h2>Vegetables:</h2><ul><li>Brussel Sprouts</li><li>Broccoli</li><li>Squash</li></ul></div>'); })(), 'message: The <code>TypesOfFood</code> component should render to the DOM within the <code>div</code> with the id <code>challenge-node</code>.');"
       ],
-      "head": [
-        "",
-        "const Fruits = () => {",
-        "  return (",
-        "    <div>",
-        "      <h2>Fruits:</h2>",
-        "      <h4>Non-Citrus:</h4>",
-        "        <ul>",
-        "          <li>Apples</li>",
-        "          <li>Blueberries</li>",
-        "          <li>Strawberries</li>",
-        "          <li>Bananas</li>",
-        "        </ul>",
-        "      <h4>Citrus:</h4>",
-        "        <ul>",
-        "          <li>Lemon</li>",
-        "          <li>Lime</li>",
-        "          <li>Orange</li>",
-        "          <li>Grapefruit</li>",
-        "        </ul>",
-        "    </div>",
-        "  );",
-        "};",
-        "const Vegetables = () => {",
-        "  return (",
-        "    <div>",
-        "      <h2>Vegetables:</h2>",
-        "      <ul>",
-        "        <li>Brussel Sprouts</li>",
-        "        <li>Broccoli</li>",
-        "        <li>Squash</li>",
-        "      </ul>",
-        "    </div>",
-        "  );",
-        "};",
-        ""
-      ],
-      "tail": [],
       "solutions": [
         "\nclass TypesOfFood extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>Types of Food:</h1>\n        {/* change code below this line */}\n          <Fruits />\n           <Vegetables />\n         {/* change code above this line */}\n      </div>\n    );\n  }\n};\n\n// change code below this line\nReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));"
       ],
@@ -734,8 +712,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })(), 'message: <code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.');",
         "assert(document.getElementById('challenge-node').childNodes.length === 1, 'message: <code>MyComponent</code> should render to the DOM.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "// change code below this line\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>My First React Component!</h1>\n      </div>\n    );\n  }\n};\n\nReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));"
       ],
@@ -799,8 +775,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); const prop = mockedComponent.children().childAt(1).props().date; return( typeof prop === 'string' && prop.length > 0 ); })(), 'message: The <code>date</code> prop of the <code>CurrentDate</code> should contain a string of text.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.find('p').html().includes(Date().substr(3)); })(), 'message: The <code>CurrentDate</code> component should render the value from the <code>date</code> prop in the <code>p</code> tag.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nconst CurrentDate = (props) => {\n  return (\n    <div>\n      { /* change code below this line */ }\n      <p>The current date is: {props.date}</p>\n      { /* change code above this line */ }\n    </div>\n  );\n};\n\nclass Calendar extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>What date is it?</h3>\n        { /* change code below this line */ }\n        <CurrentDate date={Date()} />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
@@ -866,8 +840,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(1).props.tasks.length >= 3; })(), 'message: The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('p').get(0).props.children === mockedComponent.find('List').get(0).props.tasks.join(', ') && mockedComponent.find('p').get(1).props.children === mockedComponent.find('List').get(1).props.tasks.join(', '); })(), 'message: The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const List= (props) => {\n  return <p>{props.tasks.join(', ')}</p>\n};\n\nclass ToDo extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>To Do Lists</h1>\n        <h2>Today</h2>\n        <List tasks={['study', 'exercise']} />\n        <h2>Tomorrow</h2>\n        <List tasks={['call Sam', 'grocery shopping', 'order tickets']} />\n      </div>\n    );\n  }\n};"
       ],
@@ -907,8 +879,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })(), 'message: The <code>ShoppingCart</code> component should render.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); mockedComponent.setProps({items: undefined}); return mockedComponent.find('ShoppingCart').props().items === 0; })(), 'message: The <code>ShoppingCart</code> component should have a default prop of <code>{ items: 0 }</code>.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const ShoppingCart = (props) => {\n  return (\n    <div>\n      <h1>Shopping Cart Component</h1>\n    </div>\n  )\n};\n\n// change code below this line\nShoppingCart.defaultProps = {\n  items: 0\n}"
       ],
@@ -959,8 +929,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })(), 'message: The component <code>Items</code> should render.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').props().quantity == 10 && editor.getOriginalCode().replace(/ /g,'').includes('<Itemsquantity={10}/>'); })(), 'message: The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "const Items = (props) => {\n  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>\n}\n\nItems.defaultProps = {\n  quantity: 0\n}\n\nclass ShoppingCart extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    { /* change code below this line */ }\n    return <Items quantity = {10} />\n    { /* change code above this line */ }\n  }\n};"
       ],
@@ -988,6 +956,12 @@
           "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
+          "head": [
+            "var PropTypes = {",
+            "  number: { isRequired: true }",
+            "};",
+            ""
+          ],
           "contents": [
             "const Items = (props) => {",
             "  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>",
@@ -1017,13 +991,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })(), 'message: The <code>Items</code> component should render.');",
         "assert((function() { const noWhiteSpace = editor.getOriginalCode().replace(/ /g, ''); return noWhiteSpace.includes('quantity:PropTypes.number.isRequired') && noWhiteSpace.includes('Items.propTypes='); })(), 'message: The <code>Items</code> component should include a <code>propTypes</code> check that requires <code>quantity</code> to be a <code>number</code>.');"
       ],
-      "head": [
-        "var PropTypes = {",
-        "  number: { isRequired: true }",
-        "};",
-        ""
-      ],
-      "tail": [],
       "solutions": [
         "const Items = (props) => {\n  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>\n};\n\n// change code below this line\nItems.propTypes = {\n  quantity: PropTypes.number.isRequired\n};\n// change code above this line\n\nItems.defaultProps = {\n  quantity: 0\n};\n\nclass ShoppingCart extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <Items />\n  }\n};"
       ],
@@ -1092,8 +1059,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find('ReturnTempPassword').props().tempPassword; return typeof temp === 'string' && temp.length >= 8; })(), 'message: The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least <code>8</code> characters.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('strong').text() && mockedComponent.find('ReturnTempPassword').props().tempPassword; })(), 'message: The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class ReturnTempPassword extends React.Component {\n  constructor(props) {\n    super(props);\n\n  }\n  render() {\n    return (\n        <div>\n            <p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>\n        </div>\n    );\n  }\n};\n\nclass ResetPassword extends React.Component {\n  constructor(props) {\n    super(props);\n\n  }\n  render() {\n    return (\n        <div>\n          <h2>Reset Password</h2>\n          <h3>We've generated a new temporary password for you.</h3>\n          <h3>Please reset this password from your account settings ASAP.</h3>\n          { /* change code below this line */ }\n          <ReturnTempPassword tempPassword=\"serrPbqrPnzc\" />\n          { /* change code above this line */ }\n        </div>\n    );\n  }\n};"
       ],
@@ -1118,6 +1083,11 @@
           "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
+          "head": [
+            "var PropTypes = {",
+              "   string: { isRequired: true }",
+              "};"
+          ],
           "contents": [
             "class CampSite extends React.Component {",
             "  constructor(props) {",
@@ -1143,12 +1113,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); const noWhiteSpace = editor.getOriginalCode().replace(/ /g, '').replace(/\\r?\\n|\\r/g, ''); const verifyDefaultProps = 'Camper.propTypes={name:PropTypes.string.isRequired'; return noWhiteSpace.includes(verifyDefaultProps); })(), 'message: The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('p').text() === mockedComponent.find('Camper').props().name; })(), 'message: The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.');"
       ],
-      "head": [
-        "var PropTypes = {",
-        "   string: { isRequired: true }",
-        "};"
-      ],
-      "tail": [],
       "solutions": [
         "class CampSite extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <Camper/>\n      </div>\n    );\n  }\n};\n// change code below this line\n\nconst Camper = (props) => {\n   return (\n     <div>\n       <p>{props.name}</p>\n     </div>\n   );\n};\n\nCamper.propTypes = {\n  name: PropTypes.string.isRequired\n};\n\nCamper.defaultProps = {\n  name: 'CamperBot'\n};\n"
       ],
@@ -1199,8 +1163,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && typeof initialState.name === 'string'); })(), 'message: The state of <code>StatefulComponent</code> should be initalized with a property <code>name</code> set to a string.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find('h1').text() === initialState.name; })(), 'message: The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nclass StatefulComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp!'\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.name}</h1>\n      </div>\n    );\n  }\n};"
       ],
@@ -1253,8 +1215,6 @@
         "assert(/<div><h1>.*<\\/h1><\\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), 'message: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); return firstValue === '<div><h1>TestName</h1></div>'; })(); // message: The rendered <code>h1</code> header should contain text rendered from the component's state."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp'\n    }\n  }\n  render() {\n    return (\n      <div>\n        { /* change code below this line */ }\n        <h1>{this.state.name}</h1>\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
@@ -1308,8 +1268,6 @@
         "assert(/<h1>\\n*\\s*\\{\\s*name\\s*\\}\\s*\\n*<\\/h1>/.test(editor.getOriginalCode()), 'message: The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); return firstValue === '<div><h1>TestName</h1></div>'; })(); // message: The rendered <code>h1</code> header should contain text rendered from the component's state."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp'\n    }\n  }\n  render() {\n    // change code below this line\n    const name = this.state.name;\n    // change code above this line\n    return (\n      <div>\n        { /* change code below this line */ }\n        <h1>{name}</h1>\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
@@ -1367,8 +1325,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' }); return waitForIt(() => mockedComponent.html()); }; const firstValue = await first(); return /<h1>TestName<\\/h1>/.test(firstValue); })(); // message: The rendered <code>h1</code> header should contain text rendered from the component's state.",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'Before' }); return waitForIt(() => mockedComponent.state('name')); }; const second = () => { mockedComponent.setState({ name: 'React Rocks!' }); return waitForIt(() => mockedComponent.state('name')); }; const firstValue = await first(); const secondValue = await second(); return firstValue === 'Before' && secondValue === 'React Rocks!'; })(); // message: Calling the <code>handleClick</code> method on <code>MyComponent</code> should set the name property in state to equal <code>React Rocks!</code>."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'Initial State'\n    };\n    this.handleClick = this.handleClick.bind(this);\n  }\n  handleClick() {\n     // change code below this line\n    this.setState({\n      name: 'React Rocks!'\n    });\n    // change code above this line\n  }\n  render() {\n    return (\n      <div>\n        <button onClick = {this.handleClick}>Click Me</button>\n        <h1>{this.state.name}</h1>\n      </div>\n    );\n  }\n};"
       ],
@@ -1430,8 +1386,6 @@
         "assert(Enzyme.mount(React.createElement(MyComponent)).state('itemCount') === 0, 'message: The state of <code>MyComponent</code> should initialize with the key value pair <code>{ itemCount: 0 }</code>.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ itemCount: 0 }); return waitForIt(() => mockedComponent.state('itemCount')); }; const second = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent.state('itemCount')); }; const firstValue = await first(); const secondValue = await second(); return firstValue === 0 && secondValue === 1; })(); // message: Clicking the <code>button</code> element should run the <code>addItem</code> method and increment the state <code>itemCount</code> by <code>1</code>."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      itemCount: 0\n    };\n    this.addItem = this.addItem.bind(this);\n  }\n  addItem() {\n    this.setState({\n      itemCount: this.state.itemCount + 1\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick = {this.addItem}>Click Me</button>\n        <h1>Current Item Count: {this.state.itemCount}</h1>\n      </div>\n    );\n  }\n};"
       ],
@@ -1496,8 +1450,6 @@
         "assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).state('visibility'), false, 'message: The state of <code>MyComponent</code> should initialize with a <code>visibility</code> property set to <code>false</code>.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ visibility: false }); return waitForIt(() => mockedComponent.state('visibility')); }; const second = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent.state('visibility')); }; const third = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent.state('visibility')); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); return !firstValue && secondValue && !thirdValue; })(); // message: Clicking the button element should toggle the <code>visibility</code> property in state between <code>true</code> and <code>false</code>."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      visibility: false\n    };\n    this.toggleVisibility = this.toggleVisibility.bind(this);\n   }\n  toggleVisibility() {\n    this.setState({\n      visibility: !this.state.visibility\n    });\n  }\n  render() {\n    if (this.state.visibility) {\n      return (\n        <div>\n          <button onClick = {this.toggleVisibility}>Click Me</button>\n          <h1>Now you see me!</h1>\n        </div>\n      );\n    } else {\n      return (\n        <div>\n          <button onClick = {this.toggleVisibility}>Click Me</button>\n        </div>\n      );\n    }\n  }\n};"
       ],
@@ -1553,8 +1505,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Counter)); const first = () => { mockedComponent.setState({ count: 0 }); return waitForIt(() => mockedComponent.state('count')); }; const second = () => { mockedComponent.find('.dec').simulate('click'); return waitForIt(() => mockedComponent.state('count')); }; const firstValue = await first(); const secondValue = await second(); return firstValue === 0 && secondValue === -1; })(); // message: Clicking the decrement button should decrement the count by <code>1</code>.",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Counter)); const init = () => { mockedComponent.setState({ count: 0 }); return waitForIt(() => mockedComponent.state('count')); }; const increment = () => { mockedComponent.find('.inc').simulate('click'); mockedComponent.find('.inc').simulate('click'); return waitForIt(() => mockedComponent.state('count')); }; const decrement = () => { mockedComponent.find('.dec').simulate('click'); return waitForIt(() => mockedComponent.state('count')); }; const reset = () => { mockedComponent.find('.reset').simulate('click'); return waitForIt(() => mockedComponent.state('count')); }; const firstValue = await init(); const secondValue = await increment(); const thirdValue = await decrement(); const fourthValue = await reset(); return firstValue === 0 && secondValue === 2 && thirdValue === 1 && fourthValue === 0; })(); // message: Clicking the reset button should reset the count to <code>0</code>."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class Counter extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      count: 0\n    };\n  this.increment = this.increment.bind(this);\n this.decrement = this.decrement.bind(this);\n this.reset = this.reset.bind(this);\n }\n  reset() {\n    this.setState({\n      count: 0\n    });\n  }\n  increment() {\n    this.setState({\n      count: this.state.count + 1\n    });\n  }\n  decrement() {\n    this.setState({\n      count: this.state.count - 1\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button className='inc' onClick={this.increment}>Increment!</button>\n        <button className='dec' onClick={this.decrement}>Decrement!</button>\n        <button className='reset' onClick={this.reset}>Reset</button>\n        <h1>Current Count: {this.state.count}</h1>\n      </div>\n    );\n  }\n};"
       ],
@@ -1611,8 +1561,6 @@
         "assert.strictEqual(Enzyme.mount(React.createElement(ControlledInput)).state('input'), '', 'message: The state of <code>ControlledInput</code> should initialize with an <code>input</code> property set to an empty string.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(ControlledInput)); const _1 = () => { mockedComponent.setState({ input: '' }); return waitForIt(() => mockedComponent.state('input'))}; const _2 = () => { mockedComponent.find('input').simulate('change', { target: { value: 'TestInput' }}); return waitForIt(() => ({ state: mockedComponent.state('input'), text: mockedComponent.find('p').text(), inputVal: mockedComponent.find('input').props().value }))}; const before = await _1(); const after = await _2(); return before === '' && after.state === 'TestInput' && after.text === 'TestInput' && after.inputVal === 'TestInput'; })(); // message: Typing in the input element should update the state and the value of the input, and the <code>p</code> element should render this state as you type."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class ControlledInput extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  render() {\n    return (\n      <div>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange} />\n        <h4>Controlled Input:</h4>\n\n        <p>{this.state.input}</p>\n      </div>\n    );\n  }\n};"
       ],
@@ -1685,8 +1633,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '' }); mockedComponent.setState({submit: ''}); mockedComponent.find('input').simulate('change', {target: {value: 'SubmitInput'}}); return waitForIt(() => mockedComponent.state('submit'))}; const _2 = () => { mockedComponent.find('form').simulate('submit'); return waitForIt(() => mockedComponent.state('submit'))}; const before = await _1(); const after = await _2(); return before === '' && after === 'SubmitInput' })(); // message: Submitting the form should run <code>handleSubmit</code> which should set the <code>submit</code> property in state equal to the current input.",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '' }); mockedComponent.setState({submit: ''}); mockedComponent.find('input').simulate('change', {target: {value: 'TestInput'}}); return waitForIt(() => mockedComponent.find('h1').text())}; const _2 = () => { mockedComponent.find('form').simulate('submit'); return waitForIt(() => mockedComponent.find('h1').text())}; const before = await _1(); const after = await _2(); return before === '' && after === 'TestInput' })(); // message: The <code>h1</code> header should render the value of the <code>submit</code> field from the component's state."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyForm extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      submit: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n    this.handleSubmit = this.handleSubmit.bind(this);\n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  handleSubmit(event) {\n    event.preventDefault()\n    this.setState({\n      submit: this.state.input\n    });\n  }\n  render() {\n    return (\n      <div>\n        <form onSubmit={this.handleSubmit}>\n          <input\n            value={this.state.input}\n            onChange={this.handleChange} />\n          <button type='submit'>Submit!</button>\n        </form>\n        <h1>{this.state.submit}</h1>\n      </div>\n    );\n  }\n};"
       ],
@@ -1748,8 +1694,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const setState = () => { mockedComponent.setState({name: 'TestName'}); return waitForIt(() => mockedComponent.find('Navbar').props() )}; const navProps = await setState(); return navProps.name === 'TestName'; })(); // message: The <code>Navbar</code> component should receive the <code>MyApp</code> state property <code>name</code> as props.",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const navH1Before = mockedComponent.find('Navbar').find('h1').text(); const setState = () => { mockedComponent.setState({name: 'TestName'}); return waitForIt(() => mockedComponent.find('Navbar').find('h1').text() )}; const navH1After = await setState(); return new RegExp('TestName').test(navH1After) && navH1After !== navH1Before; })(); // message: The <code>h1</code> element in <code>Navbar</code> should render the <code>name</code> prop."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyApp extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'CamperBot'\n    }\n  }\n  render() {\n    return (\n       <div>\n         <Navbar name={this.state.name}/>\n       </div>\n    );\n  }\n};\nclass Navbar extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n    <div>\n      <h1>Hello, my name is: {this.props.name}</h1>\n    </div>\n    );\n  }\n};"
       ],
@@ -1837,8 +1781,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''}); return waitForIt(() => mockedComponent.state() )}; const state_2 = () => { mockedComponent.find('input').simulate('change', {target: {value: 'TestInput'}}); return waitForIt(() => mockedComponent.state() )}; const updated_1 = await state_1(); const updated_2 = await state_2(); return(updated_1.inputValue === '' && updated_2.inputValue === 'TestInput'); })(); // message: The <code>GetInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props and contain an <code>input</code> element which modifies <code>MyApp</code> state.",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: 'TestName'}); return waitForIt(() => mockedComponent )}; const updated_1 = await state_1(); return(updated_1.find('p').text().includes('TestName')); })(); // message: The <code>RenderInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyApp extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      inputValue: ''\n    }\n  this.handleChange = this.handleChange.bind(this);  \n  }\n  handleChange(event) {\n    this.setState({\n      inputValue: event.target.value\n    });\n  }\n  render() {\n    return (\n       <div>\n         <GetInput\n           input={this.state.inputValue}\n           handleChange={this.handleChange}/>\n         <RenderInput\n           input={this.state.inputValue}/>\n       </div>\n    );\n  }\n};\n\nclass GetInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Get Input:</h3>\n        <input\n          value={this.props.input}\n          onChange={this.props.handleChange}/>\n      </div>\n    );\n  }\n};\n\nclass RenderInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Input Render:</h3>\n        <p>{this.props.input}</p>\n      </div>\n    );\n  }\n};"
       ],
@@ -1890,8 +1832,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').length === 1; })(), 'message: <code>MyComponent</code> should render a <code>div</code> element.');",
         "assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''); return lifecycle.includes('console.log('); })(), 'message: <code>console.log</code> should be called in <code>componentWillMount</code>.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  componentWillMount() {\n    // change code below this line\n    console.log('Component is mounting...');\n    // change code above this line\n  }\n  render() {\n    return <div />\n  }\n};"
       ],
@@ -1946,8 +1886,6 @@
         "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return new RegExp('setTimeout(.|\\n)+setState(.|\\n)+activeUsers').test(String(mockedComponent.instance().componentDidMount)); })(), 'message: Component state should be updated with a timeout function in <code>componentDidMount</code>.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ activeUsers: 1237 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const second = () => { mockedComponent.setState({ activeUsers: 1000 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const firstValue = await first(); const secondValue = await second(); return new RegExp('1237').test(firstValue) && new RegExp('1000').test(secondValue); })(); // message: The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>'s state."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      activeUsers: null\n    };\n  }\n  componentDidMount() {\n    setTimeout( () => {\n      this.setState({\n        activeUsers: 1273\n      });\n    }, 2500);\n  }\n  render() {\n    return (\n      <div>\n        <h1>Active Users: {this.state.activeUsers}</h1>\n      </div>\n    );\n  }\n};"
       ],
@@ -2017,8 +1955,6 @@
         "assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp('document\\.removeEventListener(.|\\n|\\r)+keydown(.|\\n|\\r)+this\\.handleKeyPress').test(willUnmountString); })(), 'message: The keydown listener should be removed from the document in <code>componentWillUnmount</code>.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state('message'); const beforeText = mockedComponent.find('h1').text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state('message'), text: mockedComponent.find('h1').text()}; });}; const afterKeyPress = await pressEnterKey(); return beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text; })(); // message: Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: ''\n    };\n    this.handleKeyPress = this.handleKeyPress.bind(this);\n    this.handleEnter = this.handleEnter.bind(this);  }\n  componentDidMount() {\n    // change code below this line\n    document.addEventListener('keydown', this.handleKeyPress);\n    // change code above this line\n  }\n  componentWillUnmount() {\n    // change code below this line\n    document.removeEventListener('keydown', this.handleKeyPress);\n    // change code above this line\n  }\n  handleEnter() {\n    this.setState({\n      message: this.state.message + 'You pressed the enter key! '\n    });\n  }\n  handleKeyPress(event) {\n    if (event.keyCode === 13) {\n      this.handleEnter();\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.message}</h1>\n      </div>\n    );\n  }\n};"
       ],
@@ -2091,8 +2027,6 @@
         "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); const nextPropsAsParameterTest = \/componentWillReceiveProps(| *?= *?)(\\(|)nextProps(\\)|)( *?=> *?{| *?{|{)\/; const nextPropsInConsoleLogTest = \/console\\.log\\(.*?nextProps\\b.*?\\)\/; return ( lifecycleChild.includes('console.log') && nextPropsInConsoleLogTest.test(lifecycleChild) && nextPropsAsParameterTest.test(lifecycleChild) ); })(), 'message: The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>nextProps</code> to the console.');",
         "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentDidUpdate.toString().replace(/ /g,''); return lifecycleChild.length !== 'undefined' && lifecycleChild.includes('console.log'); })(), 'message: The <code>Dialog</code> component should call the <code>componentDidUpdate</code> method and log a message to the console.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class Dialog extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  componentWillUpdate() {\n    console.log('Component is about to update...');\n  }\n  // change code below this line\n  componentWillReceiveProps(nextProps) {\n    console.log(this.props, nextProps);\n  }\n  componentDidUpdate() {\n    console.log('Component re-rendered');\n  }\n  // change code above this line\n  render() {\n    return <h1>{this.props.message}</h1>\n  }\n};\n\nclass Controller extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: 'First Message'\n    };\n this.changeMessage = this.changeMessage.bind(this); \n  }\n  changeMessage() {\n    this.setState({\n      message: 'Second Message'\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick={this.changeMessage}>Update</button>\n        <Dialog message={this.state.message}/>\n      </div>\n    );\n  }\n};"
       ],
@@ -2169,8 +2103,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 1000 }); return waitForIt(() => mockedComponent.find('h1').html()); }; const second = () => { mockedComponent.setState({ value: 10 }); return waitForIt(() => mockedComponent.find('h1').html()); }; const firstValue = await first(); const secondValue = await second(); return (firstValue === '<h1>1000</h1>' && secondValue === '<h1>10</h1>'); })(); // message: The <code>OnlyEvens</code> component should return an <code>h1</code> tag which renders the value of <code>this.props.value</code>.",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 8 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const second = () => { mockedComponent.setState({ value: 7 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const third = () => { mockedComponent.setState({ value: 42 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); return ( firstValue === '8' && secondValue === '8' && thirdValue === '42' ); })(); // message: <code>OnlyEvens</code> should re-render only when <code>nextProps.value</code> is even."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class OnlyEvens extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  shouldComponentUpdate(nextProps, nextState) {\n    console.log('Should I update?');\n    // change code below this line\n    return nextProps.value % 2 === 0;\n    // change code above this line\n  }\n  componentWillReceiveProps(nextProps) {\n    console.log('Receiving new props...');\n  }\n  componentDidUpdate() {\n    console.log('Component re-rendered.');\n  }\n  render() {\n    return <h1>{this.props.value}</h1>\n  }\n};\n\nclass Controller extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      value: 0\n    };\n  this.addValue = this.addValue.bind(this);\n  }\n  addValue() {\n    this.setState({\n      value: this.state.value + 1\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick={this.addValue}>Add</button>\n        <OnlyEvens value={this.state.value}/>\n      </div>\n    );\n  }\n};"
       ],
@@ -2217,8 +2149,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })(), 'message: The <code>div</code> element should have a color of <code>red</code>.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })(), 'message: The <code>div</code> element should have a font size of <code>72px</code>.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nclass Colorful extends React.Component {\n  render() {\n    return (\n      <div style={{color: \"red\", fontSize: 72}}>Big Red</div>\n    );\n  }\n};\n"
       ],
@@ -2267,8 +2197,6 @@
         "assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === 'div'; })(), 'message: The component should render a <code>div</code> element.');",
         "assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === \"purple\" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === \"2px solid purple\"); })(), 'message: The <code>div</code> element should have its styles defined by the <code>styles</code> object.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nconst styles = {\n  color: \"purple\",\n  fontSize: 40,\n  border: \"2px solid purple\"\n};\n// change code above this line\nclass Colorful extends React.Component {\n  render() {\n    // change code below this line\n    return (\n      <div style={styles}>Style Me!</div>\n  // change code above this line\n    );\n  }\n};\n"
       ],
@@ -2365,6 +2293,9 @@
             "    );",
             "  }",
             "};"
+          ],
+          "tail": [
+            "var possibleAnswers = [ 'It is certain', 'It is decidedly so', 'Without a doubt', 'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good','Very doubtful', 'Most likely' ];"
           ]
         }
       },
@@ -2375,10 +2306,6 @@
         "assert(Enzyme.mount(React.createElement(MagicEightBall)).state('randomIndex') === '' && Enzyme.mount(React.createElement(MagicEightBall)).state('userInput') === '', \"message: <code>MagicEightBall</code>'s state should be initialized with a property of <code>userInput</code> and a property of <code>randomIndex</code> both set to a value of an empty string.\");",
         "assert(Enzyme.mount(React.createElement(MagicEightBall)).find('p').length === 1 && Enzyme.mount(React.createElement(MagicEightBall)).find('p').text() === '', 'message: When <code>MagicEightBall</code> is first mounted to the DOM, it should return an empty <code>p</code> element.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MagicEightBall)); const simulate = () => { comp.find('input').simulate('change', { target: { value: 'test?' }}); comp.find('button').simulate('click'); }; const result = () => comp.find('p').text(); const _1 = () => { simulate(); return waitForIt(() => result()) }; const _2 = () => { simulate(); return waitForIt(() => result()) }; const _3 = () => { simulate(); return waitForIt(() => result()) }; const _4 = () => { simulate(); return waitForIt(() => result()) }; const _5 = () => { simulate(); return waitForIt(() => result()) }; const _6 = () => { simulate(); return waitForIt(() => result()) }; const _7 = () => { simulate(); return waitForIt(() => result()) }; const _8 = () => { simulate(); return waitForIt(() => result()) }; const _9 = () => { simulate(); return waitForIt(() => result()) }; const _10 = () => { simulate(); return waitForIt(() => result()) }; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const actualAnswers = [_1_val, _2_val, _3_val, _4_val, _5_val, _6_val, _7_val, _8_val, _9_val, _10_val]; const hasIndex = actualAnswers.filter((answer, i) => possibleAnswers.indexOf(answer) !== -1); const notAllEqual = new Set(actualAnswers); return notAllEqual.size > 1 && hasIndex.length === 10; })(); // message: When text is entered into the <code>input</code> element and the button is clicked, the <code>MagicEightBall</code> compponent should return a <code>p</code> element that contains a random element from the <code>possibleAnswers</code> array."
-      ],
-      "head": [],
-      "tail": [
-        "var possibleAnswers = [ 'It is certain', 'It is decidedly so', 'Without a doubt', 'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good','Very doubtful', 'Most likely' ];"
       ],
       "solutions": [
         "\nconst inputStyle = {\n  width: 235,\n  margin: 5\n}\n\nclass MagicEightBall extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      userInput: '',\n      randomIndex: ''\n    }\n    this.ask = this.ask.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  ask() {\n    if (this.state.userInput) {\n      this.setState({\n        randomIndex: Math.floor(Math.random() * 20),\n        userInput: ''\n      });\n    }\n  }\n  handleChange(event) {\n    this.setState({\n      userInput: event.target.value\n    });\n  }\n  render() {\n    const possibleAnswers = [\n      \"It is certain\", \"It is decidedly so\", \"Without a doubt\",\n      \"Yes, definitely\", \"You may rely on it\", \"As I see it, yes\",\n      \"Outlook good\", \"Yes\", \"Signs point to yes\", \"Reply hazy try again\",\n      \"Ask again later\", \"Better not tell you now\", \"Cannot predict now\",\n      \"Concentrate and ask again\", \"Don't count on it\", \"My reply is no\",\n      \"My sources say no\", \"Outlook not so good\",\"Very doubtful\", \"Most likely\"\n    ];\n    const answer = possibleAnswers[this.state.randomIndex];\n    return (\n      <div>\n        <input\n          type=\"text\"\n          value={this.state.userInput}\n          onChange={this.handleChange}\n          style={inputStyle} /><br />\n        <button onClick={this.ask}>Ask the Magic Eight Ball!</button><br />\n        <h3>Answer:</h3>\n        <p>\n          {answer}\n        </p>\n      </div>\n    );\n  }\n};"
@@ -2437,8 +2364,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return( mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 0 ); })(); // message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.",
         "assert(editor.getOriginalCode().includes('if') === true && editor.getOriginalCode().includes('else') === true, 'message: The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n this.toggleDisplay = this.toggleDisplay.bind(this); \n }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    if (this.state.display) {\n      return (\n         <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n           <h1>Displayed!</h1>\n         </div>\n      );\n    } else {\n      return (\n        <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n         </div>\n      );\n    }\n  }\n};"
       ],
@@ -2496,8 +2421,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); return (updated.find('div').length === 1 && updated.find('div').children().length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 0); })(); // message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.",
         "assert(editor.getOriginalCode().includes('&&'), 'message: The render method should use the && logical operator to check the condition of this.state.display.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n this.toggleDisplay = this.toggleDisplay.bind(this); \n  }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    return (\n       <div>\n         <button onClick={this.toggleDisplay}>Toggle Display</button>\n         {this.state.display && <h1>Displayed!</h1>}\n       </div>\n    );\n  }\n};"
       ],
@@ -2580,8 +2503,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const enter18AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: 18 }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const changeInputDontClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: 5 }}); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const enter10AndClickButton = () => { mockedComponent.find('input').simulate('change', {target: { value: 10 }}); mockedComponent.find('button').simulate('click'); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find('button').text(); }); }; const userAge18 = await enter18AndClickButton(); const changeInput1 = await changeInputDontClickButton(); const userAge10 = await enter10AndClickButton(); const changeInput2 = await changeInputDontClickButton(); return userAge18 === 'You May Enter' && changeInput1 === 'Submit' && userAge10 === 'You Shall Not Pass' && changeInput2 === 'Submit'; })(); // message: Once a number has been submitted, and the value of the <code>input</code> is once again changed, the <code>button</code> should return to reading <code>Submit</code>.",
         "assert(new RegExp(/(\\s|;)if(\\s|\\()/).test(Enzyme.mount(React.createElement(CheckUserAge)).instance().render.toString()) === false, 'message: Your code should not contain any <code>if/else</code> statements.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nconst inputStyle = {\n  width: 235,\n  margin: 5\n}\n\nclass CheckUserAge extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      userAge: '',\n      input: ''\n    }\n    this.submit = this.submit.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(e) {\n    this.setState({\n      input: e.target.value,\n      userAge: ''\n    });\n  }\n  submit() {\n    this.setState({\n      userAge: this.state.input\n    });\n  }\n  render() {\n    const buttonOne = <button onClick={this.submit}>Submit</button>;\n    const buttonTwo = <button>You May Enter</button>;\n    const buttonThree = <button>You Shall Not Pass</button>;\n    return (\n      <div>\n        <h3>Enter Your Age to Continue</h3>\n        <input\n          style={inputStyle}\n          type=\"number\"\n          value={this.state.input}\n          onChange={this.handleChange} /><br />\n          {\n            this.state.userAge === '' ?\n            buttonOne :\n            this.state.userAge >= 18 ?\n            buttonTwo :\n            buttonThree\n          }\n      </div>\n    );\n  }\n};"
       ],
@@ -2661,8 +2582,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(GameOfChance)); const simulate = () => { comp.find('button').simulate('click'); };const result = () => ({ count: comp.state('counter'), text: comp.find('p').text() });const _1 = () => { simulate(); return waitForIt(() => result())}; const _2 = () => { simulate(); return waitForIt(() => result())}; const _3 = () => { simulate(); return waitForIt(() => result())}; const _4 = () => { simulate(); return waitForIt(() => result())}; const _5 = () => { simulate(); return waitForIt(() => result())}; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); return (_1_val.count === 2 && _1_val.text === 'Turn: 2' && _2_val.count === 3 && _2_val.text === 'Turn: 3' && _3_val.count === 4 && _3_val.text === 'Turn: 4' && _4_val.count === 5 && _4_val.text === 'Turn: 5' && _5_val.count === 6 && _5_val.text === 'Turn: 6'); })(); // message: Each time the buton is clicked, the counter state should be incremented by a value of 1, and a single <code>p</code> element should be rendered to the DOM that contains the text 'Turn: N', where N is the value of the counter state.",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(GameOfChance)); const simulate = () => { comp.find('button').simulate('click'); };const result = () => ({ h1: comp.find('h1').length, text: comp.find('h1').text() });const _1 = result(); const _2 = () => { simulate(); return waitForIt(() => result())}; const _3 = () => { simulate(); return waitForIt(() => result())}; const _4 = () => { simulate(); return waitForIt(() => result())}; const _5 = () => { simulate(); return waitForIt(() => result())}; const _6 = () => { simulate(); return waitForIt(() => result())}; const _7 = () => { simulate(); return waitForIt(() => result())}; const _8 = () => { simulate(); return waitForIt(() => result())}; const _9 = () => { simulate(); return waitForIt(() => result())}; const _10 = () => { simulate(); return waitForIt(() => result())}; const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const __text = new Set([_1.text, _2_val.text, _3_val.text, _4_val.text, _5_val.text, _6_val.text, _7_val.text, _8_val.text, _9_val.text, _10_val.text]); const __h1 = new Set([_1.h1, _2_val.h1, _3_val.h1, _4_val.h1, _5_val.h1, _6_val.h1, _7_val.h1, _8_val.h1, _9_val.h1, _10_val.h1]); return __text.size === 2 && __h1.size === 1; })(); // message: When the <code>GameOfChance</code> component is first mounted to the DOM and each time the button is clicked thereafter, a single <code>h1</code> element should be returned that randomly renders either <code>You Win!</code> or <code>You Lose!</code>."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "class Results extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <h1>\n      {\n        this.props.fiftyFifty ?\n        'You Win!' :\n        'You Lose!'\n      }\n      </h1>\n    )\n  };\n};\n\nclass GameOfChance extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      counter: 1\n    }\n    this.handleClick = this.handleClick.bind(this);\n  }\n  handleClick() {\n    this.setState({\n      counter: this.state.counter + 1\n    });\n  }\n  render() {\n    const expression = Math.random() > .5;\n    return (\n      <div>\n        <button onClick={this.handleClick}>Play Again</button>\n        <Results fiftyFifty={expression} />\n        <p>{'Turn: ' + this.state.counter}</p>\n      </div>\n    );\n  }\n};"
       ],
@@ -2728,8 +2647,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('input').props().style.border === '1px solid black'; })(), 'message: The <code>input</code> tag should initially have a style of <code>1px solid black</code> for the <code>border</code> property.');",
         "(async () => {  const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); const simulateChange = (el, value) => el.simulate('change', {target: {value}}); let initialStyle = mockedComponent.find('input').props().style.border; const state_1 = () => { mockedComponent.setState({input: 'this is 15 char' }); return waitForIt(() => mockedComponent.find('input').props().style.border )}; const state_2 = () => { mockedComponent.setState({input: 'A very long string longer than 15 characters.' }); return waitForIt(() => mockedComponent.find('input').props().style.border )}; const style_1 = await state_1(); const style_2 = await state_2(); return ( initialStyle === '1px solid black' && style_1 === '1px solid black' && style_2 === '3px solid red' ); })(); // message: The <code>input</code> tag should be styled with a border of <code>3px solid red</code> if the input value in state is longer than 15 characters"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nclass GateKeeper extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(event) {\n    this.setState({ input: event.target.value })\n  }\n  render() {\n    let inputStyle = {\n      border: '1px solid black'\n    };\n    if (this.state.input.length > 15) {\n      inputStyle.border = '3px solid red';\n    };\n    return (\n      <div>\n        <h3>Don't Type Too Much:</h3>\n        <input\n          type=\"text\"\n          style={inputStyle}\n          value={this.state.input}\n          onChange={this.handleChange} />\n      </div>\n    );\n  }\n};"
       ],
@@ -2810,8 +2727,6 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return typeof initialState.userInput === 'string' && initialState.userInput.length === 0; })(), 'message: The state of <code>MyToDoList</code> should be initialized with <code>userInput</code> as an empty string.');",
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const simulateChange = (el, value) => el.simulate('change', {target: {value}}); const state_1 = () => { return waitForIt(() => mockedComponent.find('ul').find('li'))}; const setInput = () => { return waitForIt(() => simulateChange(mockedComponent.find('textarea'), \"testA, testB, testC\"))}; const click = () => { return waitForIt(() => mockedComponent.find('button').simulate('click'))}; const state_2 = () => { return waitForIt(() => { const nodes = mockedComponent.find('ul').find('li'); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') }; })}; const setInput_2 = () => { return waitForIt(() => simulateChange(mockedComponent.find('textarea'), \"t1, t2, t3, t4, t5, t6\"))}; const click_1 = () => { return waitForIt(() => mockedComponent.find('button').simulate('click'))}; const state_3 = () => { return waitForIt(() => { const nodes = mockedComponent.find('ul').find('li'); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') }; })}; const awaited_state_1 = await state_1(); const awaited_setInput = await setInput(); const awaited_click = await click(); const awaited_state_2 = await state_2(); const awaited_setInput_2 = await setInput_2(); const awaited_click_1 = await click_1(); const awaited_state_3 = await state_3(); return( awaited_state_1.length === 0 && awaited_state_2.nodes.length === 3 && awaited_state_3.nodes.length === 6 && awaited_state_2.text === 'testA testB testC' && awaited_state_3.text === 't1 t2 t3 t4 t5 t6' ); })(); // message: When the <code>Create List</code> button is clicked, the <code>MyToDoList</code> component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the <code>textarea</code> element."
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nconst textAreaStyles = {\n  width: 235,\n  margin: 5\n};\n\nclass MyToDoList extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      toDoList: [],\n      userInput: ''\n    }\n    this.handleSubmit = this.handleSubmit.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleSubmit() {\n    const itemsArray = this.state.userInput.split(',');\n    this.setState({\n      toDoList: itemsArray\n    });\n  }\n  handleChange(e) {\n    this.setState({\n      userInput: e.target.value\n    });\n  }\n  render() {\n    const items = this.state.toDoList.map( (item, i) => {\n      return <li key={i}>{item}</li>\n    });\n    return (\n      <div>\n        <textarea\n          onChange={this.handleChange}\n          value={this.state.userInput}\n          style={textAreaStyles}\n          placeholder=\"Separate Items With Commas\" /><br />\n        <button onClick={this.handleSubmit}>Create List</button>\n        <h1>My \"To Do\" List:</h1>\n        <ul>\n          {items}\n        </ul>\n      </div>\n    );\n  }\n};"
       ],
@@ -2867,8 +2782,6 @@
         "assert(Enzyme.mount(React.createElement(Frameworks)).find('ul').children().length === 6 && Enzyme.mount(React.createElement(Frameworks)).find('ul').childAt(0).name() === 'li' && Enzyme.mount(React.createElement(Frameworks)).find('li').length === 6, 'message: The <code>ul</code> tag should render 6 child <code>li</code> elements.');",
         "assert((() => { const ul = Enzyme.mount(React.createElement(Frameworks)).find('ul'); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key(), ul.childAt(4).key(), ul.childAt(5).key(), ]); return keys.size === 6; })(), 'message: Each list item element should have a unique <code>key</code> attribute.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nconst frontEndFrameworks = [\n  'React',\n  'Angular',\n  'Ember',\n  'Knockout',\n  'Backbone',\n  'Vue'\n];\n\nfunction Frameworks() {\n  const renderFrameworks = frontEndFrameworks.map((fw, i) => {\n    return <li key={i}>{fw}</li>\n  })\n  return (\n    <div>\n      <h1>Popular Front End JavaScript Frameworks</h1>\n      <ul>\n        {renderFrameworks}\n      </ul>\n    </div>\n  );\n};"
       ],
@@ -2948,8 +2861,6 @@
         "(async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: 'Jeff', online: bool }, { username: 'Alan', online: bool }, { username: 'Mary', online: bool }, { username: 'Jim', online: bool   }, { username: 'Laura', online: bool } ]}); const ul = () => { comp.setState(users(true)); return waitForIt(() => comp.find('ul').html()) }; const html = await ul(); return html === '<ul><li>Jeff</li><li>Alan</li><li>Mary</li><li>Jim</li><li>Laura</li></ul>' })(); // message: <code>MyComponent</code> should render <code>li</code> elements that contain the username of each online user.",
         "assert((() => { const ul = Enzyme.mount(React.createElement(MyComponent)).find('ul'); console.log(ul.debug()); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key() ]); return keys.size === 4; })(), 'message: Each list item element should have a unique <code>key</code> attribute.');"
       ],
-      "head": [],
-      "tail": [],
       "solutions": [
         "\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      users: [\n        {\n          username: 'Jeff',\n          online: true\n        },\n        {\n          username: 'Alan',\n          online: false\n        },\n        {\n          username: 'Mary',\n          online: true\n        },\n        {\n          username: 'Jim',\n          online: false\n        },\n        {\n          username: 'Sara',\n          online: true\n        },\n        {\n          username: 'Laura',\n          online: true\n        }\n      ]\n    }\n  }\n  render() {\n    const usersOnline = this.state.users.filter(user => {\n      return user.online;\n    });\n    const renderOnlineUsers = usersOnline.map(user => {\n      return (\n        <li key={user.username}>{user.username}</li>\n      );\n    });\n    return (\n       <div>\n         <h1>Current Online Users:</h1>\n         <ul>\n          {renderOnlineUsers}\n        </ul>\n       </div>\n    );\n  }\n};"
       ],
@@ -2973,6 +2884,9 @@
           "key": "indexjsx",
           "ext": "jsx",
           "name": "index",
+          "head": [
+            "var ReactDOMServer = { renderToString(x) { return null; } };"
+          ],
           "contents": [
             "",
             "class App extends React.Component {",
@@ -2992,10 +2906,6 @@
       "tests": [
         "assert(editor.getOriginalCode().replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div', 'message: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.');"
       ],
-      "head": [
-        "var ReactDOMServer = { renderToString(x) { return null; } };"
-      ],
-      "tail": [],
       "solutions": [
         "\nclass App extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <div/>\n  }\n};\n\n// change code below this line\nReactDOMServer.renderToString(<App/>);"
       ],
