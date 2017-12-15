@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavItem } from 'react-bootstrap';
-import FA from 'react-fontawesome';
 
 import { Link } from '../Router';
 import { onRouteSettings } from '../routes/Settings/redux';
@@ -31,10 +30,7 @@ export default function SignUpButton({ showLoading, showSignUp }) {
       key='user'
       >
       <Link to={ onRouteSettings() }>
-        <FA
-          name='user-circle'
-          size='lg'
-        />
+        My Profile
       </Link>
     </li>
   );
