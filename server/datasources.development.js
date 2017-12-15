@@ -1,26 +1,29 @@
 const debug = require('debug')('fcc:server:datasources');
-const dsLocal = require('./datasources.local');
+const dsLocal = require('./datasources.production.js');
 
-// use [MailHog](https://github.com/mailhog/MailHog)
-let mail = {
-  connector: 'mail',
-  Transport: {
-    type: 'smtp',
-    host: 'localhost',
-    secure: false,
-    port: 1025,
-    tls: {
-      rejectUnauthorized: false
-    }
-  },
-  auth: {
-    user: 'test',
-    pass: 'test'
-  }
+const ds = {
+  ...dsLocal
 };
-// use AWS SES if defined
-if (process.env.SES_ID) {
+// use [MailHog](https://github.com/mailhog/MailHog) if no SES keys are found
+if (!process.env.SES_ID) {
+  ds.mail = {
+    connector: 'mail',
+    transport: {
+      type: 'smtp',
+      host: 'localhost',
+      secure: false,
+      port: 1025,
+      tls: {
+        rejectUnauthorized: false
+      }
+    },
+    auth: {
+      user: 'test',
+      pass: 'test'
+    }
+  };
+  debug(`using MailHog server on port ${ds.mail.transport.port}`);
+} else {
   debug('using AWS SES to deliver emails');
-  mail = dsLocal.mail;
 }
-module.exports = { mail };
+module.exports = ds;
