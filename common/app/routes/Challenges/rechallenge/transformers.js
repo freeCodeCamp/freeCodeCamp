@@ -56,7 +56,7 @@ export const addLoopProtectHtmlJsJsx = _.cond([
       testHTMLJS,
       _.partial(
         vinyl.testContents,
-        contents => contents.toLowerCase().contians('<script>')
+        contents => contents.toLowerCase().includes('<script>')
       )
     ),
     addLoopProtect
