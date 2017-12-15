@@ -18,13 +18,13 @@ export const toggleUserFlag = createAction(types.toggleUserFlag);
 
 const defaultState = {};
 
-const getNS = state => state[ns];
+// const getNS = state => state[ns];
 
 export default addNS(
   ns,
   function profileRouteReducer(state = defaultState, action) {
     if (isLocationAction(action)) {
-      const { type } = action;
+      // const { type } = action;
     }
     return state;
   }

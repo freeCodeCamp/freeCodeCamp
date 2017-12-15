@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import {
     Row,
@@ -455,14 +454,14 @@ export default function ProjectSettings({}) {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-        >
+            >
         Claim
         </Button>
         <h3>Information Security and Quality Assurance Certificate</h3>
         <Row>
         <Col xs={ 8 }>
             <ControlLabel htmlFor='metricImperialConverter'>
-                Metric-Imperial Converter
+              Metric-Imperial Converter
             </ControlLabel>
         </Col>
         <Col xs={ 4 }>
@@ -544,7 +543,7 @@ export default function ProjectSettings({}) {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-        >
+            >
         Claim
         </Button>
     </div>

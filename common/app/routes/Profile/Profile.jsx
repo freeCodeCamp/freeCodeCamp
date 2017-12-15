@@ -7,14 +7,11 @@ import FontAwesome from 'react-fontawesome';
 import {
   Button,
   Row,
-  Col,
-  FormControl,
-  ControlLabel
+  Col
 } from 'react-bootstrap';
 
 import SettingsSkeleton from './Settings-Skeleton.jsx';
 
-import { toggleUserFlag } from './redux';
 import {
   updateTitle,
 
@@ -40,7 +37,7 @@ const mapStateToProps = createSelector(
       isLocked,
       isGithubCool,
       isTwitter,
-      isLinkedIn,
+      isLinkedIn
     }
   ) => ({
     email,
@@ -78,6 +75,7 @@ const propTypes = {
   location: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.string,
+  points: PropTypes.integer,
   showLoading: PropTypes.bool,
   updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
@@ -120,7 +118,7 @@ export class Profile extends React.Component {
         <div className='container profile-container'>
           <div>
             <Row>
-              <Col md={ 4 }>
+              <Col md={ 4 } mdPush={ 1 }>
                 <Button
                   block={ true }
                   bsSize='lg'
@@ -130,7 +128,7 @@ export class Profile extends React.Component {
                   Update my settings
                 </Button>
               </Col>
-              <Col md={ 4 } mdPush={ 2 }>
+              <Col md={ 4 } mdPush={ 3 }>
                 <Button
                   block={ true }
                   bsSize='lg'
@@ -143,12 +141,19 @@ export class Profile extends React.Component {
             </Row>
             <Row>
               <Col sm={ 4 } smOffset={ 4 }>
-                <img alt={ username + '\' profile picture' } src={ picture }/>
+                <img
+                  alt={ username + '\' profile picture' }
+                  className='avatar'
+                  src={ picture }
+                />
               </Col>
             </Row>
-          { /* Social media links */ }
           <Row>
-            <Col className='text-center' sm={ 2 } smOffset={ 5 }>
+            <Col
+              className='text-center social-media-icons'
+              sm={ 6 }
+              smOffset={ 3 }
+              >
               <a href={ 'mailto:' }>
                 <FontAwesome
                   name='envelope-o'
@@ -181,17 +186,19 @@ export class Profile extends React.Component {
               </a>
             </Col>
           </Row>
-          <h2 className='text-center'>{ name }</h2>
-          <h2 className='text-center'>@{ username }</h2>
-          <h2 className='text-center'>{ points } points</h2>
-          <h2 className='text-center'>{ location }</h2>
+          <br/>
+          <h2 className='text-center name'>{ name }</h2>
+          <h2 className='text-center username'>@{ username }</h2>
+          <br/>
+          <h2 className='text-center points'>{ points } points</h2>
+          <br/>
+          <h3 className='text-center location'>{ location }</h3>
+          <br/>
           <p>
             { bio }
           </p>
         </div>
-        <div>
-          { /* Heatmap */ }
-        </div>
+        <div className='heatmap-container'/>
         <div>
           <h1 className='text-center'>FreeCodeCamp Certificates</h1>
           <Row>
@@ -382,7 +389,7 @@ export class Profile extends React.Component {
             </Col>
           </Row>
         </div>
-        <div>
+        <div className='timetable-container'>
           <h1 className='text-center'>Timeline</h1>
           <Row>
             <Col sm={ 2 } smOffset={ 3 }>

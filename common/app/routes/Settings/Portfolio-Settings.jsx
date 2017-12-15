@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Row, Col, FormControl } from 'react-bootstrap';
 

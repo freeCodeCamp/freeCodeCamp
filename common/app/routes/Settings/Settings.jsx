@@ -175,7 +175,6 @@ export class Settings extends React.Component {
       // isGithubCool,
       // isLinkedIn,
       // isTwitter,
-      linkedin,
       location,
       name,
       picture,
@@ -190,7 +189,6 @@ export class Settings extends React.Component {
       toggleNightMode,
       toggleNotificationEmail,
       toggleQuincyEmail,
-      twitter,
       username,
       website
     } = this.props;
@@ -262,9 +260,7 @@ export class Settings extends React.Component {
             Then, once you have added all 5 projects required for a certificate,
             you can claim it.
           </p>
-          
-          <ProjectSettings></ProjectSettings>
-
+          <ProjectSettings/>
           <br />
 
           <hr />
@@ -274,9 +270,7 @@ export class Settings extends React.Component {
             Share your non-FreeCodeCamp projects, articles or accepted
             pull requests:
           </p>
-          
-          <PortfolioSettings></PortfolioSettings>
-
+          <PortfolioSettings/>
           <hr />
 
           <h2>Timeline</h2>
