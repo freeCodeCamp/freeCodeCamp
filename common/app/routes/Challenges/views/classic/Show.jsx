@@ -29,7 +29,7 @@ export const mapStateToPanes = addNS(
 
 const nameToComponent = {
   Map: _Map,
-  'Lesson': SidePanel,
+  Lesson: SidePanel,
   Editor: Editor,
   Preview: Preview
 };

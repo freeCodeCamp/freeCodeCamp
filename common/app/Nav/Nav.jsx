@@ -217,8 +217,8 @@ export class FCCNav extends React.Component {
                 /> :
                 null
             }
-            { !shouldShowMapButton &&            
-                <li 
+            { !shouldShowMapButton &&
+                <li
                   className='divider-vertical'
                 />
             }
