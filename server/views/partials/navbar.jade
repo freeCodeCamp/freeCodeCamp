@@ -8,6 +8,8 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at freeCodeCamp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
+            li
+              a(href='/map') Map
             li.dropdown
                 a.dropdown-toggle(data-toggle='dropdown' role='button' href='#' aria-haspopup='true') Community
                 ul.dropdown-menu
@@ -24,17 +26,10 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
                     li
                         a(href='/about') About
             li
-                a(href='/map') Map
-            li
                 a(href='https://www.freecodecamp.org/donate', target='_blank') Donate
             if !user
                 li
                     a(href='/signin') Sign Up
             else
-                li.nav-avatar
-                  a(href='/settings')
-                    span
-                      span.nav-username.hidden-md.hidden-lg #{user.username}
-                      span.nav-points [&thinsp;#{user.points}&thinsp;]
-                    span.hidden-xs.hidden-sm(style='height:0')
-                      img.nav-picture.float-right(src='#{user.picture}')
+                li
+                  a(href='/settings') My Profile
