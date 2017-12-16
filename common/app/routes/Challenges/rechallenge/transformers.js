@@ -9,6 +9,7 @@ import * as vinyl from '../../../../utils/polyvinyl.js';
 import castToObservable from '../../../utils/cast-to-observable.js';
 
 const babelOptions = { presets: [ presetEs2015, presetReact ] };
+const babelTransformCode = code => babel.transform(code, babelOptions).code;
 function loopProtectHit(line) {
   var err = 'Exiting potential infinite loop at line ' +
     line +
@@ -81,8 +82,8 @@ export const babelTransformer = _.cond([
     testJS$JSX,
     _.flow(
       _.partial(
-        vinyl.transformContents,
-        contents => babel.transform(contents, babelOptions).code
+        vinyl.transformHeadTailAndContents,
+        babelTransformCode
       ),
       _.partial(vinyl.setExt, 'js')
     )
