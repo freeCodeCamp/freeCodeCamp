@@ -103,8 +103,6 @@ const writeTestDepsToDocument = frameReady => ctx => {
   tests.__source = sources['index'] || '';
   // provide the file name and get the original source
   tests.__getUserInput = fileName => _.toString(sources[fileName]);
-  tests.__originalCode = sources['originalCode'] || '';
-  tests.__getUserInput = key => sources[key];
   tests.__checkChallengePayload = checkChallengePayload;
   tests.__frameReady = frameReady;
   return ctx;

@@ -1,4 +1,5 @@
 {
+
   "name": "React",
   "order": 5,
   "time": "5 hours",
@@ -122,7 +123,7 @@
         "assert(JSX.type === 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
         "assert(JSX.props.children[0].type === 'h1', 'message: The <code>div</code> should contain an <code>h1</code> tag as the first element.');",
         "assert(JSX.props.children[1].type === 'p', 'message: The <code>div</code> should contain a <code>p</code> tag as the second element.');",
-        "assert(editor.getOriginalCode().includes('/*') && editor.getOriginalCode().includes('*/'), 'message: The <code>JSX</code> should include a comment.');"
+        "getUserInput => assert(getUserInput('index').includes('/*') && getUserInput('index').includes('*/'), 'message: The <code>JSX</code> should include a comment.');"
       ],
       "solutions": [
         "const JSX = (\n<div>\n  <h1>This is a block of JSX</h1>\n  { /* this is a JSX comment */ }\n  <p>Here's a subtitle</p>\n</div>);"
@@ -708,7 +709,7 @@
         }
       },
       "tests": [
-        "assert(editor.getOriginalCode().replace(/ /g, '').includes('classMyComponentextendsReact.Component{'), 'message: There should be a React component called <code>MyComponent</code>.');",
+        "getUserInput => assert(getUserInput('index').replace(/ /g, '').includes('classMyComponentextendsReact.Component{'), 'message: There should be a React component called <code>MyComponent</code>.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })(), 'message: <code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.');",
         "assert(document.getElementById('challenge-node').childNodes.length === 1, 'message: <code>MyComponent</code> should render to the DOM.');"
       ],
@@ -927,7 +928,7 @@
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })(), 'message: The component <code>ShoppingCart</code> should render.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })(), 'message: The component <code>Items</code> should render.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').props().quantity == 10 && editor.getOriginalCode().replace(/ /g,'').includes('<Itemsquantity={10}/>'); })(), 'message: The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component.');"
+        "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').props().quantity == 10 && getUserInput('index').replace(/ /g,'').includes('<Itemsquantity={10}/>'); })(), 'message: The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component.');"
       ],
       "solutions": [
         "const Items = (props) => {\n  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>\n}\n\nItems.defaultProps = {\n  quantity: 0\n}\n\nclass ShoppingCart extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    { /* change code below this line */ }\n    return <Items quantity = {10} />\n    { /* change code above this line */ }\n  }\n};"
@@ -989,7 +990,7 @@
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })(), 'message: The <code>ShoppingCart</code> component should render.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })(), 'message: The <code>Items</code> component should render.');",
-        "assert((function() { const noWhiteSpace = editor.getOriginalCode().replace(/ /g, ''); return noWhiteSpace.includes('quantity:PropTypes.number.isRequired') && noWhiteSpace.includes('Items.propTypes='); })(), 'message: The <code>Items</code> component should include a <code>propTypes</code> check that requires <code>quantity</code> to be a <code>number</code>.');"
+        "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/ /g, ''); return noWhiteSpace.includes('quantity:PropTypes.number.isRequired') && noWhiteSpace.includes('Items.propTypes='); })(), 'message: The <code>Items</code> component should include a <code>propTypes</code> check that requires <code>quantity</code> to be a <code>number</code>.');"
       ],
       "solutions": [
         "const Items = (props) => {\n  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>\n};\n\n// change code below this line\nItems.propTypes = {\n  quantity: PropTypes.number.isRequired\n};\n// change code above this line\n\nItems.defaultProps = {\n  quantity: 0\n};\n\nclass ShoppingCart extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <Items />\n  }\n};"
@@ -1109,8 +1110,8 @@
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('CampSite').length === 1; })(), 'message: The <code>CampSite</code> component should render.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('Camper').length === 1; })(), 'message: The <code>Camper</code> component should render.');",
-        "assert((function() { const noWhiteSpace = editor.getOriginalCode().replace(/ /g, '').replace(/\\r?\\n|\\r/g, ''); const verify1 = 'Camper.defaultProps={name:\\'CamperBot\\'}'; const verify2 = 'Camper.defaultProps={name:\"CamperBot\"}'; return (noWhiteSpace.includes(verify1) || noWhiteSpace.includes(verify2)); })(), 'message: The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); const noWhiteSpace = editor.getOriginalCode().replace(/ /g, '').replace(/\\r?\\n|\\r/g, ''); const verifyDefaultProps = 'Camper.propTypes={name:PropTypes.string.isRequired'; return noWhiteSpace.includes(verifyDefaultProps); })(), 'message: The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.');",
+        "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/ /g, '').replace(/\\r?\\n|\\r/g, ''); const verify1 = 'Camper.defaultProps={name:\\'CamperBot\\'}'; const verify2 = 'Camper.defaultProps={name:\"CamperBot\"}'; return (noWhiteSpace.includes(verify1) || noWhiteSpace.includes(verify2)); })(), 'message: The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.');",
+        "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); const noWhiteSpace = getUserInput('index').replace(/ /g, '').replace(/\\r?\\n|\\r/g, ''); const verifyDefaultProps = 'Camper.propTypes={name:PropTypes.string.isRequired'; return noWhiteSpace.includes(verifyDefaultProps); })(), 'message: The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('p').text() === mockedComponent.find('Camper').props().name; })(), 'message: The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.');"
       ],
       "solutions": [
@@ -1265,7 +1266,7 @@
       "tests": [
         "assert(Enzyme.mount(React.createElement(MyComponent)).state('name') === 'freeCodeCamp', 'message: <code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.');",
         "assert(/<div><h1>.*<\\/h1><\\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), 'message: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.');",
-        "assert(/<h1>\\n*\\s*\\{\\s*name\\s*\\}\\s*\\n*<\\/h1>/.test(editor.getOriginalCode()), 'message: The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.');",
+        "getUserInput => assert(/<h1>\\n*\\s*\\{\\s*name\\s*\\}\\s*\\n*<\\/h1>/.test(getUserInput('index')), 'message: The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.');",
         "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === '<div><h1>TestName</h1></div>', 'message: The rendered <code>h1</code> header should contain text rendered from the component's state.'); };"
       ],
       "solutions": [
@@ -2362,7 +2363,7 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length === 1; })(), 'message: <code>MyComponent</code> should exist and render.');",
         "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 2 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 1, 'message: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.'); }; ",
         "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find('div').length === 1 && mockedComponent.find('div').children().length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('h1').length === 0, 'message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.'); }; ",
-        "assert(editor.getOriginalCode().includes('if') === true && editor.getOriginalCode().includes('else') === true, 'message: The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.');"
+        "getUserInput => assert(getUserInput('index').includes('if') === true && getUserInput('index').includes('else') === true, 'message: The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.');"
       ],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n this.toggleDisplay = this.toggleDisplay.bind(this); \n }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    if (this.state.display) {\n      return (\n         <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n           <h1>Displayed!</h1>\n         </div>\n      );\n    } else {\n      return (\n        <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n         </div>\n      );\n    }\n  }\n};"
@@ -2419,7 +2420,7 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length; })(), 'message: <code>MyComponent</code> should exist and render.');",
         "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find('div').length === 1 && updated.find('div').children().length === 2 && updated.find('button').length === 1 && updated.find('h1').length === 1, 'message: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.'); }; ",
         "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find('div').length === 1 && updated.find('div').children().length === 1 && updated.find('button').length === 1 && updated.find('h1').length === 0, 'message: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.'); }; ",
-        "assert(editor.getOriginalCode().includes('&&'), 'message: The render method should use the && logical operator to check the condition of this.state.display.');"
+        "getUserInput=> assert(getUserInput('index').includes('&&'), 'message: The render method should use the && logical operator to check the condition of this.state.display.');"
       ],
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n this.toggleDisplay = this.toggleDisplay.bind(this); \n  }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    return (\n       <div>\n         <button onClick={this.toggleDisplay}>Toggle Display</button>\n         {this.state.display && <h1>Displayed!</h1>}\n       </div>\n    );\n  }\n};"
@@ -2904,7 +2905,7 @@
         }
       },
       "tests": [
-        "assert(editor.getOriginalCode().replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div', 'message: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.');"
+        "getUserInput => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div', 'message: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.');"
       ],
       "solutions": [
         "\nclass App extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <div/>\n  }\n};\n\n// change code below this line\nReactDOMServer.renderToString(<App/>);"
