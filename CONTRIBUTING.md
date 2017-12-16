@@ -108,32 +108,32 @@ Do this prior to every time you create a branch for a PR:
 
 1. Make sure you are on the `staging` branch
 
-   ```shell
-   $ git status
-   On branch staging
-   Your branch is up-to-date with 'origin/staging'.
-   ```  
-   If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
+```shell
+$ git status
+On branch staging
+Your branch is up-to-date with 'origin/staging'.
+```
+If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
 
-   ```shell
-   $ git checkout staging
-   ```
+```shell
+$ git checkout staging
+```
 
 2. Do a pull with rebase against `upstream`
 
-   ```shell
-   $ git pull --rebase upstream staging
-   ```
+```shell
+$ git pull --rebase upstream staging
+```
 
-   This will pull down all of the changes to the official staging branch, without making an additional commit in your local repo.
+This will pull down all of the changes to the official staging branch, without making an additional commit in your local repo.
 
 3. (_Optional_) Force push your updated staging branch to your GitHub fork
 
-   ```shell
-   $ git push origin staging --force
-   ```
+```shell
+$ git push origin staging --force
+```
 
-   This will overwrite the staging branch of your fork.
+This will overwrite the staging branch of your fork.
 
 ### Create A Branch
 
@@ -173,8 +173,6 @@ Once you have freeCodeCamp cloned, before you start the application, you first n
 # Install NPM dependencies
 npm install
 
-# Install Gulp globally
-npm install -g gulp
 ```
 
 Then you need to add the private environment variables (API Keys):
@@ -196,7 +194,7 @@ Next you should setup MailHog, a local SMTP mail server that will catch all the 
 brew services start mailhog
 ```
 
-To access your MailHog inbox, open your browser and navigate to [http://localhost:8025](http://localhost:8025). For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.   
+To access your MailHog inbox, open your browser and navigate to [http://localhost:8025](http://localhost:8025). For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.
 
 Now you will need to start MongoDB, and then seed the database, then you can start the application:
 
@@ -215,26 +213,26 @@ mongod
 npm run only-once
 
 # start the application
-gulp
+npm run develop
 ```
 
 Now navigate to your browser and open
 <http://localhost:3000>. If the app loads,
 congratulations – you're all set. Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There also might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
 
- ```bash
- # Remove all installed node modules
- rm -rf node_modules
+```bash
+# Remove all installed node modules
+rm -rf node_modules
 
- # Reinstall npm packages
- npm install
+# Reinstall npm packages
+npm install
 
- # Seed the database (optional)
- node seed
+# Seed the database (optional)
+node seed
 
- # Re-start the application
- gulp
- ```
+# Re-start the application
+npm run develop
+```
 
 ### Make Changes
 This bit is up to you!
