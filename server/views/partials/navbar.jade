@@ -31,10 +31,5 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
                 li
                     a(href='/signin') Sign Up
             else
-                li.nav-avatar
-                  a(href='/settings')
-                    span
-                      span.nav-username.hidden-md.hidden-lg #{user.username}
-                      span.nav-points [&thinsp;#{user.points}&thinsp;]
-                    span.hidden-xs.hidden-sm(style='height:0')
-                      img.nav-picture.float-right(src='#{user.picture}')
+                li
+                  a(href='/settings') My Profile
