@@ -217,7 +217,11 @@ export class FCCNav extends React.Component {
                 /> :
                 null
             }
-            <li className='divider-vertical'/>
+            { !shouldShowMapButton &&            
+                <li 
+                  className='divider-vertical'
+                />
+            }
             {
               navLinks.map(
                 this.renderLink.bind(this, true)

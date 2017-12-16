@@ -16,7 +16,7 @@ export const mapStateToPanes = addNS(
   state => {
     const panesMap = {
       [types.toggleMap]: 'Map',
-      [types.toggleSidePanel]: 'Side Panel',
+      [types.toggleSidePanel]: 'Lesson',
       [types.toggleClassicEditor]: 'Editor'
     };
 
@@ -29,7 +29,7 @@ export const mapStateToPanes = addNS(
 
 const nameToComponent = {
   Map: _Map,
-  'Side Panel': SidePanel,
+  'Lesson': SidePanel,
   Editor: Editor,
   Preview: Preview
 };
