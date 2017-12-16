@@ -10,7 +10,7 @@ import {
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
 
-import bugEpic from './bug-epic';
+import modalEpic from './modal-epic';
 import completionEpic from './completion-epic.js';
 import challengeEpic from './challenge-epic.js';
 import executeChallengeEpic from './execute-challenge-epic.js';
@@ -44,7 +44,7 @@ const challengeToFilesMetaCreator =
   _.flow(challengeToFiles, createFilesMetaCreator);
 
 export const epics = [
-  bugEpic,
+  modalEpic,
   challengeEpic,
   codeStorageEpic,
   completionEpic,
@@ -82,6 +82,12 @@ export const types = createTypes([
   'closeBugModal',
   'openIssueSearch',
   'createIssue',
+
+  // help
+  'openHelpModal',
+  'closeHelpModal',
+  'createQuestion',
+  'openHelpChatRoom',
 
   // panes
   'toggleClassicEditor',
@@ -157,6 +163,12 @@ export const closeBugModal = createAction(types.closeBugModal);
 export const openIssueSearch = createAction(types.openIssueSearch);
 export const createIssue = createAction(types.createIssue);
 
+// help
+export const openHelpModal = createAction(types.openHelpModal);
+export const closeHelpModal = createAction(types.closeHelpModal);
+export const createQuestion = createAction(types.createQuestion);
+export const openHelpChatRoom = createAction(types.openHelpChatRoom);
+
 // code storage
 export const storedCodeFound = createAction(
   types.storedCodeFound,
@@ -174,6 +186,7 @@ const initialUiState = {
   output: null,
   isChallengeModalOpen: false,
   isBugOpen: false,
+  isHelpOpen: false,
   successMessage: 'Happy Coding!'
 };
 
@@ -206,6 +219,7 @@ export const challengeModalSelector =
   state => getNS(state).isChallengeModalOpen;
 
 export const bugModalSelector = state => getNS(state).isBugOpen;
+export const helpModalSelector = state => getNS(state).isHelpOpen;
 
 export const challengeRequiredSelector = state =>
   challengeSelector(state).required || [];
@@ -318,9 +332,10 @@ export default combineReducers(
         ...state,
         output: (state.output || '') + output
       }),
-
       [types.openBugModal]: state => ({ ...state, isBugOpen: true }),
-      [types.closeBugModal]: state => ({ ...state, isBugOpen: false })
+      [types.closeBugModal]: state => ({ ...state, isBugOpen: false }),
+      [types.openHelpModal]: state => ({ ...state, isHelpOpen: true }),
+      [types.closeHelpModal]: state => ({ ...state, isHelpOpen: false })
     }),
     initialState,
     ns
