@@ -124,10 +124,10 @@
         "console.log(calculateCircumference(radius));"
       ],
       "tests": [
-        "assert(!/var/g.test(code),'message: Var does not exist in code.');",
-        "assert(code.match(/(const pi)/g), 'message: PI is const.');",
-        "assert(code.match(/(const calculateCircumference)/g), 'message: calculateCircumference is const.');",
-        "assert(code.match(/(let radius)/g), 'message: radius is let.');"
+        "assert(!/var/g.test(code),'message: <code>var</code> does not exist in code.');",
+        "assert(code.match(/(const pi)/g), 'message: <code>PI</code> is <code>const</code>.');",
+        "assert(code.match(/(const calculateCircumference)/g), 'message: <code>calculateCircumference</code> is <code>const</code>.');",
+        "assert(code.match(/(let radius)/g), 'message: <code>radius</code> is <code>let</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -160,7 +160,7 @@
       "tests": [
         "assert(code.match(/const/g), 'message: Do not replace <code>const</code> keyword.');",
         "assert(code.match(/const\\s+s/g), 'message: <code>s</code> is declared with <code>const</code>.');",
-        "assert(code.match(/const\\s+s\\s*?=\\s*?\\[\\s*?2\\s*?,\\s*?5\\s*?,\\s*?7\\s*?\\]\\s*?;/g), 'message: Do not change the original array declaration.');",
+        "assert(code.match(/const\\s+s\\s*?=\\s*?\\[\\s*?5\\s*?,\\s*?7\\s*?,\\s*?2\\s*?\\]\\s*?;/g), 'message: Do not change the original array declaration.');",
         "assert.deepEqual(s, [2, 5, 7], 'message: <code>s</code> should be equal to <code>[2, 5, 7]</code>.');"
       ],
       "type": "waypoint",
@@ -191,9 +191,9 @@
         "console.log(MATH_CONSTANTS.PI);// should show 3.14"
       ],
       "tests": [
-        "// Do not replace <code>const</code> keyword.",
-        "// <code>MATH_CONSTANTS</code> is declared with <code>const</code>.",
-        "// Do not change original <code>MATH_CONSTANTS</code>",
+        "assert(code.match(/const/g), 'message: Do not replace <code>const</code> keyword.');",
+        "assert(code.match(/const\\s+MATH_CONSTANTS/g), 'message: <code>MATH_CONSTANTS</code> is declared with <code>const</code>.');",
+        "assert(code.match(/const\\s+MATH_CONSTANTS\\s+=\\s+{\\s+PI:\\s+3.14\\s+};/g), 'message: Do not change original <code>MATH_CONSTANTS</code>.');",
         "assert.deepEqual(MATH_CONSTANTS, {PI: 3.14}, 'message: <code>MATH_CONSTANTS.PI</code> should be equal to <code>3.14</code>.');"
       ],
       "type": "waypoint",
@@ -216,7 +216,7 @@
         "<hr>",
         "Rewrite the function assigned to the variable <code>magic</code> which returns a new <code>Date()</code> to use arrow function syntax. Also make sure nothing is defined using the keyword <code>var</code>.",
         "Note",
-        "Don't forget to use strict mode."
+        "Don't forget <code>\"use strict\";</code> mode."
       ],
       "challengeSeed": [
         "// change code below this line",
@@ -228,12 +228,12 @@
         "console.log(magic());"
       ],
       "tests": [
-        "// Test user did replace var keyword",
-        "// Test magic is const",
-        "// Test magic is a function",
-        "// Test magic() returns the correct date",
-        "// Test function keyword was not used",
-        "// Test arrow => was used"
+        "assert(!code.match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "assert(code.match(/const\\s+magic/g), 'message: <code>magic</code> is <code>const</code>.');",
+        "assert(typeof magic === 'function', 'message: <code>magic</code> is a <code>function</code>.');",
+        "assert(magic().getDate() == new Date().getDate(), 'message: <code>magic()</code> returns correct date.');",
+        "assert(!code.match(/function/g), 'message: <code>function</code> keyword was not used.');",
+        "assert(code.match(/()\\s+=>\\s+{/g), 'message: proper arrow function syntax was used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -250,7 +250,7 @@
         "<hr>",
         "Rewrite the <code>myConcat</code> function which appends contents of <code>arr2</code> to <code>arr1</code> so that the function uses arrow function syntax.",
         "Note",
-        "Don't forget to use strict mode."
+        "Don't forget \"use strict\"; mode."
       ],
       "challengeSeed": [
         "// change code below this line",
@@ -262,12 +262,12 @@
         "console.log(myConcat([1, 2], [3, 4, 5]));"
       ],
       "tests": [
-        "// Test user did replace var keyword",
-        "// Test myConcat is const",
-        "assert(typeof myConcat === \"function\", 'message: <code>myConcat</code> should be a function');",
-        "// Test myConcat() returns the correct array",
-        "// Test function keyword was not used",
-        "// Test arrow => was used"
+        "assert(!code.match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "assert(code.match(/const\\s+myConcat/g), 'message: <code>myConcat</code> is <code>const</code>.');",
+        "assert(typeof myConcat === 'function', 'message: <code>myConcat</code> should be a function');",
+        "assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, 'message: <code>myConcat()</code> returns the correct <code>array</code>');",
+        "assert(!code.match(/function/g), 'message: <code>function</code> keyword was not used.');",
+        "assert(code.match(/()\\s+=>\\s+{/g), 'message: proper arrow function syntax was used.');"        
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -288,7 +288,7 @@
         "<hr>",
         "Use arrow function syntax to compute the square of only the positive integers (fractions are not integers) in the array <code>realNumberArray</code> and store the new array in the variable <code>squaredIntegers</code>.",
         "Note",
-        "Don't forget to use strict mode."
+        "Don't forget <code>\"use strict\";</code> mode."
       ],
       "challengeSeed": [
         "const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34];",
@@ -299,14 +299,13 @@
         "console.log(squaredIntegers);"
       ],
       "tests": [
-        "// Test user did replace <code>var</code> keyword",
-        "// Test <code>squaredIntegers</code> is <code>const</code>",
+        "assert(!code.match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "assert(code.match(/const\\s+squaredIntegers/g), 'message: <code>squaredIntegers</code> is <code>const</code>.');",
         "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an array');",
         "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, 'message: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');",
-        "// Test <code>function</code> keyword was not used",
-        "// Test arrow <code>=></code> was used",
+        "assert(!code.match(/function/g), 'message: <code>function</code> keyword was not used.');",   
         "assert(!code.match(/(for)|(while)/g), 'message: loop should not be used');",
-        "assert(code.match(/map/g) && code.match(/filter/g), 'message: <code>map</code> and <code>filter</code> should be used');"
+        "assert(code.match(/map|filter|reduce/g), 'message: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -323,7 +322,7 @@
         "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>\"Anonymous\"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.",
         "<hr>",
         "Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified.",
-        "<strong>Note</strong><br>Don't forget to use strict mode."
+        "<strong>Note</strong><br>Don't forget <code>\"use strict\";</code> mode."
       ],
       "challengeSeed": [
         "function increment(number, value) {",
@@ -333,9 +332,9 @@
         "console.log(increment(5)); // returns NaN"
       ],
       "tests": [
-        "assert(increment(5, 2) === 7, \"The result of increment(5, 2) should be 7\");",
-        "assert(increment(5) === 6, \"The result of increment(5) should be 6\");",
-        "// Test default parameter was used for 'value'"
+        "assert(increment(5, 2) === 7, 'message: The result of <code>increment(5, 2)</code> should be <code>7</code>.');",
+        "assert(increment(5) === 6, 'message: The result of <code>increment(5)</code> should be <code>6</code>.');",
+        "assert(code.match(/value\\s*=\\s*1/g), 'message: default parameter <code>1</code> was used for <code>value</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
