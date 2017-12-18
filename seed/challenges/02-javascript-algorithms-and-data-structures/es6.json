@@ -351,7 +351,7 @@
         "The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.",
         "<hr>",
         "Modify the function <code>sum</code> so that is uses the rest operator and it works in the same way with any number of parameters.",
-        "<strong>Note</strong><br>Don't forget to use strict mode."
+        "<strong>Note</strong><br>Don't forget <code>\"use strict\";</code>"
       ],
       "challengeSeed": [
         "function sum(x, y, z) {",
@@ -361,10 +361,11 @@
         "console.log(sum(1, 2, 3)); // 6"
       ],
       "tests": [
-        "assert(sum(0,1,2) === 3, 'The result of sum(0,1,2) should be 3');",
-        "assert(sum(1,2,3,4) === 10, 'The result of sum(1,2,3,4) should be 10');",
-        "assert(sum(5) === 5, 'The result of sum(5) should be 5');",
-        "assert(sum() === 0, 'The result of sum() should be 0');"
+        "assert(sum(0,1,2) === 3, 'message: The result of <code>sum(0,1,2)</code> should be 3');",
+        "assert(sum(1,2,3,4) === 10, 'message: The result of <code>sum(1,2,3,4)</code> should be 10');",
+        "assert(sum(5) === 5, 'message: The result of <code>sum(5)</code> should be 5');",
+        "assert(sum() === 0, 'message: The result of <code>sum()</code> should be 0');",
+        "assert(code.match(/function\\s+sum\\s*\\(\\s*...args\\s*\\)\\s*{/g), 'message: The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -385,18 +386,18 @@
         "However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:",
         "<blockquote>const spreaded = ...arr; // will throw a syntax error</blockquote>",
         "<hr>",
-        "Copy all contents of <code>arr1</code> into another array <code>arr2</code> using the spread operator."
+        "Copy all contents of <code>arr1</code> into another array <code>arr2</code> using the spread operator.",
+        "<strong>Note</strong><br>Don't forget <code>\"use strict\";</code>"
       ],
       "challengeSeed": [
         "const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];",
-        "const arr2 = []; // change this line",
-        "arr1.push('JUN');",
-        "console.log(arr2); // arr2 should not be affected"
+        "const arr2 = [] // change this line",
+        "console.log(arr2);"
       ],
       "tests": [
-        "// Test arr2 is correct copy of arr1",
-        "// Test arr1 has changed",
-        "// Test spread operator was used"
+        "assert(arr2.every((v, i) => v === arr1[i]), 'message: <code>arr2</code> is correct copy of <code>arr1</code>.');",
+        "assert(code.match(/\\[\\s*...arr1\\s*\\]/g),'message: <code>...</code> spread operator was used to duplicate <code>arr1</code>.');",
+        "assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length},'message: <code>arr2</code> remains unchanged when <code>arr1</code> is changed.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -407,7 +408,7 @@
       "id": "587d7b89367417b2b2512b49",
       "title": "Use Destructuring Assignment to Assign Variables from Objects",
       "description": [
-        "We earlier saw how spread operator can effectively spread, or unpack, the contents of the array.",
+        "We saw earlier how spread operator can effectively spread, or unpack, the contents of the array.",
         "We can do something similar with objects as well. <dfn>Destructuring assignment</dfn> is special syntax for neatly assigning values taken directly from an object to variables.",
         "Consider the following ES5 code:",
         "<blockquote>var voxel = {x: 3.6, y: 7.4, z: 6.54 };<br>var x = voxel.x; // x = 3.6<br>var y = voxel.y; // y = 7.4<br>var z = voxel.z; // z = 6.54</blockquote>",
@@ -417,18 +418,22 @@
         "<blockquote>const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54</blockquote>",
         "You may read it as \"get the field <code>x</code> and copy the value into <code>a</code>,\" and so on.",
         "<hr>",
-        "Use destructuring to obtain the length of the string <code>greeting</code>"
+        "Use destructuring to obtain the length of the string <code>greeting</code>, and assign the length to <code>len</code>",
+        "<strong>Note</strong><br>Don't forget <code>\"use strict\";</code>"
       ],
       "challengeSeed": [
         "const greeting = 'itadakimasu';",
+        "",
         "// change code below this line",
         "const length = 0; // change this",
         "// change code above this line",
+        "",
         "console.log(length); // should be using destructuring"
       ],
       "tests": [
-        "// Test len is 11",
-        "// Test destructuring was used"
+        "assert(typeof len === 'number', 'message: variable <code>len</code> exists and is a number.');",
+        "assert(len === 11, 'message: <code>len</code> equals <code>11</code>');",
+        "assert(code.match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*greeting/g),'message: destructuring was used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -444,7 +449,8 @@
         "<blockquote>const a = {<br>  start: { x: 5, y: 6},<br>  end: { x: 6, y: -9 }<br>};<br>const { start : { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote>",
         "In the example above, the variable <code>start</code> is assigned the value of <code>a.start</code>, which is also an object.",
         "<hr>",
-        "Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorrow</code> and assign it to <code>maxOfTomorrow</code>."
+        "Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorrow</code> and assign it to <code>maxOfTomorrow</code>.",
+        "<strong>Note</strong><br>Don't forget <code>\"use strict\";</code>"
       ],
       "challengeSeed": [
         "const forecast = {",
@@ -457,8 +463,8 @@
         "console.log(maxOfTomorrow); // should be 84.6"
       ],
       "tests": [
-        "// Test maxOfTomorrow to be 84.6",
-        "// Test destructuring was used"
+        "assert(maxOfTomorrow === 84.6, 'message: <code>maxOfTomorrow</code> equals <code>84.6</code>');",
+        "assert(code.match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g),'message: nested destructuring was used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
