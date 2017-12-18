@@ -524,10 +524,9 @@
         "console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];"
       ],
       "tests": [
-        "// Test arr is [3,4,5,6,7,8,9,10];",
-        "// Test source is [1,2,3,4,5,6,7,8,9,10];",
-        "// Test destructuring was used",
-        "// Test slice was not used"
+        "assert(arr.every((v, i) => v === i + 3),'message: <code>arr</code> is <code>[3,4,5,6,7,8,9,10]</code>');",
+        "assert(code.match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g),'message: destructuring was used.');",
+        "assert(!code.match(/Array.slice\\(\\)/g), 'message: <code>Array.slice()</code> was not used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -564,9 +563,9 @@
         "console.log(half(stats)); // should be 28.015"
       ],
       "tests": [
-        "// Test stats is an object",
-        "// Test half is 28.015",
-        "// Test destructuring was used"
+        "assert(typeof stats === 'object', 'message: <code>stats</code> is an <code>object</code>.');",
+        "assert(half(stats) === 28.015, 'message: <code>half(stats)</code> is <code>28.015</code>');",
+        "assert(code.match(/\\(\\s*\\{\\s*\\w+\\s*,\\s*\\w+\\s*\\}\\s*\\)/g), 'message: destructuring was used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -585,7 +584,7 @@
         "Secondly, the example uses backticks (<code>`</code>), not quotes (<code>'</code> or <code>\"</code>), to wrap the string. Notice that the string is multi-line.",
         "This new way of creating strings gives you more flexibility to create robust strings.",
         "<hr>",
-        "Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>."
+        "Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>."
       ],
       "challengeSeed": [
         "const result = {",
@@ -594,9 +593,9 @@
         "  skipped: [\"id-blacklist\", \"no-dup-keys\"]",
         "};",
         "// change code below this line",
-        "const resultDisplay = null;",
+        "const resultDisplayArray = null;",
         "// change code above this line",
-        "console.log(resultDisplay);",
+        "console.log(resultDisplayArray);",
         "/**",
         " * should look like this",
         " * <li class=\"text-warning\">no-var</li>",
@@ -605,9 +604,9 @@
         " **/"
       ],
       "tests": [
-        "// Test resultDisplay is a string",
-        "// Test resultDisplay is the desired output",
-        "// Test template strings were used"
+        "assert(typeof resultDisplayArray === 'object' && resultDisplayArray.length === 3, 'message: <code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.');",
+        "assert(resultDisplayArray.every((v, i) => v === `<li class=\"text-warning\">${result.failure[i]}</li>`), 'message: <code>resultDisplayArray</code> is the desired output.');",
+        "assert(code.match(/\\`<li class=\"text-warning\">\\$\\{v\\}<\\/li>\\`/g), 'message: Template strings were used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -641,8 +640,8 @@
         "console.log(createPerson(\"Zodiac Hasbro\", 56, \"male\")); // returns a proper object"
       ],
       "tests": [
-        "// Test the output is {name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}",
-        "// Test no : was present"
+        "assert(() => {const res={name:\"Zodiac Hasbro\",age:56,gender:\"male\"}; const person=createPerson(\"Zodiac Hasbro\", 56, \"male\"); return Object.keys(person).every(k => person[k] === res[k]);}, 'message: the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.');",
+        "assert(!code.match(/:/g), 'message: No <code>:</code> were used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -673,8 +672,8 @@
         "console.log(bicycle.gear);"
       ],
       "tests": [
-        "// Test the output is Sending request to Yanoshi Mimoto",
-        "// Test no : was present"
+        "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, 'message: <code>setGear</code> is a function and changes the <code>gear</code> variable.');",
+        "assert(!code.match(/:\\s*function\\s*\\(\\)/g), 'message: Declarative function was used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
