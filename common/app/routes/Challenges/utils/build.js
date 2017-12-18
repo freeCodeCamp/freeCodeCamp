@@ -4,6 +4,7 @@ import identity from 'lodash/identity';
 
 import { fetchScript } from './fetch-and-cache.js';
 import throwers from '../rechallenge/throwers';
+import { challengeTemplateSelector, challengeRequiredSelector } from '../redux';
 import {
   applyTransformers,
   proxyLoggerTransformer
@@ -13,6 +14,9 @@ import {
   jsToHtml,
   concactHtml
 } from '../rechallenge/builders.js';
+
+import { filesSelector } from '../../../files';
+
 import {
   createFileStream,
   pipe
@@ -35,7 +39,9 @@ const globalRequires = [
   jQuery
 ];
 
-export function buildFromFiles(files, required, shouldProxyConsole) {
+export function buildFromFiles(state, shouldProxyConsole) {
+  const files = filesSelector(state);
+  const required = challengeRequiredSelector(state);
   const finalRequires = [...globalRequires, ...required ];
   return createFileStream(files)
     ::pipe(throwers)
@@ -43,7 +49,7 @@ export function buildFromFiles(files, required, shouldProxyConsole) {
     ::pipe(shouldProxyConsole ? proxyLoggerTransformer : identity)
     ::pipe(jsToHtml)
     ::pipe(cssToHtml)
-    ::concactHtml(finalRequires, frameRunner);
+    ::concactHtml(finalRequires, challengeTemplateSelector(state));
 }
 
 export function buildBackendChallenge(state) {

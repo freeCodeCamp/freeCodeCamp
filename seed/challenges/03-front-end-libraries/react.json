@@ -12,6 +12,7 @@
       "src": "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.js"
     }
   ],
+  "template": "<body><div id='root'></div>${ source }</body>",
   "challenges": [
     {
       "id": "587d7dbc367417b2b2512bb1",
@@ -34,7 +35,8 @@
             "",
             "const JSX = <div></div>;",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(JSX, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -76,7 +78,8 @@
           "contents": [
             "// write your code here",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(JSX, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -116,7 +119,8 @@
             "    <p>Here's a subtitle</p>",
             "  </div>",
             ");"
-          ]
+          ],
+          "tail": "ReactDOM.render(JSX, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -155,14 +159,15 @@
           "name": "index",
           "contents": [
             "const JSX = (",
-            "<div>",
-            "  <h1>Hello World</h1>",
-            "  <p>Lets render this to the DOM</p>",
-            "</div>",
+            "  <div>",
+            "    <h1>Hello World</h1>",
+            "    <p>Lets render this to the DOM</p>",
+            "  </div>",
             ");",
             "// change code below this line",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(JSX, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -202,7 +207,8 @@
             "    <h1>Add a class to this div</h1>",
             "  </div>",
             ");"
-          ]
+          ],
+          "tail": "ReactDOM.render(JSX, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -246,7 +252,7 @@
             "  </div>",
             ");",
             "",
-            "ReactDOM.render(JSX, document.getElementById('challenge-node'));"
+            "ReactDOM.render(JSX, document.getElementById('root'));"
           ]
         }
       },
@@ -291,8 +297,8 @@
             "",
             "  // change code above this line",
             "}"
-          ]
-        }
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))" }
       },
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })(), 'message: <code>MyComponent</code> should return JSX.');",
@@ -338,7 +344,8 @@
             "    // change code above this line",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -397,7 +404,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<ParentComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -469,7 +477,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<TypesOfFood />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -580,7 +589,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<TypesOfFood />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -670,7 +680,8 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(<TypesOfFood />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -705,7 +716,8 @@
           "contents": [
             "// change code below this line",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -766,7 +778,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<Calendar />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -829,7 +842,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<ToDo />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -873,7 +887,8 @@
             "};",
             "// change code below this line",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -922,7 +937,8 @@
             "    { /* change code above this line */ }",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -984,7 +1000,8 @@
             "    return <Items />",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<ShoppingCart />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1050,7 +1067,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<ResetPassword />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1104,7 +1122,8 @@
             "};",
             "// change code below this line",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(<CampSite />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1155,7 +1174,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<StatefulComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1208,7 +1228,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1260,7 +1281,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1317,7 +1339,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1379,7 +1402,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1443,7 +1467,8 @@
             "    }",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1496,7 +1521,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<Counter />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1554,7 +1580,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<ControlledInput />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1624,7 +1651,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyForm />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1687,7 +1715,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyApp />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1772,7 +1801,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyApp />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1826,7 +1856,8 @@
             "    return <div />",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1879,7 +1910,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -1947,7 +1979,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2019,7 +2052,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<Controller />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2095,7 +2129,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<Controller />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2142,7 +2177,8 @@
             "  }",
             "};",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(<Colorful />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2187,7 +2223,8 @@
             "  }",
             "};",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(<Colorful />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2296,7 +2333,8 @@
             "};"
           ],
           "tail": [
-            "var possibleAnswers = [ 'It is certain', 'It is decidedly so', 'Without a doubt', 'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good','Very doubtful', 'Most likely' ];"
+            "var possibleAnswers = [ 'It is certain', 'It is decidedly so', 'Without a doubt', 'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good','Very doubtful', 'Most likely' ];",
+            "ReactDOM.render(<MagicEightBall />, document.getElementById('root'))"
           ]
         }
       },
@@ -2356,7 +2394,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2413,7 +2452,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2492,7 +2532,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<CheckUserAge />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2571,7 +2612,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<GameOfChance />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2638,7 +2680,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<GateKeeper />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2717,7 +2760,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyToDoList />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2773,7 +2817,8 @@
             "    </div>",
             "  );",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<Frameworks />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2852,7 +2897,8 @@
             "    );",
             "  }",
             "};"
-          ]
+          ],
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
         }
       },
       "tests": [
@@ -2901,7 +2947,8 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "tail": "ReactDOM.render(<App />, document.getElementById('root'))"
         }
       },
       "tests": [
