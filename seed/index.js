@@ -45,6 +45,7 @@ Observable.combineLatest(
     var isLocked = !!challengeSpec.isLocked;
     var message = challengeSpec.message;
     var required = challengeSpec.required || [];
+    var template = challengeSpec.template;
 
     console.log('parsed %s successfully', blockName);
 
@@ -113,6 +114,7 @@ Observable.combineLatest(
               })
               .join(' ');
             challenge.required = (challenge.required || []).concat(required);
+            challenge.template = challenge.template || template;
 
             return challenge;
           });

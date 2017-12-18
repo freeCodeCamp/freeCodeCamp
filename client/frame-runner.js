@@ -7,6 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
   var source = document.__source;
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
+
+  // Fake Deep Equal dependency
+  /* eslint-disable no-unused-vars */
+  const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+  // Hardcode Deep Freeze dependency
+  var DeepFreeze = (o) => {
+    Object.freeze(o);
+    Object.getOwnPropertyNames(o).forEach(function(prop) {
+      if (o.hasOwnProperty(prop)
+      && o[prop] !== null
+      && (
+        typeof o[prop] === 'object' ||
+        typeof o[prop] === 'function'
+      )
+      && !Object.isFrozen(o[prop])) {
+        DeepFreeze(o[prop]);
+      }
+    });
+    return o;
+  };
+
   if (document.Enzyme) {
     window.Enzyme = document.Enzyme;
   }
@@ -29,8 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.__runTests = function runTests(tests = []) {
     /* eslint-disable no-unused-vars */
-    const editor = { getValue() { return source; } };
     const code = source;
+    const editor = {
+      getValue() { return source; }
+    };
     /* eslint-enable no-unused-vars */
     if (window.__err) {
       return Rx.Observable.from(tests)

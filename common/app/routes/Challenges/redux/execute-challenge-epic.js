@@ -29,7 +29,6 @@ import {
   challengeSelector
 } from '../../../redux';
 
-import { filesSelector } from '../../../files';
 
 const executeDebounceTimeout = 750;
 export function updateMainEpic(actions, { getState }, { document }) {
@@ -53,15 +52,11 @@ export function updateMainEpic(actions, { getState }, { document }) {
           !codeLockedSelector(getState()) &&
           showPreviewSelector(getState())
         ))
-        .map(getState)
-        .flatMapLatest(state => {
-          const files = filesSelector(state);
-          const { required = [] } = challengeSelector(state);
-          return buildFromFiles(files, required, true)
-            .map(frameMain)
-            .ignoreElements()
-            .catch(createErrorObservable);
-        });
+        .flatMapLatest(() => buildFromFiles(getState(), true)
+          .map(frameMain)
+          .ignoreElements()
+          .catch(createErrorObservable)
+        );
       return Observable.merge(buildAndFrameMain, proxyLogger.map(updateOutput));
     });
 }
@@ -91,7 +86,7 @@ export function executeChallengeEpic(actions, { getState }, { document }) {
             .flatMap(tests => {
               return Observable.from(tests)
                 .map(({ message }) => message)
-              // make sure that the test message is a non empty string
+                // make sure that the test message is a non empty string
                 .filter(_.overEvery(_.isString, Boolean))
                 .map(updateOutput)
                 .concat(Observable.of(updateTests(tests)));
@@ -104,11 +99,7 @@ export function executeChallengeEpic(actions, { getState }, { document }) {
         .filter(() => !codeLockedSelector(getState()))
         .flatMapLatest(() => {
           const state = getState();
-          const files = filesSelector(state);
-          const {
-            required = [],
-            type: challengeType
-          } = challengeSelector(state);
+          const { type: challengeType } = challengeSelector(state);
           if (challengeType === 'backend') {
             return buildBackendChallenge(state)
               .do(frameTests)
@@ -116,7 +107,7 @@ export function executeChallengeEpic(actions, { getState }, { document }) {
               .startWith(initOutput('// running test'))
               .catch(createErrorObservable);
           }
-          return buildFromFiles(files, required, false)
+          return buildFromFiles(state, false)
             .do(frameTests)
             .ignoreElements()
             .startWith(initOutput('// running test'))

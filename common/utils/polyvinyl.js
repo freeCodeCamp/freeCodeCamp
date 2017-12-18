@@ -198,8 +198,8 @@ export function transformContents(wrap, poly) {
 // ) => PolyVinyl
 export function transformHeadTailAndContents(wrap, poly) {
   return {
-    ...setContent(
-      wrap(poly.contents),
+    ...transformContents(
+      wrap,
       poly
     ),
     head: wrap(poly.head),
@@ -209,4 +209,8 @@ export function transformHeadTailAndContents(wrap, poly) {
 
 export function testContents(predicate, poly) {
   return !!predicate(poly.contents);
+}
+
+export function updateFileFromSpec(spec, poly) {
+  return setContent(poly.contents, createPoly(spec));
 }

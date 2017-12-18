@@ -207,6 +207,8 @@ export const challengeModalSelector =
 
 export const bugModalSelector = state => getNS(state).isBugOpen;
 
+export const challengeRequiredSelector = state =>
+  challengeSelector(state).required || [];
 export const challengeMetaSelector = createSelector(
   // use closure to get around circular deps
   (...args) => challengeSelector(...args),
@@ -223,6 +225,7 @@ export const challengeMetaSelector = createSelector(
       challenge.title;
 
     return {
+      type,
       title,
       viewType,
       submitType:
@@ -242,6 +245,10 @@ export const challengeMetaSelector = createSelector(
 
 export const showPreviewSelector = state =>
   !!challengeMetaSelector(state).showPreview;
+export const challengeTypeSelector = state =>
+  challengeMetaSelector(state).type || '';
+export const challengeTemplateSelector = state =>
+  challengeSelector(state).template || null;
 
 export default combineReducers(
   handleActions(

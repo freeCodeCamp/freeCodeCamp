@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 import * as challengeTypes from '../../../utils/challengeTypes.js';
-import { createPoly } from '../../../../utils/polyvinyl.js';
+import { createPoly, updateFileFromSpec } from '../../../../utils/polyvinyl.js';
 import { decodeScriptTags } from '../../../../utils/encode-decode.js';
 
 // turn challengeType to file ext
@@ -82,8 +82,8 @@ export function challengeToFiles(challenge, files) {
   files = files || challenge.files || {};
   if (challenge.type === 'modern') {
     return _.reduce(files, (files, file) => {
-      // TODO(berks): need to make sure head/tail are fresh from fCC
-      files[file.key] = createPoly(file);
+      const challengeSpec = _.get(challenge, ['files', file.key]) || {};
+      files[file.key] = updateFileFromSpec(challengeSpec, file);
       return files;
     }, {});
   }
