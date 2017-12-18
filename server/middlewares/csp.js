@@ -9,7 +9,8 @@ const port = process.env.SYNC_PORT || '3000';
 
 if (process.env.NODE_ENV !== 'production') {
   trusted = trusted.concat([
-    `ws://${host}:${port}`
+    `ws://${host}:${port}`,
+    'https://search.freecodecamp.org'
   ]);
 }
 

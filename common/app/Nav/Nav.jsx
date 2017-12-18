@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import capitalize from 'lodash/capitalize';
 import { createSelector } from 'reselect';
+import FCCSearchBar from 'react-freecodecamp-search';
 
 import {
   MenuItem,
@@ -32,6 +33,9 @@ import { panesSelector } from '../Panes/redux';
 
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
+// TODO @freecodecamp-team: place this glyph in S3 like above, PR in /assets
+const fCCglyph = 'https://raw.githubusercontent.com/freeCodeCamp/assets/' +
+  '3b9cafc312802199ebba8b31fb1ed9b466a3efbb/assets/logos/FFCFire.png';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -176,10 +180,11 @@ export class FCCNav extends React.Component {
     const shouldShowMapButton = panes.length === 0;
     return (
       <Navbar
-        className='nav-height'
-        id='navbar'
-        staticTop={ true }
-        >
+      className='nav-height'
+      id='navbar'
+      staticTop={ true }
+      >
+      <div className='nav-component-wrapper'>
         <Navbar.Header>
           <Navbar.Toggle children={ 'Menu' } />
           <NavbarBrand>
@@ -189,11 +194,17 @@ export class FCCNav extends React.Component {
               >
               <img
                 alt='learn to code javascript at freeCodeCamp logo'
-                className='img-responsive nav-logo'
+                className='img-responsive nav-logo logo'
                 src={ fCClogo }
+              />
+              <img
+                alt='learn to code javascript at freeCodeCamp logo'
+                className='img-responsive nav-logo logo-glyph'
+                src={ fCCglyph }
               />
             </a>
           </NavbarBrand>
+          <FCCSearchBar dropdown={ true } />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav
@@ -217,11 +228,6 @@ export class FCCNav extends React.Component {
                 /> :
                 null
             }
-            { !shouldShowMapButton &&
-                <li
-                  className='divider-vertical'
-                />
-            }
             {
               navLinks.map(
                 this.renderLink.bind(this, true)
@@ -233,7 +239,8 @@ export class FCCNav extends React.Component {
             />
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
+      </div>
+    </Navbar>
     );
   }
 }
