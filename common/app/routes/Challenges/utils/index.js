@@ -81,10 +81,10 @@ export function challengeToFiles(challenge, files) {
   const previousWork = !!files;
   files = files || challenge.files || {};
   if (challenge.type === 'modern') {
-    return _.reduce(files, (files, file) => {
-      const challengeSpec = _.get(challenge, ['files', file.key]) || {};
-      files[file.key] = updateFileFromSpec(challengeSpec, file);
-      return files;
+    return _.reduce(challenge.files, (_files, fileSpec) => {
+      const file = _.get(files, fileSpec.key);
+      _files[fileSpec.key] = updateFileFromSpec(fileSpec, file);
+      return _files;
     }, {});
   }
   if (
