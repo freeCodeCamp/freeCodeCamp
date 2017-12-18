@@ -703,9 +703,9 @@
         "console.log(carrot.name); // => should be 'carrot'"
       ],
       "tests": [
-        "// Test the Vegetable is a class",
-        "// Test that class keyword was used",
-        "// Test that other objects could be created with the class"
+        "assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', 'message: <code>Vegetable</code> is a <code>class</code>');",
+        "assert(code.match(/class/g),'message: <code>class</code> keyword was used.');",
+        "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';},'message: Instances of <code>Vegetable</code> can be instantiated.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -726,7 +726,7 @@
         "<hr>",
         "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Farenheit temperature.",
         "Now create <code>getter</code> and <code>setter</code> in the class, to obtain the temperature in Celsius scale.",
-        "Remember that <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
+        "Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
         "Note",
         "When you implement this, you would be tracking the temperature inside the class in one scale - either Fahrenheit or Celsius.",
         "This is the power of getter or setter - you are creating an API for another user, who would get the correct result, no matter which one you track.",
@@ -742,9 +742,9 @@
         "temp = thermos.temperature; // 26 in C"
       ],
       "tests": [
-        "// Test the Thermostat is a class",
-        "// Test that class keyword was used",
-        "// Test that other objects could be created with the class"
+        "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','message: <code>Thermostat</code> is a <code>class</code>');",
+        "assert(code.match(/class/g),'message: <code>class</code> keyword was used.');",
+        "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, 'message: Instances of <code>Vegetable</code> can be instantiated.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -762,8 +762,9 @@
         "A description of the above code:",
         "<blockquote>import { function } from \"file_path_goes_here\"<br>// We can also import variables the same way!</blockquote>",
         "There are a few ways to write an <code>import</code> statement, but the above is a very common use-case.",
-        "<strong>Note</strong><br>the whitespace surrounding the function inside the curly braces is a best practice - it makes it easier to read the <code>import</code> statement.",
-        "<strong>Note</strong><br>The lessons in this section handle non-browser features. <code>import</code>, and the statements we introduce in the rest of these lessons, won't work on a browser directly, However, we can use various tools to create code out of this to make it work in browser.",
+        "<strong>Note</strong><br>The whitespace surrounding the function inside the curly braces is a best practice - it makes it easier to read the <code>import</code> statement.",
+        "<strong>Note</strong><br>The lessons in this section handle non-browser features. <code>import</code>, and the statements we introduce in the rest of these lessons, won't work on a browser directly. However, we can use various tools to create code out of this to make it work in browser.",
+        "<strong>Note</strong><br>In most cases, the file path requires a <code>./</code> before it; otherwise, node will look in the <code>node_modules</code> directory first trying to load it as a dependencie.",
         "<hr>",
         "Add the appropriate <code>import</code> statement that will allow the current file to use the <code>capitalizeString</code> function. The file where this function lives is called <code>\"string_functions\"</code>, and it is in the same directory as the current file."
       ],
@@ -771,7 +772,7 @@
         "capitalizeString(\"hello!\");"
       ],
       "tests": [
-        "assert(code.match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/ig)"
+        "assert(code.match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/g), 'message: valid <code>import</code> statement');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -796,8 +797,8 @@
         "const boo = \"far\";"
       ],
       "tests": [
-        "assert(code.match(/export\\s+const\\s+foo\\s+=+\\s\"bar\"/ig))",
-        "assert(code.match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/ig))"
+        "assert(code.match(/export\\s+const\\s+foo\\s+=+\\s\"bar\"/g), 'message: <code>foo</code> is exported.');",
+        "assert(code.match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/g), 'message: <code>bar</code> is exported.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -813,7 +814,7 @@
         "<blockquote>import * as myMathModule from \"math_functions\"<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>",
         "And breaking down that code:",
         "<blockquote>import * as object_with_name_of_your_choice from \"file_path_goes_here\"<br>object_with_name_of_your_choice.imported_function</blockquote>",
-        "You may use any name following the <code>import *</code> as portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
+        "You may use any name following the <code>import * as </code>portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
         "<hr>",
         "The code below requires the contents of a file, <code>\"capitalize_strings\"</code>, found in the same directory as it, imported. Add the appropriate <code>import *</code> statement to the top of the file, using the object provided."
       ],
@@ -822,7 +823,7 @@
         "myStringModule.lowercase(\"Foo\");"
       ],
       "tests": [
-        "assert(code.match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/ig))"
+        "assert(code.match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/g), 'message: Properly uses <code>import * as</code> syntax.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -845,7 +846,7 @@
         "function subtract(x,y) {return x - y;}"
       ],
       "tests": [
-        "assert(code.match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/ig))"
+        "assert(code.match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/g), 'message: Proper used of <code>export</code> fallback.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -867,7 +868,7 @@
         "subtract(7,4);"
       ],
       "tests": [
-        "assert(code.match(/import\\s+subtract\\s+from\\s+\"math_functions\"/ig))"
+        "assert(code.match(/import\\s+subtract\\s+from\\s+\"math_functions\"/g), 'message: Properly imports <code>export default</code> method.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
