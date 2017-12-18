@@ -197,3 +197,49 @@ li.nav-avatar {
     padding-right: 10px;
   }
 }
+
+.nav-component-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .fcc_searchBar {
+    width: auto;
+    flex-grow: 1
+  }
+
+  .navbar-header {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+.logo-glyph {
+  height: 30px;
+  width: auto;
+}
+
+.logo {
+  display: none !important;
+}
+
+
+@media (min-width: 992px) {
+  .logo-glyph {
+    display: none !important;
+  }
+
+  .logo {
+    display: block !important;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .nav-component-wrapper {
+    display: block
+  }
+
+}
