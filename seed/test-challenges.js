@@ -201,6 +201,7 @@ Observable.from(getChallenges())
   .flatMap(challengeSpec => {
     return Observable.from(challengeSpec.challenges);
   })
+  .filter(({ type }) => type !== 'modern')
   .flatMap(challenge => {
     return createTest(challenge);
   })
