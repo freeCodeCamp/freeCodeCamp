@@ -100,7 +100,7 @@ const writeTestDepsToDocument = frameReady => ctx => {
   };
   // default for classic challenges
   // should not be used for modern
-  tests.__source = sources['index'] || '';
+  tests.__source = (sources && 'index' in sources) ? sources['index'] : '';
   // provide the file name and get the original source
   tests.__getUserInput = fileName => _.toString(sources[fileName]);
   tests.__checkChallengePayload = checkChallengePayload;
