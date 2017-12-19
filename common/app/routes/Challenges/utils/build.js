@@ -60,7 +60,7 @@ export function buildBackendChallenge(state) {
   )
     .map(([ frameRunner, jQuery ]) => ({
       build: jQuery + frameRunner,
-      source: { url },
+      sources: { url },
       checkChallengePayload: { solution: url }
     }));
 }
