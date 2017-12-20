@@ -23,100 +23,133 @@ const propTypes = {
     picture: PropTypes.string,
     toggleIsLocked: PropTypes.func.isRequired,
     toggleNightMode: PropTypes.func.isRequired,
+    updateFlag: PropTypes.func.isRequired,
     username: PropTypes.string
 };
 
-export default function AccountSettings({
-    toggleNightMode,
-    currentTheme,
-    isLocked,
-    location,
-    toggleIsLocked,
-    username,
-    name,
-    bio,
-    picture
-}) {
-  return (
-    <div className='account-settings'>
-      <Row>
-        <Col md={ 3 } mdPush={ 9 } xs={ 12 }>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            href='/link/github'
-            >
-            Update from GitHub
-          </Button>
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col md={ 2 } xs={ 12 }>
-          <Image className='avatar' src={ picture } thumbnail={ true } />
-        </Col>
-        <Col md={ 10 } xs = { 12 }>
-          <FormControl
-            className='about-me'
-            componentClass='textarea'
-            disabled={ true }
-            placeholder='About me'
-            value={ bio }
-          />
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col sm={ 8 } xs={ 12 }>
-          <ControlLabel htmlFor='name'>
-            Name
-          </ControlLabel>
-        </Col>
-        <Col sm={ 4 } xs={ 12 }>
-          <FormControl
-            bsSize='sm'
-            disabled={ true }
-            id='name'
-            placeholder='name'
-            type='input'
-            value={ name }
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={ 8 } xs={ 12 }>
-          <ControlLabel htmlFor='username'>
-            Username
-          </ControlLabel>
-        </Col>
-        <Col sm={ 4 } xs={ 12 }>
-          <FormControl
-              bsSize='sm'
+export default class AccountSettings extends React.Component {
+  render() {
+    const {
+      toggleNightMode,
+      updateFlag,
+      currentTheme,
+      isLocked,
+      location,
+      toggleIsLocked,
+      username,
+      name,
+      bio,
+      picture
+    } = this.props;
+
+    return (
+      <div className='account-settings'>
+        <Row>
+          <Col md={ 3 } mdPush={ 9 } xs={ 12 }>
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='primary'
+              href='/link/github'
+              >
+              Update from GitHub
+            </Button>
+          </Col>
+        </Row>
+        <br />
+        <Row>
+          <Col md={ 2 } xs={ 12 }>
+            <Image className='avatar' src={ picture } thumbnail={ true } />
+          </Col>
+          <Col md={ 10 } xs = { 12 }>
+            <FormControl
+              className='about-me'
+              componentClass='textarea'
               disabled={ true }
+              placeholder='About me'
+              value={ bio }
+            />
+          </Col>
+        </Row>
+        <br />
+        <Row className='editable-content-container'>
+          <Col sm={ 6 } xs={ 12 }>
+            <ControlLabel htmlFor='name'>
+              Name
+            </ControlLabel>
+          </Col>
+          <Col sm={ 5 } xs={ 12 }>
+            <FormControl
+              bsSize='sm'
+              id='name'
+              placeholder='name'
+              type='input'
+              value={ name }
+            />
+          </Col>
+          <Col sm={ 1 } xs={ 12 }>
+            <Button
+              bsStyle='primary'
+              onClick={() => updateFlag({ flag: 'name', newValue: name })}
+              type='submit'
+              >
+              Save
+            </Button>
+          </Col>
+        </Row>
+        <Row className='editable-content-container'>
+          <Col sm={ 6 } xs={ 12 }>
+            <ControlLabel htmlFor='username'>
+              Username
+            </ControlLabel>
+          </Col>
+          <Col sm={ 5 } xs={ 12 }>
+            <FormControl
+              bsSize='sm'
               id='username'
               placeholder='username'
               type='input'
               value={ username }
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={ 8 } xs={ 12 }>
-          <ControlLabel htmlFor='location'>
-            Location
-          </ControlLabel>
-        </Col>
-        <Col sm={ 4 } xs={ 12 }>
-          <FormControl
-            bsSize='sm'
-            disabled={ true }
-            id='location'
-            placeholder='location'
-            type='input'
-            value={ location }
-          />
-        </Col>
+            />
+          </Col>
+          <Col sm={ 1 } xs={ 12 }>
+            <Button
+              bsStyle='primary'
+              onClick={() => updateFlag({
+                flag: 'username', newValue: username
+              })}
+              type='submit'
+              >
+              Save
+            </Button>
+          </Col>
+        </Row>
+        <Row className='editable-content-container'>
+          <Col sm={ 6 } xs={ 12 }>
+            <ControlLabel htmlFor='location'>
+              Location
+            </ControlLabel>
+          </Col>
+          <Col sm={ 5 } xs={ 12 }>
+            <FormControl
+              bsSize='sm'
+              id='location'
+              placeholder='location'
+              type='input'
+              value={ location }
+            />
+          </Col>
+          <Col sm={ 1 } xs={ 12 }>
+            <Button
+              bsStyle='primary'
+              onClick={() => updateFlag({
+                flag: 'location', newValue: location
+              })}
+              type='submit'
+              >
+              Save
+            </Button>
+          </Col>
         </Row>
         <LockedSettings
           isLocked={ isLocked }
@@ -170,8 +203,9 @@ export default function AccountSettings({
             </ToggleButtonGroup>
           </Col>
         </Row>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 AccountSettings.displayName = 'AccountSettings';

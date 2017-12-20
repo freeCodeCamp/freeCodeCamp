@@ -17,6 +17,7 @@ export const epics = [
 export const types = createTypes([
   'toggleUserFlag',
   createAsyncTypes('updateMyEmail'),
+  'updateFlag',
   'updateMyLang',
   'onRouteSettings',
   'onRouteUpdateEmail'
@@ -38,6 +39,8 @@ export const updateMyEmailError = createAction(
   null,
   utils.createFlashMetaAction
 );
+
+export const updateFlag = createAction(types.updateFlag);
 
 export const updateMyLang = createAction(
   types.updateMyLang,

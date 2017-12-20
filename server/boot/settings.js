@@ -39,13 +39,14 @@ export default function settingsController(app) {
       );
   }
 
-  api.post(
-    '/update-my-email',
-    ifNoUser401,
-    updateMyEmailValidators,
-    createValidatorErrorHandler(alertTypes.danger),
-    updateMyEmail
-  );
+  function updateFlag(req, res, next) {
+    const { user, body: { flag, newValue } } = req;
+    return user.requestUpdateFlag(flag, newValue)
+      .subscribe(
+        (message) => res.json({ message }),
+        next
+      );
+  }
 
   function updateMyLang(req, res, next) {
     const { user, body: { lang } = {} } = req;
@@ -143,6 +144,18 @@ export default function settingsController(app) {
     '/toggle-quincy-email',
     ifNoUser401,
     toggleUserFlag('sendQuincyEmail')
+  );
+  api.post(
+    '/update-my-email',
+    ifNoUser401,
+    updateMyEmailValidators,
+    createValidatorErrorHandler(alertTypes.danger),
+    updateMyEmail
+  );
+  api.post(
+    '/update-flag',
+    ifNoUser401,
+    updateFlag
   );
   api.post(
     '/update-my-lang',
