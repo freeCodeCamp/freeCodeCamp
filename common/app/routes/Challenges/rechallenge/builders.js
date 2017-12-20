@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { Observable } from 'rx';
 import cond from 'lodash/cond';
 import flow from 'lodash/flow';
@@ -18,6 +19,13 @@ import {
 
 const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
+const defaultTemplate = ({ source }) => `
+  <body style='margin:8px;'>
+    <!-- fcc-start-source -->
+      ${source}
+    <!-- fcc-end-source -->
+  </body>
+`;
 
 const wrapInScript = partial(transformContents, (content) => (
   `${htmlCatch}<script>${content}${jsCatch}</script>`
@@ -46,9 +54,11 @@ export const cssToHtml = cond([
 ]);
 
 // FileStream::concactHtml(
-//   required: [ ...Object ]
+//   required: [ ...Object ],
+//   template: String
 // ) => Observable[{ build: String, sources: Dictionary }]
-export function concactHtml(required) {
+export function concactHtml(required, template) {
+  const createBody = template ? _.template(template) : defaultTemplate;
   const source = this.shareReplay();
   const sourceMap = source
     .flatMap(files => files.reduce((sources, file) => {
@@ -73,13 +83,8 @@ export function concactHtml(required) {
     .flatMap(file => file.reduce((body, file) => {
       return body + file.contents + htmlCatch;
     }, ''))
-    .map(source => `
-      <body style='margin:8px;'>
-        <!-- fcc-start-source -->
-          ${source}
-        <!-- fcc-end-source -->
-      </body>
-    `);
+    .map(source => ({ source }))
+    .map(createBody);
 
   return Observable
     .combineLatest(

@@ -45,7 +45,7 @@ export default addNS(
         return _.reduce(files, (files, file) => {
           files[file.key] = createPoly(file);
           return files;
-        }, { ...state });
+        }, {});
       }
     }
     return state;

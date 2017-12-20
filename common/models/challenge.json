@@ -130,6 +130,10 @@
         }
       ],
       "default": []
+    },
+    "template": {
+      "type": "string",
+      "description": "A template to render the compiled challenge source into. This template uses template literal delimiter, i.e. ${ foo }"
     }
   },
   "validations": [],
