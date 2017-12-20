@@ -9,9 +9,12 @@ import InternetSettings from './Internet-Settings.jsx';
 import PortfolioSettings from './Portfolio-Settings.jsx';
 import ProjectSettings from './Project-Settings.jsx';
 import SettingsSkeleton from './Settings-Skeleton.jsx';
-import UpdateEmail from './routes/update-email';
 
-import { toggleUserFlag, showUpdateEmailViewSelector } from './redux';
+import {
+  toggleUserFlag,
+  updateFlag,
+  showUpdateEmailViewSelector
+} from './redux';
 import {
   toggleNightMode,
   updateTitle,
@@ -22,16 +25,6 @@ import {
   hardGoTo
 } from '../../redux';
 import ChildContainer from '../../Child-Container.jsx';
-
-const mapDispatchToProps = {
-  updateTitle,
-  toggleNightMode,
-  toggleIsAvailableForHire: () => toggleUserFlag('isAvailableForHire'),
-  toggleIsLocked: () => toggleUserFlag('isLocked'),
-  toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
-  toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
-  toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail')
-};
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -69,7 +62,7 @@ const mapStateToProps = createSelector(
     username,
     name,
     email,
-    isLocked,    
+    isLocked,
     isGithubCool,
     githubURL,
     isLinkedIn,
@@ -81,8 +74,6 @@ const mapStateToProps = createSelector(
     sendQuincyEmail,
     showUpdateEmailView,
     twitter,
-    username,
-    name,
     bio,
     picture,
     website
@@ -97,6 +88,7 @@ const mapDispatchToProps = {
   toggleNightMode,
   toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
   toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
+  updateFlag,
   updateTitle
 };
 
@@ -105,8 +97,8 @@ const propTypes = {
   children: PropTypes.element,
   currentTheme: PropTypes.string,
   email: PropTypes.string,
-  hardGoTo: PropTypes.func.isRequired,
   githubURL: PropTypes.string,
+  hardGoTo: PropTypes.func.isRequired,
   initialLang: PropTypes.string,
   isAvailableForHire: PropTypes.bool,
   isGithubCool: PropTypes.bool,
@@ -131,6 +123,7 @@ const propTypes = {
   toggleNotificationEmail: PropTypes.func.isRequired,
   toggleQuincyEmail: PropTypes.func.isRequired,
   twitter: PropTypes.string,
+  updateFlag: PropTypes.func.isRequired,
   updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
   username: PropTypes.string,
@@ -169,6 +162,7 @@ export class Settings extends React.Component {
       // isGithubCool,
       // isLinkedIn,
       // isTwitter,
+      linkedin,
       location,
       name,
       picture,
@@ -176,27 +170,20 @@ export class Settings extends React.Component {
       sendNotificationEmail,
       sendQuincyEmail,
       showLoading,
-      showUpdateEmailView,
       // toggleIsAvailableForHire,
       toggleIsLocked,
       toggleMonthlyEmail,
       toggleNightMode,
       toggleNotificationEmail,
       toggleQuincyEmail,
+      twitter,
+      updateFlag,
       username,
       website
     } = this.props;
 
     if (!username && !showLoading) {
       return <SettingsSkeleton />;
-    }
-
-    if (children) {
-      return (
-        <ChildContainer>
-          { children }
-        </ChildContainer>
-      );
     }
 
     return (
@@ -215,6 +202,7 @@ export class Settings extends React.Component {
             picture={ picture }
             toggleIsLocked={ toggleIsLocked }
             toggleNightMode={ toggleNightMode }
+            updateFlag={updateFlag}
             username={ username }
           />
 
@@ -242,6 +230,9 @@ export class Settings extends React.Component {
 
           <InternetSettings
             githubURL={ githubURL }
+            linkedin={ linkedin }
+            twitter={ twitter }
+            updateFlag={ updateFlag }
             website={ website }
           />
 

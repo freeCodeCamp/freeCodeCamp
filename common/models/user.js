@@ -646,6 +646,35 @@ module.exports = function(User) {
       `);
   };
 
+  User.prototype.requestUpdateFlag = function requestUpdateFlag(
+    flag,
+    newValue
+  ) {
+    const ownValue = newValue === this[flag];
+
+    console.log(flag, newValue, ownValue);
+
+    // value for this flag has not been changed
+    if (ownValue) {
+      return Observable.throw(new Error(
+        `${newValue} is already associated with the flag '${flag}'.`
+      ));
+    }
+
+    return Observable.fromPromise(User.doesExist(null, newValue))
+      .flatMap(() => {
+        return this.update$({ [flag]: newValue })
+        .do(() => {
+          console.log(this[newValue]);
+          this[flag] = newValue;
+          console.log(this[flag], newValue);
+        });
+      })
+      .map(() => dedent`
+        We have successfully update your user account.
+      `);
+  };
+
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
       const findUser = observeMethod(User, 'findOne');

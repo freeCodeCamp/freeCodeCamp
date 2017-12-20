@@ -45,19 +45,19 @@ export default function userServices() {
           .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
           .subscribe(
             user => cb(
-              null,
-              {
-                entities: {
-                  user: {
-                    [user.username]: {
-                      ..._.pick(user, publicUserProps),
-                      isTwitter: !!user.twitter,
-                      isLinkedIn: !!user.linkedIn
+                null,
+                {
+                  entities: {
+                    user: {
+                      [user.username]: {
+                        ..._.pick(user, publicUserProps),
+                        isTwitter: !!user.twitter,
+                        isLinkedIn: !!user.linkedIn
+                      }
                     }
-                  }
-                },
-                result: user.username
-              }
+                  },
+                  result: user.username
+                }
             ),
             cb
           );

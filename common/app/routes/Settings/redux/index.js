@@ -15,6 +15,7 @@ export const epics = [
 export const types = createTypes([
   'toggleUserFlag',
   'updateMyEmail',
+  'updateFlag',
   'updateMyLang',
   'onRouteSettings',
   'onRouteUpdateEmail'
@@ -25,6 +26,7 @@ export const onRouteSettings = createAction(types.onRouteSettings);
 export const onRouteUpdateEmail = createAction(types.onRouteUpdateEmail);
 export const toggleUserFlag = createAction(types.toggleUserFlag);
 export const updateMyEmail = createAction(types.updateMyEmail);
+export const updateFlag = createAction(types.updateFlag);
 
 export const updateMyLang = createAction(
   types.updateMyLang,

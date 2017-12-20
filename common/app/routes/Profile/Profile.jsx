@@ -10,8 +10,6 @@ import {
   Col
 } from 'react-bootstrap';
 
-import SettingsSkeleton from './Settings-Skeleton.jsx';
-
 import {
   updateTitle,
 
@@ -19,6 +17,10 @@ import {
   userSelector
 } from '../../redux';
 import ChildContainer from '../../Child-Container.jsx';
+
+import Portfolio from './Portfolio.jsx';
+import Certificates from './Certificates.jsx';
+import Timeline from './Timeline.jsx';
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -35,6 +37,10 @@ const mapStateToProps = createSelector(
       email,
       isAvailableForHire,
       isLocked,
+      isFrontEndCert,
+      isBackEndCert,
+      isDataVisCert,
+      isFullStackCert,
       isGithubCool,
       isTwitter,
       isLinkedIn
@@ -44,6 +50,10 @@ const mapStateToProps = createSelector(
     location,
     isAvailableForHire,
     isLocked,
+    isFrontEndCert,
+    isBackEndCert,
+    isDataVisCert,
+    isFullStackCert,
     isGithubCool,
     githubURL,
     isLinkedIn,
@@ -67,6 +77,10 @@ const propTypes = {
   githubURL: PropTypes.string,
   initialLang: PropTypes.string,
   isAvailableForHire: PropTypes.bool,
+  isBackEndCert: PropTypes.bool,
+  isDataVisCert: PropTypes.bool,
+  isFrontEndCert: PropTypes.bool,
+  isFullStackCert: PropTypes.bool,
   isGithubCool: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
   isLocked: PropTypes.bool,
@@ -75,8 +89,7 @@ const propTypes = {
   location: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.string,
-  points: PropTypes.integer,
-  showLoading: PropTypes.bool,
+  points: PropTypes.number,
   updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
   username: PropTypes.string
@@ -101,17 +114,16 @@ export class Profile extends React.Component {
   render() {
     const {
       bio,
+      isFrontEndCert,
+      isBackEndCert,
+      isDataVisCert,
+      isFullStackCert,
       location,
       name,
       picture,
       points,
-      showLoading,
       username
     } = this.props;
-
-    if (!username && !showLoading) {
-      return <SettingsSkeleton />;
-    }
 
     return (
       <ChildContainer>
@@ -139,302 +151,85 @@ export class Profile extends React.Component {
                 </Button>
               </Col>
             </Row>
+            <br />
             <Row>
-              <Col sm={ 4 } smOffset={ 4 }>
-                <img
-                  alt={ username + '\' profile picture' }
-                  className='avatar'
-                  src={ picture }
-                />
+              <Col className='avatar-container'>
+                  <img
+                    alt={ username + '\' profile picture' }
+                    className='avatar'
+                    src={ picture }
+                  />
               </Col>
             </Row>
-          <Row>
-            <Col
-              className='text-center social-media-icons'
-              sm={ 6 }
-              smOffset={ 3 }
-              >
-              <a href={ 'mailto:' }>
-                <FontAwesome
-                  name='envelope-o'
-                  size='2x'
-                />
-              </a>
-              <a href={ 'https://linkedin.com/' }>
-                <FontAwesome
-                  name='linkedin'
-                  size='2x'
-                />
-              </a>
-              <a href={ 'https://github.com/' }>
-                <FontAwesome
-                  name='github'
-                  size='2x'
-                />
-              </a>
-              <a href={ '' }>
-                <FontAwesome
-                  name='link'
-                  size='2x'
-                />
-              </a>
-              <a href={ 'https://twitter.com/' }>
-                <FontAwesome
-                  name='twitter'
-                  size='2x'
-                />
-              </a>
-            </Col>
-          </Row>
-          <br/>
-          <h2 className='text-center name'>{ name }</h2>
-          <h2 className='text-center username'>@{ username }</h2>
-          <br/>
-          <h2 className='text-center points'>{ points } points</h2>
-          <br/>
-          <h3 className='text-center location'>{ location }</h3>
-          <br/>
-          <p>
-            { bio }
-          </p>
+            <br />
+            <Row>
+              <Col
+                className='text-center social-media-icons'
+                sm={ 6 }
+                smOffset={ 3 }
+                >
+                <a href={ 'mailto:' }>
+                  <FontAwesome
+                    name='envelope-o'
+                    size='2x'
+                  />
+                </a>
+                <a href={ 'https://linkedin.com/' }>
+                  <FontAwesome
+                    name='linkedin'
+                    size='2x'
+                  />
+                </a>
+                <a href={ 'https://github.com/' }>
+                  <FontAwesome
+                    name='github'
+                    size='2x'
+                  />
+                </a>
+                <a href={ '' }>
+                  <FontAwesome
+                    name='link'
+                    size='2x'
+                  />
+                </a>
+                <a href={ 'https://twitter.com/' }>
+                  <FontAwesome
+                    name='twitter'
+                    size='2x'
+                  />
+                </a>
+              </Col>
+            </Row>
+            <br/>
+            <h2 className='text-center name'>{ name }</h2>
+            <h4 className='text-center username'>@{ username }</h4>
+            <h4 className='text-center location'>{ location }</h4>
+            <br />
+            <h3 className='text-center points'>{ points } points</h3>
+            <br/>
+            <p className='bio'>{ bio }</p>
+          </div>
+          <div className='heatmap-container'/>
+          <div>
+            <h2 className='text-center'>FreeCodeCamp Certificates</h2>
+            <br />
+            <Certificates
+              isBackEndCert={isBackEndCert}
+              isDataVisCert={isDataVisCert}
+              isFrontEndCert={isFrontEndCert}
+              isFullStackCert={isFullStackCert}
+              username={username}
+            />
+          </div>
+          <div>
+            <h2 className='text-center'>Portfolio</h2>
+            <Portfolio />
+          </div>
+          <div>
+            <h2 className='text-center'>Timeline</h2>
+            <Timeline className='timelime-container' />
+          </div>
         </div>
-        <div className='heatmap-container'/>
-        <div>
-          <h1 className='text-center'>FreeCodeCamp Certificates</h1>
-          <Row>
-            <Col sm={ 8 }>
-              <p>
-                <strong>
-                  Responsive Web Design Certificate:
-                </strong>
-              </p>
-            </Col>
-            <Col sm={ 2 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                href='responsive-web-design-certification'
-                >
-                Show
-              </Button>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 8 }>
-              <p>
-                <strong>
-                  JavaScript Algorithms and Data Structures Certificate:
-                </strong>
-              </p>
-            </Col>
-            <Col sm={ 2 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                href='javascript-algorithms-and-data-structures-certification'
-                >
-                Show
-              </Button>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 8 }>
-              <p>
-                <strong>
-                  Front End Libraries Certificate:
-                </strong>
-              </p>
-            </Col>
-            <Col sm={ 2 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                href='front-end-libraries-certification'
-                >
-                Show
-              </Button>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 8 }>
-              <p>
-                <strong>
-                  Data Visualization Certificate:
-                </strong>
-              </p>
-            </Col>
-            <Col sm={ 2 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                href='data-visualization-certification'
-                >
-                Show
-              </Button>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 8 }>
-              <p>
-                <strong>
-                  APIs and Microservices Certificate:
-                </strong>
-              </p>
-            </Col>
-            <Col sm={ 2 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                href='apis-and-microservices-certification'
-                >
-                Show
-              </Button>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 8 }>
-              <p>
-                <strong>
-                  Information Security and Quality Assurance Certificate:
-                </strong>
-              </p>
-            </Col>
-            <Col sm={ 2 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                href='information-security-and-quality-assurance-certification'
-                >
-                Show
-              </Button>
-            </Col>
-          </Row>
-        </div>
-        <div>
-          <h1 className='text-center'>Portfolio</h1>
-          <Row>
-            <Col sm={ 3 }>
-              <img alt={ 'Screenshot' } src={ 'test' }/>
-            </Col>
-            <Col sm={ 6 }>
-              <h3>Title</h3>
-              <p>
-                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
-                Sed vulputate. Morbi massa nunc, convallis a, commodo
-                gravida, tincidunt sed, turpis. Aenean ornare viverra
-              </p>
-              <a href={ 'url' }>url</a>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 3 }>
-              <img alt={ 'Screenshot' } src={ 'test' }/>
-            </Col>
-            <Col sm={ 6 }>
-              <h3>Title</h3>
-              <p>
-                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
-                Sed vulputate. Morbi massa nunc, convallis a, commodo
-                gravida, tincidunt sed, turpis. Aenean ornare viverra
-              </p>
-              <a href={ 'url' }>url</a>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 3 }>
-              <img alt={ 'Screenshot' } src={ 'test' }/>
-            </Col>
-            <Col sm={ 6 }>
-              <h3>Title</h3>
-              <p>
-                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
-                Sed vulputate. Morbi massa nunc, convallis a, commodo
-                gravida, tincidunt sed, turpis. Aenean ornare viverra
-              </p>
-              <a href={ 'url' }>url</a>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 3 }>
-              <img alt={ 'Screenshot' } src={ 'test' }/>
-            </Col>
-            <Col sm={ 6 }>
-              <h3>Title</h3>
-              <p>
-                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
-                Sed vulputate. Morbi massa nunc, convallis a, commodo
-                gravida, tincidunt sed, turpis. Aenean ornare viverra
-              </p>
-              <a href={ 'url' }>url</a>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 3 }>
-              <img alt={ 'Screenshot' } src={ 'test' }/>
-            </Col>
-            <Col sm={ 6 }>
-              <h3>Title</h3>
-              <p>
-                Maecenas condimentum tincidunt lorem. Vestibulum vel tellus.
-                Sed vulputate. Morbi massa nunc, convallis a, commodo
-                gravida, tincidunt sed, turpis. Aenean ornare viverra
-              </p>
-              <a href={ 'url' }>url</a>
-            </Col>
-          </Row>
-        </div>
-        <div className='timetable-container'>
-          <h1 className='text-center'>Timeline</h1>
-          <Row>
-            <Col sm={ 2 } smOffset={ 3 }>
-              <p>9/2015 - 5/2017</p>
-            </Col>
-            <Col sm={ 1 }>
-              <span className='dot'/>
-            </Col>
-            <Col sm={ 3 }>
-              <h3>Name the achievement</h3>
-              <p>
-                Morbi ipsum ipsum, adipiscing eget, tincidun
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 2 } smOffset={ 3 }>
-              <p>9/2015 - 5/2017</p>
-            </Col>
-            <Col sm={ 1 }>
-              <span className='dot'/>
-            </Col>
-            <Col sm={ 3 }>
-              <h3>Name the achievement</h3>
-              <p>
-                Morbi ipsum ipsum, adipiscing eget, tincidun
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={ 2 } smOffset={ 3 }>
-              <p>9/2015 - 5/2017</p>
-            </Col>
-            <Col sm={ 1 }>
-              <span className='dot'/>
-            </Col>
-            <Col sm={ 3 }>
-              <h3>Name the achievement</h3>
-              <p>
-                Morbi ipsum ipsum, adipiscing eget, tincidun
-              </p>
-            </Col>
-          </Row>
-        </div>
-      </div>
       </ChildContainer>
     );
   }
