@@ -9,7 +9,8 @@
       "title": "Show the Local Weather",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/bELRjV' target='_blank'>https://codepen.io/freeCodeCamp/full/bELRjV</a>.",
-        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
+        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
+        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
         "<strong>User Story:</strong> I can see the weather in my current location.",
         "<strong>User Story:</strong> I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.",
         "<strong>User Story:</strong> I can push a button to toggle between Fahrenheit and Celsius.",
