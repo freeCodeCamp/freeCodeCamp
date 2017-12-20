@@ -190,14 +190,20 @@ You can leave the other keys as they are. Keep in mind if you want to use more s
 
 Next you should setup MailHog, a local SMTP mail server that will catch all the outgoing freeCodeCamp messages generated locally. How you start up MailHog is dependent upon your OS. 
 
-Here's an example for MacOS with Brew:
+Here is how to set up MailHog on macOS with [Homebrew](https://brew.sh/):
 
 ```bash
+brew install mailhog
 brew services start mailhog
 ```
 
 Here is how to set up MailHog on Windows: 
-Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/blob/master/docs/RELEASES.md). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer. Once it finishes downloading, click on the file. You will probably get a Windows firewall notification where you will have to allow access to MailHog. Once you do, a standard Windows command line prompt will open with MailHog already running. If you want to close MailHog, simply close the command prompt. To run it again, click on the same .exe file, there is no need to download a new one.
+
+Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/blob/master/docs/RELEASES.md). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer. 
+
+Once it finishes downloading, click on the file. You will probably get a Windows firewall notification where you will have to allow access to MailHog. Once you do, a standard Windows command line prompt will open with MailHog already running. 
+
+If you want to close MailHog, simply close the command prompt. To run it again, click on the same .exe file, there is no need to download a new one.
 
 To access your MailHog inbox, open your browser and navigate to [http://localhost:8025](http://localhost:8025). For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.
 
