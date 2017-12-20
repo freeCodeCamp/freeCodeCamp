@@ -48,7 +48,7 @@
       ],
       "tests": [
         "assert(redNosedReindeer === \"Rudolph\", 'message: <code>redNosedReindeer</code> should be Rudolph.');",
-        "assert(favorite === \"Rudolph is Santa's favorite reindeer.\", \"message: <code>favorite</code> should return Santa's favorite reindeer.\");"
+        "assert(favorite === \"Rudolph is Santa's favorite reindeer.\", 'message: <code>favorite</code> should return Santa's favorite reindeer.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -228,11 +228,11 @@
         "console.log(magic());"
       ],
       "tests": [
-        "assert(getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
         "getUserInput => assert(getUserInput('index').match(/const\\s+magic/g), 'message: <code>magic</code> is <code>const</code>.');",
         "assert(typeof magic === 'function', 'message: <code>magic</code> is a <code>function</code>.');",
         "assert(magic().getDate() == new Date().getDate(), 'message: <code>magic()</code> returns correct date.');",
-        "assert(getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"
+        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -260,11 +260,11 @@
         "console.log(myConcat([1, 2], [3, 4, 5]));"
       ],
       "tests": [
-        "assert(getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
         "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), 'message: <code>myConcat</code> is <code>const</code>.');",
         "assert(typeof myConcat === 'function', 'message: <code>myConcat</code> should be a function');",
         "assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, 'message: <code>myConcat()</code> returns the correct <code>array</code>');",
-        "assert(getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"   
+        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"   
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -295,12 +295,12 @@
         "console.log(squaredIntegers);"
       ],
       "tests": [
-        "assert(getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
         "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), 'message: <code>squaredIntegers</code> is <code>const</code>.');",
         "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an array');",
         "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, 'message: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');",
-        "assert(getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');",   
-        "assert(getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'message: loop should not be used');",
+        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');",   
+        "getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'message: loop should not be used');",
         "getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), 'message: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');"
       ],
       "type": "waypoint",
@@ -524,7 +524,7 @@
       "tests": [
         "assert(arr.every((v, i) => v === i + 3),'message: <code>arr</code> is <code>[3,4,5,6,7,8,9,10]</code>');",
         "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g),'message: destructuring was used.');",
-        "assert(getUserInput => assert(!getUserInput('index').match(/Array.slice\\(\\)/g), 'message: <code>Array.slice()</code> was not used.');"
+        "getUserInput => assert(!getUserInput('index').match(/Array.slice\\(\\)/g), 'message: <code>Array.slice()</code> was not used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -642,7 +642,7 @@
       ],
       "tests": [
         "assert(() => {const res={name:\"Zodiac Hasbro\",age:56,gender:\"male\"}; const person=createPerson(\"Zodiac Hasbro\", 56, \"male\"); return Object.keys(person).every(k => person[k] === res[k]);}, 'message: the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.');",
-        "assert(getUserInput => assert(!getUserInput('index').match(/:/g), 'message: No <code>:</code> were used.');"
+        "getUserInput => assert(!getUserInput('index').match(/:/g), 'message: No <code>:</code> were used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -675,7 +675,7 @@
       ],
       "tests": [
         "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, 'message: <code>setGear</code> is a function and changes the <code>gear</code> variable.');",
-        "assert(getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), 'message: Declarative function was used.');"
+        "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), 'message: Declarative function was used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
