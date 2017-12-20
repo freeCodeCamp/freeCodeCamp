@@ -181,6 +181,11 @@
     },
     "isRespWebDesignCert": {
       "type": "boolean",
+      "description": "Camper is data visualization certified",
+      "default": false
+    },
+    "isNewDataVisCert": {
+      "type": "boolean",
       "description": "Camper is responsive web design certified",
       "default": false
     },
