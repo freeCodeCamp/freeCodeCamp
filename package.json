@@ -193,9 +193,11 @@
     "uglifyjs-webpack-plugin": "^1.1.8",
     "validate-commit-msg": "^2.12.2",
     "webpack": "^3.10.0",
+    "webpack-config-utils": "^2.3.0",
     "webpack-dev-middleware": "^2.0.4",
     "webpack-hot-middleware": "^2.21.0",
     "webpack-manifest-plugin": "^1.3.2",
+    "webpack-merge": "^4.1.1",
     "webpack-stream": "^4.0.0",
     "webpack-visualizer-plugin": "^0.1.11",
     "yargs": "^7.0.1"
