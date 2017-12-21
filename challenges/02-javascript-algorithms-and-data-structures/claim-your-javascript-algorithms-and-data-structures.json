@@ -8,7 +8,7 @@
       "title": "Claim Your JavaScript Algorithms and Data Structures Certificate",
       "description": [
         [
-          "//i.imgur.com/k8btNUB.jpg",
+          "//i.imgur.com/EzMrezJ.jpg",
           "An image of our JavaScript Algorithms and Data Structures Certificate",
           "This challenge will give you your verified JavaScript Algorithms and Data Structures Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic, intermediate, and advanced front end development projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""
@@ -20,8 +20,8 @@
           "#"
         ],
         [
-          "//i.imgur.com/UedoV2G.jpg",
-          "An image of the text \"JavaScript Algorithms and Data Structures Certificate Requirements\"",
+          "//i.imgur.com/rx2gKfB.jpg",
+          "An image of the text \"JavaScript Algorithms and Data Structures requirements\"",
           "Let's confirm that you have completed all of our JavaScript Algorithms and Data Structures projects. Click the button below to verify this.",
           "#"
         ],
@@ -36,11 +36,11 @@
         {
           "properties": [
             "isHonest",
-            "isFrontEndCert"
+            "isJsAlgoDataStructCert"
           ],
           "apis": [
             "/certificate/honest",
-            "/certificate/verify/front-end"
+            "/certificate/verify/javascript-algorithms-data-structures"
           ],
           "stepIndex": [
             1,
@@ -74,9 +74,9 @@
       "challengeType": 7,
       "descriptionEs": [
         [
-          "//i.imgur.com/k8btNUB.jpg",
+          "//i.imgur.com/EzMrezJ.jpg",
           "Una imagen que muestra nuestro certificado de Desarrollo de interfaces",
-          "Este desafío te otorga tu certificado autenticado de Desarrollo de interfaces. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los desafíos básicos e intermedios de diseño de algoritmos, y todos los proyectos básicos e intermedios de desarrollo de interfaces. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
+          "This challenge will give you your verified JavaScript Algorithms and Data Structures Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""
         ],
         [
@@ -86,9 +86,9 @@
           "#"
         ],
         [
-          "//i.imgur.com/14F2Van.jpg",
-          "Una imagen del texto \"Front End Development Certificate requirements\"",
-          "Confirmemos que has completado todos nuestros desafíos básicos e intermedios de diseño de algoritmos, y todos nuestros proyectos básicos e intermedios de desarrollo de interfaces. Pulsa el botón siguiente para hacer la verificación.",
+          "//i.imgur.com/rx2gKfB.jpg",
+          "An image of the text \"JavaScript Algorithms and Data Structures requirements\"",
+          "Let's confirm that you have completed all of our basic and intermediate algorithm scripting challenges. Click the button below to verify this.",
           "#"
         ],
         [
