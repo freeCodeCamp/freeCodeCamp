@@ -17,7 +17,7 @@
       "image": "A9mEKIF",
       "tests": [],
       "type": "zipline",
-      "isRequired": true,
+      "isRequired": false,
       "challengeType": 3,
       "translations": {
         "es": {
@@ -44,7 +44,7 @@
       "image": "FFDvuCP",
       "tests": [],
       "type": "zipline",
-      "isRequired": true,
+      "isRequired": false,
       "challengeType": 3,
       "translations": {
         "es": {
@@ -71,7 +71,7 @@
       "image": "OkeFgKL",
       "tests": [],
       "type": "zipline",
-      "isRequired": true,
+      "isRequired": false,
       "challengeType": 3,
       "translations": {
         "es": {
@@ -100,7 +100,7 @@
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
-      "isRequired": true,
+      "isRequired": false,
       "translations": {
         "es": {
           "title": "Crea una calculadora JavaScript",
@@ -121,7 +121,7 @@
       "image": "u5RTBt4",
       "tests": [],
       "type": "zipline",
-      "isRequired": true,
+      "isRequired": false,
       "challengeType": 3,
       "translations": {
         "es": {
