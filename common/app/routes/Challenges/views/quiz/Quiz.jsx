@@ -108,7 +108,7 @@ export class QuizChallenge extends PureComponent {
 
             <p>
               You got {this.props.correct} out of
-               {this.props.description.length} correct!
+               {` ${this.props.description.length}`} correct!
             </p>
 
             {isQuizPassed === false ? (
