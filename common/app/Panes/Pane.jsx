@@ -22,7 +22,9 @@ export function Pane({
     overflowY: 'auto',
     position: 'absolute',
     right: right + '%',
-    top: 0
+    top: 0,
+    paddingLeft: '4px',
+    paddingRight: '4px'
   };
   return (
     <div style={ style }>

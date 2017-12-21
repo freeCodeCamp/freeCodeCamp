@@ -25,7 +25,7 @@ export function Divider({ left, dividerClicked }) {
     cursor: 'col-resize',
     height: '100%',
     left: left + '%',
-    marginLeft: '-4px',
+    marginLeft: '0px',
     position: 'absolute',
     right: 'auto',
     top: 0,
