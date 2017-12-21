@@ -50,7 +50,7 @@
       },
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })(), 'message: The <code>DisplayMessages</code> component should render an empty <code>div</code> element.');",
-        "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/ /g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'message: The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');",
+        "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'message: The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === 'object' && initialState.input === '' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), 'message: The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: \"\", messages: []}</code>.');"
       ],
       "solutions": [
@@ -258,7 +258,7 @@
       },
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'message: The <code>AppWrapper</code> should render.');",
-        "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/ /g,'').includes('<Providerstore={store}>'); })(), 'message: The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.');",
+        "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\\s/g,'').includes('<Providerstore={store}>'); })(), 'message: The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })(), 'message: <code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })(), 'message: The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.');"
       ],
