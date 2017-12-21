@@ -17,7 +17,7 @@ export default function SocialSettings({
 }) {
   const githubCopy = isGithubCool ?
     'Update my profile from GitHub' :
-    'Link my GitHub to unlock my portfolio';
+    'Link my GitHub to enable my public profile';
   const buttons = [
     <Button
       block={ true }
