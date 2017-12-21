@@ -8,9 +8,9 @@
       "title": "Claim Your Data Visualization Certificate",
       "description": [
         [
-          "//i.imgur.com/k8btNUB.jpg",
+          "//i.imgur.com/N8drT4I.jpg",
           "An image of our Data Visualization Certificate",
-          "This challenge will give you your verified Data Visualization Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic, intermediate, and advanced front end development projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+          "This challenge will give you your verified Data Visualization Certificate. Before we issue your certificate, we must verify that you have completed all of our data visualisation projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""
         ],
         [
@@ -20,10 +20,9 @@
           "#"
         ],
         [
-          "//i.imgur.com/UedoV2G.jpg",
-          "An image of the text \"Front End Development Certificate requirements\"",
-          "Let's confirm that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic, intermediate, and advanced front end development projects. Click the button below to verify this.",
-          "#"
+          "//i.imgur.com/BUaEvDo.jpg",
+          "An image of the text \"Data Visualization Certificate requirements\"",
+          "Let's confirm that you have completed data visualisation projects. Click the button below to verify this.",          "#"
         ],
         [
           "//i.imgur.com/Q5Za9U6.jpg",
@@ -36,11 +35,11 @@
         {
           "properties": [
             "isHonest",
-            "isFrontEndCert"
+            "isDataVisCert"
           ],
           "apis": [
             "/certificate/honest",
-            "/certificate/verify/front-end"
+            "/certificate/verify/data-visualization"
           ],
           "stepIndex": [
             1,
@@ -77,10 +76,9 @@
           "title": "Reclama tu certificado de Desarrollo de interfaces",
           "description": [
             [
-              "//i.imgur.com/k8btNUB.jpg",
+              "//i.imgur.com/N8drT4I.jpg",
               "Una imagen que muestra nuestro certificado de Desarrollo de interfaces",
-              "Este desafío te otorga tu certificado autenticado de Desarrollo de interfaces. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los desafíos básicos e intermedios de diseño de algoritmos, y todos los proyectos básicos e intermedios de desarrollo de interfaces. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
-              ""
+              "This challenge will give you your verified Data Visualization Certificate. Before we issue your certificate, we must verify that you have completed all of our data visualisation projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",              ""
             ],
             [
               "//i.imgur.com/HArFfMN.jpg",
@@ -89,9 +87,9 @@
               "#"
             ],
             [
-              "//i.imgur.com/14F2Van.jpg",
-              "Una imagen del texto \"Front End Development Certificate requirements\"",
-              "Confirmemos que has completado todos nuestros desafíos básicos e intermedios de diseño de algoritmos, y todos nuestros proyectos básicos e intermedios de desarrollo de interfaces. Pulsa el botón siguiente para hacer la verificación.",
+              "//i.imgur.com/BUaEvDo.jpg",
+              "An image of the text \"Data Visualization Certificate requirements\"",
+              "Let's confirm that you have completed data visualisation projects. Click the button below to verify this.",              "Confirmemos que has completado todos nuestros desafíos básicos e intermedios de diseño de algoritmos, y todos nuestros proyectos básicos e intermedios de desarrollo de interfaces. Pulsa el botón siguiente para hacer la verificación.",
               "#"
             ],
             [

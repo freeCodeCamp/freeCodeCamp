@@ -179,6 +179,36 @@
       "description": "Campers is full stack certified",
       "default": false
     },
+    "isRespWebDesignCert": {
+      "type": "boolean",
+      "description": "Camper is data visualization certified",
+      "default": false
+    },
+    "isNewDataVisCert": {
+      "type": "boolean",
+      "description": "Camper is responsive web design certified",
+      "default": false
+    },
+    "isFrontEndLibsCert": {
+      "type": "boolean",
+      "description": "Camper is front end libraries certified",
+      "default": false
+    },
+    "isJsAlgoDataStructCert": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified",
+      "default": false
+    },
+    "isApisMicroservicesCert": {
+      "type": "boolean",
+      "description": "Camper is apis and microservices certified",
+      "default": false
+    },
+    "isInfosecQaCert": {
+      "type": "boolean",
+      "description": "Camper is information security and quality assurance certified",
+      "default": false
+    },
     "isChallengeMapMigrated": {
       "type": "boolean",
       "description": "Migrate completedChallenges array to challenge map",
