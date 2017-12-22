@@ -15,13 +15,14 @@ module.exports = function(app) {
   noLangRouter.get('/unsubscribe/:email', unsubscribeAll);
   noLangRouter.get('/unsubscribe-notifications/:email', unsubscribeAll);
   noLangRouter.get('/unsubscribe-quincy/:email', unsubscribeAll);
+  noLangRouter.get('/unsubscribed', unsubscribed);
+  noLangRouter.get('/resubscribe/:email', resubscribe);
   noLangRouter.get('/submit-cat-photo', submitCatPhoto);
   noLangRouter.get(
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
   );
 
-  router.get('/unsubscribed', unsubscribed);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
@@ -124,7 +125,6 @@ module.exports = function(app) {
   }
 
   function unsubscribeAll(req, res, next) {
-    req.checkParams('email', 'Must send a valid email').isEmail();
     var query = { email: req.params.email };
     var params = {
       sendQuincyEmail: false,
@@ -151,6 +151,39 @@ module.exports = function(app) {
   function unsubscribed(req, res) {
     res.render('resources/unsubscribed', {
       title: 'You have been unsubscribed'
+    });
+  }
+
+  function resubscribe(req, res, next) {
+    req.checkParams(
+      'email',
+      `"${req.params.email}" isn't a valid email address.`
+    ).isEmail();
+    const errors = req.validationErrors(true);
+    if (errors) {
+      req.flash('error', { msg: errors.email.msg });
+      return res.redirect('/map');
+    }
+    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
+      if (err) { return next(err); }
+      if (!user) {
+        req.flash('info', {
+          msg: 'Email address not found. ' +
+          'Please update your Email preferences from your profile.'
+        });
+        return res.redirect('/map');
+      }
+      return user.updateAttributes({
+        sendMonthlyEmail: true,
+        sendQuincyEmail: true,
+        sendNotificationEmail: true
+      }, (err) => {
+        if (err) { return next(err); }
+        req.flash('info', {
+          msg: 'We\'ve successfully updated your Email preferences.'
+        });
+        return res.redirect('/map');
+      });
     });
   }
 
