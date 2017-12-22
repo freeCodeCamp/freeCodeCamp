@@ -113,7 +113,7 @@
         "<blockquote>\"use strict\"<br>const FAV_PET = \"Cats\";<br>FAV_PET = \"Dogs\"; // returns error</blockquote>",
         "As you can see, trying to reassign a variable declared with <code>const</code> will throw an error. You should always name variables you don't want to reassign using the <code>const</code> keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. A common practice is to name your constants in all upper-cases and with an underscore to separate words (e.g. <code>EXAMPLE_VARIABLE</code>).",
         "<hr>",
-        "Change the code so that all variables are declared using <code>let</code> or <code>const</code>. Use <code>let</code> when you want the variable to change, and <code>const</code> when you want the variable to remain constant. Also, rename variables declared with <code>const</code> to conform to common practices."
+        "Change the code so that all variables are declared using <code>let</code> or <code>const</code>. Use <code>let</code> when you want the variable to change, and <code>const</code> when you want the variable to remain constant. Also, rename variables declared with <code>const</code> to conform to common practices, meaning constants should be in all caps"
       ],
       "challengeSeed": [ 
         "function printManyTimes(str) {",
@@ -128,13 +128,13 @@
         "",
         "  // change code above this line",
         "",
-        "};",
+        "}",
         "printManyTimes(\"FreeCodeCamp\");"
       ],
       "tests": [
         "getUserInput => assert(!getUserInput('index').match(/var/g),'message: <code>var</code> does not exist in code.');",
-        "getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g), 'message: <code>SENTENCE</code> is <code>const</code>.');",
-        "getUserInput => assert(getUserInput('index').match(/(let i)/g), 'message: <code>i</code> is <code>let</code>.');"
+        "getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g), 'message: <code>SENTENCE</code> should be a constant variable (by using <code>const</code>).');",
+        "getUserInput => assert(getUserInput('index').match(/(let i)/g), 'message: <code>i</code> should be a variable only defined within the for loop scope (by using<code>let</code>).');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
