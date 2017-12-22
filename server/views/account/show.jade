@@ -56,6 +56,21 @@ block content
                     if isBackEndCert
                         .button-spacer
                         a.btn.btn-primary.btn-block(href='/' + username + '/back-end-certification') View My Back End Development Certification
+                    if isRespWebDesignCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/responsive-web-design-certification') View My Responsive Web Design Certification
+                    if isFrontEndLibsCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/front-end-libraries-certification') View My Front End Libraries Certification
+                    if isJsAlgoDataStructCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/javascript-algorithms-data-structures-certification') View My JavaScript Algorithms Data Structures Certification
+                    if isApisMicroservicesCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/apis-microservices-certification') View My APIs Microservices Certification
+                    if isInfosecQaCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/information-security-quality-assurance-certification') View My Information Sequrity Quality Assurance Certification
                     if (user && user.username != username)
                         .button-spacer
                         a.btn.btn-primary.btn-block(href='/' + username + '/report-user/') Report this user's profile for abuse
