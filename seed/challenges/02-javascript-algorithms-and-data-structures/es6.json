@@ -167,7 +167,7 @@
       ],
       "tests": [
         "getUserInput => assert(getUserInput('index').match(/const/g), 'message: Do not replace <code>const</code> keyword.');",
-        "getUserInput => assert(getUserInput('index').match(/const\\s+s/g), 'message: <code>s</code> is declared with <code>const</code>.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+s/g), 'message: <code>s</code> should be a constant variable (by using <code>const</code>).');",
         "getUserInput => assert(getUserInput('index').match(/const\\s+s\\s*=\\s*\\[\\s*5\\s*,\\s*7\\s*,\\s*2\\s*\\]\\s*;?/g), 'message: Do not change the original array declaration.');",
         "assert.deepEqual(s, [2, 5, 7], 'message: <code>s</code> should be equal to <code>[2, 5, 7]</code>.');"
       ],
@@ -207,7 +207,7 @@
       ],
       "tests": [
         "getUserInput => assert(getUserInput('index').match(/const/g), 'message: Do not replace <code>const</code> keyword.');",
-        "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS/g), 'message: <code>MATH_CONSTANTS</code> is declared with <code>const</code>.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS/g), 'message: <code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).');",
         "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS\\s+=\\s+{\\s+PI:\\s+3.14\\s+};/g), 'message: Do not change original <code>MATH_CONSTANTS</code>.');",
         "assert(PI === 3.14, 'message: <code>PI</code> equals <code>3.14</code>.');"
       ],
@@ -239,7 +239,7 @@
       ],
       "tests": [
         "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
-        "getUserInput => assert(getUserInput('index').match(/const\\s+magic/g), 'message: <code>magic</code> is <code>const</code>.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+magic/g), 'message: <code>magic</code> should be a constant variable (by using <code>const</code>).');",
         "assert(typeof magic === 'function', 'message: <code>magic</code> is a <code>function</code>.');",
         "assert(magic().getDate() == new Date().getDate(), 'message: <code>magic()</code> returns correct date.');",
         "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"
@@ -269,7 +269,7 @@
       ],
       "tests": [
         "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
-        "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), 'message: <code>myConcat</code> is <code>const</code>.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), 'message: <code>myConcat</code> should be a constant variable (by using <code>const</code>).');",
         "assert(typeof myConcat === 'function', 'message: <code>myConcat</code> should be a function');",
         "assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, 'message: <code>myConcat()</code> returns the correct <code>array</code>');",
         "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"   
@@ -308,8 +308,8 @@
       ],
       "tests": [
         "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
-        "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), 'message: <code>squaredIntegers</code> is <code>const</code>.');",
-        "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an array');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), 'message: <code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');",
+        "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an <code>array</code>');",
         "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, 'message: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');",
         "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');",   
         "getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'message: loop should not be used');",
@@ -451,7 +451,7 @@
       ],
       "tests": [
         "assert(typeof getLength('') === 'number', 'message: the function <code>getLength()</code> returns a number.');",
-        "assert(getLength(\"FreeCodeCamp\") === 12, 'message: <code>getLength(\"FreeCodeCamp\")</code> equals <code>12</code>');",
+        "assert(getLength(\"FreeCodeCamp\") === 12, 'message: <code>getLength(\"FreeCodeCamp\")</code> should be <code>12</code>');",
         "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g),'message: destructuring with reassignment was used');"
       ],
       "type": "waypoint",
@@ -556,7 +556,7 @@
         "console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];"
       ],
       "tests": [
-        "assert(arr.every((v, i) => v === i + 3),'message: <code>arr</code> is <code>[3,4,5,6,7,8,9,10]</code>');",
+        "assert(arr.every((v, i) => v === i + 3),'message: <code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');",
         "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g),'message: destructuring was used.');",
         "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), 'message: <code>Array.slice()</code> was not used.');"
       ],
@@ -603,9 +603,9 @@
         "console.log(half(stats)); // should be 28.015"
       ],
       "tests": [
-        "assert(typeof stats === 'object', 'message: <code>stats</code> is an <code>object</code>.');",
-        "assert(half(stats) === 28.015, 'message: <code>half(stats)</code> is <code>28.015</code>');",
-        "getUserInput => assert(getUserInput('index').match(/\\(\\s*\\{\\s*\\w+\\s*,\\s*\\w+\\s*\\}\\s*\\)/g), 'message: destructuring was used.');"
+        "assert(typeof stats === 'object', 'message: <code>stats</code> should be an <code>object</code>.');",
+        "assert(half(stats) === 28.015, 'message: <code>half(stats)</code> should be <code>28.015</code>');",
+        "getUserInput => assert(getUserInput('index').match(/\\(\\s*\\{\\s*\\w+\\s*,\\s*\\w+\\s*\\}\\s*\\)/g), 'message: Destructuring was used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -757,7 +757,7 @@
         "console.log(carrot.name); // => should be 'carrot'"
       ],
       "tests": [
-        "assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', 'message: <code>Vegetable</code> is a <code>class</code>');",
+        "assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', 'message: <code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.');",
         "getUserInput => assert(getUserInput('index').match(/class/g),'message: <code>class</code> keyword was used.');",
         "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';},'message: <code>Vegetable</code> can be instantiated.');"
       ],
@@ -801,9 +801,9 @@
         "temp = thermos.temperature; // 26 in C"
       ],
       "tests": [
-        "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','message: <code>Thermostat</code> is a <code>class</code>');",
+        "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','message: <code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.');",
         "getUserInput => assert(getUserInput('index').match(/class/g),'message: <code>class</code> keyword was used.');",
-        "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, 'message: Instances of <code>Thermostat</code> can be instantiated.');"
+        "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, 'message: <code>Thermostat</code> can be instantiated.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
