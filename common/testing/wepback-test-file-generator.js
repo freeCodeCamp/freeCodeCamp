@@ -11,19 +11,15 @@ const {
   pathToAssetName
 } = require('./webpack-utils.js');
 
-class StaticSiteGeneratorWebpackPlugin {
+class TestFileGenerator {
   constructor({
     entry,
-    paths = '/',
-    locals,
-    globals,
-    crawl
+    locals = {},
+    globals
   } = {}) {
     this.entry = entry;
-    this.paths = Array.isArray(paths) ? paths : [paths || '/'];
     this.locals = locals;
     this.globals = globals;
-    this.crawl = Boolean(crawl);
   }
 
   apply(compiler) {
@@ -120,4 +116,4 @@ class StaticSiteGeneratorWebpackPlugin {
   }
 }
 
-module.exports = StaticSiteGeneratorWebpackPlugin;
+module.exports = TestFileGenerator;

@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { Scheduler, Observable } from 'rx';
 import { timeCache, observeQuery } from '../utils/rx';
-import { dasherize } from '../utils';
+import { dashify} from '../../common/utils';
 
 const cacheTimeout = [ 24, 'hours' ];
 const appUrl = 'https://www.freecodecamp.org';
@@ -32,7 +32,7 @@ export default function sitemapRouter(app) {
   const router = app.loopback.Router();
   const challengeProps = ['dashedName', 'block'];
   const challenges$ = getCachedObservable(app, 'Challenge', ...challengeProps);
-  const stories$ = getCachedObservable(app, 'Story', 'storyLink', dasherize);
+  const stories$ = getCachedObservable(app, 'Story', 'storyLink', dashify);
   function sitemap(req, res, next) {
     const now = moment(new Date()).format('YYYY-MM-DD');
     return Observable.combineLatest(

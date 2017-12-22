@@ -6,6 +6,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
     "superBlock": {
       "type": "string",
       "required": true,
