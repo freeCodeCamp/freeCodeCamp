@@ -24,8 +24,7 @@ const propTypes = {
   isCompleted: PropTypes.bool,
   isDev: PropTypes.bool,
   isHidden: PropTypes.bool,
-  isLocked: PropTypes.bool,
-  isRequired: PropTypes.bool,
+  isLocked: PropTypes.bool,  
   title: PropTypes.string
 };
 const mapDispatchToProps = { clickOnChallenge };
@@ -44,8 +43,7 @@ function makeMapStateToProps(_, { dashedName }) {
         id,
         title,
         block,
-        isLocked,
-        isRequired,
+        isLocked,        
         isComingSoon
       } = challengeMap[dashedName] || {};
       const isCompleted = userChallengeMap ? !!userChallengeMap[id] : false;
@@ -55,8 +53,7 @@ function makeMapStateToProps(_, { dashedName }) {
         isCompleted,
         title,
         block,
-        isLocked,
-        isRequired,
+        isLocked,        
         isComingSoon,
         isDev: debug.enabled('fcc:*')
       };
@@ -70,13 +67,6 @@ export class Challenge extends PureComponent {
       return null;
     }
     return <span className='sr-only'>completed</span>;
-  }
-
-  renderRequired(isRequired) {
-    if (!isRequired) {
-      return '';
-    }
-    return <span className='text-primary'><strong>*</strong></span>;
   }
 
   renderComingSoon(isComingSoon) {
@@ -93,14 +83,13 @@ export class Challenge extends PureComponent {
     );
   }
 
-  renderLocked(title, isRequired, isComingSoon, className) {
+  renderLocked(title, isComingSoon, className) {
     return (
       <p
         className={ className }
         key={ title }
         >
         { title }
-        { this.renderRequired(isRequired) }
         { this.renderComingSoon(isComingSoon) }
       </p>
     );
@@ -116,8 +105,7 @@ export class Challenge extends PureComponent {
       isCompleted,
       isDev,
       isHidden,
-      isLocked,
-      isRequired,
+      isLocked,      
       title
     } = this.props;
     if (isHidden || !title) {
@@ -134,8 +122,7 @@ export class Challenge extends PureComponent {
     });
     if (isLocked || (!isDev && isComingSoon)) {
       return this.renderLocked(
-        title,
-        isRequired,
+        title,        
         isComingSoon,
         challengeClassName
       );
@@ -151,8 +138,7 @@ export class Challenge extends PureComponent {
           >
           <span >
             { title }
-            { this.renderCompleted(isCompleted, isLocked) }
-            { this.renderRequired(isRequired) }
+            { this.renderCompleted(isCompleted, isLocked) }          
           </span>
         </Link>
       </div>
