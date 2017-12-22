@@ -2,5 +2,8 @@ extends ../layout
 block content
     .panel.panel-info
         .panel-body.text-center
-            h1 You have successfully been unsubscribed.
-            h2 Whatever you do, keep coding! :)
+            h1 OK - you have unsubscribed from our mails.
+            h2 You may still receive account related administrative emails.
+            h2 Do you want to re-subscribe?
+            .big-break
+            a.btn.btn-cta.signup-btn(href='/resubscribe/{email}') Re-subscribe
