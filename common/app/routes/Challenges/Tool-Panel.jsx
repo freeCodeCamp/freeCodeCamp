@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 const unlockWarning = (
   <Tooltip id='tooltip'>
@@ -99,6 +99,7 @@ export default class ToolPanel extends PureComponent {
       openBugModal,
       unlockUntrustedCode
     } = this.props;
+
     return (
       <div>
         { this.renderHint(hint, this.makeHint) }
@@ -110,36 +111,31 @@ export default class ToolPanel extends PureComponent {
           )
         }
         <div className='button-spacer' />
-        <ButtonGroup
-          className='input-group'
-          justified={ true }
-          >
           <Button
-            bsSize='large'
             bsStyle='primary'
-            componentClass='label'
+            className='btn-big btn-block'
             onClick={ this.makeReset }
             >
-            Reset
+          Reset your code
           </Button>
+          <div className='button-spacer' />
           <Button
-            bsSize='large'
             bsStyle='primary'
+            className='btn-big btn-block'
             componentClass='a'
             href={ `https://gitter.im/freecodecamp/${helpChatRoom}` }
             target='_blank'
             >
-            Help
+          Get a hint
           </Button>
+          <div className='button-spacer' />
           <Button
-            bsSize='large'
             bsStyle='primary'
-            componentClass='label'
+            className='btn-big btn-block'
             onClick={ openBugModal }
             >
-            Bug
+          Ask for help on the forum
           </Button>
-        </ButtonGroup>
         <div className='button-spacer' />
       </div>
     );
