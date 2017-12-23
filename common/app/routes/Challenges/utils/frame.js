@@ -11,7 +11,15 @@ const mainId = 'fcc-main-frame';
 // the test frame is responsible for running the assert tests
 const testId = 'fcc-test-frame';
 
+// base tag here will force relative links
+// within iframe to point to '/' instead of
+// append to the current challenge url
+// if an error occurs during initialization
+// the __err prop will be set
+// This is then picked up in client/frame-runner.js during
+// runTestsInTestFrame below
 const createHeader = (id = mainId) => `
+  <base href='/' target='_blank'/>
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg, url, ln, col, err) {
