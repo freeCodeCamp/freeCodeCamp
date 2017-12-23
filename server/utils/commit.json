@@ -42,9 +42,9 @@
   {
     "name": "hack club",
     "displayName": "Hack Club",
-    "donateUrl": "https://hackclub.io/",
-    "description": "Hack Club works with high school students to start and lead programming clubs at their schools.",
-    "imgAlt": "A bunch of high school students posing for a photo in their programming club.",
+    "donateUrl": "https://hackclub.com/donate",
+    "description": "Hack Club helps high schoolers start after-school coding clubs.",
+    "imgAlt": "A bunch of high school students posing for a photo in their Hack Club.",
     "imgUrl": "//i.imgur.com/G2YvPHf.jpg"
   }
 ]

@@ -1,7 +1,13 @@
 require('dotenv').load();
-var pmx = require('pmx');
 
-pmx.init();
+if (process.env.OPBEAT_ID) {
+  console.log('loading opbeat');
+  require('opbeat').start({
+    appId: process.env.OPBEAT_ID,
+    organizationId: process.env.OPBEAT_ORG_ID,
+    secretToken: process.env.OPBEAT_SECRET
+  });
+}
 
 var _ = require('lodash'),
     Rx = require('rx'),
@@ -22,7 +28,7 @@ if (!requireProto.hasOwnProperty('ensure')) {
           callback(this);
         },
         writable: false,
-        enumarble: false
+        enumerable: false
       }
     }
   );
@@ -50,12 +56,12 @@ app.start = _.once(function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(
-      'FreeCodeCamp server listening on port %d in %s',
+      'freeCodeCamp server listening on port %d in %s',
       app.get('port'),
       app.get('env')
     );
     if (isBeta) {
-      console.log('Free Code Camp is in beta mode');
+      console.log('freeCodeCamp is in beta mode');
     }
   });
 });
