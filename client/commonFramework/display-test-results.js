@@ -1,6 +1,6 @@
 window.common = (function({ $, common = { init: [] }}) {
 
-  common.displayTestResults = function displayTestResults(data = []) {
+  common.displayTestResults = function displayTestResults(data = [], down) {
     $('#testSuite').children().remove();
     data.forEach(({ err = false, text = '' }) => {
       var iconClass = err ?
@@ -20,7 +20,11 @@ window.common = (function({ $, common = { init: [] }}) {
       `)
         .appendTo($('#testSuite'));
     });
-
+    if (down) {
+        $('#scroll-locker').animate(
+            { scrollTop: $(document).height() }, 'slow'
+        );
+    }
     return data;
   };
 

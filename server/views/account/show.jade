@@ -37,6 +37,7 @@ block content
                     a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedin, target='_blank')
             h1.flat-top.wrappable= name
             h1.flat-top.wrappable= location
+            p.flat-top.bio= bio
             h1.flat-top.text-primary= "[ " + (progressTimestamps.length) + " ]"
             if pledge
                 .spacer
@@ -63,20 +64,6 @@ block content
                 $(document).ready(function () {
                     var cal = new CalHeatMap();
                     var calendar = !{JSON.stringify(calender)};
-                  /*
-                    var estUTCOffset = -5;
-                    // moment returns the utc offset in minutes
-                    var userUTCOffset = moment().utcOffset() / 60;
-                    var secondsToOffset =
-                      (estUTCOffset - userUTCOffset) * 3600;
-                    var offsetCalendar = {};
-                    for (var prop in calendar) {
-                      if (calendar.hasOwnProperty(prop)) {
-                        var offsetProp = prop + secondsToOffset;
-                        offsetCalendar[offsetProp] = calendar[prop];
-                      }
-                    }
-                    */
                     cal.init({
                         itemSelector: "#cal-heatmap",
                         domain: "month",
@@ -117,13 +104,13 @@ block content
                           for challenge in projects
                               tr
                                   td.col-xs-5.hidden-xs
-                                      a(href='/challenges/' + removeOldTerms(challenge.name), target='_blank')= removeOldTerms(challenge.name)
+                                    a(href='/challenges/#{challenge.block}/#{challenge.dashedName}', target='_blank')= challenge.name
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
                                       a(href=challenge.solution, target='_blank') View project
                                   td.col-xs-12.visible-xs
-                                      a(href=challenge.solution, target='_blank')= removeOldTerms(challenge.name)
+                                      a(href=challenge.solution, target='_blank')= challenge.name
               if (algorithms.length > 0)
                   .col-sm-12
                       table.table.table-striped
@@ -135,19 +122,19 @@ block content
                                   th.col-xs-2.hidden-xs Solution
                           for challenge in algorithms
                               tr
-                                  td.col-xs-5.hidden-xs= removeOldTerms(challenge.name)
+                                  td.col-xs-5.hidden-xs= challenge.name
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
                                     if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
+                                        a(href='/challenges/#{challenge.block}/#{challenge.dashedName}?solution=#{encodeURIComponent(encodeFcc(challenge.solution))}', target='_blank') View solution
                                     else
-                                        a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
+                                        a(href='/challenges/#{challenge.block}/#{challenge.dashedName}') View this challenge
                                   td.col-xs-12.visible-xs
                                     if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
+                                        a(href='/challenges/#{challenge.block}/#{challenge.dashedName}?solution=#{encodeURIComponent(encodeFcc(challenge.solution))}', target='_blank')= challenge.name
                                     else
-                                        a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
+                                        a(href='/challenges/#{challenge.block}/#{challenge.dashedName}')= challenge.name
               if (challenges.length > 0)
                   .col-sm-12
                       table.table.table-striped
@@ -159,16 +146,20 @@ block content
                                   th.col-xs-2.hidden-xs Solution
                           for challenge in challenges
                               tr
-                                  td.col-xs-5.hidden-xs= removeOldTerms(challenge.name)
+                                  td.col-xs-5.hidden-xs= challenge.name
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
-                                    if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
+                                    if (challenge.solution && challenge.name)
+                                      a(href='/challenges/#{challenge.block}/#{challenge.dashedName}?solution=#{encodeURIComponent(encodeFcc(challenge.solution))}', target='_blank') View solution
+                                    else if (challenge.name)
+                                        a(href='/challenges/#{challenge.block}/#{challenge.dashedName}') View this challenge
                                     else
-                                        a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
+                                        span N/A
                                   td.col-xs-12.visible-xs
-                                    if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
+                                    if (challenge.solution && challenge.name)
+                                        a(href='/challenges/#{challenge.block}/#{challenge.dashedName}?solution=#{encodeURIComponent(encodeFcc(challenge.solution))}', target='_blank')= challenge.name
+                                    else if (challenge.name)
+                                        a(href='/challenges/#{challenge.block}/#{challenge.dashedName}')= challenge.name
                                     else
-                                        a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
+                                        span N/A

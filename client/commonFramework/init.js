@@ -33,6 +33,10 @@ window.common = (function(global) {
 
   common.seed = common.arrayToNewLineString(common.challengeSeed);
 
+  common.replaceNoprotect = function replaceNoprotect(value) {
+    return value.replace(/noprotect/gi, '');
+  };
+
   common.replaceScriptTags = function replaceScriptTags(value) {
     return value
       .replace(/<script>/gi, 'fccss')

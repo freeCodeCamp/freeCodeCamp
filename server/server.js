@@ -1,14 +1,33 @@
 require('dotenv').load();
 var pmx = require('pmx');
+
 pmx.init();
 
 var _ = require('lodash'),
+    Rx = require('rx'),
     loopback = require('loopback'),
     boot = require('loopback-boot'),
     expressState = require('express-state'),
     path = require('path'),
     setupPassport = require('./component-passport');
 
+// polyfill for webpack bundle splitting
+const requireProto = Object.getPrototypeOf(require);
+if (!requireProto.hasOwnProperty('ensure')) {
+  Object.defineProperties(
+    requireProto,
+    {
+      ensure: {
+        value: function ensure(modules, callback) {
+          callback(this);
+        },
+        writable: false,
+        enumarble: false
+      }
+    }
+  );
+}
+Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 var app = loopback();
 var isBeta = !!process.env.BETA;
 

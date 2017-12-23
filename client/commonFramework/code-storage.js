@@ -5,6 +5,10 @@ window.common = (function(global) {
     common = { init: [] }
   } = global;
 
+  const {
+    replaceNoprotect
+  } = common;
+
   var challengePrefix = [
     'Bonfire: ',
     'Waypoint: ',
@@ -54,7 +58,7 @@ window.common = (function(global) {
         console.log('unable to save to storage');
         return code;
       }
-      localStorage.setItem(key + 'Val', code);
+      localStorage.setItem(key + 'Val', replaceNoprotect(code));
       return code;
     }
   };

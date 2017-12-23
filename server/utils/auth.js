@@ -27,6 +27,7 @@ export function setProfileFromGithub(
     created_at: joinedGithubOn,
     blog: website,
     location,
+    bio,
     name
   }
 ) {
@@ -37,6 +38,7 @@ export function setProfileFromGithub(
       email: user.email || githubEmail,
       username: username.toLowerCase(),
       location,
+      bio,
       joinedGithubOn,
       website,
       isGithubCool: true,

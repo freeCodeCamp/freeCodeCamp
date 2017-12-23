@@ -12,7 +12,11 @@
       "tests": [],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Computer Science"
+      "translations": {
+        "es": {
+          "title": "Computer Science"
+        }
+      }
     }
   ]
-}    
+}

@@ -4,20 +4,6 @@ module.exports = {
 
   sessionSecret: process.env.SESSION_SECRET,
 
-  trello: {
-    key: process.env.TRELLO_KEY,
-    secret: process.env.TRELLO_SECRET
-  },
-
-  blogger: {
-    key: process.env.BLOGGER_KEY
-  },
-
-  mandrill: {
-    user: process.env.MANDRILL_USER,
-    password: process.env.MANDRILL_PASSWORD
-  },
-
   facebook: {
     clientID: process.env.FACEBOOK_ID,
     clientSecret: process.env.FACEBOOK_SECRET,

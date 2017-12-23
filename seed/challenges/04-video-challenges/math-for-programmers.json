@@ -12,7 +12,11 @@
       "tests": [],
       "type": "hike",
       "challengeType": 6,
-      "nameEs": "Math for Programmers"
+      "translations": {
+        "es": {
+          "title": "Math for Programmers"
+        }
+      }
     }
   ]
-}    
+}

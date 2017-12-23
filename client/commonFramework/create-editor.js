@@ -68,6 +68,12 @@ window.common = (function(global) {
     'Cmd-Enter': function() {
       common.editorExecute$.onNext();
       return false;
+    },
+    'Ctrl-/': function(cm) {
+      cm.toggleComment();
+    },
+    'Cmd-/': function(cm) {
+      cm.toggleComment();
     }
   });
 

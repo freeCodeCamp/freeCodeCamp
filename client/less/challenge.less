@@ -1,9 +1,62 @@
+.challenges-instructions-panel {
+  clear: both;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 10px;
+}
+
 .challenge-step-description {
   font-size: 1.5em;
 }
 .challenge-step-counter {
   font-size: 20px;
   line-height: 44px;
+}
+
+.challenge-step-forward-leave {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.challenge-step-forward-leave-active {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+.challenge-step-forward-enter {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.challenge-step-forward-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.challenge-step-backward-leave {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.challenge-step-backward-leave-active {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.challenge-step-backward-enter {
+  transition: opacity .4s ease-in, transform .3s ease-in-out;
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+
+.challenge-step-backward-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .challenge-instructions-title {
@@ -51,9 +104,9 @@
   }
 }
 
-#testSuite {
+.challenge-test-suite {
   margin-top: 10px;
-  > div >.row {
+  & .row {
     margin: 0!important;
   }
 }
@@ -69,24 +122,78 @@
   color: @gray-light;
 }
 
-.big-error-icon {
+.big-icon {
   font-size: 30px;
-  color: @brand-danger;
-  top:50%;
 }
 
-.big-success-icon {
-  font-size: 30px;
+.error-icon {
+  color: @brand-danger;
+  top: 50%;
+}
+
+.success-icon {
   color: @brand-primary;
+}
+
+.refresh-icon {
+  color: @alert-info-bg;
+}
+
+.night {
+  .challenge-instructions blockquote {
+    background-color: #242424;
+    border-color: #515151;
+    color: #ABABAB
+  }
+  .CodeMirror {
+    background-color:#242424;
+    color:#ABABAB;
+    &-gutters {
+      background-color:#242424;
+      color:#ABABAB;
+    }
+    .cm-bracket, .cm-tag {
+      color:#5CAFD6;
+    }
+    .cm-property, .cm-string {
+      color:#B5753A;
+    }
+    .cm-keyword, .cm-attribute {
+      color:#9BBBDC;
+    }
+  }
+}
+
+.challenges-editor {
+  height: auto;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.challenges-preview {
+  clear: both;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 993px) {
+  .iframe-scroll {
+    z-index: 1;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .iframe-scroll {
+    height: auto;
+    overflow: auto;
+  }
 }
 
 iframe.iphone {
   border: none;
   @media(min-width: 992px) {
     width: 280px;
-    height: 500px;
+    height: 497px;
     position: absolute;
-    top: 70px;
+    top: 75px;
     right: 35px;
     overflow-y: scroll;
   }
@@ -104,35 +211,10 @@ iframe.iphone {
 // To adjust right margin, negative values bring the image closer to the edge of the screen
 .iphone-position {
   position: absolute;
-  top: -50px;
+  top: -45px;
   z-index: -1;
   right: -195px;
   @media (min-width: 1200px) and (max-width: 1250px){
     right: -207px;
-  }
-}
-
-.night {
-  .challenge-instructions blockquote {
-    background-color: #242424;
-    border-color: #515151;
-    color: #ABABAB
-  }
-  div.CodeMirror {
-    background-color:#242424;
-    color:#ABABAB;
-    &-gutters {
-      background-color:#242424;
-      color:#ABABAB;
-    }
-    .cm-bracket, .cm-tag {
-      color:#5CAFD6;
-    }
-    .cm-property, .cm-string {
-      color:#B5753A;
-    }
-    .cm-keyword, .cm-attribute {
-      color:#9BBBDC;
-    }
   }
 }

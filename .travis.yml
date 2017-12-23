@@ -3,6 +3,12 @@ language: node_js
 node_js:
   - '4.2.1'
 
+before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+
+cache:
+  directories:
+    - node_modules
+
 env:
   - CXX=g++-4.8
 

@@ -1,4 +1,4 @@
-exports.blacklistedUsernames = [
+export const blacklistedUsernames = [
   'bonfire',
   'account',
   'user',

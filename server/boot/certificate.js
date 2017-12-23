@@ -66,7 +66,7 @@ function getIdsForCert$(id, Challenge) {
 // getFormatedDate(challengeMap: Object, challengeId: String) => String, throws
 function getFormatedDate(challengeMap, challengeId) {
   return moment(challengeMap[challengeId].completedDate)
-    .format('MMM Do, YYYY');
+    .format('MMMM D, YYYY');
 }
 
 // sendCertifiedEmail(
