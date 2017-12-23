@@ -39,7 +39,7 @@ const createFrame = (document, getState, id) => ctx => {
   const frame = document.createElement('iframe');
   frame.id = id;
   if (!isJSEnabled) {
-    frame.sandbox = 'allow-same-origin';
+    frame.sandbox = 'allow-same-origin allow-scripts';
   }
   return {
     ...ctx,
