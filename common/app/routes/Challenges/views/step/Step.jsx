@@ -177,13 +177,13 @@ export class StepChallenge extends PureComponent {
     step,
     stepBackward,
     stepForward
-  }) {
+  }, index) {
     if (!Array.isArray(step)) {
       return null;
     }
     const [imgUrl, imgAlt, info, action] = step;
     return (
-      <div key={ imgUrl }>
+      <div key={ `${imgUrl}-step-wrapper-${index}` }>
         <a
           href={ imgUrl }
           onClick={ clickOnImage }
@@ -241,8 +241,8 @@ export class StepChallenge extends PureComponent {
     if (!Array.isArray(steps)) {
       return null;
     }
-    return steps.map(([ imgUrl, imgAlt ]) => (
-      <div key={ imgUrl }>
+    return steps.map(([ imgUrl, imgAlt ], index) => (
+      <div key={ `${imgUrl}-images-wrapper-${index}` }>
         <Image
           alt={ imgAlt }
           responsive={ true }
