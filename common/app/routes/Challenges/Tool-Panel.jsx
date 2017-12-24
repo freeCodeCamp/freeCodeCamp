@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 import ns from './ns.json';
 
@@ -101,6 +101,7 @@ export default class ToolPanel extends PureComponent {
       openHelpModal,
       unlockUntrustedCode
     } = this.props;
+
     return (
       <div>
         { this.renderHint(hint, this.makeHint) }
@@ -112,32 +113,28 @@ export default class ToolPanel extends PureComponent {
           )
         }
         <div className='button-spacer' />
-        <ButtonGroup
-          className={`input-group ${ns}-tool-panel-btn-grp`}
-          justified={ true }
-          >
           <Button
-            bsSize='large'
             bsStyle='primary'
+            className='btn-big btn-block'
             onClick={ this.makeReset }
             >
-            Reset
+          Reset your code
           </Button>
+          <div className='button-spacer' />
           <Button
-            bsSize='large'
             bsStyle='primary'
             onClick={ openHelpModal }
             >
-            Help
+            Get Help
           </Button>
+          <div className='button-spacer' />
           <Button
-            bsSize='large'
             bsStyle='primary'
+            className='btn-big btn-block'
             onClick={ openBugModal }
             >
-            Bug
+            Report a Bug
           </Button>
-        </ButtonGroup>
         <div className='button-spacer' />
       </div>
     );
