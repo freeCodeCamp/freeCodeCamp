@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 
-import ns from './ns.json';
-
 const unlockWarning = (
   <Tooltip id='tooltip'>
     <h4>
@@ -123,6 +121,7 @@ export default class ToolPanel extends PureComponent {
           <div className='button-spacer' />
           <Button
             bsStyle='primary'
+            className='btn-big btn-block'
             onClick={ openHelpModal }
             >
             Get Help
