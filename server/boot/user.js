@@ -308,7 +308,7 @@ module.exports = function(app) {
 
   function invalidateAuthToken(req, res, next) {
     if (req.user) {
-      res.redirect('/');
+      return res.redirect('/');
     }
 
     if (!req.query || !req.query.email || !req.query.token) {
