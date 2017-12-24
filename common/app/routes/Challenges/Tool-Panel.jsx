@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup, Tooltip, OverlayTrigger } from 'react-bootstrap';
 
+import ns from './ns.json';
+
 const unlockWarning = (
   <Tooltip id='tooltip'>
     <h4>
@@ -12,11 +14,11 @@ const unlockWarning = (
 
 const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
-  helpChatRoom: PropTypes.string,
   hint: PropTypes.string,
   isCodeLocked: PropTypes.bool,
   makeToast: PropTypes.func.isRequired,
   openBugModal: PropTypes.func.isRequired,
+  openHelpModal: PropTypes.func.isRequired,
   unlockUntrustedCode: PropTypes.func.isRequired,
   updateHint: PropTypes.func.isRequired
 };
@@ -93,10 +95,10 @@ export default class ToolPanel extends PureComponent {
   render() {
     const {
       executeChallenge,
-      helpChatRoom,
       hint,
       isCodeLocked,
       openBugModal,
+      openHelpModal,
       unlockUntrustedCode
     } = this.props;
     return (
@@ -111,13 +113,12 @@ export default class ToolPanel extends PureComponent {
         }
         <div className='button-spacer' />
         <ButtonGroup
-          className='input-group'
+          className={`input-group ${ns}-tool-panel-btn-grp`}
           justified={ true }
           >
           <Button
             bsSize='large'
             bsStyle='primary'
-            componentClass='label'
             onClick={ this.makeReset }
             >
             Reset
@@ -125,16 +126,13 @@ export default class ToolPanel extends PureComponent {
           <Button
             bsSize='large'
             bsStyle='primary'
-            componentClass='a'
-            href={ `https://gitter.im/freecodecamp/${helpChatRoom}` }
-            target='_blank'
+            onClick={ openHelpModal }
             >
             Help
           </Button>
           <Button
             bsSize='large'
             bsStyle='primary'
-            componentClass='label'
             onClick={ openBugModal }
             >
             Bug
