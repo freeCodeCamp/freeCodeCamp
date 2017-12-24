@@ -295,37 +295,6 @@ module.exports = function(User) {
     return ctx.res.redirect(redirect);
   });
 
-  User.beforeRemote('create', function({ req, res }, _, next) {
-    req.body.username = 'fcc' + uuid.v4().slice(0, 8);
-    if (!req.body.email) {
-      return next();
-    }
-    if (!isEmail(req.body.email)) {
-      return next(new Error('Email format is not valid'));
-    }
-    return User.doesExist(null, req.body.email)
-      .then(exists => {
-        if (!exists) {
-          return next();
-        }
-
-        req.flash('error', {
-          msg: dedent`
-      The ${req.body.email} email address is already associated with an account.
-      Try signing in with it here instead.
-          `
-        });
-
-        return res.redirect('/email-signin');
-      })
-      .catch(err => {
-        console.error(err);
-        req.flash('error', {
-          msg: 'Oops, something went wrong, please try again later'
-        });
-        return res.redirect('/email-signin');
-      });
-  });
 
   User.beforeRemote('login', function(ctx, notUsed, next) {
     const { body } = ctx.req;
