@@ -65,17 +65,20 @@
     "description": {
       "type": "array"
     },
+    "image": {
+      "type": "string"
+    },
     "tests": {
       "type": "array"
     },
     "head": {
       "type": "array",
-      "description": "appended to user code",
+      "description": "Appended to user code",
       "default": []
     },
     "tail": {
       "type": "array",
-      "description": "prepended to user code",
+      "description": "Prepended to user code",
       "default": []
     },
     "helpRoom": {
@@ -85,7 +88,7 @@
     },
     "fileName": {
       "type": "string",
-      "description": "filename challenge comes from. Used in dev mode"
+      "description": "Filename challenge comes from. Used in dev mode"
     },
     "challengeSeed": {
       "type": "array"
@@ -108,23 +111,29 @@
       "default": "{}"
     },
     "required": {
-      "type": [{
-        "type": {
-          "link": {
-            "type": "string",
-            "description": "Used for css files"
-          },
-          "src": {
-            "type": "string",
-            "description": "Used for script files"
-          },
-          "crossDomain": {
-            "type": "boolean",
-            "description": "Files coming from FreeCodeCamp must mark this true"
+      "type": [
+        {
+          "type": {
+            "link": {
+              "type": "string",
+              "description": "Used for css files"
+            },
+            "src": {
+              "type": "string",
+              "description": "Used for script files"
+            },
+            "crossDomain": {
+              "type": "boolean",
+              "description": "Files coming from FreeCodeCamp must mark this true"
+            }
           }
         }
-      }],
+      ],
       "default": []
+    },
+    "template": {
+      "type": "string",
+      "description": "A template to render the compiled challenge source into. This template uses template literal delimiter, i.e. ${ foo }"
     }
   },
   "validations": [],

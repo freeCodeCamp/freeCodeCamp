@@ -1,20 +1,20 @@
 extends ../layout
 block content
     include ../partials/flyer
-    #modal-dialog.modal.animated.wobble
+    #modal-dialog.modal
         .modal-dialog
             .modal-content
                 .modal-header
-                    a.close(href='/about', data-dismiss='modal', aria-hidden='true') ×
+                    a.close(href='/settings', data-dismiss='modal', aria-hidden='true') ×
                     h3 You don't really want to delete your account, do you?
                 .modal-body
                     p This will really delete all your data, including all your progress and brownie points.
                     p We won't be able to recover any of it for you later, even if you change your mind.
                     p If there's something we could do better, send us an email instead and we'll do our best: &thinsp;
-                        a(href="mailto:team@freecodecamp.com") team@freecodecamp.com
+                        a(href="mailto:team@freecodecamp.org") team@freecodecamp.org
                         | .
                 .modal-footer
-                    a.btn.btn-success.btn-block(href='/about', data-dismiss='modal', aria-hidden='true')
+                    a.btn.btn-success.btn-block(href='/settings', data-dismiss='modal', aria-hidden='true')
                         | Nevermind, I don't want to delete all of my progress
                     .spacer
                     form(action='/account/delete', method='POST')

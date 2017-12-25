@@ -29,21 +29,17 @@ export function ifNoUser401(req, res, next) {
   return res.status(401).end();
 }
 
-export function flashIfNotVerified(req, res, next) {
-  return next();
-  /*
-  // disabled until authorized required bug is fixed
-  const user = req.user;
+export function ifNotVerifiedRedirectToSettings(req, res, next) {
+  const { user } = req;
   if (!user) {
     return next();
   }
-  const email = req.user.email;
-  const emailVerified = req.user.emailVerified;
-  if (!email || !emailVerified) {
-    req.flash('info', {
-      msg: 'Please verify your email address ' +
-      '<a href="/update-email">here</a>.'
+  if (!user.emailVerified) {
+    req.flash('error', {
+      msg: 'We do not have your verified email address on record, '
+      + 'please add it in the settings to continue with your request.'
     });
+    return res.redirect('/settings');
   }
-  */
+  return next();
 }

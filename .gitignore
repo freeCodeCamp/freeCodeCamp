@@ -1,4 +1,5 @@
 lib-cov
+*~
 *.seed
 *.log
 *.csv
@@ -17,6 +18,7 @@ logs
 results
 tmp
 .ds_store
+.vscode
 
 npm-debug.log
 node_modules
@@ -53,3 +55,4 @@ public/js/frame-runner*
 public/css/main*
 
 server/rev-manifest.json
+google-credentials.json

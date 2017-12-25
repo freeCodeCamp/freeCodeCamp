@@ -20,7 +20,7 @@ export default function flashCheaters() {
         msg: dedent`
           Upon review, this account has been flagged for academic
           dishonesty. If you’re the owner of this account contact
-          team@freecodecamp.com for details.
+          team@freecodecamp.org for details.
         `
       });
     }
