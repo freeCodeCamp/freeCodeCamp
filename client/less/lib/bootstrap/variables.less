@@ -1,6 +1,7 @@
 //
 // Variables
 // --------------------------------------------------
+@empty: ~'';
 
 
 //== Colors
@@ -20,7 +21,8 @@
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
-
+@icon-gray:             #575757;
+@icon-light-gray:       #888888;
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -39,7 +41,7 @@
 
 //## Night mode styles
 @night-body-bg:         @gray-dark;
-@night-text-color:            #999;
+@night-text-color:            #ccc;
 
 //== Typography
 //
@@ -51,7 +53,7 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          15px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
@@ -76,7 +78,7 @@
 
 //== Iconography
 //
-//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via npm.
 
 //** Load fonts from this directory.
 @icon-font-path:          "../fonts/";
@@ -235,9 +237,9 @@
 @dropdown-divider-bg:            #e5e5e5;
 
 //** Dropdown link text color.
-@dropdown-link-color:            @gray-dark;
+@dropdown-link-color:            darkgreen;
 //** Hover color for dropdown links.
-@dropdown-link-hover-color:      darken(@gray-dark, 5%);
+@dropdown-link-hover-color:      darkgreen;
 //** Hover background for dropdown links.
 @dropdown-link-hover-bg:         #f5f5f5;
 
@@ -304,6 +306,10 @@
 //** Deprecated `@screen-lg-desktop` as of v3.0.1
 @screen-lg-desktop:          @screen-lg-min;
 
+// Large screen / wide desktop
+@screen-xl:                  1400px;
+@screen-lg-min:              @screen-lg;
+
 // So media queries don't overlap when required, provide a maximum
 @screen-xs-max:              (@screen-sm-min - 1);
 @screen-sm-max:              (@screen-md-min - 1);
@@ -344,14 +350,17 @@
 //** For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
 
+@container-xl:                 (1340px + @grid-gutter-width);
+
 
 //== Navbar
 //
 //##
 
 // Basics of a navbar
-@navbar-height:                    50px;
+@navbar-height:                    36px;
 @navbar-margin-bottom:             @line-height-computed+10px;
+@navbar-total-height: @navbar-height + @navbar-margin-bottom;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
@@ -365,8 +374,8 @@
 @navbar-default-link-color:                @gray-lighter;
 @navbar-default-link-hover-color:          darkgreen;
 @navbar-default-link-hover-bg:             @gray-lighter;
-@navbar-default-link-active-color:         @gray-lighter;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-active-color:         darkgreen;
+@navbar-default-link-active-bg:            @gray-lighter;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
