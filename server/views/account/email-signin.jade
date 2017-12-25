@@ -1,18 +1,87 @@
 extends ../layout
 block content
-    .row
-        .col-xs-12
-            h2.text-center Sign in with an email address here:
-            .col-sm-6.col-sm-offset-3
-                form(method='POST', action='/api/users/login')
-                    input(type='hidden', name='_csrf', value=_csrf)
-                    .form-group
-                        input.input-lg.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
-                    .form-group
-                        input.input-lg.form-control(type='password', name='password', id='password', placeholder='Password')
-                    button.btn.btn-primary.btn-lg.btn-block(type='submit')
-                        span.ion-android-hand
-                        | Login
-                    .button-spacer
-                    .button-spacer
-                a.btn.btn-info.btn-lg.btn-block(href='/forgot') Forgot your password?
+    .container
+      .col-xs-12
+        .row
+          .col-sm-6.col-sm-offset-3.flashMessage.negative-30
+                #flash-board.alert.fade.in(style='display: none;')
+                    button.close(type='button', data-dismiss='alert')
+                        span.ion-close-circled#flash-close
+                    #flash-content
+        .row
+          .text-center
+            h2 Sign in or Sign Up with an Email here:
+              .button-spacer
+          .col-sm-6.col-sm-offset-3
+              form(method='POST', action='/passwordless-auth')
+                  input(type='hidden', name='_csrf', value=_csrf)
+                  .form-group
+                      input.input-lg.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true, required)
+                  .button-spacer
+                  button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
+                    span.fa.fa-envelope
+                    | Get a magic link to sign in.
+        .row
+          .col-sm-6.col-sm-offset-3
+              br
+              p.text-center
+                | freeCodeCamp uses passwordless authentication.
+                br
+                | Sign up instantly, using a valid email address, or Sign in
+                | using your existing email with us, if you already have an account.
+              br
+              p.text-center
+                  a(href="/deprecated-signin") Or click here if you want to sign in with other options.
+
+        script.
+           $(document).ready(function() {
+
+             function disableMagicButton (isDisabled) {
+               if (isDisabled) {
+                 $('#magic-btn')
+                   .html('<span class="fa fa-circle-o-notch fa-spin fa-fw"></span>')
+                   .prop('disabled', true);
+               } else {
+                 $('#magic-btn')
+                   .html('<span class="fa.fa-envelope">Get a magic link to sign in.</span>')
+                   .prop('disabled', false);
+               }
+            }
+
+            $('form').submit(function(event){
+              event.preventDefault();
+              $('#flash-board').hide();
+              disableMagicButton(true);
+              var $form = $(event.target);
+              $.ajax({
+                  type        : 'POST',
+                  url         : $form.attr('action'),
+                  data        : $form.serialize(),
+                  dataType    : 'json',
+                  encode      : true,
+                  xhrFields   : { withCredentials:  true }
+              })
+              .fail(error => {
+                if (error.responseText){
+                    var data = JSON.parse(error.responseText);
+                    if(data.error && data.error.message)
+                    $('#flash-content').html(data.error.message);
+                    $('#flash-board')
+                      .removeClass('alert-success')
+                      .addClass('alert-info')
+                      .fadeIn();
+                    disableMagicButton(false);
+                  }
+              })
+              .done(data =>{
+                if(data && data.message){
+                  $('#flash-content').html(data.message);
+                  $('#flash-board')
+                      .removeClass('alert-info')
+                      .addClass('alert-success')
+                      .fadeIn();
+                  disableMagicButton(false);
+                }
+              });
+            });
+           });

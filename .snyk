@@ -1,5 +1,7 @@
-version: v1.5.0
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
 ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:marked:20150520':
     - gulp-notify > node-notifier > cli-usage > marked:
@@ -49,9 +51,34 @@ patch:
         patched: '2016-09-03T18:30:05.313Z'
     - loopback > loopback-connector-remote > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
         patched: '2016-09-03T18:30:05.313Z'
+    - loopback > strong-remoting > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback-component-passport > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > loopback-datasource-juggler > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback-boot > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > strong-remoting > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - jsonlint-cli > minimatch:
+        patched: '2016-10-27T21:56:34.219Z'
   'npm:uglify-js:20151024':
     - jade > transformers > uglify-js:
         patched: '2016-07-29T23:00:15.905Z'
+    - jade > transformers > uglify-js:
+        patched: '2016-09-20T18:38:48.774Z'
   'npm:uglify-js:20150824':
     - jade > transformers > uglify-js:
         patched: '2016-07-29T23:00:15.905Z'
+  'npm:ms:20170412':
+    - compression > debug > ms:
+        patched: '2017-05-25T00:47:03.990Z'
