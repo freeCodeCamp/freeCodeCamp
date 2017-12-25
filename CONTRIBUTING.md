@@ -40,7 +40,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 | ------------------------------------------- | ------- |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `~ ^3`  |
 | [MailHog](https://github.com/mailhog/MailHog) | `~ ^1` |
-| [Node.js](http://nodejs.org)                | `~ ^8.9.3`  |
+| [Node.js](https://nodejs.org)                | `~ ^8.9.3`  |
 | npm (comes with Node)                       | `~ ^5`  |
 
 > _Updating to the latest releases is recommended_.
@@ -161,7 +161,7 @@ $ git push origin [name_of_your_new_branch]
 
 ### Setup Linting
 
-You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) (you can find a summary of those rules [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/.eslintrc)).
+You should have [ESLint running in your editor](https://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](https://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) (you can find a summary of those rules [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/.eslintrc)).
 
 > Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base.
 
@@ -278,7 +278,7 @@ When you make a pull request, all of your changes need to be in one commit.
 
 If you have made more than one commit, then you will need to _squash_ your commits.
 
-To do this, see [Squashing Your Commits](http://forum.freecodecamp.org/t/how-to-squash-multiple-commits-into-one-with-git/13231).
+To do this, see [Squashing Your Commits](https://forum.freecodecamp.org/t/how-to-squash-multiple-commits-into-one-with-git/13231).
 
 ### Commit Message
 When you commit your changes, please use conventional commit messages.
@@ -291,9 +291,9 @@ The commit message should be structured as follows:
 
 [optional footer]
 ```
-For help writing your commit message, execute `npm run commit` from the command line and the [commitizen](http://commitizen.github.io/cz-cli/) CLI tool will assist you in creating a conventional commit message.
+For help writing your commit message, execute `npm run commit` from the command line and the [commitizen](https://commitizen.github.io/cz-cli/) CLI tool will assist you in creating a conventional commit message.
 
-Learn more at [Conventional Commits](http://conventionalcommits.org).
+Learn more at [Conventional Commits](https://conventionalcommits.org).
 
 ### Creating A Pull Request
 
@@ -362,7 +362,7 @@ nothing to commit, working directory clean
        - We have a [tool](https://commitizen.github.io/cz-cli/) that helps you to make standard commit messages. Simply execute `npm run commit` after you have added the necessary files as mentioned in the step earlier.
 
     b. Using Commitizen CLI:
-       - If you are already using [commitizen](http://commitizen.github.io/cz-cli/), simply doing a `git cz` works as expected too!
+       - If you are already using [commitizen](https://commitizen.github.io/cz-cli/), simply doing a `git cz` works as expected too!
 
 7.  Squash your commits, if there are more than one.
 
@@ -380,7 +380,7 @@ possible to update your fork via GitHub's interface without deleting and
 recreating your fork.
 
 Read the [Wiki
-article](http://forum.freecodecamp.org/t/how-to-make-a-pull-request-on-free-code-camp/19114)
+article](https://forum.freecodecamp.org/t/how-to-make-a-pull-request-on-free-code-camp/19114)
 for further information
 
 ### Common Steps
@@ -392,7 +392,7 @@ for further information
     branch.
 
 3.  Submit a [pull
-    request](http://forum.freecodecamp.org/t/how-to-contribute-via-a-pull-request/19368)
+    request](https://forum.freecodecamp.org/t/how-to-contribute-via-a-pull-request/19368)
     from your branch to freeCodeCamp's `staging` branch.
 
 4.  The title (also called the subject) of your PR should be descriptive of your
@@ -464,22 +464,22 @@ Be sure to post in the PR conversation that you have made the requested changes.
     Challenges](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/seed/challenge-style-guide.md)
 
 -   [Searching for Your Issue on
-    GitHub](http://forum.freecodecamp.org/t/searching-for-existing-issues/19139)
+    GitHub](https://forum.freecodecamp.org/t/searching-for-existing-issues/19139)
 
 -   [Creating a New GitHub
-    Issue](http://forum.freecodecamp.org/t/creating-a-new-github-issue/18392)
+    Issue](https://forum.freecodecamp.org/t/creating-a-new-github-issue/18392)
 
 -   [Select Issues for Contributing Using
-    Labels](http://forum.freecodecamp.org/t/free-code-camp-issue-labels/19556)
+    Labels](https://forum.freecodecamp.org/t/free-code-camp-issue-labels/19556)
 
 -   [How to clone the freeCodeCamp website on a Windows
-    pc](http://forum.freecodecamp.org/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
+    pc](https://forum.freecodecamp.org/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
 
 -   [How to log in to your local FCC site - using
-    GitHub](http://forum.freecodecamp.org/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
+    GitHub](https://forum.freecodecamp.org/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
 
 -   [Writing great git commit
-    messages](http://forum.freecodecamp.org/t/writing-good-git-commit-messages/13210)
+    messages](https://forum.freecodecamp.org/t/writing-good-git-commit-messages/13210)
 
 -   [Contributor Chat Support - For the FCC Repositories, and running a local
     instance](https://gitter.im/FreeCodeCamp/Contributors)
