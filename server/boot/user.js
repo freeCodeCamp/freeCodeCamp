@@ -2,47 +2,72 @@ import dedent from 'dedent';
 import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
+import emoji from 'node-emoji';
 
 import {
   frontEndChallengeId,
-  dataVisChallengeId,
-  backEndChallengeId
+  backEndChallengeId,
+  respWebDesignId,
+  frontEndLibsId,
+  jsAlgoDataStructId,
+  dataVisId,
+  apisMicroservicesId,
+  infosecQaId
 } from '../utils/constantStrings.json';
 import certTypes from '../utils/certTypes.json';
 import {
   ifNoUser401,
-  ifNoUserRedirectTo
+  ifNoUserRedirectTo,
+  ifNotVerifiedRedirectToSettings
 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import {
-  prepUniqueDays,
+  prepUniqueDaysByHours,
   calcCurrentStreak,
   calcLongestStreak
 } from '../utils/user-stats';
 import supportedLanguages from '../../common/utils/supported-languages';
-import createNameIdMap from '../../common/utils/create-name-id-map';
-import { cachedMap } from '../utils/map';
+import { getChallengeInfo, cachedMap } from '../utils/map';
 
+const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
 const certIds = {
   [certTypes.frontEnd]: frontEndChallengeId,
-  [certTypes.dataVis]: dataVisChallengeId,
-  [certTypes.backEnd]: backEndChallengeId
+  [certTypes.backEnd]: backEndChallengeId,
+  [certTypes.respWebDesign]: respWebDesignId,
+  [certTypes.frontEndLibs]: frontEndLibsId,
+  [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
+  [certTypes.dataVis]: dataVisId,
+  [certTypes.apisMicroservices]: apisMicroservicesId,
+  [certTypes.infosecQa]: infosecQaId
 };
 
 const certViews = {
   [certTypes.frontEnd]: 'certificate/front-end.jade',
-  [certTypes.dataVis]: 'certificate/data-vis.jade',
   [certTypes.backEnd]: 'certificate/back-end.jade',
-  [certTypes.fullStack]: 'certificate/full-stack.jade'
+  [certTypes.fullStack]: 'certificate/full-stack.jade',
+  [certTypes.respWebDesign]: 'certificate/responsive-web-design.jade',
+  [certTypes.frontEndLibs]: 'certificate/front-end-libraries.jade',
+  [certTypes.jsAlgoDataStruct]:
+  'certificate/javascript-algorithms-and-data-structures.jade',
+  [certTypes.dataVis]: 'certificate/data-visualization.jade',
+  [certTypes.apisMicroservices]: 'certificate/apis-and-microservices.jade',
+  [certTypes.infosecQa]:
+  'certificate/information-security-and-quality-assurance.jade'
 };
 
 const certText = {
   [certTypes.frontEnd]: 'Front End certified',
-  [certTypes.dataVis]: 'Data Vis Certified',
   [certTypes.backEnd]: 'Back End Certified',
-  [certTypes.fullStack]: 'Full Stack Certified'
+  [certTypes.fullStack]: 'Full Stack Certified',
+  [certTypes.respWebDesign]: 'Responsive Web Design Certified',
+  [certTypes.frontEndLibs]: 'Front End Libraries Certified',
+  [certTypes.jsAlgoDataStruct]:
+  'JavaScript Algorithms and Data Structures Certified',
+  [certTypes.dataVis]: 'Data Visualization Certified',
+  [certTypes.apisMicroservices]: 'APIs and Microservices Certified',
+  [certTypes.infosecQa]: 'Information Security and Quality Assurance Certified'
 };
 
 const dateFormat = 'MMM DD, YYYY';
@@ -95,7 +120,7 @@ function getChallengeGroup(challenge) {
 //   challenges: Array
 // }]
 function buildDisplayChallenges(
-  { challenge: challengeMap = {}, challengeIdToName },
+  { challengeMap, challengeIdToName },
   userChallengeMap = {},
   timezone
 ) {
@@ -129,17 +154,17 @@ function buildDisplayChallenges(
     .reduce((output, group) => ({ ...output, ...group}), {})
     .map(groups => ({
       algorithms: groups.algorithms || [],
-      projects: groups.projects || [],
-      challenges: groups.challenges || []
+      projects: groups.projects ? groups.projects.reverse() : [],
+      challenges: groups.challenges ? groups.challenges.reverse() : []
     }));
 }
 
 module.exports = function(app) {
   const router = app.loopback.Router();
   const api = app.loopback.Router();
-  const User = app.models.User;
-  const Block = app.models.Block;
-  const map$ = cachedMap(Block);
+  const { AccessToken, Email, User } = app.models;
+  const map$ = cachedMap(app.models);
+
   function findUserByUsername$(username, fields) {
     return observeQuery(
       User,
@@ -151,23 +176,23 @@ module.exports = function(app) {
     );
   }
 
+  AccessToken.findOne$ = Observable.fromNodeCallback(
+    AccessToken.findOne, AccessToken
+  );
+
   router.get('/login', function(req, res) {
     res.redirect(301, '/signin');
   });
   router.get('/logout', function(req, res) {
     res.redirect(301, '/signout');
   });
-  router.get('/signup', getEmailSignup);
-  router.get('/signin', getSignin);
+  router.get('/signup', getEmailSignin);
+  router.get('/signin', getEmailSignin);
   router.get('/signout', signout);
-  router.get('/forgot', getForgot);
-  api.post('/forgot', postForgot);
-  router.get('/reset-password', getReset);
-  api.post('/reset-password', postReset);
-  router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/deprecated-signin', getDepSignin);
-  router.get('/update-email', getUpdateEmail);
+  router.get('/passwordless-auth', invalidateAuthToken, getPasswordlessAuth);
+  api.post('/passwordless-auth', postPasswordlessAuth);
   router.get(
     '/delete-my-account',
     sendNonUserToMap,
@@ -183,16 +208,27 @@ module.exports = function(app) {
     sendNonUserToMap,
     getAccount
   );
+  router.get(
+    '/reset-my-progress',
+    sendNonUserToMap,
+    showResetProgress
+  );
+  api.post(
+    '/account/resetprogress',
+    ifNoUser401,
+    postResetProgress
+  );
+
+  api.get(
+    '/account/unlink/:social',
+    sendNonUserToMap,
+    getUnlinkSocial
+  );
 
   // Ensure these are the last routes!
   api.get(
     '/:username/front-end-certification',
     showCert.bind(null, certTypes.frontEnd)
-  );
-
-  api.get(
-    '/:username/data-visualization-certification',
-    showCert.bind(null, certTypes.dataVis)
   );
 
   api.get(
@@ -205,18 +241,195 @@ module.exports = function(app) {
     (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
   );
 
+  api.get(
+    '/:username/responsive-web-design-certification',
+    showCert.bind(null, certTypes.respWebDesign)
+  );
+
+  api.get(
+    '/:username/front-end-libraries-certification',
+    showCert.bind(null, certTypes.frontEndLibs)
+  );
+
+  api.get(
+    '/:username/javascript-algorithms-data-structures-certification',
+    showCert.bind(null, certTypes.jsAlgoDataStruct)
+  );
+
+ api.get(
+    '/:username/data-visualization-certification',
+    showCert.bind(null, certTypes.dataVis)
+  );
+
+  api.get(
+    '/:username/apis-microservices-certification',
+    showCert.bind(null, certTypes.apisMicroservices)
+  );
+
+  api.get(
+    '/:username/information-security-quality-assurance-certification',
+    showCert.bind(null, certTypes.infosecQa)
+  );
+
   router.get('/:username', showUserProfile);
+  router.get(
+    '/:username/report-user/',
+    sendNonUserToMap,
+    ifNotVerifiedRedirectToSettings,
+    getReportUserProfile
+  );
+
+  api.post(
+    '/:username/report-user/',
+    ifNoUser401,
+    postReportUserProfile
+  );
 
   app.use('/:lang', router);
   app.use(api);
 
-  function getSignin(req, res) {
-    if (req.user) {
+  const defaultErrorMsg = [ 'Oops, something is not right, please request a ',
+  'fresh link to sign in / sign up.' ].join('');
+
+  function postPasswordlessAuth(req, res) {
+    if (req.user || !(req.body && req.body.email)) {
       return res.redirect('/');
     }
-    return res.render('account/signin', {
-      title: 'Sign in to Free Code Camp'
-    });
+
+    return User.requestAuthEmail(req.body.email)
+      .then(msg => {
+          return res.status(200).send({ message: msg });
+      })
+      .catch(err => {
+        debug(err);
+        return res.status(200).send({ message: defaultErrorMsg });
+      });
+  }
+
+  function invalidateAuthToken(req, res, next) {
+    if (req.user) {
+      res.redirect('/');
+    }
+
+    if (!req.query || !req.query.email || !req.query.token) {
+      req.flash('info', { msg: defaultErrorMsg });
+      return res.redirect('/email-signin');
+    }
+
+    const authTokenId = req.query.token;
+    const authEmailId = new Buffer(req.query.email, 'base64').toString();
+
+    return AccessToken.findOne$({ where: {id: authTokenId} })
+     .map(authToken => {
+       if (!authToken) {
+         req.flash('info', { msg: defaultErrorMsg });
+         return res.redirect('/email-signin');
+       }
+
+       const userId = authToken.userId;
+       return User.findById(userId, (err, user) => {
+         if (err || !user || user.email !== authEmailId) {
+           debug(err);
+           req.flash('info', { msg: defaultErrorMsg });
+           return res.redirect('/email-signin');
+         }
+         return authToken.validate((err, isValid) => {
+           if (err) { throw err; }
+           if (!isValid) {
+             req.flash('info', { msg: [ 'Looks like the link you clicked has',
+              'expired, please request a fresh link, to sign in.'].join('')
+              });
+             return res.redirect('/email-signin');
+           }
+           return authToken.destroy((err) => {
+             if (err) { debug(err); }
+             next();
+           });
+         });
+       });
+     })
+     .subscribe(
+       () => {},
+       next
+     );
+  }
+
+  function getPasswordlessAuth(req, res, next) {
+    if (req.user) {
+      req.flash('info', {
+            msg: 'Hey, looks like you’re already signed in.'
+          });
+      return res.redirect('/');
+    }
+
+    if (!req.query || !req.query.email || !req.query.token) {
+      req.flash('info', { msg: defaultErrorMsg });
+      return res.redirect('/email-signin');
+    }
+
+    const email = new Buffer(req.query.email, 'base64').toString();
+
+    return User.findOne$({ where: { email }})
+      .map(user => {
+
+        if (!user) {
+          debug(`did not find a valid user with email: ${email}`);
+          req.flash('info', { msg: defaultErrorMsg });
+          return res.redirect('/email-signin');
+        }
+
+        const emailVerified = true;
+        const emailAuthLinkTTL = null;
+        const emailVerifyTTL = null;
+        user.update$({
+          emailVerified, emailAuthLinkTTL, emailVerifyTTL
+        })
+        .do((user) => {
+          user.emailVerified = emailVerified;
+          user.emailAuthLinkTTL = emailAuthLinkTTL;
+          user.emailVerifyTTL = emailVerifyTTL;
+        });
+
+        return user.createAccessToken(
+          { ttl: User.settings.ttl }, (err, accessToken) => {
+          if (err) { throw err; }
+
+          var config = {
+            signed: !!req.signedCookies,
+            maxAge: accessToken.ttl
+          };
+
+          if (accessToken && accessToken.id) {
+            debug('setting cookies');
+            res.cookie('access_token', accessToken.id, config);
+            res.cookie('userId', accessToken.userId, config);
+          }
+
+          return req.logIn({
+            id: accessToken.userId.toString() }, err => {
+            if (err) { return next(err); }
+
+            debug('user logged in');
+
+            if (req.session && req.session.returnTo) {
+              var redirectTo = req.session.returnTo;
+              if (redirectTo === '/map-aside') {
+                redirectTo = '/map';
+              }
+              return res.redirect(redirectTo);
+            }
+
+            req.flash('success', { msg:
+              'Success! You have signed in to your account. Happy Coding!'
+            });
+            return res.redirect('/');
+          });
+        });
+    })
+    .subscribe(
+      () => {},
+      next
+    );
   }
 
   function signout(req, res) {
@@ -230,16 +443,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     return res.render('account/deprecated-signin', {
-      title: 'Sign in to Free Code Camp using a Deprecated Login'
-    });
-  }
-
-  function getUpdateEmail(req, res) {
-    if (!req.user) {
-      return res.redirect('/');
-    }
-    return res.render('account/update-email', {
-      title: 'Update your Email'
+      title: 'Sign in to freeCodeCamp using a Deprecated Login'
     });
   }
 
@@ -247,23 +451,83 @@ module.exports = function(app) {
     if (req.user) {
       return res.redirect('/');
     }
-    return res.render('account/email-signin', {
-      title: 'Sign in to Free Code Camp using your Email Address'
-    });
-  }
-
-  function getEmailSignup(req, res) {
-    if (req.user) {
-      return res.redirect('/');
+    if (isSignUpDisabled) {
+      return res.render('account/beta', {
+        title: 'New sign ups are disabled'
+      });
     }
-    return res.render('account/email-signup', {
-      title: 'Sign up for Free Code Camp using your Email Address'
+    return res.render('account/email-signin', {
+      title: 'Sign in to freeCodeCamp using your Email Address'
     });
   }
 
   function getAccount(req, res) {
     const { username } = req.user;
     return res.redirect('/' + username);
+  }
+
+  function getUnlinkSocial(req, res, next) {
+    const { user } = req;
+    const { username } = user;
+
+    let social = req.params.social;
+    if (!social) {
+      req.flash('errors', {
+        msg: 'No social account found'
+      });
+      return res.redirect('/' + username);
+    }
+
+    social = social.toLowerCase();
+    const validSocialAccounts = ['twitter', 'linkedin'];
+    if (validSocialAccounts.indexOf(social) === -1) {
+      req.flash('errors', {
+        msg: 'Invalid social account'
+      });
+      return res.redirect('/' + username);
+    }
+
+    if (!user[social]) {
+      req.flash('errors', {
+        msg: `No ${social} account associated`
+      });
+      return res.redirect('/' + username);
+    }
+
+    const query = {
+      where: {
+        provider: social
+      }
+    };
+
+    return user.identities(query, function(err, identities) {
+      if (err) { return next(err); }
+
+      // assumed user identity is unique by provider
+      let identity = identities.shift();
+      if (!identity) {
+        req.flash('errors', {
+          msg: 'No social account found'
+        });
+        return res.redirect('/' + username);
+      }
+
+      return identity.destroy(function(err) {
+        if (err) { return next(err); }
+
+        const updateData = { [social]: null };
+
+        return user.update$(updateData)
+          .subscribe(() => {
+            debug(`${social} has been unlinked successfully`);
+
+            req.flash('info', {
+              msg: `You\'ve successfully unlinked your ${social}.`
+            });
+            return res.redirect('/' + username);
+          }, next);
+      });
+    });
   }
 
   function showUserProfile(req, res, next) {
@@ -276,7 +540,7 @@ module.exports = function(app) {
     // not of the profile she is viewing
     const timezone = user && user.timezone ?
       user.timezone :
-      'UTC';
+      'EST';
 
     const query = {
       where: { username },
@@ -301,10 +565,10 @@ module.exports = function(app) {
               objOrNum.timestamp;
           });
 
-        const uniqueDays = prepUniqueDays(timestamps, timezone);
+        const uniqueHours = prepUniqueDaysByHours(timestamps, timezone);
 
-        userPortfolio.currentStreak = calcCurrentStreak(uniqueDays, timezone);
-        userPortfolio.longestStreak = calcLongestStreak(uniqueDays, timezone);
+        userPortfolio.currentStreak = calcCurrentStreak(uniqueHours, timezone);
+        userPortfolio.longestStreak = calcLongestStreak(uniqueHours, timezone);
 
         const calender = userPortfolio
           .progressTimestamps
@@ -326,14 +590,18 @@ module.exports = function(app) {
             msg: dedent`
               Upon review, this account has been flagged for academic
               dishonesty. If you’re the owner of this account contact
-              team@freecodecamp.com for details.
+              team@freecodecamp.org for details.
             `
           });
         }
 
-        return map$.map(({ entities }) => createNameIdMap(entities))
-          .flatMap(entities => buildDisplayChallenges(
-            entities,
+        if (userPortfolio.bio) {
+          userPortfolio.bio = emoji.emojify(userPortfolio.bio);
+        }
+
+        return getChallengeInfo(map$)
+          .flatMap(challengeInfo => buildDisplayChallenges(
+            challengeInfo,
             userPortfolio.challengeMap,
             timezone
           ))
@@ -364,10 +632,16 @@ module.exports = function(app) {
           isGithubCool: true,
           isCheater: true,
           isLocked: true,
+          isAvailableForHire: true,
           isFrontEndCert: true,
-          isDataVisCert: true,
           isBackEndCert: true,
           isFullStackCert: true,
+          isRespWebDesignCert: true,
+          isFrontEndLibsCert: true,
+          isJsAlgoDataStructCert: true,
+          isDataVisCert: true,
+          isApisMicroservicesCert: true,
+          isInfosecQaCert: true,
           isHonest: true,
           username: true,
           name: true,
@@ -450,71 +724,84 @@ module.exports = function(app) {
     });
   }
 
-  function getReset(req, res) {
-    if (!req.accessToken) {
-      req.flash('errors', { msg: 'access token invalid' });
-      return res.render('account/forgot');
-    }
-    return res.render('account/reset', {
-      title: 'Reset your Password',
-      accessToken: req.accessToken.id
+  function showResetProgress(req, res) {
+    return res.render('account/reset-progress', { title: 'Reset My Progress!'
     });
   }
 
-  function postReset(req, res, next) {
-    const errors = req.validationErrors();
-    const { password } = req.body;
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('back');
-    }
-
-    return User.findById(req.accessToken.userId, function(err, user) {
+  function postResetProgress(req, res, next) {
+    User.findById(req.user.id, function(err, user) {
       if (err) { return next(err); }
-      return user.updateAttribute('password', password, function(err) {
+      return user.updateAttributes({
+        progressTimestamps: [{
+          timestamp: Date.now()
+        }],
+        currentStreak: 0,
+        longestStreak: 0,
+        currentChallengeId: '',
+        isBackEndCert: false,
+        isFullStackCert: false,
+        isDataVisCert: false,
+        isFrontEndCert: false,
+        challengeMap: {},
+        challegesCompleted: []
+      }, function(err) {
         if (err) { return next(err); }
-
-        debug('password reset processed successfully');
-        req.flash('info', { msg: 'You\'ve successfully reset your password.' });
+        req.flash('info', { msg: 'You\'ve successfully reset your progress.' });
         return res.redirect('/');
       });
     });
   }
 
-  function getForgot(req, res) {
-    if (req.isAuthenticated()) {
-      return res.redirect('/');
-    }
-    return res.render('account/forgot', {
-      title: 'Forgot Password'
+  function getReportUserProfile(req, res) {
+    const username = req.params.username.toLowerCase();
+    return res.render('account/report-profile', {
+      title: 'Report User',
+      username
     });
   }
 
-  function postForgot(req, res) {
-    req.validate('email', 'Email format is not valid').isEmail();
-    const errors = req.validationErrors();
-    const email = req.body.email.toLowerCase();
+  function postReportUserProfile(req, res, next) {
+    const { user } = req;
+    const { username } = req.params;
+    const report = req.sanitize('reportDescription').trimTags();
 
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/forgot');
+    if (!username || !report || report === '') {
+      req.flash('errors', {
+        msg: 'Oops, something is not right please re-check your submission.'
+      });
+      return next();
     }
 
-    return User.resetPassword({
-      email: email
-    }, function(err) {
+    return Email.send$({
+      type: 'email',
+      to: 'team@freecodecamp.org',
+      cc: user.email,
+      from: 'team@freecodecamp.org',
+      subject: 'Abuse Report : Reporting ' + username + '\'s profile.',
+      text: dedent(`
+        Hello Team,\n
+        This is to report the profile of ${username}.\n
+        Report Details:\n
+        ${report}\n\n
+        Reported by:
+        Username: ${user.username}
+        Name: ${user.name}
+        Email: ${user.email}\n
+        Thanks and regards,
+        ${user.name}
+      `)
+    }, err => {
       if (err) {
-        req.flash('errors', err.message);
-        return res.redirect('/forgot');
+        err.redirectTo = '/' + username;
+        return next(err);
       }
 
       req.flash('info', {
-        msg: 'An e-mail has been sent to ' +
-        email +
-        ' with further instructions.'
+        msg: 'A report was sent to the team with ' + user.email + ' in copy.'
       });
-      return res.render('account/forgot');
+      return res.redirect('/');
     });
   }
+
 };

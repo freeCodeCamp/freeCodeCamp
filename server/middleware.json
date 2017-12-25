@@ -16,6 +16,13 @@
     "compression": {},
     "morgan": {
       "params": ":status :method :response-time ms - :url"
+    },
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
     }
   },
   "session": {
@@ -53,7 +60,13 @@
   },
   "files": {},
   "final:after": {
-    "./middlewares/keymetrics": {},
-    "./middlewares/error-handlers": {}
+    "./middlewares/error-reporter": {},
+    "./middlewares/error-handlers": {},
+    "strong-error-handler": {
+      "params": {
+         "debug": false,
+         "log": true
+       }
+    }
   }
 }

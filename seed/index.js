@@ -23,6 +23,8 @@ var createChallenges =
 var Block = app.models.Block;
 var destroyBlocks = Observable.fromNodeCallback(Block.destroyAll, Block);
 var createBlocks = Observable.fromNodeCallback(Block.create, Block);
+const arrToString = arr =>
+  Array.isArray(arr) ? arr.join('\n') : _.toString(arr);
 
 Observable.combineLatest(
   destroyChallenges(),
@@ -43,6 +45,7 @@ Observable.combineLatest(
     var isLocked = !!challengeSpec.isLocked;
     var message = challengeSpec.message;
     var required = challengeSpec.required || [];
+    var template = challengeSpec.template;
 
     console.log('parsed %s successfully', blockName);
 
@@ -82,6 +85,17 @@ Observable.combineLatest(
               )
             );
 
+            if (challenge.files) {
+              challenge.files = _.reduce(challenge.files, (map, file) => {
+                map[file.key] = {
+                  ...file,
+                  head: arrToString(file.head),
+                  contents: arrToString(file.contents),
+                  tail: arrToString(file.tail)
+                };
+                return map;
+              }, {});
+            }
             challenge.fileName = fileName;
             challenge.helpRoom = helpRoom;
             challenge.order = order;
@@ -100,6 +114,7 @@ Observable.combineLatest(
               })
               .join(' ');
             challenge.required = (challenge.required || []).concat(required);
+            challenge.template = challenge.template || template;
 
             return challenge;
           });

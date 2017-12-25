@@ -13,9 +13,7 @@
     }
   },
   "validations": [],
-  "relations": {
-
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "*",
@@ -30,5 +28,5 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": []
+  "methods": {}
 }

@@ -1,5 +1,7 @@
+const githubRegex = (/github/i);
 const providerHash = {
   facebook: ({ id }) => id,
+  github: ({ username }) => username,
   twitter: ({ username }) => username,
   linkedin({ _json }) {
     return _json && _json.publicProfileUrl || null;
@@ -13,48 +15,49 @@ export function getUsernameFromProvider(provider, profile) {
     null;
 }
 
-// using es6 argument destructing
-export function setProfileFromGithub(
-  user,
-  {
-    profileUrl: githubURL,
-    username
-  },
-  {
-    id: githubId,
-    avatar_url: picture,
-    email: githubEmail,
-    created_at: joinedGithubOn,
-    blog: website,
-    location,
-    bio,
-    name
+// createProfileAttributes(provider: String, profile: {}) => Object
+export function createUserUpdatesFromProfile(provider, profile) {
+  if (githubRegex.test(provider)) {
+    return createProfileAttributesFromGithub(profile);
   }
-) {
-  return Object.assign(
-    user,
-    {
-      name,
-      email: user.email || githubEmail,
-      username: username.toLowerCase(),
+  return {
+    [getSocialProvider(provider)]: getUsernameFromProvider(
+      getSocialProvider(provider),
+      profile
+    )
+  };
+}
+// using es6 argument destructing
+// createProfileAttributes(profile) => profileUpdate
+function createProfileAttributesFromGithub(profile) {
+  const {
+    profileUrl: githubURL,
+    username,
+    _json: {
+      id: githubId,
+      avatar_url: picture,
+      email: githubEmail,
+      created_at: joinedGithubOn,
+      blog: website,
       location,
       bio,
-      joinedGithubOn,
-      website,
-      isGithubCool: true,
-      picture,
-      githubId,
-      githubURL,
-      githubEmail,
-      githubProfile: githubURL
-    }
-  );
-}
-
-export function getFirstImageFromProfile(profile) {
-  return profile && profile.photos && profile.photos[0] ?
-    profile.photos[0].value :
-    null;
+      name
+    } = {}
+  } = profile;
+  return {
+    name,
+    username: username.toLowerCase(),
+    location,
+    bio,
+    joinedGithubOn,
+    website,
+    isGithubCool: true,
+    picture,
+    githubId,
+    githubURL,
+    githubEmail,
+    githubProfile: githubURL
+  };
 }
 
 export function getSocialProvider(provider) {
