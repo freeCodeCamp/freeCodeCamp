@@ -951,19 +951,22 @@
       "_id": "5900f38a1000cf542c50fe9d",
       "challengeType": 5,
       "type": "bonfire",
-      "title": "Problem 30: Digit fifth powers",
+      "title": "Problem 30: Digit n powers",
       "tests": [
-        "assert.strictEqual(euler30(), 443839, 'message: <code>euler30()</code> should return 443839.');"
+        "assert(digitnPowers(2) == 0, 'message: <code>digitnPowers(2)</code> should return 0.');",
+        "assert(digitnPowers(3) == 1301, 'message: <code>digitnPowers(3)</code> should return 1301.');",
+        "assert(digitnPowers(4) == 19316, 'message: <code>digitnPowers(4)</code> should return 19316.');",
+        "assert(digitnPowers(5) == 443839, 'message: <code>digitnPowers(5)</code> should return 443839.');"
       ],
       "solutions": [],
       "translations": {},
       "challengeSeed": [
-        "function euler30() {",
+        "function digitnPowers(n) {",
         "  // Good luck!",
-        "  return true;",
+        "  return n;",
         "}",
         "",
-        "euler30();"
+        "digitnPowers(5);"
       ],
       "description": [
         "Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:",
@@ -972,7 +975,7 @@
         "9474 = 94 + 44 + 74 + 44",
         "As 1 = 14 is not a sum it is not included.",
         "The sum of these numbers is 1634 + 8208 + 9474 = 19316.",
-        "Find the sum of all the numbers that can be written as the sum of fifth powers of their digits."
+        "Find the sum of all the numbers that can be written as the sum of n powers of their digits."
       ]
     },
     {
