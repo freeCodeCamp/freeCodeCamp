@@ -23,7 +23,7 @@
       "type": "date"
     },
     "emailVerified": {
-      "type": "bolean",
+      "type": "boolean",
       "default": false
     },
     "emailAuthLinkTTL": {
