@@ -3,7 +3,7 @@ import { Observable } from 'rx';
 import dedent from 'dedent';
 // import debugFactory from 'debug';
 import { isEmail } from 'validator';
-import { check, validationResults } from 'express-validator/check';
+import { check, validationResult } from 'express-validator/check';
 
 import { ifUserRedirectTo } from '../utils/middleware';
 import {
@@ -79,7 +79,7 @@ module.exports = function enableAuthentication(app) {
         token: authTokenId
       } = {}
     } = req;
-    const validation = validationResults(req)
+    const validation = validationResult(req)
       .formatWith(createValidatorErrorFormatter('info', '/email-signup'));
 
     if (!validation.isEmpty()) {
@@ -229,7 +229,7 @@ module.exports = function enableAuthentication(app) {
   ];
   function postPasswordlessAuth(req, res, next) {
     const { body: { email } = {} } = req;
-    const validation = validationResults(req)
+    const validation = validationResult(req)
       .formatWith(createValidatorErrorFormatter('info', '/email-signup'));
     if (!validation.isEmpty()) {
       const errors = validation.array();
