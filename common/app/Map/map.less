@@ -1,0 +1,134 @@
+// should be the same as the filename and ./ns.json
+@ns: map;
+
+.@{ns}-accordion {
+  max-width: 700px;
+  overflow-y: auto;
+  width: 100%;
+
+  a:focus {
+    text-decoration: none;
+    color:darkgreen;
+  }
+
+  a:focus:hover {
+    text-decoration: underline;
+    color:#001800;
+  }
+
+  @media (max-width: 720px) {
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 195px;
+    bottom: 0;
+    // position:absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    h2 {
+      margin:15px 0;
+      padding:0;
+      &:first-of-type {
+        margin-top:0;
+      }
+      > a {
+        padding: 10px 0;
+        padding-left: 50px;
+        padding-right: 20px;
+        font-size: 20px;
+      }
+    }
+    a {
+      margin: 10px 0;
+      padding: 0;
+      > h3 {
+        clear:both;
+        font-size:20px;
+      }
+    }
+  }
+
+  .@{ns}-caret {
+    color: @gray-dark;
+    text-decoration: none;
+    // make sure all carats are fixed width
+    width: 10px;
+  }
+}
+
+
+.@{ns}-accordion-block .@{ns}-accordion-panel-heading {
+  padding-left: 26px;
+}
+
+.@{ns}-challenge-title, .@{ns}-accordion-panel-heading {
+  background: @body-bg;
+  line-height: 26px;
+  padding: 2px 12px 2px 10px;
+  width:100%;
+}
+
+.@{ns}-challenge-title {
+  &::before {
+    padding-right: 6px;
+  }
+  padding-left: 40px;
+  a {
+    cursor: pointer;
+  }
+  @media (min-width: 721px) {
+    clear: both;
+  }
+}
+
+.@{ns}-accordion-panel-heading a {
+  cursor: pointer;
+  display: block;
+}
+
+.@{ns}-accordion-panel-collapse {
+  transition: height 0.001s;
+}
+
+.@{ns}-accordion-panel-title {
+  @media (min-width: 721px) {
+    clear: both;
+  }
+}
+
+.@{ns}-block-time {
+  color: #BBBBBB;
+  @media (min-width: 721px) {
+    float: right;
+  }
+}
+
+.@{ns}-block-description {
+  margin:0;
+  margin-top:-10px;
+  padding:0 15px 23px 30px;
+}
+
+
+.night {
+  .@{ns}-accordion .no-link-underline {
+    color: @brand-primary;
+  }
+  .@{ns}-accordion h2 > a {
+    background: #666;
+  }
+  .@{ns}-accordion a:focus, #noneFound {
+    color: #ABABAB;
+  }
+  .@{ns}-challenge-title, .@{ns}-accordion-panel-heading {
+    background: @night-body-bg;
+    color: @night-text-color;
+    a {
+      color: @night-text-color;
+    }
+  }
+  .@{ns}-caret {
+    color: @night-text-color;
+  }
+}
