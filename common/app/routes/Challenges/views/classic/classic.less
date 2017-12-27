@@ -1,0 +1,42 @@
+// should match filename and ./ns.json
+@ns: classic;
+
+// challenge panes are bound to the pane size which in turn is
+// bound to the total height minus navbar height
+.max-element-height() {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.@{ns}-instructions-panel {
+  .max-element-height();
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.night {
+  .@{ns}-editor .CodeMirror {
+    background-color:#242424;
+    color:#ABABAB;
+    &-gutters {
+      background-color:#242424;
+      color:#ABABAB;
+    }
+    .cm-bracket, .cm-tag {
+      color:#5CAFD6;
+    }
+    .cm-property, .cm-string {
+      color:#B5753A;
+    }
+    .cm-keyword, .cm-attribute {
+      color:#9BBBDC;
+    }
+  }
+}
+
+.@{ns}-editor {
+  .max-element-height();
+  width: 100%;
+}
