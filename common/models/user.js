@@ -81,13 +81,30 @@ function getWaitPeriod(ttl) {
   const lastEmailSentAt = moment(new Date(ttl || null));
   const isWaitPeriodOver = ttl ?
     lastEmailSentAt.isBefore(fiveMinutesAgo) : true;
+
   if (!isWaitPeriodOver) {
     const minutesLeft = 5 -
       (moment().minutes() - lastEmailSentAt.minutes());
     return minutesLeft;
   }
+
   return 0;
 }
+
+function getWaitMessage(ttl) {
+  const minutesLeft = getWaitPeriod(ttl);
+  if (minutesLeft <= 0) {
+    return null;
+  }
+  const timeToWait = minutesLeft ?
+    `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+    'a few seconds';
+
+  return dedent`
+    Please wait ${timeToWait} to resend an authentication link.
+  `;
+}
+
 module.exports = function(User) {
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
@@ -477,15 +494,15 @@ module.exports = function(User) {
 
   User.prototype.requestAuthEmail = function requestAuthEmail() {
     return Observable.defer(() => {
-      const minutesLeft = getWaitPeriod(this.emailAuthLinkTTL);
-      if (minutesLeft > 0) {
-        const timeToWait = minutesLeft ?
-          `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-          'a few seconds';
-
-        return Observable.of(dedent`
-          Please wait ${timeToWait} to resend an authentication link.
-        `);
+      const messageOrNull = getWaitMessage(this.emailAuthLinkTTL);
+      if (messageOrNull) {
+        throw wrapHandledError(
+          new Error('request is throttled'),
+          {
+            type: 'info',
+            message: messageOrNull
+          }
+        );
       }
 
       // create a temporary access token with ttl for 15 minutes
@@ -541,18 +558,6 @@ module.exports = function(User) {
         );
       }
 
-      const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
-      if (ownEmail && minutesLeft > 0) {
-        const timeToWait = minutesLeft ?
-          `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-          'a few seconds';
-
-        debug('request before wait time : ' + timeToWait);
-
-        return Observable.of(dedent`
-          Please wait ${timeToWait} to resend an authentication link.
-        `);
-      }
       // defer prevents the promise from firing prematurely
       return Observable.defer(() => User.doesExist(null, newEmail));
     })
@@ -566,6 +571,18 @@ module.exports = function(User) {
               message: `${newEmail} is already associated with another account.`
             }
           );
+          const messageOrNull = getWaitMessage(this.emailVerifyTTL);
+          // email is already associated but unverified
+          if (messageOrNull) {
+            // email is within time limit
+            throw wrapHandledError(
+              new Error(),
+              {
+                type: 'info',
+                message: messageOrNull
+              }
+            );
+          }
         }
 
         const emailVerified = false;
