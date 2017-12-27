@@ -16,3 +16,13 @@ export function wrapHandledError(err, {
   err[_handledError] = { type, message, redirectTo };
   return err;
 }
+
+export const createValidatorErrorFormatter = (type, redirectTo) =>
+  ({ msg }) => wrapHandledError(
+    new Error(msg),
+    {
+      type,
+      message: msg,
+      redirectTo
+    }
+  );

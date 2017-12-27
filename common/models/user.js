@@ -243,6 +243,14 @@ module.exports = function(User) {
           ctx.req.flash('error', {
             msg: dedent`Oops, something went wrong, please try again later`
           });
+
+          const err = wrapHandledError(
+            new Error('Theme is not valid.'),
+            {
+              Type: 'info',
+              message: err.message
+            }
+          );
           return ctx.res.redirect('/');
         }
 
@@ -475,48 +483,39 @@ module.exports = function(User) {
         `);
       }
 
-      // email verified will be false if the user instance has just been created
-      const renderAuthEmail = this.emailVerified === false ?
-        renderSignInEmail :
-        renderSignUpEmail;
-
       // create a temporary access token with ttl for 15 minutes
-      return this.createAccessToken$({ ttl: 15 * 60 * 1000 })
-        .flatMap(token => {
-          const { id: loginToken } = token;
-          const loginEmail = this.getEncodedEmail();
-          const host = getServerFullURL();
-          const mailOptions = {
-            type: 'email',
-            to: this.email,
-            from: getEmailSender(),
-            subject: 'freeCodeCamp - Authentication Request!',
-            text: renderAuthEmail({
-              host,
-              loginEmail,
-              loginToken
-            })
-          };
-
-          return this.email.send$(mailOptions)
-            .flatMap(() => {
-              const emailAuthLinkTTL = token.created;
-              return this.update$({
-                emailAuthLinkTTL
-              })
-              .map(() => dedent`
-                If you entered a valid email, a magic link is on its way.
-                Please follow that link to sign in.
-              `);
-            });
-        });
+      return this.createAccessToken$({ ttl: 15 * 60 * 1000 });
     })
-    .catch(err => {
-      if (err) { debug(err); }
-      return dedent`
-        Oops, something is not right, please try again later.
-      `;
-    });
+      .flatMap(token => {
+        // email verified will be false if the user instance
+        // has just been created
+        const renderAuthEmail = this.emailVerified === false ?
+          renderSignInEmail :
+          renderSignUpEmail;
+        const { id: loginToken, created: emailAuthLinkTTL } = token;
+        const loginEmail = this.getEncodedEmail();
+        const host = getServerFullURL();
+        const mailOptions = {
+          type: 'email',
+          to: this.email,
+          from: getEmailSender(),
+          subject: 'Login Requested - freeCodeCamp',
+          text: renderAuthEmail({
+            host,
+            loginEmail,
+            loginToken
+          })
+        };
+
+        return Observable.combineLatest(
+          this.email.send$(mailOptions),
+          this.update$({ emailAuthLinkTTL })
+        );
+      })
+      .map(() => dedent`
+        If you entered a valid email, a magic link is on its way.
+        Please follow that link to sign in.
+      `);
   };
 
   User.prototype.requestUpdateEmail = function requestUpdateEmail(
