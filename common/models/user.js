@@ -530,7 +530,7 @@ module.exports = function(User) {
         };
 
         return Observable.combineLatest(
-          this.email.send$(mailOptions),
+          User.email.send$(mailOptions),
           this.update$({ emailAuthLinkTTL })
         );
       })
