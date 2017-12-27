@@ -22,8 +22,13 @@ import {
 const debug = debugFactory('fcc:user:remote');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
-const createEmailError = () => new Error(
- 'Please check to make sure the email is a valid email address.'
+const createEmailError = redirectTo => wrapHandledError(
+  new Error('email format is invalid'),
+  {
+    type: 'info',
+    message: 'Please check to make sure the email is a valid email address.',
+    redirectTo
+  }
 );
 
 function destroyAll(id, Model) {
@@ -518,54 +523,58 @@ module.exports = function(User) {
       `);
   };
 
-  User.prototype.requestUpdateEmail = function requestUpdateEmail(
-    newEmail
-  ) {
-    const ownEmail = newEmail === this.email;
-    if (!isEmail('' + newEmail)) {
-      debug('invalid email:', newEmail );
-      return Observable.throw(createEmailError());
-    }
-    // email is already associated and verified with this account
-    if (ownEmail && this.emailVerified) {
-      return Observable.throw(new Error(
-        `${newEmail} is already associated with this account.`
-      ));
-    }
+  User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
+    return Observable.defer(() => {
+      const ownEmail = newEmail === this.email;
+      if (!isEmail('' + newEmail)) {
+        debug('invalid email:', newEmail );
+        throw createEmailError();
+      }
+      // email is already associated and verified with this account
+      if (ownEmail && this.emailVerified) {
+        throw wrapHandledError(
+          new Error('email is already associated with account'),
+          {
+            type: 'info',
+            message: `${newEmail} is already associated with this account.`
+          }
+        );
+      }
 
-    const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
-    if (ownEmail && minutesLeft > 0) {
-      const timeToWait = minutesLeft ?
-        `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-        'a few seconds';
-      debug('request before wait time : ' + timeToWait);
-      return Observable.of(dedent`
-        Please wait ${timeToWait} to resend an authentication link.
-      `);
-    }
+      const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
+      if (ownEmail && minutesLeft > 0) {
+        const timeToWait = minutesLeft ?
+          `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+          'a few seconds';
 
-    return Observable.fromPromise(User.doesExist(null, newEmail))
+        debug('request before wait time : ' + timeToWait);
+
+        return Observable.of(dedent`
+          Please wait ${timeToWait} to resend an authentication link.
+        `);
+      }
+      // defer prevents the promise from firing prematurely
+      return Observable.defer(() => User.doesExist(null, newEmail));
+    })
       .flatMap(exists => {
         // not associated with this account, but is associated with another
-        if (!ownEmail && exists) {
-          return Promise.reject(
-            new Error(
-              `${newEmail} is already associated with another account.`
-            )
+        if (!exists) {
+          throw wrapHandledError(
+            new Error('email already in use'),
+            {
+              type: 'info',
+              message: `${newEmail} is already associated with another account.`
+            }
           );
         }
 
         const emailVerified = false;
-        return this.update$({
+        const data = {
           newEmail,
           emailVerified,
           emailVerifyTTL: new Date()
-        })
-        .do(() => {
-          this.newEmail = newEmail;
-          this.emailVerified = emailVerified;
-          this.emailVerifyTTL = new Date();
-        });
+        };
+        return this.update$(data).do(() => Object.assign(this, data));
       })
       .flatMap(() => {
         const mailOptions = {
