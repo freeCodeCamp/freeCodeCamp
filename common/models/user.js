@@ -544,33 +544,19 @@ module.exports = function(User) {
     return Observable.defer(() => {
       const ownEmail = newEmail === this.email;
       if (!isEmail('' + newEmail)) {
-        debug('invalid email:', newEmail );
         throw createEmailError();
       }
       // email is already associated and verified with this account
-      if (ownEmail && this.emailVerified) {
-        throw wrapHandledError(
-          new Error('email is already associated with account'),
-          {
-            type: 'info',
-            message: `${newEmail} is already associated with this account.`
-          }
-        );
-      }
-
-      // defer prevents the promise from firing prematurely
-      return Observable.defer(() => User.doesExist(null, newEmail));
-    })
-      .flatMap(exists => {
-        // not associated with this account, but is associated with another
-        if (!exists) {
+      if (ownEmail) {
+        if (this.emailVerified) {
           throw wrapHandledError(
-            new Error('email already in use'),
+            new Error('email is already verified'),
             {
               type: 'info',
-              message: `${newEmail} is already associated with another account.`
+              message: `${newEmail} is already associated with this account.`
             }
           );
+        } else {
           const messageOrNull = getWaitMessage(this.emailVerifyTTL);
           // email is already associated but unverified
           if (messageOrNull) {
@@ -584,7 +570,33 @@ module.exports = function(User) {
             );
           }
         }
+      }
 
+      // at this point email is not associated with the account
+      // or has not been verified but user is requesting another token
+      // outside of the time limit
+      return Observable.if(
+        () => ownEmail,
+        Observable.empty(),
+        // defer prevents the promise from firing prematurely (before subscribe)
+        Observable.defer(() => User.doesExist(null, newEmail))
+      )
+        .do(exists => {
+          // not associated with this account, but is associated with another
+          if (exists) {
+            throw wrapHandledError(
+              new Error('email already in use'),
+              {
+                type: 'info',
+                message:
+                `${newEmail} is already associated with another account.`
+              }
+            );
+          }
+        })
+        .defaultIfEmpty();
+    })
+      .flatMap(() => {
         const emailVerified = false;
         const data = {
           newEmail,
