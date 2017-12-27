@@ -181,7 +181,7 @@
       "title": "Prevent Object Mutation",
       "description": [
         "As seen in previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
-        "Once the object is freezed, you can no longer add/update/delete properties from it. Any attempt at changing the object will be rejected without any error.",
+        "Once the object is freezed, you can no longer add/update/delete properties from it. Any attempt at changing the object will be rejected without any errors.",
         "<blockquote>\nlet obj = {\n  name:\"FreeCodeCamp\"\n  review:\"Awesome\"\n};\nObject.freeze(obj);\nobj.review = \"bad\"; //will be ignored. Mutation not allowed\nobj.newProp = \"Test\"; // will be ignored. Mutation not allowed\nconsole.log(obj); \n// { name: \"FreeCodeCamp\", review:\"Awesome\"}\n</blockquote>",
         "<hr>",
         "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze <code>MATH_CONSTANTS</code> object so that no one is able alter the value of <code>PI</code> or add any more properties to it."
