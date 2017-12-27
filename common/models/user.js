@@ -108,7 +108,9 @@ module.exports = function(User) {
     User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
     User.update$ = Observable.fromNodeCallback(User.updateAll, User);
     User.count$ = Observable.fromNodeCallback(User.count, User);
-    User.findOrCreate$ = Observable.fromNodeCallback(User.findOrCreate, User);
+    User.create$ = Observable.fromNodeCallback(
+      User.create.bind(User)
+    );
     User.prototype.createAccessToken$ = Observable.fromNodeCallback(
       User.prototype.createAccessToken
     );
@@ -451,45 +453,42 @@ module.exports = function(User) {
     }
   );
 
-  User.requestAuthEmail = function requestAuthEmail(email) {
-    if (!isEmail(email)) {
-      return Promise.reject(
-        new Error('The submitted email not valid.')
-      );
+  User.prototype.getEncodedEmail = function getEncodedEmail() {
+    if (!this.email) {
+      return null;
     }
+    return Buffer(this.email).toString('base64');
+  };
 
-    var userObj = {
-      username: 'fcc' + uuid.v4().slice(0, 8),
-      email: email,
-      emailVerified: false
-    };
-    return User.findOrCreate$({ where: { email }}, userObj)
-      .flatMap(([ user, isCreated ]) => {
+  User.decodeEmail = email => Buffer(email, 'base64').toString();
 
-        const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
-        if (minutesLeft > 0) {
-          const timeToWait = minutesLeft ?
-            `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-            'a few seconds';
-          debug('request before wait time : ' + timeToWait);
-          return Observable.of(dedent`
-            Please wait ${timeToWait} to resend an authentication link.
-          `);
-        }
+  User.prototype.requestAuthEmail = function requestAuthEmail() {
+    return Observable.defer(() => {
+      const minutesLeft = getWaitPeriod(this.emailAuthLinkTTL);
+      if (minutesLeft > 0) {
+        const timeToWait = minutesLeft ?
+          `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+          'a few seconds';
 
-        const renderAuthEmail = isCreated ?
-          renderSignUpEmail : renderSignInEmail;
+        return Observable.of(dedent`
+          Please wait ${timeToWait} to resend an authentication link.
+        `);
+      }
 
-        // create a temporary access token with ttl for 15 minutes
-        return user.createAccessToken$({ ttl: 15 * 60 * 1000 })
-          .flatMap(token => {
+      // email verified will be false if the user instance has just been created
+      const renderAuthEmail = this.emailVerified === false ?
+        renderSignInEmail :
+        renderSignUpEmail;
 
+      // create a temporary access token with ttl for 15 minutes
+      return this.createAccessToken$({ ttl: 15 * 60 * 1000 })
+        .flatMap(token => {
           const { id: loginToken } = token;
-          const loginEmail = new Buffer(user.email).toString('base64');
+          const loginEmail = this.getEncodedEmail();
           const host = getServerFullURL();
           const mailOptions = {
             type: 'email',
-            to: user.email,
+            to: this.email,
             from: getEmailSender(),
             subject: 'freeCodeCamp - Authentication Request!',
             text: renderAuthEmail({
@@ -504,40 +503,21 @@ module.exports = function(User) {
               const emailAuthLinkTTL = token.created;
               return this.update$({
                 emailAuthLinkTTL
-            })
-            .map(() => {
-              return dedent`
+              })
+              .map(() => dedent`
                 If you entered a valid email, a magic link is on its way.
                 Please follow that link to sign in.
-              `;
+              `);
             });
-          });
         });
-      })
-      .catch(err => {
-        if (err) { debug(err); }
-        return dedent`
-          Oops, something is not right, please try again later.
-        `;
-      })
-      .toPromise();
+    })
+    .catch(err => {
+      if (err) { debug(err); }
+      return dedent`
+        Oops, something is not right, please try again later.
+      `;
+    });
   };
-
-  User.remoteMethod(
-    'requestAuthEmail',
-    {
-      description: 'request a link on email with temporary token to sign in',
-      accepts: [{
-        arg: 'email', type: 'string', required: true
-      }],
-      returns: [{
-        arg: 'message', type: 'string'
-      }],
-      http: {
-        path: '/request-auth-link', verb: 'POST'
-      }
-    }
-  );
 
   User.prototype.requestUpdateEmail = function requestUpdateEmail(
     newEmail

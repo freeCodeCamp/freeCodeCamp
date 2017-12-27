@@ -22,6 +22,10 @@
     "emailVerifyTTL": {
       "type": "date"
     },
+    "emailVerified": {
+      "type": "bolean",
+      "default": false
+    },
     "emailAuthLinkTTL": {
       "type": "date"
     },
