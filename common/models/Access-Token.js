@@ -8,5 +8,11 @@ module.exports = AccessToken => {
     AccessToken.findOne$ = Observable.fromNodeCallback(
       AccessToken.findOne.bind(AccessToken)
     );
+    AccessToken.prototype.validate$ = Observable.fromNodeCallback(
+      AccessToken.prototype.validate
+    );
+    AccessToken.prototype.destroy$ = Observable.fromNodeCallback(
+      AccessToken.prototype.destroy
+    );
   });
 };
