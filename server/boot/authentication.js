@@ -101,7 +101,7 @@ module.exports = function enableAuthentication(app) {
     // first find
     return AccessToken.findOne$({ where: { id: authTokenId } })
       .flatMap(authToken => {
-        if (authToken) {
+        if (!authToken) {
           throw wrapHandledError(
             new Error(`no token found for id: ${authTokenId}`),
             {
@@ -113,7 +113,7 @@ module.exports = function enableAuthentication(app) {
         }
         // find user then validate and destroy email validation token
         // finally retun user instance
-        return Observable.fromNodeCallback(authToken.user.bind(authToken))
+        return User.findOne$({ where: { id: authToken.userId } })
           .flatMap(user => {
             if (!user) {
               throw wrapHandledError(
@@ -175,7 +175,7 @@ module.exports = function enableAuthentication(app) {
             user.emailVerifyTTL = emailVerifyTTL;
           });
 
-        const createToken = user.createAccessToken()
+        const createToken = user.createAccessToken$()
           .do(accessToken => {
             const config = {
               signed: !!req.signedCookies,
