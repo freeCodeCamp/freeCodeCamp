@@ -45,22 +45,19 @@ export default function prodErrorHandler() {
   // error handling in production.
   // disabling eslint due to express parity rules for error handlers
   return function(err, req, res, next) { // eslint-disable-line
-    // respect err.status
-    if (err.status) {
-      res.statusCode = err.status;
+    const handled = unwrapHandledError(err);
+    // respect handled error status
+    let status = handled.status || err.status || res.statusCode;
+    if (!handled.status && status < 400) {
+      status = 500;
     }
-
-    // default status code to 500
-    if (res.statusCode < 400) {
-      res.statusCode = 500;
-    }
+    res.status(status);
 
     // parse res type
     const accept = accepts(req);
     const type = accept.type('html', 'json', 'text');
-    const handled = unwrapHandledError(err);
 
-    const redirectTo = handled.redirectTo || '/map';
+    const redirectTo = handled.redirectTo || '/';
     const message = handled.message ||
       'Oops! Something went wrong. Please try again later';
 
@@ -77,7 +74,7 @@ export default function prodErrorHandler() {
             stack: createStackHtml(err),
             errorTitle: createErrorTitle(err),
             title: 'freeCodeCamp - Server Error',
-            status: err.statusCode
+            status
           }
         );
       }
