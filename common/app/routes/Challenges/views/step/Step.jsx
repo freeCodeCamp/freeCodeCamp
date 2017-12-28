@@ -167,16 +167,17 @@ export class StepChallenge extends PureComponent {
     );
   }
 
-  renderStep({
-    clickOnImage,
-    completeAction,
-    currentIndex,
-    isActionCompleted,
-    isLastStep,
-    numOfSteps,
-    step,
-    stepBackward,
-    stepForward
+  renderStep(
+    {
+      clickOnImage,
+      completeAction,
+      currentIndex,
+      isActionCompleted,
+      isLastStep,
+      numOfSteps,
+      step,
+      stepBackward,
+      stepForward
   }) {
     if (!Array.isArray(step)) {
       return null;
