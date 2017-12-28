@@ -146,12 +146,12 @@
       "title": "Mutate an Array Declared with const",
       "description": [
         "The <code>const</code> declaration has many use cases in modern JavaScript.",
-        "Some developers prefer to assign all their variables using <code>const</code> by default, unless they know they will need to reassign the value. Only in that case, they use <code>let</code>.",
+        "Some developers prefer to assign all their variables using <code>const</code> by default, unless they know they will need to reassign the value. In which case, they would use <code>let</code>.",
         "However, it is important to understand that objects (including arrays and functions) assigned to a variable using <code>const</code> are still mutable. Using the <code>const</code> declaration only prevents reassignment of the variable identifier.",
         "<blockquote>\"use strict\";<br>const s = [5, 6, 7];<br>s = [1, 2, 3]; // throws error, trying to assign a const<br>s[2] = 45; // works just as it would with an array declared with var or let<br>console.log(s); // returns [5, 6, 45]</blockquote>",
         "As you can see, you can mutate the object <code>[5, 6, 7]</code> itself and the variable <code>s</code> will still point to the altered array <code>[5, 6, 45]</code>. Like all arrays, the array elements in <code>s</code> are mutable, but because <code>const</code> was used, you cannot use the variable identifier <code>s</code> to point to a different array using the assignment operator.",
         "<hr>",
-        "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignment."
+        "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignments."
       ],
       "challengeSeed": [ 
         "const s = [5, 7, 2];",
@@ -181,10 +181,10 @@
       "title": "Prevent Object Mutation",
       "description": [
         "As seen in previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
-        "Once the object is freezed, you can no longer add/update/delete properties from it. Any attempt at changing the object will be rejected without any error.",
+        "Once the object is freezed, you can no longer add/update/delete properties from it. Any attempt at changing the object will be rejected without any errors.",
         "<blockquote>\nlet obj = {\n  name:\"FreeCodeCamp\"\n  review:\"Awesome\"\n};\nObject.freeze(obj);\nobj.review = \"bad\"; //will be ignored. Mutation not allowed\nobj.newProp = \"Test\"; // will be ignored. Mutation not allowed\nconsole.log(obj); \n// { name: \"FreeCodeCamp\", review:\"Awesome\"}\n</blockquote>",
         "<hr>",
-        "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze <code>MATH_CONSTANTS</code> object so that noone is able alter the value of <code>PI</code> or add any more properties to it."
+        "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze <code>MATH_CONSTANTS</code> object so that no one is able alter the value of <code>PI</code> or add any more properties to it."
       ],
       "challengeSeed": [ 
         "function freezeObj() {",
