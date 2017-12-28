@@ -58,7 +58,6 @@
     "emmet-codemirror": "^1.2.5",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-15": "^1.0.5",
-    "errorhandler": "^1.4.2",
     "es6-map": "~0.1.1",
     "express": "^4.13.3",
     "express-flash": "~0.0.2",
