@@ -95,7 +95,7 @@
     "normalizr": "2.2.1",
     "object.assign": "^4.0.3",
     "opbeat": "^4.14.0",
-    "passport": "^0.2.1",
+    "passport": "^0.4.0",
     "passport-facebook": "^2.0.0",
     "passport-github": "^1.0.0",
     "passport-google-oauth2": "~0.1.6",

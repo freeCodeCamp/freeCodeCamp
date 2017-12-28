@@ -56,7 +56,8 @@
     "./middlewares/jade-helpers": {},
     "./middlewares/migrate-completed-challenges": {},
     "./middlewares/add-lang": {},
-    "./middlewares/flash-cheaters": {}
+    "./middlewares/flash-cheaters": {},
+    "./middlewares/passport-login": {}
   },
   "files": {},
   "final:after": {

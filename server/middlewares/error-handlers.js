@@ -64,6 +64,10 @@ export default function prodErrorHandler() {
     const message = handled.message ||
       'Oops! Something went wrong. Please try again later';
 
+    if (isDev) {
+      console.error(err);
+    }
+
     if (type === 'html') {
       if (isDev) {
         return res.render(
