@@ -298,6 +298,38 @@
       "permission": "DENY"
     },
     {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "login"
+    },
+    {
+      "accessType": "EXECUTE",
+      "permission": "DENY",
+      "principalId": "$everyone",
+      "principalType": "ROLE",
+      "property": "verify"
+    },
+    {
+      "permission": "DENY",
+      "principalId": "$everyone",
+      "principalType": "ROLE",
+      "property": "confirm"
+    },
+    {
+      "accessType": "EXECUTE",
+      "permission": "DENY",
+      "principalId": "$everyone",
+      "principalType": "ROLE",
+      "property": "resetPassword"
+    },
+    {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
@@ -323,13 +355,6 @@
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "requestUpdateEmail"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$owner",
-      "permission": "ALLOW",
       "property": "updateTheme"
     },
     {
@@ -338,13 +363,6 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "updateLanguage"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW",
-      "property": "requestAuthEmail"
     }
   ],
   "methods": {}
