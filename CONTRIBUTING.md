@@ -165,7 +165,7 @@ You should have [ESLint running in your editor](http://eslint.org/docs/user-guid
 
 ### Set Up MailHog
 
-To be able to log in, you need to set up MailHog. MailHod is a local SMTP mail server that will catch the emails your freeCodeCamp instance is sending. How you install MailHog is dependent upon your OS. 
+To be able to log in, you need to set up MailHog. MailHog is a local SMTP mail server that will catch the emails your freeCodeCamp instance is sending. How you install MailHog is dependent upon your OS. 
 
 #### macOS
 
@@ -178,11 +178,40 @@ brew services start mailhog
 
 #### Windows
 
-Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/blob/master/docs/RELEASES.md). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer. 
+Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/blob/master/docs/RELEASES.md). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer.
 
-Once it finishes downloading, click on the file. You will probably get a Windows firewall notification where you will have to allow access to MailHog. Once you do, a standard Windows command line prompt will open with MailHog already running. 
+Once it finishes downloading, click on the file. You will probably get a Windows firewall notification where you will have to allow access to MailHog. Once you do, a standard Windows command line prompt will open with MailHog already running.
 
 To close MailHog, close the command prompt. To run it again, click on the same .exe file. You don't need to download a new one.
+
+#### Linux
+
+First install Go.
+
+For Debian-based systems like Ubuntu and Linux Mint, run:
+
+```bash
+sudo apt-get install golang
+```
+
+For CentOS, Fedora, Red Hat Linux, and other RPM-based systems, run:
+
+```bash
+sudo dnf install golang
+```
+
+Or:
+
+```bash
+sudo yum install golang
+```
+
+Then install and run MailHog:
+
+```bash
+go get github.com/mailhog/MailHog
+MailHog
+```
 
 To access your MailHog inbox, open your browser and navigate to [http://localhost:8025](http://localhost:8025). For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.
 
@@ -343,8 +372,8 @@ nothing to commit, working directory clean
     add .` to add all unstaged files. Take care, though, because you can
     accidentally add files you don't want added. Review your `git status` first.
 
-6.  Commit your edits: We have a [tool](https://commitizen.github.io/cz-cli/) 
-    that helps you to make standard commit messages. Execute `npm run commit` 
+6.  Commit your edits: We have a [tool](https://commitizen.github.io/cz-cli/)
+    that helps you to make standard commit messages. Execute `npm run commit`
     and follow the steps.
 
 7.  [Squash your commits](http://forum.freecodecamp.org/t/how-to-squash-multiple-commits-into-one-with-git/13231) if there are more than one.
