@@ -138,79 +138,79 @@ module.exports = function(User) {
     );
   });
 
-  User.beforeRemote('create', function({ req }) {
-    const body = req.body;
-    // note(berks): we now require all new users to supply an email
-    // this was not always the case
-    if (
-      typeof body.email !== 'string' ||
-      !isEmail(body.email)
-    ) {
-      return Promise.reject(createEmailError());
-    }
-    // assign random username to new users
-    // actual usernames will come from github
-    body.username = 'fcc' + uuid.v4();
-    if (body) {
-      // this is workaround for preventing a server crash
-      // we do this on create and on save
-      // refer strongloop/loopback/#1364
-      if (body.password === '') {
-        body.password = null;
-      }
-      // set email verified false on user email signup
-      // should not be set with oauth signin methods
-      body.emailVerified = false;
-    }
-    return User.doesExist(null, body.email)
-      .catch(err => {
-        throw wrapHandledError(err, { redirectTo: '/email-signup' });
-      })
-      .then(exists => {
-        if (!exists) {
-          return null;
+  User.observe('before save', function(ctx) {
+    const beforeCreate = Observable.of(ctx)
+      .filter(({ isNewInstance }) => isNewInstance)
+      // User.create
+      .map(({ instance }) => instance)
+      .flatMap(user => {
+        // note(berks): we now require all new users to supply an email
+        // this was not always the case
+        if (
+          typeof user.email !== 'string' ||
+          !isEmail(user.email)
+        ) {
+          throw createEmailError();
         }
-        const err = wrapHandledError(
-          new Error('user already exists'),
-          {
-            redirectTo: '/email-signin',
-            message: dedent`
-      The ${body.email} email address is already associated with an account.
-      Try signing in with it here instead.
-              `
-          }
-        );
-        throw err;
-      });
-  });
+        // assign random username to new users
+        // actual usernames will come from github
+        // use full uuid to ensure uniqueness
+        user.username = 'fcc' + uuid.v4();
 
-  User.observe('before save', function({ instance: user }, next) {
-    if (user) {
-      // Some old accounts will not have emails associated with theme
-      // we verify only if the email field is populated
-      if (user.email && !isEmail(user.email)) {
-        return next(createEmailError());
-      }
-      user.username = user.username.trim().toLowerCase();
-      user.email = typeof user.email === 'string' ?
-        user.email.trim().toLowerCase() :
-        user.email;
+        if (!user.progressTimestamps) {
+          user.progressTimestamps = [];
+        }
 
-      if (!user.progressTimestamps) {
-        user.progressTimestamps = [];
-      }
+        if (user.progressTimestamps.length === 0) {
+          user.progressTimestamps.push({ timestamp: Date.now() });
+        }
+        return Observable.fromPromise(User.doesExist(null, user.email))
+          .do(exists => {
+            if (exists) {
+              throw wrapHandledError(
+                new Error('user already exists'),
+                {
+                  redirectTo: '/email-signin',
+                  message: dedent`
+        The ${user.email} email address is already associated with an account.
+        Try signing in with it here instead.
+                  `
+                }
+              );
+            }
+          });
+      })
+      .ignoreElements();
 
-      if (user.progressTimestamps.length === 0) {
-        user.progressTimestamps.push({ timestamp: Date.now() });
-      }
-      // this is workaround for preventing a server crash
-      // we do this on save and on create
-      // refer strongloop/loopback/#1364
-      if (user.password === '') {
-        user.password = null;
-      }
-    }
-    return next();
+    const updateOrSave = Observable.of(ctx)
+      // not new
+      .filter(({ isNewInstance }) => !isNewInstance)
+      .map(({ instance }) => instance)
+      // is update or save user
+      .filter(Boolean)
+      .do(user => {
+        // Some old accounts will not have emails associated with theme
+        // we verify only if the email field is populated
+        if (user.email && !isEmail(user.email)) {
+          throw createEmailError();
+        }
+
+        user.username = user.username.trim().toLowerCase();
+        user.email = typeof user.email === 'string' ?
+          user.email.trim().toLowerCase() :
+          user.email;
+
+        if (!user.progressTimestamps) {
+          user.progressTimestamps = [];
+        }
+
+        if (user.progressTimestamps.length === 0) {
+          user.progressTimestamps.push({ timestamp: Date.now() });
+        }
+      })
+      .ignoreElements();
+    return Observable.merge(beforeCreate, updateOrSave)
+      .toPromise();
   });
 
   // remove lingering user identities before deleting user
