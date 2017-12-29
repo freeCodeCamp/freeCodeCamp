@@ -288,6 +288,14 @@
       "type": "hasOne",
       "model": "pledge",
       "foreignKey": ""
+    },
+    "authTokens": {
+      "type": "hasMany",
+      "model": "AuthToken",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": true
+      }
     }
   },
   "acls": [
