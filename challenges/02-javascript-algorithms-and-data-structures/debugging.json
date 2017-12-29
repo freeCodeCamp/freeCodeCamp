@@ -126,7 +126,7 @@
         ""
       ],
       "tests": [
-        "assert(code.match(/console\\.log\\(typeof[\\( ].*\\)?\\);/g).length == 2, 'message: Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.');",
+        "assert(code.match(/console\\.log\\(typeof[\\( ].*\\)?\\)/g).length == 2, 'message: Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.');",
         "assert(code.match(/typeof[\\( ]seven\\)?/g), 'message: Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.');",
         "assert(code.match(/typeof[\\( ]three\\)?/g), 'message: Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.');"
       ],
