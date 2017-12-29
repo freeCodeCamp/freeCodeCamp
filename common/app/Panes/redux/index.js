@@ -7,6 +7,7 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 
+import { types as challengeTypes } from '../../routes/Challenges/redux';
 import ns from '../ns.json';
 
 import windowEpic from './window-epic.js';
@@ -31,8 +32,8 @@ export const types = createTypes([
   'windowResized',
 
   // commands
-  'updateNavHeight',
-  'hidePane'
+  'hidePane',
+  'updateNavHeight'
 ], ns);
 
 export const panesMapUpdated = createAction(
@@ -51,13 +52,14 @@ export const mouseReleased = createAction(types.mouseReleased);
 export const windowResized = createAction(types.windowResized);
 
 // commands
-export const updateNavHeight = createAction(types.updateNavHeight);
 export const hidePane = createAction(types.hidePane);
+export const updateNavHeight = createAction(types.updateNavHeight);
 
 const defaultState = {
   height: 600,
   width: 800,
   navHeight: 50,
+  isMapPaneHidden: false,
   panes: [],
   panesByName: {},
   pressedDivider: null,
@@ -197,6 +199,10 @@ export default function createPanesAspects({ createPanesMap }) {
         [types.updateNavHeight]: (state, { payload: navHeight }) => ({
           ...state,
           navHeight
+        }),
+        [challengeTypes.toggleMap]: state => ({
+          ...state,
+          isMapPaneHidden: !state.isMapPaneHidden
         })
       }),
       defaultState,
@@ -215,7 +221,7 @@ export default function createPanesAspects({ createPanesMap }) {
             panes[name] = {
               name,
               dividerLeft,
-              isHidden: false
+              isHidden: name === 'Map' ? state.isMapPaneHidden : false
             };
             return panes;
           }, {})
