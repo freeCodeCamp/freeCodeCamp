@@ -157,42 +157,7 @@ module.exports = function enableAuthentication(app) {
       })
       // at this point token has been validated and destroyed
       // update user and log them in
-      .map(user => {
-        const emailVerified = true;
-        const emailAuthLinkTTL = null;
-        const emailVerifyTTL = null;
-
-        const updateUser = user.update$({
-          emailVerified,
-          emailAuthLinkTTL,
-          emailVerifyTTL
-        })
-          .do((user) => {
-            // update$ does not update in place
-            // update user instance to reflect db
-            user.emailVerified = emailVerified;
-            user.emailAuthLinkTTL = emailAuthLinkTTL;
-            user.emailVerifyTTL = emailVerifyTTL;
-          });
-
-        const createToken = user.createAccessToken$()
-          .do(accessToken => {
-            const config = {
-              signed: !!req.signedCookies,
-              maxAge: accessToken.ttl
-            };
-            if (accessToken && accessToken.id) {
-              res.cookie('access_token', accessToken.id, config);
-              res.cookie('userId', accessToken.userId, config);
-            }
-          });
-
-        return Observable.combineLatest(
-          updateUser,
-          createToken,
-          req.logIn(user),
-        );
-      })
+      .map(user => user.loginByRequest(req, res))
       .do(() => {
         let redirectTo = '/';
 
