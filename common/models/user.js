@@ -248,96 +248,42 @@ module.exports = function(User) {
   });
 
   debug('setting up user hooks');
-
-  User.beforeRemote('confirm', function(ctx, _, next) {
-
-    if (!ctx.req.query) {
-      return ctx.res.redirect('/');
-    }
-
-    const uid = ctx.req.query.uid;
-    const token = ctx.req.query.token;
-    const redirect = ctx.req.query.redirect;
-
-    return User.findById(uid, (err, user) => {
-
-        if (err || !user || !user.newEmail) {
-          ctx.req.flash('error', {
-            msg: dedent`Oops, something went wrong, please try again later`
-          });
-
-          const err = wrapHandledError(
-            new Error('Theme is not valid.'),
+  // overwrite lb confirm
+  User.confirm = function(uid, token, redirectTo) {
+    return this.findById(uid)
+      .then(user => {
+        if (!user) {
+          throw wrapHandledError(
+            new Error(`User not found: ${uid}`),
             {
-              Type: 'info',
-              message: err.message
+              // standard oops
+              type: 'info',
+              redirectTo
             }
           );
-          return ctx.res.redirect('/');
         }
-
-        if (!user.verificationToken && !user.emailVerified) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like we have your email. But you haven't
-             verified it yet, please sign in and request a fresh verification
-             link.`
-          });
-          return ctx.res.redirect(redirect);
+        if (user.verificationToken !== token) {
+          throw wrapHandledError(
+            new Error(`Invalid token: ${token}`),
+            {
+              type: 'info',
+              message: dedent`
+                Looks like you have clicked an invalid link.
+                Please sign in and request a fresh one.
+              `,
+              redirectTo
+            }
+          );
         }
-
-        if (!user.verificationToken && user.emailVerified) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like you have already verified your email.
-             Please sign in to continue.`
-          });
-          return ctx.res.redirect(redirect);
-        }
-
-        if (user.verificationToken && user.verificationToken !== token) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like you have clicked an invalid link.
-             Please sign in and request a fresh one.`
-          });
-          return ctx.res.redirect(redirect);
-        }
-
         return user.update$({
           email: user.newEmail,
+          emailVerified: true,
+          emailVerifyTTL: null,
           newEmail: null,
-          emailVerifyTTL: null
-        })
-        .do(() => {
-          return next();
-        })
-        .toPromise();
-
-    });
-  });
-
-  User.afterRemote('confirm', function(ctx) {
-    if (!ctx.req.query) {
-      return ctx.res.redirect('/');
-    }
-    const redirect = ctx.req.query.redirect;
-    ctx.req.flash('success', {
-      msg: [
-        'Your email has been confirmed!'
-      ]
-    });
-    return ctx.res.redirect(redirect);
-  });
-
-
-  User.beforeRemote('login', function(ctx, notUsed, next) {
-    const { body } = ctx.req;
-    if (body && typeof body.email === 'string') {
-      if (!isEmail(body.email)) {
-        return next(createEmailError());
-      }
-      body.email = body.email.toLowerCase();
-    }
-    return next();
-  });
+          verificationToken: null
+        }).toPromise();
+      });
+  };
 
   User.afterRemote('login', function(ctx, accessToken, next) {
     var res = ctx.res;
