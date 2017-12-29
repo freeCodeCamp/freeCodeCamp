@@ -19,7 +19,7 @@ import {
   getPort
 } from '../../server/utils/url-utils.js';
 
-const debug = debugFactory('fcc:user:remote');
+const debug = debugFactory('fcc:models:user');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
 const createEmailError = redirectTo => wrapHandledError(
@@ -285,49 +285,30 @@ module.exports = function(User) {
       });
   };
 
-  User.afterRemote('login', function(ctx, accessToken, next) {
-    var res = ctx.res;
-    var req = ctx.req;
-    // var args = ctx.args;
-
-    var config = {
-      signed: !!req.signedCookies,
-      maxAge: accessToken.ttl
-    };
-
-    if (accessToken && accessToken.id) {
-      debug('setting cookies');
-      res.cookie('access_token', accessToken.id, config);
-      res.cookie('userId', accessToken.userId, config);
-    }
-
-    return req.logIn({ id: accessToken.userId.toString() }, function(err) {
-      if (err) { return next(err); }
-
-      debug('user logged in');
-
-      if (req.session && req.session.returnTo) {
-        var redirectTo = req.session.returnTo;
-        if (redirectTo === '/map-aside') {
-          redirectTo = '/map';
+  User.prototype.loginByRequest = function login(req, res) {
+    const createToken = this.createAccessToken$()
+      .do(accessToken => {
+        const config = {
+          signed: !!req.signedCookies,
+          maxAge: accessToken.ttl
+        };
+        if (accessToken && accessToken.id) {
+          res.cookie('access_token', accessToken.id, config);
+          res.cookie('userId', accessToken.userId, config);
         }
-        return res.redirect(redirectTo);
-      }
-
-      req.flash('success', { msg: 'Success! You are now logged in.' });
-      return res.redirect('/');
+      });
+    const updateUser = this.update$({
+      emailVerified: true,
+      emailAuthLinkTTL: null,
+      emailVerifyTTL: null
     });
-  });
-
-  User.afterRemoteError('login', function(ctx) {
-    var res = ctx.res;
-    var req = ctx.req;
-
-    req.flash('errors', {
-      msg: 'Invalid username or password.'
-    });
-    return res.redirect('/email-signin');
-  });
+    return Observable.combineLatest(
+      createToken,
+      updateUser,
+      req.logIn(this),
+      (accessToken) => accessToken,
+    );
+  };
 
   User.afterRemote('logout', function(ctx, result, next) {
     var res = ctx.res;
