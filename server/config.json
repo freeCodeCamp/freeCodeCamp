@@ -7,8 +7,7 @@
     "rest": {
       "handleErrors": false,
       "normalizeHttpPath": false,
-      "xml": false,
-      "handleErrors": false
+      "xml": false
     },
     "json": {
       "strict": false,
