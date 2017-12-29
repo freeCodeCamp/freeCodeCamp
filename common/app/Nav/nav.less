@@ -153,6 +153,28 @@ li.nav-avatar {
 }
 
 .night {
+  .nav-component-wrapper {
+    ::-webkit-input-placeholder {
+      color: @night-text-color;
+    }
+
+    ::-moz-placeholder {
+      color: @night-text-color;
+    }
+
+    ::-ms-placeholder {
+      color: @night-text-color;
+    }
+
+    ::placeholder {
+      color: @night-text-color;
+    }
+
+    .fcc_input {
+      background: @night-search-color;
+      color: @night-text-color;
+    }
+  }
   .navbar-default {
     .navbar-nav {
       & > li > a {
@@ -229,7 +251,6 @@ li.nav-avatar {
     display: flex;
     align-items: center;
   }
-
 }
 
 .logo-glyph {
