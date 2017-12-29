@@ -237,11 +237,14 @@ module.exports = function enableAuthentication(app) {
     }
 
     return User.findOne$({ where: { email } })
-      .flatMap(user => (
-        // if no user found create new user and save to db
-        user ? Observable.of(user) : User.create$({ email })
-      ))
-      .flatMap(user => user.requestAuthEmail())
+      .flatMap(_user => Observable.if(
+          // if no user found create new user and save to db
+          _.constant(_user),
+          Observable.of(_user),
+          User.create$({ email })
+        )
+        .flatMap(user => user.requestAuthEmail(!_user))
+      )
       .do(msg => res.status(200).send({ message: msg }))
       .subscribe(_.noop, next);
   }
