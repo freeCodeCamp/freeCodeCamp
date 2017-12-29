@@ -492,7 +492,7 @@ module.exports = function(User) {
 
   User.decodeEmail = email => Buffer(email, 'base64').toString();
 
-  User.prototype.requestAuthEmail = function requestAuthEmail() {
+  User.prototype.requestAuthEmail = function requestAuthEmail(isSignUp) {
     return Observable.defer(() => {
       const messageOrNull = getWaitMessage(this.emailAuthLinkTTL);
       if (messageOrNull) {
@@ -509,11 +509,12 @@ module.exports = function(User) {
       return this.createAccessToken$({ ttl: 15 * 60 * 1000 });
     })
       .flatMap(token => {
-        // email verified will be false if the user instance
-        // has just been created
-        const renderAuthEmail = this.emailVerified === false ?
-          renderSignInEmail :
-          renderSignUpEmail;
+        let renderAuthEmail = renderSignInEmail;
+        let subject = 'Login Requested - freeCodeCamp';
+        if (isSignUp) {
+          renderAuthEmail = renderSignUpEmail;
+          subject = 'Account Created - freeCodeCamp';
+        }
         const { id: loginToken, created: emailAuthLinkTTL } = token;
         const loginEmail = this.getEncodedEmail();
         const host = getServerFullURL();
@@ -521,7 +522,7 @@ module.exports = function(User) {
           type: 'email',
           to: this.email,
           from: getEmailSender(),
-          subject: 'Login Requested - freeCodeCamp',
+          subject,
           text: renderAuthEmail({
             host,
             loginEmail,
@@ -534,10 +535,17 @@ module.exports = function(User) {
           this.update$({ emailAuthLinkTTL })
         );
       })
-      .map(() => dedent`
-        If you entered a valid email, a magic link is on its way.
-        Please follow that link to sign in.
-      `);
+      .map(() => isSignUp ?
+        dedent`
+          We've created a new account for you.
+          If you entered a valid email, a magic link is on its way.
+          Please follow that link to sign in.
+        ` :
+        dedent`
+          If you entered a valid email, a magic link is on its way.
+          Please follow that link to sign in.
+        `
+      );
   };
 
   User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
