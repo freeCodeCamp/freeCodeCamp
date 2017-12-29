@@ -16,7 +16,7 @@
         }
       }
     },
-    "newEmail":{
+    "newEmail": {
       "type": "string"
     },
     "emailVerifyTTL": {
@@ -311,22 +311,22 @@
     },
     {
       "accessType": "EXECUTE",
-      "permission": "DENY",
-      "principalId": "$everyone",
       "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
       "property": "verify"
     },
     {
-      "permission": "DENY",
-      "principalId": "$everyone",
       "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
       "property": "confirm"
     },
     {
       "accessType": "EXECUTE",
-      "permission": "DENY",
-      "principalId": "$everyone",
       "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
       "property": "resetPassword"
     },
     {
