@@ -483,6 +483,12 @@ module.exports = function(User) {
     }
   );
 
+  User.prototype.createAuthToken = function createAuthToken({ ttl } = {}) {
+    return Observable.fromNodeCallback(
+      this.authTokens.create.bind(this.authTokens)
+    )({ ttl });
+  };
+
   User.prototype.getEncodedEmail = function getEncodedEmail() {
     if (!this.email) {
       return null;
@@ -506,7 +512,7 @@ module.exports = function(User) {
       }
 
       // create a temporary access token with ttl for 15 minutes
-      return this.createAccessToken$({ ttl: 15 * 60 * 1000 });
+      return this.createAuthToken({ ttl: 15 * 60 * 1000 });
     })
       .flatMap(token => {
         let renderAuthEmail = renderSignInEmail;

@@ -21,7 +21,7 @@ module.exports = function enableAuthentication(app) {
   const ifUserRedirect = ifUserRedirectTo();
   const router = app.loopback.Router();
   const api = app.loopback.Router();
-  const { AccessToken, User } = app.models;
+  const { AuthToken, User } = app.models;
 
   router.get('/login', (req, res) => res.redirect(301, '/signin'));
   router.get('/logout', (req, res) => res.redirect(301, '/signout'));
@@ -99,7 +99,7 @@ module.exports = function enableAuthentication(app) {
       ));
     }
     // first find
-    return AccessToken.findOne$({ where: { id: authTokenId } })
+    return AuthToken.findOne$({ where: { id: authTokenId } })
       .flatMap(authToken => {
         if (!authToken) {
           throw wrapHandledError(
@@ -135,7 +135,7 @@ module.exports = function enableAuthentication(app) {
                 }
               );
             }
-            return authToken.validate$()
+            return authToken.validate()
               .map(isValid => {
                 if (!isValid) {
                   throw wrapHandledError(
@@ -150,7 +150,7 @@ module.exports = function enableAuthentication(app) {
                     }
                   );
                 }
-                return authToken.destroy$();
+                return authToken.destroy();
               })
               .map(() => user);
           });
