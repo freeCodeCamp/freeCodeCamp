@@ -10,10 +10,10 @@ import {
   closeHelpModal,
   helpModalSelector
 } from './redux';
+import { RSA } from '../../../utils/constantStrings.json';
 
 const mapStateToProps = state => ({ isOpen: helpModalSelector(state) });
 const mapDispatchToProps = { createQuestion, openHelpChatRoom, closeHelpModal };
-const methodologyUrl = 'https://forum.freecodecamp.org/t/the-read-search-ask-methodology-for-getting-unstuck/137307'; // eslint-disable-line max-len
 
 const propTypes = {
   closeHelpModal: PropTypes.func,
@@ -52,7 +52,7 @@ export class HelpModal extends PureComponent {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
-            href={ methodologyUrl }
+            href={ RSA }
             onClick={ closeHelpModal }
             target='_blank'
             >
