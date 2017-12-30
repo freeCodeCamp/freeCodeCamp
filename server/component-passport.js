@@ -1,48 +1,10 @@
 import passport from 'passport';
 import { PassportConfigurator } from 'loopback-component-passport';
 import passportProviders from './passport-providers';
-import uuid from 'uuid';
-import { generateKey } from 'loopback-component-passport/lib/models/utils';
-
-import {
-  setProfileFromGithub,
-  getSocialProvider,
-  getUsernameFromProvider
-} from './utils/auth';
 
 const passportOptions = {
   emailOptional: true,
-  profileToUser(provider, profile) {
-    const emails = profile.emails;
-    // NOTE(berks): get email or set to null.
-    // MongoDB indexs email but can be sparse(blank)
-    const email = emails && emails[0] && emails[0].value ?
-      emails[0].value :
-      null;
-
-    // create random username
-    // username will be assigned when camper signups for Github
-    const username = 'fcc' + uuid.v4().slice(0, 8);
-    const password = generateKey('password');
-    let userObj = {
-      username: username,
-      password: password
-    };
-
-    if (email) {
-      userObj.email = email;
-    }
-
-    if (!(/github/).test(provider)) {
-      userObj[getSocialProvider(provider)] = getUsernameFromProvider(
-        getSocialProvider(provider),
-        profile
-      );
-    } else {
-      userObj = setProfileFromGithub(userObj, profile, profile._json);
-    }
-    return userObj;
-  }
+  profileToUser: null
 };
 
 const fields = {

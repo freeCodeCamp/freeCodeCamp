@@ -132,7 +132,7 @@ export default function commit(app) {
     const {
       nonprofit: nonprofitName = 'girl develop it',
       amount = '5',
-      goal = commitGoals.frontEndCert
+      goal = commitGoals.respWebDesignCert
     } = req.query;
 
     const nonprofit = findNonprofit(nonprofitName);

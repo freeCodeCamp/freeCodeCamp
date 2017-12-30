@@ -1,11 +1,11 @@
 /* eslint-disable react/display-name */
-import React from 'react';
+import { createElement } from 'react';
 import { Provider } from 'react-redux';
 
-export default function provideStore(element, store) {
-  return React.createElement(
+export default function provideStore(Component, store) {
+  return createElement(
     Provider,
     { store },
-    element
+    createElement(Component)
   );
 }

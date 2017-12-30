@@ -1,10 +1,10 @@
 import _ from 'lodash';
-import moment from 'moment';
 import loopback from 'loopback';
 import path from 'path';
 import dedent from 'dedent';
 import { Observable } from 'rx';
 import debug from 'debug';
+import { isEmail } from 'validator';
 
 import {
   ifNoUser401,
@@ -14,9 +14,14 @@ import {
 import { observeQuery } from '../utils/rx';
 
 import {
+  respWebDesignId,
+  frontEndLibsId,
+  jsAlgoDataStructId,
   frontEndChallengeId,
-  dataVisChallengeId,
-  backEndChallengeId
+  dataVisId,
+  apisMicroservicesId,
+  backEndChallengeId,
+  infosecQaId
 } from '../utils/constantStrings.json';
 
 import {
@@ -32,13 +37,6 @@ const renderCertifedEmail = loopback.template(path.join(
   'views',
   'emails',
   'certified.ejs'
-));
-const renderNotifyEmail = loopback.template(path.join(
-  __dirname,
-  '..',
-  'views',
-  'emails',
-  'a-new-user.ejs'
 ));
 const sendMessageToNonUser = ifNoUserSend(
   'must be logged in to complete.'
@@ -63,19 +61,16 @@ function getIdsForCert$(id, Challenge) {
     .shareReplay();
 }
 
-// getFormatedDate(challengeMap: Object, challengeId: String) => String, throws
-function getFormatedDate(challengeMap, challengeId) {
-  return moment(challengeMap[challengeId].completedDate)
-    .format('MMMM D, YYYY');
-}
-
 // sendCertifiedEmail(
 //   {
 //     email: String,
 //     username: String,
-//     isFrontEndCert: Boolean,
-//     isBackEndCert: Boolean,
-//     isDataVisCert: Boolean
+//     isRespWebDesignCert: Boolean,
+//     isFrontEndLibsCert: Boolean,
+//     isJsAlgoDataStructCert: Boolean,
+//     isDataVisCert: Boolean,
+//     isApisMicroservicesCert: Boolean,
+//     isInfosecQaCert: Boolean
 //   },
 //   send$: Observable
 // ) => Observable
@@ -84,59 +79,40 @@ function sendCertifiedEmail(
     email,
     name,
     username,
-    isFrontEndCert,
-    isBackEndCert,
+    isRespWebDesignCert,
+    isFrontEndLibsCert,
+    isJsAlgoDataStructCert,
     isDataVisCert,
-    challengeMap
+    isApisMicroservicesCert,
+    isInfosecQaCert
   },
   send$
 ) {
   if (
-    !isFrontEndCert ||
-    !isBackEndCert ||
-    !isDataVisCert
+    !isEmail(email) ||
+    !isRespWebDesignCert ||
+    !isFrontEndLibsCert ||
+    !isJsAlgoDataStructCert ||
+    !isDataVisCert ||
+    !isApisMicroservicesCert ||
+    !isInfosecQaCert
   ) {
     return Observable.just(false);
   }
-  let frontEndDate;
-  let backEndDate;
-  let dataVisDate;
-  try {
-    frontEndDate = getFormatedDate(challengeMap, frontEndChallengeId);
-    backEndDate = getFormatedDate(challengeMap, backEndChallengeId);
-    dataVisDate = getFormatedDate(challengeMap, dataVisChallengeId);
-  } catch (err) {
-    return Observable.throw(err);
-  }
-
-  const notifyTeam = {
-    type: 'email',
-    to: 'Michael@FreeCodeCamp.com',
-    from: 'Team@FreeCodeCamp.com',
-    subject: 'A new user has arrived!',
-    text: renderNotifyEmail({
-      username,
-      name,
-      frontEndDate,
-      dataVisDate,
-      backEndDate
-    })
-  };
   const notifyUser = {
     type: 'email',
     to: email,
-    from: 'Michael@FreeCodeCamp.com',
-    subject: 'Congratulation on gaining your third certification!',
+    from: 'team@freeCodeCamp.org',
+    subject: dedent`
+      Congratulations on completing all of the
+      freeCodeCamp certificates!
+    `,
     text: renderCertifedEmail({
       username,
       name
     })
   };
-  return Observable.combineLatest(
-    send$(notifyTeam),
-    send$(notifyUser),
-    () => true
-  );
+  return send$(notifyUser).map(() => true);
 }
 
 export default function certificate(app) {
@@ -145,8 +121,16 @@ export default function certificate(app) {
 
   const certTypeIds = {
     [certTypes.frontEnd]: getIdsForCert$(frontEndChallengeId, Challenge),
-    [certTypes.dataVis]: getIdsForCert$(dataVisChallengeId, Challenge),
-    [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge)
+    [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge),
+    [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
+    [certTypes.frontEndLibs]: getIdsForCert$(frontEndLibsId, Challenge),
+    [certTypes.jsAlgoDataStruct]: getIdsForCert$(jsAlgoDataStructId, Challenge),
+    [certTypes.dataVis]: getIdsForCert$(dataVisId, Challenge),
+    [certTypes.apisMicroservices]: getIdsForCert$(
+      apisMicroservicesId,
+      Challenge
+    ),
+    [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge)
   };
 
   router.post(
@@ -162,9 +146,39 @@ export default function certificate(app) {
   );
 
   router.post(
+    '/certificate/verify/responsive-web-design',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.respWebDesign)
+  );
+
+  router.post(
+    '/certificate/verify/front-end-libraries',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.frontEndLibs)
+  );
+
+  router.post(
+    '/certificate/verify/javascript-algorithms-data-structures',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.jsAlgoDataStruct)
+  );
+
+  router.post(
     '/certificate/verify/data-visualization',
     ifNoUser401,
     verifyCert.bind(null, certTypes.dataVis)
+  );
+
+  router.post(
+    '/certificate/verify/apis-microservices',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.apisMicroservices)
+  );
+
+  router.post(
+    '/certificate/verify/information-security-quality-assurance',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.infosecQa)
   );
 
   router.post(
@@ -235,10 +249,10 @@ export default function certificate(app) {
             if (user.name === '') {
               return res.status(200).send(
                 dedent`
-                  We need your name so we can put it on your certificate. 
+                  We need your name so we can put it on your certificate.
                   <a href="https://github.com/settings/profile">Add your
                   name to your GitHub account</a>, then go to your
-                  <a href="https://www.freecodecamp.com/settings">settings
+                  <a href="https://www.freecodecamp.org/settings">settings
                   page</a> and click the "update my portfolio from GitHub"
                   button. Then we can issue your certificate.
                   `

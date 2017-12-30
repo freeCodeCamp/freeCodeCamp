@@ -1,0 +1,219 @@
+// should be the same as the filename and ./ns.json
+@ns: challenges;
+
+// challenge panes are bound to the pane size which in turn is
+// bound to the total height minus navbar height
+.max-element-height() {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.@{ns}-title {
+  margin-top: 0;
+  i {
+    margin-left: 5px;
+    line-height: 20px;
+  }
+}
+
+.@{ns}-grayed-out-test-output {
+  color: @gray-light;
+}
+
+.@{ns}-test-suite {
+  margin-top: 10px;
+  & .row {
+    margin: 0!important;
+  }
+
+  .big-icon {
+    font-size: 30px;
+  }
+
+  .error-icon {
+    color: @brand-danger;
+    top: 50%;
+  }
+
+  .success-icon {
+    color: @brand-primary;
+  }
+
+  .refresh-icon {
+    color: @icon-gray;
+  }
+}
+
+.@{ns}-instructions {
+  margin-bottom: 5px;
+  h4 {
+    margin-bottom: 0;
+  }
+  blockquote {
+    font-size: 90%;
+    font-family: @font-family-monospace !important;
+    color: @code-color;
+    background-color: #fffbe5;
+    border-radius: @border-radius-base;
+    border: 1px solid @pre-border-color;
+    white-space: pre;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    overflow: auto;
+  }
+  dfn {
+    font-family: @font-family-monospace;
+    color: @code-color;
+    background-color: @code-bg;
+    border-radius: @border-radius-base;
+    padding: 1px 5px;
+  }
+  & a, #MDN-links a {
+    color: #31708f;
+  }
+  & a::after, #MDN-links a::after {
+    font-size: 70%;
+    font-family: FontAwesome;
+    content: " \f08e";
+  }
+  ol {
+    font-size: 16px;
+  }
+}
+
+.night {
+  .@{ns}-instructions blockquote {
+    background-color: #242424;
+    border-color: #515151;
+    color: #ABABAB
+  }
+  .@{ns}-instructions dfn {
+    background-color: #242424;
+    color: #02a902;
+  }
+  .@{ns}-editor .CodeMirror {
+    background-color:#242424;
+    color:#ABABAB;
+    &-gutters {
+      background-color:#242424;
+      color:#ABABAB;
+    }
+    .cm-bracket, .cm-tag {
+      color:#5CAFD6;
+    }
+    .cm-property, .cm-string {
+      color:#B5753A;
+    }
+    .cm-keyword, .cm-attribute {
+      color:#9BBBDC;
+    }
+  }
+  .refresh-icon {
+    color: @icon-light-gray;
+  }
+}
+
+.@{ns}-test-output {
+  font-size: 15px;
+  font-family: "Ubuntu Mono";
+  margin-top: 8px;
+  line-height:20px;
+  word-wrap: break-word;
+}
+
+@keyframes skeletonShimmer{
+  0% {
+    transform: translateX(-48px);
+  }
+  100% {
+    transform: translateX(1000px);
+  }
+}
+
+.@{ns}-shimmer {
+  position: relative;
+  min-height: 18px;
+
+  .row {
+    height: 18px;
+
+    .col-xs-12 {
+      padding-right: 12px;
+      height: 17px;
+    }
+  }
+
+  .sprite-wrapper {
+    background-color: #333;
+    height: 17px;
+    width: 75%;
+  }
+
+  .sprite {
+    animation-name: skeletonShimmer;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    background: white;
+    box-shadow: 0 0 3px 2px;
+    height: 17px;
+    width: 2px;
+    z-index: 5;
+  }
+}
+
+.@{ns}-success-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50vh;
+
+  .modal-title {
+    color: @gray-lighter;
+  }
+
+  .modal-header {
+    background-color: @brand-primary;
+    margin-bottom: 0;
+
+    .close {
+      color: #eee;
+      font-size: 4rem;
+      opacity: 0.6;
+      transition: all 300ms ease-out;
+      margin-top: 0;
+      padding-left: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .fa {
+      margin-right: 0;
+    }
+  }
+}
+
+.@{ns}-preview {
+  .max-element-height();
+  width: 100%;
+}
+
+.@{ns}-preview-frame {
+  .max-element-height();
+  border: none;
+  width: 100%;
+}
+
+&{ @import "./views/index.less"; }

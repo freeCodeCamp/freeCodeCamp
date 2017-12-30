@@ -1,132 +1,73 @@
-import React, { PropTypes } from 'react';
-import { Button } from 'react-bootstrap';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 
 import ns from './ns.json';
 import {
+  appMounted,
   fetchUser,
-  updateAppLang,
-  trackEvent,
-  loadCurrentChallenge,
-  openDropdown,
-  closeDropdown
-} from './redux/actions';
 
-import { submitChallenge } from './routes/challenges/redux/actions';
+  isSignedInSelector
+} from './redux';
 
-import Nav from './components/Nav';
-import Toasts from './toasts/Toasts.jsx';
-import { userSelector } from './redux/selectors';
+import Nav from './Nav';
+import Toasts from './Toasts';
+import NotFound from './NotFound';
+import { mainRouteSelector } from './routes/redux';
+import Challenges from './routes/Challenges';
+import Settings from './routes/Settings';
 
 const mapDispatchToProps = {
-  closeDropdown,
-  fetchUser,
-  loadCurrentChallenge,
-  openDropdown,
-  submitChallenge,
-  trackEvent,
-  updateAppLang
+  appMounted,
+  fetchUser
 };
 
-const mapStateToProps = createSelector(
-  userSelector,
-  state => state.app.isNavDropdownOpen,
-  state => state.app.isSignInAttempted,
-  state => state.app.toast,
-  state => state.challengesApp.toast,
-  (
-    { user: { username, points, picture } },
-    isNavDropdownOpen,
-    isSignInAttempted,
-    toast,
-  ) => ({
-    username,
-    points,
-    picture,
-    toast,
-    isNavDropdownOpen,
-    showLoading: !isSignInAttempted,
-    isSignedIn: !!username
-  })
-);
+const mapStateToProps = state => {
+  const isSignedIn = isSignedInSelector(state);
+  const route = mainRouteSelector(state);
+  return {
+    toast: state.app.toast,
+    isSignedIn,
+    route
+  };
+};
 
 const propTypes = {
+  appMounted: PropTypes.func.isRequired,
   children: PropTypes.node,
-  closeDropdown: PropTypes.func.isRequired,
   fetchUser: PropTypes.func,
-  isNavDropdownOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool,
-  loadCurrentChallenge: PropTypes.func.isRequired,
-  openDropdown: PropTypes.func.isRequired,
-  params: PropTypes.object,
-  picture: PropTypes.string,
-  points: PropTypes.number,
-  showLoading: PropTypes.bool,
-  submitChallenge: PropTypes.func,
-  toast: PropTypes.object,
-  trackEvent: PropTypes.func.isRequired,
-  updateAppLang: PropTypes.func.isRequired,
-  username: PropTypes.string
+  route: PropTypes.string,
+  toast: PropTypes.object
+};
+
+const routes = {
+  challenges: Challenges,
+  settings: Settings
 };
 
 // export plain class for testing
 export class FreeCodeCamp extends React.Component {
-  componentWillReceiveProps(nextProps) {
-    if (this.props.params.lang !== nextProps.params.lang) {
-      this.props.updateAppLang(nextProps.params.lang);
-    }
-  }
-
   componentDidMount() {
+    this.props.appMounted();
     if (!this.props.isSignedIn) {
       this.props.fetchUser();
     }
   }
 
-  renderChallengeComplete() {
-    const { submitChallenge } = this.props;
-    return (
-      <Button
-        block={ true }
-        bsSize='small'
-        bsStyle='primary'
-        className='animated fadeIn'
-        onClick={ submitChallenge }
-        >
-        Submit and go to my next challenge
-      </Button>
-    );
-  }
-
   render() {
     const {
-      username,
-      points,
-      picture,
-      trackEvent,
-      loadCurrentChallenge,
-      openDropdown,
-      closeDropdown,
-      isNavDropdownOpen
+      route
     } = this.props;
-    const navProps = {
-      closeDropdown,
-      isNavDropdownOpen,
-      loadCurrentChallenge,
-      openDropdown,
-      picture,
-      points,
-      trackEvent,
-      username
-    };
-
+    const Child = routes[route] || NotFound;
+    // we render nav after the content
+    // to allow the panes to update
+    // redux store, which will update the bin
+    // buttons in the nav
     return (
       <div className={ `${ns}-container` }>
-        <Nav { ...navProps }/>
-        <div className={ `${ns}-content` }>
-          { this.props.children }
-        </div>
+        <Nav />
+        <Child />
         <Toasts />
       </div>
     );

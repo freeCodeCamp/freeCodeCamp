@@ -16,7 +16,13 @@
         }
       }
     },
+    "newEmail":{
+      "type": "string"
+    },
     "emailVerifyTTL": {
+      "type": "date"
+    },
+    "emailAuthLinkTTL": {
       "type": "date"
     },
     "password": {
@@ -51,6 +57,15 @@
     },
     "joinedGithubOn": {
       "type": "date"
+    },
+    "website": {
+      "type": "string"
+    },
+    "githubProfile": {
+      "type": "string"
+    },
+    "_csrf": {
+      "type": "string"
     },
     "isMigrationGrandfathered": {
       "type": "boolean",
@@ -120,6 +135,11 @@
       "description": "Campers profile does not show challenges/certificates to the public",
       "default": false
     },
+    "isAvailableForHire": {
+      "type": "boolean",
+      "description": "Camper is available for hire",
+      "default": false
+    },
     "currentChallengeId": {
       "type": "string",
       "description": "The challenge last visited by the user",
@@ -159,6 +179,36 @@
       "description": "Campers is full stack certified",
       "default": false
     },
+    "isRespWebDesignCert": {
+      "type": "boolean",
+      "description": "Camper is data visualization certified",
+      "default": false
+    },
+    "isNewDataVisCert": {
+      "type": "boolean",
+      "description": "Camper is responsive web design certified",
+      "default": false
+    },
+    "isFrontEndLibsCert": {
+      "type": "boolean",
+      "description": "Camper is front end libraries certified",
+      "default": false
+    },
+    "isJsAlgoDataStructCert": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified",
+      "default": false
+    },
+    "isApisMicroservicesCert": {
+      "type": "boolean",
+      "description": "Camper is apis and microservices certified",
+      "default": false
+    },
+    "isInfosecQaCert": {
+      "type": "boolean",
+      "description": "Camper is information security and quality assurance certified",
+      "default": false
+    },
     "isChallengeMapMigrated": {
       "type": "boolean",
       "description": "Migrate completedChallenges array to challenge map",
@@ -174,6 +224,7 @@
         {
           "completedDate": "number",
           "lastUpdated": "number",
+          "numOfAttempts": "number",
           "id": "string",
           "name": "string",
           "completedWith": "string",
@@ -268,7 +319,7 @@
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW",
-      "property": "updateEmail"
+      "property": "requestUpdateEmail"
     },
     {
       "accessType": "EXECUTE",
@@ -283,6 +334,13 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "updateLanguage"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "requestAuthEmail"
     }
   ],
   "methods": {}

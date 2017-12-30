@@ -5,6 +5,7 @@ import ns from './ns.json';
 import { isJSEnabledSelector } from './redux';
 import {Alert} from 'react-bootstrap';
 
+
 const mainId = 'fcc-main-frame';
 
 const mapStateToProps = state => ({

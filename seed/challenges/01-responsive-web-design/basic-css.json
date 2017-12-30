@@ -50,6 +50,7 @@
         "The style that is responsible for the color of an element's text is the \"color\" style.",
         "Here's how you would set your <code>h2</code> element's text color to blue:",
         "<code>&#60;h2 style=\"color: blue;\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+        "Note that it is a good practice to end inline <code>style</code> declarations with a <code>;</code> .",
         "<hr>",
         "Change your <code>h2</code> element's style so that its text color is red."
       ],
@@ -87,7 +88,8 @@
         "</main>"
       ],
       "tests": [
-        "assert(code.match(/<h2\\s+style\\s*=\\s*\"\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;?\">\\s*CatPhotoApp\\s*<\\/h2>/), 'message: Your <code>h2</code> element should be red.');"
+        "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'message: Your <code>h2</code> element should be red.');",
+        "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/),' message: Your <code>style</code> declaration should end with a <code>;</code> .');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1784,10 +1786,10 @@
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
         "Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.",
         "An element's <code>padding</code> controls the amount of space between the element's content and its <code>border</code>.",
-        "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the green box.",
-        "When you increase the green box's <code>padding</code>, it will increase the distance between the text <code>padding</code> and the border around it.",
+        "Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the blue box.",
+        "When you increase the blue box's <code>padding</code>, it will increase the distance between the text <code>padding</code> and the border around it.",
         "<hr>",
-        "Change the <code>padding</code> of your green box to match that of your red box."
+        "Change the <code>padding</code> of your blue box to match that of your red box."
       ],
       "challengeSeed": [
         "<style>",
@@ -1813,8 +1815,8 @@
         "    padding: 20px;",
         "  }",
         "",
-        "  .green-box {",
-        "    background-color: green;",
+        "  .blue-box {",
+        "    background-color: blue;",
         "    padding: 10px;",
         "  }",
         "</style>",
@@ -1822,11 +1824,11 @@
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"padding-top\") === \"20px\", 'message: Your <code>green-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
+        "assert($(\".blue-box\").css(\"padding-top\") === \"20px\", 'message: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1838,9 +1840,9 @@
             "Du hast vielleicht schon bemerkt, dass alle HTML Elemente im Prinzip kleine Rechtecke sind.",
             "Drei wichtige CSS-Eigenschaften beeinflussen den Platz den jedes HTML Element umgibt: <code>padding</code>, <code>margin</code> und <code>border</code>.",
             "<code>padding</code> kontrolliert den Raum oder Abstand zwischen dem Inhalt eines Elements und dessen Rahmen – <code>border</code>",
-            "Wir sehen in diesem Beispiel, dass sich die grüne Box und die rote Box innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>padding</code> hat als die grüne Box.",
+            "Wir sehen in diesem Beispiel, dass sich die blaue Box und die rote Box innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>padding</code> hat als die blaue Box.",
             "<hr>",
-            "Ändere das <code>padding</code> der grünen Box um es an die rote Box anzugleichen."
+            "Ändere das <code>padding</code> der blauen Box um es an die rote Box anzugleichen."
           ]
         },
         "es": {
@@ -1889,10 +1891,10 @@
       "title": "Adjust the Margin of an Element",
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
-        "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
-        "When you increase the green box's <code>margin</code>, it will increase the distance between its border and surrounding elements.",
+        "Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more <code>margin</code> than the blue box, making it appear smaller.",
+        "When you increase the blue box's <code>margin</code>, it will increase the distance between its border and surrounding elements.",
         "<hr>",
-        "Change the <code>margin</code> of the green box to match that of the red box."
+        "Change the <code>margin</code> of the blue box to match that of the red box."
       ],
       "challengeSeed": [
         "<style>",
@@ -1919,8 +1921,8 @@
         "    margin: 20px;",
         "  }",
         "",
-        "  .green-box {",
-        "    background-color: green;",
+        "  .blue-box {",
+        "    background-color: blue;",
         "    padding: 20px;",
         "    margin: 10px;",
         "  }",
@@ -1929,11 +1931,11 @@
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"margin-top\") === \"20px\", 'message: Your <code>green-box</code> class should give elements <code>20px</code> of <code>margin</code>.');"
+        "assert($(\".blue-box\").css(\"margin-top\") === \"20px\", 'message: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1942,10 +1944,10 @@
           "title": "Passe den Außenabstand eines Elements an",
           "description": [
             "<code>margin</code> kontrolliert den Abstand zwischen dem Rahmen - <code>border</code> - eines Elements und den benachbarten Elementen.",
-            "In diesem Beispiel sehen wir die grüne und die rote Box die sich beide innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>margin</code> aufweist als die grüne Box, wodurch sie kleiner wirkt.",
-            "Wenn du den Außenabstand – <code>margin</code> – der grünen Box erhöhst, wird sich der Abstand zwischen ihrem Rahmen und den benachbarten Elementen vergrößern.",
+            "In diesem Beispiel sehen wir die blaue und die rote Box die sich beide innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>margin</code> aufweist als die blaue Box, wodurch sie kleiner wirkt.",
+            "Wenn du den Außenabstand – <code>margin</code> – der blauen Box erhöhst, wird sich der Abstand zwischen ihrem Rahmen und den benachbarten Elementen vergrößern.",
             "<hr>",
-            "Gleiche den Außenabstand – <code>margin</code> der grünen Box dem der roten Box an."
+            "Gleiche den Außenabstand – <code>margin</code> der blauen Box dem der roten Box an."
           ]
         },
         "es": {
@@ -1988,7 +1990,7 @@
         "If you set an element's <code>margin</code> to a negative value, the element will grow larger.",
         "<hr>",
         "Try to set the <code>margin</code> to a negative value like the one for the red box.",
-        "Change the <code>margin</code> of the green box to <code>-15px</code>, so it fills the entire horizontal width of the yellow box around it."
+        "Change the <code>margin</code> of the blue box to <code>-15px</code>, so it fills the entire horizontal width of the yellow box around it."
       ],
       "challengeSeed": [
         "<style>",
@@ -2015,8 +2017,8 @@
         "    margin: -15px;",
         "  }",
         "",
-        "  .green-box {",
-        "    background-color: green;",
+        "  .blue-box {",
+        "    background-color: blue;",
         "    padding: 20px;",
         "    margin: 20px;",
         "  }",
@@ -2024,11 +2026,11 @@
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"margin-top\") === \"-15px\", 'message: Your <code>green-box</code> class should give elements <code>-15px</code> of <code>margin</code>.');"
+        "assert($(\".blue-box\").css(\"margin-top\") === \"-15px\", 'message: Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2040,7 +2042,7 @@
             "Wenn du dem Außenabstand - <code>margin</code> - eines Elements einen negativen Wert zuweist, wird das Element größer.",
             "<hr>",
             "Versuche den Außenabstand - <code>margin</code> - auf einen negativen Wert, wie bei der roten Box, zu setzen.",
-            "Ändere den Außenabstand – <code>margin</code> – der grünen Box auf <code>-15px</code>, damit sie die gelbe Box horizontal ausfüllt."
+            "Ändere den Außenabstand – <code>margin</code> – der blauen Box auf <code>-15px</code>, damit sie die gelbe Box horizontal ausfüllt."
           ]
         },
         "es": {
@@ -2082,7 +2084,7 @@
         "Sometimes you will want to customize an element so that it has different <code>padding</code> on each of its sides.",
         "CSS allows you to control the <code>padding</code> of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties.",
         "<hr>",
-        "Give the green box a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+        "Give the blue box a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
       "challengeSeed": [
         "<style>",
@@ -2111,22 +2113,22 @@
         "    padding-left: 40px;",
         "  }",
         "",
-        "  .green-box {",
-        "    background-color: green;",
+        "  .blue-box {",
+        "    background-color: blue;",
         "  }",
         "</style>",
         "<h5 class=\"injected-text\">margin</h5>",
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'message: Your <code>green-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');"
+        "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", 'message: Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.');",
+        "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", 'message: Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.');",
+        "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');",
+        "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2137,7 +2139,7 @@
             "Manchmal wirst du einem Element auf jeder Seite unterschiedliche Innenabstände – also <code>padding</code> – geben wollen.",
             "CSS erlaubt dir den Innenabstand - <code>padding</code> - eines Elements auf allen Seiten einzeln mit den Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu steuern.",
             "<hr>",
-            "Verleihe der grünen Box einen Innenabstand – <code>padding</code> – von <code>40px</code> auf der oberen und linken Seite, aber nur <code>20px</code> auf der unteren und rechten Seite."
+            "Verleihe der blauen Box einen Innenabstand – <code>padding</code> – von <code>40px</code> auf der oberen und linken Seite, aber nur <code>20px</code> auf der unteren und rechten Seite."
           ]
         },
         "es": {
@@ -2176,7 +2178,7 @@
         "Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.",
         "CSS allows you to control the <code>margin</code> of an element on all four sides with <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties.",
         "<hr>",
-        "Give the green box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+        "Give the blue box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
       "challengeSeed": [
         "<style>",
@@ -2205,22 +2207,22 @@
         "    margin-left: 40px;",
         "  }",
         "",
-        "  .green-box {",
-        "    background-color: green;",
+        "  .blue-box {",
+        "    background-color: blue;",
         "  }",
         "</style>",
         "<h5 class=\"injected-text\">margin</h5>",
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'message: Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');",
-        "assert($(\".green-box\").css(\"margin-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');",
-        "assert($(\".green-box\").css(\"margin-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');",
-        "assert($(\".green-box\").css(\"margin-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
+        "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", 'message: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');",
+        "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'message: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');",
+        "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", 'message: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');",
+        "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'message: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2231,7 +2233,7 @@
             "Manchmal wirst du einem Element auf jeder Seite einen unterschiedlichen Außenabstand - <code>margin</code> - geben wollen.",
             "CSS erlaubt dir ebenfalls den Außenabstand - <code>margin</code> - eines Elements auf jeder Seite einzeln mit den Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu steuern.",
             "<hr>",
-            "Gib der grünen Box einen Außenabstand – <code>margin</code> – von <code>40px</code> auf der oberen und linken Seite, aber nur <code>20px</code> auf der unteren und rechten Seite."
+            "Gib der blauen Box einen Außenabstand – <code>margin</code> – von <code>40px</code> auf der oberen und linken Seite, aber nur <code>20px</code> auf der unteren und rechten Seite."
           ]
         },
         "es": {
@@ -2271,7 +2273,7 @@
         "<code>padding: 10px 20px 10px 20px;</code>",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
         "<hr>",
-        "Use Clockwise Notation to give the \".green-box\" class a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+        "Use Clockwise Notation to give the \".blue-box\" class a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
       "challengeSeed": [
         "<style>",
@@ -2297,23 +2299,23 @@
         "    padding: 20px 40px 20px 40px;",
         "  }",
         "",
-        "  .green-box {",
-        "    background-color: green;",
+        "  .blue-box {",
+        "    background-color: blue;",
         "  }",
         "</style>",
         "<h5 class=\"injected-text\">margin</h5>",
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'message: Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');",
-        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');",
-        "assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'message: You should use the clockwise notation to set the padding of <code>green-box</code> class.');"
+        "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", 'message: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.');",
+        "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", 'message: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.');",
+        "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", 'message: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');",
+        "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'message: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');",
+        "assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'message: You should use the clockwise notation to set the padding of <code>blue-box</code> class.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2325,7 +2327,7 @@
             "<code>padding: 10px 20px 10px 20px;</code>",
             "Diese vier Werte funktionieren wie eine Uhr: oben, rechts, unten und links. Sie bewirken exakt dasselbe wie die seitenspezifischen Anweisungen.",
             "<hr>",
-            "Gib der Klasse \".green-box\" mit einer Notation im Uhrzeigersinn einen Innenabstand – <code>padding</code> – von <code>40px</code> auf der oberen und linken Seite, aber nur <code>20px</code> auf der unteren und rechten Seite."
+            "Gib der Klasse \".blue-box\" mit einer Notation im Uhrzeigersinn einen Innenabstand – <code>padding</code> – von <code>40px</code> auf der oberen und linken Seite, aber nur <code>20px</code> auf der unteren und rechten Seite."
           ]
         },
         "es": {
@@ -2335,7 +2337,7 @@
             "<code>padding: 10px 20px 10px 20px;</code>",
             "Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado de las cuatro instrucciones de relleno.",
             "<hr>",
-            "Usa la notación en sentido horario para dar a la clase \"<code>.green-box</code>\" un relleno de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
+            "Usa la notación en sentido horario para dar a la clase \"<code>.blue-box</code>\" un relleno de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
           ]
         },
         "pt-br": {
@@ -2345,7 +2347,7 @@
             "<code>padding: 10px 20px 10px 20px;</code>",
             "Estes quatro valores funcionam como um relógio: cima, direita, baixo e esquerda, e produzirão o mesmo resultado das quatro instruções de preenchimento.",
             "<hr>",
-            "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.green-box</code>\" um preenchimento de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
+            "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.blue-box</code>\" um preenchimento de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
           ]
         },
         "ru": {
@@ -2355,7 +2357,7 @@
             "<code>padding: 10px 20px 10px 20px;</code>",
             "Установка значений работает по часовой стрелке: сверху, справа, снизу, слева, и приводит к ровно такому же результату, как и использование других инструкций.",
             "<hr>",
-            "Используйте систему ссылок по часовой стрелке для установки для класса \".green-box\" значения отступа содержимого <code>padding</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
+            "Используйте систему ссылок по часовой стрелке для установки для класса \".blue-box\" значения отступа содержимого <code>padding</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
           ]
         }
       }
@@ -2369,7 +2371,7 @@
         "<code>margin: 10px 20px 10px 20px;</code>",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.",
         "<hr>",
-        "Use <code>Clockwise Notation</code> to give the element with the <code>green-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
+        "Use <code>Clockwise Notation</code> to give the element with the <code>blue-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side."
       ],
       "challengeSeed": [
         "<style>",
@@ -2395,22 +2397,22 @@
         "    margin: 20px 40px 20px 40px;",
         "  }",
         "",
-        "  .green-box {",
-        "    background-color: green;",
+        "  .blue-box {",
+        "    background-color: blue;",
         "  }",
         "</style>",
         "<h5 class=\"injected-text\">margin</h5>",
         "",
         "<div class=\"box yellow-box\">",
         "  <h5 class=\"box red-box\">padding</h5>",
-        "  <h5 class=\"box green-box\">padding</h5>",
+        "  <h5 class=\"box blue-box\">padding</h5>",
         "</div>"
       ],
       "tests": [
-        "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'message: Your <code>green-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');",
-        "assert($(\".green-box\").css(\"margin-right\") === \"20px\", 'message: Your <code>green-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');",
-        "assert($(\".green-box\").css(\"margin-bottom\") === \"20px\", 'message: Your <code>green-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');",
-        "assert($(\".green-box\").css(\"margin-left\") === \"40px\", 'message: Your <code>green-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
+        "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", 'message: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');",
+        "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'message: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');",
+        "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", 'message: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');",
+        "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'message: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -2423,7 +2425,7 @@
             "<code>margin: 10px 20px 10px 20px;</code>",
             "Diese vier Werte funktionieren wieder wie eine Uhr: oben, rechts, unten und links. Sie bewirken exakt das Gleiche wie die seitenspezifischen Anweisungen.",
             "<hr>",
-            "Nutze die Notation im Uhrzeigersinn – auch <code>Clockwise Notation</code> genannt – um dem Element mit der Klasse <code>green-box</code> <code>40px</code> Außenabstand auf der oberen und linken Seite, aber nur <code>20px</code> auf der unteren und rechten Seite zu verleihen."
+            "Nutze die Notation im Uhrzeigersinn – auch <code>Clockwise Notation</code> genannt – um dem Element mit der Klasse <code>blue-box</code> <code>40px</code> Außenabstand auf der oberen und linken Seite, aber nur <code>20px</code> auf der unteren und rechten Seite zu verleihen."
           ]
         },
         "es": {
@@ -2434,7 +2436,7 @@
             "<code>margin: 10px 20px 10px 20px;</code>",
             "Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado de las cuatro instrucciones que especifican el margen.",
             "<hr>",
-            "Usa <code>notación en sentido horario</code> para dar al elemento con la clase <code>green-box</code> un margen de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
+            "Usa <code>notación en sentido horario</code> para dar al elemento con la clase <code>blue-box</code> un margen de <code>40px</code> en las partes superior e izquierda, pero sólo <code>20px</code> en su parte inferior y al lado derecho ."
           ]
         },
         "pt-br": {
@@ -2445,7 +2447,7 @@
             "<code>margin: 10px 20px 10px 20px;</code>",
             "Estes quatro valores funcionam como um relógio: cima, direita, baixo e esquerda, e produzirão o mesmo resultado das quatro instruções de margem.",
             "<hr>",
-            "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.green-box</code>\" uma margem de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
+            "Use a <code>notação em sentido horário</code> para dar para a classe \"<code>.blue-box</code>\" uma margem de <code>40px</code> nas partes superior e esquerda, mas de apenas <code>20px</code> em sua parte inferior e ao lado direito."
           ]
         },
         "ru": {
@@ -2456,7 +2458,7 @@
             "<code>margin: 10px 20px 10px 20px;</code>",
             "Установка значений работает по часовой стрелке: сверху, справа, снизу, слева, и приводит к ровно такому же результату, как и использование других инструкций.",
             "<hr>",
-            "Используйте систему ссылок по часовой стрелке для установки для класса <code>green-box</code> значения отступа <code>margin</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
+            "Используйте систему ссылок по часовой стрелке для установки для класса <code>blue-box</code> значения отступа <code>margin</code> равное <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
           ]
         }
       }
@@ -3213,6 +3215,7 @@
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
         "We usually use <code>decimals</code>, or base 10 numbers, which use the symbols 0 to 9 for each digit. <code>Hexadecimals</code> (or <code>hex</code>) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represent the values zero to nine. Then A,B,C,D,E,F represent the values ten to fifteen. Altogether, 0 to F can represent a digit in <code>hexadecimal</code>, giving us 16 total possible values. You can find more information about <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>hexadecimal numbers here</a>.",
         "In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components. For example, <code>#000000</code> is black and is also the lowest possible value. You can find more information about the <a target='_blank' href='https://en.wikipedia.org/wiki/RGB_color_model'>RGB color system here</a>.",
+        "<blockquote>body {<br>  color: #000000;<br>}</blockquote>",
         "<hr>",
         "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>."
       ],
@@ -3225,7 +3228,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Give your <code>body</code> element the background-color of black.');",
-        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color black instead of the word <code>black</code>. For example <code>body { color&#58; #000000; }</code>');"
+        "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), 'message: Use the <code>hex code</code> for the color black instead of the word <code>black</code>.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -3461,6 +3464,8 @@
         "<code>rgb(255, 255, 255)</code>",
         "Instead of using six hexadecimal digits like you do with hex code, with <code>RGB</code> you specify the brightness of each color with a number between 0 and 255.",
         "If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So <code>RGB</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
+        "Here's an example of how you'd change the body background to orange using its RGB code.",
+        "<blockquote>body {<br>  background-color: rgb(255, 165, 0);<br>}</blockquote>",
         "<hr>",
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
@@ -3473,7 +3478,7 @@
       ],
       "tests": [
         "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'message: Your <code>body</code> element should have a black background.');",
-        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element a color of black. For example <code>body { background-color&#58; rgb&#40;255&#44; 165&#44; 0&#41;; }</code>');"
+        "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'message: Use <code>rgb</code> to give your <code>body</code> element a color of black.');"
       ],
       "type": "waypoint",
       "challengeType": 0,

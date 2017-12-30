@@ -1,4 +1,5 @@
 nav.navbar.navbar-default.navbar-static-top.nav-height
+
     .navbar-header
         button.hamburger.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
             .col-xs-12
@@ -7,33 +8,28 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at freeCodeCamp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
+            li
+              a(href='/map') Map
             li.dropdown
                 a.dropdown-toggle(data-toggle='dropdown' role='button' href='#' aria-haspopup='true') Community
                 ul.dropdown-menu
                     li
                         a(href='https://gitter.im/freecodecamp/home' target='_blank') Chat
                     li
-                        a(href='https://forum.freecodecamp.com', target='_blank') Forum
+                        a(href='https://forum.freecodecamp.org', target='_blank') Forum
                     li
-                        a(href='https://medium.freecodecamp.com', target='_blank') Medium
+                        a(href='https://medium.freecodecamp.org', target='_blank') Medium
                     li
                         a(href='https://youtube.com/freecodecamp', target='_blank') YouTube
                     li
-                        a(href='https://forum.freecodecamp.com/t/free-code-camp-city-based-local-groups/19574', target='_blank') In your city
+                        a(href='https://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574', target='_blank') In your city
                     li
                         a(href='/about') About
             li
-                a(href='/map') Map
-            li
-                a(href='/shop') Shop
+                a(href='https://www.freecodecamp.org/donate', target='_blank') Donate
             if !user
                 li
-                    a(href='/signup') Sign Up
+                    a(href='/signin') Sign Up
             else
-                li.avatar-points
-                  a(href='/settings')
-                    span.brownie-points-nav
-                      span.hidden-md.hidden-lg #{user.username} 
-                      span.brownie-points [&thinsp;#{user.points}&thinsp;]
-                    span.hidden-xs.hidden-sm.avatar
-                      img.profile-picture.float-right(src='#{user.picture}')
+                li
+                  a(href='/settings') My Profile

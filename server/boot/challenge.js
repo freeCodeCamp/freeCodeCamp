@@ -4,12 +4,7 @@ import accepts from 'accepts';
 import dedent from 'dedent';
 
 import { ifNoUserSend } from '../utils/middleware';
-import { cachedMap } from '../utils/map';
-import createNameIdMap from '../../common/utils/create-name-id-map';
-import {
-  checkMapData,
-  getFirstChallenge
-} from '../../common/utils/get-first-challenge';
+import { getChallengeById, cachedMap } from '../utils/map';
 
 const log = debug('fcc:boot:challenges');
 
@@ -19,20 +14,24 @@ function buildUserUpdate(
   completedChallenge,
   timezone
 ) {
-  const updateData = { $set: {} };
   let finalChallenge;
+  let numOfAttempts = 1;
+  const updateData = { $set: {} };
   const { timezone: userTimezone, challengeMap = {} } = user;
 
   const oldChallenge = challengeMap[challengeId];
   const alreadyCompleted = !!oldChallenge;
 
-
   if (alreadyCompleted) {
     // add data from old challenge
+    if (oldChallenge.numOfAttempts) {
+      numOfAttempts = oldChallenge.numOfAttempts + 1;
+    }
     finalChallenge = {
       ...completedChallenge,
       completedDate: oldChallenge.completedDate,
-      lastUpdated: completedChallenge.completedDate
+      lastUpdated: completedChallenge.completedDate,
+      numOfAttempts
     };
   } else {
     updateData.$push = {
@@ -41,7 +40,10 @@ function buildUserUpdate(
         completedChallenge: challengeId
       }
     };
-    finalChallenge = completedChallenge;
+    finalChallenge = {
+      ...completedChallenge,
+      numOfAttempts
+    };
   }
 
   updateData.$set = {
@@ -73,8 +75,7 @@ export default function(app) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
-  const Block = app.models.Block;
-  const map$ = cachedMap(Block);
+  const map = cachedMap(app.models);
 
   api.post(
     '/modern-challenge-completed',
@@ -344,43 +345,23 @@ export default function(app) {
 
   function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
-    return map$
-      .map(({ entities, result }) => ({
-        result,
-        entities: createNameIdMap(entities)
-      }))
-      .map(map => {
-        checkMapData(map);
-        const {
-          entities: { challenge: challengeMap, challengeIdToName }
-        } = map;
-        let finalChallenge;
-        const dashedName = challengeIdToName[user && user.currentChallengeId];
-        finalChallenge = challengeMap[dashedName];
-        // redirect to first challenge
-        if (!finalChallenge) {
-          finalChallenge = getFirstChallenge(map);
-        }
-        const { block, dashedName: finalDashedName } = finalChallenge || {};
-        if (!finalDashedName || !block) {
+    const challengeId = user && user.currentChallengeId;
+    return getChallengeById(map, challengeId)
+      .map(challenge => {
+        const { block, dashedName } = challenge;
+        if (!dashedName || !block) {
           // this should normally not be hit if database is properly seeded
-          console.error(new Error(dedent`
-            Attemped to find '${dashedName}'
-            from '${user && user.currentChallengeId || 'no challenge id found'}'
+          throw new Error(dedent`
+            Attempted to find '${dashedName}'
+            from '${ challengeId || 'no challenge id found'}'
             but came up empty.
             db may not be properly seeded.
-          `));
-          if (dashedName) {
-            // attempt to find according to dashedName
-            return `/challenges/${dashedName}`;
-          } else {
-            return null;
-          }
+          `);
         }
-        return `/challenges/${block}/${finalDashedName}`;
+        return `/challenges/${block}/${dashedName}`;
       })
       .subscribe(
-        redirect => res.redirect(redirect || '/map'),
+        redirect => res.redirect(redirect || '/'),
         next
       );
   }

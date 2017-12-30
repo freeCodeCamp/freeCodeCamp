@@ -1387,9 +1387,9 @@
         "<div class=\"raspberry\"></div>"
       ],
       "tests": [
-        "assert(code.match(/.orange\\s*\\{\\s*background-color:\\s*(#FF7D00|#ff7d00);?\\s*\\}/g), 'message: The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');",
-        "assert(code.match(/.cyan\\s*\\{\\s*background-color:\\s*(#00FFFF|#00ffff);?\\s*\\}/g), 'message: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');",
-        "assert(code.match(/.raspberry\\s*\\{\\s*background-color:\\s*(#FF007D|#ff007d);?\\s*\\}/g), 'message: The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');"
+        "assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'message: The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');",
+        "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'message: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');",
+        "assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'message: The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');"
       ],
       "solutions": [],
       "hints": [],
@@ -1587,7 +1587,8 @@
         "Example:",
         "<code>background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));</code>",
         "<hr>",
-        "Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>background</code>, and set it from a direction of 35 degrees to change the color from <code>#CCFFFF</code> to <code>#FFCCCC</code>."
+        "Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>background</code>, and set it from a direction of 35 degrees to change the color from <code>#CCFFFF</code> to <code>#FFCCCC</code>.",
+        "<strong>Note</strong><br>While there are other ways to specify a color value, like <code>rgb()</code> or <code>hsl()</code>, use hex values for this challenge."
       ],
       "challengeSeed": [
         "<style>",
@@ -1596,7 +1597,7 @@
         "    border-radius: 20px;",
         "    width: 70%;",
         "    height: 400px;",
-        "    margin:  50 auto;",
+        "    margin: 50px auto;",
         "    ",
         "  }",
         "",
@@ -1605,7 +1606,7 @@
         "<div></div>"
       ],
       "tests": [
-        "assert(code.match(/background:\\s*?linear-gradient\\(35deg,\\s*?#CCFFFF,\\s*?#FFCCCC\\);/gi), 'message: The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');"
+        "assert(code.match(/background:\\s*?linear-gradient\\(35deg,\\s*?(#CCFFFF|#CFF),\\s*?(#FFCCCC|#FCC)\\);/gi), 'message: The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');"
       ],
       "solutions": [],
       "hints": [],
@@ -2195,7 +2196,7 @@
         "<div id=\"ball\"></div>"
       ],
       "tests": [
-        "assert(code.match(/opacity:\\s*?0?\\.1;/gi), 'message: The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
+        "assert(code.match(/@keyframes fade\\s*?{\\s*?50%\\s*?{\\s*?(?:left:\\s*?60%;\\s*?opacity:\\s*?0?\\.1;|opacity:\\s*?0?\\.1;\\s*?left:\\s*?60%;)/gi), 'message: The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
       ],
       "solutions": [],
       "hints": [],

@@ -1,5 +1,6 @@
-import { ifNoUser401 } from '../utils/middleware';
 import { isMongoId } from 'validator';
+
+import { ifNoUser401 } from '../utils/middleware';
 import supportedLanguages from '../../common/utils/supported-languages.js';
 
 export default function settingsController(app) {
@@ -20,7 +21,7 @@ export default function settingsController(app) {
 
   function updateMyEmail(req, res, next) {
     const { user, body: { email } } = req;
-    return user.updateEmail(email)
+    return user.requestUpdateEmail(email)
       .subscribe(
         (message) => res.json({ message }),
         next
@@ -81,6 +82,11 @@ export default function settingsController(app) {
       );
   }
 
+  api.post(
+    '/toggle-available-for-hire',
+    ifNoUser401,
+    toggleUserFlag('isAvailableForHire')
+  );
   api.post(
     '/toggle-lockdown',
     ifNoUser401,

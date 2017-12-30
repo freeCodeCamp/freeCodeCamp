@@ -385,24 +385,21 @@
       "description": [
         "The last challenge used the plus <code>+</code> sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.",
         "The character to do this is the <code>asterisk</code> or <code>star</code>: <code>*</code>.",
-        "<blockquote>let sWord1 = \"seed\";<br>let sWord2 = \"saw\";<br>let kWord = \"kite\";<br>let sRegex = /s.*/; // Searches for words starting with s<br>sRegex.test(sWord1); // Returns true<br>sRegex.test(sWord2); // Returns true<br>sRegex.test(kWord); // Returns false<br></blockquote>",
+        "<blockquote>let soccerWord = \"gooooooooal!\";<br>let gPhrase = \"gut feeling\";<br>let oPhrase = \"over the moon\";<br>let goRegex = /go*/;<br>soccerWord.match(goRegex); // Returns [\"goooooooo\"]<br>gPhrase.match(goRegex); // Returns [\"g\"]<br>oPhrase.match(goRegex); // Returns null</blockquote>",
         "<hr>",
-        "Create a regex <code>starWarsRegex</code> that uses the <code>*</code> character to match all the movie titles that start with <code>\"Star Wars\"</code>. Your regex does not need flags."
+        "Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match all the upper and lower<code>\"a\"</code> characters in <code>chewieQuote</code>. Your regex does not need flags, and it should not match any of the other quotes."
       ],
       "challengeSeed": [
-        "let starWars = \"Star Wars\";",
-        "let starWarsRegex = /change/; // Change this line",
-        "let result = starWars.match(starWarsRegex);"
+        "let chewieQuote = \"Aaaaaaaaaaaaaaaarrrgh!\";",
+        "let chewieRegex = /change/; // Change this line",
+        "let result = chewieQuote.match(chewieRegex);"
       ],
       "tests": [
-        "assert(starWarsRegex.test(\"Star Wars: The Phantom Menace\"), 'message: Your regex should match <code>\"Star Wars: The Phantom Menace\"</code>.');",
-        "assert(starWarsRegex.test(\"Star Wars: Attack of the Clones\"), 'message: Your regex should match <code>\"Star Wars: Attack of the Clones\"</code>.');",
-        "assert(starWarsRegex.test(\"Star Wars: Revenge of the Sith\"), 'message: Your regex should match <code>\"Star Wars: Revenge of the Sith\"</code>.');",
-        "assert(starWarsRegex.test(\"Star Wars: A New Hope\"), 'message: Your regex should match <code>\"Star Wars: A New Hope\"</code>.');",
-        "assert(starWarsRegex.test(\"Star Wars: The Empire Strikes Back\"), 'message: Your regex should match <code>\"Star Wars: The Empire Strikes Back\"</code>.');",
-        "assert(starWarsRegex.test(\"Star Wars: Return of the Jedi\"), 'message: Your regex should match <code>\"Star Wars: Return of the Jedi\"</code>.');",
-        "assert(starWarsRegex.test(\"Star Wars: The Force Awakens\"), 'message: Your regex should match <code>\"Star Wars: The Force Awakens\"</code>.');",
-        "assert(!starWarsRegex.test(\"The Clone Wars\"), 'message: Your regex should not match <code>\"The Clone Wars\"</code>');"
+        "assert(/\\*/.test(chewieRegex.source), 'message: Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.');",
+        "assert(result[0].length === 16, 'message: Your regex <code>chewieRegex</code> should match 16 characters.');",
+        "assert(result[0] === 'Aaaaaaaaaaaaaaaa', 'message: Your regex should match <code>\"Aaaaaaaaaaaaaaaa\"</code>.');",
+        "assert(!\"He made a fair move. Screaming about it can\\'t help you.\".match(chewieRegex), 'message: Your regex should not match any characters in <code>\"He made a fair move. Screaming about it can&#39t help you.\"</code>');",
+        "assert(!\"Let him have it. It\\'s not wise to upset a Wookiee.\".match(chewieRegex), 'message: Your regex should not match any characters in <code>\"Let him have it. It&#39s not wise to upset a Wookiee.\"</code>');"
       ],
       "solutions": [],
       "hints": [],
@@ -910,7 +907,7 @@
         "<blockquote>let repeatStr = \"regex regex\";<br>let repeatRegex = /(\\w+)\\s\\1/;<br>repeatRegex.test(repeatStr); // Returns true<br>repeatStr.match(repeatRegex); // Returns [\"regex regex\", \"regex\"]</blockquote>",
         "Using the <code>.match()</code> method on a string will return an array with the string it matches, along with its capture group.",
         "<hr>",
-        "Use <code>capture groups</code> in <code>reRegex</code> to match numbers that appear three times in a string each separated by a space."
+        "Use <code>capture groups</code> in <code>reRegex</code> to match numbers that are repeated only three times in a string, each separated by a space."
       ],
       "challengeSeed": [
         "let repeatNum = \"42 42 42\";",
@@ -923,7 +920,7 @@
         "assert(reRegex.source.match(/\\\\s/g).length === 2, 'message: Your regex should have two spaces separating the three numbers.');",
         "assert(reRegex.test(\"42 42 42\"), 'message: Your regex should match <code>\"42 42 42\"</code>.');",
         "assert(reRegex.test(\"100 100 100\"), 'message: Your regex should match <code>\"100 100 100\"</code>.');",
-        "assert.equal((\"42 42 42 42\").match(reRegex.source)[0], (\"42 42 42\"), 'message: Your regex should not match <code>\"42 42 42 42\"</code>.');",
+        "assert.equal((\"42 42 42 42\").match(reRegex.source), null, 'message: Your regex should not match <code>\"42 42 42 42\"</code>.');",
         "assert.equal((\"42 42\").match(reRegex.source), null, 'message: Your regex should not match <code>\"42 42\"</code>.');",
         "assert(!reRegex.test(\"101 102 103\"), 'message: Your regex should not match <code>\"101 102 103\"</code>.');",
         "assert(!reRegex.test(\"1 2 3\"), 'message: Your regex should not match <code>\"1 2 3\"</code>.');",

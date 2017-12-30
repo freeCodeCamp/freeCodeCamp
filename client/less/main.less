@@ -112,10 +112,6 @@ h1, h2, h3, h4, h5, h6, p, li {
   box-shadow:         2px 4px 1px rgba(0, 0, 0, 0.3);
 }
 
-.btn-nav {
-  margin-top: 10px;
-}
-
 .large-li > li {
   list-style: none;
 }
@@ -130,32 +126,16 @@ h1, h2, h3, h4, h5, h6, p, li {
   margin: 2px;
 }
 
-.navbar-brand {
-  font-size: 26px;
-}
-
-.navbar > .container {
-  width: auto;
-  padding-right: 0px;
-
-  @media (max-width: 767px) {
-    // container default padding size
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-// defined in bootstrap
-@navbar-total-height: @navbar-height + @navbar-margin-bottom;
-.nav-height {
-  border: none;
-  height: @navbar-height;
-  width: 100%;
+.hide-test-frame {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden;
 }
 
 .landing-icon {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 }
 
 .completion-icon {
@@ -268,46 +248,6 @@ h1, h2, h3, h4, h5, h6, p, li {
   display: none;
 }
 
-.nav-logo {
-  height: 40px;
-  margin-top: -10px;
-
-  @media (max-width: 397px) {
-    height: 30px;
-    margin-top: -5px;
-  }
-  @media (max-width: 335px) {
-    height: 25px;
-    margin-top: -2px;
-  }
-}
-
-.navbar-right {
-  @media (min-width: 767px) {
-    margin-right:0;
-  }
-  @media (max-width: 991px) and (min-width: 767px) {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-right: 0px;
-    white-space: nowrap;
-  }
-  background-color: @brand-primary;
-  text-align: center;
-}
-.navbar {
-  white-space: nowrap;
-  border: none;
-  line-height: 1;
-  @media (min-width: 767px) {
-    padding-left: 15px;
-    padding-right: 30px;
-  }
-}
-
-li.avatar-points, li.avatar-points > a { padding:0; margin:0 }
-
 .thin-progress-bar {
   height: 8px;
   margin-top: 3px;
@@ -326,7 +266,8 @@ li.avatar-points, li.avatar-points > a { padding:0; margin:0 }
 }
 
 .btn-social {
-  width: 250px;
+  width: 100%;
+  max-width: 260px;
   margin: auto;
 }
 
@@ -336,27 +277,17 @@ li.avatar-points, li.avatar-points > a { padding:0; margin:0 }
   margin-bottom: 10px;
 }
 
-.navbar {
-  background-color: @brand-primary;
-}
-
 a {
   font-weight: bold;
+  font-size : 15px;
 }
 
 p {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .map-aside-body p {
   line-height: 1.8;
-}
-
-.navbar-nav > li > a {
-  color: @body-bg;
-  &:hover {
-    color: @brand-primary;
-  }
 }
 
 .hug-top {
@@ -456,58 +387,6 @@ thead {
   margin-bottom: 50px;
 }
 
-.profile-picture {
-  height: 50px;
-  width: 50px;
-}
-
-.brownie-points-nav {
-  @media (min-width: 991px) and (max-width: 1030px) {
-    float: none !important;
-    padding-right: 10px;
-    display: inline-block;
-  }
-  @media (min-width: 991px) {
-    float: left;
-    padding: 15px;
-  }
-}
-
-.navbar-nav a {
-  color: @body-bg;
-  font-size: 20px;
-  margin-top: -5px;
-  margin-bottom: -5px;
-}
-
-.navbar-toggle {
-  color: @body-bg;
-
-  &:hover,
-  &:focus {
-    color: #4a2b0f;
-  }
-}
-
-
-.signup-btn-nav {
-  margin-top: -2px !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  margin-right: -12px;
-  @media (min-width: 991px) and (max-width: 1010px) {
-    margin-left: -10px;
-    margin-right: -5px;
-  }
-}
-
-a[href="/email-signup"], a[href="/email-signin"] {
-  &.btn-social.btn-lg > :first-child {
-    line-height:43px;
-    font-size:26px;
-  }
-}
-
 form.update-email .btn{
   margin:0;
   width:40%;
@@ -515,19 +394,6 @@ form.update-email .btn{
   &:last-child {
     float:right;
   }
-}
-
-.public-profile-img {
-  height: 200px;
-  width: 200px;
-  border-radius: 5px;
-}
-
-.ng-invalid.ng-dirty {
-  border-color: #FA787E;
-}
-.ng-valid.ng-dirty {
-  border-color: #78FA89;
 }
 
 .flat-top {
@@ -596,7 +462,6 @@ form.update-email .btn{
   color: #009900
 }
 
-
 .default-border-radius {
   border-radius: 5px;
 }
@@ -635,11 +500,7 @@ form.update-email .btn{
   }
 }
 
-.navbar-collapse {
-  border-top: 0;
-}
-
-.challenge-list-header {
+.challenges-list-header {
   background-color: @brand-primary;
   color: @gray-lighter;
   font-size: 36px;
@@ -655,51 +516,8 @@ form.update-email .btn{
   text-align: right;
 }
 
-.fcc-footer {
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  background-color: @brand-primary;
-  padding: 12px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  a {
-    font-size: 20px;
-    color: @gray-lighter;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 14px;
-    padding-bottom: 12px;
-    &:hover {
-      color: @brand-primary;
-      background-color: @gray-lighter;
-      text-decoration: none;
-    }
-  }
-}
-
-.embed-responsive-twitch-chat {
-  padding-bottom: 117%;
-}
-
 .graph-rect {
   fill: #ddd !important
-}
-
-.scroll-locker {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.test-vertical-center {
-  margin-top: 8px;
-}
-
-.courseware-height {
-  min-height: 650px;
 }
 
 .btn {
@@ -737,65 +555,6 @@ form.update-email .btn{
       width:95px;
     }
   }
-}
-
-@media (max-width: 991px) {
-  .navbar-header {
-    float: none;
-  }
-
-  .navbar-toggle {
-    display: block;
-  }
-
-  .navbar-collapse.collapse {
-    display: none !important;
-  }
-
-  .navbar-nav {
-    margin-top: 0;
-  }
-
-  .navbar-nav > li {
-    float: none;
-  }
-
-  .navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .navbar-text {
-    float: none;
-    margin: 15px 0;
-  }
-
-  /* since 3.1.0 */
-  .navbar-collapse.collapse.in {
-    display: block !important;
-  }
-
-  .collapsing {
-    overflow: hidden !important;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-}
-
-.navbar-toggle {
-  width: 80px;
-  padding-left: 0;
-  padding-right: 8px;
-  margin: 7px 2px 7px 0;
-  text-align: left;
-  font-size: 10px;
-}
-
-.hamburger-text {
-  line-height: 0.75em;
-  margin-top: 10px;
-  font-size: 18px;
 }
 
 .story-list {
@@ -888,8 +647,13 @@ hr {
 }
 
 .checklist-element {
-    margin-left: -60px;
-    margin-right: -20px;
+  margin-left: -60px;
+  margin-right: -20px;
+}
+
+.public-profile-img {
+  height: 200px;
+  width: 200px;
 }
 
 .profile-social-icons {
@@ -925,6 +689,26 @@ code {
 
 .gitter-chat-embed {
  z-index: 20000 !important;
+}
+
+.email-settings {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.toggle-btn-group {
+  float: right;
+  .btn[disabled] {
+    opacity: 1;
+  }
+  @media (max-width: 768px) {
+    float: none;
+    .btn-toggle {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 
@@ -1041,39 +825,12 @@ code {
   color: @night-text-color;
   .btn-group,
   .text-success,
-  .challenge-list-header,
+  .challenges-list-header,
   .fcc-footer {
     background-color: @night-body-bg;
   }
   hr {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-  }
-  .navbar-default {
-    .navbar-nav {
-      & > li > a {
-        color: #CCC;
-      }
-      .dropdown-menu {
-        background-color: @gray;
-        a {
-          color: @night-text-color !important;
-        }
-      }
-      a:focus,
-      a:hover,
-      .open #nav-Community-dropdown {
-        background-color: #666 !important;
-        color: @link-hover-color !important;
-      }
-    }
-  }
-  .navbar-toggle {
-    &:hover,
-    &:focus {
-      background-color: #666;
-      color: @link-hover-color;
-      border-color: #666;
-    }
   }
   .modal-dialog {
     .modal-content {
@@ -1228,10 +985,5 @@ and (max-width : 400px)  {
 // creates locally scoped imports
 // and prevents vaiables from overwriting each other
 &{ @import "./code-mirror.less"; }
-&{ @import "./challenge.less"; }
 &{ @import "./toastr.less"; }
-&{ @import "./map.less"; }
-&{ @import "./sk-wave.less"; }
-&{ @import "./classic-modal.less"; }
-&{ @import "./skeleton-shimmer.less"; }
 &{ @import "../../common/index.less"; }

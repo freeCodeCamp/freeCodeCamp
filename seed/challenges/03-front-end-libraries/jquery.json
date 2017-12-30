@@ -10,10 +10,35 @@
   ],
   "challenges": [
     {
+      "id": "5e7d674br67419c4cd512b9b",
+      "title": "Introduction to jQuery",
+      "description": [
+        [
+          "//i.imgur.com/hzACiml.png",
+          "The logo of jQuery that has three blue sound waves that increase in size with the text \"jQuery write less, do more.\" written on it.",
+          "jQuery is one of the many libraries for JavaScript. It is designed to simplify scripting done on the client side.",
+          ""
+        ],
+        [
+          "//i.imgur.com/OHtxVL0.png",
+          "A screenshot of the general syntax. A dollar sign followed by the selector with a dot and an action.",
+          "jQuery's most recognizable characteristic is the dollar sign syntax. With it, you can easily manipulate elements, create animations and handle input events.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
       "id": "bad87fee1348bd9acdd08826",
       "title": "Learn How Script Tags and Document Ready Work",
       "description": [
-        "Now we're ready to learn jQuery, the most popular JavaScript tool of all time. Don't worry about JavaScript itself - we will cover it soon.",
+        "Now we're ready to learn jQuery, the most popular JavaScript tool of all time.",
         "Before we can start using jQuery, we need to add some things to our HTML.",
         "First, add a <code>script</code> element at the top of your page. Be sure to close it on the following line.",
         "Your browser will run any JavaScript inside a <code>script</code> element, including jQuery.",
@@ -108,8 +133,7 @@
         "jQuery often selects an HTML element with a <code>selector</code>, then does something to that element.",
         "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your document ready function:",
         "<code>$(\"button\").addClass(\"animated bounce\");</code>",
-        "Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements.",
-        "Additionally make sure to use <code>$(\"button\").addClass(\"animated bounce\");</code> instead of <code>$('button').addClass(\"animated bounce\");</code> since single-quote selectors will not pass our tests."
+        "Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements."
       ],
       "challengeSeed": [
         "fccss",
@@ -144,8 +168,7 @@
       ],
       "tests": [
         "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'message: Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.');",
-        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these colors to the element.');",
-        "assert(/'/g.test(code) === false , 'message: Only use double quotes in your jQuery code, as is stated in the jQuery style guide.');"
+        "assert(!code.match(/class.*animated/g), 'message: Only use jQuery to add these colors to the element.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1195,12 +1218,12 @@
       "id": "bad87fee1348bd9aed208826",
       "title": "Target the Children of an Element Using jQuery",
       "description": [
-        "Many HTML elements have <code>children</code> which <code>inherit</code> their properties from their parent HTML elements.",
-        "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
+        "When HTML elements are placed one level below another they are called <code>children</code> of that element. For example, the button elements in this challenge with the text \"#target1\", \"#target2\", and \"#target3\" are all <code>children</code> of the <code>&#60;div class=\"well\" id=\"left-well\"&#62;</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
-        "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color of blue:",
+        "Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color <code>blue</code>:",
         "<code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>",
-        "Give all the children of your <code>#right-well</code> element a color of orange."
+        "<hr>",
+        "Give all the children of your <code>right-well</code> element the color orange."
       ],
       "challengeSeed": [
         "fccss",
@@ -1328,8 +1351,8 @@
       "tests": [
         "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'message: The second element in your <code>target</code> elements should bounce.');",
         "assert($(\".animated.bounce\").length === 2, 'message: Only two elements should bounce.');",
-        "assert(code.match(/\\:nth-child\\(/g), 'message: You should use the <code>&#58;nth-child&#40&#41</code> function to modify these elements.');",
-        "assert(code.match(/<button class=\"btn btn-default target\" id=\"target2\">/g), 'message: Only use jQuery to add these classes to the element.');"
+        "assert(code.match(/\\:nth-child\\(/g), 'message: You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.');",
+        "assert(code.match(/\\$\\(\".target:nth-child\\(2\\)\"\\)/g) || code.match(/\\$\\('.target:nth-child\\(2\\)'\\)/g) || code.match(/\\$\\(\".target\"\\).filter\\(\":nth-child\\(2\\)\"\\)/g) || code.match(/\\$\\('.target'\\).filter\\(':nth-child\\(2\\)'\\)/g), 'message: Only use jQuery to add these classes to the element.');"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1360,18 +1383,18 @@
     },
     {
       "id": "bad87fee1348bd9aed008826",
-      "title": "Target Even Numbered Elements Using jQuery",
+      "title": "Target Even Elements Using jQuery",
       "required": [
         {
           "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
-        "You can also target all the even-numbered elements.",
-        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes:",
+        "You can also target elements based on their positions using <code>:odd</code> or <code>:even</code> selectors.",
+        "Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. This can be a little confusing as, counter-intuitively, <code>:odd</code> selects the second element (position 1), fourth element (position 3), and so on.",
+        "Here's how you would target all the odd elements with class <code>target</code> and give them classes:",
         "<code>$(\".target:odd\").addClass(\"animated shake\");</code>",
-        "Note that jQuery is zero-indexed, meaning that, counter-intuitively, <code>:odd</code> selects the second element, fourth element, and so on.",
-        "Try selecting all the even-numbered <code>target</code> elements and giving them the classes of <code>animated</code> and <code>shake</code>. Even-numbered is defined here with a zero-index in mind."
+        "Try selecting all the even <code>target</code> elements and giving them the classes of <code>animated</code> and <code>shake</code>. Remember that <strong>even</strong> refers to the position of elements with a zero-based system in mind."
       ],
       "challengeSeed": [
         "fccss",
@@ -1415,8 +1438,8 @@
       ],
       "tests": [
         "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'message: All of the <code>target</code> elements that jQuery considers to be even should shake.');",
-        "assert(code.match(/\\:even/g), 'message: You should use the <code>&#58;even</code> function to modify these elements.');",
-        "assert(code.match(/<button class=\"btn btn-default target\" id=\"target3\">/g), 'message: Only use jQuery to add these classes to the element.');"
+        "assert(code.match(/\\:even/g), 'message: You should use the <code>&#58;even</code> selector to modify these elements.');",
+        "assert(code.match(/\\$\\(\".target:even\"\\)/g) || code.match(/\\$\\('.target:even'\\)/g) || code.match(/\\$\\(\".target\"\\).filter\\(\":even\"\\)/g) || code.match(/\\$\\('.target'\\).filter\\(':even'\\)/g), 'message: Only use jQuery to add these classes to the element.');"
       ],
       "type": "waypoint",
       "challengeType": 0,

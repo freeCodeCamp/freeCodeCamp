@@ -11,7 +11,7 @@
         [
           "",
           "",
-          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.<br><br>Sass can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to create variables, nest CSS rules into others, and import other Sass files, among other things. The result is more compact, easier to read code.<br><br>This section introduces the basic features of Sass.",
+          "Sass, or \"Syntactically Awesome StyleSheets\", is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.<br><br>Sass can extend the CSS language because it is a preprocessor. It takes code written using Sass syntax, and converts it into basic CSS. This allows you to create variables, nest CSS rules into others, and import other Sass files, among other things. The result is more compact, easier to read code.<br><br>There are two syntaxes available for Sass. The first, known as SCSS (Sassy CSS) and used throughout these challenges, is an extension of the syntax of CSS. This means that every valid CSS stylesheet is a valid SCSS file with the same meaning. Files using this syntax have the .scss extension.<br><br>The second and older syntax, known as the indented syntax (or sometimes just \"Sass\"), uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties. Files using this syntax have the .sass extension.<br><br>This section introduces the basic features of Sass.",
           ""
         ]
       ],
@@ -214,11 +214,11 @@
         "<div id=\"box\"></div>"
       ],
       "tests": [
-        "assert(code.match(/@mixin\\s+?border-stroke\\(\\$val\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-stroke</code> which has a parameter named <code>$val</code>.');",
-        "assert(code.match(/@if\\s+?\\$val\\s*?===?\\s*?light\\s*?{\\s*?border:\\s*?1px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.');",
-        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?medium\\s*?{\\s*?border:\\s*?3px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.');",
-        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?heavy\\s*?{\\s*?border:\\s*?6px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.');",
-        "assert(code.match(/@else\\s*?{\\s*?border:\\s*?none;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else</code> statement to set the <code>border</code> to none.');"
+        "assert(code.match(/@mixin\\s+?border-stroke\\s*?\\(\\s*?\\$val\\s*?\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-stroke</code> which has a parameter named <code>$val</code>.');",
+        "assert(code.match(/@if\\s+?\\$val\\s*?===?\\s*?light\\s*?{\\s*?border\\s*?:\\s*?1px\\s+?solid\\s+?black\\s*?;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.');",
+        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?medium\\s*?{\\s*?border\\s*?:\\s*?3px\\s+?solid\\s+?black\\s*?;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.');",
+        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?heavy\\s*?{\\s*?border\\s*?:\\s*?6px\\s+?solid\\s+?black\\s*?;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.');",
+        "assert(code.match(/@else\\s*?{\\s*?border\\s*?:\\s*?none\\s*?;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else</code> statement to set the <code>border</code> to none.');"
       ],
       "solutions": [],
       "hints": [],

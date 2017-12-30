@@ -23,18 +23,24 @@ block content
             .col-xs-12.col-sm-6.col-sm-offset-3
                 h3 Step 1: Which certification do you pledge to complete?
                 .btn-group.btn-group-justified(data-toggle='buttons' role='group')
-                    label.btn.btn-primary.btn-lg.active
-                        input(type='radio' id=frontEndCert value=frontEndCert name='goal' checked="checked")
-                        | Front End
-                    label.btn.btn-primary.btn-lg
-                        input(type='radio' id=dataVisCert value=dataVisCert name='goal')
-                        | Data Vis
-                    label.btn.btn-primary.btn-lg
-                        input(type='radio' id=backEndCert value=backEndCert name='goal')
-                        | Back End
-                    label.btn.btn-primary.btn-lg
-                        input(type='radio' id=fullStackCert value=fullStackCert name='goal')
-                        | Full Stack
+                    label.btn.btn-primary.active
+                        input(type='radio' id="respWebDesignCert" value="Responsive Web Design Certification" name='goal' checked="checked")
+                        | Responsive Web Design
+                    label.btn.btn-primary
+                        input(type='radio' id="frontEndLibsCert" value="Front End Libraries Certification" name='goal')
+                        | Front End Libraries
+                    label.btn.btn-primary
+                        input(type='radio' id="jsAlgoDataStructCert" value="JavaScript Algorithms and Data Structures Certification" name='goal')
+                        | JavaScript Algorithms and Data Structures
+                    label.btn.btn-primary
+                        input(type='radio' id="dataVisCert" value="Data Visualization Certification" name='goal')
+                        | Data Visualization
+                    label.btn.btn-primary
+                        input(type='radio' id="apisMicroservicesCert" value="APIs and Microservices Certification" name='goal')
+                        | APIs and Microservices
+                    label.btn.btn-primary
+                        input(type='radio' id="infosecQaCert" value="Information Security and Quality Assurance Certification" name='goal')
+                        | Information Security and Quality Assurance
         .spacer
         .row
             .col-xs-12.col-sm-6.col-sm-offset-3

@@ -108,6 +108,7 @@ const paths = {
     resolve('codemirror', 'lib/codemirror.js', 'addon/lint/lint.js'),
     resolve('codemirror', 'lib/codemirror.js', 'addon/lint/javascript-lint.js'),
     resolve('codemirror', 'lib/codemirror.js', 'mode/javascript/javascript.js'),
+    resolve('codemirror', 'lib/codemirror.js', 'mode/jsx/jsx.js'),
     resolve('codemirror', 'lib/codemirror.js', 'mode/xml/xml.js'),
     resolve('codemirror', 'lib/codemirror.js', 'mode/css/css.js'),
     resolve('codemirror', 'lib/codemirror.js', 'mode/htmlmixed/htmlmixed.js'),
@@ -188,7 +189,7 @@ function delRev(dest, manifestName) {
 
 gulp.task('serve', function(cb) {
   let called = false;
-  nodemon({
+  const monitor = nodemon({
     script: paths.server,
     ext: '.jsx .js .json',
     ignore: paths.serverIgnore,
@@ -209,6 +210,14 @@ gulp.task('serve', function(cb) {
       if (files) {
         debug('Nodemon will restart due to changes in: ', files);
       }
+    });
+
+    process.once('SIGINT', () => {
+      monitor.once('exit', () => {
+        /* eslint-disable no-process-exit */
+        process.exit(0);
+        /* eslint-enable no-process-exit */
+      });
     });
 });
 
@@ -235,7 +244,7 @@ gulp.task('dev-server', syncDepenedents, function() {
         host: `${hostname}:${syncPort}`
       })
     },
-    logLeval: 'debug',
+    logLevel: 'debug',
     files: paths.syncWatch,
     port: syncPort,
     open: false,

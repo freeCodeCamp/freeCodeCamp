@@ -8,9 +8,9 @@
       "title": "Claim Your Responsive Web Design Certificate",
       "description": [
         [
-          "//i.imgur.com/k8btNUB.jpg",
+          "//i.imgur.com/GjTPLxI.jpg",
           "An image of our Responsive Web Design Certificate",
-          "This challenge will give you your verified Responsive Web Design Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic, intermediate, and advanced front end development projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+          "This challenge will give you your verified Responsive Web Design Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges, and all our responsive web design projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""
         ],
         [
@@ -20,9 +20,9 @@
           "#"
         ],
         [
-          "//i.imgur.com/UedoV2G.jpg",
-          "An image of the text \"Front End Development Certificate requirements\"",
-          "Let's confirm that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic, intermediate, and advanced front end development projects. Click the button below to verify this.",
+          "//i.imgur.com/cyRVnUa.jpg",
+          "An image of the text \"Responsive Web Design requirements\"",
+          "Let's confirm that you have completed all of our responsive web design projects. Click the button below to verify this.",
           "#"
         ],
         [
@@ -36,11 +36,11 @@
         {
           "properties": [
             "isHonest",
-            "isFrontEndCert"
+            "isRespWebDesignCert"
           ],
           "apis": [
             "/certificate/honest",
-            "/certificate/verify/front-end"
+            "/certificate/verify/responsive-web-design"
           ],
           "stepIndex": [
             1,
@@ -77,9 +77,9 @@
           "title": "Reclama tu certificado de Desarrollo de interfaces",
           "description": [
             [
-              "//i.imgur.com/k8btNUB.jpg",
-              "Una imagen que muestra nuestro certificado de Desarrollo de interfaces",
-              "Este desafío te otorga tu certificado autenticado de Desarrollo de interfaces. Antes de que podamos emitir tu certificado, debemos verificar que has completado todos los desafíos básicos e intermedios de diseño de algoritmos, y todos los proyectos básicos e intermedios de desarrollo de interfaces. También debes aceptar nuestro Juramento de honestidad académica. Pulsa el botón siguiente para iniciar este proceso.",
+              "//i.imgur.com/GjTPLxI.jpg",
+              "An image of our Responsive Web Design Certificate",
+              "This challenge will give you your verified Responsive Web Design Certificate. Before we issue your certificate, we must verify that you have completed all of our responsive web design projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
               ""
             ],
             [
@@ -89,15 +89,44 @@
               "#"
             ],
             [
-              "//i.imgur.com/14F2Van.jpg",
-              "Una imagen del texto \"Front End Development Certificate requirements\"",
-              "Confirmemos que has completado todos nuestros desafíos básicos e intermedios de diseño de algoritmos, y todos nuestros proyectos básicos e intermedios de desarrollo de interfaces. Pulsa el botón siguiente para hacer la verificación.",
+              "//i.imgur.com/cyRVnUa.jpg",
+              "An image of the text \"Responsive Web Design requirements\"",
+              "Let's confirm that you have completed all of our responsive web design projects. Click the button below to verify this.",
               "#"
             ],
             [
               "//i.imgur.com/16SIhHO.jpg",
               "Una imagen de la palabra \"Congratulations\"",
               "¡Felicitaciones! Hemos agregado tu certificado de Desarrollo de interfaces a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
+              ""
+            ]
+          ]
+        },
+        "pt-br": {
+          "title": "Solicite seu Certificado de Design Responsivo",
+          "description": [
+            [
+              "//i.imgur.com/k8btNUB.jpg",
+              "Uma Imagem do Nosso Certificado de Design Responsivo",
+              "Este desafio lhe dará seu certificado verificado de Design Responsivo. Antes de emitir o seu certificado, devemos verificar se você completou todos os nossos desafios básicos e intermediários de algoritmos e todos os nossos projetos básicos, intermediários e avançados de desenvolvimento. Você também deve aceitar nosso compromisso de honestidade acadêmica. Clique no botão abaixo para iniciar este processo.",
+              ""
+            ],
+            [
+              "//i.imgur.com/uLPsUko.jpg",
+              "A definição de plágio: Plágio (substantivo) - copiar o trabalho de outra pessoa e apresentá-lo como seu sem creditar o autor",
+              "Ao clicar abaixo, você promete que todo o seu código enviado A) foi escrito por você ou o seu par pessoalmente, ou B) vem de bibliotecas de código aberto como o jQuery ou C) foi claramente atribuído a seus autores originais. Você também nos dá permissão para auditar suas soluções de desafios e revogar o seu certificado se descobrirmos evidências de plágio.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/UedoV2G.jpg",
+              "Uma imagem do texto \"Requisitos do Certificado de Desenvolvimento Front-End\"",
+              "Vamos confirmar que você completou todos os nossos desafios de algoritmos básicos e intermediários e todos os nossos projetos básicos, intermediários e avançados de desenvolvimento. Clique no botão abaixo para verificar.",
+              "#"
+            ],
+            [
+              "//i.imgur.com/Q5Za9U6.jpg",
+              "Uma imagem da palavra \"Parabéns\"",
+              "Parabéns! Adicionamos o seu Certificado de Design Responsivo à sua página de portfólio. A menos que você opte por esconder suas soluções, este certificado permanecerá publicamente visível e verificável",
               ""
             ]
           ]

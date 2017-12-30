@@ -20,8 +20,6 @@ module.exports = function(app) {
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
   );
-  noLangRouter.get('/shop/cancel-stickers', cancelStickers);
-  noLangRouter.get('/shop/confirm-stickers', confirmStickers);
 
   router.get('/unsubscribed', unsubscribed);
   router.get('/nonprofits', nonprofits);
@@ -30,16 +28,12 @@ module.exports = function(app) {
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/stories', showTestimonials);
-  router.get('/shop', showShop);
   router.get('/all-stories', showAllTestimonials);
-  router.get('/terms', terms);
-  router.get('/privacy', privacy);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get(
       '/software-resources-for-nonprofits',
       softwareResourcesForNonprofits
   );
-  router.get('/code-of-conduct', codeOfConduct);
   router.get('/academic-honesty', academicHonesty);
 
   app.use(noLangRouter);
@@ -47,18 +41,6 @@ module.exports = function(app) {
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function terms(req, res) {
-      res.render('resources/terms-of-service', {
-            title: 'Terms of Service'
-      });
-  }
-
-  function privacy(req, res) {
-      res.render('resources/privacy', {
-          title: 'Privacy policy'
-      });
   }
 
   function howNonprofitProjectsWork(req, res) {
@@ -71,12 +53,6 @@ module.exports = function(app) {
     res.render('resources/software-resources-for-nonprofits', {
       title: 'Software Resources for Nonprofits'
     });
-  }
-
-  function codeOfConduct(req, res) {
-      res.render('resources/code-of-conduct', {
-          title: 'Code of Conduct'
-      });
   }
 
   function academicHonesty(req, res) {
@@ -109,28 +85,6 @@ module.exports = function(app) {
     });
   }
 
-  function showShop(req, res) {
-    res.render('resources/shop', {
-      title: 'Support freeCodeCamp by Buying t-shirts, ' +
-        'stickers, and other goodies'
-    });
-  }
-
-  function confirmStickers(req, res) {
-    req.flash('success', {
-      msg: 'Thank you for supporting our community! You should receive ' +
-        'your stickers in the mail soon!'
-    });
-    res.redirect('/shop');
-  }
-
-  function cancelStickers(req, res) {
-      req.flash('info', {
-        msg: 'You\'ve cancelled your purchase of our stickers. You can ' +
-          'support our community any time by buying some.'
-      });
-      res.redirect('/shop');
-  }
   function submitCatPhoto(req, res) {
     res.send('Submitted!');
   }
