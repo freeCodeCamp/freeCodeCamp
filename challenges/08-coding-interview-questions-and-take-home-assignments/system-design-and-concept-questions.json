@@ -30,7 +30,7 @@
             "<pre><code class='language-javascript'>'ABC'</code></pre>"
           ],
           "answer": 0,
-          "explanation": "The map function will return a new array with each element equal to the old element ran through a callback function.  Our callback function takes our original element, changes it to a upper case, and then wraps it in an array; thus, leaving us with <code>[['A', 'B', 'C']]</code>"
+          "explanation": "The map function will return a new array with each element equal to the old element ran through a callback function.  Our callback function takes our original element, changes it to a upper case, and then wraps it in an array; thus, leaving us with <code>[['A'], ['B'], ['C']]</code>"
         },
         {
           "subtitle": "Maps on Maps",
