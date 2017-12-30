@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import ns from './ns.json';
 
 import BugModal from './Bug-Modal.jsx';
+import HelpModal from './Help-Modal.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import ChallengeTitle from './Challenge-Title.jsx';
 import ChallengeDescription from './Challenge-Description.jsx';
@@ -14,6 +15,7 @@ import TestSuite from './Test-Suite.jsx';
 import Output from './Output.jsx';
 import {
   openBugModal,
+  openHelpModal,
   updateHint,
   executeChallenge,
   unlockUntrustedCode,
@@ -22,8 +24,7 @@ import {
   testsSelector,
   outputSelector,
   hintIndexSelector,
-  codeLockedSelector,
-  chatRoomSelector
+  codeLockedSelector
 } from './redux';
 
 import { descriptionRegex } from './utils';
@@ -35,6 +36,7 @@ const mapDispatchToProps = {
   executeChallenge,
   updateHint,
   openBugModal,
+  openHelpModal,
   unlockUntrustedCode
 };
 const mapStateToProps = createSelector(
@@ -44,7 +46,6 @@ const mapStateToProps = createSelector(
   outputSelector,
   hintIndexSelector,
   codeLockedSelector,
-  chatRoomSelector,
   (
     { description },
     { title },
@@ -52,24 +53,22 @@ const mapStateToProps = createSelector(
     output,
     hintIndex,
     isCodeLocked,
-    helpChatRoom
   ) => ({
     title,
     description,
     tests,
     output,
-    isCodeLocked,
-    helpChatRoom
+    isCodeLocked
   })
 );
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   executeChallenge: PropTypes.func,
-  helpChatRoom: PropTypes.string,
   hint: PropTypes.string,
   isCodeLocked: PropTypes.bool,
   makeToast: PropTypes.func,
   openBugModal: PropTypes.func,
+  openHelpModal: PropTypes.func,
   output: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
@@ -125,8 +124,8 @@ export class SidePanel extends PureComponent {
       executeChallenge,
       updateHint,
       makeToast,
-      helpChatRoom,
       openBugModal,
+      openHelpModal,
       isCodeLocked,
       unlockUntrustedCode
     } = this.props;
@@ -147,15 +146,16 @@ export class SidePanel extends PureComponent {
         </div>
         <ToolPanel
           executeChallenge={ executeChallenge }
-          helpChatRoom={ helpChatRoom }
           hint={ hint }
           isCodeLocked={ isCodeLocked }
           makeToast={ makeToast }
           openBugModal={ openBugModal }
+          openHelpModal={ openHelpModal }
           unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
         />
         <BugModal />
+        <HelpModal />
         <Output
           defaultOutput={
 `/**
