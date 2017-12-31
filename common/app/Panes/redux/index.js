@@ -164,7 +164,9 @@ export default function createPanesAspects({ createPanesMap }) {
           const leftPane =
             state.panesByName[getPaneName(state.panes, paneIndex - 1)] || {};
           const rightBound = (rightPane.dividerLeft || 100) - dividerBuffer;
-          const leftBound = (leftPane.dividerLeft || 0) + dividerBuffer;
+          const leftBound =
+          (leftPane.isHidden || typeof leftPane.isHidden === 'undefined') ?
+          dividerBuffer : (leftPane.dividerLeft + dividerBuffer);
           const newPosition = _.clamp(
             (clientX / width) * 100,
             leftBound,
@@ -199,7 +201,7 @@ export default function createPanesAspects({ createPanesMap }) {
           navHeight
         })
       }),
-      defaultState,
+      defaultState
     ),
     function metaReducer(state = defaultState, action) {
       if (action.meta && action.meta.panesMap) {
