@@ -40,7 +40,7 @@
         "<hr>",
         "Replace <code>var</code> with <code>let</code>"
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "var catName;",
         "var quote;",
         "function catTalk() {",
@@ -81,10 +81,10 @@
         "Fix the code so that <code>i</code> declared in the if statement is a separate variable than <code>i</code> declared in the first line of the function. Be certain not to use the <code>var</code> keyword anywhere in your code.",
         "This exercise is designed to illustrate the difference between how <code>var</code> and <code>let</code> keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "",
         "function checkScope() {",
-        "\"use strict\";", 
+        "\"use strict\";",
         "  var i = \"function scope\";",
         "  if (true) {",
         "    i = \"block scope\";",
@@ -115,9 +115,9 @@
         "<hr>",
         "Change the code so that all variables are declared using <code>let</code> or <code>const</code>. Use <code>let</code> when you want the variable to change, and <code>const</code> when you want the variable to remain constant. Also, rename variables declared with <code>const</code> to conform to common practices, meaning constants should be in all caps"
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "function printManyTimes(str) {",
-        "  \"use strict\";", 
+        "  \"use strict\";",
         "",
         "  // change code below this line",
         "",
@@ -153,10 +153,10 @@
         "<hr>",
         "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignment."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const s = [5, 7, 2];",
         "function editInPlace() {",
-        "  \"use strict\";", 
+        "  \"use strict\";",
         "  // change code below this line",
         "",
         "  // s = [2, 5, 7]; <- this is invalid",
@@ -186,7 +186,7 @@
         "<hr>",
         "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze <code>MATH_CONSTANTS</code> object so that noone is able alter the value of <code>PI</code> or add any more properties to it."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "function freezeObj() {",
         "  \"use strict\";",
         "  const MATH_CONSTANTS = {",
@@ -196,7 +196,7 @@
         "",
         "",
         "  // change code above this line",
-        "  try {", 
+        "  try {",
         "    MATH_CONSTANTS.PI = 99;",
         "  } catch( ex ) {",
         "    console.log(ex);",
@@ -231,7 +231,7 @@
         "<hr>",
         "Rewrite the function assigned to the variable <code>magic</code> which returns a new <code>Date()</code> to use arrow function syntax. Also make sure nothing is defined using the keyword <code>var</code>."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "var magic = function() {",
         "  \"use strict\";",
         "  return new Date();",
@@ -259,7 +259,7 @@
         "<hr>",
         "Rewrite the <code>myConcat</code> function which appends contents of <code>arr2</code> to <code>arr1</code> so that the function uses arrow function syntax."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "var myConcat = function(arr1, arr2) {",
         "  \"use strict\";",
         "  return arr1.concat(arr2);",
@@ -272,7 +272,7 @@
         "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), 'message: <code>myConcat</code> should be a constant variable (by using <code>const</code>).');",
         "assert(typeof myConcat === 'function', 'message: <code>myConcat</code> should be a function');",
         "assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, 'message: <code>myConcat()</code> returns the correct <code>array</code>');",
-        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"   
+        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -293,7 +293,7 @@
         "<hr>",
         "Use arrow function syntax to compute the square of only the positive integers (fractions are not integers) in the array <code>realNumberArray</code> and store the new array in the variable <code>squaredIntegers</code>."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34];",
         "const squareList = (arr) => {",
         "  \"use strict\";",
@@ -311,7 +311,7 @@
         "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), 'message: <code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');",
         "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an <code>array</code>');",
         "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, 'message: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');",
-        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');",   
+        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');",
         "getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'message: loop should not be used');",
         "getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), 'message: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');"
       ],
@@ -331,7 +331,7 @@
         "<hr>",
         "Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const increment = (function() {",
         "  \"use strict\";",
         "  return function increment(number, value) {",
@@ -362,9 +362,9 @@
         "<hr>",
         "Modify the function <code>sum</code> so that is uses the rest operator and it works in the same way with any number of parameters."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const sum = (function() {",
-        "  \"use strict\";",          
+        "  \"use strict\";",
         "  return function sum(x, y, z) {",
         "    const array = [ x, y, z ];",
         "    return array.reduce((a, b) => a + b, 0);",
@@ -400,9 +400,9 @@
         "<hr>",
         "Copy all contents of <code>arr1</code> into another array <code>arr2</code> using the spread operator."
       ],
-      "challengeSeed": [ 
-        "const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];", 
-        "let arr2;",       
+      "challengeSeed": [
+        "const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];",
+        "let arr2;",
         "(function() {",
         "  \"use strict\";",
         "  arr2 = []; // change this line",
@@ -435,7 +435,7 @@
         "<hr>",
         "Use destructuring to obtain the length of the input string <code>str</code>, and assign the length to <code>len</code> in line."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "function getLength(str) {",
         "  \"use strict\";",
         "",
@@ -470,7 +470,7 @@
         "<hr>",
         "Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorrow</code> and assign it to <code>maxOfTomorrow</code>."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const LOCAL_FORECAST = {",
         "  today: { min: 72, max: 83 },",
         "  tomorrow: { min: 73.3, max: 84.6 }",
@@ -509,10 +509,10 @@
         "<hr>",
         "Use destructuring assignment to swap the values of <code>a</code> and <code>b</code> so that <code>a</code> receives the value stored in <code>b</code>, and <code>b</code> receives the value stored in <code>a</code>."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "let a = 8, b = 6;",
         "(() => {",
-        "  \"use strict\";",          
+        "  \"use strict\";",
         "  // change code below this line",
         "  ",
         "  // change code above this line",
@@ -542,7 +542,7 @@
         "<hr>",
         "Use destructuring assignment with the rest operator to perform an effective <code>Array.prototype.slice()</code> so that <code>arr</code> is a sub-array of the original array <code>source</code> with the first two elements ommitted."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const source = [1,2,3,4,5,6,7,8,9,10];",
         "function removeFirstTwo(list) {",
         "  \"use strict\";",
@@ -579,7 +579,7 @@
         "<hr>",
         "Use destructuring assignment within the argument to the function <code>half</code> to send only <code>max</code> and <code>min</code> inside the function."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const stats = {",
         "  max: 56.78,",
         "  standard_deviation: 4.34,",
@@ -589,9 +589,9 @@
         "  average: 35.85",
         "};",
         "const half = (function() {",
-        "  \"use strict\"; // do not change this line", 
+        "  \"use strict\"; // do not change this line",
         "",
-        "  // change code below this line",        
+        "  // change code below this line",
         "  return function half(stats) {",
         "    // use function argument destructuring",
         "    return (stats.max + stats.min) / 2.0;",
@@ -626,7 +626,7 @@
         "<hr>",
         "Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const result = {",
         "  success: [\"max-length\", \"no-amd\", \"prefer-arrow-functions\"],",
         "  failure: [\"no-var\", \"var-on-top\", \"linebreak\"],",
@@ -673,7 +673,7 @@
         "<hr>",
         "Use simple fields with object literals to create and return a <code>Person</code> object."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "const createPerson = (name, age, gender) => {",
         "  \"use strict\";",
         "  // change code below this line",
@@ -706,8 +706,8 @@
         "<hr>",
         "Refactor the function <code>setGear</code> inside the object <code>bicycle</code> to use the shorthand syntax described above."
       ],
-      "challengeSeed": [ 
-        
+      "challengeSeed": [
+
         "// change code below this line",
         "const bicycle = {",
         "  gear: 2,",
@@ -744,7 +744,7 @@
         "Use <code>class</code> keyword and write a proper constructor to create the <code>Vegetable</code> class.",
         "The <code>Vegetable</code> lets you create a vegetable object, with a property <code>name</code>, to be passed to constructor."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "function makeClass() {",
         "  \"use strict\";",
         "  /* Alter code below this line */",
@@ -786,7 +786,7 @@
         "This is the power of getter or setter - you are creating an API for another user, who would get the correct result, no matter which one you track.",
         "In other words, you are abstracting implementation details from the consumer."
       ],
-      "challengeSeed": [ 
+      "challengeSeed": [
         "function makeClass() {",
         "  \"use strict\";",
         "  /* Alter code below this line */",
@@ -827,7 +827,14 @@
         "<hr>",
         "Add the appropriate <code>import</code> statement that will allow the current file to use the <code>capitalizeString</code> function. The file where this function lives is called <code>\"string_functions\"</code>, and it is in the same directory as the current file."
       ],
-      "challengeSeed": [ 
+      "head": [
+        "window.require = function (str) {",
+        "if (str === 'string_functions') {",
+        "return {",
+        "capitalizeString: str => str.toUpperCase()",
+        "}}};"
+      ],
+      "challengeSeed": [
         "\"use strict\";",
         "capitalizeString(\"hello!\");"
       ],
@@ -852,7 +859,10 @@
         "<hr>",
         "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated <code>export</code>, export the two variables."
       ],
-      "challengeSeed": [ 
+      "head": [
+        "window.exports = function(){};"
+      ],
+      "challengeSeed": [
         "\"use strict\";",
         "const foo = \"bar\";",
         "const boo = \"far\";"
@@ -879,7 +889,15 @@
         "<hr>",
         "The code below requires the contents of a file, <code>\"capitalize_strings\"</code>, found in the same directory as it, imported. Add the appropriate <code>import *</code> statement to the top of the file, using the object provided."
       ],
-      "challengeSeed": [ 
+      "head": [
+        "window.require = function(str) {",
+        "if (str === 'capitalize_strings') {",
+        "return {",
+        "capitalize: str => str.toUpperCase(),",
+        "lowercase: str => str.toLowerCase()",
+        "}}};"
+      ],
+      "challengeSeed": [
         "\"use strict\";",
         "myStringModule.capitalize(\"foo\");",
         "myStringModule.lowercase(\"Foo\");"
@@ -904,7 +922,10 @@
         "<hr>",
         "The following function should be the fallback value for the module. Please add the necessary code to do so."
       ],
-      "challengeSeed": [ 
+      "head": [
+        "window.exports = function(){};"
+      ],
+      "challengeSeed": [
         "\"use strict\";",
         "function subtract(x,y) {return x - y;}"
       ],
@@ -927,7 +948,14 @@
         "<hr>",
         "In the following code, please import the default export, <code>subtract</code>, from the file <code>\"math_functions\"</code>, found in the same directory as this file."
       ],
-      "challengeSeed": [ 
+      "head": [
+        "window.require = function(str) {",
+        "if (str === 'math_functions') {",
+          "return function(a, b) {",
+          "return a - b;",
+        "}}};"
+      ],
+      "challengeSeed": [
         "\"use strict\";",
         "subtract(7,4);"
       ],
