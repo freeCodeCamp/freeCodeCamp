@@ -10,20 +10,20 @@
       "type": "bonfire",
       "title": "Problem 1: Multiples of 3 and 5",
       "tests": [
-        "assert.strictEqual(euler1(1000), 233168, 'message: <code>euler1(1000)</code> should return 233168.');",
-        "assert.strictEqual(euler1(49), 543, 'message: <code>euler1(49)</code> should return 543.');",
-        "assert.strictEqual(euler1(19564), 89301183, 'message: <code>euler1(19564)</code> should return 89301183.');",
-        "assert.strictEqual(euler1(8456), 16687353, 'message: Your function is not returning the correct result using our tests values.');"
+        "assert.strictEqual(multiplesOf3and5(1000), 233168, 'message: <code>multiplesOf3and5(1000)</code> should return 233168.');",
+        "assert.strictEqual(multiplesOf3and5(49), 543, 'message: <code>multiplesOf3and5(49)</code> should return 543.');",
+        "assert.strictEqual(multiplesOf3and5(19564), 89301183, 'message: <code>multiplesOf3and5(19564)</code> should return 89301183.');",
+        "assert.strictEqual(multiplesOf3and5(8456), 16687353, 'message: Your function is not returning the correct result using our tests values.');"
       ],
-      "solutions": [],
+      "solutions": ["const multiplesOf3and5 = (number) => {\n  var total = 0;\n\n  for(var i = 0; i < number; i++) {\n    if(i % 3 == 0 || i % 5 == 0) {\n      total += i;\n    }\n  }\n  return total;\n};"],
       "translations": {},
       "challengeSeed": [
-        "function euler1(number) {",
+        "function multiplesOf3and5(number) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler1(1000);"
+        "multiplesOf3and5(1000);"
       ],
       "description": [
         "If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.",
@@ -42,7 +42,7 @@
         "assert.strictEqual(fiboEvenSum(18), 3382, 'message: Your function is not returning the correct result using our tests values.');",
         "assert.equal(fiboEvenSum(31) % 2 === 0, true, 'message: Your function should return an <code>even</code> value.');"
       ],
-      "solutions": [],
+      "solutions": ["const fiboEvenSum = (number) => {\n  let temp, sum = 0, a = 0, b = 1;\n    while (number >= 0) {\n      temp = a;\n      a = b;\n      b += temp;\n      number --;\n      if ((b % 2) === 0) {\n        sum += b;\n      }\n    }\n\n  return sum;\n}"],
       "translations": {},
       "challengeSeed": [
         "function fiboEvenSum(number) {",
