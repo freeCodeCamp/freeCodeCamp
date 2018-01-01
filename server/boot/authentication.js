@@ -13,6 +13,9 @@ import {
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 // const debug = debugFactory('fcc:boot:auth');
+if (isSignUpDisabled) {
+  console.log('fcc:boot:auth - Sign up is disabled');
+}
 
 module.exports = function enableAuthentication(app) {
   // enable loopback access control authentication. see:
