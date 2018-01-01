@@ -74,11 +74,25 @@ block content
                   }
               })
               .done(data =>{
-                if(data && data.message){
+                if(data && data.message) {
+                  var alertType = 'alert-';
+                  switch (data.type) {
+                    case 'errors': {
+                      alertType += 'danger';
+                      break
+                    }
+                    case 'success': {
+                      alertType += 'success';
+                      break
+                    }
+                    default: {
+                      alertType += 'info';
+                    }
+                  }
                   $('#flash-content').html(data.message);
                   $('#flash-board')
-                      .removeClass('alert-info')
-                      .addClass('alert-success')
+                      .removeClass('alert-info alert-success alert-error')
+                      .addClass(alertType)
                       .fadeIn();
                   disableMagicButton(false);
                 }

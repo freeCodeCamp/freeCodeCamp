@@ -66,13 +66,13 @@ module.exports = function enableAuthentication(app) {
   const passwordlessGetValidators = [
     check('email')
       .isBase64()
-      .withMessage('email should be a base64 encoded string'),
+      .withMessage('Email should be a base64 encoded string.'),
     check('token')
       .exists()
-      .withMessage('token should exist')
+      .withMessage('Token should exist.')
       // based on strongloop/loopback/common/models/access-token.js#L15
       .isLength({ min: 64, max: 64 })
-      .withMessage('token is not the right length')
+      .withMessage('Token is not the right length.')
   ];
 
   function getPasswordlessAuth(req, res, next) {
@@ -83,7 +83,7 @@ module.exports = function enableAuthentication(app) {
       } = {}
     } = req;
     const validation = validationResult(req)
-      .formatWith(createValidatorErrorFormatter('info', '/email-signup'));
+      .formatWith(createValidatorErrorFormatter('errors', '/email-signup'));
 
     if (!validation.isEmpty()) {
       const errors = validation.array();
@@ -193,12 +193,12 @@ module.exports = function enableAuthentication(app) {
   const passwordlessPostValidators = [
     check('email')
       .isEmail()
-      .withMessage('email is not a valid email address')
+      .withMessage('Email is not a valid email address.')
   ];
   function postPasswordlessAuth(req, res, next) {
     const { body: { email } = {} } = req;
     const validation = validationResult(req)
-      .formatWith(createValidatorErrorFormatter('info', '/email-signup'));
+      .formatWith(createValidatorErrorFormatter('errors', '/email-signup'));
     if (!validation.isEmpty()) {
       const errors = validation.array();
       return next(errors.pop());
