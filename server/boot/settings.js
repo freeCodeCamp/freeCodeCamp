@@ -28,6 +28,15 @@ export default function settingsController(app) {
       );
   }
 
+  function updateFlag(req, res, next) {
+    const { user, body: { flag, newValue } } = req;
+    return user.requestUpdateFlag(flag, newValue)
+      .subscribe(
+        (message) => res.json({ message }),
+        next
+      );
+  }
+
   function updateMyLang(req, res, next) {
     const { user, body: { lang } = {} } = req;
     const langName = supportedLanguages[lang];
@@ -111,6 +120,11 @@ export default function settingsController(app) {
     '/update-my-email',
     ifNoUser401,
     updateMyEmail
+  );
+  api.post(
+    '/update-flag',
+    ifNoUser401,
+    updateFlag
   );
   api.post(
     '/update-my-lang',

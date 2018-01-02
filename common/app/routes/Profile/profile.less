@@ -1,5 +1,5 @@
 // should be the same as the filename and ./ns.json
-@ns: settings;
+@ns: profile;
 
 @skeleton-gray: #b0bdb7;
 
@@ -36,17 +36,39 @@
   }
 }
 
-.settings-container {
+.profile-container {
   .row {
     margin-bottom: 15px;
   }
-  .about-me, .avatar {
-    height: 180px;
+  .avatar-container {
+    margin: 0 auto;
+    text-align: center;
+    .avatar {
+      height: 180px;
+    }
+  }
+  .social-media-icons {
+    a {
+      &:first-child {
+        margin-left: 0;
+      }
+
+      margin-left: 32px;
+    }
+  }
+  .bio {
+    text-align: center;
+  }
+  h2, h3 {
+    &.name, &.username, &.points, &.location {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
   .portfolio-description {
     height: 62px;
   }
-  .editable-content-container {
+  .timeline-container {
     display: flex;
     align-items: center;
   }

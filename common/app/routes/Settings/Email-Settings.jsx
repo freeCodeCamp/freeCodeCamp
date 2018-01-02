@@ -7,7 +7,6 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-import FA from 'react-fontawesome';
 import classnames from 'classnames';
 
 import { onRouteUpdateEmail } from './redux';
@@ -35,8 +34,7 @@ export function UpdateEmailButton() {
         bsStyle='primary'
         className='btn-link-social'
         >
-        <FA name='envelope' />
-        Update my Email
+        Edit
       </Button>
     </Link>
   );
@@ -68,19 +66,19 @@ export default function EmailSettings({
   return (
     <div className='email-settings'>
       <Row>
-        <p className='large-p text-center'>
-          <em>{ email }</em>
-        </p>
-      </Row>
-      <Row>
-        <UpdateEmailButton />
+        <Col sm={ 8 }>
+          <p>
+            <strong>{ email }</strong>
+          </p>
+        </Col>
+        <Col sm={ 4 }>
+          <UpdateEmailButton />
+        </Col>
       </Row>
       <Row>
         <Col sm={ 8 }>
-          <p className='large-p'>
-            Send me announcement emails
-            <br />
-            (we'll send you these every Thursday)
+          <p>
+            <strong>Send me announcement emails</strong>
           </p>
         </Col>
         <Col sm={ 4 }>
@@ -127,10 +125,8 @@ export default function EmailSettings({
       </Row>
       <Row>
         <Col sm={ 8 }>
-          <p className='large-p'>
-            Send me notification emails
-            <br />
-            (these will pertain to your account)
+          <p>
+            <strong>Send me notification emails</strong>
           </p>
         </Col>
         <Col sm={ 4 }>
@@ -177,10 +173,8 @@ export default function EmailSettings({
       </Row>
       <Row>
         <Col sm={ 8 }>
-          <p className='large-p'>
-            Send me Quincy's weekly email
-            <br />
-            (with new articles every Tuesday)
+          <p>
+            <strong>Send me Quincy's weekly email</strong>
           </p>
         </Col>
         <Col sm={ 4 }>

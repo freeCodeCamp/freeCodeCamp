@@ -10,6 +10,7 @@ import {
 } from '../../../redux';
 import {
   updateUserFlag,
+  editUserFlag,
   updateUserEmail,
   updateUserLang
 } from '../../../entities';
@@ -44,6 +45,28 @@ export function updateUserEmailEpic(actions, { getState }) {
           null
         ))
         .filter(Boolean);
+      return Observable.merge(optimisticUpdate, ajaxUpdate);
+    });
+}
+
+export function editUserFlagEpic(actions, { getState }) {
+  return actions::ofType(types.updateFlag)
+    .flatMap(({ payload }) => {
+      const {
+        app: { user: username, csrfToken: _csrf },
+        entities: { user: userMap }
+      } = getState();
+      const { [payload.newValue]: oldValue } = userMap[username] || {};
+      const body = { _csrf, flag: payload.flag, newValue: payload.newValue };
+      const optimisticUpdate = Observable.just(
+        editUserFlag(username, payload.newValue)
+      );
+      const ajaxUpdate = postJSON$('/update-flag', body)
+        .map(({ message }) => makeToast({ message }))
+        .catch(doActionOnError(() => oldValue ?
+          editUserFlag(username, oldValue) :
+          null
+        ));
       return Observable.merge(optimisticUpdate, ajaxUpdate);
     });
 }
@@ -120,6 +143,7 @@ export function updateUserFlagEpic(actions, { getState }) {
 
 export default combineEpics(
   updateUserFlagEpic,
+  editUserFlagEpic,
   updateUserEmailEpic,
   updateUserLangEpic
 );

@@ -15,6 +15,7 @@ export const entitiesSelector = getNS;
 export const types = createTypes([
   'updateTheme',
   'updateUserFlag',
+  'editUserFlag',
   'updateUserEmail',
   'updateUserLang',
   'updateUserCurrentChallenge'
@@ -24,6 +25,11 @@ export const types = createTypes([
 export const updateUserFlag = createAction(
   types.updateUserFlag,
   (username, flag) => ({ username, flag })
+);
+// editUserFlag(username: String, flag: String, value: String) => Action
+export const editUserFlag = createAction(
+  types.editUserFlag,
+  (username, flag, value) => ({ username, flag, value })
 );
 // updateUserEmail(username: String, email: String) => Action
 export const updateUserEmail = createAction(
@@ -128,6 +134,18 @@ export default composeReducers(
           [username]: {
             ...state.user[username],
             [flag]: !state.user[username][flag]
+          }
+        }
+      }),
+      [types.editUserFlag]: (state, { payload: {
+        username, flag, value
+      } }) => ({
+        ...state,
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            [flag]: value
           }
         }
       }),

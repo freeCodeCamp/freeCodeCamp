@@ -3,18 +3,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { Button, Row, Col } from 'react-bootstrap';
-import FA from 'react-fontawesome';
-
-import LockedSettings from './Locked-Settings.jsx';
-import JobSettings from './Job-Settings.jsx';
-import SocialSettings from './Social-Settings.jsx';
-import EmailSettings from './Email-Setting.jsx';
-import LanguageSettings from './Language-Settings.jsx';
+import AccountSettings from './Account-Settings.jsx';
+import EmailSettings from './Email-Settings.jsx';
+import InternetSettings from './Internet-Settings.jsx';
+import PortfolioSettings from './Portfolio-Settings.jsx';
+import ProjectSettings from './Project-Settings.jsx';
 import SettingsSkeleton from './Settings-Skeleton.jsx';
-import UpdateEmail from './routes/update-email';
 
-import { toggleUserFlag, showUpdateEmailViewSelector } from './redux';
+import {
+  toggleUserFlag,
+  updateFlag,
+  showUpdateEmailViewSelector
+} from './redux';
 import {
   toggleNightMode,
   updateTitle,
@@ -34,6 +34,12 @@ const mapStateToProps = createSelector(
   (
     {
       username,
+      bio,
+      location,
+      linkedin,
+      name,
+      picture,
+      githubURL,
       email,
       isAvailableForHire,
       isLocked,
@@ -42,25 +48,35 @@ const mapStateToProps = createSelector(
       isLinkedIn,
       sendMonthlyEmail,
       sendNotificationEmail,
-      sendQuincyEmail
+      sendQuincyEmail,
+      twitter,
+      website
     },
     theme,
     showLoading,
     showUpdateEmailView
   ) => ({
     currentTheme: theme,
-    email,
     isAvailableForHire,
-    isGithubCool,
-    isLinkedIn,
+    showLoading,
+    username,
+    name,
+    email,
     isLocked,
+    isGithubCool,
+    githubURL,
+    isLinkedIn,
     isTwitter,
+    linkedin,
+    location,
     sendMonthlyEmail,
     sendNotificationEmail,
     sendQuincyEmail,
-    showLoading,
     showUpdateEmailView,
-    username
+    twitter,
+    bio,
+    picture,
+    website
   })
 );
 
@@ -72,13 +88,16 @@ const mapDispatchToProps = {
   toggleNightMode,
   toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
   toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
+  updateFlag,
   updateTitle
 };
 
 const propTypes = {
+  bio: PropTypes.string,
   children: PropTypes.element,
   currentTheme: PropTypes.string,
   email: PropTypes.string,
+  githubURL: PropTypes.string,
   hardGoTo: PropTypes.func.isRequired,
   initialLang: PropTypes.string,
   isAvailableForHire: PropTypes.bool,
@@ -87,20 +106,28 @@ const propTypes = {
   isLocked: PropTypes.bool,
   isTwitter: PropTypes.bool,
   lang: PropTypes.string,
+  linkedin: PropTypes.string,
+  location: PropTypes.string,
+  name: PropTypes.string,
+  picture: PropTypes.string,
   sendMonthlyEmail: PropTypes.bool,
   sendNotificationEmail: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
   showUpdateEmailView: PropTypes.bool,
+  theme: PropTypes.string,
   toggleIsAvailableForHire: PropTypes.func.isRequired,
   toggleIsLocked: PropTypes.func.isRequired,
   toggleMonthlyEmail: PropTypes.func.isRequired,
   toggleNightMode: PropTypes.func.isRequired,
   toggleNotificationEmail: PropTypes.func.isRequired,
   toggleQuincyEmail: PropTypes.func.isRequired,
+  twitter: PropTypes.string,
+  updateFlag: PropTypes.func.isRequired,
   updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
-  username: PropTypes.string
+  username: PropTypes.string,
+  website: PropTypes.string
 };
 
 export class Settings extends React.Component {
@@ -126,203 +153,113 @@ export class Settings extends React.Component {
 
   render() {
     const {
+      bio,
       currentTheme,
       email,
-      isAvailableForHire,
-      isGithubCool,
-      isLinkedIn,
+      githubURL,
       isLocked,
-      isTwitter,
+      // isAvailableForHire,
+      // isGithubCool,
+      // isLinkedIn,
+      // isTwitter,
+      linkedin,
+      location,
+      name,
+      picture,
       sendMonthlyEmail,
       sendNotificationEmail,
       sendQuincyEmail,
       showLoading,
-      showUpdateEmailView,
-      toggleIsAvailableForHire,
+      // toggleIsAvailableForHire,
       toggleIsLocked,
       toggleMonthlyEmail,
       toggleNightMode,
       toggleNotificationEmail,
       toggleQuincyEmail,
-      username
+      twitter,
+      updateFlag,
+      username,
+      website
     } = this.props;
-    if (!username && showLoading) {
+
+    if (!username && !showLoading) {
       return <SettingsSkeleton />;
     }
-    if (showUpdateEmailView) {
-      return <UpdateEmail />;
-    }
+
     return (
       <ChildContainer>
-        <div className='container'>
-          <Row>
-            <Col xs={ 12 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                className='btn-link-social'
-                href={ `/${username}` }
-                >
-                <FA name='user' />
-                Show me my public profile
-              </Button>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                className='btn-link-social'
-                href={ '/signout' }
-                >
-                Sign me out of freeCodeCamp
-              </Button>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                className='btn-link-social'
-                href={ 'mail:team@freecodecamp.com' }
-                >
-                Email us at team@freecodecamp.com
-              </Button>
-            </Col>
-          </Row>
-          <h1 className='text-center'>Settings for your Account</h1>
-          <h2 className='text-center'>Actions</h2>
-          <Row>
-            <Col xs={ 12 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                className='btn-link-social'
-                onClick={ () => toggleNightMode(username, currentTheme) }
-                >
-                Toggle Night Mode
-              </Button>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 12 }>
-              <SocialSettings
-                isGithubCool={ isGithubCool }
-                isLinkedIn={ isLinkedIn }
-                isTwitter={ isTwitter }
-              />
-            </Col>
-          </Row>
-          <div className='spacer' />
-          <h2 className='text-center'>Account Settings</h2>
-          <Row>
-            <Col xs={ 12 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                className='btn-link-social'
-                href='/commit'
-                >
-                Edit my pledge
-              </Button>
-            </Col>
-          </Row>
-          <div className='spacer' />
-          <h2 className='text-center'>Privacy Settings</h2>
-          <Row>
-            <Col
-              md={ 6 }
-              mdOffset={ 3 }
-              sm={ 8 }
-              smOffset={ 2 }
-              xs={ 12 }
-              >
-              <LockedSettings
-                isLocked={ isLocked }
-                toggle={ toggleIsLocked }
-              />
-            </Col>
-          </Row>
-          <div className='spacer' />
-          <h2 className='text-center'>Job Search Settings</h2>
-          <Row>
-            <Col
-              md={ 6 }
-              mdOffset={ 3 }
-              sm={ 8 }
-              smOffset={ 2 }
-              xs={ 12 }
-              >
-              <JobSettings
-                isAvailableForHire={ isAvailableForHire }
-                toggle={ toggleIsAvailableForHire }
-              />
-            </Col>
-          </Row>
-          <div className='spacer' />
-          <h2 className='text-center'>Email Settings</h2>
-          <Row>
-            <Col
-              md={ 6 }
-              mdOffset={ 3 }
-              sm={ 8 }
-              smOffset={ 2 }
-              xs={ 12 }
-              >
-              <EmailSettings
-                email={ email }
-                sendMonthlyEmail={ sendMonthlyEmail }
-                sendNotificationEmail={ sendNotificationEmail }
-                sendQuincyEmail={ sendQuincyEmail }
-                toggleMonthlyEmail={ toggleMonthlyEmail }
-                toggleNotificationEmail={ toggleNotificationEmail }
-                toggleQuincyEmail={ toggleQuincyEmail }
-              />
-            </Col>
-          </Row>
-          <div className='spacer' />
-          <h2 className='text-center'>Display challenges in:</h2>
-          <Row>
-            <Col
-              md={ 6 }
-              mdOffset={ 3 }
-              sm={ 8 }
-              smOffset={ 2 }
-              xs={ 12 }
-              >
-              <LanguageSettings />
-            </Col>
-          </Row>
-          <div className='spacer' />
-          <h2 className='text-center'>Danger Zone</h2>
-          <Row>
-            <Col
-              md={ 6 }
-              mdOffset={ 3 }
-              sm={ 8 }
-              smOffset={ 2 }
-              xs={ 12 }
-              >
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='danger'
-                className='btn-link-social'
-                href='/delete-my-account'
-                >
-                Delete my freeCodeCamp account
-              </Button>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='danger'
-                className='btn-link-social'
-                href='/reset-my-progress'
-                >
-                Reset all of my progress and brownie points
-              </Button>
-            </Col>
-          </Row>
-      </div>
+        <div className='container settings-container'>
+          <h2>Account Settings</h2>
+
+          <br />
+
+          <AccountSettings
+            bio={ bio }
+            currentTheme={ currentTheme }
+            isLocked={ isLocked }
+            location={ location }
+            name={ name }
+            picture={ picture }
+            toggleIsLocked={ toggleIsLocked }
+            toggleNightMode={ toggleNightMode }
+            updateFlag={updateFlag}
+            username={ username }
+          />
+
+          <hr />
+
+          <h2>Email Settings</h2>
+
+          <br />
+
+          <EmailSettings
+            email={ email }
+            sendMonthlyEmail={ sendMonthlyEmail }
+            sendNotificationEmail={ sendNotificationEmail }
+            sendQuincyEmail={ sendQuincyEmail }
+            toggleMonthlyEmail={ toggleMonthlyEmail }
+            toggleNotificationEmail={ toggleNotificationEmail }
+            toggleQuincyEmail={ toggleQuincyEmail }
+          />
+
+          <hr />
+
+          <h2>Your internet presence</h2>
+
+          <br />
+
+          <InternetSettings
+            githubURL={ githubURL }
+            linkedin={ linkedin }
+            twitter={ twitter }
+            updateFlag={ updateFlag }
+            website={ website }
+          />
+
+          <hr />
+
+          <h2>Your FreeCodeCamp Projects</h2>
+          <br />
+          <p>
+            Add links to the live demos of your projects as you finish them.
+            Then, once you have added all 5 projects required for a certificate,
+            you can claim it.
+          </p>
+          <ProjectSettings/>
+          <br />
+
+          <hr />
+
+          <h2>Your Portfolio</h2>
+          <p>
+            Share your non-FreeCodeCamp projects, articles or accepted
+            pull requests:
+          </p>
+          <PortfolioSettings/>
+          <hr />
+
+          <h2>Timeline</h2>
+        </div>
       </ChildContainer>
     );
   }
