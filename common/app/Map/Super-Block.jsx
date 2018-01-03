@@ -109,7 +109,7 @@ export class SuperBlock extends PureComponent {
         >
         { this.renderMessage(message) }
         <div className={ `${ns}-accordion-block` }>
-          { this.renderBlocks(blocks) }
+          { isOpen && this.renderBlocks(blocks) }
         </div>
       </Panel>
     );

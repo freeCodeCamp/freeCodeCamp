@@ -97,7 +97,7 @@ export class Block extends PureComponent {
         key={ title }
         onSelect={ this.handleSelect }
         >
-        { this.renderChallenges(challenges) }
+        { isOpen && this.renderChallenges(challenges) }
       </Panel>
     );
   }
