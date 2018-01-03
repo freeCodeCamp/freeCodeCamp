@@ -98,10 +98,10 @@
     color: #02a902;
   }
   .@{ns}-editor .CodeMirror {
-    background-color:#242424;
+    background-color:@night-body-bg;
     color:#ABABAB;
     &-gutters {
-      background-color:#242424;
+      background-color:@night-body-bg;
       color:#ABABAB;
     }
     .cm-bracket, .cm-tag {
@@ -112,6 +112,9 @@
     }
     .cm-keyword, .cm-attribute {
       color:#9BBBDC;
+    }
+    &-line {
+      caret-color:#ABABAB;
     }
   }
   .refresh-icon {
@@ -212,6 +215,7 @@
 .@{ns}-preview {
   .max-element-height();
   width: 100%;
+  background-color: @silver-chalice;
 }
 
 .@{ns}-preview-frame {
