@@ -77,7 +77,8 @@ export function createPoly({
     path: name + '.' + ext,
     key: name + ext,
     contents,
-    error: null
+    error: null,
+    transformError: false
   };
 }
 
@@ -116,7 +117,7 @@ export function setContent(contents, poly) {
   };
 }
 
-// setExt(contents: String, poly: PolyVinyl) => PolyVinyl
+// setExt(ext: String, poly: PolyVinyl) => PolyVinyl
 export function setExt(ext, poly) {
   checkPoly(poly);
   const newPoly = {
@@ -129,7 +130,7 @@ export function setExt(ext, poly) {
   return newPoly;
 }
 
-// setName(contents: String, poly: PolyVinyl) => PolyVinyl
+// setName(name: String, poly: PolyVinyl) => PolyVinyl
 export function setName(name, poly) {
   checkPoly(poly);
   const newPoly = {
@@ -142,7 +143,7 @@ export function setName(name, poly) {
   return newPoly;
 }
 
-// setError(contents: String, poly: PolyVinyl) => PolyVinyl
+// setError(error: Object, poly: PolyVinyl) => PolyVinyl
 export function setError(error, poly) {
   invariant(
     typeof error === 'object',
@@ -153,6 +154,19 @@ export function setError(error, poly) {
   return {
     ...poly,
     error
+  };
+}
+// setTransformError(transformError: Boolean, poly: PolyVinyl) => PolyVinyl
+export function setTransformError(transformError, poly) {
+  invariant(
+    typeof transformError === 'boolean',
+    'transformError must be a boolean, but got %',
+    transformError
+  );
+  checkPoly(poly);
+  return {
+    ...poly,
+    transformError
   };
 }
 
@@ -166,6 +180,7 @@ export function clearHeadTail(poly) {
   };
 }
 
+// appendToTail (tail: String, poly: PolyVinyl) => PolyVinyl
 export function appendToTail(tail, poly) {
   checkPoly(poly);
   return {
@@ -174,7 +189,7 @@ export function appendToTail(tail, poly) {
   };
 }
 
-// compileHeadTail(contents: String, poly: PolyVinyl) => PolyVinyl
+// compileHeadTail(padding: String, poly: PolyVinyl) => PolyVinyl
 export function compileHeadTail(padding = '', poly) {
   return clearHeadTail(transformContents(
     () => [ poly.head, poly.contents, poly.tail ].join(padding),

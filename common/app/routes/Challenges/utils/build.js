@@ -42,6 +42,15 @@ const globalRequires = [
   jQuery
 ];
 
+function postTransformCheck(file) {
+  if (file.transformError) {
+    // this will enable us to tap into the dipatch pipeline
+    // and disable JS in the preview
+    throw new Error('There was an error whilst transforming your code');
+  }
+  return file;
+}
+
 export function buildFromFiles(state, shouldProxyConsole) {
   const files = filesSelector(state);
   const required = challengeRequiredSelector(state);
@@ -49,6 +58,7 @@ export function buildFromFiles(state, shouldProxyConsole) {
   return createFileStream(files)
     ::pipe(throwers)
     ::pipe(applyTransformers)
+    ::pipe(postTransformCheck)
     ::pipe(shouldProxyConsole ? proxyLoggerTransformer : identity)
     ::pipe(jsToHtml)
     ::pipe(cssToHtml)

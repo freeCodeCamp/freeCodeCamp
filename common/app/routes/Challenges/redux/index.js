@@ -77,6 +77,7 @@ export const types = createTypes([
   'checkChallenge',
   createAsyncTypes('submitChallenge'),
   'moveToNextChallenge',
+  'disableJSOnError',
 
   // help
   'openHelpModal',
@@ -150,6 +151,8 @@ export const submitChallengeComplete = createAction(
 );
 
 export const moveToNextChallenge = createAction(types.moveToNextChallenge);
+
+export const disableJSOnError = createAction(types.disableJSOnError);
 
 // help
 export const openHelpModal = createAction(types.openHelpModal);
@@ -306,6 +309,7 @@ export default combineReducers(
       [
         combineActions(
           types.classicEditorUpdated,
+          types.disableJSOnError,
           types.modernEditorUpdated
         )
       ]: state => ({

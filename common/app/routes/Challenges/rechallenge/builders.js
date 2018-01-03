@@ -50,22 +50,28 @@ const wrapInStyle = partial(transformContents, (content) => (
 const setExtToHTML = partial(setExt, 'html');
 const padContentWithJsCatch = partial(compileHeadTail, jsCatch);
 const padContentWithHTMLCatch = partial(compileHeadTail, htmlCatch);
+function transformErrorProtect(fn) {
+  return cond([
+    [ matchesProperty('transformError', false), fn ],
+    [ stubTrue, identity ]
+  ]);
+}
 
-export const jsToHtml = cond([
+export const jsToHtml = transformErrorProtect(cond([
   [
     matchesProperty('ext', 'js'),
     flow(padContentWithJsCatch, wrapInScript, setExtToHTML)
   ],
   [ stubTrue, identity ]
-]);
+]));
 
-export const cssToHtml = cond([
+export const cssToHtml = transformErrorProtect(cond([
   [
     matchesProperty('ext', 'css'),
     flow(padContentWithHTMLCatch, wrapInStyle, setExtToHTML)
   ],
-  [ stubTrue, identity ]
-]);
+	[ stubTrue, identity ]
+]));
 
 // FileStream::concactHtml(
 //   required: [ ...Object ],

@@ -1,7 +1,9 @@
 import {
+  attempt,
   cond,
   flow,
   identity,
+  isError,
   matchesProperty,
   overEvery,
   overSome,
@@ -105,15 +107,42 @@ export const replaceNBSP = cond([
   [ stubTrue, identity ]
 ]);
 
+const transformErrorWarn = '/* __fcc--TransformError__ */';
+
+function tryJSTransform(wrap = identity, defaultAssignment = 'code') {
+  return function transformWrappedPoly(source) {
+    const result = attempt(wrap, source);
+    if (isError(result)) {
+      const friendlyError = `${result}`
+        .match(/[\w\W]+?\n/)[0]
+        .replace(' unknown:', '');
+      console.error(friendlyError);
+      return `var ${defaultAssignment} = null; ${transformErrorWarn}`;
+    }
+    return result;
+  };
+}
+
+function checkForTransformError(file) {
+  const potentialError = file.contents.includes(transformErrorWarn);
+  if (potentialError) {
+    return {
+      ...vinyl.setTransformError(true, file)
+    };
+  }
+  return file;
+}
+
 export const babelTransformer = cond([
   [
     testJS$JSX,
     flow(
       partial(
         vinyl.transformHeadTailAndContents,
-        babelTransformCode
+        tryJSTransform(babelTransformCode, 'JSX')
       ),
-      partial(vinyl.setExt, 'js')
+      partial(vinyl.setExt, 'js'),
+      checkForTransformError
     )
   ],
   [ stubTrue, identity ]
@@ -143,5 +172,5 @@ export function applyTransformers(file, transformers = _transformers) {
       return obs.flatMap(file => castToObservable(transformer(file)));
     },
     Observable.of(file)
-  );
+    );
 }
