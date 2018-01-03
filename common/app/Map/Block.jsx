@@ -10,8 +10,7 @@ import Challenge from './Challenge.jsx';
 import {
   toggleThisPanel,
 
-  makePanelOpenSelector,
-  makePanelHiddenSelector
+  makePanelOpenSelector
 } from './redux';
 
 import { makeBlockSelector } from '../entities';
@@ -21,11 +20,9 @@ function makeMapStateToProps(_, { dashedName }) {
   return createSelector(
     makeBlockSelector(dashedName),
     makePanelOpenSelector(dashedName),
-    makePanelHiddenSelector(dashedName),
-    (block, isOpen, isHidden) => {
+    (block, isOpen) => {
       return {
         isOpen,
-        isHidden,
         dashedName,
         title: block.title,
         time: block.time,
@@ -37,7 +34,6 @@ function makeMapStateToProps(_, { dashedName }) {
 const propTypes = {
   challenges: PropTypes.array,
   dashedName: PropTypes.string,
-  isHidden: PropTypes.bool,
   isOpen: PropTypes.bool,
   time: PropTypes.string,
   title: PropTypes.string,
@@ -88,12 +84,8 @@ export class Block extends PureComponent {
       time,
       dashedName,
       isOpen,
-      isHidden,
       challenges
     } = this.props;
-    if (isHidden) {
-      return null;
-    }
     return (
       <Panel
         bsClass={ `${ns}-accordion-panel` }
