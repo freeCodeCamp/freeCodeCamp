@@ -10,8 +10,7 @@ import Block from './Block.jsx';
 import {
   toggleThisPanel,
 
-  makePanelOpenSelector,
-  makePanelHiddenSelector
+  makePanelOpenSelector
 } from './redux';
 import { makeSuperBlockSelector } from '../entities';
 
@@ -24,10 +23,8 @@ function makeMapStateToProps(_, { dashedName }) {
   return createSelector(
     makeSuperBlockSelector(dashedName),
     makePanelOpenSelector(dashedName),
-    makePanelHiddenSelector(dashedName),
-    (superBlock, isOpen, isHidden) => ({
+    (superBlock, isOpen) => ({
       isOpen,
-      isHidden,
       dashedName,
       title: superBlock.title || dashedName,
       blocks: superBlock.blocks || [],
@@ -39,7 +36,6 @@ function makeMapStateToProps(_, { dashedName }) {
 const propTypes = {
   blocks: PropTypes.array,
   dashedName: PropTypes.string,
-  isHidden: PropTypes.bool,
   isOpen: PropTypes.bool,
   message: PropTypes.string,
   title: PropTypes.string,
@@ -98,12 +94,8 @@ export class SuperBlock extends PureComponent {
       dashedName,
       blocks,
       message,
-      isOpen,
-      isHidden
+      isOpen
     } = this.props;
-    if (isHidden) {
-      return null;
-    }
     return (
       <Panel
         bsClass={ `${ns}-accordion-panel` }

@@ -63,27 +63,15 @@ export function makePanelOpenSelector(name) {
   );
 }
 
-export function makePanelHiddenSelector(name) {
-  return createSelector(
-    mapSelector,
-    mapUi => {
-      const node = utils.getNode(mapUi, name);
-      return node ? node.isHidden : false;
-    }
-  );
-}
 // interface Map{
 //   children: [...{
 //     name: (superBlock: String),
 //     isOpen: Boolean,
-//     isHidden: Boolean,
 //     children: [...{
 //       name: (blockName: String),
 //       isOpen: Boolean,
-//       isHidden: Boolean,
 //       children: [...{
 //         name: (challengeName: String),
-//         isHidden: Boolean
 //       }]
 //     }]
 //   }
