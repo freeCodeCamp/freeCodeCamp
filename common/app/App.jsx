@@ -10,6 +10,7 @@ import {
   isSignedInSelector
 } from './redux';
 
+import Flash from './Flash';
 import Nav from './Nav';
 import Toasts from './Toasts';
 import NotFound from './NotFound';
@@ -60,12 +61,9 @@ export class FreeCodeCamp extends React.Component {
       route
     } = this.props;
     const Child = routes[route] || NotFound;
-    // we render nav after the content
-    // to allow the panes to update
-    // redux store, which will update the bin
-    // buttons in the nav
     return (
       <div className={ `${ns}-container` }>
+        <Flash />
         <Nav />
         <Child />
         <Toasts />
