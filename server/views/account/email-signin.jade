@@ -10,17 +10,18 @@ block content
                     #flash-content
         .row
           .text-center
-            h2 Sign in or Sign Up with an Email here:
+            h2 Sign in or Sign Up with an Email
               .button-spacer
-          .col-sm-6.col-sm-offset-3
+          div#sign-in-form
+            .col-sm-6.col-sm-offset-3
               form(method='POST', action='/passwordless-auth')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .form-group
                       input.input-lg.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true, required)
                   .button-spacer
-                  button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
-                    span.fa.fa-envelope
-                    | Get a magic link to sign in.
+                    button.btn.btn-primary.btn-lg.btn-block(type='submit')
+                      span.fa.fa-envelope
+                      | Get a magic link to sign in.
         .row
           .col-sm-6.col-sm-offset-3
               br
@@ -34,18 +35,13 @@ block content
                   a(href="/deprecated-signin") Or click here if you want to sign in with other options.
 
         script.
-           $(document).ready(function() {
-
-             function disableMagicButton (isDisabled) {
-               if (isDisabled) {
-                 $('#magic-btn')
-                   .html('<span class="fa fa-circle-o-notch fa-spin fa-fw"></span>')
-                   .prop('disabled', true);
-               } else {
-                 $('#magic-btn')
-                   .html('<span class="fa.fa-envelope">Get a magic link to sign in.</span>')
-                   .prop('disabled', false);
-               }
+          $(document).ready(function() {
+            function disableMagicButton () {
+              var userEmail = $("input[name=email]").val();
+              $('#sign-in-form')
+               .empty()
+               .html('<h3 class="text-center"> OK - we are sending a magic link to ' + userEmail + ' </h3>')
+               .fadeIn(100);
             }
 
             $('form').submit(function(event){
@@ -69,8 +65,9 @@ block content
                     $('#flash-board')
                       .removeClass('alert-success')
                       .addClass('alert-info')
+                      .slideDown(400)
+                      .delay(800)
                       .fadeIn();
-                    disableMagicButton(false);
                   }
               })
               .done(data =>{
@@ -93,8 +90,9 @@ block content
                   $('#flash-board')
                       .removeClass('alert-info alert-success alert-danger')
                       .addClass(alertType)
+                      .slideDown(400)
+                      .delay(800)
                       .fadeIn();
-                  disableMagicButton(false);
                 }
               });
             });
