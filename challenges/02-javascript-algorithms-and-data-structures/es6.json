@@ -25,20 +25,21 @@
     },
     {
       "id": "587d7b87367417b2b2512b3f",
-      "title": "Explore Problems with the var Keyword",
+      "title": "Explore Differences Between the var and let Keywords",
       "description": [
         "One of the biggest problems with declaring variables with the <code>var</code> keyword is that you can overwrite variable declarations without an error.",
         "<blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// logs 'David'</blockquote>",
-        "In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidently overwrite a variable that you did not intend to overwrite. Because this behaviour does not throw an error, searching and fixing bugs becomes more difficult.",
-        "Another problem with the <code>var</code> keyword is that it is hoisted to the top of your code when it compiles. This means that you can use a variable before you declare it.",
-        "<blockquote>console.log(camper);<br>var camper = 'David';<br>// logs undefined</blockquote>",
-        "The code runs in the following order:",
-        "<ol><li>The variable <code>camper</code> is declared as undefined.</li><li>The value of <code>camper</code> is logged.</li><li>David is assigned to <code>camper</code>.</li></ol>",
-        "This code will run without an error.",
-        "A new keyword called <code>let</code> was introduced in ES6 to solve the problems with the <code>var</code> keyword. With the <code>let</code> keyword, all the examples we just saw will cause an error to appear. We can no longer overwrite variables or use a variable before we declare it. Some modern browsers require you to add <code>\"use strict\";</code> to the top of your code before you can use the new features of ES6.",
-        "Let's try using the <code>let</code> keyword.",
+        "As you can see in the code above, the <code>camper</code> variable is originally declared as <code>James</code> and then overridden to be <code>David</code>.",
+        "In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidently overwrite a variable that you did not intend to overwrite.",
+        "Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>",
+        "A new keyword called <code>let</code> was introduced in ES6 to solve this potential issue with the <code>var</code> keyword.",
+        "If you were to replace <code>var</code> with <code>let</code> in the variable declarations of the code above, the result would be an error.",
+        "<blockquote>let camper = 'James';<br>let camper = 'David'; // throws an error</blockquote>",        
+        "This error can be seen in the console of your browser.",
+        "So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.", 
         "<hr>",
-        "Replace <code>var</code> with <code>let</code>"
+        "Update the code so it only uses the <code>let</code> keyword.",
+        "<strong>Note</strong><br>Remember that since <code>let</code> prevents variables from being overridden, you will need to remove one of the declarations entirely."
       ],
       "challengeSeed": [
         "var catName;",
