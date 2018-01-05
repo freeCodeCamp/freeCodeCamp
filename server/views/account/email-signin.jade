@@ -10,18 +10,17 @@ block content
                     #flash-content
         .row
           .text-center
-            h2 Sign in or Sign Up with an Email
+            h2 Sign in or Sign Up with an Email here:
               .button-spacer
-          div#sign-in-form
-            .col-sm-6.col-sm-offset-3
+          .col-sm-6.col-sm-offset-3
               form(method='POST', action='/passwordless-auth')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .form-group
                       input.input-lg.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true, required)
                   .button-spacer
-                    button.btn.btn-primary.btn-lg.btn-block(type='submit')
-                      span.fa.fa-envelope
-                      | Get a magic link to sign in.
+                  button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
+                    span.fa.fa-envelope
+                    | Get a magic link to sign in.
         .row
           .col-sm-6.col-sm-offset-3
               br
@@ -36,12 +35,16 @@ block content
 
         script.
           $(document).ready(function() {
-            function disableMagicButton () {
-              var userEmail = $("input[name=email]").val();
-              $('#sign-in-form')
-               .empty()
-               .html('<h3 class="text-center"> OK - we are sending a magic link to ' + userEmail + ' </h3>')
-               .fadeIn(100);
+            function disableMagicButton (isDisabled) {
+                if (isDisabled) {
+                  $('#magic-btn')
+                    .prop('disabled', true)
+                    .html('<span style="color:#E0E0E0;"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i>Ok - We will attempt sending to the email above.</span>');
+                } else {
+                  $('#magic-btn')
+                    .prop('disabled', true)
+                    .html('<span style="color:#E0E0E0;">Did not get a link? Reload the page and resend again.</span>');
+                }
             }
 
             $('form').submit(function(event){
@@ -50,17 +53,17 @@ block content
               disableMagicButton(true);
               var $form = $(event.target);
               $.ajax({
-                  type        : 'POST',
-                  url         : $form.attr('action'),
-                  data        : $form.serialize(),
-                  dataType    : 'json',
-                  encode      : true,
-                  xhrFields   : { withCredentials:  true }
+                type        : 'POST',
+                url         : $form.attr('action'),
+                data        : $form.serialize(),
+                dataType    : 'json',
+                encode      : true,
+                xhrFields   : { withCredentials:  true }
               })
               .fail(error => {
                 if (error.responseText){
-                    var data = JSON.parse(error.responseText);
-                    if(data.error && data.error.message)
+                  var data = JSON.parse(error.responseText);
+                  if(data.error && data.error.message) {
                     $('#flash-content').html(data.error.message);
                     $('#flash-board')
                       .removeClass('alert-success')
@@ -68,9 +71,11 @@ block content
                       .slideDown(400)
                       .delay(800)
                       .fadeIn();
+                    disableMagicButton(false);
                   }
+                }
               })
-              .done(data =>{
+              .done(data => {
                 if(data && data.message) {
                   var alertType = 'alert-';
                   switch (data.type) {
@@ -88,12 +93,13 @@ block content
                   }
                   $('#flash-content').html(data.message);
                   $('#flash-board')
-                      .removeClass('alert-info alert-success alert-danger')
-                      .addClass(alertType)
-                      .slideDown(400)
-                      .delay(800)
-                      .fadeIn();
+                    .removeClass('alert-info alert-success alert-danger')
+                    .addClass(alertType)
+                    .slideDown(400)
+                    .delay(800)
+                    .fadeIn();
+                  disableMagicButton(false);
                 }
               });
             });
-           });
+          });
