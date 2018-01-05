@@ -68,8 +68,9 @@ createApp({
   })
   .doOnNext(({ store }) => {
     if (module.hot && typeof module.hot.accept === 'function') {
-      module.hot.accept(err => {
-        if (err) { console.error(err); }
+      module.hot.accept(() => {
+        // note(berks): not sure this ever runs anymore after adding
+        // RHR?
         log('saving state and refreshing.');
         log('ignore react ssr warning.');
         saveToColdStorage(store.getState());
