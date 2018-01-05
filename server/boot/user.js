@@ -103,51 +103,51 @@ function getChallengeGroup(challenge) {
 //   projects: Array,
 //   challenges: Array
 // }]
-// function buildDisplayChallenges(
-//   { challengeMap, challengeIdToName },
-//   userChallengeMap = {},
-//   timezone
-// ) {
-//   return Observable.from(Object.keys(userChallengeMap))
-//     .map(challengeId => userChallengeMap[challengeId])
-//     .map(userChallenge => {
-//       const challengeId = userChallenge.id;
-//       const challenge = challengeMap[ challengeIdToName[challengeId] ];
-//       let finalChallenge = { ...userChallenge, ...challenge };
-//       if (userChallenge.completedDate) {
-//         finalChallenge.completedDate = moment
-//           .tz(userChallenge.completedDate, timezone)
-//           .format(dateFormat);
-//       }
+function buildDisplayChallenges(
+  { challengeMap, challengeIdToName },
+  userChallengeMap = {},
+  timezone
+) {
+  return Observable.from(Object.keys(userChallengeMap))
+    .map(challengeId => userChallengeMap[challengeId])
+    .map(userChallenge => {
+      const challengeId = userChallenge.id;
+      const challenge = challengeMap[ challengeIdToName[challengeId] ];
+      let finalChallenge = { ...userChallenge, ...challenge };
+      if (userChallenge.completedDate) {
+        finalChallenge.completedDate = moment
+          .tz(userChallenge.completedDate, timezone)
+          .format(dateFormat);
+      }
 
-//       if (userChallenge.lastUpdated) {
-//         finalChallenge.lastUpdated = moment
-//           .tz(userChallenge.lastUpdated, timezone)
-//           .format(dateFormat);
-//       }
+      if (userChallenge.lastUpdated) {
+        finalChallenge.lastUpdated = moment
+          .tz(userChallenge.lastUpdated, timezone)
+          .format(dateFormat);
+      }
 
-//       return finalChallenge;
-//     })
-//     .filter(({ challengeType }) => challengeType !== 6)
-//     .groupBy(getChallengeGroup)
-//     .flatMap(group$ => {
-//       return group$.toArray().map(challenges => ({
-//         [getChallengeGroup(challenges[0])]: challenges
-//       }));
-//     })
-//     .reduce((output, group) => ({ ...output, ...group}), {})
-//     .map(groups => ({
-//       algorithms: groups.algorithms || [],
-//       projects: groups.projects ? groups.projects.reverse() : [],
-//       challenges: groups.challenges ? groups.challenges.reverse() : []
-//     }));
-// }
+      return finalChallenge;
+    })
+    .filter(({ challengeType }) => challengeType !== 6)
+    .groupBy(getChallengeGroup)
+    .flatMap(group$ => {
+      return group$.toArray().map(challenges => ({
+        [getChallengeGroup(challenges[0])]: challenges
+      }));
+    })
+    .reduce((output, group) => ({ ...output, ...group}), {})
+    .map(groups => ({
+      algorithms: groups.algorithms || [],
+      projects: groups.projects ? groups.projects.reverse() : [],
+      challenges: groups.challenges ? groups.challenges.reverse() : []
+    }));
+}
 
 module.exports = function(app) {
   const router = app.loopback.Router();
   const api = app.loopback.Router();
-  const { AccessToken, Email, User } = app.models;
-  // const map$ = cachedMap(app.models);
+  const { Email, User } = app.models;
+  const map$ = cachedMap(app.models);
 
   function findUserByUsername$(username, fields) {
     return observeQuery(

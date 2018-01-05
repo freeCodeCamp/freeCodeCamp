@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 
-import ns from './ns.json';
+import ns from '../ns.json';
 
 // actual chars required to give buttons some height
 // whitespace alone is no good

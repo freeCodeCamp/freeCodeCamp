@@ -3,153 +3,45 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import {
-  Button,
-  Row,
-  Col,
-  FormControl,
-  ControlLabel
-} from 'react-bootstrap';
-
 import ns from './ns.json';
-import AccountSettings from './Account-Settings.jsx';
-import EmailSettings from './Email-Settings.jsx';
-import InternetSettings from './Internet-Settings.jsx';
-import PortfolioSettings from './Portfolio-Settings.jsx';
-import ProjectSettings from './Project-Settings.jsx';
-import SettingsSkeleton from './Settings-Skeleton.jsx';
+import AccountSettings from './components/Account-Settings.jsx';
+import EmailSettings from './components/Email-Settings.jsx';
+import InternetSettings from './components/Internet-Settings.jsx';
+import PortfolioSettings from './components/Portfolio-Settings.jsx';
+import ProjectSettings from './components/Project-Settings.jsx';
+import SettingsSkeleton from './components/Settings-Skeleton.jsx';
 
 import {
-  toggleUserFlag,
-  updateFlag,
-  showUpdateEmailViewSelector
-} from './redux';
-import {
-  toggleNightMode,
   updateTitle,
-
   signInLoadingSelector,
   userSelector,
-  themeSelector,
   hardGoTo
 } from '../../redux';
 
 const mapStateToProps = createSelector(
   userSelector,
-  themeSelector,
   signInLoadingSelector,
-  (
-    {
-      username,
-      bio,
-      location,
-      linkedin,
-      name,
-      picture,
-      githubURL,
-      email,
-      isAvailableForHire,
-      isLocked,
-      isGithubCool,
-      isTwitter,
-      isLinkedIn,
-      sendMonthlyEmail,
-      sendNotificationEmail,
-      sendQuincyEmail,
-      twitter,
-      website
-    },
-    theme,
+  ({ username }, showLoading) => ({
     showLoading,
-  ) => ({
-    currentTheme: theme,
-    isAvailableForHire,
-    showLoading,
-    username,
-    name,
-    email,
-    isLocked,
-    isGithubCool,
-    githubURL,
-    isLinkedIn,
-    isTwitter,
-    linkedin,
-    location,
-    sendMonthlyEmail,
-    sendNotificationEmail,
-    sendQuincyEmail,
-    showLoading,
-    showUpdateEmailView,
-    twitter,
-    bio,
-    picture,
-    website
+    username
   })
 );
 
 const mapDispatchToProps = {
   hardGoTo,
-  toggleIsAvailableForHire: () => toggleUserFlag('isAvailableForHire'),
-  toggleIsLocked: () => toggleUserFlag('isLocked'),
-  toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail'),
-  toggleNightMode,
-  toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
-  toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
-  updateFlag,
   updateTitle
 };
 
 const propTypes = {
-  bio: PropTypes.string,
-  children: PropTypes.element,
-  currentTheme: PropTypes.string,
-  email: PropTypes.string,
-  githubURL: PropTypes.string,
   hardGoTo: PropTypes.func.isRequired,
-  initialLang: PropTypes.string,
-  isAvailableForHire: PropTypes.bool,
-  isGithubCool: PropTypes.bool,
-  isLinkedIn: PropTypes.bool,
-  isLocked: PropTypes.bool,
-  isTwitter: PropTypes.bool,
-  lang: PropTypes.string,
-  linkedin: PropTypes.string,
-  location: PropTypes.string,
-  name: PropTypes.string,
-  picture: PropTypes.string,
-  sendMonthlyEmail: PropTypes.bool,
-  sendNotificationEmail: PropTypes.bool,
-  sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
-  showUpdateEmailView: PropTypes.bool,
-  theme: PropTypes.string,
-  toggleIsAvailableForHire: PropTypes.func.isRequired,
-  toggleIsLocked: PropTypes.func.isRequired,
-  toggleMonthlyEmail: PropTypes.func.isRequired,
-  toggleNightMode: PropTypes.func.isRequired,
-  toggleNotificationEmail: PropTypes.func.isRequired,
-  toggleQuincyEmail: PropTypes.func.isRequired,
-  twitter: PropTypes.string,
-  updateFlag: PropTypes.func.isRequired,
-  updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
-  username: PropTypes.string,
-  website: PropTypes.string
+  username: PropTypes.string
 };
 
 export class Settings extends React.Component {
-  constructor(...props) {
-    super(...props);
-    this.updateMyLang = this.updateMyLang.bind(this);
-  }
 
-  updateMyLang(e) {
-    e.preventDefault();
-    const lang = e.target.value;
-    this.props.updateMyLang(lang);
-  }
-
-  componentWillMount() {
+  componentDidMount() {
     this.props.updateTitle('Settings');
   }
   componentWillReceiveProps({ username, showLoading, hardGoTo }) {
@@ -160,91 +52,29 @@ export class Settings extends React.Component {
 
   render() {
     const {
-      bio,
-      currentTheme,
-      email,
-      githubURL,
-      isLocked,
-      // isAvailableForHire,
-      // isGithubCool,
-      // isLinkedIn,
-      // isTwitter,
-      linkedin,
-      location,
-      name,
-      picture,
-      sendMonthlyEmail,
-      sendNotificationEmail,
-      sendQuincyEmail,
       showLoading,
-      // toggleIsAvailableForHire,
-      toggleIsLocked,
-      toggleMonthlyEmail,
-      toggleNightMode,
-      toggleNotificationEmail,
-      toggleQuincyEmail,
-      twitter,
-      updateFlag,
-      username,
-      website
+      username
     } = this.props;
 
-    if (!username && !showLoading) {
+    if (!username && showLoading) {
       return <SettingsSkeleton />;
     }
 
     return (
       <ChildContainer>
-        <div className='container settings-container'>
+        <div className={`container ${ns}-container`}>
           <h2>Account Settings</h2>
-
           <br />
-
-          <AccountSettings
-            bio={ bio }
-            currentTheme={ currentTheme }
-            isLocked={ isLocked }
-            location={ location }
-            name={ name }
-            picture={ picture }
-            toggleIsLocked={ toggleIsLocked }
-            toggleNightMode={ toggleNightMode }
-            updateFlag={updateFlag}
-            username={ username }
-          />
-
+          <AccountSettings />
           <hr />
-
           <h2>Email Settings</h2>
-
           <br />
-
-          <EmailSettings
-            email={ email }
-            sendMonthlyEmail={ sendMonthlyEmail }
-            sendNotificationEmail={ sendNotificationEmail }
-            sendQuincyEmail={ sendQuincyEmail }
-            toggleMonthlyEmail={ toggleMonthlyEmail }
-            toggleNotificationEmail={ toggleNotificationEmail }
-            toggleQuincyEmail={ toggleQuincyEmail }
-          />
-
+          <EmailSettings />
           <hr />
-
           <h2>Your internet presence</h2>
-
           <br />
-
-          <InternetSettings
-            githubURL={ githubURL }
-            linkedin={ linkedin }
-            twitter={ twitter }
-            updateFlag={ updateFlag }
-            website={ website }
-          />
-
+          <InternetSettings />
           <hr />
-
           <h2>Your FreeCodeCamp Projects</h2>
           <br />
           <p>
@@ -254,18 +84,13 @@ export class Settings extends React.Component {
           </p>
           <ProjectSettings/>
           <br />
-
           <hr />
-
           <h2>Your Portfolio</h2>
           <p>
             Share your non-FreeCodeCamp projects, articles or accepted
             pull requests:
           </p>
           <PortfolioSettings/>
-          <hr />
-
-          <h2>Timeline</h2>
         </div>
       </ChildContainer>
     );

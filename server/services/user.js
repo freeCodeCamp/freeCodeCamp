@@ -31,6 +31,10 @@ const publicUserProps = [
   'isApisMicroservicesCert',
   'isInfosecQaCert',
 
+  'twitter',
+  'linkedin',
+  'website',
+  'portfolio',
   'githubURL',
   'sendMonthlyEmail',
   'sendNotificationEmail',

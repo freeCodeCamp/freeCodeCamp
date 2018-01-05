@@ -2,7 +2,7 @@ import debug from 'debug';
 import { renderToString } from 'react-dom/server';
 import createMemoryHistory from 'history/createMemoryHistory';
 import { NOT_FOUND } from 'redux-first-router';
-import devtoolsEnhancer from 'remote-redux-devtools';
+// import devtoolsEnhancer from 'remote-redux-devtools';
 
 import {
   errorThrowerMiddleware
@@ -57,7 +57,7 @@ export default function reactSubRouter(app) {
       serviceOptions,
       middlewares,
       enhancers: [
-        devtoolsEnhancer({ name: 'server' })
+        // devtoolsEnhancer({ name: 'server' })
       ],
       history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
       defaultStaet: { app: { lang } }

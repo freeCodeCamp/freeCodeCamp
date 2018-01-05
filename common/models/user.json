@@ -114,6 +114,15 @@
     "twitter": {
       "type": "string"
     },
+    "portfolio": {
+      "type": "object",
+      "description": "An object containing information about a users portfolio website",
+      "default": {
+        "title": "",
+        "url": "",
+        "description": ""
+      }
+    },
     "currentStreak": {
       "type": "number",
       "default": 0

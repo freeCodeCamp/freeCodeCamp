@@ -46,7 +46,10 @@
   }
 }
 
-.settings-container {
+.@{ns}-container {
+  input, textarea {
+    background-color: #fff;
+  }
   .row {
     margin-bottom: 15px;
   }
@@ -59,5 +62,8 @@
   .editable-content-container {
     display: flex;
     align-items: center;
+  }
+  .btn-primary[disabled] {
+    color: @skeleton-gray;
   }
 }

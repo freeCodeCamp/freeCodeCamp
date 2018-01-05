@@ -4,9 +4,9 @@ import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
 import { FormControl, FormGroup } from 'react-bootstrap';
 
-import { updateMyLang } from './redux';
-import { userSelector } from '../../redux';
-import langs from '../../../utils/supported-languages';
+import { updateMyLang } from '../redux';
+import { userSelector } from '../../../redux';
+import langs from '../../../../utils/supported-languages';
 
 const propTypes = {
   fields: PropTypes.object,

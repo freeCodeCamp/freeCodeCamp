@@ -5,14 +5,8 @@ import {
   createAsyncTypes,
   createTypes
 } from 'berkeleys-redux-utils';
-
-import userUpdateEpic from './update-user-epic.js';
 import ns from '../ns.json';
 import { utils } from '../../../Flash/redux';
-
-export const epics = [
-  userUpdateEpic
-];
 
 export const types = createTypes([
   'toggleUserFlag',

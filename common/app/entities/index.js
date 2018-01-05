@@ -1,64 +1,30 @@
 import _ from 'lodash';
 import {
-  composeReducers,
-  createAction,
-  createTypes,
-  handleActions
+  composeReducers
 } from 'berkeleys-redux-utils';
 
-import { themes } from '../../utils/themes';
-import { types as challenges } from '../routes/Challenges/redux';
+import { invertTheme } from '../../utils/themes';
+import { types as userTypes, userReducer } from './user';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
 export const entitiesSelector = getNS;
-export const types = createTypes([
-  'updateTheme',
-  'updateUserFlag',
-  'editUserFlag',
-  'updateUserEmail',
-  'updateUserLang',
-  'updateUserCurrentChallenge'
-], ns);
 
-// updateUserFlag(username: String, flag: String) => Action
-export const updateUserFlag = createAction(
-  types.updateUserFlag,
-  (username, flag) => ({ username, flag })
-);
-// editUserFlag(username: String, flag: String, value: String) => Action
-export const editUserFlag = createAction(
-  types.editUserFlag,
-  (username, flag, value) => ({ username, flag, value })
-);
-// updateUserEmail(username: String, email: String) => Action
-export const updateUserEmail = createAction(
-  types.updateUserEmail,
-  (username, email) => ({ username, email })
-);
-// updateUserLang(username: String, lang: String) => Action
-export const updateUserLang = createAction(
-  types.updateUserLang,
-  (username, lang) => ({ username, languageTag: lang })
-);
-
-export const updateUserCurrentChallenge = createAction(
-  types.updateUserCurrentChallenge
-);
 
 // entity meta creators
 const getEntityAction = _.property('meta.entitiesAction');
 export const updateThemeMetacreator = (username, theme) => ({
   entitiesAction: {
-    type: types.updateTheme,
+    type: userTypes.editUserFlag,
     payload: {
       username,
-      theme: !theme || theme === themes.default ? themes.default : themes.night
+      flag: 'theme',
+      value: invertTheme(theme)
     }
   }
 });
 
-const defaultState = {
+export const defaultState = {
   superBlock: {},
   block: {},
   challenge: {},
@@ -79,119 +45,58 @@ export function makeSuperBlockSelector(name) {
   };
 }
 
+export function selectiveChallengeTitleSelector(state, dashedName) {
+  return getNS(state).challenge[dashedName].title;
+}
+
+export function projectsSelector(state) {
+  const blocks = getNS(state).block;
+  return Object.keys(blocks)
+    .filter(key => key.includes('projects') && !key.includes('coding-interview'))
+    .map(key => blocks[key])
+    .map(({ name, challenges }) => ({
+      projectBlockName: name,
+      challenges: challenges
+        // remove any project intros
+        .filter(chal => !chal.includes('get-set-for'))
+        .map(dashedName => selectiveChallengeTitleSelector(state, dashedName))
+    }));
+}
+
+
 export const isChallengeLoaded = (state, { dashedName }) =>
   !!challengeMapSelector(state)[dashedName];
 
+function metaReducer(state = defaultState, action) {
+  if (action.meta && action.meta.entities) {
+    return {
+      ...state,
+      ...action.meta.entities
+    };
+  }
+  return state;
+}
+
+function entitiesReducer(state = defaultState, action) {
+  if (getEntityAction(action)) {
+    const { payload: { username, theme } } = getEntityAction(action);
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        [username]: {
+          ...state.user[username],
+          theme
+        }
+      }
+    };
+  }
+  return state;
+}
+
 export default composeReducers(
   ns,
-  function metaReducer(state = defaultState, action) {
-    if (action.meta && action.meta.entities) {
-      return {
-        ...state,
-        ...action.meta.entities
-      };
-    }
-    return state;
-  },
-  function(state = defaultState, action) {
-    if (getEntityAction(action)) {
-      const { payload: { username, theme } } = getEntityAction(action);
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            theme
-          }
-        }
-      };
-    }
-    return state;
-  },
-  handleActions(
-    () => ({
-      [
-        challenges.submitChallenge.complete
-      ]: (state, { payload: { username, points, challengeInfo } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            points,
-            challengeMap: {
-              ...state.user[username].challengeMap,
-              [challengeInfo.id]: challengeInfo
-            }
-          }
-        }
-      }),
-      [types.updateUserFlag]: (state, { payload: { username, flag } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            [flag]: !state.user[username][flag]
-          }
-        }
-      }),
-      [types.editUserFlag]: (state, { payload: {
-        username, flag, value
-      } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            [flag]: value
-          }
-        }
-      }),
-      [types.updateUserEmail]: (state, { payload: { username, email } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            email
-          }
-        }
-      }),
-      [types.updateUserLang]:
-      (
-        state,
-        {
-          payload: { username, languageTag }
-        }
-      ) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            languageTag
-          }
-        }
-      }),
-      [types.updateUserCurrentChallenge]:
-      (
-        state,
-        {
-          payload: { username, currentChallengeId }
-        }
-      ) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            currentChallengeId
-          }
-        }
-      })
-    }),
-    defaultState
-  )
+  metaReducer,
+  entitiesReducer,
+  userReducer(defaultState),
 );
