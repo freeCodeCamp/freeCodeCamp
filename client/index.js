@@ -1,4 +1,3 @@
-import './es6-shims';
 import _ from 'lodash';
 import Rx from 'rx';
 import debug from 'debug';
