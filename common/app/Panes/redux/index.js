@@ -100,7 +100,22 @@ function checkForTypeKeys(panesMap) {
   return panesMap;
 }
 
-const getPaneName = (panes, index) => (panes[index] || {}).name || '';
+const getPane = (panesByName, panes, index) => _.get(
+  panesByName,
+  getPaneName(panes, index),
+  null
+);
+
+const getPaneName = (panes, index) => _.get(
+  panes,
+  index,
+  ''
+);
+
+const createGetBound = isRight => (pane, buffer) =>
+  (pane && !pane.isHidden && pane.dividerLeft || (isRight ? 100 : 0)) - buffer;
+const getRightBound = createGetBound(true);
+const getLeftBound = createGetBound(false);
 
 function normalizePanesMapCreator(createPanesMap) {
   invariant(
@@ -156,19 +171,20 @@ export default function createPanesAspects({ createPanesMap }) {
           pressedDivider: name
         }),
         [types.dividerMoved]: (state, { payload: clientX }) => {
-          const { width, pressedDivider: paneName } = state;
+          const {
+            panes,
+            panesByName,
+            pressedDivider: paneName,
+            width
+          } = state;
           const dividerBuffer = (200 / width) * 100;
           const paneIndex =
             _.findIndex(state.panes, ({ name }) => paneName === name);
-          const currentPane = state.panesByName[paneName];
-          const rightPane =
-            state.panesByName[getPaneName(state.panes, paneIndex + 1)] || {};
-          const leftPane =
-            state.panesByName[getPaneName(state.panes, paneIndex - 1)] || {};
-          const rightBound = (rightPane.dividerLeft || 100) - dividerBuffer;
-          const leftBound =
-          (leftPane.isHidden || typeof leftPane.isHidden === 'undefined') ?
-          dividerBuffer : (leftPane.dividerLeft + dividerBuffer);
+          const currentPane = panesByName[paneName];
+          const rightPane = getPane(panesByName, panes, paneIndex + 1);
+          const leftPane = getPane(panesByName, panes, paneIndex - 1);
+          const rightBound = getRightBound(rightPane, dividerBuffer);
+          const leftBound = getLeftBound(leftPane, dividerBuffer);
           const newPosition = _.clamp(
             (clientX / width) * 100,
             leftBound,
