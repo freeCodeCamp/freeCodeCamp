@@ -1,4 +1,5 @@
 require('dotenv').load();
+require('./utils/webpack-code-split-polyfill');
 
 if (process.env.OPBEAT_ID) {
   console.log('loading opbeat');
@@ -17,22 +18,6 @@ var _ = require('lodash'),
     path = require('path'),
     setupPassport = require('./component-passport');
 
-// polyfill for webpack bundle splitting
-const requireProto = Object.getPrototypeOf(require);
-if (!requireProto.hasOwnProperty('ensure')) {
-  Object.defineProperties(
-    requireProto,
-    {
-      ensure: {
-        value: function ensure(modules, callback) {
-          callback(this);
-        },
-        writable: false,
-        enumerable: false
-      }
-    }
-  );
-}
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 var app = loopback();
 var isBeta = !!process.env.BETA;
