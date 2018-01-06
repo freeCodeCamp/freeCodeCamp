@@ -17,6 +17,12 @@ const boot = require('loopback-boot');
 const expressState = require('express-state');
 const path = require('path');
 const setupPassport = require('./component-passport');
+const createDebugger = require('debug');
+
+const log = createDebugger('fcc:server');
+// force logger to always output
+// this may be brittle
+log.enabled = true;
 
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 const app = loopback();
@@ -38,30 +44,30 @@ boot(app, {
 setupPassport(app);
 
 const { db } = app.datasources;
-db.on('connected', _.once(() => console.log('db connected')));
+db.on('connected', _.once(() => log('db connected')));
 app.start = _.once(function() {
   const server = app.listen(app.get('port'), function() {
     app.emit('started');
-    console.log(
+    log(
       'freeCodeCamp server listening on port %d in %s',
       app.get('port'),
       app.get('env')
     );
     if (isBeta) {
-      console.log('freeCodeCamp is in beta mode');
+      log('freeCodeCamp is in beta mode');
     }
-    console.log(`connecting to db at ${db.settings.url}`);
+    log(`connecting to db at ${db.settings.url}`);
   });
 
   process.on('SIGINT', () => {
-    console.log('Shutting down server');
+    log('Shutting down server');
     server.close(() => {
-      console.log('Server is closed');
+      log('Server is closed');
     });
-    console.log('closing db connection');
+    log('closing db connection');
     db.disconnect()
       .then(() => {
-        console.log('DB connection closed');
+        log('DB connection closed');
         // exit process
         // this may close kept alive sockets
         // eslint-disable-next-line no-process-exit

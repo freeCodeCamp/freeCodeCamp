@@ -1,15 +1,19 @@
+const createDebugger = require('debug');
+
+const log = createDebugger('fcc:boot:explorer');
+
 module.exports = function mountLoopBackExplorer(app) {
   if (process.env.NODE_ENV === 'production') {
     return;
   }
-  var explorer;
+  let explorer;
   try {
     explorer = require('loopback-component-explorer');
   } catch (err) {
     // Print the message only when the app was started via `app.listen()`.
     // Do not print any message when the project is used as a component.
     app.once('started', function() {
-      console.log(
+      log(
         'Run `npm install loopback-component-explorer` to enable ' +
         'the LoopBack explorer'
       );
@@ -17,13 +21,13 @@ module.exports = function mountLoopBackExplorer(app) {
     return;
   }
 
-  var restApiRoot = app.get('restApiRoot');
-  var mountPath = '/explorer';
+  const restApiRoot = app.get('restApiRoot');
+  const mountPath = '/explorer';
 
   explorer(app, { basePath: restApiRoot, mountPath });
   app.once('started', function() {
-    var baseUrl = app.get('url').replace(/\/$/, '');
+    const baseUrl = app.get('url').replace(/\/$/, '');
 
-    console.log('Browse your REST API at %s%s', baseUrl, mountPath);
+    log('Browse your REST API at %s%s', baseUrl, mountPath);
   });
 };

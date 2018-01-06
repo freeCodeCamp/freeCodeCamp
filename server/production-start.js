@@ -1,16 +1,22 @@
 // this ensures node understands the future
 require('babel-register');
 const _ = require('lodash');
+const createDebugger = require('debug');
 
+const log = createDebugger('fcc:server:production-start');
 const startTime = Date.now();
+// force logger to always output
+// this may be brittle
+log.enabled = true;
 // this is where server starts booting up
 const app = require('./server');
+
 
 let timeoutHandler;
 let killTime = 15;
 
 const onConnect = _.once(() => {
-  console.log('db connected in: %s', Date.now() - startTime);
+  log('db connected in: %s', Date.now() - startTime);
   if (timeoutHandler) {
     clearTimeout(timeoutHandler);
   }
