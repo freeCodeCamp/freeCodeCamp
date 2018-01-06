@@ -1,32 +1,27 @@
 // this ensures node understands the future
 require('babel-register');
+const _ = require('lodash');
 
-var startTime = Date.now();
-var timeoutHandler;
+const startTime = Date.now();
 // this is where server starts booting up
-var app = require('./server');
+const app = require('./server');
 
-console.log('waiting for db to connect');
+let timeoutHandler;
+let killTime = 15;
 
-
-var onConnect = function() {
-  console.log('db connected in %s ms', Date.now() - startTime);
+const onConnect = _.once(() => {
+  console.log('db connected in: %s', Date.now() - startTime);
   if (timeoutHandler) {
     clearTimeout(timeoutHandler);
   }
   app.start();
-};
+});
 
-timeoutHandler = setTimeout(function() {
-  var message =
-    'db did not connect after  ' +
-    (Date.now() - startTime) +
-    ' ms --- crashing hard';
-
-  console.log(message);
+timeoutHandler = setTimeout(() => {
+  const message = `db did not connect after ${killTime}s -- crashing hard`;
   // purposely shutdown server
   // pm2 should restart this in production
   throw new Error(message);
-}, 15000);
+}, killTime * 1000);
 
 app.dataSources.db.on('connected', onConnect);
