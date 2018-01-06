@@ -59,7 +59,7 @@ export class Project extends PureComponent {
         <Image
           id={ id }
           responsive={ true }
-          src={ imageURL }
+          src={ image ? imageURL : false }
         />
         <br />
         <ToolPanel />
