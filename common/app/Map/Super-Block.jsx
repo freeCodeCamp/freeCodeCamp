@@ -6,7 +6,7 @@ import FA from 'react-fontawesome';
 import { Panel } from 'react-bootstrap';
 
 import ns from './ns.json';
-import Block from './Block.jsx';
+import Blocks from './Blocks.jsx';
 import {
   toggleThisPanel,
 
@@ -14,12 +14,12 @@ import {
 } from './redux';
 import { makeSuperBlockSelector } from '../entities';
 
-const dispatchActions = { toggleThisPanel };
+const mapDispatchToProps = { toggleThisPanel };
 // make selectors unique to each component
 // see
 // reactjs/reselect
 // sharing-selectors-with-props-across-multiple-components
-function makeMapStateToProps(_, { dashedName }) {
+function mapStateToProps(_, { dashedName }) {
   return createSelector(
     makeSuperBlockSelector(dashedName),
     makePanelOpenSelector(dashedName),
@@ -50,18 +50,6 @@ export class SuperBlock extends PureComponent {
   handleSelect(eventKey, e) {
     e.preventDefault();
     this.props.toggleThisPanel(eventKey);
-  }
-
-  renderBlocks(blocks) {
-    if (!Array.isArray(blocks) || !blocks.length) {
-      return null;
-    }
-    return blocks.map(dashedName => (
-      <Block
-        dashedName={ dashedName }
-        key={ dashedName }
-      />
-    ));
   }
 
   renderMessage(message) {
@@ -108,9 +96,7 @@ export class SuperBlock extends PureComponent {
         onSelect={ this.handleSelect }
         >
         { this.renderMessage(message) }
-        <div className={ `${ns}-accordion-block` }>
-          { isOpen && this.renderBlocks(blocks) }
-        </div>
+        <Blocks blocks={ blocks } />
       </Panel>
     );
   }
@@ -120,6 +106,6 @@ SuperBlock.displayName = 'SuperBlock';
 SuperBlock.propTypes = propTypes;
 
 export default connect(
-  makeMapStateToProps,
-  dispatchActions
+  mapStateToProps,
+  mapDispatchToProps
 )(SuperBlock);
