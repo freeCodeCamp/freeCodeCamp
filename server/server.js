@@ -10,17 +10,17 @@ if (process.env.OPBEAT_ID) {
   });
 }
 
-var _ = require('lodash'),
-    Rx = require('rx'),
-    loopback = require('loopback'),
-    boot = require('loopback-boot'),
-    expressState = require('express-state'),
-    path = require('path'),
-    setupPassport = require('./component-passport');
+const _ = require('lodash');
+const Rx = require('rx');
+const loopback = require('loopback');
+const boot = require('loopback-boot');
+const expressState = require('express-state');
+const path = require('path');
+const setupPassport = require('./component-passport');
 
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
-var app = loopback();
-var isBeta = !!process.env.BETA;
+const app = loopback();
+const isBeta = !!process.env.BETA;
 
 expressState.extend(app);
 app.set('state namespace', '__fcc__');
@@ -37,8 +37,10 @@ boot(app, {
 
 setupPassport(app);
 
+const { db } = app.datasources;
+db.on('connected', _.once(() => console.log('db connected')));
 app.start = _.once(function() {
-  app.listen(app.get('port'), function() {
+  const server = app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(
       'freeCodeCamp server listening on port %d in %s',
@@ -48,6 +50,23 @@ app.start = _.once(function() {
     if (isBeta) {
       console.log('freeCodeCamp is in beta mode');
     }
+    console.log(`connecting to db at ${db.settings.url}`);
+  });
+
+  process.on('SIGINT', () => {
+    console.log('Shutting down server');
+    server.close(() => {
+      console.log('Server is closed');
+    });
+    console.log('closing db connection');
+    db.disconnect()
+      .then(() => {
+        console.log('DB connection closed');
+        // exit process
+        // this may close kept alive sockets
+        // eslint-disable-next-line no-process-exit
+        process.exit(0);
+      });
   });
 });
 
