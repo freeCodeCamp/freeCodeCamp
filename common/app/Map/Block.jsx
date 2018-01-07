@@ -6,7 +6,7 @@ import FA from 'react-fontawesome';
 import { Panel } from 'react-bootstrap';
 
 import ns from './ns.json';
-import Challenge from './Challenge.jsx';
+import Challenges from './Challenges.jsx';
 import {
   toggleThisPanel,
 
@@ -26,7 +26,7 @@ function makeMapStateToProps(_, { dashedName }) {
         dashedName,
         title: block.title,
         time: block.time,
-        challenges: block.challenges
+        challenges: block.challenges || []
       };
     }
   );
@@ -66,18 +66,6 @@ export class Block extends PureComponent {
     );
   }
 
-  renderChallenges(challenges) {
-    if (!Array.isArray(challenges) || !challenges.length) {
-      return <div>No Challenges Found</div>;
-    }
-    return challenges.map(dashedName => (
-      <Challenge
-        dashedName={ dashedName }
-        key={ dashedName }
-      />
-    ));
-  }
-
   render() {
     const {
       title,
@@ -97,7 +85,7 @@ export class Block extends PureComponent {
         key={ title }
         onSelect={ this.handleSelect }
         >
-        { isOpen && this.renderChallenges(challenges) }
+        { isOpen && <Challenges challenges={ challenges } /> }
       </Panel>
     );
   }
