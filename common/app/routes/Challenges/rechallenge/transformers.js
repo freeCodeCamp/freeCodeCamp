@@ -158,5 +158,5 @@ export function applyTransformers(file, transformers = _transformers) {
       return obs.flatMap(file => castToObservable(transformer(file)));
     },
     Observable.of(file)
-    );
+  );
 }
