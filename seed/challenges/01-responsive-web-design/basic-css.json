@@ -1168,7 +1168,8 @@
             "<code>&lt;img class=\"class1 class2\"&gt;</code>"
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/add-borders-around-your-elements"
     },
     {
       "id": "bad87fee1348bd9aedf08814",
@@ -1281,7 +1282,8 @@
             "Внимание: это задание подразумевает наличие нескольких возможных решений. Например, вы можете добавить <code>border-radius</code> как к классу <code>.thick-green-border</code>, так и к классу <code>.smaller-image</code>."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/add-rounded-corners-a-border-radius"
     },
     {
       "id": "bad87fee1348bd9aedf08815",
@@ -1884,7 +1886,8 @@
             "Измените значение свойства <code>padding</code> вашего зелёного прямоугольника, чтобы он был равен соответствующему значению красного прямоугольника."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/adjust-the-padding-of-an-element"
     },
     {
       "id": "bad87fee1348bd9aedf08822",
@@ -1980,7 +1983,8 @@
             "Измените значение отступа <code>margin</code> зелёного прямоугольника так, чтобы оно равнялось соответствующему значению красного прямоугольника."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element"
     },
     {
       "id": "bad87fee1348bd9aedf08823",
@@ -2075,7 +2079,8 @@
             "Измените значение свойства <code>margin</code> зелёного прямоугольника на <code>-15px</code>, таким образом он занимает всю ширину окружающего жёлтого прямоугольника."
           ]
         }
-      }
+      },
+      "guideUrl": "https://guide.freecodecamp.org/certificates/add-a-negative-margin-to-an-element"
     },
     {
       "id": "bad87fee1348bd9aedf08824",
@@ -2169,7 +2174,8 @@
             "Присвойте зелёному прямоугольнику <code>padding</code> равный <code>40px</code> сверху и слева, но только <code>20px</code> снизу и справа."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element"
     },
     {
       "id": "bad87fee1248bd9aedf08824",

@@ -110,6 +110,10 @@
       "type": "object",
       "default": "{}"
     },
+    "guideUrl" : {
+      "type": "string",
+      "description": "Used to link to an article in the FCC guide"
+    },
     "required": {
       "type": [
         {

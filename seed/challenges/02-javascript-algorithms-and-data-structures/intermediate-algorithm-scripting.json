@@ -1055,7 +1055,8 @@
             "N'oublie pas d'utiliser <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/arguments-optional"
     },
     {
       "id": "a2f1d72d9b908d0bd72bb9f6",

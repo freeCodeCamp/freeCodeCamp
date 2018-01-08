@@ -2188,7 +2188,8 @@
             "Appliquez les deux classes <code>btn</code> et <code>btn-default</code> à chacun de vos éléments <code>button</code>"
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/apply-the-default-bootstrap-button-style"
     },
     {
       "id": "bad87fee1348bd9aec908852",

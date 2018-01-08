@@ -12,6 +12,7 @@ const unlockWarning = (
 
 const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
+  guideUrl: PropTypes.string,
   hint: PropTypes.string,
   isCodeLocked: PropTypes.bool,
   makeToast: PropTypes.func.isRequired,
@@ -93,6 +94,7 @@ export default class ToolPanel extends PureComponent {
   render() {
     const {
       executeChallenge,
+      guideUrl,
       hint,
       isCodeLocked,
       openBugModal,
@@ -129,6 +131,20 @@ export default class ToolPanel extends PureComponent {
             Get Help
           </Button>
           <div className='button-spacer' />
+          {guideUrl &&
+            <div>
+              <Button
+                block={ true }
+                bsStyle='primary'
+                className='btn-big'
+                href={ guideUrl }
+                target='_blank'
+                >
+                See Guide
+              </Button>
+              <div className='button-spacer' />
+            </div>
+          }
           <Button
             block={ true }
             bsStyle='primary'
