@@ -708,9 +708,15 @@
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+        "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
         "Here's an example:",
-        "<code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.org\"&#62; link to freecodecamp.org&#60;/a&#62; for you to follow.&#60;/p&#62;</code>",
+        "<blockquote>&#60;p&#62;<br>  Here's a <br>  &#60;a href=\"http://freecodecamp.org\"&#62; <br>    link to freecodecamp.org<br>  &#60;/a&#62;<br>  for you to follow.<br>&#60;/p&#62;</blockquote>",
+        "Let's break down the example:",
+        "Normal text is wrapped in the <code>p</code> element:<br> <code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>",
+        "Next is the <code>anchor</code> element <code>&#60;a&#62;</code> (which requires a closing tag <code>&#60;/a&#62;</code>):<br>  <code>&#60;a&#62; ... &#60;/a&#62;</code>",
+        "<code>href</code> is an anchor tag attribute that contains the URL address of the link:<br>  <code>&#60;a href=\"http://freecodecamp.org\"> ... &#60;/a&#62;</code>",
+        "The text, <strong>\"link to freecodecamp.org\"</strong>, within the anchor element called <code>anchor text</code>, will display a link to click:<br>  <code>&#60;a href=\" ... \"&#62;link to freecodecamp.org&#60;/a&#62;</code>",
+        "The final output of the example will look like this:<br><p>Here's a <a href=\"http://freecodecamp.org\"> link to freecodecamp.org</a></p>",
         "<hr>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
