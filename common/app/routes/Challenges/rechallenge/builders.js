@@ -64,7 +64,7 @@ export const cssToHtml = cond([
     matchesProperty('ext', 'css'),
     flow(padContentWithHTMLCatch, wrapInStyle, setExtToHTML)
   ],
-	[ stubTrue, identity ]
+  [ stubTrue, identity ]
 ]);
 
 // FileStream::concactHtml(
