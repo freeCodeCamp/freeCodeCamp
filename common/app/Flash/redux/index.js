@@ -8,18 +8,13 @@ import {
 
 import ns from '../ns.json';
 
-export const types = createTypes([
-  'clickOnClose'
-], ns);
-
-export const clickOnClose = createAction(types.clickOnClose, _.noop);
-
 export const alertTypes = _.keyBy(_.identity)([
   'success',
   'info',
   'warning',
   'danger'
 ]);
+export const normalizeAlertType = _.get(alertTypes, 'info');
 
 export const getFlashAction = _.flow(
   _.property('meta'),
@@ -31,8 +26,24 @@ export const isFlashAction = _.flow(
   Boolean
 );
 
+export const types = createTypes([
+  'clickOnClose',
+  'messagesFoundOnBoot'
+], ns);
+
+export const clickOnClose = createAction(types.clickOnClose, _.noop);
+export const messagesFoundOnBoot = createAction(types.messagesFoundOnBoot);
+
+export const expressToStack = _.flow(
+  _.toPairs,
+  _.flatMap(([ type, messages ]) => messages.map(({ msg }) => ({
+    message: msg,
+    alertType: normalizeAlertType(type)
+  })))
+);
+
 const defaultState = {
-  stack: [{ alertType: 'danger', message: 'foo bar' }]
+  stack: [{ alertType: 'danger', message: 'foo nar' }]
 };
 
 const getNS = _.property(ns);
@@ -51,6 +62,10 @@ export default composeReducers(
       [types.clickOnClose]: (state) => ({
         ...state,
         stack: _.tail(state.stack)
+      }),
+      [types.messagesFoundOnBoot]: (state, { payload }) => ({
+        ...state,
+        stack: [...state.stack, ...expressToStack(payload)]
       })
     }),
     defaultState,
@@ -63,7 +78,7 @@ export default composeReducers(
         stack: [
           ...state.stack,
           {
-            alertType: alertTypes[alertType] || 'info',
+            alertType: normalizeAlertType(alertType),
             message: _.escape(message)
           }
         ]

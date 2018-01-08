@@ -5,10 +5,10 @@ import { render } from 'redux-epic';
 import createHistory from 'history/createBrowserHistory';
 import useLangRoutes from './utils/use-lang-routes';
 import sendPageAnalytics from './utils/send-page-analytics';
-import flashToToast from './utils/flash-to-toast';
 
 import { App, createApp, provideStore } from '../common/app';
 import { getLangFromPath } from '../common/app/utils/lang';
+import flashReducer, { messagesFoundOnBoot } from '../common/app/Flash/redux';
 
 // client specific epics
 import epics from './epics';
@@ -29,7 +29,7 @@ const {
   document,
   ga,
   __fcc__: {
-    flash = [],
+    flash = {},
     data: ssrState = {},
     csrf: {
       token: csrfToken
@@ -51,7 +51,10 @@ const defaultState = isColdStored() ?
 const primaryLang = getLangFromPath(location.pathname);
 
 defaultState.app.csrfToken = csrfToken;
-defaultState.toasts = flashToToast(flash);
+defaultState.flash = flashReducer(
+  defaultState.flash,
+  messagesFoundOnBoot(flash)
+);
 
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
@@ -78,7 +81,7 @@ createApp({
       });
     }
   })
-  .doOnNext(() => log('rendering'))
+  .do(() => log('rendering'))
   .flatMap(({ store }) => render(provideStore(App, store), DOMContainer))
   .subscribe(
     () => debug('react rendered'),
