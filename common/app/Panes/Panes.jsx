@@ -7,7 +7,6 @@ import {
   panesSelector,
   panesByNameSelector,
   panesMounted,
-  heightSelector,
   widthSelector
 } from './redux';
 import Pane from './Pane.jsx';
@@ -16,9 +15,8 @@ import Divider from './Divider.jsx';
 const mapStateToProps = createSelector(
   panesSelector,
   panesByNameSelector,
-  heightSelector,
   widthSelector,
-  (panes, panesByName, height) => {
+  (panes, panesByName) => {
     let lastDividerPosition = 0;
     return {
       panes: panes
@@ -33,8 +31,7 @@ const mapStateToProps = createSelector(
             left: index === 0 ? 0 : left,
             right: index + 1 === numOfPanes ? 0 : 100 - dividerLeft
           };
-        }, {}),
-      height
+        }, {})
     };
   }
 );
@@ -42,7 +39,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = { panesMounted };
 
 const propTypes = {
-  height: PropTypes.number.isRequired,
   panes: PropTypes.array,
   panesMounted: PropTypes.func.isRequired,
   render: PropTypes.func.isRequired
@@ -83,9 +79,8 @@ export class Panes extends PureComponent {
   }
 
   render() {
-    const { height } = this.props;
     const outerStyle = {
-      height,
+      height: '100%',
       position: 'relative',
       width: '100%'
     };

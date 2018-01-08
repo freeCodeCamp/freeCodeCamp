@@ -27,11 +27,7 @@ export const types = createTypes([
   'dividerClicked',
   'dividerMoved',
   'mouseReleased',
-  'windowResized',
-
-  // commands
-  'hidePane',
-  'updateNavHeight'
+  'windowResized'
 ], ns);
 
 export const panesMapUpdated = createAction(
@@ -49,24 +45,14 @@ export const dividerMoved = createAction(types.dividerMoved);
 export const mouseReleased = createAction(types.mouseReleased);
 export const windowResized = createAction(types.windowResized);
 
-// commands
-export const hidePane = createAction(types.hidePane);
-export const updateNavHeight = createAction(types.updateNavHeight);
-
 const defaultState = {
-  height: 600,
   width: 800,
-  navHeight: 50,
   panes: [],
   panesByName: {},
   panesMap: {},
   pressedDivider: null
 };
 export const getNS = state => state[ns];
-export const heightSelector = state => {
-  const { navHeight, height } = getNS(state);
-  return height - navHeight;
-};
 
 export const panesSelector = state => getNS(state).panes;
 export const panesByNameSelector = state => getNS(state).panesByName;
@@ -142,9 +128,8 @@ export default function createPanesAspects({ createPanesMap }) {
           };
         },
         [types.mouseReleased]: state => ({ ...state, pressedDivider: null }),
-        [types.windowResized]: (state, { payload: { height, width } }) => ({
+        [types.windowResized]: (state, { payload: { width } }) => ({
           ...state,
-          height,
           width
         }),
         // used to clear bin buttons
@@ -153,10 +138,6 @@ export default function createPanesAspects({ createPanesMap }) {
           panes: [],
           panesByName: {},
           pressedDivider: null
-        }),
-        [types.updateNavHeight]: (state, { payload: navHeight }) => ({
-          ...state,
-          navHeight
         })
       }),
       defaultState
