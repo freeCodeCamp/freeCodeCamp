@@ -8,12 +8,16 @@
   // they are painted using css so the
   // nav is on top again
   .grid(@direction: column);
+  height: 100%;
+  width: 100%;
 }
 
 .@{ns}-content {
   // makes the inital content height 0px
   // then lets it grow to fit the rest of the space
   flex: 1 0 0px;
+  // allow content to adapt to screen size
+  display: flex;
 }
 
 .@{ns}-centered {
