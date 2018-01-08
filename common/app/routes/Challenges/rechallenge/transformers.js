@@ -37,7 +37,7 @@ const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
 const isJS = matchesProperty('ext', 'js');
 const testHTMLJS = overSome(isJS, matchesProperty('ext', 'html'));
-const testJS$JSX = overSome(isJS, matchesProperty('ext', 'jsx'));
+export const testJS$JSX = overSome(isJS, matchesProperty('ext', 'jsx'));
 
 // work around the absence of multi-flile editing
 // this can be replaced with `matchesProperty('ext', 'sass')`
@@ -107,30 +107,17 @@ export const replaceNBSP = cond([
   [ stubTrue, identity ]
 ]);
 
-const transformErrorWarn = '/* __fcc--TransformError__ */';
-
-function tryJSTransform(wrap = identity, defaultAssignment = 'code') {
+function tryTransform(wrap = identity) {
   return function transformWrappedPoly(source) {
     const result = attempt(wrap, source);
     if (isError(result)) {
       const friendlyError = `${result}`
         .match(/[\w\W]+?\n/)[0]
         .replace(' unknown:', '');
-      console.error(friendlyError);
-      return `var ${defaultAssignment} = null; ${transformErrorWarn}`;
+      throw new Error(friendlyError);
     }
     return result;
   };
-}
-
-function checkForTransformError(file) {
-  const potentialError = file.contents.includes(transformErrorWarn);
-  if (potentialError) {
-    return {
-      ...vinyl.setTransformError(true, file)
-    };
-  }
-  return file;
 }
 
 export const babelTransformer = cond([
@@ -139,10 +126,9 @@ export const babelTransformer = cond([
     flow(
       partial(
         vinyl.transformHeadTailAndContents,
-        tryJSTransform(babelTransformCode, 'JSX')
+        tryTransform(babelTransformCode)
       ),
-      partial(vinyl.setExt, 'js'),
-      checkForTransformError
+      partial(vinyl.setExt, 'js')
     )
   ],
   [ stubTrue, identity ]

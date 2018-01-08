@@ -42,6 +42,7 @@ export function updateMainEpic(actions, { getState }, { document }) {
       const proxyLogger = new Subject();
       const frameMain = createMainFramer(document, getState, proxyLogger);
       const buildAndFrameMain = actions::ofType(
+        types.unlockUntrustedCode,
         types.modernEditorUpdated,
         types.classicEditorUpdated,
         types.executeChallenge,
@@ -61,7 +62,6 @@ export function updateMainEpic(actions, { getState }, { document }) {
       return Observable.merge(buildAndFrameMain, proxyLogger.map(updateOutput));
     });
 }
-
 
 export function executeChallengeEpic(actions, { getState }, { document }) {
   return Observable.of(document)

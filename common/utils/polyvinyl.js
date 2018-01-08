@@ -5,11 +5,11 @@ import castToObservable from '../app/utils/cast-to-observable.js';
 
 
 // createFileStream(
-//   files: Dictionary[Path, PolyVinyl]
+//   files: List[ PolyVinyl ]
 // ) => Observable[...Observable[...PolyVinyl]]
-export function createFileStream(files = {}) {
+export function createFileStream(files = []) {
   return Observable.of(
-    Observable.from(Object.keys(files).map(key => files[key]))
+    Observable.from(files)
   );
 }
 
@@ -77,8 +77,7 @@ export function createPoly({
     path: name + '.' + ext,
     key: name + ext,
     contents,
-    error: null,
-    transformError: false
+    error: null
   };
 }
 
@@ -154,19 +153,6 @@ export function setError(error, poly) {
   return {
     ...poly,
     error
-  };
-}
-// setTransformError(transformError: Boolean, poly: PolyVinyl) => PolyVinyl
-export function setTransformError(transformError, poly) {
-  invariant(
-    typeof transformError === 'boolean',
-    'transformError must be a boolean, but got %',
-    transformError
-  );
-  checkPoly(poly);
-  return {
-    ...poly,
-    transformError
   };
 }
 
