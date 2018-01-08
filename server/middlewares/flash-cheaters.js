@@ -16,7 +16,7 @@ export default function flashCheaters() {
       EXCLUDED_PATHS.indexOf(req.path) === -1 &&
       req.user && req.url !== '/' && req.user.isCheater
     ) {
-      req.flash('errors', {
+      req.flash('danger', {
         msg: dedent`
           Upon review, this account has been flagged for academic
           dishonesty. If you’re the owner of this account contact

@@ -30,7 +30,7 @@ export default function prodErrorHandler() {
     if (type === 'html') {
       if (typeof req.flash === 'function') {
         req.flash(
-          handled.type || 'errors',
+          handled.type || 'danger',
           { msg: message }
         );
       }

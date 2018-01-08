@@ -238,7 +238,7 @@ module.exports = function(User) {
     return User.findById(uid, (err, user) => {
 
         if (err || !user || !user.newEmail) {
-          ctx.req.flash('error', {
+          ctx.req.flash('danger', {
             msg: dedent`Oops, something went wrong, please try again later`
           });
           return ctx.res.redirect('/');
@@ -309,7 +309,7 @@ module.exports = function(User) {
           return next();
         }
 
-        req.flash('error', {
+        req.flash('danger', {
           msg: dedent`
       The ${req.body.email} email address is already associated with an account.
       Try signing in with it here instead.
@@ -320,7 +320,7 @@ module.exports = function(User) {
       })
       .catch(err => {
         console.error(err);
-        req.flash('error', {
+        req.flash('danger', {
           msg: 'Oops, something went wrong, please try again later'
         });
         return res.redirect('/email-signin');
@@ -376,7 +376,7 @@ module.exports = function(User) {
     var res = ctx.res;
     var req = ctx.req;
 
-    req.flash('errors', {
+    req.flash('danger', {
       msg: 'Invalid username or password.'
     });
     return res.redirect('/email-signin');
