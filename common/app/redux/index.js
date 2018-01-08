@@ -12,7 +12,6 @@ import { createSelector } from 'reselect';
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
-import navSizeEpic from './nav-size-epic.js';
 
 import { createFilesMetaCreator } from '../files';
 import { updateThemeMetacreator, entitiesSelector } from '../entities';
@@ -26,8 +25,7 @@ import { themes, invertTheme } from '../../utils/themes.js';
 export const epics = [
   fetchUserEpic,
   fetchChallengesEpic,
-  updateMyCurrentChallengeEpic,
-  navSizeEpic
+  updateMyCurrentChallengeEpic
 ];
 
 export const types = createTypes([
