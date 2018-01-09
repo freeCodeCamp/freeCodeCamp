@@ -143,6 +143,7 @@
     "babel-loader": "^6.2.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-lodash": "^3.2.11",
+    "babel-plugin-transform-imports": "^1.4.1",
     "babel-preset-stage-0": "^6.3.13",
     "browser-sync": "^2.9.12",
     "chunk-manifest-webpack-plugin": "0.1.0",
@@ -189,6 +190,7 @@
     "webpack-hot-middleware": "^2.12.2",
     "webpack-manifest-plugin": "^1.0.0",
     "webpack-stream": "^3.1.0",
+    "webpack-visualizer-plugin": "^0.1.11",
     "yargs": "^7.0.1"
   },
   "snyk": true,
