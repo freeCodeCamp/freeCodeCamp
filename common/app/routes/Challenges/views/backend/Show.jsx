@@ -1,11 +1,11 @@
 import React from 'react';
 import { addNS } from 'berkeleys-redux-utils';
 
+import ChildContainer from '../../Child-Container.jsx';
 import BackEnd from './Back-End.jsx';
 import { types } from '../../redux';
 import Panes from '../../../../Panes';
 import _Map from '../../../../Map';
-import ChildContainer from '../../../../Child-Container.jsx';
 
 const propTypes = {};
 
