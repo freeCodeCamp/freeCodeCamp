@@ -105,14 +105,16 @@ export default handleActions(
       };
     },
     [types.fetchMapUi.complete]: (state, { payload }) => {
-      const { entities, result } = payload;
+      const { entities, result, initialNode } = payload;
+      const mapUi = utils.createMapUi(entities, result);
       return {
         ...state,
         ...result,
-        mapUi: utils.createMapUi(entities, result)
+        mapUi: utils.openPath(mapUi, initialNode)
       };
     }
   }),
   initialState,
   ns
 );
+

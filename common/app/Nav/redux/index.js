@@ -8,7 +8,7 @@ import {
 
 import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
 import ns from '../ns.json';
-import { createEventMetaCreator } from '../../redux';
+import { createEventMetaCreator } from '../../analytics/index';
 
 export const epics = [
   loadCurrentChallengeEpic
