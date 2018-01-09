@@ -145,6 +145,7 @@
     "babel-plugin-transform-imports": "^1.4.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-stage-0": "^6.3.13",
+    "babel-preset-stage-3": "^6.24.1",
     "browser-sync": "^2.9.12",
     "chunk-manifest-webpack-plugin": "^1.1.2",
     "commitizen": "^2.9.6",

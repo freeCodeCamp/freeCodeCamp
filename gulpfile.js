@@ -19,7 +19,6 @@ const Rx = require('rx'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
   merge = require('merge-stream'),
-  babel = require('gulp-babel'),
   sourcemaps = require('gulp-sourcemaps'),
   gulpif = require('gulp-if'),
 
@@ -29,6 +28,7 @@ const Rx = require('rx'),
   webpackDevMiddleware = require('webpack-dev-middleware'),
   webpackHotMiddleware = require('webpack-hot-middleware'),
   webpackConfig = require('./webpack.config.js'),
+  webpackFrameConfig = require('./webpack.frame-runner.js'),
 
   // server process
   nodemon = require('gulp-nodemon'),
@@ -129,12 +129,6 @@ const paths = {
     resolve('mousetrap', '.js', '.min.js'),
     resolve('lightbox2', '.js', '.min.js'),
     resolve('rx', 'index.js', 'dist/rx.all.min.js')
-  ],
-
-  js: [
-    'client/main.js',
-    'client/frame-runner.js',
-    'client/plugin.js'
   ],
 
   less: './client/less/main.less',
@@ -298,6 +292,26 @@ gulp.task('pack-client', function() {
     .pipe(gulp.dest(dest));
 });
 
+gulp.task('pack-frame-runner', function() {
+  if (!__DEV__) { console.log('\n\nbundling frame production\n\n'); }
+
+  function condition(file) {
+    const filepath = file.relative;
+    return __DEV__ || (/json$/).test('' + filepath);
+  }
+
+  const dest = webpackFrameConfig.output.path;
+
+  return gulp.src(webpackFrameConfig.entry)
+    .pipe(plumber({ errorHandler }))
+    .pipe(webpackStream({
+      ...webpackFrameConfig,
+      ...webpackOptions
+    }))
+    .pipe(gulpif(condition, gutil.noop(), uglify()))
+    .pipe(gulp.dest(dest));
+});
+
 const webpackManifestFiles = [ 'react-manifest.json', 'chunk-manifest.json' ];
 gulp.task('move-webpack-manifest', ['pack-client'], function() {
   const files = webpackManifestFiles.map(function(filename) {
@@ -385,12 +399,7 @@ gulp.task('js', function() {
         __DEV__ ?
           sourcemaps.write({ sourceRoot: '/vendor' }) :
           gutil.noop()
-      ),
-
-    gulp.src(paths.js)
-      .pipe(plumber({ errorHandler }))
-      .pipe(babel())
-      .pipe(__DEV__ ? gutil.noop() : uglify())
+      )
   );
 
   return jsFiles
@@ -434,6 +443,7 @@ gulp.task('build', [
   'less',
   'js',
   'pack-client',
+  'pack-frame-runner',
   'move-webpack-manifest',
   'clean-webpack-manifest',
   'build-manifest'
@@ -443,20 +453,22 @@ const watchDependents = [
   'less',
   'js',
   'serve',
+  'pack-frame-runner',
   'dev-server'
 ];
 
 gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.lessFiles, ['less']);
-  gulp.watch(paths.js.concat(paths.vendorChallenges), ['js']);
-  gulp.watch(paths.js, ['js']);
+  gulp.watch(paths.vendorChallenges, ['js']);
+  gulp.watch(webpackFrameConfig.entry, ['pack-frame-runner']);
 });
 
 gulp.task('default', [
   'less',
   'serve',
   'watch',
-  'dev-server'
+  'dev-server',
+  'pack-frame-runner'
 ]);
 
 gulp.task('test', function() {

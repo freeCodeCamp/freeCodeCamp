@@ -4,9 +4,7 @@ const path = require('path');
 const __DEV__ = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  entry: {
-    'frame-runner': './client/frame-runner.js'
-  },
+  entry: './client/frame-runner.js',
   devtool: __DEV__ ? 'inline-source-map' : null,
   node: {
     // Mock Node.js modules that Babel require()s but that we don't
@@ -16,19 +14,35 @@ module.exports = {
     net: 'empty'
   },
   output: {
-    filename: '[name].js',
-    chunkFilename: '[name]-[name].js',
+    filename: __DEV__ ? 'frame-runner.js' : 'frame-runner-[hash].js',
     path: path.join(__dirname, '/public/js'),
     publicPath: '/js'
   },
+  stats: {
+    // Examine all modules
+    maxModules: Infinity,
+    // Display bailout reasons
+    optimizationBailout: true
+  },
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        include: [ path.join(__dirname, 'client/') ],
-        loaders: [ 'babel' ]
+    rules: [{
+      test: /\.jsx?$/,
+      include: [ path.join(__dirname, 'client/') ],
+      use: {
+        loader: 'babel-loader',
+        options: {
+          babelrc: false,
+          presets: [
+            [ 'es2015', { modules: false }],
+            [ 'stage-3' ]
+          ],
+          plugins: [
+            'transform-runtime',
+            'lodash'
+          ]
+        }
       }
-    ]
+    }]
   },
   externals: {
     rx: 'Rx'
@@ -45,14 +59,13 @@ module.exports = {
       /debug\/node/,
       'debug/src/browser'
     ),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(true)
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 };
 
 if (__DEV__) {
   module.exports.plugins.push(
     // prevents build on error
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   );
 }
