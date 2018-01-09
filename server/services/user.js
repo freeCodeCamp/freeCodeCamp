@@ -39,6 +39,7 @@ const publicUserProps = [
   'sendMonthlyEmail',
   'sendNotificationEmail',
   'sendQuincyEmail',
+  'isPublicEmail',
 
   'currentChallengeId',
   'challengeMap'
@@ -62,7 +63,8 @@ export default function userServices() {
                 [user.username]: {
                   ..._.pick(user, publicUserProps),
                   isTwitter: !!user.twitter,
-                  isLinkedIn: !!user.linkedIn
+                  isLinkedIn: !!user.linkedIn,
+                  isWebsite: !!user.website
                 }
               }
             },

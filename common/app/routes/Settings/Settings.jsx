@@ -10,7 +10,9 @@ import InternetSettings from './components/Internet-Settings.jsx';
 import PortfolioSettings from './components/Portfolio-Settings.jsx';
 import ProjectSettings from './components/Project-Settings.jsx';
 import SettingsSkeleton from './components/Settings-Skeleton.jsx';
-
+import JobSettings from './components/Job-Settings.jsx';
+import LanguageSettings from './components/Language-Settings.jsx';
+import ChildContainer from '../../Child-Container.jsx';
 import {
   updateTitle,
   signInLoadingSelector,
@@ -39,7 +41,7 @@ const propTypes = {
   username: PropTypes.string
 };
 
-export class Settings extends React.Component {
+class Settings extends React.Component {
 
   componentDidMount() {
     this.props.updateTitle('Settings');
@@ -63,34 +65,28 @@ export class Settings extends React.Component {
     return (
       <ChildContainer>
         <div className={`container ${ns}-container`}>
-          <h2>Account Settings</h2>
-          <br />
           <AccountSettings />
           <hr />
           <h2>Email Settings</h2>
           <br />
           <EmailSettings />
           <hr />
+          <h2>Language Settings</h2>
+          <br />
+          <LanguageSettings />
+          <hr />
           <h2>Your internet presence</h2>
           <br />
           <InternetSettings />
           <hr />
-          <h2>Your FreeCodeCamp Projects</h2>
+          <h2>Job Settings</h2>
           <br />
-          <p>
-            Add links to the live demos of your projects as you finish them.
-            Then, once you have added all 5 projects required for a certificate,
-            you can claim it.
-          </p>
-          <ProjectSettings/>
-          <br />
+          <JobSettings />
           <hr />
-          <h2>Your Portfolio</h2>
-          <p>
-            Share your non-FreeCodeCamp projects, articles or accepted
-            pull requests:
-          </p>
           <PortfolioSettings/>
+          <hr />
+          <ProjectSettings/>
+          <hr />
         </div>
       </ChildContainer>
     );

@@ -94,6 +94,13 @@ class ProjectSettings extends Component {
     }
     return (
       <div>
+        <h2>Your FreeCodeCamp Projects</h2>
+        <br />
+        <p>
+          Add links to the live demos of your projects as you finish them.
+          Then, once you have added all 5 projects required for a certificate,
+          you can claim it.
+        </p>
       {
         projects.map(block => {
           const blockName = _.kebabCase(block.projectBlockName);

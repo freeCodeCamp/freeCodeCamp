@@ -1,0 +1,197 @@
+import PropTypes from 'prop-types';
+import React from 'react';
+import _ from 'lodash';
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
+import {
+  Button,
+  Row,
+  Col
+} from 'react-bootstrap';
+
+import { userSelector } from '../../../redux';
+
+const mapStateToProps = createSelector(
+  userSelector,
+  ({
+    isRespWebDesignCert,
+    is2018DataVisCert,
+    isFrontEndLibsCert,
+    isJsAlgoDataStructCert,
+    isApisMicroservicesCert,
+    isInfosecQaCert,
+    isFrontEndCert,
+    isBackEndCert,
+    isDataVisCert,
+    isFullStackCert,
+    username
+  }) => ({
+    isRespWebDesignCert,
+    is2018DataVisCert,
+    isFrontEndLibsCert,
+    isJsAlgoDataStructCert,
+    isApisMicroservicesCert,
+    isInfosecQaCert,
+    isFrontEndCert,
+    isBackEndCert,
+    isDataVisCert,
+    isFullStackCert,
+    username
+  })
+);
+
+function mapDispatchToProps() {
+  return {};
+}
+
+const propTypes = {
+  is2018DataVisCert: PropTypes.bool,
+  is2018FullStackCert: PropTypes.bool,
+  isApisMicroservicesCert: PropTypes.bool,
+  isBackEndCert: PropTypes.bool,
+  isDataVisCert: PropTypes.bool,
+  isFrontEndCert: PropTypes.bool,
+  isFrontEndLibsCert: PropTypes.bool,
+  isFullStackCert: PropTypes.bool,
+  isInfosecQaCert: PropTypes.bool,
+  isJsAlgoDataStructCert: PropTypes.bool,
+  isRespWebDesignCert: PropTypes.bool,
+  username: PropTypes.string
+};
+
+function renderCertShow(username, cert) {
+  return cert.show ? (
+    <Row key={ cert.showURL }>
+      <Col sm={ 8 }>
+        <p>
+          <strong>
+            { cert.title }
+          </strong>
+        </p>
+      </Col>
+      <Col sm={ 2 } smPush={ 2 }>
+        <Button
+          block={ true }
+          bsSize='lg'
+          bsStyle='primary'
+          href={ `/${username}${cert.showURL}`}
+          >
+          Show
+        </Button>
+      </Col>
+    </Row>
+    ) :
+    null;
+}
+
+function Certificates({
+  isRespWebDesignCert,
+  is2018DataVisCert,
+  isFrontEndLibsCert,
+  isJsAlgoDataStructCert,
+  isApisMicroservicesCert,
+  isInfosecQaCert,
+  is2018FullStackCert,
+  isFrontEndCert,
+  isBackEndCert,
+  isDataVisCert,
+  isFullStackCert,
+  username
+}) {
+  const currentCerts = [
+    {
+      show: is2018FullStackCert,
+      title: 'Full Stack Certificate:',
+      showURL: '/2018-full-stack-certification'
+    },
+    {
+      show: isRespWebDesignCert,
+      title: 'Responsive Web Design Certificate:',
+      showURL: '/responsive-web-design-certification'
+    },
+    {
+      show: isJsAlgoDataStructCert,
+      title: 'JavaScript Algorithms and Data Structures Certificate:',
+      showURL: '/javascript-algorithms-and-data-structures-certification'
+    },
+    {
+      show: isFrontEndLibsCert,
+      title: 'Front End Libraries Certificate:',
+      showURL: '/front-end-libraries-certification'
+    },
+    {
+      show: is2018DataVisCert,
+      title: 'Data Visualization Certificate:',
+      showURL: '/2018-data-visualization-certification'
+    },
+    {
+      show: isApisMicroservicesCert,
+      title: 'APIs and Microservices Certificate:',
+      showURL: '/apis-and-microservices-certification'
+    },
+    {
+      show: isInfosecQaCert,
+      title: 'Information Security and Quality Assurance Certificate:',
+      showURL: '/information-security-and-quality-assurance-certification'
+    }
+  ];
+
+  const legacyCerts = [
+    {
+      show: isFullStackCert,
+      title: 'Full Stack Certificate:',
+      showURL: '/full-stack-certification'
+    },
+    {
+      show: isFrontEndCert,
+      title: 'Front End Certificate:',
+      showURL: '/front-end-certification'
+    },
+    {
+      show: isBackEndCert,
+      title: 'Back End Certificate:',
+      showURL: '/back-end-certification'
+    },
+    {
+      show: isDataVisCert,
+      title: 'Data Visualization Certificate:',
+      showURL: '/data-visualization-certification'
+    }
+  ];
+  const renderCertShowWithUsername = _.curry(renderCertShow)(username);
+  return (
+    <div>
+      <h2 className='text-center'>FreeCodeCamp Certificates</h2>
+      <br />
+      {
+        (
+          isRespWebDesignCert ||
+          is2018DataVisCert ||
+          isFrontEndLibsCert ||
+          isJsAlgoDataStructCert ||
+          isApisMicroservicesCert ||
+          isInfosecQaCert
+        ) ?
+        currentCerts.map(renderCertShowWithUsername) :
+        <p className='text-center' >
+          No certificates have been earned under the current curriculum
+        </p>
+      }
+      {
+        (isFrontEndCert || isBackEndCert || isDataVisCert) ?
+        <div>
+          <h3>Legacy Certifications</h3>
+          {
+            legacyCerts.map(renderCertShowWithUsername)
+          }
+        </div> :
+        null
+      }
+    </div>
+  );
+}
+
+Certificates.propTypes = propTypes;
+Certificates.displayName = 'Certificates';
+
+export default connect(mapStateToProps, mapDispatchToProps)(Certificates);

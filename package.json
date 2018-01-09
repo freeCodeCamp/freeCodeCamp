@@ -53,6 +53,7 @@
     "cors": "^2.8.4",
     "csurf": "^1.8.3",
     "d3": "~3.5.17",
+    "date-fns": "^1.29.0",
     "debug": "^2.2.0",
     "dedent": "~0.7.0",
     "dotenv": "^4.0.0",
@@ -132,7 +133,6 @@
     "sanitize-html": "^1.11.1",
     "snyk": "^1.68.1",
     "store": "git+https://github.com/berkeleytrue/store.js.git#feature/noop-server",
-    "uuid": "^3.0.1",
     "validator": "^8.2.0"
   },
   "devDependencies": {

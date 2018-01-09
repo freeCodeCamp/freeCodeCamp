@@ -27,12 +27,14 @@ const mapStateToProps = createSelector(
   userSelector,
   ({
     email,
+    isPublicEmail,
     sendMonthlyEmail,
     sendNotificationEmail,
     sendQuincyEmail,
     username
   }) => ({
     email,
+    isPublicEmail,
     sendMonthlyEmail,
     sendNotificationEmail,
     sendQuincyEmail,
@@ -51,6 +53,7 @@ function mapDispatchToProps(dispatch) {
 const propTypes = {
   editUserFlag: PropTypes.func.isRequired,
   email: PropTypes.string,
+  isPublicEmail: PropTypes.bool,
   sendMonthlyEmail: PropTypes.bool,
   sendNotificationEmail: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
@@ -94,13 +97,13 @@ class EmailSettings extends PureComponent {
     const {
       editUserFlag,
       email,
+      isPublicEmail,
       sendMonthlyEmail,
       sendNotificationEmail,
       sendQuincyEmail,
       toggleUserFlag,
       username
     } = this.props;
-
     if (!email) {
       return (
         <div>
@@ -117,6 +120,8 @@ class EmailSettings extends PureComponent {
     }
     const updateEmail = event =>
       editUserFlag('email', username, event.target.value);
+    const togglePublicEmail = () =>
+      toggleUserFlag('isPublicEmail', username);
     const toggleMonthlyEmail = () =>
       toggleUserFlag('sendMonthlyEmail', username);
     const toggleNotificationEmail = () =>
@@ -150,6 +155,54 @@ class EmailSettings extends PureComponent {
               </Button>
             </Col>
           </form>
+        </Row>
+        <Row>
+          <Col sm={ 8 }>
+            <p>
+              <strong>Allow people to send me email</strong>
+            </p>
+          </Col>
+          <Col sm={ 4 }>
+            <ToggleButtonGroup
+              className='toggle-btn-group'
+              name='monthly-email'
+              onChange={ togglePublicEmail }
+              type='radio'
+              >
+              <ToggleButton
+                bsSize='lg'
+                bsStyle='primary'
+                className={
+                  classnames(
+                    'positive-20',
+                    { active: isPublicEmail },
+                    'btn-toggle'
+                  )
+                }
+                disabled={ isPublicEmail }
+                type='radio'
+                value={ 1 }
+                >
+                On
+              </ToggleButton>
+              <ToggleButton
+                bsSize='lg'
+                bsStyle='primary'
+                className={
+                  classnames(
+                    'positive-20',
+                    { active: !sendMonthlyEmail },
+                    'btn-toggle'
+                  )
+                }
+                disabled={ !sendMonthlyEmail }
+                type='radio'
+                value={ 2 }
+                >
+                Off
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </Col>
         </Row>
         <Row>
           <Col sm={ 8 }>

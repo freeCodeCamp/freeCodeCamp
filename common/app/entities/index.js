@@ -63,6 +63,9 @@ export function projectsSelector(state) {
     }));
 }
 
+export function challengeIdToNameMapSelector(state) {
+  return getNS(state).challengeIdToName;
+}
 
 export const isChallengeLoaded = (state, { dashedName }) =>
   !!challengeMapSelector(state)[dashedName];

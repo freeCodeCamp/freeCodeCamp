@@ -29,6 +29,10 @@
     "emailAuthLinkTTL": {
       "type": "date"
     },
+    "isEmailPublic": {
+      "type": "boolean",
+      "default": false
+    },
     "password": {
       "type": "string"
     },
@@ -115,13 +119,16 @@
       "type": "string"
     },
     "portfolio": {
-      "type": "object",
-      "description": "An object containing information about a users portfolio website",
-      "default": {
-        "title": "",
-        "url": "",
-        "description": ""
-      }
+      "description": "A list of objects containing information about a users portfolio websites",
+      "type": [
+        {
+          "title": "string",
+          "url": "string",
+          "description": "string",
+          "image": "string"
+        }
+      ],
+      "default": []
     },
     "currentStreak": {
       "type": "number",
@@ -197,7 +204,7 @@
       "description": "Camper is data visualization certified",
       "default": false
     },
-    "isNewDataVisCert": {
+    "is2018DataVisCert": {
       "type": "boolean",
       "description": "Camper is responsive web design certified",
       "default": false
@@ -220,6 +227,11 @@
     "isInfosecQaCert": {
       "type": "boolean",
       "description": "Camper is information security and quality assurance certified",
+      "default": false
+    },
+    "is2018FullStackCert": {
+      "type": "boolean",
+      "description": "Camper is certified in all certs released in 2018",
       "default": false
     },
     "isChallengeMapMigrated": {

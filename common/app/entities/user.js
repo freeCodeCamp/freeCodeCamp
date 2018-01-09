@@ -16,8 +16,12 @@ export const epics = [
 export const types = createTypes([
   'editUserFlag',
   'toggleUserFlag',
-  'updatePortfolio',
-  createAsyncTypes('updateUserBackend')
+
+  createAsyncTypes('updateUserBackend'),
+
+  'addPortfolioItem',
+  'deletePortfolio',
+  'updatePortfolio'
 ], 'user');
 
 export const editUserFlag = createAction(
@@ -28,10 +32,14 @@ export const toggleUserFlag = createAction(
   types.toggleUserFlag,
   (flag, username) => ({ username, flag })
 );
+
+export const addPortfolioItem = createAction(types.addPortfolioItem);
+export const deletePortfolio = createAction(types.deletePortfolio);
 export const updatePortfolio = createAction(
   types.updatePortfolio,
-  (flag, username, value) => ({ flag, username, value })
+  (username, id, field, value) => ({ username, id, field, value })
 );
+
 export const updateUserBackend = createAction(types.updateUserBackend.start);
 export const updateUserBackendError = createAction(
   types.updateUserBackend.error,
@@ -43,6 +51,20 @@ export const updateUserBackendComplete = createAction(
   ({ result }) => result,
   _.identity
 );
+
+export function emptyPortfolio() {
+  return {
+  id: `portfolio${Date.now()}`,
+  title: '',
+  description: '',
+  url: '',
+  image: ''
+  };
+}
+
+function byMatchingId(id) {
+  return x => x.id === id;
+}
 
 export function userReducer(initialState) {
   return handleActions(
@@ -87,22 +109,60 @@ export function userReducer(initialState) {
           }
         }
       }),
-      [types.updatePortfolio]: (
-        state,
-        { payload: { flag, value, username }}
-      ) => ({
+      [types.addPortfolioItem]: (state, { payload: username }) => ({
         ...state,
         user: {
           ...state.user,
           [username]: {
             ...state.user[username],
-            portfolio: {
+            portfolio: [
               ...state.user[username].portfolio,
-              [flag]: value
-            }
+              emptyPortfolio()
+            ]
           }
         }
       }),
+      [types.deletePortfolio]: (state, { payload: { id, username } }) => {
+        const index = state.user[username].portfolio
+          .findIndex(byMatchingId(id));
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            [username]: {
+              ...state.user[username],
+              portfolio: [
+                ...state.user[username].portfolio.slice(0, index),
+                ...state.user[username].portfolio.slice(index + 1)
+              ]
+            }
+          }
+        };
+      },
+      [types.updatePortfolio]: (
+        state,
+        { payload: { id, field, value, username }}
+      ) => {
+        const index = state.user[username].portfolio
+          .findIndex(byMatchingId(id));
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            [username]: {
+              ...state.user[username],
+              portfolio: [
+                ...state.user[username].portfolio.slice(0, index),
+                {
+                  ...state.user[username].portfolio[index],
+                  [field]: value
+                },
+                ...state.user[username].portfolio.slice(index + 1)
+              ]
+            }
+          }
+        };
+      },
       [types.updateUserCurrentChallenge]:
       (
         state,

@@ -2,26 +2,38 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
-import { FormControl, FormGroup } from 'react-bootstrap';
+import {
+  Button,
+  Col,
+  ControlLabel,
+  FormControl,
+  FormGroup,
+  Row
+} from 'react-bootstrap';
 
 import { updateMyLang } from '../redux';
 import { userSelector } from '../../../redux';
 import langs from '../../../../utils/supported-languages';
+import { editUserFlag, updateUserBackend } from '../../../entities/user';
 
 const propTypes = {
+  editUserFlag: PropTypes.func.isRequired,
   fields: PropTypes.object,
   handleSubmit: PropTypes.func.isRequired,
-  updateMyLang: PropTypes.func.isRequired
+  updateMyLang: PropTypes.func.isRequired,
+  updateUserBackend: PropTypes.func.isRequired,
+  username: PropTypes.string
 };
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ languageTag }) => ({
+  ({ languageTag, username }) => ({
     // send null to prevent redux-form from initialize empty
-    initialValues: languageTag ? { lang: languageTag } : null
+    initialValues: languageTag ? { lang: languageTag } : null,
+    username
   })
 );
-const mapDispatchToProps = { updateMyLang };
+const mapDispatchToProps = { editUserFlag, updateMyLang, updateUserBackend };
 const fields = [ 'lang' ];
 const validator = values => {
   if (!langs[values.lang]) {
@@ -57,9 +69,9 @@ const options = [(
   )
 ];
 
-export class LanguageSettings extends React.Component {
-  constructor(...props) {
-    super(...props);
+class LanguageSettings extends React.Component {
+  constructor(props) {
+    super(props);
     this.handleChange = this.handleChange.bind(this);
   }
   componentWillUnmount() {
@@ -71,32 +83,55 @@ export class LanguageSettings extends React.Component {
 
   handleChange(e) {
     e.preventDefault();
+    console.log('changes');
     this.props.fields.lang.onChange(e);
-    // give redux-form HOC state time to catch up before
-    // attempting to submit
-    this.timeout = setTimeout(
-      () => this.props.handleSubmit(this.props.updateMyLang)(),
-      0
-    );
   }
 
   render() {
     const {
-      fields: { lang: { name, value } }
+      editUserFlag,
+      fields: { lang: { name, value } },
+      handleSubmit,
+      updateUserBackend,
+      username
     } = this.props;
+    const submitAction = values => {
+      editUserFlag('languageTag', username, values.lang);
+      updateUserBackend({ flag: 'languageTag', newValue: values.lang });
+    };
     return (
-      <FormGroup>
-        <FormControl
-          className='btn btn-block btn-primary btn-link-social btn-lg'
-          componentClass='select'
-          name={ name }
-          onChange={ this.handleChange }
-          style={{ height: '45px' }}
-          value={ value }
-          >
-          { options }
-        </FormControl>
-      </FormGroup>
+      <Row>
+        <form onSubmit={ handleSubmit(submitAction) }>
+          <FormGroup>
+            <Col sm={ 6 } xs={ 12 }>
+              <ControlLabel htmlFor='lang-select'>
+                Language Selection
+              </ControlLabel>
+            </Col>
+            <Col sm={ 5 } xs={ 12 }>
+              <FormControl
+                className='btn btn-block btn-primary btn-link-social btn-lg'
+                componentClass='select'
+                id='lang-select'
+                name={ name }
+                onChange={ this.handleChange }
+                style={{ height: '45px' }}
+                value={ value }
+                >
+                { options }
+              </FormControl>
+            </Col>
+            <Col sm={ 1 } xs={ 12 }>
+              <Button
+                bsStyle='primary'
+                type='submit'
+                >
+                Save
+              </Button>
+            </Col>
+          </FormGroup>
+        </form>
+      </Row>
     );
   }
 }

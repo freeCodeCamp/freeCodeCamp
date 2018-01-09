@@ -12,6 +12,7 @@ import {
   Col
 } from 'react-bootstrap';
 
+import { Link } from '../../../Router';
 import LockedSettings from './Locked-Settings.jsx';
 import ThemeSettings from './ThemeSettings.jsx';
 import { toggleNightMode, userSelector } from '../../../redux';
@@ -103,7 +104,22 @@ class AccountSettings extends PureComponent {
     return (
       <div className='account-settings'>
         <Row>
-          <Col md={ 3 } mdPush={ 9 } xs={ 12 }>
+          <Col xs={ 12 }>
+            <h2>Account Settings</h2>
+          </Col>
+          <Col md={ 3 } xs= { 12 }>
+            <Link to={`/${username}`}>
+              <Button
+                block={ true }
+                bsSize='lg'
+                bsStyle='primary'
+                href='/link/github'
+                >
+                View Public Profile
+              </Button>
+            </Link>
+          </Col>
+          <Col md={ 3 } mdPush={ 6 } xs={ 12 }>
             <Button
               block={ true }
               bsSize='lg'
