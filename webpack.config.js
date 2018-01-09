@@ -75,7 +75,7 @@ if (!__DEV__) {
 } else {
   module.exports.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     // this will output a .html file in output.path
     new Visualizer({ filename: 'webpack-bundle-stats.html' })
   );
