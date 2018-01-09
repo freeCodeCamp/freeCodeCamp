@@ -14,7 +14,7 @@ export const alertTypes = _.keyBy(_.identity)([
   'warning',
   'danger'
 ]);
-export const normalizeAlertType = _.get(alertTypes, 'info');
+export const normalizeAlertType = alertType => alertTypes[alertType] || 'info';
 
 export const getFlashAction = _.flow(
   _.property('meta'),
@@ -42,15 +42,12 @@ export const expressToStack = _.flow(
   })))
 );
 
-const defaultState = {
-  stack: [{ alertType: 'danger', message: 'foo nar' }]
-};
+const defaultState = [];
 
 const getNS = _.property(ns);
 
 export const latestMessageSelector = _.flow(
   getNS,
-  _.property('stack'),
   _.head,
   _.defaultTo({})
 );
@@ -59,30 +56,24 @@ export default composeReducers(
   ns,
   handleActions(
     () => ({
-      [types.clickOnClose]: (state) => ({
+      [types.clickOnClose]: _.tail,
+      [types.messagesFoundOnBoot]: (state, { payload }) => [
         ...state,
-        stack: _.tail(state.stack)
-      }),
-      [types.messagesFoundOnBoot]: (state, { payload }) => ({
-        ...state,
-        stack: [...state.stack, ...expressToStack(payload)]
-      })
+        ...expressToStack(payload)
+      ]
     }),
     defaultState,
   ),
   function metaReducer(state = defaultState, action) {
     if (isFlashAction(action)) {
       const { payload: { alertType, message } } = getFlashAction(action);
-      return {
+      return [
         ...state,
-        stack: [
-          ...state.stack,
-          {
-            alertType: normalizeAlertType(alertType),
-            message: _.escape(message)
-          }
-        ]
-      };
+        {
+          alertType: normalizeAlertType(alertType),
+          message: _.escape(message)
+        }
+      ];
     }
     return state;
   }
