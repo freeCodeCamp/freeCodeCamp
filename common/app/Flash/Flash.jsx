@@ -25,9 +25,9 @@ export function Flash({ alertType, clickOnClose, message }) {
   return (
     <div className={`${ns}-container bg-${alertType}`}>
       <div className={`${ns}-content`}>
-        <div>
+        <p className={ `${ns}-message` }>
           { message }
-        </div>
+        </p>
         <CloseButton onClick={ clickOnClose }/>
       </div>
     </div>
