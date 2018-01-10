@@ -95,8 +95,9 @@ export default function reactSubRouter(app) {
         const title = titleSelector(state);
         epic.dispose();
         res.expose(state, 'data', { isJSON: true });
-        res.expose(req.flash(), 'flash', { isJSON: true });
-        res.render('layout-react', { markup, title });
+        // note(berks): we render without express-flash dumping our messages
+        // the app will query for these on load
+        res.renderWithoutFlash('layout-react', { markup, title });
       })
       .subscribe(() => log('html rendered and sent'), next);
   }

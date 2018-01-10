@@ -45,6 +45,7 @@
     "./middlewares/validator": {}
   },
   "routes:before": {
+    "./middlewares/express-extensions": {},
     "express-flash": {},
     "helmet#xssFilter": {},
     "helmet#noSniff": {},
@@ -52,7 +53,6 @@
     "./middlewares/csurf": {},
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
-    "./middlewares/express-rx": {},
     "./middlewares/jade-helpers": {},
     "./middlewares/migrate-completed-challenges": {},
     "./middlewares/add-lang": {},

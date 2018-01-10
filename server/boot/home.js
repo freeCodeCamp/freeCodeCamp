@@ -9,14 +9,15 @@ module.exports = function(app) {
   var router = app.loopback.Router();
   router.get('/', addDefaultImage, index);
   app.use(
-      '/:lang',
-      (req, res, next) => {
-        // add url language to request for all routers
-        req._urlLang = req.params.lang;
-        next();
-      },
-      router
-    );
+    '/:lang',
+    (req, res, next) => {
+      // add url language to request for all routers
+      req._urlLang = req.params.lang;
+      next();
+    },
+    router
+  );
+
   app.use(router);
 
   function addDefaultImage(req, res, next) {

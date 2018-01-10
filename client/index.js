@@ -8,7 +8,6 @@ import sendPageAnalytics from './utils/send-page-analytics';
 
 import { App, createApp, provideStore } from '../common/app';
 import { getLangFromPath } from '../common/app/utils/lang';
-import flashReducer, { messagesFoundOnBoot } from '../common/app/Flash/redux';
 
 // client specific epics
 import epics from './epics';
@@ -29,7 +28,6 @@ const {
   document,
   ga,
   __fcc__: {
-    flash = {},
     data: ssrState = {},
     csrf: {
       token: csrfToken
@@ -51,10 +49,6 @@ const defaultState = isColdStored() ?
 const primaryLang = getLangFromPath(location.pathname);
 
 defaultState.app.csrfToken = csrfToken;
-defaultState.flash = flashReducer(
-  defaultState.flash,
-  messagesFoundOnBoot(flash)
-);
 
 const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
 
