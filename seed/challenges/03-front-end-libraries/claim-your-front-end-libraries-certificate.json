@@ -8,9 +8,9 @@
       "title": "Claim Your Front End Libraries Certificate",
       "description": [
         [
-          "//i.imgur.com/k8btNUB.jpg",
+          "//i.imgur.com/vOtZumH.jpg",
           "An image of our Front End Libraries Certificate",
-          "This challenge will give you your verified Front End Libraries Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic, intermediate, and advanced front end development projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+          "This challenge will give you your verified Front End Libraries Certificate. Before we issue your certificate, we must verify that you have completed all of our front end libraries projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
           ""
         ],
         [
@@ -20,9 +20,9 @@
           "#"
         ],
         [
-          "//i.imgur.com/UedoV2G.jpg",
-          "An image of the text \"Front End Development Certificate requirements\"",
-          "Let's confirm that you have completed all of our basic and intermediate algorithm scripting challenges, and all our basic, intermediate, and advanced front end development projects. Click the button below to verify this.",
+          "//i.imgur.com/GJeTCMS.jpg",
+          "An image of the text \"Front End Libraries Certificate requirements\"",
+          "Let's confirm that you have completed all of our front end libraries projects. Click the button below to verify this.",
           "#"
         ],
         [
@@ -36,11 +36,11 @@
         {
           "properties": [
             "isHonest",
-            "isFrontEndCert"
+            "isFrontEndLibsCert"
           ],
           "apis": [
             "/certificate/honest",
-            "/certificate/verify/front-end"
+            "/certificate/verify/front-end-libraries"
           ],
           "stepIndex": [
             1,
@@ -106,9 +106,9 @@
           "title": "Solicite seu Certificado de Bibliotecas Front End",
           "description": [
             [
-              "//i.imgur.com/k8btNUB.jpg",
+              "//i.imgur.com/vOtZumH.jpg",
               "Uma imagem do nosso Certificado de Bibliotecas Front End",
-              "Este desafio lhe dará seu certificado verificado de bibliotecas Front End. Antes de emitir o seu certificado, precisamos verificar que você completou todos os nossos desafios de algoritmos básicos e intermediários e todos os nossos projetos básicos, intermediários e avançados de desenvolvimento. Você também deve aceitar nosso Compromisso de Honestidade Acadêmica. Clique no botão abaixo para iniciar este processo.",
+              "This challenge will give you your verified Front End Libraries Certificate. Before we issue your certificate, we must verify that you have completed all of our front end libraries projects. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
               ""
             ],
             [

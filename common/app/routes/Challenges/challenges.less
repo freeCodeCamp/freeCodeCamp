@@ -45,6 +45,10 @@
   }
 }
 
+.@{ns}-instructions-panel {
+  padding: 0 14px 0 14px;
+}
+
 .@{ns}-instructions {
   margin-bottom: 5px;
   h4 {
@@ -94,10 +98,10 @@
     color: #02a902;
   }
   .@{ns}-editor .CodeMirror {
-    background-color:#242424;
+    background-color:@night-body-bg;
     color:#ABABAB;
     &-gutters {
-      background-color:#242424;
+      background-color:@night-body-bg;
       color:#ABABAB;
     }
     .cm-bracket, .cm-tag {
@@ -108,6 +112,9 @@
     }
     .cm-keyword, .cm-attribute {
       color:#9BBBDC;
+    }
+    &-line {
+      caret-color:#ABABAB;
     }
   }
   .refresh-icon {
@@ -124,12 +131,12 @@
 }
 
 @keyframes skeletonShimmer{
-   0% {
-     transform: translateX(-48px);
-   }
-   100% {
-     transform: translateX(1000px);
-   }
+  0% {
+    transform: translateX(-48px);
+  }
+  100% {
+    transform: translateX(1000px);
+  }
 }
 
 .@{ns}-shimmer {

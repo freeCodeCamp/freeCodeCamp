@@ -619,6 +619,7 @@
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
         "Note that in most cases, <code>img</code> elements are self-closing.",
         "All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.",
+        "Ideally the <code>alt</code> attribute should not contain special chars unless needed.",
         "Let's add an <code>alt</code> attribute to our <code>img</code> example above:",
         "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up.\"&#62</code>",
         "<hr>",
@@ -1768,7 +1769,8 @@
         "Each of your radio buttons should be nested within its own <code>label</code> element.",
         "All related radio buttons should have the same <code>name</code> attribute.",
         "Here's an example of a radio button:",
-        "<code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>",
+        "<blockquote>&#60;label for=\"indoor\"&#62; <br> &#60;input type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
+        "It is considered best practice to set the <code>for</code> attribute for assistive technologies to be able to link the relationship between the label and the child elements such as an <code>input</code> in this case.",
         "<hr>",
         "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>. Both should share the <code>name</code> attribute of <code>indoor-outdoor</code>."
       ],

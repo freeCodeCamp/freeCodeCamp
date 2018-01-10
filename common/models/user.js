@@ -19,11 +19,16 @@ import {
   getPort
 } from '../../server/utils/url-utils.js';
 
-const debug = debugFactory('fcc:user:remote');
+const debug = debugFactory('fcc:models:user');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
-const createEmailError = () => new Error(
- 'Please check to make sure the email is a valid email address.'
+const createEmailError = redirectTo => wrapHandledError(
+  new Error('email format is invalid'),
+  {
+    type: 'info',
+    message: 'Please check to make sure the email is a valid email address.',
+    redirectTo
+  }
 );
 
 function destroyAll(id, Model) {
@@ -76,13 +81,30 @@ function getWaitPeriod(ttl) {
   const lastEmailSentAt = moment(new Date(ttl || null));
   const isWaitPeriodOver = ttl ?
     lastEmailSentAt.isBefore(fiveMinutesAgo) : true;
+
   if (!isWaitPeriodOver) {
     const minutesLeft = 5 -
       (moment().minutes() - lastEmailSentAt.minutes());
     return minutesLeft;
   }
+
   return 0;
 }
+
+function getWaitMessage(ttl) {
+  const minutesLeft = getWaitPeriod(ttl);
+  if (minutesLeft <= 0) {
+    return null;
+  }
+  const timeToWait = minutesLeft ?
+    `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+    'a few seconds';
+
+  return dedent`
+    Please wait ${timeToWait} to resend an authentication link.
+  `;
+}
+
 module.exports = function(User) {
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
@@ -108,85 +130,87 @@ module.exports = function(User) {
     User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
     User.update$ = Observable.fromNodeCallback(User.updateAll, User);
     User.count$ = Observable.fromNodeCallback(User.count, User);
-    User.findOrCreate$ = Observable.fromNodeCallback(User.findOrCreate, User);
+    User.create$ = Observable.fromNodeCallback(
+      User.create.bind(User)
+    );
     User.prototype.createAccessToken$ = Observable.fromNodeCallback(
       User.prototype.createAccessToken
     );
   });
 
-  User.beforeRemote('create', function({ req }) {
-    const body = req.body;
-    // note(berks): we now require all new users to supply an email
-    // this was not always the case
-    if (
-      typeof body.email !== 'string' ||
-      !isEmail(body.email)
-    ) {
-      return Promise.reject(createEmailError());
-    }
-    // assign random username to new users
-    // actual usernames will come from github
-    body.username = 'fcc' + uuid.v4();
-    if (body) {
-      // this is workaround for preventing a server crash
-      // we do this on create and on save
-      // refer strongloop/loopback/#1364
-      if (body.password === '') {
-        body.password = null;
-      }
-      // set email verified false on user email signup
-      // should not be set with oauth signin methods
-      body.emailVerified = false;
-    }
-    return User.doesExist(null, body.email)
-      .catch(err => {
-        throw wrapHandledError(err, { redirectTo: '/email-signup' });
-      })
-      .then(exists => {
-        if (!exists) {
-          return null;
+  User.observe('before save', function(ctx) {
+    const beforeCreate = Observable.of(ctx)
+      .filter(({ isNewInstance }) => isNewInstance)
+      // User.create
+      .map(({ instance }) => instance)
+      .flatMap(user => {
+        // note(berks): we now require all new users to supply an email
+        // this was not always the case
+        if (
+          typeof user.email !== 'string' ||
+          !isEmail(user.email)
+        ) {
+          throw createEmailError();
         }
-        const err = wrapHandledError(
-          new Error('user already exists'),
-          {
-            redirectTo: '/email-signin',
-            message: dedent`
-      The ${body.email} email address is already associated with an account.
-      Try signing in with it here instead.
-              `
-          }
-        );
-        throw err;
-      });
-  });
+        // assign random username to new users
+        // actual usernames will come from github
+        // use full uuid to ensure uniqueness
+        user.username = 'fcc' + uuid.v4();
 
-  User.observe('before save', function({ instance: user }, next) {
-    if (user) {
-      // Some old accounts will not have emails associated with theme
-      // we verify only if the email field is populated
-      if (user.email && !isEmail(user.email)) {
-        return next(createEmailError());
-      }
-      user.username = user.username.trim().toLowerCase();
-      user.email = typeof user.email === 'string' ?
-        user.email.trim().toLowerCase() :
-        user.email;
+        if (!user.progressTimestamps) {
+          user.progressTimestamps = [];
+        }
 
-      if (!user.progressTimestamps) {
-        user.progressTimestamps = [];
-      }
+        if (user.progressTimestamps.length === 0) {
+          user.progressTimestamps.push({ timestamp: Date.now() });
+        }
+        return Observable.fromPromise(User.doesExist(null, user.email))
+          .do(exists => {
+            if (exists) {
+              throw wrapHandledError(
+                new Error('user already exists'),
+                {
+                  redirectTo: '/email-signin',
+                  message: dedent`
+        The ${user.email} email address is already associated with an account.
+        Try signing in with it here instead.
+                  `
+                }
+              );
+            }
+          });
+      })
+      .ignoreElements();
 
-      if (user.progressTimestamps.length === 0) {
-        user.progressTimestamps.push({ timestamp: Date.now() });
-      }
-      // this is workaround for preventing a server crash
-      // we do this on save and on create
-      // refer strongloop/loopback/#1364
-      if (user.password === '') {
-        user.password = null;
-      }
-    }
-    return next();
+    const updateOrSave = Observable.of(ctx)
+      // not new
+      .filter(({ isNewInstance }) => !isNewInstance)
+      .map(({ instance }) => instance)
+      // is update or save user
+      .filter(Boolean)
+      .do(user => {
+        // Some old accounts will not have emails associated with theme
+        // we verify only if the email field is populated
+        if (user.email && !isEmail(user.email)) {
+          throw createEmailError();
+        }
+
+        user.username = user.username.trim().toLowerCase();
+        user.email = typeof user.email === 'string' ?
+          user.email.trim().toLowerCase() :
+          user.email;
+
+        if (!user.progressTimestamps) {
+          user.progressTimestamps = [];
+        }
+
+        if (user.progressTimestamps.length === 0) {
+          user.progressTimestamps.push({ timestamp: Date.now() });
+        }
+      })
+      .ignoreElements();
+    return Observable.merge(beforeCreate, updateOrSave)
+      .toPromise();
   });
 
   // remove lingering user identities before deleting user
@@ -224,163 +248,67 @@ module.exports = function(User) {
   });
 
   debug('setting up user hooks');
-
-  User.beforeRemote('confirm', function(ctx, _, next) {
-
-    if (!ctx.req.query) {
-      return ctx.res.redirect('/');
-    }
-
-    const uid = ctx.req.query.uid;
-    const token = ctx.req.query.token;
-    const redirect = ctx.req.query.redirect;
-
-    return User.findById(uid, (err, user) => {
-
-        if (err || !user || !user.newEmail) {
-          ctx.req.flash('danger', {
-            msg: dedent`Oops, something went wrong, please try again later`
-          });
-          return ctx.res.redirect('/');
+  // overwrite lb confirm
+  User.confirm = function(uid, token, redirectTo) {
+    return this.findById(uid)
+      .then(user => {
+        if (!user) {
+          throw wrapHandledError(
+            new Error(`User not found: ${uid}`),
+            {
+              // standard oops
+              type: 'info',
+              redirectTo
+            }
+          );
         }
-
-        if (!user.verificationToken && !user.emailVerified) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like we have your email. But you haven't
-             verified it yet, please sign in and request a fresh verification
-             link.`
-          });
-          return ctx.res.redirect(redirect);
+        if (user.verificationToken !== token) {
+          throw wrapHandledError(
+            new Error(`Invalid token: ${token}`),
+            {
+              type: 'info',
+              message: dedent`
+                Looks like you have clicked an invalid link.
+                Please sign in and request a fresh one.
+              `,
+              redirectTo
+            }
+          );
         }
-
-        if (!user.verificationToken && user.emailVerified) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like you have already verified your email.
-             Please sign in to continue.`
-          });
-          return ctx.res.redirect(redirect);
-        }
-
-        if (user.verificationToken && user.verificationToken !== token) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like you have clicked an invalid link.
-             Please sign in and request a fresh one.`
-          });
-          return ctx.res.redirect(redirect);
-        }
-
         return user.update$({
           email: user.newEmail,
+          emailVerified: true,
+          emailVerifyTTL: null,
           newEmail: null,
-          emailVerifyTTL: null
-        })
-        .do(() => {
-          return next();
-        })
-        .toPromise();
-
-    });
-  });
-
-  User.afterRemote('confirm', function(ctx) {
-    if (!ctx.req.query) {
-      return ctx.res.redirect('/');
-    }
-    const redirect = ctx.req.query.redirect;
-    ctx.req.flash('success', {
-      msg: [
-        'Your email has been confirmed!'
-      ]
-    });
-    return ctx.res.redirect(redirect);
-  });
-
-  User.beforeRemote('create', function({ req, res }, _, next) {
-    req.body.username = 'fcc' + uuid.v4().slice(0, 8);
-    if (!req.body.email) {
-      return next();
-    }
-    if (!isEmail(req.body.email)) {
-      return next(new Error('Email format is not valid'));
-    }
-    return User.doesExist(null, req.body.email)
-      .then(exists => {
-        if (!exists) {
-          return next();
-        }
-
-        req.flash('danger', {
-          msg: dedent`
-      The ${req.body.email} email address is already associated with an account.
-      Try signing in with it here instead.
-          `
-        });
-
-        return res.redirect('/email-signin');
-      })
-      .catch(err => {
-        console.error(err);
-        req.flash('danger', {
-          msg: 'Oops, something went wrong, please try again later'
-        });
-        return res.redirect('/email-signin');
+          verificationToken: null
+        }).toPromise();
       });
-  });
+  };
 
-  User.beforeRemote('login', function(ctx, notUsed, next) {
-    const { body } = ctx.req;
-    if (body && typeof body.email === 'string') {
-      if (!isEmail(body.email)) {
-        return next(createEmailError());
-      }
-      body.email = body.email.toLowerCase();
-    }
-    return next();
-  });
-
-  User.afterRemote('login', function(ctx, accessToken, next) {
-    var res = ctx.res;
-    var req = ctx.req;
-    // var args = ctx.args;
-
-    var config = {
-      signed: !!req.signedCookies,
-      maxAge: accessToken.ttl
-    };
-
-    if (accessToken && accessToken.id) {
-      debug('setting cookies');
-      res.cookie('access_token', accessToken.id, config);
-      res.cookie('userId', accessToken.userId, config);
-    }
-
-    return req.logIn({ id: accessToken.userId.toString() }, function(err) {
-      if (err) { return next(err); }
-
-      debug('user logged in');
-
-      if (req.session && req.session.returnTo) {
-        var redirectTo = req.session.returnTo;
-        if (redirectTo === '/map-aside') {
-          redirectTo = '/map';
+  User.prototype.loginByRequest = function login(req, res) {
+    const createToken = this.createAccessToken$()
+      .do(accessToken => {
+        const config = {
+          signed: !!req.signedCookies,
+          maxAge: accessToken.ttl
+        };
+        if (accessToken && accessToken.id) {
+          res.cookie('access_token', accessToken.id, config);
+          res.cookie('userId', accessToken.userId, config);
         }
-        return res.redirect(redirectTo);
-      }
-
-      req.flash('success', { msg: 'Success! You are now logged in.' });
-      return res.redirect('/');
+      });
+    const updateUser = this.update$({
+      emailVerified: true,
+      emailAuthLinkTTL: null,
+      emailVerifyTTL: null
     });
-  });
-
-  User.afterRemoteError('login', function(ctx) {
-    var res = ctx.res;
-    var req = ctx.req;
-
-    req.flash('danger', {
-      msg: 'Invalid username or password.'
-    });
-    return res.redirect('/email-signin');
-  });
+    return Observable.combineLatest(
+      createToken,
+      updateUser,
+      req.logIn(this),
+      (accessToken) => accessToken,
+    );
+  };
 
   User.afterRemote('logout', function(ctx, result, next) {
     var res = ctx.res;
@@ -482,142 +410,141 @@ module.exports = function(User) {
     }
   );
 
-  User.requestAuthEmail = function requestAuthEmail(email) {
-    if (!isEmail(email)) {
-      return Promise.reject(
-        new Error('The submitted email not valid.')
-      );
-    }
-
-    var userObj = {
-      username: 'fcc' + uuid.v4().slice(0, 8),
-      email: email,
-      emailVerified: false
-    };
-    return User.findOrCreate$({ where: { email }}, userObj)
-      .flatMap(([ user, isCreated ]) => {
-
-        const minutesLeft = getWaitPeriod(user.emailAuthLinkTTL);
-        if (minutesLeft > 0) {
-          const timeToWait = minutesLeft ?
-            `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-            'a few seconds';
-          debug('request before wait time : ' + timeToWait);
-          return Observable.of(dedent`
-            Please wait ${timeToWait} to resend an authentication link.
-          `);
-        }
-
-        const renderAuthEmail = isCreated ?
-          renderSignUpEmail : renderSignInEmail;
-
-        // create a temporary access token with ttl for 15 minutes
-        return user.createAccessToken$({ ttl: 15 * 60 * 1000 })
-          .flatMap(token => {
-
-          const { id: loginToken } = token;
-          const loginEmail = new Buffer(user.email).toString('base64');
-          const host = getServerFullURL();
-          const mailOptions = {
-            type: 'email',
-            to: user.email,
-            from: getEmailSender(),
-            subject: 'freeCodeCamp - Authentication Request!',
-            text: renderAuthEmail({
-              host,
-              loginEmail,
-              loginToken
-            })
-          };
-
-          return this.email.send$(mailOptions)
-            .flatMap(() => {
-              const emailAuthLinkTTL = token.created;
-              return this.update$({
-                emailAuthLinkTTL
-            })
-            .map(() => {
-              return dedent`
-                If you entered a valid email, a magic link is on its way.
-                Please follow that link to sign in.
-              `;
-            });
-          });
-        });
-      })
-      .catch(err => {
-        if (err) { debug(err); }
-        return dedent`
-          Oops, something is not right, please try again later.
-        `;
-      })
-      .toPromise();
+  User.prototype.createAuthToken = function createAuthToken({ ttl } = {}) {
+    return Observable.fromNodeCallback(
+      this.authTokens.create.bind(this.authTokens)
+    )({ ttl });
   };
 
-  User.remoteMethod(
-    'requestAuthEmail',
-    {
-      description: 'request a link on email with temporary token to sign in',
-      accepts: [{
-        arg: 'email', type: 'string', required: true
-      }],
-      returns: [{
-        arg: 'message', type: 'string'
-      }],
-      http: {
-        path: '/request-auth-link', verb: 'POST'
+  User.prototype.getEncodedEmail = function getEncodedEmail() {
+    if (!this.email) {
+      return null;
+    }
+    return Buffer(this.email).toString('base64');
+  };
+
+  User.decodeEmail = email => Buffer(email, 'base64').toString();
+
+  User.prototype.requestAuthEmail = function requestAuthEmail(isSignUp) {
+    return Observable.defer(() => {
+      const messageOrNull = getWaitMessage(this.emailAuthLinkTTL);
+      if (messageOrNull) {
+        throw wrapHandledError(
+          new Error('request is throttled'),
+          {
+            type: 'info',
+            message: messageOrNull
+          }
+        );
       }
-    }
-  );
 
-  User.prototype.requestUpdateEmail = function requestUpdateEmail(
-    newEmail
-  ) {
-    const ownEmail = newEmail === this.email;
-    if (!isEmail('' + newEmail)) {
-      debug('invalid email:', newEmail );
-      return Observable.throw(createEmailError());
-    }
-    // email is already associated and verified with this account
-    if (ownEmail && this.emailVerified) {
-      return Observable.throw(new Error(
-        `${newEmail} is already associated with this account.`
-      ));
-    }
-
-    const minutesLeft = getWaitPeriod(this.emailVerifyTTL);
-    if (ownEmail && minutesLeft > 0) {
-      const timeToWait = minutesLeft ?
-        `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-        'a few seconds';
-      debug('request before wait time : ' + timeToWait);
-      return Observable.of(dedent`
-        Please wait ${timeToWait} to resend an authentication link.
-      `);
-    }
-
-    return Observable.fromPromise(User.doesExist(null, newEmail))
-      .flatMap(exists => {
-        // not associated with this account, but is associated with another
-        if (!ownEmail && exists) {
-          return Promise.reject(
-            new Error(
-              `${newEmail} is already associated with another account.`
-            )
-          );
+      // create a temporary access token with ttl for 15 minutes
+      return this.createAuthToken({ ttl: 15 * 60 * 1000 });
+    })
+      .flatMap(token => {
+        let renderAuthEmail = renderSignInEmail;
+        let subject = 'Login Requested - freeCodeCamp';
+        if (isSignUp) {
+          renderAuthEmail = renderSignUpEmail;
+          subject = 'Account Created - freeCodeCamp';
         }
+        const { id: loginToken, created: emailAuthLinkTTL } = token;
+        const loginEmail = this.getEncodedEmail();
+        const host = getServerFullURL();
+        const mailOptions = {
+          type: 'email',
+          to: this.email,
+          from: getEmailSender(),
+          subject,
+          text: renderAuthEmail({
+            host,
+            loginEmail,
+            loginToken
+          })
+        };
 
+        return Observable.combineLatest(
+          User.email.send$(mailOptions),
+          this.update$({ emailAuthLinkTTL })
+        );
+      })
+      .map(() => isSignUp ?
+        dedent`
+          We've created a new account for you.
+          If you entered a valid email, a magic link is on its way.
+          Please follow that link to sign in.
+        ` :
+        dedent`
+          If you entered a valid email, a magic link is on its way.
+          Please follow that link to sign in.
+        `
+      );
+  };
+
+  User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
+    return Observable.defer(() => {
+      const ownEmail = newEmail === this.email;
+      if (!isEmail('' + newEmail)) {
+        throw createEmailError();
+      }
+      // email is already associated and verified with this account
+      if (ownEmail) {
+        if (this.emailVerified) {
+          throw wrapHandledError(
+            new Error('email is already verified'),
+            {
+              type: 'info',
+              message: `${newEmail} is already associated with this account.`
+            }
+          );
+        } else {
+          const messageOrNull = getWaitMessage(this.emailVerifyTTL);
+          // email is already associated but unverified
+          if (messageOrNull) {
+            // email is within time limit
+            throw wrapHandledError(
+              new Error(),
+              {
+                type: 'info',
+                message: messageOrNull
+              }
+            );
+          }
+        }
+      }
+
+      // at this point email is not associated with the account
+      // or has not been verified but user is requesting another token
+      // outside of the time limit
+      return Observable.if(
+        () => ownEmail,
+        Observable.empty(),
+        // defer prevents the promise from firing prematurely (before subscribe)
+        Observable.defer(() => User.doesExist(null, newEmail))
+      )
+        .do(exists => {
+          // not associated with this account, but is associated with another
+          if (exists) {
+            throw wrapHandledError(
+              new Error('email already in use'),
+              {
+                type: 'info',
+                message:
+                `${newEmail} is already associated with another account.`
+              }
+            );
+          }
+        })
+        .defaultIfEmpty();
+    })
+      .flatMap(() => {
         const emailVerified = false;
-        return this.update$({
+        const data = {
           newEmail,
           emailVerified,
           emailVerifyTTL: new Date()
-        })
-        .do(() => {
-          this.newEmail = newEmail;
-          this.emailVerified = emailVerified;
-          this.emailVerifyTTL = new Date();
-        });
+        };
+        return this.update$(data).do(() => Object.assign(this, data));
       })
       .flatMap(() => {
         const mailOptions = {

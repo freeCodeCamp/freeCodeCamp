@@ -6,12 +6,11 @@ import FA from 'react-fontawesome';
 import { Panel } from 'react-bootstrap';
 
 import ns from './ns.json';
-import Challenge from './Challenge.jsx';
+import Challenges from './Challenges.jsx';
 import {
   toggleThisPanel,
 
-  makePanelOpenSelector,
-  makePanelHiddenSelector
+  makePanelOpenSelector
 } from './redux';
 
 import { makeBlockSelector } from '../entities';
@@ -21,15 +20,13 @@ function makeMapStateToProps(_, { dashedName }) {
   return createSelector(
     makeBlockSelector(dashedName),
     makePanelOpenSelector(dashedName),
-    makePanelHiddenSelector(dashedName),
-    (block, isOpen, isHidden) => {
+    (block, isOpen) => {
       return {
         isOpen,
-        isHidden,
         dashedName,
         title: block.title,
         time: block.time,
-        challenges: block.challenges
+        challenges: block.challenges || []
       };
     }
   );
@@ -37,7 +34,6 @@ function makeMapStateToProps(_, { dashedName }) {
 const propTypes = {
   challenges: PropTypes.array,
   dashedName: PropTypes.string,
-  isHidden: PropTypes.bool,
   isOpen: PropTypes.bool,
   time: PropTypes.string,
   title: PropTypes.string,
@@ -70,30 +66,14 @@ export class Block extends PureComponent {
     );
   }
 
-  renderChallenges(challenges) {
-    if (!Array.isArray(challenges) || !challenges.length) {
-      return <div>No Challenges Found</div>;
-    }
-    return challenges.map(dashedName => (
-      <Challenge
-        dashedName={ dashedName }
-        key={ dashedName }
-      />
-    ));
-  }
-
   render() {
     const {
       title,
       time,
       dashedName,
       isOpen,
-      isHidden,
       challenges
     } = this.props;
-    if (isHidden) {
-      return null;
-    }
     return (
       <Panel
         bsClass={ `${ns}-accordion-panel` }
@@ -105,7 +85,7 @@ export class Block extends PureComponent {
         key={ title }
         onSelect={ this.handleSelect }
         >
-        { this.renderChallenges(challenges) }
+        { isOpen && <Challenges challenges={ challenges } /> }
       </Panel>
     );
   }

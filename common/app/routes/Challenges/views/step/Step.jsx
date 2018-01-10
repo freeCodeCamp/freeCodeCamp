@@ -167,23 +167,24 @@ export class StepChallenge extends PureComponent {
     );
   }
 
-  renderStep({
-    clickOnImage,
-    completeAction,
-    currentIndex,
-    isActionCompleted,
-    isLastStep,
-    numOfSteps,
-    step,
-    stepBackward,
-    stepForward
+  renderStep(
+    {
+      clickOnImage,
+      completeAction,
+      currentIndex,
+      isActionCompleted,
+      isLastStep,
+      numOfSteps,
+      step,
+      stepBackward,
+      stepForward
   }) {
     if (!Array.isArray(step)) {
       return null;
     }
     const [imgUrl, imgAlt, info, action] = step;
     return (
-      <div key={ imgUrl }>
+      <div key={ `${info.slice(0, 15)}` }>
         <a
           href={ imgUrl }
           onClick={ clickOnImage }
@@ -241,8 +242,8 @@ export class StepChallenge extends PureComponent {
     if (!Array.isArray(steps)) {
       return null;
     }
-    return steps.map(([ imgUrl, imgAlt ]) => (
-      <div key={ imgUrl }>
+    return steps.map(([ imgUrl, imgAlt, info ]) => (
+      <div key={ `${info.slice(0, 15)}` }>
         <Image
           alt={ imgAlt }
           responsive={ true }

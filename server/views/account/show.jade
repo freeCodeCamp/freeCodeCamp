@@ -9,10 +9,10 @@ block content
         if (!user.isGithubCool)
           a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
               i.fa.fa-github
-              | Link my GitHub to unlock my portfolio
+              | Link my GitHub to enable my public profile
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/settings')
-                | Update your settings
+                | Update my settings
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/signout')
                 | Sign me out of freeCodeCamp
@@ -56,6 +56,21 @@ block content
                     if isBackEndCert
                         .button-spacer
                         a.btn.btn-primary.btn-block(href='/' + username + '/back-end-certification') View My Back End Development Certification
+                    if isRespWebDesignCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/responsive-web-design-certification') View My Responsive Web Design Certification
+                    if isFrontEndLibsCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/front-end-libraries-certification') View My Front End Libraries Certification
+                    if isJsAlgoDataStructCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/javascript-algorithms-data-structures-certification') View My JavaScript Algorithms Data Structures Certification
+                    if isApisMicroservicesCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/apis-microservices-certification') View My APIs Microservices Certification
+                    if isInfosecQaCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/information-security-quality-assurance-certification') View My Information Sequrity Quality Assurance Certification
                     if (user && user.username != username)
                         .button-spacer
                         a.btn.btn-primary.btn-block(href='/' + username + '/report-user/') Report this user's profile for abuse

@@ -43,3 +43,13 @@ export function ifNotVerifiedRedirectToSettings(req, res, next) {
   }
   return next();
 }
+
+export function ifUserRedirectTo(path = '/', status) {
+  status = status === 302 ? 302 : 301;
+  return (req, res, next) => {
+    if (req.user) {
+      return res.status(status).redirect(path);
+    }
+    return next();
+  };
+}

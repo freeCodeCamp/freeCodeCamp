@@ -63,10 +63,7 @@ export const actionCompletedSelector = state => getNS(state).isActionCompleted;
 
 export default handleActions(
   () => ({
-    [challenges.challengeUpdated]: () => {
-      console.log('updating step ui');
-      return initialState;
-    },
+    [challenges.challengeUpdated]: () => initialState,
     [types.goToStep]: (state, { payload: { step = 0, isUnlocked }}) => ({
       ...state,
       currentIndex: step,

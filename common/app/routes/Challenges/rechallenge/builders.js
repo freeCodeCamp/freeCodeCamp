@@ -19,6 +19,20 @@ import {
 
 const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
+const loopProtector = `
+  window.loopProtect = parent.loopProtect;
+  window.__err = null;
+  window.loopProtect.hit = function(line) {
+    window.__err = new Error(
+      'Potential infinite loop at line ' +
+      line +
+      '. To disable loop protection, write:' +
+      ' // noprotect as the first' +
+      ' line. Beware that if you do have an infinite loop in your code' +
+      ' this will crash your browser.'
+    );
+  };
+`;
 const defaultTemplate = ({ source }) => `
   <body style='margin:8px;'>
     <!-- fcc-start-source -->
@@ -28,7 +42,7 @@ const defaultTemplate = ({ source }) => `
 `;
 
 const wrapInScript = partial(transformContents, (content) => (
-  `${htmlCatch}<script>${content}${jsCatch}</script>`
+  `${htmlCatch}<script>${loopProtector}${content}${jsCatch}</script>`
 ));
 const wrapInStyle = partial(transformContents, (content) => (
   `${htmlCatch}<style>${content}</style>`

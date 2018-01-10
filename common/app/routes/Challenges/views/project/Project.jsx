@@ -41,7 +41,7 @@ export class Project extends PureComponent {
     const {
       id,
       title,
-      image,
+      image = 'ovKSXMs',
       isCompleted,
       description
     } = this.props;

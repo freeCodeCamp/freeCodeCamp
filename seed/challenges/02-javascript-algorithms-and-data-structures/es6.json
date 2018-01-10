@@ -25,30 +25,38 @@
     },
     {
       "id": "587d7b87367417b2b2512b3f",
-      "title": "Explore Problems with the var Keyword",
+      "title": "Explore Differences Between the var and let Keywords",
       "description": [
         "One of the biggest problems with declaring variables with the <code>var</code> keyword is that you can overwrite variable declarations without an error.",
         "<blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// logs 'David'</blockquote>",
-        "In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidently overwrite a variable that you did not intend to overwrite. Because this behaviour does not throw an error, searching and fixing bugs becomes more difficult.",
-        "Another problem with the <code>var</code> keyword is that it is hoisted to the top of your code when it compiles. This means that you can use a variable before you declare it.",
-        "<blockquote>console.log(camper);<br>var camper = 'David';<br>// logs undefined</blockquote>",
-        "The code runs in the following order:",
-        "<ol><li>The variable <code>camper</code> is declared as undefined.</li><li>The value of <code>camper</code> is logged.</li><li>David is assigned to <code>camper</code>.</li></ol>",
-        "This code will run without an error.",
-        "A new keyword called <code>let</code> was introduced in ES6 to solve the problems with the <code>var</code> keyword. With the <code>let</code> keyword, all the examples we just saw will cause an error to appear. We can no longer overwrite variables or use a variable before we declare it. Some modern browsers require you to add <code>\"use strict\";</code> to the top of your code before you can use the new features of ES6.",
-        "Let's try using the <code>let</code> keyword.",
+        "As you can see in the code above, the <code>camper</code> variable is originally declared as <code>James</code> and then overridden to be <code>David</code>.",
+        "In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidently overwrite a variable that you did not intend to overwrite.",
+        "Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>",
+        "A new keyword called <code>let</code> was introduced in ES6 to solve this potential issue with the <code>var</code> keyword.",
+        "If you were to replace <code>var</code> with <code>let</code> in the variable declarations of the code above, the result would be an error.",
+        "<blockquote>let camper = 'James';<br>let camper = 'David'; // throws an error</blockquote>",        
+        "This error can be seen in the console of your browser.",
+        "So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.", 
         "<hr>",
-        "Fix the code so that it only uses the <code>let</code> keyword and makes the errors go away.",
-        "<strong>Note</strong><br>Remember to add <code>\"use strict\";</code> to the top of your code."
+        "Update the code so it only uses the <code>let</code> keyword.",
+        "<strong>Note</strong><br>Remember that since <code>let</code> prevents variables from being overridden, you will need to remove one of the declarations entirely."
       ],
       "challengeSeed": [
-        "var favorite = redNosedReindeer + \" is Santa's favorite reindeer.\";",
-        "var redNosedReindeer = \"Rudolph\";",
-        "var redNosedReindeer = \"Comet\";"
+        "var catName;",
+        "var quote;",
+        "function catTalk() {",
+        "  \"use strict\";",
+        "",
+        "  catName = \"Oliver\";",
+        "  quote = catName + \" says Meow!\";",
+        "",
+        "}",
+        "catTalk();"
       ],
       "tests": [
-        "assert(redNosedReindeer === \"Rudolph\", 'message: <code>redNosedReindeer</code> should be Rudolph.');",
-        "assert(favorite === \"Rudolph is Santa's favorite reindeer.\", \"message: <code>favorite</code> should return Santa's favorite reindeer.\");"
+        "getUserInput => assert(!getUserInput('index').match(/var/g),'message: <code>var</code> does not exist in code.');",
+        "assert(catName === \"Oliver\", 'message: <code>catName</code> should be <code>Oliver</code>.');",
+        "assert(quote === \"Oliver says Meow!\", 'message: <code>quote</code> should be <code>\"Oliver says Meow!\"</code>');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -72,11 +80,12 @@
         "<code>i</code> is not defined because it was not declared in the global scope. It is only declared within the for loop statement. <code>printNumTwo()</code> returned the correct value because three different <code>i</code> variables with unique values (0, 1, and 2) were created by the <code>let</code> keyword within the loop statement.",
         "<hr>",
         "Fix the code so that <code>i</code> declared in the if statement is a separate variable than <code>i</code> declared in the first line of the function. Be certain not to use the <code>var</code> keyword anywhere in your code.",
-        "<strong>Note</strong><br>Remember to add <code>\"use strict\";</code> to the top of your code.",
         "This exercise is designed to illustrate the difference between how <code>var</code> and <code>let</code> keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion."
       ],
       "challengeSeed": [
+        "",
         "function checkScope() {",
+        "\"use strict\";",
         "  var i = \"function scope\";",
         "  if (true) {",
         "    i = \"block scope\";",
@@ -84,13 +93,11 @@
         "  }",
         "  console.log(\"Function scope i is: \", i);",
         "  return i;",
-        "}",
-        "// only change the code above this line",
-        "checkScope();"
+        "}"
       ],
       "tests": [
-        "// TEMPORARILY COMMENTED OUT: assert(!/var/g.test(code) && /let/g.test(code), 'message: The <code>var</code> keyword should be replaced with <code>let</code>. (This test is temporarily disabled)');",
-        "assert(code.match(/(i\\s*=\\s*).*\\s*.*\\s*.*\\1('|\")block\\s*scope\\2/g), 'message: The variable <code>i</code> declared in the if statement should equal \"block scope\".');",
+        "getUserInput => assert(!getUserInput('index').match(/var/g),'message: <code>var</code> does not exist in code.');",
+        "getUserInput => assert(getUserInput('index').match(/(i\\s*=\\s*).*\\s*.*\\s*.*\\1('|\")block\\s*scope\\2/g), 'message: The variable <code>i</code> declared in the if statement should equal \"block scope\".');",
         "assert(checkScope() === \"function scope\", 'message: <code>checkScope()</code> should return \"function scope\"');"
       ],
       "type": "waypoint",
@@ -107,27 +114,28 @@
         "<blockquote>\"use strict\"<br>const FAV_PET = \"Cats\";<br>FAV_PET = \"Dogs\"; // returns error</blockquote>",
         "As you can see, trying to reassign a variable declared with <code>const</code> will throw an error. You should always name variables you don't want to reassign using the <code>const</code> keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. A common practice is to name your constants in all upper-cases and with an underscore to separate words (e.g. <code>EXAMPLE_VARIABLE</code>).",
         "<hr>",
-        "Change the code so that all variables are declared using <code>let</code> or <code>const</code>. Use <code>let</code> when you want the variable to change, and <code>const</code> when you want the variable to remain constant. Also, rename variables declared with <code>const</code> to conform to common practices.",
-        "<strong>Note</strong><br>Don't forget to add <code>\"use strict\";</code> to the top of your code."
+        "Change the code so that all variables are declared using <code>let</code> or <code>const</code>. Use <code>let</code> when you want the variable to change, and <code>const</code> when you want the variable to remain constant. Also, rename variables declared with <code>const</code> to conform to common practices, meaning constants should be in all caps"
       ],
       "challengeSeed": [
-        "// change 'var' to 'let' or 'const'",
-        "// rename constant variables",
-        "var pi = 3.14;",
-        "var radius = 10;",
-        "var calculateCircumference = function(r) {",
-        "  var diameter = 2 * r;",
-        "  var result = pi * diameter;",
-        "  return result;",
-        "};",
-        "// Test your code",
-        "console.log(calculateCircumference(radius));"
+        "function printManyTimes(str) {",
+        "  \"use strict\";",
+        "",
+        "  // change code below this line",
+        "",
+        "  var sentence = str + \" is cool!\";",
+        "  for(var i = 0; i < str.length; i+=2) {",
+        "    console.log(str2);",
+        "  }",
+        "",
+        "  // change code above this line",
+        "",
+        "}",
+        "printManyTimes(\"FreeCodeCamp\");"
       ],
       "tests": [
-        "// Test user replaced all var keyword",
-        "// Test PI is const",
-        "// Test calculateCircumference is const",
-        "// Test pi and calculateCircumference has been renamed"
+        "getUserInput => assert(!getUserInput('index').match(/var/g),'message: <code>var</code> does not exist in code.');",
+        "getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g), 'message: <code>SENTENCE</code> should be a constant variable (by using <code>const</code>).');",
+        "getUserInput => assert(getUserInput('index').match(/(let i)/g), 'message: <code>i</code> should be a variable only defined within the for loop scope (by using<code>let</code>).');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -144,23 +152,24 @@
         "<blockquote>\"use strict\";<br>const s = [5, 6, 7];<br>s = [1, 2, 3]; // throws error, trying to assign a const<br>s[2] = 45; // works just as it would with an array declared with var or let<br>console.log(s); // returns [5, 6, 45]</blockquote>",
         "As you can see, you can mutate the object <code>[5, 6, 7]</code> itself and the variable <code>s</code> will still point to the altered array <code>[5, 6, 45]</code>. Like all arrays, the array elements in <code>s</code> are mutable, but because <code>const</code> was used, you cannot use the variable identifier <code>s</code> to point to a different array using the assignment operator.",
         "<hr>",
-        "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignment.",
-        "<strong>Note</strong><br>Don't forget to add <code>\"use strict\";</code> to the top of your code."
+        "An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignment."
       ],
       "challengeSeed": [
         "const s = [5, 7, 2];",
-        "// change code below this line",
+        "function editInPlace() {",
+        "  \"use strict\";",
+        "  // change code below this line",
         "",
-        "s = [2, 5, 7];",
+        "  // s = [2, 5, 7]; <- this is invalid",
         "",
-        "// change code above this line",
-        "// Test your code",
-        "console.log(s);"
+        "  // change code above this line",
+        "}",
+        "editInPlace();"
       ],
       "tests": [
-        "assert(code.match(/const/g), 'message: Do not replace <code>const</code> keyword.');",
-        "assert(code.match(/const\\s+s/g), 'message: <code>s</code> is declared with <code>const</code>.');",
-        "assert(code.match(/const\\s+s\\s*?=\\s*?\\[\\s*?2\\s*?,\\s*?5\\s*?,\\s*?7\\s*?\\]\\s*?;/g), 'message: Do not change the original array declaration.');",
+        "getUserInput => assert(getUserInput('index').match(/const/g), 'message: Do not replace <code>const</code> keyword.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+s/g), 'message: <code>s</code> should be a constant variable (by using <code>const</code>).');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+s\\s*=\\s*\\[\\s*5\\s*,\\s*7\\s*,\\s*2\\s*\\]\\s*;?/g), 'message: Do not change the original array declaration.');",
         "assert.deepEqual(s, [2, 5, 7], 'message: <code>s</code> should be equal to <code>[2, 5, 7]</code>.');"
       ],
       "type": "waypoint",
@@ -179,22 +188,29 @@
         "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze <code>MATH_CONSTANTS</code> object so that noone is able alter the value of <code>PI</code> or add any more properties to it."
       ],
       "challengeSeed": [
-        "const MATH_CONSTANTS = {",
-        "  PI: 3.14",
-        "};",
-        "// change code below this line",
+        "function freezeObj() {",
+        "  \"use strict\";",
+        "  const MATH_CONSTANTS = {",
+        "    PI: 3.14",
+        "  };",
+        "  // change code below this line",
         "",
         "",
-        "// change code above this line",
-        "MATH_CONSTANTS.PI = 99;",
-        "// Test your code",
-        "console.log(MATH_CONSTANTS.PI);// should show 3.14"
+        "  // change code above this line",
+        "  try {",
+        "    MATH_CONSTANTS.PI = 99;",
+        "  } catch( ex ) {",
+        "    console.log(ex);",
+        "  }",
+        "  return MATH_CONSTANTS.PI;",
+        "}",
+        "const PI = freezeObj();"
       ],
       "tests": [
-        "// Do not replace <code>const</code> keyword.",
-        "// <code>MATH_CONSTANTS</code> is declared with <code>const</code>.",
-        "// Do not change original <code>MATH_CONSTANTS</code>",
-        "assert.deepEqual(MATH_CONSTANTS, {PI: 3.14}, 'message: <code>MATH_CONSTANTS.PI</code> should be equal to <code>3.14</code>.');"
+        "getUserInput => assert(getUserInput('index').match(/const/g), 'message: Do not replace <code>const</code> keyword.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS/g), 'message: <code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS\\s+=\\s+{\\s+PI:\\s+3.14\\s+};/g), 'message: Do not change original <code>MATH_CONSTANTS</code>.');",
+        "assert(PI === 3.14, 'message: <code>PI</code> equals <code>3.14</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Aug 12, 2017",
@@ -214,26 +230,20 @@
         "<blockquote>const myFunc= () => \"value\"</blockquote>",
         "This code will still return <code>value</code> by default.",
         "<hr>",
-        "Rewrite the function assigned to the variable <code>magic</code> which returns a new <code>Date()</code> to use arrow function syntax. Also make sure nothing is defined using the keyword <code>var</code>.",
-        "Note",
-        "Don't forget to use strict mode."
+        "Rewrite the function assigned to the variable <code>magic</code> which returns a new <code>Date()</code> to use arrow function syntax. Also make sure nothing is defined using the keyword <code>var</code>."
       ],
       "challengeSeed": [
-        "// change code below this line",
         "var magic = function() {",
+        "  \"use strict\";",
         "  return new Date();",
-        "}",
-        "// change code above this line",
-        "// test your code",
-        "console.log(magic());"
+        "};"
       ],
       "tests": [
-        "// Test user did replace var keyword",
-        "// Test magic is const",
-        "// Test magic is a function",
-        "// Test magic() returns the correct date",
-        "// Test function keyword was not used",
-        "// Test arrow => was used"
+        "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+magic/g), 'message: <code>magic</code> should be a constant variable (by using <code>const</code>).');",
+        "assert(typeof magic === 'function', 'message: <code>magic</code> is a <code>function</code>.');",
+        "assert(magic().getDate() == new Date().getDate(), 'message: <code>magic()</code> returns correct date.');",
+        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -248,26 +258,22 @@
         "<blockquote>// doubles input value and returns it<br>const doubler = (item) => item * 2;</blockquote>",
         "You can pass more than one argument into arrow functions as well.",
         "<hr>",
-        "Rewrite the <code>myConcat</code> function which appends contents of <code>arr2</code> to <code>arr1</code> so that the function uses arrow function syntax.",
-        "Note",
-        "Don't forget to use strict mode."
+        "Rewrite the <code>myConcat</code> function which appends contents of <code>arr2</code> to <code>arr1</code> so that the function uses arrow function syntax."
       ],
       "challengeSeed": [
-        "// change code below this line",
         "var myConcat = function(arr1, arr2) {",
+        "  \"use strict\";",
         "  return arr1.concat(arr2);",
-        "}",
-        "// change code above this line",
+        "};",
         "// test your code",
         "console.log(myConcat([1, 2], [3, 4, 5]));"
       ],
       "tests": [
-        "// Test user did replace var keyword",
-        "// Test myConcat is const",
-        "assert(typeof myConcat === \"function\", 'message: <code>myConcat</code> should be a function');",
-        "// Test myConcat() returns the correct array",
-        "// Test function keyword was not used",
-        "// Test arrow => was used"
+        "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), 'message: <code>myConcat</code> should be a constant variable (by using <code>const</code>).');",
+        "assert(typeof myConcat === 'function', 'message: <code>myConcat</code> should be a function');",
+        "assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, 'message: <code>myConcat()</code> returns the correct <code>array</code>');",
+        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -286,27 +292,29 @@
         "<blockquote>FBPosts.filter((post) => post.thumbnail !== null && post.shares > 100 && post.likes > 500)</blockquote>",
         "This code is more succinct and accomplishes the same task with fewer lines of code.",
         "<hr>",
-        "Use arrow function syntax to compute the square of only the positive integers (fractions are not integers) in the array <code>realNumberArray</code> and store the new array in the variable <code>squaredIntegers</code>.",
-        "Note",
-        "Don't forget to use strict mode."
+        "Use arrow function syntax to compute the square of only the positive integers (fractions are not integers) in the array <code>realNumberArray</code> and store the new array in the variable <code>squaredIntegers</code>."
       ],
       "challengeSeed": [
         "const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34];",
-        "// change code below this line",
-        "var squaredIntegers = realNumberArray;",
-        "// change code above this line",
+        "const squareList = (arr) => {",
+        "  \"use strict\";",
+        "  // change code below this line",
+        "  const squaredIntegers = arr;",
+        "  // change code above this line",
+        "  return squaredIntegers;",
+        "};",
         "// test your code",
+        "const squaredIntegers = squareList(realNumberArray);",
         "console.log(squaredIntegers);"
       ],
       "tests": [
-        "// Test user did replace <code>var</code> keyword",
-        "// Test <code>squaredIntegers</code> is <code>const</code>",
-        "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an array');",
+        "getUserInput => assert(!getUserInput('index').match(/var/g), 'message: User did replace <code>var</code> keyword.');",
+        "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), 'message: <code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');",
+        "assert(Array.isArray(squaredIntegers), 'message: <code>squaredIntegers</code> should be an <code>array</code>');",
         "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, 'message: <code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');",
-        "// Test <code>function</code> keyword was not used",
-        "// Test arrow <code>=></code> was used",
-        "assert(!code.match(/(for)|(while)/g), 'message: loop should not be used');",
-        "assert(code.match(/map/g) && code.match(/filter/g), 'message: <code>map</code> and <code>filter</code> should be used');"
+        "getUserInput => assert(!getUserInput('index').match(/function/g), 'message: <code>function</code> keyword was not used.');",
+        "getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'message: loop should not be used');",
+        "getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), 'message: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -322,20 +330,22 @@
         "<blockquote>function greeting(name = \"Anonymous\") {<br>  return \"Hello \" + name;<br>}<br>console.log(greeting(\"John\")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>",
         "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>\"Anonymous\"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.",
         "<hr>",
-        "Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified.",
-        "<strong>Note</strong><br>Don't forget to use strict mode."
+        "Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified."
       ],
       "challengeSeed": [
-        "function increment(number, value) {",
+        "const increment = (function() {",
+        "  \"use strict\";",
+        "  return function increment(number, value) {",
         "    return number + value;",
-        "}",
+        "  };",
+        "})();",
         "console.log(increment(5, 2)); // returns 7",
         "console.log(increment(5)); // returns NaN"
       ],
       "tests": [
-        "assert(increment(5, 2) === 7, \"The result of increment(5, 2) should be 7\");",
-        "assert(increment(5) === 6, \"The result of increment(5) should be 6\");",
-        "// Test default parameter was used for 'value'"
+        "assert(increment(5, 2) === 7, 'message: The result of <code>increment(5, 2)</code> should be <code>7</code>.');",
+        "assert(increment(5) === 6, 'message: The result of <code>increment(5)</code> should be <code>6</code>.');",
+        "getUserInput => assert(getUserInput('index').match(/value\\s*=\\s*1/g), 'message: default parameter <code>1</code> was used for <code>value</code>.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -351,21 +361,24 @@
         "<blockquote>function howMany(...args) {<br>  return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>",
         "The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.",
         "<hr>",
-        "Modify the function <code>sum</code> so that is uses the rest operator and it works in the same way with any number of parameters.",
-        "<strong>Note</strong><br>Don't forget to use strict mode."
+        "Modify the function <code>sum</code> so that is uses the rest operator and it works in the same way with any number of parameters."
       ],
       "challengeSeed": [
-        "function sum(x, y, z) {",
+        "const sum = (function() {",
+        "  \"use strict\";",
+        "  return function sum(x, y, z) {",
         "    const array = [ x, y, z ];",
         "    return array.reduce((a, b) => a + b, 0);",
-        "}",
+        "  };",
+        "})();",
         "console.log(sum(1, 2, 3)); // 6"
       ],
       "tests": [
-        "assert(sum(0,1,2) === 3, 'The result of sum(0,1,2) should be 3');",
-        "assert(sum(1,2,3,4) === 10, 'The result of sum(1,2,3,4) should be 10');",
-        "assert(sum(5) === 5, 'The result of sum(5) should be 5');",
-        "assert(sum() === 0, 'The result of sum() should be 0');"
+        "assert(sum(0,1,2) === 3, 'message: The result of <code>sum(0,1,2)</code> should be 3');",
+        "assert(sum(1,2,3,4) === 10, 'message: The result of <code>sum(1,2,3,4)</code> should be 10');",
+        "assert(sum(5) === 5, 'message: The result of <code>sum(5)</code> should be 5');",
+        "assert(sum() === 0, 'message: The result of <code>sum()</code> should be 0');",
+        "getUserInput => assert(getUserInput('index').match(/function\\s+sum\\s*\\(\\s*...args\\s*\\)\\s*{/g), 'message: The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -390,14 +403,17 @@
       ],
       "challengeSeed": [
         "const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];",
-        "const arr2 = []; // change this line",
-        "arr1.push('JUN');",
-        "console.log(arr2); // arr2 should not be affected"
+        "let arr2;",
+        "(function() {",
+        "  \"use strict\";",
+        "  arr2 = []; // change this line",
+        "})();",
+        "console.log(arr2);"
       ],
       "tests": [
-        "// Test arr2 is correct copy of arr1",
-        "// Test arr1 has changed",
-        "// Test spread operator was used"
+        "assert(arr2.every((v, i) => v === arr1[i]), 'message: <code>arr2</code> is correct copy of <code>arr1</code>.');",
+        "getUserInput => assert(getUserInput('index').match(/\\[\\s*...arr1\\s*\\]/g),'message: <code>...</code> spread operator was used to duplicate <code>arr1</code>.');",
+        "assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length},'message: <code>arr2</code> remains unchanged when <code>arr1</code> is changed.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -408,7 +424,7 @@
       "id": "587d7b89367417b2b2512b49",
       "title": "Use Destructuring Assignment to Assign Variables from Objects",
       "description": [
-        "We earlier saw how spread operator can effectively spread, or unpack, the contents of the array.",
+        "We saw earlier how spread operator can effectively spread, or unpack, the contents of the array.",
         "We can do something similar with objects as well. <dfn>Destructuring assignment</dfn> is special syntax for neatly assigning values taken directly from an object to variables.",
         "Consider the following ES5 code:",
         "<blockquote>var voxel = {x: 3.6, y: 7.4, z: 6.54 };<br>var x = voxel.x; // x = 3.6<br>var y = voxel.y; // y = 7.4<br>var z = voxel.z; // z = 6.54</blockquote>",
@@ -418,18 +434,26 @@
         "<blockquote>const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54</blockquote>",
         "You may read it as \"get the field <code>x</code> and copy the value into <code>a</code>,\" and so on.",
         "<hr>",
-        "Use destructuring to obtain the length of the string <code>greeting</code>"
+        "Use destructuring to obtain the length of the input string <code>str</code>, and assign the length to <code>len</code> in line."
       ],
       "challengeSeed": [
-        "const greeting = 'itadakimasu';",
-        "// change code below this line",
-        "const length = 0; // change this",
-        "// change code above this line",
-        "console.log(length); // should be using destructuring"
+        "function getLength(str) {",
+        "  \"use strict\";",
+        "",
+        "  // change code below this line",
+        "  const length = 0; // change this",
+        "  // change code above this line",
+        "",
+        "  return len; // you must assign length to len in line",
+        "",
+        "}",
+        "",
+        "console.log(getLength('FreeCodeCamp'));"
       ],
       "tests": [
-        "// Test len is 11",
-        "// Test destructuring was used"
+        "assert(typeof getLength('') === 'number', 'message: the function <code>getLength()</code> returns a number.');",
+        "assert(getLength(\"FreeCodeCamp\") === 12, 'message: <code>getLength(\"FreeCodeCamp\")</code> should be <code>12</code>');",
+        "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g),'message: destructuring with reassignment was used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -448,18 +472,24 @@
         "Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorrow</code> and assign it to <code>maxOfTomorrow</code>."
       ],
       "challengeSeed": [
-        "const forecast = {",
+        "const LOCAL_FORECAST = {",
         "  today: { min: 72, max: 83 },",
         "  tomorrow: { min: 73.3, max: 84.6 }",
         "};",
-        "// change code below this line",
-        "const maxOfTomorrow = undefined; // change this line",
-        "// change code above this line",
-        "console.log(maxOfTomorrow); // should be 84.6"
+        "",
+        "function getMaxOfTmrw(forecast) {",
+        "  \"use strict\";",
+        "  // change code below this line",
+        "  const maxOfTomorrow = undefined; // change this line",
+        "  // change code above this line",
+        "  return maxOfTomorrow;",
+        "}",
+        "",
+        "console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6"
       ],
       "tests": [
-        "// Test maxOfTomorrow to be 84.6",
-        "// Test destructuring was used"
+        "assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, 'message: <code>maxOfTomorrow</code> equals <code>84.6</code>');",
+        "getUserInput => assert(getUserInput('index').match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g),'message: nested destructuring was used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -482,9 +512,12 @@
       ],
       "challengeSeed": [
         "let a = 8, b = 6;",
-        "// change code below this line",
-        "",
-        "// change code above this line",
+        "(() => {",
+        "  \"use strict\";",
+        "  // change code below this line",
+        "  ",
+        "  // change code above this line",
+        "})();",
         "console.log(a); // should be 6",
         "console.log(b); // should be 8"
       ],
@@ -512,17 +545,21 @@
       ],
       "challengeSeed": [
         "const source = [1,2,3,4,5,6,7,8,9,10];",
-        "// change code below this line",
-        "const arr = source; // change this",
-        "// change code below this line",
+        "function removeFirstTwo(list) {",
+        "  \"use strict\";",
+        "  // change code below this line",
+        "  arr = list; // change this",
+        "  // change code below this line",
+        "  return arr;",
+        "}",
+        "const arr = removeFirstTwo(source);",
         "console.log(arr); // should be [3,4,5,6,7,8,9,10]",
         "console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];"
       ],
       "tests": [
-        "// Test arr is [3,4,5,6,7,8,9,10];",
-        "// Test source is [1,2,3,4,5,6,7,8,9,10];",
-        "// Test destructuring was used",
-        "// Test slice was not used"
+        "assert(arr.every((v, i) => v === i + 3),'message: <code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');",
+        "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g),'message: destructuring was used.');",
+        "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), 'message: <code>Array.slice()</code> was not used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -552,16 +589,24 @@
         "  min: -0.75,",
         "  average: 35.85",
         "};",
-        "// change code below this line",
-        "const half = (stats) => ((stats.max + stats.min) / 2.0); // use function argument destructurung",
-        "// change code above this line",
+        "const half = (function() {",
+        "  \"use strict\"; // do not change this line",
+        "",
+        "  // change code below this line",
+        "  return function half(stats) {",
+        "    // use function argument destructuring",
+        "    return (stats.max + stats.min) / 2.0;",
+        "  };",
+        "  // change code above this line",
+        "",
+        "})();",
         "console.log(stats); // should be object",
         "console.log(half(stats)); // should be 28.015"
       ],
       "tests": [
-        "// Test stats is an object",
-        "// Test half is 28.015",
-        "// Test destructuring was used"
+        "assert(typeof stats === 'object', 'message: <code>stats</code> should be an <code>object</code>.');",
+        "assert(half(stats) === 28.015, 'message: <code>half(stats)</code> should be <code>28.015</code>');",
+        "getUserInput => assert(getUserInput('index').match(/\\(\\s*\\{\\s*\\w+\\s*,\\s*\\w+\\s*\\}\\s*\\)/g), 'message: Destructuring was used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -580,7 +625,7 @@
         "Secondly, the example uses backticks (<code>`</code>), not quotes (<code>'</code> or <code>\"</code>), to wrap the string. Notice that the string is multi-line.",
         "This new way of creating strings gives you more flexibility to create robust strings.",
         "<hr>",
-        "Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>."
+        "Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>."
       ],
       "challengeSeed": [
         "const result = {",
@@ -588,21 +633,27 @@
         "  failure: [\"no-var\", \"var-on-top\", \"linebreak\"],",
         "  skipped: [\"id-blacklist\", \"no-dup-keys\"]",
         "};",
-        "// change code below this line",
-        "const resultDisplay = null;",
-        "// change code above this line",
-        "console.log(resultDisplay);",
+        "function makeList(arr) {",
+        "  \"use strict\";",
+        "",
+        "  // change code below this line",
+        "  const resultDisplayArray = null;",
+        "  // change code above this line",
+        "",
+        "  return resultDisplayArray;",
+        "}",
         "/**",
-        " * should look like this",
-        " * <li class=\"text-warning\">no-var</li>",
-        " * <li class=\"text-warning\">var-on-top</li>",
-        " * <li class=\"text-warning\">linebreak</li>",
-        " **/"
+        " * makeList(result.failure) should return:",
+        " * [ <li class=\"text-warning\">no-var</li>,",
+        " *   <li class=\"text-warning\">var-on-top</li>, ",
+        " *   <li class=\"text-warning\">linebreak</li> ]",
+        " **/",
+        "const resultDisplayArray = makeList(result.failure);"
       ],
       "tests": [
-        "// Test resultDisplay is a string",
-        "// Test resultDisplay is the desired output",
-        "// Test template strings were used"
+        "assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, 'message: <code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.');",
+        "assert(makeList(result.failure).every((v, i) => v === `<li class=\"text-warning\">${result.failure[i]}</li>`), 'message: <code>resultDisplayArray</code> is the desired output.');",
+        "getUserInput => assert(getUserInput('index').match(/\\`<li class=\"text-warning\">\\$\\{\\w+\\}<\\/li>\\`/g), 'message: Template strings were used');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -624,20 +675,21 @@
         "Use simple fields with object literals to create and return a <code>Person</code> object."
       ],
       "challengeSeed": [
-        "// change code below this line",
         "const createPerson = (name, age, gender) => {",
+        "  \"use strict\";",
+        "  // change code below this line",
         "  return {",
         "    name: name,",
         "    age: age,",
         "    gender: gender",
         "  };",
+        "  // change code above this line",
         "};",
-        "// change code above this line",
         "console.log(createPerson(\"Zodiac Hasbro\", 56, \"male\")); // returns a proper object"
       ],
       "tests": [
-        "// Test the output is {name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}",
-        "// Test no : was present"
+        "assert(() => {const res={name:\"Zodiac Hasbro\",age:56,gender:\"male\"}; const person=createPerson(\"Zodiac Hasbro\", 56, \"male\"); return Object.keys(person).every(k => person[k] === res[k]);}, 'message: the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.');",
+        "getUserInput => assert(!getUserInput('index').match(/:/g), 'message: No <code>:</code> were used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -656,10 +708,12 @@
         "Refactor the function <code>setGear</code> inside the object <code>bicycle</code> to use the shorthand syntax described above."
       ],
       "challengeSeed": [
+
         "// change code below this line",
         "const bicycle = {",
         "  gear: 2,",
         "  setGear: function(newGear) {",
+        "    \"use strict\";",
         "    this.gear = newGear;",
         "  }",
         "};",
@@ -668,8 +722,8 @@
         "console.log(bicycle.gear);"
       ],
       "tests": [
-        "// Test the output is Sending request to Yanoshi Mimoto",
-        "// Test no : was present"
+        "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, 'message: <code>setGear</code> is a function and changes the <code>gear</code> variable.');",
+        "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), 'message: Declarative function was used.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -692,16 +746,21 @@
         "The <code>Vegetable</code> lets you create a vegetable object, with a property <code>name</code>, to be passed to constructor."
       ],
       "challengeSeed": [
-        "/* Alter code below this line */",
-        "const Vegetable = undefined;",
-        "/* Alter code above this line */",
+        "function makeClass() {",
+        "  \"use strict\";",
+        "  /* Alter code below this line */",
+        "",
+        "  /* Alter code above this line */",
+        "  return Vegetable;",
+        "}",
+        "const Vegetable = makeClass();",
         "const carrot = new Vegetable('carrot');",
         "console.log(carrot.name); // => should be 'carrot'"
       ],
       "tests": [
-        "// Test the Vegetable is a class",
-        "// Test that class keyword was used",
-        "// Test that other objects could be created with the class"
+        "assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', 'message: <code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.');",
+        "getUserInput => assert(getUserInput('index').match(/class/g),'message: <code>class</code> keyword was used.');",
+        "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';},'message: <code>Vegetable</code> can be instantiated.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -722,25 +781,30 @@
         "<hr>",
         "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Farenheit temperature.",
         "Now create <code>getter</code> and <code>setter</code> in the class, to obtain the temperature in Celsius scale.",
-        "Remember that <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
+        "Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
         "Note",
         "When you implement this, you would be tracking the temperature inside the class in one scale - either Fahrenheit or Celsius.",
         "This is the power of getter or setter - you are creating an API for another user, who would get the correct result, no matter which one you track.",
         "In other words, you are abstracting implementation details from the consumer."
       ],
       "challengeSeed": [
-        "/* Alter code below this line */",
-        "const Thermostat = undefined;",
-        "/* Alter code above this line */",
+        "function makeClass() {",
+        "  \"use strict\";",
+        "  /* Alter code below this line */",
+        "",
+        "  /* Alter code above this line */",
+        "  return Thermostat;",
+        "}",
+        "const Thermostat = makeClass();",
         "const thermos = new Thermostat(76); // setting in Farenheit scale",
         "let temp = thermos.temperature; // 24.44 in C",
         "thermos.temperature = 26;",
         "temp = thermos.temperature; // 26 in C"
       ],
       "tests": [
-        "// Test the Thermostat is a class",
-        "// Test that class keyword was used",
-        "// Test that other objects could be created with the class"
+        "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','message: <code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.');",
+        "getUserInput => assert(getUserInput('index').match(/class/g),'message: <code>class</code> keyword was used.');",
+        "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, 'message: <code>Thermostat</code> can be instantiated.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -758,16 +822,25 @@
         "A description of the above code:",
         "<blockquote>import { function } from \"file_path_goes_here\"<br>// We can also import variables the same way!</blockquote>",
         "There are a few ways to write an <code>import</code> statement, but the above is a very common use-case.",
-        "<strong>Note</strong><br>the whitespace surrounding the function inside the curly braces is a best practice - it makes it easier to read the <code>import</code> statement.",
-        "<strong>Note</strong><br>The lessons in this section handle non-browser features. <code>import</code>, and the statements we introduce in the rest of these lessons, won't work on a browser directly, However, we can use various tools to create code out of this to make it work in browser.",
+        "<strong>Note</strong><br>The whitespace surrounding the function inside the curly braces is a best practice - it makes it easier to read the <code>import</code> statement.",
+        "<strong>Note</strong><br>The lessons in this section handle non-browser features. <code>import</code>, and the statements we introduce in the rest of these lessons, won't work on a browser directly. However, we can use various tools to create code out of this to make it work in browser.",
+        "<strong>Note</strong><br>In most cases, the file path requires a <code>./</code> before it; otherwise, node will look in the <code>node_modules</code> directory first trying to load it as a dependencie.",
         "<hr>",
         "Add the appropriate <code>import</code> statement that will allow the current file to use the <code>capitalizeString</code> function. The file where this function lives is called <code>\"string_functions\"</code>, and it is in the same directory as the current file."
       ],
+      "head": [
+        "window.require = function (str) {",
+        "if (str === 'string_functions') {",
+        "return {",
+        "capitalizeString: str => str.toUpperCase()",
+        "}}};"
+      ],
       "challengeSeed": [
+        "\"use strict\";",
         "capitalizeString(\"hello!\");"
       ],
       "tests": [
-        "assert(code.match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/ig)"
+        "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/g), 'message: valid <code>import</code> statement');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -787,13 +860,17 @@
         "<hr>",
         "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated <code>export</code>, export the two variables."
       ],
+      "head": [
+        "window.exports = function(){};"
+      ],
       "challengeSeed": [
+        "\"use strict\";",
         "const foo = \"bar\";",
         "const boo = \"far\";"
       ],
       "tests": [
-        "assert(code.match(/export\\s+const\\s+foo\\s+=+\\s\"bar\"/ig))",
-        "assert(code.match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/ig))"
+        "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+foo\\s+=+\\s\"bar\"/g), 'message: <code>foo</code> is exported.');",
+        "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/g), 'message: <code>bar</code> is exported.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -809,16 +886,25 @@
         "<blockquote>import * as myMathModule from \"math_functions\"<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>",
         "And breaking down that code:",
         "<blockquote>import * as object_with_name_of_your_choice from \"file_path_goes_here\"<br>object_with_name_of_your_choice.imported_function</blockquote>",
-        "You may use any name following the <code>import *</code> as portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
+        "You may use any name following the <code>import * as </code>portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
         "<hr>",
         "The code below requires the contents of a file, <code>\"capitalize_strings\"</code>, found in the same directory as it, imported. Add the appropriate <code>import *</code> statement to the top of the file, using the object provided."
       ],
+      "head": [
+        "window.require = function(str) {",
+        "if (str === 'capitalize_strings') {",
+        "return {",
+        "capitalize: str => str.toUpperCase(),",
+        "lowercase: str => str.toLowerCase()",
+        "}}};"
+      ],
       "challengeSeed": [
+        "\"use strict\";",
         "myStringModule.capitalize(\"foo\");",
         "myStringModule.lowercase(\"Foo\");"
       ],
       "tests": [
-        "assert(code.match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/ig))"
+        "getUserInput => assert(getUserInput('index').match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/g), 'message: Properly uses <code>import * as</code> syntax.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -837,11 +923,15 @@
         "<hr>",
         "The following function should be the fallback value for the module. Please add the necessary code to do so."
       ],
+      "head": [
+        "window.exports = function(){};"
+      ],
       "challengeSeed": [
+        "\"use strict\";",
         "function subtract(x,y) {return x - y;}"
       ],
       "tests": [
-        "assert(code.match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/ig))"
+        "getUserInput => assert(getUserInput('index').match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/g), 'message: Proper used of <code>export</code> fallback.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -859,11 +949,19 @@
         "<hr>",
         "In the following code, please import the default export, <code>subtract</code>, from the file <code>\"math_functions\"</code>, found in the same directory as this file."
       ],
+      "head": [
+        "window.require = function(str) {",
+        "if (str === 'math_functions') {",
+          "return function(a, b) {",
+          "return a - b;",
+        "}}};"
+      ],
       "challengeSeed": [
+        "\"use strict\";",
         "subtract(7,4);"
       ],
       "tests": [
-        "assert(code.match(/import\\s+subtract\\s+from\\s+\"math_functions\"/ig))"
+        "getUserInput => assert(getUserInput('index').match(/import\\s+subtract\\s+from\\s+\"math_functions\"/g), 'message: Properly imports <code>export default</code> method.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",

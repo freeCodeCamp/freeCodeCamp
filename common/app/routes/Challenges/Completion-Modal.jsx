@@ -28,7 +28,7 @@ const mapDispatchToProps = function(dispatch) {
   const dispatchers = {
     close: () => dispatch(closeChallengeModal()),
     handleKeypress: (e) => {
-      if (e.keyCode === 13 && (e.ctrlKey || e.meta)) {
+      if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
         dispatch(submitChallenge());
       }
     },

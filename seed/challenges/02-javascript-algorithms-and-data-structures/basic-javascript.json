@@ -686,7 +686,7 @@
     },
     {
       "id": "bd7993c9ca9feddfaeb7bdef",
-      "title": "Divide one Decimal by Another with JavaScript",
+      "title": "Divide One Decimal by Another with JavaScript",
       "description": [
         "Now let's divide one decimal by another.",
         "<hr>",
@@ -704,7 +704,7 @@
       "tests": [
         "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>');",
         "assert(/4\\.40*\\s*\\/\\s*2\\.*0*/.test(code), 'message: You should use the <code>/</code> operator to divide 4.4 by 2');",
-        "assert(code.match(/quotient/g).length === 3, 'message: The quotient variable should only be assigned once');"
+        "assert(code.match(/quotient/g).length === 1, 'message: The quotient variable should only be assigned once');"
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -5411,7 +5411,7 @@
         "Now, take a look at a <code>do...while</code> loop.",
         "<blockquote>var ourArray = []; <br>var i = 5;<br>do {<br>  ourArray.push(i);<br>  i++;<br>} while (i < 5);</blockquote>",
         "In this case, we initialize the value of <code>i</code> as 5, just like we did with the while loop. When we get to the next line, there is no check for the value of <code>i</code>, so we go to the code inside the curly braces and execute it. We will add one element to the array and increment <code>i</code> before we get to the condition check. Then, when we get to checking if <code>i < 5</code> see that <code>i</code> is now 6, which fails the conditional check. So we exit the loop and are done. At the end of the above example, the value of <code>ourArray</code> is <code>[5]</code>.",
-        "Essenially, a <code>do...while</code> loop ensures that the code inside the loop will run at least once.",
+        "Essentially, a <code>do...while</code> loop ensures that the code inside the loop will run at least once.",
         "Let's try getting a <code>do...while</code> loop to work by pushing values to an array.",
         "<hr>",
         "Change the <code>while</code> loop in the code to a <code>do...while</code> loop so that the loop will push the number 10 to <code>myArray</code>, and <code>i</code> will be equal to <code>11</code> when your code finishes running."

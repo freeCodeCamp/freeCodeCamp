@@ -14,9 +14,14 @@ import {
 import { observeQuery } from '../utils/rx';
 
 import {
+  respWebDesignId,
+  frontEndLibsId,
+  jsAlgoDataStructId,
   frontEndChallengeId,
-  dataVisChallengeId,
-  backEndChallengeId
+  dataVisId,
+  apisMicroservicesId,
+  backEndChallengeId,
+  infosecQaId
 } from '../utils/constantStrings.json';
 
 import {
@@ -60,9 +65,12 @@ function getIdsForCert$(id, Challenge) {
 //   {
 //     email: String,
 //     username: String,
-//     isFrontEndCert: Boolean,
-//     isBackEndCert: Boolean,
-//     isDataVisCert: Boolean
+//     isRespWebDesignCert: Boolean,
+//     isFrontEndLibsCert: Boolean,
+//     isJsAlgoDataStructCert: Boolean,
+//     isDataVisCert: Boolean,
+//     isApisMicroservicesCert: Boolean,
+//     isInfosecQaCert: Boolean
 //   },
 //   send$: Observable
 // ) => Observable
@@ -71,17 +79,23 @@ function sendCertifiedEmail(
     email,
     name,
     username,
-    isFrontEndCert,
-    isBackEndCert,
-    isDataVisCert
+    isRespWebDesignCert,
+    isFrontEndLibsCert,
+    isJsAlgoDataStructCert,
+    isDataVisCert,
+    isApisMicroservicesCert,
+    isInfosecQaCert
   },
   send$
 ) {
   if (
     !isEmail(email) ||
-    !isFrontEndCert ||
-    !isBackEndCert ||
-    !isDataVisCert
+    !isRespWebDesignCert ||
+    !isFrontEndLibsCert ||
+    !isJsAlgoDataStructCert ||
+    !isDataVisCert ||
+    !isApisMicroservicesCert ||
+    !isInfosecQaCert
   ) {
     return Observable.just(false);
   }
@@ -107,8 +121,16 @@ export default function certificate(app) {
 
   const certTypeIds = {
     [certTypes.frontEnd]: getIdsForCert$(frontEndChallengeId, Challenge),
-    [certTypes.dataVis]: getIdsForCert$(dataVisChallengeId, Challenge),
-    [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge)
+    [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge),
+    [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
+    [certTypes.frontEndLibs]: getIdsForCert$(frontEndLibsId, Challenge),
+    [certTypes.jsAlgoDataStruct]: getIdsForCert$(jsAlgoDataStructId, Challenge),
+    [certTypes.dataVis]: getIdsForCert$(dataVisId, Challenge),
+    [certTypes.apisMicroservices]: getIdsForCert$(
+      apisMicroservicesId,
+      Challenge
+    ),
+    [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge)
   };
 
   router.post(
@@ -124,9 +146,39 @@ export default function certificate(app) {
   );
 
   router.post(
+    '/certificate/verify/responsive-web-design',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.respWebDesign)
+  );
+
+  router.post(
+    '/certificate/verify/front-end-libraries',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.frontEndLibs)
+  );
+
+  router.post(
+    '/certificate/verify/javascript-algorithms-data-structures',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.jsAlgoDataStruct)
+  );
+
+  router.post(
     '/certificate/verify/data-visualization',
     ifNoUser401,
     verifyCert.bind(null, certTypes.dataVis)
+  );
+
+  router.post(
+    '/certificate/verify/apis-microservices',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.apisMicroservices)
+  );
+
+  router.post(
+    '/certificate/verify/information-security-quality-assurance',
+    ifNoUser401,
+    verifyCert.bind(null, certTypes.infosecQa)
   );
 
   router.post(

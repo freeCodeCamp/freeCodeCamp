@@ -34,18 +34,17 @@ block content
                   a(href="/deprecated-signin") Or click here if you want to sign in with other options.
 
         script.
-           $(document).ready(function() {
-
-             function disableMagicButton (isDisabled) {
-               if (isDisabled) {
-                 $('#magic-btn')
-                   .html('<span class="fa fa-circle-o-notch fa-spin fa-fw"></span>')
-                   .prop('disabled', true);
-               } else {
-                 $('#magic-btn')
-                   .html('<span class="fa.fa-envelope">Get a magic link to sign in.</span>')
-                   .prop('disabled', false);
-               }
+          $(document).ready(function() {
+            function disableMagicButton (isDisabled) {
+                if (isDisabled) {
+                  $('#magic-btn')
+                    .prop('disabled', true)
+                    .html('<span style="color:#E0E0E0;"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i>Ok - We will attempt sending to the email above.</span>');
+                } else {
+                  $('#magic-btn')
+                    .prop('disabled', true)
+                    .html('<span style="color:#E0E0E0;">Did not get a link? Reload the page and resend again.</span>');
+                }
             }
 
             $('form').submit(function(event){
@@ -54,34 +53,53 @@ block content
               disableMagicButton(true);
               var $form = $(event.target);
               $.ajax({
-                  type        : 'POST',
-                  url         : $form.attr('action'),
-                  data        : $form.serialize(),
-                  dataType    : 'json',
-                  encode      : true,
-                  xhrFields   : { withCredentials:  true }
+                type        : 'POST',
+                url         : $form.attr('action'),
+                data        : $form.serialize(),
+                dataType    : 'json',
+                encode      : true,
+                xhrFields   : { withCredentials:  true }
               })
               .fail(error => {
                 if (error.responseText){
-                    var data = JSON.parse(error.responseText);
-                    if(data.error && data.error.message)
+                  var data = JSON.parse(error.responseText);
+                  if(data.error && data.error.message) {
                     $('#flash-content').html(data.error.message);
                     $('#flash-board')
                       .removeClass('alert-success')
                       .addClass('alert-info')
+                      .slideDown(400)
+                      .delay(800)
                       .fadeIn();
                     disableMagicButton(false);
                   }
+                }
               })
-              .done(data =>{
-                if(data && data.message){
+              .done(data => {
+                if(data && data.message) {
+                  var alertType = 'alert-';
+                  switch (data.type) {
+                    case 'errors': {
+                      alertType += 'danger';
+                      break
+                    }
+                    case 'success': {
+                      alertType += 'success';
+                      break
+                    }
+                    default: {
+                      alertType += 'info';
+                    }
+                  }
                   $('#flash-content').html(data.message);
                   $('#flash-board')
-                      .removeClass('alert-info')
-                      .addClass('alert-success')
-                      .fadeIn();
+                    .removeClass('alert-info alert-success alert-danger')
+                    .addClass(alertType)
+                    .slideDown(400)
+                    .delay(800)
+                    .fadeIn();
                   disableMagicButton(false);
                 }
               });
             });
-           });
+          });

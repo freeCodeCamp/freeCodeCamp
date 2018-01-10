@@ -32,6 +32,9 @@
 .navbar-brand {
   padding-top: @navbar-logo-padding;
   padding-bottom: @navbar-logo-padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-logo {
@@ -153,6 +156,28 @@ li.nav-avatar {
 }
 
 .night {
+  .nav-component-wrapper {
+    ::-webkit-input-placeholder {
+      color: @night-text-color;
+    }
+
+    ::-moz-placeholder {
+      color: @night-text-color;
+    }
+
+    ::-ms-placeholder {
+      color: @night-text-color;
+    }
+
+    ::placeholder {
+      color: @night-text-color;
+    }
+
+    .fcc_input {
+      background-color: @night-search-color;
+      color: @night-text-color;
+    }
+  }
   .navbar-default {
     .navbar-nav {
       & > li > a {
@@ -209,31 +234,31 @@ li.nav-avatar {
   }
 
   ::-webkit-input-placeholder {
-    color: @brand-primary;
+    color: @input-color-placeholder;
   }
 
   ::-moz-placeholder {
-    color: @brand-primary;
+    color: @input-color-placeholder;
   }
 
   ::-ms-placeholder {
-    color: @brand-primary;
+    color: @input-color-placeholder;
   }
 
   ::placeholder {
-    color: @brand-primary;
+    color: @input-color-placeholder;
   }
 
   .navbar-header {
     flex-grow: 1;
     display: flex;
     align-items: center;
+    margin-right: 10px;
   }
-
 }
 
 .logo-glyph {
-  height: 30px;
+  height: 28px;
   width: auto;
 }
 

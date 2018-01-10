@@ -209,6 +209,7 @@ export function getChallenge(
 ) {
   return map
     .flatMap(({ entities, result: { superBlocks } }) => {
+      const superBlock = entities.superBlock;
       const block = entities.block[blockDashedName];
       const challenge = entities.challenge[challengeDashedName];
       return Observable.if(
@@ -226,6 +227,7 @@ export function getChallenge(
             `/challenges/${block.dashedName}/${challenge.dashedName}` :
             false,
           entities: {
+            superBlock,
             challenge: {
               [challenge.dashedName]: mapChallengeToLang(challenge, lang)
             }
