@@ -41,7 +41,7 @@ export class Project extends PureComponent {
     const {
       id,
       title,
-      image,
+      image = 'ovKSXMs',
       isCompleted,
       description
     } = this.props;
@@ -59,7 +59,7 @@ export class Project extends PureComponent {
         <Image
           id={ id }
           responsive={ true }
-          src={ image ? imageURL : false }
+          src={ imageURL }
         />
         <br />
         <ToolPanel />
