@@ -26,11 +26,11 @@ export const types = createTypes([
 
 export const editUserFlag = createAction(
   types.editUserFlag,
-  (flag, username, value) => ({ flag, username, value })
+  (username, flag, value) => ({ flag, username, value })
 );
 export const toggleUserFlag = createAction(
   types.toggleUserFlag,
-  (flag, username) => ({ username, flag })
+  (username, flag) => ({ username, flag })
 );
 
 export const addPortfolioItem = createAction(types.addPortfolioItem);
@@ -43,7 +43,6 @@ export const updatePortfolio = createAction(
 export const updateUserBackend = createAction(types.updateUserBackend.start);
 export const updateUserBackendError = createAction(
   types.updateUserBackend.error,
-  ({ result }) => result,
   _.identity
 );
 export const updateUserBackendComplete = createAction(

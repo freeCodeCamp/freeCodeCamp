@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import _ from 'lodash';
+import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form';
 import {
   Button,
   Col,
@@ -18,8 +19,6 @@ import { onRouteUpdateEmail } from '../redux';
 import { Link } from '../../../Router';
 import { userSelector } from '../../../redux';
 import {
-  editUserFlag,
-  toggleUserFlag,
   updateUserBackend
 } from '../../../entities/user';
 
@@ -30,36 +29,38 @@ const mapStateToProps = createSelector(
     isPublicEmail,
     sendMonthlyEmail,
     sendNotificationEmail,
-    sendQuincyEmail,
-    username
+    sendQuincyEmail
   }) => ({
     email,
+    initialValues: { email },
     isPublicEmail,
     sendMonthlyEmail,
     sendNotificationEmail,
-    sendQuincyEmail,
-    username
+    sendQuincyEmail
   })
 );
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    editUserFlag,
-    toggleUserFlag,
     updateUserBackend
   }, dispatch);
 }
 
 const propTypes = {
-  editUserFlag: PropTypes.func.isRequired,
   email: PropTypes.string,
+  fields: PropTypes.objectOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      onChange: PropTypes.func.isRequired,
+      value: PropTypes.string.isRequired
+    })
+  ),
+  handleSubmit: PropTypes.func.isRequired,
   isPublicEmail: PropTypes.bool,
   sendMonthlyEmail: PropTypes.bool,
   sendNotificationEmail: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
-  toggleUserFlag: PropTypes.func.isRequired,
-  updateUserBackend: PropTypes.func.isRequired,
-  username: PropTypes.string
+  updateUserBackend: PropTypes.func.isRequired
 };
 
 export function UpdateEmailButton() {
@@ -87,29 +88,82 @@ class EmailSettings extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const { updateUserBackend, email } = this.props;
-    updateUserBackend({ flag: 'email', newValue: email });
+  handleSubmit(values) {
+    this.props.updateUserBackend(values);
+  }
+
+  renderToggleOptions(options) {
+    const { updateUserBackend } = this.props;
+    return options.map(option => {
+      const id = _.kebabCase(option.label);
+      return (
+        <Row className='inline-form' key={ id }>
+          <Col sm={ 8 }>
+            <ControlLabel htmlFor={ id }>
+              { option.label }
+            </ControlLabel>
+          </Col>
+          <Col sm={ 4 }>
+            <ToggleButtonGroup
+              className='toggle-btn-group'
+              id={ id }
+              name='monthly-email'
+              onChange={ () => updateUserBackend({ [option.flag]: !option.bool }) }
+              type='radio'
+              >
+              <ToggleButton
+                bsSize='lg'
+                bsStyle='primary'
+                className={
+                  classnames(
+                    { active: option.bool },
+                    'btn-toggle'
+                  )
+                }
+                disabled={ option.bool }
+                type='radio'
+                value='On'
+                >
+                On
+              </ToggleButton>
+              <ToggleButton
+                bsSize='lg'
+                bsStyle='primary'
+                className={
+                  classnames(
+                    { active: !option.bool },
+                    'btn-toggle'
+                  )
+                }
+                disabled={ !option.bool }
+                type='radio'
+                value='Off'
+                >
+                Off
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </Col>
+        </Row>
+      );
+    });
   }
 
   render() {
     const {
-      editUserFlag,
       email,
-      isPublicEmail,
+      fields: { email: { value, onChange } },
+      handleSubmit,
+      isPublicEmail = false,
       sendMonthlyEmail,
       sendNotificationEmail,
-      sendQuincyEmail,
-      toggleUserFlag,
-      username
+      sendQuincyEmail
     } = this.props;
     if (!email) {
       return (
         <div>
           <Row>
             <p className='large-p text-center'>
-              You don't have an email id associated to this account.
+              You do not have an email associated with this account.
             </p>
           </Row>
           <Row>
@@ -118,19 +172,36 @@ class EmailSettings extends PureComponent {
         </div>
       );
     }
-    const updateEmail = event =>
-      editUserFlag('email', username, event.target.value);
-    const togglePublicEmail = () =>
-      toggleUserFlag('isPublicEmail', username);
-    const toggleMonthlyEmail = () =>
-      toggleUserFlag('sendMonthlyEmail', username);
-    const toggleNotificationEmail = () =>
-      toggleUserFlag('sendNotificationEmail', username);
-    const toggleQuincyEmail = () => toggleUserFlag('sendQuincyEmail', username);
+    const options = [
+      {
+        flag: 'isPublicEmail',
+        label: 'Allow people to send me email',
+        bool: isPublicEmail
+      },
+      {
+        flag: 'sendMonthlyEmail',
+        label: 'Send me announcement emails',
+        bool: sendMonthlyEmail
+      },
+      {
+        flag: 'sendNotificationEmail',
+        label: 'Send me notification emails',
+        bool: sendNotificationEmail
+      },
+      {
+        flag: 'sendQuincyEmail',
+        label: 'Send me Quincy\'s weekly email',
+        bool: sendQuincyEmail
+      }
+    ];
     return (
       <div className='email-settings'>
         <Row>
-          <form onSubmit={ this.handleSubmit }>
+          <form
+            className='inline-form'
+            id='update-email'
+            onSubmit={ handleSubmit(this.handleSubmit) }
+            >
             <Col sm={ 6 } xs={ 12 }>
               <ControlLabel htmlFor='email'>
                 Email
@@ -140,14 +211,17 @@ class EmailSettings extends PureComponent {
               <FormControl
                 bsSize='sm'
                 id='email'
-                onChange={ updateEmail }
+                name='email'
+                onChange={ onChange }
                 placeholder='email'
+                required={ true }
                 type='email'
-                value={ email }
+                value={ value }
               />
             </Col>
             <Col sm={ 1 } xs={ 12 }>
               <Button
+                bsSize='lg'
                 bsStyle='primary'
                 type='submit'
                 >
@@ -156,198 +230,7 @@ class EmailSettings extends PureComponent {
             </Col>
           </form>
         </Row>
-        <Row>
-          <Col sm={ 8 }>
-            <p>
-              <strong>Allow people to send me email</strong>
-            </p>
-          </Col>
-          <Col sm={ 4 }>
-            <ToggleButtonGroup
-              className='toggle-btn-group'
-              name='monthly-email'
-              onChange={ togglePublicEmail }
-              type='radio'
-              >
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    'positive-20',
-                    { active: isPublicEmail },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ isPublicEmail }
-                type='radio'
-                value={ 1 }
-                >
-                On
-              </ToggleButton>
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    'positive-20',
-                    { active: !sendMonthlyEmail },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ !sendMonthlyEmail }
-                type='radio'
-                value={ 2 }
-                >
-                Off
-              </ToggleButton>
-            </ToggleButtonGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={ 8 }>
-            <p>
-              <strong>Send me announcement emails</strong>
-            </p>
-          </Col>
-          <Col sm={ 4 }>
-            <ToggleButtonGroup
-              className='toggle-btn-group'
-              name='monthly-email'
-              onChange={ toggleMonthlyEmail }
-              type='radio'
-              >
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    'positive-20',
-                    { active: sendMonthlyEmail },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ sendMonthlyEmail }
-                type='radio'
-                value={ 1 }
-                >
-                On
-              </ToggleButton>
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    'positive-20',
-                    { active: !sendMonthlyEmail },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ !sendMonthlyEmail }
-                type='radio'
-                value={ 2 }
-                >
-                Off
-              </ToggleButton>
-            </ToggleButtonGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={ 8 }>
-            <p>
-              <strong>Send me notification emails</strong>
-            </p>
-          </Col>
-          <Col sm={ 4 }>
-            <ToggleButtonGroup
-              className='toggle-btn-group'
-              name='notification-email'
-              onChange={ toggleNotificationEmail }
-              type='radio'
-              >
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    'positive-20',
-                    { active: sendNotificationEmail },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ sendNotificationEmail }
-                type='radio'
-                value={ 1 }
-                >
-                On
-              </ToggleButton>
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    'positive-20',
-                    { active: !sendNotificationEmail },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ !sendNotificationEmail }
-                type='radio'
-                value={ 2 }
-                >
-                Off
-              </ToggleButton>
-            </ToggleButtonGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={ 8 }>
-            <p>
-              <strong>Send me Quincy's weekly email</strong>
-            </p>
-          </Col>
-          <Col sm={ 4 }>
-            <ToggleButtonGroup
-              className='toggle-btn-group'
-              name='quincy-email'
-              onChange={ toggleQuincyEmail }
-              type='radio'
-              >
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    'positive-20',
-                    { active: sendQuincyEmail },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ sendQuincyEmail }
-                type='radio'
-                value={ 1 }
-                >
-                On
-              </ToggleButton>
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    'positive-20',
-                    { active: !sendQuincyEmail },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ !sendQuincyEmail }
-                type='radio'
-                value={ 2 }
-                >
-                Off
-              </ToggleButton>
-            </ToggleButtonGroup>
-          </Col>
-        </Row>
+        { this.renderToggleOptions(options) }
       </div>
     );
   }
@@ -356,4 +239,11 @@ class EmailSettings extends PureComponent {
 EmailSettings.displayName = 'EmailSettings';
 EmailSettings.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(EmailSettings);
+export default reduxForm(
+  {
+    form: 'email-settings',
+    fields: [ 'email' ]
+  },
+  mapStateToProps,
+  mapDispatchToProps
+)(EmailSettings);

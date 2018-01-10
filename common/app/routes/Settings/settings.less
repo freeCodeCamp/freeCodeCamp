@@ -47,29 +47,46 @@
 }
 
 .@{ns}-container {
+
   input, textarea {
     background-color: #fff;
   }
+
+  .inline-form {
+    display: flex;
+    align-items: center;
+  }
+
   .row {
     margin-bottom: 15px;
   }
+
+  .about-me {
+    border-left: none;
+  }
+
   .about-me, .avatar {
     height: 180px;
   }
+
   .portfolio-settings-intro {
     display: flex;
     justify-content: space-between;
   }
+
   .portfolio-input-row {
     display: flex;
   }
+
   .portfolio-description {
     height: calc(100% - 12px);
   }
+
   .editable-content-container {
     display: flex;
     align-items: center;
   }
+
   .btn-primary[disabled] {
     color: @skeleton-gray;
   }

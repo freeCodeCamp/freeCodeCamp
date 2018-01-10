@@ -1,5 +1,6 @@
 import { Observable } from 'rx';
 import uuid from 'uuid';
+import _ from 'lodash';
 import moment from 'moment';
 import dedent from 'dedent';
 import debugFactory from 'debug';
@@ -484,9 +485,11 @@ module.exports = function(User) {
   User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
     return Observable.defer(() => {
       const ownEmail = newEmail === this.email;
+      console.info(newEmail, this.email);
       if (!isEmail('' + newEmail)) {
         throw createEmailError();
       }
+
       // email is already associated and verified with this account
       if (ownEmail) {
         if (this.emailVerified) {
@@ -565,29 +568,33 @@ module.exports = function(User) {
             'user-request-update-email.ejs'
           )
         };
+        debug('MAIL OPTIONS', mailOptions);
         return this.verify(mailOptions);
       })
-      .map(() => dedent`
+      .map(() => {
+        return dedent`
         Please check your email.
         We sent you a link that you can click to verify your email address.
-      `);
+      `;
+      });
   };
+
+  function isTheSame(val1, val2) {
+    return val1 === val2;
+  }
 
   User.prototype.requestUpdateFlag = function requestUpdateFlag(
     flag,
     newValue
   ) {
-    const ownValue = newValue === this[flag];
-
-    console.log(flag, newValue, ownValue);
-
-    // value for this flag has not been changed
+    const ownValue = isTheSame(newValue, this[flag]);
     if (ownValue) {
-      return Observable.throw(new Error(
+      return Observable.of(
         `${newValue} is already associated with the flag '${flag}'.`
-      ));
+      )
+        .do(console.log)
+        .map(() => dedent`Your settings have not been changed`);
     }
-
     return Observable.fromPromise(User.doesExist(null, newValue))
       .flatMap(() => {
         return this.update$({ [flag]: newValue })
@@ -598,9 +605,51 @@ module.exports = function(User) {
         });
       })
       .map(() => dedent`
-        We have successfully update your user account.
+        We have successfully updated your account.
       `);
   };
+
+  function requestUpdateMultipleFlags(values) {
+    const flagsToCheck = Object.keys(values);
+    const valuesToCheck = _.pick({ ...this }, flagsToCheck);
+    const valuesToUpdate = flagsToCheck
+      .filter(flag => !isTheSame(values[flag], valuesToCheck[flag]));
+    if (!valuesToUpdate.length) {
+      return Observable.of(dedent`
+        No property in
+        ${JSON.stringify(flagsToCheck, null, 2)}
+        will introduce a change in this user.
+        `
+      )
+        .do(console.log)
+        .map(() => dedent`Your settings have not been changed`);
+    }
+    return Observable.from(valuesToUpdate)
+      .flatMap(flag => Observable.of({ flag, newValue: values[flag] }))
+      .toArray()
+      .flatMap(updates => {
+        console.log(updates);
+        return Observable.forkJoin(
+          Observable.from(updates)
+            .flatMap(({ flag, newValue }) => {
+              return Observable.fromPromise(User.doesExist(null, newValue))
+                .flatMap(() => {
+                  return this.update$({ [flag]: newValue })
+                  .do(() => {
+                    console.log(this[newValue]);
+                    this[flag] = newValue;
+                    console.log(this[flag], newValue);
+                  });
+                });
+            })
+        );
+      })
+      .map(() => dedent`
+        We have successfully updated your account.
+      `);
+  }
+
+  User.prototype.requestUpdateMultipleFlags = requestUpdateMultipleFlags;
 
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {

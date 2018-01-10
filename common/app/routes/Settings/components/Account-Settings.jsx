@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form';
 import {
   Image,
   Button,
@@ -15,10 +16,8 @@ import {
 import { Link } from '../../../Router';
 import LockedSettings from './Locked-Settings.jsx';
 import ThemeSettings from './ThemeSettings.jsx';
-import { toggleNightMode, userSelector } from '../../../redux';
+import { userSelector } from '../../../redux';
 import {
-  editUserFlag,
-  toggleUserFlag,
   updateUserBackend
 } from '../../../entities/user';
 import { invertTheme } from '../../../../utils/themes';
@@ -38,6 +37,7 @@ const mapStateToProps = createSelector(
   ) => ({
     bio,
     currentTheme: theme,
+    initialValues: { name, location },
     isLocked,
     location,
     name,
@@ -49,9 +49,6 @@ const mapStateToProps = createSelector(
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    editUserFlag,
-    toggleNightMode,
-    toggleUserFlag,
     updateUserBackend
   }, dispatch);
 }
@@ -59,53 +56,53 @@ function mapDispatchToProps(dispatch) {
 const propTypes = {
     bio: PropTypes.string,
     currentTheme: PropTypes.string,
-    editUserFlag: PropTypes.func.isRequired,
+    fields: PropTypes.objectOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        onChange: PropTypes.func.isRequired,
+        value: PropTypes.string.isRequired
+      })
+    ),
+    handleSubmit: PropTypes.func.isRequired,
     isLocked: PropTypes.bool,
     location: PropTypes.string,
     name: PropTypes.string,
     picture: PropTypes.string,
-    toggleUserFlag: PropTypes.func.isRequired,
     updateUserBackend: PropTypes.func.isRequired,
     username: PropTypes.string
 };
 
-const fields = ['Name', 'Location'];
-
 class AccountSettings extends PureComponent {
   constructor(props) {
     super(props);
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const flag = e.target.id;
-    this.props.updateUserBackend({flag, newValue: this.props[flag] });
+  handleSubmit(values) {
+    this.props.updateUserBackend(values);
   }
 
   render() {
     const {
       bio,
       currentTheme,
-      editUserFlag,
+      fields,
+      handleSubmit,
       isLocked,
       picture,
-      toggleUserFlag,
+      updateUserBackend,
       username
     } = this.props;
-    const updatehanders = {
-      name: event => editUserFlag('name', username, event.target.value),
-      location: event => editUserFlag('location', username, event.target.value)
-    };
-    const toggleIsLocked = () => toggleUserFlag('isLocked', username);
-    const toggleNightMode = theme =>
-      editUserFlag('theme', username, invertTheme(theme));
+
+    const toggleIsLocked = () => updateUserBackend({ isLocked: !isLocked });
+    const toggleNightMode = theme => updateUserBackend({
+      theme: invertTheme(theme)
+    });
     return (
       <div className='account-settings'>
         <Row>
           <Col xs={ 12 }>
-            <h2>Account Settings</h2>
+            <h2>Account Settings - { username }</h2>
           </Col>
           <Col md={ 3 } xs= { 12 }>
             <Link to={`/${username}`}>
@@ -113,7 +110,6 @@ class AccountSettings extends PureComponent {
                 block={ true }
                 bsSize='lg'
                 bsStyle='primary'
-                href='/link/github'
                 >
                 View Public Profile
               </Button>
@@ -132,10 +128,10 @@ class AccountSettings extends PureComponent {
         </Row>
         <br />
         <Row>
-          <Col md={ 2 } xs={ 12 }>
+          <Col md={ 2 } mdPush={ 1 } xs={ 12 }>
             <Image className='avatar' src={ picture } thumbnail={ true } />
           </Col>
-          <Col md={ 10 } xs = { 12 }>
+          <Col md={ 8 } mdPush={ 1 } xs = { 12 }>
             <blockquote
               className='about-me'
               >
@@ -144,41 +140,47 @@ class AccountSettings extends PureComponent {
           </Col>
         </Row>
         <br />
-        {
-          fields.map(field => {
-            const key = field.toLowerCase();
-            return (
-              <form id={ key } key={ key } onSubmit={ this.handleSubmit } >
-                <Row className='editable-content-container'>
-                  <Col sm={ 6 } xs={ 12 }>
-                    <ControlLabel htmlFor={ key }>
-                      { field }
-                    </ControlLabel>
-                  </Col>
-                  <Col sm={ 5 } xs={ 12 }>
-                    <FormControl
-                      bsSize='sm'
-                      id={ key }
-                      onChange={ updatehanders[key] }
-                      placeholder={ field }
-                      required={ true }
-                      type='text'
-                      value={ this.props[key] }
-                    />
-                  </Col>
-                  <Col sm={ 1 } xs={ 12 }>
-                    <Button
-                      bsStyle='primary'
-                      type='submit'
-                      >
-                      Save
-                    </Button>
-                  </Col>
-                </Row>
-              </form>
+        <form id='camper-identity' onSubmit={ handleSubmit(this.handleSubmit) }>
+          {
+            Object.keys(fields).map(key => fields[key])
+            .map(({ name, onChange, value }) => {
+              const key = _.kebabCase(name);
+              return (
+              <Row className='editable-content-container' key={ key }>
+                <Col sm={ 6 } xs={ 12 }>
+                  <ControlLabel htmlFor={ key }>
+                    { _.startCase(name) }
+                  </ControlLabel>
+                </Col>
+                <Col sm={ 6 } xs={ 12 }>
+                  <FormControl
+                    bsSize='sm'
+                    id={ key }
+                    name={ name }
+                    onChange={ onChange }
+                    placeholder={ name }
+                    required={ true }
+                    type='text'
+                    value={ value }
+                  />
+                </Col>
+              </Row>
             );
-          })
-        }
+            })
+          }
+          <Row>
+            <Col md={ 2 } mdPush= { 10 } xs={ 12 }>
+              <Button
+                block={ true }
+                bsSize='lg'
+                bsStyle='primary'
+                type='submit'
+                >
+                Save
+              </Button>
+            </Col>
+          </Row>
+        </form>
         <LockedSettings
           isLocked={ isLocked }
           toggleIsLocked={ toggleIsLocked }
@@ -195,4 +197,11 @@ class AccountSettings extends PureComponent {
 AccountSettings.displayName = 'AccountSettings';
 AccountSettings.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccountSettings);
+export default reduxForm(
+  {
+    form: 'account-settings',
+    fields: [ 'name', 'location' ]
+  },
+  mapStateToProps,
+  mapDispatchToProps
+)(AccountSettings);

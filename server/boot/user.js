@@ -2,7 +2,7 @@ import dedent from 'dedent';
 import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
-// import emoji from 'node-emoji';
+import emoji from 'node-emoji';
 
 import {
   frontEndChallengeId,
@@ -11,6 +11,7 @@ import {
   frontEndLibsId,
   jsAlgoDataStructId,
   dataVisId,
+  dataViz2018Id,
   apisMicroservicesId,
   infosecQaId
 } from '../utils/constantStrings.json';
@@ -39,6 +40,7 @@ const certIds = {
   [certTypes.frontEndLibs]: frontEndLibsId,
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
   [certTypes.dataVis]: dataVisId,
+  [certTypes.dataVis2018]: dataViz2018Id,
   [certTypes.apisMicroservices]: apisMicroservicesId,
   [certTypes.infosecQa]: infosecQaId
 };
@@ -52,6 +54,7 @@ const certViews = {
   [certTypes.jsAlgoDataStruct]:
   'certificate/javascript-algorithms-and-data-structures.jade',
   [certTypes.dataVis]: 'certificate/data-visualization.jade',
+  [certTypes.dataVis2018]: 'certificate/data-visualization-2018.jade',
   [certTypes.apisMicroservices]: 'certificate/apis-and-microservices.jade',
   [certTypes.infosecQa]:
   'certificate/information-security-and-quality-assurance.jade'
@@ -66,6 +69,7 @@ const certText = {
   [certTypes.jsAlgoDataStruct]:
   'JavaScript Algorithms and Data Structures Certified',
   [certTypes.dataVis]: 'Data Visualization Certified',
+  [certTypes.dataVis2018]: 'Data Visualization Certified',
   [certTypes.apisMicroservices]: 'APIs and Microservices Certified',
   [certTypes.infosecQa]: 'Information Security and Quality Assurance Certified'
 };
@@ -223,9 +227,14 @@ module.exports = function(app) {
     showCert.bind(null, certTypes.jsAlgoDataStruct)
   );
 
- api.get(
+  api.get(
     '/:username/data-visualization-certification',
     showCert.bind(null, certTypes.dataVis)
+  );
+
+  api.get(
+    '/:username/2018-data-visualization-certification',
+    showCert.bind(null, certTypes.dataVis2018)
   );
 
   api.get(
@@ -238,7 +247,7 @@ module.exports = function(app) {
     showCert.bind(null, certTypes.infosecQa)
   );
 
-  // router.get('/:username', showUserProfile);
+  router.get('/:username', showUserProfile);
   router.get(
     '/:username/report-user/',
     sendNonUserToMap,

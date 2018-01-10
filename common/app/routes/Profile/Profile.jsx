@@ -90,7 +90,6 @@ class Profile extends React.Component {
           <div className='heatmap-container'/>
           <hr />
           <Certificates />
-          <hr />
           <Portfolio />
           <Timeline className='timelime-container' />
         </div>

@@ -15,7 +15,7 @@ const propTypes = {
 
 export default function ThemeSettings({ currentTheme, toggleNightMode }) {
   return (
-    <Row>
+    <Row className='inline-form'>
           <Col sm={ 8 } xs={ 12 }>
             <p className='settings-title'>
               <strong>Night Mode</strong>
@@ -33,7 +33,6 @@ export default function ThemeSettings({ currentTheme, toggleNightMode }) {
                 bsStyle='primary'
                 className={
                   classnames(
-                    'positive-20',
                     { active: currentTheme === 'night' },
                     'btn-toggle'
                   )
@@ -49,7 +48,6 @@ export default function ThemeSettings({ currentTheme, toggleNightMode }) {
                 bsStyle='primary'
                 className={
                   classnames(
-                    'positive-20',
                     { active: currentTheme === 'default' },
                     'btn-toggle'
                   )

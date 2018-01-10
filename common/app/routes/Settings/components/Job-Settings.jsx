@@ -13,10 +13,7 @@ import {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ isAvailableForHire, username }) => ({
-    isAvailableForHire,
-    username
-  })
+  ({ isAvailableForHire }) => ({ isAvailableForHire })
 );
 
 function mapDistachToProps(dispatch) {
@@ -28,25 +25,20 @@ function mapDistachToProps(dispatch) {
 
 const propTypes = {
   isAvailableForHire: PropTypes.bool,
-  toggleUserFlag: PropTypes.func.isRequired,
-  updateUserBackend: PropTypes.func.isRequired,
-  username: PropTypes.string
+  updateUserBackend: PropTypes.func.isRequired
 };
 
 function JobSettings({
   isAvailableForHire,
-  toggleUserFlag,
-  updateUserBackend,
-  username
+  updateUserBackend
 }) {
   const className = classnames({
     active: isAvailableForHire,
     'btn-toggle': true
   });
-  const toggleHireState = () => {
-    toggleUserFlag('isAvailableForHire', username);
-    updateUserBackend({ flag: 'isAvailableForHire' });
-  };
+  const toggleHireState = () => updateUserBackend({
+    isAvailableForHire: !isAvailableForHire
+  });
   return (
     <Row>
       <Col xs={ 9 }>

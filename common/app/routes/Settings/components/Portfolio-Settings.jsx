@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -68,7 +69,6 @@ class PortfolioSettings extends PureComponent {
   handleChange(e) {
     const { updatePortfolio, username } = this.props;
     const [ field, portfolioId ] = e.target.id.split('-');
-    console.info(username, portfolioId, field, e.target.value)
     updatePortfolio(username, portfolioId, field, e.target.value);
   }
 
@@ -82,16 +82,23 @@ class PortfolioSettings extends PureComponent {
 
   handleSave() {
     const { portfolio, updateUserBackend } = this.props;
-    updateUserBackend({ flag: 'portfolio', newValue: portfolio });
+    updateUserBackend({ portfolio });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     console.log('submitting');
+    this.handleSave();
   }
 
-  renderPortfolio(portfolio, index, arr) {
-    const { title, image, description, url, id } = portfolio;
+  renderPortfolio(username, portfolio, index, arr) {
+    const {
+      title,
+      image = `https://github.com/identicons/${username}.png`,
+      description,
+      url,
+      id
+    } = portfolio;
     return (
       <div key={ id }>
         <form onSubmit={ this.handleSubmit }>
@@ -171,7 +178,8 @@ class PortfolioSettings extends PureComponent {
   }
 
   render() {
-    const { portfolio = [] } = this.props;
+    const { portfolio = [], username } = this.props;
+    const renderPortfolioWithUsername = _.curry(this.renderPortfolio, 4)(username);
     return (
       <section id='portfolio-settings' onSubmit={ this.handleSubmit }>
         <h2>Your Portfolio</h2>
@@ -189,7 +197,7 @@ class PortfolioSettings extends PureComponent {
           </Button>
         </div>
         {
-          portfolio.length ? portfolio.map(this.renderPortfolio) : null
+          portfolio.length ? portfolio.map(renderPortfolioWithUsername) : null
         }
         { portfolio.length ?
           <Button

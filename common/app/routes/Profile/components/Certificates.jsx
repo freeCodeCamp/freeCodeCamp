@@ -159,26 +159,31 @@ function Certificates({
     }
   ];
   const renderCertShowWithUsername = _.curry(renderCertShow)(username);
+  const hasModernCert = (
+    isRespWebDesignCert ||
+    is2018DataVisCert ||
+    isFrontEndLibsCert ||
+    isJsAlgoDataStructCert ||
+    isApisMicroservicesCert ||
+    isInfosecQaCert
+  );
+  const hasLegacyCert = (isFrontEndCert || isBackEndCert || isDataVisCert);
+  if (!hasModernCert && !hasLegacyCert) {
+    return null;
+  }
   return (
     <div>
       <h2 className='text-center'>FreeCodeCamp Certificates</h2>
       <br />
       {
-        (
-          isRespWebDesignCert ||
-          is2018DataVisCert ||
-          isFrontEndLibsCert ||
-          isJsAlgoDataStructCert ||
-          isApisMicroservicesCert ||
-          isInfosecQaCert
-        ) ?
+        hasModernCert ?
         currentCerts.map(renderCertShowWithUsername) :
         <p className='text-center' >
           No certificates have been earned under the current curriculum
         </p>
       }
       {
-        (isFrontEndCert || isBackEndCert || isDataVisCert) ?
+        hasLegacyCert ?
         <div>
           <h3>Legacy Certifications</h3>
           {
@@ -187,6 +192,7 @@ function Certificates({
         </div> :
         null
       }
+      <hr />
     </div>
   );
 }

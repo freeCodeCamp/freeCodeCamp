@@ -18,7 +18,8 @@ export default function settingsController(app) {
       .subscribe(
         () => res.status(200).json({
           flag,
-          value: !currentValue
+          value: !currentValue,
+          message: 'Your preferences have been updated'
         }),
         next
       );
@@ -41,9 +42,21 @@ export default function settingsController(app) {
 
   function updateFlag(req, res, next) {
     const { user, body: { flag, newValue } } = req;
+    if ( typeof newValue === 'boolean') {
+      return toggleUserFlag(flag)(req, res, next);
+    }
     return user.requestUpdateFlag(flag, newValue)
       .subscribe(
-        (message) => res.json({ message }),
+        message => res.json({ message }),
+        next
+      );
+  }
+
+  function updateMultipleFlags(req, res, next) {
+    const { user, body: { values } } = req;
+    return user.requestUpdateMultipleFlags(values)
+      .subscribe(
+        message => res.json({ message }),
         next
       );
   }
@@ -103,6 +116,11 @@ export default function settingsController(app) {
   ];
   function updateMyTheme(req, res, next) {
     const { body: { theme } } = req;
+    const errors = req.validationErrors(true);
+    if (errors) {
+      console.log(errors);
+      return res.status(403).json({ errors });
+    }
     if (req.user.theme === theme) {
       return res.sendFlash(alertTypes.info, 'Theme already set');
     }
@@ -156,6 +174,11 @@ export default function settingsController(app) {
     '/update-flag',
     ifNoUser401,
     updateFlag
+  );
+  api.post(
+    '/update-multiple-flags',
+    ifNoUser401,
+    updateMultipleFlags
   );
   api.post(
     '/update-my-lang',

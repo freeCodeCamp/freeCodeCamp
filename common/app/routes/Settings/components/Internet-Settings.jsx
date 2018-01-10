@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form';
 import {
   Button,
   ControlLabel,
@@ -12,38 +12,41 @@ import {
 } from 'react-bootstrap';
 
 import { userSelector } from '../../../redux';
-import {
-  editUserFlag,
-  updateUserBackend
-} from '../../../entities/user';
+import { updateUserBackend } from '../../../entities/user';
 
 const mapStateToProps = createSelector(
   userSelector,
   ({
-    githubURL,
-    linkedin,
-    twitter,
-    username,
-    website
+    githubURL = '',
+    linkedin = '',
+    twitter = '',
+    website = ''
   }) => ({
-    githubURL,
-    linkedin,
-    twitter,
-    username,
-    website
+    initialValues: {
+      githubURL,
+      linkedin,
+      twitter,
+      website
+    }
   })
 );
 
 function mapoDispatchToProps(dispatch) {
   return bindActionCreators({
-    editUserFlag,
     updateUserBackend
   }, dispatch);
 }
 
 const propTypes = {
-  editUserFlag: PropTypes.func.isRequired,
+  fields: PropTypes.objectOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      onChange: PropTypes.func.isRequired,
+      value: PropTypes.string.isRequired
+    })
+  ),
   githubURL: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired,
   linkedin: PropTypes.string,
   twitter: PropTypes.string,
   updateUserBackend: PropTypes.func.isRequired,
@@ -58,136 +61,101 @@ class InternetSettings extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const flag = e.target.id;
-    this.props.updateUserBackend({flag, newValue: this.props[flag] });
+  handleSubmit(values) {
+    this.props.updateUserBackend(values);
   }
 
   render() {
     const {
-      editUserFlag,
-      githubURL = '',
-      linkedin = '',
-      twitter = '',
-      username,
-      website = ''
+      fields: {
+        githubURL,
+        linkedin,
+        twitter,
+        website
+      },
+      handleSubmit
     } = this.props;
-
-    const updateTwitter = event =>
-      editUserFlag('twitter', username, event.target.value);
-    const updateGithub = event =>
-      editUserFlag('githubURL', username, event.target.value);
-    const updateLinkedin = event =>
-      editUserFlag('linkedin', username, event.target.value);
-    const updateWebsite = event =>
-      editUserFlag('website', username, event.target.value);
     return (
       <div className='internet-settings'>
-        <form id='twitter' onSubmit={ this.handleSubmit }>
+        <form
+          id='internet-handle-settings'
+          onSubmit={ handleSubmit(this.handleSubmit) }
+          >
           <Row className='editable-content-container'>
             <Col sm={ 6 } xs={ 12 }>
-              <ControlLabel htmlFor='twitter-handle'>
+              <ControlLabel htmlFor='twitter'>
                 Twitter
               </ControlLabel>
             </Col>
-            <Col sm={ 5 } xs={ 12 }>
+            <Col sm={ 6 } xs={ 12 }>
               <FormControl
                 bsSize='sm'
-                id='twitter-handle'
-                onChange={ updateTwitter }
+                id='twitter'
+                name='twitter'
+                onChange={ twitter.onChange }
                 placeholder='username'
-                required={ true }
                 type='text'
-                value={ twitter }
+                value={ twitter.value }
               />
             </Col>
-            <Col sm={ 1 } xs={ 12 }>
-              <Button
-                bsStyle='primary'
-                type='submit'
-                >
-                Save
-              </Button>
-            </Col>
           </Row>
-        </form>
-        <form id='githubURL' onSubmit={ this.handleSubmit }>
           <Row className='editable-content-container'>
             <Col sm={ 6 } xs={ 12 }>
               <ControlLabel htmlFor='github'>
                 Github
               </ControlLabel>
             </Col>
-            <Col sm={ 5 } xs={ 12 }>
+            <Col sm={ 6 } xs={ 12 }>
               <FormControl
                 bsSize='sm'
                 id='github'
-                onChange={ updateGithub }
+                onChange={ githubURL.onChange }
                 placeholder='Github URL'
                 required={ true }
                 type='url'
-                value={ githubURL }
+                value={ githubURL.value }
               />
             </Col>
-            <Col sm={ 1 } xs={ 12 }>
-              <Button
-                bsStyle='primary'
-                type='submit'
-                >
-                Save
-              </Button>
-            </Col>
           </Row>
-        </form>
-        <form id='linkedin' onSubmit={ this.handleSubmit }>
           <Row className='editable-content-container'>
             <Col sm={ 6 } xs={ 12 }>
               <ControlLabel htmlFor='linkedin-url'>
                 LinkedIn
               </ControlLabel>
             </Col>
-            <Col sm={ 5 } xs={ 12 }>
+            <Col sm={ 6 } xs={ 12 }>
               <FormControl
                 bsSize='sm'
                 id='linkedin-url'
-                onChange={ updateLinkedin }
+                onChange={ linkedin.onChange }
                 placeholder='full profile URL'
-                required={ true }
                 type='url'
-                value={ linkedin }
+                value={ linkedin.value }
               />
             </Col>
-            <Col sm={ 1 } xs={ 12 }>
-              <Button
-                bsStyle='primary'
-                type='submit'
-                >
-                Save
-              </Button>
-            </Col>
           </Row>
-        </form>
-        <form id='website' onSubmit={ this.handleSubmit }>
           <Row className='editable-content-container'>
             <Col sm={ 6 } xs={ 12 }>
               <ControlLabel htmlFor='personalWebsite'>
                 Personal Website
               </ControlLabel>
             </Col>
-            <Col sm={ 5 } xs={ 12 }>
+            <Col sm={ 6 } xs={ 12 }>
               <FormControl
                 bsSize='sm'
                 id='personalWebsite'
-                onChange={ updateWebsite }
+                onChange={ website.onChange }
                 placeholder='URL'
-                required={ true }
                 type='url'
-                value={ website }
+                value={ website.value }
               />
             </Col>
-            <Col sm={ 1 } xs={ 12 }>
+          </Row>
+          <Row>
+            <Col md={ 2 } mdPush= { 10 } xs={ 12 }>
               <Button
+                block={ true }
+                bsSize='lg'
                 bsStyle='primary'
                 type='submit'
                 >
@@ -204,4 +172,11 @@ class InternetSettings extends PureComponent {
 InternetSettings.displayName = 'InternetSettings';
 InternetSettings.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapoDispatchToProps)(InternetSettings);
+export default reduxForm(
+  {
+    form: 'internet-settings',
+    fields: [ 'githubURL', 'linkedin', 'twitter', 'website' ]
+  },
+  mapStateToProps,
+  mapoDispatchToProps
+)(InternetSettings);

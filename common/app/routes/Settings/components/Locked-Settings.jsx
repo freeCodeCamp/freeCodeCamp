@@ -15,7 +15,7 @@ const propTypes = {
 
 export default function LockSettings({ isLocked, toggleIsLocked }) {
   return (
-    <Row>
+    <Row className='inline-form'>
       <Col sm={ 8 } xs={ 12 }>
         <p>
           <strong>
@@ -37,7 +37,6 @@ export default function LockSettings({ isLocked, toggleIsLocked }) {
             bsStyle='primary'
             className={
               classnames(
-                'positive-20',
                 { active: isLocked },
                 'btn-toggle'
               )
@@ -53,7 +52,6 @@ export default function LockSettings({ isLocked, toggleIsLocked }) {
             bsStyle='primary'
             className={
               classnames(
-                'positive-20',
                 { active: !isLocked },
                 'btn-toggle'
               )

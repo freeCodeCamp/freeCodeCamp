@@ -36,11 +36,6 @@ export const updateMyEmailError = createAction(
 
 export const updateFlag = createAction(types.updateFlag);
 
-export const updateMyLang = createAction(
-  types.updateMyLang,
-  (values) => values.lang
-);
-
 const defaultState = {
   showUpdateEmailView: false
 };

@@ -3,7 +3,6 @@ import {
   composeReducers
 } from 'berkeleys-redux-utils';
 
-import { invertTheme } from '../../utils/themes';
 import { types as userTypes, userReducer } from './user';
 
 export const ns = 'entities';
@@ -19,7 +18,7 @@ export const updateThemeMetacreator = (username, theme) => ({
     payload: {
       username,
       flag: 'theme',
-      value: invertTheme(theme)
+      value: theme
     }
   }
 });

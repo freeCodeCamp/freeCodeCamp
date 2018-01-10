@@ -1,148 +1,104 @@
 import { Observable } from 'rx';
 import { ofType } from 'redux-epic';
+import _ from 'lodash';
 
-import { types } from './user';
-// import { makeToast } from '../Toasts/redux';
-// import {
-//   fetchChallenges,
-//   doActionOnError,
-//   userSelector,
-//   postThemeComplete
-// } from '../redux';
+import {
+  editUserFlag,
+  types,
+  updateUserBackendError,
+  updateUserBackendComplete
+} from './user';
+import { makeToast } from '../Toasts/redux';
+import {
+  fetchChallenges,
+  fetchUser,
+  doActionOnError,
+  userSelector
+} from '../redux';
+import { postJSON$ } from '../../utils/ajax-stream';
 
-// import { postJSON$ } from '../../utils/ajax-stream';
-// import langs from '../../utils/supported-languages';
+const endpoints = {
+  email: '/update-my-email',
+  languageTag: '/update-my-lang',
+  theme: '/update-my-theme'
+};
 
-// const urlMap = {
-//   isLocked: 'lockdown',
-//   isAvailableForHire: 'available-for-hire',
-//   sendQuincyEmail: 'quincy-email',
-//   sendNotificationEmail: 'notification-email',
-//   sendMonthlyEmail: 'announcement-email'
-// };
-
-function backendUserUpdateEpic(actions$) {
-  return actions$::ofType(types.updateUserBackend.start)
-    .flatMap(({ payload: { flag, newValue }}) => {
-      console.log(flag, newValue);
-      return Observable.of({type: 'null'});
+function backendUserUpdateEpic(actions$, { getState }) {
+  const start = actions$::ofType(types.updateUserBackend.start)
+    .flatMap(({ payload }) => {
+      const userMap = userSelector(getState());
+      const flagsToCheck = Object.keys(payload);
+      const valuesToCheck = _.pick(userMap, flagsToCheck);
+      const valuesToUpdate = flagsToCheck.reduce((accu, current) => {
+        if (payload[current] !== valuesToCheck[current]) {
+          return { ...accu, [current]: payload[current] };
+        }
+        return accu;
+      }, {});
+      if (!Object.keys(valuesToUpdate).length) {
+        return Observable.of(
+          makeToast({ message: 'No changes in settings detected' })
+        );
+      }
+      const {
+        app: { csrfToken: _csrf }
+      } = getState();
+      let body = { _csrf };
+      let endpoint = '/update-multiple-flags';
+      const updateKeys = Object.keys(valuesToUpdate);
+      // const specificRoute =
+      if (updateKeys.length === 1 && updateKeys[0] in endpoints) {
+        // there is a specific route for this update
+        const flag = updateKeys[0];
+        endpoint = endpoints[flag];
+        body = {
+          ...body,
+          [flag]: valuesToUpdate[flag]
+        };
+      } else if (updateKeys.length === 1) {
+        // no specific route, and only one flag to update
+        const flag = updateKeys[0];
+        endpoint = '/update-flag';
+        body = {
+          ...body,
+          flag,
+          newValue: valuesToUpdate[flag]
+        };
+      } else {
+        // multiple flags to update
+        body = {
+          ...body,
+          values: valuesToUpdate
+        };
+      }
+      console.info(endpoint, body);
+      return postJSON$(endpoint, body)
+        .map((result) => updateUserBackendComplete(result))
+        .catch(doActionOnError(error => updateUserBackendError(error)));
     });
+
+    const complete = actions$::ofType(types.updateUserBackend.complete)
+      .flatMap(({ meta: { message, flag } }) => {
+        if (flag === 'languageTag') {
+          return Observable.of(
+            fetchChallenges(),
+            fetchUser(),
+            makeToast({ message })
+          );
+        }
+        return Observable.of(fetchUser(), makeToast({ message }));
+      });
+
+    const error = actions$::ofType(types.updateUserBackend.error)
+    .flatMap(error => {
+      console.log(error);
+      return Observable.of({
+        type: 'error',
+        error: { message: 'Something went wrong updating your account' }
+      });
+    });
+
+  return Observable.merge(start, complete, error).filter(Boolean);
 }
 
 export default backendUserUpdateEpic;
-
-// export function updateUserEmailEpic(actions, { getState }) {
-//   return actions::ofType(types.updateMyEmail)
-//     .flatMap(({ payload: email }) => {
-//       const {
-//         app: { user: username, csrfToken: _csrf },
-//         entities: { user: userMap }
-//       } = getState();
-//       const { email: oldEmail } = userMap[username] || {};
-//       const body = { _csrf, email };
-//       const optimisticUpdate = Observable.just(
-//         updateUserEmail(username, email)
-//       );
-//       const ajaxUpdate = postJSON$('/update-my-email', body)
-//         .map(({ message }) => makeToast({ message }))
-//         .catch(doActionOnError(() => oldEmail ?
-//           updateUserEmail(username, oldEmail) :
-//           null
-//         ))
-//         .filter(Boolean);
-//       return Observable.merge(optimisticUpdate, ajaxUpdate);
-//     });
-// }
-
-// export function editUserFlagEpic(actions, { getState }) {
-//   return actions::ofType(types.updateFlag)
-//     .flatMap(({ payload }) => {
-//       const {
-//         app: { user: username, csrfToken: _csrf },
-//         entities: { user: userMap }
-//       } = getState();
-//       const { [payload.newValue]: oldValue } = userMap[username] || {};
-//       const body = { _csrf, flag: payload.flag, newValue: payload.newValue };
-//       const optimisticUpdate = Observable.just(
-//         editUserFlag(username, payload.newValue)
-//       );
-//       const ajaxUpdate = postJSON$('/update-flag', body)
-//         .map(({ message }) => makeToast({ message }))
-//         .catch(doActionOnError(() => oldValue ?
-//           editUserFlag(username, oldValue) :
-//           null
-//         ));
-//       return Observable.merge(optimisticUpdate, ajaxUpdate);
-//     });
-// }
-
-// export function updateUserLangEpic(actions, { getState }) {
-//   const updateLang = actions
-//     .filter(({ type, payload }) => (
-//       type === types.updateMyLang && !!langs[payload]
-//     ))
-//     .map(({ payload }) => {
-//       const state = getState();
-//       const { languageTag } = userSelector(state);
-//       return { lang: payload, oldLang: languageTag };
-//     });
-//   const ajaxUpdate = updateLang
-//     .debounce(250)
-//     .flatMap(({ lang, oldLang }) => {
-//       const { app: { user: username, csrfToken: _csrf } } = getState();
-//       const body = { _csrf, lang };
-//       return postJSON$('/update-my-lang', body)
-//         .flatMap(({ message }) => {
-//           return Observable.of(
-//             // show user that we have updated their lang
-//             makeToast({ message }),
-//             // update url to reflect change
-//             onRouteSettings({ lang }),
-//             // refetch challenges in new language
-//             fetchChallenges()
-//           );
-//         })
-//         .catch(doActionOnError(() => {
-//           return updateUserLang(username, oldLang);
-//         }));
-//     });
-//   const optimistic = updateLang
-//     .map(({ lang }) => {
-//       const { app: { user: username } } = getState();
-//       return updateUserLang(username, lang);
-//     });
-//   return Observable.merge(ajaxUpdate, optimistic);
-// }
-// export function updateUserFlagEpic(actions, { getState }) {
-//   const toggleFlag = actions
-//     .filter(({ type, payload }) => type === types.toggleUserFlag && payload)
-//     .map(({ payload }) => payload);
-//   const optimistic = toggleFlag.map(flag => {
-//     const { app: { user: username } } = getState();
-//     return updateUserFlag(username, flag);
-//   });
-//   const serverUpdate = toggleFlag
-//     .debounce(500)
-//     .flatMap(flag => {
-//       const url = `/toggle-${urlMap[ flag ]}`;
-//       const {
-//         app: { user: username, csrfToken: _csrf },
-//         entities: { user: userMap }
-//       } = getState();
-//       const user = userMap[username];
-//       const currentValue = user[ flag ];
-//       return postJSON$(url, { _csrf })
-//         .map(({ flag, value }) => {
-//           if (currentValue === value) {
-//             return null;
-//           }
-//           return updateUserFlag(username, flag);
-//         })
-//         .filter(Boolean)
-//         .catch(doActionOnError(() => {
-//           return updateUserFlag(username, currentValue);
-//         }));
-//     });
-//   return Observable.merge(optimistic, serverUpdate);
-// }
-

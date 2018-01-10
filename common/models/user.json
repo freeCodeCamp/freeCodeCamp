@@ -29,7 +29,7 @@
     "emailAuthLinkTTL": {
       "type": "date"
     },
-    "isEmailPublic": {
+    "isPublicEmail": {
       "type": "boolean",
       "default": false
     },
