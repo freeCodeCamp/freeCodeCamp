@@ -10,7 +10,6 @@ import * as utils from './utils.js';
 import windowEpic from './window-epic.js';
 import dividerEpic from './divider-epic.js';
 import ns from '../ns.json';
-import { types as challengeTypes } from '../../routes/Challenges/redux';
 
 export const epics = [
   windowEpic,
@@ -58,11 +57,10 @@ const defaultState = {
   height: 600,
   width: 800,
   navHeight: 50,
-  isMapPaneHidden: false,
   panes: [],
   panesByName: {},
-  pressedDivider: null,
-  panesMap: {}
+  panesMap: {},
+  pressedDivider: null
 };
 export const getNS = state => state[ns];
 export const heightSelector = state => {
@@ -159,10 +157,6 @@ export default function createPanesAspects({ createPanesMap }) {
         [types.updateNavHeight]: (state, { payload: navHeight }) => ({
           ...state,
           navHeight
-        }),
-        [challengeTypes.toggleMap]: state => ({
-          ...state,
-          isMapPaneHidden: !state.isMapPaneHidden
         })
       }),
       defaultState
@@ -172,19 +166,24 @@ export default function createPanesAspects({ createPanesMap }) {
         const panesMap = action.meta.panesMap;
         const panes = _.map(panesMap, (name, type) => ({ name, type }));
         const numOfPanes = Object.keys(panes).length;
+        const panesByName = _.isEqual(state.panes, panes) && state.panesByName;
         return {
           ...state,
           panesMap,
           panes,
-          panesByName: panes.reduce((panes, { name }, index) => {
-            const dividerLeft = utils.getDividerLeft(numOfPanes, index);
-            panes[name] = {
-              name,
-              dividerLeft,
-              isHidden: name === 'Map' ? state.isMapPaneHidden : false
-            };
-            return panes;
-          }, {})
+          panesByName: panesByName
+            ? panesByName
+            : panes.reduce((panes, { name }, index) => {
+                const dividerLeft = utils.getDividerLeft(numOfPanes, index);
+                panes[name] = {
+                  name,
+                  dividerLeft,
+                  isHidden: false
+                };
+                return panes;
+              },
+            {}
+          )
         };
       }
       if (action.meta && action.meta.isPaneAction) {
