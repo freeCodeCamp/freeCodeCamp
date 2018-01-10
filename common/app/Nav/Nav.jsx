@@ -199,7 +199,7 @@ export class FCCNav extends React.Component {
               />
               <img
                 alt='learn to code javascript at freeCodeCamp logo'
-                className='img-responsive nav-logo logo-glyph'
+                className='img-responsive logo-glyph'
                 src={ fCCglyph }
               />
             </a>
