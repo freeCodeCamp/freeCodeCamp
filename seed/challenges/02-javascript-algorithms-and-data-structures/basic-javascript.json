@@ -1055,7 +1055,7 @@
       ],
       "solutions": [],
       "tests": [
-        "assert(code.match(/\\\\\"/g).length === 6 && code.match(/[^\\\\]\"/g).length === 10, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
+        "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
         "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
       ],
       "type": "waypoint",
@@ -1101,12 +1101,10 @@
       "tail": [
         "(function() { return \"myStr = \" + myStr; })();"
       ],
-      "solutions": [
-        "/* head */ 'use strict'; /* solution */ var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>'; /* tail */ (function() { return \"myStr = \" + myStr; })();"
-      ],
+      "solutions": [],
       "tests": [
         "assert(!/\\\\/g.test(code) && myStr.match('\\\\s*<a href\\\\s*=\\\\s*\"http://www.example.com\"\\\\s*target\\\\s*=\\\\s*\"_blank\">\\\\s*Link\\\\s*</a>\\\\s*'), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
-        "assert(code.match(/\"/g).length === 6 && code.match(/'/g).length === 4, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
+        "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
       ],
       "type": "waypoint",
       "challengeType": 1,
