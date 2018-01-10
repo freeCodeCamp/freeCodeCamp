@@ -281,7 +281,7 @@ module.exports = function(app) {
 
     let social = req.params.social;
     if (!social) {
-      req.flash('errors', {
+      req.flash('danger', {
         msg: 'No social account found'
       });
       return res.redirect('/' + username);
@@ -290,14 +290,14 @@ module.exports = function(app) {
     social = social.toLowerCase();
     const validSocialAccounts = ['twitter', 'linkedin'];
     if (validSocialAccounts.indexOf(social) === -1) {
-      req.flash('errors', {
+      req.flash('danger', {
         msg: 'Invalid social account'
       });
       return res.redirect('/' + username);
     }
 
     if (!user[social]) {
-      req.flash('errors', {
+      req.flash('danger', {
         msg: `No ${social} account associated`
       });
       return res.redirect('/' + username);
@@ -315,7 +315,7 @@ module.exports = function(app) {
       // assumed user identity is unique by provider
       let identity = identities.shift();
       if (!identity) {
-        req.flash('errors', {
+        req.flash('danger', {
           msg: 'No social account found'
         });
         return res.redirect('/' + username);
@@ -395,7 +395,7 @@ module.exports = function(app) {
           }, {});
 
         if (userPortfolio.isCheater && !user) {
-          req.flash('errors', {
+          req.flash('danger', {
             msg: dedent`
               Upon review, this account has been flagged for academic
               dishonesty. If you’re the owner of this account contact
@@ -459,13 +459,13 @@ module.exports = function(app) {
       .subscribe(
         user => {
           if (!user) {
-            req.flash('errors', {
+            req.flash('danger', {
               msg: `We couldn't find a user with the username ${username}`
             });
             return res.redirect('/');
           }
           if (!user.isGithubCool) {
-            req.flash('errors', {
+            req.flash('danger', {
               msg: dedent`
                 This user needs to link GitHub with their account
                 in order for others to be able to view their certificate.
@@ -479,7 +479,7 @@ module.exports = function(app) {
           }
 
           if (user.isLocked) {
-            req.flash('errors', {
+            req.flash('danger', {
               msg: dedent`
                 ${username} has chosen to make their profile
                   private. They will need to make their profile public
@@ -489,7 +489,7 @@ module.exports = function(app) {
             return res.redirect('back');
           }
           if (!user.isHonest) {
-            req.flash('errors', {
+            req.flash('danger', {
               msg: dedent`
                 ${username} has not yet agreed to our Academic Honesty Pledge.
               `
@@ -511,7 +511,7 @@ module.exports = function(app) {
               }
             );
           }
-          req.flash('errors', {
+          req.flash('danger', {
             msg: `Looks like user ${username} is not ${certText[certType]}`
           });
           return res.redirect('back');
@@ -576,7 +576,7 @@ module.exports = function(app) {
     const report = req.sanitize('reportDescription').trimTags();
 
     if (!username || !report || report === '') {
-      req.flash('errors', {
+      req.flash('danger', {
         msg: 'Oops, something is not right please re-check your submission.'
       });
       return next();

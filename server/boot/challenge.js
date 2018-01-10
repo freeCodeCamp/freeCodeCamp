@@ -261,7 +261,7 @@ export default function(app) {
         !completedChallenge.githubLink
       )
     ) {
-      req.flash('errors', {
+      req.flash('danger', {
         msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
           'your work.'
       });

@@ -1,4 +1,4 @@
-export function ifNoUserRedirectTo(url, message, type = 'errors') {
+export function ifNoUserRedirectTo(url, message, type = 'danger') {
   return function(req, res, next) {
     const { path } = req;
     if (req.user) {
@@ -35,7 +35,7 @@ export function ifNotVerifiedRedirectToSettings(req, res, next) {
     return next();
   }
   if (!user.emailVerified) {
-    req.flash('error', {
+    req.flash('danger', {
       msg: 'We do not have your verified email address on record, '
       + 'please add it in the settings to continue with your request.'
     });

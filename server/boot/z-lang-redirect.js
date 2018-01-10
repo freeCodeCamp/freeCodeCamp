@@ -23,7 +23,7 @@ export default function redirectLang(app) {
     }
 
     if (type === 'html') {
-      req.flash('errors', {
+      req.flash('danger', {
         msg: `We couldn't find path ${ path }`
       });
       return res.render('404', { title: '404'});
