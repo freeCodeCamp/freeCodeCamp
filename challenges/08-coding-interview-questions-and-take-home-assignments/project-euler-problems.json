@@ -248,23 +248,26 @@
       "type": "bonfire",
       "title": "Problem 9: Special Pythagorean triplet",
       "tests": [
-        "assert.strictEqual(euler9(), 31875000, 'message: <code>euler9()</code> should return 31875000.');"
+        "assert.strictEqual(specialPythagoreanTriplet(1000), 31875000, 'message: <code>specialPythagoreanTriplet(1000)</code> should return 31875000.');",
+        "assert.strictEqual(specialPythagoreanTriplet(24), 480, 'message: <code>specialPythagoreanTriplet(24)</code> should return 480.');",
+        "assert.strictEqual(specialPythagoreanTriplet(120), 49920, 'message: <code>specialPythagoreanTriplet(120)</code> should return 49920.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const specialPythagoreanTriplet = (n)=>{\n let sumOfabc = n;\n let a,b,c;\n for(a = 1; a<=sumOfabc/3; a++){\n for(b = a+1; b<=sumOfabc/2; b++){\n c = Math.sqrt(a*a+b*b);\n if((a+b+c) == sumOfabc){\n return a*b*c;\n }\n }\n }\n}"
+      ],
       "translations": {},
       "challengeSeed": [
-        "function euler9() {",
-        "  // Good luck!",
-        "  return true;",
-        "}",
+        "function specialPythagoreanTriplet(n) {",
+        " let sumOfabc = n;", " // Good luck!",
+        " return true;", "}",
         "",
-        "euler9();"
+        "specialPythagoreanTriplet(1000);"
       ],
       "description": [
         "A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,",
         " a2 + b2 = c2",
         "For example, 32 + 42 = 9 + 16 = 25 = 52.",
-        "There exists exactly one Pythagorean triplet for which a + b + c = 1000.Find the product abc."
+        "There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc."
       ]
     },
     {
