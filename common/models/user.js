@@ -776,9 +776,7 @@ module.exports = function(User) {
       });
   };
 
-  User.getMessages = function getMessages(messages) {
-    return Promise.resolve(messages);
-  };
+  User.getMessages = messages => Promise.resolve(messages);
 
   User.remoteMethod('getMessages', {
     http: {
@@ -788,11 +786,7 @@ module.exports = function(User) {
     accepts: {
       arg: 'messages',
       type: 'object',
-      http: ctx => {
-        const messages = ctx.req.flash();
-        console.log('messages: ', messages);
-        return messages;
-      }
+      http: ctx => ctx.req.flash()
     },
     returns: [
       {

@@ -2,45 +2,25 @@ import _ from 'lodash/fp';
 import {
   createTypes,
   createAction,
+  createAsyncTypes,
   composeReducers,
   handleActions
 } from 'berkeleys-redux-utils';
 
+import * as utils from './utils.js';
+import getMessagesEpic from './get-messages-epic.js';
 import ns from '../ns.json';
 
-export const alertTypes = _.keyBy(_.identity)([
-  'success',
-  'info',
-  'warning',
-  'danger'
-]);
-export const normalizeAlertType = alertType => alertTypes[alertType] || 'info';
-
-export const getFlashAction = _.flow(
-  _.property('meta'),
-  _.property('flash')
-);
-
-export const isFlashAction = _.flow(
-  getFlashAction,
-  Boolean
-);
-
+export const epics = [getMessagesEpic];
 export const types = createTypes([
   'clickOnClose',
-  'messagesFoundOnBoot'
+  'messagesFoundOnBoot',
+  createAsyncTypes('fetchMessages')
 ], ns);
 
 export const clickOnClose = createAction(types.clickOnClose, _.noop);
-export const messagesFoundOnBoot = createAction(types.messagesFoundOnBoot);
-
-export const expressToStack = _.flow(
-  _.toPairs,
-  _.flatMap(([ type, messages ]) => messages.map(({ msg }) => ({
-    message: msg,
-    alertType: normalizeAlertType(type)
-  })))
-);
+export const fetchMessagesComplete = createAction(types.fetchMessages.complete);
+export const fetchMessagesError = createAction(types.fetchMessages.error);
 
 const defaultState = [];
 
@@ -57,20 +37,20 @@ export default composeReducers(
   handleActions(
     () => ({
       [types.clickOnClose]: _.tail,
-      [types.messagesFoundOnBoot]: (state, { payload }) => [
+      [types.fetchMessages.complete]: (state, { payload }) => [
         ...state,
-        ...expressToStack(payload)
+        ...utils.expressToStack(payload)
       ]
     }),
     defaultState,
   ),
   function metaReducer(state = defaultState, action) {
-    if (isFlashAction(action)) {
-      const { payload: { alertType, message } } = getFlashAction(action);
+    if (utils.isFlashAction(action)) {
+      const { payload: { alertType, message } } = utils.getFlashAction(action);
       return [
         ...state,
         {
-          alertType: normalizeAlertType(alertType),
+          alertType: utils.normalizeAlertType(alertType),
           message: _.escape(message)
         }
       ];

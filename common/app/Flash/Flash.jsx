@@ -4,8 +4,8 @@ import { CloseButton } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 import ns from './ns.json';
+import { alertTypes } from './redux/utils.js';
 import {
-  alertTypes,
   latestMessageSelector,
   clickOnClose
 } from './redux';
