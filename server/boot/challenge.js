@@ -261,10 +261,10 @@ export default function(app) {
         !completedChallenge.githubLink
       )
     ) {
-      req.flash('danger', {
-        msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
-          'your work.'
-      });
+      req.flash(
+        'danger',
+        'You haven\'t supplied the necessary URLs for us to inspect your work.'
+      );
       return res.sendStatus(403);
     }
 

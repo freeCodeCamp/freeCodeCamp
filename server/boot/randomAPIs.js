@@ -134,15 +134,17 @@ module.exports = function(app) {
     return User.updateAll(query, params, function(err, info) {
       if (err) { return next(err); }
       if (info.count === 0) {
-        req.flash('info', {
-          msg: 'Email address not found. ' +
-          'Please update your Email preferences from your profile.'
-        });
+        req.flash(
+          'info',
+          'Email address not found. ' +
+            'Please update your Email preferences from your profile.'
+        );
         return res.redirect('/map');
       } else {
-        req.flash('info', {
-          msg: 'We\'ve successfully updated your Email preferences.'
-        });
+        req.flash(
+          'info',
+          'We\'ve successfully updated your Email preferences.'
+        );
         return res.redirect('/unsubscribed');
       }
     });

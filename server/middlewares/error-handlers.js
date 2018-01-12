@@ -79,10 +79,7 @@ export default function prodErrorHandler() {
         );
       }
       if (typeof req.flash === 'function') {
-        req.flash(
-          handled.type || 'danger',
-          { msg: message }
-        );
+        req.flash(handled.type || 'danger', message);
       }
       return res.redirect(redirectTo);
       // json
