@@ -32,6 +32,10 @@ const createEmailError = redirectTo => wrapHandledError(
   }
 );
 
+function isTheSame(val1, val2) {
+  return val1 === val2;
+}
+
 function destroyAll(id, Model) {
   return Observable.fromNodeCallback(
     Model.destroyAll,
@@ -57,6 +61,16 @@ const renderSignInEmail = loopback.template(path.join(
   'views',
   'emails',
   'user-request-sign-in.ejs'
+));
+
+const renderEmailChangeEmail = loopback.template(path.join(
+  __dirname,
+  '..',
+  '..',
+  'server',
+  'views',
+  'emails',
+  'user-request-update-email.ejs'
 ));
 
 function getAboutProfile({
@@ -286,7 +300,12 @@ module.exports = function(User) {
       });
   };
 
-  User.prototype.loginByRequest = function login(req, res) {
+  User.prototype.loginByRequest = function loginByRequest(req, res) {
+    const {
+      query: {
+        emailChange
+      }
+    } = req;
     const createToken = this.createAccessToken$()
       .do(accessToken => {
         const config = {
@@ -298,11 +317,19 @@ module.exports = function(User) {
           res.cookie('userId', accessToken.userId, config);
         }
       });
-    const updateUser = this.update$({
+    let data = {
       emailVerified: true,
       emailAuthLinkTTL: null,
       emailVerifyTTL: null
-    });
+    };
+    if (emailChange && this.newEmail) {
+      data = {
+        ...data,
+        email: this.newEmail,
+        newEmail: null
+      };
+    }
+    const updateUser = this.update$(data);
     return Observable.combineLatest(
       createToken,
       updateUser,
@@ -417,16 +444,20 @@ module.exports = function(User) {
     )({ ttl });
   };
 
-  User.prototype.getEncodedEmail = function getEncodedEmail() {
-    if (!this.email) {
+  User.prototype.getEncodedEmail = function getEncodedEmail(newEmail) {
+    if (!this.email && !newEmail) {
       return null;
     }
-    return Buffer(this.email).toString('base64');
+    let emailToEncode = this.email;
+    if (newEmail) {
+      emailToEncode = newEmail;
+    }
+    return Buffer(emailToEncode).toString('base64');
   };
 
   User.decodeEmail = email => Buffer(email, 'base64').toString();
 
-  User.prototype.requestAuthEmail = function requestAuthEmail(isSignUp) {
+  function requestAuthEmail(isSignUp, newEmail) {
     return Observable.defer(() => {
       const messageOrNull = getWaitMessage(this.emailAuthLinkTTL);
       if (messageOrNull) {
@@ -449,21 +480,25 @@ module.exports = function(User) {
           renderAuthEmail = renderSignUpEmail;
           subject = 'Account Created - freeCodeCamp';
         }
+        if (newEmail) {
+          renderAuthEmail = renderEmailChangeEmail;
+          subject = 'Email Change Request - freeCodeCamp';
+        }
         const { id: loginToken, created: emailAuthLinkTTL } = token;
-        const loginEmail = this.getEncodedEmail();
+        const loginEmail = this.getEncodedEmail(newEmail ? newEmail : null);
         const host = getServerFullURL();
         const mailOptions = {
           type: 'email',
-          to: this.email,
+          to: newEmail ? newEmail : this.email,
           from: getEmailSender(),
           subject,
           text: renderAuthEmail({
             host,
             loginEmail,
-            loginToken
+            loginToken,
+            emailChange: !!newEmail
           })
         };
-
         return Observable.combineLatest(
           User.email.send$(mailOptions),
           this.update$({ emailAuthLinkTTL })
@@ -480,19 +515,19 @@ module.exports = function(User) {
           Please follow that link to sign in.
         `
       );
-  };
+  }
+
+  User.prototype.requestAuthEmail = requestAuthEmail;
 
   User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
+    const currentEmail = this.email;
     return Observable.defer(() => {
-      const ownEmail = newEmail === this.email;
-      console.info(newEmail, this.email);
-      if (!isEmail('' + newEmail)) {
-        throw createEmailError();
-      }
-
-      // email is already associated and verified with this account
-      if (ownEmail) {
+      const isOwnEmail = isTheSame(newEmail, currentEmail);
+      const sameUpdate = isTheSame(newEmail, this.newEmail);
+      const messageOrNull = getWaitMessage(this.emailVerifyTTL);
+      if (isOwnEmail) {
         if (this.emailVerified) {
+          // email is already associated and verified with this account
           throw wrapHandledError(
             new Error('email is already verified'),
             {
@@ -500,88 +535,72 @@ module.exports = function(User) {
               message: `${newEmail} is already associated with this account.`
             }
           );
-        } else {
-          const messageOrNull = getWaitMessage(this.emailVerifyTTL);
-          // email is already associated but unverified
-          if (messageOrNull) {
+        } else if (!this.emailVerified && messageOrNull) {
+            // email is associated but unverified and
             // email is within time limit
             throw wrapHandledError(
               new Error(),
               {
                 type: 'info',
-                message: messageOrNull
+                message: messageOrNull,
+                status: 429
               }
             );
           }
-        }
       }
-
-      // at this point email is not associated with the account
-      // or has not been verified but user is requesting another token
-      // outside of the time limit
+      if (sameUpdate && messageOrNull) {
+        // trying to update with the same newEmail and
+        // confirmation email is still valid
+        throw wrapHandledError(
+          new Error(),
+          {
+            type: 'info',
+            message: dedent`
+            We have already sent an email change request to ${newEmail}.
+            Please check your inbox`,
+            status: 429
+          }
+        );
+      }
+      if (!isEmail('' + newEmail)) {
+        throw createEmailError();
+      }
+      // newEmail is not associated with this user, and
+      // this attempt to change email is the first or
+      // previous attempts have expired
       return Observable.if(
-        () => ownEmail,
+        () => isOwnEmail || (sameUpdate && messageOrNull),
         Observable.empty(),
         // defer prevents the promise from firing prematurely (before subscribe)
         Observable.defer(() => User.doesExist(null, newEmail))
       )
-        .do(exists => {
-          // not associated with this account, but is associated with another
-          if (exists) {
-            throw wrapHandledError(
-              new Error('email already in use'),
-              {
-                type: 'info',
-                message:
-                `${newEmail} is already associated with another account.`
-              }
-            );
-          }
-        })
-        .defaultIfEmpty();
-    })
-      .flatMap(() => {
-        const emailVerified = false;
-        const data = {
-          newEmail,
-          emailVerified,
-          emailVerifyTTL: new Date()
-        };
-        return this.update$(data).do(() => Object.assign(this, data));
+      .do(exists => {
+        if (exists) {
+          // newEmail is not associated with this account,
+          // but is associated with different account
+          throw wrapHandledError(
+            new Error('email already in use'),
+            {
+              type: 'info',
+              message:
+              `${newEmail} is already associated with another account.`
+            }
+          );
+        }
       })
       .flatMap(() => {
-        const mailOptions = {
-          type: 'email',
-          to: newEmail,
-          from: getEmailSender(),
-          subject: 'freeCodeCamp - Email Update Requested',
-          protocol: getProtocol(),
-          host: getHost(),
-          port: getPort(),
-          template: path.join(
-            __dirname,
-            '..',
-            '..',
-            'server',
-            'views',
-            'emails',
-            'user-request-update-email.ejs'
-          )
-        };
-        debug('MAIL OPTIONS', mailOptions);
-        return this.verify(mailOptions);
-      })
-      .map(() => {
-        return dedent`
-        Please check your email.
-        We sent you a link that you can click to verify your email address.
-      `;
+        const update = {
+            newEmail,
+            emailVerified: false,
+            emailVerifyTTL: new Date()
+          };
+        const updateNewEmail = this.update$(update)
+          .do(() => Object.assign(this, update));
+        return Observable.of(updateNewEmail)
+          .flatMap(() => this.requestAuthEmail(false, newEmail));
       });
+    });
   };
-
-  function isTheSame(val1, val2) {
-    return val1 === val2;
-  }
 
   User.prototype.requestUpdateFlag = function requestUpdateFlag(
     flag,
@@ -599,9 +618,7 @@ module.exports = function(User) {
       .flatMap(() => {
         return this.update$({ [flag]: newValue })
         .do(() => {
-          console.log(this[newValue]);
           this[flag] = newValue;
-          console.log(this[flag], newValue);
         });
       })
       .map(() => dedent`

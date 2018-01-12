@@ -31,6 +31,7 @@
     },
     "isPublicEmail": {
       "type": "boolean",
+      "description": "Should the wider public have access to the Users email",
       "default": false
     },
     "password": {

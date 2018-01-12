@@ -5,10 +5,12 @@ import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
 import {
+  Alert,
   Button,
   Col,
   ControlLabel,
   FormControl,
+  HelpBlock,
   Row,
   ToggleButton,
   ToggleButtonGroup
@@ -26,6 +28,7 @@ const mapStateToProps = createSelector(
   userSelector,
   ({
     email,
+    isEmailVerified,
     isPublicEmail,
     sendMonthlyEmail,
     sendNotificationEmail,
@@ -33,6 +36,7 @@ const mapStateToProps = createSelector(
   }) => ({
     email,
     initialValues: { email },
+    isEmailVerified,
     isPublicEmail,
     sendMonthlyEmail,
     sendNotificationEmail,
@@ -56,6 +60,7 @@ const propTypes = {
     })
   ),
   handleSubmit: PropTypes.func.isRequired,
+  isEmailVerified: PropTypes.bool,
   isPublicEmail: PropTypes.bool,
   sendMonthlyEmail: PropTypes.bool,
   sendNotificationEmail: PropTypes.bool,
@@ -153,7 +158,8 @@ class EmailSettings extends PureComponent {
       email,
       fields: { email: { value, onChange } },
       handleSubmit,
-      isPublicEmail = false,
+      isEmailVerified,
+      isPublicEmail,
       sendMonthlyEmail,
       sendNotificationEmail,
       sendQuincyEmail
@@ -202,10 +208,20 @@ class EmailSettings extends PureComponent {
             id='update-email'
             onSubmit={ handleSubmit(this.handleSubmit) }
             >
-            <Col sm={ 6 } xs={ 12 }>
+            <Col className='inline-form' sm={ 6 } xs={ 12 }>
               <ControlLabel htmlFor='email'>
                 Email
               </ControlLabel>
+              {
+                isEmailVerified ? null :
+                <HelpBlock>
+                  <Alert bsStyle='info'>
+                  A change of email adress has not been verified.
+                  To use your new email, you must verify it first using the link
+                  we sent you.
+                  </Alert>
+                </HelpBlock>
+              }
             </Col>
             <Col sm={ 5 } xs={ 12 }>
               <FormControl

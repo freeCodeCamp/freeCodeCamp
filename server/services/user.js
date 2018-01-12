@@ -62,6 +62,7 @@ export default function userServices() {
               user: {
                 [user.username]: {
                   ..._.pick(user, publicUserProps),
+                  isEmailVerified: !!user.emailVerified,
                   isTwitter: !!user.twitter,
                   isLinkedIn: !!user.linkedIn,
                   isWebsite: !!user.website

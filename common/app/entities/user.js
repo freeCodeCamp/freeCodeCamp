@@ -19,6 +19,8 @@ export const types = createTypes([
 
   createAsyncTypes('updateUserBackend'),
 
+  'updateUserCurrentChallenge',
+
   'addPortfolioItem',
   'deletePortfolio',
   'updatePortfolio'
@@ -38,6 +40,10 @@ export const deletePortfolio = createAction(types.deletePortfolio);
 export const updatePortfolio = createAction(
   types.updatePortfolio,
   (username, id, field, value) => ({ username, id, field, value })
+);
+
+export const updateUserCurrentChallenge = createAction(
+  types.updateUserCurrentChallenge
 );
 
 export const updateUserBackend = createAction(types.updateUserBackend.start);
