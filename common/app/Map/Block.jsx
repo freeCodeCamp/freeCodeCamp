@@ -61,7 +61,9 @@ export class Block extends PureComponent {
         <span>
         { title }
         </span>
-        <span className={ `${ns}-block-time` }>({ time })</span>
+        {
+          time && <span className={ `${ns}-block-time` }>({ time })</span>
+        }
       </div>
     );
   }
