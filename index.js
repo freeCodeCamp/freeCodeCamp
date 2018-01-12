@@ -46,7 +46,7 @@ Observable.combineLatest(
     const isComingSoon = !!challengeSpec.isComingSoon;
     const fileName = challengeSpec.fileName;
     const helpRoom = challengeSpec.helpRoom || 'Help';
-    const time = challengeSpec.time || 'N/A';
+    const time = challengeSpec.time;
     const isLocked = !!challengeSpec.isLocked;
     const message = challengeSpec.message;
     const required = challengeSpec.required || [];
