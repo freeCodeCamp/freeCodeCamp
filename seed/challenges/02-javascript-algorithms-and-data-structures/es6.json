@@ -836,11 +836,14 @@
         "}}};"
       ],
       "challengeSeed": [
+        "(function () {",
         "\"use strict\";",
-        "capitalizeString(\"hello!\");"
+        "",
+        "capitalizeString(\"hello!\");",
+        "}) ();"
       ],
       "tests": [
-        "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/g), 'message: valid <code>import</code> statement');"
+        "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+(\"|')string_functions(\"|')/g), 'message: Valid <code>import</code> statement');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -864,13 +867,17 @@
         "window.exports = function(){};"
       ],
       "challengeSeed": [
+        "(function () {",
         "\"use strict\";",
+        "",
+        "}) ();",
+        "",
         "const foo = \"bar\";",
         "const boo = \"far\";"
       ],
       "tests": [
-        "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+foo\\s+=+\\s\"bar\"/g), 'message: <code>foo</code> is exported.');",
-        "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/g), 'message: <code>bar</code> is exported.');"
+        "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+foo\\s+=+\\s(\"|')bar(\"|')/g), 'message: <code>foo</code> is exported.');",
+        "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+boo\\s+=+\\s(\"|')far(\"|')/g), 'message: <code>bar</code> is exported.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -899,12 +906,16 @@
         "}}};"
       ],
       "challengeSeed": [
+        "",
+        "(function () {",
         "\"use strict\";",
+        "",
         "myStringModule.capitalize(\"foo\");",
-        "myStringModule.lowercase(\"Foo\");"
+        "myStringModule.lowercase(\"Foo\");",
+        "}) ();"
       ],
       "tests": [
-        "getUserInput => assert(getUserInput('index').match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/g), 'message: Properly uses <code>import * as</code> syntax.');"
+        "getUserInput => assert(getUserInput('index').match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+(\"|')capitalize_strings(\"|')/g), 'message: Properly uses <code>import * as</code> syntax.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -927,11 +938,15 @@
         "window.exports = function(){};"
       ],
       "challengeSeed": [
+        "( function () {",
         "\"use strict\";",
+        "",
+        "}) ();",
+        "",
         "function subtract(x,y) {return x - y;}"
       ],
       "tests": [
-        "getUserInput => assert(getUserInput('index').match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/g), 'message: Proper used of <code>export</code> fallback.');"
+        "getUserInput => assert(getUserInput('index').match(/export\\s+default\\s+function\\s+subtract\\(x,\\s*y\\)\\s+{return\\s+x\\s-\\s+y;}/g), 'message: Proper used of <code>export</code> fallback.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
@@ -957,11 +972,16 @@
         "}}};"
       ],
       "challengeSeed": [
+        "",
+        "(function () {",
         "\"use strict\";",
-        "subtract(7,4);"
+        "",
+        "subtract(7,4);",
+        "}) ();",
+        ""
       ],
       "tests": [
-        "getUserInput => assert(getUserInput('index').match(/import\\s+subtract\\s+from\\s+\"math_functions\"/g), 'message: Properly imports <code>export default</code> method.');"
+        "getUserInput => assert(getUserInput('index').match(/import\\s+subtract\\s+from\\s+(\"|')math_functions(\"|')/g), 'message: Properly imports <code>export default</code> method.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
