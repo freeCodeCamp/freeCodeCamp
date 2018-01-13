@@ -107,7 +107,7 @@ export class Show extends PureComponent {
   render() {
     const { viewType } = this.props;
     const View = views[viewType] || Classic;
-    return  <View />;
+    return <View />;
   }
 }
 
