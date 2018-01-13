@@ -13,13 +13,13 @@ export const mapStateToPanes = addNS(
   ns,
   () => ({
     [types.toggleMap]: 'Map',
-    [types.toggleMain]: 'Main'
+    [types.toggleMain]: 'Lesson'
   })
 );
 
 const nameToComponent = {
   Map: _Map,
-  Main: Main
+  Lesson: Main
 };
 
 const renderPane = name => {
