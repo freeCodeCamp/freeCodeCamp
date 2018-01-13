@@ -18,6 +18,13 @@
 .@{ns}-container {
   .center(@value: @container-xl, @padding: @grid-gutter-width);
 }
+
+.@{ns}-email-container {
+  .below(sm, {
+    text-align: center;
+  })
+}
+
 .@{ns}-skeleton {
   background-color: #fff;
   z-index: 10;
