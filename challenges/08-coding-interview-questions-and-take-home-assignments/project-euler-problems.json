@@ -278,21 +278,24 @@
       "type": "bonfire",
       "title": "Problem 10: Summation of primes",
       "tests": [
-        "assert.strictEqual(euler10(), 142913828922, 'message: <code>euler10()</code> should return 142913828922.');"
+        "assert.strictEqual(primeSummation(17), 41, 'message: <code>primeSummation(17)</code> should return 41.');",
+        "assert.strictEqual(primeSummation(2001), 277050, 'message: <code>primeSummation(2001)</code> should return 277050.');",
+        "assert.strictEqual(primeSummation(140759), 873608362, 'message: <code>primeSummation(140759)</code> should return 873608362.');",
+        "assert.strictEqual(primeSummation(2000000), 142913828922, 'message: <code>primeSummation(2000000)</code> should return 142913828922.');"
       ],
-      "solutions": [],
+      "solutions": ["//noprotect\nfunction primeSummation(n) {\n  // Initialise an array containing only prime numbers\n  let primes = [2];\n  let result = 2;\n\n  function isPrime(y, primes) {\n    // Find sqrt(y)\n    const sqrt = Math.floor(Math.sqrt(y));\n\n    // Divide y by each applicable prime, return false if any of them divide y\n    for (let i = 0; i < primes.length && primes[i] <= sqrt; i++) {\n      if (y % primes[i] === 0) {\n        return false;\n      }\n    }\n\n    // At this point x must be prime\n    return true;\n  }\n\n  // For every odd integer, add it to the array if it is prime\n  for (let x = 3; x < n; x += 2) {\n    if (isPrime(x, primes)) {\n      if (x > n) {\n        return result;\n      } else {\n        result += x;\n        primes.push(x);\n      }\n    }\n  }\n\n  return result;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler10() {",
+        "function primeSummation(n) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler10();"
+        "primeSummation(2000000);"
       ],
       "description": [
         "The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.",
-        "Find the sum of all the primes below two million."
+        "Find the sum of all the primes below n."
       ]
     },
     {
