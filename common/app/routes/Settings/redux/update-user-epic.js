@@ -25,6 +25,14 @@ const urlMap = {
   sendMonthlyEmail: 'announcement-email'
 };
 
+const toastMessageMap = {
+  isLocked: 'Privacy preferences',
+  isAvailableForHire: 'Job Search preferences',
+  sendQuincyEmail: 'Quincy Email preferences',
+  sendNotificationEmail: 'Notification Email preferences',
+  sendMonthlyEmail: 'Announcement Email preferences'
+};
+
 export function updateUserEmailEpic(actions, { getState }) {
   return actions::ofType(types.updateMyEmail)
     .flatMap(({ payload: email }) => {
@@ -58,6 +66,7 @@ export function updateUserLangEpic(actions, { getState }) {
       const { languageTag } = userSelector(state);
       return { lang: payload, oldLang: languageTag };
     });
+
   const ajaxUpdate = updateLang
     .debounce(250)
     .flatMap(({ lang, oldLang }) => {
@@ -78,6 +87,7 @@ export function updateUserLangEpic(actions, { getState }) {
           return updateUserLang(username, oldLang);
         }));
     });
+
   const optimistic = updateLang
     .map(({ lang }) => {
       const { app: { user: username } } = getState();
@@ -89,11 +99,13 @@ export function updateUserFlagEpic(actions, { getState }) {
   const toggleFlag = actions
     .filter(({ type, payload }) => type === types.toggleUserFlag && payload)
     .map(({ payload }) => payload);
+
   const optimistic = toggleFlag.map(flag => {
     const { app: { user: username } } = getState();
     return updateUserFlag(username, flag);
   });
-  const serverUpdate = toggleFlag
+
+  const ajaxUpdate = toggleFlag
     .debounce(500)
     .flatMap(flag => {
       const url = `/toggle-${urlMap[ flag ]}`;
@@ -103,19 +115,19 @@ export function updateUserFlagEpic(actions, { getState }) {
       } = getState();
       const user = userMap[username];
       const currentValue = user[ flag ];
+
       return postJSON$(url, { _csrf })
-        .map(({ flag, value }) => {
-          if (currentValue === value) {
-            return null;
-          }
-          return updateUserFlag(username, flag);
+        .map(({ flag }) => {
+          const message = `Your ${toastMessageMap[ flag ]} have been updated.`;
+          return makeToast({ message });
         })
-        .filter(Boolean)
-        .catch(doActionOnError(() => {
-          return updateUserFlag(username, currentValue);
-        }));
-    });
-  return Observable.merge(optimistic, serverUpdate);
+        .catch(doActionOnError(() => currentValue ?
+          updateUserFlag(username, currentValue) :
+          null
+        ))
+        .filter(Boolean);
+  });
+  return Observable.merge(optimistic, ajaxUpdate);
 }
 
 export default combineEpics(
