@@ -50,7 +50,7 @@ export const mapStateToPanes = addNS(
         return map;
       }, {
         [types.toggleMap]: 'Map',
-        [types.toggleSidePanel]: 'Side Panel'
+        [types.toggleSidePanel]: 'Lesson'
       });
 
       if (showPreview) {
@@ -63,7 +63,7 @@ export const mapStateToPanes = addNS(
 
 const nameToComponent = {
   Map: _Map,
-  'Side Panel': SidePanel,
+  Lesson: SidePanel,
   Preview: Preview
 };
 
