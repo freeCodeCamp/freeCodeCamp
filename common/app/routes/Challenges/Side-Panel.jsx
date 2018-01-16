@@ -47,7 +47,7 @@ const mapStateToProps = createSelector(
   hintIndexSelector,
   codeLockedSelector,
   (
-    { description },
+    { description, guideUrl },
     { title },
     tests,
     output,
@@ -55,6 +55,7 @@ const mapStateToProps = createSelector(
     isCodeLocked,
   ) => ({
     title,
+    guideUrl,
     description,
     tests,
     output,
@@ -64,6 +65,7 @@ const mapStateToProps = createSelector(
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   executeChallenge: PropTypes.func,
+  guideUrl: PropTypes.string,
   hint: PropTypes.string,
   isCodeLocked: PropTypes.bool,
   makeToast: PropTypes.func,
@@ -127,7 +129,8 @@ export class SidePanel extends PureComponent {
       openBugModal,
       openHelpModal,
       isCodeLocked,
-      unlockUntrustedCode
+      unlockUntrustedCode,
+      guideUrl
     } = this.props;
     return (
       <div
@@ -146,6 +149,7 @@ export class SidePanel extends PureComponent {
         </div>
         <ToolPanel
           executeChallenge={ executeChallenge }
+          guideUrl={ guideUrl }
           hint={ hint }
           isCodeLocked={ isCodeLocked }
           makeToast={ makeToast }
