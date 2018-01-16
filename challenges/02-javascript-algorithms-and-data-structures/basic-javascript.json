@@ -1393,7 +1393,8 @@
             "Asigna <code>someAdjective</code> y anexalo a <code>myStr</code> usando el operador <code>+=</code>."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/appending-variables-to-strings"
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -1875,7 +1876,8 @@
             "Crea una variable llamada <code>myData</ ​​code> y asignale el primer valor del vector <code>myArray</code>."
           ]
         }
-      }
+      },
+      "guideUrl": "https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
     },
     {
       "id": "cf1111c1c11feddfaeb8bdef",
@@ -1969,7 +1971,8 @@
             "Lee de <code>myArray</code> usando la notación corchete de modo que myData sea igual a <code>8</code>"
           ]
         }
-      }
+      },
+      "guideUrl": "https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
     },
     {
       "id": "56bbb991ad1ed5201cd392cb",
@@ -2756,7 +2759,8 @@
             "Llama la función <code>processArg</code> con un argumento <code>7</code> y asigna su valor de retorno a la variable <code>processed</code>."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/assignment-with-a-returned-value"
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
@@ -3927,7 +3931,8 @@
             "Escribe una sentencia switch para establecer <code>answer</code> para las siguientes condiciones:<br><code>\"a\"</code> - \"apple\"<br><code>\"b\"</code> - \"bird\"<br><code>\"c\"</code> - \"cat\"<br><code>default</code> - \"stuff\""
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/adding-a-default-option-in-switch-statements"
     },
     {
       "id": "56533eb9ac21ba0edf2244df",
@@ -4399,7 +4404,8 @@
             "Lee los valores de las propiedades <code>\"an entree\"</code> y <code>\"the drink\"</code> de <code>testObj</code> usando la notación corchete."
           ]
         }
-      }
+      },
+      "guideUrl": "https://guide.freecodecamp.org/certificates/accessing-objects-properties-with-bracket-notation"
     },
     {
       "id": "56533eb9ac21ba0edf2244c9",
@@ -4458,7 +4464,8 @@
             "Usa la variable <code>playerNumber</code> para buscar y asignar a <code>player</code> el jugador <code>16</code> de <code>testObj</code>, usa la notación corchete."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/accessing-objects-properties-with-variables"
     },
     {
       "id": "56bbb991ad1ed5201cd392d1",
@@ -4899,7 +4906,8 @@
             "Accede al objeto <code>myStorage</code> para recuperar el contenido de <code>glove box</code>. Usa notación corchete para las propiedades con un espacio en su nombre."
           ]
         }
-      }
+      },
+      "urlGuide":"https://guide.freecodecamp.org/certificates/accessing-nested-objects-in-json"
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
@@ -4966,7 +4974,8 @@
             "Recupera el segundo arbol de la variable <code>myPlants</code> usando notación punto para objetos y notación corchete para vectores."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
     },
     {
       "id": "56533eb9ac21ba0edf2244cf",

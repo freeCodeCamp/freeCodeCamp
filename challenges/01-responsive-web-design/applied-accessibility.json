@@ -57,7 +57,8 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "guideUrl": "https://guide.freecodecamp.org/certificates/add-alt-text-to-an-image-for-accessibility"
     },
     {
       "id": "587d774c367417b2b2512a9d",

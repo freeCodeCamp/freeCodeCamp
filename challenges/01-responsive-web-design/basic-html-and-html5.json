@@ -700,7 +700,8 @@
             "<code>https://bit.ly/fcc-relaxing-cat</code>"
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/add-images-to-your-website"
     },
     {
       "id": "bad87fee1348bd9aedf08816",
@@ -1509,7 +1510,8 @@
             "Установите значение атрибута <code>placeholder</code> вашего текстового поля <code>input</code> равными \"cat photo URL\"."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field"
     },
     {
       "id": "bad87fee1348bd9aede08830",
@@ -1676,7 +1678,8 @@
             "Добавьте кнопку отправки к вашему элементу <code>form</code> с указанием типа <code>submit</code> и \"Submit\" в качестве отображаемого текста."
           ]
         }
-      }
+      },
+      "guideUrl":"https://guide.freecodecamp.org/certificates/add-a-submit-button-to-a-form"
     },
     {
       "id": "bad87fee1348bd9aedc08830",
