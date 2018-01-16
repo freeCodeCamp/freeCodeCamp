@@ -20,7 +20,6 @@ const propTypes = {
   isCompleted: PropTypes.bool,
   isDev: PropTypes.bool,
   isLocked: PropTypes.bool,
-  isRequired: PropTypes.bool,
   title: PropTypes.string
 };
 const mapDispatchToProps = { clickOnChallenge };
@@ -38,7 +37,6 @@ function makeMapStateToProps(_, { dashedName }) {
         title,
         block,
         isLocked,
-        isRequired,
         isComingSoon
       } = challengeMap[dashedName] || {};
       const isCompleted = userChallengeMap ? !!userChallengeMap[id] : false;
@@ -48,7 +46,6 @@ function makeMapStateToProps(_, { dashedName }) {
         title,
         block,
         isLocked,
-        isRequired,
         isComingSoon,
         isDev: debug.enabled('fcc:*')
       };
@@ -62,13 +59,6 @@ export class Challenge extends PureComponent {
       return null;
     }
     return <span className='sr-only'>completed</span>;
-  }
-
-  renderRequired(isRequired) {
-    if (!isRequired) {
-      return '';
-    }
-    return <span className='text-primary'><strong>*</strong></span>;
   }
 
   renderComingSoon(isComingSoon) {
@@ -85,14 +75,13 @@ export class Challenge extends PureComponent {
     );
   }
 
-  renderLocked(title, isRequired, isComingSoon, className) {
+  renderLocked(title, isComingSoon, className) {
     return (
       <p
         className={ className }
         key={ title }
         >
         { title }
-        { this.renderRequired(isRequired) }
         { this.renderComingSoon(isComingSoon) }
       </p>
     );
@@ -108,7 +97,6 @@ export class Challenge extends PureComponent {
       isCompleted,
       isDev,
       isLocked,
-      isRequired,
       title
     } = this.props;
     if (!title) {
@@ -126,7 +114,6 @@ export class Challenge extends PureComponent {
     if (isLocked || (!isDev && isComingSoon)) {
       return this.renderLocked(
         title,
-        isRequired,
         isComingSoon,
         challengeClassName
       );
@@ -143,7 +130,6 @@ export class Challenge extends PureComponent {
           <span >
             { title }
             { this.renderCompleted(isCompleted, isLocked) }
-            { this.renderRequired(isRequired) }
           </span>
         </Link>
       </div>
