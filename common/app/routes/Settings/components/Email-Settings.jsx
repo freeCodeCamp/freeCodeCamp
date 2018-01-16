@@ -17,9 +17,10 @@ import {
 } from 'react-bootstrap';
 import classnames from 'classnames';
 
-import { onRouteUpdateEmail } from '../redux';
 import { Link } from '../../../Router';
+import { FullWidthRow } from '../../../helperComponents';
 import { userSelector } from '../../../redux';
+import { onRouteUpdateEmail } from '../redux';
 import {
   updateUserBackend
 } from '../../../entities/user';
@@ -113,7 +114,11 @@ class EmailSettings extends PureComponent {
               className='toggle-btn-group'
               id={ id }
               name='monthly-email'
-              onChange={ () => updateUserBackend({ [option.flag]: !option.bool }) }
+              onChange={
+                () => updateUserBackend({
+                  [option.flag]: !option.bool
+                })
+              }
               type='radio'
               >
               <ToggleButton
@@ -167,14 +172,14 @@ class EmailSettings extends PureComponent {
     if (!email) {
       return (
         <div>
-          <Row>
+          <FullWidthRow>
             <p className='large-p text-center'>
               You do not have an email associated with this account.
             </p>
-          </Row>
-          <Row>
+          </FullWidthRow>
+          <FullWidthRow>
             <UpdateEmailButton />
-          </Row>
+          </FullWidthRow>
         </div>
       );
     }
@@ -202,30 +207,36 @@ class EmailSettings extends PureComponent {
     ];
     return (
       <div className='email-settings'>
-        <Row>
+        <FullWidthRow>
+          <h2>Email Settings</h2>
+          <br />
+        </FullWidthRow>
+        {
+          isEmailVerified ? null :
+          <FullWidthRow>
+            <HelpBlock>
+              <Alert bsStyle='info'>
+              A change of email adress has not been verified.
+              To use your new email, you must verify it first using the link
+              we sent you.
+              </Alert>
+            </HelpBlock>
+          </FullWidthRow>
+        }
+        <FullWidthRow>
           <form
             className='inline-form'
             id='update-email'
             onSubmit={ handleSubmit(this.handleSubmit) }
             >
-            <Col className='inline-form' sm={ 6 } xs={ 12 }>
+            <Col className='inline-form' sm={ 2 } xs={ 12 }>
               <ControlLabel htmlFor='email'>
                 Email
               </ControlLabel>
-              {
-                isEmailVerified ? null :
-                <HelpBlock>
-                  <Alert bsStyle='info'>
-                  A change of email adress has not been verified.
-                  To use your new email, you must verify it first using the link
-                  we sent you.
-                  </Alert>
-                </HelpBlock>
-              }
             </Col>
-            <Col sm={ 5 } xs={ 12 }>
+            <Col sm={ 10 } xs={ 12 }>
               <FormControl
-                bsSize='sm'
+                bsSize='lg'
                 id='email'
                 name='email'
                 onChange={ onChange }
@@ -245,8 +256,10 @@ class EmailSettings extends PureComponent {
               </Button>
             </Col>
           </form>
-        </Row>
-        { this.renderToggleOptions(options) }
+        </FullWidthRow>
+        <FullWidthRow>
+          { this.renderToggleOptions(options) }
+        </FullWidthRow>
       </div>
     );
   }

@@ -179,6 +179,11 @@ module.exports = function(User) {
         if (user.progressTimestamps.length === 0) {
           user.progressTimestamps.push({ timestamp: Date.now() });
         }
+
+        if (!user.picture) {
+          const userString = user.name.split(' ').join('+');
+          user.picutre = `https://identicon.org?t=${userString}&s=256`;
+        }
         return Observable.fromPromise(User.doesExist(null, user.email))
           .do(exists => {
             if (exists) {
@@ -204,7 +209,7 @@ module.exports = function(User) {
       // is update or save user
       .filter(Boolean)
       .do(user => {
-        // Some old accounts will not have emails associated with theme
+        // Some old accounts will not have emails associated with them
         // we verify only if the email field is populated
         if (user.email && !isEmail(user.email)) {
           throw createEmailError();
@@ -667,6 +672,40 @@ module.exports = function(User) {
   }
 
   User.prototype.requestUpdateMultipleFlags = requestUpdateMultipleFlags;
+
+  function updateMyPortfolio(portfolioItem, deleteRequest) {
+    const currentPortfolio = this.portfolio.slice(0);
+    const pIndex = _.findIndex(
+      currentPortfolio,
+      p => p.id === portfolioItem.id
+    );
+    let updatedPortfolio = [];
+    if (deleteRequest) {
+      updatedPortfolio = currentPortfolio.filter(
+        p => p.id !== portfolioItem.id
+      );
+    } else if (pIndex === -1) {
+      updatedPortfolio = currentPortfolio.concat([ portfolioItem ]);
+    } else {
+      updatedPortfolio = [
+        ...currentPortfolio.slice(0, pIndex),
+        {
+          ...currentPortfolio[pIndex],
+          ...portfolioItem
+        },
+        ...currentPortfolio.slice(pIndex)
+      ];
+    }
+    return this.update$({ portfolio: updatedPortfolio })
+      .do(() => {
+        this.portfolio = updatedPortfolio;
+      })
+      .map(() => dedent`
+        Your portfolio has been updated
+      `);
+  }
+
+  User.prototype.updateMyPortfolio = updateMyPortfolio;
 
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {

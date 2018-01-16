@@ -4,6 +4,7 @@ import {
 } from 'berkeleys-redux-utils';
 
 import { types as userTypes, userReducer } from './user';
+import { usernameSelector } from '../redux';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
@@ -46,6 +47,13 @@ export function makeSuperBlockSelector(name) {
 
 export function selectiveChallengeTitleSelector(state, dashedName) {
   return getNS(state).challenge[dashedName].title;
+}
+
+export function portfolioSelector(state, props) {
+  const username = usernameSelector(state);
+  const { portfolio } = getNS(state).user[username];
+  const pIndex = _.findIndex(portfolio, p => p.id === props.id);
+  return portfolio[pIndex];
 }
 
 export function projectsSelector(state) {

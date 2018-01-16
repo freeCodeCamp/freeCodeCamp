@@ -5,17 +5,22 @@ import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
 import {
-  Image,
-  Button,
+  Col,
   ControlLabel,
   FormControl,
-  Row,
-  Col
+  Nav,
+  NavItem,
+  Row
 } from 'react-bootstrap';
 
-import { Link } from '../../../Router';
+import {
+  BlockSaveButton,
+  FormFields,
+  FullWidthRow
+} from '../../../helperComponents';
 import LockedSettings from './Locked-Settings.jsx';
 import ThemeSettings from './ThemeSettings.jsx';
+import Camper from '../../Profile/components/Camper.jsx';
 import { userSelector } from '../../../redux';
 import {
   updateUserBackend
@@ -31,21 +36,24 @@ const mapStateToProps = createSelector(
       location,
       name,
       picture,
+      points,
       theme,
       username
     },
   ) => ({
     bio,
     currentTheme: theme,
-    initialValues: { name, location },
+    initialValues: { name, location, bio, picture },
     isLocked,
     location,
     name,
     picture,
+    points,
     username
   })
 );
 
+const formFields = [ 'bio', 'name', 'picture', 'location' ];
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
@@ -56,18 +64,13 @@ function mapDispatchToProps(dispatch) {
 const propTypes = {
     bio: PropTypes.string,
     currentTheme: PropTypes.string,
-    fields: PropTypes.objectOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        onChange: PropTypes.func.isRequired,
-        value: PropTypes.string.isRequired
-      })
-    ),
+    fields: PropTypes.object,
     handleSubmit: PropTypes.func.isRequired,
     isLocked: PropTypes.bool,
     location: PropTypes.string,
     name: PropTypes.string,
     picture: PropTypes.string,
+    points: PropTypes.number,
     updateUserBackend: PropTypes.func.isRequired,
     username: PropTypes.string
 };
@@ -76,23 +79,101 @@ class AccountSettings extends PureComponent {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTabSelect = this.handleTabSelect.bind(this);
+    this.renderEdit = this.renderEdit.bind(this);
+    this.renderPreview = this.renderPreview.bind(this);
+
+    this.state = {
+      view: 'edit'
+    };
+    this.show = {
+      edit: this.renderEdit,
+      preview: this.renderPreview
+    };
   }
 
   handleSubmit(values) {
     this.props.updateUserBackend(values);
   }
 
+  handleTabSelect(key) {
+    this.setState(state => ({
+      ...state,
+      view: key
+    }));
+  }
+
+  renderEdit() {
+    const { fields, fields: { bio } } = this.props;
+    const options = {
+      ignored: [ 'bio' ],
+      types: {
+        picture: 'url'
+      }
+    };
+    const bioId = _.kebabCase(bio.name);
+    return (
+      <div>
+        <FormFields
+          fields={ fields }
+          options={ options }
+        />
+        <Row className='editable-content-container'>
+          <Col xs={ 12 }>
+            <ControlLabel htmlFor={ bioId }>
+              { _.startCase(bio.name) }
+            </ControlLabel>
+          </Col>
+        </Row>
+        <Row className='editable-content-container'>
+          <Col xs={ 12 }>
+            <FormControl
+              componentClass='textarea'
+              id={ bioId }
+              name={ bio.name }
+              onChange={ bio.onChange }
+              rows={ 4 }
+              value={ bio.value }
+            />
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+
+  renderPreview() {
+    const {
+      fields: {
+      picture: { value: picture },
+      name: { value: name },
+      location: { value: location },
+      bio: { value: bio }
+      },
+      points,
+      username
+    } = this.props;
+    return (
+      <Camper
+        bio={ bio }
+        location={ location }
+        name={ name }
+        picture={ picture }
+        points={ points }
+        username={ username }
+      />
+    );
+  }
+
   render() {
     const {
-      bio,
       currentTheme,
-      fields,
       handleSubmit,
       isLocked,
-      picture,
       updateUserBackend,
       username
     } = this.props;
+
+    const { view } = this.state;
 
     const toggleIsLocked = () => updateUserBackend({ isLocked: !isLocked });
     const toggleNightMode = theme => updateUserBackend({
@@ -100,95 +181,45 @@ class AccountSettings extends PureComponent {
     });
     return (
       <div className='account-settings'>
-        <Row>
-          <Col xs={ 12 }>
-            <h2>Account Settings - { username }</h2>
-          </Col>
-          <Col md={ 3 } xs= { 12 }>
-            <Link to={`/${username}`}>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                >
-                View Public Profile
-              </Button>
-            </Link>
-          </Col>
-          <Col md={ 3 } mdPush={ 6 } xs={ 12 }>
-            <Button
-              block={ true }
-              bsSize='lg'
-              bsStyle='primary'
-              href='/link/github'
-              >
-              Update from GitHub
-            </Button>
-          </Col>
-        </Row>
+        <FullWidthRow>
+          <h2>Account Settings - { username }</h2>
+        </FullWidthRow>
+        <FullWidthRow>
+          <Nav
+            activeKey={ view }
+            bsStyle='tabs'
+            className='edit-preview-tabs'
+            onSelect={k => this.handleTabSelect(k)}
+            >
+            <NavItem eventKey='edit' title='Edit'>
+              Edit
+            </NavItem>
+            <NavItem eventKey='preview' title='Preview'>
+              Preview
+            </NavItem>
+          </Nav>
+        </FullWidthRow>
         <br />
-        <Row>
-          <Col md={ 2 } mdPush={ 1 } xs={ 12 }>
-            <Image className='avatar' src={ picture } thumbnail={ true } />
-          </Col>
-          <Col md={ 8 } mdPush={ 1 } xs = { 12 }>
-            <blockquote
-              className='about-me'
-              >
-              { bio }
-            </blockquote>
-          </Col>
-        </Row>
-        <br />
+        <FullWidthRow>
         <form id='camper-identity' onSubmit={ handleSubmit(this.handleSubmit) }>
           {
-            Object.keys(fields).map(key => fields[key])
-            .map(({ name, onChange, value }) => {
-              const key = _.kebabCase(name);
-              return (
-              <Row className='editable-content-container' key={ key }>
-                <Col sm={ 6 } xs={ 12 }>
-                  <ControlLabel htmlFor={ key }>
-                    { _.startCase(name) }
-                  </ControlLabel>
-                </Col>
-                <Col sm={ 6 } xs={ 12 }>
-                  <FormControl
-                    bsSize='sm'
-                    id={ key }
-                    name={ name }
-                    onChange={ onChange }
-                    placeholder={ name }
-                    required={ true }
-                    type='text'
-                    value={ value }
-                  />
-                </Col>
-              </Row>
-            );
-            })
+            this.show[view]()
           }
-          <Row>
-            <Col md={ 2 } mdPush= { 10 } xs={ 12 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                type='submit'
-                >
-                Save
-              </Button>
-            </Col>
-          </Row>
+          <BlockSaveButton />
         </form>
-        <LockedSettings
-          isLocked={ isLocked }
-          toggleIsLocked={ toggleIsLocked }
-        />
-        <ThemeSettings
-          currentTheme={ currentTheme }
-          toggleNightMode={ toggleNightMode }
-        />
+        </FullWidthRow>
+        <FullWidthRow>
+          <LockedSettings
+            isLocked={ isLocked }
+            toggleIsLocked={ toggleIsLocked }
+          />
+        </FullWidthRow>
+        <FullWidthRow>
+          <ThemeSettings
+            currentTheme={ currentTheme }
+            toggleNightMode={ toggleNightMode }
+          />
+        </FullWidthRow>
       </div>
     );
   }
@@ -200,7 +231,7 @@ AccountSettings.propTypes = propTypes;
 export default reduxForm(
   {
     form: 'account-settings',
-    fields: [ 'name', 'location' ]
+    fields: formFields
   },
   mapStateToProps,
   mapDispatchToProps

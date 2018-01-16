@@ -3,8 +3,10 @@ import React from 'react';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Button, Col } from 'react-bootstrap';
 import classnames from 'classnames';
+
+import { FullWidthRow } from '../../../helperComponents';
 import { userSelector } from '../../../redux/index';
 import {
   toggleUserFlag,
@@ -40,24 +42,30 @@ function JobSettings({
     isAvailableForHire: !isAvailableForHire
   });
   return (
-    <Row>
-      <Col xs={ 9 }>
-        <p className='large-p'>
-          Available for hire?
-        </p>
-      </Col>
-      <Col xs={ 3 }>
-        <Button
-          block={ true }
-          bsSize='lg'
-          bsStyle='primary'
-          className={ className }
-          onClick={ toggleHireState }
-          >
-          { isAvailableForHire ? 'Yes' : 'No' }
-        </Button>
-      </Col>
-    </Row>
+    <div>
+      <FullWidthRow>
+        <h2>Job Settings</h2>
+        <br />
+      </FullWidthRow>
+      <FullWidthRow>
+        <Col xs={ 9 }>
+          <p className='large-p'>
+            Available for hire?
+          </p>
+        </Col>
+        <Col xs={ 3 }>
+          <Button
+            block={ true }
+            bsSize='lg'
+            bsStyle='primary'
+            className={ className }
+            onClick={ toggleHireState }
+            >
+            { isAvailableForHire ? 'Yes' : 'No' }
+          </Button>
+        </Col>
+      </FullWidthRow>
+    </div>
   );
 }
 

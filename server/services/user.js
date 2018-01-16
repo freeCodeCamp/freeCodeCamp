@@ -1,7 +1,12 @@
-import _ from 'lodash';
-// import debug from 'debug';
-// use old rxjs
+import debug from 'debug';
 import { Observable } from 'rx';
+import _ from 'lodash';
+
+import {
+  prepUniqueDaysByHours,
+  calcCurrentStreak,
+  calcLongestStreak
+} from '../utils/user-stats';
 
 const publicUserProps = [
   'id',
@@ -42,40 +47,84 @@ const publicUserProps = [
   'isPublicEmail',
 
   'currentChallengeId',
-  'challengeMap'
+  'challengeMap',
+  'calendar',
+  'streak'
 ];
 
-// const log = debug('fcc:services:user');
+const log = debug('fcc:services:user');
+
+function getProgress(progressTimestamps, timezone = 'EST') {
+  const calendar = progressTimestamps
+  .map((objOrNum) => {
+    return typeof objOrNum === 'number' ?
+      objOrNum :
+      objOrNum.timestamp;
+  })
+  .filter((timestamp) => {
+    return !!timestamp;
+  })
+  .reduce((data, timeStamp) => {
+    data[Math.floor(timeStamp / 1000)] = 1;
+    return data;
+  }, {});
+  const timestamps = progressTimestamps
+    .map(objOrNum => {
+      return typeof objOrNum === 'number' ?
+        objOrNum :
+        objOrNum.timestamp;
+    });
+  const uniqueHours = prepUniqueDaysByHours(timestamps, timezone);
+  const streak = {
+    longest: calcLongestStreak(uniqueHours, timezone),
+    current: calcCurrentStreak(uniqueHours, timezone)
+  };
+  return { calendar, streak };
+}
 
 export default function userServices() {
   return {
     name: 'user',
     read: (req, resource, params, config, cb) => {
       const { user } = req;
-      Observable.if(
-        () => !user,
-        Observable.of({}),
-        Observable.defer(() => user.getChallengeMap$())
-          .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
-          .map(user => ({
-            entities: {
-              user: {
-                [user.username]: {
-                  ..._.pick(user, publicUserProps),
-                  isEmailVerified: !!user.emailVerified,
-                  isTwitter: !!user.twitter,
-                  isLinkedIn: !!user.linkedIn,
-                  isWebsite: !!user.website
-                }
-              }
-            },
-            result: user.username
+      if (user) {
+        log('user is signed in');
+        // mergeMap in v5
+        return Observable.forkJoin(
+          user.getChallengeMap$(),
+          user.getPoints$(),
+          (challengeMap, progressTimestamps) => ({
+            challengeMap,
+            progress: getProgress(progressTimestamps, user.timezone)
+          })
+          )
+          .map(({ challengeMap, progress }) => ({
+            ...user.toJSON(),
+            ...progress,
+            challengeMap
           }))
-      )
-        .subscribe(
-          user => cb(null, user),
-          cb
-        );
+          .map(
+            user => ({
+              entities: {
+                user: {
+                  [user.username]: {
+                    ..._.pick(user, publicUserProps),
+                    isEmailVerified: !!user.emailVerified,
+                    isTwitter: !!user.twitter,
+                    isLinkedIn: !!user.linkedIn,
+                    isWebsite: !!user.website
+                  }
+                }
+              },
+              result: user.username
+            })
+          )
+          .subscribe(
+            user => cb(null, user),
+            cb
+          );
+      }
     }
   };
 }
+

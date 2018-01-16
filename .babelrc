@@ -9,6 +9,10 @@
         "react-bootstrap": {
           "transform": "react-bootstrap/lib/${member}",
           "preventFullImport": true
+        },
+        "validator": {
+          "transform": "validator/lib/${member}",
+          "preventFullImport": true
         }
       }
     ]

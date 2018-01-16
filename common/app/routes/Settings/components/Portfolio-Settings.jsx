@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import { isURL } from 'validator';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { SubmissionError } from 'redux-form';
 import {
   Row,
   Col,
@@ -12,17 +13,31 @@ import {
   Button
 } from 'react-bootstrap';
 
+import {
+  BlockSaveButton,
+  FormFields,
+  FullWidthRow
+} from '../../../helperComponents';
+import PortfolioItem from './PortfolioItem.jsx';
 import { userSelector } from '../../../redux';
+import { makeToast } from '../../../Toasts/redux';
 import {
   addPortfolioItem,
   deletePortfolio,
   updatePortfolio,
   updateUserBackend
 } from '../../../entities/user';
+import { maxLength, minLength } from '../utils/formValidators';
+
+const minTwoChar = minLength(2);
+const max288Char = maxLength(288);
+const validURL = str => isURL(str) ? null : 'Must be a valid URL';
+
 
 const propTypes = {
   addPortfolioItem: PropTypes.func.isRequired,
   deletePortfolio: PropTypes.func.isRequired,
+  picture: PropTypes.string,
   portfolio: PropTypes.arrayOf(
     PropTypes.shape({
       description: PropTypes.string,
@@ -38,16 +53,36 @@ const propTypes = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ portfolio, username }) => ({ portfolio, username })
+  ({ picture, portfolio, username }) => ({
+    picture,
+    portfolio,
+    username
+  })
 );
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addPortfolioItem,
     deletePortfolio,
+    makeToast,
     updatePortfolio,
     updateUserBackend
   }, dispatch);
+}
+
+function validator(values) {
+  const errors = {};
+  const {
+    title = '',
+    url = '',
+    description = '',
+    image = ''
+  } = values;
+  errors.title = minTwoChar(title);
+  errors.description = max288Char(description);
+  errors.url = url && validURL(url);
+  errors.image = image && validURL(image);
+  return errors;
 }
 
 class PortfolioSettings extends PureComponent {
@@ -55,7 +90,6 @@ class PortfolioSettings extends PureComponent {
     super(props);
 
     this.handleAdd = this.handleAdd.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -66,22 +100,13 @@ class PortfolioSettings extends PureComponent {
     this.props.addPortfolioItem(this.props.username);
   }
 
-  handleChange(e) {
-    const { updatePortfolio, username } = this.props;
-    const [ field, portfolioId ] = e.target.id.split('-');
-    updatePortfolio(username, portfolioId, field, e.target.value);
+  handleDelete(id) {
+    const { updateUserBackend } = this.props;
+    updateUserBackend({ portfolio: { id } });
   }
 
-  handleDelete(e) {
-    e.preventDefault();
-    const { deletePortfolio, username } = this.props;
-    const [, id] = e.target.id.split('-');
-    console.log(id, username);
-    deletePortfolio({ id, username });
-  }
-
-  handleSave() {
-    const { portfolio, updateUserBackend } = this.props;
+  handleSave(portfolio) {
+    const { updateUserBackend } = this.props;
     updateUserBackend({ portfolio });
   }
 
@@ -91,85 +116,18 @@ class PortfolioSettings extends PureComponent {
     this.handleSave();
   }
 
-  renderPortfolio(username, portfolio, index, arr) {
+  renderPortfolio(portfolio, index, arr) {
     const {
-      title,
-      image = `https://github.com/identicons/${username}.png`,
-      description,
-      url,
       id
     } = portfolio;
     return (
       <div key={ id }>
-        <form onSubmit={ this.handleSubmit }>
-          <Row className='portfolio-input-row'>
-            <Col xs={ 5 }>
-              <ControlLabel htmlFor={ `title-${id}` }>
-                Title
-              </ControlLabel>
-              <FormControl
-                  bsSize='sm'
-                  className='portfolio-title'
-                  id={ `title-${id}` }
-                  onChange={ this.handleChange }
-                  placeholder='Title'
-                  type='text'
-                  value={ title }
-              />
-              <ControlLabel htmlFor={ `url-${id}` }>
-                URL
-              </ControlLabel>
-              <FormControl
-                  bsSize='sm'
-                  className='portfolio-url'
-                  id={ `url-${id}` }
-                  onChange={ this.handleChange }
-                  placeholder='https://this-awesome.website'
-                  type='url'
-                  value={ url }
-              />
-              <ControlLabel htmlFor={ `image-${id}` }>
-                Screen Shot
-              </ControlLabel>
-              <FormControl
-                  bsSize='sm'
-                  className='portfolio-img'
-                  id={ `image-${id}` }
-                  onChange={ this.handleChange }
-                  placeholder='https://my-image-host.co/my-image.png'
-                  type='url'
-                  value={ image }
-              />
-            </Col>
-            <Col xs={ 7 }>
-            <ControlLabel htmlFor={ `description-${id}` }>
-                Decsription
-              </ControlLabel>
-              <FormControl
-                  className='portfolio-description'
-                  componentClass='textarea'
-                  id={ `description-${id}` }
-                  onChange={ this.handleChange }
-                  placeholder='Description'
-                  value={ description }
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={ 12 }>
-                <Button
-                  block={ true }
-                  bsSize='sm'
-                  bsStyle='danger'
-                  id={`delete-${id}`}
-                  onClick={ this.handleDelete }
-                  type='button'
-                  >
-                  Remove
-                </Button>
-            </Col>
-          </Row>
-        </form>
+        <PortfolioItem
+          deletePortfolio={ this.handleDelete }
+          id={ id }
+          submit={ this.handleSave }
+          validator={ validator }
+        />
         {
           index + 1 !== arr.length && <hr />
         }
@@ -178,11 +136,13 @@ class PortfolioSettings extends PureComponent {
   }
 
   render() {
-    const { portfolio = [], username } = this.props;
-    const renderPortfolioWithUsername = _.curry(this.renderPortfolio, 4)(username);
+    const { portfolio = [] } = this.props;
     return (
-      <section id='portfolio-settings' onSubmit={ this.handleSubmit }>
-        <h2>Your Portfolio</h2>
+      <section id='portfolio-settings' >
+        <FullWidthRow>
+          <h2>Your Portfolio</h2>
+        </FullWidthRow>
+        <FullWidthRow>
         <div className='portfolio-settings-intro'>
           <p>
             Share your non-FreeCodeCamp projects, articles or accepted
@@ -196,19 +156,9 @@ class PortfolioSettings extends PureComponent {
             Add a new portfolio Item
           </Button>
         </div>
+        </FullWidthRow>
         {
-          portfolio.length ? portfolio.map(renderPortfolioWithUsername) : null
-        }
-        { portfolio.length ?
-          <Button
-            block={ true }
-            bsStyle='primary'
-            onClick={ this.handleSave }
-            type='button'
-            >
-            Save Portfolio
-          </Button> :
-          null
+          portfolio.length ? portfolio.map(this.renderPortfolio) : null
         }
       </section>
     );

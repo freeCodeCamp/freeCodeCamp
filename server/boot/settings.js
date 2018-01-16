@@ -114,6 +114,22 @@ export default function settingsController(app) {
       .isIn(Object.keys(themes))
       .withMessage('Theme is invalid.')
   ];
+  function updateMyPortfolio(req, res, next) {
+    const {
+      user,
+      body: { portfolio }
+    } = req;
+    // if we only have one key, it should be the id
+    // user cannot send only one key to this route
+    // other than to remove a portfolio item
+    const requestDelete = Object.keys(portfolio).length === 1;
+    return user.updateMyPortfolio(portfolio, requestDelete)
+      .subscribe(
+        message => res.json({ message }),
+        next
+      );
+  }
+
   function updateMyTheme(req, res, next) {
     const { body: { theme } } = req;
     const errors = req.validationErrors(true);
@@ -184,6 +200,18 @@ export default function settingsController(app) {
     '/update-my-lang',
     ifNoUser401,
     updateMyLang
+  );
+
+  api.post(
+    '/update-my-current-challenge',
+    ifNoUser401,
+    updateMyCurrentChallenge
+  );
+
+  api.post(
+    '/update-my-portfolio',
+    ifNoUser401,
+    updateMyPortfolio
   );
 
   app.use(api);

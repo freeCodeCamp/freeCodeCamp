@@ -3,7 +3,6 @@ import { ofType } from 'redux-epic';
 import _ from 'lodash';
 
 import {
-  editUserFlag,
   types,
   updateUserBackendError,
   updateUserBackendComplete
@@ -20,6 +19,7 @@ import { postJSON$ } from '../../utils/ajax-stream';
 const endpoints = {
   email: '/update-my-email',
   languageTag: '/update-my-lang',
+  portfolio: '/update-my-portfolio',
   theme: '/update-my-theme'
 };
 
@@ -46,7 +46,6 @@ function backendUserUpdateEpic(actions$, { getState }) {
       let body = { _csrf };
       let endpoint = '/update-multiple-flags';
       const updateKeys = Object.keys(valuesToUpdate);
-      // const specificRoute =
       if (updateKeys.length === 1 && updateKeys[0] in endpoints) {
         // there is a specific route for this update
         const flag = updateKeys[0];

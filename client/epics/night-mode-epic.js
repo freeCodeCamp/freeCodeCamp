@@ -35,7 +35,6 @@ export default function nightModeSaga(
     // catch existing night mode users
     .do(persistTheme)
     .do(theme => {
-      console.info('night-mode', theme);
       if (theme === themes.night) {
         body.classList.add(themes.night);
       } else {

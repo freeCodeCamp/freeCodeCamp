@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   Button,
-  Row,
-  Col
+  Col,
+  Grid,
+  Row
 } from 'react-bootstrap';
 
 import {
@@ -13,13 +14,14 @@ import {
   signInLoadingSelector,
   userSelector
 } from '../../redux';
+import ns from './ns.json';
 import ChildContainer from '../../Child-Container.jsx';
 import { Link } from '../../Router';
-import Camper from './components/Camper.jsx';
+import CamperHOC from './components/CamperHOC.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import Certificates from './components/Certificates.jsx';
-import Timeline from './Timeline.jsx';
-
+import Timeline from './components/Timeline.jsx';
+import HeatMap from './components/HeatMap.jsx';
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -59,7 +61,7 @@ class Profile extends React.Component {
   render() {
     return (
       <ChildContainer>
-        <div className='container profile-container'>
+        <Grid className={`${ns}-container`}>
           <div>
             <Row>
               <Col md={ 4 } mdPush={ 1 }>
@@ -85,14 +87,16 @@ class Profile extends React.Component {
               </Col>
             </Row>
             <br />
-            <Camper />
+            <CamperHOC />
           </div>
-          <div className='heatmap-container'/>
+          <HeatMap />
           <hr />
           <Certificates />
+          <hr />
           <Portfolio />
+          <hr />
           <Timeline className='timelime-container' />
-        </div>
+        </Grid>
       </ChildContainer>
     );
   }

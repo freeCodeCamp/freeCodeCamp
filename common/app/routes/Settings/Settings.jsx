@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Button, Col, Grid, Row } from 'react-bootstrap';
 
 import ns from './ns.json';
 import AccountSettings from './components/Account-Settings.jsx';
@@ -13,6 +14,7 @@ import SettingsSkeleton from './components/Settings-Skeleton.jsx';
 import JobSettings from './components/Job-Settings.jsx';
 import LanguageSettings from './components/Language-Settings.jsx';
 import ChildContainer from '../../Child-Container.jsx';
+import { Link } from '../../Router';
 import {
   updateTitle,
   signInLoadingSelector,
@@ -64,30 +66,36 @@ class Settings extends React.Component {
 
     return (
       <ChildContainer>
-        <div className={`container ${ns}-container`}>
-          <AccountSettings />
-          <hr />
-          <h2>Email Settings</h2>
-          <br />
-          <EmailSettings />
-          <hr />
-          <h2>Language Settings</h2>
-          <br />
-          <LanguageSettings />
-          <hr />
-          <h2>Your internet presence</h2>
-          <br />
-          <InternetSettings />
-          <hr />
-          <h2>Job Settings</h2>
-          <br />
-          <JobSettings />
-          <hr />
-          <PortfolioSettings/>
-          <hr />
-          <ProjectSettings/>
-          <hr />
-        </div>
+        <Grid>
+          <div className={`container ${ns}-container`}>
+            <Row>
+              <Col xs={ 8 } xsOffset={ 2 }>
+                <Link to={ `/${username}` }>
+                  <Button
+                    block={ true }
+                    bsStyle='primary'
+                    >
+                    View my Public Profile
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
+            <AccountSettings />
+            <hr />
+            <EmailSettings />
+            <hr />
+            <LanguageSettings />
+            <hr />
+            <InternetSettings />
+            <hr />
+            <JobSettings />
+            <hr />
+            <PortfolioSettings/>
+            <hr />
+            <ProjectSettings/>
+            <hr />
+          </div>
+        </Grid>
       </ChildContainer>
     );
   }

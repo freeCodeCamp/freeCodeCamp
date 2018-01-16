@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import uuid from 'uuid/v4';
 import {
   createAction,
   createTypes,
@@ -59,7 +60,7 @@ export const updateUserBackendComplete = createAction(
 
 export function emptyPortfolio() {
   return {
-  id: `portfolio${Date.now()}`,
+  id: uuid(),
   title: '',
   description: '',
   url: '',
@@ -127,23 +128,18 @@ export function userReducer(initialState) {
           }
         }
       }),
-      [types.deletePortfolio]: (state, { payload: { id, username } }) => {
-        const index = state.user[username].portfolio
-          .findIndex(byMatchingId(id));
-        return {
-          ...state,
-          user: {
-            ...state.user,
-            [username]: {
-              ...state.user[username],
-              portfolio: [
-                ...state.user[username].portfolio.slice(0, index),
-                ...state.user[username].portfolio.slice(index + 1)
-              ]
-            }
+      [types.deletePortfolio]: (state, { payload: { id, username } }) => ({
+        ...state,
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            portfolio: [
+              ...state.user[username].portfolio.filter(p => p.id !== id)
+            ]
           }
-        };
-      },
+        }
+      }),
       [types.updatePortfolio]: (
         state,
         { payload: { id, field, value, username }}

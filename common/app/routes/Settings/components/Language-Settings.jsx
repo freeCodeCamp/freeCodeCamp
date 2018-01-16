@@ -3,14 +3,13 @@ import React from 'react';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
 import {
-  Button,
   Col,
   ControlLabel,
   FormControl,
-  FormGroup,
-  Row
+  FormGroup
 } from 'react-bootstrap';
 
+import { BlockSaveButton, FullWidthRow } from '../../../helperComponents';
 import { userSelector } from '../../../redux';
 import langs from '../../../../utils/supported-languages';
 import { updateUserBackend } from '../../../entities/user';
@@ -90,39 +89,37 @@ class LanguageSettings extends React.Component {
       handleSubmit
     } = this.props;
     return (
-      <Row>
-        <form onSubmit={ handleSubmit(this.handleSubmit) }>
-          <FormGroup>
-            <Col sm={ 6 } xs={ 12 }>
-              <ControlLabel htmlFor={ name }>
-                Language Selection
-              </ControlLabel>
-            </Col>
-            <Col sm={ 5 } xs={ 12 }>
-              <FormControl
-                className='btn btn-block btn-primary btn-link-social btn-lg'
-                componentClass='select'
-                id={ name }
-                name={ name }
-                onChange={ onChange }
-                style={{ height: '45px' }}
-                value={ value }
-                >
-                { options }
-              </FormControl>
-            </Col>
-            <Col sm={ 1 } xs={ 12 }>
-              <Button
-                bsSize='lg'
-                bsStyle='primary'
-                type='submit'
-                >
-                Save
-              </Button>
-            </Col>
-          </FormGroup>
-        </form>
-      </Row>
+      <div>
+        <FullWidthRow>
+          <h2>Language Settings</h2>
+          <br />
+        </FullWidthRow>
+        <FullWidthRow>
+          <form onSubmit={ handleSubmit(this.handleSubmit) }>
+              <Col sm={ 4 } xs={ 12 }>
+                <ControlLabel htmlFor={ name }>
+                  Language Selection
+                </ControlLabel>
+              </Col>
+              <Col sm={ 5 } xs={ 12 }>
+                <FormControl
+                  className='btn btn-block btn-primary btn-link-social btn-lg'
+                  componentClass='select'
+                  id={ name }
+                  name={ name }
+                  onChange={ onChange }
+                  style={{ height: '45px' }}
+                  value={ value }
+                  >
+                  { options }
+                </FormControl>
+              </Col>
+              <Col sm={ 3 } xs={ 12 }>
+                <BlockSaveButton />
+              </Col>
+          </form>
+        </FullWidthRow>
+      </div>
     );
   }
 }

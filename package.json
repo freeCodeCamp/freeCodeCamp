@@ -110,9 +110,11 @@
     "react-addons-shallow-compare": "~15.4.2",
     "react-bootstrap": "~0.31.2",
     "react-codemirror": "^0.3.0",
+    "react-d3": "^0.4.0",
     "react-dom": "^15.6.2",
     "react-fontawesome": "^1.2.0",
     "react-freecodecamp-search": "^1.4.1",
+    "react-helmet": "^5.2.0",
     "react-images": "^0.5.1",
     "react-motion": "~0.4.2",
     "react-no-ssr": "^1.0.1",
@@ -133,6 +135,7 @@
     "sanitize-html": "^1.11.1",
     "snyk": "^1.68.1",
     "store": "git+https://github.com/berkeleytrue/store.js.git#feature/noop-server",
+    "uuid": "^3.1.0",
     "validator": "^8.2.0"
   },
   "devDependencies": {

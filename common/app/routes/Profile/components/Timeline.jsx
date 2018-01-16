@@ -10,17 +10,17 @@ import {
   Table
 } from 'react-bootstrap';
 
-import { challengeIdToNameMapSelector } from '../../entities';
-import { userSelector } from '../../redux';
-import { homeURL } from '../../../utils/constantStrings.json';
-import blockNameify from '../../utils/blockNameify';
+import { challengeIdToNameMapSelector } from '../../../entities';
+import { userSelector } from '../../../redux';
+import { homeURL } from '../../../../utils/constantStrings.json';
+import blockNameify from '../../../utils/blockNameify';
 
 const mapStateToProps = createSelector(
   challengeIdToNameMapSelector,
   userSelector,
   (
     idToNameMap,
-    { challengeMap: completedMap }
+    { challengeMap: completedMap = {} }
   ) => ({
     completedMap,
     idToNameMap
@@ -44,7 +44,7 @@ function renderCompletion(idToNameMap, completed) {
         <td>
           <time dateTime={ format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ') }>
             {
-              format(completedDate, 'MMMM DD YYYY - hh:mm:ss a ZZ')
+              format(completedDate, 'MMMM DD YYYY')
             }
           </time>
         </td>
@@ -52,7 +52,7 @@ function renderCompletion(idToNameMap, completed) {
           lastUpdated ?
           <time dateTime={ format(lastUpdated, 'YYYY-MM-DDTHH:MM:SSZ') }>
             {
-              format(lastUpdated, 'MMMM DD YYYY - hh:mm:ss a ZZ')
+              format(lastUpdated, 'MMMM DD YYYY')
             }
           </time> :
           ''
