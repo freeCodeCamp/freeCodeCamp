@@ -215,10 +215,12 @@ Observable.from(getChallenges())
   .toArray()
   .subscribe(
     (noSolutions) => {
-      console.log(
-        '# These challenges have no solutions\n- [ ] ' +
-          noSolutions.join('\n- [ ] ')
-      );
+      if(noSolutions){
+        console.log(
+          '# These challenges have no solutions\n- [ ] ' +
+            noSolutions.join('\n- [ ] ')
+        );
+      }
     },
     err => { throw err; },
     () => process.exit(0)

@@ -94,17 +94,20 @@
       "type": "bonfire",
       "title": "Problem 4: Largest palindrome product",
       "tests": [
-        "assert.strictEqual(euler4(), 906609, 'message: <code>euler4()</code> should return 906609.');"
+        "assert.strictEqual(largestPalindromeProduct(2), 9009, 'message: <code>largestPalindromeProduct(2)</code> should return 9009.');",
+        "assert.strictEqual(largestPalindromeProduct(3), 906609, 'message: <code>largestPalindromeProduct(3)</code> should return 906609.');"
       ],
-      "solutions": [],
+      "solutions": [
+        "const largestPalindromeProduct = (digit)=>{\n  let start = 1;\n  let end = Number(`1e${digit}`) - 1;\n let palindrome = [];\n  for(let i=start;i<=end;i++){\n    for(let j=start;j<=end;j++){\n      let product = i*j;\n      let palindromeRegex = /\\b(\\d)(\\d?)(\\d?).?\\3\\2\\1\\b/gi;\n      palindromeRegex.test(product) && palindrome.push(product);\n    }\n }\n return Math.max(...palindrome);\n}"
+      ],
       "translations": {},
       "challengeSeed": [
-        "function euler4() {",
+        "function largestPalindromeProduct(digit) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler4();"
+        "largestPalindromeProduct(3);"
       ],
       "description": [
         "A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.",
