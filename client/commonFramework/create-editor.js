@@ -106,12 +106,17 @@ window.common = (function(global) {
   common.init.push(function() {
     let editorValue;
     if (common.codeUri.isAlive()) {
-      editorValue = common.codeUri.parse();
+      console.warn(
+        'Code sharing and loading challenges from user profiles is disabled,' +
+        'until beta is launched.'
+      );
       common.codeUri.removeCodeUri(location, window.history);
+    }
+
+    if (common.codeStorage.isAlive(common.challengeName)) {
+      editorValue = common.codeStorage.getStoredValue(common.challengeName);
     } else {
-      editorValue = common.codeStorage.isAlive(common.challengeName) ?
-        common.codeStorage.getStoredValue(common.challengeName) :
-        common.seed;
+      editorValue = common.seed;
     }
 
     editor.setValue(common.replaceSafeTags(editorValue));
