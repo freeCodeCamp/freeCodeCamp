@@ -5,18 +5,20 @@ import { ToggleButtonGroup as BSBG, ToggleButton as TB } from 'react-bootstrap';
 import ns from './ns.json';
 
 const propTypes = {
+  name: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.bool.isRequired
 };
 
 export default function ToggleButton({
+  name,
   onChange,
   value
 }) {
   return (
     <div className={ `${ns}-container` }>
       <BSBG
-        name='monthly-email'
+        name={ name }
         onChange={ onChange }
         type='radio'
         >
