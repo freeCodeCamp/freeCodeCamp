@@ -22,7 +22,7 @@ const isDev = Rx.config.longStackSupport = debug.enabled('fcc:*');
 const log = debug('fcc:client');
 const hotReloadTimeout = 2000;
 const {
-  devToolsExtension = _.noop,
+  devToolsExtension,
   location,
   history: _history,
   document,
@@ -61,7 +61,7 @@ createApp({
     defaultState,
     epics,
     epicOptions,
-    enhancers: [ devToolsExtension() ]
+    enhancers: isDev && devToolsExtension && [ devToolsExtension() ]
   })
   .doOnNext(({ store }) => {
     if (module.hot && typeof module.hot.accept === 'function') {
