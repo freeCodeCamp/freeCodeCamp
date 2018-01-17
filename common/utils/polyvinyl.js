@@ -5,7 +5,7 @@ import castToObservable from '../app/utils/cast-to-observable.js';
 
 
 // createFileStream(
-//   files: List[ PolyVinyl ]
+//   files: [...PolyVinyl]
 // ) => Observable[...Observable[...PolyVinyl]]
 export function createFileStream(files = []) {
   return Observable.of(
