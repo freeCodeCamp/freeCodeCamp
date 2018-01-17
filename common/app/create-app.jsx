@@ -20,9 +20,9 @@ const debug = createDebugger('fcc:app:createApp');
 //   history?: History,
 //   defaultState?: Object|Void,
 //   serviceOptions?: Object,
-//   middlewares?: Function[],
-//   enhancers?: Function[],
-//   epics?: Function[],
+//   middlewares?: [...Function],
+//   enhancers?: [...Function],
+//   epics?: [...Function],
 // }) => Observable
 //
 // Either location or history must be defined
