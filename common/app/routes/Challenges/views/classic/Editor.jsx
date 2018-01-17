@@ -16,6 +16,8 @@ import {
   keySelector
 } from '../../redux';
 
+import { themeSelector } from '../../../../redux';
+
 import { filesSelector } from '../../../../files';
 
 const envProps = typeof window !== 'undefined' ? Object.keys(window) : [];
@@ -38,15 +40,18 @@ const mapStateToProps = createSelector(
   filesSelector,
   challengeMetaSelector,
   keySelector,
+  themeSelector,
   (
     files = {},
     { mode = 'javascript'},
-    key
+    key,
+    theme
   ) => ({
     content: files[key] && files[key].contents || '// Happy Coding!',
     file: files[key],
     fileKey: key,
-    mode
+    mode,
+    theme
   })
 );
 
@@ -60,15 +65,18 @@ const propTypes = {
   content: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   fileKey: PropTypes.string.isRequired,
-  mode: PropTypes.string
+  mode: PropTypes.string,
+  theme: PropTypes.string
 };
 
 export class Editor extends PureComponent {
   createOptions = createSelector(
     state => state.executeChallenge,
     state => state.mode,
-    (executeChallenge, mode) => ({
+    state => state.cmTheme,
+    (executeChallenge, mode, cmTheme) => ({
       ...options,
+      theme: cmTheme,
       mode,
       extraKeys: {
         Esc() {
@@ -120,6 +128,7 @@ export class Editor extends PureComponent {
       classicEditorUpdated,
       mode
     } = this.props;
+    const cmTheme = this.props.theme === 'default' ? 'default' : 'dracula';
     return (
       <div
         className={ `${ns}-editor` }
@@ -128,7 +137,7 @@ export class Editor extends PureComponent {
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
             onChange={ change => classicEditorUpdated(fileKey, change) }
-            options={ this.createOptions({ executeChallenge, mode }) }
+            options={ this.createOptions({ executeChallenge, mode, cmTheme }) }
             ref='editor'
             value={ content }
           />

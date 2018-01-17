@@ -15,6 +15,8 @@ import {
   challengeMetaSelector
 } from '../../redux';
 
+import { themeSelector } from '../../../../redux';
+
 import { createFileSelector } from '../../../../files';
 
 const envProps = typeof window !== 'undefined' ? Object.keys(window) : [];
@@ -36,13 +38,16 @@ const options = {
 const mapStateToProps = createSelector(
   createFileSelector((_, { fileKey }) => fileKey || ''),
   challengeMetaSelector,
+  themeSelector,
   (
     file,
-    { mode }
+    { mode },
+    theme
   ) => ({
     content: file.contents || '// Happy Coding!',
     file: file,
-    mode: file.ext || mode || 'javascript'
+    mode: file.ext || mode || 'javascript',
+    theme
   })
 );
 
@@ -56,15 +61,18 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   fileKey: PropTypes.string,
   mode: PropTypes.string,
-  modernEditorUpdated: PropTypes.func.isRequired
+  modernEditorUpdated: PropTypes.func.isRequired,
+  theme: PropTypes.string
 };
 
 export class Editor extends PureComponent {
   createOptions = createSelector(
     state => state.executeChallenge,
     state => state.mode,
-    (executeChallenge, mode) => ({
+    state => state.cmTheme,
+    (executeChallenge, mode, cmTheme) => ({
       ...options,
+      theme: cmTheme,
       mode,
       // JSHint only works with javascript
       // we will need to switch to eslint to make this work with jsx
@@ -119,6 +127,7 @@ export class Editor extends PureComponent {
       fileKey,
       mode
     } = this.props;
+    const cmTheme = this.props.theme === 'default' ? 'default' : 'dracula';
     return (
       <div
         className={ `${ns}-editor` }
@@ -127,7 +136,7 @@ export class Editor extends PureComponent {
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
             onChange={ content => modernEditorUpdated(fileKey, content) }
-            options={ this.createOptions({ executeChallenge, mode }) }
+            options={ this.createOptions({ executeChallenge, mode, cmTheme }) }
             ref='editor'
             value={ content }
           />

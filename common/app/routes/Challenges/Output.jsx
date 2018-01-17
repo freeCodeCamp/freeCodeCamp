@@ -10,8 +10,7 @@ const defaultOptions = {
   lineNumbers: false,
   lineWrapping: true,
   mode: 'javascript',
-  readOnly: 'nocursor',
-  theme: 'monokai'
+  readOnly: 'nocursor'
 };
 
 const propTypes = {
