@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import Rx from 'rx';
 import debug from 'debug';
 import { render } from 'redux-epic';
