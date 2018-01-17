@@ -48,7 +48,7 @@ export default function userServices() {
       Observable.if(
         () => !user,
         Observable.of({}),
-        user.getChallengeMap$()
+        Observable.defer(() => user.getChallengeMap$())
           .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
           .map(user => ({
             entities: {
