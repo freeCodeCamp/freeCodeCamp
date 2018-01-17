@@ -27,6 +27,7 @@ import {
   calcLongestStreak
 } from '../utils/user-stats';
 import supportedLanguages from '../../common/utils/supported-languages';
+import { encodeFcc } from '../../common/utils/encode-decode.js';
 import { getChallengeInfo, cachedMap } from '../utils/map';
 
 const debug = debugFactory('fcc:boot:user');
@@ -70,22 +71,6 @@ const certText = {
 };
 
 const dateFormat = 'MMM DD, YYYY';
-
-function replaceScriptTags(value) {
-  return value
-    .replace(/<script>/gi, 'fccss')
-    .replace(/<\/script>/gi, 'fcces');
-}
-
-function replaceFormAction(value) {
-  return value.replace(/<form[^>]*>/, function(val) {
-    return val.replace(/action(\s*?)=/, 'fccfaa$1=');
-  });
-}
-
-function encodeFcc(value = '') {
-  return replaceScriptTags(replaceFormAction(value));
-}
 
 function isAlgorithm(challenge) {
   // test if name starts with hike/waypoint/basejump/zipline
