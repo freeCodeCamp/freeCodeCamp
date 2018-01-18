@@ -10,7 +10,7 @@ block content
                     #flash-content
         .row
           .text-center
-            h2 Sign in or Sign Up with an Email here:
+            h2 Create a New account or Sign In with an Email here:
               .button-spacer
           .col-sm-6.col-sm-offset-3
               form(method='POST', action='/passwordless-auth')
@@ -20,18 +20,20 @@ block content
                   .button-spacer
                   button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
                     span.fa.fa-envelope
-                    | Get a magic link to sign in.
+                    | Get a magic link on your email above.
         .row
           .col-sm-6.col-sm-offset-3
               br
               p.text-center
                 | freeCodeCamp uses passwordless authentication.
                 br
-                | Sign up instantly, using a valid email address, or Sign in
+                | Create a New account instantly, using a valid email address, or Sign In
                 | using your existing email with us, if you already have an account.
+              p.text-center
+                a(href="https://medium.freecodecamp.org/360-million-reasons-to-destroy-all-passwords-9a100b2b5001" target="_blank" rel="noopener") Learn more about passwordless authentication.
               br
               p.text-center
-                  a(href="/deprecated-signin") Or click here if you want to sign in with other options.
+                a(href="/deprecated-signin") Or click here if you want to sign in with other options.
 
         script.
           $(document).ready(function() {
@@ -39,11 +41,11 @@ block content
                 if (isDisabled) {
                   $('#magic-btn')
                     .prop('disabled', true)
-                    .html('<span style="color:#E0E0E0;"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i>Ok - We will attempt sending to the email above.</span>');
+                    .html('<span style="color:#E0E0E0;"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i>Ok - We will attempt sending a link to the email above.</span>');
                 } else {
                   $('#magic-btn')
                     .prop('disabled', true)
-                    .html('<span style="color:#E0E0E0;">Did not get a link? Reload the page and resend again.</span>');
+                    .html('<span style="color:#E0E0E0;">Did not get a link? Reload the page and try again.</span>');
                 }
             }
 
