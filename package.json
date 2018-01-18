@@ -29,8 +29,7 @@
     "test-js": "npm run test-js-client && npm run test-js-common && npm run test-js-server",
     "test-js-client": "tape -r babel-register \"client/**/*.test.js\" | tap-spec",
     "test-js-common": "tape -r babel-register \"common/**/*.test.js\" | tap-spec",
-    "test-js-server": "tape -r babel-register \"server/**/*.test.js\" | tap-spec",
-    "prepare": "npm run snyk-protect"
+    "test-js-server": "tape -r babel-register \"server/**/*.test.js\" | tap-spec"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
