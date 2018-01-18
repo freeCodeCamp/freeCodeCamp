@@ -80,6 +80,7 @@ export default function EmailSettings({
         </Col>
         <Col sm={ 4 }>
           <TB
+            name='monthly-email'
             onChange={ toggleMonthlyEmail }
             value={ sendMonthlyEmail }
           />
@@ -95,6 +96,7 @@ export default function EmailSettings({
         </Col>
         <Col sm={ 4 }>
           <TB
+            name='notifications-email'
             onChange={ toggleNotificationEmail }
             value={ sendNotificationEmail }
           />
@@ -110,6 +112,7 @@ export default function EmailSettings({
         </Col>
         <Col sm={ 4 }>
           <TB
+            name='quincy-email'
             onChange={ toggleQuincyEmail }
             value={ sendQuincyEmail }
           />

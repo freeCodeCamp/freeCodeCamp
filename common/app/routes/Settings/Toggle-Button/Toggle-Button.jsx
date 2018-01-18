@@ -5,7 +5,7 @@ import { ToggleButtonGroup as BSBG, ToggleButton as TB } from 'react-bootstrap';
 import ns from './ns.json';
 
 const propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.bool.isRequired
 };
