@@ -4,7 +4,7 @@ link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome
 link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.30.0/codemirror.min.css')
 link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.30.0/theme/dracula.min.css')
 link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.30.0/addon/lint/lint.min.css')
-link(rel='stylesheet', href=rev('/css', 'main.css'))
+link(rel='stylesheet', href=cacheBreaker(rev('/css', 'main.css')))
 
 include meta
 meta(charset='utf-8')

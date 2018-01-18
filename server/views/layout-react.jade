@@ -24,4 +24,4 @@ html(lang='en').full-size
         }
       })();
     script(src=rev('/js', 'vendor-challenges.js'))
-    script(src=rev('/js', 'bundle.js'))
+    script(src=cacheBreaker(rev('/js', 'bundle.js')))
