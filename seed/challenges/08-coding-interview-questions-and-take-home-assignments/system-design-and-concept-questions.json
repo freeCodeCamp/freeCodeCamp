@@ -70,7 +70,7 @@
         },
         {
           "subtitle": "More Map Hacking",
-          "question": "What will the following code print out?\n<pre><code class='language-javascript'>const results = [8, 5, 3]\n  .map((a, i, o) => o[o.length - i - i])\nconsole.log(results);</code></pre>",
+          "question": "What will the following code print out?\n<pre><code class='language-javascript'>const results = [8, 5, 3]\n  .map((a, i, o) => o[o.length - i - 1])\nconsole.log(results);</code></pre>",
           "choices": [
             "<pre><code class='language-javascript'>[3, 5, 8]</code></pre>",
             "<pre><code class='language-javascript'>[5, 3, 8]</code></pre>",
