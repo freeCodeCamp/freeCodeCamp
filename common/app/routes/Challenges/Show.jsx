@@ -5,7 +5,6 @@ import { createSelector } from 'reselect';
 
 import { challengeMetaSelector } from './redux';
 
-import CompletionModal from './Completion-Modal.jsx';
 import Classic from './views/classic';
 import Step from './views/step';
 import Project from './views/project';
@@ -108,12 +107,7 @@ export class Show extends PureComponent {
   render() {
     const { viewType } = this.props;
     const View = views[viewType] || Classic;
-    return (
-      <div>
-        <View />
-        <CompletionModal />
-      </div>
-    );
+    return <View />;
   }
 }
 

@@ -1,13 +1,13 @@
 doctype html
-html(lang='en')
+html(lang='en').full-size
   head
     if title
       title= title
     else
       title freeCodeCamp
     include partials/react-stylesheets
-  body
-    #fcc!= markup
+  body.full-size
+    #fcc.full-size!= markup
     script!= state
     script.
       window.webpackManifest = !{JSON.stringify(chunkManifest || {})};
@@ -24,4 +24,4 @@ html(lang='en')
         }
       })();
     script(src=rev('/js', 'vendor-challenges.js'))
-    script(src=rev('/js', 'bundle.js'))
+    script(src=cacheBreaker(rev('/js', 'bundle.js')))

@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-  ToggleButtonGroup,
-  ToggleButton,
-  Button,
-  Row,
-  Col
-} from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
+import TB from './Toggle-Button';
 import FA from 'react-fontawesome';
-import classnames from 'classnames';
 
+import ns from './ns.json';
 import { onRouteUpdateEmail } from './redux';
 import { Link } from '../../Router';
 
@@ -66,7 +61,7 @@ export default function EmailSettings({
     );
   }
   return (
-    <div className='email-settings'>
+    <div className={ `${ns}-email-container` }>
       <Row>
         <p className='large-p text-center'>
           <em>{ email }</em>
@@ -84,45 +79,11 @@ export default function EmailSettings({
           </p>
         </Col>
         <Col sm={ 4 }>
-          <ToggleButtonGroup
-            className='toggle-btn-group'
+          <TB
             name='monthly-email'
             onChange={ toggleMonthlyEmail }
-            type='radio'
-            >
-            <ToggleButton
-              bsSize='lg'
-              bsStyle='primary'
-              className={
-                classnames(
-                  'positive-20',
-                  { active: sendMonthlyEmail },
-                  'btn-toggle'
-                )
-              }
-              disabled={ sendMonthlyEmail }
-              type='radio'
-              value={ 1 }
-              >
-              On
-            </ToggleButton>
-            <ToggleButton
-              bsSize='lg'
-              bsStyle='primary'
-              className={
-                classnames(
-                  'positive-20',
-                  { active: !sendMonthlyEmail },
-                  'btn-toggle'
-                )
-              }
-              disabled={ !sendMonthlyEmail }
-              type='radio'
-              value={ 2 }
-              >
-              Off
-            </ToggleButton>
-          </ToggleButtonGroup>
+            value={ sendMonthlyEmail }
+          />
         </Col>
       </Row>
       <Row>
@@ -134,45 +95,11 @@ export default function EmailSettings({
           </p>
         </Col>
         <Col sm={ 4 }>
-          <ToggleButtonGroup
-            className='toggle-btn-group'
-            name='notification-email'
+          <TB
+            name='notifications-email'
             onChange={ toggleNotificationEmail }
-            type='radio'
-            >
-            <ToggleButton
-              bsSize='lg'
-              bsStyle='primary'
-              className={
-                classnames(
-                  'positive-20',
-                  { active: sendNotificationEmail },
-                  'btn-toggle'
-                )
-              }
-              disabled={ sendNotificationEmail }
-              type='radio'
-              value={ 1 }
-              >
-              On
-            </ToggleButton>
-            <ToggleButton
-              bsSize='lg'
-              bsStyle='primary'
-              className={
-                classnames(
-                  'positive-20',
-                  { active: !sendNotificationEmail },
-                  'btn-toggle'
-                )
-              }
-              disabled={ !sendNotificationEmail }
-              type='radio'
-              value={ 2 }
-              >
-              Off
-            </ToggleButton>
-          </ToggleButtonGroup>
+            value={ sendNotificationEmail }
+          />
         </Col>
       </Row>
       <Row>
@@ -184,45 +111,11 @@ export default function EmailSettings({
           </p>
         </Col>
         <Col sm={ 4 }>
-          <ToggleButtonGroup
-            className='toggle-btn-group'
+          <TB
             name='quincy-email'
             onChange={ toggleQuincyEmail }
-            type='radio'
-            >
-            <ToggleButton
-              bsSize='lg'
-              bsStyle='primary'
-              className={
-                classnames(
-                  'positive-20',
-                  { active: sendQuincyEmail },
-                  'btn-toggle'
-                )
-              }
-              disabled={ sendQuincyEmail }
-              type='radio'
-              value={ 1 }
-              >
-              On
-            </ToggleButton>
-            <ToggleButton
-              bsSize='lg'
-              bsStyle='primary'
-              className={
-                classnames(
-                  'positive-20',
-                  { active: !sendQuincyEmail },
-                  'btn-toggle'
-                )
-              }
-              disabled={ !sendQuincyEmail }
-              type='radio'
-              value={ 2 }
-              >
-              Off
-            </ToggleButton>
-          </ToggleButtonGroup>
+            value={ sendQuincyEmail }
+          />
         </Col>
       </Row>
     </div>

@@ -1,5 +1,7 @@
-import debug from 'debug';
 import _ from 'lodash';
+// import debug from 'debug';
+// use old rxjs
+import { Observable } from 'rx';
 
 const publicUserProps = [
   'id',
@@ -35,41 +37,36 @@ const publicUserProps = [
   'currentChallengeId',
   'challengeMap'
 ];
-const log = debug('fcc:services:user');
+
+// const log = debug('fcc:services:user');
 
 export default function userServices() {
   return {
     name: 'user',
     read: (req, resource, params, config, cb) => {
-      let { user } = req;
-      if (user) {
-        log('user is signed in');
-        return user.getChallengeMap$()
+      const { user } = req;
+      Observable.if(
+        () => !user,
+        Observable.of({}),
+        Observable.defer(() => user.getChallengeMap$())
           .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
-          .subscribe(
-            user => cb(
-              null,
-              {
-                entities: {
-                  user: {
-                    [user.username]: {
-                      ..._.pick(user, publicUserProps),
-                      isTwitter: !!user.twitter,
-                      isLinkedIn: !!user.linkedIn
-                    }
-                  }
-                },
-                result: user.username
+          .map(user => ({
+            entities: {
+              user: {
+                [user.username]: {
+                  ..._.pick(user, publicUserProps),
+                  isTwitter: !!user.twitter,
+                  isLinkedIn: !!user.linkedIn
+                }
               }
-            ),
-            cb
-          );
-      }
-      debug('user is not signed in');
-      // Zalgo!!!
-      return process.nextTick(() => {
-        cb(null, {});
-      });
+            },
+            result: user.username
+          }))
+      )
+        .subscribe(
+          user => cb(null, user),
+          cb
+        );
     }
   };
 }

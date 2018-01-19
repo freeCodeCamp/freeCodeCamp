@@ -19,7 +19,7 @@ const shortString = (
 
 export default function SettingsSkeleton() {
   return (
-    <div className={ `${ns}-skeleton` }>
+    <div className={ `${ns}-container ${ns}-skeleton` }>
       <Row>
         <Col xs={ 12 }>
           <Button

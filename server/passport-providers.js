@@ -159,8 +159,9 @@ export default {
     clientSecret: process.env.GITHUB_SECRET,
     link: true,
     failureFlash: true,
-    successFlash: [ 'We\'ve updated your profile based ',
-                    'on your your GitHub account.'
-                  ].join('')
+    successFlash: [
+      'We\'ve updated your profile based ',
+      'on your your GitHub account.'
+    ].join('')
   }
 };

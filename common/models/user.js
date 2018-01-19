@@ -775,4 +775,25 @@ module.exports = function(User) {
         return user.challengeMap;
       });
   };
+
+  User.getMessages = messages => Promise.resolve(messages);
+
+  User.remoteMethod('getMessages', {
+    http: {
+      verb: 'get',
+      path: '/get-messages'
+    },
+    accepts: {
+      arg: 'messages',
+      type: 'object',
+      http: ctx => ctx.req.flash()
+    },
+    returns: [
+      {
+        arg: 'messages',
+        type: 'object',
+        root: true
+      }
+    ]
+  });
 };

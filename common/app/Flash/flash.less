@@ -1,0 +1,14 @@
+@ns: flash;
+
+.@{ns}-container {
+  width: 100%;
+}
+
+.@{ns}-content {
+  .center(@value: @container-lg, @padding: @grid-gutter-width);
+  .row(@justify: around);
+}
+
+.@{ns}-message {
+  flex: 1 0 0px
+}

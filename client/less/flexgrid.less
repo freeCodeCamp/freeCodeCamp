@@ -74,6 +74,21 @@
   .padding-mixin(@padding);
 }
 
+// usage:
+// .some-class {
+//   .between(sm, xl, {
+//     height: 9001px;
+//   });
+// }
+// outputs:
+// .some-class {
+//   @media only screen and (min-width: @screen-sm) and (max-width: @screen-xl) {
+//     height: 9001px;
+//   }
+// }
+//
+// where screen-md, screen-xl are bootstrap vars
+// min/max can be any of: sm, md, lg, xl
 .between(@min; @max; @rules) {
   // BS logic to do string building with conditions
   .condition-wrapper(@new) {
@@ -108,10 +123,30 @@
   .add-query();
 }
 
+// usage
+// .below(md, {
+//   height: 9001px;
+//  });
+// outputs:
+// .some-class {
+//   @media only screen and (max-width: @screen-xl) {
+//     height: 9001px;
+//   }
+// }
 .below(@max, @rules) {
   .between(@empty; @max; @rules);
 }
 
+// usage
+// .above(sm, {
+//   height: 9001px;
+// });
+// outputs:
+// .some-class {
+//   @media only screen and (min-width: @screen-sm) {
+//     height: 9001px;
+//   }
+// }
 .above(@min, @rules) {
   .between(@min; @empty; @rules);
 }
