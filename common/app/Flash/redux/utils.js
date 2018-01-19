@@ -21,7 +21,7 @@ export const isFlashAction = _.flow(
 
 export const expressToStack = _.flow(
   _.toPairs,
-  _.flatMap(([ type, messages ]) => messages.map(({ msg }) => ({
+  _.flatMap(([ type, messages ]) => messages.map(msg => ({
     message: msg,
     alertType: normalizeAlertType(type)
   })))
