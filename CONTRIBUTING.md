@@ -409,7 +409,7 @@ nothing to commit, working directory clean
     `fix/short-fix-description` or `feature/short-feature-description`. Review
      the [Contribution Guidelines](#contribution-guidelines) for more detail.
 
-3.  Edit your file(s) locally with the editor of your choice
+3.  Edit your file(s) locally with the editor of your choice. To edit challenges, you may want to use `unpack` and `repack` -- see [seed/README.md](seed/README.md) for instructions.
 
 4.  Check your `git status` to see unstaged files.
 
