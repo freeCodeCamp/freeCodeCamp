@@ -52,16 +52,16 @@ function createNewTranslations(challenge) {
         newTranslation = {};
         newTranslation[matches[1]] = challenge[oldKey];
         translations[tag] = translations[tag] ?
-          Object.assign({}, translations[tag], newTranslation) :
-          Object.assign({}, newTranslation);
+          ({...translations[tag], ...newTranslation}) :
+          ({...newTranslation});
         return translations;
       }
       matches = oldKey.match(oldNameRegex);
       tag = normalizeLangTag(matches[1]);
       newTranslation = { title: challenge[oldKey] };
       translations[tag] = translations[tag] ?
-        Object.assign({}, translations[tag], newTranslation) :
-        Object.assign({}, newTranslation);
+        ({...translations[tag], ...newTranslation}) :
+        ({...newTranslation});
       return translations;
     }, {});
 }
@@ -71,11 +71,10 @@ function normalizeChallenge(challenge) {
   challenge.translations = challenge.translations || {};
   var hasOldTranslations = keys.some(hasOldTranslation);
   if (hasOldTranslations) {
-    challenge.translations = Object.assign(
-      {},
-      challenge.translations,
-      createNewTranslations(challenge)
-    );
+    challenge.translations = ({
+      ...challenge.translations,
+      ...createNewTranslations(challenge)
+    });
   }
   challenge.translations = sortTranslationsKeys(challenge.translations);
   // remove old translations from the top level

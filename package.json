@@ -21,6 +21,7 @@
     "prelint-js": "npm run create-rev",
     "pretest": "npm run create-rev && npm run lint",
     "prestart-production": "gulp build -p",
+    "seed": "node seed",
     "snyk-protect": "snyk protect",
     "start": "babel-node server/server.js",
     "start-production": "node pm2Start",
@@ -31,7 +32,9 @@
     "test-js": "npm run test-js-client && npm run test-js-common && npm run test-js-server",
     "test-js-client": "tape -r babel-register \"client/**/*.test.js\" | tap-spec",
     "test-js-common": "tape -r babel-register \"common/**/*.test.js\" | tap-spec",
-    "test-js-server": "tape -r babel-register \"server/**/*.test.js\" | tap-spec"
+    "test-js-server": "tape -r babel-register \"server/**/*.test.js\" | tap-spec",
+    "unpack": "babel-node ./seed/unpack.js",
+    "repack": "babel-node ./seed/repack.js"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
@@ -156,10 +159,12 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-preset-stage-3": "^6.24.1",
     "browser-sync": "^2.9.12",
+    "browserify": "^16.1.1",
     "chunk-manifest-webpack-plugin": "^1.1.2",
     "commitizen": "^2.9.6",
     "cz-freecodecamp": "^1.0.1",
     "del": "^2.2.0",
+    "diff": "^3.5.0",
     "eslint": "^4.10.0",
     "eslint-config-freecodecamp": "^1.1.1",
     "gulp": "^3.9.1",
