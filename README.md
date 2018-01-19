@@ -10,8 +10,17 @@ For each challenge section, there is a JSON file (fields documented below) conta
 |---|---|
 | `npm run test-challenges` | run all challenge tests (for each challenge JSON file, run all `tests` against all `solutions`) |
 | `npm run test` |  run all JS tests in the system, including client, server, lint and challenge tests |
-| `node seed` | parses all the challenge JSON files and saves them into MongoDB (code is inside [index.js](index.js)) |
+| `npm run seed` <br>&nbsp;&nbsp;(<small>or</small> `node seed`) | parses all the challenge JSON files and saves them into MongoDB (code is inside [index.js](index.js)) |
 | `npm run commit` | interactive tool to help you build a good commit message |
+| `npm run unpack` | extract challenges from `seed/challenges` into `unpacked` subdirectory, one HTML page per challenge |
+| `npm run repack` | repack challenges from `unpacked` subdirectory into `seed/challenges` |
+
+### unpack and repack
+
+`npm run unpack` extracts challenges into separate files for easier viewing and editing. The files are `.gitignore`d and will *not* be checked in, and all mongo seed importing will keep using the existing system; this is essentially a tool for editing `challenge.json` files. These HTML files are self-contained and run their own tests -- open a browser JS console to see the test results.
+
+`npm run repack` gathers up the unpacked/edited HTML files into challenge-block JSON files. Use `git diff` to see the changes
+
 
 ## Links
 
@@ -24,7 +33,7 @@ For each challenge section, there is a JSON file (fields documented below) conta
 
 ## Challenge Template
 
-```json
+```
 {
   "id": "unique identifier (alphanumerical, mongodb id)",
   "title": "Challenge Title",
