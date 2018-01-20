@@ -14,10 +14,7 @@ import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 import {
   getServerFullURL,
-  getEmailSender,
-  getProtocol,
-  getHost,
-  getPort
+  getEmailSender
 } from '../../server/utils/url-utils.js';
 
 const debug = debugFactory('fcc:models:user');
@@ -41,6 +38,51 @@ function destroyAll(id, Model) {
     Model.destroyAll,
     Model
   )({ userId: id });
+}
+
+function buildChallengeMapUpdate(challengeMap, project) {
+  const { nameToIdMap } = _.values(project)[0];
+  const incomingUpdate = _.pickBy(
+    _.omit(_.values(project)[0], [ 'id', 'nameToIdMap' ]),
+    Boolean
+  );
+  const currentCompletedProjects = _.pick(challengeMap, _.values(nameToIdMap));
+  const update = Object.keys(incomingUpdate).reduce((update, current) => {
+    const currentId = nameToIdMap[_.kebabCase(current)];
+    if (
+      currentId in currentCompletedProjects &&
+      currentCompletedProjects[currentId].solution !== incomingUpdate[current]
+    ) {
+      return {
+        ...update,
+        [currentId]: {
+          ...currentCompletedProjects[currentId],
+          solution: incomingUpdate[current],
+          numOfAttempts: currentCompletedProjects[currentId].numOfAttempts + 1
+        }
+      };
+    }
+    if (!(currentId in currentCompletedProjects)) {
+      return {
+        ...update,
+        [currentId]: {
+          id: currentId,
+          solution: incomingUpdate[current],
+          challengeType: 3,
+          completedDate: Date.now(),
+          numOfAttempts: 1
+        }
+      };
+    }
+    return update;
+  }, {});
+  debug(update);
+  const updatedExisting = {
+    ...currentCompletedProjects,
+    ...update
+  };
+  debug(updatedExisting);
+  return updatedExisting;
 }
 
 const renderSignUpEmail = loopback.template(path.join(
@@ -706,6 +748,32 @@ module.exports = function(User) {
   }
 
   User.prototype.updateMyPortfolio = updateMyPortfolio;
+
+  function updateMyProjects(project) {
+    const updateData = {};
+    return this.getChallengeMap$()
+      .flatMap( challengeMap => {
+        const updatedProjects = {
+          ...this.projects,
+          ..._.omit(project, [ 'nameToIdMap' ])
+        };
+        updateData.projects = updatedProjects;
+        updateData.challengeMap = buildChallengeMapUpdate(
+          challengeMap,
+          project
+        );
+        return this.update$(updateData);
+      })
+      .do(() => {
+        this.projects = updateData;
+        return;
+      })
+      .map(() => dedent`
+        Your projects have been updated
+      `);
+  }
+
+  User.prototype.updateMyProjects = updateMyProjects;
 
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {

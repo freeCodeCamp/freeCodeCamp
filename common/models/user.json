@@ -41,6 +41,10 @@
       "type": "array",
       "default": []
     },
+    "projects": {
+      "type": "object",
+      "default": {}
+    },
     "isBanned": {
       "type": "boolean",
       "description": "User is banned from posting to camper news",

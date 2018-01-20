@@ -17,14 +17,10 @@ export const epics = [
 export const types = createTypes([
   'editUserFlag',
   'toggleUserFlag',
-
+  createAsyncTypes('claimCert'),
   createAsyncTypes('updateUserBackend'),
-
   'updateUserCurrentChallenge',
-
-  'addPortfolioItem',
-  'deletePortfolio',
-  'updatePortfolio'
+  'addPortfolioItem'
 ], 'user');
 
 export const editUserFlag = createAction(
@@ -37,14 +33,16 @@ export const toggleUserFlag = createAction(
 );
 
 export const addPortfolioItem = createAction(types.addPortfolioItem);
-export const deletePortfolio = createAction(types.deletePortfolio);
-export const updatePortfolio = createAction(
-  types.updatePortfolio,
-  (username, id, field, value) => ({ username, id, field, value })
-);
 
-export const updateUserCurrentChallenge = createAction(
-  types.updateUserCurrentChallenge
+export const claimCert = createAction(types.claimCert.start);
+export const claimCertComplete = createAction(
+  types.claimCert.complete,
+  ({ result }) => result,
+  _.identity
+);
+export const claimCertError = createAction(
+  types.claimCert.error,
+  _.identity
 );
 
 export const updateUserBackend = createAction(types.updateUserBackend.start);
@@ -56,6 +54,10 @@ export const updateUserBackendComplete = createAction(
   types.updateUserBackend.complete,
   ({ result }) => result,
   _.identity
+);
+
+export const updateUserCurrentChallenge = createAction(
+  types.updateUserCurrentChallenge
 );
 
 export function emptyPortfolio() {

@@ -20,7 +20,14 @@ const propTypes = {
     })
   ).isRequired,
   options: PropTypes.shape({
+    errors: PropTypes.objectOf(
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.instanceOf(null)
+      ])
+    ),
     ignored: PropTypes.arrayOf(PropTypes.string),
+    placeholder: PropTypes.bool,
     required: PropTypes.arrayOf(PropTypes.string),
     types: PropTypes.objectOf(PropTypes.string)
   })
@@ -28,7 +35,12 @@ const propTypes = {
 
 function FormFields(props) {
   const { errors = {}, fields, options = {} } = props;
-  const { ignored = [], required = [], types = {} } = options;
+  const {
+    ignored = [],
+    placeholder = true,
+    required = [],
+    types = {}
+  } = options;
   return (
     <div>
       {
@@ -40,7 +52,7 @@ function FormFields(props) {
           const type = name in types ? types[name] : 'text';
           return (
           <Row className='editable-content-container' key={ key }>
-            <Col sm={ 2 } xs={ 12 }>
+            <Col sm={ 3 } xs={ 12 }>
             { type === 'hidden' ?
               null :
               <ControlLabel htmlFor={ key }>
@@ -48,16 +60,16 @@ function FormFields(props) {
               </ControlLabel>
             }
             </Col>
-            <Col sm={ 10 } xs={ 12 }>
+            <Col sm={ 9 } xs={ 12 }>
               <FormControl
                 bsSize='lg'
                 id={ key }
                 name={ name }
                 onChange={ onChange }
-                placeholder={ name }
+                placeholder={ placeholder ? name : '' }
                 required={ !!required[name] }
                 type={ type }
-                value={ value || '' }
+                value={ value }
               />
               {
                 name in errors ?

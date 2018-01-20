@@ -1,9 +1,4 @@
-import BlockSaveButton from './BlockSaveButton.jsx';
-import FullWidthRow from './FullWidthRow.jsx';
-import FormFields from './FormFields.jsx';
-
-export default {
-  BlockSaveButton,
-  FormFields,
-  FullWidthRow
-};
+export { default as BlockSaveButton } from './BlockSaveButton.jsx';
+export { default as Form } from './Form.jsx';
+export { default as FormFields } from './FormFields.jsx';
+export { default as FullWidthRow } from './FullWidthRow.jsx';

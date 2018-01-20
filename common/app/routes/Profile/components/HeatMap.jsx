@@ -1,4 +1,3 @@
-/* global CalHeatMap */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import d3 from 'react-d3';
@@ -13,6 +12,7 @@ import { FullWidthRow } from '../../../helperComponents';
 import { userSelector } from '../../../redux';
 
 function ensureD3() {
+  // CalHeatMap requires d3 to be available on window
   if (typeof window !== 'undefined') {
     if ('d3' in window) {
       return;
@@ -28,6 +28,10 @@ const mapStateToProps = createSelector(
   userSelector,
   ({ calendar }) => ({ calendar })
 );
+
+const propTypes = {
+  calendar: PropTypes.object
+};
 
 class HeatMap extends Component {
   constructor(props) {
@@ -45,15 +49,15 @@ class HeatMap extends Component {
       return null;
     }
     const today = new Date();
-    var cal = new CalHeatMap();
-    var rectSelector = '#cal-heatmap > svg > svg.graph-legend > g > rect.r';
-    var calLegendTitles = ['less', '', '', 'more'];
-    let start = today;
+    const cal = new CalHeatMap();
+    const rectSelector = '#cal-heatmap > svg > svg.graph-legend > g > rect.r';
+    const calLegendTitles = ['less', '', '', 'more'];
     const firstTS = Object.keys(calendar)[0];
     const monthsSinceFirstActive = differenceInMonths(
       today,
       new Date(firstTS * 1000)
     );
+    let start = today;
     let active = 1;
     if (monthsSinceFirstActive > 12) {
       // if we got to 365, we trim off the current month
@@ -82,7 +86,9 @@ class HeatMap extends Component {
       }
     });
     calLegendTitles.forEach(function(title, i) {
-        document.querySelector(rectSelector + (i + 1).toString() + '> title').innerHTML = title;
+        document
+          .querySelector(rectSelector + (i + 1).toString() + '> title')
+          .innerHTML = title;
       });
       return null;
   }
@@ -107,5 +113,6 @@ class HeatMap extends Component {
 }
 
 HeatMap.displayName = 'HeatMap';
+HeatMap.propTypes = propTypes;
 
 export default connect(mapStateToProps)(HeatMap);

@@ -69,24 +69,27 @@ export function _cachedMap({ Block, Challenge }) {
         return blocksMap;
       }, blocksMap);
     });
-  const superBlockMap = blocks.map(blocks => blocks.reduce((map, block) => {
-    if (
-      map[block.superBlock] &&
-      map[block.superBlock].blocks
-    ) {
-      map[block.superBlock].blocks.push(block.dashedName);
-    } else {
-      map[block.superBlock] = {
-        title: _.startCase(block.superBlock),
-        order: block.superOrder,
-        name: nameify(_.startCase(block.superBlock)),
-        dashedName: block.superBlock,
-        blocks: [block.dashedName],
-        message: block.superBlockMessage
-      };
-    }
-    return map;
-  }, {}));
+  const superBlockMap = blocks.map(blocks => blocks
+    .filter(block => !block.isPrivate)
+    .reduce((map, block) => {
+      if (
+        map[block.superBlock] &&
+        map[block.superBlock].blocks
+      ) {
+        map[block.superBlock].blocks.push(block.dashedName);
+      } else {
+        map[block.superBlock] = {
+          title: _.startCase(block.superBlock),
+          order: block.superOrder,
+          name: nameify(_.startCase(block.superBlock)),
+          dashedName: block.superBlock,
+          blocks: [block.dashedName],
+          message: block.superBlockMessage
+        };
+      }
+      return map;
+    }, {})
+  );
   const superBlocks = superBlockMap.map(superBlockMap => {
     return Object.keys(superBlockMap)
       .map(key => superBlockMap[key])

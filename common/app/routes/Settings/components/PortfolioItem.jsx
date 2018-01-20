@@ -55,10 +55,12 @@ const options = {
 
 function PortfolioItem(props) {
   const {
-    deletePortfolio,
+    // redux-form
     errors,
     fields,
     handleSubmit,
+
+    deletePortfolio,
     id,
     submit
   } = props;

@@ -11,10 +11,11 @@ import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
 
 import modalEpic from './modal-epic';
-import completionEpic from './completion-epic.js';
-import challengeEpic from './challenge-epic.js';
-import executeChallengeEpic from './execute-challenge-epic.js';
-import codeStorageEpic from './code-storage-epic.js';
+import completionEpic from './completion-epic';
+import challengeEpic from './challenge-epic';
+import executeChallengeEpic from './execute-challenge-epic';
+import codeStorageEpic from './code-storage-epic';
+import certificateEpic from './certificate-epic';
 
 import ns from '../ns.json';
 import stepReducer, { epics as stepEpics } from '../views/step/redux';
@@ -49,6 +50,7 @@ export const epics = [
   codeStorageEpic,
   completionEpic,
   executeChallengeEpic,
+  certificateEpic,
   ...stepEpics
 ];
 

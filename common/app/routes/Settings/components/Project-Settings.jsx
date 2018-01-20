@@ -1,99 +1,220 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import _ from 'lodash';
-import {
-  Row,
-  Col,
-  Button,
-  FormControl,
-  ControlLabel
-} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
-import { entitiesSelector, projectsSelector } from '../../../entities';
-import { updateUserBackend } from '../../../entities/user';
+import { Form, FullWidthRow, BlockSaveButton } from '../../../helperComponents';
+import { Link } from '../../../Router';
+import SolutionViewer from '../../Profile/components/SolutionViewer.jsx';
+import { projectsSelector } from '../../../entities';
+import { claimCert, updateUserBackend } from '../../../entities/user';
+import { fetchChallenges, userSelector } from '../../../redux';
 
 const mapStateToProps = createSelector(
+  userSelector,
   projectsSelector,
-  entitiesSelector,
-  (projects, { challengeIdToName }) => ({
-    challengeIdToName,
-    projects
+  (
+    {
+      projects: userProjects = {},
+      isRespWebDesignCert,
+      is2018DataVisCert,
+      isFrontEndLibsCert,
+      isJsAlgoDataStructCert,
+      isApisMicroservicesCert,
+      isInfosecQaCert
+    },
+    projects,
+  ) => ({
+    projects,
+    userProjects,
+    blockNameIsCertMap: {
+      'Applied Responsive Web Design Projects': isRespWebDesignCert,
+      /* eslint-disable max-len */
+      'JavaScript Algorithms and Data Structures Projects': isJsAlgoDataStructCert,
+      /* eslint-enable max-len */
+      'Front End Libraries Projects': isFrontEndLibsCert,
+      'Data Visualization Projects': is2018DataVisCert,
+      'API and Microservice Projects': isApisMicroservicesCert,
+      'Information Security and Quality Assurance Projects': isInfosecQaCert
+    }
   })
 );
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
+    claimCert,
+    fetchChallenges,
     updateUserBackend
   }, dispatch);
 }
 
 const propTypes = {
+  blockNameIsCertMap: PropTypes.objectOf(PropTypes.bool),
+  claimCert: PropTypes.func.isRequired,
+  fetchChallenges: PropTypes.func.isRequired,
   projects: PropTypes.arrayOf(
     PropTypes.shape({
       projectBlockName: PropTypes.string,
       challenges: PropTypes.arrayOf(PropTypes.string)
     })
   ),
-  updateUserBackend: PropTypes.func.isRequired
+  updateUserBackend: PropTypes.func.isRequired,
+  userProjects: PropTypes.objectOf(
+    PropTypes.objectOf(PropTypes.oneOfType(
+      [
+        PropTypes.string,
+        PropTypes.object
+      ]
+    ))
+  )
 };
 
-class ProjectSettings extends Component {
+const jsFormPropTypes = {
+  challenges: PropTypes.arrayOf(PropTypes.string),
+  isCertClaimed: PropTypes.bool,
+  jsProjects: PropTypes.objectOf(PropTypes.object),
+  projectBlockName: PropTypes.string
+};
+
+const jsProjectPath = '/challenges/javascript-algorithms-and-data-structures-' +
+  'projects/';
+const jsProjectSuperBlock = 'javascript-algorithms-and-data-structures';
+
+class JSAlgoAndDSForm extends PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {};
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSolutionToggle = this.handleSolutionToggle.bind(this);
   }
 
-  componentDidUpdate() {
-    const { projects } = this.props;
-    if (projects.length && !Object.keys(this.state).length) {
-      const initialInputState = projects.reduce((accu, current) => ({
-        ...accu,
-        [_.kebabCase(current.projectBlockName)]:
-          current.challenges.reduce((map, challenge) =>({
-            ...map,
-            [_.kebabCase(challenge)]: ''
-          }), {})
-      }), {});
-      // This component will not render without this state being set
-      // The conditional above is to protect against recursive rendering
-      /* eslint-disable react/no-did-update-set-state */
-      this.setState(initialInputState);
-    }
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const solutions = this.state[e.target.id];
-    console.log(solutions);
-    // this.props.claimCert(block, solutions);
-  }
-
-  handleChange(blockName, kebabName) {
-    return e => {
-      e.persist();
-      return this.setState(state => ({
-        ...state,
-        [blockName]: {
-          ...state[blockName],
-          [kebabName]: e.target.value
-        }
-      }));
-    };
+  handleSolutionToggle(e) {
+    e.persist();
+    return this.setState(state => ({
+      ...state,
+      [e.target.id]: !state[e.target.id]
+    }));
   }
 
   render() {
+    const {
+      projectBlockName,
+      challenges,
+      jsProjects,
+      isCertClaimed
+    } = this.props;
+
+    return (
+      <FullWidthRow>
+        <h3 className='project-heading'>{ projectBlockName }</h3>
+        <p>
+          To complete this certification, you must first complete the
+          JavaScript Algorithms and Data Structures project challenges
+        </p>
+        <ul className='solution-list'>
+          {
+            challenges.map(challenge => (
+              <div key={ challenge }>
+                <li className='solution-list-item'>
+                  <p>{ challenge }</p>
+                  {
+                    jsProjects[challenge] ?
+                    <div>
+                      <Button
+                        bsSize='lg'
+                        bsStyle='primary'
+                        id={ challenge }
+                        onClick={ this.handleSolutionToggle }
+                        >
+                        { this.state[challenge] ? 'Hide' : 'Show' } Solution
+                      </Button>
+                    </div> :
+                    <Link to={`${jsProjectPath}${_.kebabCase(challenge)}`}>
+                      <Button
+                        bsSize='lg'
+                        bsStyle='primary'
+                        >
+                        Complete Challenge
+                      </Button>
+                    </Link>
+                  }
+                </li>
+                {
+                  this.state[challenge] ?
+                    <SolutionViewer files={ jsProjects[challenge] } /> :
+                    null
+                }
+              </div>
+            ))
+          }
+        </ul>
+        {
+          Object.keys(jsProjects).length === 6 ?
+          <form>
+            <BlockSaveButton>
+              { isCertClaimed ? 'Show' : 'Claim'} Certificate
+            </BlockSaveButton>
+          </form> :
+          null
+        }
+      </FullWidthRow>
+    );
+  }
+}
+
+JSAlgoAndDSForm.displayName = 'JSAlgoAndDSForm';
+JSAlgoAndDSForm.propTypes = jsFormPropTypes;
+
+/* eslint-disable react/no-multi-comp */
+class ProjectSettings extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
     const { projects } = this.props;
-    if (!projects.length || !Object.keys(this.state).length) {
+    if (!projects.length) {
+      this.props.fetchChallenges();
+    }
+  }
+
+  handleSubmit(values) {
+    const { id } = values;
+    const fullForm = _.values(values)
+    // 5 projects + 1 id prop
+    .filter(Boolean).length === 6;
+    const valuesSaved = _.values(this.props.userProjects[id])
+    .filter(Boolean).length === 6;
+    if (fullForm && valuesSaved) {
+      return this.props.claimCert(id);
+    }
+    const { projects } = this.props;
+    const pIndex = _.findIndex(projects, p => p.superBlock === id);
+    values.nameToIdMap = projects[pIndex].challengeNameIdMap;
+    return this.props.updateUserBackend({
+      projects: {
+        [id]: values
+      }
+    });
+  }
+
+  render() {
+    const {
+      blockNameIsCertMap,
+      projects,
+      userProjects
+    } = this.props;
+    if (!projects.length) {
       return null;
     }
     return (
       <div>
+        <FullWidthRow>
         <h2>Your FreeCodeCamp Projects</h2>
         <br />
         <p>
@@ -101,50 +222,72 @@ class ProjectSettings extends Component {
           Then, once you have added all 5 projects required for a certificate,
           you can claim it.
         </p>
+        </FullWidthRow>
       {
-        projects.map(block => {
-          const blockName = _.kebabCase(block.projectBlockName);
+        projects.map(({
+          projectBlockName,
+          challenges,
+          superBlock
+        }) => {
+          const isCertClaimed = blockNameIsCertMap[projectBlockName];
+          if (superBlock === jsProjectSuperBlock) {
+            return (
+              <JSAlgoAndDSForm
+                challenges={ challenges }
+                isCertClaimed={ isCertClaimed }
+                jsProjects={ userProjects[superBlock] }
+                key={ superBlock }
+                projectBlockName={ projectBlockName }
+              />
+            );
+          }
+          const options = challenges
+            .reduce((options, current) => {
+              options.types[current] = 'url';
+              return options;
+            }, { types: {} });
+          options.types.id = 'hidden';
+          options.placeholder = false;
+          const userValues = userProjects[superBlock] || {};
+          if (!userValues.id) {
+            userValues.id = superBlock;
+          }
+          const initialValues = challenges
+            .reduce((accu, current) => ({
+              ...accu,
+              [current]: ''
+            }), {});
+          const fullForm = _.values(userValues)
+          // minus 1 to account for the id prop
+            .filter(Boolean).length - 1 === challenges.length;
+
           return (
-          <div key={blockName}>
-            <form id={ blockName } onSubmit={ this.handleSubmit }>
-              <h3>{block.projectBlockName}</h3>
-              {
-                block.challenges
-                  .map(challenge => {
-                    const kebabName = _.kebabCase(challenge);
-                    return (
-                      <Row key={kebabName}>
-                        <Col xs={8}>
-                          <ControlLabel htmlFor={kebabName}>
-                            {challenge}
-                          </ControlLabel>
-                        </Col>
-                        <Col xs={4}>
-                          <FormControl
-                            bsSize='sm'
-                            id={kebabName}
-                            onChange={ this.handleChange(blockName, kebabName) }
-                            placeholder='URL'
-                            required={ true }
-                            type='url'
-                            value={ this.state[blockName][kebabName] || '' }
-                          />
-                        </Col>
-                      </Row>
-                    );
-                  })
-              }
-              <br />
-              <Button
-                block={true}
-                bsSize='lg'
-                bsStyle='primary'
-                type='submit'
-                >
-                Claim
-              </Button>
-            </form>
-          </div>
+            <FullWidthRow key={superBlock}>
+                <h3 className='project-heading'>{ projectBlockName }</h3>
+                <Form
+                  buttonText={ fullForm ? 'Claim' : 'Save Progress' }
+                  formFields={ challenges.concat([ 'id' ]) }
+                  hideButton={isCertClaimed}
+                  id={ superBlock }
+                  initialValues={{
+                    ...initialValues,
+                    ...userValues
+                  }}
+                  options={ options }
+                  submit={ this.handleSubmit }
+                />
+                {
+                  isCertClaimed ?
+                  <Button
+                    block={ true }
+                    bsSize='lg'
+                    bsStyle='primary'
+                    >
+                    Show Certificate
+                  </Button> :
+                  null
+                }
+            </FullWidthRow>
           );
         })
         }

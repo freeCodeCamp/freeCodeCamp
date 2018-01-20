@@ -20,6 +20,7 @@ const endpoints = {
   email: '/update-my-email',
   languageTag: '/update-my-lang',
   portfolio: '/update-my-portfolio',
+  projects: '/update-my-projects',
   theme: '/update-my-theme'
 };
 
@@ -89,13 +90,13 @@ function backendUserUpdateEpic(actions$, { getState }) {
       });
 
     const error = actions$::ofType(types.updateUserBackend.error)
-    .flatMap(error => {
-      console.log(error);
-      return Observable.of({
-        type: 'error',
-        error: { message: 'Something went wrong updating your account' }
+      .flatMap(error => {
+        console.log(error);
+        return Observable.of({
+          type: 'error',
+          error: { message: 'Something went wrong updating your account' }
+        });
       });
-    });
 
   return Observable.merge(start, complete, error).filter(Boolean);
 }

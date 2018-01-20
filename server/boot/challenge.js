@@ -5,6 +5,7 @@ import dedent from 'dedent';
 
 import { ifNoUserSend } from '../utils/middleware';
 import { getChallengeById, cachedMap } from '../utils/map';
+import projectIds from '../utils/projectIds';
 
 const log = debug('fcc:boot:challenges');
 
@@ -68,6 +69,19 @@ function buildUserUpdate(
     updateData,
     completedDate: finalChallenge.completedDate,
     lastUpdated: finalChallenge.lastUpdated
+  };
+}
+
+function buildProjectUpdate(user, completedChallenge) {
+  const superBlock = _.kebabCase(completedChallenge.superBlock);
+  const currentSolutions = user.projects[superBlock] || {};
+  const { title, solution, files } = completedChallenge;
+  return {
+    ...user.projects,
+    [superBlock]: {
+      ...currentSolutions,
+      [title]: solution || files
+    }
   };
 }
 
@@ -141,15 +155,16 @@ export default function(app) {
       return res.sendStatus(403);
     }
 
-    const user = req.user;
+    const { user, body = {} } = req;
     return user.getChallengeMap$()
       .flatMap(() => {
         const completedDate = Date.now();
-        const {
-          id,
-          files
-        } = req.body;
-
+        const completedChallenge = _.pick(
+          body,
+          [ 'id', 'files', 'challengeType', 'superBlock', 'title' ]
+        );
+        const { id } = completedChallenge;
+        completedChallenge.completedDate = completedDate;
         const {
           alreadyCompleted,
           updateData,
@@ -157,11 +172,15 @@ export default function(app) {
         } = buildUserUpdate(
           user,
           id,
-          { id, files, completedDate }
+          _.pick(completedChallenge, [ 'id', 'files', 'completedDate' ])
         );
-
         const points = alreadyCompleted ? user.points : user.points + 1;
-
+        if (projectIds.includes(id)) {
+          updateData.$set = {
+            ...updateData.$set,
+            projects: buildProjectUpdate(user, completedChallenge)
+          };
+        }
         return user.update$(updateData)
           .doOnNext(({ count }) => log('%s documents updated', count))
           .map(() => {
@@ -246,10 +265,9 @@ export default function(app) {
     }
 
     const { user, body = {} } = req;
-
     const completedChallenge = _.pick(
       body,
-      [ 'id', 'solution', 'githubLink', 'challengeType' ]
+      [ 'id', 'solution', 'githubLink', 'challengeType', 'superBlock', 'title' ]
     );
     completedChallenge.completedDate = Date.now();
 
@@ -268,15 +286,30 @@ export default function(app) {
       return res.sendStatus(403);
     }
 
-
     return user.getChallengeMap$()
       .flatMap(() => {
         const {
           alreadyCompleted,
           updateData,
           lastUpdated
-        } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
-
+        } = buildUserUpdate(
+          user,
+          completedChallenge.id,
+          _.pick(
+            completedChallenge,
+            [
+              'id',
+              'solution',
+              'githubLink',
+              'challengeType'
+            ]
+          )
+        );
+        updateData.$set = {
+          ...updateData.$set,
+          projects: buildProjectUpdate(user, completedChallenge)
+        };
+        log(updateData);
         return user.update$(updateData)
           .doOnNext(({ count }) => log('%s documents updated', count))
           .doOnNext(() => {

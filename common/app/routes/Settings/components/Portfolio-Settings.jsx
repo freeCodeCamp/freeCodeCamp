@@ -20,7 +20,6 @@ import {
 } from '../../../helperComponents';
 import PortfolioItem from './PortfolioItem.jsx';
 import { userSelector } from '../../../redux';
-import { makeToast } from '../../../Toasts/redux';
 import {
   addPortfolioItem,
   deletePortfolio,
@@ -36,7 +35,6 @@ const validURL = str => isURL(str) ? null : 'Must be a valid URL';
 
 const propTypes = {
   addPortfolioItem: PropTypes.func.isRequired,
-  deletePortfolio: PropTypes.func.isRequired,
   picture: PropTypes.string,
   portfolio: PropTypes.arrayOf(
     PropTypes.shape({
@@ -46,7 +44,6 @@ const propTypes = {
       url: PropTypes.string
     })
   ),
-  updatePortfolio: PropTypes.func.isRequired,
   updateUserBackend: PropTypes.func.isRequired,
   username: PropTypes.string
 };
@@ -63,9 +60,6 @@ const mapStateToProps = createSelector(
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addPortfolioItem,
-    deletePortfolio,
-    makeToast,
-    updatePortfolio,
     updateUserBackend
   }, dispatch);
 }

@@ -51,6 +51,7 @@ Observable.combineLatest(
     const message = challengeSpec.message;
     const required = challengeSpec.required || [];
     const template = challengeSpec.template;
+    const isPrivate = !!challengeSpec.isPrivate;
 
     log('parsed %s successfully', blockName);
 
@@ -68,7 +69,8 @@ Observable.combineLatest(
       superBlockMessage: message,
       order: order,
       time: time,
-      isLocked: isLocked
+      isLocked,
+      isPrivate
     };
 
     return createBlocks(block)
@@ -110,6 +112,7 @@ Observable.combineLatest(
             challenge.isBeta = challenge.isBeta || isBeta;
             challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
             challenge.isLocked = challenge.isLocked || isLocked;
+            challenge.isPrivate = challenge.isPrivate || isPrivate;
             challenge.time = challengeSpec.time;
             challenge.superOrder = superOrder;
             challenge.superBlock = superBlock

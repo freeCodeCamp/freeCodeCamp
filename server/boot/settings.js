@@ -130,6 +130,18 @@ export default function settingsController(app) {
       );
   }
 
+  function updateMyProjects(req, res, next) {
+    const {
+      user,
+      body: { projects: project }
+    } = req;
+    return user.updateMyProjects(project)
+      .subscribe(
+        message => res.json({ message }),
+        next
+      );
+  }
+
   function updateMyTheme(req, res, next) {
     const { body: { theme } } = req;
     const errors = req.validationErrors(true);
@@ -212,6 +224,12 @@ export default function settingsController(app) {
     '/update-my-portfolio',
     ifNoUser401,
     updateMyPortfolio
+  );
+
+  api.post(
+    '/update-my-projects',
+    ifNoUser401,
+    updateMyProjects
   );
 
   app.use(api);
