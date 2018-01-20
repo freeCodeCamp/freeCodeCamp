@@ -11,12 +11,10 @@ import {
   ControlLabel,
   FormControl,
   HelpBlock,
-  Row,
-  ToggleButton,
-  ToggleButtonGroup
+  Row
 } from 'react-bootstrap';
-import classnames from 'classnames';
 
+import TB from '../Toggle-Button';
 import { Link } from '../../../Router';
 import { FullWidthRow } from '../../../helperComponents';
 import { userSelector } from '../../../redux';
@@ -110,48 +108,16 @@ class EmailSettings extends PureComponent {
             </ControlLabel>
           </Col>
           <Col sm={ 4 }>
-            <ToggleButtonGroup
-              className='toggle-btn-group'
+            <TB
               id={ id }
-              name='monthly-email'
+              name={ id }
               onChange={
                 () => updateUserBackend({
                   [option.flag]: !option.bool
                 })
               }
-              type='radio'
-              >
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    { active: option.bool },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ option.bool }
-                type='radio'
-                value='On'
-                >
-                On
-              </ToggleButton>
-              <ToggleButton
-                bsSize='lg'
-                bsStyle='primary'
-                className={
-                  classnames(
-                    { active: !option.bool },
-                    'btn-toggle'
-                  )
-                }
-                disabled={ !option.bool }
-                type='radio'
-                value='Off'
-                >
-                Off
-              </ToggleButton>
-            </ToggleButtonGroup>
+              value={ option.bool }
+            />
           </Col>
         </Row>
       );
@@ -234,7 +200,7 @@ class EmailSettings extends PureComponent {
                 Email
               </ControlLabel>
             </Col>
-            <Col sm={ 10 } xs={ 12 }>
+            <Col sm={ 8 } xs={ 12 }>
               <FormControl
                 bsSize='lg'
                 id='email'
@@ -246,8 +212,9 @@ class EmailSettings extends PureComponent {
                 value={ value }
               />
             </Col>
-            <Col sm={ 1 } xs={ 12 }>
+            <Col sm={ 2 } xs={ 12 }>
               <Button
+                block={ true }
                 bsSize='lg'
                 bsStyle='primary'
                 type='submit'

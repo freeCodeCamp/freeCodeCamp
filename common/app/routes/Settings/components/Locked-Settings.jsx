@@ -3,10 +3,10 @@ import React from 'react';
 import {
   Row,
   Col,
-  ToggleButton,
-  ToggleButtonGroup
+  ControlLabel
 } from 'react-bootstrap';
-import classnames from 'classnames';
+
+import TB from '../Toggle-Button';
 
 const propTypes = {
   isLocked: PropTypes.bool,
@@ -17,52 +17,22 @@ export default function LockSettings({ isLocked, toggleIsLocked }) {
   return (
     <Row className='inline-form'>
       <Col sm={ 8 } xs={ 12 }>
-        <p>
-          <strong>
-            Make all of my solutions private
-            <br />
-            <em>(this disables your certificates)</em>
-          </strong>
-        </p>
+        <ControlLabel htmlFor='isLocked'>
+          <p>
+            <strong>
+              Make all of my solutions private
+              <br />
+              <em>(this disables your certificates)</em>
+            </strong>
+          </p>
+        </ControlLabel>
       </Col>
       <Col sm={ 4 } xs={ 12 }>
-        <ToggleButtonGroup
-          className='toggle-btn-group'
-          name='monthly-email'
+        <TB
+          name='isLocked'
           onChange={ toggleIsLocked }
-          type='radio'
-          >
-          <ToggleButton
-            bsSize='lg'
-            bsStyle='primary'
-            className={
-              classnames(
-                { active: isLocked },
-                'btn-toggle'
-              )
-            }
-            disabled={ isLocked }
-            type='radio'
-            value={ 1 }
-            >
-            On
-          </ToggleButton>
-          <ToggleButton
-            bsSize='lg'
-            bsStyle='primary'
-            className={
-              classnames(
-                { active: !isLocked },
-                'btn-toggle'
-              )
-            }
-            disabled={ !isLocked }
-            type='radio'
-            value={ 2 }
-            >
-            Off
-          </ToggleButton>
-        </ToggleButtonGroup>
+          value={ isLocked }
+        />
       </Col>
     </Row>
   );
