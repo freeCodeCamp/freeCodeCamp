@@ -18,14 +18,22 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 
 ## Contribution Guidelines
 
+### Setup
+
 - [Prerequisites](#prerequisites)
 - [Forking the Project](#forking-the-project)
 - [Create a Branch](#create-a-branch)
 - [Set Up Linting](#set-up-linting)
 - [Set Up MailHog](#set-up-mailhog)
 - [Set Up freeCodeCamp](#set-up-freecodecamp)
+
+### Create
+
 - [Make Changes](#make-changes)
 - [Run The Test Suite](#run-the-test-suite)
+
+### Submit
+
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Common Steps](#common-steps)
 - [How We Review and Merge Pull Requests](#how-we-review-and-merge-pull-requests)
@@ -293,6 +301,12 @@ with line numbers. Then you can proceed to the files and verify this is the area
 that you were looking forward to edit. Always feel free to reach out to the chat
 room when you are not certain of any thing specific in the code.
 
+#### Adding or Editing Challenges
+
+The challenges are stored inside the `seed` directory (and its various subdirectories).
+
+For more about creating challenges, see [seed/README](seed/README.md) and [seed/challenge-style-guide.md](seed/challenge-style-guide.md).
+
 #### Changes to the seed files
 
 If you made changes to any file in the `/seed` directory, you need to run
@@ -470,8 +484,10 @@ Be sure to post in the PR conversation that you have made the requested changes.
 
 ### Other Resources
 
+-   [Challenges README](seed/README.md)
+
 -   [Style Guide for freeCodeCamp
-    Challenges](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/seed/challenge-style-guide.md)
+    Challenges](seed/challenge-style-guide.md)
 
 -   [Searching for Your Issue on
     GitHub](http://forum.freecodecamp.org/t/searching-for-existing-issues/19139)
