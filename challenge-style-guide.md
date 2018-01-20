@@ -27,11 +27,11 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 - JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
 
-Front-end development (adjective form with a dash) is when you working on the front end (noun form with no dash). The same goes with the back end, full stack, and many other compound terms.
+Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
 ## The 2 minute rule
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
+Each challenge should be solvable within 120 seconds  by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
 - simplify the challenge, or
@@ -62,6 +62,38 @@ Here are some example challenge names:
 - Use Clockwise Notation to Specify the Padding of an Element
 - Condense arrays with .reduce
 - Use Bracket Notation to Find the First Character in a String
+
+## Numbering Challenges
+
+Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
+
+To generate a new one in a shell (assuming MongoDB is running separately):
+
+1. Run `mongo` command
+2. Run `ObjectId()` command
+
+For example:
+
+```sh
+$ mongo
+MongoDB shell version v3.6.1
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
+...
+$ ObjectId()
+ObjectId("5a474d78df58bafeb3535d34")
+```
+
+The result is a new id, for example `5a474d78df58bafeb3535d34` above.
+
+Once you have your id, put it into the JSON file as the `id` field, e.g.
+
+```
+{
+  "id": "5a474d78df58bafeb3535d34",
+  "title": "Challenge Title",
+```
+  
 
 ## Writing tests
 
