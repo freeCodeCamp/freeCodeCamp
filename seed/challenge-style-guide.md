@@ -88,7 +88,7 @@ The result is a new id, for example `5a474d78df58bafeb3535d34` above.
 
 Once you have your id, put it into the JSON file as the `id` field, e.g.
 
-```json
+```
 {
   "id": "5a474d78df58bafeb3535d34",
   "title": "Challenge Title",
