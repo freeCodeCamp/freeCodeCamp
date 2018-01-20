@@ -14,7 +14,6 @@ import ns from '../ns.json';
 export const epics = [getMessagesEpic];
 export const types = createTypes([
   'clickOnClose',
-  'messagesFoundOnBoot',
   createAsyncTypes('fetchMessages')
 ], ns);
 
