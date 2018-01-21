@@ -101,6 +101,10 @@ block content
                     h4.col-sm-6.text-right Longest Streak: #{longestStreak} #{longestStreak === 1 ? ' day' : ' days'}
                     h4.col-sm-6.text-left Current Streak: #{currentStreak} #{currentStreak === 1 ? ' day' : ' days'}
 
+        .row
+          p.col-sm-12.text-center
+            | Note: We have temporarily disabled viewing and sharing solutions, however they are safely stored in your profile. You can 
+            a(href="https://forum.freecodecamp.org/t/announcement-viewing-and-sharing-solutions-from-user-profiles-is-temporarily-disabled/169339" target="_blank") learn more about this here.
 
           if (user && user.username == username || !isLocked)
               if (projects .length > 0)
@@ -137,15 +141,9 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
-                                    if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
-                                    else
-                                        a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
+                                    a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
                                   td.col-xs-12.visible-xs
-                                    if (challenge.solution)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
-                                    else
-                                        a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
+                                    a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
               if (challenges.length > 0)
                   .col-sm-12
                       table.table.table-striped
@@ -161,16 +159,12 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
-                                    if (challenge.solution && challenge.name)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View solution
-                                    else if (challenge.name)
+                                    if (challenge.name)
                                         a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
                                     else
                                         span N/A
                                   td.col-xs-12.visible-xs
-                                    if (challenge.solution && challenge.name)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank')= removeOldTerms(challenge.name)
-                                    else if (challenge.name)
+                                    if (challenge.name)
                                         a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
                                     else
                                         span N/A
