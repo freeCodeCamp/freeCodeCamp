@@ -84,7 +84,7 @@
         "<code>const anchors = d3.selectAll(\"a\");</code>",
         "Like the <code>select()</code> method, <code>selectAll()</code> supports method chaining, and you can use it with other methods.",
         "<hr>",
-        "Select all of the <code>li</code> tags in the document, and change their text to \"list item\"."
+        "Select all of the <code>li</code> tags in the document, and change their text to \"list item\" by chaining the <code>.text()</code> method."
       ],
       "challengeSeed": [
         "<body>",
