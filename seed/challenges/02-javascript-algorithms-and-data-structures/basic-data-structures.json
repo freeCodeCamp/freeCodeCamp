@@ -64,7 +64,7 @@
       "translations": {}
     },
     {
-      "id": "587d78b2366415b2v2512be3",
+      "id": "5a661e0f1068aca922b3ef17",
       "title": "Access an Array's Contents Using Bracket Notation",
       "description": [
         "The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that data on command. So, now that we've learned how to create an array, let's begin to think about how we can access that array's information.",
