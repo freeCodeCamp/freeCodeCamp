@@ -1,30 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
 import ns from './ns.json';
-import { showUpdateEmailViewSelector } from './redux';
+import { userSelector, signInLoadingSelector } from '../../redux';
 import Settings from './Settings.jsx';
 import UpdateEmail from './routes/update-email';
 import ChildContainer from '../../Child-Container.jsx';
 
-const mapStateToProps = state => ({
-  showUpdateEmailView: showUpdateEmailViewSelector(state)
-});
+const mapStateToProps = createSelector(
+  userSelector,
+  signInLoadingSelector,
+  ({ email }, showLoading) => ({
+    showUpdateEmail: !email && !showLoading
+  })
+);
+
 const mapDispatchToProps = null;
 const propTypes = {
-  showUpdateEmailView: PropTypes.bool
+  showUpdateEmail: PropTypes.bool
 };
 
-export function ShowSettings({ showUpdateEmailView }) {
-  let Comp = Settings;
-  if (showUpdateEmailView) {
-    Comp = UpdateEmail;
-  }
+export function ShowSettings({ showUpdateEmail }) {
   return (
     <ChildContainer>
       <div className={ `${ns}-container` }>
-        <Comp />
+        { showUpdateEmail ? <UpdateEmail /> : <Settings /> }
       </div>
     </ChildContainer>
   );

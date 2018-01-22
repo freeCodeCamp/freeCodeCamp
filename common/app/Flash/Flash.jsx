@@ -22,6 +22,7 @@ export function Flash({ type, clickOnClose, message }) {
   if (!message) {
     return null;
   }
+  console.log('FLASH', message);
   return (
     <div className={`${ns}-container bg-${type}`}>
       <div className={`${ns}-content`}>

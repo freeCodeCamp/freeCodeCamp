@@ -10,7 +10,11 @@ import {
   ifNoUserRedirectTo,
   createValidatorErrorHandler
 } from '../utils/middleware';
-import { wrapHandledError } from '../utils/create-handled-error.js';
+import {
+  wrapHandledError,
+  createValidatorErrorFormatter
+} from '../utils/create-handled-error.js';
+import { homeURL } from '../../common/utils/constantStrings.json';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 // const debug = debugFactory('fcc:boot:auth');
@@ -23,7 +27,7 @@ module.exports = function enableAuthentication(app) {
   //  loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
-  const ifNoUserRedirect = ifNoUserRedirectTo('https://freecodecamp.org');
+  const ifNoUserRedirect = ifNoUserRedirectTo(homeURL);
   const router = app.loopback.Router();
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;

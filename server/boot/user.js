@@ -164,28 +164,20 @@ module.exports = function(app) {
     );
   }
 
-  router.get(
-    '/delete-my-account',
-    sendNonUserToMap,
-    showDelete
-  );
   api.post(
     '/account/delete',
     ifNoUser401,
     postDeleteAccount
   );
+
   api.get(
     '/account',
     sendNonUserToMap,
     getAccount
   );
-  router.get(
-    '/reset-my-progress',
-    sendNonUserToMap,
-    showResetProgress
-  );
+
   api.post(
-    '/account/resetprogress',
+    '/account/reset-progress',
     ifNoUser401,
     postResetProgress
   );
@@ -247,7 +239,6 @@ module.exports = function(app) {
     showCert.bind(null, certTypes.infosecQa)
   );
 
-  router.get('/:username', showUserProfile);
   router.get(
     '/:username/report-user/',
     sendNonUserToMap,
@@ -434,6 +425,7 @@ module.exports = function(app) {
           isFrontEndLibsCert: true,
           isJsAlgoDataStructCert: true,
           isDataVisCert: true,
+          is2018DataVisCert: true,
           isApisMicroservicesCert: true,
           isInfosecQaCert: true,
           isHonest: true,
@@ -479,7 +471,7 @@ module.exports = function(app) {
           if (!user.isHonest) {
             req.flash(
               'danger',
-               dedent`
+              dedent`
                 ${username} has not yet agreed to our Academic Honesty Pledge.
               `
             );
@@ -510,21 +502,12 @@ module.exports = function(app) {
       );
   }
 
-  function showDelete(req, res) {
-    return res.render('account/delete', { title: 'Delete My Account!' });
-  }
-
   function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
       req.logout();
       req.flash('info', 'You\'ve successfully deleted your account.');
-      return res.redirect('/');
-    });
-  }
-
-  function showResetProgress(req, res) {
-    return res.render('account/reset-progress', { title: 'Reset My Progress!'
+      return res.status(200).end();
     });
   }
 
@@ -535,19 +518,24 @@ module.exports = function(app) {
         progressTimestamps: [{
           timestamp: Date.now()
         }],
-        currentStreak: 0,
-        longestStreak: 0,
         currentChallengeId: '',
-        isBackEndCert: false,
-        isFullStackCert: false,
-        isDataVisCert: false,
+        isRespWebDesignCert: false,
+        is2018DataVisCert: false,
+        isFrontEndLibsCert: false,
+        isJsAlgoDataStructCert: false,
+        isApisMicroservicesCert: false,
+        isInfosecQaCert: false,
+        is2018FullStackCert: false,
         isFrontEndCert: false,
+        isBackEndCert: false,
+        isDataVisCert: false,
+        isFullStackCert: false,
         challengeMap: {},
-        challegesCompleted: []
+        projects: {}
       }, function(err) {
         if (err) { return next(err); }
         req.flash('info', 'You\'ve successfully reset your progress.');
-        return res.redirect('/');
+        return res.status(200).end();
       });
     });
   }

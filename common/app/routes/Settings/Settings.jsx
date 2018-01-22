@@ -13,6 +13,7 @@ import ProjectSettings from './components/Project-Settings.jsx';
 import SettingsSkeleton from './components/Settings-Skeleton.jsx';
 import JobSettings from './components/Job-Settings.jsx';
 import LanguageSettings from './components/Language-Settings.jsx';
+import DangerZone from './components/DangerZone.jsx';
 import ChildContainer from '../../Child-Container.jsx';
 import { Link } from '../../Router';
 import {
@@ -94,6 +95,7 @@ class Settings extends React.Component {
             <hr />
             <ProjectSettings/>
             <hr />
+            <DangerZone />
           </div>
         </Grid>
       </ChildContainer>

@@ -2,7 +2,7 @@ import debug from 'debug';
 import { renderToString } from 'react-dom/server';
 import createMemoryHistory from 'history/createMemoryHistory';
 import { NOT_FOUND } from 'redux-first-router';
-// import devtoolsEnhancer from 'remote-redux-devtools';
+import devtoolsEnhancer from 'remote-redux-devtools';
 
 import {
   errorThrowerMiddleware
@@ -10,6 +10,7 @@ import {
 import { createApp, provideStore, App } from '../../common/app';
 import waitForEpics from '../../common/utils/wait-for-epics.js';
 import { titleSelector } from '../../common/app/redux';
+import { ifNoUserSend } from '../utils/middleware';
 
 const log = debug('fcc:react-server');
 const isDev = process.env.NODE_ENV !== 'production';
@@ -20,9 +21,12 @@ const routes = [
   '/challenges',
   '/challenges/*',
   '/map',
-  '/settings',
-  '/settings/*',
   '/:username'
+];
+
+const userRequiredRoutes = [
+  '/settings',
+  '/settings/*'
 ];
 
 const devRoutes = [];
@@ -41,7 +45,9 @@ export default function reactSubRouter(app) {
   routes.forEach((route) => {
     router.get(route, serveReactApp);
   });
-
+  userRequiredRoutes.forEach(route => {
+    router.get(route, ifNoUserSend('/'), serveReactApp);
+  });
   if (process.env.NODE_ENV === 'development') {
     devRoutes.forEach(function(route) {
       router.get(route, serveReactApp);
@@ -57,10 +63,10 @@ export default function reactSubRouter(app) {
       serviceOptions,
       middlewares,
       enhancers: [
-        // devtoolsEnhancer({ name: 'server' })
+        devtoolsEnhancer({ name: 'server' })
       ],
       history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
-      defaultStaet: { app: { lang } }
+      defaultState: { app: { lang } }
     })
       .filter(({
         location: {

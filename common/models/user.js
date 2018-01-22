@@ -277,8 +277,7 @@ module.exports = function(User) {
 
   // remove lingering user identities before deleting user
   User.observe('before delete', function(ctx, next) {
-    const UserIdentity = User.app.models.UserIdentity;
-    const UserCredential = User.app.models.UserCredential;
+    const { UserIdentity, UserCredential } = User.app.models;
     debug('removing user', ctx.where);
     var id = ctx.where && ctx.where.id ? ctx.where.id : null;
     if (!id) {
@@ -289,8 +288,8 @@ module.exports = function(User) {
       destroyAll(id, UserCredential),
       function(identData, credData) {
         return {
-          identData: identData,
-          credData: credData
+          identData,
+          credData
         };
       }
     )
@@ -299,11 +298,11 @@ module.exports = function(User) {
           debug('deleted', data);
         },
         function(err) {
-          debug('error deleting user %s stuff', id, err);
+          debug('error deleting stuff for user', id, err);
           next(err);
         },
         function() {
-          debug('user stuff deleted for user %s', id);
+          debug('user stuff deleted for user', id);
           next();
         }
       );
@@ -976,7 +975,10 @@ module.exports = function(User) {
       });
   };
 
-  User.getMessages = messages => Promise.resolve(messages);
+  User.getMessages = messages => {
+    console.info('GETMESSAGES', messages);
+    return Promise.resolve(messages);
+  };
 
   User.remoteMethod('getMessages', {
     http: {

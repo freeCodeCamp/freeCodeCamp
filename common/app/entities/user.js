@@ -8,11 +8,6 @@ import {
 } from 'berkeleys-redux-utils';
 
 import { types as challenges } from '../routes/Challenges/redux';
-import updateUserEpic from './update-user-epic';
-
-export const epics = [
-  updateUserEpic
-];
 
 export const types = createTypes([
   'editUserFlag',
@@ -68,10 +63,6 @@ export function emptyPortfolio() {
   url: '',
   image: ''
   };
-}
-
-function byMatchingId(id) {
-  return x => x.id === id;
 }
 
 export function userReducer(initialState) {
@@ -130,42 +121,6 @@ export function userReducer(initialState) {
           }
         }
       }),
-      [types.deletePortfolio]: (state, { payload: { id, username } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            portfolio: [
-              ...state.user[username].portfolio.filter(p => p.id !== id)
-            ]
-          }
-        }
-      }),
-      [types.updatePortfolio]: (
-        state,
-        { payload: { id, field, value, username }}
-      ) => {
-        const index = state.user[username].portfolio
-          .findIndex(byMatchingId(id));
-        return {
-          ...state,
-          user: {
-            ...state.user,
-            [username]: {
-              ...state.user[username],
-              portfolio: [
-                ...state.user[username].portfolio.slice(0, index),
-                {
-                  ...state.user[username].portfolio[index],
-                  [field]: value
-                },
-                ...state.user[username].portfolio.slice(index + 1)
-              ]
-            }
-          }
-        };
-      },
       [types.updateUserCurrentChallenge]:
       (
         state,

@@ -6,15 +6,15 @@ import {
   types,
   updateUserBackendError,
   updateUserBackendComplete
-} from './user';
-import { makeToast } from '../Toasts/redux';
+} from '../../../entities/user';
+import { makeToast } from '../../../Toasts/redux';
 import {
   fetchChallenges,
   fetchUser,
   doActionOnError,
   userSelector
-} from '../redux';
-import { postJSON$ } from '../../utils/ajax-stream';
+} from '../../../redux';
+import { postJSON$ } from '../../../../utils/ajax-stream';
 
 const endpoints = {
   email: '/update-my-email',
@@ -90,7 +90,7 @@ function backendUserUpdateEpic(actions$, { getState }) {
       });
 
     const error = actions$::ofType(types.updateUserBackend.error)
-      .flatMap(error => {
+      .map(error => {
         console.log(error);
         return Observable.of({
           type: 'error',

@@ -1,22 +1,31 @@
-import { isLocationAction } from 'redux-first-router';
 import {
-  addNS,
   createAction,
   createAsyncTypes,
-  createTypes
+  createTypes,
+  handleActions
 } from 'berkeleys-redux-utils';
+import _ from 'lodash';
+
 import ns from '../ns.json';
 import { utils } from '../../../Flash/redux';
+import updateUserEpic from './update-user-epic';
+import dangerZoneEpic from './danger-zone-epic';
+
+export const epics = [
+  dangerZoneEpic,
+  updateUserEpic
+];
 
 export const types = createTypes([
   'toggleUserFlag',
   createAsyncTypes('updateMyEmail'),
   'updateFlag',
   'updateMyLang',
+  createAsyncTypes('deleteAccount'),
+  createAsyncTypes('resetProgress'),
   'onRouteSettings',
   'onRouteUpdateEmail'
 ], 'settings');
-
 
 export const onRouteSettings = createAction(types.onRouteSettings);
 export const onRouteUpdateEmail = createAction(types.onRouteUpdateEmail);
@@ -36,32 +45,25 @@ export const updateMyEmailError = createAction(
 
 export const updateFlag = createAction(types.updateFlag);
 
-const defaultState = {
-  showUpdateEmailView: false
-};
+export const resetProgress = createAction(types.resetProgress.start);
+export const resetProgressComplete = createAction(types.resetProgress.complete);
+export const resetProgressError = createAction(
+  types.resetProgress.error,
+  _.identity
+);
+
+export const deleteAccount = createAction(types.deleteAccount.start);
+export const deleteAccountComplete = createAction(types.deleteAccount.complete);
+export const deleteAccountError = createAction(
+  types.deleteAccount.error,
+  _.identity
+);
+
+const defaultState = {};
 
 const getNS = state => state[ns];
-export const showUpdateEmailViewSelector =
-  state => getNS(state).showUpdateEmailView;
+export const settingsSelector = state => getNS(state);
 
-export default addNS(
-  ns,
-  function settingsRouteReducer(state = defaultState, action) {
-    if (isLocationAction(action)) {
-      const { type } = action;
-      if (type === types.onRouteUpdateEmail) {
-        return {
-          ...state,
-          showUpdateEmailView: true
-        };
-      }
-      if (state.showUpdateEmailView) {
-        return {
-          ...state,
-          showUpdateEmailView: false
-        };
-      }
-    }
-    return state;
-  }
+export default handleActions(() => ({}), defaultState,
+  ns
 );

@@ -22,8 +22,6 @@ import PortfolioItem from './PortfolioItem.jsx';
 import { userSelector } from '../../../redux';
 import {
   addPortfolioItem,
-  deletePortfolio,
-  updatePortfolio,
   updateUserBackend
 } from '../../../entities/user';
 import { maxLength, minLength } from '../utils/formValidators';
@@ -86,7 +84,6 @@ class PortfolioSettings extends PureComponent {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSave = this.handleSave.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.renderPortfolio = this.renderPortfolio.bind(this);
   }
 
@@ -102,12 +99,6 @@ class PortfolioSettings extends PureComponent {
   handleSave(portfolio) {
     const { updateUserBackend } = this.props;
     updateUserBackend({ portfolio });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    console.log('submitting');
-    this.handleSave();
   }
 
   renderPortfolio(portfolio, index, arr) {

@@ -102,8 +102,8 @@ class JSAlgoAndDSForm extends PureComponent {
   render() {
     const {
       projectBlockName,
-      challenges,
-      jsProjects,
+      challenges = [],
+      jsProjects = {},
       isCertClaimed
     } = this.props;
 

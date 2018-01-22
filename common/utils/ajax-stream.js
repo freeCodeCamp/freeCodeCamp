@@ -18,6 +18,7 @@
 
 import debugFactory from 'debug';
 import { Observable, AnonymousObservable, helpers } from 'rx';
+import { error } from 'util';
 
 const debug = debugFactory('fcc:ajax$');
 const root = typeof window !== 'undefined' ? window : {};
