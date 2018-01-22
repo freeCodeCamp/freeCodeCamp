@@ -138,7 +138,7 @@ module.exports = function enableAuthentication(app) {
                 }
               );
             }
-            return authToken.validate()
+            return authToken.validate$()
               .map(isValid => {
                 if (!isValid) {
                   throw wrapHandledError(
@@ -153,7 +153,7 @@ module.exports = function enableAuthentication(app) {
                     }
                   );
                 }
-                return authToken.destroy();
+                return authToken.destroy$();
               })
               .map(() => user);
           });
