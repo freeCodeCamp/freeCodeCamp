@@ -2089,7 +2089,7 @@
         "<button>Register</button>"
       ],
       "tests": [
-        "assert(code.match(/button:hover\\s*?{\\s*?animation-name:\\s*?background-color;\\s*?animation-duration:\\s*?500ms;\\s*?animation-fill-mode:\\s*?forwards;\\s*?}/gi), 'message: <code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.');"
+        "assert(code.match(/button:hover\\s*{[\\s\\S]*animation-name:\\s*background-color;[\\s\\S]*}\\s*@keyframes/gi) && code.match(/button:hover\\s*{[\\s\\S]*animation-duration:\\s*500ms;[\\s\\S]*}\\s*@keyframes/gi) && code.match(/button:hover\\s*{[\\s\\S]*animation-fill-mode:\\s*forwards;[\\s\\S]*}\\s*@keyframes/gi), 'message: <code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.');"
       ],
       "solutions": [],
       "hints": [],
