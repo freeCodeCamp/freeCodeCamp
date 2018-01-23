@@ -22,6 +22,7 @@ import Portfolio from './components/Portfolio.jsx';
 import Certificates from './components/Certificates.jsx';
 import Timeline from './components/Timeline.jsx';
 import HeatMap from './components/HeatMap.jsx';
+import { FullWidthRow } from '../../helperComponents';
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -62,39 +63,32 @@ class Profile extends React.Component {
     return (
       <ChildContainer>
         <Grid className={`${ns}-container`}>
-          <div>
-            <Row>
-              <Col md={ 4 } mdPush={ 1 }>
-                <Link to='/settings'>
-                  <Button
-                    block={ true }
-                    bsSize='lg'
-                    bsStyle='primary'
-                    >
-                    Update my settings
-                  </Button>
-                </Link>
-              </Col>
-              <Col md={ 4 } mdPush={ 3 }>
-                <Button
-                  block={ true }
-                  bsSize='lg'
-                  bsStyle='primary'
-                  href='/logout'
-                  >
-                  Sign me out of freeCodeCamp
-                </Button>
-              </Col>
-            </Row>
-            <br />
-            <CamperHOC />
-          </div>
+          <FullWidthRow>
+            <Link to='/settings'>
+              <Button
+                block={ true }
+                bsSize='lg'
+                bsStyle='primary'
+                >
+                Update my settings
+              </Button>
+            </Link>
+          </FullWidthRow>
+          <FullWidthRow>
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='primary'
+              href='/logout'
+              >
+              Sign me out of freeCodeCamp
+            </Button>
+          </FullWidthRow>
+          <br />
+          <CamperHOC />
           <HeatMap />
-          <hr />
           <Certificates />
-          <hr />
           <Portfolio />
-          <hr />
           <Timeline className='timelime-container' />
         </Grid>
       </ChildContainer>

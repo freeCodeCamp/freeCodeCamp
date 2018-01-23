@@ -168,9 +168,6 @@ function Certificates({
     isInfosecQaCert
   );
   const hasLegacyCert = (isFrontEndCert || isBackEndCert || isDataVisCert);
-  if (!hasModernCert && !hasLegacyCert) {
-    return null;
-  }
   return (
     <div>
       <h2 className='text-center'>FreeCodeCamp Certificates</h2>

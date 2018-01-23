@@ -50,7 +50,9 @@ function DynamicForm({
       {
         hideButton ?
           null :
-        <BlockSaveButton>
+        <BlockSaveButton
+          disabled={ !!Object.keys(errors).filter(key => errors[key]).length }
+          >
           {
             buttonText ? buttonText : null
           }

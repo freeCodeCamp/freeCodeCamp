@@ -4,21 +4,14 @@ import { isURL } from 'validator';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { SubmissionError } from 'redux-form';
 import {
-  Row,
-  Col,
-  ControlLabel,
-  FormControl,
   Button
 } from 'react-bootstrap';
 
 import {
-  BlockSaveButton,
-  FormFields,
+  Form,
   FullWidthRow
 } from '../../../helperComponents';
-import PortfolioItem from './PortfolioItem.jsx';
 import { userSelector } from '../../../redux';
 import {
   addPortfolioItem,
@@ -61,6 +54,17 @@ function mapDispatchToProps(dispatch) {
     updateUserBackend
   }, dispatch);
 }
+
+const formFields = [ 'title', 'url', 'image', 'description', 'id' ];
+const options = {
+  types: {
+    id: 'hidden',
+    url: 'url',
+    image: 'url',
+    description: 'textarea'
+  },
+  required: [ 'url', 'title', 'id' ]
+};
 
 function validator(values) {
   const errors = {};
@@ -107,15 +111,31 @@ class PortfolioSettings extends PureComponent {
     } = portfolio;
     return (
       <div key={ id }>
-        <PortfolioItem
-          deletePortfolio={ this.handleDelete }
-          id={ id }
-          submit={ this.handleSave }
-          validator={ validator }
-        />
-        {
-          index + 1 !== arr.length && <hr />
-        }
+        <FullWidthRow>
+          <Form
+            buttonText='Save portfolio item'
+            formFields={ formFields }
+            id={ id }
+            initialValues={ portfolio }
+            options={ options }
+            submit={ this.handleSave }
+            validate={ validator }
+          />
+          <div className='button-spacer' />
+          <Button
+            block={ true }
+            bsSize='sm'
+            bsStyle='danger'
+            id={`delete-${id}`}
+            onClick={ () => this.handleDelete(id) }
+            type='button'
+            >
+            Remove this portfolio
+          </Button>
+          {
+            index + 1 !== arr.length && <hr />
+          }
+        </FullWidthRow>
       </div>
     );
   }

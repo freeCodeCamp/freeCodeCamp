@@ -9,7 +9,6 @@ import classnames from 'classnames';
 import { FullWidthRow } from '../../../helperComponents';
 import { userSelector } from '../../../redux/index';
 import {
-  toggleUserFlag,
   updateUserBackend
 } from '../../../entities/user';
 
@@ -20,7 +19,6 @@ const mapStateToProps = createSelector(
 
 function mapDistachToProps(dispatch) {
   return bindActionCreators({
-    toggleUserFlag,
     updateUserBackend
   }, dispatch);
 }

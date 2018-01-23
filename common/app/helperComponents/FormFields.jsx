@@ -63,11 +63,13 @@ function FormFields(props) {
             <Col sm={ 9 } xs={ 12 }>
               <FormControl
                 bsSize='lg'
+                componentClass={ type === 'textarea' ? type : 'input' }
                 id={ key }
                 name={ name }
                 onChange={ onChange }
                 placeholder={ placeholder ? name : '' }
                 required={ !!required[name] }
+                rows={ 4 }
                 type={ type }
                 value={ value }
               />

@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import format from 'date-fns/format';
 import _ from 'lodash';
 import {
-  Row,
-  Col,
   Table
 } from 'react-bootstrap';
 
@@ -14,6 +12,8 @@ import { challengeIdToNameMapSelector } from '../../../entities';
 import { userSelector } from '../../../redux';
 import { homeURL } from '../../../../utils/constantStrings.json';
 import blockNameify from '../../../utils/blockNameify';
+import { FullWidthRow } from '../../../helperComponents';
+import { Link } from '../../../Router';
 
 const mapStateToProps = createSelector(
   challengeIdToNameMapSelector,
@@ -39,7 +39,7 @@ const propTypes = {
 function renderCompletion(idToNameMap, completed) {
   const { id, completedDate, lastUpdated } = completed;
   return (
-      <tr key={ '' + completedDate }>
+      <tr key={ id }>
         <td>{ blockNameify(idToNameMap[id]) }</td>
         <td>
           <time dateTime={ format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ') }>
@@ -65,50 +65,41 @@ function Timeline({ completedMap, idToNameMap }) {
   if (!idToNameMap) {
     return null;
   }
-  if (Object.keys(completedMap).length === 0) {
-    return (
-      <Row>
-        <Col xs={12}>
-          <p>
-            No challenges have been completed yet.&nbsp;
-            <a href={ homeURL }>
-              Get started here.
-            </a>
-          </p>
-        </Col>
-      </Row>
-    );
-  }
-
   const renderCompletionWithIdNameMap = _.curry(renderCompletion)(idToNameMap);
 
-
   return (
-      <Row className='timeline-container'>
-          <Col xs={12}>
-            <h2 className='text-center'>Timeline</h2>
-            <Table condensed={true} striped={true}>
-              <thead>
-                <tr>
-                  <th>Challenge</th>
-                  <th>First Completed</th>
-                  <th>Last Changed</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  _.reverse(
-                    _.sortBy(
-                      Object.keys(completedMap).map(key => completedMap[key]),
-                    [ 'completedDate' ]
-                    )
+      <FullWidthRow>
+        <h2 className='text-center'>Timeline</h2>
+        {
+          Object.keys(completedMap).length === 0 ?
+          <p className='text-center'>
+            No challenges have been completed yet.&nbsp;
+            <Link to={ `/${homeURL}` }>
+              Get started here.
+            </Link>
+          </p> :
+          <Table condensed={true} striped={true}>
+            <thead>
+              <tr>
+                <th>Challenge</th>
+                <th>First Completed</th>
+                <th>Last Changed</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                _.reverse(
+                  _.sortBy(
+                    Object.keys(completedMap).map(key => completedMap[key]),
+                  [ 'completedDate' ]
                   )
-                  .map(renderCompletionWithIdNameMap)
-                }
-              </tbody>
-            </Table>
-          </Col>
-      </Row>
+                )
+                .map(renderCompletionWithIdNameMap)
+              }
+            </tbody>
+          </Table>
+        }
+      </FullWidthRow>
   );
 }
 

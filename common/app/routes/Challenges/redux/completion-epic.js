@@ -83,7 +83,6 @@ function submitProject(type, state, { solution, githubLink }) {
   if (challengeInfo.challengeType === backEndProject) {
     challengeInfo.githubLink = githubLink;
   }
-  console.info(challengeInfo);
   return postChallenge(
     '/project-completed',
     username,

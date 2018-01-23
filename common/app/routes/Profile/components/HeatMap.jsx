@@ -86,11 +86,11 @@ class HeatMap extends Component {
       }
     });
     calLegendTitles.forEach(function(title, i) {
-        document
-          .querySelector(rectSelector + (i + 1).toString() + '> title')
+      document
+      .querySelector(rectSelector + (i + 1).toString() + '> title')
           .innerHTML = title;
-      });
-      return null;
+        });
+    return null;
   }
 
   render() {
@@ -103,7 +103,11 @@ class HeatMap extends Component {
           <div id='cal-heatmap' />
         </FullWidthRow>
         {
-          typeof window !== 'undefined' && 'd3' in window ?
+          (
+            typeof window !== 'undefined' &&
+            'd3' in window &&
+            document.getElementById('cal-heatmap')
+          ) ?
             this.renderMap() :
             null
         }

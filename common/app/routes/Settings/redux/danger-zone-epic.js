@@ -8,9 +8,6 @@ import {
   deleteAccountError,
   deleteAccountComplete
 } from './';
-import { onRouteCurrentChallenge } from '../../Challenges/redux';
-import { fetchMessages } from '../../../Flash/redux';
-import { clickOnLogo } from '../../../Nav/redux';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import {
   doActionOnError,
@@ -20,7 +17,7 @@ import {
 
 function dangerZoneEpic(actions$, { getState }) {
   /** Reset Progress **/
-  const resetStart = actions$.do(console.info)::ofType(types.resetProgress.start)
+  const resetStart = actions$::ofType(types.resetProgress.start)
     .flatMap(() => {
       const { csrfToken: _csrf } = getState().app;
       return postJSON$('/account/reset-progress', { _csrf })
@@ -29,13 +26,9 @@ function dangerZoneEpic(actions$, { getState }) {
     });
 
     const resetComplete = actions$::ofType(types.resetProgress.complete)
-      .flatMap(() => {
+      .map(() => {
         const { lang } = getState().app;
-        return Observable.of(
-          // take user back to challenges
-          hardGoTo(`/${lang}`),
-          // get flash about reseting progress
-        );
+        return hardGoTo(`/${lang}`);
       })
       .catch(createErrorObservable);
 

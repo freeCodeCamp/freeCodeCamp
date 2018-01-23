@@ -186,10 +186,14 @@ class ProjectSettings extends PureComponent {
   handleSubmit(values) {
     const { id } = values;
     const fullForm = _.values(values)
-    // 5 projects + 1 id prop
-    .filter(Boolean).length === 6;
+      .filter(Boolean)
+      .filter(_.isString)
+      // 5 projects + 1 id prop
+      .length === 6;
     const valuesSaved = _.values(this.props.userProjects[id])
-    .filter(Boolean).length === 6;
+      .filter(Boolean)
+      .filter(_.isString)
+      .length === 6;
     if (fullForm && valuesSaved) {
       return this.props.claimCert(id);
     }
@@ -246,47 +250,56 @@ class ProjectSettings extends PureComponent {
               options.types[current] = 'url';
               return options;
             }, { types: {} });
+
           options.types.id = 'hidden';
           options.placeholder = false;
+
           const userValues = userProjects[superBlock] || {};
+
           if (!userValues.id) {
             userValues.id = superBlock;
           }
+
           const initialValues = challenges
             .reduce((accu, current) => ({
               ...accu,
               [current]: ''
             }), {});
-          const fullForm = _.values(userValues)
-          // minus 1 to account for the id prop
-            .filter(Boolean).length - 1 === challenges.length;
+
+          const completedProjects = _.values(userValues)
+            .filter(Boolean)
+            .filter(_.isString)
+            // minus 1 to account for the id
+            .length - 1;
+
+          const fullForm = completedProjects === challenges.length;
 
           return (
             <FullWidthRow key={superBlock}>
-                <h3 className='project-heading'>{ projectBlockName }</h3>
-                <Form
-                  buttonText={ fullForm ? 'Claim' : 'Save Progress' }
-                  formFields={ challenges.concat([ 'id' ]) }
-                  hideButton={isCertClaimed}
-                  id={ superBlock }
-                  initialValues={{
-                    ...initialValues,
-                    ...userValues
-                  }}
-                  options={ options }
-                  submit={ this.handleSubmit }
-                />
-                {
-                  isCertClaimed ?
-                  <Button
-                    block={ true }
-                    bsSize='lg'
-                    bsStyle='primary'
-                    >
-                    Show Certificate
-                  </Button> :
-                  null
-                }
+              <h3 className='project-heading'>{ projectBlockName }</h3>
+              <Form
+                buttonText={ fullForm ? 'Claim' : 'Save Progress' }
+                formFields={ challenges.concat([ 'id' ]) }
+                hideButton={isCertClaimed}
+                id={ superBlock }
+                initialValues={{
+                  ...initialValues,
+                  ...userValues
+                }}
+                options={ options }
+                submit={ this.handleSubmit }
+              />
+              {
+                isCertClaimed ?
+                <Button
+                  block={ true }
+                  bsSize='lg'
+                  bsStyle='primary'
+                  >
+                  Show Certificate
+                </Button> :
+                null
+              }
             </FullWidthRow>
           );
         })

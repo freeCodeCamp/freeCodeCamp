@@ -1,8 +1,11 @@
-import { defaultProfileImage } from '../../common/utils/constantStrings.json';
 import supportedLanguages from '../../common/utils/supported-languages';
 
 const message =
   'Learn to Code and Help Nonprofits';
+
+function placeholderImage(name) {
+  return `https://identicon.org?t=${name}&s=256`;
+}
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -20,10 +23,11 @@ module.exports = function(app) {
   app.use(router);
 
   function addDefaultImage(req, res, next) {
-    if (!req.user || req.user.picture) {
+    const { user } = req;
+    if (!user || user.picture) {
       return next();
     }
-    return req.user.update$({ picture: defaultProfileImage })
+    return user.update$({ picture: placeholderImage(user.username) })
       .subscribe(
         () => next(),
         next

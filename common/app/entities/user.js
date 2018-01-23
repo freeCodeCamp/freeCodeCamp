@@ -11,7 +11,6 @@ import { types as challenges } from '../routes/Challenges/redux';
 
 export const types = createTypes([
   'editUserFlag',
-  'toggleUserFlag',
   createAsyncTypes('claimCert'),
   createAsyncTypes('updateUserBackend'),
   'updateUserCurrentChallenge',
@@ -21,10 +20,6 @@ export const types = createTypes([
 export const editUserFlag = createAction(
   types.editUserFlag,
   (username, flag, value) => ({ flag, username, value })
-);
-export const toggleUserFlag = createAction(
-  types.toggleUserFlag,
-  (username, flag) => ({ username, flag })
 );
 
 export const addPortfolioItem = createAction(types.addPortfolioItem);
@@ -85,16 +80,6 @@ export function userReducer(initialState) {
           }
         }
       }),
-      [types.toggleUserFlag]: (state, { payload: { username, flag } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            [flag]: !state.user[username][flag]
-          }
-        }
-      }),
       [types.editUserFlag]: (
         state,
         { payload: { username, flag, value } }
@@ -121,12 +106,8 @@ export function userReducer(initialState) {
           }
         }
       }),
-      [types.updateUserCurrentChallenge]:
-      (
-        state,
-        {
-          payload: { username, currentChallengeId }
-        }
+      [types.updateUserCurrentChallenge]: (
+        state, { payload: { username, currentChallengeId } }
       ) => ({
         ...state,
         user: {

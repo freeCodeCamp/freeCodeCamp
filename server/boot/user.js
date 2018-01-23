@@ -506,7 +506,7 @@ module.exports = function(app) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
       req.logout();
-      req.flash('info', 'You\'ve successfully deleted your account.');
+      req.flash('success', 'You have successfully deleted your account.');
       return res.status(200).end();
     });
   }
@@ -534,7 +534,7 @@ module.exports = function(app) {
         projects: {}
       }, function(err) {
         if (err) { return next(err); }
-        req.flash('info', 'You\'ve successfully reset your progress.');
+        req.flash('success', 'You have successfully reset your progress.');
         return res.status(200).end();
       });
     });
