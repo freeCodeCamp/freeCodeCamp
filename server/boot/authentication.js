@@ -3,13 +3,13 @@ import { Observable } from 'rx';
 import dedent from 'dedent';
 // import debugFactory from 'debug';
 import { isEmail } from 'validator';
-import { check, validationResult } from 'express-validator/check';
+import { check } from 'express-validator/check';
 
-import { ifUserRedirectTo } from '../utils/middleware';
 import {
-  wrapHandledError,
-  createValidatorErrorFormatter
-} from '../utils/create-handled-error.js';
+  ifUserRedirectTo,
+  createValidatorErrorHandler
+} from '../utils/middleware';
+import { wrapHandledError } from '../utils/create-handled-error.js';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 // const debug = debugFactory('fcc:boot:auth');
@@ -82,13 +82,6 @@ module.exports = function enableAuthentication(app) {
         token: authTokenId
       } = {}
     } = req;
-    const validation = validationResult(req)
-      .formatWith(createValidatorErrorFormatter('errors', '/email-signup'));
-
-    if (!validation.isEmpty()) {
-      const errors = validation.array();
-      return next(errors.pop());
-    }
 
     const email = User.decodeEmail(encodedEmail);
     if (!isEmail(email)) {
@@ -188,6 +181,7 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessGetValidators,
+    createValidatorErrorHandler('errors', '/email-signup'),
     getPasswordlessAuth
   );
 
@@ -198,12 +192,6 @@ module.exports = function enableAuthentication(app) {
   ];
   function postPasswordlessAuth(req, res, next) {
     const { body: { email } = {} } = req;
-    const validation = validationResult(req)
-      .formatWith(createValidatorErrorFormatter('errors', '/email-signup'));
-    if (!validation.isEmpty()) {
-      const errors = validation.array();
-      return next(errors.pop());
-    }
 
     return User.findOne$({ where: { email } })
       .flatMap(_user => Observable.if(
@@ -222,6 +210,7 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessPostValidators,
+    createValidatorErrorHandler('errors', '/email-signup'),
     postPasswordlessAuth
   );
 

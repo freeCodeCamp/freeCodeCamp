@@ -1,6 +1,9 @@
-import { isMongoId } from 'validator';
+import { check } from 'express-validator/check';
 
-import { ifNoUser401 } from '../utils/middleware';
+import {
+  ifNoUser401,
+  createValidatorErrorHandler
+} from '../utils/middleware';
 import supportedLanguages from '../../common/utils/supported-languages.js';
 
 export default function settingsController(app) {
@@ -51,11 +54,14 @@ export default function settingsController(app) {
       );
   }
 
+  const updateMyCurrentChallengeValidators = [
+    check('currentChallengeId')
+      .isMongoId()
+      .withMessage('currentChallengeId is not a valid challenge ID')
+  ];
+
   function updateMyCurrentChallenge(req, res, next) {
     const { user, body: { currentChallengeId } } = req;
-    if (!isMongoId('' + currentChallengeId)) {
-      return next(new Error(`${currentChallengeId} is not a valid ObjectId`));
-    }
     return user.update$({ currentChallengeId }).subscribe(
       () => res.json({
         message:
@@ -64,6 +70,14 @@ export default function settingsController(app) {
       next
     );
   }
+
+  api.post(
+    '/update-my-current-challenge',
+    ifNoUser401,
+    updateMyCurrentChallengeValidators,
+    createValidatorErrorHandler('errors'),
+    updateMyCurrentChallenge
+  );
 
   function updateMyTheme(req, res, next) {
     req.checkBody('theme', 'Theme is invalid.').isLength({ min: 4 });
@@ -117,13 +131,6 @@ export default function settingsController(app) {
     ifNoUser401,
     updateMyLang
   );
-
-  api.post(
-    '/update-my-current-challenge',
-    ifNoUser401,
-    updateMyCurrentChallenge
-  );
-
   api.post(
     '/update-my-theme',
     ifNoUser401,
