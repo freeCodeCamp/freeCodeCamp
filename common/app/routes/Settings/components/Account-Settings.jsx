@@ -21,6 +21,7 @@ import {
 import LockedSettings from './Locked-Settings.jsx';
 import ThemeSettings from './ThemeSettings.jsx';
 import Camper from '../../Profile/components/Camper.jsx';
+import UsernameSettings from './UsernameSettings.jsx';
 import { userSelector } from '../../../redux';
 import {
   updateUserBackend
@@ -208,6 +209,9 @@ class AccountSettings extends PureComponent {
           <BlockSaveButton />
         </form>
         </FullWidthRow>
+
+        <UsernameSettings username={ username }/>
+
         <FullWidthRow>
           <LockedSettings
             isLocked={ isLocked }

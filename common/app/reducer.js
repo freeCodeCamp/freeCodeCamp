@@ -9,6 +9,7 @@ import routes from './routes/redux';
 import toasts from './Toasts/redux';
 import files from './files';
 import flash from './Flash/redux';
+import settings from './routes/Settings/redux';
 // not ideal but should go away once we move to react-redux-form
 import { projectNormalizer } from './routes/Challenges/redux';
 
@@ -21,6 +22,7 @@ export default combineReducers(
   map,
   nav,
   routes,
+  settings,
   toasts,
   files,
   flash,

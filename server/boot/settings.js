@@ -10,15 +10,13 @@ import { alertTypes } from '../../common/utils/flash.js';
 
 export default function settingsController(app) {
   const api = app.loopback.Router();
-  const toggleUserFlag = flag => (req, res, next) => {
+  const toggleUserFlag = (flag, req, res, next) => {
     const { user } = req;
     const currentValue = user[ flag ];
     return user
       .update$({ [ flag ]: !currentValue })
       .subscribe(
         () => res.status(200).json({
-          flag,
-          value: !currentValue,
           message: 'Your preferences have been updated'
         }),
         next
@@ -40,21 +38,16 @@ export default function settingsController(app) {
       );
   }
 
-  function updateFlag(req, res, next) {
-    const { user, body: { flag, newValue } } = req;
-    if ( typeof newValue === 'boolean') {
-      return toggleUserFlag(flag)(req, res, next);
-    }
-    return user.requestUpdateFlag(flag, newValue)
-      .subscribe(
-        message => res.json({ message }),
-        next
-      );
-  }
-
   function updateMultipleFlags(req, res, next) {
     const { user, body: { values } } = req;
-    return user.requestUpdateMultipleFlags(values)
+    const keys = Object.keys(values);
+    if (
+      keys.length === 1 &&
+      typeof keys[0] === 'boolean'
+    ) {
+      return toggleUserFlag(keys[0], req, res, next);
+    }
+    return user.requestUpdateFlags(values)
       .subscribe(
         message => res.json({ message }),
         next
@@ -158,6 +151,15 @@ export default function settingsController(app) {
         next
       );
   }
+
+  function updateMyUsername(req, res, next) {
+    const { user, body: { username } } = req;
+    return user.updateMyUsername(username)
+    .subscribe(
+      message => res.json({ message }),
+      next
+    );
+  }
   api.post(
     '/update-my-theme',
     ifNoUser401,
@@ -199,12 +201,7 @@ export default function settingsController(app) {
     updateMyEmail
   );
   api.post(
-    '/update-flag',
-    ifNoUser401,
-    updateFlag
-  );
-  api.post(
-    '/update-multiple-flags',
+    '/update-flags',
     ifNoUser401,
     updateMultipleFlags
   );
@@ -230,6 +227,12 @@ export default function settingsController(app) {
     '/update-my-projects',
     ifNoUser401,
     updateMyProjects
+  );
+
+  api.post(
+    '/update-my-username',
+    ifNoUser401,
+    updateMyUsername
   );
 
   app.use(api);

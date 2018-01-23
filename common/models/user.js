@@ -760,6 +760,38 @@ module.exports = function(User) {
 
   User.prototype.updateMyProjects = updateMyProjects;
 
+  User.prototype.updateMyUsername = function updateMyUsername(newUsername) {
+    return Observable.defer(
+      () => {
+        const isOwnUsername = isTheSame(newUsername, this.username);
+        if (isOwnUsername) {
+          return Observable.of(dedent`
+          ${newUsername} is already associated with this account
+          `);
+        }
+        return Observable.fromPromise(User.doesExist(newUsername));
+      }
+    )
+    .flatMap(boolOrMessage => {
+      if (typeof boolOrMessage === 'string') {
+        return Observable.of(boolOrMessage);
+      }
+      if (boolOrMessage) {
+        return Observable.of(dedent`
+        ${newUsername} is associated with a different account
+        `);
+      }
+
+      return this.update$({ username: newUsername })
+        .do(() => {
+          this.username = newUsername;
+        })
+        .map(() => dedent`
+        Username updated successfully
+        `);
+    });
+  };
+
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
       const findUser = observeMethod(User, 'findOne');

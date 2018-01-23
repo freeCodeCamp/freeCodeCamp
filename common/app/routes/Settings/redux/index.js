@@ -1,4 +1,5 @@
 import {
+  combineActions,
   createAction,
   createAsyncTypes,
   createTypes,
@@ -10,9 +11,11 @@ import ns from '../ns.json';
 import { utils } from '../../../Flash/redux';
 import updateUserEpic from './update-user-epic';
 import dangerZoneEpic from './danger-zone-epic';
+import newUsernameEpic from './new-username-epic.js';
 
 export const epics = [
   dangerZoneEpic,
+  newUsernameEpic,
   updateUserEpic
 ];
 
@@ -21,11 +24,24 @@ export const types = createTypes([
   createAsyncTypes('updateMyEmail'),
   'updateFlag',
   'updateMyLang',
+  'updateNewUsernameValidity',
+  createAsyncTypes('validateUsername'),
+
   createAsyncTypes('deleteAccount'),
   createAsyncTypes('resetProgress'),
+
   'onRouteSettings',
   'onRouteUpdateEmail'
 ], 'settings');
+
+export const updateNewUsernameValidity = createAction(
+  types.updateNewUsernameValidity
+);
+export const validateUsername = createAction(types.validateUsername.start);
+export const validateUsernameError = createAction(
+  types.validateUsername.error,
+  _.identity
+);
 
 export const onRouteSettings = createAction(types.onRouteSettings);
 export const onRouteUpdateEmail = createAction(types.onRouteUpdateEmail);
@@ -59,11 +75,28 @@ export const deleteAccountError = createAction(
   _.identity
 );
 
-const defaultState = {};
+const initialState = {
+  isValidUsername: false,
+  validating: false
+};
 
 const getNS = state => state[ns];
 export const settingsSelector = state => getNS(state);
 
-export default handleActions(() => ({}), defaultState,
+export default handleActions(() => (
+  {
+    [types.updateNewUsernameValidity]: (state, { payload }) => ({
+      ...state,
+      isValidUsername: payload,
+      validating: false
+    }),
+    [types.validateUsername.start]: state => ({
+      ...state,
+      isValidUsername: false,
+      validating: true
+    }),
+    [types.validateUsername.error]: state => ({ ...state, validating: false })
+  }
+  ), initialState,
   ns
 );

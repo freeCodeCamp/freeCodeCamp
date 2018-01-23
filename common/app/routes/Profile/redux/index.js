@@ -8,13 +8,11 @@ import {
 import ns from '../ns.json';
 
 export const types = createTypes([
-  'toggleUserFlag',
   'onRouteProfile'
 ], 'profile');
 
 
 export const onRouteProfile = createAction(types.onRouteProfile);
-export const toggleUserFlag = createAction(types.toggleUserFlag);
 
 const defaultState = {};
 

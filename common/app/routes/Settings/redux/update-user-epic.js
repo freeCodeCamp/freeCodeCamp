@@ -12,7 +12,8 @@ import {
   fetchChallenges,
   fetchUser,
   doActionOnError,
-  userSelector
+  userSelector,
+  createErrorObservable
 } from '../../../redux';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 
@@ -21,7 +22,8 @@ const endpoints = {
   languageTag: '/update-my-lang',
   portfolio: '/update-my-portfolio',
   projects: '/update-my-projects',
-  theme: '/update-my-theme'
+  theme: '/update-my-theme',
+  username: '/update-my-username'
 };
 
 function backendUserUpdateEpic(actions$, { getState }) {
@@ -45,7 +47,7 @@ function backendUserUpdateEpic(actions$, { getState }) {
         app: { csrfToken: _csrf }
       } = getState();
       let body = { _csrf };
-      let endpoint = '/update-multiple-flags';
+      let endpoint = '/update-flags';
       const updateKeys = Object.keys(valuesToUpdate);
       if (updateKeys.length === 1 && updateKeys[0] in endpoints) {
         // there is a specific route for this update
@@ -55,25 +57,14 @@ function backendUserUpdateEpic(actions$, { getState }) {
           ...body,
           [flag]: valuesToUpdate[flag]
         };
-      } else if (updateKeys.length === 1) {
-        // no specific route, and only one flag to update
-        const flag = updateKeys[0];
-        endpoint = '/update-flag';
-        body = {
-          ...body,
-          flag,
-          newValue: valuesToUpdate[flag]
-        };
       } else {
-        // multiple flags to update
         body = {
           ...body,
           values: valuesToUpdate
         };
       }
-      console.info(endpoint, body);
       return postJSON$(endpoint, body)
-        .map((result) => updateUserBackendComplete(result))
+        .map(updateUserBackendComplete)
         .catch(doActionOnError(error => updateUserBackendError(error)));
     });
 
@@ -90,13 +81,7 @@ function backendUserUpdateEpic(actions$, { getState }) {
       });
 
     const error = actions$::ofType(types.updateUserBackend.error)
-      .map(error => {
-        console.log(error);
-        return Observable.of({
-          type: 'error',
-          error: { message: 'Something went wrong updating your account' }
-        });
-      });
+      .map(createErrorObservable);
 
   return Observable.merge(start, complete, error).filter(Boolean);
 }
