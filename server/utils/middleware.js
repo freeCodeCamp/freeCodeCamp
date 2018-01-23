@@ -1,4 +1,7 @@
 import dedent from 'dedent';
+import { validationResult } from 'express-validator/check';
+
+import { createValidatorErrorFormatter } from './create-handled-error.js';
 
 export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {
@@ -56,3 +59,16 @@ export function ifUserRedirectTo(path = '/', status) {
     return next();
   };
 }
+
+// for use with express-validator error formatter
+export const createValidatorErrorHandler = (...args) => (req, res, next) => {
+  const validation = validationResult(req)
+    .formatWith(createValidatorErrorFormatter(...args));
+
+  if (!validation.isEmpty()) {
+    const errors = validation.array();
+    return next(errors.pop());
+  }
+
+  return next();
+};

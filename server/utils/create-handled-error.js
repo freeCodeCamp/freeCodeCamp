@@ -18,6 +18,7 @@ export function wrapHandledError(err, {
   return err;
 }
 
+// for use with express-validator error formatter
 export const createValidatorErrorFormatter = (type, redirectTo, status) =>
   ({ msg }) => wrapHandledError(
     new Error(msg),
