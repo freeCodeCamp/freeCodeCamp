@@ -5,10 +5,10 @@ export default function(AuthToken) {
     AuthToken.findOne$ = Observable.fromNodeCallback(
       AuthToken.findOne.bind(AuthToken)
     );
-    AuthToken.prototype.validate = Observable.fromNodeCallback(
+    AuthToken.prototype.validate$ = Observable.fromNodeCallback(
       AuthToken.prototype.validate
     );
-    AuthToken.prototype.destroy = Observable.fromNodeCallback(
+    AuthToken.prototype.destroy$ = Observable.fromNodeCallback(
       AuthToken.prototype.destroy
     );
   });
