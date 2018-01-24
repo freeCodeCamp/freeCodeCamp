@@ -71,6 +71,8 @@ export default function settingsController(app) {
     return user.update$(update)
       .subscribe(
         () => res.json({
+          flag: 'lang',
+          lang,
           message: `Your language has been updated to '${langName}'`
         }),
         next

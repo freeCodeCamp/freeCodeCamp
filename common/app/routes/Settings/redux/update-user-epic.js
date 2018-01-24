@@ -16,10 +16,11 @@ import {
   createErrorObservable
 } from '../../../redux';
 import { postJSON$ } from '../../../../utils/ajax-stream';
+import { onRouteSettings } from './';
 
 const endpoints = {
   email: '/update-my-email',
-  languageTag: '/update-my-lang',
+  lang: '/update-my-lang',
   portfolio: '/update-my-portfolio',
   projects: '/update-my-projects',
   theme: '/update-my-theme',
@@ -69,12 +70,13 @@ function backendUserUpdateEpic(actions$, { getState }) {
     });
 
     const complete = actions$::ofType(types.updateUserBackend.complete)
-      .flatMap(({ meta: { message, flag } }) => {
-        if (flag === 'languageTag') {
+      .flatMap(({ meta: { message, flag, lang } }) => {
+        if (flag === 'lang' && lang) {
           return Observable.of(
-            fetchChallenges(),
+            makeToast({ message }),
+            onRouteSettings({ lang }),
             fetchUser(),
-            makeToast({ message })
+            fetchChallenges()
           );
         }
         return Observable.of(fetchUser(), makeToast({ message }));
