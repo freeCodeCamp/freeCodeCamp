@@ -50,20 +50,19 @@ const mapDispatchToProps = {
   validateUsername,
   submitAction: updateUserBackend
 };
+function normalise(str = '') {
+  return str.toLowerCase().trim();
+}
 
 function makeHandleChange(changeFn, validationAction, valid) {
   return function handleChange(e) {
     const { value } = e.target;
-    e.target.value = value.trim();
+    e.target.value = normalise(value);
     if (e.target.value && valid) {
       validationAction(value);
     }
     return changeFn(e);
   };
-}
-
-function makeHandleSubmit(submitFn, submitAction, valid, isValidUsername) {
-
 }
 
 function validator(values) {
