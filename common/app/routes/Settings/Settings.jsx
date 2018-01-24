@@ -72,9 +72,10 @@ class Settings extends React.Component {
           <div className={`container ${ns}-container`}>
             <Row>
               <Col xs={ 8 } xsOffset={ 2 }>
-                <Link to={ `/${username}` }>
+                <Link to={ `/u/${username}` }>
                   <Button
                     block={ true }
+                    bsSize='lg'
                     bsStyle='primary'
                     >
                     View my Public Profile

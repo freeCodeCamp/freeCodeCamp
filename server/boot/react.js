@@ -21,12 +21,9 @@ const routes = [
   '/challenges',
   '/challenges/*',
   '/map',
-  '/:username'
-];
-
-const userRequiredRoutes = [
   '/settings',
-  '/settings/*'
+  '/settings/*',
+  '/u/:username'
 ];
 
 const devRoutes = [];
@@ -44,9 +41,6 @@ export default function reactSubRouter(app) {
   // These routes are in production
   routes.forEach((route) => {
     router.get(route, serveReactApp);
-  });
-  userRequiredRoutes.forEach(route => {
-    router.get(route, ifNoUserSend('/'), serveReactApp);
   });
   if (process.env.NODE_ENV === 'development') {
     devRoutes.forEach(function(route) {
