@@ -1,8 +1,6 @@
 import dedent from 'dedent';
 import moment from 'moment-timezone';
-import { Observable } from 'rx';
 import debugFactory from 'debug';
-import emoji from 'node-emoji';
 
 import {
   frontEndChallengeId,
@@ -23,14 +21,6 @@ import {
   ifNotVerifiedRedirectToSettings
 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
-import {
-  prepUniqueDaysByHours,
-  calcCurrentStreak,
-  calcLongestStreak
-} from '../utils/user-stats';
-import supportedLanguages from '../../common/utils/supported-languages';
-import { encodeFcc } from '../../common/utils/encode-decode.js';
-import { getChallengeInfo, cachedMap } from '../utils/map';
 
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
@@ -75,84 +65,10 @@ const certText = {
   [certTypes.infosecQa]: 'Information Security and Quality Assurance Certified'
 };
 
-const dateFormat = 'MMM DD, YYYY';
-
-function isAlgorithm(challenge) {
-  // test if name starts with hike/waypoint/basejump/zipline
-  // fix for bug that saved different challenges with incorrect
-  // challenge types
-  return !(/^(waypoint|hike|zipline|basejump)/i).test(challenge.name) &&
-    +challenge.challengeType === 5;
-}
-
-function isProject(challenge) {
-  return +challenge.challengeType === 3 ||
-    +challenge.challengeType === 4;
-}
-
-function getChallengeGroup(challenge) {
-  if (isProject(challenge)) {
-    return 'projects';
-  } else if (isAlgorithm(challenge)) {
-    return 'algorithms';
-  }
-  return 'challenges';
-}
-
-// buildDisplayChallenges(
-//   entities: { challenge: Object, challengeIdToName: Object },
-//   challengeMap: Object,
-//   tz: String
-// ) => Observable[{
-//   algorithms: Array,
-//   projects: Array,
-//   challenges: Array
-// }]
-function buildDisplayChallenges(
-  { challengeMap, challengeIdToName },
-  userChallengeMap = {},
-  timezone
-) {
-  return Observable.from(Object.keys(userChallengeMap))
-    .map(challengeId => userChallengeMap[challengeId])
-    .map(userChallenge => {
-      const challengeId = userChallenge.id;
-      const challenge = challengeMap[ challengeIdToName[challengeId] ];
-      let finalChallenge = { ...userChallenge, ...challenge };
-      if (userChallenge.completedDate) {
-        finalChallenge.completedDate = moment
-          .tz(userChallenge.completedDate, timezone)
-          .format(dateFormat);
-      }
-
-      if (userChallenge.lastUpdated) {
-        finalChallenge.lastUpdated = moment
-          .tz(userChallenge.lastUpdated, timezone)
-          .format(dateFormat);
-      }
-
-      return finalChallenge;
-    })
-    .filter(({ challengeType }) => challengeType !== 6)
-    .groupBy(getChallengeGroup)
-    .flatMap(group$ => {
-      return group$.toArray().map(challenges => ({
-        [getChallengeGroup(challenges[0])]: challenges
-      }));
-    })
-    .reduce((output, group) => ({ ...output, ...group}), {})
-    .map(groups => ({
-      algorithms: groups.algorithms || [],
-      projects: groups.projects ? groups.projects.reverse() : [],
-      challenges: groups.challenges ? groups.challenges.reverse() : []
-    }));
-}
-
 module.exports = function(app) {
   const router = app.loopback.Router();
   const api = app.loopback.Router();
   const { Email, User } = app.models;
-  const map$ = cachedMap(app.models);
 
   function findUserByUsername$(username, fields) {
     return observeQuery(
@@ -268,102 +184,6 @@ module.exports = function(app) {
           }, next);
       });
     });
-  }
-
-  function showUserProfile(req, res, next) {
-    const username = req.params.username.toLowerCase();
-    const { user } = req;
-
-    // timezone of signed-in account
-    // to show all date related components
-    // using signed-in account's timezone
-    // not of the profile she is viewing
-    const timezone = user && user.timezone ?
-      user.timezone :
-      'EST';
-
-    const query = {
-      where: { username },
-      include: 'pledge'
-    };
-
-    return User.findOne$(query)
-      .filter(userPortfolio => {
-        if (!userPortfolio) {
-          next();
-        }
-        return !!userPortfolio;
-      })
-      .flatMap(userPortfolio => {
-        userPortfolio = userPortfolio.toJSON();
-
-        const timestamps = userPortfolio
-          .progressTimestamps
-          .map(objOrNum => {
-            return typeof objOrNum === 'number' ?
-              objOrNum :
-              objOrNum.timestamp;
-          });
-
-        const uniqueHours = prepUniqueDaysByHours(timestamps, timezone);
-
-        userPortfolio.currentStreak = calcCurrentStreak(uniqueHours, timezone);
-        userPortfolio.longestStreak = calcLongestStreak(uniqueHours, timezone);
-
-        const calender = userPortfolio
-          .progressTimestamps
-          .map((objOrNum) => {
-            return typeof objOrNum === 'number' ?
-              objOrNum :
-              objOrNum.timestamp;
-          })
-          .filter((timestamp) => {
-            return !!timestamp;
-          })
-          .reduce((data, timeStamp) => {
-            data[(timeStamp / 1000)] = 1;
-            return data;
-          }, {});
-
-        if (userPortfolio.isCheater && !user) {
-          req.flash(
-            'danger',
-            dedent`
-              Upon review, this account has been flagged for academic
-              dishonesty. If you’re the owner of this account contact
-              team@freecodecamp.org for details.
-            `
-          );
-        }
-
-        if (userPortfolio.bio) {
-          userPortfolio.bio = emoji.emojify(userPortfolio.bio);
-        }
-
-        return getChallengeInfo(map$)
-          .flatMap(challengeInfo => buildDisplayChallenges(
-            challengeInfo,
-            userPortfolio.challengeMap,
-            timezone
-          ))
-          .map(displayChallenges => ({
-            ...userPortfolio,
-            ...displayChallenges,
-            title: 'Camper ' + userPortfolio.username + '\'s Code Portfolio',
-            calender,
-            github: userPortfolio.githubURL,
-            moment,
-            encodeFcc,
-            supportedLanguages
-          }));
-      })
-      .doOnNext(data => {
-        return res.render('account/show', data);
-      })
-      .subscribe(
-        () => {},
-        next
-      );
   }
 
   function showCert(req, res, next) {

@@ -7,8 +7,7 @@ import debug from 'debug';
 import { isEmail } from 'validator';
 
 import {
-  ifNoUser401,
-  ifNoUserSend
+  ifNoUser401
 } from '../utils/middleware';
 
 import { observeQuery } from '../utils/rx';

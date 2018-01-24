@@ -1,5 +1,4 @@
 import {
-  combineActions,
   createAction,
   createAsyncTypes,
   createTypes,

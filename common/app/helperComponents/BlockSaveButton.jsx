@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 
 function BlockSaveButton(props) {
@@ -16,5 +17,8 @@ function BlockSaveButton(props) {
 }
 
 BlockSaveButton.displayName = 'BlockSaveButton';
+BlockSaveButton.propTypes = {
+  children: PropTypes.any
+};
 
 export default BlockSaveButton;

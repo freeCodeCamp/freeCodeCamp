@@ -10,7 +10,6 @@ import {
 import { createApp, provideStore, App } from '../../common/app';
 import waitForEpics from '../../common/utils/wait-for-epics.js';
 import { titleSelector } from '../../common/app/redux';
-import { ifNoUserSend } from '../utils/middleware';
 
 const log = debug('fcc:react-server');
 const isDev = process.env.NODE_ENV !== 'production';

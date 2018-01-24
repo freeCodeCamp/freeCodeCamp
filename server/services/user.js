@@ -1,4 +1,3 @@
-import debug from 'debug';
 import { Observable } from 'rx';
 import _ from 'lodash';
 
@@ -54,8 +53,6 @@ const publicUserProps = [
   'streak'
 ];
 
-const log = debug('fcc:services:user');
-
 function getProgress(progressTimestamps, timezone = 'EST') {
   const calendar = progressTimestamps
   .map((objOrNum) => {
@@ -89,17 +86,18 @@ export default function userServices() {
     name: 'user',
     read: (req, resource, params, config, cb) => {
       const { user } = req;
-      if (user) {
-        log('user is signed in');
-        // mergeMap in v5
-        return Observable.forkJoin(
-          user.getChallengeMap$(),
-          user.getPoints$(),
-          (challengeMap, progressTimestamps) => ({
-            challengeMap,
-            progress: getProgress(progressTimestamps, user.timezone)
-          })
-          )
+      const source = Observable.forkJoin(
+        user.getChallengeMap$(),
+        user.getPoints$(),
+        (challengeMap, progressTimestamps) => ({
+          challengeMap,
+          progress: getProgress(progressTimestamps, user.timezone)
+        })
+      );
+      Observable.if(
+        () => !user,
+        Observable.of({}),
+        Observable.defer(() => source)
           .map(({ challengeMap, progress }) => ({
             ...user.toJSON(),
             ...progress,
@@ -122,11 +120,11 @@ export default function userServices() {
               result: user.username
             })
           )
-          .subscribe(
-            user => cb(null, user),
-            cb
-          );
-      }
+        )
+        .subscribe(
+          user => cb(null, user),
+          cb
+        );
     }
   };
 }

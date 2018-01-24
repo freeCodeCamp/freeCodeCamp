@@ -14,13 +14,9 @@ import { isEmail } from 'validator';
 import { Link } from '../../../../Router';
 import { getValidationState, DOMOnlyProps } from '../../../../utils/form';
 import {
-  onRouteSettings,
-  updateMyEmail
+  onRouteSettings
 } from '../../redux';
 
-const actions = {
-  updateMyEmail
-};
 const fields = [
   'email',
   'duplicate'
@@ -160,6 +156,5 @@ export default reduxForm(
     fields,
     validate: validateFields
   },
-  mapStateToProps,
-  actions
+  mapStateToProps
 )(UpdateEmail);

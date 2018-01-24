@@ -5,8 +5,7 @@ import { reduxForm } from 'redux-form';
 import {
   Col,
   ControlLabel,
-  FormControl,
-  FormGroup
+  FormControl
 } from 'react-bootstrap';
 
 import { BlockSaveButton, FullWidthRow } from '../../../helperComponents';

@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   Button,
-  Col,
-  Grid,
-  Row
+  Grid
 } from 'react-bootstrap';
 
 import {
