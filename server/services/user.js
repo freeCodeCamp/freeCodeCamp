@@ -26,6 +26,7 @@ const publicUserProps = [
 
   'projects',
   'isLocked',
+  'isHonest',
   'isAvailableForHire',
   'isFrontEndCert',
   'isBackEndCert',
@@ -111,8 +112,9 @@ export default function userServices() {
                   [user.username]: {
                     ..._.pick(user, publicUserProps),
                     isEmailVerified: !!user.emailVerified,
-                    isTwitter: !!user.twitter,
+                    isGithub: !!user.githubURL,
                     isLinkedIn: !!user.linkedIn,
+                    isTwitter: !!user.twitter,
                     isWebsite: !!user.website
                   }
                 }

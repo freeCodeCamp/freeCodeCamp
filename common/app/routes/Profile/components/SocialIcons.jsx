@@ -10,13 +10,26 @@ import FontAwesome from 'react-fontawesome';
 
 import { userSelector } from '../../../redux';
 
+const propTypes = {
+  email: PropTypes.string,
+  githubURL: PropTypes.string,
+  isGithub: PropTypes.bool,
+  isLinkedIn: PropTypes.bool,
+  isPublicEmail: PropTypes.bool,
+  isTwitter: PropTypes.bool,
+  isWebsite: PropTypes.bool,
+  linkedIn: PropTypes.string,
+  twitter: PropTypes.string,
+  website: PropTypes.string
+};
+
 const mapStateToProps = createSelector(
   userSelector,
   ({
     email,
     githubURL,
     isLinkedIn,
-    isGithubCool,
+    isGithub,
     isPublicEmail,
     isTwitter,
     isWebsite,
@@ -27,7 +40,7 @@ const mapStateToProps = createSelector(
     email,
     githubURL,
     isLinkedIn,
-    isGithubCool,
+    isGithub,
     isPublicEmail,
     isTwitter,
     isWebsite,
@@ -107,7 +120,7 @@ function SocialIcons(props) {
     email,
     githubURL,
     isLinkedIn,
-    isGithubCool,
+    isGithub,
     isPublicEmail,
     isTwitter,
     isWebsite,
@@ -129,7 +142,7 @@ function SocialIcons(props) {
           isLinkedIn ? LinkedInIcon(linkedIn) : null
         }
         {
-          isGithubCool ? githubIcon(githubURL) : null
+          isGithub ? githubIcon(githubURL) : null
         }
         {
           isWebsite ? WebsiteIcon(website) : null
@@ -143,5 +156,6 @@ function SocialIcons(props) {
 }
 
 SocialIcons.displayName = 'SocialIcons';
+SocialIcons.propTypes = propTypes;
 
 export default connect(mapStateToProps, mapDispatchToProps)(SocialIcons);
