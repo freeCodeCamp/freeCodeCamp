@@ -42,9 +42,6 @@ const renderCertifedEmail = loopback.template(path.join(
   'emails',
   'certified.ejs'
 ));
-const sendMessageToNonUser = ifNoUserSend(
-  'must be logged in to complete.'
-);
 
 function isCertified(ids, challengeMap = {}) {
   return _.every(ids, ({ id }) => _.has(challengeMap, id));
@@ -150,12 +147,6 @@ export default function certificate(app) {
     verifyCert
   );
 
-  router.post(
-    '/certificate/honest',
-    sendMessageToNonUser,
-    postHonest
-  );
-
   app.use(router);
 
   const noNameMessage = dedent`
@@ -243,13 +234,6 @@ export default function certificate(app) {
         },
         next
       );
-  }
-
-  function postHonest(req, res, next) {
-    return req.user.update$({ $set: { isHonest: true } }).subscribe(
-      () => res.status(200).send(true),
-      next
-    );
   }
 
   function ifNoSuperBlock404(req, res, next) {
