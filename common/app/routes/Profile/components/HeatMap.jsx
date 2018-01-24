@@ -26,11 +26,15 @@ function ensureD3() {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ calendar }) => ({ calendar })
+  ({ calendar, streak }) => ({ calendar, streak })
 );
 
 const propTypes = {
-  calendar: PropTypes.object
+  calendar: PropTypes.object,
+  streak: PropTypes.shape({
+    current: PropTypes.number,
+    longest: PropTypes.number
+  })
 };
 
 class HeatMap extends Component {
@@ -94,6 +98,7 @@ class HeatMap extends Component {
   }
 
   render() {
+    const { streak = {} } = this.props;
     return (
       <div id='cal-heatmap-container'>
         <Helmet>
@@ -105,12 +110,22 @@ class HeatMap extends Component {
         {
           (
             typeof window !== 'undefined' &&
-            'd3' in window &&
-            document.getElementById('cal-heatmap')
+            'd3' in window
           ) ?
             this.renderMap() :
             null
         }
+        <FullWidthRow>
+          <div className='streak-container'>
+            <span className='streak'>
+              <strong>Longest Streak:</strong> { streak.longest || 1 }
+            </span>
+            <span className='streak'>
+              <strong>Current Streak:</strong> { streak.current || 1 }
+            </span>
+          </div>
+        </FullWidthRow>
+        <hr />
       </div>
     );
   }
