@@ -12,8 +12,8 @@ import { createSelector } from 'reselect';
 import { settingsSelector, validateUsername } from '../redux';
 import { userSelector } from '../../../redux';
 import { updateUserBackend } from '../../../entities/user';
-import { minLength } from '../utils/formValidators';
-import { BlockSaveButton, FullWidthRow } from '../../../helperComponents';
+import { BlockSaveButton, minLength } from '../formHelpers';
+import { FullWidthRow } from '../../../helperComponents';
 
 const minTwoChar = minLength(2);
 

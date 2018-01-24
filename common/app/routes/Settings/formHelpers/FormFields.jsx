@@ -47,7 +47,7 @@ function FormFields(props) {
         Object.keys(fields)
         .filter(field => !ignored.includes(field))
         .map(key => fields[key])
-        .map(({ name, onChange, value }) => {
+        .map(({ name, onChange, value, pristine }) => {
           const key = _.kebabCase(name);
           const type = name in types ? types[name] : 'text';
           return (
@@ -74,7 +74,7 @@ function FormFields(props) {
                 value={ value }
               />
               {
-                name in errors ?
+                name in errors && !pristine ?
                 <HelpBlock>
                   <Alert bsStyle='danger'>
                     { errors[name] }

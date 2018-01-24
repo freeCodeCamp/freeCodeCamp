@@ -9,12 +9,12 @@ import {
   Button,
   Col,
   ControlLabel,
-  FormControl,
   HelpBlock,
   Row
 } from 'react-bootstrap';
 
 import TB from '../Toggle-Button';
+import EmailForm from './EmailForm.jsx';
 import { Link } from '../../../Router';
 import { FullWidthRow } from '../../../helperComponents';
 import { userSelector } from '../../../redux';
@@ -36,10 +36,28 @@ const mapStateToProps = createSelector(
     email,
     initialValues: { email },
     isEmailVerified,
-    isPublicEmail,
-    sendMonthlyEmail,
-    sendNotificationEmail,
-    sendQuincyEmail
+    options: [
+      {
+        flag: 'isPublicEmail',
+        label: 'Allow people to send me email',
+        bool: isPublicEmail
+      },
+      {
+        flag: 'sendMonthlyEmail',
+        label: 'Send me announcement emails',
+        bool: sendMonthlyEmail
+      },
+      {
+        flag: 'sendNotificationEmail',
+        label: 'Send me notification emails',
+        bool: sendNotificationEmail
+      },
+      {
+        flag: 'sendQuincyEmail',
+        label: 'Send me Quincy\'s weekly email',
+        bool: sendQuincyEmail
+      }
+    ]
   })
 );
 
@@ -51,19 +69,14 @@ function mapDispatchToProps(dispatch) {
 
 const propTypes = {
   email: PropTypes.string,
-  fields: PropTypes.objectOf(
+  isEmailVerified: PropTypes.bool,
+  options: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      onChange: PropTypes.func.isRequired,
-      value: PropTypes.string.isRequired
+      flag: PropTypes.string,
+      label: PropTypes.string,
+      bool: PropTypes.bool
     })
   ),
-  handleSubmit: PropTypes.func.isRequired,
-  isEmailVerified: PropTypes.bool,
-  isPublicEmail: PropTypes.bool,
-  sendMonthlyEmail: PropTypes.bool,
-  sendNotificationEmail: PropTypes.bool,
-  sendQuincyEmail: PropTypes.bool,
   updateUserBackend: PropTypes.func.isRequired
 };
 
@@ -127,13 +140,8 @@ class EmailSettings extends PureComponent {
   render() {
     const {
       email,
-      fields: { email: { value, onChange } },
-      handleSubmit,
       isEmailVerified,
-      isPublicEmail,
-      sendMonthlyEmail,
-      sendNotificationEmail,
-      sendQuincyEmail
+      options
     } = this.props;
     if (!email) {
       return (
@@ -149,28 +157,6 @@ class EmailSettings extends PureComponent {
         </div>
       );
     }
-    const options = [
-      {
-        flag: 'isPublicEmail',
-        label: 'Allow people to send me email',
-        bool: isPublicEmail
-      },
-      {
-        flag: 'sendMonthlyEmail',
-        label: 'Send me announcement emails',
-        bool: sendMonthlyEmail
-      },
-      {
-        flag: 'sendNotificationEmail',
-        label: 'Send me notification emails',
-        bool: sendNotificationEmail
-      },
-      {
-        flag: 'sendQuincyEmail',
-        label: 'Send me Quincy\'s weekly email',
-        bool: sendQuincyEmail
-      }
-    ];
     return (
       <div className='email-settings'>
         <FullWidthRow>
@@ -190,39 +176,9 @@ class EmailSettings extends PureComponent {
           </FullWidthRow>
         }
         <FullWidthRow>
-          <form
-            className='inline-form'
-            id='update-email'
-            onSubmit={ handleSubmit(this.handleSubmit) }
-            >
-            <Col className='inline-form' sm={ 2 } xs={ 12 }>
-              <ControlLabel htmlFor='email'>
-                Email
-              </ControlLabel>
-            </Col>
-            <Col sm={ 8 } xs={ 12 }>
-              <FormControl
-                bsSize='lg'
-                id='email'
-                name='email'
-                onChange={ onChange }
-                placeholder='email'
-                required={ true }
-                type='email'
-                value={ value }
-              />
-            </Col>
-            <Col sm={ 2 } xs={ 12 }>
-              <Button
-                block={ true }
-                bsSize='lg'
-                bsStyle='primary'
-                type='submit'
-                >
-                Save
-              </Button>
-            </Col>
-          </form>
+          <EmailForm
+            initialValues={{ email, confrimEmail: ''}}
+          />
         </FullWidthRow>
         <FullWidthRow>
           { this.renderToggleOptions(options) }

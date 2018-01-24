@@ -1,21 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
 import {
-  Col,
-  ControlLabel,
-  FormControl,
   Nav,
-  NavItem,
-  Row
+  NavItem
 } from 'react-bootstrap';
 
 import {
-  BlockSaveButton,
-  FormFields,
   FullWidthRow
 } from '../../../helperComponents';
 import LockedSettings from './Locked-Settings.jsx';
@@ -27,6 +20,14 @@ import {
   updateUserBackend
 } from '../../../entities/user';
 import { invertTheme } from '../../../../utils/themes';
+import {
+  BlockSaveButton,
+  FormFields,
+  maxLength,
+  validURL
+} from '../formHelpers';
+
+const max288Char = maxLength(288);
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -55,6 +56,17 @@ const mapStateToProps = createSelector(
 );
 
 const formFields = [ 'bio', 'name', 'picture', 'location' ];
+
+function validator(values) {
+  const errors = {};
+  const {
+    bio,
+    picture
+  } = values;
+  errors.bio = max288Char(bio);
+  errors.picutre = validURL(picture);
+
+}
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
@@ -105,39 +117,19 @@ class AccountSettings extends PureComponent {
   }
 
   renderEdit() {
-    const { fields, fields: { bio } } = this.props;
+    const { fields } = this.props;
     const options = {
-      ignored: [ 'bio' ],
       types: {
+        bio: 'textarea',
         picture: 'url'
       }
     };
-    const bioId = _.kebabCase(bio.name);
     return (
       <div>
         <FormFields
           fields={ fields }
           options={ options }
         />
-        <Row className='editable-content-container'>
-          <Col xs={ 12 }>
-            <ControlLabel htmlFor={ bioId }>
-              { _.startCase(bio.name) }
-            </ControlLabel>
-          </Col>
-        </Row>
-        <Row className='editable-content-container'>
-          <Col xs={ 12 }>
-            <FormControl
-              componentClass='textarea'
-              id={ bioId }
-              name={ bio.name }
-              onChange={ bio.onChange }
-              rows={ 4 }
-              value={ bio.value }
-            />
-          </Col>
-        </Row>
       </div>
     );
   }
@@ -168,12 +160,12 @@ class AccountSettings extends PureComponent {
   render() {
     const {
       currentTheme,
+      fields: { _meta: { allPristine } },
       handleSubmit,
       isLocked,
       updateUserBackend,
       username
     } = this.props;
-
     const { view } = this.state;
 
     const toggleIsLocked = () => updateUserBackend({ isLocked: !isLocked });
@@ -206,7 +198,9 @@ class AccountSettings extends PureComponent {
           {
             this.show[view]()
           }
-          <BlockSaveButton />
+          <FullWidthRow>
+            <BlockSaveButton disabled={ allPristine } />
+          </FullWidthRow>
         </form>
         </FullWidthRow>
 
@@ -235,7 +229,8 @@ AccountSettings.propTypes = propTypes;
 export default reduxForm(
   {
     form: 'account-settings',
-    fields: formFields
+    fields: formFields,
+    validate: validator
   },
   mapStateToProps,
   mapDispatchToProps

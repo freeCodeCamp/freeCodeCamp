@@ -6,12 +6,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
-import { Form, FullWidthRow, BlockSaveButton } from '../../../helperComponents';
-import { Link } from '../../../Router';
-import SolutionViewer from './SolutionViewer.jsx';
+import { FullWidthRow } from '../../../helperComponents';
+import { Form } from '../formHelpers';
+import JSAlgoAndDSForm from './JSAlgoAndDSForm.jsx';
 import { projectsSelector } from '../../../entities';
 import { claimCert, updateUserBackend } from '../../../entities/user';
-import { fetchChallenges, userSelector } from '../../../redux';
+import { fetchChallenges, userSelector, hardGoTo } from '../../../redux';
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -24,7 +24,8 @@ const mapStateToProps = createSelector(
       isFrontEndLibsCert,
       isJsAlgoDataStructCert,
       isApisMicroservicesCert,
-      isInfosecQaCert
+      isInfosecQaCert,
+      username
     },
     projects,
   ) => ({
@@ -39,7 +40,8 @@ const mapStateToProps = createSelector(
       'Data Visualization Projects': is2018DataVisCert,
       'API and Microservice Projects': isApisMicroservicesCert,
       'Information Security and Quality Assurance Projects': isInfosecQaCert
-    }
+    },
+    username
   })
 );
 
@@ -47,6 +49,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     claimCert,
     fetchChallenges,
+    hardGoTo,
     updateUserBackend
   }, dispatch);
 }
@@ -55,12 +58,14 @@ const propTypes = {
   blockNameIsCertMap: PropTypes.objectOf(PropTypes.bool),
   claimCert: PropTypes.func.isRequired,
   fetchChallenges: PropTypes.func.isRequired,
+  hardGoTo: PropTypes.func.isRequired,
   projects: PropTypes.arrayOf(
     PropTypes.shape({
       projectBlockName: PropTypes.string,
       challenges: PropTypes.arrayOf(PropTypes.string)
     })
   ),
+  superBlock: PropTypes.string,
   updateUserBackend: PropTypes.func.isRequired,
   userProjects: PropTypes.objectOf(
     PropTypes.objectOf(PropTypes.oneOfType(
@@ -69,106 +74,12 @@ const propTypes = {
         PropTypes.object
       ]
     ))
-  )
+  ),
+  username: PropTypes.string
 };
 
-const jsFormPropTypes = {
-  challenges: PropTypes.arrayOf(PropTypes.string),
-  isCertClaimed: PropTypes.bool,
-  jsProjects: PropTypes.objectOf(PropTypes.object),
-  projectBlockName: PropTypes.string
-};
-
-const jsProjectPath = '/challenges/javascript-algorithms-and-data-structures-' +
-  'projects/';
 const jsProjectSuperBlock = 'javascript-algorithms-and-data-structures';
 
-class JSAlgoAndDSForm extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-    this.handleSolutionToggle = this.handleSolutionToggle.bind(this);
-  }
-
-  handleSolutionToggle(e) {
-    e.persist();
-    return this.setState(state => ({
-      ...state,
-      [e.target.id]: !state[e.target.id]
-    }));
-  }
-
-  render() {
-    const {
-      projectBlockName,
-      challenges = [],
-      jsProjects = {},
-      isCertClaimed
-    } = this.props;
-
-    return (
-      <FullWidthRow>
-        <h3 className='project-heading'>{ projectBlockName }</h3>
-        <p>
-          To complete this certification, you must first complete the
-          JavaScript Algorithms and Data Structures project challenges
-        </p>
-        <ul className='solution-list'>
-          {
-            challenges.map(challenge => (
-              <div key={ challenge }>
-                <li className='solution-list-item'>
-                  <p>{ challenge }</p>
-                  {
-                    jsProjects[challenge] ?
-                    <div>
-                      <Button
-                        bsSize='lg'
-                        bsStyle='primary'
-                        id={ challenge }
-                        onClick={ this.handleSolutionToggle }
-                        >
-                        { this.state[challenge] ? 'Hide' : 'Show' } Solution
-                      </Button>
-                    </div> :
-                    <Link to={`${jsProjectPath}${_.kebabCase(challenge)}`}>
-                      <Button
-                        bsSize='lg'
-                        bsStyle='primary'
-                        >
-                        Complete Challenge
-                      </Button>
-                    </Link>
-                  }
-                </li>
-                {
-                  this.state[challenge] ?
-                    <SolutionViewer files={ jsProjects[challenge] } /> :
-                    null
-                }
-              </div>
-            ))
-          }
-        </ul>
-        {
-          Object.keys(jsProjects).length === 6 ?
-          <form>
-            <BlockSaveButton>
-              { isCertClaimed ? 'Show' : 'Claim'} Certificate
-            </BlockSaveButton>
-          </form> :
-          null
-        }
-      </FullWidthRow>
-    );
-  }
-}
-
-JSAlgoAndDSForm.displayName = 'JSAlgoAndDSForm';
-JSAlgoAndDSForm.propTypes = jsFormPropTypes;
-
-/* eslint-disable react/no-multi-comp */
 class ProjectSettings extends PureComponent {
   constructor(props) {
     super(props);
@@ -210,8 +121,11 @@ class ProjectSettings extends PureComponent {
   render() {
     const {
       blockNameIsCertMap,
+      claimCert,
+      hardGoTo,
       projects,
-      userProjects
+      userProjects,
+      username
     } = this.props;
     if (!projects.length) {
       return null;
@@ -238,10 +152,14 @@ class ProjectSettings extends PureComponent {
             return (
               <JSAlgoAndDSForm
                 challenges={ challenges }
+                claimCert={ claimCert }
+                hardgoTo={ hardGoTo }
                 isCertClaimed={ isCertClaimed }
                 jsProjects={ userProjects[superBlock] }
                 key={ superBlock }
                 projectBlockName={ projectBlockName }
+                superBlock={ superBlock }
+                username={ username }
               />
             );
           }
@@ -295,11 +213,13 @@ class ProjectSettings extends PureComponent {
                     block={ true }
                     bsSize='lg'
                     bsStyle='primary'
+                    href={ `/c/${username}/${superBlock}`}
                     >
                     Show Certificate
                   </Button> :
                   null
               }
+              <hr />
             </FullWidthRow>
           );
         })

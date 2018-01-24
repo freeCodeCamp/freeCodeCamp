@@ -109,7 +109,7 @@ const certArrayTypes = PropTypes.arrayOf(
     title: PropTypes.string,
     showURL: PropTypes.string
   })
-)
+);
 
 const propTypes = {
   currentCerts: certArrayTypes,

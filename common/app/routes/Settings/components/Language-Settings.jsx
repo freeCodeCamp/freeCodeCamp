@@ -8,7 +8,8 @@ import {
   FormControl
 } from 'react-bootstrap';
 
-import { BlockSaveButton, FullWidthRow } from '../../../helperComponents';
+import { FullWidthRow } from '../../../helperComponents';
+import { BlockSaveButton } from '../formHelpers';
 import { userSelector } from '../../../redux';
 import langs from '../../../../utils/supported-languages';
 import { updateUserBackend } from '../../../entities/user';
@@ -84,7 +85,10 @@ class LanguageSettings extends React.Component {
   }
   render() {
     const {
-      fields: { lang: { name, onChange, value } },
+      fields: {
+        _meta: { allPristine },
+        lang: { name, onChange, value }
+      },
       handleSubmit
     } = this.props;
     return (
@@ -114,7 +118,7 @@ class LanguageSettings extends React.Component {
                 </FormControl>
               </Col>
               <Col sm={ 3 } xs={ 12 }>
-                <BlockSaveButton />
+                <BlockSaveButton disabled={ allPristine }/>
               </Col>
           </form>
         </FullWidthRow>

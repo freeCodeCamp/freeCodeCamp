@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Col, Grid, Row } from 'react-bootstrap';
+import { Button, Col, Grid, Row, Alert } from 'react-bootstrap';
 
 import ns from './ns.json';
 import AccountSettings from './components/Account-Settings.jsx';
@@ -23,11 +23,14 @@ import {
   userSelector,
   hardGoTo
 } from '../../redux';
+import { FullWidthRow } from '../../helperComponents';
+import EmailForm from './components/EmailForm.jsx';
 
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  ({ username }, showLoading) => ({
+  ({ email, username }, showLoading) => ({
+    email,
     showLoading,
     username
   })
@@ -39,6 +42,7 @@ const mapDispatchToProps = {
 };
 
 const propTypes = {
+  email: PropTypes.string,
   hardGoTo: PropTypes.func.isRequired,
   showLoading: PropTypes.bool,
   updateTitle: PropTypes.func.isRequired,
@@ -56,8 +60,31 @@ class Settings extends React.Component {
     }
   }
 
+  renderNoEmail() {
+    return (
+      <ChildContainer>
+        <Grid>
+          <FullWidthRow>
+            <h1>Settings</h1>
+            <Alert bsStyle='info'>
+              <p>
+                We cannot find an email associated with your account.
+                To access your account settings, we need you to verify
+                an email address
+              </p>
+            </Alert>
+          </FullWidthRow>
+          <FullWidthRow>
+            <EmailForm initialValues={{ email: '', confirmEmail: '' }} />
+          </FullWidthRow>
+        </Grid>
+      </ChildContainer>
+    );
+  }
+
   render() {
     const {
+      email,
       showLoading,
       username
     } = this.props;
@@ -66,6 +93,9 @@ class Settings extends React.Component {
       return <SettingsSkeleton />;
     }
 
+    if (!email && !showLoading) {
+      return this.renderNoEmail();
+    }
     return (
       <ChildContainer>
         <Grid>

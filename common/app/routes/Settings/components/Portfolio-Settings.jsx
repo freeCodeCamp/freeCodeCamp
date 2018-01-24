@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { isURL } from 'validator';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -8,21 +7,21 @@ import {
   Button
 } from 'react-bootstrap';
 
-import {
-  Form,
-  FullWidthRow
-} from '../../../helperComponents';
+import { FullWidthRow } from '../../../helperComponents';
 import { userSelector } from '../../../redux';
 import {
   addPortfolioItem,
   updateUserBackend
 } from '../../../entities/user';
-import { maxLength, minLength } from '../utils/formValidators';
+import {
+  Form,
+  maxLength,
+  minLength,
+  validURL
+} from '../formHelpers';
 
 const minTwoChar = minLength(2);
 const max288Char = maxLength(288);
-const validURL = str => isURL(str) ? null : 'Must be a valid URL';
-
 
 const propTypes = {
   addPortfolioItem: PropTypes.func.isRequired,

@@ -5,10 +5,12 @@ import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
 
 import {
-  BlockSaveButton,
-  FormFields,
   FullWidthRow
 } from '../../../helperComponents';
+import {
+  BlockSaveButton,
+  FormFields
+} from '../formHelpers';
 import { userSelector } from '../../../redux';
 import { updateUserBackend } from '../../../entities/user';
 
@@ -62,6 +64,7 @@ class InternetSettings extends PureComponent {
   render() {
     const {
       fields,
+      fields: { _meta: { allPristine } },
       handleSubmit
     } = this.props;
     const options = {
@@ -85,7 +88,7 @@ class InternetSettings extends PureComponent {
               fields={ fields }
               options={ options }
             />
-            <BlockSaveButton />
+            <BlockSaveButton disabled={ allPristine }/>
           </form>
         </FullWidthRow>
       </div>

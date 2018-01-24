@@ -32,6 +32,7 @@ function DynamicForm({
   errors,
   fields,
   handleSubmit,
+  fields: { _meta: { allPristine }},
 
   // HOC
   buttonText,
@@ -51,7 +52,10 @@ function DynamicForm({
         hideButton ?
           null :
         <BlockSaveButton
-          disabled={ !!Object.keys(errors).filter(key => errors[key]).length }
+          disabled={
+            allPristine ||
+            (!!Object.keys(errors).filter(key => errors[key]).length)
+          }
           >
           {
             buttonText ? buttonText : null
