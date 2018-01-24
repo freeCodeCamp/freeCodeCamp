@@ -213,7 +213,7 @@ module.exports = function(app) {
 
   function getAccount(req, res) {
     const { username } = req.user;
-    return res.redirect('/' + username);
+    return res.redirect('/u/' + username);
   }
 
   function getUnlinkSocial(req, res, next) {
@@ -223,19 +223,19 @@ module.exports = function(app) {
     let social = req.params.social;
     if (!social) {
       req.flash('danger', 'No social account found');
-      return res.redirect('/' + username);
+      return res.redirect('/u/' + username);
     }
 
     social = social.toLowerCase();
     const validSocialAccounts = ['twitter', 'linkedin'];
     if (validSocialAccounts.indexOf(social) === -1) {
       req.flash('danger', 'Invalid social account');
-      return res.redirect('/' + username);
+      return res.redirect('/u/' + username);
     }
 
     if (!user[social]) {
       req.flash('danger', `No ${social} account associated`);
-      return res.redirect('/' + username);
+      return res.redirect('/u/' + username);
     }
 
     const query = {
@@ -251,7 +251,7 @@ module.exports = function(app) {
       let identity = identities.shift();
       if (!identity) {
         req.flash('danger', 'No social account found');
-        return res.redirect('/' + username);
+        return res.redirect('/u/' + username);
       }
 
       return identity.destroy(function(err) {
@@ -264,7 +264,7 @@ module.exports = function(app) {
             debug(`${social} has been unlinked successfully`);
 
             req.flash('info', `You've successfully unlinked your ${social}.`);
-            return res.redirect('/' + username);
+            return res.redirect('/u/' + username);
           }, next);
       });
     });
@@ -539,7 +539,7 @@ module.exports = function(app) {
       `)
     }, err => {
       if (err) {
-        err.redirectTo = '/' + username;
+        err.redirectTo = '/u/' + username;
         return next(err);
       }
 
