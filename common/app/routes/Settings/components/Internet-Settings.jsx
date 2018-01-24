@@ -3,13 +3,6 @@ import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
-import {
-  Button,
-  ControlLabel,
-  FormControl,
-  Row,
-  Col
-} from 'react-bootstrap';
 
 import {
   BlockSaveButton,
@@ -72,11 +65,10 @@ class InternetSettings extends PureComponent {
       handleSubmit
     } = this.props;
     const options = {
-      types: {
-        githubURL: 'url',
-        linkedin: 'url',
-        website: 'url'
-      }
+      types: formFields.reduce(
+        (all, current) => ({ ...all, [current]: 'url' }),
+        {}
+      )
     };
     return (
       <div className='internet-settings'>

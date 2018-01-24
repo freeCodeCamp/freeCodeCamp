@@ -100,13 +100,7 @@ function WebsiteIcon(website) {
 
 function TwitterIcon(handle) {
   return (
-    <a
-      href={
-        `https://twitter.com/${handle.replace(/^@/, '')}`
-      }
-      rel='no-follow'
-      target='_blank'
-      >
+    <a href={ handle } rel='no-follow' target='_blank' >
       <FontAwesome
         name='twitter'
         size='2x'
