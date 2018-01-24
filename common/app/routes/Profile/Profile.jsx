@@ -27,14 +27,12 @@ const mapStateToProps = createSelector(
   signInLoadingSelector,
   (
     {
-      email,
-      isAvailableForHire,
       isLocked
-    }
+    },
+    showLoading
   ) => ({
-    email,
-    isAvailableForHire,
-    isLocked
+    isLocked,
+    showLoading
   })
 );
 
@@ -43,12 +41,9 @@ const mapDispatchToProps = {
 };
 
 const propTypes = {
-  children: PropTypes.element,
-  initialLang: PropTypes.string,
-  lang: PropTypes.string,
-  updateMyLang: PropTypes.func,
-  updateTitle: PropTypes.func.isRequired,
-  username: PropTypes.string
+  isLocked: PropTypes.bool,
+  showLoading: PropTypes.bool,
+  updateTitle: PropTypes.func.isRequired
 };
 
 class Profile extends React.Component {

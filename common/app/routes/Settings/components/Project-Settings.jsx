@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 
 import { Form, FullWidthRow, BlockSaveButton } from '../../../helperComponents';
 import { Link } from '../../../Router';
-import SolutionViewer from '../../Profile/components/SolutionViewer.jsx';
+import SolutionViewer from './SolutionViewer.jsx';
 import { projectsSelector } from '../../../entities';
 import { claimCert, updateUserBackend } from '../../../entities/user';
 import { fetchChallenges, userSelector } from '../../../redux';

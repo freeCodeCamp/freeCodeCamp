@@ -29,33 +29,36 @@ function Portfolio({ portfolio = [] }) {
     return null;
   }
   return (
-    <FullWidthRow>
-      {
-        portfolio.map(({ title, url, image, description, id}) => (
-          <Media key={ id }>
-            <Media.Left align='middle'>
-              <a href={ url } rel='nofollow'>
-                <Thumbnail
-                  alt={ `A screen shot of ${title}` }
-                  src={ image }
-                  style={{ width: '150px' }}
-                />
-              </a>
-            </Media.Left>
-              <Media.Body>
-                <Media.Heading>
-                  <a href={ url } rel='nofollow'>
-                    { title }
-                  </a>
-                </Media.Heading>
-                <p>
-                  { description }
-                </p>
-              </Media.Body>
-          </Media>
-        ))
-      }
-    </FullWidthRow>
+    <div>
+      <FullWidthRow>
+        {
+          portfolio.map(({ title, url, image, description, id}) => (
+            <Media key={ id }>
+              <Media.Left align='middle'>
+                <a href={ url } rel='nofollow'>
+                  <Thumbnail
+                    alt={ `A screen shot of ${title}` }
+                    src={ image }
+                    style={{ width: '150px' }}
+                  />
+                </a>
+              </Media.Left>
+                <Media.Body>
+                  <Media.Heading>
+                    <a href={ url } rel='nofollow'>
+                      { title }
+                    </a>
+                  </Media.Heading>
+                  <p>
+                    { description }
+                  </p>
+                </Media.Body>
+            </Media>
+          ))
+        }
+      </FullWidthRow>
+      <hr />
+    </div>
   );
 }
 

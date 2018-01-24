@@ -24,19 +24,78 @@ const mapStateToProps = createSelector(
     isBackEndCert,
     isDataVisCert,
     isFullStackCert,
+    is2018FullStackCert,
     username
   }) => ({
-    isRespWebDesignCert,
-    is2018DataVisCert,
-    isFrontEndLibsCert,
-    isJsAlgoDataStructCert,
-    isApisMicroservicesCert,
-    isInfosecQaCert,
-    isFrontEndCert,
-    isBackEndCert,
-    isDataVisCert,
-    isFullStackCert,
-    username
+    username,
+    hasModernCert: (
+      isRespWebDesignCert ||
+      is2018DataVisCert ||
+      isFrontEndLibsCert ||
+      isJsAlgoDataStructCert ||
+      isApisMicroservicesCert ||
+      isInfosecQaCert
+    ),
+    hasLegacyCert: (isFrontEndCert || isBackEndCert || isDataVisCert),
+    currentCerts: [
+      {
+        show: is2018FullStackCert,
+        title: 'Full Stack Certificate:',
+        showURL: '2018-full-stack'
+      },
+      {
+        show: isRespWebDesignCert,
+        title: 'Responsive Web Design Certificate:',
+        showURL: 'responsive-web-design'
+      },
+      {
+        show: isJsAlgoDataStructCert,
+        title: 'JavaScript Algorithms and Data Structures Certificate:',
+        showURL: 'javascript-algorithms-and-data-structures'
+      },
+      {
+        show: isFrontEndLibsCert,
+        title: 'Front End Libraries Certificate:',
+        showURL: 'front-end-libraries'
+      },
+      {
+        show: is2018DataVisCert,
+        title: 'Data Visualization Certificate:',
+        showURL: 'data-visualization-2018'
+      },
+      {
+        show: isApisMicroservicesCert,
+        title: 'APIs and Microservices Certificate:',
+        showURL: 'apis-and-microservices'
+      },
+      {
+        show: isInfosecQaCert,
+        title: 'Information Security and Quality Assurance Certificate:',
+        showURL: 'information-security-and-quality-assurance'
+      }
+    ],
+    legacyCerts: [
+      {
+        show: isFullStackCert,
+        title: 'Full Stack Certificate:',
+        showURL: 'full-stack'
+      },
+      {
+        show: isFrontEndCert,
+        title: 'Front End Certificate:',
+        showURL: 'front-end'
+      },
+      {
+        show: isBackEndCert,
+        title: 'Back End Certificate:',
+        showURL: 'back-end'
+      },
+      {
+        show: isDataVisCert,
+        title: 'Data Visualization Certificate:',
+        showURL: 'data-visualization'
+      }
+    ]
   })
 );
 
@@ -44,18 +103,19 @@ function mapDispatchToProps() {
   return {};
 }
 
+const certArrayTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    show: PropTypes.bool,
+    title: PropTypes.string,
+    showURL: PropTypes.string
+  })
+)
+
 const propTypes = {
-  is2018DataVisCert: PropTypes.bool,
-  is2018FullStackCert: PropTypes.bool,
-  isApisMicroservicesCert: PropTypes.bool,
-  isBackEndCert: PropTypes.bool,
-  isDataVisCert: PropTypes.bool,
-  isFrontEndCert: PropTypes.bool,
-  isFrontEndLibsCert: PropTypes.bool,
-  isFullStackCert: PropTypes.bool,
-  isInfosecQaCert: PropTypes.bool,
-  isJsAlgoDataStructCert: PropTypes.bool,
-  isRespWebDesignCert: PropTypes.bool,
+  currentCerts: certArrayTypes,
+  hasLegacyCert: PropTypes.bool,
+  hasModernCert: PropTypes.bool,
+  legacyCerts: certArrayTypes,
   username: PropTypes.string
 };
 
@@ -85,89 +145,13 @@ function renderCertShow(username, cert) {
 }
 
 function Certificates({
-  isRespWebDesignCert,
-  is2018DataVisCert,
-  isFrontEndLibsCert,
-  isJsAlgoDataStructCert,
-  isApisMicroservicesCert,
-  isInfosecQaCert,
-  is2018FullStackCert,
-  isFrontEndCert,
-  isBackEndCert,
-  isDataVisCert,
-  isFullStackCert,
+  currentCerts,
+  legacyCerts,
+  hasLegacyCert,
+  hasModernCert,
   username
 }) {
-  const currentCerts = [
-    {
-      show: is2018FullStackCert,
-      title: 'Full Stack Certificate:',
-      showURL: '2018-full-stack'
-    },
-    {
-      show: isRespWebDesignCert,
-      title: 'Responsive Web Design Certificate:',
-      showURL: 'responsive-web-design'
-    },
-    {
-      show: isJsAlgoDataStructCert,
-      title: 'JavaScript Algorithms and Data Structures Certificate:',
-      showURL: 'javascript-algorithms-and-data-structures'
-    },
-    {
-      show: isFrontEndLibsCert,
-      title: 'Front End Libraries Certificate:',
-      showURL: 'front-end-libraries'
-    },
-    {
-      show: is2018DataVisCert,
-      title: 'Data Visualization Certificate:',
-      showURL: 'data-visualization-2018'
-    },
-    {
-      show: isApisMicroservicesCert,
-      title: 'APIs and Microservices Certificate:',
-      showURL: 'apis-and-microservices'
-    },
-    {
-      show: isInfosecQaCert,
-      title: 'Information Security and Quality Assurance Certificate:',
-      showURL: 'information-security-and-quality-assurance'
-    }
-  ];
-
-  const legacyCerts = [
-    {
-      show: isFullStackCert,
-      title: 'Full Stack Certificate:',
-      showURL: 'full-stack'
-    },
-    {
-      show: isFrontEndCert,
-      title: 'Front End Certificate:',
-      showURL: 'front-end'
-    },
-    {
-      show: isBackEndCert,
-      title: 'Back End Certificate:',
-      showURL: 'back-end'
-    },
-    {
-      show: isDataVisCert,
-      title: 'Data Visualization Certificate:',
-      showURL: 'data-visualization'
-    }
-  ];
   const renderCertShowWithUsername = _.curry(renderCertShow)(username);
-  const hasModernCert = (
-    isRespWebDesignCert ||
-    is2018DataVisCert ||
-    isFrontEndLibsCert ||
-    isJsAlgoDataStructCert ||
-    isApisMicroservicesCert ||
-    isInfosecQaCert
-  );
-  const hasLegacyCert = (isFrontEndCert || isBackEndCert || isDataVisCert);
   return (
     <div>
       <h2 className='text-center'>FreeCodeCamp Certificates</h2>

@@ -44,14 +44,17 @@ function CamperHOC({
 }) {
 
   return (
-    <Camper
-      bio={ bio }
-      location={ location }
-      name={ name }
-      picture={ picture }
-      points={ points }
-      username={ username }
-    />
+    <div>
+      <Camper
+        bio={ bio }
+        location={ location }
+        name={ name }
+        picture={ picture }
+        points={ points }
+        username={ username }
+      />
+      <hr />
+    </div>
   );
 }
 
