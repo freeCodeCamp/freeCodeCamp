@@ -364,7 +364,7 @@
         "</body>"
       ],
       "tests": [
-        "assert($('footer').length == 1, 'message: Your code should have one <code>footer</code> tag.');",
+        "assert(code.match(/<footer>\\s*&copy; 2016 Camper Cat\\s*<\\/footer>/g), 'message: Your code should have an opening and closing <code>footer</code> tag.');",
         "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');"
       ],
       "solutions": [],
