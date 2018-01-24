@@ -1053,7 +1053,7 @@
         "  }",
         "})();"
       ],
-      "solutions": [],
+      "solutions": ["var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\";"],
       "tests": [
         "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
         "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
@@ -1101,7 +1101,7 @@
       "tail": [
         "(function() { return \"myStr = \" + myStr; })();"
       ],
-      "solutions": [],
+      "solutions": ["var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"],
       "tests": [
         "assert(!/\\\\/g.test(code) && myStr.match('\\\\s*<a href\\\\s*=\\\\s*\"http://www.example.com\"\\\\s*target\\\\s*=\\\\s*\"_blank\">\\\\s*Link\\\\s*</a>\\\\s*'), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
         "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
