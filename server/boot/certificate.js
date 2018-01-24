@@ -32,6 +32,7 @@ import {
 } from '../utils/commit';
 
 import certTypes from '../utils/certTypes.json';
+import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
 
 const log = debug('fcc:certification');
 const renderCertifedEmail = loopback.template(path.join(
@@ -138,15 +139,6 @@ export default function certificate(app) {
       Challenge
     ),
     [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge)
-  };
-
-  const superBlockCertTypeMap = {
-    'responsive-web-design': certTypes.respWebDesign,
-    'javascript-algorithms-and-data-structures': certTypes.jsAlgoDataStruct,
-    'front-end-libraries': certTypes.frontEndLibs,
-    'data-visualization': certTypes.dataViz2018,
-    'apis-and-microservices': certTypes.apisMicroservices,
-    'information-security-and-quality-assurance': certTypes.infosecQa
   };
 
   const superBlocks = Object.keys(superBlockCertTypeMap);

@@ -16,6 +16,7 @@ import {
   infosecQaId
 } from '../utils/constantStrings.json';
 import certTypes from '../utils/certTypes.json';
+import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
 import {
   ifNoUser401,
   ifNoUserRedirectTo,
@@ -190,53 +191,8 @@ module.exports = function(app) {
 
   // Ensure these are the last routes!
   api.get(
-    '/:username/front-end-certification',
-    showCert.bind(null, certTypes.frontEnd)
-  );
-
-  api.get(
-    '/:username/back-end-certification',
-    showCert.bind(null, certTypes.backEnd)
-  );
-
-  api.get(
-    '/:username/full-stack-certification',
-    (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
-  );
-
-  api.get(
-    '/:username/responsive-web-design-certification',
-    showCert.bind(null, certTypes.respWebDesign)
-  );
-
-  api.get(
-    '/:username/front-end-libraries-certification',
-    showCert.bind(null, certTypes.frontEndLibs)
-  );
-
-  api.get(
-    '/:username/javascript-algorithms-data-structures-certification',
-    showCert.bind(null, certTypes.jsAlgoDataStruct)
-  );
-
-  api.get(
-    '/:username/data-visualization-certification',
-    showCert.bind(null, certTypes.dataVis)
-  );
-
-  api.get(
-    '/:username/2018-data-visualization-certification',
-    showCert.bind(null, certTypes.dataVis2018)
-  );
-
-  api.get(
-    '/:username/apis-microservices-certification',
-    showCert.bind(null, certTypes.apisMicroservices)
-  );
-
-  api.get(
-    '/:username/information-security-quality-assurance-certification',
-    showCert.bind(null, certTypes.infosecQa)
+    '/c/:username/:cert',
+    showCert
   );
 
   router.get(
@@ -410,14 +366,14 @@ module.exports = function(app) {
       );
   }
 
-  function showCert(certType, req, res, next) {
-    const username = req.params.username.toLowerCase();
+  function showCert(req, res, next) {
+    let { username, cert } = req.params;
+    username = username.toLowerCase();
+    const certType = superBlockCertTypeMap[cert];
     const certId = certIds[certType];
     return findUserByUsername$(username, {
-          isGithubCool: true,
           isCheater: true,
           isLocked: true,
-          isAvailableForHire: true,
           isFrontEndCert: true,
           isBackEndCert: true,
           isFullStackCert: true,
@@ -435,6 +391,7 @@ module.exports = function(app) {
       })
       .subscribe(
         user => {
+          const profile = `/${user.username}`;
           if (!user) {
             req.flash(
               'danger',
@@ -442,15 +399,16 @@ module.exports = function(app) {
             );
             return res.redirect('/');
           }
-          if (!user.isGithubCool) {
+
+          if (!user.name) {
             req.flash(
               'danger',
               dedent`
-                This user needs to link GitHub with their account
+                This user needs to add their name to their account
                 in order for others to be able to view their certificate.
               `
             );
-            return res.redirect('back');
+            return res.redirect(profile);
           }
 
           if (user.isCheater) {
@@ -466,8 +424,9 @@ module.exports = function(app) {
                   in order for others to be able to view their certificate.
               `
             );
-            return res.redirect('back');
+            return res.redirect('/');
           }
+
           if (!user.isHonest) {
             req.flash(
               'danger',
@@ -475,11 +434,10 @@ module.exports = function(app) {
                 ${username} has not yet agreed to our Academic Honesty Pledge.
               `
             );
-            return res.redirect('back');
+            return res.redirect(profile);
           }
 
           if (user[certType]) {
-
             const { challengeMap = {} } = user;
             const { completedDate = new Date() } = challengeMap[certId] || {};
 
@@ -496,7 +454,7 @@ module.exports = function(app) {
             'danger',
             `Looks like user ${username} is not ${certText[certType]}`
           );
-          return res.redirect('back');
+          return res.redirect(profile);
         },
         next
       );

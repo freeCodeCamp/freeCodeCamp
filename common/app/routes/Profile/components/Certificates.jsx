@@ -74,7 +74,7 @@ function renderCertShow(username, cert) {
           block={ true }
           bsSize='lg'
           bsStyle='primary'
-          href={ `/${username}${cert.showURL}`}
+          href={ `/c/${username}/${cert.showURL}`}
           >
           Show
         </Button>
@@ -102,37 +102,37 @@ function Certificates({
     {
       show: is2018FullStackCert,
       title: 'Full Stack Certificate:',
-      showURL: '/2018-full-stack-certification'
+      showURL: '2018-full-stack'
     },
     {
       show: isRespWebDesignCert,
       title: 'Responsive Web Design Certificate:',
-      showURL: '/responsive-web-design-certification'
+      showURL: 'responsive-web-design'
     },
     {
       show: isJsAlgoDataStructCert,
       title: 'JavaScript Algorithms and Data Structures Certificate:',
-      showURL: '/javascript-algorithms-and-data-structures-certification'
+      showURL: 'javascript-algorithms-and-data-structures'
     },
     {
       show: isFrontEndLibsCert,
       title: 'Front End Libraries Certificate:',
-      showURL: '/front-end-libraries-certification'
+      showURL: 'front-end-libraries'
     },
     {
       show: is2018DataVisCert,
       title: 'Data Visualization Certificate:',
-      showURL: '/2018-data-visualization-certification'
+      showURL: 'data-visualization-2018'
     },
     {
       show: isApisMicroservicesCert,
       title: 'APIs and Microservices Certificate:',
-      showURL: '/apis-and-microservices-certification'
+      showURL: 'apis-and-microservices'
     },
     {
       show: isInfosecQaCert,
       title: 'Information Security and Quality Assurance Certificate:',
-      showURL: '/information-security-and-quality-assurance-certification'
+      showURL: 'information-security-and-quality-assurance'
     }
   ];
 
@@ -140,22 +140,22 @@ function Certificates({
     {
       show: isFullStackCert,
       title: 'Full Stack Certificate:',
-      showURL: '/full-stack-certification'
+      showURL: 'full-stack'
     },
     {
       show: isFrontEndCert,
       title: 'Front End Certificate:',
-      showURL: '/front-end-certification'
+      showURL: 'front-end'
     },
     {
       show: isBackEndCert,
       title: 'Back End Certificate:',
-      showURL: '/back-end-certification'
+      showURL: 'back-end'
     },
     {
       show: isDataVisCert,
       title: 'Data Visualization Certificate:',
-      showURL: '/data-visualization-certification'
+      showURL: 'data-visualization'
     }
   ];
   const renderCertShowWithUsername = _.curry(renderCertShow)(username);

@@ -278,7 +278,7 @@ class ProjectSettings extends PureComponent {
             <FullWidthRow key={superBlock}>
               <h3 className='project-heading'>{ projectBlockName }</h3>
               <Form
-                buttonText={ fullForm ? 'Claim' : 'Save Progress' }
+                buttonText={ fullForm ? 'Claim Certificate' : 'Save Progress' }
                 formFields={ challenges.concat([ 'id' ]) }
                 hideButton={isCertClaimed}
                 id={ superBlock }
@@ -291,14 +291,14 @@ class ProjectSettings extends PureComponent {
               />
               {
                 isCertClaimed ?
-                <Button
-                  block={ true }
-                  bsSize='lg'
-                  bsStyle='primary'
-                  >
-                  Show Certificate
-                </Button> :
-                null
+                  <Button
+                    block={ true }
+                    bsSize='lg'
+                    bsStyle='primary'
+                    >
+                    Show Certificate
+                  </Button> :
+                  null
               }
             </FullWidthRow>
           );

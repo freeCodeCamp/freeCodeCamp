@@ -5,7 +5,7 @@
   "fullStack": "isFullStackCert",
   "respWebDesign": "isRespWebDesignCert",
   "frontEndLibs": "isFrontEndLibsCert",
-  "dataViz2018": "isDataViz2018Cert",
+  "dataVis2018": "is2018DataVisCert",
   "jsAlgoDataStruct": "isJsAlgoDataStructCert",
   "apisMicroservices": "isApisMicroservicesCert",
   "infosecQa": "isInfosecQaCert"
