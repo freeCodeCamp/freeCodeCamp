@@ -2568,25 +2568,25 @@
       "title": "Introduction to Graphs",
       "description": [
         [
-          "//i.stack.imgur.com/XfuFe.gif",
+          "https://i.stack.imgur.com/XfuFe.gif",
           "Picture of an X-Y coordinate graph seen in typical math classes",
           "This challenge starts a series of challenges that will teach graph data structures and some algorithms involving graphs. You may be familiar with graphs with an x- and y-axis found in your math classes. However, here graphs mean a different thing.",
           ""
         ],
         [
-          "//upload.wikimedia.org/wikipedia/commons/5/5b/6n-graf.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/5/5b/6n-graf.svg",
           "Figure of undirected network with 6 nodes",
           "The data structure of <dfn>graphs</dfn> are collections of things and the relationships or connections among them. Graphs are also known as networks.<br><br>When talking about graphs, the precise term for \"objects\" are <dfn>nodes</dfn> or <dfn>vertices</dfn>. Similarly, the precise term for \"connections\" is <dfn>edges</dfn>.",
           ""
         ],
         [
-          "//upload.wikimedia.org/wikipedia/commons/b/b6/Moreno_Sociogram_2nd_Grade.png",
+          "https://upload.wikimedia.org/wikipedia/commons/b/b6/Moreno_Sociogram_2nd_Grade.png",
           "Figure of psychologist Moreno's social network of a 2nd grade class",
           "One example of graphs is a social network where the <dfn>nodes</dfn> are you and other people, and the edges are whether two people are friends with each other.",
           ""
         ],
         [
-          "//i.stack.imgur.com/5xkVt.png",
+          "https://i.stack.imgur.com/5xkVt.png",
           "Figures of directed graphs with arrows on edges while undirected graphs do not have directions on edges",
           "There are two major types of graphs: <dfn>directed</dfn> and <dfn>undirected</dfn>. Undirected graphs are graphs without any direction on the edges between nodes. Directed graphs, in contrast, are graphs with a direction in its edges.<br><br>An example of an undirected graph could be a social network. The nodes are people and the edges are friendship. An example of a directed network could be the internet and web page links. Here, the nodes are web pages and the directed edges are links to other pages, which might not necessarily point the other way.",
           ""
