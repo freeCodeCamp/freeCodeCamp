@@ -9,19 +9,19 @@
       "title": "Learn How freeCodeCamp Works",
       "description": [
         [
-          "//i.imgur.com/ZMOCvg9.jpg",
+          "https://i.imgur.com/ZMOCvg9.jpg",
           "A picture of six freeCodeCamp campers sitting around a table coding together.",
           "Welcome. You're now part of a supportive coding community. You can code online or in-person with people in thousands of cities around the world.",
           ""
         ],
         [
-          "//i.imgur.com/EUyHs60.jpg",
+          "https://i.imgur.com/EUyHs60.jpg",
           "A picture of the technologies you'll learn: HTML5, CSS, JavaScript, Databases, Git & GitHub, Node.js, React.js, D3.js.",
           "You'll learn to code by completing coding challenges and building projects. You'll also earn verified certificates along the way.",
           ""
         ],
         [
-          "//i.imgur.com/LRnNMU5.png",
+          "https://i.imgur.com/LRnNMU5.png",
           "An image of our open source projects on GitHub.",
           "Then you'll get experience by contributing to open source projects used by nonprofits. This will help prepare you for a coding job. Let's get started!",
           ""
@@ -182,7 +182,7 @@
       "title": "Headline with the h2 Element",
       "description": [
         "Over the next two sections, we'll build an HTML5 app that will look something like this:",
-        "<a href=\"//i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
+        "<a href=\"https://i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"https://i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
         "The <code>h2</code> element you enter will create an <code>h2</code> element on the website.",
         "This element tells the browser about the structure of your website. <code>h1</code> elements are often used for main headings, while <code>h2</code> elements are generally used for subheadings. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements to indicate different and new sections.",
         "<hr>",
@@ -203,7 +203,7 @@
         "de": {
           "description": [
             "In den nächsten Challenges werden wir eine HTML5 App entwickeln die ungefähr so aussehen wird:",
-            "<a href=\"//i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Klicke zum Vergrößern\" alt=\"Ein Screenshot von unserer beendeted Katzenfoto App\"></a>",
+            "<a href=\"https://i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"https://i.imgur.com/jOc1JF1.png\" title=\"Klicke zum Vergrößern\" alt=\"Ein Screenshot von unserer beendeted Katzenfoto App\"></a>",
             "Das eingetragene <code>h2</code> Element wird ein <code>h2</code> Element auf der Website erzeugen.",
             "Dieses Element sagt dem Browser, wie die Struktur deiner Website aufgebaut ist. <code>h1</code> Elemente werden oft für Hauptüberschriften verwendet, während <code>h2</code> Elemente üblicherweise für Zwischenüberschriften verwendet werden. Es gibt auch <code>h3</code>, <code>h4</code>, <code>h5</code> und <code>h6</code> Elemente die verschiedene und neue Bereiche kennzeichnen.",
             "<hr>",
@@ -214,7 +214,7 @@
           "title": "Un titre avec l'élément h2",
           "description": [
             "Pour les quelques prochains défis, nous construirons une application HTML5 qui ressemblera à ceci :",
-            "<a href=\"//i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Cliquez pour agrandir\" alt=\"Une capture écran de notre application de photo de chats\"></a>",
+            "<a href=\"https://i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"https://i.imgur.com/jOc1JF1.png\" title=\"Cliquez pour agrandir\" alt=\"Une capture écran de notre application de photo de chats\"></a>",
             "L'élément <code>h2</code> que vous entrerez créera un élément <code>h2</code> sur le site.",
             "Cet élément renseigne votre navigateur sur la structure de votre site. Les éléments <code>h1</code> sont souvent utilisés comme titre, tandis que les éléments <code>h2</code> sont généralement utilisés comme sous-titres. Il existe également les éléments <code>h3</code>, <code>h4</code>, <code>h5</code> et <code>h6</code> qui indiquent une nouvelle et différente section.",
             "<hr>",
@@ -225,7 +225,7 @@
           "title": "Título com o elemento h2",
           "description": [
             "Nas próximas duas seções, nós vamos construir um app HTML5 que vai ficar mais ou menos assim:",
-            "<a href=\"//i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Clique para ampliar\" alt=\"Um screenshot do app de fotos de gatos terminado\"></a>",
+            "<a href=\"https://i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"https://i.imgur.com/jOc1JF1.png\" title=\"Clique para ampliar\" alt=\"Um screenshot do app de fotos de gatos terminado\"></a>",
             "O elemento <code>h2</code> que você vai adicionar vai criar um elemento <code>h2</code> na página.",
             "Esse elemento indica ao navegador a estrutura do seu site. Elementos <code>h1</code> são geralmente usados para os títulos principais, enquanto elementos <code>h2</code> são usados para subtítulos. Também existem os elementos <code>h3</code>, <code>h4</code>, <code>h5</code> e <code>h6</code>, que indicam seções novas e diferentes.",
             "<hr>",
@@ -236,7 +236,7 @@
           "title": "Заголовок с применением элемента h2",
           "description": [
             "В результате прохождения нескольких следующих испытаний, мы построим HTML5 приложение, которое будет похоже на это:",
-            "<a href=\"//i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"//i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
+            "<a href=\"https://i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"https://i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
             "Вводимый вами элемент <code>h2</code> создаст соответствующий элемент <code>h2</code> на web-странице.",
             "Этот элемент сообщает браузеру о структуре вашего web-сайта. Элементы <code>h1</code> часто применяют в качестве главных заголовков, в то время как элементы <code>h2</code> обычно используют для обозначения позаголовков. Также существуют элементы <code>h3</code>, <code>h4</code>, <code>h5</code> и <code>h6</code> для обозначения отдельных секций.",
             "<hr>",
@@ -709,7 +709,7 @@
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
+        "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
         "Here's an example:",
         "<blockquote>&#60;p&#62;<br>  Here's a <br>  &#60;a href=\"http://freecodecamp.org\"&#62; <br>    link to freecodecamp.org<br>  &#60;/a&#62;<br>  for you to follow.<br>&#60;/p&#62;</blockquote>",
         "Let's break down the example:",
@@ -746,7 +746,7 @@
           "description": [
             "<code>a</code> Elemente, auch bekannt als <code>anchor</code> (Anker) Elemente, werden verwendet um auf Inhalte außerhalb der aktuellen Seite zu verweisen.",
             "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente mit dem gleichen Text wie in der folgenden Zeile erstellt\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"Eine Darstellung wie man Anker Elemente mit dem gleichen Text wie in der folgenden Zeile erstellt\" src=\"https://i.imgur.com/hviuZwe.png\"></a>",
             "Hier ist ein Beispiel:",
             "<code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.org\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
             "<hr>",
@@ -758,7 +758,7 @@
           "description": [
             "Los elementos <code>a</code>, también conocidos como elementos <code>ancla</code>, se utilizan para enlazar a contenido fuera de la página actual.",
             "Aquí está un diagrama de un elemento <code>a</code>. En este caso, el elemento <code>a</code> se utiliza en el medio de un elemento de párrafo, lo que significa que el enlace aparecerá en el medio de una frase. ",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a> ",
+            "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"> <img class=\"img-responsive\" title=\"Haz clic para ampliar\" alt=\"un diagrama de cómo las etiquetas de ancla se componen con el mismo texto, como en la siguiente línea\" src=\"https://i.imgur.com/hviuZwe.png\"></a> ",
             "He aquí un ejemplo:",
             "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freecodecamp.org\"&#62; enlace a freeCodeCamp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
             "<hr>",
@@ -770,7 +770,7 @@
           "description": [
             "Elementos <code>a</code>, também conhecidos como elementos <code>âncora</code>, são usados para criar links para conteúdo de fora da página atual.",
             "Aqui está um diagrama de um elemento <code>a</code>. Nesse caso, o elemento <code>a</code> é usado no meio de um elemento de parágrafo, o que significa que esse link vai aparecer no meio de uma frase.",
-            "<a href=\"//i.imgur.com/QSCIiNH.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"um diagrama de como tags âncora são compostas com o mesmo texto assim como na linha seguinte\" src=\"//i.imgur.com/QSCIiNH.png\"></a>",
+            "<a href=\"https://i.imgur.com/QSCIiNH.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"um diagrama de como tags âncora são compostas com o mesmo texto assim como na linha seguinte\" src=\"https://i.imgur.com/QSCIiNH.png\"></a>",
             "Aqui está um exemplo:",
             "<code>&#60;p&#62;Aqui está um &#60;a href=\"http://freecodecamp.org\"&#62; link para o freecodecamp.org&#60;/a&#62; para você clicar.&#60;/p&#62;</code>",
             "<hr>",
@@ -782,7 +782,7 @@
           "description": [
             "Элементы <code>a</code>, также известные как <code>якорные</code> элементы, применяют для связи с содержимым вне текущей страницы.",
             "Вот диаграмма элемента <code>a</code>. В этом случае, элемент <code>a</code> использован в середине элемента параграфа, что значит, что ссылка появится в середине предложения.",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\"></a>",
             "Вот пример:",
             "<code>&#60;p&#62;Вот &#60;a href=\"http://freecodecamp.org\"&#62; ссылка на freeCodeCamp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
             "<hr>",
@@ -856,7 +856,7 @@
       "title": "Nest an Anchor Element within a Paragraph",
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
+        "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
         "Here's an example:",
         "<blockquote>&#60;p&#62;<br> Here's a &#60;a href=\"http://freecodecamp.org\"&#62; link to freecodecamp.org&#60;/a&#62; for you to follow.<br>&#60;/p&#62;</blockquote>",
         "Let's break down the example:",
@@ -897,7 +897,7 @@
           "title": "Anker Element mit einem Paragraphen umschließen",
           "description": [
             "Hier ist nochmal ein Beispiel für ein <code>a</code> Element:",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Klick zum Vergrößern\" alt=\"Eine Darstellung wie Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Klick zum Vergrößern\" alt=\"Eine Darstellung wie Anker Elemente geschrieben werden mit dem gleichen Text wie in der folgenden Zeile\" src=\"https://i.imgur.com/hviuZwe.png\"></a>",
             "Hier ist ein Beispiel:",
             "<code>&#60;p&#62;Hier ist ein &#60;a href=\"https://freecodecamp.org\"&#62; Link zu freeCodeCamp&#60;/a&#62; dem du folgen kannst.&#60;/p&#62;</code>",
             "<code>Nesting</code> bedeutet, ein Element innerhalb eines anderen Elements zu schreiben",
@@ -909,7 +909,7 @@
           "title": "Anida un elemento de ancla dentro de un párrafo",
           "description": [
             "Una vez más, aquí está un diagrama de un elemento <code>a</code> para tu referencia:",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Pulse para ampliar\" alt=\"un diagrama de como se componen las etiquetas de anclaje con el texto como en la siguiente línea\" src=\"https://i.imgur.com/hviuZwe.png\"></a>",
             "He aquí un ejemplo:",
             "<code>&#60;p&#62;Aquí hay un &#60;a href=\"https://freecodecamp.org\"&#62; enlace a freeCodeCamp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
             "<code>Anidamiento</code> simplemente significa poner un elemento dentro de otro elemento.",
@@ -921,7 +921,7 @@
           "title": "Aninhe um elemento âncora a um parágrafo",
           "description": [
             "Novamente, aqui está um diagrama de um elemento <code>a</code> para você usar como referência:",
-            "<a href=\"//i.imgur.com/QSCIiNH.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"um diagrama de como tags âncora são compostas com o mesmo texto assim como na linha seguinte\" src=\"//i.imgur.com/QSCIiNH.png\"></a>",
+            "<a href=\"https://i.imgur.com/QSCIiNH.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Clique para ampliar\" alt=\"um diagrama de como tags âncora são compostas com o mesmo texto assim como na linha seguinte\" src=\"https://i.imgur.com/QSCIiNH.png\"></a>",
             "Veja um exemplo:",
             "<code>&#60;p&#62;Aqui está um &#60;a href=\"https://freecodecamp.org\"&#62; link para o freeCodeCamp&#60;/a&#62; para você clicar.&#60;/p&#62;</code>",
             "<code>Aninhar</code> significa colocar um elemento dentro de outro.",
@@ -933,7 +933,7 @@
           "title": "Создайте вложенный якорный элемент внутри параграфа",
           "description": [
             "Вот диаграмма элемента <code>a</code>:",
-            "<a href=\"//i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"//i.imgur.com/hviuZwe.png\"></a>",
+            "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\"></a>",
             "Вот пример:",
             "<code>&#60;p&#62;Вот &#60;a href=\"https://freecodecamp.org\"&#62; ссылка на freeCodeCamp&#60;/a&#62; для перехода на ресурс.&#60;/p&#62;</code>",
             "<code>Вложенность</code> значит установку одного элемента внутрь друго элемента.",
@@ -948,13 +948,13 @@
       "title": "Join a freeCodeCamp Study Group in Your City",
       "description": [
         [
-          "//i.imgur.com/WBVydfk.jpg",
+          "https://i.imgur.com/WBVydfk.jpg",
           "A picture of some of our campers meeting in a local cafe.",
           "You can code together with other campers in your city by joining a local freeCodeCamp study group.",
           ""
         ],
         [
-          "//i.imgur.com/IqBnnuFr.jpg",
+          "https://i.imgur.com/IqBnnuFr.jpg",
           "A picture of our study group directory.",
           "Click the button below to open our study group directory. <br><br>Find your local study group and click it. This will take you to their Facebook group. <br><br>Click the <bold>Join group</bold> button. Once someone from the group approves your join request, and you'll get a notification within Facebook, and can go back and introduce yourself.",
           "https://www.freecodecamp.org/study-group-directory/"
@@ -967,13 +967,13 @@
       "titleEs": "Únete a un Campamento en Tu Ciudad",
       "descriptionEs": [
         [
-          "//i.imgur.com/NAOFJWN.jpg",
+          "https://i.imgur.com/NAOFJWN.jpg",
           "Una imagen de algunos de nuestros campistas compartiendo en un café local. 3 hombres y 3 mujeres están sentados alrededor de una mesa con portátiles afuera, y están sonriendo y programando.",
           "Nuestros Campamentos te ayudan a programar con otros campistas en tu ciudad. Puedes coordinar grupos de estudio o atender eventos de programación locales juntos.",
           ""
         ],
         [
-          "//i.imgur.com/fTFMjwf.gif",
+          "https://i.imgur.com/fTFMjwf.gif",
           "Un gif mostrándote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
           "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve.",
           "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
@@ -982,13 +982,13 @@
       "titleDe": "Tritt einem Campsite in deiner Stadt bei",
       "descriptionDe": [
         [
-          "//i.imgur.com/XugIMb4.jpg",
+          "https://i.imgur.com/XugIMb4.jpg",
           "Ein Foto von einigen Campern bei einem Treffen in einem lokalen Cafe.",
           "Unsere Campsites sind Facebook Gruppen die dir helfen dich mit anderen Campern aus deiner Stadt zu treffen. Du kannst diese Gruppen verwenden um an \"Coffee-and-Code\" Treffen, wo du andere Camper in einem Cafe triffst um gemeinsam zu programmieren, teilzunehmen oder zu organisieren",
           ""
         ],
         [
-          "//i.imgur.com/fTFMjwf.gif",
+          "https://i.imgur.com/fTFMjwf.gif",
           "Ein GIF das zeigt wie du auf den untenstehenden Link klickst, deine Stadt aus der Liste aller Campsites suchst, auf den Facebook Link klickst und der Facebook Gruppe beitrittst.",
           "Finde deine Stadt auf dieser Liste und klick sie an. Du wirst auf die Facebook Gruppe des Campsites deiner Stadt geleitet. Klick den \"Gruppe beitreten\" Button um eine Beitrittsanfrage zu stellen. Jemand aus der Gruppe sollte dich in kürzester Zeit annehmen.",
           "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
@@ -997,13 +997,13 @@
       "TitleIt": "Unisciti ad un gruppo Free Code Camp nella tua città",
       "DescriptionIt": [
         [
-          "//i.imgur.com/XugIMb4.jpg",
+          "https://i.imgur.com/XugIMb4.jpg",
           "Una foto di alcuni dei nostri camper riuniti in un bar locale.",
           "È possibile programmare insieme ad altri campers nella tua città aderendo ad un gruppo Free Code Camp vicino a te.",
           ""
         ],
         [
-          "//i.imgur.com/fTFMjwf.gif",
+          "https://i.imgur.com/fTFMjwf.gif",
           "Una gif che mostra come è possibile fare clic sul link qui sotto, e trovare la tua città nella lista dei gruppi locali.",
           "Trova la tua città in questa lista e cliccala. Verrai indirizzato alla sua pagina Facebook. Fai clic sul pulsante \" Entra nel gruppo \". Qualcuno del gruppo dovrebbe approvare a breve la tua richiesta. Se la tua città non è in questo elenco, scorri alla parte superiore di questo articolo wiki per le istruzioni su come iniziare un gruppo nella tua città. ",
           "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
@@ -1015,10 +1015,10 @@
       "title": "Become a Supporter",
       "description": [
         [
-          "//i.imgur.com/CxcBk9C.png",
+          "https://i.imgur.com/CxcBk9C.png",
           "Help us pay for servers and other costs. Set up a monthly donation you can afford.",
           "freeCodeCamp is a small nonprofit that helps busy people learn to code for free. Help us pay for servers and other costs. Set up a monthly donation you can afford.",
-          "//donate.freecodecamp.org"
+          "https://donate.freecodecamp.org"
         ]
       ],
       "challengeSeed": [],
