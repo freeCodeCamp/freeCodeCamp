@@ -324,7 +324,7 @@ module.exports = function(app) {
     // not of the profile she is viewing
     const timezone = user && user.timezone ?
       user.timezone :
-      'EST';
+      moment.tz.guess();
 
     const query = {
       where: { username },
