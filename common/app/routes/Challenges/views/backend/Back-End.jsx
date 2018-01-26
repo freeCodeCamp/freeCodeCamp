@@ -14,7 +14,6 @@ import SolutionInput from '../../Solution-Input.jsx';
 import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
 import {
-  submitChallenge,
   executeChallenge,
   testsSelector,
   outputSelector
@@ -41,7 +40,6 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   id: PropTypes.string,
   output: PropTypes.string,
-  submitChallenge: PropTypes.func.isRequired,
   tests: PropTypes.array,
   title: PropTypes.string,
   ...reduxFormPropTypes
@@ -75,8 +73,7 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToActions = {
-  executeChallenge,
-  submitChallenge
+  executeChallenge
 };
 
 export class BackEnd extends PureComponent {
