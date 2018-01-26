@@ -16,7 +16,6 @@ const propTypes = {
   hint: PropTypes.string,
   isCodeLocked: PropTypes.bool,
   makeToast: PropTypes.func.isRequired,
-  openBugModal: PropTypes.func.isRequired,
   openHelpModal: PropTypes.func.isRequired,
   unlockUntrustedCode: PropTypes.func.isRequired,
   updateHint: PropTypes.func.isRequired
@@ -97,7 +96,6 @@ export default class ToolPanel extends PureComponent {
       guideUrl,
       hint,
       isCodeLocked,
-      openBugModal,
       openHelpModal,
       unlockUntrustedCode
     } = this.props;
@@ -122,36 +120,28 @@ export default class ToolPanel extends PureComponent {
           Reset your code
           </Button>
           <div className='button-spacer' />
+          {
+            guideUrl &&
+              <div>
+                <Button
+                  block={ true }
+                  bsStyle='primary'
+                  className='btn-big'
+                  href={ guideUrl }
+                  target='_blank'
+                  >
+                  Get a hint
+                </Button>
+                <div className='button-spacer' />
+              </div>
+          }
           <Button
             block={ true }
             bsStyle='primary'
             className='btn-big'
             onClick={ openHelpModal }
             >
-            Get Help
-          </Button>
-          <div className='button-spacer' />
-          {guideUrl &&
-            <div>
-              <Button
-                block={ true }
-                bsStyle='primary'
-                className='btn-big'
-                href={ guideUrl }
-                target='_blank'
-                >
-                See Guide
-              </Button>
-              <div className='button-spacer' />
-            </div>
-          }
-          <Button
-            block={ true }
-            bsStyle='primary'
-            className='btn-big'
-            onClick={ openBugModal }
-            >
-            Report a Bug
+            Ask for help on the forum
           </Button>
         <div className='button-spacer' />
       </div>

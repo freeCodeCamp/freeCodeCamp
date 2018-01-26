@@ -13,9 +13,10 @@ import { submittingSelector } from './redux';
 
 import {
   submitChallenge,
-  openBugModal,
 
-  chatRoomSelector
+  openHelpModal,
+  chatRoomSelector,
+  guideURLSelector
 } from '../../redux';
 
 import {
@@ -28,32 +29,36 @@ import {
 } from '../../../../utils/challengeTypes';
 
 const propTypes = {
+  guideUrl: PropTypes.string,
   helpChatRoom: PropTypes.string.isRequired,
   isFrontEnd: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   isSimple: PropTypes.bool,
   isSubmitting: PropTypes.bool,
-  openBugModal: PropTypes.func.isRequired,
+  openHelpModal: PropTypes.func.isRequired,
   submitChallenge: PropTypes.func.isRequired
 };
 const mapDispatchToProps = {
-  submitChallenge,
-  openBugModal
+  openHelpModal,
+  submitChallenge
 };
 const mapStateToProps = createSelector(
   challengeSelector,
   signInLoadingSelector,
   submittingSelector,
   chatRoomSelector,
+  guideURLSelector,
   (
     { challengeType = simpleProject },
     showLoading,
     isSubmitting,
     helpChatRoom,
+    guideUrl
   ) => ({
+    guideUrl,
+    helpChatRoom,
     isSignedIn: !showLoading,
     isSubmitting,
-    helpChatRoom,
     isSimple: challengeType === simpleProject,
     isFrontEnd: challengeType === frontEndProject
   })
@@ -78,13 +83,14 @@ export class ToolPanel extends PureComponent {
 
   render() {
     const {
+      guideUrl,
+      helpChatRoom,
       isFrontEnd,
       isSimple,
       isSignedIn,
       isSubmitting,
-      helpChatRoom,
-      submitChallenge,
-      openBugModal
+      openHelpModal,
+      submitChallenge
     } = this.props;
 
     const FormElement = isFrontEnd ? FrontEndForm : BackEndForm;
@@ -96,7 +102,7 @@ export class ToolPanel extends PureComponent {
             <FormElement isSubmitting={ isSubmitting }/>
         }
         <div className='button-spacer' />
-        <ButtonGroup justified={ true }>
+        <ButtonGroup vertical={ true }>
           <Button
             bsStyle='primary'
             className='btn-primary-ghost btn-big'
@@ -107,12 +113,21 @@ export class ToolPanel extends PureComponent {
             Help
           </Button>
           <Button
+            block={ true }
             bsStyle='primary'
             className='btn-primary-ghost btn-big'
-            componentClass='div'
-            onClick={ openBugModal }
+            href={ guideUrl }
+            target='_blank'
             >
-            Bug
+            Get a hint
+          </Button>
+          <Button
+            block={ true }
+            bsStyle='primary'
+            className='btn-primary-ghost btn-big'
+            onClick={ openHelpModal }
+            >
+            Ask for help on the forum
           </Button>
         </ButtonGroup>
       </div>

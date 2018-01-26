@@ -6,7 +6,7 @@ import { Col, Image } from 'react-bootstrap';
 
 import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
-import BugModal from '../../Bug-Modal.jsx';
+import HelpModal from '../../Help-Modal.jsx';
 
 import { challengeMetaSelector } from '../../redux';
 import { challengeSelector } from '../../../../redux';
@@ -45,7 +45,7 @@ export class Project extends PureComponent {
       isCompleted,
       description
     } = this.props;
-    const imageURL = '//i.imgur.com/' + image + '.png';
+    const imageURL = 'https://i.imgur.com/' + image + '.png';
     return (
       <Col
         md={ 8 }
@@ -63,8 +63,7 @@ export class Project extends PureComponent {
         />
         <br />
         <ToolPanel />
-        <br />
-        <BugModal />
+        <HelpModal />
       </Col>
     );
   }
