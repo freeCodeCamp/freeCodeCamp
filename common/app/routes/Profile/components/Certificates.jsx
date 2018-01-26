@@ -154,7 +154,7 @@ function Certificates({
   const renderCertShowWithUsername = _.curry(renderCertShow)(username);
   return (
     <div>
-      <h2 className='text-center'>FreeCodeCamp Certificates</h2>
+      <h2 className='text-center'>freeCodeCamp Certificates</h2>
       <br />
       {
         hasModernCert ?
