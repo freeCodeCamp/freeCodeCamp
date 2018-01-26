@@ -216,7 +216,10 @@ export const isCodeLockedSelector = state => getNS(state).isCodeLocked;
 export const isJSEnabledSelector = state => getNS(state).isJSEnabled;
 export const chatRoomSelector = state => getNS(state).helpChatRoom;
 export const challengeModalSelector =
-  state => getNS(state).isChallengeModalOpen;
+  state => (
+    getNS(state).isChallengeModalOpen &&
+    challengeSelector(state).type !== 'backend'
+  );
 
 export const bugModalSelector = state => getNS(state).isBugOpen;
 export const helpModalSelector = state => getNS(state).isHelpOpen;
