@@ -28,7 +28,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'dist/rx.all.js': 'rx/dist/rx.all.js'
+      'dist/rx.all.js': 'rx/dist/rx.all.js',
+      rx: path.resolve(path.join(__dirname, 'node_modules', 'rx'))
     }
   },
   module: {
