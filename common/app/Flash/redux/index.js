@@ -11,6 +11,8 @@ import * as utils from './utils.js';
 import getMessagesEpic from './get-messages-epic.js';
 import ns from '../ns.json';
 
+// export all the utils
+export { utils };
 export const epics = [getMessagesEpic];
 export const types = createTypes([
   'clickOnClose',
@@ -45,13 +47,10 @@ export default composeReducers(
   ),
   function metaReducer(state = defaultState, action) {
     if (utils.isFlashAction(action)) {
-      const { payload: { alertType, message } } = utils.getFlashAction(action);
+      const { payload } = utils.getFlashAction(action);
       return [
         ...state,
-        {
-          alertType: utils.normalizeAlertType(alertType),
-          message: _.escape(message)
-        }
+        ...payload
       ];
     }
     return state;
