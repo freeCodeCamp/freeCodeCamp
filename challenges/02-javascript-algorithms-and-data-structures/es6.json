@@ -124,13 +124,13 @@
         "",
         "  var sentence = str + \" is cool!\";",
         "  for(var i = 0; i < str.length; i+=2) {",
-        "    console.log(str2);",
+        "    console.log(str);",
         "  }",
         "",
         "  // change code above this line",
         "",
         "}",
-        "printManyTimes(\"FreeCodeCamp\");"
+        "printManyTimes(\"freeCodeCamp\");"
       ],
       "tests": [
         "getUserInput => assert(!getUserInput('index').match(/var/g),'message: <code>var</code> does not exist in code.');",
