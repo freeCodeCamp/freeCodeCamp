@@ -6,6 +6,7 @@ import {
 } from '../utils/middleware';
 import supportedLanguages from '../../common/utils/supported-languages.js';
 import { themes } from '../../common/utils/themes.js';
+import { alertTypes } from '../../common/utils/flash.js';
 
 export default function settingsController(app) {
   const api = app.loopback.Router();
@@ -76,7 +77,7 @@ export default function settingsController(app) {
     '/update-my-current-challenge',
     ifNoUser401,
     updateMyCurrentChallengeValidators,
-    createValidatorErrorHandler('errors'),
+    createValidatorErrorHandler(alertTypes.danger),
     updateMyCurrentChallenge
   );
 
@@ -88,11 +89,11 @@ export default function settingsController(app) {
   function updateMyTheme(req, res, next) {
     const { body: { theme } } = req;
     if (req.user.theme === theme) {
-      return res.sendFlash('info', 'Theme already set');
+      return res.sendFlash(alertTypes.info, 'Theme already set');
     }
     return req.user.updateTheme(theme)
       .then(
-        () => res.sendFlash('info', 'Your theme has been updated'),
+        () => res.sendFlash(alertTypes.info, 'Your theme has been updated'),
         next
       );
   }
@@ -100,7 +101,7 @@ export default function settingsController(app) {
     '/update-my-theme',
     ifNoUser401,
     updateMyThemeValidators,
-    createValidatorErrorHandler('errors'),
+    createValidatorErrorHandler(alertTypes.danger),
     updateMyTheme
   );
 

@@ -1,13 +1,5 @@
 import _ from 'lodash/fp';
-
-export const alertTypes = _.keyBy(_.identity)([
-  'success',
-  'info',
-  'warning',
-  'danger'
-]);
-
-export const normalizeAlertType = alertType => alertTypes[alertType] || 'info';
+import { alertTypes, normalizeAlertType } from '../../../utils/flash.js';
 
 // interface ExpressFlash {
 //   [alertType]: [String...]
@@ -16,7 +8,6 @@ export const normalizeAlertType = alertType => alertTypes[alertType] || 'info';
 //   type: AlertType,
 //   message: String
 // }
-
 export const expressToStack = _.flow(
   _.toPairs,
   _.flatMap(([ type, messages ]) => messages.map(msg => ({
