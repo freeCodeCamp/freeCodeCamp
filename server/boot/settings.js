@@ -5,6 +5,7 @@ import {
   createValidatorErrorHandler
 } from '../utils/middleware';
 import supportedLanguages from '../../common/utils/supported-languages.js';
+import { themes } from '../../common/utils/themes.js';
 
 export default function settingsController(app) {
   const api = app.loopback.Router();
@@ -79,22 +80,29 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
 
+  const updateMyThemeValidators = [
+    check('theme')
+      .isIn(Object.keys(themes))
+      .withMessage('Theme is invalid.')
+  ];
   function updateMyTheme(req, res, next) {
-    req.checkBody('theme', 'Theme is invalid.').isLength({ min: 4 });
     const { body: { theme } } = req;
-    const errors = req.validationErrors(true);
-    if (errors) {
-      return res.status(403).json({ errors });
-    }
     if (req.user.theme === theme) {
-      return res.json({ msg: 'Theme already set' });
+      return res.sendFlash('info', 'Theme already set');
     }
-    return req.user.updateTheme('' + theme)
+    return req.user.updateTheme(theme)
       .then(
-        data => res.json(data),
+        () => res.sendFlash('info', 'Your theme has been updated'),
         next
       );
   }
+  api.post(
+    '/update-my-theme',
+    ifNoUser401,
+    updateMyThemeValidators,
+    createValidatorErrorHandler('errors'),
+    updateMyTheme
+  );
 
   api.post(
     '/toggle-available-for-hire',
@@ -130,11 +138,6 @@ export default function settingsController(app) {
     '/update-my-lang',
     ifNoUser401,
     updateMyLang
-  );
-  api.post(
-    '/update-my-theme',
-    ifNoUser401,
-    updateMyTheme
   );
 
   app.use(api);

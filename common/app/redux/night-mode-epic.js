@@ -6,14 +6,12 @@ import store from 'store';
 import { themes } from '../../utils/themes.js';
 import { postJSON$ } from '../../utils/ajax-stream.js';
 import {
-  types,
-
+  csrfSelector,
   postThemeComplete,
-  createErrorObservable,
-
+  postThemeError,
   themeSelector,
-  usernameSelector,
-  csrfSelector
+  types,
+  usernameSelector
 } from './index.js';
 
 function persistTheme(theme) {
@@ -33,7 +31,8 @@ export default function nightModeEpic(
         ::ofType(
           types.fetchUser.complete,
           types.toggleNightMode,
-          types.postThemeComplete
+          types.postTheme.complete,
+          types.postTheme.error
         )
         .map(_.flow(getState, themeSelector))
         // catch existing night mode users
@@ -54,9 +53,10 @@ export default function nightModeEpic(
           const theme = themeSelector(getState());
           const username = usernameSelector(getState());
           return postJSON$('/update-my-theme', { _csrf, theme })
-            .pluck('updatedTo')
-            .map(theme => postThemeComplete(username, theme))
-            .catch(createErrorObservable);
+            .map(postThemeComplete)
+            .catch(err => {
+              return Observable.of(postThemeError(username, theme, err));
+            });
         });
 
       return Observable.merge(toggleBodyClass, postThemeEpic);

@@ -19,13 +19,14 @@ export function wrapHandledError(err, {
 }
 
 // for use with express-validator error formatter
-export const createValidatorErrorFormatter = (type, redirectTo, status) =>
+export const createValidatorErrorFormatter = (type, redirectTo) =>
   ({ msg }) => wrapHandledError(
     new Error(msg),
     {
       type,
       message: msg,
       redirectTo,
-      status
+      // we default to 400 as these are malformed requests
+      status: 400
     }
   );
