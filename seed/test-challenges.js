@@ -2,7 +2,29 @@
 import _ from 'lodash';
 import { Observable } from 'rx';
 import tape from 'tape';
+import { isMongoId } from 'validator';
+
 import getChallenges from './getChallenges';
+
+const notMongoId = id => !isMongoId(id);
+
+let existingIds = [];
+
+function validateObjectId(id, title) {
+  if (notMongoId(id)) {
+    throw new Error(`Expected a vaild ObjectId for ${title}, got ${id}`);
+  }
+  const idIndex = _.findIndex(existingIds, existing => id === existing);
+  if (idIndex !== -1) {
+    throw new Error(`
+    All challenges must have a unique id.
+
+    The id for ${title} is already assigned
+    `);
+  }
+  existingIds = [ ...existingIds, id ];
+  return;
+}
 
 function createIsAssert(t, isThing) {
   const { assert } = t;
@@ -52,6 +74,7 @@ function fillAssert(t) {
 
 function createTest({
   title,
+  id = '',
   tests = [],
   solutions = [],
   head = [],
@@ -60,6 +83,7 @@ function createTest({
   redux = false,
   reactRedux = false
 }) {
+  validateObjectId(id, title);
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
 
@@ -215,7 +239,7 @@ Observable.from(getChallenges())
   .toArray()
   .subscribe(
     (noSolutions) => {
-      if(noSolutions){
+      if (noSolutions) {
         console.log(
           '# These challenges have no solutions\n- [ ] ' +
             noSolutions.join('\n- [ ] ')
