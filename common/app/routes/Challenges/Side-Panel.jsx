@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 
 import ns from './ns.json';
 
-import BugModal from './Bug-Modal.jsx';
 import HelpModal from './Help-Modal.jsx';
 import ToolPanel from './Tool-Panel.jsx';
 import ChallengeTitle from './Challenge-Title.jsx';
@@ -14,7 +13,6 @@ import ChallengeDescription from './Challenge-Description.jsx';
 import TestSuite from './Test-Suite.jsx';
 import Output from './Output.jsx';
 import {
-  openBugModal,
   openHelpModal,
   updateHint,
   executeChallenge,
@@ -24,7 +22,8 @@ import {
   testsSelector,
   outputSelector,
   hintIndexSelector,
-  codeLockedSelector
+  codeLockedSelector,
+  guideURLSelector
 } from './redux';
 
 import { descriptionRegex } from './utils';
@@ -35,7 +34,6 @@ const mapDispatchToProps = {
   makeToast,
   executeChallenge,
   updateHint,
-  openBugModal,
   openHelpModal,
   unlockUntrustedCode
 };
@@ -46,13 +44,15 @@ const mapStateToProps = createSelector(
   outputSelector,
   hintIndexSelector,
   codeLockedSelector,
+  guideURLSelector,
   (
-    { description, guideUrl },
+    { description },
     { title },
     tests,
     output,
     hintIndex,
     isCodeLocked,
+    guideUrl
   ) => ({
     title,
     guideUrl,
@@ -69,7 +69,6 @@ const propTypes = {
   hint: PropTypes.string,
   isCodeLocked: PropTypes.bool,
   makeToast: PropTypes.func,
-  openBugModal: PropTypes.func,
   openHelpModal: PropTypes.func,
   output: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
@@ -126,7 +125,6 @@ export class SidePanel extends PureComponent {
       executeChallenge,
       updateHint,
       makeToast,
-      openBugModal,
       openHelpModal,
       isCodeLocked,
       unlockUntrustedCode,
@@ -153,12 +151,10 @@ export class SidePanel extends PureComponent {
           hint={ hint }
           isCodeLocked={ isCodeLocked }
           makeToast={ makeToast }
-          openBugModal={ openBugModal }
           openHelpModal={ openHelpModal }
           unlockUntrustedCode={ unlockUntrustedCode }
           updateHint={ updateHint }
         />
-        <BugModal />
         <HelpModal />
         <Output
           defaultOutput={

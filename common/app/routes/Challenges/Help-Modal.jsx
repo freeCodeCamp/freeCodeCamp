@@ -6,20 +6,18 @@ import { Button, Modal } from 'react-bootstrap';
 import ns from './ns.json';
 import {
   createQuestion,
-  openHelpChatRoom,
   closeHelpModal,
   helpModalSelector
 } from './redux';
 import { RSA } from '../../../utils/constantStrings.json';
 
 const mapStateToProps = state => ({ isOpen: helpModalSelector(state) });
-const mapDispatchToProps = { createQuestion, openHelpChatRoom, closeHelpModal };
+const mapDispatchToProps = { createQuestion, closeHelpModal };
 
 const propTypes = {
-  closeHelpModal: PropTypes.func,
-  createQuestion: PropTypes.func,
-  isOpen: PropTypes.bool,
-  openHelpChatRoom: PropTypes.func
+  closeHelpModal: PropTypes.func.isRequired,
+  createQuestion: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool
 };
 
 export class HelpModal extends PureComponent {
@@ -27,7 +25,6 @@ export class HelpModal extends PureComponent {
     const {
       isOpen,
       closeHelpModal,
-      openHelpChatRoom,
       createQuestion
     } = this.props;
     return (
@@ -44,20 +41,11 @@ export class HelpModal extends PureComponent {
           </span>
         </Modal.Header>
         <Modal.Body className='text-center'>
-          <h3>
-          If you've already tried the&nbsp;Read-Search-Ask&nbsp;method,
-          then you can ask for help on the freeCodeCamp forum.
+          <h3 className={`${ns}-help-modal-heading`}>
+            If you've already tried the&nbsp;
+            <a href={ RSA } title='Read, search, ask'>Read-Search-Ask</a>&nbsp;
+            method, then you can ask for help on the freeCodeCamp forum.
           </h3>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            href={ RSA }
-            onClick={ closeHelpModal }
-            target='_blank'
-            >
-            Learn about the Read-Search-Ask Methodology
-          </Button>
           <Button
             block={ true }
             bsSize='lg'
@@ -65,14 +53,6 @@ export class HelpModal extends PureComponent {
             onClick={ createQuestion }
             >
             Create a help post on the forum
-          </Button>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            onClick={ openHelpChatRoom }
-            >
-            Ask for help in the Gitter Chatroom
           </Button>
           <Button
             block={ true }

@@ -77,17 +77,10 @@ export const types = createTypes([
   createAsyncTypes('submitChallenge'),
   'moveToNextChallenge',
 
-  // bug
-  'openBugModal',
-  'closeBugModal',
-  'openIssueSearch',
-  'createIssue',
-
   // help
   'openHelpModal',
   'closeHelpModal',
   'createQuestion',
-  'openHelpChatRoom',
 
   // panes
   'toggleClassicEditor',
@@ -157,17 +150,10 @@ export const submitChallengeComplete = createAction(
 
 export const moveToNextChallenge = createAction(types.moveToNextChallenge);
 
-// bug
-export const openBugModal = createAction(types.openBugModal);
-export const closeBugModal = createAction(types.closeBugModal);
-export const openIssueSearch = createAction(types.openIssueSearch);
-export const createIssue = createAction(types.createIssue);
-
 // help
 export const openHelpModal = createAction(types.openHelpModal);
 export const closeHelpModal = createAction(types.closeHelpModal);
 export const createQuestion = createAction(types.createQuestion);
-export const openHelpChatRoom = createAction(types.openHelpChatRoom);
 
 // code storage
 export const storedCodeFound = createAction(
@@ -221,8 +207,9 @@ export const challengeModalSelector =
     challengeSelector(state).type !== 'backend'
   );
 
-export const bugModalSelector = state => getNS(state).isBugOpen;
 export const helpModalSelector = state => getNS(state).isHelpOpen;
+export const guideURLSelector = state =>
+  `https://guide.freecodecamp.org/certificates/${getNS(state).challenge}`;
 
 export const challengeRequiredSelector = state =>
   challengeSelector(state).required || [];
@@ -334,8 +321,6 @@ export default combineReducers(
         ...state,
         output: (state.output || '') + output
       }),
-      [types.openBugModal]: state => ({ ...state, isBugOpen: true }),
-      [types.closeBugModal]: state => ({ ...state, isBugOpen: false }),
       [types.openHelpModal]: state => ({ ...state, isHelpOpen: true }),
       [types.closeHelpModal]: state => ({ ...state, isHelpOpen: false })
     }),
