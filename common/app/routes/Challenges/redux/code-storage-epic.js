@@ -20,7 +20,7 @@ import {
 } from '../../../redux';
 import { filesSelector } from '../../../files';
 import { makeToast } from '../../../Toasts/redux';
-import { setContent } from '../../../../utils/polyvinyl.js';
+import { setContent, isPoly } from '../../../../utils/polyvinyl.js';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -55,8 +55,11 @@ function getLegacyCode(legacy) {
 }
 
 function legacyToFile(code, files, key) {
-  return { [key]: setContent(code, files[key]) };
-}
+  if (isPoly(files)) {
+    return { [key]: setContent(code, files[key]) };
+  }
+  return false;
+  }
 
 function clearCodeEpic(actions, { getState }) {
   return actions::ofType(
@@ -116,7 +119,7 @@ function loadCodeEpic(actions, { getState }, { window, location }) {
       }
 
       const codeFound = getCode(id);
-      if (codeFound) {
+      if (codeFound && isPoly(codeFound)) {
         finalFiles = codeFound;
       } else {
         const legacyCode = getLegacyCode(legacyKey);
