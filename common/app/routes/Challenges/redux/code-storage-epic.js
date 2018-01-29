@@ -58,8 +58,11 @@ function legacyToFile(code, files, key) {
   return { [key]: setContent(code, files[key]) };
 }
 
-export function clearCodeEpic(actions, { getState }) {
-  return actions::ofType(types.submitChallenge.complete)
+function clearCodeEpic(actions, { getState }) {
+  return actions::ofType(
+    types.submitChallenge.complete,
+    types.clickOnReset
+  )
     .do(() => {
       const { id } = challengeSelector(getState());
       store.remove(id);
@@ -67,7 +70,7 @@ export function clearCodeEpic(actions, { getState }) {
     .ignoreElements();
 }
 
-export function saveCodeEpic(actions, { getState }) {
+function saveCodeEpic(actions, { getState }) {
   return actions::ofType(types.executeChallenge)
     // do not save challenge if code is locked
     .filter(() => !codeLockedSelector(getState()))
@@ -79,7 +82,7 @@ export function saveCodeEpic(actions, { getState }) {
     .ignoreElements();
 }
 
-export function loadCodeEpic(actions, { getState }, { window, location }) {
+function loadCodeEpic(actions, { getState }, { window, location }) {
   return Observable.merge(
       actions::ofType(app.appMounted),
       actions::ofType(types.onRouteChallenges)
@@ -152,7 +155,7 @@ export function loadCodeEpic(actions, { getState }, { window, location }) {
     });
 }
 
-export function findPreviousSolutionEpic(actions, { getState }) {
+function findPreviousSolutionEpic(actions, { getState }) {
   return Observable.combineLatest(
     actions::ofType(types.noStoredCodeFound),
     actions::ofType(app.fetchUser.complete)
