@@ -64,11 +64,27 @@ function getCORSRequest() {
   }
 }
 
+function parseXhrResponse(responseType, xhr) {
+  switch (responseType) {
+    case 'json':
+      if ('response' in xhr) {
+        return xhr.responseType ?
+          xhr.response :
+          JSON.parse(xhr.response || xhr.responseText || 'null');
+      } else {
+        return JSON.parse(xhr.responseText || 'null');
+      }
+    case 'xml':
+      return xhr.responseXML;
+    case 'text':
+    default:
+      return ('response' in xhr) ? xhr.response : xhr.responseText;
+  }
+}
+
 function normalizeAjaxSuccessEvent(e, xhr, settings) {
-  var response = ('response' in xhr) ? xhr.response : xhr.responseText;
-  response = settings.responseType === 'json' ? JSON.parse(response) : response;
   return {
-    response: response,
+    response: parseXhrResponse(settings.responseType || xhr.responseType, xhr),
     status: xhr.status,
     responseType: xhr.responseType,
     xhr: xhr,
@@ -266,7 +282,8 @@ export function postJSON$(url, body) {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
-    }
+    },
+    normalizeError: (e, xhr) => parseXhrResponse('json', xhr)
   })
     .map(({ response }) => response);
 }
@@ -291,6 +308,7 @@ export function getJSON$(url) {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
-    }
+    },
+    normalizeError: (e, xhr) => parseXhrResponse('json', xhr)
   }).map(({ response }) => response);
 }
