@@ -5,7 +5,7 @@ import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 const unlockWarning = (
   <Tooltip id='tooltip'>
     <h4>
-      <strong>Careful!</strong> Only run code you trust
+      <strong>Careful!</strong> Only run code you trust.
     </h4>
   </Tooltip>
 );
@@ -73,7 +73,7 @@ export default class ToolPanel extends PureComponent {
             className='btn-big'
             onClick={ unlockUntrustedCode }
             >
-            Code Locked. Unlock?
+            I trust this code. Unlock it.
           </Button>
         </OverlayTrigger>
       );
