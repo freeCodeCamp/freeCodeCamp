@@ -18,18 +18,25 @@ import { filesSelector } from '../../../../files';
 const createModernEditorToggleType = fileKey =>
   types.toggleModernEditor + `(${fileKey})`;
 
+const getFirstFileKey = _.flow(_.values, _.first, _.property('key'));
+
 const propTypes = {
   nameToFileKey: PropTypes.object
 };
 
 const mapStateToProps = createSelector(
   filesSelector,
-  files => ({
-    nameToFileKey: _.reduce(files, (map, file) => {
-      map[file.name] = file.key;
-      return map;
-    }, {})
-  })
+  files => {
+    if (Object.keys(files).length === 1) {
+      return { nameToFileKey: { Editor: getFirstFileKey(files) }};
+    }
+    return {
+      nameToFileKey: _.reduce(files, (map, file) => {
+        map[file.name] = file.key;
+        return map;
+      }, {})
+    };
+  }
 );
 
 const mapDispatchToProps = null;
@@ -39,23 +46,32 @@ export const mapStateToPanes = addNS(
   createSelector(
     filesSelector,
     showPreviewSelector,
-    (files, showPreview)=> {
+    (files, showPreview) => {
       // create panes map here
       // must include map
       // side panel
       // editors are created based on state
       // so pane component can have multiple panes based on state
-      const panesMap = _.reduce(files, (map, file) => {
-        map[createModernEditorToggleType(file.fileKey)] = file.name;
-        return map;
-      }, {
+
+      const panesMap = {
         [types.toggleMap]: 'Map',
         [types.toggleSidePanel]: 'Lesson'
-      });
+      };
+
+      // If there is more than one file show file name
+      if (Object.keys(files).length > 1) {
+        _.forEach(files, (file) => {
+          panesMap[createModernEditorToggleType(file.fileKey)] = file.name;
+        });
+      } else {
+        const key = getFirstFileKey(files);
+        panesMap[createModernEditorToggleType(key)] = 'Editor';
+      }
 
       if (showPreview) {
         panesMap[types.togglePreview] = 'Preview';
       }
+
       return panesMap;
     }
   )
