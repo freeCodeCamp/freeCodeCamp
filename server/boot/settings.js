@@ -24,14 +24,28 @@ export default function settingsController(app) {
       );
   };
 
+  const updateMyEmailValidators = [
+    check('email')
+      .isEmail()
+      .withMessage('Email format is invalid.')
+  ];
+
   function updateMyEmail(req, res, next) {
     const { user, body: { email } } = req;
     return user.requestUpdateEmail(email)
       .subscribe(
-        (message) => res.json({ message }),
+        message => res.sendFlash(alertTypes.info, message),
         next
       );
   }
+
+  api.post(
+    '/update-my-email',
+    ifNoUser401,
+    updateMyEmailValidators,
+    createValidatorErrorHandler(alertTypes.danger),
+    updateMyEmail
+  );
 
   function updateMyLang(req, res, next) {
     const { user, body: { lang } = {} } = req;
@@ -129,11 +143,6 @@ export default function settingsController(app) {
     '/toggle-quincy-email',
     ifNoUser401,
     toggleUserFlag('sendQuincyEmail')
-  );
-  api.post(
-    '/update-my-email',
-    ifNoUser401,
-    updateMyEmail
   );
   api.post(
     '/update-my-lang',
