@@ -256,7 +256,8 @@
       "tests": [
         "assert($('header').length == 1, 'message: Your code should have one <code>header</code> tag.');",
         "assert($('header').children('h1').length == 1, 'message: Your <code>header</code> tags should wrap around the <code>h1</code>.');",
-        "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');"
+        "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');",
+        "assert(code.match(/<\\/header>/g) && code.match(/<\\/header>/g).length === code.match(/<header>/g).length, 'message: Make sure your <code>header</code> element has a closing tag.');"
       ],
       "solutions": [],
       "hints": [],
@@ -310,7 +311,8 @@
       "tests": [
         "assert($('nav').length == 1, 'message: Your code should have one <code>nav</code> tag.');",
         "assert($('nav').children('ul').length == 1, 'message: Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.');",
-        "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');"
+        "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');",
+        "assert(code.match(/<\\/nav>/g) && code.match(/<\\/nav>/g).length === code.match(/<nav>/g).length, 'message: Make sure your <code>nav</code> element has a closing tag.');"
       ],
       "solutions": [],
       "hints": [],
@@ -364,6 +366,8 @@
         "</body>"
       ],
       "tests": [
+        "assert($('footer').length == 1, 'message: Your code should have one <code>footer</code> tag.');",
+        "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');",
         "assert(code.match(/<footer>\\s*&copy; 2016 Camper Cat\\s*<\\/footer>/g), 'message: Your code should have an opening and closing <code>footer</code> tag.');",
         "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');"
       ],
@@ -402,6 +406,7 @@
       ],
       "tests": [
         "assert($('audio').length === 1, 'message: Your code should have one <code>audio</code> tag.');",
+        "assert(code.match(/<\\/audio>/g) && code.match(/<\\/audio>/g).length === code.match(/<audio id=\"meowClip\" controls>/g).length, 'message: Make sure your <code>audio</code> element has a closing tag.');",
         "assert($('audio').attr('controls'), 'message: The <code>audio</code> tag should have the <code>controls</code> attribute.');",
         "assert($('source').length === 1, 'message: Your code should have one <code>source</code> tag.');",
         "assert($('audio').children('source').length === 1, 'message: Your <code>source</code> tag should be inside the <code>audio</code> tags.');",
@@ -474,7 +479,8 @@
         "assert($('figcaption').length == 1, 'message: Your code should have one <code>figcaption</code> tag.');",
         "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');",
         "assert($('p').length == 0, 'message: Your code should not have any <code>p</code> tags.');",
-        "assert($('figure').children('figcaption').length == 1, 'message: The <code>figcaption</code> should be a child of the <code>figure</code> tag.');"
+        "assert($('figure').children('figcaption').length == 1, 'message: The <code>figcaption</code> should be a child of the <code>figure</code> tag.');",
+        "assert(code.match(/<\\/figure>/g) && code.match(/<\\/figure>/g).length === code.match(/<figure>/g).length, 'message: Make sure your <code>figure</code> element has a closing tag.');"
       ],
       "solutions": [],
       "hints": [],
@@ -598,6 +604,7 @@
       ],
       "tests": [
         "assert($('fieldset').length == 1, 'message: Your code should have a <code>fieldset</code> tag around the radio button set.');",
+        "assert(code.match(/<\\/fieldset>/g) && code.match(/<\\/fieldset>/g).length === code.match(/<fieldset>/g).length, 'message: Make sure your <code>fieldset</code> element has a closing tag.');",
         "assert($('legend').length == 1, 'message: Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.');",
         "assert($('div').length == 0, 'message: Your code should not have any <code>div</code> tags.');",
         "assert($('p').length == 4, 'message: Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.');"
@@ -705,7 +712,8 @@
       "tests": [
         "assert($('time').text().match(/Thursday, September 15th/g), 'message: Your <code>time</code> tags should wrap around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\".');",
         "assert($('time').attr('datetime'), 'message: Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.');",
-        "assert($('time').attr('datetime') === \"2016-09-15\", 'message: Your <code>datetime</code> attribute should be set to a value of 2016-09-15.');"
+        "assert($('time').attr('datetime') === \"2016-09-15\", 'message: Your <code>datetime</code> attribute should be set to a value of 2016-09-15.');",
+        "assert(code.match(/<\\/time>/g) && code.match(/<\\/time>/g).length === 4, 'message: Make sure your <code>time</code> element has a closing tag.');"
       ],
       "solutions": [],
       "hints": [],
@@ -970,7 +978,8 @@
         "</body>"
       ],
       "tests": [
-        "assert($('a').text().match(/information about batteries/g), 'message: Your code should move the anchor <code>a</code> tags from around the words \"Click here\" to wrap around the words \"information about batteries\".');"
+        "assert($('a').text().match(/information about batteries/g), 'message: Your code should move the anchor <code>a</code> tags from around the words \"Click here\" to wrap around the words \"information about batteries\".');",
+        "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a href=\"\">/g).length, 'message: Make sure your <code>a</code> element has a closing tag.');"
       ],
       "solutions": [],
       "hints": [],
