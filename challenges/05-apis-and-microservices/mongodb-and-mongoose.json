@@ -80,7 +80,7 @@
         },
         {
           "text": "\"mongoose\" dependency should be in package.json",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/file/package.json').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongooose'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/file/package.json').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongoose'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
