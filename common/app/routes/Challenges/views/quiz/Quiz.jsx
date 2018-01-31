@@ -29,13 +29,15 @@ const mapStateToProps = createSelector(
   (
     {
       description = [],
-      title
+      title,
+      dashedName
     },
     meta,
     currentIndex,
     selectedChoice,
     correct
   ) => ({
+    dashedName,
     title,
     description,
     meta,
@@ -59,6 +61,7 @@ function mapDispatchToProps(dispatch) {
 const propTypes = {
   correct: PropTypes.number,
   currentIndex: PropTypes.number,
+  dashedName: PropTypes.string,
   description: PropTypes.string,
   meta: PropTypes.object,
   nextQuestion: PropTypes.fun,
@@ -139,8 +142,9 @@ export class QuizChallenge extends PureComponent {
   renderQuiz() {
     const currentIndex = this.props.currentIndex;
     const question = this.props.description[currentIndex];
+    const questionKey = this.props.dashedName + currentIndex.toString();
     return (
-      <div>
+      <div key={questionKey} >
         {this.renderTitle()}
         <Row>
           <Col md={6}>
