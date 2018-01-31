@@ -10,7 +10,6 @@ import EmailSettings from './components/Email-Settings.jsx';
 import InternetSettings from './components/Internet-Settings.jsx';
 import PortfolioSettings from './components/Portfolio-Settings.jsx';
 import ProjectSettings from './components/Project-Settings.jsx';
-import SettingsSkeleton from './components/Settings-Skeleton.jsx';
 import JobSettings from './components/Job-Settings.jsx';
 import LanguageSettings from './components/Language-Settings.jsx';
 import DangerZone from './components/DangerZone.jsx';
@@ -23,7 +22,7 @@ import {
   userSelector,
   hardGoTo
 } from '../../redux';
-import { FullWidthRow } from '../../helperComponents';
+import { FullWidthRow, Loader } from '../../helperComponents';
 import EmailForm from './components/EmailForm.jsx';
 
 const mapStateToProps = createSelector(
@@ -90,7 +89,7 @@ class Settings extends React.Component {
     } = this.props;
 
     if (!username && showLoading) {
-      return <SettingsSkeleton />;
+      return <Loader />;
     }
 
     if (!email && !showLoading) {
@@ -100,19 +99,27 @@ class Settings extends React.Component {
       <ChildContainer>
         <Grid>
           <div className={`container ${ns}-container`}>
-            <Row>
-              <Col xs={ 8 } xsOffset={ 2 }>
-                <Link to={ `/u/${username}` }>
-                  <Button
-                    block={ true }
-                    bsSize='lg'
-                    bsStyle='primary'
-                    >
-                    View my Public Profile
-                  </Button>
-                </Link>
-              </Col>
-            </Row>
+            <FullWidthRow>
+              <Link to={ `/${username}` }>
+                <Button
+                  block={ true }
+                  bsSize='lg'
+                  bsStyle='primary'
+                  >
+                  View my Public Profile
+                </Button>
+              </Link>
+            </FullWidthRow>
+            <FullWidthRow>
+              <Button
+                block={ true }
+                bsSize='lg'
+                bsStyle='primary'
+                href='/logout'
+                >
+                Sign out of freeCodeCamp
+              </Button>
+            </FullWidthRow>
             <AccountSettings />
             <hr />
             <EmailSettings />

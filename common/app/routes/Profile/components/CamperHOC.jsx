@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
-import { userSelector } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 import Camper from './Camper.jsx';
 
 const mapStateToProps = createSelector(
-  userSelector,
+  userByNameSelector,
   ({
     name,
     username,

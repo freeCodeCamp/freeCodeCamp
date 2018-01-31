@@ -1,30 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 
 import SocialIcons from './SocialIcons.jsx';
-import { userSelector } from '../../../redux';
 
-const mapStateToProps = createSelector(
-  userSelector,
-  ({
-    name,
-    username,
-    location,
-    points,
-    picture,
-    bio
-  }) => ({
-    name,
-    username,
-    location,
-    points,
-    picture,
-    bio
-  })
-);
+const mapStateToProps = () => ({});
 
 const propTypes = {
   bio: PropTypes.string,
@@ -49,7 +30,7 @@ function Camper({
       <Row>
         <Col className='avatar-container'>
             <img
-              alt={ username + '\' profile picture' }
+              alt={ username + '\'s profile picture' }
               className='avatar'
               src={ picture }
             />

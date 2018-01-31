@@ -1,11 +1,8 @@
 import supportedLanguages from '../../common/utils/supported-languages';
+import { addPlaceholderImage } from '../utils';
 
 const message =
   'Learn to Code and Help Nonprofits';
-
-function placeholderImage(name) {
-  return `https://identicon.org?t=${name}&s=256`;
-}
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -27,7 +24,12 @@ module.exports = function(app) {
     if (!user || user.picture) {
       return next();
     }
-    return user.update$({ picture: placeholderImage(user.username) })
+    const picture = addPlaceholderImage(user.username);
+    return user.update$({ picture })
+      .do(() => {
+        user.picure = picture;
+        return;
+      })
       .subscribe(
         () => next(),
         next

@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
-import { userSelector } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 
 const propTypes = {
   email: PropTypes.string,
@@ -24,7 +24,7 @@ const propTypes = {
 };
 
 const mapStateToProps = createSelector(
-  userSelector,
+  userByNameSelector,
   ({
     email,
     githubURL,

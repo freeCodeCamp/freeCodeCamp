@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import { Thumbnail, Media } from 'react-bootstrap';
 
 import { FullWidthRow } from '../../../helperComponents';
-import { userSelector } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 
 const mapStateToProps = createSelector(
-  userSelector,
+  userByNameSelector,
   ({ portfolio }) => ({ portfolio })
 );
 

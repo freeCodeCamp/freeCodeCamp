@@ -1,29 +1,35 @@
-import { isLocationAction } from 'redux-first-router';
 import {
-  addNS,
   createAction,
   createTypes
 } from 'berkeleys-redux-utils';
 
 import ns from '../ns.json';
+import handleActions from 'berkeleys-redux-utils/lib/handle-actions';
 
 export const types = createTypes([
-  'onRouteProfile'
+  'onRouteProfile',
+  'userFound'
 ], 'profile');
 
 
 export const onRouteProfile = createAction(types.onRouteProfile);
+export const userFound = createAction(types.userFound);
+const initialState = {
+  isUserFound: null
+};
 
-const defaultState = {};
+export const userFoundSelector = state => state[ns].isUserFound;
 
-// const getNS = state => state[ns];
-
-export default addNS(
-  ns,
-  function profileRouteReducer(state = defaultState, action) {
-    if (isLocationAction(action)) {
-      // const { type } = action;
-    }
-    return state;
+export default handleActions(() => (
+  {
+    [types.userFound]: (state, { payload }) => {
+      console.log('reducer', payload);
+      return ({
+      ...state,
+      isUserFound: payload
+    });
   }
+  }),
+  initialState,
+  ns
 );

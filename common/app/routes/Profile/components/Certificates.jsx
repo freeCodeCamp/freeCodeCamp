@@ -9,10 +9,10 @@ import {
   Col
 } from 'react-bootstrap';
 
-import { userSelector } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 
 const mapStateToProps = createSelector(
-  userSelector,
+  userByNameSelector,
   ({
     isRespWebDesignCert,
     is2018DataVisCert,

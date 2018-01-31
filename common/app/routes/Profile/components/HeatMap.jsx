@@ -9,7 +9,7 @@ import subDays from 'date-fns/sub_days';
 import differenceInMonths from 'date-fns/difference_in_months';
 
 import { FullWidthRow } from '../../../helperComponents';
-import { userSelector } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 
 function ensureD3() {
   // CalHeatMap requires d3 to be available on window
@@ -25,7 +25,7 @@ function ensureD3() {
 }
 
 const mapStateToProps = createSelector(
-  userSelector,
+  userByNameSelector,
   ({ calendar, streak }) => ({ calendar, streak })
 );
 

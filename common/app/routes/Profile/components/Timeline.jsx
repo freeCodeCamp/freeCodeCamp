@@ -9,7 +9,7 @@ import {
 } from 'react-bootstrap';
 
 import { challengeIdToNameMapSelector } from '../../../entities';
-import { userSelector } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 import { homeURL } from '../../../../utils/constantStrings.json';
 import blockNameify from '../../../utils/blockNameify';
 import { FullWidthRow } from '../../../helperComponents';
@@ -17,7 +17,7 @@ import { Link } from '../../../Router';
 
 const mapStateToProps = createSelector(
   challengeIdToNameMapSelector,
-  userSelector,
+  userByNameSelector,
   (
     idToNameMap,
     { challengeMap: completedMap = {} }

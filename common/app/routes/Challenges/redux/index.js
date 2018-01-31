@@ -100,6 +100,7 @@ export const types = createTypes([
 ], ns);
 
 // routes
+export const onRouteChallengeRoot = createAction(types.onRouteChallengeRoot);
 export const onRouteChallenges = createAction(types.onRouteChallenges);
 export const onRouteCurrentChallenge =
   createAction(types.onRouteCurrentChallenge);

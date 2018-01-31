@@ -90,7 +90,17 @@ export const isChallengeLoaded = (state, { dashedName }) =>
   !!challengeMapSelector(state)[dashedName];
 
 function metaReducer(state = defaultState, action) {
-  if (action.meta && action.meta.entities) {
+  const { meta } = action;
+  if (meta && meta.entities) {
+    if (meta.entities.user) {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          ...meta.entities.user
+        }
+      };
+    }
     return {
       ...state,
       ...action.meta.entities

@@ -96,6 +96,7 @@ export default handleActions(() => (
     }),
     [types.validateUsername.error]: state => ({ ...state, validating: false })
   }
-  ), initialState,
+  ),
+  initialState,
   ns
 );

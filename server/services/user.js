@@ -6,6 +6,7 @@ import {
   calcCurrentStreak,
   calcLongestStreak
 } from '../utils/user-stats';
+import { addPlaceholderImage } from '../utils/index';
 
 const publicUserProps = [
   'id',
@@ -14,7 +15,6 @@ const publicUserProps = [
   'bio',
   'location',
   'theme',
-  'picture',
   'points',
   'email',
   'website',
@@ -81,25 +81,42 @@ function getProgress(progressTimestamps, timezone = 'EST') {
   return { calendar, streak };
 }
 
-export default function userServices() {
+export default function userServices(app) {
   return {
     name: 'user',
-    read: (req, resource, params, config, cb) => {
-      const { user } = req;
-      const source = Observable.forkJoin(
-        user.getChallengeMap$(),
-        user.getPoints$(),
+    read: async function readUserService(
+      req,
+      resource,
+      { otherUser },
+      config,
+      cb) {
+      const { User } = app.models;
+      let queryUser;
+      if (!otherUser) {
+        queryUser = req.user;
+      } else {
+        try {
+          queryUser = await User.findOne$(
+            { where: { username: otherUser } }
+          ).toPromise();
+        } catch (err) {
+          queryUser = null;
+        }
+      }
+      const source = queryUser && Observable.forkJoin(
+        queryUser.getChallengeMap$(),
+        queryUser.getPoints$(),
         (challengeMap, progressTimestamps) => ({
           challengeMap,
-          progress: getProgress(progressTimestamps, user.timezone)
+          progress: getProgress(progressTimestamps, queryUser.timezone)
         })
       );
       Observable.if(
-        () => !user,
+        () => !queryUser,
         Observable.of({}),
         Observable.defer(() => source)
           .map(({ challengeMap, progress }) => ({
-            ...user.toJSON(),
+            ...queryUser.toJSON(),
             ...progress,
             challengeMap
           }))
@@ -113,7 +130,8 @@ export default function userServices() {
                     isGithub: !!user.githubURL,
                     isLinkedIn: !!user.linkedIn,
                     isTwitter: !!user.twitter,
-                    isWebsite: !!user.website
+                    isWebsite: !!user.website,
+                    picture: user.picture || addPlaceholderImage(user.username)
                   }
                 }
               },
