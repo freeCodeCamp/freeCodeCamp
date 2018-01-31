@@ -44,7 +44,6 @@ const publicUserProps = [
   'sendMonthlyEmail',
   'sendNotificationEmail',
   'sendQuincyEmail',
-  'isPublicEmail',
 
   'currentChallengeId',
   'challengeMap',

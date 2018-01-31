@@ -15,7 +15,6 @@ const propTypes = {
   githubURL: PropTypes.string,
   isGithub: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
-  isPublicEmail: PropTypes.bool,
   isTwitter: PropTypes.bool,
   isWebsite: PropTypes.bool,
   linkedIn: PropTypes.string,
@@ -30,7 +29,6 @@ const mapStateToProps = createSelector(
     githubURL,
     isLinkedIn,
     isGithub,
-    isPublicEmail,
     isTwitter,
     isWebsite,
     linkedIn,
@@ -41,7 +39,6 @@ const mapStateToProps = createSelector(
     githubURL,
     isLinkedIn,
     isGithub,
-    isPublicEmail,
     isTwitter,
     isWebsite,
     linkedIn,
@@ -115,7 +112,6 @@ function SocialIcons(props) {
     githubURL,
     isLinkedIn,
     isGithub,
-    isPublicEmail,
     isTwitter,
     isWebsite,
     linkedIn,
@@ -129,9 +125,6 @@ function SocialIcons(props) {
         sm={ 6 }
         smOffset={ 3 }
         >
-        {
-          isPublicEmail ? MailIcon(email) : null
-        }
         {
           isLinkedIn ? LinkedInIcon(linkedIn) : null
         }

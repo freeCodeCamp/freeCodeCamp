@@ -28,7 +28,6 @@ const mapStateToProps = createSelector(
   ({
     email,
     isEmailVerified,
-    isPublicEmail,
     sendMonthlyEmail,
     sendNotificationEmail,
     sendQuincyEmail
@@ -38,9 +37,9 @@ const mapStateToProps = createSelector(
     isEmailVerified,
     options: [
       {
-        flag: 'isPublicEmail',
-        label: 'Allow people to send me email',
-        bool: isPublicEmail
+        flag: 'sendQuincyEmail',
+        label: 'Send me Quincy\'s weekly email',
+        bool: sendQuincyEmail
       },
       {
         flag: 'sendMonthlyEmail',
@@ -51,11 +50,6 @@ const mapStateToProps = createSelector(
         flag: 'sendNotificationEmail',
         label: 'Send me notification emails',
         bool: sendNotificationEmail
-      },
-      {
-        flag: 'sendQuincyEmail',
-        label: 'Send me Quincy\'s weekly email',
-        bool: sendQuincyEmail
       }
     ]
   })
