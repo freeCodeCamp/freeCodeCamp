@@ -26,7 +26,6 @@ const publicUserProps = [
   'projects',
   'isLocked',
   'isHonest',
-  'isAvailableForHire',
   'isFrontEndCert',
   'isBackEndCert',
   'isDataVisCert',

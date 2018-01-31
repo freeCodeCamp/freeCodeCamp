@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Col, Grid, Row, Alert } from 'react-bootstrap';
+import { Button, Grid, Alert } from 'react-bootstrap';
 
 import ns from './ns.json';
 import AccountSettings from './components/Account-Settings.jsx';
@@ -10,7 +10,6 @@ import EmailSettings from './components/Email-Settings.jsx';
 import InternetSettings from './components/Internet-Settings.jsx';
 import PortfolioSettings from './components/Portfolio-Settings.jsx';
 import ProjectSettings from './components/Project-Settings.jsx';
-import JobSettings from './components/Job-Settings.jsx';
 import LanguageSettings from './components/Language-Settings.jsx';
 import DangerZone from './components/DangerZone.jsx';
 import Honesty from './components/Honesty.jsx';
@@ -127,8 +126,6 @@ class Settings extends React.Component {
             <LanguageSettings />
             <hr />
             <InternetSettings />
-            <hr />
-            <JobSettings />
             <hr />
             <PortfolioSettings/>
             <hr />
