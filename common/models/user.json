@@ -89,7 +89,7 @@
       },
       "require": true
     },
-    "bio": {
+    "about": {
       "type": "string",
       "default": ""
     },

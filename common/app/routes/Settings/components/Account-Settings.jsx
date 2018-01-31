@@ -33,7 +33,7 @@ const mapStateToProps = createSelector(
   userSelector,
   (
     {
-      bio,
+      about,
       isLocked,
       location,
       name,
@@ -43,9 +43,9 @@ const mapStateToProps = createSelector(
       username
     },
   ) => ({
-    bio,
+    about,
     currentTheme: theme,
-    initialValues: { name, location, bio, picture },
+    initialValues: { name, location, about, picture },
     isLocked,
     location,
     name,
@@ -55,15 +55,15 @@ const mapStateToProps = createSelector(
   })
 );
 
-const formFields = [ 'bio', 'name', 'picture', 'location' ];
+const formFields = [ 'name', 'location', 'picture', 'about' ];
 
 function validator(values) {
   const errors = {};
   const {
-    bio,
+    about,
     picture
   } = values;
-  errors.bio = max288Char(bio);
+  errors.about = max288Char(about);
   errors.picutre = validURL(picture);
 
 }
@@ -75,7 +75,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const propTypes = {
-    bio: PropTypes.string,
+    about: PropTypes.string,
     currentTheme: PropTypes.string,
     fields: PropTypes.object,
     handleSubmit: PropTypes.func.isRequired,
@@ -120,7 +120,7 @@ class AccountSettings extends PureComponent {
     const { fields } = this.props;
     const options = {
       types: {
-        bio: 'textarea',
+        about: 'textarea',
         picture: 'url'
       }
     };
@@ -140,14 +140,14 @@ class AccountSettings extends PureComponent {
       picture: { value: picture },
       name: { value: name },
       location: { value: location },
-      bio: { value: bio }
+      about: { value: about }
       },
       points,
       username
     } = this.props;
     return (
       <Camper
-        bio={ bio }
+        about={ about }
         location={ location }
         name={ name }
         picture={ picture }
@@ -184,15 +184,19 @@ class AccountSettings extends PureComponent {
             className='edit-preview-tabs'
             onSelect={k => this.handleTabSelect(k)}
             >
-            <NavItem eventKey='edit' title='Edit'>
-              Edit
+            <NavItem eventKey='edit' title='Edit Bio'>
+              Edit Bio
             </NavItem>
-            <NavItem eventKey='preview' title='Preview'>
-              Preview
+            <NavItem eventKey='preview' title='Preview Bio'>
+              Preview Bio
             </NavItem>
           </Nav>
         </FullWidthRow>
         <br />
+        <UsernameSettings username={ username }/>
+        <FullWidthRow>
+          <hr />
+        </FullWidthRow>
         <FullWidthRow>
         <form id='camper-identity' onSubmit={ handleSubmit(this.handleSubmit) }>
           {
@@ -203,9 +207,6 @@ class AccountSettings extends PureComponent {
           </FullWidthRow>
         </form>
         </FullWidthRow>
-
-        <UsernameSettings username={ username }/>
-
         <FullWidthRow>
           <LockedSettings
             isLocked={ isLocked }

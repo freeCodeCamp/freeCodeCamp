@@ -149,9 +149,7 @@ function UsernameSettings(props) {
           >
           <Col className='inline-form' sm={ 2 } xs={ 12 }>
             <ControlLabel htmlFor='username-settings'>
-              <p className='settings-title'>
                 <strong>Username</strong>
-              </p>
             </ControlLabel>
           </Col>
           <Col sm={ 8 } xs={ 12 }>

@@ -120,13 +120,13 @@ function getAboutProfile({
   username,
   githubProfile: github,
   progressTimestamps = [],
-  bio
+  about
 }) {
   return {
     username,
     github,
     browniePoints: progressTimestamps.length,
-    bio
+    bio: about
   };
 }
 

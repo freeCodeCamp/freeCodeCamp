@@ -8,7 +8,7 @@ import SocialIcons from './SocialIcons.jsx';
 const mapStateToProps = () => ({});
 
 const propTypes = {
-  bio: PropTypes.string,
+  about: PropTypes.string,
   location: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.string,
@@ -22,7 +22,7 @@ function Camper({
   location,
   points,
   picture,
-  bio
+  about
 }) {
 
   return (
@@ -45,7 +45,7 @@ function Camper({
       <br />
       <h3 className='text-center points'>{ points } points</h3>
       <br/>
-      <p className='bio'>{ bio }</p>
+      <p className='bio'>{ about }</p>
     </div>
   );
 }

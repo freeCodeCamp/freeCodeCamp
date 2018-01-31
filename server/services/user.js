@@ -12,7 +12,7 @@ const publicUserProps = [
   'id',
   'name',
   'username',
-  'bio',
+  'about',
   'location',
   'theme',
   'points',

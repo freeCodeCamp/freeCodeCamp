@@ -14,19 +14,19 @@ const mapStateToProps = createSelector(
     location,
     points,
     picture,
-    bio
+    about
   }) => ({
     name,
     username,
     location,
     points,
     picture,
-    bio
+    about
   })
 );
 
 const propTypes = {
-  bio: PropTypes.string,
+  about: PropTypes.string,
   location: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.string,
@@ -40,13 +40,13 @@ function CamperHOC({
   location,
   points,
   picture,
-  bio
+  about
 }) {
 
   return (
     <div>
       <Camper
-        bio={ bio }
+        about={ about }
         location={ location }
         name={ name }
         picture={ picture }
