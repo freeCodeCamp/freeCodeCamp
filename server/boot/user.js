@@ -9,7 +9,7 @@ import {
   frontEndLibsId,
   jsAlgoDataStructId,
   dataVisId,
-  dataViz2018Id,
+  dataVis2018Id,
   apisMicroservicesId,
   infosecQaId
 } from '../utils/constantStrings.json';
@@ -31,7 +31,7 @@ const certIds = {
   [certTypes.frontEndLibs]: frontEndLibsId,
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
   [certTypes.dataVis]: dataVisId,
-  [certTypes.dataVis2018]: dataViz2018Id,
+  [certTypes.dataVis2018]: dataVis2018Id,
   [certTypes.apisMicroservices]: apisMicroservicesId,
   [certTypes.infosecQa]: infosecQaId
 };
@@ -112,14 +112,14 @@ module.exports = function(app) {
   );
 
   router.get(
-    '/:username/report-user/',
+    '/user/:username/report-user/',
     sendNonUserToMap,
     ifNotVerifiedRedirectToSettings,
     getReportUserProfile
   );
 
   api.post(
-    '/:username/report-user/',
+    '/user/:username/report-user/',
     ifNoUser401,
     postReportUserProfile
   );
@@ -129,7 +129,7 @@ module.exports = function(app) {
 
   function getAccount(req, res) {
     const { username } = req.user;
-    return res.redirect('/u/' + username);
+    return res.redirect(`/${username}`);
   }
 
   function getUnlinkSocial(req, res, next) {
@@ -139,19 +139,19 @@ module.exports = function(app) {
     let social = req.params.social;
     if (!social) {
       req.flash('danger', 'No social account found');
-      return res.redirect('/u/' + username);
+      return res.redirect(`/${username}`);
     }
 
     social = social.toLowerCase();
     const validSocialAccounts = ['twitter', 'linkedin'];
     if (validSocialAccounts.indexOf(social) === -1) {
       req.flash('danger', 'Invalid social account');
-      return res.redirect('/u/' + username);
+      return res.redirect(`/${username}`);
     }
 
     if (!user[social]) {
       req.flash('danger', `No ${social} account associated`);
-      return res.redirect('/u/' + username);
+      return res.redirect(`/${username}`);
     }
 
     const query = {
@@ -167,7 +167,7 @@ module.exports = function(app) {
       let identity = identities.shift();
       if (!identity) {
         req.flash('danger', 'No social account found');
-        return res.redirect('/u/' + username);
+        return res.redirect(`/${username}`);
       }
 
       return identity.destroy(function(err) {
@@ -180,7 +180,7 @@ module.exports = function(app) {
             debug(`${social} has been unlinked successfully`);
 
             req.flash('info', `You've successfully unlinked your ${social}.`);
-            return res.redirect('/u/' + username);
+            return res.redirect(`/${username}`);
           }, next);
       });
     });
@@ -359,7 +359,7 @@ module.exports = function(app) {
       `)
     }, err => {
       if (err) {
-        err.redirectTo = '/u/' + username;
+        err.redirectTo = `/${username}`;
         return next(err);
       }
 
