@@ -166,15 +166,6 @@ export class Settings extends React.Component {
               >
               Sign me out of freeCodeCamp
             </Button>
-            <Button
-              block={ true }
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-link-social'
-              href={ 'mail:team@freecodecamp.com' }
-              >
-              Email us at team@freecodecamp.com
-            </Button>
           </Col>
         </Row>
         <h1 className='text-center'>Settings for your Account</h1>
