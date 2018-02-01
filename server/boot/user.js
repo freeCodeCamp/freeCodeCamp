@@ -292,7 +292,7 @@ module.exports = function(app) {
   function postResetProgress(req, res, next) {
     User.findById(req.user.id, function(err, user) {
       if (err) { return next(err); }
-      return user.updateAttributes({
+      return user.update$({
         progressTimestamps: [{
           timestamp: Date.now()
         }],
@@ -310,11 +310,14 @@ module.exports = function(app) {
         isFullStackCert: false,
         challengeMap: {},
         projects: {}
-      }, function(err) {
-        if (err) { return next(err); }
-        req.flash('success', 'You have successfully reset your progress.');
-        return res.status(200).end();
-      });
+      })
+      .subscribe(
+        () => {
+          req.flash('success', 'You have successfully reset your progress.');
+          return res.status(200).end();
+        },
+        next
+      );
     });
   }
 
