@@ -31,18 +31,23 @@ function Portfolio({ portfolio = [] }) {
   return (
     <div>
       <FullWidthRow>
-        <h2>Portfolio</h2>
+        <h2 className='text-center'>Portfolio</h2>
         {
           portfolio.map(({ title, url, image, description, id}) => (
             <Media key={ id }>
               <Media.Left align='middle'>
-                <a href={ url } rel='nofollow'>
-                  <Thumbnail
-                    alt={ `A screen shot of ${title}` }
-                    src={ image }
-                    style={{ width: '150px' }}
-                  />
-                </a>
+              {
+                image && (
+                  <a href={ url } rel='nofollow'>
+                    <Thumbnail
+                      alt={ `A screen shot of ${title}` }
+                      src={ image }
+                      style={{ width: '150px' }}
+                    />
+                  </a>
+                )
+
+              }
               </Media.Left>
                 <Media.Body>
                   <Media.Heading>
