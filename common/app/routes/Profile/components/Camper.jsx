@@ -16,6 +16,10 @@ const propTypes = {
   username: PropTypes.string
 };
 
+function pluralise(word, condition) {
+  return condition ? word + 's' : word;
+}
+
 function Camper({
   name,
   username,
@@ -39,13 +43,14 @@ function Camper({
       <br />
       <SocialIcons />
       <br/>
-      <h2 className='text-center name'>{ name }</h2>
-      <h4 className='text-center username'>@{ username }</h4>
-      <h4 className='text-center location'>{ location }</h4>
-      <br />
-      <h3 className='text-center points'>{ points } points</h3>
+      <h2 className='text-center username'>@{ username }</h2>
+      { name && <p className='text-center name'>{ name }</p> }
+      { location && <p className='text-center location'>{ location }</p> }
+      { about && <p className='bio text-center'>{ about }</p> }
+      <p className='text-center points'>
+        { `${points} ${pluralise('point', points > 1)}` }
+      </p>
       <br/>
-      <p className='bio'>{ about }</p>
     </div>
   );
 }

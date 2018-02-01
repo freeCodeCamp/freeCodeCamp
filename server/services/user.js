@@ -1,5 +1,6 @@
 import { Observable } from 'rx';
 import _ from 'lodash';
+import { isURL } from 'validator';
 
 import {
   prepUniqueDaysByHours,
@@ -50,6 +51,17 @@ const publicUserProps = [
   'calendar',
   'streak'
 ];
+
+// on-the-fly migration for user editied fields
+function normaliseUserFields(user) {
+  const about = user.bio && !user.about ? user.bio : user.about;
+  const twitter = user.twitter && isURL(user.twitter) ?
+    user.twitter :
+    user.twitter && `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
+  const picture = user.picture || addPlaceholderImage(user.username);
+
+  return { about, picture, twitter };
+}
 
 function getProgress(progressTimestamps, timezone = 'EST') {
   const calendar = progressTimestamps
@@ -106,16 +118,18 @@ export default function userServices(app) {
         queryUser.getPoints$(),
         (challengeMap, progressTimestamps) => ({
           challengeMap,
-          progress: getProgress(progressTimestamps, queryUser.timezone)
+          progress: getProgress(progressTimestamps, queryUser.timezone),
+          points: progressTimestamps.length
         })
       );
       Observable.if(
         () => !queryUser,
         Observable.of({}),
         Observable.defer(() => source)
-          .map(({ challengeMap, progress }) => ({
+          .map(({ challengeMap, progress, points }) => ({
             ...queryUser.toJSON(),
             ...progress,
+            points,
             challengeMap
           }))
           .map(
@@ -129,7 +143,7 @@ export default function userServices(app) {
                     isLinkedIn: !!user.linkedIn,
                     isTwitter: !!user.twitter,
                     isWebsite: !!user.website,
-                    picture: user.picture || addPlaceholderImage(user.username)
+                    ...normaliseUserFields(user)
                   }
                 }
               },

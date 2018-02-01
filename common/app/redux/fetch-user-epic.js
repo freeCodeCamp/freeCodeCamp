@@ -23,7 +23,7 @@ function getUserEpic(actions, _, { services }) {
 }
 
 function getOtherUserEpic(actions$, _, { services }) {
-  return actions$.do(console.info)::ofType(types.fetchOtherUser.start)
+  return actions$::ofType(types.fetchOtherUser.start)
     .distinctUntilChanged()
     .flatMap(({ payload: otherUser }) => {
       const params = { otherUser };
