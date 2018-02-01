@@ -101,7 +101,7 @@ class LanguageSettings extends React.Component {
           <form onSubmit={ handleSubmit(this.handleSubmit) }>
               <Col sm={ 4 } xs={ 12 }>
                 <ControlLabel htmlFor={ name }>
-                  Language Selection
+                  Prefered Language for Challenges
                 </ControlLabel>
               </Col>
               <Col sm={ 5 } xs={ 12 }>
