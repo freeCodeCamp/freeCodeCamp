@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import subDays from 'date-fns/sub_days';
-import differenceInMonths from 'date-fns/difference_in_months';
+import differenceInCalendarMonths from 'date-fns/difference_in_calendar_months';
 
 import { FullWidthRow } from '../../../helperComponents';
 import { userByNameSelector } from '../../../redux';
@@ -45,6 +45,7 @@ class HeatMap extends Component {
   }
   componentDidMount() {
     ensureD3();
+    this.renderMap();
   }
 
   renderMap() {
@@ -57,31 +58,31 @@ class HeatMap extends Component {
     const rectSelector = '#cal-heatmap > svg > svg.graph-legend > g > rect.r';
     const calLegendTitles = ['less', '', '', 'more'];
     const firstTS = Object.keys(calendar)[0];
-    const monthsSinceFirstActive = differenceInMonths(
+    let start = new Date(firstTS * 1000);
+    const monthsSinceFirstActive = differenceInCalendarMonths(
       today,
-      new Date(firstTS * 1000)
+      start
     );
-    let start = today;
-    let active = 1;
-    if (monthsSinceFirstActive > 12) {
-      // if we got to 365, we trim off the current month
-      start = subDays(today, 334);
-      active = 12;
-    } else if (monthsSinceFirstActive > 1) {
-      start = subDays(today, 30 * monthsSinceFirstActive);
-      active = monthsSinceFirstActive;
-    }
+    // if (monthsSinceFirstActive > 12) {
+    //   // if we got to 365, we trim off the current month
+    //   start = subDays(today, 334);
+    //   active = 12;
+    // } else if (monthsSinceFirstActive > 1) {
+    //   start = subDays(today, 31 * monthsSinceFirstActive);
+    //   active = monthsSinceFirstActive + 1;
+    // }
     cal.init({
       itemSelector: '#cal-heatmap',
       domain: 'month',
       subDomain: 'day',
+      domainDynamicDimension: true,
       domainGutter: 5,
       data: calendar,
       cellSize: 15,
       cellRadius: 3,
       cellPadding: 2,
       tooltip: true,
-      range: active,
+      range: monthsSinceFirstActive < 12 ? monthsSinceFirstActive + 1 : 12,
       start,
       legendColors: ['#cccccc', '#006400'],
       legend: [1, 2, 3],
@@ -107,14 +108,6 @@ class HeatMap extends Component {
         <FullWidthRow>
           <div id='cal-heatmap' />
         </FullWidthRow>
-        {
-          (
-            typeof window !== 'undefined' &&
-            'd3' in window
-          ) ?
-            this.renderMap() :
-            null
-        }
         <FullWidthRow>
           <div className='streak-container'>
             <span className='streak'>
