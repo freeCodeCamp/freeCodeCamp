@@ -52,52 +52,41 @@ class Honesty extends PureComponent {
     const isHonestAgreed = (
       <Panel bsStyle='info'>
         <p>
-          You have already accepted our&nbsp;
-          <a href='/academic-honesty'>
-            Academic Honesty Policy
-          </a>
+          You have already accepted our Academic Honesty Policy
         </p>
       </Panel>
     );
-    const panelToggle = (
-      <h3
-        onClick={ this.handleShowClick }
+    const agreeButton = (
+      <Button
+        block={ true }
+        bsStyle='primary'
+        onClick={ this.handleAgreeClick }
         >
-        View Honesty Policy
-      </h3>
-      );
+        Agree
+      </Button>
+    );
     return (
       <div id='honesty-policy'>
         <FullWidthRow>
           <h2>Academic Honesty Policy</h2>
-          {
-            isHonest ?
-              isHonestAgreed :
-              <Panel
-                collapsible={ true }
-                expanded={ this.state.showHonesty }
-                header={ panelToggle }
-                >
-                {
-                  policy.map(
-                    (line, i) => (
-                      <p
-                      dangerouslySetInnerHTML={{ __html: line }}
-                      key={ '' + i + line.slice(0, 10) }
-                      />
-                    )
-                  )
-                }
-                <br />
-                <Button
-                  block={ true }
-                  bsStyle='primary'
-                  onClick={ this.handleAgreeClick }
-                  >
-                  Agree
-                </Button>
-              </Panel>
-          }
+          <Panel>
+            {
+              policy.map(
+                (line, i) => (
+                  <p
+                  dangerouslySetInnerHTML={{ __html: line }}
+                  key={ '' + i + line.slice(0, 10) }
+                  />
+                )
+              )
+            }
+            <br />
+            {
+              isHonest ?
+                isHonestAgreed :
+                agreeButton
+            }
+          </Panel>
         </FullWidthRow>
       </div>
     );
