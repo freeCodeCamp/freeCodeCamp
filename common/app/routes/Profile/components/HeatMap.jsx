@@ -5,7 +5,6 @@ import CalHeatMap from 'cal-heatmap';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import subDays from 'date-fns/sub_days';
 import differenceInCalendarMonths from 'date-fns/difference_in_calendar_months';
 
 import { FullWidthRow } from '../../../helperComponents';
@@ -63,14 +62,6 @@ class HeatMap extends Component {
       today,
       start
     );
-    // if (monthsSinceFirstActive > 12) {
-    //   // if we got to 365, we trim off the current month
-    //   start = subDays(today, 334);
-    //   active = 12;
-    // } else if (monthsSinceFirstActive > 1) {
-    //   start = subDays(today, 31 * monthsSinceFirstActive);
-    //   active = monthsSinceFirstActive + 1;
-    // }
     cal.init({
       itemSelector: '#cal-heatmap',
       domain: 'month',
