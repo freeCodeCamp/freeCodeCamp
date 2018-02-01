@@ -25,7 +25,6 @@ const propTypes = {
 const mapStateToProps = createSelector(
   userByNameSelector,
   ({
-    email,
     githubURL,
     isLinkedIn,
     isGithub,
@@ -35,7 +34,6 @@ const mapStateToProps = createSelector(
     twitter,
     website
   }) => ({
-    email,
     githubURL,
     isLinkedIn,
     isGithub,
@@ -49,17 +47,6 @@ const mapStateToProps = createSelector(
 
 function mapDispatchToProps() {
   return {};
-}
-
-function MailIcon(email) {
-  return (
-    <a href={ `mailto:${email}` } rel='no-follow' target='_blank'>
-      <FontAwesome
-        name='envelope-o'
-        size='2x'
-      />
-    </a>
-  );
 }
 
 function LinkedInIcon(linkedIn) {
@@ -108,7 +95,6 @@ function TwitterIcon(handle) {
 
 function SocialIcons(props) {
   const {
-    email,
     githubURL,
     isLinkedIn,
     isGithub,
