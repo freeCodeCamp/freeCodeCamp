@@ -197,6 +197,7 @@ class ProjectSettings extends PureComponent {
               <h3 className='project-heading'>{ projectBlockName }</h3>
               <Form
                 buttonText={ fullForm ? 'Claim Certificate' : 'Save Progress' }
+                enableSubmit={ fullForm }
                 formFields={ challenges.concat([ 'id' ]) }
                 hideButton={isCertClaimed}
                 id={ superBlock }

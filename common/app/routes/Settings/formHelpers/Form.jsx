@@ -6,6 +6,7 @@ import { FormFields, BlockSaveButton } from './';
 
 const propTypes = {
   buttonText: PropTypes.string,
+  enableSubmit: PropTypes.bool,
   errors: PropTypes.object,
   fields: PropTypes.objectOf(
     PropTypes.shape({
@@ -36,6 +37,7 @@ function DynamicForm({
 
   // HOC
   buttonText,
+  enableSubmit,
   hideButton,
   id,
   options,
@@ -53,7 +55,7 @@ function DynamicForm({
           null :
         <BlockSaveButton
           disabled={
-            allPristine ||
+            allPristine && !enableSubmit ||
             (!!Object.keys(errors).filter(key => errors[key]).length)
           }
           >
