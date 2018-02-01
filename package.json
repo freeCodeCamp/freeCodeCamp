@@ -104,6 +104,7 @@
     "passport-oauth": "^1.0.0",
     "passport-twitter": "^1.0.3",
     "pmx": "~0.6.2",
+    "prismjs": "^1.10.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.2",
     "react-addons-css-transition-group": "~15.4.2",
