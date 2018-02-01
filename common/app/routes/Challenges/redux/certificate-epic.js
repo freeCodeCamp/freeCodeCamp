@@ -1,7 +1,7 @@
 import { Observable } from 'rx';
 import { ofType } from 'redux-epic';
 
-import { doActionOnError } from '../../../redux';
+import { doActionOnError, fetchUser } from '../../../redux';
 import { makeToast } from '../../../Toasts/redux';
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import {
@@ -18,11 +18,15 @@ function certificateEpic(actions$, { getState }) {
       } = getState();
       return postJSON$('/certificate/verify', { _csrf, superBlock });
     })
-    .map((result) => claimCertComplete(result))
+    .map(claimCertComplete)
     .catch(doActionOnError(error => claimCertError(error)));
 
   const complete = actions$::ofType(userTypes.claimCert.complete)
-  .map(({ meta: { message }}) => makeToast({ message }));
+  .flatMap(({ meta: { message, success }}) => Observable.if(
+    () => success,
+    Observable.of(fetchUser(), makeToast({ message })),
+    Observable.of(makeToast({ message }))
+  ));
 
   const error = actions$::ofType(userTypes.claimCert.error)
     .flatMap(error => {

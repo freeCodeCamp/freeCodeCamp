@@ -165,7 +165,7 @@ export default function certificate(app) {
     `;
 
   const successMessage = (username, name) => dedent`
-    @${username}, you have sucssefully claimed
+    @${username}, you have sucessfully claimed
     the ${name}!
     Congratulations on behalf of the freeCodeCamp team!
     `;
@@ -229,7 +229,10 @@ export default function certificate(app) {
         })
       .subscribe(
         (message) => {
-          return res.status(200).json({ message });
+          return res.status(200).json({
+            message,
+            success: message.includes('Congratulations')
+          });
         },
         next
       );
