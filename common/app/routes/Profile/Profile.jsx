@@ -78,7 +78,6 @@ class Profile extends Component {
   }
   componentDidUpdate() {
     const { requestedUsername, currentUsername, paramsUsername } = this.props;
-    console.log('query', requestedUsername, 'user', currentUsername);
     if (!requestedUsername && paramsUsername !== currentUsername) {
       this.props.fetchOtherUser(paramsUsername);
     }

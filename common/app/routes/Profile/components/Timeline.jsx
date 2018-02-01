@@ -118,7 +118,6 @@ class Timeline extends PureComponent {
     if (!idToNameMap) {
       return null;
     }
-    console.log(completedMap);
     return (
       <FullWidthRow>
         <h2 className='text-center'>Timeline</h2>

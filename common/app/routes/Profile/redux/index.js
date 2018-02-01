@@ -22,13 +22,10 @@ export const userFoundSelector = state => state[ns].isUserFound;
 
 export default handleActions(() => (
   {
-    [types.userFound]: (state, { payload }) => {
-      console.log('reducer', payload);
-      return ({
+    [types.userFound]: (state, { payload }) => ({
       ...state,
       isUserFound: payload
-    });
-  }
+    })
   }),
   initialState,
   ns

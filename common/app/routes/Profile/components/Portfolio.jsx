@@ -31,6 +31,7 @@ function Portfolio({ portfolio = [] }) {
   return (
     <div>
       <FullWidthRow>
+        <h2>Portfolio</h2>
         {
           portfolio.map(({ title, url, image, description, id}) => (
             <Media key={ id }>

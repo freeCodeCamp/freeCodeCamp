@@ -175,7 +175,7 @@ class AccountSettings extends PureComponent {
     return (
       <div className='account-settings'>
         <FullWidthRow>
-          <h2>Account Settings - { username }</h2>
+          <h2>Account Settings for { username }</h2>
         </FullWidthRow>
         <FullWidthRow>
           <Nav
