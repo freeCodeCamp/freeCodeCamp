@@ -9,6 +9,12 @@ export default function() {
     res.renderWithoutFlash = res.render;
     // render to observable stream using build in render
     res.render$ = Observable.fromNodeCallback(res.render, res);
+    res.sendFlash = (type, message) => {
+      if (type && message) {
+        req.flash(type, message);
+      }
+      return res.json(req.flash());
+    };
     next();
   };
 }

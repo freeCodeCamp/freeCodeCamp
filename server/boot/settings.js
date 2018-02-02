@@ -1,7 +1,12 @@
-import { isMongoId } from 'validator';
+import { check } from 'express-validator/check';
 
-import { ifNoUser401 } from '../utils/middleware';
+import {
+  ifNoUser401,
+  createValidatorErrorHandler
+} from '../utils/middleware';
 import supportedLanguages from '../../common/utils/supported-languages.js';
+import { themes } from '../../common/utils/themes.js';
+import { alertTypes } from '../../common/utils/flash.js';
 
 export default function settingsController(app) {
   const api = app.loopback.Router();
@@ -19,14 +24,28 @@ export default function settingsController(app) {
       );
   };
 
+  const updateMyEmailValidators = [
+    check('email')
+      .isEmail()
+      .withMessage('Email format is invalid.')
+  ];
+
   function updateMyEmail(req, res, next) {
     const { user, body: { email } } = req;
     return user.requestUpdateEmail(email)
       .subscribe(
-        (message) => res.json({ message }),
+        message => res.sendFlash(alertTypes.info, message),
         next
       );
   }
+
+  api.post(
+    '/update-my-email',
+    ifNoUser401,
+    updateMyEmailValidators,
+    createValidatorErrorHandler(alertTypes.danger),
+    updateMyEmail
+  );
 
   function updateMyLang(req, res, next) {
     const { user, body: { lang } = {} } = req;
@@ -51,11 +70,14 @@ export default function settingsController(app) {
       );
   }
 
+  const updateMyCurrentChallengeValidators = [
+    check('currentChallengeId')
+      .isMongoId()
+      .withMessage('currentChallengeId is not a valid challenge ID')
+  ];
+
   function updateMyCurrentChallenge(req, res, next) {
     const { user, body: { currentChallengeId } } = req;
-    if (!isMongoId('' + currentChallengeId)) {
-      return next(new Error(`${currentChallengeId} is not a valid ObjectId`));
-    }
     return user.update$({ currentChallengeId }).subscribe(
       () => res.json({
         message:
@@ -65,22 +87,37 @@ export default function settingsController(app) {
     );
   }
 
+  api.post(
+    '/update-my-current-challenge',
+    ifNoUser401,
+    updateMyCurrentChallengeValidators,
+    createValidatorErrorHandler(alertTypes.danger),
+    updateMyCurrentChallenge
+  );
+
+  const updateMyThemeValidators = [
+    check('theme')
+      .isIn(Object.keys(themes))
+      .withMessage('Theme is invalid.')
+  ];
   function updateMyTheme(req, res, next) {
-    req.checkBody('theme', 'Theme is invalid.').isLength({ min: 4 });
     const { body: { theme } } = req;
-    const errors = req.validationErrors(true);
-    if (errors) {
-      return res.status(403).json({ errors });
-    }
     if (req.user.theme === theme) {
-      return res.json({ msg: 'Theme already set' });
+      return res.sendFlash(alertTypes.info, 'Theme already set');
     }
-    return req.user.updateTheme('' + theme)
+    return req.user.updateTheme(theme)
       .then(
-        data => res.json(data),
+        () => res.sendFlash(alertTypes.info, 'Your theme has been updated'),
         next
       );
   }
+  api.post(
+    '/update-my-theme',
+    ifNoUser401,
+    updateMyThemeValidators,
+    createValidatorErrorHandler(alertTypes.danger),
+    updateMyTheme
+  );
 
   api.post(
     '/toggle-available-for-hire',
@@ -108,26 +145,9 @@ export default function settingsController(app) {
     toggleUserFlag('sendQuincyEmail')
   );
   api.post(
-    '/update-my-email',
-    ifNoUser401,
-    updateMyEmail
-  );
-  api.post(
     '/update-my-lang',
     ifNoUser401,
     updateMyLang
-  );
-
-  api.post(
-    '/update-my-current-challenge',
-    ifNoUser401,
-    updateMyCurrentChallenge
-  );
-
-  api.post(
-    '/update-my-theme',
-    ifNoUser401,
-    updateMyTheme
   );
 
   app.use(api);

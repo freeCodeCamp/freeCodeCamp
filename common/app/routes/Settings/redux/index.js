@@ -2,11 +2,13 @@ import { isLocationAction } from 'redux-first-router';
 import {
   addNS,
   createAction,
+  createAsyncTypes,
   createTypes
 } from 'berkeleys-redux-utils';
 
 import userUpdateEpic from './update-user-epic.js';
 import ns from '../ns.json';
+import { utils } from '../../../Flash/redux';
 
 export const epics = [
   userUpdateEpic
@@ -14,7 +16,7 @@ export const epics = [
 
 export const types = createTypes([
   'toggleUserFlag',
-  'updateMyEmail',
+  createAsyncTypes('updateMyEmail'),
   'updateMyLang',
   'onRouteSettings',
   'onRouteUpdateEmail'
@@ -24,7 +26,18 @@ export const types = createTypes([
 export const onRouteSettings = createAction(types.onRouteSettings);
 export const onRouteUpdateEmail = createAction(types.onRouteUpdateEmail);
 export const toggleUserFlag = createAction(types.toggleUserFlag);
-export const updateMyEmail = createAction(types.updateMyEmail);
+export const updateMyEmail = createAction(types.updateMyEmail.start);
+export const updateMyEmailComplete = createAction(
+  types.updateMyEmail.complete,
+  null,
+  utils.createFlashMetaAction
+);
+
+export const updateMyEmailError = createAction(
+  types.updateMyEmail.error,
+  null,
+  utils.createFlashMetaAction
+);
 
 export const updateMyLang = createAction(
   types.updateMyLang,

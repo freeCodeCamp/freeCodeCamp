@@ -12,9 +12,11 @@ import { createSelector } from 'reselect';
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
+import nightModeEpic from './night-mode-epic.js';
 
 import { createFilesMetaCreator } from '../files';
 import { updateThemeMetacreator, entitiesSelector } from '../entities';
+import { utils } from '../Flash/redux';
 import { types as challenges } from '../routes/Challenges/redux';
 import { challengeToFiles } from '../routes/Challenges/utils';
 
@@ -23,8 +25,9 @@ import ns from '../ns.json';
 import { themes, invertTheme } from '../../utils/themes.js';
 
 export const epics = [
-  fetchUserEpic,
   fetchChallengesEpic,
+  fetchUserEpic,
+  nightModeEpic,
   updateMyCurrentChallengeEpic
 ];
 
@@ -48,7 +51,7 @@ export const types = createTypes([
 
   // night mode
   'toggleNightMode',
-  'postThemeComplete'
+  createAsyncTypes('postTheme')
 ], ns);
 
 const throwIfUndefined = () => {
@@ -130,6 +133,7 @@ export const createErrorObservable = error => Observable.just({
   type: types.handleError,
   error
 });
+// use sparingly
 // doActionOnError(
 //   actionCreator: (() => Action|Null)
 // ) => (error: Error) => Observable[Action]
@@ -147,9 +151,18 @@ export const toggleNightMode = createAction(
   (username, theme) => updateThemeMetacreator(username, invertTheme(theme))
 );
 export const postThemeComplete = createAction(
-  types.postThemeComplete,
+  types.postTheme.complete,
   null,
-  updateThemeMetacreator
+  utils.createFlashMetaAction
+);
+
+export const postThemeError = createAction(
+  types.postTheme.error,
+  null,
+  (username, theme, err) => ({
+    ...updateThemeMetacreator(username, invertTheme(theme)),
+    ...utils.createFlashMetaAction(err)
+  })
 );
 
 const defaultState = {

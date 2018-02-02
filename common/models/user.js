@@ -703,9 +703,7 @@ module.exports = function(User) {
       );
       return Promise.reject(err);
     }
-    return this.update$({ theme })
-      .map({ updatedTo: theme })
-      .toPromise();
+    return this.update$({ theme }).toPromise();
   };
 
   // deprecated. remove once live

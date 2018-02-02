@@ -4,26 +4,26 @@ import { CloseButton } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 import ns from './ns.json';
-import { alertTypes } from './redux/utils.js';
+import { alertTypes } from '../../utils/flash.js';
 import {
   latestMessageSelector,
   clickOnClose
 } from './redux';
 
 const propTypes = {
-  alertType: PropTypes.oneOf(Object.keys(alertTypes)),
   clickOnClose: PropTypes.func.isRequired,
-  message: PropTypes.string
+  message: PropTypes.string,
+  type: PropTypes.oneOf(Object.keys(alertTypes))
 };
 const mapStateToProps = latestMessageSelector;
 const mapDispatchToProps = { clickOnClose };
 
-export function Flash({ alertType, clickOnClose, message }) {
+export function Flash({ type, clickOnClose, message }) {
   if (!message) {
     return null;
   }
   return (
-    <div className={`${ns}-container bg-${alertType}`}>
+    <div className={`${ns}-container bg-${type}`}>
       <div className={`${ns}-content`}>
         <p className={ `${ns}-message` }>
           { message }
