@@ -544,17 +544,21 @@
       "type": "bonfire",
       "title": "Problem 14: Longest Collatz sequence",
       "tests": [
-        "assert.strictEqual(euler14(), 837799, 'message: <code>euler14()</code> should return 837799.');"
+        "assert.strictEqual(longestCollatzSequence(14), 9, 'message: <code>longestCollatzSequence(14)</code> should return 9.');",
+        "assert.strictEqual(longestCollatzSequence(5847), 3711, 'message: <code>longestCollatzSequence(5847)</code> should return 3711.');",
+        "assert.strictEqual(longestCollatzSequence(1000000), 837799, 'message: <code>longestCollatzSequence(1000000)</code> should return 837799.');"
       ],
-      "solutions": [],
+      "solutions": ["function longestCollatzSequence(limit) {\n  let longestSequenceLength = 0;\n  let startingNum = 0;\n\n  function sequenceLength(num) {\n    let length = 1;\n\n    while (num >= 1) {\n      if (num === 1) {        break;\n      } else if (num % 2 === 0) {\n        num = num / 2;\n        length++;\n      } else {\n        num = num * 3 + 1;\n        length++;\n      }\n    }\n    return length;\n  }\n\n  for (let i = 2; i < limit; i++) {\n    let currSequenceLength = sequenceLength(i);\n    if (currSequenceLength > longestSequenceLength) {\n      longestSequenceLength = currSequenceLength;\n      startingNum = i;\n    }\n  }\n  return startingNum;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler14() {",
+        "function longestCollatzSequence(limit) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler14();"
+        "longestCollatzSequence(14);",
+        "longestCollatzSequence(5847);",
+        "longestCollatzSequence(1000000);"
       ],
       "description": [
         "The following iterative sequence is defined for the set of positive integers:",
