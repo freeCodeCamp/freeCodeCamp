@@ -15,7 +15,8 @@ import {
   signInLoadingSelector,
   usernameSelector,
   userByNameSelector,
-  fetchOtherUser
+  fetchOtherUser,
+  hardGoTo
 } from '../../redux';
 import { userFoundSelector } from './redux';
 import { onRouteChallengeRoot } from '../Challenges/redux';
@@ -40,7 +41,7 @@ const mapStateToProps = createSelector(
   (
     isSignedIn,
     { isLocked, username: requestedUsername },
-    { username: paramsUsername },
+    { username: paramsUsername, lang },
     currentUsername,
     showLoading,
     isUserFound
@@ -52,6 +53,7 @@ const mapStateToProps = createSelector(
     isUserFound,
     fetchOtherUserCompleted: typeof isUserFound === 'boolean',
     paramsUsername,
+    lang,
     requestedUsername,
     showLoading
   })
@@ -59,6 +61,7 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   fetchOtherUser,
+  hardGoTo,
   updateTitle
 };
 
@@ -66,10 +69,12 @@ const propTypes = {
   currentUsername: PropTypes.string,
   fetchOtherUser: PropTypes.func.isRequired,
   fetchOtherUserCompleted: PropTypes.bool,
+  hardGoTo: PropTypes.func.isRequired,
   isCurrentUserProfile: PropTypes.bool,
   isLocked: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   isUserFound: PropTypes.bool,
+  lang: PropTypes.string,
   paramsUsername: PropTypes.string,
   requestedUsername: PropTypes.string,
   showLoading: PropTypes.bool,
@@ -91,17 +96,19 @@ class Profile extends Component {
   renderRequestedProfile() {
     const {
       fetchOtherUserCompleted,
+      hardGoTo,
       isLocked,
       isUserFound,
       isCurrentUserProfile,
+      lang,
       paramsUsername
     } = this.props;
     const takeMeToChallenges = (
-      <Link to={ onRouteChallengeRoot() }>
+      <a onClick={ () => hardGoTo(`/${lang}/challenges/current-challenge`) }>
         <Button bsSize='lg' bsStyle='primary'>
           Take me to the Challenges
         </Button>
-      </Link>
+      </a>
     );
     if (isLocked) {
       return (
