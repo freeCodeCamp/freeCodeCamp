@@ -11,6 +11,7 @@ import {
 
 import {
   updateTitle,
+  isSignedInSelector,
   signInLoadingSelector,
   usernameSelector,
   userByNameSelector,
@@ -30,18 +31,21 @@ import HeatMap from './components/HeatMap.jsx';
 import { FullWidthRow, Loader } from '../../helperComponents';
 
 const mapStateToProps = createSelector(
+  isSignedInSelector,
   userByNameSelector,
   paramsSelector,
   usernameSelector,
   signInLoadingSelector,
   userFoundSelector,
   (
+    isSignedIn,
     { isLocked, username: requestedUsername },
     { username: paramsUsername },
     currentUsername,
     showLoading,
     isUserFound
   ) => ({
+    isSignedIn,
     currentUsername,
     isCurrentUserProfile: paramsUsername === currentUsername,
     isLocked,
@@ -64,6 +68,7 @@ const propTypes = {
   fetchOtherUserCompleted: PropTypes.bool,
   isCurrentUserProfile: PropTypes.bool,
   isLocked: PropTypes.bool,
+  isSignedIn: PropTypes.bool,
   isUserFound: PropTypes.bool,
   paramsUsername: PropTypes.string,
   requestedUsername: PropTypes.string,
@@ -143,12 +148,17 @@ class Profile extends Component {
 
   renderReportUserButton() {
     const {
+      isSignedIn,
       fetchOtherUserCompleted,
       isCurrentUserProfile,
       isUserFound,
       paramsUsername
     } = this.props;
-    return isCurrentUserProfile || (fetchOtherUserCompleted && !isUserFound) ?
+    return (
+      !isSignedIn ||
+      isCurrentUserProfile ||
+      (fetchOtherUserCompleted && !isUserFound)
+    ) ?
       null :
       (
         <FullWidthRow>

@@ -1,6 +1,7 @@
 import { Observable } from 'rx';
 import { ofType, combineEpics } from 'redux-epic';
 
+import { getJSON$ } from '../../utils/ajax-stream';
 import {
   types,
 
@@ -22,12 +23,11 @@ function getUserEpic(actions, _, { services }) {
     });
 }
 
-function getOtherUserEpic(actions$, _, { services }) {
+function getOtherUserEpic(actions$) {
   return actions$::ofType(types.fetchOtherUser.start)
     .distinctUntilChanged()
     .flatMap(({ payload: otherUser }) => {
-      const params = { otherUser };
-      return services.readService$({ service: 'user', params })
+      return getJSON$(`/api/users/get-public-profile?username=${otherUser}`)
         .flatMap(response => Observable.of(
           fetchOtherUserComplete(response),
           userFound(!!response.result)

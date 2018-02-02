@@ -1,6 +1,7 @@
 import dedent from 'dedent';
 import moment from 'moment-timezone';
 import debugFactory from 'debug';
+import { curry } from 'lodash';
 
 import {
   frontEndChallengeId,
@@ -24,6 +25,7 @@ import { observeQuery } from '../utils/rx';
 
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
+const sendNonUserToMapWithMessage = curry(ifNoUserRedirectTo, 2)('/map');
 const certIds = {
   [certTypes.frontEnd]: frontEndChallengeId,
   [certTypes.backEnd]: backEndChallengeId,
@@ -113,7 +115,7 @@ module.exports = function(app) {
 
   router.get(
     '/user/:username/report-user/',
-    sendNonUserToMap,
+    sendNonUserToMapWithMessage('You must be signed in to report a user'),
     ifNotVerifiedRedirectToSettings,
     getReportUserProfile
   );

@@ -5,8 +5,6 @@ import { Col, Row } from 'react-bootstrap';
 
 import SocialIcons from './SocialIcons.jsx';
 
-const mapStateToProps = () => ({});
-
 const propTypes = {
   about: PropTypes.string,
   location: PropTypes.string,
@@ -58,4 +56,4 @@ function Camper({
 Camper.displayName = 'Camper';
 Camper.propTypes = propTypes;
 
-export default connect(mapStateToProps)(Camper);
+export default Camper;

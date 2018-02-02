@@ -13,7 +13,7 @@ export default function mapService(app) {
   return {
     name: 'map',
     read: (req, resource, { block, dashedName } = {}, config, cb) => {
-      const { user: { languageTag: lang } } = req;
+      const lang = req.user && req.user.languageTag || 'en';
       log(`${lang} language requested`);
       return Observable.if(
         () => !!dashedName,
