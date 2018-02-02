@@ -19,7 +19,6 @@ import {
   hardGoTo
 } from '../../redux';
 import { userFoundSelector } from './redux';
-import { onRouteChallengeRoot } from '../Challenges/redux';
 import { paramsSelector } from '../../Router/redux';
 import ns from './ns.json';
 import ChildContainer from '../../Child-Container.jsx';
