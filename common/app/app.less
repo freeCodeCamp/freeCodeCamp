@@ -10,6 +10,10 @@
   .grid(@direction: column);
   height: 100%;
   width: 100%;
+
+  // prevents oversized child components
+  // from wrapping outside this container
+  flex-wrap: nowrap;
 }
 
 .@{ns}-content {
