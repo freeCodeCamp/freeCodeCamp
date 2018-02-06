@@ -21,7 +21,8 @@ const routes = [
   '/challenges/*',
   '/map',
   '/settings',
-  '/settings/*'
+  '/settings/*',
+  '/:username'
 ];
 
 const devRoutes = [];
@@ -40,7 +41,6 @@ export default function reactSubRouter(app) {
   routes.forEach((route) => {
     router.get(route, serveReactApp);
   });
-
   if (process.env.NODE_ENV === 'development') {
     devRoutes.forEach(function(route) {
       router.get(route, serveReactApp);
@@ -59,7 +59,7 @@ export default function reactSubRouter(app) {
         devtoolsEnhancer({ name: 'server' })
       ],
       history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
-      defaultStaet: { app: { lang } }
+      defaultState: { app: { lang } }
     })
       .filter(({
         location: {

@@ -1,5 +1,5 @@
-import { defaultProfileImage } from '../../common/utils/constantStrings.json';
 import supportedLanguages from '../../common/utils/supported-languages';
+import { addPlaceholderImage } from '../utils';
 
 const message =
   'Learn to Code and Help Nonprofits';
@@ -20,10 +20,16 @@ module.exports = function(app) {
   app.use(router);
 
   function addDefaultImage(req, res, next) {
-    if (!req.user || req.user.picture) {
+    const { user } = req;
+    if (!user || user.picture) {
       return next();
     }
-    return req.user.update$({ picture: defaultProfileImage })
+    const picture = addPlaceholderImage(user.username);
+    return user.update$({ picture })
+      .do(() => {
+        user.picure = picture;
+        return;
+      })
       .subscribe(
         () => next(),
         next

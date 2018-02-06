@@ -59,7 +59,7 @@ function legacyToFile(code, files, key) {
     return { [key]: setContent(code, files[key]) };
   }
   return false;
-  }
+}
 
 function clearCodeEpic(actions, { getState }) {
   return actions::ofType(

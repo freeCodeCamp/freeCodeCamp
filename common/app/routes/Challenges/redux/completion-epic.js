@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import _ from 'lodash';
 import { ofType } from 'redux-epic';
 
 import {
@@ -51,15 +52,18 @@ function submitModern(type, state) {
     }
 
     if (type === types.submitChallenge.toString()) {
-      const { id } = challengeSelector(state);
-      const files = filesSelector(state);
       const { username } = userSelector(state);
       const csrfToken = csrfSelector(state);
+      const challengeInfo = _.pick(
+        challengeSelector(state),
+        [ 'id', 'challengeType', 'superBlock', 'title' ]
+      );
+      challengeInfo.files = filesSelector(state);
       return postChallenge(
         '/modern-challenge-completed',
         username,
         csrfToken,
-        { id, files }
+        challengeInfo
       );
     }
   }
@@ -69,11 +73,14 @@ function submitModern(type, state) {
 }
 
 function submitProject(type, state, { solution, githubLink }) {
-  const { id, challengeType } = challengeSelector(state);
   const { username } = userSelector(state);
   const csrfToken = csrfSelector(state);
-  const challengeInfo = { id, challengeType, solution };
-  if (challengeType === backEndProject) {
+  const challengeInfo = _.pick(
+    challengeSelector(state),
+    [ 'id', 'challengeType', 'superBlock', 'title' ]
+  );
+  challengeInfo.solution = solution;
+  if (challengeInfo.challengeType === backEndProject) {
     challengeInfo.githubLink = githubLink;
   }
   return postChallenge(

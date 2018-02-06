@@ -12,6 +12,13 @@ const preFormattedBlockNames = {
   'the-dom': 'The DOM'
 };
 
+const preFormattedWords = {
+  css: 'CSS',
+  css3: 'CSS3',
+  html: 'HTML',
+  html5: 'HTML5'
+};
+
 const noFormatting = [
   'and',
   'for',
@@ -21,7 +28,7 @@ const noFormatting = [
   'with'
 ];
 
-export default function blockNameify(phrase) {
+export default function blockNameify(phrase = '') {
   const preFormatted = preFormattedBlockNames[phrase] || '';
   if (preFormatted) {
     return preFormatted;
@@ -33,6 +40,9 @@ export default function blockNameify(phrase) {
       }
       if (word === 'javascript') {
         return 'JavaScript';
+      }
+      if (preFormattedWords[word]) {
+        return preFormattedWords[word];
       }
       return word.charAt(0).toUpperCase() + word.slice(1);
     })

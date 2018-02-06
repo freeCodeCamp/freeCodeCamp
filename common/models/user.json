@@ -36,6 +36,10 @@
       "type": "array",
       "default": []
     },
+    "projects": {
+      "type": "object",
+      "default": {}
+    },
     "isBanned": {
       "type": "boolean",
       "description": "User is banned from posting to camper news",
@@ -85,7 +89,7 @@
       },
       "require": true
     },
-    "bio": {
+    "about": {
       "type": "string",
       "default": ""
     },
@@ -114,6 +118,19 @@
     "twitter": {
       "type": "string"
     },
+    "portfolio": {
+      "description": "A list of objects containing information about a users portfolio websites",
+      "type": [
+        {
+          "title": "string",
+          "url": "string",
+          "description": "string",
+          "id": "string",
+          "image": "string"
+        }
+      ],
+      "default": []
+    },
     "currentStreak": {
       "type": "number",
       "default": 0
@@ -137,11 +154,6 @@
     "isLocked": {
       "type": "boolean",
       "description": "Campers profile does not show challenges/certificates to the public",
-      "default": false
-    },
-    "isAvailableForHire": {
-      "type": "boolean",
-      "description": "Camper is available for hire",
       "default": false
     },
     "currentChallengeId": {
@@ -188,7 +200,7 @@
       "description": "Camper is data visualization certified",
       "default": false
     },
-    "isNewDataVisCert": {
+    "is2018DataVisCert": {
       "type": "boolean",
       "description": "Camper is responsive web design certified",
       "default": false
@@ -211,6 +223,11 @@
     "isInfosecQaCert": {
       "type": "boolean",
       "description": "Camper is information security and quality assurance certified",
+      "default": false
+    },
+    "is2018FullStackCert": {
+      "type": "boolean",
+      "description": "Camper is certified in all certs released in 2018",
       "default": false
     },
     "isChallengeMapMigrated": {
@@ -351,6 +368,27 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "giveBrowniePoints"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "getPublicProfile"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "requestUpdateFlag"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "updateTheme"
     },
     {
       "accessType": "EXECUTE",

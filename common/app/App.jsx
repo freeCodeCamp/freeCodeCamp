@@ -17,6 +17,7 @@ import NotFound from './NotFound';
 import { mainRouteSelector } from './routes/redux';
 import Challenges from './routes/Challenges';
 import Settings from './routes/Settings';
+import Profile from './routes/Profile';
 
 const mapDispatchToProps = {
   appMounted,
@@ -44,7 +45,8 @@ const propTypes = {
 
 const routes = {
   challenges: Challenges,
-  settings: Settings
+  settings: Settings,
+  profile: Profile
 };
 
 // export plain class for testing

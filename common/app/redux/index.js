@@ -23,6 +23,7 @@ import { challengeToFiles } from '../routes/Challenges/utils';
 import ns from '../ns.json';
 
 import { themes, invertTheme } from '../../utils/themes.js';
+import { paramsSelector } from '../Router/redux/index';
 
 export const epics = [
   fetchChallengesEpic,
@@ -41,6 +42,7 @@ export const types = createTypes([
   createAsyncTypes('fetchChallenge'),
   createAsyncTypes('fetchChallenges'),
 
+  createAsyncTypes('fetchOtherUser'),
   createAsyncTypes('fetchUser'),
   'showSignIn',
 
@@ -112,6 +114,15 @@ export const fetchChallengesCompleted = createAction(
 // updateTitle(title: String) => Action
 export const updateTitle = createAction(types.updateTitle);
 
+// fetchOtherUser() => Action
+// used in combination with fetch-user-epic
+// to fetch another users profile
+export const fetchOtherUser = createAction(types.fetchOtherUser.start);
+export const fetchOtherUserComplete = createAction(
+  types.fetchOtherUser.complete,
+  ({ result }) => result,
+  _.identity
+);
 // fetchUser() => Action
 // used in combination with fetch-user-epic
 export const fetchUser = createAction(types.fetchUser);
@@ -189,6 +200,12 @@ export const userSelector = createSelector(
   state => entitiesSelector(state).user,
   (username, userMap) => userMap[username] || {}
 );
+
+export const userByNameSelector = state => {
+  const username = paramsSelector(state).username;
+  const userMap = entitiesSelector(state).user;
+  return userMap[username] || {};
+};
 
 export const themeSelector = _.flow(
   userSelector,

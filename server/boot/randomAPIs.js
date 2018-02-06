@@ -1,6 +1,7 @@
 import request from 'request';
 import constantStrings from '../utils/constantStrings.json';
 import testimonials from '../resources/testimonials.json';
+import honestyPolicy from '../../common/resource/academicPolicy';
 
 const githubClient = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
@@ -57,7 +58,8 @@ module.exports = function(app) {
 
   function academicHonesty(req, res) {
       res.render('resources/academic-honesty', {
-          title: 'Academic Honesty policy'
+          title: 'Academic Honesty Policy',
+          policy: honestyPolicy
       });
   }
 

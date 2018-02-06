@@ -1,58 +1,30 @@
 import _ from 'lodash';
 import {
-  composeReducers,
-  createAction,
-  createTypes,
-  handleActions
+  composeReducers
 } from 'berkeleys-redux-utils';
 
-import { themes } from '../../utils/themes';
-import { types as challenges } from '../routes/Challenges/redux';
+import { types as userTypes, userReducer } from './user';
+import { usernameSelector } from '../redux';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
 export const entitiesSelector = getNS;
-export const types = createTypes([
-  'updateTheme',
-  'updateUserFlag',
-  'updateUserEmail',
-  'updateUserLang',
-  'updateUserCurrentChallenge'
-], ns);
 
-// updateUserFlag(username: String, flag: String) => Action
-export const updateUserFlag = createAction(
-  types.updateUserFlag,
-  (username, flag) => ({ username, flag })
-);
-// updateUserEmail(username: String, email: String) => Action
-export const updateUserEmail = createAction(
-  types.updateUserEmail,
-  (username, email) => ({ username, email })
-);
-// updateUserLang(username: String, lang: String) => Action
-export const updateUserLang = createAction(
-  types.updateUserLang,
-  (username, lang) => ({ username, languageTag: lang })
-);
-
-export const updateUserCurrentChallenge = createAction(
-  types.updateUserCurrentChallenge
-);
 
 // entity meta creators
 const getEntityAction = _.property('meta.entitiesAction');
 export const updateThemeMetacreator = (username, theme) => ({
   entitiesAction: {
-    type: types.updateTheme,
+    type: userTypes.editUserFlag,
     payload: {
       username,
-      theme: !theme || theme === themes.default ? themes.default : themes.night
+      flag: 'theme',
+      value: theme
     }
   }
 });
 
-const defaultState = {
+export const defaultState = {
   superBlock: {},
   block: {},
   challenge: {},
@@ -73,107 +45,90 @@ export function makeSuperBlockSelector(name) {
   };
 }
 
+export function selectiveChallengeTitleSelector(state, dashedName) {
+  return getNS(state).challenge[dashedName].title;
+}
+
+export function portfolioSelector(state, props) {
+  const username = usernameSelector(state);
+  const { portfolio } = getNS(state).user[username];
+  const pIndex = _.findIndex(portfolio, p => p.id === props.id);
+  return portfolio[pIndex];
+}
+
+export function projectsSelector(state) {
+  const blocks = getNS(state).block;
+  const challengeNameToIdMap = _.invert(challengeIdToNameMapSelector(state));
+  return Object.keys(blocks)
+    .filter(key =>
+      key.includes('projects') && !key.includes('coding-interview')
+    )
+    .map(key => blocks[key])
+    .map(({ name, challenges, superBlock }) => {
+      const projectChallengeDashNames = challenges
+        // remove any project intros
+        .filter(chal => !chal.includes('get-set-for'));
+      const projectChallenges = projectChallengeDashNames
+        .map(dashedName => selectiveChallengeTitleSelector(state, dashedName));
+      return {
+        projectBlockName: name,
+        superBlock,
+        challenges: projectChallenges,
+        challengeNameIdMap: _.pick(
+          challengeNameToIdMap,
+          projectChallengeDashNames
+        )
+      };
+    });
+}
+
+export function challengeIdToNameMapSelector(state) {
+  return getNS(state).challengeIdToName || {};
+}
+
 export const isChallengeLoaded = (state, { dashedName }) =>
   !!challengeMapSelector(state)[dashedName];
 
+function metaReducer(state = defaultState, action) {
+  const { meta } = action;
+  if (meta && meta.entities) {
+    if (meta.entities.user) {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          ...meta.entities.user
+        }
+      };
+    }
+    return {
+      ...state,
+      ...action.meta.entities
+    };
+  }
+  return state;
+}
+
+function entitiesReducer(state = defaultState, action) {
+  if (getEntityAction(action)) {
+    const { payload: { username, theme } } = getEntityAction(action);
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        [username]: {
+          ...state.user[username],
+          theme
+        }
+      }
+    };
+  }
+  return state;
+}
+
 export default composeReducers(
   ns,
-  function metaReducer(state = defaultState, action) {
-    if (action.meta && action.meta.entities) {
-      return {
-        ...state,
-        ...action.meta.entities
-      };
-    }
-    return state;
-  },
-  function(state = defaultState, action) {
-    if (getEntityAction(action)) {
-      const { payload: { username, theme } } = getEntityAction(action);
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            theme
-          }
-        }
-      };
-    }
-    return state;
-  },
-  handleActions(
-    () => ({
-      [
-        challenges.submitChallenge.complete
-      ]: (state, { payload: { username, points, challengeInfo } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            points,
-            challengeMap: {
-              ...state.user[username].challengeMap,
-              [challengeInfo.id]: challengeInfo
-            }
-          }
-        }
-      }),
-      [types.updateUserFlag]: (state, { payload: { username, flag } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            [flag]: !state.user[username][flag]
-          }
-        }
-      }),
-      [types.updateUserEmail]: (state, { payload: { username, email } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            email
-          }
-        }
-      }),
-      [types.updateUserLang]:
-      (
-        state,
-        {
-          payload: { username, languageTag }
-        }
-      ) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            languageTag
-          }
-        }
-      }),
-      [types.updateUserCurrentChallenge]:
-      (
-        state,
-        {
-          payload: { username, currentChallengeId }
-        }
-      ) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            currentChallengeId
-          }
-        }
-      })
-    }),
-    defaultState
-  )
+  metaReducer,
+  entitiesReducer,
+  userReducer(defaultState),
 );

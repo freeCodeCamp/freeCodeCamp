@@ -10,7 +10,7 @@ import {
   csrfSelector,
   userSelector
 } from './';
-import { updateUserCurrentChallenge } from '../entities';
+import { updateUserCurrentChallenge } from '../entities/user';
 import { postJSON$ } from '../../utils/ajax-stream';
 import { types as challenges } from '../routes/Challenges/redux';
 

@@ -48,7 +48,7 @@ function createProfileAttributesFromGithub(profile) {
     name,
     username: username.toLowerCase(),
     location,
-    bio,
+    about: bio,
     joinedGithubOn,
     website,
     isGithubCool: true,

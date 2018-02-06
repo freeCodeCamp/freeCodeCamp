@@ -7,7 +7,6 @@ import { login } from 'passport/lib/http/request';
 // if called without callback it returns an observable
 // login(user, options?, cb?) => Void|Observable
 function login$(...args) {
-  console.log('args');
   if (_.isFunction(_.last(args))) {
     return login.apply(this, args);
   }

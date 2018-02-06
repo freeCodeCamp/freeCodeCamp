@@ -20,3 +20,7 @@ export function unDasherize(name) {
     .replace(/[^a-zA-Z\d\s]/g, '')
     .trim();
 }
+
+export function addPlaceholderImage(name) {
+  return `https://identicon.org?t=${name}&s=256`;
+}

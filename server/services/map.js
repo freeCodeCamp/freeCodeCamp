@@ -12,7 +12,8 @@ export default function mapService(app) {
   const challengeMap = cachedMap(app.models);
   return {
     name: 'map',
-    read: (req, resource, { lang, block, dashedName } = {}, config, cb) => {
+    read: (req, resource, { block, dashedName } = {}, config, cb) => {
+      const lang = req.user && req.user.languageTag || 'en';
       log(`${lang} language requested`);
       return Observable.if(
         () => !!dashedName,
