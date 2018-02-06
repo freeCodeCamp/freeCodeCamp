@@ -1,11 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
+const UglifyPlugin = require('uglifyjs-webpack-plugin');
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './client/frame-runner.js',
-  devtool: __DEV__ ? 'inline-source-map' : null,
+  devtool: __DEV__ ? 'inline-source-map' : 'source-map',
   node: {
     // Mock Node.js modules that Babel require()s but that we don't
     // particularly care about.
@@ -67,5 +68,13 @@ if (__DEV__) {
   module.exports.plugins.push(
     // prevents build on error
     new webpack.NoEmitOnErrorsPlugin()
+  );
+} else {
+  module.exports.plugins.push(
+    new UglifyPlugin({
+      test: /\.js($|\?)/i,
+      cache: true,
+      sourceMap: true
+    })
   );
 }

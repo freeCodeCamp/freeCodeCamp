@@ -20,7 +20,6 @@ const Rx = require('rx'),
   uglify = require('gulp-uglify'),
   merge = require('merge-stream'),
   sourcemaps = require('gulp-sourcemaps'),
-  gulpif = require('gulp-if'),
 
   // react app
   webpack = require('webpack'),
@@ -153,10 +152,6 @@ const paths = {
   ]
 };
 
-const webpackOptions = {
-  devtool: 'inline-source-map'
-};
-
 const errorNotifier = notify.onError({
   title: 'Compile Error',
   message: '<%= error %>'
@@ -275,40 +270,23 @@ gulp.task('test-challenges', ['lint-json']);
 gulp.task('pack-client', function() {
   if (!__DEV__) { console.log('\n\nbundling production\n\n'); }
 
-  function condition(file) {
-    const filepath = file.relative;
-    return __DEV__ || (/json$/).test('' + filepath);
-  }
-
   const dest = webpackConfig.output.path;
 
   return gulp.src(webpackConfig.entry.bundle)
     .pipe(plumber({ errorHandler }))
-    .pipe(webpackStream({
-      ...webpackConfig,
-      ...webpackOptions
-    }))
-    .pipe(gulpif(condition, gutil.noop(), uglify()))
+    .pipe(webpackStream(webpackConfig))
     .pipe(gulp.dest(dest));
 });
 
 gulp.task('pack-frame-runner', function() {
   if (!__DEV__) { console.log('\n\nbundling frame production\n\n'); }
 
-  function condition(file) {
-    const filepath = file.relative;
-    return __DEV__ || (/json$/).test('' + filepath);
-  }
 
   const dest = webpackFrameConfig.output.path;
 
   return gulp.src(webpackFrameConfig.entry)
     .pipe(plumber({ errorHandler }))
-    .pipe(webpackStream({
-      ...webpackFrameConfig,
-      ...webpackOptions
-    }))
-    .pipe(gulpif(condition, gutil.noop(), uglify()))
+    .pipe(webpackStream(webpackFrameConfig))
     .pipe(gulp.dest(dest));
 });
 

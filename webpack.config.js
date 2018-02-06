@@ -1,8 +1,9 @@
-var webpack = require('webpack');
-var path = require('path');
-var ManifestPlugin = require('webpack-manifest-plugin');
-var ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
+const UglifyPlugin = require('uglifyjs-webpack-plugin');
 
 var __DEV__ = process.env.NODE_ENV !== 'production';
 
@@ -10,7 +11,7 @@ module.exports = {
   entry: {
     bundle: './client'
   },
-  devtool: __DEV__ ? 'inline-source-map' : null,
+  devtool: __DEV__ ? 'inline-source-map' : 'source-map',
   node: {
     // Mock Node.js modules that Babel require()s but that we don't
     // particularly care about.
@@ -66,6 +67,11 @@ module.exports = {
 
 if (!__DEV__) {
   module.exports.plugins.push(
+    new UglifyPlugin({
+      test: /\.js($|\?)/i,
+      cache: true,
+      sourceMap: true
+    }),
     new ManifestPlugin({ fileName: 'react-manifest.json' }),
     new ChunkManifestPlugin({
       filename: 'chunk-manifest.json',
