@@ -20,7 +20,6 @@ export const types = createTypes([
 ], ns);
 
 export const clickOnClose = createAction(types.clickOnClose, _.noop);
-export const fetchMessages = createAction(types.fetchMessages.start);
 export const fetchMessagesComplete = createAction(types.fetchMessages.complete);
 export const fetchMessagesError = createAction(types.fetchMessages.error);
 

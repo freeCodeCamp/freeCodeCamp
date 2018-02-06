@@ -10,7 +10,7 @@ import {
 export default function userServices() {
   return {
     name: 'user',
-    read: async function readUserService(
+    read: function readUserService(
       req,
       resource,
       params,
