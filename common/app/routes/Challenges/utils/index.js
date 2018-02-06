@@ -118,7 +118,8 @@ export function createTests({ tests = [] }) {
     .map(test => {
       if (typeof test === 'string') {
         return {
-          text: ('' + test).split('message: ').pop().replace(/\'\);/g, ''),
+          text: ('' + test).split('message: ')
+            .pop().replace(/(\'\);(\s*\};)?)/g, ''),
           testString: test
         };
       }
