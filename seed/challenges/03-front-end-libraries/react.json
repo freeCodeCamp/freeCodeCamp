@@ -1485,7 +1485,7 @@
         "You can design a more complex stateful component by combining the concepts covered so far. These include initializing <code>state</code>, writing methods that set <code>state</code>, and assigning click handlers to trigger these methods.",
         "<hr>",
         "The <code>Counter</code> component keeps track of a <code>count</code> value in <code>state</code>. There are two buttons which call methods <code>increment()</code> and <code>decrement()</code>. Write these methods so the counter value is incremented or decremented by 1 when the appropriate button is clicked. Also, create a <code>reset()</code> method so when the reset button is clicked, the count is set to 0.",
-        "<strong>Note:</strong>&nbsp;Make sure you don't modify the <code>classNames</code> of the buttons."
+        "<strong>Note:</strong>&nbsp;Make sure you don't modify the <code>classNames</code> of the buttons. Also, remember to add the necessary bindings for the newly-created methods in the constructor."
       ],
       "files": {
         "indexjsx": {
@@ -1499,6 +1499,9 @@
             "    this.state = {",
             "      count: 0",
             "    };",
+            "    // change code below this line",
+            "",
+            "    // change code above this line",
             "  }",
             "  // change code below this line",
             "",
@@ -1543,7 +1546,8 @@
         "The code editor has the skeleton of a component called <code>ControlledInput</code> to create a controlled <code>input</code> element. The component's <code>state</code> is already initialized with an <code>input</code> property that holds an empty string. This value represents the text a user types into the <code>input</code> field.",
         "First, create a method called <code>handleChange()</code> that has a parameter called <code>event</code>. When the method is called, it receives an <code>event</code> object that contains a string of text from the <code>input</code> element. You can access this string with <code>event.target.value</code> inside the method. Update the <code>input</code> property of the component's <code>state</code> with this new string.",
         "In the render method, create the <code>input</code> element above the <code>h4</code> tag. Add a <code>value</code> attribute which is equal to the <code>input</code> property of the component's <code>state</code>. Then add an <code>onChange()</code> event handler set to the <code>handleChange()</code> method.",
-        "When you type in the input box, that text is processed by the <code>handleChange()</code> method, set as the <code>input</code> property in the local <code>state</code>, and rendered as the value in the <code>input</code> box on the page. The component <code>state</code> is the single source of truth regarding the input data."
+        "When you type in the input box, that text is processed by the <code>handleChange()</code> method, set as the <code>input</code> property in the local <code>state</code>, and rendered as the value in the <code>input</code> box on the page. The component <code>state</code> is the single source of truth regarding the input data.",
+        "Last but not least, don't forget to add the necessary bindings in the constructor."
       ],
       "files": {
         "indexjsx": {
@@ -1557,6 +1561,9 @@
             "    this.state = {",
             "      input: ''",
             "    };",
+            "    // change code below this line",
+            "",
+            "    // change code above this line",
             "  }",
             "  // change code below this line",
             "",
