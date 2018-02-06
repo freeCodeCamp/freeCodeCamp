@@ -8,7 +8,6 @@ import FA from 'react-fontawesome';
 
 import ns from './ns.json';
 import LockedSettings from './Locked-Settings.jsx';
-import JobSettings from './Job-Settings.jsx';
 import SocialSettings from './Social-Settings.jsx';
 import EmailSettings from './Email-Setting.jsx';
 import LanguageSettings from './Language-Settings.jsx';
@@ -33,7 +32,6 @@ const mapStateToProps = createSelector(
     {
       username,
       email,
-      isAvailableForHire,
       isLocked,
       isGithubCool,
       isTwitter,
@@ -47,7 +45,6 @@ const mapStateToProps = createSelector(
   ) => ({
     currentTheme: theme,
     email,
-    isAvailableForHire,
     isGithubCool,
     isLinkedIn,
     isLocked,
@@ -62,7 +59,6 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   hardGoTo,
-  toggleIsAvailableForHire: () => toggleUserFlag('isAvailableForHire'),
   toggleIsLocked: () => toggleUserFlag('isLocked'),
   toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail'),
   toggleNightMode,
@@ -77,7 +73,6 @@ const propTypes = {
   email: PropTypes.string,
   hardGoTo: PropTypes.func.isRequired,
   initialLang: PropTypes.string,
-  isAvailableForHire: PropTypes.bool,
   isGithubCool: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
   isLocked: PropTypes.bool,
@@ -87,7 +82,6 @@ const propTypes = {
   sendNotificationEmail: PropTypes.bool,
   sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
-  toggleIsAvailableForHire: PropTypes.func.isRequired,
   toggleIsLocked: PropTypes.func.isRequired,
   toggleMonthlyEmail: PropTypes.func.isRequired,
   toggleNightMode: PropTypes.func.isRequired,
@@ -123,7 +117,6 @@ export class Settings extends React.Component {
     const {
       currentTheme,
       email,
-      isAvailableForHire,
       isGithubCool,
       isLinkedIn,
       isLocked,
@@ -132,7 +125,6 @@ export class Settings extends React.Component {
       sendNotificationEmail,
       sendQuincyEmail,
       showLoading,
-      toggleIsAvailableForHire,
       toggleIsLocked,
       toggleMonthlyEmail,
       toggleNightMode,
@@ -220,22 +212,6 @@ export class Settings extends React.Component {
             <LockedSettings
               isLocked={ isLocked }
               toggle={ toggleIsLocked }
-            />
-          </Col>
-        </Row>
-        <div className='spacer' />
-        <h2 className='text-center'>Job Search Settings</h2>
-        <Row>
-          <Col
-            md={ 6 }
-            mdOffset={ 3 }
-            sm={ 8 }
-            smOffset={ 2 }
-            xs={ 12 }
-            >
-            <JobSettings
-              isAvailableForHire={ isAvailableForHire }
-              toggle={ toggleIsAvailableForHire }
             />
           </Col>
         </Row>

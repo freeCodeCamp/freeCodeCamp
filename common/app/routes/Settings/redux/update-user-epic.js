@@ -19,7 +19,6 @@ import langs from '../../../../utils/supported-languages';
 
 const urlMap = {
   isLocked: 'lockdown',
-  isAvailableForHire: 'available-for-hire',
   sendQuincyEmail: 'quincy-email',
   sendNotificationEmail: 'notification-email',
   sendMonthlyEmail: 'announcement-email'
