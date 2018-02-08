@@ -38,6 +38,7 @@
         "This error can be seen in the console of your browser.",
         "So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.", 
         "<hr>",
+        "Notably, the initial <code>'use strict'</code> keyword enables Javascript's 'strict' mode, automatically catching common errors and throwing exceptions, and throwing errors when 'unsafe' actions are taken.",
         "Update the code so it only uses the <code>let</code> keyword.",
         "<strong>Note</strong><br>Remember that since <code>let</code> prevents variables from being overridden, you will need to remove one of the declarations entirely."
       ],
