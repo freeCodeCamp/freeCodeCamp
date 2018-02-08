@@ -63,17 +63,18 @@ module.exports = function(UserCredential) {
             created: modified,
             modified
           });
-        }
-        _credentials.credentials = credentials;
-        updateCredentials = observeQuery(
+        } else {
+          _credentials.credentials = credentials;
+          updateCredentials = observeQuery(
           _credentials,
-          'updateAttributes',
-          {
-            profile: null,
-            credentials,
-            modified
-          }
-        );
+            'updateAttributes',
+            {
+              profile: null,
+              credentials,
+              modified
+            }
+          );
+        }
         return Observable.combineLatest(
           updateUser,
           updateCredentials,
