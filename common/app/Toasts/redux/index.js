@@ -37,7 +37,7 @@ export default handleActions(
     [types.makeToast]: (state, { payload: toast }) => [
       ...state,
       toast
-    ],
+    ].filter(toast => !!toast.message),
     [types.removeToast]: (state, { payload: key }) => state.filter(
       toast => toast.key !== key
     )

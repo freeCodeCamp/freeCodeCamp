@@ -2,11 +2,19 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
-import { FormControl, FormGroup } from 'react-bootstrap';
+import {
+  FormControl,
+  FormGroup,
+  ControlLabel,
+  Row,
+  Col
+} from 'react-bootstrap';
 
-import { updateMyLang } from './redux';
-import { userSelector } from '../../redux';
-import langs from '../../../utils/supported-languages';
+import { updateMyLang } from '../redux';
+import { userSelector } from '../../../redux';
+import langs from '../../../../utils/supported-languages';
+import { FullWidthRow } from '../../../helperComponents';
+import SectionHeader from './SectionHeader.jsx';
 
 const propTypes = {
   fields: PropTypes.object,
@@ -85,18 +93,35 @@ export class LanguageSettings extends React.Component {
       fields: { lang: { name, value } }
     } = this.props;
     return (
-      <FormGroup>
-        <FormControl
-          className='btn btn-block btn-primary btn-link-social btn-lg'
-          componentClass='select'
-          name={ name }
-          onChange={ this.handleChange }
-          style={{ height: '45px' }}
-          value={ value }
-          >
-          { options }
-        </FormControl>
-      </FormGroup>
+      <div>
+        <SectionHeader>
+          Language Settings
+        </SectionHeader>
+        <FullWidthRow>
+          <FormGroup>
+            <Row>
+              <Col sm={ 4 } xs={ 12 }>
+                <ControlLabel htmlFor={ name }>
+                  Prefered Language for Challenges
+                </ControlLabel>
+              </Col>
+              <Col sm={ 8 } xs={ 12 }>
+                <FormControl
+                  className='btn btn-block btn-primary btn-lg'
+                  componentClass='select'
+                  id={ name }
+                  name={ name }
+                  onChange={ this.handleChange }
+                  style={{ height: '45px' }}
+                  value={ value }
+                  >
+                  { options }
+                </FormControl>
+              </Col>
+            </Row>
+          </FormGroup>
+        </FullWidthRow>
+      </div>
     );
   }
 }

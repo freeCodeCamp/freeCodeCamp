@@ -7,52 +7,36 @@ import { Button } from 'react-bootstrap';
 import FA from 'react-fontawesome';
 
 import ns from './ns.json';
-import { FullWidthRow, Spacer } from '../../helperComponents';
-import LockedSettings from './Locked-Settings.jsx';
-import SocialSettings from './Social-Settings.jsx';
-import EmailSettings from './Email-Setting.jsx';
-import LanguageSettings from './Language-Settings.jsx';
-import SettingsSkeleton from './Settings-Skeleton.jsx';
+import { FullWidthRow, Spacer, Loader } from '../../helperComponents';
+import AboutSettings from './components/About-Settings.jsx';
+import InternetSettings from './components/Internet-Settings.jsx';
+import EmailSettings from './components/Email-Settings.jsx';
+import DangerZone from './components/DangerZone.jsx';
+import LanguageSettings from './components/Language-Settings.jsx';
+import CertificationSettings from './components/Cert-Settings.jsx';
+import PortfolioSettings from './components/Portfolio-Settings.jsx';
+import Honesty from './components/Honesty.jsx';
+import Pledge from './components/Pledge.jsx';
 
-import { toggleUserFlag } from './redux';
 import {
   toggleNightMode,
   updateTitle,
 
   signInLoadingSelector,
-  userSelector,
+  usernameSelector,
   themeSelector,
   hardGoTo
 } from '../../redux';
 
 const mapStateToProps = createSelector(
-  userSelector,
+  usernameSelector,
   themeSelector,
   signInLoadingSelector,
   (
-    {
-      username,
-      email,
-      isLocked,
-      isGithubCool,
-      isTwitter,
-      isLinkedIn,
-      sendMonthlyEmail,
-      sendNotificationEmail,
-      sendQuincyEmail
-    },
+    username,
     theme,
     showLoading,
   ) => ({
-    currentTheme: theme,
-    email,
-    isGithubCool,
-    isLinkedIn,
-    isLocked,
-    isTwitter,
-    sendMonthlyEmail,
-    sendNotificationEmail,
-    sendQuincyEmail,
     showLoading,
     username
   })
@@ -60,34 +44,13 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   hardGoTo,
-  toggleIsLocked: () => toggleUserFlag('isLocked'),
-  toggleMonthlyEmail: () => toggleUserFlag('sendMonthlyEmail'),
   toggleNightMode,
-  toggleNotificationEmail: () => toggleUserFlag('sendNotificationEmail'),
-  toggleQuincyEmail: () => toggleUserFlag('sendQuincyEmail'),
   updateTitle
 };
 
 const propTypes = {
-  children: PropTypes.element,
-  currentTheme: PropTypes.string,
-  email: PropTypes.string,
   hardGoTo: PropTypes.func.isRequired,
-  initialLang: PropTypes.string,
-  isGithubCool: PropTypes.bool,
-  isLinkedIn: PropTypes.bool,
-  isLocked: PropTypes.bool,
-  isTwitter: PropTypes.bool,
-  lang: PropTypes.string,
-  sendMonthlyEmail: PropTypes.bool,
-  sendNotificationEmail: PropTypes.bool,
-  sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
-  toggleIsLocked: PropTypes.func.isRequired,
-  toggleMonthlyEmail: PropTypes.func.isRequired,
-  toggleNightMode: PropTypes.func.isRequired,
-  toggleNotificationEmail: PropTypes.func.isRequired,
-  toggleQuincyEmail: PropTypes.func.isRequired,
   updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
   username: PropTypes.string
@@ -116,25 +79,11 @@ export class Settings extends React.Component {
 
   render() {
     const {
-      currentTheme,
-      email,
-      isGithubCool,
-      isLinkedIn,
-      isLocked,
-      isTwitter,
-      sendMonthlyEmail,
-      sendNotificationEmail,
-      sendQuincyEmail,
       showLoading,
-      toggleIsLocked,
-      toggleMonthlyEmail,
-      toggleNightMode,
-      toggleNotificationEmail,
-      toggleQuincyEmail,
       username
     } = this.props;
     if (!username && showLoading) {
-      return <SettingsSkeleton />;
+      return <Loader />;
     }
     return (
       <div className={ `${ns}-container` }>
@@ -159,87 +108,24 @@ export class Settings extends React.Component {
             Sign me out of freeCodeCamp
           </Button>
         </FullWidthRow>
-        <h1 className='text-center'>Settings for your Account</h1>
-        <h2 className='text-center'>Actions</h2>
-        <FullWidthRow>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            className='btn-link-social'
-            onClick={ () => toggleNightMode(username, currentTheme) }
-            >
-            Toggle Night Mode
-          </Button>
-        </FullWidthRow>
-        <FullWidthRow>
-          <SocialSettings
-            isGithubCool={ isGithubCool }
-            isLinkedIn={ isLinkedIn }
-            isTwitter={ isTwitter }
-          />
-        </FullWidthRow>
+        <h1 className='text-center'>{ `Account Settings for ${username}` }</h1>
+        <AboutSettings />
         <Spacer />
-        <h2 className='text-center'>Account Settings</h2>
-        <FullWidthRow>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            className='btn-link-social'
-            href='/commit'
-            >
-            Edit my pledge
-          </Button>
-        </FullWidthRow>
+        <EmailSettings />
         <Spacer />
-        <h2 className='text-center'>Privacy Settings</h2>
-        <FullWidthRow>
-          <LockedSettings
-            isLocked={ isLocked }
-            toggle={ toggleIsLocked }
-          />
-        </FullWidthRow>
+        <LanguageSettings />
         <Spacer />
-        <h2 className='text-center'>Email Settings</h2>
-        <FullWidthRow>
-          <EmailSettings
-            email={ email }
-            sendMonthlyEmail={ sendMonthlyEmail }
-            sendNotificationEmail={ sendNotificationEmail }
-            sendQuincyEmail={ sendQuincyEmail }
-            toggleMonthlyEmail={ toggleMonthlyEmail }
-            toggleNotificationEmail={ toggleNotificationEmail }
-            toggleQuincyEmail={ toggleQuincyEmail }
-          />
-        </FullWidthRow>
+        <InternetSettings />
         <Spacer />
-        <h2 className='text-center'>Display challenges in:</h2>
-        <FullWidthRow>
-          <LanguageSettings />
-        </FullWidthRow>
+        <PortfolioSettings />
         <Spacer />
-        <h2 className='text-center'>Danger Zone</h2>
-        <FullWidthRow>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='danger'
-            className='btn-link-social'
-            href='/delete-my-account'
-            >
-            Delete my freeCodeCamp account
-          </Button>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='danger'
-            className='btn-link-social'
-            href='/reset-my-progress'
-            >
-            Reset all of my progress and brownie points
-          </Button>
-        </FullWidthRow>
+        <Pledge />
+        <Spacer />
+        <CertificationSettings />
+        <Spacer />
+        <Honesty />
+        <Spacer />
+        <DangerZone />
       </div>
     );
   }

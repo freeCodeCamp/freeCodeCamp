@@ -89,6 +89,10 @@
       "type": "string",
       "default": ""
     },
+    "about": {
+      "type": "string",
+      "default": ""
+    },
     "name": {
       "type": "string",
       "default": ""
@@ -238,9 +242,9 @@
       ],
       "default": []
     },
-    "projects": {
-      "type": "object",
-      "default": {}
+    "portfolio": {
+      "type": "array",
+      "default": []
     },
     "rand": {
       "type": "number",
