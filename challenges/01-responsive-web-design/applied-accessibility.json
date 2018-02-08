@@ -406,7 +406,7 @@
       ],
       "tests": [
         "assert($('audio').length === 1, 'message: Your code should have one <code>audio</code> tag.');",
-        "assert(code.match(/<\\/audio>/g) && code.match(/<\\/audio>/g).length === code.match(/<audio id=\"meowClip\" controls>/g).length, 'message: Make sure your <code>audio</code> element has a closing tag.');",
+        "assert(code.match(/<\\/audio>/g) && code.match(/<audio controls>/g) && code.match(/<\\/audio>/g).length === code.match(/<audio controls>/g).length, 'message: Make sure your <code>audio</code> element has a closing tag.');",
         "assert($('audio').attr('controls'), 'message: The <code>audio</code> tag should have the <code>controls</code> attribute.');",
         "assert($('source').length === 1, 'message: Your code should have one <code>source</code> tag.');",
         "assert($('audio').children('source').length === 1, 'message: Your <code>source</code> tag should be inside the <code>audio</code> tags.');",
