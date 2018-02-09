@@ -418,6 +418,8 @@ for further information
     branch.
     **Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.**
 
+    ![fork-instructions](./docs/images/fork-instructions.png)
+
 3.  Submit a [pull
     request](http://forum.freecodecamp.org/t/how-to-contribute-via-a-pull-request/19368)
     from your branch to freeCodeCamp's `staging` branch.
