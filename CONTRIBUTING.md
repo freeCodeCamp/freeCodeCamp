@@ -173,7 +173,7 @@ You should have [ESLint running in your editor](http://eslint.org/docs/user-guid
 
 ### Set Up MailHog
 
-To be able to log in, you need to set up MailHog. MailHog is a local SMTP mail server that will catch the emails your freeCodeCamp instance is sending. How you install MailHog is dependent upon your OS. 
+To be able to log in, you need to set up MailHog. MailHog is a local SMTP mail server that will catch the emails your freeCodeCamp instance is sending. How you install MailHog is dependent upon your OS.
 
 #### macOS
 
@@ -416,6 +416,9 @@ for further information
 
 2.  By default, all pull requests should be against the freeCodeCamp main repo, `staging`
     branch.
+    **Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.**
+
+    ![fork-instructions](./docs/images/fork-instructions.png)
 
 3.  Submit a [pull
     request](http://forum.freecodecamp.org/t/how-to-contribute-via-a-pull-request/19368)
