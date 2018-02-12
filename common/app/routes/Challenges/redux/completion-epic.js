@@ -1,8 +1,8 @@
 import { Observable } from 'rx';
 import { ofType } from 'redux-epic';
-import { getValues } from 'redux-form';
 
 import {
+  backendFormValuesSelector,
   challengeMetaSelector,
   moveToNextChallenge,
   submitChallengeComplete,
@@ -121,8 +121,7 @@ function submitBackendChallenge(type, state) {
     const { id } = challengeSelector(state);
     const { username } = userSelector(state);
     const csrfToken = csrfSelector(state);
-    const { solution } = getValues(state.form.BackEndChallenge);
-    console.log(solution)
+    const { solution } = backendFormValuesSelector(state);
     const challengeInfo = { id, solution };
     return postChallenge(
       '/backend-challenge-completed',

@@ -9,6 +9,7 @@ import {
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
+import { getValues } from 'redux-form';
 
 import modalEpic from './modal-epic';
 import completionEpic from './completion-epic.js';
@@ -249,6 +250,9 @@ export const challengeTypeSelector = state =>
   challengeMetaSelector(state).type || '';
 export const challengeTemplateSelector = state =>
   challengeSelector(state).template || null;
+
+export const backendFormValuesSelector = state =>
+  getValues(state.form.BackEndChallenge);
 
 export default combineReducers(
   handleActions(

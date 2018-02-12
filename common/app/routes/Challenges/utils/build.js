@@ -1,10 +1,13 @@
 import { Observable } from 'rx';
-import { getValues } from 'redux-form';
 import identity from 'lodash/identity';
 
 import { fetchScript } from './fetch-and-cache.js';
 import throwers from '../rechallenge/throwers';
-import { challengeTemplateSelector, challengeRequiredSelector } from '../redux';
+import {
+  backendFormValuesSelector,
+  challengeTemplateSelector,
+  challengeRequiredSelector
+} from '../redux';
 import {
   applyTransformers,
   proxyLoggerTransformer
@@ -53,7 +56,7 @@ export function buildFromFiles(state, shouldProxyConsole) {
 }
 
 export function buildBackendChallenge(state) {
-  const { solution: url } = getValues(state.form.BackEndChallenge);
+  const { solution: url } = backendFormValuesSelector(state);
   return Observable.combineLatest(
     fetchScript(frameRunner),
     fetchScript(jQuery)
