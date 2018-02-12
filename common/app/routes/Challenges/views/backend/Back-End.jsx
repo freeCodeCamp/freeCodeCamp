@@ -102,15 +102,15 @@ export class BackEnd extends PureComponent {
 
   render() {
     const {
-      title,
       description,
-      tests,
+      executeChallenge,
       output,
+      tests,
+      title,
       // provided by redux-form
       fields: { solution },
-      submitting,
       handleSubmit,
-      executeChallenge
+      submitting
     } = this.props;
 
     const buttonCopy = submitting ?
