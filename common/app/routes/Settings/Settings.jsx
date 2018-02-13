@@ -16,7 +16,6 @@ import LanguageSettings from './components/Language-Settings.jsx';
 import CertificationSettings from './components/Cert-Settings.jsx';
 import PortfolioSettings from './components/Portfolio-Settings.jsx';
 import Honesty from './components/Honesty.jsx';
-import Pledge from './components/Pledge.jsx';
 
 import {
   toggleNightMode,
@@ -118,8 +117,6 @@ export class Settings extends React.Component {
         <InternetSettings />
         <Spacer />
         <PortfolioSettings />
-        <Spacer />
-        <Pledge />
         <Spacer />
         <CertificationSettings />
         <Spacer />
