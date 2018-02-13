@@ -254,11 +254,10 @@
       "tests": [
         "assert.strictEqual(JSX.type, 'div', 'message: The constant <code>JSX</code> should return a <code>div</code> element.');",
         "assert(Enzyme.shallow(JSX).find('br').length === 1, 'message: The <code>div</code> should contain a <code>br</code> tag.');",
-        "assert(Enzyme.shallow(JSX).find('hr').length === 1, 'message: The <code>div</code> should contain an <code>hr</code> tag.');",
-        "assert((() => { const testDiv = document.getElementById('challenge-node').childNodes[0].innerHTML.replace(/\\s/g,''); return testDiv.includes('<h2>WelcometoReact!</h2>') && testDiv.includes('<p>Besuretoclosealltags!</p>'); })(), 'message: The provided JSX element should render as is to the DOM node with <code>id</code> of <code>challenge-node</code>.');"
+        "assert(Enzyme.shallow(JSX).find('hr').length === 1, 'message: The <code>div</code> should contain an <code>hr</code> tag.');"
       ],
       "solutions": [
-        "const JSX = (\n<div>\n  {/* change code below this line */}\n  <h2>Welcome to React!</h2> <br />\n  <p>Be sure to close all tags!</p>\n  <hr />\n  {/* change code above this line */}\n</div>\n);\n\nReactDOM.render(JSX, document.getElementById('challenge-node'));"
+        "const JSX = (\n<div>\n  {/* change code below this line */}\n  <h2>Welcome to React!</h2> <br />\n  <p>Be sure to close all tags!</p>\n  <hr />\n  {/* change code above this line */}\n</div>\n);"
       ],
       "type": "modern",
       "isRequired": false,
