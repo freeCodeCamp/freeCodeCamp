@@ -176,6 +176,7 @@ class AboutSettings extends PureComponent {
         <SectionHeader>
           About Settings
         </SectionHeader>
+        <UsernameSettings username={ username }/>
         <FullWidthRow>
           <Nav
             activeKey={ view }
@@ -192,10 +193,6 @@ class AboutSettings extends PureComponent {
           </Nav>
         </FullWidthRow>
         <br />
-        <UsernameSettings username={ username }/>
-        <FullWidthRow>
-          <hr />
-        </FullWidthRow>
         <FullWidthRow>
         <form id='camper-identity' onSubmit={ handleSubmit(this.handleSubmit) }>
           {
