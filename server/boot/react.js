@@ -59,7 +59,7 @@ export default function reactSubRouter(app) {
         devtoolsEnhancer({ name: 'server' })
       ],
       history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
-      defaultStaet: { app: { lang } }
+      defaultState: { app: { lang } }
     })
       .filter(({
         location: {
