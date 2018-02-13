@@ -543,9 +543,7 @@
             "  }",
             "  render() {",
             "    // complete the return statement:",
-            "    return (",
-            "",
-            "    );",
+            "    return (null);",
             "  }",
             "};"
           ],
