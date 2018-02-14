@@ -85,7 +85,7 @@ class JSAlgoAndDSForm extends PureComponent {
                         bsSize='lg'
                         bsStyle='primary'
                         >
-                        Complete Challenge
+                        Complete Project
                       </Button>
                     </Link>
                   }
