@@ -141,16 +141,45 @@ export const createChallengesArray = _.flow(
   ], [[], []])
 );
 
-// turn blockSpecs (challenge files) into a map of blockname to Block
-// and challengeName to Challenge
-// createChallengesMap(blockSpecks: [...blockSpeck]) => ({
-//   block: { [blockDashedName]: Block],
-//   challenges: { [challengeDashedName]: Challenge }
-// })
-export const createChallengesMap = _.flow(
-  createChallengesArray,
-  ([blocks, challenges]) => ({
-    block: _.keyBy('dashedName')(blocks),
-    challenge: _.keyBy('dashedName')(challenges)
-  })
-);
+// create an array of paths from the challengeMap
+// used mainly in generating tests
+// createPaths([[...Block, ...Challenge]]) =>
+// [..."<superBlock>/<block>/<challenge>"]
+export const createPaths = ([blocks, challenges]) => {
+  const mapToDashedName = _.map('dashedName');
+  const blockIdToBlockName = _.flow(
+    _.groupBy('id'),
+    _.toPairs,
+    _.map(([blockId, blocks]) => [
+      blockId,
+      _.flow(
+        mapToDashedName,
+        _.first
+      )(blocks)
+    ]),
+    _.fromPairs
+  )(blocks);
+
+  const challengesByBlock = _.flow(
+    _.groupBy('blockId'),
+    _.toPairs,
+    _.map(([blockId, challenges]) => [
+      _.get(blockId)(blockIdToBlockName),
+      challenges
+    ]),
+    _.fromPairs
+  )(challenges);
+
+  const blockToSubPath = _.flatMap(_.flow(
+    _.property('dashedName'),
+    block => _.get(block)(challengesByBlock),
+    _.map(challenge => `${challenge.block}/${challenge.dashedName}`)
+  ));
+  return _.flow(
+    _.groupBy('superBlock'),
+    _.toPairs,
+    _.map(([blockName, block]) => [blockName, blockToSubPath(block)]),
+    _.flatMap(([superBlock, subPaths]) =>
+      _.map(subPath => `${superBlock}/${subPath}`)(subPaths))
+    )(blocks);
+};
