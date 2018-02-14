@@ -11,7 +11,7 @@ import {
 } from 'react-bootstrap';
 import { updateUserBackend } from '../redux';
 import { FullWidthRow, Spacer } from '../../../helperComponents';
-import { BlockSaveButton, validEmail } from '../formHelpers';
+import { BlockSaveButton, BlockSaveWrapper, validEmail } from '../formHelpers';
 
 const propTypes = {
   email: PropTypes.string,
@@ -38,7 +38,6 @@ function validator(values) {
   const { email = '', confirmEmail = '' } = values;
 
   errors.email = validEmail(email);
-  errors.confirmEmail = validEmail(confirmEmail);
   if (errors.email || errors.confirmEmail) {
     return errors;
   }
@@ -96,17 +95,19 @@ class EmailForm extends PureComponent {
                 type='email'
                 value={ email.value }
               />
-              {
-                !email.pristine && email.error ?
-                <HelpBlock>
-                  <Alert bsStyle='danger'>
-                    { email.error }
-                  </Alert>
-                </HelpBlock> :
-                null
-              }
             </Col>
           </Row>
+          <FullWidthRow>
+            {
+              !email.pristine && email.error ?
+              <HelpBlock>
+                <Alert bsStyle='danger'>
+                  { email.error }
+                </Alert>
+              </HelpBlock> :
+              null
+            }
+          </FullWidthRow>
           <Row className='inline-form-field'>
             <Col sm={ 3 } xs={ 12 }>
               <ControlLabel htmlFor='confirm-email'>
@@ -123,21 +124,23 @@ class EmailForm extends PureComponent {
                 type='email'
                 value={ confirmEmail.value }
               />
-              {
-                !email.pristine && confirmEmail.error ?
-                <HelpBlock>
-                  <Alert bsStyle='danger'>
-                    { confirmEmail.error }
-                  </Alert>
-                </HelpBlock> :
-                null
-              }
             </Col>
           </Row>
-          <Spacer />
           <FullWidthRow>
-            <BlockSaveButton disabled={ disableForm } />
+            {
+              !confirmEmail.pristine && confirmEmail.error ?
+              <HelpBlock>
+                <Alert bsStyle='danger'>
+                  { confirmEmail.error }
+                </Alert>
+              </HelpBlock> :
+              null
+            }
           </FullWidthRow>
+          <Spacer />
+          <BlockSaveWrapper>
+            <BlockSaveButton disabled={ disableForm } />
+          </BlockSaveWrapper>
       </form>
     );
   }

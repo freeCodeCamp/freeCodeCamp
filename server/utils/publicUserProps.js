@@ -43,8 +43,6 @@ export const userPropsForSession = [
   'email',
   'id',
   'languageTag',
-  'sendMonthlyEmail',
-  'sendNotificationEmail',
   'sendQuincyEmail',
   'theme'
 ];

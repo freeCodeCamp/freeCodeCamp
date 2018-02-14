@@ -26,30 +26,12 @@ const mapStateToProps = createSelector(
   ({
     email,
     isEmailVerified,
-    sendMonthlyEmail,
-    sendNotificationEmail,
     sendQuincyEmail
   }) => ({
     email,
     initialValues: { email },
     isEmailVerified,
-    options: [
-      {
-        flag: 'sendQuincyEmail',
-        label: 'Send me Quincy\'s weekly email',
-        bool: sendQuincyEmail
-      },
-      {
-        flag: 'sendMonthlyEmail',
-        label: 'Send me announcement emails',
-        bool: sendMonthlyEmail
-      },
-      {
-        flag: 'sendNotificationEmail',
-        label: 'Send me notification emails',
-        bool: sendNotificationEmail
-      }
-    ]
+    sendQuincyEmail
   })
 );
 
@@ -104,39 +86,11 @@ class EmailSettings extends PureComponent {
     this.props.updateMyEmail(email);
   }
 
-  renderToggleOptions(options) {
-    const { updateUserBackend } = this.props;
-    return options.map(option => {
-      const id = _.kebabCase(option.label);
-      return (
-        <Row className='inline-form' key={ id }>
-          <Col sm={ 8 }>
-            <ControlLabel htmlFor={ id }>
-              { option.label }
-            </ControlLabel>
-          </Col>
-          <Col sm={ 4 }>
-            <TB
-              id={ id }
-              name={ id }
-              onChange={
-                () => updateUserBackend({
-                  [option.flag]: !option.bool
-                })
-              }
-              value={ option.bool }
-            />
-          </Col>
-        </Row>
-      );
-    });
-  }
-
   render() {
     const {
       email,
       isEmailVerified,
-      options
+      sendQuincyEmail
     } = this.props;
     if (!email) {
       return (
@@ -176,7 +130,25 @@ class EmailSettings extends PureComponent {
         </FullWidthRow>
         <Spacer />
         <FullWidthRow>
-          { this.renderToggleOptions(options) }
+          <Row className='inline-form-field' key='sendQuincyEmail'>
+            <Col sm={ 8 }>
+              <ControlLabel htmlFor='sendQuincyEmail'>
+                Send me Quincy&apos;s weekly email
+              </ControlLabel>
+            </Col>
+            <Col sm={ 4 }>
+              <TB
+                id='sendQuincyEmail'
+                name='sendQuincyEmail'
+                onChange={
+                  () => updateUserBackend({
+                    sendQuincyEmail: !sendQuincyEmail
+                  })
+                }
+                value={ sendQuincyEmail }
+              />
+            </Col>
+          </Row>
         </FullWidthRow>
       </div>
     );

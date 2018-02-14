@@ -3,6 +3,7 @@ import { isEmail, isURL } from 'validator';
 /** Components **/
 
 export { default as BlockSaveButton } from './BlockSaveButton.jsx';
+export { default as BlockSaveWrapper } from './BlockSaveWrapper.jsx';
 export { default as Form } from './Form.jsx';
 export { default as FormFields } from './FormFields.jsx';
 
