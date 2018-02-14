@@ -100,7 +100,7 @@
       ],
       "tests": [
         "assert($('p').css('font-size') == '10px', 'message: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');",
-        "assert(code.match(/@media \\(max-height:\\s*?800px\\)/g), 'message: Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');"
+        "assert(code.match(/@media\\s?\\(max-height:\\s*?800px\\)/g), 'message: Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
