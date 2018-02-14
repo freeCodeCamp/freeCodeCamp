@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { Panel, Alert, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-import { FullWidthRow } from '../../../helperComponents';
+import { ButtonSpacer, FullWidthRow } from '../../../helperComponents';
 import ResetModal from './ResetModal.jsx';
 import DeleteModal from './DeleteModal.jsx';
-import SectionHeader from './SectionHeader.jsx';
 import { resetProgress, deleteAccount } from '../redux';
 
 const propTypes = {
@@ -51,9 +50,6 @@ class DangerZone extends PureComponent {
     const { resetProgress, deleteAccount } = this.props;
     return (
       <div>
-        <SectionHeader>
-          Danger Zone
-        </SectionHeader>
         <FullWidthRow>
           <Panel
             bsStyle='danger'
@@ -65,8 +61,7 @@ class DangerZone extends PureComponent {
               >
               <p>
                 Tread carefully, changes made in this area are permanent.
-                They cannot be undone. Be sure you mean it when you click
-                around in here.
+                They cannot be undone.
               </p>
             </Alert>
             <FullWidthRow>
@@ -78,7 +73,7 @@ class DangerZone extends PureComponent {
                 >
                 Reset all of my progress
               </Button>
-              <hr />
+              <ButtonSpacer />
               <Button
                 block={ true }
                 bsSize='lg'
