@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
-import { FullWidthRow } from '../../../helperComponents';
+import { FullWidthRow, ButtonSpacer } from '../../../helperComponents';
 import SectionHeader from './SectionHeader.jsx';
 import { userSelector } from '../../../redux';
 import { addPortfolioItem } from '../../../entities';
@@ -118,16 +118,16 @@ class PortfolioSettings extends PureComponent {
             submit={ this.handleSave }
             validate={ validator }
           />
-          <div className='button-spacer' />
+          <ButtonSpacer />
           <Button
             block={ true }
-            bsSize='sm'
+            bsSize='lg'
             bsStyle='danger'
             id={`delete-${id}`}
             onClick={ () => this.handleDelete(id) }
             type='button'
             >
-            Remove this portfolio
+            Remove this portfolio item
           </Button>
           {
             index + 1 !== arr.length && <hr />
@@ -146,22 +146,27 @@ class PortfolioSettings extends PureComponent {
         </SectionHeader>
         <FullWidthRow>
         <div className='portfolio-settings-intro'>
-          <p>
+          <p className='p-intro'>
             Share your non-FreeCodeCamp projects, articles or accepted
-            pull requests:
+            pull requests.
           </p>
-          <Button
-            bsStyle='primary'
-            onClick={ this.handleAdd }
-            type='button'
-            >
-            Add a new portfolio Item
-          </Button>
         </div>
         </FullWidthRow>
         {
           portfolio.length ? portfolio.map(this.renderPortfolio) : null
         }
+        <FullWidthRow>
+        <ButtonSpacer />
+        <Button
+          block={ true }
+          bsSize='lg'
+          bsStyle='primary'
+          onClick={ this.handleAdd }
+          type='button'
+          >
+          Add a new portfolio Item
+        </Button>
+        </FullWidthRow>
       </section>
     );
   }
