@@ -109,14 +109,7 @@ export default {
     failureRedirect: failureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
-    profileFields: [
-        'formatted-name',
-        'headline',
-        'id',
-        'public-profile-url',
-        'email-address',
-        'location'
-    ],
+    profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE
@@ -134,14 +127,7 @@ export default {
     failureRedirect: linkFailureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
-    profileFields: [
-        'formatted-name',
-        'headline',
-        'id',
-        'public-profile-url',
-        'email-address',
-        'location'
-    ],
+    profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE
