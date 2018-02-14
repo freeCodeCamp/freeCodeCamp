@@ -108,6 +108,7 @@ module.exports = {
     failureRedirect: failureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
+    profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE
@@ -125,6 +126,7 @@ module.exports = {
     failureRedirect: linkFailureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
+    profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE
