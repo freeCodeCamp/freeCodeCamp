@@ -38,15 +38,7 @@ const Rx = require('rx'),
 
   // rev
   rev = require('gulp-rev'),
-  revDel = require('rev-del'),
-
-  // lint
-  jsonlint = require('gulp-jsonlint'),
-  eslint = require('gulp-eslint'),
-
-  // unit-tests
-  tape = require('gulp-tape'),
-  tapSpec = require('tap-spec');
+  revDel = require('rev-del');
 
 Rx.config.longStackSupport = true;
 const sync = browserSync.create('fcc-sync-server');
@@ -246,27 +238,6 @@ gulp.task('dev-server', syncDepenedents, function() {
   });
 });
 
-gulp.task('lint-js', function() {
-  return gulp.src([
-    'common/**/*.js',
-    'common/**/*.jsx',
-    'client/**/*.js',
-    'client/**/*.jsx',
-    'server/**/*.js',
-    'config/**/*.js'
-  ])
-    .pipe(eslint())
-    .pipe(eslint.format());
-});
-
-gulp.task('lint-json', function() {
-  return gulp.src(paths.challenges)
-    .pipe(jsonlint())
-    .pipe(jsonlint.reporter());
-});
-
-gulp.task('test-challenges', ['lint-json']);
-
 gulp.task('pack-client', function() {
   if (!__DEV__) { console.log('\n\nbundling production\n\n'); }
 
@@ -448,10 +419,3 @@ gulp.task('default', [
   'dev-server',
   'pack-frame-runner'
 ]);
-
-gulp.task('test', function() {
-  return gulp.src('test/**/*.js')
-    .pipe(tape({
-      reporter: tapSpec()
-    }));
-});
