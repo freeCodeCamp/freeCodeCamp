@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import _ from 'lodash';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
@@ -52,6 +51,7 @@ const propTypes = {
       bool: PropTypes.bool
     })
   ),
+  sendQuincyEmail: PropTypes.bool,
   updateMyEmail: PropTypes.func.isRequired,
   updateUserBackend: PropTypes.func.isRequired
 };

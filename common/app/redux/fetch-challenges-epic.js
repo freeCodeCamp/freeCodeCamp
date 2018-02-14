@@ -54,7 +54,7 @@ export function fetchChallengesEpic(
   { getState },
   { services }
 ) {
-  return actions.do(console.log)::ofType(
+  return actions::ofType(
     types.appMounted,
     types.updateChallenges
   )
