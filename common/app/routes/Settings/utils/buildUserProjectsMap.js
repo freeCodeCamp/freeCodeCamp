@@ -1,4 +1,4 @@
-import { kebabCase } from 'lodash';
+import { dasherize } from '../../../../../server/utils/index';
 
 export const jsProjectSuperBlock = 'javascript-algorithms-and-data-structures';
 
@@ -10,7 +10,10 @@ export function buildUserProjectsMap(projectBlock, challengeMap) {
   } = projectBlock;
   return {
     [superBlock]: challenges.reduce((solutions, current) => {
-      const completed = challengeMap[challengeNameIdMap[kebabCase(current)]];
+      const dashedName = dasherize(current)
+        .replace('java-script', 'javascript')
+        .replace('metric-imperial', 'metricimperial');
+      const completed = challengeMap[challengeNameIdMap[dashedName]];
       let solution = '';
       if (superBlock === jsProjectSuperBlock) {
         solution = {};

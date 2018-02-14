@@ -9,6 +9,7 @@ import loopback from 'loopback';
 import _ from 'lodash';
 
 import { themes } from '../utils/themes';
+import { dasherize } from '../../server/utils';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
@@ -37,6 +38,7 @@ function destroyAll(id, Model) {
 }
 
 function buildChallengeMapUpdate(challengeMap, project) {
+  const currentChallengeMap = { ...challengeMap };
   const { nameToIdMap } = _.values(project)[0];
   const incomingUpdate = _.pickBy(
     _.omit(_.values(project)[0], [ 'id', 'nameToIdMap' ]),
@@ -45,7 +47,10 @@ function buildChallengeMapUpdate(challengeMap, project) {
   const currentCompletedProjects = _.pick(challengeMap, _.values(nameToIdMap));
   const now = Date.now();
   const update = Object.keys(incomingUpdate).reduce((update, current) => {
-    const currentId = nameToIdMap[_.kebabCase(current)];
+    const dashedName = dasherize(current)
+      .replace('java-script', 'javascript')
+      .replace('metric-imperial', 'metricimperial');
+    const currentId = nameToIdMap[dashedName];
     if (
       currentId in currentCompletedProjects &&
       currentCompletedProjects[currentId].solution !== incomingUpdate[current]
@@ -73,13 +78,14 @@ function buildChallengeMapUpdate(challengeMap, project) {
     }
     return update;
   }, {});
-  debug(update);
   const updatedExisting = {
     ...currentCompletedProjects,
     ...update
   };
-  debug(updatedExisting);
-  return updatedExisting;
+  return {
+    ...currentChallengeMap,
+    ...updatedExisting
+  };
 }
 
 function isTheSame(val1, val2) {
@@ -638,6 +644,10 @@ module.exports = function(User) {
     });
   };
 
+  User.prototype.requestChallengeMap = function requestChallengeMap() {
+    return this.getChallengeMap$();
+  };
+
   User.prototype.requestUpdateFlags = function requestUpdateFlags(values) {
     const flagsToCheck = Object.keys(values);
     const valuesToCheck = _.pick({ ...this }, flagsToCheck);
@@ -705,17 +715,14 @@ module.exports = function(User) {
   User.prototype.updateMyProjects = function updateMyProjects(project) {
     const updateData = {};
     return this.getChallengeMap$()
-      .flatMap( challengeMap => {
+      .flatMap(challengeMap => {
         updateData.challengeMap = buildChallengeMapUpdate(
           challengeMap,
           project
         );
         return this.update$(updateData);
       })
-      .do(() => {
-        this.projects = updateData;
-        return;
-      })
+      .do(() => Object.assign(this, updateData))
       .map(() => dedent`
         Your projects have been updated
       `);

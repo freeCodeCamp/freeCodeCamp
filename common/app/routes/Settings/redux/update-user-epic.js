@@ -4,6 +4,7 @@ import { pick } from 'lodash';
 import {
   types,
   onRouteSettings,
+  refetchChallengeMap,
   updateUserBackendComplete,
   updateMyPortfolioComplete
 } from './';
@@ -12,7 +13,8 @@ import {
   updateChallenges,
   doActionOnError,
   usernameSelector,
-  userSelector
+  userSelector,
+  createErrorObservable
 } from '../../../redux';
 import {
   updateUserEmail,
@@ -90,11 +92,29 @@ function backendUserUpdateEpic(actions$, { getState }) {
       );
     });
     const complete = actions$::ofType(types.updateUserBackend.complete)
-    .flatMap(({ payload: { message } }) =>
+    .flatMap(({ payload: { message } }) => Observable.if(
+      () => message.includes('project'),
+      Observable.of(refetchChallengeMap(), makeToast({ message })),
       Observable.of(makeToast({ message }))
+    )
     );
 
   return Observable.merge(server, optimistic, complete);
+}
+
+function refetchChallengeMapEpic(actions$, { getState }) {
+  return actions$::ofType(types.refetchChallengeMap.start)
+    .flatMap(() => {
+      const {
+        app: { csrfToken: _csrf }
+      } = getState();
+      const username = usernameSelector(getState());
+      return postJSON$('/refetch-user-challenge-map', { _csrf })
+        .map(({ challengeMap }) =>
+          updateMultipleUserFlags({ username, flags: { challengeMap } })
+        )
+        .catch(createErrorObservable);
+    });
 }
 
 function updateMyPortfolioEpic(actions$, { getState }) {
@@ -120,21 +140,21 @@ function updateMyPortfolioEpic(actions$, { getState }) {
     Observable.of(makeToast({ message }))
   );
 
-    const serverRemove = remove
-      .flatMap(({ payload: { portfolio } }) => {
-        const {
-          app: { csrfToken: _csrf }
-        } = getState();
-        return postJSON$('/update-my-portfolio', { _csrf, portfolio })
-          .map(updateMyPortfolioComplete)
-          .catch(
-            doActionOnError(
-              () => makeToast({
-                message: 'Something went wrong removing a portfolio item.'
-              })
-            )
-          );
-      });
+  const serverRemove = remove
+    .flatMap(({ payload: { portfolio } }) => {
+      const {
+        app: { csrfToken: _csrf }
+      } = getState();
+      return postJSON$('/update-my-portfolio', { _csrf, portfolio })
+        .map(updateMyPortfolioComplete)
+        .catch(
+          doActionOnError(
+            () => makeToast({
+              message: 'Something went wrong removing a portfolio item.'
+            })
+          )
+        );
+    });
     const optimisticRemove = remove
       .flatMap(({ payload: { portfolio: { id } } }) => {
         const username = usernameSelector(getState());
@@ -212,6 +232,7 @@ export function updateUserLangEpic(actions, { getState }) {
 
 export default combineEpics(
   backendUserUpdateEpic,
+  refetchChallengeMapEpic,
   updateMyPortfolioEpic,
   updateUserEmailEpic,
   updateUserLangEpic

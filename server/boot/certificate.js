@@ -128,7 +128,7 @@ export default function certificate(app) {
     // modern
     [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
     [certTypes.frontEndLibs]: getIdsForCert$(frontEndLibsId, Challenge),
-    [certTypes.dataViz2018]: getIdsForCert$(dataVis2018Id, Challenge),
+    [certTypes.dataVis2018]: getIdsForCert$(dataVis2018Id, Challenge),
     [certTypes.jsAlgoDataStruct]: getIdsForCert$(jsAlgoDataStructId, Challenge),
     [certTypes.apisMicroservices]: getIdsForCert$(
       apisMicroservicesId,
@@ -172,8 +172,13 @@ export default function certificate(app) {
 
   function verifyCert(req, res, next) {
     const { body: { superBlock }, user } = req;
-    const certType = superBlockCertTypeMap[superBlock];
+
+    let certType = superBlockCertTypeMap[superBlock];
     log(certType);
+    if (certType === 'isDataVisCert') {
+      certType = 'is2018DataVisCert';
+      log(certType);
+    }
     return user.getChallengeMap$()
     .flatMap(() => certTypeIds[certType])
     .flatMap(challenge => {

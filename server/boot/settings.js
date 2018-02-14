@@ -24,6 +24,15 @@ export default function settingsController(app) {
       );
   };
 
+  function refetchChallengeMap(req, res, next) {
+    const { user } = req;
+    return user.requestChallengeMap()
+      .subscribe(
+        challengeMap => res.json({ challengeMap }),
+        next
+      );
+  }
+
   const updateMyEmailValidators = [
     check('email')
       .isEmail()
@@ -150,6 +159,11 @@ export default function settingsController(app) {
     );
   }
 
+  api.post(
+    '/refetch-user-challenge-map',
+    ifNoUser401,
+    refetchChallengeMap
+  );
   api.post(
     '/update-flags',
     ifNoUser401,
