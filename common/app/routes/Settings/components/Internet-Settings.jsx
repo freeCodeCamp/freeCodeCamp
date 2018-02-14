@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
 
 import { FullWidthRow, Spacer } from '../../../helperComponents';
-import { BlockSaveButton, FormFields } from '../formHelpers';
+import { BlockSaveButton, BlockSaveWrapper, FormFields } from '../formHelpers';
 import SectionHeader from './SectionHeader.jsx';
 import { userSelector } from '../../../redux';
 import { updateUserBackend } from '../redux';
@@ -86,7 +86,9 @@ class InternetSettings extends PureComponent {
               options={ options }
             />
             <Spacer />
-            <BlockSaveButton disabled={ allPristine }/>
+            <BlockSaveWrapper>
+              <BlockSaveButton disabled={ allPristine }/>
+            </BlockSaveWrapper>
           </form>
         </FullWidthRow>
       </div>

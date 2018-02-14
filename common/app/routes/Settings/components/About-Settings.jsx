@@ -20,6 +20,7 @@ import {
 } from '../redux';
 import {
   BlockSaveButton,
+  BlockSaveWrapper,
   FormFields,
   maxLength,
   validURL
@@ -198,9 +199,9 @@ class AboutSettings extends PureComponent {
           {
             this.show[view]()
           }
-          <FullWidthRow>
+          <BlockSaveWrapper>
             <BlockSaveButton disabled={ allPristine } />
-          </FullWidthRow>
+          </BlockSaveWrapper>
         </form>
         </FullWidthRow>
         <Spacer />
