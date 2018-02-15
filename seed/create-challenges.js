@@ -143,8 +143,10 @@ export const createChallengesArray = _.flow(
 
 // create an array of paths from the challengeMap
 // used mainly in generating tests
-// createPaths([[...Block, ...Challenge]]) =>
-// [..."<superBlock>/<block>/<challenge>"]
+// createPaths([[...Block, ...Challenge]]) => ({
+//   challengesByPath: { [path]: Challenge },
+//   paths: [..."<superBlock>/<block>/<challenge>"],
+// })
 export const createPaths = ([blocks, challenges]) => {
   const mapToDashedName = _.map('dashedName');
   const blockIdToBlockName = _.flow(
@@ -173,13 +175,23 @@ export const createPaths = ([blocks, challenges]) => {
   const blockToSubPath = _.flatMap(_.flow(
     _.property('dashedName'),
     block => _.get(block)(challengesByBlock),
-    _.map(challenge => `${challenge.block}/${challenge.dashedName}`)
+    _.map(challenge => ({
+      path: `${challenge.block}/${challenge.dashedName}`,
+      challenge
+    }))
   ));
   return _.flow(
     _.groupBy('superBlock'),
     _.toPairs,
     _.map(([blockName, block]) => [blockName, blockToSubPath(block)]),
-    _.flatMap(([superBlock, subPaths]) =>
-      _.map(subPath => `${superBlock}/${subPath}`)(subPaths))
-    )(blocks);
+    _.flatMap(([superBlock, challenges]) =>
+      _.map(({ challenge, path })=> ({
+        path: `${superBlock}/${path}`,
+        challenge
+      }))(challenges)),
+    _.transform((accu, { path, challenge }) => {
+      accu.paths.push(path);
+      accu.challengesByPath[path] = challenge;
+    }, { paths: [], challengesByPath: {} })
+  )(blocks);
 };
