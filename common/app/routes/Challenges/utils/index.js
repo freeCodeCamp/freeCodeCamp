@@ -24,7 +24,8 @@ export const viewTypes = {
   [ challengeTypes.step ]: 'step',
   [ challengeTypes.quiz ]: 'quiz',
   backend: 'backend',
-  modern: 'modern'
+  modern: 'modern',
+  invalid: 'invalid'
 };
 
 // determine the type of submit function to use for the challenge on completion
