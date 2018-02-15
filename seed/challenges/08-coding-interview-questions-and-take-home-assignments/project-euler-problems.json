@@ -815,17 +815,19 @@
       "type": "bonfire",
       "title": "Problem 19: Counting Sundays",
       "tests": [
-        "assert.strictEqual(euler19(), 171, 'message: <code>euler19()</code> should return 171.');"
+        "assert.strictEqual(countingSundays(1943, 1946), 6, 'message: <code>countingSundays(1943, 1946)</code> should return 6.');",
+        "assert.strictEqual(countingSundays(1995, 2000), 9, 'message: <code>countingSundays(1995, 2000)</code> should return 9.');",
+        "assert.strictEqual(countingSundays(1901, 2000), 171, 'message: <code>countingSundays(1901, 2000)</code> should return 171.');"
       ],
-      "solutions": [],
+      "solutions": ["function countingSundays(firstYear, lastYear) {\n  let sundays = 0;\n\n  for (let year = firstYear; year <= lastYear; year++) {\n    for (let month = 1; month <= 12; month++) {\n      const thisDate = new Date(year, month, 1);\n      if (thisDate.getDay() === 0) {\n        sundays++;\n      }\n    }\n  }\n  return sundays;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler19() {",
+        "function countingSundays(firstYear, lastYear) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler19();"
+        "countingSundays(1943, 1946);"
       ],
       "description": [
         "You are given the following information, but you may prefer to do some research for yourself.",
