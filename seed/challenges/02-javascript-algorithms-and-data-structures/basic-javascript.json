@@ -35,12 +35,8 @@
         "<hr>",
         "Try creating one of each type of comment."
       ],
-      "challengeSeed": [
-        ""
-      ],
-      "solutions": [
-        "// Fake Comment\n/* Another Comment */"
-      ],
+      "challengeSeed": [""],
+      "solutions": ["// Fake Comment\n/* Another Comment */"],
       "tests": [
         "assert(code.match(/(\\/\\/)...../g), 'message: Create a <code>//</code> style comment that contains at least five letters.');",
         "assert(code.match(/(\\/\\*)([^\\*\\/]{5,})(?=\\*\\/)/gm), 'message: Create a <code>/* */</code> style comment that contains at least five letters.');"
@@ -103,9 +99,7 @@
       "tail": [
         "if(typeof myName !== \"undefined\"){(function(v){return v;})(myName);}"
       ],
-      "solutions": [
-        "var myName;"
-      ],
+      "solutions": ["var myName;"],
       "tests": [
         "assert(/var\\s+myName\\s*;/.test(code), 'message: You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon');"
       ],
@@ -171,12 +165,8 @@
         "// Only change code below this line",
         ""
       ],
-      "tail": [
-        "(function(a,b){return \"a = \" + a + \", b = \" + b;})(a,b);"
-      ],
-      "solutions": [
-        "var a;\nvar b = 2;\na = 7;\nb = a;"
-      ],
+      "tail": ["(function(a,b){return \"a = \" + a + \", b = \" + b;})(a,b);"],
+      "solutions": ["var a;\nvar b = 2;\na = 7;\nb = a;"],
       "tests": [
         "assert(/var a;/.test(code) && /var b = 2;/.test(code), 'message: Do not change code above the line');",
         "assert(typeof a === 'number' && a === 7, 'message: <code>a</code> should have a value of 7');",
@@ -223,9 +213,7 @@
       "tail": [
         "if(typeof a !== 'undefined') {(function(a){return \"a = \" + a;})(a);} else { (function() {return 'a is undefined';})(); }"
       ],
-      "solutions": [
-        "var a = 9;"
-      ],
+      "solutions": ["var a = 9;"],
       "tests": [
         "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'message: Initialize <code>a</code> to a value of <code>9</code>');"
       ],
@@ -357,16 +345,9 @@
         "<hr>",
         "Change the <code>0</code> so that sum will equal <code>20</code>."
       ],
-      "challengeSeed": [
-        "var sum = 10 + 0;",
-        ""
-      ],
-      "tail": [
-        "(function(z){return 'sum = '+z;})(sum);"
-      ],
-      "solutions": [
-        "var sum = 10 + 10;"
-      ],
+      "challengeSeed": ["var sum = 10 + 0;", ""],
+      "tail": ["(function(z){return 'sum = '+z;})(sum);"],
+      "solutions": ["var sum = 10 + 10;"],
       "tests": [
         "assert(sum === 20, 'message: <code>sum</code> should equal <code>20</code>');",
         "assert(/\\+/.test(code), 'message: Use the <code>+</code> operator');"
@@ -397,17 +378,9 @@
         "<hr>",
         "Change the <code>0</code> so the difference is <code>12</code>."
       ],
-      "challengeSeed": [
-        "var difference = 45 - 0;",
-        "",
-        ""
-      ],
-      "tail": [
-        "(function(z){return 'difference = '+z;})(difference);"
-      ],
-      "solutions": [
-        "var difference = 45 - 33;"
-      ],
+      "challengeSeed": ["var difference = 45 - 0;", "", ""],
+      "tail": ["(function(z){return 'difference = '+z;})(difference);"],
+      "solutions": ["var difference = 45 - 33;"],
       "tests": [
         "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
         "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*[0-9]*;(?!\\s*[a-zA-Z0-9]+)/.test(code),'message: Only subtract one number from 45.');"
@@ -438,17 +411,9 @@
         "<hr>",
         "Change the <code>0</code> so that product will equal <code>80</code>."
       ],
-      "challengeSeed": [
-        "var product = 8 * 0;",
-        "",
-        ""
-      ],
-      "tail": [
-        "(function(z){return 'product = '+z;})(product);"
-      ],
-      "solutions": [
-        "var product = 8 * 10;"
-      ],
+      "challengeSeed": ["var product = 8 * 0;", "", ""],
+      "tail": ["(function(z){return 'product = '+z;})(product);"],
+      "solutions": ["var product = 8 * 10;"],
       "tests": [
         "assert(product === 80,'message: Make the variable <code>product</code> equal 80');",
         "assert(/\\*/.test(code), 'message: Use the <code>*</code> operator');"
@@ -479,17 +444,9 @@
         "<hr>",
         "Change the <code>0</code> so that the <code>quotient</code> is equal to <code>2</code>."
       ],
-      "challengeSeed": [
-        "var quotient = 66 / 0;",
-        "",
-        ""
-      ],
-      "tail": [
-        "(function(z){return 'quotient = '+z;})(quotient);"
-      ],
-      "solutions": [
-        "var quotient = 66 / 33;"
-      ],
+      "challengeSeed": ["var quotient = 66 / 0;", "", ""],
+      "tail": ["(function(z){return 'quotient = '+z;})(quotient);"],
+      "solutions": ["var quotient = 66 / 33;"],
       "tests": [
         "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal to 2.');",
         "assert(/\\d+\\s*\\/\\s*\\d+/.test(code), 'message: Use the <code>/</code> operator');"
@@ -528,12 +485,8 @@
         "myVar = myVar + 1;",
         ""
       ],
-      "tail": [
-        "(function(z){return 'myVar = ' + z;})(myVar);"
-      ],
-      "solutions": [
-        "var myVar = 87;\nmyVar++;"
-      ],
+      "tail": ["(function(z){return 'myVar = ' + z;})(myVar);"],
+      "solutions": ["var myVar = 87;\nmyVar++;"],
       "tests": [
         "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
         "assert(/var\\s*myVar\\s*=\\s*87;\\s*\\/*.*\\s*myVar\\+\\+;/.test(code), 'message: <code>myVar = myVar + 1;</code> should be changed');",
@@ -577,12 +530,8 @@
         "myVar = myVar - 1;",
         ""
       ],
-      "tail": [
-        "(function(z){return 'myVar = ' + z;})(myVar);"
-      ],
-      "solutions": [
-        "var myVar = 11;\nmyVar--;"
-      ],
+      "tail": ["(function(z){return 'myVar = ' + z;})(myVar);"],
+      "solutions": ["var myVar = 11;\nmyVar--;"],
       "tests": [
         "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
         "assert(/var\\s*myVar\\s*=\\s*11;\\s*\\/*.*\\s*myVar--;/.test(code), 'message: <code>myVar = myVar - 1;</code> should be changed');",
@@ -625,9 +574,7 @@
       "tail": [
         "(function(){if(typeof myDecimal !== \"undefined\"){return myDecimal;}})();"
       ],
-      "solutions": [
-        "var myDecimal = 9.9;"
-      ],
+      "solutions": ["var myDecimal = 9.9;"],
       "tests": [
         "assert(typeof myDecimal === \"number\", 'message: <code>myDecimal</code> should be a number.');",
         "assert(myDecimal % 1 != 0, 'message: <code>myDecimal</code> should have a decimal point'); "
@@ -655,17 +602,9 @@
         "<hr>",
         "Change the <code>0.0</code> so that product will equal <code>5.0</code>."
       ],
-      "challengeSeed": [
-        "var product = 2.0 * 0.0;",
-        "",
-        ""
-      ],
-      "tail": [
-        "(function(y){return 'product = '+y;})(product);"
-      ],
-      "solutions": [
-        "var product = 2.0 * 2.5;"
-      ],
+      "challengeSeed": ["var product = 2.0 * 0.0;", "", ""],
+      "tail": ["(function(y){return 'product = '+y;})(product);"],
+      "solutions": ["var product = 2.0 * 2.5;"],
       "tests": [
         "assert(product === 5.0, 'message: The variable <code>product</code> should equal <code>5.0</code>.');",
         "assert(/\\*/.test(code), 'message: You should use the <code>*</code> operator');"
@@ -692,14 +631,8 @@
         "<hr>",
         "Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.2</code>."
       ],
-      "challengeSeed": [
-        "var quotient = 0.0 / 2.0; // Fix this line",
-        "",
-        ""
-      ],
-      "tail": [
-        "(function(y){return 'quotient = '+y;})(quotient);"
-      ],
+      "challengeSeed": ["var quotient = 0.0 / 2.0; // Fix this line", "", ""],
+      "tail": ["(function(y){return 'quotient = '+y;})(quotient);"],
       "solutions": [],
       "tests": [
         "assert(quotient === 2.2, 'message: The variable <code>quotient</code> should equal <code>2.2</code>');",
@@ -739,12 +672,8 @@
         "var remainder;",
         ""
       ],
-      "tail": [
-        "(function(y){return 'remainder = '+y;})(remainder);"
-      ],
-      "solutions": [
-        "var remainder =  11 % 3;"
-      ],
+      "tail": ["(function(y){return 'remainder = '+y;})(remainder);"],
+      "solutions": ["var remainder =  11 % 3;"],
       "tests": [
         "assert(/var\\s+?remainder/.test(code), 'message: The variable <code>remainder</code> should be initialized');",
         "assert(remainder === 2, 'message: The value of <code>remainder</code> should be <code>2</code>');",
@@ -1039,11 +968,7 @@
         "<code>I am a \"double quoted\" string inside \"double quotes\".</code>"
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "var myStr = \"\"; // Change this line",
-        "",
-        ""
-      ],
+      "challengeSeed": ["var myStr = \"\"; // Change this line", "", ""],
       "tail": [
         "(function(){",
         "  if(typeof myStr === 'string') {",
@@ -1053,7 +978,9 @@
         "  }",
         "})();"
       ],
-      "solutions": ["var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\";"],
+      "solutions": [
+        "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\";"
+      ],
       "tests": [
         "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
         "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
@@ -1098,10 +1025,10 @@
         "",
         ""
       ],
-      "tail": [
-        "(function() { return \"myStr = \" + myStr; })();"
+      "tail": ["(function() { return \"myStr = \" + myStr; })();"],
+      "solutions": [
+        "var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"
       ],
-      "solutions": ["var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"],
       "tests": [
         "assert(!/\\\\/g.test(code) && myStr.match('\\\\s*<a href\\\\s*=\\\\s*\"http://www.example.com\"\\\\s*target\\\\s*=\\\\s*\"_blank\">\\\\s*Link\\\\s*</a>\\\\s*'), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
         "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
@@ -1137,11 +1064,7 @@
         "<q>FirstLine<code>newline</code><code>tab</code><code>backslash</code>SecondLine<code>newline</code>ThirdLine</q>"
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "var myStr; // Change this line",
-        "",
-        ""
-      ],
+      "challengeSeed": ["var myStr; // Change this line", "", ""],
       "tail": [
         "(function(){",
         "if (myStr !== undefined){",
@@ -1392,7 +1315,8 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/appending-variables-to-strings"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/appending-variables-to-strings"
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -1435,7 +1359,8 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Comprueba la propiedad longitud (length) de una variable tipo cadena",
+          "title":
+            "Comprueba la propiedad longitud (length) de una variable tipo cadena",
           "description": [
             "Las <code>estructuras de datos</code> tienen <code>propiedades</code>. Por ejemplo, las <code>cadenas</code> tienen una propiedad llamada <code>.length </code> que te dirá cuántos caracteres hay en la cadena.",
             "Por ejemplo, si creamos una variable <code>var firstName=\"Charles\"</code>, podemos averiguar la longitud de la cadena \"Charles\" usando la propiedad <code>firstName.length</code>. ",
@@ -1471,9 +1396,7 @@
         "",
         ""
       ],
-      "tail": [
-        "(function(v){return v;})(firstLetterOfLastName);"
-      ],
+      "tail": ["(function(v){return v;})(firstLetterOfLastName);"],
       "solutions": [
         "var firstLetterOfLastName = \"\";\nvar lastName = \"Lovelace\";\n\n// Only change code below this line\nfirstLetterOfLastName = lastName[0];"
       ],
@@ -1485,7 +1408,8 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usa la notación de corchetes para encontrar el primer carácter de una cadena",
+          "title":
+            "Usa la notación de corchetes para encontrar el primer carácter de una cadena",
           "description": [
             "La <code>notación de corchetes</code> es una forma de obtener el caracter en un <code>índice</code> específico de una cadena.",
             "Los computadoras no empiezan a contar desde 1 como hacen los humanos. Comienzan en 0 ",
@@ -1519,12 +1443,8 @@
         "",
         ""
       ],
-      "tail": [
-        "(function(v){return \"myStr = \" + v;})(myStr);"
-      ],
-      "solutions": [
-        "var myStr = \"Jello World\";\nmyStr = \"Hello World\";"
-      ],
+      "tail": ["(function(v){return \"myStr = \" + v;})(myStr);"],
+      "solutions": ["var myStr = \"Jello World\";\nmyStr = \"Hello World\";"],
       "tests": [
         "assert(myStr === \"Hello World\", 'message: <code>myStr</code> should have a value of <code>Hello World</code>');",
         "assert(/myStr = \"Jello World\"/.test(code), 'message: Do not change the code above the line');"
@@ -1569,9 +1489,7 @@
         "",
         ""
       ],
-      "tail": [
-        "(function(v){return v;})(thirdLetterOfLastName);"
-      ],
+      "tail": ["(function(v){return v;})(thirdLetterOfLastName);"],
       "solutions": [
         "var lastName = \"Lovelace\";\nvar thirdLetterOfLastName = lastName[2];"
       ],
@@ -1583,7 +1501,8 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usar la notación de corchetes para encontrar el n-ésimo caracter en una cadena",
+          "title":
+            "Usar la notación de corchetes para encontrar el n-ésimo caracter en una cadena",
           "description": [
             "También puede usar <code>notación de corchetes</code> para obtener el caracter en otras posiciones dentro de una cadena.",
             "Recuerda que los computadores empiezan a contar a 0, por lo que el primer caracter es en realidad el caracter cero.",
@@ -1617,9 +1536,7 @@
         "",
         ""
       ],
-      "tail": [
-        "(function(v){return v;})(lastLetterOfLastName);"
-      ],
+      "tail": ["(function(v){return v;})(lastLetterOfLastName);"],
       "solutions": [
         "var firstName = \"Ada\";\nvar lastLetterOfFirstName = firstName[firstName.length - 1];\n\nvar lastName = \"Lovelace\";\nvar lastLetterOfLastName = lastName[lastName.length - 1];"
       ],
@@ -1631,7 +1548,8 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usa notación de corchetes para encontrar el último caracter de una cadena",
+          "title":
+            "Usa notación de corchetes para encontrar el último caracter de una cadena",
           "description": [
             "Con el fin de conseguir la última letra de una cadena, puedes restar uno a la longitud de la cadena.",
             "Por ejemplo, si <code>var firstName = \"Charles\"</code>, se puede obtener la última letra usando <code>firstName[firstName.length - 1]</code>. ",
@@ -1644,7 +1562,8 @@
     },
     {
       "id": "bd7123c9c452eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the Nth-to-Last Character in a String",
+      "title":
+        "Use Bracket Notation to Find the Nth-to-Last Character in a String",
       "description": [
         "You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.",
         "For example, you can get the value of the third-to-last letter of the <code>var firstName = \"Charles\"</code> string by using <code>firstName[firstName.length - 3]</code>",
@@ -1665,9 +1584,7 @@
         "",
         ""
       ],
-      "tail": [
-        "(function(v){return v;})(secondToLastLetterOfLastName);"
-      ],
+      "tail": ["(function(v){return v;})(secondToLastLetterOfLastName);"],
       "solutions": [
         "var firstName = \"Ada\";\nvar thirdToLastLetterOfFirstName = firstName[firstName.length - 3];\n\nvar lastName = \"Lovelace\";\nvar secondToLastLetterOfLastName = lastName[lastName.length - 2];"
       ],
@@ -1679,7 +1596,8 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Usa notación de corchetes para encontrar el n-ésimo último caracter de una cadena",
+          "title":
+            "Usa notación de corchetes para encontrar el n-ésimo último caracter de una cadena",
           "description": [
             "Puede utilizar el mismo principio utilizamos para recuperar el último caracter de una cadena para recuperar el n-ésimo último caracter.",
             "Por ejemplo, se puede obtener el valor de la tercera última letra de la cadena <code>var firstName = \"Charles\"</code> utilizando <code>firstName[firstName.length - 3]</code> ",
@@ -1761,12 +1679,8 @@
         "var myArray = [];",
         ""
       ],
-      "tail": [
-        "(function(z){return z;})(myArray);"
-      ],
-      "solutions": [
-        "var myArray = [\"The Answer\", 42];"
-      ],
+      "tail": ["(function(z){return z;})(myArray);"],
+      "solutions": ["var myArray = [\"The Answer\", 42];"],
       "tests": [
         "assert(typeof myArray == 'object', 'message: <code>myArray</code> should be an <code>array</code>.');",
         "assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string', 'message: The first item in <code>myArray</code> should be a <code>string</code>.');",
@@ -1776,7 +1690,8 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Almacena múltiples valores en una variable utilizando vectores en JavaScript",
+          "title":
+            "Almacena múltiples valores en una variable utilizando vectores en JavaScript",
           "description": [
             "Con las variables tipo <code>vector</code> (o en inglés <code>array</code>) podemos almacenar diversos datos en un solo lugar.",
             "Empiezas la declaración de un vector con un corchete de apertura, y terminas con un corchete de cierre, y pones una coma entre cada entrada, así: <code>var sandwich = [\"mantequilla de maní\", \"jalea\" , \"pan\"]</code>. ",
@@ -1806,9 +1721,7 @@
       "tail": [
         "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
-      "solutions": [
-        "var myArray = [[1,2,3]];"
-      ],
+      "solutions": ["var myArray = [[1,2,3]];"],
       "tests": [
         "assert(Array.isArray(myArray) && myArray.some(Array.isArray), 'message: <code>myArray</code> should have at least one array nested within another array.');"
       ],
@@ -1851,9 +1764,7 @@
       "tail": [
         "if(typeof myArray !== \"undefined\" && typeof myData !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
       ],
-      "solutions": [
-        "var myArray = [50,60,70];\nvar myData = myArray[0];"
-      ],
+      "solutions": ["var myArray = [50,60,70];\nvar myData = myArray[0];"],
       "tests": [
         "assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})(), 'message: The variable <code>myData</code> should equal the first value of <code>myArray</code>.');",
         "assert((function(){if(code.match(/\\s*=\\s*myArray\\[0\\]/g)){return true;}else{return false;}})(), 'message: The data in variable <code>myArray</code> should be accessed using bracket notation.');"
@@ -1875,7 +1786,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
     },
     {
       "id": "cf1111c1c11feddfaeb8bdef",
@@ -1903,9 +1815,7 @@
       "tail": [
         "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
       ],
-      "solutions": [
-        "var myArray = [18,64,99];\nmyArray[0] = 45;"
-      ],
+      "solutions": ["var myArray = [18,64,99];\nmyArray[0] = 45;"],
       "tests": [
         "assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 45 && myArray[1] == 64 && myArray[2] == 99){return true;}else{return false;}})(), 'message: <code>myArray</code> should now be [45,64,99].');",
         "assert((function(){if(code.match(/myArray\\[0\\]\\s*=\\s*/g)){return true;}else{return false;}})(), 'message: You should be using correct index to modify the value in <code>myArray</code>.');"
@@ -1970,7 +1880,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
     },
     {
       "id": "56bbb991ad1ed5201cd392cb",
@@ -2172,11 +2083,7 @@
         "There should be at least 5 sub-arrays in the list."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "var myList = [];",
-        "",
-        ""
-      ],
+      "challengeSeed": ["var myList = [];", "", ""],
       "tail": [
         "var count = 0;",
         "var isArray = false;",
@@ -2687,9 +2594,7 @@
         "addThree();",
         "addFive();"
       ],
-      "solutions": [
-        "function addFive() {\n sum = sum + 5;\n}"
-      ],
+      "solutions": ["function addFive() {\n sum = sum + 5;\n}"],
       "tests": [
         "assert(typeof addFive === 'function', 'message: <code>addFive</code> should be a function');",
         "assert(sum === 8, 'message: <code>sum</code> should be equal to 8');",
@@ -2733,9 +2638,7 @@
         "",
         ""
       ],
-      "tail": [
-        "(function(){return \"processed = \" + processed})();"
-      ],
+      "tail": ["(function(){return \"processed = \" + processed})();"],
       "solutions": [
         "var processed = 0;\n\nfunction processArg(num) {\n  return (num + 3) / 5;\n}\n\nprocessed = processArg(7);"
       ],
@@ -2758,7 +2661,8 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/assignment-with-a-returned-value"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/assignment-with-a-returned-value"
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
@@ -2853,9 +2757,7 @@
         "// Only change code above this line.",
         "}"
       ],
-      "tail": [
-        "welcomeToBooleans();"
-      ],
+      "tail": ["welcomeToBooleans();"],
       "solutions": [
         "function welcomeToBooleans() {\n  return true; // Change this line\n}"
       ],
@@ -3166,9 +3068,7 @@
       "solutions": [
         "function testStrictNotEqual(val) {\n  if (val !== 17) {\n    return \"Not Equal\";\n  }\n  return \"Equal\";\n}"
       ],
-      "MDNlinks": [
-        "Strict Inequality Operator"
-      ],
+      "MDNlinks": ["Strict Inequality Operator"],
       "tests": [
         "assert(testStrictNotEqual(17) === \"Equal\", 'message: <code>testStrictNotEqual(17)</code> should return \"Equal\"');",
         "assert(testStrictNotEqual(\"17\") === \"Not Equal\", 'message: <code>testStrictNotEqual(\"17\")</code> should return \"Not Equal\"');",
@@ -3859,13 +3759,12 @@
         "assert(code.match(/break/g).length > 2, 'message: You should have at least 3 <code>break</code> statements');"
       ],
       "type": "waypoint",
-      "MDNlinks": [
-        "Switch Statement"
-      ],
+      "MDNlinks": ["Switch Statement"],
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Seleccionar desde diferentes opciones con la sentencia switch",
+          "title":
+            "Seleccionar desde diferentes opciones con la sentencia switch",
           "description": [
             "Si tienes varias opciones para elegir, usa una sentencia <code>switch</code>. Una sentencia <code>switch</code> prueba un valor y puede tener varias sentencias <code>case</code> las cuales definen varios posibles valores. Las sentencias son ejecutadas desde el primer valor <code>case</code> igualado hasta que se encuentr un <code>break</code>.",
             "Aquí hay un <dfn>pseudocódigo</dfn> de ejemplo:",
@@ -3920,7 +3819,8 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Agregar una opción por omisión (default) en una sentencia switch",
+          "title":
+            "Agregar una opción por omisión (default) en una sentencia switch",
           "description": [
             "En una sentencia <code>switch</code> puede que no seas capaz de especificar todos los posibles valores en las sentencias <code>case</code>. En su lugar, puedes agregar la sentencia <code>default</code> la cual será ejecutada si no es encontrada ninguna coincidencia con alguna sentencia <code>case</code>. Piensa en esto como la última sentencia <code>else</code> en una cadena <code>if/else</code>.",
             "Una sentencia <code>default</code> debería ser el último caso.",
@@ -3930,7 +3830,8 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/adding-a-default-option-in-switch-statements"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/adding-a-default-option-in-switch-statements"
     },
     {
       "id": "56533eb9ac21ba0edf2244df",
@@ -4085,12 +3986,8 @@
         "// Change these values to test",
         "isLess(10, 15);"
       ],
-      "tail": [
-        ""
-      ],
-      "solutions": [
-        "function isLess(a, b) {\n  return a < b;\n}"
-      ],
+      "tail": [""],
+      "solutions": ["function isLess(a, b) {\n  return a < b;\n}"],
       "tests": [
         "assert(isLess(10,15) === true, 'message: <code>isLess(10,15)</code> should return <code>true</code>');",
         "assert(isLess(15, 10) === false, 'message: <code>isLess(15,10)</code> should return <code>false</code>');",
@@ -4141,9 +4038,7 @@
         "// Change values below to test your code",
         "abTest(2,2);"
       ],
-      "tail": [
-        ""
-      ],
+      "tail": [""],
       "solutions": [
         "function abTest(a, b) {\n  if(a < 0 || b < 0) {\n    return undefined;\n  } \n  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));\n}"
       ],
@@ -4260,9 +4155,7 @@
         "  ",
         "};"
       ],
-      "tail": [
-        "(function(z){return z;})(myDog);"
-      ],
+      "tail": ["(function(z){return z;})(myDog);"],
       "solutions": [
         "var myDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"]  \n};"
       ],
@@ -4392,7 +4285,8 @@
       "challengeType": 1,
       "translations": {
         "es": {
-          "title": "Acceder a las propiedades de objetos con la notación corchete",
+          "title":
+            "Acceder a las propiedades de objetos con la notación corchete",
           "description": [
             "La segunda manera de acceder a las propiedades de un objeto es con la notación corchete (<code>[]</code>). Si el nombre de la propiedad del objeto que estás intentando acceder tiene un espacio, necesitarás usar la notación corchete.",
             "Aquí está un ejemplo del uso de la notación corchete para leer una propiedad de un objeto:",
@@ -4403,7 +4297,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/accessing-objects-properties-with-bracket-notation"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/accessing-objects-properties-with-bracket-notation"
     },
     {
       "id": "56533eb9ac21ba0edf2244c9",
@@ -4413,7 +4308,7 @@
         "Here is an example of using a variable to access a property:",
         "<blockquote>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br>};<br>var myDog = \"Hunter\";<br>var myBreed = dogs[myDog];<br>console.log(myBreed); // \"Doberman\"</blockquote>",
         "Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows:",
-        "<blockquote>var someObj = {<br>  propName: \"John\"<br>};<br>function propPrefix(str) {<br>  var s = \"prop\";<br>  return s + str;<br>}<br>var someProp = propPrefix(\"Name\"); // someProp now holds the value 'propName'<br>console.log(obj[someProp]); // \"John\"</blockquote>",
+        "<blockquote>var someObj = {<br>  propName: \"John\"<br>};<br>function propPrefix(str) {<br>  var s = \"prop\";<br>  return s + str;<br>}<br>var someProp = propPrefix(\"Name\"); // someProp now holds the value 'propName'<br>console.log(someObj[someProp]); // \"John\"</blockquote>",
         "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>.",
         "<hr>",
         "Use the <code>playerNumber</code> variable to look up player <code>16</code> in <code>testObj</code> using bracket notation. Then assign that name to the <code>player</code> variable."
@@ -4463,7 +4358,8 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/accessing-objects-properties-with-variables"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/accessing-objects-properties-with-variables"
     },
     {
       "id": "56bbb991ad1ed5201cd392d1",
@@ -4502,9 +4398,7 @@
         "",
         ""
       ],
-      "tail": [
-        "(function(z){return z;})(myDog);"
-      ],
+      "tail": ["(function(z){return z;})(myDog);"],
       "solutions": [
         "var myDog = {\n  \"name\": \"Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"freeCodeCamp Campers\"]\n};\nmyDog.name = \"Happy Coder\";"
       ],
@@ -4570,9 +4464,7 @@
         "// Only change code below this line.",
         ""
       ],
-      "tail": [
-        "(function(z){return z;})(myDog);"
-      ],
+      "tail": ["(function(z){return z;})(myDog);"],
       "solutions": [
         "var myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"freeCodeCamp Campers\"]\n};\nmyDog.bark = \"Woof Woof\";"
       ],
@@ -4630,9 +4522,7 @@
         "",
         ""
       ],
-      "tail": [
-        "(function(z){return z;})(myDog);"
-      ],
+      "tail": ["(function(z){return z;})(myDog);"],
       "solutions": [
         "var ourDog = {\n  \"name\": \"Camper\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"everything!\"],\n  \"bark\": \"bow-wow\"\n};\nvar myDog = {\n  \"name\": \"Happy Coder\",\n  \"legs\": 4,\n  \"tails\": 1,\n  \"friends\": [\"freeCodeCamp Campers\"],\n  \"bark\": \"woof\"\n};\ndelete myDog.tails;"
       ],
@@ -4755,9 +4645,7 @@
         "// Test your code by modifying these values",
         "checkObj(\"gift\");"
       ],
-      "tail": [
-        ""
-      ],
+      "tail": [""],
       "solutions": [
         "var myObj = {\n  gift: \"pony\",\n  pet: \"kitten\",\n  bed: \"sleigh\"\n};\nfunction checkObj(checkProp) {\n  if(myObj.hasOwnProperty(checkProp)) {\n    return myObj[checkProp];\n  } else {\n    return \"Not Found\";\n  }\n}"
       ],
@@ -4905,7 +4793,8 @@
           ]
         }
       },
-      "urlGuide":"https://guide.freecodecamp.org/certificates/accessing-nested-objects-in-json"
+      "urlGuide":
+        "https://guide.freecodecamp.org/certificates/accessing-nested-objects-in-json"
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
@@ -4973,7 +4862,8 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
     },
     {
       "id": "56533eb9ac21ba0edf2244cf",
@@ -5378,9 +5268,7 @@
         "multiplyAll([[1,2],[3,4],[5,6,7]]);",
         ""
       ],
-      "tail": [
-        ""
-      ],
+      "tail": [""],
       "solutions": [
         "function multiplyAll(arr) {\n  var product = 1;\n  for (var i = 0; i < arr.length; i++) {\n    for (var j = 0; j < arr[i].length; j++) {\n      product *= arr[i][j];\n    }\n  }\n  return product;\n}\n\nmultiplyAll([[1,2],[3,4],[5,6,7]]);"
       ],
@@ -5449,8 +5337,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {
-      }
+      "translations": {}
     },
     {
       "id": "5688e62ea601b2482ff8422b",
@@ -5551,12 +5438,8 @@
         "  // Only change code above this line.",
         "}"
       ],
-      "tail": [
-        "(function(){return randomFraction();})();"
-      ],
-      "solutions": [
-        "function randomFraction() {\n  return Math.random();\n}"
-      ],
+      "tail": ["(function(){return randomFraction();})();"],
+      "solutions": ["function randomFraction() {\n  return Math.random();\n}"],
       "tests": [
         "assert(typeof randomFraction() === \"number\", 'message: <code>randomFraction</code> should return a random number.');",
         "assert((randomFraction()+''). match(/\\./g), 'message: The number returned by <code>randomFraction</code> should be a decimal.');",
@@ -5600,9 +5483,7 @@
         "  return Math.random();",
         "}"
       ],
-      "tail": [
-        "(function(){return randomWholeNum();})();"
-      ],
+      "tail": ["(function(){return randomWholeNum();})();"],
       "solutions": [
         "var randomNumberBetween0and19 = Math.floor(Math.random() * 20);\nfunction randomWholeNum() {\n  return Math.floor(Math.random() * 10);\n}"
       ],

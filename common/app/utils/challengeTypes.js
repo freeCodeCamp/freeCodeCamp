@@ -10,3 +10,4 @@ export const bonfire = 5;
 export const video = 6;
 export const step = 7;
 export const quiz = 8;
+export const invalid = 9;
