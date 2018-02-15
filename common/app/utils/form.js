@@ -65,6 +65,10 @@ export function getValidationState(field) {
     return null;
   }
 
+  if ((/https?:\/\/glitch\.com\/edit\/#!\/.*/g).test(field.value)) {
+    return 'glitch-warning';
+  }
+
   return field.error ?
     'error' :
     'success';
