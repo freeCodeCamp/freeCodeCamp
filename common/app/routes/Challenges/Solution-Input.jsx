@@ -10,10 +10,15 @@ const propTypes = {
 
 export default function SolutionInput({ solution, placeholder }) {
   const validationState = getValidationState(solution);
+
   return (
     <FormGroup
       controlId='solution'
-      validationState={ validationState }
+      validationState={
+        (validationState && validationState.includes('warning')) ?
+          'warning' :
+          validationState
+      }
       >
       <FormControl
         name='solution'
@@ -22,9 +27,16 @@ export default function SolutionInput({ solution, placeholder }) {
         { ...DOMOnlyProps(solution) }
       />
       {
-        validationState === 'error' ?
-          <HelpBlock>Make sure you provide a proper URL.</HelpBlock> :
-          null
+        validationState === 'error' &&
+          <HelpBlock>Make sure you provide a proper URL.</HelpBlock>
+      }
+      {
+        validationState === 'glitch-warning' &&
+          <HelpBlock>
+            Make sure you have entered a shareable URL
+            (e.g. "https://green-camper.glitch.me", not
+            "https://glitch.com/#!/edit/green-camper".)
+          </HelpBlock>
       }
     </FormGroup>
   );
