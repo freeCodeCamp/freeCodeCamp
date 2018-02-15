@@ -721,21 +721,23 @@
       "type": "bonfire",
       "title": "Problem 16: Power digit sum",
       "tests": [
-        "assert.strictEqual(euler16(), 1366, 'message: <code>euler16()</code> should return 1366.');"
+        "assert.strictEqual(powerDigitSum(15), 26, 'message: <code>powerDigitSum(15)</code> should return 26.');",
+        "assert.strictEqual(powerDigitSum(128), 166, 'message: <code>powerDigitSum(128)</code> should return 166.');",
+        "assert.strictEqual(powerDigitSum(1000), 1366, 'message: <code>powerDigitSum(1000)</code> should return 1366.');"
       ],
-      "solutions": [],
+      "solutions": ["function powerDigitSum(exponent) {\n  const bigNum = [1];\n  let sum = 0;\n\n  for (let i = 1; i <= exponent; i++) {\n    let count = bigNum.length + 1;\n    let overflow = 0;\n    for (let j = 0; j < count; j++) {\n      let digit = bigNum[j] || 0;\n      digit = 2 * digit + overflow;\n\n      if (digit > 9) {\n        digit -= 10;\n        overflow = 1;\n      } else {\n        overflow = 0;\n      }\n\n      bigNum[j] = digit;\n    }\n  }\n\n  bigNum.forEach(function(num) {\n    return sum += num;\n  });\n\n  return sum;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler16() {",
+        "function powerDigitSum(exponent) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler16();"
+        "powerDigitSum(15);"
       ],
       "description": [
-        "215 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.",
-        "What is the sum of the digits of the number 21000?"
+        "2¹⁵ = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.",
+        "What is the sum of the digits of the number 2¹⁰⁰⁰?"
       ]
     },
     {
