@@ -4,6 +4,7 @@
   "repository": "freecodecamp/freecodecamp",
   "scripts": {
     "build": "NODE_ENV=production gulp build -p",
+    "build:test": "webpack --env development --config webpack.test.js",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "cover": "babel-node ./node_modules/.bin/babel-istanbul cover tape common/**/*.test.js",

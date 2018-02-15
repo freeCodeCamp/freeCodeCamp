@@ -4,14 +4,14 @@ const merge = require('webpack-merge');
 const UglifyPlugin = require('uglifyjs-webpack-plugin');
 const { getIfUtils, removeIfEmpty } = require('webpack-config-utils');
 
-const getCommonConfig = require('./common/webpack.common.js');
+const getBaseConfig = require('./webpack.base.js');
 
 module.exports = env => {
   const {
     ifProduction: ifProd,
     ifNotProduction: ifDev
   } = getIfUtils(env);
-  return merge(getCommonConfig(env), {
+  return merge(getBaseConfig(env), {
     entry: { frameRunner: './client/frame-runner.js' },
     node: {
       // Mock Node.js modules that Babel require()s but that we don't

@@ -1,5 +1,5 @@
 const path = require('path');
-const fp = require('lodash/fp');
+const _ = require('lodash/fp');
 
 module.exports.findAsset = (
   src,
@@ -18,7 +18,7 @@ module.exports.findAsset = (
     return asset;
   }
 
-  const chunkValue = assetsByChunkName[src];
+  let chunkValue = assetsByChunkName[src];
 
   if (!chunkValue) {
     return null;
@@ -35,26 +35,29 @@ module.exports.getAssetsFromCompilation = (
   compilation,
   { assetsByChunkName = {} } = {}
 ) => {
-  const publicPath = fp.get(compilation, 'options.output.publicPath');
-  return fp.compose(
+  const publicPath = _.get(compilation, 'options.output.publicPath');
+  return _.flow(
     // iterate over object key/value pairs
-    fp.toPairs,
-    fp.map(([ chunk, chunkValue ]) => [
+    _.toPairs,
+    _.map(([ chunk, chunkValue ]) => [
       chunk,
       // Webpack outputs an array for each chunk when using sourcemaps
-      Array.isArray(chunkValue) ? fp.head(chunkValue) : chunkValue
+      Array.isArray(chunkValue) ? _.head(chunkValue) : chunkValue
     ]),
     publicPath ?
-      fp.map(([chunk, chunkValue]) => [ chunk, publicPath + chunkValue ]) :
-      fp.identity,
+      _.map(([chunk, chunkValue]) => [
+        chunk,
+        publicPath + chunkValue
+      ]) :
+      _.identity,
     // turn pairs into object
-    fp.fromPairs
+    _.fromPairs
   )(assetsByChunkName);
 };
 
 module.exports.pathToAssetName = outputPath => {
   // Remove leading slashes for webpack-dev-server
-  const outputFileName = outputPath.replace(/^(\/|\\)/, '');
+  let outputFileName = outputPath.replace(/^(\/|\\)/, '');
 
   if (!(/\.(js)$/i).test(outputFileName)) {
     outputFileName = path.join(outputFileName, 'index.js');

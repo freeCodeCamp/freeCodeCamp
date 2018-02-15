@@ -12,12 +12,8 @@ const {
 } = require('./webpack-utils.js');
 
 class TestFileGenerator {
-  constructor({
-    entry,
-    locals = {},
-    globals
-  } = {}) {
-    this.entry = entry;
+  constructor({ paths = [], locals = {}, globals } = {}) {
+    this.paths = paths;
     this.locals = locals;
     this.globals = globals;
   }
@@ -41,14 +37,16 @@ class TestFileGenerator {
             webpackStatsJson
           );
 
+          // get source code of entry file
           const source = asset.source();
-          const render = evaluate(
+          // turn source into function
+          let render = evaluate(
             source,
-            /* filename: */
+            // filename
             this.entry,
-            /* scope: */
+            // scope
             this.globals,
-            /* includeGlobals: */
+            // includeGlobals
             true
           );
 
@@ -56,6 +54,7 @@ class TestFileGenerator {
             render = render['default'];
           }
 
+          // entry file must expose a function
           invariant(
             typeof render === 'function',
             `Export from  must be a function that returns an HTML string.
@@ -70,7 +69,7 @@ class TestFileGenerator {
               webpackStats,
               ...this.locals
             }))
-            .switchMap(this.renderPaths(
+            .mergeMap(this.renderPaths(
               render,
               assets,
               webpackStats,
@@ -101,9 +100,9 @@ class TestFileGenerator {
           _.pairs(result) :
           [[ locals.path, result ]]
       ))
-      .map(([ path, result ]) => [ pathToAssetName(path), result ])
+      .map(([path, result]) => [ pathToAssetName(path), result ])
       // is asset already exist in assets, do nothing
-      .filter(([ assetName ]) => !!compilation.assets[assetName])
+      .filter(([ assetName ]) => !compilation.assets[assetName])
       .do(([ assetName, result ]) => {
         // add new file to wepback assets.
         // webpack will print them to files
