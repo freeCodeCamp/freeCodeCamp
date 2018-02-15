@@ -744,17 +744,19 @@
       "type": "bonfire",
       "title": "Problem 17: Number letter counts",
       "tests": [
-        "assert.strictEqual(euler17(), 21124, 'message: <code>euler17()</code> should return 21124.');"
+        "assert.strictEqual(numberLetterCounts(5), 19, 'message: <code>numberLetterCounts(5)</code> should return 19.');",
+        "assert.strictEqual(numberLetterCounts(150), 1903, 'message: <code>numberLetterCounts(150)</code> should return 1903.');",
+        "assert.strictEqual(numberLetterCounts(1000), 21124, 'message: <code>numberLetterCounts(1000)</code> should return 21124.');"
       ],
-      "solutions": [],
+      "solutions": ["function numberLetterCounts(limit) {\n  const dictionary = {\n    0: '',\n    1: 'one',\n    2: 'two',\n    3: 'three',\n    4: 'four',\n    5: 'five',\n    6: 'six',\n    7: 'seven',\n    8: 'eight',\n    9: 'nine',\n    10: 'ten',\n    11: 'eleven',\n    12: 'twelve',\n    13: 'thirteen',\n    14: 'fourteen',\n    15: 'fifteen',\n    16: 'sixteen',\n    17: 'seventeen',\n    18: 'eighteen',\n    19: 'nineteen',\n    20: 'twenty',\n    30: 'thirty',\n    40: 'forty',\n    50: 'fifty',\n    60: 'sixty',\n    70: 'seventy',\n    80: 'eighty',\n    90: 'ninety',\n    1000: 'onethousand'\n  };\n\n  let numString = '';\n\n  function convertToString(num) {\n    // check dictionary for number\n    if (dictionary[num]) {\n      return dictionary[num];\n    } else {\n      const hundreds = Math.floor(num / 100);\n      const tens =  Math.floor((num / 10) % 10) * 10;\n      const remainder = num % 10;\n\n      let tempStr = '';\n\n      if (hundreds === 0) {\n        tempStr += dictionary[tens] + dictionary[remainder];\n      } else {\n        tempStr += dictionary[hundreds] + 'hundred';\n\n        if (tens !== 0 || remainder !== 0) {\n          tempStr += 'and';\n        }\n\n        if (tens < 20) {\n          const lessThanTwenty = tens + remainder;\n          tempStr += dictionary[lessThanTwenty];\n        } else {\n          tempStr += dictionary[tens] + dictionary[remainder];\n        }\n      }\n      // console.log(num, hundreds, tens, remainder);\n      return tempStr;\n    }\n  }\n\n  for (let i = 1; i <= limit; i++) {\n    numString += convertToString(i);\n  }\n  return numString.length;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler17() {",
+        "function numberLetterCounts(limit) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler17();"
+        "numberLetterCounts(5);"
       ],
       "description": [
         "If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.",
