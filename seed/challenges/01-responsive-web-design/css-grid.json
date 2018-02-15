@@ -1,0 +1,90 @@
+{
+  "name": "CSS Grid",
+  "order": 6,
+  "time": "5 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "5a858937d96184f06fd60d60",
+      "title": "Introduction to the CSS Grid Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "CSS grid is a revolutionary two-dimentional layout module that allows for easy implementation of complex and responsive user interfaces. It works by creating a spreadsheet-like grid on which elements could be placed effortlessly by specifying the desired column and row numbers.<br><br>Due to its popularity, CSS Grid is supported by most of the modern browsers today and it is gaining support among browsers quickly. This section covers how to use CSS grid and its related properties.",
+          ""
+        ]
+      ],
+      "releasedOn": "Feb 15, 2018",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "waypoint",
+      "challengeType": 7,
+      "isRequired": false,
+      "translations": {}
+    },
+    {
+      "id": "5a858944d96184f06fd60d61",
+      "title": "Create a Simple Grid Using the Display and Grid-template-columns Properties",
+      "description": [
+        "Turning any element and its children into a CSS grid is as easy as setting up the <code>display</code> and <code>grid-template-columns</code> of the parent element similar to the example below:",
+        "<blockquote>display: grid;<br>grid-template-columns: 50px 50px;</blockquote>",
+        "Note that the number of units in the <code>grid-template-columns</code> property indicates the number of columns in the grid, and the value of each unit indicates the width of each column.",
+        "<hr>",
+        "Turn the div with <code>wrapper</code> class to a grid with three rows. The width of each row should be 50px."
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .d1 {",
+        "  background: LightSkyBlue;",
+        "  }",
+        "  ",
+        "  .d2 {",
+        "    background: LightSalmon;",
+        "    ",
+        "  }",
+        "  ",
+        "  .d3 {",
+        "    background: PaleTurquoise;",
+        "    ",
+        "  }",
+        "  ",
+        "  .d4 {",
+        "    background: lightpink;",
+        "    ",
+        "  }",
+        "  ",
+        "  .d5 {",
+        "    background: PaleGreen;",
+        "    ",
+        "  }",
+        "  ",
+        "  .wrapper {",
+        "   /* add your code below this line */",
+        "   ",
+        "   ",
+        "   /* add your code above this line */",
+        "   }",
+        "</style>",
+        "<div class=\"wrapper\">",
+        "  <div class=\"d1\">1</div>",
+        "  <div class=\"d2\">2</div>",
+        "  <div class=\"d3\">3</div>",
+        "  <div class=\"d4\">4</div>",
+        "  <div class=\"d5\">5</div>",
+        "</div>"
+      ],
+      "tests": [
+        "assert(code.match(/.wrapper\\s*?{[\\s\\S]*display\\s*?:\\s*?grid\\s*?;[\\s\\S]*}/gi), 'message: <code>wrapper</code> class should have a <code>display</code> property with a value of <code>grid</code>.');",
+        "assert(code.match(/.wrapper\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?50px\\s*?50px\\s*?50px\\s*?;[\\s\\S]*}/gi), 'message: <code>wrapper</code> class should have a <code>grid-template-columns</code> property with three units of <code>50px</code>.');"
+
+      ],
+      "solutions": [],
+      "hints": [],
+      "type": "waypoint",
+      "releasedOn": "Feb 15, 2018",
+      "challengeType": 0,
+      "translations": {}
+    }
+  ]
+}
