@@ -8,8 +8,8 @@ const _ = require('lodash');
 const utils = require('../server/utils');
 const getChallenges = require('./getChallenges');
 const app = require('../server/server');
-
 const createDebugger = require('debug');
+
 const log = createDebugger('fcc:seed');
 // force logger to always output
 // this may be brittle
@@ -51,6 +51,7 @@ Observable.combineLatest(
     const message = challengeSpec.message;
     const required = challengeSpec.required || [];
     const template = challengeSpec.template;
+    const isPrivate = !!challengeSpec.isPrivate;
 
     log('parsed %s successfully', blockName);
 
@@ -63,12 +64,13 @@ Observable.combineLatest(
       title: blockName,
       name: nameify(blockName),
       dashedName: dasherize(blockName),
-      superOrder: superOrder,
-      superBlock: superBlock,
+      superOrder,
+      superBlock,
       superBlockMessage: message,
-      order: order,
-      time: time,
-      isLocked: isLocked
+      order,
+      time,
+      isLocked,
+      isPrivate
     };
 
     return createBlocks(block)
@@ -110,6 +112,7 @@ Observable.combineLatest(
             challenge.isBeta = challenge.isBeta || isBeta;
             challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
             challenge.isLocked = challenge.isLocked || isLocked;
+            challenge.isPrivate = challenge.isPrivate || isPrivate;
             challenge.time = challengeSpec.time;
             challenge.superOrder = superOrder;
             challenge.superBlock = superBlock

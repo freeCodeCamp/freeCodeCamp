@@ -3,20 +3,46 @@
 
 @skeleton-gray: #b0bdb7;
 
-@keyframes pulsingOverlay {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 0.5;
+.night .@{ns}-container {
+
+  .btn-group {
+
+    label:disabled, label[disabled] {
+      border: 1px solid #999;
+      background-color: #999;
+      color: #333;
+    }
   }
 }
 
 .@{ns}-container {
   .center(@value: @container-xl, @padding: @grid-gutter-width);
+
+  button:disabled, button[disabled] {
+    border: 1px solid #999;
+    background-color: #999;
+    color: #333;
+  }
+
+  .panel {
+    background-color: #fff;
+  }
+
+  .solution-list {
+    padding-left:  0px;
+  }
+
+  .solution-list-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
+  }
 }
 
 .@{ns}-email-container {
@@ -25,23 +51,41 @@
   })
 }
 
-.@{ns}-skeleton {
-  background-color: #fff;
-  z-index: 10;
-  animation-name:  pulsingOverlay;
-  animation-duration: 2.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
+.inline-form-field {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
 
-  .placeholder-string {
-    background-color: @skeleton-gray;
-    box-shadow: 0px 0px 12px 6px @skeleton-gray;
-    color: @skeleton-gray;
+  input, textarea {
+    background-color: #fff;
   }
-  .btn-link-social {
-    background-color: @skeleton-gray;
-    border-color: @skeleton-gray;
-    box-shadow: 0px 0px 12px 6px @skeleton-gray;
+}
+.edit-preview-tabs {
+
+  li {
+    padding-bottom: 0px;
+  }
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-settings-intro {
+  display: flex;
+  justify-content: space-around;
+
+  .p-intro {
+    font-size: 18px;
+  }
+}
+
+.danger-zone-panel {
+  background-color: #fff;
+
+  .panel-heading {
+    background-color: #880000;
+    color: #fff;
   }
 }

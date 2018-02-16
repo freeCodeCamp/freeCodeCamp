@@ -1,44 +1,10 @@
-import _ from 'lodash';
-// import debug from 'debug';
-// use old rxjs
 import { Observable } from 'rx';
+import _ from 'lodash';
 
-const publicUserProps = [
-  'id',
-  'name',
-  'username',
-  'bio',
-  'theme',
-  'picture',
-  'points',
-  'email',
-  'languageTag',
-
-  'isCheater',
-  'isGithubCool',
-
-  'isLocked',
-  'isAvailableForHire',
-  'isFrontEndCert',
-  'isBackEndCert',
-  'isDataVisCert',
-  'isFullStackCert',
-  'isRespWebDesignCert',
-  'isFrontEndLibsCert',
-  'isJsAlgoDataStructCert',
-  'isApisMicroservicesCert',
-  'isInfosecQaCert',
-
-  'githubURL',
-  'sendMonthlyEmail',
-  'sendNotificationEmail',
-  'sendQuincyEmail',
-
-  'currentChallengeId',
-  'challengeMap'
-];
-
-// const log = debug('fcc:services:user');
+import {
+  userPropsForSession,
+  normaliseUserFields
+} from '../utils/publicUserProps';
 
 export default function userServices() {
   return {
@@ -51,18 +17,23 @@ export default function userServices() {
         Observable.defer(() => user.getChallengeMap$())
           .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
           .map(user => ({
-            entities: {
-              user: {
-                [user.username]: {
-                  ..._.pick(user, publicUserProps),
-                  isTwitter: !!user.twitter,
-                  isLinkedIn: !!user.linkedIn
+              entities: {
+                user: {
+                  [user.username]: {
+                    ..._.pick(user, userPropsForSession),
+                    isEmailVerified: !!user.emailVerified,
+                    isGithub: !!user.githubURL,
+                    isLinkedIn: !!user.linkedIn,
+                    isTwitter: !!user.twitter,
+                    isWebsite: !!user.website,
+                    ...normaliseUserFields(user)
+                  }
                 }
-              }
-            },
-            result: user.username
-          }))
-      )
+              },
+              result: user.username
+            })
+          )
+        )
         .subscribe(
           user => cb(null, user),
           cb

@@ -2,6 +2,7 @@ import dedent from 'dedent';
 import moment from 'moment-timezone';
 import { Observable } from 'rx';
 import debugFactory from 'debug';
+// import { curry } from 'lodash';
 import emoji from 'node-emoji';
 
 import {
@@ -11,10 +12,12 @@ import {
   frontEndLibsId,
   jsAlgoDataStructId,
   dataVisId,
+  dataVis2018Id,
   apisMicroservicesId,
   infosecQaId
 } from '../utils/constantStrings.json';
 import certTypes from '../utils/certTypes.json';
+import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
 import {
   ifNoUser401,
   ifNoUserRedirectTo,
@@ -32,6 +35,7 @@ import { getChallengeInfo, cachedMap } from '../utils/map';
 
 const debug = debugFactory('fcc:boot:user');
 const sendNonUserToMap = ifNoUserRedirectTo('/map');
+// const sendNonUserToMapWithMessage = curry(ifNoUserRedirectTo, 2)('/map');
 const certIds = {
   [certTypes.frontEnd]: frontEndChallengeId,
   [certTypes.backEnd]: backEndChallengeId,
@@ -39,6 +43,7 @@ const certIds = {
   [certTypes.frontEndLibs]: frontEndLibsId,
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
   [certTypes.dataVis]: dataVisId,
+  [certTypes.dataVis2018]: dataVis2018Id,
   [certTypes.apisMicroservices]: apisMicroservicesId,
   [certTypes.infosecQa]: infosecQaId
 };
@@ -52,6 +57,7 @@ const certViews = {
   [certTypes.jsAlgoDataStruct]:
   'certificate/javascript-algorithms-and-data-structures.jade',
   [certTypes.dataVis]: 'certificate/data-visualization.jade',
+  [certTypes.dataVis2018]: 'certificate/data-visualization-2018.jade',
   [certTypes.apisMicroservices]: 'certificate/apis-and-microservices.jade',
   [certTypes.infosecQa]:
   'certificate/information-security-and-quality-assurance.jade'
@@ -66,6 +72,7 @@ const certText = {
   [certTypes.jsAlgoDataStruct]:
   'JavaScript Algorithms and Data Structures Certified',
   [certTypes.dataVis]: 'Data Visualization Certified',
+  [certTypes.dataVis2018]: 'Data Visualization Certified',
   [certTypes.apisMicroservices]: 'APIs and Microservices Certified',
   [certTypes.infosecQa]: 'Information Security and Quality Assurance Certified'
 };
@@ -160,11 +167,6 @@ module.exports = function(app) {
     );
   }
 
-  router.get(
-    '/delete-my-account',
-    sendNonUserToMap,
-    showDelete
-  );
   api.post(
     '/account/delete',
     ifNoUser401,
@@ -175,17 +177,11 @@ module.exports = function(app) {
     sendNonUserToMap,
     getAccount
   );
-  router.get(
-    '/reset-my-progress',
-    sendNonUserToMap,
-    showResetProgress
-  );
   api.post(
-    '/account/resetprogress',
+    '/account/reset-progress',
     ifNoUser401,
     postResetProgress
   );
-
   api.get(
     '/account/unlink/:social',
     sendNonUserToMap,
@@ -194,48 +190,8 @@ module.exports = function(app) {
 
   // Ensure these are the last routes!
   api.get(
-    '/:username/front-end-certification',
-    showCert.bind(null, certTypes.frontEnd)
-  );
-
-  api.get(
-    '/:username/back-end-certification',
-    showCert.bind(null, certTypes.backEnd)
-  );
-
-  api.get(
-    '/:username/full-stack-certification',
-    (req, res) => res.redirect(req.url.replace('full-stack', 'back-end'))
-  );
-
-  api.get(
-    '/:username/responsive-web-design-certification',
-    showCert.bind(null, certTypes.respWebDesign)
-  );
-
-  api.get(
-    '/:username/front-end-libraries-certification',
-    showCert.bind(null, certTypes.frontEndLibs)
-  );
-
-  api.get(
-    '/:username/javascript-algorithms-data-structures-certification',
-    showCert.bind(null, certTypes.jsAlgoDataStruct)
-  );
-
- api.get(
-    '/:username/data-visualization-certification',
-    showCert.bind(null, certTypes.dataVis)
-  );
-
-  api.get(
-    '/:username/apis-microservices-certification',
-    showCert.bind(null, certTypes.apisMicroservices)
-  );
-
-  api.get(
-    '/:username/information-security-quality-assurance-certification',
-    showCert.bind(null, certTypes.infosecQa)
+    '/c/:username/:cert',
+    showCert
   );
 
   router.get('/:username', showUserProfile);
@@ -410,14 +366,14 @@ module.exports = function(app) {
       );
   }
 
-  function showCert(certType, req, res, next) {
-    const username = req.params.username.toLowerCase();
+  function showCert(req, res, next) {
+    let { username, cert } = req.params;
+    username = username.toLowerCase();
+    const certType = superBlockCertTypeMap[cert];
     const certId = certIds[certType];
     return findUserByUsername$(username, {
-          isGithubCool: true,
           isCheater: true,
           isLocked: true,
-          isAvailableForHire: true,
           isFrontEndCert: true,
           isBackEndCert: true,
           isFullStackCert: true,
@@ -425,6 +381,7 @@ module.exports = function(app) {
           isFrontEndLibsCert: true,
           isJsAlgoDataStructCert: true,
           isDataVisCert: true,
+          is2018DataVisCert: true,
           isApisMicroservicesCert: true,
           isInfosecQaCert: true,
           isHonest: true,
@@ -434,6 +391,7 @@ module.exports = function(app) {
       })
       .subscribe(
         user => {
+          const profile = `/${user.username}`;
           if (!user) {
             req.flash(
               'danger',
@@ -441,15 +399,16 @@ module.exports = function(app) {
             );
             return res.redirect('/');
           }
-          if (!user.isGithubCool) {
+
+          if (!user.name) {
             req.flash(
               'danger',
               dedent`
-                This user needs to link GitHub with their account
+                This user needs to add their name to their account
                 in order for others to be able to view their certificate.
               `
             );
-            return res.redirect('back');
+            return res.redirect(profile);
           }
 
           if (user.isCheater) {
@@ -465,20 +424,20 @@ module.exports = function(app) {
                   in order for others to be able to view their certificate.
               `
             );
-            return res.redirect('back');
+            return res.redirect('/');
           }
+
           if (!user.isHonest) {
             req.flash(
               'danger',
-               dedent`
+              dedent`
                 ${username} has not yet agreed to our Academic Honesty Pledge.
               `
             );
-            return res.redirect('back');
+            return res.redirect(profile);
           }
 
           if (user[certType]) {
-
             const { challengeMap = {} } = user;
             const { completedDate = new Date() } = challengeMap[certId] || {};
 
@@ -495,51 +454,49 @@ module.exports = function(app) {
             'danger',
             `Looks like user ${username} is not ${certText[certType]}`
           );
-          return res.redirect('back');
+          return res.redirect(profile);
         },
         next
       );
-  }
-
-  function showDelete(req, res) {
-    return res.render('account/delete', { title: 'Delete My Account!' });
   }
 
   function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
       req.logout();
-      req.flash('info', 'You\'ve successfully deleted your account.');
-      return res.redirect('/');
-    });
-  }
-
-  function showResetProgress(req, res) {
-    return res.render('account/reset-progress', { title: 'Reset My Progress!'
+      req.flash('success', 'You have successfully deleted your account.');
+      return res.status(200).end();
     });
   }
 
   function postResetProgress(req, res, next) {
     User.findById(req.user.id, function(err, user) {
       if (err) { return next(err); }
-      return user.updateAttributes({
+      return user.update$({
         progressTimestamps: [{
           timestamp: Date.now()
         }],
-        currentStreak: 0,
-        longestStreak: 0,
         currentChallengeId: '',
-        isBackEndCert: false,
-        isFullStackCert: false,
-        isDataVisCert: false,
+        isRespWebDesignCert: false,
+        is2018DataVisCert: false,
+        isFrontEndLibsCert: false,
+        isJsAlgoDataStructCert: false,
+        isApisMicroservicesCert: false,
+        isInfosecQaCert: false,
+        is2018FullStackCert: false,
         isFrontEndCert: false,
-        challengeMap: {},
-        challegesCompleted: []
-      }, function(err) {
-        if (err) { return next(err); }
-        req.flash('info', 'You\'ve successfully reset your progress.');
-        return res.redirect('/');
-      });
+        isBackEndCert: false,
+        isDataVisCert: false,
+        isFullStackCert: false,
+        challengeMap: {}
+      })
+      .subscribe(
+        () => {
+          req.flash('success', 'You have successfully reset your progress.');
+          return res.status(200).end();
+        },
+        next
+      );
     });
   }
 

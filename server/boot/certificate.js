@@ -7,28 +7,31 @@ import debug from 'debug';
 import { isEmail } from 'validator';
 
 import {
-  ifNoUser401,
-  ifNoUserSend
+  ifNoUser401
 } from '../utils/middleware';
 
 import { observeQuery } from '../utils/rx';
 
 import {
+  // legacy
+  frontEndChallengeId,
+  backEndChallengeId,
+  dataVisId,
+
+  // modern
   respWebDesignId,
   frontEndLibsId,
+  dataVis2018Id,
   jsAlgoDataStructId,
-  frontEndChallengeId,
-  dataVisId,
   apisMicroservicesId,
-  backEndChallengeId,
   infosecQaId
 } from '../utils/constantStrings.json';
-
 import {
   completeCommitment$
 } from '../utils/commit';
 
 import certTypes from '../utils/certTypes.json';
+import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
 
 const log = debug('fcc:certification');
 const renderCertifedEmail = loopback.template(path.join(
@@ -38,12 +41,9 @@ const renderCertifedEmail = loopback.template(path.join(
   'emails',
   'certified.ejs'
 ));
-const sendMessageToNonUser = ifNoUserSend(
-  'must be logged in to complete.'
-);
 
 function isCertified(ids, challengeMap = {}) {
-  return _.every(ids, ({ id }) => challengeMap[id]);
+  return _.every(ids, ({ id }) => _.has(challengeMap, id));
 }
 
 function getIdsForCert$(id, Challenge) {
@@ -120,12 +120,16 @@ export default function certificate(app) {
   const { Email, Challenge } = app.models;
 
   const certTypeIds = {
+    // legacy
     [certTypes.frontEnd]: getIdsForCert$(frontEndChallengeId, Challenge),
     [certTypes.backEnd]: getIdsForCert$(backEndChallengeId, Challenge),
+    [certTypes.dataVis]: getIdsForCert$(dataVisId, Challenge),
+
+    // modern
     [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
     [certTypes.frontEndLibs]: getIdsForCert$(frontEndLibsId, Challenge),
+    [certTypes.dataVis2018]: getIdsForCert$(dataVis2018Id, Challenge),
     [certTypes.jsAlgoDataStruct]: getIdsForCert$(jsAlgoDataStructId, Challenge),
-    [certTypes.dataVis]: getIdsForCert$(dataVisId, Challenge),
     [certTypes.apisMicroservices]: getIdsForCert$(
       apisMicroservicesId,
       Challenge
@@ -133,78 +137,65 @@ export default function certificate(app) {
     [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge)
   };
 
-  router.post(
-    '/certificate/verify/front-end',
-    ifNoUser401,
-    verifyCert.bind(null, certTypes.frontEnd)
-  );
+  const superBlocks = Object.keys(superBlockCertTypeMap);
 
   router.post(
-    '/certificate/verify/back-end',
+    '/certificate/verify',
     ifNoUser401,
-    verifyCert.bind(null, certTypes.backEnd)
-  );
-
-  router.post(
-    '/certificate/verify/responsive-web-design',
-    ifNoUser401,
-    verifyCert.bind(null, certTypes.respWebDesign)
-  );
-
-  router.post(
-    '/certificate/verify/front-end-libraries',
-    ifNoUser401,
-    verifyCert.bind(null, certTypes.frontEndLibs)
-  );
-
-  router.post(
-    '/certificate/verify/javascript-algorithms-data-structures',
-    ifNoUser401,
-    verifyCert.bind(null, certTypes.jsAlgoDataStruct)
-  );
-
-  router.post(
-    '/certificate/verify/data-visualization',
-    ifNoUser401,
-    verifyCert.bind(null, certTypes.dataVis)
-  );
-
-  router.post(
-    '/certificate/verify/apis-microservices',
-    ifNoUser401,
-    verifyCert.bind(null, certTypes.apisMicroservices)
-  );
-
-  router.post(
-    '/certificate/verify/information-security-quality-assurance',
-    ifNoUser401,
-    verifyCert.bind(null, certTypes.infosecQa)
-  );
-
-  router.post(
-    '/certificate/honest',
-    sendMessageToNonUser,
-    postHonest
+    ifNoSuperBlock404,
+    verifyCert
   );
 
   app.use(router);
 
-  function verifyCert(certType, req, res, next) {
-    const { user } = req;
+  const noNameMessage = dedent`
+  We need your name so we can put it on your certificate.
+  Add your name to your account settings and click the save button.
+  Then we can issue your certificate.
+  `;
+
+  const notCertifiedMessage = name => dedent`
+  it looks like you have not completed the neccessary steps.
+  Please complete the required challenges to claim the
+  ${name}
+  `;
+
+  const alreadyClaimedMessage = name => dedent`
+    It looks like you already have claimed the ${name}
+    `;
+
+  const successMessage = (username, name) => dedent`
+    @${username}, you have sucessfully claimed
+    the ${name}!
+    Congratulations on behalf of the freeCodeCamp team!
+    `;
+
+  function verifyCert(req, res, next) {
+    const { body: { superBlock }, user } = req;
+
+    let certType = superBlockCertTypeMap[superBlock];
+    log(certType);
+    if (certType === 'isDataVisCert') {
+      certType = 'is2018DataVisCert';
+      log(certType);
+    }
     return user.getChallengeMap$()
-      .flatMap(() => certTypeIds[certType])
-      .flatMap(challenge => {
+    .flatMap(() => certTypeIds[certType])
+    .flatMap(challenge => {
         const {
           id,
           tests,
           name,
           challengeType
         } = challenge;
-        if (
-          user[certType] ||
-          !isCertified(tests, user.challengeMap)
-        ) {
-          return Observable.just(false);
+        if (user[certType]) {
+          return Observable.just(alreadyClaimedMessage(name));
+        }
+        if (!user[certType] && !isCertified(tests, user.challengeMap)) {
+          return Observable.just(notCertifiedMessage(name));
+        }
+        if (!user.name) {
+          return Observable.just(noNameMessage);
         }
         const updateData = {
           $set: {
@@ -232,49 +223,32 @@ export default function certificate(app) {
           sendCertifiedEmail(user, Email.send$),
           ({ count }, pledgeOrMessage) => ({ count, pledgeOrMessage })
         )
-          .map(
+        .map(
             ({ count, pledgeOrMessage }) => {
               if (typeof pledgeOrMessage === 'string') {
                 log(pledgeOrMessage);
               }
               log(`${count} documents updated`);
-              return true;
+              return successMessage(user.username, name);
             }
           );
-      })
+        })
       .subscribe(
-        (didCertify) => {
-          if (didCertify) {
-            // Check if they have a name set
-            if (user.name === '') {
-              return res.status(200).send(
-                dedent`
-                  We need your name so we can put it on your certificate.
-                  <a href="https://github.com/settings/profile">Add your
-                  name to your GitHub account</a>, then go to your
-                  <a href="https://www.freecodecamp.org/settings">settings
-                  page</a> and click the "update my portfolio from GitHub"
-                  button. Then we can issue your certificate.
-                  `
-                );
-             }
-            return res.status(200).send(true);
-          }
-          return res.status(200).send(
-            dedent`
-              Looks like you have not completed the neccessary steps.
-              Please return to the challenge map.
-            `
-          );
+        (message) => {
+          return res.status(200).json({
+            message,
+            success: message.includes('Congratulations')
+          });
         },
         next
       );
   }
 
-  function postHonest(req, res, next) {
-    return req.user.update$({ $set: { isHonest: true } }).subscribe(
-      () => res.status(200).send(true),
-      next
-    );
+  function ifNoSuperBlock404(req, res, next) {
+    const { superBlock } = req.body;
+    if (superBlock && superBlocks.includes(superBlock)) {
+      return next();
+    }
+    return res.status(404).end();
   }
 }

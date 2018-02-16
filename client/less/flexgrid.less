@@ -26,9 +26,9 @@
 .content-mixin(baseline) { align-content: baseline; }
 .content-mixin(@_) {}
 
-.grid(@direction: row; @items: none; @justify: none; @content: none) {
+.grid(@direction: row; @items: none; @justify: none; @content: none; @wrap: wrap) {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: @wrap;
   flex-direction: @direction;
 
   .justify-mixin(@justify);

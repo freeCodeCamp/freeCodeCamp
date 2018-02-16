@@ -40,7 +40,7 @@ export const types = createTypes([
 
   createAsyncTypes('fetchChallenge'),
   createAsyncTypes('fetchChallenges'),
-
+  'updateChallenges',
   createAsyncTypes('fetchUser'),
   'showSignIn',
 
@@ -108,7 +108,7 @@ export const fetchChallengesCompleted = createAction(
   (entities, result) => ({ entities, result }),
   entities => ({ entities })
 );
-
+export const updateChallenges = createAction(types.updateChallenges);
 // updateTitle(title: String) => Action
 export const updateTitle = createAction(types.updateTitle);
 

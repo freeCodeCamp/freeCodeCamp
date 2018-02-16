@@ -89,6 +89,10 @@
       "type": "string",
       "default": ""
     },
+    "about": {
+      "type": "string",
+      "default": ""
+    },
     "name": {
       "type": "string",
       "default": ""
@@ -139,11 +143,6 @@
       "description": "Campers profile does not show challenges/certificates to the public",
       "default": false
     },
-    "isAvailableForHire": {
-      "type": "boolean",
-      "description": "Camper is available for hire",
-      "default": false
-    },
     "currentChallengeId": {
       "type": "string",
       "description": "The challenge last visited by the user",
@@ -185,12 +184,12 @@
     },
     "isRespWebDesignCert": {
       "type": "boolean",
-      "description": "Camper is data visualization certified",
+      "description": "Camper is responsive web design certified",
       "default": false
     },
-    "isNewDataVisCert": {
+    "is2018DataVisCert": {
       "type": "boolean",
-      "description": "Camper is responsive web design certified",
+      "description": "Camper is data visualization certified (2018)",
       "default": false
     },
     "isFrontEndLibsCert": {
@@ -241,6 +240,10 @@
           }
         }
       ],
+      "default": []
+    },
+    "portfolio": {
+      "type": "array",
       "default": []
     },
     "rand": {

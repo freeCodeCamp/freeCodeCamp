@@ -7,9 +7,11 @@ import { check } from 'express-validator/check';
 
 import {
   ifUserRedirectTo,
+  ifNoUserRedirectTo,
   createValidatorErrorHandler
 } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
+import { homeURL } from '../../common/utils/constantStrings.json';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 // const debug = debugFactory('fcc:boot:auth');
@@ -22,6 +24,7 @@ module.exports = function enableAuthentication(app) {
   //  loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
+  const ifNoUserRedirectHome = ifNoUserRedirectTo(homeURL);
   const router = app.loopback.Router();
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
@@ -79,7 +82,8 @@ module.exports = function enableAuthentication(app) {
     const {
       query: {
         email: encodedEmail,
-        token: authTokenId
+        token: authTokenId,
+        emailChange
       } = {}
     } = req;
 
@@ -122,14 +126,16 @@ module.exports = function enableAuthentication(app) {
               );
             }
             if (user.email !== email) {
-              throw wrapHandledError(
-                new Error('user email does not match'),
-                {
-                  type: 'info',
-                  message: defaultErrorMsg,
-                  redirectTo: '/email-signin'
-                }
-              );
+              if (!emailChange || (emailChange && user.newEmail !== email)) {
+                throw wrapHandledError(
+                  new Error('user email does not match'),
+                  {
+                    type: 'info',
+                    message: defaultErrorMsg,
+                    redirectTo: '/email-signin'
+                  }
+                );
+              }
             }
             return authToken.validate$()
               .map(isValid => {
@@ -182,6 +188,13 @@ module.exports = function enableAuthentication(app) {
     ifUserRedirect,
     passwordlessGetValidators,
     createValidatorErrorHandler('errors', '/email-signup'),
+    getPasswordlessAuth
+  );
+
+  router.get(
+    '/passwordless-change',
+    ifNoUserRedirectHome,
+    passwordlessGetValidators,
     getPasswordlessAuth
   );
 

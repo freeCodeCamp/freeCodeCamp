@@ -1,31 +1,176 @@
 import { Observable } from 'rx';
 import { combineEpics, ofType } from 'redux-epic';
-
-import { types, onRouteSettings } from './';
+import { pick } from 'lodash';
+import {
+  types,
+  onRouteSettings,
+  refetchChallengeMap,
+  updateUserBackendComplete,
+  updateMyPortfolioComplete
+} from './';
 import { makeToast } from '../../../Toasts/redux';
 import {
-  fetchChallenges,
+  updateChallenges,
   doActionOnError,
-  userSelector
+  usernameSelector,
+  userSelector,
+  createErrorObservable
 } from '../../../redux';
 import {
-  updateUserFlag,
   updateUserEmail,
-  updateUserLang
+  updateUserLang,
+  updateMultipleUserFlags,
+  regresPortfolio,
+  optoUpdatePortfolio
 } from '../../../entities';
 
 import { postJSON$ } from '../../../../utils/ajax-stream';
 import langs from '../../../../utils/supported-languages';
 
-const urlMap = {
-  isLocked: 'lockdown',
-  isAvailableForHire: 'available-for-hire',
-  sendQuincyEmail: 'quincy-email',
-  sendNotificationEmail: 'notification-email',
-  sendMonthlyEmail: 'announcement-email'
+const endpoints = {
+  email: '/update-my-email',
+  projects: '/update-my-projects',
+  username: '/update-my-username'
 };
 
-export function updateUserEmailEpic(actions, { getState }) {
+function backendUserUpdateEpic(actions$, { getState }) {
+  const start = actions$::ofType(types.updateUserBackend.start);
+  const server = start
+    .flatMap(({ payload }) => {
+      const userMap = userSelector(getState());
+      const { username } = userMap;
+      const flagsToCheck = Object.keys(payload);
+      const valuesToCheck = pick(userMap, flagsToCheck);
+      const oldValues = {
+        ...flagsToCheck.reduce((accu, current) => ({ ...accu, [current]: '' })),
+        ...valuesToCheck
+      };
+      const valuesToUpdate = flagsToCheck.reduce((accu, current) => {
+        if (payload[current] !== valuesToCheck[current]) {
+          return { ...accu, [current]: payload[current] };
+        }
+        return accu;
+      }, {});
+      if (!Object.keys(valuesToUpdate).length) {
+        return Observable.of(
+          makeToast({ message: 'No changes in settings detected' })
+        );
+      }
+      const {
+        app: { csrfToken: _csrf }
+      } = getState();
+      let body = { _csrf };
+      let endpoint = '/update-flags';
+      const updateKeys = Object.keys(valuesToUpdate);
+      if (updateKeys.length === 1 && updateKeys[0] in endpoints) {
+        // there is a specific route for this update
+        const flag = updateKeys[0];
+        endpoint = endpoints[flag];
+        body = {
+          ...body,
+          [flag]: valuesToUpdate[flag]
+        };
+      } else {
+        body = {
+          ...body,
+          values: valuesToUpdate
+        };
+      }
+      return postJSON$(endpoint, body)
+        .map(updateUserBackendComplete)
+        .catch(
+          doActionOnError(
+            () => updateMultipleUserFlags({ username, flags: oldValues })
+          )
+        );
+    });
+  const optimistic = start
+    .flatMap(({ payload }) => {
+      const username = usernameSelector(getState());
+      return Observable.of(
+        updateMultipleUserFlags({ username, flags: payload })
+      );
+    });
+    const complete = actions$::ofType(types.updateUserBackend.complete)
+    .flatMap(({ payload: { message } }) => Observable.if(
+      () => message.includes('project'),
+      Observable.of(refetchChallengeMap(), makeToast({ message })),
+      Observable.of(makeToast({ message }))
+    )
+    );
+
+  return Observable.merge(server, optimistic, complete);
+}
+
+function refetchChallengeMapEpic(actions$, { getState }) {
+  return actions$::ofType(types.refetchChallengeMap.start)
+    .flatMap(() => {
+      const {
+        app: { csrfToken: _csrf }
+      } = getState();
+      const username = usernameSelector(getState());
+      return postJSON$('/refetch-user-challenge-map', { _csrf })
+        .map(({ challengeMap }) =>
+          updateMultipleUserFlags({ username, flags: { challengeMap } })
+        )
+        .catch(createErrorObservable);
+    });
+}
+
+function updateMyPortfolioEpic(actions$, { getState }) {
+  const edit = actions$::ofType(types.updateMyPortfolio.start);
+  const remove = actions$::ofType(types.deletePortfolio.start);
+  const serverEdit = edit
+    .flatMap(({ payload }) => {
+      const { id } = payload;
+      const {
+        app: { csrfToken: _csrf, username }
+      } = getState();
+      return postJSON$('/update-my-portfolio', { _csrf, portfolio: payload })
+        .map(updateMyPortfolioComplete)
+        .catch(doActionOnError(() => regresPortfolio({ username, id })));
+    });
+  const optimisticEdit = edit
+    .map(({ payload }) => {
+      const username = usernameSelector(getState());
+      return optoUpdatePortfolio({ username, portfolio: payload });
+    });
+  const complete = actions$::ofType(types.updateMyPortfolio.complete)
+  .flatMap(({ payload: { message } }) =>
+    Observable.of(makeToast({ message }))
+  );
+
+  const serverRemove = remove
+    .flatMap(({ payload: { portfolio } }) => {
+      const {
+        app: { csrfToken: _csrf }
+      } = getState();
+      return postJSON$('/update-my-portfolio', { _csrf, portfolio })
+        .map(updateMyPortfolioComplete)
+        .catch(
+          doActionOnError(
+            () => makeToast({
+              message: 'Something went wrong removing a portfolio item.'
+            })
+          )
+        );
+    });
+    const optimisticRemove = remove
+      .flatMap(({ payload: { portfolio: { id } } }) => {
+        const username = usernameSelector(getState());
+        return Observable.of(regresPortfolio({ username, id }));
+      });
+
+  return Observable.merge(
+    serverEdit,
+    optimisticEdit,
+    complete,
+    serverRemove,
+    optimisticRemove
+  );
+}
+
+function updateUserEmailEpic(actions, { getState }) {
   return actions::ofType(types.updateMyEmail)
     .flatMap(({ payload: email }) => {
       const {
@@ -38,7 +183,6 @@ export function updateUserEmailEpic(actions, { getState }) {
         updateUserEmail(username, email)
       );
       const ajaxUpdate = postJSON$('/update-my-email', body)
-        .map(({ message }) => makeToast({ message }))
         .catch(doActionOnError(() => oldEmail ?
           updateUserEmail(username, oldEmail) :
           null
@@ -71,7 +215,7 @@ export function updateUserLangEpic(actions, { getState }) {
             // update url to reflect change
             onRouteSettings({ lang }),
             // refetch challenges in new language
-            fetchChallenges()
+            updateChallenges()
           );
         })
         .catch(doActionOnError(() => {
@@ -85,41 +229,11 @@ export function updateUserLangEpic(actions, { getState }) {
     });
   return Observable.merge(ajaxUpdate, optimistic);
 }
-export function updateUserFlagEpic(actions, { getState }) {
-  const toggleFlag = actions
-    .filter(({ type, payload }) => type === types.toggleUserFlag && payload)
-    .map(({ payload }) => payload);
-  const optimistic = toggleFlag.map(flag => {
-    const { app: { user: username } } = getState();
-    return updateUserFlag(username, flag);
-  });
-  const serverUpdate = toggleFlag
-    .debounce(500)
-    .flatMap(flag => {
-      const url = `/toggle-${urlMap[ flag ]}`;
-      const {
-        app: { user: username, csrfToken: _csrf },
-        entities: { user: userMap }
-      } = getState();
-      const user = userMap[username];
-      const currentValue = user[ flag ];
-      return postJSON$(url, { _csrf })
-        .map(({ flag, value }) => {
-          if (currentValue === value) {
-            return null;
-          }
-          return updateUserFlag(username, flag);
-        })
-        .filter(Boolean)
-        .catch(doActionOnError(() => {
-          return updateUserFlag(username, currentValue);
-        }));
-    });
-  return Observable.merge(optimistic, serverUpdate);
-}
 
 export default combineEpics(
-  updateUserFlagEpic,
+  backendUserUpdateEpic,
+  refetchChallengeMapEpic,
+  updateMyPortfolioEpic,
   updateUserEmailEpic,
   updateUserLangEpic
 );
