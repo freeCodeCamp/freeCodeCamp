@@ -708,9 +708,9 @@
       "id": "bad87fee1348bd9aedf08816",
       "title": "Link to External Pages with Anchor Elements",
       "description": [
-        "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
-        "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
+        "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content inside, as well as outside of the current page. For this lesson, we are going to focus on using the <code>a</code> element for external links.",
         "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
+        "The above diagram of an <code>a</code> element demonstrated that you can use an anchor element almost anywhere, even inside another element. In this case, the link will appear in the middle of the paragraph.",
         "Here's an example:",
         "<blockquote>&#60;p&#62;<br>  Here's a <br>  &#60;a href=\"http://freecodecamp.org\"&#62; <br>    link to freecodecamp.org<br>  &#60;/a&#62;<br>  for you to follow.<br>&#60;/p&#62;</blockquote>",
         "Let's break down the example:",
@@ -856,7 +856,7 @@
       "id": "bad87fee1348bd9aede08817",
       "title": "Nest an Anchor Element within a Paragraph",
       "description": [
-        "Again, here's a diagram of an <code>a</code> element for your reference:",
+        "Below is the diagram showing that you can nest an <code>a</code> element inside a <code>p</code> element:",
         "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
         "Here's an example:",
         "<blockquote>&#60;p&#62;<br> Here's a &#60;a href=\"http://freecodecamp.org\"&#62; link to freecodecamp.org&#60;/a&#62; for you to follow.<br>&#60;/p&#62;</blockquote>",
@@ -867,7 +867,7 @@
         "The text, <strong>\"link to freecodecamp.org\"</strong>, within the anchor element called <code>anchor text</code>, will display a link to click:<br>  <code>&#60;a href=\" ... \"&#62;link to freecodecamp.org&#60;/a&#62;</code>",
         "The final output of the example will look like this:<br><p>Here's a <a href=\"http://freecodecamp.org\"> link to freecodecamp.org</a> for you to follow.</p>",
         "<hr>",
-        "Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>main</code> element) so that the surrounding paragraph says \"View more cat photos\", but where only \"cat photos\" is a link, and the rest of the text is plain text."
+        "Now nest your existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>main</code> element). The new paragraph should have text that says \"View more cat photos\", where \"cat photos\" is a link, and the rest of the text is plain text."
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -1032,7 +1032,7 @@
       "title": "Make Dead Links Using the Hash Symbol",
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
-        "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
+        "This is also handy when you're changing the behavior of a link using <code>JavaScript</code>, which we'll learn about later.",
         "<hr>",
         "The current value of the <code>href</code> attribute is a link that points to \"http://freecatphotoapp.com\". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link.",
         "For example: <code>href=\"#\"</code>"
