@@ -9,6 +9,7 @@ import {
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
+import { getValues } from 'redux-form';
 
 import modalEpic from './modal-epic';
 import completionEpic from './completion-epic.js';
@@ -202,10 +203,7 @@ export const isCodeLockedSelector = state => getNS(state).isCodeLocked;
 export const isJSEnabledSelector = state => getNS(state).isJSEnabled;
 export const chatRoomSelector = state => getNS(state).helpChatRoom;
 export const challengeModalSelector =
-  state => (
-    getNS(state).isChallengeModalOpen &&
-    challengeSelector(state).type !== 'backend'
-  );
+  state => getNS(state).isChallengeModalOpen;
 
 export const helpModalSelector = state => getNS(state).isHelpOpen;
 export const guideURLSelector = state =>
@@ -252,6 +250,9 @@ export const challengeTypeSelector = state =>
   challengeMetaSelector(state).type || '';
 export const challengeTemplateSelector = state =>
   challengeSelector(state).template || null;
+
+export const backendFormValuesSelector = state =>
+  getValues(state.form.BackEndChallenge);
 
 export default combineReducers(
   handleActions(
