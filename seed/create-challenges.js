@@ -172,18 +172,23 @@ export const createPaths = ([blocks, challenges]) => {
     _.fromPairs
   )(challenges);
 
-  const blockToSubPath = _.flatMap(_.flow(
+  const blockToSubPaths = _.flatMap(_.flow(
     _.property('dashedName'),
-    block => _.get(block)(challengesByBlock),
+    block => _.get(block, challengesByBlock),
+    x => x || [],
+    // filter out blocks that have no challenges
+    _.filter(Boolean),
     _.map(challenge => ({
       path: `${challenge.block}/${challenge.dashedName}`,
       challenge
-    }))
+    })),
   ));
   return _.flow(
     _.groupBy('superBlock'),
     _.toPairs,
-    _.map(([blockName, block]) => [blockName, blockToSubPath(block)]),
+    _.map(([superBlock, block]) => [superBlock, blockToSubPaths(block)]),
+    // filter out superblocks without challenges
+    _.filter(([, challenges]) => challenges.length),
     _.flatMap(([superBlock, challenges]) =>
       _.map(({ challenge, path })=> ({
         path: `${superBlock}/${path}`,

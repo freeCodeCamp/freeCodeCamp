@@ -1,8 +1,9 @@
 require('babel-register');
 require('dotenv').load();
 
-const _ = require('lodash/fp');
 const path = require('path');
+const del = require('del');
+const _ = require('lodash/fp');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const { getIfUtils, removeEmpty } = require('webpack-config-utils');
@@ -16,7 +17,20 @@ const {
   createPaths
 } = require('./seed/create-challenges.js');
 
-const getPaths = _.flow(getChallenges, createChallengesArray, createPaths);
+const outputPath = path.join(__dirname, '.cache/test/challenges');
+// delete old challenge test files
+del.sync(outputPath + '/**');
+
+const getPaths = _.flow(
+  getChallenges,
+  createChallengesArray,
+  ([blocks, challenges]) => [
+    blocks,
+    // filter out challenges with no solutions
+    _.filter(({ solutions = [] }) => solutions.length)(challenges)
+  ],
+  createPaths
+);
 const { paths, challengesByPath } = getPaths();
 module.exports = env => {
   const { ifNotProduction: ifDev } = getIfUtils(env);
@@ -27,7 +41,7 @@ module.exports = env => {
     entry: { test: './common/testing' },
     output: {
       filename: 'test.js',
-      path: path.join(__dirname, '.cache/test/challenges'),
+      path: outputPath,
       libraryTarget: 'umd'
     },
     plugins: removeEmpty([
