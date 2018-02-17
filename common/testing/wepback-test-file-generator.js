@@ -97,7 +97,7 @@ class TestFileGenerator {
       .switchMap(result => (
         _.isObject(result) ?
           // turn result object to pairs of path, result
-          _.pairs(result) :
+          _.toPairs(result) :
           [[ locals.path, result ]]
       ))
       .map(([path, result]) => [ pathToAssetName(path), result ])

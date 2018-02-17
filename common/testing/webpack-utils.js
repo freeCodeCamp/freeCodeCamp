@@ -59,7 +59,7 @@ module.exports.pathToAssetName = outputPath => {
   // Remove leading slashes for webpack-dev-server
   let outputFileName = outputPath.replace(/^(\/|\\)/, '');
 
-  if (!(/\.(js)$/i).test(outputFileName)) {
+  if (!(/\.js(on)?$/i).test(outputFileName)) {
     outputFileName = path.join(outputFileName, 'index.js');
   }
 

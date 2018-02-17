@@ -2,10 +2,12 @@ const _ = require('lodash/fp');
 const dedent = require('dedent');
 
 module.exports = function renderTest({ path, challengesByPath }) {
-  const { dashedName, solutions, seed } = challengesByPath[path];
+  const challenge = challengesByPath[path];
+  const { dashedName, solutions, seed } = challenge;
   const solution = _.first(solutions);
-  return dedent`
+  const testFile = dedent`
     import test from 'ava';
+    import challenge from './data.json';
 
     test('${dashedName}', t => {
       t.is(
@@ -14,4 +16,8 @@ module.exports = function renderTest({ path, challengesByPath }) {
       );
     });
   `;
+  return {
+    [path]: testFile,
+    [`${path}/data.json`]: JSON.stringify(challenge)
+  };
 };
