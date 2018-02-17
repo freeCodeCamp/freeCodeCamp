@@ -350,7 +350,6 @@
           "  [7, 97, 57, 32, 16]",
         "];",
         "",
-        "largestGridProduct(grid);",
         "largestGridProduct(testGrid);"
       ],
       "description": [
@@ -673,9 +672,7 @@
         "  return true;",
         "}",
         "",
-        "longestCollatzSequence(14);",
-        "longestCollatzSequence(5847);",
-        "longestCollatzSequence(1000000);"
+        "longestCollatzSequence(14);"
       ],
       "description": [
         "The following iterative sequence is defined for the set of positive integers:",
@@ -938,9 +935,9 @@
       "title": "Problem 23: Non-abundant sums",
       "tests": [
         "assert(sumOfNonAbundantNumbers(10000) === 3731004, 'message: <code>sumOfNonAbundantNumbers(10000)</code> should return 3731004.');",
-		"assert(sumOfNonAbundantNumbers(15000) === 4039939, 'message: <code>sumOfNonAbundantNumbers(15000)</code> should return 4039939.');",
-		"assert(sumOfNonAbundantNumbers(20000) === 4159710, 'message: <code>sumOfNonAbundantNumbers(20000)</code> should return 4159710.');",
-		"assert(sumOfNonAbundantNumbers(28123) === 4179871, 'message: <code>sumOfNonAbundantNumbers(28123)</code> should return 4179871.');"
+        "assert(sumOfNonAbundantNumbers(15000) === 4039939, 'message: <code>sumOfNonAbundantNumbers(15000)</code> should return 4039939.');",
+        "assert(sumOfNonAbundantNumbers(20000) === 4159710, 'message: <code>sumOfNonAbundantNumbers(20000)</code> should return 4159710.');",
+        "assert(sumOfNonAbundantNumbers(28123) === 4179871, 'message: <code>sumOfNonAbundantNumbers(28123)</code> should return 4179871.');"
       ],
       "solutions": [],
       "translations": {},
