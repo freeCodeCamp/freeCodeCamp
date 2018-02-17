@@ -1943,7 +1943,7 @@
         "  left: 25px;",
         "}",
         ".heart:before {",
-        "  content: ;",
+        "  content: \"\";",
         "  background-color: pink;",
         "  border-radius: 50%;",
         "  position: absolute;",
