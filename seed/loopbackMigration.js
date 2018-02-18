@@ -10,13 +10,7 @@ const batchSize = 20;
 var MongoClient = mongodb.MongoClient;
 Rx.config.longStackSupport = true;
 
-var providers = [
-  'facebook',
-  'twitter',
-  'google',
-  'github',
-  'linkedin'
-];
+var providers = ['facebook', 'twitter', 'google', 'github', 'linkedin'];
 
 // create async console.logs
 function debug() {
@@ -213,19 +207,19 @@ Rx.Observable.combineLatest(
       userCount: userCount * batchSize
       // storyCount: storyCount * batchSize
     };
-  })
-  .subscribe(
-    function(countObj) {
-      console.log('next');
-      count = countObj;
-    },
-    function(err) {
-      console.error('an error occured', err, err.stack);
-    },
-    function() {
-      console.log('finished with ', count);
-      process.exit(0);
-    }
-  );
+  }
+).subscribe(
+  function(countObj) {
+    console.log('next');
+    count = countObj;
+  },
+  function(err) {
+    console.error('an error occured', err, err.stack);
+  },
+  function() {
+    console.log('finished with ', count);
+    process.exit(0);
+  }
+);
 
 dbObservable.connect();

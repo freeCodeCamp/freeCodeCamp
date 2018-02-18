@@ -55,12 +55,12 @@ const certViews = {
   [certTypes.respWebDesign]: 'certificate/responsive-web-design.jade',
   [certTypes.frontEndLibs]: 'certificate/front-end-libraries.jade',
   [certTypes.jsAlgoDataStruct]:
-  'certificate/javascript-algorithms-and-data-structures.jade',
+    'certificate/javascript-algorithms-and-data-structures.jade',
   [certTypes.dataVis]: 'certificate/data-visualization.jade',
   [certTypes.dataVis2018]: 'certificate/data-visualization-2018.jade',
   [certTypes.apisMicroservices]: 'certificate/apis-and-microservices.jade',
   [certTypes.infosecQa]:
-  'certificate/information-security-and-quality-assurance.jade'
+    'certificate/information-security-and-quality-assurance.jade'
 };
 
 const certText = {
@@ -70,7 +70,7 @@ const certText = {
   [certTypes.respWebDesign]: 'Responsive Web Design Certified',
   [certTypes.frontEndLibs]: 'Front End Libraries Certified',
   [certTypes.jsAlgoDataStruct]:
-  'JavaScript Algorithms and Data Structures Certified',
+    'JavaScript Algorithms and Data Structures Certified',
   [certTypes.dataVis]: 'Data Visualization Certified',
   [certTypes.dataVis2018]: 'Data Visualization Certified',
   [certTypes.apisMicroservices]: 'APIs and Microservices Certified',
@@ -83,13 +83,14 @@ function isAlgorithm(challenge) {
   // test if name starts with hike/waypoint/basejump/zipline
   // fix for bug that saved different challenges with incorrect
   // challenge types
-  return !(/^(waypoint|hike|zipline|basejump)/i).test(challenge.name) &&
-    +challenge.challengeType === 5;
+  return (
+    !(/^(waypoint|hike|zipline|basejump)/i).test(challenge.name) &&
+    +challenge.challengeType === 5
+  );
 }
 
 function isProject(challenge) {
-  return +challenge.challengeType === 3 ||
-    +challenge.challengeType === 4;
+  return +challenge.challengeType === 3 || +challenge.challengeType === 4;
 }
 
 function getChallengeGroup(challenge) {
@@ -119,7 +120,7 @@ function buildDisplayChallenges(
     .map(challengeId => userChallengeMap[challengeId])
     .map(userChallenge => {
       const challengeId = userChallenge.id;
-      const challenge = challengeMap[ challengeIdToName[challengeId] ];
+      const challenge = challengeMap[challengeIdToName[challengeId]];
       let finalChallenge = { ...userChallenge, ...challenge };
       if (userChallenge.completedDate) {
         finalChallenge.completedDate = moment
@@ -142,7 +143,7 @@ function buildDisplayChallenges(
         [getChallengeGroup(challenges[0])]: challenges
       }));
     })
-    .reduce((output, group) => ({ ...output, ...group}), {})
+    .reduce((output, group) => ({ ...output, ...group }), {})
     .map(groups => ({
       algorithms: groups.algorithms || [],
       projects: groups.projects ? groups.projects.reverse() : [],
@@ -157,42 +158,19 @@ module.exports = function(app) {
   const map$ = cachedMap(app.models);
 
   function findUserByUsername$(username, fields) {
-    return observeQuery(
-      User,
-      'findOne',
-      {
-        where: { username },
-        fields
-      }
-    );
+    return observeQuery(User, 'findOne', {
+      where: { username },
+      fields
+    });
   }
 
-  api.post(
-    '/account/delete',
-    ifNoUser401,
-    postDeleteAccount
-  );
-  api.get(
-    '/account',
-    sendNonUserToMap,
-    getAccount
-  );
-  api.post(
-    '/account/reset-progress',
-    ifNoUser401,
-    postResetProgress
-  );
-  api.get(
-    '/account/unlink/:social',
-    sendNonUserToMap,
-    getUnlinkSocial
-  );
+  api.post('/account/delete', ifNoUser401, postDeleteAccount);
+  api.get('/account', sendNonUserToMap, getAccount);
+  api.post('/account/reset-progress', ifNoUser401, postResetProgress);
+  api.get('/account/unlink/:social', sendNonUserToMap, getUnlinkSocial);
 
   // Ensure these are the last routes!
-  api.get(
-    '/c/:username/:cert',
-    showCert
-  );
+  api.get('/c/:username/:cert', showCert);
 
   router.get('/:username', showUserProfile);
   router.get(
@@ -202,11 +180,7 @@ module.exports = function(app) {
     getReportUserProfile
   );
 
-  api.post(
-    '/:username/report-user/',
-    ifNoUser401,
-    postReportUserProfile
-  );
+  api.post('/:username/report-user/', ifNoUser401, postReportUserProfile);
 
   app.use('/:lang', router);
   app.use(api);
@@ -245,7 +219,9 @@ module.exports = function(app) {
     };
 
     return user.identities(query, function(err, identities) {
-      if (err) { return next(err); }
+      if (err) {
+        return next(err);
+      }
 
       // assumed user identity is unique by provider
       let identity = identities.shift();
@@ -255,17 +231,18 @@ module.exports = function(app) {
       }
 
       return identity.destroy(function(err) {
-        if (err) { return next(err); }
+        if (err) {
+          return next(err);
+        }
 
         const updateData = { [social]: null };
 
-        return user.update$(updateData)
-          .subscribe(() => {
-            debug(`${social} has been unlinked successfully`);
+        return user.update$(updateData).subscribe(() => {
+          debug(`${social} has been unlinked successfully`);
 
-            req.flash('info', `You've successfully unlinked your ${social}.`);
-            return res.redirect('/' + username);
-          }, next);
+          req.flash('info', `You've successfully unlinked your ${social}.`);
+          return res.redirect('/' + username);
+        }, next);
       });
     });
   }
@@ -278,9 +255,7 @@ module.exports = function(app) {
     // to show all date related components
     // using signed-in account's timezone
     // not of the profile she is viewing
-    const timezone = user && user.timezone ?
-      user.timezone :
-      'EST';
+    const timezone = user && user.timezone ? user.timezone : 'EST';
 
     const query = {
       where: { username },
@@ -297,31 +272,24 @@ module.exports = function(app) {
       .flatMap(userPortfolio => {
         userPortfolio = userPortfolio.toJSON();
 
-        const timestamps = userPortfolio
-          .progressTimestamps
-          .map(objOrNum => {
-            return typeof objOrNum === 'number' ?
-              objOrNum :
-              objOrNum.timestamp;
-          });
+        const timestamps = userPortfolio.progressTimestamps.map(objOrNum => {
+          return typeof objOrNum === 'number' ? objOrNum : objOrNum.timestamp;
+        });
 
         const uniqueHours = prepUniqueDaysByHours(timestamps, timezone);
 
         userPortfolio.currentStreak = calcCurrentStreak(uniqueHours, timezone);
         userPortfolio.longestStreak = calcLongestStreak(uniqueHours, timezone);
 
-        const calender = userPortfolio
-          .progressTimestamps
-          .map((objOrNum) => {
-            return typeof objOrNum === 'number' ?
-              objOrNum :
-              objOrNum.timestamp;
+        const calender = userPortfolio.progressTimestamps
+          .map(objOrNum => {
+            return typeof objOrNum === 'number' ? objOrNum : objOrNum.timestamp;
           })
-          .filter((timestamp) => {
+          .filter(timestamp => {
             return !!timestamp;
           })
           .reduce((data, timeStamp) => {
-            data[(timeStamp / 1000)] = 1;
+            data[timeStamp / 1000] = 1;
             return data;
           }, {});
 
@@ -341,15 +309,17 @@ module.exports = function(app) {
         }
 
         return getChallengeInfo(map$)
-          .flatMap(challengeInfo => buildDisplayChallenges(
-            challengeInfo,
-            userPortfolio.challengeMap,
-            timezone
-          ))
+          .flatMap(challengeInfo =>
+            buildDisplayChallenges(
+              challengeInfo,
+              userPortfolio.challengeMap,
+              timezone
+            )
+          )
           .map(displayChallenges => ({
             ...userPortfolio,
             ...displayChallenges,
-            title: 'Camper ' + userPortfolio.username + '\'s Code Portfolio',
+            title: 'Camper ' + userPortfolio.username + "'s Code Portfolio",
             calender,
             github: userPortfolio.githubURL,
             moment,
@@ -360,10 +330,7 @@ module.exports = function(app) {
       .doOnNext(data => {
         return res.render('account/show', data);
       })
-      .subscribe(
-        () => {},
-        next
-      );
+      .subscribe(() => {}, next);
   }
 
   function showCert(req, res, next) {
@@ -372,97 +339,92 @@ module.exports = function(app) {
     const certType = superBlockCertTypeMap[cert];
     const certId = certIds[certType];
     return findUserByUsername$(username, {
-          isCheater: true,
-          isLocked: true,
-          isFrontEndCert: true,
-          isBackEndCert: true,
-          isFullStackCert: true,
-          isRespWebDesignCert: true,
-          isFrontEndLibsCert: true,
-          isJsAlgoDataStructCert: true,
-          isDataVisCert: true,
-          is2018DataVisCert: true,
-          isApisMicroservicesCert: true,
-          isInfosecQaCert: true,
-          isHonest: true,
-          username: true,
-          name: true,
-          challengeMap: true
-      })
-      .subscribe(
-        user => {
-          const profile = `/${user.username}`;
-          if (!user) {
-            req.flash(
-              'danger',
-              `We couldn't find a user with the username ${username}`
-            );
-            return res.redirect('/');
-          }
+      isCheater: true,
+      isLocked: true,
+      isFrontEndCert: true,
+      isBackEndCert: true,
+      isFullStackCert: true,
+      isRespWebDesignCert: true,
+      isFrontEndLibsCert: true,
+      isJsAlgoDataStructCert: true,
+      isDataVisCert: true,
+      is2018DataVisCert: true,
+      isApisMicroservicesCert: true,
+      isInfosecQaCert: true,
+      isHonest: true,
+      username: true,
+      name: true,
+      challengeMap: true
+    }).subscribe(user => {
+      const profile = `/${user.username}`;
+      if (!user) {
+        req.flash(
+          'danger',
+          `We couldn't find a user with the username ${username}`
+        );
+        return res.redirect('/');
+      }
 
-          if (!user.name) {
-            req.flash(
-              'danger',
-              dedent`
+      if (!user.name) {
+        req.flash(
+          'danger',
+          dedent`
                 This user needs to add their name to their account
                 in order for others to be able to view their certificate.
               `
-            );
-            return res.redirect(profile);
-          }
+        );
+        return res.redirect(profile);
+      }
 
-          if (user.isCheater) {
-            return res.redirect(`/${user.username}`);
-          }
+      if (user.isCheater) {
+        return res.redirect(`/${user.username}`);
+      }
 
-          if (user.isLocked) {
-            req.flash(
-              'danger',
-              dedent`
+      if (user.isLocked) {
+        req.flash(
+          'danger',
+          dedent`
                 ${username} has chosen to make their profile
                   private. They will need to make their profile public
                   in order for others to be able to view their certificate.
               `
-            );
-            return res.redirect('/');
-          }
+        );
+        return res.redirect('/');
+      }
 
-          if (!user.isHonest) {
-            req.flash(
-              'danger',
-              dedent`
+      if (!user.isHonest) {
+        req.flash(
+          'danger',
+          dedent`
                 ${username} has not yet agreed to our Academic Honesty Pledge.
               `
-            );
-            return res.redirect(profile);
-          }
+        );
+        return res.redirect(profile);
+      }
 
-          if (user[certType]) {
-            const { challengeMap = {} } = user;
-            const { completedDate = new Date() } = challengeMap[certId] || {};
+      if (user[certType]) {
+        const { challengeMap = {} } = user;
+        const { completedDate = new Date() } = challengeMap[certId] || {};
 
-            return res.render(
-              certViews[certType],
-              {
-                username: user.username,
-                date: moment(new Date(completedDate)).format('MMMM D, YYYY'),
-                name: user.name
-              }
-            );
-          }
-          req.flash(
-            'danger',
-            `Looks like user ${username} is not ${certText[certType]}`
-          );
-          return res.redirect(profile);
-        },
-        next
+        return res.render(certViews[certType], {
+          username: user.username,
+          date: moment(new Date(completedDate)).format('MMMM D, YYYY'),
+          name: user.name
+        });
+      }
+      req.flash(
+        'danger',
+        `Looks like user ${username} is not ${certText[certType]}`
       );
+      return res.redirect(profile);
+    }, next);
   }
 
   function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
-      if (err) { return next(err); }
+      if (err) {
+        return next(err);
+      }
       req.logout();
       req.flash('success', 'You have successfully deleted your account.');
       return res.status(200).end();
@@ -471,32 +433,34 @@ module.exports = function(app) {
 
   function postResetProgress(req, res, next) {
     User.findById(req.user.id, function(err, user) {
-      if (err) { return next(err); }
-      return user.update$({
-        progressTimestamps: [{
-          timestamp: Date.now()
-        }],
-        currentChallengeId: '',
-        isRespWebDesignCert: false,
-        is2018DataVisCert: false,
-        isFrontEndLibsCert: false,
-        isJsAlgoDataStructCert: false,
-        isApisMicroservicesCert: false,
-        isInfosecQaCert: false,
-        is2018FullStackCert: false,
-        isFrontEndCert: false,
-        isBackEndCert: false,
-        isDataVisCert: false,
-        isFullStackCert: false,
-        challengeMap: {}
-      })
-      .subscribe(
-        () => {
+      if (err) {
+        return next(err);
+      }
+      return user
+        .update$({
+          progressTimestamps: [
+            {
+              timestamp: Date.now()
+            }
+          ],
+          currentChallengeId: '',
+          isRespWebDesignCert: false,
+          is2018DataVisCert: false,
+          isFrontEndLibsCert: false,
+          isJsAlgoDataStructCert: false,
+          isApisMicroservicesCert: false,
+          isInfosecQaCert: false,
+          is2018FullStackCert: false,
+          isFrontEndCert: false,
+          isBackEndCert: false,
+          isDataVisCert: false,
+          isFullStackCert: false,
+          challengeMap: {}
+        })
+        .subscribe(() => {
           req.flash('success', 'You have successfully reset your progress.');
           return res.status(200).end();
-        },
-        next
-      );
+        }, next);
     });
   }
 
@@ -521,13 +485,14 @@ module.exports = function(app) {
       return next();
     }
 
-    return Email.send$({
-      type: 'email',
-      to: 'team@freecodecamp.org',
-      cc: user.email,
-      from: 'team@freecodecamp.org',
-      subject: 'Abuse Report : Reporting ' + username + '\'s profile.',
-      text: dedent(`
+    return Email.send$(
+      {
+        type: 'email',
+        to: 'team@freecodecamp.org',
+        cc: user.email,
+        from: 'team@freecodecamp.org',
+        subject: 'Abuse Report : Reporting ' + username + "'s profile.",
+        text: dedent(`
         Hello Team,\n
         This is to report the profile of ${username}.\n
         Report Details:\n
@@ -539,18 +504,19 @@ module.exports = function(app) {
         Thanks and regards,
         ${user.name}
       `)
-    }, err => {
-      if (err) {
-        err.redirectTo = '/' + username;
-        return next(err);
+      },
+      err => {
+        if (err) {
+          err.redirectTo = '/' + username;
+          return next(err);
+        }
+
+        req.flash(
+          'info',
+          `A report was sent to the team with ${user.email} in copy.`
+        );
+        return res.redirect('/');
       }
-
-      req.flash(
-        'info',
-        `A report was sent to the team with ${user.email} in copy.`
-      );
-      return res.redirect('/');
-    });
+    );
   }
-
 };

@@ -16,22 +16,14 @@ export default function SignUpButton({ showLoading, showSignUp }) {
   }
   if (showSignUp) {
     return (
-      <NavItem
-        href='/signup'
-        key='signup'
-        >
+      <NavItem href='/signup' key='signup'>
         Sign Up
       </NavItem>
     );
   }
   return (
-    <li
-      className='nav-avatar'
-      key='user'
-      >
-      <Link to={ onRouteSettings() }>
-        Settings
-      </Link>
+    <li className='nav-avatar' key='user'>
+      <Link to={onRouteSettings()}>Settings</Link>
     </li>
   );
 }

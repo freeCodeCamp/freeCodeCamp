@@ -17,27 +17,22 @@ export default function userServices() {
         Observable.defer(() => user.getChallengeMap$())
           .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
           .map(user => ({
-              entities: {
-                user: {
-                  [user.username]: {
-                    ..._.pick(user, userPropsForSession),
-                    isEmailVerified: !!user.emailVerified,
-                    isGithub: !!user.githubURL,
-                    isLinkedIn: !!user.linkedIn,
-                    isTwitter: !!user.twitter,
-                    isWebsite: !!user.website,
-                    ...normaliseUserFields(user)
-                  }
+            entities: {
+              user: {
+                [user.username]: {
+                  ..._.pick(user, userPropsForSession),
+                  isEmailVerified: !!user.emailVerified,
+                  isGithub: !!user.githubURL,
+                  isLinkedIn: !!user.linkedIn,
+                  isTwitter: !!user.twitter,
+                  isWebsite: !!user.website,
+                  ...normaliseUserFields(user)
                 }
-              },
-              result: user.username
-            })
-          )
-        )
-        .subscribe(
-          user => cb(null, user),
-          cb
-        );
+              }
+            },
+            result: user.username
+          }))
+      ).subscribe(user => cb(null, user), cb);
     }
   };
 }

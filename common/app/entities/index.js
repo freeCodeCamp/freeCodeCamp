@@ -14,17 +14,20 @@ import { usernameSelector } from '../redux';
 export const ns = 'entities';
 export const getNS = state => state[ns];
 export const entitiesSelector = getNS;
-export const types = createTypes([
-  'addPortfolioItem',
-  'optoUpdatePortfolio',
-  'regresPortfolio',
-  'updateMultipleUserFlags',
-  'updateTheme',
-  'updateUserFlag',
-  'updateUserEmail',
-  'updateUserLang',
-  'updateUserCurrentChallenge'
-], ns);
+export const types = createTypes(
+  [
+    'addPortfolioItem',
+    'optoUpdatePortfolio',
+    'regresPortfolio',
+    'updateMultipleUserFlags',
+    'updateTheme',
+    'updateUserFlag',
+    'updateUserEmail',
+    'updateUserLang',
+    'updateUserCurrentChallenge'
+  ],
+  ns
+);
 
 // addPortfolioItem(...PortfolioItem) => Action
 export const addPortfolioItem = createAction(types.addPortfolioItem);
@@ -73,11 +76,11 @@ export const updateThemeMetacreator = (username, theme) => ({
 
 export function emptyPortfolio() {
   return {
-  id: uuid(),
-  title: '',
-  description: '',
-  url: '',
-  image: ''
+    id: uuid(),
+    title: '',
+    description: '',
+    url: '',
+    image: ''
   };
 }
 
@@ -103,16 +106,17 @@ export function projectsSelector(state) {
   const blocks = getNS(state).block;
   const challengeNameToIdMap = invert(challengeIdToNameMapSelector(state));
   return Object.keys(blocks)
-    .filter(key =>
-      key.includes('projects') && !key.includes('coding-interview')
+    .filter(
+      key => key.includes('projects') && !key.includes('coding-interview')
     )
     .map(key => blocks[key])
     .map(({ name, challenges, superBlock }) => {
       const projectChallengeDashNames = challenges
         // remove any project intros
         .filter(chal => !chal.includes('get-set-for'));
-      const projectChallenges = projectChallengeDashNames
-        .map(dashedName => selectiveChallengeTitleSelector(state, dashedName));
+      const projectChallenges = projectChallengeDashNames.map(dashedName =>
+        selectiveChallengeTitleSelector(state, dashedName)
+      );
       return {
         projectBlockName: name,
         superBlock,
@@ -177,9 +181,10 @@ export default composeReducers(
   },
   handleActions(
     () => ({
-      [
-        challenges.submitChallenge.complete
-      ]: (state, { payload: { username, points, challengeInfo } }) => ({
+      [challenges.submitChallenge.complete]: (
+        state,
+        { payload: { username, points, challengeInfo } }
+      ) => ({
         ...state,
         user: {
           ...state.user,
@@ -199,16 +204,13 @@ export default composeReducers(
           ...state.user,
           [username]: {
             ...state.user[username],
-            portfolio: [
-              ...state.user[username].portfolio,
-              emptyPortfolio()
-            ]
+            portfolio: [...state.user[username].portfolio, emptyPortfolio()]
           }
         }
       }),
       [types.optoUpdatePortfolio]: (
         state,
-        { payload: { username, portfolio }}
+        { payload: { username, portfolio } }
       ) => {
         const currentPortfolio = state.user[username].portfolio.slice(0);
         const pIndex = findIndex(currentPortfolio, p => p.id === portfolio.id);
@@ -237,7 +239,7 @@ export default composeReducers(
       }),
       [types.updateMultipleUserFlags]: (
         state,
-        { payload: { username, flags }}
+        { payload: { username, flags } }
       ) => ({
         ...state,
         user: {
@@ -268,12 +270,9 @@ export default composeReducers(
           }
         }
       }),
-      [types.updateUserLang]:
-      (
+      [types.updateUserLang]: (
         state,
-        {
-          payload: { username, languageTag }
-        }
+        { payload: { username, languageTag } }
       ) => ({
         ...state,
         user: {
@@ -284,12 +283,9 @@ export default composeReducers(
           }
         }
       }),
-      [types.updateUserCurrentChallenge]:
-      (
+      [types.updateUserCurrentChallenge]: (
         state,
-        {
-          payload: { username, currentChallengeId }
-        }
+        { payload: { username, currentChallengeId } }
       ) => ({
         ...state,
         user: {

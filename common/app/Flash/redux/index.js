@@ -14,10 +14,10 @@ import ns from '../ns.json';
 // export all the utils
 export { utils };
 export const epics = [getMessagesEpic];
-export const types = createTypes([
-  'clickOnClose',
-  createAsyncTypes('fetchMessages')
-], ns);
+export const types = createTypes(
+  ['clickOnClose', createAsyncTypes('fetchMessages')],
+  ns
+);
 
 export const clickOnClose = createAction(types.clickOnClose, _.noop);
 export const fetchMessagesComplete = createAction(types.fetchMessages.complete);
@@ -27,11 +27,7 @@ const defaultState = [];
 
 const getNS = _.property(ns);
 
-export const latestMessageSelector = _.flow(
-  getNS,
-  _.head,
-  _.defaultTo({})
-);
+export const latestMessageSelector = _.flow(getNS, _.head, _.defaultTo({}));
 
 export default composeReducers(
   ns,
@@ -43,15 +39,12 @@ export default composeReducers(
         ...utils.expressToStack(payload)
       ]
     }),
-    defaultState,
+    defaultState
   ),
   function metaReducer(state = defaultState, action) {
     if (utils.isFlashAction(action)) {
       const { payload } = utils.getFlashAction(action);
-      return [
-        ...state,
-        ...payload
-      ];
+      return [...state, ...payload];
     }
     return state;
   }

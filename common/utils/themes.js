@@ -3,8 +3,7 @@ export const themes = {
   default: 'default'
 };
 
-export const invertTheme = currentTheme => (
-  !currentTheme || currentTheme === themes.default ?
-    themes.night :
-    themes.default
-);
+export const invertTheme = currentTheme =>
+  !currentTheme || currentTheme === themes.default
+    ? themes.night
+    : themes.default;

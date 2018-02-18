@@ -5,20 +5,19 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 import { createSelector } from 'reselect';
 
-import {
-  selectChoice,
-  incrementCorrect
-} from './redux';
+import { selectChoice, incrementCorrect } from './redux';
 
-const mapStateToProps = createSelector(
-  () => ({})
-);
+const mapStateToProps = createSelector(() => ({}));
 
 function mapDispatchToProps(dispatch) {
-  return () => bindActionCreators({
-    selectChoice,
-    incrementCorrect
-  }, dispatch);
+  return () =>
+    bindActionCreators(
+      {
+        selectChoice,
+        incrementCorrect
+      },
+      dispatch
+    );
 }
 
 const propTypes = {
@@ -32,7 +31,6 @@ const propTypes = {
 };
 
 export class Choice extends PureComponent {
-
   constructor(props) {
     super(props);
     this.selectChoice = this.selectChoice.bind(this);
@@ -57,17 +55,14 @@ export class Choice extends PureComponent {
     });
 
     return (
-      <div
-        className={choiceClass}
-        onClick={this.selectChoice}
-        >
+      <div className={choiceClass} onClick={this.selectChoice}>
         <div className='radio'>
           <div className='inside' />
         </div>
 
         <div
           className='text'
-          dangerouslySetInnerHTML={{__html: this.props.choice}}
+          dangerouslySetInnerHTML={{ __html: this.props.choice }}
         />
       </div>
     );
@@ -77,7 +72,4 @@ export class Choice extends PureComponent {
 Choice.displayName = 'Choice';
 Choice.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Choice);
+export default connect(mapStateToProps, mapDispatchToProps)(Choice);

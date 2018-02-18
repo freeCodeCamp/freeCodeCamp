@@ -4,10 +4,8 @@ import debug from 'debug';
 
 import {
   types,
-
   createErrorObservable,
   delayedRedirect,
-
   fetchChallengeCompleted,
   fetchChallengesCompleted
 } from './';
@@ -20,14 +18,16 @@ import { langSelector } from '../Router/redux';
 const isDev = debug.enabled('fcc:*');
 
 export function fetchChallengeEpic(actions, { getState }, { services }) {
-  return actions::ofType(challenge.onRouteChallenges)
+  return actions
+    ::ofType(challenge.onRouteChallenges)
     .filter(({ payload }) => !isChallengeLoaded(getState(), payload))
     .flatMapLatest(({ payload: params }) => {
       const options = {
         service: 'map',
         params
       };
-      return services.readService$(options)
+      return services
+        .readService$(options)
         .retry(3)
         .map(({ entities, ...rest }) => ({
           entities: shapeChallenges(entities, isDev),
@@ -49,35 +49,24 @@ export function fetchChallengeEpic(actions, { getState }, { services }) {
     });
 }
 
-export function fetchChallengesEpic(
-  actions,
-  { getState },
-  { services }
-) {
-  return actions::ofType(
-    types.appMounted,
-    types.updateChallenges
-  )
+export function fetchChallengesEpic(actions, { getState }, { services }) {
+  return actions
+    ::ofType(types.appMounted, types.updateChallenges)
     .flatMapLatest(() => {
       const lang = langSelector(getState());
       const options = {
         params: { lang },
         service: 'map'
       };
-      return services.readService$(options)
+      return services
+        .readService$(options)
         .retry(3)
         .map(({ entities, ...res }) => ({
-          entities: shapeChallenges(
-            entities,
-            isDev
-          ),
+          entities: shapeChallenges(entities, isDev),
           ...res
         }))
         .map(({ entities, result } = {}) => {
-          return fetchChallengesCompleted(
-            entities,
-            result
-          );
+          return fetchChallengesCompleted(entities, result);
         })
         .startWith({ type: types.fetchChallenges.start })
         .catch(createErrorObservable);

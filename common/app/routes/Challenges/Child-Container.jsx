@@ -10,8 +10,8 @@ const propTypes = {
 
 export default function ChildContainer({ children, ...props }) {
   return (
-    <AppChildContainer { ...props }>
-      { children }
+    <AppChildContainer {...props}>
+      {children}
       <CompletionModal />
     </AppChildContainer>
   );

@@ -14,11 +14,7 @@ export default function ChildContainer({ children, isFullWidth }) {
     [`${ns}-content`]: true,
     [`${ns}-centered`]: !isFullWidth
   });
-  return (
-    <div className={ contentClassname }>
-      { children }
-    </div>
-  );
+  return <div className={contentClassname}>{children}</div>;
 }
 
 ChildContainer.displayName = 'ChildContainer';

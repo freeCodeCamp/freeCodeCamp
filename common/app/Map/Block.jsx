@@ -7,11 +7,7 @@ import { Panel } from 'react-bootstrap';
 
 import ns from './ns.json';
 import Challenges from './Challenges.jsx';
-import {
-  toggleThisPanel,
-
-  makePanelOpenSelector
-} from './redux';
+import { toggleThisPanel, makePanelOpenSelector } from './redux';
 
 import { makeBlockSelector } from '../entities';
 
@@ -52,42 +48,32 @@ export class Block extends PureComponent {
 
   renderHeader(isOpen, title, time, isCompleted) {
     return (
-      <div className={ isCompleted ? 'faded' : '' }>
+      <div className={isCompleted ? 'faded' : ''}>
         <FA
           className='map-caret'
-          name={ isOpen ? 'caret-down' : 'caret-right' }
+          name={isOpen ? 'caret-down' : 'caret-right'}
           size='lg'
         />
-        <span>
-        { title }
-        </span>
-        {
-          time && <span className={ `${ns}-block-time` }>({ time })</span>
-        }
+        <span>{title}</span>
+        {time && <span className={`${ns}-block-time`}>({time})</span>}
       </div>
     );
   }
 
   render() {
-    const {
-      title,
-      time,
-      dashedName,
-      isOpen,
-      challenges
-    } = this.props;
+    const { title, time, dashedName, isOpen, challenges } = this.props;
     return (
       <Panel
-        bsClass={ `${ns}-accordion-panel` }
-        collapsible={ true }
-        eventKey={ dashedName || title }
-        expanded={ isOpen }
-        header={ this.renderHeader(isOpen, title, time) }
-        id={ title }
-        key={ title }
-        onSelect={ this.handleSelect }
+        bsClass={`${ns}-accordion-panel`}
+        collapsible={true}
+        eventKey={dashedName || title}
+        expanded={isOpen}
+        header={this.renderHeader(isOpen, title, time)}
+        id={title}
+        key={title}
+        onSelect={this.handleSelect}
         >
-        { isOpen && <Challenges challenges={ challenges } /> }
+        {isOpen && <Challenges challenges={challenges} />}
       </Panel>
     );
   }

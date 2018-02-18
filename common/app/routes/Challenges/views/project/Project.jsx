@@ -14,14 +14,7 @@ import { challengeSelector } from '../../../../redux';
 const mapStateToProps = createSelector(
   challengeSelector,
   challengeMetaSelector,
-  (
-    {
-      id,
-      description,
-      image
-    },
-    { title }
-  ) => ({
+  ({ id, description, image }, { title }) => ({
     id,
     image,
     title,
@@ -47,20 +40,13 @@ export class Project extends PureComponent {
     } = this.props;
     const imageURL = 'https://i.imgur.com/' + image + '.png';
     return (
-      <Col
-        md={ 8 }
-        xs={ 12 }
-        >
+      <Col md={8} xs={12}>
         <SidePanel
-          description={ description }
-          isCompleted={ isCompleted }
-          title={ title }
+          description={description}
+          isCompleted={isCompleted}
+          title={title}
         />
-        <Image
-          id={ id }
-          responsive={ true }
-          src={ imageURL }
-        />
+        <Image id={id} responsive={true} src={imageURL} />
         <br />
         <ToolPanel />
         <HelpModal />
@@ -72,6 +58,4 @@ export class Project extends PureComponent {
 Project.displayName = 'Project';
 Project.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps
-)(Project);
+export default connect(mapStateToProps)(Project);

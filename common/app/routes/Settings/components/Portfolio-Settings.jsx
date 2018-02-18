@@ -10,12 +10,7 @@ import SectionHeader from './SectionHeader.jsx';
 import { userSelector } from '../../../redux';
 import { addPortfolioItem } from '../../../entities';
 import { updateMyPortfolio, deletePortfolio } from '../redux';
-import {
-  Form,
-  maxLength,
-  minLength,
-  validURL
-} from '../formHelpers';
+import { Form, maxLength, minLength, validURL } from '../formHelpers';
 
 const minTwoChar = minLength(2);
 const max288Char = maxLength(288);
@@ -45,14 +40,17 @@ const mapStateToProps = createSelector(
 );
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    addPortfolioItem,
-    deletePortfolio,
-    updateMyPortfolio
-  }, dispatch);
+  return bindActionCreators(
+    {
+      addPortfolioItem,
+      deletePortfolio,
+      updateMyPortfolio
+    },
+    dispatch
+  );
 }
 
-const formFields = [ 'title', 'url', 'image', 'description', 'id' ];
+const formFields = ['title', 'url', 'image', 'description', 'id'];
 const options = {
   types: {
     id: 'hidden',
@@ -60,17 +58,12 @@ const options = {
     image: 'url',
     description: 'textarea'
   },
-  required: [ 'url', 'title', 'id' ]
+  required: ['url', 'title', 'id']
 };
 
 function validator(values) {
   const errors = {};
-  const {
-    title = '',
-    url = '',
-    description = '',
-    image = ''
-  } = values;
+  const { title = '', url = '', description = '', image = '' } = values;
   errors.title = minTwoChar(title);
   errors.description = max288Char(description);
   errors.url = url && validURL(url);
@@ -103,35 +96,31 @@ class PortfolioSettings extends PureComponent {
   }
 
   renderPortfolio(portfolio, index, arr) {
-    const {
-      id
-    } = portfolio;
+    const { id } = portfolio;
     return (
-      <div key={ id }>
+      <div key={id}>
         <FullWidthRow>
           <Form
             buttonText='Save portfolio item'
-            formFields={ formFields }
-            id={ id }
-            initialValues={ portfolio }
-            options={ options }
-            submit={ this.handleSave }
-            validate={ validator }
+            formFields={formFields}
+            id={id}
+            initialValues={portfolio}
+            options={options}
+            submit={this.handleSave}
+            validate={validator}
           />
           <ButtonSpacer />
           <Button
-            block={ true }
+            block={true}
             bsSize='lg'
             bsStyle='danger'
             id={`delete-${id}`}
-            onClick={ () => this.handleDelete(id) }
+            onClick={() => this.handleDelete(id)}
             type='button'
             >
             Remove this portfolio item
           </Button>
-          {
-            index + 1 !== arr.length && <hr />
-          }
+          {index + 1 !== arr.length && <hr />}
         </FullWidthRow>
       </div>
     );
@@ -140,32 +129,28 @@ class PortfolioSettings extends PureComponent {
   render() {
     const { portfolio = [] } = this.props;
     return (
-      <section id='portfolio-settings' >
-        <SectionHeader>
-          Portfolio Settings
-        </SectionHeader>
+      <section id='portfolio-settings'>
+        <SectionHeader>Portfolio Settings</SectionHeader>
         <FullWidthRow>
-        <div className='portfolio-settings-intro'>
-          <p className='p-intro'>
-            Share your non-FreeCodeCamp projects, articles or accepted
-            pull requests.
-          </p>
-        </div>
+          <div className='portfolio-settings-intro'>
+            <p className='p-intro'>
+              Share your non-FreeCodeCamp projects, articles or accepted pull
+              requests.
+            </p>
+          </div>
         </FullWidthRow>
-        {
-          portfolio.length ? portfolio.map(this.renderPortfolio) : null
-        }
+        {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
         <FullWidthRow>
-        <ButtonSpacer />
-        <Button
-          block={ true }
-          bsSize='lg'
-          bsStyle='primary'
-          onClick={ this.handleAdd }
-          type='button'
-          >
-          Add a new portfolio Item
-        </Button>
+          <ButtonSpacer />
+          <Button
+            block={true}
+            bsSize='lg'
+            bsStyle='primary'
+            onClick={this.handleAdd}
+            type='button'
+            >
+            Add a new portfolio Item
+          </Button>
         </FullWidthRow>
       </section>
     );

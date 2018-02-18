@@ -30,10 +30,7 @@ import {
   getFileKey,
   challengeToFiles
 } from '../utils';
-import {
-  types as app,
-  challengeSelector
-} from '../../../redux';
+import { types as app, challengeSelector } from '../../../redux';
 import { html } from '../../../utils/challengeTypes.js';
 import blockNameify from '../../../utils/blockNameify.js';
 import { updateFileMetaCreator, createFilesMetaCreator } from '../../../files';
@@ -41,8 +38,10 @@ import { updateFileMetaCreator, createFilesMetaCreator } from '../../../files';
 // this is not great but is ok until we move to a different form type
 export projectNormalizer from '../views/project/redux';
 
-const challengeToFilesMetaCreator =
-  _.flow(challengeToFiles, createFilesMetaCreator);
+const challengeToFilesMetaCreator = _.flow(
+  challengeToFiles,
+  createFilesMetaCreator
+);
 
 export const epics = [
   modalEpic,
@@ -53,55 +52,59 @@ export const epics = [
   ...stepEpics
 ];
 
-export const types = createTypes([
-  'onRouteChallengeRoot',
-  'onRouteChallenges',
-  'onRouteCurrentChallenge',
-  // challenges
-  // |- classic
-  'classicEditorUpdated',
-  'challengeUpdated',
-  'clickOnReset',
-  'updateHint',
-  'unlockUntrustedCode',
-  'closeChallengeModal',
-  'updateSuccessMessage',
-  // |- modern
-  'modernEditorUpdated',
+export const types = createTypes(
+  [
+    'onRouteChallengeRoot',
+    'onRouteChallenges',
+    'onRouteCurrentChallenge',
+    // challenges
+    // |- classic
+    'classicEditorUpdated',
+    'challengeUpdated',
+    'clickOnReset',
+    'updateHint',
+    'unlockUntrustedCode',
+    'closeChallengeModal',
+    'updateSuccessMessage',
+    // |- modern
+    'modernEditorUpdated',
 
-  // rechallenge
-  'executeChallenge',
-  'updateOutput',
-  'initOutput',
-  'updateTests',
-  'checkChallenge',
-  createAsyncTypes('submitChallenge'),
-  'moveToNextChallenge',
+    // rechallenge
+    'executeChallenge',
+    'updateOutput',
+    'initOutput',
+    'updateTests',
+    'checkChallenge',
+    createAsyncTypes('submitChallenge'),
+    'moveToNextChallenge',
 
-  // help
-  'openHelpModal',
-  'closeHelpModal',
-  'createQuestion',
+    // help
+    'openHelpModal',
+    'closeHelpModal',
+    'createQuestion',
 
-  // panes
-  'toggleClassicEditor',
-  'toggleMain',
-  'toggleMap',
-  'togglePreview',
-  'toggleSidePanel',
-  'toggleStep',
-  'toggleModernEditor',
+    // panes
+    'toggleClassicEditor',
+    'toggleMain',
+    'toggleMap',
+    'togglePreview',
+    'toggleSidePanel',
+    'toggleStep',
+    'toggleModernEditor',
 
-  // code storage
-  'storedCodeFound',
-  'noStoredCodeFound',
-  'previousSolutionFound'
-], ns);
+    // code storage
+    'storedCodeFound',
+    'noStoredCodeFound',
+    'previousSolutionFound'
+  ],
+  ns
+);
 
 // routes
 export const onRouteChallenges = createAction(types.onRouteChallenges);
-export const onRouteCurrentChallenge =
-  createAction(types.onRouteCurrentChallenge);
+export const onRouteCurrentChallenge = createAction(
+  types.onRouteCurrentChallenge
+);
 
 // classic
 export const classicEditorUpdated = createAction(
@@ -131,10 +134,7 @@ export const challengeUpdated = createAction(
 export const clickOnReset = createAction(types.clickOnReset);
 
 // rechallenge
-export const executeChallenge = createAction(
-  types.executeChallenge,
-  noop,
-);
+export const executeChallenge = createAction(types.executeChallenge, noop);
 
 export const updateTests = createAction(types.updateTests);
 
@@ -160,7 +160,7 @@ export const createQuestion = createAction(types.createQuestion);
 export const storedCodeFound = createAction(
   types.storedCodeFound,
   null,
-  challengeToFilesMetaCreator,
+  challengeToFilesMetaCreator
 );
 export const noStoredCodeFound = createAction(types.noStoredCodeFound);
 export const previousSolutionFound = createAction(
@@ -202,8 +202,8 @@ export const codeLockedSelector = state => getNS(state).isCodeLocked;
 export const isCodeLockedSelector = state => getNS(state).isCodeLocked;
 export const isJSEnabledSelector = state => getNS(state).isJSEnabled;
 export const chatRoomSelector = state => getNS(state).helpChatRoom;
-export const challengeModalSelector =
-  state => getNS(state).isChallengeModalOpen;
+export const challengeModalSelector = state =>
+  getNS(state).isChallengeModalOpen;
 
 export const helpModalSelector = state => getNS(state).isHelpOpen;
 export const guideURLSelector = state =>
@@ -222,9 +222,10 @@ export const challengeMetaSelector = createSelector(
     const type = challenge && challenge.type;
     const viewType = viewTypes[type] || viewTypes[challengeType] || 'classic';
     const blockName = blockNameify(challenge.block);
-    const title = blockName && challenge.title ?
-      `${blockName}: ${challenge.title}` :
-      challenge.title;
+    const title =
+      blockName && challenge.title
+        ? `${blockName}: ${challenge.title}`
+        : challenge.title;
     return {
       type,
       title,
@@ -233,13 +234,8 @@ export const challengeMetaSelector = createSelector(
         submitTypes[challengeType] ||
         submitTypes[challenge && challenge.type] ||
         'tests',
-      showPreview: (
-        challengeType === html ||
-        type === 'modern'
-      ),
-      mode: challenge && challengeType === html ?
-        'text/html' :
-        'javascript'
+      showPreview: challengeType === html || type === 'modern',
+      mode: challenge && challengeType === html ? 'text/html' : 'javascript'
     };
   }
 );
@@ -257,12 +253,10 @@ export const backendFormValuesSelector = state =>
 export default combineReducers(
   handleActions(
     () => ({
-      [
-        combineActions(
-          types.challengeUpdated,
-          app.fetchChallenge.complete
-        )
-      ]: (state, { payload: { challenge } }) => {
+      [combineActions(types.challengeUpdated, app.fetchChallenge.complete)]: (
+        state,
+        { payload: { challenge } }
+      ) => {
         return {
           ...state,
           ...initialUiState,
@@ -276,10 +270,8 @@ export default combineReducers(
       [types.updateTests]: (state, { payload: tests }) => ({
         ...state,
         tests,
-        isChallengeModalOpen: (
-          tests.length > 0 &&
-          tests.every(test => test.pass && !test.err)
-        )
+        isChallengeModalOpen:
+          tests.length > 0 && tests.every(test => test.pass && !test.err)
       }),
       [types.closeChallengeModal]: state => ({
         ...state,
@@ -303,12 +295,10 @@ export default combineReducers(
         isJSEnabled: true,
         tests: state.tests.map(test => ({ ...test, err: false, pass: false }))
       }),
-      [
-        combineActions(
-          types.classicEditorUpdated,
-          types.modernEditorUpdated
-        )
-      ]: state => ({
+      [combineActions(
+        types.classicEditorUpdated,
+        types.modernEditorUpdated
+      )]: state => ({
         ...state,
         isJSEnabled: false
       }),

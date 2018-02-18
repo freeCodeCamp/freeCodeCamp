@@ -18,14 +18,9 @@ export default class Challenges extends Component {
     }
     return (
       <div>
-        {
-          challenges.map(dashedName => (
-            <Challenge
-              dashedName={ dashedName }
-              key={ dashedName }
-            />
-          ))
-        }
+        {challenges.map(dashedName => (
+          <Challenge dashedName={dashedName} key={dashedName} />
+        ))}
       </div>
     );
   }

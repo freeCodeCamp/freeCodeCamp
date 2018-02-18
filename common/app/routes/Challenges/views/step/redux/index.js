@@ -10,36 +10,28 @@ import stepChallengeEpic from './step-challenge-epic.js';
 import ns from '../ns.json';
 import { types as challenges } from '../../../redux';
 
-export const epics = [
-  stepChallengeEpic
-];
+export const epics = [stepChallengeEpic];
 
-export const types = createTypes([
-  'stepForward',
-  'stepBackward',
-  'goToStep',
-  'completeAction',
-  'clickOnImage',
-  'closeLightBoxImage',
-  'updateUnlockedSteps'
-], ns);
+export const types = createTypes(
+  [
+    'stepForward',
+    'stepBackward',
+    'goToStep',
+    'completeAction',
+    'clickOnImage',
+    'closeLightBoxImage',
+    'updateUnlockedSteps'
+  ],
+  ns
+);
 
-export const stepForward = createAction(
-  types.stepForward,
-  noop
-);
-export const stepBackward = createAction(
-  types.stepBackward,
-  noop
-);
-export const goToStep = createAction(
-  types.goToStep,
-  (step, isUnlocked) => ({ step, isUnlocked })
-);
-export const completeAction = createAction(
-  types.completeAction,
-  noop
-);
+export const stepForward = createAction(types.stepForward, noop);
+export const stepBackward = createAction(types.stepBackward, noop);
+export const goToStep = createAction(types.goToStep, (step, isUnlocked) => ({
+  step,
+  isUnlocked
+}));
+export const completeAction = createAction(types.completeAction, noop);
 export const updateUnlockedSteps = createAction(types.updateUnlockedSteps);
 export const clickOnImage = createAction(types.clickOnImage);
 export const closeLightBoxImage = createAction(types.closeLightBoxImage);
@@ -64,7 +56,7 @@ export const actionCompletedSelector = state => getNS(state).isActionCompleted;
 export default handleActions(
   () => ({
     [challenges.challengeUpdated]: () => initialState,
-    [types.goToStep]: (state, { payload: { step = 0, isUnlocked }}) => ({
+    [types.goToStep]: (state, { payload: { step = 0, isUnlocked } }) => ({
       ...state,
       currentIndex: step,
       previousIndex: state.currentIndex,

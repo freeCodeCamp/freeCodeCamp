@@ -11,7 +11,6 @@ log.enabled = true;
 // this is where server starts booting up
 const app = require('./server');
 
-
 let timeoutHandler;
 let killTime = 15;
 

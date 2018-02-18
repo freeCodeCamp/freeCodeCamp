@@ -6,10 +6,7 @@ import {
 
 import ns from '../ns.json';
 
-export const types = createTypes([
-  'makeToast',
-  'removeToast'
-], ns);
+export const types = createTypes(['makeToast', 'removeToast'], ns);
 
 let key = 0;
 export const makeToast = createAction(
@@ -24,23 +21,16 @@ export const makeToast = createAction(
   })
 );
 
-export const removeToast = createAction(
-  types.removeToast,
-  ({ key }) => key
-);
-
+export const removeToast = createAction(types.removeToast, ({ key }) => key);
 
 const initialState = [];
 
 export default handleActions(
   () => ({
-    [types.makeToast]: (state, { payload: toast }) => [
-      ...state,
-      toast
-    ].filter(toast => !!toast.message),
-    [types.removeToast]: (state, { payload: key }) => state.filter(
-      toast => toast.key !== key
-    )
+    [types.makeToast]: (state, { payload: toast }) =>
+      [...state, toast].filter(toast => !!toast.message),
+    [types.removeToast]: (state, { payload: key }) =>
+      state.filter(toast => toast.key !== key)
   }),
   initialState,
   ns

@@ -24,57 +24,54 @@ const propTypes = {
   nameToFileKey: PropTypes.object
 };
 
-const mapStateToProps = createSelector(
-  filesSelector,
-  files => {
-    if (Object.keys(files).length === 1) {
-      return { nameToFileKey: { Editor: getFirstFileKey(files) }};
-    }
-    return {
-      nameToFileKey: _.reduce(files, (map, file) => {
+const mapStateToProps = createSelector(filesSelector, files => {
+  if (Object.keys(files).length === 1) {
+    return { nameToFileKey: { Editor: getFirstFileKey(files) } };
+  }
+  return {
+    nameToFileKey: _.reduce(
+      files,
+      (map, file) => {
         map[file.name] = file.key;
         return map;
-      }, {})
-    };
-  }
-);
+      },
+      {}
+    )
+  };
+});
 
 const mapDispatchToProps = null;
 
 export const mapStateToPanes = addNS(
   ns,
-  createSelector(
-    filesSelector,
-    showPreviewSelector,
-    (files, showPreview) => {
-      // create panes map here
-      // must include map
-      // side panel
-      // editors are created based on state
-      // so pane component can have multiple panes based on state
+  createSelector(filesSelector, showPreviewSelector, (files, showPreview) => {
+    // create panes map here
+    // must include map
+    // side panel
+    // editors are created based on state
+    // so pane component can have multiple panes based on state
 
-      const panesMap = {
-        [types.toggleMap]: 'Map',
-        [types.toggleSidePanel]: 'Lesson'
-      };
+    const panesMap = {
+      [types.toggleMap]: 'Map',
+      [types.toggleSidePanel]: 'Lesson'
+    };
 
-      // If there is more than one file show file name
-      if (Object.keys(files).length > 1) {
-        _.forEach(files, (file) => {
-          panesMap[createModernEditorToggleType(file.fileKey)] = file.name;
-        });
-      } else {
-        const key = getFirstFileKey(files);
-        panesMap[createModernEditorToggleType(key)] = 'Editor';
-      }
-
-      if (showPreview) {
-        panesMap[types.togglePreview] = 'Preview';
-      }
-
-      return panesMap;
+    // If there is more than one file show file name
+    if (Object.keys(files).length > 1) {
+      _.forEach(files, file => {
+        panesMap[createModernEditorToggleType(file.fileKey)] = file.name;
+      });
+    } else {
+      const key = getFirstFileKey(files);
+      panesMap[createModernEditorToggleType(key)] = 'Editor';
     }
-  )
+
+    if (showPreview) {
+      panesMap[types.togglePreview] = 'Preview';
+    }
+
+    return panesMap;
+  })
 );
 
 const nameToComponent = {
@@ -85,17 +82,17 @@ const nameToComponent = {
 
 export function ShowModern({ nameToFileKey }) {
   return (
-    <ChildContainer isFullWidth={ true }>
+    <ChildContainer isFullWidth={true}>
       <Panes
-        render={ name => {
+        render={name => {
           const Comp = nameToComponent[name];
           if (Comp) {
             return <Comp />;
           }
           if (nameToFileKey[name]) {
-            return <Editor fileKey={ nameToFileKey[name] } />;
+            return <Editor fileKey={nameToFileKey[name]} />;
           }
-          return <span>Could not find Component for { name }</span>;
+          return <span>Could not find Component for {name}</span>;
         }}
       />
     </ChildContainer>
@@ -105,7 +102,4 @@ export function ShowModern({ nameToFileKey }) {
 ShowModern.displayName = 'ShowModern';
 ShowModern.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowModern);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowModern);

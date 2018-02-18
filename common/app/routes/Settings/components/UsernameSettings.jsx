@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Col,
-  ControlLabel,
-  FormControl,
-  Alert
-} from 'react-bootstrap';
+import { Col, ControlLabel, FormControl, Alert } from 'react-bootstrap';
 import { reduxForm } from 'redux-form';
 import { createSelector } from 'reselect';
 
@@ -86,36 +81,28 @@ function renderAlerts(validating, error, isValidUsername) {
   if (!validating && error) {
     return (
       <FullWidthRow>
-        <Alert bsStyle='danger'>
-          { error }
-        </Alert>
+        <Alert bsStyle='danger'>{error}</Alert>
       </FullWidthRow>
     );
   }
   if (!validating && !isValidUsername) {
     return (
       <FullWidthRow>
-        <Alert bsStyle='danger'>
-          Username not available
-        </Alert>
+        <Alert bsStyle='danger'>Username not available</Alert>
       </FullWidthRow>
     );
   }
   if (validating) {
     return (
       <FullWidthRow>
-        <Alert bsStyle='info'>
-          Validating username
-        </Alert>
+        <Alert bsStyle='info'>Validating username</Alert>
       </FullWidthRow>
     );
   }
   if (!validating && isValidUsername) {
     return (
       <FullWidthRow>
-        <Alert bsStyle='success'>
-          Username is available
-        </Alert>
+        <Alert bsStyle='success'>Username is available</Alert>
       </FullWidthRow>
     );
   }
@@ -124,15 +111,7 @@ function renderAlerts(validating, error, isValidUsername) {
 
 function UsernameSettings(props) {
   const {
-    fields: {
-      username: {
-        value,
-        onChange,
-        error,
-        pristine,
-        valid
-      }
-    },
+    fields: { username: { value, onChange, error, pristine, valid } },
     handleSubmit,
     isValidUsername,
     submitAction,
@@ -141,31 +120,28 @@ function UsernameSettings(props) {
   } = props;
   return (
     <div>
-      {
-        !pristine && renderAlerts(validating, error, isValidUsername)
-      }
+      {!pristine && renderAlerts(validating, error, isValidUsername)}
       <FullWidthRow>
         <form
           className='inline-form-field'
           id='usernameSettings'
-          onSubmit={ handleSubmit(submitAction) }
+          onSubmit={handleSubmit(submitAction)}
           >
-          <Col className='inline-form' sm={ 3 } xs={ 12 }>
+          <Col className='inline-form' sm={3} xs={12}>
             <ControlLabel htmlFor='username-settings'>
-                <strong>Username</strong>
+              <strong>Username</strong>
             </ControlLabel>
           </Col>
-          <Col sm={ 7 } xs={ 12 }>
+          <Col sm={7} xs={12}>
             <FormControl
               name='username-settings'
-              onChange={ makeHandleChange(onChange, validateUsername, valid) }
-              value={ value }
+              onChange={makeHandleChange(onChange, validateUsername, valid)}
+              value={value}
             />
           </Col>
-          <Col sm={ 2 } xs={ 12 }>
-            <BlockSaveButton disabled={
-              !(isValidUsername && valid && !pristine)
-              }
+          <Col sm={2} xs={12}>
+            <BlockSaveButton
+              disabled={!(isValidUsername && valid && !pristine)}
             />
           </Col>
         </form>
@@ -180,7 +156,7 @@ UsernameSettings.propTypes = propTypes;
 export default reduxForm(
   {
     form: 'usernameSettings',
-    fields: [ 'username' ]
+    fields: ['username']
   },
   mapStateToProps,
   mapDispatchToProps

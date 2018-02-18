@@ -16,12 +16,7 @@ export default function servicesCreator(options) {
   const services = new Fetchr(options);
   function readService$({ service: resource, params, config }) {
     return Observable.create(observer => {
-      services.read(
-        resource,
-        params,
-        config,
-        callbackObserver(observer)
-      );
+      services.read(resource, params, config, callbackObserver(observer));
       return Disposable.create(() => observer.dispose());
     });
   }

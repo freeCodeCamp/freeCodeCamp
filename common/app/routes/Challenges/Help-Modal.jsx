@@ -4,11 +4,7 @@ import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
 
 import ns from './ns.json';
-import {
-  createQuestion,
-  closeHelpModal,
-  helpModalSelector
-} from './redux';
+import { createQuestion, closeHelpModal, helpModalSelector } from './redux';
 import { RSA } from '../../../utils/constantStrings.json';
 
 const mapStateToProps = state => ({ isOpen: helpModalSelector(state) });
@@ -22,43 +18,36 @@ const propTypes = {
 
 export class HelpModal extends PureComponent {
   render() {
-    const {
-      isOpen,
-      closeHelpModal,
-      createQuestion
-    } = this.props;
+    const { isOpen, closeHelpModal, createQuestion } = this.props;
     return (
-      <Modal
-        show={ isOpen }
-        >
-        <Modal.Header className={ `${ns}-list-header` }>
+      <Modal show={isOpen}>
+        <Modal.Header className={`${ns}-list-header`}>
           Ask for help?
-          <span
-            className='close closing-x'
-            onClick={ closeHelpModal }
-            >
+          <span className='close closing-x' onClick={closeHelpModal}>
             ×
           </span>
         </Modal.Header>
         <Modal.Body className='text-center'>
           <h3 className={`${ns}-help-modal-heading`}>
             If you've already tried the&nbsp;
-            <a href={ RSA } title='Read, search, ask'>Read-Search-Ask</a>&nbsp;
-            method, then you can ask for help on the freeCodeCamp forum.
+            <a href={RSA} title='Read, search, ask'>
+              Read-Search-Ask
+            </a>&nbsp; method, then you can ask for help on the freeCodeCamp
+            forum.
           </h3>
           <Button
-            block={ true }
+            block={true}
             bsSize='lg'
             bsStyle='primary'
-            onClick={ createQuestion }
+            onClick={createQuestion}
             >
             Create a help post on the forum
           </Button>
           <Button
-            block={ true }
+            block={true}
             bsSize='lg'
             bsStyle='primary'
-            onClick={ closeHelpModal }
+            onClick={closeHelpModal}
             >
             Cancel
           </Button>

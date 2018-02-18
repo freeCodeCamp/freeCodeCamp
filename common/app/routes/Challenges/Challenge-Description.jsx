@@ -11,11 +11,8 @@ const propTypes = {
 export default function ChallengeDescription({ children }) {
   return (
     <Row>
-      <Col
-        className={ `${ns}-instructions` }
-        xs={ 12 }
-        >
-        { children }
+      <Col className={`${ns}-instructions`} xs={12}>
+        {children}
       </Col>
     </Row>
   );

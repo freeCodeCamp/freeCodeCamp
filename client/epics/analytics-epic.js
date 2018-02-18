@@ -15,16 +15,19 @@ import capitalize from 'lodash/capitalize';
 //   value?: String
 // }
 //
-const types = [ 'event', 'social' ];
+const types = ['event', 'social'];
 function formatFields({ type, ...fields }) {
   // make sure type is supported
   if (!types.some(_type => _type === type)) {
     return null;
   }
-  return Object.keys(fields).reduce((_fields, field) => {
-    _fields[ type + capitalize(field) ] = fields[ field ];
-    return _fields;
-  }, { type });
+  return Object.keys(fields).reduce(
+    (_fields, field) => {
+      _fields[type + capitalize(field)] = fields[field];
+      return _fields;
+    },
+    { type }
+  );
 }
 
 export default function analyticsSaga(actions, _, { window }) {
@@ -33,12 +36,14 @@ export default function analyticsSaga(actions, _, { window }) {
     console.log('GA not found');
     return Observable.empty();
   }
-  return actions
-    .filter(({ meta }) => !!(meta && meta.analytics && meta.analytics.type))
-    .map(({ meta: { analytics } }) => formatFields(analytics))
-    .filter(Boolean)
-    // ga always returns undefined
-    .map(({ type, ...fields }) => ga('send', type, fields))
-    .ignoreElements()
-    .catch(createErrorObservable);
+  return (
+    actions
+      .filter(({ meta }) => !!(meta && meta.analytics && meta.analytics.type))
+      .map(({ meta: { analytics } }) => formatFields(analytics))
+      .filter(Boolean)
+      // ga always returns undefined
+      .map(({ type, ...fields }) => ga('send', type, fields))
+      .ignoreElements()
+      .catch(createErrorObservable)
+  );
 }

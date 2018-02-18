@@ -50,32 +50,29 @@ export const userPropsForSession = [
 export function normaliseUserFields(user) {
   const about = user.bio && !user.about ? user.bio : user.about;
   const picture = user.picture || addPlaceholderImage(user.username);
-  const twitter = user.twitter && isURL(user.twitter) ?
-    user.twitter :
-    user.twitter && `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
+  const twitter =
+    user.twitter && isURL(user.twitter)
+      ? user.twitter
+      : user.twitter &&
+        `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
   return { about, picture, twitter };
 }
 
 export function getProgress(progressTimestamps, timezone = 'EST') {
   const calendar = progressTimestamps
-  .map((objOrNum) => {
-    return typeof objOrNum === 'number' ?
-    objOrNum :
-      objOrNum.timestamp;
+    .map(objOrNum => {
+      return typeof objOrNum === 'number' ? objOrNum : objOrNum.timestamp;
     })
-    .filter((timestamp) => {
+    .filter(timestamp => {
       return !!timestamp;
     })
     .reduce((data, timeStamp) => {
       data[Math.floor(timeStamp / 1000)] = 1;
       return data;
-  }, {});
-  const timestamps = progressTimestamps
-    .map(objOrNum => {
-      return typeof objOrNum === 'number' ?
-        objOrNum :
-        objOrNum.timestamp;
-    });
+    }, {});
+  const timestamps = progressTimestamps.map(objOrNum => {
+    return typeof objOrNum === 'number' ? objOrNum : objOrNum.timestamp;
+  });
   const uniqueHours = prepUniqueDaysByHours(timestamps, timezone);
   const streak = {
     longest: calcLongestStreak(uniqueHours, timezone),

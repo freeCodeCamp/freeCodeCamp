@@ -21,7 +21,7 @@ const mapStateToProps = createSelector(
     return {
       panes: panes
         .map(({ name }) => panesByName[name])
-        .filter(({ isHidden })=> !isHidden)
+        .filter(({ isHidden }) => !isHidden)
         .map((pane, index, { length: numOfPanes }) => {
           const dividerLeft = pane.dividerLeft || 0;
           const left = lastDividerPosition;
@@ -49,32 +49,21 @@ export class Panes extends PureComponent {
     this.props.panesMounted();
   }
   renderPanes() {
-    const {
-      render,
-      panes
-    } = this.props;
-    return panes.map(({ name, left, right, dividerLeft }) => {
-      const divider = dividerLeft ?
-        (
-          <Divider
-            key={ name + 'divider' }
-            left={ dividerLeft }
-            name={ name }
-          />
-        ) :
-        null;
+    const { render, panes } = this.props;
+    return panes
+      .map(({ name, left, right, dividerLeft }) => {
+        const divider = dividerLeft ? (
+          <Divider key={name + 'divider'} left={dividerLeft} name={name} />
+        ) : null;
 
-      return [
-        <Pane
-          key={ name }
-          left={ left }
-          right={ right }
-          >
-          { render(name) }
-        </Pane>,
-        divider
-      ];
-    }).reduce((panes, pane) => panes.concat(pane), [])
+        return [
+          <Pane key={name} left={left} right={right}>
+            {render(name)}
+          </Pane>,
+          divider
+        ];
+      })
+      .reduce((panes, pane) => panes.concat(pane), [])
       .filter(Boolean);
   }
 
@@ -93,9 +82,7 @@ export class Panes extends PureComponent {
     };
     return (
       <div style={outerStyle}>
-        <div style={innerStyle}>
-          { this.renderPanes() }
-        </div>
+        <div style={innerStyle}>{this.renderPanes()}</div>
       </div>
     );
   }
@@ -104,7 +91,4 @@ export class Panes extends PureComponent {
 Panes.displayName = 'Panes';
 Panes.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Panes);
+export default connect(mapStateToProps, mapDispatchToProps)(Panes);

@@ -10,35 +10,27 @@ const propTypes = {
   value: PropTypes.bool.isRequired
 };
 
-export default function ToggleButton({
-  name,
-  onChange,
-  value
-}) {
+export default function ToggleButton({ name, onChange, value }) {
   return (
-    <div className={ `${ns}-container` }>
-      <BSBG
-        name={ name }
-        onChange={ onChange }
-        type='radio'
-        >
+    <div className={`${ns}-container`}>
+      <BSBG name={name} onChange={onChange} type='radio'>
         <TB
           bsSize='lg'
           bsStyle='primary'
-          className={ value && 'active' }
-          disabled={ value }
+          className={value && 'active'}
+          disabled={value}
           type='radio'
-          value={ 1 }
+          value={1}
           >
           On
         </TB>
         <TB
           bsSize='lg'
           bsStyle='primary'
-          className={ !value && 'active' }
-          disabled={ !value }
+          className={!value && 'active'}
+          disabled={!value}
           type='radio'
-          value={ 2 }
+          value={2}
           >
           Off
         </TB>

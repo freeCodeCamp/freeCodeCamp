@@ -14,7 +14,7 @@ import { locationTypeSelector } from '../../Router/redux';
 export const routes = {
   [types.onRouteChallengeRoot]: {
     path: '/challenges',
-    thunk: (dispatch) =>
+    thunk: dispatch =>
       dispatch(redirect({ type: types.onRouteCurrentChallenge }))
   },
   [types.onRouteChallenges]: '/challenges/:block/:dashedName',

@@ -7,7 +7,6 @@ import {
   storedCodeFound,
   noStoredCodeFound,
   previousSolutionFound,
-
   keySelector,
   codeLockedSelector
 } from './';
@@ -59,13 +58,11 @@ function legacyToFile(code, files, key) {
     return { [key]: setContent(code, files[key]) };
   }
   return false;
-  }
+}
 
 function clearCodeEpic(actions, { getState }) {
-  return actions::ofType(
-    types.submitChallenge.complete,
-    types.clickOnReset
-  )
+  return actions
+    ::ofType(types.submitChallenge.complete, types.clickOnReset)
     .do(() => {
       const { id } = challengeSelector(getState());
       store.remove(id);
@@ -74,88 +71,88 @@ function clearCodeEpic(actions, { getState }) {
 }
 
 function saveCodeEpic(actions, { getState }) {
-  return actions::ofType(types.executeChallenge)
-    // do not save challenge if code is locked
-    .filter(() => !codeLockedSelector(getState()))
-    .do(() => {
-      const { id } = challengeSelector(getState());
-      const files = filesSelector(getState());
-      store.set(id, files);
-    })
-    .ignoreElements();
+  return (
+    actions
+      ::ofType(types.executeChallenge)
+      // do not save challenge if code is locked
+      .filter(() => !codeLockedSelector(getState()))
+      .do(() => {
+        const { id } = challengeSelector(getState());
+        const files = filesSelector(getState());
+        store.set(id, files);
+      })
+      .ignoreElements()
+  );
 }
 
 function loadCodeEpic(actions, { getState }, { window, location }) {
-  return Observable.merge(
+  return (
+    Observable.merge(
       actions::ofType(app.appMounted),
-      actions::ofType(types.onRouteChallenges)
+      actions
+        ::ofType(types.onRouteChallenges)
         .distinctUntilChanged(({ payload: { dashedName } }) => dashedName)
     )
-    // make sure we are not SSR
-    .filter(() => !!window)
-    .flatMap(() => {
-      let finalFiles;
-      const state = getState();
-      const challenge = challengeSelector(state);
-      const key = keySelector(state);
-      const files = filesSelector(state);
-      const {
-        id,
-        name: legacyKey
-      } = challenge;
-      const codeUriFound = getCodeUri(
-        location,
-        window.decodeURIComponent
-      );
-      if (codeUriFound) {
-        finalFiles = legacyToFile(codeUriFound, files, key);
-        removeCodeUri(location, window.history);
-        return Observable.of(
-          makeToast({
-            message: 'I found code in the URI. Loading now.'
-          }),
-          storedCodeFound(challenge, finalFiles)
-        );
-      }
-
-      const codeFound = getCode(id);
-      if (codeFound && isPoly(codeFound)) {
-        finalFiles = codeFound;
-      } else {
-        const legacyCode = getLegacyCode(legacyKey);
-        if (legacyCode) {
-          finalFiles = legacyToFile(legacyCode, files, key);
+      // make sure we are not SSR
+      .filter(() => !!window)
+      .flatMap(() => {
+        let finalFiles;
+        const state = getState();
+        const challenge = challengeSelector(state);
+        const key = keySelector(state);
+        const files = filesSelector(state);
+        const { id, name: legacyKey } = challenge;
+        const codeUriFound = getCodeUri(location, window.decodeURIComponent);
+        if (codeUriFound) {
+          finalFiles = legacyToFile(codeUriFound, files, key);
+          removeCodeUri(location, window.history);
+          return Observable.of(
+            makeToast({
+              message: 'I found code in the URI. Loading now.'
+            }),
+            storedCodeFound(challenge, finalFiles)
+          );
         }
-      }
 
-      if (finalFiles) {
-        return Observable.of(
-          makeToast({
-            message: 'I found some saved work. Loading now.'
-          }),
-          storedCodeFound(challenge, finalFiles)
-        );
-      }
-
-      if (previousSolutionSelector(getState())) {
-        const userChallenge = previousSolutionSelector(getState());
-        if (userChallenge.files) {
-          finalFiles = userChallenge.files;
-        } else if (userChallenge.solution) {
-          finalFiles = legacyToFile(userChallenge.solution, files, key);
+        const codeFound = getCode(id);
+        if (codeFound && isPoly(codeFound)) {
+          finalFiles = codeFound;
+        } else {
+          const legacyCode = getLegacyCode(legacyKey);
+          if (legacyCode) {
+            finalFiles = legacyToFile(legacyCode, files, key);
+          }
         }
+
         if (finalFiles) {
           return Observable.of(
             makeToast({
-              message: 'I found a previous solved solution. Loading now.'
+              message: 'I found some saved work. Loading now.'
             }),
-            previousSolutionFound(challenge, finalFiles)
+            storedCodeFound(challenge, finalFiles)
           );
         }
-      }
 
-      return Observable.of(noStoredCodeFound());
-    });
+        if (previousSolutionSelector(getState())) {
+          const userChallenge = previousSolutionSelector(getState());
+          if (userChallenge.files) {
+            finalFiles = userChallenge.files;
+          } else if (userChallenge.solution) {
+            finalFiles = legacyToFile(userChallenge.solution, files, key);
+          }
+          if (finalFiles) {
+            return Observable.of(
+              makeToast({
+                message: 'I found a previous solved solution. Loading now.'
+              }),
+              previousSolutionFound(challenge, finalFiles)
+            );
+          }
+        }
+
+        return Observable.of(noStoredCodeFound());
+      })
+  );
 }
 
 function findPreviousSolutionEpic(actions, { getState }) {
@@ -186,7 +183,6 @@ function findPreviousSolutionEpic(actions, { getState }) {
       return Observable.empty();
     });
 }
-
 
 export default combineEpics(
   saveCodeEpic,

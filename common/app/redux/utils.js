@@ -5,8 +5,7 @@ export function filterComingSoonBetaChallenge(
   isDev = false,
   { isComingSoon, isBeta }
 ) {
-  return !(isComingSoon || isBeta) ||
-    isDev;
+  return !(isComingSoon || isBeta) || isDev;
 }
 
 export function filterComingSoonBetaFromEntities(
@@ -27,7 +26,7 @@ export function filterComingSoonBetaFromEntities(
 
         return {
           ...block,
-          challenges: [ ...filteredChallenges ]
+          challenges: [...filteredChallenges]
         };
       })
       .reduce((blockMap, block) => {

@@ -4,25 +4,18 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Button, ButtonGroup } from 'react-bootstrap';
-import {
-  FrontEndForm,
-  BackEndForm
-} from './Forms.jsx';
+import { FrontEndForm, BackEndForm } from './Forms.jsx';
 
 import { submittingSelector } from './redux';
 
 import {
   submitChallenge,
-
   openHelpModal,
   chatRoomSelector,
   guideURLSelector
 } from '../../redux';
 
-import {
-  signInLoadingSelector,
-  challengeSelector
-} from '../../../../redux';
+import { signInLoadingSelector, challengeSelector } from '../../../../redux';
 import {
   simpleProject,
   frontEndProject
@@ -66,17 +59,17 @@ const mapStateToProps = createSelector(
 
 export class ToolPanel extends PureComponent {
   renderSubmitButton(isSignedIn, submitChallenge) {
-    const buttonCopy = isSignedIn ?
-      'Submit and go to my next challenge' :
-      "I've completed this challenge";
+    const buttonCopy = isSignedIn
+      ? 'Submit and go to my next challenge'
+      : "I've completed this challenge";
     return (
       <Button
-        block={ true }
+        block={true}
         bsStyle='primary'
         className='btn-big'
-        onClick={ submitChallenge }
+        onClick={submitChallenge}
         >
-        { buttonCopy } (ctrl + enter)
+        {buttonCopy} (ctrl + enter)
       </Button>
     );
   }
@@ -96,36 +89,36 @@ export class ToolPanel extends PureComponent {
     const FormElement = isFrontEnd ? FrontEndForm : BackEndForm;
     return (
       <div>
-        {
-          isSimple ?
-            this.renderSubmitButton(isSignedIn, submitChallenge) :
-            <FormElement isSubmitting={ isSubmitting }/>
-        }
+        {isSimple ? (
+          this.renderSubmitButton(isSignedIn, submitChallenge)
+        ) : (
+          <FormElement isSubmitting={isSubmitting} />
+        )}
         <div className='button-spacer' />
-        <ButtonGroup vertical={ true }>
+        <ButtonGroup vertical={true}>
           <Button
             bsStyle='primary'
             className='btn-primary-ghost btn-big'
             componentClass='a'
-            href={ `https://gitter.im/freecodecamp/${helpChatRoom}` }
+            href={`https://gitter.im/freecodecamp/${helpChatRoom}`}
             target='_blank'
             >
             Help
           </Button>
           <Button
-            block={ true }
+            block={true}
             bsStyle='primary'
             className='btn-primary-ghost btn-big'
-            href={ guideUrl }
+            href={guideUrl}
             target='_blank'
             >
             Get a hint
           </Button>
           <Button
-            block={ true }
+            block={true}
             bsStyle='primary'
             className='btn-primary-ghost btn-big'
-            onClick={ openHelpModal }
+            onClick={openHelpModal}
             >
             Ask for help on the forum
           </Button>
@@ -138,7 +131,4 @@ export class ToolPanel extends PureComponent {
 ToolPanel.displayName = 'ProjectToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ToolPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);

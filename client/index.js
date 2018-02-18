@@ -11,13 +11,9 @@ import { getLangFromPath } from '../common/app/utils/lang';
 // client specific epics
 import epics from './epics';
 
-import {
-  isColdStored,
-  getColdStorage,
-  saveToColdStorage
-} from './cold-reload';
+import { isColdStored, getColdStorage, saveToColdStorage } from './cold-reload';
 
-const isDev = Rx.config.longStackSupport = debug.enabled('fcc:*');
+const isDev = (Rx.config.longStackSupport = debug.enabled('fcc:*'));
 const log = debug('fcc:client');
 const hotReloadTimeout = 2000;
 const {
@@ -26,12 +22,7 @@ const {
   history: _history,
   document,
   ga,
-  __fcc__: {
-    data: ssrState = {},
-    csrf: {
-      token: csrfToken
-    } = {}
-  }
+  __fcc__: { data: ssrState = {}, csrf: { token: csrfToken } = {} }
 } = window;
 const epicOptions = {
   isDev,
@@ -42,9 +33,7 @@ const epicOptions = {
 };
 
 const DOMContainer = document.getElementById('fcc');
-const defaultState = isColdStored() ?
-  getColdStorage() :
-  ssrState;
+const defaultState = isColdStored() ? getColdStorage() : ssrState;
 const primaryLang = getLangFromPath(location.pathname);
 
 defaultState.app.csrfToken = csrfToken;
@@ -55,13 +44,13 @@ const history = useLangRoutes(createHistory, primaryLang)();
 sendPageAnalytics(history, ga);
 
 createApp({
-    history,
-    serviceOptions,
-    defaultState,
-    epics,
-    epicOptions,
-    enhancers: isDev && devToolsExtension && [ devToolsExtension() ]
-  })
+  history,
+  serviceOptions,
+  defaultState,
+  epics,
+  epicOptions,
+  enhancers: isDev && devToolsExtension && [devToolsExtension()]
+})
   .doOnNext(({ store }) => {
     if (module.hot && typeof module.hot.accept === 'function') {
       module.hot.accept(() => {
@@ -78,6 +67,8 @@ createApp({
   .flatMap(({ store }) => render(provideStore(App, store), DOMContainer))
   .subscribe(
     () => debug('react rendered'),
-    err => { throw err; },
+    err => {
+      throw err;
+    },
     () => debug('react closed subscription')
   );

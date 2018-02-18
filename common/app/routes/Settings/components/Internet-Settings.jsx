@@ -12,12 +12,7 @@ import { updateUserBackend } from '../redux';
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({
-    githubURL = '',
-    linkedin = '',
-    twitter = '',
-    website = ''
-  }) => ({
+  ({ githubURL = '', linkedin = '', twitter = '', website = '' }) => ({
     initialValues: {
       githubURL,
       linkedin,
@@ -27,12 +22,15 @@ const mapStateToProps = createSelector(
   })
 );
 
-const formFields = [ 'githubURL', 'linkedin', 'twitter', 'website' ];
+const formFields = ['githubURL', 'linkedin', 'twitter', 'website'];
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    updateUserBackend
-  }, dispatch);
+  return bindActionCreators(
+    {
+      updateUserBackend
+    },
+    dispatch
+  );
 }
 
 const propTypes = {
@@ -73,21 +71,16 @@ class InternetSettings extends PureComponent {
     };
     return (
       <div className='internet-settings'>
-        <SectionHeader>
-          Your Internet Presence
-        </SectionHeader>
+        <SectionHeader>Your Internet Presence</SectionHeader>
         <FullWidthRow>
           <form
             id='internet-handle-settings'
-            onSubmit={ handleSubmit(this.handleSubmit) }
+            onSubmit={handleSubmit(this.handleSubmit)}
             >
-            <FormFields
-              fields={ fields }
-              options={ options }
-            />
+            <FormFields fields={fields} options={options} />
             <Spacer />
             <BlockSaveWrapper>
-              <BlockSaveButton disabled={ allPristine }/>
+              <BlockSaveButton disabled={allPristine} />
             </BlockSaveWrapper>
           </form>
         </FullWidthRow>

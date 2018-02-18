@@ -8,9 +8,9 @@ import castToObservable from '../../../utils/cast-to-observable.js';
 
 const HTML$JSReg = /html|js/;
 
-const testHTMLJS = conforms({ ext: (ext) => HTML$JSReg.test(ext) });
+const testHTMLJS = conforms({ ext: ext => HTML$JSReg.test(ext) });
 // const testJS = matchesProperty('ext', 'js');
-const passToNext = [ stubTrue, identity ];
+const passToNext = [stubTrue, identity];
 
 // Detect if a JS multi-line comment is left open
 const throwIfOpenComments = cond([
@@ -30,7 +30,6 @@ const throwIfOpenComments = cond([
   passToNext
 ]);
 
-
 // Nested dollar sign calls breaks browsers
 const nestedJQCallReg = /\$\s*?\(\s*?\$\s*?\)/gi;
 const throwIfNestedJquery = cond([
@@ -49,23 +48,16 @@ const functionReg = /function/g;
 const functionCallReg = /function\s*?\(|function\s+\w+\s*?\(/gi;
 // lonely function keywords breaks browsers
 const ThrowIfUnfinishedFunction = cond([
-
   [
     testHTMLJS,
     function({ contents }) {
-      if (
-        functionReg.test(contents) &&
-        !functionCallReg.test(contents)
-      ) {
-        throw new SyntaxError(
-          'Unsafe or unfinished function declaration'
-        );
+      if (functionReg.test(contents) && !functionCallReg.test(contents)) {
+        throw new SyntaxError('Unsafe or unfinished function declaration');
       }
     }
   ],
   passToNext
 ]);
-
 
 // console call stops tests scripts from running
 const unsafeConsoleCallReg = /if\s\(null\)\sconsole\.log\(1\);/gi;
@@ -106,19 +98,26 @@ const validators = [
 ];
 
 export default function validate(file) {
-  return validators.reduce((obs, validator) => obs.flatMap(file => {
-    try {
-      return castToObservable(validator(file));
-    } catch (err) {
-      return Observable.throw(err);
-    }
-  }), Observable.of(file))
-    // if no error has occured map to the original file
-    .map(() => file)
-    // if err add it to the file
-    // and return file
-    .catch(err => {
-      file.error = err;
-      return Observable.just(file);
-    });
+  return (
+    validators
+      .reduce(
+        (obs, validator) =>
+          obs.flatMap(file => {
+            try {
+              return castToObservable(validator(file));
+            } catch (err) {
+              return Observable.throw(err);
+            }
+          }),
+        Observable.of(file)
+      )
+      // if no error has occured map to the original file
+      .map(() => file)
+      // if err add it to the file
+      // and return file
+      .catch(err => {
+        file.error = err;
+        return Observable.just(file);
+      })
+  );
 }

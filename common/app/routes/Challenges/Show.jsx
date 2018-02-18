@@ -12,11 +12,7 @@ import BackEnd from './views/backend';
 import Quiz from './views/quiz';
 import Modern from './views/Modern';
 
-import {
-  fetchChallenge,
-  challengeSelector,
-  updateTitle
-} from '../../redux';
+import { fetchChallenge, challengeSelector, updateTitle } from '../../redux';
 import { makeToast } from '../../Toasts/redux';
 import { paramsSelector } from '../../Router/redux';
 
@@ -40,11 +36,7 @@ const mapStateToProps = createSelector(
   challengeSelector,
   challengeMetaSelector,
   paramsSelector,
-  (
-    { dashedName, isTranslated },
-    { viewType, title },
-    params
-  ) => ({
+  ({ dashedName, isTranslated }, { viewType, title }, params) => ({
     challenge: dashedName,
     isTranslated,
     params,
@@ -53,10 +45,15 @@ const mapStateToProps = createSelector(
   })
 );
 
-const link = 'http://forum.freecodecamp.org/t/' +
+const link =
+  'http://forum.freecodecamp.org/t/' +
   'guidelines-for-translating-free-code-camp' +
   '-to-any-language/19111';
-const helpUsTranslate = <a href={ link } target='_blank'>Help Us</a>;
+const helpUsTranslate = (
+  <a href={link} target='_blank'>
+    Help Us
+  </a>
+);
 const propTypes = {
   isTranslated: PropTypes.bool,
   makeToast: PropTypes.func.isRequired,
@@ -71,14 +68,13 @@ const propTypes = {
 };
 
 export class Show extends PureComponent {
-
   isNotTranslated({ isTranslated, params: { lang } }) {
     return lang !== 'en' && !isTranslated;
   }
 
   makeTranslateToast() {
     this.props.makeToast({
-      message: 'We haven\'t translated this challenge yet.',
+      message: "We haven't translated this challenge yet.",
       action: helpUsTranslate,
       timeout: 15000
     });

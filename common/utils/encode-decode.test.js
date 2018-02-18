@@ -16,18 +16,12 @@ const scriptEncoded = `
 `;
 test('encodeScriptTags', t => {
   t.plan(1);
-  t.equal(
-    encodeScriptTags(scriptDecoded),
-    scriptEncoded
-  );
+  t.equal(encodeScriptTags(scriptDecoded), scriptEncoded);
 });
 
 test('decodeScriptTags', t => {
   t.plan(1);
-  t.equal(
-    decodeScriptTags(scriptEncoded),
-    scriptDecoded
-  );
+  t.equal(decodeScriptTags(scriptEncoded), scriptDecoded);
 });
 
 const formDecoded = `
@@ -39,18 +33,12 @@ const formEncoded = `
 
 test('encodeFormAction', t => {
   t.plan(1);
-  t.equal(
-    encodeFormAction(formDecoded),
-    formEncoded
-  );
+  t.equal(encodeFormAction(formDecoded), formEncoded);
 });
 
 test('decodeFormAction', t => {
   t.plan(1);
-  t.equal(
-    decodeFormAction(formEncoded),
-    formDecoded
-  );
+  t.equal(decodeFormAction(formEncoded), formDecoded);
 });
 
 test('encodeFcc', t => {
@@ -63,8 +51,5 @@ test('encodeFcc', t => {
 
 test('decodeFcc', t => {
   t.plan(1);
-  t.equal(
-    decodeFcc(scriptEncoded + formEncoded),
-    scriptDecoded + formDecoded
-  );
+  t.equal(decodeFcc(scriptEncoded + formEncoded), scriptDecoded + formDecoded);
 });

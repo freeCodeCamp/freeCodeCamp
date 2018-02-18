@@ -1,8 +1,5 @@
 import { ofType } from 'redux-epic';
-import {
-  types,
-  closeHelpModal
-} from '../redux';
+import { types, closeHelpModal } from '../redux';
 
 import { filesSelector } from '../../../files';
 import { currentChallengeSelector } from '../../../redux';
@@ -16,15 +13,17 @@ function filesToMarkdown(files = {}) {
     }
     const fileName = moreThenOneFile ? `\\ file: ${file.contents}` : '';
     const fileType = file.ext;
-    return fileString +
-      '\`\`\`' +
+    return (
+      fileString +
+      '```' +
       fileType +
       '\n' +
       fileName +
       '\n' +
       file.contents +
       '\n' +
-      '\`\`\`\n\n';
+      '```\n\n'
+    );
   }, '\n');
 }
 
@@ -33,12 +32,9 @@ export function createQuestionEpic(actions, { getState }, { window }) {
     const state = getState();
     const files = filesSelector(state);
     const challengeName = currentChallengeSelector(state);
-    const {
-      navigator: { userAgent },
-      location: { href }
-    } = window;
+    const { navigator: { userAgent }, location: { href } } = window;
     const textMessage = [
-      '**Tell us what\'s happening:**\n\n\n\n',
+      "**Tell us what's happening:**\n\n\n\n",
       '**Your code so far**\n',
       filesToMarkdown(files),
       '**Your browser information:**\n\n',
@@ -50,10 +46,12 @@ export function createQuestionEpic(actions, { getState }, { window }) {
     ].join('');
 
     window.open(
-      'https://forum.freecodecamp.org/new-topic'
-      + '?category=help'
-      + '&title=' + window.encodeURIComponent(challengeName)
-      + '&body=' + window.encodeURIComponent(textMessage),
+      'https://forum.freecodecamp.org/new-topic' +
+        '?category=help' +
+        '&title=' +
+        window.encodeURIComponent(challengeName) +
+        '&body=' +
+        window.encodeURIComponent(textMessage),
       '_blank'
     );
 

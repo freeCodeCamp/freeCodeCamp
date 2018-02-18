@@ -8,12 +8,7 @@ import { getChallengeById, cachedMap } from '../utils/map';
 
 const log = debug('fcc:boot:challenges');
 
-function buildUserUpdate(
-  user,
-  challengeId,
-  completedChallenge,
-  timezone
-) {
+function buildUserUpdate(user, challengeId, completedChallenge, timezone) {
   let finalChallenge;
   let numOfAttempts = 1;
   const updateData = { $set: {} };
@@ -85,17 +80,9 @@ export default function(app) {
 
   // deprecate endpoint
   // remove once new endpoint is live
-  api.post(
-    '/completed-challenge',
-    send200toNonUser,
-    completedChallenge
-  );
+  api.post('/completed-challenge', send200toNonUser, completedChallenge);
 
-  api.post(
-    '/challenge-completed',
-    send200toNonUser,
-    completedChallenge
-  );
+  api.post('/challenge-completed', send200toNonUser, completedChallenge);
 
   // deprecate endpoint
   // remove once new endpoint is live
@@ -105,11 +92,7 @@ export default function(app) {
     projectCompleted
   );
 
-  api.post(
-    '/project-completed',
-    send200toNonUser,
-    projectCompleted
-  );
+  api.post('/project-completed', send200toNonUser, projectCompleted);
 
   api.post(
     '/backend-challenge-completed',
@@ -117,10 +100,7 @@ export default function(app) {
     backendChallengeCompleted
   );
 
-  router.get(
-    '/challenges/current-challenge',
-    redirectToCurrentChallenge
-  );
+  router.get('/challenges/current-challenge', redirectToCurrentChallenge);
 
   app.use(api);
   app.use('/:lang', router);
@@ -128,7 +108,8 @@ export default function(app) {
   function modernChallengeCompleted(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
-    req.checkBody('files', 'files must be an object with polyvinyls for keys')
+    req
+      .checkBody('files', 'files must be an object with polyvinyls for keys')
       .isFiles();
 
     const errors = req.validationErrors(true);
@@ -142,19 +123,13 @@ export default function(app) {
     }
 
     const user = req.user;
-    return user.getChallengeMap$()
+    return user
+      .getChallengeMap$()
       .flatMap(() => {
         const completedDate = Date.now();
-        const {
-          id,
-          files
-        } = req.body;
+        const { id, files } = req.body;
 
-        const {
-          alreadyCompleted,
-          updateData,
-          lastUpdated
-        } = buildUserUpdate(
+        const { alreadyCompleted, updateData, lastUpdated } = buildUserUpdate(
           user,
           id,
           { id, files, completedDate }
@@ -162,7 +137,8 @@ export default function(app) {
 
         const points = alreadyCompleted ? user.points : user.points + 1;
 
-        return user.update$(updateData)
+        return user
+          .update$(updateData)
           .doOnNext(({ count }) => log('%s documents updated', count))
           .map(() => {
             if (type === 'json') {
@@ -193,16 +169,13 @@ export default function(app) {
       return res.sendStatus(403);
     }
 
-    return req.user.getChallengeMap$()
+    return req.user
+      .getChallengeMap$()
       .flatMap(() => {
         const completedDate = Date.now();
         const { id, solution, timezone } = req.body;
 
-        const {
-          alreadyCompleted,
-          updateData,
-          lastUpdated
-        } = buildUserUpdate(
+        const { alreadyCompleted, updateData, lastUpdated } = buildUserUpdate(
           req.user,
           id,
           { id, solution, completedDate },
@@ -212,7 +185,8 @@ export default function(app) {
         const user = req.user;
         const points = alreadyCompleted ? user.points : user.points + 1;
 
-        return user.update$(updateData)
+        return user
+          .update$(updateData)
           .doOnNext(({ count }) => log('%s documents updated', count))
           .map(() => {
             if (type === 'json') {
@@ -247,37 +221,37 @@ export default function(app) {
 
     const { user, body = {} } = req;
 
-    const completedChallenge = _.pick(
-      body,
-      [ 'id', 'solution', 'githubLink', 'challengeType' ]
-    );
+    const completedChallenge = _.pick(body, [
+      'id',
+      'solution',
+      'githubLink',
+      'challengeType'
+    ]);
     completedChallenge.completedDate = Date.now();
 
     if (
       !completedChallenge.solution ||
       // only basejumps require github links
-      (
-        completedChallenge.challengeType === 4 &&
-        !completedChallenge.githubLink
-      )
+      (completedChallenge.challengeType === 4 && !completedChallenge.githubLink)
     ) {
       req.flash(
         'danger',
-        'You haven\'t supplied the necessary URLs for us to inspect your work.'
+        "You haven't supplied the necessary URLs for us to inspect your work."
       );
       return res.sendStatus(403);
     }
 
-
-    return user.getChallengeMap$()
+    return user
+      .getChallengeMap$()
       .flatMap(() => {
-        const {
-          alreadyCompleted,
-          updateData,
-          lastUpdated
-        } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
+        const { alreadyCompleted, updateData, lastUpdated } = buildUserUpdate(
+          user,
+          completedChallenge.id,
+          completedChallenge
+        );
 
-        return user.update$(updateData)
+        return user
+          .update$(updateData)
           .doOnNext(({ count }) => log('%s documents updated', count))
           .doOnNext(() => {
             if (type === 'json') {
@@ -311,22 +285,20 @@ export default function(app) {
 
     const { user, body = {} } = req;
 
-    const completedChallenge = _.pick(
-      body,
-      [ 'id', 'solution' ]
-    );
+    const completedChallenge = _.pick(body, ['id', 'solution']);
     completedChallenge.completedDate = Date.now();
 
-
-    return user.getChallengeMap$()
+    return user
+      .getChallengeMap$()
       .flatMap(() => {
-        const {
-          alreadyCompleted,
-          updateData,
-          lastUpdated
-        } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
+        const { alreadyCompleted, updateData, lastUpdated } = buildUserUpdate(
+          user,
+          completedChallenge.id,
+          completedChallenge
+        );
 
-        return user.update$(updateData)
+        return user
+          .update$(updateData)
           .doOnNext(({ count }) => log('%s documents updated', count))
           .doOnNext(() => {
             if (type === 'json') {
@@ -353,16 +325,13 @@ export default function(app) {
           // this should normally not be hit if database is properly seeded
           throw new Error(dedent`
             Attempted to find '${dashedName}'
-            from '${ challengeId || 'no challenge id found'}'
+            from '${challengeId || 'no challenge id found'}'
             but came up empty.
             db may not be properly seeded.
           `);
         }
         return `/challenges/${block}/${dashedName}`;
       })
-      .subscribe(
-        redirect => res.redirect(redirect || '/'),
-        next
-      );
+      .subscribe(redirect => res.redirect(redirect || '/'), next);
   }
 }

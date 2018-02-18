@@ -68,9 +68,9 @@ function parseXhrResponse(responseType, xhr) {
   switch (responseType) {
     case 'json':
       if ('response' in xhr) {
-        return xhr.responseType ?
-          xhr.response :
-          JSON.parse(xhr.response || xhr.responseText || 'null');
+        return xhr.responseType
+          ? xhr.response
+          : JSON.parse(xhr.response || xhr.responseText || 'null');
       } else {
         return JSON.parse(xhr.responseText || 'null');
       }
@@ -78,7 +78,7 @@ function parseXhrResponse(responseType, xhr) {
       return xhr.responseXML;
     case 'text':
     default:
-      return ('response' in xhr) ? xhr.response : xhr.responseText;
+      return 'response' in xhr ? xhr.response : xhr.responseText;
   }
 }
 
@@ -197,10 +197,7 @@ export function ajax$(options) {
         }
       }
 
-      if (
-        !xhr.upload ||
-        (!('withCredentials' in xhr) && root.XDomainRequest)
-      ) {
+      if (!xhr.upload || (!('withCredentials' in xhr) && root.XDomainRequest)) {
         xhr.onload = function(e) {
           if (settings.progressObserver) {
             settings.progressObserver.onNext(e);
@@ -231,7 +228,6 @@ export function ajax$(options) {
           isDone = true;
         };
       } else {
-
         xhr.onreadystatechange = function(e) {
           if (xhr.readyState === 4) {
             processResponse(xhr, e);
@@ -239,17 +235,16 @@ export function ajax$(options) {
         };
       }
 
-      debug(
-        'ajax$ sending content',
-        settings.hasContent && settings.body
-      );
-      xhr.send(settings.hasContent && settings.body || null);
+      debug('ajax$ sending content', settings.hasContent && settings.body);
+      xhr.send((settings.hasContent && settings.body) || null);
     } catch (err) {
       observer.onError(err);
     }
 
     return function() {
-      if (!isDone && xhr.readyState !== 4) { xhr.abort(); }
+      if (!isDone && xhr.readyState !== 4) {
+        xhr.abort();
+      }
     };
   });
 }
@@ -284,8 +279,7 @@ export function postJSON$(url, body) {
       Accept: 'application/json'
     },
     normalizeError: (e, xhr) => parseXhrResponse('json', xhr)
-  })
-    .map(({ response }) => response);
+  }).map(({ response }) => response);
 }
 
 // Creates an observable sequence from an Ajax GET Request with the body.
@@ -295,11 +289,11 @@ export function get$(url) {
 }
 
 /**
-  * Creates an observable sequence from JSON from an Ajax request
-  *
-  * @param {String} url The URL to GET
-  * @returns {Observable} The observable sequence which contains the parsed JSON
-  */
+ * Creates an observable sequence from JSON from an Ajax request
+ *
+ * @param {String} url The URL to GET
+ * @returns {Observable} The observable sequence which contains the parsed JSON
+ */
 // getJSON$(url: String) => Observable[Object];
 export function getJSON$(url) {
   return ajax$({

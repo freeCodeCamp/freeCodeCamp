@@ -160,7 +160,7 @@ export default {
     link: true,
     failureFlash: true,
     successFlash: [
-      'We\'ve updated your profile based ',
+      "We've updated your profile based ",
       'on your your GitHub account.'
     ].join('')
   }

@@ -4,7 +4,6 @@ import {
   filterComingSoonBetaFromEntities
 } from './utils.js';
 
-
 test.test('filterComingSoonBetaChallenge', t => {
   t.plan(4);
   t.test('should return true when not coming-soon/beta', t => {
@@ -27,10 +26,9 @@ test.test('filterComingSoonBetaChallenge', t => {
     let isDev = true;
     t.ok(filterComingSoonBetaChallenge(isDev, { isBeta: true }));
     t.ok(filterComingSoonBetaChallenge(isDev, { isComingSoon: true }));
-    t.ok(filterComingSoonBetaChallenge(
-      isDev,
-      { isBeta: true, isCompleted: true }
-    ));
+    t.ok(
+      filterComingSoonBetaChallenge(isDev, { isBeta: true, isCompleted: true })
+    );
     t.end();
   });
 });
@@ -78,11 +76,10 @@ test.test('filterComingSoonBetaFromEntities', t => {
     );
 
     const challengesFromBlocks = [];
-    Object.keys(actual.block)
-      .forEach(block => {
-        const challenges = actual.block[block].challenges;
-        challenges.forEach(challenge => challengesFromBlocks.push(challenge));
-      });
+    Object.keys(actual.block).forEach(block => {
+      const challenges = actual.block[block].challenges;
+      challenges.forEach(challenge => challengesFromBlocks.push(challenge));
+    });
     t.isEqual(
       challengesFromBlocks.length,
       1,
@@ -133,20 +130,11 @@ test.test('filterComingSoonBetaFromEntities', t => {
       }
     };
     const actual = filterComingSoonBetaFromEntities(entities, true);
-    t.isEqual(
-      Object.keys(actual.challenge).length,
-      4,
-      'filtered challenges'
-    );
+    t.isEqual(Object.keys(actual.challenge).length, 4, 'filtered challenges');
     let challengesFromBlocksCount = 0;
-    Object.keys(actual.block)
-      .forEach(block => {
-        challengesFromBlocksCount += actual.block[block].challenges.length;
-      });
-    t.isEqual(
-      challengesFromBlocksCount,
-      4,
-      'filtered challenges from blocks'
-    );
+    Object.keys(actual.block).forEach(block => {
+      challengesFromBlocksCount += actual.block[block].challenges.length;
+    });
+    t.isEqual(challengesFromBlocksCount, 4, 'filtered challenges from blocks');
   });
 });

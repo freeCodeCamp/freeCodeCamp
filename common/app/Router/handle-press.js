@@ -1,14 +1,8 @@
 import { pathToAction, redirect, getOptions } from 'redux-first-router';
 
-const isAction = to => typeof to === 'object' &&
-  !Array.isArray(to);
+const isAction = to => typeof to === 'object' && !Array.isArray(to);
 
-const isModified = e => !!(
-  e.metaKey ||
-  e.altKey ||
-  e.ctrlKey ||
-  e.shiftKey
-);
+const isModified = e => !!(e.metaKey || e.altKey || e.ctrlKey || e.shiftKey);
 
 export default (
   url,

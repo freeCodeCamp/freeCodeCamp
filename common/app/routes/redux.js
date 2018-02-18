@@ -1,7 +1,6 @@
 import { isLocationAction } from 'redux-first-router';
 import { combineReducers } from 'berkeleys-redux-utils';
 
-
 import challengeReducer from './Challenges/redux';
 import settingsReducer from './Settings/redux';
 import { routes as challengeRoutes } from './Challenges';
@@ -27,8 +26,4 @@ export function mainRouter(state = 'NotFound', action) {
 
 mainRouter.toString = () => ns;
 
-export default combineReducers(
-  challengeReducer,
-  settingsReducer,
-  mainRouter
-);
+export default combineReducers(challengeReducer, settingsReducer, mainRouter);

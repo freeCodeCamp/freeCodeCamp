@@ -29,16 +29,17 @@ function postChallenge(url, username, _csrf, challengeInfo) {
       const saveChallenge = postJSON$(url, body)
         .retry(3)
         .map(({ points, lastUpdated, completedDate }) =>
-          submitChallengeComplete(
-            username,
-            points,
-            { ...challengeInfo, lastUpdated, completedDate }
-          )
+          submitChallengeComplete(username, points, {
+            ...challengeInfo,
+            lastUpdated,
+            completedDate
+          })
         )
         .catch(createErrorObservable);
       const challengeCompleted = Observable.of(moveToNextChallenge());
-      return Observable.merge(saveChallenge, challengeCompleted)
-        .startWith({ type: types.submitChallenge.start });
+      return Observable.merge(saveChallenge, challengeCompleted).startWith({
+        type: types.submitChallenge.start
+      });
     }),
     Observable.of(moveToNextChallenge())
   );
@@ -56,17 +57,13 @@ function submitModern(type, state) {
       const files = filesSelector(state);
       const { username } = userSelector(state);
       const csrfToken = csrfSelector(state);
-      return postChallenge(
-        '/modern-challenge-completed',
-        username,
-        csrfToken,
-        { id, files }
-      );
+      return postChallenge('/modern-challenge-completed', username, csrfToken, {
+        id,
+        files
+      });
     }
   }
-  return Observable.just(
-    makeToast({ message: 'Keep trying.' })
-  );
+  return Observable.just(makeToast({ message: 'Keep trying.' }));
 }
 
 function submitProject(type, state, { solution, githubLink }) {
@@ -130,9 +127,7 @@ function submitBackendChallenge(type, state) {
       challengeInfo
     );
   }
-  return Observable.just(
-    makeToast({ message: 'Keep trying.' })
-  );
+  return Observable.just(makeToast({ message: 'Keep trying.' }));
 }
 
 const submitters = {
@@ -147,7 +142,8 @@ const submitters = {
 };
 
 export default function completionEpic(actions, { getState }) {
-  return actions::ofType(types.checkChallenge, types.submitChallenge.toString())
+  return actions
+    ::ofType(types.checkChallenge, types.submitChallenge.toString())
     .flatMap(({ type, payload }) => {
       const state = getState();
       const { submitType } = challengeMetaSelector(state);

@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import {
-  Row,
-  Col
-} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
 import { userSelector } from '../../../redux';
@@ -51,44 +48,32 @@ function mapDispatchToProps() {
 
 function LinkedInIcon(linkedIn) {
   return (
-    <a href={ linkedIn } rel='no-follow' target='_blank'>
-      <FontAwesome
-        name='linkedin'
-        size='2x'
-      />
+    <a href={linkedIn} rel='no-follow' target='_blank'>
+      <FontAwesome name='linkedin' size='2x' />
     </a>
   );
 }
 
 function githubIcon(ghURL) {
   return (
-    <a href={ ghURL } rel='no-follow' target='_blank'>
-      <FontAwesome
-        name='github'
-        size='2x'
-      />
+    <a href={ghURL} rel='no-follow' target='_blank'>
+      <FontAwesome name='github' size='2x' />
     </a>
   );
 }
 
 function WebsiteIcon(website) {
   return (
-    <a href={ website } rel='no-follow' target='_blank'>
-      <FontAwesome
-        name='link'
-        size='2x'
-      />
+    <a href={website} rel='no-follow' target='_blank'>
+      <FontAwesome name='link' size='2x' />
     </a>
   );
 }
 
 function TwitterIcon(handle) {
   return (
-    <a href={ handle } rel='no-follow' target='_blank' >
-      <FontAwesome
-        name='twitter'
-        size='2x'
-      />
+    <a href={handle} rel='no-follow' target='_blank'>
+      <FontAwesome name='twitter' size='2x' />
     </a>
   );
 }
@@ -106,23 +91,11 @@ function SocialIcons(props) {
   } = props;
   return (
     <Row>
-      <Col
-        className='text-center social-media-icons'
-        sm={ 6 }
-        smOffset={ 3 }
-        >
-        {
-          isLinkedIn ? LinkedInIcon(linkedIn) : null
-        }
-        {
-          isGithub ? githubIcon(githubURL) : null
-        }
-        {
-          isWebsite ? WebsiteIcon(website) : null
-        }
-        {
-          isTwitter ? TwitterIcon(twitter) : null
-        }
+      <Col className='text-center social-media-icons' sm={6} smOffset={3}>
+        {isLinkedIn ? LinkedInIcon(linkedIn) : null}
+        {isGithub ? githubIcon(githubURL) : null}
+        {isWebsite ? WebsiteIcon(website) : null}
+        {isTwitter ? TwitterIcon(twitter) : null}
       </Col>
     </Row>
   );

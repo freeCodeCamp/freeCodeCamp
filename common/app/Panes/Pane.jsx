@@ -10,11 +10,7 @@ const propTypes = {
   right: PropTypes.number.isRequired
 };
 
-export function Pane({
-  children,
-  left,
-  right
-}) {
+export function Pane({ children, left, right }) {
   const style = {
     bottom: 0,
     left: left + '%',
@@ -26,16 +22,9 @@ export function Pane({
     paddingLeft: '4px',
     paddingRight: '4px'
   };
-  return (
-    <div style={ style }>
-      { children }
-    </div>
-  );
+  return <div style={style}>{children}</div>;
 }
 Pane.displayName = 'Pane';
 Pane.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Pane);
+export default connect(mapStateToProps, mapDispatchToProps)(Pane);

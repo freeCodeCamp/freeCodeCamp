@@ -18,7 +18,7 @@ export default function errrorReporter() {
         log(handled.message);
       }
       next(err);
-     };
+    };
   }
   return (err, req, res, next) => {
     // handled errors do not need to be reported

@@ -4,9 +4,7 @@ import createMemoryHistory from 'history/createMemoryHistory';
 import { NOT_FOUND } from 'redux-first-router';
 import devtoolsEnhancer from 'remote-redux-devtools';
 
-import {
-  errorThrowerMiddleware
-} from '../utils/react.js';
+import { errorThrowerMiddleware } from '../utils/react.js';
 import { createApp, provideStore, App } from '../../common/app';
 import waitForEpics from '../../common/utils/wait-for-epics.js';
 import { titleSelector } from '../../common/app/redux';
@@ -31,13 +29,12 @@ export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 
   router.get('/videos', (req, res) => res.redirect('/map'));
-  router.get(
-    '/videos/:dashedName',
-    (req, res) => res.redirect(`/challenges/${req.params.dashedName}`)
+  router.get('/videos/:dashedName', (req, res) =>
+    res.redirect(`/challenges/${req.params.dashedName}`)
   );
 
   // These routes are in production
-  routes.forEach((route) => {
+  routes.forEach(route => {
     router.get(route, serveReactApp);
   });
 
@@ -55,19 +52,11 @@ export default function reactSubRouter(app) {
     createApp({
       serviceOptions,
       middlewares,
-      enhancers: [
-        devtoolsEnhancer({ name: 'server' })
-      ],
-      history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
+      enhancers: [devtoolsEnhancer({ name: 'server' })],
+      history: createMemoryHistory({ initialEntries: [req.originalUrl] }),
       defaultState: { app: { lang } }
     })
-      .filter(({
-        location: {
-          type,
-          kind,
-          pathname
-        } = {}
-      }) => {
+      .filter(({ location: { type, kind, pathname } = {} }) => {
         if (kind === 'redirect') {
           log('react found a redirect');
           res.redirect(pathname);
@@ -84,10 +73,8 @@ export default function reactSubRouter(app) {
       })
       .flatMap(({ store, epic }) => {
         return waitForEpics(epic)
-          .map(() => renderToString(
-            provideStore(App, store)
-          ))
-          .map((markup) => ({ markup, store, epic }));
+          .map(() => renderToString(provideStore(App, store)))
+          .map(markup => ({ markup, store, epic }));
       })
       .do(({ markup, store, epic }) => {
         log('react markup rendered, data fetched');

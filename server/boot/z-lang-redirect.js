@@ -23,8 +23,8 @@ export default function redirectLang(app) {
     }
 
     if (type === 'html') {
-      req.flash('danger', `We couldn't find path ${ path }`);
-      return res.render('404', { title: '404'});
+      req.flash('danger', `We couldn't find path ${path}`);
+      return res.render('404', { title: '404' });
     }
 
     if (type === 'json') {

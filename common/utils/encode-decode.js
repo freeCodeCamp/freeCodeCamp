@@ -32,7 +32,4 @@ export const encodeFcc = _.flow(
   encodeScriptTags
 );
 
-export const decodeFcc = _.flow(
-  decodeFormAction,
-  decodeScriptTags
-);
+export const decodeFcc = _.flow(decodeFormAction, decodeScriptTags);

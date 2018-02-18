@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import ns from './ns.json';
-import {
-  appMounted,
-  fetchUser,
-
-  isSignedInSelector
-} from './redux';
+import { appMounted, fetchUser, isSignedInSelector } from './redux';
 
 import Flash from './Flash';
 import Nav from './Nav';
@@ -57,12 +52,10 @@ export class FreeCodeCamp extends React.Component {
   }
 
   render() {
-    const {
-      route
-    } = this.props;
+    const { route } = this.props;
     const Child = routes[route] || NotFound;
     return (
-      <div className={ `${ns}-container` }>
+      <div className={`${ns}-container`}>
         <Flash />
         <Nav />
         <Child />
@@ -75,7 +68,4 @@ export class FreeCodeCamp extends React.Component {
 FreeCodeCamp.displayName = 'freeCodeCamp';
 FreeCodeCamp.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(FreeCodeCamp);
+export default connect(mapStateToProps, mapDispatchToProps)(FreeCodeCamp);

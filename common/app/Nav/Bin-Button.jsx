@@ -8,13 +8,7 @@ const propTypes = {
 };
 
 export default function BinButton({ content, handleClick }) {
-  return (
-    <NavItem
-      onClick={ handleClick }
-      >
-      { content }
-    </NavItem>
-  );
+  return <NavItem onClick={handleClick}>{content}</NavItem>;
 }
 BinButton.displayName = 'BinButton';
 BinButton.propTypes = propTypes;

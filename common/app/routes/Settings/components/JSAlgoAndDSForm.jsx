@@ -19,8 +19,8 @@ const jsFormPropTypes = {
   username: PropTypes.string
 };
 
-const jsProjectPath = '/challenges/javascript-algorithms-and-data-structures-' +
-  'projects/';
+const jsProjectPath =
+  '/challenges/javascript-algorithms-and-data-structures-' + 'projects/';
 
 class JSAlgoAndDSForm extends PureComponent {
   constructor(props) {
@@ -57,57 +57,48 @@ class JSAlgoAndDSForm extends PureComponent {
     } = this.props;
     return (
       <FullWidthRow>
-        <h3 className='project-heading'>{ projectBlockName }</h3>
+        <h3 className='project-heading'>{projectBlockName}</h3>
         <p>
-          To complete this certification, you must first complete the
-          JavaScript Algorithms and Data Structures project challenges
+          To complete this certification, you must first complete the JavaScript
+          Algorithms and Data Structures project challenges
         </p>
         <ul className='solution-list'>
-          {
-            challenges.map(challenge => (
-              <div key={ challenge }>
-                <li className='solution-list-item'>
-                  <p>{ challenge }</p>
-                  {
-                    Object.keys(jsProjects[challenge]).length ?
-                    <div>
-                      <Button
-                        bsSize='lg'
-                        bsStyle='primary'
-                        id={ challenge }
-                        onClick={ this.handleSolutionToggle }
-                        >
-                        { this.state[challenge] ? 'Hide' : 'Show' } Solution
-                      </Button>
-                    </div> :
-                    <Link to={`${jsProjectPath}${kebabCase(challenge)}`}>
-                      <Button
-                        bsSize='lg'
-                        bsStyle='primary'
-                        >
-                        Complete Project
-                      </Button>
-                    </Link>
-                  }
-                </li>
-                {
-                  this.state[challenge] ?
-                    <SolutionViewer files={ jsProjects[challenge] } /> :
-                    null
-                }
-              </div>
-            ))
-          }
+          {challenges.map(challenge => (
+            <div key={challenge}>
+              <li className='solution-list-item'>
+                <p>{challenge}</p>
+                {Object.keys(jsProjects[challenge]).length ? (
+                  <div>
+                    <Button
+                      bsSize='lg'
+                      bsStyle='primary'
+                      id={challenge}
+                      onClick={this.handleSolutionToggle}
+                      >
+                      {this.state[challenge] ? 'Hide' : 'Show'} Solution
+                    </Button>
+                  </div>
+                ) : (
+                  <Link to={`${jsProjectPath}${kebabCase(challenge)}`}>
+                    <Button bsSize='lg' bsStyle='primary'>
+                      Complete Project
+                    </Button>
+                  </Link>
+                )}
+              </li>
+              {this.state[challenge] ? (
+                <SolutionViewer files={jsProjects[challenge]} />
+              ) : null}
+            </div>
+          ))}
         </ul>
-        {
-          Object.keys(jsProjects).length === 6 ?
-          <form onSubmit={ this.handleSubmit }>
+        {Object.keys(jsProjects).length === 6 ? (
+          <form onSubmit={this.handleSubmit}>
             <BlockSaveButton>
-              { isCertClaimed ? 'Show' : 'Claim'} Certificate
+              {isCertClaimed ? 'Show' : 'Claim'} Certificate
             </BlockSaveButton>
-          </form> :
-          null
-        }
+          </form>
+        ) : null}
         <hr />
       </FullWidthRow>
     );

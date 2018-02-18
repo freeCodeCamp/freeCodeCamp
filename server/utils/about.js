@@ -64,7 +64,7 @@ export function createActiveUsers() {
     credentials['client_email'],
     null,
     credentials['private_key'],
-    [scope],
+    [scope]
   );
   const authorize = observeMethod(client, 'authorize');
   const options = {
@@ -88,8 +88,7 @@ export function createActiveUsers() {
     // print errors to error log for logging, duh
     .do(null, err => console.error(err))
     // always send a number down
-    .catch(() => Observable.of(0))
     // cache for 2 seconds to prevent hitting our daily request limit
+    .catch(() => Observable.of(0))
     ::timeCache(2, 'seconds');
 }
-

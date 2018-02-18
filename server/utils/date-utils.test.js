@@ -45,10 +45,13 @@ test('Day count between two epochs (inclusive) calculation', function(t) {
   );
 
   t.equal(
-    dayCount([
-      moment.utc('8/4/2015 1:00', 'M/D/YYYY H:mm').valueOf(),
-      moment.utc('8/3/2015 23:00', 'M/D/YYYY H:mm').valueOf()
-    ], PST),
+    dayCount(
+      [
+        moment.utc('8/4/2015 1:00', 'M/D/YYYY H:mm').valueOf(),
+        moment.utc('8/3/2015 23:00', 'M/D/YYYY H:mm').valueOf()
+      ],
+      PST
+    ),
     1,
     'should return 1 day when the diff is less than 24h ' +
       'and days are different in UTC, but given PST'

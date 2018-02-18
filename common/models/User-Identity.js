@@ -51,42 +51,34 @@ export default function(UserIdent) {
     return UserIdent.findOne$(query)
       .flatMap(identity => {
         if (!identity) {
-          throw wrapHandledError(
-            new Error('user identity account not found'),
-            {
-              message: dedent`
+          throw wrapHandledError(new Error('user identity account not found'), {
+            message: dedent`
                 New accounts can only be created using an email address.
                 Please create an account below
               `,
-              type: 'info',
-              redirectTo: '/signup'
-            }
-          );
+            type: 'info',
+            redirectTo: '/signup'
+          });
         }
         const modified = new Date();
         const user = identity.user();
         if (!user) {
           const username = getUsernameFromProvider(provider, profile);
-          return observeQuery(
-            identity,
-            'updateAttributes',
-            {
-              isOrphaned: username || true
-            }
-          )
-            .do(() => {
-              throw wrapHandledError(
-                new Error('user identity is not associated with a user'),
-                {
-                  type: 'info',
-                  redirectTo: '/signup',
-                  message: dedent`
+          return observeQuery(identity, 'updateAttributes', {
+            isOrphaned: username || true
+          }).do(() => {
+            throw wrapHandledError(
+              new Error('user identity is not associated with a user'),
+              {
+                type: 'info',
+                redirectTo: '/signup',
+                message: dedent`
   The user account associated with the ${provider} user ${username || 'Anon'}
   no longer exists.
                   `
-                }
-              );
-            });
+              }
+            );
+          });
         }
         const updateUser = User.update$(
           { id: user.id },
@@ -107,15 +99,11 @@ export default function(UserIdent) {
           'updateAttributes',
           attributes
         );
-        const createToken = observeQuery(
-          AccessToken,
-          'create',
-          {
-            userId: user.id,
-            created: new Date(),
-            ttl: user.constructor.settings.ttl
-          }
-        );
+        const createToken = observeQuery(AccessToken, 'create', {
+          userId: user.id,
+          created: new Date(),
+          ttl: user.constructor.settings.ttl
+        });
         return Observable.combineLatest(
           updateUser,
           updateIdentity,

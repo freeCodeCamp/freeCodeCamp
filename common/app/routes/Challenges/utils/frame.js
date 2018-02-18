@@ -29,10 +29,11 @@ const createHeader = (id = mainId) => `
   </script>
 `;
 
-export const runTestsInTestFrame = (document, tests) => Observable.defer(() => {
-  const { contentDocument: frame } = document.getElementById(testId);
-  return frame.__runTests(tests);
-});
+export const runTestsInTestFrame = (document, tests) =>
+  Observable.defer(() => {
+    const { contentDocument: frame } = document.getElementById(testId);
+    return frame.__runTests(tests);
+  });
 
 const createFrame = (document, getState, id) => ctx => {
   const isJSEnabled = isJSEnabledSelector(getState());
@@ -48,7 +49,7 @@ const createFrame = (document, getState, id) => ctx => {
 };
 
 const hiddenFrameClassname = 'hide-test-frame';
-const mountFrame = document => ({ element, ...rest })=> {
+const mountFrame = document => ({ element, ...rest }) => {
   const oldFrame = document.getElementById(element.id);
   if (oldFrame) {
     element.className = oldFrame.className || hiddenFrameClassname;
@@ -88,27 +89,25 @@ const buildProxyConsole = proxyLogger => ctx => {
 };
 
 const writeTestDepsToDocument = frameReady => ctx => {
-  const {
-    document: tests,
-    sources,
-    checkChallengePayload
-  } = ctx;
+  const { document: tests, sources, checkChallengePayload } = ctx;
   // add enzyme
   // TODO: do programatically
   // TODO: webpack lazyload this
   tests.Enzyme = {
-    shallow: (node, options) => new ShallowWrapper(node, null, {
-      ...options,
-      adapter: new Adapter15()
-    }),
-    mount: (node, options) => new ReactWrapper(node, null, {
-      ...options,
-      adapter: new Adapter15()
-    })
+    shallow: (node, options) =>
+      new ShallowWrapper(node, null, {
+        ...options,
+        adapter: new Adapter15()
+      }),
+    mount: (node, options) =>
+      new ReactWrapper(node, null, {
+        ...options,
+        adapter: new Adapter15()
+      })
   };
   // default for classic challenges
   // should not be used for modern
-  tests.__source = (sources && 'index' in sources) ? sources['index'] : '';
+  tests.__source = sources && 'index' in sources ? sources['index'] : '';
   // provide the file name and get the original source
   tests.__getUserInput = fileName => _.toString(sources[fileName]);
   tests.__checkChallengePayload = checkChallengePayload;
@@ -128,18 +127,20 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = (document, getState, proxyLogger) => _.flow(
-  createFrame(document, getState, mainId),
-  mountFrame(document),
-  addDepsToDocument,
-  buildProxyConsole(proxyLogger),
-  writeContentToFrame,
-);
+export const createMainFramer = (document, getState, proxyLogger) =>
+  _.flow(
+    createFrame(document, getState, mainId),
+    mountFrame(document),
+    addDepsToDocument,
+    buildProxyConsole(proxyLogger),
+    writeContentToFrame
+  );
 
-export const createTestFramer = (document, getState, frameReady) => _.flow(
-  createFrame(document, getState, testId),
-  mountFrame(document),
-  addDepsToDocument,
-  writeTestDepsToDocument(frameReady),
-  writeContentToFrame,
-);
+export const createTestFramer = (document, getState, frameReady) =>
+  _.flow(
+    createFrame(document, getState, testId),
+    mountFrame(document),
+    addDepsToDocument,
+    writeTestDepsToDocument(frameReady),
+    writeContentToFrame
+  );

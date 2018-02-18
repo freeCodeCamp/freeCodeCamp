@@ -14,22 +14,15 @@ export default class Blocks extends Component {
   }
 
   render() {
-    const {
-      blocks
-    } = this.props;
+    const { blocks } = this.props;
     if (blocks.length <= 0) {
       return null;
     }
     return (
-      <div className={ `${ns}-accordion-block` }>
-        {
-          blocks.map(dashedName => (
-            <Block
-              dashedName={ dashedName }
-              key={ dashedName }
-            />
-          ))
-        }
+      <div className={`${ns}-accordion-block`}>
+        {blocks.map(dashedName => (
+          <Block dashedName={dashedName} key={dashedName} />
+        ))}
       </div>
     );
   }

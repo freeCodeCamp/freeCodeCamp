@@ -7,18 +7,18 @@ export function dasherize(name) {
 }
 
 export function nameify(str) {
-  return ('' + str)
-    .replace(/[^a-zA-Z0-9\s]/g, '')
-    .replace(/\:/g, '');
+  return ('' + str).replace(/[^a-zA-Z0-9\s]/g, '').replace(/\:/g, '');
 }
 
 export function unDasherize(name) {
-  return ('' + name)
-    // replace dash with space
-    .replace(/\-/g, ' ')
-    // strip nonalphanumarics chars except whitespace
-    .replace(/[^a-zA-Z\d\s]/g, '')
-    .trim();
+  return (
+    ('' + name)
+      // replace dash with space
+      .replace(/\-/g, ' ')
+      // strip nonalphanumarics chars except whitespace
+      .replace(/[^a-zA-Z\d\s]/g, '')
+      .trim()
+  );
 }
 
 export function addPlaceholderImage(name) {

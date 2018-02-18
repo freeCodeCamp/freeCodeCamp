@@ -17,7 +17,6 @@ import {
   updateHint,
   executeChallenge,
   unlockUntrustedCode,
-
   challengeMetaSelector,
   testsSelector,
   outputSelector,
@@ -87,7 +86,9 @@ export class SidePanel extends PureComponent {
     const { title } = this.props;
     if (title !== nextProps.title) {
       const node = ReactDom.findDOMNode(this.descriptionTop);
-      setTimeout(() => { node.scrollIntoView({ behavior: 'smooth'}); }, 0);
+      setTimeout(() => {
+        node.scrollIntoView({ behavior: 'smooth' });
+      }, 0);
     }
   }
 
@@ -95,21 +96,21 @@ export class SidePanel extends PureComponent {
     this.descriptionTop = node;
   }
 
-  renderDescription(description = [ 'Happy Coding!' ]) {
+  renderDescription(description = ['Happy Coding!']) {
     return description.map((line, index) => {
       if (descriptionRegex.test(line)) {
         return (
           <div
             dangerouslySetInnerHTML={{ __html: line }}
-            key={ line.slice(-6) + index }
+            key={line.slice(-6) + index}
           />
         );
       }
       return (
         <p
           className='wrappable'
-          dangerouslySetInnerHTML= {{ __html: line }}
-          key={ line.slice(-6) + index }
+          dangerouslySetInnerHTML={{ __html: line }}
+          key={line.slice(-6) + index}
         />
       );
     });
@@ -132,42 +133,38 @@ export class SidePanel extends PureComponent {
     } = this.props;
     return (
       <div
-        className={ `${ns}-instructions-panel` }
+        className={`${ns}-instructions-panel`}
         ref='panel'
         role='complementary'
         >
-        <div ref={ this.bindTopDiv } />
+        <div ref={this.bindTopDiv} />
         <div>
-          <ChallengeTitle>
-            { title }
-          </ChallengeTitle>
+          <ChallengeTitle>{title}</ChallengeTitle>
           <ChallengeDescription>
-            { this.renderDescription(description) }
+            {this.renderDescription(description)}
           </ChallengeDescription>
         </div>
         <ToolPanel
-          executeChallenge={ executeChallenge }
-          guideUrl={ guideUrl }
-          hint={ hint }
-          isCodeLocked={ isCodeLocked }
-          makeToast={ makeToast }
-          openHelpModal={ openHelpModal }
-          unlockUntrustedCode={ unlockUntrustedCode }
-          updateHint={ updateHint }
+          executeChallenge={executeChallenge}
+          guideUrl={guideUrl}
+          hint={hint}
+          isCodeLocked={isCodeLocked}
+          makeToast={makeToast}
+          openHelpModal={openHelpModal}
+          unlockUntrustedCode={unlockUntrustedCode}
+          updateHint={updateHint}
         />
         <HelpModal />
         <Output
-          defaultOutput={
-`/**
+          defaultOutput={`/**
   * Your output will go here.
   * Any console.log() statements
   * will appear in here as well.
-  */`
-          }
-          output={ output }
+  */`}
+          output={output}
         />
         <br />
-        <TestSuite tests={ tests } />
+        <TestSuite tests={tests} />
       </div>
     );
   }
@@ -176,7 +173,4 @@ export class SidePanel extends PureComponent {
 SidePanel.displayName = 'SidePanel';
 SidePanel.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SidePanel);
+export default connect(mapStateToProps, mapDispatchToProps)(SidePanel);

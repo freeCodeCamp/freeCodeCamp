@@ -18,16 +18,15 @@ const challengeTypes = {
 };
 
 const challengeTypeReg = /^(waypoint|hike|zipline|basejump)/i;
-const challengeTypeRegWithColon =
-  /^(bonfire|checkpoint|waypoint|hike|zipline|basejump):\s+/i;
-
+/* eslint-disable max-len */
+const challengeTypeRegWithColon = /^(bonfire|checkpoint|waypoint|hike|zipline|basejump):\s+/i;
+/* eslint-enable max-len */
 function updateName(challenge) {
   if (
     challenge.name &&
     challenge.challengeType === 5 &&
     challengeTypeReg.test(challenge.name)
   ) {
-
     challenge.name.replace(challengeTypeReg, match => {
       // find the correct type
       const type = challengeTypes[''.toLowerCase.call(match)];
@@ -39,7 +38,6 @@ function updateName(challenge) {
 
       return match;
     });
-
   }
 
   if (challenge.name) {
@@ -63,16 +61,11 @@ function updateId(challenge) {
 //  User: User
 // ) => Observable
 function buildChallengeMap(userId, completedChallenges = [], User) {
-  return Observable.from(
-    completedChallenges,
-    null,
-    null,
-    Scheduler.default
-  )
+  return Observable.from(completedChallenges, null, null, Scheduler.default)
     .map(challenge => {
-      return challenge && typeof challenge.toJSON === 'function' ?
-        challenge.toJSON() :
-        challenge;
+      return challenge && typeof challenge.toJSON === 'function'
+        ? challenge.toJSON()
+        : challenge;
     })
     .map(updateId)
     .filter(({ id, _id }) => ObjectID.isValid(id || _id))
@@ -111,11 +104,7 @@ export default function migrateCompletedChallenges() {
     })
       .map(({ completedChallenges = [] } = {}) => completedChallenges)
       .flatMap(completedChallenges => {
-        return buildChallengeMap(
-          id,
-          completedChallenges,
-          User
-        );
+        return buildChallengeMap(id, completedChallenges, User);
       })
       .subscribe(
         count => log('documents update', count),

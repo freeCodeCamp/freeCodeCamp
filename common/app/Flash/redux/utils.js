@@ -10,21 +10,17 @@ import { alertTypes, normalizeAlertType } from '../../../utils/flash.js';
 // }
 export const expressToStack = _.flow(
   _.toPairs,
-  _.flatMap(([ type, messages ]) => messages.map(msg => ({
-    message: msg,
-    type: normalizeAlertType(type)
-  })))
+  _.flatMap(([type, messages]) =>
+    messages.map(msg => ({
+      message: msg,
+      type: normalizeAlertType(type)
+    }))
+  )
 );
 
-export const isExpressFlash = _.flow(
-  _.keys,
-  _.every(type => alertTypes[type])
-);
+export const isExpressFlash = _.flow(_.keys, _.every(type => alertTypes[type]));
 
-export const getFlashAction = _.flow(
-  _.property('meta'),
-  _.property('flash')
-);
+export const getFlashAction = _.flow(_.property('meta'), _.property('flash'));
 
 // FlashMessage
 // createFlashMetaAction(payload: ExpressFlash|StackFlash
@@ -37,7 +33,4 @@ export const createFlashMetaAction = payload => {
   return { flash: { payload } };
 };
 
-export const isFlashAction = _.flow(
-  getFlashAction,
-  Boolean
-);
+export const isFlashAction = _.flow(getFlashAction, Boolean);

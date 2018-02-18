@@ -4,22 +4,18 @@ import { ajax$ } from '../../../../utils/ajax-stream';
 // value used to break browser ajax caching
 const cacheBreakerValue = Math.random();
 
-export function _fetchScript(
-  {
-    src,
-    cacheBreaker = false,
-    crossDomain = true
-  } = {},
-) {
+export function _fetchScript({
+  src,
+  cacheBreaker = false,
+  crossDomain = true
+} = {}) {
   if (!src) {
     throw new Error('No source provided for script');
   }
   if (this.cache.has(src)) {
     return this.cache.get(src);
   }
-  const url = cacheBreaker ?
-    `${src}?cacheBreaker=${cacheBreakerValue}` :
-    src;
+  const url = cacheBreaker ? `${src}?cacheBreaker=${cacheBreakerValue}` : src;
   const script = ajax$({ url, crossDomain })
     .doOnNext(res => {
       if (res.status !== 200) {
@@ -35,13 +31,11 @@ export function _fetchScript(
 }
 export const fetchScript = _fetchScript.bind({ cache: new Map() });
 
-export function _fetchLink(
-  {
-    link: href,
-    raw = false,
-    crossDomain = true
-  } = {},
-) {
+export function _fetchLink({
+  link: href,
+  raw = false,
+  crossDomain = true
+} = {}) {
   if (!href) {
     return Observable.throw(new Error('No source provided for link'));
   }
@@ -51,8 +45,9 @@ export function _fetchLink(
   // css files with `url(...` may not work in style tags
   // so we put them in raw links
   if (raw) {
-    const link = Observable.just(`<link href=${href} rel='stylesheet' />`)
-      .shareReplay();
+    const link = Observable.just(
+      `<link href=${href} rel='stylesheet' />`
+    ).shareReplay();
     this.cache.set(href, link);
     return link;
   }

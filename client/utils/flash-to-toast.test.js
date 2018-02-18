@@ -20,13 +20,7 @@ test('client/utils/flash-to-toast.js', t => {
       actual.length,
       'number of toasts does not match number of messages'
     );
-    t.equal(
-      expected[0].type,
-      actual[0].type
-    );
-    t.equal(
-      expected[0].message,
-      actual[0].message
-    );
+    t.equal(expected[0].type, actual[0].type);
+    t.equal(expected[0].message, actual[0].message);
   });
 });

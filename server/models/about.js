@@ -1,6 +1,5 @@
 import { createActiveUsers } from '../utils/about.js';
 
-
 module.exports = function(About) {
   const activeUsers = createActiveUsers();
   About.getActiveUsers = function getActiveUsers() {
@@ -9,17 +8,14 @@ module.exports = function(About) {
     return activeUsers.toPromise();
   };
 
-  About.remoteMethod(
-    'getActiveUsers',
-    {
-      http: {
-        path: '/get-active-users',
-        verb: 'get'
-      },
-      returns: {
-        type: 'number',
-        arg: 'activeUsers'
-      }
+  About.remoteMethod('getActiveUsers', {
+    http: {
+      path: '/get-active-users',
+      verb: 'get'
+    },
+    returns: {
+      type: 'number',
+      arg: 'activeUsers'
     }
-  );
+  });
 };

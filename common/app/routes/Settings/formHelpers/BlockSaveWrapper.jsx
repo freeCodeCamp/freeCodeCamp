@@ -10,11 +10,7 @@ const style = {
 };
 
 function BlockSaveWrapper({ children }) {
-  return (
-    <div style={ style }>
-      { children }
-    </div>
-  );
+  return <div style={style}>{children}</div>;
 }
 
 BlockSaveWrapper.displayName = 'BlockSaveWrapper';

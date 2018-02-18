@@ -24,24 +24,22 @@ const propTypes = {
   shouldDispatch: PropTypes.bool,
   style: PropTypes.object,
   target: PropTypes.string,
-  to: PropTypes.oneOfType([ PropTypes.object, PropTypes.string ]).isRequired
+  to: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired
 };
 
-export const Link = (
-  {
-    children,
-    dispatch,
-    lang,
-    onClick,
-    redirect,
-    replace,
-    routesMap,
-    shouldDispatch = true,
-    style,
-    target,
-    to
-  }
-) => {
+export const Link = ({
+  children,
+  dispatch,
+  lang,
+  onClick,
+  redirect,
+  replace,
+  routesMap,
+  shouldDispatch = true,
+  style,
+  target,
+  to
+}) => {
   const url = toUrl(to, routesMap, lang);
   const handler = createHandler(
     url,
@@ -70,11 +68,7 @@ export const Link = (
   }
 
   return (
-    <a
-      onClick={ handler }
-      style={ style }
-      { ...localProps }
-      >
+    <a onClick={handler} style={style} {...localProps}>
       {children}
     </a>
   );

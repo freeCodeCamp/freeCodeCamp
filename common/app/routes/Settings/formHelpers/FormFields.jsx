@@ -21,10 +21,7 @@ const propTypes = {
   ).isRequired,
   options: PropTypes.shape({
     errors: PropTypes.objectOf(
-      PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.instanceOf(null)
-      ])
+      PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(null)])
     ),
     ignored: PropTypes.arrayOf(PropTypes.string),
     placeholder: PropTypes.bool,
@@ -43,50 +40,41 @@ function FormFields(props) {
   } = options;
   return (
     <div>
-      {
-        Object.keys(fields)
+      {Object.keys(fields)
         .filter(field => !ignored.includes(field))
         .map(key => fields[key])
         .map(({ name, onChange, value, pristine }) => {
           const key = _.kebabCase(name);
           const type = name in types ? types[name] : 'text';
           return (
-          <Row className='inline-form-field' key={ key }>
-            <Col sm={ 3 } xs={ 12 }>
-            { type === 'hidden' ?
-              null :
-              <ControlLabel htmlFor={ key }>
-                { _.startCase(name) }
-              </ControlLabel>
-            }
-            </Col>
-            <Col sm={ 9 } xs={ 12 }>
-              <FormControl
-                bsSize='lg'
-                componentClass={ type === 'textarea' ? type : 'input' }
-                id={ key }
-                name={ name }
-                onChange={ onChange }
-                placeholder={ placeholder ? name : '' }
-                required={ !!required[name] }
-                rows={ 4 }
-                type={ type }
-                value={ value }
-              />
-              {
-                name in errors && !pristine ?
-                <HelpBlock>
-                  <Alert bsStyle='danger'>
-                    { errors[name] }
-                  </Alert>
-                </HelpBlock> :
-                null
-              }
-            </Col>
-          </Row>
-        );
-        })
-      }
+            <Row className='inline-form-field' key={key}>
+              <Col sm={3} xs={12}>
+                {type === 'hidden' ? null : (
+                  <ControlLabel htmlFor={key}>{_.startCase(name)}</ControlLabel>
+                )}
+              </Col>
+              <Col sm={9} xs={12}>
+                <FormControl
+                  bsSize='lg'
+                  componentClass={type === 'textarea' ? type : 'input'}
+                  id={key}
+                  name={name}
+                  onChange={onChange}
+                  placeholder={placeholder ? name : ''}
+                  required={!!required[name]}
+                  rows={4}
+                  type={type}
+                  value={value}
+                />
+                {name in errors && !pristine ? (
+                  <HelpBlock>
+                    <Alert bsStyle='danger'>{errors[name]}</Alert>
+                  </HelpBlock>
+                ) : null}
+              </Col>
+            </Row>
+          );
+        })}
     </div>
   );
 }
