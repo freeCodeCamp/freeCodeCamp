@@ -151,7 +151,17 @@ export const isChallengeLoaded = (state, { dashedName }) =>
 export default composeReducers(
   ns,
   function metaReducer(state = defaultState, action) {
-    if (action.meta && action.meta.entities) {
+    const { meta } = action;
+    if (meta && meta.entities) {
+      if (meta.entities.user) {
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            ...meta.entities.user
+          }
+        };
+      }
       return {
         ...state,
         ...action.meta.entities
@@ -159,7 +169,7 @@ export default composeReducers(
     }
     return state;
   },
-  function(state = defaultState, action) {
+  function entitiesReducer(state = defaultState, action) {
     if (getEntityAction(action)) {
       const { payload: { username, theme } } = getEntityAction(action);
       return {

@@ -8,6 +8,7 @@ import FA from 'react-fontawesome';
 
 import ns from './ns.json';
 import { FullWidthRow, Spacer, Loader } from '../../helperComponents';
+import { Link } from '../../Router';
 import AboutSettings from './components/About-Settings.jsx';
 import InternetSettings from './components/Internet-Settings.jsx';
 import EmailSettings from './components/Email-Settings.jsx';
@@ -70,6 +71,7 @@ export class Settings extends React.Component {
   componentWillMount() {
     this.props.updateTitle('Settings');
   }
+
   componentWillReceiveProps({ username, showLoading, hardGoTo }) {
     if (!username && !showLoading) {
       hardGoTo('/signup');
@@ -87,16 +89,17 @@ export class Settings extends React.Component {
     return (
       <div className={ `${ns}-container` }>
         <FullWidthRow>
-          <Button
-            block={ true }
-            bsSize='lg'
-            bsStyle='primary'
-            className='btn-link-social'
-            href={ `/${username}` }
-            >
-            <FA name='user' />
-            Show me my public profile
-          </Button>
+          <Link to={ `/${username}` }>
+            <Button
+              block={ true }
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-link-social'
+              >
+              <FA name='user' />
+              Show me my public profile
+            </Button>
+          </Link>
           <Button
             block={ true }
             bsSize='lg'

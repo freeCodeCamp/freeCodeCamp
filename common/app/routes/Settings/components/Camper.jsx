@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'react-bootstrap';
 
-import SocialIcons from './SocialIcons.jsx';
+import SocialIcons from '../../Profile/components/SocialIcons.jsx';
 
 const propTypes = {
   about: PropTypes.string,
@@ -37,9 +37,7 @@ function Camper({
             />
         </Col>
       </Row>
-      <br />
       <SocialIcons />
-      <br/>
       <h2 className='text-center username'>@{ username }</h2>
       { name && <p className='text-center name'>{ name }</p> }
       { location && <p className='text-center location'>{ location }</p> }

@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
-import { userSelector } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 
 const propTypes = {
   email: PropTypes.string,
@@ -18,12 +18,13 @@ const propTypes = {
   isTwitter: PropTypes.bool,
   isWebsite: PropTypes.bool,
   linkedIn: PropTypes.string,
+  show: PropTypes.bool,
   twitter: PropTypes.string,
   website: PropTypes.string
 };
 
 const mapStateToProps = createSelector(
-  userSelector,
+  userByNameSelector,
   ({
     githubURL,
     isLinkedIn,
@@ -40,6 +41,7 @@ const mapStateToProps = createSelector(
     isTwitter,
     isWebsite,
     linkedIn,
+    show: (isLinkedIn || isGithub || isTwitter || isWebsite),
     twitter,
     website
   })
@@ -101,9 +103,13 @@ function SocialIcons(props) {
     isTwitter,
     isWebsite,
     linkedIn,
+    show,
     twitter,
     website
   } = props;
+  if (!show) {
+    return null;
+  }
   return (
     <Row>
       <Col

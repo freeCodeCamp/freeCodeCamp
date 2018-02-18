@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import capitalize from 'lodash/capitalize';
 import { createSelector } from 'reselect';
 import FCCSearchBar from 'react-freecodecamp-search';
-
 import {
   MenuItem,
   Nav,
@@ -15,6 +14,7 @@ import {
   NavbarBrand
 } from 'react-bootstrap';
 
+import NoPropsPassThrough from '../utils/No-Props-Passthrough.jsx';
 import { Link } from '../Router';
 import navLinks from './links.json';
 import SignUp from './Sign-Up.jsx';
@@ -30,6 +30,7 @@ import {
 } from './redux';
 import { isSignedInSelector, signInLoadingSelector } from '../redux';
 import { panesSelector } from '../Panes/redux';
+import { onRouteCurrentChallenge } from '../routes/Challenges/redux';
 
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
@@ -224,11 +225,16 @@ export class FCCNav extends React.Component {
               ))
             }
             { shouldShowMapButton ?
-                <BinButton
-                  content='Map'
-                  handleClick={ clickOnMap }
-                  key='Map'
-                /> :
+                <NoPropsPassThrough>
+                  <li>
+                    <Link
+                      onClick={ clickOnMap }
+                      to={ onRouteCurrentChallenge() }
+                      >
+                      Map
+                    </Link>
+                  </li>
+                </NoPropsPassThrough> :
                 null
             }
             {

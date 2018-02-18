@@ -17,6 +17,7 @@ import nightModeEpic from './night-mode-epic.js';
 import { createFilesMetaCreator } from '../files';
 import { updateThemeMetacreator, entitiesSelector } from '../entities';
 import { utils } from '../Flash/redux';
+import { paramsSelector } from '../Router/redux';
 import { types as challenges } from '../routes/Challenges/redux';
 import { challengeToFiles } from '../routes/Challenges/utils';
 
@@ -41,6 +42,7 @@ export const types = createTypes([
   createAsyncTypes('fetchChallenge'),
   createAsyncTypes('fetchChallenges'),
   'updateChallenges',
+  createAsyncTypes('fetchOtherUser'),
   createAsyncTypes('fetchUser'),
   'showSignIn',
 
@@ -109,8 +111,19 @@ export const fetchChallengesCompleted = createAction(
   entities => ({ entities })
 );
 export const updateChallenges = createAction(types.updateChallenges);
+
 // updateTitle(title: String) => Action
 export const updateTitle = createAction(types.updateTitle);
+
+// fetchOtherUser() => Action
+// used in combination with fetch-user-epic
+// to fetch another users profile
+export const fetchOtherUser = createAction(types.fetchOtherUser.start);
+export const fetchOtherUserComplete = createAction(
+  types.fetchOtherUser.complete,
+  ({ result }) => result,
+  _.identity
+);
 
 // fetchUser() => Action
 // used in combination with fetch-user-epic
@@ -189,6 +202,12 @@ export const userSelector = createSelector(
   state => entitiesSelector(state).user,
   (username, userMap) => userMap[username] || {}
 );
+
+export const userByNameSelector = state => {
+  const username = paramsSelector(state).username;
+  const userMap = entitiesSelector(state).user;
+  return userMap[username] || {};
+};
 
 export const themeSelector = _.flow(
   userSelector,
