@@ -49,7 +49,9 @@ export function timeCache(time, unit) {
     // set new expire time in MS and create new subscription to source
     if (!expireCacheAt || expireCacheAt < Date.now()) {
       // set expire in ms;
-      expireCacheAt = moment().add(time, unit).valueOf();
+      expireCacheAt = moment()
+        .add(time, unit)
+        .valueOf();
       cache = new AsyncSubject();
       source.subscribe(cache);
     }

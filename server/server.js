@@ -65,14 +65,13 @@ app.start = _.once(function() {
       log('Server is closed');
     });
     log('closing db connection');
-    db.disconnect()
-      .then(() => {
-        log('DB connection closed');
-        // exit process
-        // this may close kept alive sockets
-        // eslint-disable-next-line no-process-exit
-        process.exit(0);
-      });
+    db.disconnect().then(() => {
+      log('DB connection closed');
+      // exit process
+      // this may close kept alive sockets
+      // eslint-disable-next-line no-process-exit
+      process.exit(0);
+    });
   });
 });
 

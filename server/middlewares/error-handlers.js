@@ -17,16 +17,14 @@ const stringifyErr = val => {
 
   const str = String(val);
 
-  return isInspect(val) ?
-    inspect(val) :
-    str;
+  return isInspect(val) ? inspect(val) : str;
 };
 
 const createStackHtml = _.flow(
   _.cond([
     [isInspect, err => [err]],
     // may be stack or just err.msg
-    [_.stubTrue, _.flow(stringifyErr, _.split('\n'), _.tail) ]
+    [_.stubTrue, _.flow(stringifyErr, _.split('\n'), _.tail)]
   ]),
   _.map(_.escape),
   _.map(line => `<li>${line}</lin>`),
@@ -44,7 +42,8 @@ const createErrorTitle = _.cond([
 export default function prodErrorHandler() {
   // error handling in production.
   // disabling eslint due to express parity rules for error handlers
-  return function(err, req, res, next) { // eslint-disable-line
+  return function(err, req, res) {
+    // eslint-disable-line
     const handled = unwrapHandledError(err);
     // respect handled error status
     let status = handled.status || err.status || res.statusCode;
@@ -58,8 +57,8 @@ export default function prodErrorHandler() {
     const type = accept.type('html', 'json', 'text');
 
     const redirectTo = handled.redirectTo || '/';
-    const message = handled.message ||
-      'Oops! Something went wrong. Please try again later';
+    const message =
+      handled.message || 'Oops! Something went wrong. Please try again later';
 
     if (isDev) {
       console.error(err);
@@ -67,16 +66,13 @@ export default function prodErrorHandler() {
 
     if (type === 'html') {
       if (isDev) {
-        return res.render(
-          'dev-error',
-          {
-            ...handled,
-            stack: createStackHtml(err),
-            errorTitle: createErrorTitle(err),
-            title: 'freeCodeCamp - Server Error',
-            status
-          }
-        );
+        return res.render('dev-error', {
+          ...handled,
+          stack: createStackHtml(err),
+          errorTitle: createErrorTitle(err),
+          title: 'freeCodeCamp - Server Error',
+          status
+        });
       }
       if (typeof req.flash === 'function') {
         req.flash(handled.type || 'danger', message);

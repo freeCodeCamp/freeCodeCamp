@@ -2,7 +2,6 @@ import { actionToPath, getOptions } from 'redux-first-router';
 
 import { addLang } from '../utils/lang.js';
 
-
 export default (to, routesMap, lang = 'en') => {
   if (to && typeof to === 'string') {
     return addLang(to, lang);

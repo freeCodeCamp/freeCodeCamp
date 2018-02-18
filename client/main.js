@@ -5,7 +5,6 @@ var main = window.main || {};
 main.ga = window.ga || function() {};
 
 $(document).ready(function() {
-
   const { Observable } = window.Rx;
   var CSRF_HEADER = 'X-CSRF-Token';
 
@@ -30,19 +29,23 @@ $(document).ready(function() {
 
   $.each($('.sr-only'), function(i, span) {
     if ($(span).text() === ' Complete') {
-      $(span).parents('p').addClass('manip-hidden');
+      $(span)
+        .parents('p')
+        .addClass('manip-hidden');
     }
   });
 
   function addAlert(message = '', type = 'alert-info') {
-    return $('.flashMessage').append($(`
+    return $('.flashMessage').append(
+      $(`
       <div class='alert ${type}'>
         <button class='close' type='button', data-dismiss='alert'>
           <span class='ion-close-circled' />
         </Button>
         <div>${message}</div>
       </div>
-    `));
+    `)
+    );
   }
 
   function toggleNightMode() {
@@ -129,22 +132,18 @@ $(document).ready(function() {
       dataType: 'JSON',
       data: { filter: { order: 'id DESC' } }
     })
-    // log error
-    .fail(err => console.error(err))
-    .done(flyer => {
-      const lastFlyerId = localStorage.getItem(flyerKey);
-      if (
-        !flyer ||
-        !flyer.isActive ||
-        lastFlyerId === flyer.id
-      ) {
-        return;
-      }
-      $('#dismiss-bill').on('click', () => {
-        localStorage.setItem(flyerKey, flyer.id);
+      // log error
+      .fail(err => console.error(err))
+      .done(flyer => {
+        const lastFlyerId = localStorage.getItem(flyerKey);
+        if (!flyer || !flyer.isActive || lastFlyerId === flyer.id) {
+          return;
+        }
+        $('#dismiss-bill').on('click', () => {
+          localStorage.setItem(flyerKey, flyer.id);
+        });
+        $('#bill-content').html(flyer.message);
+        $('#bill-board').fadeIn();
       });
-      $('#bill-content').html(flyer.message);
-      $('#bill-board').fadeIn();
-    });
-  }());
+  })();
 });

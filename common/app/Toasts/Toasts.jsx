@@ -5,10 +5,7 @@ import { createSelector } from 'reselect';
 import { NotificationStack } from 'react-notification';
 
 import { removeToast } from './redux';
-import {
-  submitChallenge,
-  clickOnReset
-} from '../routes/Challenges/redux';
+import { submitChallenge, clickOnReset } from '../routes/Challenges/redux';
 
 const registeredActions = {
   submitChallenge,
@@ -34,30 +31,31 @@ const actionStyle = {
 const addDispatchableActionsToToast = createSelector(
   state => state.toasts,
   state => state.dispatch,
-  (toasts, dispatch) => toasts.map(({ position, actionCreator, ...toast }) => {
-    const activeBarStyle = {};
-    let finalBarStyle = barStyle;
-    if (position !== 'left') {
-      activeBarStyle.left = null;
-      activeBarStyle.right = '1rem';
-      finalBarStyle = rightBarStyle;
-    }
-    const onClick = !registeredActions[actionCreator] ?
-      () => {
-        dispatch(removeToast(toast));
-      } :
-      () => {
-        dispatch(registeredActions[actionCreator]());
-        dispatch(removeToast(toast));
+  (toasts, dispatch) =>
+    toasts.map(({ position, actionCreator, ...toast }) => {
+      const activeBarStyle = {};
+      let finalBarStyle = barStyle;
+      if (position !== 'left') {
+        activeBarStyle.left = null;
+        activeBarStyle.right = '1rem';
+        finalBarStyle = rightBarStyle;
+      }
+      const onClick = !registeredActions[actionCreator]
+        ? () => {
+            dispatch(removeToast(toast));
+          }
+        : () => {
+            dispatch(registeredActions[actionCreator]());
+            dispatch(removeToast(toast));
+          };
+      return {
+        ...toast,
+        barStyle: finalBarStyle,
+        activeBarStyle,
+        actionStyle,
+        onClick
       };
-    return {
-      ...toast,
-      barStyle: finalBarStyle,
-      activeBarStyle,
-      actionStyle,
-      onClick
-    };
-  })
+    })
 );
 const propTypes = {
   dispatch: PropTypes.func,
@@ -81,12 +79,10 @@ export class Toasts extends React.Component {
     const { toasts = [], dispatch } = this.props;
     return (
       <NotificationStack
-        activeBarStyle={ this.styleFactory }
-        barStyle={ this.styleFactory }
-        notifications={
-          addDispatchableActionsToToast({ toasts, dispatch })
-        }
-        onDismiss={ this.handleDismiss }
+        activeBarStyle={this.styleFactory}
+        barStyle={this.styleFactory}
+        notifications={addDispatchableActionsToToast({ toasts, dispatch })}
+        onDismiss={this.handleDismiss}
       />
     );
   }

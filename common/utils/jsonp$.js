@@ -59,7 +59,8 @@ export function jsonp$(options) {
 
     script.onload = script.onreadystatechanged = script.onerror = handler;
 
-    const head = root.document.getElementsByTagName('head')[0] ||
+    const head =
+      root.document.getElementsByTagName('head')[0] ||
       root.document.documentElement;
 
     head.insertBefore(script, head.firstChild);

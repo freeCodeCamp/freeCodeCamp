@@ -15,29 +15,27 @@ export default function SolutionInput({ solution, placeholder }) {
     <FormGroup
       controlId='solution'
       validationState={
-        (validationState && validationState.includes('warning')) ?
-          'warning' :
-          validationState
+        validationState && validationState.includes('warning')
+          ? 'warning'
+          : validationState
       }
       >
       <FormControl
         name='solution'
-        placeholder={ placeholder }
+        placeholder={placeholder}
         type='url'
-        { ...DOMOnlyProps(solution) }
+        {...DOMOnlyProps(solution)}
       />
-      {
-        validationState === 'error' &&
-          <HelpBlock>Make sure you provide a proper URL.</HelpBlock>
-      }
-      {
-        validationState === 'glitch-warning' &&
-          <HelpBlock>
-            Make sure you have entered a shareable URL
-            (e.g. "https://green-camper.glitch.me", not
-            "https://glitch.com/#!/edit/green-camper".)
-          </HelpBlock>
-      }
+      {validationState === 'error' && (
+        <HelpBlock>Make sure you provide a proper URL.</HelpBlock>
+      )}
+      {validationState === 'glitch-warning' && (
+        <HelpBlock>
+          Make sure you have entered a shareable URL (e.g.
+          "https://green-camper.glitch.me", not
+          "https://glitch.com/#!/edit/green-camper".)
+        </HelpBlock>
+      )}
     </FormGroup>
   );
 }

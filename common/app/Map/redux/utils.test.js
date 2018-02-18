@@ -15,50 +15,44 @@ test('createMapUi', t => {
   t.plan(3);
   t.test('should return an `{}` when proper args not supplied', t => {
     t.plan(3);
-    t.equal(
-      Object.keys(createMapUi()).length,
-      0
-    );
-    t.equal(
-      Object.keys(createMapUi({}, [])).length,
-      0
-    );
-    t.equal(
-      Object.keys(createMapUi({ superBlock: {} }, [])).length,
-      0
-    );
+    t.equal(Object.keys(createMapUi()).length, 0);
+    t.equal(Object.keys(createMapUi({}, [])).length, 0);
+    t.equal(Object.keys(createMapUi({ superBlock: {} }, [])).length, 0);
   });
   t.test('should return a map tree', t => {
     const expected = {
-      children: [{
-        name: 'superBlockA',
-        children: [{
-          name: 'blockA',
-          children: [{
-            name: 'challengeA'
-          }]
-        }]
-      }]
-    };
-    const actual = createMapUi({
-      superBlock: {
-        superBlockA: {
-          blocks: [
-            'blockA'
+      children: [
+        {
+          name: 'superBlockA',
+          children: [
+            {
+              name: 'blockA',
+              children: [
+                {
+                  name: 'challengeA'
+                }
+              ]
+            }
           ]
+        }
+      ]
+    };
+    const actual = createMapUi(
+      {
+        superBlock: {
+          superBlockA: {
+            blocks: ['blockA']
+          }
+        },
+        block: {
+          blockA: {
+            challenges: ['challengeA']
+          }
         }
       },
-      block: {
-        blockA: {
-          challenges: [
-            'challengeA'
-          ]
-        }
-      }
-    },
-    { superBlocks: ['superBlockA'] },
-    { challengeA: 'ChallengeA title'}
-  );
+      { superBlocks: ['superBlockA'] },
+      { challengeA: 'ChallengeA title' }
+    );
     t.plan(3);
     t.equal(actual.children[0].name, expected.children[0].name);
     t.equal(
@@ -73,30 +67,31 @@ test('createMapUi', t => {
   t.test('should protect against malformed data', t => {
     t.plan(2);
     t.equal(
-      createMapUi({
-        superBlock: {},
-        block: {
-          blockA: {
-            challenges: [
-              'challengeA'
-            ]
+      createMapUi(
+        {
+          superBlock: {},
+          block: {
+            blockA: {
+              challenges: ['challengeA']
+            }
           }
-        }
-      }, { superBlocks: ['superBlockA'] }).children[0].children.length,
+        },
+        { superBlocks: ['superBlockA'] }
+      ).children[0].children.length,
       0
     );
     t.equal(
-      createMapUi({
-        superBlock: {
-          superBlockA: {
-            blocks: [
-              'blockA'
-            ]
-          }
+      createMapUi(
+        {
+          superBlock: {
+            superBlockA: {
+              blocks: ['blockA']
+            }
+          },
+          block: {}
         },
-        block: {}
-      },
-      { superBlocks: ['superBlockA'] }).children[0].children[0].children.length,
+        { superBlocks: ['superBlockA'] }
+      ).children[0].children[0].children.length,
       0
     );
   });
@@ -143,14 +138,14 @@ test('getNode', t => {
   t.test('should return node', t => {
     t.plan(1);
     const expected = { name: 'foo' };
-    const tree = { children: [{ name: 'notfoo' }, expected ] };
+    const tree = { children: [{ name: 'notfoo' }, expected] };
     const actual = getNode(tree, 'foo');
     t.equal(expected, actual);
   });
   t.test('should returned undefined if not found', t => {
     t.plan(1);
     const tree = {
-      children: [ { name: 'foo' }, { children: [ { name: 'bar' } ] } ]
+      children: [{ name: 'foo' }, { children: [{ name: 'bar' }] }]
     };
     const actual = getNode(tree, 'baz');
     t.notOk(actual);
@@ -161,7 +156,7 @@ test('updateSingleNode', t => {
     const expected = { name: 'foo' };
     const untouched = { name: 'notFoo' };
     const actual = updateSingleNode(
-      { children: [ untouched, expected ] },
+      { children: [untouched, expected] },
       'foo',
       node => ({ ...node, tag: true })
     );
@@ -176,7 +171,7 @@ test('toggleThisPanel', t => {
   t.test('should update single node', t => {
     const expected = { name: 'foo', isOpen: true };
     const actual = toggleThisPanel(
-      { children: [ { name: 'foo', isOpen: false }] },
+      { children: [{ name: 'foo', isOpen: false }] },
       'foo'
     );
     t.plan(1);
@@ -187,10 +182,12 @@ test('toggleAllPanels', t => {
   t.test('should add `isOpen: true` to every node without children', t => {
     const expected = {
       isOpen: true,
-      children: [{
-        isOpen: true,
-        children: [{}, {}]
-      }]
+      children: [
+        {
+          isOpen: true,
+          children: [{}, {}]
+        }
+      ]
     };
     const actual = expandAllPanels({ children: [{ children: [{}, {}] }] });
     t.plan(1);
@@ -200,14 +197,17 @@ test('toggleAllPanels', t => {
     const leaf = {};
     const expected = {
       isOpen: false,
-      children: [{
-        isOpen: false,
-        children: [{}, leaf]
-      }]
+      children: [
+        {
+          isOpen: false,
+          children: [{}, leaf]
+        }
+      ]
     };
-    const actual = collapseAllPanels(
-      { isOpen: true, children: [{ children: [{}, leaf]}]},
-    );
+    const actual = collapseAllPanels({
+      isOpen: true,
+      children: [{ children: [{}, leaf] }]
+    });
     t.plan(2);
     t.deepLooseEqual(actual, expected);
     t.equal(actual.children[0].children[1], leaf);

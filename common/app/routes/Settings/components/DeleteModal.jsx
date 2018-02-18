@@ -13,24 +13,24 @@ function DeleteModal(props) {
   return (
     <Modal
       aria-labelledby='modal-title'
-      autoFocus={ true }
-      backdrop={ true }
+      autoFocus={true}
+      backdrop={true}
       bsSize='lg'
-      keyboard={ true }
-      onHide={ onHide }
-      show={ show }
+      keyboard={true}
+      onHide={onHide}
+      show={show}
       >
-      <Modal.Header closeButton={ true }>
+      <Modal.Header closeButton={true}>
         <Modal.Title id='modal-title'>Delete My Account</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <p>
-          This will really delete all your data, including all your progress
-          and account information.
+          This will really delete all your data, including all your progress and
+          account information.
         </p>
         <p>
-          We won't be able to recover any of it for you later,
-          even if you change your mind.
+          We won't be able to recover any of it for you later, even if you
+          change your mind.
         </p>
         <p>
           If there's something we could do better, send us an email instead and
@@ -41,25 +41,25 @@ function DeleteModal(props) {
         </p>
         <hr />
         <Button
-          block={ true }
+          block={true}
           bsSize='lg'
           bsStyle='success'
-          onClick={ props.onHide }
+          onClick={props.onHide}
           >
           Nevermind, I don't want to delete my account
         </Button>
         <div className='button-spacer' />
         <Button
-          block={ true }
+          block={true}
           bsSize='lg'
           bsStyle='danger'
-          onClick={ props.delete }
+          onClick={props.delete}
           >
           I am 100% certain. Delete everything related to this account
         </Button>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={ props.onHide }>Close</Button>
+        <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 
 import ns from './ns.json';
 import { isJSEnabledSelector } from './redux';
-import {Alert} from 'react-bootstrap';
-
+import { Alert } from 'react-bootstrap';
 
 const mainId = 'fcc-main-frame';
 
@@ -18,25 +17,15 @@ const propTypes = {
 
 export class Preview extends PureComponent {
   render() {
-    const {
-      isJSEnabled
-    } = this.props;
+    const { isJSEnabled } = this.props;
     return (
-      <div className={ `${ns}-preview` }>
-        {
-          !isJSEnabled && (
-            <Alert
-            bsStyle='info'
-            className={ `${ns}-preview-js-warning`}
-            >
-              JavaScript is disabled. Execute code to enable
-            </Alert>
-          )
-        }
-        <iframe
-          className={ `${ns}-preview-frame` }
-          id={ mainId }
-        />
+      <div className={`${ns}-preview`}>
+        {!isJSEnabled && (
+          <Alert bsStyle='info' className={`${ns}-preview-js-warning`}>
+            JavaScript is disabled. Execute code to enable
+          </Alert>
+        )}
+        <iframe className={`${ns}-preview-frame`} id={mainId} />
       </div>
     );
   }
@@ -45,7 +34,4 @@ export class Preview extends PureComponent {
 Preview.propTypes = propTypes;
 Preview.displayName = 'Preview';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Preview);
+export default connect(mapStateToProps, mapDispatchToProps)(Preview);

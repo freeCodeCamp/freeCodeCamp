@@ -1,8 +1,7 @@
 import { defaultProfileImage } from '../../common/utils/constantStrings.json';
 import supportedLanguages from '../../common/utils/supported-languages';
 
-const message =
-  'Learn to Code and Help Nonprofits';
+const message = 'Learn to Code and Help Nonprofits';
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -23,11 +22,9 @@ module.exports = function(app) {
     if (!req.user || req.user.picture) {
       return next();
     }
-    return req.user.update$({ picture: defaultProfileImage })
-      .subscribe(
-        () => next(),
-        next
-      );
+    return req.user
+      .update$({ picture: defaultProfileImage })
+      .subscribe(() => next(), next);
   }
 
   function index(req, res, next) {

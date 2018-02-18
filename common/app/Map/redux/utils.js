@@ -34,11 +34,7 @@ export function createSearchTitle(
 //   }]
 // }
 export function createMapUi(
-  {
-    block: blockMap,
-    challenge: challengeMap,
-    superBlock: superBlockMap
-  } = {},
+  { block: blockMap, challenge: challengeMap, superBlock: superBlockMap } = {},
   { superBlocks } = {}
 ) {
   if (!superBlocks || !superBlockMap || !blockMap) {

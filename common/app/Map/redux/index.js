@@ -9,25 +9,25 @@ import capitalize from 'lodash/capitalize';
 
 import * as utils from './utils.js';
 import ns from '../ns.json';
-import {
-  types as app,
-  createEventMetaCreator
-} from '../../redux';
+import { types as app, createEventMetaCreator } from '../../redux';
 
 export const epics = [];
 
-export const types = createTypes([
-  'onRouteMap',
-  'initMap',
+export const types = createTypes(
+  [
+    'onRouteMap',
+    'initMap',
 
-  'toggleThisPanel',
+    'toggleThisPanel',
 
-  'isAllCollapsed',
-  'collapseAll',
-  'expandAll',
+    'isAllCollapsed',
+    'collapseAll',
+    'expandAll',
 
-  'clickOnChallenge'
-], ns);
+    'clickOnChallenge'
+  ],
+  ns
+);
 
 export const initMap = createAction(types.initMap);
 
@@ -54,13 +54,10 @@ export const getNS = state => state[ns];
 export const allColapsedSelector = state => state[ns].isAllCollapsed;
 export const mapSelector = state => getNS(state).mapUi;
 export function makePanelOpenSelector(name) {
-  return createSelector(
-    mapSelector,
-    mapUi => {
-      const node = utils.getNode(mapUi, name);
-      return node ? node.isOpen : false;
-    }
-  );
+  return createSelector(mapSelector, mapUi => {
+    const node = utils.getNode(mapUi, name);
+    return node ? node.isOpen : false;
+  });
 }
 
 // interface Map{
@@ -77,7 +74,7 @@ export function makePanelOpenSelector(name) {
 //   }
 // }
 export default handleActions(
-  ()=> ({
+  () => ({
     [types.toggleThisPanel]: (state, { payload: name }) => {
       return {
         ...state,

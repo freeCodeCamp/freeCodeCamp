@@ -33,7 +33,7 @@ const options = {
   autoCloseBrackets: true,
   scrollbarStyle: 'null',
   lineWrapping: true,
-  gutters: [ 'CodeMirror-lint-markers' ]
+  gutters: ['CodeMirror-lint-markers']
 };
 
 const mapStateToProps = createSelector(
@@ -41,13 +41,8 @@ const mapStateToProps = createSelector(
   challengeMetaSelector,
   keySelector,
   themeSelector,
-  (
-    files = {},
-    { mode = 'javascript'},
-    key,
-    theme
-  ) => ({
-    content: files[key] && files[key].contents || '// Happy Coding!',
+  (files = {}, { mode = 'javascript' }, key, theme) => ({
+    content: (files[key] && files[key].contents) || '// Happy Coding!',
     file: files[key],
     fileKey: key,
     mode,
@@ -111,9 +106,13 @@ export class Editor extends PureComponent {
   );
 
   componentDidMount() {
-    MouseTrap.bind('e', () => {
-      this.refs.editor.focus();
-    }, 'keyup');
+    MouseTrap.bind(
+      'e',
+      () => {
+        this.refs.editor.focus();
+      },
+      'keyup'
+    );
   }
 
   componentWillUnmount() {
@@ -130,16 +129,13 @@ export class Editor extends PureComponent {
     } = this.props;
     const cmTheme = this.props.theme === 'default' ? 'default' : 'dracula';
     return (
-      <div
-        className={ `${ns}-editor` }
-        role='main'
-        >
-        <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
+      <div className={`${ns}-editor`} role='main'>
+        <NoSSR onSSR={<CodeMirrorSkeleton content={content} />}>
           <Codemirror
-            onChange={ change => classicEditorUpdated(fileKey, change) }
-            options={ this.createOptions({ executeChallenge, mode, cmTheme }) }
+            onChange={change => classicEditorUpdated(fileKey, change)}
+            options={this.createOptions({ executeChallenge, mode, cmTheme })}
             ref='editor'
-            value={ content }
+            value={content}
           />
         </NoSSR>
       </div>
@@ -150,7 +146,4 @@ export class Editor extends PureComponent {
 Editor.displayName = 'Editor';
 Editor.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Editor);
+export default connect(mapStateToProps, mapDispatchToProps)(Editor);

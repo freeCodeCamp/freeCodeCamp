@@ -9,13 +9,10 @@ import Panes from '../../../../Panes';
 import _Map from '../../../../Map';
 
 const propTypes = {};
-export const mapStateToPanes = addNS(
-  ns,
-  () => ({
-    [types.toggleMap]: 'Map',
-    [types.toggleMain]: 'Main'
-  })
-);
+export const mapStateToPanes = addNS(ns, () => ({
+  [types.toggleMap]: 'Map',
+  [types.toggleMain]: 'Main'
+}));
 
 const nameToComponent = {
   Map: _Map,
@@ -24,13 +21,13 @@ const nameToComponent = {
 
 const renderPane = name => {
   const Comp = nameToComponent[name];
-  return Comp ? <Comp /> : <span>Pane { name } not found</span>;
+  return Comp ? <Comp /> : <span>Pane {name} not found</span>;
 };
 
 export default function ShowProject() {
   return (
-    <ChildContainer isFullWidth={ true }>
-      <Panes render={ renderPane }/>
+    <ChildContainer isFullWidth={true}>
+      <Panes render={renderPane} />
     </ChildContainer>
   );
 }

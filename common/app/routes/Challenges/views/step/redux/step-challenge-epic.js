@@ -3,7 +3,6 @@ import {
   types,
   goToStep,
   updateUnlockedSteps,
-
   unlockedStepsSelector,
   currentIndexSelector
 } from './';
@@ -14,17 +13,14 @@ function unlockStep(step, unlockedSteps) {
   if (!step) {
     return null;
   }
-  const updatedSteps = [ ...unlockedSteps ];
+  const updatedSteps = [...unlockedSteps];
   updatedSteps[step] = true;
   return updateUnlockedSteps(updatedSteps);
 }
 
 export default function stepChallengeEpic(actions, { getState }) {
-  return actions::ofType(
-    types.stepForward,
-    types.stepBackward,
-    types.completeAction
-  )
+  return actions
+    ::ofType(types.stepForward, types.stepBackward, types.completeAction)
     .map(({ type }) => {
       const state = getState();
       const { description = [] } = challengeSelector(state);

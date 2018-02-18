@@ -23,7 +23,7 @@ export function ShowSettings({ showUpdateEmailView }) {
   }
   return (
     <ChildContainer>
-      <div className={ `${ns}-container` }>
+      <div className={`${ns}-container`}>
         <Comp />
       </div>
     </ChildContainer>
@@ -32,7 +32,4 @@ export function ShowSettings({ showUpdateEmailView }) {
 ShowSettings.displayName = 'ShowSettings';
 ShowSettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowSettings);

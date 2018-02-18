@@ -28,11 +28,11 @@ export class Output extends PureComponent {
     const { output, defaultOutput } = this.props;
     const cmTheme = this.props.theme === 'default' ? 'default' : 'dracula';
     return (
-      <div className={ `${ns}-log` }>
-        <NoSSR onSSR={ <CodeMirrorSkeleton content={ output } /> }>
+      <div className={`${ns}-log`}>
+        <NoSSR onSSR={<CodeMirrorSkeleton content={output} />}>
           <Codemirror
             options={{ ...defaultOptions, theme: cmTheme }}
-            value={ output || defaultOutput }
+            value={output || defaultOutput}
           />
         </NoSSR>
       </div>

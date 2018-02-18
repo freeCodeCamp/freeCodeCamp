@@ -10,7 +10,6 @@ import ns from './ns.json';
 import {
   closeChallengeModal,
   submitChallenge,
-
   challengeModalSelector,
   successMessageSelector
 } from './redux';
@@ -27,13 +26,13 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = function(dispatch) {
   const dispatchers = {
     close: () => dispatch(closeChallengeModal()),
-    handleKeypress: (e) => {
+    handleKeypress: e => {
       if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
         dispatch(submitChallenge());
       }
     },
     submitChallenge: () => {
-        dispatch(submitChallenge());
+      dispatch(submitChallenge());
     }
   };
   return () => dispatchers;
@@ -58,18 +57,15 @@ export class CompletionModal extends PureComponent {
     } = this.props;
     return (
       <Modal
-        animation={ false }
-        dialogClassName={ `${ns}-success-modal` }
-        keyboard={ true }
-        onHide={ close }
-        onKeyDown={ isOpen ? handleKeypress : noop }
-        show={ isOpen }
+        animation={false}
+        dialogClassName={`${ns}-success-modal`}
+        keyboard={true}
+        onHide={close}
+        onKeyDown={isOpen ? handleKeypress : noop}
+        show={isOpen}
         >
-        <Modal.Header
-          className={ `${ns}-list-header` }
-          closeButton={ true }
-          >
-          <Modal.Title>{ message }</Modal.Title>
+        <Modal.Header className={`${ns}-list-header`} closeButton={true}>
+          <Modal.Title>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className='text-center'>
@@ -85,10 +81,10 @@ export class CompletionModal extends PureComponent {
         </Modal.Body>
         <Modal.Footer>
           <Button
-            block={ true }
+            block={true}
             bsSize='large'
             bsStyle='primary'
-            onClick={ submitChallenge }
+            onClick={submitChallenge}
             >
             Submit and go to next challenge (Ctrl + Enter)
           </Button>
@@ -101,7 +97,4 @@ export class CompletionModal extends PureComponent {
 CompletionModal.displayName = 'CompletionModal';
 CompletionModal.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CompletionModal);
+export default connect(mapStateToProps, mapDispatchToProps)(CompletionModal);

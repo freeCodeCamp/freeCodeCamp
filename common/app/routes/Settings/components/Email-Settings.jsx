@@ -22,11 +22,7 @@ import { onRouteUpdateEmail, updateMyEmail, updateUserBackend } from '../redux';
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({
-    email,
-    isEmailVerified,
-    sendQuincyEmail
-  }) => ({
+  ({ email, isEmailVerified, sendQuincyEmail }) => ({
     email,
     initialValues: { email },
     isEmailVerified,
@@ -35,10 +31,13 @@ const mapStateToProps = createSelector(
 );
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    updateMyEmail,
-    updateUserBackend
-  }, dispatch);
+  return bindActionCreators(
+    {
+      updateMyEmail,
+      updateUserBackend
+    },
+    dispatch
+  );
 }
 
 const propTypes = {
@@ -58,12 +57,9 @@ const propTypes = {
 
 export function UpdateEmailButton() {
   return (
-    <Link
-      style={{ textDecoration: 'none' }}
-      to={ onRouteUpdateEmail() }
-      >
+    <Link style={{ textDecoration: 'none' }} to={onRouteUpdateEmail()}>
       <Button
-        block={ true }
+        block={true}
         bsSize='lg'
         bsStyle='primary'
         className='btn-link-social'
@@ -82,16 +78,11 @@ class EmailSettings extends PureComponent {
   }
 
   handleSubmit({ email }) {
-
     this.props.updateMyEmail(email);
   }
 
   render() {
-    const {
-      email,
-      isEmailVerified,
-      sendQuincyEmail
-    } = this.props;
+    const { email, isEmailVerified, sendQuincyEmail } = this.props;
     if (!email) {
       return (
         <div>
@@ -108,44 +99,38 @@ class EmailSettings extends PureComponent {
     }
     return (
       <div className='email-settings'>
-        <SectionHeader>
-          Email Settings
-        </SectionHeader>
-        {
-          isEmailVerified ? null :
+        <SectionHeader>Email Settings</SectionHeader>
+        {isEmailVerified ? null : (
           <FullWidthRow>
             <HelpBlock>
               <Alert bsStyle='info'>
-              A change of email adress has not been verified.
-              To use your new email, you must verify it first using the link
-              we sent you.
+                A change of email adress has not been verified. To use your new
+                email, you must verify it first using the link we sent you.
               </Alert>
             </HelpBlock>
           </FullWidthRow>
-        }
+        )}
         <FullWidthRow>
-          <EmailForm
-            initialValues={{ email, confrimEmail: ''}}
-          />
+          <EmailForm initialValues={{ email, confrimEmail: '' }} />
         </FullWidthRow>
         <Spacer />
         <FullWidthRow>
           <Row className='inline-form-field' key='sendQuincyEmail'>
-            <Col sm={ 8 }>
+            <Col sm={8}>
               <ControlLabel htmlFor='sendQuincyEmail'>
                 Send me Quincy&apos;s weekly email
               </ControlLabel>
             </Col>
-            <Col sm={ 4 }>
+            <Col sm={4}>
               <TB
                 id='sendQuincyEmail'
                 name='sendQuincyEmail'
-                onChange={
-                  () => updateUserBackend({
+                onChange={() =>
+                  updateUserBackend({
                     sendQuincyEmail: !sendQuincyEmail
                   })
                 }
-                value={ sendQuincyEmail }
+                value={sendQuincyEmail}
               />
             </Col>
           </Row>
@@ -161,7 +146,7 @@ EmailSettings.propTypes = propTypes;
 export default reduxForm(
   {
     form: 'email-settings',
-    fields: [ 'email' ]
+    fields: ['email']
   },
   mapStateToProps,
   mapDispatchToProps

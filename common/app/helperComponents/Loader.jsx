@@ -5,13 +5,13 @@ function Loader() {
   return (
     <div className='full-size'>
       <Helmet>
-      <link href='/css/loader.css' rel='stylesheet' />
+        <link href='/css/loader.css' rel='stylesheet' />
       </Helmet>
       <div className='loader full-size'>
         <div className='ball-scale-ripple-multiple'>
-          <div/>
-          <div/>
-          <div/>
+          <div />
+          <div />
+          <div />
         </div>
       </div>
     </div>

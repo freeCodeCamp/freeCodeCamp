@@ -25,36 +25,27 @@ export function legacyIsInQuery(query, decode) {
 }
 
 export function getKeyInQuery(query, keyToFind = '') {
-  return query
-    .split('&')
-    .reduce((oldValue, param) => {
-      const key = param.split('=')[0];
-      const value = param
-        .split('=')
-        .slice(1)
-        .join('=');
+  return query.split('&').reduce((oldValue, param) => {
+    const key = param.split('=')[0];
+    const value = param
+      .split('=')
+      .slice(1)
+      .join('=');
 
-      if (key === keyToFind) {
-        return value;
-      }
-      return oldValue;
-    }, null);
+    if (key === keyToFind) {
+      return value;
+    }
+    return oldValue;
+  }, null);
 }
 
 export function getLegacySolutionFromQuery(query = '', decode) {
-  return _.flow(
-    getKeyInQuery,
-    decode,
-    decodeFcc
-  )(query, 'solution');
+  return _.flow(getKeyInQuery, decode, decodeFcc)(query, 'solution');
 }
 
 export function getCodeUri(location, decodeURIComponent) {
   let query;
-  if (
-    location.search &&
-    legacyIsInQuery(location.search, decodeURIComponent)
-  ) {
+  if (location.search && legacyIsInQuery(location.search, decodeURIComponent)) {
     query = location.search.replace(/^\?/, '');
   } else {
     return null;
@@ -70,10 +61,6 @@ export function removeCodeUri(location, history) {
   ) {
     return false;
   }
-  history.replaceState(
-    history.state,
-    null,
-    location.href.split('?')[0]
-  );
+  history.replaceState(history.state, null, location.href.split('?')[0]);
   return true;
 }

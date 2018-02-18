@@ -5,7 +5,8 @@ const path = require('path');
 
 const hiddenFile = /(^(\.|\/\.))|(.md$)/g;
 function getFilesFor(dir) {
-  return fs.readdirSync(path.join(__dirname, '/' + dir))
+  return fs
+    .readdirSync(path.join(__dirname, '/' + dir))
     .filter(file => !hiddenFile.test(file))
     .map(function(file) {
       let superBlock;
@@ -13,13 +14,12 @@ function getFilesFor(dir) {
         return { file: file };
       }
       superBlock = file;
-      return getFilesFor(dir + '/' + superBlock)
-        .map(function(data) {
-          return {
-            file: superBlock + '/' + data.file,
-            superBlock: superBlock
-          };
-        });
+      return getFilesFor(dir + '/' + superBlock).map(function(data) {
+        return {
+          file: superBlock + '/' + data.file,
+          superBlock: superBlock
+        };
+      });
     })
     .reduce(function(files, file) {
       if (!Array.isArray(file)) {
@@ -46,20 +46,22 @@ function getSupName(filePath) {
     return filePath;
   }
 
-  return (filePath || '').split('-').splice(1).join('-');
+  return (filePath || '')
+    .split('-')
+    .splice(1)
+    .join('-');
 }
 
 module.exports = function getChallenges() {
   try {
-    return getFilesFor('challenges')
-      .map(function(data) {
-        const challengeSpec = require('./challenges/' + data.file);
-        challengeSpec.fileName = data.file;
-        challengeSpec.superBlock = getSupName(data.superBlock);
-        challengeSpec.superOrder = getSupOrder(data.superBlock);
+    return getFilesFor('challenges').map(function(data) {
+      const challengeSpec = require('./challenges/' + data.file);
+      challengeSpec.fileName = data.file;
+      challengeSpec.superBlock = getSupName(data.superBlock);
+      challengeSpec.superOrder = getSupOrder(data.superBlock);
 
-        return challengeSpec;
-      });
+      return challengeSpec;
+    });
   } catch (e) {
     console.error('error: ', e);
     return [];

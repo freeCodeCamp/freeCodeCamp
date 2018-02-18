@@ -7,38 +7,29 @@ import noop from 'lodash/noop';
 
 import ns from '../ns.json';
 
-export const types = createTypes([
-  'nextQuestion',
-  'selectChoice',
-  'incrementCorrect',
-  'resetQuiz',
-  'resetChoice'
-], ns);
-
-export const nextQuestion = createAction(
-  types.nextQuestion,
-  noop
+export const types = createTypes(
+  [
+    'nextQuestion',
+    'selectChoice',
+    'incrementCorrect',
+    'resetQuiz',
+    'resetChoice'
+  ],
+  ns
 );
+
+export const nextQuestion = createAction(types.nextQuestion, noop);
 
 export const selectChoice = createAction(
   types.selectChoice,
-  (selectedChoice) => ({ selectedChoice })
+  selectedChoice => ({ selectedChoice })
 );
 
-export const incrementCorrect = createAction(
-  types.incrementCorrect,
-  noop
-);
+export const incrementCorrect = createAction(types.incrementCorrect, noop);
 
-export const resetQuiz = createAction(
-  types.resetQuiz,
-  noop
-);
+export const resetQuiz = createAction(types.resetQuiz, noop);
 
-export const resetChoice = createAction(
-  types.resetChoice,
-  noop
-);
+export const resetChoice = createAction(types.resetChoice, noop);
 
 const initialState = {
   currentIndex: 0,
@@ -57,7 +48,7 @@ export default handleActions(
       ...state,
       currentIndex: state.currentIndex + 1
     }),
-    [types.selectChoice]: (state, {payload}) => ({
+    [types.selectChoice]: (state, { payload }) => ({
       ...state,
       selectedChoice: payload.selectedChoice
     }),

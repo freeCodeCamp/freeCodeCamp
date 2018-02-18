@@ -52,11 +52,8 @@ module.exports = function enableAuthentication(app) {
     res.redirect('/');
   });
 
-
-  router.get(
-    '/deprecated-signin',
-    ifUserRedirect,
-    (req, res) => res.render('account/deprecated-signin', {
+  router.get('/deprecated-signin', ifUserRedirect, (req, res) =>
+    res.render('account/deprecated-signin', {
       title: 'Sign in to freeCodeCamp using a Deprecated Login'
     })
   );
@@ -80,55 +77,40 @@ module.exports = function enableAuthentication(app) {
 
   function getPasswordlessAuth(req, res, next) {
     const {
-      query: {
-        email: encodedEmail,
-        token: authTokenId,
-        emailChange
-      } = {}
+      query: { email: encodedEmail, token: authTokenId, emailChange } = {}
     } = req;
 
     const email = User.decodeEmail(encodedEmail);
     if (!isEmail(email)) {
-      return next(wrapHandledError(
-        new TypeError('decoded email is invalid'),
-        {
+      return next(
+        wrapHandledError(new TypeError('decoded email is invalid'), {
           type: 'info',
           message: 'The email encoded in the link is incorrectly formatted',
           redirectTo: '/email-sign'
-        }
-      ));
+        })
+      );
     }
     // first find
-    return AuthToken.findOne$({ where: { id: authTokenId } })
-      .flatMap(authToken => {
-        if (!authToken) {
-          throw wrapHandledError(
-            new Error(`no token found for id: ${authTokenId}`),
-            {
-              type: 'info',
-              message: defaultErrorMsg,
-              redirectTo: '/email-signin'
-            }
-          );
-        }
-        // find user then validate and destroy email validation token
-        // finally retun user instance
-        return User.findOne$({ where: { id: authToken.userId } })
-          .flatMap(user => {
-            if (!user) {
-              throw wrapHandledError(
-                new Error(`no user found for token: ${authTokenId}`),
-                {
-                  type: 'info',
-                  message: defaultErrorMsg,
-                  redirectTo: '/email-signin'
-                }
-              );
-            }
-            if (user.email !== email) {
-              if (!emailChange || (emailChange && user.newEmail !== email)) {
+    return (
+      AuthToken.findOne$({ where: { id: authTokenId } })
+        .flatMap(authToken => {
+          if (!authToken) {
+            throw wrapHandledError(
+              new Error(`no token found for id: ${authTokenId}`),
+              {
+                type: 'info',
+                message: defaultErrorMsg,
+                redirectTo: '/email-signin'
+              }
+            );
+          }
+          // find user then validate and destroy email validation token
+          // finally retun user instance
+          return User.findOne$({ where: { id: authToken.userId } }).flatMap(
+            user => {
+              if (!user) {
                 throw wrapHandledError(
-                  new Error('user email does not match'),
+                  new Error(`no user found for token: ${authTokenId}`),
                   {
                     type: 'info',
                     message: defaultErrorMsg,
@@ -136,51 +118,56 @@ module.exports = function enableAuthentication(app) {
                   }
                 );
               }
-            }
-            return authToken.validate$()
-              .map(isValid => {
-                if (!isValid) {
+              if (user.email !== email) {
+                if (!emailChange || (emailChange && user.newEmail !== email)) {
                   throw wrapHandledError(
-                    new Error('token is invalid'),
+                    new Error('user email does not match'),
                     {
+                      type: 'info',
+                      message: defaultErrorMsg,
+                      redirectTo: '/email-signin'
+                    }
+                  );
+                }
+              }
+              return authToken
+                .validate$()
+                .map(isValid => {
+                  if (!isValid) {
+                    throw wrapHandledError(new Error('token is invalid'), {
                       type: 'info',
                       message: `
                         Looks like the link you clicked has expired,
                         please request a fresh link, to sign in.
                       `,
                       redirectTo: '/email-signin'
-                    }
-                  );
-                }
-                return authToken.destroy$();
-              })
-              .map(() => user);
-          });
-      })
-      // at this point token has been validated and destroyed
-      // update user and log them in
-      .map(user => user.loginByRequest(req, res))
-      .do(() => {
-        let redirectTo = '/';
+                    });
+                  }
+                  return authToken.destroy$();
+                })
+                .map(() => user);
+            }
+          );
+        })
+        // at this point token has been validated and destroyed
+        // update user and log them in
+        .map(user => user.loginByRequest(req, res))
+        .do(() => {
+          let redirectTo = '/';
 
-        if (
-          req.session &&
-          req.session.returnTo
-        ) {
-          redirectTo = req.session.returnTo;
-        }
+          if (req.session && req.session.returnTo) {
+            redirectTo = req.session.returnTo;
+          }
 
-        req.flash(
-          'success',
-          'Success! You have signed in to your account. Happy Coding!'
-        );
+          req.flash(
+            'success',
+            'Success! You have signed in to your account. Happy Coding!'
+          );
 
-        return res.redirect(redirectTo);
-      })
-      .subscribe(
-        () => {},
-        next
-      );
+          return res.redirect(redirectTo);
+        })
+        .subscribe(() => {}, next)
+    );
   }
 
   router.get(
@@ -207,13 +194,13 @@ module.exports = function enableAuthentication(app) {
     const { body: { email } = {} } = req;
 
     return User.findOne$({ where: { email } })
-      .flatMap(_user => Observable.if(
+      .flatMap(_user =>
+        Observable.if(
           // if no user found create new user and save to db
           _.constant(_user),
           Observable.of(_user),
           User.create$({ email })
-        )
-        .flatMap(user => user.requestAuthEmail(!_user))
+        ).flatMap(user => user.requestAuthEmail(!_user))
       )
       .do(msg => res.status(200).send({ message: msg }))
       .subscribe(_.noop, next);

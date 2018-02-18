@@ -28,17 +28,9 @@ function makeMapStateToProps(_, { dashedName }) {
   return createSelector(
     userSelector,
     challengeMapSelector,
-    (
-      { challengeMap: userChallengeMap },
-      challengeMap
-    ) => {
-      const {
-        id,
-        title,
-        block,
-        isLocked,
-        isComingSoon
-      } = challengeMap[dashedName] || {};
+    ({ challengeMap: userChallengeMap }, challengeMap) => {
+      const { id, title, block, isLocked, isComingSoon } =
+        challengeMap[dashedName] || {};
       const isCompleted = userChallengeMap ? !!userChallengeMap[id] : false;
       return {
         dashedName,
@@ -77,16 +69,12 @@ export class Challenge extends PureComponent {
 
   renderLocked(title, isComingSoon, className) {
     return (
-      <p
-        className={ className }
-        key={ title }
-        >
-        { title }
-        { this.renderComingSoon(isComingSoon) }
+      <p className={className} key={title}>
+        {title}
+        {this.renderComingSoon(isComingSoon)}
       </p>
     );
   }
-
 
   render() {
     const {
@@ -112,24 +100,17 @@ export class Challenge extends PureComponent {
       disabled: isLocked || (!isDev && isComingSoon)
     });
     if (isLocked || (!isDev && isComingSoon)) {
-      return this.renderLocked(
-        title,
-        isComingSoon,
-        challengeClassName
-      );
+      return this.renderLocked(title, isComingSoon, challengeClassName);
     }
     return (
-      <div
-        className={ challengeClassName }
-        key={ title }
-        >
+      <div className={challengeClassName} key={title}>
         <Link
-          onClick={ clickOnChallenge }
-          to={ onRouteChallenges({ dashedName, block }) }
+          onClick={clickOnChallenge}
+          to={onRouteChallenges({ dashedName, block })}
           >
-          <span >
-            { title }
-            { this.renderCompleted(isCompleted, isLocked) }
+          <span>
+            {title}
+            {this.renderCompleted(isCompleted, isLocked)}
           </span>
         </Link>
       </div>
@@ -140,7 +121,4 @@ export class Challenge extends PureComponent {
 Challenge.propTypes = propTypes;
 Challenge.dispalyName = 'Challenge';
 
-export default connect(
-  makeMapStateToProps,
-  mapDispatchToProps
-)(Challenge);
+export default connect(makeMapStateToProps, mapDispatchToProps)(Challenge);

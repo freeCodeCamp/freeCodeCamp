@@ -54,45 +54,47 @@ class DangerZone extends PureComponent {
           <Panel
             bsStyle='danger'
             className='danger-zone-panel'
-            header={<h2><strong>Danger Zone</strong></h2>}
+            header={
+              <h2>
+                <strong>Danger Zone</strong>
+              </h2>
+            }
             >
-            <Alert
-              bsStyle='danger'
-              >
+            <Alert bsStyle='danger'>
               <p>
-                Tread carefully, changes made in this area are permanent.
-                They cannot be undone.
+                Tread carefully, changes made in this area are permanent. They
+                cannot be undone.
               </p>
             </Alert>
             <FullWidthRow>
               <Button
-                block={ true }
+                block={true}
                 bsSize='lg'
                 bsStyle='danger'
-                onClick={ this.toggleResetModal }
+                onClick={this.toggleResetModal}
                 >
                 Reset all of my progress
               </Button>
               <ButtonSpacer />
               <Button
-                block={ true }
+                block={true}
                 bsSize='lg'
                 bsStyle='danger'
-                onClick={ this.toggleDeleteModal }
+                onClick={this.toggleDeleteModal}
                 >
                 Delete my account
               </Button>
             </FullWidthRow>
           </Panel>
           <ResetModal
-            onHide={ this.toggleResetModal }
-            reset={ resetProgress }
-            show={ this.state.reset }
+            onHide={this.toggleResetModal}
+            reset={resetProgress}
+            show={this.state.reset}
           />
           <DeleteModal
-            delete={ deleteAccount }
-            onHide={ this.toggleDeleteModal }
-            show={ this.state.delete }
+            delete={deleteAccount}
+            onHide={this.toggleDeleteModal}
+            show={this.state.delete}
           />
         </FullWidthRow>
       </div>

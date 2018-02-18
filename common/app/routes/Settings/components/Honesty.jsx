@@ -16,13 +16,10 @@ const propTypes = {
   updateUserBackend: PropTypes.func.isRequired
 };
 
-const mapStateToProps = createSelector(
-  userSelector,
-  ({ isHonest }) => ({
-    policy: academicPolicy,
-    isHonest
-  })
-);
+const mapStateToProps = createSelector(userSelector, ({ isHonest }) => ({
+  policy: academicPolicy,
+  isHonest
+}));
 
 const mapDispatchToProps = { updateUserBackend };
 
@@ -44,50 +41,33 @@ class Honesty extends PureComponent {
     const { policy, isHonest } = this.props;
     const isHonestAgreed = (
       <Panel bsStyle='info'>
-        <p>
-          You have already accepted our Academic Honesty Policy
-        </p>
+        <p>You have already accepted our Academic Honesty Policy</p>
       </Panel>
     );
     const agreeButton = (
-      <Button
-        block={ true }
-        bsStyle='primary'
-        onClick={ this.handleAgreeClick }
-        >
+      <Button block={true} bsStyle='primary' onClick={this.handleAgreeClick}>
         Agree
       </Button>
     );
     return (
       <div className='honesty-policy'>
-        <SectionHeader>
-          Academic Honesty Policy
-        </SectionHeader>
+        <SectionHeader>Academic Honesty Policy</SectionHeader>
         <FullWidthRow>
           <Panel>
-            {
-              policy.map(
-                (line, i) => (
-                  <p
-                  dangerouslySetInnerHTML={{ __html: line }}
-                  key={ '' + i + line.slice(0, 10) }
-                  />
-                )
-              )
-            }
+            {policy.map((line, i) => (
+              <p
+                dangerouslySetInnerHTML={{ __html: line }}
+                key={'' + i + line.slice(0, 10)}
+              />
+            ))}
             <br />
-            {
-              isHonest ?
-                isHonestAgreed :
-                agreeButton
-            }
+            {isHonest ? isHonestAgreed : agreeButton}
           </Panel>
         </FullWidthRow>
       </div>
     );
   }
 }
-
 
 Honesty.displayName = 'Honesty';
 Honesty.propTypes = propTypes;

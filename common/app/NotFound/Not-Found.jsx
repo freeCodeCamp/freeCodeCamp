@@ -5,11 +5,8 @@ import React from 'react';
 const propTypes = {};
 
 export default function NotFound() {
-  return (
-    <div>404 Not Found</div>
-  );
+  return <div>404 Not Found</div>;
 }
 
 NotFound.displayName = 'NotFound';
 NotFound.propTypes = propTypes;
-

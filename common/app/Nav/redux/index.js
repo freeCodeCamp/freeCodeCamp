@@ -10,18 +10,19 @@ import loadCurrentChallengeEpic from './load-current-challenge-epic.js';
 import ns from '../ns.json';
 import { createEventMetaCreator } from '../../redux';
 
-export const epics = [
-  loadCurrentChallengeEpic
-];
+export const epics = [loadCurrentChallengeEpic];
 
-export const types = createTypes([
-  'clickOnLogo',
-  'clickOnMap',
-  'navLinkClicked',
+export const types = createTypes(
+  [
+    'clickOnLogo',
+    'clickOnMap',
+    'navLinkClicked',
 
-  'closeDropdown',
-  'openDropdown'
-], ns);
+    'closeDropdown',
+    'openDropdown'
+  ],
+  ns
+);
 
 export const clickOnLogo = createAction(
   types.clickOnLogo,

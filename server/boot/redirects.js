@@ -4,8 +4,8 @@ module.exports = function(app) {
   router.get('/nonprofit-project-instructions', function(req, res) {
     res.redirect(
       301,
-      'http://forum.freecodecamp.org/t/'
-      + 'how-free-code-camps-nonprofits-projects-work/19547'
+      'http://forum.freecodecamp.org/t/' +
+        'how-free-code-camps-nonprofits-projects-work/19547'
     );
   });
 

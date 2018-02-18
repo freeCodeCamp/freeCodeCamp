@@ -22,29 +22,28 @@ export const epics = [
   userUpdateEpic
 ];
 
-const createActionWithFlash = type => createAction(
-  type,
-  null,
-  utils.createFlashMetaAction
+const createActionWithFlash = type =>
+  createAction(type, null, utils.createFlashMetaAction);
+
+export const types = createTypes(
+  [
+    createAsyncTypes('claimCert'),
+    createAsyncTypes('updateMyEmail'),
+    createAsyncTypes('updateUserBackend'),
+    createAsyncTypes('deletePortfolio'),
+    createAsyncTypes('updateMyPortfolio'),
+    'updateMyLang',
+    'updateNewUsernameValidity',
+    createAsyncTypes('validateUsername'),
+    createAsyncTypes('refetchChallengeMap'),
+    createAsyncTypes('deleteAccount'),
+    createAsyncTypes('resetProgress'),
+
+    'onRouteSettings',
+    'onRouteUpdateEmail'
+  ],
+  'settings'
 );
-
-export const types = createTypes([
-  createAsyncTypes('claimCert'),
-  createAsyncTypes('updateMyEmail'),
-  createAsyncTypes('updateUserBackend'),
-  createAsyncTypes('deletePortfolio'),
-  createAsyncTypes('updateMyPortfolio'),
-  'updateMyLang',
-  'updateNewUsernameValidity',
-  createAsyncTypes('validateUsername'),
-  createAsyncTypes('refetchChallengeMap'),
-  createAsyncTypes('deleteAccount'),
-  createAsyncTypes('resetProgress'),
-
-  'onRouteSettings',
-  'onRouteUpdateEmail'
-], 'settings');
-
 
 export const onRouteSettings = createAction(types.onRouteSettings);
 export const onRouteUpdateEmail = createAction(types.onRouteUpdateEmail);
@@ -55,10 +54,7 @@ export const claimCertComplete = createAction(
   ({ result }) => result,
   identity
 );
-export const claimCertError = createAction(
-  types.claimCert.error,
-  identity
-);
+export const claimCertError = createAction(types.claimCert.error, identity);
 
 export const updateUserBackend = createAction(types.updateUserBackend.start);
 export const updateUserBackendComplete = createActionWithFlash(
@@ -87,7 +83,7 @@ export const deletePortfolio = createAction(types.deletePortfolio.start);
 export const deletePortfolioError = createAction(types.deletePortfolio.error);
 export const updateMyLang = createAction(
   types.updateMyLang,
-  (values) => values.lang
+  values => values.lang
 );
 
 export const resetProgress = createAction(types.resetProgress.start);
@@ -130,8 +126,8 @@ export function settingsSelector(state) {
   return getNS(state);
 }
 
-export const showUpdateEmailViewSelector =
-  state => getNS(state).showUpdateEmailView;
+export const showUpdateEmailViewSelector = state =>
+  getNS(state).showUpdateEmailView;
 
 export default composeReducers(
   ns,
@@ -153,19 +149,20 @@ export default composeReducers(
     }
     return state;
   },
-  handleActions(() => ({
-    [types.updateNewUsernameValidity]: (state, { payload }) => ({
-      ...state,
-      isValidUsername: payload,
-      validating: false
+  handleActions(
+    () => ({
+      [types.updateNewUsernameValidity]: (state, { payload }) => ({
+        ...state,
+        isValidUsername: payload,
+        validating: false
+      }),
+      [types.validateUsername.start]: state => ({
+        ...state,
+        isValidUsername: false,
+        validating: true
+      }),
+      [types.validateUsername.error]: state => ({ ...state, validating: false })
     }),
-    [types.validateUsername.start]: state => ({
-      ...state,
-      isValidUsername: false,
-      validating: true
-    }),
-    [types.validateUsername.error]: state => ({ ...state, validating: false })
-  }),
-  defaultState
-)
+    defaultState
+  )
 );

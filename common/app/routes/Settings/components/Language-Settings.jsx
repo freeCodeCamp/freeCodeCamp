@@ -22,47 +22,32 @@ const propTypes = {
   updateMyLang: PropTypes.func.isRequired
 };
 
-const mapStateToProps = createSelector(
-  userSelector,
-  ({ languageTag }) => ({
-    // send null to prevent redux-form from initialize empty
-    initialValues: languageTag ? { lang: languageTag } : null
-  })
-);
+const mapStateToProps = createSelector(userSelector, ({ languageTag }) => ({
+  // send null to prevent redux-form from initialize empty
+  initialValues: languageTag ? { lang: languageTag } : null
+}));
 const mapDispatchToProps = { updateMyLang };
-const fields = [ 'lang' ];
+const fields = ['lang'];
 const validator = values => {
   if (!langs[values.lang]) {
     return { lang: `${values.lang} is unsupported` };
   }
   return {};
 };
-const options = [(
-    <option
-      disabled={ true }
-      key='default'
-      value='not-the-momma'
-      >
-      Preferred Language
-    </option>
-  ),
+const options = [
+  <option disabled={true} key='default' value='not-the-momma'>
+    Preferred Language
+  </option>,
   ...Object.keys(langs).map(tag => {
     return (
-      <option
-        key={ tag }
-        value={ tag }
-        >
-        { langs[tag] }
+      <option key={tag} value={tag}>
+        {langs[tag]}
       </option>
     );
-  }), (
-    <option
-      disabled={ true }
-      key='more'
-      >
-      More to come...
-    </option>
-  )
+  }),
+  <option disabled={true} key='more'>
+    More to come...
+  </option>
 ];
 
 export class LanguageSettings extends React.Component {
@@ -89,33 +74,29 @@ export class LanguageSettings extends React.Component {
   }
 
   render() {
-    const {
-      fields: { lang: { name, value } }
-    } = this.props;
+    const { fields: { lang: { name, value } } } = this.props;
     return (
       <div>
-        <SectionHeader>
-          Language Settings
-        </SectionHeader>
+        <SectionHeader>Language Settings</SectionHeader>
         <FullWidthRow>
           <FormGroup>
             <Row>
-              <Col sm={ 4 } xs={ 12 }>
-                <ControlLabel htmlFor={ name }>
+              <Col sm={4} xs={12}>
+                <ControlLabel htmlFor={name}>
                   Prefered Language for Challenges
                 </ControlLabel>
               </Col>
-              <Col sm={ 8 } xs={ 12 }>
+              <Col sm={8} xs={12}>
                 <FormControl
                   className='btn btn-block btn-primary btn-lg'
                   componentClass='select'
-                  id={ name }
-                  name={ name }
-                  onChange={ this.handleChange }
+                  id={name}
+                  name={name}
+                  onChange={this.handleChange}
                   style={{ height: '45px' }}
-                  value={ value }
+                  value={value}
                   >
-                  { options }
+                  {options}
                 </FormControl>
               </Col>
             </Row>

@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-  Row,
-  Col,
-  ControlLabel
-} from 'react-bootstrap';
+import { Row, Col, ControlLabel } from 'react-bootstrap';
 
 import TB from '../Toggle-Button';
 
@@ -16,7 +12,7 @@ const propTypes = {
 export default function LockSettings({ isLocked, toggleIsLocked }) {
   return (
     <Row className='inline-form'>
-      <Col sm={ 8 } xs={ 12 }>
+      <Col sm={8} xs={12}>
         <ControlLabel htmlFor='isLocked'>
           <p>
             <strong>
@@ -27,12 +23,8 @@ export default function LockSettings({ isLocked, toggleIsLocked }) {
           </p>
         </ControlLabel>
       </Col>
-      <Col sm={ 4 } xs={ 12 }>
-        <TB
-          name='isLocked'
-          onChange={ toggleIsLocked }
-          value={ isLocked }
-        />
+      <Col sm={4} xs={12}>
+        <TB name='isLocked' onChange={toggleIsLocked} value={isLocked} />
       </Col>
     </Row>
   );

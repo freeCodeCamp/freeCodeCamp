@@ -1,9 +1,7 @@
 import React from 'react';
 
 function Spacer() {
-  return (
-    <div className='spacer' />
-  );
+  return <div className='spacer' />;
 }
 
 Spacer.displayName = 'Spacer';

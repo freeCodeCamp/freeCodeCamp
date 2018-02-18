@@ -37,10 +37,13 @@ const mapStateToProps = createSelector(
     projects,
     userProjects: projects
       .map(block => buildUserProjectsMap(block, challengeMap))
-      .reduce((projects, current) => ({
-        ...projects,
-        ...current
-      }), {}),
+      .reduce(
+        (projects, current) => ({
+          ...projects,
+          ...current
+        }),
+        {}
+      ),
     blockNameIsCertMap: {
       'Applied Responsive Web Design Projects': isRespWebDesignCert,
       /* eslint-disable max-len */
@@ -56,12 +59,15 @@ const mapStateToProps = createSelector(
 );
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    claimCert,
-    fetchChallenges,
-    hardGoTo,
-    updateUserBackend
-  }, dispatch);
+  return bindActionCreators(
+    {
+      claimCert,
+      fetchChallenges,
+      hardGoTo,
+      updateUserBackend
+    },
+    dispatch
+  );
 }
 
 const propTypes = {
@@ -78,12 +84,9 @@ const propTypes = {
   superBlock: PropTypes.string,
   updateUserBackend: PropTypes.func.isRequired,
   userProjects: PropTypes.objectOf(
-    PropTypes.objectOf(PropTypes.oneOfType(
-      [
-        PropTypes.string,
-        PropTypes.object
-      ]
-    ))
+    PropTypes.objectOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+    )
   ),
   username: PropTypes.string
 };
@@ -104,15 +107,15 @@ class CertificationSettings extends PureComponent {
 
   handleSubmit(values) {
     const { id } = values;
-    const fullForm = _.values(values)
-      .filter(Boolean)
-      .filter(_.isString)
+    const fullForm =
       // 5 projects + 1 id prop
-      .length === 6;
-    const valuesSaved = _.values(this.props.userProjects[id])
-      .filter(Boolean)
-      .filter(_.isString)
-      .length === 6;
+      _.values(values)
+        .filter(Boolean)
+        .filter(_.isString).length === 6;
+    const valuesSaved =
+      _.values(this.props.userProjects[id])
+        .filter(Boolean)
+        .filter(_.isString).length === 6;
     if (fullForm && valuesSaved) {
       return this.props.claimCert(id);
     }
@@ -140,43 +143,38 @@ class CertificationSettings extends PureComponent {
     }
     return (
       <div>
-        <SectionHeader>
-          Certification Settings
-        </SectionHeader>
+        <SectionHeader>Certification Settings</SectionHeader>
         <FullWidthRow>
-        <p>
-          Add links to the live demos of your projects as you finish them.
-          Then, once you have added all 5 projects required for a certificate,
-          you can claim it.
-        </p>
+          <p>
+            Add links to the live demos of your projects as you finish them.
+            Then, once you have added all 5 projects required for a certificate,
+            you can claim it.
+          </p>
         </FullWidthRow>
-      {
-        projects.map(({
-          projectBlockName,
-          challenges,
-          superBlock
-        }) => {
+        {projects.map(({ projectBlockName, challenges, superBlock }) => {
           const isCertClaimed = blockNameIsCertMap[projectBlockName];
           if (superBlock === jsProjectSuperBlock) {
             return (
               <JSAlgoAndDSForm
-                challenges={ challenges }
-                claimCert={ claimCert }
-                hardGoTo={ hardGoTo }
-                isCertClaimed={ isCertClaimed }
-                jsProjects={ userProjects[superBlock] }
-                key={ superBlock }
-                projectBlockName={ projectBlockName }
-                superBlock={ superBlock }
-                username={ username }
+                challenges={challenges}
+                claimCert={claimCert}
+                hardGoTo={hardGoTo}
+                isCertClaimed={isCertClaimed}
+                jsProjects={userProjects[superBlock]}
+                key={superBlock}
+                projectBlockName={projectBlockName}
+                superBlock={superBlock}
+                username={username}
               />
             );
           }
-          const options = challenges
-            .reduce((options, current) => {
+          const options = challenges.reduce(
+            (options, current) => {
               options.types[current] = 'url';
               return options;
-            }, { types: {} });
+            },
+            { types: {} }
+          );
 
           options.types.id = 'hidden';
           options.placeholder = false;
@@ -187,52 +185,51 @@ class CertificationSettings extends PureComponent {
             userValues.id = superBlock;
           }
 
-          const initialValues = challenges
-            .reduce((accu, current) => ({
+          const initialValues = challenges.reduce(
+            (accu, current) => ({
               ...accu,
               [current]: ''
-            }), {});
+            }),
+            {}
+          );
 
-          const completedProjects = _.values(userValues)
-            .filter(Boolean)
-            .filter(_.isString)
+          const completedProjects =
             // minus 1 to account for the id
-            .length - 1;
+            _.values(userValues)
+              .filter(Boolean)
+              .filter(_.isString).length - 1;
 
           const fullForm = completedProjects === challenges.length;
           return (
             <FullWidthRow key={superBlock}>
-              <h3 className='project-heading'>{ projectBlockName }</h3>
+              <h3 className='project-heading'>{projectBlockName}</h3>
               <Form
-                buttonText={ fullForm ? 'Claim Certificate' : 'Save Progress' }
-                enableSubmit={ fullForm }
-                formFields={ challenges.concat([ 'id' ]) }
+                buttonText={fullForm ? 'Claim Certificate' : 'Save Progress'}
+                enableSubmit={fullForm}
+                formFields={challenges.concat(['id'])}
                 hideButton={isCertClaimed}
-                id={ superBlock }
+                id={superBlock}
                 initialValues={{
                   ...initialValues,
                   ...userValues
                 }}
-                options={ options }
-                submit={ this.handleSubmit }
+                options={options}
+                submit={this.handleSubmit}
               />
-              {
-                isCertClaimed ?
-                  <Button
-                    block={ true }
-                    bsSize='lg'
-                    bsStyle='primary'
-                    href={ `/c/${username}/${superBlock}`}
-                    >
-                    Show Certificate
-                  </Button> :
-                  null
-              }
+              {isCertClaimed ? (
+                <Button
+                  block={true}
+                  bsSize='lg'
+                  bsStyle='primary'
+                  href={`/c/${username}/${superBlock}`}
+                  >
+                  Show Certificate
+                </Button>
+              ) : null}
               <hr />
             </FullWidthRow>
           );
-        })
-        }
+        })}
       </div>
     );
   }
@@ -241,7 +238,6 @@ class CertificationSettings extends PureComponent {
 CertificationSettings.displayName = 'CertificationSettings';
 CertificationSettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CertificationSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  CertificationSettings
+);

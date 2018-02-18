@@ -40,11 +40,7 @@ export default function createApp({
     services: servicesCreator(serviceOptions)
   };
 
-  const epicMiddleware = createEpic(
-    epicOptions,
-    ...epics,
-    ...sideEpics
-  );
+  const epicMiddleware = createEpic(epicOptions, ...epics, ...sideEpics);
 
   const {
     reducer: routesReducer,
@@ -73,11 +69,7 @@ export default function createApp({
     ...sideEnhancers
   );
 
-  const reducer = combineReducers(
-    appReducer,
-    panesReducer,
-    routesReducer
-  );
+  const reducer = combineReducers(appReducer, panesReducer, routesReducer);
 
   // create composed store enhancer
   // use store enhancer function to enhance `createStore` function
@@ -93,11 +85,13 @@ export default function createApp({
     if (module.hot) {
       module.hot.accept('./reducer.js', () => {
         debug('hot reloading reducers');
-        store.replaceReducer(combineReducers(
-          require('./reducer.js').default,
-          panesReducer,
-          routesReducer
-        ));
+        store.replaceReducer(
+          combineReducers(
+            require('./reducer.js').default,
+            panesReducer,
+            routesReducer
+          )
+        );
       });
     }
   }

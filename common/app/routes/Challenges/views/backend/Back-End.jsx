@@ -2,22 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
-import {
-  Button,
-  Col,
-  Row
-} from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 
 import ChallengeTitle from '../../Challenge-Title.jsx';
 import ChallengeDescription from '../../Challenge-Description.jsx';
 import SolutionInput from '../../Solution-Input.jsx';
 import TestSuite from '../../Test-Suite.jsx';
 import Output from '../../Output.jsx';
-import {
-  executeChallenge,
-  testsSelector,
-  outputSelector
-} from '../../redux';
+import { executeChallenge, testsSelector, outputSelector } from '../../redux';
 import { descriptionRegex } from '../../utils';
 
 import {
@@ -45,7 +37,7 @@ const propTypes = {
   ...reduxFormPropTypes
 };
 
-const fields = [ 'solution' ];
+const fields = ['solution'];
 
 const fieldValidators = {
   solution: makeRequired(isValidURL)
@@ -55,15 +47,7 @@ const mapStateToProps = createSelector(
   challengeSelector,
   outputSelector,
   testsSelector,
-  (
-    {
-      id,
-      title,
-      description
-    },
-    output,
-    tests
-  ) => ({
+  ({ id, title, description }, output, tests) => ({
     id,
     title,
     tests,
@@ -86,15 +70,15 @@ export class BackEnd extends PureComponent {
         return (
           <div
             dangerouslySetInnerHTML={{ __html: line }}
-            key={ line.slice(-6) + index }
+            key={line.slice(-6) + index}
           />
         );
       }
       return (
         <p
           className='wrappable'
-          dangerouslySetInnerHTML= {{ __html: line }}
-          key={ line.slice(-6) + index }
+          dangerouslySetInnerHTML={{ __html: line }}
+          key={line.slice(-6) + index}
         />
       );
     });
@@ -113,56 +97,49 @@ export class BackEnd extends PureComponent {
       submitting
     } = this.props;
 
-    const buttonCopy = submitting ?
-      'Submit and go to my next challenge' :
-      "I've completed this challenge";
+    const buttonCopy = submitting
+      ? 'Submit and go to my next challenge'
+      : "I've completed this challenge";
     return (
       <Row>
-        <Col
-          xs={ 6 }
-          xsOffset={ 3 }
-          >
+        <Col xs={6} xsOffset={3}>
           <Row>
-            <ChallengeTitle>
-              { title }
-            </ChallengeTitle>
+            <ChallengeTitle>{title}</ChallengeTitle>
             <ChallengeDescription>
-              { this.renderDescription(description) }
+              {this.renderDescription(description)}
             </ChallengeDescription>
           </Row>
           <Row>
             <form
               name='BackEndChallenge'
-              onSubmit={ handleSubmit(executeChallenge) }
+              onSubmit={handleSubmit(executeChallenge)}
               >
               <SolutionInput
                 placeholder='https://your-app.com'
-                solution={ solution }
+                solution={solution}
               />
               <Button
-                block={ true }
+                block={true}
                 bsStyle='primary'
                 className='btn-big'
-                onClick={ submitting ? null : null }
-                type={ submitting ? null : 'submit' }
+                onClick={submitting ? null : null}
+                type={submitting ? null : 'submit'}
                 >
-                { buttonCopy } (ctrl + enter)
+                {buttonCopy} (ctrl + enter)
               </Button>
             </form>
           </Row>
           <Row>
-            <br/>
+            <br />
             <Output
-              defaultOutput={
-`/**
+              defaultOutput={`/**
   * Test output will go here
-  */`
-              }
-              output={ output }
+  */`}
+              output={output}
             />
           </Row>
           <Row>
-            <TestSuite tests={ tests } />
+            <TestSuite tests={tests} />
           </Row>
         </Col>
       </Row>

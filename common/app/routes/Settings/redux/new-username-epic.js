@@ -1,19 +1,13 @@
 import { Observable } from 'rx';
 import { ofType } from 'redux-epic';
 
-import {
-  types,
-  updateNewUsernameValidity,
-  validateUsernameError
-} from './';
+import { types, updateNewUsernameValidity, validateUsernameError } from './';
 import { getJSON$ } from '../../../../utils/ajax-stream';
-import {
-  doActionOnError,
-  createErrorObservable
-} from '../../../redux';
+import { doActionOnError, createErrorObservable } from '../../../redux';
 
 function validateUsernameEpic(actions$) {
-  const start = actions$::ofType(types.validateUsername.start)
+  const start = actions$
+    ::ofType(types.validateUsername.start)
     .debounce(500)
     .flatMap(({ payload }) =>
       getJSON$(`/api/users/exists?username=${payload}`)
@@ -21,7 +15,8 @@ function validateUsernameEpic(actions$) {
         .catch(error => doActionOnError(() => validateUsernameError(error)))
     );
 
-    const error = actions$::ofType(types.validateUsername.error)
+  const error = actions$
+    ::ofType(types.validateUsername.error)
     .flatMap(createErrorObservable);
 
   return Observable.merge(start, error);

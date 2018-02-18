@@ -13,7 +13,6 @@ const hoursBetween = 24;
 const hoursDay = 24;
 
 export function prepUniqueDaysByHours(cals, tz = 'UTC') {
-
   let prev = null;
 
   // compose goes bottom to top (map > sortBy > transform)
@@ -25,27 +24,34 @@ export function prepUniqueDaysByHours(cals, tz = 'UTC') {
       } else if (
         moment(cur)
           .tz(tz)
-          .diff(moment(prev).tz(tz).startOf('day'), 'hours')
-        >= hoursDay
+          .diff(
+            moment(prev)
+              .tz(tz)
+              .startOf('day'),
+            'hours'
+          ) >= hoursDay
       ) {
         data.push(cur);
         prev = cur;
       }
     }, []),
     sortBy(e => e),
-    map(ts => moment(ts).tz(tz).startOf('hours').valueOf())
+    map(ts =>
+      moment(ts)
+        .tz(tz)
+        .startOf('hours')
+        .valueOf()
+    )
   )(cals);
 }
 
 export function calcCurrentStreak(cals, tz = 'UTC') {
-
   let prev = last(cals);
   if (
     moment()
       .tz(tz)
       .startOf('day')
-      .diff(moment(prev).tz(tz), 'hours')
-    > hoursBetween
+      .diff(moment(prev).tz(tz), 'hours') > hoursBetween
   ) {
     return 0;
   }
@@ -56,8 +62,7 @@ export function calcCurrentStreak(cals, tz = 'UTC') {
       moment(prev)
         .tz(tz)
         .startOf('day')
-        .diff(moment(cur).tz(tz), 'hours')
-      <= hoursBetween
+        .diff(moment(cur).tz(tz), 'hours') <= hoursBetween
     ) {
       prev = cur;
       currentStreak++;
@@ -72,20 +77,26 @@ export function calcCurrentStreak(cals, tz = 'UTC') {
 }
 
 export function calcLongestStreak(cals, tz = 'UTC') {
-
   let tail = cals[0];
-  const longest = cals.reduce((longest, head, index) => {
-    const last = cals[index === 0 ? 0 : index - 1];
-    // is streak broken
-    if (moment(head).tz(tz).startOf('day').diff(moment(last).tz(tz), 'hours')
-        > hoursBetween) {
-      tail = head;
-    }
-    if (dayCount(longest, tz) < dayCount([head, tail], tz)) {
-      return [head, tail];
-    }
-    return longest;
-  }, [cals[0], cals[0]]);
+  const longest = cals.reduce(
+    (longest, head, index) => {
+      const last = cals[index === 0 ? 0 : index - 1];
+      // is streak broken
+      if (
+        moment(head)
+          .tz(tz)
+          .startOf('day')
+          .diff(moment(last).tz(tz), 'hours') > hoursBetween
+      ) {
+        tail = head;
+      }
+      if (dayCount(longest, tz) < dayCount([head, tail], tz)) {
+        return [head, tail];
+      }
+      return longest;
+    },
+    [cals[0], cals[0]]
+  );
 
   return dayCount(longest, tz);
 }

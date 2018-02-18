@@ -5,10 +5,7 @@ import { connect } from 'react-redux';
 
 import ns from './ns.json';
 import { alertTypes } from '../../utils/flash.js';
-import {
-  latestMessageSelector,
-  clickOnClose
-} from './redux';
+import { latestMessageSelector, clickOnClose } from './redux';
 
 const propTypes = {
   clickOnClose: PropTypes.func.isRequired,
@@ -25,10 +22,8 @@ export function Flash({ type, clickOnClose, message }) {
   return (
     <div className={`${ns}-container bg-${type}`}>
       <div className={`${ns}-content`}>
-        <p className={ `${ns}-message` }>
-          { message }
-        </p>
-        <CloseButton onClick={ clickOnClose }/>
+        <p className={`${ns}-message`}>{message}</p>
+        <CloseButton onClick={clickOnClose} />
       </div>
     </div>
   );
@@ -37,7 +32,4 @@ export function Flash({ type, clickOnClose, message }) {
 Flash.displayName = 'Flash';
 Flash.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Flash);
+export default connect(mapStateToProps, mapDispatchToProps)(Flash);

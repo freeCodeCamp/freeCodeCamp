@@ -5,9 +5,7 @@ import {
 } from 'berkeleys-redux-utils';
 import ns from '../ns.json';
 
-export const types = createTypes([
-  'showProjectSubmit'
-], ns);
+export const types = createTypes(['showProjectSubmit'], ns);
 
 export const showProjectSubmit = createAction(types.showProjectSubmit);
 

@@ -17,30 +17,28 @@ function SolutionViewer({ files }) {
       <Helmet>
         <link href='/css/prism.css' rel='stylesheet' />
       </Helmet>
-      {
-        Object.keys(files)
-          .map(key => files[key])
-          .map(file => (
-            <Panel
-              bsStyle='primary'
-              className='solution-viewer'
-              header={ file.ext.toUpperCase() }
-              key={ file.ext }
-              >
-              <pre>
-                <code
-                className={ `language-${prismLang[file.ext]}` }
-                  dangerouslySetInnerHTML={{
-                    __html: Prism.highlight(
-                      file.contents.trim(),
-                      Prism.languages[prismLang[file.ext]]
-                    )
-                  }}
-                />
-              </pre>
-            </Panel>
-          ))
-      }
+      {Object.keys(files)
+        .map(key => files[key])
+        .map(file => (
+          <Panel
+            bsStyle='primary'
+            className='solution-viewer'
+            header={file.ext.toUpperCase()}
+            key={file.ext}
+            >
+            <pre>
+              <code
+                className={`language-${prismLang[file.ext]}`}
+                dangerouslySetInnerHTML={{
+                  __html: Prism.highlight(
+                    file.contents.trim(),
+                    Prism.languages[prismLang[file.ext]]
+                  )
+                }}
+              />
+            </pre>
+          </Panel>
+        ))}
     </div>
   );
 }

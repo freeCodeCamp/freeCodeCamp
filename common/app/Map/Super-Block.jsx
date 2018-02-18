@@ -7,11 +7,7 @@ import { Panel } from 'react-bootstrap';
 
 import ns from './ns.json';
 import Blocks from './Blocks.jsx';
-import {
-  toggleThisPanel,
-
-  makePanelOpenSelector
-} from './redux';
+import { toggleThisPanel, makePanelOpenSelector } from './redux';
 import { makeSuperBlockSelector } from '../entities';
 
 const mapDispatchToProps = { toggleThisPanel };
@@ -56,47 +52,37 @@ export class SuperBlock extends PureComponent {
     if (!message) {
       return null;
     }
-    return (
-      <div className={ `${ns}-block-description` }>
-        { message }
-      </div>
-    );
+    return <div className={`${ns}-block-description`}>{message}</div>;
   }
 
   renderHeader(isOpen, title, isCompleted) {
     return (
-      <div className={ isCompleted ? 'faded' : '' }>
+      <div className={isCompleted ? 'faded' : ''}>
         <FA
-          className={ `${ns}-caret` }
-          name={ isOpen ? 'caret-down' : 'caret-right' }
+          className={`${ns}-caret`}
+          name={isOpen ? 'caret-down' : 'caret-right'}
           size='lg'
         />
-        { title }
+        {title}
       </div>
     );
   }
 
   render() {
-    const {
-      title,
-      dashedName,
-      blocks,
-      message,
-      isOpen
-    } = this.props;
+    const { title, dashedName, blocks, message, isOpen } = this.props;
     return (
       <Panel
-        bsClass={ `${ns}-accordion-panel` }
-        collapsible={ true }
-        eventKey={ dashedName || title }
-        expanded={ isOpen }
-        header={ this.renderHeader(isOpen, title) }
-        id={ title }
-        key={ dashedName || title }
-        onSelect={ this.handleSelect }
+        bsClass={`${ns}-accordion-panel`}
+        collapsible={true}
+        eventKey={dashedName || title}
+        expanded={isOpen}
+        header={this.renderHeader(isOpen, title)}
+        id={title}
+        key={dashedName || title}
+        onSelect={this.handleSelect}
         >
-        { this.renderMessage(message) }
-        <Blocks blocks={ blocks } />
+        {this.renderMessage(message)}
+        <Blocks blocks={blocks} />
       </Panel>
     );
   }
@@ -105,7 +91,4 @@ export class SuperBlock extends PureComponent {
 SuperBlock.displayName = 'SuperBlock';
 SuperBlock.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SuperBlock);
+export default connect(mapStateToProps, mapDispatchToProps)(SuperBlock);

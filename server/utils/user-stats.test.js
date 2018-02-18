@@ -13,7 +13,6 @@ const clock = sinon.useFakeTimers(1454526000000);
 const PST = 'America/Los_Angeles';
 
 test('Prepare calendar items', function(t) {
-
   t.plan(5);
 
   t.deepEqual(
@@ -35,14 +34,16 @@ test('Prepare calendar items', function(t) {
     'should return correct epoch when given two identical dates'
   );
 
-
   t.deepEqual(
-    prepUniqueDaysByHours([
-      // 8/2/2015 in America/Los_Angeles
-      moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
-      moment.utc('8/3/2015 14:00', 'M/D/YYYY H:mm').valueOf(),
-      moment.utc('8/3/2015 20:00', 'M/D/YYYY H:mm').valueOf()
-    ], PST),
+    prepUniqueDaysByHours(
+      [
+        // 8/2/2015 in America/Los_Angeles
+        moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
+        moment.utc('8/3/2015 14:00', 'M/D/YYYY H:mm').valueOf(),
+        moment.utc('8/3/2015 20:00', 'M/D/YYYY H:mm').valueOf()
+      ],
+      PST
+    ),
     [1438567200000, 1438610400000],
     'should return 2 epochs when dates fall into two days in PST'
   );
@@ -58,17 +59,13 @@ test('Prepare calendar items', function(t) {
   );
 
   t.deepEqual(
-    prepUniqueDaysByHours([
-      1438387200000, 1425340800000, 1412035200000
-    ]),
+    prepUniqueDaysByHours([1438387200000, 1425340800000, 1412035200000]),
     [1412035200000, 1425340800000, 1438387200000],
     'should return same but sorted array if all input dates are start of day'
   );
-
 });
 
 test('Current streak calculation', function(t) {
-
   t.plan(11);
 
   t.equal(
@@ -171,10 +168,13 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDaysByHours([
-        moment.utc(moment.utc().subtract(1, 'days')).valueOf(),
-        moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
-      ], PST),
+      prepUniqueDaysByHours(
+        [
+          moment.utc(moment.utc().subtract(1, 'days')).valueOf(),
+          moment.utc(moment.utc().subtract(1, 'hours')).valueOf()
+        ],
+        PST
+      ),
       PST
     ),
     2,
@@ -184,14 +184,33 @@ test('Current streak calculation', function(t) {
 
   t.equal(
     calcCurrentStreak(
-      prepUniqueDaysByHours([
-        1453174506164, 1453175436725, 1453252466853, 1453294968225,
-        1453383782844, 1453431903117, 1453471373080, 1453594733026,
-        1453645014058, 1453746762747, 1453747659197, 1453748029416,
-        1453818029213, 1453951796007, 1453988570615, 1454069704441,
-        1454203673979, 1454294055498, 1454333545125, 1454415163903,
-        1454519128123, moment.tz(PST).valueOf()
-      ], PST),
+      prepUniqueDaysByHours(
+        [
+          1453174506164,
+          1453175436725,
+          1453252466853,
+          1453294968225,
+          1453383782844,
+          1453431903117,
+          1453471373080,
+          1453594733026,
+          1453645014058,
+          1453746762747,
+          1453747659197,
+          1453748029416,
+          1453818029213,
+          1453951796007,
+          1453988570615,
+          1454069704441,
+          1454203673979,
+          1454294055498,
+          1454333545125,
+          1454415163903,
+          1454519128123,
+          moment.tz(PST).valueOf()
+        ],
+        PST
+      ),
       PST
     ),
     17,
@@ -202,12 +221,28 @@ test('Current streak calculation', function(t) {
   t.equal(
     calcCurrentStreak(
       prepUniqueDaysByHours([
-        1453174506164, 1453175436725, 1453252466853, 1453294968225,
-        1453383782844, 1453431903117, 1453471373080, 1453594733026,
-        1453645014058, 1453746762747, 1453747659197, 1453748029416,
-        1453818029213, 1453951796007, 1453988570615, 1454069704441,
-        1454203673979, 1454294055498, 1454333545125, 1454415163903,
-        1454519128123, moment.utc().valueOf()
+        1453174506164,
+        1453175436725,
+        1453252466853,
+        1453294968225,
+        1453383782844,
+        1453431903117,
+        1453471373080,
+        1453594733026,
+        1453645014058,
+        1453746762747,
+        1453747659197,
+        1453748029416,
+        1453818029213,
+        1453951796007,
+        1453988570615,
+        1454069704441,
+        1454203673979,
+        1454294055498,
+        1454333545125,
+        1454415163903,
+        1454519128123,
+        moment.utc().valueOf()
       ])
     ),
     4,
@@ -287,8 +322,9 @@ test('Longest streak calculation', function(t) {
         moment.utc('8/3/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/11/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/12/2015 15:30', 'M/D/YYYY H:mm').valueOf(),
-        moment.utc(moment.utc('9/12/2015 15:30', 'M/D/YYYY H:mm')
-          .add(37, 'hours')).valueOf(),
+        moment
+          .utc(moment.utc('9/12/2015 15:30', 'M/D/YYYY H:mm').add(37, 'hours'))
+          .valueOf(),
 
         moment.utc('9/14/2015 22:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/15/2015 4:00', 'M/D/YYYY H:mm').valueOf(),
@@ -370,7 +406,8 @@ test('Longest streak calculation', function(t) {
         moment.utc('9/12/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/13/2015 3:00', 'M/D/YYYY H:mm').valueOf(),
         moment.utc('9/14/2015 1:00', 'M/D/YYYY H:mm').valueOf()
-      ]), PST
+      ]),
+      PST
     ),
     4,
     'should return 4 when there is the only one more-than-one-days-long ' +
@@ -379,12 +416,16 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDaysByHours([
-        moment.utc('9/11/2015 23:00', 'M/D/YYYY H:mm').valueOf(),
-        moment.utc('9/12/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
-        moment.utc('9/13/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
-        moment.utc('9/14/2015 6:00', 'M/D/YYYY H:mm').valueOf()
-      ], PST), PST
+      prepUniqueDaysByHours(
+        [
+          moment.utc('9/11/2015 23:00', 'M/D/YYYY H:mm').valueOf(),
+          moment.utc('9/12/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
+          moment.utc('9/13/2015 2:00', 'M/D/YYYY H:mm').valueOf(),
+          moment.utc('9/14/2015 6:00', 'M/D/YYYY H:mm').valueOf()
+        ],
+        PST
+      ),
+      PST
     ),
     3,
     'should return 3 when longest streak is 3 in PST ' +
@@ -393,14 +434,33 @@ test('Longest streak calculation', function(t) {
 
   t.equal(
     calcLongestStreak(
-      prepUniqueDaysByHours([
-        1453174506164, 1453175436725, 1453252466853, 1453294968225,
-        1453383782844, 1453431903117, 1453471373080, 1453594733026,
-        1453645014058, 1453746762747, 1453747659197, 1453748029416,
-        1453818029213, 1453951796007, 1453988570615, 1454069704441,
-        1454203673979, 1454294055498, 1454333545125, 1454415163903,
-        1454519128123, moment.tz(PST).valueOf()
-      ], PST),
+      prepUniqueDaysByHours(
+        [
+          1453174506164,
+          1453175436725,
+          1453252466853,
+          1453294968225,
+          1453383782844,
+          1453431903117,
+          1453471373080,
+          1453594733026,
+          1453645014058,
+          1453746762747,
+          1453747659197,
+          1453748029416,
+          1453818029213,
+          1453951796007,
+          1453988570615,
+          1454069704441,
+          1454203673979,
+          1454294055498,
+          1454333545125,
+          1454415163903,
+          1454519128123,
+          moment.tz(PST).valueOf()
+        ],
+        PST
+      ),
       PST
     ),
     17,
@@ -411,12 +471,28 @@ test('Longest streak calculation', function(t) {
   t.equal(
     calcLongestStreak(
       prepUniqueDaysByHours([
-        1453174506164, 1453175436725, 1453252466853, 1453294968225,
-        1453383782844, 1453431903117, 1453471373080, 1453594733026,
-        1453645014058, 1453746762747, 1453747659197, 1453748029416,
-        1453818029213, 1453951796007, 1453988570615, 1454069704441,
-        1454203673979, 1454294055498, 1454333545125, 1454415163903,
-        1454519128123, moment.utc().valueOf()
+        1453174506164,
+        1453175436725,
+        1453252466853,
+        1453294968225,
+        1453383782844,
+        1453431903117,
+        1453471373080,
+        1453594733026,
+        1453645014058,
+        1453746762747,
+        1453747659197,
+        1453748029416,
+        1453818029213,
+        1453951796007,
+        1453988570615,
+        1454069704441,
+        1454203673979,
+        1454294055498,
+        1454333545125,
+        1454415163903,
+        1454519128123,
+        moment.utc().valueOf()
       ])
     ),
     4,

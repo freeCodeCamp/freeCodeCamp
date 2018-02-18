@@ -28,27 +28,18 @@ test('getNextChallenge', t => {
       dashedName: 'next-challenge',
       block: 'current-block'
     };
-    const shouldBeNext = getNextChallenge(
-      'next-challenge',
-      {
-        challenge: {
-          'current-challenge': currentChallenge,
-          'next-challenge': nextChallenge
-        },
-        block: {
-          'current-block': {
-            challenges: [
-              'current-challenge',
-              'next-challenge'
-            ]
-          }
+    const shouldBeNext = getNextChallenge('next-challenge', {
+      challenge: {
+        'current-challenge': currentChallenge,
+        'next-challenge': nextChallenge
+      },
+      block: {
+        'current-block': {
+          challenges: ['current-challenge', 'next-challenge']
         }
       }
-    );
-    t.false(
-      shouldBeNext,
-      'getNextChallenge should return null or undefined'
-    );
+    });
+    t.false(shouldBeNext, 'getNextChallenge should return null or undefined');
   });
 
   t.test('should return next challenge when it exists', t => {
@@ -61,23 +52,17 @@ test('getNextChallenge', t => {
       dashedName: 'next-challenge',
       block: 'current-block'
     };
-    const shouldBeNext = getNextChallenge(
-      'current-challenge',
-      {
-        challenge: {
-          'current-challenge': currentChallenge,
-          'next-challenge': nextChallenge
-        },
-        block: {
-          'current-block': {
-            challenges: [
-              'current-challenge',
-              'next-challenge'
-            ]
-          }
+    const shouldBeNext = getNextChallenge('current-challenge', {
+      challenge: {
+        'current-challenge': currentChallenge,
+        'next-challenge': nextChallenge
+      },
+      block: {
+        'current-block': {
+          challenges: ['current-challenge', 'next-challenge']
         }
       }
-    );
+    });
     t.isEqual(shouldBeNext, nextChallenge);
   });
   t.test('should skip isComingSoon challenge', t => {
@@ -95,27 +80,24 @@ test('getNextChallenge', t => {
       dashedName: 'next-challenge',
       block: 'current-block'
     };
-    const shouldBeNext = getNextChallenge(
-      'current-challenge',
-      {
-        challenge: {
-          'current-challenge': currentChallenge,
-          'next-challenge': nextChallenge,
-          'coming-soon': comingSoon,
-          'coming-soon2': comingSoon
-        },
-        block: {
-          'current-block': {
-            challenges: [
-              'current-challenge',
-              'coming-soon',
-              'coming-soon2',
-              'next-challenge'
-            ]
-          }
+    const shouldBeNext = getNextChallenge('current-challenge', {
+      challenge: {
+        'current-challenge': currentChallenge,
+        'next-challenge': nextChallenge,
+        'coming-soon': comingSoon,
+        'coming-soon2': comingSoon
+      },
+      block: {
+        'current-block': {
+          challenges: [
+            'current-challenge',
+            'coming-soon',
+            'coming-soon2',
+            'next-challenge'
+          ]
         }
       }
-    );
+    });
     t.isEqual(shouldBeNext, nextChallenge);
   });
   t.test('should not skip isComingSoon challenge in dev', t => {
@@ -141,11 +123,7 @@ test('getNextChallenge', t => {
       },
       block: {
         'current-block': {
-          challenges: [
-            'current-challenge',
-            'coming-soon',
-            'next-challenge'
-          ]
+          challenges: ['current-challenge', 'coming-soon', 'next-challenge']
         }
       }
     };
@@ -169,27 +147,24 @@ test('getNextChallenge', t => {
       dashedName: 'next-challenge',
       block: 'current-block'
     };
-    const shouldBeNext = getNextChallenge(
-      'current-challenge',
-      {
-        challenge: {
-          'current-challenge': currentChallenge,
-          'next-challenge': nextChallenge,
-          'beta-challenge': beta,
-          'beta-challenge2': beta
-        },
-        block: {
-          'current-block': {
-            challenges: [
-              'current-challenge',
-              'beta-challenge',
-              'beta-challenge2',
-              'next-challenge'
-            ]
-          }
+    const shouldBeNext = getNextChallenge('current-challenge', {
+      challenge: {
+        'current-challenge': currentChallenge,
+        'next-challenge': nextChallenge,
+        'beta-challenge': beta,
+        'beta-challenge2': beta
+      },
+      block: {
+        'current-block': {
+          challenges: [
+            'current-challenge',
+            'beta-challenge',
+            'beta-challenge2',
+            'next-challenge'
+          ]
         }
       }
-    );
+    });
     t.isEqual(shouldBeNext, nextChallenge);
   });
   t.test('should not skip isBeta challenge if in dev', t => {
@@ -215,11 +190,7 @@ test('getNextChallenge', t => {
       },
       block: {
         'current-block': {
-          challenges: [
-            'current-challenge',
-            'beta-challenge',
-            'next-challenge'
-          ]
+          challenges: ['current-challenge', 'beta-challenge', 'next-challenge']
         }
       }
     };
@@ -296,10 +267,7 @@ test('getFirstChallengeOfNextBlock', t => {
       },
       superBlock: {
         'current-super-block': {
-          blocks: [
-            'current-block',
-            'non-exitent-block'
-          ]
+          blocks: ['current-block', 'non-exitent-block']
         }
       }
     };
@@ -334,13 +302,13 @@ test('getFirstChallengeOfNextBlock', t => {
         'next-block': {
           dashedName: 'next-block',
           superBlock: 'current-super-block',
-          challenges: [ 'first-challenge' ]
+          challenges: ['first-challenge']
         }
       },
       superBlock: {
         'current-super-block': {
           dashedName: 'current-super-block',
-          blocks: [ 'current-block', 'next-block' ]
+          blocks: ['current-block', 'next-block']
         }
       }
     };
@@ -385,17 +353,13 @@ test('getFirstChallengeOfNextBlock', t => {
         'next-block': {
           dashedName: 'next-block',
           superBlock: 'current-super-block',
-          challenges: [
-            'coming-soon',
-            'coming-soon2',
-            'first-challenge'
-          ]
+          challenges: ['coming-soon', 'coming-soon2', 'first-challenge']
         }
       },
       superBlock: {
         'current-super-block': {
           dashedName: 'current-super-block',
-          blocks: [ 'current-block', 'next-block' ]
+          blocks: ['current-block', 'next-block']
         }
       }
     };
@@ -439,25 +403,20 @@ test('getFirstChallengeOfNextBlock', t => {
         'next-block': {
           dashedName: 'next-block',
           superBlock: 'current-super-block',
-          challenges: [
-            'coming-soon',
-            'first-challenge'
-          ]
+          challenges: ['coming-soon', 'first-challenge']
         }
       },
       superBlock: {
         'current-super-block': {
           dashedName: 'current-super-block',
-          blocks: [ 'current-block', 'next-block' ]
+          blocks: ['current-block', 'next-block']
         }
       }
     };
     t.equal(
-      getFirstChallengeOfNextBlock(
-        currentChallenge.dashedName,
-        entities,
-        { isDev: true }
-      ),
+      getFirstChallengeOfNextBlock(currentChallenge.dashedName, entities, {
+        isDev: true
+      }),
       comingSoon,
       'getFirstChallengeOfNextBlock returned isComingSoon challenge'
     );
@@ -497,27 +456,18 @@ test('getFirstChallengeOfNextBlock', t => {
         'coming-soon-block': {
           dashedName: 'coming-soon-block',
           superBlock: 'current-super-block',
-          challenges: [
-            'coming-soon',
-            'coming-soon2'
-          ]
+          challenges: ['coming-soon', 'coming-soon2']
         },
         'next-block': {
           dashedName: 'next-block',
           superBlock: 'current-super-block',
-          challenges: [
-            'first-challenge'
-          ]
+          challenges: ['first-challenge']
         }
       },
       superBlock: {
         'current-super-block': {
           dashedName: 'current-super-block',
-          blocks: [
-            'current-block',
-            'coming-soon-block',
-            'next-block'
-          ]
+          blocks: ['current-block', 'coming-soon-block', 'next-block']
         }
       }
     };
@@ -541,9 +491,7 @@ test('getFirstChallengeOfNextBlock', t => {
     const entities = {
       challenge: {}
     };
-    t.notOk(
-      getFirstChallengeOfNextSuperBlock('current-challenge', entities),
-    );
+    t.notOk(getFirstChallengeOfNextSuperBlock('current-challenge', entities));
   });
   t.test('should return falsey if current block not found', t => {
     t.plan(1);
@@ -551,9 +499,7 @@ test('getFirstChallengeOfNextBlock', t => {
       challenge: { 'current-challenge': { block: 'current-block' } },
       block: {}
     };
-    t.notOk(
-      getFirstChallengeOfNextSuperBlock('current-challenge', entities)
-    );
+    t.notOk(getFirstChallengeOfNextSuperBlock('current-challenge', entities));
   });
   t.test('should return falsey if current superBlock is not found', t => {
     t.plan(1);
@@ -562,9 +508,7 @@ test('getFirstChallengeOfNextBlock', t => {
       block: { 'current-block': { superBlock: 'current-super-block' } },
       superBlock: {}
     };
-    t.notOk(
-      getFirstChallengeOfNextSuperBlock('current-challenge', entities)
-    );
+    t.notOk(getFirstChallengeOfNextSuperBlock('current-challenge', entities));
   });
   t.test('should return falsey when last superBlock', t => {
     t.plan(1);
@@ -575,12 +519,14 @@ test('getFirstChallengeOfNextBlock', t => {
         'current-super-block': { dashedName: 'current-super-block' }
       }
     };
-    const superBlocks = [ 'current-super-block' ];
-    t.notOk(getFirstChallengeOfNextSuperBlock(
-      'current-challenge',
-      entities,
-      superBlocks
-    ));
+    const superBlocks = ['current-super-block'];
+    t.notOk(
+      getFirstChallengeOfNextSuperBlock(
+        'current-challenge',
+        entities,
+        superBlocks
+      )
+    );
   });
   t.test('should return falsey when last block of new superblock', t => {
     t.plan(1);
@@ -595,18 +541,18 @@ test('getFirstChallengeOfNextBlock', t => {
         'current-super-block': { dashedName: 'current-super-block' },
         'next-super-block': {
           dashedName: 'next-super-block',
-          blocks: [
-            'first-block'
-          ]
+          blocks: ['first-block']
         }
       }
     };
-    const superBlocks = [ 'current-super-block', 'next-super-block' ];
-    t.notOk(getFirstChallengeOfNextSuperBlock(
-      'current-challenge',
-      entities,
-      superBlocks
-    ));
+    const superBlocks = ['current-super-block', 'next-super-block'];
+    t.notOk(
+      getFirstChallengeOfNextSuperBlock(
+        'current-challenge',
+        entities,
+        superBlocks
+      )
+    );
   });
   t.test('should return first challenge of next superBlock', t => {
     t.plan(1);
@@ -623,18 +569,18 @@ test('getFirstChallengeOfNextBlock', t => {
         'current-block': { superBlock: 'current-super-block' },
         'next-block': {
           superBlock: 'next-super-block',
-          challenges: [ 'first-challenge' ]
+          challenges: ['first-challenge']
         }
       },
       superBlock: {
         'current-super-block': { dashedName: 'current-super-block' },
         'next-super-block': {
           dashedName: 'next-super-block',
-          blocks: [ 'next-block' ]
+          blocks: ['next-block']
         }
       }
     };
-    const superBlocks = [ 'current-super-block', 'next-super-block' ];
+    const superBlocks = ['current-super-block', 'next-super-block'];
     t.isEqual(
       getFirstChallengeOfNextSuperBlock(
         'current-challenge',
@@ -665,21 +611,18 @@ test('getFirstChallengeOfNextBlock', t => {
         'next-block': {
           dashedName: 'next-block',
           superBlock: 'next-super-block',
-          challenges: [ 'coming-soon', 'first-challenge' ]
+          challenges: ['coming-soon', 'first-challenge']
         }
       },
       superBlock: {
         'current-super-block': { dashedName: 'current-super-block' },
         'next-super-block': {
           dashedName: 'next-super-block',
-          blocks: [ 'next-block' ]
+          blocks: ['next-block']
         }
       }
     };
-    const superBlocks = [
-      'current-super-block',
-      'next-super-block'
-    ];
+    const superBlocks = ['current-super-block', 'next-super-block'];
     t.isEqual(
       getFirstChallengeOfNextSuperBlock(
         'current-challenge',
@@ -711,21 +654,18 @@ test('getFirstChallengeOfNextBlock', t => {
         'next-block': {
           dashedName: 'next-block',
           superBlock: 'next-super-block',
-          challenges: [ 'coming-soon', 'first-challenge' ]
+          challenges: ['coming-soon', 'first-challenge']
         }
       },
       superBlock: {
         'current-super-block': { dashedName: 'current-super-block' },
         'next-super-block': {
           dashedName: 'next-super-block',
-          blocks: [ 'next-block' ]
+          blocks: ['next-block']
         }
       }
     };
-    const superBlocks = [
-      'current-super-block',
-      'next-super-block'
-    ];
+    const superBlocks = ['current-super-block', 'next-super-block'];
     t.isEqual(
       getFirstChallengeOfNextSuperBlock(
         'current-challenge',
@@ -757,28 +697,23 @@ test('getFirstChallengeOfNextBlock', t => {
         'coming-soon-block': {
           dashedName: 'coming-soon-block',
           superBlock: 'next-super-block',
-          challenges: [
-            'coming-soon'
-          ]
+          challenges: ['coming-soon']
         },
         'next-block': {
           dashedName: 'next-block',
           superBlock: 'next-super-block',
-          challenges: [ 'first-challenge' ]
+          challenges: ['first-challenge']
         }
       },
       superBlock: {
         'current-super-block': { dashedName: 'current-super-block' },
         'next-super-block': {
           dashedName: 'next-super-block',
-          blocks: [ 'coming-soon-block', 'next-block' ]
+          blocks: ['coming-soon-block', 'next-block']
         }
       }
     };
-    const superBlocks = [
-      'current-super-block',
-      'next-super-block'
-    ];
+    const superBlocks = ['current-super-block', 'next-super-block'];
     t.isEqual(
       getFirstChallengeOfNextSuperBlock(
         'current-challenge',
@@ -809,25 +744,23 @@ test('getFirstChallengeOfNextBlock', t => {
         'coming-soon-block': {
           dashedName: 'coming-soon-block',
           superBlock: 'coming-soon-super-block',
-          challenges: [
-            'coming-soon'
-          ]
+          challenges: ['coming-soon']
         },
         'next-block': {
           superBlock: 'next-super-block',
           dashedName: 'next-block',
-          challenges: [ 'first-challenge' ]
+          challenges: ['first-challenge']
         }
       },
       superBlock: {
         'current-super-block': { dashedName: 'current-super-block' },
         'coming-soon-super-block': {
           dashedName: 'coming-soon-super-block',
-          blocks: [ 'coming-soon-block' ]
+          blocks: ['coming-soon-block']
         },
         'next-super-block': {
           dashedName: 'next-super-block',
-          blocks: [ 'next-block' ]
+          blocks: ['next-block']
         }
       }
     };

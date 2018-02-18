@@ -20,7 +20,6 @@ import Honesty from './components/Honesty.jsx';
 import {
   toggleNightMode,
   updateTitle,
-
   signInLoadingSelector,
   usernameSelector,
   themeSelector,
@@ -31,11 +30,7 @@ const mapStateToProps = createSelector(
   usernameSelector,
   themeSelector,
   signInLoadingSelector,
-  (
-    username,
-    theme,
-    showLoading,
-  ) => ({
+  (username, theme, showLoading) => ({
     showLoading,
     username
   })
@@ -77,37 +72,34 @@ export class Settings extends React.Component {
   }
 
   render() {
-    const {
-      showLoading,
-      username
-    } = this.props;
+    const { showLoading, username } = this.props;
     if (!username && showLoading) {
       return <Loader />;
     }
     return (
-      <div className={ `${ns}-container` }>
+      <div className={`${ns}-container`}>
         <FullWidthRow>
           <Button
-            block={ true }
+            block={true}
             bsSize='lg'
             bsStyle='primary'
             className='btn-link-social'
-            href={ `/${username}` }
+            href={`/${username}`}
             >
             <FA name='user' />
             Show me my public profile
           </Button>
           <Button
-            block={ true }
+            block={true}
             bsSize='lg'
             bsStyle='primary'
             className='btn-link-social'
-            href={ '/signout' }
+            href={'/signout'}
             >
             Sign me out of freeCodeCamp
           </Button>
         </FullWidthRow>
-        <h1 className='text-center'>{ `Account Settings for ${username}` }</h1>
+        <h1 className='text-center'>{`Account Settings for ${username}`}</h1>
         <AboutSettings />
         <Spacer />
         <EmailSettings />
@@ -131,7 +123,4 @@ export class Settings extends React.Component {
 Settings.displayName = 'Settings';
 Settings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Settings);
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);

@@ -5,7 +5,6 @@ import debug from 'debug';
 import {
   types,
   createErrorObservable,
-
   challengeSelector,
   csrfSelector,
   userSelector
@@ -16,7 +15,8 @@ import { types as challenges } from '../routes/Challenges/redux';
 
 const log = debug('fcc:app:redux:up-my-challenge-epic');
 export default function updateMyCurrentChallengeEpic(actions, { getState }) {
-  const updateChallenge = actions::ofType(types.appMounted)
+  const updateChallenge = actions
+    ::ofType(types.appMounted)
     .flatMapLatest(() => actions::ofType(challenges.onRouteChallenges))
     .map(() => {
       const state = getState();
@@ -36,13 +36,10 @@ export default function updateMyCurrentChallengeEpic(actions, { getState }) {
   const ajaxUpdate = updateChallenge
     .debounce(250)
     .flatMapLatest(({ csrf, currentChallengeId }) => {
-      return postJSON$(
-        '/update-my-current-challenge',
-        {
-          currentChallengeId,
-          _csrf: csrf
-        }
-      )
+      return postJSON$('/update-my-current-challenge', {
+        currentChallengeId,
+        _csrf: csrf
+      })
         .map(({ message }) => log(message))
         .ignoreElements()
         .catch(createErrorObservable);

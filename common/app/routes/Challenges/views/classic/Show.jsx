@@ -11,21 +11,18 @@ import _Map from '../../../../Map';
 
 const propTypes = {};
 
-export const mapStateToPanes = addNS(
-  'classic',
-  state => {
-    const panesMap = {
-      [types.toggleMap]: 'Map',
-      [types.toggleSidePanel]: 'Lesson',
-      [types.toggleClassicEditor]: 'Editor'
-    };
+export const mapStateToPanes = addNS('classic', state => {
+  const panesMap = {
+    [types.toggleMap]: 'Map',
+    [types.toggleSidePanel]: 'Lesson',
+    [types.toggleClassicEditor]: 'Editor'
+  };
 
-    if (showPreviewSelector(state)) {
-      panesMap[types.togglePreview] = 'Preview';
-    }
-    return panesMap;
+  if (showPreviewSelector(state)) {
+    panesMap[types.togglePreview] = 'Preview';
   }
-);
+  return panesMap;
+});
 
 const nameToComponent = {
   Map: _Map,
@@ -36,13 +33,13 @@ const nameToComponent = {
 
 const renderPane = name => {
   const Comp = nameToComponent[name];
-  return Comp ? <Comp /> : <span>Pane for { name } not found</span>;
+  return Comp ? <Comp /> : <span>Pane for {name} not found</span>;
 };
 
 export default function ShowClassic() {
   return (
-    <ChildContainer isFullWidth={ true }>
-      <Panes render={ renderPane }/>
+    <ChildContainer isFullWidth={true}>
+      <Panes render={renderPane} />
     </ChildContainer>
   );
 }

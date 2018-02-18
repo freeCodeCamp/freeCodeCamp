@@ -9,12 +9,11 @@ const propTypes = {
 };
 
 export default class CodeMirrorSkeleton extends PureComponent {
-
   renderLine(line, i) {
     return (
-      <div className={ `${ns}-shimmer` } key={ i }>
+      <div className={`${ns}-shimmer`} key={i}>
         <Row>
-          <Col xs={ 12 }>
+          <Col xs={12}>
             <div className='sprite-wrapper'>
               <div className='sprite' />
             </div>
@@ -25,30 +24,24 @@ export default class CodeMirrorSkeleton extends PureComponent {
   }
 
   render() {
-    const {
-      content
-    } = this.props;
+    const { content } = this.props;
     const editorLines = (content || '').split('\n');
     return (
       <div className='ReactCodeMirror'>
         <div className='CodeMirror cm-s-monokai CodeMirror-wrap'>
-        <div className='CodeMirror-scrollbar-filler' />
-        <div className='CodeMirror-gutter-filler' />
+          <div className='CodeMirror-scrollbar-filler' />
+          <div className='CodeMirror-gutter-filler' />
           <div className='CodeMirror-scroll'>
             <div
               className='CodeMirror-sizer'
-              style={
-                {
-                  minHeight: (editorLines.length * 18) + 'px',
-                  overflow: 'hidden'
-                }
-              }
+              style={{
+                minHeight: editorLines.length * 18 + 'px',
+                overflow: 'hidden'
+              }}
               >
               <div className='CodeMirror-lines'>
                 <div className='CodeMirror-code'>
-                  <Grid>
-                    { editorLines.map(this.renderLine) }
-                  </Grid>
+                  <Grid>{editorLines.map(this.renderLine)}</Grid>
                 </div>
               </div>
             </div>

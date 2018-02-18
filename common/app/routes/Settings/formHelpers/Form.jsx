@@ -33,7 +33,7 @@ function DynamicForm({
   errors,
   fields,
   handleSubmit,
-  fields: { _meta: { allPristine }},
+  fields: { _meta: { allPristine } },
 
   // HOC
   buttonText,
@@ -44,27 +44,19 @@ function DynamicForm({
   submit
 }) {
   return (
-    <form id={`dynamic-${id}`} onSubmit={ handleSubmit(submit) }>
-      <FormFields
-        errors={ errors }
-        fields={ fields }
-        options={ options }
-      />
+    <form id={`dynamic-${id}`} onSubmit={handleSubmit(submit)}>
+      <FormFields errors={errors} fields={fields} options={options} />
       <BlockSaveWrapper>
-        {
-          hideButton ?
-            null :
+        {hideButton ? null : (
           <BlockSaveButton
             disabled={
-              allPristine && !enableSubmit ||
-              (!!Object.keys(errors).filter(key => errors[key]).length)
+              (allPristine && !enableSubmit) ||
+              !!Object.keys(errors).filter(key => errors[key]).length
             }
             >
-            {
-              buttonText ? buttonText : null
-            }
+            {buttonText ? buttonText : null}
           </BlockSaveButton>
-        }
+        )}
       </BlockSaveWrapper>
     </form>
   );
@@ -79,8 +71,8 @@ export default function Form(props) {
   return (
     <DynamicFormWithRedux
       {...props}
-      fields={ props.formFields }
-      form={ props.id }
+      fields={props.formFields}
+      form={props.id}
     />
   );
 }

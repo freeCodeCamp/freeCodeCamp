@@ -30,21 +30,25 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
   });
 
   passport.deserializeUser((id, done) => {
-
     this.userModel.findById(id, { fields }, (err, user) => {
       if (err || !user) {
         return done(err, user);
       }
       return this.app.dataSources.db.connector
         .collection('user')
-        .aggregate([
-          { $match: { _id: user.id } },
-          { $project: { points: { $size: '$progressTimestamps' } } }
-        ], function(err, [{ points = 1 } = {}]) {
-          if (err) { return done(err); }
-          user.points = points;
-          return done(null, user);
-        });
+        .aggregate(
+          [
+            { $match: { _id: user.id } },
+            { $project: { points: { $size: '$progressTimestamps' } } }
+          ],
+          function(err, [{ points = 1 } = {}]) {
+            if (err) {
+              return done(err);
+            }
+            user.points = points;
+            return done(null, user);
+          }
+        );
     });
   });
 };
@@ -63,12 +67,9 @@ export default function setupPassport(app) {
   Object.keys(passportProviders).map(function(strategy) {
     var config = passportProviders[strategy];
     config.session = config.session !== false;
-    configurator.configureProvider(
-      strategy,
-      {
-        ...config,
-        ...passportOptions
-      }
-    );
+    configurator.configureProvider(strategy, {
+      ...config,
+      ...passportOptions
+    });
   });
 }

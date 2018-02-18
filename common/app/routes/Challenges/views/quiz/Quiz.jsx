@@ -27,11 +27,7 @@ const mapStateToProps = createSelector(
   selectedChoiceSelector,
   correctSelector,
   (
-    {
-      description = [],
-      title,
-      dashedName
-    },
+    { description = [], title, dashedName },
     meta,
     currentIndex,
     selectedChoice,
@@ -48,14 +44,18 @@ const mapStateToProps = createSelector(
 );
 
 function mapDispatchToProps(dispatch) {
-  return () => bindActionCreators({
-    nextQuestion,
-    selectChoice,
-    incrementCorrect,
-    resetQuiz,
-    resetChoice,
-    submitChallenge
-  }, dispatch);
+  return () =>
+    bindActionCreators(
+      {
+        nextQuestion,
+        selectChoice,
+        incrementCorrect,
+        resetQuiz,
+        resetChoice,
+        submitChallenge
+      },
+      dispatch
+    );
 }
 
 const propTypes = {
@@ -72,7 +72,6 @@ const propTypes = {
 };
 
 export class QuizChallenge extends PureComponent {
-
   constructor(props) {
     super(props);
     this.nextQuestion = this.nextQuestion.bind(this);
@@ -94,7 +93,7 @@ export class QuizChallenge extends PureComponent {
       <Row className='quizTitle'>
         <Col md={12}>
           <h4>{this.props.meta.title}</h4>
-          <hr/>
+          <hr />
         </Col>
       </Row>
     );
@@ -111,26 +110,30 @@ export class QuizChallenge extends PureComponent {
 
             <p>
               You got {this.props.correct} out of
-               {` ${this.props.description.length}`} correct!
+              {` ${this.props.description.length}`} correct!
             </p>
 
             {isQuizPassed === false ? (
               <div>
                 <p>
-                  You will need to get all the questions
-                  correct in order to mark this quiz as completed.
+                  You will need to get all the questions correct in order to
+                  mark this quiz as completed.
                 </p>
                 <button
                   className='btn btn-lg btn-primary'
                   onClick={this.props.resetQuiz}
-                  > Try Again
+                  >
+                  {' '}
+                  Try Again
                 </button>
               </div>
             ) : (
               <button
                 className='btn btn-lg btn-primary'
                 onClick={this.submitChallenge}
-                > Finish Quiz
+                >
+                {' '}
+                Finish Quiz
               </button>
             )}
           </Col>
@@ -144,7 +147,7 @@ export class QuizChallenge extends PureComponent {
     const question = this.props.description[currentIndex];
     const questionKey = this.props.dashedName + currentIndex.toString();
     return (
-      <div key={questionKey} >
+      <div key={questionKey}>
         {this.renderTitle()}
         <Row>
           <Col md={6}>
@@ -152,11 +155,9 @@ export class QuizChallenge extends PureComponent {
               Question {currentIndex + 1} of {this.props.description.length}:
             </h2>
 
-            <h3>
-              {question.subtitle}:
-            </h3>
+            <h3>{question.subtitle}:</h3>
 
-            <p dangerouslySetInnerHTML={{__html: question.question}} />
+            <p dangerouslySetInnerHTML={{ __html: question.question }} />
           </Col>
 
           <Col md={6}>
@@ -175,23 +176,24 @@ export class QuizChallenge extends PureComponent {
           </Col>
         </Row>
 
-        {this.props.selectedChoice !== null &&
+        {this.props.selectedChoice !== null && (
           <Row className='quizResults'>
             <Col md={6} mdPush={3}>
               <div className='messageDiv'>
-                {this.props.selectedChoice === question.answer
-                  ? <h2 className='correctAnswer'>
-                      Correct, great work!
-                    </h2>
-                  : <h2 className='wrongAnswer'>
-                      Sorry, that is not correct!
-                    </h2>}
+                {this.props.selectedChoice === question.answer ? (
+                  <h2 className='correctAnswer'>Correct, great work!</h2>
+                ) : (
+                  <h2 className='wrongAnswer'>Sorry, that is not correct!</h2>
+                )}
               </div>
-              {this.props.selectedChoice !== question.answer &&
-              <div className='explanation'>
-                <h2>Explanation:</h2>
-                <p dangerouslySetInnerHTML={{__html: question.explanation}} />
-              </div>}
+              {this.props.selectedChoice !== question.answer && (
+                <div className='explanation'>
+                  <h2>Explanation:</h2>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: question.explanation }}
+                  />
+                </div>
+              )}
             </Col>
 
             <Col md={12}>
@@ -199,20 +201,23 @@ export class QuizChallenge extends PureComponent {
                 className='btn btn-lg btn-primary'
                 onClick={this.nextQuestion}
                 >
-                {currentIndex + 1 === this.props.description.length ?
-                  'View Results' : 'Next Question'}
+                {currentIndex + 1 === this.props.description.length
+                  ? 'View Results'
+                  : 'Next Question'}
               </button>
             </Col>
-          </Row>}
+          </Row>
+        )}
       </div>
     );
   }
 
   render() {
     return (
-      <div className='quiz'>{
-        this.props.currentIndex >= this.props.description.length ?
-        this.renderResults() : this.renderQuiz()}
+      <div className='quiz'>
+        {this.props.currentIndex >= this.props.description.length
+          ? this.renderResults()
+          : this.renderQuiz()}
       </div>
     );
   }
@@ -221,7 +226,4 @@ export class QuizChallenge extends PureComponent {
 QuizChallenge.displayName = 'QuizChallenge';
 QuizChallenge.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(QuizChallenge);
+export default connect(mapStateToProps, mapDispatchToProps)(QuizChallenge);

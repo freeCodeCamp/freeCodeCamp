@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
-import {
-  Nav,
-  NavItem
-} from 'react-bootstrap';
+import { Nav, NavItem } from 'react-bootstrap';
 
 import { FullWidthRow, Spacer } from '../../../helperComponents';
 import LockedSettings from './Locked-Settings.jsx';
@@ -15,9 +12,7 @@ import Camper from './Camper.jsx';
 import UsernameSettings from './UsernameSettings.jsx';
 import SectionHeader from './SectionHeader.jsx';
 import { userSelector, toggleNightMode } from '../../../redux';
-import {
-  updateUserBackend
-} from '../redux';
+import { updateUserBackend } from '../redux';
 import {
   BlockSaveButton,
   BlockSaveWrapper,
@@ -30,18 +25,7 @@ const max288Char = maxLength(288);
 
 const mapStateToProps = createSelector(
   userSelector,
-  (
-    {
-      about,
-      isLocked,
-      location,
-      name,
-      picture,
-      points,
-      theme,
-      username
-    },
-  ) => ({
+  ({ about, isLocked, location, name, picture, points, theme, username }) => ({
     about,
     currentTheme: theme,
     initialValues: { name, location, about, picture },
@@ -54,39 +38,38 @@ const mapStateToProps = createSelector(
   })
 );
 
-const formFields = [ 'name', 'location', 'picture', 'about' ];
+const formFields = ['name', 'location', 'picture', 'about'];
 
 function validator(values) {
   const errors = {};
-  const {
-    about,
-    picture
-  } = values;
+  const { about, picture } = values;
   errors.about = max288Char(about);
   errors.picutre = validURL(picture);
-
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    toggleNightMode,
-    updateUserBackend
-  }, dispatch);
+  return bindActionCreators(
+    {
+      toggleNightMode,
+      updateUserBackend
+    },
+    dispatch
+  );
 }
 
 const propTypes = {
-    about: PropTypes.string,
-    currentTheme: PropTypes.string,
-    fields: PropTypes.object,
-    handleSubmit: PropTypes.func.isRequired,
-    isLocked: PropTypes.bool,
-    location: PropTypes.string,
-    name: PropTypes.string,
-    picture: PropTypes.string,
-    points: PropTypes.number,
-    toggleNightMode: PropTypes.func.isRequired,
-    updateUserBackend: PropTypes.func.isRequired,
-    username: PropTypes.string
+  about: PropTypes.string,
+  currentTheme: PropTypes.string,
+  fields: PropTypes.object,
+  handleSubmit: PropTypes.func.isRequired,
+  isLocked: PropTypes.bool,
+  location: PropTypes.string,
+  name: PropTypes.string,
+  picture: PropTypes.string,
+  points: PropTypes.number,
+  toggleNightMode: PropTypes.func.isRequired,
+  updateUserBackend: PropTypes.func.isRequired,
+  username: PropTypes.string
 };
 
 class AboutSettings extends PureComponent {
@@ -127,10 +110,7 @@ class AboutSettings extends PureComponent {
     };
     return (
       <div>
-        <FormFields
-          fields={ fields }
-          options={ options }
-        />
+        <FormFields fields={fields} options={options} />
       </div>
     );
   }
@@ -138,22 +118,22 @@ class AboutSettings extends PureComponent {
   renderPreview() {
     const {
       fields: {
-      picture: { value: picture },
-      name: { value: name },
-      location: { value: location },
-      about: { value: about }
+        picture: { value: picture },
+        name: { value: name },
+        location: { value: location },
+        about: { value: about }
       },
       points,
       username
     } = this.props;
     return (
       <Camper
-        about={ about }
-        location={ location }
-        name={ name }
-        picture={ picture }
-        points={ points }
-        username={ username }
+        about={about}
+        location={location}
+        name={name}
+        picture={picture}
+        points={points}
+        username={username}
       />
     );
   }
@@ -174,13 +154,11 @@ class AboutSettings extends PureComponent {
     const toggleTheme = () => toggleNightMode(username, currentTheme);
     return (
       <div className='about-settings'>
-        <SectionHeader>
-          About Settings
-        </SectionHeader>
-        <UsernameSettings username={ username }/>
+        <SectionHeader>About Settings</SectionHeader>
+        <UsernameSettings username={username} />
         <FullWidthRow>
           <Nav
-            activeKey={ view }
+            activeKey={view}
             bsStyle='tabs'
             className='edit-preview-tabs'
             onSelect={k => this.handleTabSelect(k)}
@@ -195,26 +173,21 @@ class AboutSettings extends PureComponent {
         </FullWidthRow>
         <br />
         <FullWidthRow>
-        <form id='camper-identity' onSubmit={ handleSubmit(this.handleSubmit) }>
-          {
-            this.show[view]()
-          }
-          <BlockSaveWrapper>
-            <BlockSaveButton disabled={ allPristine } />
-          </BlockSaveWrapper>
-        </form>
+          <form id='camper-identity' onSubmit={handleSubmit(this.handleSubmit)}>
+            {this.show[view]()}
+            <BlockSaveWrapper>
+              <BlockSaveButton disabled={allPristine} />
+            </BlockSaveWrapper>
+          </form>
         </FullWidthRow>
         <Spacer />
         <FullWidthRow>
-          <LockedSettings
-            isLocked={ isLocked }
-            toggleIsLocked={ toggleIsLocked }
-          />
+          <LockedSettings isLocked={isLocked} toggleIsLocked={toggleIsLocked} />
         </FullWidthRow>
         <FullWidthRow>
           <ThemeSettings
-            currentTheme={ currentTheme }
-            toggleNightMode={ toggleTheme }
+            currentTheme={currentTheme}
+            toggleNightMode={toggleTheme}
           />
         </FullWidthRow>
       </div>

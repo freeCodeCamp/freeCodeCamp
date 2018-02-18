@@ -11,33 +11,39 @@ function hasOldTranslation(key) {
 }
 
 function normalizeLangTag(tag) {
-  return tag.slice(0, 2).toLowerCase() + (
-    tag.length > 2 ? '-' + tag.slice(2).toUpperCase() : ''
+  return (
+    tag.slice(0, 2).toLowerCase() +
+    (tag.length > 2 ? '-' + tag.slice(2).toUpperCase() : '')
   );
 }
 
 function sortTranslationsKeys(translations) {
-  Object.keys(translations)
-    .forEach(function(key) {
-      if (Object.keys(translations[key]).length > 2) {
-        console.log('keys', Object.keys(translations[key]));
-        throw new Error('Unknown keys');
+  Object.keys(translations).forEach(function(key) {
+    if (Object.keys(translations[key]).length > 2) {
+      console.log('keys', Object.keys(translations[key]));
+      throw new Error('Unknown keys');
+    }
+  });
+  var _translations = Object.keys(translations).reduce(function(
+    _translations,
+    key
+  ) {
+    _translations[key] = sortKeys(translations[key], {
+      compare: function(a, b) {
+        return b > a;
       }
     });
-  var _translations = Object.keys(translations)
-    .reduce(function(_translations, key) {
-      _translations[key] = sortKeys(translations[key], {
-        compare: function(a, b) {
-          return b > a;
-        }
-      });
-      _translations[key] = Object.keys(_translations[key])
-        .reduce(function(translation, _key) {
-          translation[_key.toLowerCase()] = _translations[key][_key];
-          return translation;
-        }, {});
-      return _translations;
-    }, {});
+    _translations[key] = Object.keys(_translations[key]).reduce(function(
+      translation,
+      _key
+    ) {
+      translation[_key.toLowerCase()] = _translations[key][_key];
+      return translation;
+    },
+    {});
+    return _translations;
+  },
+  {});
   return sortKeys(_translations);
 }
 
@@ -51,17 +57,17 @@ function createNewTranslations(challenge) {
         tag = normalizeLangTag(matches[2]);
         newTranslation = {};
         newTranslation[matches[1]] = challenge[oldKey];
-        translations[tag] = translations[tag] ?
-          Object.assign({}, translations[tag], newTranslation) :
-          Object.assign({}, newTranslation);
+        translations[tag] = translations[tag]
+          ? Object.assign({}, translations[tag], newTranslation)
+          : Object.assign({}, newTranslation);
         return translations;
       }
       matches = oldKey.match(oldNameRegex);
       tag = normalizeLangTag(matches[1]);
       newTranslation = { title: challenge[oldKey] };
-      translations[tag] = translations[tag] ?
-        Object.assign({}, translations[tag], newTranslation) :
-        Object.assign({}, newTranslation);
+      translations[tag] = translations[tag]
+        ? Object.assign({}, translations[tag], newTranslation)
+        : Object.assign({}, newTranslation);
       return translations;
     }, {});
 }
@@ -80,7 +86,9 @@ function normalizeChallenge(challenge) {
   challenge.translations = sortTranslationsKeys(challenge.translations);
   // remove old translations from the top level
   return Object.keys(challenge)
-    .filter(function(key) { return !hasOldTranslation(key); })
+    .filter(function(key) {
+      return !hasOldTranslation(key);
+    })
     .reduce(function(newChallenge, key) {
       newChallenge[key] = challenge[key];
       return newChallenge;
@@ -93,7 +101,8 @@ function normalizeBlock(block) {
 }
 
 function getFilesForDir(dir) {
-  return fs.readdirSync(path.join(__dirname, '/' + dir))
+  return fs
+    .readdirSync(path.join(__dirname, '/' + dir))
     .map(function(file) {
       if (fs.statSync(path.join(__dirname, dir + '/' + file)).isFile()) {
         return { path: dir + '/' + file };
@@ -128,10 +137,7 @@ function normalize(dir) {
       if (/[^\n]$/.test(file)) {
         file = file + '\n';
       }
-      fs.writeFileSync(
-        path.join(__dirname, '/', data.path),
-        file
-      );
+      fs.writeFileSync(path.join(__dirname, '/', data.path), file);
     });
 }
 

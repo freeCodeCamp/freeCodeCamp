@@ -31,8 +31,8 @@ module.exports = function(app) {
   router.get('/all-stories', showAllTestimonials);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get(
-      '/software-resources-for-nonprofits',
-      softwareResourcesForNonprofits
+    '/software-resources-for-nonprofits',
+    softwareResourcesForNonprofits
   );
   router.get('/academic-honesty', academicHonesty);
 
@@ -44,9 +44,9 @@ module.exports = function(app) {
   }
 
   function howNonprofitProjectsWork(req, res) {
-      res.render('resources/how-nonprofit-projects-work', {
-          title: 'How our nonprofit projects work'
-      });
+    res.render('resources/how-nonprofit-projects-work', {
+      title: 'How our nonprofit projects work'
+    });
   }
 
   function softwareResourcesForNonprofits(req, res) {
@@ -56,9 +56,9 @@ module.exports = function(app) {
   }
 
   function academicHonesty(req, res) {
-      res.render('resources/academic-honesty', {
-          title: 'Academic Honesty policy'
-      });
+    res.render('resources/academic-honesty', {
+      title: 'Academic Honesty policy'
+    });
   }
 
   function theFastestWebPageOnTheInternet(req, res) {
@@ -69,7 +69,8 @@ module.exports = function(app) {
 
   function showTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy freeCodeCamp Students ' +
+      title:
+        'Testimonials from Happy freeCodeCamp Students ' +
         'who got Software Engineer Jobs',
       stories: testimonials.slice(0, 72),
       moreStories: true
@@ -78,7 +79,8 @@ module.exports = function(app) {
 
   function showAllTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy freeCodeCamp Students ' +
+      title:
+        'Testimonials from Happy freeCodeCamp Students ' +
         'who got Software Engineer Jobs',
       stories: testimonials,
       moreStories: false
@@ -132,7 +134,9 @@ module.exports = function(app) {
       sendNotificationEmail: false
     };
     return User.updateAll(query, params, function(err, info) {
-      if (err) { return next(err); }
+      if (err) {
+        return next(err);
+      }
       if (info.count === 0) {
         req.flash(
           'info',
@@ -141,10 +145,7 @@ module.exports = function(app) {
         );
         return res.redirect('/map');
       } else {
-        req.flash(
-          'info',
-          'We\'ve successfully updated your Email preferences.'
-        );
+        req.flash('info', "We've successfully updated your Email preferences.");
         return res.redirect('/unsubscribed');
       }
     });
@@ -173,10 +174,12 @@ module.exports = function(app) {
       ].join(''),
       githubHeaders,
       function(err, status1, pulls) {
-        if (err) { return next(err); }
-        pulls = pulls ?
-          Object.keys(JSON.parse(pulls)).length :
-          'Can\'t connect to github';
+        if (err) {
+          return next(err);
+        }
+        pulls = pulls
+          ? Object.keys(JSON.parse(pulls)).length
+          : "Can't connect to github";
 
         return request(
           [
@@ -188,10 +191,13 @@ module.exports = function(app) {
           ].join(''),
           githubHeaders,
           function(err, status2, issues) {
-            if (err) { return next(err); }
-            issues = ((pulls === parseInt(pulls, 10)) && issues) ?
-            Object.keys(JSON.parse(issues)).length - pulls :
-              "Can't connect to GitHub";
+            if (err) {
+              return next(err);
+            }
+            issues =
+              pulls === parseInt(pulls, 10) && issues
+                ? Object.keys(JSON.parse(issues)).length - pulls
+                : "Can't connect to GitHub";
             return res.send({
               issues: issues,
               pulls: pulls

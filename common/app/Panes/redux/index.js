@@ -11,24 +11,24 @@ import windowEpic from './window-epic.js';
 import dividerEpic from './divider-epic.js';
 import ns from '../ns.json';
 
-export const epics = [
-  windowEpic,
-  dividerEpic
-];
+export const epics = [windowEpic, dividerEpic];
 
-export const types = createTypes([
-  'panesMapUpdated',
-  'panesMounted',
-  'panesUpdated',
-  'panesWillMount',
-  'panesWillUnmount',
-  'updateSize',
+export const types = createTypes(
+  [
+    'panesMapUpdated',
+    'panesMounted',
+    'panesUpdated',
+    'panesWillMount',
+    'panesWillUnmount',
+    'updateSize',
 
-  'dividerClicked',
-  'dividerMoved',
-  'mouseReleased',
-  'windowResized'
-], ns);
+    'dividerClicked',
+    'dividerMoved',
+    'mouseReleased',
+    'windowResized'
+  ],
+  ns
+);
 
 export const panesMapUpdated = createAction(
   types.panesMapUpdated,
@@ -56,8 +56,7 @@ export const getNS = state => state[ns];
 
 export const panesSelector = state => getNS(state).panes;
 export const panesByNameSelector = state => getNS(state).panesByName;
-export const pressedDividerSelector =
-  state => getNS(state).pressedDivider;
+export const pressedDividerSelector = state => getNS(state).pressedDivider;
 export const widthSelector = state => getNS(state).width;
 export const panesMapSelector = state => getNS(state).panesMap;
 
@@ -97,22 +96,19 @@ export default function createPanesAspects({ createPanesMap }) {
           pressedDivider: name
         }),
         [types.dividerMoved]: (state, { payload: clientX }) => {
-          const {
-            panes,
-            panesByName,
-            pressedDivider: paneName,
-            width
-          } = state;
-          const dividerBuffer = (200 / width) * 100;
-          const paneIndex =
-            _.findIndex(state.panes, ({ name }) => paneName === name);
+          const { panes, panesByName, pressedDivider: paneName, width } = state;
+          const dividerBuffer = 200 / width * 100;
+          const paneIndex = _.findIndex(
+            state.panes,
+            ({ name }) => paneName === name
+          );
           const currentPane = panesByName[paneName];
           const rightPane = utils.getPane(panesByName, panes, paneIndex + 1);
           const leftPane = utils.getPane(panesByName, panes, paneIndex - 1);
           const rightBound = utils.getRightBound(rightPane, dividerBuffer);
           const leftBound = utils.getLeftBound(leftPane, dividerBuffer);
           const newPosition = _.clamp(
-            (clientX / width) * 100,
+            clientX / width * 100,
             leftBound,
             rightBound
           );
@@ -182,24 +178,21 @@ export default function createPanesAspects({ createPanesMap }) {
         let numOfHidden = 0;
         return {
           ...state,
-          panesByName: state.panes.reduce(
-            (panesByName, { name }, index) => {
-              if (!panesByName[name].isHidden) {
-                const dividerLeft = utils.getDividerLeft(
-                  numOfPanes,
-                  index - numOfHidden
-                );
-                panesByName[name] = {
-                  ...panesByName[name],
-                  dividerLeft
-                };
-              } else {
-                numOfHidden = numOfHidden + 1;
-              }
-              return panesByName;
-            },
-            panesByName
-          )
+          panesByName: state.panes.reduce((panesByName, { name }, index) => {
+            if (!panesByName[name].isHidden) {
+              const dividerLeft = utils.getDividerLeft(
+                numOfPanes,
+                index - numOfHidden
+              );
+              panesByName[name] = {
+                ...panesByName[name],
+                dividerLeft
+              };
+            } else {
+              numOfHidden = numOfHidden + 1;
+            }
+            return panesByName;
+          }, panesByName)
         };
       }
       return state;

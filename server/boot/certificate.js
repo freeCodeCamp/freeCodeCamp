@@ -6,9 +6,7 @@ import { Observable } from 'rx';
 import debug from 'debug';
 import { isEmail } from 'validator';
 
-import {
-  ifNoUser401
-} from '../utils/middleware';
+import { ifNoUser401 } from '../utils/middleware';
 
 import { observeQuery } from '../utils/rx';
 
@@ -26,39 +24,27 @@ import {
   apisMicroservicesId,
   infosecQaId
 } from '../utils/constantStrings.json';
-import {
-  completeCommitment$
-} from '../utils/commit';
+import { completeCommitment$ } from '../utils/commit';
 
 import certTypes from '../utils/certTypes.json';
 import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
 
 const log = debug('fcc:certification');
-const renderCertifedEmail = loopback.template(path.join(
-  __dirname,
-  '..',
-  'views',
-  'emails',
-  'certified.ejs'
-));
+const renderCertifedEmail = loopback.template(
+  path.join(__dirname, '..', 'views', 'emails', 'certified.ejs')
+);
 
 function isCertified(ids, challengeMap = {}) {
   return _.every(ids, ({ id }) => _.has(challengeMap, id));
 }
 
 function getIdsForCert$(id, Challenge) {
-  return observeQuery(
-    Challenge,
-    'findById',
-    id,
-    {
-      id: true,
-      tests: true,
-      name: true,
-      challengeType: true
-    }
-  )
-    .shareReplay();
+  return observeQuery(Challenge, 'findById', id, {
+    id: true,
+    tests: true,
+    name: true,
+    challengeType: true
+  }).shareReplay();
 }
 
 // sendCertifiedEmail(
@@ -179,15 +165,11 @@ export default function certificate(app) {
       certType = 'is2018DataVisCert';
       log(certType);
     }
-    return user.getChallengeMap$()
-    .flatMap(() => certTypeIds[certType])
-    .flatMap(challenge => {
-        const {
-          id,
-          tests,
-          name,
-          challengeType
-        } = challenge;
+    return user
+      .getChallengeMap$()
+      .flatMap(() => certTypeIds[certType])
+      .flatMap(challenge => {
+        const { id, tests, name, challengeType } = challenge;
         if (user[certType]) {
           return Observable.just(alreadyClaimedMessage(name));
         }
@@ -222,26 +204,20 @@ export default function certificate(app) {
           // if not it noop
           sendCertifiedEmail(user, Email.send$),
           ({ count }, pledgeOrMessage) => ({ count, pledgeOrMessage })
-        )
-        .map(
-            ({ count, pledgeOrMessage }) => {
-              if (typeof pledgeOrMessage === 'string') {
-                log(pledgeOrMessage);
-              }
-              log(`${count} documents updated`);
-              return successMessage(user.username, name);
-            }
-          );
-        })
-      .subscribe(
-        (message) => {
-          return res.status(200).json({
-            message,
-            success: message.includes('Congratulations')
-          });
-        },
-        next
-      );
+        ).map(({ count, pledgeOrMessage }) => {
+          if (typeof pledgeOrMessage === 'string') {
+            log(pledgeOrMessage);
+          }
+          log(`${count} documents updated`);
+          return successMessage(user.username, name);
+        });
+      })
+      .subscribe(message => {
+        return res.status(200).json({
+          message,
+          success: message.includes('Congratulations')
+        });
+      }, next);
   }
 
   function ifNoSuperBlock404(req, res, next) {

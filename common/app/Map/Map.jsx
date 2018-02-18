@@ -23,10 +23,7 @@ export class ShowMap extends PureComponent {
       return <div>No Super Blocks</div>;
     }
     return superBlocks.map(dashedName => (
-      <SuperBlock
-        dashedName={ dashedName }
-        key={ dashedName }
-      />
+      <SuperBlock dashedName={dashedName} key={dashedName} />
     ));
   }
 
@@ -34,9 +31,9 @@ export class ShowMap extends PureComponent {
     const { superBlocks } = this.props;
     return (
       <Row>
-        <Col xs={ 12 }>
-          <div className={ `${ns}-accordion center-block` }>
-            { this.renderSuperBlocks(superBlocks) }
+        <Col xs={12}>
+          <div className={`${ns}-accordion center-block`}>
+            {this.renderSuperBlocks(superBlocks)}
             <div className='spacer' />
           </div>
         </Col>
@@ -48,7 +45,4 @@ export class ShowMap extends PureComponent {
 ShowMap.displayName = 'Map';
 ShowMap.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowMap);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowMap);

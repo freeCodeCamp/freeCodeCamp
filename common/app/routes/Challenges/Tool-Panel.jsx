@@ -50,10 +50,10 @@ export default class ToolPanel extends PureComponent {
     }
     return (
       <Button
-        block={ true }
+        block={true}
         bsStyle='primary'
         className='btn-big'
-        onClick={ makeHint }
+        onClick={makeHint}
         >
         Hint
       </Button>
@@ -63,15 +63,12 @@ export default class ToolPanel extends PureComponent {
   renderExecute(isCodeLocked, executeChallenge, unlockUntrustedCode) {
     if (isCodeLocked) {
       return (
-        <OverlayTrigger
-          overlay={ unlockWarning }
-          placement='right'
-          >
+        <OverlayTrigger overlay={unlockWarning} placement='right'>
           <Button
-            block={ true }
+            block={true}
             bsStyle='primary'
             className='btn-big'
-            onClick={ unlockUntrustedCode }
+            onClick={unlockUntrustedCode}
             >
             I trust this code. Unlock it.
           </Button>
@@ -80,10 +77,10 @@ export default class ToolPanel extends PureComponent {
     }
     return (
       <Button
-        block={ true }
+        block={true}
         bsStyle='primary'
         className='btn-big'
-        onClick={ executeChallenge }
+        onClick={executeChallenge}
         >
         Run tests (ctrl + enter)
       </Button>
@@ -102,47 +99,44 @@ export default class ToolPanel extends PureComponent {
 
     return (
       <div>
-        { this.renderHint(hint, this.makeHint) }
-        {
-          this.renderExecute(
-            isCodeLocked,
-            executeChallenge,
-            unlockUntrustedCode
-          )
-        }
+        {this.renderHint(hint, this.makeHint)}
+        {this.renderExecute(
+          isCodeLocked,
+          executeChallenge,
+          unlockUntrustedCode
+        )}
         <div className='button-spacer' />
-          <Button
-            block={ true }
-            bsStyle='primary'
-            className='btn-big'
-            onClick={ this.makeReset }
-            >
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-big'
+          onClick={this.makeReset}
+          >
           Reset your code
-          </Button>
-          <div className='button-spacer' />
-          {
-            guideUrl &&
-              <div>
-                <Button
-                  block={ true }
-                  bsStyle='primary'
-                  className='btn-big'
-                  href={ guideUrl }
-                  target='_blank'
-                  >
-                  Get a hint
-                </Button>
-                <div className='button-spacer' />
-              </div>
-          }
-          <Button
-            block={ true }
-            bsStyle='primary'
-            className='btn-big'
-            onClick={ openHelpModal }
-            >
-            Ask for help on the forum
-          </Button>
+        </Button>
+        <div className='button-spacer' />
+        {guideUrl && (
+          <div>
+            <Button
+              block={true}
+              bsStyle='primary'
+              className='btn-big'
+              href={guideUrl}
+              target='_blank'
+              >
+              Get a hint
+            </Button>
+            <div className='button-spacer' />
+          </div>
+        )}
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-big'
+          onClick={openHelpModal}
+          >
+          Ask for help on the forum
+        </Button>
         <div className='button-spacer' />
       </div>
     );

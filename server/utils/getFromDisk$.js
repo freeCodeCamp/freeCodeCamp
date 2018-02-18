@@ -11,9 +11,9 @@ export default function getFromDisk$(challenge) {
       Did you remember run node seed?`
     );
   }
-  delete require.cache[require.resolve(
-    path.join(basePath, challenge.fileName)
-  )];
+  delete require.cache[
+    require.resolve(path.join(basePath, challenge.fileName))
+  ];
 
   return Observable.just(require(path.join(basePath, challenge.fileName)))
     .map(challengeSpec => {
@@ -23,10 +23,13 @@ export default function getFromDisk$(challenge) {
     })
     .map(challenge => {
       challenge.checksum = adler32.sum(
-        Buffer(challenge.title +
-          JSON.stringify(challenge.description) +
-          JSON.stringify(challenge.challengeSeed) +
-          JSON.stringify(challenge.tests)));
+        Buffer(
+          challenge.title +
+            JSON.stringify(challenge.description) +
+            JSON.stringify(challenge.challengeSeed) +
+            JSON.stringify(challenge.tests)
+        )
+      );
 
       challenge.head = challenge.head || [];
       challenge.tail = challenge.tail || [];

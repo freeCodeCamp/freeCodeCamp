@@ -1,7 +1,6 @@
-import
-  supportedLanguages,
-  { langTagRegex }
-from '../../common/utils/supported-languages';
+import supportedLanguages, {
+  langTagRegex
+} from '../../common/utils/supported-languages';
 import passthroughs from '../utils/lang-passthrough-urls';
 import debug from 'debug';
 
@@ -12,12 +11,9 @@ const toLowerCase = String.prototype.toLowerCase;
 function langRedirect(...args) {
   const url = args.length === 2 ? args[1] : args[0];
   const { lang } = this.req;
-  const maybeLang = toLowerCase.call((url.split('/')[1] || ''));
+  const maybeLang = toLowerCase.call(url.split('/')[1] || '');
 
-  if (
-    passthroughs[maybeLang] ||
-    supportedLanguages[maybeLang]
-  ) {
+  if (passthroughs[maybeLang] || supportedLanguages[maybeLang]) {
     return this._oldRedirect(...arguments);
   }
 
@@ -37,7 +33,10 @@ export default function addLang() {
   return function(req, res, next) {
     const { url, user = {} } = req;
     const maybeLang = url.split('/')[1];
-    const restUrl = url.split('/').slice(2).join('/');
+    const restUrl = url
+      .split('/')
+      .slice(2)
+      .join('/');
     const userLang = user.languageTag;
     let finalLang;
     if (supportedLanguages[maybeLang]) {

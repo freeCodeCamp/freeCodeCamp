@@ -13,14 +13,14 @@ function ResetModal(props) {
   return (
     <Modal
       aria-labelledby='modal-title'
-      autoFocus={ true }
-      backdrop={ true }
+      autoFocus={true}
+      backdrop={true}
       bsSize='lg'
-      keyboard={ true }
-      onHide={ onHide }
-      show={ show }
+      keyboard={true}
+      onHide={onHide}
+      show={show}
       >
-      <Modal.Header closeButton={ true }>
+      <Modal.Header closeButton={true}>
         <Modal.Title id='modal-title'>Reset My Progress</Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -35,25 +35,28 @@ function ResetModal(props) {
         </p>
         <hr />
         <Button
-          block={ true }
+          block={true}
           bsSize='lg'
           bsStyle='success'
-          onClick={ props.onHide }
+          onClick={props.onHide}
           >
           Nevermind, I don't want to delete all of my progress
         </Button>
         <div className='button-spacer' />
         <Button
-          block={ true }
+          block={true}
           bsSize='lg'
           bsStyle='danger'
-          onClick={ () =>{ props.reset(); return props.onHide(); } }
+          onClick={() => {
+            props.reset();
+            return props.onHide();
+          }}
           >
           Reset everything. I want to start from the beginning
         </Button>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={ props.onHide }>Close</Button>
+        <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

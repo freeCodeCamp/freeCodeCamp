@@ -8,7 +8,7 @@ export function isPanesAction({ type } = {}, panesMap) {
 export function getDividerLeft(numOfPanes, index) {
   let dividerLeft = null;
   if (numOfPanes > 1 && numOfPanes !== index + 1) {
-    dividerLeft = (100 / numOfPanes) * (index + 1);
+    dividerLeft = 100 / numOfPanes * (index + 1);
   }
   return dividerLeft;
 }
@@ -23,22 +23,15 @@ export function checkForTypeKeys(panesMap) {
   return panesMap;
 }
 
-export const getPane = (panesByName, panes, index) => _.get(
-  panesByName,
-  getPaneName(panes, index),
-  null
-);
+export const getPane = (panesByName, panes, index) =>
+  _.get(panesByName, getPaneName(panes, index), null);
 
-export const getPaneName = (panes, index) => _.get(
-  panes,
-  [index, 'name'],
-  ''
-);
+export const getPaneName = (panes, index) => _.get(panes, [index, 'name'], '');
 
 export const getRightBound = (pane, buffer) =>
-    ((pane && !pane.isHidden && pane.dividerLeft) || 100) - buffer;
+  ((pane && !pane.isHidden && pane.dividerLeft) || 100) - buffer;
 export const getLeftBound = (pane, buffer) =>
-    ((pane && !pane.isHidden && pane.dividerLeft) || 0) + buffer;
+  ((pane && !pane.isHidden && pane.dividerLeft) || 0) + buffer;
 
 export function normalizePanesMapCreator(createPanesMap) {
   invariant(
@@ -57,4 +50,3 @@ export function normalizePanesMapCreator(createPanesMap) {
   );
   return createPanesMap;
 }
-

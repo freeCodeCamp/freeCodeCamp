@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { reduxForm } from 'redux-form';
-import {
-  Button,
-  FormGroup,
-  FormControl
-} from 'react-bootstrap';
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
 
 import { showProjectSubmit } from './redux';
 import SolutionInput from '../../Solution-Input.jsx';
@@ -31,11 +27,8 @@ const bindableActions = {
   submitChallenge,
   showProjectSubmit
 };
-const frontEndFields = [ 'solution' ];
-const backEndFields = [
-  'solution',
-  'githubLink'
-];
+const frontEndFields = ['solution'];
+const backEndFields = ['solution', 'githubLink'];
 
 const fieldValidators = {
   solution: makeRequired(isValidURL)
@@ -54,35 +47,28 @@ export function _FrontEndForm({
   isSubmitting,
   showProjectSubmit
 }) {
-  const buttonCopy = isSubmitting ?
-    'Submit and go to my next challenge' :
-    "I've completed this challenge";
+  const buttonCopy = isSubmitting
+    ? 'Submit and go to my next challenge'
+    : "I've completed this challenge";
   return (
     <form
       name='NewFrontEndProject'
-      onSubmit={
-        handleSubmit((value) => {
-          submitChallenge(value);
-          resetForm('NewFrontEndProject');
-        })
-      }
+      onSubmit={handleSubmit(value => {
+        submitChallenge(value);
+        resetForm('NewFrontEndProject');
+      })}
       >
-      {
-        isSubmitting ?
-          <SolutionInput
-            placeholder='https://codepen/your-project'
-            { ...fields }
-          /> :
-          null
-      }
+      {isSubmitting ? (
+        <SolutionInput placeholder='https://codepen/your-project' {...fields} />
+      ) : null}
       <Button
-        block={ true }
+        block={true}
         bsStyle='primary'
         className='btn-big'
-        onClick={ isSubmitting ? null : showProjectSubmit }
-        type={ isSubmitting ? 'submit' : null }
+        onClick={isSubmitting ? null : showProjectSubmit}
+        type={isSubmitting ? 'submit' : null}
         >
-        { buttonCopy } (ctrl + enter)
+        {buttonCopy} (ctrl + enter)
       </Button>
     </form>
   );
@@ -108,49 +94,41 @@ export function _BackEndForm({
   isSubmitting,
   showProjectSubmit
 }) {
-  const buttonCopy = isSubmitting ?
-    'Submit and go to my next challenge' :
-    "I've completed this challenge";
+  const buttonCopy = isSubmitting
+    ? 'Submit and go to my next challenge'
+    : "I've completed this challenge";
   return (
     <form
       name='NewBackEndProject'
-      onSubmit={
-        handleSubmit((values) => {
-          submitChallenge(values);
-          resetForm('NewBackEndProject');
-        })
-      }
+      onSubmit={handleSubmit(values => {
+        submitChallenge(values);
+        resetForm('NewBackEndProject');
+      })}
       >
-      {
-        isSubmitting ?
-          <SolutionInput
-            placeholder='https://your-app.com'
-            solution={ solution }
-          /> :
-          null
-      }
-      { isSubmitting ?
+      {isSubmitting ? (
+        <SolutionInput placeholder='https://your-app.com' solution={solution} />
+      ) : null}
+      {isSubmitting ? (
         <FormGroup
           controlId='githubLink'
-          validationState={ getValidationState(githubLink) }
+          validationState={getValidationState(githubLink)}
           >
           <FormControl
             name='githubLink'
             placeholder='https://github.com/your-username/your-project'
             type='url'
-            { ...githubLink }
+            {...githubLink}
           />
-        </FormGroup> :
-        null
-      }
+        </FormGroup>
+      ) : null}
       <Button
-        block={ true }
+        block={true}
         bsStyle='primary'
         className='btn-big'
-        onClick={ isSubmitting ? null : showProjectSubmit }
-        type={ isSubmitting ? 'submit' : null }
+        onClick={isSubmitting ? null : showProjectSubmit}
+        type={isSubmitting ? 'submit' : null}
         >
-        { buttonCopy } (ctrl + enter)
+        {buttonCopy} (ctrl + enter)
       </Button>
     </form>
   );

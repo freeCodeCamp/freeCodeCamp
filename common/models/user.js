@@ -21,27 +21,22 @@ import {
 const debug = debugFactory('fcc:models:user');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
-const createEmailError = redirectTo => wrapHandledError(
-  new Error('email format is invalid'),
-  {
+const createEmailError = redirectTo =>
+  wrapHandledError(new Error('email format is invalid'), {
     type: 'info',
     message: 'Please check to make sure the email is a valid email address.',
     redirectTo
-  }
-);
+  });
 
 function destroyAll(id, Model) {
-  return Observable.fromNodeCallback(
-    Model.destroyAll,
-    Model
-  )({ userId: id });
+  return Observable.fromNodeCallback(Model.destroyAll, Model)({ userId: id });
 }
 
 function buildChallengeMapUpdate(challengeMap, project) {
   const currentChallengeMap = { ...challengeMap };
   const { nameToIdMap } = _.values(project)[0];
   const incomingUpdate = _.pickBy(
-    _.omit(_.values(project)[0], [ 'id', 'nameToIdMap' ]),
+    _.omit(_.values(project)[0], ['id', 'nameToIdMap']),
     Boolean
   );
   const currentCompletedProjects = _.pick(challengeMap, _.values(nameToIdMap));
@@ -92,35 +87,41 @@ function isTheSame(val1, val2) {
   return val1 === val2;
 }
 
-const renderSignUpEmail = loopback.template(path.join(
-  __dirname,
-  '..',
-  '..',
-  'server',
-  'views',
-  'emails',
-  'user-request-sign-up.ejs'
-));
+const renderSignUpEmail = loopback.template(
+  path.join(
+    __dirname,
+    '..',
+    '..',
+    'server',
+    'views',
+    'emails',
+    'user-request-sign-up.ejs'
+  )
+);
 
-const renderSignInEmail = loopback.template(path.join(
-  __dirname,
-  '..',
-  '..',
-  'server',
-  'views',
-  'emails',
-  'user-request-sign-in.ejs'
-));
+const renderSignInEmail = loopback.template(
+  path.join(
+    __dirname,
+    '..',
+    '..',
+    'server',
+    'views',
+    'emails',
+    'user-request-sign-in.ejs'
+  )
+);
 
-const renderEmailChangeEmail = loopback.template(path.join(
-  __dirname,
-  '..',
-  '..',
-  'server',
-  'views',
-  'emails',
-  'user-request-update-email.ejs'
-));
+const renderEmailChangeEmail = loopback.template(
+  path.join(
+    __dirname,
+    '..',
+    '..',
+    'server',
+    'views',
+    'emails',
+    'user-request-update-email.ejs'
+  )
+);
 
 function getAboutProfile({
   username,
@@ -143,12 +144,12 @@ function nextTick(fn) {
 function getWaitPeriod(ttl) {
   const fiveMinutesAgo = moment().subtract(5, 'minutes');
   const lastEmailSentAt = moment(new Date(ttl || null));
-  const isWaitPeriodOver = ttl ?
-    lastEmailSentAt.isBefore(fiveMinutesAgo) : true;
+  const isWaitPeriodOver = ttl
+    ? lastEmailSentAt.isBefore(fiveMinutesAgo)
+    : true;
 
   if (!isWaitPeriodOver) {
-    const minutesLeft = 5 -
-      (moment().minutes() - lastEmailSentAt.minutes());
+    const minutesLeft = 5 - (moment().minutes() - lastEmailSentAt.minutes());
     return minutesLeft;
   }
 
@@ -160,9 +161,9 @@ function getWaitMessage(ttl) {
   if (minutesLeft <= 0) {
     return null;
   }
-  const timeToWait = minutesLeft ?
-    `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-    'a few seconds';
+  const timeToWait = minutesLeft
+    ? `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}`
+    : 'a few seconds';
 
   return dedent`
     Please wait ${timeToWait} to resend an authentication link.
@@ -173,10 +174,9 @@ module.exports = function(User) {
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
   // set user.rand to random number
-  User.definition.rawProperties.rand.default =
-    User.definition.properties.rand.default = function() {
-      return Math.random();
-    };
+  const randomNumber = () => Math.random();
+  User.definition.rawProperties.rand.default = randomNumber;
+  User.definition.properties.rand.default = randomNumber;
   // increase user accessToken ttl to 900 days
   User.settings.ttl = 900 * 24 * 60 * 60 * 1000;
 
@@ -194,9 +194,7 @@ module.exports = function(User) {
     User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
     User.update$ = Observable.fromNodeCallback(User.updateAll, User);
     User.count$ = Observable.fromNodeCallback(User.count, User);
-    User.create$ = Observable.fromNodeCallback(
-      User.create.bind(User)
-    );
+    User.create$ = Observable.fromNodeCallback(User.create.bind(User));
     User.prototype.createAccessToken$ = Observable.fromNodeCallback(
       User.prototype.createAccessToken
     );
@@ -210,10 +208,7 @@ module.exports = function(User) {
       .flatMap(user => {
         // note(berks): we now require all new users to supply an email
         // this was not always the case
-        if (
-          typeof user.email !== 'string' ||
-          !isEmail(user.email)
-        ) {
+        if (typeof user.email !== 'string' || !isEmail(user.email)) {
           throw createEmailError();
         }
         // assign random username to new users
@@ -228,21 +223,19 @@ module.exports = function(User) {
         if (user.progressTimestamps.length === 0) {
           user.progressTimestamps.push({ timestamp: Date.now() });
         }
-        return Observable.fromPromise(User.doesExist(null, user.email))
-          .do(exists => {
+        return Observable.fromPromise(User.doesExist(null, user.email)).do(
+          exists => {
             if (exists) {
-              throw wrapHandledError(
-                new Error('user already exists'),
-                {
-                  redirectTo: '/email-signin',
-                  message: dedent`
+              throw wrapHandledError(new Error('user already exists'), {
+                redirectTo: '/email-signin',
+                message: dedent`
         The ${user.email} email address is already associated with an account.
         Try signing in with it here instead.
                   `
-                }
-              );
+              });
             }
-          });
+          }
+        );
       })
       .ignoreElements();
 
@@ -260,9 +253,10 @@ module.exports = function(User) {
         }
 
         user.username = user.username.trim().toLowerCase();
-        user.email = typeof user.email === 'string' ?
-          user.email.trim().toLowerCase() :
-          user.email;
+        user.email =
+          typeof user.email === 'string'
+            ? user.email.trim().toLowerCase()
+            : user.email;
 
         if (!user.progressTimestamps) {
           user.progressTimestamps = [];
@@ -273,8 +267,7 @@ module.exports = function(User) {
         }
       })
       .ignoreElements();
-    return Observable.merge(beforeCreate, updateOrSave)
-      .toPromise();
+    return Observable.merge(beforeCreate, updateOrSave).toPromise();
   });
 
   // remove lingering user identities before deleting user
@@ -295,77 +288,66 @@ module.exports = function(User) {
           credData: credData
         };
       }
-    )
-      .subscribe(
-        function(data) {
-          debug('deleted', data);
-        },
-        function(err) {
-          debug('error deleting user %s stuff', id, err);
-          next(err);
-        },
-        function() {
-          debug('user stuff deleted for user %s', id);
-          next();
-        }
-      );
+    ).subscribe(
+      function(data) {
+        debug('deleted', data);
+      },
+      function(err) {
+        debug('error deleting user %s stuff', id, err);
+        next(err);
+      },
+      function() {
+        debug('user stuff deleted for user %s', id);
+        next();
+      }
+    );
   });
 
   debug('setting up user hooks');
   // overwrite lb confirm
   User.confirm = function(uid, token, redirectTo) {
-    return this.findById(uid)
-      .then(user => {
-        if (!user) {
-          throw wrapHandledError(
-            new Error(`User not found: ${uid}`),
-            {
-              // standard oops
-              type: 'info',
-              redirectTo
-            }
-          );
-        }
-        if (user.verificationToken !== token) {
-          throw wrapHandledError(
-            new Error(`Invalid token: ${token}`),
-            {
-              type: 'info',
-              message: dedent`
+    return this.findById(uid).then(user => {
+      if (!user) {
+        throw wrapHandledError(new Error(`User not found: ${uid}`), {
+          // standard oops
+          type: 'info',
+          redirectTo
+        });
+      }
+      if (user.verificationToken !== token) {
+        throw wrapHandledError(new Error(`Invalid token: ${token}`), {
+          type: 'info',
+          message: dedent`
                 Looks like you have clicked an invalid link.
                 Please sign in and request a fresh one.
               `,
-              redirectTo
-            }
-          );
-        }
-        return user.update$({
+          redirectTo
+        });
+      }
+      return user
+        .update$({
           email: user.newEmail,
           emailVerified: true,
           emailVerifyTTL: null,
           newEmail: null,
           verificationToken: null
-        }).toPromise();
-      });
+        })
+        .toPromise();
+    });
   };
 
   User.prototype.loginByRequest = function loginByRequest(req, res) {
-    const {
-      query: {
-        emailChange
+    const { query: { emailChange } } = req;
+    const createToken = this.createAccessToken$().do(accessToken => {
+      const config = {
+        signed: !!req.signedCookies,
+        maxAge: accessToken.ttl
+      };
+      if (accessToken && accessToken.id) {
+        res.cookie('access_token', accessToken.id, config);
+        res.cookie('userId', accessToken.userId, config);
       }
-    } = req;
-    const createToken = this.createAccessToken$()
-      .do(accessToken => {
-        const config = {
-          signed: !!req.signedCookies,
-          maxAge: accessToken.ttl
-        };
-        if (accessToken && accessToken.id) {
-          res.cookie('access_token', accessToken.id, config);
-          res.cookie('userId', accessToken.userId, config);
-        }
-      });
+    });
     let data = {
       emailVerified: true,
       emailAuthLinkTTL: null,
@@ -383,7 +365,7 @@ module.exports = function(User) {
       createToken,
       updateUser,
       req.logIn(this),
-      (accessToken) => accessToken,
+      accessToken => accessToken
     );
   };
 
@@ -412,44 +394,38 @@ module.exports = function(User) {
       where.email = email ? email.toLowerCase() : email;
     }
     debug('where', where);
-    return User.count(where)
-    .then(count => count > 0);
+    return User.count(where).then(count => count > 0);
   };
 
-  User.remoteMethod(
-    'doesExist',
-    {
-      description: 'checks whether a user exists using email or username',
-      accepts: [
-        {
-          arg: 'username',
-          type: 'string'
-        },
-        {
-          arg: 'email',
-          type: 'string'
-        }
-      ],
-      returns: [
-        {
-          arg: 'exists',
-          type: 'boolean'
-        }
-      ],
-      http: {
-        path: '/exists',
-        verb: 'get'
+  User.remoteMethod('doesExist', {
+    description: 'checks whether a user exists using email or username',
+    accepts: [
+      {
+        arg: 'username',
+        type: 'string'
+      },
+      {
+        arg: 'email',
+        type: 'string'
       }
+    ],
+    returns: [
+      {
+        arg: 'exists',
+        type: 'boolean'
+      }
+    ],
+    http: {
+      path: '/exists',
+      verb: 'get'
     }
-  );
+  });
 
   User.about = function about(username, cb) {
     if (!username) {
       // Zalgo!!
       return nextTick(() => {
-        cb(new TypeError(
-            `username should be a string but got ${ username }`
-        ));
+        cb(new TypeError(`username should be a string but got ${username}`));
       });
     }
     return User.findOne({ where: { username } }, (err, user) => {
@@ -457,35 +433,32 @@ module.exports = function(User) {
         return cb(err);
       }
       if (!user || user.username !== username) {
-        return cb(new Error(`no user found for ${ username }`));
+        return cb(new Error(`no user found for ${username}`));
       }
       const aboutUser = getAboutProfile(user);
       return cb(null, aboutUser);
     });
   };
 
-  User.remoteMethod(
-    'about',
-    {
-      description: 'get public info about user',
-      accepts: [
-        {
-          arg: 'username',
-          type: 'string'
-        }
-      ],
-      returns: [
-        {
-          arg: 'about',
-          type: 'object'
-        }
-      ],
-      http: {
-        path: '/about',
-        verb: 'get'
+  User.remoteMethod('about', {
+    description: 'get public info about user',
+    accepts: [
+      {
+        arg: 'username',
+        type: 'string'
       }
+    ],
+    returns: [
+      {
+        arg: 'about',
+        type: 'object'
+      }
+    ],
+    http: {
+      path: '/about',
+      verb: 'get'
     }
-  );
+  });
 
   User.prototype.createAuthToken = function createAuthToken({ ttl } = {}) {
     return Observable.fromNodeCallback(
@@ -506,13 +479,10 @@ module.exports = function(User) {
     return Observable.defer(() => {
       const messageOrNull = getWaitMessage(this.emailAuthLinkTTL);
       if (messageOrNull) {
-        throw wrapHandledError(
-          new Error('request is throttled'),
-          {
-            type: 'info',
-            message: messageOrNull
-          }
-        );
+        throw wrapHandledError(new Error('request is throttled'), {
+          type: 'info',
+          message: messageOrNull
+        });
       }
 
       // create a temporary access token with ttl for 15 minutes
@@ -549,13 +519,15 @@ module.exports = function(User) {
           this.update$({ emailAuthLinkTTL })
         );
       })
-      .map(() => isSignUp ?
-        dedent`
+      .map(
+        () =>
+          isSignUp
+            ? dedent`
           We've created a new account for you.
           If you entered a valid email, a magic link is on its way.
           Please follow that link to sign in.
-        ` :
-        dedent`
+        `
+            : dedent`
           If you entered a valid email, a magic link is on its way.
           Please follow that link to sign in.
         `
@@ -573,37 +545,28 @@ module.exports = function(User) {
       if (isOwnEmail) {
         if (this.emailVerified) {
           // email is already associated and verified with this account
-          throw wrapHandledError(
-            new Error('email is already verified'),
-            {
-              type: 'info',
-              message: `${newEmail} is already associated with this account.`
-            }
-          );
+          throw wrapHandledError(new Error('email is already verified'), {
+            type: 'info',
+            message: `${newEmail} is already associated with this account.`
+          });
         } else if (!this.emailVerified && messageOrNull) {
-            // email is associated but unverified and
-            // email is within time limit
-            throw wrapHandledError(
-              new Error(),
-              {
-                type: 'info',
-                message: messageOrNull
-              }
-            );
-          }
+          // email is associated but unverified and
+          // email is within time limit
+          throw wrapHandledError(new Error(), {
+            type: 'info',
+            message: messageOrNull
+          });
+        }
       }
       if (sameUpdate && messageOrNull) {
         // trying to update with the same newEmail and
         // confirmation email is still valid
-        throw wrapHandledError(
-          new Error(),
-          {
-            type: 'info',
-            message: dedent`
+        throw wrapHandledError(new Error(), {
+          type: 'info',
+          message: dedent`
             We have already sent an email change request to ${newEmail}.
             Please check your inbox`
-          }
-        );
+        });
       }
       if (!isEmail('' + newEmail)) {
         throw createEmailError();
@@ -617,30 +580,26 @@ module.exports = function(User) {
         // defer prevents the promise from firing prematurely (before subscribe)
         Observable.defer(() => User.doesExist(null, newEmail))
       )
-      .do(exists => {
-        if (exists) {
-          // newEmail is not associated with this account,
-          // but is associated with different account
-          throw wrapHandledError(
-            new Error('email already in use'),
-            {
+        .do(exists => {
+          if (exists) {
+            // newEmail is not associated with this account,
+            // but is associated with different account
+            throw wrapHandledError(new Error('email already in use'), {
               type: 'info',
-              message:
-              `${newEmail} is already associated with another account.`
-            }
-          );
-        }
-      })
-      .flatMap(() => {
-        const update = {
+              message: `${newEmail} is already associated with another account.`
+            });
+          }
+        })
+        .flatMap(() => {
+          const update = {
             newEmail,
             emailVerified: false,
             emailVerifyTTL: new Date()
           };
-        return this.update$(update)
-          .do(() => Object.assign(this, update))
-          .flatMap(() => this.requestAuthEmail(false, newEmail));
-      });
+          return this.update$(update)
+            .do(() => Object.assign(this, update))
+            .flatMap(() => this.requestAuthEmail(false, newEmail));
+        });
     });
   };
 
@@ -651,10 +610,12 @@ module.exports = function(User) {
   User.prototype.requestUpdateFlags = function requestUpdateFlags(values) {
     const flagsToCheck = Object.keys(values);
     const valuesToCheck = _.pick({ ...this }, flagsToCheck);
-    const valuesToUpdate = flagsToCheck
-      .filter(flag => !isTheSame(values[flag], valuesToCheck[flag]));
+    const valuesToUpdate = flagsToCheck.filter(
+      flag => !isTheSame(values[flag], valuesToCheck[flag])
+    );
     if (!valuesToUpdate.length) {
-      return Observable.of(dedent`
+      return Observable.of(
+        dedent`
         No property in
         ${JSON.stringify(flagsToCheck, null, 2)}
         will introduce a change in this user.
@@ -668,49 +629,54 @@ module.exports = function(User) {
       .toArray()
       .flatMap(updates => {
         return Observable.forkJoin(
-          Observable.from(updates)
-            .flatMap(({ flag, newValue }) => {
-              return Observable.fromPromise(User.doesExist(null, this.email))
-                .flatMap(() => {
-                  return this.update$({ [flag]: newValue })
-                  .do(() => {
-                    this[flag] = newValue;
-                  });
-                });
-            })
+          Observable.from(updates).flatMap(({ flag, newValue }) => {
+            return Observable.fromPromise(
+              User.doesExist(null, this.email)
+            ).flatMap(() => {
+              return this.update$({ [flag]: newValue }).do(() => {
+                this[flag] = newValue;
+              });
+            });
+          })
         );
       })
-      .map(() => dedent`
+      .map(
+        () => dedent`
         We have successfully updated your account.
-      `);
+      `
+      );
   };
 
-  User.prototype.updateMyPortfolio =
-    function updateMyPortfolio(portfolioItem, deleteRequest) {
-      const currentPortfolio = this.portfolio.slice(0);
-      const pIndex = _.findIndex(
-        currentPortfolio,
-        p => p.id === portfolioItem.id
+  User.prototype.updateMyPortfolio = function updateMyPortfolio(
+    portfolioItem,
+    deleteRequest
+  ) {
+    const currentPortfolio = this.portfolio.slice(0);
+    const pIndex = _.findIndex(
+      currentPortfolio,
+      p => p.id === portfolioItem.id
+    );
+    let updatedPortfolio = [];
+    if (deleteRequest) {
+      updatedPortfolio = currentPortfolio.filter(
+        p => p.id !== portfolioItem.id
       );
-      let updatedPortfolio = [];
-      if (deleteRequest) {
-        updatedPortfolio = currentPortfolio.filter(
-          p => p.id !== portfolioItem.id
-        );
-      } else if (pIndex === -1) {
-        updatedPortfolio = currentPortfolio.concat([ portfolioItem ]);
-      } else {
-        updatedPortfolio = [ ...currentPortfolio ];
-        updatedPortfolio[pIndex] = { ...portfolioItem };
-      }
-      return this.update$({ portfolio: updatedPortfolio })
-        .do(() => {
-          this.portfolio = updatedPortfolio;
-        })
-        .map(() => dedent`
+    } else if (pIndex === -1) {
+      updatedPortfolio = currentPortfolio.concat([portfolioItem]);
+    } else {
+      updatedPortfolio = [...currentPortfolio];
+      updatedPortfolio[pIndex] = { ...portfolioItem };
+    }
+    return this.update$({ portfolio: updatedPortfolio })
+      .do(() => {
+        this.portfolio = updatedPortfolio;
+      })
+      .map(
+        () => dedent`
           Your portfolio has been updated
-        `);
-    };
+        `
+      );
+  };
 
   User.prototype.updateMyProjects = function updateMyProjects(project) {
     const updateData = {};
@@ -723,24 +689,23 @@ module.exports = function(User) {
         return this.update$(updateData);
       })
       .do(() => Object.assign(this, updateData))
-      .map(() => dedent`
+      .map(
+        () => dedent`
         Your projects have been updated
-      `);
+      `
+      );
   };
 
   User.prototype.updateMyUsername = function updateMyUsername(newUsername) {
-    return Observable.defer(
-      () => {
-        const isOwnUsername = isTheSame(newUsername, this.username);
-        if (isOwnUsername) {
-          return Observable.of(dedent`
+    return Observable.defer(() => {
+      const isOwnUsername = isTheSame(newUsername, this.username);
+      if (isOwnUsername) {
+        return Observable.of(dedent`
           ${newUsername} is already associated with this account
           `);
-        }
-        return Observable.fromPromise(User.doesExist(newUsername));
       }
-    )
-    .flatMap(boolOrMessage => {
+      return Observable.fromPromise(User.doesExist(newUsername));
+    }).flatMap(boolOrMessage => {
       if (typeof boolOrMessage === 'string') {
         return Observable.of(boolOrMessage);
       }
@@ -754,59 +719,64 @@ module.exports = function(User) {
         .do(() => {
           this.username = newUsername;
         })
-        .map(() => dedent`
+        .map(
+          () => dedent`
         Username updated successfully
-        `);
+        `
+        );
     });
   };
 
-  User.giveBrowniePoints =
-    function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
-      const findUser = observeMethod(User, 'findOne');
-      if (!receiver) {
-        return nextTick(() => {
-          cb(
-            new TypeError(`receiver should be a string but got ${ receiver }`)
-          );
-        });
-      }
-      if (!giver) {
-        return nextTick(() => {
-          cb(new TypeError(`giver should be a string but got ${ giver }`));
-        });
-      }
-      let temp = moment();
-      const browniePoints = temp
-        .subtract.apply(temp, BROWNIEPOINTS_TIMEOUT)
-        .valueOf();
-      const user$ = findUser({ where: { username: receiver }});
+  User.giveBrowniePoints = function giveBrowniePoints(
+    receiver,
+    giver,
+    data = {},
+    dev = false,
+    cb
+  ) {
+    const findUser = observeMethod(User, 'findOne');
+    if (!receiver) {
+      return nextTick(() => {
+        cb(new TypeError(`receiver should be a string but got ${receiver}`));
+      });
+    }
+    if (!giver) {
+      return nextTick(() => {
+        cb(new TypeError(`giver should be a string but got ${giver}`));
+      });
+    }
+    let temp = moment();
+    const browniePoints = temp.subtract
+      .apply(temp, BROWNIEPOINTS_TIMEOUT)
+      .valueOf();
+    const user$ = findUser({ where: { username: receiver } });
 
-      return user$
-        .tapOnNext((user) => {
+    return (
+      user$
+        .tapOnNext(user => {
           if (!user) {
-            throw new Error(`could not find receiver for ${ receiver }`);
+            throw new Error(`could not find receiver for ${receiver}`);
           }
         })
         .flatMap(({ progressTimestamps = [] }) => {
           return Observable.from(progressTimestamps);
         })
         // filter out non objects
-        .filter((timestamp) => !!timestamp || typeof timestamp === 'object')
+        .filter(timestamp => !!timestamp || typeof timestamp === 'object')
         // filterout timestamps older then an hour
         .filter(({ timestamp = 0 }) => {
           return timestamp >= browniePoints;
         })
         // filter out brownie points given by giver
-        .filter((browniePoint) => {
+        .filter(browniePoint => {
           return browniePoint.giver === giver;
         })
         // no results means this is the first brownie point given by giver
         // so return -1 to indicate receiver should receive point
         .first({ defaultValue: -1 })
-        .flatMap((browniePointsFromGiver) => {
+        .flatMap(browniePointsFromGiver => {
           if (browniePointsFromGiver === -1) {
-
-            return user$.flatMap((user) => {
+            return user$.flatMap(user => {
               user.progressTimestamps.push({
                 giver,
                 timestamp: Date.now(),
@@ -816,123 +786,117 @@ module.exports = function(User) {
             });
           }
           return Observable.throw(
-            new Error(`${ giver } already gave ${ receiver } points`)
+            new Error(`${giver} already gave ${receiver} points`)
           );
         })
         .subscribe(
-          (user) => {
+          user => {
             return cb(
               null,
               getAboutProfile(user),
-              dev ?
-                { giver, receiver, data } :
-                null
+              dev ? { giver, receiver, data } : null
             );
           },
-          (e) => cb(e, null, dev ? { giver, receiver, data } : null),
+          e => cb(e, null, dev ? { giver, receiver, data } : null),
           () => {
             debug('brownie points assigned completed');
           }
-        );
-    };
+        )
+    );
+  };
 
-  User.remoteMethod(
-    'giveBrowniePoints',
-    {
-      description: 'Give this user brownie points',
-      accepts: [
-        {
-          arg: 'receiver',
-          type: 'string',
-          required: true
-        },
-        {
-          arg: 'giver',
-          type: 'string',
-          required: true
-        },
-        {
-          arg: 'data',
-          type: 'object'
-        },
-        {
-          arg: 'debug',
-          type: 'boolean'
-        }
-      ],
-      returns: [
-        {
-          arg: 'about',
-          type: 'object'
-        },
-        {
-          arg: 'debug',
-          type: 'object'
-        }
-      ],
-      http: {
-        path: '/give-brownie-points',
-        verb: 'POST'
+  User.remoteMethod('giveBrowniePoints', {
+    description: 'Give this user brownie points',
+    accepts: [
+      {
+        arg: 'receiver',
+        type: 'string',
+        required: true
+      },
+      {
+        arg: 'giver',
+        type: 'string',
+        required: true
+      },
+      {
+        arg: 'data',
+        type: 'object'
+      },
+      {
+        arg: 'debug',
+        type: 'boolean'
       }
+    ],
+    returns: [
+      {
+        arg: 'about',
+        type: 'object'
+      },
+      {
+        arg: 'debug',
+        type: 'object'
+      }
+    ],
+    http: {
+      path: '/give-brownie-points',
+      verb: 'POST'
     }
-  );
+  });
 
   User.themes = themes;
 
   User.prototype.updateTheme = function updateTheme(theme) {
     if (!this.constructor.themes[theme]) {
-      const err = wrapHandledError(
-        new Error('Theme is not valid.'),
-        {
-          Type: 'info',
-          message: err.message
-        }
-      );
+      const err = wrapHandledError(new Error('Theme is not valid.'), {
+        Type: 'info',
+        message: err.message
+      });
       return Promise.reject(err);
     }
     return this.update$({ theme }).toPromise();
   };
 
   // deprecated. remove once live
-  User.remoteMethod(
-    'updateTheme',
-    {
-      description: 'updates the users chosen theme',
-      accepts: [
-        {
-          arg: 'theme',
-          type: 'string',
-          required: true
-        }
-      ],
-      returns: [
-        {
-          arg: 'status',
-          type: 'object'
-        }
-      ],
-      http: {
-        path: '/update-theme',
-        verb: 'POST'
+  User.remoteMethod('updateTheme', {
+    description: 'updates the users chosen theme',
+    accepts: [
+      {
+        arg: 'theme',
+        type: 'string',
+        required: true
       }
+    ],
+    returns: [
+      {
+        arg: 'status',
+        type: 'object'
+      }
+    ],
+    http: {
+      path: '/update-theme',
+      verb: 'POST'
     }
-  );
+  });
 
   // user.updateTo$(updateData: Object) => Observable[Number]
   User.prototype.update$ = function update$(updateData) {
     const id = this.getId();
     const updateOptions = { allowExtendedOperators: true };
     if (
-        !updateData ||
-        typeof updateData !== 'object' ||
-        !Object.keys(updateData).length
+      !updateData ||
+      typeof updateData !== 'object' ||
+      !Object.keys(updateData).length
     ) {
-      return Observable.throw(new Error(
-        dedent`
+      return Observable.throw(
+        new Error(
+          dedent`
           updateData must be an object with at least one key,
           but got ${updateData} with ${Object.keys(updateData).length}
-        `.split('\n').join(' ')
-      ));
+        `
+            .split('\n')
+            .join(' ')
+        )
+      );
     }
     return this.constructor.update$({ id }, updateData, updateOptions);
   };
@@ -942,11 +906,10 @@ module.exports = function(User) {
       where: { id },
       fields: { progressTimestamps: true }
     };
-    return this.constructor.findOne$(filter)
-      .map(user => {
-        this.progressTimestamps = user.progressTimestamps;
-        return user.progressTimestamps;
-      });
+    return this.constructor.findOne$(filter).map(user => {
+      this.progressTimestamps = user.progressTimestamps;
+      return user.progressTimestamps;
+    });
   };
   User.prototype.getChallengeMap$ = function getChallengeMap$() {
     const id = this.getId();
@@ -954,11 +917,10 @@ module.exports = function(User) {
       where: { id },
       fields: { challengeMap: true }
     };
-    return this.constructor.findOne$(filter)
-      .map(user => {
-        this.challengeMap = user.challengeMap;
-        return user.challengeMap;
-      });
+    return this.constructor.findOne$(filter).map(user => {
+      this.challengeMap = user.challengeMap;
+      return user.challengeMap;
+    });
   };
 
   User.getMessages = messages => Promise.resolve(messages);

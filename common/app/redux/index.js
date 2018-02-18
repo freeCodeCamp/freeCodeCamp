@@ -31,28 +31,31 @@ export const epics = [
   updateMyCurrentChallengeEpic
 ];
 
-export const types = createTypes([
-  'onRouteHome',
+export const types = createTypes(
+  [
+    'onRouteHome',
 
-  'appMounted',
-  'analytics',
-  'updateTitle',
+    'appMounted',
+    'analytics',
+    'updateTitle',
 
-  createAsyncTypes('fetchChallenge'),
-  createAsyncTypes('fetchChallenges'),
-  'updateChallenges',
-  createAsyncTypes('fetchUser'),
-  'showSignIn',
+    createAsyncTypes('fetchChallenge'),
+    createAsyncTypes('fetchChallenges'),
+    'updateChallenges',
+    createAsyncTypes('fetchUser'),
+    'showSignIn',
 
-  'handleError',
-  // used to hit the server
-  'hardGoTo',
-  'delayedRedirect',
+    'handleError',
+    // used to hit the server
+    'hardGoTo',
+    'delayedRedirect',
 
-  // night mode
-  'toggleNightMode',
-  createAsyncTypes('postTheme')
-], ns);
+    // night mode
+    'toggleNightMode',
+    createAsyncTypes('postTheme')
+  ],
+  ns
+);
 
 const throwIfUndefined = () => {
   throw new TypeError('Argument must not be of  type `undefined`');
@@ -129,21 +132,23 @@ export const delayedRedirect = createAction(types.delayedRedirect);
 // hardGoTo(path: String) => Action
 export const hardGoTo = createAction(types.hardGoTo);
 
-export const createErrorObservable = error => Observable.just({
-  type: types.handleError,
-  error
-});
+export const createErrorObservable = error =>
+  Observable.just({
+    type: types.handleError,
+    error
+  });
 // use sparingly
 // doActionOnError(
 //   actionCreator: (() => Action|Null)
 // ) => (error: Error) => Observable[Action]
-export const doActionOnError = actionCreator => error => Observable.of(
-  {
-    type: types.handleError,
-    error
-  },
-  actionCreator()
-);
+export const doActionOnError = actionCreator => error =>
+  Observable.of(
+    {
+      type: types.handleError,
+      error
+    },
+    actionCreator()
+  );
 
 export const toggleNightMode = createAction(
   types.toggleNightMode,
@@ -212,29 +217,13 @@ export const previousSolutionSelector = state => {
 export const firstChallengeSelector = createSelector(
   entitiesSelector,
   superBlocksSelector,
-  (
-    {
-      challengeMap,
-      blockMap,
-      superBlockMap
-    },
-    superBlocks
-  ) => {
-    if (
-      !challengeMap ||
-      !blockMap ||
-      !superBlockMap ||
-      !superBlocks
-    ) {
+  ({ challengeMap, blockMap, superBlockMap }, superBlocks) => {
+    if (!challengeMap || !blockMap || !superBlockMap || !superBlocks) {
       return {};
     }
     try {
       return challengeMap[
-        blockMap[
-          superBlockMap[
-            superBlocks[0]
-          ].blocks[0]
-        ].challenges[0]
+        blockMap[superBlockMap[superBlocks[0]].blocks[0]].challenges[0]
       ];
     } catch (err) {
       console.error(err);
@@ -265,9 +254,7 @@ export default handleActions(
       ...state,
       currentChallenge: dashedName
     }),
-    [
-      combineActions(types.showSignIn, types.fetchUser.complete)
-    ]: state => ({
+    [combineActions(types.showSignIn, types.fetchUser.complete)]: state => ({
       ...state,
       isSignInAttempted: true
     }),

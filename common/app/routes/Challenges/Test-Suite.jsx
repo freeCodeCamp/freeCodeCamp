@@ -29,7 +29,7 @@ export default class TestSuite extends PureComponent {
     // err && !pass > failed tests
     // !err && pass > passed tests
     // !err && !pass > in-progress
-    return tests.map(({ err, pass = false, text = '' }, index)=> {
+    return tests.map(({ err, pass = false, text = '' }, index) => {
       const iconClass = classnames({
         'big-icon': true,
         'ion-close-circled error-icon': err && !pass,
@@ -38,24 +38,18 @@ export default class TestSuite extends PureComponent {
       });
       return (
         <Row
-          aria-label={ getAccessibleText(err, pass, text) }
-          key={ text.slice(-6) + index }
+          aria-label={getAccessibleText(err, pass, text)}
+          key={text.slice(-6) + index}
           tabIndex='0'
           >
-          <Col
-            className='text-center'
-            xs={ 2 }
-            >
-            <i
-              aria-hidden='true'
-              className={ iconClass }
-            />
+          <Col className='text-center' xs={2}>
+            <i aria-hidden='true' className={iconClass} />
           </Col>
           <Col
             aria-hidden='true'
             className='test-output'
             dangerouslySetInnerHTML={{ __html: text }}
-            xs={ 10 }
+            xs={10}
           />
         </Row>
       );
@@ -65,11 +59,8 @@ export default class TestSuite extends PureComponent {
   render() {
     const { tests } = this.props;
     return (
-      <div
-        className={ `${ns}-test-suite` }
-        style={{ marginTop: '10px' }}
-        >
-        { this.renderTests(tests) }
+      <div className={`${ns}-test-suite`} style={{ marginTop: '10px' }}>
+        {this.renderTests(tests)}
         <div className='big-spacer' />
       </div>
     );

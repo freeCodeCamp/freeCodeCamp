@@ -35,17 +35,9 @@ export function Divider({ left, dividerClicked }) {
   // use onMouseDown as onClick does not fire
   // until onMouseUp
   // note(berks): do we need touch support?
-  return (
-    <div
-      onMouseDown={ dividerClicked }
-      style={ style }
-    />
-  );
+  return <div onMouseDown={dividerClicked} style={style} />;
 }
 Divider.displayName = 'Divider';
 Divider.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Divider);
+export default connect(mapStateToProps, mapDispatchToProps)(Divider);

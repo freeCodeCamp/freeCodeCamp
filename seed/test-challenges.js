@@ -22,7 +22,7 @@ function validateObjectId(id, title) {
     The id for ${title} is already assigned
     `);
   }
-  existingIds = [ ...existingIds, id ];
+  existingIds = [...existingIds, id];
   return;
 }
 
@@ -49,18 +49,18 @@ function fillAssert(t) {
   assert.strictEqual = t.equal;
 
   assert.sameMembers = function sameMembers() {
-    const [ first, second, ...args] = arguments;
+    const [first, second, ...args] = arguments;
     assert.apply(
       t,
       [
         _.difference(first, second).length === 0 &&
-        _.difference(second, first).length === 0
+          _.difference(second, first).length === 0
       ].concat(args)
     );
   };
 
   assert.includeMembers = function includeMembers() {
-    const [ first, second, ...args] = arguments;
+    const [first, second, ...args] = arguments;
     assert.apply(t, [_.difference(second, first).length === 0].concat(args));
   };
 
@@ -91,7 +91,9 @@ function createTest({
   const isAsync = s => s.includes('(async () => ');
   if (isAsync(tests.join(''))) {
     console.log(`Replacing Async Tests for Challenge ${title}`);
-    tests = tests.map(t => isAsync(t) ? "assert(true, 'message: great');" : t);
+    tests = tests.map(
+      t => (isAsync(t) ? "assert(true, 'message: great');" : t)
+    );
   }
 
   head = head.join('\n');
@@ -105,7 +107,7 @@ function createTest({
   }
 
   return Observable.fromCallback(tape)(title)
-    .doOnNext(t => solutions.length ? t.plan(plan) : t.end())
+    .doOnNext(t => (solutions.length ? t.plan(plan) : t.end()))
     .flatMap(t => {
       if (solutions.length <= 0) {
         t.comment('No solutions for ' + title);
@@ -115,22 +117,23 @@ function createTest({
         });
       }
 
-      return Observable.just(t)
-        .map(fillAssert)
-        /* eslint-disable no-unused-vars */
-        // assert and code used within the eval
-        .doOnNext(assert => {
-          solutions.forEach(solution => {
-            // Original code string
-            const originalCode = solution;
-            tests.forEach(test => {
-              let code = solution;
+      return (
+        Observable.just(t)
+          .map(fillAssert)
+          /* eslint-disable no-unused-vars */
+          // assert and code used within the eval
+          .doOnNext(assert => {
+            solutions.forEach(solution => {
+              // Original code string
+              const originalCode = solution;
+              tests.forEach(test => {
+                let code = solution;
 
-              /* NOTE: Provide dependencies for React/Redux challenges
+                /* NOTE: Provide dependencies for React/Redux challenges
                * and configure testing environment
                */
 
-              let React,
+                let React,
                   ReactDOM,
                   Redux,
                   ReduxThunk,
@@ -138,86 +141,88 @@ function createTest({
                   Enzyme,
                   document;
 
-              // Fake Deep Equal dependency
-              const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+                // Fake Deep Equal dependency
+                const DeepEqual = (a, b) =>
+                  JSON.stringify(a) === JSON.stringify(b);
 
-              // Hardcode Deep Freeze dependency
-              const DeepFreeze = (o) => {
-                Object.freeze(o);
-                Object.getOwnPropertyNames(o).forEach(function(prop) {
-                  if (o.hasOwnProperty(prop)
-                  && o[prop] !== null
-                  && (
-                    typeof o[prop] === 'object' ||
-                    typeof o[prop] === 'function'
-                  )
-                  && !Object.isFrozen(o[prop])) {
-                    DeepFreeze(o[prop]);
-                  }
-                });
-                return o;
-              };
+                // Hardcode Deep Freeze dependency
+                const DeepFreeze = o => {
+                  Object.freeze(o);
+                  Object.getOwnPropertyNames(o).forEach(function(prop) {
+                    if (
+                      o.hasOwnProperty(prop) &&
+                      o[prop] !== null &&
+                      (typeof o[prop] === 'object' ||
+                        typeof o[prop] === 'function') &&
+                      !Object.isFrozen(o[prop])
+                    ) {
+                      DeepFreeze(o[prop]);
+                    }
+                  });
+                  return o;
+                };
 
-              if (react || redux || reactRedux) {
-                // Provide dependencies, just provide all of them
-                React = require('react');
-                ReactDOM = require('react-dom');
-                Redux = require('redux');
-                ReduxThunk = require('redux-thunk');
-                ReactRedux = require('react-redux');
-                Enzyme = require('enzyme');
-                const Adapter15 = require('enzyme-adapter-react-15');
-                Enzyme.configure({ adapter: new Adapter15() });
+                if (react || redux || reactRedux) {
+                  // Provide dependencies, just provide all of them
+                  React = require('react');
+                  ReactDOM = require('react-dom');
+                  Redux = require('redux');
+                  ReduxThunk = require('redux-thunk');
+                  ReactRedux = require('react-redux');
+                  Enzyme = require('enzyme');
+                  const Adapter15 = require('enzyme-adapter-react-15');
+                  Enzyme.configure({ adapter: new Adapter15() });
 
-                /* Transpile ALL the code
+                  /* Transpile ALL the code
                  * (we may use JSX in head or tail or tests, too): */
-                const transform = require('babel-standalone').transform;
-                const options = { presets: [ 'es2015', 'react' ] };
+                  const transform = require('babel-standalone').transform;
+                  const options = { presets: ['es2015', 'react'] };
 
-                head = transform(head, options).code;
-                solution = transform(solution, options).code;
-                tail = transform(tail, options).code;
-                test = transform(test, options).code;
+                  head = transform(head, options).code;
+                  solution = transform(solution, options).code;
+                  tail = transform(tail, options).code;
+                  test = transform(test, options).code;
 
-                const { JSDOM } = require('jsdom');
-                // Mock DOM document for ReactDOM.render method
-                const jsdom = new JSDOM(`<!doctype html>
+                  const { JSDOM } = require('jsdom');
+                  // Mock DOM document for ReactDOM.render method
+                  const jsdom = new JSDOM(`<!doctype html>
                   <html>
                     <body>
                       <div id="challenge-node"></div>
                     </body>
                   </html>
                 `);
-                const { window } = jsdom;
+                  const { window } = jsdom;
 
-                // Mock DOM for ReactDOM tests
-                document = window.document;
-                global.window = window;
-                global.document = window.document;
+                  // Mock DOM for ReactDOM tests
+                  document = window.document;
+                  global.window = window;
+                  global.document = window.document;
+                }
 
-              }
-
-              const editor = {
-                getValue() { return code; },
-                getOriginalCode() { return originalCode; }
-              };
-              /* eslint-enable no-unused-vars */
-              try {
-                (() => {
-                  return eval(
-                    head + '\n;;' +
-                    solution + '\n;;' +
-                    tail + '\n;;' +
-                    test
-                  );
-                })();
-              } catch (e) {
-                t.fail(e);
-              }
+                const editor = {
+                  getValue() {
+                    return code;
+                  },
+                  getOriginalCode() {
+                    return originalCode;
+                  }
+                };
+                /* eslint-enable no-unused-vars */
+                try {
+                  (() => {
+                    return eval(
+                      head + '\n;;' + solution + '\n;;' + tail + '\n;;' + test
+                    );
+                  })();
+                } catch (e) {
+                  t.fail(e);
+                }
+              });
             });
-          });
-        })
-        .map(() => ({ title }));
+          })
+          .map(() => ({ title }))
+      );
     });
 }
 
@@ -238,7 +243,7 @@ Observable.from(getChallenges())
   .filter(title => !!title)
   .toArray()
   .subscribe(
-    (noSolutions) => {
+    noSolutions => {
       if (noSolutions) {
         console.log(
           '# These challenges have no solutions\n- [ ] ' +
@@ -246,6 +251,8 @@ Observable.from(getChallenges())
         );
       }
     },
-    err => { throw err; },
+    err => {
+      throw err;
+    },
     () => process.exit(0)
   );

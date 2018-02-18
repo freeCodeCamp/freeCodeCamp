@@ -13,18 +13,12 @@ import { isEmail } from 'validator';
 
 import { Link } from '../../../../Router';
 import { getValidationState, DOMOnlyProps } from '../../../../utils/form';
-import {
-  onRouteSettings,
-  updateMyEmail
-} from '../../redux';
+import { onRouteSettings, updateMyEmail } from '../../redux';
 
 const actions = {
   updateMyEmail
 };
-const fields = [
-  'email',
-  'duplicate'
-];
+const fields = ['email', 'duplicate'];
 const validateFields = ({ email, duplicate }) => {
   const errors = {};
   if (!isEmail('' + email)) {
@@ -36,10 +30,7 @@ const validateFields = ({ email, duplicate }) => {
   return errors;
 };
 const mapStateToProps = state => {
-  const {
-    app: { user: username },
-    entities: { user: userMap }
-  } = state;
+  const { app: { user: username }, entities: { user: userMap } } = state;
   const { email, emailVerified } = userMap[username] || {};
   return {
     initialValues: { email },
@@ -73,73 +64,53 @@ export class UpdateEmail extends React.Component {
       fields: { email, duplicate },
       submitting
     } = this.props;
-    const buttonCopy = !isEmailThere || isVerified ?
-      'Update my Email' :
-      'Verify Email';
+    const buttonCopy =
+      !isEmailThere || isVerified ? 'Update my Email' : 'Verify Email';
     return (
       <Row>
-        <Col
-          sm={ 4 }
-          smOffset={ 4 }
-          >
+        <Col sm={4} smOffset={4}>
           <h2 className='text-center'>Update your email address here:</h2>
-          <form
-            name='update-email'
-            onSubmit={ this.handleSubmit }
-            >
+          <form name='update-email' onSubmit={this.handleSubmit}>
             <FormGroup
               bsSize='lg'
               controlId='email'
-              validationState={ getValidationState(email) }
+              validationState={getValidationState(email)}
               >
               <FormControl
-                autoFocus={ true }
+                autoFocus={true}
                 placeholder='Enter your new email'
                 type='email'
-                { ...DOMOnlyProps(email) }
+                {...DOMOnlyProps(email)}
               />
-              {
-                !email.error ?
-                  null :
-                  <HelpBlock>{ email.error }</HelpBlock>
-              }
+              {!email.error ? null : <HelpBlock>{email.error}</HelpBlock>}
             </FormGroup>
             <FormGroup
               bsSize='lg'
               controlId='duplicate'
-              validationState={ getValidationState(duplicate) }
+              validationState={getValidationState(duplicate)}
               >
               <FormControl
                 placeholder='re-type your email address'
                 type='email'
-                { ...DOMOnlyProps(duplicate) }
+                {...DOMOnlyProps(duplicate)}
               />
-              {
-                !duplicate.error ?
-                  null :
-                  <HelpBlock>{ duplicate.error }</HelpBlock>
-              }
+              {!duplicate.error ? null : (
+                <HelpBlock>{duplicate.error}</HelpBlock>
+              )}
             </FormGroup>
             <FormGroup>
               <Button
-                block={ true }
+                block={true}
                 bsSize='lg'
                 bsStyle='primary'
-                disabled={ submitting }
+                disabled={submitting}
                 type='submit'
                 >
-                { buttonCopy }
+                {buttonCopy}
               </Button>
               <div className='button-spacer' />
-              <Link
-                style={{ textDecoration: 'none' }}
-                to={ onRouteSettings() }
-                >
-                <Button
-                  block={ true }
-                  bsSize='lg'
-                  bsStyle='primary'
-                  >
+              <Link style={{ textDecoration: 'none' }} to={onRouteSettings()}>
+                <Button block={true} bsSize='lg' bsStyle='primary'>
                   Go back to Settings
                 </Button>
               </Link>

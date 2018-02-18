@@ -31,14 +31,15 @@ export default function useLangRoutes(createHistory, primaryLang) {
       lang = getLangFromLocation(nextLocation);
     });
     const push = location => history.push(addLangToLocation(location, lang));
-    const replace = location => history.replace(
-      addLangToLocation(location, lang)
-    );
+    const replace = location =>
+      history.replace(addLangToLocation(location, lang));
     return {
       ...history,
       push,
       replace,
-      unsubscribe() { unsubscribeFromHistory(); }
+      unsubscribe() {
+        unsubscribeFromHistory();
+      }
     };
   };
 }
