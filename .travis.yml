@@ -1,7 +1,11 @@
 language: node_js
 
 node_js:
-  - '4.2.1'
+  - '8'
+
+cache:
+  directories:
+    - node_modules
 
 env:
   - CXX=g++-4.8
