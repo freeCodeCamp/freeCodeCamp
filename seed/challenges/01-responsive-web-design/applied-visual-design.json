@@ -304,7 +304,7 @@
       ],
       "tests": [
         "assert($('u').length === 1, 'message: Your code should add a <code>u</code> tag to the markup.');",
-        "assert($('u').text().indexOf('Ph.D. students') > -1, 'message: The <code>u</code> tag should wrap around the text \"Ph.D. students\".');",
+        "assert($('u').text() === 'Ph.D. students', 'message: The <code>u</code> tag should wrap around the text \"Ph.D. students\".');",
         "assert($('u').children('div').length === 0, 'message: The <code>u</code> tag should not wrap around the parent <code>div</code> tag.');"
       ],
       "solutions": [],
