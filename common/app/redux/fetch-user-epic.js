@@ -24,7 +24,7 @@ function getUserEpic(actions, _, { services }) {
 }
 
 function getOtherUserEpic(actions$) {
-  return actions$.do(console.log)::ofType(types.fetchOtherUser.start)
+  return actions$::ofType(types.fetchOtherUser.start)
     .distinctUntilChanged()
     .flatMap(({ payload: otherUser }) => {
       return getJSON$(`/api/users/get-public-profile?username=${otherUser}`)
