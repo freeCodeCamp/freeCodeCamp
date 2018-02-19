@@ -17,6 +17,11 @@ import {
   getServerFullURL,
   getEmailSender
 } from '../../server/utils/url-utils.js';
+import {
+  normaliseUserFields,
+  getProgress,
+  publicUserProps
+} from '../../server/utils/publicUserProps';
 
 const debug = debugFactory('fcc:models:user');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
@@ -759,6 +764,57 @@ module.exports = function(User) {
         `);
     });
   };
+
+  User.getPublicProfile = function getPublicProfile(username, cb) {
+    return User.findOne$({ where: { username }})
+      .flatMap(user => {
+        if (!user) {
+          return Observable.of({});
+        }
+        const { challengeMap, progressTimestamps, timezone } = user;
+        return Observable.of({
+          entities: {
+            user: {
+              [user.username]: {
+                ..._.pick(user, publicUserProps),
+                isGithub: !!user.githubURL,
+                isLinkedIn: !!user.linkedIn,
+                isTwitter: !!user.twitter,
+                isWebsite: !!user.website,
+                points: progressTimestamps.length,
+                challengeMap,
+                ...getProgress(progressTimestamps, timezone),
+                ...normaliseUserFields(user)
+              }
+            }
+          },
+          result: user.username
+        });
+      })
+      .subscribe(
+        user => cb(null, user),
+        cb
+      );
+  };
+
+  User.remoteMethod('getPublicProfile', {
+    accepts: {
+      arg: 'username',
+      type: 'string',
+      required: true
+    },
+    returns: [
+      {
+        arg: 'user',
+        type: 'object',
+        root: true
+      }
+    ],
+    http: {
+      path: '/get-public-profile',
+      verb: 'GET'
+    }
+  });
 
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {

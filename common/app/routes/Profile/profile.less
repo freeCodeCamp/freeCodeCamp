@@ -1,0 +1,84 @@
+// should be the same as the filename and ./ns.json
+@ns: profile;
+
+.avatar-container {
+  margin: 0 auto;
+  text-align: center;
+  .avatar {
+    height: 180px;
+  }
+}
+
+.solution-viewer {
+  background-color: #fff;
+}
+
+
+.@{ns}-container {
+
+  a:hover {
+    text-decoration: none;
+    text-decoration-line: none;
+  }
+
+  .full-size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .row {
+    margin-bottom: 15px;
+  }
+
+  .social-media-icons {
+    a {
+      &:first-child {
+        margin-left: 0;
+      }
+
+      margin-left: 32px;
+    }
+  }
+
+  .bio {
+    text-align: center;
+  }
+
+  h2, h3 {
+    &.name, &.username, &.points, &.location {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .portfolio-description {
+    height: 62px;
+  }
+
+  .timeline-container {
+    display: flex;
+    align-items: center;
+  }
+
+  #cal-heatmap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .streak-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .streak {
+    color: @brand-primary;
+
+    strong {
+      color: #333;
+    }
+  }
+
+}

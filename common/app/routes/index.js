@@ -1,6 +1,7 @@
 import { routes as challengesRoutes } from './Challenges';
 import { routes as mapRoutes } from './Map';
 import { routes as settingsRoutes } from './Settings';
+import { routes as profileRoutes } from './Profile';
 
 // import { addLang } from '../utils/lang';
 
@@ -9,7 +10,9 @@ export { createPanesMap } from './Challenges';
 export default {
   ...challengesRoutes,
   ...mapRoutes,
-  ...settingsRoutes
+  ...settingsRoutes,
+  // ensure profile routes are last else they hijack other routes
+  ...profileRoutes
 };
 
 // export default function createChildRoute(deps) {

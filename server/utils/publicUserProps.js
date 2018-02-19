@@ -1,6 +1,6 @@
 import { isURL } from 'validator';
 
-import { addPlaceholderImage } from '../utils';
+import { addPlaceholderImage } from './';
 import {
   prepUniqueDaysByHours,
   calcCurrentStreak,

@@ -2,21 +2,40 @@ import { Observable } from 'rx';
 import _ from 'lodash';
 
 import {
-  userPropsForSession,
-  normaliseUserFields
+  getProgress,
+  normaliseUserFields,
+  userPropsForSession
 } from '../utils/publicUserProps';
 
 export default function userServices() {
   return {
     name: 'user',
-    read: (req, resource, params, config, cb) => {
-      const { user } = req;
+    read: function readUserService(
+      req,
+      resource,
+      params,
+      config,
+      cb) {
+      const queryUser = req.user;
+      const source = queryUser && Observable.forkJoin(
+        queryUser.getChallengeMap$(),
+        queryUser.getPoints$(),
+        (challengeMap, progressTimestamps) => ({
+          challengeMap,
+          progress: getProgress(progressTimestamps, queryUser.timezone)
+        })
+      );
       Observable.if(
-        () => !user,
+        () => !queryUser,
         Observable.of({}),
-        Observable.defer(() => user.getChallengeMap$())
-          .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
-          .map(user => ({
+        Observable.defer(() => source)
+          .map(({ challengeMap, progress }) => ({
+            ...queryUser.toJSON(),
+            ...progress,
+            challengeMap
+          }))
+          .map(
+            user => ({
               entities: {
                 user: {
                   [user.username]: {

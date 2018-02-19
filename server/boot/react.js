@@ -21,7 +21,8 @@ const routes = [
   '/challenges/*',
   '/map',
   '/settings',
-  '/settings/*'
+  '/settings/*',
+  '/:username'
 ];
 
 const devRoutes = [];
