@@ -199,9 +199,7 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-"Nk0DzQi"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": true,
@@ -252,9 +250,7 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "releasedOn": "January 15, 2017",
-      "challengeSeed": [
-        "ExCJjAT"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": true,
@@ -272,9 +268,7 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "releasedOn": "January 15, 2017",
-      "challengeSeed": [
-        "cDIfODs"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": true,
@@ -291,9 +285,7 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "challengeSeed": [
-        "Uw6sYKY"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": true,
@@ -305,13 +297,11 @@
         },
         "pt-br": {
           "title": "Construa uma Página de Portfólio Pessoal",
-          "description": [
-          ]
+          "description": []
         },
         "ru": {
           "title": "Создайте сайт-портфолио",
-          "description": [
-          ]
+          "description": []
         }
       }
     }
