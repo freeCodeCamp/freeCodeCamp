@@ -95,7 +95,7 @@ export function concactHtml(required, template) {
 
   const body = source
     .flatMap(file => file.reduce((body, file) => {
-      return body + file.contents + htmlCatch;
+      return body + file.contents + file.tail + htmlCatch;
     }, ''))
     .map(source => ({ source }))
     .map(createBody);

@@ -166,6 +166,14 @@ export function clearHeadTail(poly) {
   };
 }
 
+export function appendToTail(tail, poly) {
+  checkPoly(poly);
+  return {
+    ...poly,
+    tail: poly.tail.concat(tail)
+  };
+}
+
 // compileHeadTail(contents: String, poly: PolyVinyl) => PolyVinyl
 export function compileHeadTail(padding = '', poly) {
   return clearHeadTail(transformContents(

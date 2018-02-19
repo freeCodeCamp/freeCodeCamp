@@ -28,7 +28,7 @@
       "title": "Store Data with Sass Variables",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -42,13 +42,13 @@
         "Create a variable <code>$text-color</code> and set it to red. Then change the value of the <code>color</code> property for the <code>.blog-post</code> and <code>h2</code> to the <code>$text-color</code> variable."
       ],
       "challengeSeed": [
-        "<style>",
+        "<style type='text/sass'>",
         "  ",
         "  ",
         "  .header{",
         "    text-align: center;",
         "  }",
-        "  .blog-post h2 {",
+        "  .blog-post, h2 {",
         "    color: red;",
         "  }",
         "</style>",
@@ -85,7 +85,7 @@
       "title": "Nest CSS with Sass",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -99,7 +99,7 @@
         "Use the <code>nesting</code> technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. For testing purposes, the <code>h1</code> should come before the <code>p</code> element."
       ],
       "challengeSeed": [
-        "<style>",
+        "<style type='text/sass'>",
         "  .blog-post {",
         "    ",
         "  }",
@@ -132,7 +132,7 @@
       "title": "Create Reusable CSS with Mixins",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -150,7 +150,7 @@
         "Write a <code>mixin</code> for <code>border-radius</code> and give it a <code>$radius</code> parameter. It should use all the vendor prefixes from the example. Then use the <code>border-radius</code> <code>mixin</code> to give the <code>#awesome</code> element a border radius of 15px."
       ],
       "challengeSeed": [
-        "<style>",
+        "<style type='text/sass'>",
         "  ",
         "  ",
         "  ",
@@ -185,7 +185,7 @@
       "title": "Use @if and @else to Add Logic To Your Styles",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -199,7 +199,7 @@
         "<blockquote>light - 1px solid black<br>medium - 3px solid black<br>heavy - 6px solid black<br>none - no border</blockquote>"
       ],
       "challengeSeed": [
-        "<style>",
+        "<style type='text/sass'>",
         "  ",
         "  ",
         "  ",
@@ -232,7 +232,7 @@
       "title": "Use @for to Create a Sass Loop",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -249,7 +249,7 @@
         "It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> where each has a <code>font-size</code> set to 10px multiplied by the index."
       ],
       "challengeSeed": [
-        "<style>",
+        "<style type='text/sass'>",
         "  ",
         "  ",
         "  ",
@@ -281,7 +281,7 @@
       "title": "Use @each to Map Over Items in a List",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -299,7 +299,7 @@
         "Each class should set the <code>background-color</code> the respective color."
       ],
       "challengeSeed": [
-        "<style>",
+        "<style type='text/sass'>",
         "  ",
         "  ",
         "  ",
@@ -331,7 +331,7 @@
       "title": "Apply a Style Until a Condition is Met with @while",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -346,7 +346,7 @@
         "There should be 10 different classes from <code>text-1</code> to <code>text-10</code>. Then set <code>font-size</code> to 5px multiplied by the current index number. Make sure to avoid an infinite loop!"
       ],
       "challengeSeed": [
-        "<style>",
+        "<style type='text/sass'>",
         "  ",
         "  ",
         "  ",
@@ -390,7 +390,7 @@
       "title": "Split Your Styles into Smaller Chunks with Partials",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -425,7 +425,7 @@
       "title": "Extend One Set of CSS Styles to Another Element",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.13/sass.min.js",
+          "src": "https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js",
           "raw": true
         }
       ],
@@ -442,7 +442,7 @@
         "Make a class <code>.info-important</code> that extends <code>.info</code> and also has a <code>background-color</code> set to magenta."
       ],
       "challengeSeed": [
-        "<style>",
+        "<style type='text/sass'>",
         "  h3{",
         "    text-align: center;",
         "  }",
