@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import format from 'date-fns/format';
-import _ from 'lodash';
+import { reverse, sortBy } from 'lodash';
 import {
   Button,
   Modal,
@@ -149,9 +149,11 @@ class Timeline extends PureComponent {
             </thead>
             <tbody>
               {
-                _.reverse(
-                  _.sortBy(
-                    Object.keys(completedMap).map(key => completedMap[key]),
+                reverse(
+                  sortBy(
+                    Object.keys(completedMap)
+                      .filter(key => key in idToNameMap)
+                      .map(key => completedMap[key]),
                     [ 'completedDate' ]
                   )
                 )
