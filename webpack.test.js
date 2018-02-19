@@ -11,6 +11,7 @@ const { getIfUtils, removeEmpty } = require('webpack-config-utils');
 const getBaseConfig = require('./webpack.base.js');
 const TestFileGenerator =
   require('./common/testing/wepback-test-file-generator.js');
+
 const getChallenges = require('./seed/getChallenges.js');
 const {
   createChallengesArray,
@@ -38,6 +39,12 @@ module.exports = env => {
     // always inline source map
     devtool: 'inline-source-map',
     target: 'node',
+    // this sets the values of these to global vars to what you
+    // would expect
+    context: __dirname,
+    node: {
+      __dirname: true
+    },
     entry: { test: './common/testing' },
     output: {
       filename: 'test.js',

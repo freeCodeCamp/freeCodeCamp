@@ -20,11 +20,12 @@ class TestFileGenerator {
 
   apply(compiler) {
     compiler.plugin('compilation', compilation => {
-      compilation.plugin('optimize-assets', (_, done) => {
+      compilation.plugin('optimize-assets', (x, done) => {
         Observable.defer(() => {
           const webpackStats = compilation.getStats();
           const webpackStatsJson = webpackStats.toJson();
           const asset = findAsset(this.entry, compilation, webpackStatsJson);
+          const outputPath = _.get(compilation, 'options.output.path');
 
           invariant(
             asset,
@@ -67,6 +68,7 @@ class TestFileGenerator {
               path,
               assets,
               webpackStats,
+              outputPath,
               ...this.locals
             }))
             .mergeMap(this.renderPaths(
