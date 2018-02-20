@@ -145,6 +145,7 @@
   },
   "devDependencies": {
     "adler32": "~0.1.7",
+    "ava": "^0.25.0",
     "babel-cli": "^6.3.17",
     "babel-istanbul": "^0.12.1",
     "babel-loader": "^7.1.2",
