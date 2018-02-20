@@ -27,8 +27,7 @@ function mapStateToProps(_, { dashedName }) {
       isOpen,
       dashedName,
       title: superBlock.title || dashedName,
-      blocks: superBlock.blocks || [],
-      message: superBlock.message
+      blocks: superBlock.blocks || []
     })
   );
 }
@@ -37,7 +36,6 @@ const propTypes = {
   blocks: PropTypes.array,
   dashedName: PropTypes.string,
   isOpen: PropTypes.bool,
-  message: PropTypes.string,
   title: PropTypes.string,
   toggleThisPanel: PropTypes.func
 };
@@ -50,17 +48,6 @@ export class SuperBlock extends PureComponent {
   handleSelect(eventKey, e) {
     e.preventDefault();
     this.props.toggleThisPanel(eventKey);
-  }
-
-  renderMessage(message) {
-    if (!message) {
-      return null;
-    }
-    return (
-      <div className={ `${ns}-block-description` }>
-        { message }
-      </div>
-    );
   }
 
   renderHeader(isOpen, title, isCompleted) {
@@ -81,7 +68,6 @@ export class SuperBlock extends PureComponent {
       title,
       dashedName,
       blocks,
-      message,
       isOpen
     } = this.props;
     return (
@@ -95,7 +81,6 @@ export class SuperBlock extends PureComponent {
         key={ dashedName || title }
         onSelect={ this.handleSelect }
         >
-        { this.renderMessage(message) }
         <Blocks blocks={ blocks } />
       </Panel>
     );
