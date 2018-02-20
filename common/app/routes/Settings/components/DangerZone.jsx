@@ -47,6 +47,11 @@ class DangerZone extends PureComponent {
   }
 
   render() {
+    const centerText = {
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontStyle: 'italic'
+    };
     const { resetProgress, deleteAccount } = this.props;
     return (
       <div>
@@ -58,10 +63,11 @@ class DangerZone extends PureComponent {
             >
             <Alert
               bsStyle='danger'
+              style={centerText}
               >
               <p>
-                Tread carefully, changes made in this area are permanent.
-                They cannot be undone.
+                Please be careful! Changes in this section are permanent
+                and cannot be reversed!
               </p>
             </Alert>
             <FullWidthRow>
