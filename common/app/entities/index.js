@@ -1,4 +1,4 @@
-import { findIndex, invert, pick, property } from 'lodash';
+import { findIndex, invert, pick, property, merge } from 'lodash';
 import uuid from 'uuid/v4';
 import {
   composeReducers,
@@ -162,10 +162,7 @@ export default composeReducers(
           }
         };
       }
-      return {
-        ...state,
-        ...action.meta.entities
-      };
+      return merge(state, action.meta.entities);
     }
     return state;
   },

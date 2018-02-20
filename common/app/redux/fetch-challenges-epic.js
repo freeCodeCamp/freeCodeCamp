@@ -19,7 +19,7 @@ import { langSelector } from '../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
 
-export function fetchChallengeEpic(actions, { getState }, { services }) {
+export default function fetchChallengeEpic(actions, { getState }, { services }) {
   return actions::ofType(challenge.onRouteChallenges)
     .filter(({ payload }) => !isChallengeLoaded(getState(), payload))
     .flatMapLatest(({ payload: params }) => {
@@ -84,4 +84,3 @@ export function fetchChallengesEpic(
     });
 }
 
-export default combineEpics(fetchChallengeEpic, fetchChallengesEpic);
