@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { challengeMetaSelector } from './redux';
+import { challengeMetaSelector, updateSuccessMessage } from './redux';
 
 import Classic from './views/classic';
 import Step from './views/step';
@@ -19,6 +19,7 @@ import {
 } from '../../redux';
 import { makeToast } from '../../Toasts/redux';
 import { paramsSelector } from '../../Router/redux';
+import { randomCompliment } from '../../utils/get-words';
 
 const views = {
   backend: BackEnd,
@@ -33,7 +34,8 @@ const views = {
 const mapDispatchToProps = {
   fetchChallenge,
   makeToast,
-  updateTitle
+  updateTitle,
+  updateSuccessMessage
 };
 
 const mapStateToProps = createSelector(
@@ -66,6 +68,7 @@ const propTypes = {
     lang: PropTypes.string.isRequired
   }),
   title: PropTypes.string,
+  updateSuccessMessage: PropTypes.func.isRequired,
   updateTitle: PropTypes.func.isRequired,
   viewType: PropTypes.string
 };
@@ -86,6 +89,7 @@ export class Show extends PureComponent {
 
   componentDidMount() {
     this.props.updateTitle(this.props.title);
+    this.props.updateSuccessMessage(randomCompliment());
     if (this.isNotTranslated(this.props)) {
       this.makeTranslateToast();
     }
@@ -96,11 +100,11 @@ export class Show extends PureComponent {
       this.props.updateTitle(nextProps.title);
     }
     const { params: { dashedName } } = nextProps;
-    if (
-      this.props.params.dashedName !== dashedName &&
-      this.isNotTranslated(nextProps)
-    ) {
-      this.makeTranslateToast();
+    if (this.props.params.dashedName !== dashedName) {
+      this.props.updateSuccessMessage(randomCompliment());
+      if (this.isNotTranslated(nextProps)) {
+        this.makeTranslateToast();
+      }
     }
   }
 
