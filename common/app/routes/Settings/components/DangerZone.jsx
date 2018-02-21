@@ -47,11 +47,6 @@ class DangerZone extends PureComponent {
   }
 
   render() {
-    const centerText = {
-      textAlign: 'center',
-      fontWeight: 'bold',
-      fontStyle: 'italic'
-    };
     const { resetProgress, deleteAccount } = this.props;
     return (
       <div>
@@ -63,7 +58,6 @@ class DangerZone extends PureComponent {
             >
             <Alert
               bsStyle='danger'
-              style={centerText}
               >
               <p>
                 Please be careful! Changes in this section are permanent!
