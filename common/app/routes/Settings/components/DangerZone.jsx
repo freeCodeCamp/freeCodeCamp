@@ -60,7 +60,7 @@ class DangerZone extends PureComponent {
               bsStyle='danger'
               >
               <p>
-                Please be careful! Changes in this section are permanent!
+                Please be careful! Changes in this section are permanent.
               </p>
             </Alert>
             <FullWidthRow>
