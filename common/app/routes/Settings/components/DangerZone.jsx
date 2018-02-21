@@ -66,8 +66,7 @@ class DangerZone extends PureComponent {
               style={centerText}
               >
               <p>
-                Please be careful! Changes in this section are permanent
-                and cannot be reversed!
+                Please be careful! Changes in this section are permanent!
               </p>
             </Alert>
             <FullWidthRow>
