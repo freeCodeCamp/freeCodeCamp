@@ -47,7 +47,7 @@
       "description": [
         "Now let's change the color of some of our text.",
         "We can do this by changing the <code>style</code> of your <code>h2</code> element.",
-        "The property that is responsible for the color of an element's text is the <code>color</color> style property.",
+        "The property that is responsible for the color of an element's text is the <code>color</code> style property.",
         "Here's how you would set your <code>h2</code> element's text color to blue:",
         "<code>&#60;h2 style=\"color: blue;\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
         "Note that it is a good practice to end inline <code>style</code> declarations with a <code>;</code> .",
