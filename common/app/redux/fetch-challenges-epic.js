@@ -10,12 +10,24 @@ import {
 
   fetchChallengeCompleted,
   fetchChallengesCompleted,
-  challengeSelector
+  fetchNewBlock,
+  challengeSelector,
+  superBlocksSelector,
+  currentChallengeSelector
 } from './';
-import { isChallengeLoaded, fullBlocksSelector } from '../entities/index.js';
+import {
+  isChallengeLoaded,
+  fullBlocksSelector,
+  entitiesSelector
+} from '../entities';
 
 import { shapeChallenges } from './utils';
 import { types as challenge } from '../routes/Challenges/redux';
+import {
+  getFirstChallengeOfNextBlock,
+  getFirstChallengeOfNextSuperBlock,
+  getNextChallenge
+} from '../routes/Challenges/utils';
 import { langSelector } from '../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
@@ -86,4 +98,48 @@ export function fetchChallengesForBlockEpic(
     });
 }
 
-export default combineEpics(fetchChallengeEpic, fetchChallengesForBlockEpic);
+function fetchChallengesForNextBlockEpic(action$, { getState }) {
+  return action$::ofType(challenge.checkForNextBlock)
+    .map(() => {
+      let nextChallenge = {};
+      let isNewBlock = false;
+      let isNewSuperBlock = false;
+      const state = getState();
+      const challenge = currentChallengeSelector(state);
+      const superBlocks = superBlocksSelector(state);
+      const entities = entitiesSelector(state);
+      nextChallenge = getNextChallenge(challenge, entities, { isDev });
+      // block completed.
+      if (!nextChallenge) {
+        isNewBlock = true;
+        nextChallenge = getFirstChallengeOfNextBlock(
+          challenge,
+          entities,
+          { isDev }
+        );
+      }
+      // superBlock completed
+      if (!nextChallenge) {
+        isNewSuperBlock = true;
+        nextChallenge = getFirstChallengeOfNextSuperBlock(
+          challenge,
+          entities,
+          superBlocks,
+          { isDev }
+        );
+      }
+      const isNewBlockRequired = (
+        (isNewBlock || isNewSuperBlock) &&
+        !nextChallenge.description
+      );
+      return isNewBlockRequired ?
+        fetchNewBlock(nextChallenge.block) :
+        { type: 'NULL' };
+    });
+}
+
+export default combineEpics(
+  fetchChallengeEpic,
+  fetchChallengesForBlockEpic,
+  fetchChallengesForNextBlockEpic
+);
