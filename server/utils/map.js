@@ -154,6 +154,58 @@ export function getMapForLang(lang) {
   };
 }
 
+export function generateMapForLang(
+  superBlocks,
+  fullSuperBlockMap,
+  fullBlockMap,
+  fullChallengeMap
+) {
+  const superBlockMap = superBlocks
+    .map(superBlock => fullSuperBlockMap[superBlock])
+    .reduce((map, { dashedName, blocks, title }) => {
+      map[dashedName] = { blocks, title, dashedName};
+      return map;
+    }, {});
+  const blockMap = Object.keys(fullBlockMap)
+    .map(block => fullBlockMap[block])
+    .reduce((map, { dashedName, title, time, challenges }) => {
+      map[dashedName] = { dashedName, title, time, challenges };
+      return map;
+    }, {});
+  const challengeMap = Object.keys(fullChallengeMap)
+    .map(challenge => fullChallengeMap[challenge])
+    .reduce((map, challenge) => {
+      const {
+        dashedName,
+        id,
+        title,
+        block,
+        isLocked,
+        isComingSoon,
+        isBeta
+      } = challenge;
+      map[dashedName] = {
+        dashedName,
+        id,
+        title,
+        block,
+        isLocked,
+        isComingSoon,
+        isBeta
+      };
+      return map;
+    }, {});
+
+  return {
+    result: { superBlocks },
+    entities: {
+      superBlock: superBlockMap,
+      block: blockMap,
+      challenge: challengeMap
+    }
+  };
+}
+
 // type ObjectId: String;
 // getChallengeById(
 //   map: Observable[map],

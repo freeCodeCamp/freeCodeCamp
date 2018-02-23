@@ -32,11 +32,8 @@ export const types = createTypes([
 
 export const initMap = createAction(types.initMap);
 
-export const fetchMapUiComplete = createAction(
-  types.fetchMapUi.complete,
-  (entities, result) => ({ entities, result }),
-  entities => ({ entities })
-);
+export const fetchMapUi = createAction(types.fetchMapUi.start);
+export const fetchMapUiComplete = createAction(types.fetchMapUi.complete);
 
 export const toggleThisPanel = createAction(types.toggleThisPanel);
 export const collapseAll = createAction(types.collapseAll);
@@ -111,6 +108,7 @@ export default handleActions(
       const { entities, result } = payload;
       return {
         ...state,
+        ...result,
         mapUi: utils.createMapUi(entities, result)
       };
     }

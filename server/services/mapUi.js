@@ -5,12 +5,18 @@ import { cachedMap, getMapForLang } from '../utils/map';
 
 const log = debug('fcc:services:mapUi');
 
+
 export default function mapUiService(app) {
+  const supportedLangMap = {};
   const challengeMap = cachedMap(app.models);
   return {
     name: 'map-ui',
     read: function readMapUi(req, resource, { lang = 'en' } = {}, config, cb) {
       log(`generating mapUi for ${lang}`);
+      if (lang in supportedLangMap) {
+        log(`using cache for ${lang} map`);
+        return cb(null, supportedLangMap[lang]);
+      }
       return challengeMap.map(getMapForLang(lang))
         .flatMap(({
           result: { superBlocks },
@@ -34,19 +40,39 @@ export default function mapUiService(app) {
             }, {});
           const challengeMap = Object.keys(fullChallengeMap)
             .map(challenge => fullChallengeMap[challenge])
-            .reduce((map, { dashedName, name, id}) => {
-              map[dashedName] = {name, dashedName, id};
+            .reduce((map, challenge) => {
+              const {
+                dashedName,
+                id,
+                title,
+                name,
+                block,
+                isLocked,
+                isComingSoon,
+                isBeta
+              } = challenge;
+              map[dashedName] = {
+                dashedName,
+                id,
+                title,
+                name,
+                block,
+                isLocked,
+                isComingSoon,
+                isBeta
+              };
               return map;
             }, {});
-
-          return Observable.of({
+          const mapUi = {
             result: { superBlocks },
             entities: {
               superBlock: superBlockMap,
               block: blockMap,
               challenge: challengeMap
             }
-          });
+          };
+          supportedLangMap[lang] = mapUi;
+          return Observable.of(mapUi);
         }).subscribe(
           mapUi => cb(null, mapUi ),
           err => { log(err); return cb(err); }

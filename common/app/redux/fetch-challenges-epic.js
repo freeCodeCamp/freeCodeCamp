@@ -9,9 +9,10 @@ import {
   delayedRedirect,
 
   fetchChallengeCompleted,
-  fetchChallengesCompleted
+  fetchChallengesCompleted,
+  challengeSelector
 } from './';
-import { isChallengeLoaded } from '../entities/index.js';
+import { isChallengeLoaded, fullBlocksSelector } from '../entities/index.js';
 
 import { shapeChallenges } from './utils';
 import { types as challenge } from '../routes/Challenges/redux';
@@ -19,7 +20,7 @@ import { langSelector } from '../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
 
-export default function fetchChallengeEpic(actions, { getState }, { services }) {
+function fetchChallengeEpic(actions, { getState }, { services }) {
   return actions::ofType(challenge.onRouteChallenges)
     .filter(({ payload }) => !isChallengeLoaded(getState(), payload))
     .flatMapLatest(({ payload: params }) => {
@@ -49,38 +50,40 @@ export default function fetchChallengeEpic(actions, { getState }, { services }) 
     });
 }
 
-export function fetchChallengesEpic(
+export function fetchChallengesForBlockEpic(
   actions,
   { getState },
   { services }
 ) {
   return actions::ofType(
     types.appMounted,
-    types.updateChallenges
+    types.updateChallenges,
+    types.fetchNewBlock.start
   )
-    .flatMapLatest(() => {
-      const lang = langSelector(getState());
+    .flatMapLatest(({ type, payload }) => {
+      const fetchAnotherBlock = type === types.fetchNewBlock.start;
+      const state = getState();
+      let { block: blockName } = challengeSelector(state);
+      const lang = langSelector(state);
+
+      if (fetchAnotherBlock) {
+        const fullBlocks = fullBlocksSelector(state);
+        if (fullBlocks.includes(payload)) {
+          return Observable.of({ type: 'NULL'});
+        }
+        blockName = payload;
+      }
+
       const options = {
-        params: { lang },
-        service: 'map'
+        params: { lang, blockName },
+        service: 'challenges-for-block'
       };
       return services.readService$(options)
         .retry(3)
-        .map(({ entities, ...res }) => ({
-          entities: shapeChallenges(
-            entities,
-            isDev
-          ),
-          ...res
-        }))
-        .map(({ entities, result } = {}) => {
-          return fetchChallengesCompleted(
-            entities,
-            result
-          );
-        })
+        .map(fetchChallengesCompleted)
         .startWith({ type: types.fetchChallenges.start })
         .catch(createErrorObservable);
     });
 }
 
+export default combineEpics(fetchChallengeEpic, fetchChallengesForBlockEpic);

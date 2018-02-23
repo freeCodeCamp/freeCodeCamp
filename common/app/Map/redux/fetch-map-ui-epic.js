@@ -17,7 +17,8 @@ export default function fetchMapUiEpic(
   { services }
 ) {
   return actions::ofType(
-    appTypes.appMounted
+    appTypes.appMounted,
+    types.fetchMapUi.start
   )
     .flatMapLatest(() => {
       const lang = langSelector(getState());
@@ -34,13 +35,7 @@ export default function fetchMapUiEpic(
           ),
           ...res
         }))
-        .map(({ entities, result } = {}) => {
-          return fetchMapUiComplete(
-            entities,
-            result
-          );
-        })
-        .startWith({ type: types.fetchMapUi.start })
+        .map(fetchMapUiComplete)
         .catch(createErrorObservable);
     });
   }

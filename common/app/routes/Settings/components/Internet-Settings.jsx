@@ -54,7 +54,6 @@ class InternetSettings extends PureComponent {
   }
 
   handleSubmit(values) {
-    console.log(values);
     this.props.updateUserBackend(values);
   }
 
