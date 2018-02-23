@@ -5,7 +5,7 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
-import { capitalize, noop} from 'lodash';
+import { capitalize, noop } from 'lodash';
 
 import * as utils from './utils.js';
 import ns from '../ns.json';
@@ -13,9 +13,9 @@ import {
   createEventMetaCreator
 } from '../../redux';
 
-import fewtchMapUiEpic from './fetch-map-ui-epic';
+import fetchMapUiEpic from './fetch-map-ui-epic';
 
-export const epics = [ fewtchMapUiEpic ];
+export const epics = [ fetchMapUiEpic ];
 
 export const types = createTypes([
   'onRouteMap',

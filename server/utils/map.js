@@ -74,43 +74,43 @@ export function _cachedMap({ Block, Challenge }) {
       }, blocksMap);
     });
   const superBlockMap = blocks.map(blocks => blocks.reduce((map, block) => {
-        if (
-          map[block.superBlock] &&
-          map[block.superBlock].blocks
-        ) {
-          map[block.superBlock].blocks.push(block.dashedName);
-        } else {
-          map[block.superBlock] = {
-            title: _.startCase(block.superBlock),
-            order: block.superOrder,
-            name: nameify(_.startCase(block.superBlock)),
-            dashedName: block.superBlock,
-            blocks: [block.dashedName],
-            message: block.superBlockMessage
-          };
-        }
-        return map;
-      }, {}));
-      const superBlocks = superBlockMap.map(superBlockMap => {
-        return Object.keys(superBlockMap)
-          .map(key => superBlockMap[key])
-          .map(({ dashedName }) => dashedName);
-      });
-      return Observable.combineLatest(
-        superBlockMap,
-        blockMap,
-        challengeMap,
-        superBlocks,
-        (superBlock, block, challenge, superBlocks) => ({
-          entities: {
-            superBlock,
-            block,
-            challenge
-          },
-          result: {
-            superBlocks
-          }
-        })
+    if (
+      map[block.superBlock] &&
+      map[block.superBlock].blocks
+    ) {
+      map[block.superBlock].blocks.push(block.dashedName);
+    } else {
+      map[block.superBlock] = {
+        title: _.startCase(block.superBlock),
+        order: block.superOrder,
+        name: nameify(_.startCase(block.superBlock)),
+        dashedName: block.superBlock,
+        blocks: [block.dashedName],
+        message: block.superBlockMessage
+      };
+    }
+    return map;
+  }, {}));
+  const superBlocks = superBlockMap.map(superBlockMap => {
+    return Object.keys(superBlockMap)
+      .map(key => superBlockMap[key])
+      .map(({ dashedName }) => dashedName);
+  });
+  return Observable.combineLatest(
+    superBlockMap,
+    blockMap,
+    challengeMap,
+    superBlocks,
+    (superBlock, block, challenge, superBlocks) => ({
+      entities: {
+        superBlock,
+        block,
+        challenge
+      },
+      result: {
+        superBlocks
+      }
+    })
   )
     .do(checkMapData)
     .shareReplay();
