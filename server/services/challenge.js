@@ -2,7 +2,7 @@ import debug from 'debug';
 import { pickBy } from 'lodash';
 import { Observable } from 'rx';
 
-import { cachedMap, getMapForLang } from '../utils/map';
+import { cachedMap, getMapForLang, getChallenge } from '../utils/map';
 import { shapeChallenges } from '../../common/app/redux/utils';
 
 const log = debug('fcc:services:challenge');
@@ -11,16 +11,15 @@ const isDev = debug.enabled('fcc:*');
 export default function getChallengesForBlock(app) {
   const challengeMap = cachedMap(app.models);
   return {
-    name: 'challenges-for-block',
+    name: 'challenge',
     read: function readChallengesForBlock(
-      req,
-      resource,
-      { blockName, lang = 'en' } = {},
-      config,
-      cb
-    ) {
-      log(`sourcing challenges for the ${blockName} block`);
-      return challengeMap.map(getMapForLang(lang))
+        req,
+        resource,
+        { dashedName, blockName, lang = 'en' } = {},
+        config,
+        cb
+      ) {
+      const getChallengeBlock$ = challengeMap.map(getMapForLang(lang))
         .flatMap(({
           result: { superBlocks },
           entities: {
@@ -28,22 +27,28 @@ export default function getChallengesForBlock(app) {
             challenge: challengeMap
           }
         }) => {
-          const requestedChallenges = pickBy(
-            challengeMap,
-            ch => ch.block === blockName
-          );
-          const entities = {
-            block: {
-              [blockName]: fullBlockMap[blockName]
-            },
-            challenge: requestedChallenges
-          };
-          const { challenge, block } = shapeChallenges(entities, isDev);
-          return Observable.of({
-            result: { superBlocks },
-            entities: { challenge, block }
+          log(`sourcing challenges for the ${blockName} block`);
+            const requestedChallenges = pickBy(
+              challengeMap,
+              ch => ch.block === blockName
+            );
+            const entities = {
+              block: {
+                [blockName]: fullBlockMap[blockName]
+              },
+              challenge: requestedChallenges
+            };
+            const { challenge, block } = shapeChallenges(entities, isDev);
+            return Observable.of({
+              result: { superBlocks },
+              entities: { challenge, block }
+            });
           });
-        })
+      return Observable.if(
+        () => !!dashedName,
+        getChallenge(dashedName, blockName, challengeMap, lang),
+        getChallengeBlock$
+      )
         .subscribe(
           result => cb(null, result),
           cb

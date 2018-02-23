@@ -25,7 +25,7 @@ function fetchChallengeEpic(actions, { getState }, { services }) {
     .filter(({ payload }) => !isChallengeLoaded(getState(), payload))
     .flatMapLatest(({ payload: params }) => {
       const options = {
-        service: 'map',
+        service: 'challenge',
         params
       };
       return services.readService$(options)
@@ -76,7 +76,7 @@ export function fetchChallengesForBlockEpic(
 
       const options = {
         params: { lang, blockName },
-        service: 'challenges-for-block'
+        service: 'challenge'
       };
       return services.readService$(options)
         .retry(3)
