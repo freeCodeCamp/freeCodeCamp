@@ -19,9 +19,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "GCLiJU-vvVc"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
@@ -75,9 +73,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "wJhcPwVYA1g"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
@@ -120,9 +116,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "6WrbY1d-IHI"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
@@ -167,6 +161,37 @@
       }
     },
     {
+      "id": "bd7158d8c443edefaeb5bdee",
+      "title": "Build an Image Search Abstraction Layer",
+      "description": [
+        "<strong>Objective:</strong> Build a full stack JavaScript app that allows you to search for images like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> and browse recent search queries like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Then deploy it to Glitch.",
+        "Note that for each project, you should create a new GitHub repository and a new Glitch project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.org/challenges/get-set-for-our-api-development-projects</a>.",
+        "Here are the specific user stories you should implement for this project:",
+        "<strong>User Story:</strong> I can get the image URLs, alt text and page urls for a set of images relating to a given search string.",
+        "<strong>User Story:</strong> I can paginate through the responses by adding a ?offset=2 parameter to the URL.",
+        "<strong>User Story:</strong> I can get a list of the most recently submitted search strings.",
+        "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Glitch.",
+        "You can get feedback on your project by sharing it with your friends on Facebook."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "type": "basejump",
+      "challengeType": 4,
+      "titleEs": "Capa de abstracción para buscar imágenes",
+      "descriptionEs": [
+        "<strong>Objetivo:</strong> Desarolla una aplicación de Pila Completa en JavaScript que te permite buscar imágenes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> y examinar las búsquedas recientes como esta: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Después, despliegala en Glitch.",
+        "Ten en cuenta que para cada proyecto, deberías crear un nuevo repositorio en GitHub y un nuevo proyecto en Glitch. Si no recuerdas como hacer esto, vuelve a visitar <a href='/challenges/get-set-for-our-api-development-projects'>https://freecodecamp.org//challenges/get-set-for-our-api-development-projects</a>.",
+        "Aquí están las historias de usuario específicas que debes implementar para este proyecto:",
+        "<strong>Historia de Usuario:</strong> Puedo obtener la URL de una imagen, texto alternativo y URLs de las páginas de un conjunto de imágenes que se relacionen con una cadena de texto dada.",
+        "<strong>Historia de Usuario:</strong> Puedo examinar página a página las respuestas añadiendo un parámetro del estilo <code>?offset=2</code> al URL.",
+        "<strong>Historia de Usuario:</strong> Puedo obtener una lista de las cadenas búscadas que se enviaron más recientemente.",
+        "Una vez que hayas terminado de implementar estas historias de usuarios, pulsa el botón \"I've completed this challenge\" e introduce los URLs de tu repositorio en GitHub y de tu aplicación en vivo en Glitch.",
+        "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiendolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+      ]
+    },
+    {
       "id": "bd7158d8c442eedfaeb5bd1c",
       "title": "Build a Tic Tac Toe Game",
       "description": [
@@ -179,9 +204,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "Ia69O1ZNGEg"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
@@ -221,9 +244,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "tAPut8a47bA"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
@@ -266,9 +287,7 @@
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "LJQcFNo_-QY"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": false,
@@ -324,9 +343,7 @@
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "6tZ4c-Bxstg"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": false,
@@ -383,9 +400,7 @@
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "5Ajcjs3OmjA"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": false,
@@ -447,9 +462,7 @@
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "BwyKI9iePUQ"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": false,
@@ -535,9 +548,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "etBaP3IdlIE"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "isRequired": false,
       "releasedOn": "January 1, 2016",
@@ -578,9 +589,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "kSAqct10gA0"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "isRequired": false,
       "releasedOn": "January 1, 2016",
@@ -618,9 +627,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "mzElFmbGqQI"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "basejump",
       "challengeType": 4,
@@ -654,9 +661,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "adrOtJCVP04"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "basejump",
       "challengeType": 4,
@@ -692,9 +697,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        ""
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
@@ -717,9 +720,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        ""
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "challengeType": 3,
