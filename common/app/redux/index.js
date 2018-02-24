@@ -8,6 +8,7 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
+import debug from 'debug';
 
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
@@ -20,11 +21,18 @@ import { utils } from '../Flash/redux';
 import { paramsSelector } from '../Router/redux';
 import { types as challenges } from '../routes/Challenges/redux';
 import { types as map } from '../Map/redux';
-import { challengeToFiles } from '../routes/Challenges/utils';
+import {
+  challengeToFiles,
+  getFirstChallengeOfNextBlock,
+  getFirstChallengeOfNextSuperBlock,
+  getNextChallenge
+} from '../routes/Challenges/utils';
 
 import ns from '../ns.json';
 
 import { themes, invertTheme } from '../../utils/themes.js';
+
+const isDev = debug.enabled('fcc:*');
 
 export const epics = [
   fetchChallengesEpic,
@@ -271,6 +279,40 @@ export const firstChallengeSelector = createSelector(
   }
 );
 
+export const nextChallengeSelector = state => {
+  let nextChallenge = {};
+  let isNewBlock = false;
+  let isNewSuperBlock = false;
+  const challenge = currentChallengeSelector(state);
+  const superBlocks = superBlocksSelector(state);
+  const entities = entitiesSelector(state);
+  nextChallenge = getNextChallenge(challenge, entities, { isDev });
+  // block completed.
+  if (!nextChallenge) {
+    isNewBlock = true;
+    nextChallenge = getFirstChallengeOfNextBlock(
+      challenge,
+      entities,
+      { isDev }
+    );
+  }
+  // superBlock completed
+  if (!nextChallenge) {
+    isNewSuperBlock = true;
+    nextChallenge = getFirstChallengeOfNextSuperBlock(
+      challenge,
+      entities,
+      superBlocks,
+      { isDev }
+    );
+  }
+  return {
+    nextChallenge,
+    isNewBlock,
+    isNewSuperBlock
+  };
+};
+
 export default handleActions(
   () => ({
     [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
@@ -285,12 +327,10 @@ export default handleActions(
     [combineActions(
       types.fetchChallenge.complete,
       map.fetchMapUi.complete
-    )]: (state, { payload }) => {
-      return ({
+    )]: (state, { payload }) => ({
       ...state,
       superBlocks: payload.result.superBlocks
-    });
-  },
+    }),
     [challenges.onRouteChallenges]: (state, { payload: { dashedName } }) => ({
       ...state,
       currentChallenge: dashedName

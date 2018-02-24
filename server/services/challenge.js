@@ -28,22 +28,22 @@ export default function getChallengesForBlock(app) {
           }
         }) => {
           log(`sourcing challenges for the ${blockName} block`);
-            const requestedChallenges = pickBy(
-              challengeMap,
-              ch => ch.block === blockName
-            );
-            const entities = {
-              block: {
-                [blockName]: fullBlockMap[blockName]
-              },
-              challenge: requestedChallenges
-            };
-            const { challenge, block } = shapeChallenges(entities, isDev);
-            return Observable.of({
-              result: { superBlocks },
-              entities: { challenge, block }
-            });
+          const requestedChallenges = pickBy(
+            challengeMap,
+            ch => ch.block === blockName
+          );
+          const entities = {
+            block: {
+              [blockName]: fullBlockMap[blockName]
+            },
+            challenge: requestedChallenges
+          };
+          const { challenge, block } = shapeChallenges(entities, isDev);
+          return Observable.of({
+            result: { superBlocks },
+            entities: { challenge, block }
           });
+        });
       return Observable.if(
         () => !!dashedName,
         getChallenge(dashedName, blockName, challengeMap, lang),

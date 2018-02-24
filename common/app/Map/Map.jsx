@@ -26,7 +26,7 @@ export class ShowMap extends PureComponent {
     const { superBlocks } = this.props;
     if (!Array.isArray(superBlocks) || !superBlocks.length) {
       return (
-        <div style={{ hieght: '300px' }}>
+        <div style={{ height: '300px' }}>
           <Loader />
         </div>
       );

@@ -12,22 +12,15 @@ import {
   fetchChallengesCompleted,
   fetchNewBlock,
   challengeSelector,
-  superBlocksSelector,
-  currentChallengeSelector
+  nextChallengeSelector
 } from './';
 import {
   isChallengeLoaded,
-  fullBlocksSelector,
-  entitiesSelector
+  fullBlocksSelector
 } from '../entities';
 
 import { shapeChallenges } from './utils';
 import { types as challenge } from '../routes/Challenges/redux';
-import {
-  getFirstChallengeOfNextBlock,
-  getFirstChallengeOfNextSuperBlock,
-  getNextChallenge
-} from '../routes/Challenges/utils';
 import { langSelector } from '../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
@@ -81,7 +74,7 @@ export function fetchChallengesForBlockEpic(
       if (fetchAnotherBlock) {
         const fullBlocks = fullBlocksSelector(state);
         if (fullBlocks.includes(payload)) {
-          return Observable.of({ type: 'NULL'});
+          return Observable.of(null);
         }
         blockName = payload;
       }
@@ -95,47 +88,28 @@ export function fetchChallengesForBlockEpic(
         .map(fetchChallengesCompleted)
         .startWith({ type: types.fetchChallenges.start })
         .catch(createErrorObservable);
-    });
+    })
+    .filter(Boolean);
 }
 
 function fetchChallengesForNextBlockEpic(action$, { getState }) {
   return action$::ofType(challenge.checkForNextBlock)
     .map(() => {
-      let nextChallenge = {};
-      let isNewBlock = false;
-      let isNewSuperBlock = false;
-      const state = getState();
-      const challenge = currentChallengeSelector(state);
-      const superBlocks = superBlocksSelector(state);
-      const entities = entitiesSelector(state);
-      nextChallenge = getNextChallenge(challenge, entities, { isDev });
-      // block completed.
-      if (!nextChallenge) {
-        isNewBlock = true;
-        nextChallenge = getFirstChallengeOfNextBlock(
-          challenge,
-          entities,
-          { isDev }
-        );
-      }
-      // superBlock completed
-      if (!nextChallenge) {
-        isNewSuperBlock = true;
-        nextChallenge = getFirstChallengeOfNextSuperBlock(
-          challenge,
-          entities,
-          superBlocks,
-          { isDev }
-        );
-      }
+      const {
+        nextChallenge,
+        isNewBlock,
+        isNewSuperBlock
+      } = nextChallengeSelector(getState());
       const isNewBlockRequired = (
         (isNewBlock || isNewSuperBlock) &&
+        nextChallenge &&
         !nextChallenge.description
       );
       return isNewBlockRequired ?
         fetchNewBlock(nextChallenge.block) :
-        { type: 'NULL' };
-    });
+        null;
+    })
+    .filter(Boolean);
 }
 
 export default combineEpics(
