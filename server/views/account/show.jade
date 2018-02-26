@@ -1,5 +1,6 @@
 extends ../layout
 block content
+    link(rel='stylesheet', href='/bower_components/CodeMirror/lib/codemirror.css')
     include ../partials/flyer
     script(src="/bower_components/cal-heatmap/cal-heatmap.min.js")
     script.
@@ -100,12 +101,28 @@ block content
                 .row.text-primary
                     h4.col-sm-6.text-right Longest Streak: #{longestStreak} #{longestStreak === 1 ? ' day' : ' days'}
                     h4.col-sm-6.text-left Current Streak: #{currentStreak} #{currentStreak === 1 ? ' day' : ' days'}
+        .row
+          .col-xs-12
+            #modal-dialog.modal
+              .modal-dialog
+                  .modal-content
+                      .modal-header
+                          a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                          h3#solution-name.text-center Solution for Challenge
+                      .modal-body
+                          pre#solution-content.CodeMirror(style='overflow:auto')
+                                | There is no solution currently available for this challenge.
+                      .modal-footer
+                          a.btn.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                              | Close this solution.
+            script.
+                var openSolutionModal = function () {
+                    $('#solution-name').text(this.getAttribute('data-solution-name'));
+                    $('#solution-content').text(this.getAttribute('data-solution-content'));
+                    $('#modal-dialog').modal('show');
+                }
 
         .row
-          p.col-sm-12.text-center
-            | Note: We have temporarily disabled viewing and sharing solutions, however they are safely stored in your profile. You can 
-            a(href="https://forum.freecodecamp.org/t/announcement-viewing-and-sharing-solutions-from-user-profiles-is-temporarily-disabled/169339" target="_blank") learn more about this here.
-
           if (user && user.username == username || !isLocked)
               if (projects .length > 0)
                   .col-sm-12
@@ -119,7 +136,7 @@ block content
                           for challenge in projects
                               tr
                                   td.col-xs-5.hidden-xs
-                                      a(href='/challenges/' + removeOldTerms(challenge.name), target='_blank')= removeOldTerms(challenge.name)
+                                      a.btn.btn-default.btn-primary(href='/challenges/' + removeOldTerms(challenge.name), target='_blank')= removeOldTerms(challenge.name)
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
@@ -141,9 +158,19 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
-                                    a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
+                                    if (challenge.solution)
+                                        a.btn.btn-default.btn-primary.view-solution(data-solution-name=removeOldTerms(challenge.name), data-solution-content=challenge.solution) View solution
+                                        script.
+                                            $('.view-solution').on("click", openSolutionModal)
+                                    else
+                                        a.btn.btn-default.btn-primary(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
                                   td.col-xs-12.visible-xs
-                                    a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
+                                    if (challenge.solution)
+                                        a.btn.btn-default.btn-primary.view-solution(data-solution-name=removeOldTerms(challenge.name), data-solution-content=challenge.solution) View solution
+                                        script.
+                                            $('.view-solution').on("click", openSolutionModal)
+                                    else
+                                        a.btn.btn-default.btn-primary(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
               if (challenges.length > 0)
                   .col-sm-12
                       table.table.table-striped
@@ -159,12 +186,20 @@ block content
                                   td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-2.hidden-xs= challenge.lastUpdated ? challenge.lastUpdated : ''
                                   td.col-xs-2.hidden-xs
-                                    if (challenge.name)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
+                                    if (challenge.solution && challenge.name)
+                                        a.btn.btn-default.btn-primary.view-solution(data-solution-name=removeOldTerms(challenge.name), data-solution-content=challenge.solution) View solution
+                                        script.
+                                            $('.view-solution').on("click", openSolutionModal)
+                                    else if (challenge.name)
+                                        a.btn.btn-default.btn-primary(href='/challenges/' + removeOldTerms(challenge.name)) View this challenge
                                     else
                                         span N/A
                                   td.col-xs-12.visible-xs
-                                    if (challenge.name)
-                                        a(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
+                                    if (challenge.solution && challenge.name)
+                                        a.btn.btn-default.btn-primary.view-solution(data-solution-name=removeOldTerms(challenge.name), data-solution-content=challenge.solution) View solution
+                                        script.
+                                            $('.view-solution').on("click", openSolutionModal)
+                                    else if (challenge.name)
+                                        a.btn.btn-default.btn-primary(href='/challenges/' + removeOldTerms(challenge.name))= removeOldTerms(challenge.name)
                                     else
                                         span N/A
