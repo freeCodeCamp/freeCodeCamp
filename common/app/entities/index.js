@@ -1,6 +1,7 @@
-import { findIndex, invert, pick, property } from 'lodash';
+import { findIndex, invert, pick, property, merge, union } from 'lodash';
 import uuid from 'uuid/v4';
 import {
+  combineActions,
   composeReducers,
   createAction,
   createTypes,
@@ -8,8 +9,9 @@ import {
 } from 'berkeleys-redux-utils';
 
 import { themes } from '../../utils/themes';
+import { usernameSelector, types as app } from '../redux';
 import { types as challenges } from '../routes/Challenges/redux';
-import { usernameSelector } from '../redux';
+import { types as map } from '../Map/redux';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
@@ -85,7 +87,8 @@ const defaultState = {
   superBlock: {},
   block: {},
   challenge: {},
-  user: {}
+  user: {},
+  fullBlocks: []
 };
 
 export function selectiveChallengeTitleSelector(state, dashedName) {
@@ -148,6 +151,8 @@ export function makeSuperBlockSelector(name) {
 export const isChallengeLoaded = (state, { dashedName }) =>
   !!challengeMapSelector(state)[dashedName];
 
+export const fullBlocksSelector = state => getNS(state).fullBlocks;
+
 export default composeReducers(
   ns,
   function metaReducer(state = defaultState, action) {
@@ -163,8 +168,7 @@ export default composeReducers(
         };
       }
       return {
-        ...state,
-        ...action.meta.entities
+        ...merge(state, action.meta.entities)
       };
     }
     return state;
@@ -187,6 +191,18 @@ export default composeReducers(
   },
   handleActions(
     () => ({
+      [
+        combineActions(
+          app.fetchChallenges.complete,
+          map.fetchMapUi.complete
+        )
+      ]: (state, { payload }) => {
+        const {entities: { block } } = payload;
+        return {
+          ...merge(state, payload.entities),
+          fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])
+        };
+      },
       [
         challenges.submitChallenge.complete
       ]: (state, { payload: { username, points, challengeInfo } }) => ({

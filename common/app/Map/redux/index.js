@@ -1,25 +1,26 @@
 import {
   createAction,
+  createAsyncTypes,
   createTypes,
   handleActions
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
-import noop from 'lodash/noop';
-import capitalize from 'lodash/capitalize';
+import { capitalize, noop } from 'lodash';
 
 import * as utils from './utils.js';
 import ns from '../ns.json';
 import {
-  types as app,
   createEventMetaCreator
 } from '../../redux';
 
-export const epics = [];
+import fetchMapUiEpic from './fetch-map-ui-epic';
+
+export const epics = [ fetchMapUiEpic ];
 
 export const types = createTypes([
   'onRouteMap',
   'initMap',
-
+  createAsyncTypes('fetchMapUi'),
   'toggleThisPanel',
 
   'isAllCollapsed',
@@ -30,6 +31,9 @@ export const types = createTypes([
 ], ns);
 
 export const initMap = createAction(types.initMap);
+
+export const fetchMapUi = createAction(types.fetchMapUi.start);
+export const fetchMapUiComplete = createAction(types.fetchMapUi.complete);
 
 export const toggleThisPanel = createAction(types.toggleThisPanel);
 export const collapseAll = createAction(types.collapseAll);
@@ -100,10 +104,11 @@ export default handleActions(
         mapUi
       };
     },
-    [app.fetchChallenges.complete]: (state, { payload }) => {
+    [types.fetchMapUi.complete]: (state, { payload }) => {
       const { entities, result } = payload;
       return {
         ...state,
+        ...result,
         mapUi: utils.createMapUi(entities, result)
       };
     }
