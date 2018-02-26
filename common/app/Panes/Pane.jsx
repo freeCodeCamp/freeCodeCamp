@@ -23,8 +23,8 @@ export function Pane({
     position: 'absolute',
     right: right + '%',
     top: 0,
-    paddingLeft: '4px',
-    paddingRight: '4px'
+    paddingLeft: '0px',
+    paddingRight: '0px'
   };
   return (
     <div style={ style }>
