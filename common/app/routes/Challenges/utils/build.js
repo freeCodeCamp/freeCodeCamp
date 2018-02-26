@@ -6,11 +6,13 @@ import throwers from '../rechallenge/throwers';
 import {
   backendFormValuesSelector,
   challengeTemplateSelector,
-  challengeRequiredSelector
+  challengeRequiredSelector,
+  isJSEnabledSelector
 } from '../redux';
 import {
   applyTransformers,
-  proxyLoggerTransformer
+  proxyLoggerTransformer,
+  testJS$JSX
 } from '../rechallenge/transformers';
 import {
   cssToHtml,
@@ -42,11 +44,25 @@ const globalRequires = [
   jQuery
 ];
 
+function filterJSIfDisabled(state) {
+  const isJSEnabled = isJSEnabledSelector(state);
+  return file => {
+    if (testJS$JSX(file) && !isJSEnabled) {
+      return null;
+    }
+    return file;
+  };
+}
+
 export function buildFromFiles(state, shouldProxyConsole) {
   const files = filesSelector(state);
   const required = challengeRequiredSelector(state);
   const finalRequires = [...globalRequires, ...required ];
-  return createFileStream(files)
+  const requiredFiles = Object.keys(files)
+    .map(key => files[key])
+    .filter(filterJSIfDisabled(state))
+    .filter(Boolean);
+  return createFileStream(requiredFiles)
     ::pipe(throwers)
     ::pipe(applyTransformers)
     ::pipe(shouldProxyConsole ? proxyLoggerTransformer : identity)

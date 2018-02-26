@@ -12,7 +12,8 @@ import {
 
   codeLockedSelector,
   showPreviewSelector,
-  testsSelector
+  testsSelector,
+  disableJSOnError
 } from './';
 import {
   buildFromFiles,
@@ -26,7 +27,8 @@ import {
 import {
   createErrorObservable,
 
-  challengeSelector
+  challengeSelector,
+  doActionOnError
 } from '../../../redux';
 
 
@@ -55,12 +57,11 @@ export function updateMainEpic(actions, { getState }, { document }) {
         .flatMapLatest(() => buildFromFiles(getState(), true)
           .map(frameMain)
           .ignoreElements()
-          .catch(createErrorObservable)
+          .catch(doActionOnError(() => disableJSOnError()))
         );
       return Observable.merge(buildAndFrameMain, proxyLogger.map(updateOutput));
     });
 }
-
 
 export function executeChallengeEpic(actions, { getState }, { document }) {
   return Observable.of(document)

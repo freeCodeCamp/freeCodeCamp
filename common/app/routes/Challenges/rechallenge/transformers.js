@@ -1,7 +1,9 @@
 import {
+  attempt,
   cond,
   flow,
   identity,
+  isError,
   matchesProperty,
   overEvery,
   overSome,
@@ -35,7 +37,7 @@ const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
 const isJS = matchesProperty('ext', 'js');
 const testHTMLJS = overSome(isJS, matchesProperty('ext', 'html'));
-const testJS$JSX = overSome(isJS, matchesProperty('ext', 'jsx'));
+export const testJS$JSX = overSome(isJS, matchesProperty('ext', 'jsx'));
 
 // work around the absence of multi-flile editing
 // this can be replaced with `matchesProperty('ext', 'sass')`
@@ -105,13 +107,26 @@ export const replaceNBSP = cond([
   [ stubTrue, identity ]
 ]);
 
+function tryTransform(wrap = identity) {
+  return function transformWrappedPoly(source) {
+    const result = attempt(wrap, source);
+    if (isError(result)) {
+      const friendlyError = `${result}`
+        .match(/[\w\W]+?\n/)[0]
+        .replace(' unknown:', '');
+      throw new Error(friendlyError);
+    }
+    return result;
+  };
+}
+
 export const babelTransformer = cond([
   [
     testJS$JSX,
     flow(
       partial(
         vinyl.transformHeadTailAndContents,
-        babelTransformCode
+        tryTransform(babelTransformCode)
       ),
       partial(vinyl.setExt, 'js')
     )
