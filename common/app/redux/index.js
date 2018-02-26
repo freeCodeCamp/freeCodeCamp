@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { flow, identity } from 'lodash';
 import { Observable } from 'rx';
 import {
   combineActions,
@@ -8,6 +8,7 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
+import debug from 'debug';
 
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
@@ -19,11 +20,19 @@ import { updateThemeMetacreator, entitiesSelector } from '../entities';
 import { utils } from '../Flash/redux';
 import { paramsSelector } from '../Router/redux';
 import { types as challenges } from '../routes/Challenges/redux';
-import { challengeToFiles } from '../routes/Challenges/utils';
+import { types as map } from '../Map/redux';
+import {
+  challengeToFiles,
+  getFirstChallengeOfNextBlock,
+  getFirstChallengeOfNextSuperBlock,
+  getNextChallenge
+} from '../routes/Challenges/utils';
 
 import ns from '../ns.json';
 
 import { themes, invertTheme } from '../../utils/themes.js';
+
+const isDev = debug.enabled('fcc:*');
 
 export const epics = [
   fetchChallengesEpic,
@@ -41,6 +50,7 @@ export const types = createTypes([
 
   createAsyncTypes('fetchChallenge'),
   createAsyncTypes('fetchChallenges'),
+  createAsyncTypes('fetchNewBlock'),
   'updateChallenges',
   createAsyncTypes('fetchOtherUser'),
   createAsyncTypes('fetchUser'),
@@ -66,7 +76,7 @@ const throwIfUndefined = () => {
 //   label?: String,
 //   value?: Number
 // }) => () => Object
-export const createEventMetaCreator = ({
+export function createEventMetaCreator({
   // categories are features or namespaces of the app (capitalized):
   //   Map, Nav, Challenges, and so on
   category = throwIfUndefined,
@@ -80,15 +90,17 @@ export const createEventMetaCreator = ({
   label,
   // used to tack some specific value for a GA event
   value
-} = throwIfUndefined) => () => ({
-  analytics: {
-    type: 'event',
-    category,
-    action,
-    label,
-    value
-  }
-});
+} = throwIfUndefined) {
+  return () => ({
+    analytics: {
+      type: 'event',
+      category,
+      action,
+      label,
+      value
+    }
+  });
+}
 
 export const onRouteHome = createAction(types.onRouteHome);
 export const appMounted = createAction(types.appMounted);
@@ -101,15 +113,20 @@ export const fetchChallengeCompleted = createAction(
   null,
   meta => ({
     ...meta,
-    ..._.flow(challengeToFiles, createFilesMetaCreator)(meta.challenge)
+    ...flow(challengeToFiles, createFilesMetaCreator)(meta.challenge)
   })
 );
 export const fetchChallenges = createAction('' + types.fetchChallenges);
 export const fetchChallengesCompleted = createAction(
-  types.fetchChallenges.complete,
-  (entities, result) => ({ entities, result }),
-  entities => ({ entities })
+  types.fetchChallenges.complete
 );
+
+export const fetchNewBlock = createAction(types.fetchNewBlock.start);
+export const fetchNewBlockComplete = createAction(
+  types.fetchNewBlock.complete,
+  ({ entities }) => entities
+);
+
 export const updateChallenges = createAction(types.updateChallenges);
 
 // updateTitle(title: String) => Action
@@ -122,7 +139,7 @@ export const fetchOtherUser = createAction(types.fetchOtherUser.start);
 export const fetchOtherUserComplete = createAction(
   types.fetchOtherUser.complete,
   ({ result }) => result,
-  _.identity
+  identity
 );
 
 // fetchUser() => Action
@@ -131,7 +148,7 @@ export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(
   types.fetchUser.complete,
   ({ result }) => result,
-  _.identity
+  identity
 );
 
 export const showSignIn = createAction(types.showSignIn);
@@ -209,7 +226,7 @@ export const userByNameSelector = state => {
   return userMap[username] || {};
 };
 
-export const themeSelector = _.flow(
+export const themeSelector = flow(
   userSelector,
   user => user.theme || themes.default
 );
@@ -262,6 +279,40 @@ export const firstChallengeSelector = createSelector(
   }
 );
 
+export const nextChallengeSelector = state => {
+  let nextChallenge = {};
+  let isNewBlock = false;
+  let isNewSuperBlock = false;
+  const challenge = currentChallengeSelector(state);
+  const superBlocks = superBlocksSelector(state);
+  const entities = entitiesSelector(state);
+  nextChallenge = getNextChallenge(challenge, entities, { isDev });
+  // block completed.
+  if (!nextChallenge) {
+    isNewBlock = true;
+    nextChallenge = getFirstChallengeOfNextBlock(
+      challenge,
+      entities,
+      { isDev }
+    );
+  }
+  // superBlock completed
+  if (!nextChallenge) {
+    isNewSuperBlock = true;
+    nextChallenge = getFirstChallengeOfNextSuperBlock(
+      challenge,
+      entities,
+      superBlocks,
+      { isDev }
+    );
+  }
+  return {
+    nextChallenge,
+    isNewBlock,
+    isNewSuperBlock
+  };
+};
+
 export default handleActions(
   () => ({
     [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
@@ -275,7 +326,7 @@ export default handleActions(
     }),
     [combineActions(
       types.fetchChallenge.complete,
-      types.fetchChallenges.complete
+      map.fetchMapUi.complete
     )]: (state, { payload }) => ({
       ...state,
       superBlocks: payload.result.superBlocks

@@ -1,5 +1,6 @@
 import flowRight from 'lodash/flowRight';
 import { createNameIdMap } from '../../utils/map.js';
+import { partial } from 'lodash';
 
 export function filterComingSoonBetaChallenge(
   isDev = false,
@@ -13,7 +14,7 @@ export function filterComingSoonBetaFromEntities(
   { challenge: challengeMap, block: blockMap = {}, ...rest },
   isDev = false
 ) {
-  const filter = filterComingSoonBetaChallenge.bind(null, isDev);
+  const filter = partial(filterComingSoonBetaChallenge, isDev);
   return {
     ...rest,
     block: Object.keys(blockMap)

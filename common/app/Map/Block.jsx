@@ -9,13 +9,16 @@ import ns from './ns.json';
 import Challenges from './Challenges.jsx';
 import {
   toggleThisPanel,
-
   makePanelOpenSelector
 } from './redux';
+import { fetchNewBlock } from '../redux';
 
 import { makeBlockSelector } from '../entities';
 
-const dispatchActions = { toggleThisPanel };
+const mapDispatchToProps = {
+  fetchNewBlock,
+  toggleThisPanel
+};
 function makeMapStateToProps(_, { dashedName }) {
   return createSelector(
     makeBlockSelector(dashedName),
@@ -34,6 +37,7 @@ function makeMapStateToProps(_, { dashedName }) {
 const propTypes = {
   challenges: PropTypes.array,
   dashedName: PropTypes.string,
+  fetchNewBlock: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
   time: PropTypes.string,
   title: PropTypes.string,
@@ -74,7 +78,8 @@ export class Block extends PureComponent {
       time,
       dashedName,
       isOpen,
-      challenges
+      challenges,
+      fetchNewBlock
     } = this.props;
     return (
       <Panel
@@ -85,6 +90,7 @@ export class Block extends PureComponent {
         header={ this.renderHeader(isOpen, title, time) }
         id={ title }
         key={ title }
+        onClick={ () => fetchNewBlock(dashedName) }
         onSelect={ this.handleSelect }
         >
         { isOpen && <Challenges challenges={ challenges } /> }
@@ -96,4 +102,4 @@ export class Block extends PureComponent {
 Block.displayName = 'Block';
 Block.propTypes = propTypes;
 
-export default connect(makeMapStateToProps, dispatchActions)(Block);
+export default connect(makeMapStateToProps, mapDispatchToProps)(Block);

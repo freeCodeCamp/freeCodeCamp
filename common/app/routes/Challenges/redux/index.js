@@ -78,6 +78,7 @@ export const types = createTypes([
   createAsyncTypes('submitChallenge'),
   'moveToNextChallenge',
   'disableJSOnError',
+  'checkForNextBlock',
 
   // help
   'openHelpModal',
@@ -151,6 +152,7 @@ export const submitChallengeComplete = createAction(
 );
 
 export const moveToNextChallenge = createAction(types.moveToNextChallenge);
+export const checkForNextBlock = createAction(types.checkForNextBlock);
 
 export const disableJSOnError = createAction(types.disableJSOnError);
 

@@ -11,6 +11,8 @@ import {
   closeChallengeModal,
   submitChallenge,
 
+  checkForNextBlock,
+
   challengeModalSelector,
   successMessageSelector
 } from './redux';
@@ -34,12 +36,14 @@ const mapDispatchToProps = function(dispatch) {
     },
     submitChallenge: () => {
         dispatch(submitChallenge());
-    }
+    },
+    checkForNextBlock: () => dispatch(checkForNextBlock())
   };
   return () => dispatchers;
 };
 
 const propTypes = {
+  checkForNextBlock: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   handleKeypress: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
@@ -48,6 +52,11 @@ const propTypes = {
 };
 
 export class CompletionModal extends PureComponent {
+  componentDidUpdate() {
+    if (this.props.isOpen) {
+      this.props.checkForNextBlock();
+    }
+  }
   render() {
     const {
       close,

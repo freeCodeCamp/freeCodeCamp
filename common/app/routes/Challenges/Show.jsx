@@ -12,6 +12,7 @@ import BackEnd from './views/backend';
 import Quiz from './views/quiz';
 import Modern from './views/Modern';
 
+import { fullBlocksSelector } from '../../entities';
 import {
   fetchChallenge,
   challengeSelector,
@@ -42,11 +43,14 @@ const mapStateToProps = createSelector(
   challengeSelector,
   challengeMetaSelector,
   paramsSelector,
+  fullBlocksSelector,
   (
     { dashedName, isTranslated },
     { viewType, title },
-    params
+    params,
+    blocks
   ) => ({
+    blocks,
     challenge: dashedName,
     isTranslated,
     params,
