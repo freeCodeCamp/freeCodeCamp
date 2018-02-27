@@ -110,14 +110,14 @@ export function projectsSelector(state) {
       key.includes('projects') && !key.includes('coding-interview')
     )
     .map(key => blocks[key])
-    .map(({ name, challenges, superBlock }) => {
+    .map(({ title, challenges, superBlock }) => {
       const projectChallengeDashNames = challenges
         // remove any project intros
         .filter(chal => !chal.includes('get-set-for'));
       const projectChallenges = projectChallengeDashNames
         .map(dashedName => selectiveChallengeTitleSelector(state, dashedName));
       return {
-        projectBlockName: name,
+        projectBlockName: title,
         superBlock,
         challenges: projectChallenges,
         challengeNameIdMap: pick(

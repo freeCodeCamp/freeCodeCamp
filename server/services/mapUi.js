@@ -34,10 +34,19 @@ export default function mapUiService(app) {
             }, {});
           const blockMap = Object.keys(fullBlockMap)
             .map(block => fullBlockMap[block])
-            .reduce((map, { dashedName, title, time, challenges }) => {
-              map[dashedName] = { dashedName, title, time, challenges };
-              return map;
-            }, {});
+            .reduce(
+              (map, { dashedName, title, time, challenges, superBlock }) => {
+                map[dashedName] = {
+                  dashedName,
+                  title,
+                  time,
+                  challenges,
+                  superBlock
+                };
+                return map;
+              },
+              {}
+            );
           const challengeMap = Object.keys(fullChallengeMap)
             .map(challenge => fullChallengeMap[challenge])
             .reduce((map, challenge) => {
