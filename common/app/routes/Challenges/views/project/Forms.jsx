@@ -9,7 +9,7 @@ import {
 
 import { showProjectSubmit } from './redux';
 import SolutionInput from '../../Solution-Input.jsx';
-import { submitChallenge } from '../../redux';
+import { openChallengeModal } from '../../redux';
 import {
   isValidURL,
   makeRequired,
@@ -22,13 +22,14 @@ const propTypes = {
   handleSubmit: PropTypes.func,
   isSignedIn: PropTypes.bool,
   isSubmitting: PropTypes.bool,
+  openChallengeModal: PropTypes.func.isRequired,
   resetForm: PropTypes.func,
   showProjectSubmit: PropTypes.func,
   submitChallenge: PropTypes.func
 };
 
 const bindableActions = {
-  submitChallenge,
+  openChallengeModal,
   showProjectSubmit
 };
 const frontEndFields = [ 'solution' ];
@@ -49,8 +50,7 @@ const backEndFieldValidators = {
 export function _FrontEndForm({
   fields,
   handleSubmit,
-  submitChallenge,
-  resetForm,
+  openChallengeModal,
   isSubmitting,
   showProjectSubmit
 }) {
@@ -60,12 +60,7 @@ export function _FrontEndForm({
   return (
     <form
       name='NewFrontEndProject'
-      onSubmit={
-        handleSubmit((value) => {
-          submitChallenge(value);
-          resetForm('NewFrontEndProject');
-        })
-      }
+      onSubmit={ handleSubmit(openChallengeModal) }
       >
       {
         isSubmitting ?
@@ -103,8 +98,7 @@ export const FrontEndForm = reduxForm(
 export function _BackEndForm({
   fields: { solution, githubLink },
   handleSubmit,
-  submitChallenge,
-  resetForm,
+  openChallengeModal,
   isSubmitting,
   showProjectSubmit
 }) {
@@ -114,12 +108,7 @@ export function _BackEndForm({
   return (
     <form
       name='NewBackEndProject'
-      onSubmit={
-        handleSubmit((values) => {
-          submitChallenge(values);
-          resetForm('NewBackEndProject');
-        })
-      }
+      onSubmit={ handleSubmit(openChallengeModal) }
       >
       {
         isSubmitting ?
