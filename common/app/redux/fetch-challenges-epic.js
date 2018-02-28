@@ -68,7 +68,9 @@ export function fetchChallengesForBlockEpic(
     .flatMapLatest(({ type, payload }) => {
       const fetchAnotherBlock = type === types.fetchNewBlock.start;
       const state = getState();
-      let { block: blockName } = challengeSelector(state);
+      let {
+        block: blockName = 'basic-html-and-html5'
+      } = challengeSelector(state);
       const lang = langSelector(state);
 
       if (fetchAnotherBlock) {
