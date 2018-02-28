@@ -28,6 +28,9 @@ const routes = [
 const devRoutes = [];
 
 const middlewares = isDev ? [errorThrowerMiddleware] : [];
+
+const markupMap = {};
+
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 
@@ -53,7 +56,15 @@ export default function reactSubRouter(app) {
   function serveReactApp(req, res, next) {
     const { lang } = req;
     const serviceOptions = { req };
-    createApp({
+    if (req.originalUrl in markupMap) {
+      log('sending markup from cache');
+      const { state, title, markup } = markupMap[req.originalUrl];
+      res.expose(state, 'data', { isJSON: true });
+      // note(berks): we render without express-flash dumping our messages
+      // the app will query for these on load
+      return res.renderWithoutFlash('layout-react', { markup, title });
+    }
+    return createApp({
       serviceOptions,
       middlewares,
       enhancers: [
@@ -99,6 +110,7 @@ export default function reactSubRouter(app) {
         // note(berks): we render without express-flash dumping our messages
         // the app will query for these on load
         res.renderWithoutFlash('layout-react', { markup, title });
+        markupMap[req.originalUrl] = { markup, state, title };
       })
       .subscribe(() => log('html rendered and sent'), next);
   }
