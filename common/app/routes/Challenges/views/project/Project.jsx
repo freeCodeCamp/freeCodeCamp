@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Col, Image } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 import SidePanel from './Side-Panel.jsx';
 import ToolPanel from './Tool-Panel.jsx';
@@ -14,24 +14,13 @@ import { challengeSelector } from '../../../../redux';
 const mapStateToProps = createSelector(
   challengeSelector,
   challengeMetaSelector,
-  (
-    {
-      id,
-      description,
-      image
-    },
-    { title }
-  ) => ({
-    id,
-    image,
+  ({ description }, { title }) => ({
     title,
     description
   })
 );
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
-  id: PropTypes.string,
-  image: PropTypes.string,
   isCompleted: PropTypes.bool,
   title: PropTypes.string
 };
@@ -39,13 +28,10 @@ const propTypes = {
 export class Project extends PureComponent {
   render() {
     const {
-      id,
       title,
-      image = 'ovKSXMs',
       isCompleted,
       description
     } = this.props;
-    const imageURL = 'https://i.imgur.com/' + image + '.png';
     return (
       <Col
         md={ 8 }
@@ -55,11 +41,6 @@ export class Project extends PureComponent {
           description={ description }
           isCompleted={ isCompleted }
           title={ title }
-        />
-        <Image
-          id={ id }
-          responsive={ true }
-          src={ imageURL }
         />
         <br />
         <ToolPanel />

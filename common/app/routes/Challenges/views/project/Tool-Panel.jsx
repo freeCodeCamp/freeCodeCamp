@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Button } from 'react-bootstrap';
 
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { ButtonSpacer } from '../../../../helperComponents';
 import {
   FrontEndForm,
   BackEndForm
@@ -101,35 +102,37 @@ export class ToolPanel extends PureComponent {
             this.renderSubmitButton(isSignedIn, submitChallenge) :
             <FormElement isSubmitting={ isSubmitting }/>
         }
-        <div className='button-spacer' />
-        <ButtonGroup vertical={ true }>
-          <Button
-            bsStyle='primary'
-            className='btn-primary-ghost btn-big'
-            componentClass='a'
-            href={ `https://gitter.im/freecodecamp/${helpChatRoom}` }
-            target='_blank'
-            >
-            Help
-          </Button>
-          <Button
-            block={ true }
-            bsStyle='primary'
-            className='btn-primary-ghost btn-big'
-            href={ guideUrl }
-            target='_blank'
-            >
-            Get a hint
-          </Button>
-          <Button
-            block={ true }
-            bsStyle='primary'
-            className='btn-primary-ghost btn-big'
-            onClick={ openHelpModal }
-            >
-            Ask for help on the forum
-          </Button>
-        </ButtonGroup>
+        <ButtonSpacer />
+        <Button
+          block={ true }
+          bsStyle='primary'
+          className='btn-primary-ghost btn-big'
+          componentClass='a'
+          href={ `https://gitter.im/freecodecamp/${helpChatRoom}` }
+          target='_blank'
+          >
+          Help
+        </Button>
+        <ButtonSpacer />
+        <Button
+          block={ true }
+          bsStyle='primary'
+          className='btn-primary-ghost btn-big'
+          href={ guideUrl }
+          target='_blank'
+          >
+          Get a hint
+        </Button>
+        <ButtonSpacer />
+        <Button
+          block={ true }
+          bsStyle='primary'
+          className='btn-primary-ghost btn-big'
+          onClick={ openHelpModal }
+          >
+          Ask for help on the forum
+        </Button>
+        <ButtonSpacer />
       </div>
     );
   }
