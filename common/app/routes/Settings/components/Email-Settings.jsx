@@ -90,7 +90,8 @@ class EmailSettings extends PureComponent {
     const {
       email,
       isEmailVerified,
-      sendQuincyEmail
+      sendQuincyEmail,
+      updateUserBackend
     } = this.props;
     if (!email) {
       return (
