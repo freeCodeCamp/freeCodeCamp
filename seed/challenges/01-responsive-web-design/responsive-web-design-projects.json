@@ -9,46 +9,28 @@
       "title": "Get Set for our Responsive Web Design Projects",
       "description": [
         [
-          "https://i.imgur.com/OAD6SJz.png",
-          "An image of a Simon game, one our front end projects.",
+          "",
+          "",
           "Our front end development projects will give you a chance to apply the front end skills you've developed up to this point. We'll use a popular browser-based code editor called CodePen.",
           ""
         ],
         [
-          "https://i.imgur.com/WBetuBa.jpg",
-          "A programmer punching through his laptop screen in frustration.",
+          "",
+          "",
           "These projects are hard. It takes most campers several days to build each project. You will get frustrated. But don't quit. This gets easier with practice.",
           ""
         ],
         [
-          "https://i.imgur.com/p2TpOQd.jpg",
-          "A cute dog jumping over a hurdle and winking and pointing his paw at you.",
+          "",
+          "",
           "When you get stuck, just use the Read-Search-Ask methodology. Don't worry - you've got this.",
           ""
         ],
         [
-          "https://i.imgur.com/G1saeDt.gif",
-          "A gif showing how to create a Codepen account.",
-          "For our front end project challenges, we'll use a popular browser-based code editor called CodePen. Click the \"Open link in new tab\" button below to open CodePen's signup page. Fill out the form and click \"Sign up\". <br><div class=\"small\">Note: If you already have a CodePen account, you can skip this step by clicking \"Open link in new tab\", closing the new tab that opens, then clicking \"go to my next step\". We removed our \"skip step\" button because many people would just click it repeatedly without doing these important steps.</div>",
+          "",
+          "",
+          "You can build these project challenges on your local computer or on a web-based code editor like <a href='https://www.codepen.io'>CodePen.io</a>. As long as your projects are publicly accessible online, you can submit their web addresses so you can claim your verified Responsive Web Design certificate.",
           "https://codepen.io/accounts/signup/user/free"
-        ],
-        [
-          "https://i.imgur.com/U4y9RJ1.gif",
-          "A gif showing that you can type \"hello world\" will output \"hello world\" in the preview window. You can also drag windows to resize them, and change their orientation.",
-          "In the HTML box, create an <code>h1</code> element with the text \"Hello World\". You can drag the frames around to resize them. You can also click the \"Change View\" button and change the orientation of the frames.",
-          ""
-        ],
-        [
-          "https://i.imgur.com/xHoCEt2.gif",
-          "A gif showing the process of adding Bootstrap to your pen.",
-          "Click the gear in the upper left hand corner of the CSS box, then copy this link <code>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css</code> inside the text box. Now give your <code>h1</code> element the class of <code>text-primary</code> to change its color and prove that Bootstrap is now available. Note that by using the dropdown menu and selecting \"Bootstrap\", the Alpha v.4 will be added instead.",
-          ""
-        ],
-        [
-          "https://i.imgur.com/m0pWik2.gif",
-          "A gif showing the process of turning off auto update preview",
-          "When using CodePen and Ajax, it is a good idea to turn off automatic preview updating so API calls are not made too often. Too many API calls can sometimes lead to temporary blockages, and may require waiting periods before they can be used again. <br> <div class=\"small\"> To disable automatic preview updating click the \"Settings\" button at the top of the page, then click the \"Behavior\" tab. At the bottom of the page, un-check \"AUTO UPDATE PREVIEW\". Now press \"Run\" at the top of the page to update the preview, and click \"Save\".</div>",
-          ""
         ]
       ],
       "challengeSeed": [],
@@ -227,9 +209,7 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "releasedOn": "January 15, 2017",
-      "challengeSeed": [
-        "A7Pn5zw"
-      ],
+      "challengeSeed": [],
       "tests": [],
       "type": "zipline",
       "isRequired": true,

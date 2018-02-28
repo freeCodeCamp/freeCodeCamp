@@ -9,21 +9,9 @@
       "title": "Learn How freeCodeCamp Works",
       "description": [
         [
-          "https://i.imgur.com/ZMOCvg9.jpg",
-          "A picture of six freeCodeCamp campers sitting around a table coding together.",
-          "Welcome. You're now part of a supportive coding community. You can code online or in-person with people in thousands of cities around the world.",
-          ""
-        ],
-        [
-          "https://i.imgur.com/EUyHs60.jpg",
-          "A picture of the technologies you'll learn: HTML5, CSS, JavaScript, Databases, Git & GitHub, Node.js, React.js, D3.js.",
-          "You'll learn to code by completing coding challenges and building projects. You'll also earn verified certificates along the way.",
-          ""
-        ],
-        [
-          "https://i.imgur.com/LRnNMU5.png",
-          "An image of our open source projects on GitHub.",
-          "Then you'll get experience by contributing to open source projects used by nonprofits. This will help prepare you for a coding job. Let's get started!",
+          "",
+          "",
+          "Welcome to freeCodeCamp! <br><br>Check out the lesson map on the left. We have thousands of coding lessons to help you improve your skills. <br><br>You can earn verified certificates by completing certificate's 5 required projects.<br><br>And yes - all of this is 100% free, thanks to the thousands of campers who donate to our nonprofit.",
           ""
         ]
       ],
@@ -33,57 +21,12 @@
       "challengeType": 7
     },
     {
-      "id": "587d774b367417c4c2512a9b",
-      "title": "Introduction to the Basic HTML and HTML5 Challenges",
-      "description": [
-        [
-          "",
-          "",
-          "HTML, or HyperText Markup Language, is a markup language to describe the structure of a web page. It uses a special syntax of elements to organize and give information about your content to the browser. Elements usually have opening and closing tags that surround and give meaning to content. For example, there are different tag options to place around text to show whether it's a heading, a paragraph, or a list.",
-          ""
-        ],
-        [
-          "",
-          "",
-          "The HyperText part of HTML comes from the early days of the web. Pages usually contained static documents that connected to other documents with hypertext links. As web pages and web applications grow more complex, the W3 Consortium updates HTML. The latest version, or specification, is HTML5.<br><br>This section introduces how to use HTML elements to give structure and meaning to your web content.",
-          ""
-        ]
-      ],
-      "releasedOn": "",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {
-        "pt-br": {
-          "title": "Introdução aos desafios básicos de HTML e HTML5",
-          "description": [
-            [
-              "",
-              "",
-              "HTML, do inglês HyperText Markup Language (Linguagem de Marcação de Hipertexto), é uma linguagem de marcação usada para descrever a estrutura de uma página da web. Ela usa uma sintaxe especial de elementos para organizar seu conteúdo e dar ao seu navegador informações sobre ele. Esses elementos geralmente possuem tags (marcadores) de abertura e fechamento que delimitam uma parte do conteúdo e dão significado a ela. Por exemplo, para delimitar texto, existem diferentes opções de tags que mostram se esse texto é um título, um parágrafo ou uma lista.",
-              ""
-            ],
-            [
-              "",
-              "",
-              "A parte de \"hipertexto\" do HTML vem dos primórdios da web. As páginas geralmente eram documentos estáticos que se conectavam a outros documentos por meio de links de hipertexto. Conforme as páginas e aplicações web ficam mais complexas, o consórcio W3 atualiza o HTML. A última versão, ou especificação, é o HTML5.<br><br>Essa seção apresenta como usar os elementos do HTML para dar estrutura e significado ao seu conteúdo na web.",
-              ""
-            ]
-          ]
-        }
-      }
-    },
-    {
       "id": "bd7123c8c441eddfaeb5bdef",
       "title": "Say Hello to HTML Elements",
       "description": [
-        "Welcome to freeCodeCamp's coding challenges. These will walk you through web development step-by-step.",
-        "We recommend you do these in order, but feel free to skip around by clicking the map in the menu above.",
-        "Also, if you want to save your progress, you should join our community by creating an account. In just a few minutes, you can join our chat room, forum, and even a local study group in your city.",
-        "First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>text editor</code>, which is embedded into this web page.",
-        "Do you see the code in your text editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
+        "Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.",
+        "First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>code editor</code>, which is embedded into this web page.",
+        "Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
         "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.",
         "Opening tags look like this:",
         "<code>&#60;h1&#62;</code>",
@@ -94,13 +37,13 @@
         "<hr>",
         "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\"."
       ],
-      "challengeSeed": [
-        "<h1>Hello</h1>"
-      ],
+      "challengeSeed": ["<h1>Hello</h1>"],
       "tests": [
         {
-          "text": "Your <code>h1</code> element should have the text \"Hello World\".",
-          "testString": "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
+          "text":
+            "Your <code>h1</code> element should have the text \"Hello World\".",
+          "testString":
+            "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
         }
       ],
       "type": "waypoint",
@@ -109,7 +52,7 @@
         "de": {
           "description": [
             "Willkommen bei deiner ersten Programmier-Challenge von freeCodeCamp!",
-            "Mithilfe des eingebauten <code>text editors</code> kannst du den <code>code</code> bearbeiten.",
+            "Mithilfe des eingebauten <code>code editors</code> kannst du den <code>code</code> bearbeiten.",
             "Siehst du den Code <code>&#60;h1&#62;Hallo&#60;/h1&#62;</code> im Editor? Das ist ein HTML <code>element</code>",
             "Die meisten HTML Elemente haben einen <code>opening tag</code> und einen <code>closing tag</code>.",
             "Öffnende Tags sehen so aus:",
@@ -181,16 +124,13 @@
       "id": "bad87fee1348bd9aedf0887a",
       "title": "Headline with the h2 Element",
       "description": [
-        "Over the next two sections, we'll build an HTML5 app that will look something like this:",
-        "<a href=\"https://i.imgur.com/jOc1JF1.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" src=\"https://i.imgur.com/jOc1JF1.png\" title=\"Click to enlarge\" alt=\"A screen shot of our finished Cat Photo App\"></a>",
+        "Over the next few lessons, we'll build an HTML5 cat photo web app piece-by-piece.",
         "The <code>h2</code> element you will be adding in this step will add a level two heading to the web page.",
         "This element tells the browser about the structure of your website. <code>h1</code> elements are often used for main headings, while <code>h2</code> elements are generally used for subheadings. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements to indicate different levels of subheadings.",
         "<hr>",
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element."
       ],
-      "challengeSeed": [
-        "<h1>Hello World</h1>"
-      ],
+      "challengeSeed": ["<h1>Hello World</h1>"],
       "tests": [
         "assert(($(\"h2\").length > 0), 'message: Create an <code>h2</code> element.');",
         "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, 'message: Make sure your <code>h2</code> element has a closing tag.');",
@@ -255,10 +195,7 @@
         "<hr>",
         "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\"."
       ],
-      "challengeSeed": [
-        "<h1>Hello World</h1>",
-        "<h2>CatPhotoApp</h2>"
-      ],
+      "challengeSeed": ["<h1>Hello World</h1>", "<h2>CatPhotoApp</h2>"],
       "tests": [
         "assert(($(\"p\").length > 0), 'message: Create a <code>p</code> element.');",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should have the text \"Hello Paragraph\".');",
@@ -702,23 +639,17 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/add-images-to-your-website"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-images-to-your-website"
     },
     {
       "id": "bad87fee1348bd9aedf08816",
       "title": "Link to External Pages with Anchor Elements",
       "description": [
-        "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
-        "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
-        "The above diagram of an <code>a</code> element demonstrated that you can use an anchor element almost anywhere, even inside another element. In this case, the link will appear in the middle of the paragraph.",
-        "Here's an example:",
-        "<blockquote>&#60;p&#62;<br>  Here's a <br>  &#60;a href=\"http://freecodecamp.org\"&#62; <br>    link to freecodecamp.org<br>  &#60;/a&#62;<br>  for you to follow.<br>&#60;/p&#62;</blockquote>",
-        "Let's break down the example:",
-        "Normal text is wrapped in the <code>p</code> element:<br> <code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>",
-        "Next is the <code>anchor</code> element <code>&#60;a&#62;</code> (which requires a closing tag <code>&#60;/a&#62;</code>):<br>  <code>&#60;a&#62; ... &#60;/a&#62;</code>",
-        "<code>href</code> is an anchor tag attribute that contains the URL address of the link:<br>  <code>&#60;a href=\"http://freecodecamp.org\"> ... &#60;/a&#62;</code>",
-        "The text, <strong>\"link to freecodecamp.org\"</strong> will be displayed as a link which a user can click. It is located between the opening and closing tags, and is called <code>anchor text</code>.<br>  <code>&#60;a href=\" ... \"&#62;link to freecodecamp.org&#60;/a&#62;</code>",
-        "The final output of the example will look like this:<br><p>Here's a <a href=\"http://freecodecamp.org\"> link to freecodecamp.org</a></p>",
+        "You can use <code>anchor</code> elements to link to content outside of your web page.",
+        "<code>anchor</code> elements need a destination web address called an <code>href</code> attribute. They also need anchor text. Here's an example:",
+        "<code>&#60;a href=\"https://freecodecamp.org\">this links to freecodecamp.org&#60;/a&#62;</code>",
+        "Then your browser will display the text <strong>\"this links to freecodecamp.org\"</strong> as a link you can click. And that link will take you to the web address <strong>https://www.freecodecamp.org</strong>.",
         "<hr>",
         "Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
@@ -800,7 +731,7 @@
         "To create an internal link, you assign a link's <code>href</code> attribute to a hash symbol <code>#</code> plus the value of the <code>id</code> attribute for the element that you want to internally link to, usually further down the page. You then need to add the same <code>id</code> attribute to the element you are linking to. An <code>id</code> is an attribute that uniquely describes an element.",
         "Below is an example of an internal anchor link and its target element:",
         "<blockquote>&lt;a href=\"#contacts-header\"&gt;Contacts&lt;/a&gt;<br>...<br>&lt;h2 id=\"contacts-header\"&gt;Contacts&lt;/h2&gt;</blockquote>",
-        "When users click the <u>Contacts</u> link, they'll be taken to the section of the webpage with the <b>Contacts</b> header element.",
+        "When users click the Contacts link, they'll be taken to the section of the webpage with the <b>Contacts</b> header element.",
         "<hr>",
         "Change your external link to an internal link by changing the <code>href</code> attribute to \"#footer\" and the text from \"cat photos\" to \"Jump to Bottom\".",
         "Remove the <code>target=\"_blank\"</code> attribute from the anchor tag since this causes the linked document to open in a new window tab.",
@@ -835,7 +766,8 @@
       "challengeType": 0,
       "translations": {
         "pt-br": {
-          "title": "Crie links para seções internas de uma página com elementos âncora",
+          "title":
+            "Crie links para seções internas de uma página com elementos âncora",
           "description": [
             "Além de criar links externos, elementos âncora também podem ser usados para criar links internos, que são links que pulam para diferentes seções dentro de uma mesma página.",
             "O formato é parecido com um link externo, só que, ao invés de uma URL no atributo <code>href</code>, você usa o símbolo <code>#</code> e uma palavra para descrever a seção para a qual você quer pular.",
@@ -856,9 +788,7 @@
       "id": "bad87fee1348bd9aede08817",
       "title": "Nest an Anchor Element within a Paragraph",
       "description": [
-        "Below is the diagram showing that you can nest an <code>a</code> element inside a <code>p</code> element:",
-        "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
-        "Here's an example:",
+        "You can nest links within other text elements.",
         "<blockquote>&#60;p&#62;<br> Here's a &#60;a href=\"http://freecodecamp.org\"&#62; link to freecodecamp.org&#60;/a&#62; for you to follow.<br>&#60;/p&#62;</blockquote>",
         "Let's break down the example:",
         "Normal text is wrapped in the <code>p</code> element:<br> <code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>",
@@ -949,16 +879,10 @@
       "title": "Join a freeCodeCamp Study Group in Your City",
       "description": [
         [
-          "https://i.imgur.com/WBVydfk.jpg",
-          "A picture of some of our campers meeting in a local cafe.",
-          "You can code together with other campers in your city by joining a local freeCodeCamp study group.",
-          ""
-        ],
-        [
-          "https://i.imgur.com/IqBnnuFr.jpg",
-          "A picture of our study group directory.",
-          "Click the button below to open our study group directory. <br><br>Find your local study group and click it. This will take you to their Facebook group. <br><br>Click the <bold>Join group</bold> button. Once someone from the group approves your join request, and you'll get a notification within Facebook, and can go back and introduce yourself.",
-          "https://www.freecodecamp.org/study-group-directory/"
+          "",
+          "",
+          "You can code together with other campers in your city by joining a local freeCodeCamp study group. <br><br> Click the button below to open our study group directory. <br><br>Find your local study group and click it. This will take you to their Facebook group. <br><br>Click the <bold>Join group</bold> button. <br><br>You'll get a notification from Facebook once the group has accepted you. Then you can go back and introduce yourself. <br><br>If you don't have a Facebook account or don't want to code with other campers in your city, you can skip this step.",
+          "https://study-group-directory.freecodecamp.org/"
         ]
       ],
       "challengeSeed": [],
@@ -1016,9 +940,9 @@
       "title": "Become a Supporter",
       "description": [
         [
-          "https://i.imgur.com/CxcBk9C.png",
-          "Help us pay for servers and other costs. Set up a monthly donation you can afford.",
-          "freeCodeCamp is a small nonprofit that helps busy people learn to code for free. Help us pay for servers and other costs. Set up a monthly donation you can afford.",
+          "",
+          "",
+          "freeCodeCamp is a small nonprofit with a big mission: to help you improve your coding skills and expand your career. Help us pay for servers and other costs. Set up a monthly donation you can afford.",
           "https://donate.freecodecamp.org"
         ]
       ],
@@ -1517,7 +1441,8 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field"
     },
     {
       "id": "bad87fee1348bd9aede08830",
@@ -1685,7 +1610,8 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/add-a-submit-button-to-a-form"
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-a-submit-button-to-a-form"
     },
     {
       "id": "bad87fee1348bd9aedc08830",
@@ -1762,7 +1688,8 @@
           ]
         },
         "ru": {
-          "title": "Используйте HTML5, чтобы сделать заполнение поля обязательным",
+          "title":
+            "Используйте HTML5, чтобы сделать заполнение поля обязательным",
           "description": [
             "Вы можете требовать заполнения определённых полей формы, таким образом пользователь не сможет отправить данные формы до их заполнения.",
             "Например, если бы вы хотели сделать заполнение текстового поля обязательным, вы могли бы добавить слово <code>required</code> внутрь вашего элемента <code>input</code>: <code>&#60;input type=\"text\" required&#62;</code>",
@@ -2041,7 +1968,8 @@
           ]
         },
         "es": {
-          "title": "Marca botones de radio y casillas de verificación por omisión",
+          "title":
+            "Marca botones de radio y casillas de verificación por omisión",
           "description": [
             "Puedes marcar por omisión una casilla de verificación o un botón de radio usando el atributo <code>checked</code>.",
             "Para ello, sólo tienes que añadir la palabra \"checked\" en el interior de un elemento <code>input</code>. Por ejemplo:",
@@ -2051,7 +1979,8 @@
           ]
         },
         "pt-br": {
-          "title": "Faça botões de opção e caixas de seleção estarem marcados por padrão",
+          "title":
+            "Faça botões de opção e caixas de seleção estarem marcados por padrão",
           "description": [
             "Você pode fazer uma caixa de seleção ou botão de opção estar marcado por padrão usando o atributo <code>checked</code>.",
             "Para fazer isso, apenas insira a palavra \"checked\" em um elemento <code>input</code>. Por exemplo:",
@@ -2183,11 +2112,7 @@
         "<hr>",
         "Add a <code>DOCTYPE</code> tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing <code>html</code> tags, which wrap around an <code>h1</code> element. The heading can include any text."
       ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
+      "challengeSeed": ["", "", ""],
       "tests": [
         "assert(code.match(/<!DOCTYPE\\s+?html\\s*?>/gi), 'message: Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.');",
         "assert($('html').length == 1, 'message: There should be one <code>html</code> element.');",

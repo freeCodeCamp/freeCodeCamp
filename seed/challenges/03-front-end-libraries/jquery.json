@@ -14,15 +14,15 @@
       "title": "Introduction to jQuery",
       "description": [
         [
-          "https://i.imgur.com/hzACiml.png",
-          "The logo of jQuery that has three blue sound waves that increase in size with the text \"jQuery write less, do more.\" written on it.",
+          "",
+          "",
           "jQuery is one of the many libraries for JavaScript. It is designed to simplify scripting done on the client side.",
           ""
         ],
         [
-          "https://i.imgur.com/OHtxVL0.png",
-          "A screenshot of the general syntax. A dollar sign followed by the selector with a dot and an action.",
-          "jQuery's most recognizable characteristic is the dollar sign syntax. With it, you can easily manipulate elements, create animations and handle input events.",
+          "",
+          "",
+          "jQuery's most recognizable characteristic is its dollar sign (<code>$</code>) syntax. With it, you can easily manipulate elements, create animations and handle input events.",
           ""
         ]
       ],
@@ -108,7 +108,7 @@
         "fr": {
           "title": "Apprendre comment fonctionnent les balises Script et Document Ready",
           "description": [
-            "Nous sommes maintenant prêt à apprendre jQuery, l'outil Javascript le plus populaire de tout les temps. Ne vous inquiétez pas à propos de JavaScript lui-même, nous y viendrons bientôt.",
+            "Nous sommes maintenant prêt à apprendre jQuery, l'outil JavaScript le plus populaire de tout les temps. Ne vous inquiétez pas à propos de JavaScript lui-même, nous y viendrons bientôt.",
             "Avant de pouvoir utiliser jQuery, nous avons besoin d'ajouter certaines choses à notre HTML.",
             "Premièrement, ajoutez un élément <code>script</code> en haut de votre page. Assurez-vous de le fermer à la ligne suivante.",
             "Votre navigateur exécutera JavaScript à l'intérieur de l'élement <code>script</code>, y compris jQuery.",
