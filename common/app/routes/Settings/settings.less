@@ -13,6 +13,18 @@
       color: #333;
     }
   }
+  .panel {
+    color:#333333;
+    a {
+      color: @brand-primary;
+      &:hover, &:focus {
+        color: #001800;
+      }
+    }
+  }
+  .nav-tabs > li > a:hover {
+    color: #333333;
+  }
 }
 
 .@{ns}-container {
@@ -88,7 +100,7 @@
 
 .danger-zone-panel {
   background-color: #fff;
-
+  
   .panel-heading {
     background-color: #880000;
     color: #fff;
