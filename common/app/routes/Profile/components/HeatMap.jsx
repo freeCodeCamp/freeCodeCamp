@@ -55,7 +55,7 @@ class HeatMap extends Component {
     const today = new Date();
     const cal = new CalHeatMap();
     const rectSelector = '#cal-heatmap > svg > svg.graph-legend > g > rect.r';
-    const calLegendTitles = ['less', '', '', 'more'];
+    const calLegendTitles = ['0 items', '1 item', '2 items', '3 or more items'];
     const firstTS = Object.keys(calendar)[0];
     let start = new Date(firstTS * 1000);
     const monthsSinceFirstActive = differenceInCalendarMonths(
