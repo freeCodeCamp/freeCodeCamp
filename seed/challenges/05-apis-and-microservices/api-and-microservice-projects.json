@@ -62,8 +62,7 @@
       "releasedOn": "January 1, 2016",
       "translations": {
         "es": {
-          "title": "Microservicio de Marca Temporal",
-          "description": []
+          "title": "Microservicio de Marca Temporal"
         }
       }
     },
@@ -89,8 +88,7 @@
       "releasedOn": "January 1, 2016",
       "translations": {
         "es": {
-          "title": "Microservicio para analizar el encabezado de una petición",
-          "description": []
+          "title": "Microservicio para analizar el encabezado de una petición"
         }
       }
     },
@@ -124,8 +122,7 @@
       "releasedOn": "January 1, 2016",
       "translations": {
         "es": {
-          "title": "Microservicio para acortar URLs",
-          "description": []
+          "title": "Microservicio para acortar URLs"
         }
       }
     },
@@ -167,8 +164,7 @@
       "releasedOn": "February 17, 2017",
       "translations": {
         "es": {
-          "title": "Capa de abstracción para buscar imágenes",
-          "description": []
+          "title": "Capa de abstracción para buscar imágenes"
         }
       }
     },
@@ -198,8 +194,7 @@
       "releasedOn": "January 1, 2016",
       "translations": {
         "es": {
-          "title": "Microservicio de metadatos de archivos",
-          "description": []
+          "title": "Microservicio de metadatos de archivos"
         }
       }
     }
