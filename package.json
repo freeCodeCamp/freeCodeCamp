@@ -82,7 +82,7 @@
     "lightbox2": "~2.8.2",
     "lodash": "^4.1.0",
     "loopback": "^3.11.1",
-    "loopback-boot": "^2.26.1",
+    "loopback-boot": "^2.27.1",
     "loopback-component-passport": "git+https://github.com/freeCodeCamp/loopback-component-passport.git#feat/freecodecamp",
     "loopback-connector-mongodb": "^3.2.1",
     "method-override": "^2.3.0",
