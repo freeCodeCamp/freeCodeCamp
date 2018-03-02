@@ -27,20 +27,20 @@ LoaderCircle.displayName = 'LoaderCircle';
 
 const animationProps = [
   {
-    delay: '-1.5s',
-    origin: '1% 1%'
+    delay: '0.24s',
+    origin: '0% 0%'
   },
   {
-    delay: '-1s',
-    origin: '1% 99%'
+    delay: '0.95s',
+    origin: '0% 100%'
   },
   {
-    delay: '-0.5s',
-    origin: '99% 1%'
+    delay: '0.67s',
+    origin: '100% 0%'
   },
   {
-    delay: '0s',
-    origin: '99% 99%'
+    delay: '1.33s',
+    origin: '100% 100%'
   }
 ];
 

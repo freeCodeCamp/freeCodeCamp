@@ -7,6 +7,7 @@ import { addNS } from 'berkeleys-redux-utils';
 
 import ns from './ns.json';
 import Editor from './Editor.jsx';
+import { OverlayLoader } from '../../../../helperComponents';
 import ChildContainer from '../../Child-Container.jsx';
 import { showPreviewSelector, types } from '../../redux';
 import SidePanel from '../../Side-Panel.jsx';
@@ -21,7 +22,8 @@ const createModernEditorToggleType = fileKey =>
 const getFirstFileKey = _.flow(_.values, _.first, _.property('key'));
 
 const propTypes = {
-  nameToFileKey: PropTypes.object
+  nameToFileKey: PropTypes.object,
+  showLoading: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -83,9 +85,12 @@ const nameToComponent = {
   Preview: Preview
 };
 
-export function ShowModern({ nameToFileKey }) {
+export function ShowModern({ nameToFileKey, showLoading }) {
   return (
     <ChildContainer isFullWidth={ true }>
+      {
+        showLoading ? <OverlayLoader /> : null
+      }
       <Panes
         render={ name => {
           const Comp = nameToComponent[name];
