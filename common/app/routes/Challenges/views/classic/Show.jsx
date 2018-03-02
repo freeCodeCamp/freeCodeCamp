@@ -1,15 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { addNS } from 'berkeleys-redux-utils';
 
 import Editor from './Editor.jsx';
 import ChildContainer from '../../Child-Container.jsx';
+import { OverlayLoader } from '../../../../helperComponents';
 import { types, showPreviewSelector } from '../../redux';
 import Preview from '../../Preview.jsx';
 import SidePanel from '../../Side-Panel.jsx';
 import Panes from '../../../../Panes';
 import _Map from '../../../../Map';
 
-const propTypes = {};
+const propTypes = {
+  showLoading: PropTypes.bool
+};
 
 export const mapStateToPanes = addNS(
   'classic',
@@ -39,9 +43,12 @@ const renderPane = name => {
   return Comp ? <Comp /> : <span>Pane for { name } not found</span>;
 };
 
-export default function ShowClassic() {
+export default function ShowClassic({ showLoading }) {
   return (
     <ChildContainer isFullWidth={ true }>
+      {
+        showLoading ? <OverlayLoader /> : null
+      }
       <Panes render={ renderPane }/>
     </ChildContainer>
   );

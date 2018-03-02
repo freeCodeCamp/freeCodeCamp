@@ -58,7 +58,8 @@ export default function mapUiService(app) {
                 block,
                 isLocked,
                 isComingSoon,
-                isBeta
+                isBeta,
+                challengeType
               } = challenge;
               map[dashedName] = {
                 dashedName,
@@ -68,7 +69,8 @@ export default function mapUiService(app) {
                 block,
                 isLocked,
                 isComingSoon,
-                isBeta
+                isBeta,
+                challengeType
               };
               return map;
             }, {});

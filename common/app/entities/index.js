@@ -196,13 +196,12 @@ export default composeReducers(
           app.fetchChallenges.complete,
           map.fetchMapUi.complete
         )
-      ]: (state, { payload }) => {
-        const {entities: { block } } = payload;
-        return {
-          ...merge(state, payload.entities),
-          fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])
-        };
-      },
+      ]: (state, { payload: { entities } }) => merge({}, state, entities),
+      [app.fetchChallenges.complete]:
+      (state, { payload: { entities: { block }}}) => ({
+        ...state,
+        fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])
+      }),
       [
         challenges.submitChallenge.complete
       ]: (state, { payload: { username, points, challengeInfo } }) => ({

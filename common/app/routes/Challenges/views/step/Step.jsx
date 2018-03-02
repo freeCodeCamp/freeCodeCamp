@@ -31,7 +31,7 @@ const mapStateToProps = createSelector(
   actionCompletedSelector,
   lightBoxSelector,
   (
-    { description = [] },
+    { description = [['', '', 'Happy Coding!', '']] },
     currentIndex,
     previousIndex,
     isActionCompleted,
