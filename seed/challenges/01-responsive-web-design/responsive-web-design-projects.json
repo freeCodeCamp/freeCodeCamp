@@ -206,16 +206,13 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Construye una página Tributo",
-          "description": []
+          "title": "Construye una página Tributo"
         },
         "pt-br": {
-          "title": "Construa uma Página Tributo",
-          "description": []
+          "title": "Construa uma Página Tributo"
         },
         "ru": {
-          "title": "Создайте страницу посвященную тому что вас вдохновляет",
-          "description": []
+          "title": "Создайте страницу посвященную тому что вас вдохновляет"
         }
       }
     },
@@ -292,16 +289,13 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Construye una página web para tu portafolio",
-          "description": []
+          "title": "Construye una página web para tu portafolio"
         },
         "pt-br": {
-          "title": "Construa uma Página de Portfólio Pessoal",
-          "description": []
+          "title": "Construa uma Página de Portfólio Pessoal"
         },
         "ru": {
-          "title": "Создайте сайт-портфолио",
-          "description": []
+          "title": "Создайте сайт-портфолио"
         }
       }
     }

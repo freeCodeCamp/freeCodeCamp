@@ -23,8 +23,7 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Visualiza datos utilizando un gráfico de barras",
-          "description": []
+          "title": "Visualiza datos utilizando un gráfico de barras"
         }
       }
     },
@@ -47,8 +46,7 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Visualiza datos utilizando un gráfico de dispersión",
-          "description": []
+          "title": "Visualiza datos utilizando un gráfico de dispersión"
         }
       }
     },
@@ -71,8 +69,7 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Visualiza datos utilizando un mapa de calor",
-          "description": []
+          "title": "Visualiza datos utilizando un mapa de calor"
         }
       }
     },

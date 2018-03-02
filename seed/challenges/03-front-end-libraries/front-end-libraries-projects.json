@@ -20,12 +20,10 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Crea una máquina de frases aleatorias",
-          "description": []
+          "title": "Crea una máquina de frases aleatorias"
         },
         "ru": {
-          "title": "Создайте генератор случайных цитат",
-          "description": []
+          "title": "Создайте генератор случайных цитат"
         }
       }
     },
@@ -46,12 +44,10 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Crea una caja de recetas",
-          "description": []
+          "title": "Crea una caja de recetas"
         },
         "ru": {
-          "title": "Создайте хранилище рецептов",
-          "description": []
+          "title": "Создайте хранилище рецептов"
         }
       }
     },
@@ -72,12 +68,10 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Crea un Juego de la vida",
-          "description": []
+          "title": "Crea un Juego de la vida"
         },
         "ru": {
-          "title": "Создайте игру \"Жизнь\"",
-          "description": []
+          "title": "Создайте игру \"Жизнь\""
         }
       }
     },
@@ -99,8 +93,7 @@
       "isRequired": true,
       "translations": {
         "es": {
-          "title": "Crea una calculadora JavaScript",
-          "description": []
+          "title": "Crea una calculadora JavaScript"
         }
       }
     },
@@ -120,12 +113,10 @@
       "challengeType": 3,
       "translations": {
         "es": {
-          "title": "Crea un reloj pomodoro",
-          "description": []
+          "title": "Crea un reloj pomodoro"
         },
         "ru": {
-          "title": "Создайте таймер Pomodoro",
-          "description": []
+          "title": "Создайте таймер Pomodoro"
         }
       }
     }
