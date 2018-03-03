@@ -288,6 +288,27 @@ node seed
 npm run develop
 ```
 
+### Setup freeCodeCamp via Docker
+
+You need to have [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed before executing commands below.
+
+Create docker-compose.yml from sample file
+```bash
+cp sample.docker-compose.yml docker-compose.yml
+```
+
+Setup and run project:
+```bash
+# Setup project
+docker-compose run --rm node npm install
+docker-compose run --rm node npm run only-once
+```
+```bash
+# Run project
+docker-compose up
+```
+
+
 ### Make Changes
 
 This bit is up to you!
