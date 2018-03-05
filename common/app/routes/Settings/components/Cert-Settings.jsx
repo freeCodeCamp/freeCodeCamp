@@ -22,7 +22,6 @@ import {
   buildUserProjectsMap,
   jsProjectSuperBlock
 } from '../utils/buildUserProjectsMap';
-import legacyProjects from '../utils/legacyProjectData';
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -43,8 +42,10 @@ const mapStateToProps = createSelector(
     },
     projects
   ) => ({
-    projects,
-    userProjects: projects.concat(legacyProjects)
+    allProjects: projects,
+    legacyProjects: projects.filter(p => p.superBlock.includes('legacy')),
+    modernProjects: projects.filter(p => !p.superBlock.includes('legacy')),
+    userProjects: projects
       .map(block => buildUserProjectsMap(block, challengeMap))
       .reduce((projects, current) => ({
         ...projects,
@@ -77,18 +78,28 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
+const projectsTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    projectBlockName: PropTypes.string,
+    challenges: PropTypes.arrayOf(
+      PropTypes.shape({
+        dashedName: PropTypes.string,
+        id: PropTypes.string,
+        title: PropTypes.string
+      })
+    )
+  }),
+);
+
 const propTypes = {
+  allProjects: projectsTypes,
   blockNameIsCertMap: PropTypes.objectOf(PropTypes.bool),
   claimCert: PropTypes.func.isRequired,
   createError: PropTypes.func.isRequired,
   fetchChallenges: PropTypes.func.isRequired,
   hardGoTo: PropTypes.func.isRequired,
-  projects: PropTypes.arrayOf(
-    PropTypes.shape({
-      projectBlockName: PropTypes.string,
-      challenges: PropTypes.arrayOf(PropTypes.string)
-    })
-  ),
+  legacyProjects: projectsTypes,
+  modernProjects: projectsTypes,
   superBlock: PropTypes.string,
   updateUserBackend: PropTypes.func.isRequired,
   userProjects: PropTypes.objectOf(
@@ -111,8 +122,8 @@ class CertificationSettings extends PureComponent {
   }
 
   componentDidMount() {
-    const { projects } = this.props;
-    if (!projects.length) {
+    const { modernProjects } = this.props;
+    if (!modernProjects.length) {
       this.props.fetchChallenges();
     }
   }
@@ -130,10 +141,12 @@ class CertificationSettings extends PureComponent {
       username
     } = this.props;
     const isCertClaimed = blockNameIsCertMap[projectBlockName];
+    const challengeTitles = challenges
+      .map(challenge => challenge.title || 'Unknown Challenge');
     if (superBlock === jsProjectSuperBlock) {
       return (
         <JSAlgoAndDSForm
-          challenges={ challenges }
+          challenges={ challengeTitles }
           claimCert={ claimCert }
           hardGoTo={ hardGoTo }
           isCertClaimed={ isCertClaimed }
@@ -145,7 +158,7 @@ class CertificationSettings extends PureComponent {
         />
       );
     }
-    const options = challenges
+    const options = challengeTitles
       .reduce((options, current) => {
         options.types[current] = 'url';
         return options;
@@ -160,7 +173,7 @@ class CertificationSettings extends PureComponent {
       userValues.id = superBlock;
     }
 
-    const initialValues = challenges
+    const initialValues = challengeTitles
       .reduce((accu, current) => ({
         ...accu,
         [current]: ''
@@ -172,14 +185,14 @@ class CertificationSettings extends PureComponent {
       // minus 1 to account for the id
       .length - 1;
 
-    const fullForm = completedProjects === challenges.length;
+    const fullForm = completedProjects === challengeTitles.length;
     return (
       <FullWidthRow key={superBlock}>
         <h3 className='project-heading'>{ projectBlockName }</h3>
         <Form
           buttonText={ fullForm ? 'Claim Certificate' : 'Save Progress' }
           enableSubmit={ fullForm }
-          formFields={ challenges.concat([ 'id' ]) }
+          formFields={ challengeTitles.concat([ 'id' ]) }
           hideButton={isCertClaimed}
           id={ superBlock }
           initialValues={{
@@ -208,8 +221,7 @@ class CertificationSettings extends PureComponent {
 
   handleSubmit(values) {
     const { id } = values;
-    const { projects } = this.props;
-    const allProjects = [ ...projects, ...legacyProjects ];
+    const { allProjects } = this.props;
     let project = _.find(allProjects, { superBlock: id });
     if (!project) {
       // the submitted projects do not belong to current/legacy certificates
@@ -231,20 +243,30 @@ class CertificationSettings extends PureComponent {
     if (isProjectSectionComplete) {
       return this.props.claimCert(id);
     }
-
-    values.nameToIdMap = project.challengeNameIdMap;
+    const valuesToIds = project.challenges
+      .reduce((valuesMap, current) => {
+        const solution = values[current.title];
+        if (solution) {
+          return {
+            ...valuesMap,
+            [current.id]: solution
+          };
+        }
+        return valuesMap;
+      }, {});
     return this.props.updateUserBackend({
       projects: {
-        [id]: values
+        [id]: valuesToIds
       }
     });
   }
 
   render() {
     const {
-      projects
+      modernProjects,
+      legacyProjects
     } = this.props;
-    if (!projects.length) {
+    if (!modernProjects.length) {
       return null;
     }
     return (
@@ -260,7 +282,7 @@ class CertificationSettings extends PureComponent {
         </p>
         </FullWidthRow>
         {
-          projects.map(this.buildProjectForms)
+          modernProjects.map(this.buildProjectForms)
         }
         <SectionHeader>
           Legacy Certificate Settings
