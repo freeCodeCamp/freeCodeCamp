@@ -5,68 +5,6 @@
   "helpRoom": "HelpFrontEnd",
   "challenges": [
     {
-      "id": "bd7158d8c242eddfaeb5bd13",
-      "title": "Build a Personal Portfolio Webpage",
-      "description": [
-        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/FreeCodeCamp/full/YqLyXB/' target='_blank'>https://codepen.io/FreeCodeCamp/full/YqLyXB/</a>.",
-        "<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.",
-        "<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries you need. Give it your own personal style.",
-        "<strong>Rule #3:</strong> You can use Bootstrap, or any other framework of your choice.",
-        "<strong>User Story:</strong> I can access all of the portfolio webpage's content just by scrolling.",
-        "<strong>User Story:</strong> I can click different buttons that will take me to the portfolio creator's different social media pages.",
-        "<strong>User Story:</strong> I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.)",
-        "<strong>User Story:</strong> I navigate to different sections of the webpage by clicking buttons in the navigation.",
-        "Don't worry if you don't have anything to showcase on your portfolio yet - you will build several apps on the next few CodePen challenges, and can come back and update your portfolio later.",
-        "There are many great portfolio templates out there already. However, you should consider building your portfolio page as much as you can from the ground up. Using Bootstrap can help make this process much easier for you.",
-        "Remember to use <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.",
-        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
-        "You can get feedback on your project by sharing it with your friends on Facebook."
-      ],
-      "challengeSeed": [
-        "V72o34gY4Lw"
-      ],
-      "tests": [],
-      "type": "zipline",
-      "isRequired": true,
-      "challengeType": 3,
-      "translations": {
-        "es": {
-          "title": "Construye una página web para tu portafolio",
-          "description": [
-            "<strong>Objetivo:</strong> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
-            "<strong>Regla #1:</strong> No veas el código del proyecto de ejemplo. Encuentra la forma de hacerlo por tu cuenta.",
-            "<strong>Regla #2:</strong> Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería que necesites. Dale tu estilo personal.",
-            "<strong>Historia de usuario:</strong> Puedo acceder a todo el contenido de la página del portafolio con sólo desplazarme en la ventana.",
-            "<strong>Historia de usuario:</strong> Puedo pulsar diferentes botones que me llevarán a las páginas de las diferentes cuentas de redes sociales del creador del portafolio.",
-            "<strong>Historia de usuario:</strong> Puedo ver una imagenes en miniatura de los diferentes proyectos que el creador del portafolio ha construido (si no has construido ningún sitio web antes, usa marcadores de posición.)",
-            "<strong>Historia de usuario:</strong> Puedo navegar a las diferentes secciones de la página web pulsando botones de navegación.",
-            "No te preocupes si no tienes nada que mostrar en tu portafolio todavía - en los siguientes desafíos crearás varias aplicaciones en CodePen, así que puedes regresar luego para actualizar tu portafolio.",
-            "Hay varias plantillas buenas, pero para este desafío, tendrás que construir la página web de tu portafolio completamente por tu cuenta. Usar Bootstrap hará el trabajo mucho más fácil para ti.",
-            "Recuerda utilizar <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado.",
-            "Cuando hayas terminado, pulsa el botón \"I've completed this challenge\" e incluye un link a tu CodePen. ",
-            "Puedes obtener retroalimentación sobre tu proyecto por parte de otros campistas, compartiéndolo en nuestra <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Sala de chat para revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
-          ]
-        },
-        "ru": {
-          "title": "Создайте сайт-портфолио",
-          "description": [
-            "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a> которое функционально соответствует вот этому: <a href='https://codepen.io/FreeCodeCamp/full/QNmvEL/' target='_blank'>https://codepen.io/FreeCodeCamp/full/QNmvEL/</a>.",
-            "<strong>Правило #1:</strong> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
-            "<strong>Правило #2:</strong> Реализуйте следующие <a href='https://ru.wikipedia.org/wiki/User_story' target='_blank'>пользовательские истории</a>. Используйте любые библиотеки, которые потребуются. Оформите приложение в вашем собственном стиле.",
-            "<strong>Пользовательская история:</strong> Я могу получить доступ ко всей информации на странице просто прокрутив ее сверху вниз.",
-            "<strong>Пользовательская история:</strong> Я могу нажать на различные кнопки и перейти к социальным страницам владельца портфолио.",
-            "<strong>Пользовательская история:</strong> Я могу увидеть эскизы проектов созданных владельцем портфолио (используйте временную картинку если у вас пока нет собственных веб-страниц).",
-            "<strong>Пользовательская история:</strong> Я могу перемещаться к различным частям страницы нажимая на соответствующие навигационные кнопки.",
-            "Не переживайте если вам пока нечего показать в портфолио - вы создадите несколько веб приложений в следующих заданиях, а затем вернетесь и обновите портфолио.",
-            "В сети существует много шаблонов для портфолио, но в этом задании вам необходимо создать собственную уникальную страницу. Используя Bootstrap, сделать это будет намного проще.",
-            "Если что-то не получается, воспользуйтесь <a href='http://forum.freecodecamp.com/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a>.",
-            "Когда выполните задание кликните кнопку \"I've completed this challenge\" и добавьте ссылку на ваш CodePen.",
-            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
-          ]
-        }
-      }
-    },
-    {
       "id": "bd7158d8c442eddfaeb5bd10",
       "title": "Show the Local Weather",
       "description": [
@@ -163,7 +101,7 @@
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1f",
-      "title": "Use the Twitch.tv JSON API",
+      "title": "Use the Twitch JSON API",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
         "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
