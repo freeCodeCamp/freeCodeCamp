@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { values as _values, isString, findIndex } from 'lodash';
+import _ from 'lodash';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -102,15 +102,12 @@ const propTypes = {
   username: PropTypes.string
 };
 
-const compareSuperBlockWith = id => p => p.superBlock === id;
-
 class CertificationSettings extends PureComponent {
   constructor(props) {
     super(props);
 
     this.buildProjectForms = this.buildProjectForms.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.isProjectSectionCompleted = this.isProjectSectionCompleted.bind(this);
   }
 
   componentDidMount() {
@@ -169,9 +166,9 @@ class CertificationSettings extends PureComponent {
         [current]: ''
       }), {});
 
-    const completedProjects = _values(userValues)
+    const completedProjects = _.values(userValues)
       .filter(Boolean)
-      .filter(isString)
+      .filter(_.isString)
       // minus 1 to account for the id
       .length - 1;
 
@@ -209,65 +206,33 @@ class CertificationSettings extends PureComponent {
     );
   }
 
-  isProjectSectionCompleted(values) {
-    const { id } = values;
-    const { projects } = this.props;
-    const whereSuperBlockIsId = compareSuperBlockWith(id);
-
-    let pIndex = findIndex(projects, whereSuperBlockIsId);
-    let projectChallenges = [];
-
-    if (pIndex === -1) {
-      // submitted projects might be in a legacy certificate
-      pIndex = findIndex(legacyProjects, whereSuperBlockIsId);
-      projectChallenges = legacyProjects[pIndex].challenges;
-      if (pIndex === -1) {
-        // the submitted projects do not belong to current/legacy certificates
-        return this.props.createError(
-          new Error(
-            'Submitted projects do not belong to either current or ' +
-            'legacy certificates'
-          )
-        );
-      }
-    } else {
-      projectChallenges = projects[pIndex].challenges;
-    }
-    const valuesSaved = _values(this.props.userProjects[id])
-      .filter(Boolean)
-      .filter(isString);
-      // minus 1 due to the form id being in values
-    return (valuesSaved.length - 1) === projectChallenges.length;
-  }
-
   handleSubmit(values) {
     const { id } = values;
-    if (this.isProjectSectionCompleted(values)) {
+    const { projects } = this.props;
+    const allProjects = [ ...projects, ...legacyProjects ];
+    let project = _.find(allProjects, { superBlock: id });
+    if (!project) {
+      // the submitted projects do not belong to current/legacy certificates
+      return this.props.createError(
+        new Error(
+          'Submitted projects do not belong to either current or ' +
+          'legacy certificates'
+        )
+      );
+    }
+    const valuesSaved = _.values(this.props.userProjects[id])
+      .filter(Boolean)
+      .filter(_.isString);
+
+    // minus 1 due to the form id being in values
+    const isProjectSectionComplete =
+      (valuesSaved.length - 1) === project.challenges.length;
+
+    if (isProjectSectionComplete) {
       return this.props.claimCert(id);
     }
-    const { projects } = this.props;
-    const whereSuperBlockIsId = compareSuperBlockWith(id);
 
-    let pIndex = findIndex(projects, whereSuperBlockIsId);
-    let projectNameIdMap = {};
-
-    if (pIndex === -1) {
-      // submitted projects might be in a legacy certificate
-      pIndex = findIndex(legacyProjects, whereSuperBlockIsId);
-      projectNameIdMap = legacyProjects[pIndex].challengeNameIdMap;
-      if (pIndex === -1) {
-        // the submitted projects do not belong to current/legacy certificates
-        return this.props.createError(
-          new Error(
-            'Submitted projects do not belong to either current or ' +
-            'legacy certificates'
-          )
-        );
-      }
-    } else {
-      projectNameIdMap = projects[pIndex].challengeNameIdMap;
-    }
-    values.nameToIdMap = projectNameIdMap;
+    values.nameToIdMap = project.challengeNameIdMap;
     return this.props.updateUserBackend({
       projects: {
         [id]: values
