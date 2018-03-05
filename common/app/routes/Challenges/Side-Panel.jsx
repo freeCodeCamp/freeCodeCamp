@@ -30,6 +30,13 @@ import { descriptionRegex } from './utils';
 import { challengeSelector } from '../../redux';
 import { makeToast } from '../../Toasts/redux';
 
+const mapDispatchToProps = {
+  makeToast,
+  executeChallenge,
+  updateHint,
+  openHelpModal,
+  unlockUntrustedCode
+};
 const mapStateToProps = createSelector(
   challengeSelector,
   challengeMetaSelector,
@@ -55,15 +62,6 @@ const mapStateToProps = createSelector(
     isCodeLocked
   })
 );
-
-const mapDispatchToProps = {
-  makeToast,
-  executeChallenge,
-  updateHint,
-  openHelpModal,
-  unlockUntrustedCode
-};
-
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   executeChallenge: PropTypes.func,
@@ -97,8 +95,7 @@ export class SidePanel extends PureComponent {
     this.descriptionTop = node;
   }
 
-  renderDescription() {
-    const { description = [ 'Happy Coding!' ] } = this.props;
+  renderDescription(description = [ 'Happy Coding!' ]) {
     return description.map((line, index) => {
       if (descriptionRegex.test(line)) {
         return (
@@ -121,6 +118,7 @@ export class SidePanel extends PureComponent {
   render() {
     const {
       title,
+      description,
       tests = [],
       output,
       hint,
@@ -144,7 +142,7 @@ export class SidePanel extends PureComponent {
             { title }
           </ChallengeTitle>
           <ChallengeDescription>
-            { this.renderDescription() }
+            { this.renderDescription(description) }
           </ChallengeDescription>
         </div>
         <ToolPanel
