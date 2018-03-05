@@ -3,11 +3,14 @@ import { ofType } from 'redux-epic';
 
 import {
   backendFormValuesSelector,
+  frontendProjectFormValuesSelector,
+  backendProjectFormValuesSelector,
   challengeMetaSelector,
   moveToNextChallenge,
   submitChallengeComplete,
   testsSelector,
-  types
+  types,
+  closeChallengeModal
 } from './';
 
 import {
@@ -69,7 +72,18 @@ function submitModern(type, state) {
   );
 }
 
-function submitProject(type, state, { solution, githubLink }) {
+function submitProject(type, state) {
+  if (type === types.checkChallenge) {
+    return Observable.empty();
+  }
+  const {
+    solution: frontEndSolution = ''
+  } = frontendProjectFormValuesSelector(state);
+  const {
+    solution: backendSolution = '',
+    githubLink = ''
+  } = backendProjectFormValuesSelector(state);
+  const solution = frontEndSolution ? frontEndSolution : backendSolution;
   const { id, challengeType } = challengeSelector(state);
   const { username } = userSelector(state);
   const csrfToken = csrfSelector(state);
@@ -77,11 +91,16 @@ function submitProject(type, state, { solution, githubLink }) {
   if (challengeType === backEndProject) {
     challengeInfo.githubLink = githubLink;
   }
-  return postChallenge(
-    '/project-completed',
-    username,
-    csrfToken,
-    challengeInfo
+  return Observable.merge(
+    postChallenge(
+      '/project-completed',
+      username,
+      csrfToken,
+      challengeInfo
+    ),
+    Observable.of(
+      closeChallengeModal()
+    )
   );
 }
 

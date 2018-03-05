@@ -13,7 +13,7 @@ import {
 import { submittingSelector } from './redux';
 
 import {
-  submitChallenge,
+  openChallengeModal,
 
   openHelpModal,
   chatRoomSelector,
@@ -36,12 +36,12 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   isSimple: PropTypes.bool,
   isSubmitting: PropTypes.bool,
-  openHelpModal: PropTypes.func.isRequired,
-  submitChallenge: PropTypes.func.isRequired
+  openChallengeModal: PropTypes.func.isRequired,
+  openHelpModal: PropTypes.func.isRequired
 };
 const mapDispatchToProps = {
-  openHelpModal,
-  submitChallenge
+  openChallengeModal,
+  openHelpModal
 };
 const mapStateToProps = createSelector(
   challengeSelector,
@@ -66,7 +66,7 @@ const mapStateToProps = createSelector(
 );
 
 export class ToolPanel extends PureComponent {
-  renderSubmitButton(isSignedIn, submitChallenge) {
+  renderSubmitButton(isSignedIn, openChallengeModal) {
     const buttonCopy = isSignedIn ?
       'Submit and go to my next challenge' :
       "I've completed this challenge";
@@ -75,7 +75,7 @@ export class ToolPanel extends PureComponent {
         block={ true }
         bsStyle='primary'
         className='btn-big'
-        onClick={ submitChallenge }
+        onClick={ openChallengeModal }
         >
         { buttonCopy } (ctrl + enter)
       </Button>
@@ -91,7 +91,7 @@ export class ToolPanel extends PureComponent {
       isSignedIn,
       isSubmitting,
       openHelpModal,
-      submitChallenge
+      openChallengeModal
     } = this.props;
 
     const FormElement = isFrontEnd ? FrontEndForm : BackEndForm;
@@ -99,7 +99,7 @@ export class ToolPanel extends PureComponent {
       <div>
         {
           isSimple ?
-            this.renderSubmitButton(isSignedIn, submitChallenge) :
+            this.renderSubmitButton(isSignedIn, openChallengeModal) :
             <FormElement isSubmitting={ isSubmitting }/>
         }
         <ButtonSpacer />

@@ -65,6 +65,7 @@ export const types = createTypes([
   'updateHint',
   'unlockUntrustedCode',
   'closeChallengeModal',
+  'openChallengeModal',
   'updateSuccessMessage',
   // |- modern
   'modernEditorUpdated',
@@ -119,6 +120,7 @@ export const modernEditorUpdated = createAction(
 );
 // challenges
 export const closeChallengeModal = createAction(types.closeChallengeModal);
+export const openChallengeModal = createAction(types.openChallengeModal);
 export const updateHint = createAction(types.updateHint);
 export const unlockUntrustedCode = createAction(
   types.unlockUntrustedCode,
@@ -258,6 +260,10 @@ export const challengeTemplateSelector = state =>
 
 export const backendFormValuesSelector = state =>
   getValues(state.form.BackEndChallenge);
+export const frontendProjectFormValuesSelector = state =>
+  getValues(state.form.NewFrontEndProject) || {};
+export const backendProjectFormValuesSelector = state =>
+  getValues(state.form.NewBackEndProject) || {};
 
 export default combineReducers(
   handleActions(
@@ -285,6 +291,10 @@ export default combineReducers(
           tests.length > 0 &&
           tests.every(test => test.pass && !test.err)
         )
+      }),
+      [types.openChallengeModal]: state => ({
+        ...state,
+        isChallengeModalOpen: true
       }),
       [types.closeChallengeModal]: state => ({
         ...state,
