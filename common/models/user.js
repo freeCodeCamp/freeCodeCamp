@@ -44,7 +44,6 @@ function destroyAll(id, Model) {
 function buildChallengeMapUpdate(challengeMap, project) {
   const key = Object.keys(project)[0];
   const solutions = project[key];
-  console.log(solutions);
   const currentChallengeMap = { ...challengeMap };
   const currentCompletedProjects = _.pick(
     currentChallengeMap,
