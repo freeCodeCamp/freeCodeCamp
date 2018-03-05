@@ -123,7 +123,7 @@
       "isRequired": false,
       "translations": {
         "es": {
-          "title": "Usa el API JSON de Twitch.tv",
+          "title": "Usa el API JSON de Twitch",
           "description": [
             "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
             "Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites. Dale tu estilo personal.",
@@ -139,7 +139,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте Twitch.tv JSON API",
+          "title": "Используйте Twitch JSON API",
           "description": [
             "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
             "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
