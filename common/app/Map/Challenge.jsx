@@ -121,6 +121,7 @@ export class Challenge extends PureComponent {
     return (
       <div
         className={ challengeClassName }
+        data-challenge={dashedName}
         key={ title }
         >
         <Link

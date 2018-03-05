@@ -3,7 +3,8 @@ import debug from 'debug';
 
 import {
   types as appTypes,
-  createErrorObservable
+  createErrorObservable,
+  currentChallengeSelector
 } from '../../redux';
 import { types, fetchMapUiComplete } from './';
 import { langSelector } from '../../Router/redux';
@@ -33,6 +34,7 @@ export default function fetchMapUiEpic(
             entities,
             isDev
           ),
+          initialNode: currentChallengeSelector(getState()),
           ...res
         }))
         .map(fetchMapUiComplete)

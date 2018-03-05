@@ -157,3 +157,75 @@ export function collapseAllPanels(tree) {
 export function expandAllPanels(tree) {
   return toggleAllPanels(tree, true);
 }
+
+// synchronise
+// updatePath(
+//   tree: MapUi,
+//   name: String,
+//   update(MapUi|Node) => MapUi|Node
+// ) => MapUi
+export function updatePath(tree, name, pathUpdater) {
+  const path = [];
+  let pathFound = false;
+
+  const isInPath = node => !!path.find(name => name === node.name);
+
+  const traverseMap = (tree, update) => {
+    if (pathFound) {
+      return isInPath(tree) ? update(tree) : tree;
+    }
+
+    if (tree.name === name) {
+      pathFound = true;
+      return update(tree);
+    }
+
+    let childrenChanged;
+
+    if (!Array.isArray(tree.children)) {
+      return tree;
+    }
+
+    if (tree.name) {
+      path.push(tree.name);
+    }
+
+    const newChildren = tree.children.map(node => {
+      const newNode = traverseMap(node, update);
+      if (!childrenChanged && newNode !== node) {
+        childrenChanged = true;
+      }
+      return newNode;
+    });
+    if (childrenChanged) {
+      tree = {
+        ...tree,
+        children: newChildren
+      };
+    }
+
+    if (pathFound && isInPath(tree)) {
+      return update(tree);
+    }
+
+    path.pop();
+    return tree;
+  };
+
+
+  return traverseMap(tree, pathUpdater);
+}
+
+// synchronise
+// openPath(tree: MapUi, name: String) => MapUi
+export function openPath(tree, name) {
+  return updatePath(tree, name, node => {
+    if (!Array.isArray(node.children)) {
+      return node;
+    }
+
+    return { ...node, isOpen: true };
+  });
+}
+
+
