@@ -12,7 +12,7 @@ import { themes } from '../../utils/themes';
 import { usernameSelector, types as app } from '../redux';
 import { types as challenges } from '../routes/Challenges/redux';
 import { types as map } from '../Map/redux';
-import legacyProjects from '../routes/Settings/utils/legacyProjectData';
+import legacyProjects from '../../utils/legacyProjectData';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
