@@ -1,17 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { addNS } from 'berkeleys-redux-utils';
 
-import { OverlayLoader } from '../../../../helperComponents';
 import ChildContainer from '../../Child-Container.jsx';
 import BackEnd from './Back-End.jsx';
 import { types } from '../../redux';
 import Panes from '../../../../Panes';
 import _Map from '../../../../Map';
 
-const propTypes = {
-  showLoading: PropTypes.bool
-};
+const propTypes = {};
 
 export const mapStateToPanes = addNS(
   'backend',
@@ -31,12 +27,9 @@ const renderPane = name => {
   return Comp ? <Comp /> : <span>Pane { name } not found</span>;
 };
 
-export default function ShowBackEnd({ showLoading }) {
+export default function ShowBackEnd() {
   return (
     <ChildContainer isFullWidth={ true }>
-      {
-        showLoading ? <OverlayLoader /> : null
-      }
       <Panes render={ renderPane } />
     </ChildContainer>
   );
