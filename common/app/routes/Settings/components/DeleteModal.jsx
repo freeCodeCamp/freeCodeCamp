@@ -58,9 +58,6 @@ function DeleteModal(props) {
           I am 100% certain. Delete everything related to this account
         </Button>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={ props.onHide }>Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
