@@ -547,7 +547,8 @@
       "type": "bonfire",
       "MDNlinks": [
         "Arguments object",
-        "Array.prototype.reduce()"
+        "Array.prototype.reduce()",
+        "Spread syntax"    
       ],
       "isRequired": true,
       "challengeType": 5,
