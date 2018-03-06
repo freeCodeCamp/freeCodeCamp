@@ -134,7 +134,7 @@ function renderCertShow(username, cert) {
           block={ true }
           bsSize='lg'
           bsStyle='primary'
-          href={ `/c/${username}/${cert.showURL}`}
+          href={ `/certificates/${username}/${cert.showURL}`}
           >
           Show
         </Button>

@@ -197,7 +197,7 @@ export default function certificate(app) {
     verifyCert
   );
   router.get(
-    '/c/:username/:cert',
+    '/certificates/:username/:cert',
     showCert
   );
 
