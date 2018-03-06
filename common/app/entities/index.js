@@ -179,9 +179,7 @@ export default composeReducers(
           }
         };
       }
-      return {
-        ...merge(state, action.meta.entities)
-      };
+      return merge({}, state, action.meta.entities);
     }
     return state;
   },

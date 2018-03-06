@@ -47,7 +47,7 @@ const mapStateToProps = createSelector(
   paramsSelector,
   fullBlocksSelector,
   (
-    { dashedName, isTranslated, description },
+    { dashedName, isTranslated },
     { viewType, title },
     params,
     blocks
@@ -56,7 +56,6 @@ const mapStateToProps = createSelector(
     challenge: dashedName,
     isTranslated,
     params,
-    showLoading: !description || description.length === 0,
     title,
     viewType
   })
@@ -117,9 +116,9 @@ export class Show extends PureComponent {
   }
 
   render() {
-    const { viewType, showLoading } = this.props;
+    const { viewType } = this.props;
     const View = views[viewType] || Classic;
-    return <View showLoading={ showLoading } />;
+    return <View />;
   }
 }
 
