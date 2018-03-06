@@ -208,7 +208,7 @@ class CertificationSettings extends PureComponent {
               block={ true }
               bsSize='lg'
               bsStyle='primary'
-              href={ `/c/${username}/${superBlock}`}
+              href={ `/certificates/${username}/${superBlock}`}
               >
               Show Certificate
             </Button> :

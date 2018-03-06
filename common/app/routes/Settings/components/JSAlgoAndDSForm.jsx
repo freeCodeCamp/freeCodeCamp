@@ -43,7 +43,7 @@ class JSAlgoAndDSForm extends PureComponent {
     e.preventDefault();
     const { username, superBlock, isCertClaimed } = this.props;
     if (isCertClaimed) {
-      return this.props.hardGoTo(`/c/${username}/${superBlock}`);
+      return this.props.hardGoTo(`/certificates/${username}/${superBlock}`);
     }
     return this.props.claimCert(superBlock);
   }
