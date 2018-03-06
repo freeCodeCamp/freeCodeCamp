@@ -2562,7 +2562,7 @@
         "<blockquote>var someVar = \"Hat\";<br>function myFun() {<br>  var someVar = \"Head\";<br>  return someVar;<br>}</blockquote>",
         "The function <code>myFun</code> will return <code>\"Head\"</code> because the <code>local</code> version of the variable is present.",
         "<hr>",
-        "Add a local variable to <code>myOutfit</code> to override the value of <code>outerWear</code> with <code>\"sweater\"</code>."
+        "Add a local variable to <code>myOutfit</code> function to override the value of <code>outerWear</code> with <code>\"sweater\"</code>."
       ],
       "releasedOn": "January 1, 2016",
       "challengeSeed": [
