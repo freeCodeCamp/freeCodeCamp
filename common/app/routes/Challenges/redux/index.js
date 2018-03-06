@@ -223,7 +223,10 @@ export const challengeMetaSelector = createSelector(
   (...args) => challengeSelector(...args),
   challenge => {
     if (!challenge.id) {
-      return {};
+      const viewType = 'invalid';
+      return {
+        viewType
+      };
     }
     const challengeType = challenge && challenge.challengeType;
     const type = challenge && challenge.type;

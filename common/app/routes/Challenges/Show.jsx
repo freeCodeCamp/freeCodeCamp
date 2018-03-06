@@ -11,6 +11,7 @@ import Project from './views/project';
 import BackEnd from './views/backend';
 import Quiz from './views/quiz';
 import Modern from './views/Modern';
+import NotFound from '../../NotFound';
 
 import { fullBlocksSelector } from '../../entities';
 import {
@@ -29,7 +30,8 @@ const views = {
   project: Project,
   quiz: Quiz,
   simple: Project,
-  step: Step
+  step: Step,
+  invalid: NotFound
 };
 
 const mapDispatchToProps = {
