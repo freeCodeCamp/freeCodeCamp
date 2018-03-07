@@ -9,8 +9,8 @@ import {
   updateMyPortfolioComplete
 } from './';
 import { makeToast } from '../../../Toasts/redux';
+import { fetchMapUi } from '../../../Map/redux';
 import {
-  updateChallenges,
   doActionOnError,
   usernameSelector,
   userSelector,
@@ -21,7 +21,8 @@ import {
   updateUserLang,
   updateMultipleUserFlags,
   regresPortfolio,
-  optoUpdatePortfolio
+  optoUpdatePortfolio,
+  resetFullBlocks
 } from '../../../entities';
 
 import { postJSON$ } from '../../../../utils/ajax-stream';
@@ -214,8 +215,10 @@ export function updateUserLangEpic(actions, { getState }) {
             makeToast({ message }),
             // update url to reflect change
             onRouteSettings({ lang }),
-            // refetch challenges in new language
-            updateChallenges()
+            // clear fullBlocks so challenges are fetched in correct language
+            resetFullBlocks(),
+            // refetch mapUi in new language
+            fetchMapUi()
           );
         })
         .catch(doActionOnError(() => {
