@@ -9,16 +9,17 @@ import { challengeUpdated } from './redux';
 import CompletionModal from './Completion-Modal.jsx';
 import AppChildContainer from '../../Child-Container.jsx';
 import { OverlayLoader } from '../../helperComponents';
+import { fullBlocksSelector } from '../../entities';
+import { paramsSelector } from '../../Router/redux';
 
 const mapStateToProps = createSelector(
   challengeSelector,
-  challenge => {
-    const { description } = challenge;
-    return {
+  fullBlocksSelector,
+  paramsSelector,
+  (challenge, fullBlocks, { block }) => ({
       challenge,
-      showLoading: !description || description.length === 0
-    };
-  }
+      showLoading: !fullBlocks.includes(block)
+    })
 );
 
 const mapDispatchToProps = { challengeUpdated };
