@@ -62,13 +62,21 @@ const propTypes = {
   correct: PropTypes.number,
   currentIndex: PropTypes.number,
   dashedName: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.arrayOf(
+    PropTypes.shape({
+      answer: PropTypes.number,
+      choices: PropTypes.arrayOf(PropTypes.string),
+      explanation: PropTypes.string,
+      question: PropTypes.string,
+      subtitle: PropTypes.string
+    })
+  ),
   meta: PropTypes.object,
-  nextQuestion: PropTypes.fun,
-  resetChoice: PropTypes.fun,
-  resetQuiz: PropTypes.fun,
+  nextQuestion: PropTypes.func,
+  resetChoice: PropTypes.func,
+  resetQuiz: PropTypes.func,
   selectedChoice: PropTypes.number,
-  submitChallenge: PropTypes.fun
+  submitChallenge: PropTypes.func
 };
 
 export class QuizChallenge extends PureComponent {
@@ -77,6 +85,12 @@ export class QuizChallenge extends PureComponent {
     super(props);
     this.nextQuestion = this.nextQuestion.bind(this);
     this.submitChallenge = this.submitChallenge.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+      if (this.props.dashedName !== nextProps.dashedName) {
+        this.props.resetQuiz();
+      }
   }
 
   nextQuestion() {
