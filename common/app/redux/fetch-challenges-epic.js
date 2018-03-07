@@ -72,7 +72,6 @@ export function fetchChallengesForBlockEpic(
         block: blockName = 'basic-html-and-html5'
       } = challengeSelector(state);
       const lang = langSelector(state);
-
       if (fetchAnotherBlock) {
         const fullBlocks = fullBlocksSelector(state);
         if (fullBlocks.includes(payload)) {
