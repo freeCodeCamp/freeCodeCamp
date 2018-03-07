@@ -26,12 +26,14 @@ export class Preview extends PureComponent {
       <div className={ `${ns}-preview` }>
         {
           !isJSEnabled && (
-            <Alert
-            bsStyle='info'
-            className={ `${ns}-preview-js-warning`}
-            >
-              JavaScript is disabled. Execute code to enable
-            </Alert>
+            <div className='js-alert-wrapper'>
+              <Alert
+              bsStyle='info'
+              className={ `${ns}-preview-js-warning` }
+              >
+                JavaScript is disabled. Execute code to enable
+              </Alert>
+            </div>
           )
         }
         <iframe
