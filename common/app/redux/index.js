@@ -55,7 +55,6 @@ export const types = createTypes([
   createAsyncTypes('fetchChallenge'),
   createAsyncTypes('fetchChallenges'),
   createAsyncTypes('fetchNewBlock'),
-  'updateChallenges',
   createAsyncTypes('fetchOtherUser'),
   createAsyncTypes('fetchUser'),
   'showSignIn',
@@ -131,8 +130,6 @@ export const fetchNewBlockComplete = createAction(
   ({ entities }) => ({ entities }),
   ({ meta: { challenge } }) => ({ ...createCurrentChallengeMeta(challenge) })
 );
-
-export const updateChallenges = createAction(types.updateChallenges);
 
 // updateTitle(title: String) => Action
 export const updateTitle = createAction(types.updateTitle);
