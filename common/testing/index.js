@@ -1,5 +1,4 @@
 const _path = require('path');
-const _ = require('lodash/fp');
 const dedent = require('dedent');
 
 const challengesPath = '../../common/app/routes/Challenges';
@@ -14,8 +13,7 @@ module.exports = function renderTest({ path, outputPath, challengesByPath }) {
   const frameUtils =
     resolveRelativeRequire(`${challengesPath}/utils/frame.js`);
   const challenge = challengesByPath[path];
-  const { dashedName, solutions } = challenge;
-  const solution = _.first(solutions);
+  const { dashedName } = challenge;
   const testFile = dedent`
     require('babel-register');
     const test = require('ava');

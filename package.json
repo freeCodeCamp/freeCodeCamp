@@ -5,6 +5,7 @@
   "scripts": {
     "build": "NODE_ENV=production gulp build -p",
     "build:test": "webpack --env development --config webpack.test.js",
+    "build:test:watch": "webpack --watch --env development --config webpack.test.js",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "cover": "babel-node ./node_modules/.bin/babel-istanbul cover tape common/**/*.test.js",
@@ -25,6 +26,7 @@
     "snyk-protect": "snyk protect",
     "start": "babel-node server/server.js",
     "start-production": "node pm2Start",
+    "test:challenges:watch": "npm run build:test:watch & ava -w .cache/test/challenges/javascript-algorithms-and-data-structures/basic-javascript/add-two-numbers-with-javascript",
     "test": "npm run test-js && npm run test-challenges",
     "test-develop": "npm run test-js && npm run test-challenges-develop",
     "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
