@@ -88,7 +88,7 @@
     "method-override": "^2.3.0",
     "moment": "^2.10.2",
     "moment-timezone": "^0.5.0",
-    "mongodb": "^2.0.33",
+    "mongodb": "^3.0.4",
     "morgan": "^1.6.1",
     "mousetrap": "~1.6.0",
     "node-emoji": "^1.4.1",
