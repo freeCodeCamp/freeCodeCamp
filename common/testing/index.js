@@ -18,7 +18,18 @@ module.exports = function renderTest({ path, outputPath, challengesByPath }) {
     require('babel-register');
     const test = require('ava');
     const { Subject } = require('rx');
+    const JSDOM = require('jsdom-global');
     const challenge = require('./data.json');
+
+    const cleanup = JSDOM(
+      '<!DOCTYPE html>',
+      {
+        runScripts: 'dangerously',
+        // enable iframes
+        resources: 'usable'
+      }
+    );
+
     const {
       buildFromFiles
     } = require('${buildUtils}')

@@ -180,6 +180,7 @@
     "husky": "^0.14.3",
     "istanbul-coveralls": "^1.0.3",
     "jsdom": "^11.5.1",
+    "jsdom-global": "^3.0.2",
     "json-loader": "~0.5.2",
     "less": "^2.5.1",
     "loopback-component-explorer": "^2.1.1",
