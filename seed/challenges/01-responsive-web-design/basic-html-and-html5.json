@@ -708,7 +708,7 @@
       "id": "bad87fee1348bd9aedf08816",
       "title": "Link to External Pages with Anchor Elements",
       "description": [
-        "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content inside, as well as outside of the current page. For this lesson, we are going to focus on using the <code>a</code> element for external links.",
+        "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "<a href=\"https://i.imgur.com/hviuZwe.png\" target=\"_blank\" data-lightbox=\"img-enlarge\"><img class=\"img-responsive\" title=\"Click to enlarge\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://i.imgur.com/hviuZwe.png\">Click to enlarge </a>",
         "The above diagram of an <code>a</code> element demonstrated that you can use an anchor element almost anywhere, even inside another element. In this case, the link will appear in the middle of the paragraph.",
         "Here's an example:",
@@ -1174,11 +1174,11 @@
       "id": "bad87fee1348bd9aedf08827",
       "title": "Create a Bulleted Unordered List",
       "description": [
-        "HTML has a special element for creating <code>unordered lists</code>, or bullet point-style lists.",
-        "Unordered lists start with a <code>&#60;ul&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
+        "HTML has a special element for creating <code>unordered lists</code>, or bullet point style lists.",
+        "Unordered lists start with an opening <code>&#60;ul&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, unordered lists close with a <code>&#60;/ul&#62;</code>",
         "For example: ",
         "<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>",
-        "would create a bullet point-style list of \"milk\" and \"cheese\".",
+        "would create a bullet point style list of \"milk\" and \"cheese\".",
         "<hr>",
         "Remove the last two <code>p</code> elements and create an unordered list of three things that cats love at the bottom of the page."
       ],
@@ -1256,8 +1256,8 @@
       "id": "bad87fee1348bd9aedf08828",
       "title": "Create an Ordered List",
       "description": [
-        "HTML has a special element for creating <code>ordered lists</code>, or numbered-style lists.",
-        "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
+        "HTML has another special element for creating <code>ordered lists</code>, or numbered lists.",
+        "Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists close with a <code>&#60;/ol&#62;</code>",
         "For example:",
         "<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>",
         "would create a numbered list of \"Garfield\" and \"Sylvester\".",
@@ -1350,9 +1350,9 @@
       "title": "Create a Text Field",
       "description": [
         "Now let's create a web form.",
-        "Text inputs are a convenient way to get input from your user.",
-        "You can create one like this:",
-        "<code>&#60;input type=\"text\"&#62;</code>",
+        "Input elements are a convenient way to get input from your user.",
+        "You can create a text input like this:",
+        "<code>&#60;input type=\"text\" /&#62;</code>",
         "Note that <code>input</code> elements are self-closing.",
         "<hr>",
         "Create an <code>input</code> element of type <code>text</code> below your lists."
@@ -1440,7 +1440,7 @@
       "id": "bad87fee1348bd9aedf08830",
       "title": "Add Placeholder Text to a Text Field",
       "description": [
-        "Your placeholder text is what appears in your text <code>input</code> before your user has input anything.",
+        "Placeholder text is what is displayed in your <code>input</code> element before your user has inputted anything.",
         "You can create placeholder text like so:",
         "<code>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</code>",
         "<hr>",
@@ -1527,7 +1527,7 @@
         "For example:",
         "<code>&#60;form action=\"/url-where-you-want-to-submit-form-data\"&#62;&#60;/form&#62;</code>",
         "<hr>",
-        "Nest your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element."
+        "Nest your text field inside a <code>form</code> element, and add the <code>action=\"/submit-cat-photo\"</code> attribute to the form element."
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -1609,7 +1609,7 @@
         "Here's an example submit button:",
         "<code>&#60;button type=\"submit\"&#62;this button submits the form&#60;/button&#62;</code>",
         "<hr>",
-        "Add a submit button to your <code>form</code> element with type <code>submit</code> and \"Submit\" as its text."
+        "Add a button as the last element of your <code>form</code> element with a type of <code>submit</code>, and \"Submit\" as its text."
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -1692,7 +1692,7 @@
       "title": "Use HTML5 to Require a Field",
       "description": [
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
-        "For example, if you wanted to make a text input field required, you can just add the word <code>required</code> within your <code>input</code> element, like this: <code>&#60;input type=\"text\" required&#62;</code>",
+        "For example, if you wanted to make a text input field required, you can just add the attribute <code>required</code> within your <code>input</code> element, like this: <code>&#60;input type=\"text\" required&#62;</code>",
         "<hr>",
         "Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.",
         "Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required?"
@@ -1778,13 +1778,14 @@
       "id": "bad87fee1348bd9aedf08834",
       "title": "Create a Set of Radio Buttons",
       "description": [
-        "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer out of multiple options.",
-        "Radio buttons are a type of <code>input</code>",
+        "You can use <code>radio buttons</code> for questions where you want the restrcit the user to only one answer out of multiple options.",
+        "Radio buttons are a type of <code>input</code> field",
         "Each of your radio buttons should be nested within its own <code>label</code> element.",
         "All related radio buttons should have the same <code>name</code> attribute.",
         "Here's an example of a radio button:",
-        "<blockquote>&#60;label for=\"indoor\"&#62; <br> &#60;input type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
-        "It is considered best practice to set the <code>for</code> attribute for assistive technologies to be able to link the relationship between the label and the child elements such as an <code>input</code> in this case.",
+        "<blockquote>&#60;label&#62; <br> &#60;input type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
+        "It is considered best practice to set a <code>for</code> attribute on the <code>label</code> element, with a value that matches the value of the <code>id</code> attribute of the <code>input</code> element. This allows assistive technologies to create a linked relationship between the label and the child <code>input</code> element. For example:",
+        "<blockquote>&#60;label for=\"indoor\"&#62; <br> &#60;input id=\"indoor\" type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
         "<hr>",
         "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>. Both should share the <code>name</code> attribute of <code>indoor-outdoor</code>."
       ],
@@ -1888,7 +1889,7 @@
         "Each of your checkboxes should be nested within its own <code>label</code> element.",
         "All related checkbox inputs should have the same <code>name</code> attribute.",
         "Here's an example of a checkbox:",
-        "<code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
+        "<code>&#60;label for=\"loving\"&#62;&#60;input id=\"loving\" type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
         "<hr>",
         "Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of <code>personality</code>."
       ],
@@ -1912,8 +1913,8 @@
         "    <li>other cats</li>",
         "  </ol>",
         "  <form action=\"/submit-cat-photo\">",
-        "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Indoor</label>",
-        "    <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
+        "    <label for=\"indoor\"><input id=\"indoor\" type=\"radio\" name=\"indoor-outdoor\"> Indoor</label>",
+        "    <label for=\"outdoor\"><input id=\"outdoor\" type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label><br>",
         "    <input type=\"text\" placeholder=\"cat photo URL\" required>",
         "    <button type=\"submit\">Submit</button>",
         "  </form>",
