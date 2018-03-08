@@ -3,6 +3,7 @@ import _ from 'lodash';
 import * as challengeTypes from '../../../utils/challengeTypes.js';
 import { createPoly, updateFileFromSpec } from '../../../../utils/polyvinyl.js';
 import { decodeScriptTags } from '../../../../utils/encode-decode.js';
+import { createFilesMetaCreator } from '../../../files';
 
 // turn challengeType to file ext
 const pathsMap = {
@@ -111,6 +112,17 @@ export function challengeToFiles(challenge, files) {
       tail: arrayToString(challenge.tail)
     })
   };
+}
+
+export const challengeToFilesMetaCreator =
+_.flow(challengeToFiles, createFilesMetaCreator);
+
+// ({ dashedName: { Challenge } }) => ({ meta: Files }) || {}
+export function createCurrentChallengeMeta(challenge) {
+  if (_.isEmpty(challenge)) {
+    return {};
+  }
+  return challengeToFilesMetaCreator(_.values(challenge)[0]);
 }
 
 export function createTests({ tests = [] }) {
