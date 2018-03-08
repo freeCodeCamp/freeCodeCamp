@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { Observable } from 'rx';
 
-import { unDasherize, nameify } from '../utils';
+import { unDashify, nameify } from '../../common/utils';
 import supportedLanguages from '../../common/utils/supported-languages';
 import {
   addNameIdMap as _addNameIdToMap,
@@ -250,7 +250,7 @@ export function getBlockForChallenge(map, challenge) {
 }
 
 export function getChallengeByDashedName(dashedName, map) {
-  const challengeName = unDasherize(dashedName)
+  const challengeName = unDashify(dashedName)
     .replace(challengesRegex, '');
   const testChallengeName = new RegExp(challengeName, 'i');
 

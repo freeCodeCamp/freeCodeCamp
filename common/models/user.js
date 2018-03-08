@@ -8,8 +8,8 @@ import path from 'path';
 import loopback from 'loopback';
 import _ from 'lodash';
 
+import { dashify} from '../utils';
 import { themes } from '../utils/themes';
-import { dasherize } from '../../server/utils';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
@@ -52,7 +52,7 @@ function buildChallengeMapUpdate(challengeMap, project) {
   const currentCompletedProjects = _.pick(challengeMap, _.values(nameToIdMap));
   const now = Date.now();
   const update = Object.keys(incomingUpdate).reduce((update, current) => {
-    const dashedName = dasherize(current)
+    const dashedName = dashify(current)
       .replace('java-script', 'javascript')
       .replace('metric-imperial', 'metricimperial');
     const currentId = nameToIdMap[dashedName];

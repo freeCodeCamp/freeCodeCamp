@@ -1,4 +1,4 @@
-import { dasherize } from '../../../../../server/utils/index';
+import { dashify } from '../../../../utils';
 
 export const jsProjectSuperBlock = 'javascript-algorithms-and-data-structures';
 
@@ -10,7 +10,7 @@ export function buildUserProjectsMap(projectBlock, challengeMap) {
   } = projectBlock;
   return {
     [superBlock]: challenges.reduce((solutions, current) => {
-      const dashedName = dasherize(current)
+      const dashedName = dashify(current)
         .replace('java-script', 'javascript')
         .replace('metric-imperial', 'metricimperial');
       const completed = challengeMap[challengeNameIdMap[dashedName]];

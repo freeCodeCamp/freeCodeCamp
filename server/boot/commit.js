@@ -3,15 +3,15 @@ import { Observable } from 'rx';
 import debugFactory from 'debug';
 import dedent from 'dedent';
 
+import {
+  unDashify
+} from '../../common/utils';
+
 import nonprofits from '../utils/commit.json';
 import {
   commitGoals,
   completeCommitment$
 } from '../utils/commit';
-
-import {
-  unDasherize
-} from '../utils';
 
 import {
   observeQuery,
@@ -86,7 +86,7 @@ export default function commit(app) {
 
   function commitToNonprofit(req, res, next) {
     const { user } = req;
-    let nonprofitName = unDasherize(req.query.nonprofit);
+    let nonprofitName = unDashify(req.query.nonprofit);
 
     debug('looking for nonprofit', nonprofitName);
     const nonprofit = findNonprofit(nonprofitName);
