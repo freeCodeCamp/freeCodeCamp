@@ -191,11 +191,11 @@ export default composeReducers(
     () => ({
       [
         combineActions(
-          app.fetchChallenges.complete,
+          app.fetchNewBlock.complete,
           map.fetchMapUi.complete
         )
       ]: (state, { payload: { entities } }) => merge({}, state, entities),
-      [app.fetchChallenges.complete]:
+      [app.fetchNewBlock.complete]:
       (state, { payload: { entities: { block }}}) => ({
         ...state,
         fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])

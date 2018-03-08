@@ -15,14 +15,18 @@ import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
 import nightModeEpic from './night-mode-epic.js';
 
-import { createFilesMetaCreator } from '../files';
-import { updateThemeMetacreator, entitiesSelector } from '../entities';
+import {
+  updateThemeMetacreator,
+  entitiesSelector,
+  fullBlocksSelector
+} from '../entities';
 import { utils } from '../Flash/redux';
 import { paramsSelector } from '../Router/redux';
 import { types as challenges } from '../routes/Challenges/redux';
 import { types as map } from '../Map/redux';
 import {
-  challengeToFiles,
+  createCurrentChallengeMeta,
+  challengeToFilesMetaCreator,
   getFirstChallengeOfNextBlock,
   getFirstChallengeOfNextSuperBlock,
   getNextChallenge
@@ -113,7 +117,7 @@ export const fetchChallengeCompleted = createAction(
   null,
   meta => ({
     ...meta,
-    ...flow(challengeToFiles, createFilesMetaCreator)(meta.challenge)
+    ...challengeToFilesMetaCreator(meta.challenge)
   })
 );
 export const fetchChallenges = createAction('' + types.fetchChallenges);
@@ -124,7 +128,8 @@ export const fetchChallengesCompleted = createAction(
 export const fetchNewBlock = createAction(types.fetchNewBlock.start);
 export const fetchNewBlockComplete = createAction(
   types.fetchNewBlock.complete,
-  ({ entities }) => entities
+  ({ entities }) => ({ entities }),
+  ({ meta: { challenge } }) => ({ ...createCurrentChallengeMeta(challenge) })
 );
 
 export const updateChallenges = createAction(types.updateChallenges);
@@ -237,6 +242,12 @@ export const challengeSelector = state => {
   const challengeName = currentChallengeSelector(state);
   const challengeMap = entitiesSelector(state).challenge || {};
   return challengeMap[challengeName] || {};
+};
+
+export const isCurrentBlockCompleteSelector = state => {
+  const { block } = paramsSelector(state);
+  const fullBlocks = fullBlocksSelector(state);
+  return fullBlocks.includes(block);
 };
 
 export const previousSolutionSelector = state => {
