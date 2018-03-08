@@ -1049,7 +1049,7 @@
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:",
         "<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>",
         "<hr>",
-        "Create a class called <code>thick-green-border</code>. This class should add a 10px, solid, green border around a HTML element. Apply the class to your cat photo.",
+        "Create a class called <code>thick-green-border</code>. This class should add a 10px, solid, green border around an HTML element. Apply the class to your cat photo.",
         "Remember that you can apply multiple classes to an element using its <code>class</code> attribute, by separating each class name with a space. For example:",
         "<code>&lt;img class=\"class1 class2\"&gt;</code>"
       ],
@@ -1178,7 +1178,7 @@
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.",
         "<hr>",
-        "One of the units you can use to specify the radius of a border is with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.",
+        "You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.",
         "Note: this challenge allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or the <code>.smaller-image</code> class."
       ],
       "challengeSeed": [
@@ -1292,9 +1292,7 @@
       "description": [
         "In addition to pixels, you can also specify the <code>border-radius</code> using a percentage.",
         "<hr>",
-        "Give your cat photo a <code>border-radius</code> of <code>50%</code>.",
-        "<hr>",
-        "As you can tell from the end result, this is an easy way to create circular images."
+        "Give your cat photo a <code>border-radius</code> of <code>50%</code>."
       ],
       "challengeSeed": [
         "<link href=\"https://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
