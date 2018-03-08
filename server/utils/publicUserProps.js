@@ -15,6 +15,7 @@ export const publicUserProps = [
   'isApisMicroservicesCert',
   'isBackEndCert',
   'isCheater',
+  'is2018DataVisCert',
   'isDataVisCert',
   'isFrontEndCert',
   'isFullStackCert',

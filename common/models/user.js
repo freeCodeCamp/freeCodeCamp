@@ -9,7 +9,6 @@ import loopback from 'loopback';
 import _ from 'lodash';
 
 import { themes } from '../utils/themes';
-import { dasherize } from '../../server/utils';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
@@ -43,28 +42,24 @@ function destroyAll(id, Model) {
 }
 
 function buildChallengeMapUpdate(challengeMap, project) {
+  const key = Object.keys(project)[0];
+  const solutions = project[key];
   const currentChallengeMap = { ...challengeMap };
-  const { nameToIdMap } = _.values(project)[0];
-  const incomingUpdate = _.pickBy(
-    _.omit(_.values(project)[0], [ 'id', 'nameToIdMap' ]),
-    Boolean
+  const currentCompletedProjects = _.pick(
+    currentChallengeMap,
+    Object.keys(solutions)
   );
-  const currentCompletedProjects = _.pick(challengeMap, _.values(nameToIdMap));
   const now = Date.now();
-  const update = Object.keys(incomingUpdate).reduce((update, current) => {
-    const dashedName = dasherize(current)
-      .replace('java-script', 'javascript')
-      .replace('metric-imperial', 'metricimperial');
-    const currentId = nameToIdMap[dashedName];
+  const update = Object.keys(solutions).reduce((update, currentId) => {
     if (
       currentId in currentCompletedProjects &&
-      currentCompletedProjects[currentId].solution !== incomingUpdate[current]
+      currentCompletedProjects[currentId].solution !== solutions[currentId]
     ) {
       return {
         ...update,
         [currentId]: {
           ...currentCompletedProjects[currentId],
-          solution: incomingUpdate[current],
+          solution: solutions[currentId],
           numOfAttempts: currentCompletedProjects[currentId].numOfAttempts + 1
         }
       };
@@ -74,7 +69,7 @@ function buildChallengeMapUpdate(challengeMap, project) {
         ...update,
         [currentId]: {
           id: currentId,
-          solution: incomingUpdate[current],
+          solution: solutions[currentId],
           challengeType: 3,
           completedDate: now,
           numOfAttempts: 1

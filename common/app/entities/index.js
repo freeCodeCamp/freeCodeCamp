@@ -1,4 +1,4 @@
-import { findIndex, invert, pick, property, merge, union } from 'lodash';
+import { findIndex, property, merge, union } from 'lodash';
 import uuid from 'uuid/v4';
 import {
   combineActions,
@@ -12,6 +12,7 @@ import { themes } from '../../utils/themes';
 import { usernameSelector, types as app } from '../redux';
 import { types as challenges } from '../routes/Challenges/redux';
 import { types as map } from '../Map/redux';
+import legacyProjects from '../../utils/legacyProjectData';
 
 export const ns = 'entities';
 export const getNS = state => state[ns];
@@ -91,10 +92,6 @@ const defaultState = {
   fullBlocks: []
 };
 
-export function selectiveChallengeTitleSelector(state, dashedName) {
-  return getNS(state).challenge[dashedName].title;
-}
-
 export function portfolioSelector(state, props) {
   const username = usernameSelector(state);
   const { portfolio } = getNS(state).user[username];
@@ -103,27 +100,42 @@ export function portfolioSelector(state, props) {
 }
 
 export function projectsSelector(state) {
-  const blocks = getNS(state).block;
-  const challengeNameToIdMap = invert(challengeIdToNameMapSelector(state));
+  const {
+    block: blocks,
+    challenge: challengeMap
+  } = getNS(state);
+  const idToNameMap = challengeIdToNameMapSelector(state);
+  const legacyWithDashedNames = legacyProjects
+    .reduce((list, current) => ([
+      ...list,
+      {
+        ...current,
+        challenges: current.challenges.map(id => idToNameMap[id])
+      }
+    ]),
+    []
+  );
   return Object.keys(blocks)
     .filter(key =>
       key.includes('projects') && !key.includes('coding-interview')
     )
     .map(key => blocks[key])
+    .concat(legacyWithDashedNames)
     .map(({ title, challenges, superBlock }) => {
       const projectChallengeDashNames = challenges
+        // challengeIdToName is not available on appMount
+        .filter(Boolean)
         // remove any project intros
         .filter(chal => !chal.includes('get-set-for'));
       const projectChallenges = projectChallengeDashNames
-        .map(dashedName => selectiveChallengeTitleSelector(state, dashedName));
+        .map(dashedName => {
+          const { id, title } = challengeMap[dashedName];
+          return { id, title, dashedName };
+        });
       return {
         projectBlockName: title,
         superBlock,
-        challenges: projectChallenges,
-        challengeNameIdMap: pick(
-          challengeNameToIdMap,
-          projectChallengeDashNames
-        )
+        challenges: projectChallenges
       };
     });
 }

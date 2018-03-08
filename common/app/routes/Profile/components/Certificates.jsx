@@ -61,7 +61,7 @@ const mapStateToProps = createSelector(
       {
         show: is2018DataVisCert,
         title: 'Data Visualization Certificate:',
-        showURL: 'data-visualization-2018'
+        showURL: 'data-visualization'
       },
       {
         show: isApisMicroservicesCert,
@@ -78,22 +78,22 @@ const mapStateToProps = createSelector(
       {
         show: isFullStackCert,
         title: 'Full Stack Certificate:',
-        showURL: 'full-stack'
+        showURL: 'legacy-full-stack'
       },
       {
         show: isFrontEndCert,
         title: 'Front End Certificate:',
-        showURL: 'front-end'
+        showURL: 'legacy-front-end'
       },
       {
         show: isBackEndCert,
         title: 'Back End Certificate:',
-        showURL: 'back-end'
+        showURL: 'legacy-back-end'
       },
       {
         show: isDataVisCert,
         title: 'Data Visualization Certificate:',
-        showURL: 'data-visualization'
+        showURL: 'legacy-data-visualization'
       }
     ]
   })
@@ -134,7 +134,7 @@ function renderCertShow(username, cert) {
           block={ true }
           bsSize='lg'
           bsStyle='primary'
-          href={ `/c/${username}/${cert.showURL}`}
+          href={ `/certificates/${username}/${cert.showURL}`}
           >
           Show
         </Button>

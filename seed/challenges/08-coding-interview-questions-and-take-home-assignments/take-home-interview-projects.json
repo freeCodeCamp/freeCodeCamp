@@ -101,7 +101,7 @@
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1f",
-      "title": "Use the Twitch.tv JSON API",
+      "title": "Use the Twitch JSON API",
       "description": [
         "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
         "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.",
@@ -123,7 +123,7 @@
       "isRequired": false,
       "translations": {
         "es": {
-          "title": "Usa el API JSON de Twitch.tv",
+          "title": "Usa el API JSON de Twitch",
           "description": [
             "<span class='text-info'>Objetivo:</span> Crea una aplicación con <a href='https://codepen.io' target='_blank'>CodePen.io</a> cuya funcionalidad sea similar a la de esta: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
             "Satisface las siguientes <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>historias de usuario</a>. Usa cualquier librería o APIs que necesites. Dale tu estilo personal.",
@@ -139,7 +139,7 @@
           ]
         },
         "ru": {
-          "title": "Используйте Twitch.tv JSON API",
+          "title": "Используйте Twitch JSON API",
           "description": [
             "<span class='text-info'>Задание:</span> Создайте <a href='https://codepen.io' target='_blank'>CodePen.io</a> который успешно копирует вот этот: <a href='https://codepen.io/freeCodeCamp/full/Myvqmo/' target='_blank'>https://codepen.io/freeCodeCamp/full/Myvqmo/</a>.",
             "<span class='text-info'>Правило #1:</span> Не подсматривайте код приведенного на CodePen примера. Напишите его самостоятельно.",
@@ -681,6 +681,127 @@
       ],
       "isRequired": false,
       "titleEs": "Crea un clon de Pinterest"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdff",
+      "title": "Build a Nightlife Coordination App",
+      "description": [
+        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> and deploy it to Heroku.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+        "Here are the specific user stories you should implement for this project:",
+        "<strong>User Story:</strong> As an unauthenticated user, I can view all bars in my area.",
+        "<strong>User Story:</strong> As an authenticated user, I can add myself to a bar to indicate I am going there tonight.",
+        "<strong>User Story:</strong> As an authenticated user, I can remove myself from a bar if I no longer want to go there.",
+        "<strong>User Story:</strong> As an unauthenticated user, when I login I should not have to search again.",
+        "<strong>Hint:</strong> Try using the <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>Yelp API</a> to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app.",
+        "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
+        "You can get feedback on your project by sharing it with your friends on Facebook."
+      ],
+      "challengeSeed": [
+        "Gei7QfPmcMw"
+      ],
+      "tests": [],
+      "type": "basejump",
+      "challengeType": 4,
+      "isRequired": true,
+      "translations": {
+        "es": {
+          "description": [
+            "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://whatsgoinontonight.herokuapp.com/' target='_blank'>http://whatsgoinontonight.herokuapp.com/</a> y despliégala en Heroku.",
+            "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+            "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+            "<strong>Historia de usuario:</strong> Como un usuario no autenticado, puedo ver todos los bares en mi área.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo agregarme a mí mismo a un bar para indicar que voy a estar allí esta noche.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo removerme de un bar si ya no pienso ir allí.",
+            "<strong>Historia de usuario:</strong> Como un usuario no autenticado, cuando accedo a mi cuenta no debo tener la necesidad de buscar de nuevo.",
+            "<span class='text-info'>Pista:</span> Prueba utilizar el <a href='https://www.yelp.com/developers/documentation/v2/overview' target='_blank'>API de Yelp</a> para encontrar lugares en las ciudades donde tus usuarios buscan. Si utilizas el API de Yelp, asegúrate de mencionarlo en tu aplicación.",
+            "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
+            "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bd0e",
+      "title": "Chart the Stock Market",
+      "description": [
+        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> and deploy it to Heroku.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+        "Here are the specific user stories you should implement for this project:",
+        "<strong>User Story:</strong> I can view a graph displaying the recent trend lines for each added stock.",
+        "<strong>User Story:</strong> I can add new stocks by their symbol name.",
+        "<strong>User Story:</strong> I can remove stocks.",
+        "<strong>User Story:</strong> I can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.",
+        "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
+        "You can get feedback on your project by sharing it with your friends on Facebook."
+      ],
+      "challengeSeed": [
+        "CENs50cnRgM"
+      ],
+      "tests": [],
+      "type": "basejump",
+      "challengeType": 4,
+      "isRequired": true,
+      "translations": {
+        "es": {
+          "description": [
+            "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> y despliégalo en Heroku.",
+            "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+            "Estas son las Historias de usuario que debes satisfacer para este Basejump:",
+            "<strong>Historia de usuario:</strong> Como usuario, puedo ver un gráfico que me muestre las líneas de tendencia recientes para cada acción agregada.",
+            "<strong>Historia de usuario:</strong> Como usuario, puedo agregar nuevas acciones por su símbolo.",
+            "<strong>Historia de usuario:</strong> Como usuario, puedo remover acciones.",
+            "<strong>Historia de usuario:</strong> Como usuario, puedo ver cambios en tiempo real cuando algún otro usuario agrega o remueve una acción. Puedes usar Web Sockets para hacer esto.",
+            "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
+            "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdef",
+      "title": "Build a Voting App",
+      "description": [
+        "<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> and deploy it to Heroku.",
+        "Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+        "Here are the specific user stories you should implement for this project:",
+        "<strong>User Story:</strong> As an authenticated user, I can keep my polls and come back later to access them.",
+        "<strong>User Story:</strong> As an authenticated user, I can share my polls with my friends.",
+        "<strong>User Story:</strong> As an authenticated user, I can see the aggregate results of my polls.",
+        "<strong>User Story:</strong> As an authenticated user, I can delete polls that I decide I don't want anymore.",
+        "<strong>User Story:</strong> As an authenticated user, I can create a poll with any number of possible items.",
+        "<strong>User Story:</strong> As an unauthenticated or authenticated user, I can see and vote on everyone's polls.",
+        "<strong>User Story:</strong> As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)",
+        "<strong>User Story:</strong> As an authenticated user, if I don't like the options on a poll, I can create a new option.",
+        "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
+        "You can get feedback on your project by sharing it with your friends on Facebook."
+      ],
+      "challengeSeed": [
+        "JBKnbY_fdg4"
+      ],
+      "tests": [],
+      "type": "basejump",
+      "challengeType": 4,
+      "isRequired": true,
+      "translations": {
+        "es": {
+          "description": [
+            "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> y despliégala en Heroku.",
+            "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
+            "Estas son las Historias de usuario que debes satisfacer para este proyecto:",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo guardar mis votaciones y acceder a ellas posteriormente.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo compartir mis votaciones con mis amigos.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo ver los resultados agregados de mis votaciones.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo eliminar votaciones que ya no quiero tener guardadas.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, puedo crear una votación con cualquier número de opciones.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado o no autenticado, puedo ver y votar en las votaciones de otros.",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado o no autenticado, puedo ver los resultados de las votaciones por medio de un gráfico. (Esto podría implementarse utilizando Chart.js o Google Charts.)",
+            "<strong>Historia de usuario:</strong> Como un usuario autenticado, si no me gustan las opciones en una votación, puedo crear una nueva opción.",
+            "Una vez hayas terminado de implementar estas historias de usuario, pulsa el botón de \"I've completed this challenge\" e incluye las URLs de tu repositorio GitHub y de tu aplicación corriendo en Heroku.",
+            "Puedes obtener retroalimentación acerca de tu proyecto de parte de tus compañeros campistas compartiéndolo en nuestro <a href='//gitter.im/freecodecamp/codereview' target='_blank'>Cuarto de revisión de código</a>. También puedes compartirlo en Twitter y en el campamento de tu ciudad (en Facebook)."
+          ]
+        }
+      }
     },
     {
       "id": "5a4b7fcdb66f799f199e11db",
