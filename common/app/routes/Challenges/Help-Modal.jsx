@@ -43,8 +43,9 @@ export class HelpModal extends PureComponent {
         <Modal.Body className='text-center'>
           <h3 className={`${ns}-help-modal-heading`}>
             If you've already tried the&nbsp;
-            <a href={ RSA } title='Read, search, ask'>Read-Search-Ask</a>&nbsp;
-            method, then you can ask for help on the freeCodeCamp forum.
+            <a href={ RSA } target='_blank' title='Read, search, ask'>
+              Read-Search-Ask</a>&nbsp; method, then you can ask for help
+              on the freeCodeCamp forum.
           </h3>
           <Button
             block={ true }

@@ -34,8 +34,8 @@
       "title": "Create an online database using mLab",
       "description": [
         [
-          "https://i.imgur.com/Ux1CD2f.png",
-          "mLab logo.",
+          "",
+          "",
           "For the following challenges, we are going to start using MongoDB to store our data. To simplify the configuration, we are going to use mLab.<br><br>mLab is a MongoDB Database-as-a-Service platform, which basically means that they configure and host the database for you, making it so the only responsibility you have is to populate your database with what matters: data!<br>In the following steps, we are going to show you how to: <ul><li>Create an mLab account.</li><li>Create a free online database.</li><li>Create a new admin user on the database, so you can access it.</li><li>Get the mLab URI, which you will use in your application to connect to your database.</li></ul>Let's start by going to mLab by clicking the button below.",
           "https://mlab.com/"
         ],
