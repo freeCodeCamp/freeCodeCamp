@@ -17,7 +17,7 @@
         [
           "",
           "",
-          "In Javascript, arrays are written as comma-separated lists and are enclosed in brackets <code>[element1, element2, element3]</code>. They can be any length, and store any type of data supported by JavaScript.<br><br>Arrays can sometimes be simple and serve very basic functionalities, but they can also be complex and very powerful - all of which depends on how the programmer chooses to utilize them<br><br>From this point forward, whenever we refer to the term <dfn>array</dfn>, it will be strictly within the context of JavaScript.",
+          "In JavaScript, arrays are written as comma-separated lists and are enclosed in brackets <code>[element1, element2, element3]</code>. They can be any length, and store any type of data supported by JavaScript.<br><br>Arrays can sometimes be simple and serve very basic functionalities, but they can also be complex and very powerful - all of which depends on how the programmer chooses to utilize them<br><br>From this point forward, whenever we refer to the term <dfn>array</dfn>, it will be strictly within the context of JavaScript.",
           ""
         ],
         [

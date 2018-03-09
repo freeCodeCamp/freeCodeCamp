@@ -6,30 +6,30 @@
   "challenges": [
     {
       "id": "bd7158d2c442eddfbeb5bd1f",
-      "title": "Get Set for our Algorithm Challenges",
+      "title": "Get Set for our Algorithm Lessons",
       "description": [
         [
-          "https://i.imgur.com/sJkp30a.png",
-          "An image of a algorithm challenge showing directions, tests, and the code editor.",
-          "Our algorithm challenges will teach you how to think like a programmer.",
+          "",
+          "",
+          "freeCodeCamp's algorithm challenges will teach you how to think like a programmer.",
           ""
         ],
         [
-          "https://i.imgur.com/d8LuRNh.png",
-          "A mother bird kicks a baby bird out of her nest.",
-          "Our previous challenges introduced you to programming concepts. But for these algorithm challenges, you'll now need to apply what you learned to solve open-ended problems.",
+          "",
+          "",
+          "The previous lessons introduced you to programming concepts. But for these algorithm lessons, you'll now need to apply what you learned to solve open-ended problems.",
           ""
         ],
         [
-          "https://i.imgur.com/WBetuBa.jpg",
-          "A programmer punching through his laptop screen in frustration.",
-          "Our algorithm challenges are hard. Some of them may take you several hours to solve. You will get frustrated. But don't quit.",
+          "",
+          "",
+          "These algorithm lessons are hard. Some of them may take you several hours to solve. You may get frustrated. But don't quit.",
           ""
         ],
         [
-          "https://i.imgur.com/p2TpOQd.jpg",
-          "A cute dog jumping over a hurdle and winking and pointing his paw at you.",
-          "When you get stuck, just use the Read-Search-Ask methodology.<br>Don't worry - you've got this.",
+          "",
+          "",
+          "When you get stuck, just use the Read-Search-Ask methodology.<br>Don't worry - you've got this!",
           ""
         ]
       ],
@@ -776,7 +776,7 @@
           "title": "Detector de Mentiras",
           "description": [
             "Remueve todos los valores falsy de un arreglo dado",
-            "En javascript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
+            "En JavaScript, los valores falsy son los siguientes: <code>false</code>, <code>null</code>, <code>0</code>, <code>\"\"</code>, <code>undefined</code>, y <code>NaN</code>.",
             "Recuerda utilizar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Leer-Buscar-Preguntar</a> si te sientes atascado. Intenta programar en pareja. Escribe tu propio código."
           ]
         },
