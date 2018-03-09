@@ -1,3 +1,4 @@
+/* global __OPBEAT__ORG_ID __OPBEAT__APP_ID */
 import initOpbeat from 'opbeat-react';
 import { createOpbeatMiddleware } from 'opbeat-react/redux';
 import Rx from 'rx';
@@ -19,19 +20,16 @@ import {
   saveToColdStorage
 } from './cold-reload';
 
-import opBeat from '../opbeat-config';
-
 const localhostRE = /^(localhost|127.|0.)/;
 const enableOpbeat = !localhostRE.test(window.location.hostname);
 
-if (enableOpbeat && opBeat) {
-  const { orgId, appId } = opBeat;
-  if (!orgId || !appId) {
-    console.error('OpBeat credentials not found in ~/opbeat-config');
+if (enableOpbeat) {
+  if (!__OPBEAT__ORG_ID || !__OPBEAT__APP_ID) {
+    console.error('OpBeat credentials not found in .env');
   }
   initOpbeat({
-    orgId,
-    appId
+    orgId: __OPBEAT__ORG_ID,
+    appId: __OPBEAT__APP_ID
   });
 }
 
