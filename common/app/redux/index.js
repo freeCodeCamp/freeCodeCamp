@@ -250,9 +250,9 @@ export const firstChallengeSelector = createSelector(
   superBlocksSelector,
   (
     {
-      challengeMap,
-      blockMap,
-      superBlockMap
+      challenge: challengeMap,
+      block: blockMap,
+      superBlock: superBlockMap
     },
     superBlocks
   ) => {
