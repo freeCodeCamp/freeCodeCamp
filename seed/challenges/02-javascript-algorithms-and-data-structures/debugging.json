@@ -9,8 +9,8 @@
       "title": "Introduction to the Debugging Challenges",
       "description": [
         [
-          "http://imgs.xkcd.com/comics/debugging.png",
-          "XKCD web comic walking through the convoluted process of debugging. The programmer moves from a browser problem, to a keyboard driver issue, receives a cryptic system utility error message, and ends by finding the sword of Martin the Warrior.",
+          "",
+          "",
           "Debugging is a valuable and (unfortunately) necessary tool for programmers. It follows the testing phase of checking if your code works as intended, and discovering it does not. Debugging is the process of finding exactly what isn't working and fixing it.",
           ""
         ],

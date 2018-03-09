@@ -207,7 +207,7 @@ export class FCCNav extends React.Component {
           </NavbarBrand>
           <FCCSearchBar
             dropdown={ true }
-            placeholder='&#xf002; What would you like to know?'
+            placeholder='&#xf002; Search 8,000+ lessons, articles, and videos'
           />
         </Navbar.Header>
         <Navbar.Collapse>

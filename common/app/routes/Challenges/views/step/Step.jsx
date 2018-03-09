@@ -162,7 +162,7 @@ export class StepChallenge extends PureComponent {
         disabled={ hasAction && !isCompleted }
         onClick={ stepForward }
         >
-        { isLastStep ? 'Finish challenge' : 'Go to my next step'}
+        { isLastStep ? 'Finish lesson' : 'Go to my next step'}
       </Button>
     );
   }

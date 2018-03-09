@@ -1,7 +1,7 @@
 extends ../layout
 block content
     .text-center
-        h2 Sign in with one of these options if you used them as your original login methods :
+        h2 If you original signed up using one of these methods, you can sign in and add your email address to your account:
         br
         a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
             i.fa.fa-github
@@ -18,10 +18,6 @@ block content
         a.btn.btn-lg.btn-block.btn-social.btn-twitter(href='/auth/twitter')
             i.fa.fa-twitter
             | Sign in with Twitter
-        br
-        h4 Note: We are unable to create new accounts using these methods now on.
-        h4 If you haven't updated your email with us, you should do that as soon as possible,
-         | after you login here, to avoid losing access to your account.
         br
         p
           a(href="/signin") Or click here to go back.

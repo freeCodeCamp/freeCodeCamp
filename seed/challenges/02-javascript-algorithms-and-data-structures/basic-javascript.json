@@ -9,9 +9,9 @@
       "title": "Introduction to JavaScript",
       "description": [
         [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png",
-          "A yellow square with the letters, JS, in the bottom right to represent the JS logo",
-          "JavaScript (JS) is a high-level programming language that all modern web browsers support. It is also one of the core technologies of the web, along with HTML and CSS that you may have learned previously. This section will cover basic programming concepts in JavaScript, which range from variables and arithemtic to objects and loops."
+          "",
+          "",
+          "JavaScript is a high-level programming language that all modern web browsers support. It is also one of the core technologies of the web, along with HTML and CSS that you may have learned previously. This section will cover basic programming concepts in JavaScript, which range from variables and arithemtic to objects and loops."
         ]
       ],
       "challengeSeed": [],
@@ -63,7 +63,7 @@
         "fr": {
           "title": "Commentez votre code JavaScript",
           "description": [
-            "Les commentaires sont des lignes de code que Javascript va intentionnellement ignorer. Les commentaires sont un bon moyen de laisser des notes à votre intention ou pour d'autres personnes qui devront comprendre ce que fait votre code.",
+            "Les commentaires sont des lignes de code que JavaScript va intentionnellement ignorer. Les commentaires sont un bon moyen de laisser des notes à votre intention ou pour d'autres personnes qui devront comprendre ce que fait votre code.",
             "Il y a deux façons d'écrire des commentaires en JavaScript.",
             "Utiliser <code>//</code> indiquera à JavaScript d'ignorer le reste du texte sur cette même ligne:",
             "<code>// Voici un commentaire sur une ligne.</code>",
@@ -125,7 +125,7 @@
         "fr": {
           "title": "Déclarer des variables en JavaScript",
           "description": [
-            "En informatique, une <dfn>donnée</dfn> comporte tout ce qui peut avoir du sens pour l'ordinateur. Javascript dispose de sept <code>types de données</code> différents qui sont <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code> et <code>object</code>.",
+            "En informatique, une <dfn>donnée</dfn> comporte tout ce qui peut avoir du sens pour l'ordinateur. JavaScript dispose de sept <code>types de données</code> différents qui sont <code>undefined</code>, <code>null</code>, <code>boolean</code>, <code>string</code>, <code>symbol</code>, <code>number</code> et <code>object</code>.",
             "Par exemple, les ordinateurs font la différence entre les nombres tel que <code>12</code> et les <code>strings</code>, tels que <code>\"12\"</code>, <code>\"dog\"</code>, ou <code>\"123 cats\"</code>, qui sont des collections de caractères. Les ordinateurs peuvent faire des opérations mathématiques sur un nombre, mais pas sur une chaîne de caractères.",
             "Les <dfn>variables</dfn> permettent aux ordinateurs de stocker et manipuler les données de façon dynamique. Ils font cela en utilisant un <blockquote>label</blockquote> qui réfère à la donnée plutôt que d'utiliser la donnée elle-même. Les sept types de données peuvent être stockés dans une variable.",
             "Les <code>variables</code> sont similaires aux x et y que vous utilisez en mathématiques, ce qui veut dire que ce sont des noms simples qui représentent les données que l'on veut utiliser. Les <code>variables</code> de l'ordinateur diffèrent de celles des mathématiques car elles peuvent stocker différentes valeurs à différents moments.",
@@ -298,7 +298,7 @@
         "In JavaScript all variables and function names are case sensitive. This means that capitalization matters.",
         "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you <em>do not</em> use this language feature.",
         "<h4>Best Practice</h4>",
-        "Write variable names in Javascript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.",
+        "Write variable names in JavaScript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.",
         "<strong>Examples:</strong>",
         "<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsSoLong;</blockquote>",
         "<hr>",
@@ -336,7 +336,7 @@
             "En JavaScript todas las variables y nombres de funciones distinguen entre mayúsculas y minúsculas. Esto significa que la capitalización importa.",
             "<code>MIVAR</code> no es lo mismo que <code>MiVar</code> o <code>mivar</code>. Esto hace posible tener múltiples variables distintas con el mismo nombre pero de diferente manera. Es fuertemente recomendado por el bien de la claridad, que tu <em>no</em> uses esta característica del lenguaje.",
             "<h4>Mejor Práctica</h4>",
-            "Escribe nombres de variables en Javascript en <dfn>capitalizaciónCamello (camelCase)</dfn>. En <dfn>capitalizaciónCamello</dfn>, los nombres de variables con múltiples palabras tienen la primera palabra en minúsculas y la primera letra de cada palabra subsecuente es capitalizada.",
+            "Escribe nombres de variables en JavaScript en <dfn>capitalizaciónCamello (camelCase)</dfn>. En <dfn>capitalizaciónCamello</dfn>, los nombres de variables con múltiples palabras tienen la primera palabra en minúsculas y la primera letra de cada palabra subsecuente es capitalizada.",
             "<strong>Ejemplos:</strong>",
             "<blockquote>var algunaVariable;<br>var otraVariable;<br>var esteNombreDeVariableEsMuyLargo;</blockquote>",
             "<h4>Instrucciones</h4>",
@@ -4837,7 +4837,7 @@
         "es": {
           "title": "Manipula objetos complicados",
           "description": [
-            "Los objetos Javascript son flexibles porque permiten <dfn>Estructuras de Datos</dfn> con combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>vectores</dfn>, <dfn>funciones</dfn>, y <dfn>objetos</dfn>.",
+            "Los objetos JavaScript son flexibles porque permiten <dfn>Estructuras de Datos</dfn> con combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>vectores</dfn>, <dfn>funciones</dfn>, y <dfn>objetos</dfn>.",
             "Aquí está un ejemplo de un objeto complicado:",
             "<blockquote>var nuestraMusica = [<br>  {<br>    \"artista\": \"Daft Punk\",<br>    \"titulo\": \"Homework\",<br>    \"año_publicacion\": 1997,<br>    \"formatos\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"oro\": true<br>  }<br>];</blockquote>",
             "Este es un vector de objetos con diversos <dfn>metadatos</dfn> acerca de un álbum musical. Además tiene anidado un vector <code>formatos</code>. En el vector de nivel superior, pueden añadirse otros registros del álbum.",
@@ -5489,7 +5489,7 @@
         "        \"firstName\": \"Kristian\",",
         "        \"lastName\": \"Vos\",",
         "        \"number\": \"unknown\",",
-        "        \"likes\": [\"Javascript\", \"Gaming\", \"Foxes\"]",
+        "        \"likes\": [\"JavaScript\", \"Gaming\", \"Foxes\"]",
         "    }",
         "];",
         "",
@@ -5504,7 +5504,7 @@
         "lookUpProfile(\"Akira\", \"likes\");"
       ],
       "solutions": [
-        "var contacts = [\n    {\n        \"firstName\": \"Akira\",\n        \"lastName\": \"Laine\",\n        \"number\": \"0543236543\",\n        \"likes\": [\"Pizza\", \"Coding\", \"Brownie Points\"]\n    },\n    {\n        \"firstName\": \"Harry\",\n        \"lastName\": \"Potter\",\n        \"number\": \"0994372684\",\n        \"likes\": [\"Hogwarts\", \"Magic\", \"Hagrid\"]\n    },\n    {\n        \"firstName\": \"Sherlock\",\n        \"lastName\": \"Holmes\",\n        \"number\": \"0487345643\",\n        \"likes\": [\"Intriguing Cases\", \"Violin\"]\n    },\n    {\n        \"firstName\": \"Kristian\",\n        \"lastName\": \"Vos\",\n        \"number\": \"unknown\",\n        \"likes\": [\"Javascript\", \"Gaming\", \"Foxes\"]\n    },\n];\n\n\n//Write your function in between these comments\nfunction lookUpProfile(name, prop){\n    for(var i in contacts){\n      if(contacts[i].firstName === name) {\n        return contacts[i][prop] || \"No such property\";\n      }\n    }\n   return \"No such contact\";\n}\n//Write your function in between these comments\n\nlookUpProfile(\"Akira\", \"likes\");"
+        "var contacts = [\n    {\n        \"firstName\": \"Akira\",\n        \"lastName\": \"Laine\",\n        \"number\": \"0543236543\",\n        \"likes\": [\"Pizza\", \"Coding\", \"Brownie Points\"]\n    },\n    {\n        \"firstName\": \"Harry\",\n        \"lastName\": \"Potter\",\n        \"number\": \"0994372684\",\n        \"likes\": [\"Hogwarts\", \"Magic\", \"Hagrid\"]\n    },\n    {\n        \"firstName\": \"Sherlock\",\n        \"lastName\": \"Holmes\",\n        \"number\": \"0487345643\",\n        \"likes\": [\"Intriguing Cases\", \"Violin\"]\n    },\n    {\n        \"firstName\": \"Kristian\",\n        \"lastName\": \"Vos\",\n        \"number\": \"unknown\",\n        \"likes\": [\"JavaScript\", \"Gaming\", \"Foxes\"]\n    },\n];\n\n\n//Write your function in between these comments\nfunction lookUpProfile(name, prop){\n    for(var i in contacts){\n      if(contacts[i].firstName === name) {\n        return contacts[i][prop] || \"No such property\";\n      }\n    }\n   return \"No such contact\";\n}\n//Write your function in between these comments\n\nlookUpProfile(\"Akira\", \"likes\");"
       ],
       "tests": [
         "assert(lookUpProfile('Kristian','lastName') === \"Vos\", 'message: <code>\"Kristian\", \"lastName\"</code> should return <code>\"Vos\"</code>');",
