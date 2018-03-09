@@ -520,14 +520,16 @@ module.exports = function(User) {
     })
       .flatMap(token => {
         let renderAuthEmail = renderSignInEmail;
-        let subject = 'Login Requested - freeCodeCamp';
+        let subject = 'Your sign in link for freeCodeCamp.org';
         if (isSignUp) {
           renderAuthEmail = renderSignUpEmail;
-          subject = 'Account Created - freeCodeCamp';
+          subject = 'Your sign in link for your new freeCodeCamp.org account';
         }
         if (newEmail) {
           renderAuthEmail = renderEmailChangeEmail;
-          subject = 'Email Change Request - freeCodeCamp';
+          subject = dedent`
+            Please confirm your updated email address for freeCodeCamp.org
+          `;
         }
         const { id: loginToken, created: emailAuthLinkTTL } = token;
         const loginEmail = this.getEncodedEmail(newEmail ? newEmail : null);
@@ -551,13 +553,12 @@ module.exports = function(User) {
       })
       .map(() => isSignUp ?
         dedent`
-          We've created a new account for you.
-          If you entered a valid email, a magic link is on its way.
-          Please follow that link to sign in.
+          We created a new account for you!
+          Check your email and click the sign in link we sent you.
         ` :
         dedent`
-          If you entered a valid email, a magic link is on its way.
-          Please follow that link to sign in.
+          We found your existing account.
+          Check your email and click the sign in link we sent you.
         `
       );
   }
@@ -600,8 +601,8 @@ module.exports = function(User) {
           {
             type: 'info',
             message: dedent`
-            We have already sent an email change request to ${newEmail}.
-            Please check your inbox`
+            We have already sent an email confirmation request to ${newEmail}.
+            Please check your inbox.`
           }
         );
       }
@@ -661,7 +662,7 @@ module.exports = function(User) {
         `
       )
         .do(console.log)
-        .map(() => dedent`Your settings have not been changed`);
+        .map(() => dedent`Your settings have not been updated.`);
     }
     return Observable.from(valuesToUpdate)
       .flatMap(flag => Observable.of({ flag, newValue: values[flag] }))
@@ -708,7 +709,7 @@ module.exports = function(User) {
           this.portfolio = updatedPortfolio;
         })
         .map(() => dedent`
-          Your portfolio has been updated
+          Your portfolio has been updated.
         `);
     };
 
@@ -724,7 +725,7 @@ module.exports = function(User) {
       })
       .do(() => Object.assign(this, updateData))
       .map(() => dedent`
-        Your projects have been updated
+        Your projects have been updated.
       `);
   };
 
@@ -734,7 +735,7 @@ module.exports = function(User) {
         const isOwnUsername = isTheSame(newUsername, this.username);
         if (isOwnUsername) {
           return Observable.of(dedent`
-          ${newUsername} is already associated with this account
+          ${newUsername} is already associated with this account.
           `);
         }
         return Observable.fromPromise(User.doesExist(newUsername));
@@ -746,7 +747,7 @@ module.exports = function(User) {
       }
       if (boolOrMessage) {
         return Observable.of(dedent`
-        ${newUsername} is associated with a different account
+        ${newUsername} is already associated with a different account.
         `);
       }
 
@@ -755,7 +756,7 @@ module.exports = function(User) {
           this.username = newUsername;
         })
         .map(() => dedent`
-        Username updated successfully
+        Your username has been updated successfully.
         `);
     });
   };
