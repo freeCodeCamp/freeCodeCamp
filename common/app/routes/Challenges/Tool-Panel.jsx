@@ -1,6 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { isCurrentBlockCompleteSelector } from '../../redux';
+
+const mapStateToProps = createSelector(
+  isCurrentBlockCompleteSelector,
+  blockComplete => ({
+    isDisabled: !blockComplete
+  })
+);
 
 const unlockWarning = (
   <Tooltip id='tooltip'>
@@ -15,13 +25,14 @@ const propTypes = {
   guideUrl: PropTypes.string,
   hint: PropTypes.string,
   isCodeLocked: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   makeToast: PropTypes.func.isRequired,
   openHelpModal: PropTypes.func.isRequired,
   unlockUntrustedCode: PropTypes.func.isRequired,
   updateHint: PropTypes.func.isRequired
 };
 
-export default class ToolPanel extends PureComponent {
+class ToolPanel extends PureComponent {
   constructor(...props) {
     super(...props);
     this.makeHint = this.makeHint.bind(this);
@@ -44,7 +55,7 @@ export default class ToolPanel extends PureComponent {
     });
   }
 
-  renderHint(hint, makeHint) {
+  renderHint(hint, makeHint, isDisabled) {
     if (!hint) {
       return null;
     }
@@ -53,6 +64,7 @@ export default class ToolPanel extends PureComponent {
         block={ true }
         bsStyle='primary'
         className='btn-big'
+        disabled={ isDisabled }
         onClick={ makeHint }
         >
         Hint
@@ -60,7 +72,12 @@ export default class ToolPanel extends PureComponent {
     );
   }
 
-  renderExecute(isCodeLocked, executeChallenge, unlockUntrustedCode) {
+  renderExecute(
+    isCodeLocked,
+    executeChallenge,
+    unlockUntrustedCode,
+    isDisabled
+  ) {
     if (isCodeLocked) {
       return (
         <OverlayTrigger
@@ -71,6 +88,7 @@ export default class ToolPanel extends PureComponent {
             block={ true }
             bsStyle='primary'
             className='btn-big'
+            disabled={ isDisabled }
             onClick={ unlockUntrustedCode }
             >
             I trust this code. Unlock it.
@@ -83,6 +101,7 @@ export default class ToolPanel extends PureComponent {
         block={ true }
         bsStyle='primary'
         className='btn-big'
+        disabled={ isDisabled }
         onClick={ executeChallenge }
         >
         Run tests (ctrl + enter)
@@ -96,18 +115,20 @@ export default class ToolPanel extends PureComponent {
       guideUrl,
       hint,
       isCodeLocked,
+      isDisabled,
       openHelpModal,
       unlockUntrustedCode
     } = this.props;
-
+    console.log(isDisabled);
     return (
       <div>
-        { this.renderHint(hint, this.makeHint) }
+        { this.renderHint(hint, this.makeHintm, isDisabled) }
         {
           this.renderExecute(
             isCodeLocked,
             executeChallenge,
-            unlockUntrustedCode
+            unlockUntrustedCode,
+            isDisabled
           )
         }
         <div className='button-spacer' />
@@ -115,6 +136,7 @@ export default class ToolPanel extends PureComponent {
             block={ true }
             bsStyle='primary'
             className='btn-big'
+            disabled={ isDisabled }
             onClick={ this.makeReset }
             >
           Reset your code
@@ -127,6 +149,7 @@ export default class ToolPanel extends PureComponent {
                   block={ true }
                   bsStyle='primary'
                   className='btn-big'
+                  disabled={ isDisabled }
                   href={ guideUrl }
                   target='_blank'
                   >
@@ -139,6 +162,7 @@ export default class ToolPanel extends PureComponent {
             block={ true }
             bsStyle='primary'
             className='btn-big'
+            disabled={ isDisabled }
             onClick={ openHelpModal }
             >
             Ask for help on the forum
@@ -151,3 +175,5 @@ export default class ToolPanel extends PureComponent {
 
 ToolPanel.displayName = 'ToolPanel';
 ToolPanel.propTypes = propTypes;
+
+export default connect(mapStateToProps)(ToolPanel);
