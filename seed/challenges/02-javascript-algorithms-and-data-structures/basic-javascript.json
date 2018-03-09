@@ -4413,8 +4413,8 @@
         "Here is an example of using a variable to access a property:",
         "<blockquote>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br>};<br>var myDog = \"Hunter\";<br>var myBreed = dogs[myDog];<br>console.log(myBreed); // \"Doberman\"</blockquote>",
         "Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows:",
-        "<blockquote>var someObj = {<br>  propName: \"John\"<br>};<br>function propPrefix(str) {<br>  var s = \"prop\";<br>  return s + str;<br>}<br>var someProp = propPrefix(\"Name\"); // someProp now holds the value 'propName'<br>console.log(obj[someProp]); // \"John\"</blockquote>",
-        "Note that we  do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>.",
+        "<blockquote>var someObj = {<br>  propName: \"John\"<br>};<br>function propPrefix(str) {<br>  var s = \"prop\";<br>  return s + str;<br>}<br>var someProp = propPrefix(\"Name\"); // someProp now holds the value 'propName'<br>console.log(someObj[someProp]); // \"John\"</blockquote>",
+        "Note that we do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>.",
         "<hr>",
         "Use the <code>playerNumber</code> variable to look up player <code>16</code> in <code>testObj</code> using bracket notation. Then assign that name to the <code>player</code> variable."
       ],
