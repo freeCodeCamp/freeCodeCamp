@@ -5,9 +5,7 @@ import CompletionModal from './Completion-Modal.jsx';
 import AppChildContainer from '../../Child-Container.jsx';
 
 const propTypes = {
-  challenge: PropTypes.object,
-  children: PropTypes.node,
-  showLoading: PropTypes.bool
+  children: PropTypes.node
 };
 
 function ChildContainer(props) {
