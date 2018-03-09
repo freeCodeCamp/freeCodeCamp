@@ -6,16 +6,18 @@ const propTypes = {};
 
 export default function NotFound() {
   return (
-    <Alert bsStyle='danger'>
-      <h4>We couldn't find a page for that address.</h4>
-      <p>
-        Head back to &thinsp;
-        <a href='/challenges/current-challenge'>
+    <div className='not-found'>
+      <Alert bsStyle='danger'>
+        <h4>We couldn't find a page for that address.</h4>
+        <p>
+          Head back to &thinsp;
+          <a href='/map'>
             your current challenge
-        </a>
-        .
-      </p>
-    </Alert>
+          </a>
+          .
+        </p>
+      </Alert>
+    </div>
   );
 }
 
