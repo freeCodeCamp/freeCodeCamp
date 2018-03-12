@@ -8,9 +8,10 @@ const propTypes = {
   children: PropTypes.node
 };
 
-export default function ChildContainer({ children, ...props }) {
+function ChildContainer(props) {
+  const { children, ...restProps } = props;
   return (
-    <AppChildContainer { ...props }>
+    <AppChildContainer { ...restProps }>
       { children }
       <CompletionModal />
     </AppChildContainer>
@@ -18,3 +19,5 @@ export default function ChildContainer({ children, ...props }) {
 }
 
 ChildContainer.propTypes = propTypes;
+
+export default ChildContainer;

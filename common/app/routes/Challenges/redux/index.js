@@ -28,7 +28,8 @@ import {
   submitTypes,
   viewTypes,
   getFileKey,
-  challengeToFiles
+
+  challengeToFilesMetaCreator
 } from '../utils';
 import {
   types as app,
@@ -36,13 +37,10 @@ import {
 } from '../../../redux';
 import { html } from '../../../utils/challengeTypes.js';
 import blockNameify from '../../../utils/blockNameify.js';
-import { updateFileMetaCreator, createFilesMetaCreator } from '../../../files';
+import { updateFileMetaCreator } from '../../../files';
 
 // this is not great but is ok until we move to a different form type
 export projectNormalizer from '../views/project/redux';
-
-const challengeToFilesMetaCreator =
-  _.flow(challengeToFiles, createFilesMetaCreator);
 
 export const epics = [
   modalEpic,

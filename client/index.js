@@ -49,7 +49,11 @@ const primaryLang = getLangFromPath(location.pathname);
 
 defaultState.app.csrfToken = csrfToken;
 
-const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
+const serviceOptions = {
+  context: { _csrf: csrfToken },
+  xhrPath: '/services',
+  xhrTimeout: 15000
+};
 
 const history = useLangRoutes(createHistory, primaryLang)();
 sendPageAnalytics(history, ga);

@@ -1,15 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
 import ns from './ns.json';
+import { isCurrentBlockCompleteSelector } from '../../redux';
+import { SkeletonSprite } from '../../helperComponents';
 
+const mapStateToProps = createSelector(
+  isCurrentBlockCompleteSelector,
+  blockComplete => ({
+    showLoading: !blockComplete
+  })
+);
 const propTypes = {
   children: PropTypes.string,
-  isCompleted: PropTypes.bool
+  isCompleted: PropTypes.bool,
+  showLoading: PropTypes.bool
 };
 
-export default function ChallengeTitle({ children, isCompleted }) {
+function ChallengeTitle({ children, isCompleted, showLoading }) {
   let icon = null;
+  if (showLoading) {
+    return (
+      <h4 style={{ height: '35px', marginBottom: '9px' }}>
+        <SkeletonSprite />
+        <hr />
+      </h4>
+      );
+  }
   if (isCompleted) {
     icon = (
       <i
@@ -29,3 +48,5 @@ export default function ChallengeTitle({ children, isCompleted }) {
 
 ChallengeTitle.displayName = 'ChallengeTitle';
 ChallengeTitle.propTypes = propTypes;
+
+export default connect(mapStateToProps)(ChallengeTitle);

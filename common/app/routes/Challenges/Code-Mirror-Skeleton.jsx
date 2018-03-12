@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Col, Row } from 'react-bootstrap';
-
-import ns from './ns.json';
+import { SkeletonSprite } from '../../helperComponents';
 
 const propTypes = {
   content: PropTypes.string
@@ -10,19 +8,6 @@ const propTypes = {
 
 export default class CodeMirrorSkeleton extends PureComponent {
 
-  renderLine(line, i) {
-    return (
-      <div className={ `${ns}-shimmer` } key={ i }>
-        <Row>
-          <Col xs={ 12 }>
-            <div className='sprite-wrapper'>
-              <div className='sprite' />
-            </div>
-          </Col>
-        </Row>
-      </div>
-    );
-  }
 
   render() {
     const {
@@ -39,18 +24,12 @@ export default class CodeMirrorSkeleton extends PureComponent {
               className='CodeMirror-sizer'
               style={
                 {
-                  minHeight: (editorLines.length * 18) + 'px',
+                  height: (editorLines.length * 18) + 'px',
                   overflow: 'hidden'
                 }
               }
               >
-              <div className='CodeMirror-lines'>
-                <div className='CodeMirror-code'>
-                  <Grid>
-                    { editorLines.map(this.renderLine) }
-                  </Grid>
-                </div>
-              </div>
+              <SkeletonSprite />
             </div>
           </div>
         </div>

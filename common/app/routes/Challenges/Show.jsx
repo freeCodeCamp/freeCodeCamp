@@ -73,6 +73,7 @@ const propTypes = {
     dashedName: PropTypes.string,
     lang: PropTypes.string.isRequired
   }),
+  showLoading: PropTypes.bool,
   title: PropTypes.string,
   updateSuccessMessage: PropTypes.func.isRequired,
   updateTitle: PropTypes.func.isRequired,

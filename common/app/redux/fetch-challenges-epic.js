@@ -1,5 +1,6 @@
 import { Observable } from 'rx';
 import { combineEpics, ofType } from 'redux-epic';
+import _ from 'lodash';
 import debug from 'debug';
 
 import {
@@ -9,8 +10,7 @@ import {
   delayedRedirect,
 
   fetchChallengeCompleted,
-  fetchChallengesCompleted,
-  fetchNewBlock,
+  fetchNewBlockComplete,
   challengeSelector,
   nextChallengeSelector
 } from './';
@@ -21,7 +21,7 @@ import {
 
 import { shapeChallenges } from './utils';
 import { types as challenge } from '../routes/Challenges/redux';
-import { langSelector } from '../Router/redux';
+import { langSelector, paramsSelector } from '../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
 
@@ -60,62 +60,59 @@ export function fetchChallengesForBlockEpic(
   { getState },
   { services }
 ) {
-  return actions::ofType(
-    types.appMounted,
-    types.updateChallenges,
-    types.fetchNewBlock.start
-  )
-    .flatMapLatest(({ type, payload }) => {
-      const fetchAnotherBlock = type === types.fetchNewBlock.start;
-      const state = getState();
-      let {
-        block: blockName = 'basic-html-and-html5'
-      } = challengeSelector(state);
-      const lang = langSelector(state);
+  const onAppMount = actions::ofType(types.appMounted)
+    .map(() => {
+      const {
+        block = 'basic-html-and-html5'
+      } = challengeSelector(getState());
+      return block;
+    });
+  const onNewChallenge = actions::ofType(challenge.moveToNextChallenge)
+    .map(() => {
+      const {
+        isNewBlock,
+        isNewSuperBlock,
+        nextChallenge
+      } = nextChallengeSelector(getState());
+      const isNewBlockRequired = isNewBlock || isNewSuperBlock && nextChallenge;
+      return isNewBlockRequired ? nextChallenge.block : null;
+    });
+  const onBlockSelect = actions::ofType(types.fetchNewBlock.start)
+    .map(({ payload }) => payload);
 
-      if (fetchAnotherBlock) {
-        const fullBlocks = fullBlocksSelector(state);
-        if (fullBlocks.includes(payload)) {
-          return Observable.of(null);
-        }
-        blockName = payload;
-      }
-
+  return Observable.merge(onAppMount, onNewChallenge, onBlockSelect)
+    .filter(block => {
+      const fullBlocks = fullBlocksSelector(getState());
+      return block && !fullBlocks.includes(block);
+    })
+    .flatMapLatest(blockName => {
+      const lang = langSelector(getState());
       const options = {
         params: { lang, blockName },
         service: 'challenge'
       };
       return services.readService$(options)
         .retry(3)
-        .map(fetchChallengesCompleted)
-        .startWith({ type: types.fetchChallenges.start })
+        .map(newBlockData => {
+          const { dashedName } = paramsSelector(getState());
+          const { entities: { challenge } } = newBlockData;
+          const currentChallengeInNewBlock = _.pickBy(
+            challenge,
+            newChallenge => newChallenge.dashedName === dashedName
+          );
+          return fetchNewBlockComplete({
+            ...newBlockData,
+            meta: {
+              challenge: currentChallengeInNewBlock
+            }
+          });
+        })
         .catch(createErrorObservable);
-    })
-    .filter(Boolean);
-}
+    });
+ }
 
-function fetchChallengesForNextBlockEpic(action$, { getState }) {
-  return action$::ofType(challenge.checkForNextBlock)
-    .map(() => {
-      const {
-        nextChallenge,
-        isNewBlock,
-        isNewSuperBlock
-      } = nextChallengeSelector(getState());
-      const isNewBlockRequired = (
-        (isNewBlock || isNewSuperBlock) &&
-        nextChallenge &&
-        !nextChallenge.description
-      );
-      return isNewBlockRequired ?
-        fetchNewBlock(nextChallenge.block) :
-        null;
-    })
-    .filter(Boolean);
-}
 
 export default combineEpics(
   fetchChallengeEpic,
-  fetchChallengesForBlockEpic,
-  fetchChallengesForNextBlockEpic
+  fetchChallengesForBlockEpic
 );

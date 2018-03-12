@@ -179,9 +179,7 @@ export default composeReducers(
           }
         };
       }
-      return {
-        ...merge(state, action.meta.entities)
-      };
+      return merge({}, state, action.meta.entities);
     }
     return state;
   },
@@ -205,16 +203,15 @@ export default composeReducers(
     () => ({
       [
         combineActions(
-          app.fetchChallenges.complete,
+          app.fetchNewBlock.complete,
           map.fetchMapUi.complete
         )
-      ]: (state, { payload }) => {
-        const {entities: { block } } = payload;
-        return {
-          ...merge(state, payload.entities),
-          fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])
-        };
-      },
+      ]: (state, { payload: { entities } }) => merge({}, state, entities),
+      [app.fetchNewBlock.complete]:
+      (state, { payload: { entities: { block }}}) => ({
+        ...state,
+        fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])
+      }),
       [
         challenges.submitChallenge.complete
       ]: (state, { payload: { username, points, challengeInfo } }) => ({
