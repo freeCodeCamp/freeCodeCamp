@@ -3,6 +3,7 @@ const preFormattedBlockNames = {
   'basic-css': 'Basic CSS',
   'basic-html-and-html5': 'Basic HTML and HTML5',
   'css-flexbox': 'CSS Flexbox',
+  'css-grid': 'CSS Grid',
   devops: 'DevOps',
   es6: 'ES6',
   'information-security-with-helmetjs': 'Information Security with HelmetJS',
