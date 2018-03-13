@@ -62,6 +62,12 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
   };
 }
 
+const allNavs = [
+  LargeNav,
+  MediumNav,
+  SmallNav
+];
+
 function FCCNav(props) {
   const {
     panes,
@@ -69,30 +75,24 @@ function FCCNav(props) {
     clickOnMap,
     shouldShowMapButton
   } = props;
+  const withNavProps = Component => (
+    <Component
+      clickOnLogo={ clickOnLogo }
+      clickOnMap={ clickOnMap }
+      key={ Component.displayName }
+      panes={ panes }
+      shouldShowMapButton={ shouldShowMapButton }
+    />
+  );
   return (
     <Navbar
     className='nav-height'
     id='navbar'
     staticTop={ true }
     >
-    <LargeNav
-      clickOnLogo={ clickOnLogo }
-      clickOnMap={ clickOnMap }
-      panes={ panes }
-      shouldShowMapButton={ shouldShowMapButton }
-    />
-    <MediumNav
-      clickOnLogo={ clickOnLogo }
-      clickOnMap={ clickOnMap }
-      panes={ panes }
-      shouldShowMapButton={ shouldShowMapButton }
-    />
-    <SmallNav
-      clickOnLogo={ clickOnLogo }
-      clickOnMap={ clickOnMap }
-      panes={ panes }
-      shouldShowMapButton={ shouldShowMapButton }
-    />
+    {
+      allNavs.map(withNavProps)
+    }
   </Navbar>
   );
 }
