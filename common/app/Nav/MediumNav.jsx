@@ -1,6 +1,6 @@
 import React from 'react';
 import Media from 'react-media';
-import { Col, Navbar, Row } from 'react-bootstrap';
+import { Navbar, Row } from 'react-bootstrap';
 import FCCSearchBar from 'react-freecodecamp-search';
 import { NavLogo, BinButtons, NavLinks } from './components';
 
@@ -30,15 +30,13 @@ function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
             </div>
               </Navbar.Header>
           </Row>
-          <Row>
-            <Col xs={ 12 }>
+          <Row className='collapse-row'>
             <Navbar.Collapse>
                 <NavLinks
                   clickOnMap={ clickOnMap }
                   shouldShowMapButton={ shouldShowMapButton }
                 />
               </Navbar.Collapse>
-            </Col>
           </Row>
           </div>
         )

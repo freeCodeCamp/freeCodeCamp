@@ -1,6 +1,6 @@
 import React from 'react';
 import Media from 'react-media';
-import { Col, Navbar, Row } from 'react-bootstrap';
+import { Navbar, Row } from 'react-bootstrap';
 import FCCSearchBar from 'react-freecodecamp-search';
 import { NavLogo, BinButtons, NavLinks } from './components';
 
@@ -25,21 +25,19 @@ function SmallNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
             </div>
               </Navbar.Header>
           </Row>
-          <Row>
-            <Col xs={ 12 }>
+          <Row className='collapse-row'>
             <Navbar.Collapse>
-                <NavLinks
-                  clickOnMap={ clickOnMap }
-                  shouldShowMapButton={ shouldShowMapButton }
-                  >
-                  <FCCSearchBar
-                    dropdown={ true }
-                    placeholder=
-                      '&#xf002; Search 8,000+ lessons, articles, and videos'
-                  />
-                </NavLinks>
-              </Navbar.Collapse>
-            </Col>
+              <NavLinks
+                clickOnMap={ clickOnMap }
+                shouldShowMapButton={ shouldShowMapButton }
+                >
+                <FCCSearchBar
+                  dropdown={ true }
+                  placeholder=
+                    '&#xf002; Search 8,000+ lessons, articles, and videos'
+                />
+              </NavLinks>
+            </Navbar.Collapse>
           </Row>
           </div>
         )
