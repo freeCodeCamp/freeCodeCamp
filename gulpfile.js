@@ -107,6 +107,7 @@ const paths = {
   ],
 
   vendorMain: [
+    resolve('opbeat-react'),
     resolve('jquery', '.js', '.min.js'),
     resolve('bootstrap', 'npm.js', 'bootstrap.min.js'),
     resolve('d3', '.js', '.min.js'),

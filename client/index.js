@@ -1,3 +1,5 @@
+import initOpbeat from 'opbeat-react';
+import { createOpbeatMiddleware } from 'opbeat-react/redux';
 import Rx from 'rx';
 import debug from 'debug';
 import { render } from 'redux-epic';
@@ -16,6 +18,24 @@ import {
   getColdStorage,
   saveToColdStorage
 } from './cold-reload';
+
+const {
+  __OPBEAT__ORG_ID,
+  __OPBEAT__APP_ID,
+  NODE_ENV
+} = process.env;
+
+const enableOpbeat = NODE_ENV !== 'development';
+
+if (enableOpbeat) {
+  if (!__OPBEAT__ORG_ID || !__OPBEAT__APP_ID) {
+    console.error('OpBeat credentials not found in .env');
+  }
+  initOpbeat({
+    orgId: __OPBEAT__ORG_ID,
+    appId: __OPBEAT__APP_ID
+  });
+}
 
 const isDev = Rx.config.longStackSupport = debug.enabled('fcc:*');
 const log = debug('fcc:client');
@@ -41,6 +61,7 @@ const epicOptions = {
   history: _history
 };
 
+
 const DOMContainer = document.getElementById('fcc');
 const defaultState = isColdStored() ?
   getColdStorage() :
@@ -64,7 +85,8 @@ createApp({
     defaultState,
     epics,
     epicOptions,
-    enhancers: isDev && devToolsExtension && [ devToolsExtension() ]
+    enhancers: isDev && devToolsExtension && [ devToolsExtension() ],
+    middlewares: enableOpbeat && [ createOpbeatMiddleware() ]
   })
   .doOnNext(({ store }) => {
     if (module.hot && typeof module.hot.accept === 'function') {
