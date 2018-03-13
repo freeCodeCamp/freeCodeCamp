@@ -10,8 +10,9 @@ function SmallNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
   return (
     <Media
       query='(max-width: 750px)'
-      render={
-        () => (
+      >
+      {
+        matches => matches && typeof window !== 'undefined' && (
           <div>
           <Row>
               <Navbar.Header className='small-nav'>
@@ -43,7 +44,7 @@ function SmallNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
           </div>
         )
       }
-    />
+    </Media>
   );
 }
 

@@ -10,8 +10,9 @@ function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
   return (
     <Media
       query={{ maxWidth: 955, minWidth: 751 }}
-      render={
-        () => (
+      >
+      {
+        matches => matches && typeof window !== 'undefined' && (
           <div>
           <Row>
               <Navbar.Header className='medium-nav'>
@@ -42,7 +43,7 @@ function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
           </div>
         )
       }
-    />
+    </Media>
   );
 }
 
