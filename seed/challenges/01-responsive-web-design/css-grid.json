@@ -276,7 +276,7 @@
       "description": [
       "You can add a gap in between the rows of a grid using <code>grid-row-gap</code> in the same way that you added a gap in between columns in the previous challenge.",
       "<hr>",
-      "Create a gap for the rows that is <code>5px</code> of the grid's height."
+      "Create a gap for the rows that is <code>5px</code> tall."
       ],
       "challengeSeed": [
       "<style>",
@@ -325,7 +325,7 @@
       "description": [
       "<code>grid-gap</code> is a shorthand property for <code>grid-row-gap</code> and <code>grid-column-gap</code> from the previous two challenges that's more convenient to use. If <code>grid-gap</code> has one value, it will a create a gap between all rows and columns. However, if there are two values, it will use the first one to set the gap between the rows and the second value for the columns.",
       "<hr>",
-      "Use <code>grid-gap</code> to introduce a <code>10px</code> gap between the rows and <cod>20px</code> gap between the columns."
+      "Use <code>grid-gap</code> to introduce a <code>10px</code> gap between the rows and <code>20px</code> gap between the columns."
       ],
       "challengeSeed": [
       "<style>",
@@ -816,7 +816,7 @@
       "<blockquote>grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;</blockquote>",
       "So the item in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.",
       "<hr>",
-      "Using the <code>grid-area</code> property, place the element with <code>item5</code> class between the first and forth horizontal lines and between the third and forth vertical lines."
+      "Using the <code>grid-area</code> property, place the element with <code>item5</code> class between the third and fourth horizontal lines and between the first and fourth vertical lines."
       ],
       "challengeSeed": [
       "<style>",
