@@ -238,7 +238,7 @@ export const isSignedInSelector = state => !!userSelector(state).username;
 export const challengeSelector = state => {
   const challengeName = currentChallengeSelector(state);
   const challengeMap = entitiesSelector(state).challenge || {};
-  return challengeMap[challengeName] || {};
+  return challengeMap[challengeName] || firstChallengeSelector(state);
 };
 
 export const isCurrentBlockCompleteSelector = state => {
