@@ -1,4 +1,3 @@
-/* global __OPBEAT__ORG_ID __OPBEAT__APP_ID */
 import initOpbeat from 'opbeat-react';
 import { createOpbeatMiddleware } from 'opbeat-react/redux';
 import Rx from 'rx';
@@ -20,8 +19,13 @@ import {
   saveToColdStorage
 } from './cold-reload';
 
-const localhostRE = /^(localhost|127.|0.)/;
-const enableOpbeat = !localhostRE.test(window.location.hostname);
+const {
+  __OPBEAT__ORG_ID,
+  __OPBEAT__APP_ID,
+  NODE_ENV
+} = process.env;
+
+const enableOpbeat = NODE_ENV !== 'development';
 
 if (enableOpbeat) {
   if (!__OPBEAT__ORG_ID || !__OPBEAT__APP_ID) {
