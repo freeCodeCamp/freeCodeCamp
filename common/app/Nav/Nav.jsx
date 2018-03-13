@@ -1,19 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import FCCSearchBar from 'react-freecodecamp-search';
-import {
-  Navbar
-} from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 
-import { BinButtons, NavLogo, NavLinks } from './components';
+import LargeNav from './LargeNav.jsx';
+import MediumNav from './MediumNav.jsx';
+import SmallNav from './SmallNav.jsx';
 import {
   clickOnLogo,
   clickOnMap
 } from './redux';
 import { panesSelector } from '../Panes/redux';
+import propTypes from './navPropTypes';
 
 const mapStateToProps = createSelector(
   panesSelector,
@@ -63,13 +62,6 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
   };
 }
 
-const propTypes = {
-  clickOnLogo: PropTypes.func.isRequired,
-  clickOnMap: PropTypes.func.isRequired,
-  panes: PropTypes.array,
-  shouldShowMapButton: PropTypes.bool
-};
-
 function FCCNav(props) {
   const {
     panes,
@@ -83,23 +75,24 @@ function FCCNav(props) {
     id='navbar'
     staticTop={ true }
     >
-    <div className='nav-component-wrapper'>
-      <Navbar.Header>
-        <Navbar.Toggle children={ 'Menu' } />
-        <NavLogo clickOnLogo={ clickOnLogo } />
-        <FCCSearchBar
-          dropdown={ true }
-          placeholder='&#xf002; Search 8,000+ lessons, articles, and videos'
-        />
-      </Navbar.Header>
-        <BinButtons panes={ panes } />
-      <Navbar.Collapse>
-        <NavLinks
-          clickOnMap={ clickOnMap }
-          shouldShowMapButton={ shouldShowMapButton }
-        />
-      </Navbar.Collapse>
-    </div>
+    <LargeNav
+      clickOnLogo={ clickOnLogo }
+      clickOnMap={ clickOnMap }
+      panes={ panes }
+      shouldShowMapButton={ shouldShowMapButton }
+    />
+    <MediumNav
+      clickOnLogo={ clickOnLogo }
+      clickOnMap={ clickOnMap }
+      panes={ panes }
+      shouldShowMapButton={ shouldShowMapButton }
+    />
+    <SmallNav
+      clickOnLogo={ clickOnLogo }
+      clickOnMap={ clickOnMap }
+      panes={ panes }
+      shouldShowMapButton={ shouldShowMapButton }
+    />
   </Navbar>
   );
 }

@@ -57,9 +57,11 @@ const navLinkPropType = PropTypes.shape({
 });
 
 const propTypes = {
+  children: PropTypes.any,
   clickOnMap: PropTypes.func.isRequired,
   closeDropdown: PropTypes.func.isRequired,
   isDropdownOpen: PropTypes.bool,
+  isInNav: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navLinks: PropTypes.arrayOf(navLinkPropType),
   openDropdown: PropTypes.func.isRequired,
@@ -86,8 +88,6 @@ class NavLinks extends PureComponent {
           key={ content }
           noCaret={ true }
           onClick={ openDropdown }
-          onMouseEnter={ openDropdown }
-          onMouseLeave={ closeDropdown }
           onToggle={ isDropdownOpen ? closeDropdown : openDropdown }
           open={ isDropdownOpen }
           title={ content }
@@ -129,10 +129,13 @@ class NavLinks extends PureComponent {
       clickOnMap,
       showLoading,
       isSignedIn,
-      navLinks
+      navLinks,
+      isInNav = true,
+      children
     } = this.props;
     return (
       <Nav id='nav-links' navbar={ true } pullRight={ true }>
+        { children }
         {
           shouldShowMapButton ?
             <NoPropsPassThrough>
@@ -149,10 +152,11 @@ class NavLinks extends PureComponent {
         }
         {
           navLinks.map(
-            this.renderLink.bind(this, true)
+            this.renderLink.bind(this, isInNav)
           )
         }
         <SignUp
+          isInDropDown={ !isInNav }
           showLoading={ showLoading }
           showSignUp={ !isSignedIn }
         />
