@@ -34,14 +34,13 @@
         "Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>",
         "A new keyword called <code>let</code> was introduced in ES6 to solve this potential issue with the <code>var</code> keyword.",
         "If you were to replace <code>var</code> with <code>let</code> in the variable declarations of the code above, the result would be an error.",
-        "<blockquote>let camper = 'James';<br>let camper = 'David'; // throws an error</blockquote>",        
+        "<blockquote>let camper = 'James';<br>let camper = 'David'; // throws an error</blockquote>",
         "This error can be seen in the console of your browser.",
-        "So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.", 
+        "So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.",
         "Note the <code>\"use strict\"</code>. This enables Strict Mode, which catches common coding mistakes and \"unsafe\" actions. For instance:",
         "<blockquote>\"use strict\";<br>x = 3.14; // throws an error because x is not declared</blockquote>",
         "<hr>",
-        "Update the code so it only uses the <code>let</code> keyword.",
-        "<strong>Note</strong><br>Remember that since <code>let</code> prevents variables from being overridden, you will need to remove one of the declarations entirely."
+        "Update the code so it only uses the <code>let</code> keyword."
       ],
       "challengeSeed": [
         "var catName;",
@@ -710,7 +709,6 @@
         "Refactor the function <code>setGear</code> inside the object <code>bicycle</code> to use the shorthand syntax described above."
       ],
       "challengeSeed": [
-
         "// change code below this line",
         "const bicycle = {",
         "  gear: 2,",
@@ -954,8 +952,8 @@
       "head": [
         "window.require = function(str) {",
         "if (str === 'math_functions') {",
-          "return function(a, b) {",
-          "return a - b;",
+        "return function(a, b) {",
+        "return a - b;",
         "}}};"
       ],
       "challengeSeed": [
