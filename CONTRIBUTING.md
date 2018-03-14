@@ -309,11 +309,15 @@ For more about creating challenges, see [seed/README](seed/README.md) and [seed/
 
 #### Changes to the seed files
 
-If you made changes to any file in the `/seed` directory, you need to run
+If you made changes to any file in the `/seed` directory, you then need to stop the server by typing CTRL-C, then you need to run
 ```shell
 $ node seed
 ```
-in order to see the changes.
+Then run
+```shell
+$ npm run develop
+```
+in order to restart the server and see the changes you just made to the files.
 
 ### Run The Test Suite
 
