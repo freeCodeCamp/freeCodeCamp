@@ -945,31 +945,6 @@ module.exports = function(User) {
     return this.update$({ theme }).toPromise();
   };
 
-  // deprecated. remove once live
-  User.remoteMethod(
-    'updateTheme',
-    {
-      description: 'updates the users chosen theme',
-      accepts: [
-        {
-          arg: 'theme',
-          type: 'string',
-          required: true
-        }
-      ],
-      returns: [
-        {
-          arg: 'status',
-          type: 'object'
-        }
-      ],
-      http: {
-        path: '/update-theme',
-        verb: 'POST'
-      }
-    }
-  );
-
   // user.updateTo$(updateData: Object) => Observable[Number]
   User.prototype.update$ = function update$(updateData) {
     const id = this.getId();

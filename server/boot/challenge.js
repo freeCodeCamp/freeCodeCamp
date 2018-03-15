@@ -78,14 +78,6 @@ export default function(app) {
   const map = cachedMap(app.models);
 
   api.post(
-    '/modern-challenge-completed',
-    send200toNonUser,
-    modernChallengeCompleted
-  );
-
-  // deprecate endpoint
-  // remove once new endpoint is live
-  api.post(
     '/completed-challenge',
     send200toNonUser,
     completedChallenge
@@ -94,15 +86,7 @@ export default function(app) {
   api.post(
     '/challenge-completed',
     send200toNonUser,
-    completedChallenge
-  );
-
-  // deprecate endpoint
-  // remove once new endpoint is live
-  api.post(
-    '/completed-zipline-or-basejump',
-    send200toNonUser,
-    projectCompleted
+    challengeCompleted
   );
 
   api.post(
@@ -125,7 +109,7 @@ export default function(app) {
   app.use(api);
   app.use('/:lang', router);
 
-  function modernChallengeCompleted(req, res, next) {
+  function completedChallenge(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
     req.checkBody('files', 'files must be an object with polyvinyls for keys')
@@ -179,7 +163,7 @@ export default function(app) {
       .subscribe(() => {}, next);
   }
 
-  function completedChallenge(req, res, next) {
+  function challengeCompleted(req, res, next) {
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
     const type = accepts(req).type('html', 'json', 'text');
     const errors = req.validationErrors(true);

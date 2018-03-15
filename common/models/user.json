@@ -148,10 +148,6 @@
       "description": "The challenge last visited by the user",
       "default": ""
     },
-    "currentChallenge": {
-      "type": {},
-      "description": "deprecated"
-    },
     "isUniqMigrated": {
       "type": "boolean",
       "description": "Campers completedChallenges array is free of duplicates",
