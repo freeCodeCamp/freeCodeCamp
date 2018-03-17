@@ -18,7 +18,7 @@ import {
   testsSelector,
   outputSelector
 } from '../../redux';
-import { descriptionRegex } from '../../utils';
+import { descriptionRegex, handleKeydown } from '../../utils';
 
 import {
   createFormValidator,
@@ -77,6 +77,36 @@ const mapDispatchToActions = {
 };
 
 export class BackEnd extends PureComponent {
+  state = { isMac: false };
+
+  componentDidMount() {
+    const isMac = navigator.userAgent.includes('Mac');
+    this.setState({ isMac }); // eslint-disable-line
+    document.addEventListener('keydown', handleKeydown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', handleKeydown);
+  }
+
+  renderButton() {
+    const { submitting } = this.props;
+    const buttonCopy = submitting ?
+      'Submit and go to my next challenge' :
+      "I've completed this challenge";
+    return (
+      <Button
+        block={ true }
+        bsStyle='primary'
+        className='btn-big'
+        onClick={ submitting ? null : null }
+        type={ submitting ? null : 'submit' }
+        >
+        { buttonCopy } ({ this.state.isMac ? 'cmd' : 'ctrl' } + enter)
+      </Button>
+    );
+  }
+
   renderDescription(description) {
     if (!Array.isArray(description)) {
       return null;
@@ -109,13 +139,9 @@ export class BackEnd extends PureComponent {
       title,
       // provided by redux-form
       fields: { solution },
-      handleSubmit,
-      submitting
+      handleSubmit
     } = this.props;
 
-    const buttonCopy = submitting ?
-      'Submit and go to my next challenge' :
-      "I've completed this challenge";
     return (
       <Row>
         <Col
@@ -139,15 +165,7 @@ export class BackEnd extends PureComponent {
                 placeholder='https://your-app.com'
                 solution={ solution }
               />
-              <Button
-                block={ true }
-                bsStyle='primary'
-                className='btn-big'
-                onClick={ submitting ? null : null }
-                type={ submitting ? null : 'submit' }
-                >
-                { buttonCopy } (ctrl + enter)
-              </Button>
+              { this.renderButton() }
             </form>
           </Row>
           <Row>
