@@ -7,7 +7,9 @@ export function isPanesAction({ type } = {}, panesMap) {
 
 export function getDividerLeft(numOfPanes, index) {
   let dividerLeft = null;
-  if (numOfPanes > 1 && numOfPanes !== index + 1) {
+  if (numOfPanes === 2 && numOfPanes !== index + 1) {
+    dividerLeft = 33;
+  } else if (numOfPanes > 1 && numOfPanes !== index + 1) {
     dividerLeft = (100 / numOfPanes) * (index + 1);
   }
   return dividerLeft;
