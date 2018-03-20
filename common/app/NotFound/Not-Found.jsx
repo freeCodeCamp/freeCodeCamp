@@ -1,21 +1,29 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { Alert } from 'react-bootstrap';
+import {
+  Alert,
+  Button
+} from 'react-bootstrap';
 
 const propTypes = {};
 
 export default function NotFound() {
   return (
-    <Alert bsStyle='danger'>
-      <h4>We couldn't find a page for that address.</h4>
-      <p>
-        Head back to &thinsp;
-        <a href='/challenges/current-challenge'>
-            your current challenge
-        </a>
-        .
-      </p>
-    </Alert>
+    <div className='not-found'>
+      <Alert bsStyle='info'>
+        <p>
+          { 'Sorry, we couldn\'t find a page for that address.' }
+        </p>
+      </Alert>
+      <a href={'/map'}>
+        <Button
+          bsSize='lg'
+          bsStyle='primary'
+          >
+          Take me to the Challenges
+        </Button>
+      </a>
+    </div>
   );
 }
 
