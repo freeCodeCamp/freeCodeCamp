@@ -1705,9 +1705,9 @@
       "id": "bad87fee1348bd9aedf08834",
       "title": "Create a Set of Radio Buttons",
       "description": [
-        "You can use <code>radio buttons</code> for questions where you want the restrcit the user to only one answer out of multiple options.",
-        "Radio buttons are a type of <code>input</code> field",
-        "Each of your radio buttons should be nested within its own <code>label</code> element.",
+        "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer out of multiple options.",
+        "Radio buttons are a type of <code>input</code>.",
+        "Each of your radio buttons should be nested within its own <code>label</code> element. Wrapping an <code>input</code> element inside of a <code>label</code> element makes the label text clickable.",
         "All related radio buttons should have the same <code>name</code> attribute.",
         "Here's an example of a radio button:",
         "<blockquote>&#60;label&#62; <br> &#60;input type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
