@@ -44,6 +44,8 @@ const propTypes = {
   render: PropTypes.func.isRequired
 };
 
+const quoteObj = require('./quotes').fetchRandomQuote();
+
 export class Panes extends PureComponent {
   componentDidMount() {
     this.props.panesMounted();
@@ -53,31 +55,89 @@ export class Panes extends PureComponent {
       render,
       panes
     } = this.props;
-    return panes.map(({ name, left, right, dividerLeft }) => {
-      const divider = dividerLeft ?
-        (
-          <Divider
-            key={ name + 'divider' }
-            left={ dividerLeft }
-            name={ name }
-          />
-        ) :
-        null;
+    if (panes.length > 0) {
+      return panes.map(({ name, left, right, dividerLeft }) => {
+        const divider = dividerLeft ?
+          (
+            <Divider
+              key={ name + 'divider' }
+              left={ dividerLeft }
+              name={ name }
+            />
+          ) :
+          null;
 
-      return [
-        <Pane
-          key={ name }
-          left={ left }
-          right={ right }
-          >
-          { render(name) }
-        </Pane>,
-        divider
-      ];
-    }).reduce((panes, pane) => panes.concat(pane), [])
-      .filter(Boolean);
+        return [
+          <Pane
+            key={ name }
+            left={ left }
+            right={ right }
+            >
+            { render(name) }
+          </Pane>,
+          divider
+        ];
+      }).reduce((panes, pane) => panes.concat(pane), [])
+        .filter(Boolean);
+    } else {
+      return this.renderQuote();
+    }
   }
-
+  renderQuote() {
+    const outerFlexContainer = {
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%',
+      width: '66%',
+      margin: 'auto'
+      // padding: '0 20px 0 20px'
+    };
+    const quoteStyle = {
+      // textAlign: 'center',
+      color: '#006400'
+    };
+    const authorStyle = {
+      textAlign: 'center'
+    };
+    const logoStyle = {
+      margin: 'auto',
+      // maxHeight: '40px',
+      maxHeight: '35px',
+      alignSelf: 'center'
+    };
+    const flexLength = {
+      flex: 1
+    };
+    const quoteBlock = {
+      flexGrow: 1,
+      display: 'flex',
+      alignItems: 'center',
+      margin: 'auto'
+    };
+    const logoBlock = {
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center'
+    };
+    return (
+      <div style={outerFlexContainer}>
+        <div style={flexLength} />
+        <div style={quoteBlock}>
+          <div style={quoteStyle}>
+            <h2>{quoteObj.quote}</h2>
+            <h2 style={authorStyle}><i>&mdash;{quoteObj.author}</i></h2>
+          </div>
+        </div>
+        <div style={logoBlock}>
+          <img className='img-responsive'
+            src={'https://design-style-guide.freecodecamp.org' +
+            '/downloads/freeCodeCamp-alternative.jpg'}
+            style={logoStyle}
+          />
+        </div>
+      </div>
+    );
+  }
   render() {
     const outerStyle = {
       height: '100%',
