@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavItem } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 const propTypes = {
   content: PropTypes.string,
@@ -9,11 +9,12 @@ const propTypes = {
 
 export default function BinButton({ content, handleClick }) {
   return (
-    <NavItem
+    <Button
+      bsStyle='primary'
       onClick={ handleClick }
       >
       { content }
-    </NavItem>
+    </Button>
   );
 }
 BinButton.displayName = 'BinButton';

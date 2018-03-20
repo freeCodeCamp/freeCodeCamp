@@ -121,6 +121,7 @@
     "react-freecodecamp-search": "^1.4.1",
     "react-helmet": "^5.2.0",
     "react-images": "^0.5.1",
+    "react-media": "^1.8.0",
     "react-motion": "~0.4.2",
     "react-no-ssr": "^1.0.1",
     "react-notification": "git+https://github.com/BerkeleyTrue/react-notification.git#freecodecamp",

@@ -1,21 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavItem } from 'react-bootstrap';
+import { MenuItem, NavItem } from 'react-bootstrap';
 
-import { Link } from '../Router';
-import { onRouteSettings } from '../routes/Settings/redux';
+import { Link } from '../../Router';
+import { onRouteSettings } from '../../routes/Settings/redux';
 
 const propTypes = {
+  isInDropDown: PropTypes.bool,
   showLoading: PropTypes.bool,
   showSignUp: PropTypes.bool
 };
 
-export default function SignUpButton({ showLoading, showSignUp }) {
+function SignUpButton({ isInDropDown, showLoading, showSignUp }) {
   if (showLoading) {
     return null;
   }
   if (showSignUp) {
-    return (
+    return isInDropDown ? (
+      <MenuItem
+        href='/signup'
+        key='signup'
+        >
+        Sign Up
+      </MenuItem>
+      ) : (
       <NavItem
         href='/signup'
         key='signup'
@@ -38,3 +46,5 @@ export default function SignUpButton({ showLoading, showSignUp }) {
 
 SignUpButton.displayName = 'SignUpButton';
 SignUpButton.propTypes = propTypes;
+
+export default SignUpButton;

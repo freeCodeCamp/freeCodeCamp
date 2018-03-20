@@ -223,64 +223,111 @@ li.nav-avatar {
   }
 }
 
-.nav-component-wrapper {
+.nav-component {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+
+  &.header{
+
+    .navbar-brand {
+      padding-left: 0px;
+    }
+
+  }
+
+  &.bins {
+    justify-content: center;
+
+    .nav {
+      display: flex;
+    }
+  }
+
+
+  &.nav-links {
+    justify-content: end;
+  }
 
   .fcc_searchBar {
     width: auto;
-    flex-grow: 1
-  }
-
-  ::-webkit-input-placeholder {
-    color: @input-color-placeholder;
-  }
-
-  ::-moz-placeholder {
-    color: @input-color-placeholder;
-  }
-
-  ::-ms-placeholder {
-    color: @input-color-placeholder;
-  }
-
-  ::placeholder {
-    color: @input-color-placeholder;
-  }
-
-  .navbar-header {
     flex-grow: 1;
+    ::-webkit-input-placeholder {
+      color: @input-color-placeholder;
+    }
+
+    ::-moz-placeholder {
+      color: @input-color-placeholder;
+    }
+
+    ::-ms-placeholder {
+      color: @input-color-placeholder;
+    }
+
+    ::placeholder {
+      color: @input-color-placeholder;
+    }
+  }
+  .navbar-header {
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    width: 100%;
   }
 }
 
-.logo-glyph {
-  height: 28px;
-  width: auto;
+.medium-nav {
+  display: flex;
+  justify-content: space-between;
+
+  .bins {
+    justify-content: flex-end;
+
+  }
 }
 
-.logo {
-  display: none !important;
+.small-nav {
+  display: flex;
+  justify-content: space-between;
+
+  .bins {
+    justify-content: flex-end;
+
+    .btn {
+      padding: 6px 4px;
+    }
+  }
 }
 
+.bins {
 
-@media (min-width: 992px) {
-  .logo-glyph {
-    display: none !important;
+  .btn {
+    border-color: @brand-primary;
+    background-color: white;
+
+    &:hover {
+      background-color: @brand-primary;
+    }
+
   }
 
-  .logo {
-    display: block !important;
-  }
-
 }
 
-@media screen and (max-width: 768px) {
-  .nav-component-wrapper {
-    display: block
+.collapse-row {
+  background-color: @brand-primary;
+
+  .dropdown-menu {
+
+    li a {
+      display: flex;
+      justify-content: center;
+      background-color: #eeeeee;
+      color: @brand-primary !important;
+
+      &:hover {
+        background-color: @brand-primary !important;
+        color: #eeeeee !important;
+      }
+    }
+
   }
 
 }
