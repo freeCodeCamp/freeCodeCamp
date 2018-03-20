@@ -1170,7 +1170,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/add-borders-around-your-elements"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/add-borders-around-your-elements"
     },
     {
       "id": "bad87fee1348bd9aedf08814",
@@ -1284,7 +1284,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/add-rounded-corners-a-border-radius"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/add-rounded-corners-a-border-radius"
     },
     {
       "id": "bad87fee1348bd9aedf08815",
@@ -1890,7 +1890,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/adjust-the-padding-of-an-element"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/adjust-the-padding-of-an-element"
     },
     {
       "id": "bad87fee1348bd9aedf08822",
@@ -1989,7 +1989,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element"
     },
     {
       "id": "bad87fee1348bd9aedf08823",
@@ -2184,7 +2184,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element"
     },
     {
       "id": "bad87fee1248bd9aedf08824",
@@ -3644,9 +3644,10 @@
     },
     {
       "id": "5a9d725e424fe3d0e10cad10",
-      "title": "Quickly change many styles with CSS Variables",
+      "title": "Use CSS Variables to change several elements at once",
       "description": [
-        "<dfn>CSS Variables</dfn> are a powerful way to change many CSS style properties at once by only having to change one value. This can dramatically simplify updating and changing the styles on your web page. Do the challenge below to see how changing three values can change the styling of many elements.",
+        "<dfn>CSS Variables</dfn> are a powerful way to change many CSS style properties at once by changing only one value.",
+        "Follow the instructions below to see how changing just three values can change the styling of many elements.",
         "<hr>",
         "In the <code>penguin</code> class, change the <code>black</code> value to <code>gray</code>, the <code>gray</code> value to <code>white</code>, and the <code>yellow</code> value to <code>orange</code>."
       ],
@@ -3871,7 +3872,7 @@
         "To create a CSS Variable, you just need to give it a <code>name</code> with <code>two dashes</code> in front of it and assign it a <code>value</code> like this:",
         "<blockquote>--penguin-skin: gray;</blockquote>",
         "This will create a variable named <code>--penguin-skin</code> and assign it the value of <code>gray</code>.",
-        "Now you can use that variable elsewhere in your CSS to change the value of anything that accepts a color to gray.",
+        "Now you can use that variable elsewhere in your CSS to change the value of other elements to gray.",
         "<hr>",
         "In the <code>penguin</code> class, create a variable name <code>--penguin-skin</code> and give it a value of <code>gray</code>"
       ],
@@ -4091,7 +4092,7 @@
         "After you create your variable, you can assign its value to other CSS properties by referencing the name you gave it.",
         "<blockquote>background: var(--penguin-skin);</blockquote>",
         "This will change the background of whatever element you are targeting to gray because that is the value of the <code>--penguin-skin</code> variable.",
-        "<strong>Note</strong><br>Styles will not be applied unless the variable names are an exact match.",
+        "Note that styles will not be applied unless the variable names are an exact match.",
         "<hr>",
         "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code>, <code>penguin-bottom</code>, <code>right-hand</code> and <code>left-hand</code> classes."
       ],
@@ -4308,10 +4309,10 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'message: <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>pengiun-top</code> class.');",
-        "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'message: <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>pengiun-bottom</code> class.');",
-        "assert(code.match(/.right-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.left-hand\\s{/gi), 'message: <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>right-hand</code> class.');",
-        "assert(code.match(/.left-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'message: <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>left-hand</code> class.');"
+        "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'message: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-top</code> class.');",
+        "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'message: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-bottom</code> class.');",
+        "assert(code.match(/.right-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.left-hand\\s{/gi), 'message: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.');",
+        "assert(code.match(/.left-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'message: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.');"
       ],
       "solutions": [],
       "hints": [],
@@ -4324,10 +4325,11 @@
       "id": "5a9d7286424fe3d0e10cad13",
       "title": "Attach a Fallback value to a CSS Variable",
       "description": [
-        "When using your variable as a CSS property value, you can attach a fallback value that your page will revert to if for some reason it can't get your variable to work.<br>It could be that someone is using an older browser that hasn't yet adopted CSS Variables, or perhaps their device doesn't support the value you gave the variable. Here's how you do it:",
+        "When using your variable as a CSS property value, you can attach a fallback value that your page will revert to if for some reason it can't get your variable to work.",
+        "It could be that someone is using an older browser that hasn't yet adopted CSS Variables, or perhaps their device doesn't support the value you gave the variable. Here's how you do it:",
         "<blockquote>background: var(--penguin-skin, black);</blockquote>",
         "This will set background to black if there is a problem with your variable.",
-        "<strong>Note</strong><br>This can be very useful for debugging.",
+        "Note that this can be useful for debugging.",
         "<hr>",
         "Add a fallback value of <code>black</code> to the <code>background</code> property of <code>penguin-top</code> and <code>penguin-bottom</code> classes. This style will be applied because of a typo in the variable name."
       ],
@@ -4538,8 +4540,8 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'message: The fallback value of <code>black</code> should be applied to the <code>background</code> property of the <code>penguin-top</code> class.');",
-        "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'message: The fallback value of <code>black</code> should be applied to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
+        "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'message: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');",
+        "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'message: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
       ],
       "solutions": [],
       "hints": [],
@@ -4552,7 +4554,10 @@
       "id": "5a9d7295424fe3d0e10cad14",
       "title": "Cascading CSS variables",
       "description": [
-        "When you create your variable, it is available for use in the element you create it and all the elements nested within it.<br>This effect is known as cascading. Because of this, CSS Variables are often defined in the <dfn>:root</dfn> element.<br>You can think of the <code>:root</code> element as a container for your entire HTML document in the same way that an <code>html</code> tag is a container for the <code>body</code> tag.<br>By creating your variables in <code>:root</code>, they will be available throughout the whole web page.",
+        "When you create a variable, it is becomes available for you to use inside the element in which you create it. It also becomes available within any elements nested within it. This effect is known as <dfn>cascading</dfn>.",
+        "Because of cascading, CSS variables are often defined in the <dfn>:root</dfn> element.",
+        "You can think of the <code>:root</code> element as a container for your entire HTML document, in the same way that an <code>html</code> element is a container for the <code>body</code> element.",
+        "By creating your variables in <code>:root</code>, they will be available throughout the whole web page.",
         "<hr>",
         "Define a variable named <code>--penguin-belly</code> in the <code>:root</code> selector and give it the value of <code>pink</code>. You can then see how the value will cascade down to change the value to pink, anywhere that variable is used."
       ],
@@ -4761,7 +4766,7 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/:root\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?pink\\s*?;[\\s\\S]*}/gi), 'message: <code>:root</code> should declare the <code>--penguin-belly</code> variable and assign it to <code>pink</code>.');"
+        "assert(code.match(/:root\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?pink\\s*?;[\\s\\S]*}/gi), 'message: declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.');"
       ],
       "solutions": [],
       "hints": [],
@@ -4774,7 +4779,8 @@
       "id": "5a9d72a1424fe3d0e10cad15",
       "title": "Change a variable for a specific area",
       "description": [
-        "When you create your variables in <code>:root</code> it will set the value of that variable for the whole page. Unless at some point you change the value of that variable.",
+        "When you create your variables in <code>:root</code> they will set the value of that variable for the whole page.",
+        "You can then over-write these valuables by setting them again within a specific element.",
         "<hr>",
         "Change the value of <code>--penguin-belly</code> to <code>white</code> in the <code>penguin</code> class."
       ],
@@ -4985,7 +4991,7 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), 'message: <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.');"
+        "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), 'message: The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.');"
       ],
       "solutions": [],
       "hints": [],
@@ -4998,9 +5004,10 @@
       "id": "5a9d72ad424fe3d0e10cad16",
       "title": "Use a media query to change a variable",
       "description": [
-        "CSS Variables can simplify the way you use media queries. For instance, when your screen is smaller or larger than your media query break point, you can change the value of a variable and it will apply its style where its used.",
+        "CSS Variables can simplify the way you use media queries.",
+        "For instance, when your screen is smaller or larger than your media query break point, you can change the value of a variable, and it will apply its style wherever it is used.",
         "<hr>",
-        "In the <code>:root</code> selector of the <code>media query</code>, change it so <code>--penguin-size</code> is redefined and given a value of <code>200px</code>. Also, redefine <code>--penguin-skin</code> and give it a value of <code>black</code>. Then resize the preview to see the change."
+        "In the <code>:root</code> selector of the <code>media query</code>, change it so <code>--penguin-size</code> is redefined and given a value of <code>200px</code>. Also, redefine <code>--penguin-skin</code> and give it a value of <code>black</code>. Then resize the preview to see this change in action."
       ],
       "challengeSeed": [
         "<style>",
