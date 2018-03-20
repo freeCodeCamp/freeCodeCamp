@@ -1,0 +1,42 @@
+.outer-style {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.inner-style {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.outer-flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+  margin: auto;
+}
+
+.quote-container {
+  color: #006400;
+  margin: auto;
+}
+
+.quote-style {
+  margin: auto;
+  line-height: 150%;
+}
+
+.author-style {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+.night {
+  .quote-container {
+    color: @night-text-color;
+  }
+}
