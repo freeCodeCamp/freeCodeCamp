@@ -559,7 +559,7 @@
       ],
       "tests": [
         "assert(arr.every((v, i) => v === i + 3),'message: <code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');",
-        "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g),'message: destructuring was used.');",
+        "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w*\\s*,\\s*\\w*\\s*,\\s*...arr\\s*\\]/g),'message: destructuring was used.');",
         "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), 'message: <code>Array.slice()</code> was not used.');"
       ],
       "type": "waypoint",
