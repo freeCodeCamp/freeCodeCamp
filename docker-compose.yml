@@ -10,7 +10,7 @@
 version: "2"
 services:
     db:
-        image: mongo:3.2.6
+        image: freecodecamp/mongo:production
 
     server:
         image: node:8.9.0
