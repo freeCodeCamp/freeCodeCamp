@@ -72,33 +72,37 @@
       ],
       "type": "Waypoint",
       "challengeType": 7,
-      "descriptionEs": [
-        [
-          "https://i.imgur.com/EzMrezJ.jpg",
-          "Una imagen que muestra nuestro certificado de Desarrollo de interfaces",
-          "This challenge will give you your verified JavaScript Algorithms and Data Structures Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
-          ""
-        ],
-        [
-          "https://i.imgur.com/HArFfMN.jpg",
-          "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
-          "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
-          "#"
-        ],
-        [
-          "https://i.imgur.com/rx2gKfB.jpg",
-          "An image of the text \"JavaScript Algorithms and Data Structures requirements\"",
-          "Let's confirm that you have completed all of our basic and intermediate algorithm scripting challenges. Click the button below to verify this.",
-          "#"
-        ],
-        [
-          "https://i.imgur.com/16SIhHO.jpg",
-          "Una imagen de la palabra \"Congratulations\"",
-          "¡Felicitaciones! Hemos agregado tu certificado de Desarrollo de interfaces a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
-          ""
-        ]
-      ],
-      "titleEs": "Reclama tu certificado de Desarrollo de interfaces"
+      "translations": {
+        "es":{
+          "description": [
+            [
+              "https://i.imgur.com/EzMrezJ.jpg",
+              "Una imagen que muestra nuestro certificado de Desarrollo de interfaces",
+              "This challenge will give you your verified JavaScript Algorithms and Data Structures Certificate. Before we issue your certificate, we must verify that you have completed all of our basic and intermediate algorithm scripting challenges. You must also accept our Academic Honesty Pledge. Click the button below to start this process.",
+              ""
+            ],
+            [
+              "https://i.imgur.com/HArFfMN.jpg",
+              "Plagio (nombre): acción y efecto de plagiar. Plagiar (verbo) - copiar en lo sustancial obras ajenas, dándolas como propias.",
+              "Al pulsar el botón siguiente, juras que todo el código en tus soluciones a los desafíos A) es código que tú o tu compañero escribieron personalmente, o B) proviene de librerías de código abierto como jQuery, o C) ha sido claramente atribuido a sus autores originales. También nos otorgas el permiso para auditar tus soluciones a los desafíos y revocar tu certificado si encontramos evidencia de plagio.",
+              "#"
+            ],
+            [
+              "https://i.imgur.com/rx2gKfB.jpg",
+              "An image of the text \"JavaScript Algorithms and Data Structures requirements\"",
+              "Let's confirm that you have completed all of our basic and intermediate algorithm scripting challenges. Click the button below to verify this.",
+              "#"
+            ],
+            [
+              "https://i.imgur.com/16SIhHO.jpg",
+              "Una imagen de la palabra \"Congratulations\"",
+              "¡Felicitaciones! Hemos agregado tu certificado de Desarrollo de interfaces a tu portafolio. A menos que elijas no mostrar tus soluciones, este certificado será públicamente visible y verificable.",
+              ""
+            ]
+          ],
+          "title": "Reclama tu certificado de Desarrollo de interfaces"
+        }
+      }
     }
   ]
 }

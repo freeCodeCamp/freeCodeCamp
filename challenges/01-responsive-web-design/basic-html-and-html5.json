@@ -889,56 +889,64 @@
       "tests": [],
       "type": "Waypoint",
       "challengeType": 7,
-      "titleEs": "Únete a un Campamento en Tu Ciudad",
-      "descriptionEs": [
-        [
-          "https://i.imgur.com/NAOFJWN.jpg",
-          "Una imagen de algunos de nuestros campistas compartiendo en un café local. 3 hombres y 3 mujeres están sentados alrededor de una mesa con portátiles afuera, y están sonriendo y programando.",
-          "Nuestros Campamentos te ayudan a programar con otros campistas en tu ciudad. Puedes coordinar grupos de estudio o atender eventos de programación locales juntos.",
-          ""
-        ],
-        [
-          "https://i.imgur.com/fTFMjwf.gif",
-          "Un gif mostrándote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
-          "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve.",
-          "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
-        ]
-      ],
-      "titleDe": "Tritt einem Campsite in deiner Stadt bei",
-      "descriptionDe": [
-        [
-          "https://i.imgur.com/XugIMb4.jpg",
-          "Ein Foto von einigen Campern bei einem Treffen in einem lokalen Cafe.",
-          "Unsere Campsites sind Facebook Gruppen die dir helfen dich mit anderen Campern aus deiner Stadt zu treffen. Du kannst diese Gruppen verwenden um an \"Coffee-and-Code\" Treffen, wo du andere Camper in einem Cafe triffst um gemeinsam zu programmieren, teilzunehmen oder zu organisieren",
-          ""
-        ],
-        [
-          "https://i.imgur.com/fTFMjwf.gif",
-          "Ein GIF das zeigt wie du auf den untenstehenden Link klickst, deine Stadt aus der Liste aller Campsites suchst, auf den Facebook Link klickst und der Facebook Gruppe beitrittst.",
-          "Finde deine Stadt auf dieser Liste und klick sie an. Du wirst auf die Facebook Gruppe des Campsites deiner Stadt geleitet. Klick den \"Gruppe beitreten\" Button um eine Beitrittsanfrage zu stellen. Jemand aus der Gruppe sollte dich in kürzester Zeit annehmen.",
-          "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
-        ]
-      ],
-      "TitleIt": "Unisciti ad un gruppo Free Code Camp nella tua città",
-      "DescriptionIt": [
-        [
-          "https://i.imgur.com/XugIMb4.jpg",
-          "Una foto di alcuni dei nostri camper riuniti in un bar locale.",
-          "È possibile programmare insieme ad altri campers nella tua città aderendo ad un gruppo Free Code Camp vicino a te.",
-          ""
-        ],
-        [
-          "https://i.imgur.com/fTFMjwf.gif",
-          "Una gif che mostra come è possibile fare clic sul link qui sotto, e trovare la tua città nella lista dei gruppi locali.",
-          "Trova la tua città in questa lista e cliccala. Verrai indirizzato alla sua pagina Facebook. Fai clic sul pulsante \" Entra nel gruppo \". Qualcuno del gruppo dovrebbe approvare a breve la tua richiesta. Se la tua città non è in questo elenco, scorri alla parte superiore di questo articolo wiki per le istruzioni su come iniziare un gruppo nella tua città. ",
-          "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
-        ]
-      ]
-    },
-    {
-      "id": "58d9cc820ce2197370032a13",
-      "title": "Become a Supporter",
-      "description": [
+      "translations": {
+        "es": {
+          "title": "Únete a un Campamento en Tu Ciudad",
+          "description": [
+            [
+              "https://i.imgur.com/NAOFJWN.jpg",
+              "Una imagen de algunos de nuestros campistas compartiendo en un café local. 3 hombres y 3 mujeres están sentados alrededor de una mesa con portátiles afuera, y están sonriendo y programando.",
+              "Nuestros Campamentos te ayudan a programar con otros campistas en tu ciudad. Puedes coordinar grupos de estudio o atender eventos de programación locales juntos.",
+              ""
+            ],
+            [
+              "https://i.imgur.com/fTFMjwf.gif",
+              "Un gif mostrándote como puedes pulsar en el enlace inferior, encontrar tu ciudad en la lista de Campamentos, entonces haz clic en el enlace de Facebook para tu ciudad y unirte al grupo de Facebook de tu ciudad.",
+              "Encuentra tu ciudad en esta lista y haz clic en esta. Esto te llevara al grupo de Facebook del Campamento de tu ciudad. Da clic en el botón de \"Unirse al grupo\" para unirte a el grupo. Alguien del mismo campamento debería aprobarte en breve.",
+              "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
+            ]
+          ]
+        },
+        "de": {
+          "title": "Tritt einem Campsite in deiner Stadt bei",
+          "description": [
+            [
+              "https://i.imgur.com/XugIMb4.jpg",
+              "Ein Foto von einigen Campern bei einem Treffen in einem lokalen Cafe.",
+              "Unsere Campsites sind Facebook Gruppen die dir helfen dich mit anderen Campern aus deiner Stadt zu treffen. Du kannst diese Gruppen verwenden um an \"Coffee-and-Code\" Treffen, wo du andere Camper in einem Cafe triffst um gemeinsam zu programmieren, teilzunehmen oder zu organisieren",
+              ""
+            ],
+            [
+              "https://i.imgur.com/fTFMjwf.gif",
+              "Ein GIF das zeigt wie du auf den untenstehenden Link klickst, deine Stadt aus der Liste aller Campsites suchst, auf den Facebook Link klickst und der Facebook Gruppe beitrittst.",
+              "Finde deine Stadt auf dieser Liste und klick sie an. Du wirst auf die Facebook Gruppe des Campsites deiner Stadt geleitet. Klick den \"Gruppe beitreten\" Button um eine Beitrittsanfrage zu stellen. Jemand aus der Gruppe sollte dich in kürzester Zeit annehmen.",
+              "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
+            ]
+          ]
+        },
+        "it": {
+          "title": "Unisciti ad un gruppo Free Code Camp nella tua città",
+          "description": [
+            [
+              "https://i.imgur.com/XugIMb4.jpg",
+              "Una foto di alcuni dei nostri camper riuniti in un bar locale.",
+              "È possibile programmare insieme ad altri campers nella tua città aderendo ad un gruppo Free Code Camp vicino a te.",
+              ""
+            ],
+            [
+              "https://i.imgur.com/fTFMjwf.gif",
+              "Una gif che mostra come è possibile fare clic sul link qui sotto, e trovare la tua città nella lista dei gruppi locali.",
+              "Trova la tua città in questa lista e cliccala. Verrai indirizzato alla sua pagina Facebook. Fai clic sul pulsante \" Entra nel gruppo \". Qualcuno del gruppo dovrebbe approvare a breve la tua richiesta. Se la tua città non è in questo elenco, scorri alla parte superiore di questo articolo wiki per le istruzioni su come iniziare un gruppo nella tua città. ",
+              "http://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574"
+            ]
+          ]
+        }
+        }
+      },
+      {
+        "id": "58d9cc820ce2197370032a13",
+        "title": "Become a Supporter",
+        "description": [
         [
           "",
           "",
