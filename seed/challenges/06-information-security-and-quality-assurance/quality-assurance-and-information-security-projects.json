@@ -69,7 +69,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "translations": {}
@@ -119,7 +119,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "translations": {}
@@ -177,7 +177,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "translations": {}
@@ -223,7 +223,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "translations": {}
@@ -289,7 +289,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "isRequired": true,
       "releasedOn": "January 15, 2017",
       "translations": {}
