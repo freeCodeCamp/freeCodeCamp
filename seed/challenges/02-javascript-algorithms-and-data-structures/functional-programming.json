@@ -19,19 +19,7 @@
         "tests": [],
         "type": "Waypoint",
         "challengeType": 7,
-        "isRequired": false,
-        "titleEs": "",
-        "descriptionEs": [
-          []
-        ],
-        "titleFr": "",
-        "descriptionFr": [
-          []
-        ],
-        "titleDe": "",
-        "descriptionDe": [
-          []
-        ]
+        "isRequired": false
     },
     {
       "id": "587d7b8d367417b2b2512b5b",
