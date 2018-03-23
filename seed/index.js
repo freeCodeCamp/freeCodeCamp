@@ -9,6 +9,7 @@ const utils = require('../server/utils');
 const getChallenges = require('./getChallenges');
 const app = require('../server/server');
 const createDebugger = require('debug');
+const { validateChallenge } = require('./schema/challengeSchema');
 
 const log = createDebugger('fcc:seed');
 // force logger to always output
@@ -108,7 +109,7 @@ Observable.combineLatest(
             challenge.order = order;
             challenge.suborder = index + 1;
             challenge.block = dasherize(blockName);
-            challenge.blockId = block.id;
+            challenge.blockId = '' + block.id;
             challenge.isBeta = challenge.isBeta || isBeta;
             challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
             challenge.isLocked = challenge.isLocked || isLocked;
@@ -123,11 +124,35 @@ Observable.combineLatest(
               .join(' ');
             challenge.required = (challenge.required || []).concat(required);
             challenge.template = challenge.template || template;
-
-            return challenge;
+            return _.omit(
+              challenge,
+              [
+                'betaSolutions',
+                'betaTests',
+                'hints',
+                'MDNlinks',
+                'null',
+                'rawSolutions',
+                'react',
+                'reactRedux',
+                'redux',
+                'releasedOn',
+                'translations',
+                'type'
+              ]
+            );
           });
       })
-      .flatMap(challenges => createChallenges(challenges));
+      .flatMap(challenges => {
+        challenges.forEach(challenge => {
+          const result = validateChallenge(challenge);
+          if (result.error) {
+            console.log(result.value);
+            throw new Error(result.error);
+          }
+        });
+        return createChallenges(challenges);
+      });
   })
   .subscribe(
     function(challenges) {
