@@ -119,7 +119,7 @@ class ToolPanel extends PureComponent {
       openHelpModal,
       unlockUntrustedCode
     } = this.props;
-    console.log(isDisabled);
+
     return (
       <div>
         { this.renderHint(hint, this.makeHintm, isDisabled) }
