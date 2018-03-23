@@ -6,20 +6,21 @@
   "challenges": [
     {
       "id": "587d7b8d367417b2b2512b5a",
-        "title": "Introduction to the Functional Programming Challenges",
-        "description": [
-          [
-            "",
-            "",
-            "Functional programming is an approach to software development based around the evaluation of functions. Like mathematics, functions in programming map input to output to produce a result. You can combine basic functions in many ways to build more and more complex programs.<br><br>Functional programming follows a few core principles:<br><br><ul><li>Functions are independent from the state of the program or global variables. They only depend on the arguments passed into them to make a calculation</li><br><li>Functions try to limit any changes to the state of the program and avoid changes to the global objects holding data</li><br><li>Functions have minimal side effects in the program</li></ul><br><br>The functional programming software development approach breaks a program into small, testable parts. This section covers basic functional programming principles in JavaScript.",
-            ""
-          ]        ],
-        "releasedOn": "",
-        "challengeSeed": [],
-        "tests": [],
-        "type": "Waypoint",
-        "challengeType": 7,
-        "isRequired": false
+      "title": "Introduction to the Functional Programming Challenges",
+      "description": [
+        [
+          "",
+          "",
+          "Functional programming is an approach to software development based around the evaluation of functions. Like mathematics, functions in programming map input to output to produce a result. You can combine basic functions in many ways to build more and more complex programs.<br><br>Functional programming follows a few core principles:<br><br><ul><li>Functions are independent from the state of the program or global variables. They only depend on the arguments passed into them to make a calculation</li><br><li>Functions try to limit any changes to the state of the program and avoid changes to the global objects holding data</li><br><li>Functions have minimal side effects in the program</li></ul><br><br>The functional programming software development approach breaks a program into small, testable parts. This section covers basic functional programming principles in JavaScript.",
+          ""
+        ]
+      ],
+      "releasedOn": "",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "challengeType": 7,
+      "isRequired": false
     },
     {
       "id": "587d7b8d367417b2b2512b5b",
@@ -276,9 +277,9 @@
         "console.log(fixedValue); // Should print 4"
       ],
       "tests": [
-          "assert(fixedValue === 4, 'message: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');",
-          "assert(code.match(/function\\s+?incrementer\\s*?\\(.+?\\)/g), 'message: Your <code>incrementer</code> function should take a parameter.');",
-          "assert(newValue === 5, 'message: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
+        "assert(fixedValue === 4, 'message: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');",
+        "assert(code.match(/function\\s+?incrementer\\s*?\\(.+?\\)/g), 'message: Your <code>incrementer</code> function should take a parameter.');",
+        "assert(newValue === 5, 'message: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
       ],
       "solutions": [],
       "hints": [],
@@ -339,9 +340,9 @@
       ],
       "solutions": [],
       "hints": [
-          "Look at how the functions are called to see the correct order of the parameters.",
-          "Consider using the concat method instead of push.",
-          "The slice method returns a new array without modifying the original."
+        "Look at how the functions are called to see the correct order of the parameters.",
+        "Consider using the concat method instead of push.",
+        "The slice method returns a new array without modifying the original."
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -990,9 +991,9 @@
       ],
       "solutions": [],
       "hints": [
-          "Try using .filter() to filter the watchList by Director.",
-          "Try using .map() to return an array of ratings.",
-          "You can use Number() to convert a string into a number."
+        "Try using .filter() to filter the watchList by Director.",
+        "Try using .map() to return an array of ratings.",
+        "You can use Number() to convert a string into a number."
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1088,7 +1089,7 @@
       ],
       "solutions": [],
       "hints": [
-          "The regex pre-defined character class for non-alphanumerics is \\W."
+        "The regex pre-defined character class for non-alphanumerics is \\W."
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1123,7 +1124,7 @@
       ],
       "solutions": [],
       "hints": [
-          "First try to split the given string before applying the join method."
+        "First try to split the given string before applying the join method."
       ],
       "type": "waypoint",
       "challengeType": 1,
@@ -1166,8 +1167,8 @@
       ],
       "solutions": [],
       "hints": [
-          "When several spaces in a row are split by space, it puts an empty string in the array.",
-          "You can use the .toLowerCase() method to make the title all lower case."
+        "When several spaces in a row are split by space, it puts an empty string in the array.",
+        "You can use the .toLowerCase() method to make the title all lower case."
       ],
       "type": "waypoint",
       "challengeType": 1,

@@ -371,7 +371,7 @@
             "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
           ]
         },
-        "es":{
+        "es": {
           "title": "Crea una caja de recetas",
           "description": [
             "<strong>Objetivo:</strong> Construye una aplicación en <a href='https://codepen.io' target='_blank'>CodePen.io</a> que funcione de forma similar al siguiente ejemplo: <a href='https://codepen.io/freeCodeCamp/full/dNVazZ/' target='_blank'>https://codepen.io/freeCodeCamp/full/dNVazZ/</a>.",
@@ -415,25 +415,25 @@
       "type": "zipline",
       "isRequired": false,
       "challengeType": 3,
-      "translations":{
+      "translations": {
         "ru": {
           "title": "Создайте игру \"Жизнь\"",
           "description": [
             "<strong>Задание:</strong> Создайте приложение <a href='https://codepen.io' target='_blank'>CodePen.io</a>, функционал которого схож с этим: <a href='https://codepen.io/freeCodeCamp/full/BpwMZv/' target='_blank'>https://codepen.io/freeCodeCamp/full/BpwMZv/</a>.",
             "<strong>Правило #1:</strong> Не подсматривайте код приложения-примера. Напишите его самостоятельно.",
-          "<strong>Правило #2:</strong> Приложение должно удовлетворять нижеприведённым <a href='https://ru.wikipedia.org/wiki/Пользовательские_истории' target='_blank'>пользовательским историям</a>. Используйте любые библиотеки или API, которые потребуются. Придайте ему свой личный стиль.",
-          "<strong>Правило #3:</strong> Для создания этого проекта вы должны использовать Sass и React.",
-          "<strong>Пользовательская история:</strong> Когда я впервые запускаю игру, она генерирует доску случайным образом и начинает игру.",
-          "<strong>Пользовательская история:</strong> Я могу запустить и остановить игру.",
-          "<strong>Пользовательская история:</strong> Я могу настроить доску.",
-          "<strong>Пользовательская история:</strong> Я могу очистить доску.",
-          "<strong>Пользовательская история:</strong> Когда я нажимаю начать, игра начинает воспроизведение.",
-          "<strong>Пользовательская история:</strong> Каждый раз, когда доска меняется, я могу видеть сколько поколений прошло.",
-          "<strong>Подсказка:</strong> Вот объяснение игры \"Жизнь\" от её создателя Джона Конвея: <a href='https://www.youtube.com/watch?v=E8kUJL04ELA' target='_blank'>https://www.youtube.com/watch?v=E8kUJL04ELA</a>",
-          "<strong>Подсказка:</strong> Вот обзор правил игры \"Жизнь\" для вашего сведения: <a href='https://ru.wikipedia.org/wiki/Жизнь_(игра)' target='_blank'>https://ru.wikipedia.org/wiki/Жизнь_(игра)</a>",
-          "Если что-то не получается, не забывайте пользоваться методом <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Читай-Ищи-Спрашивай</a>.",
-          "Когда закончите, нажмите кнопку \"I've completed this challenge\" и укажите ссылку на вашу работу на CodePen.",
-          "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
+            "<strong>Правило #2:</strong> Приложение должно удовлетворять нижеприведённым <a href='https://ru.wikipedia.org/wiki/Пользовательские_истории' target='_blank'>пользовательским историям</a>. Используйте любые библиотеки или API, которые потребуются. Придайте ему свой личный стиль.",
+            "<strong>Правило #3:</strong> Для создания этого проекта вы должны использовать Sass и React.",
+            "<strong>Пользовательская история:</strong> Когда я впервые запускаю игру, она генерирует доску случайным образом и начинает игру.",
+            "<strong>Пользовательская история:</strong> Я могу запустить и остановить игру.",
+            "<strong>Пользовательская история:</strong> Я могу настроить доску.",
+            "<strong>Пользовательская история:</strong> Я могу очистить доску.",
+            "<strong>Пользовательская история:</strong> Когда я нажимаю начать, игра начинает воспроизведение.",
+            "<strong>Пользовательская история:</strong> Каждый раз, когда доска меняется, я могу видеть сколько поколений прошло.",
+            "<strong>Подсказка:</strong> Вот объяснение игры \"Жизнь\" от её создателя Джона Конвея: <a href='https://www.youtube.com/watch?v=E8kUJL04ELA' target='_blank'>https://www.youtube.com/watch?v=E8kUJL04ELA</a>",
+            "<strong>Подсказка:</strong> Вот обзор правил игры \"Жизнь\" для вашего сведения: <a href='https://ru.wikipedia.org/wiki/Жизнь_(игра)' target='_blank'>https://ru.wikipedia.org/wiki/Жизнь_(игра)</a>",
+            "Если что-то не получается, не забывайте пользоваться методом <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/FreeCodeCamp-Get-Help' target='_blank'>Читай-Ищи-Спрашивай</a>.",
+            "Когда закончите, нажмите кнопку \"I've completed this challenge\" и укажите ссылку на вашу работу на CodePen.",
+            "Вы можете получить отзыв о вашем проекте от коллег, поделившись ссылкой на него в нашем <a href='//gitter.im/freecodecamp/codereview' target='_blank'>чате для рассмотрения кода</a>. Также вы можете поделиться ею через Twitter и на странице Free Code Camp вашего города на Facebook."
           ]
         },
         "es": {
@@ -648,7 +648,7 @@
       "type": "basejump",
       "challengeType": 4,
       "translations": {
-        "es":{
+        "es": {
           "description": [
             "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='http://bookjump.herokuapp.com/' target='_blank'>http://bookjump.herokuapp.com/</a> y despliégalo en Heroku.",
             "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.org/challenges/get-set-for-our-dynamic-web-application-projects</a>.",
@@ -685,7 +685,7 @@
       "type": "basejump",
       "challengeType": 4,
       "translations": {
-        "es":{
+        "es": {
           "description": [
             "<strong>Objetivo:</strong> Construye una aplicación de pila completa (full stack) en JavaScript que funcione de forma similar al siguiente proyecto: <a href='https://midnight-dust.glitch.me/' target='_blank'>https://midnight-dust.glitch.me/</a> y despliégalo en Heroku.",
             "Ten en cuenta que para cada proyecto, debes crear un nuevo repositorio en GitHub y un nuevo proyecto en Heroku. Si no recuerdas cómo hacerlo, visita de nuevo <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.org/challenges/get-set-for-our-dynamic-web-application-projects</a>.",

@@ -36,9 +36,7 @@
         "<hr>",
         "Try creating one of each type of comment."
       ],
-      "challengeSeed": [
-        ""
-      ],
+      "challengeSeed": [],
       "solutions": [
         "// Fake Comment\n/* Another Comment */"
       ],
@@ -1054,7 +1052,9 @@
         "  }",
         "})();"
       ],
-      "solutions": ["var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\";"],
+      "solutions": [
+        "var myStr = \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\";"
+      ],
       "tests": [
         "assert(code.match(/\\\\\"/g).length === 4 && code.match(/[^\\\\]\"/g).length === 2, 'message: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');",
         "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'message: Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
@@ -1102,7 +1102,9 @@
       "tail": [
         "(function() { return \"myStr = \" + myStr; })();"
       ],
-      "solutions": ["var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"],
+      "solutions": [
+        "var myStr = '<a href=\"http://www.example.com\" target=\"_blank\">Link</a>';"
+      ],
       "tests": [
         "assert(!/\\\\/g.test(code) && myStr.match('\\\\s*<a href\\\\s*=\\\\s*\"http://www.example.com\"\\\\s*target\\\\s*=\\\\s*\"_blank\">\\\\s*Link\\\\s*</a>\\\\s*'), 'message: Remove all the <code>backslashes</code> (<code>\\</code>)');",
         "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'message: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
@@ -1393,7 +1395,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/appending-variables-to-strings"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/appending-variables-to-strings"
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
@@ -2759,7 +2761,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/assignment-with-a-returned-value"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/assignment-with-a-returned-value"
     },
     {
       "id": "56533eb9ac21ba0edf2244c6",
@@ -3931,7 +3933,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/adding-a-default-option-in-switch-statements"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/adding-a-default-option-in-switch-statements"
     },
     {
       "id": "56533eb9ac21ba0edf2244df",
@@ -4086,9 +4088,7 @@
         "// Change these values to test",
         "isLess(10, 15);"
       ],
-      "tail": [
-        ""
-      ],
+      "tail": [],
       "solutions": [
         "function isLess(a, b) {\n  return a < b;\n}"
       ],
@@ -4142,9 +4142,7 @@
         "// Change values below to test your code",
         "abTest(2,2);"
       ],
-      "tail": [
-        ""
-      ],
+      "tail": [],
       "solutions": [
         "function abTest(a, b) {\n  if(a < 0 || b < 0) {\n    return undefined;\n  } \n  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));\n}"
       ],
@@ -4464,7 +4462,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/accessing-objects-properties-with-variables"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/accessing-objects-properties-with-variables"
     },
     {
       "id": "56bbb991ad1ed5201cd392d1",
@@ -4756,9 +4754,7 @@
         "// Test your code by modifying these values",
         "checkObj(\"gift\");"
       ],
-      "tail": [
-        ""
-      ],
+      "tail": [],
       "solutions": [
         "var myObj = {\n  gift: \"pony\",\n  pet: \"kitten\",\n  bed: \"sleigh\"\n};\nfunction checkObj(checkProp) {\n  if(myObj.hasOwnProperty(checkProp)) {\n    return myObj[checkProp];\n  } else {\n    return \"Not Found\";\n  }\n}"
       ],
@@ -4906,7 +4902,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/accessing-nested-objects-in-json"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/accessing-nested-objects-in-json"
     },
     {
       "id": "56533eb9ac21ba0edf2244cd",
@@ -4974,7 +4970,7 @@
           ]
         }
       },
-      "guideUrl":"https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/access-array-data-with-indexes"
     },
     {
       "id": "56533eb9ac21ba0edf2244cf",
@@ -5379,9 +5375,7 @@
         "multiplyAll([[1,2],[3,4],[5,6,7]]);",
         ""
       ],
-      "tail": [
-        ""
-      ],
+      "tail": [],
       "solutions": [
         "function multiplyAll(arr) {\n  var product = 1;\n  for (var i = 0; i < arr.length; i++) {\n    for (var j = 0; j < arr[i].length; j++) {\n      product *= arr[i][j];\n    }\n  }\n  return product;\n}\n\nmultiplyAll([[1,2],[3,4],[5,6,7]]);"
       ],
@@ -5450,8 +5444,7 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {
-      }
+      "translations": {}
     },
     {
       "id": "5688e62ea601b2482ff8422b",

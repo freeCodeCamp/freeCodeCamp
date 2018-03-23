@@ -1,5 +1,4 @@
 {
-
   "name": "React",
   "order": 5,
   "time": "5 hours",
@@ -292,7 +291,8 @@
             "  // change code above this line",
             "}"
           ],
-          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))" }
+          "tail": "ReactDOM.render(<MyComponent />, document.getElementById('root'))"
+        }
       },
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })(), 'message: <code>MyComponent</code> should return JSX.');",
@@ -300,7 +300,7 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').text() !== ''; })(), 'message: The <code>div</code> element should contain a string of text.');"
       ],
       "solutions": [
-        "\nconst MyComponent = function() {\n  // change code below this line\n  return (\n    <div>\n      Demo Solution\n    </div>\n  );\n  // change code above this line\n}"
+        "const MyComponent = function() {\n  // change code below this line\n  return (\n    <div>\n      Demo Solution\n    </div>\n  );\n  // change code above this line\n}"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -348,7 +348,7 @@
         "assert(Enzyme.shallow(React.createElement(MyComponent)).html() === '<div><h1>Hello React!</h1></div>', 'message: The <code>h1</code> header should contain the string <code>Hello React!</code>.');"
       ],
       "solutions": [
-        "\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    return (\n      <div>\n        <h1>Hello React!</h1>\n      </div>\n    );\n    // change code above this line\n  }\n};"
+        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    return (\n      <div>\n        <h1>Hello React!</h1>\n      </div>\n    );\n    // change code above this line\n  }\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -506,49 +506,49 @@
           "name": "index",
           "head": [
             "class NonCitrus extends React.Component {",
-              "  render() {",
-              "    return (",
-              "      <div>",
-              "        <h4>Non-Citrus:</h4>",
-              "        <ul>",
-              "          <li>Apples</li>",
-              "          <li>Blueberries</li>",
-              "          <li>Strawberries</li>",
-              "          <li>Bananas</li>",
-              "        </ul>",
-              "      </div>",
-              "    );",
-              "  }",
-              "};",
-              "class Citrus extends React.Component {",
-              "  render() {",
-              "    return (",
-              "      <div>",
-              "        <h4>Citrus:</h4>",
-              "        <ul>",
-              "          <li>Lemon</li>",
-              "          <li>Lime</li>",
-              "          <li>Orange</li>",
-              "          <li>Grapefruit</li>",
-              "        </ul>",
-              "      </div>",
-              "    );",
-              "  }",
-              "};",
-              "class Vegetables extends React.Component {",
-              "  render() {",
-              "    return (",
-              "      <div>",
-              "        <h2>Vegetables:</h2>",
-              "        <ul>",
-              "          <li>Brussel Sprouts</li>",
-              "          <li>Broccoli</li>",
-              "          <li>Squash</li>",
-              "        </ul>",
-              "      </div>",
-              "    );",
-              "     }",
-              "};"
+            "  render() {",
+            "    return (",
+            "      <div>",
+            "        <h4>Non-Citrus:</h4>",
+            "        <ul>",
+            "          <li>Apples</li>",
+            "          <li>Blueberries</li>",
+            "          <li>Strawberries</li>",
+            "          <li>Bananas</li>",
+            "        </ul>",
+            "      </div>",
+            "    );",
+            "  }",
+            "};",
+            "class Citrus extends React.Component {",
+            "  render() {",
+            "    return (",
+            "      <div>",
+            "        <h4>Citrus:</h4>",
+            "        <ul>",
+            "          <li>Lemon</li>",
+            "          <li>Lime</li>",
+            "          <li>Orange</li>",
+            "          <li>Grapefruit</li>",
+            "        </ul>",
+            "      </div>",
+            "    );",
+            "  }",
+            "};",
+            "class Vegetables extends React.Component {",
+            "  render() {",
+            "    return (",
+            "      <div>",
+            "        <h2>Vegetables:</h2>",
+            "        <ul>",
+            "          <li>Brussel Sprouts</li>",
+            "          <li>Broccoli</li>",
+            "          <li>Squash</li>",
+            "        </ul>",
+            "      </div>",
+            "    );",
+            "     }",
+            "};"
           ],
           "contents": [
             "class Fruits extends React.Component {",
@@ -620,39 +620,39 @@
           "head": [
             "",
             "const Fruits = () => {",
-              "  return (",
-                "    <div>",
-                "      <h2>Fruits:</h2>",
-                "      <h4>Non-Citrus:</h4>",
-                "        <ul>",
-                "          <li>Apples</li>",
-                "          <li>Blueberries</li>",
-                "          <li>Strawberries</li>",
-                "          <li>Bananas</li>",
-                "        </ul>",
-                "      <h4>Citrus:</h4>",
-                "        <ul>",
-                "          <li>Lemon</li>",
-                "          <li>Lime</li>",
-                "          <li>Orange</li>",
-                "          <li>Grapefruit</li>",
-                "        </ul>",
-                "    </div>",
-                "  );",
-                "};",
-                "const Vegetables = () => {",
-                  "  return (",
-                    "    <div>",
-                    "      <h2>Vegetables:</h2>",
-                    "      <ul>",
-                    "        <li>Brussel Sprouts</li>",
-                    "        <li>Broccoli</li>",
-                    "        <li>Squash</li>",
-                    "      </ul>",
-                    "    </div>",
-                    "  );",
-                    "};",
-                    ""
+            "  return (",
+            "    <div>",
+            "      <h2>Fruits:</h2>",
+            "      <h4>Non-Citrus:</h4>",
+            "        <ul>",
+            "          <li>Apples</li>",
+            "          <li>Blueberries</li>",
+            "          <li>Strawberries</li>",
+            "          <li>Bananas</li>",
+            "        </ul>",
+            "      <h4>Citrus:</h4>",
+            "        <ul>",
+            "          <li>Lemon</li>",
+            "          <li>Lime</li>",
+            "          <li>Orange</li>",
+            "          <li>Grapefruit</li>",
+            "        </ul>",
+            "    </div>",
+            "  );",
+            "};",
+            "const Vegetables = () => {",
+            "  return (",
+            "    <div>",
+            "      <h2>Vegetables:</h2>",
+            "      <ul>",
+            "        <li>Brussel Sprouts</li>",
+            "        <li>Broccoli</li>",
+            "        <li>Squash</li>",
+            "      </ul>",
+            "    </div>",
+            "  );",
+            "};",
+            ""
           ],
           "contents": [
             "",
@@ -684,7 +684,7 @@
         "assert((function() { const html = document.getElementById('challenge-node').childNodes[0].innerHTML; return (html === '<h1>Types of Food:</h1><div><h2>Fruits:</h2><h4>Non-Citrus:</h4><ul><li>Apples</li><li>Blueberries</li><li>Strawberries</li><li>Bananas</li></ul><h4>Citrus:</h4><ul><li>Lemon</li><li>Lime</li><li>Orange</li><li>Grapefruit</li></ul></div><div><h2>Vegetables:</h2><ul><li>Brussel Sprouts</li><li>Broccoli</li><li>Squash</li></ul></div>'); })(), 'message: The <code>TypesOfFood</code> component should render to the DOM within the <code>div</code> with the id <code>challenge-node</code>.');"
       ],
       "solutions": [
-        "\nclass TypesOfFood extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>Types of Food:</h1>\n        {/* change code below this line */}\n          <Fruits />\n           <Vegetables />\n         {/* change code above this line */}\n      </div>\n    );\n  }\n};\n\n// change code below this line\nReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));"
+        "class TypesOfFood extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>Types of Food:</h1>\n        {/* change code below this line */}\n          <Fruits />\n           <Vegetables />\n         {/* change code above this line */}\n      </div>\n    );\n  }\n};\n\n// change code below this line\nReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -782,7 +782,7 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.find('p').html().includes(Date().substr(3)); })(), 'message: The <code>CurrentDate</code> component should render the value from the <code>date</code> prop in the <code>p</code> tag.');"
       ],
       "solutions": [
-        "\nconst CurrentDate = (props) => {\n  return (\n    <div>\n      { /* change code below this line */ }\n      <p>The current date is: {props.date}</p>\n      { /* change code above this line */ }\n    </div>\n  );\n};\n\nclass Calendar extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>What date is it?</h3>\n        { /* change code below this line */ }\n        <CurrentDate date={Date()} />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
+        "const CurrentDate = (props) => {\n  return (\n    <div>\n      { /* change code below this line */ }\n      <p>The current date is: {props.date}</p>\n      { /* change code above this line */ }\n    </div>\n  );\n};\n\nclass Calendar extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>What date is it?</h3>\n        { /* change code below this line */ }\n        <CurrentDate date={Date()} />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -1096,8 +1096,8 @@
           "name": "index",
           "head": [
             "var PropTypes = {",
-              "   string: { isRequired: true }",
-              "};"
+            "   string: { isRequired: true }",
+            "};"
           ],
           "contents": [
             "class CampSite extends React.Component {",
@@ -1177,7 +1177,7 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find('h1').text() === initialState.name; })(), 'message: The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.');"
       ],
       "solutions": [
-        "\nclass StatefulComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp!'\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.name}</h1>\n      </div>\n    );\n  }\n};"
+        "class StatefulComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp!'\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.name}</h1>\n      </div>\n    );\n  }\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2058,7 +2058,7 @@
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('Dialog').length === 1; })(), 'message: The <code>Controller</code> component should render the <code>Dialog</code> component as a child.');",
         "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); return lifecycleChild.includes('console.log') && lifecycleChild.includes('this.props') })(), 'message: The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>this.props</code> to the console.');",
-        "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); const nextPropsAsParameterTest = \/componentWillReceiveProps(| *?= *?)(\\(|)nextProps(\\)|)( *?=> *?{| *?{|{)\/; const nextPropsInConsoleLogTest = \/console\\.log\\(.*?nextProps\\b.*?\\)\/; return ( lifecycleChild.includes('console.log') && nextPropsInConsoleLogTest.test(lifecycleChild) && nextPropsAsParameterTest.test(lifecycleChild) ); })(), 'message: The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>nextProps</code> to the console.');",
+        "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); const nextPropsAsParameterTest = /componentWillReceiveProps(| *?= *?)(\\(|)nextProps(\\)|)( *?=> *?{| *?{|{)/; const nextPropsInConsoleLogTest = /console\\.log\\(.*?nextProps\\b.*?\\)/; return ( lifecycleChild.includes('console.log') && nextPropsInConsoleLogTest.test(lifecycleChild) && nextPropsAsParameterTest.test(lifecycleChild) ); })(), 'message: The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>nextProps</code> to the console.');",
         "assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentDidUpdate.toString().replace(/ /g,''); return lifecycleChild.length !== 'undefined' && lifecycleChild.includes('console.log'); })(), 'message: The <code>Dialog</code> component should call the <code>componentDidUpdate</code> method and log a message to the console.');"
       ],
       "solutions": [
@@ -2186,7 +2186,7 @@
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })(), 'message: The <code>div</code> element should have a font size of <code>72px</code>.');"
       ],
       "solutions": [
-        "\nclass Colorful extends React.Component {\n  render() {\n    return (\n      <div style={{color: \"red\", fontSize: 72}}>Big Red</div>\n    );\n  }\n};\n"
+        "class Colorful extends React.Component {\n  render() {\n    return (\n      <div style={{color: \"red\", fontSize: 72}}>Big Red</div>\n    );\n  }\n};\n"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2235,7 +2235,7 @@
         "assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === \"purple\" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === \"2px solid purple\"); })(), 'message: The <code>div</code> element should have its styles defined by the <code>styles</code> object.');"
       ],
       "solutions": [
-        "\nconst styles = {\n  color: \"purple\",\n  fontSize: 40,\n  border: \"2px solid purple\"\n};\n// change code above this line\nclass Colorful extends React.Component {\n  render() {\n    // change code below this line\n    return (\n      <div style={styles}>Style Me!</div>\n  // change code above this line\n    );\n  }\n};\n"
+        "const styles = {\n  color: \"purple\",\n  fontSize: 40,\n  border: \"2px solid purple\"\n};\n// change code above this line\nclass Colorful extends React.Component {\n  render() {\n    // change code below this line\n    return (\n      <div style={styles}>Style Me!</div>\n  // change code above this line\n    );\n  }\n};\n"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2346,7 +2346,7 @@
         "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MagicEightBall)); const simulate = () => { comp.find('input').simulate('change', { target: { value: 'test?' }}); comp.find('button').simulate('click'); }; const result = () => comp.find('p').text(); const _1 = () => { simulate(); return waitForIt(() => result()) }; const _2 = () => { simulate(); return waitForIt(() => result()) }; const _3 = () => { simulate(); return waitForIt(() => result()) }; const _4 = () => { simulate(); return waitForIt(() => result()) }; const _5 = () => { simulate(); return waitForIt(() => result()) }; const _6 = () => { simulate(); return waitForIt(() => result()) }; const _7 = () => { simulate(); return waitForIt(() => result()) }; const _8 = () => { simulate(); return waitForIt(() => result()) }; const _9 = () => { simulate(); return waitForIt(() => result()) }; const _10 = () => { simulate(); return waitForIt(() => result()) }; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const actualAnswers = [_1_val, _2_val, _3_val, _4_val, _5_val, _6_val, _7_val, _8_val, _9_val, _10_val]; const hasIndex = actualAnswers.filter((answer, i) => possibleAnswers.indexOf(answer) !== -1); const notAllEqual = new Set(actualAnswers); assert(notAllEqual.size > 1 && hasIndex.length === 10, 'message: When text is entered into the <code>input</code> element and the button is clicked, the <code>MagicEightBall</code> component should return a <code>p</code> element that contains a random element from the <code>possibleAnswers</code> array.');}"
       ],
       "solutions": [
-        "\nconst inputStyle = {\n  width: 235,\n  margin: 5\n}\n\nclass MagicEightBall extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      userInput: '',\n      randomIndex: ''\n    }\n    this.ask = this.ask.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  ask() {\n    if (this.state.userInput) {\n      this.setState({\n        randomIndex: Math.floor(Math.random() * 20),\n        userInput: ''\n      });\n    }\n  }\n  handleChange(event) {\n    this.setState({\n      userInput: event.target.value\n    });\n  }\n  render() {\n    const possibleAnswers = [\n      \"It is certain\", \"It is decidedly so\", \"Without a doubt\",\n      \"Yes, definitely\", \"You may rely on it\", \"As I see it, yes\",\n      \"Outlook good\", \"Yes\", \"Signs point to yes\", \"Reply hazy try again\",\n      \"Ask again later\", \"Better not tell you now\", \"Cannot predict now\",\n      \"Concentrate and ask again\", \"Don't count on it\", \"My reply is no\",\n      \"My sources say no\", \"Outlook not so good\",\"Very doubtful\", \"Most likely\"\n    ];\n    const answer = possibleAnswers[this.state.randomIndex];\n    return (\n      <div>\n        <input\n          type=\"text\"\n          value={this.state.userInput}\n          onChange={this.handleChange}\n          style={inputStyle} /><br />\n        <button onClick={this.ask}>Ask the Magic Eight Ball!</button><br />\n        <h3>Answer:</h3>\n        <p>\n          {answer}\n        </p>\n      </div>\n    );\n  }\n};"
+        "const inputStyle = {\n  width: 235,\n  margin: 5\n}\n\nclass MagicEightBall extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      userInput: '',\n      randomIndex: ''\n    }\n    this.ask = this.ask.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  ask() {\n    if (this.state.userInput) {\n      this.setState({\n        randomIndex: Math.floor(Math.random() * 20),\n        userInput: ''\n      });\n    }\n  }\n  handleChange(event) {\n    this.setState({\n      userInput: event.target.value\n    });\n  }\n  render() {\n    const possibleAnswers = [\n      \"It is certain\", \"It is decidedly so\", \"Without a doubt\",\n      \"Yes, definitely\", \"You may rely on it\", \"As I see it, yes\",\n      \"Outlook good\", \"Yes\", \"Signs point to yes\", \"Reply hazy try again\",\n      \"Ask again later\", \"Better not tell you now\", \"Cannot predict now\",\n      \"Concentrate and ask again\", \"Don't count on it\", \"My reply is no\",\n      \"My sources say no\", \"Outlook not so good\",\"Very doubtful\", \"Most likely\"\n    ];\n    const answer = possibleAnswers[this.state.randomIndex];\n    return (\n      <div>\n        <input\n          type=\"text\"\n          value={this.state.userInput}\n          onChange={this.handleChange}\n          style={inputStyle} /><br />\n        <button onClick={this.ask}>Ask the Magic Eight Ball!</button><br />\n        <h3>Answer:</h3>\n        <p>\n          {answer}\n        </p>\n      </div>\n    );\n  }\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2545,7 +2545,7 @@
         "assert(new RegExp(/(\\s|;)if(\\s|\\()/).test(Enzyme.mount(React.createElement(CheckUserAge)).instance().render.toString()) === false, 'message: Your code should not contain any <code>if/else</code> statements.');"
       ],
       "solutions": [
-        "\nconst inputStyle = {\n  width: 235,\n  margin: 5\n}\n\nclass CheckUserAge extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      userAge: '',\n      input: ''\n    }\n    this.submit = this.submit.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(e) {\n    this.setState({\n      input: e.target.value,\n      userAge: ''\n    });\n  }\n  submit() {\n    this.setState({\n      userAge: this.state.input\n    });\n  }\n  render() {\n    const buttonOne = <button onClick={this.submit}>Submit</button>;\n    const buttonTwo = <button>You May Enter</button>;\n    const buttonThree = <button>You Shall Not Pass</button>;\n    return (\n      <div>\n        <h3>Enter Your Age to Continue</h3>\n        <input\n          style={inputStyle}\n          type=\"number\"\n          value={this.state.input}\n          onChange={this.handleChange} /><br />\n          {\n            this.state.userAge === '' ?\n            buttonOne :\n            this.state.userAge >= 18 ?\n            buttonTwo :\n            buttonThree\n          }\n      </div>\n    );\n  }\n};"
+        "const inputStyle = {\n  width: 235,\n  margin: 5\n}\n\nclass CheckUserAge extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      userAge: '',\n      input: ''\n    }\n    this.submit = this.submit.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(e) {\n    this.setState({\n      input: e.target.value,\n      userAge: ''\n    });\n  }\n  submit() {\n    this.setState({\n      userAge: this.state.input\n    });\n  }\n  render() {\n    const buttonOne = <button onClick={this.submit}>Submit</button>;\n    const buttonTwo = <button>You May Enter</button>;\n    const buttonThree = <button>You Shall Not Pass</button>;\n    return (\n      <div>\n        <h3>Enter Your Age to Continue</h3>\n        <input\n          style={inputStyle}\n          type=\"number\"\n          value={this.state.input}\n          onChange={this.handleChange} /><br />\n          {\n            this.state.userAge === '' ?\n            buttonOne :\n            this.state.userAge >= 18 ?\n            buttonTwo :\n            buttonThree\n          }\n      </div>\n    );\n  }\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2691,7 +2691,7 @@
         "async () => {  const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); const simulateChange = (el, value) => el.simulate('change', {target: {value}}); let initialStyle = mockedComponent.find('input').props().style.border; const state_1 = () => { mockedComponent.setState({input: 'this is 15 char' }); return waitForIt(() => mockedComponent.find('input').props().style.border )}; const state_2 = () => { mockedComponent.setState({input: 'A very long string longer than 15 characters.' }); return waitForIt(() => mockedComponent.find('input').props().style.border )}; const style_1 = await state_1(); const style_2 = await state_2(); assert(initialStyle === '1px solid black' && style_1 === '1px solid black' && style_2 === '3px solid red', 'message: The <code>input</code> tag should be styled with a border of <code>3px solid red</code> if the input value in state is longer than 15 characters.'); }; "
       ],
       "solutions": [
-        "\nclass GateKeeper extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(event) {\n    this.setState({ input: event.target.value })\n  }\n  render() {\n    let inputStyle = {\n      border: '1px solid black'\n    };\n    if (this.state.input.length > 15) {\n      inputStyle.border = '3px solid red';\n    };\n    return (\n      <div>\n        <h3>Don't Type Too Much:</h3>\n        <input\n          type=\"text\"\n          style={inputStyle}\n          value={this.state.input}\n          onChange={this.handleChange} />\n      </div>\n    );\n  }\n};"
+        "class GateKeeper extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(event) {\n    this.setState({ input: event.target.value })\n  }\n  render() {\n    let inputStyle = {\n      border: '1px solid black'\n    };\n    if (this.state.input.length > 15) {\n      inputStyle.border = '3px solid red';\n    };\n    return (\n      <div>\n        <h3>Don't Type Too Much:</h3>\n        <input\n          type=\"text\"\n          style={inputStyle}\n          value={this.state.input}\n          onChange={this.handleChange} />\n      </div>\n    );\n  }\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2772,7 +2772,7 @@
         "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const simulateChange = (el, value) => el.simulate('change', {target: {value}}); const state_1 = () => { return waitForIt(() => mockedComponent.find('ul').find('li'))}; const setInput = () => { return waitForIt(() => simulateChange(mockedComponent.find('textarea'), \"testA, testB, testC\"))}; const click = () => { return waitForIt(() => mockedComponent.find('button').simulate('click'))}; const state_2 = () => { return waitForIt(() => { const nodes = mockedComponent.find('ul').find('li'); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') }; })}; const setInput_2 = () => { return waitForIt(() => simulateChange(mockedComponent.find('textarea'), \"t1, t2, t3, t4, t5, t6\"))}; const click_1 = () => { return waitForIt(() => mockedComponent.find('button').simulate('click'))}; const state_3 = () => { return waitForIt(() => { const nodes = mockedComponent.find('ul').find('li'); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') }; })}; const awaited_state_1 = await state_1(); const awaited_setInput = await setInput(); const awaited_click = await click(); const awaited_state_2 = await state_2(); const awaited_setInput_2 = await setInput_2(); const awaited_click_1 = await click_1(); const awaited_state_3 = await state_3(); assert(awaited_state_1.length === 0 && awaited_state_2.nodes.length === 3 && awaited_state_3.nodes.length === 6 && awaited_state_2.text === 'testA testB testC' && awaited_state_3.text === 't1 t2 t3 t4 t5 t6', 'message: When the <code>Create List</code> button is clicked, the <code>MyToDoList</code> component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the <code>textarea</code> element.'); }; "
       ],
       "solutions": [
-        "\nconst textAreaStyles = {\n  width: 235,\n  margin: 5\n};\n\nclass MyToDoList extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      toDoList: [],\n      userInput: ''\n    }\n    this.handleSubmit = this.handleSubmit.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleSubmit() {\n    const itemsArray = this.state.userInput.split(',');\n    this.setState({\n      toDoList: itemsArray\n    });\n  }\n  handleChange(e) {\n    this.setState({\n      userInput: e.target.value\n    });\n  }\n  render() {\n    const items = this.state.toDoList.map( (item, i) => {\n      return <li key={i}>{item}</li>\n    });\n    return (\n      <div>\n        <textarea\n          onChange={this.handleChange}\n          value={this.state.userInput}\n          style={textAreaStyles}\n          placeholder=\"Separate Items With Commas\" /><br />\n        <button onClick={this.handleSubmit}>Create List</button>\n        <h1>My \"To Do\" List:</h1>\n        <ul>\n          {items}\n        </ul>\n      </div>\n    );\n  }\n};"
+        "const textAreaStyles = {\n  width: 235,\n  margin: 5\n};\n\nclass MyToDoList extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      toDoList: [],\n      userInput: ''\n    }\n    this.handleSubmit = this.handleSubmit.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleSubmit() {\n    const itemsArray = this.state.userInput.split(',');\n    this.setState({\n      toDoList: itemsArray\n    });\n  }\n  handleChange(e) {\n    this.setState({\n      userInput: e.target.value\n    });\n  }\n  render() {\n    const items = this.state.toDoList.map( (item, i) => {\n      return <li key={i}>{item}</li>\n    });\n    return (\n      <div>\n        <textarea\n          onChange={this.handleChange}\n          value={this.state.userInput}\n          style={textAreaStyles}\n          placeholder=\"Separate Items With Commas\" /><br />\n        <button onClick={this.handleSubmit}>Create List</button>\n        <h1>My \"To Do\" List:</h1>\n        <ul>\n          {items}\n        </ul>\n      </div>\n    );\n  }\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2828,7 +2828,7 @@
         "assert((() => { const ul = Enzyme.mount(React.createElement(Frameworks)).find('ul'); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key(), ul.childAt(4).key(), ul.childAt(5).key(), ]); return keys.size === 6; })(), 'message: Each list item element should have a unique <code>key</code> attribute.');"
       ],
       "solutions": [
-        "\nconst frontEndFrameworks = [\n  'React',\n  'Angular',\n  'Ember',\n  'Knockout',\n  'Backbone',\n  'Vue'\n];\n\nfunction Frameworks() {\n  const renderFrameworks = frontEndFrameworks.map((fw, i) => {\n    return <li key={i}>{fw}</li>\n  })\n  return (\n    <div>\n      <h1>Popular Front End JavaScript Frameworks</h1>\n      <ul>\n        {renderFrameworks}\n      </ul>\n    </div>\n  );\n};"
+        "const frontEndFrameworks = [\n  'React',\n  'Angular',\n  'Ember',\n  'Knockout',\n  'Backbone',\n  'Vue'\n];\n\nfunction Frameworks() {\n  const renderFrameworks = frontEndFrameworks.map((fw, i) => {\n    return <li key={i}>{fw}</li>\n  })\n  return (\n    <div>\n      <h1>Popular Front End JavaScript Frameworks</h1>\n      <ul>\n        {renderFrameworks}\n      </ul>\n    </div>\n  );\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2908,7 +2908,7 @@
         "assert((() => { const ul = Enzyme.mount(React.createElement(MyComponent)).find('ul'); console.log(ul.debug()); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key() ]); return keys.size === 4; })(), 'message: Each list item element should have a unique <code>key</code> attribute.');"
       ],
       "solutions": [
-        "\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      users: [\n        {\n          username: 'Jeff',\n          online: true\n        },\n        {\n          username: 'Alan',\n          online: false\n        },\n        {\n          username: 'Mary',\n          online: true\n        },\n        {\n          username: 'Jim',\n          online: false\n        },\n        {\n          username: 'Sara',\n          online: true\n        },\n        {\n          username: 'Laura',\n          online: true\n        }\n      ]\n    }\n  }\n  render() {\n    const usersOnline = this.state.users.filter(user => {\n      return user.online;\n    });\n    const renderOnlineUsers = usersOnline.map(user => {\n      return (\n        <li key={user.username}>{user.username}</li>\n      );\n    });\n    return (\n       <div>\n         <h1>Current Online Users:</h1>\n         <ul>\n          {renderOnlineUsers}\n        </ul>\n       </div>\n    );\n  }\n};"
+        "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      users: [\n        {\n          username: 'Jeff',\n          online: true\n        },\n        {\n          username: 'Alan',\n          online: false\n        },\n        {\n          username: 'Mary',\n          online: true\n        },\n        {\n          username: 'Jim',\n          online: false\n        },\n        {\n          username: 'Sara',\n          online: true\n        },\n        {\n          username: 'Laura',\n          online: true\n        }\n      ]\n    }\n  }\n  render() {\n    const usersOnline = this.state.users.filter(user => {\n      return user.online;\n    });\n    const renderOnlineUsers = usersOnline.map(user => {\n      return (\n        <li key={user.username}>{user.username}</li>\n      );\n    });\n    return (\n       <div>\n         <h1>Current Online Users:</h1>\n         <ul>\n          {renderOnlineUsers}\n        </ul>\n       </div>\n    );\n  }\n};"
       ],
       "challengeType": 6,
       "isRequired": false,
@@ -2954,7 +2954,7 @@
         "getUserInput => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div', 'message: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.');"
       ],
       "solutions": [
-        "\nclass App extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <div/>\n  }\n};\n\n// change code below this line\nReactDOMServer.renderToString(<App/>);"
+        "class App extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <div/>\n  }\n};\n\n// change code below this line\nReactDOMServer.renderToString(<App/>);"
       ],
       "challengeType": 6,
       "isRequired": false,
