@@ -1894,11 +1894,7 @@
         "To start with, create an <code>h3</code> element, with the text <code>jQuery Playground</code>.",
         "Color your <code>h3</code> element with the <code>text-primary</code> Bootstrap class, and center it with the <code>text-center</code> Bootstrap class."
       ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
+      "challengeSeed": [],
       "tests": [
         "assert($(\"h3\") && $(\"h3\").length > 0, 'message: Add a <code>h3</code> element to your page.');",
         "assert(code.match(/<\\/h3>/g) && code.match(/<h3/g) && code.match(/<\\/h3>/g).length === code.match(/<h3/g).length, 'message: Make sure your <code>h3</code> element has a closing tag.');",

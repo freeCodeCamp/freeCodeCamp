@@ -37,13 +37,13 @@
         "<hr>",
         "To pass the test on this challenge, change your <code>h1</code> element's text to say \"Hello World\"."
       ],
-      "challengeSeed": ["<h1>Hello</h1>"],
+      "challengeSeed": [
+        "<h1>Hello</h1>"
+      ],
       "tests": [
         {
-          "text":
-            "Your <code>h1</code> element should have the text \"Hello World\".",
-          "testString":
-            "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
+          "text": "Your <code>h1</code> element should have the text \"Hello World\".",
+          "testString": "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
         }
       ],
       "type": "waypoint",
@@ -130,7 +130,9 @@
         "<hr>",
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element."
       ],
-      "challengeSeed": ["<h1>Hello World</h1>"],
+      "challengeSeed": [
+        "<h1>Hello World</h1>"
+      ],
       "tests": [
         "assert(($(\"h2\").length > 0), 'message: Create an <code>h2</code> element.');",
         "assert(code.match(/<\\/h2>/g) && code.match(/<\\/h2>/g).length === code.match(/<h2>/g).length, 'message: Make sure your <code>h2</code> element has a closing tag.');",
@@ -195,7 +197,10 @@
         "<hr>",
         "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\"."
       ],
-      "challengeSeed": ["<h1>Hello World</h1>", "<h2>CatPhotoApp</h2>"],
+      "challengeSeed": [
+        "<h1>Hello World</h1>",
+        "<h2>CatPhotoApp</h2>"
+      ],
       "tests": [
         "assert(($(\"p\").length > 0), 'message: Create a <code>p</code> element.');",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), 'message: Your <code>p</code> element should have the text \"Hello Paragraph\".');",
@@ -639,8 +644,7 @@
           ]
         }
       },
-      "guideUrl":
-        "https://guide.freecodecamp.org/certificates/add-images-to-your-website"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/add-images-to-your-website"
     },
     {
       "id": "bad87fee1348bd9aedf08816",
@@ -766,8 +770,7 @@
       "challengeType": 0,
       "translations": {
         "pt-br": {
-          "title":
-            "Crie links para seções internas de uma página com elementos âncora",
+          "title": "Crie links para seções internas de uma página com elementos âncora",
           "description": [
             "Além de criar links externos, elementos âncora também podem ser usados para criar links internos, que são links que pulam para diferentes seções dentro de uma mesma página.",
             "O formato é parecido com um link externo, só que, ao invés de uma URL no atributo <code>href</code>, você usa o símbolo <code>#</code> e uma palavra para descrever a seção para a qual você quer pular.",
@@ -941,12 +944,12 @@
             ]
           ]
         }
-        }
-      },
-      {
-        "id": "58d9cc820ce2197370032a13",
-        "title": "Become a Supporter",
-        "description": [
+      }
+    },
+    {
+      "id": "58d9cc820ce2197370032a13",
+      "title": "Become a Supporter",
+      "description": [
         [
           "",
           "",
@@ -1449,8 +1452,7 @@
           ]
         }
       },
-      "guideUrl":
-        "https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field"
     },
     {
       "id": "bad87fee1348bd9aede08830",
@@ -1618,8 +1620,7 @@
           ]
         }
       },
-      "guideUrl":
-        "https://guide.freecodecamp.org/certificates/add-a-submit-button-to-a-form"
+      "guideUrl": "https://guide.freecodecamp.org/certificates/add-a-submit-button-to-a-form"
     },
     {
       "id": "bad87fee1348bd9aedc08830",
@@ -1696,8 +1697,7 @@
           ]
         },
         "ru": {
-          "title":
-            "Используйте HTML5, чтобы сделать заполнение поля обязательным",
+          "title": "Используйте HTML5, чтобы сделать заполнение поля обязательным",
           "description": [
             "Вы можете требовать заполнения определённых полей формы, таким образом пользователь не сможет отправить данные формы до их заполнения.",
             "Например, если бы вы хотели сделать заполнение текстового поля обязательным, вы могли бы добавить слово <code>required</code> внутрь вашего элемента <code>input</code>: <code>&#60;input type=\"text\" required&#62;</code>",
@@ -1976,8 +1976,7 @@
           ]
         },
         "es": {
-          "title":
-            "Marca botones de radio y casillas de verificación por omisión",
+          "title": "Marca botones de radio y casillas de verificación por omisión",
           "description": [
             "Puedes marcar por omisión una casilla de verificación o un botón de radio usando el atributo <code>checked</code>.",
             "Para ello, sólo tienes que añadir la palabra \"checked\" en el interior de un elemento <code>input</code>. Por ejemplo:",
@@ -1987,8 +1986,7 @@
           ]
         },
         "pt-br": {
-          "title":
-            "Faça botões de opção e caixas de seleção estarem marcados por padrão",
+          "title": "Faça botões de opção e caixas de seleção estarem marcados por padrão",
           "description": [
             "Você pode fazer uma caixa de seleção ou botão de opção estar marcado por padrão usando o atributo <code>checked</code>.",
             "Para fazer isso, apenas insira a palavra \"checked\" em um elemento <code>input</code>. Por exemplo:",
@@ -2120,7 +2118,7 @@
         "<hr>",
         "Add a <code>DOCTYPE</code> tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing <code>html</code> tags, which wrap around an <code>h1</code> element. The heading can include any text."
       ],
-      "challengeSeed": ["", "", ""],
+      "challengeSeed": [],
       "tests": [
         "assert(code.match(/<!DOCTYPE\\s+?html\\s*?>/gi), 'message: Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.');",
         "assert($('html').length == 1, 'message: There should be one <code>html</code> element.');",
