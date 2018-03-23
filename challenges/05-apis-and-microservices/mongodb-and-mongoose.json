@@ -42,22 +42,26 @@
         [
           "",
           "",
-          "Once you open the mLab page, you should sign up for a new account.<ul><li>Click the <a href='https://mlab.com/signup/'>Sign Up</a> button in the top right corner to open the registration page.</li><li>Fill the registration form with your information and send it.</li><li>You should be logged into your new, unverified account.</li><li>In the top of the screen, a message should appear asking to send you an e-mail for account verification. Send and confirm it.</li><li>After you confirm your account, click <bold>Create new</bold> in the <i>MongoDB Deployments</i> section.</li></ul>"
+          "Once you open the mLab page, you should sign up for a new account.<ul><li>Click the <a href='https://mlab.com/signup/'>Sign Up</a> button in the top right corner to open the registration page.</li><li>Fill the registration form with your information and send it.</li><li>You should be logged into your new, unverified account.</li><li>In the top of the screen, a message should appear asking to send you an e-mail for account verification. Send and confirm it.</li><li>After you confirm your account, click <bold>Create new</bold> in the <i>MongoDB Deployments</i> section.</li></ul>",
+          ""
         ],
         [
           "",
           "",
-          "Now we are going to create the actual database you are going to be using.<ul><li>Choose a <i>Cloud Provider</i> from the available list.</li><li>Select the <i>Sandbox</i> plan type, which is the only one with no cost, and press <bold>Continue</bold>.</li><li>Select a region for your Sandbox, from the available list, and press <bold>Continue</bold>.</li><li>Input a name for your database. This name will be used in the URI for your database. After that, press <bold>Continue</bold>.</li></ul>A summary of all your choices should appear, allowing you to change any information provided in the previous steps. Press <bold>Submit Order</bold> to confirm the information."
+          "Now we are going to create the actual database you are going to be using.<ul><li>Choose a <i>Cloud Provider</i> from the available list.</li><li>Select the <i>Sandbox</i> plan type, which is the only one with no cost, and press <bold>Continue</bold>.</li><li>Select a region for your Sandbox, from the available list, and press <bold>Continue</bold>.</li><li>Input a name for your database. This name will be used in the URI for your database. After that, press <bold>Continue</bold>.</li></ul>A summary of all your choices should appear, allowing you to change any information provided in the previous steps. Press <bold>Submit Order</bold> to confirm the information.",
+          ""
         ],
         [
           "",
           "",
-          "After you confirmed your configuration, a new sandbox should have been created in the <i>MongoDB Deployments</i> section. We are now going to create an administrator, so you can use the database in your application.<ul><li>Click the newly-created database.</li><li>Click the <i>Users</i> section.</li><li>Click the <bold>Add database user</bold> button.</li><li>Input an username and password for your administrator. Do not mark it as read-only or you will not be able to add any information to the database with this user.</li></ul>"
+          "After you confirmed your configuration, a new sandbox should have been created in the <i>MongoDB Deployments</i> section. We are now going to create an administrator, so you can use the database in your application.<ul><li>Click the newly-created database.</li><li>Click the <i>Users</i> section.</li><li>Click the <bold>Add database user</bold> button.</li><li>Input an username and password for your administrator. Do not mark it as read-only or you will not be able to add any information to the database with this user.</li></ul>",
+          ""
         ],
         [
           "",
           "",
-          "Almost done! We have created our new database and created an user to access it, so we just need to find a way to use it in our applications.<ul><li>In your database page, you should see some instructions about connecting using the standard MongoDB URI.</li><li>The line should look like this <code>mongodb://dbuser:dbpassword@ds0$PORT$.mlab.com:$PORT$/$DATABASE-NAME$</code>.</li><li>Copy this URI and substitute dbuser and dbpassword with the information for the user you previously created in the database.</li><li>That's it! This is the URI you will add to your application to connect to your database. Keep this URI safe somewhere, so you can use it later!</li>Feel free to create separate databases for different applications, if they don't have an use for the same data. You just need to create the sandbox, user and obtain the new URI.</ul>"
+          "Almost done! We have created our new database and created an user to access it, so we just need to find a way to use it in our applications.<ul><li>In your database page, you should see some instructions about connecting using the standard MongoDB URI.</li><li>The line should look like this <code>mongodb://dbuser:dbpassword@ds0$PORT$.mlab.com:$PORT$/$DATABASE-NAME$</code>.</li><li>Copy this URI and substitute dbuser and dbpassword with the information for the user you previously created in the database.</li><li>That's it! This is the URI you will add to your application to connect to your database. Keep this URI safe somewhere, so you can use it later!</li>Feel free to create separate databases for different applications, if they don't have an use for the same data. You just need to create the sandbox, user and obtain the new URI.</ul>",
+          ""
         ]
       ],
       "challengeSeed": [],
