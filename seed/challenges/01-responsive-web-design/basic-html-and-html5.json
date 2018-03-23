@@ -2188,8 +2188,7 @@
             "Edite o código para que tenha uma <code>head</code> e um <code>body</code>. O elemento <code>head</code> deve incluir apenas o <code>title</code>, e o elemento <code>body</code> deve conter apenas o <code>h1</code> e o <code>p</code>."
           ]
         }
-      },
-      "ru": {}
+      }
     }
   ]
 }
