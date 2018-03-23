@@ -16,11 +16,7 @@ function LargeNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
             <Col className='nav-component' sm={ 4 } xs={ 6 }>
               <Navbar.Header>
                 <NavLogo clickOnLogo={ clickOnLogo } />
-                <FCCSearchBar
-                  dropdown={ true }
-                  placeholder=
-                    '&#xf002; Search 8,000+ lessons, articles, and videos'
-                />
+                <FCCSearchBar />
               </Navbar.Header>
             </Col>
             <Col className='nav-component bins' sm={ 4 } xs={ 6 }>
