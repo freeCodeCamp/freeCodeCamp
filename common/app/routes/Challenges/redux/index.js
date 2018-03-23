@@ -35,7 +35,7 @@ import {
   types as app,
   challengeSelector
 } from '../../../redux';
-import { html } from '../../../utils/challengeTypes.js';
+import { html, modern } from '../../../utils/challengeTypes.js';
 import blockNameify from '../../../utils/blockNameify.js';
 import { updateFileMetaCreator } from '../../../files';
 
@@ -243,7 +243,7 @@ export const challengeMetaSelector = createSelector(
         'tests',
       showPreview: (
         challengeType === html ||
-        type === 'modern'
+        challengeType === modern
       ),
       mode: challenge && challengeType === html ?
         'text/html' :

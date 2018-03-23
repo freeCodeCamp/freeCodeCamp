@@ -5,6 +5,7 @@ import tape from 'tape';
 import { isMongoId } from 'validator';
 
 import getChallenges from './getChallenges';
+import { modern } from '../common/app/utils/challengeTypes';
 
 const notMongoId = id => !isMongoId(id);
 
@@ -139,7 +140,8 @@ function createTest({
                   document;
 
               // Fake Deep Equal dependency
-              const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+              const DeepEqual = (a, b) =>
+                JSON.stringify(a) === JSON.stringify(b);
 
               // Hardcode Deep Freeze dependency
               const DeepFreeze = (o) => {
@@ -225,7 +227,7 @@ Observable.from(getChallenges())
   .flatMap(challengeSpec => {
     return Observable.from(challengeSpec.challenges);
   })
-  .filter(({ type }) => type !== 'modern')
+  .filter(({ challengeType }) => challengeType !== modern)
   .flatMap(challenge => {
     return createTest(challenge);
   })

@@ -18,14 +18,10 @@ export const viewTypes = {
   [ challengeTypes.bonfire ]: 'classic',
   [ challengeTypes.frontEndProject ]: 'project',
   [ challengeTypes.backEndProject ]: 'project',
-  // might not be used anymore
-  [ challengeTypes.simpleProject ]: 'project',
-  // formally hikes
-  [ challengeTypes.video ]: 'video',
+  [ challengeTypes.modern ]: 'modren',
   [ challengeTypes.step ]: 'step',
   [ challengeTypes.quiz ]: 'quiz',
-  backend: 'backend',
-  modern: 'modern'
+  [ challengeTypes.backend ]: 'backend'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -33,8 +29,6 @@ export const submitTypes = {
   [ challengeTypes.html ]: 'tests',
   [ challengeTypes.js ]: 'tests',
   [ challengeTypes.bonfire ]: 'tests',
-  // requires just a button press
-  [ challengeTypes.simpleProject ]: 'project.simple',
   // requires just a single url
   // like codepen.com/my-project
   [ challengeTypes.frontEndProject ]: 'project.frontEnd',
@@ -42,12 +36,11 @@ export const submitTypes = {
   // a hosted URL where the app is running live
   // project code url like GitHub
   [ challengeTypes.backEndProject ]: 'project.backEnd',
-  // formally hikes
-  [ challengeTypes.video ]: 'video',
+
   [ challengeTypes.step ]: 'step',
   [ challengeTypes.quiz ]: 'quiz',
-  backend: 'backend',
-  modern: 'tests'
+  [ challengeTypes.backend ]: 'backend',
+  [ challengeTypes.modern ]: 'tests'
 };
 
 // determines if a line in a challenge description
@@ -79,9 +72,10 @@ export function getPreFile({ challengeType }) {
 }
 
 export function challengeToFiles(challenge, files) {
+  const { challengeType } = challenge;
   const previousWork = !!files;
   files = files || challenge.files || {};
-  if (challenge.type === 'modern') {
+  if (challengeType === challengeTypes.modern) {
     return _.reduce(challenge.files, (_files, fileSpec) => {
       const file = _.get(files, fileSpec.key);
       _files[fileSpec.key] = updateFileFromSpec(fileSpec, file);
@@ -89,9 +83,9 @@ export function challengeToFiles(challenge, files) {
     }, {});
   }
   if (
-    challenge.challengeType !== challengeTypes.html &&
-    challenge.challengeType !== challengeTypes.js &&
-    challenge.challengeType !== challengeTypes.bonfire
+    challengeType !== challengeTypes.html &&
+    challengeType !== challengeTypes.js &&
+    challengeType !== challengeTypes.bonfire
   ) {
     return {};
   }

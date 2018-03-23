@@ -46,7 +46,7 @@
       "solutions": [
         "const JSX = <h1>Hello JSX!</h1>;"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -92,7 +92,7 @@
       "solutions": [
         "const JSX = (\n<div>\n  <h1>Hello JSX!</h1>\n  <p>Some info</p>\n  <ul>\n    <li>An item</li>\n    <li>Another item</li>\n    <li>A third item</li>\n  </ul>\n</div>);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -132,7 +132,7 @@
       "solutions": [
         "const JSX = (\n<div>\n  <h1>This is a block of JSX</h1>\n  { /* this is a JSX comment */ }\n  <p>Here's a subtitle</p>\n</div>);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -174,7 +174,7 @@
       "solutions": [
         "const JSX = (\n<div>\n  <h1>Hello World</h1>\n  <p>Lets render this to the DOM</p>\n</div>\n);\n// change code below this line\nReactDOM.render(JSX, document.getElementById('challenge-node'));"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -213,7 +213,7 @@
       "solutions": [
         "const JSX = (\n<div className = 'myDiv'>\n  <h1>Add a class to this div</h1>\n</div>);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -259,7 +259,7 @@
       "solutions": [
         "const JSX = (\n<div>\n  {/* change code below this line */}\n  <h2>Welcome to React!</h2> <br />\n  <p>Be sure to close all tags!</p>\n  <hr />\n  {/* change code above this line */}\n</div>\n);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -302,7 +302,7 @@
       "solutions": [
         "\nconst MyComponent = function() {\n  // change code below this line\n  return (\n    <div>\n      Demo Solution\n    </div>\n  );\n  // change code above this line\n}"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -350,7 +350,7 @@
       "solutions": [
         "\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // change code below this line\n    return (\n      <div>\n        <h1>Hello React!</h1>\n      </div>\n    );\n    // change code above this line\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -410,7 +410,7 @@
       "solutions": [
         "const ChildComponent = () => {\n  return (\n    <div>\n      <p>I am the child</p>\n    </div>\n  );\n};\n\nclass ParentComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>I am the parent</h1>\n        { /* change code below this line */ }\n        <ChildComponent />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -484,7 +484,7 @@
       "solutions": [
         "const TypesOfFruit = () => {\n  return (\n    <div>\n      <h2>Fruits:</h2>\n      <ul>\n        <li>Apples</li>\n        <li>Blueberries</li>\n        <li>Strawberries</li>\n        <li>Bananas</li>\n      </ul>\n    </div>\n  );\n};\n\nconst Fruits = () => {\n  return (\n    <div>\n      { /* change code below this line */ }\n        <TypesOfFruit />\n      { /* change code above this line */ }\n    </div>\n  );\n};\n\nclass TypesOfFood extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n\n  render() {\n    return (\n      <div>\n        <h1>Types of Food:</h1>\n        { /* change code below this line */ }\n        <Fruits />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -596,7 +596,7 @@
       "solutions": [
         "class Fruits extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h2>Fruits:</h2>\n        { /* change code below this line */ }\n        <NonCitrus />\n        <Citrus />\n        { /* change code above this line */ }\n      </div>\n    )\n  }\n}\n\nclass TypesOfFood extends React.Component {\n  constructor(props) {\n     super(props);\n  }\n    render() {\n      return (\n        <div>\n        <h1>Types of Food:</h1>\n          { /* change code below this line */ }\n          <Fruits />\n          { /* change code above this line */ }\n          <Vegetables />\n        </div>\n      );\n    }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -686,7 +686,7 @@
       "solutions": [
         "\nclass TypesOfFood extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>Types of Food:</h1>\n        {/* change code below this line */}\n          <Fruits />\n           <Vegetables />\n         {/* change code above this line */}\n      </div>\n    );\n  }\n};\n\n// change code below this line\nReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -720,7 +720,7 @@
       "solutions": [
         "// change code below this line\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>My First React Component!</h1>\n      </div>\n    );\n  }\n};\n\nReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -784,7 +784,7 @@
       "solutions": [
         "\nconst CurrentDate = (props) => {\n  return (\n    <div>\n      { /* change code below this line */ }\n      <p>The current date is: {props.date}</p>\n      { /* change code above this line */ }\n    </div>\n  );\n};\n\nclass Calendar extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>What date is it?</h3>\n        { /* change code below this line */ }\n        <CurrentDate date={Date()} />\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -850,7 +850,7 @@
       "solutions": [
         "const List= (props) => {\n  return <p>{props.tasks.join(', ')}</p>\n};\n\nclass ToDo extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h1>To Do Lists</h1>\n        <h2>Today</h2>\n        <List tasks={['study', 'exercise']} />\n        <h2>Tomorrow</h2>\n        <List tasks={['call Sam', 'grocery shopping', 'order tickets']} />\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -890,7 +890,7 @@
       "solutions": [
         "const ShoppingCart = (props) => {\n  return (\n    <div>\n      <h1>Shopping Cart Component</h1>\n    </div>\n  )\n};\n\n// change code below this line\nShoppingCart.defaultProps = {\n  items: 0\n}"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -941,7 +941,7 @@
       "solutions": [
         "const Items = (props) => {\n  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>\n}\n\nItems.defaultProps = {\n  quantity: 0\n}\n\nclass ShoppingCart extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    { /* change code below this line */ }\n    return <Items quantity = {10} />\n    { /* change code above this line */ }\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1004,7 +1004,7 @@
       "solutions": [
         "const Items = (props) => {\n  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>\n};\n\n// change code below this line\nItems.propTypes = {\n  quantity: PropTypes.number.isRequired\n};\n// change code above this line\n\nItems.defaultProps = {\n  quantity: 0\n};\n\nclass ShoppingCart extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <Items />\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1073,7 +1073,7 @@
       "solutions": [
         "class ReturnTempPassword extends React.Component {\n  constructor(props) {\n    super(props);\n\n  }\n  render() {\n    return (\n        <div>\n            <p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>\n        </div>\n    );\n  }\n};\n\nclass ResetPassword extends React.Component {\n  constructor(props) {\n    super(props);\n\n  }\n  render() {\n    return (\n        <div>\n          <h2>Reset Password</h2>\n          <h3>We've generated a new temporary password for you.</h3>\n          <h3>Please reset this password from your account settings ASAP.</h3>\n          { /* change code below this line */ }\n          <ReturnTempPassword tempPassword=\"serrPbqrPnzc\" />\n          { /* change code above this line */ }\n        </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1128,7 +1128,7 @@
       "solutions": [
         "class CampSite extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <Camper/>\n      </div>\n    );\n  }\n};\n// change code below this line\n\nconst Camper = (props) => {\n   return (\n     <div>\n       <p>{props.name}</p>\n     </div>\n   );\n};\n\nCamper.propTypes = {\n  name: PropTypes.string.isRequired\n};\n\nCamper.defaultProps = {\n  name: 'CamperBot'\n};\n"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1179,7 +1179,7 @@
       "solutions": [
         "\nclass StatefulComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp!'\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.name}</h1>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1232,7 +1232,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp'\n    }\n  }\n  render() {\n    return (\n      <div>\n        { /* change code below this line */ }\n        <h1>{this.state.name}</h1>\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1286,7 +1286,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'freeCodeCamp'\n    }\n  }\n  render() {\n    // change code below this line\n    const name = this.state.name;\n    // change code above this line\n    return (\n      <div>\n        { /* change code below this line */ }\n        <h1>{name}</h1>\n        { /* change code above this line */ }\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1344,7 +1344,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'Initial State'\n    };\n    this.handleClick = this.handleClick.bind(this);\n  }\n  handleClick() {\n     // change code below this line\n    this.setState({\n      name: 'React Rocks!'\n    });\n    // change code above this line\n  }\n  render() {\n    return (\n      <div>\n        <button onClick = {this.handleClick}>Click Me</button>\n        <h1>{this.state.name}</h1>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1406,7 +1406,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      itemCount: 0\n    };\n    this.addItem = this.addItem.bind(this);\n  }\n  addItem() {\n    this.setState({\n      itemCount: this.state.itemCount + 1\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick = {this.addItem}>Click Me</button>\n        <h1>Current Item Count: {this.state.itemCount}</h1>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1471,7 +1471,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      visibility: false\n    };\n    this.toggleVisibility = this.toggleVisibility.bind(this);\n   }\n  toggleVisibility() {\n    this.setState({\n      visibility: !this.state.visibility\n    });\n  }\n  render() {\n    if (this.state.visibility) {\n      return (\n        <div>\n          <button onClick = {this.toggleVisibility}>Click Me</button>\n          <h1>Now you see me!</h1>\n        </div>\n      );\n    } else {\n      return (\n        <div>\n          <button onClick = {this.toggleVisibility}>Click Me</button>\n        </div>\n      );\n    }\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1530,7 +1530,7 @@
       "solutions": [
         "class Counter extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      count: 0\n    };\n  this.increment = this.increment.bind(this);\n this.decrement = this.decrement.bind(this);\n this.reset = this.reset.bind(this);\n }\n  reset() {\n    this.setState({\n      count: 0\n    });\n  }\n  increment() {\n    this.setState({\n      count: this.state.count + 1\n    });\n  }\n  decrement() {\n    this.setState({\n      count: this.state.count - 1\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button className='inc' onClick={this.increment}>Increment!</button>\n        <button className='dec' onClick={this.decrement}>Decrement!</button>\n        <button className='reset' onClick={this.reset}>Reset</button>\n        <h1>Current Count: {this.state.count}</h1>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1591,7 +1591,7 @@
       "solutions": [
         "class ControlledInput extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  render() {\n    return (\n      <div>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange} />\n        <h4>Controlled Input:</h4>\n\n        <p>{this.state.input}</p>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1664,7 +1664,7 @@
       "solutions": [
         "class MyForm extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      submit: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n    this.handleSubmit = this.handleSubmit.bind(this);\n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  handleSubmit(event) {\n    event.preventDefault()\n    this.setState({\n      submit: this.state.input\n    });\n  }\n  render() {\n    return (\n      <div>\n        <form onSubmit={this.handleSubmit}>\n          <input\n            value={this.state.input}\n            onChange={this.handleChange} />\n          <button type='submit'>Submit!</button>\n        </form>\n        <h1>{this.state.submit}</h1>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1726,7 +1726,7 @@
       "solutions": [
         "class MyApp extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: 'CamperBot'\n    }\n  }\n  render() {\n    return (\n       <div>\n         <Navbar name={this.state.name}/>\n       </div>\n    );\n  }\n};\nclass Navbar extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n    <div>\n      <h1>Hello, my name is: {this.props.name}</h1>\n    </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1814,7 +1814,7 @@
       "solutions": [
         "class MyApp extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      inputValue: ''\n    }\n  this.handleChange = this.handleChange.bind(this);  \n  }\n  handleChange(event) {\n    this.setState({\n      inputValue: event.target.value\n    });\n  }\n  render() {\n    return (\n       <div>\n         <GetInput\n           input={this.state.inputValue}\n           handleChange={this.handleChange}/>\n         <RenderInput\n           input={this.state.inputValue}/>\n       </div>\n    );\n  }\n};\n\nclass GetInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Get Input:</h3>\n        <input\n          value={this.props.input}\n          onChange={this.props.handleChange}/>\n      </div>\n    );\n  }\n};\n\nclass RenderInput extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <div>\n        <h3>Input Render:</h3>\n        <p>{this.props.input}</p>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1866,7 +1866,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  componentWillMount() {\n    // change code below this line\n    console.log('Component is mounting...');\n    // change code above this line\n  }\n  render() {\n    return <div />\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1921,7 +1921,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      activeUsers: null\n    };\n  }\n  componentDidMount() {\n    setTimeout( () => {\n      this.setState({\n        activeUsers: 1273\n      });\n    }, 2500);\n  }\n  render() {\n    return (\n      <div>\n        <h1>Active Users: {this.state.activeUsers}</h1>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -1991,7 +1991,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: ''\n    };\n    this.handleKeyPress = this.handleKeyPress.bind(this);\n    this.handleEnter = this.handleEnter.bind(this);  }\n  componentDidMount() {\n    // change code below this line\n    document.addEventListener('keydown', this.handleKeyPress);\n    // change code above this line\n  }\n  componentWillUnmount() {\n    // change code below this line\n    document.removeEventListener('keydown', this.handleKeyPress);\n    // change code above this line\n  }\n  handleEnter() {\n    this.setState({\n      message: this.state.message + 'You pressed the enter key! '\n    });\n  }\n  handleKeyPress(event) {\n    if (event.keyCode === 13) {\n      this.handleEnter();\n    }\n  }\n  render() {\n    return (\n      <div>\n        <h1>{this.state.message}</h1>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2064,7 +2064,7 @@
       "solutions": [
         "class Dialog extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  componentWillUpdate() {\n    console.log('Component is about to update...');\n  }\n  // change code below this line\n  componentWillReceiveProps(nextProps) {\n    console.log(this.props, nextProps);\n  }\n  componentDidUpdate() {\n    console.log('Component re-rendered');\n  }\n  // change code above this line\n  render() {\n    return <h1>{this.props.message}</h1>\n  }\n};\n\nclass Controller extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      message: 'First Message'\n    };\n this.changeMessage = this.changeMessage.bind(this); \n  }\n  changeMessage() {\n    this.setState({\n      message: 'Second Message'\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick={this.changeMessage}>Update</button>\n        <Dialog message={this.state.message}/>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2141,7 +2141,7 @@
       "solutions": [
         "class OnlyEvens extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  shouldComponentUpdate(nextProps, nextState) {\n    console.log('Should I update?');\n    // change code below this line\n    return nextProps.value % 2 === 0;\n    // change code above this line\n  }\n  componentWillReceiveProps(nextProps) {\n    console.log('Receiving new props...');\n  }\n  componentDidUpdate() {\n    console.log('Component re-rendered.');\n  }\n  render() {\n    return <h1>{this.props.value}</h1>\n  }\n};\n\nclass Controller extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      value: 0\n    };\n  this.addValue = this.addValue.bind(this);\n  }\n  addValue() {\n    this.setState({\n      value: this.state.value + 1\n    });\n  }\n  render() {\n    return (\n      <div>\n        <button onClick={this.addValue}>Add</button>\n        <OnlyEvens value={this.state.value}/>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2188,7 +2188,7 @@
       "solutions": [
         "\nclass Colorful extends React.Component {\n  render() {\n    return (\n      <div style={{color: \"red\", fontSize: 72}}>Big Red</div>\n    );\n  }\n};\n"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2237,7 +2237,7 @@
       "solutions": [
         "\nconst styles = {\n  color: \"purple\",\n  fontSize: 40,\n  border: \"2px solid purple\"\n};\n// change code above this line\nclass Colorful extends React.Component {\n  render() {\n    // change code below this line\n    return (\n      <div style={styles}>Style Me!</div>\n  // change code above this line\n    );\n  }\n};\n"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2348,7 +2348,7 @@
       "solutions": [
         "\nconst inputStyle = {\n  width: 235,\n  margin: 5\n}\n\nclass MagicEightBall extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      userInput: '',\n      randomIndex: ''\n    }\n    this.ask = this.ask.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  ask() {\n    if (this.state.userInput) {\n      this.setState({\n        randomIndex: Math.floor(Math.random() * 20),\n        userInput: ''\n      });\n    }\n  }\n  handleChange(event) {\n    this.setState({\n      userInput: event.target.value\n    });\n  }\n  render() {\n    const possibleAnswers = [\n      \"It is certain\", \"It is decidedly so\", \"Without a doubt\",\n      \"Yes, definitely\", \"You may rely on it\", \"As I see it, yes\",\n      \"Outlook good\", \"Yes\", \"Signs point to yes\", \"Reply hazy try again\",\n      \"Ask again later\", \"Better not tell you now\", \"Cannot predict now\",\n      \"Concentrate and ask again\", \"Don't count on it\", \"My reply is no\",\n      \"My sources say no\", \"Outlook not so good\",\"Very doubtful\", \"Most likely\"\n    ];\n    const answer = possibleAnswers[this.state.randomIndex];\n    return (\n      <div>\n        <input\n          type=\"text\"\n          value={this.state.userInput}\n          onChange={this.handleChange}\n          style={inputStyle} /><br />\n        <button onClick={this.ask}>Ask the Magic Eight Ball!</button><br />\n        <h3>Answer:</h3>\n        <p>\n          {answer}\n        </p>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2406,7 +2406,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n this.toggleDisplay = this.toggleDisplay.bind(this); \n }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    if (this.state.display) {\n      return (\n         <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n           <h1>Displayed!</h1>\n         </div>\n      );\n    } else {\n      return (\n        <div>\n           <button onClick={this.toggleDisplay}>Toggle Display</button>\n         </div>\n      );\n    }\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2464,7 +2464,7 @@
       "solutions": [
         "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      display: true\n    }\n this.toggleDisplay = this.toggleDisplay.bind(this); \n  }\n  toggleDisplay() {\n    this.setState({\n      display: !this.state.display\n    });\n  }\n  render() {\n    // change code below this line\n    return (\n       <div>\n         <button onClick={this.toggleDisplay}>Toggle Display</button>\n         {this.state.display && <h1>Displayed!</h1>}\n       </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2547,7 +2547,7 @@
       "solutions": [
         "\nconst inputStyle = {\n  width: 235,\n  margin: 5\n}\n\nclass CheckUserAge extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      userAge: '',\n      input: ''\n    }\n    this.submit = this.submit.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(e) {\n    this.setState({\n      input: e.target.value,\n      userAge: ''\n    });\n  }\n  submit() {\n    this.setState({\n      userAge: this.state.input\n    });\n  }\n  render() {\n    const buttonOne = <button onClick={this.submit}>Submit</button>;\n    const buttonTwo = <button>You May Enter</button>;\n    const buttonThree = <button>You Shall Not Pass</button>;\n    return (\n      <div>\n        <h3>Enter Your Age to Continue</h3>\n        <input\n          style={inputStyle}\n          type=\"number\"\n          value={this.state.input}\n          onChange={this.handleChange} /><br />\n          {\n            this.state.userAge === '' ?\n            buttonOne :\n            this.state.userAge >= 18 ?\n            buttonTwo :\n            buttonThree\n          }\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2627,7 +2627,7 @@
       "solutions": [
         "class Results extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return (\n      <h1>\n      {\n        this.props.fiftyFifty ?\n        'You Win!' :\n        'You Lose!'\n      }\n      </h1>\n    )\n  };\n};\n\nclass GameOfChance extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      counter: 1\n    }\n    this.handleClick = this.handleClick.bind(this);\n  }\n  handleClick() {\n    this.setState({\n      counter: this.state.counter + 1\n    });\n  }\n  render() {\n    const expression = Math.random() > .5;\n    return (\n      <div>\n        <button onClick={this.handleClick}>Play Again</button>\n        <Results fiftyFifty={expression} />\n        <p>{'Turn: ' + this.state.counter}</p>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2693,7 +2693,7 @@
       "solutions": [
         "\nclass GateKeeper extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    };\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleChange(event) {\n    this.setState({ input: event.target.value })\n  }\n  render() {\n    let inputStyle = {\n      border: '1px solid black'\n    };\n    if (this.state.input.length > 15) {\n      inputStyle.border = '3px solid red';\n    };\n    return (\n      <div>\n        <h3>Don't Type Too Much:</h3>\n        <input\n          type=\"text\"\n          style={inputStyle}\n          value={this.state.input}\n          onChange={this.handleChange} />\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2774,7 +2774,7 @@
       "solutions": [
         "\nconst textAreaStyles = {\n  width: 235,\n  margin: 5\n};\n\nclass MyToDoList extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      toDoList: [],\n      userInput: ''\n    }\n    this.handleSubmit = this.handleSubmit.bind(this);\n    this.handleChange = this.handleChange.bind(this);\n  }\n  handleSubmit() {\n    const itemsArray = this.state.userInput.split(',');\n    this.setState({\n      toDoList: itemsArray\n    });\n  }\n  handleChange(e) {\n    this.setState({\n      userInput: e.target.value\n    });\n  }\n  render() {\n    const items = this.state.toDoList.map( (item, i) => {\n      return <li key={i}>{item}</li>\n    });\n    return (\n      <div>\n        <textarea\n          onChange={this.handleChange}\n          value={this.state.userInput}\n          style={textAreaStyles}\n          placeholder=\"Separate Items With Commas\" /><br />\n        <button onClick={this.handleSubmit}>Create List</button>\n        <h1>My \"To Do\" List:</h1>\n        <ul>\n          {items}\n        </ul>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2830,7 +2830,7 @@
       "solutions": [
         "\nconst frontEndFrameworks = [\n  'React',\n  'Angular',\n  'Ember',\n  'Knockout',\n  'Backbone',\n  'Vue'\n];\n\nfunction Frameworks() {\n  const renderFrameworks = frontEndFrameworks.map((fw, i) => {\n    return <li key={i}>{fw}</li>\n  })\n  return (\n    <div>\n      <h1>Popular Front End JavaScript Frameworks</h1>\n      <ul>\n        {renderFrameworks}\n      </ul>\n    </div>\n  );\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2910,7 +2910,7 @@
       "solutions": [
         "\nclass MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      users: [\n        {\n          username: 'Jeff',\n          online: true\n        },\n        {\n          username: 'Alan',\n          online: false\n        },\n        {\n          username: 'Mary',\n          online: true\n        },\n        {\n          username: 'Jim',\n          online: false\n        },\n        {\n          username: 'Sara',\n          online: true\n        },\n        {\n          username: 'Laura',\n          online: true\n        }\n      ]\n    }\n  }\n  render() {\n    const usersOnline = this.state.users.filter(user => {\n      return user.online;\n    });\n    const renderOnlineUsers = usersOnline.map(user => {\n      return (\n        <li key={user.username}>{user.username}</li>\n      );\n    });\n    return (\n       <div>\n         <h1>Current Online Users:</h1>\n         <ul>\n          {renderOnlineUsers}\n        </ul>\n       </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -2956,7 +2956,7 @@
       "solutions": [
         "\nclass App extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <div/>\n  }\n};\n\n// change code below this line\nReactDOMServer.renderToString(<App/>);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
