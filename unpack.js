@@ -17,21 +17,29 @@ import {UnpackedChallenge, ChallengeFile} from './unpackedChallenge';
 
 // bundle up the test-running JS
 function createUnpackedBundle() {
-  let unpackedFile = path.join(__dirname, 'unpacked.js');
-  let b = browserify(unpackedFile).bundle();
-  b.on('error', console.error);
-  let unpackedBundleFile =
-    path.join(__dirname, 'unpacked', 'unpacked-bundle.js');
-  const bundleFileStream = fs.createWriteStream(unpackedBundleFile);
-  bundleFileStream.on('finish', () => {
-    console.log('Wrote bundled JS into ' + unpackedBundleFile);
+  let unpackedDir = path.join(__dirname, 'unpacked');
+  fs.mkdirp(unpackedDir, (err) => {
+    if (err && err.code !== 'EEXIST') {
+      console.log(err);
+      throw err;
+    }
+
+    let unpackedFile = path.join(__dirname, 'unpacked.js');
+    let b = browserify(unpackedFile).bundle();
+    b.on('error', console.error);
+    let unpackedBundleFile =
+      path.join(unpackedDir, 'unpacked-bundle.js');
+    const bundleFileStream = fs.createWriteStream(unpackedBundleFile);
+    bundleFileStream.on('finish', () => {
+      console.log('Wrote bundled JS into ' + unpackedBundleFile);
+    });
+    bundleFileStream.on('pipe', () => {
+      console.log('Writing bundled JS...');
+    });
+    bundleFileStream.on('error', console.error);
+    b.pipe(bundleFileStream);
+    // bundleFileStream.end();  // do not do this prematurely!
   });
-  bundleFileStream.on('pipe', () => {
-    console.log('Writing bundled JS...');
-  });
-  bundleFileStream.on('error', console.error);
-  b.pipe(bundleFileStream);
-  // bundleFileStream.end();  // do not do this prematurely!
 }
 
 let currentlyUnpackingDir = null;
