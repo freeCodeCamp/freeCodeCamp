@@ -21,6 +21,7 @@ export const types = createTypes([
   'addPortfolioItem',
   'optoUpdatePortfolio',
   'regresPortfolio',
+  'resetFullBlocks',
   'updateMultipleUserFlags',
   'updateTheme',
   'updateUserFlag',
@@ -56,6 +57,8 @@ export const updateUserLang = createAction(
   types.updateUserLang,
   (username, lang) => ({ username, languageTag: lang })
 );
+
+export const resetFullBlocks = createAction(types.resetFullBlocks);
 
 export const updateUserCurrentChallenge = createAction(
   types.updateUserCurrentChallenge
@@ -207,11 +210,14 @@ export default composeReducers(
           map.fetchMapUi.complete
         )
       ]: (state, { payload: { entities } }) => merge({}, state, entities),
-      [app.fetchNewBlock.complete]:
-      (state, { payload: { entities: { block }}}) => ({
+      [app.fetchNewBlock.complete]: (
+        state,
+        { payload: { entities: { block } } }
+      ) => ({
         ...state,
         fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])
       }),
+      [types.resetFullBlocks]: state => ({ ...state, fullBlocks: [] }),
       [
         challenges.submitChallenge.complete
       ]: (state, { payload: { username, points, challengeInfo } }) => ({
