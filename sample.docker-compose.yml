@@ -1,0 +1,31 @@
+# Docker Compose sample file for freeCodeCamp
+# Copy this file to docker-compose.yml
+#
+# Bootstrap with:
+#   docker-compose run --rm node npm install
+#   docker-compose run --rm node npm run only-once
+#
+# Run with:
+#   docker-compose up
+#
+version: "3"
+services:
+  node:
+    image: node:8.9.4
+    volumes:
+      - .:/app
+    working_dir: /app
+    depends_on:
+      - mongo
+    ports:
+      - "3000:3000"
+      - "3002:3002"
+    environment:
+      - MONGOHQ_URL=mongodb://mongo:27017/freecodecamp
+    command: npm run develop
+
+  mongo:
+    image: mongo:3.0.15
+
+  mailhog:
+    image: mailhog/mailhog

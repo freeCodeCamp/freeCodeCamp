@@ -56,3 +56,5 @@ public/css/main*
 webpack-bundle-stats.html
 server/rev-manifest.json
 google-credentials.json
+
+docker-compose.yml
