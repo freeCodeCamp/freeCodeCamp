@@ -50,7 +50,7 @@
       "solutions": [
         "const reducer = (state = 5) => {\n  return state;\n}\n\n// Redux methods are available from a Redux object\n// For example: Redux.createStore()\n// Define the store here:\n\nconst store = Redux.createStore(reducer);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -86,7 +86,7 @@
       "solutions": [
         "const store = Redux.createStore(\n  (state = 5) => state\n);\n\n// change code below this line\nconst currentState = store.getState();"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -119,7 +119,7 @@
       "solutions": [
         "const action = {\n  type: 'LOGIN'\n}"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -155,7 +155,7 @@
       "solutions": [
         "const action = {\n  type: 'LOGIN'\n}\n// Define an action creator here:\nconst actionCreator = () => {\n  return action;\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -200,7 +200,7 @@
       "solutions": [
         "const store = Redux.createStore(\n  (state = {login: false}) => state\n);\n\nconst loginAction = () => {\n  return {\n    type: 'LOGIN'\n  }\n};\n\n// Dispatch the action here:\nstore.dispatch(loginAction());"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -250,7 +250,7 @@
       "solutions": [
         "const defaultState = {\n  login: false\n};\n\nconst reducer = (state = defaultState, action) => {\n\n  if (action.type === 'LOGIN') {\n    return {login: true}\n  }\n\n  else {\n    return state\n  }\n\n};\n\nconst store = Redux.createStore(reducer);\n\nconst loginAction = () => {\n  return {\n    type: 'LOGIN'\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -308,7 +308,7 @@
       "solutions": [
         "const defaultState = {\n  authenticated: false\n};\n\nconst authReducer = (state = defaultState, action) => {\n\n  switch (action.type) {\n\n    case 'LOGIN':\n      return {\n        authenticated: true\n      }\n\n    case 'LOGOUT':\n      return {\n        authenticated: false\n      }\n\n    default:\n      return state;\n\n  }\n\n};\n\nconst store = Redux.createStore(authReducer);\n\nconst loginUser = () => {\n  return {\n    type: 'LOGIN'\n  }\n};\n\nconst logoutUser = () => {\n  return {\n    type: 'LOGOUT'\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -387,7 +387,7 @@
       "solutions": [
         "const LOGIN = 'LOGIN';\nconst LOGOUT = 'LOGOUT';\n\nconst defaultState = {\n  authenticated: false\n};\n\nconst authReducer = (state = defaultState, action) => {\n\n  switch (action.type) {\n\n    case LOGIN:\n      return {\n        authenticated: true\n      }\n\n    case LOGOUT:\n      return {\n        authenticated: false\n      }\n\n    default:\n      return state;\n\n  }\n\n};\n\nconst store = Redux.createStore(authReducer);\n\nconst loginUser = () => {\n  return {\n    type: LOGIN\n  }\n};\n\nconst logoutUser = () => {\n  return {\n    type: LOGOUT\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -447,7 +447,7 @@
       "solutions": [
         "const ADD = 'ADD';\n\nconst reducer = (state = 0, action) => {\n  switch(action.type) {\n    case ADD:\n      return state + 1;\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(reducer);\n let count = 0; \n// change code below this line\n\nstore.subscribe( () =>\n { \n count++; \n } \n);\n\n// change code above this line\n\nstore.dispatch({type: ADD});\nstore.dispatch({type: ADD});\nstore.dispatch({type: ADD});"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -519,7 +519,7 @@
       "solutions": [
         "const INCREMENT = 'INCREMENT';\nconst DECREMENT = 'DECREMENT';\n\nconst counterReducer = (state = 0, action) => {\n  switch(action.type) {\n    case INCREMENT:\n      return state + 1;\n    case DECREMENT:\n      return state - 1;\n    default:\n      return state;\n  }\n};\n\nconst LOGIN = 'LOGIN';\nconst LOGOUT = 'LOGOUT';\n\nconst authReducer = (state = {authenticated: false}, action) => {\n  switch(action.type) {\n    case LOGIN:\n      return {\n        authenticated: true\n      }\n    case LOGOUT:\n      return {\n        authenticated: false\n      }\n    default:\n      return state;\n  }\n};\n\nconst rootReducer = Redux.combineReducers({\n  count: counterReducer,\n  auth: authReducer\n});\n\nconst store = Redux.createStore(rootReducer);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -574,7 +574,7 @@
       "solutions": [
         "const ADD_NOTE = 'ADD_NOTE';\n\nconst notesReducer = (state = 'Initial State', action) => {\n  switch(action.type) {\n    // change code below this line\n    case ADD_NOTE:\n      return action.text;\n    // change code above this line\n    default:\n      return state;\n  }\n};\n\nconst addNoteText = (note) => {\n  // change code below this line\n  return {\n    type: ADD_NOTE,\n    text: note\n  }\n  // change code above this line\n};\n\nconst store = Redux.createStore(notesReducer);\n\nconsole.log(store.getState());\nstore.dispatch(addNoteText('Hello Redux!'));\nconsole.log(store.getState());"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -656,7 +656,7 @@
       "solutions": [
         "const REQUESTING_DATA = 'REQUESTING_DATA'\nconst RECEIVED_DATA = 'RECEIVED_DATA'\n\nconst requestingData = () => { return {type: REQUESTING_DATA} }\nconst receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }\n\nconst handleAsync = () => {\n  return function(dispatch) {\n    dispatch(requestingData());\n    setTimeout(function() {\n      let data = {\n        users: ['Jeff', 'William', 'Alice']\n      }\n      dispatch(receivedData(data));\n    }, 2500);\n  }\n};\n\nconst defaultState = {\n  fetching: false,\n  users: []\n};\n\nconst asyncDataReducer = (state = defaultState, action) => {\n  switch(action.type) {\n    case REQUESTING_DATA:\n      return {\n        fetching: true,\n        users: []\n      }\n    case RECEIVED_DATA:\n      return {\n        fetching: false,\n        users: action.users\n      }\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(\n  asyncDataReducer,\n  Redux.applyMiddleware(ReduxThunk.default)\n);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -700,7 +700,7 @@
       "solutions": [
         "const INCREMENT = 'INCREMENT';\nconst DECREMENT = 'DECREMENT';\n\nconst counterReducer = (state = 0, action) => {\n  switch(action.type) {\n    case INCREMENT:\n      return state + 1;\n    case DECREMENT:\n      return state - 1;\n    default:\n      return state;\n  }\n};\n\nconst incAction = () => {\n  return {\n    type: INCREMENT\n  }\n};\n\nconst decAction = () => {\n  return {\n    type: DECREMENT\n  }\n};\n\nconst store = Redux.createStore(counterReducer);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -762,7 +762,7 @@
       "solutions": [
         "const ADD_TO_DO = 'ADD_TO_DO';\n\n// A list of strings representing tasks to do:\nconst todos = [\n  'Go to the store',\n  'Clean the house',\n  'Cook dinner',\n  'Learn to code',\n];\n\nconst immutableReducer = (state = todos, action) => {\n  switch(action.type) {\n    case ADD_TO_DO:\n      return state.concat(action.todo);\n    default:\n      return state;\n  }\n};\n\n// an example todo argument would be 'Learn React',\nconst addToDo = (todo) => {\n  return {\n    type: ADD_TO_DO,\n    todo\n  }\n}\n\nconst store = Redux.createStore(immutableReducer);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -814,7 +814,7 @@
       "solutions": [
         "const immutableReducer = (state = ['Do not mutate state!'], action) => {\n  switch(action.type) {\n    case 'ADD_TO_DO':\n      return [\n        ...state,\n        action.todo\n      ];\n    default:\n      return state;\n  }\n};\n\nconst addToDo = (todo) => {\n  return {\n    type: 'ADD_TO_DO',\n    todo\n  }\n}\n\nconst store = Redux.createStore(immutableReducer);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -863,7 +863,7 @@
       "solutions": [
         "const immutableReducer = (state = [0,1,2,3,4,5], action) => {\n  switch(action.type) {\n    case 'REMOVE_ITEM':\n      return [\n        ...state.slice(0, action.index),\n        ...state.slice(action.index + 1)\n      ];\n    default:\n      return state;\n  }\n};\n\nconst removeItem = (index) => {\n  return {\n    type: 'REMOVE_ITEM',\n    index\n  }\n}\n\nconst store = Redux.createStore(immutableReducer);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true
@@ -921,7 +921,7 @@
       "solutions": [
         "const defaultState = {\n  user: 'CamperBot',\n  status: 'offline',\n  friends: '732,982',\n  community: 'freeCodeCamp'\n};\n\nconst immutableReducer = (state = defaultState, action) => {\n  switch(action.type) {\n    case 'ONLINE':\n      return Object.assign({}, state, {\n        status: 'online'\n      });\n    default:\n      return state;\n  }\n};\n\nconst wakeUp = () => {\n  return {\n    type: 'ONLINE'\n  }\n};\n\nconst store = Redux.createStore(immutableReducer);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "redux": true

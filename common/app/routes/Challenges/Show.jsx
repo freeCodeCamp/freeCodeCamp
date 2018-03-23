@@ -29,7 +29,6 @@ const views = {
   modern: Modern,
   project: Project,
   quiz: Quiz,
-  simple: Project,
   step: Step,
   invalid: NotFound
 };

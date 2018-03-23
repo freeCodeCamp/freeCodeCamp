@@ -31,6 +31,7 @@ import {
   doActionOnError
 } from '../../../redux';
 
+import { backend } from '../../../utils/challengeTypes';
 
 const executeDebounceTimeout = 750;
 export function updateMainEpic(actions, { getState }, { document }) {
@@ -100,8 +101,8 @@ export function executeChallengeEpic(actions, { getState }, { document }) {
         .filter(() => !codeLockedSelector(getState()))
         .flatMapLatest(() => {
           const state = getState();
-          const { type: challengeType } = challengeSelector(state);
-          if (challengeType === 'backend') {
+          const { challengeType } = challengeSelector(state);
+          if (challengeType === backend) {
             return buildBackendChallenge(state)
               .do(frameTests)
               .ignoreElements()

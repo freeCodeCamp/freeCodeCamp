@@ -6,6 +6,7 @@ import tape from 'tape';
 import getChallenges from './getChallenges';
 import MongoIds from './mongoIds';
 import addAssertsToTapTest from './addAssertsToTapTest';
+import { modern } from '../common/app/utils/challengeTypes';
 
 let mongoIds = new MongoIds();
 
@@ -170,7 +171,7 @@ Observable.from(getChallenges())
   .flatMap(challengeSpec => {
     return Observable.from(challengeSpec.challenges);
   })
-  .filter(({ type }) => type !== 'modern')
+  .filter(({ challengeType }) => challengeType !== modern)
   .flatMap(challenge => {
     return createTest(challenge);
   })
