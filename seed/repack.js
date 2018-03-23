@@ -19,25 +19,9 @@ function directoriesIn(parentDir) {
 }
 
 let superBlocks = directoriesIn(unpackedRoot);
-console.log(superBlocks);
-
-function diffFiles(originalFilePath, changedFilePath) {
-  // todo: async
-  console.log(`diffing ${originalFilePath} and ${changedFilePath}`);
-  let original = fs.readFileSync(originalFilePath).toString();
-  let repacked = fs.readFileSync(changedFilePath).toString();
-
-  let changes = jsdiff.diffLines(original, repacked, { newlineIsToken: true });
-  changes.forEach((change) => {
-    if (change.added || change.removed) {
-      console.log(JSON.stringify(change, null, 2));
-    }
-  });
-  console.log('');
-}
-
 superBlocks.forEach(superBlock => {
   let superBlockPath = path.join(unpackedRoot, superBlock);
+  console.log(`Repacking ${superBlockPath}...`);
   let blocks = directoriesIn(superBlockPath);
   blocks.forEach(blockName => {
     let blockPath = path.join(superBlockPath, blockName);
@@ -59,13 +43,6 @@ superBlocks.forEach(superBlock => {
       path.join(seedChallengesRoot, superBlock, blockName + '.json');
     // todo: async
     fs.writeFileSync(outputFilePath, JSON.stringify(block, null, 2));
-
-    // todo: make this a command-line option instead
-    let doDiff = false;
-    if (doDiff) {
-      diffFiles(blockFilePath, outputFilePath);
-    }
-
   });
 
 });

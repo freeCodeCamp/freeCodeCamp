@@ -19,8 +19,11 @@ For each challenge section, there is a JSON file (fields documented below) conta
 
 `npm run unpack` extracts challenges into separate files for easier viewing and editing. The files are `.gitignore`d and will *not* be checked in, and all mongo seed importing will keep using the existing system; this is essentially a tool for editing `challenge.json` files. These HTML files are self-contained and run their own tests -- open a browser JS console to see the test results.
 
-`npm run repack` gathers up the unpacked/edited HTML files into challenge-block JSON files. Use `git diff` to see the changes
+`npm run repack` gathers up the unpacked/edited HTML files into challenge-block JSON files. Use `git diff` to see the changes.
 
+When editing the unpacked files, you must only edit lines between comment fences like `<!--description-->` and `<!--end-->`. In descriptions, you can insert a paragraph break with `<!--break-->`.
+
+Unpacked lines that begin with `//--JSON:` are parsed and inserted verbatim.
 
 ## Links
 

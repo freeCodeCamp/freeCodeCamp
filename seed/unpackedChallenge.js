@@ -4,6 +4,7 @@ import path from 'path';
 import _ from 'lodash';
 
 const jsonLinePrefix = '//--JSON:';
+const paragraphBreak = '<!--break-->';
 
 class ChallengeFile {
   constructor(dir, name, suffix) {
@@ -27,6 +28,7 @@ class ChallengeFile {
     });
   }
 
+
   readChunks() {
     // todo: make this work async
     // todo: make sure it works with encodings
@@ -34,17 +36,39 @@ class ChallengeFile {
     let lines = data.toString().split(/(?:\r\n|\r|\n)/g);
     let chunks = {};
     let readingChunk = null;
+    let currentParagraph = [];
+
+    function removeLeadingEmptyLines(array) {
+      let emptyString = /^\s*$/;
+      while (array && Array.isArray(array) && emptyString.test(array[0])) {
+        array.shift();
+      }
+    }
+
     lines.forEach(line => {
       let chunkEnd = /(<!|\/\*)--end--/;
       let chunkStart = /(<!|\/\*)--(\w+)--/;
 
       line = line.toString();
 
+      function pushParagraph() {
+        removeLeadingEmptyLines(currentParagraph);
+        chunks[ readingChunk ].push(currentParagraph.join('\n'));
+        currentParagraph = [];
+      }
+
       if (chunkEnd.test(line)) {
         if (!readingChunk) {
           throw 'Encountered --end-- without being in a chunk';
         }
+        if (currentParagraph.length) {
+          pushParagraph();
+        } else {
+          removeLeadingEmptyLines(chunks[readingChunk]);
+        }
         readingChunk = null;
+      } else if (readingChunk === 'description' && line === paragraphBreak) {
+        pushParagraph();
       } else if (chunkStart.test(line)) {
         let chunkName = line.match(chunkStart)[ 2 ];
         if (readingChunk) {
@@ -54,24 +78,29 @@ class ChallengeFile {
         }
         readingChunk = chunkName;
       } else if (readingChunk) {
+        if (!chunks[ readingChunk ]) {
+          chunks[ readingChunk ] = [];
+        }
         if (line.startsWith(jsonLinePrefix)) {
           line = JSON.parse(line.slice(jsonLinePrefix.length));
-        }
-        if (!chunks[readingChunk]) {
-          chunks[readingChunk] = [];
-        }
-        // don't push empty top lines
-        if (!(!line && chunks[readingChunk].length === 0)) {
+          chunks[ readingChunk ].push(line);
+        } else if (readingChunk === 'description') {
+          currentParagraph.push(line);
+        } else {
           chunks[ readingChunk ].push(line);
         }
       }
     });
 
     // hack to deal with solutions field being an array of a single string
-    // instead of an array of lines like other fields
+    // instead of an array of lines like some other fields
     if (chunks.solutions) {
-      chunks.solutions = [chunks.solutions.join('\n')];
+      chunks.solutions = [ chunks.solutions.join('\n') ];
     }
+
+    Object.keys(chunks).forEach(key => {
+      removeLeadingEmptyLines(chunks[key]);
+    });
 
     // console.log(JSON.stringify(chunks, null, 2));
     return chunks;
@@ -116,15 +145,16 @@ class UnpackedChallenge {
     return `${prefix}-${this.challenge.id}`;
   }
 
-  expandedDescription(description) {
+  expandedDescription() {
     let out = [];
-    description.forEach(part => {
+    this.challenge.description.forEach(part => {
       if (_.isString(part)) {
         out.push(part.toString());
+        out.push(paragraphBreak);
       } else {
         // Descriptions are weird since sometimes they're text and sometimes
         // they're "steps" which appear one at a time with optional pix and
-        // captions and links, or "questions" with choices and expanations...
+        // captions and links, or "questions" with choices and explanations...
         // For now we preserve non-string descriptions via JSON but this is
         // not a great solution.
         // It would be better if "steps" and "description" were separate fields.
@@ -136,7 +166,10 @@ class UnpackedChallenge {
         out.push(jsonLinePrefix + JSON.stringify(part));
       }
     });
-    // indent by 2
+
+    if (out[ out.length - 1 ] === paragraphBreak) {
+      out.pop();
+    }
     return out;
   }
 
@@ -171,15 +204,17 @@ class UnpackedChallenge {
         (challenge id <code>${this.challenge.id}</code>).</p>`);
     text.push('<p>Open the JavaScript console to see test results.</p>');
 
-    // text.push(`<p>Edit this HTML file (between &lt;!--s only!)
-    //    and run <code>npm repack ???</code>
-    //    to incorporate your changes into the challenge database.</p>`);
+    text.push(`<p>Edit this HTML file (between &lt;!-- marks only!)
+       and run <code>npm run repack</code>
+       to incorporate your changes into the challenge database.</p>`);
 
     text.push('');
     text.push('<h2>Description</h2>');
     text.push('<div class="unpacked description">');
     text.push('<!--description-->');
-    text.push(this.expandedDescription(this.challenge.description).join('\n'));
+    if (this.challenge.description.length) {
+      text.push(this.expandedDescription().join('\n'));
+    }
     text.push('<!--end-->');
     text.push('</div>');
 
@@ -218,7 +253,7 @@ class UnpackedChallenge {
     // Note: none of the challenges have more than one solution
     // todo: should we deal with multiple solutions or not?
     if (this.challenge.solutions && this.challenge.solutions.length > 0) {
-      let solution = this.challenge.solutions[0];
+      let solution = this.challenge.solutions[ 0 ];
       text.push(solution);
     }
     text.push('</script><!--end-->');
