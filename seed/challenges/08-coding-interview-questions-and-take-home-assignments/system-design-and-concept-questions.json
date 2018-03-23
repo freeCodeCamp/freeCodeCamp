@@ -262,124 +262,123 @@
       "id": "5a91690fa9178457a6f12820",
       "title": "CSS questions part 1",
       "description": [
-          {
-              "subtitle": "Elements properties",
-              "question": "Which properties do inline elements not possess under normal document flow.",
-              "choices": [
-                "<pre>overflow, left or right margins</pre>",
-                "<pre>border-radius, z-index</pre>",
-                "<pre>font-size, animation</pre>",
-                "<pre>width, top or bottom margins</pre>"
-              ],
-              "answer": 3,
-              "explanation": "An inline element will only take up the width of the inner content."
-          },
-          {
-              "subtitle": "CSS rules",
-              "question": "What will the following css rule select?\n<pre><code class='language-javascript'>.test > div</code> {\n...\n}</code></pre>"
-              ,
-              "choices": [
-                  "<pre><code class='language-javascript'>Selects all divs within elements with the class of test.</code></pre>",
-                  "<pre><code class='language-javascript'>Selects all divs outside of elements with the class of test.</code></pre>",
-                  "<pre><code class='language-javascript'>Selects only divs that are immediate children of elements with the class of test.</code></pre>",
-                  "<pre><code class='language-javascript'>This would not be considered a valid selector.</code></pre>"
-              ],
-              "answer": 2,
-              "explanation": "eg:  \n<pre><code class='language-html'>&lt;div class='test'&gt;\n&lt;div class='box'&gt;\n&lt;div class='content'&gt;...&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class='box'&gt;\n&lt;div class='content'&gt;...&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;</code></pre>\n\nWould target only the elements with a class of 'box' as these are the direct children of 'test'."
-          },
-          {
-              "subtitle": "Overriding properties",
-              "question": "Which keyword would you add to the end of a style rule to override another Css style for a specific element ?",
-              "choices": [
-                  "<pre><code class='language-javascript'>*override</code></pre>",
-                  "<pre><code class='language-javascript'>*overrideAll</code></pre>",
-                  "<pre><code class='language-javascript'>!vital</code></pre>",
-                  "<pre><code class='language-javascript'>!important</code></pre>"
-              ],
-              "answer": 3,
-              "explanation": "For example if you wanted all the paragraph tags in a specific class to have the colour blue instead of black\n<pre><code class='language-javascript'></code>.myClass p  {\ncolor: blue !important\n}</code></pre>"
-          },
-          {
-              "subtitle": "Preprocessor CSS",
-              "question": "Which is not considered a Css preprocessor?",
-              "choices": [
-                  "<pre><code class='language-javascript'>Less</code></pre>",
-                  "<pre><code class='language-javascript'>Sass</code></pre>",
-                  "<pre><code class='language-javascript'>Stylus</code></pre>",
-                  "<pre><code class='language-javascript'>Express</code></pre>"
-              ],
-              "answer": 3,
-              "explanation": "Express is an application framework for Node.js"
-          },
-          {
-              "subtitle": "CSS Box Model",
-              "question": "Which is not a property of the Css 'Box Model'?",
-              "choices": [
-                "<pre><code class='language-javascript'>Border</code></pre>",
-                "<pre><code class='language-javascript'>Padding</code></pre>",
-                "<pre><code class='language-javascript'>Margin</code></pre>",
-                "<pre><code class='language-javascript'>Outline</code></pre>"
-              ],
-              "answer": 3,
-              "explanation": "Content is the fourth property of the box model not outline."
-          },
-          {
-              "subtitle": "CSS positioning",
-              "question": "Absolute positioning in Css removes an element from the normal document flow true/false?",
-              "choices": [
-                "<pre><code class='language-javascript'>true</code></pre>",
-                "<pre><code class='language-javascript'>false</code></pre>"
-              ],
-              "answer": 0,
-              "explanation": "Giving an element absolute positioning removes it from the normal document flow completely allowing positioning attributes top, left, bottom."
-          },
-          {
-              "subtitle": "CSS selector",
-              "question": "With this Css Selector it is possible to select every element in a document.",
-              "choices": [
-                "<pre><code class='language-javascript'>Body</code></pre>",
-                "<pre><code class='language-javascript'>Universal</code></pre>",
-                "<pre><code class='language-javascript'>Wildcard</code></pre>",
-                "<pre><code class='language-javascript'>SelectAll</code></pre>"
-              ],
-              "answer": 1,
-              "explanation": "The Universal selector will select every element on a page and is denoted by <code>*{}</code>. note: The rule of specificity still applies, so a more specific selector can override the universal selector in a Css document."
-          },
-          {
-              "subtitle": "Font size in CSS",
-              "question": "Which is not a valid Css font size?",
-              "choices": [
-                "<pre><code class='language-javascript'>em</code></pre>",
-                "<pre><code class='language-javascript'>%</code></pre>",
-                "<pre><code class='language-javascript'>tp</code></pre>",
-                "<pre><code class='language-javascript'>px</code></pre>"
-              ],
-              "answer": 2,
-              "explanation": "tp is not valid this should be pt."
-          },
-          {
-              "subtitle": "CSS clear property",
-              "question": "The Css 'clear' property fulfills which task?",
-              "choices": [
-                "<pre><code class='language-javascript'>Allows transparency of an element.</code></pre>",
-                "<pre><code class='language-javascript'>Prevents prior properties of the selector from taking effect.</code></pre>",
-                "<pre><code class='language-javascript'>Positions an element clear of a siblings margins and borders.</code></pre>",
-                "<pre><code class='language-javascript'>Sets which sides of an element floating elements are not allowed to be floated.</code></pre>"
-              ],
-              "answer": 3,
-              "explanation": "The clear property has the following values available: both, left, right, inherit, initial and none."
-          },
-          {
-            "subtitle": "CSS sudo-class",
-            "question": "An example of a sudo-class of a ul element written in Css would be defined?",
-            "choices": [
-              "<pre><code class='language-javascript'>ul:first-child</code></pre>",
-              "<pre><code class='language-javascript'>ul..first-child</code></pre>",
-              "<pre><code class='language-javascript'>ul::first-child</code></pre>",
-              "<pre><code class='language-javascript'>ul first-child</code></pre>"
-            ],
-            "answer": 0,
-            "explanation": "First answer : Would be correct of a sudo-class.<br />Second answer : Would be an error of syntax.<br />Third answer: The double colon would be an example of a sudo element used with the likes of <code>::before</code> and <code>::after</code> which are examples of content.<br />Fourth answer : This would relate to html tag elements of which there is no first-child tag."
+        {
+          "subtitle": "Elements properties",
+          "question": "Which properties do inline elements not possess under normal document flow.",
+          "choices": [
+            "<pre>overflow, left or right margins</pre>",
+            "<pre>border-radius, z-index</pre>",
+            "<pre>font-size, animation</pre>",
+            "<pre>width, top or bottom margins</pre>"
+          ],
+          "answer": 3,
+          "explanation": "An inline element will only take up the width of the inner content."
+        },
+        {
+          "subtitle": "CSS rules",
+          "question": "What will the following css rule select?\n<pre><code class='language-javascript'>.test > div</code> {\n...\n}</code></pre>",
+          "choices": [
+            "<pre><code class='language-javascript'>Selects all divs within elements with the class of test.</code></pre>",
+            "<pre><code class='language-javascript'>Selects all divs outside of elements with the class of test.</code></pre>",
+            "<pre><code class='language-javascript'>Selects only divs that are immediate children of elements with the class of test.</code></pre>",
+            "<pre><code class='language-javascript'>This would not be considered a valid selector.</code></pre>"
+          ],
+          "answer": 2,
+          "explanation": "eg:  \n<pre><code class='language-html'>&lt;div class='test'&gt;\n&lt;div class='box'&gt;\n&lt;div class='content'&gt;...&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class='box'&gt;\n&lt;div class='content'&gt;...&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;</code></pre>\n\nWould target only the elements with a class of 'box' as these are the direct children of 'test'."
+        },
+        {
+          "subtitle": "Overriding properties",
+          "question": "Which keyword would you add to the end of a style rule to override another Css style for a specific element ?",
+          "choices": [
+            "<pre><code class='language-javascript'>*override</code></pre>",
+            "<pre><code class='language-javascript'>*overrideAll</code></pre>",
+            "<pre><code class='language-javascript'>!vital</code></pre>",
+            "<pre><code class='language-javascript'>!important</code></pre>"
+          ],
+          "answer": 3,
+          "explanation": "For example if you wanted all the paragraph tags in a specific class to have the colour blue instead of black\n<pre><code class='language-javascript'></code>.myClass p  {\ncolor: blue !important\n}</code></pre>"
+        },
+        {
+          "subtitle": "Preprocessor CSS",
+          "question": "Which is not considered a Css preprocessor?",
+          "choices": [
+            "<pre><code class='language-javascript'>Less</code></pre>",
+            "<pre><code class='language-javascript'>Sass</code></pre>",
+            "<pre><code class='language-javascript'>Stylus</code></pre>",
+            "<pre><code class='language-javascript'>Express</code></pre>"
+          ],
+          "answer": 3,
+          "explanation": "Express is an application framework for Node.js"
+        },
+        {
+          "subtitle": "CSS Box Model",
+          "question": "Which is not a property of the Css 'Box Model'?",
+          "choices": [
+            "<pre><code class='language-javascript'>Border</code></pre>",
+            "<pre><code class='language-javascript'>Padding</code></pre>",
+            "<pre><code class='language-javascript'>Margin</code></pre>",
+            "<pre><code class='language-javascript'>Outline</code></pre>"
+          ],
+          "answer": 3,
+          "explanation": "Content is the fourth property of the box model not outline."
+        },
+        {
+          "subtitle": "CSS positioning",
+          "question": "Absolute positioning in Css removes an element from the normal document flow true/false?",
+          "choices": [
+            "<pre><code class='language-javascript'>true</code></pre>",
+            "<pre><code class='language-javascript'>false</code></pre>"
+          ],
+          "answer": 0,
+          "explanation": "Giving an element absolute positioning removes it from the normal document flow completely allowing positioning attributes top, left, bottom."
+        },
+        {
+          "subtitle": "CSS selector",
+          "question": "With this Css Selector it is possible to select every element in a document.",
+          "choices": [
+            "<pre><code class='language-javascript'>Body</code></pre>",
+            "<pre><code class='language-javascript'>Universal</code></pre>",
+            "<pre><code class='language-javascript'>Wildcard</code></pre>",
+            "<pre><code class='language-javascript'>SelectAll</code></pre>"
+          ],
+          "answer": 1,
+          "explanation": "The Universal selector will select every element on a page and is denoted by <code>*{}</code>. note: The rule of specificity still applies, so a more specific selector can override the universal selector in a Css document."
+        },
+        {
+          "subtitle": "Font size in CSS",
+          "question": "Which is not a valid Css font size?",
+          "choices": [
+            "<pre><code class='language-javascript'>em</code></pre>",
+            "<pre><code class='language-javascript'>%</code></pre>",
+            "<pre><code class='language-javascript'>tp</code></pre>",
+            "<pre><code class='language-javascript'>px</code></pre>"
+          ],
+          "answer": 2,
+          "explanation": "tp is not valid this should be pt."
+        },
+        {
+          "subtitle": "CSS clear property",
+          "question": "The Css 'clear' property fulfills which task?",
+          "choices": [
+            "<pre><code class='language-javascript'>Allows transparency of an element.</code></pre>",
+            "<pre><code class='language-javascript'>Prevents prior properties of the selector from taking effect.</code></pre>",
+            "<pre><code class='language-javascript'>Positions an element clear of a siblings margins and borders.</code></pre>",
+            "<pre><code class='language-javascript'>Sets which sides of an element floating elements are not allowed to be floated.</code></pre>"
+          ],
+          "answer": 3,
+          "explanation": "The clear property has the following values available: both, left, right, inherit, initial and none."
+        },
+        {
+          "subtitle": "CSS sudo-class",
+          "question": "An example of a sudo-class of a ul element written in Css would be defined?",
+          "choices": [
+            "<pre><code class='language-javascript'>ul:first-child</code></pre>",
+            "<pre><code class='language-javascript'>ul..first-child</code></pre>",
+            "<pre><code class='language-javascript'>ul::first-child</code></pre>",
+            "<pre><code class='language-javascript'>ul first-child</code></pre>"
+          ],
+          "answer": 0,
+          "explanation": "First answer : Would be correct of a sudo-class.<br />Second answer : Would be an error of syntax.<br />Third answer: The double colon would be an example of a sudo element used with the likes of <code>::before</code> and <code>::after</code> which are examples of content.<br />Fourth answer : This would relate to html tag elements of which there is no first-child tag."
         }
       ],
       "tests": [],
@@ -389,126 +388,125 @@
       "id": "5a91a167a9178457a6f12821",
       "title": "CSS questions part 2",
       "description": [
-          {
-              "subtitle": "CSS selector",
-              "question": "An entire Css selector and declaration block whithin a Css document eg:<code><br /> .container div p {<br />position: relative;<br />width: 300px;<br />margin: auto;<br />color: #ffffff;<br />}</code><br /> is referred to as?",
-              "choices": [
-                "<pre><code class='language-javascript'>Base-Block</code></pre>",
-                "<pre><code class='language-javascript'>Selection Properties</code></pre>",
-                "<pre><code class='language-javascript'>Selector Group</code></pre>",
-                "<pre><code class='language-javascript'>Ruleset</code></pre>"
-              ],
-              "answer": 3,
-              "explanation": "The selectors name and properties are collectively called a Ruleset."
-          },
-          {
-              "subtitle": "CSS Browser compatibility",
-              "question": "Which is not a valid Css prefix to ensure browser compatibility?"
-              ,
-              "choices": [
-                  "<pre><code class='language-javascript'>-webkit-</code></pre>",
-                  "<pre><code class='language-javascript'>-win-</code></pre>",
-                  "<pre><code class='language-javascript'>-moz-</code></pre>",
-                  "<pre><code class='language-javascript'>-o-</code></pre>"
-              ],
-              "answer": 1,
-              "explanation": "<code>-win-</code> is incorrect, <code>-webkit-</code> (Chrome, Safari, ioS and modern versions of Opera), <code>-moz-</code> (Firefox), <code>-o-</code> (Older versions of Opera), the other would be <code>-ms-</code> used for (IE and Microsoft Edge)."
-          },
-          {
-              "subtitle": "CSS 'text-transform' property",
-              "question": "The Css property 'text-transform' is mainly used for?",
-              "choices": [
-                  "<pre><code class='language-javascript'>Alteration of text letter case.</code></pre>",
-                  "<pre><code class='language-javascript'>Changing the alignment of text.</code></pre>",
-                  "<pre><code class='language-javascript'>Increase/Decrease font size.</code></pre>",
-                  "<pre><code class='language-javascript'>Transformation of font family.</code></pre>"
-              ],
-              "answer": 0,
-              "explanation": "The values for the property 'text-transform' are, capitalize, full-width, inherit, lowercase, none and uppercase."
-          },
-          {
-              "subtitle": "CSS font-sizes",
-              "question": "If the default font size for a page is 12px, What is the pixel equivalent of 1.5em?",
-              "choices": [
-                  "<pre><code class='language-javascript'>12.5px</code></pre>",
-                  "<pre><code class='language-javascript'>9px</code></pre>",
-                  "<pre><code class='language-javascript'>18px</code></pre>",
-                  "<pre><code class='language-javascript'>6px</code></pre>"
-              ],
-              "answer": 2,
-              "explanation": "1em is equivalent to the base or default font size therefore (12 * 1.5 = 18)."
-          },
-          {
-              "subtitle": "CCSS font weight",
-              "question": "In Css 'font-weight: bold;' is the same as?",
-              "choices": [
-                "<pre><code class='language-javascript'>font-weight: 400;</code></pre>",
-                "<pre><code class='language-javascript'>font-weight: 900</code></pre>",
-                "<pre><code class='language-javascript'>font-weight: 700</code></pre>",
-                "<pre><code class='language-javascript'>font-weight: 500</code></pre>"
-              ],
-              "answer": 2,
-              "explanation": "The keyword 'bold' is the same as the numerical value 700."
-          },
-          {
-              "subtitle": "CSS ruleset",
-              "question": "Given this ruleset <code><br />.testDiv {<br />width: 20%;<br />height: 20%;<br />content: 'add this text'<br />}</code><br />What would happen with the content properties text?",
-              "choices": [
-                "<pre><code class='language-javascript'>Nothing</code></pre>",
-                "<pre><code class='language-javascript'>Appended to any text contained in element with class of testDiv.</code></pre>",
-                "<pre><code class='language-javascript'>Prepended to any text contained in element with class of testDiv.</code></pre>",
-                "<pre><code class='language-javascript'>Overwrite any text contained in element with class of testDiv.</code></pre>"
-              ],
-              "answer": 0,
-              "explanation": "Nothing would appear on the page, the content property needs to be used with sudo elements like <code>::after</code> or <code>::before</code> eg:<br /><code>.testDiv {<br />width: 20%;<br />height: 20%;\n}\n.testDiv::after {\ncontent: 'add this text'\n}</code>"
-          },
-          {
-              "subtitle": "CSS match selector",
-              "question": "What would the following Css selector match?<br /><code>section + p</code>",
-              "choices": [
-                "<pre><code class='language-javascript'>All &lt;section&gt; and &lt;p&gt; tags.</code></pre>",
-                "<pre><code class='language-javascript'>All &lt;p&gt; tags within a &lt;section&gt; tag.</code></pre>",
-                "<pre><code class='language-javascript'>All &lt;p&gt; tags placed immediately after a &lt;section&gt; tag.</code></pre>",
-                "<pre><code class='language-javascript'>Not a valid selector.</code></pre>"
-              ],
-              "answer": 2,
-              "explanation": "<pre><code class='language-javascript'>&lt;p&gt;First Paragraph&lt;/p&gt;<br />&lt;section&gt;...&lt;/section&gt;<br />&lt;p&gt;Second Paragraph&lt;/p&gt;<br />&lt;p&gt;Third Paragraph&lt;/p&gt;</code></pre><br />Only the second paragraph tag will be selected and matched."
-          },
-          {
-              "subtitle": "How to incorporte CSS into web document",
-              "question": "How many different ways is it possible to incorporate Css into a web document?",
-              "choices": [
-                "<pre><code class='language-javascript'>1</code></pre>",
-                "<pre><code class='language-javascript'>2</code></pre>",
-                "<pre><code class='language-javascript'>3</code></pre>",
-                "<pre><code class='language-javascript'>4</code></pre>"
-              ],
-              "answer": 2,
-              "explanation": "Currently Css can be used 'Inline' as a style attribute of an Html element, 'Embedded' in a style tag of a document and 'Imported' as an external file with the link tag element."
-          },
-          {
-              "subtitle": "Using target in css",
-              "question": "What would <code>[role=contentinfo] {...}</code> target in Css?",
-              "choices": [
-                "<pre><code class='language-javascript'>Any element with the role attribute of contentinfo.</code></pre>",
-                "<pre><code class='language-javascript'>Any element within a &lt;span&gt; tag.</code></pre>",
-                "<pre><code class='language-javascript'>Any element within a &lt;span&gt; tag with the role attribute of contentinfo.</code></pre>",
-                "<pre><code class='language-javascript'>This would only be valid using Sass or Scss.</code></pre>"
-              ],
-              "answer": 0,
-              "explanation": "The square bracket notation is used to target elements with specific attributes."
-          },
-          {
-            "subtitle": "CSS positioning",
-            "question": "Which is not a value for 'position' in css?",
-            "choices": [
-              "<pre><code class='language-javascript'>Absolute</code></pre>",
-              "<pre><code class='language-javascript'>Static</code></pre>",
-              "<pre><code class='language-javascript'>Responsive</code></pre>",
-              "<pre><code class='language-javascript'>inherit</code></pre>"
-            ],
-            "answer": 2,
-            "explanation": "There is no such positioning as responsive, currently there is (absolute, fixed, inherit, relative and static)."
+        {
+          "subtitle": "CSS selector",
+          "question": "An entire Css selector and declaration block whithin a Css document eg:<code><br /> .container div p {<br />position: relative;<br />width: 300px;<br />margin: auto;<br />color: #ffffff;<br />}</code><br /> is referred to as?",
+          "choices": [
+            "<pre><code class='language-javascript'>Base-Block</code></pre>",
+            "<pre><code class='language-javascript'>Selection Properties</code></pre>",
+            "<pre><code class='language-javascript'>Selector Group</code></pre>",
+            "<pre><code class='language-javascript'>Ruleset</code></pre>"
+          ],
+          "answer": 3,
+          "explanation": "The selectors name and properties are collectively called a Ruleset."
+        },
+        {
+          "subtitle": "CSS Browser compatibility",
+          "question": "Which is not a valid Css prefix to ensure browser compatibility?",
+          "choices": [
+            "<pre><code class='language-javascript'>-webkit-</code></pre>",
+            "<pre><code class='language-javascript'>-win-</code></pre>",
+            "<pre><code class='language-javascript'>-moz-</code></pre>",
+            "<pre><code class='language-javascript'>-o-</code></pre>"
+          ],
+          "answer": 1,
+          "explanation": "<code>-win-</code> is incorrect, <code>-webkit-</code> (Chrome, Safari, ioS and modern versions of Opera), <code>-moz-</code> (Firefox), <code>-o-</code> (Older versions of Opera), the other would be <code>-ms-</code> used for (IE and Microsoft Edge)."
+        },
+        {
+          "subtitle": "CSS 'text-transform' property",
+          "question": "The Css property 'text-transform' is mainly used for?",
+          "choices": [
+            "<pre><code class='language-javascript'>Alteration of text letter case.</code></pre>",
+            "<pre><code class='language-javascript'>Changing the alignment of text.</code></pre>",
+            "<pre><code class='language-javascript'>Increase/Decrease font size.</code></pre>",
+            "<pre><code class='language-javascript'>Transformation of font family.</code></pre>"
+          ],
+          "answer": 0,
+          "explanation": "The values for the property 'text-transform' are, capitalize, full-width, inherit, lowercase, none and uppercase."
+        },
+        {
+          "subtitle": "CSS font-sizes",
+          "question": "If the default font size for a page is 12px, What is the pixel equivalent of 1.5em?",
+          "choices": [
+            "<pre><code class='language-javascript'>12.5px</code></pre>",
+            "<pre><code class='language-javascript'>9px</code></pre>",
+            "<pre><code class='language-javascript'>18px</code></pre>",
+            "<pre><code class='language-javascript'>6px</code></pre>"
+          ],
+          "answer": 2,
+          "explanation": "1em is equivalent to the base or default font size therefore (12 * 1.5 = 18)."
+        },
+        {
+          "subtitle": "CCSS font weight",
+          "question": "In Css 'font-weight: bold;' is the same as?",
+          "choices": [
+            "<pre><code class='language-javascript'>font-weight: 400;</code></pre>",
+            "<pre><code class='language-javascript'>font-weight: 900</code></pre>",
+            "<pre><code class='language-javascript'>font-weight: 700</code></pre>",
+            "<pre><code class='language-javascript'>font-weight: 500</code></pre>"
+          ],
+          "answer": 2,
+          "explanation": "The keyword 'bold' is the same as the numerical value 700."
+        },
+        {
+          "subtitle": "CSS ruleset",
+          "question": "Given this ruleset <code><br />.testDiv {<br />width: 20%;<br />height: 20%;<br />content: 'add this text'<br />}</code><br />What would happen with the content properties text?",
+          "choices": [
+            "<pre><code class='language-javascript'>Nothing</code></pre>",
+            "<pre><code class='language-javascript'>Appended to any text contained in element with class of testDiv.</code></pre>",
+            "<pre><code class='language-javascript'>Prepended to any text contained in element with class of testDiv.</code></pre>",
+            "<pre><code class='language-javascript'>Overwrite any text contained in element with class of testDiv.</code></pre>"
+          ],
+          "answer": 0,
+          "explanation": "Nothing would appear on the page, the content property needs to be used with sudo elements like <code>::after</code> or <code>::before</code> eg:<br /><code>.testDiv {<br />width: 20%;<br />height: 20%;\n}\n.testDiv::after {\ncontent: 'add this text'\n}</code>"
+        },
+        {
+          "subtitle": "CSS match selector",
+          "question": "What would the following Css selector match?<br /><code>section + p</code>",
+          "choices": [
+            "<pre><code class='language-javascript'>All &lt;section&gt; and &lt;p&gt; tags.</code></pre>",
+            "<pre><code class='language-javascript'>All &lt;p&gt; tags within a &lt;section&gt; tag.</code></pre>",
+            "<pre><code class='language-javascript'>All &lt;p&gt; tags placed immediately after a &lt;section&gt; tag.</code></pre>",
+            "<pre><code class='language-javascript'>Not a valid selector.</code></pre>"
+          ],
+          "answer": 2,
+          "explanation": "<pre><code class='language-javascript'>&lt;p&gt;First Paragraph&lt;/p&gt;<br />&lt;section&gt;...&lt;/section&gt;<br />&lt;p&gt;Second Paragraph&lt;/p&gt;<br />&lt;p&gt;Third Paragraph&lt;/p&gt;</code></pre><br />Only the second paragraph tag will be selected and matched."
+        },
+        {
+          "subtitle": "How to incorporte CSS into web document",
+          "question": "How many different ways is it possible to incorporate Css into a web document?",
+          "choices": [
+            "<pre><code class='language-javascript'>1</code></pre>",
+            "<pre><code class='language-javascript'>2</code></pre>",
+            "<pre><code class='language-javascript'>3</code></pre>",
+            "<pre><code class='language-javascript'>4</code></pre>"
+          ],
+          "answer": 2,
+          "explanation": "Currently Css can be used 'Inline' as a style attribute of an Html element, 'Embedded' in a style tag of a document and 'Imported' as an external file with the link tag element."
+        },
+        {
+          "subtitle": "Using target in css",
+          "question": "What would <code>[role=contentinfo] {...}</code> target in Css?",
+          "choices": [
+            "<pre><code class='language-javascript'>Any element with the role attribute of contentinfo.</code></pre>",
+            "<pre><code class='language-javascript'>Any element within a &lt;span&gt; tag.</code></pre>",
+            "<pre><code class='language-javascript'>Any element within a &lt;span&gt; tag with the role attribute of contentinfo.</code></pre>",
+            "<pre><code class='language-javascript'>This would only be valid using Sass or Scss.</code></pre>"
+          ],
+          "answer": 0,
+          "explanation": "The square bracket notation is used to target elements with specific attributes."
+        },
+        {
+          "subtitle": "CSS positioning",
+          "question": "Which is not a value for 'position' in css?",
+          "choices": [
+            "<pre><code class='language-javascript'>Absolute</code></pre>",
+            "<pre><code class='language-javascript'>Static</code></pre>",
+            "<pre><code class='language-javascript'>Responsive</code></pre>",
+            "<pre><code class='language-javascript'>inherit</code></pre>"
+          ],
+          "answer": 2,
+          "explanation": "There is no such positioning as responsive, currently there is (absolute, fixed, inherit, relative and static)."
         }
       ],
       "tests": [],
@@ -877,10 +875,10 @@
           "subtitle": "Default port for FTP",
           "question": "In attempting to connect to an FTP (File Transfer Protocol) server and failing, which port can you check is open to troubleshoot the connection issue?",
           "choices": [
-          "<pre><code class='language-javascript'>25</code></pre>",
-          "<pre><code class='language-javascript'>443</code></pre>",
-          "<pre><code class='language-javascript'>23</code></pre>",
-          "<pre><code class='language-javascript'>21</code></pre>"
+            "<pre><code class='language-javascript'>25</code></pre>",
+            "<pre><code class='language-javascript'>443</code></pre>",
+            "<pre><code class='language-javascript'>23</code></pre>",
+            "<pre><code class='language-javascript'>21</code></pre>"
           ],
           "answer": 3,
           "explanation": "Port 21 is traditionally used as the default port on a system for FTP."
@@ -889,10 +887,10 @@
           "subtitle": "Network types",
           "question": "Which of the following is not a type of network?",
           "choices": [
-          "<pre><code class='language-javascript'>LAN</code></pre>",
-          "<pre><code class='language-javascript'>MAN</code></pre>",
-          "<pre><code class='language-javascript'>PAN</code></pre>",
-          "<pre><code class='language-javascript'>NAN</code></pre>"
+            "<pre><code class='language-javascript'>LAN</code></pre>",
+            "<pre><code class='language-javascript'>MAN</code></pre>",
+            "<pre><code class='language-javascript'>PAN</code></pre>",
+            "<pre><code class='language-javascript'>NAN</code></pre>"
           ],
           "answer": 3,
           "explanation": "NAN is not a current network type. LAN (Local Area Network), MAN (Metropolitan Area Network), PAN (Personal Area Network)."
@@ -901,10 +899,10 @@
           "subtitle": "Subnet mask usage",
           "question": "What is a subnet mask used for?",
           "choices": [
-          "<pre><code class='language-javascript'>To hide the id of a wireless access point.</code></pre>",
-          "<pre><code class='language-javascript'>To identyfy the extended and host address.</code></pre>",
-          "<pre><code class='language-javascript'>To encrypt the broadcasting of ip addresses.</code></pre>",
-          "<pre><code class='language-javascript'>To connect to a vpn.</code></pre>"
+            "<pre><code class='language-javascript'>To hide the id of a wireless access point.</code></pre>",
+            "<pre><code class='language-javascript'>To identyfy the extended and host address.</code></pre>",
+            "<pre><code class='language-javascript'>To encrypt the broadcasting of ip addresses.</code></pre>",
+            "<pre><code class='language-javascript'>To connect to a vpn.</code></pre>"
           ],
           "answer": 1,
           "explanation": "A subnet mask is used along side an IP address in order to isolate the extended or 'subnet' of the network address and the host machine address."
@@ -913,10 +911,10 @@
           "subtitle": "Network acronym",
           "question": "What does NIC stand for?",
           "choices": [
-          "<pre><code class='language-javascript'>Network Isolated Connection</code></pre>",
-          "<pre><code class='language-javascript'>Network Interconnect Cables</code></pre>",
-          "<pre><code class='language-javascript'>Network Interface Card</code></pre>",
-          "<pre><code class='language-javascript'>Network Interference Cause</code></pre>"
+            "<pre><code class='language-javascript'>Network Isolated Connection</code></pre>",
+            "<pre><code class='language-javascript'>Network Interconnect Cables</code></pre>",
+            "<pre><code class='language-javascript'>Network Interface Card</code></pre>",
+            "<pre><code class='language-javascript'>Network Interference Cause</code></pre>"
           ],
           "answer": 2,
           "explanation": "A Network Interface Card or (Network Interface Controller) is a hardware component that connects to a Pc or printer in order to\nconnect and be identified on a network."
@@ -925,8 +923,8 @@
           "subtitle": "Default gateway",
           "question": "A 'default gateway' provides a way for a local network to connect to a larger external network true or false?",
           "choices": [
-          "<pre><code class='language-javascript'>true</code></pre>",
-          "<pre><code class='language-javascript'>false</code></pre>"
+            "<pre><code class='language-javascript'>true</code></pre>",
+            "<pre><code class='language-javascript'>false</code></pre>"
           ],
           "answer": 0,
           "explanation": "True this is usually the address of of an external router or switch."
@@ -935,10 +933,10 @@
           "subtitle": "The ipconfig commad",
           "question": "'ipconfig' is used for?",
           "choices": [
-          "<pre><code class='language-javascript'>Reassigning ip addresses.</code></pre>",
-          "<pre><code class='language-javascript'>Tool for masking ip adresses.</code></pre>",
-          "<pre><code class='language-javascript'>Monitoring network traffic.</code></pre>",
-          "<pre><code class='language-javascript'>Identify address information of a machine on a network.</code></pre>"
+            "<pre><code class='language-javascript'>Reassigning ip addresses.</code></pre>",
+            "<pre><code class='language-javascript'>Tool for masking ip adresses.</code></pre>",
+            "<pre><code class='language-javascript'>Monitoring network traffic.</code></pre>",
+            "<pre><code class='language-javascript'>Identify address information of a machine on a network.</code></pre>"
           ],
           "answer": 3,
           "explanation": "ipconfig or ifconfig(linux) is a utility for gaining various address information of a computer on a network."
@@ -947,10 +945,10 @@
           "subtitle": "Network terminology",
           "question": "The term 'Latency' refers to?",
           "choices": [
-          "<pre><code class='language-javascript'>The logical state of a network.</code></pre>",
-          "<pre><code class='language-javascript'>A loss of data expected in transfer over a network.</code></pre>",
-          "<pre><code class='language-javascript'>A measure of time delay between request and response experienced by a system.</code></pre>",
-          "<pre><code class='language-javascript'>The scope for expanding a network.</code></pre>"
+            "<pre><code class='language-javascript'>The logical state of a network.</code></pre>",
+            "<pre><code class='language-javascript'>A loss of data expected in transfer over a network.</code></pre>",
+            "<pre><code class='language-javascript'>A measure of time delay between request and response experienced by a system.</code></pre>",
+            "<pre><code class='language-javascript'>The scope for expanding a network.</code></pre>"
           ],
           "answer": 2,
           "explanation": "Latency can affect host to host transfers http requests etc."
@@ -959,10 +957,10 @@
           "subtitle": "Network terminology, again",
           "question": "The term 'full duplex' refers to?",
           "choices": [
-          "<pre><code class='language-javascript'>Two way data transfer but not at the same time.</code></pre>",
-          "<pre><code class='language-javascript'>Two way data transfer simultaneously.</code></pre>",
-          "<pre><code class='language-javascript'>One way data transfer at high speed.</code></pre>",
-          "<pre><code class='language-javascript'>One way data transfer with encryption</code></pre>"
+            "<pre><code class='language-javascript'>Two way data transfer but not at the same time.</code></pre>",
+            "<pre><code class='language-javascript'>Two way data transfer simultaneously.</code></pre>",
+            "<pre><code class='language-javascript'>One way data transfer at high speed.</code></pre>",
+            "<pre><code class='language-javascript'>One way data transfer with encryption</code></pre>"
           ],
           "answer": 1,
           "explanation": "An example of full duplex would be like a telephone conversation between two people."

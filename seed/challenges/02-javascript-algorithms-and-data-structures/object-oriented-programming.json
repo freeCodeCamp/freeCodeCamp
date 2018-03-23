@@ -136,7 +136,6 @@
         "Modify the <code>dog.sayLegs</code> method to remove any references to <code>dog</code>. Use the <code>duck</code> example for guidance."
       ],
       "challengeSeed": [
-        "",
         "let dog = {",
         "  name: \"Spot\",",
         "  numLegs: 4,",
@@ -171,11 +170,7 @@
         "<hr>",
         "Create a <code>constructor</code>, <code>Dog</code>, with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> that are set to a string, a string, and a number, respectively."
       ],
-      "challengeSeed": [
-        "",
-        "",
-        ""
-      ],
+      "challengeSeed": [],
       "tests": [
         "assert(typeof (new Dog()).name === 'string', 'message: <code>Dog</code> should have a <code>name</code> property set to a string.');",
         "assert(typeof (new Dog()).color === 'string', 'message: <code>Dog</code> should have a <code>color</code> property set to a string.');",
