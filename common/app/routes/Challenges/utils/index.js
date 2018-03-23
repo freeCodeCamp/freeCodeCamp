@@ -18,7 +18,7 @@ export const viewTypes = {
   [ challengeTypes.bonfire ]: 'classic',
   [ challengeTypes.frontEndProject ]: 'project',
   [ challengeTypes.backEndProject ]: 'project',
-  [ challengeTypes.modern ]: 'modren',
+  [ challengeTypes.modern ]: 'modern',
   [ challengeTypes.step ]: 'step',
   [ challengeTypes.quiz ]: 'quiz',
   [ challengeTypes.backend ]: 'backend'
