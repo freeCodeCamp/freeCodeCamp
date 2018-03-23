@@ -551,19 +551,7 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 7,
-      "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "isRequired": false
     },
     {
       "id": "589fc830f9fc0f352b528e74",
@@ -769,19 +757,7 @@
       "tests": [],
       "type": "waypoint",
       "challengeType": 7,
-      "isRequired": false,
-      "titleEs": "",
-      "descriptionEs": [
-        []
-      ],
-      "titleFr": "",
-      "descriptionFr": [
-        []
-      ],
-      "titleDe": "",
-      "descriptionDe": [
-        []
-      ]
+      "isRequired": false
     }
   ]
 }
