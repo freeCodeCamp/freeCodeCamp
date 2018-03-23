@@ -19,11 +19,7 @@ function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
             <div className='nav-component header'>
                 <Navbar.Toggle />
                 <NavLogo clickOnLogo={ clickOnLogo } />
-                <FCCSearchBar
-                  dropdown={ true }
-                  placeholder=
-                    '&#xf002; Search 8,000+ lessons, articles, and videos'
-                />
+                <FCCSearchBar />
             </div>
             <div className='nav-component bins'>
               <BinButtons panes={ panes } />

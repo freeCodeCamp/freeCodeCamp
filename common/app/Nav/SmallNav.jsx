@@ -31,11 +31,7 @@ function SmallNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
                 clickOnMap={ clickOnMap }
                 shouldShowMapButton={ shouldShowMapButton }
                 >
-                <FCCSearchBar
-                  dropdown={ true }
-                  placeholder=
-                    '&#xf002; Search 8,000+ lessons, articles, and videos'
-                />
+                <FCCSearchBar />
               </NavLinks>
             </Navbar.Collapse>
           </Row>
