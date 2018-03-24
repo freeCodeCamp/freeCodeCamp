@@ -187,7 +187,7 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessGetValidators,
-    createValidatorErrorHandler('errors', '/email-signup'),
+    createValidatorErrorHandler('errors', '/signup'),
     getPasswordlessAuth
   );
 
@@ -223,7 +223,7 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessPostValidators,
-    createValidatorErrorHandler('errors', '/email-signup'),
+    createValidatorErrorHandler('errors', '/signup'),
     postPasswordlessAuth
   );
 
