@@ -215,7 +215,19 @@ module.exports = function enableAuthentication(app) {
         )
         .flatMap(user => user.requestAuthEmail(!_user))
       )
-      .do(msg => res.status(200).send({ message: msg }))
+      .do(msg => {
+        let redirectTo = '/';
+
+        if (
+          req.session &&
+          req.session.returnTo
+        ) {
+          redirectTo = req.session.returnTo;
+        }
+
+        req.flash('info', msg);
+        return res.redirect(redirectTo);
+      })
       .subscribe(_.noop, next);
   }
 
