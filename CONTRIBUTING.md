@@ -15,11 +15,21 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 ###### If you've found a bug that is not on the board, [follow these steps](README.md#found-a-bug).
 
 --------------------------------------------------------------------------------
+## Quick Reference
 
-## Contribution Guidelines
+|command|description|
+|---|---|
+| `npm run test` |  run all JS tests in the system, including client, server, lint and challenge tests |
+| `npm run test-challenges` | run all challenge tests (for each challenge JSON file, run all `tests` against all `solutions`) |
+| `npm run seed` <br>&nbsp;&nbsp;(<small>or</small> `node seed`) | parses all the challenge JSON files and saves them into MongoDB (code is inside [seed/index.js](seed/index.js)) |
+| `npm run commit` | interactive tool to help you build a good commit message |
+| `npm run unpack` | extract challenges from `seed/challenges` into `unpacked` subdirectory, one HTML page per challenge - see [Unpack and Repack](#unpack-and-repack) |
+| `npm run repack` | repack challenges from `unpacked` subdirectory into `seed/challenges` |
 
-### Setup
 
+## Table of Contents
+
+### [Setup](#setup)
 - [Prerequisites](#prerequisites)
 - [Forking the Project](#forking-the-project)
 - [Create a Branch](#create-a-branch)
@@ -27,13 +37,12 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 - [Set Up MailHog](#set-up-mailhog)
 - [Set Up freeCodeCamp](#set-up-freecodecamp)
 
-### Create
-
-- [Make Changes](#make-changes)
+### [Make Changes](#make-changes)
+- [Unpack and Repack](#unpack-and-repack)
+- [Challenge Template](#challenge-template)
 - [Run The Test Suite](#run-the-test-suite)
 
 ### Submit
-
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Common Steps](#common-steps)
 - [How We Review and Merge Pull Requests](#how-we-review-and-merge-pull-requests)
@@ -41,6 +50,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 - [Next Steps](#next-steps)
 - [Other Resources](#other-resources)
 
+## Setup
 ### Prerequisites
 
 | Prerequisite                                | Version |
@@ -315,7 +325,7 @@ of freeCodeCamp, using the  database directly. An example is the [open-api](http
 docker-compose -f docker-compose.yml -f docker-compose-shared.yml up
 ```
 
-### Make Changes
+## Make Changes
 
 This bit is up to you!
 
@@ -331,6 +341,10 @@ room when you are not certain of any thing specific in the code.
 #### Adding or Editing Challenges
 
 The challenges are stored inside the `seed` directory (and its various subdirectories).
+
+The `seed` directory contains all the challenges that appear on the freeCodeCamp learning platform. 
+
+For each challenge section, there is a JSON file (fields documented below) containing its name, seed HTML, tests, and so on. 
 
 For more about creating challenges, see [seed/README](seed/README.md) and [seed/challenge-style-guide.md](seed/challenge-style-guide.md).
 
@@ -393,23 +407,21 @@ Instance of freeCodeCamp](#maintaining-your-fork).
 1.  Perform the maintenance step of rebasing `staging`.
 2.  Ensure you are on the `staging` branch using `git status`:
 
-```bash
-$ git status
-On branch staging
-Your branch is up-to-date with 'origin/staging'.
+        $ git status
+        On branch staging
+        Your branch is up-to-date with 'origin/staging'.
+        
+        nothing to commit, working directory clean
 
-nothing to commit, working directory clean
-```
-
-1.  If you are not on staging or your working directory is not clean, resolve
+3.  If you are not on staging or your working directory is not clean, resolve
     any outstanding files/commits and checkout staging `git checkout staging`
 
-2.  Create a branch off of `staging` with git: `git checkout -B
+4.  Create a branch off of `staging` with git: `git checkout -B
     branch/name-here` **Note:** Branch naming is important. Use a name like
     `fix/short-fix-description` or `feature/short-feature-description`. Review
      the [Contribution Guidelines](#contribution-guidelines) for more detail.
 
-3.  Edit your file(s) locally with the editor of your choice. To edit challenges, you may want to use `unpack` and `repack` -- see [seed/README.md](seed/README.md) for instructions.
+5.  Edit your file(s) locally with the editor of your choice. To edit challenges, you may want to use `unpack` and `repack` -- see [Unpack and Repack](#unpack-and-repack) for instructions.
 
 4.  Check your `git status` to see unstaged files.
 
@@ -473,6 +485,65 @@ for further information
 
 6.  Indicate if you have tested on a local copy of the site or not.
 
+### Unpack and Repack
+
+`npm run unpack` extracts challenges into separate files under `seed/unpacked` for easier viewing and editing. The files are `.gitignore`d and will *not* be checked in, and mongo seed importing uses the repacked JSON files inside `seed/challenges`; this is essentially a tool for editing `challenge.json` files.
+
+These HTML files are self-contained and run their own tests -- open a browser JS console to see the test results.
+
+> **Note**: These in-browser tests should work for simple JavaScript challenges. But other types of challenges may not fare so well. For HTML challenges, challenge tests assume that the solution HTML is the only HTML on the whole page, so jQuery selectors may select seed *and* solution elements. For React / Modern JS challenges, we would need to transpile JSX or ES6 before running the tests.
+
+`npm run repack` gathers up the unpacked/edited HTML files into challenge-block JSON files. After running repack, use `git diff` to see the changes.
+
+When editing the unpacked files, you must only insert or edit lines between comment fences like `<!--description-->` and `<!--end-->`. In descriptions, you can insert a paragraph break with `<!--break-->`.
+
+Unpacked lines that begin with `//--JSON:` are parsed and inserted verbatim.
+
+## Challenge Template
+
+```
+{
+  "id": "unique identifier (alphanumerical, mongodb id)",
+  "title": "Challenge Title",
+  "description": [
+    "Challenge description.",
+    "An new string in the array will create a new paragraph."
+  ],
+  "releasedOn": "date formatted like: January 1, 2016",
+  "challengeSeed": [
+    "// code displayed in the editor by default",
+    "// a new string in the array is a new line"
+  ],
+  "solutions": [
+    "at least one code solution that passes the tests below, used for automated testing (and inspiration for students)."
+  ],
+  "tests": [
+    "an array of assert tests that check if the user's solution is working",
+    "assert(aFunction('argument') === 'result', 'message: This message explains what the test is testing');",
+  ],
+  "type": "string identifying type of challenge. takes priority for viewType",
+  "challengeType": "number identifying type of challenge (step, project, normal). takes priority for submitType",
+  "isRequired": "boolean value that indicates whether challenge is required for certificate",
+  "translations": {
+    "language-code": {
+      "title": "The Title in a Different Language",
+      "description": [
+        "The description in a different language."
+      ]
+    }
+  }
+},
+```
+
+see also
+
+- [Challenge Style Guide](seed/challenge-style-guide.md)
+
+- [Challenge schema](../common/models/challenge.json) - lists all of the fields inside challenge, and describes some of them
+
+- [Challenge types](../common/ap/utils/challengeTypes.js) - what the numeric challenge type values mean (enum) 
+
+
 ### How We Review and Merge Pull Requests
 
 freeCodeCamp has a team of volunteer Issue Moderators. These Issue Moderators routinely go through open pull requests in a process called [Quality Assurance](https://en.wikipedia.org/wiki/Quality_assurance) (QA).
@@ -518,28 +589,30 @@ Be sure to post in the PR conversation that you have made the requested changes.
 
 ### Other Resources
 
--   [Challenges README](seed/README.md)
+* Creating and Editing Challenges:
 
--   [Style Guide for freeCodeCamp
-    Challenges](seed/challenge-style-guide.md)
+    -   [Challenge Style Guide](seed/challenge-style-guide.md) - how to create and format challenges
 
--   [Searching for Your Issue on
-    GitHub](http://forum.freecodecamp.org/t/searching-for-existing-issues/19139)
+    -   [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the curriculum
 
--   [Creating a New GitHub
-    Issue](http://forum.freecodecamp.org/t/creating-a-new-github-issue/18392)
+    -   [Challenge schema](../common/models/challenge.json) - lists all of the fields inside challenge, and describes some of them 
 
--   [Select Issues for Contributing Using
-    Labels](http://forum.freecodecamp.org/t/free-code-camp-issue-labels/19556)
+    -   [Challenge types](../common/ap/utils/challengeTypes.js) - what the numeric challenge type values mean (enum) 
 
--   [How to clone the freeCodeCamp website on a Windows
-    pc](http://forum.freecodecamp.org/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
+* Bugs and Issues:
 
--   [How to log in to your local freeCodeCamp site - using
-    GitHub](http://forum.freecodecamp.org/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
+    -   [Searching for Your Issue on GitHub](http://forum.freecodecamp.org/t/searching-for-existing-issues/19139)
 
--   [Writing great git commit
-    messages](http://forum.freecodecamp.org/t/writing-good-git-commit-messages/13210)
+    -   [Creating a New GitHub Issue](http://forum.freecodecamp.org/t/creating-a-new-github-issue/18392)
 
--   [Contributor Chat Support - For the freeCodeCamp repositories, and running a local
-    instance](https://gitter.im/FreeCodeCamp/Contributors)
+    -   [Select Issues for Contributing Using Labels](http://forum.freecodecamp.org/t/free-code-camp-issue-labels/19556)
+
+* Miscellaneous:
+
+    -   [How to clone the freeCodeCamp website on a Windows PC](http://forum.freecodecamp.org/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
+    
+    -   [How to log in to your local freeCodeCamp site using GitHub](http://forum.freecodecamp.org/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
+    
+    -   [Writing great git commit messages](http://forum.freecodecamp.org/t/writing-good-git-commit-messages/13210)
+         
+    -   [Contributor Chat Support](https://gitter.im/FreeCodeCamp/Contributors)  - for the freeCodeCamp repositories, and running a local instance
