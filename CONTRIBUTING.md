@@ -493,7 +493,7 @@ These HTML files are self-contained and run their own tests -- open a browser JS
 
 > **Note**: These in-browser tests should work for simple JavaScript challenges. But other types of challenges may not fare so well. For HTML challenges, challenge tests assume that the solution HTML is the only HTML on the whole page, so jQuery selectors may select seed *and* solution elements. For React / Modern JS challenges, we would need to transpile JSX or ES6 before running the tests.
 
-`npm run repack` gathers up the unpacked/edited HTML files into challenge-block JSON files. After running repack, use `git diff` to see the changes.
+`npm run repack` gathers up the unpacked/edited HTML files into challenge-block JSON files. After running repack, use `git diff` to see the changes in your console, and `npm run seed` to see the changes in your local freeCodeCamp app instance.
 
 When editing the unpacked files, you must only insert or edit lines between comment fences like `<!--description-->` and `<!--end-->`. In descriptions, you can insert a paragraph break with `<!--break-->`.
 
