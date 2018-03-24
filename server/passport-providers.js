@@ -11,7 +11,7 @@ export default {
     passwordField: 'password',
     authPath: '/auth/local',
     successRedirect: successRedirect,
-    failureRedirect: '/email-signin',
+    failureRedirect: failureRedirect,
     session: true,
     failureFlash: true
   },
