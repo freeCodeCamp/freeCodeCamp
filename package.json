@@ -167,6 +167,7 @@
     "diff": "^3.5.0",
     "eslint": "^4.10.0",
     "eslint-config-freecodecamp": "^1.1.1",
+    "eslint-plugin-import": "^2.9.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.0",
