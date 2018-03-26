@@ -1,0 +1,27 @@
+{
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
+  "version": "1.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^1.9.238",
+    "gatsby-link": "^1.6.39",
+    "gatsby-plugin-react-helmet": "^2.0.8",
+    "gatsby-source-filesystem": "^1.5.27",
+    "gatsby-transformer-json": "^1.0.16",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write '{src,plugins}/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "prettier": "^1.11.1"
+  }
+}
