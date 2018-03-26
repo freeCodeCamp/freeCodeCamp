@@ -3,10 +3,8 @@ import fs from 'fs-extra';
 import path from 'path';
 import {UnpackedChallenge, ChallengeFile} from './unpackedChallenge';
 
-const jsdiff = require('diff');
-
 // Repack all challenges from all
-// seed/unpacked/00-foo/bar/000-id.html files
+// seed/unpacked/00-foo/bar/000-xxx-id.html files
 // into
 // seed/challenges/00-foo/bar.json files
 
