@@ -15,9 +15,10 @@ import {UnpackedChallenge, ChallengeFile} from './unpackedChallenge';
 // todo: figure out embedded images etc. served from elsewhere in the project
 // todo: prettier/clearer CSS
 
+let unpackedDir = path.join(__dirname, 'unpacked');
+
 // bundle up the test-running JS
 function createUnpackedBundle() {
-  let unpackedDir = path.join(__dirname, 'unpacked');
   fs.mkdirp(unpackedDir, (err) => {
     if (err && err.code !== 'EEXIST') {
       console.log(err);
@@ -44,19 +45,33 @@ function createUnpackedBundle() {
 
 let currentlyUnpackingDir = null;
 
+async function cleanUnpackedDir(unpackedChallengeBlockDir) {
+  let promiseToDelete = function(filePath) {
+    filePath = path.join(unpackedChallengeBlockDir, filePath);
+    return new Promise(() => fs.unlink(filePath));
+  };
+  let promises = fs.readdirSync(unpackedChallengeBlockDir)
+    .filter(filePath => (/\.html$/i).test(filePath))
+    .map(promiseToDelete);
+  await Promise.all(promises);
+}
+
 function unpackChallengeBlock(challengeBlock) {
   let challengeBlockPath = path.parse(challengeBlock.fileName);
   let unpackedChallengeBlockDir = path.join(
-    __dirname,
-    'unpacked',
+    unpackedDir,
     challengeBlockPath.dir,
     challengeBlockPath.name
   );
+
   fs.mkdirp(unpackedChallengeBlockDir, (err) => {
     if (err && err.code !== 'EEXIST') {
       console.log(err);
       throw err;
     }
+
+    // remove existing unpacked files
+    cleanUnpackedDir(unpackedChallengeBlockDir);
 
     if (currentlyUnpackingDir !== challengeBlockPath.dir) {
       currentlyUnpackingDir = challengeBlockPath.dir;

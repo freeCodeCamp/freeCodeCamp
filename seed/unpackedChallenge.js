@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import _ from 'lodash';
+import { dasherize } from '../common/utils';
 
 const jsonLinePrefix = '//--JSON:';
 const paragraphBreak = '<!--break-->';
@@ -27,7 +28,6 @@ class ChallengeFile {
       }
     });
   }
-
 
   readChunks() {
     // todo: make this work async
@@ -142,7 +142,7 @@ class UnpackedChallenge {
     // eslint-disable-next-line no-nested-ternary
     let prefix = ((this.index < 10) ? '00' : (this.index < 100) ? '0' : '')
       + this.index;
-    return `${prefix}-${this.challenge.id}`;
+    return `${prefix}-${dasherize(this.challenge.title)}-${this.challenge.id}`;
   }
 
   expandedDescription() {

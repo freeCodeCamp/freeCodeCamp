@@ -499,6 +499,8 @@ When editing the unpacked files, you must only insert or edit lines between comm
 
 Unpacked lines that begin with `//--JSON:` are parsed and inserted verbatim.
 
+If you want to **add a challenge**, **change the order** of challenges in a block, or **edit the title** or any other fields of a challenge, you must do that work *inside the main seed JSON file* and then re-run `unpack`.
+
 ## Challenge Template
 
 ```
@@ -539,9 +541,9 @@ see also
 
 - [Challenge Style Guide](seed/challenge-style-guide.md)
 
-- [Challenge schema](../common/models/challenge.json) - lists all of the fields inside challenge, and describes some of them
+- [Challenge schema](./common/models/challenge.json) - lists all of the fields inside challenge, and describes some of them
 
-- [Challenge types](../common/ap/utils/challengeTypes.js) - what the numeric challenge type values mean (enum) 
+- [Challenge types](./common/ap/utils/challengeTypes.js) - what the numeric challenge type values mean (enum)
 
 
 ### How We Review and Merge Pull Requests
@@ -595,9 +597,9 @@ Be sure to post in the PR conversation that you have made the requested changes.
 
     -   [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the curriculum
 
-    -   [Challenge schema](../common/models/challenge.json) - lists all of the fields inside challenge, and describes some of them 
+    -   [Challenge schema](./common/models/challenge.json) - lists all of the fields inside challenge, and describes some of them
 
-    -   [Challenge types](../common/ap/utils/challengeTypes.js) - what the numeric challenge type values mean (enum) 
+    -   [Challenge types](./common/ap/utils/challengeTypes.js) - what the numeric challenge type values mean (enum)
 
 * Bugs and Issues:
 
