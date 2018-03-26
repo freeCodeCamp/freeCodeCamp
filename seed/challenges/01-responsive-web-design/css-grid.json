@@ -485,7 +485,7 @@
       "id": "5a90374338fddaf9a66b5d3a",
       "title": "Align an Item Horizontally using justify-self",
       "description": [
-      "In CSS Grid, the content of each item is located in a box which is referred to as a <dfn>cell</dfn>. You can align the content's position within its cell horizontally using the <code>justify-self</code> property on a grid item. By default, this property has a value of <code>stetch</code>, which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well:",
+      "In CSS Grid, the content of each item is located in a box which is referred to as a <dfn>cell</dfn>. You can align the content's position within its cell horizontally using the <code>justify-self</code> property on a grid item. By default, this property has a value of <code>stretch</code>, which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well:",
       "<code>start</code>: aligns the content at the left of the cell,",
       "<code>center</code>: aligns the content in the center of the cell,",
       "<code>end</code>: aligns the content at the right of the cell.",
