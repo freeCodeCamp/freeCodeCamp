@@ -1,0 +1,147 @@
+{
+  "name": "Applied Responsive Web Design Projects",
+  "order": 7,
+  "time": "150 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d78af367417b2b2512b02",
+      "title": "Get Set for our Responsive Web Design Projects",
+      "description": [
+        "",
+        "",
+        "Our front end development projects will give you a chance to apply the front end skills you've developed up to this point. We'll use a popular browser-based code editor called CodePen.",
+        "",
+        "@@STEP@@",
+        "",
+        "",
+        "These projects are hard. It takes most campers several days to build each project. You will get frustrated. But don't quit. This gets easier with practice.",
+        "",
+        "@@STEP@@",
+        "",
+        "",
+        "When you get stuck, just use the Read-Search-Ask methodology. Don't worry - you've got this.",
+        "",
+        "@@STEP@@",
+        "",
+        "",
+        "You can build these project challenges on your local computer or on a web-based code editor like <a href='https://www.codepen.io'>CodePen.io</a>. As long as your projects are publicly accessible online, you can submit their web addresses so you can claim your verified Responsive Web Design certificate.",
+        "https://codepen.io/accounts/signup/user/free"
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "Waypoint",
+      "isRequired": false,
+      "challengeType": 7
+    },
+    {
+      "id": "bd7158d8c442eddfaeb5bd18",
+      "title": "Build a Tribute Page",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/zNqgVx' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>.",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "releasedOn": "January 1, 2016",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "zipline",
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Construye una página Tributo"
+        },
+        "pt-br": {
+          "title": "Construa uma Página Tributo"
+        },
+        "ru": {
+          "title": "Создайте страницу посвященную тому что вас вдохновляет"
+        }
+      }
+    },
+    {
+      "id": "587d78af367417b2b2512b03",
+      "title": "Build a Survey Form",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/VPaoNP' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "releasedOn": "January 15, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "zipline",
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {}
+    },
+    {
+      "id": "587d78af367417b2b2512b04",
+      "title": "Build a Product Landing Page",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/RKRbwL' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/full/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "releasedOn": "January 15, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "zipline",
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {}
+    },
+    {
+      "id": "587d78b0367417b2b2512b05",
+      "title": "Build a Technical Documentation Page",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/NdrKKL' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "releasedOn": "January 15, 2017",
+      "challengeSeed": [],
+      "tests": [],
+      "type": "zipline",
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {}
+    },
+    {
+      "id": "bd7158d8c242eddfaeb5bd13",
+      "title": "Build a Personal Portfolio Webpage",
+      "description": [
+        "Fulfill the user stories by getting all of the tests to pass. Use whichever libraries you need. Give it your own personal style.",
+        "Here's a <a href='http://codepen.io/freeCodeCamp/full/zNBOYG' target='_blank'>working example</a>. Try not to look at its code.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "challengeSeed": [],
+      "tests": [],
+      "type": "zipline",
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Construye una página web para tu portafolio"
+        },
+        "pt-br": {
+          "title": "Construa uma Página de Portfólio Pessoal"
+        },
+        "ru": {
+          "title": "Создайте сайт-портфолио"
+        }
+      }
+    }
+  ]
+}
