@@ -308,6 +308,13 @@ docker-compose run --rm node npm run only-once
 docker-compose up
 ```
 
+### Creating a New User
+To create a new user, you will need to perform the following steps:
+* run MailHog if you haven't set up yet check [set-up-mailhog](#set-up-mailhog)
+* run `npm run develop` and navigated to [http://localhost:3000](http://localhost:3000/)
+* Click over the Sign-Up link situated on the right corner of the navigation bar.
+* Write your email over the input and press the button "get a sign in link" this will send an email with the login URL into MailHog.
+* The last step is to check your inbox in MailHog for a new email from "team@freecodecamp.org" click over the URL inside of it you will be redirected and logged in into the app.
 
 ### Make Changes
 
