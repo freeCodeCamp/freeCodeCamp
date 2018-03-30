@@ -10,7 +10,7 @@ if (!process.env.SES_ID) {
     connector: 'mail',
     transport: {
       type: 'smtp',
-      host: 'localhost',
+      host: process.env.MAILHOG_HOST || 'localhost',
       secure: false,
       port: 1025,
       tls: {
@@ -26,4 +26,5 @@ if (!process.env.SES_ID) {
 } else {
   debug('using AWS SES to deliver emails');
 }
+
 module.exports = ds;
