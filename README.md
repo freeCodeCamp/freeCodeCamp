@@ -2,7 +2,7 @@
 
 [![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
 
-[![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/freecodecamp/contributors](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/contributors?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Welcome to Free Code Camp's open source codebase and curriculum!
 =======================
@@ -41,7 +41,7 @@ For this certification, you'll work on **two projects from scratch** and then **
 
 ---
 
-This code is running live at [freecodecamp.org](http://www.freecodecamp.org). We also have [Gitter chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](http://medium.freecodecamp.org), and even a [YouTube channel](http://youtube.com/freecodecamp).
+This code is running live at [freecodecamp.org](http://www.freecodecamp.org). We also have [a forum](https://forum.freecodecamp.org), a [Medium publication](http://medium.freecodecamp.org), and even a [YouTube channel](http://youtube.com/freecodecamp).
 
 ### [Join our community here](http://www.freecodecamp.org/signin).
 
