@@ -271,9 +271,11 @@ npm run develop
 ```
 
 Now navigate to your browser and open <http://localhost:3000>. If the app loads, congratulations – you're all set.
+
 Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
 
 If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
+
 ```bash
 # Remove all installed node modules
 rm -rf node_modules
@@ -479,7 +481,7 @@ freeCodeCamp has a team of volunteer Issue Moderators. These Issue Moderators ro
 
 2. Another Issue Moderator will QA the same pull request. Once they have also confirmed that the new code does what it is supposed to without seeming to introduce any new bugs, they will merge the pull request.
 
-If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@BerkeleyTrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
+If you would like to apply to join our Issue Moderator team, message [@quincylarson](https://gitter.im/quincylarson) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
 
 ### How We Close Stale Issues
 
