@@ -271,9 +271,11 @@ npm run develop
 ```
 
 Now navigate to your browser and open <http://localhost:3000>. If the app loads, congratulations – you're all set.
+
 Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
 
 If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
+
 ```bash
 # Remove all installed node modules
 rm -rf node_modules
@@ -288,25 +290,23 @@ node seed
 npm run develop
 ```
 
-### Setup freeCodeCamp via Docker
+### Setup freeCodeCamp using Docker
+#### Isolated
+Use this if you just want to work on freeCodeCamp.
 
-You need to have [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed before executing commands below.
+You will need to have [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed before executing the commands below.
 
-Create docker-compose.yml from sample file
+Setup:
 ```bash
-cp sample.docker-compose.yml docker-compose.yml
+docker-compose run --rm freecodecamp npm install
+docker-compose run --rm freecodecamp npm run only-once
 ```
 
-Setup and run project:
+Run:
 ```bash
-# Setup project
-docker-compose run --rm node npm install
-docker-compose run --rm node npm run only-once
-```
-```bash
-# Run project
 docker-compose up
 ```
+
 
 ### Creating a New User
 To create a new user, you will need to perform the following steps:
@@ -315,6 +315,14 @@ To create a new user, you will need to perform the following steps:
 * Click over the Sign-Up link situated on the right corner of the navigation bar.
 * Write your email over the input and press the button "get a sign in link" this will send an email with the login URL into MailHog.
 * The last step is to check your inbox in MailHog for a new email from "team@freecodecamp.org" click over the URL inside of it you will be redirected and logged in into the app.
+
+#### Shared
+Use this if you want to work on other services that will run alongside
+of freeCodeCamp, using the  database directly. An example is the [open-api](https://github.com/freeCodeCamp/open-api) project.
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose-shared.yml up
+```
 
 ### Make Changes
 
@@ -482,7 +490,7 @@ freeCodeCamp has a team of volunteer Issue Moderators. These Issue Moderators ro
 
 2. Another Issue Moderator will QA the same pull request. Once they have also confirmed that the new code does what it is supposed to without seeming to introduce any new bugs, they will merge the pull request.
 
-If you would like to apply to join our Issue Moderator team - which is a Core Team position - message [@BerkeleyTrue](https://gitter.im/berkeleytrue) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
+If you would like to apply to join our Issue Moderator team, message [@quincylarson](https://gitter.im/quincylarson) with links to 5 of your pull requests that have been accepted and 5 issues where you have helped someone else through commenting or QA'ing.
 
 ### How We Close Stale Issues
 

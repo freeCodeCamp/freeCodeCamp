@@ -362,7 +362,7 @@
         "<blockquote>function howMany(...args) {<br>  return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>",
         "The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.",
         "<hr>",
-        "Modify the function <code>sum</code> so that is uses the rest operator and it works in the same way with any number of parameters."
+        "Modify the function <code>sum</code> so that it uses the rest operator and it works in the same way with any number of parameters."
       ],
       "challengeSeed": [
         "const sum = (function() {",
@@ -665,7 +665,7 @@
       "id": "587d7b8a367417b2b2512b4f",
       "title": "Write Concise Object Literal Declarations Using Simple Fields",
       "description": [
-        "ES6 adds some nice support for easily definining object literals.",
+        "ES6 adds some nice support for easily defining object literals.",
         "Consider the following code:",
         "<blockquote>const getMousePosition = (x, y) => ({<br>  x: x,<br>  y: y<br>});</blockquote>",
         "<code>getMousePosition</code> is a simple function that returns an object containing two fields.",
@@ -779,7 +779,7 @@
         "Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.",
         "Getters and setters are important, because they hide internal implementation details.",
         "<hr>",
-        "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Farenheit temperature.",
+        "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Fahrenheit temperature.",
         "Now create <code>getter</code> and <code>setter</code> in the class, to obtain the temperature in Celsius scale.",
         "Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
         "Note",
@@ -796,7 +796,7 @@
         "  return Thermostat;",
         "}",
         "const Thermostat = makeClass();",
-        "const thermos = new Thermostat(76); // setting in Farenheit scale",
+        "const thermos = new Thermostat(76); // setting in Fahrenheit scale",
         "let temp = thermos.temperature; // 24.44 in C",
         "thermos.temperature = 26;",
         "temp = thermos.temperature; // 26 in C"
