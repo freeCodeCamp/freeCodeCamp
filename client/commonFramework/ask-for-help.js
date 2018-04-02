@@ -1,6 +1,14 @@
 window.common = (function({ common = { init: [] } }) {
   common.init.push(function($) {
-    $('#ask-for-help-button').on('click', function() {
+    var typeMap = {
+      0: 'html-css',
+      1: 'javascript'
+    };
+    $('#ask-for-help-button').on('click', function(e) {
+      var challengeType = e.currentTarget.dataset.challengetype;
+      var category = challengeType in typeMap ?
+      typeMap[challengeType] :
+      'javascript';
       var helpTitle = common.challengeName;
       var helpMessage = [
         '**Tell us what\'s happening:**\n\n\n\n',
@@ -24,7 +32,7 @@ window.common = (function({ common = { init: [] } }) {
         + helpTitle
         + '&body='
         + helpMessage
-        + '&category=help',
+        + '&category=' + category,
         '_blank'
       );
     });
