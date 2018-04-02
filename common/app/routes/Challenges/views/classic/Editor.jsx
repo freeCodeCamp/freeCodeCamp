@@ -16,7 +16,7 @@ import {
   keySelector
 } from '../../redux';
 
-import { themeSelector } from '../../../../redux';
+import { themeSelector, challengeSelector } from '../../../../redux';
 
 import { filesSelector } from '../../../../files';
 
@@ -39,17 +39,20 @@ const options = {
 const mapStateToProps = createSelector(
   filesSelector,
   challengeMetaSelector,
+  challengeSelector,
   keySelector,
   themeSelector,
   (
     files = {},
-    { mode = 'javascript'},
+    { mode = 'javascript' },
+    { id },
     key,
     theme
   ) => ({
     content: files[key] && files[key].contents || '// Happy Coding!',
     file: files[key],
     fileKey: key,
+    id,
     mode,
     theme
   })
@@ -65,6 +68,7 @@ const propTypes = {
   content: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   fileKey: PropTypes.string.isRequired,
+  id: PropTypes.string,
   mode: PropTypes.string,
   theme: PropTypes.string
 };
@@ -125,6 +129,7 @@ export class Editor extends PureComponent {
       content,
       executeChallenge,
       fileKey,
+      id,
       classicEditorUpdated,
       mode
     } = this.props;
@@ -136,6 +141,7 @@ export class Editor extends PureComponent {
         >
         <NoSSR onSSR={ <CodeMirrorSkeleton content={ content } /> }>
           <Codemirror
+            key={ id }
             onChange={ change => classicEditorUpdated(fileKey, change) }
             options={ this.createOptions({ executeChallenge, mode, cmTheme }) }
             ref='editor'
