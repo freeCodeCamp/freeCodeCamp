@@ -14,9 +14,7 @@ module.exports = function(app) {
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
-  router.get('/unsubscribe/:email', unsubscribeMonthly);
-  router.get('/unsubscribe-notifications/:email', unsubscribeNotifications);
-  router.get('/unsubscribe-quincy/:email', unsubscribeQuincy);
+  router.get('/u/:email', unsubscribe);
   router.get('/unsubscribed/:email', unsubscribed);
   router.get('/unsubscribed', unsubscribed);
   router.get('/resubscribe/:email', resubscribe);
@@ -110,7 +108,7 @@ module.exports = function(app) {
   function confirmStickers(req, res) {
     req.flash('success', {
       msg: 'Thank you for supporting our community! Depending on how far you ' +
-        'live from San Francisco, these stickers may take several weeks ' + 
+        'live from San Francisco, these stickers may take several weeks ' +
         'to reach you.'
     });
     res.redirect('/map');
@@ -161,7 +159,7 @@ module.exports = function(app) {
     res.redirect('https://twitch.tv/freecodecamp');
   }
 
-  function unsubscribeMonthly(req, res, next) {
+  function unsubscribe(req, res, next) {
     req.checkParams(
       'email',
       `"${req.params.email}" isn't a valid email address.`
@@ -171,88 +169,45 @@ module.exports = function(app) {
       req.flash('error', { msg: errors.email.msg });
       return res.redirect('/map');
     }
-    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
+    return User.find({
+      where: {
+        email: req.params.email,
+        sendQuincyEmail: true
+      }
+    }, (err, users) => {
       if (err) { return next(err); }
-      if (!user) {
+      if (!users.length) {
         req.flash('info', {
-          msg: 'Email address not found. ' +
-          'Please update your Email preferences from your profile.'
+          msg: 'Email address not found, or email address is not on a ' +
+            'mailing list. Please update your Email preferences from your ' +
+            'settings.'
         });
         return res.redirect('/map');
       }
-      return user.updateAttributes({
-        sendMonthlyEmail: false,
-        sendQuincyEmail: false,
-        sendNotificationEmail: false
-      }, (err) => {
-        if (err) { return next(err); }
-        req.flash('info', {
-          msg: 'We\'ve successfully updated your Email preferences.'
-        });
-        return res.redirect('/unsubscribed/' + req.params.email);
-      });
-    });
-  }
 
-  function unsubscribeNotifications(req, res, next) {
-    req.checkParams(
-      'email',
-      `"${req.params.email}" isn't a valid email address.`
-    ).isEmail();
-    const errors = req.validationErrors(true);
-    if (errors) {
-      req.flash('error', { msg: errors.email.msg });
-      return res.redirect('/map');
-    }
-    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
-      if (err) { return next(err); }
-      if (!user) {
-        req.flash('info', {
-          msg: 'Email address not found. ' +
-          'Please update your Email preferences from your profile.'
-        });
-        return res.redirect('/map');
-      }
-      return user.updateAttribute('sendNotificationEmail', false, (err) => {
-        if (err) { return next(err); }
-        req.flash('info', {
-          msg: 'We\'ve successfully updated your Email preferences.'
-        });
-        return res.redirect('/unsubscribed');
+      const updates = users.map(user => {
+        return new Promise((resolve, reject) =>
+          user.updateAttributes({
+            sendQuincyEmail: false,
+            sendEmail: false,
+            sendNotificationEmail: false
+          }, (err) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve();
+            }
+          })
+        );
       });
-    });
-  }
-
-  function unsubscribeQuincy(req, res, next) {
-    req.checkParams(
-      'email',
-      `"${req.params.email}" isn't a valid email address.`
-    ).isEmail();
-    const errors = req.validationErrors(true);
-    if (errors) {
-      req.flash('error', { msg: errors.email.msg });
-      return res.redirect('/map');
-    }
-    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
-      if (err) { return next(err); }
-      if (!user) {
-        req.flash('info', {
-          msg: 'Email address not found. ' +
-          'Please update your Email preferences from your profile.'
-        });
-        return res.redirect('/map');
-      }
-      return user.updateAttributes({
-        sendQuincyEmail: false,
-        sendMonthlyEmail: false,
-        sendNotificationEmail: false
-      }, (err) => {
-        if (err) { return next(err); }
-        req.flash('info', {
-          msg: 'We\'ve successfully updated your Email preferences.'
-        });
-        return res.redirect('/unsubscribed');
-      });
+      return Promise.all(updates)
+        .then(() => {
+          req.flash('info', {
+            msg: 'We\'ve successfully updated your Email preferences.'
+          });
+          return res.redirect('/unsubscribed/' + req.params.email);
+        })
+        .catch(next);
     });
   }
 
@@ -274,26 +229,36 @@ module.exports = function(app) {
       req.flash('error', { msg: errors.email.msg });
       return res.redirect('/map');
     }
-    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
+    return User.find({ where: { email: req.params.email } }, (err, users) => {
       if (err) { return next(err); }
-      if (!user) {
+      if (!users.length) {
         req.flash('info', {
           msg: 'Email address not found. ' +
           'Please update your Email preferences from your profile.'
         });
         return res.redirect('/map');
       }
-      return user.updateAttributes({
-        sendMonthlyEmail: true,
-        sendQuincyEmail: true,
-        sendNotificationEmail: true
-      }, (err) => {
-        if (err) { return next(err); }
+      const updates = users.map(user => {
+        return new Promise((resolve, reject) =>
+          user.updateAttributes({
+            sendQuincyEmail: true
+          }, (err) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve();
+            }
+          })
+        );
+      });
+      return Promise.all(updates)
+        .then(() => {
         req.flash('info', {
           msg: 'We\'ve successfully updated your Email preferences.'
         });
         return res.redirect('/map');
-      });
+      })
+      .catch(next);
     });
   }
 
