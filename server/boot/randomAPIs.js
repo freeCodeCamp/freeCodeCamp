@@ -172,16 +172,14 @@ module.exports = function(app) {
     }
     return User.find({
       where: {
-        email: req.params.email,
-        sendQuincyEmail: true
+        email: req.params.email
       }
     }, (err, users) => {
       if (err) { return next(err); }
       if (!users.length) {
         req.flash('info', {
-          msg: 'Email address not found, or email address is not on a ' +
-            'mailing list. Please update your Email preferences from your ' +
-            'settings.'
+          msg: 'Email address not found. Please update your Email ' +
+            'preferences from your settings.'
         });
         return res.redirect('/map');
       }
@@ -190,7 +188,7 @@ module.exports = function(app) {
         return new Promise((resolve, reject) =>
           user.updateAttributes({
             sendQuincyEmail: false,
-            sendEmail: false,
+            sendMonthlyEmail: false,
             sendNotificationEmail: false
           }, (err) => {
             if (err) {
@@ -242,7 +240,9 @@ module.exports = function(app) {
       const updates = users.map(user => {
         return new Promise((resolve, reject) =>
           user.updateAttributes({
-            sendQuincyEmail: true
+            sendQuincyEmail: true,
+            sendMonthlyEmail: true,
+            sendNotificationEmail: true
           }, (err) => {
             if (err) {
               reject(err);
