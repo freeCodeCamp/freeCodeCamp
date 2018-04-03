@@ -9,6 +9,7 @@ import getChallenges from './getChallenges';
 const notMongoId = id => !isMongoId(id);
 
 let existingIds = [];
+let existingTitles = [];
 
 function validateObjectId(id, title) {
   if (notMongoId(id)) {
@@ -23,6 +24,23 @@ function validateObjectId(id, title) {
     `);
   }
   existingIds = [ ...existingIds, id ];
+  return;
+}
+
+function validateUniqueTitle(title) {
+  if (typeof title !== 'string') {
+    throw new Error(`Expected a valid string for ${title}, got ${typeof title}`);
+  }
+  const titleToCheck = title.toLowerCase().replace(/\s+/g, '');
+  const titleIndex = _.findIndex(existingTitles, existing => titleToCheck === existing);
+  if (titleIndex !== -1) {
+    throw new Error(`
+    All challenges must have a unique title.
+
+    The title for ${title} is already assigned
+    `);
+  }
+  existingTitles = [ ...existingTitles, titleToCheck ];
   return;
 }
 
@@ -84,6 +102,7 @@ function createTest({
   reactRedux = false
 }) {
   validateObjectId(id, title);
+  validateUniqueTitle(title);
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
 
