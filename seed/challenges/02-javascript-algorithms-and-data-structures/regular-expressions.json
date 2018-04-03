@@ -246,7 +246,7 @@
         "<blockquote>let bigStr = \"big\";<br>let bagStr = \"bag\";<br>let bugStr = \"bug\";<br>let bogStr = \"bog\";<br>let bgRegex = /b[aiu]g/;<br>bigStr.match(bgRegex); // Returns [\"big\"]<br>bagStr.match(bgRegex); // Returns [\"bag\"]<br>bugStr.match(bgRegex); // Returns [\"bug\"]<br>bogStr.match(bgRegex); // Returns null</blockquote>",
         "<hr>",
         "Use a character class with vowels (<code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code>) in your regex <code>vowelRegex</code> to find all the vowels in the string <code>quoteSample</code>.",
-        "<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels."
+        "<strong>Note</strong><br>Be sure to match both upper- and lowercase letters."
       ],
       "challengeSeed": [
         "let quoteSample = \"Beware of bugs in the above code; I have only proved it correct, not tried it.\";",
@@ -277,7 +277,7 @@
         "<blockquote>let catStr = \"cat\";<br>let batStr = \"bat\";<br>let matStr = \"mat\";<br>let bgRegex = /[a-e]at/;<br>catStr.match(bgRegex); // Returns [\"cat\"]<br>batStr.match(bgRegex); // Returns [\"bat\"]<br>matStr.match(bgRegex); // Returns null</blockquote>",
         "<hr>",
         "Match all the letters in the string <code>quoteSample</code>.",
-        "<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels."
+        "<strong>Note</strong><br>Be sure to match both upper- and lowercase letters."
       ],
       "challengeSeed": [
         "let quoteSample = \"The quick brown fox jumps over the lazy dog.\";",
