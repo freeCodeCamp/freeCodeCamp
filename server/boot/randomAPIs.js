@@ -15,6 +15,7 @@ module.exports = function(app) {
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/u/:email', unsubscribe);
+  router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed/:email', unsubscribed);
   router.get('/unsubscribed', unsubscribed);
   router.get('/resubscribe/:email', resubscribe);
