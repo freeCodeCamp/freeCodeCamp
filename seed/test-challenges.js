@@ -4,9 +4,9 @@ import {Observable} from 'rx';
 import tape from 'tape';
 
 import getChallenges from './getChallenges';
-import { modern } from '../common/app/utils/challengeTypes';
 import MongoIds from './mongoIds';
 import addAssertsToTapTest from './addAssertsToTapTest';
+import { modern } from '../common/app/utils/challengeTypes';
 
 let mongoIds = new MongoIds();
 
