@@ -9,19 +9,22 @@ import {
   updateMyPortfolioComplete
 } from './';
 import { makeToast } from '../../../Toasts/redux';
+import { fetchMapUi } from '../../../Map/redux';
 import {
-  updateChallenges,
   doActionOnError,
   usernameSelector,
   userSelector,
-  createErrorObservable
+  createErrorObservable,
+  challengeSelector,
+  fetchNewBlock
 } from '../../../redux';
 import {
   updateUserEmail,
   updateUserLang,
   updateMultipleUserFlags,
   regresPortfolio,
-  optoUpdatePortfolio
+  optoUpdatePortfolio,
+  resetFullBlocks
 } from '../../../entities';
 
 import { postJSON$ } from '../../../../utils/ajax-stream';
@@ -198,8 +201,7 @@ export function updateUserLangEpic(actions, { getState }) {
       type === types.updateMyLang && !!langs[payload]
     ))
     .map(({ payload }) => {
-      const state = getState();
-      const { languageTag } = userSelector(state);
+      const { languageTag } = userSelector(getState());
       return { lang: payload, oldLang: languageTag };
     });
   const ajaxUpdate = updateLang
@@ -209,13 +211,18 @@ export function updateUserLangEpic(actions, { getState }) {
       const body = { _csrf, lang };
       return postJSON$('/update-my-lang', body)
         .flatMap(({ message }) => {
+          const { block } = challengeSelector(getState());
           return Observable.of(
             // show user that we have updated their lang
             makeToast({ message }),
             // update url to reflect change
             onRouteSettings({ lang }),
-            // refetch challenges in new language
-            updateChallenges()
+            // clear fullBlocks so challenges are fetched in correct language
+            resetFullBlocks(),
+            // refetch current challenge block updated for new lang
+            fetchNewBlock(block),
+            // refetch mapUi in new language
+            fetchMapUi()
           );
         })
         .catch(doActionOnError(() => {

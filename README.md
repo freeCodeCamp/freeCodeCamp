@@ -2,7 +2,6 @@
 
 [![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
 
-[![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
 [![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
@@ -45,7 +44,7 @@ For this certification, you'll work on **two projects from scratch** and then **
 
 ---
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org). We also have [Gitter chat rooms](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](https://medium.freecodecamp.org), an [interactive forum](https://forum.freecodecamp.org), a [wiki knowledgebase](https://forum.freecodecamp.org/c/wiki), local [FaceBook groups](https://study-group-directory.freecodecamp.org/), and even a [YouTube channel](https://youtube.com/freecodecamp).
+This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org). We also have a super active [forum](https://forum.freecodecamp.org), [local study groups](https://study-group-directory.freecodecamp.org/), a [Medium publication](https://medium.freecodecamp.org), a [guide to thousands of programming topics](https://guide.freecodecamp.org), and even a [YouTube channel](https://youtube.com/freecodecamp).
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
 

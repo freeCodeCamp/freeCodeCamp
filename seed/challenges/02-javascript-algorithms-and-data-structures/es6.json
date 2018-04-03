@@ -362,7 +362,7 @@
         "<blockquote>function howMany(...args) {<br>  return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>",
         "The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.",
         "<hr>",
-        "Modify the function <code>sum</code> so that is uses the rest operator and it works in the same way with any number of parameters."
+        "Modify the function <code>sum</code> so that it uses the rest operator and it works in the same way with any number of parameters."
       ],
       "challengeSeed": [
         "const sum = (function() {",
@@ -559,7 +559,7 @@
       ],
       "tests": [
         "assert(arr.every((v, i) => v === i + 3),'message: <code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');",
-        "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g),'message: destructuring was used.');",
+        "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w*\\s*,\\s*\\w*\\s*,\\s*...arr\\s*\\]/g),'message: destructuring was used.');",
         "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), 'message: <code>Array.slice()</code> was not used.');"
       ],
       "type": "waypoint",
@@ -665,7 +665,7 @@
       "id": "587d7b8a367417b2b2512b4f",
       "title": "Write Concise Object Literal Declarations Using Simple Fields",
       "description": [
-        "ES6 adds some nice support for easily definining object literals.",
+        "ES6 adds some nice support for easily defining object literals.",
         "Consider the following code:",
         "<blockquote>const getMousePosition = (x, y) => ({<br>  x: x,<br>  y: y<br>});</blockquote>",
         "<code>getMousePosition</code> is a simple function that returns an object containing two fields.",
@@ -779,7 +779,7 @@
         "Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.",
         "Getters and setters are important, because they hide internal implementation details.",
         "<hr>",
-        "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Farenheit temperature.",
+        "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Fahrenheit temperature.",
         "Now create <code>getter</code> and <code>setter</code> in the class, to obtain the temperature in Celsius scale.",
         "Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
         "Note",
@@ -796,7 +796,7 @@
         "  return Thermostat;",
         "}",
         "const Thermostat = makeClass();",
-        "const thermos = new Thermostat(76); // setting in Farenheit scale",
+        "const thermos = new Thermostat(76); // setting in Fahrenheit scale",
         "let temp = thermos.temperature; // 24.44 in C",
         "thermos.temperature = 26;",
         "temp = thermos.temperature; // 26 in C"
@@ -883,7 +883,7 @@
       "description": [
         "Suppose you have a file that you wish to import all of its contents into the current file. This can be done with the <dfn>import *</dfn> syntax.",
         "Here's an example where the contents of a file named <code>\"math_functions\"</code> are imported into a file in the same directory:",
-        "<blockquote>import * as myMathModule from \"math_functions\"<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>",
+        "<blockquote>import * as myMathModule from \"math_functions\";<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>",
         "And breaking down that code:",
         "<blockquote>import * as object_with_name_of_your_choice from \"file_path_goes_here\"<br>object_with_name_of_your_choice.imported_function</blockquote>",
         "You may use any name following the <code>import * as </code>portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
@@ -899,12 +899,10 @@
         "}}};"
       ],
       "challengeSeed": [
-        "\"use strict\";",
-        "myStringModule.capitalize(\"foo\");",
-        "myStringModule.lowercase(\"Foo\");"
+        "\"use strict\";"
       ],
       "tests": [
-        "getUserInput => assert(getUserInput('index').match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/g), 'message: Properly uses <code>import * as</code> syntax.');"
+        "assert(code.match(/import\\s+\\*\\s+as\\s+[a-zA-Z0-9_$]+\\s+from\\s*\"\\s*capitalize_strings\\s*\"\\s*;/gi), 'message: Properly uses <code>import * as</code> syntax.');"
       ],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",

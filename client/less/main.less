@@ -77,6 +77,16 @@ h1, h2, h3, h4, h5, h6, p, li {
   margin-top: 20px;
 }
 
+.not-found, .not-found .btn-primary {
+  display: grid;
+  margin: auto;
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+  }
+}
+
 // Thumbnails
 // -------------------------
 
@@ -923,9 +933,16 @@ and (max-width : 400px)  {
 // Account Modal Styles
 .modal-dialog {
   margin: 80px;
+  bottom: 48px;
 
   .modal-content {
     background-color: #f9f9f9;
+
+    .btn-success:hover,
+    .btn-success:focus,
+    .btn-success:active {
+      background: #457E86;
+    }
   }
 
   .modal-header .close {

@@ -7,22 +7,31 @@
 # Run with:
 #   docker-compose up
 #
-version: "2"
+version: "3"
 services:
-    db:
-        image: freecodecamp/mongo:production
-
-    server:
-        image: node:8.9.0
+    freecodecamp:
+        image: node:8.9.4
         depends_on:
             - db
+            - mailhog
         environment:
+            - MAILHOG_HOST=mailhog
             - MONGOHQ_URL=mongodb://db:27017/freecodecamp
         volumes:
-            - .:/fcc
-        working_dir: /fcc
+            - .:/app
+        working_dir: /app
         command:
             - npm
-            - start
+            - run
+            - develop
         ports:
-            - "3000:3000" # Change port if needed
+            - "3000:3000"
+    db:
+        image: mongo:3.2.6
+        ports:
+            - "27017:27017"
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+            - "1025:1025"
+            - "8025:8025"
