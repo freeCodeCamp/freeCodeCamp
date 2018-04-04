@@ -40,7 +40,7 @@ function mapDispatchToProps(dispatch) {
           const handler = `handle${capitalize(content)}Click`;
           mdtp[handler] = createNavLinkActionCreator(content);
           return mdtp;
-        }),
+        }, {}),
       closeDropdown,
       openDropdown
     },

@@ -53,7 +53,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -77,7 +77,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -109,7 +109,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -134,7 +134,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -156,7 +156,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -186,7 +186,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -221,7 +221,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -249,7 +249,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -277,7 +277,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     },
     {
@@ -300,7 +300,7 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "backend",
+      "challengeType": 2,
       "translations": {}
     }
   ]

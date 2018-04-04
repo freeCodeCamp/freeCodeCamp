@@ -277,7 +277,7 @@
         "<blockquote>let catStr = \"cat\";<br>let batStr = \"bat\";<br>let matStr = \"mat\";<br>let bgRegex = /[a-e]at/;<br>catStr.match(bgRegex); // Returns [\"cat\"]<br>batStr.match(bgRegex); // Returns [\"bat\"]<br>matStr.match(bgRegex); // Returns null</blockquote>",
         "<hr>",
         "Match all the letters in the string <code>quoteSample</code>.",
-        "<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels."
+        "<strong>Note</strong><br>Be sure to match both upper- and lowercase <strong>letters<strong>."
       ],
       "challengeSeed": [
         "let quoteSample = \"The quick brown fox jumps over the lazy dog.\";",

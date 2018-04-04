@@ -35,6 +35,7 @@ coverage
 
 server/*.bundle.js
 public/js/bundle*
+seed/unpacked
 
 *.map
 

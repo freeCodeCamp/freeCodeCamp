@@ -84,7 +84,6 @@
         "This exercise is designed to illustrate the difference between how <code>var</code> and <code>let</code> keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion."
       ],
       "challengeSeed": [
-        "",
         "function checkScope() {",
         "\"use strict\";",
         "  var i = \"function scope\";",

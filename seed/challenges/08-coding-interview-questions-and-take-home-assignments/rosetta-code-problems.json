@@ -2107,7 +2107,7 @@
         "<p>| style=\"text-align:center\"| <code>]</code> || Jump back to the matching <code>[</code> if the cell under the pointer is nonzero</p>",
         "<p>|}</p>",
         "<p>Any cell size is allowed,  EOF   (<u>E</u>nd-<u>O</u>-<u>F</u>ile)  support is optional, as is whether you have bounded or unbounded memory.</p>",
-        " "
+        ""
       ],
       "challengeSeed": [
         "function brain (prog) {",
@@ -2947,7 +2947,6 @@
       "title": "Sailors, coconuts and a monkey problem",
       "type": "Waypoint",
       "description": [
-        " ",
         " <p>",
         "   Five sailors are shipwrecked on an island and",
         "   collect a large pile of coconuts during the day.",
@@ -2972,40 +2971,40 @@
         "   it is found that the pile of coconuts divides equally amongst the sailors with",
         "   no remainder. (Nothing for the monkey in the morning.)",
         " </p>",
-        " ",
+        "",
         " The task:",
-        " ",
-        "   ",
+        "",
+        "",
         "     Create a function that returns the",
         "     the minimum possible size",
         "     of the initial pile of coconuts collected during the day for N",
         "     sailors.",
-        "   ",
-        " ",
+        "",
+        "",
         " Note:",
-        " ",
-        "   ",
+        "",
+        "",
         "     Of course the tale is told in a",
         "     world where the collection of any amount of coconuts in a day and multiple",
         "     divisions of the pile, etc can occur in time fitting the story line, so as",
         "     not to affect the mathematics.",
-        "   ",
-        " ",
-        " ",
+        "",
+        "",
+        "",
         " C.f:",
-        " ",
+        "",
         "   <a",
         "       href=\"https://www.youtube.com/watch?v=U9qU20VmvaU\" title=\"link: https://www.youtube.com/watch?v=U9qU20VmvaU\">",
         "       Monkeys and Coconuts - Numberphile</a> (Video) Analytical solution.",
-        "   ",
-        "   ",
+        "",
+        "",
         "     <a",
         "       href=\"http://oeis.org/A002021\" title=\"link: http://oeis.org/A002021\">A002021 Pile of coconuts problem</a> The On-Line",
         "     Encyclopedia of Integer Sequences. (Although some of its references may use",
         "     the alternate form of the tale).",
-        "   ",
-        " ",
-        " "
+        "",
+        "",
+        ""
       ],
       "challengeSeed": [
         "// noprotect",
@@ -3033,21 +3032,19 @@
       "type": "Waypoint",
       "null": [],
       "description": [
-        "  ",
-        "  ",
         "    Task:",
-        "  ",
+        "",
         "  <p>",
         "    For each number list of 6-digit ",
         "    <a href=\"https://en.wikipedia.org/wiki/SEDOL\" title=\"wp: SEDOL\">SEDOL</a>s,",
         "    calculate and append the checksum digit.",
         "  </p>",
-        "  ",
+        "",
         "  <p>",
         "    That is, given the input string on the left, your function should return the",
         "    corresponding string on the right:",
         "  </p>",
-        "  ",
+        "",
         "    <pre>",
         "     710889 => 7108899",
         "     B0YBKJ => B0YBKJ7",
@@ -3061,7 +3058,7 @@
         "     B0YBKT => B0YBKT7",
         "     B00030 => B000300",
         "    </pre>",
-        "  ",
+        "",
         "  <p>",
         "    Check also that each input is correctly formed, especially",
         "    with respect to valid characters allowed in a SEDOL string. Your function",
@@ -3334,9 +3331,9 @@
         "<small>Note: the above data would be un-orderable if, for example, <code>dw04</code> is added to the list of dependencies of <code>dw01</code>.</small>",
         "</p>",
         "C.f.:",
-        "   ",
+        "",
         "    <a href=\"http://rosettacode.org/wiki/Topological sort/Extracted top item\" title=\"Topological sort/Extracted top item\">Topological sort/Extracted top item</a>.",
-        "  ",
+        "",
         "<p>There are two popular algorithms for topological sorting:</p>",
         "<p>",
         "  Kahn's 1962 topological sort, and depth-first search:",
@@ -3456,7 +3453,7 @@
         "}"
       ],
       "solutions": [
-        "\nconst collectDept = function (arrOfObj, groupName) {\n  const collect = arrOfObj.reduce((rtnObj, obj) => {\n    if (rtnObj[obj[groupName]] === undefined) {\n      rtnObj[obj[groupName]] = [];\n    }\n    rtnObj[obj[groupName]].push(obj);\n    return rtnObj;\n  }, {} // initial value to reduce\n  );\n\n  return Object.keys(collect).sort().map(key => collect[key]);\n};\n\nconst sortRank = function (arrOfRankArrs, rankName) {\n  return arrOfRankArrs.map(item => item.sort((a, b) => {\n    if (a[rankName] > b[rankName]) { return -1; }\n    if (a[rankName] < b[rankName]) { return 1; }\n    return 0;\n  }));\n};\n\nfunction topRankPerGroup(n, data, groupName, rankName) {\n  if (n < 0) { return; }\n  return sortRank(collectDept(data, groupName),\n    rankName).map(list => list.slice(0, n));\n}\n"
+        "const collectDept = function (arrOfObj, groupName) {\n  const collect = arrOfObj.reduce((rtnObj, obj) => {\n    if (rtnObj[obj[groupName]] === undefined) {\n      rtnObj[obj[groupName]] = [];\n    }\n    rtnObj[obj[groupName]].push(obj);\n    return rtnObj;\n  }, {} // initial value to reduce\n  );\n\n  return Object.keys(collect).sort().map(key => collect[key]);\n};\n\nconst sortRank = function (arrOfRankArrs, rankName) {\n  return arrOfRankArrs.map(item => item.sort((a, b) => {\n    if (a[rankName] > b[rankName]) { return -1; }\n    if (a[rankName] < b[rankName]) { return 1; }\n    return 0;\n  }));\n};\n\nfunction topRankPerGroup(n, data, groupName, rankName) {\n  if (n < 0) { return; }\n  return sortRank(collectDept(data, groupName),\n    rankName).map(list => list.slice(0, n));\n}\n"
       ],
       "tail": [
         "const testData1 = [",
@@ -3552,9 +3549,9 @@
         "A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: &nbsp; (X, Y, Z).",
         "<p>",
         "Task:",
-        "  ",
+        "",
         "    Write a function that takes two vectors (arrays) as input and computes their cross product.",
-        "  ",
+        "",
         "Your function should return <code>null</code> on",
         "invalid inputs (ie vectors of different lengths).",
         "</p>"
@@ -3591,9 +3588,9 @@
         "</p>",
         "<p>",
         "Task:",
-        "  ",
+        "",
         "    Write a function that takes any numbers of vectors (arrays) as input and computes their dot product.",
-        "  ",
+        "",
         "Your function should return <code>null</code> on",
         "invalid inputs (ie vectors of different lengths).",
         "</p>"
@@ -3646,9 +3643,9 @@
         "</pre>",
         "<p>",
         "Task:",
-        "  ",
+        "",
         "    Write a function that can wrap this text to any number of characters.",
-        "  ",
+        "",
         "As an example, the text wrapped to 80 characters should look like the following:",
         "</p>",
         "<pre>",
@@ -3711,10 +3708,10 @@
         "<a href=\"https://en.wikipedia.org/wiki/Fixed-point combinator\" title=\"wp: fixed-point combinator\">fixed-point combinators</a>.",
         "</p>",
         "Task:",
-        "  ",
+        "",
         "    Define the stateless Y combinator function and use it to compute",
         "    <a href=\"https://en.wikipedia.org/wiki/Factorial\" title=\"wp: factorial\">factorial</a>.",
-        "  ",
+        "",
         "<code>factorial(N)</code> function is already given to you.",
         "See also <a href=\"http://vimeo.com/45140590\">Jim Weirich: Adventures in Functional Programming</a>."
       ],
@@ -3836,7 +3833,7 @@
         "                                                           </pre>",
         "It produces the thinned output:",
         "<pre>",
-        "                                                           ",
+        "",
         "    # ##########                       #######",
         "     ##        #                   ####       #",
         "     #          #                 ##",
@@ -3851,7 +3848,7 @@
         "     #                            ##",
         "     #                             ############",
         "                       ###                          ###",
-        "                                                           ",
+        "",
         "                                                           </pre>",
         "<h2>Algorithm</h2>",
         "Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes.",
@@ -3862,12 +3859,12 @@
         "  <tr><td>P7</td><td>P6</td><td>P5</td></tr>",
         "</table>",
         "Obviously the boundary pixels of the image cannot have the full eight neighbours.",
-        "  ",
+        "",
         "    Define $A(P1)$ = the number of transitions from white to black, (0 -> 1) in the sequence P2,P3,P4,P5,P6,P7,P8,P9,P2. (Note the extra P2 at the end - it is circular).",
-        "  ",
-        "  ",
+        "",
+        "",
         "    Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )",
-        "  ",
+        "",
         "<h3>Step 1:</h3>",
         "All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.",
         "  (0) The pixel is black and has eight neighbours",
@@ -3920,7 +3917,6 @@
         "function Point(x, y) {\n  this.x = x;\n  this.y = y;\n}\n\nconst ZhangSuen = (function () {\n  function ZhangSuen() {\n  }\n\n  ZhangSuen.nbrs = [[0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1]];\n\n  ZhangSuen.nbrGroups = [[[0, 2, 4], [2, 4, 6]], [[0, 2, 6], [0, 4, 6]]];\n\n  ZhangSuen.toWhite = [];\n\n  ZhangSuen.main = function (image) {\n    ZhangSuen.grid = new Array(image);\n    for (let r = 0; r < image.length; r++) {\n      ZhangSuen.grid[r] = image[r].split('');\n    }\n    ZhangSuen.thinImage();\n    return ZhangSuen.getResult();\n  };\n\n  ZhangSuen.thinImage = function () {\n    let firstStep = false;\n    let hasChanged;\n    do {\n      hasChanged = false;\n      firstStep = !firstStep;\n      for (let r = 1; r < ZhangSuen.grid.length - 1; r++) {\n        for (let c = 1; c < ZhangSuen.grid[0].length - 1; c++) {\n          if (ZhangSuen.grid[r][c] !== '#') {\n            continue;\n          }\n          const nn = ZhangSuen.numNeighbors(r, c);\n          if (nn < 2 || nn > 6) {\n            continue;\n          }\n          if (ZhangSuen.numTransitions(r, c) !== 1) {\n            continue;\n          }\n          if (!ZhangSuen.atLeastOneIsWhite(r, c, firstStep ? 0 : 1)) {\n            continue;\n          }\n          ZhangSuen.toWhite.push(new Point(c, r));\n          hasChanged = true;\n        }\n      }\n      for (let i = 0; i < ZhangSuen.toWhite.length; i++) {\n        const p = ZhangSuen.toWhite[i];\n        ZhangSuen.grid[p.y][p.x] = ' ';\n      }\n      ZhangSuen.toWhite = [];\n    } while ((firstStep || hasChanged));\n  };\n\n  ZhangSuen.numNeighbors = function (r, c) {\n    let count = 0;\n    for (let i = 0; i < ZhangSuen.nbrs.length - 1; i++) {\n      if (ZhangSuen.grid[r + ZhangSuen.nbrs[i][1]][c + ZhangSuen.nbrs[i][0]] === '#') {\n        count++;\n      }\n    }\n    return count;\n  };\n\n  ZhangSuen.numTransitions = function (r, c) {\n    let count = 0;\n    for (let i = 0; i < ZhangSuen.nbrs.length - 1; i++) {\n      if (ZhangSuen.grid[r + ZhangSuen.nbrs[i][1]][c + ZhangSuen.nbrs[i][0]] === ' ') {\n        if (ZhangSuen.grid[r + ZhangSuen.nbrs[i + 1][1]][c + ZhangSuen.nbrs[i + 1][0]] === '#') {\n          count++;\n        }\n      }\n    }\n    return count;\n  };\n\n  ZhangSuen.atLeastOneIsWhite = function (r, c, step) {\n    let count = 0;\n    const group = ZhangSuen.nbrGroups[step];\n    for (let i = 0; i < 2; i++) {\n      for (let j = 0; j < group[i].length; j++) {\n        const nbr = ZhangSuen.nbrs[group[i][j]];\n        if (ZhangSuen.grid[r + nbr[1]][c + nbr[0]] === ' ') {\n          count++;\n          break;\n        }\n      }\n    }\n    return count > 1;\n  };\n\n  ZhangSuen.getResult = function () {\n    const result = [];\n    for (let i = 0; i < ZhangSuen.grid.length; i++) {\n      const row = ZhangSuen.grid[i].join('');\n      result.push(row);\n    }\n    return result;\n  };\n  return ZhangSuen;\n}());\n\nfunction thinImage(image) {\n  return ZhangSuen.main(image);\n}\n"
       ],
       "tail": [
-        "",
         "const imageForTests = [",
         "  '                                                          ',",
         "  ' #################                   #############        ',",
@@ -4166,7 +4162,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "4-rings or 4-squares puzzle",
@@ -4378,7 +4375,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "A+B",
@@ -4484,7 +4482,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Active object",
@@ -4572,7 +4571,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "AKS test for primes",
@@ -4777,7 +4777,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Amb",
@@ -4929,7 +4930,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Anagrams/Deranged anagrams",
@@ -5101,7 +5103,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Anagrams",
@@ -5191,7 +5194,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Arbitrary-precision integers (included)",
@@ -5224,7 +5228,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Arithmetic/Complex",
@@ -5324,7 +5329,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Arithmetic-geometric mean",
@@ -5423,7 +5429,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Arithmetic/Rational",
@@ -5462,7 +5469,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Averages/Simple moving average",
@@ -5578,7 +5586,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Best shuffle",
@@ -5690,7 +5699,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Bitwise operations",
@@ -5733,7 +5743,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Brace expansion",
@@ -6226,7 +6237,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Cartesian product of two or more lists",
@@ -6503,7 +6515,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Casting out nines",
@@ -6710,7 +6723,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Combinations with repetitions",
@@ -6934,7 +6948,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Conway's Game of Life",
@@ -7403,7 +7418,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Count in factors",
@@ -7475,7 +7491,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Cumulative standard deviation",
@@ -7566,7 +7583,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Currying",
@@ -7799,7 +7817,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "CUSIP",
@@ -7857,7 +7876,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Cut a rectangle",
@@ -7884,7 +7904,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Deconvolution/2D+",
@@ -7974,7 +7995,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Delegates",
@@ -8036,7 +8058,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Determine if a string is numeric",
@@ -8078,7 +8101,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Digital root",
@@ -8155,7 +8179,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Dinesman's multiple-dwelling problem",
@@ -8331,7 +8356,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Distributed programming",
@@ -8390,7 +8416,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "DNS query",
@@ -8417,7 +8444,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Documentation",
@@ -8447,7 +8475,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Dot product",
@@ -8541,7 +8570,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Doubly-linked list/Definition",
@@ -8574,7 +8604,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Doubly-linked list/Element definition",
@@ -8634,7 +8665,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Doubly-linked list/Element insertion",
@@ -8682,7 +8714,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Doubly-linked list/Traversal",
@@ -8742,7 +8775,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Dragon curve",
@@ -8994,7 +9028,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Draw a clock",
@@ -9084,7 +9119,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Draw a cuboid",
@@ -9114,7 +9150,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Draw a rotating cube",
@@ -9144,7 +9181,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Draw a sphere",
@@ -9243,7 +9281,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Dutch national flag problem",
@@ -9277,7 +9316,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Dynamic variable names",
@@ -9318,7 +9358,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Euler's sum of powers conjecture",
@@ -9535,7 +9576,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Evolutionary algorithm",
@@ -9822,7 +9864,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Execute HQ9+",
@@ -9878,7 +9921,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Execute SNUSP",
@@ -9910,7 +9954,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "FASTA format",
@@ -9951,7 +9996,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Fast Fourier transform",
@@ -10108,7 +10154,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Filter",
@@ -10189,7 +10236,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Find common directory path",
@@ -10222,7 +10270,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Find largest left truncatable prime in a given base",
@@ -10250,7 +10299,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Find palindromic numbers in both binary and ternary bases",
@@ -10418,7 +10468,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Find the last Sunday of each month",
@@ -10650,7 +10701,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Find the missing permutation",
@@ -10931,7 +10983,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "First class environments",
@@ -10958,7 +11011,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "First-class functions",
@@ -11045,7 +11099,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "First-class functions/Use numbers analogously",
@@ -11082,7 +11137,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Five weekends",
@@ -11421,7 +11477,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "FizzBuzz",
@@ -11535,7 +11592,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Flatten a list",
@@ -11652,7 +11710,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Floyd's triangle",
@@ -12030,7 +12089,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Floyd-Warshall algorithm",
@@ -12101,7 +12161,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Formal power series",
@@ -12128,7 +12189,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Formatted numeric output",
@@ -12168,7 +12230,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Forward difference",
@@ -12294,7 +12357,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Four bit adder",
@@ -12461,7 +12525,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Fractran",
@@ -12549,7 +12614,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Gamma function",
@@ -12605,7 +12671,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Gaussian elimination",
@@ -12759,7 +12826,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "General FizzBuzz",
@@ -12948,7 +13016,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Generate Chess960 starting position",
@@ -13025,7 +13094,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Generate lower case ASCII alphabet",
@@ -13186,7 +13256,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Generator/Exponential",
@@ -13301,7 +13372,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Gray code",
@@ -13333,7 +13405,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Greatest common divisor",
@@ -13409,7 +13482,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Greatest subsequential sum",
@@ -13468,7 +13542,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Guess the number/With feedback (player)",
@@ -13588,7 +13663,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Hamming numbers",
@@ -13826,7 +13902,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "IBAN",
@@ -13898,7 +13975,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "I before E except after C",
@@ -13939,7 +14017,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Identity matrix",
@@ -14023,7 +14102,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Iterated digits squaring",
@@ -14062,7 +14142,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Jaro distance",
@@ -14103,7 +14184,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "JortSort",
@@ -14149,7 +14231,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Josephus problem",
@@ -14238,7 +14321,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Kaprekar numbers",
@@ -14344,7 +14428,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "K-d tree",
@@ -14383,7 +14468,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Knapsack problem/0-1",
@@ -14678,7 +14764,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Knapsack problem/Bounded",
@@ -14912,7 +14999,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Knapsack problem/Continuous",
@@ -14972,7 +15060,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Knapsack problem/Unbounded",
@@ -15108,7 +15197,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Knight's tour",
@@ -15144,7 +15234,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Knuth's algorithm S",
@@ -15184,7 +15275,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Knuth shuffle",
@@ -15387,7 +15479,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Kronecker product based fractals",
@@ -15552,7 +15645,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Kronecker product",
@@ -15835,7 +15929,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Langton's ant",
@@ -16105,7 +16200,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Largest int from concatenated ints",
@@ -16189,7 +16285,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Last Friday of each month",
@@ -16236,7 +16333,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Last letter-first letter",
@@ -16283,7 +16381,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Leap year",
@@ -16319,7 +16418,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Least common multiple",
@@ -16405,7 +16505,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Left factorials",
@@ -16455,7 +16556,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Letter frequency",
@@ -16530,7 +16632,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Levenshtein distance",
@@ -16685,7 +16788,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Linear congruential generator",
@@ -16722,7 +16826,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "List comprehensions",
@@ -16873,7 +16978,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Longest common subsequence",
@@ -17049,7 +17155,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Longest increasing subsequence",
@@ -17134,7 +17241,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Longest string challenge",
@@ -17193,7 +17301,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Long multiplication",
@@ -17366,7 +17475,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Look-and-say sequence",
@@ -17450,7 +17560,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Loop over multiple arrays simultaneously",
@@ -17613,7 +17724,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Loops/Do-while",
@@ -17784,7 +17896,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Loops/Nested",
@@ -17903,7 +18016,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Lucas-Lehmer test",
@@ -17933,7 +18047,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "LU decomposition",
@@ -18059,7 +18174,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Ludic numbers",
@@ -18199,7 +18315,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Luhn test of credit card numbers",
@@ -18310,7 +18427,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Lychrel numbers",
@@ -18370,7 +18488,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "LZW compression",
@@ -18486,7 +18605,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Magic squares of doubly even order",
@@ -18731,7 +18851,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Magic squares of odd order",
@@ -19207,7 +19328,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Magic squares of singly even order",
@@ -19241,7 +19363,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Main step of GOST 28147-89",
@@ -19300,7 +19423,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Make directory path",
@@ -19365,7 +19489,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Mandelbrot set",
@@ -19504,7 +19629,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Man or boy test",
@@ -19761,7 +19887,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Map range",
@@ -19841,7 +19968,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Matrix arithmetic",
@@ -19873,7 +20001,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Matrix-exponentiation operator",
@@ -19953,7 +20082,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Matrix multiplication",
@@ -20145,7 +20275,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Matrix transposition",
@@ -20266,7 +20397,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Maximum triangle path sum",
@@ -20323,7 +20455,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Maze solving",
@@ -20503,7 +20636,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "MD4",
@@ -20532,7 +20666,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "MD5/Implementation",
@@ -20573,7 +20708,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "MD5",
@@ -20603,7 +20739,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Median filter",
@@ -20630,7 +20767,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Metaprogramming",
@@ -20657,7 +20795,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Metered concurrency",
@@ -20684,7 +20823,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Metronome",
@@ -20712,7 +20852,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Middle three digits",
@@ -20777,7 +20918,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Miller–Rabin primality test",
@@ -20858,7 +21000,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Modular exponentiation",
@@ -20887,7 +21030,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Modular inverse",
@@ -20930,7 +21074,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Monte Carlo methods",
@@ -21036,7 +21181,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Monty Hall problem",
@@ -21183,7 +21329,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Morse code",
@@ -21318,7 +21465,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Move-to-front algorithm",
@@ -21471,7 +21619,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Multifactorial",
@@ -21570,7 +21719,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Multiple distinct objects",
@@ -21630,7 +21780,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Multiple regression",
@@ -21721,7 +21872,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Multiplication tables",
@@ -21910,7 +22062,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Multiplicative order",
@@ -21955,7 +22108,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Multisplit",
@@ -22006,7 +22160,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Munching squares",
@@ -22033,7 +22188,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Mutual recursion",
@@ -22117,7 +22273,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Narcissistic decimal number",
@@ -22349,7 +22506,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Narcissist",
@@ -22410,7 +22568,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Natural sorting",
@@ -22500,7 +22659,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Nautical bell",
@@ -22529,7 +22689,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Non-continuous subsequences",
@@ -22596,7 +22757,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Non-decimal radices/Convert",
@@ -22805,7 +22967,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Non-decimal radices/Input",
@@ -22888,7 +23051,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Non-decimal radices/Output",
@@ -22968,7 +23132,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Nonoblock",
@@ -23021,7 +23186,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Nonogram solver",
@@ -23087,7 +23253,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "N-queens problem",
@@ -23123,7 +23290,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "N'th",
@@ -23235,7 +23403,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Nth root",
@@ -23279,7 +23448,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Number names",
@@ -23307,7 +23477,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Numerical integration/Gauss-Legendre Quadrature",
@@ -23366,7 +23537,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Numerical integration",
@@ -23414,7 +23586,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Numeric error propagation",
@@ -23462,7 +23635,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Odd word problem",
@@ -23506,7 +23680,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Old lady swallowed a fly",
@@ -23536,7 +23711,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Optional parameters",
@@ -23591,7 +23767,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Order disjoint list items",
@@ -23807,7 +23984,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Ordered Partitions",
@@ -23930,7 +24108,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Ordered words",
@@ -24007,7 +24186,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Order two numerical lists",
@@ -24068,7 +24248,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Palindrome detection",
@@ -24149,7 +24330,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pangram checker",
@@ -24223,7 +24405,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Paraffins",
@@ -24292,7 +24475,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Parallel Brute Force",
@@ -24321,7 +24505,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Parallel calculations",
@@ -24428,7 +24613,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Parse an IP Address",
@@ -24475,7 +24661,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Parsing/RPN calculator algorithm",
@@ -24601,7 +24788,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Parsing/RPN to infix conversion",
@@ -24754,7 +24942,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Parsing/Shunting-yard algorithm",
@@ -24885,7 +25074,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pascal matrix generation",
@@ -24917,7 +25107,7 @@
         "<p>Write functions capable of generating each of the three forms of  n-by-n  matrices.</p><p>Use those functions to display upper, lower, and symmetric Pascal  5-by-5  matrices on this page.</p><p>The output should distinguish between different matrices and the rows of each matrix  (no showing a list of 25 numbers assuming the reader should split it into rows).</p>",
         "Note:  ",
         "<p>The  <a href=\"http://rosettacode.org/wiki/Cholesky decomposition\" title=\"Cholesky decomposition\">Cholesky decomposition</a>  of a Pascal symmetric matrix is the Pascal lower-triangle matrix of the same size.</p>",
-        " "
+        ""
       ],
       "challengeSeed": [
         "function replaceMe (foo) {",
@@ -25096,7 +25286,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pascal's triangle/Puzzle",
@@ -25135,7 +25326,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pascal's triangle",
@@ -25474,7 +25666,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pathological floating point problems",
@@ -25542,7 +25735,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pattern matching",
@@ -25569,7 +25763,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Penney's game",
@@ -25610,7 +25805,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pentagram",
@@ -25641,7 +25837,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Percolation/Bond percolation",
@@ -25671,7 +25868,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Percolation/Mean cluster density",
@@ -25706,7 +25904,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Percolation/Mean run density",
@@ -25745,7 +25944,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Percolation/Site percolation",
@@ -25775,7 +25975,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Perfect numbers",
@@ -25978,7 +26179,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Perfect shuffle",
@@ -26208,7 +26410,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Permutations by swapping",
@@ -26243,7 +26446,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Permutations/Derangements",
@@ -26280,7 +26484,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Permutations/Rank of a permutation",
@@ -26341,7 +26546,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Permutations",
@@ -26522,7 +26728,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Permutation test",
@@ -26590,7 +26797,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pernicious numbers",
@@ -26625,7 +26833,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Phrase reversals",
@@ -26753,7 +26962,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Polynomial long division",
@@ -26816,7 +27026,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Polynomial regression",
@@ -26849,7 +27060,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Polyspiral",
@@ -26896,7 +27108,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Population count",
@@ -26932,7 +27145,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Power set",
@@ -27057,7 +27271,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Price fraction",
@@ -27127,7 +27342,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Primality by trial division",
@@ -27183,7 +27399,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Prime decomposition",
@@ -27383,7 +27600,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Primes - allocate descendants to their ancestors",
@@ -27426,7 +27644,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Primorial numbers",
@@ -27476,7 +27695,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Problem of Apollonius",
@@ -27504,7 +27724,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pythagoras tree",
@@ -27535,7 +27756,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Pythagorean triples",
@@ -27622,7 +27844,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "QR decomposition",
@@ -27665,7 +27888,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Quaternion type",
@@ -27817,7 +28041,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Queue/Definition",
@@ -27874,7 +28099,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Queue/Usage",
@@ -27928,7 +28154,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Quickselect algorithm",
@@ -27957,7 +28184,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Quine",
@@ -28045,7 +28273,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Random number generator (device)",
@@ -28073,7 +28302,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Random number generator (included)",
@@ -28107,7 +28337,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Range expansion",
@@ -28276,7 +28507,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Range extraction",
@@ -28484,7 +28716,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Ranking methods",
@@ -28717,7 +28950,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Rate counter",
@@ -28766,7 +29000,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Ray-casting algorithm",
@@ -28837,7 +29072,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "RCRPG",
@@ -28868,7 +29104,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Real constants and functions",
@@ -28920,7 +29157,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Reduced row echelon form",
@@ -29054,7 +29292,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Regular expressions",
@@ -29110,7 +29349,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Remove duplicate elements",
@@ -29261,7 +29501,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Rendezvous",
@@ -29296,7 +29537,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Rep-string",
@@ -29465,7 +29707,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Resistor mesh",
@@ -29496,7 +29739,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Retrieve and search chat history",
@@ -29529,7 +29773,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Reverse words in a string",
@@ -29617,7 +29862,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "RIPEMD-160",
@@ -29647,7 +29893,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Roman numerals/Decode",
@@ -29903,7 +30150,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Roman numerals/Encode",
@@ -30095,7 +30343,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Roots of a function",
@@ -30163,7 +30412,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Roots of a quadratic function",
@@ -30210,7 +30460,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Roots of unity",
@@ -30270,7 +30521,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Rosetta Code/Find bare lang tags",
@@ -30299,7 +30551,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Rosetta Code/Fix code tags",
@@ -30353,7 +30606,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Rot-13",
@@ -30462,7 +30716,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "RSA code",
@@ -30502,7 +30757,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Runge-Kutta method",
@@ -30602,7 +30858,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Run-length encoding",
@@ -30664,7 +30921,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Safe addition",
@@ -30693,7 +30951,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Same Fringe",
@@ -30720,7 +30979,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Search a list of records",
@@ -30880,7 +31140,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Search a list",
@@ -31026,7 +31287,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Self-describing numbers",
@@ -31100,7 +31362,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Self-referential sequence",
@@ -31150,7 +31413,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Semiprime",
@@ -31191,7 +31455,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Semordnilap",
@@ -31199,10 +31464,10 @@
       "description": [
         "<p>A <a href=\"https://en.wikipedia.org/wiki/semordnilap\" title=\"wp: semordnilap\">semordnilap</a> is a word (or phrase) that spells a different word (or phrase) backward.</p>",
         "<p>\"Semordnilap\" is a word that itself is a semordnilap.</p><p>Example: lager and regal</p>",
-        " ",
+        "",
         "Task",
         "<p>Using only words from the <a href=\"http://www.puzzlers.org/pub/wordlists/unixdict.txt\" title=\"link: http://www.puzzlers.org/pub/wordlists/unixdict.txt\">unixdict</a>, report the total number of unique semordnilap pairs, and print 5 examples. (Note that lager/regal and regal/lager should be counted as one unique pair.)</p>",
-        " ",
+        "",
         "Related tasks",
         "<a href=\"http://rosettacode.org/wiki/Palindrome_detection\" title=\"Palindrome_detection\">Palindrome detection</a>"
       ],
@@ -31320,7 +31585,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sequence of non-squares",
@@ -31416,7 +31682,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sequence of primes by Trial Division",
@@ -31454,7 +31721,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Set consolidation",
@@ -31497,7 +31765,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Set of real numbers",
@@ -31547,7 +31816,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Set puzzle",
@@ -31586,7 +31856,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Set",
@@ -31655,7 +31926,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Seven-sided dice from five-sided dice",
@@ -31727,7 +31999,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "SHA-1",
@@ -31761,7 +32034,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "SHA-256",
@@ -31788,7 +32062,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Shell one-liner",
@@ -31823,7 +32098,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Short-circuit evaluation",
@@ -31897,7 +32173,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sieve of Eratosthenes",
@@ -32121,7 +32398,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Singleton",
@@ -32172,7 +32450,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Singly-linked list/Element definition",
@@ -32233,7 +32512,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Singly-linked list/Element insertion",
@@ -32277,7 +32557,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Singly-linked list/Traversal",
@@ -32372,7 +32653,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Smith numbers",
@@ -32521,7 +32803,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "SOAP",
@@ -32548,7 +32831,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sokoban",
@@ -32583,7 +32867,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Solve a Hidato puzzle",
@@ -32630,7 +32915,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Solve a Holy Knight's tour",
@@ -33151,7 +33437,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Solve a Hopido puzzle",
@@ -33192,7 +33479,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Solve a Numbrix puzzle",
@@ -33284,7 +33572,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Solve the no connection puzzle",
@@ -33484,7 +33773,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sort a list of object identifiers",
@@ -33538,7 +33828,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sort an array of composite structures",
@@ -33771,7 +34062,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sort an integer array",
@@ -33813,7 +34105,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sort disjoint sublist",
@@ -33931,7 +34224,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Bead sort",
@@ -33960,7 +34254,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Bogosort",
@@ -34018,7 +34313,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Bubble sort",
@@ -34104,7 +34400,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Cocktail sort",
@@ -34197,7 +34494,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Comb sort",
@@ -34312,7 +34610,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Counting sort",
@@ -34392,7 +34691,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Gnome sort",
@@ -34453,7 +34753,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Heapsort",
@@ -34513,7 +34814,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Insertion sort",
@@ -34572,7 +34874,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Merge sort",
@@ -34670,7 +34973,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Pancake sort",
@@ -34741,7 +35045,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Permutation sort",
@@ -34773,7 +35078,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Quicksort",
@@ -34987,7 +35293,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Radix sort",
@@ -35015,7 +35322,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Selection sort",
@@ -35069,7 +35377,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Shell sort",
@@ -35121,7 +35430,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Sleep sort",
@@ -35172,7 +35482,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Stooge sort",
@@ -35241,7 +35552,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sorting algorithms/Strand sort",
@@ -35269,7 +35581,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sort stability",
@@ -35332,7 +35645,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sort three variables",
@@ -35381,7 +35695,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sort using a custom comparator",
@@ -35757,7 +36072,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Soundex",
@@ -36068,7 +36384,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Spiral matrix",
@@ -36315,7 +36632,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Split a character string based on change of character",
@@ -36416,7 +36734,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Stable marriage problem",
@@ -36617,7 +36936,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Stack",
@@ -36696,7 +37016,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Stair-climbing puzzle",
@@ -36744,7 +37065,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "State name puzzle",
@@ -36798,7 +37120,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Stem-and-leaf plot",
@@ -36913,7 +37236,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Stern-Brocot sequence",
@@ -36967,7 +37291,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Straddling checkerboard",
@@ -37043,7 +37368,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Stream Merge",
@@ -37075,7 +37401,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "String interpolation (included)",
@@ -37119,7 +37446,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "String matching",
@@ -37190,7 +37518,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Strip a set of characters from a string",
@@ -37296,7 +37625,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Strip block comments",
@@ -37347,7 +37677,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Strip comments from a string",
@@ -37411,7 +37742,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Strip control codes and extended characters from a string",
@@ -37464,7 +37796,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Subleq",
@@ -37507,7 +37840,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Substring",
@@ -37639,7 +37973,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Substring/Top and tail",
@@ -37677,7 +38012,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sudoku",
@@ -38043,7 +38379,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sum and product of an array",
@@ -38123,7 +38460,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sum and Product Puzzle",
@@ -38372,7 +38710,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sum digits of an integer",
@@ -38466,7 +38805,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sum multiples of 3 and 5",
@@ -38666,7 +39006,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sum of a series",
@@ -38766,7 +39107,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sum of squares",
@@ -38860,7 +39202,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sum to 100",
@@ -39552,7 +39895,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Superellipse",
@@ -39611,7 +39955,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Sutherland-Hodgman polygon clipping",
@@ -39723,7 +40068,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Symmetric difference",
@@ -39892,7 +40238,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Synchronous concurrency",
@@ -39919,7 +40266,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Temperature conversion",
@@ -40031,7 +40379,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Ternary logic",
@@ -40189,7 +40538,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "The Twelve Days of Christmas",
@@ -40415,7 +40765,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Thue-Morse",
@@ -40481,7 +40832,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Trabb Pardo–Knuth algorithm",
@@ -40592,7 +40944,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Tree traversal",
@@ -41052,7 +41405,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Truth table",
@@ -41168,7 +41522,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Ulam spiral (for primes)",
@@ -41262,7 +41617,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Universal Turing machine",
@@ -41390,7 +41746,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Vector products",
@@ -41527,7 +41884,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Verify distribution uniformity/Naive",
@@ -41623,7 +41981,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Vigenère cipher",
@@ -41686,7 +42045,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Water collected between towers",
@@ -41925,7 +42285,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     },
     {
       "title": "Wireworld",
@@ -42094,7 +42455,8 @@
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"
-      ]
+      ],
+      "tests": []
     }
   ]
 }

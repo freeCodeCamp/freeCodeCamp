@@ -10,7 +10,7 @@
 version: "3"
 services:
     freecodecamp:
-        image: node:8.9.4
+        image: node:8.10
         depends_on:
             - db
             - mailhog
@@ -27,7 +27,7 @@ services:
         ports:
             - "3000:3000"
     db:
-        image: mongo:3.2.6
+        image: mongo:3.6
         ports:
             - "27017:27017"
     mailhog:

@@ -161,8 +161,7 @@ const submitters = {
   video: submitSimpleChallenge,
   quiz: submitSimpleChallenge,
   'project.frontEnd': submitProject,
-  'project.backEnd': submitProject,
-  'project.simple': submitSimpleChallenge
+  'project.backEnd': submitProject
 };
 
 export default function completionEpic(actions, { getState }) {

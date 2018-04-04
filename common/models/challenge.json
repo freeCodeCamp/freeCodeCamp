@@ -20,9 +20,6 @@
     "title": {
       "type": "string"
     },
-    "type": {
-      "type": "string"
-    },
     "order": {
       "type": "number"
     },
@@ -50,11 +47,6 @@
     "superOrder": {
       "type": "number",
       "description": "Used to determine super block order, set by prepending two digit number to super block folder name"
-    },
-    "hint": {
-      "type": "array",
-      "description": "hints must be a single line of plain text",
-      "default": []
     },
     "block": {
       "type": "string"
@@ -96,19 +88,9 @@
     "challengeType": {
       "type": "number"
     },
-    "MDNlinks": {
-      "type": "array"
-    },
     "solutions": {
       "type": "array",
       "default": []
-    },
-    "releasedOn": {
-      "type": "string"
-    },
-    "translations": {
-      "type": "object",
-      "default": "{}"
     },
     "guideUrl" : {
       "type": "string",

@@ -56,7 +56,7 @@
       "solutions": [
         "class DisplayMessages extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n  }\n  render() {\n    return <div/>\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "react": true
@@ -114,7 +114,7 @@
       "solutions": [
         "class DisplayMessages extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n this.handleChange = this.handleChange.bind(this); \n   this.submitMessage = this.submitMessage.bind(this);  \n }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    const currentMessage = this.state.input;\n    this.setState({\n      input: '',\n      messages: this.state.messages.concat(currentMessage)\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.state.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
@@ -151,7 +151,7 @@
       "solutions": [
         "const ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
@@ -265,7 +265,7 @@
       "solutions": [
         "// Redux Code:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React Code:\n\nclass DisplayMessages extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n this.handleChange = this.handleChange.bind(this); \n this.submitMessage = this.submitMessage.bind(this); \n }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    const currentMessage = this.state.input;\n    this.setState({\n      input: '',\n      messages: this.state.messages.concat(currentMessage)\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.state.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n\nconst Provider = ReactRedux.Provider;\n\nclass AppWrapper extends React.Component {\n  // change code below this line\n  render() {\n    return (\n      <Provider store = {store}>\n        <DisplayMessages/>\n      </Provider>\n    );\n  }\n  // change code above this line\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
@@ -303,7 +303,7 @@
       "solutions": [
         "const state = [];\n\n// change code below this line\n\nconst mapStateToProps = (state) => {\n  return {\n    messages: state\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
@@ -346,7 +346,7 @@
       "solutions": [
         "const addMessage = (message) => {\n  return {\n    type: 'ADD',\n    message: message\n  }\n};\n\n// change code below this line\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: function(message) {\n      dispatch(addMessage(message));\n    }\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
@@ -429,7 +429,7 @@
       "solutions": [
         "const addMessage = (message) => {\n  return {\n    type: 'ADD',\n    message: message\n  }\n};\n\nconst mapStateToProps = (state) => {\n  return {\n    messages: state\n  }\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message));\n    }\n  }\n};\n\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <h3>This is a Presentational Component</h3>\n  }\n};\n\nconst connect = ReactRedux.connect;\n// change code below this line\n\nconst ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational); \n"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
@@ -560,7 +560,7 @@
       "solutions": [
         "// Redux:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message: message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React:\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n this.handleChange = this.handleChange.bind(this); \n this.submitMessage = this.submitMessage.bind(this); \n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    const currentMessage = this.state.input;\n    this.setState({\n      input: '',\n      messages: this.state.messages.concat(currentMessage)\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.state.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n\n// React-Redux:\nconst mapStateToProps = (state) => {\n  return { messages: state }\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (newMessage) => {\n       dispatch(addMessage(newMessage))\n    }\n  }\n};\n\nconst Provider = ReactRedux.Provider;\nconst connect = ReactRedux.connect;\n\n// define the Container component here:\nconst Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);\n\nclass AppWrapper extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // complete the return statement:\n    return (\n      <Provider store={store}>\n        <Container/>\n      </Provider>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
@@ -694,7 +694,7 @@
       "solutions": [
         "// Redux:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message: message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React:\nconst Provider = ReactRedux.Provider;\nconst connect = ReactRedux.connect;\n\n// Change code below this line\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    }\n this.handleChange = this.handleChange.bind(this); \n this.submitMessage = this.submitMessage.bind(this); \n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    this.props.submitNewMessage(this.state.input);\n    this.setState({\n      input: ''\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.props.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n// Change code above this line\n\nconst mapStateToProps = (state) => {\n  return {messages: state}\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message))\n    }\n  }\n};\n\nconst Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);\n\nclass AppWrapper extends React.Component {\n  render() {\n    return (\n      <Provider store={store}>\n        <Container/>\n      </Provider>\n    );\n  }\n};"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
@@ -749,7 +749,7 @@
       "solutions": [
         "console.log('Now I know React and Redux!');"
       ],
-      "type": "modern",
+      "challengeType": 6,
       "isRequired": false,
       "translations": {},
       "reactRedux": true
