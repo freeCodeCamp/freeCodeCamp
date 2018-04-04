@@ -224,11 +224,19 @@ Or:
 sudo yum install golang
 ```
 
+Set the path for Go:
+```bash
+echo "export GOPATH=$HOME/go" >> ~/.profile
+echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
+source ~/.profile
+```
+
 Then install and run MailHog:
 
 ```bash
 go get github.com/mailhog/MailHog
-MailHog
+sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
+mailhog
 ```
 
 To access your MailHog inbox, open your browser and navigate to [http://localhost:8025](http://localhost:8025). For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.
