@@ -307,6 +307,13 @@ Run:
 docker-compose up
 ```
 
+#### Shared
+Use this if you want to work on other services that will run alongside
+of freeCodeCamp, using the  database directly. An example is the [open-api](https://github.com/freeCodeCamp/open-api) project.
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose-shared.yml up
+```
 
 ### Creating a New User
 To create a new user, you will need to perform the following steps:
@@ -315,14 +322,6 @@ To create a new user, you will need to perform the following steps:
 * Click over the Sign-Up link situated on the right corner of the navigation bar.
 * Write your email over the input and press the button "get a sign in link" this will send an email with the login URL into MailHog.
 * The last step is to check your inbox in MailHog for a new email from "team@freecodecamp.org" click over the URL inside of it you will be redirected and logged in into the app.
-
-#### Shared
-Use this if you want to work on other services that will run alongside
-of freeCodeCamp, using the  database directly. An example is the [open-api](https://github.com/freeCodeCamp/open-api) project.
-
-```bash
-docker-compose -f docker-compose.yml -f docker-compose-shared.yml up
-```
 
 ### Make Changes
 
