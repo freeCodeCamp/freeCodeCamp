@@ -1091,7 +1091,7 @@
         "The next option for the CSS <code>position</code> property is <code>absolute</code>, which locks the element in place relative to its parent container. Unlike the <code>relative</code> position, this removes the element from the normal flow of the document, so surrounding items ignore it. The CSS offset properties (top or bottom and left or right) are used to adjust the position.",
         "One nuance with absolute positioning is that it will be locked relative to its closest <em>positioned</em> ancestor. If you forget to add a position rule to the parent item, (this is typically done using <code>position: relative;</code>), the browser will keep looking up the chain and ultimately default to the body tag.",
         "<hr>",
-        "Lock the <code>#searchbar</code> element to the top-right of its <code>section</code> parent by declaring its <code>position</code> as <code>absolute</code>. Give it <code>top</code> and <code>right</code> offsets of 0.5 pixels each."
+        "Lock the <code>#searchbar</code> element to the top-right of its <code>section</code> parent by declaring its <code>position</code> as <code>absolute</code>. Give it <code>top</code> and <code>right</code> offsets of 50 pixels each."
       ],
       "challengeSeed": [
         "<style>",
@@ -1117,8 +1117,8 @@
       ],
       "tests": [
         "assert($('#searchbar').css('position') == 'absolute', 'message: The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.');",
-        "assert($('#searchbar').css('top') == '0.5px', 'message: Your code should use the <code>top</code> CSS offset of 0.5 pixels on the <code>#searchbar</code> element.');",
-        "assert($('#searchbar').css('right') == '0.5px', 'message: Your code should use the <code>right</code> CSS offset of 0.5 pixels on the <code>#searchbar</code> element.');"
+        "assert($('#searchbar').css('top') == '50px', 'message: Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');",
+        "assert($('#searchbar').css('right') == '50px', 'message: Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
       ],
       "solutions": [],
       "hints": [],
