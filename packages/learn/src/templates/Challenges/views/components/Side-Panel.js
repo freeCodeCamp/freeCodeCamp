@@ -16,7 +16,8 @@ import Spacer from '../../../../components/util/Spacer';
 import {
   consoleOutputSelector,
   challengeTestsSelector,
-  executeChallenge
+  executeChallenge,
+  initConsole
 } from '../../redux';
 import { descriptionRegex } from '../../../../../utils';
 
@@ -27,12 +28,13 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ executeChallenge }, dispatch);
+  bindActionCreators({ executeChallenge, initConsole }, dispatch);
 
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
+  initConsole: PropTypes.func.isRequired,
   output: PropTypes.string,
   tests: PropTypes.arrayOf(
     PropTypes.shape({
@@ -49,9 +51,14 @@ export class SidePanel extends PureComponent {
     this.bindTopDiv = this.bindTopDiv.bind(this);
   }
 
-  componentWillUpdate(nextProps) {
-    const { title } = this.props;
-    if (title !== nextProps.title) {
+  componentDidMount() {
+    this.props.initConsole('');
+  }
+
+  componentDidUpdate(prevProps) {
+    const { title, initConsole } = this.props;
+    if (title !== prevProps.title) {
+      initConsole('');
       const node = ReactDom.findDOMNode(this.descriptionTop);
       setTimeout(() => {
         node.scrollIntoView({ behavior: 'smooth' });

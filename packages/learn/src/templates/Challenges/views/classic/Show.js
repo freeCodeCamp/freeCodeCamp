@@ -61,6 +61,24 @@ class ShowClassic extends PureComponent {
     updateChallengeMeta(challengeMeta);
   }
 
+  componentDidUpdate(prevProps) {
+    const { data: { challengeNode: { title: prevTitle } } } = prevProps;
+    const {
+      createFiles,
+      initTests,
+      updateChallengeMeta,
+      data: {
+        challengeNode: { files, title: currentTitle, fields: { tests } }
+      },
+      pathContext: { challengeMeta }
+    } = this.props;
+    if (prevTitle !== currentTitle) {
+      createFiles(files);
+      initTests(tests);
+      updateChallengeMeta(challengeMeta);
+    }
+  }
+
   render() {
     const {
       data: {
