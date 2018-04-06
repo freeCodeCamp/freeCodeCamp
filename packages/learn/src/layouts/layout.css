@@ -1,5 +1,5 @@
 .app-wrapper {
-  min-height: calc(100vh - (45px + 1.45rem));
+  max-height: calc(100vh - (45px + 1.45rem));
 }
 
 main {
@@ -14,12 +14,12 @@ main {
   height: auto;
 }
 
-.reflex-layout.vertical > .reflex-splitter:hover {
- border-left: 2px solid #ccc !important;
- border-right: 2px solid #ccc !important;
+.reflex-layout.vertical .reflex-splitter:hover {
+ border-left: 2px solid #006400 !important;
+ border-right: 2px solid #006400 !important;
+ background-color: #006400;
 }
 
-.reflex-layout.vertical > .reflex-splitter,  {
-  border-left: 2px solid #c6c6c6;
-  border-right: 2px solid #c6c6c6;
+.reflex-layout.vertical > .reflex-splitter{
+  width: 5px;
 }

@@ -9,6 +9,7 @@ body {
 html, body, .full-height {
   min-height: 100% !important;
   height: 100%;
+  max-height: calc(100vh);
 }
 article,
 aside,

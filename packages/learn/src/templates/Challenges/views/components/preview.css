@@ -1,3 +1,10 @@
 .hide-test-frame {
   display: none;
 }
+
+.challenge-preview, .challenge-preview-frame {
+  height: calc(100vh - (45px + 1.45rem));
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
