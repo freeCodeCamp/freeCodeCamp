@@ -1,0 +1,23 @@
+aside#map {
+  height: 100%;
+  max-height: calc(100vh - (45px + 1.45rem));
+}
+
+aside#map ul {
+  list-style: none;
+  color: #006400;
+}
+
+.map-title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.map-title > svg {
+  width: 14px;
+  margin-right: 5px;
+}
+
+li.open > .map-title svg {
+  transform: rotate(90deg);
+}

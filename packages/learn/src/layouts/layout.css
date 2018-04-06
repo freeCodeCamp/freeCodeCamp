@@ -1,0 +1,25 @@
+.app-wrapper {
+  min-height: calc(100vh - (45px + 1.45rem));
+}
+
+main {
+  height: 100%;
+}
+
+.reflex-layout.vertical > .reflex-splitter,
+.reflex-layout > .reflex-element {
+  /*
+    Note(Bouncey): removing height: 100% makes the element 100% high ¯\_(ツ)_/¯
+  */
+  height: auto;
+}
+
+.reflex-layout.vertical > .reflex-splitter:hover {
+ border-left: 2px solid #ccc !important;
+ border-right: 2px solid #ccc !important;
+}
+
+.reflex-layout.vertical > .reflex-splitter,  {
+  border-left: 2px solid #c6c6c6;
+  border-right: 2px solid #c6c6c6;
+}

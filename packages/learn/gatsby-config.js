@@ -1,21 +1,33 @@
+require('dotenv').config();
+
 const path = require('path');
-const { getChallengesByFile } = require('../seed/getChallenges');
+const { buildChallenges$ } = require('./seed/buildChallenges');
 
 module.exports = {
   siteMetadata: {
-    title: 'freeCodeCamp | Learn to code and help non-profits',
+    title: 'freeCodeCamp | Learn to code and help non-profits ',
     siteUrl: 'https://learn.freecodecamp.org'
   },
+  proxy: {
+    prefix: '/',
+    url: 'http://localhost:3000'
+  },
   plugins: [
+    'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'fcc-source-challenges',
       options: {
         name: 'challenges',
-        path: path.resolve(__dirname, '../seed/challenges'),
-        source: getChallengesByFile
+        path: path.resolve(__dirname, './seed/challenges'),
+        source: buildChallenges$
       }
     },
-    'gatsby-transformer-json'
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Lato:400,400i,700']
+      }
+    }
   ]
 };

@@ -1,38 +1,38 @@
 const crypto = require('crypto');
 
-function createChallengeNodes(
-  path,
-  pluginOptions = {}
-) {
-  const { source } = pluginOptions;
-  return new Promise(resolve => {
-    const challengeNodes = source(path)
-    .reduce((nodes, { challenges, name }) => {
-      const challengeNodes = challenges.map(challenge => {
-        const contentDigest = crypto
-        .createHash('md5')
-        .update(JSON.stringify(challenge))
-        .digest('hex');
-        const internal = {
-          contentDigest,
-          type: 'ChallengeNode'
-        };
+function createChallengeNodes(challenge, reporter) {
+  if (typeof challenge.description[0] !== 'string') {
+    reporter.panic(`
 
-        return JSON.parse(
-          JSON.stringify({
-            id: challenge.id,
-            children: [],
-            parent: null,
-            internal,
-            sourceInstanceName: pluginOptions.name || '__PROGRAMATTIC__',
-            ...challenge
-          })
-        );
-      });
-      return nodes.concat(challengeNodes);
-    }, []);
-    resolve(challengeNodes);
-  });
+    ${challenge.title} has a description that will break things!
+
+    `);
   }
+  const contentDigest = crypto
+    .createHash('md5')
+    .update(JSON.stringify(challenge))
+    .digest('hex');
+  const internal = {
+    contentDigest,
+    type: 'ChallengeNode'
+  };
 
-  exports.createChallengeNodes = createChallengeNodes;
+  /* eslint-disable prefer-object-spread/prefer-object-spread */
+  return JSON.parse(
+    JSON.stringify(
+      Object.assign(
+        {},
+        {
+          id: challenge.id + ' >>>> ChallengeNode',
+          children: [],
+          parent: null,
+          internal,
+          sourceInstanceName: 'challenge'
+        },
+        challenge
+      )
+    )
+  );
+}
+
+exports.createChallengeNodes = createChallengeNodes;

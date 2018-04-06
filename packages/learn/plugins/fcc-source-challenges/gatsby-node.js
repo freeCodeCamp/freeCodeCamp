@@ -1,12 +1,9 @@
 const chokidar = require('chokidar');
 const fs = require('fs-extra');
 
-const { createId, createChallengeNodes } = require('./create-Challenge-nodes');
+const { createChallengeNodes } = require('./create-Challenge-nodes');
 
-exports.sourceNodes = (
-  { boundActionCreators, getNode, reporter },
-  pluginOptions
-) => {
+exports.sourceNodes = ({ boundActionCreators, reporter }, pluginOptions) => {
   if (!(pluginOptions && pluginOptions.path)) {
     reporter.panic(`
 "path" is a required option for gatsby-source-filesystem
@@ -29,8 +26,8 @@ Please use the path to the seed directory.
 that delivers challenge files to the plugin
       `);
   }
-
-  const { createNode, deleteNode } = boundActionCreators;
+  // TODO: Add live seed updates
+  const { createNode } = boundActionCreators;
 
   let ready = false;
 
@@ -45,11 +42,14 @@ that delivers challenge files to the plugin
       '../**/dist/**'
     ]
   });
+  const { source } = pluginOptions;
+  const createAndProcessNodes = () =>
+    source()
+      .map(nodes => nodes.map(node => createChallengeNodes(node, reporter)))
+      .map(nodes => nodes.map(node => createNode(node)))
+      .subscribe();
 
-  const createAndProcessNodes = path =>
-    createChallengeNodes(path, pluginOptions).then(nodes => nodes.forEach(node => createNode(node))
-    );
-
+  createAndProcessNodes();
   // For every path that is reported before the 'ready' event, we throw them
   // into a queue and then flush the queue when 'ready' event arrives.
   // After 'ready', we handle the 'add' event without putting it into a queue.
@@ -60,44 +60,20 @@ that delivers challenge files to the plugin
     return Promise.all(queue.map(createAndProcessNodes));
   };
 
-  watcher.on('add', path => {
-    if (ready) {
-      reporter.info(`added file at ${path}`);
-      createAndProcessNodes(path).catch(err => reporter.error(err));
-    } else {
-      pathQueue.push(path);
-    }
-  });
+  // watcher.on('change', path => {
+  //   reporter.info(`changed file at ${path}`);
+  //   createAndProcessNodes().catch(err => reporter.error(err));
+  // });
 
-  watcher.on('change', path => {
-    reporter.info(`changed file at ${path}`);
-    createAndProcessNodes(path).catch(err => reporter.error(err));
-  });
-
-  watcher.on('unlink', path => {
-    reporter.info(`file deleted at ${path}`);
-    const node = getNode(createId(path));
-    // It's possible the file node was never created as sometimes tools will
-    // write and then immediately delete temporary files to the file system.
-    if (node) {
-      deleteNode(node.id, node);
-    }
-  });
-
-  watcher.on('addDir', path => {
-    if (ready) {
-      reporter.info(`added directory at ${path}`);
-      createAndProcessNodes(path).catch(err => reporter.error(err));
-    } else {
-      pathQueue.push(path);
-    }
-  });
-
-  watcher.on('unlinkDir', path => {
-    reporter.info(`directory deleted at ${path}`);
-    const node = getNode(createId(path));
-    deleteNode(node.id, node);
-  });
+  // watcher.on('unlink', path => {
+  //   reporter.info(`file deleted at ${path}`);
+  //   const node = getNode(createId(path));
+  //   // It's possible the file node was never created as sometimes tools will
+  //   // write and then immediately delete temporary files to the file system.
+  //   if (node) {
+  //     deleteNode(node.id, node);
+  //   }
+  // });
 
   return new Promise((resolve, reject) => {
     watcher.on('ready', () => {

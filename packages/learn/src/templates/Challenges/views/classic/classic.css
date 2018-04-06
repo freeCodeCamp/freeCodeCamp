@@ -1,0 +1,9 @@
+.editor,
+.react-codemirror2,
+.react-codemirror2 > .CodeMirror-wrap {
+  height: 100%;
+}
+
+.instructions-panel {
+  padding: 0 10px;
+}

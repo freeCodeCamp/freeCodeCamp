@@ -1,0 +1,93 @@
+// should match ./ns.json value and filename
+@ns: quiz;
+
+.quiz {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .quizTitle {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .textCenter {
+    text-align: center;
+  }
+
+  .explanation p {
+    text-align: left;
+  }
+
+  .quizResults {
+    text-align: center;
+  }
+
+  .wrongAnswer {
+    color: red;
+  }
+
+  .correctAnswer {
+    color: green;
+  }
+
+  .choice.selected {
+    .radio {
+      .inside {
+        opacity: 1;
+      }
+    }
+  }
+
+  .choice:not(.reveal):hover > .radio {
+    .inside {
+      opacity: 1;
+    }
+  }
+
+  .choice {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+    .text {
+
+    }
+
+    .radio {
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      border: 4px solid #333;
+      float: left;
+      margin-right: 10px;
+
+      .inside {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        left: 2px;
+        top: 2px;
+        background-color: #333;
+        border-radius: 100%;
+        opacity: 0;
+      }
+    }
+  }
+
+  .choice:not(.reveal):hover {
+    background-color: rgba(0, 100, 0, 0.3);
+  }
+
+  .choice:not(.reveal) {
+    cursor: pointer;
+  }
+
+  .choice.reveal {
+    background-color: rgba(255, 65, 77, 0.3);
+  }
+
+  .choice.reveal.correct {
+    background-color: rgba(0, 100, 0, 0.3);
+  }
+}

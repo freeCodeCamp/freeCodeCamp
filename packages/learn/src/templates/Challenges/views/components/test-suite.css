@@ -1,0 +1,26 @@
+.challenge-test-suite {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.test-result {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  align-items: center;
+}
+
+.test-result:nth-child(odd) {
+  background-color: #eee;
+}
+
+.test-output {
+  margin-left: 15px;
+}
+
+.test-status-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 3px;
+}

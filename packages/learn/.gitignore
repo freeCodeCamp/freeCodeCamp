@@ -9,3 +9,8 @@ yarn-error.log
 
 # Build directory
 /public
+static/js
+
+seed/tmp/
+seed/transformed
+seed/ready
