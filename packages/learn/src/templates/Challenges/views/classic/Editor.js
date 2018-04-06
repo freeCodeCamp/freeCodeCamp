@@ -9,8 +9,10 @@ import { executeChallenge, updateFile } from '../../redux';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 
-require('codemirror/mode/htmlmixed/htmlmixed');
-require('codemirror/mode/javascript/javascript');
+if (typeof window !== 'undefined') {
+  require('codemirror/mode/htmlmixed/htmlmixed');
+  require('codemirror/mode/javascript/javascript');
+}
 
 const propTypes = {
   contents: PropTypes.string,
