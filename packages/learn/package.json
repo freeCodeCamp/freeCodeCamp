@@ -47,7 +47,7 @@
     "build": "yarn build:frame-runner && gatsby build",
     "build:frame-runner": "webpack --config ./webpack-frame-runner.js",
     "build:loop-protect": "webpack --config ./webpack-loop-protect.js",
-    "develop": "NODE_ENV=production yarn build:frame-runner && gatsby develop",
+    "develop": "yarn build:frame-runner && gatsby develop",
     "format": "yarn format:gatsby && yarn format:src",
     "format:gatsby": "prettier --write './gatsby*.js'",
     "format:src": "prettier --write './src/**/*.js'",
