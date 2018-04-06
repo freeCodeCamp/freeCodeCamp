@@ -11,6 +11,7 @@ yarn-error.log
 /public
 static/js
 
-seed/tmp/
+seed/ignore
+seed/tmp
 seed/transformed
 seed/ready
