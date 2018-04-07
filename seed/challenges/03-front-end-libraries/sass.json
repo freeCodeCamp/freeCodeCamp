@@ -315,9 +315,9 @@
       ],
       "tests": [
         "assert(code.match(/@each /g), 'message: Your code should use the <code>@each</code> directive.');",
-        "assert($('blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'message: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');",
-        "assert($('black-bg').css('background-color') == 'rgb(0, 0, 0)', 'message: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');",
-        "assert($('red-bg').css('background-color') == 'rgb(255, 0, 0)', 'message: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');"
+        "assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'message: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');",
+        "assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)', 'message: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');",
+        "assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)', 'message: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');"
       ],
       "solutions": [],
       "hints": [],
