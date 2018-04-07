@@ -134,7 +134,7 @@
       ],
       "tests": [
         "getUserInput => assert(!getUserInput('index').match(/var/g),'message: <code>var</code> does not exist in code.');",
-        "getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g), 'message: <code>SENTENCE</code> should be a constant variable (by using <code>const</code>).');",
+        "getUserInput => assert(getUserInput('index').match(/(const sentence)/g), 'message: <code>sentence</code> should be a constant variable (by using <code>const</code>).');",
         "getUserInput => assert(getUserInput('index').match(/(let i)/g), 'message: <code>i</code> should be a variable only defined within the for loop scope (by using<code>let</code>).');"
       ],
       "type": "waypoint",
