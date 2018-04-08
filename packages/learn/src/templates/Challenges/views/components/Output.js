@@ -16,7 +16,8 @@ const options = {
   scrollbar: {
     vertical: 'hidden',
     horizontal: 'hidden'
-  }
+  },
+  wordWrap: 'on'
 };
 
 function Output({ output, defaultOutput }) {

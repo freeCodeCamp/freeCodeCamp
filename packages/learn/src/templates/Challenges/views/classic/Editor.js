@@ -35,9 +35,15 @@ const modeMap = {
 class Editor extends PureComponent {
   constructor(...props) {
     super(...props);
+
     this.options = {
-      selectOnLineNumbers: true
+      minimap: {
+        enabled: false
+      },
+      selectOnLineNumbers: true,
+      wordWrap: 'on'
     };
+
     this._editor = null;
 
     this.focusEditor = this.focusEditor.bind(this);
