@@ -17,7 +17,7 @@
  */
 
 import debugFactory from 'debug';
-import { Observable, helpers } from 'rxjs';
+import { Observable, noop } from 'rxjs';
 
 const debug = debugFactory('fcc:ajax$');
 const root = typeof window !== 'undefined' ? window : {};
@@ -42,7 +42,7 @@ function getXMLHttpRequest() {
           }
         } catch (e) {
           // purposely do nothing
-          helpers.noop(e);
+          noop.noop(e);
         }
       }
       return new root.ActiveXObject(progId);

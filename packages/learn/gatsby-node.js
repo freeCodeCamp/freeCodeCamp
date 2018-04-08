@@ -83,8 +83,26 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   });
 };
 
-exports.modifyWebpackConfig = ({ config, stage, babelConfig }) => {
-  if (stage === 'build-javascript' || stage === 'develop') {
+const generateBabelConfig = require('gatsby/dist/utils/babel-config');
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  const program = {
+    directory: __dirname,
+    browserslist: ['> 1%', 'last 2 versions', 'IE >= 9']
+  };
+
+  return generateBabelConfig(program, stage).then(babelConfig => {
+    config.removeLoader('js').loader('js', {
+      test: /\.jsx?$/,
+      exclude: modulePath => {
+        return (
+          /node_modules/.test(modulePath) &&
+          !(/node_modules\/(ansi-styles|chalk)/).test(modulePath)
+        );
+      },
+      loader: 'babel',
+      query: babelConfig
+    });
     config.plugin('CopyWebpackPlugin', CopyWebpackPlugin, [
       [
         {
@@ -93,16 +111,5 @@ exports.modifyWebpackConfig = ({ config, stage, babelConfig }) => {
         }
       ]
     ]);
-    // remove the default 'js' loader so we can create our own
-    config.removeLoader('js');
-    // these modules are shipped with es6 code, we need to transform them due
-    // to the version of the uglifyjs plugin gatsby is using
-    config.loader('js', {
-      test: /\.jsx?$/,
-      exclude: /(node_modules|bower_components)\/(?!ansi-styles|chalk)/,
-      loader: 'babel',
-      query: babelConfig
-    });
-  }
-  return config;
+  });
 };

@@ -2,12 +2,18 @@ document.addEventListener('DOMContentLoaded', function() {
   var testTimeout = 5000;
   var Rx = document.Rx;
   var frameReady = document.__frameReady;
-  var helpers = Rx.helpers;
-  var chai = require('chai');
+  var chai = parent.chai;
   var source = document.__source;
   var __getUserInput = document.__getUserInput || (x => x);
   var checkChallengePayload = document.__checkChallengePayload;
 
+  function isPromise(value) {
+    return (
+      value &&
+      typeof value.subscribe !== 'function' &&
+      typeof value.then === 'function'
+    );
+  }
   // Fake Deep Equal dependency
   /* eslint-disable no-unused-vars */
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
@@ -105,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
               // sync tests can return Any type
               __result = test(getUserInput);
 
-              if (helpers.isPromise(__result)) {
+              if (isPromise(__result)) {
                 // turn promise into an observable
                 __result = Rx.Observable.fromPromise(__result);
               }
