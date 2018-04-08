@@ -20,13 +20,10 @@ test('<SuperBlock /> not expanded snapshot', () => {
     superBlock: 'Super Block One',
     toggleSuperBlock: toggleSpy
   };
-  const componentToRender = (
-  <SuperBlock { ...props } />
-);
+  const componentToRender = <SuperBlock {...props} />;
   const component = renderer.render(componentToRender);
 
   expect(component).toMatchSnapshot('superBlock-not-expanded');
-
 });
 
 test('<SuperBlock /> expanded snapshot', () => {
@@ -37,9 +34,7 @@ test('<SuperBlock /> expanded snapshot', () => {
     superBlock: 'Super Block One',
     toggleSuperBlock: toggleSpy
   };
-  const componentToRender = (
-    <SuperBlock { ...props } />
-  );
+  const componentToRender = <SuperBlock {...props} />;
   const component = renderer.render(componentToRender);
 
   expect(component).toMatchSnapshot('superBlock-expanded');
@@ -53,18 +48,17 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
     superBlock: 'Super Block One',
     toggleSuperBlock: toggleSpy
   };
-  const componentToRender = (
-    <SuperBlock { ...props } />
-  );
+  const componentToRender = <SuperBlock {...props} />;
   const enzymeWrapper = Enzyme.shallow(componentToRender);
 
   expect(toggleSpy.called).toBe(false);
   expect(
-    enzymeWrapper.find('.map-title').find('h4').text()
+    enzymeWrapper
+      .find('.map-title')
+      .find('h4')
+      .text()
   ).toBe('Super Block One');
-  expect(
-    enzymeWrapper.find('ul').length
-  ).toBe(0);
+  expect(enzymeWrapper.find('ul').length).toBe(0);
 
   enzymeWrapper.find('.map-title').simulate('click');
 
@@ -74,9 +68,10 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
   enzymeWrapper.setProps({ ...props, isExpanded: true });
 
   expect(
-    enzymeWrapper.find('.map-title').find('h4').text()
+    enzymeWrapper
+      .find('.map-title')
+      .find('h4')
+      .text()
   ).toBe('Super Block One');
-  expect(
-    enzymeWrapper.find('ul').length
-  ).toBe(1);
+  expect(enzymeWrapper.find('ul').length).toBe(1);
 });

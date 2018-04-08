@@ -13,7 +13,6 @@ const propTypes = {
 };
 
 class ShowMap extends PureComponent {
-
   renderSuperBlocks(superBlocks) {
     const { nodes } = this.props;
     return superBlocks.map(superBlock => (

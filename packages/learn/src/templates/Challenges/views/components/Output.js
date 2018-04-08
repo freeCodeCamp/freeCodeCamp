@@ -1,28 +1,35 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Controlled as CodeMirror } from 'react-codemirror2';
-
-import './output.css';
-
-const defaultOptions = {
-  lineNumbers: false,
-  lineWrapping: true,
-  mode: 'javascript',
-  readOnly: 'nocursor'
-};
+import MonacoEditor from 'react-monaco-editor';
 
 const propTypes = {
   defaultOutput: PropTypes.string,
   output: PropTypes.string
 };
 
+const options = {
+  lineNumbers: false,
+  minimap: {
+    enabled: false
+  },
+  readOnly: true,
+  scrollbar: {
+    vertical: 'hidden',
+    horizontal: 'hidden'
+  }
+};
+
 function Output({ output, defaultOutput }) {
   return (
-    <CodeMirror
-      className='challenge-log'
-      options={{ ...defaultOptions, theme: 'material' }}
-      value={output || defaultOutput}
-    />
+    <Fragment>
+      <base href='/' />
+      <MonacoEditor
+        className='challenge-output'
+        height={150}
+        options={options}
+        value={output ? output : defaultOutput}
+      />
+    </Fragment>
   );
 }
 

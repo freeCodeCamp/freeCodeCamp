@@ -15,65 +15,53 @@ const renderer = new ShallowRenderer();
 test('<Block /> not expanded snapshot', () => {
   const toggleSpy = sinon.spy();
   const componentToRender = (
-  <Block
-    blockDashedName='block-a'
-    challenges={
-      mockNodes.filter(
-        node => node.block === 'block-a'
-      )
-    }
-    isExpanded={false}
-    toggleBlock={toggleSpy}
-  />
-);
+    <Block
+      blockDashedName='block-a'
+      challenges={mockNodes.filter(node => node.block === 'block-a')}
+      isExpanded={false}
+      toggleBlock={toggleSpy}
+    />
+  );
   const component = renderer.render(componentToRender);
 
   expect(component).toMatchSnapshot('block-not-expanded');
-
 });
-
 
 test('<Block expanded snapshot', () => {
   const toggleSpy = sinon.spy();
   const componentToRender = (
-  <Block
-    blockDashedName='block-a'
-    challenges={
-      mockNodes.filter(
-        node => node.block === 'block-a'
-      )
-    }
-    isExpanded={true}
-    toggleBlock={toggleSpy}
-  />
-);
+    <Block
+      blockDashedName='block-a'
+      challenges={mockNodes.filter(node => node.block === 'block-a')}
+      isExpanded={true}
+      toggleBlock={toggleSpy}
+    />
+  );
 
   const component = renderer.render(componentToRender);
 
   expect(component).toMatchSnapshot('block-expanded');
 });
 
-
 test('<Block />  should handle toggle clicks correctly', () => {
   const toggleSpy = sinon.spy();
   const props = {
     blockDashedName: 'block-a',
-    challenges: mockNodes.filter(
-      node => node.block === 'block-a'
-    ),
+    challenges: mockNodes.filter(node => node.block === 'block-a'),
     isExpanded: false,
     toggleBlock: toggleSpy
   };
 
-  const componentToRender = (
-    <Block { ...props } />
-  );
+  const componentToRender = <Block {...props} />;
 
   const enzymeWrapper = Enzyme.shallow(componentToRender);
 
   expect(toggleSpy.called).toBe(false);
   expect(
-    enzymeWrapper.find('.map-title').find('h5').text()
+    enzymeWrapper
+      .find('.map-title')
+      .find('h5')
+      .text()
   ).toBe('Block A');
 
   enzymeWrapper.find('.map-title').simulate('click');
@@ -84,9 +72,10 @@ test('<Block />  should handle toggle clicks correctly', () => {
   enzymeWrapper.setProps({ ...props, isExpanded: true });
 
   expect(
-    enzymeWrapper.find('.map-title').find('h5').text()
+    enzymeWrapper
+      .find('.map-title')
+      .find('h5')
+      .text()
   ).toBe('Block A');
-  expect(
-    enzymeWrapper.find('ul').length
-  ).toBe(1);
+  expect(enzymeWrapper.find('ul').length).toBe(1);
 });

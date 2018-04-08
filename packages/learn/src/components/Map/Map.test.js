@@ -12,8 +12,6 @@ Enzyme.configure({ adapter: new Adapter() });
 const renderer = new ShallowRenderer();
 
 test('<Map /> snapshot', () => {
-  const component = renderer.render(
-    <Map nodes={mockNodes} />,
-  );
+  const component = renderer.render(<Map nodes={mockNodes} />);
   expect(component).toMatchSnapshot('Map');
 });

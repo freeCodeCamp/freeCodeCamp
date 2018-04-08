@@ -10,10 +10,7 @@ import Spacer from './Spacer';
 Enzyme.configure({ adapter: new Adapter() });
 
 test('<Spacer /> snapshot', () => {
-  const component = renderer.create(
-    <Spacer />,
-  );
+  const component = renderer.create(<Spacer />);
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
-
 });
