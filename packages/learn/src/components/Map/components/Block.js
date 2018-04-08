@@ -26,13 +26,15 @@ const propTypes = {
   toggleBlock: PropTypes.func.isRequired
 };
 
-class Block extends PureComponent {
-  renderChallenges = challenges =>
-    challenges.map(challenge => (
+export class Block extends PureComponent {
+  renderChallenges(challenges) {
+    // TODO: Split this into a Challenge Component and add tests
+    return challenges.map(challenge => (
       <li className='map-challenge-title' key={challenge.dashedName}>
         <Link to={challenge.fields.slug}>{challenge.title}</Link>
       </li>
     ));
+  }
 
   render() {
     const { blockDashedName, challenges, isExpanded, toggleBlock } = this.props;

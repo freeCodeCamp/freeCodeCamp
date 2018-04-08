@@ -6,6 +6,7 @@
   "dependencies": {
     "adler32": "^0.1.7",
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
     "babel-standalone": "^6.26.0",
     "brace": "^0.11.1",
     "chai": "^4.1.2",
@@ -22,11 +23,14 @@
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-source-mongodb": "^1.5.19",
     "gatsby-transformer-json": "^1.0.16",
+    "jest": "^22.4.3",
     "lodash": "^4.17.5",
     "loop-protect": "^2.1.6",
     "mongodb": "^3.0.5",
+    "react": "16",
     "react-bootstrap": "^0.32.1",
     "react-codemirror2": "^4.2.1",
+    "react-dom": "16",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",
     "react-reflex": "^2.2.1",
@@ -54,15 +58,28 @@
     "lint": "yarn lint:gatsby && yarn lint:src",
     "lint:gatsby": "eslint ./gatsby*.js --fix",
     "lint:src": "eslint ./src . --fix",
-    "test": "yarn format && yarn lint"
+    "pretty": "yarn format && yarn lint",
+    "test": "jest src",
+    "test:watch": "jest --watch src"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^.+\\.(css|less)$": "<rootDir>/src/__mocks__/cssStub.js"
+    }
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-freecodecamp": "^1.1.1",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-react": "^7.7.0",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "sinon": "^4.5.0"
   }
 }

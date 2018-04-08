@@ -35,8 +35,8 @@ const propTypes = {
   toggleSuperBlock: PropTypes.func.isRequired
 };
 
-class SuperBlock extends PureComponent {
-  renderBlock = superBlock => {
+export class SuperBlock extends PureComponent {
+  renderBlock(superBlock) {
     const { nodes } = this.props;
     const blocksForSuperBlock = nodes.filter(
       node => node.superBlock === superBlock
@@ -58,7 +58,8 @@ class SuperBlock extends PureComponent {
         ))}
       </ul>
     );
-  };
+  }
+
   render() {
     const { superBlock, isExpanded, toggleSuperBlock } = this.props;
     return (

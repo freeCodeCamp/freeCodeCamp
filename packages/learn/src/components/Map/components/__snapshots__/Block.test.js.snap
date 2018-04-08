@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
+<li
+  className="block "
+>
+  <div
+    className="map-title"
+    onClick={[Function]}
+  >
+    <Caret />
+    <h5>
+      Block A
+    </h5>
+  </div>
+  <ul />
+</li>
+`;
+
+exports[`<Block expanded snapshot: block-expanded 1`] = `
+<li
+  className="block open"
+>
+  <div
+    className="map-title"
+    onClick={[Function]}
+  >
+    <Caret />
+    <h5>
+      Block A
+    </h5>
+  </div>
+  <ul>
+    <li
+      className="map-challenge-title"
+    >
+      <Unknown
+        to="/super-block-one/block-a/challenge-one"
+      >
+        Challenge One
+      </Unknown>
+    </li>
+    <li
+      className="map-challenge-title"
+    >
+      <Unknown
+        to="/super-block-one/block-a/challenge-two"
+      >
+        Challenge Two
+      </Unknown>
+    </li>
+    <li
+      className="map-challenge-title"
+    >
+      <Unknown
+        to="/super-block-one/block-a/challenge-one"
+      >
+        Challenge One
+      </Unknown>
+    </li>
+    <li
+      className="map-challenge-title"
+    >
+      <Unknown
+        to="/super-block-one/block-a/challenge-two"
+      >
+        Challenge Two
+      </Unknown>
+    </li>
+  </ul>
+</li>
+`;

@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
+<li
+  className="superblock open"
+>
+  <div
+    className="map-title"
+    onClick={[Function]}
+  >
+    <Caret />
+    <h4>
+      Super Block One
+    </h4>
+  </div>
+  <ul>
+    <Connect(Block)
+      blockDashedName="block-a"
+      challenges={
+        Array [
+          Object {
+            "block": "block-a",
+            "dashedName": "challenge-one",
+            "fields": Object {
+              "blockName": "Block A",
+              "slug": "/super-block-one/block-a/challenge-one",
+            },
+            "isPrivate": false,
+            "isRequired": false,
+            "superBlock": "Super Block One",
+            "title": "Challenge One",
+          },
+          Object {
+            "block": "block-a",
+            "dashedName": "challenge-two",
+            "fields": Object {
+              "blockName": "Block A",
+              "slug": "/super-block-one/block-a/challenge-two",
+            },
+            "isPrivate": false,
+            "isRequired": false,
+            "superBlock": "Super Block One",
+            "title": "Challenge Two",
+          },
+        ]
+      }
+    />
+    <Connect(Block)
+      blockDashedName="block-b"
+      challenges={
+        Array [
+          Object {
+            "block": "block-b",
+            "dashedName": "challenge-one",
+            "fields": Object {
+              "blockName": "Block B",
+              "slug": "/super-block-one/block-b/challenge-one",
+            },
+            "isPrivate": false,
+            "isRequired": false,
+            "superBlock": "Super Block One",
+            "title": "Challenge One",
+          },
+          Object {
+            "block": "block-b",
+            "dashedName": "challenge-two",
+            "fields": Object {
+              "blockName": "Block B",
+              "slug": "/super-block-one/block-b/challenge-two",
+            },
+            "isPrivate": false,
+            "isRequired": false,
+            "superBlock": "Super Block One",
+            "title": "Challenge Two",
+          },
+        ]
+      }
+    />
+    <Connect(Block)
+      blockDashedName="block-c"
+      challenges={
+        Array [
+          Object {
+            "block": "block-c",
+            "dashedName": "challenge-one",
+            "fields": Object {
+              "blockName": "Block C",
+              "slug": "/super-block-one/block-c/challenge-one",
+            },
+            "isPrivate": true,
+            "isRequired": false,
+            "superBlock": "Super Block One",
+            "title": "Challenge One",
+          },
+        ]
+      }
+    />
+  </ul>
+</li>
+`;
+
+exports[`<SuperBlock /> not expanded snapshot: superBlock-not-expanded 1`] = `
+<li
+  className="superblock "
+>
+  <div
+    className="map-title"
+    onClick={[Function]}
+  >
+    <Caret />
+    <h4>
+      Super Block One
+    </h4>
+  </div>
+</li>
+`;

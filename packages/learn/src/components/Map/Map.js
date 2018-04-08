@@ -13,12 +13,13 @@ const propTypes = {
 };
 
 class ShowMap extends PureComponent {
-  renderSuperBlocks = superBlocks => {
+
+  renderSuperBlocks(superBlocks) {
     const { nodes } = this.props;
     return superBlocks.map(superBlock => (
       <SuperBlock key={superBlock} nodes={nodes} superBlock={superBlock} />
     ));
-  };
+  }
 
   render() {
     const { nodes } = this.props;
