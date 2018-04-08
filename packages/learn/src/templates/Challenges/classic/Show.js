@@ -12,14 +12,14 @@ import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
 import CompletionModal from '../components/CompletionModal';
 
-import { challengeTypes } from '../../../../../utils/challengeTypes';
-import { ChallengeNode } from '../../../../redux/propTypes';
+import { challengeTypes } from '../../../../utils/challengeTypes';
+import { ChallengeNode } from '../../../redux/propTypes';
 import {
   createFiles,
   challengeFilesSelector,
   initTests,
   updateChallengeMeta
-} from '../../redux';
+} from '../redux';
 
 import './classic.css';
 

@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from 'react-bootstrap';
 
-import GreenPass from '../../icons/GreenPass';
+import GreenPass from './icons/GreenPass';
 
 import {
   closeModal,
   submitChallenge,
   isCompletionModalOpenSelector,
   successMessageSelector
-} from '../../redux';
+} from '../redux';
 
 const mapStateToProps = createSelector(
   isCompletionModalOpenSelector,

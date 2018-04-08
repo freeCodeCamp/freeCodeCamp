@@ -11,15 +11,15 @@ import ChallengeTitle from './Challenge-Title';
 import ChallengeDescription from './Challenge-Description';
 import TestSuite from './Test-Suite';
 import Output from './Output';
-import Spacer from '../../../../components/util/Spacer';
+import Spacer from '../../../components/util/Spacer';
 
 import {
   consoleOutputSelector,
   challengeTestsSelector,
   executeChallenge,
   initConsole
-} from '../../redux';
-import { descriptionRegex } from '../../../../../utils';
+} from '../redux';
+import { descriptionRegex } from '../../../../utils';
 
 const mapStateToProps = createSelector(
   consoleOutputSelector,

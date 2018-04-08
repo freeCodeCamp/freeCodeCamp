@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import GreenPass from '../../icons/GreenPass';
-import RedFail from '../../icons/RedFail';
+import GreenPass from './icons/GreenPass';
+import RedFail from './icons/RedFail';
 
 import './test-suite.css';
 

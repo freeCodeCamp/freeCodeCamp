@@ -9,16 +9,12 @@ const views = {
   // backend: BackEnd,
   classic: path.resolve(
     __dirname,
-    './src/templates/Challenges/views/classic/Show.js'
+    './src/templates/Challenges/classic/Show.js'
   ),
   // modern: Modern,
-  project: path.resolve(
-    __dirname,
-    './src/templates/Challenges/views/project/Show.js'
-  ),
+  project: path.resolve(__dirname, './src/templates/Challenges/project/Show.js')
   // quiz: Quiz,
   // simple: Project,
-  step: path.resolve(__dirname, './src/templates/Challenges/views/step/Show.js')
   // invalid: NotFound
 };
 

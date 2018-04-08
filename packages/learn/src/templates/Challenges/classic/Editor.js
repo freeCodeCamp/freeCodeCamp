@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import MonacoEditor from 'react-monaco-editor';
 
-import { executeChallenge, updateFile } from '../../redux';
+import { executeChallenge, updateFile } from '../redux';
 
 const propTypes = {
   contents: PropTypes.string,
