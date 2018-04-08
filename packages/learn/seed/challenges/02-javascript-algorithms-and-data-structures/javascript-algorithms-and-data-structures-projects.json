@@ -17,56 +17,56 @@
       ],
       "tests": [
         {
-          "text": "<code>palindrome(\"eye\")</code> should return a boolean.'",
-          "testString": "assert(typeof palindrome(\"eye\") === \"boolean\", '<code>palindrome(\"eye\")</code> should return a boolean.')"
+          "text": "<code>palindrome(\"eye\")</code> should return a boolean.",
+          "testString": "assert(typeof palindrome(\"eye\") === \"boolean\", '<code>palindrome(\"eye\")</code> should return a boolean.');"
         },
         {
-          "text": "<code>palindrome(\"eye\")</code> should return true.'",
-          "testString": "assert(palindrome(\"eye\") === true, '<code>palindrome(\"eye\")</code> should return true.')"
+          "text": "<code>palindrome(\"eye\")</code> should return true.",
+          "testString": "assert(palindrome(\"eye\") === true, '<code>palindrome(\"eye\")</code> should return true.');"
         },
         {
-          "text": "<code>palindrome(\"_eye\")</code> should return true.'",
-          "testString": "assert(palindrome(\"_eye\") === true, '<code>palindrome(\"_eye\")</code> should return true.')"
+          "text": "<code>palindrome(\"_eye\")</code> should return true.",
+          "testString": "assert(palindrome(\"_eye\") === true, '<code>palindrome(\"_eye\")</code> should return true.');"
         },
         {
-          "text": "<code>palindrome(\"race car\")</code> should return true.'",
-          "testString": "assert(palindrome(\"race car\") === true, '<code>palindrome(\"race car\")</code> should return true.')"
+          "text": "<code>palindrome(\"race car\")</code> should return true.",
+          "testString": "assert(palindrome(\"race car\") === true, '<code>palindrome(\"race car\")</code> should return true.');"
         },
         {
-          "text": "<code>palindrome(\"not a palindrome\")</code> should return false.'",
-          "testString": "assert(palindrome(\"not a palindrome\") === false, '<code>palindrome(\"not a palindrome\")</code> should return false.')"
+          "text": "<code>palindrome(\"not a palindrome\")</code> should return false.",
+          "testString": "assert(palindrome(\"not a palindrome\") === false, '<code>palindrome(\"not a palindrome\")</code> should return false.');"
         },
         {
-          "text": "<code>palindrome(\"A man, a plan, a canal. Panama\")</code> should return true.'",
-          "testString": "assert(palindrome(\"A man, a plan, a canal. Panama\") === true, '<code>palindrome(\"A man, a plan, a canal. Panama\")</code> should return true.')"
+          "text": "<code>palindrome(\"A man, a plan, a canal. Panama\")</code> should return true.",
+          "testString": "assert(palindrome(\"A man, a plan, a canal. Panama\") === true, '<code>palindrome(\"A man, a plan, a canal. Panama\")</code> should return true.');"
         },
         {
-          "text": "<code>palindrome(\"never odd or even\")</code> should return true.'",
-          "testString": "assert(palindrome(\"never odd or even\") === true, '<code>palindrome(\"never odd or even\")</code> should return true.')"
+          "text": "<code>palindrome(\"never odd or even\")</code> should return true.",
+          "testString": "assert(palindrome(\"never odd or even\") === true, '<code>palindrome(\"never odd or even\")</code> should return true.');"
         },
         {
-          "text": "<code>palindrome(\"nope\")</code> should return false.'",
-          "testString": "assert(palindrome(\"nope\") === false, '<code>palindrome(\"nope\")</code> should return false.')"
+          "text": "<code>palindrome(\"nope\")</code> should return false.",
+          "testString": "assert(palindrome(\"nope\") === false, '<code>palindrome(\"nope\")</code> should return false.');"
         },
         {
-          "text": "<code>palindrome(\"almostomla\")</code> should return false.'",
-          "testString": "assert(palindrome(\"almostomla\") === false, '<code>palindrome(\"almostomla\")</code> should return false.')"
+          "text": "<code>palindrome(\"almostomla\")</code> should return false.",
+          "testString": "assert(palindrome(\"almostomla\") === false, '<code>palindrome(\"almostomla\")</code> should return false.');"
         },
         {
-          "text": "<code>palindrome(\"My age is 0, 0 si ega ym.\")</code> should return true.'",
-          "testString": "assert(palindrome(\"My age is 0, 0 si ega ym.\") === true, '<code>palindrome(\"My age is 0, 0 si ega ym.\")</code> should return true.')"
+          "text": "<code>palindrome(\"My age is 0, 0 si ega ym.\")</code> should return true.",
+          "testString": "assert(palindrome(\"My age is 0, 0 si ega ym.\") === true, '<code>palindrome(\"My age is 0, 0 si ega ym.\")</code> should return true.');"
         },
         {
-          "text": "<code>palindrome(\"1 eye for of 1 eye.\")</code> should return false.'",
-          "testString": "assert(palindrome(\"1 eye for of 1 eye.\") === false, '<code>palindrome(\"1 eye for of 1 eye.\")</code> should return false.')"
+          "text": "<code>palindrome(\"1 eye for of 1 eye.\")</code> should return false.",
+          "testString": "assert(palindrome(\"1 eye for of 1 eye.\") === false, '<code>palindrome(\"1 eye for of 1 eye.\")</code> should return false.');"
         },
         {
-          "text": "<code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.'",
-          "testString": "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, '<code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.')"
+          "text": "<code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.",
+          "testString": "assert(palindrome(\"0_0 (: /-\\ :) 0-0\") === true, '<code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return true.');"
         },
         {
-          "text": "<code>palindrome(\"five|\\_/|four\")</code> should return false.'",
-          "testString": "assert(palindrome(\"five|\\_/|four\") === false, '<code>palindrome(\"five|\\_/|four\")</code> should return false.')"
+          "text": "<code>palindrome(\"five|\\_/|four\")</code> should return false.",
+          "testString": "assert(palindrome(\"five|\\_/|four\") === false, '<code>palindrome(\"five|\\_/|four\")</code> should return false.');"
         }
       ],
       "type": "bonfire",
@@ -136,108 +136,108 @@
       ],
       "tests": [
         {
-          "text": "<code>convertToRoman(2)</code> should return \"II\".'",
-          "testString": "assert.deepEqual(convertToRoman(2), '<code>convertToRoman(2)</code> should return \"II\".')"
+          "text": "<code>convertToRoman(2)</code> should return \"II\".",
+          "testString": "assert.deepEqual(convertToRoman(2), \"II\", '<code>convertToRoman(2)</code> should return \"II\".');"
         },
         {
-          "text": "<code>convertToRoman(3)</code> should return \"III\".'",
-          "testString": "assert.deepEqual(convertToRoman(3), '<code>convertToRoman(3)</code> should return \"III\".')"
+          "text": "<code>convertToRoman(3)</code> should return \"III\".",
+          "testString": "assert.deepEqual(convertToRoman(3), \"III\", '<code>convertToRoman(3)</code> should return \"III\".');"
         },
         {
-          "text": "<code>convertToRoman(4)</code> should return \"IV\".'",
-          "testString": "assert.deepEqual(convertToRoman(4), '<code>convertToRoman(4)</code> should return \"IV\".')"
+          "text": "<code>convertToRoman(4)</code> should return \"IV\".",
+          "testString": "assert.deepEqual(convertToRoman(4), \"IV\", '<code>convertToRoman(4)</code> should return \"IV\".');"
         },
         {
-          "text": "<code>convertToRoman(5)</code> should return \"V\".'",
-          "testString": "assert.deepEqual(convertToRoman(5), '<code>convertToRoman(5)</code> should return \"V\".')"
+          "text": "<code>convertToRoman(5)</code> should return \"V\".",
+          "testString": "assert.deepEqual(convertToRoman(5), \"V\", '<code>convertToRoman(5)</code> should return \"V\".');"
         },
         {
-          "text": "<code>convertToRoman(9)</code> should return \"IX\".'",
-          "testString": "assert.deepEqual(convertToRoman(9), '<code>convertToRoman(9)</code> should return \"IX\".')"
+          "text": "<code>convertToRoman(9)</code> should return \"IX\".",
+          "testString": "assert.deepEqual(convertToRoman(9), \"IX\", '<code>convertToRoman(9)</code> should return \"IX\".');"
         },
         {
-          "text": "<code>convertToRoman(12)</code> should return \"XII\".'",
-          "testString": "assert.deepEqual(convertToRoman(12), '<code>convertToRoman(12)</code> should return \"XII\".')"
+          "text": "<code>convertToRoman(12)</code> should return \"XII\".",
+          "testString": "assert.deepEqual(convertToRoman(12), \"XII\", '<code>convertToRoman(12)</code> should return \"XII\".');"
         },
         {
-          "text": "<code>convertToRoman(16)</code> should return \"XVI\".'",
-          "testString": "assert.deepEqual(convertToRoman(16), '<code>convertToRoman(16)</code> should return \"XVI\".')"
+          "text": "<code>convertToRoman(16)</code> should return \"XVI\".",
+          "testString": "assert.deepEqual(convertToRoman(16), \"XVI\", '<code>convertToRoman(16)</code> should return \"XVI\".');"
         },
         {
-          "text": "<code>convertToRoman(29)</code> should return \"XXIX\".'",
-          "testString": "assert.deepEqual(convertToRoman(29), '<code>convertToRoman(29)</code> should return \"XXIX\".')"
+          "text": "<code>convertToRoman(29)</code> should return \"XXIX\".",
+          "testString": "assert.deepEqual(convertToRoman(29), \"XXIX\", '<code>convertToRoman(29)</code> should return \"XXIX\".');"
         },
         {
-          "text": "<code>convertToRoman(44)</code> should return \"XLIV\".'",
-          "testString": "assert.deepEqual(convertToRoman(44), '<code>convertToRoman(44)</code> should return \"XLIV\".')"
+          "text": "<code>convertToRoman(44)</code> should return \"XLIV\".",
+          "testString": "assert.deepEqual(convertToRoman(44), \"XLIV\", '<code>convertToRoman(44)</code> should return \"XLIV\".');"
         },
         {
-          "text": "<code>convertToRoman(45)</code> should return \"XLV\"'",
-          "testString": "assert.deepEqual(convertToRoman(45), '<code>convertToRoman(45)</code> should return \"XLV\"')"
+          "text": "<code>convertToRoman(45)</code> should return \"XLV\"",
+          "testString": "assert.deepEqual(convertToRoman(45), \"XLV\", '<code>convertToRoman(45)</code> should return \"XLV\"');"
         },
         {
-          "text": "<code>convertToRoman(68)</code> should return \"LXVIII\"'",
-          "testString": "assert.deepEqual(convertToRoman(68), '<code>convertToRoman(68)</code> should return \"LXVIII\"')"
+          "text": "<code>convertToRoman(68)</code> should return \"LXVIII\"",
+          "testString": "assert.deepEqual(convertToRoman(68), \"LXVIII\", '<code>convertToRoman(68)</code> should return \"LXVIII\"');"
         },
         {
-          "text": "<code>convertToRoman(83)</code> should return \"LXXXIII\"'",
-          "testString": "assert.deepEqual(convertToRoman(83), '<code>convertToRoman(83)</code> should return \"LXXXIII\"')"
+          "text": "<code>convertToRoman(83)</code> should return \"LXXXIII\"",
+          "testString": "assert.deepEqual(convertToRoman(83), \"LXXXIII\", '<code>convertToRoman(83)</code> should return \"LXXXIII\"');"
         },
         {
-          "text": "<code>convertToRoman(97)</code> should return \"XCVII\"'",
-          "testString": "assert.deepEqual(convertToRoman(97), '<code>convertToRoman(97)</code> should return \"XCVII\"')"
+          "text": "<code>convertToRoman(97)</code> should return \"XCVII\"",
+          "testString": "assert.deepEqual(convertToRoman(97), \"XCVII\", '<code>convertToRoman(97)</code> should return \"XCVII\"');"
         },
         {
-          "text": "<code>convertToRoman(99)</code> should return \"XCIX\"'",
-          "testString": "assert.deepEqual(convertToRoman(99), '<code>convertToRoman(99)</code> should return \"XCIX\"')"
+          "text": "<code>convertToRoman(99)</code> should return \"XCIX\"",
+          "testString": "assert.deepEqual(convertToRoman(99), \"XCIX\", '<code>convertToRoman(99)</code> should return \"XCIX\"');"
         },
         {
-          "text": "<code>convertToRoman(400)</code> should return \"CD\"'",
-          "testString": "assert.deepEqual(convertToRoman(400), '<code>convertToRoman(400)</code> should return \"CD\"')"
+          "text": "<code>convertToRoman(400)</code> should return \"CD\"",
+          "testString": "assert.deepEqual(convertToRoman(400), \"CD\", '<code>convertToRoman(400)</code> should return \"CD\"');"
         },
         {
-          "text": "<code>convertToRoman(500)</code> should return \"D\"'",
-          "testString": "assert.deepEqual(convertToRoman(500), '<code>convertToRoman(500)</code> should return \"D\"')"
+          "text": "<code>convertToRoman(500)</code> should return \"D\"",
+          "testString": "assert.deepEqual(convertToRoman(500), \"D\", '<code>convertToRoman(500)</code> should return \"D\"');"
         },
         {
-          "text": "<code>convertToRoman(501)</code> should return \"DI\"'",
-          "testString": "assert.deepEqual(convertToRoman(501), '<code>convertToRoman(501)</code> should return \"DI\"')"
+          "text": "<code>convertToRoman(501)</code> should return \"DI\"",
+          "testString": "assert.deepEqual(convertToRoman(501), \"DI\", '<code>convertToRoman(501)</code> should return \"DI\"');"
         },
         {
-          "text": "<code>convertToRoman(649)</code> should return \"DCXLIX\"'",
-          "testString": "assert.deepEqual(convertToRoman(649), '<code>convertToRoman(649)</code> should return \"DCXLIX\"')"
+          "text": "<code>convertToRoman(649)</code> should return \"DCXLIX\"",
+          "testString": "assert.deepEqual(convertToRoman(649), \"DCXLIX\", '<code>convertToRoman(649)</code> should return \"DCXLIX\"');"
         },
         {
-          "text": "<code>convertToRoman(798)</code> should return \"DCCXCVIII\"'",
-          "testString": "assert.deepEqual(convertToRoman(798), '<code>convertToRoman(798)</code> should return \"DCCXCVIII\"')"
+          "text": "<code>convertToRoman(798)</code> should return \"DCCXCVIII\"",
+          "testString": "assert.deepEqual(convertToRoman(798), \"DCCXCVIII\", '<code>convertToRoman(798)</code> should return \"DCCXCVIII\"');"
         },
         {
-          "text": "<code>convertToRoman(891)</code> should return \"DCCCXCI\"'",
-          "testString": "assert.deepEqual(convertToRoman(891), '<code>convertToRoman(891)</code> should return \"DCCCXCI\"')"
+          "text": "<code>convertToRoman(891)</code> should return \"DCCCXCI\"",
+          "testString": "assert.deepEqual(convertToRoman(891), \"DCCCXCI\", '<code>convertToRoman(891)</code> should return \"DCCCXCI\"');"
         },
         {
-          "text": "<code>convertToRoman(1000)</code> should return \"M\"'",
-          "testString": "assert.deepEqual(convertToRoman(1000), '<code>convertToRoman(1000)</code> should return \"M\"')"
+          "text": "<code>convertToRoman(1000)</code> should return \"M\"",
+          "testString": "assert.deepEqual(convertToRoman(1000), \"M\", '<code>convertToRoman(1000)</code> should return \"M\"');"
         },
         {
-          "text": "<code>convertToRoman(1004)</code> should return \"MIV\"'",
-          "testString": "assert.deepEqual(convertToRoman(1004), '<code>convertToRoman(1004)</code> should return \"MIV\"')"
+          "text": "<code>convertToRoman(1004)</code> should return \"MIV\"",
+          "testString": "assert.deepEqual(convertToRoman(1004), \"MIV\", '<code>convertToRoman(1004)</code> should return \"MIV\"');"
         },
         {
-          "text": "<code>convertToRoman(1006)</code> should return \"MVI\"'",
-          "testString": "assert.deepEqual(convertToRoman(1006), '<code>convertToRoman(1006)</code> should return \"MVI\"')"
+          "text": "<code>convertToRoman(1006)</code> should return \"MVI\"",
+          "testString": "assert.deepEqual(convertToRoman(1006), \"MVI\", '<code>convertToRoman(1006)</code> should return \"MVI\"');"
         },
         {
-          "text": "<code>convertToRoman(1023)</code> should return \"MXXIII\"'",
-          "testString": "assert.deepEqual(convertToRoman(1023), '<code>convertToRoman(1023)</code> should return \"MXXIII\"')"
+          "text": "<code>convertToRoman(1023)</code> should return \"MXXIII\"",
+          "testString": "assert.deepEqual(convertToRoman(1023), \"MXXIII\", '<code>convertToRoman(1023)</code> should return \"MXXIII\"');"
         },
         {
-          "text": "<code>convertToRoman(2014)</code> should return \"MMXIV\"'",
-          "testString": "assert.deepEqual(convertToRoman(2014), '<code>convertToRoman(2014)</code> should return \"MMXIV\"')"
+          "text": "<code>convertToRoman(2014)</code> should return \"MMXIV\"",
+          "testString": "assert.deepEqual(convertToRoman(2014), \"MMXIV\", '<code>convertToRoman(2014)</code> should return \"MMXIV\"');"
         },
         {
-          "text": "<code>convertToRoman(3999)</code> should return \"MMMCMXCIX\"'",
-          "testString": "assert.deepEqual(convertToRoman(3999), '<code>convertToRoman(3999)</code> should return \"MMMCMXCIX\"')"
+          "text": "<code>convertToRoman(3999)</code> should return \"MMMCMXCIX\"",
+          "testString": "assert.deepEqual(convertToRoman(3999), \"MMMCMXCIX\", '<code>convertToRoman(3999)</code> should return \"MMMCMXCIX\"');"
         }
       ],
       "type": "bonfire",
@@ -299,20 +299,20 @@
       ],
       "tests": [
         {
-          "text": "<code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>FREE CODE CAMP</code>'",
-          "testString": "assert(rot13(\"SERR PBQR PNZC\") === \"FREE CODE CAMP\", '<code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>FREE CODE CAMP</code>')"
+          "text": "<code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>FREE CODE CAMP</code>",
+          "testString": "assert(rot13(\"SERR PBQR PNZC\") === \"FREE CODE CAMP\", '<code>rot13(\"SERR PBQR PNZC\")</code> should decode to <code>FREE CODE CAMP</code>');"
         },
         {
-          "text": "<code>rot13(\"SERR CVMMN!\")</code> should decode to <code>FREE PIZZA!</code>'",
-          "testString": "assert(rot13(\"SERR CVMMN!\") === \"FREE PIZZA!\", '<code>rot13(\"SERR CVMMN!\")</code> should decode to <code>FREE PIZZA!</code>')"
+          "text": "<code>rot13(\"SERR CVMMN!\")</code> should decode to <code>FREE PIZZA!</code>",
+          "testString": "assert(rot13(\"SERR CVMMN!\") === \"FREE PIZZA!\", '<code>rot13(\"SERR CVMMN!\")</code> should decode to <code>FREE PIZZA!</code>');"
         },
         {
-          "text": "<code>rot13(\"SERR YBIR?\")</code> should decode to <code>FREE LOVE?</code>'",
-          "testString": "assert(rot13(\"SERR YBIR?\") === \"FREE LOVE?\", '<code>rot13(\"SERR YBIR?\")</code> should decode to <code>FREE LOVE?</code>')"
+          "text": "<code>rot13(\"SERR YBIR?\")</code> should decode to <code>FREE LOVE?</code>",
+          "testString": "assert(rot13(\"SERR YBIR?\") === \"FREE LOVE?\", '<code>rot13(\"SERR YBIR?\")</code> should decode to <code>FREE LOVE?</code>');"
         },
         {
-          "text": "<code>rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>'",
-          "testString": "assert(rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\") === \"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\", '<code>rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>')"
+          "text": "<code>rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>",
+          "testString": "assert(rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\") === \"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\", '<code>rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>');"
         }
       ],
       "type": "bonfire",
@@ -379,112 +379,112 @@
       ],
       "tests": [
         {
-          "text": "<code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.'",
-          "testString": "assert(typeof telephoneCheck(\"555-555-5555\") === \"boolean\", '<code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.')"
+          "text": "<code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.",
+          "testString": "assert(typeof telephoneCheck(\"555-555-5555\") === \"boolean\", '<code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.');"
         },
         {
-          "text": "<code>telephoneCheck(\"1 555-555-5555\")</code> should return true.'",
-          "testString": "assert(telephoneCheck(\"1 555-555-5555\") === true, '<code>telephoneCheck(\"1 555-555-5555\")</code> should return true.')"
+          "text": "<code>telephoneCheck(\"1 555-555-5555\")</code> should return true.",
+          "testString": "assert(telephoneCheck(\"1 555-555-5555\") === true, '<code>telephoneCheck(\"1 555-555-5555\")</code> should return true.');"
         },
         {
-          "text": "<code>telephoneCheck(\"1 (555) 555-5555\")</code> should return true.'",
-          "testString": "assert(telephoneCheck(\"1 (555) 555-5555\") === true, '<code>telephoneCheck(\"1 (555) 555-5555\")</code> should return true.')"
+          "text": "<code>telephoneCheck(\"1 (555) 555-5555\")</code> should return true.",
+          "testString": "assert(telephoneCheck(\"1 (555) 555-5555\") === true, '<code>telephoneCheck(\"1 (555) 555-5555\")</code> should return true.');"
         },
         {
-          "text": "<code>telephoneCheck(\"5555555555\")</code> should return true.'",
-          "testString": "assert(telephoneCheck(\"5555555555\") === true, '<code>telephoneCheck(\"5555555555\")</code> should return true.')"
+          "text": "<code>telephoneCheck(\"5555555555\")</code> should return true.",
+          "testString": "assert(telephoneCheck(\"5555555555\") === true, '<code>telephoneCheck(\"5555555555\")</code> should return true.');"
         },
         {
-          "text": "<code>telephoneCheck(\"555-555-5555\")</code> should return true.'",
-          "testString": "assert(telephoneCheck(\"555-555-5555\") === true, '<code>telephoneCheck(\"555-555-5555\")</code> should return true.')"
+          "text": "<code>telephoneCheck(\"555-555-5555\")</code> should return true.",
+          "testString": "assert(telephoneCheck(\"555-555-5555\") === true, '<code>telephoneCheck(\"555-555-5555\")</code> should return true.');"
         },
         {
-          "text": "<code>telephoneCheck(\"(555)555-5555\")</code> should return true.'",
-          "testString": "assert(telephoneCheck(\"(555)555-5555\") === true, '<code>telephoneCheck(\"(555)555-5555\")</code> should return true.')"
+          "text": "<code>telephoneCheck(\"(555)555-5555\")</code> should return true.",
+          "testString": "assert(telephoneCheck(\"(555)555-5555\") === true, '<code>telephoneCheck(\"(555)555-5555\")</code> should return true.');"
         },
         {
-          "text": "<code>telephoneCheck(\"1(555)555-5555\")</code> should return true.'",
-          "testString": "assert(telephoneCheck(\"1(555)555-5555\") === true, '<code>telephoneCheck(\"1(555)555-5555\")</code> should return true.')"
+          "text": "<code>telephoneCheck(\"1(555)555-5555\")</code> should return true.",
+          "testString": "assert(telephoneCheck(\"1(555)555-5555\") === true, '<code>telephoneCheck(\"1(555)555-5555\")</code> should return true.');"
         },
         {
-          "text": "<code>telephoneCheck(\"555-5555\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"555-5555\") === false, '<code>telephoneCheck(\"555-5555\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"555-5555\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"555-5555\") === false, '<code>telephoneCheck(\"555-5555\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"5555555\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"5555555\") === false, '<code>telephoneCheck(\"5555555\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"5555555\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"5555555\") === false, '<code>telephoneCheck(\"5555555\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"1 555)555-5555\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"1 555)555-5555\") === false, '<code>telephoneCheck(\"1 555)555-5555\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"1 555)555-5555\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"1 555)555-5555\") === false, '<code>telephoneCheck(\"1 555)555-5555\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"1 555 555 5555\")</code> should return true.'",
-          "testString": "assert(telephoneCheck(\"1 555 555 5555\") === true, '<code>telephoneCheck(\"1 555 555 5555\")</code> should return true.')"
+          "text": "<code>telephoneCheck(\"1 555 555 5555\")</code> should return true.",
+          "testString": "assert(telephoneCheck(\"1 555 555 5555\") === true, '<code>telephoneCheck(\"1 555 555 5555\")</code> should return true.');"
         },
         {
-          "text": "<code>telephoneCheck(\"1 456 789 4444\")</code> should return true.'",
-          "testString": "assert(telephoneCheck(\"1 456 789 4444\") === true, '<code>telephoneCheck(\"1 456 789 4444\")</code> should return true.')"
+          "text": "<code>telephoneCheck(\"1 456 789 4444\")</code> should return true.",
+          "testString": "assert(telephoneCheck(\"1 456 789 4444\") === true, '<code>telephoneCheck(\"1 456 789 4444\")</code> should return true.');"
         },
         {
-          "text": "<code>telephoneCheck(\"123**&!!asdf#\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"123**&!!asdf#\") === false, '<code>telephoneCheck(\"123**&!!asdf#\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"123**&!!asdf#\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"123**&!!asdf#\") === false, '<code>telephoneCheck(\"123**&!!asdf#\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"55555555\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"55555555\") === false, '<code>telephoneCheck(\"55555555\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"55555555\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"55555555\") === false, '<code>telephoneCheck(\"55555555\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"(6054756961)\")</code> should return false'",
-          "testString": "assert(telephoneCheck(\"(6054756961)\") === false, '<code>telephoneCheck(\"(6054756961)\")</code> should return false')"
+          "text": "<code>telephoneCheck(\"(6054756961)\")</code> should return false",
+          "testString": "assert(telephoneCheck(\"(6054756961)\") === false, '<code>telephoneCheck(\"(6054756961)\")</code> should return false');"
         },
         {
-          "text": "<code>telephoneCheck(\"2 (757) 622-7382\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"2 (757) 622-7382\") === false, '<code>telephoneCheck(\"2 (757) 622-7382\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"2 (757) 622-7382\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"2 (757) 622-7382\") === false, '<code>telephoneCheck(\"2 (757) 622-7382\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"0 (757) 622-7382\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"0 (757) 622-7382\") === false, '<code>telephoneCheck(\"0 (757) 622-7382\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"0 (757) 622-7382\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"0 (757) 622-7382\") === false, '<code>telephoneCheck(\"0 (757) 622-7382\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"-1 (757) 622-7382\")</code> should return false'",
-          "testString": "assert(telephoneCheck(\"-1 (757) 622-7382\") === false, '<code>telephoneCheck(\"-1 (757) 622-7382\")</code> should return false')"
+          "text": "<code>telephoneCheck(\"-1 (757) 622-7382\")</code> should return false",
+          "testString": "assert(telephoneCheck(\"-1 (757) 622-7382\") === false, '<code>telephoneCheck(\"-1 (757) 622-7382\")</code> should return false');"
         },
         {
-          "text": "<code>telephoneCheck(\"2 757 622-7382\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"2 757 622-7382\") === false, '<code>telephoneCheck(\"2 757 622-7382\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"2 757 622-7382\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"2 757 622-7382\") === false, '<code>telephoneCheck(\"2 757 622-7382\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"10 (757) 622-7382\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"10 (757) 622-7382\") === false, '<code>telephoneCheck(\"10 (757) 622-7382\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"10 (757) 622-7382\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"10 (757) 622-7382\") === false, '<code>telephoneCheck(\"10 (757) 622-7382\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"27576227382\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"27576227382\") === false, '<code>telephoneCheck(\"27576227382\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"27576227382\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"27576227382\") === false, '<code>telephoneCheck(\"27576227382\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"(275)76227382\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"(275)76227382\") === false, '<code>telephoneCheck(\"(275)76227382\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"(275)76227382\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"(275)76227382\") === false, '<code>telephoneCheck(\"(275)76227382\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"2(757)6227382\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"2(757)6227382\") === false, '<code>telephoneCheck(\"2(757)6227382\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"2(757)6227382\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"2(757)6227382\") === false, '<code>telephoneCheck(\"2(757)6227382\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"2(757)622-7382\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"2(757)622-7382\") === false, '<code>telephoneCheck(\"2(757)622-7382\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"2(757)622-7382\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"2(757)622-7382\") === false, '<code>telephoneCheck(\"2(757)622-7382\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"555)-555-5555\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"555)-555-5555\") === false, '<code>telephoneCheck(\"555)-555-5555\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"555)-555-5555\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"555)-555-5555\") === false, '<code>telephoneCheck(\"555)-555-5555\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"(555-555-5555\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"(555-555-5555\") === false, '<code>telephoneCheck(\"(555-555-5555\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"(555-555-5555\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"(555-555-5555\") === false, '<code>telephoneCheck(\"(555-555-5555\")</code> should return false.');"
         },
         {
-          "text": "<code>telephoneCheck(\"(555)5(55?)-5555\")</code> should return false.'",
-          "testString": "assert(telephoneCheck(\"(555)5(55?)-5555\") === false, '<code>telephoneCheck(\"(555)5(55?)-5555\")</code> should return false.')"
+          "text": "<code>telephoneCheck(\"(555)5(55?)-5555\")</code> should return false.",
+          "testString": "assert(telephoneCheck(\"(555)5(55?)-5555\") === false, '<code>telephoneCheck(\"(555)5(55?)-5555\")</code> should return false.');"
         }
       ],
       "type": "bonfire",
@@ -561,28 +561,28 @@
       ],
       "tests": [
         {
-          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return an object.'",
-          "testString": "assert.deepEqual(Object.prototype.toString.call(checkCashRegister(19.5, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return an object.')"
+          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return an object.",
+          "testString": "assert.deepEqual(Object.prototype.toString.call(checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])), '[object Object]', '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return an object.');"
         },
         {
-          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"QUARTER\", 0.5]]}</code>.'",
-          "testString": "assert.deepEqual(checkCashRegister(19.5, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"QUARTER\", 0.5]]}</code>.')"
+          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"QUARTER\", 0.5]]}</code>.",
+          "testString": "assert.deepEqual(checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]]), {status: \"OPEN\", change: [[\"QUARTER\", 0.5]]}, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"QUARTER\", 0.5]]}</code>.');"
         },
         {
-          "text": "<code>checkCashRegister(3.26, 100, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"TWENTY\", 60], [\"TEN\", 20], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.5], [\"DIME\", 0.2], [\"PENNY\", 0.04]]}</code>.'",
-          "testString": "assert.deepEqual(checkCashRegister(3.26, '<code>checkCashRegister(3.26, 100, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"TWENTY\", 60], [\"TEN\", 20], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.5], [\"DIME\", 0.2], [\"PENNY\", 0.04]]}</code>.')"
+          "text": "<code>checkCashRegister(3.26, 100, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"TWENTY\", 60], [\"TEN\", 20], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.5], [\"DIME\", 0.2], [\"PENNY\", 0.04]]}</code>.",
+          "testString": "assert.deepEqual(checkCashRegister(3.26, 100, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]]), {status: \"OPEN\", change: [[\"TWENTY\", 60], [\"TEN\", 20], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.5], [\"DIME\", 0.2], [\"PENNY\", 0.04]]}, '<code>checkCashRegister(3.26, 100, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"TWENTY\", 60], [\"TEN\", 20], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.5], [\"DIME\", 0.2], [\"PENNY\", 0.04]]}</code>.');"
         },
         {
-          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.'",
-          "testString": "assert.deepEqual(checkCashRegister(19.5, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.')"
+          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.",
+          "testString": "assert.deepEqual(checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), {status: \"INSUFFICIENT_FUNDS\", change: []}, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.');"
         },
         {
-          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.'",
-          "testString": "assert.deepEqual(checkCashRegister(19.5, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.')"
+          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.",
+          "testString": "assert.deepEqual(checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), {status: \"INSUFFICIENT_FUNDS\", change: []}, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.');"
         },
         {
-          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"CLOSED\", change: [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]}</code>.'",
-          "testString": "assert.deepEqual(checkCashRegister(19.5, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"CLOSED\", change: [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]}</code>.')"
+          "text": "<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"CLOSED\", change: [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]}</code>.",
+          "testString": "assert.deepEqual(checkCashRegister(19.5, 20, [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), {status: \"CLOSED\", change: [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]}, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"CLOSED\", change: [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]}</code>.');"
         }
       ],
       "type": "bonfire",

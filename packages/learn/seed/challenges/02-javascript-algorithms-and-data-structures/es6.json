@@ -25,16 +25,16 @@
       ],
       "tests": [
         {
-          "text": "<code>var</code> does not exist in code.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.')"
+          "text": "<code>var</code> does not exist in code.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.');"
         },
         {
-          "text": "<code>catName</code> should be <code>Oliver</code>.'",
-          "testString": "assert(catName === \"Oliver\", '<code>catName</code> should be <code>Oliver</code>.')"
+          "text": "<code>catName</code> should be <code>Oliver</code>.",
+          "testString": "assert(catName === \"Oliver\", '<code>catName</code> should be <code>Oliver</code>.');"
         },
         {
-          "text": "<code>quote</code> should be <code>\"Oliver says Meow!\"</code>'",
-          "testString": "assert(quote === \"Oliver says Meow!\", '<code>quote</code> should be <code>\"Oliver says Meow!\"</code>')"
+          "text": "<code>quote</code> should be <code>\"Oliver says Meow!\"</code>",
+          "testString": "assert(quote === \"Oliver says Meow!\", '<code>quote</code> should be <code>\"Oliver says Meow!\"</code>');"
         }
       ],
       "type": "waypoint",
@@ -84,16 +84,16 @@
       ],
       "tests": [
         {
-          "text": "<code>var</code> does not exist in code.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.')"
+          "text": "<code>var</code> does not exist in code.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.');"
         },
         {
-          "text": "The variable <code>i</code> declared in the if statement should equal \"block scope\".'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/(i\\s*=\\s*).*\\s*.*\\s*.*\\1('|\")block\\s*scope\\2/g), 'The variable <code>i</code> declared in the if statement should equal \"block scope\".')"
+          "text": "The variable <code>i</code> declared in the if statement should equal \"block scope\".",
+          "testString": "getUserInput => assert(getUserInput('index').match(/(i\\s*=\\s*).*\\s*.*\\s*.*\\1('|\")block\\s*scope\\2/g), 'The variable <code>i</code> declared in the if statement should equal \"block scope\".');"
         },
         {
-          "text": "<code>checkScope()</code> should return \"function scope\"'",
-          "testString": "assert(checkScope() === \"function scope\", '<code>checkScope()</code> should return \"function scope\"')"
+          "text": "<code>checkScope()</code> should return \"function scope\"",
+          "testString": "assert(checkScope() === \"function scope\", '<code>checkScope()</code> should return \"function scope\"');"
         }
       ],
       "type": "waypoint",
@@ -136,16 +136,16 @@
       ],
       "tests": [
         {
-          "text": "<code>var</code> does not exist in code.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.')"
+          "text": "<code>var</code> does not exist in code.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.');"
         },
         {
-          "text": "<code>SENTENCE</code> should be a constant variable (by using <code>const</code>).'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g), '<code>SENTENCE</code> should be a constant variable (by using <code>const</code>).')"
+          "text": "<code>SENTENCE</code> should be a constant variable (by using <code>const</code>).",
+          "testString": "getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g), '<code>SENTENCE</code> should be a constant variable (by using <code>const</code>).');"
         },
         {
-          "text": "<code>i</code> should be a variable only defined within the for loop scope (by using<code>let</code>).'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/(let i)/g), '<code>i</code> should be a variable only defined within the for loop scope (by using<code>let</code>).')"
+          "text": "<code>i</code> should be a variable only defined within the for loop scope (by using<code>let</code>).",
+          "testString": "getUserInput => assert(getUserInput('index').match(/(let i)/g), '<code>i</code> should be a variable only defined within the for loop scope (by using<code>let</code>).');"
         }
       ],
       "type": "waypoint",
@@ -192,20 +192,20 @@
       ],
       "tests": [
         {
-          "text": "Do not replace <code>const</code> keyword.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.')"
+          "text": "Do not replace <code>const</code> keyword.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.');"
         },
         {
-          "text": "<code>s</code> should be a constant variable (by using <code>const</code>).'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+s/g), '<code>s</code> should be a constant variable (by using <code>const</code>).')"
+          "text": "<code>s</code> should be a constant variable (by using <code>const</code>).",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+s/g), '<code>s</code> should be a constant variable (by using <code>const</code>).');"
         },
         {
-          "text": "Do not change the original array declaration.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+s\\s*=\\s*\\[\\s*5\\s*, 'Do not change the original array declaration.')"
+          "text": "Do not change the original array declaration.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+s\\s*=\\s*\\[\\s*5\\s*,\\s*7\\s*,\\s*2\\s*\\]\\s*;?/g), 'Do not change the original array declaration.');"
         },
         {
-          "text": "<code>s</code> should be equal to <code>[2, 5, 7]</code>.'",
-          "testString": "assert.deepEqual(s, '<code>s</code> should be equal to <code>[2, 5, 7]</code>.')"
+          "text": "<code>s</code> should be equal to <code>[2, 5, 7]</code>.",
+          "testString": "assert.deepEqual(s, [2, 5, 7], '<code>s</code> should be equal to <code>[2, 5, 7]</code>.');"
         }
       ],
       "type": "waypoint",
@@ -246,20 +246,20 @@
       ],
       "tests": [
         {
-          "text": "Do not replace <code>const</code> keyword.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.')"
+          "text": "Do not replace <code>const</code> keyword.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.');"
         },
         {
-          "text": "<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS/g), '<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).')"
+          "text": "<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS/g), '<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).');"
         },
         {
-          "text": "Do not change original <code>MATH_CONSTANTS</code>.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS\\s+=\\s+{\\s+PI:\\s+3.14\\s+};/g), 'Do not change original <code>MATH_CONSTANTS</code>.')"
+          "text": "Do not change original <code>MATH_CONSTANTS</code>.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+MATH_CONSTANTS\\s+=\\s+{\\s+PI:\\s+3.14\\s+};/g), 'Do not change original <code>MATH_CONSTANTS</code>.');"
         },
         {
-          "text": "<code>PI</code> equals <code>3.14</code>.'",
-          "testString": "assert(PI === 3.14, '<code>PI</code> equals <code>3.14</code>.')"
+          "text": "<code>PI</code> equals <code>3.14</code>.",
+          "testString": "assert(PI === 3.14, '<code>PI</code> equals <code>3.14</code>.');"
         }
       ],
       "type": "waypoint",
@@ -312,24 +312,24 @@
       ],
       "tests": [
         {
-          "text": "User did replace <code>var</code> keyword.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.')"
+          "text": "User did replace <code>var</code> keyword.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.');"
         },
         {
-          "text": "<code>magic</code> should be a constant variable (by using <code>const</code>).'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+magic/g), '<code>magic</code> should be a constant variable (by using <code>const</code>).')"
+          "text": "<code>magic</code> should be a constant variable (by using <code>const</code>).",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+magic/g), '<code>magic</code> should be a constant variable (by using <code>const</code>).');"
         },
         {
-          "text": "<code>magic</code> is a <code>function</code>.'",
-          "testString": "assert(typeof magic === 'function', '<code>magic</code> is a <code>function</code>.')"
+          "text": "<code>magic</code> is a <code>function</code>.",
+          "testString": "assert(typeof magic === 'function', '<code>magic</code> is a <code>function</code>.');"
         },
         {
-          "text": "<code>magic()</code> returns correct date.'",
-          "testString": "assert(magic().getDate() == new Date().getDate(), '<code>magic()</code> returns correct date.')"
+          "text": "<code>magic()</code> returns correct date.",
+          "testString": "assert(magic().getDate() == new Date().getDate(), '<code>magic()</code> returns correct date.');"
         },
         {
-          "text": "<code>function</code> keyword was not used.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.')"
+          "text": "<code>function</code> keyword was not used.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');"
         }
       ],
       "type": "waypoint",
@@ -364,24 +364,24 @@
       ],
       "tests": [
         {
-          "text": "User did replace <code>var</code> keyword.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.')"
+          "text": "User did replace <code>var</code> keyword.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.');"
         },
         {
-          "text": "<code>myConcat</code> should be a constant variable (by using <code>const</code>).'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), '<code>myConcat</code> should be a constant variable (by using <code>const</code>).')"
+          "text": "<code>myConcat</code> should be a constant variable (by using <code>const</code>).",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+myConcat/g), '<code>myConcat</code> should be a constant variable (by using <code>const</code>).');"
         },
         {
-          "text": "<code>myConcat</code> should be a function'",
-          "testString": "assert(typeof myConcat === 'function', '<code>myConcat</code> should be a function')"
+          "text": "<code>myConcat</code> should be a function",
+          "testString": "assert(typeof myConcat === 'function', '<code>myConcat</code> should be a function');"
         },
         {
-          "text": "<code>myConcat()</code> returns the correct <code>array</code>'",
-          "testString": "assert(() => { const a = myConcat([1], '<code>myConcat()</code> returns the correct <code>array</code>')"
+          "text": "<code>myConcat()</code> returns the correct <code>array</code>",
+          "testString": "assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, '<code>myConcat()</code> returns the correct <code>array</code>');"
         },
         {
-          "text": "<code>function</code> keyword was not used.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.')"
+          "text": "<code>function</code> keyword was not used.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');"
         }
       ],
       "type": "waypoint",
@@ -422,32 +422,32 @@
       ],
       "tests": [
         {
-          "text": "User did replace <code>var</code> keyword.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.')"
+          "text": "User did replace <code>var</code> keyword.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.');"
         },
         {
-          "text": "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), '<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).')"
+          "text": "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).",
+          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), '<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');"
         },
         {
-          "text": "<code>squaredIntegers</code> should be an <code>array</code>'",
-          "testString": "assert(Array.isArray(squaredIntegers), '<code>squaredIntegers</code> should be an <code>array</code>')"
+          "text": "<code>squaredIntegers</code> should be an <code>array</code>",
+          "testString": "assert(Array.isArray(squaredIntegers), '<code>squaredIntegers</code> should be an <code>array</code>');"
         },
         {
-          "text": "<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>'",
-          "testString": "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, '<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>')"
+          "text": "<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>",
+          "testString": "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, '<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');"
         },
         {
-          "text": "<code>function</code> keyword was not used.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.')"
+          "text": "<code>function</code> keyword was not used.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');"
         },
         {
-          "text": "loop should not be used'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'loop should not be used')"
+          "text": "loop should not be used",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/(for)|(while)/g), 'loop should not be used');"
         },
         {
-          "text": "<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), '<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used')"
+          "text": "<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used",
+          "testString": "getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), '<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');"
         }
       ],
       "type": "waypoint",
@@ -490,16 +490,16 @@
       ],
       "tests": [
         {
-          "text": "The result of <code>increment(5, 2)</code> should be <code>7</code>.'",
-          "testString": "assert(increment(5, 'The result of <code>increment(5, 2)</code> should be <code>7</code>.')"
+          "text": "The result of <code>increment(5, 2)</code> should be <code>7</code>.",
+          "testString": "assert(increment(5, 2) === 7, 'The result of <code>increment(5, 2)</code> should be <code>7</code>.');"
         },
         {
-          "text": "The result of <code>increment(5)</code> should be <code>6</code>.'",
-          "testString": "assert(increment(5) === 6, 'The result of <code>increment(5)</code> should be <code>6</code>.')"
+          "text": "The result of <code>increment(5)</code> should be <code>6</code>.",
+          "testString": "assert(increment(5) === 6, 'The result of <code>increment(5)</code> should be <code>6</code>.');"
         },
         {
-          "text": "default parameter <code>1</code> was used for <code>value</code>.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/value\\s*=\\s*1/g), 'default parameter <code>1</code> was used for <code>value</code>.')"
+          "text": "default parameter <code>1</code> was used for <code>value</code>.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/value\\s*=\\s*1/g), 'default parameter <code>1</code> was used for <code>value</code>.');"
         }
       ],
       "type": "waypoint",
@@ -539,24 +539,24 @@
       ],
       "tests": [
         {
-          "text": "The result of <code>sum(0,1,2)</code> should be 3'",
-          "testString": "assert(sum(0, 'The result of <code>sum(0,1,2)</code> should be 3')"
+          "text": "The result of <code>sum(0,1,2)</code> should be 3",
+          "testString": "assert(sum(0,1,2) === 3, 'The result of <code>sum(0,1,2)</code> should be 3');"
         },
         {
-          "text": "The result of <code>sum(1,2,3,4)</code> should be 10'",
-          "testString": "assert(sum(1, 'The result of <code>sum(1,2,3,4)</code> should be 10')"
+          "text": "The result of <code>sum(1,2,3,4)</code> should be 10",
+          "testString": "assert(sum(1,2,3,4) === 10, 'The result of <code>sum(1,2,3,4)</code> should be 10');"
         },
         {
-          "text": "The result of <code>sum(5)</code> should be 5'",
-          "testString": "assert(sum(5) === 5, 'The result of <code>sum(5)</code> should be 5')"
+          "text": "The result of <code>sum(5)</code> should be 5",
+          "testString": "assert(sum(5) === 5, 'The result of <code>sum(5)</code> should be 5');"
         },
         {
-          "text": "The result of <code>sum()</code> should be 0'",
-          "testString": "assert(sum() === 0, 'The result of <code>sum()</code> should be 0')"
+          "text": "The result of <code>sum()</code> should be 0",
+          "testString": "assert(sum() === 0, 'The result of <code>sum()</code> should be 0');"
         },
         {
-          "text": "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/function\\s+sum\\s*\\(\\s*...args\\s*\\)\\s*{/g), 'The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.')"
+          "text": "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/function\\s+sum\\s*\\(\\s*...args\\s*\\)\\s*{/g), 'The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.');"
         }
       ],
       "type": "waypoint",
@@ -601,16 +601,16 @@
       ],
       "tests": [
         {
-          "text": "<code>arr2</code> is correct copy of <code>arr1</code>.'",
-          "testString": "assert(arr2.every((v, '<code>arr2</code> is correct copy of <code>arr1</code>.')"
+          "text": "<code>arr2</code> is correct copy of <code>arr1</code>.",
+          "testString": "assert(arr2.every((v, i) => v === arr1[i]), '<code>arr2</code> is correct copy of <code>arr1</code>.');"
         },
         {
-          "text": "<code>...</code> spread operator was used to duplicate <code>arr1</code>.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*...arr1\\s*\\]/g), '<code>...</code> spread operator was used to duplicate <code>arr1</code>.')"
+          "text": "<code>...</code> spread operator was used to duplicate <code>arr1</code>.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*...arr1\\s*\\]/g), '<code>...</code> spread operator was used to duplicate <code>arr1</code>.');"
         },
         {
-          "text": "<code>arr2</code> remains unchanged when <code>arr1</code> is changed.'",
-          "testString": "assert((arr1, '<code>arr2</code> remains unchanged when <code>arr1</code> is changed.')"
+          "text": "<code>arr2</code> remains unchanged when <code>arr1</code> is changed.",
+          "testString": "assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length}, '<code>arr2</code> remains unchanged when <code>arr1</code> is changed.');"
         }
       ],
       "type": "waypoint",
@@ -654,16 +654,16 @@
       ],
       "tests": [
         {
-          "text": "the function <code>getLength()</code> returns a number.'",
-          "testString": "assert(typeof getLength('') === 'number', 'the function <code>getLength()</code> returns a number.')"
+          "text": "the function <code>getLength()</code> returns a number.",
+          "testString": "assert(typeof getLength('') === 'number', 'the function <code>getLength()</code> returns a number.');"
         },
         {
-          "text": "<code>getLength(\"FreeCodeCamp\")</code> should be <code>12</code>'",
-          "testString": "assert(getLength(\"FreeCodeCamp\") === 12, '<code>getLength(\"FreeCodeCamp\")</code> should be <code>12</code>')"
+          "text": "<code>getLength(\"FreeCodeCamp\")</code> should be <code>12</code>",
+          "testString": "assert(getLength(\"FreeCodeCamp\") === 12, '<code>getLength(\"FreeCodeCamp\")</code> should be <code>12</code>');"
         },
         {
-          "text": "destructuring with reassignment was used'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g), 'destructuring with reassignment was used')"
+          "text": "destructuring with reassignment was used",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g), 'destructuring with reassignment was used');"
         }
       ],
       "type": "waypoint",
@@ -707,12 +707,12 @@
       ],
       "tests": [
         {
-          "text": "<code>maxOfTomorrow</code> equals <code>84.6</code>'",
-          "testString": "assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, '<code>maxOfTomorrow</code> equals <code>84.6</code>')"
+          "text": "<code>maxOfTomorrow</code> equals <code>84.6</code>",
+          "testString": "assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, '<code>maxOfTomorrow</code> equals <code>84.6</code>');"
         },
         {
-          "text": "nested destructuring was used'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g), 'nested destructuring was used')"
+          "text": "nested destructuring was used",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g), 'nested destructuring was used');"
         }
       ],
       "type": "waypoint",
@@ -761,16 +761,16 @@
       ],
       "tests": [
         {
-          "text": "Value of <code>a</code> should be 6, after swapping.'",
-          "testString": "assert(a === 6, 'Value of <code>a</code> should be 6, after swapping.')"
+          "text": "Value of <code>a</code> should be 6, after swapping.",
+          "testString": "assert(a === 6, 'Value of <code>a</code> should be 6, after swapping.');"
         },
         {
-          "text": "Value of <code>b</code> should be 8, after swapping.'",
-          "testString": "assert(b === 8, 'Value of <code>b</code> should be 8, after swapping.')"
+          "text": "Value of <code>b</code> should be 8, after swapping.",
+          "testString": "assert(b === 8, 'Value of <code>b</code> should be 8, after swapping.');"
         },
         {
-          "text": "Use array destructuring to swap a and b.'",
-          "testString": "// assert(/\\[\\s*(\\w)\\s*, 'Use array destructuring to swap a and b.')"
+          "text": "Use array destructuring to swap a and b.",
+          "testString": "// assert(/\\[\\s*(\\w)\\s*,\\s*(\\w)\\s*\\]\\s*=\\s*\\[\\s*\\2\\s*,\\s*\\1\\s*\\]/g.test(code), 'Use array destructuring to swap a and b.');"
         }
       ],
       "type": "waypoint",
@@ -812,16 +812,16 @@
       ],
       "tests": [
         {
-          "text": "<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>'",
-          "testString": "assert(arr.every((v, '<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>')"
+          "text": "<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>",
+          "testString": "assert(arr.every((v, i) => v === i + 3), '<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');"
         },
         {
-          "text": "destructuring was used.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*, 'destructuring was used.')"
+          "text": "destructuring was used.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g), 'destructuring was used.');"
         },
         {
-          "text": "<code>Array.slice()</code> was not used.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), '<code>Array.slice()</code> was not used.')"
+          "text": "<code>Array.slice()</code> was not used.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), '<code>Array.slice()</code> was not used.');"
         }
       ],
       "type": "waypoint",
@@ -867,16 +867,16 @@
       ],
       "tests": [
         {
-          "text": "<code>stats</code> should be an <code>object</code>.'",
-          "testString": "assert(typeof stats === 'object', '<code>stats</code> should be an <code>object</code>.')"
+          "text": "<code>stats</code> should be an <code>object</code>.",
+          "testString": "assert(typeof stats === 'object', '<code>stats</code> should be an <code>object</code>.');"
         },
         {
-          "text": "<code>half(stats)</code> should be <code>28.015</code>'",
-          "testString": "assert(half(stats) === 28.015, '<code>half(stats)</code> should be <code>28.015</code>')"
+          "text": "<code>half(stats)</code> should be <code>28.015</code>",
+          "testString": "assert(half(stats) === 28.015, '<code>half(stats)</code> should be <code>28.015</code>');"
         },
         {
-          "text": "Destructuring was used.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\(\\s*\\{\\s*\\w+\\s*, 'Destructuring was used.')"
+          "text": "Destructuring was used.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\(\\s*\\{\\s*\\w+\\s*,\\s*\\w+\\s*\\}\\s*\\)/g), 'Destructuring was used.');"
         }
       ],
       "type": "waypoint",
@@ -932,16 +932,16 @@
       ],
       "tests": [
         {
-          "text": "<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.'",
-          "testString": "assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, '<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.')"
+          "text": "<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.",
+          "testString": "assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, '<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.');"
         },
         {
-          "text": "<code>resultDisplayArray</code> is the desired output.'",
-          "testString": "assert(makeList(result.failure).every((v, '<code>resultDisplayArray</code> is the desired output.')"
+          "text": "<code>resultDisplayArray</code> is the desired output.",
+          "testString": "assert(makeList(result.failure).every((v, i) => v === `<li class=\"text-warning\">${result.failure[i]}</li>`), '<code>resultDisplayArray</code> is the desired output.');"
         },
         {
-          "text": "Template strings were used'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\`<li class=\"text-warning\">\\$\\{\\w+\\}<\\/li>\\`/g), 'Template strings were used')"
+          "text": "Template strings were used",
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\`<li class=\"text-warning\">\\$\\{\\w+\\}<\\/li>\\`/g), 'Template strings were used');"
         }
       ],
       "type": "waypoint",
@@ -997,12 +997,12 @@
       ],
       "tests": [
         {
-          "text": "the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.'",
-          "testString": "assert(() => {const res={name:\"Zodiac Hasbro\", 'the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.')"
+          "text": "the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.",
+          "testString": "assert(() => {const res={name:\"Zodiac Hasbro\",age:56,gender:\"male\"}; const person=createPerson(\"Zodiac Hasbro\", 56, \"male\"); return Object.keys(person).every(k => person[k] === res[k]);}, 'the output is <code>{name: \"Zodiac Hasbro\", age: 56, gender: \"male\"}</code>.');"
         },
         {
-          "text": "No <code>:</code> were used.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/:/g), 'No <code>:</code> were used.')"
+          "text": "No <code>:</code> were used.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/:/g), 'No <code>:</code> were used.');"
         }
       ],
       "type": "waypoint",
@@ -1045,12 +1045,12 @@
       ],
       "tests": [
         {
-          "text": "<code>setGear</code> is a function and changes the <code>gear</code> variable.'",
-          "testString": "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, '<code>setGear</code> is a function and changes the <code>gear</code> variable.')"
+          "text": "<code>setGear</code> is a function and changes the <code>gear</code> variable.",
+          "testString": "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, '<code>setGear</code> is a function and changes the <code>gear</code> variable.');"
         },
         {
-          "text": "Declarative function was used.'",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), 'Declarative function was used.')"
+          "text": "Declarative function was used.",
+          "testString": "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), 'Declarative function was used.');"
         }
       ],
       "type": "waypoint",
@@ -1097,16 +1097,16 @@
       ],
       "tests": [
         {
-          "text": "<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.'",
-          "testString": "assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', '<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.')"
+          "text": "<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.",
+          "testString": "assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', '<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.');"
         },
         {
-          "text": "<code>class</code> keyword was used.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/class/g), '<code>class</code> keyword was used.')"
+          "text": "<code>class</code> keyword was used.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/class/g), '<code>class</code> keyword was used.');"
         },
         {
-          "text": "<code>Vegetable</code> can be instantiated.'",
-          "testString": "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';}, '<code>Vegetable</code> can be instantiated.')"
+          "text": "<code>Vegetable</code> can be instantiated.",
+          "testString": "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';}, '<code>Vegetable</code> can be instantiated.');"
         }
       ],
       "type": "waypoint",
@@ -1157,16 +1157,16 @@
       ],
       "tests": [
         {
-          "text": "<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.'",
-          "testString": "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function', '<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.')"
+          "text": "<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.",
+          "testString": "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function', '<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.');"
         },
         {
-          "text": "<code>class</code> keyword was used.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/class/g), '<code>class</code> keyword was used.')"
+          "text": "<code>class</code> keyword was used.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/class/g), '<code>class</code> keyword was used.');"
         },
         {
-          "text": "<code>Thermostat</code> can be instantiated.'",
-          "testString": "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, '<code>Thermostat</code> can be instantiated.')"
+          "text": "<code>Thermostat</code> can be instantiated.",
+          "testString": "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, '<code>Thermostat</code> can be instantiated.');"
         }
       ],
       "type": "waypoint",
@@ -1216,8 +1216,8 @@
       ],
       "tests": [
         {
-          "text": "valid <code>import</code> statement'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/g), 'valid <code>import</code> statement')"
+          "text": "valid <code>import</code> statement",
+          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/g), 'valid <code>import</code> statement');"
         }
       ],
       "type": "waypoint",
@@ -1253,12 +1253,12 @@
       ],
       "tests": [
         {
-          "text": "<code>foo</code> is exported.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+foo\\s+=+\\s\"bar\"/g), '<code>foo</code> is exported.')"
+          "text": "<code>foo</code> is exported.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+foo\\s+=+\\s\"bar\"/g), '<code>foo</code> is exported.');"
         },
         {
-          "text": "<code>bar</code> is exported.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/g), '<code>bar</code> is exported.')"
+          "text": "<code>bar</code> is exported.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/g), '<code>bar</code> is exported.');"
         }
       ],
       "type": "waypoint",
@@ -1295,8 +1295,8 @@
       ],
       "tests": [
         {
-          "text": "Properly uses <code>import * as</code> syntax.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/g), 'Properly uses <code>import * as</code> syntax.')"
+          "text": "Properly uses <code>import * as</code> syntax.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/g), 'Properly uses <code>import * as</code> syntax.');"
         }
       ],
       "type": "waypoint",
@@ -1332,8 +1332,8 @@
       ],
       "tests": [
         {
-          "text": "Proper used of <code>export</code> fallback.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+default\\s+function\\s+subtract\\(x, 'Proper used of <code>export</code> fallback.')"
+          "text": "Proper used of <code>export</code> fallback.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/g), 'Proper used of <code>export</code> fallback.');"
         }
       ],
       "type": "waypoint",
@@ -1367,8 +1367,8 @@
       ],
       "tests": [
         {
-          "text": "Properly imports <code>export default</code> method.'",
-          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+subtract\\s+from\\s+\"math_functions\"/g), 'Properly imports <code>export default</code> method.')"
+          "text": "Properly imports <code>export default</code> method.",
+          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+subtract\\s+from\\s+\"math_functions\"/g), 'Properly imports <code>export default</code> method.');"
         }
       ],
       "type": "waypoint",

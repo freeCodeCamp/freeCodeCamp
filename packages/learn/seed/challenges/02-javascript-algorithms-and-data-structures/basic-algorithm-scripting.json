@@ -18,28 +18,28 @@
       ],
       "tests": [
         {
-          "text": "<code>convertToF(0)</code> should return a number'",
-          "testString": "assert(typeof convertToF(0) === 'number', '<code>convertToF(0)</code> should return a number')"
+          "text": "<code>convertToF(0)</code> should return a number",
+          "testString": "assert(typeof convertToF(0) === 'number', '<code>convertToF(0)</code> should return a number');"
         },
         {
-          "text": "<code>convertToF(-30)</code> should return a value of <code>-22</code>'",
-          "testString": "assert(convertToF(-30) === -22, '<code>convertToF(-30)</code> should return a value of <code>-22</code>')"
+          "text": "<code>convertToF(-30)</code> should return a value of <code>-22</code>",
+          "testString": "assert(convertToF(-30) === -22, '<code>convertToF(-30)</code> should return a value of <code>-22</code>');"
         },
         {
-          "text": "<code>convertToF(-10)</code> should return a value of <code>14</code>'",
-          "testString": "assert(convertToF(-10) === 14, '<code>convertToF(-10)</code> should return a value of <code>14</code>')"
+          "text": "<code>convertToF(-10)</code> should return a value of <code>14</code>",
+          "testString": "assert(convertToF(-10) === 14, '<code>convertToF(-10)</code> should return a value of <code>14</code>');"
         },
         {
-          "text": "<code>convertToF(0)</code> should return a value of <code>32</code>'",
-          "testString": "assert(convertToF(0) === 32, '<code>convertToF(0)</code> should return a value of <code>32</code>')"
+          "text": "<code>convertToF(0)</code> should return a value of <code>32</code>",
+          "testString": "assert(convertToF(0) === 32, '<code>convertToF(0)</code> should return a value of <code>32</code>');"
         },
         {
-          "text": "<code>convertToF(20)</code> should return a value of <code>68</code>'",
-          "testString": "assert(convertToF(20) === 68, '<code>convertToF(20)</code> should return a value of <code>68</code>')"
+          "text": "<code>convertToF(20)</code> should return a value of <code>68</code>",
+          "testString": "assert(convertToF(20) === 68, '<code>convertToF(20)</code> should return a value of <code>68</code>');"
         },
         {
-          "text": "<code>convertToF(30)</code> should return a value of <code>86</code>'",
-          "testString": "assert(convertToF(30) === 86, '<code>convertToF(30)</code> should return a value of <code>86</code>')"
+          "text": "<code>convertToF(30)</code> should return a value of <code>86</code>",
+          "testString": "assert(convertToF(30) === 86, '<code>convertToF(30)</code> should return a value of <code>86</code>');"
         }
       ],
       "type": "checkpoint",
@@ -91,20 +91,20 @@
       ],
       "tests": [
         {
-          "text": "<code>reverseString(\"hello\")</code> should return a string.'",
-          "testString": "assert(typeof reverseString(\"hello\") === \"string\", '<code>reverseString(\"hello\")</code> should return a string.')"
+          "text": "<code>reverseString(\"hello\")</code> should return a string.",
+          "testString": "assert(typeof reverseString(\"hello\") === \"string\", '<code>reverseString(\"hello\")</code> should return a string.');"
         },
         {
-          "text": "<code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.'",
-          "testString": "assert(reverseString(\"hello\") === \"olleh\", '<code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.')"
+          "text": "<code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.",
+          "testString": "assert(reverseString(\"hello\") === \"olleh\", '<code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');"
         },
         {
-          "text": "<code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.'",
-          "testString": "assert(reverseString(\"Howdy\") === \"ydwoH\", '<code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.')"
+          "text": "<code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.",
+          "testString": "assert(reverseString(\"Howdy\") === \"ydwoH\", '<code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.');"
         },
         {
-          "text": "<code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.'",
-          "testString": "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", '<code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.')"
+          "text": "<code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.",
+          "testString": "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", '<code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
         }
       ],
       "type": "bonfire",
@@ -169,24 +169,24 @@
       ],
       "tests": [
         {
-          "text": "<code>factorialize(5)</code> should return a number.'",
-          "testString": "assert(typeof factorialize(5) === 'number', '<code>factorialize(5)</code> should return a number.')"
+          "text": "<code>factorialize(5)</code> should return a number.",
+          "testString": "assert(typeof factorialize(5) === 'number', '<code>factorialize(5)</code> should return a number.');"
         },
         {
-          "text": "<code>factorialize(5)</code> should return 120.'",
-          "testString": "assert(factorialize(5) === 120, '<code>factorialize(5)</code> should return 120.')"
+          "text": "<code>factorialize(5)</code> should return 120.",
+          "testString": "assert(factorialize(5) === 120, '<code>factorialize(5)</code> should return 120.');"
         },
         {
-          "text": "<code>factorialize(10)</code> should return 3628800.'",
-          "testString": "assert(factorialize(10) === 3628800, '<code>factorialize(10)</code> should return 3628800.')"
+          "text": "<code>factorialize(10)</code> should return 3628800.",
+          "testString": "assert(factorialize(10) === 3628800, '<code>factorialize(10)</code> should return 3628800.');"
         },
         {
-          "text": "<code>factorialize(20)</code> should return 2432902008176640000.'",
-          "testString": "assert(factorialize(20) === 2432902008176640000, '<code>factorialize(20)</code> should return 2432902008176640000.')"
+          "text": "<code>factorialize(20)</code> should return 2432902008176640000.",
+          "testString": "assert(factorialize(20) === 2432902008176640000, '<code>factorialize(20)</code> should return 2432902008176640000.');"
         },
         {
-          "text": "<code>factorialize(0)</code> should return 1.'",
-          "testString": "assert(factorialize(0) === 1, '<code>factorialize(0)</code> should return 1.')"
+          "text": "<code>factorialize(0)</code> should return 1.",
+          "testString": "assert(factorialize(0) === 1, '<code>factorialize(0)</code> should return 1.');"
         }
       ],
       "type": "bonfire",
@@ -247,28 +247,28 @@
       ],
       "tests": [
         {
-          "text": "<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.'",
-          "testString": "assert(typeof findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === \"number\", '<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.')"
+          "text": "<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.",
+          "testString": "assert(typeof findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === \"number\", '<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.');"
         },
         {
-          "text": "<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.'",
-          "testString": "assert(findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === 6, '<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.')"
+          "text": "<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.",
+          "testString": "assert(findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === 6, '<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.');"
         },
         {
-          "text": "<code>findLongestWordLength(\"May the force be with you\")</code> should return 5.'",
-          "testString": "assert(findLongestWordLength(\"May the force be with you\") === 5, '<code>findLongestWordLength(\"May the force be with you\")</code> should return 5.')"
+          "text": "<code>findLongestWordLength(\"May the force be with you\")</code> should return 5.",
+          "testString": "assert(findLongestWordLength(\"May the force be with you\") === 5, '<code>findLongestWordLength(\"May the force be with you\")</code> should return 5.');"
         },
         {
-          "text": "<code>findLongestWordLength(\"Google do a barrel roll\")</code> should return 6.'",
-          "testString": "assert(findLongestWordLength(\"Google do a barrel roll\") === 6, '<code>findLongestWordLength(\"Google do a barrel roll\")</code> should return 6.')"
+          "text": "<code>findLongestWordLength(\"Google do a barrel roll\")</code> should return 6.",
+          "testString": "assert(findLongestWordLength(\"Google do a barrel roll\") === 6, '<code>findLongestWordLength(\"Google do a barrel roll\")</code> should return 6.');"
         },
         {
-          "text": "<code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.'",
-          "testString": "assert(findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\") === 8, '<code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.')"
+          "text": "<code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.",
+          "testString": "assert(findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\") === 8, '<code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.');"
         },
         {
-          "text": "<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.'",
-          "testString": "assert(findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\") === 19, '<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.')"
+          "text": "<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.",
+          "testString": "assert(findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\") === 19, '<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.');"
         }
       ],
       "type": "bonfire",
@@ -326,20 +326,20 @@
       ],
       "tests": [
         {
-          "text": "<code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.'",
-          "testString": "assert(largestOfFour([[4, '<code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.')"
+          "text": "<code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.",
+          "testString": "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, '<code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.');"
         },
         {
-          "text": "<code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27, 5, 39, 1001]</code>.'",
-          "testString": "assert.deepEqual(largestOfFour([[13, '<code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27, 5, 39, 1001]</code>.')"
+          "text": "<code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27, 5, 39, 1001]</code>.",
+          "testString": "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27, 5, 39, 1001], '<code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27, 5, 39, 1001]</code>.');"
         },
         {
-          "text": "<code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.'",
-          "testString": "assert.deepEqual(largestOfFour([[4, '<code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.')"
+          "text": "<code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.",
+          "testString": "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9, 35, 97, 1000000], '<code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.');"
         },
         {
-          "text": "<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> should return <code>[25, 48, 21, -3]</code>.'",
-          "testString": "assert.deepEqual(largestOfFour([[17, '<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> should return <code>[25, 48, 21, -3]</code>.')"
+          "text": "<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> should return <code>[25, 48, 21, -3]</code>.",
+          "testString": "assert.deepEqual(largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]), [25, 48, 21, -3], '<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> should return <code>[25, 48, 21, -3]</code>.');"
         }
       ],
       "type": "bonfire",
@@ -398,48 +398,48 @@
       ],
       "tests": [
         {
-          "text": "<code>confirmEnding(\"Bastian\", \"n\")</code> should return true.'",
-          "testString": "assert(confirmEnding(\"Bastian\", '<code>confirmEnding(\"Bastian\", \"n\")</code> should return true.')"
+          "text": "<code>confirmEnding(\"Bastian\", \"n\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"Bastian\", \"n\") === true, '<code>confirmEnding(\"Bastian\", \"n\")</code> should return true.');"
         },
         {
-          "text": "<code>confirmEnding(\"Congratulation\", \"on\")</code> should return true.'",
-          "testString": "assert(confirmEnding(\"Congratulation\", '<code>confirmEnding(\"Congratulation\", \"on\")</code> should return true.')"
+          "text": "<code>confirmEnding(\"Congratulation\", \"on\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"Congratulation\", \"on\") === true, '<code>confirmEnding(\"Congratulation\", \"on\")</code> should return true.');"
         },
         {
-          "text": "<code>confirmEnding(\"Connor\", \"n\")</code> should return false.'",
-          "testString": "assert(confirmEnding(\"Connor\", '<code>confirmEnding(\"Connor\", \"n\")</code> should return false.')"
+          "text": "<code>confirmEnding(\"Connor\", \"n\")</code> should return false.",
+          "testString": "assert(confirmEnding(\"Connor\", \"n\") === false, '<code>confirmEnding(\"Connor\", \"n\")</code> should return false.');"
         },
         {
-          "text": "<code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.'",
-          "testString": "assert(confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\", '<code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.')"
+          "text": "<code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.",
+          "testString": "assert(confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, '<code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');"
         },
         {
-          "text": "<code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.'",
-          "testString": "assert(confirmEnding(\"He has to give me a new name\", '<code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.')"
+          "text": "<code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"He has to give me a new name\", \"name\") === true, '<code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.');"
         },
         {
-          "text": "<code>confirmEnding(\"Open sesame\", \"same\")</code> should return true.'",
-          "testString": "assert(confirmEnding(\"Open sesame\", '<code>confirmEnding(\"Open sesame\", \"same\")</code> should return true.')"
+          "text": "<code>confirmEnding(\"Open sesame\", \"same\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"same\") === true, '<code>confirmEnding(\"Open sesame\", \"same\")</code> should return true.');"
         },
         {
-          "text": "<code>confirmEnding(\"Open sesame\", \"pen\")</code> should return false.'",
-          "testString": "assert(confirmEnding(\"Open sesame\", '<code>confirmEnding(\"Open sesame\", \"pen\")</code> should return false.')"
+          "text": "<code>confirmEnding(\"Open sesame\", \"pen\")</code> should return false.",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"pen\") === false, '<code>confirmEnding(\"Open sesame\", \"pen\")</code> should return false.');"
         },
         {
-          "text": "<code>confirmEnding(\"Open sesame\", \"game\")</code> should return false.'",
-          "testString": "assert(confirmEnding(\"Open sesame\", '<code>confirmEnding(\"Open sesame\", \"game\")</code> should return false.')"
+          "text": "<code>confirmEnding(\"Open sesame\", \"game\")</code> should return false.",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"game\") === false, '<code>confirmEnding(\"Open sesame\", \"game\")</code> should return false.');"
         },
         {
-          "text": "<code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.'",
-          "testString": "assert(confirmEnding(\"If you want to save our world, '<code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.')"
+          "text": "<code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.",
+          "testString": "assert(confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, '<code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
         },
         {
-          "text": "<code>confirmEnding(\"Abstraction\", \"action\")</code> should return true.'",
-          "testString": "assert(confirmEnding(\"Abstraction\", '<code>confirmEnding(\"Abstraction\", \"action\")</code> should return true.')"
+          "text": "<code>confirmEnding(\"Abstraction\", \"action\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"Abstraction\", \"action\") === true, '<code>confirmEnding(\"Abstraction\", \"action\")</code> should return true.');"
         },
         {
-          "text": "Do not use the built-in method <code>.endsWith()</code> to solve the challenge.'",
-          "testString": "assert(!(/\\.endsWith\\(.*?\\)\\s*?;?/.test(code)) && !(/\\['endsWith'\\]/.test(code)), 'Do not use the built-in method <code>.endsWith()</code> to solve the challenge.')"
+          "text": "Do not use the built-in method <code>.endsWith()</code> to solve the challenge.",
+          "testString": "assert(!(/\\.endsWith\\(.*?\\)\\s*?;?/.test(code)) && !(/\\['endsWith'\\]/.test(code)), 'Do not use the built-in method <code>.endsWith()</code> to solve the challenge.');"
         }
       ],
       "type": "bonfire",
@@ -497,32 +497,32 @@
       ],
       "tests": [
         {
-          "text": "<code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.'",
-          "testString": "assert(repeatStringNumTimes(\"*\", '<code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.')"
+          "text": "<code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"*\", 3) === \"***\", '<code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.');"
         },
         {
-          "text": "<code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.'",
-          "testString": "assert(repeatStringNumTimes(\"abc\", '<code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.')"
+          "text": "<code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 3) === \"abcabcabc\", '<code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');"
         },
         {
-          "text": "<code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.'",
-          "testString": "assert(repeatStringNumTimes(\"abc\", '<code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.')"
+          "text": "<code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 4) === \"abcabcabcabc\", '<code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');"
         },
         {
-          "text": "<code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.'",
-          "testString": "assert(repeatStringNumTimes(\"abc\", '<code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.')"
+          "text": "<code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 1) === \"abc\", '<code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.');"
         },
         {
-          "text": "<code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.'",
-          "testString": "assert(repeatStringNumTimes(\"*\", '<code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.')"
+          "text": "<code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"*\", 8) === \"********\", '<code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.');"
         },
         {
-          "text": "<code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.'",
-          "testString": "assert(repeatStringNumTimes(\"abc\", '<code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.')"
+          "text": "<code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"abc\", -2) === \"\", '<code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.');"
         },
         {
-          "text": "The built-in <code>repeat()</code>-method should not be used'",
-          "testString": "assert(!/\\.repeat/g.test(code), 'The built-in <code>repeat()</code>-method should not be used')"
+          "text": "The built-in <code>repeat()</code>-method should not be used",
+          "testString": "assert(!/\\.repeat/g.test(code), 'The built-in <code>repeat()</code>-method should not be used');"
         }
       ],
       "type": "bonfire",
@@ -577,28 +577,28 @@
       ],
       "tests": [
         {
-          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> should return \"A-tisket...\".'",
-          "testString": "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> should return \"A-tisket...\".')"
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> should return \"A-tisket...\".",
+          "testString": "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", 8) === \"A-tisket...\", '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> should return \"A-tisket...\".');"
         },
         {
-          "text": "<code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> should return \"Peter Piper...\".'",
-          "testString": "assert(truncateString(\"Peter Piper picked a peck of pickled peppers\", '<code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> should return \"Peter Piper...\".')"
+          "text": "<code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> should return \"Peter Piper...\".",
+          "testString": "assert(truncateString(\"Peter Piper picked a peck of pickled peppers\", 11) === \"Peter Piper...\", '<code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> should return \"Peter Piper...\".');"
         },
         {
-          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".'",
-          "testString": "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".')"
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".",
+          "testString": "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');"
         },
         {
-          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".'",
-          "testString": "assert(truncateString('A-tisket a-tasket A green and yellow basket', '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".')"
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".",
+          "testString": "assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');"
         },
         {
-          "text": "<code>truncateString(\"A-\", 1)</code> should return \"A...\".'",
-          "testString": "assert(truncateString(\"A-\", '<code>truncateString(\"A-\", 1)</code> should return \"A...\".')"
+          "text": "<code>truncateString(\"A-\", 1)</code> should return \"A...\".",
+          "testString": "assert(truncateString(\"A-\", 1) === \"A...\", '<code>truncateString(\"A-\", 1)</code> should return \"A...\".');"
         },
         {
-          "text": "<code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".'",
-          "testString": "assert(truncateString(\"Absolutely Longer\", '<code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".')"
+          "text": "<code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".",
+          "testString": "assert(truncateString(\"Absolutely Longer\", 2) === \"Ab...\", '<code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
         }
       ],
       "type": "bonfire",
@@ -656,12 +656,12 @@
       ],
       "tests": [
         {
-          "text": "<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.'",
-          "testString": "assert.strictEqual(findElement([1, '<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.')"
+          "text": "<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.",
+          "testString": "assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, '<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');"
         },
         {
-          "text": "<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.'",
-          "testString": "assert.strictEqual(findElement([1, '<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.')"
+          "text": "<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.",
+          "testString": "assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, '<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
         }
       ],
       "type": "bonfire",
@@ -724,44 +724,44 @@
       ],
       "tests": [
         {
-          "text": "<code>booWho(true)</code> should return true.'",
-          "testString": "assert.strictEqual(booWho(true), '<code>booWho(true)</code> should return true.')"
+          "text": "<code>booWho(true)</code> should return true.",
+          "testString": "assert.strictEqual(booWho(true), true, '<code>booWho(true)</code> should return true.');"
         },
         {
-          "text": "<code>booWho(false)</code> should return true.'",
-          "testString": "assert.strictEqual(booWho(false), '<code>booWho(false)</code> should return true.')"
+          "text": "<code>booWho(false)</code> should return true.",
+          "testString": "assert.strictEqual(booWho(false), true, '<code>booWho(false)</code> should return true.');"
         },
         {
-          "text": "<code>booWho([1, 2, 3])</code> should return false.'",
-          "testString": "assert.strictEqual(booWho([1, '<code>booWho([1, 2, 3])</code> should return false.')"
+          "text": "<code>booWho([1, 2, 3])</code> should return false.",
+          "testString": "assert.strictEqual(booWho([1, 2, 3]), false, '<code>booWho([1, 2, 3])</code> should return false.');"
         },
         {
-          "text": "<code>booWho([].slice)</code> should return false.'",
-          "testString": "assert.strictEqual(booWho([].slice), '<code>booWho([].slice)</code> should return false.')"
+          "text": "<code>booWho([].slice)</code> should return false.",
+          "testString": "assert.strictEqual(booWho([].slice), false, '<code>booWho([].slice)</code> should return false.');"
         },
         {
-          "text": "<code>booWho({ \"a\": 1 })</code> should return false.'",
-          "testString": "assert.strictEqual(booWho({ \"a\": 1 }), '<code>booWho({ \"a\": 1 })</code> should return false.')"
+          "text": "<code>booWho({ \"a\": 1 })</code> should return false.",
+          "testString": "assert.strictEqual(booWho({ \"a\": 1 }), false, '<code>booWho({ \"a\": 1 })</code> should return false.');"
         },
         {
-          "text": "<code>booWho(1)</code> should return false.'",
-          "testString": "assert.strictEqual(booWho(1), '<code>booWho(1)</code> should return false.')"
+          "text": "<code>booWho(1)</code> should return false.",
+          "testString": "assert.strictEqual(booWho(1), false, '<code>booWho(1)</code> should return false.');"
         },
         {
-          "text": "<code>booWho(NaN)</code> should return false.'",
-          "testString": "assert.strictEqual(booWho(NaN), '<code>booWho(NaN)</code> should return false.')"
+          "text": "<code>booWho(NaN)</code> should return false.",
+          "testString": "assert.strictEqual(booWho(NaN), false, '<code>booWho(NaN)</code> should return false.');"
         },
         {
-          "text": "<code>booWho(\"a\")</code> should return false.'",
-          "testString": "assert.strictEqual(booWho(\"a\"), '<code>booWho(\"a\")</code> should return false.')"
+          "text": "<code>booWho(\"a\")</code> should return false.",
+          "testString": "assert.strictEqual(booWho(\"a\"), false, '<code>booWho(\"a\")</code> should return false.');"
         },
         {
-          "text": "<code>booWho(\"true\")</code> should return false.'",
-          "testString": "assert.strictEqual(booWho(\"true\"), '<code>booWho(\"true\")</code> should return false.')"
+          "text": "<code>booWho(\"true\")</code> should return false.",
+          "testString": "assert.strictEqual(booWho(\"true\"), false, '<code>booWho(\"true\")</code> should return false.');"
         },
         {
-          "text": "<code>booWho(\"false\")</code> should return false.'",
-          "testString": "assert.strictEqual(booWho(\"false\"), '<code>booWho(\"false\")</code> should return false.')"
+          "text": "<code>booWho(\"false\")</code> should return false.",
+          "testString": "assert.strictEqual(booWho(\"false\"), false, '<code>booWho(\"false\")</code> should return false.');"
         }
       ],
       "type": "bonfire",
@@ -824,20 +824,20 @@
       ],
       "tests": [
         {
-          "text": "<code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.'",
-          "testString": "assert(typeof titleCase(\"I'm a little tea pot\") === \"string\", '<code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.')"
+          "text": "<code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.",
+          "testString": "assert(typeof titleCase(\"I'm a little tea pot\") === \"string\", '<code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.');"
         },
         {
-          "text": "<code>titleCase(\"I&#39;m a little tea pot\")</code> should return <code>I&#39;m A Little Tea Pot</code>.'",
-          "testString": "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", '<code>titleCase(\"I&#39;m a little tea pot\")</code> should return <code>I&#39;m A Little Tea Pot</code>.')"
+          "text": "<code>titleCase(\"I&#39;m a little tea pot\")</code> should return <code>I&#39;m A Little Tea Pot</code>.",
+          "testString": "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", '<code>titleCase(\"I&#39;m a little tea pot\")</code> should return <code>I&#39;m A Little Tea Pot</code>.');"
         },
         {
-          "text": "<code>titleCase(\"sHoRt AnD sToUt\")</code> should return <code>Short And Stout</code>.'",
-          "testString": "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", '<code>titleCase(\"sHoRt AnD sToUt\")</code> should return <code>Short And Stout</code>.')"
+          "text": "<code>titleCase(\"sHoRt AnD sToUt\")</code> should return <code>Short And Stout</code>.",
+          "testString": "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", '<code>titleCase(\"sHoRt AnD sToUt\")</code> should return <code>Short And Stout</code>.');"
         },
         {
-          "text": "<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return <code>Here Is My Handle Here Is My Spout</code>.'",
-          "testString": "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return <code>Here Is My Handle Here Is My Spout</code>.')"
+          "text": "<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return <code>Here Is My Handle Here Is My Spout</code>.",
+          "testString": "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return <code>Here Is My Handle Here Is My Spout</code>.');"
         }
       ],
       "type": "bonfire",
@@ -896,28 +896,28 @@
       ],
       "tests": [
         {
-          "text": "<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.'",
-          "testString": "assert.deepEqual(frankenSplice([1, '<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.')"
+          "text": "<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.",
+          "testString": "assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5], '<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.');"
         },
         {
-          "text": "<code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.'",
-          "testString": "assert.deepEqual(frankenSplice(testArr1, '<code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.')"
+          "text": "<code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.",
+          "testString": "assert.deepEqual(frankenSplice(testArr1, testArr2, 1), [\"a\", 1, 2, \"b\"], '<code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.');"
         },
         {
-          "text": "<code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.'",
-          "testString": "assert.deepEqual(frankenSplice([\"claw\", '<code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.')"
+          "text": "<code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.",
+          "testString": "assert.deepEqual(frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2), [\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"], '<code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.');"
         },
         {
-          "text": "All elements from the first array should be added to the second array in their original order.'",
-          "testString": "assert.deepEqual(frankenSplice([1, 'All elements from the first array should be added to the second array in their original order.')"
+          "text": "All elements from the first array should be added to the second array in their original order.",
+          "testString": "assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], 'All elements from the first array should be added to the second array in their original order.');"
         },
         {
-          "text": "The first array should remain the same after the function runs.'",
-          "testString": "assert(testArr1[0] === 1 && testArr1[1] === 2, 'The first array should remain the same after the function runs.')"
+          "text": "The first array should remain the same after the function runs.",
+          "testString": "assert(testArr1[0] === 1 && testArr1[1] === 2, 'The first array should remain the same after the function runs.');"
         },
         {
-          "text": "The second array should remain the same after the function runs.'",
-          "testString": "assert(testArr2[0] === \"a\" && testArr2[1] === \"b\", 'The second array should remain the same after the function runs.')"
+          "text": "The second array should remain the same after the function runs.",
+          "testString": "assert(testArr2[0] === \"a\" && testArr2[1] === \"b\", 'The second array should remain the same after the function runs.');"
         }
       ],
       "type": "bonfire",
@@ -971,20 +971,20 @@
       ],
       "tests": [
         {
-          "text": "<code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.'",
-          "testString": "assert.deepEqual(bouncer([7, '<code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.')"
+          "text": "<code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.",
+          "testString": "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], '<code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');"
         },
         {
-          "text": "<code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.'",
-          "testString": "assert.deepEqual(bouncer([\"a\", '<code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.')"
+          "text": "<code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.",
+          "testString": "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], '<code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');"
         },
         {
-          "text": "<code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.'",
-          "testString": "assert.deepEqual(bouncer([false, '<code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.')"
+          "text": "<code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.",
+          "testString": "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, \"\"]), [], '<code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.');"
         },
         {
-          "text": "<code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.'",
-          "testString": "assert.deepEqual(bouncer([1, '<code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.')"
+          "text": "<code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.",
+          "testString": "assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], '<code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.');"
         }
       ],
       "type": "bonfire",
@@ -1045,68 +1045,68 @@
       ],
       "tests": [
         {
-          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.'",
-          "testString": "assert(getIndexToIns([10, '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.')"
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.",
+          "testString": "assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3, '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');"
         },
         {
-          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return a number.'",
-          "testString": "assert(typeof(getIndexToIns([10, '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return a number.')"
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 35)) === \"number\", '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return a number.');"
         },
         {
-          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.'",
-          "testString": "assert(getIndexToIns([10, '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.')"
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.",
+          "testString": "assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2, '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');"
         },
         {
-          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return a number.'",
-          "testString": "assert(typeof(getIndexToIns([10, '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return a number.')"
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 30)) === \"number\", '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return a number.');"
         },
         {
-          "text": "<code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.'",
-          "testString": "assert(getIndexToIns([40, '<code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.')"
+          "text": "<code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.",
+          "testString": "assert(getIndexToIns([40, 60], 50) === 1, '<code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.');"
         },
         {
-          "text": "<code>getIndexToIns([40, 60], 50)</code> should return a number.'",
-          "testString": "assert(typeof(getIndexToIns([40, '<code>getIndexToIns([40, 60], 50)</code> should return a number.')"
+          "text": "<code>getIndexToIns([40, 60], 50)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([40, 60], 50)) === \"number\", '<code>getIndexToIns([40, 60], 50)</code> should return a number.');"
         },
         {
-          "text": "<code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.'",
-          "testString": "assert(getIndexToIns([3, '<code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.')"
+          "text": "<code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.",
+          "testString": "assert(getIndexToIns([3, 10, 5], 3) === 0, '<code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.');"
         },
         {
-          "text": "<code>getIndexToIns([3, 10, 5], 3)</code> should return a number.'",
-          "testString": "assert(typeof(getIndexToIns([3, '<code>getIndexToIns([3, 10, 5], 3)</code> should return a number.')"
+          "text": "<code>getIndexToIns([3, 10, 5], 3)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([3, 10, 5], 3)) === \"number\", '<code>getIndexToIns([3, 10, 5], 3)</code> should return a number.');"
         },
         {
-          "text": "<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.'",
-          "testString": "assert(getIndexToIns([5, '<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.')"
+          "text": "<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.",
+          "testString": "assert(getIndexToIns([5, 3, 20, 3], 5) === 2, '<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.');"
         },
         {
-          "text": "<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return a number.'",
-          "testString": "assert(typeof(getIndexToIns([5, '<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return a number.')"
+          "text": "<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([5, 3, 20, 3], 5)) === \"number\", '<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return a number.');"
         },
         {
-          "text": "<code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.'",
-          "testString": "assert(getIndexToIns([2, '<code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.')"
+          "text": "<code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.",
+          "testString": "assert(getIndexToIns([2, 20, 10], 19) === 2, '<code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.');"
         },
         {
-          "text": "<code>getIndexToIns([2, 20, 10], 19)</code> should return a number.'",
-          "testString": "assert(typeof(getIndexToIns([2, '<code>getIndexToIns([2, 20, 10], 19)</code> should return a number.')"
+          "text": "<code>getIndexToIns([2, 20, 10], 19)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([2, 20, 10], 19)) === \"number\", '<code>getIndexToIns([2, 20, 10], 19)</code> should return a number.');"
         },
         {
-          "text": "<code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.'",
-          "testString": "assert(getIndexToIns([2, '<code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.')"
+          "text": "<code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.",
+          "testString": "assert(getIndexToIns([2, 5, 10], 15) === 3, '<code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.');"
         },
         {
-          "text": "<code>getIndexToIns([2, 5, 10], 15)</code> should return a number.'",
-          "testString": "assert(typeof(getIndexToIns([2, '<code>getIndexToIns([2, 5, 10], 15)</code> should return a number.')"
+          "text": "<code>getIndexToIns([2, 5, 10], 15)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([2, 5, 10], 15)) === \"number\", '<code>getIndexToIns([2, 5, 10], 15)</code> should return a number.');"
         },
         {
-          "text": "<code>getIndexToIns([], 1)</code> should return <code>0</code>.'",
-          "testString": "assert(getIndexToIns([], '<code>getIndexToIns([], 1)</code> should return <code>0</code>.')"
+          "text": "<code>getIndexToIns([], 1)</code> should return <code>0</code>.",
+          "testString": "assert(getIndexToIns([], 1) === 0, '<code>getIndexToIns([], 1)</code> should return <code>0</code>.');"
         },
         {
-          "text": "<code>getIndexToIns([], 1)</code> should return a number.'",
-          "testString": "assert(typeof(getIndexToIns([], '<code>getIndexToIns([], 1)</code> should return a number.')"
+          "text": "<code>getIndexToIns([], 1)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([], 1)) === \"number\", '<code>getIndexToIns([], 1)</code> should return a number.');"
         }
       ],
       "type": "bonfire",
@@ -1168,40 +1168,40 @@
       ],
       "tests": [
         {
-          "text": "<code>mutation([\"hello\", \"hey\"])</code> should return false.'",
-          "testString": "assert(mutation([\"hello\", '<code>mutation([\"hello\", \"hey\"])</code> should return false.')"
+          "text": "<code>mutation([\"hello\", \"hey\"])</code> should return false.",
+          "testString": "assert(mutation([\"hello\", \"hey\"]) === false, '<code>mutation([\"hello\", \"hey\"])</code> should return false.');"
         },
         {
-          "text": "<code>mutation([\"hello\", \"Hello\"])</code> should return true.'",
-          "testString": "assert(mutation([\"hello\", '<code>mutation([\"hello\", \"Hello\"])</code> should return true.')"
+          "text": "<code>mutation([\"hello\", \"Hello\"])</code> should return true.",
+          "testString": "assert(mutation([\"hello\", \"Hello\"]) === true, '<code>mutation([\"hello\", \"Hello\"])</code> should return true.');"
         },
         {
-          "text": "<code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.'",
-          "testString": "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", '<code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.')"
+          "text": "<code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.",
+          "testString": "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, '<code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.');"
         },
         {
-          "text": "<code>mutation([\"Mary\", \"Army\"])</code> should return true.'",
-          "testString": "assert(mutation([\"Mary\", '<code>mutation([\"Mary\", \"Army\"])</code> should return true.')"
+          "text": "<code>mutation([\"Mary\", \"Army\"])</code> should return true.",
+          "testString": "assert(mutation([\"Mary\", \"Army\"]) === true, '<code>mutation([\"Mary\", \"Army\"])</code> should return true.');"
         },
         {
-          "text": "<code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.'",
-          "testString": "assert(mutation([\"Mary\", '<code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.')"
+          "text": "<code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.",
+          "testString": "assert(mutation([\"Mary\", \"Aarmy\"]) === true, '<code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.');"
         },
         {
-          "text": "<code>mutation([\"Alien\", \"line\"])</code> should return true.'",
-          "testString": "assert(mutation([\"Alien\", '<code>mutation([\"Alien\", \"line\"])</code> should return true.')"
+          "text": "<code>mutation([\"Alien\", \"line\"])</code> should return true.",
+          "testString": "assert(mutation([\"Alien\", \"line\"]) === true, '<code>mutation([\"Alien\", \"line\"])</code> should return true.');"
         },
         {
-          "text": "<code>mutation([\"floor\", \"for\"])</code> should return true.'",
-          "testString": "assert(mutation([\"floor\", '<code>mutation([\"floor\", \"for\"])</code> should return true.')"
+          "text": "<code>mutation([\"floor\", \"for\"])</code> should return true.",
+          "testString": "assert(mutation([\"floor\", \"for\"]) === true, '<code>mutation([\"floor\", \"for\"])</code> should return true.');"
         },
         {
-          "text": "<code>mutation([\"hello\", \"neo\"])</code> should return false.'",
-          "testString": "assert(mutation([\"hello\", '<code>mutation([\"hello\", \"neo\"])</code> should return false.')"
+          "text": "<code>mutation([\"hello\", \"neo\"])</code> should return false.",
+          "testString": "assert(mutation([\"hello\", \"neo\"]) === false, '<code>mutation([\"hello\", \"neo\"])</code> should return false.');"
         },
         {
-          "text": "<code>mutation([\"voodoo\", \"no\"])</code> should return false.'",
-          "testString": "assert(mutation([\"voodoo\", '<code>mutation([\"voodoo\", \"no\"])</code> should return false.')"
+          "text": "<code>mutation([\"voodoo\", \"no\"])</code> should return false.",
+          "testString": "assert(mutation([\"voodoo\", \"no\"]) === false, '<code>mutation([\"voodoo\", \"no\"])</code> should return false.');"
         }
       ],
       "type": "bonfire",
@@ -1261,32 +1261,32 @@
       ],
       "tests": [
         {
-          "text": "<code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.'",
-          "testString": "assert.deepEqual(chunkArrayInGroups([\"a\", '<code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.')"
+          "text": "<code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], '<code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');"
         },
         {
-          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.'",
-          "testString": "assert.deepEqual(chunkArrayInGroups([0, '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.')"
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');"
         },
         {
-          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.'",
-          "testString": "assert.deepEqual(chunkArrayInGroups([0, '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.')"
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');"
         },
         {
-          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.'",
-          "testString": "assert.deepEqual(chunkArrayInGroups([0, '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.')"
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
         },
         {
-          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.'",
-          "testString": "assert.deepEqual(chunkArrayInGroups([0, '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.')"
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [[0, 1, 2], [3, 4, 5], [6]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.');"
         },
         {
-          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.'",
-          "testString": "assert.deepEqual(chunkArrayInGroups([0, '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.')"
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.');"
         },
         {
-          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.'",
-          "testString": "assert.deepEqual(chunkArrayInGroups([0, '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.')"
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [[0, 1], [2, 3], [4, 5], [6, 7], [8]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.');"
         }
       ],
       "type": "bonfire",

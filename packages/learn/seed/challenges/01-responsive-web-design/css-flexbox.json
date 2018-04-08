@@ -15,8 +15,8 @@
       ],
       "tests": [
         {
-          "text": "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.'",
-          "testString": "assert($('#box-container').css('display') == 'flex', '<code>#box-container</code> should have the <code>display</code> property set to a value of flex.')"
+          "text": "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.",
+          "testString": "assert($('#box-container').css('display') == 'flex', '<code>#box-container</code> should have the <code>display</code> property set to a value of flex.');"
         }
       ],
       "solutions": [],
@@ -72,32 +72,32 @@
       ],
       "tests": [
         {
-          "text": "Your <code>header</code> should have a <code>display</code> property set to flex.'",
-          "testString": "assert($('header').css('display') == 'flex', 'Your <code>header</code> should have a <code>display</code> property set to flex.')"
+          "text": "Your <code>header</code> should have a <code>display</code> property set to flex.",
+          "testString": "assert($('header').css('display') == 'flex', 'Your <code>header</code> should have a <code>display</code> property set to flex.');"
         },
         {
-          "text": "Your <code>footer</code> should have a <code>display</code> property set to flex.'",
-          "testString": "assert($('footer').css('display') == 'flex', 'Your <code>footer</code> should have a <code>display</code> property set to flex.')"
+          "text": "Your <code>footer</code> should have a <code>display</code> property set to flex.",
+          "testString": "assert($('footer').css('display') == 'flex', 'Your <code>footer</code> should have a <code>display</code> property set to flex.');"
         },
         {
-          "text": "Your <code>h3</code> should have a <code>display</code> property set to flex.'",
-          "testString": "assert($('h3').css('display') == 'flex', 'Your <code>h3</code> should have a <code>display</code> property set to flex.')"
+          "text": "Your <code>h3</code> should have a <code>display</code> property set to flex.",
+          "testString": "assert($('h3').css('display') == 'flex', 'Your <code>h3</code> should have a <code>display</code> property set to flex.');"
         },
         {
-          "text": "Your <code>h4</code> should have a <code>display</code> property set to flex.'",
-          "testString": "assert($('h4').css('display') == 'flex', 'Your <code>h4</code> should have a <code>display</code> property set to flex.')"
+          "text": "Your <code>h4</code> should have a <code>display</code> property set to flex.",
+          "testString": "assert($('h4').css('display') == 'flex', 'Your <code>h4</code> should have a <code>display</code> property set to flex.');"
         },
         {
-          "text": "Your <code>.profile-name</code> should have a <code>display</code> property set to flex.'",
-          "testString": "assert($('.profile-name').css('display') == 'flex', 'Your <code>.profile-name</code> should have a <code>display</code> property set to flex.')"
+          "text": "Your <code>.profile-name</code> should have a <code>display</code> property set to flex.",
+          "testString": "assert($('.profile-name').css('display') == 'flex', 'Your <code>.profile-name</code> should have a <code>display</code> property set to flex.');"
         },
         {
-          "text": "Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.'",
-          "testString": "assert($('.follow-btn').css('display') == 'flex', 'Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.')"
+          "text": "Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.",
+          "testString": "assert($('.follow-btn').css('display') == 'flex', 'Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.');"
         },
         {
-          "text": "Your <code>.stats</code> should have a <code>display</code> property set to flex.'",
-          "testString": "assert($('.stats').css('display') == 'flex', 'Your <code>.stats</code> should have a <code>display</code> property set to flex.')"
+          "text": "Your <code>.stats</code> should have a <code>display</code> property set to flex.",
+          "testString": "assert($('.stats').css('display') == 'flex', 'Your <code>.stats</code> should have a <code>display</code> property set to flex.');"
         }
       ],
       "solutions": [],
@@ -219,8 +219,8 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.'",
-          "testString": "assert($('#box-container').css('flex-direction') == 'row-reverse', 'The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.')"
+          "text": "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.",
+          "testString": "assert($('#box-container').css('flex-direction') == 'row-reverse', 'The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.');"
         }
       ],
       "solutions": [],
@@ -274,12 +274,12 @@
       ],
       "tests": [
         {
-          "text": "The <code>header</code> should have a <code>flex-direction</code> property set to row.'",
-          "testString": "assert(code.match(/header\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-direction:\\s*?row;/g), 'The <code>header</code> should have a <code>flex-direction</code> property set to row.')"
+          "text": "The <code>header</code> should have a <code>flex-direction</code> property set to row.",
+          "testString": "assert(code.match(/header\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-direction:\\s*?row;/g), 'The <code>header</code> should have a <code>flex-direction</code> property set to row.');"
         },
         {
-          "text": "The <code>footer</code> should have a <code>flex-direction</code> property set to row.'",
-          "testString": "assert(code.match(/footer\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-direction:\\s*?row;/g), 'The <code>footer</code> should have a <code>flex-direction</code> property set to row.')"
+          "text": "The <code>footer</code> should have a <code>flex-direction</code> property set to row.",
+          "testString": "assert(code.match(/footer\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-direction:\\s*?row;/g), 'The <code>footer</code> should have a <code>flex-direction</code> property set to row.');"
         }
       ],
       "solutions": [],
@@ -401,8 +401,8 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.'",
-          "testString": "assert($('#box-container').css('flex-direction') == 'column', 'The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.')"
+          "text": "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.",
+          "testString": "assert($('#box-container').css('flex-direction') == 'column', 'The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.');"
         }
       ],
       "solutions": [],
@@ -456,8 +456,8 @@
       ],
       "tests": [
         {
-          "text": "The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.'",
-          "testString": "assert($('.profile-name').css('flex-direction') == 'column', 'The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.')"
+          "text": "The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.",
+          "testString": "assert($('.profile-name').css('flex-direction') == 'column', 'The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.');"
         }
       ],
       "solutions": [],
@@ -581,8 +581,8 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.'",
-          "testString": "assert($('#box-container').css('justify-content') == 'center', 'The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.')"
+          "text": "The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.",
+          "testString": "assert($('#box-container').css('justify-content') == 'center', 'The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.');"
         }
       ],
       "solutions": [],
@@ -637,8 +637,8 @@
       ],
       "tests": [
         {
-          "text": "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.'",
-          "testString": "assert(code.match(/header\\s.profile-name\\s*{\\s*?.*?\\s*?.*?\\s*?\\s*?.*?\\s*?justify-content\\s*:\\s*(center|flex-start|flex-end|space-between|space-around)\\s*;/g), 'The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.')"
+          "text": "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.",
+          "testString": "assert(code.match(/header\\s.profile-name\\s*{\\s*?.*?\\s*?.*?\\s*?\\s*?.*?\\s*?justify-content\\s*:\\s*(center|flex-start|flex-end|space-between|space-around)\\s*;/g), 'The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.');"
         }
       ],
       "solutions": [],
@@ -763,8 +763,8 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.'",
-          "testString": "assert($('#box-container').css('align-items') == 'center', 'The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.')"
+          "text": "The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.",
+          "testString": "assert($('#box-container').css('align-items') == 'center', 'The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.');"
         }
       ],
       "solutions": [],
@@ -819,16 +819,16 @@
       ],
       "tests": [
         {
-          "text": "The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.'",
-          "testString": "assert($('.follow-btn').css('align-items') == 'center', 'The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.')"
+          "text": "The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.",
+          "testString": "assert($('.follow-btn').css('align-items') == 'center', 'The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.');"
         },
         {
-          "text": "The <code>h3</code> element should have the <code>align-items</code> property set to a value of center.'",
-          "testString": "assert($('h3').css('align-items') == 'center', 'The <code>h3</code> element should have the <code>align-items</code> property set to a value of center.')"
+          "text": "The <code>h3</code> element should have the <code>align-items</code> property set to a value of center.",
+          "testString": "assert($('h3').css('align-items') == 'center', 'The <code>h3</code> element should have the <code>align-items</code> property set to a value of center.');"
         },
         {
-          "text": "The <code>h4</code> element should have the <code>align-items</code> property set to a value of center.'",
-          "testString": "assert($('h4').css('align-items') == 'center', 'The <code>h4</code> element should have the <code>align-items</code> property set to a value of center.')"
+          "text": "The <code>h4</code> element should have the <code>align-items</code> property set to a value of center.",
+          "testString": "assert($('h4').css('align-items') == 'center', 'The <code>h4</code> element should have the <code>align-items</code> property set to a value of center.');"
         }
       ],
       "solutions": [],
@@ -953,8 +953,8 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.'",
-          "testString": "assert($('#box-container').css('flex-wrap') == 'wrap', 'The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.')"
+          "text": "The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.",
+          "testString": "assert($('#box-container').css('flex-wrap') == 'wrap', 'The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.');"
         }
       ],
       "solutions": [],
@@ -1035,12 +1035,12 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.'",
-          "testString": "assert($('#box-1').css('flex-shrink') == '1', 'The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.')"
+          "text": "The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.",
+          "testString": "assert($('#box-1').css('flex-shrink') == '1', 'The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.');"
         },
         {
-          "text": "The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.'",
-          "testString": "assert($('#box-2').css('flex-shrink') == '2', 'The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.')"
+          "text": "The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.",
+          "testString": "assert($('#box-2').css('flex-shrink') == '2', 'The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.');"
         }
       ],
       "solutions": [],
@@ -1096,12 +1096,12 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.'",
-          "testString": "assert($('#box-1').css('flex-grow') == '1', 'The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.')"
+          "text": "The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.",
+          "testString": "assert($('#box-1').css('flex-grow') == '1', 'The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.');"
         },
         {
-          "text": "The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.'",
-          "testString": "assert($('#box-2').css('flex-grow') == '2', 'The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.')"
+          "text": "The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.",
+          "testString": "assert($('#box-2').css('flex-grow') == '2', 'The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.');"
         }
       ],
       "solutions": [],
@@ -1156,20 +1156,20 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-1</code> element should have a <code>flex-basis</code> property.'",
-          "testString": "assert($('#box-1').css('flex-basis') != 'auto', 'The <code>#box-1</code> element should have a <code>flex-basis</code> property.')"
+          "text": "The <code>#box-1</code> element should have a <code>flex-basis</code> property.",
+          "testString": "assert($('#box-1').css('flex-basis') != 'auto', 'The <code>#box-1</code> element should have a <code>flex-basis</code> property.');"
         },
         {
-          "text": "The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.'",
-          "testString": "assert(code.match(/#box-1\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-basis:\\s*?10em;/g), 'The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.')"
+          "text": "The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.",
+          "testString": "assert(code.match(/#box-1\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-basis:\\s*?10em;/g), 'The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.');"
         },
         {
-          "text": "The <code>#box-2</code> element should have the <code>flex-basis</code> property.'",
-          "testString": "assert($('#box-2').css('flex-basis') != 'auto', 'The <code>#box-2</code> element should have the <code>flex-basis</code> property.')"
+          "text": "The <code>#box-2</code> element should have the <code>flex-basis</code> property.",
+          "testString": "assert($('#box-2').css('flex-basis') != 'auto', 'The <code>#box-2</code> element should have the <code>flex-basis</code> property.');"
         },
         {
-          "text": "The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.'",
-          "testString": "assert(code.match(/#box-2\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-basis:\\s*?20em;/g), 'The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.')"
+          "text": "The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.",
+          "testString": "assert(code.match(/#box-2\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-basis:\\s*?20em;/g), 'The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.');"
         }
       ],
       "solutions": [],
@@ -1226,16 +1226,16 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-1</code> element should have the <code>flex</code> property set to a value of 2 2 150px.'",
-          "testString": "assert($('#box-1').css('flex-grow') == '2' && $('#box-1').css('flex-shrink') == '2' && $('#box-1').css('flex-basis') == '150px', 'The <code>#box-1</code> element should have the <code>flex</code> property set to a value of 2 2 150px.')"
+          "text": "The <code>#box-1</code> element should have the <code>flex</code> property set to a value of 2 2 150px.",
+          "testString": "assert($('#box-1').css('flex-grow') == '2' && $('#box-1').css('flex-shrink') == '2' && $('#box-1').css('flex-basis') == '150px', 'The <code>#box-1</code> element should have the <code>flex</code> property set to a value of 2 2 150px.');"
         },
         {
-          "text": "The <code>#box-2</code> element should have the <code>flex</code> property set to a value of 1 1 150px.'",
-          "testString": "assert($('#box-2').css('flex-grow') == '1' && $('#box-2').css('flex-shrink') == '1' && $('#box-2').css('flex-basis') == '150px', 'The <code>#box-2</code> element should have the <code>flex</code> property set to a value of 1 1 150px.')"
+          "text": "The <code>#box-2</code> element should have the <code>flex</code> property set to a value of 1 1 150px.",
+          "testString": "assert($('#box-2').css('flex-grow') == '1' && $('#box-2').css('flex-shrink') == '1' && $('#box-2').css('flex-basis') == '150px', 'The <code>#box-2</code> element should have the <code>flex</code> property set to a value of 1 1 150px.');"
         },
         {
-          "text": "Your code should use the <code>flex</code> property for <code>#box-1</code> and <code>#box-2</code>.'",
-          "testString": "assert(code.match(/flex:\\s*?\\d\\s+?\\d\\s+?150px;/g).length == 2, 'Your code should use the <code>flex</code> property for <code>#box-1</code> and <code>#box-2</code>.')"
+          "text": "Your code should use the <code>flex</code> property for <code>#box-1</code> and <code>#box-2</code>.",
+          "testString": "assert(code.match(/flex:\\s*?\\d\\s+?\\d\\s+?150px;/g).length == 2, 'Your code should use the <code>flex</code> property for <code>#box-1</code> and <code>#box-2</code>.');"
         }
       ],
       "solutions": [],
@@ -1288,12 +1288,12 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.'",
-          "testString": "assert($('#box-1').css('order') == '2', 'The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.')"
+          "text": "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.",
+          "testString": "assert($('#box-1').css('order') == '2', 'The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.');"
         },
         {
-          "text": "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.'",
-          "testString": "assert($('#box-2').css('order') == '1', 'The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.')"
+          "text": "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.",
+          "testString": "assert($('#box-2').css('order') == '1', 'The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.');"
         }
       ],
       "solutions": [],
@@ -1349,12 +1349,12 @@
       ],
       "tests": [
         {
-          "text": "The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.'",
-          "testString": "assert($('#box-1').css('align-self') == 'center', 'The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.')"
+          "text": "The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.",
+          "testString": "assert($('#box-1').css('align-self') == 'center', 'The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.');"
         },
         {
-          "text": "The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.'",
-          "testString": "assert($('#box-2').css('align-self') == 'flex-end', 'The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.')"
+          "text": "The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.",
+          "testString": "assert($('#box-2').css('align-self') == 'flex-end', 'The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.');"
         }
       ],
       "solutions": [],

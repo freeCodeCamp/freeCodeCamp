@@ -22,24 +22,24 @@
       ],
       "tests": [
         {
-          "text": "<code>sumAll([1, 4])</code> should return a number.'",
-          "testString": "assert(typeof sumAll([1, '<code>sumAll([1, 4])</code> should return a number.')"
+          "text": "<code>sumAll([1, 4])</code> should return a number.",
+          "testString": "assert(typeof sumAll([1, 4]) === 'number', '<code>sumAll([1, 4])</code> should return a number.');"
         },
         {
-          "text": "<code>sumAll([1, 4])</code> should return 10.'",
-          "testString": "assert.deepEqual(sumAll([1, '<code>sumAll([1, 4])</code> should return 10.')"
+          "text": "<code>sumAll([1, 4])</code> should return 10.",
+          "testString": "assert.deepEqual(sumAll([1, 4]), 10, '<code>sumAll([1, 4])</code> should return 10.');"
         },
         {
-          "text": "<code>sumAll([4, 1])</code> should return 10.'",
-          "testString": "assert.deepEqual(sumAll([4, '<code>sumAll([4, 1])</code> should return 10.')"
+          "text": "<code>sumAll([4, 1])</code> should return 10.",
+          "testString": "assert.deepEqual(sumAll([4, 1]), 10, '<code>sumAll([4, 1])</code> should return 10.');"
         },
         {
-          "text": "<code>sumAll([5, 10])</code> should return 45.'",
-          "testString": "assert.deepEqual(sumAll([5, '<code>sumAll([5, 10])</code> should return 45.')"
+          "text": "<code>sumAll([5, 10])</code> should return 45.",
+          "testString": "assert.deepEqual(sumAll([5, 10]), 45, '<code>sumAll([5, 10])</code> should return 45.');"
         },
         {
-          "text": "<code>sumAll([10, 5])</code> should return 45.'",
-          "testString": "assert.deepEqual(sumAll([10, '<code>sumAll([10, 5])</code> should return 45.')"
+          "text": "<code>sumAll([10, 5])</code> should return 45.",
+          "testString": "assert.deepEqual(sumAll([10, 5]), 45, '<code>sumAll([10, 5])</code> should return 45.');"
         }
       ],
       "type": "bonfire",
@@ -98,64 +98,64 @@
       ],
       "tests": [
         {
-          "text": "<code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.'",
-          "testString": "assert(typeof diffArray([1, '<code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.')"
+          "text": "<code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.",
+          "testString": "assert(typeof diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) === \"object\", '<code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.');"
         },
         {
-          "text": "<code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"pink wool\"]</code>.'",
-          "testString": "assert.sameMembers(diffArray([\"diorite\", '<code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"pink wool\"]</code>.')"
+          "text": "<code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"pink wool\"]</code>.",
+          "testString": "assert.sameMembers(diffArray([\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"pink wool\"], '<code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"pink wool\"]</code>.');"
         },
         {
-          "text": "<code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an array with one item.'",
-          "testString": "assert(diffArray([\"diorite\", '<code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an array with one item.')"
+          "text": "<code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an array with one item.",
+          "testString": "assert(diffArray([\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]).length === 1, '<code>[\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an array with one item.');"
         },
         {
-          "text": "<code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"diorite\", \"pink wool\"]</code>.'",
-          "testString": "assert.sameMembers(diffArray([\"andesite\", '<code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"diorite\", \"pink wool\"]</code>.')"
+          "text": "<code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"diorite\", \"pink wool\"]</code>.",
+          "testString": "assert.sameMembers(diffArray([\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [\"diorite\", \"pink wool\"], '<code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[\"diorite\", \"pink wool\"]</code>.');"
         },
         {
-          "text": "<code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an array with two items.'",
-          "testString": "assert(diffArray([\"andesite\", '<code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an array with two items.')"
+          "text": "<code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an array with two items.",
+          "testString": "assert(diffArray([\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]).length === 2, '<code>[\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an array with two items.');"
         },
         {
-          "text": "<code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.'",
-          "testString": "assert.sameMembers(diffArray([\"andesite\", '<code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.')"
+          "text": "<code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.",
+          "testString": "assert.sameMembers(diffArray([\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]), [], '<code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return <code>[]</code>.');"
         },
         {
-          "text": "<code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an empty array.'",
-          "testString": "assert(diffArray([\"andesite\", '<code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an empty array.')"
+          "text": "<code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an empty array.",
+          "testString": "assert(diffArray([\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]).length === 0, '<code>[\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]</code> should return an empty array.');"
         },
         {
-          "text": "<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.'",
-          "testString": "assert.sameMembers(diffArray([1, '<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.')"
+          "text": "<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.",
+          "testString": "assert.sameMembers(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], '<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.');"
         },
         {
-          "text": "<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return an array with one item.'",
-          "testString": "assert(diffArray([1, '<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return an array with one item.')"
+          "text": "<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return an array with one item.",
+          "testString": "assert(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]).length  === 1, '<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return an array with one item.');"
         },
         {
-          "text": "<code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.'",
-          "testString": "assert.sameMembers(diffArray([1, '<code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.')"
+          "text": "<code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.",
+          "testString": "assert.sameMembers(diffArray([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]), [\"piglet\", 4], '<code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return <code>[\"piglet\", 4]</code>.');"
         },
         {
-          "text": "<code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return an array with two items.'",
-          "testString": "assert(diffArray([1, '<code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return an array with two items.')"
+          "text": "<code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return an array with two items.",
+          "testString": "assert(diffArray([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]).length === 2, '<code>[1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]</code> should return an array with two items.');"
         },
         {
-          "text": "<code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.'",
-          "testString": "assert.sameMembers(diffArray([], '<code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.')"
+          "text": "<code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.",
+          "testString": "assert.sameMembers(diffArray([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]), [\"snuffleupagus\", \"cookie monster\", \"elmo\"], '<code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return <code>[\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code>.');"
         },
         {
-          "text": "<code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return an array with three items.'",
-          "testString": "assert(diffArray([], '<code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return an array with three items.')"
+          "text": "<code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return an array with three items.",
+          "testString": "assert(diffArray([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]).length === 3, '<code>[], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]</code> should return an array with three items.');"
         },
         {
-          "text": "<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.'",
-          "testString": "assert.sameMembers(diffArray([1, '<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.')"
+          "text": "<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.",
+          "testString": "assert.sameMembers(diffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]), [1, \"calf\", 3, \"piglet\", 7, \"filly\"], '<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return <code>[1, \"calf\", 3, \"piglet\", 7, \"filly\"]</code>.');"
         },
         {
-          "text": "<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return an array with six items.'",
-          "testString": "assert(diffArray([1, '<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return an array with six items.')"
+          "text": "<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return an array with six items.",
+          "testString": "assert(diffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]).length === 6, '<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return an array with six items.');"
         }
       ],
       "type": "bonfire",
@@ -213,28 +213,28 @@
       ],
       "tests": [
         {
-          "text": "<code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.'",
-          "testString": "assert.deepEqual(destroyer([1, '<code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.')"
+          "text": "<code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.",
+          "testString": "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], '<code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.');"
         },
         {
-          "text": "<code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.'",
-          "testString": "assert.deepEqual(destroyer([1, '<code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.')"
+          "text": "<code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.",
+          "testString": "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], '<code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.');"
         },
         {
-          "text": "<code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code> should return <code>[1]</code>.'",
-          "testString": "assert.deepEqual(destroyer([3, '<code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code> should return <code>[1]</code>.')"
+          "text": "<code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code> should return <code>[1]</code>.",
+          "testString": "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], '<code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code> should return <code>[1]</code>.');"
         },
         {
-          "text": "<code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.'",
-          "testString": "assert.deepEqual(destroyer([2, '<code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.')"
+          "text": "<code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.",
+          "testString": "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], '<code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.');"
         },
         {
-          "text": "<code>destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.'",
-          "testString": "assert.deepEqual(destroyer([\"tree\", '<code>destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.')"
+          "text": "<code>destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.",
+          "testString": "assert.deepEqual(destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53), [\"hamburger\"], '<code>destroyer([\"tree\", \"hamburger\", 53], \"tree\", 53)</code> should return <code>[\"hamburger\"]</code>.');"
         },
         {
-          "text": "<code>destroyer([\"possum\", \"trollo\", 12, \"safari\", \"hotdog\", 92, 65, \"grandma\", \"bugati\", \"trojan\", \"yacht\"], \"yacht\", \"possum\", \"trollo\", \"safari\", \"hotdog\", \"grandma\", \"bugati\", \"trojan\")</code> should return <code>[12,92,65]</code>.'",
-          "testString": "assert.deepEqual(destroyer([\"possum\", '<code>destroyer([\"possum\", \"trollo\", 12, \"safari\", \"hotdog\", 92, 65, \"grandma\", \"bugati\", \"trojan\", \"yacht\"], \"yacht\", \"possum\", \"trollo\", \"safari\", \"hotdog\", \"grandma\", \"bugati\", \"trojan\")</code> should return <code>[12,92,65]</code>.')"
+          "text": "<code>destroyer([\"possum\", \"trollo\", 12, \"safari\", \"hotdog\", 92, 65, \"grandma\", \"bugati\", \"trojan\", \"yacht\"], \"yacht\", \"possum\", \"trollo\", \"safari\", \"hotdog\", \"grandma\", \"bugati\", \"trojan\")</code> should return <code>[12,92,65]</code>.",
+          "testString": "assert.deepEqual(destroyer([\"possum\", \"trollo\", 12, \"safari\", \"hotdog\", 92, 65, \"grandma\", \"bugati\", \"trojan\", \"yacht\"], \"yacht\", \"possum\", \"trollo\", \"safari\", \"hotdog\", \"grandma\", \"bugati\", \"trojan\"), [12,92,65], '<code>destroyer([\"possum\", \"trollo\", 12, \"safari\", \"hotdog\", 92, 65, \"grandma\", \"bugati\", \"trojan\", \"yacht\"], \"yacht\", \"possum\", \"trollo\", \"safari\", \"hotdog\", \"grandma\", \"bugati\", \"trojan\")</code> should return <code>[12,92,65]</code>.');"
         }
       ],
       "type": "bonfire",
@@ -295,28 +295,28 @@
       ],
       "tests": [
         {
-          "text": "<code>whatIsInAName([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.'",
-          "testString": "assert.deepEqual(whatIsInAName([{ first: \"Romeo\", '<code>whatIsInAName([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.')"
+          "text": "<code>whatIsInAName([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.",
+          "testString": "assert.deepEqual(whatIsInAName([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" }), [{ first: \"Tybalt\", last: \"Capulet\" }], '<code>whatIsInAName([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" })</code> should return <code>[{ first: \"Tybalt\", last: \"Capulet\" }]</code>.');"
         },
         {
-          "text": "<code>whatIsInAName([{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }], { \"apple\": 1 })</code> should return <code>[{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }]</code>.'",
-          "testString": "assert.deepEqual(whatIsInAName([{ \"apple\": 1 }, '<code>whatIsInAName([{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }], { \"apple\": 1 })</code> should return <code>[{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }]</code>.')"
+          "text": "<code>whatIsInAName([{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }], { \"apple\": 1 })</code> should return <code>[{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }]</code>.",
+          "testString": "assert.deepEqual(whatIsInAName([{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }], { \"apple\": 1 }), [{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }], '<code>whatIsInAName([{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }], { \"apple\": 1 })</code> should return <code>[{ \"apple\": 1 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2 }]</code>.');"
         },
         {
-          "text": "<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"bat\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }]</code>.'",
-          "testString": "assert.deepEqual(whatIsInAName([{ \"apple\": 1, '<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"bat\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }]</code>.')"
+          "text": "<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"bat\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }]</code>.",
+          "testString": "assert.deepEqual(whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"bat\": 2 }), [{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], '<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"bat\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }]</code>.');"
         },
         {
-          "text": "<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"cookie\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2, \"cookie\": 2 }]</code>.'",
-          "testString": "assert.deepEqual(whatIsInAName([{ \"apple\": 1, '<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"cookie\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2, \"cookie\": 2 }]</code>.')"
+          "text": "<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"cookie\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2, \"cookie\": 2 }]</code>.",
+          "testString": "assert.deepEqual(whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"cookie\": 2 }), [{ \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], '<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }], { \"apple\": 1, \"cookie\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2, \"cookie\": 2 }]</code>.');"
         },
         {
-          "text": "<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }, { \"bat\":2 }], { \"apple\": 1, \"bat\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\":2 }]</code>.'",
-          "testString": "assert.deepEqual(whatIsInAName([{ \"apple\": 1, '<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }, { \"bat\":2 }], { \"apple\": 1, \"bat\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\":2 }]</code>.')"
+          "text": "<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }, { \"bat\":2 }], { \"apple\": 1, \"bat\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\":2 }]</code>.",
+          "testString": "assert.deepEqual(whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }, {\"bat\":2}], { \"apple\": 1, \"bat\": 2 }), [{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\":2 }], '<code>whatIsInAName([{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1 }, { \"apple\": 1, \"bat\": 2, \"cookie\": 2 }, { \"bat\":2 }], { \"apple\": 1, \"bat\": 2 })</code> should return <code>[{ \"apple\": 1, \"bat\": 2 }, { \"apple\": 1, \"bat\": 2, \"cookie\":2 }]</code>.');"
         },
         {
-          "text": "<code>whatIsInAName([{\"a\": 1, \"b\": 2, \"c\": 3}], {\"a\": 1, \"b\": 9999, \"c\": 3})</code> should return <code>[]</code>'",
-          "testString": "assert.deepEqual(whatIsInAName([{ \"a\": 1, '<code>whatIsInAName([{\"a\": 1, \"b\": 2, \"c\": 3}], {\"a\": 1, \"b\": 9999, \"c\": 3})</code> should return <code>[]</code>')"
+          "text": "<code>whatIsInAName([{\"a\": 1, \"b\": 2, \"c\": 3}], {\"a\": 1, \"b\": 9999, \"c\": 3})</code> should return <code>[]</code>",
+          "testString": "assert.deepEqual(whatIsInAName([{ \"a\": 1, \"b\": 2, \"c\": 3 }], { \"a\": 1, \"b\": 9999, \"c\": 3 }), [], '<code>whatIsInAName([{\"a\": 1, \"b\": 2, \"c\": 3}], {\"a\": 1, \"b\": 9999, \"c\": 3})</code> should return <code>[]</code>');"
         }
       ],
       "type": "bonfire",
@@ -380,24 +380,24 @@
       ],
       "tests": [
         {
-          "text": "<code>spinalCase(\"This Is Spinal Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.'",
-          "testString": "assert.deepEqual(spinalCase(\"This Is Spinal Tap\"), '<code>spinalCase(\"This Is Spinal Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.')"
+          "text": "<code>spinalCase(\"This Is Spinal Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.",
+          "testString": "assert.deepEqual(spinalCase(\"This Is Spinal Tap\"), \"this-is-spinal-tap\", '<code>spinalCase(\"This Is Spinal Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.');"
         },
         {
-          "text": "<code>spinalCase(\"thisIsSpinal<wbr>Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.'",
-          "testString": "assert.strictEqual(spinalCase('thisIsSpinalTap'), '<code>spinalCase(\"thisIsSpinal<wbr>Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.')"
+          "text": "<code>spinalCase(\"thisIsSpinal<wbr>Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.",
+          "testString": "assert.strictEqual(spinalCase('thisIsSpinalTap'), \"this-is-spinal-tap\", '<code>spinalCase(\"thisIsSpinal<wbr>Tap\")</code> should return <code>\"this-is-spinal-tap\"</code>.');"
         },
         {
-          "text": "<code>spinalCase(\"The_Andy_<wbr>Griffith_Show\")</code> should return <code>\"the-andy-griffith-show\"</code>.'",
-          "testString": "assert.strictEqual(spinalCase(\"The_Andy_Griffith_Show\"), '<code>spinalCase(\"The_Andy_<wbr>Griffith_Show\")</code> should return <code>\"the-andy-griffith-show\"</code>.')"
+          "text": "<code>spinalCase(\"The_Andy_<wbr>Griffith_Show\")</code> should return <code>\"the-andy-griffith-show\"</code>.",
+          "testString": "assert.strictEqual(spinalCase(\"The_Andy_Griffith_Show\"), \"the-andy-griffith-show\", '<code>spinalCase(\"The_Andy_<wbr>Griffith_Show\")</code> should return <code>\"the-andy-griffith-show\"</code>.');"
         },
         {
-          "text": "<code>spinalCase(\"Teletubbies say Eh-oh\")</code> should return <code>\"teletubbies-say-eh-oh\"</code>.'",
-          "testString": "assert.strictEqual(spinalCase(\"Teletubbies say Eh-oh\"), '<code>spinalCase(\"Teletubbies say Eh-oh\")</code> should return <code>\"teletubbies-say-eh-oh\"</code>.')"
+          "text": "<code>spinalCase(\"Teletubbies say Eh-oh\")</code> should return <code>\"teletubbies-say-eh-oh\"</code>.",
+          "testString": "assert.strictEqual(spinalCase(\"Teletubbies say Eh-oh\"), \"teletubbies-say-eh-oh\", '<code>spinalCase(\"Teletubbies say Eh-oh\")</code> should return <code>\"teletubbies-say-eh-oh\"</code>.');"
         },
         {
-          "text": "<code>spinalCase(\"AllThe-small Things\")</code> should return <code>\"all-the-small-things\"</code>.'",
-          "testString": "assert.strictEqual(spinalCase(\"AllThe-small Things\"), '<code>spinalCase(\"AllThe-small Things\")</code> should return <code>\"all-the-small-things\"</code>.')"
+          "text": "<code>spinalCase(\"AllThe-small Things\")</code> should return <code>\"all-the-small-things\"</code>.",
+          "testString": "assert.strictEqual(spinalCase(\"AllThe-small Things\"), \"all-the-small-things\", '<code>spinalCase(\"AllThe-small Things\")</code> should return <code>\"all-the-small-things\"</code>.');"
         }
       ],
       "type": "bonfire",
@@ -457,32 +457,32 @@
       ],
       "tests": [
         {
-          "text": "<code>translatePigLatin(\"california\")</code> should return \"aliforniacay\".'",
-          "testString": "assert.deepEqual(translatePigLatin(\"california\"), '<code>translatePigLatin(\"california\")</code> should return \"aliforniacay\".')"
+          "text": "<code>translatePigLatin(\"california\")</code> should return \"aliforniacay\".",
+          "testString": "assert.deepEqual(translatePigLatin(\"california\"), \"aliforniacay\", '<code>translatePigLatin(\"california\")</code> should return \"aliforniacay\".');"
         },
         {
-          "text": "<code>translatePigLatin(\"paragraphs\")</code> should return \"aragraphspay\".'",
-          "testString": "assert.deepEqual(translatePigLatin(\"paragraphs\"), '<code>translatePigLatin(\"paragraphs\")</code> should return \"aragraphspay\".')"
+          "text": "<code>translatePigLatin(\"paragraphs\")</code> should return \"aragraphspay\".",
+          "testString": "assert.deepEqual(translatePigLatin(\"paragraphs\"), \"aragraphspay\", '<code>translatePigLatin(\"paragraphs\")</code> should return \"aragraphspay\".');"
         },
         {
-          "text": "<code>translatePigLatin(\"glove\")</code> should return \"oveglay\".'",
-          "testString": "assert.deepEqual(translatePigLatin(\"glove\"), '<code>translatePigLatin(\"glove\")</code> should return \"oveglay\".')"
+          "text": "<code>translatePigLatin(\"glove\")</code> should return \"oveglay\".",
+          "testString": "assert.deepEqual(translatePigLatin(\"glove\"), \"oveglay\", '<code>translatePigLatin(\"glove\")</code> should return \"oveglay\".');"
         },
         {
-          "text": "<code>translatePigLatin(\"algorithm\")</code> should return \"algorithmway\".'",
-          "testString": "assert.deepEqual(translatePigLatin(\"algorithm\"), '<code>translatePigLatin(\"algorithm\")</code> should return \"algorithmway\".')"
+          "text": "<code>translatePigLatin(\"algorithm\")</code> should return \"algorithmway\".",
+          "testString": "assert.deepEqual(translatePigLatin(\"algorithm\"), \"algorithmway\", '<code>translatePigLatin(\"algorithm\")</code> should return \"algorithmway\".');"
         },
         {
-          "text": "<code>translatePigLatin(\"eight\")</code> should return \"eightway\".'",
-          "testString": "assert.deepEqual(translatePigLatin(\"eight\"), '<code>translatePigLatin(\"eight\")</code> should return \"eightway\".')"
+          "text": "<code>translatePigLatin(\"eight\")</code> should return \"eightway\".",
+          "testString": "assert.deepEqual(translatePigLatin(\"eight\"), \"eightway\", '<code>translatePigLatin(\"eight\")</code> should return \"eightway\".');"
         },
         {
-          "text": "Should handle words where the first vowel comes in the end of the word.'",
-          "testString": "assert.deepEqual(translatePigLatin(\"schwartz\"), 'Should handle words where the first vowel comes in the end of the word.')"
+          "text": "Should handle words where the first vowel comes in the end of the word.",
+          "testString": "assert.deepEqual(translatePigLatin(\"schwartz\"), \"artzschway\", 'Should handle words where the first vowel comes in the end of the word.');"
         },
         {
-          "text": "Should handle words without vowels.'",
-          "testString": "assert.deepEqual(translatePigLatin(\"rhythm\"), 'Should handle words without vowels.')"
+          "text": "Should handle words without vowels.",
+          "testString": "assert.deepEqual(translatePigLatin(\"rhythm\"), \"rhythmay\", 'Should handle words without vowels.');"
         }
       ],
       "type": "bonfire",
@@ -550,24 +550,24 @@
       ],
       "tests": [
         {
-          "text": "<code>myReplace(\"Let us go to the store\", \"store\", \"mall\")</code> should return \"Let us go to the mall\".'",
-          "testString": "assert.deepEqual(myReplace(\"Let us go to the store\", '<code>myReplace(\"Let us go to the store\", \"store\", \"mall\")</code> should return \"Let us go to the mall\".')"
+          "text": "<code>myReplace(\"Let us go to the store\", \"store\", \"mall\")</code> should return \"Let us go to the mall\".",
+          "testString": "assert.deepEqual(myReplace(\"Let us go to the store\", \"store\", \"mall\"), \"Let us go to the mall\", '<code>myReplace(\"Let us go to the store\", \"store\", \"mall\")</code> should return \"Let us go to the mall\".');"
         },
         {
-          "text": "<code>myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\".'",
-          "testString": "assert.deepEqual(myReplace(\"He is Sleeping on the couch\", '<code>myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\".')"
+          "text": "<code>myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\".",
+          "testString": "assert.deepEqual(myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\"), \"He is Sitting on the couch\", '<code>myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")</code> should return \"He is Sitting on the couch\".');"
         },
         {
-          "text": "<code>myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")</code> should return \"This has a spelling error\".'",
-          "testString": "assert.deepEqual(myReplace(\"This has a spellngi error\", '<code>myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")</code> should return \"This has a spelling error\".')"
+          "text": "<code>myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")</code> should return \"This has a spelling error\".",
+          "testString": "assert.deepEqual(myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\"), \"This has a spelling error\", '<code>myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\")</code> should return \"This has a spelling error\".');"
         },
         {
-          "text": "<code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".'",
-          "testString": "assert.deepEqual(myReplace(\"His name is Tom\", '<code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".')"
+          "text": "<code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".",
+          "testString": "assert.deepEqual(myReplace(\"His name is Tom\", \"Tom\", \"john\"), \"His name is John\", '<code>myReplace(\"His name is Tom\", \"Tom\", \"john\")</code> should return \"His name is John\".');"
         },
         {
-          "text": "<code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\")</code> should return \"Let us get back to more Algorithms\".'",
-          "testString": "assert.deepEqual(myReplace(\"Let us get back to more Coding\", '<code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\")</code> should return \"Let us get back to more Algorithms\".')"
+          "text": "<code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\")</code> should return \"Let us get back to more Algorithms\".",
+          "testString": "assert.deepEqual(myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\"), \"Let us get back to more Algorithms\", '<code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\")</code> should return \"Let us get back to more Algorithms\".');"
         }
       ],
       "type": "bonfire",
@@ -635,16 +635,16 @@
       ],
       "tests": [
         {
-          "text": "<code>pairElement(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.'",
-          "testString": "assert.deepEqual(pairElement(\"ATCGA\"), '<code>pairElement(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.')"
+          "text": "<code>pairElement(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.",
+          "testString": "assert.deepEqual(pairElement(\"ATCGA\"),[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]], '<code>pairElement(\"ATCGA\")</code> should return <code>[[\"A\",\"T\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"G\",\"C\"],[\"A\",\"T\"]]</code>.');"
         },
         {
-          "text": "<code>pairElement(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.'",
-          "testString": "assert.deepEqual(pairElement(\"TTGAG\"), '<code>pairElement(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.')"
+          "text": "<code>pairElement(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.",
+          "testString": "assert.deepEqual(pairElement(\"TTGAG\"),[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]], '<code>pairElement(\"TTGAG\")</code> should return <code>[[\"T\",\"A\"],[\"T\",\"A\"],[\"G\",\"C\"],[\"A\",\"T\"],[\"G\",\"C\"]]</code>.');"
         },
         {
-          "text": "<code>pairElement(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.'",
-          "testString": "assert.deepEqual(pairElement(\"CTCTA\"), '<code>pairElement(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.')"
+          "text": "<code>pairElement(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.",
+          "testString": "assert.deepEqual(pairElement(\"CTCTA\"),[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]], '<code>pairElement(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.');"
         }
       ],
       "type": "bonfire",
@@ -708,24 +708,24 @@
       ],
       "tests": [
         {
-          "text": "<code>fearNotLetter(\"abce\")</code> should return \"d\".'",
-          "testString": "assert.deepEqual(fearNotLetter('abce'), '<code>fearNotLetter(\"abce\")</code> should return \"d\".')"
+          "text": "<code>fearNotLetter(\"abce\")</code> should return \"d\".",
+          "testString": "assert.deepEqual(fearNotLetter('abce'), 'd', '<code>fearNotLetter(\"abce\")</code> should return \"d\".');"
         },
         {
-          "text": "<code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".'",
-          "testString": "assert.deepEqual(fearNotLetter('abcdefghjklmno'), '<code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".')"
+          "text": "<code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".",
+          "testString": "assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i', '<code>fearNotLetter(\"abcdefghjklmno\")</code> should return \"i\".');"
         },
         {
-          "text": "<code>fearNotLetter(\"stvwx\")</code> should return \"u\".'",
-          "testString": "assert.deepEqual(fearNotLetter('stvwx'), '<code>fearNotLetter(\"stvwx\")</code> should return \"u\".')"
+          "text": "<code>fearNotLetter(\"stvwx\")</code> should return \"u\".",
+          "testString": "assert.deepEqual(fearNotLetter('stvwx'), 'u', '<code>fearNotLetter(\"stvwx\")</code> should return \"u\".');"
         },
         {
-          "text": "<code>fearNotLetter(\"bcdf\")</code> should return \"e\".'",
-          "testString": "assert.deepEqual(fearNotLetter('bcdf'), '<code>fearNotLetter(\"bcdf\")</code> should return \"e\".')"
+          "text": "<code>fearNotLetter(\"bcdf\")</code> should return \"e\".",
+          "testString": "assert.deepEqual(fearNotLetter('bcdf'), 'e', '<code>fearNotLetter(\"bcdf\")</code> should return \"e\".');"
         },
         {
-          "text": "<code>fearNotLetter(\"abcdefghijklmnopqrstuvwxyz\")</code> should return undefined.'",
-          "testString": "assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'), '<code>fearNotLetter(\"abcdefghijklmnopqrstuvwxyz\")</code> should return undefined.')"
+          "text": "<code>fearNotLetter(\"abcdefghijklmnopqrstuvwxyz\")</code> should return undefined.",
+          "testString": "assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'), '<code>fearNotLetter(\"abcdefghijklmnopqrstuvwxyz\")</code> should return undefined.');"
         }
       ],
       "type": "bonfire",
@@ -785,20 +785,20 @@
       ],
       "tests": [
         {
-          "text": "<code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.'",
-          "testString": "assert.deepEqual(uniteUnique([1, '<code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.')"
+          "text": "<code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.",
+          "testString": "assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], '<code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.');"
         },
         {
-          "text": "<code>uniteUnique([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.'",
-          "testString": "assert.deepEqual(uniteUnique([1, '<code>uniteUnique([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.')"
+          "text": "<code>uniteUnique([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.",
+          "testString": "assert.deepEqual(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], '<code>uniteUnique([1, 3, 2], [1, [5]], [2, [4]])</code> should return <code>[1, 3, 2, [5], [4]]</code>.');"
         },
         {
-          "text": "<code>uniteUnique([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.'",
-          "testString": "assert.deepEqual(uniteUnique([1, '<code>uniteUnique([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.')"
+          "text": "<code>uniteUnique([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.",
+          "testString": "assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], '<code>uniteUnique([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.');"
         },
         {
-          "text": "<code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.'",
-          "testString": "assert.deepEqual(uniteUnique([1, '<code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.')"
+          "text": "<code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.",
+          "testString": "assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [1, 2, 3, 5, 4, 6, 7, 8], '<code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.');"
         }
       ],
       "type": "bonfire",
@@ -859,32 +859,32 @@
       ],
       "tests": [
         {
-          "text": "<code>convertHTML(\"Dolce & Gabbana\")</code> should return <code>Dolce &&#8203;amp; Gabbana</code>.'",
-          "testString": "assert.match(convertHTML(\"Dolce & Gabbana\"), '<code>convertHTML(\"Dolce & Gabbana\")</code> should return <code>Dolce &&#8203;amp; Gabbana</code>.')"
+          "text": "<code>convertHTML(\"Dolce & Gabbana\")</code> should return <code>Dolce &&#8203;amp; Gabbana</code>.",
+          "testString": "assert.match(convertHTML(\"Dolce & Gabbana\"), /Dolce &amp; Gabbana/, '<code>convertHTML(\"Dolce & Gabbana\")</code> should return <code>Dolce &&#8203;amp; Gabbana</code>.');"
         },
         {
-          "text": "<code>convertHTML(\"Hamburgers < Pizza < Tacos\")</code> should return <code>Hamburgers &&#8203;lt; Pizza &&#8203;lt; Tacos</code>.'",
-          "testString": "assert.match(convertHTML(\"Hamburgers < Pizza < Tacos\"), '<code>convertHTML(\"Hamburgers < Pizza < Tacos\")</code> should return <code>Hamburgers &&#8203;lt; Pizza &&#8203;lt; Tacos</code>.')"
+          "text": "<code>convertHTML(\"Hamburgers < Pizza < Tacos\")</code> should return <code>Hamburgers &&#8203;lt; Pizza &&#8203;lt; Tacos</code>.",
+          "testString": "assert.match(convertHTML(\"Hamburgers < Pizza < Tacos\"), /Hamburgers &lt; Pizza &lt; Tacos/, '<code>convertHTML(\"Hamburgers < Pizza < Tacos\")</code> should return <code>Hamburgers &&#8203;lt; Pizza &&#8203;lt; Tacos</code>.');"
         },
         {
-          "text": "<code>convertHTML(\"Sixty > twelve\")</code> should return <code>Sixty &&#8203;gt; twelve</code>.'",
-          "testString": "assert.match(convertHTML(\"Sixty > twelve\"), '<code>convertHTML(\"Sixty > twelve\")</code> should return <code>Sixty &&#8203;gt; twelve</code>.')"
+          "text": "<code>convertHTML(\"Sixty > twelve\")</code> should return <code>Sixty &&#8203;gt; twelve</code>.",
+          "testString": "assert.match(convertHTML(\"Sixty > twelve\"), /Sixty &gt; twelve/, '<code>convertHTML(\"Sixty > twelve\")</code> should return <code>Sixty &&#8203;gt; twelve</code>.');"
         },
         {
-          "text": "<code>convertHTML(&apos;Stuff in \"quotation marks\"&apos;)</code> should return <code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>.'",
-          "testString": "assert.match(convertHTML('Stuff in \"quotation marks\"'), '<code>convertHTML(&apos;Stuff in \"quotation marks\"&apos;)</code> should return <code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>.')"
+          "text": "<code>convertHTML(&apos;Stuff in \"quotation marks\"&apos;)</code> should return <code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>.",
+          "testString": "assert.match(convertHTML('Stuff in \"quotation marks\"'), /Stuff in &quot;quotation marks&quot;/, '<code>convertHTML(&apos;Stuff in \"quotation marks\"&apos;)</code> should return <code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>.');"
         },
         {
-          "text": "<code>convertHTML(\"Schindler&apos;s List\")</code> should return <code>Schindler&&#8203;apos;s List</code>.'",
-          "testString": "assert.match(convertHTML(\"Schindler's List\"), '<code>convertHTML(\"Schindler&apos;s List\")</code> should return <code>Schindler&&#8203;apos;s List</code>.')"
+          "text": "<code>convertHTML(\"Schindler&apos;s List\")</code> should return <code>Schindler&&#8203;apos;s List</code>.",
+          "testString": "assert.match(convertHTML(\"Schindler's List\"), /Schindler&apos;s List/, '<code>convertHTML(\"Schindler&apos;s List\")</code> should return <code>Schindler&&#8203;apos;s List</code>.');"
         },
         {
-          "text": "<code>convertHTML(\"<>\")</code> should return <code>&&#8203;lt;&&#8203;gt;</code>.'",
-          "testString": "assert.match(convertHTML('<>'), '<code>convertHTML(\"<>\")</code> should return <code>&&#8203;lt;&&#8203;gt;</code>.')"
+          "text": "<code>convertHTML(\"<>\")</code> should return <code>&&#8203;lt;&&#8203;gt;</code>.",
+          "testString": "assert.match(convertHTML('<>'), /&lt;&gt;/, '<code>convertHTML(\"<>\")</code> should return <code>&&#8203;lt;&&#8203;gt;</code>.');"
         },
         {
-          "text": "<code>convertHTML(\"abc\")</code> should return <code>abc</code>.'",
-          "testString": "assert.strictEqual(convertHTML('abc'), '<code>convertHTML(\"abc\")</code> should return <code>abc</code>.')"
+          "text": "<code>convertHTML(\"abc\")</code> should return <code>abc</code>.",
+          "testString": "assert.strictEqual(convertHTML('abc'), 'abc', '<code>convertHTML(\"abc\")</code> should return <code>abc</code>.');"
         }
       ],
       "type": "bonfire",
@@ -943,28 +943,28 @@
       ],
       "tests": [
         {
-          "text": "<code>sumFibs(1)</code> should return a number.'",
-          "testString": "assert(typeof sumFibs(1) === \"number\", '<code>sumFibs(1)</code> should return a number.')"
+          "text": "<code>sumFibs(1)</code> should return a number.",
+          "testString": "assert(typeof sumFibs(1) === \"number\", '<code>sumFibs(1)</code> should return a number.');"
         },
         {
-          "text": "<code>sumFibs(1000)</code> should return 1785.'",
-          "testString": "assert(sumFibs(1000) === 1785, '<code>sumFibs(1000)</code> should return 1785.')"
+          "text": "<code>sumFibs(1000)</code> should return 1785.",
+          "testString": "assert(sumFibs(1000) === 1785, '<code>sumFibs(1000)</code> should return 1785.');"
         },
         {
-          "text": "<code>sumFibs(4000000)</code> should return 4613732.'",
-          "testString": "assert(sumFibs(4000000) === 4613732, '<code>sumFibs(4000000)</code> should return 4613732.')"
+          "text": "<code>sumFibs(4000000)</code> should return 4613732.",
+          "testString": "assert(sumFibs(4000000) === 4613732, '<code>sumFibs(4000000)</code> should return 4613732.');"
         },
         {
-          "text": "<code>sumFibs(4)</code> should return 5.'",
-          "testString": "assert(sumFibs(4) === 5, '<code>sumFibs(4)</code> should return 5.')"
+          "text": "<code>sumFibs(4)</code> should return 5.",
+          "testString": "assert(sumFibs(4) === 5, '<code>sumFibs(4)</code> should return 5.');"
         },
         {
-          "text": "<code>sumFibs(75024)</code> should return 60696.'",
-          "testString": "assert(sumFibs(75024) === 60696, '<code>sumFibs(75024)</code> should return 60696.')"
+          "text": "<code>sumFibs(75024)</code> should return 60696.",
+          "testString": "assert(sumFibs(75024) === 60696, '<code>sumFibs(75024)</code> should return 60696.');"
         },
         {
-          "text": "<code>sumFibs(75025)</code> should return 135721.'",
-          "testString": "assert(sumFibs(75025) === 135721, '<code>sumFibs(75025)</code> should return 135721.')"
+          "text": "<code>sumFibs(75025)</code> should return 135721.",
+          "testString": "assert(sumFibs(75025) === 135721, '<code>sumFibs(75025)</code> should return 135721.');"
         }
       ],
       "type": "bonfire",
@@ -1024,16 +1024,16 @@
       ],
       "tests": [
         {
-          "text": "<code>sumPrimes(10)</code> should return a number.'",
-          "testString": "assert.deepEqual(typeof sumPrimes(10), '<code>sumPrimes(10)</code> should return a number.')"
+          "text": "<code>sumPrimes(10)</code> should return a number.",
+          "testString": "assert.deepEqual(typeof sumPrimes(10), 'number', '<code>sumPrimes(10)</code> should return a number.');"
         },
         {
-          "text": "<code>sumPrimes(10)</code> should return 17.'",
-          "testString": "assert.deepEqual(sumPrimes(10), '<code>sumPrimes(10)</code> should return 17.')"
+          "text": "<code>sumPrimes(10)</code> should return 17.",
+          "testString": "assert.deepEqual(sumPrimes(10), 17, '<code>sumPrimes(10)</code> should return 17.');"
         },
         {
-          "text": "<code>sumPrimes(977)</code> should return 73156.'",
-          "testString": "assert.deepEqual(sumPrimes(977), '<code>sumPrimes(977)</code> should return 73156.')"
+          "text": "<code>sumPrimes(977)</code> should return 73156.",
+          "testString": "assert.deepEqual(sumPrimes(977), 73156, '<code>sumPrimes(977)</code> should return 73156.');"
         }
       ],
       "type": "bonfire",
@@ -1094,28 +1094,28 @@
       ],
       "tests": [
         {
-          "text": "<code>smallestCommons([1, 5])</code> should return a number.'",
-          "testString": "assert.deepEqual(typeof smallestCommons([1, '<code>smallestCommons([1, 5])</code> should return a number.')"
+          "text": "<code>smallestCommons([1, 5])</code> should return a number.",
+          "testString": "assert.deepEqual(typeof smallestCommons([1, 5]), 'number', '<code>smallestCommons([1, 5])</code> should return a number.');"
         },
         {
-          "text": "<code>smallestCommons([1, 5])</code> should return 60.'",
-          "testString": "assert.deepEqual(smallestCommons([1, '<code>smallestCommons([1, 5])</code> should return 60.')"
+          "text": "<code>smallestCommons([1, 5])</code> should return 60.",
+          "testString": "assert.deepEqual(smallestCommons([1, 5]), 60, '<code>smallestCommons([1, 5])</code> should return 60.');"
         },
         {
-          "text": "<code>smallestCommons([5, 1])</code> should return 60.'",
-          "testString": "assert.deepEqual(smallestCommons([5, '<code>smallestCommons([5, 1])</code> should return 60.')"
+          "text": "<code>smallestCommons([5, 1])</code> should return 60.",
+          "testString": "assert.deepEqual(smallestCommons([5, 1]), 60, '<code>smallestCommons([5, 1])</code> should return 60.');"
         },
         {
-          "text": "<code>smallestCommons([2, 10])</code> should return 2520.'",
-          "testString": "assert.deepEqual(smallestCommons([2, '<code>smallestCommons([2, 10])</code> should return 2520.')"
+          "text": "<code>smallestCommons([2, 10])</code> should return 2520.",
+          "testString": "assert.deepEqual(smallestCommons([2, 10]), 2520, '<code>smallestCommons([2, 10])</code> should return 2520.');"
         },
         {
-          "text": "<code>smallestCommons([1, 13])</code> should return 360360.'",
-          "testString": "assert.deepEqual(smallestCommons([1, '<code>smallestCommons([1, 13])</code> should return 360360.')"
+          "text": "<code>smallestCommons([1, 13])</code> should return 360360.",
+          "testString": "assert.deepEqual(smallestCommons([1, 13]), 360360, '<code>smallestCommons([1, 13])</code> should return 360360.');"
         },
         {
-          "text": "<code>smallestCommons([23, 18])</code> should return 6056820.'",
-          "testString": "assert.deepEqual(smallestCommons([23, '<code>smallestCommons([23, 18])</code> should return 6056820.')"
+          "text": "<code>smallestCommons([23, 18])</code> should return 6056820.",
+          "testString": "assert.deepEqual(smallestCommons([23, 18]), 6056820, '<code>smallestCommons([23, 18])</code> should return 6056820.');"
         }
       ],
       "type": "bonfire",
@@ -1175,28 +1175,28 @@
       ],
       "tests": [
         {
-          "text": "<code>dropElements([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.'",
-          "testString": "assert.deepEqual(dropElements([1, '<code>dropElements([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.')"
+          "text": "<code>dropElements([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.",
+          "testString": "assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}), [3, 4], '<code>dropElements([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.');"
         },
         {
-          "text": "<code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code> should return <code>[1, 0, 1]</code>.'",
-          "testString": "assert.deepEqual(dropElements([0, '<code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code> should return <code>[1, 0, 1]</code>.')"
+          "text": "<code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code> should return <code>[1, 0, 1]</code>.",
+          "testString": "assert.deepEqual(dropElements([0, 1, 0, 1], function(n) {return n === 1;}), [1, 0, 1], '<code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code> should return <code>[1, 0, 1]</code>.');"
         },
         {
-          "text": "<code>dropElements([1, 2, 3], function(n) {return n > 0;})</code> should return <code>[1, 2, 3]</code>.'",
-          "testString": "assert.deepEqual(dropElements([1, '<code>dropElements([1, 2, 3], function(n) {return n > 0;})</code> should return <code>[1, 2, 3]</code>.')"
+          "text": "<code>dropElements([1, 2, 3], function(n) {return n > 0;})</code> should return <code>[1, 2, 3]</code>.",
+          "testString": "assert.deepEqual(dropElements([1, 2, 3], function(n) {return n > 0;}), [1, 2, 3], '<code>dropElements([1, 2, 3], function(n) {return n > 0;})</code> should return <code>[1, 2, 3]</code>.');"
         },
         {
-          "text": "<code>dropElements([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.'",
-          "testString": "assert.deepEqual(dropElements([1, '<code>dropElements([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.')"
+          "text": "<code>dropElements([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.",
+          "testString": "assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n > 5;}), [], '<code>dropElements([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.');"
         },
         {
-          "text": "<code>dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.'",
-          "testString": "assert.deepEqual(dropElements([1, '<code>dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.')"
+          "text": "<code>dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.",
+          "testString": "assert.deepEqual(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}), [7, 4], '<code>dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.');"
         },
         {
-          "text": "<code>dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.'",
-          "testString": "assert.deepEqual(dropElements([1, '<code>dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.')"
+          "text": "<code>dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.",
+          "testString": "assert.deepEqual(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}), [3, 9, 2], '<code>dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.');"
         }
       ],
       "type": "bonfire",
@@ -1255,20 +1255,20 @@
       ],
       "tests": [
         {
-          "text": "<code>steamrollArray([[[\"a\"]], [[\"b\"]]])</code> should return <code>[\"a\", \"b\"]</code>.'",
-          "testString": "assert.deepEqual(steamrollArray([[[\"a\"]], '<code>steamrollArray([[[\"a\"]], [[\"b\"]]])</code> should return <code>[\"a\", \"b\"]</code>.')"
+          "text": "<code>steamrollArray([[[\"a\"]], [[\"b\"]]])</code> should return <code>[\"a\", \"b\"]</code>.",
+          "testString": "assert.deepEqual(steamrollArray([[[\"a\"]], [[\"b\"]]]), [\"a\", \"b\"], '<code>steamrollArray([[[\"a\"]], [[\"b\"]]])</code> should return <code>[\"a\", \"b\"]</code>.');"
         },
         {
-          "text": "<code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.'",
-          "testString": "assert.deepEqual(steamrollArray([1, '<code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.')"
+          "text": "<code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.",
+          "testString": "assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4], '<code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.');"
         },
         {
-          "text": "<code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.'",
-          "testString": "assert.deepEqual(steamrollArray([1, '<code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.')"
+          "text": "<code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.",
+          "testString": "assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4], '<code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.');"
         },
         {
-          "text": "<code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.'",
-          "testString": "assert.deepEqual(steamrollArray([1, '<code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.')"
+          "text": "<code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.",
+          "testString": "assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4], '<code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.');"
         }
       ],
       "type": "bonfire",
@@ -1324,12 +1324,12 @@
       ],
       "tests": [
         {
-          "text": "<code>binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\")</code> should return \"Aren&#39;t bonfires fun!?\"'",
-          "testString": "assert.deepEqual(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111'), '<code>binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\")</code> should return \"Aren&#39;t bonfires fun!?\"')"
+          "text": "<code>binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\")</code> should return \"Aren&#39;t bonfires fun!?\"",
+          "testString": "assert.deepEqual(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111'), \"Aren't bonfires fun!?\", '<code>binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\")</code> should return \"Aren&#39;t bonfires fun!?\"');"
         },
         {
-          "text": "<code>binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\")</code> should return \"I love FreeCodeCamp!\"'",
-          "testString": "assert.deepEqual(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001'), '<code>binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\")</code> should return \"I love FreeCodeCamp!\"')"
+          "text": "<code>binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\")</code> should return \"I love FreeCodeCamp!\"",
+          "testString": "assert.deepEqual(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001'), \"I love FreeCodeCamp!\", '<code>binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\")</code> should return \"I love FreeCodeCamp!\"');"
         }
       ],
       "type": "bonfire",
@@ -1389,40 +1389,40 @@
       ],
       "tests": [
         {
-          "text": "<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.'",
-          "testString": "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", '<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.')"
+          "text": "<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.",
+          "testString": "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), true, '<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return true.');"
         },
         {
-          "text": "<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.'",
-          "testString": "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", '<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.')"
+          "text": "<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.",
+          "testString": "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\"), false, '<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\")</code> should return false.');"
         },
         {
-          "text": "<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.'",
-          "testString": "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", '<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.')"
+          "text": "<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.",
+          "testString": "assert.strictEqual(truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 2}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\"), false, '<code>truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\", \"age\": 0}, {\"user\": \"Dipsy\", \"sex\": \"male\", \"age\": 3}, {\"user\": \"Laa-Laa\", \"sex\": \"female\", \"age\": 5}, {\"user\": \"Po\", \"sex\": \"female\", \"age\": 4}], \"age\")</code> should return false.');"
         },
         {
-          "text": "<code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false'",
-          "testString": "assert.strictEqual(truthCheck([{\"name\": \"Pete\", '<code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false')"
+          "text": "<code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false",
+          "testString": "assert.strictEqual(truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\"), false, '<code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true}, {\"name\": \"FastFoward\", \"onBoat\": null}], \"onBoat\")</code> should return false');"
         },
         {
-          "text": "<code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true'",
-          "testString": "assert.strictEqual(truthCheck([{\"name\": \"Pete\", '<code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true')"
+          "text": "<code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true",
+          "testString": "assert.strictEqual(truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\"), true, '<code>truthCheck([{\"name\": \"Pete\", \"onBoat\": true}, {\"name\": \"Repeat\", \"onBoat\": true, \"alias\": \"Repete\"}, {\"name\": \"FastFoward\", \"onBoat\": true}], \"onBoat\")</code> should return true');"
         },
         {
-          "text": "<code>truthCheck([{\"single\": \"yes\"}], \"single\")</code> should return true'",
-          "testString": "assert.strictEqual(truthCheck([{\"single\": \"yes\"}], '<code>truthCheck([{\"single\": \"yes\"}], \"single\")</code> should return true')"
+          "text": "<code>truthCheck([{\"single\": \"yes\"}], \"single\")</code> should return true",
+          "testString": "assert.strictEqual(truthCheck([{\"single\": \"yes\"}], \"single\"), true, '<code>truthCheck([{\"single\": \"yes\"}], \"single\")</code> should return true');"
         },
         {
-          "text": "<code>truthCheck([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false'",
-          "testString": "assert.strictEqual(truthCheck([{\"single\": \"\"}, '<code>truthCheck([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false')"
+          "text": "<code>truthCheck([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false",
+          "testString": "assert.strictEqual(truthCheck([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\"), false, '<code>truthCheck([{\"single\": \"\"}, {\"single\": \"double\"}], \"single\")</code> should return false');"
         },
         {
-          "text": "<code>truthCheck([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false'",
-          "testString": "assert.strictEqual(truthCheck([{\"single\": \"double\"}, '<code>truthCheck([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false')"
+          "text": "<code>truthCheck([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false",
+          "testString": "assert.strictEqual(truthCheck([{\"single\": \"double\"}, {\"single\": undefined}], \"single\"), false, '<code>truthCheck([{\"single\": \"double\"}, {\"single\": undefined}], \"single\")</code> should return false');"
         },
         {
-          "text": "<code>truthCheck([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false'",
-          "testString": "assert.strictEqual(truthCheck([{\"single\": \"double\"}, '<code>truthCheck([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false')"
+          "text": "<code>truthCheck([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false",
+          "testString": "assert.strictEqual(truthCheck([{\"single\": \"double\"}, {\"single\": NaN}], \"single\"), false, '<code>truthCheck([{\"single\": \"double\"}, {\"single\": NaN}], \"single\")</code> should return false');"
         }
       ],
       "isRequired": true,
@@ -1485,24 +1485,24 @@
       ],
       "tests": [
         {
-          "text": "<code>addTogether(2, 3)</code> should return 5.'",
-          "testString": "assert.deepEqual(addTogether(2, '<code>addTogether(2, 3)</code> should return 5.')"
+          "text": "<code>addTogether(2, 3)</code> should return 5.",
+          "testString": "assert.deepEqual(addTogether(2, 3), 5, '<code>addTogether(2, 3)</code> should return 5.');"
         },
         {
-          "text": "<code>addTogether(2)(3)</code> should return 5.'",
-          "testString": "assert.deepEqual(addTogether(2)(3), '<code>addTogether(2)(3)</code> should return 5.')"
+          "text": "<code>addTogether(2)(3)</code> should return 5.",
+          "testString": "assert.deepEqual(addTogether(2)(3), 5, '<code>addTogether(2)(3)</code> should return 5.');"
         },
         {
-          "text": "<code>addTogether(\"http://bit.ly/IqT6zt\")</code> should return undefined.'",
-          "testString": "assert.isUndefined(addTogether(\"http://bit.ly/IqT6zt\"), '<code>addTogether(\"http://bit.ly/IqT6zt\")</code> should return undefined.')"
+          "text": "<code>addTogether(\"http://bit.ly/IqT6zt\")</code> should return undefined.",
+          "testString": "assert.isUndefined(addTogether(\"http://bit.ly/IqT6zt\"), '<code>addTogether(\"http://bit.ly/IqT6zt\")</code> should return undefined.');"
         },
         {
-          "text": "<code>addTogether(2, \"3\")</code> should return undefined.'",
-          "testString": "assert.isUndefined(addTogether(2, '<code>addTogether(2, \"3\")</code> should return undefined.')"
+          "text": "<code>addTogether(2, \"3\")</code> should return undefined.",
+          "testString": "assert.isUndefined(addTogether(2, \"3\"), '<code>addTogether(2, \"3\")</code> should return undefined.');"
         },
         {
-          "text": "<code>addTogether(2)([3])</code> should return undefined.'",
-          "testString": "assert.isUndefined(addTogether(2)([3]), '<code>addTogether(2)([3])</code> should return undefined.')"
+          "text": "<code>addTogether(2)([3])</code> should return undefined.",
+          "testString": "assert.isUndefined(addTogether(2)([3]), '<code>addTogether(2)([3])</code> should return undefined.');"
         }
       ],
       "type": "bonfire",
@@ -1572,52 +1572,52 @@
       ],
       "tests": [
         {
-          "text": "<code>Object.keys(bob).length</code> should return 6.'",
-          "testString": "assert.deepEqual(Object.keys(bob).length, '<code>Object.keys(bob).length</code> should return 6.')"
+          "text": "<code>Object.keys(bob).length</code> should return 6.",
+          "testString": "assert.deepEqual(Object.keys(bob).length, 6, '<code>Object.keys(bob).length</code> should return 6.');"
         },
         {
-          "text": "<code>bob instanceof Person</code> should return true.'",
-          "testString": "assert.deepEqual(bob instanceof Person, '<code>bob instanceof Person</code> should return true.')"
+          "text": "<code>bob instanceof Person</code> should return true.",
+          "testString": "assert.deepEqual(bob instanceof Person, true, '<code>bob instanceof Person</code> should return true.');"
         },
         {
-          "text": "<code>bob.firstName</code> should return undefined.'",
-          "testString": "assert.deepEqual(bob.firstName, '<code>bob.firstName</code> should return undefined.')"
+          "text": "<code>bob.firstName</code> should return undefined.",
+          "testString": "assert.deepEqual(bob.firstName, undefined, '<code>bob.firstName</code> should return undefined.');"
         },
         {
-          "text": "<code>bob.lastName</code> should return undefined.'",
-          "testString": "assert.deepEqual(bob.lastName, '<code>bob.lastName</code> should return undefined.')"
+          "text": "<code>bob.lastName</code> should return undefined.",
+          "testString": "assert.deepEqual(bob.lastName, undefined, '<code>bob.lastName</code> should return undefined.');"
         },
         {
-          "text": "<code>bob.getFirstName()</code> should return \"Bob\".'",
-          "testString": "assert.deepEqual(bob.getFirstName(), '<code>bob.getFirstName()</code> should return \"Bob\".')"
+          "text": "<code>bob.getFirstName()</code> should return \"Bob\".",
+          "testString": "assert.deepEqual(bob.getFirstName(), 'Bob', '<code>bob.getFirstName()</code> should return \"Bob\".');"
         },
         {
-          "text": "<code>bob.getLastName()</code> should return \"Ross\".'",
-          "testString": "assert.deepEqual(bob.getLastName(), '<code>bob.getLastName()</code> should return \"Ross\".')"
+          "text": "<code>bob.getLastName()</code> should return \"Ross\".",
+          "testString": "assert.deepEqual(bob.getLastName(), 'Ross', '<code>bob.getLastName()</code> should return \"Ross\".');"
         },
         {
-          "text": "<code>bob.getFullName()</code> should return \"Bob Ross\".'",
-          "testString": "assert.deepEqual(bob.getFullName(), '<code>bob.getFullName()</code> should return \"Bob Ross\".')"
+          "text": "<code>bob.getFullName()</code> should return \"Bob Ross\".",
+          "testString": "assert.deepEqual(bob.getFullName(), 'Bob Ross', '<code>bob.getFullName()</code> should return \"Bob Ross\".');"
         },
         {
-          "text": "<code>bob.getFullName()</code> should return \"Haskell Ross\" after <code>bob.setFirstName(\"Haskell\")</code>.'",
-          "testString": "assert.strictEqual((function () { bob.setFirstName(\"Haskell\"); return bob.getFullName(); })(), '<code>bob.getFullName()</code> should return \"Haskell Ross\" after <code>bob.setFirstName(\"Haskell\")</code>.')"
+          "text": "<code>bob.getFullName()</code> should return \"Haskell Ross\" after <code>bob.setFirstName(\"Haskell\")</code>.",
+          "testString": "assert.strictEqual((function () { bob.setFirstName(\"Haskell\"); return bob.getFullName(); })(), 'Haskell Ross', '<code>bob.getFullName()</code> should return \"Haskell Ross\" after <code>bob.setFirstName(\"Haskell\")</code>.');"
         },
         {
-          "text": "<code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setLastName(\"Curry\")</code>.'",
-          "testString": "assert.strictEqual((function () { var _bob=new Person('Haskell Ross'); _bob.setLastName(\"Curry\"); return _bob.getFullName(); })(), '<code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setLastName(\"Curry\")</code>.')"
+          "text": "<code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setLastName(\"Curry\")</code>.",
+          "testString": "assert.strictEqual((function () { var _bob=new Person('Haskell Ross'); _bob.setLastName(\"Curry\"); return _bob.getFullName(); })(), 'Haskell Curry', '<code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setLastName(\"Curry\")</code>.');"
         },
         {
-          "text": "<code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.'",
-          "testString": "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFullName(); })(), '<code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.')"
+          "text": "<code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.",
+          "testString": "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFullName(); })(), 'Haskell Curry', '<code>bob.getFullName()</code> should return \"Haskell Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');"
         },
         {
-          "text": "<code>bob.getFirstName()</code> should return \"Haskell\" after <code>bob.setFullName(\"Haskell Curry\")</code>.'",
-          "testString": "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFirstName(); })(), '<code>bob.getFirstName()</code> should return \"Haskell\" after <code>bob.setFullName(\"Haskell Curry\")</code>.')"
+          "text": "<code>bob.getFirstName()</code> should return \"Haskell\" after <code>bob.setFullName(\"Haskell Curry\")</code>.",
+          "testString": "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getFirstName(); })(), 'Haskell', '<code>bob.getFirstName()</code> should return \"Haskell\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');"
         },
         {
-          "text": "<code>bob.getLastName()</code> should return \"Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.'",
-          "testString": "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getLastName(); })(), '<code>bob.getLastName()</code> should return \"Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.')"
+          "text": "<code>bob.getLastName()</code> should return \"Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.",
+          "testString": "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getLastName(); })(), 'Curry', '<code>bob.getLastName()</code> should return \"Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');"
         }
       ],
       "type": "bonfire",
@@ -1699,12 +1699,12 @@
       ],
       "tests": [
         {
-          "text": "<code>orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])</code> should return <code>[{name: \"sputnik\", orbitalPeriod: 86400}]</code>.'",
-          "testString": "assert.deepEqual(orbitalPeriod([{name : \"sputnik\", '<code>orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])</code> should return <code>[{name: \"sputnik\", orbitalPeriod: 86400}]</code>.')"
+          "text": "<code>orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])</code> should return <code>[{name: \"sputnik\", orbitalPeriod: 86400}]</code>.",
+          "testString": "assert.deepEqual(orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]), [{name: \"sputnik\", orbitalPeriod: 86400}], '<code>orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])</code> should return <code>[{name: \"sputnik\", orbitalPeriod: 86400}]</code>.');"
         },
         {
-          "text": "<code>orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])</code> should return <code>[{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]</code>.'",
-          "testString": "assert.deepEqual(orbitalPeriod([{name: \"iss\", '<code>orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])</code> should return <code>[{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]</code>.')"
+          "text": "<code>orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])</code> should return <code>[{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]</code>.",
+          "testString": "assert.deepEqual(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}]), [{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}], '<code>orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])</code> should return <code>[{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]</code>.');"
         }
       ],
       "type": "bonfire",

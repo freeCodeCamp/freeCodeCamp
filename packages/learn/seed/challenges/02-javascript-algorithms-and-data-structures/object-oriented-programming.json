@@ -19,16 +19,16 @@
       ],
       "tests": [
         {
-          "text": "<code>dog</code> should be an <code>object</code>.'",
-          "testString": "assert(typeof(dog) === 'object', '<code>dog</code> should be an <code>object</code>.')"
+          "text": "<code>dog</code> should be an <code>object</code>.",
+          "testString": "assert(typeof(dog) === 'object', '<code>dog</code> should be an <code>object</code>.');"
         },
         {
-          "text": "<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.'",
-          "testString": "assert(typeof(dog.name) === 'string', '<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.')"
+          "text": "<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.",
+          "testString": "assert(typeof(dog.name) === 'string', '<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.');"
         },
         {
-          "text": "<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.'",
-          "testString": "assert(typeof(dog.numLegs) === 'number', '<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.')"
+          "text": "<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.",
+          "testString": "assert(typeof(dog.numLegs) === 'number', '<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.');"
         }
       ],
       "solutions": [
@@ -66,12 +66,12 @@
       ],
       "tests": [
         {
-          "text": "Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.'",
-          "testString": "assert(/console.log\\(.*dog\\.name.*\\)/g.test(code), 'Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.')"
+          "text": "Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.",
+          "testString": "assert(/console.log\\(.*dog\\.name.*\\)/g.test(code), 'Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.');"
         },
         {
-          "text": "Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.'",
-          "testString": "assert(/console.log\\(.*dog\\.numLegs.*\\)/g.test(code), 'Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.')"
+          "text": "Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.",
+          "testString": "assert(/console.log\\(.*dog\\.numLegs.*\\)/g.test(code), 'Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.');"
         }
       ],
       "solutions": [
@@ -115,12 +115,12 @@
       ],
       "tests": [
         {
-          "text": "<code>dog.sayLegs()</code> should be a function.'",
-          "testString": "assert(typeof(dog.sayLegs) === 'function', '<code>dog.sayLegs()</code> should be a function.')"
+          "text": "<code>dog.sayLegs()</code> should be a function.",
+          "testString": "assert(typeof(dog.sayLegs) === 'function', '<code>dog.sayLegs()</code> should be a function.');"
         },
         {
-          "text": "<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.'",
-          "testString": "assert(dog.sayLegs() === 'This dog has 4 legs.', '<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.')"
+          "text": "<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.",
+          "testString": "assert(dog.sayLegs() === 'This dog has 4 legs.', '<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.');"
         }
       ],
       "solutions": [
@@ -166,12 +166,12 @@
       ],
       "tests": [
         {
-          "text": "<code>dog.sayLegs()</code> should return the given string.'",
-          "testString": "assert(dog.sayLegs() === 'This dog has 4 legs.', '<code>dog.sayLegs()</code> should return the given string.')"
+          "text": "<code>dog.sayLegs()</code> should return the given string.",
+          "testString": "assert(dog.sayLegs() === 'This dog has 4 legs.', '<code>dog.sayLegs()</code> should return the given string.');"
         },
         {
-          "text": "Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.'",
-          "testString": "assert(code.match(/this\\.numLegs/g), 'Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.')"
+          "text": "Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.",
+          "testString": "assert(code.match(/this\\.numLegs/g), 'Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.');"
         }
       ],
       "solutions": [
@@ -217,16 +217,16 @@
       ],
       "tests": [
         {
-          "text": "<code>Dog</code> should have a <code>name</code> property set to a string.'",
-          "testString": "assert(typeof (new Dog()).name === 'string', '<code>Dog</code> should have a <code>name</code> property set to a string.')"
+          "text": "<code>Dog</code> should have a <code>name</code> property set to a string.",
+          "testString": "assert(typeof (new Dog()).name === 'string', '<code>Dog</code> should have a <code>name</code> property set to a string.');"
         },
         {
-          "text": "<code>Dog</code> should have a <code>color</code> property set to a string.'",
-          "testString": "assert(typeof (new Dog()).color === 'string', '<code>Dog</code> should have a <code>color</code> property set to a string.')"
+          "text": "<code>Dog</code> should have a <code>color</code> property set to a string.",
+          "testString": "assert(typeof (new Dog()).color === 'string', '<code>Dog</code> should have a <code>color</code> property set to a string.');"
         },
         {
-          "text": "<code>Dog</code> should have a <code>numLegs</code> property set to a number.'",
-          "testString": "assert(typeof (new Dog()).numLegs === 'number', '<code>Dog</code> should have a <code>numLegs</code> property set to a number.')"
+          "text": "<code>Dog</code> should have a <code>numLegs</code> property set to a number.",
+          "testString": "assert(typeof (new Dog()).numLegs === 'number', '<code>Dog</code> should have a <code>numLegs</code> property set to a number.');"
         }
       ],
       "solutions": [
@@ -268,12 +268,12 @@
       ],
       "tests": [
         {
-          "text": "<code>hound</code> should be created using the <code>Dog</code> constructor.'",
-          "testString": "assert(hound instanceof Dog, '<code>hound</code> should be created using the <code>Dog</code> constructor.')"
+          "text": "<code>hound</code> should be created using the <code>Dog</code> constructor.",
+          "testString": "assert(hound instanceof Dog, '<code>hound</code> should be created using the <code>Dog</code> constructor.');"
         },
         {
-          "text": "Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.'",
-          "testString": "assert(code.match(/new/g), 'Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.')"
+          "text": "Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.",
+          "testString": "assert(code.match(/new/g), 'Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.');"
         }
       ],
       "solutions": [
@@ -324,20 +324,20 @@
       ],
       "tests": [
         {
-          "text": "<code>Dog</code> should receive an argument for <code>name</code>.'",
-          "testString": "assert((new Dog('Clifford')).name === 'Clifford', '<code>Dog</code> should receive an argument for <code>name</code>.')"
+          "text": "<code>Dog</code> should receive an argument for <code>name</code>.",
+          "testString": "assert((new Dog('Clifford')).name === 'Clifford', '<code>Dog</code> should receive an argument for <code>name</code>.');"
         },
         {
-          "text": "<code>Dog</code> should receive an argument for <code>color</code>.'",
-          "testString": "assert((new Dog('Clifford', '<code>Dog</code> should receive an argument for <code>color</code>.')"
+          "text": "<code>Dog</code> should receive an argument for <code>color</code>.",
+          "testString": "assert((new Dog('Clifford', 'yellow')).color === 'yellow', '<code>Dog</code> should receive an argument for <code>color</code>.');"
         },
         {
-          "text": "<code>Dog</code> should have property <code>numLegs</code> set to 4.'",
-          "testString": "assert((new Dog('Clifford')).numLegs === 4, '<code>Dog</code> should have property <code>numLegs</code> set to 4.')"
+          "text": "<code>Dog</code> should have property <code>numLegs</code> set to 4.",
+          "testString": "assert((new Dog('Clifford')).numLegs === 4, '<code>Dog</code> should have property <code>numLegs</code> set to 4.');"
         },
         {
-          "text": "<code>terrier</code> should be created using the <code>Dog</code> constructor.'",
-          "testString": "assert(terrier instanceof Dog, '<code>terrier</code> should be created using the <code>Dog</code> constructor.')"
+          "text": "<code>terrier</code> should be created using the <code>Dog</code> constructor.",
+          "testString": "assert(terrier instanceof Dog, '<code>terrier</code> should be created using the <code>Dog</code> constructor.');"
         }
       ],
       "solutions": [
@@ -378,12 +378,12 @@
       ],
       "tests": [
         {
-          "text": "<code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.'",
-          "testString": "assert(typeof myHouse.numBedrooms === 'number', '<code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.')"
+          "text": "<code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.",
+          "testString": "assert(typeof myHouse.numBedrooms === 'number', '<code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.');"
         },
         {
-          "text": "Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.'",
-          "testString": "assert(/myHouse\\s*instanceof\\s*House/.test(code), 'Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.')"
+          "text": "Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.",
+          "testString": "assert(/myHouse\\s*instanceof\\s*House/.test(code), 'Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.');"
         }
       ],
       "solutions": [
@@ -431,12 +431,12 @@
       ],
       "tests": [
         {
-          "text": "<code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.'",
-          "testString": "assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1, '<code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.')"
+          "text": "<code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.",
+          "testString": "assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1, '<code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');"
         },
         {
-          "text": "Solve this challenge without using the built in method <code>Object.keys()</code>.'",
-          "testString": "assert(!/\\Object.keys/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.')"
+          "text": "Solve this challenge without using the built in method <code>Object.keys()</code>.",
+          "testString": "assert(!/\\Object.keys/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.');"
         }
       ],
       "solutions": [
@@ -487,16 +487,16 @@
       ],
       "tests": [
         {
-          "text": "<code>beagle</code> should have a <code>numLegs</code> property.'",
-          "testString": "assert(beagle.numLegs !== undefined, '<code>beagle</code> should have a <code>numLegs</code> property.')"
+          "text": "<code>beagle</code> should have a <code>numLegs</code> property.",
+          "testString": "assert(beagle.numLegs !== undefined, '<code>beagle</code> should have a <code>numLegs</code> property.');"
         },
         {
-          "text": "<code>beagle.numLegs</code> should be a number.'",
-          "testString": "assert(typeof(beagle.numLegs) === 'number' , '<code>beagle.numLegs</code> should be a number.')"
+          "text": "<code>beagle.numLegs</code> should be a number.",
+          "testString": "assert(typeof(beagle.numLegs) === 'number' , '<code>beagle.numLegs</code> should be a number.');"
         },
         {
-          "text": "<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.'",
-          "testString": "assert(beagle.hasOwnProperty('numLegs') === false, '<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.')"
+          "text": "<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.",
+          "testString": "assert(beagle.hasOwnProperty('numLegs') === false, '<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.');"
         }
       ],
       "solutions": [
@@ -540,16 +540,16 @@
       ],
       "tests": [
         {
-          "text": "The <code>ownProps</code> array should include <code>\"name\"</code>.'",
-          "testString": "assert(ownProps.indexOf('name') !== -1, 'The <code>ownProps</code> array should include <code>\"name\"</code>.')"
+          "text": "The <code>ownProps</code> array should include <code>\"name\"</code>.",
+          "testString": "assert(ownProps.indexOf('name') !== -1, 'The <code>ownProps</code> array should include <code>\"name\"</code>.');"
         },
         {
-          "text": "The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.'",
-          "testString": "assert(prototypeProps.indexOf('numLegs') !== -1, 'The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.')"
+          "text": "The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.",
+          "testString": "assert(prototypeProps.indexOf('numLegs') !== -1, 'The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.');"
         },
         {
-          "text": "Solve this challenge without using the built in method <code>Object.keys()</code>.'",
-          "testString": "assert(!/\\Object.keys/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.')"
+          "text": "Solve this challenge without using the built in method <code>Object.keys()</code>.",
+          "testString": "assert(!/\\Object.keys/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.');"
         }
       ],
       "solutions": [
@@ -602,16 +602,16 @@
       ],
       "tests": [
         {
-          "text": "<code>joinDogFraternity</code> should be defined as a function.'",
-          "testString": "assert(typeof(joinDogFraternity) === 'function', '<code>joinDogFraternity</code> should be defined as a function.')"
+          "text": "<code>joinDogFraternity</code> should be defined as a function.",
+          "testString": "assert(typeof(joinDogFraternity) === 'function', '<code>joinDogFraternity</code> should be defined as a function.');"
         },
         {
-          "text": "<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.'",
-          "testString": "assert(joinDogFraternity(new Dog(\"\")) === true, '<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.')"
+          "text": "<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.",
+          "testString": "assert(joinDogFraternity(new Dog(\"\")) === true, '<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.');"
         },
         {
-          "text": "<code>joinDogFraternity</code> should use the <code>constructor</code> property.'",
-          "testString": "assert(/\\.constructor/.test(code) && !/instanceof/.test(code), '<code>joinDogFraternity</code> should use the <code>constructor</code> property.')"
+          "text": "<code>joinDogFraternity</code> should use the <code>constructor</code> property.",
+          "testString": "assert(/\\.constructor/.test(code) && !/instanceof/.test(code), '<code>joinDogFraternity</code> should use the <code>constructor</code> property.');"
         }
       ],
       "solutions": [
@@ -658,12 +658,12 @@
       ],
       "tests": [
         {
-          "text": "<code>Dog.prototype</code> should be set to a new object.'",
-          "testString": "assert((/Dog\\.prototype\\s*?=\\s*?{/).test(code), '<code>Dog.prototype</code> should be set to a new object.')"
+          "text": "<code>Dog.prototype</code> should be set to a new object.",
+          "testString": "assert((/Dog\\.prototype\\s*?=\\s*?{/).test(code), '<code>Dog.prototype</code> should be set to a new object.');"
         },
         {
-          "text": "<code>Dog.prototype</code> should have the property <code>numLegs</code>.'",
-          "testString": "assert(Dog.prototype.numLegs !== undefined, '<code>Dog.prototype</code> should have the property <code>numLegs</code>.')"
+          "text": "<code>Dog.prototype</code> should have the property <code>numLegs</code>.",
+          "testString": "assert(Dog.prototype.numLegs !== undefined, '<code>Dog.prototype</code> should have the property <code>numLegs</code>.');"
         },
         {
           "text": "<code>Dog.prototype</code> should have the method <code>eat()</code>.",
@@ -715,8 +715,8 @@
       ],
       "tests": [
         {
-          "text": "<code>Dog.prototype</code> should set the <code>constructor</code> property.'",
-          "testString": "assert(Dog.prototype.constructor === Dog, '<code>Dog.prototype</code> should set the <code>constructor</code> property.')"
+          "text": "<code>Dog.prototype</code> should set the <code>constructor</code> property.",
+          "testString": "assert(Dog.prototype.constructor === Dog, '<code>Dog.prototype</code> should set the <code>constructor</code> property.');"
         }
       ],
       "solutions": [
@@ -767,8 +767,8 @@
       ],
       "tests": [
         {
-          "text": "Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>'",
-          "testString": "assert(/Dog\\.prototype\\.isPrototypeOf\\(beagle\\)/.test(code), 'Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>')"
+          "text": "Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>",
+          "testString": "assert(/Dog\\.prototype\\.isPrototypeOf\\(beagle\\)/.test(code), 'Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>');"
         }
       ],
       "solutions": [
@@ -819,7 +819,7 @@
       "tests": [
         {
           "text": "Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>\"",
-          "testString": "assert(/Object\\.prototype\\.isPrototypeOf/.test(code), 'Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>\")"
+          "testString": "assert(/Object\\.prototype\\.isPrototypeOf/.test(code), 'Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>\"');"
         }
       ],
       "solutions": [
@@ -869,16 +869,16 @@
       ],
       "tests": [
         {
-          "text": "<code>Animal.prototype</code> should have the <code>eat</code> property.'",
-          "testString": "assert(Animal.prototype.hasOwnProperty('eat'), '<code>Animal.prototype</code> should have the <code>eat</code> property.')"
+          "text": "<code>Animal.prototype</code> should have the <code>eat</code> property.",
+          "testString": "assert(Animal.prototype.hasOwnProperty('eat'), '<code>Animal.prototype</code> should have the <code>eat</code> property.');"
         },
         {
-          "text": "<code>Bear.prototype</code> should not have the <code>eat</code> property.'",
-          "testString": "assert(!(Bear.prototype.hasOwnProperty('eat')), '<code>Bear.prototype</code> should not have the <code>eat</code> property.')"
+          "text": "<code>Bear.prototype</code> should not have the <code>eat</code> property.",
+          "testString": "assert(!(Bear.prototype.hasOwnProperty('eat')), '<code>Bear.prototype</code> should not have the <code>eat</code> property.');"
         },
         {
-          "text": "<code>Cat.prototype</code> should not have the <code>eat</code> property.'",
-          "testString": "assert(!(Cat.prototype.hasOwnProperty('eat')), '<code>Cat.prototype</code> should not have the <code>eat</code> property.')"
+          "text": "<code>Cat.prototype</code> should not have the <code>eat</code> property.",
+          "testString": "assert(!(Cat.prototype.hasOwnProperty('eat')), '<code>Cat.prototype</code> should not have the <code>eat</code> property.');"
         }
       ],
       "solutions": [
@@ -948,20 +948,20 @@
       ],
       "tests": [
         {
-          "text": "The <code>duck</code> variable should be defined.'",
-          "testString": "assert(typeof duck !== \"undefined\", 'The <code>duck</code> variable should be defined.')"
+          "text": "The <code>duck</code> variable should be defined.",
+          "testString": "assert(typeof duck !== \"undefined\", 'The <code>duck</code> variable should be defined.');"
         },
         {
-          "text": "The <code>beagle</code> variable should be defined.'",
-          "testString": "assert(typeof beagle !== \"undefined\", 'The <code>beagle</code> variable should be defined.')"
+          "text": "The <code>beagle</code> variable should be defined.",
+          "testString": "assert(typeof beagle !== \"undefined\", 'The <code>beagle</code> variable should be defined.');"
         },
         {
-          "text": "<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.'",
-          "testString": "assert(duck instanceof Animal, '<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.')"
+          "text": "<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.",
+          "testString": "assert(duck instanceof Animal, '<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.');"
         },
         {
-          "text": "<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.'",
-          "testString": "assert(beagle instanceof Animal, '<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.')"
+          "text": "<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.",
+          "testString": "assert(beagle instanceof Animal, '<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.');"
         }
       ],
       "solutions": [
@@ -1015,8 +1015,8 @@
       ],
       "tests": [
         {
-          "text": "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.'",
-          "testString": "assert(Animal.prototype.isPrototypeOf(Dog.prototype), '<code>Dog.prototype</code> should be an instance of <code>Animal</code>.')"
+          "text": "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.",
+          "testString": "assert(Animal.prototype.isPrototypeOf(Dog.prototype), '<code>Dog.prototype</code> should be an instance of <code>Animal</code>.');"
         }
       ],
       "solutions": [
@@ -1069,20 +1069,20 @@
       ],
       "tests": [
         {
-          "text": "<code>Bird.prototype</code> should be an instance of <code>Animal</code>.'",
-          "testString": "assert(Animal.prototype.isPrototypeOf(Bird.prototype), '<code>Bird.prototype</code> should be an instance of <code>Animal</code>.')"
+          "text": "<code>Bird.prototype</code> should be an instance of <code>Animal</code>.",
+          "testString": "assert(Animal.prototype.isPrototypeOf(Bird.prototype), '<code>Bird.prototype</code> should be an instance of <code>Animal</code>.');"
         },
         {
-          "text": "<code>duck.constructor</code> should return <code>Bird</code>.'",
-          "testString": "assert(duck.constructor === Bird, '<code>duck.constructor</code> should return <code>Bird</code>.')"
+          "text": "<code>duck.constructor</code> should return <code>Bird</code>.",
+          "testString": "assert(duck.constructor === Bird, '<code>duck.constructor</code> should return <code>Bird</code>.');"
         },
         {
-          "text": "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.'",
-          "testString": "assert(Animal.prototype.isPrototypeOf(Dog.prototype), '<code>Dog.prototype</code> should be an instance of <code>Animal</code>.')"
+          "text": "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.",
+          "testString": "assert(Animal.prototype.isPrototypeOf(Dog.prototype), '<code>Dog.prototype</code> should be an instance of <code>Animal</code>.');"
         },
         {
-          "text": "<code>beagle.constructor</code> should return <code>Dog</code>.'",
-          "testString": "assert(beagle.constructor === Dog, '<code>beagle.constructor</code> should return <code>Dog</code>.')"
+          "text": "<code>beagle.constructor</code> should return <code>Dog</code>.",
+          "testString": "assert(beagle.constructor === Dog, '<code>beagle.constructor</code> should return <code>Dog</code>.');"
         }
       ],
       "solutions": [
@@ -1134,24 +1134,24 @@
       ],
       "tests": [
         {
-          "text": "<code>Animal</code> should not respond to the <code>bark()</code> method.'",
-          "testString": "assert(typeof Animal.prototype.bark == \"undefined\", '<code>Animal</code> should not respond to the <code>bark()</code> method.')"
+          "text": "<code>Animal</code> should not respond to the <code>bark()</code> method.",
+          "testString": "assert(typeof Animal.prototype.bark == \"undefined\", '<code>Animal</code> should not respond to the <code>bark()</code> method.');"
         },
         {
-          "text": "<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.'",
-          "testString": "assert(typeof Dog.prototype.eat == \"function\", '<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.')"
+          "text": "<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.",
+          "testString": "assert(typeof Dog.prototype.eat == \"function\", '<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.');"
         },
         {
-          "text": "<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.'",
-          "testString": "assert(Dog.prototype.hasOwnProperty('bark'), '<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.')"
+          "text": "<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.",
+          "testString": "assert(Dog.prototype.hasOwnProperty('bark'), '<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.');"
         },
         {
-          "text": "<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.'",
-          "testString": "assert(beagle instanceof Animal, '<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.')"
+          "text": "<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.",
+          "testString": "assert(beagle instanceof Animal, '<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.');"
         },
         {
-          "text": "The constructor for <code>beagle</code> should be set to <code>Dog</code>.'",
-          "testString": "assert(beagle.constructor === Dog, 'The constructor for <code>beagle</code> should be set to <code>Dog</code>.')"
+          "text": "The constructor for <code>beagle</code> should be set to <code>Dog</code>.",
+          "testString": "assert(beagle.constructor === Dog, 'The constructor for <code>beagle</code> should be set to <code>Dog</code>.');"
         }
       ],
       "solutions": [
@@ -1213,12 +1213,12 @@
       ],
       "tests": [
         {
-          "text": "<code>penguin.fly()</code> should return the string \"Alas, this is a flightless bird.\"'",
-          "testString": "assert(penguin.fly() === \"Alas, '<code>penguin.fly()</code> should return the string \"Alas, this is a flightless bird.\"')"
+          "text": "<code>penguin.fly()</code> should return the string \"Alas, this is a flightless bird.\"",
+          "testString": "assert(penguin.fly() === \"Alas, this is a flightless bird.\", '<code>penguin.fly()</code> should return the string \"Alas, this is a flightless bird.\"');"
         },
         {
-          "text": "The <code>bird.fly()</code> method should return \"I am flying!\"'",
-          "testString": "assert((new Bird()).fly() === \"I am flying!\", 'The <code>bird.fly()</code> method should return \"I am flying!\"')"
+          "text": "The <code>bird.fly()</code> method should return \"I am flying!\"",
+          "testString": "assert((new Bird()).fly() === \"I am flying!\", 'The <code>bird.fly()</code> method should return \"I am flying!\"');"
         }
       ],
       "solutions": [
@@ -1274,16 +1274,16 @@
       ],
       "tests": [
         {
-          "text": "Your code should declare a <code>glideMixin</code> variable that is a function.'",
-          "testString": "assert(typeof glideMixin === \"function\", 'Your code should declare a <code>glideMixin</code> variable that is a function.')"
+          "text": "Your code should declare a <code>glideMixin</code> variable that is a function.",
+          "testString": "assert(typeof glideMixin === \"function\", 'Your code should declare a <code>glideMixin</code> variable that is a function.');"
         },
         {
-          "text": "Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.'",
-          "testString": "assert(typeof bird.glide === \"function\", 'Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.')"
+          "text": "Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.",
+          "testString": "assert(typeof bird.glide === \"function\", 'Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.');"
         },
         {
-          "text": "Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.'",
-          "testString": "assert(typeof boat.glide === \"function\", 'Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.')"
+          "text": "Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.",
+          "testString": "assert(typeof boat.glide === \"function\", 'Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.');"
         }
       ],
       "solutions": [
@@ -1338,12 +1338,12 @@
       ],
       "tests": [
         {
-          "text": "The <code>weight</code> property should be a private variable.'",
-          "testString": "assert(!code.match(/this\\.weight/g), 'The <code>weight</code> property should be a private variable.')"
+          "text": "The <code>weight</code> property should be a private variable.",
+          "testString": "assert(!code.match(/this\\.weight/g), 'The <code>weight</code> property should be a private variable.');"
         },
         {
-          "text": "Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.'",
-          "testString": "assert((new Bird()).getWeight() === 15, 'Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.')"
+          "text": "Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.",
+          "testString": "assert((new Bird()).getWeight() === 15, 'Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.');"
         }
       ],
       "solutions": [
@@ -1384,12 +1384,12 @@
       ],
       "tests": [
         {
-          "text": "The function should be anonymous.'",
-          "testString": "assert(/\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?{/.test(code), 'The function should be anonymous.')"
+          "text": "The function should be anonymous.",
+          "testString": "assert(/\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?{/.test(code), 'The function should be anonymous.');"
         },
         {
-          "text": "Your function should have parentheses at the end of the expression to call it immediately.'",
-          "testString": "assert(/}\\s*?\\)\\s*?\\(\\s*?\\)/.test(code), 'Your function should have parentheses at the end of the expression to call it immediately.')"
+          "text": "Your function should have parentheses at the end of the expression to call it immediately.",
+          "testString": "assert(/}\\s*?\\)\\s*?\\(\\s*?\\)/.test(code), 'Your function should have parentheses at the end of the expression to call it immediately.');"
         }
       ],
       "solutions": [
@@ -1433,16 +1433,16 @@
       ],
       "tests": [
         {
-          "text": "<code>funModule</code> should be defined and return an object.'",
-          "testString": "assert(typeof funModule === \"object\", '<code>funModule</code> should be defined and return an object.')"
+          "text": "<code>funModule</code> should be defined and return an object.",
+          "testString": "assert(typeof funModule === \"object\", '<code>funModule</code> should be defined and return an object.');"
         },
         {
-          "text": "<code>funModule.isCuteMixin</code> should access a function.'",
-          "testString": "assert(typeof funModule.isCuteMixin === \"function\", '<code>funModule.isCuteMixin</code> should access a function.')"
+          "text": "<code>funModule.isCuteMixin</code> should access a function.",
+          "testString": "assert(typeof funModule.isCuteMixin === \"function\", '<code>funModule.isCuteMixin</code> should access a function.');"
         },
         {
-          "text": "<code>funModule.singMixin</code> should access a function.'",
-          "testString": "assert(typeof funModule.singMixin === \"function\", '<code>funModule.singMixin</code> should access a function.')"
+          "text": "<code>funModule.singMixin</code> should access a function.",
+          "testString": "assert(typeof funModule.singMixin === \"function\", '<code>funModule.singMixin</code> should access a function.');"
         }
       ],
       "solutions": [
