@@ -11,17 +11,19 @@ import {
   clickOnLogo,
   clickOnMap
 } from './redux';
-import { panesSelector } from '../Panes/redux';
+import { panesSelector, panesByNameSelector } from '../Panes/redux';
 import propTypes from './navPropTypes';
 
 const mapStateToProps = createSelector(
   panesSelector,
-  panes => {
+  panesByNameSelector,
+  (panes, panesByName) => {
     return {
       panes: panes.map(({ name, type }) => {
         return {
           content: name,
-          action: type
+          action: type,
+          isHidden: panesByName[name].isHidden
         };
       }, {}),
       shouldShowMapButton: panes.length === 0

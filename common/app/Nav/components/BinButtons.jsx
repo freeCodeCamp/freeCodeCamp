@@ -16,9 +16,10 @@ function BinButtons({ panes }) {
   return (
     <ButtonGroup>
       {
-        panes.map(({ content, actionCreator }) => (
+        panes.map(({ content, actionCreator, isHidden }) => (
           <BinButton
             content={ content }
+            disabled={ isHidden }
             handleClick={ actionCreator }
             key={ content }
           />

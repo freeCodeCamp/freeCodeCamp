@@ -4,13 +4,14 @@ import { Button } from 'react-bootstrap';
 
 const propTypes = {
   content: PropTypes.string,
+  disabled: PropTypes.bool,
   handleClick: PropTypes.func.isRequired
 };
 
-export default function BinButton({ content, handleClick }) {
+export default function BinButton({ content, handleClick, disabled }) {
   return (
     <Button
-      bsStyle='primary'
+      className={ disabled ? 'disabled-button' : 'enabled-button' }
       onClick={ handleClick }
       >
       { content }
