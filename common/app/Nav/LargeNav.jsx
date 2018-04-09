@@ -13,13 +13,13 @@ function LargeNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
       render={
         () => (
           <Row>
-            <Col className='nav-component' sm={ 4 } xs={ 6 }>
+            <Col className='nav-component' sm={ 5 } xs={ 6 }>
               <Navbar.Header>
                 <NavLogo clickOnLogo={ clickOnLogo } />
                 <FCCSearchBar />
               </Navbar.Header>
             </Col>
-            <Col className='nav-component bins' sm={ 4 } xs={ 6 }>
+            <Col className='nav-component bins' sm={ 3 } xs={ 6 }>
               <BinButtons panes={ panes } />
             </Col>
             <Col className='nav-component nav-links' sm={ 4 } xs={ 0 }>
