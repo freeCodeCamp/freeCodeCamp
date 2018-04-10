@@ -6,9 +6,11 @@ import tape from 'tape';
 import getChallenges from './getChallenges';
 import { modern } from '../common/app/utils/challengeTypes';
 import MongoIds from './mongoIds';
+import ChallengeTitles from './challengeTitles';
 import addAssertsToTapTest from './addAssertsToTapTest';
 
 let mongoIds = new MongoIds();
+let challengeTitles = new ChallengeTitles();
 
 function evaluateTest(solution, assert,
   react, redux, reactRedux,
@@ -115,6 +117,7 @@ function createTest({
   reactRedux = false
 }) {
   mongoIds.check(id, title);
+  challengeTitles.check(title);
 
   solutions = solutions.filter(solution => !!solution);
   tests = tests.filter(test => !!test);
