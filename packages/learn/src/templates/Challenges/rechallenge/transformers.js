@@ -70,28 +70,6 @@ export const proxyLoggerTransformer = partial(
     })
 );
 
-// const addLoopProtect = partial(vinyl.transformContents, contents => {
-//   /* eslint-disable import/no-unresolved */
-//   const loopProtect = require('loop-protect');
-//   /* eslint-enable import/no-unresolved */
-//   loopProtect.hit = loopProtectHit;
-//   return loopProtect(contents);
-// });
-
-// export const addLoopProtectHtmlJsJsx = cond([
-//   [
-//     overEvery(
-//       testHTMLJS,
-//       partial(vinyl.testContents, contents =>
-//         contents.toLowerCase().includes('<script>')
-//       )
-//     ),
-//     addLoopProtect
-//   ],
-//   [testJS$JSX, addLoopProtect],
-//   [stubTrue, identity]
-// ]);
-
 export const replaceNBSP = cond([
   [
     testHTMLJS,
