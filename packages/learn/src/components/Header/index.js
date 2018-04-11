@@ -1,99 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Link from 'gatsby-link';
 
-import Auth from '../../auth';
+import './header.css';
 
-const auth = new Auth();
-
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      authenticated: false
-    };
-  }
-
-  login() {
-    auth.login();
-
-    this.setState({
-      authenticated: auth.isAuthenticated()
-    });
-  }
-
-  logout() {
-    auth.logout();
-
-    this.setState({
-      authenticated: auth.isAuthenticated()
-    });
-  }
-
-  componentDidMount() {
-    // this.setState({
-    //   authenticated: auth.isAuthenticated()
-    // });
-  }
-
-  render() {
-    return (
+function Header() {
+  return (
+    <header id='top-nav'>
       <div
         style={{
-          background: '#006400',
-          marginBottom: '0.45rem'
+          margin: '0 auto',
+          maxWidth: 960
         }}
         >
-        <div
+        <Link
           style={{
-            margin: '0 auto',
-            maxWidth: 960
+            color: 'white',
+            textDecoration: 'none'
           }}
+          to='/'
           >
-          <h1 style={{ margin: 0 }}>
-            <Link
-              style={{
-                color: 'white',
-                textDecoration: 'none'
-              }}
-              to='/'
-              >
-              freeCodeCamp
-            </Link>
-          </h1>
-          {this.state.authenticated ? (
-            <span>
-              <a
-                href='#'
-                onClick={this.logout.bind(this)}
-                style={{
-                  boxShadow: 'none',
-                  lineHeight: '37px',
-                  color: '#fff'
-                }}
-                >
-                Log Out
-                {auth.getUserName() && <span> ({auth.getUserName()})</span>}
-              </a>
-            </span>
-          ) : (
-            <span>
-              <a
-                href='#'
-                onClick={this.login.bind(this)}
-                style={{
-                  boxShadow: 'none',
-                  lineHeight: '37px',
-                  color: '#fff'
-                }}
-                >
-                Log In
-              </a>
-            </span>
-          )}
-        </div>
+          <img
+            alt='Logo - freeCodeCamp | Learn to code'
+            src={
+              'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg'
+            }
+            title='freeCodeCamp | Learn to code'
+          />
+        </Link>
       </div>
-    );
-  }
+    </header>
+  );
 }
 
 export default Header;
