@@ -5,13 +5,15 @@ const { dasherize } = require('./utils');
 const { viewTypes } = require('./utils/challengeTypes');
 const { blockNameify } = require('./utils/blockNameify');
 
+const classic = path.resolve(
+  __dirname,
+  './src/templates/Challenges/classic/Show.js'
+);
+
 const views = {
   // backend: BackEnd,
-  classic: path.resolve(
-    __dirname,
-    './src/templates/Challenges/classic/Show.js'
-  ),
-  // modern: Modern,
+  classic,
+  modern: classic,
   project: path.resolve(__dirname, './src/templates/Challenges/project/Show.js')
   // quiz: Quiz,
   // simple: Project,
@@ -46,6 +48,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               node {
                 challengeType
                 id
+                required {
+                  link
+                  raw
+                  src
+                }
+                template
                 fields {
                   slug
                 }
@@ -61,7 +69,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         // Create challenge pages.
         result.data.allChallengeNode.edges.forEach((edge, index, thisArray) => {
-          const { fields: { slug }, challengeType, id } = edge.node;
+          const { fields: { slug }, required = [], template, challengeType, id } = edge.node;
           const next = thisArray[index + 1];
           const nextChallengePath = next ? next.node.fields.slug : '/';
           createPage({
@@ -69,6 +77,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             component: views[viewTypes[challengeType]],
             context: {
               challengeMeta: {
+                template,
+                required,
                 nextChallengePath,
                 id
               },

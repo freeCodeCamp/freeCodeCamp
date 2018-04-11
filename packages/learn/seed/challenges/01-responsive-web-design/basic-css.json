@@ -23,8 +23,8 @@
           "testString": "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.');"
         },
         {
-          "text": "Your <code>style</code> declaration should end with a <code>;</code>.",
-          "testString": "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/), 'Your <code>style</code> declaration should end with a <code>;</code>.');"
+          "text": "Your <code>style</code> declaration should end with a <code>;</code> .",
+          "testString": "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/),' Your <code>style</code> declaration should end with a <code>;</code> .');"
         }
       ],
       "type": "waypoint",
@@ -79,7 +79,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -223,7 +223,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -366,7 +366,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -496,7 +496,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -601,7 +601,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -711,7 +711,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -846,7 +846,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -981,7 +981,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1111,7 +1111,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1262,7 +1262,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-borders-around-your-elements",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1385,7 +1385,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-rounded-corners-a-border-radius",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1508,7 +1508,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1644,7 +1644,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1784,7 +1784,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1938,7 +1938,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2087,7 +2087,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/adjust-the-padding-of-an-element",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2196,7 +2196,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2307,7 +2307,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-a-negative-margin-to-an-element",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2424,7 +2424,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2541,7 +2541,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2667,7 +2667,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2791,7 +2791,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2851,15 +2851,15 @@
       "tests": [
         {
           "text": "The <code>type</code> attribute selector should be used to select the checkboxes.",
-          "testString": "assert(code.match(/<style>[\\s\\S]*?\\[type=(\"|')checkbox\\1\\]\\s*?{[\\s\\S]*?}[\\s\\S]*?<\\/style>/gi), 'The <code>type</code> attribute selector should be used to select the checkboxes.');"
+          "testString": "assert(code.match(/<style>[\\s\\S]*?\\[type=(\"|')checkbox\\1\\]\\s*?{[\\s\\S]*?}[\\s\\S]*?<\\/style>/gi),'The <code>type</code> attribute selector should be used to select the checkboxes.');"
         },
         {
           "text": "The top margins of the checkboxes should be 10px.",
-          "testString": "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()), 'The top margins of the checkboxes should be 10px.');"
+          "testString": "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()),'The top margins of the checkboxes should be 10px.');"
         },
         {
           "text": "The bottom margins of the checkboxes should be 15px.",
-          "testString": "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()), 'The bottom margins of the checkboxes should be 15px.');"
+          "testString": "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()),'The bottom margins of the checkboxes should be 15px.');"
         }
       ],
       "solutions": [],
@@ -2869,7 +2869,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2967,7 +2967,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3089,7 +3089,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3193,7 +3193,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3282,7 +3282,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3394,7 +3394,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3524,7 +3524,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3631,7 +3631,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3755,7 +3755,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3849,7 +3849,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3953,7 +3953,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4076,7 +4076,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4196,7 +4196,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4292,7 +4292,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4355,7 +4355,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4590,7 +4590,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4834,7 +4834,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -5084,7 +5084,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -5323,7 +5323,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -5558,7 +5558,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -5799,7 +5799,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",

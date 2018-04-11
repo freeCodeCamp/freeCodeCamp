@@ -48,7 +48,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -115,7 +115,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -169,7 +169,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -223,7 +223,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",

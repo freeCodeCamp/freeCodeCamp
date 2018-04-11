@@ -33,6 +33,13 @@ export const ChallengeNode = PropTypes.shape({
   isRequired: PropTypes.bool,
   name: PropTypes.string,
   order: PropTypes.number,
+  required: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.string,
+      raw: PropTypes.string,
+      src: PropTypes.string
+    })
+  ),
   superOrder: PropTypes.number,
   superBlock: PropTypes.string,
   tail: PropTypes.arrayOf(PropTypes.string),

@@ -101,7 +101,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -189,7 +189,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -269,7 +269,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -342,7 +342,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -430,7 +430,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -519,7 +519,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -600,7 +600,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -675,7 +675,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -783,7 +783,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-images-to-your-website",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -879,7 +879,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -961,7 +961,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1089,7 +1089,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1167,7 +1167,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1263,7 +1263,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1366,7 +1366,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1489,7 +1489,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1586,7 +1586,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1688,7 +1688,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1788,7 +1788,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1893,7 +1893,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-a-submit-button-to-a-form",
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1991,7 +1991,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2127,7 +2127,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2249,7 +2249,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2350,7 +2350,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2467,7 +2467,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2554,7 +2554,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2621,7 +2621,7 @@
         }
       },
       "files": {
-        "indexhtml": {
+        "indexjs": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",

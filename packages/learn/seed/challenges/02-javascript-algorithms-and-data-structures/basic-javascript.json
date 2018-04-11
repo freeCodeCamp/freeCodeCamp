@@ -490,7 +490,7 @@
         },
         {
           "text": "Only subtract one number from 45.",
-          "testString": "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*[0-9]*;(?!\\s*[a-zA-Z0-9]+)/.test(code), 'Only subtract one number from 45.');"
+          "testString": "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*[0-9]*;(?!\\s*[a-zA-Z0-9]+)/.test(code),'Only subtract one number from 45.');"
         }
       ],
       "type": "waypoint",
@@ -539,7 +539,7 @@
       "tests": [
         {
           "text": "Make the variable <code>product</code> equal 80",
-          "testString": "assert(product === 80, 'Make the variable <code>product</code> equal 80');"
+          "testString": "assert(product === 80,'Make the variable <code>product</code> equal 80');"
         },
         {
           "text": "Use the <code>*</code> operator",
@@ -1411,8 +1411,8 @@
       ],
       "tests": [
         {
-          "text": "Remove all the <code>backslashes</code> (<code>\\</code>",
-          "testString": "assert(!/\\\\/g.test(code) && myStr.match('\\\\s*<a href\\\\s*=\\\\s*\"http://www.example.com\"\\\\s*target\\\\s*=\\\\s*\"_blank\">\\\\s*Link\\\\s*</a>\\\\s*'), 'Remove all the <code>backslashes</code> (<code>\\</code>');"
+          "text": "Remove all the <code>backslashes</code> (<code>\\</code>)",
+          "testString": "assert(!/\\\\/g.test(code) && myStr.match('\\\\s*<a href\\\\s*=\\\\s*\"http://www.example.com\"\\\\s*target\\\\s*=\\\\s*\"_blank\">\\\\s*Link\\\\s*</a>\\\\s*'), 'Remove all the <code>backslashes</code> (<code>\\</code>)');"
         },
         {
           "text": "You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>",
@@ -1473,8 +1473,8 @@
           "testString": "assert(!/ /.test(myStr), '<code>myStr</code> should not contain any spaces');"
         },
         {
-          "text": "<code>myStr</code> should contain the strings <code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> (remember case sensitivity",
-          "testString": "assert(/FirstLine/.test(myStr) && /SecondLine/.test(myStr) && /ThirdLine/.test(myStr), '<code>myStr</code> should contain the strings <code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> (remember case sensitivity');"
+          "text": "<code>myStr</code> should contain the strings <code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> (remember case sensitivity)",
+          "testString": "assert(/FirstLine/.test(myStr) && /SecondLine/.test(myStr) && /ThirdLine/.test(myStr), '<code>myStr</code> should contain the strings <code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> (remember case sensitivity)');"
         },
         {
           "text": "<code>FirstLine</code> should be followed by the newline character <code>\\n</code>",
@@ -2151,11 +2151,11 @@
         },
         {
           "text": "<code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).",
-          "testString": "assert(/\\bdog\\b/.test(test1) && /\\bbig\\b/.test(test1) && /\\bran\\b/.test(test1) && /\\bquickly\\b/.test(test1), '<code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');"
+          "testString": "assert(/\\bdog\\b/.test(test1) && /\\bbig\\b/.test(test1) && /\\bran\\b/.test(test1) && /\\bquickly\\b/.test(test1),'<code>wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');"
         },
         {
           "text": "<code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).",
-          "testString": "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2), '<code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');"
+          "testString": "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2),'<code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');"
         }
       ],
       "type": "checkpoint",
@@ -5238,12 +5238,12 @@
           "testString": "assert(chainToSwitch(7) === \"Ate Nine\", '<code>chainToSwitch(7)</code> should be \"Ate Nine\"');"
         },
         {
-          "text": "<code>chainToSwitch(\"John\")</code> should be \"\" (empty string",
-          "testString": "assert(chainToSwitch(\"John\") === \"\", '<code>chainToSwitch(\"John\")</code> should be \"\" (empty string');"
+          "text": "<code>chainToSwitch(\"John\")</code> should be \"\" (empty string)",
+          "testString": "assert(chainToSwitch(\"John\") === \"\", '<code>chainToSwitch(\"John\")</code> should be \"\" (empty string)');"
         },
         {
-          "text": "<code>chainToSwitch(156)</code> should be \"\" (empty string",
-          "testString": "assert(chainToSwitch(156) === \"\", '<code>chainToSwitch(156)</code> should be \"\" (empty string');"
+          "text": "<code>chainToSwitch(156)</code> should be \"\" (empty string)",
+          "testString": "assert(chainToSwitch(156) === \"\", '<code>chainToSwitch(156)</code> should be \"\" (empty string)');"
         }
       ],
       "type": "waypoint",
@@ -5806,15 +5806,15 @@
         },
         {
           "text": "You should use bracket notation to access <code>testObj</code>",
-          "testString": "assert(/testObj\\s*?\\[.*?\\]/.test(code), 'You should use bracket notation to access <code>testObj</code>');"
+          "testString": "assert(/testObj\\s*?\\[.*?\\]/.test(code),'You should use bracket notation to access <code>testObj</code>');"
         },
         {
           "text": "You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.",
-          "testString": "assert(!code.match(/player\\s*=\\s*\"|\\'\\s*Montana\\s*\"|\\'\\s*;/gi), 'You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.');"
+          "testString": "assert(!code.match(/player\\s*=\\s*\"|\\'\\s*Montana\\s*\"|\\'\\s*;/gi),'You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.');"
         },
         {
           "text": "You should be using the variable <code>playerNumber</code> in your bracket notation",
-          "testString": "assert(/testObj\\s*?\\[\\s*playerNumber\\s*\\]/.test(code), 'You should be using the variable <code>playerNumber</code> in your bracket notation');"
+          "testString": "assert(/testObj\\s*?\\[\\s*playerNumber\\s*\\]/.test(code),'You should be using the variable <code>playerNumber</code> in your bracket notation');"
         }
       ],
       "type": "waypoint",

@@ -1,4 +1,4 @@
-export function createTypes(types, ns) {
+export function createTypes(types = [], ns = 'annon') {
   return types.reduce(
     (types, action) => ({
       ...types,

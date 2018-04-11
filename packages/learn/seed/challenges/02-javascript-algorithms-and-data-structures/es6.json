@@ -26,7 +26,7 @@
       "tests": [
         {
           "text": "<code>var</code> does not exist in code.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.');"
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');"
         },
         {
           "text": "<code>catName</code> should be <code>Oliver</code>.",
@@ -85,7 +85,7 @@
       "tests": [
         {
           "text": "<code>var</code> does not exist in code.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.');"
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');"
         },
         {
           "text": "The variable <code>i</code> declared in the if statement should equal \"block scope\".",
@@ -137,7 +137,7 @@
       "tests": [
         {
           "text": "<code>var</code> does not exist in code.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), '<code>var</code> does not exist in code.');"
+          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');"
         },
         {
           "text": "<code>SENTENCE</code> should be a constant variable (by using <code>const</code>).",
@@ -606,11 +606,11 @@
         },
         {
           "text": "<code>...</code> spread operator was used to duplicate <code>arr1</code>.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*...arr1\\s*\\]/g), '<code>...</code> spread operator was used to duplicate <code>arr1</code>.');"
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*...arr1\\s*\\]/g),'<code>...</code> spread operator was used to duplicate <code>arr1</code>.');"
         },
         {
           "text": "<code>arr2</code> remains unchanged when <code>arr1</code> is changed.",
-          "testString": "assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length}, '<code>arr2</code> remains unchanged when <code>arr1</code> is changed.');"
+          "testString": "assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length},'<code>arr2</code> remains unchanged when <code>arr1</code> is changed.');"
         }
       ],
       "type": "waypoint",
@@ -663,7 +663,7 @@
         },
         {
           "text": "destructuring with reassignment was used",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g), 'destructuring with reassignment was used');"
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g),'destructuring with reassignment was used');"
         }
       ],
       "type": "waypoint",
@@ -712,7 +712,7 @@
         },
         {
           "text": "nested destructuring was used",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g), 'nested destructuring was used');"
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g),'nested destructuring was used');"
         }
       ],
       "type": "waypoint",
@@ -813,11 +813,11 @@
       "tests": [
         {
           "text": "<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>",
-          "testString": "assert(arr.every((v, i) => v === i + 3), '<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');"
+          "testString": "assert(arr.every((v, i) => v === i + 3),'<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');"
         },
         {
           "text": "destructuring was used.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g), 'destructuring was used.');"
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g),'destructuring was used.');"
         },
         {
           "text": "<code>Array.slice()</code> was not used.",
@@ -1102,11 +1102,11 @@
         },
         {
           "text": "<code>class</code> keyword was used.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/class/g), '<code>class</code> keyword was used.');"
+          "testString": "getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');"
         },
         {
           "text": "<code>Vegetable</code> can be instantiated.",
-          "testString": "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';}, '<code>Vegetable</code> can be instantiated.');"
+          "testString": "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';},'<code>Vegetable</code> can be instantiated.');"
         }
       ],
       "type": "waypoint",
@@ -1158,11 +1158,11 @@
       "tests": [
         {
           "text": "<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.",
-          "testString": "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function', '<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.');"
+          "testString": "assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.');"
         },
         {
           "text": "<code>class</code> keyword was used.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/class/g), '<code>class</code> keyword was used.');"
+          "testString": "getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');"
         },
         {
           "text": "<code>Thermostat</code> can be instantiated.",
