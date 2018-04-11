@@ -5,6 +5,7 @@ import { createPoly } from '../utils/polyvinyl';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
 import executeChallengeEpic from './execute-challenge-epic';
+import codeLockEpic from './code-lock-epic';
 
 const ns = 'challenge';
 
@@ -24,7 +25,12 @@ const initialState = {
   successMessage: 'Happy Coding!'
 };
 
-export const epics = [challengeModalEpic, completionEpic, executeChallengeEpic];
+export const epics = [
+  challengeModalEpic,
+  codeLockEpic,
+  completionEpic,
+  executeChallengeEpic
+];
 
 export const types = createTypes(
   [
@@ -37,6 +43,8 @@ export const types = createTypes(
     'updateJSEnabled',
     'updateSuccessMessage',
     'updateTests',
+
+    'unlockCode',
     'disableJSOnError',
 
     'closeModal',
@@ -74,6 +82,7 @@ export const updateConsole = createAction(types.updateConsole);
 export const updateJSEnabled = createAction(types.updateJSEnabled);
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 
+export const unlockCode = createAction(types.unlockCode);
 export const disableJSOnError = createAction(types.disableJSOnError, err => {
   console.error(err);
   return {};
@@ -130,6 +139,10 @@ export const reducer = handleActions(
           contents: editorValue
         }
       }
+    }),
+    [types.unlockCode]: state => ({
+      ...state,
+      isJSEnabled: true
     }),
     [types.disableJSOnError]: state => ({
       ...state,

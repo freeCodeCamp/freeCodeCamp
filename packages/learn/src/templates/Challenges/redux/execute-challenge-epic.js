@@ -1,4 +1,8 @@
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
+import { merge } from 'rxjs/observable/merge';
+import { of } from 'rxjs/observable/of';
+import { from } from 'rxjs/observable/from';
+
 import {
   debounceTime,
   switchMap,
@@ -28,7 +32,7 @@ import {
 const executeDebounceTimeout = 750;
 
 function updateMainEpic(actions, { getState }, { document }) {
-  return Observable.of(document).pipe(
+  return of(document).pipe(
     filter(Boolean),
     switchMap(() => {
       const proxyLogger = new Subject();
@@ -40,10 +44,10 @@ function updateMainEpic(actions, { getState }, { document }) {
           buildFromFiles(getState(), true)
             .map(frameMain)
             .ignoreElements()
-            .catch(err => console.error(err))
+            .catch(() => of({ type: 'NULL'}))
         )
       );
-      return Observable.merge(
+      return merge(
         buildAndFrameMain,
         proxyLogger.map(updateConsole)
       );
@@ -52,7 +56,7 @@ function updateMainEpic(actions, { getState }, { document }) {
 }
 
 function executeChallengeEpic(action$, { getState }, { document }) {
-  return Observable.of(document).pipe(
+  return of(document).pipe(
     filter(Boolean),
     switchMap(() => {
       const frameReady = new Subject();
@@ -64,18 +68,18 @@ function executeChallengeEpic(action$, { getState }, { document }) {
           tests: challengeTestsSelector(getState())
         })),
         switchMap(({ checkChallengePayload, tests }) => {
-          const postTests = Observable.of(
+          const postTests = of(
             updateConsole('// tests completed'),
             checkChallenge(checkChallengePayload)
           ).delay(250);
           // run the tests within the test iframe
           return runTestsInTestFrame(document, tests)
             .flatMap(tests => {
-              return Observable.from(tests).pipe(
+              return from(tests).pipe(
                 map(({ message }) => message),
                 filter(_.overEvery(_.isString, Boolean)),
                 map(updateConsole),
-                concat(Observable.of(updateTests(tests)))
+                concat(of(updateTests(tests)))
               );
             })
             .concat(postTests);
@@ -103,7 +107,7 @@ function executeChallengeEpic(action$, { getState }, { document }) {
             .catch(err => console.log(err));
         })
       );
-      return Observable.merge(buildAndFrameChallenge, challengeResults);
+      return merge(buildAndFrameChallenge, challengeResults);
     })
   );
 }
