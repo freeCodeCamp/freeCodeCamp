@@ -1,5 +1,8 @@
 .hide-test-frame {
-  display: none;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden;
 }
 
 .challenge-preview, .challenge-preview-frame {
