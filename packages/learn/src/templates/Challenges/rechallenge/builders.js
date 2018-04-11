@@ -49,11 +49,11 @@ export const cssToHtml = cond([
   [stubTrue, identity]
 ]);
 
-// FileStream::concactHtml(
+// FileStream::concatHtml(
 //   required: [ ...Object ],
 //   template: String
 // ) => Observable[{ build: String, sources: Dictionary }]
-export function concactHtml(required, template) {
+export function concatHtml(required, template) {
   const createBody = template ? _.template(template) : defaultTemplate;
   const source = this.shareReplay();
   const sourceMap = source.flatMap(files =>

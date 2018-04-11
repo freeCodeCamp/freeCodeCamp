@@ -6,6 +6,7 @@ import throwers from '../rechallenge/throwers';
 import {
   challengeFilesSelector,
   isJSEnabledSelector,
+  challengeMetaSelector,
   disableJSOnError
 } from '../redux';
 import {
@@ -13,7 +14,7 @@ import {
   proxyLoggerTransformer,
   testJS$JSX
 } from '../rechallenge/transformers';
-import { cssToHtml, jsToHtml, concactHtml } from '../rechallenge/builders.js';
+import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 import { createFileStream, pipe } from './polyvinyl';
 
 const jQuery = {
@@ -40,8 +41,7 @@ function filterJSIfDisabled(state) {
 
 export function buildFromFiles(state, shouldProxyConsole) {
   const files = challengeFilesSelector(state);
-  const required = [];
-  /* challengeRequiredSelector(state);*/
+  const { required, template } = challengeMetaSelector(state);
   const finalRequires = [...globalRequires, ...required];
   const requiredFiles = Object.keys(files)
     .map(key => files[key])
@@ -53,12 +53,8 @@ export function buildFromFiles(state, shouldProxyConsole) {
     ::pipe(shouldProxyConsole ? proxyLoggerTransformer : identity)
     ::pipe(jsToHtml)
     ::pipe(cssToHtml)
-    ::concactHtml(
-      finalRequires,
-      false
-      /* challengeTemplateSelector(state) */
-    )
-    .catch(err => of(disableJSOnError(err)));
+    ::concatHtml(finalRequires, template)
+    .catch(err => disableJSOnError(err));
 }
 
 // export function buildBackendChallenge(state) {
