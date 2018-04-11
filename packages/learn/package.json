@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "adler32": "^0.1.7",
+    "auth0-js": "^9.4.2",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
     "babel-standalone": "^6.26.0",

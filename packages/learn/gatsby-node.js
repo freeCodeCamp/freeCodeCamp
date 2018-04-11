@@ -69,7 +69,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         // Create challenge pages.
         result.data.allChallengeNode.edges.forEach((edge, index, thisArray) => {
-          const { fields: { slug }, required = [], template, challengeType, id } = edge.node;
+          const {
+            fields: { slug },
+            required = [],
+            template,
+            challengeType,
+            id
+          } = edge.node;
           const next = thisArray[index + 1];
           const nextChallengePath = next ? next.node.fields.slug : '/';
           createPage({
