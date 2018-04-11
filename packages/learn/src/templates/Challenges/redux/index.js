@@ -91,7 +91,7 @@ export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
 export const isCompletionModalOpenSelector = state =>
-state[ns].modal.completion;
+  state[ns].modal.completion;
 export const isJSEnabledSelector = state => state[ns].isJSEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 

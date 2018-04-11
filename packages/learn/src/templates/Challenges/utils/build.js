@@ -1,4 +1,3 @@
-import { of } from 'rxjs/observable/of';
 import identity from 'lodash/identity';
 
 // import { fetchScript } from './fetch-and-cache.js';

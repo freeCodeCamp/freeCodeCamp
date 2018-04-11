@@ -58,7 +58,6 @@ class ShowClassic extends PureComponent {
     } = this.props;
     createFiles(files);
     initTests(tests);
-    console.log(challengeMeta);
     updateChallengeMeta(challengeMeta);
   }
 
@@ -93,7 +92,6 @@ class ShowClassic extends PureComponent {
       },
       files
     } = this.props;
-    console.log(files);
     const editors = Object.keys(files)
       .map(key => files[key])
       .map((file, index) => (
@@ -105,10 +103,9 @@ class ShowClassic extends PureComponent {
         </Fragment>
       ));
 
-    const showPreview = (
+    const showPreview =
       challengeType === challengeTypes.html ||
-      challengeType === challengeTypes.modern
-    );
+      challengeType === challengeTypes.modern;
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Fragment>
