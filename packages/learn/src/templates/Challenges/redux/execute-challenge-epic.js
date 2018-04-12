@@ -44,13 +44,10 @@ function updateMainEpic(actions, { getState }, { document }) {
           buildFromFiles(getState(), true)
             .map(frameMain)
             .ignoreElements()
-            .catch(() => of({ type: 'NULL'}))
+            .catch(() => of({ type: 'NULL' }))
         )
       );
-      return merge(
-        buildAndFrameMain,
-        proxyLogger.map(updateConsole)
-      );
+      return merge(buildAndFrameMain, proxyLogger.map(updateConsole));
     })
   );
 }
