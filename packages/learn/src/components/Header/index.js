@@ -21,13 +21,14 @@ function Header() {
           >
           <img
             alt='Logo - freeCodeCamp | Learn to code'
-            src={
-              'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg'
-            }
+            src={'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg'}
             title='freeCodeCamp | Learn to code'
           />
         </Link>
       </div>
+      <Link to='/sign-in'>
+        <button>Sign In</button>
+      </Link>
     </header>
   );
 }

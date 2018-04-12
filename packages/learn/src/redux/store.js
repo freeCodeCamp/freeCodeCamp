@@ -6,8 +6,11 @@ import {
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { routerReducer as router, routerMiddleware } from 'react-router-redux';
 
-import { reducer as app } from './app';
-import { reducer as challenge, epics } from '../templates/Challenges/redux';
+import { reducer as app, epics as appEpics } from './app';
+import {
+  reducer as challenge,
+  epics as challengeEpics
+} from '../templates/Challenges/redux';
 import { reducer as map } from '../components/Map/redux';
 
 const rootReducer = combineReducers({
@@ -17,7 +20,7 @@ const rootReducer = combineReducers({
   router
 });
 
-const rootEpic = combineEpics(...epics);
+const rootEpic = combineEpics(...appEpics, ...challengeEpics);
 
 const epicMiddleware = createEpicMiddleware(rootEpic, {
   dependencies: {
