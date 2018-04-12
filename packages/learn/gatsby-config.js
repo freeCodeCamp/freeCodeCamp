@@ -24,6 +24,14 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'introductions',
+        path: path.resolve(__dirname, './src/introductions')
+      }
+    },
+    'gatsby-transformer-remark',
+    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: ['Lato:400,400i,700']

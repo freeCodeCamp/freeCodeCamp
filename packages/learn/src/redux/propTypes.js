@@ -9,6 +9,15 @@ const FileType = PropTypes.shape({
   tail: PropTypes.string
 });
 
+export const MarkdownRemark = PropTypes.shape({
+  html: PropTypes.string,
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string,
+    block: PropTypes.string,
+    superBlock: PropTypes.string
+  })
+});
+
 export const ChallengeNode = PropTypes.shape({
   block: PropTypes.string,
   challengeType: PropTypes.number,

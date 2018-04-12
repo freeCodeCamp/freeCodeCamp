@@ -9,6 +9,7 @@ const classic = path.resolve(
   __dirname,
   './src/templates/Challenges/classic/Show.js'
 );
+const intro = path.resolve(__dirname, './src/templates/Introduction/Intro.js');
 
 const views = {
   // backend: BackEnd,
@@ -32,6 +33,16 @@ exports.onCreateNode = function onCreateNode({ node, boundActionCreators }) {
     createNodeField({ node, name: 'blockName', value: blockNameify(block) });
     // TODO: Normalise tests to { test: '', testString: ''}?
     createNodeField({ node, name: 'tests', value: tests });
+  }
+
+  if (node.internal.type === 'MarkdownRemark') {
+    const { frontmatter: { block, superBlock, title } } = node;
+
+    const slug = `/${dasherize(superBlock)}${
+      block ? `/${dasherize(block)}${title ? `/${dasherize(title)}` : ''}` : ''
+    }`;
+
+    createNodeField({ node, name: 'slug', value: slug });
   }
 };
 
@@ -57,6 +68,21 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 fields {
                   slug
                 }
+              }
+            }
+          }
+          allMarkdownRemark {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  block
+                  superBlock
+                  title
+                }
+                html
               }
             }
           }
@@ -88,6 +114,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 nextChallengePath,
                 id
               },
+              slug
+            }
+          });
+        });
+
+        // Create intro pages
+        result.data.allMarkdownRemark.edges.forEach(edge => {
+          const { fields: { slug } } = edge.node;
+          createPage({
+            path: slug,
+            component: intro,
+            context: {
               slug
             }
           });
