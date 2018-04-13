@@ -2157,6 +2157,7 @@
         "<code>&lt;div style=\"color: yellow; font-size: 16px\"&gt;Mellow Yellow&lt;/div&gt;</code>",
         "JSX elements use the <code>style</code> attribute, but because of the way JSX is transpiled, you can't set the value to a <code>string</code>. Instead, you set it equal to a JavaScript <code>object</code>. Here's an example:",
         "<code>&lt;div style={{color: \"yellow\", fontSize: 16}}&gt;Mellow Yellow&lt;/div&gt;</code>",
+        "Notice how we camelCase the \"fontSize\" property? This is because React will not accept kebab-case keys in the style object. React will apply the correct property name for us in the HTML.",
         "<hr>",
         "Add a <code>style</code> attribute to the <code>div</code> in the code editor to give the text a color of red and font size of 72px.",
         "Note that you can optionally set the font size to be a number, omitting the units \"px\", or write it as \"72px\"."
