@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import ChallengeTitle from '../../Challenge-Title.jsx';
+import ChallengeTitle from '../components/Challenge-Title';
 
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
@@ -15,7 +15,7 @@ export default class SidePanel extends PureComponent {
       <li
         className='step-text wrappable'
         dangerouslySetInnerHTML={{ __html: line }}
-        key={ title.slice(6) + index }
+        key={title.slice(6) + index}
       />
     ));
   }
@@ -24,12 +24,8 @@ export default class SidePanel extends PureComponent {
     const { title, description, isCompleted } = this.props;
     return (
       <div>
-        <ChallengeTitle isCompleted={ isCompleted }>
-          { title }
-        </ChallengeTitle>
-        <ul>
-          { this.renderDescription(title, description) }
-        </ul>
+        <ChallengeTitle isCompleted={isCompleted}>{title}</ChallengeTitle>
+        <ul>{this.renderDescription(title, description)}</ul>
       </div>
     );
   }

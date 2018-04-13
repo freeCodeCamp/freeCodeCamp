@@ -53,7 +53,10 @@ export default Layout;
 
 export const query = graphql`
   query LayoutQuery {
-    allChallengeNode(sort: { fields: [superOrder, order, suborder] }) {
+    allChallengeNode(
+      filter: { isPrivate: { eq: false } }
+      sort: { fields: [superOrder, order, suborder] }
+    ) {
       edges {
         node {
           fields {

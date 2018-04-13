@@ -1,40 +1,66 @@
-import React from 'react';
-// import { addNS } from 'berkeleys-redux-utils';
+/* global graphql */
+import React, { PureComponent, Fragment } from 'react';
+import PropTypes from 'prop-types';
+// import { createSelector } from 'reselect';
+// import { connect } from 'react-redux';
 
-// import ns from './ns.json';
-// import Main from './Project.jsx';
-// import ChildContainer from '../../Child-Container.jsx';
-// import { types } from '../../redux';
-// import Panes from '../../../../Panes';
-// import _Map from '../../../../Map';
+import Helmet from 'react-helmet';
 
-// const propTypes = {};
-// export const mapStateToPanes = addNS(
-//   ns,
-//   () => ({
-//     [types.toggleMap]: 'Map',
-//     [types.toggleMain]: 'Main'
-//   })
-// );
+import { ChallengeNode } from '../../../redux/propTypes';
+import SidePanel from './Side-Panel';
+import ToolPanel from './Tool-Panel';
+// import HelpModal from '../components/Help-Modal.jsx';
 
-// const nameToComponent = {
-//   Map: _Map,
-//   Main: Main
-// };
+const propTypes = {
+  data: PropTypes.shape({
+    challengeNode: ChallengeNode
+  })
+};
 
-// const renderPane = name => {
-//   const Comp = nameToComponent[name];
-//   return Comp ? <Comp /> : <span>Pane { name } not found</span>;
-// };
-
-export default function ShowProject() {
-  return (
-    <h1>Project</h1>
-    // <ChildContainer isFullWidth={ true }>
-    //   <Panes render={ renderPane }/>
-    // </ChildContainer>
-  );
+export class Project extends PureComponent {
+  render() {
+    const {
+      data: {
+        challengeNode: {
+          challengeType,
+          fields: { blockName },
+          title,
+          description,
+          guideUrl
+        }
+      }
+    } = this.props;
+    const blockNameTitle = `${blockName} - ${title}`;
+    return (
+      <Fragment>
+        <Helmet title={`${blockNameTitle} | Learn freeCodeCamp}`} />
+        <SidePanel
+          className='full-height'
+          description={description}
+          guideUrl={guideUrl}
+          title={blockNameTitle}
+        />
+        <ToolPanel challengeType={challengeType} helpChatRoom='help' />
+      </Fragment>
+    );
+  }
 }
 
-ShowProject.displayName = 'ShowProject';
-// ShowProject.propTypes = propTypes;
+Project.displayName = 'Project';
+Project.propTypes = propTypes;
+
+export default Project;
+
+export const query = graphql`
+  query ProjectChallenge($slug: String!) {
+    challengeNode(fields: { slug: { eq: $slug } }) {
+      title
+      guideUrl
+      description
+      challengeType
+      fields {
+        blockName
+      }
+    }
+  }
+`;

@@ -26,9 +26,6 @@ function Header() {
           />
         </Link>
       </div>
-      <Link to='/sign-in'>
-        <button>Sign In</button>
-      </Link>
     </header>
   );
 }

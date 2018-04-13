@@ -39,10 +39,12 @@
     "react-test-renderer": "^16.3.1",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
+    "redux-form": "5",
     "redux-observable": "^0.18.0",
     "reselect": "^3.0.1",
     "rxjs": "^5.5.7",
-    "uglifyjs-webpack-plugin": "^1.2.4"
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "validator": "^9.4.1"
   },
   "keywords": [
     "gatsby"

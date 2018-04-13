@@ -6,6 +6,8 @@ import {
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { routerReducer as router, routerMiddleware } from 'react-router-redux';
 
+import { reducer as formReducer } from 'redux-form';
+
 import { reducer as app, epics as appEpics } from './app';
 import {
   reducer as challenge,
@@ -16,6 +18,7 @@ import { reducer as map } from '../components/Map/redux';
 const rootReducer = combineReducers({
   app,
   challenge,
+  form: formReducer,
   map,
   router
 });

@@ -13,7 +13,7 @@ export default function signInEpic(action$, _, { window }) {
       const request = {
         url: 'http://localhost:3000/passwordless-auth',
         method: 'POST',
-        body: { email: payload, returnTo: window.location.origin }
+        body: { email: payload, return: window.location.origin }
       };
 
       return ajax(request).pipe(

@@ -4809,6 +4809,10 @@ hoek@4.x.x:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
 
+hoist-non-react-statics@^1.0.5:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
+
 hoist-non-react-statics@^2.3.0, hoist-non-react-statics@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
@@ -8421,6 +8425,12 @@ react-is@^16.3.1:
   version "16.3.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.1.tgz#ee66e6d8283224a83b3030e110056798488359ba"
 
+react-lazy-cache@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-lazy-cache/-/react-lazy-cache-3.0.1.tgz#0dc64d38df1767ef77678c5c94190064cb11b0cd"
+  dependencies:
+    deep-equal "^1.0.1"
+
 react-measure@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.0.2.tgz#072a9a5fafc01dfbadc1fa5fb09fc351037f636c"
@@ -8726,6 +8736,17 @@ redux-devtools-instrument@^1.3.3:
   dependencies:
     lodash "^4.2.0"
     symbol-observable "^1.0.2"
+
+redux-form@5:
+  version "5.3.6"
+  resolved "https://registry.yarnpkg.com/redux-form/-/redux-form-5.3.6.tgz#f77a81dbf38d44d26ea411100a23f19e29cd1946"
+  dependencies:
+    deep-equal "^1.0.1"
+    hoist-non-react-statics "^1.0.5"
+    invariant "^2.0.0"
+    is-promise "^2.1.0"
+    prop-types "^15.5.8"
+    react-lazy-cache "^3.0.1"
 
 redux-observable@^0.18.0:
   version "0.18.0"
@@ -10728,6 +10749,10 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validator@^9.4.1:
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-9.4.1.tgz#abf466d398b561cd243050112c6ff1de6cc12663"
 
 value-equal@^0.4.0:
   version "0.4.0"
