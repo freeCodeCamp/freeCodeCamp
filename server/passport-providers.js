@@ -11,7 +11,7 @@ export default {
     passwordField: 'password',
     authPath: '/auth/local',
     successRedirect: successRedirect,
-    failureRedirect: '/email-signin',
+    failureRedirect: failureRedirect,
     session: true,
     failureFlash: true
   },
@@ -109,6 +109,7 @@ export default {
     failureRedirect: failureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
+    profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE
@@ -126,6 +127,7 @@ export default {
     failureRedirect: linkFailureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
+    profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE

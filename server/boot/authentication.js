@@ -31,6 +31,8 @@ module.exports = function enableAuthentication(app) {
 
   router.get('/login', (req, res) => res.redirect(301, '/signin'));
   router.get('/logout', (req, res) => res.redirect(301, '/signout'));
+  router.get('/signup', (req, res) => res.redirect(301, '/signin'));
+  router.get('/email-signin', (req, res) => res.redirect(301, '/signin'));
 
   function getEmailSignin(req, res) {
     if (isSignUpDisabled) {
@@ -43,9 +45,7 @@ module.exports = function enableAuthentication(app) {
     });
   }
 
-  router.get('/signup', ifUserRedirect, getEmailSignin);
   router.get('/signin', ifUserRedirect, getEmailSignin);
-  router.get('/email-signin', ifUserRedirect, getEmailSignin);
 
   router.get('/signout', (req, res) => {
     req.logout();
@@ -94,7 +94,7 @@ module.exports = function enableAuthentication(app) {
         {
           type: 'info',
           message: 'The email encoded in the link is incorrectly formatted',
-          redirectTo: '/email-sign'
+          redirectTo: '/signin'
         }
       ));
     }
@@ -107,7 +107,7 @@ module.exports = function enableAuthentication(app) {
             {
               type: 'info',
               message: defaultErrorMsg,
-              redirectTo: '/email-signin'
+              redirectTo: '/signin'
             }
           );
         }
@@ -121,7 +121,7 @@ module.exports = function enableAuthentication(app) {
                 {
                   type: 'info',
                   message: defaultErrorMsg,
-                  redirectTo: '/email-signin'
+                  redirectTo: '/signin'
                 }
               );
             }
@@ -132,7 +132,7 @@ module.exports = function enableAuthentication(app) {
                   {
                     type: 'info',
                     message: defaultErrorMsg,
-                    redirectTo: '/email-signin'
+                    redirectTo: '/signin'
                   }
                 );
               }
@@ -148,7 +148,7 @@ module.exports = function enableAuthentication(app) {
                         Looks like the link you clicked has expired,
                         please request a fresh link, to sign in.
                       `,
-                      redirectTo: '/email-signin'
+                      redirectTo: '/signin'
                     }
                   );
                 }
@@ -187,7 +187,7 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessGetValidators,
-    createValidatorErrorHandler('errors', '/email-signup'),
+    createValidatorErrorHandler('errors', '/signin'),
     getPasswordlessAuth
   );
 
@@ -215,7 +215,19 @@ module.exports = function enableAuthentication(app) {
         )
         .flatMap(user => user.requestAuthEmail(!_user))
       )
-      .do(msg => res.status(200).send({ message: msg }))
+      .do(msg => {
+        let redirectTo = '/';
+
+        if (
+          req.session &&
+          req.session.returnTo
+        ) {
+          redirectTo = req.session.returnTo;
+        }
+
+        req.flash('info', msg);
+        return res.redirect(redirectTo);
+      })
       .subscribe(_.noop, next);
   }
 
@@ -223,7 +235,7 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessPostValidators,
-    createValidatorErrorHandler('errors', '/email-signup'),
+    createValidatorErrorHandler('errors', '/signin'),
     postPasswordlessAuth
   );
 

@@ -22,7 +22,7 @@ const routes = [
   '/map',
   '/settings',
   '/settings/*',
-  '/:username'
+  '/portfolio/:username'
 ];
 
 const devRoutes = [];

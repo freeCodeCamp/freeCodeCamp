@@ -234,7 +234,7 @@ module.exports = function(User) {
               throw wrapHandledError(
                 new Error('user already exists'),
                 {
-                  redirectTo: '/email-signin',
+                  redirectTo: '/signin',
                   message: dedent`
         The ${user.email} email address is already associated with an account.
         Try signing in with it here instead.
