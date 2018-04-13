@@ -24,23 +24,25 @@ const Layout = ({ children, data: { allChallengeNode: { edges } } }) => (
       ]}
     />
     <Header />
-    <ReflexContainer className='app-wrapper' orientation='vertical'>
-      <ReflexElement flex={0.2} minSize={100}>
-        <aside id='map'>
-          <Map
-            nodes={edges
-              .map(({ node }) => node)
-              .filter(({ isPrivate }) => !isPrivate)}
-          />
-        </aside>
-      </ReflexElement>
+    <div className='app-wrapper'>
+      <ReflexContainer orientation='vertical'>
+        <ReflexElement flex={0.2} minSize={100}>
+          <aside id='map'>
+            <Map
+              nodes={edges
+                .map(({ node }) => node)
+                .filter(({ isPrivate }) => !isPrivate)}
+            />
+          </aside>
+        </ReflexElement>
 
-      <ReflexSplitter />
+        <ReflexSplitter />
 
-      <ReflexElement>
-        <main>{children()}</main>
-      </ReflexElement>
-    </ReflexContainer>
+        <ReflexElement>
+          <main>{children()}</main>
+        </ReflexElement>
+      </ReflexContainer>
+    </div>
   </Fragment>
 );
 

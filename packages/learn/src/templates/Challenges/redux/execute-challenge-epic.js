@@ -20,7 +20,8 @@ import {
   initConsole,
   updateConsole,
   checkChallenge,
-  updateTests
+  updateTests,
+  disableJSOnError
 } from './';
 import { buildFromFiles } from '../utils/build';
 import {
@@ -101,7 +102,7 @@ function executeChallengeEpic(action$, { getState }, { document }) {
             .do(frameTests)
             .ignoreElements()
             .startWith(initConsole('// running test'))
-            .catch(err => console.log(err));
+            .catch(err => disableJSOnError(err));
         })
       );
       return merge(buildAndFrameChallenge, challengeResults);
