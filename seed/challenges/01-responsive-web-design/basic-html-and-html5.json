@@ -18,7 +18,18 @@
       "challengeSeed": [],
       "tests": [],
       "type": "Waypoint",
-      "challengeType": 7
+      "challengeType": 7,
+      "translations": {
+        "jpn": {
+          "title": "freeCodeCampの運営について",
+          "description": [
+            "",
+            "",
+            "freeCodeCampへようこそ! <br><br>画面左側のレッスン一覧を見てください。あなたのスキルを向上するために、多くのレッスンを用意しました。<br><br>5つのプロジェクトの完了後、認定証の交付を受けることができます。<br><br>支援者からの募金のおかげで、全て無料で提供しています。",
+            ""
+          ]
+        }
+      }
     },
     {
       "id": "bd7123c8c441eddfaeb5bdef",
