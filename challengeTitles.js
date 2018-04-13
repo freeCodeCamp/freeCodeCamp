@@ -6,13 +6,13 @@ class ChallengeTitles {
   }
   check(title) {
     if (typeof title !== 'string') {
-      throw new Error(`Expected a valid string for ${title}, got ${typeof title}`);
+      throw new Error(`Expected a valid string for ${title}, but got a(n) ${typeof title}`);
     } else if (title.length === 0) {
       throw new Error(`Expected a title length greater than 0`);
     }
     const titleToCheck = title.toLowerCase().replace(/\s+/g, '');
-    const titleIndex = _.findIndex(this.knownTitles, existing => titleToCheck === existing);
-    if (titleIndex !== -1) {
+    const isKnown = this.knownTitles.includes(titleToCheck);
+    if (isKnown) {
       throw new Error(`
     All challenges must have a unique title.
 
