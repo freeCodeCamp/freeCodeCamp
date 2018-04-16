@@ -3,6 +3,7 @@ exports.dasherize = function dasherize(name) {
     .toLowerCase()
     .replace(/\s/g, '-')
     .replace(/[^a-z0-9\-\.]/gi, '')
+    .replace(/\./g, '-')
     .replace(/\:/g, '');
 };
 

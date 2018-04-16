@@ -45,6 +45,7 @@ that delivers challenge files to the plugin
   const { source } = pluginOptions;
   const createAndProcessNodes = () =>
     source()
+      .filter(node => node.challengeType !== 7)
       .map(nodes => nodes.map(node => createChallengeNodes(node, reporter)))
       .map(nodes => nodes.map(node => createNode(node)))
       .subscribe();

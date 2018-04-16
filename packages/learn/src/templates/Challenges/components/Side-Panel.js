@@ -19,7 +19,6 @@ import {
   executeChallenge,
   initConsole
 } from '../redux';
-import { descriptionRegex } from '../../../../utils';
 
 const mapStateToProps = createSelector(
   consoleOutputSelector,
@@ -70,26 +69,6 @@ export class SidePanel extends PureComponent {
     this.descriptionTop = node;
   }
 
-  renderDescription(description = ['Happy Coding!']) {
-    return description.map((line, index) => {
-      if (descriptionRegex.test(line)) {
-        return (
-          <div
-            dangerouslySetInnerHTML={{ __html: line }}
-            key={line.slice(-6) + index}
-          />
-        );
-      }
-      return (
-        <p
-          className='wrappable'
-          dangerouslySetInnerHTML={{ __html: line }}
-          key={line.slice(-6) + index}
-        />
-      );
-    });
-  }
-
   render() {
     const {
       title,
@@ -104,9 +83,7 @@ export class SidePanel extends PureComponent {
         <div ref={this.bindTopDiv} />
         <div>
           <ChallengeTitle>{title}</ChallengeTitle>
-          <ChallengeDescription>
-            {this.renderDescription(description)}
-          </ChallengeDescription>
+          <ChallengeDescription description={description} />
         </div>
         <ToolPanel executeChallenge={executeChallenge} guideUrl={guideUrl} />
         <Spacer />

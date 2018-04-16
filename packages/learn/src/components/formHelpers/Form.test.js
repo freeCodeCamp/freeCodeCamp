@@ -37,7 +37,7 @@ const defaultTestProps = {
 };
 
 test('<DynamicForm /> snapshot', () => {
-  const component = renderer.create(<DynamicForm { ...defaultTestProps } />);
+  const component = renderer.create(<DynamicForm {...defaultTestProps} />);
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

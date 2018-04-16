@@ -1,17 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'react-bootstrap';
+import { descriptionRegex } from '../../../../utils';
 
 const propTypes = {
-  children: PropTypes.array
+  description: PropTypes.arrayOf(PropTypes.string)
 };
 
-function ChallengeDescription({ children }) {
+function renderDescription(description) {
+  if (!Array.isArray(description)) {
+    return null;
+  }
+  return description.map((line, index) => {
+    if (descriptionRegex.test(line)) {
+      return (
+        <div
+          dangerouslySetInnerHTML={{ __html: line }}
+          key={line.slice(-6) + index}
+        />
+      );
+    }
+    return (
+      <p
+        className='wrappable'
+        dangerouslySetInnerHTML={{ __html: line }}
+        key={line.slice(-6) + index}
+      />
+    );
+  });
+}
+
+function ChallengeDescription({ description }) {
   // TODO: Remove bootstrap
   return (
     <Row>
       <Col className='challenge-instructions' xs={12}>
-        {children}
+        {renderDescription(description)}
       </Col>
     </Row>
   );

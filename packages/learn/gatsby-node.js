@@ -5,20 +5,26 @@ const { dasherize } = require('./utils');
 const { viewTypes } = require('./utils/challengeTypes');
 const { blockNameify } = require('./utils/blockNameify');
 
+const backend = path.resolve(
+  __dirname,
+  './src/templates/Challenges/backend/Show.js'
+);
 const classic = path.resolve(
   __dirname,
   './src/templates/Challenges/classic/Show.js'
 );
 const intro = path.resolve(__dirname, './src/templates/Introduction/Intro.js');
+const project = path.resolve(
+  __dirname,
+  './src/templates/Challenges/project/Show.js'
+);
 
 const views = {
-  // backend: BackEnd,
+  backend,
   classic,
   modern: classic,
-  project: path.resolve(__dirname, './src/templates/Challenges/project/Show.js')
-  // quiz: Quiz,
-  // simple: Project,
-  // invalid: NotFound
+  project
+  // quiz: Quiz
 };
 
 exports.onCreateNode = function onCreateNode({ node, boundActionCreators }) {
@@ -31,16 +37,13 @@ exports.onCreateNode = function onCreateNode({ node, boundActionCreators }) {
     )}`;
     createNodeField({ node, name: 'slug', value: slug });
     createNodeField({ node, name: 'blockName', value: blockNameify(block) });
-    // TODO: Normalise tests to { test: '', testString: ''}?
     createNodeField({ node, name: 'tests', value: tests });
   }
 
   if (node.internal.type === 'MarkdownRemark') {
-    const { frontmatter: { block, superBlock, title } } = node;
+    const { frontmatter: { block, superBlock } } = node;
 
-    const slug = `/${dasherize(superBlock)}${
-      block ? `/${dasherize(block)}${title ? `/${dasherize(title)}` : ''}` : ''
-    }`;
+    const slug = `/${dasherize(superBlock)}/${dasherize(block)}`;
 
     createNodeField({ node, name: 'slug', value: slug });
   }
@@ -102,6 +105,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             challengeType,
             id
           } = edge.node;
+          if (challengeType === 7) {
+            return;
+          }
           const next = thisArray[index + 1];
           const nextChallengePath = next ? next.node.fields.slug : '/';
           createPage({

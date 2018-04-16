@@ -2,7 +2,7 @@ const crypto = require('crypto');
 
 function createChallengeNodes(challenge, reporter) {
   if (typeof challenge.description[0] !== 'string') {
-    reporter.panic(`
+    reporter.warn(`
 
     ${challenge.title} has a description that will break things!
 
