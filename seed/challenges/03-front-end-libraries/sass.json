@@ -466,9 +466,8 @@
         "</div>"
       ],
       "tests": [
-        "assert(code.match(/@extend\\s+?\\.info/g), 'message: Your code should use the <code>@extend</code> directive to extend the <code>info</code> class.');",
-        "assert($('.info-important').css('background-color') == 'rgb(255, 0, 255)', 'message: Your <code>info-important</code> class should have a <code>background-color</code> set to magenta.');",
-        "assert($('.info-important').css('width') == '200px', 'message: Your <code>info-important</code> class should inherit the styling from the <code>info</code> class.');"
+        "assert(code.match(/\\.info-important\\s*?{[\\s\\S]*background-color\\s*?:\\s*?magenta\\s*?;[\\s\\S]*}/gi), 'message: Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.');",
+        "assert(code.match(/\\.info-important\\s*?{[\\s\\S]*@extend\\s*?.info\\s*?;[\\s\\S]*/gi), 'message: Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.');"
       ],
       "solutions": [],
       "hints": [],
