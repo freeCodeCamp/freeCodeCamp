@@ -191,9 +191,9 @@
       ],
       "description": [
         "The <code>@if</code> directive in Sass is useful to test for a specific case - it works just like the <code>if</code> statement in JavaScript</code>.",
-        "<blockquote>@mixin make-bold($bool) {<br>&nbsp;&nbsp;@if $bool == bold { font-weight: bold; }<br>}</blockquote>",
+        "<blockquote>@mixin make-bold($bool) {<br>&nbsp;&nbsp;@if $bool == true {<br>&nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "And just like in JavaScript, <code>@else if</code> and <code>@else</code> test for more conditions:",
-        "<blockquote>@mixin text-effect($val) {<br>&nbsp;&nbsp;@if $val == danger {color: red;}<br>&nbsp;&nbsp;@else if $val == alert {color: yellow;}<br>&nbsp;&nbsp;@else if $val == success {color: green;}<br>&nbsp;&nbsp;@else {color: black;}<br>}</blockquote>",
+        "<blockquote>@mixin text-effect($val) {<br>&nbsp;&nbsp;@if $val == danger {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: red;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;@else if $val == alert {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: yellow;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;@else if $val == success {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;@else {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: black;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "<hr>",
         "Create a <code>mixin</code> called <code>border-stroke</code> that takes a parameter <code>$val</code>. The <code>mixin</code> should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:",
         "<blockquote>light - 1px solid black<br>medium - 3px solid black<br>heavy - 6px solid black<br>none - no border</blockquote>"
