@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { ajax$ } from '../utils/ajax-stream';
+import { ajax$ } from './ajax-stream';
 
 // value used to break browser ajax caching
 const cacheBreakerValue = Math.random();

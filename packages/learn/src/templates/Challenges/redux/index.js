@@ -8,6 +8,7 @@ import executeChallengeEpic from './execute-challenge-epic';
 import codeLockEpic from './code-lock-epic';
 
 const ns = 'challenge';
+export const backendNS = 'backendChallenge';
 
 const initialState = {
   challengeFiles: {},
@@ -95,6 +96,7 @@ export const checkChallenge = createAction(types.checkChallenge);
 export const executeChallenge = createAction(types.executeChallenge);
 export const submitChallenge = createAction(types.submitChallenge);
 
+export const backendFormValuesSelector = state => state.form[backendNS];
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;

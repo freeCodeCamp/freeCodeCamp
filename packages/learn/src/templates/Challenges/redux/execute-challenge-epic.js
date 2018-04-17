@@ -16,6 +16,7 @@ import _ from 'lodash';
 
 import {
   types,
+  challengeMetaSelector,
   challengeTestsSelector,
   initConsole,
   updateConsole,
@@ -23,12 +24,14 @@ import {
   updateTests,
   disableJSOnError
 } from './';
-import { buildFromFiles } from '../utils/build';
+import { buildFromFiles, buildBackendChallenge } from '../utils/build';
 import {
   runTestsInTestFrame,
   createTestFramer,
   createMainFramer
 } from '../utils/frame.js';
+
+import { backend } from '../../../../utils/challengeTypes';
 
 const executeDebounceTimeout = 750;
 
@@ -90,14 +93,14 @@ function executeChallengeEpic(action$, { getState }, { document }) {
         // .filter(() => !codeLockedSelector(getState()))
         switchMap(() => {
           const state = getState();
-          // const { challengeType } = challengeSelector(state);
-          // if (challengeType === backend) {
-          //   return buildBackendChallenge(state)
-          //     .do(frameTests)
-          //     .ignoreElements()
-          //     .startWith(initOutput('// running test'))
-          //     .catch(createErrorObservable);
-          // }
+          const { challengeType } = challengeMetaSelector(state);
+          if (challengeType === backend) {
+            return buildBackendChallenge(state)
+              .do(frameTests)
+              .ignoreElements()
+              .startWith(initConsole('// running test'))
+              .catch(err => disableJSOnError(err));
+          }
           return buildFromFiles(state, false)
             .do(frameTests)
             .ignoreElements()

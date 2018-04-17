@@ -10,6 +10,10 @@ const step = 7;
 const quiz = 8;
 const invalid = 9;
 
+// individual exports
+exports.backend = backend;
+exports.frontEndProject = frontEndProject;
+
 exports.challengeTypes = {
   html,
   js,

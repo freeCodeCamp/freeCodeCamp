@@ -115,6 +115,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             component: views[viewTypes[challengeType]],
             context: {
               challengeMeta: {
+                challengeType,
                 template,
                 required,
                 nextChallengePath,

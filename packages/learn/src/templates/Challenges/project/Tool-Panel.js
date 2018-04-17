@@ -21,9 +21,7 @@ import ProjectForm from './ProjectForm';
 //   signInLoadingSelector,
 //   challengeSelector
 // } from '../../../../redux';
-import { challengeTypes } from '../../../../utils/challengeTypes';
-
-const { frontEndProject } = challengeTypes;
+import { frontEndProject } from '../../../../utils/challengeTypes';
 
 const propTypes = {
   challengeType: PropTypes.number,

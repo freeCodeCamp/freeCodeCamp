@@ -14,7 +14,8 @@ import {
   challengeTestsSelector,
   consoleOutputSelector,
   initTests,
-  updateChallengeMeta
+  updateChallengeMeta,
+  backendNS
 } from '../redux';
 
 import {
@@ -72,12 +73,7 @@ const options = {
 };
 
 export class BackEnd extends PureComponent {
-  constructor(...props) {
-    super(...props);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  componentDidMount() {
+componentDidMount() {
     const {
       initTests,
       updateChallengeMeta,
@@ -101,18 +97,17 @@ export class BackEnd extends PureComponent {
       updateChallengeMeta(challengeMeta);
     }
   }
-  handleSubmit(values) {
-    console.log('backend', values);
-  }
 
   render() {
     const {
       data: { challengeNode: { fields: { blockName }, title, description } },
       output,
       tests,
-      submitting
+      submitting,
+      executeChallenge
     } = this.props;
 
+    // TODO: Should be tied to user.isSigned
     const buttonCopy = submitting
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
@@ -128,9 +123,9 @@ export class BackEnd extends PureComponent {
             <Form
               buttonText={buttonCopy + '(Ctrl + Enter)'}
               formFields={formFields}
-              id='backend-form'
+              id={backendNS}
               options={options}
-              submit={this.handleSubmit}
+              submit={executeChallenge}
             />
           </Row>
           <Row>

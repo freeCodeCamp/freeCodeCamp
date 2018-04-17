@@ -1,12 +1,15 @@
+import { combineLatest } from 'rxjs/observable/combineLatest';
+import { map } from 'rxjs/operators/map';
 import identity from 'lodash/identity';
 
-// import { fetchScript } from './fetch-and-cache.js';
+import { fetchScript } from './fetch-and-cache.js';
 import throwers from '../rechallenge/throwers';
 import {
   challengeFilesSelector,
   isJSEnabledSelector,
   challengeMetaSelector,
-  disableJSOnError
+  disableJSOnError,
+  backendFormValuesSelector
 } from '../redux';
 import {
   applyTransformers,
@@ -19,11 +22,11 @@ import { createFileStream, pipe } from './polyvinyl';
 const jQuery = {
   src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
 };
-// const frameRunner = {
-//   src: '/js/frame-runner.js',
-//   crossDomain: false,
-//   cacheBreaker: true
-// };
+const frameRunner = {
+  src: '/js/frame-runner.js',
+  crossDomain: false,
+  cacheBreaker: true
+};
 const globalRequires = [
   {
     link:
@@ -56,14 +59,16 @@ export function buildFromFiles(state, shouldProxyConsole) {
     .catch(err => disableJSOnError(err));
 }
 
-// export function buildBackendChallenge(state) {
-//   const { solution: url } = backendFormValuesSelector(state);
-//   return Observable.combineLatest(
-//     fetchScript(frameRunner),
-//     fetchScript(jQuery)
-//   ).map(([frameRunner, jQuery]) => ({
-//     build: jQuery + frameRunner,
-//     sources: { url },
-//     checkChallengePayload: { solution: url }
-//   }));
-// }
+export function buildBackendChallenge(state) {
+  const { solution: { value: url } } = backendFormValuesSelector(state);
+  return combineLatest(
+    fetchScript(frameRunner),
+    fetchScript(jQuery)
+  ).pipe(
+    map(([frameRunner, jQuery]) => ({
+      build: jQuery + frameRunner,
+      sources: { url },
+      checkChallengePayload: { solution: url }
+    })
+  ));
+}
