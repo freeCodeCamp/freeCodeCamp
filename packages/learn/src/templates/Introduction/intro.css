@@ -1,0 +1,9 @@
+.intro-toc .list-group-item:hover {
+  background-color: #eee;
+}
+
+.intro-toc a:hover {
+  text-decoration: none;
+  text-decoration-style: none;
+  color: #006400;
+}

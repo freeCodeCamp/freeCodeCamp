@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FullWidthRow /> snapshot 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-sm-8 col-sm-offset-2 col-xs-12"
+  />
+</div>
+`;

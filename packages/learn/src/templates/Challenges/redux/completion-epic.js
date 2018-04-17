@@ -162,13 +162,18 @@ export default function completionEpic(action$, { getState }) {
   return action$.pipe(
     ofType(types.submitChallenge),
     switchMap(({ type }) => {
-      const { nextChallengePath } = challengeMetaSelector(getState());
+      const { nextChallengePath, introPath } = challengeMetaSelector(
+        getState()
+      );
       // const state = getState();
       // const { submitType } = challengeMetaSelector(state);
       // const submitter = submitters[submitType] || (() => Observable.empty());
 
       return type === types.submitChallenge
-        ? of(closeModal('completion'), push(nextChallengePath))
+        ? of(
+            closeModal('completion'),
+            push(introPath ? introPath : nextChallengePath)
+          )
         : of({ type: 'PONG' });
     })
   );

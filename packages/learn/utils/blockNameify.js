@@ -13,22 +13,16 @@ const preFormattedBlockNames = {
   'the-dom': 'The DOM'
 };
 
-const noFormatting = [
-  'and',
-  'for',
-  'of',
-  'the',
-  'up',
-  'with'
-];
+const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
 
 exports.blockNameify = function blockNameify(phrase) {
   const preFormatted = preFormattedBlockNames[phrase] || '';
   if (preFormatted) {
     return preFormatted;
   }
-  return phrase.split('-')
-    .map((word) => {
+  return phrase
+    .split('-')
+    .map(word => {
       if (noFormatting.indexOf(word) !== -1) {
         return word;
       }
