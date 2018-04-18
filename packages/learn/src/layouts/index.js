@@ -10,7 +10,6 @@ import { AllChallengeNode } from '../redux/propTypes';
 import Header from '../components/Header';
 import Map from '../components/Map';
 
-import '../../static/bootstrap3/css/bootstrap.min.css';
 import './global.css';
 import 'react-reflex/styles.css';
 import './layout.css';

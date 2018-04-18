@@ -73,7 +73,7 @@ const options = {
 };
 
 export class BackEnd extends PureComponent {
-componentDidMount() {
+  componentDidMount() {
     const {
       initTests,
       updateChallengeMeta,
