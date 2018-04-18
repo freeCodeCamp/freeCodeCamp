@@ -20,6 +20,7 @@
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-react-next": "^1.0.11",
+    "gatsby-plugin-sitemap": "^1.2.21",
     "gatsby-source-filesystem": "^1.5.29",
     "gatsby-source-mongodb": "^1.5.19",
     "gatsby-transformer-json": "^1.0.16",
