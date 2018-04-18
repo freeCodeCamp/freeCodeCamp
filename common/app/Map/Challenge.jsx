@@ -7,6 +7,7 @@ import debug from 'debug';
 
 import { clickOnChallenge } from './redux';
 import { userSelector } from '../redux';
+import { paramsSelector } from '../Router/redux';
 import { challengeMapSelector } from '../entities';
 import { Link } from '../Router';
 import { onRouteChallenges } from '../routes/Challenges/redux';
@@ -20,6 +21,7 @@ const propTypes = {
   isCompleted: PropTypes.bool,
   isDev: PropTypes.bool,
   isLocked: PropTypes.bool,
+  selected: PropTypes.bool,
   title: PropTypes.string
 };
 const mapDispatchToProps = { clickOnChallenge };
@@ -28,9 +30,11 @@ function makeMapStateToProps(_, { dashedName }) {
   return createSelector(
     userSelector,
     challengeMapSelector,
+    paramsSelector,
     (
       { challengeMap: userChallengeMap },
-      challengeMap
+      challengeMap,
+      params
     ) => {
       const {
         id,
@@ -40,6 +44,7 @@ function makeMapStateToProps(_, { dashedName }) {
         isComingSoon
       } = challengeMap[dashedName] || {};
       const isCompleted = userChallengeMap ? !!userChallengeMap[id] : false;
+      const selected = dashedName === params.dashedName;
       return {
         dashedName,
         isCompleted,
@@ -47,7 +52,8 @@ function makeMapStateToProps(_, { dashedName }) {
         block,
         isLocked,
         isComingSoon,
-        isDev: debug.enabled('fcc:*')
+        isDev: debug.enabled('fcc:*'),
+        selected
       };
     }
   );
@@ -97,7 +103,8 @@ export class Challenge extends PureComponent {
       isCompleted,
       isDev,
       isLocked,
-      title
+      title,
+      selected
     } = this.props;
     if (!title) {
       return null;
@@ -109,7 +116,8 @@ export class Challenge extends PureComponent {
       'ion-checkmark-circled faded': !(isLocked || isComingSoon) && isCompleted,
       'ion-ios-circle-outline': !(isLocked || isComingSoon) && !isCompleted,
       'ion-locked': isLocked || isComingSoon,
-      disabled: isLocked || (!isDev && isComingSoon)
+      disabled: isLocked || (!isDev && isComingSoon),
+      selectedChallenge: selected
     });
     if (isLocked || (!isDev && isComingSoon)) {
       return this.renderLocked(
