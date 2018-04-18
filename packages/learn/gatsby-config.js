@@ -37,6 +37,7 @@ module.exports = {
         fonts: ['Lato:400,400i,700']
       }
     },
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-offline'
   ]
 };
