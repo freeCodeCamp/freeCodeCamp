@@ -44,9 +44,9 @@ module.exports = function(app) {
   }
 
   function howNonprofitProjectsWork(req, res) {
-      res.render('resources/how-nonprofit-projects-work', {
-          title: 'How our nonprofit projects work'
-      });
+      res.redirect(301,
+        'https://medium.freecodecamp.com/open-source-for-good-1a0ea9f32d5a');
+
   }
 
   function softwareResourcesForNonprofits(req, res) {
