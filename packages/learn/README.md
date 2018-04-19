@@ -2,7 +2,7 @@
 
 ![freeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
-[![Build Status](https://travis-ci.org/freecodecamp/learn.svg?branch=master)](https://travis-ci.org/freecodecamp/learn)
+[![Build Status](https://travis-ci.org/freeCodeCamp/learn.svg?branch=master)](https://travis-ci.org/freeCodeCamp/learn)
 [![license](https://img.shields.io/badge/license-BSD--3--Clause-lightgrey.svg?style=flat-square)](https://opensource.org/licenses/BSD-3-Clause)  [![Gitter](https://img.shields.io/gitter/room/freeCodeCamp/Contributors.svg?style=flat-square)](https://gitter.im/freeCodeCamp/Contributors)
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/learn/badges/users.svg)](https://www.codetriage.com/freecodecamp/learn)
 
