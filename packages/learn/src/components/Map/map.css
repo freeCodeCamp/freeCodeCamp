@@ -13,11 +13,13 @@ aside#map ul {
   align-items: center;
   cursor: pointer;
 }
-.map-title > svg {
+
+.map-title>svg {
   width: 14px;
   margin-right: 5px;
+  flex-shrink: 0
 }
 
-li.open > .map-title svg {
+li.open>.map-title svg {
   transform: rotate(90deg);
 }
