@@ -1173,7 +1173,7 @@
       "tests": [
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('StatefulComponent').length === 1; })(), 'message: <code>StatefulComponent</code> should exist and render.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1; })(), 'message: <code>StatefulComponent</code> should render a <code>div</code> and an <code>h1</code> element.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && typeof initialState.name === 'string'); })(), 'message: The state of <code>StatefulComponent</code> should be initalized with a property <code>name</code> set to a string.');",
+        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && typeof initialState.name === 'string'); })(), 'message: The state of <code>StatefulComponent</code> should be initialized with a property <code>name</code> set to a string.');",
         "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find('h1').text() === initialState.name; })(), 'message: The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.');"
       ],
       "solutions": [

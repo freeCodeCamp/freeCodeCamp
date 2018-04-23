@@ -135,7 +135,7 @@
           "explanation": "Branch sort is not a sorting algorithm"
         },
         {
-          "subtitle": "Persistant storage",
+          "subtitle": "Persistent storage",
           "question": "CRUD operation stand for ?",
           "choices": [
             "<pre><code class='language-javascript'>Create, Read, Update, Delete</code></pre>",
@@ -144,7 +144,7 @@
             "<pre><code class='language-javascript'>Cancel, Reduce, Unify, Dispose</code></pre>"
           ],
           "answer": 0,
-          "explanation": "CRUD stands for Create - Read - Update and Delete  and are the four basic operations of persistant storage"
+          "explanation": "CRUD stands for Create - Read - Update and Delete  and are the four basic operations of persistent storage"
         },
         {
           "subtitle": "Numeric types",
@@ -163,12 +163,12 @@
           "question": "The MVC software architectural pattern stands for ?",
           "choices": [
             "<pre><code class='language-javascript'>MeanStack - View - Class</code></pre>",
-            "<pre><code class='language-javascript'>Modal - Vector - Controll</code></pre>",
+            "<pre><code class='language-javascript'>Modal - Vector - Control</code></pre>",
             "<pre><code class='language-javascript'>Model - View - Controller</code></pre>",
             "<pre><code class='language-javascript'>Mapped - Volume - Content</code></pre>"
           ],
           "answer": 2,
-          "explanation": "The MVC pattern is used to keep separate three main componants of an application, the idea being for example the data or 'Model' does not need to know what the 'View' or presentation of that data is doing and vice versa, with the 'Controller' handling any logic or input from the user to manipulate the 'Model'."
+          "explanation": "The MVC pattern is used to keep separate three main components of an application, the idea being for example the data or 'Model' does not need to know what the 'View' or presentation of that data is doing and vice versa, with the 'Controller' handling any logic or input from the user to manipulate the 'Model'."
         },
         {
           "subtitle": "XPath navigation",
@@ -691,7 +691,7 @@
           "question": "Which best describes the function of the Javascript event loop?",
           "choices": [
             "<pre><code class='language-javascript'>To Handle synchronous code one line at a time in the main script.</code></pre>",
-            "<pre><code class='language-javascript'>To remove any blocking functions accidently pushed on to the call stack.</code></pre>",
+            "<pre><code class='language-javascript'>To remove any blocking functions accidentally pushed on to the call stack.</code></pre>",
             "<pre><code class='language-javascript'>To constantly monitor if the call stack is empty and then invoke any asynchronous functions from the event queue.</code></pre>",
             "<pre><code class='language-javascript'>A mechanism to best decide how to terminate any looping structure.</code></pre>"
           ],

@@ -1451,7 +1451,7 @@
         "]</pre></p>",
         "Task:",
         "<p>Write a function to take a deal number and deal cards in the same order as this algorithm.</p>",
-        "<p>The function must return a two dimentional array representing the FreeCell board.</p>",
+        "<p>The function must return a two dimensional array representing the FreeCell board.</p>",
         "<p>Deals can also be checked against <a href=\"http://freecellgamesolutions.com/\" title=\"link: http://freecellgamesolutions.com/\">FreeCell solutions to 1000000 games</a>.</p>",
         "<p>(Summon a video solution, and it displays the initial deal.)</p>"
       ],
@@ -1718,7 +1718,7 @@
       "type": "Waypoint",
       "description": [
         "<p>An  emirp  (prime spelled backwards)  are primes that when reversed  (in their decimal representation)  are a different prime.</p>",
-        "<p>Write a function that should be able to : Show the first <b>n</b> eprimes numbers.Show the eprimes numbers in a range.Show the number of eprimes in a range.Show the <b>n<sup>th</sup></b> eprimes number.<p>The function should have two paramters. The first will recieve <b>n</b> or the range as an array. The second will recieve a boolean, that specifies if the function returns the eprimes as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array or a number."
+        "<p>Write a function that should be able to : Show the first <b>n</b> eprimes numbers.Show the eprimes numbers in a range.Show the number of eprimes in a range.Show the <b>n<sup>th</sup></b> eprimes number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the eprimes as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array or a number."
       ],
       "null": [],
       "challengeSeed": [
@@ -2133,7 +2133,7 @@
       "title": "Extensible prime generator",
       "type": "Waypoint",
       "description": [
-        "<p>Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.</p> The generator should be able to : Show the first <b>n</b> prime numbers.Show the prime numbers in a range.Show the number of primes in a range.Show the <b>n<sup>th</sup></b> prime number.<p>The function should have two paramters. The first will recieve <b>n</b> or the range as an array. The second will recieve a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array."
+        "<p>Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.</p> The generator should be able to : Show the first <b>n</b> prime numbers.Show the prime numbers in a range.Show the number of primes in a range.Show the <b>n<sup>th</sup></b> prime number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array."
       ],
       "challengeSeed": [
         "function primeGenerator (num, showPrimes) {",
@@ -2316,7 +2316,7 @@
       "title": "Fibonacci n-step number sequences",
       "type": "Waypoint",
       "description": [
-        "<p>Write a function to generate Fibonacci n-step number sequences and Lucas sequences. The first parameter will be n. The second parameter will be the number of elements to be returned. The third paramter will specify whether to output the Fibonacci sequence or the Lucas sequence. If the parameter is \"f\" then return the Fibonacci sequence and if it is \"l\", then return the Lucas sequence. The sequences must be returned as an array. More details are given below : </p><p>These number series are an expansion of the ordinary <a href=\"http://rosettacode.org/wiki/Fibonacci sequence\" title=\"Fibonacci sequence\">Fibonacci sequence</a> where:</p>",
+        "<p>Write a function to generate Fibonacci n-step number sequences and Lucas sequences. The first parameter will be n. The second parameter will be the number of elements to be returned. The third parameter will specify whether to output the Fibonacci sequence or the Lucas sequence. If the parameter is \"f\" then return the Fibonacci sequence and if it is \"l\", then return the Lucas sequence. The sequences must be returned as an array. More details are given below : </p><p>These number series are an expansion of the ordinary <a href=\"http://rosettacode.org/wiki/Fibonacci sequence\" title=\"Fibonacci sequence\">Fibonacci sequence</a> where:</p>",
         "For $n = 2$ we have the Fibonacci sequence; with initial values $[1, 1]$ and $F_k^2 = F_{k-1}^2 + F_{k-2}^2$",
         "For $n = 3$ we have the tribonacci sequence; with initial values $[1, 1, 2]$ and $F_k^3 = F_{k-1}^3 + F_{k-2}^3 + F_{k-3}^3$",
         "For $n = 4$ we have the tetranacci sequence; with initial values $[1, 1, 2, 4]$ and $F_k^4 = F_{k-1}^4 + F_{k-2}^4 + F_{k-3}^4 + F_{k-4}^4$...",
@@ -5931,7 +5931,7 @@
         "<p>{| style=\"white-space: nowrap;\"</p>",
         "<p>|-</p>",
         "<p>! Input<small style=\"font-weight:normal\">(single string)</small></p>",
-        "<p>! Ouput<small style=\"font-weight:normal\">(list/array of strings)</small></p>",
+        "<p>! Output<small style=\"font-weight:normal\">(list/array of strings)</small></p>",
         "<p>|- style=\"vertical-align:top\"</p>",
         "<p>|</p>",
         "<p><code>~/{Downloads,Pictures}/*.{jpg,gif,png}</code></p>",
@@ -10990,7 +10990,7 @@
       "title": "First class environments",
       "type": "Waypoint",
       "description": [
-        "<p>According to <a href=\"https://en.wikipedia.org/wiki/First-class_object\" title=\"wp: First-class_object\">Wikipedia</a>, \"In computing, a first-class object ... is an entity that can be constructed at run-time, passed as a parameter, returned from a subroutine, or assigned into a variable\".</p><p>Often this term is used in the context of \"first class functions\". In an analogous way, a programming language may support \"first class environments\".</p><p>The environment is minimally, the set of variables accessable to a statement being executed. Change the environments and the same statement could produce different results when executed.</p><p>Often an environment is captured in a <a href=\"https://en.wikipedia.org/wiki/Closure_(computer_science)\" title=\"wp: Closure_(computer_science)\">closure</a>, which encapsulates a function together with an environment. That environment, however, is not first-class, as it cannot be created, passed etc. independently from the function's code.</p><p>Therefore, a first class environment is a set of variable bindings which can be constructed at run-time, passed as a parameter, returned from a subroutine, or assigned into a variable. It is like a closure without code. A statement must be able to be executed within a stored first class environment and act according to the environment variable values stored within.</p><p>The task: Build a dozen environments, and a single piece of code to be run repeatedly in each of these envionments.</p><p>Each environment contains the bindings for two variables: A value in the <a href=\"http://rosettacode.org/wiki/Hailstone sequence\" title=\"Hailstone sequence\">Hailstone sequence</a>, and a count which is incremented until the value drops to 1. The initial hailstone values are 1 through 12, and the count in each environment is zero.</p><p>When the code runs, it calculates the next hailstone step in the current environment (unless the value is already 1) and counts the steps. Then it prints the current value in a tabular form.</p><p>When all hailstone values dropped to 1, processing stops, and the total number of hailstone steps for each environment is printed.</p>"
+        "<p>According to <a href=\"https://en.wikipedia.org/wiki/First-class_object\" title=\"wp: First-class_object\">Wikipedia</a>, \"In computing, a first-class object ... is an entity that can be constructed at run-time, passed as a parameter, returned from a subroutine, or assigned into a variable\".</p><p>Often this term is used in the context of \"first class functions\". In an analogous way, a programming language may support \"first class environments\".</p><p>The environment is minimally, the set of variables accessible to a statement being executed. Change the environments and the same statement could produce different results when executed.</p><p>Often an environment is captured in a <a href=\"https://en.wikipedia.org/wiki/Closure_(computer_science)\" title=\"wp: Closure_(computer_science)\">closure</a>, which encapsulates a function together with an environment. That environment, however, is not first-class, as it cannot be created, passed etc. independently from the function's code.</p><p>Therefore, a first class environment is a set of variable bindings which can be constructed at run-time, passed as a parameter, returned from a subroutine, or assigned into a variable. It is like a closure without code. A statement must be able to be executed within a stored first class environment and act according to the environment variable values stored within.</p><p>The task: Build a dozen environments, and a single piece of code to be run repeatedly in each of these envionments.</p><p>Each environment contains the bindings for two variables: A value in the <a href=\"http://rosettacode.org/wiki/Hailstone sequence\" title=\"Hailstone sequence\">Hailstone sequence</a>, and a count which is incremented until the value drops to 1. The initial hailstone values are 1 through 12, and the count in each environment is zero.</p><p>When the code runs, it calculates the next hailstone step in the current environment (unless the value is already 1) and counts the steps. Then it prints the current value in a tabular form.</p><p>When all hailstone values dropped to 1, processing stops, and the total number of hailstone steps for each environment is printed.</p>"
       ],
       "challengeSeed": [
         "function replaceMe (foo) {",
@@ -18126,7 +18126,7 @@
         "<p>\\end{pmatrix}</p>",
         "<p>$</p><p>The decomposition algorithm is then applied on the rearranged matrix so that</p><p>$PA = LU$</p>",
         "<p>Task description</p><p>The task is to implement a routine which will take a square nxn matrix $A$ and return a lower triangular matrix $L$, a upper triangular matrix $U$ and a permutation matrix $P$,</p>",
-        "<p>so that the above equation is fullfilled.</p>",
+        "<p>so that the above equation is fulfilled.</p>",
         "<p>You should then test it on the following two examples and include your output.</p><p>Example 1:</p>",
         "<pre>",
         "A1   3   5",
@@ -18461,7 +18461,7 @@
         "<p>So we see that the sequence starting with 689 converges to, and continues with the same numbers as that for 196. Because of this we can further split the Lychrel numbers into true Seed Lychrel number candidates, and Related numbers that produce no palindromes but have integers in their sequence seen as part of the sequence generated from a lower Lychrel number.</p>",
         "Task:",
         " Find the number of seed Lychrel number candidates and related numbers for n in the range 1..10000 inclusive. (With that iteration limit of 500).",
-        " Print the number of seed Lychrels found; the actual seed Lychrels; and just the number of relateds found.",
+        " Print the number of seed Lychrels found; the actual seed Lychrels; and just the number of relates found.",
         " Print any seed Lychrel or related number that is itself a palindrome.",
         "<p>Show all output here.</p>",
         "References:",
@@ -22547,7 +22547,7 @@
         "",
         "// first read self ",
         "var self = readfile(WScript.ScriptFullName);",
-        "// read whatever file is given on commmand line",
+        "// read whatever file is given on command line",
         "var whatever = readfile(WScript.Arguments.UnNamed(0));",
         "",
         "// compare and contrast",
@@ -22603,8 +22603,8 @@
         "['ignore leading spaces: 2-2', ' ignore leading spaces: 2-1', '  ignore leading spaces: 2+0', '   ignore leading spaces: 2+1']Ignoring multiple adjacent spaces (m.a.s)Text strings:",
         "['ignore m.a.s spaces: 2-2', 'ignore m.a.s  spaces: 2-1', 'ignore m.a.s   spaces: 2+0', 'ignore m.a.s    spaces: 2+1']",
         "Equivalent whitespace charactersText strings:",
-        "['Equiv. spaces: 3-3', 'Equiv.\\rspaces: 3-2', 'Equiv.\\x0cspaces: 3-1', 'Equiv.\\x0bspaces: 3+0', 'Equiv.\\nspaces: 3+1', 'Equiv.\\tspaces: 3+2']Case Indepenent sortText strings:",
-        "['cASE INDEPENENT: 3-2', 'caSE INDEPENENT: 3-1', 'casE INDEPENENT: 3+0', 'case INDEPENENT: 3+1']Numeric fields as numericsText strings:",
+        "['Equiv. spaces: 3-3', 'Equiv.\\rspaces: 3-2', 'Equiv.\\x0cspaces: 3-1', 'Equiv.\\x0bspaces: 3+0', 'Equiv.\\nspaces: 3+1', 'Equiv.\\tspaces: 3+2']Case Independent sortText strings:",
+        "['cASE INDEPENDENT: 3-2', 'caSE INDEPENDENT: 3-1', 'casE INDEPENDENT: 3+0', 'case INDEPENDENT: 3+1']Numeric fields as numericsText strings:",
         "['foo100bar99baz0.txt', 'foo100bar10baz0.txt', 'foo1000bar99baz10.txt', 'foo1000bar99baz9.txt']Title sortsText strings:",
         "['The Wind in the Willows', 'The 40th step more', 'The 39 steps', 'Wanda']Equivalent accented characters (and case)Text strings:",
         "[u'Equiv. \\xfd accents: 2-2', u'Equiv. \\xdd accents: 2-1', u'Equiv. y accents: 2+0', u'Equiv. Y accents: 2+1']",
@@ -23494,7 +23494,7 @@
         "<p>|In the case of Gauss-Legendre quadrature, the weighting function $W(x) = 1$, so we can approximate an integral of $f(x)$ with:</p>",
         "<p>|$\\int_{-1}^1 f(x)\\,dx \\approx \\sum_{i=1}^n w_i f(x_i)$</p>",
         "<p>|}</p>",
-        "<p>For this, we first need to calculate the nodes and the weights, but after we have them, we can reuse them for numerious integral evaluations, which greatly speeds up the calculation compared to more <a href=\"http://rosettacode.org/wiki/Numerical Integration\" title=\"Numerical Integration\">simple numerical integration methods</a>.</p><p>{|border=1 cellspacing=0 cellpadding=3</p>",
+        "<p>For this, we first need to calculate the nodes and the weights, but after we have them, we can reuse them for numerous integral evaluations, which greatly speeds up the calculation compared to more <a href=\"http://rosettacode.org/wiki/Numerical Integration\" title=\"Numerical Integration\">simple numerical integration methods</a>.</p><p>{|border=1 cellspacing=0 cellpadding=3</p>",
         "<p>|The $n$ evaluation points $x_i$ for a n-point rule, also called \"nodes\", are roots of n-th order <a href=\"https://en.wikipedia.org/wiki/Legendre Polynomials\" title=\"wp: Legendre Polynomials\">Legendre Polynomials</a> $P_n(x)$. Legendre polynomials are defined by the following recursive rule:</p>",
         "<p>|$P_0(x) = 1$</p>",
         "<p>$P_1(x) = x$</p>",
@@ -26516,7 +26516,7 @@
         "  (3, 1, 0, 2) -> 20",
         "  (3, 1, 2, 0) -> 21",
         "  (3, 2, 0, 1) -> 22",
-        "  (3, 2, 1, 0) -> 23</pre><p>Algorithms exist that can generate a rank from a permutation for some particular ordering of permutations, and that can generate the same rank from the given individual permutation (i.e. given a rank of 17 produce (2, 3, 1, 0) in the example above).</p><p>One use of such algorithms could be in generating a small, random, sample of permutations of $n$ items without duplicates when the total number of permutations is large. Remember that the total number of permutations of $n$ items is given by $n!$ which grows large very quickly: A 32 bit integer can only hold $12!$, a 64 bit integer only $20!$. It becomes difficult to take the straight-forward approach of generating all permutations then taking a random sample of them.</p><p>A <a href=\"http://stackoverflow.com/questions/12884428/generate-sample-of-1-000-000-random-permutations\" title=\"link: http://stackoverflow.com/questions/12884428/generate-sample-of-1-000-000-random-permutations\">question on the Stack Overflow site</a> asked how to generate one million random and indivudual permutations of 144 items.</p>",
+        "  (3, 2, 1, 0) -> 23</pre><p>Algorithms exist that can generate a rank from a permutation for some particular ordering of permutations, and that can generate the same rank from the given individual permutation (i.e. given a rank of 17 produce (2, 3, 1, 0) in the example above).</p><p>One use of such algorithms could be in generating a small, random, sample of permutations of $n$ items without duplicates when the total number of permutations is large. Remember that the total number of permutations of $n$ items is given by $n!$ which grows large very quickly: A 32 bit integer can only hold $12!$, a 64 bit integer only $20!$. It becomes difficult to take the straight-forward approach of generating all permutations then taking a random sample of them.</p><p>A <a href=\"http://stackoverflow.com/questions/12884428/generate-sample-of-1-000-000-random-permutations\" title=\"link: http://stackoverflow.com/questions/12884428/generate-sample-of-1-000-000-random-permutations\">question on the Stack Overflow site</a> asked how to generate one million random and individual permutations of 144 items.</p>",
         "Task:",
         "Create a function to generate a permutation from a rank.",
         "Create the inverse function that given the permutation generates its rank.",
@@ -41442,7 +41442,7 @@
         "function printtruthtable(){",
         "\tvar i,str;",
         "\telem=document.createElement(\"pre\");",
-        "\texpr=prompt(\"Boolean expression:\\nAccepts single-character variables (except for \\\"T\\\" and \\\"F\\\", which specify explicit true or false values), postfix, with \\\"&|!^\\\" for and, or, not, xor, respectively; optionally seperated by whitespace.\").replace(/\\s/g,\"\");",
+        "\texpr=prompt(\"Boolean expression:\\nAccepts single-character variables (except for \\\"T\\\" and \\\"F\\\", which specify explicit true or false values), postfix, with \\\"&|!^\\\" for and, or, not, xor, respectively; optionally separated by whitespace.\").replace(/\\s/g,\"\");",
         "\tvars=[];",
         "\tfor(i=0;i<expr.length;i++)if(!isboolop(expr[i])&&expr[i]!=\"T\"&&expr[i]!=\"F\"&&varsindexof(expr[i])==-1)vars.push([expr[i],-1]);",
         "\tif(vars.length==0)return;",
@@ -41518,7 +41518,7 @@
       "releasedOn": "December 27, 2017",
       "isBeta": "true",
       "betaSolutions": [
-        "<!DOCTYPE html><html><head><title>Truth table</title><script>\nvar elem,expr,vars;\nfunction isboolop(chr){return \"&|!^\".indexOf(chr)!=-1;}\nfunction varsindexof(chr){\n\tvar i;\n\tfor(i=0;i<vars.length;i++){if(vars[i][0]==chr)return i;}\n\treturn -1;\n}\nfunction printtruthtable(){\n\tvar i,str;\n\telem=document.createElement(\"pre\");\n\texpr=prompt(\"Boolean expression:\\nAccepts single-character variables (except for \\\"T\\\" and \\\"F\\\", which specify explicit true or false values), postfix, with \\\"&|!^\\\" for and, or, not, xor, respectively; optionally seperated by whitespace.\").replace(/\\s/g,\"\");\n\tvars=[];\n\tfor(i=0;i<expr.length;i++)if(!isboolop(expr[i])&&expr[i]!=\"T\"&&expr[i]!=\"F\"&&varsindexof(expr[i])==-1)vars.push([expr[i],-1]);\n\tif(vars.length==0)return;\n\tstr=\"\";\n\tfor(i=0;i<vars.length;i++)str+=vars[i][0]+\" \";\n\telem.innerHTML=\"<b>\"+str+expr+\"</b>\\n\";\n\tvars[0][1]=false;\n\ttruthpartfor(1);\n\tvars[0][1]=true;\n\ttruthpartfor(1);\n\tvars[0][1]=-1;\n\tdocument.body.appendChild(elem);\n}\nfunction truthpartfor(index){\n\tif(index==vars.length){\n\t\tvar str,i;\n\t\tstr=\"\";\n\t\tfor(i=0;i<index;i++)str+=(vars[i][1]?\"<b>T</b>\":\"F\")+\" \";\n\t\telem.innerHTML+=str+(parsebool()?\"<b>T</b>\":\"F\")+\"\\n\";\n\t\treturn;\n\t}\n\tvars[index][1]=false;\n\ttruthpartfor(index+1);\n\tvars[index][1]=true;\n\ttruthpartfor(index+1);\n\tvars[index][1]=-1;\n}\nfunction parsebool(){\n\tvar stack,i,idx;\n\tconsole.log(vars);\n\tstack=[];\n\tfor(i=0;i<expr.length;i++){\n\t\tif(expr[i]==\"T\")stack.push(true);\n\t\telse if(expr[i]==\"F\")stack.push(false);\n\t\telse if((idx=varsindexof(expr[i]))!=-1)stack.push(vars[idx][1]);\n\t\telse if(isboolop(expr[i])){\n\t\t\tswitch(expr[i]){\n\t\t\t\tcase \"&\":stack.push(stack.pop()&stack.pop());break;\n\t\t\t\tcase \"|\":stack.push(stack.pop()|stack.pop());break;\n\t\t\t\tcase \"!\":stack.push(!stack.pop());break;\n\t\t\t\tcase \"^\":stack.push(stack.pop()^stack.pop());break;\n\t\t\t}\n\t\t} else alert(\"Non-conformant character \"+expr[i]+\" in expression. Should not be possible.\");\n\t\tconsole.log(stack);\n\t}\n\treturn stack[0];\n}\n</script></head><body onload=\"printtruthtable()\"></body></html>\n"
+        "<!DOCTYPE html><html><head><title>Truth table</title><script>\nvar elem,expr,vars;\nfunction isboolop(chr){return \"&|!^\".indexOf(chr)!=-1;}\nfunction varsindexof(chr){\n\tvar i;\n\tfor(i=0;i<vars.length;i++){if(vars[i][0]==chr)return i;}\n\treturn -1;\n}\nfunction printtruthtable(){\n\tvar i,str;\n\telem=document.createElement(\"pre\");\n\texpr=prompt(\"Boolean expression:\\nAccepts single-character variables (except for \\\"T\\\" and \\\"F\\\", which specify explicit true or false values), postfix, with \\\"&|!^\\\" for and, or, not, xor, respectively; optionally separated by whitespace.\").replace(/\\s/g,\"\");\n\tvars=[];\n\tfor(i=0;i<expr.length;i++)if(!isboolop(expr[i])&&expr[i]!=\"T\"&&expr[i]!=\"F\"&&varsindexof(expr[i])==-1)vars.push([expr[i],-1]);\n\tif(vars.length==0)return;\n\tstr=\"\";\n\tfor(i=0;i<vars.length;i++)str+=vars[i][0]+\" \";\n\telem.innerHTML=\"<b>\"+str+expr+\"</b>\\n\";\n\tvars[0][1]=false;\n\ttruthpartfor(1);\n\tvars[0][1]=true;\n\ttruthpartfor(1);\n\tvars[0][1]=-1;\n\tdocument.body.appendChild(elem);\n}\nfunction truthpartfor(index){\n\tif(index==vars.length){\n\t\tvar str,i;\n\t\tstr=\"\";\n\t\tfor(i=0;i<index;i++)str+=(vars[i][1]?\"<b>T</b>\":\"F\")+\" \";\n\t\telem.innerHTML+=str+(parsebool()?\"<b>T</b>\":\"F\")+\"\\n\";\n\t\treturn;\n\t}\n\tvars[index][1]=false;\n\ttruthpartfor(index+1);\n\tvars[index][1]=true;\n\ttruthpartfor(index+1);\n\tvars[index][1]=-1;\n}\nfunction parsebool(){\n\tvar stack,i,idx;\n\tconsole.log(vars);\n\tstack=[];\n\tfor(i=0;i<expr.length;i++){\n\t\tif(expr[i]==\"T\")stack.push(true);\n\t\telse if(expr[i]==\"F\")stack.push(false);\n\t\telse if((idx=varsindexof(expr[i]))!=-1)stack.push(vars[idx][1]);\n\t\telse if(isboolop(expr[i])){\n\t\t\tswitch(expr[i]){\n\t\t\t\tcase \"&\":stack.push(stack.pop()&stack.pop());break;\n\t\t\t\tcase \"|\":stack.push(stack.pop()|stack.pop());break;\n\t\t\t\tcase \"!\":stack.push(!stack.pop());break;\n\t\t\t\tcase \"^\":stack.push(stack.pop()^stack.pop());break;\n\t\t\t}\n\t\t} else alert(\"Non-conformant character \"+expr[i]+\" in expression. Should not be possible.\");\n\t\tconsole.log(stack);\n\t}\n\treturn stack[0];\n}\n</script></head><body onload=\"printtruthtable()\"></body></html>\n"
       ],
       "betaTests": [
         "assert(typeof replaceMe === 'function', 'message: <code>replaceMe</code> is a function.');"

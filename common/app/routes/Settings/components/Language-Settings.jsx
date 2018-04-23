@@ -102,7 +102,7 @@ export class LanguageSettings extends React.Component {
             <Row>
               <Col sm={ 4 } xs={ 12 }>
                 <ControlLabel htmlFor={ name }>
-                  Prefered Language for Challenges
+                  Preferred Language for Challenges
                 </ControlLabel>
               </Col>
               <Col sm={ 8 } xs={ 12 }>

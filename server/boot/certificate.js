@@ -210,7 +210,7 @@ export default function certificate(app) {
   `;
 
   const notCertifiedMessage = name => dedent`
-  it looks like you have not completed the neccessary steps.
+  it looks like you have not completed the necessary steps.
   Please complete the required challenges to claim the
   ${name}
   `;
@@ -220,7 +220,7 @@ export default function certificate(app) {
     `;
 
   const successMessage = (username, name) => dedent`
-    @${username}, you have sucessfully claimed
+    @${username}, you have successfully claimed
     the ${name}!
     Congratulations on behalf of the freeCodeCamp team!
     `;

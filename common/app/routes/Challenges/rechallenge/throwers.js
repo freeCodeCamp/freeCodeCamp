@@ -113,7 +113,7 @@ export default function validate(file) {
       return Observable.throw(err);
     }
   }), Observable.of(file))
-    // if no error has occured map to the original file
+    // if no error has occurred map to the original file
     .map(() => file)
     // if err add it to the file
     // and return file

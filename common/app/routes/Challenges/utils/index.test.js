@@ -241,7 +241,7 @@ test('getFirstChallengeOfNextBlock', t => {
     t.notOk(
       getFirstChallengeOfNextBlock('non-existent-challenge', entities),
       `
-        gitFirstChallengeOfNextBlock returned true value for non-existant
+        gitFirstChallengeOfNextBlock returned true value for non-existent
         challenge
       `
     );
