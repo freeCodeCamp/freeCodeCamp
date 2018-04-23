@@ -57,6 +57,8 @@ Do not file an issue until you have followed these steps:
 2. Ask for confirmation in the appropriate [Help Room](https://forum.freecodecamp.org/t/free-code-camp-official-chat-rooms/19390/2).
 3. Please *do not* open an issue without a 3rd party confirmation of your problem.
 
+If none of the above steps worked, open a new issue following [this template](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/.github/ISSUE_TEMPLATE.md).
+
 Contributing
 ------------
 
