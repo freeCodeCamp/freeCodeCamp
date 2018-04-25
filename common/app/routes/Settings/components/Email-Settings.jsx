@@ -117,7 +117,7 @@ class EmailSettings extends PureComponent {
           <FullWidthRow>
             <HelpBlock>
               <Alert bsStyle='info'>
-              A change of email adress has not been verified.
+              A change of email address has not been verified.
               To use your new email, you must verify it first using the link
               we sent you.
               </Alert>

@@ -11,7 +11,7 @@
         [
           "",
           "",
-          "<em>Authentication</em> is the process or action of verifying the identity of a user or process. Up to this point you have not been able to create an app utilizing this key concept.<br>The most common and easiest to use authentication middleware for Node.js is <a href='http://passportjs.org/'>Passport</a>. It is easy to learn, light-weight, and extremely flexible allowing for many <em>strategies</em>, which we will talk about in later challenges. In addition to authentication we will also look at template engines which allow for use of <em>Pug</em> and web sockets which allow for real time communication between all your clients and your server. Working on these challenges will involve you writing your code on Glitch on our starter project. After completing each challenge you can copy your public glitch url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicaly visible for our testing.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!",
+          "<em>Authentication</em> is the process or action of verifying the identity of a user or process. Up to this point you have not been able to create an app utilizing this key concept.<br>The most common and easiest to use authentication middleware for Node.js is <a href='http://passportjs.org/'>Passport</a>. It is easy to learn, light-weight, and extremely flexible allowing for many <em>strategies</em>, which we will talk about in later challenges. In addition to authentication we will also look at template engines which allow for use of <em>Pug</em> and web sockets which allow for real time communication between all your clients and your server. Working on these challenges will involve you writing your code on Glitch on our starter project. After completing each challenge you can copy your public glitch url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!",
           ""
         ]
       ],
@@ -65,7 +65,7 @@
         "Looking at our pug file 'index.pug' included in your project, we used the variables <em>title</em> and <em>message</em>",
         "To pass those alone from our server, you will need to add an object as a second argument to your <em>res.render</em> with the variables and their value. For example, pass this object along setting the variables for your index view: <code>{title: 'Hello', message: 'Please login'</code>",
         "It should look like: <code>res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});</code>",
-        "Now refresh your page and you should see those values rendered in your view in the correct spot as layed out in your index.pug file! Submit your page when you think you've got it right."
+        "Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your index.pug file! Submit your page when you think you've got it right."
       ],
       "challengeSeed": [],
       "tests": [
@@ -514,7 +514,7 @@
         [
           "",
           "",
-          "<dfn>Socket.IO</dfn> enables real-time, reliable, speedy communication between your server and clients from all devices and browsers. It listens for connects on your server that come from the client which connects with a single javascript statement. The whole library is based on emitting, broadcasting, and recieving events that contain an event name and some data which can include things like strings, objects, arrays, and even blobs like files or video. This is used for all sorts of purposes including instant messaging online, real-time analytics, streaming, and document collaboration.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe.",
+          "<dfn>Socket.IO</dfn> enables real-time, reliable, speedy communication between your server and clients from all devices and browsers. It listens for connects on your server that come from the client which connects with a single javascript statement. The whole library is based on emitting, broadcasting, and receiving events that contain an event name and some data which can include things like strings, objects, arrays, and even blobs like files or video. This is used for all sorts of purposes including instant messaging online, real-time analytics, streaming, and document collaboration.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe.",
           ""
         ],
         [
@@ -539,13 +539,13 @@
     },
     {
       "id": "589fc830f9fc0f352b528e74",
-      "title": "Set up the Enviroment",
+      "title": "Set up the Environment",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.",
-        "Add Socket.IO as a dependency and require/instanciate it in your server defined as 'io' with the http server as an argument. <code>const io = require('socket.io')(http);</code>",
+        "Add Socket.IO as a dependency and require/instantiate it in your server defined as 'io' with the http server as an argument. <code>const io = require('socket.io')(http);</code>",
         "The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event thats emitted, and a function with which the data is passed though. In the case of our connection listener, we use <em>socket</em> to define the data in the second argument. A socket is an individual client who is connected.",
         "For listening for connections on our server, add the following between the comments in your project:<pre>io.on('connection', socket => {\n  console.log('A user has connected');\n});</pre>",
-        "Now for the client to connect, you just need to add the following to your client.js which is loaded by the page after you've authenticated: <pre>/*global io*/\nvar socket = io();</pre>The comment supresses the error you would normally see since 'io' is not defined in the file. We've already added a reliable CDN to the Socket.IO library on the page in chat.pug.",
+        "Now for the client to connect, you just need to add the following to your client.js which is loaded by the page after you've authenticated: <pre>/*global io*/\nvar socket = io();</pre>The comment suppresses the error you would normally see since 'io' is not defined in the file. We've already added a reliable CDN to the Socket.IO library on the page in chat.pug.",
         "Now try loading up your app and authenticate and you should see in your server console 'A user has connected'!",
         "<strong>Note</strong><br><code>io()</code> works only when connecting to a socket hosted on the same url/server. For connecting to an external socket hosted elsewhere, you would use <code>io.connect('URL');</code>.",
         "Submit your page when you think you've got it right."
@@ -558,7 +558,7 @@
         },
         {
           "text": "Socket.IO has been properly required and instanciated",
-          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /io.*=.*require.*('|\")socket.io('|\").*http/gi, 'You should correctly require and instanciate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })"
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /io.*=.*require.*('|\")socket.io('|\").*http/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })"
         },
         {
           "text": "Socket.IO should be listening for connections",
@@ -579,9 +579,9 @@
       "title": "Communicate by Emitting",
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.",
-        "<dfn>Emit</dfn> is the most common way of communicating you will use. When you emit something from the server to 'io', you send an event's name and data to all the connected sockets. A good example of this concept would be emiting the current count of connected users each time a new user connects!",
+        "<dfn>Emit</dfn> is the most common way of communicating you will use. When you emit something from the server to 'io', you send an event's name and data to all the connected sockets. A good example of this concept would be emitting the current count of connected users each time a new user connects!",
         "<hr>Start by adding a variable to keep track of the users just before where you are currently listening for connections. <code>var currentUsers = 0;</code>",
-        "Now when someone connects you should increment the count before emiting the count so you will want to add the incrementer within the connection listener. <code>++currentUsers;</code>",
+        "Now when someone connects you should increment the count before emitting the count so you will want to add the incrementer within the connection listener. <code>++currentUsers;</code>",
         "Finally after incrementing the count, you should emit the event(still within the connection listener). The event should be named 'user count' and the data should just be the 'currentUsers'. <code>io.emit('user count', currentUsers);</code>",
         "<hr>Now you can implement a way for your client to listen for this event! Similarly to listening for a connection on the server you will use the <em>on</em> keyword. <pre>socket.on('user count', function(data){\n  console.log(data);\n});</pre>",
         "Now try loading up your app and authenticate and you should see in your client console '1' representing the current user count! Try loading more clients up and authenticating to see the number go up.",
@@ -642,7 +642,7 @@
         "Currently, you cannot determine who is connected to your web socket. While 'req.user' containers the user object, thats only when your user interacts with the web server and with web sockets you have no req (request) and therefor no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!",
         "<hr>Add 'passport.socketio' as a dependency and require it as 'passportSocketIo'.",
         "Now we just have to tell Socket.IO to use it and set the options. Be sure this is added before the existing socket code and not in the existing connection listener. For your server it should look as follows:<pre>io.use(passportSocketIo.authorize({\n  cookieParser: cookieParser,\n  key:          'express.sid',\n  secret:       process.env.SESSION_SECRET,\n  store:        sessionStore\n}));</pre>You can also optionally pass 'success' and 'fail' with a function that will be called after the authentication process completes when a client trys to connect.",
-        "The user object is now accessable on your socket object as <code>socket.request.user</code>. For example, now you can add the following: <code>console.log('user ' + socket.request.user.name + ' connected');</code> and it will log to the server console who has connected!",
+        "The user object is now accessible on your socket object as <code>socket.request.user</code>. For example, now you can add the following: <code>console.log('user ' + socket.request.user.name + ' connected');</code> and it will log to the server console who has connected!",
         "Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/a9e69ff91337500d5171e29324e1ff35'>here</a>."
       ],
       "challengeSeed": [],
@@ -653,7 +653,7 @@
         },
         {
           "text": "passportSocketIo is properly required",
-          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /passportSockerIo.*=.*require.*('|\")passportSocketIo('|\")/gi, 'You should correctly require and instanciate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })"
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /passportSockerIo.*=.*require.*('|\")passportSocketIo('|\")/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })"
         },
         {
           "text": "passportSocketIo is properly setup",
@@ -699,8 +699,8 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.",
         "It's time you start allowing clients to send a chat message to the server to emit to all the clients! Already in your client.js file you should see there is already a block of code handling when the messgae form is submitted! (<code>$('form').submit(function(){ /*logic*/ });</code>)",
         "<hr>Within the code you're handling the form submit you should emit an event after you define 'messageToSend' but before you clear the text box <code>#m</code>. The event should be named 'chat message' and the data should just be 'messageToSend'. <code>socket.emit('chat message', messageToSend);</code>",
-        "Now on your server you should be listening to the socket for the event 'chat message' with the data being named 'message'. Once the event is recieved it should then emit the event 'chat message' to all sockets <code>io.emit</code> with the data being an object containing 'name' and 'message'.",
-        "On your client now again, you should now listen for event 'chat message' and when recieved, append a list item to <code>#messages</code> with the name a colon and the message!",
+        "Now on your server you should be listening to the socket for the event 'chat message' with the data being named 'message'. Once the event is received it should then emit the event 'chat message' to all sockets <code>io.emit</code> with the data being an object containing 'name' and 'message'.",
+        "On your client now again, you should now listen for event 'chat message' and when received, append a list item to <code>#messages</code> with the name a colon and the message!",
         "At this point the chat should be fully functional and sending messages across all clients! Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/3e4b7750f6cd42feaa2768458d682136'>here for the server</a> and <a href='https://gist.github.com/JosephLivengood/41ba76348df3013b7870dc64861de744'>here for the client</a>."
       ],
       "challengeSeed": [],
