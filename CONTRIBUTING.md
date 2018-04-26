@@ -6,7 +6,7 @@ We welcome pull requests from freeCodeCamp campers (our students) and seasoned J
 
 2. Let us know you are working on it by posting a comment on the issue.
 
-3. Follow the [Contribution Guidelines](#contribution-guidelines) to start working on the issue.
+3. Follow the instructions in this guide to start working on the issue.
 
 Remember to feel free to ask for help in our [Contributors](https://gitter.im/FreeCodeCamp/Contributors) Gitter room.
 
@@ -435,9 +435,8 @@ Instance of freeCodeCamp](#maintaining-your-fork).
 
 4.  Create a branch off of `staging` with git: `git checkout -B
     branch/name-here` **Note:** Branch naming is important. Use a name like
-    `fix/short-fix-description` or `feature/short-feature-description`. Review
-     the [Contribution Guidelines](#contribution-guidelines) for more detail.
-
+    `fix/short-fix-description` or `feature/short-feature-description`.
+    
 5.  Edit your file(s) locally with the editor of your choice. To edit challenges, you may want to use `unpack` and `repack` -- see [Unpack and Repack](#unpack-and-repack) for instructions.
 
 4.  Check your `git status` to see unstaged files.
