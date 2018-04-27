@@ -698,7 +698,7 @@
             "He aquí un ejemplo:",
             "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freecodecamp.org\"&#62; enlace a freeCodeCamp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
             "<hr>",
-            "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"fotos de gatos\"."
+            "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"cat photos\"."
           ]
         },
         "pt-br": {
