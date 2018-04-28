@@ -1465,24 +1465,26 @@
       "type": "bonfire",
       "title": "Problem 40: Champernowne's constant",
       "tests": [
-        "assert.strictEqual(euler40(), 210, 'message: <code>euler40()</code> should return 210.');"
+        "assert.strictEqual(champernownesConstant(100), 5, 'message: <code>champernownesConstant(100)</code> should return 5.');",
+        "assert.strictEqual(champernownesConstant(1000), 15, 'message: <code>champernownesConstant(1000)</code> should return 15.');",
+        "assert.strictEqual(champernownesConstant(1000000), 210, 'message: <code>champernownesConstant(1000000)</code> should return 210.');"
       ],
-      "solutions": [],
+      "solutions": ["function champernownesConstant(n) {\n  let fractionalPart = '';\n  for (let i = 0; fractionalPart.length <= n; i++) {\n    fractionalPart += i.toString();\n  }\n\n  let product = 1;\n  for (let i = 0; i < n.toString().length; i++) {\n    const index = 10 ** i;\n    product *= parseInt(fractionalPart[index], 10);\n  }\n\n  return product;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler40() {",
+        "function champernownesConstant(n) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler40();"
+        "champernownesConstant(100);"
       ],
       "description": [
         "An irrational decimal fraction is created by concatenating the positive integers:",
-        "0.123456789101112131415161718192021...",
-        "It can be seen that the 12th digit of the fractional part is 1.",
-        "If dn represents the nth digit of the fractional part, find the value of the following expression.",
-        "d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000"
+        "<span style='display: block; text-align: center;'>0.12345678910<b style='color: red;'>1</b>112131415161718192021...</span>",
+        "It can be seen that the 12<sup>th</sup> digit of the fractional part is 1.",
+        "If <i>d<sub>n</sub></i> represents the <i>n</i><sup>th</sup> digit of the fractional part, find the value of the following expression.",
+        "<span style='display: block; text-align: center;'>d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub></span>"
       ]
     },
     {
