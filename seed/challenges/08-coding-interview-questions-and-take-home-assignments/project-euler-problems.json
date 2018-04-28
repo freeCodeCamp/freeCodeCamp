@@ -1247,17 +1247,18 @@
       "type": "bonfire",
       "title": "Problem 32: Pandigital products",
       "tests": [
-        "assert.strictEqual(euler32(), 45228, 'message: <code>euler32()</code> should return 45228.');"
+        "assert(typeof pandigitalProducts === 'function', 'message: <code>pandigitalProducts()</code> is a function.');",
+        "assert.strictEqual(pandigitalProducts(), 45228, 'message: <code>pandigitalProducts()</code> should return 45228.');"
       ],
-      "solutions": [],
+      "solutions": ["function pandigitalProducts() {\n  function is1to9Pandigital(...numbers) {\n    const digitStr = concatenateNums(...numbers);\n    // check if length is 9\n    if (digitStr.length !== 9) {\n      return false;\n    }\n    // check if pandigital\n    for (let i = digitStr.length; i > 0; i--) {\n      if (digitStr.indexOf(i.toString()) === -1) {\n        return false;\n      }\n    }\n    return true;\n  }\n  function concatenateNums(...numbers) {\n    let digitStr = '';\n    for (let i = 0; i < numbers.length; i++) {\n      digitStr += numbers[i].toString();\n    }\n    return digitStr;\n  }\n\n  const pandigitalNums = [];\n  let sum = 0;\n  for (let mult1 = 2; mult1 < 9876; mult1++) {\n    let mult2 = 123;\n    while (concatenateNums(mult1, mult2, mult1 * mult2).length < 10) {\n      if (is1to9Pandigital(mult1, mult2, mult1 * mult2) && !pandigitalNums.includes(mult1 * mult2)) {\n        pandigitalNums.push(mult1 * mult2);\n        sum += mult1 * mult2;\n      }\n      mult2++;\n    }\n  }\n  return sum;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler32() {",
+        "function pandigitalProducts() {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler32();"
+        "pandigitalProducts();"
       ],
       "description": [
         "We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.",
