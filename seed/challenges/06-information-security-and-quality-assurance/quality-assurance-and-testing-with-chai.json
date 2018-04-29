@@ -558,7 +558,7 @@
         },
         {
           "text": "Choose the right assertion - typeOf vs. notTypeOf",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[1].method, 'notTypeOf', 'Plane.wings is a Number (not a String)'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[2].method, 'notTypeOf', 'Plane.wings is a Number (not a String)'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "Choose the right assertion - typeOf vs. notTypeOf",
