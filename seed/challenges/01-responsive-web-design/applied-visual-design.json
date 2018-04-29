@@ -320,7 +320,7 @@
       "description": [
         "To emphasize text, you can use the <code>em</code> tag. This displays text as italicized, as the browser applies the CSS of <code>font-style: italic;</code> to the element.",
         "<hr>",
-        "Wrap an <code>em</code> tag around the paragraph tag to give it emphasis."
+        "Wrap an <code>em</code> tag around the contents of the paragraph tag to give it emphasis."
       ],
       "challengeSeed": [
         "<style>",
@@ -364,7 +364,7 @@
       ],
       "tests": [
         "assert($('em').length == 1, 'message: Your code should add an <code>em</code> tag to the markup.');",
-        "assert($('em').children('p').length == 1, 'message: The <code>em</code> tag should wrap around the <code>p</code> tag and its contents.');"
+        "assert($('p').children().length == 1 && $('em').children().length == 2, 'message: The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.');"
       ],
       "solutions": [],
       "hints": [],
