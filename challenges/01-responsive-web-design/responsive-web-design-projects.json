@@ -180,7 +180,7 @@
         "<strong>User Story #1:</strong> My tribute page should have an element with a corresponding <code>id=\"main\"</code>, which contains all other elements.",
         "<strong>User Story #2:</strong> I should see an element with a corresponding <code>id=\"title\"</code>, which contains a string (i.e. text) that describes the subject of the tribute page (e.g. \"Dr. Norman Borlaug\").",
         "<strong>User Story #3:</strong> I should see a <code>div</code> element with a corresponding <code>id=\"img-div\"</code>.",
-        "<strong>User Story #4:</strong> Within the <code>img-div</code> element, I should see an <code>img></code> element with a corresponding <code>id=\"image\"</code>.",
+        "<strong>User Story #4:</strong> Within the <code>img-div</code> element, I should see an <code>img</code> element with a corresponding <code>id=\"image\"</code>.",
         "<strong>User Story #5:</strong> Within the <code>img-div</code> element, I should see an element with a corresponding <code>id=\"img-caption\"</code> that contains textual content describing the image shown in <code>img-div</code>.",
         "<strong>User Story #6:</strong> I should see an element with a corresponding <code>id=\"tribute-info\"</code>, which contains textual content describing the subject of the tribute page.",
         "<strong>User Story #7:</strong> I  should see an <code>a</code> element with a corresponding <code>id=\"tribute-link\"</code>, which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of <code>target</code> and set it to <code>_blank</code> in order for your link to open in a new tab (i.e. <code>target=\"_blank\"</code>).",
