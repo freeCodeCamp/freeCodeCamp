@@ -98,7 +98,7 @@
       "tests": [
         "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.');",
         "assert(code.match(/console\\.log\\(outputOne\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputOne</code> variable.');",
-        "assert(code.match(/console\\.clear\\(\\)/g), 'message: Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
+        "assert(code.match(/(?<!\\/\\/ Use )console\\.clear\\(\\)/g), 'message: Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
       ],
       "solutions": [],
       "hints": [],
