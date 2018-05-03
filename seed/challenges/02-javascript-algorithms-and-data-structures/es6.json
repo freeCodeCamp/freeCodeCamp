@@ -745,13 +745,12 @@
         "The <code>Vegetable</code> lets you create a vegetable object, with a property <code>name</code>, to be passed to constructor."
       ],
       "challengeSeed": [
+        "/* Alter code below this line */",
         "function makeClass() {",
         "  \"use strict\";",
-        "  /* Alter code below this line */",
-        "",
-        "  /* Alter code above this line */",
         "  return Vegetable;",
         "}",
+        "/* Alter code above this line */",
         "const Vegetable = makeClass();",
         "const carrot = new Vegetable('carrot');",
         "console.log(carrot.name); // => should be 'carrot'"
