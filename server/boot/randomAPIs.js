@@ -16,55 +16,16 @@ module.exports = function(app) {
   noLangRouter.get('/unsubscribe-notifications/:email', unsubscribeAll);
   noLangRouter.get('/unsubscribe-quincy/:email', unsubscribeAll);
   noLangRouter.get('/submit-cat-photo', submitCatPhoto);
-  noLangRouter.get(
-    '/the-fastest-web-page-on-the-internet',
-    theFastestWebPageOnTheInternet
-  );
 
   router.get('/unsubscribed', unsubscribed);
-  router.get('/nonprofits', nonprofits);
-  router.get('/nonprofits-form', nonprofitsForm);
-  router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
-  router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
-  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/stories', showTestimonials);
   router.get('/all-stories', showAllTestimonials);
-  router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
-  router.get(
-      '/software-resources-for-nonprofits',
-      softwareResourcesForNonprofits
-  );
-  router.get('/academic-honesty', academicHonesty);
 
   app.use(noLangRouter);
   app.use('/:lang', router);
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function howNonprofitProjectsWork(req, res) {
-      res.redirect(301,
-        'https://medium.freecodecamp.com/open-source-for-good-1a0ea9f32d5a');
-
-  }
-
-  function softwareResourcesForNonprofits(req, res) {
-    res.render('resources/software-resources-for-nonprofits', {
-      title: 'Software Resources for Nonprofits'
-    });
-  }
-
-  function academicHonesty(req, res) {
-      res.render('resources/academic-honesty', {
-          title: 'Academic Honesty policy'
-      });
-  }
-
-  function theFastestWebPageOnTheInternet(req, res) {
-    res.render('resources/the-fastest-web-page-on-the-internet', {
-      title: 'This is the fastest web page on the internet'
-    });
   }
 
   function showTestimonials(req, res) {
@@ -87,36 +48,6 @@ module.exports = function(app) {
 
   function submitCatPhoto(req, res) {
     res.send('Submitted!');
-  }
-
-  function bootcampCalculator(req, res) {
-    res.render('resources/calculator', {
-      title: 'Coding Bootcamp Cost Calculator'
-    });
-  }
-
-  function nonprofits(req, res) {
-    res.render('resources/nonprofits', {
-      title: 'Your Nonprofit Can Get Pro Bono Code'
-    });
-  }
-
-  function nonprofitsForm(req, res) {
-    res.render('resources/nonprofits-form', {
-      title: 'Nonprofit Projects Proposal Form'
-    });
-  }
-
-  function agileProjectManagers(req, res) {
-    res.render('resources/pmi-acp-agile-project-managers', {
-      title: 'Get Agile Project Management Experience for the PMI-ACP'
-    });
-  }
-
-  function agileProjectManagersForm(req, res) {
-    res.render('resources/pmi-acp-agile-project-managers-form', {
-      title: 'Agile Project Management Program Application Form'
-    });
   }
 
   function twitch(req, res) {
