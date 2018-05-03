@@ -55,6 +55,10 @@ class JSAlgoAndDSForm extends PureComponent {
       jsProjects = {},
       isCertClaimed
     } = this.props;
+    const completeCount = Object.values(jsProjects)
+      .filter(challengeInfo => Object.keys(challengeInfo).length !== 0)
+      .length;
+
     return (
       <FullWidthRow>
         <h3 className='project-heading'>{ projectBlockName }</h3>
@@ -100,7 +104,7 @@ class JSAlgoAndDSForm extends PureComponent {
           }
         </ul>
         {
-          Object.keys(jsProjects).length === 6 ?
+          Object.keys(jsProjects).length === completeCount ?
           <form onSubmit={ this.handleSubmit }>
             <BlockSaveButton>
               { isCertClaimed ? 'Show' : 'Claim'} Certificate
