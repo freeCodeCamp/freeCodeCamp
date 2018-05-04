@@ -183,7 +183,12 @@ You should have [ESLint running in your editor](http://eslint.org/docs/user-guid
 
 ### Set Up MailHog
 
-To be able to log in, you need to set up MailHog. MailHog is a local SMTP mail server that will catch the emails your freeCodeCamp instance is sending. How you install MailHog is dependent upon your OS.
+To be able to create a user and log into your development copy, you need to set up MailHog. MailHog is a local SMTP mail server that will catch the emails your freeCodeCamp instance is sending. How you install and run MailHog is dependent upon your OS.
+
+- [MacOS](#macos)
+- [Windows](#windows)
+- [Linux](#linux)
+- [Using MailHog](#using-mailhog)
 
 #### macOS
 
@@ -196,7 +201,7 @@ brew services start mailhog
 
 #### Windows
 
-Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/blob/master/docs/RELEASES.md). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer.
+Download the latest MailHog version from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Click on the link for your Windows version (32 or 64 bit) and .exe file will be downloaded to your computer.
 
 Once it finishes downloading, click on the file. You will probably get a Windows firewall notification where you will have to allow access to MailHog. Once you do, a standard Windows command line prompt will open with MailHog already running.
 
@@ -239,7 +244,24 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-To access your MailHog inbox, open your browser and navigate to [http://localhost:8025](http://localhost:8025). For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.
+#### Using MailHog
+
+Once you have installed MailHog and started it running you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025). 
+You should now see a screen like below:
+
+![MailHog Screenshot 1](docs/images/1.jpg)
+
+When your freeCodeCamp installation sends an email you will see it appear here. Like below:
+
+![MailHog Screenshot 2](docs/images/2.jpg)
+
+Open the mail and you should see two tabs where you can view the content - plain text and source. Make sure you are on the plain text tab.
+
+![MailHog Screenshot 3](docs/images/3.jpg)
+
+Any links in the email should be clickable.
+
+For any other questions related to MailHog or for instructions on custom configurations, check out the [MailHog](https://github.com/mailhog/MailHog) repository.
 
 ### Set Up freeCodeCamp
 
