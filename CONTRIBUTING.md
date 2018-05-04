@@ -249,15 +249,15 @@ mailhog
 Once you have installed MailHog and started it running you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025). 
 You should now see a screen like below:
 
-![MailHog Screenshot 1](https://github.com/johnkennedy9147/Resources/blob/master/mailhogImages/1.jpg?raw=1)
+![MailHog Screenshot 1](docs/images/1.jpg)
 
 When your freeCodeCamp installation sends an email you will see it appear here. Like below:
 
-![MailHog Screenshot 2](https://github.com/johnkennedy9147/Resources/blob/master/mailhogImages/2.jpg?raw=1)
+![MailHog Screenshot 2](docs/images/2.jpg)
 
 Open the mail and you should see two tabs where you can view the content - plain text and source. Make sure you are on the plain text tab.
 
-![MailHog Screenshot 3](https://github.com/johnkennedy9147/Resources/blob/master/mailhogImages/3.jpg?raw=1)
+![MailHog Screenshot 3](docs/images/3.jpg)
 
 Any links in the email should be clickable.
 
