@@ -3,23 +3,19 @@ block content
     .container
       .col-xs-12
         .row
-          .col-sm-6.col-sm-offset-3.flashMessage.negative-30
-                #flash-board.alert.fade.in(style='display: none;')
-                    button.close(type='button', data-dismiss='alert')
-                        span.ion-close-circled#flash-close
-                    #flash-content
-        .row
           .text-center
             h2 Sign up (or sign in with your existing account)
               .button-spacer
           .col-sm-6.col-sm-offset-3
-              form(method='POST', action='/passwordless-auth')
+              form(method='POST', action='/authzero-auth')
                   input(type='hidden', name='_csrf', value=_csrf)
                   .form-group
                       input.input-lg.form-control(type='email', name='email', id='email', placeholder='Enter your email address', autofocus=true, required, oninvalid="this.setCustomValidity('Enter your email address')", oninput="setCustomValidity('')")
-                  .button-spacer
-                  button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
-                    | Get a sign in link
+                      .button-spacer
+                      input#password-input.input-lg.form-control(type='password', placeholder='Enter your existing password', name='password', style='display: none;')
+                      .button-spacer
+                      button#next-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
+                        | Next
         .row
           .col-sm-6.col-sm-offset-3
               br
@@ -30,23 +26,26 @@ block content
 
         script.
           $(document).ready(function() {
-            function disableMagicButton (isDisabled) {
-                if (isDisabled) {
-                  $('#magic-btn')
-                    .prop('disabled', true)
-                    .html('<span style="color:#E0E0E0;"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i>OK - we\'re sending you an email. Open it and click sign in link.</span>');
-                } else {
-                  $('#magic-btn')
-                    .prop('disabled', true)
-                    .html('<span style="color:#E0E0E0;">If you didn\'t get the email, check your spam folder, or reload the page to try again.</span>');
-                }
-            }
 
             $('form').submit(function(event){
               event.preventDefault();
-              $('#flash-board').hide();
-              disableMagicButton(true);
+              
+              $('#password-input').hide();
               var $form = $(event.target);
+              
+              var AUTH0_DOMAIN = 'freecodecamp.auth0.com',
+                  AUTH0_CLIENT_ID = 'aUDv9jVqTfxBRE1l60NA5Af7yTCGE4cy',
+                  AUTH0_CALLBACK_URL = 'http://localhost:3000/';
+                  
+              var webAuth = new auth0.WebAuth({
+                domain: AUTH0_DOMAIN,
+                clientID: AUTH0_CLIENT_ID,
+                redirectUri: AUTH0_CALLBACK_URL,
+                audience: 'https://' + AUTH0_DOMAIN + '/userinfo',
+                responseType: 'token id_token',
+                scope: 'openid'
+              });
+              
               $.ajax({
                 type        : 'POST',
                 url         : $form.attr('action'),
@@ -57,43 +56,21 @@ block content
               })
               .fail(error => {
                 if (error.responseText){
-                  var data = JSON.parse(error.responseText);
-                  if(data.error && data.error.message) {
-                    $('#flash-content').html(data.error.message);
-                    $('#flash-board')
-                      .removeClass('alert-success')
-                      .addClass('alert-info')
-                      .slideDown(400)
-                      .delay(800)
-                      .fadeIn();
-                    disableMagicButton(false);
-                  }
+                  console.error(error.responseText);
                 }
               })
               .done(data => {
                 if(data && data.message) {
-                  var alertType = 'alert-';
-                  switch (data.type) {
-                    case 'errors': {
-                      alertType += 'danger';
-                      break
-                    }
-                    case 'success': {
-                      alertType += 'success';
-                      break
-                    }
-                    default: {
-                      alertType += 'info';
-                    }
+                  if(data.message === true || data.message === 'true'){
+                    $('#email').prop( "disabled", true );
+                    webAuth.authorize();
+                    /*
+                    $('#password-input')
+                      .slideDown(400)
+                      .delay(800)
+                      .fadeIn();
+                    */
                   }
-                  $('#flash-content').html(data.message);
-                  $('#flash-board')
-                    .removeClass('alert-info alert-success alert-danger')
-                    .addClass(alertType)
-                    .slideDown(400)
-                    .delay(800)
-                    .fadeIn();
-                  disableMagicButton(false);
                 }
               });
             });
