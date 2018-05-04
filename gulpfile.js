@@ -107,7 +107,6 @@ const paths = {
   ],
 
   vendorMain: [
-    resolve('opbeat-react'),
     resolve('jquery', '.js', '.min.js'),
     resolve('bootstrap', 'npm.js', 'bootstrap.min.js'),
     resolve('d3', '.js', '.min.js'),
@@ -120,7 +119,9 @@ const paths = {
     ),
     resolve('mousetrap', '.js', '.min.js'),
     resolve('lightbox2', '.js', '.min.js'),
-    resolve('rx', 'index.js', 'dist/rx.all.min.js')
+    resolve('rx', 'index.js', 'dist/rx.all.min.js'),
+    resolve('auth0-js'),
+    resolve('opbeat-react')
   ],
 
   less: './client/less/main.less',

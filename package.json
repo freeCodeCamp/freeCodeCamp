@@ -39,6 +39,7 @@
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
     "accepts": "^1.3.0",
+    "auth0-js": "^9.5.1",
     "babel-core": "^6.18.1",
     "babel-plugin-add-react-displayname": "0.0.5",
     "babel-preset-es2015": "^6.3.13",
