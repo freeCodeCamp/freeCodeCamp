@@ -505,15 +505,8 @@ for further information
     request](http://forum.freecodecamp.org/t/how-to-contribute-via-a-pull-request/19368)
     from your branch to freeCodeCamp's `staging` branch.
 
-4.  The title (also called the subject) of your PR should be descriptive of your
-    changes and succinctly indicates what is being fixed.
 
-    -   **Do not add the issue number in the PR title or commit message.**
-
-    -   Examples: `Add Test Cases to Bonfire Drop It` `Correct typo in Waypoint
-        Size Your Images`
-
-5.  In the body of your PR include a more detailed summary of the changes you
+4.  In the body of your PR include a more detailed summary of the changes you
     made and why.
 
     -   If the PR is meant to fix an existing bug/issue then, at the end of
@@ -521,7 +514,7 @@ for further information
         is the issue number). Example: `closes #1337`. This tells GitHub to
         close the existing issue, if the PR is merged.
 
-6.  Indicate if you have tested on a local copy of the site or not.
+5.  Indicate if you have tested on a local copy of the site or not.
 
 ### Unpack and Repack
 
