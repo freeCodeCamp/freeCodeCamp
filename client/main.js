@@ -508,6 +508,34 @@ $(document).ready(function() {
     .debounce(500)
     .subscribe(toggleNightMode, err => console.error(err));
 
+  function downloadUserData() {
+    if (!main.userId) {
+      return addAlert('You must be logged in to download your data.');
+    }
+    const options = {
+      url: `/api/users/${main.userId}/download-data`,
+      type: 'POST',
+      dataType: 'json'
+    };
+    return $.ajax(options)
+      .success(() => console.log('User data downloaded successfully'))
+      .fail(err => {
+        let message;
+        try {
+          message = JSON.parse(err.responseText).error.message;
+        } catch (error) {
+          return null;
+        }
+        if (!message) {
+          return null;
+        }
+        return addAlert(message);
+      });
+  }
+  Observable.fromEvent($('#download-data'), 'click')
+    .debounce(500)
+    .subscribe(downloadUserData, err => console.error(err));
+
   // Hot Keys
   window.Mousetrap.bind('g n n', () => {
     // Next Challenge
