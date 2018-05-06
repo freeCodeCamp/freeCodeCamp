@@ -139,10 +139,10 @@ module.exports = function(User) {
     var mailOptions = {
       type: 'email',
       to: user.email,
-      from: 'team@freecodecamp.com',
+      from: 'team@freecodecamp.org',
       subject: 'Welcome to freeCodeCamp!',
       protocol: isDev ? null : 'https',
-      host: isDev ? app.get('host') : 'freecodecamp.com',
+      host: isDev ? app.get('host') : 'freecodecamp.org',
       port: isDev ? null : 443,
       template: path.join(
          __dirname,
@@ -371,7 +371,10 @@ module.exports = function(User) {
         return res.redirect(redirectTo);
       }
 
-      req.flash('success', { msg: 'Success! You are now logged in.' });
+      const { email, emailVerified } = req.user;
+      if (email && emailVerified) {
+        req.flash('success', { msg: 'Success! You are now logged in.' });
+      }
       return res.redirect('/');
     });
   });

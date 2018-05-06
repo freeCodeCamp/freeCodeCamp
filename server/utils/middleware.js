@@ -47,3 +47,24 @@ export function flashIfNotVerified(req, res, next) {
   }
   */
 }
+
+export function redirectIfNotVerified(req, res, next) {
+  const user = req.user;
+  if (!user) {
+    return next();
+  }
+
+  const { email, emailVerified } = req.user;
+  if (email && emailVerified) {
+    return next();
+  } else {
+    req.flash('info', {
+      msg: 'New privacy laws now require that we have an email ' +
+      'address where we can reach you. Please verify your email address ' +
+      'below and click the link we send you.'
+    });
+    res.redirect('/update-email');
+  }
+
+  return next;
+}
