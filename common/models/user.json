@@ -256,6 +256,13 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "updateTheme"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "downloadUserData"
     }
   ],
   "methods": []

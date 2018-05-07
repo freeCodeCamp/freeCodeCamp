@@ -508,6 +508,38 @@ $(document).ready(function() {
     .debounce(500)
     .subscribe(toggleNightMode, err => console.error(err));
 
+  // https://stackoverflow.com/a/30800715
+  function downloadObjectAsJson(exportObj, exportName) {
+    var dataStr = 'data:text/json;charset=utf-8,' +
+      encodeURIComponent(JSON.stringify(exportObj));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute('href', dataStr);
+    downloadAnchorNode.setAttribute('download', exportName + '.json');
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
+  function downloadUserData() {
+    if (!main.userId) {
+      return addAlert('You must be logged in to download your data.');
+    }
+    const options = {
+      url: `/api/users/${main.userId}/download-data`,
+      type: 'POST',
+      dataType: 'json'
+    };
+    return $.ajax(options)
+      .success(({ data }) => {
+        const username = data.username || 'user-data';
+        downloadObjectAsJson(data, username);
+      })
+      .fail(err => {
+        console.error(err);
+      });
+  }
+  Observable.fromEvent($('#download-data'), 'click')
+    .debounce(500)
+    .subscribe(downloadUserData, err => console.error(err));
+
   // Hot Keys
   window.Mousetrap.bind('g n n', () => {
     // Next Challenge

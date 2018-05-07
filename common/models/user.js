@@ -769,6 +769,59 @@ module.exports = function(User) {
     }
   );
 
+  User.prototype.downloadUserData = function downloadUserData() {
+    const id = this.getId();
+    const keys = {
+      email: true,
+      progressTimestamps: true,
+      githubId: true,
+      githubURL: true,
+      joinedGithubOn: true,
+      username: true,
+      bio: true,
+      name: true,
+      location: true,
+      picture: true,
+      sendQuincyEmail: true,
+      isFrontEndCert: false,
+      isDataVisCert: false,
+      isBackEndCert: false,
+      isFullStackCert: false,
+      isChallengeMapMigrated: false,
+      challengeMap: true,
+      theme: true
+    };
+    const filter = {
+      where: { id },
+      fields: keys
+    };
+    return this.constructor.findOne$(filter)
+      .map(user => {
+        Object.assign(this, user);
+        return user;
+      })
+      .toPromise();
+  };
+
+  User.remoteMethod(
+    'downloadUserData',
+    {
+      isStatic: false,
+      description: 'updates the users chosen theme',
+      accepts: [],
+      returns: [
+        {
+          arg: 'data',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/download-data',
+        verb: 'POST'
+      }
+    }
+  );
+
   // user.updateTo$(updateData: Object) => Observable[Number]
   // the default for loopback is to use a $set operator
   User.prototype.update$ = function update$(updateData) {
