@@ -508,6 +508,16 @@ $(document).ready(function() {
     .debounce(500)
     .subscribe(toggleNightMode, err => console.error(err));
 
+  // https://stackoverflow.com/a/30800715
+  function downloadObjectAsJson(exportObj, exportName) {
+    var dataStr = 'data:text/json;charset=utf-8,' +
+      encodeURIComponent(JSON.stringify(exportObj));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute('href', dataStr);
+    downloadAnchorNode.setAttribute('download', exportName + '.json');
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
   function downloadUserData() {
     if (!main.userId) {
       return addAlert('You must be logged in to download your data.');
@@ -518,18 +528,12 @@ $(document).ready(function() {
       dataType: 'json'
     };
     return $.ajax(options)
-      .success(() => console.log('User data downloaded successfully'))
+      .success(({ data }) => {
+        const username = data.username || 'user-data';
+        downloadObjectAsJson(data, username);
+      })
       .fail(err => {
-        let message;
-        try {
-          message = JSON.parse(err.responseText).error.message;
-        } catch (error) {
-          return null;
-        }
-        if (!message) {
-          return null;
-        }
-        return addAlert(message);
+        console.error(err);
       });
   }
   Observable.fromEvent($('#download-data'), 'click')
