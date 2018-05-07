@@ -5,10 +5,12 @@ import { Button } from 'react-bootstrap';
 
 const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
-  guideUrl: PropTypes.string
+  guideUrl: PropTypes.string,
+  openHelpModal: PropTypes.func.isRequired,
+  reset: PropTypes.func.isRequired
 };
 
-function ToolPanel({ executeChallenge, guideUrl }) {
+function ToolPanel({ executeChallenge, guideUrl, reset, openHelpModal }) {
   return (
     <div>
       <Button
@@ -20,8 +22,13 @@ function ToolPanel({ executeChallenge, guideUrl }) {
         Run tests (Ctrl + Enter)
       </Button>
       <div className='button-spacer' />
-      <Button block={true} bsStyle='primary' className='btn-big'>
-        Reset your code
+      <Button
+        block={true}
+        bsStyle='primary'
+        className='btn-big'
+        onClick={reset}
+        >
+        Reset this lesson
       </Button>
       <div className='button-spacer' />
       {guideUrl && (
@@ -38,7 +45,12 @@ function ToolPanel({ executeChallenge, guideUrl }) {
           <div className='button-spacer' />
         </div>
       )}
-      <Button block={true} bsStyle='primary' className='btn-big'>
+      <Button
+        block={true}
+        bsStyle='primary'
+        className='btn-big'
+        onClick={openHelpModal}
+        >
         Ask for help on the forum
       </Button>
       <div className='button-spacer' />

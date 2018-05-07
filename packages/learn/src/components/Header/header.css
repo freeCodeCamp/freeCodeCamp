@@ -6,3 +6,11 @@
 #top-nav img {
   margin-bottom: 0;
 }
+
+.top-nav-container {
+  margin: 0 auto;
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

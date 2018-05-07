@@ -1,41 +1,39 @@
 import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../utils/stateManagment';
-import signInEpic from './sign-in-epic';
 
 const ns = 'app';
 
-export const epics = [signInEpic];
+export const epics = [];
 
 export const types = createTypes(
-  [
-    'fetchUser',
-    'fetchUserComplete',
-    'fetchUserError',
-    'signIn',
-    'signInComplete',
-    'signInError'
-  ],
+  ['fetchUser', 'fetchUserComplete', 'fetchUserError', 'updateUserSignedIn'],
   ns
 );
 
 const initialState = {
+  isSignedIn: false,
   user: {}
 };
-
-export const signIn = createAction(types.signIn);
-export const signInComplete = createAction(types.signInComplete);
-export const signInError = createAction(types.signInError);
 
 export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(types.fetchUserComplete);
 export const fecthUserError = createAction(types.fetchUserError);
+
+export const updateUserSignedIn = createAction(types.updateUserSignedIn);
+
+export const isSignedInSelector = state => state[ns].isSignedIn;
+export const userSelector = state => state[ns].user;
 
 export const reducer = handleActions(
   {
     [types.fetchUserComplete]: (state, { payload }) => ({
       ...state,
       user: payload
+    }),
+    [types.updateUserSignedIn]: (state, { payload }) => ({
+      ...state,
+      isSignedIn: payload
     })
   },
   initialState

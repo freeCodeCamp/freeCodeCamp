@@ -6,6 +6,7 @@ import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
 import executeChallengeEpic from './execute-challenge-epic';
 import codeLockEpic from './code-lock-epic';
+import createQuestionEpic from './create-question-epic';
 
 const ns = 'challenge';
 export const backendNS = 'backendChallenge';
@@ -30,12 +31,14 @@ export const epics = [
   challengeModalEpic,
   codeLockEpic,
   completionEpic,
+  createQuestionEpic,
   executeChallengeEpic
 ];
 
 export const types = createTypes(
   [
     'createFiles',
+    'createQuestion',
     'initTests',
     'initConsole',
     'updateConsole',
@@ -53,6 +56,7 @@ export const types = createTypes(
 
     'checkChallenge',
     'executeChallenge',
+    'resetChallenge',
     'submitChallenge'
   ],
   ns
@@ -73,6 +77,7 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
       {}
     )
 );
+export const createQuestion = createAction(types.createQuestion);
 export const initTests = createAction(types.initTests);
 export const updateTests = createAction(types.updateTests);
 
@@ -94,6 +99,7 @@ export const openModal = createAction(types.openModal);
 
 export const checkChallenge = createAction(types.checkChallenge);
 export const executeChallenge = createAction(types.executeChallenge);
+export const resetChallenge = createAction(types.resetChallenge);
 export const submitChallenge = createAction(types.submitChallenge);
 
 export const backendFormValuesSelector = state => state.form[backendNS];
@@ -103,6 +109,7 @@ export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
 export const isCompletionModalOpenSelector = state =>
   state[ns].modal.completion;
+export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isJSEnabledSelector = state => state[ns].isJSEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 
@@ -111,6 +118,16 @@ export const reducer = handleActions(
     [types.createFiles]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload
+    }),
+    [types.updateFile]: (state, { payload: { key, editorValue } }) => ({
+      ...state,
+      challengeFiles: {
+        ...state.challengeFiles,
+        [key]: {
+          ...state.challengeFiles[key],
+          contents: editorValue
+        }
+      }
     }),
     [types.initTests]: (state, { payload }) => ({
       ...state,
@@ -124,23 +141,37 @@ export const reducer = handleActions(
       ...state,
       consoleOut: payload
     }),
-    [types.updateChallengeMeta]: (state, { payload }) => ({
-      ...state,
-      challengeMeta: { ...payload }
-    }),
     [types.updateConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: state.consoleOut + '\n' + payload
     }),
-    [types.updateFile]: (state, { payload: { key, editorValue } }) => ({
+
+    [types.updateChallengeMeta]: (state, { payload }) => ({
+      ...state,
+      challengeMeta: { ...payload }
+    }),
+
+    [types.resetChallenge]: state => ({
       ...state,
       challengeFiles: {
-        ...state.challengeFiles,
-        [key]: {
-          ...state.challengeFiles[key],
-          contents: editorValue
-        }
-      }
+        ...Object.keys(state.challengeFiles)
+          .map(key => state.challengeFiles[key])
+          .reduce(
+            (files, file) => ({
+              ...files,
+              [file.key]: {
+                ...file,
+                contents: file.seed.slice()
+              }
+            }),
+            {}
+          )
+      },
+      challengeTests: state.challengeTests.map(({ text, testString }) => ({
+        text,
+        testString
+      })),
+      consoleOut: ''
     }),
     [types.unlockCode]: state => ({
       ...state,

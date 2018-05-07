@@ -1,18 +1,17 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
 
-import ns from './ns.json';
-import {
-  createQuestion,
-  closeHelpModal,
-  helpModalSelector
-} from './redux';
-import { RSA } from '../../../utils/constantStrings.json';
+import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
 
-const mapStateToProps = state => ({ isOpen: helpModalSelector(state) });
-const mapDispatchToProps = { createQuestion, closeHelpModal };
+const mapStateToProps = state => ({ isOpen: isHelpModalOpenSelector(state) });
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    { createQuestion, closeHelpModal: () => closeModal('help') },
+    dispatch
+  );
 
 const propTypes = {
   closeHelpModal: PropTypes.func.isRequired,
@@ -20,46 +19,42 @@ const propTypes = {
   isOpen: PropTypes.bool
 };
 
+const RSA =
+  'https://forum.freecodecamp.org/t/the-read-search-ask-methodology-for-' +
+  'getting-unstuck/137307';
+
 export class HelpModal extends PureComponent {
   render() {
-    const {
-      isOpen,
-      closeHelpModal,
-      createQuestion
-    } = this.props;
+    const { isOpen, closeHelpModal, createQuestion } = this.props;
     return (
-      <Modal
-        show={ isOpen }
-        >
-        <Modal.Header className={ `${ns}-list-header` }>
+      <Modal show={isOpen}>
+        <Modal.Header>
           Ask for help?
-          <span
-            className='close closing-x'
-            onClick={ closeHelpModal }
-            >
+          <span className='close closing-x' onClick={closeHelpModal}>
             ×
           </span>
         </Modal.Header>
         <Modal.Body className='text-center'>
-          <h3 className={`${ns}-help-modal-heading`}>
+          <h3>
             If you've already tried the&nbsp;
-            <a href={ RSA } target='_blank' title='Read, search, ask'>
-              Read-Search-Ask</a>&nbsp; method, then you can ask for help
-              on the freeCodeCamp forum.
+            <a href={RSA} target='_blank' title='Read, search, ask'>
+              Read-Search-Ask
+            </a>&nbsp; method, then you can ask for help on the freeCodeCamp
+            forum.
           </h3>
           <Button
-            block={ true }
+            block={true}
             bsSize='lg'
             bsStyle='primary'
-            onClick={ createQuestion }
+            onClick={createQuestion}
             >
             Create a help post on the forum
           </Button>
           <Button
-            block={ true }
+            block={true}
             bsSize='lg'
             bsStyle='primary'
-            onClick={ closeHelpModal }
+            onClick={closeHelpModal}
             >
             Cancel
           </Button>

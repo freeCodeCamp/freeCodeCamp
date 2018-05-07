@@ -11,6 +11,7 @@ import Editor from './Editor';
 import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
 import CompletionModal from '../components/CompletionModal';
+import HelpModal from '../components/HelpModal';
 
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
@@ -53,12 +54,12 @@ class ShowClassic extends PureComponent {
       createFiles,
       initTests,
       updateChallengeMeta,
-      data: { challengeNode: { files, fields: { tests } } },
+      data: { challengeNode: { files, title, fields: { tests } } },
       pathContext: { challengeMeta }
     } = this.props;
     createFiles(files);
     initTests(tests);
-    updateChallengeMeta(challengeMeta);
+    updateChallengeMeta({ ...challengeMeta, title });
   }
 
   componentDidUpdate(prevProps) {
@@ -75,7 +76,7 @@ class ShowClassic extends PureComponent {
     if (prevTitle !== currentTitle) {
       createFiles(files);
       initTests(tests);
-      updateChallengeMeta(challengeMeta);
+      updateChallengeMeta({ ...challengeMeta, title: currentTitle });
     }
   }
 
@@ -133,6 +134,7 @@ class ShowClassic extends PureComponent {
           )}
         </ReflexContainer>
         <CompletionModal />
+        <HelpModal />
       </Fragment>
     );
   }

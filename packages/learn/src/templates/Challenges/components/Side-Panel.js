@@ -17,7 +17,9 @@ import {
   consoleOutputSelector,
   challengeTestsSelector,
   executeChallenge,
-  initConsole
+  resetChallenge,
+  initConsole,
+  openModal
 } from '../redux';
 
 const mapStateToProps = createSelector(
@@ -27,14 +29,24 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ executeChallenge, initConsole }, dispatch);
+  bindActionCreators(
+    {
+      executeChallenge,
+      resetChallenge,
+      initConsole,
+      openHelpModal: () => openModal('help')
+    },
+    dispatch
+  );
 
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
   initConsole: PropTypes.func.isRequired,
+  openHelpModal: PropTypes.func.isRequired,
   output: PropTypes.string,
+  resetChallenge: PropTypes.func.isRequired,
   tests: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
@@ -76,7 +88,9 @@ export class SidePanel extends PureComponent {
       tests = [],
       output = '',
       guideUrl,
-      executeChallenge
+      executeChallenge,
+      resetChallenge,
+      openHelpModal
     } = this.props;
     return (
       <div className={'instructions-panel'} ref='panel' role='complementary'>
@@ -85,7 +99,12 @@ export class SidePanel extends PureComponent {
           <ChallengeTitle>{title}</ChallengeTitle>
           <ChallengeDescription description={description} />
         </div>
-        <ToolPanel executeChallenge={executeChallenge} guideUrl={guideUrl} />
+        <ToolPanel
+          executeChallenge={executeChallenge}
+          guideUrl={guideUrl}
+          openHelpModal={openHelpModal}
+          reset={resetChallenge}
+        />
         <Spacer />
         <Output
           defaultOutput={`/**

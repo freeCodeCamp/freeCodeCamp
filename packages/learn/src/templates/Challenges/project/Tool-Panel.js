@@ -1,54 +1,36 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import { createSelector } from 'reselect';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
+
+// import { submittingSelector } from './redux';
+import { openModal } from '../redux';
+import { frontEndProject } from '../../../../utils/challengeTypes';
 
 import ButtonSpacer from '../../../components/util/ButtonSpacer';
 import ProjectForm from './ProjectForm';
 
-// import { submittingSelector } from './redux';
+const mapStateToProps = () => ({});
 
-// import {
-//   openChallengeModal,
-
-//   openHelpModal,
-//   chatRoomSelector,
-//   guideURLSelector
-// } from '../../redux';
-
-// import {
-//   signInLoadingSelector,
-//   challengeSelector
-// } from '../../../../redux';
-import { frontEndProject } from '../../../../utils/challengeTypes';
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ openHelpModal: () => openModal('help') }, dispatch);
 
 const propTypes = {
   challengeType: PropTypes.number,
   guideUrl: PropTypes.string,
-  helpChatRoom: PropTypes.string.isRequired
+  openHelpModal: PropTypes.func.isRequired
 };
 
 export class ToolPanel extends PureComponent {
   render() {
-    const { guideUrl, helpChatRoom, challengeType } = this.props;
-    console.log(challengeType, frontEndProject);
+    const { guideUrl, challengeType, openHelpModal } = this.props;
+    console.log(this.props);
 
     const isFrontEnd = challengeType === frontEndProject;
     return (
       <Fragment>
         <ProjectForm isFrontEnd={isFrontEnd} />
-        <ButtonSpacer />
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-primary-ghost btn-big'
-          componentClass='a'
-          href={`https://gitter.im/freecodecamp/${helpChatRoom}`}
-          target='_blank'
-          >
-          Help
-        </Button>
         <ButtonSpacer />
         {guideUrl && (
           <Fragment>
@@ -68,6 +50,7 @@ export class ToolPanel extends PureComponent {
           block={true}
           bsStyle='primary'
           className='btn-primary-ghost btn-big'
+          onClick={openHelpModal}
           >
           Ask for help on the forum
         </Button>
@@ -80,4 +63,4 @@ export class ToolPanel extends PureComponent {
 ToolPanel.displayName = 'ProjectToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default ToolPanel;
+export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
