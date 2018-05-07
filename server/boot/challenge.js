@@ -19,7 +19,8 @@ import { observeMethod } from '../utils/rx';
 
 import {
   ifNoUserSend,
-  flashIfNotVerified
+  flashIfNotVerified,
+  redirectIfNotVerified
 } from '../utils/middleware';
 
 import getFromDisk$ from '../utils/getFromDisk$';
@@ -422,6 +423,7 @@ module.exports = function(app) {
 
   router.get('/challenges/:challengeName',
     flashIfNotVerified,
+    redirectIfNotVerified,
     showChallenge
   );
 

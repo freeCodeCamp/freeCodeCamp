@@ -15,15 +15,30 @@ block content
         .form-group
           input.input-lg.form-control(type='email', name='email', id='email', value=user.email || '', placeholder=user.email || 'Enter your new email', autofocus, required, autocomplete="off")
         .form-group
-          button.btn.btn-lg.btn-primary.btn-block(type='submit')= !user.email || user.emailVerified ? 'Update my Email' : 'Verify Email'
-          a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/settings')
-            | Go back to Settings
+          button#magic-btn.btn.btn-lg.btn-primary.btn-block(type='submit')= !user.email || user.emailVerified ? 'Update my Email' : 'Verify Email'
+        .button-spacer
+        p.text-center
+          a(href='/settings') Go back to Settings
 
     script.
        $(document).ready(function() {
+        
+       function disableMagicButton (isDisabled) {
+         if (isDisabled) {
+           $('#magic-btn')
+             .prop('disabled', true)
+             .html('<span style="color:#E0E0E0;"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i>OK - We will try sending you a verification email.</span>');
+         } else {
+           $('#magic-btn')
+             .prop('disabled', true)
+             .html('<span style="color:#E0E0E0;">If you didn\'t get the email, check your spam folder, or try again later.</span>');
+         }
+       }
+       
         $('form').submit(function(event){
           event.preventDefault();
           $('#flash-board').hide();
+          disableMagicButton(true);
           var $form = $(event.target);
           $.ajax({
               type        : 'POST',
@@ -35,22 +50,25 @@ block content
           })
           .fail(error => {
             if (error.responseText){
-                var data = JSON.parse(error.responseText);
-                if(data.message)
-                $('#flash-content').html(data.message);
-                $('#flash-board')
-                  .removeClass('alert-success')
-                  .addClass('alert-info')
-                  .fadeIn();
-              }
+              var data = JSON.parse(error.responseText);
+              if(data.message)
+              $('#flash-content').html(data.message);
+              $('#flash-board')
+                .removeClass('alert-success alert-success alert-danger')
+                .addClass('alert-info')
+                .fadeIn();
+              disableMagicButton(false);
+            }
+           console.log(error);
           })
           .done(data =>{
             if(data && data.message){
               $('#flash-content').html(data.message);
               $('#flash-board')
-                  .removeClass('alert-info')
-                  .addClass('alert-success')
+                .removeClass('alert-info alert-success alert-danger')
+                  .addClass('alert-info')
                   .fadeIn();
+                disableMagicButton(false);
             }
           });
         });
