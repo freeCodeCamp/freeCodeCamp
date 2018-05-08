@@ -1631,26 +1631,26 @@
       "type": "bonfire",
       "title": "Problem 46: Goldbach's other conjecture",
       "tests": [
-        "assert.strictEqual(euler46(), 5777, 'message: <code>euler46()</code> should return 5777.');"
+        "assert.strictEqual(goldbachsOtherConjecture(), 5777, 'message: <code>goldbachsOtherConjecture()</code> should return 5777.');"
       ],
-      "solutions": [],
+      "solutions": ["function goldbachsOtherConjecture() {  function isPrime(num) {\n    if (num < 2) {\n      return false;\n    } else if (num === 2) {\n      return true;\n    }\n    const sqrtOfNum = Math.floor(num ** 0.5);\n    for (let i = 2; i <= sqrtOfNum + 1; i++) {\n      if (num % i === 0) {\n        return false;\n      }\n    }\n    return true;\n  }\n\n  function isSquare(num) {\n    return Math.sqrt(num) % 1 === 0;\n  }\n\n  // construct a list of prime numbers\n  const primes = [];\n  for (let i = 2; primes.length < 1000; i++) {\n    if (isPrime(i)) primes.push(i);\n  }\n\n  let num = 3;\n  let answer;\n  while (!answer) {\n    num += 2;\n    if (!isPrime(num)) {\n      let found = false;\n      for (let primeI = 0; primeI < primes.length && !found; primeI++) {\n        const square = (num - primes[primeI]) / 2;\n        if (isSquare(square)) {\n          found = true;\n          break;\n        }\n      }\n      if (!found) answer = num;\n    }\n  }\n  return answer;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler46() {",
+        "function goldbachsOtherConjecture() {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler46();"
+        "goldbachsOtherConjecture();"
       ],
       "description": [
         "It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square.",
-        "9 = 7 + 2×12",
-        "15 = 7 + 2×22",
-        "21 = 3 + 2×32",
-        "25 = 7 + 2×32",
-        "27 = 19 + 2×22",
-        "33 = 31 + 2×12",
+        "9 = 7 + 2×1<sup>2</sup>",
+        "15 = 7 + 2×2<sup>2</sup>",
+        "21 = 3 + 2×3<sup>2</sup>",
+        "25 = 7 + 2×3<sup>2</sup>",
+        "27 = 19 + 2×2<sup>2</sup>",
+        "33 = 31 + 2×1<sup>2</sup>",
         "It turns out that the conjecture was false.",
         "What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?"
       ]
