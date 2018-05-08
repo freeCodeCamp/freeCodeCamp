@@ -811,5 +811,8 @@
       "releasedOn": "Feb 17, 2017",
       "translations": {}
     }
-  ]
+  ],
+  "fileName": "06-information-security-and-quality-assurance/quality-assurance-and-testing-with-chai.json",
+  "superBlock": "information-security-and-quality-assurance",
+  "superOrder": 6
 }

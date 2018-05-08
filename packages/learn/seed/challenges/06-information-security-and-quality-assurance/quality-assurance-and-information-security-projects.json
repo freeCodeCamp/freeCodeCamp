@@ -294,5 +294,8 @@
       "releasedOn": "January 15, 2017",
       "translations": {}
     }
-  ]
+  ],
+  "fileName": "06-information-security-and-quality-assurance/quality-assurance-and-information-security-projects.json",
+  "superBlock": "information-security-and-quality-assurance",
+  "superOrder": 6
 }

@@ -283,5 +283,8 @@
       "challengeType": 2,
       "translations": {}
     }
-  ]
+  ],
+  "fileName": "05-apis-and-microservices/basic-node-and-express.json",
+  "superBlock": "apis-and-microservices",
+  "superOrder": 5
 }

@@ -256,5 +256,8 @@
       "challengeType": 2,
       "translations": {}
     }
-  ]
+  ],
+  "fileName": "05-apis-and-microservices/mongodb-and-mongoose.json",
+  "superBlock": "apis-and-microservices",
+  "superOrder": 5
 }

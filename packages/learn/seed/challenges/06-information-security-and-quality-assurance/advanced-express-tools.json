@@ -651,5 +651,8 @@
       "challengeType": 2,
       "translations": {}
     }
-  ]
+  ],
+  "fileName": "06-information-security-and-quality-assurance/advanced-express-tools.json",
+  "superBlock": "information-security-and-quality-assurance",
+  "superOrder": 6
 }
