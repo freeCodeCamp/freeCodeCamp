@@ -10,7 +10,8 @@ import {
 
 const propTypes = {
   isFrontEnd: PropTypes.bool,
-  isSubmitting: PropTypes.bool
+  isSubmitting: PropTypes.bool,
+  openModal: PropTypes.func.isRequired
 };
 
 const frontEndFields = ['solution'];
@@ -35,6 +36,7 @@ const options = {
 
 export class ProjectForm extends PureComponent {
   handleSubmit = values => {
+    this.props.openModal('completion');
     console.log(values);
   };
 

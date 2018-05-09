@@ -14,23 +14,34 @@ import ProjectForm from './ProjectForm';
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ openHelpModal: () => openModal('help') }, dispatch);
+  bindActionCreators(
+    {
+      openHelpModal: () => openModal('help'),
+      openCompletionModal: () => openModal('completion')
+    },
+    dispatch
+  );
 
 const propTypes = {
   challengeType: PropTypes.number,
   guideUrl: PropTypes.string,
+  openCompletionModal: PropTypes.func.isRequired,
   openHelpModal: PropTypes.func.isRequired
 };
 
 export class ToolPanel extends PureComponent {
   render() {
-    const { guideUrl, challengeType, openHelpModal } = this.props;
-    console.log(this.props);
+    const {
+      guideUrl,
+      challengeType,
+      openHelpModal,
+      openCompletionModal
+    } = this.props;
 
     const isFrontEnd = challengeType === frontEndProject;
     return (
       <Fragment>
-        <ProjectForm isFrontEnd={isFrontEnd} />
+        <ProjectForm isFrontEnd={isFrontEnd} openModal={openCompletionModal} />
         <ButtonSpacer />
         {guideUrl && (
           <Fragment>

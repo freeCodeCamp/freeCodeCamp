@@ -9,6 +9,7 @@ import ChallengeTitle from '../components/Challenge-Title';
 import ChallengeDescription from '../components/Challenge-Description';
 import TestSuite from '../components/Test-Suite';
 import Output from '../components/Output';
+import CompletionModal from '../components/CompletionModal';
 import {
   executeChallenge,
   challengeTestsSelector,
@@ -77,11 +78,11 @@ export class BackEnd extends PureComponent {
     const {
       initTests,
       updateChallengeMeta,
-      data: { challengeNode: { fields: { tests } } },
+      data: { challengeNode: { fields: { tests }, challengeType } },
       pathContext: { challengeMeta }
     } = this.props;
     initTests(tests);
-    updateChallengeMeta(challengeMeta);
+    updateChallengeMeta({ ...challengeMeta, challengeType });
   }
 
   componentDidUpdate(prevProps) {
@@ -89,12 +90,14 @@ export class BackEnd extends PureComponent {
     const {
       initTests,
       updateChallengeMeta,
-      data: { challengeNode: { title: currentTitle, fields: { tests } } },
+      data: {
+        challengeNode: { title: currentTitle, fields: { tests }, challengeType }
+      },
       pathContext: { challengeMeta }
     } = this.props;
     if (prevTitle !== currentTitle) {
       initTests(tests);
-      updateChallengeMeta(challengeMeta);
+      updateChallengeMeta({ ...challengeMeta, challengeType });
     }
   }
 
@@ -107,7 +110,7 @@ export class BackEnd extends PureComponent {
       executeChallenge
     } = this.props;
 
-    // TODO: Should be tied to user.isSigned
+    // TODO: Should be tied to user.isSignedIn
     const buttonCopy = submitting
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
@@ -141,6 +144,7 @@ export class BackEnd extends PureComponent {
             <TestSuite tests={tests} />
           </Row>
         </Col>
+        <CompletionModal />
       </Row>
     );
   }

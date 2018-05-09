@@ -8,6 +8,7 @@ import Helmet from 'react-helmet';
 import { ChallengeNode } from '../../../redux/propTypes';
 import SidePanel from './Side-Panel';
 import ToolPanel from './Tool-Panel';
+import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import { bindActionCreators } from 'redux';
 import { updateChallengeMeta, createFiles } from '../redux';
@@ -76,6 +77,7 @@ export class Project extends PureComponent {
           title={blockNameTitle}
         />
         <ToolPanel challengeType={challengeType} />
+        <CompletionModal />
         <HelpModal />
       </Fragment>
     );
