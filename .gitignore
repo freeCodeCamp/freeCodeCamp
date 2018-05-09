@@ -43,6 +43,7 @@ seed/unpacked
 server/rev-manifest.json
 server/manifests/*
 !server/manifests/README.md
+server/resources/pathMigration.json
 
 public/js/main*
 public/js/commonFramework*
