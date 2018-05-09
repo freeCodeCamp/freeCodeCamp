@@ -17,7 +17,6 @@ import {
   consoleOutputSelector,
   challengeTestsSelector,
   executeChallenge,
-  resetChallenge,
   initConsole,
   openModal
 } from '../redux';
@@ -32,9 +31,9 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       executeChallenge,
-      resetChallenge,
       initConsole,
-      openHelpModal: () => openModal('help')
+      openHelpModal: () => openModal('help'),
+      openResetModal: () => openModal('reset')
     },
     dispatch
   );
@@ -45,8 +44,8 @@ const propTypes = {
   guideUrl: PropTypes.string,
   initConsole: PropTypes.func.isRequired,
   openHelpModal: PropTypes.func.isRequired,
+  openResetModal: PropTypes.func.isRequired,
   output: PropTypes.string,
-  resetChallenge: PropTypes.func.isRequired,
   tests: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
@@ -89,7 +88,7 @@ export class SidePanel extends PureComponent {
       output = '',
       guideUrl,
       executeChallenge,
-      resetChallenge,
+      openResetModal,
       openHelpModal
     } = this.props;
     return (
@@ -103,7 +102,7 @@ export class SidePanel extends PureComponent {
           executeChallenge={executeChallenge}
           guideUrl={guideUrl}
           openHelpModal={openHelpModal}
-          reset={resetChallenge}
+          openResetModal={openResetModal}
         />
         <Spacer />
         <Output

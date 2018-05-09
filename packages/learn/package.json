@@ -46,6 +46,7 @@
     "redux-observable": "^0.18.0",
     "reselect": "^3.0.1",
     "rxjs": "^5.5.7",
+    "store": "^2.0.12",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "validator": "^9.4.1"
   },

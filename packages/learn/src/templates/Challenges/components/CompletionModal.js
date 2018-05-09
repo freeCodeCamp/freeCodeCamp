@@ -28,12 +28,10 @@ const mapDispatchToProps = function(dispatch) {
     close: () => dispatch(closeModal('completion')),
     handleKeypress: e => {
       if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
-        console.log('dispatching');
         dispatch(submitChallenge());
       }
     },
     submitChallenge: () => {
-      console.log('dispatching');
       dispatch(submitChallenge());
     }
   };

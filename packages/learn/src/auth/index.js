@@ -8,16 +8,16 @@ const clientID = AUTH0_CLIENT_ID;
 
 class Auth {
   constructor() {
-  this.auth0 = new auth0.WebAuth({
-    domain,
-    clientID,
-    redirectUri: `${
-      typeof window !== 'undefined' ? window.location.origin : ''
-    }/auth-callback`,
-    audience: `https://${domain}/api/v2/`,
-    responseType: 'token id_token',
-    scope: `openid profile email ${namespace + 'accountLinkId'}`
-  });
+    this.auth0 = new auth0.WebAuth({
+      domain,
+      clientID,
+      redirectUri: `${
+        typeof window !== 'undefined' ? window.location.origin : ''
+      }/auth-callback`,
+      audience: `https://${domain}/api/v2/`,
+      responseType: 'token id_token',
+      scope: `openid profile email ${namespace + 'accountLinkId'}`
+    });
 
     this.getUser = this.getUser.bind(this);
     this.getToken = this.getToken.bind(this);

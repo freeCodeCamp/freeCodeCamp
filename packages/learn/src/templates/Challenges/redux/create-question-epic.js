@@ -5,7 +5,8 @@ import {
   challengeFilesSelector,
   challengeMetaSelector
 } from '../redux';
-import { tap, mapTo } from 'rxjs/operators';
+import { tap } from 'rxjs/operators/tap';
+import { mapTo } from 'rxjs/operators/mapTo';
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;

@@ -82,7 +82,6 @@ class Editor extends PureComponent {
 
   render() {
     const { contents, ext } = this.props;
-
     return (
       <div className='classic-editor editor'>
         <base href='/' />

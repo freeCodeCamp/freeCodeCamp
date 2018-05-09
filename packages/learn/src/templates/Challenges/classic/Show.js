@@ -12,6 +12,7 @@ import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
 import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
+import ResetModal from '../components/ResetModal';
 
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
@@ -19,7 +20,8 @@ import {
   createFiles,
   challengeFilesSelector,
   initTests,
-  updateChallengeMeta
+  updateChallengeMeta,
+  challengeMounted
 } from '../redux';
 
 import './classic.css';
@@ -29,9 +31,13 @@ const mapStateToProps = createSelector(challengeFilesSelector, files => ({
 }));
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFiles, initTests, updateChallengeMeta }, dispatch);
+  bindActionCreators(
+    { createFiles, initTests, updateChallengeMeta, challengeMounted },
+    dispatch
+  );
 
 const propTypes = {
+  challengeMounted: PropTypes.func.isRequired,
   createFiles: PropTypes.func.isRequired,
   data: PropTypes.shape({
     challengeNode: ChallengeNode
@@ -51,6 +57,7 @@ const propTypes = {
 class ShowClassic extends PureComponent {
   componentDidMount() {
     const {
+      challengeMounted,
       createFiles,
       initTests,
       updateChallengeMeta,
@@ -60,11 +67,13 @@ class ShowClassic extends PureComponent {
     createFiles(files);
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title });
+    challengeMounted(challengeMeta.id);
   }
 
   componentDidUpdate(prevProps) {
     const { data: { challengeNode: { title: prevTitle } } } = prevProps;
     const {
+      challengeMounted,
       createFiles,
       initTests,
       updateChallengeMeta,
@@ -77,6 +86,7 @@ class ShowClassic extends PureComponent {
       createFiles(files);
       initTests(tests);
       updateChallengeMeta({ ...challengeMeta, title: currentTitle });
+      challengeMounted(challengeMeta.id);
     }
   }
 
@@ -135,6 +145,7 @@ class ShowClassic extends PureComponent {
         </ReflexContainer>
         <CompletionModal />
         <HelpModal />
+        <ResetModal />
       </Fragment>
     );
   }

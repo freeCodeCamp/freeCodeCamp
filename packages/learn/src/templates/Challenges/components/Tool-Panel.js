@@ -7,10 +7,15 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
   openHelpModal: PropTypes.func.isRequired,
-  reset: PropTypes.func.isRequired
+  openResetModal: PropTypes.func.isRequired
 };
 
-function ToolPanel({ executeChallenge, guideUrl, reset, openHelpModal }) {
+function ToolPanel({
+  executeChallenge,
+  guideUrl,
+  openResetModal,
+  openHelpModal
+}) {
   return (
     <div>
       <Button
@@ -26,7 +31,7 @@ function ToolPanel({ executeChallenge, guideUrl, reset, openHelpModal }) {
         block={true}
         bsStyle='primary'
         className='btn-big'
-        onClick={reset}
+        onClick={openResetModal}
         >
         Reset this lesson
       </Button>

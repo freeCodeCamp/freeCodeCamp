@@ -7,6 +7,7 @@ import completionEpic from './completion-epic';
 import executeChallengeEpic from './execute-challenge-epic';
 import codeLockEpic from './code-lock-epic';
 import createQuestionEpic from './create-question-epic';
+import codeStorageEpic from './code-storage-epic';
 
 const ns = 'challenge';
 export const backendNS = 'backendChallenge';
@@ -19,10 +20,12 @@ const initialState = {
   },
   challengeTests: [],
   consoleOut: '',
+  isCodeLocked: false,
   isJSEnabled: true,
   modal: {
     completion: false,
-    help: false
+    help: false,
+    reset: false
   },
   successMessage: 'Happy Coding!'
 };
@@ -32,7 +35,8 @@ export const epics = [
   codeLockEpic,
   completionEpic,
   createQuestionEpic,
-  executeChallengeEpic
+  executeChallengeEpic,
+  codeStorageEpic
 ];
 
 export const types = createTypes(
@@ -48,16 +52,21 @@ export const types = createTypes(
     'updateSuccessMessage',
     'updateTests',
 
+    'lockCode',
     'unlockCode',
     'disableJSOnError',
+    'storedCodeFound',
+    'noStoredCodeFound',
 
     'closeModal',
     'openModal',
 
+    'challengeMounted',
     'checkChallenge',
     'executeChallenge',
     'resetChallenge',
-    'submitChallenge'
+    'submitChallenge',
+    'submitComplete'
   ],
   ns
 );
@@ -88,28 +97,35 @@ export const updateConsole = createAction(types.updateConsole);
 export const updateJSEnabled = createAction(types.updateJSEnabled);
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 
+export const lockCode = createAction(types.lockCode);
 export const unlockCode = createAction(types.unlockCode);
 export const disableJSOnError = createAction(types.disableJSOnError, err => {
   console.error(err);
   return {};
 });
+export const storedCodeFound = createAction(types.storedCodeFound);
+export const noStoredCodeFound = createAction(types.noStoredCodeFound);
 
 export const closeModal = createAction(types.closeModal);
 export const openModal = createAction(types.openModal);
 
+export const challengeMounted = createAction(types.challengeMounted);
 export const checkChallenge = createAction(types.checkChallenge);
 export const executeChallenge = createAction(types.executeChallenge);
 export const resetChallenge = createAction(types.resetChallenge);
 export const submitChallenge = createAction(types.submitChallenge);
+export const submitComplete = createAction(types.submitComplete);
 
 export const backendFormValuesSelector = state => state.form[backendNS];
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
+export const isCodeLockedSelector = state => state[ns].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>
   state[ns].modal.completion;
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
+export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isJSEnabledSelector = state => state[ns].isJSEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 
@@ -129,6 +145,11 @@ export const reducer = handleActions(
         }
       }
     }),
+    [types.storedCodeFound]: (state, { payload }) => ({
+      ...state,
+      challengeFiles: payload
+    }),
+
     [types.initTests]: (state, { payload }) => ({
       ...state,
       challengeTests: payload
@@ -137,6 +158,7 @@ export const reducer = handleActions(
       ...state,
       challengeTests: payload
     }),
+
     [types.initConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: payload
@@ -173,14 +195,21 @@ export const reducer = handleActions(
       })),
       consoleOut: ''
     }),
+
+    [types.lockCode]: state => ({
+      ...state,
+      isCodeLocked: true
+    }),
     [types.unlockCode]: state => ({
       ...state,
-      isJSEnabled: true
+      isJSEnabled: true,
+      isCodeLocked: false
     }),
     [types.disableJSOnError]: state => ({
       ...state,
       isJSEnabled: false
     }),
+
     [types.updateSuccessMessage]: (state, { payload }) => ({
       ...state,
       successMessage: payload
