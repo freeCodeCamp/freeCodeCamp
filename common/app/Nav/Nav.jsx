@@ -1,7 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Navbar } from 'react-bootstrap';
 
 import LargeNav from './LargeNav.jsx';
@@ -11,25 +10,9 @@ import {
   clickOnLogo,
   clickOnMap
 } from './redux';
-import { panesSelector, panesByNameSelector } from '../Panes/redux';
 import propTypes from './navPropTypes';
 
-const mapStateToProps = createSelector(
-  panesSelector,
-  panesByNameSelector,
-  (panes, panesByName) => {
-    return {
-      panes: panes.map(({ name, type }) => {
-        return {
-          content: name,
-          action: type,
-          isHidden: panesByName[name].isHidden
-        };
-      }, {}),
-      shouldShowMapButton: panes.length === 0
-    };
-  }
-);
+const mapStateToProps = () => ({});
 
 function mapDispatchToProps(dispatch) {
   const dispatchers = bindActionCreators(
@@ -49,21 +32,6 @@ function mapDispatchToProps(dispatch) {
   return () => dispatchers;
 }
 
-function mergeProps(stateProps, dispatchProps, ownProps) {
-  const panes = stateProps.panes.map(pane => {
-    return {
-      ...pane,
-      actionCreator: () => dispatchProps.dispatch({ type: pane.action })
-    };
-  });
-  return {
-    ...ownProps,
-    ...stateProps,
-    ...dispatchProps,
-    panes
-  };
-}
-
 const allNavs = [
   LargeNav,
   MediumNav,
@@ -72,7 +40,6 @@ const allNavs = [
 
 function FCCNav(props) {
   const {
-    panes,
     clickOnLogo,
     clickOnMap,
     shouldShowMapButton
@@ -82,7 +49,6 @@ function FCCNav(props) {
       clickOnLogo={ clickOnLogo }
       clickOnMap={ clickOnMap }
       key={ Component.displayName }
-      panes={ panes }
       shouldShowMapButton={ shouldShowMapButton }
     />
   );
@@ -104,6 +70,5 @@ FCCNav.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
-  mergeProps
+  mapDispatchToProps
 )(FCCNav);

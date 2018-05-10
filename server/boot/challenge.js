@@ -134,7 +134,7 @@ export default function(app) {
   router.get('/map', redirectToLearn);
 
   app.use(api);
-  app.use('/:lang', router);
+  app.use(router);
 
   function modernChallengeCompleted(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');

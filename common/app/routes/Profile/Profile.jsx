@@ -39,7 +39,7 @@ const mapStateToProps = createSelector(
   (
     isSignedIn,
     { isLocked, username: requestedUsername },
-    { username: paramsUsername, lang },
+    { username: paramsUsername },
     currentUsername,
     showLoading,
     isUserFound
@@ -51,7 +51,6 @@ const mapStateToProps = createSelector(
     isUserFound,
     fetchOtherUserCompleted: typeof isUserFound === 'boolean',
     paramsUsername,
-    lang,
     requestedUsername,
     showLoading
   })
@@ -70,7 +69,6 @@ const propTypes = {
   isLocked: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   isUserFound: PropTypes.bool,
-  lang: PropTypes.string,
   paramsUsername: PropTypes.string,
   requestedUsername: PropTypes.string,
   showLoading: PropTypes.bool,
@@ -95,11 +93,10 @@ class Profile extends Component {
       isLocked,
       isUserFound,
       isCurrentUserProfile,
-      lang = 'en',
       paramsUsername
     } = this.props;
     const takeMeToChallenges = (
-      <a href={`/${lang}/challenges/current-challenge`}>
+      <a href='/challenges/current-challenge'>
         <Button bsSize='lg' bsStyle='primary'>
           Take me to the Challenges
         </Button>

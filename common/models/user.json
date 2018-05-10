@@ -97,10 +97,6 @@
       "type": "string",
       "default": ""
     },
-    "gender": {
-      "type": "string",
-      "default": ""
-    },
     "location": {
       "type": "string",
       "default": ""
@@ -260,11 +256,6 @@
       "type": "string",
       "default": "default"
     },
-    "languageTag": {
-      "type": "string",
-      "description": "An IETF language tag",
-      "default": "en"
-    },
     "badges": {
       "type": {
         "coreTeam": {
@@ -368,13 +359,6 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "updateTheme"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$owner",
-      "permission": "ALLOW",
-      "property": "updateLanguage"
     },
     {
       "accessType": "EXECUTE",

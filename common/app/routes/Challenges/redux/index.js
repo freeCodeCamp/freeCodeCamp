@@ -11,14 +11,7 @@ import { createSelector } from 'reselect';
 import noop from 'lodash/noop';
 import { getValues } from 'redux-form';
 
-import modalEpic from './modal-epic';
-import completionEpic from './completion-epic.js';
-import challengeEpic from './challenge-epic.js';
-import executeChallengeEpic from './execute-challenge-epic.js';
-import codeStorageEpic from './code-storage-epic.js';
-
 import ns from '../ns.json';
-import stepReducer, { epics as stepEpics } from '../views/step/redux';
 import quizReducer from '../views/quiz/redux';
 import projectReducer from '../views/project/redux';
 
@@ -39,16 +32,7 @@ import { html, modern } from '../../../utils/challengeTypes.js';
 import blockNameify from '../../../utils/blockNameify.js';
 import { updateFileMetaCreator } from '../../../files';
 
-// this is not great but is ok until we move to a different form type
-export projectNormalizer from '../views/project/redux';
-
 export const epics = [
-  modalEpic,
-  challengeEpic,
-  codeStorageEpic,
-  completionEpic,
-  executeChallengeEpic,
-  ...stepEpics
 ];
 
 export const types = createTypes([
@@ -345,7 +329,6 @@ export default combineReducers(
     initialState,
     ns
   ),
-  stepReducer,
   quizReducer,
   projectReducer
 );

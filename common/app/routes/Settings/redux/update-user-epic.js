@@ -3,32 +3,25 @@ import { combineEpics, ofType } from 'redux-epic';
 import { pick } from 'lodash';
 import {
   types,
-  onRouteSettings,
   refetchChallengeMap,
   updateUserBackendComplete,
   updateMyPortfolioComplete
 } from './';
 import { makeToast } from '../../../Toasts/redux';
-import { fetchMapUi } from '../../../Map/redux';
 import {
   doActionOnError,
   usernameSelector,
   userSelector,
-  createErrorObservable,
-  challengeSelector,
-  fetchNewBlock
+  createErrorObservable
 } from '../../../redux';
 import {
   updateUserEmail,
-  updateUserLang,
   updateMultipleUserFlags,
   regresPortfolio,
-  optoUpdatePortfolio,
-  resetFullBlocks
+  optoUpdatePortfolio
 } from '../../../entities';
 
 import { postJSON$ } from '../../../../utils/ajax-stream';
-import langs from '../../../../utils/supported-languages';
 
 const endpoints = {
   email: '/update-my-email',
@@ -195,52 +188,9 @@ function updateUserEmailEpic(actions, { getState }) {
     });
 }
 
-export function updateUserLangEpic(actions, { getState }) {
-  const updateLang = actions
-    .filter(({ type, payload }) => (
-      type === types.updateMyLang && !!langs[payload]
-    ))
-    .map(({ payload }) => {
-      const { languageTag } = userSelector(getState());
-      return { lang: payload, oldLang: languageTag };
-    });
-  const ajaxUpdate = updateLang
-    .debounce(250)
-    .flatMap(({ lang, oldLang }) => {
-      const { app: { user: username, csrfToken: _csrf } } = getState();
-      const body = { _csrf, lang };
-      return postJSON$('/update-my-lang', body)
-        .flatMap(({ message }) => {
-          const { block } = challengeSelector(getState());
-          return Observable.of(
-            // show user that we have updated their lang
-            makeToast({ message }),
-            // update url to reflect change
-            onRouteSettings({ lang }),
-            // clear fullBlocks so challenges are fetched in correct language
-            resetFullBlocks(),
-            // refetch current challenge block updated for new lang
-            fetchNewBlock(block),
-            // refetch mapUi in new language
-            fetchMapUi()
-          );
-        })
-        .catch(doActionOnError(() => {
-          return updateUserLang(username, oldLang);
-        }));
-    });
-  const optimistic = updateLang
-    .map(({ lang }) => {
-      const { app: { user: username } } = getState();
-      return updateUserLang(username, lang);
-    });
-  return Observable.merge(ajaxUpdate, optimistic);
-}
-
 export default combineEpics(
   backendUserUpdateEpic,
   refetchChallengeMapEpic,
   updateMyPortfolioEpic,
-  updateUserEmailEpic,
-  updateUserLangEpic
+  updateUserEmailEpic
 );

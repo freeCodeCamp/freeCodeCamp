@@ -34,7 +34,6 @@ export const types = createTypes([
   createAsyncTypes('updateUserBackend'),
   createAsyncTypes('deletePortfolio'),
   createAsyncTypes('updateMyPortfolio'),
-  'updateMyLang',
   'updateNewUsernameValidity',
   createAsyncTypes('validateUsername'),
   createAsyncTypes('refetchChallengeMap'),
@@ -85,10 +84,6 @@ export const updateMyPortfolioError = createAction(
 );
 export const deletePortfolio = createAction(types.deletePortfolio.start);
 export const deletePortfolioError = createAction(types.deletePortfolio.error);
-export const updateMyLang = createAction(
-  types.updateMyLang,
-  (values) => values.lang
-);
 
 export const resetProgress = createAction(types.resetProgress.start);
 export const resetProgressComplete = createAction(types.resetProgress.complete);

@@ -2,7 +2,7 @@ import debug from 'debug';
 import { pickBy } from 'lodash';
 import { Observable } from 'rx';
 
-import { cachedMap, getMapForLang, getChallenge } from '../utils/map';
+import { cachedMap, getChallenge } from '../utils/map';
 import { shapeChallenges } from '../../common/app/redux/utils';
 
 const log = debug('fcc:services:challenge');
@@ -15,11 +15,11 @@ export default function getChallengesForBlock(app) {
     read: function readChallengesForBlock(
         req,
         resource,
-        { dashedName, blockName, lang = 'en' } = {},
+        { dashedName, blockName} = {},
         config,
         cb
       ) {
-      const getChallengeBlock$ = challengeMap.map(getMapForLang(lang))
+      const getChallengeBlock$ = challengeMap
         .flatMap(({
           result: { superBlocks },
           entities: {
@@ -46,7 +46,7 @@ export default function getChallengesForBlock(app) {
         });
       return Observable.if(
         () => !!dashedName,
-        getChallenge(dashedName, blockName, challengeMap, lang),
+        getChallenge(dashedName, blockName, challengeMap, 'en'),
         getChallengeBlock$
       )
         .subscribe(

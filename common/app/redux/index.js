@@ -12,7 +12,6 @@ import debug from 'debug';
 
 import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
-import fetchChallengesEpic from './fetch-challenges-epic.js';
 import nightModeEpic from './night-mode-epic.js';
 
 import {
@@ -22,7 +21,6 @@ import {
 } from '../entities';
 import { utils } from '../Flash/redux';
 import { paramsSelector } from '../Router/redux';
-import { types as challenges } from '../routes/Challenges/redux';
 import { types as map } from '../Map/redux';
 import {
   createCurrentChallengeMeta,
@@ -39,7 +37,6 @@ import { themes, invertTheme } from '../../utils/themes.js';
 const isDev = debug.enabled('fcc:*');
 
 export const epics = [
-  fetchChallengesEpic,
   fetchUserEpic,
   nightModeEpic,
   updateMyCurrentChallengeEpic
@@ -338,10 +335,6 @@ export default handleActions(
     )]: (state, { payload }) => ({
       ...state,
       superBlocks: payload.result.superBlocks
-    }),
-    [challenges.onRouteChallenges]: (state, { payload: { dashedName } }) => ({
-      ...state,
-      currentChallenge: dashedName
     }),
     [
       combineActions(types.showSignIn, types.fetchUser.complete)

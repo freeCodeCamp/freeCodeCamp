@@ -2,11 +2,11 @@ import React from 'react';
 import Media from 'react-media';
 import { Navbar, Row } from 'react-bootstrap';
 import FCCSearchBar from 'react-freecodecamp-search';
-import { NavLogo, BinButtons, NavLinks } from './components';
+import { NavLogo, NavLinks } from './components';
 
 import propTypes from './navPropTypes';
 
-function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
+function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton }) {
   return (
     <Media
       query={{ maxWidth: 955, minWidth: 751 }}
@@ -15,16 +15,14 @@ function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton, panes }) {
         matches => matches && typeof window !== 'undefined' && (
           <div>
           <Row>
-              <Navbar.Header className='medium-nav'>
-            <div className='nav-component header'>
-                <Navbar.Toggle />
-                <NavLogo clickOnLogo={ clickOnLogo } />
-                <FCCSearchBar />
-            </div>
-            <div className='nav-component bins'>
-              <BinButtons panes={ panes } />
-            </div>
-              </Navbar.Header>
+            <Navbar.Header className='medium-nav'>
+              <div className='nav-component header'>
+                  <Navbar.Toggle />
+                  <NavLogo clickOnLogo={ clickOnLogo } />
+                  <FCCSearchBar />
+              </div>
+              <div className='nav-component bins'/>
+            </Navbar.Header>
           </Row>
           <Row className='collapse-row'>
             <Navbar.Collapse>

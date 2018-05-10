@@ -43,7 +43,6 @@ export const userPropsForSession = [
   'currentChallengeId',
   'email',
   'id',
-  'languageTag',
   'sendQuincyEmail',
   'theme'
 ];

@@ -82,7 +82,7 @@ export default function commit(app) {
   );
 
   app.use(api);
-  app.use('/:lang', router);
+  app.use(router);
 
   function commitToNonprofit(req, res, next) {
     const { user } = req;

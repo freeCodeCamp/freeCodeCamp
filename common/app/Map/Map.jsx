@@ -7,17 +7,15 @@ import ns from './ns.json';
 import { Loader } from '../helperComponents';
 import SuperBlock from './Super-Block.jsx';
 import { currentChallengeSelector, superBlocksSelector } from '../redux';
-import { fetchMapUi } from './redux';
 
 const mapStateToProps = state => ({
   currentChallenge: currentChallengeSelector(state),
   superBlocks: superBlocksSelector(state)
 });
 
-const mapDispatchToProps = { fetchMapUi };
+const mapDispatchToProps = {};
 const propTypes = {
   currentChallenge: PropTypes.string,
-  fetchMapUi: PropTypes.func.isRequired,
   params: PropTypes.object,
   superBlocks: PropTypes.array
 };

@@ -9,7 +9,7 @@ import {
 } from '../../redux';
 import { onRouteChallenges } from '../../routes/Challenges/redux';
 import { entitiesSelector } from '../../entities';
-import { langSelector, pathnameSelector } from '../../Router/redux';
+import { pathnameSelector } from '../../Router/redux';
 
 export default function loadCurrentChallengeEpic(actions, { getState }) {
   return actions::ofType(types.clickOnLogo, types.clickOnMap)
@@ -17,7 +17,6 @@ export default function loadCurrentChallengeEpic(actions, { getState }) {
     .map(getState)
     .map(state => {
       let finalChallenge;
-      const lang = langSelector(state);
       const { id: currentlyLoadedChallengeId } = challengeSelector(state);
       const {
         challenge: challengeMap,
@@ -37,7 +36,6 @@ export default function loadCurrentChallengeEpic(actions, { getState }) {
       }
       return {
         ..._.pick(finalChallenge, ['id', 'block', 'dashedName']),
-        lang,
         isOnAChallenge,
         currentlyLoadedChallengeId
       };

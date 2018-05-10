@@ -48,10 +48,9 @@ export default function reactSubRouter(app) {
     });
   }
 
-  app.use('/:lang', router);
+  app.use(router);
 
   function serveReactApp(req, res, next) {
-    const { lang } = req;
     const serviceOptions = { req };
     if (req.originalUrl in markupMap) {
       log('sending markup from cache');
@@ -68,7 +67,7 @@ export default function reactSubRouter(app) {
         devtoolsEnhancer({ name: 'server' })
       ],
       history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
-      defaultState: { app: { lang } }
+      defaultState: {}
     })
       .filter(({
         location: {

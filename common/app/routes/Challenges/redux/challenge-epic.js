@@ -15,7 +15,6 @@ import {
   challengeSelector,
   nextChallengeSelector
 } from '../../../redux';
-import { langSelector } from '../../../Router/redux';
 import { makeToast } from '../../../Toasts/redux';
 
 // When we change challenge, update the current challenge
@@ -44,7 +43,6 @@ export function nextChallengeEpic(actions, { getState }) {
   return actions::ofType(types.moveToNextChallenge)
     .flatMap(() => {
       const state = getState();
-      const lang = langSelector(state);
       const { nextChallenge } = nextChallengeSelector(state);
       if (!nextChallenge) {
         return createErrorObservable(
@@ -63,11 +61,7 @@ export function nextChallengeEpic(actions, { getState }) {
         );
       }
       return Observable.of(
-        // normally we wouldn't need to add the lang as
-        // addLangToRoutesEnhancer should add langs for us, but the way
-        // enhancers/middlewares and RFR orders things this action will not
-        // see addLangToRoutesEnhancer and cause RFR to render NotFound
-        onRouteChallenges({ lang, ...nextChallenge }),
+        onRouteChallenges({ ...nextChallenge }),
         makeToast({ message: 'Your next challenge has arrived.' })
       );
     });
