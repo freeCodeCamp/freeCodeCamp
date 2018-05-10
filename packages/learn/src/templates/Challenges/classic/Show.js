@@ -14,6 +14,8 @@ import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import ResetModal from '../components/ResetModal';
 
+import { randomCompliment } from '../utils/get-words';
+
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
 import {
@@ -21,7 +23,8 @@ import {
   challengeFilesSelector,
   initTests,
   updateChallengeMeta,
-  challengeMounted
+  challengeMounted,
+  updateSuccessMessage
 } from '../redux';
 
 import './classic.css';
@@ -32,7 +35,13 @@ const mapStateToProps = createSelector(challengeFilesSelector, files => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { createFiles, initTests, updateChallengeMeta, challengeMounted },
+    {
+      createFiles,
+      initTests,
+      updateChallengeMeta,
+      challengeMounted,
+      updateSuccessMessage
+    },
     dispatch
   );
 
@@ -51,7 +60,8 @@ const propTypes = {
       nextchallengePath: PropTypes.string
     })
   }),
-  updateChallengeMeta: PropTypes.func.isRequired
+  updateChallengeMeta: PropTypes.func.isRequired,
+  updateSuccessMessage: PropTypes.func.isRequired
 };
 
 class ShowClassic extends PureComponent {
@@ -61,12 +71,14 @@ class ShowClassic extends PureComponent {
       createFiles,
       initTests,
       updateChallengeMeta,
+      updateSuccessMessage,
       data: { challengeNode: { files, title, fields: { tests } } },
       pathContext: { challengeMeta }
     } = this.props;
     createFiles(files);
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title });
+    updateSuccessMessage(randomCompliment());
     challengeMounted(challengeMeta.id);
   }
 
@@ -77,11 +89,13 @@ class ShowClassic extends PureComponent {
       createFiles,
       initTests,
       updateChallengeMeta,
+      updateSuccessMessage,
       data: {
         challengeNode: { files, title: currentTitle, fields: { tests } }
       },
       pathContext: { challengeMeta }
     } = this.props;
+    updateSuccessMessage(randomCompliment());
     if (prevTitle !== currentTitle) {
       createFiles(files);
       initTests(tests);
