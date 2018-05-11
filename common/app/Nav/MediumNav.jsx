@@ -6,7 +6,7 @@ import { NavLogo, NavLinks } from './components';
 
 import propTypes from './navPropTypes';
 
-function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton }) {
+function MediumNav({ clickOnLogo }) {
   return (
     <Media
       query={{ maxWidth: 955, minWidth: 751 }}
@@ -26,10 +26,7 @@ function MediumNav({ clickOnLogo, clickOnMap, shouldShowMapButton }) {
           </Row>
           <Row className='collapse-row'>
             <Navbar.Collapse>
-                <NavLinks
-                  clickOnMap={ clickOnMap }
-                  shouldShowMapButton={ shouldShowMapButton }
-                />
+                <NavLinks />
               </Navbar.Collapse>
           </Row>
           </div>

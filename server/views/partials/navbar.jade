@@ -4,32 +4,17 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
         button.hamburger.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
             .col-xs-12
                 span.hamburger-text Menu
-        a.navbar-brand(href='/challenges/current-challenge')
+        a.navbar-brand(href='/')
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at freeCodeCamp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
             li
-              a(href='/map') Map
-            li.dropdown
-                a.dropdown-toggle(data-toggle='dropdown' role='button' href='#' aria-haspopup='true') Community
-                ul.dropdown-menu
-                    li
-                        a(href='https://gitter.im/freecodecamp/home' target='_blank' rel='noopener') Chat
-                    li
-                        a(href='https://forum.freecodecamp.org', target='_blank' rel='noopener') Forum
-                    li
-                        a(href='https://medium.freecodecamp.org', target='_blank' rel='noopener') Medium
-                    li
-                        a(href='https://youtube.com/freecodecamp', target='_blank' rel='noopener') YouTube
-                    li
-                        a(href='https://forum.freecodecamp.org/t/free-code-camp-city-based-local-groups/19574', target='_blank' rel='noopener') In your city
-                    li
-                        a(href='/about') About
+                a(href='https://learn.freecodecamp.org' target='_blank' rel='noopener') Learn
             li
-                a(href='https://www.freecodecamp.org/donate', target='_blank' rel='noopener') Donate
+                a(href='https://forum.freecodecamp.org', target='_blank' rel='noopener') Forum
             if !user
                 li
                     a(href='/signin') Start Coding
             else
                 li
-                  a(href='/settings') My Profile
+                  a(href='/settings') Settings

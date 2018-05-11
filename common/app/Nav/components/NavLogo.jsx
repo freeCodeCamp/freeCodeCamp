@@ -4,9 +4,7 @@ import { NavbarBrand } from 'react-bootstrap';
 import Media from 'react-media';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
-// TODO @freecodecamp-team: place this glyph in S3 like above, PR in /assets
-const fCCglyph = 'https://raw.githubusercontent.com/freeCodeCamp/assets/' +
-'3b9cafc312802199ebba8b31fb1ed9b466a3efbb/assets/logos/FFCFire.png';
+const fCCglyph = 'https://s3.amazonaws.com/freecodecamp/FFCFire.png';
 
 const propTypes = {
   clickOnLogo: PropTypes.func.isRequired
@@ -16,7 +14,7 @@ function NavLogo({ clickOnLogo }) {
   return (
     <NavbarBrand>
       <a
-        href='/challenges/current-challenge'
+        href='/'
         onClick={ clickOnLogo }
         >
         <Media query='(min-width: 735px)'>

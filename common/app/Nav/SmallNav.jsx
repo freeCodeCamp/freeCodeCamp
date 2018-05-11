@@ -6,7 +6,7 @@ import { NavLogo, NavLinks } from './components';
 
 import propTypes from './navPropTypes';
 
-function SmallNav({ clickOnLogo, clickOnMap, shouldShowMapButton }) {
+function SmallNav({ clickOnLogo }) {
   return (
     <Media
       query='(max-width: 750px)'
@@ -25,10 +25,7 @@ function SmallNav({ clickOnLogo, clickOnMap, shouldShowMapButton }) {
           </Row>
           <Row className='collapse-row'>
             <Navbar.Collapse>
-              <NavLinks
-                clickOnMap={ clickOnMap }
-                shouldShowMapButton={ shouldShowMapButton }
-                >
+              <NavLinks>
                 <FCCSearchBar />
               </NavLinks>
             </Navbar.Collapse>

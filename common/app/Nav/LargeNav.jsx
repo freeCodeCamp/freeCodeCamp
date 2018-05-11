@@ -6,7 +6,7 @@ import { NavLogo, NavLinks } from './components';
 
 import propTypes from './navPropTypes';
 
-function LargeNav({ clickOnLogo, clickOnMap, shouldShowMapButton }) {
+function LargeNav({ clickOnLogo }) {
   return (
     <Media
       query='(min-width: 956px)'
@@ -22,10 +22,7 @@ function LargeNav({ clickOnLogo, clickOnMap, shouldShowMapButton }) {
             <Col className='nav-component bins' sm={ 3 } xs={ 6 }/>
             <Col className='nav-component nav-links' sm={ 4 } xs={ 0 }>
               <Navbar.Collapse>
-                <NavLinks
-                  clickOnMap={ clickOnMap }
-                  shouldShowMapButton={ shouldShowMapButton }
-                />
+                <NavLinks />
               </Navbar.Collapse>
           </Col>
           </Row>

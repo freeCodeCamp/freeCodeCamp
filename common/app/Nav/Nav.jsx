@@ -7,29 +7,19 @@ import LargeNav from './LargeNav.jsx';
 import MediumNav from './MediumNav.jsx';
 import SmallNav from './SmallNav.jsx';
 import {
-  clickOnLogo,
-  clickOnMap
+  clickOnLogo
 } from './redux';
 import propTypes from './navPropTypes';
 
 const mapStateToProps = () => ({});
 
 function mapDispatchToProps(dispatch) {
-  const dispatchers = bindActionCreators(
+  return bindActionCreators(
     {
-      clickOnMap: e => {
-        e.preventDefault();
-        return clickOnMap();
-      },
-      clickOnLogo: e => {
-        e.preventDefault();
-        return clickOnLogo();
-      }
+      clickOnLogo
     },
     dispatch
   );
-  dispatchers.dispatch = dispatch;
-  return () => dispatchers;
 }
 
 const allNavs = [
@@ -40,16 +30,12 @@ const allNavs = [
 
 function FCCNav(props) {
   const {
-    clickOnLogo,
-    clickOnMap,
-    shouldShowMapButton
+    clickOnLogo
   } = props;
   const withNavProps = Component => (
     <Component
       clickOnLogo={ clickOnLogo }
-      clickOnMap={ clickOnMap }
       key={ Component.displayName }
-      shouldShowMapButton={ shouldShowMapButton }
     />
   );
   return (
