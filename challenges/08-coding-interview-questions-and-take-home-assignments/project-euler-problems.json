@@ -1713,17 +1713,17 @@
       "type": "bonfire",
       "title": "Problem 49: Prime permutations",
       "tests": [
-        "assert.strictEqual(euler49(), 296962999629, 'message: <code>euler49()</code> should return 296962999629.');"
+        "assert.strictEqual(primePermutations(), 296962999629, 'message: <code>primePermutations()</code> should return 296962999629.');"
       ],
-      "solutions": [],
+      "solutions": ["function primePermutations() {\n  function arePermutations(num1, num2) {\n    const numStr1 = num1.toString();\n    let numStr2 = num2.toString();\n    if (numStr1.length !== numStr2.length) {\n      return false;\n    }\n\n    for (let i = 0; i < numStr1.length; i++) {\n      const index = numStr2.indexOf(numStr1[i]);\n      if (index === -1) {\n        return false;\n      }\n      numStr2 = numStr2.slice(0, index) + numStr2.slice(index + 1);\n    }\n    return true;\n  }\n\n  function isPrime(num) {\n    if (num < 2) {\n      return false;\n    } else if (num === 2) {\n      return true;\n    }\n    const sqrtOfNum = Math.floor(num ** 0.5);\n    for (let i = 2; i <= sqrtOfNum + 1; i++) {\n      if (num % i === 0) {\n        return false;\n      }\n    }\n    return true;\n  }\n\n  for (let num1 = 1000; num1 <= 9999; num1++) {\n    const num2 = num1 + 3330;\n    const num3 = num2 + 3330;\n    if (isPrime(num1) && isPrime(num2) && isPrime(num3)) {\n      if (arePermutations(num1, num2) && arePermutations(num1, num3)\n        && num1 !== 1487) {\n        // concatenate and return numbers\n        return (num1 * 100000000) + (num2 * 10000) + num3;\n      }\n    }\n  }\n  return 0;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler49() {",
+        "function primePermutations() {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler49();"
+        "primePermutations();"
       ],
       "description": [
         "The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases by 3330, is unusual in two ways: (i) each of the three terms are prime, and, (ii) each of the 4-digit numbers are permutations of one another.",
