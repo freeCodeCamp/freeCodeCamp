@@ -1687,21 +1687,24 @@
       "type": "bonfire",
       "title": "Problem 48: Self powers",
       "tests": [
-        "assert.strictEqual(euler48(), 9110846700, 'message: <code>euler48()</code> should return 9110846700.');"
+        "assert.strictEqual(selfPowers(10, 3), 317, 'message: <code>selfPowers(10, 3)</code> should return 317.');",
+        "assert.strictEqual(selfPowers(150, 6), 29045, 'message: <code>selfPowers(150, 6)</code> should return 29045.');",
+        "assert.strictEqual(selfPowers(673, 7), 2473989, 'message: <code>selfPowers(673, 7)</code> should return 2473989.');",
+        "assert.strictEqual(selfPowers(1000, 10), 9110846700, 'message: <code>selfPowers(1000, 10)</code> should return 9110846700.');"
       ],
-      "solutions": [],
+      "solutions": ["function selfPowers(power, lastDigits) {\n  let sum = 0;\n  const modulo = Math.pow(10, lastDigits);\n\n  for (let i = 1; i <= power; i++) {\n    let temp = i;\n    for (let j = 1; j < i; j++) {\n      temp *= i;\n      temp %= modulo;\n    }\n\n    sum += temp;\n    sum %= modulo;\n  }\n\n  return sum;\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler48() {",
+        "function selfPowers(power, lastDigits) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler48();"
+        "selfPowers(1000, 10);"
       ],
       "description": [
-        "The series, 11 + 22 + 33 + ... + 1010 = 10405071317.",
-        "Find the last ten digits of the series, 11 + 22 + 33 + ... + 10001000."
+        "The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.",
+        "Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>."
       ]
     },
     {
