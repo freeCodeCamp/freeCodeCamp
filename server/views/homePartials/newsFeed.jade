@@ -1,0 +1,18 @@
+.row
+  .col-xs-12.col-sm-8.col-sm-offset-2
+    h2 News Feed
+    ul.list-group
+      each item in feed
+        li.list-group-item
+          a(href=item.link)
+            h3=item.title
+            div !{item.extract}
+        .spacer
+.row
+  .col-xs-12.col-sm-8.col-sm-offset-2
+    .more-button-container
+      div
+        button.btn.btn-primary.btn-lg(href='https://medium.freecodecamp.org') More Articles
+      div
+        button.btn.btn-primary.btn-lg(href='https://freecodecamp.libsyn.com/') More Podcasts
+

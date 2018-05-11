@@ -139,6 +139,7 @@
     "redux-form": "^5.2.3",
     "request": "^2.65.0",
     "reselect": "^3.0.0",
+    "rss-parser": "^3.1.2",
     "rx": "^4.1.0",
     "rx-dom": "^7.0.3",
     "sanitize-html": "^1.11.1",

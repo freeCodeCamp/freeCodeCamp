@@ -218,6 +218,9 @@
       "description": "A map by ID of all the user completed challenges",
       "default": {}
     },
+    "completedChallengeCount": {
+      "type": "number"
+    },
     "completedChallenges": {
       "type": [
         {

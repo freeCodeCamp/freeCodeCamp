@@ -1,0 +1,24 @@
+extends layout
+block content
+	.text-center
+		.row
+			h1.landing-heading=title
+		.big-break
+		.big-break
+		.big-break
+		include homePartials/quote
+		.big-break
+		hr
+		.big-break
+		include homePartials/stats
+		.big-break
+		hr
+		.big-break
+		.row
+			.col-xs-12.col-sm-8.col-sm-offset-2
+				a.btn.btn-cta.btn-block.btn-lg.btn-primary(href="/challenges/current-challenge") Go to my next lesson
+		.big-break
+		hr
+		include homePartials/newsFeed
+		.big-break
+		.big-break

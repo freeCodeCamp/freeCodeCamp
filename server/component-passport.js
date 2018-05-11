@@ -9,8 +9,7 @@ const passportOptions = {
 
 const fields = {
   progressTimestamps: false,
-  completedChallenges: false,
-  challengeMap: false
+  completedChallenges: false
 };
 
 PassportConfigurator.prototype.init = function passportInit(noSession) {
@@ -33,8 +32,10 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
 
     this.userModel.findById(id, { fields }, (err, user) => {
       if (err || !user) {
+       user.challengeMap = [];
         return done(err, user);
       }
+
       return this.app.dataSources.db.connector
         .collection('user')
         .aggregate([
@@ -43,6 +44,10 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
         ], function(err, [{ points = 1 } = {}]) {
           if (err) { return done(err); }
           user.points = points;
+          user.completedChallengeCount = 'challengeMap' in user ?
+            user.challengeMap.length :
+            0;
+          user.challengeMap = [];
           return done(null, user);
         });
     });
