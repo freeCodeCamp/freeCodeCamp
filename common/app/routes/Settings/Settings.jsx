@@ -107,9 +107,9 @@ export class Settings extends React.Component {
         <Spacer />
         <PortfolioSettings />
         <Spacer />
-        <CertificationSettings />
-        <Spacer />
         <Honesty />
+        <Spacer />
+        <CertificationSettings />
         <Spacer />
         <DangerZone />
       </div>

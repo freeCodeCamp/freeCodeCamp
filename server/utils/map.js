@@ -177,7 +177,6 @@ export function getChallenge(
       const superBlock = entities.superBlock;
       const block = entities.block[blockDashedName];
       const challenge = entities.challenge[challengeDashedName];
-      console.log('getchallenge', superBlock)
       return Observable.if(
         () => (
           !blockDashedName ||

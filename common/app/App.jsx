@@ -17,7 +17,6 @@ import Nav from './Nav';
 import Toasts from './Toasts';
 import NotFound from './NotFound';
 import { mainRouteSelector } from './routes/redux';
-import Challenges from './routes/Challenges';
 import Profile from './routes/Profile';
 import Settings from './routes/Settings';
 
@@ -48,7 +47,6 @@ const propTypes = {
 };
 
 const routes = {
-  challenges: Challenges,
   profile: Profile,
   settings: Settings
 };

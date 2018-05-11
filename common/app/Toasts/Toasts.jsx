@@ -5,15 +5,8 @@ import { createSelector } from 'reselect';
 import { NotificationStack } from 'react-notification';
 
 import { removeToast } from './redux';
-import {
-  submitChallenge,
-  clickOnReset
-} from '../routes/Challenges/redux';
 
-const registeredActions = {
-  submitChallenge,
-  clickOnReset
-};
+const registeredActions = {};
 const mapStateToProps = state => ({ toasts: state.toasts });
 // we use styles here to overwrite those built into the library
 // but there are some styles applied using

@@ -11,7 +11,7 @@ import {
 } from 'react-bootstrap';
 
 import { challengeIdToNameMapSelector } from '../../../entities';
-import { userByNameSelector, fetchChallenges } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 import { homeURL } from '../../../../utils/constantStrings.json';
 import blockNameify from '../../../utils/blockNameify';
 import { FullWidthRow } from '../../../helperComponents';
@@ -31,15 +31,12 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = { fetchChallenges };
-
 const propTypes = {
   completedMap: PropTypes.shape({
     id: PropTypes.string,
     completedDate: PropTypes.number,
     lastUpdated: PropTypes.number
   }),
-  fetchChallenges: PropTypes.func.isRequired,
   idToNameMap: PropTypes.objectOf(PropTypes.string),
   username: PropTypes.string
 };
@@ -56,12 +53,6 @@ class Timeline extends PureComponent {
     this.closeSolution = this.closeSolution.bind(this);
     this.renderCompletion = this.renderCompletion.bind(this);
     this.viewSolution = this.viewSolution.bind(this);
-  }
-
-  componentDidMount() {
-    if (!Object.keys(this.props.idToNameMap).length) {
-      this.props.fetchChallenges();
-    }
   }
 
   renderCompletion(completed) {
@@ -191,4 +182,4 @@ class Timeline extends PureComponent {
 Timeline.displayName = 'Timeline';
 Timeline.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Timeline);
+export default connect(mapStateToProps)(Timeline);

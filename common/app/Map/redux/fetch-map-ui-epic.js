@@ -3,8 +3,7 @@ import debug from 'debug';
 
 import {
   types as appTypes,
-  createErrorObservable,
-  currentChallengeSelector
+  createErrorObservable
 } from '../../redux';
 import { types, fetchMapUiComplete } from './';
 import { shapeChallenges } from '../../redux/utils';
@@ -13,7 +12,7 @@ const isDev = debug.enabled('fcc:*');
 
 export default function fetchMapUiEpic(
   actions,
-  { getState },
+  _,
   { services }
 ) {
   return actions.do(console.log)::ofType(
@@ -32,7 +31,6 @@ export default function fetchMapUiEpic(
             entities,
             isDev
           ),
-          initialNode: currentChallengeSelector(getState()),
           ...res
         }))
         .map(fetchMapUiComplete)
