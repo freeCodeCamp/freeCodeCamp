@@ -1661,23 +1661,28 @@
       "type": "bonfire",
       "title": "Problem 47: Distinct primes factors",
       "tests": [
-        "assert.strictEqual(euler47(), 134043, 'message: <code>euler47()</code> should return 134043.');"
+        "assert.strictEqual(distinctPrimeFactors(2, 2), 14, 'message: <code>distinctPrimeFactors(2, 2)</code> should return 14.');",
+        "assert.strictEqual(distinctPrimeFactors(3, 3), 644, 'message: <code>distinctPrimeFactors(3, 3)</code> should return 644.');",
+        "assert.strictEqual(distinctPrimeFactors(4, 4), 134043, 'message: <code>distinctPrimeFactors(4, 4)</code> should return 134043.');"
       ],
-      "solutions": [],
+      "solutions": ["function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {\n\n  function isPrime(num) {\n    for (let i = 2, s = Math.sqrt(num); i <= s; i++) {\n      if (num % i === 0) {\n        return false;\n      }\n    }\n    return num !== 1;\n  }\n\n  function getPrimeFactors(num) {\n    const factors = [];\n    for (let i = 2; i <= Math.sqrt(num); i++) {\n      if (num % i === 0) {\n        // found a factor\n        if (isPrime(i)) {\n          factors.push(i);\n        }\n        if (isPrime(num / i) && i !== Math.sqrt(num)) {\n          factors.push(num / i);\n        }\n      }\n    }\n    return factors;\n  }\n\n  function findConsecutiveNumbers() {\n    let number = 0;\n    let consecutive = 0;\n    while (consecutive < targetConsecutive) {\n      number++;\n      if (getPrimeFactors(number).length >= targetNumPrimes) {\n        consecutive++;\n    } else {\n        consecutive = 0;\n      }\n    }\n    return (number - targetConsecutive) + 1;\n  }\n\n  return findConsecutiveNumbers();\n  }"],
       "translations": {},
       "challengeSeed": [
-        "function euler47() {",
+        "function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler47();"
+        "distinctPrimeFactors(4, 4);"
       ],
       "description": [
         "The first two consecutive numbers to have two distinct prime factors are:",
-        "14 = 2 × 715 = 3 × 5",
+        "<div style='padding-left: 4em;'>14 = 2 × 7</div>",
+        "<div style='padding-left: 4em;'>15 = 3 × 5</div>",
         "The first three consecutive numbers to have three distinct prime factors are:",
-        "644 = 2² × 7 × 23645 = 3 × 5 × 43646 = 2 × 17 × 19.",
+        "<div style='padding-left: 4em;'>644 = 2² × 7 × 23</div>",
+        "<div style='padding-left: 4em;'>645 = 3 × 5 × 43</div>",
+        "<div style='padding-left: 4em;'>646 = 2 × 17 × 19</div>",
         "Find the first four consecutive integers to have four distinct prime factors each. What is the first of these numbers?"
       ]
     },
