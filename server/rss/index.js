@@ -24,7 +24,6 @@ class NewsFeed {
   }
 
   setState = stateUpdater => {
-    log('updating state');
     const newState = stateUpdater(this.state);
     this.state = _.merge({}, this.state, newState);
     return;

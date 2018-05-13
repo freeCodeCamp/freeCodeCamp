@@ -6,7 +6,8 @@ import NewsFeed from '../rss';
 const news = new NewsFeed();
 
 module.exports = function(app, done) {
-  var router = app.loopback.Router();
+  const { About } = app.models;
+  const router = app.loopback.Router();
   let challengeCount = 0;
   cachedMap(app.models)
     .do(({ entities: { challenge } }) => {
@@ -41,9 +42,14 @@ module.exports = function(app, done) {
       `Welcome back ${user.name ? user.name : 'Camper'}` :
       'Learn to Code and Help Nonprofits';
     const completedChallengeCount = user && user.completedChallengeCount || 0;
-    news.getFeed().then(feed => {
+    Promise.all([
+      news.getFeed(),
+      About.getActiveUsersForRendering()
+    ])
+    .then(([feed, activeUsers]) => {
       return res.render(
         homePage, {
+          activeUsers,
           author,
           challengeCount,
           completedChallengeCount,
