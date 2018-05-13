@@ -630,7 +630,7 @@ Be sure to post in the PR conversation that you have made the requested changes.
 
     -   [Challenge schema](./common/models/challenge.json) - lists all of the fields inside challenge, and describes some of them
 
-    -   [Challenge types](./common/ap/utils/challengeTypes.js) - what the numeric challenge type values mean (enum)
+    -   [Challenge types](./common/app/utils/challengeTypes.js) - what the numeric challenge type values mean (enum)
 
 * Bugs and Issues:
 
