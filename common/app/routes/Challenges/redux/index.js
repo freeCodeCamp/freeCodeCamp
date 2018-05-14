@@ -220,7 +220,7 @@ export const challengeMetaSelector = createSelector(
   // use closure to get around circular deps
   (...args) => challengeSelector(...args),
   challenge => {
-    if (!challenge.id) {
+    if (!challenge || !challenge.id) {
       const viewType = 'invalid';
       return {
         viewType

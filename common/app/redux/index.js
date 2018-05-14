@@ -238,6 +238,9 @@ export const isSignedInSelector = state => !!userSelector(state).username;
 export const challengeSelector = state => {
   const challengeName = currentChallengeSelector(state);
   const challengeMap = entitiesSelector(state).challenge || {};
+  if (!challengeMap[challengeName]) {
+    return {};
+  }
   return challengeMap[challengeName] || firstChallengeSelector(state);
 };
 
