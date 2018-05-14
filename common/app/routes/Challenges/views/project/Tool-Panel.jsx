@@ -5,10 +5,8 @@ import { createSelector } from 'reselect';
 import { Button } from 'react-bootstrap';
 
 import { ButtonSpacer } from '../../../../helperComponents';
-import {
-  FrontEndForm,
-  BackEndForm
-} from './Forms.jsx';
+import BackEndForm from './BackEndForm.jsx';
+import FrontEndForm from './FrontEndForm.jsx';
 
 import { submittingSelector } from './redux';
 
@@ -68,7 +66,7 @@ export class ToolPanel extends PureComponent {
         className='btn-big'
         onClick={ openChallengeModal }
         >
-        { buttonCopy } (ctrl + enter)
+        { buttonCopy } ({ this.state.isMac ? 'cmd' : 'ctrl' } + enter)
       </Button>
     );
   }

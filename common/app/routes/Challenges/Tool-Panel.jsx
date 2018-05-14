@@ -37,7 +37,14 @@ class ToolPanel extends PureComponent {
     super(...props);
     this.makeHint = this.makeHint.bind(this);
     this.makeReset = this.makeReset.bind(this);
+    this.state = { isMac: false };
   }
+
+  componentDidMount() {
+    const isMac = navigator.userAgent.includes('Mac');
+    this.setState({ isMac }); // eslint-disable-line
+  }
+
   makeHint() {
     this.props.makeToast({
       message: this.props.hint,
@@ -104,7 +111,7 @@ class ToolPanel extends PureComponent {
         disabled={ isDisabled }
         onClick={ executeChallenge }
         >
-        Run tests (ctrl + enter)
+        Run tests ({ this.state.isMac ? 'cmd' : 'ctrl' } + enter)
       </Button>
     );
   }

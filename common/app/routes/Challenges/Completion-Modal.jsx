@@ -52,11 +52,19 @@ const propTypes = {
 };
 
 export class CompletionModal extends PureComponent {
+  state = { isMac: false };
+
+  componentDidMount() {
+    const isMac = navigator.userAgent.includes('Mac');
+    this.setState({ isMac }); // eslint-disable-line
+  }
+
   componentDidUpdate() {
     if (this.props.isOpen) {
       this.props.checkForNextBlock();
     }
   }
+
   render() {
     const {
       close,
@@ -99,7 +107,9 @@ export class CompletionModal extends PureComponent {
             bsStyle='primary'
             onClick={ submitChallenge }
             >
-            Submit and go to next challenge (Ctrl + Enter)
+              Submit and go to next challenge ({
+                this.state.isMac ? 'Cmd' : 'Ctrl'
+              } + Enter)
           </Button>
         </Modal.Footer>
       </Modal>

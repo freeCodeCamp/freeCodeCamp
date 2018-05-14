@@ -346,3 +346,23 @@ export function getCurrentSuperBlockName(current, entities) {
   const block = blockMap[challenge.block];
   return block.superBlock;
 }
+
+export function handleKeydown(event, showProjectSubmit) {
+  // On Windows, `metaKey` is the Windows Logo key, and `Win + Enter` opens
+  // Narrator by default. Checking the OS here prevents Narrator users from
+  // accidentally submitting a challenge.
+  const isMac = navigator.userAgent.includes('Mac');
+  const isModifierDown = event.ctrlKey || isMac && event.metaKey;
+  if (isModifierDown && event.key === 'Enter') {
+    if (showProjectSubmit) {
+      showProjectSubmit();
+    } else {
+      // Prevent the next new backend challenge from submitting on arrival
+      event.preventDefault();
+    }
+    const solutionInput = document.getElementById('solution');
+    solutionInput.select();
+    solutionInput.focus();
+    solutionInput.scrollIntoView();
+  }
+}
