@@ -53,6 +53,7 @@ export const epics = [
 
 export const types = createTypes([
   'onRouteChallengeRoot',
+  'onRouteChallengesBlock',
   'onRouteChallenges',
   'onRouteCurrentChallenge',
   // challenges

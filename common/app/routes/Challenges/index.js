@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { isLocationAction, redirect } from 'redux-first-router';
 
-import { types, challengeMetaSelector } from './redux';
+import { types, challengeMetaSelector, onRouteChallenges } from './redux';
 import { mapStateToPanes as backendPanesMap } from './views/backend';
 import { mapStateToPanes as classicPanesMap } from './views/classic';
 import { mapStateToPanes as stepPanesMap } from './views/step';
@@ -16,6 +16,11 @@ export const routes = {
     path: '/challenges',
     thunk: (dispatch) =>
       dispatch(redirect({ type: types.onRouteCurrentChallenge }))
+  },
+  [types.onRouteChallengesBlock]: {
+    type: types.onRouteChallengesBlock,
+    path: '/challenges/:block',
+    redirect: onRouteChallenges
   },
   [types.onRouteChallenges]: '/challenges/:block/:dashedName',
   [types.onRouteCurrentChallenge]: '/challenges/current-challenge'
