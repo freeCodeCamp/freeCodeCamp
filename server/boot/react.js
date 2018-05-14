@@ -17,9 +17,6 @@ const isDev = process.env.NODE_ENV !== 'production';
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  '/challenges',
-  '/challenges/*',
-  '/map',
   '/settings',
   '/settings/*',
   '/portfolio/:username'

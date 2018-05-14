@@ -5,8 +5,13 @@ import dedent from 'dedent';
 
 import { ifNoUserSend } from '../utils/middleware';
 import { getChallengeById, cachedMap } from '../utils/map';
+import { dasherize } from '../utils';
+
+import pathMigrations from '../resources/pathMigration.json';
 
 const log = debug('fcc:boot:challenges');
+
+const learnURL = 'https://learn.freecodecamp.org';
 
 function buildUserUpdate(
   user,
@@ -121,6 +126,12 @@ export default function(app) {
     '/challenges/current-challenge',
     redirectToCurrentChallenge
   );
+
+  router.get('/challenges', redirectToLearn);
+
+  router.get('/challenges/*', redirectToLearn);
+
+  router.get('/map', redirectToLearn);
 
   app.use(api);
   app.use('/:lang', router);
@@ -348,7 +359,7 @@ export default function(app) {
     const challengeId = user && user.currentChallengeId;
     return getChallengeById(map, challengeId)
       .map(challenge => {
-        const { block, dashedName } = challenge;
+        const { block, dashedName, superBlock } = challenge;
         if (!dashedName || !block) {
           // this should normally not be hit if database is properly seeded
           throw new Error(dedent`
@@ -358,11 +369,20 @@ export default function(app) {
             db may not be properly seeded.
           `);
         }
-        return `/challenges/${block}/${dashedName}`;
+        return `${learnURL}/${dasherize(superBlock)}/${block}/${dashedName}`;
       })
       .subscribe(
-        redirect => res.redirect(redirect || '/'),
+        redirect => res._oldRedirect(redirect || learnURL),
         next
       );
+  }
+
+  function redirectToLearn(req, res) {
+    const maybeChallenge = _.last(req.path.split('/'));
+    if (maybeChallenge in pathMigrations) {
+      const redirectPath = pathMigrations[maybeChallenge];
+      return res.status(302)._oldRedirect(`${learnURL}${redirectPath}`);
+    }
+    return res.status(302)._oldRedirect(learnURL);
   }
 }
