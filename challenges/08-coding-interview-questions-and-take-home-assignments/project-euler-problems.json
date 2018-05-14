@@ -1742,17 +1742,18 @@
       "type": "bonfire",
       "title": "Problem 50: Consecutive prime sum",
       "tests": [
-        "assert.strictEqual(euler50(), 997651, 'message: <code>euler50()</code> should return 997651.');"
+        "assert.strictEqual(consecutivePrimeSum(1000), 953, 'message: <code>consecutivePrimeSum(1000)</code> should return 953.');",
+        "assert.strictEqual(consecutivePrimeSum(1000000), 997651, 'message: <code>consecutivePrimeSum(1000000)</code> should return 997651.');"
       ],
-      "solutions": [],
+      "solutions": ["function consecutivePrimeSum(limit) {\n  function isPrime(num) {\n    if (num < 2) {\n      return false;\n    } else if (num === 2) {\n      return true;\n    }\n    const sqrtOfNum = Math.floor(num ** 0.5);\n    for (let i = 2; i <= sqrtOfNum + 1; i++) {\n      if (num % i === 0) {\n        return false;\n      }\n    }\n    return true;\n  }\n  function getPrimes(limit) {\n    const primes = [];\n    for (let i = 0; i <= limit; i++) {\n      if (isPrime(i)) primes.push(i);\n    }\n    return primes;\n  }\n\n  const primes = getPrimes(limit);\n  let primeSum = [...primes];\n  primeSum.reduce((acc, n, i) => {\n    primeSum[i] += acc;\n    return acc += n;\n  }, 0);\n\n  for (let j = primeSum.length - 1; j >= 0; j--) {\n    for (let i = 0; i < j; i++) {\n      const sum = primeSum[j] - primeSum[i];\n      if (sum > limit) break;\n      if (isPrime(sum) && primes.indexOf(sum) > -1) return sum;\n    }\n  }\n}"],
       "translations": {},
       "challengeSeed": [
-        "function euler50() {",
+        "function consecutivePrimeSum(limit) {",
         "  // Good luck!",
         "  return true;",
         "}",
         "",
-        "euler50();"
+        "consecutivePrimeSum(1000000);"
       ],
       "description": [
         "The prime 41, can be written as the sum of six consecutive primes:",
