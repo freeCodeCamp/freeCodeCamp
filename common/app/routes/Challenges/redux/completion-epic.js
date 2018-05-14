@@ -60,7 +60,7 @@ function submitModern(type, state) {
       const { username } = userSelector(state);
       const csrfToken = csrfSelector(state);
       return postChallenge(
-        '/modern-challenge-completed',
+        '/completed-challenge',
         username,
         csrfToken,
         { id, files }
