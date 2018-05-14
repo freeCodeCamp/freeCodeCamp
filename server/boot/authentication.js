@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { Observable } from 'rx';
 import dedent from 'dedent';
-// import debugFactory from 'debug';
+import debugFactory from 'debug';
 import { isEmail } from 'validator';
 import { check } from 'express-validator/check';
 
@@ -14,7 +14,7 @@ import { wrapHandledError } from '../utils/create-handled-error.js';
 import { homeURL } from '../../common/utils/constantStrings.json';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
-// const debug = debugFactory('fcc:boot:auth');
+const debug = debugFactory('fcc:boot:auth');
 if (isSignUpDisabled) {
   console.log('fcc:boot:auth - Sign up is disabled');
 }
@@ -198,7 +198,7 @@ module.exports = function enableAuthentication(app) {
     getPasswordlessAuth
   );
 
-  const passwordlessPostValidators = [
+  const checkEmailPostValidators = [
     check('email')
       .isEmail()
       .withMessage('Email is not a valid email address.')
@@ -234,9 +234,26 @@ module.exports = function enableAuthentication(app) {
   api.post(
     '/passwordless-auth',
     ifUserRedirect,
-    passwordlessPostValidators,
+    checkEmailPostValidators,
     createValidatorErrorHandler('errors', '/signin'),
     postPasswordlessAuth
+  );
+
+  function postAuthZeroAuth(req, res, next) {
+    const { body: { email } = {} } = req;
+
+    return Observable.fromPromise(User.doesExist(null, email))
+      .do(exists => {
+        return res.status(200).send({ message: exists });
+      })
+      .subscribe(_.noop, next);
+  }
+  api.post(
+    '/authzero-auth',
+    ifUserRedirect,
+    checkEmailPostValidators,
+    createValidatorErrorHandler('errors', '/signin'),
+    postAuthZeroAuth
   );
 
   app.use('/:lang', router);
