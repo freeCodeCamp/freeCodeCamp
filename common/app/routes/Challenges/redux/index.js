@@ -96,7 +96,10 @@ export const types = createTypes([
   // code storage
   'storedCodeFound',
   'noStoredCodeFound',
-  'previousSolutionFound'
+  'previousSolutionFound',
+
+  // on app mounted,
+  'previewOnAppMounted'
 ], ns);
 
 // routes
@@ -173,6 +176,10 @@ export const previousSolutionFound = createAction(
   null,
   challengeToFilesMetaCreator
 );
+
+// preview on app mounted
+export const previewOnAppMounted = createAction(types.previewOnAppMounted);
+
 
 const initialUiState = {
   output: null,

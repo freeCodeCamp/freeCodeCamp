@@ -14,6 +14,7 @@ import fetchUserEpic from './fetch-user-epic.js';
 import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
 import fetchChallengesEpic from './fetch-challenges-epic.js';
 import nightModeEpic from './night-mode-epic.js';
+import previewOnAppMountedEpic from './preview-on-appmounted-epic.js';
 
 import {
   updateThemeMetacreator,
@@ -42,7 +43,8 @@ export const epics = [
   fetchChallengesEpic,
   fetchUserEpic,
   nightModeEpic,
-  updateMyCurrentChallengeEpic
+  updateMyCurrentChallengeEpic,
+  previewOnAppMountedEpic
 ];
 
 export const types = createTypes([
