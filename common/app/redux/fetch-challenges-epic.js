@@ -20,7 +20,10 @@ import {
 } from '../entities';
 
 import { shapeChallenges } from './utils';
-import { types as challenge } from '../routes/Challenges/redux';
+import {
+  types as challenge,
+  challengeUpdated
+} from '../routes/Challenges/redux';
 import { langSelector, paramsSelector } from '../Router/redux';
 
 const isDev = debug.enabled('fcc:*');
@@ -93,19 +96,31 @@ export function fetchChallengesForBlockEpic(
       };
       return services.readService$(options)
         .retry(3)
-        .map(newBlockData => {
+        .flatMap(newBlockData => {
           const { dashedName } = paramsSelector(getState());
           const { entities: { challenge } } = newBlockData;
           const currentChallengeInNewBlock = _.pickBy(
             challenge,
             newChallenge => newChallenge.dashedName === dashedName
           );
-          return fetchNewBlockComplete({
-            ...newBlockData,
-            meta: {
-              challenge: currentChallengeInNewBlock
-            }
-          });
+          if (!_.isEmpty(currentChallengeInNewBlock)) {
+            return Observable.of(
+              fetchNewBlockComplete({
+                ...newBlockData,
+                meta: {
+                  challenge: currentChallengeInNewBlock
+                }
+              }),
+              challengeUpdated(currentChallengeInNewBlock[dashedName])
+          );
+          } else {
+            return Observable.of(fetchNewBlockComplete({
+              ...newBlockData,
+              meta: {
+                challenge: currentChallengeInNewBlock
+              }
+            }));
+          }
         })
         .catch(createErrorObservable);
     });
