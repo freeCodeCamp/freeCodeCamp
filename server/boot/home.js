@@ -1,9 +1,9 @@
 import { defaultProfileImage } from '../../common/utils/constantStrings.json';
 import { getRandomQuote } from '../../common/app/utils/quotes';
 import { cachedMap } from '../utils/map';
-import NewsFeed from '../rss';
+// import NewsFeed from '../rss';
 
-const news = new NewsFeed();
+// const news = new NewsFeed();
 
 module.exports = function(app, done) {
   const { About } = app.models;
@@ -42,18 +42,25 @@ module.exports = function(app, done) {
       `Welcome back ${user.name ? user.name : 'Camper'}` :
       'Learn to Code and Help Nonprofits';
     const completedChallengeCount = user && user.completedChallengeCount || 0;
+    const completedProjectCount = user && user.completedProjectCount || 0;
+    const completedCertCount = user && user.completedCertCount || 0;
     Promise.all([
-      news.getFeed(),
+      // news.getFeed(),
       About.getActiveUsersForRendering()
     ])
-    .then(([feed, activeUsers]) => {
+    .then(([
+      // feed,
+      activeUsers
+    ]) => {
       return res.render(
         homePage, {
           activeUsers,
           author,
           challengeCount,
           completedChallengeCount,
-          feed,
+          completedProjectCount,
+          completedCertCount,
+          // feed,
           quote,
           title
         });

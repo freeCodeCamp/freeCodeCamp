@@ -12,6 +12,18 @@ const fields = {
   completedChallenges: false
 };
 
+function getCompletedCertCount(user) {
+  return [
+    'isApisMicroservicesCert',
+    'is2018DataVisCert',
+    'isFrontEndLibsCert',
+    'isInfosecQaCert',
+    'isJsAlgoDataStructCert',
+    'isRespWebDesignCert'
+  ].reduce((sum, key) => user[key] ? sum + 1 : sum, 0);
+
+}
+
 PassportConfigurator.prototype.init = function passportInit(noSession) {
   this.app.middleware('session:after', passport.initialize());
 
@@ -44,11 +56,24 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
         ], function(err, [{ points = 1 } = {}]) {
           if (err) { return done(err); }
           user.points = points;
-          let completedCount = 0;
+          let completedChallengeCount = 0;
+          let completedProjectCount = 0;
           if ('challengeMap' in user) {
-            completedCount = Object.keys(user.challengeMap).length;
+            completedChallengeCount = Object.keys(user.challengeMap).length;
+            Object.keys(user.challengeMap)
+              .map(key => user.challengeMap[key])
+              .forEach(item => {
+                if (
+                  'challengeType' in item &&
+                  (item.challengeType === 3 || item.challengeType === 4)
+                ) {
+                  completedProjectCount++;
+                }
+              });
           }
-          user.completedChallengeCount = completedCount;
+          user.completedChallengeCount = completedChallengeCount;
+          user.completedProjectCount = completedProjectCount;
+          user.completedCertCount = getCompletedCertCount(user);
           user.challengeMap = {};
           return done(null, user);
         });
