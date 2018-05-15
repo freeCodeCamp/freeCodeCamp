@@ -30,7 +30,8 @@
       "type": "date"
     },
     "password": {
-      "type": "string"
+      "type": "string",
+      "description": "No longer used for new accounts"
     },
     "progressTimestamps": {
       "type": "array",
@@ -71,10 +72,6 @@
     "_csrf": {
       "type": "string"
     },
-    "isMigrationGrandfathered": {
-      "type": "boolean",
-      "default": false
-    },
     "username": {
       "type": "string",
       "index": {
@@ -114,22 +111,6 @@
     "twitter": {
       "type": "string"
     },
-    "currentStreak": {
-      "type": "number",
-      "default": 0
-    },
-    "longestStreak": {
-      "type": "number",
-      "default": 0
-    },
-    "sendMonthlyEmail": {
-      "type": "boolean",
-      "default": true
-    },
-    "sendNotificationEmail": {
-      "type": "boolean",
-      "default": true
-    },
     "sendQuincyEmail": {
       "type": "boolean",
       "default": true
@@ -143,15 +124,6 @@
       "type": "string",
       "description": "The challenge last visited by the user",
       "default": ""
-    },
-    "currentChallenge": {
-      "type": {},
-      "description": "deprecated"
-    },
-    "isUniqMigrated": {
-      "type": "boolean",
-      "description": "Campers completedChallenges array is free of duplicates",
-      "default": false
     },
     "isHonest": {
       "type": "boolean",
@@ -208,35 +180,25 @@
       "description": "Camper is information security and quality assurance certified",
       "default": false
     },
-    "isChallengeMapMigrated": {
-      "type": "boolean",
-      "description": "Migrate completedChallenges array to challenge map",
-      "default": false
-    },
-    "challengeMap": {
-      "type": "object",
-      "description": "A map by ID of all the user completed challenges",
-      "default": {}
-    },
     "completedChallengeCount": {
-      "type": "number"
+      "type": "number",
+      "description": "generated per request, not held in db"
+    },
+    "completedCertCount": {
+      "type": "number",
+      "description": "generated per request, not held in db"
+    },
+    "completedProjectCount": {
+      "type": "number",
+      "description": "generated per request, not held in db"
     },
     "completedChallenges": {
       "type": [
         {
           "completedDate": "number",
-          "lastUpdated": "number",
-          "numOfAttempts": "number",
           "id": "string",
-          "name": "string",
-          "completedWith": "string",
           "solution": "string",
-          "githubLink": "string",
-          "verified": "boolean",
-          "challengeType": {
-            "type": "number",
-            "default": 0
-          }
+          "challengeType": "number"
         }
       ],
       "default": []
@@ -248,9 +210,6 @@
     "rand": {
       "type": "number",
       "index": true
-    },
-    "tshirtVote": {
-      "type": "number"
     },
     "timezone": {
       "type": "string"
