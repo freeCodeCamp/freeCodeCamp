@@ -1,0 +1,42 @@
+{
+  "name": "freecodecamp-curriculum",
+  "version": "1.0.0",
+  "description": "freeCodeCamp's curriculum seed files",
+  "main": "index.js",
+  "scripts": {
+    "unpack": "babel-node ./unpack.js",
+    "repack": "babel-node ./repack.js",
+    "test": "babel-node ./test-challenges.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freecodecamp/freecodecamp.git"
+  },
+  "keywords": [
+    "freecodecamp",
+    "curriculum",
+    "challenges",
+    "javascript",
+    "interview",
+    "json"
+  ],
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
+  "bugs": {
+    "url": "https://github.com/freecodecamp/freecodecamp/issues"
+  },
+  "homepage": "https://github.com/freecodecamp/freecodecamp#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-standalone": "^6.26.0",
+    "browserify": "^16.2.2",
+    "fs-extra": "^6.0.1",
+    "joi": "^13.3.0",
+    "joi-objectid": "^2.0.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.10",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0",
+    "validator": "^10.2.0"
+  }
+}

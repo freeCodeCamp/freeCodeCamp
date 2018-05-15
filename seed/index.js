@@ -6,10 +6,14 @@ const adler32 = require('adler32');
 const Rx = require('rx');
 const _ = require('lodash');
 const utils = require('../server/utils');
-const getChallenges = require('./getChallenges');
+const getChallenges = require(
+  '../packages/freecodecamp-curriculum/getChallenges'
+);
 const app = require('../server/server');
 const createDebugger = require('debug');
-const { validateChallenge } = require('./schema/challengeSchema');
+const { validateChallenge } = require(
+  '../packages/freecodecamp-curriculum/schema/challengeSchema'
+);
 
 const log = createDebugger('fcc:seed');
 // force logger to always output
