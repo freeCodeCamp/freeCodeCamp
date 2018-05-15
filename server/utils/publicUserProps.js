@@ -20,7 +20,6 @@ export const publicUserProps = [
   'isFrontEndCert',
   'isFullStackCert',
   'isFrontEndLibsCert',
-  'isGithubCool',
   'isHonest',
   'isInfosecQaCert',
   'isJsAlgoDataStructCert',

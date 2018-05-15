@@ -27,17 +27,13 @@ export function createUserUpdatesFromProfile(provider, profile) {
     )
   };
 }
-// using es6 argument destructing
 // createProfileAttributes(profile) => profileUpdate
 function createProfileAttributesFromGithub(profile) {
   const {
     profileUrl: githubProfile,
     username,
     _json: {
-      id: githubId,
       avatar_url: picture,
-      email: githubEmail,
-      created_at: joinedGithubOn,
       blog: website,
       location,
       bio,
@@ -49,12 +45,8 @@ function createProfileAttributesFromGithub(profile) {
     username: username.toLowerCase(),
     location,
     bio,
-    joinedGithubOn,
     website,
-    isGithubCool: true,
     picture,
-    githubId,
-    githubEmail,
     githubProfile
   };
 }
