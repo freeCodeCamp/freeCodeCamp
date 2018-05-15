@@ -15,7 +15,7 @@ export default function fetchMapUiEpic(
   _,
   { services }
 ) {
-  return actions.do(console.log)::ofType(
+  return actions::ofType(
     appTypes.appMounted,
     types.fetchMapUi.start
   )
@@ -25,7 +25,6 @@ export default function fetchMapUiEpic(
       };
       return services.readService$(options)
         .retry(3)
-        .do(console.info)
         .map(({ entities, ...res }) => ({
           entities: shapeChallenges(
             entities,
