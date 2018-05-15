@@ -12,7 +12,7 @@ import { userByNameSelector } from '../../../redux';
 
 const propTypes = {
   email: PropTypes.string,
-  githubURL: PropTypes.string,
+  githubProfile: PropTypes.string,
   isGithub: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
   isTwitter: PropTypes.bool,
@@ -26,7 +26,7 @@ const propTypes = {
 const mapStateToProps = createSelector(
   userByNameSelector,
   ({
-    githubURL,
+    githubProfile,
     isLinkedIn,
     isGithub,
     isTwitter,
@@ -35,7 +35,7 @@ const mapStateToProps = createSelector(
     twitter,
     website
   }) => ({
-    githubURL,
+    githubProfile,
     isLinkedIn,
     isGithub,
     isTwitter,
@@ -97,7 +97,7 @@ function TwitterIcon(handle) {
 
 function SocialIcons(props) {
   const {
-    githubURL,
+    githubProfile,
     isLinkedIn,
     isGithub,
     isTwitter,
@@ -121,7 +121,7 @@ function SocialIcons(props) {
           isLinkedIn ? LinkedInIcon(linkedIn) : null
         }
         {
-          isGithub ? githubIcon(githubURL) : null
+          isGithub ? githubIcon(githubProfile) : null
         }
         {
           isWebsite ? WebsiteIcon(website) : null

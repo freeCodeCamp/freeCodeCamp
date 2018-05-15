@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import format from 'date-fns/format';
 import { reverse, sortBy } from 'lodash';
 import {
-  Button,
-  Modal,
   Table
 } from 'react-bootstrap';
 
@@ -16,48 +14,40 @@ import { homeURL } from '../../../../utils/constantStrings.json';
 import blockNameify from '../../../utils/blockNameify';
 import { FullWidthRow } from '../../../helperComponents';
 import { Link } from '../../../Router';
-import SolutionViewer from '../../Settings/components/SolutionViewer.jsx';
 
 const mapStateToProps = createSelector(
   challengeIdToNameMapSelector,
   userByNameSelector,
   (
     idToNameMap,
-    { challengeMap: completedMap = {}, username }
+    { completedChallenges: completedMap = [] }
   ) => ({
     completedMap,
-    idToNameMap,
-    username
+    idToNameMap
   })
 );
 
 const propTypes = {
-  completedMap: PropTypes.shape({
-    id: PropTypes.string,
-    completedDate: PropTypes.number,
-    lastUpdated: PropTypes.number
-  }),
-  idToNameMap: PropTypes.objectOf(PropTypes.string),
-  username: PropTypes.string
+  completedMap: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      completedDate: PropTypes.number,
+      challengeType: PropTypes.number
+    })
+  ),
+  idToNameMap: PropTypes.objectOf(PropTypes.string)
 };
 
 class Timeline extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      solutionToView: null,
-      solutionOpen: false
-    };
-
-    this.closeSolution = this.closeSolution.bind(this);
     this.renderCompletion = this.renderCompletion.bind(this);
-    this.viewSolution = this.viewSolution.bind(this);
   }
 
   renderCompletion(completed) {
     const { idToNameMap } = this.props;
-    const { id, completedDate, lastUpdated, files } = completed;
+    const { id, completedDate } = completed;
     return (
         <tr key={ id }>
           <td>{ blockNameify(idToNameMap[id]) }</td>
@@ -68,53 +58,12 @@ class Timeline extends PureComponent {
               }
             </time>
           </td>
-          <td>
-            {
-              lastUpdated ?
-              <time dateTime={ format(lastUpdated, 'YYYY-MM-DDTHH:MM:SSZ') }>
-                {
-                  format(lastUpdated, 'MMMM DD YYYY')
-                }
-              </time> :
-              ''
-            }
-          </td>
-          <td>
-            {
-              files ?
-                <Button
-                  block={ true }
-                  bsStyle='primary'
-                  onClick={ () => this.viewSolution(id) }
-                  >
-                  View&nbsp;Solution
-                </Button> :
-                ''
-            }
-          </td>
         </tr>
       );
   }
 
-  viewSolution(id) {
-    this.setState(state => ({
-      ...state,
-      solutionToView: id,
-      solutionOpen: true
-    }));
-  }
-
-  closeSolution() {
-    this.setState(state => ({
-      ...state,
-      solutionToView: null,
-      solutionOpen: false
-    }));
-  }
-
   render() {
-    const { completedMap, idToNameMap, username } = this.props;
-    const { solutionToView: id, solutionOpen } = this.state;
+    const { completedMap, idToNameMap } = this.props;
     if (!Object.keys(idToNameMap).length) {
       return null;
     }
@@ -122,7 +71,7 @@ class Timeline extends PureComponent {
       <FullWidthRow>
         <h2 className='text-center'>Timeline</h2>
         {
-          Object.keys(completedMap).length === 0 ?
+          completedMap.length === 0 ?
           <p className='text-center'>
             No challenges have been completed yet.&nbsp;
             <Link to={ homeURL }>
@@ -134,44 +83,20 @@ class Timeline extends PureComponent {
               <tr>
                 <th>Challenge</th>
                 <th>First Completed</th>
-                <th>Last Changed</th>
-                <th />
               </tr>
             </thead>
             <tbody>
               {
                 reverse(
                   sortBy(
-                    Object.keys(completedMap)
-                      .filter(key => key in idToNameMap)
-                      .map(key => completedMap[key]),
+                    completedMap,
                     [ 'completedDate' ]
-                  )
+                  ).filter(({id}) => id in idToNameMap)
                 )
                 .map(this.renderCompletion)
               }
             </tbody>
           </Table>
-        }
-        {
-          id &&
-          <Modal
-            aria-labelledby='contained-modal-title'
-            onHide={this.closeSolution}
-            show={ solutionOpen }
-            >
-            <Modal.Header closeButton={ true }>
-              <Modal.Title id='contained-modal-title'>
-                { `${username}'s Solution to ${blockNameify(idToNameMap[id])}` }
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <SolutionViewer files={ completedMap[id].files }/>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.closeSolution}>Close</Button>
-            </Modal.Footer>
-          </Modal>
         }
       </FullWidthRow>
     );

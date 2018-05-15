@@ -23,11 +23,11 @@ export default function settingsController(app) {
       );
   };
 
-  function refetchChallengeMap(req, res, next) {
+  function refetchCompletedChallenges(req, res, next) {
     const { user } = req;
-    return user.requestChallengeMap()
+    return user.requestCompletedChallenges()
       .subscribe(
-        challengeMap => res.json({ challengeMap }),
+        completedChallenges => res.json({ completedChallenges }),
         next
       );
   }
@@ -136,9 +136,9 @@ export default function settingsController(app) {
   }
 
   api.post(
-    '/refetch-user-challenge-map',
+    '/refetch-user-completed-challenges',
     ifNoUser401,
-    refetchChallengeMap
+    refetchCompletedChallenges
   );
   api.post(
     '/update-flags',

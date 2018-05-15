@@ -15,7 +15,7 @@
   "initial": {
     "compression": {},
     "morgan": {
-      "params": ":status :method :response-time ms - :url"
+      "params": ":date[iso] :status :method :response-time ms - :url"
     },
     "cors": {
       "params": {
@@ -54,7 +54,6 @@
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
     "./middlewares/jade-helpers": {},
-    "./middlewares/migrate-completed-challenges": {},
     "./middlewares/flash-cheaters": {},
     "./middlewares/passport-login": {}
   },

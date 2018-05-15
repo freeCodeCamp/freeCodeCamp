@@ -36,7 +36,7 @@ export const types = createTypes([
   createAsyncTypes('updateMyPortfolio'),
   'updateNewUsernameValidity',
   createAsyncTypes('validateUsername'),
-  createAsyncTypes('refetchChallengeMap'),
+  createAsyncTypes('refetchCompletedChallenges'),
   createAsyncTypes('deleteAccount'),
   createAsyncTypes('resetProgress'),
 
@@ -103,8 +103,8 @@ export const updateNewUsernameValidity = createAction(
   types.updateNewUsernameValidity
 );
 
-export const refetchChallengeMap = createAction(
-  types.refetchChallengeMap.start
+export const refetchCompletedChallenges = createAction(
+  types.refetchCompletedChallenges.start
 );
 
 export const validateUsername = createAction(types.validateUsername.start);

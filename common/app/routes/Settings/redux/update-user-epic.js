@@ -3,7 +3,7 @@ import { combineEpics, ofType } from 'redux-epic';
 import { pick } from 'lodash';
 import {
   types,
-  refetchChallengeMap,
+  refetchCompletedChallenges,
   updateUserBackendComplete,
   updateMyPortfolioComplete
 } from './';
@@ -90,7 +90,7 @@ function backendUserUpdateEpic(actions$, { getState }) {
     const complete = actions$::ofType(types.updateUserBackend.complete)
     .flatMap(({ payload: { message } }) => Observable.if(
       () => message.includes('project'),
-      Observable.of(refetchChallengeMap(), makeToast({ message })),
+      Observable.of(refetchCompletedChallenges(), makeToast({ message })),
       Observable.of(makeToast({ message }))
     )
     );
@@ -98,16 +98,16 @@ function backendUserUpdateEpic(actions$, { getState }) {
   return Observable.merge(server, optimistic, complete);
 }
 
-function refetchChallengeMapEpic(actions$, { getState }) {
-  return actions$::ofType(types.refetchChallengeMap.start)
+function refetchCompletedChallengesEpic(actions$, { getState }) {
+  return actions$::ofType(types.refetchCompletedChallenges.start)
     .flatMap(() => {
       const {
         app: { csrfToken: _csrf }
       } = getState();
       const username = usernameSelector(getState());
-      return postJSON$('/refetch-user-challenge-map', { _csrf })
-        .map(({ challengeMap }) =>
-          updateMultipleUserFlags({ username, flags: { challengeMap } })
+      return postJSON$('/refetch-user-completed-challenges', { _csrf })
+        .map(({ completedChallenges }) =>
+          updateMultipleUserFlags({ username, flags: { completedChallenges } })
         )
         .catch(createErrorObservable);
     });
@@ -190,7 +190,7 @@ function updateUserEmailEpic(actions, { getState }) {
 
 export default combineEpics(
   backendUserUpdateEpic,
-  refetchChallengeMapEpic,
+  refetchCompletedChallengesEpic,
   updateMyPortfolioEpic,
   updateUserEmailEpic
 );

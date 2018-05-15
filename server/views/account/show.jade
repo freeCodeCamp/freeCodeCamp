@@ -6,10 +6,6 @@ block content
         var challengeName = 'Profile View';
     if (user && user.username === username)
       .row
-        if (!user.isGithubCool)
-          a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
-              i.fa.fa-github
-              | Link my GitHub to enable my public profile
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/settings')
                 | Update my settings

@@ -142,7 +142,7 @@ module.exports = function(app) {
         isBackEndCert: false,
         isDataVisCert: false,
         isFullStackCert: false,
-        challengeMap: {}
+        completedChallenges: []
       })
       .subscribe(
         () => {

@@ -1,6 +1,8 @@
+import { find } from 'lodash';
+
 export const jsProjectSuperBlock = 'javascript-algorithms-and-data-structures';
 
-export function buildUserProjectsMap(projectBlock, challengeMap) {
+export function buildUserProjectsMap(projectBlock, completedChallenges) {
   const {
     challenges,
     superBlock
@@ -8,7 +10,10 @@ export function buildUserProjectsMap(projectBlock, challengeMap) {
   return {
     [superBlock]: challenges.reduce((solutions, current) => {
       const { id } = current;
-      const completed = challengeMap[id];
+      const completed = find(
+        completedChallenges,
+        ({ id: completedId }) => completedId === id
+      );
       let solution = '';
       if (superBlock === jsProjectSuperBlock) {
         solution = {};

@@ -1,5 +1,5 @@
 import { Observable } from 'rx';
-import uuid from 'uuid';
+import uuid from 'uuid/v4';
 import moment from 'moment';
 import dedent from 'dedent';
 import debugFactory from 'debug';
@@ -7,6 +7,7 @@ import { isEmail } from 'validator';
 import path from 'path';
 import loopback from 'loopback';
 import _ from 'lodash';
+import { ObjectId } from 'mongodb';
 
 import { themes } from '../utils/themes';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
@@ -41,51 +42,51 @@ function destroyAll(id, Model) {
   )({ userId: id });
 }
 
-function buildChallengeMapUpdate(challengeMap, project) {
+function buildCompletedChallengesUpdate(completedChallenges, project) {
   const key = Object.keys(project)[0];
   const solutions = project[key];
-  const currentChallengeMap = { ...challengeMap };
-  const currentCompletedProjects = _.pick(
-    currentChallengeMap,
-    Object.keys(solutions)
-  );
+  const currentCompletedChallenges = [ ...completedChallenges ];
+  const currentCompletedProjects = currentCompletedChallenges
+    .filter(({id}) => Object.keys(solutions).includes(id));
   const now = Date.now();
   const update = Object.keys(solutions).reduce((update, currentId) => {
+    const indexOfCurrentId = _.findIndex(
+      currentCompletedProjects,
+      ({id}) => id === currentId
+    );
+    const isCurrentlyCompleted = indexOfCurrentId !== -1;
     if (
-      currentId in currentCompletedProjects &&
-      currentCompletedProjects[currentId].solution !== solutions[currentId]
+      isCurrentlyCompleted &&
+      currentCompletedProjects[
+        indexOfCurrentId
+      ].solution !== solutions[currentId]
     ) {
-      return {
-        ...update,
-        [currentId]: {
-          ...currentCompletedProjects[currentId],
-          solution: solutions[currentId],
-          numOfAttempts: currentCompletedProjects[currentId].numOfAttempts + 1
-        }
+      update[indexOfCurrentId] = {
+        ...update[indexOfCurrentId],
+        solution: solutions[currentId]
       };
     }
-    if (!(currentId in currentCompletedProjects)) {
-      return {
+    if (!isCurrentlyCompleted) {
+      return [
         ...update,
-        [currentId]: {
+        {
           id: currentId,
           solution: solutions[currentId],
           challengeType: 3,
-          completedDate: now,
-          numOfAttempts: 1
+          completedDate: now
         }
-      };
+      ];
     }
     return update;
-  }, {});
-  const updatedExisting = {
-    ...currentCompletedProjects,
-    ...update
-  };
-  return {
-    ...currentChallengeMap,
-    ...updatedExisting
-  };
+  }, currentCompletedProjects);
+  const updatedExisting = _.uniqBy(
+    [
+      ...update,
+      ...currentCompletedChallenges
+    ],
+    'id'
+  );
+  return updatedExisting;
 }
 
 function isTheSame(val1, val2) {
@@ -219,7 +220,14 @@ module.exports = function(User) {
         // assign random username to new users
         // actual usernames will come from github
         // use full uuid to ensure uniqueness
-        user.username = 'fcc' + uuid.v4();
+        user.username = 'fcc' + uuid();
+
+        if (!user.externalId) {
+          user.externalId = uuid();
+        }
+        if (!user.unsubscribeId) {
+          user.unsubscribeId = new ObjectId();
+        }
 
         if (!user.progressTimestamps) {
           user.progressTimestamps = [];
@@ -269,7 +277,15 @@ module.exports = function(User) {
         }
 
         if (user.progressTimestamps.length === 0) {
-          user.progressTimestamps.push({ timestamp: Date.now() });
+          user.progressTimestamps.push(Date.now());
+        }
+
+        if (!user.externalId) {
+          user.externalId = uuid();
+        }
+
+        if (!user.unsubscribeId) {
+          user.unsubscribeId = new ObjectId();
         }
       })
       .ignoreElements();
@@ -645,9 +661,11 @@ module.exports = function(User) {
     });
   };
 
-  User.prototype.requestChallengeMap = function requestChallengeMap() {
-    return this.getChallengeMap$();
-  };
+  function requestCompletedChallenges() {
+    return this.getCompletedChallenges$();
+  }
+
+  User.prototype.requestCompletedChallenges = requestCompletedChallenges;
 
   User.prototype.requestUpdateFlags = function requestUpdateFlags(values) {
     const flagsToCheck = Object.keys(values);
@@ -715,10 +733,10 @@ module.exports = function(User) {
 
   User.prototype.updateMyProjects = function updateMyProjects(project) {
     const updateData = {};
-    return this.getChallengeMap$()
-      .flatMap(challengeMap => {
-        updateData.challengeMap = buildChallengeMapUpdate(
-          challengeMap,
+    return this.getCompletedChallenges$()
+      .flatMap(completedChallenges => {
+        updateData.completedChallenges = buildCompletedChallengesUpdate(
+          completedChallenges,
           project
         );
         return this.update$(updateData);
@@ -767,18 +785,18 @@ module.exports = function(User) {
         if (!user) {
           return Observable.of({});
         }
-        const { challengeMap, progressTimestamps, timezone } = user;
+        const { completedChallenges, progressTimestamps, timezone } = user;
         return Observable.of({
           entities: {
             user: {
               [user.username]: {
                 ..._.pick(user, publicUserProps),
-                isGithub: !!user.githubURL,
+                isGithub: !!user.githubProfile,
                 isLinkedIn: !!user.linkedIn,
                 isTwitter: !!user.twitter,
                 isWebsite: !!user.website,
                 points: progressTimestamps.length,
-                challengeMap,
+                completedChallenges,
                 ...getProgress(progressTimestamps, timezone),
                 ...normaliseUserFields(user)
               }
@@ -1000,16 +1018,16 @@ module.exports = function(User) {
         return user.progressTimestamps;
       });
   };
-  User.prototype.getChallengeMap$ = function getChallengeMap$() {
+  User.prototype.getCompletedChallenges$ = function getCompletedChallenges$() {
     const id = this.getId();
     const filter = {
       where: { id },
-      fields: { challengeMap: true }
+      fields: { completedChallenges: true }
     };
     return this.constructor.findOne$(filter)
       .map(user => {
-        this.challengeMap = user.challengeMap;
-        return user.challengeMap;
+        this.completedChallenges = user.completedChallenges;
+        return user.completedChallenges;
       });
   };
 
