@@ -1,67 +1,25 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Navbar } from 'react-bootstrap';
 
 import LargeNav from './LargeNav.jsx';
 import MediumNav from './MediumNav.jsx';
 import SmallNav from './SmallNav.jsx';
 import {
-  clickOnLogo,
-  clickOnMap
+  clickOnLogo
 } from './redux';
-import { panesSelector, panesByNameSelector } from '../Panes/redux';
 import propTypes from './navPropTypes';
 
-const mapStateToProps = createSelector(
-  panesSelector,
-  panesByNameSelector,
-  (panes, panesByName) => {
-    return {
-      panes: panes.map(({ name, type }) => {
-        return {
-          content: name,
-          action: type,
-          isHidden: panesByName[name].isHidden
-        };
-      }, {}),
-      shouldShowMapButton: panes.length === 0
-    };
-  }
-);
+const mapStateToProps = () => ({});
 
 function mapDispatchToProps(dispatch) {
-  const dispatchers = bindActionCreators(
+  return bindActionCreators(
     {
-      clickOnMap: e => {
-        e.preventDefault();
-        return clickOnMap();
-      },
-      clickOnLogo: e => {
-        e.preventDefault();
-        return clickOnLogo();
-      }
+      clickOnLogo
     },
     dispatch
   );
-  dispatchers.dispatch = dispatch;
-  return () => dispatchers;
-}
-
-function mergeProps(stateProps, dispatchProps, ownProps) {
-  const panes = stateProps.panes.map(pane => {
-    return {
-      ...pane,
-      actionCreator: () => dispatchProps.dispatch({ type: pane.action })
-    };
-  });
-  return {
-    ...ownProps,
-    ...stateProps,
-    ...dispatchProps,
-    panes
-  };
 }
 
 const allNavs = [
@@ -72,18 +30,12 @@ const allNavs = [
 
 function FCCNav(props) {
   const {
-    panes,
-    clickOnLogo,
-    clickOnMap,
-    shouldShowMapButton
+    clickOnLogo
   } = props;
   const withNavProps = Component => (
     <Component
       clickOnLogo={ clickOnLogo }
-      clickOnMap={ clickOnMap }
       key={ Component.displayName }
-      panes={ panes }
-      shouldShowMapButton={ shouldShowMapButton }
     />
   );
   return (
@@ -104,6 +56,5 @@ FCCNav.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
-  mergeProps
+  mapDispatchToProps
 )(FCCNav);

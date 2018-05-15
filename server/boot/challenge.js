@@ -134,7 +134,7 @@ export default function(app) {
   router.get('/map', redirectToLearn);
 
   app.use(api);
-  app.use('/:lang', router);
+  app.use(router);
 
   function modernChallengeCompleted(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
@@ -372,7 +372,7 @@ export default function(app) {
         return `${learnURL}/${dasherize(superBlock)}/${block}/${dashedName}`;
       })
       .subscribe(
-        redirect => res._oldRedirect(redirect || learnURL),
+        redirect => res.redirect(redirect || learnURL),
         next
       );
   }
@@ -381,8 +381,8 @@ export default function(app) {
     const maybeChallenge = _.last(req.path.split('/'));
     if (maybeChallenge in pathMigrations) {
       const redirectPath = pathMigrations[maybeChallenge];
-      return res.status(302)._oldRedirect(`${learnURL}${redirectPath}`);
+      return res.status(302).redirect(`${learnURL}${redirectPath}`);
     }
-    return res.status(302)._oldRedirect(learnURL);
+    return res.status(302).redirect(learnURL);
   }
 }

@@ -13,7 +13,6 @@ import SectionHeader from './SectionHeader.jsx';
 import { projectsSelector } from '../../../entities';
 import { claimCert, updateUserBackend } from '../redux';
 import {
-  fetchChallenges,
   userSelector,
   hardGoTo,
   createErrorObservable
@@ -72,7 +71,6 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     claimCert,
     createError: createErrorObservable,
-    fetchChallenges,
     hardGoTo,
     updateUserBackend
   }, dispatch);
@@ -96,7 +94,6 @@ const propTypes = {
   blockNameIsCertMap: PropTypes.objectOf(PropTypes.bool),
   claimCert: PropTypes.func.isRequired,
   createError: PropTypes.func.isRequired,
-  fetchChallenges: PropTypes.func.isRequired,
   hardGoTo: PropTypes.func.isRequired,
   legacyProjects: projectsTypes,
   modernProjects: projectsTypes,
@@ -119,13 +116,6 @@ class CertificationSettings extends PureComponent {
 
     this.buildProjectForms = this.buildProjectForms.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount() {
-    const { modernProjects } = this.props;
-    if (!modernProjects.length) {
-      this.props.fetchChallenges();
-    }
   }
 
   buildProjectForms({

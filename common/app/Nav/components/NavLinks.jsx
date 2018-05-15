@@ -8,10 +8,8 @@ import { MenuItem, NavDropdown, NavItem, Nav } from 'react-bootstrap';
 
 import navLinks from '../links.json';
 import SignUp from './Sign-Up.jsx';
-import NoPropsPassThrough from '../../utils/No-Props-Passthrough.jsx';
 import { Link } from '../../Router';
 
-import { onRouteCurrentChallenge } from '../../routes/Challenges/redux';
 import {
   openDropdown,
   closeDropdown,
@@ -58,14 +56,12 @@ const navLinkPropType = PropTypes.shape({
 
 const propTypes = {
   children: PropTypes.any,
-  clickOnMap: PropTypes.func.isRequired,
   closeDropdown: PropTypes.func.isRequired,
   isDropdownOpen: PropTypes.bool,
   isInNav: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navLinks: PropTypes.arrayOf(navLinkPropType),
   openDropdown: PropTypes.func.isRequired,
-  shouldShowMapButton: PropTypes.bool,
   showLoading: PropTypes.bool
 };
 
@@ -125,8 +121,6 @@ class NavLinks extends PureComponent {
 
   render() {
     const {
-      shouldShowMapButton,
-      clickOnMap,
       showLoading,
       isSignedIn,
       navLinks,
@@ -136,20 +130,6 @@ class NavLinks extends PureComponent {
     return (
       <Nav id='nav-links' navbar={ true } pullRight={ true }>
         { children }
-        {
-          shouldShowMapButton ?
-            <NoPropsPassThrough>
-              <li>
-                <Link
-                  onClick={ clickOnMap }
-                  to={ onRouteCurrentChallenge() }
-                  >
-                  Map
-                </Link>
-              </li>
-            </NoPropsPassThrough> :
-            null
-        }
         {
           navLinks.map(
             this.renderLink.bind(this, isInNav)

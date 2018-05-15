@@ -3,11 +3,16 @@ import { createActiveUsers } from '../utils/about.js';
 
 module.exports = function(About) {
   const activeUsers = createActiveUsers();
-  About.getActiveUsers = function getActiveUsers() {
+  let activeUsersForRendering = 0;
+  About.getActiveUsers = async function getActiveUsers() {
     // converting to promise automatically will subscribe to Observable
     // initiating the sequence above
-    return activeUsers.toPromise();
+    const usersActive = await activeUsers.toPromise();
+    activeUsersForRendering = usersActive;
+    return usersActive;
   };
+
+  About.getActiveUsersForRendering = () => activeUsersForRendering;
 
   About.remoteMethod(
     'getActiveUsers',

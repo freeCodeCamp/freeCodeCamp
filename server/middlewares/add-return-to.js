@@ -35,8 +35,8 @@ export default function addReturnToUrl() {
     ) {
       return next();
     }
-    req.session.returnTo = req.originalUrl === '/map-aside' ?
-      '/map' :
+    req.session.returnTo = req.originalUrl.includes('/map') ?
+      '/' :
       req.originalUrl;
     return next();
   };

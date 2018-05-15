@@ -239,6 +239,6 @@ module.exports = function enableAuthentication(app) {
     postPasswordlessAuth
   );
 
-  app.use('/:lang', router);
+  app.use(router);
   app.use(api);
 };

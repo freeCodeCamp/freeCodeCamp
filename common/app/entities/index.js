@@ -1,7 +1,6 @@
-import { findIndex, property, merge, union } from 'lodash';
+import { findIndex, property, merge } from 'lodash';
 import uuid from 'uuid/v4';
 import {
-  combineActions,
   composeReducers,
   createAction,
   createTypes,
@@ -9,8 +8,7 @@ import {
 } from 'berkeleys-redux-utils';
 
 import { themes } from '../../utils/themes';
-import { usernameSelector, types as app } from '../redux';
-import { types as challenges } from '../routes/Challenges/redux';
+import { usernameSelector } from '../redux';
 import { types as map } from '../Map/redux';
 import legacyProjects from '../../utils/legacyProjectData';
 
@@ -204,36 +202,8 @@ export default composeReducers(
   },
   handleActions(
     () => ({
-      [
-        combineActions(
-          app.fetchNewBlock.complete,
-          map.fetchMapUi.complete
-        )
-      ]: (state, { payload: { entities } }) => merge({}, state, entities),
-      [app.fetchNewBlock.complete]: (
-        state,
-        { payload: { entities: { block } } }
-      ) => ({
-        ...state,
-        fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])
-      }),
-      [types.resetFullBlocks]: state => ({ ...state, fullBlocks: [] }),
-      [
-        challenges.submitChallenge.complete
-      ]: (state, { payload: { username, points, challengeInfo } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            points,
-            challengeMap: {
-              ...state.user[username].challengeMap,
-              [challengeInfo.id]: challengeInfo
-            }
-          }
-        }
-      }),
+      [map.fetchMapUi.complete]: (state, { payload: { entities } }) =>
+        merge({}, state, entities),
       [types.addPortfolioItem]: (state, { payload: username }) => ({
         ...state,
         user: {
@@ -322,22 +292,6 @@ export default composeReducers(
           [username]: {
             ...state.user[username],
             languageTag
-          }
-        }
-      }),
-      [types.updateUserCurrentChallenge]:
-      (
-        state,
-        {
-          payload: { username, currentChallengeId }
-        }
-      ) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            currentChallengeId
           }
         }
       })

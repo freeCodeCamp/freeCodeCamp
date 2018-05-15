@@ -4,7 +4,6 @@ import {
   ifNoUser401,
   createValidatorErrorHandler
 } from '../utils/middleware';
-import supportedLanguages from '../../common/utils/supported-languages.js';
 import { themes } from '../../common/utils/themes.js';
 import { alertTypes } from '../../common/utils/flash.js';
 
@@ -44,29 +43,6 @@ export default function settingsController(app) {
     return user.requestUpdateEmail(email)
       .subscribe(
         message => res.json({ message }),
-        next
-      );
-  }
-
-  function updateMyLang(req, res, next) {
-    const { user, body: { lang } = {} } = req;
-    const langName = supportedLanguages[lang];
-    const update = { languageTag: lang };
-    if (!supportedLanguages[lang]) {
-      return res.json({
-        message: `${lang} is currently unsupported`
-      });
-    }
-    if (user.languageTag === lang) {
-      return res.json({
-        message: `Your language is already set to ${langName}`
-      });
-    }
-    return user.update$(update)
-      .subscribe(
-        () => res.json({
-          message: `Your language has been updated to '${langName}'`
-        }),
         next
       );
   }
@@ -182,11 +158,6 @@ export default function settingsController(app) {
     updateMyCurrentChallengeValidators,
     createValidatorErrorHandler(alertTypes.danger),
     updateMyCurrentChallenge
-  );
-  api.post(
-    '/update-my-lang',
-    ifNoUser401,
-    updateMyLang
   );
   api.post(
     '/update-my-portfolio',

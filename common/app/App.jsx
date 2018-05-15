@@ -10,17 +10,19 @@ import {
   isSignedInSelector
 } from './redux';
 
+import { fetchMapUi } from './Map/redux';
+
 import Flash from './Flash';
 import Nav from './Nav';
 import Toasts from './Toasts';
 import NotFound from './NotFound';
 import { mainRouteSelector } from './routes/redux';
-import Challenges from './routes/Challenges';
 import Profile from './routes/Profile';
 import Settings from './routes/Settings';
 
 const mapDispatchToProps = {
   appMounted,
+  fetchMapUi,
   fetchUser
 };
 
@@ -37,6 +39,7 @@ const mapStateToProps = state => {
 const propTypes = {
   appMounted: PropTypes.func.isRequired,
   children: PropTypes.node,
+  fetchMapUi: PropTypes.func.isRequired,
   fetchUser: PropTypes.func,
   isSignedIn: PropTypes.bool,
   route: PropTypes.string,
@@ -44,7 +47,6 @@ const propTypes = {
 };
 
 const routes = {
-  challenges: Challenges,
   profile: Profile,
   settings: Settings
 };
@@ -53,6 +55,7 @@ const routes = {
 export class FreeCodeCamp extends React.Component {
   componentDidMount() {
     this.props.appMounted();
+    this.props.fetchMapUi();
     if (!this.props.isSignedIn) {
       this.props.fetchUser();
     }

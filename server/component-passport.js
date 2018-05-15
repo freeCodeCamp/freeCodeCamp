@@ -9,9 +9,20 @@ const passportOptions = {
 
 const fields = {
   progressTimestamps: false,
-  completedChallenges: false,
-  challengeMap: false
+  completedChallenges: false
 };
+
+function getCompletedCertCount(user) {
+  return [
+    'isApisMicroservicesCert',
+    'is2018DataVisCert',
+    'isFrontEndLibsCert',
+    'isInfosecQaCert',
+    'isJsAlgoDataStructCert',
+    'isRespWebDesignCert'
+  ].reduce((sum, key) => user[key] ? sum + 1 : sum, 0);
+
+}
 
 PassportConfigurator.prototype.init = function passportInit(noSession) {
   this.app.middleware('session:after', passport.initialize());
@@ -33,8 +44,10 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
 
     this.userModel.findById(id, { fields }, (err, user) => {
       if (err || !user) {
+       user.challengeMap = {};
         return done(err, user);
       }
+
       return this.app.dataSources.db.connector
         .collection('user')
         .aggregate([
@@ -43,6 +56,25 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
         ], function(err, [{ points = 1 } = {}]) {
           if (err) { return done(err); }
           user.points = points;
+          let completedChallengeCount = 0;
+          let completedProjectCount = 0;
+          if ('challengeMap' in user) {
+            completedChallengeCount = Object.keys(user.challengeMap).length;
+            Object.keys(user.challengeMap)
+              .map(key => user.challengeMap[key])
+              .forEach(item => {
+                if (
+                  'challengeType' in item &&
+                  (item.challengeType === 3 || item.challengeType === 4)
+                ) {
+                  completedProjectCount++;
+                }
+              });
+          }
+          user.completedChallengeCount = completedChallengeCount;
+          user.completedProjectCount = completedProjectCount;
+          user.completedCertCount = getCompletedCertCount(user);
+          user.challengeMap = {};
           return done(null, user);
         });
     });

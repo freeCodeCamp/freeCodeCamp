@@ -13,7 +13,6 @@ import AboutSettings from './components/About-Settings.jsx';
 import InternetSettings from './components/Internet-Settings.jsx';
 import EmailSettings from './components/Email-Settings.jsx';
 import DangerZone from './components/DangerZone.jsx';
-import LanguageSettings from './components/Language-Settings.jsx';
 import CertificationSettings from './components/Cert-Settings.jsx';
 import PortfolioSettings from './components/Portfolio-Settings.jsx';
 import Honesty from './components/Honesty.jsx';
@@ -51,22 +50,11 @@ const mapDispatchToProps = {
 const propTypes = {
   hardGoTo: PropTypes.func.isRequired,
   showLoading: PropTypes.bool,
-  updateMyLang: PropTypes.func,
   updateTitle: PropTypes.func.isRequired,
   username: PropTypes.string
 };
 
 export class Settings extends React.Component {
-  constructor(...props) {
-    super(...props);
-    this.updateMyLang = this.updateMyLang.bind(this);
-  }
-
-  updateMyLang(e) {
-    e.preventDefault();
-    const lang = e.target.value;
-    this.props.updateMyLang(lang);
-  }
 
   componentWillMount() {
     this.props.updateTitle('Settings');
@@ -115,15 +103,13 @@ export class Settings extends React.Component {
         <Spacer />
         <EmailSettings />
         <Spacer />
-        <LanguageSettings />
-        <Spacer />
         <InternetSettings />
         <Spacer />
         <PortfolioSettings />
         <Spacer />
-        <CertificationSettings />
-        <Spacer />
         <Honesty />
+        <Spacer />
+        <CertificationSettings />
         <Spacer />
         <DangerZone />
       </div>

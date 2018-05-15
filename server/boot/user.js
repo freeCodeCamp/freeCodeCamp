@@ -52,7 +52,7 @@ module.exports = function(app) {
     postReportUserProfile
   );
 
-  app.use('/:lang', router);
+  app.use(router);
   app.use(api);
 
   function getAccount(req, res) {

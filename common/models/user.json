@@ -97,10 +97,6 @@
       "type": "string",
       "default": ""
     },
-    "gender": {
-      "type": "string",
-      "default": ""
-    },
     "location": {
       "type": "string",
       "default": ""
@@ -222,6 +218,9 @@
       "description": "A map by ID of all the user completed challenges",
       "default": {}
     },
+    "completedChallengeCount": {
+      "type": "number"
+    },
     "completedChallenges": {
       "type": [
         {
@@ -259,11 +258,6 @@
     "theme": {
       "type": "string",
       "default": "default"
-    },
-    "languageTag": {
-      "type": "string",
-      "description": "An IETF language tag",
-      "default": "en"
     },
     "badges": {
       "type": {
@@ -368,13 +362,6 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "updateTheme"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$owner",
-      "permission": "ALLOW",
-      "property": "updateLanguage"
     },
     {
       "accessType": "EXECUTE",

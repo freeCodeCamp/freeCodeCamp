@@ -8,19 +8,18 @@ const githubSecret = process.env.GITHUB_SECRET;
 module.exports = function(app) {
   const router = app.loopback.Router();
   const User = app.models.User;
-  const noLangRouter = app.loopback.Router();
-  noLangRouter.get('/api/github', githubCalls);
-  noLangRouter.get('/chat', chat);
-  noLangRouter.get('/twitch', twitch);
-  noLangRouter.get('/unsubscribe/:email', unsubscribeAll);
-  noLangRouter.get('/unsubscribe-notifications/:email', unsubscribeAll);
-  noLangRouter.get('/unsubscribe-quincy/:email', unsubscribeAll);
-  noLangRouter.get('/submit-cat-photo', submitCatPhoto);
-  noLangRouter.get(
+
+  router.get('/api/github', githubCalls);
+  router.get('/chat', chat);
+  router.get('/twitch', twitch);
+  router.get('/unsubscribe/:email', unsubscribeAll);
+  router.get('/unsubscribe-notifications/:email', unsubscribeAll);
+  router.get('/unsubscribe-quincy/:email', unsubscribeAll);
+  router.get('/submit-cat-photo', submitCatPhoto);
+  router.get(
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
   );
-
   router.get('/unsubscribed', unsubscribed);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
@@ -36,8 +35,7 @@ module.exports = function(app) {
   );
   router.get('/academic-honesty', academicHonesty);
 
-  app.use(noLangRouter);
-  app.use('/:lang', router);
+  app.use(router);
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');

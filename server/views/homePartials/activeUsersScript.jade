@@ -1,0 +1,14 @@
+script.
+  $(document).ready(function getActiveUsers() {
+    setInterval(function getActiveUsersInterval() {
+      $.ajax({
+        type        : 'GET',
+        url         : '/api/about/get-active-users',
+      })
+      .done(function({ activeUsers }) {
+        document.getElementById('active-user-count').innerHTML = `
+          <h3><span class='green-text'>${activeUsers}</span> people are using freeCodeCamp right now</h3>
+        `;
+      })
+    }, 2000)
+  })
