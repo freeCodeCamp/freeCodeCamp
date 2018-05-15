@@ -41,7 +41,7 @@ export default function userServices() {
                   [user.username]: {
                     ..._.pick(user, userPropsForSession),
                     isEmailVerified: !!user.emailVerified,
-                    isGithub: !!user.githubURL,
+                    isGithub: !!user.githubProfile,
                     isLinkedIn: !!user.linkedIn,
                     isTwitter: !!user.twitter,
                     isWebsite: !!user.website,

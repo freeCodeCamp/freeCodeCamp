@@ -29,6 +29,14 @@
     "emailAuthLinkTTL": {
       "type": "date"
     },
+    "externalId": {
+      "type": "string",
+      "description": "A uuid/v4 used to identify user accounts"
+    },
+    "unsubscribeId": {
+      "type": "string",
+      "description": "An ObjectId used to unsubscribe users from the mailing list(s)"
+    },
     "password": {
       "type": "string",
       "description": "No longer used for new accounts"
@@ -47,26 +55,10 @@
       "description": "Users who are confirmed to have broken academic honesty policy are marked as cheaters",
       "default": false
     },
-    "isGithubCool": {
-      "type": "boolean",
-      "default": false
-    },
-    "githubId": {
+    "githubProfile": {
       "type": "string"
-    },
-    "githubURL": {
-      "type": "string"
-    },
-    "githubEmail": {
-      "type": "string"
-    },
-    "joinedGithubOn": {
-      "type": "date"
     },
     "website": {
-      "type": "string"
-    },
-    "githubProfile": {
       "type": "string"
     },
     "_csrf": {

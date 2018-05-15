@@ -13,13 +13,13 @@ import { updateUserBackend } from '../redux';
 const mapStateToProps = createSelector(
   userSelector,
   ({
-    githubURL = '',
+    githubProfile = '',
     linkedin = '',
     twitter = '',
     website = ''
   }) => ({
     initialValues: {
-      githubURL,
+      githubProfile,
       linkedin,
       twitter,
       website
@@ -27,7 +27,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const formFields = [ 'githubURL', 'linkedin', 'twitter', 'website' ];
+const formFields = [ 'githubProfile', 'linkedin', 'twitter', 'website' ];
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
@@ -37,7 +37,7 @@ function mapDispatchToProps(dispatch) {
 
 const propTypes = {
   fields: PropTypes.object,
-  githubURL: PropTypes.string,
+  githubProfile: PropTypes.string,
   handleSubmit: PropTypes.func.isRequired,
   linkedin: PropTypes.string,
   twitter: PropTypes.string,

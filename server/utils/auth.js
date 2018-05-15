@@ -31,7 +31,7 @@ export function createUserUpdatesFromProfile(provider, profile) {
 // createProfileAttributes(profile) => profileUpdate
 function createProfileAttributesFromGithub(profile) {
   const {
-    profileUrl: githubURL,
+    profileUrl: githubProfile,
     username,
     _json: {
       id: githubId,
@@ -54,9 +54,8 @@ function createProfileAttributesFromGithub(profile) {
     isGithubCool: true,
     picture,
     githubId,
-    githubURL,
     githubEmail,
-    githubProfile: githubURL
+    githubProfile
   };
 }
 

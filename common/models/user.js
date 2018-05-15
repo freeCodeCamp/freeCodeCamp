@@ -1,5 +1,5 @@
 import { Observable } from 'rx';
-import uuid from 'uuid';
+import uuid from 'uuid/v4';
 import moment from 'moment';
 import dedent from 'dedent';
 import debugFactory from 'debug';
@@ -7,6 +7,7 @@ import { isEmail } from 'validator';
 import path from 'path';
 import loopback from 'loopback';
 import _ from 'lodash';
+import { ObjectId } from 'mongodb';
 
 import { themes } from '../utils/themes';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
@@ -219,7 +220,14 @@ module.exports = function(User) {
         // assign random username to new users
         // actual usernames will come from github
         // use full uuid to ensure uniqueness
-        user.username = 'fcc' + uuid.v4();
+        user.username = 'fcc' + uuid();
+
+        if (!user.externalId) {
+          user.externalId = uuid();
+        }
+        if (!user.unsubscribeId) {
+          user.unsubscribeId = new ObjectId();
+        }
 
         if (!user.progressTimestamps) {
           user.progressTimestamps = [];
@@ -269,7 +277,15 @@ module.exports = function(User) {
         }
 
         if (user.progressTimestamps.length === 0) {
-          user.progressTimestamps.push({ timestamp: Date.now() });
+          user.progressTimestamps.push(Date.now());
+        }
+
+        if (!user.externalId) {
+          user.externalId = uuid();
+        }
+
+        if (!user.unsubscribeId) {
+          user.unsubscribeId = new ObjectId();
         }
       })
       .ignoreElements();
@@ -775,7 +791,7 @@ module.exports = function(User) {
             user: {
               [user.username]: {
                 ..._.pick(user, publicUserProps),
-                isGithub: !!user.githubURL,
+                isGithub: !!user.githubProfile,
                 isLinkedIn: !!user.linkedIn,
                 isTwitter: !!user.twitter,
                 isWebsite: !!user.website,
