@@ -18,10 +18,10 @@ export default function userServices() {
       cb) {
       const queryUser = req.user;
       const source = queryUser && Observable.forkJoin(
-        queryUser.getChallengeMap$(),
+        queryUser.getCompletedChallenges$(),
         queryUser.getPoints$(),
-        (challengeMap, progressTimestamps) => ({
-          challengeMap,
+        (completedChallenges, progressTimestamps) => ({
+          completedChallenges,
           progress: getProgress(progressTimestamps, queryUser.timezone)
         })
       );
@@ -29,10 +29,10 @@ export default function userServices() {
         () => !queryUser,
         Observable.of({}),
         Observable.defer(() => source)
-          .map(({ challengeMap, progress }) => ({
+          .map(({ completedChallenges, progress }) => ({
             ...queryUser.toJSON(),
             ...progress,
-            challengeMap
+            completedChallenges
           }))
           .map(
             user => ({

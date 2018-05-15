@@ -27,7 +27,7 @@ const mapStateToProps = createSelector(
   projectsSelector,
   (
     {
-      challengeMap,
+      completedChallenges,
       isRespWebDesignCert,
       is2018DataVisCert,
       isFrontEndLibsCert,
@@ -45,7 +45,7 @@ const mapStateToProps = createSelector(
     legacyProjects: projects.filter(p => p.superBlock.includes('legacy')),
     modernProjects: projects.filter(p => !p.superBlock.includes('legacy')),
     userProjects: projects
-      .map(block => buildUserProjectsMap(block, challengeMap))
+      .map(block => buildUserProjectsMap(block, completedChallenges))
       .reduce((projects, current) => ({
         ...projects,
         ...current

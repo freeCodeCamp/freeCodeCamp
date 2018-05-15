@@ -41,51 +41,51 @@ function destroyAll(id, Model) {
   )({ userId: id });
 }
 
-function buildChallengeMapUpdate(challengeMap, project) {
+function buildCompletedChallengesUpdate(completedChallenges, project) {
   const key = Object.keys(project)[0];
   const solutions = project[key];
-  const currentChallengeMap = { ...challengeMap };
-  const currentCompletedProjects = _.pick(
-    currentChallengeMap,
-    Object.keys(solutions)
-  );
+  const currentCompletedChallenges = [ ...completedChallenges ];
+  const currentCompletedProjects = currentCompletedChallenges
+    .filter(({id}) => Object.keys(solutions).includes(id));
   const now = Date.now();
   const update = Object.keys(solutions).reduce((update, currentId) => {
+    const indexOfCurrentId = _.findIndex(
+      currentCompletedProjects,
+      ({id}) => id === currentId
+    );
+    const isCurrentlyCompleted = indexOfCurrentId !== -1;
     if (
-      currentId in currentCompletedProjects &&
-      currentCompletedProjects[currentId].solution !== solutions[currentId]
+      isCurrentlyCompleted &&
+      currentCompletedProjects[
+        indexOfCurrentId
+      ].solution !== solutions[currentId]
     ) {
-      return {
-        ...update,
-        [currentId]: {
-          ...currentCompletedProjects[currentId],
-          solution: solutions[currentId],
-          numOfAttempts: currentCompletedProjects[currentId].numOfAttempts + 1
-        }
+      update[indexOfCurrentId] = {
+        ...update[indexOfCurrentId],
+        solution: solutions[currentId]
       };
     }
-    if (!(currentId in currentCompletedProjects)) {
-      return {
+    if (!isCurrentlyCompleted) {
+      return [
         ...update,
-        [currentId]: {
+        {
           id: currentId,
           solution: solutions[currentId],
           challengeType: 3,
-          completedDate: now,
-          numOfAttempts: 1
+          completedDate: now
         }
-      };
+      ];
     }
     return update;
-  }, {});
-  const updatedExisting = {
-    ...currentCompletedProjects,
-    ...update
-  };
-  return {
-    ...currentChallengeMap,
-    ...updatedExisting
-  };
+  }, currentCompletedProjects);
+  const updatedExisting = _.uniqBy(
+    [
+      ...update,
+      ...currentCompletedChallenges
+    ],
+    'id'
+  );
+  return updatedExisting;
 }
 
 function isTheSame(val1, val2) {
@@ -645,9 +645,11 @@ module.exports = function(User) {
     });
   };
 
-  User.prototype.requestChallengeMap = function requestChallengeMap() {
-    return this.getChallengeMap$();
-  };
+  function requestCompletedChallenges() {
+    return this.getCompletedChallenges$();
+  }
+
+  User.prototype.requestCompletedChallenges = requestCompletedChallenges;
 
   User.prototype.requestUpdateFlags = function requestUpdateFlags(values) {
     const flagsToCheck = Object.keys(values);
@@ -715,10 +717,10 @@ module.exports = function(User) {
 
   User.prototype.updateMyProjects = function updateMyProjects(project) {
     const updateData = {};
-    return this.getChallengeMap$()
-      .flatMap(challengeMap => {
-        updateData.challengeMap = buildChallengeMapUpdate(
-          challengeMap,
+    return this.getCompletedChallenges$()
+      .flatMap(completedChallenges => {
+        updateData.completedChallenges = buildCompletedChallengesUpdate(
+          completedChallenges,
           project
         );
         return this.update$(updateData);
@@ -767,7 +769,7 @@ module.exports = function(User) {
         if (!user) {
           return Observable.of({});
         }
-        const { challengeMap, progressTimestamps, timezone } = user;
+        const { completedChallenges, progressTimestamps, timezone } = user;
         return Observable.of({
           entities: {
             user: {
@@ -778,7 +780,7 @@ module.exports = function(User) {
                 isTwitter: !!user.twitter,
                 isWebsite: !!user.website,
                 points: progressTimestamps.length,
-                challengeMap,
+                completedChallenges,
                 ...getProgress(progressTimestamps, timezone),
                 ...normaliseUserFields(user)
               }
@@ -1000,16 +1002,16 @@ module.exports = function(User) {
         return user.progressTimestamps;
       });
   };
-  User.prototype.getChallengeMap$ = function getChallengeMap$() {
+  User.prototype.getCompletedChallenges$ = function getCompletedChallenges$() {
     const id = this.getId();
     const filter = {
       where: { id },
-      fields: { challengeMap: true }
+      fields: { completedChallenges: true }
     };
     return this.constructor.findOne$(filter)
       .map(user => {
-        this.challengeMap = user.challengeMap;
-        return user.challengeMap;
+        this.completedChallenges = user.completedChallenges;
+        return user.completedChallenges;
       });
   };
 

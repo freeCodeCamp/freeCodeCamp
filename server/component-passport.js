@@ -8,8 +8,7 @@ const passportOptions = {
 };
 
 const fields = {
-  progressTimestamps: false,
-  completedChallenges: false
+  progressTimestamps: false
 };
 
 function getCompletedCertCount(user) {
@@ -44,7 +43,6 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
 
     this.userModel.findById(id, { fields }, (err, user) => {
       if (err || !user) {
-       user.challengeMap = {};
         return done(err, user);
       }
 
@@ -58,23 +56,21 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
           user.points = points;
           let completedChallengeCount = 0;
           let completedProjectCount = 0;
-          if ('challengeMap' in user) {
-            completedChallengeCount = Object.keys(user.challengeMap).length;
-            Object.keys(user.challengeMap)
-              .map(key => user.challengeMap[key])
-              .forEach(item => {
-                if (
-                  'challengeType' in item &&
-                  (item.challengeType === 3 || item.challengeType === 4)
-                ) {
-                  completedProjectCount++;
-                }
-              });
+          if ('completedChallenges' in user) {
+            completedChallengeCount = user.completedChallenges.length;
+            user.completedChallenges.forEach(item => {
+              if (
+                'challengeType' in item &&
+                (item.challengeType === 3 || item.challengeType === 4)
+              ) {
+                completedProjectCount++;
+              }
+            });
           }
           user.completedChallengeCount = completedChallengeCount;
           user.completedProjectCount = completedProjectCount;
           user.completedCertCount = getCompletedCertCount(user);
-          user.challengeMap = {};
+          user.completedChallenges = [];
           return done(null, user);
         });
     });
