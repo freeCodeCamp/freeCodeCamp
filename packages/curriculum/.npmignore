@@ -3,6 +3,8 @@
 unpack*
 repack*
 
+challenges
+!dist/challenges
 requiresTests
 formattingConversion
 math-challenges
@@ -11,6 +13,11 @@ schema
 challengeTitles.js
 challenge-style-guide.md
 create-challenge-bundle.js
+getChallenges.js
+!dist/getChallenges.js
+gulpfile.js
+index.js
+!dist/index.js
 mongoIds.js
 utils.js
 
