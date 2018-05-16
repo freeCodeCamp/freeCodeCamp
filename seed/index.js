@@ -7,9 +7,9 @@ const Rx = require('rx');
 const _ = require('lodash');
 const createDebugger = require('debug');
 const utils = require('../server/utils');
-const getChallenges = require('../packages/curriculum/getChallenges');
+const getChallenges = require('./getChallenges');
 const { validateChallenge } = require(
-  '../packages/curriculum/schema/challengeSchema'
+  './schema/challengeSchema'
 );
 const app = require('../server/server');
 

@@ -3,7 +3,7 @@ require('babel-register');
 const fs = require('fs');
 const path = require('path');
 const { Observable } = require('rx');
-const getChallenges = require('../packages/curriculum/getChallenges');
+const getChallenges = require('./getChallenges');
 const { dasherize } = require('../server/utils');
 
 let pathMap = {};

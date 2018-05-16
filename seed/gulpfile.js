@@ -19,9 +19,9 @@ gulp.task('babel-getChallenges', () =>
 );
 
 gulp.task('babel', ['babel-getChallenges'], () =>
-gulp.src('./index.js')
+gulp.src('./package-entry.js')
 		.pipe(babel({
 			presets: ['env']
 		}))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist/index.js'))
   );
