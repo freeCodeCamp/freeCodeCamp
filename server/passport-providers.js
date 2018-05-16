@@ -1,4 +1,4 @@
-const successRedirect = '/';
+const successRedirect = '/settings';
 const failureRedirect = '/signin';
 const linkSuccessRedirect = '/settings';
 const linkFailureRedirect = '/settings';
@@ -165,5 +165,19 @@ export default {
       'We\'ve updated your profile based ',
       'on your your GitHub account.'
     ].join('')
+  },
+  'auth0-login': {
+    provider: 'auth0',
+    module: 'passport-auth0',
+    clientID: process.env.AUTH0_CLIENT_ID,
+    clientSecret: process.env.AUTH0_CLIENT_SECRET,
+    domain: process.env.AUTH0_DOMAIN,
+    callbackURL: '/auth/auth0/callback',
+    authPath: '/auth/auth0',
+    callbackPath: '/auth/auth0/callback',
+    successRedirect: successRedirect,
+    failureRedirect: failureRedirect,
+    scope: ['email'],
+    failureFlash: true
   }
 };
