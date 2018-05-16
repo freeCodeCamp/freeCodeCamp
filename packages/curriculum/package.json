@@ -1,5 +1,5 @@
 {
-  "name": "freecodecamp-curriculum",
+  "name": "@freecodecamp/curriculum",
   "version": "1.0.0",
   "description": "freeCodeCamp's curriculum seed files",
   "main": "index.js",
@@ -38,5 +38,6 @@
     "tap-spec": "^4.1.1",
     "tape": "^4.9.0",
     "validator": "^10.2.0"
-  }
+  },
+  "dependencies": {}
 }
