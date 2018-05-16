@@ -40,6 +40,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "gulp-json-minify": "^1.2.2",
+    "gulp-rename": "^1.2.3",
     "gulp-util": "^3.0.8",
     "joi": "^13.3.0",
     "joi-objectid": "^2.0.0",

@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const util = require('gulp-util');
 const jsonMinify = require('gulp-json-minify');
 const babel = require('gulp-babel');
+const rename = require('gulp-rename');
 
 gulp.task('json:minify', function() {
   return gulp.src('./challenges/**/*.json')
@@ -19,9 +20,10 @@ gulp.task('babel-getChallenges', () =>
 );
 
 gulp.task('babel', ['babel-getChallenges'], () =>
-gulp.src('./package-entry.js')
-		.pipe(babel({
-			presets: ['env']
-		}))
-    .pipe(gulp.dest('dist/index.js'))
-  );
+  gulp.src('./package-entry.js')
+  .pipe(rename('./index.js'))
+  .pipe(babel({
+    presets: ['env']
+  }))
+  .pipe(gulp.dest('dist/'))
+);
