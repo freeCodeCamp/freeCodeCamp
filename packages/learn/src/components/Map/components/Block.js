@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import Link from 'gatsby-link';
+import Link, { navigateTo } from 'gatsby-link';
 
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import Caret from '../../icons/Caret';
@@ -27,6 +27,23 @@ const propTypes = {
 };
 
 export class Block extends PureComponent {
+  constructor(...props) {
+    super(...props);
+
+    this.handleBlockClick = this.handleBlockClick.bind(this);
+    this.renderChallenges = this.renderChallenges.bind(this);
+  }
+
+  handleBlockClick() {
+    const { blockDashedName, challenges, toggleBlock } = this.props;
+    const blockPath = challenges[0].fields.slug
+      .split('/')
+      .slice(0, -1)
+      .join('/');
+    toggleBlock(blockDashedName);
+    return navigateTo(blockPath);
+  }
+
   renderChallenges(challenges) {
     // TODO: Split this into a Challenge Component and add tests
     return challenges.map(challenge => (
@@ -37,11 +54,11 @@ export class Block extends PureComponent {
   }
 
   render() {
-    const { blockDashedName, challenges, isExpanded, toggleBlock } = this.props;
+    const { challenges, isExpanded } = this.props;
     const { blockName } = challenges[0].fields;
     return (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
-        <div className='map-title' onClick={() => toggleBlock(blockDashedName)}>
+        <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
           <h5>{blockName}</h5>
         </div>

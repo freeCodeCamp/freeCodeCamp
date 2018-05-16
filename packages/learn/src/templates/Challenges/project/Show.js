@@ -26,7 +26,9 @@ const mapDispatchToProps = dispatch =>
       updateChallengeMeta,
       createFiles,
       updateSuccessMessage
-    }, dispatch);
+    },
+    dispatch
+  );
 
 const propTypes = {
   createFiles: PropTypes.func.isRequired,

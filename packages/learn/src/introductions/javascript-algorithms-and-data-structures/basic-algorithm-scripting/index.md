@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Basic Data Structure Challenges
-block: Basic Data Structures
+title: Introduction to Basic Algorithm Scripting
+block: Basic Algorithm Scripting
 superBlock: JavaScript Algorithms and Data Structures
 ---
-## Introduction to the Basic Data Structure Challenges
+## Introduction to Basic Algorithm Scripting
 
 This introduction is a stub
 

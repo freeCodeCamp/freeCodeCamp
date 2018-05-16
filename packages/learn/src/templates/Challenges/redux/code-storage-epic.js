@@ -74,7 +74,6 @@ function clearCodeEpic(action$, { getState }) {
 
 function saveCodeEpic(action$, { getState }) {
   return action$.pipe(
-    tap(console.info),
     ofType(types.executeChallenge),
     // do not save challenge if code is locked
     filter(() => !isCodeLockedSelector(getState())),

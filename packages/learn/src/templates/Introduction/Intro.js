@@ -20,7 +20,7 @@ const propTypes = {
 
 function renderMenuItems({ edges }) {
   return edges.map(({ node }) => node).map(({ title, fields: { slug } }) => (
-    <Link to={slug}>
+    <Link key={'intro-' + slug} to={slug}>
       <ListGroupItem>{title}</ListGroupItem>
     </Link>
   ));
