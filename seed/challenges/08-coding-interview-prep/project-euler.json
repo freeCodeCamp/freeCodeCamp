@@ -1070,7 +1070,7 @@
       "description": [
         "If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.",
         "If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used? ",
-        "NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of \"and\" when writing out numbers is in compliance with British usage."
+        "<b>NOTE:</b> Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of \"and\" when writing out numbers is in compliance with British usage."
       ],
       "files": {
         "indexjs": {
@@ -1114,7 +1114,7 @@
         "That is, 3 + 7 + 4 + 9 = 23.",
         "Find the maximum total from top to bottom of the triangle below:",
         "<span style='display: block; text-align: center;'>75<br>95 64<br>17 47 82<br>18 35 87 10<br>20 04 82 47 65<br>19 01 23 75 03 34<br>88 02 77 73 07 63 67<br>99 65 04 28 06 16 70 92<br>41 41 26 56 83 40 80 70 33<br>41 48 72 33 47 32 37 16 94 29<br>53 71 44 65 25 43 91 52 97 51 14<br>70 11 33 28 77 73 17 78 39 68 17 57<br>91 71 52 38 17 14 91 43 58 50 27 29 48<br>63 66 04 68 89 53 67 30 73 16 69 87 40 31<br>04 62 98 27 23 09 70 98 73 93 38 53 60 04 23</span>",
-        "NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)"
+        "<b>NOTE:</b> As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)"
       ],
       "files": {
         "indexjs": {
@@ -1165,14 +1165,7 @@
       "translations": {},
       "description": [
         "You are given the following information, but you may prefer to do some research for yourself.",
-        "1 Jan 1900 was a Monday.",
-        "Thirty days has September,",
-        "April, June and November.",
-        "All the rest have thirty-one,",
-        "Saving February alone,",
-        "Which has twenty-eight, rain or shine.",
-        "And on leap years, twenty-nine.",
-        "A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.",
+        "<ul><li>1 Jan 1900 was a Monday.</li><li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li><li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>",
         "How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?"
       ],
       "files": {
@@ -1222,9 +1215,9 @@
       "solutions": [],
       "translations": {},
       "description": [
-        "n! means n × (n − 1) × ... × 3 × 2 × 1",
-        "For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.",
-        "Find the sum of the digits n!"
+        "<var>n</var>! means <var>n</var> × (<var>n</var> − 1) × ... × 3 × 2 × 1",
+        "For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,<br>and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.",
+        "Find the sum of the digits <var>n</var>!"
       ],
       "files": {
         "indexjs": {
@@ -1269,10 +1262,10 @@
       "solutions": [],
       "translations": {},
       "description": [
-        "Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n).",
-        "If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair and each of a and b are called amicable numbers.",
+        "Let d(<var>n</var>) be defined as the sum of proper divisors of <var>n</var> (numbers less than <var>n</var> which divide evenly into <var>n</var>).",
+        "If d(<var>a</var>) = <var>b</var> and d(<var>b</var>) = <var>a</var>, where <var>a</var> ≠ <var>b</var>, then <var>a</var> and <var>b</var> are an amicable pair and each of <var>a</var> and <var>b</var> are called amicable numbers.",
         "For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.",
-        "Evaluate the sum of all the amicable numbers under n."
+        "Evaluate the sum of all the amicable numbers under <var>n</var>."
       ],
       "files": {
         "indexjs": {
@@ -1313,7 +1306,7 @@
       "solutions": [],
       "translations": {},
       "description": [
-        "Using names, an array containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.",
+        "Using <code>names</code>, an array containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.",
         "For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.",
         "What is the total of all the name scores in the file?"
       ],
@@ -1367,10 +1360,9 @@
       "translations": {},
       "description": [
         "A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.",
-        "A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.",
-        "",
+        "A number <var>n</var> is called deficient if the sum of its proper divisors is less than <var>n</var> and it is called abundant if this sum exceeds <var>n</var>.",
         "As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.",
-        "Find the sum of all positive integers <= n which cannot be written as the sum of two abundant numbers."
+        "Find the sum of all positive integers <= <var>n</var> which cannot be written as the sum of two abundant numbers."
       ],
       "files": {
         "indexjs": {
@@ -1416,8 +1408,8 @@
       "translations": {},
       "description": [
         "A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:",
-        "012   021   102   120   201   210",
-        "What is the n-th lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?"
+        "<div style='text-align: center;'>012   021   102   120   201   210</div>",
+        "What is the <var>n</var>th lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?"
       ],
       "files": {
         "indexjs": {
@@ -1463,22 +1455,11 @@
       "translations": {},
       "description": [
         "The Fibonacci sequence is defined by the recurrence relation:",
-        "Fn = Fn−1 + Fn−2, where F1 = 1 and F2 = 1.",
+        "<div style='padding-left: 4em;'>F<sub>n</sub> = F<sub>n−1</sub> + F<sub>n−2</sub>, where F<sub>1</sub> = 1 and F<sub>2</sub> = 1.</div>",
         "Hence the first 12 terms will be:",
-        "F1 = 1",
-        "F2 = 1",
-        "F3 = 2",
-        "F4 = 3",
-        "F5 = 5",
-        "F6 = 8",
-        "F7 = 13",
-        "F8 = 21",
-        "F9 = 34",
-        "F10 = 55",
-        "F11 = 89",
-        "F12 = 144",
-        "The 12th term, F12, is the first term to contain three digits.",
-        "What is the index of the first term in the Fibonacci sequence to contain n digits?"
+        "<div style='padding-left: 4em; display: inline-grid; grid-template-rows: auto; row-gap: 7px;'><div>F<sub>1</sub> = 1</div><div>F<sub>2</sub> = 1</div><div>F<sub>3</sub> = 2</div><div>F<sub>4</sub> = 3</div><div>F<sub>5</sub> = 5</div><div>F<sub>6</sub> = 8</div><div>F<sub>7</sub> = 13</div><div>F<sub>8</sub> = 21</div><div>F<sub>9</sub> = 34</div><div>F<sub>10</sub> = 55</div><div>F<sub>11</sub> = 89</div><div>F<sub>12</sub> = 144</div></div>",
+        "The 12th term, F<sub>12</sub>, is the first term to contain three digits.",
+        "What is the index of the first term in the Fibonacci sequence to contain <var>n</var> digits?"
       ],
       "files": {
         "indexjs": {
@@ -1524,19 +1505,9 @@
       "translations": {},
       "description": [
         "A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:",
-        "",
-        "1/2= 0.5",
-        "1/3= 0.(3)",
-        "1/4= 0.25",
-        "1/5= 0.2",
-        "1/6= 0.1(6)",
-        "1/7= 0.(142857)",
-        "1/8= 0.125",
-        "1/9= 0.(1)",
-        "1/10= 0.1",
-        "",
-        "Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.",
-        "Find the value of d < n for which 1/d contains the longest recurring cycle in its decimal fraction part."
+        "<div style='padding-left: 4em; display: inline-grid; grid-template-rows: auto; row-gap: 7px;'><div><sup>1</sup>/<sub>2</sub> = 0.5</div><div><sup>1</sup>/<sub>3</sub> = 0.(3)</div><div><sup>1</sup>/<sub>4</sub> = 0.25</div><div><sup>1</sup>/<sub>5</sub> = 0.2</div><div><sup>1</sup>/<sub>6</sub> = 0.1(6)</div><div><sup>1</sup>/<sub>7</sub> = 0.(142857)</div><div><sup>1</sup>/<sub>8</sub> = 0.125</div><div><sup>1</sup>/<sub>9</sub> = 0.(1)</div><div><sup>1</sup>/<sub>10</sub> = 0.1</div></div>",
+        "Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that <sup>1</sup>/<sub>7</sub> has a 6-digit recurring cycle.",
+        "Find the value of <var>d</var> < <var>n</var> for which <sup>1</sup>/<sub>d</sub> contains the longest recurring cycle in its decimal fraction part."
       ],
       "files": {
         "indexjs": {
