@@ -5,15 +5,15 @@ This package contains the "seed" files used in the freeCodeCamp Curriculum.
 ### Installation
 
 ```sh
-npm i freecodecamp-curriculum
+npm i @freecodecamp/curriculum
 # or
-yarn add freecodecamp-curriculum
+yarn add @freecodecamp/curriculum
 ```
 
 ### Usage
 
 ```js
-import { getChallenges } from 'freecodecamp-curriculum';
+import { getChallenges } from '@freecodecamp/curriculum';
 
 getChallenges() // will provide an array of blocks i.e. basic CSS, functional programming
 
