@@ -15,6 +15,7 @@ import EmailSettings from './components/Email-Settings.jsx';
 import DangerZone from './components/DangerZone.jsx';
 import CertificationSettings from './components/Cert-Settings.jsx';
 import PortfolioSettings from './components/Portfolio-Settings.jsx';
+import PrivacySettings from './components/Privacy-Settings.jsx';
 import Honesty from './components/Honesty.jsx';
 
 import {
@@ -100,6 +101,8 @@ export class Settings extends React.Component {
         </FullWidthRow>
         <h1 className='text-center'>{ `Account Settings for ${username}` }</h1>
         <AboutSettings />
+        <Spacer />
+        <PrivacySettings />
         <Spacer />
         <EmailSettings />
         <Spacer />

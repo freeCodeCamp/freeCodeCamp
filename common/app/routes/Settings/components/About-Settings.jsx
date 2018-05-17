@@ -9,15 +9,12 @@ import {
 } from 'react-bootstrap';
 
 import { FullWidthRow, Spacer } from '../../../helperComponents';
-import LockedSettings from './Locked-Settings.jsx';
 import ThemeSettings from './ThemeSettings.jsx';
 import Camper from './Camper.jsx';
 import UsernameSettings from './UsernameSettings.jsx';
 import SectionHeader from './SectionHeader.jsx';
 import { userSelector, toggleNightMode } from '../../../redux';
-import {
-  updateUserBackend
-} from '../redux';
+import { updateUserBackend } from '../redux';
 import {
   BlockSaveButton,
   BlockSaveWrapper,
@@ -33,7 +30,6 @@ const mapStateToProps = createSelector(
   (
     {
       about,
-      isLocked,
       location,
       name,
       picture,
@@ -45,7 +41,6 @@ const mapStateToProps = createSelector(
     about,
     currentTheme: theme,
     initialValues: { name, location, about, picture },
-    isLocked,
     location,
     name,
     picture,
@@ -79,7 +74,6 @@ const propTypes = {
     currentTheme: PropTypes.string,
     fields: PropTypes.object,
     handleSubmit: PropTypes.func.isRequired,
-    isLocked: PropTypes.bool,
     location: PropTypes.string,
     name: PropTypes.string,
     picture: PropTypes.string,
@@ -163,14 +157,11 @@ class AboutSettings extends PureComponent {
       currentTheme,
       fields: { _meta: { allPristine } },
       handleSubmit,
-      isLocked,
       toggleNightMode,
-      updateUserBackend,
       username
     } = this.props;
     const { view } = this.state;
 
-    const toggleIsLocked = () => updateUserBackend({ isLocked: !isLocked });
     const toggleTheme = () => toggleNightMode(username, currentTheme);
     return (
       <div className='about-settings'>
@@ -205,12 +196,6 @@ class AboutSettings extends PureComponent {
         </form>
         </FullWidthRow>
         <Spacer />
-        <FullWidthRow>
-          <LockedSettings
-            isLocked={ isLocked }
-            toggleIsLocked={ toggleIsLocked }
-          />
-        </FullWidthRow>
         <FullWidthRow>
           <ThemeSettings
             currentTheme={ currentTheme }

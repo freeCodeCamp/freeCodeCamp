@@ -5,7 +5,8 @@ import {
   types,
   refetchCompletedChallenges,
   updateUserBackendComplete,
-  updateMyPortfolioComplete
+  updateMyPortfolioComplete,
+  updateMyProfileUIComplete
 } from './';
 import { makeToast } from '../../../Toasts/redux';
 import {
@@ -18,7 +19,8 @@ import {
   updateUserEmail,
   updateMultipleUserFlags,
   regresPortfolio,
-  optoUpdatePortfolio
+  optoUpdatePortfolio,
+  updateLocalProfileUI
 } from '../../../entities';
 
 import { postJSON$ } from '../../../../utils/ajax-stream';
@@ -188,9 +190,41 @@ function updateUserEmailEpic(actions, { getState }) {
     });
 }
 
+function updateMyProfileUIEpic(action$, { getState }) {
+  const toggle = action$::ofType(types.updateMyProfileUI.start);
+
+  const server = toggle.flatMap(({payload: { profileUI }}) => {
+    const state = getState();
+    const { csrfToken: _csrf } = state.app;
+    const username = usernameSelector(state);
+    const oldUI = { ...userSelector(state).profileUI };
+    return postJSON$('/update-my-profile-ui', { _csrf, profileUI })
+      .map(updateMyProfileUIComplete)
+      .catch(
+        doActionOnError(
+          () => Observable.of(
+            makeToast({
+              message:
+                'Something went wrong saving your privacy settings, ' +
+                'please try again.'
+            }),
+            updateLocalProfileUI({username, profileUI: oldUI })
+          )
+        )
+      );
+    });
+  const optimistic = toggle.flatMap(({payload: { profileUI }}) => {
+    const username = usernameSelector(getState());
+    return Observable.of(updateLocalProfileUI({username, profileUI}));
+  });
+
+  return Observable.merge(server, optimistic);
+}
+
 export default combineEpics(
   backendUserUpdateEpic,
   refetchCompletedChallengesEpic,
   updateMyPortfolioEpic,
-  updateUserEmailEpic
+  updateUserEmailEpic,
+  updateMyProfileUIEpic
 );
