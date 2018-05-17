@@ -38,6 +38,7 @@
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
+    "@freecodecamp/loopback-component-passport": "^1.0.0",
     "accepts": "^1.3.0",
     "babel-core": "^6.18.1",
     "babel-preset-es2015": "^6.3.13",
@@ -86,7 +87,6 @@
     "lodash": "^4.1.0",
     "loopback": "^3.11.1",
     "loopback-boot": "^2.27.1",
-    "loopback-component-passport": "git+https://github.com/freeCodeCamp/loopback-component-passport.git#feat/freecodecamp",
     "loopback-connector-mongodb": "^3.2.1",
     "method-override": "^2.3.0",
     "moment": "^2.10.2",

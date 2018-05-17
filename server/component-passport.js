@@ -1,5 +1,6 @@
 import passport from 'passport';
-import { PassportConfigurator } from 'loopback-component-passport';
+import { PassportConfigurator } from
+ '@freecodecamp/loopback-component-passport';
 import passportProviders from './passport-providers';
 
 const passportOptions = {
