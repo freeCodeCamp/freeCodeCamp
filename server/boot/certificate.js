@@ -308,7 +308,6 @@ export default function certificate(app) {
       username,
       {
         isCheater: true,
-        isLocked: true,
         isFrontEndCert: true,
         isBackEndCert: true,
         isFullStackCert: true,
@@ -322,11 +321,13 @@ export default function certificate(app) {
         isHonest: true,
         username: true,
         name: true,
-        completedChallenges: true
+        completedChallenges: true,
+        profileUI: true
       }
     )
     .subscribe(
       user => {
+        const { isLocked, showCerts } = user.profileUI;
         const profile = `/portfolio/${user.username}`;
         if (!user) {
           req.flash(
@@ -341,7 +342,7 @@ export default function certificate(app) {
             'danger',
             dedent`
               This user needs to add their name to their account
-              in order for others to be able to view their certificate.
+              in order for others to be able to view their certification.
             `
           );
           return res.redirect(profile);
@@ -351,13 +352,25 @@ export default function certificate(app) {
           return res.redirect(profile);
         }
 
-        if (user.isLocked) {
+        if (isLocked) {
           req.flash(
             'danger',
             dedent`
               ${username} has chosen to make their profile
                 private. They will need to make their profile public
-                in order for others to be able to view their certificate.
+                in order for others to be able to view their certification.
+            `
+          );
+          return res.redirect('/');
+        }
+
+        if (!showCerts) {
+          req.flash(
+            'danger',
+            dedent`
+              ${username} has chosen to make their certifications
+                private. They will need to make their certifications public
+                in order for others to be able to view them.
             `
           );
           return res.redirect('/');
