@@ -1,5 +1,5 @@
 {
-  "name": "Project Euler Problems",
+  "name": "Project Euler",
   "order": 6,
   "time": "",
   "helpRoom": "HelpJavaScript",
@@ -5384,28 +5384,34 @@
       "id": "5900f3d91000cf542c50feeb",
       "challengeType": 5,
       "type": "bonfire",
-      "title": "Problem 108: About Project Euler",
+      "title": "Problem 108: Diophantine Reciprocals I",
       "tests": [
         {
-          "text": "<code>euler108()</code> should return 180180.",
-          "testString": "assert.strictEqual(euler108(), 180180, '<code>euler108()</code> should return 180180.');"
+          "text": "<code>diophantineOne()</code> should return 180180.",
+          "testString": "assert.strictEqual(diophantineOne(), 180180, '<code>diophantineOne()</code> should return 180180.');"
         }
       ],
       "solutions": [],
       "translations": {},
-      "description": [],
+      "description": [
+        "In the following equation x, y, and n are positive integers.",
+        "1/<var>x</var> + 1/<var>y</var> = 1/<var>n</var>",
+        "For <var>n</var> = 4 there are exactly three distinct solutions:",
+        "1/5 + 1/20 = 1/4<br />1/6 + 1/12 = 1/4<br />1/8 + 1/8 = 1/4",
+        "What is the least value of <var>n</var> for which the number of distinct solutions exceeds one-thousand?"
+      ],
       "files": {
         "indexjs": {
           "key": "indexjs",
           "ext": "js",
           "name": "index",
           "contents": [
-            "function euler108() {",
+            "function diophantineOne() {",
             "  // Good luck!",
             "  return true;",
             "}",
             "",
-            "euler108();"
+            "diophantineOne();"
           ],
           "head": [],
           "tail": []
@@ -5496,28 +5502,33 @@
       "id": "5900f3db1000cf542c50feed",
       "challengeType": 5,
       "type": "bonfire",
-      "title": "Problem 110: About Project Euler",
+      "title": "Problem 110: Diophantine Reciprocals II",
       "tests": [
         {
-          "text": "<code>euler110()</code> should return 9350130049860600.",
-          "testString": "assert.strictEqual(euler110(), 9350130049860600, '<code>euler110()</code> should return 9350130049860600.');"
+          "text": "<code>diophantineTwo</code> should return 9350130049860600.",
+          "testString": "assert.strictEqual(diophantineTwo(), 9350130049860600, '<code>diophantineTwo()</code> should return 9350130049860600.');"
         }
       ],
       "solutions": [],
       "translations": {},
-      "description": [],
+      "description": [
+        "In the following equation x, y, and n are positive integers.",
+        "1/<var>x</var> + 1/<var>y</var> = 1/<var>n</var>",
+        "It can be verified that when <var>n</var> = 1260 there are 113 distinct solutions and this is the least value of <var>n</var> for which the total number of distinct solutions exceeds one hundred.",
+        "What is the least value of <var>n</var> for which the number of distinct solutions exceeds four million?"
+      ],
       "files": {
         "indexjs": {
           "key": "indexjs",
           "ext": "js",
           "name": "index",
           "contents": [
-            "function euler110() {",
+            "function diophantineTwo() {",
             "  // Good luck!",
             "  return true;",
             "}",
             "",
-            "euler110();"
+            "diophantineTwo();"
           ],
           "head": [],
           "tail": []
@@ -20458,28 +20469,43 @@
       "id": "5900f5191000cf542c51002b",
       "challengeType": 5,
       "type": "bonfire",
-      "title": "Problem 428: About Project Euler",
+      "title": "Problem 428: Necklace of Circles",
       "tests": [
         {
-          "text": "<code>euler428()</code> should return 747215561862.",
-          "testString": "assert.strictEqual(euler428(), 747215561862, '<code>euler428()</code> should return 747215561862.');"
+          "text": "<code>necklace(1000000000)</code> should return 747215561862.",
+          "testString": "assert.strictEqual(necklace(1000000000), 747215561862, '<code>necklace(1000000000)</code> should return 747215561862.');"
         }
       ],
       "solutions": [],
       "translations": {},
-      "description": [],
+      "description": [
+        "Let <var>a</var>, <var>b</var> and <var>c</var> be positive numbers.",
+        "Let W, X, Y, Z be four collinear points where |WX| = <var>a</var>, |XY| = <var>b</var>, |YZ| = <var>c</var> and |WZ| = <var>a</var> + <var>b</var> + <var>c</var>.",
+        "Let C<sub>in</sub> be the circle having the diameter XY.",
+        "Let C<sub>out</sub> be the circle having the diameter WZ.",
+        "",
+        "The triplet (<var>a</var>, <var>b</var>, <var>c</var>) is called a <em>necklace triplet</em> if you can place <var>k</var> ≥ 3 distinct circles C<sub>1</sub>, C<sub>2</sub>, ..., C<sub><var>k</var></sub> such that:",
+        "<ul><li>C<sub><var>i</var></sub> has no common interior points with any C<sub><var>j</var></sub> for 1 ≤ <var>i</var>, <var>j</var> ≤ <var>k</var> and <var>i</var> ≠ <var>j</var>,</li><li>C<sub><var>i</var></sub> is tangent to both C<sub>in</sub> and C<sub>out</sub> for 1 ≤ <var>i</var> ≤ <var>k</var>,</li><li>C<sub><var>i</var></sub> is tangent to C<sub><var>i</var>+1</sub> for 1 ≤ <var>i</var> &lt; <var>k</var>, and</li><li>C<sub><var>k</var></sub> is tangent to C<sub>1</sub>.</li></ul>",
+        "For example, (5, 5, 5) and (4, 3, 21) are necklace triplets, while it can be shown that (2, 2, 5) is not.",
+        "<img src=\"https://projecteuler.net/project/images/p428_necklace.png\" alt=\"a visual reresentation of a necklace triplet\">",
+        "",
+        "Let T(<var>n</var>) be the number of necklace triplets (<var>a</var>, <var>b</var>, <var>c</var>) such that <var>a</var>, <var>b</var> and <var>c</var> are positive integers, and <var>b</var> ≤ <var>n</var>.",
+        "For example, T(1)&nbsp;=&nbsp;9, T(20)&nbsp;=&nbsp;732 and T(3000)&nbsp;=&nbsp;438106.",
+        "",
+        "Find T(1&nbsp;000&nbsp;000&nbsp;000)."
+      ],
       "files": {
         "indexjs": {
           "key": "indexjs",
           "ext": "js",
           "name": "index",
           "contents": [
-            "function euler428() {",
+            "function necklace(n) {",
             "  // Good luck!",
             "  return true;",
             "}",
             "",
-            "euler428();"
+            "necklace(1000000000)"
           ],
           "head": [],
           "tail": []
