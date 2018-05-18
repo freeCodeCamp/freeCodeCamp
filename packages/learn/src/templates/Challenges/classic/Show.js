@@ -10,6 +10,8 @@ import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import Editor from './Editor';
 import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
+import TestSuite from '../components/Test-Suite';
+import Output from '../components/Output';
 import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import ResetModal from '../components/ResetModal';
@@ -21,17 +23,28 @@ import { ChallengeNode } from '../../../redux/propTypes';
 import {
   createFiles,
   challengeFilesSelector,
+  challengeTestsSelector,
   initTests,
   updateChallengeMeta,
   challengeMounted,
-  updateSuccessMessage
+  updateSuccessMessage,
+  consoleOutputSelector
 } from '../redux';
 
 import './classic.css';
+import ToolPanel from '../components/Tool-Panel';
+import Spacer from '../../../components/util/Spacer';
 
-const mapStateToProps = createSelector(challengeFilesSelector, files => ({
-  files
-}));
+const mapStateToProps = createSelector(
+  challengeFilesSelector,
+  challengeTestsSelector,
+  consoleOutputSelector,
+  (files, tests, output) => ({
+    files,
+    tests,
+    output
+  })
+);
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -55,11 +68,18 @@ const propTypes = {
     key: PropTypes.string
   }),
   initTests: PropTypes.func.isRequired,
+  output: PropTypes.string,
   pathContext: PropTypes.shape({
     challengeMeta: PropTypes.shape({
       nextchallengePath: PropTypes.string
     })
   }),
+  tests: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      testString: PropTypes.string
+    })
+  ),
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSuccessMessage: PropTypes.func.isRequired
 };
@@ -115,7 +135,9 @@ class ShowClassic extends PureComponent {
           guideUrl
         }
       },
-      files
+      files,
+      tests,
+      output
     } = this.props;
     const editors = Object.keys(files)
       .map(key => files[key])
@@ -125,6 +147,21 @@ class ShowClassic extends PureComponent {
           <ReflexElement flex={1}>
             <Editor {...file} fileKey={file.key} />
           </ReflexElement>
+          {index + 1 === Object.keys(files).length && <ReflexSplitter />}
+          {index + 1 === Object.keys(files).length ? (
+            <ReflexElement flex={0.25}>
+              <Output
+                defaultOutput={`
+/**
+* Your output will go here.
+* Any console.log() statements
+* will appear in here as well.
+*/
+`}
+                output={output}
+              />
+            </ReflexElement>
+          ) : null}
         </Fragment>
       ));
 
@@ -134,7 +171,8 @@ class ShowClassic extends PureComponent {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Fragment>
-        <Helmet title={`${blockNameTitle} | Learn freeCodeCamp}`} />
+        <Helmet title={`${blockNameTitle} | Learn freeCodeCamp`} />
+        <ToolPanel />
         <ReflexContainer orientation='vertical'>
           <ReflexElement flex={1}>
             <SidePanel
@@ -150,13 +188,14 @@ class ShowClassic extends PureComponent {
               {editors}
             </ReflexContainer>
           </ReflexElement>
-          {showPreview && <ReflexSplitter />}
-          {showPreview && (
-            <ReflexElement flex={0.3} maxSize={325}>
-              <Preview className='full-height' />
-            </ReflexElement>
-          )}
+          <ReflexSplitter />
+          <ReflexElement flex={0.5}>
+            {showPreview ? <Preview className='full-height' /> : null}
+            <Spacer />
+            <TestSuite tests={tests} />
+          </ReflexElement>
         </ReflexContainer>
+
         <CompletionModal />
         <HelpModal />
         <ResetModal />

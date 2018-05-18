@@ -69,8 +69,8 @@
             "",
             "console.log(tea4TeamFCC);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -159,8 +159,8 @@
             "  tea4BlackTeamFCC",
             ");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -177,7 +177,7 @@
         "A Window object is made up of tabs, and you usually have more than one Window open. The titles of each open site in each Window object is held in an array. After working in the browser (opening new tabs, merging windows, and closing tabs), you want to print the tabs that are still open. Closed tabs are removed from the array and new tabs (for simplicity) get added to the end of it.",
         "The code editor shows an implementation of this functionality with functions for <code>tabOpen()</code>, <code>tabClose()</code>, and <code>join()</code>. The array <code>tabs</code> is part of the Window object that stores the name of the open pages.",
         "<h4>Instructions<h4>",
-        "Run the code in the editor. It's using a method that has side effects in the program, causing incorrect output. The final list of open tabs should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code> but the output will be slightly different.",
+        "Run the code in the editor. It's using a method that has side effects in the program, causing incorrect output. The final list of open tabs should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code> but the output will be slightly different.",
         "Work through the code and see if you can figure out the problem, then advance to the next challenge to learn more."
       ],
       "tests": [
@@ -236,8 +236,8 @@
             "",
             "alert(finalTabs.tabs);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -288,8 +288,8 @@
             "var newValue = incrementer(); // Should equal 5",
             "console.log(fixedValue); // Should print 4"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -345,8 +345,8 @@
             "var newValue = incrementer(fixedValue); // Should equal 5",
             "console.log(fixedValue); // Should print 4"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -427,8 +427,8 @@
             "",
             "console.log(bookList);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -598,8 +598,8 @@
             "",
             "console.log(rating); "
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -651,8 +651,8 @@
             "  return item * 2;",
             "});"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -816,8 +816,8 @@
             "",
             "console.log(filteredList); "
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -867,8 +867,8 @@
             "  return item % 2 === 1;",
             "});"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -924,8 +924,8 @@
             "var inputAnim = [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"];",
             "sliceArray(inputAnim, 1, 3);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -978,8 +978,8 @@
             "var inputCities = [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"];",
             "nonMutatingSplice(inputCities);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1031,8 +1031,8 @@
             "var second = [4, 5];",
             "nonMutatingConcat(first, second);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1090,8 +1090,8 @@
             "var second = [4, 5];",
             "nonMutatingPush(first, second);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1261,8 +1261,8 @@
             "",
             "console.log(averageRating); "
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1314,8 +1314,8 @@
             "}",
             "alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1365,8 +1365,8 @@
             "}",
             "nonMutatingSort(globalArray);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1420,8 +1420,8 @@
             "}",
             "splitify(\"Hello World,I-am code\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1482,8 +1482,8 @@
             "}",
             "sentensify(\"May-the-force-be-with-you\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1553,8 +1553,8 @@
             "",
             "var winterComing = urlSlug(globalTitle); // Should be \"winter-is-coming\""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1605,8 +1605,8 @@
             "}",
             "checkPositive([1, 2, 3, -4, 5]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1657,8 +1657,8 @@
             "}",
             "checkPositive([1, 2, 3, -4, 5]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1715,13 +1715,10 @@
             "}",
             "add(10)(20)(30);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/functional-programming.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }

@@ -1,9 +1,15 @@
-.editor,
-.react-codemirror2,
-.react-codemirror2 > .CodeMirror-wrap {
+.editor{
   height: 100%;
+  margin-bottom: 1.45rem;
 }
 
 .instructions-panel {
   padding: 0 10px;
+}
+
+.react-monaco-editor-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: end;
 }

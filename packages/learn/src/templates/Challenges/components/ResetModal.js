@@ -7,6 +7,8 @@ import { Button, Modal } from 'react-bootstrap';
 
 import { isResetModalOpenSelector, closeModal, resetChallenge } from '../redux';
 
+import './reset-modal.css';
+
 const propTypes = {
   close: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
@@ -31,15 +33,15 @@ function ResetModal({ reset, close, isOpen }) {
   return (
     <Modal
       animation={false}
-      dialogClassName={'reset-modal'}
+      dialogClassName='reset-modal'
       keyboard={true}
       onHide={close}
       show={isOpen}
       >
-      <Modal.Header className={'challenge-list-header'} closeButton={true}>
-        <Modal.Title>Reset this lesson?</Modal.Title>
+      <Modal.Header className='reset-modal-header' closeButton={true}>
+        <Modal.Title className='text-center'>Reset this lesson?</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className='reset-modal-body'>
         <div className='text-center'>
           <p>
             Are you sure you wish to reset this lesson? The editors and tests

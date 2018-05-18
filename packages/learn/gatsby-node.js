@@ -38,7 +38,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    // Query for all markdown "nodes" and for the slug we previously created.
+    // Query for all markdown 'nodes' and for the slug we previously created.
     resolve(
       graphql(`
         {
@@ -140,3 +140,22 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     ]);
   });
 };
+/* eslint-disable prefer-object-spread/prefer-object-spread */
+exports.modifyBabelrc = ({ babelrc }) =>
+  Object.assign({}, babelrc, {
+    plugins: babelrc.plugins.concat([
+      [
+        'transform-imports',
+        {
+          'react-bootstrap': {
+            transform: 'react-bootstrap/lib/${member}',
+            preventFullImport: true
+          },
+          lodash: {
+            transform: 'lodash/${member}',
+            preventFullImport: true
+          }
+        }
+      ]
+    ])
+  });

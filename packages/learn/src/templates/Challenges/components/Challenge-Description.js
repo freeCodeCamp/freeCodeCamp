@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Col, Row } from 'react-bootstrap';
 import { descriptionRegex } from '../../../../utils';
 
+import './challenge-description.css';
+
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string)
 };

@@ -75,8 +75,8 @@
             "",
             "convertToF(30);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -151,8 +151,8 @@
             "",
             "reverseString(\"hello\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -232,8 +232,8 @@
             "",
             "factorialize(5);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -311,8 +311,8 @@
             "",
             "findLongestWordLength(\"The quick brown fox jumped over the lazy dog\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -383,8 +383,8 @@
             "",
             "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -483,8 +483,8 @@
             "",
             "confirmEnding(\"Bastian\", \"n\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -563,8 +563,8 @@
             "",
             "repeatStringNumTimes(\"abc\", 3);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -639,8 +639,8 @@
             "",
             "truncateString(\"A-tisket a-tasket A green and yellow basket\", 8);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -706,8 +706,8 @@
             "",
             "findElement([1, 2, 3, 4], num => num % 2 === 0);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -809,8 +809,8 @@
             "",
             "booWho(null);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -879,8 +879,8 @@
             "",
             "titleCase(\"I'm a little tea pot\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -955,8 +955,11 @@
             "",
             "frankenSplice([1, 2, 3], [4, 5, 6], 1);"
           ],
-          "head": "",
-          "tail": "let testArr1 = [1, 2];\nlet testArr2 = [\"a\", \"b\"];"
+          "head": [],
+          "tail": [
+            "let testArr1 = [1, 2];",
+            "let testArr2 = [\"a\", \"b\"];"
+          ]
         }
       }
     },
@@ -1029,8 +1032,8 @@
             "",
             "bouncer([7, \"ate\", \"\", false, 9]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1151,8 +1154,8 @@
             "",
             "getIndexToIns([40, 60], 50);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1247,8 +1250,8 @@
             "",
             "mutation([\"hello\", \"hey\"]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1328,13 +1331,10 @@
             "",
             "chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/basic-algorithm-scripting.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }

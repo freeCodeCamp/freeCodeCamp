@@ -43,8 +43,8 @@
             "let sumAB = a + b;",
             "console.log(sumAB);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -73,7 +73,7 @@
         },
         {
           "text": "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.",
-          "testString": "assert(code.match(/console\\.clear\\(\\)/g), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
+          "testString": "assert(code.match(/(?<!\\/\\/ Use )console\\.clear\\(\\)/g), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
         }
       ],
       "solutions": [],
@@ -101,8 +101,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -149,8 +149,8 @@
             "// Add your code below this line",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -202,8 +202,8 @@
             "let netWorkingCapital = recievables - payable;",
             "console.log(`Net working capital is: ${netWorkingCapital}`);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -242,8 +242,8 @@
             "let arraySum = myArray.reduce((previous, current =>  previous + current);",
             "console.log(`Sum of array values is: ${arraySum}`);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -285,8 +285,8 @@
             "let innerHtml = \"<p>Click here to <a href=\"#Home\">return home</a></p>\";",
             "console.log(innerHtml);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -336,8 +336,8 @@
             "",
             "console.log(result);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -382,8 +382,8 @@
             "let result = getNine;",
             "console.log(result);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -426,8 +426,8 @@
             "let power = raiseToPower(exp, base);",
             "console.log(power);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -483,8 +483,8 @@
             "",
             "countToFive();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -543,8 +543,8 @@
             "let matrix = zeroArray(3, 2);",
             "console.log(matrix);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -587,13 +587,10 @@
             "  }",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/debugging.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }

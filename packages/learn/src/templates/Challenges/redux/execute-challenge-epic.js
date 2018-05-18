@@ -12,7 +12,7 @@ import {
   concat
 } from 'rxjs/operators';
 import { ofType, combineEpics } from 'redux-observable';
-import _ from 'lodash';
+import { overEvery, isString } from 'lodash';
 
 import {
   types,
@@ -78,7 +78,7 @@ function executeChallengeEpic(action$, { getState }, { document }) {
             .flatMap(tests => {
               return from(tests).pipe(
                 map(({ message }) => message),
-                filter(_.overEvery(_.isString, Boolean)),
+                filter(overEvery(isString, Boolean)),
                 map(updateConsole),
                 concat(of(updateTests(tests)))
               );

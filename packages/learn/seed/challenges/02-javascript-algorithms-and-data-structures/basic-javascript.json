@@ -67,11 +67,9 @@
           "key": "indexjs",
           "ext": "js",
           "name": "index",
-          "contents": [
-            ""
-          ],
-          "head": "",
-          "tail": ""
+          "contents": [],
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -142,8 +140,10 @@
             "// Declare myName below this line",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myName !== \"undefined\"){(function(v){return v;})(myName);}"
+          "head": [],
+          "tail": [
+            "if(typeof myName !== \"undefined\"){(function(v){return v;})(myName);}"
+          ]
         }
       }
     },
@@ -214,8 +214,17 @@
             "// Only change code below this line",
             ""
           ],
-          "head": "if (typeof a != 'undefined') {\n  a = undefined;\n}\nif (typeof b != 'undefined') {\n  b = undefined;\n}",
-          "tail": "(function(a,b){return \"a = \" + a + \", b = \" + b;})(a,b);"
+          "head": [
+            "if (typeof a != 'undefined') {",
+            "  a = undefined;",
+            "}",
+            "if (typeof b != 'undefined') {",
+            "  b = undefined;",
+            "}"
+          ],
+          "tail": [
+            "(function(a,b){return \"a = \" + a + \", b = \" + b;})(a,b);"
+          ]
         }
       }
     },
@@ -265,8 +274,10 @@
             "// Only change code below this line",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof a !== 'undefined') {(function(a){return \"a = \" + a;})(a);} else { (function() {return 'a is undefined';})(); }"
+          "head": [],
+          "tail": [
+            "if(typeof a !== 'undefined') {(function(a){return \"a = \" + a;})(a);} else { (function() {return 'a is undefined';})(); }"
+          ]
         }
       }
     },
@@ -330,8 +341,10 @@
             "c = c + \" String!\";",
             ""
           ],
-          "head": "",
-          "tail": "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
+          "head": [],
+          "tail": [
+            "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = '\" + c + \"'\"; })(a,b,c);"
+          ]
         }
       }
     },
@@ -411,8 +424,8 @@
             "PRoperCAmelCAse = \"A String\";",
             "tITLEcASEoVER = 9000;"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -462,8 +475,10 @@
             "var sum = 10 + 0;",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return 'sum = '+z;})(sum);"
+          "head": [],
+          "tail": [
+            "(function(z){return 'sum = '+z;})(sum);"
+          ]
         }
       }
     },
@@ -515,8 +530,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return 'difference = '+z;})(difference);"
+          "head": [],
+          "tail": [
+            "(function(z){return 'difference = '+z;})(difference);"
+          ]
         }
       }
     },
@@ -568,8 +585,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return 'product = '+z;})(product);"
+          "head": [],
+          "tail": [
+            "(function(z){return 'product = '+z;})(product);"
+          ]
         }
       }
     },
@@ -621,8 +640,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return 'quotient = '+z;})(quotient);"
+          "head": [],
+          "tail": [
+            "(function(z){return 'quotient = '+z;})(quotient);"
+          ]
         }
       }
     },
@@ -689,8 +710,10 @@
             "myVar = myVar + 1;",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return 'myVar = ' + z;})(myVar);"
+          "head": [],
+          "tail": [
+            "(function(z){return 'myVar = ' + z;})(myVar);"
+          ]
         }
       }
     },
@@ -756,8 +779,10 @@
             "myVar = myVar - 1;",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return 'myVar = ' + z;})(myVar);"
+          "head": [],
+          "tail": [
+            "(function(z){return 'myVar = ' + z;})(myVar);"
+          ]
         }
       }
     },
@@ -808,8 +833,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(){if(typeof myDecimal !== \"undefined\"){return myDecimal;}})();"
+          "head": [],
+          "tail": [
+            "(function(){if(typeof myDecimal !== \"undefined\"){return myDecimal;}})();"
+          ]
         }
       }
     },
@@ -858,8 +885,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(y){return 'product = '+y;})(product);"
+          "head": [],
+          "tail": [
+            "(function(y){return 'product = '+y;})(product);"
+          ]
         }
       }
     },
@@ -908,8 +937,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(y){return 'quotient = '+y;})(quotient);"
+          "head": [],
+          "tail": [
+            "(function(y){return 'quotient = '+y;})(quotient);"
+          ]
         }
       }
     },
@@ -972,8 +1003,10 @@
             "var remainder;",
             ""
           ],
-          "head": "",
-          "tail": "(function(y){return 'remainder = '+y;})(remainder);"
+          "head": [],
+          "tail": [
+            "(function(y){return 'remainder = '+y;})(remainder);"
+          ]
         }
       }
     },
@@ -1048,8 +1081,10 @@
             "c = c + 7;",
             ""
           ],
-          "head": "",
-          "tail": "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+          "head": [],
+          "tail": [
+            "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+          ]
         }
       }
     },
@@ -1123,8 +1158,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+          "head": [],
+          "tail": [
+            "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+          ]
         }
       }
     },
@@ -1198,8 +1235,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+          "head": [],
+          "tail": [
+            "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+          ]
         }
       }
     },
@@ -1272,8 +1311,10 @@
             "c = c / 11;",
             ""
           ],
-          "head": "",
-          "tail": "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+          "head": [],
+          "tail": [
+            "(function(a,b,c){ return \"a = \" + a + \", b = \" + b + \", c = \" + c; })(a,b,c);"
+          ]
         }
       }
     },
@@ -1325,8 +1366,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myFirstName !== \"undefined\" && typeof myLastName !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
+          "head": [],
+          "tail": [
+            "if(typeof myFirstName !== \"undefined\" && typeof myLastName !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
+          ]
         }
       }
     },
@@ -1384,8 +1427,16 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(){\n  if(typeof myStr === 'string') {\n    console.log(\"myStr = \\\"\" + myStr + \"\\\"\");\n  } else {\n    console.log(\"myStr is undefined\");\n  }\n})();"
+          "head": [],
+          "tail": [
+            "(function(){",
+            "  if(typeof myStr === 'string') {",
+            "    console.log(\"myStr = \\\"\" + myStr + \"\\\"\");",
+            "  } else {",
+            "    console.log(\"myStr is undefined\");",
+            "  }",
+            "})();"
+          ]
         }
       }
     },
@@ -1444,8 +1495,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function() { return \"myStr = \" + myStr; })();"
+          "head": [],
+          "tail": [
+            "(function() { return \"myStr = \" + myStr; })();"
+          ]
         }
       }
     },
@@ -1517,8 +1570,12 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(){\nif (myStr !== undefined){\nconsole.log('myStr:\\n' + myStr);}})();"
+          "head": [],
+          "tail": [
+            "(function(){",
+            "if (myStr !== undefined){",
+            "console.log('myStr:\\n' + myStr);}})();"
+          ]
         }
       }
     },
@@ -1585,8 +1642,16 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(){\n  if(typeof myStr === 'string') {\n    return 'myStr = \"' + myStr + '\"';\n  } else {\n    return 'myStr is not a string';\n  }\n})();"
+          "head": [],
+          "tail": [
+            "(function(){",
+            "  if(typeof myStr === 'string') {",
+            "    return 'myStr = \"' + myStr + '\"';",
+            "  } else {",
+            "    return 'myStr is not a string';",
+            "  }",
+            "})();"
+          ]
         }
       }
     },
@@ -1642,8 +1707,16 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(){\n  if(typeof myStr === 'string') {\n    return 'myStr = \"' + myStr + '\"';\n  } else {\n    return 'myStr is not a string';\n  }\n})();"
+          "head": [],
+          "tail": [
+            "(function(){",
+            "  if(typeof myStr === 'string') {",
+            "    return 'myStr = \"' + myStr + '\"';",
+            "  } else {",
+            "    return 'myStr is not a string';",
+            "  }",
+            "})();"
+          ]
         }
       }
     },
@@ -1697,8 +1770,23 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(){\n  var output = [];\n  if(typeof myName === 'string') {\n    output.push('myName = \"' + myName + '\"');\n  } else {\n    output.push('myName is not a string');\n  }\n  if(typeof myStr === 'string') {\n    output.push('myStr = \"' + myStr + '\"');\n  } else {\n    output.push('myStr is not a string');\n  }\n  return output.join('\\n');\n})();"
+          "head": [],
+          "tail": [
+            "(function(){",
+            "  var output = [];",
+            "  if(typeof myName === 'string') {",
+            "    output.push('myName = \"' + myName + '\"');",
+            "  } else {",
+            "    output.push('myName is not a string');",
+            "  }",
+            "  if(typeof myStr === 'string') {",
+            "    output.push('myStr = \"' + myStr + '\"');",
+            "  } else {",
+            "    output.push('myStr is not a string');",
+            "  }",
+            "  return output.join('\\n');",
+            "})();"
+          ]
         }
       }
     },
@@ -1754,8 +1842,23 @@
             "var myStr = \"Learning to code is \";",
             ""
           ],
-          "head": "",
-          "tail": "(function(){\n  var output = [];\n  if(typeof someAdjective === 'string') {\n    output.push('someAdjective = \"' + someAdjective + '\"');\n  } else {\n    output.push('someAdjective is not a string');\n  }\n  if(typeof myStr === 'string') {\n    output.push('myStr = \"' + myStr + '\"');\n  } else {\n    output.push('myStr is not a string');\n  }\n  return output.join('\\n');\n})();"
+          "head": [],
+          "tail": [
+            "(function(){",
+            "  var output = [];",
+            "  if(typeof someAdjective === 'string') {",
+            "    output.push('someAdjective = \"' + someAdjective + '\"');",
+            "  } else {",
+            "    output.push('someAdjective is not a string');",
+            "  }",
+            "  if(typeof myStr === 'string') {",
+            "    output.push('myStr = \"' + myStr + '\"');",
+            "  } else {",
+            "    output.push('myStr is not a string');",
+            "  }",
+            "  return output.join('\\n');",
+            "})();"
+          ]
         }
       }
     },
@@ -1816,8 +1919,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof lastNameLength !== \"undefined\"){(function(){return lastNameLength;})();}"
+          "head": [],
+          "tail": [
+            "if(typeof lastNameLength !== \"undefined\"){(function(){return lastNameLength;})();}"
+          ]
         }
       }
     },
@@ -1880,8 +1985,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(v){return v;})(firstLetterOfLastName);"
+          "head": [],
+          "tail": [
+            "(function(v){return v;})(firstLetterOfLastName);"
+          ]
         }
       }
     },
@@ -1942,8 +2049,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(v){return \"myStr = \" + v;})(myStr);"
+          "head": [],
+          "tail": [
+            "(function(v){return \"myStr = \" + v;})(myStr);"
+          ]
         }
       }
     },
@@ -2002,8 +2111,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(v){return v;})(thirdLetterOfLastName);"
+          "head": [],
+          "tail": [
+            "(function(v){return v;})(thirdLetterOfLastName);"
+          ]
         }
       }
     },
@@ -2062,8 +2173,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(v){return v;})(lastLetterOfLastName);"
+          "head": [],
+          "tail": [
+            "(function(v){return v;})(lastLetterOfLastName);"
+          ]
         }
       }
     },
@@ -2122,8 +2235,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(v){return v;})(secondToLastLetterOfLastName);"
+          "head": [],
+          "tail": [
+            "(function(v){return v;})(secondToLastLetterOfLastName);"
+          ]
         }
       }
     },
@@ -2188,8 +2303,11 @@
             "// Change the words here to test your function",
             "wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");"
           ],
-          "head": "",
-          "tail": "var test1 = wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");\nvar test2 = wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\");"
+          "head": [],
+          "tail": [
+            "var test1 = wordBlanks(\"dog\", \"big\", \"ran\", \"quickly\");",
+            "var test2 = wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\");"
+          ]
         }
       }
     },
@@ -2248,8 +2366,10 @@
             "var myArray = [];",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return z;})(myArray);"
+          "head": [],
+          "tail": [
+            "(function(z){return z;})(myArray);"
+          ]
         }
       }
     },
@@ -2295,8 +2415,10 @@
             "var myArray = [];",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          "head": [],
+          "tail": [
+            "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          ]
         }
       }
     },
@@ -2359,8 +2481,10 @@
             "// Only change code below this line.",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myArray !== \"undefined\" && typeof myData !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
+          "head": [],
+          "tail": [
+            "if(typeof myArray !== \"undefined\" && typeof myData !== \"undefined\"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}"
+          ]
         }
       }
     },
@@ -2420,8 +2544,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          "head": [],
+          "tail": [
+            "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          ]
         }
       }
     },
@@ -2478,8 +2604,10 @@
             "var myData = myArray[0][0];",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myArray !== \"undefined\"){(function(){return \"myData: \" + myData + \" myArray: \" + JSON.stringify(myArray);})();}"
+          "head": [],
+          "tail": [
+            "if(typeof myArray !== \"undefined\"){(function(){return \"myData: \" + myData + \" myArray: \" + JSON.stringify(myArray);})();}"
+          ]
         }
       }
     },
@@ -2532,8 +2660,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
+          "head": [],
+          "tail": [
+            "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
+          ]
         }
       }
     },
@@ -2598,8 +2728,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+          "head": [],
+          "tail": [
+            "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+          ]
         }
       }
     },
@@ -2657,8 +2789,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+          "head": [],
+          "tail": [
+            "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+          ]
         }
       }
     },
@@ -2713,8 +2847,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
+          "head": [],
+          "tail": [
+            "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
+          ]
         }
       }
     },
@@ -2772,8 +2908,35 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "var count = 0;\nvar isArray = false;\nvar hasString = false;\nvar hasNumber = false;\n(function(list){\n  if(Array.isArray(myList)) {\n    isArray = true;\n    if(myList.length > 0) {\n      hasString = true;\n      hasNumber = true;\n      myList.forEach(function(elem) {\n        if(typeof elem[0] !== 'string') {\n          hasString = false;\n        }\n        if(typeof elem[1] !== 'number') {\n          hasNumber = false;\n        }\n      });\n    }\n    count = myList.length;\n    return JSON.stringify(myList);\n  } else {\n    return \"myList is not an array\";\n  }\n\n})(myList);"
+          "head": [],
+          "tail": [
+            "var count = 0;",
+            "var isArray = false;",
+            "var hasString = false;",
+            "var hasNumber = false;",
+            "(function(list){",
+            "  if(Array.isArray(myList)) {",
+            "    isArray = true;",
+            "    if(myList.length > 0) {",
+            "      hasString = true;",
+            "      hasNumber = true;",
+            "      myList.forEach(function(elem) {",
+            "        if(typeof elem[0] !== 'string') {",
+            "          hasString = false;",
+            "        }",
+            "        if(typeof elem[1] !== 'number') {",
+            "          hasNumber = false;",
+            "        }",
+            "      });",
+            "    }",
+            "    count = myList.length;",
+            "    return JSON.stringify(myList);",
+            "  } else {",
+            "    return \"myList is not an array\";",
+            "  }",
+            "",
+            "})(myList);"
+          ]
         }
       }
     },
@@ -2841,8 +3004,37 @@
             "// Only change code below this line",
             ""
           ],
-          "head": "var logOutput = \"\";\nvar originalConsole = console\nfunction capture() {\n    var nativeLog = console.log;\n    console.log = function (message) {\n        if(message && message.trim) logOutput = message.trim();\n        if(nativeLog.apply) {\n          nativeLog.apply(originalConsole, arguments);\n        } else {\n          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');\n          nativeLog(nativeMsg);\n        }\n    };\n}\n\nfunction uncapture() {\n  console.log = originalConsole.log;\n}\n\ncapture();",
-          "tail": "uncapture();\n\nif (typeof reusableFunction !== \"function\") { \n  (function() { return \"reusableFunction is not defined\"; })();\n} else {\n  (function() { return logOutput || \"console.log never called\"; })();\n}"
+          "head": [
+            "var logOutput = \"\";",
+            "var originalConsole = console",
+            "function capture() {",
+            "    var nativeLog = console.log;",
+            "    console.log = function (message) {",
+            "        if(message && message.trim) logOutput = message.trim();",
+            "        if(nativeLog.apply) {",
+            "          nativeLog.apply(originalConsole, arguments);",
+            "        } else {",
+            "          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');",
+            "          nativeLog(nativeMsg);",
+            "        }",
+            "    };",
+            "}",
+            "",
+            "function uncapture() {",
+            "  console.log = originalConsole.log;",
+            "}",
+            "",
+            "capture();"
+          ],
+          "tail": [
+            "uncapture();",
+            "",
+            "if (typeof reusableFunction !== \"function\") { ",
+            "  (function() { return \"reusableFunction is not defined\"; })();",
+            "} else {",
+            "  (function() { return logOutput || \"console.log never called\"; })();",
+            "}"
+          ]
         }
       }
     },
@@ -2914,8 +3106,37 @@
             "",
             ""
           ],
-          "head": "var logOutput = \"\";\nvar originalConsole = console\nfunction capture() {\n    var nativeLog = console.log;\n    console.log = function (message) {\n        if(message) logOutput = JSON.stringify(message).trim();\n        if(nativeLog.apply) {\n          nativeLog.apply(originalConsole, arguments);\n        } else {\n          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');\n          nativeLog(nativeMsg);\n        }\n    };\n}\n\nfunction uncapture() {\n  console.log = originalConsole.log;\n}\n\ncapture();",
-          "tail": "uncapture();\n\nif (typeof functionWithArgs !== \"function\") { \n  (function() { return \"functionWithArgs is not defined\"; })();\n} else {\n  (function() { return logOutput || \"console.log never called\"; })();\n}"
+          "head": [
+            "var logOutput = \"\";",
+            "var originalConsole = console",
+            "function capture() {",
+            "    var nativeLog = console.log;",
+            "    console.log = function (message) {",
+            "        if(message) logOutput = JSON.stringify(message).trim();",
+            "        if(nativeLog.apply) {",
+            "          nativeLog.apply(originalConsole, arguments);",
+            "        } else {",
+            "          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');",
+            "          nativeLog(nativeMsg);",
+            "        }",
+            "    };",
+            "}",
+            "",
+            "function uncapture() {",
+            "  console.log = originalConsole.log;",
+            "}",
+            "",
+            "capture();"
+          ],
+          "tail": [
+            "uncapture();",
+            "",
+            "if (typeof functionWithArgs !== \"function\") { ",
+            "  (function() { return \"functionWithArgs is not defined\"; })();",
+            "} else {",
+            "  (function() { return logOutput || \"console.log never called\"; })();",
+            "}"
+          ]
         }
       }
     },
@@ -2991,8 +3212,34 @@
             "  console.log(output);",
             "}"
           ],
-          "head": "var logOutput = \"\";\nvar originalConsole = console\nfunction capture() {\n    var nativeLog = console.log;\n    console.log = function (message) {\n        logOutput = message;\n        if(nativeLog.apply) {\n          nativeLog.apply(originalConsole, arguments);\n        } else {\n          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');\n          nativeLog(nativeMsg);\n        }\n    };\n}\n\nfunction uncapture() {\n  console.log = originalConsole.log;\n}\nvar oopsGlobal;\ncapture();",
-          "tail": "fun1();\nfun2();\nuncapture();\n(function() { return logOutput || \"console.log never called\"; })();"
+          "head": [
+            "var logOutput = \"\";",
+            "var originalConsole = console",
+            "function capture() {",
+            "    var nativeLog = console.log;",
+            "    console.log = function (message) {",
+            "        logOutput = message;",
+            "        if(nativeLog.apply) {",
+            "          nativeLog.apply(originalConsole, arguments);",
+            "        } else {",
+            "          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');",
+            "          nativeLog(nativeMsg);",
+            "        }",
+            "    };",
+            "}",
+            "",
+            "function uncapture() {",
+            "  console.log = originalConsole.log;",
+            "}",
+            "var oopsGlobal;",
+            "capture();"
+          ],
+          "tail": [
+            "fun1();",
+            "fun2();",
+            "uncapture();",
+            "(function() { return logOutput || \"console.log never called\"; })();"
+          ]
         }
       }
     },
@@ -3057,8 +3304,31 @@
             "// Now remove the console log line to pass the test",
             ""
           ],
-          "head": "var logOutput = \"\";\nvar originalConsole = console\nfunction capture() {\n  var nativeLog = console.log;\n  console.log = function (message) {\n    logOutput = message;\n    if(nativeLog.apply) {\n      nativeLog.apply(originalConsole, arguments);\n    } else {\n      var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');\n      nativeLog(nativeMsg);\n    }\n  };\n}\n\nfunction uncapture() {\n  console.log = originalConsole.log;\n}\n",
-          "tail": "typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());\n(function() { return logOutput || \"console.log never called\"; })();"
+          "head": [
+            "var logOutput = \"\";",
+            "var originalConsole = console",
+            "function capture() {",
+            "  var nativeLog = console.log;",
+            "  console.log = function (message) {",
+            "    logOutput = message;",
+            "    if(nativeLog.apply) {",
+            "      nativeLog.apply(originalConsole, arguments);",
+            "    } else {",
+            "      var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');",
+            "      nativeLog(nativeMsg);",
+            "    }",
+            "  };",
+            "}",
+            "",
+            "function uncapture() {",
+            "  console.log = originalConsole.log;",
+            "}",
+            ""
+          ],
+          "tail": [
+            "typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());",
+            "(function() { return logOutput || \"console.log never called\"; })();"
+          ]
         }
       }
     },
@@ -3126,8 +3396,8 @@
             "",
             "myOutfit();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3200,8 +3470,8 @@
             "",
             "console.log(minusSeven(10));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3260,8 +3530,13 @@
             "// Only change code above this line",
             "var returnedValue = addFive();"
           ],
-          "head": "",
-          "tail": "var sum = 0;\nfunction addThree() {sum = sum + 3;}\naddThree();\naddFive();"
+          "head": [],
+          "tail": [
+            "var sum = 0;",
+            "function addThree() {sum = sum + 3;}",
+            "addThree();",
+            "addFive();"
+          ]
         }
       }
     },
@@ -3332,8 +3607,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(){return \"processed = \" + processed})();"
+          "head": [],
+          "tail": [
+            "(function(){return \"processed = \" + processed})();"
+          ]
         }
       }
     },
@@ -3403,8 +3680,33 @@
             "console.log(nextInLine(testArr, 6)); // Modify this line to test",
             "console.log(\"After: \" + JSON.stringify(testArr));"
           ],
-          "head": "var logOutput = [];\nvar originalConsole = console\nfunction capture() {\n    var nativeLog = console.log;\n    console.log = function (message) {\n        logOutput.push(message);\n        if(nativeLog.apply) {\n          nativeLog.apply(originalConsole, arguments);\n        } else {\n          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');\n          nativeLog(nativeMsg);\n        }\n    };\n}\n\nfunction uncapture() {\n  console.log = originalConsole.log;\n}\n\ncapture();",
-          "tail": "uncapture();\ntestArr = [1,2,3,4,5];\n(function() { return logOutput.join(\"\\n\");})();"
+          "head": [
+            "var logOutput = [];",
+            "var originalConsole = console",
+            "function capture() {",
+            "    var nativeLog = console.log;",
+            "    console.log = function (message) {",
+            "        logOutput.push(message);",
+            "        if(nativeLog.apply) {",
+            "          nativeLog.apply(originalConsole, arguments);",
+            "        } else {",
+            "          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');",
+            "          nativeLog(nativeMsg);",
+            "        }",
+            "    };",
+            "}",
+            "",
+            "function uncapture() {",
+            "  console.log = originalConsole.log;",
+            "}",
+            "",
+            "capture();"
+          ],
+          "tail": [
+            "uncapture();",
+            "testArr = [1,2,3,4,5];",
+            "(function() { return logOutput.join(\"\\n\");})();"
+          ]
         }
       }
     },
@@ -3458,8 +3760,10 @@
             "// Only change code above this line.",
             "}"
           ],
-          "head": "",
-          "tail": "welcomeToBooleans();"
+          "head": [],
+          "tail": [
+            "welcomeToBooleans();"
+          ]
         }
       }
     },
@@ -3550,8 +3854,8 @@
             "// Change this value to test",
             "trueOrFalse(true);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3624,8 +3928,8 @@
             "// Change this value to test",
             "testEqual(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3695,8 +3999,8 @@
             "// Change this value to test",
             "testStrict(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3751,8 +4055,8 @@
             "// Change this value to test",
             "compareEquality(10, \"10\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3827,8 +4131,8 @@
             "// Change this value to test",
             "testNotEqual(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3907,8 +4211,8 @@
             "// Change this value to test",
             "testStrictNotEqual(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3997,8 +4301,8 @@
             "// Change this value to test",
             "testGreaterThan(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4087,8 +4391,8 @@
             "// Change this value to test",
             "testGreaterOrEqual(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4171,8 +4475,8 @@
             "// Change this value to test",
             "testLessThan(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4260,8 +4564,8 @@
             "testLessOrEqual(10);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4361,8 +4665,8 @@
             "// Change this value to test",
             "testLogicalAnd(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4465,8 +4769,8 @@
             "// Change this value to test",
             "testLogicalOr(15);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4552,8 +4856,8 @@
             "testElse(4);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4635,8 +4939,8 @@
             "testElseIf(7);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4712,8 +5016,8 @@
             "// Change this value to test",
             "orderMyLogic(7);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4816,8 +5120,8 @@
             "// Change this value to test",
             "testSize(7);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4911,8 +5215,8 @@
             "// Change these values to test",
             "golfScore(5, 4);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4995,8 +5299,8 @@
             "caseInSwitch(1);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5083,8 +5387,8 @@
             "switchOfStuff(1);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5184,8 +5488,8 @@
             "sequentialSizes(1);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5291,8 +5595,8 @@
             "chainToSwitch(7);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5360,8 +5664,8 @@
             "// Change these values to test",
             "isLess(10, 15);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5443,8 +5747,8 @@
             "// Change values below to test your code",
             "abTest(2,2);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5527,8 +5831,8 @@
             "// Note: Only the last will display",
             "cc(2); cc(3); cc(7); cc('K'); cc('A');"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5617,8 +5921,10 @@
             "  ",
             "};"
           ],
-          "head": "",
-          "tail": "(function(z){return z;})(myDog);"
+          "head": [],
+          "tail": [
+            "(function(z){return z;})(myDog);"
+          ]
         }
       }
     },
@@ -5692,8 +5998,10 @@
             "var hatValue = testObj;      // Change this line",
             "var shirtValue = testObj;    // Change this line"
           ],
-          "head": "",
-          "tail": "(function(a,b) { return \"hatValue = '\" + a + \"', shirtValue = '\" + b + \"'\"; })(hatValue,shirtValue);"
+          "head": [],
+          "tail": [
+            "(function(a,b) { return \"hatValue = '\" + a + \"', shirtValue = '\" + b + \"'\"; })(hatValue,shirtValue);"
+          ]
         }
       }
     },
@@ -5769,8 +6077,10 @@
             "var entreeValue = testObj;   // Change this line",
             "var drinkValue = testObj;    // Change this line"
           ],
-          "head": "",
-          "tail": "(function(a,b) { return \"entreeValue = '\" + a + \"', drinkValue = '\" + b + \"'\"; })(entreeValue,drinkValue);"
+          "head": [],
+          "tail": [
+            "(function(a,b) { return \"entreeValue = '\" + a + \"', drinkValue = '\" + b + \"'\"; })(entreeValue,drinkValue);"
+          ]
         }
       }
     },
@@ -5853,8 +6163,10 @@
             "var playerNumber;       // Change this Line",
             "var player = testObj;   // Change this Line"
           ],
-          "head": "",
-          "tail": "if(typeof player !== \"undefined\"){(function(v){return v;})(player);}"
+          "head": [],
+          "tail": [
+            "if(typeof player !== \"undefined\"){(function(v){return v;})(player);}"
+          ]
         }
       }
     },
@@ -5935,8 +6247,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return z;})(myDog);"
+          "head": [],
+          "tail": [
+            "(function(z){return z;})(myDog);"
+          ]
         }
       }
     },
@@ -6008,8 +6322,10 @@
             "// Only change code below this line.",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return z;})(myDog);"
+          "head": [],
+          "tail": [
+            "(function(z){return z;})(myDog);"
+          ]
         }
       }
     },
@@ -6078,8 +6394,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(z){return z;})(myDog);"
+          "head": [],
+          "tail": [
+            "(function(z){return z;})(myDog);"
+          ]
         }
       }
     },
@@ -6187,8 +6505,8 @@
             "// Change this value to test",
             "phoneticLookup(\"charlie\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -6256,8 +6574,8 @@
             "// Test your code by modifying these values",
             "checkObj(\"gift\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -6356,8 +6674,10 @@
             "];",
             ""
           ],
-          "head": "",
-          "tail": "(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return \"myMusic is not an array\"})(myMusic);"
+          "head": [],
+          "tail": [
+            "(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return \"myMusic is not an array\"})(myMusic);"
+          ]
         }
       }
     },
@@ -6422,8 +6742,15 @@
             "var gloveBoxContents = undefined; // Change this line",
             ""
           ],
-          "head": "",
-          "tail": "(function(x) { \n  if(typeof x != 'undefined') { \n    return \"gloveBoxContents = \" + x;\n  }\n  return \"gloveBoxContents is undefined\";\n})(gloveBoxContents);"
+          "head": [],
+          "tail": [
+            "(function(x) { ",
+            "  if(typeof x != 'undefined') { ",
+            "    return \"gloveBoxContents = \" + x;",
+            "  }",
+            "  return \"gloveBoxContents is undefined\";",
+            "})(gloveBoxContents);"
+          ]
         }
       }
     },
@@ -6497,8 +6824,15 @@
             "var secondTree = \"\"; // Change this line",
             ""
           ],
-          "head": "",
-          "tail": "(function(x) { \n  if(typeof x != 'undefined') { \n    return \"secondTree = \" + x;\n  }\n  return \"secondTree is undefined\";\n})(secondTree);"
+          "head": [],
+          "tail": [
+            "(function(x) { ",
+            "  if(typeof x != 'undefined') { ",
+            "    return \"secondTree = \" + x;",
+            "  }",
+            "  return \"secondTree is undefined\";",
+            "})(secondTree);"
+          ]
         }
       }
     },
@@ -6615,8 +6949,10 @@
             "updateRecords(5439, \"artist\", \"ABBA\");",
             ""
           ],
-          "head": "",
-          "tail": ";(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
+          "head": [],
+          "tail": [
+            ";(function(x) { return \"collection = \\n\" + JSON.stringify(x, '\\n', 2); })(collection);"
+          ]
         }
       }
     },
@@ -6677,8 +7013,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          "head": [],
+          "tail": [
+            "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          ]
         }
       }
     },
@@ -6756,8 +7094,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "if (typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          "head": [],
+          "tail": [
+            "if (typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          ]
         }
       }
     },
@@ -6825,8 +7165,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          "head": [],
+          "tail": [
+            "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          ]
         }
       }
     },
@@ -6900,8 +7242,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          "head": [],
+          "tail": [
+            "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          ]
         }
       }
     },
@@ -6972,8 +7316,10 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": "(function(){if(typeof total !== 'undefined') { return \"total = \" + total; } else { return \"total is undefined\";}})()"
+          "head": [],
+          "tail": [
+            "(function(){if(typeof total !== 'undefined') { return \"total = \" + total; } else { return \"total is undefined\";}})()"
+          ]
         }
       }
     },
@@ -7037,8 +7383,8 @@
             "multiplyAll([[1,2],[3,4],[5,6,7]]);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -7099,8 +7445,10 @@
             "}",
             ""
           ],
-          "head": "",
-          "tail": "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          "head": [],
+          "tail": [
+            "if(typeof myArray !== \"undefined\"){(function(){return myArray;})();}"
+          ]
         }
       }
     },
@@ -7205,8 +7553,8 @@
             "// Change these values to test your function",
             "lookUpProfile(\"Akira\", \"likes\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -7266,8 +7614,10 @@
             "  // Only change code above this line.",
             "}"
           ],
-          "head": "",
-          "tail": "(function(){return randomFraction();})();"
+          "head": [],
+          "tail": [
+            "(function(){return randomFraction();})();"
+          ]
         }
       }
     },
@@ -7340,8 +7690,10 @@
             "  return Math.random();",
             "}"
           ],
-          "head": "",
-          "tail": "(function(){return randomWholeNum();})();"
+          "head": [],
+          "tail": [
+            "(function(){return randomWholeNum();})();"
+          ]
         }
       }
     },
@@ -7418,8 +7770,23 @@
             "// Change these values to test your function",
             "var myRandom = randomRange(5, 15);"
           ],
-          "head": "",
-          "tail": "var calcMin = 100;\nvar calcMax = -100;\nfor(var i = 0; i < 100; i++) {\n  var result = randomRange(5,15);\n  calcMin = Math.min(calcMin, result);\n  calcMax = Math.max(calcMax, result);\n}\n(function(){\n  if(typeof myRandom === 'number') {\n    return \"myRandom = \" + myRandom;\n  } else {\n    return \"myRandom undefined\";\n  }\n})();"
+          "head": [],
+          "tail": [
+            "var calcMin = 100;",
+            "var calcMax = -100;",
+            "for(var i = 0; i < 100; i++) {",
+            "  var result = randomRange(5,15);",
+            "  calcMin = Math.min(calcMin, result);",
+            "  calcMax = Math.max(calcMax, result);",
+            "}",
+            "(function(){",
+            "  if(typeof myRandom === 'number') {",
+            "    return \"myRandom = \" + myRandom;",
+            "  } else {",
+            "    return \"myRandom undefined\";",
+            "  }",
+            "})();"
+          ]
         }
       }
     },
@@ -7472,8 +7839,8 @@
             "",
             "convertToInteger(\"56\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -7529,8 +7896,8 @@
             "",
             "convertToInteger(\"10011\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -7583,8 +7950,8 @@
             "",
             "checkEqual(1, 2);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -7635,13 +8002,10 @@
             "",
             "checkSign(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/basic-javascript.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }

@@ -2,7 +2,7 @@
 
 exports[`<BlockSaveButton /> snapshot 1`] = `
 <button
-  className="btn btn-lg btn-primary btn-block"
+  className="btn btn-primary btn-block"
   disabled={false}
   type="submit"
 >

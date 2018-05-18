@@ -49,8 +49,8 @@
             "  ",
             "};"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -96,8 +96,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -145,8 +145,8 @@
             "",
             "dog.sayLegs();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -188,7 +188,6 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "",
             "let dog = {",
             "  name: \"Spot\",",
             "  numLegs: 4,",
@@ -197,8 +196,8 @@
             "",
             "dog.sayLegs();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -242,13 +241,9 @@
           "key": "indexjs",
           "ext": "js",
           "name": "index",
-          "contents": [
-            "",
-            "",
-            ""
-          ],
-          "head": "",
-          "tail": ""
+          "contents": [],
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -299,8 +294,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -360,8 +355,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -411,8 +406,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -465,8 +460,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -522,8 +517,8 @@
             "// Add your code above this line",
             "let beagle = new Dog(\"Snoopy\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -582,8 +577,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -638,8 +633,8 @@
             "}",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -697,8 +692,8 @@
             "  ",
             "};"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -749,8 +744,8 @@
             "  }",
             "};"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -795,8 +790,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -848,8 +843,8 @@
             "???.isPrototypeOf(Dog.prototype);",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -924,8 +919,8 @@
             "  ",
             "};"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -995,8 +990,8 @@
             "duck.eat(); // Should print \"nom nom nom\"",
             "beagle.eat(); // Should print \"nom nom nom\" "
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1050,8 +1045,8 @@
             "let beagle = new Dog();",
             "beagle.eat();  // Should print \"nom nom nom\""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1113,8 +1108,8 @@
             "let duck = new Bird();",
             "let beagle = new Dog();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1187,8 +1182,8 @@
             "beagle.eat(); // Should print \"nom nom nom\"",
             "beagle.bark(); // Should print \"Woof!\""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1252,8 +1247,8 @@
             "let penguin = new Penguin();",
             "console.log(penguin.fly());"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1318,8 +1313,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1367,8 +1362,8 @@
             "}",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1412,8 +1407,8 @@
             "",
             "makeNest(); "
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1470,13 +1465,10 @@
             "  };",
             "};"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/object-oriented-programming.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }

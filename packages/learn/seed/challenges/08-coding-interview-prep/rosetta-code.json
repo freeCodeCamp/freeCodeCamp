@@ -42,8 +42,10 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const solution = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];"
+          "head": [],
+          "tail": [
+            "const solution = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];"
+          ]
         }
       }
     },
@@ -107,8 +109,27 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = [\n  '4878',\n  '1234',\n  '6789',\n  '1127'\n];\n\nconst answers = [\n  ['(7-8/8)*4', '4*(7-8/8)', '(4-8+7)*8', '(4+7-8)*8', '(7+4-8)*8', '(7-8+4)*8', '8*(4-8+7)', '8*(4+7-8)', '8*(7+4-8)', '8*(7-8+4)'],\n  ['1*2*3*4', '1*2*4*3', '1*3*2*4', '1*3*4*2', '1*4*2*3', '1*4*3*2', '2*1*3*4', '2*1*4*3', '2*3*1*4', '2*3*4*1', '2*4*3*1', '2*4*1*3', '3*1*2*4', '3*1*4*2', '3*2*1*4', '3*2*4*1', '3*4*1*2', '3*4*2*1', '4*1*2*3', '4*1*3*2', '4*2*1*3', '4*2*3*1', '4*3*1*2', '4*3*2*1', '(1+2+3)*4', '(1+3+2)*4', '(2+1+3)*4', '(2+3+1)*4', '(3+1+2)*4', '(3+2+1)*4', '4*(1+2+3)', '4*(2+1+3)', '4*(2+3+1)', '4*(3+1+2)', '4*(3+2+1)'],\n  ['(6*8)/(9-7)', '(8*6)/(9-7)', '6*8/(9-7)', '8*6/(9-7)'],\n  ['(1+7)*(2+1)', '(1+7)*(1+2)', '(1+2)*(1+7)', '(1+2)*(7+1)', '(2+1)*(1+7)', '(7+1)*(2+1)']\n];\n\nfunction include(ansArr, res) {\n  const index = ansArr.indexOf(res);\n  return index >= 0;\n}"
+          "head": [],
+          "tail": [
+            "const testCases = [",
+            "  '4878',",
+            "  '1234',",
+            "  '6789',",
+            "  '1127'",
+            "];",
+            "",
+            "const answers = [",
+            "  ['(7-8/8)*4', '4*(7-8/8)', '(4-8+7)*8', '(4+7-8)*8', '(7+4-8)*8', '(7-8+4)*8', '8*(4-8+7)', '8*(4+7-8)', '8*(7+4-8)', '8*(7-8+4)'],",
+            "  ['1*2*3*4', '1*2*4*3', '1*3*2*4', '1*3*4*2', '1*4*2*3', '1*4*3*2', '2*1*3*4', '2*1*4*3', '2*3*1*4', '2*3*4*1', '2*4*3*1', '2*4*1*3', '3*1*2*4', '3*1*4*2', '3*2*1*4', '3*2*4*1', '3*4*1*2', '3*4*2*1', '4*1*2*3', '4*1*3*2', '4*2*1*3', '4*2*3*1', '4*3*1*2', '4*3*2*1', '(1+2+3)*4', '(1+3+2)*4', '(2+1+3)*4', '(2+3+1)*4', '(3+1+2)*4', '(3+2+1)*4', '4*(1+2+3)', '4*(2+1+3)', '4*(2+3+1)', '4*(3+1+2)', '4*(3+2+1)'],",
+            "  ['(6*8)/(9-7)', '(8*6)/(9-7)', '6*8/(9-7)', '8*6/(9-7)'],",
+            "  ['(1+7)*(2+1)', '(1+7)*(1+2)', '(1+2)*(1+7)', '(1+2)*(7+1)', '(2+1)*(1+7)', '(7+1)*(2+1)']",
+            "];",
+            "",
+            "function include(ansArr, res) {",
+            "  const index = ansArr.indexOf(res);",
+            "  return index >= 0;",
+            "}"
+          ]
         }
       }
     },
@@ -185,8 +206,8 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -270,8 +291,10 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];"
+          "head": [],
+          "tail": [
+            "const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];"
+          ]
         }
       }
     },
@@ -323,8 +346,10 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const solution = [15043, 4, 4953];"
+          "head": [],
+          "tail": [
+            "const solution = [15043, 4, 4953];"
+          ]
         }
       }
     },
@@ -372,8 +397,14 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const testFn = typeof accumulator(3) === 'function' && accumulator(3);\nif (testFn) {\n  testFn(-4);\n  testFn(1.5);\n}"
+          "head": [],
+          "tail": [
+            "const testFn = typeof accumulator(3) === 'function' && accumulator(3);",
+            "if (testFn) {",
+            "  testFn(-4);",
+            "  testFn(1.5);",
+            "}"
+          ]
         }
       }
     },
@@ -429,8 +460,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -507,8 +538,54 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const testInput = [\n  'Given$a$text$file$of$many$lines',\n  'where$fields$within$a$line$',\n  'are$delineated$by$a$single$\"dollar\"$character',\n  'write$a$program',\n  'that$aligns$each$column$of$fields$',\n  'by$ensuring$that$words$in$each$',\n  'column$are$separated$by$at$least$one$space.',\n  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',\n  'justified,$right$justified',\n  'or$center$justified$within$its$column.'\n];\n\nconst rightAligned = `     Given          a      text   file     of     many     lines\n     where     fields    within      a   line \n       are delineated        by      a single \"dollar\" character\n     write          a   program\n      that     aligns      each column     of   fields \n        by   ensuring      that  words     in     each \n    column        are separated     by     at    least       one space.\n  Further,      allow       for   each   word       in         a column to be either left \njustified,      right justified\n        or     center justified within    its  column.`;\n\nconst leftAligned = `Given      a          text      file   of     many     lines    \nwhere      fields     within    a      line   \nare        delineated by        a      single \"dollar\" character\nwrite      a          program  \nthat       aligns     each      column of     fields   \nby         ensuring   that      words  in     each     \ncolumn     are        separated by     at     least    one       space.\nFurther,   allow      for       each   word   in       a         column to be either left \njustified, right      justified\nor         center     justified within its    column. `;\n\nconst centerAligned = `  Given        a        text     file    of     many     lines  \n  where      fields    within     a     line  \n   are     delineated    by       a    single \"dollar\" character\n  write        a       program \n   that      aligns     each    column   of    fields  \n    by      ensuring    that    words    in     each   \n  column      are     separated   by     at    least      one    space.\n Further,    allow       for     each   word     in        a     column to be either left \njustified,   right    justified\n    or       center   justified within  its   column. `;"
+          "head": [],
+          "tail": [
+            "const testInput = [",
+            "  'Given$a$text$file$of$many$lines',",
+            "  'where$fields$within$a$line$',",
+            "  'are$delineated$by$a$single$\"dollar\"$character',",
+            "  'write$a$program',",
+            "  'that$aligns$each$column$of$fields$',",
+            "  'by$ensuring$that$words$in$each$',",
+            "  'column$are$separated$by$at$least$one$space.',",
+            "  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',",
+            "  'justified,$right$justified',",
+            "  'or$center$justified$within$its$column.'",
+            "];",
+            "",
+            "const rightAligned = `     Given          a      text   file     of     many     lines",
+            "     where     fields    within      a   line ",
+            "       are delineated        by      a single \"dollar\" character",
+            "     write          a   program",
+            "      that     aligns      each column     of   fields ",
+            "        by   ensuring      that  words     in     each ",
+            "    column        are separated     by     at    least       one space.",
+            "  Further,      allow       for   each   word       in         a column to be either left ",
+            "justified,      right justified",
+            "        or     center justified within    its  column.`;",
+            "",
+            "const leftAligned = `Given      a          text      file   of     many     lines    ",
+            "where      fields     within    a      line   ",
+            "are        delineated by        a      single \"dollar\" character",
+            "write      a          program  ",
+            "that       aligns     each      column of     fields   ",
+            "by         ensuring   that      words  in     each     ",
+            "column     are        separated by     at     least    one       space.",
+            "Further,   allow      for       each   word   in       a         column to be either left ",
+            "justified, right      justified",
+            "or         center     justified within its    column. `;",
+            "",
+            "const centerAligned = `  Given        a        text     file    of     many     lines  ",
+            "  where      fields    within     a     line  ",
+            "   are     delineated    by       a    single \"dollar\" character",
+            "  write        a       program ",
+            "   that      aligns     each    column   of    fields  ",
+            "    by      ensuring    that    words    in     each   ",
+            "  column      are     separated   by     at    least      one    space.",
+            " Further,    allow       for     each   word     in        a     column to be either left ",
+            "justified,   right    justified",
+            "    or       center   justified within  its   column. `;"
+          ]
         }
       }
     },
@@ -563,8 +640,25 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const answer300 = [[220, 284]];\nconst answer3000 = [\n  [220, 284],\n  [1184, 1210],\n  [2620, 2924]\n];\nconst answer20000 = [\n  [220, 284],\n  [1184, 1210],\n  [2620, 2924],\n  [5020, 5564],\n  [6232, 6368],\n  [10744, 10856],\n  [12285, 14595],\n  [17296, 18416]\n];"
+          "head": [],
+          "tail": [
+            "const answer300 = [[220, 284]];",
+            "const answer3000 = [",
+            "  [220, 284],",
+            "  [1184, 1210],",
+            "  [2620, 2924]",
+            "];",
+            "const answer20000 = [",
+            "  [220, 284],",
+            "  [1184, 1210],",
+            "  [2620, 2924],",
+            "  [5020, 5564],",
+            "  [6232, 6368],",
+            "  [10744, 10856],",
+            "  [12285, 14595],",
+            "  [17296, 18416]",
+            "];"
+          ]
         }
       }
     },
@@ -605,8 +699,11 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const arr1 = [1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17];\nconst arr2 = [1, 2, 4, 4, 1];"
+          "head": [],
+          "tail": [
+            "const arr1 = [1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17];",
+            "const arr2 = [1, 2, 4, 4, 1];"
+          ]
         }
       }
     },
@@ -654,8 +751,19 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const range1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\nconst answer1 = {\n  values: {\n    Arithmetic: 5.5,\n    Geometric: 4.528728688116765,\n    Harmonic: 3.414171521474055\n  },\n  test: 'is A >= G >= H ? yes'\n};\n"
+          "head": [],
+          "tail": [
+            "const range1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];",
+            "const answer1 = {",
+            "  values: {",
+            "    Arithmetic: 5.5,",
+            "    Geometric: 4.528728688116765,",
+            "    Harmonic: 3.414171521474055",
+            "  },",
+            "  test: 'is A >= G >= H ? yes'",
+            "};",
+            ""
+          ]
         }
       }
     },
@@ -693,8 +801,11 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\nconst answer1 = 6.2048368229954285;"
+          "head": [],
+          "tail": [
+            "const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];",
+            "const answer1 = 6.2048368229954285;"
+          ]
         }
       }
     },
@@ -736,8 +847,12 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const babbageAns = 99736;\nconst endDigits = 269696;\nconst answer = 25264;"
+          "head": [],
+          "tail": [
+            "const babbageAns = 99736;",
+            "const endDigits = 269696;",
+            "const answer = 25264;"
+          ]
         }
       }
     },
@@ -850,8 +965,29 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = [\n  '[]',\n  ']][[[][][][]][',\n  '[][[[[][][[[]]]]]]',\n  '][',\n  '[[[]]]][[]',\n  '][[]',\n  '][[][]][[[]]',\n  '[[][]]][',\n  '[[[]]][[]]]][][[',\n  '[]][[]]][[[[][]]',\n  '][]][[][',\n  '[[]][[][]]',\n  '[[]]',\n  ']][]][[]][[[',\n  '][]][][[',\n  '][][',\n  '[[]]][][][[]][',\n  ''\n];"
+          "head": [],
+          "tail": [
+            "const testCases = [",
+            "  '[]',",
+            "  ']][[[][][][]][',",
+            "  '[][[[[][][[[]]]]]]',",
+            "  '][',",
+            "  '[[[]]]][[]',",
+            "  '][[]',",
+            "  '][[][]][[[]]',",
+            "  '[[][]]][',",
+            "  '[[[]]][[]]]][][[',",
+            "  '[]][[]]][[[[][]]',",
+            "  '][]][[][',",
+            "  '[[]][[][]]',",
+            "  '[[]]',",
+            "  ']][]][[]][[[',",
+            "  '][]][][[',",
+            "  '][][',",
+            "  '[[]]][][][[]][',",
+            "  ''",
+            "];"
+          ]
         }
       }
     },
@@ -925,8 +1061,23 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = [\n  [[0.1234, 0.9876], [0.8765, 0.2345], 2.0],\n  [[0.0000, 2.0000], [0.0000, 0.0000], 1.0],\n  [[0.1234, 0.9876], [0.1234, 0.9876], 2.0],\n  [[0.1234, 0.9876], [0.8765, 0.2345], 0.5],\n  [[0.1234, 0.9876], [0.1234, 0.9876], 0.0]\n];\nconst answers = [\n  [[1.8631, 1.9742], [-0.8632, -0.7521]],\n  [0, 1],\n  'Coincident point. Infinite solutions',\n  'No intersection. Points further apart than circle diameter',\n  'Radius Zero'\n];"
+          "head": [],
+          "tail": [
+            "const testCases = [",
+            "  [[0.1234, 0.9876], [0.8765, 0.2345], 2.0],",
+            "  [[0.0000, 2.0000], [0.0000, 0.0000], 1.0],",
+            "  [[0.1234, 0.9876], [0.1234, 0.9876], 2.0],",
+            "  [[0.1234, 0.9876], [0.8765, 0.2345], 0.5],",
+            "  [[0.1234, 0.9876], [0.1234, 0.9876], 0.0]",
+            "];",
+            "const answers = [",
+            "  [[1.8631, 1.9742], [-0.8632, -0.7521]],",
+            "  [0, 1],",
+            "  'Coincident point. Infinite solutions',",
+            "  'No intersection. Points further apart than circle diameter',",
+            "  'Radius Zero'",
+            "];"
+          ]
         }
       }
     },
@@ -1046,8 +1197,110 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const points1 = [\n\tnew Point(0.748501, 4.09624),\n\tnew Point(3.00302, 5.26164),\n\tnew Point(3.61878,  9.52232),\n\tnew Point(7.46911,  4.71611),\n\tnew Point(5.7819,   2.69367),\n\tnew Point(2.34709,  8.74782),\n\tnew Point(2.87169,  5.97774),\n\tnew Point(6.33101,  0.463131),\n\tnew Point(7.46489,  4.6268),\n\tnew Point(1.45428,  0.087596)\n];\n\nconst points2 = [\n  new Point(37100, 13118),\n  new Point(37134, 1963),\n  new Point(37181, 2008),\n  new Point(37276, 21611),\n  new Point(37307, 9320)\n];\n\nconst answer1 = {\n  distance: 0.0894096443343775,\n  pair: [\n    {\n      x: 7.46489,\n      y: 4.6268\n    },\n    {\n      x: 7.46911,\n      y: 4.71611\n    }\n  ]\n};\n\nconst answer2 = {\n  distance: 65.06919393998976,\n  pair: [\n    {\n      x: 37134,\n      y: 1963\n    },\n    {\n      x: 37181,\n      y: 2008\n    }\n  ]\n};\n\nconst benchmarkPoints = [\n  new Point(16909, 54699),\n  new Point(14773, 61107),\n  new Point(95547, 45344),\n  new Point(95951, 17573),\n  new Point(5824, 41072),\n  new Point(8769, 52562),\n  new Point(21182, 41881),\n  new Point(53226, 45749),\n  new Point(68180, 887),\n  new Point(29322, 44017),\n  new Point(46817, 64975),\n  new Point(10501, 483),\n  new Point(57094, 60703),\n  new Point(23318, 35472),\n  new Point(72452, 88070),\n  new Point(67775, 28659),\n  new Point(19450, 20518),\n  new Point(17314, 26927),\n  new Point(98088, 11164),\n  new Point(25050, 56835),\n  new Point(8364, 6892),\n  new Point(37868, 18382),\n  new Point(23723, 7701),\n  new Point(55767, 11569),\n  new Point(70721, 66707),\n  new Point(31863, 9837),\n  new Point(49358, 30795),\n  new Point(13041, 39745),\n  new Point(59635, 26523),\n  new Point(25859, 1292),\n  new Point(1551, 53890),\n  new Point(70316, 94479),\n  new Point(48549, 86338),\n  new Point(46413, 92747),\n  new Point(27186, 50426),\n  new Point(27591, 22655),\n  new Point(10905, 46153),\n  new Point(40408, 84202),\n  new Point(52821, 73520),\n  new Point(84865, 77388),\n  new Point(99819, 32527),\n  new Point(34404, 75657),\n  new Point(78457, 96615),\n  new Point(42140, 5564),\n  new Point(62175, 92342),\n  new Point(54958, 67112),\n  new Point(4092, 19709),\n  new Point(99415, 60298),\n  new Point(51090, 52158),\n  new Point(48953, 58567)\n];"
+          "head": [],
+          "tail": [
+            "const points1 = [",
+            "\tnew Point(0.748501, 4.09624),",
+            "\tnew Point(3.00302, 5.26164),",
+            "\tnew Point(3.61878,  9.52232),",
+            "\tnew Point(7.46911,  4.71611),",
+            "\tnew Point(5.7819,   2.69367),",
+            "\tnew Point(2.34709,  8.74782),",
+            "\tnew Point(2.87169,  5.97774),",
+            "\tnew Point(6.33101,  0.463131),",
+            "\tnew Point(7.46489,  4.6268),",
+            "\tnew Point(1.45428,  0.087596)",
+            "];",
+            "",
+            "const points2 = [",
+            "  new Point(37100, 13118),",
+            "  new Point(37134, 1963),",
+            "  new Point(37181, 2008),",
+            "  new Point(37276, 21611),",
+            "  new Point(37307, 9320)",
+            "];",
+            "",
+            "const answer1 = {",
+            "  distance: 0.0894096443343775,",
+            "  pair: [",
+            "    {",
+            "      x: 7.46489,",
+            "      y: 4.6268",
+            "    },",
+            "    {",
+            "      x: 7.46911,",
+            "      y: 4.71611",
+            "    }",
+            "  ]",
+            "};",
+            "",
+            "const answer2 = {",
+            "  distance: 65.06919393998976,",
+            "  pair: [",
+            "    {",
+            "      x: 37134,",
+            "      y: 1963",
+            "    },",
+            "    {",
+            "      x: 37181,",
+            "      y: 2008",
+            "    }",
+            "  ]",
+            "};",
+            "",
+            "const benchmarkPoints = [",
+            "  new Point(16909, 54699),",
+            "  new Point(14773, 61107),",
+            "  new Point(95547, 45344),",
+            "  new Point(95951, 17573),",
+            "  new Point(5824, 41072),",
+            "  new Point(8769, 52562),",
+            "  new Point(21182, 41881),",
+            "  new Point(53226, 45749),",
+            "  new Point(68180, 887),",
+            "  new Point(29322, 44017),",
+            "  new Point(46817, 64975),",
+            "  new Point(10501, 483),",
+            "  new Point(57094, 60703),",
+            "  new Point(23318, 35472),",
+            "  new Point(72452, 88070),",
+            "  new Point(67775, 28659),",
+            "  new Point(19450, 20518),",
+            "  new Point(17314, 26927),",
+            "  new Point(98088, 11164),",
+            "  new Point(25050, 56835),",
+            "  new Point(8364, 6892),",
+            "  new Point(37868, 18382),",
+            "  new Point(23723, 7701),",
+            "  new Point(55767, 11569),",
+            "  new Point(70721, 66707),",
+            "  new Point(31863, 9837),",
+            "  new Point(49358, 30795),",
+            "  new Point(13041, 39745),",
+            "  new Point(59635, 26523),",
+            "  new Point(25859, 1292),",
+            "  new Point(1551, 53890),",
+            "  new Point(70316, 94479),",
+            "  new Point(48549, 86338),",
+            "  new Point(46413, 92747),",
+            "  new Point(27186, 50426),",
+            "  new Point(27591, 22655),",
+            "  new Point(10905, 46153),",
+            "  new Point(40408, 84202),",
+            "  new Point(52821, 73520),",
+            "  new Point(84865, 77388),",
+            "  new Point(99819, 32527),",
+            "  new Point(34404, 75657),",
+            "  new Point(78457, 96615),",
+            "  new Point(42140, 5564),",
+            "  new Point(62175, 92342),",
+            "  new Point(54958, 67112),",
+            "  new Point(4092, 19709),",
+            "  new Point(99415, 60298),",
+            "  new Point(51090, 52158),",
+            "  new Point(48953, 58567)",
+            "];"
+          ]
         }
       }
     },
@@ -1103,8 +1356,14 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testInput1 = [3, 5];\nconst testOutput1 = [[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]];\n\nconst testInput2 = [4, 6];\nconst testOutput2 = [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 2, 5], [0, 1, 3, 4], [0, 1, 3, 5], [0, 1, 4, 5], [0, 2, 3, 4], [0, 2, 3, 5], [0, 2, 4, 5], [0, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3, 5], [1, 2, 4, 5], [1, 3, 4, 5], [2, 3, 4, 5]];"
+          "head": [],
+          "tail": [
+            "const testInput1 = [3, 5];",
+            "const testOutput1 = [[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]];",
+            "",
+            "const testInput2 = [4, 6];",
+            "const testOutput2 = [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 2, 5], [0, 1, 3, 4], [0, 1, 3, 5], [0, 1, 4, 5], [0, 2, 3, 4], [0, 2, 3, 5], [0, 2, 4, 5], [0, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3, 5], [1, 2, 4, 5], [1, 3, 4, 5], [2, 3, 4, 5]];"
+          ]
         }
       }
     },
@@ -1168,8 +1427,11 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = [[], [\"ABC\"], [\"ABC\", \"DEF\"], [\"ABC\", \"DEF\", \"G\", \"H\"]];\nconst results = [\"{}\", \"{ABC}\", \"{ABC and DEF}\", \"{ABC,DEF,G and H}\"];"
+          "head": [],
+          "tail": [
+            "const testCases = [[], [\"ABC\"], [\"ABC\", \"DEF\"], [\"ABC\", \"DEF\", \"G\", \"H\"]];",
+            "const results = [\"{}\", \"{ABC}\", \"{ABC and DEF}\", \"{ABC,DEF,G and H}\"];"
+          ]
         }
       }
     },
@@ -1252,8 +1514,10 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = [['AA', 'AA', 'AA', 'AA'], ['AA', 'ACB', 'BB', 'CC'], [], ['AA'], ['BB', 'AA']];"
+          "head": [],
+          "tail": [
+            "const testCases = [['AA', 'AA', 'AA', 'AA'], ['AA', 'ACB', 'BB', 'CC'], [], ['AA'], ['BB', 'AA']];"
+          ]
         }
       }
     },
@@ -1360,8 +1624,11 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = [7259, 86400, 6000000];\nconst results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];"
+          "head": [],
+          "tail": [
+            "const testCases = [7259, 86400, 6000000];",
+            "const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];"
+          ]
         }
       }
     },
@@ -1411,8 +1678,12 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = ['the three truths', 'ababababab', 'abaabba*bbaba*bbab'];\nconst searchString = ['th', 'abab', 'a*b'];\nconst results = [3, 2, 2];"
+          "head": [],
+          "tail": [
+            "const testCases = ['the three truths', 'ababababab', 'abaabba*bbaba*bbab'];",
+            "const searchString = ['th', 'abab', 'a*b'];",
+            "const results = [3, 2, 2];"
+          ]
         }
       }
     },
@@ -1464,8 +1735,8 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1524,8 +1795,25 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const matrices = [\n  [\n    [2, -1, 5, 1],\n    [3, 2, 2, -6],\n    [1, 3, 3, -1],\n    [5, -2, -3, 3]\n  ],\n  [\n    [3, 1, 1],\n    [2, 2, 5],\n    [1, -3, -4]\n  ]\n];\nconst freeTerms = [[-3, -32, -47, 49], [3, -1, 2]];\n\nconst answers = [[2, -12, -4, 1], [1, 1, -1]];"
+          "head": [],
+          "tail": [
+            "const matrices = [",
+            "  [",
+            "    [2, -1, 5, 1],",
+            "    [3, 2, 2, -6],",
+            "    [1, 3, 3, -1],",
+            "    [5, -2, -3, 3]",
+            "  ],",
+            "  [",
+            "    [3, 1, 1],",
+            "    [2, 2, 5],",
+            "    [1, -3, -4]",
+            "  ]",
+            "];",
+            "const freeTerms = [[-3, -32, -47, 49], [3, -1, 2]];",
+            "",
+            "const answers = [[2, -12, -4, 1], [1, 1, -1]];"
+          ]
         }
       }
     },
@@ -1549,14 +1837,14 @@
         },
         {
           "text": "Should return an object.",
-          "testString": "assert(Array.isArray(getDateFormats()), 'Should return an Array.');"
+          "testString": "assert(typeof getDateFormats() === 'object', 'Should return an object.');"
         },
         {
           "text": "Should returned an array with 2 elements.",
           "testString": "assert(getDateFormats().length === 2, 'Should returned an array with 2 elements.');"
         },
         {
-          "text": "Should return todays date in the correct format. ",
+          "text": "Should return the correct date in the right format",
           "testString": "assert.deepEqual(getDateFormats(), dates, equalsMessage);"
         }
       ],
@@ -1574,8 +1862,20 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const getDateSolution = () => {\n  const date = new Date();\n  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];\n  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];\n  const fmt1 = `${date.getFullYear()}-${(1 + date.getMonth())}-${date.getDate()}`;\n  const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;\n  return [fmt1, fmt2];\n};\n\nconst dates = getDateSolution();\nconst equalsMessage = `<code>getDataFormats()</code> should return <code>[\"${dates[0]}\", \"${dates[1]}\"]</code>.`;"
+          "head": [],
+          "tail": [
+            "const getDateSolution = () => {",
+            "  const date = new Date();",
+            "  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];",
+            "  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];",
+            "  const fmt1 = `${date.getFullYear()}-${(1 + date.getMonth())}-${date.getDate()}`;",
+            "  const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;",
+            "  return [fmt1, fmt2];",
+            "};",
+            "",
+            "const dates = getDateSolution();",
+            "const equalsMessage = `message: <code>getDataFormats()</code> should return <code>[\"${dates[0]}\", \"${dates[1]}\"]</code>.`;"
+          ]
         }
       }
     },
@@ -1638,8 +1938,23 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const tests = [\n  'January 17 2017 11:43am EST',\n  'March 7 2009 7:30pm EST',\n  'February 29 2004 9:15pm EST',\n  'February 28 1999 3:15pm EST',\n  'December 31 2020 1:45pm EST'\n];\nconst answers = [\n  'January 17 2017 11:43pm EST',\n  'March 8 2009 7:30am EST',\n  'March 1 2004 9:15am EST',\n  'March 1 1999 3:15am EST',\n  'January 1 2021 1:45am EST'\n];"
+          "head": [],
+          "tail": [
+            "const tests = [",
+            "  'January 17 2017 11:43am EST',",
+            "  'March 7 2009 7:30pm EST',",
+            "  'February 29 2004 9:15pm EST',",
+            "  'February 28 1999 3:15pm EST',",
+            "  'December 31 2020 1:45pm EST'",
+            "];",
+            "const answers = [",
+            "  'January 17 2017 11:43pm EST',",
+            "  'March 8 2009 7:30am EST',",
+            "  'March 1 2004 9:15am EST',",
+            "  'March 1 1999 3:15am EST',",
+            "  'January 1 2021 1:45am EST'",
+            "];"
+          ]
         }
       }
     },
@@ -1686,8 +2001,11 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const firstSolution = [1977, 1983, 1988, 1994, 2005, 2011, 2016];\nconst secondSolution = [2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118];"
+          "head": [],
+          "tail": [
+            "const firstSolution = [1977, 1983, 1988, 1994, 2005, 2011, 2016];",
+            "const secondSolution = [2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118];"
+          ]
         }
       }
     },
@@ -1740,7 +2058,7 @@
         "]</pre></p>",
         "Task:",
         "<p>Write a function to take a deal number and deal cards in the same order as this algorithm.</p>",
-        "<p>The function must return a two dimentional array representing the FreeCell board.</p>",
+        "<p>The function must return a two dimensional array representing the FreeCell board.</p>",
         "<p>Deals can also be checked against <a href=\"http://freecellgamesolutions.com/\" title=\"link: http://freecellgamesolutions.com/\">FreeCell solutions to 1000000 games</a>.</p>",
         "<p>(Summon a video solution, and it displays the initial deal.)</p>"
       ],
@@ -1783,8 +2101,28 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const replaceThis = 3;\nconst game1 = [\n  ['JD', '2D', '9H', 'JC', '5D', '7H', '7C', '5H'],\n  ['KD', 'KC', '9S', '5S', 'AD', 'QC', 'KH', '3H'],\n  ['2S', 'KS', '9D', 'QD', 'JS', 'AS', 'AH', '3C'],\n  ['4C', '5C', 'TS', 'QH', '4H', 'AC', '4D', '7S'],\n  ['3S', 'TD', '4S', 'TH', '8H', '2C', 'JH', '7D'],\n  ['6D', '8S', '8D', 'QS', '6C', '3D', '8C', 'TC'],\n  ['6S', '9C', '2H', '6H']\n];\nconst game617 = [\n  ['7D', 'AD', '5C', '3S', '5S', '8C', '2D', 'AH'],\n  ['TD', '7S', 'QD', 'AC', '6D', '8H', 'AS', 'KH'],\n  ['TH', 'QC', '3H', '9D', '6S', '8D', '3D', 'TC'],\n  ['KD', '5H', '9S', '3C', '8S', '7H', '4D', 'JS'],\n  ['4C', 'QS', '9C', '9H', '7C', '6H', '2C', '2S'],\n  ['4S', 'TS', '2H', '5D', 'JC', '6C', 'JH', 'QH'],\n  ['JD', 'KS', 'KC', '4H']\n];"
+          "head": [],
+          "tail": [
+            "const replaceThis = 3;",
+            "const game1 = [",
+            "  ['JD', '2D', '9H', 'JC', '5D', '7H', '7C', '5H'],",
+            "  ['KD', 'KC', '9S', '5S', 'AD', 'QC', 'KH', '3H'],",
+            "  ['2S', 'KS', '9D', 'QD', 'JS', 'AS', 'AH', '3C'],",
+            "  ['4C', '5C', 'TS', 'QH', '4H', 'AC', '4D', '7S'],",
+            "  ['3S', 'TD', '4S', 'TH', '8H', '2C', 'JH', '7D'],",
+            "  ['6D', '8S', '8D', 'QS', '6C', '3D', '8C', 'TC'],",
+            "  ['6S', '9C', '2H', '6H']",
+            "];",
+            "const game617 = [",
+            "  ['7D', 'AD', '5C', '3S', '5S', '8C', '2D', 'AH'],",
+            "  ['TD', '7S', 'QD', 'AC', '6D', '8H', 'AS', 'KH'],",
+            "  ['TH', 'QC', '3H', '9D', '6S', '8D', '3D', 'TC'],",
+            "  ['KD', '5H', '9S', '3C', '8S', '7H', '4D', 'JS'],",
+            "  ['4C', 'QS', '9C', '9H', '7C', '6H', '2C', '2S'],",
+            "  ['4S', 'TS', '2H', '5D', 'JC', '6C', 'JH', 'QH'],",
+            "  ['JD', 'KS', 'KC', '4H']",
+            "];"
+          ]
         }
       }
     },
@@ -1841,8 +2179,18 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const obj1 = { test: 'test' };\nconst obj2 = {\n  t: 'test',\n  a: ['an', 'array']\n};\nconst obj3 = {\n  t: 'try',\n  o: obj2\n};"
+          "head": [],
+          "tail": [
+            "const obj1 = { test: 'test' };",
+            "const obj2 = {",
+            "  t: 'test',",
+            "  a: ['an', 'array']",
+            "};",
+            "const obj3 = {",
+            "  t: 'try',",
+            "  o: obj2",
+            "};"
+          ]
         }
       }
     },
@@ -1933,8 +2281,8 @@
             "  return n;",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1999,8 +2347,28 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const nums = [1, 2, 3, 4, 5, 6, 7];\nconst total = 12;\nconst len = 14;\nconst result = [\n  [2, 3, 7],\n  [2, 4, 6],\n  [2, 6, 4],\n  [2, 7, 3],\n  [4, 1, 7],\n  [4, 2, 6],\n  [4, 3, 5],\n  [4, 5, 3],\n  [4, 6, 2],\n  [4, 7, 1],\n  [6, 1, 5],\n  [6, 2, 4],\n  [6, 4, 2],\n  [6, 5, 1]\n];"
+          "head": [],
+          "tail": [
+            "const nums = [1, 2, 3, 4, 5, 6, 7];",
+            "const total = 12;",
+            "const len = 14;",
+            "const result = [",
+            "  [2, 3, 7],",
+            "  [2, 4, 6],",
+            "  [2, 6, 4],",
+            "  [2, 7, 3],",
+            "  [4, 1, 7],",
+            "  [4, 2, 6],",
+            "  [4, 3, 5],",
+            "  [4, 5, 3],",
+            "  [4, 6, 2],",
+            "  [4, 7, 1],",
+            "  [6, 1, 5],",
+            "  [6, 2, 4],",
+            "  [6, 4, 2],",
+            "  [6, 5, 1]",
+            "];"
+          ]
         }
       }
     },
@@ -2062,8 +2430,8 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2129,8 +2497,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2139,7 +2507,7 @@
       "type": "Waypoint",
       "description": [
         "<p>An  emirp  (prime spelled backwards)  are primes that when reversed  (in their decimal representation)  are a different prime.</p>",
-        "<p>Write a function that should be able to : Show the first <b>n</b> eprimes numbers.Show the eprimes numbers in a range.Show the number of eprimes in a range.Show the <b>n<sup>th</sup></b> eprimes number.<p>The function should have two paramters. The first will recieve <b>n</b> or the range as an array. The second will recieve a boolean, that specifies if the function returns the eprimes as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array or a number."
+        "<p>Write a function that should be able to : Show the first <b>n</b> eprimes numbers.Show the eprimes numbers in a range.Show the number of eprimes in a range.Show the <b>n<sup>th</sup></b> eprimes number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the eprimes as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array or a number."
       ],
       "null": [],
       "solutions": [
@@ -2180,8 +2548,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2239,8 +2607,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2304,8 +2672,18 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const tests =\n  [[-7, 1, 5, 2, -4, 3, 0], // 3, 6\n  [2, 4, 6], // empty\n  [2, 9, 2], // 1\n  [1, -1, 1, -1, 1, -1, 1], // 0,1,2,3,4,5,6\n  [1], // 0\n  [] // empty\n  ];\nconst ans = [[3, 6], [], [1], [0, 1, 2, 3, 4, 5, 6], [0], []];"
+          "head": [],
+          "tail": [
+            "const tests =",
+            "  [[-7, 1, 5, 2, -4, 3, 0], // 3, 6",
+            "  [2, 4, 6], // empty",
+            "  [2, 9, 2], // 1",
+            "  [1, -1, 1, -1, 1, -1, 1], // 0,1,2,3,4,5,6",
+            "  [1], // 0",
+            "  [] // empty",
+            "  ];",
+            "const ans = [[3, 6], [], [1], [0, 1, 2, 3, 4, 5, 6], [0], []];"
+          ]
         }
       }
     },
@@ -2398,8 +2776,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2463,8 +2841,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2517,8 +2895,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2674,8 +3052,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2706,35 +3084,31 @@
         "<p>| style=\"text-align:center\"| <code>]</code> || Jump back to the matching <code>[</code> if the cell under the pointer is nonzero</p>",
         "<p>|}</p>",
         "<p>Any cell size is allowed,  EOF   (<u>E</u>nd-<u>O</u>-<u>F</u>ile)  support is optional, as is whether you have bounded or unbounded memory.</p>",
-        " "
+        ""
       ],
       "solutions": [
-        "function brain(prog){\n  var output=\"\";\n\tvar code; // formatted code\n  var ip = 0; // current instruction within code\n  var nest = 0; // current bracket nesting (for Out button)\n  var ahead = []; // locations of matching brackets\n\n  var data = [0]; // data array (mod by +, -)\n  var dp = 0; // index into data (mod by <, >)\n\n  var inp = 0; // current input character (fetch with ,)\n  var quit = 0;\n\tvar commands = {\n\t'>':function() { if (++dp >= data.length) data[dp]=0 },\n\t'<':function() { if (--dp < 0) quit++ },\n\t'+':function() { ++data[dp] },\n\t'-':function() { --data[dp] },\n\t'[':function() { if (!data[dp]) ip = ahead[ip]; else ++nest },\n\t']':function() { if ( data[dp]) ip = ahead[ip]; else --nest },\n\t',':function() {\n\t\tvar c = document.getElementById(\"input\").value.charCodeAt(inp++);\n\t\tdata[dp] = isNaN(c) ? 0 : c; // EOF: other options are -1 or no change\n\t},\n\t'.':function() {\n    \t\toutput+=String.fromCharCode(data[dp]);\n    \t\t/*var s = document.getElementById(\"output\").innerHTML)\n    \t\t + String.fromCharCode(data[dp]);\n    \t\ts = s.replace(/\\n/g,\"<br>\").replace(/ /g,\"&amp;nbsp;\");\n    \t\tdocument.getElementById(\"output\").innerHTML = s;*/\n    \t},\n    };\n\n\tlet ar=prog.split('');\n\tvar st = [], back, error = -1;\n\tfor (ip=0; ip<ar.length; ip++) {\n\t\tswitch(ar[ip]) {\n\t\tcase '[':\n\t\t\tst.push(ip);\n\t\t\tbreak;\n\t\tcase ']':\n\t\t\tif (st.length == 0) error = ip;\n\t\t\tback = st.pop();\n\t\t\tahead[ip] = back;\n\t\t\tahead[back] = ip;\n\t\t\tbreak;\n\t\t}\n\t}\n\n\tfor(ip=0;ip<ar.length;ip++){\n    if(commands.hasOwnProperty(ar[ip]))\n\t\t  commands[ar[ip]]();\n\t}\n\n\treturn output;\n}\n\n// tail:\nlet bye=\"++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>+++++++++++>++++++++++++<<<<<<<<<-]>>>>+.>>>>+..<.<++++++++.>>>+.<<+.<<<<++++.<++.>>>+++++++.>>>.+++.<+++++++.--------.<<<<<+.<+++.---.\";\nlet hello=\"++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.\";\nlet fib=`+\n\n++\n\n+++\n\n++++\n\n+>+>>\n\n>>++++\n\n+++++++\n\n++++++++\n\n+++++++++\n\n++++++++++\n\n++++++>++++\n\n++++++++++++\n\n+++++++++++++\n\n+++<<<<<<[>[>>\n\n>>>>+>+<<<<<<<-\n\n]>>>>>>>[<<<<<<<\n\n+>>>>>>>-]<[>++++\n\n++++++[-<-[>>+>+<<\n\n<-]>>>[<<<+>>>-]+<[\n\n>[-]<[-]]>[<<[>>>+<<\n\n<-]>>[-]]<<]>>>[>>+>+\n\n<<<-]>>>[<<<+>>>-]+<[>\n\n[-]<[-]]>[<<+>>[-]]<<<<\n\n<<<]>>>>>[++++++++++++++\n\n+++++++++++++++++++++++++\n\n+++++++++.[-]]++++++++++<[\n\n->-<]>+++++++++++++++++++++\n\n+++++++++++++++++++++++++++.\n\n[-]<<<<<<<<<<<<[>>>+>+<<<<-]>\n\n>>>[<<<<+>>>>-]<-[>>.>.<<<[-]]\n\n<<[>>+>+<<<-]>>>[<<<+>>>-]<<[<+\n\n>-]>[<+>-]<<<-]`;\n"
+        "function brain(prog){\n  var output=\"\";\n\tvar code; // formatted code\n  var ip = 0; // current instruction within code\n  var nest = 0; // current bracket nesting (for Out button)\n  var ahead = []; // locations of matching brackets\n\n  var data = [0]; // data array (mod by +, -)\n  var dp = 0; // index into data (mod by <, >)\n\n  var inp = 0; // current input character (fetch with ,)\n  var quit = 0;\n\tvar commands = {\n\t'>':function() { if (++dp >= data.length) data[dp]=0 },\n\t'<':function() { if (--dp < 0) quit++ },\n\t'+':function() { ++data[dp] },\n\t'-':function() { --data[dp] },\n\t'[':function() { if (!data[dp]) ip = ahead[ip]; else ++nest },\n\t']':function() { if ( data[dp]) ip = ahead[ip]; else --nest },\n\t',':function() {\n\t\tvar c = document.getElementById(\"input\").value.charCodeAt(inp++);\n\t\tdata[dp] = isNaN(c) ? 0 : c; // EOF: other options are -1 or no change\n\t},\n\t'.':function() {\n    \t\toutput+=String.fromCharCode(data[dp]);\n    \t\t/*var s = document.getElementById(\"output\").innerHTML)\n    \t\t + String.fromCharCode(data[dp]);\n    \t\ts = s.replace(/\\n/g,\"<br>\").replace(/ /g,\"&amp;nbsp;\");\n    \t\tdocument.getElementById(\"output\").innerHTML = s;*/\n    \t},\n    };\n\n\tlet ar=prog.split('');\n\tvar st = [], back, error = -1;\n\tfor (ip=0; ip<ar.length; ip++) {\n\t\tswitch(ar[ip]) {\n\t\tcase '[':\n\t\t\tst.push(ip);\n\t\t\tbreak;\n\t\tcase ']':\n\t\t\tif (st.length == 0) error = ip;\n\t\t\tback = st.pop();\n\t\t\tahead[ip] = back;\n\t\t\tahead[back] = ip;\n\t\t\tbreak;\n\t\t}\n\t}\n\n\tfor(ip=0;ip<ar.length;ip++){\n    if(commands.hasOwnProperty(ar[ip]))\n\t\t  commands[ar[ip]]();\n\t}\n\n\treturn output;\n}\n"
       ],
       "tests": [
         {
-          "text": "<code>brian(\"bye\")</code> should return a string. ",
-          "testString": "assert(typeof brain(\"bye\") === 'string', '<code>brian(\"bye\")</code> should return a string. ');"
+          "text": "<code>brain(bye)</code> should retuen a string",
+          "testString": "assert(typeof brain(bye) === 'string', '<code>brain(bye)</code> should return a string');"
         },
         {
-          "text": "<code>brian(\"hello\")</code> should return a string. ",
-          "testString": "assert(typeof brain(\"hello\") === 'string', '<code>brian(\"hello\")</code> should return a string. ');"
+          "text": "<code>brain(\"++++++[>++++++++++<-]>+++++.\")</code should return \"A\"",
+          "testString": "assert.equal(brain(\"++++++[>++++++++++<-]>+++++.\"),\"A\", '<code>brain(\"++++++[>++++++++++<-]>+++++.\")</code should return \"A\"');"
         },
         {
-          "text": "<code>brian(\"++++++[>++++++++++<-]>+++++.\")</code> should return \"A\". ",
-          "testString": "assert.equal(brain(\"++++++[>++++++++++<-]>+++++.\"),\"A\", '<code>brian(\"++++++[>++++++++++<-]>+++++.\")</code> should return \"A\". ');"
+          "text": "<code>brain(bye)</code> should return <code>Goodbye, World!\\\\r\\\\n</code>",
+          "testString": "assert.equal(brain(bye), 'Goodbye, World!\\r\\n', '<code>brain(bye)</code> should return <code>Goodbye, World!\\\\r\\\\n</code>');"
         },
         {
-          "text": "<code>brain(\"+bye+\")</code> should return <code>Goodbye, World!\\\\r\\\\n</code>",
-          "testString": "assert.equal(brain(\"+bye+\"),\"Goodbye, World!\\r\\n\",'<code>brain(\"+bye+\")</code> should return <code>Goodbye, World!\\\\r\\\\n</code>');"
+          "text": "<code>brain(hello)</code> should return <code>Hello World!\\\\n</code>'",
+          "testString": "assert.equal(brain(hello), \"Hello World!\\n\", '<code>brain(hello)</code> should return <code>Hello World!\\\\n</code>');"
         },
         {
-          "text": "<code>brain(\"+hello+\")</code> should return <code>Hello World!\\n</code>",
-          "testString": "assert.equal(brain(\"+hello+\"),\"Hello World!\\n\",'<code>brain(\"+hello+\")</code> should return <code>Hello World!\\n</code>');"
-        },
-        {
-          "text": "<code>brain(\"+fib+\")</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>",
-          "testString": "assert.equal(brain(\"+fib+\"),\"1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89\",'<code>brain(\"+fib+\")</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>');"
+          "text": "<code>brain(fib)</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>",
+          "testString": "assert.equal(brain(fib), \"1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89\", '<code>brain(fib)</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>');"
         }
       ],
       "id": "59e0a8df964e4540d5abe599",
@@ -2750,8 +3124,12 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [
+            "let fib=`+\n\n++\n\n+++\n\n++++\n\n+>+>>\n\n>>++++\n\n+++++++\n\n++++++++\n\n+++++++++\n\n++++++++++\n\n++++++>++++\n\n++++++++++++\n\n+++++++++++++\n\n+++<<<<<<[>[>>\n\n>>>>+>+<<<<<<<-\n\n]>>>>>>>[<<<<<<<\n\n+>>>>>>>-]<[>++++\n\n++++++[-<-[>>+>+<<\n\n<-]>>>[<<<+>>>-]+<[\n\n>[-]<[-]]>[<<[>>>+<<\n\n<-]>>[-]]<<]>>>[>>+>+\n\n<<<-]>>>[<<<+>>>-]+<[>\n\n[-]<[-]]>[<<+>>[-]]<<<<\n\n<<<]>>>>>[++++++++++++++\n\n+++++++++++++++++++++++++\n\n+++++++++.[-]]++++++++++<[\n\n->-<]>+++++++++++++++++++++\n\n+++++++++++++++++++++++++++.\n\n[-]<<<<<<<<<<<<[>>>+>+<<<<-]>\n\n>>>[<<<<+>>>>-]<-[>>.>.<<<[-]]\n\n<<[>>+>+<<<-]>>>[<<<+>>>-]<<[<+\n\n>-]>[<+>-]<<<-]`;",
+            "let hello='++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'",
+            "let bye='++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>+++++++++++>++++++++++++<<<<<<<<<-]>>>>+.>>>>+..<.<++++++++.>>>+.<<+.<<<<++++.<++.>>>+++++++.>>>.+++.<+++++++.--------.<<<<<+.<+++.---.';"
+          ],
+          "tail": []
         }
       }
     },
@@ -2759,7 +3137,7 @@
       "title": "Extensible prime generator",
       "type": "Waypoint",
       "description": [
-        "<p>Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.</p> The generator should be able to : Show the first <b>n</b> prime numbers.Show the prime numbers in a range.Show the number of primes in a range.Show the <b>n<sup>th</sup></b> prime number.<p>The function should have two paramters. The first will recieve <b>n</b> or the range as an array. The second will recieve a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array."
+        "<p>Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.</p> The generator should be able to : Show the first <b>n</b> prime numbers.Show the prime numbers in a range.Show the number of primes in a range.Show the <b>n<sup>th</sup></b> prime number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array."
       ],
       "solutions": [
         "// noprotect\nfunction primeGenerator(num, showPrimes) {\n  let i,\n    arr = [];\n\n  function isPrime(num) {\n    // try primes <= 16\n    if (num <= 16) { return (\n      num == 2 || num == 3 || num == 5 || num == 7 || num == 11 || num == 13\n    ); }\n    // cull multiples of 2, 3, 5 or 7\n    if (num % 2 == 0 || num % 3 == 0 || num % 5 == 0 || num % 7 == 0)\n      { return false; }\n    // cull square numbers ending in 1, 3, 7 or 9\n    for (let i = 10; i * i <= num; i += 10) {\n      if (num % (i + 1) == 0) return false;\n      if (num % (i + 3) == 0) return false;\n      if (num % (i + 7) == 0) return false;\n      if (num % (i + 9) == 0) return false;\n    }\n    return true;\n  }\n\n  if (typeof num === 'number') {\n    for (i = 0; arr.length < num; i++) if (isPrime(i)) arr.push(i);\n    // first x primes\n    if (showPrimes) return arr;\n    // xth prime\n    return arr.pop();\n  }\n\n  if (Array.isArray(num)) {\n    for (i = num[0]; i <= num[1]; i++) if (isPrime(i)) arr.push(i);\n    // primes between x .. y\n    if (showPrimes) return arr;\n    // number of primes between x .. y\n    return arr.length;\n  }\n}\n"
@@ -2799,8 +3177,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2858,8 +3236,10 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const results=[6,120,3628800];"
+          "head": [],
+          "tail": [
+            "const results=[6,120,3628800];"
+          ]
         }
       }
     },
@@ -2937,8 +3317,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2983,8 +3363,10 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const ans=[[1,3,5,9,15,45],[1,53],[1,2,4,8,16,32,64]];"
+          "head": [],
+          "tail": [
+            "const ans=[[1,3,5,9,15,45],[1,53],[1,2,4,8,16,32,64]];"
+          ]
         }
       }
     },
@@ -3020,15 +3402,15 @@
         },
         {
           "text": "<code>farey(3)</code> should return <code>[\"1/3\",\"1/2\",\"2/3\"]</code>",
-          "testString": "assert.deepEqual(farey(3),[\"1/3\",\"1/2\",\"2/3\"], '<code>farey(3)</code> should return <code>[\"1/3\",\"1/2\",\"2/3\"]</code>');"
+          "testString": "assert.deepEqual(farey(3), [\"1/3\",\"1/2\",\"2/3\"], '<code>farey(3)</code> should return <code>[\"1/3\",\"1/2\",\"2/3\"]</code>');"
         },
         {
           "text": "<code>farey(4)</code> should return <code>[\"1/4\",\"1/3\",\"1/2\",\"2/4\",\"2/3\",\"3/4\"]</code>",
-          "testString": "assert.deepEqual(farey(4),[\"1/4\",\"1/3\",\"1/2\",\"2/4\",\"2/3\",\"3/4\"],'<code>farey(4)</code> should return <code>[\"1/4\",\"1/3\",\"1/2\",\"2/4\",\"2/3\",\"3/4\"]</code>');"
+          "testString": "assert.deepEqual(farey(4), [\"1/4\",\"1/3\",\"1/2\",\"2/4\",\"2/3\",\"3/4\"], '<code>farey(4)</code> should return <code>[\"1/4\",\"1/3\",\"1/2\",\"2/4\",\"2/3\",\"3/4\"]</code>');"
         },
         {
           "text": "<code>farey(5)</code> should return <code>[\"1/5\",\"1/4\",\"1/3\",\"2/5\",\"1/2\",\"2/4\",\"3/5\",\"2/3\",\"3/4\",\"4/5\"]</code>",
-          "testString": "assert.deepEqual(farey(5),[\"1/5\",\"1/4\",\"1/3\",\"2/5\",\"1/2\",\"2/4\",\"3/5\",\"2/3\",\"3/4\",\"4/5\"],'<code>farey(5)</code> should return <code>[\"1/5\",\"1/4\",\"1/3\",\"2/5\",\"1/2\",\"2/4\",\"3/5\",\"2/3\",\"3/4\",\"4/5\"]</code>');"
+          "testString": "assert.deepEqual(farey(5), [\"1/5\",\"1/4\",\"1/3\",\"2/5\",\"1/2\",\"2/4\",\"3/5\",\"2/3\",\"3/4\",\"4/5\"], '<code>farey(5)</code> should return <code>[\"1/5\",\"1/4\",\"1/3\",\"2/5\",\"1/2\",\"2/4\",\"3/5\",\"2/3\",\"3/4\",\"4/5\"]</code>');"
         }
       ],
       "id": "59c3ec9f15068017c96eb8a3",
@@ -3044,8 +3426,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3053,7 +3435,7 @@
       "title": "Fibonacci n-step number sequences",
       "type": "Waypoint",
       "description": [
-        "<p>Write a function to generate Fibonacci n-step number sequences and Lucas sequences. The first parameter will be n. The second parameter will be the number of elements to be returned. The third paramter will specify whether to output the Fibonacci sequence or the Lucas sequence. If the parameter is \"f\" then return the Fibonacci sequence and if it is \"l\", then return the Lucas sequence. The sequences must be returned as an array. More details are given below : </p><p>These number series are an expansion of the ordinary <a href=\"http://rosettacode.org/wiki/Fibonacci sequence\" title=\"Fibonacci sequence\">Fibonacci sequence</a> where:</p>",
+        "<p>Write a function to generate Fibonacci n-step number sequences and Lucas sequences. The first parameter will be n. The second parameter will be the number of elements to be returned. The third parameter will specify whether to output the Fibonacci sequence or the Lucas sequence. If the parameter is \"f\" then return the Fibonacci sequence and if it is \"l\", then return the Lucas sequence. The sequences must be returned as an array. More details are given below : </p><p>These number series are an expansion of the ordinary <a href=\"http://rosettacode.org/wiki/Fibonacci sequence\" title=\"Fibonacci sequence\">Fibonacci sequence</a> where:</p>",
         "For $n = 2$ we have the Fibonacci sequence; with initial values $[1, 1]$ and $F_k^2 = F_{k-1}^2 + F_{k-2}^2$",
         "For $n = 3$ we have the tribonacci sequence; with initial values $[1, 1, 2]$ and $F_k^3 = F_{k-1}^3 + F_{k-2}^3 + F_{k-3}^3$",
         "For $n = 4$ we have the tetranacci sequence; with initial values $[1, 1, 2, 4]$ and $F_k^4 = F_{k-1}^4 + F_{k-2}^4 + F_{k-3}^4 + F_{k-4}^4$...",
@@ -3133,8 +3515,16 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const ans = [[1,1,2,3,5,8,13,21,34,55],\n[1,1,2,4,7,13,24,44,81,149,274,504,927,1705,3136],\n[1,1,2,4,8,15,29,56,108,208,401,773,1490,2872,5536],\n[ 2, 1, 3, 4, 7, 11, 18, 29, 47, 76],\n[ 2, 1, 3, 6, 10, 19, 35, 64, 118, 217, 399, 734, 1350, 2483, 4567 ],\n[ 2, 1, 3, 6, 12, 22, 43, 83, 160, 308, 594, 1145, 2207, 4254, 8200 ],\n[ 2, 1, 3, 6, 12, 24, 46, 91, 179, 352, 692, 1360, 2674, 5257, 10335 ]];"
+          "head": [],
+          "tail": [
+            "const ans = [[1,1,2,3,5,8,13,21,34,55],",
+            "[1,1,2,4,7,13,24,44,81,149,274,504,927,1705,3136],",
+            "[1,1,2,4,8,15,29,56,108,208,401,773,1490,2872,5536],",
+            "[ 2, 1, 3, 4, 7, 11, 18, 29, 47, 76],",
+            "[ 2, 1, 3, 6, 10, 19, 35, 64, 118, 217, 399, 734, 1350, 2483, 4567 ],",
+            "[ 2, 1, 3, 6, 12, 22, 43, 83, 160, 308, 594, 1145, 2207, 4254, 8200 ],",
+            "[ 2, 1, 3, 6, 12, 24, 46, 91, 179, 352, 692, 1360, 2674, 5257, 10335 ]];"
+          ]
         }
       }
     },
@@ -3187,8 +3577,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3231,8 +3621,18 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "let ans=[ { N: 1, Length: 1, Entropy: 0, Word: '1' },\n\n  { N: 2, Length: 1, Entropy: 0, Word: '0' },\n\n  { N: 3, Length: 2, Entropy: 1, Word: '01' },\n\n  { N: 4, Length: 3, Entropy: 0.9182958340544896, Word: '010' },\n\n  { N: 5, Length: 5, Entropy: 0.9709505944546688, Word: '01001' }];"
+          "head": [],
+          "tail": [
+            "let ans=[ { N: 1, Length: 1, Entropy: 0, Word: '1' },",
+            "",
+            "  { N: 2, Length: 1, Entropy: 0, Word: '0' },",
+            "",
+            "  { N: 3, Length: 2, Entropy: 1, Word: '01' },",
+            "",
+            "  { N: 4, Length: 3, Entropy: 0.9182958340544896, Word: '010' },",
+            "",
+            "  { N: 5, Length: 5, Entropy: 0.9709505944546688, Word: '01001' }];"
+          ]
         }
       }
     },
@@ -3281,8 +3681,10 @@
             "  return res;",
             "}"
           ],
-          "head": "",
-          "tail": "const res = [[27, 82, 41, 124, 8, 4, 2, 1], [351, 77031]];"
+          "head": [],
+          "tail": [
+            "const res = [[27, 82, 41, 124, 8, 4, 2, 1], [351, 77031]];"
+          ]
         }
       }
     },
@@ -3364,8 +3766,8 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3410,8 +3812,13 @@
             "  return res;",
             "}"
           ],
-          "head": "",
-          "tail": "const res = {\n  firstTwenty: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],\n  firstOver1000: 1002\n};"
+          "head": [],
+          "tail": [
+            "const res = {",
+            "  firstTwenty: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],",
+            "  firstOver1000: 1002",
+            "};"
+          ]
         }
       }
     },
@@ -3471,8 +3878,26 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = [\n  [[1, 2, 3, 4, 5], ['a', 'b', 'c', 'd', 'e']],\n  [[1, 2, 3, 4, 5], ['a', 'b', 'c', 'd']],\n  [[1, 2, 3], ['a', 'b', 'c', 'd', 'e']],\n  [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]],\n  [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4]],\n  [['a', 'b', 'c'], [1, 2, 3, 4, 5]]\n];\n\nconst res = [\n  { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e' },\n  { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: undefined },\n  { 1: 'a', 2: 'b', 3: 'c' },\n  { a: 1, b: 2, c: 3, d: 4, e: 5 },\n  { a: 1, b: 2, c: 3, d: 4, e: undefined },\n  { a: 1, b: 2, c: 3 }\n];"
+          "head": [],
+          "tail": [
+            "const testCases = [",
+            "  [[1, 2, 3, 4, 5], ['a', 'b', 'c', 'd', 'e']],",
+            "  [[1, 2, 3, 4, 5], ['a', 'b', 'c', 'd']],",
+            "  [[1, 2, 3], ['a', 'b', 'c', 'd', 'e']],",
+            "  [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]],",
+            "  [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4]],",
+            "  [['a', 'b', 'c'], [1, 2, 3, 4, 5]]",
+            "];",
+            "",
+            "const res = [",
+            "  { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e' },",
+            "  { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: undefined },",
+            "  { 1: 'a', 2: 'b', 3: 'c' },",
+            "  { a: 1, b: 2, c: 3, d: 4, e: 5 },",
+            "  { a: 1, b: 2, c: 3, d: 4, e: undefined },",
+            "  { a: 1, b: 2, c: 3 }",
+            "];"
+          ]
         }
       }
     },
@@ -3661,8 +4086,38 @@
             "  return [];",
             "}"
           ],
-          "head": "",
-          "tail": "const hash1 = [\n    { age: 27, name: 'Jonah' },\n    { age: 18, name: 'Alan' },\n    { age: 28, name: 'Glory' },\n    { age: 18, name: 'Popeye' },\n    { age: 28, name: 'Alan' }\n];\n\nconst hash2 = [\n    { character: 'Jonah', nemesis: 'Whales' },\n    { character: 'Jonah', nemesis: 'Spiders' },\n    { character: 'Alan', nemesis: 'Ghosts' },\n    { character: 'Alan', nemesis: 'Zombies' },\n    { character: 'Glory', nemesis: 'Buffy' },\n    { character: 'Bob', nemesis: 'foo' }\n];\n\nconst res = [\n    { A_age: 27, A_name: 'Jonah', B_character: 'Jonah', B_nemesis: 'Whales' },\n    { A_age: 27, A_name: 'Jonah', B_character: 'Jonah', B_nemesis: 'Spiders' },\n    { A_age: 18, A_name: 'Alan', B_character: 'Alan', B_nemesis: 'Ghosts' },\n    { A_age: 18, A_name: 'Alan', B_character: 'Alan', B_nemesis: 'Zombies' },\n    { A_age: 28, A_name: 'Glory', B_character: 'Glory', B_nemesis: 'Buffy' },\n    { A_age: 28, A_name: 'Alan', B_character: 'Alan', B_nemesis: 'Ghosts' },\n    { A_age: 28, A_name: 'Alan', B_character: 'Alan', B_nemesis: 'Zombies' }\n];\n\nconst bench1 = [{ name: 'u2v7v', num: 1 }, { name: 'n53c8', num: 10 }, { name: 'oysce', num: 9 }, { name: '0mto2s', num: 1 }, { name: 'vkh5id', num: 4 }, { name: '5od0cf', num: 8 }, { name: 'uuulue', num: 10 }, { name: '3rgsbi', num: 9 }, { name: 'kccv35r', num: 4 }, { name: '80un74', num: 9 }, { name: 'h4pp3', num: 6 }, { name: '51bit', num: 7 }, { name: 'j9ndf', num: 8 }, { name: 'vf3u1', num: 10 }, { name: 'g0bw0om', num: 10 }, { name: 'j031x', num: 7 }, { name: 'ij3asc', num: 9 }, { name: 'byv83y', num: 8 }, { name: 'bjzp4k', num: 4 }, { name: 'f3kbnm', num: 10 }];\nconst bench2 = [{ friend: 'o8b', num: 8 }, { friend: 'ye', num: 2 }, { friend: '32i', num: 5 }, { friend: 'uz', num: 3 }, { friend: 'a5k', num: 4 }, { friend: 'uad', num: 7 }, { friend: '3w5', num: 10 }, { friend: 'vw', num: 10 }, { friend: 'ah', num: 4 }, { friend: 'qv', num: 7 }, { friend: 'ozv', num: 2 }, { friend: '9ri', num: 10 }, { friend: '7nu', num: 4 }, { friend: 'w3', num: 9 }, { friend: 'tgp', num: 8 }, { friend: 'ibs', num: 1 }, { friend: 'ss7', num: 6 }, { friend: 'g44', num: 9 }, { friend: 'tab', num: 9 }, { friend: 'zem', num: 10 }];"
+          "head": [],
+          "tail": [
+            "const hash1 = [",
+            "    { age: 27, name: 'Jonah' },",
+            "    { age: 18, name: 'Alan' },",
+            "    { age: 28, name: 'Glory' },",
+            "    { age: 18, name: 'Popeye' },",
+            "    { age: 28, name: 'Alan' }",
+            "];",
+            "",
+            "const hash2 = [",
+            "    { character: 'Jonah', nemesis: 'Whales' },",
+            "    { character: 'Jonah', nemesis: 'Spiders' },",
+            "    { character: 'Alan', nemesis: 'Ghosts' },",
+            "    { character: 'Alan', nemesis: 'Zombies' },",
+            "    { character: 'Glory', nemesis: 'Buffy' },",
+            "    { character: 'Bob', nemesis: 'foo' }",
+            "];",
+            "",
+            "const res = [",
+            "    { A_age: 27, A_name: 'Jonah', B_character: 'Jonah', B_nemesis: 'Whales' },",
+            "    { A_age: 27, A_name: 'Jonah', B_character: 'Jonah', B_nemesis: 'Spiders' },",
+            "    { A_age: 18, A_name: 'Alan', B_character: 'Alan', B_nemesis: 'Ghosts' },",
+            "    { A_age: 18, A_name: 'Alan', B_character: 'Alan', B_nemesis: 'Zombies' },",
+            "    { A_age: 28, A_name: 'Glory', B_character: 'Glory', B_nemesis: 'Buffy' },",
+            "    { A_age: 28, A_name: 'Alan', B_character: 'Alan', B_nemesis: 'Ghosts' },",
+            "    { A_age: 28, A_name: 'Alan', B_character: 'Alan', B_nemesis: 'Zombies' }",
+            "];",
+            "",
+            "const bench1 = [{ name: 'u2v7v', num: 1 }, { name: 'n53c8', num: 10 }, { name: 'oysce', num: 9 }, { name: '0mto2s', num: 1 }, { name: 'vkh5id', num: 4 }, { name: '5od0cf', num: 8 }, { name: 'uuulue', num: 10 }, { name: '3rgsbi', num: 9 }, { name: 'kccv35r', num: 4 }, { name: '80un74', num: 9 }, { name: 'h4pp3', num: 6 }, { name: '51bit', num: 7 }, { name: 'j9ndf', num: 8 }, { name: 'vf3u1', num: 10 }, { name: 'g0bw0om', num: 10 }, { name: 'j031x', num: 7 }, { name: 'ij3asc', num: 9 }, { name: 'byv83y', num: 8 }, { name: 'bjzp4k', num: 4 }, { name: 'f3kbnm', num: 10 }];",
+            "const bench2 = [{ friend: 'o8b', num: 8 }, { friend: 'ye', num: 2 }, { friend: '32i', num: 5 }, { friend: 'uz', num: 3 }, { friend: 'a5k', num: 4 }, { friend: 'uad', num: 7 }, { friend: '3w5', num: 10 }, { friend: 'vw', num: 10 }, { friend: 'ah', num: 4 }, { friend: 'qv', num: 7 }, { friend: 'ozv', num: 2 }, { friend: '9ri', num: 10 }, { friend: '7nu', num: 4 }, { friend: 'w3', num: 9 }, { friend: 'tgp', num: 8 }, { friend: 'ibs', num: 1 }, { friend: 'ss7', num: 6 }, { friend: 'g44', num: 9 }, { friend: 'tab', num: 9 }, { friend: 'zem', num: 10 }];"
+          ]
         }
       }
     },
@@ -3719,8 +4174,17 @@
             "  return [];",
             "}"
           ],
-          "head": "",
-          "tail": "const testCases = [10, 15, 20, 25];\n\nconst res = [\n  [[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]],\n  [[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15]],\n  [[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53]],\n  [[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53], [19, 20, 37], [16, 17, 17], [17, 17, 30], [16, 25, 39], [13, 20, 21]]\n];"
+          "head": [],
+          "tail": [
+            "const testCases = [10, 15, 20, 25];",
+            "",
+            "const res = [",
+            "  [[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]],",
+            "  [[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15]],",
+            "  [[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53]],",
+            "  [[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53], [19, 20, 37], [16, 17, 17], [17, 17, 30], [16, 25, 39], [13, 20, 21]]",
+            "];"
+          ]
         }
       }
     },
@@ -3812,8 +4276,12 @@
             "  return n;",
             "}"
           ],
-          "head": "",
-          "tail": "const ffrParamRes = [[10, 69], [50, 1509], [100, 5764], [1000, 526334]];\nconst ffsParamRes = [[10, 14], [50, 59], [100, 112], [1000, 1041]];\n"
+          "head": [],
+          "tail": [
+            "const ffrParamRes = [[10, 69], [50, 1509], [100, 5764], [1000, 526334]];",
+            "const ffsParamRes = [[10, 14], [50, 59], [100, 112], [1000, 1041]];",
+            ""
+          ]
         }
       }
     },
@@ -3870,8 +4338,11 @@
             "  return n;",
             "}"
           ],
-          "head": "",
-          "tail": "const testCase = [1000, 1500, 2000, 2500];\nconst res = [502, 755, 1005, 1261];"
+          "head": [],
+          "tail": [
+            "const testCase = [1000, 1500, 2000, 2500];",
+            "const res = [502, 755, 1005, 1261];"
+          ]
         }
       }
     },
@@ -3879,7 +4350,6 @@
       "title": "Sailors, coconuts and a monkey problem",
       "type": "Waypoint",
       "description": [
-        " ",
         " <p>",
         "   Five sailors are shipwrecked on an island and",
         "   collect a large pile of coconuts during the day.",
@@ -3904,40 +4374,40 @@
         "   it is found that the pile of coconuts divides equally amongst the sailors with",
         "   no remainder. (Nothing for the monkey in the morning.)",
         " </p>",
-        " ",
+        "",
         " The task:",
-        " ",
-        "   ",
+        "",
+        "",
         "     Create a function that returns the",
         "     the minimum possible size",
         "     of the initial pile of coconuts collected during the day for N",
         "     sailors.",
-        "   ",
-        " ",
+        "",
+        "",
         " Note:",
-        " ",
-        "   ",
+        "",
+        "",
         "     Of course the tale is told in a",
         "     world where the collection of any amount of coconuts in a day and multiple",
         "     divisions of the pile, etc can occur in time fitting the story line, so as",
         "     not to affect the mathematics.",
-        "   ",
-        " ",
-        " ",
+        "",
+        "",
+        "",
         " C.f:",
-        " ",
+        "",
         "   <a",
         "       href=\"https://www.youtube.com/watch?v=U9qU20VmvaU\" title=\"link: https://www.youtube.com/watch?v=U9qU20VmvaU\">",
         "       Monkeys and Coconuts - Numberphile</a> (Video) Analytical solution.",
-        "   ",
-        "   ",
+        "",
+        "",
         "     <a",
         "       href=\"http://oeis.org/A002021\" title=\"link: http://oeis.org/A002021\">A002021 Pile of coconuts problem</a> The On-Line",
         "     Encyclopedia of Integer Sequences. (Although some of its references may use",
         "     the alternate form of the tale).",
-        "   ",
-        " ",
-        " "
+        "",
+        "",
+        ""
       ],
       "solutions": [
         "// noprotect\nfunction splitCoconuts(intSailors) {\n  let intNuts = intSailors;\n  let result = splitCoconutsHelper(intNuts, intSailors);\n  while (!result) {\n    intNuts += 1;\n    result = splitCoconutsHelper(intNuts, intSailors);\n  }\n\n  return intNuts;\n}\n\nfunction splitCoconutsHelper(intNuts, intSailors, intDepth) {\n  const nDepth = intDepth !== undefined ? intDepth : intSailors;\n  const portion = Math.floor(intNuts / intSailors);\n  const remain = intNuts % intSailors;\n\n  if (portion <= 0 || remain !== (nDepth ? 1 : 0)) {\n    return null;\n  }\n\n  if (nDepth) {\n    return splitCoconutsHelper(\n      intNuts - portion - remain, intSailors, nDepth - 1\n    );\n  }\n\n  return intNuts;\n}\n"
@@ -3975,8 +4445,8 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3985,21 +4455,19 @@
       "type": "Waypoint",
       "null": [],
       "description": [
-        "  ",
-        "  ",
         "    Task:",
-        "  ",
+        "",
         "  <p>",
         "    For each number list of 6-digit ",
         "    <a href=\"https://en.wikipedia.org/wiki/SEDOL\" title=\"wp: SEDOL\">SEDOL</a>s,",
         "    calculate and append the checksum digit.",
         "  </p>",
-        "  ",
+        "",
         "  <p>",
         "    That is, given the input string on the left, your function should return the",
         "    corresponding string on the right:",
         "  </p>",
-        "  ",
+        "",
         "    <pre>",
         "     710889 => 7108899",
         "     B0YBKJ => B0YBKJ7",
@@ -4013,7 +4481,7 @@
         "     B0YBKT => B0YBKT7",
         "     B00030 => B000300",
         "    </pre>",
-        "  ",
+        "",
         "  <p>",
         "    Check also that each input is correctly formed, especially",
         "    with respect to valid characters allowed in a SEDOL string. Your function",
@@ -4043,10 +4511,6 @@
         {
           "text": "<code>sedol('228276')</code> should return '2282765'.\")",
           "testString": "assert(sedol('228276') === '2282765', \"<code>sedol('228276')</code> should return '2282765'.\");"
-        },
-        {
-          "text": "Should return the correct answer when pases a random string from a list. ",
-          "testString": "assert(sedol(inputVal) === expVal, randMsg);"
         }
       ],
       "id": "59d9c6bc214c613ba73ff012",
@@ -4063,8 +4527,8 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const input = [\n  '710889', 'B0YBKJ', '406566', 'B0YBLH', '228276',\n  'B0YBKL', '557910', 'B0YBKR', '585284', 'B0YBKT',\n  'BOATER', '12345', '123456', '1234567', 'ABBAAC',\n  '767642', 'B33FAC', 'H3FH3F', 'C0M3D1', 'GOOGL3',\n  'APPPL3'\n];\n\nconst expected = [\n  '7108899', 'B0YBKJ7', '4065663', 'B0YBLH2', '2282765',\n  'B0YBKL9', '5579107', 'B0YBKR5', '5852842', 'B0YBKT7',\n  null, null, '1234563', null, null, '7676426',\n  null, 'H3FH3F6', 'C0M3D17', null, null\n];\n\nconst inputLen = input.length;\nconst randIndex = Math.floor(Math.random(new Date().getTime()) * inputLen);\nconst inputVal = input[randIndex];\nconst expVal = expected[randIndex];\nconst randMsg = `message: <code>sedol('${inputVal}')</code> should return '${expVal}'.`;"
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4143,8 +4607,14 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const simpleSExpr = '(data1 data2 data3)';\nconst simpleSolution = ['data1', 'data2', 'data3'];\n\nconst basicSExpr = '((data \"quoted data\" 123 4.5) (data (!@# (4.5) \"(more\" \"data)\")))';\nconst basicSolution = [[\"data\",\"\\\"quoted data\\\"\",123,4.5],[\"data\",[\"!@#\",[4.5],\"\\\"(more\\\"\",\"\\\"data)\\\"\"]]];"
+          "head": [],
+          "tail": [
+            "const simpleSExpr = '(data1 data2 data3)';",
+            "const simpleSolution = ['data1', 'data2', 'data3'];",
+            "",
+            "const basicSExpr = '((data \"quoted data\" 123 4.5) (data (!@# (4.5) \"(more\" \"data)\")))';",
+            "const basicSolution = [[\"data\",\"\\\"quoted data\\\"\",123,4.5],[\"data\",[\"!@#\",[4.5],\"\\\"(more\\\"\",\"\\\"data)\\\"\"]]];"
+          ]
         }
       }
     },
@@ -4214,8 +4684,17 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const res4 = [1729, 4104, 13832, 20683];\nconst res25 = [\n  1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656,\n  110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763,\n  373464, 402597\n];\n\nconst res39From20To29 = [314496, 320264, 327763, 373464, 402597, 439101, 443889, 513000, 513856];"
+          "head": [],
+          "tail": [
+            "const res4 = [1729, 4104, 13832, 20683];",
+            "const res25 = [",
+            "  1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656,",
+            "  110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763,",
+            "  373464, 402597",
+            "];",
+            "",
+            "const res39From20To29 = [314496, 320264, 327763, 373464, 402597, 439101, 443889, 513000, 513856];"
+          ]
         }
       }
     },
@@ -4266,8 +4745,8 @@
           "testString": "assert.deepEqual(tokenize(testStr1, '|', '^'), res1, \"<code>tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^') </code> should return ['one|uno', '', 'three^^', 'four^|cuatro', '']\");"
         },
         {
-          "text": "hi', '&', '@')</code> should return ['a&bcd', 'ef', '', '@hi']\");",
-          "testString": "assert.deepEqual(tokenize(testStr2, '&', '@'), res2, \"<code>tokenize('a@&bcd&ef&&"
+          "text": "<code>tokenize('a@&bcd&ef&&@@hi', '&', '@')</code> should return <code>['a&bcd', 'ef', '', '@hi']</code>",
+          "testString": "assert.deepEqual(tokenize(testStr2, '&', '@'), res2, '<code>tokenize(\"a@&bcd&ef&&@@hi\", \"&\", \"@\")</code> should return <code>[\"a&bcd\", \"ef\", \"\", \"@hi\"]</code>');"
         }
       ],
       "id": "594faaab4e2a8626833e9c3d",
@@ -4283,8 +4762,15 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testStr1 = 'one^|uno||three^^^^|four^^^|^cuatro|';\nconst res1 = ['one|uno', '', 'three^^', 'four^|cuatro', ''];\n\n// TODO add more tests\nconst testStr2 = 'a@&bcd&ef&&@@hi';\nconst res2 = ['a&bcd', 'ef', '', '@hi'];"
+          "head": [],
+          "tail": [
+            "const testStr1 = 'one^|uno||three^^^^|four^^^|^cuatro|';",
+            "const res1 = ['one|uno', '', 'three^^', 'four^|cuatro', ''];",
+            "",
+            "// TODO add more tests",
+            "const testStr2 = 'a@&bcd&ef&&@@hi';",
+            "const res2 = ['a&bcd', 'ef', '', '@hi'];"
+          ]
         }
       }
     },
@@ -4332,9 +4818,9 @@
         "<small>Note: the above data would be un-orderable if, for example, <code>dw04</code> is added to the list of dependencies of <code>dw01</code>.</small>",
         "</p>",
         "C.f.:",
-        "   ",
+        "",
         "    <a href=\"http://rosettacode.org/wiki/Topological sort/Extracted top item\" title=\"Topological sort/Extracted top item\">Topological sort/Extracted top item</a>.",
-        "  ",
+        "",
         "<p>There are two popular algorithms for topological sorting:</p>",
         "<p>",
         "  Kahn's 1962 topological sort, and depth-first search:",
@@ -4386,8 +4872,48 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const libsSimple =\n  `aaa bbb\n  bbb`;\n\nconst libsVHDL =\n  `des_system_lib   std synopsys std_cell_lib des_system_lib dw02 dw01 ramlib ieee\n  dw01             ieee dw01 dware gtech\n  dw02             ieee dw02 dware\n  dw03             std synopsys dware dw03 dw02 dw01 ieee gtech\n  dw04             dw04 ieee dw01 dware gtech\n  dw05             dw05 ieee dware\n  dw06             dw06 ieee dware\n  dw07             ieee dware\n  dware            ieee dware\n  gtech            ieee gtech\n  ramlib           std ieee\n  std_cell_lib     ieee std_cell_lib\n  synopsys`;\n\nconst solutionVHDL = [\n  'ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06',\n  'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys',\n  'dw03', 'des_system_lib'\n];\n\nconst libsCustom =\n  `a b c d\n  b c d\n  d c\n  c base\n  base`;\nconst solutionCustom = ['base', 'c', 'd', 'b', 'a'];\n\nconst libsUnorderable =\n  `TestLib Base MainLib\n  MainLib TestLib\n  Base`;\n\nconst solutionUnorderable = ['Base'];"
+          "head": [],
+          "tail": [
+            "const libsSimple =",
+            "  `aaa bbb",
+            "  bbb`;",
+            "",
+            "const libsVHDL =",
+            "  `des_system_lib   std synopsys std_cell_lib des_system_lib dw02 dw01 ramlib ieee",
+            "  dw01             ieee dw01 dware gtech",
+            "  dw02             ieee dw02 dware",
+            "  dw03             std synopsys dware dw03 dw02 dw01 ieee gtech",
+            "  dw04             dw04 ieee dw01 dware gtech",
+            "  dw05             dw05 ieee dware",
+            "  dw06             dw06 ieee dware",
+            "  dw07             ieee dware",
+            "  dware            ieee dware",
+            "  gtech            ieee gtech",
+            "  ramlib           std ieee",
+            "  std_cell_lib     ieee std_cell_lib",
+            "  synopsys`;",
+            "",
+            "const solutionVHDL = [",
+            "  'ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06',",
+            "  'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys',",
+            "  'dw03', 'des_system_lib'",
+            "];",
+            "",
+            "const libsCustom =",
+            "  `a b c d",
+            "  b c d",
+            "  d c",
+            "  c base",
+            "  base`;",
+            "const solutionCustom = ['base', 'c', 'd', 'b', 'a'];",
+            "",
+            "const libsUnorderable =",
+            "  `TestLib Base MainLib",
+            "  MainLib TestLib",
+            "  Base`;",
+            "",
+            "const solutionUnorderable = ['Base'];"
+          ]
         }
       }
     },
@@ -4431,7 +4957,7 @@
         "<code>topRankPerGroup(1, data, 'genre', 'rating')</code>"
       ],
       "solutions": [
-        "\nconst collectDept = function (arrOfObj, groupName) {\n  const collect = arrOfObj.reduce((rtnObj, obj) => {\n    if (rtnObj[obj[groupName]] === undefined) {\n      rtnObj[obj[groupName]] = [];\n    }\n    rtnObj[obj[groupName]].push(obj);\n    return rtnObj;\n  }, {} // initial value to reduce\n  );\n\n  return Object.keys(collect).sort().map(key => collect[key]);\n};\n\nconst sortRank = function (arrOfRankArrs, rankName) {\n  return arrOfRankArrs.map(item => item.sort((a, b) => {\n    if (a[rankName] > b[rankName]) { return -1; }\n    if (a[rankName] < b[rankName]) { return 1; }\n    return 0;\n  }));\n};\n\nfunction topRankPerGroup(n, data, groupName, rankName) {\n  if (n < 0) { return; }\n  return sortRank(collectDept(data, groupName),\n    rankName).map(list => list.slice(0, n));\n}\n"
+        "const collectDept = function (arrOfObj, groupName) {\n  const collect = arrOfObj.reduce((rtnObj, obj) => {\n    if (rtnObj[obj[groupName]] === undefined) {\n      rtnObj[obj[groupName]] = [];\n    }\n    rtnObj[obj[groupName]].push(obj);\n    return rtnObj;\n  }, {} // initial value to reduce\n  );\n\n  return Object.keys(collect).sort().map(key => collect[key]);\n};\n\nconst sortRank = function (arrOfRankArrs, rankName) {\n  return arrOfRankArrs.map(item => item.sort((a, b) => {\n    if (a[rankName] > b[rankName]) { return -1; }\n    if (a[rankName] < b[rankName]) { return 1; }\n    return 0;\n  }));\n};\n\nfunction topRankPerGroup(n, data, groupName, rankName) {\n  if (n < 0) { return; }\n  return sortRank(collectDept(data, groupName),\n    rankName).map(list => list.slice(0, n));\n}\n"
       ],
       "tests": [
         {
@@ -4477,8 +5003,39 @@
             "  return true;",
             "}"
           ],
-          "head": "",
-          "tail": "const testData1 = [\n  { name: 'Tyler Bennett', id: 'E10297', salary: 32000, dept: 'D101' },\n  { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050' },\n  { name: 'George Woltman', id: 'E00127', salary: 53500, dept: 'D101' },\n  { name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' },\n  { name: 'Claire Buckman', id: 'E39876', salary: 27800, dept: 'D202' },\n  { name: 'David McClellan', id: 'E04242', salary: 41500, dept: 'D101' },\n  { name: 'Rich Holcomb', id: 'E01234', salary: 49500, dept: 'D202' },\n  { name: 'Nathan Adams', id: 'E41298', salary: 21900, dept: 'D050' },\n  { name: 'Richard Potter', id: 'E43128', salary: 15900, dept: 'D101' },\n  { name: 'David Motsinger', id: 'E27002', salary: 19250, dept: 'D202' },\n  { name: 'Tim Sampair', id: 'E03033', salary: 27000, dept: 'D101' },\n  { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D190' },\n  { name: 'Timothy Grove', id: 'E16398', salary: 29900, dept: 'D190' }\n];\n\nconst res1 = topRankPerGroup(10, testData1, 'dept', 'salary');\n\nconst testData2 = [\n  { name: 'Friday 13th', genre: 'horror', rating: 9.9 },\n  { name: \"Nightmare on Elm's Street\", genre: 'horror', rating: 5.7 },\n  { name: 'Titanic', genre: 'drama', rating: 7.3 },\n  { name: 'Maze Runner', genre: 'scifi', rating: 7.1 },\n  { name: 'Blade runner', genre: 'scifi', rating: 8.9 }\n];\n\nconst res2 = topRankPerGroup(1, testData2, 'genre', 'rating');\nconst res3 = topRankPerGroup(2, testData2, 'genre', 'rating');\n\n//console.log(JSON.stringify(topRankPerGroup(10, testData1)));"
+          "head": [],
+          "tail": [
+            "const testData1 = [",
+            "  { name: 'Tyler Bennett', id: 'E10297', salary: 32000, dept: 'D101' },",
+            "  { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050' },",
+            "  { name: 'George Woltman', id: 'E00127', salary: 53500, dept: 'D101' },",
+            "  { name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' },",
+            "  { name: 'Claire Buckman', id: 'E39876', salary: 27800, dept: 'D202' },",
+            "  { name: 'David McClellan', id: 'E04242', salary: 41500, dept: 'D101' },",
+            "  { name: 'Rich Holcomb', id: 'E01234', salary: 49500, dept: 'D202' },",
+            "  { name: 'Nathan Adams', id: 'E41298', salary: 21900, dept: 'D050' },",
+            "  { name: 'Richard Potter', id: 'E43128', salary: 15900, dept: 'D101' },",
+            "  { name: 'David Motsinger', id: 'E27002', salary: 19250, dept: 'D202' },",
+            "  { name: 'Tim Sampair', id: 'E03033', salary: 27000, dept: 'D101' },",
+            "  { name: 'Kim Arlich', id: 'E10001', salary: 57000, dept: 'D190' },",
+            "  { name: 'Timothy Grove', id: 'E16398', salary: 29900, dept: 'D190' }",
+            "];",
+            "",
+            "const res1 = topRankPerGroup(10, testData1, 'dept', 'salary');",
+            "",
+            "const testData2 = [",
+            "  { name: 'Friday 13th', genre: 'horror', rating: 9.9 },",
+            "  { name: \"Nightmare on Elm's Street\", genre: 'horror', rating: 5.7 },",
+            "  { name: 'Titanic', genre: 'drama', rating: 7.3 },",
+            "  { name: 'Maze Runner', genre: 'scifi', rating: 7.1 },",
+            "  { name: 'Blade runner', genre: 'scifi', rating: 8.9 }",
+            "];",
+            "",
+            "const res2 = topRankPerGroup(1, testData2, 'genre', 'rating');",
+            "const res3 = topRankPerGroup(2, testData2, 'genre', 'rating');",
+            "",
+            "//console.log(JSON.stringify(topRankPerGroup(10, testData1)));"
+          ]
         }
       }
     },
@@ -4537,8 +5094,13 @@
             "  return [[]];",
             "}"
           ],
-          "head": "",
-          "tail": "const res3 = towerOfHanoi(3, 'A', 'B', 'C');\nconst res3Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B']];\nconst res5 = towerOfHanoi(5, 'X', 'Y', 'Z');\nconst res7First10Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B'], ['A', 'C'], ['B', 'C'], ['B', 'A']];"
+          "head": [],
+          "tail": [
+            "const res3 = towerOfHanoi(3, 'A', 'B', 'C');",
+            "const res3Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B']];",
+            "const res5 = towerOfHanoi(5, 'X', 'Y', 'Z');",
+            "const res7First10Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B'], ['A', 'C'], ['B', 'C'], ['B', 'A']];"
+          ]
         }
       }
     },
@@ -4549,9 +5111,9 @@
         "A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: &nbsp; (X, Y, Z).",
         "<p>",
         "Task:",
-        "  ",
+        "",
         "    Write a function that takes two vectors (arrays) as input and computes their cross product.",
-        "  ",
+        "",
         "Your function should return <code>null</code> on",
         "invalid inputs (ie vectors of different lengths).",
         "</p>"
@@ -4586,8 +5148,13 @@
             "    // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const tv1 = [1, 2, 3];\nconst tv2 = [4, 5, 6];\nconst res12 = crossProduct(tv1, tv2);\nconst exp12 = [-3, 6, -3];"
+          "head": [],
+          "tail": [
+            "const tv1 = [1, 2, 3];",
+            "const tv2 = [4, 5, 6];",
+            "const res12 = crossProduct(tv1, tv2);",
+            "const exp12 = [-3, 6, -3];"
+          ]
         }
       }
     },
@@ -4600,9 +5167,9 @@
         "</p>",
         "<p>",
         "Task:",
-        "  ",
+        "",
         "    Write a function that takes any numbers of vectors (arrays) as input and computes their dot product.",
-        "  ",
+        "",
         "Your function should return <code>null</code> on",
         "invalid inputs (ie vectors of different lengths).",
         "</p>"
@@ -4628,12 +5195,12 @@
           "testString": "assert.equal(dotProduct([1], [1, 2]), null, 'dotProduct([[1], [1, 2]]) must return null.');"
         },
         {
-          "text": "dotProduct([[1, 3, -5], [4, -2, -1]]) must return 3.",
-          "testString": "assert.equal(dotProduct(...vectorsWp), 3, 'dotProduct([[1, 3, -5], [4, -2, -1]]) must return 3.');"
+          "text": "dotProduct([1, 3, -5], [4, -2, -1]) must return 3.",
+          "testString": "assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3, 'dotProduct([1, 3, -5], [4, -2, -1]) must return 3.');"
         },
         {
-          "text": "Should return 156000. ",
-          "testString": "assert.equal(dotProduct(...vectors5x5), 156000, 'Should return 156000. ');"
+          "text": "<code>dotProduct(...nVectors)</code> should return 156000",
+          "testString": "assert.equal(dotProduct([ 0, 1, 2, 3, 4 ], [ 0, 2, 4, 6, 8 ], [ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ], [ 0, 5, 10, 15, 20 ]), 156000, '<code>dotProduct(...nVectors)</code> should return 156000');"
         }
       ],
       "id": "594810f028c0303b75339ad3",
@@ -4649,8 +5216,8 @@
             "    // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const vectors5x5 = [ [ 0, 1, 2, 3, 4 ], [ 0, 2, 4, 6, 8 ], [ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ], [ 0, 5, 10, 15, 20 ] ];\nconst vectorsWp = [[1, 3, -5], [4, -2, -1]];"
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4672,9 +5239,9 @@
         "</pre>",
         "<p>",
         "Task:",
-        "  ",
+        "",
         "    Write a function that can wrap this text to any number of characters.",
-        "  ",
+        "",
         "As an example, the text wrapped to 80 characters should look like the following:",
         "</p>",
         "<pre>",
@@ -4689,28 +5256,28 @@
       ],
       "tests": [
         {
-          "text": "<code>wrap</code> must be a function.",
-          "testString": "assert.equal(typeof wrap, 'function', '<code>wrap</code> must be a function.');"
+          "text": "wrap must be a function.",
+          "testString": "assert.equal(typeof wrap, 'function', 'wrap must be a function.');"
         },
         {
-          "text": "<code>wrap</code> must return a string.",
-          "testString": "assert.equal(typeof wrap('abc', 10), 'string', '<code>wrap</code> must return a string.');"
+          "text": "wrap must return a string.",
+          "testString": "assert.equal(typeof wrap('abc', 10), 'string', 'wrap must return a string.');"
         },
         {
           "text": "wrap(80) must return 4 lines.",
-          "testString": "assert(wrapped80.split('\\n').length === 4, '<code>wrap(80)</code> must return 4 lines.');"
+          "testString": "assert(wrapped80.split('\\n').length === 4, 'wrap(80) must return 4 lines.');"
         },
         {
-          "text": "<code>wrap(80)</code> should break at the correct point. ",
-          "testString": "assert.equal(wrapped80.split('\\n')[0], '<code>wrap(80)</code> should break at the correct point. ');"
+          "text": "Your <code>wrap</code> function should return our expected text",
+          "testString": "assert.equal(wrapped80.split('\\n')[0], firstRow80, 'Your <code>wrap</code> function should return our expected text');"
         },
         {
           "text": "wrap(42) must return 7 lines.",
-          "testString": "assert(wrapped42.split('\\n').length === 7, '<code>wrap(42)</code> must return 7 lines.');"
+          "testString": "assert(wrapped42.split('\\n').length === 7, 'wrap(42) must return 7 lines.');"
         },
         {
-          "text": "<code>wrap(42)</code> should break at the correct point. ",
-          "testString": "assert.equal(wrapped42.split('\\n')[0], '<code>wrap(42)</code> should break at the correct point. ');"
+          "text": "Your <code>wrap</code> function should return our expected text",
+          "testString": "assert.equal(wrapped42.split('\\n')[0], firstRow42, 'Your <code>wrap</code> function should return our expected text');"
         }
       ],
       "id": "594810f028c0303b75339ad4",
@@ -4726,8 +5293,22 @@
             "  return text;",
             "}"
           ],
-          "head": "",
-          "tail": "const text =\n`Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX algorithm.\nIf your language provides this, you get easy extra credit,\nbut you ''must reference documentation'' indicating that the algorithm\nis something better than a simple minimimum length algorithm.`;\n\nconst wrapped80 = wrap(text, 80);\nconst wrapped42 = wrap(text, 42);\n\nconst firstRow80 =\n    'Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX';\n\nconst firstRow42 = 'Wrap text using a more sophisticated';"
+          "head": [],
+          "tail": [
+            "const text =",
+            "`Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX algorithm.",
+            "If your language provides this, you get easy extra credit,",
+            "but you ''must reference documentation'' indicating that the algorithm",
+            "is something better than a simple minimimum length algorithm.`;",
+            "",
+            "const wrapped80 = wrap(text, 80);",
+            "const wrapped42 = wrap(text, 42);",
+            "",
+            "const firstRow80 =",
+            "    'Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX';",
+            "",
+            "const firstRow42 = 'Wrap text using a more sophisticated';"
+          ]
         }
       }
     },
@@ -4749,10 +5330,10 @@
         "<a href=\"https://en.wikipedia.org/wiki/Fixed-point combinator\" title=\"wp: fixed-point combinator\">fixed-point combinators</a>.",
         "</p>",
         "Task:",
-        "  ",
+        "",
         "    Define the stateless Y combinator function and use it to compute",
         "    <a href=\"https://en.wikipedia.org/wiki/Factorial\" title=\"wp: factorial\">factorial</a>.",
-        "  ",
+        "",
         "<code>factorial(N)</code> function is already given to you.",
         "See also <a href=\"http://vimeo.com/45140590\">Jim Weirich: Adventures in Functional Programming</a>."
       ],
@@ -4806,8 +5387,10 @@
             "  };",
             "});"
           ],
-          "head": "",
-          "tail": "var factorial = Y(f => n => (n > 1 ? n * f(n - 1) : 1));"
+          "head": [],
+          "tail": [
+            "var factorial = Y(f => n => (n > 1 ? n * f(n - 1) : 1));"
+          ]
         }
       }
     },
@@ -4847,11 +5430,11 @@
       "tests": [
         {
           "text": "zeckendorf must be function",
-          "testString": "assert.equal(typeof zeckendorf, 'function', '<code>zeckendorf</code> must be function');"
+          "testString": "assert.equal(typeof zeckendorf, 'function', 'zeckendorf must be function');"
         },
         {
-          "text": "Passing a random number from a list to <code>zeckendorf</code> returns the correct zeckendorf number. ",
-          "testString": "assert.deepEqual(answer, solution20, 'Passing a random number from a list to <code>zeckendorf</code> returns the correct zeckendorf number. ');"
+          "text": "Your <code>zeckendorf</code> function should return the correct answer",
+          "testString": "assert.deepEqual(answer, solution20, 'Your <code>zeckendorf</code> function should return the correct answer');"
         }
       ],
       "id": "594810f028c0303b75339ad6",
@@ -4867,8 +5450,22 @@
             "  // good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "const range = (m, n) => (\n  Array.from({\n    length: Math.floor(n - m) + 1\n  }, (_, i) => m + i)\n);\n\nconst solution20 = [\n  '1', '10', '100', '101', '1000', '1001', '1010', '10000', '10001',\n  '10010', '10100', '10101', '100000', '100001', '100010', '100100', '100101',\n  '101000', '101001', '101010'\n];\n\nconst answer = range(1, 20).map(zeckendorf);"
+          "head": [],
+          "tail": [
+            "const range = (m, n) => (",
+            "  Array.from({",
+            "    length: Math.floor(n - m) + 1",
+            "  }, (_, i) => m + i)",
+            ");",
+            "",
+            "const solution20 = [",
+            "  '1', '10', '100', '101', '1000', '1001', '1010', '10000', '10001',",
+            "  '10010', '10100', '10101', '100000', '100001', '100010', '100100', '100101',",
+            "  '101000', '101001', '101010'",
+            "];",
+            "",
+            "const answer = range(1, 20).map(zeckendorf);"
+          ]
         }
       }
     },
@@ -4898,7 +5495,7 @@
         "                                                           </pre>",
         "It produces the thinned output:",
         "<pre>",
-        "                                                           ",
+        "",
         "    # ##########                       #######",
         "     ##        #                   ####       #",
         "     #          #                 ##",
@@ -4913,7 +5510,7 @@
         "     #                            ##",
         "     #                             ############",
         "                       ###                          ###",
-        "                                                           ",
+        "",
         "                                                           </pre>",
         "<h2>Algorithm</h2>",
         "Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes.",
@@ -4924,12 +5521,12 @@
         "  <tr><td>P7</td><td>P6</td><td>P5</td></tr>",
         "</table>",
         "Obviously the boundary pixels of the image cannot have the full eight neighbours.",
-        "  ",
+        "",
         "    Define $A(P1)$ = the number of transitions from white to black, (0 -> 1) in the sequence P2,P3,P4,P5,P6,P7,P8,P9,P2. (Note the extra P2 at the end - it is circular).",
-        "  ",
-        "  ",
+        "",
+        "",
         "    Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )",
-        "  ",
+        "",
         "<h3>Step 1:</h3>",
         "All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.",
         "  (0) The pixel is black and has eight neighbours",
@@ -4962,8 +5559,8 @@
           "testString": "assert.equal(typeof thinImage, 'function', '<code>thinImage</code> must be a function');"
         },
         {
-          "text": "<code>thinImage</code> must return an array of strings",
-          "testString": "assert.equal(typeof result, 'object', '<code>thinImage</code> must return an array of strings');"
+          "text": "<code>thinImage</code> must return an array",
+          "testString": "assert(Array.isArray(result), '<code>thinImage</code> must return an array');"
         },
         {
           "text": "<code>thinImage</code> must return an array of strings",
@@ -5007,8 +5604,49 @@
             "  // Good luck!",
             "}"
           ],
-          "head": "",
-          "tail": "\nconst imageForTests = [\n  '                                                          ',\n  ' #################                   #############        ',\n  ' ##################               ################        ',\n  ' ###################            ##################        ',\n  ' ########     #######          ###################        ',\n  '   ######     #######         #######       ######        ',\n  '   ######     #######        #######                      ',\n  '   #################         #######                      ',\n  '   ################          #######                      ',\n  '   #################         #######                      ',\n  '   ######     #######        #######                      ',\n  '   ######     #######        #######                      ',\n  '   ######     #######         #######       ######        ',\n  ' ########     #######          ###################        ',\n  ' ########     ####### ######    ################## ###### ',\n  ' ########     ####### ######      ################ ###### ',\n  ' ########     ####### ######         ############# ###### ',\n  '                                                          '];\nconst expected = [\n  '                                                          ',\n  '                                                          ',\n  '    # ##########                       #######            ',\n  '     ##        #                   ####       #           ',\n  '     #          #                 ##                      ',\n  '     #          #                #                        ',\n  '     #          #                #                        ',\n  '     #          #                #                        ',\n  '     ############               #                         ',\n  '     #          #               #                         ',\n  '     #          #                #                        ',\n  '     #          #                #                        ',\n  '     #          #                #                        ',\n  '     #                            ##                      ',\n  '     #                             ############           ',\n  '                       ###                          ###   ',\n  '                                                          ',\n  '                                                          '\n];\nconst result = thinImage(imageForTests);"
+          "head": [],
+          "tail": [
+            "const imageForTests = [",
+            "  '                                                          ',",
+            "  ' #################                   #############        ',",
+            "  ' ##################               ################        ',",
+            "  ' ###################            ##################        ',",
+            "  ' ########     #######          ###################        ',",
+            "  '   ######     #######         #######       ######        ',",
+            "  '   ######     #######        #######                      ',",
+            "  '   #################         #######                      ',",
+            "  '   ################          #######                      ',",
+            "  '   #################         #######                      ',",
+            "  '   ######     #######        #######                      ',",
+            "  '   ######     #######        #######                      ',",
+            "  '   ######     #######         #######       ######        ',",
+            "  ' ########     #######          ###################        ',",
+            "  ' ########     ####### ######    ################## ###### ',",
+            "  ' ########     ####### ######      ################ ###### ',",
+            "  ' ########     ####### ######         ############# ###### ',",
+            "  '                                                          '];",
+            "const expected = [",
+            "  '                                                          ',",
+            "  '                                                          ',",
+            "  '    # ##########                       #######            ',",
+            "  '     ##        #                   ####       #           ',",
+            "  '     #          #                 ##                      ',",
+            "  '     #          #                #                        ',",
+            "  '     #          #                #                        ',",
+            "  '     #          #                #                        ',",
+            "  '     ############               #                         ',",
+            "  '     #          #               #                         ',",
+            "  '     #          #                #                        ',",
+            "  '     #          #                #                        ',",
+            "  '     #          #                #                        ',",
+            "  '     #                            ##                      ',",
+            "  '     #                             ############           ',",
+            "  '                       ###                          ###   ',",
+            "  '                                                          ',",
+            "  '                                                          '",
+            "];",
+            "const result = thinImage(imageForTests);"
+          ]
         }
       }
     },
@@ -5074,13 +5712,20 @@
             "  return [[], []];",
             "}"
           ],
-          "head": "",
-          "tail": "const zm1 = [[0]];\nconst zm2 = [[0, 1], [2, 3]];\nconst zm5 = [\n  [0, 1, 5, 6, 14],\n  [2, 4, 7, 13, 15],\n  [3, 8, 12, 16, 21],\n  [9, 11, 17, 20, 22],\n  [10, 18, 19, 23, 24]\n];"
+          "head": [],
+          "tail": [
+            "const zm1 = [[0]];",
+            "const zm2 = [[0, 1], [2, 3]];",
+            "const zm5 = [",
+            "  [0, 1, 5, 6, 14],",
+            "  [2, 4, 7, 13, 15],",
+            "  [3, 8, 12, 16, 21],",
+            "  [9, 11, 17, 20, 22],",
+            "  [10, 18, 19, 23, 24]",
+            "];"
+          ]
         }
       }
     }
-  ],
-  "fileName": "08-coding-interview-questions-and-take-home-assignments/rosetta-code-problems.json",
-  "superBlock": "coding-interview-questions-and-take-home-assignments",
-  "superOrder": 8
+  ]
 }

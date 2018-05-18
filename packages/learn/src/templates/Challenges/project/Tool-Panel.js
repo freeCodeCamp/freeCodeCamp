@@ -1,15 +1,12 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
 // import { submittingSelector } from './redux';
+import { toggleMapModal } from '../../../redux/app';
 import { openModal } from '../redux';
-import { frontEndProject } from '../../../../utils/challengeTypes';
-
-import ButtonSpacer from '../../../components/util/ButtonSpacer';
-import ProjectForm from './ProjectForm';
 
 const mapStateToProps = () => ({});
 
@@ -17,30 +14,62 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       openHelpModal: () => openModal('help'),
-      openCompletionModal: () => openModal('completion')
+      toggleMapModal
     },
     dispatch
   );
 
 const propTypes = {
-  challengeType: PropTypes.number,
   guideUrl: PropTypes.string,
-  openCompletionModal: PropTypes.func.isRequired,
-  openHelpModal: PropTypes.func.isRequired
+  openHelpModal: PropTypes.func.isRequired,
+  toggleMapModal: PropTypes.func.isRequired
 };
 
 export class ToolPanel extends PureComponent {
   render() {
-    const {
-      guideUrl,
-      challengeType,
-      openHelpModal,
-      openCompletionModal
-    } = this.props;
-
-    const isFrontEnd = challengeType === frontEndProject;
+    const { guideUrl, openHelpModal, toggleMapModal } = this.props;
     return (
-      <Fragment>
+      <div className='tool-panel'>
+        <div id='left-tool-panel sub-panel'>
+          <Button bsStyle='default' onClick={toggleMapModal}>
+            View the Curriculum
+          </Button>
+        </div>
+        <div id='centre-tool-panel sub-panel' />
+        <div id='right-tool-panel sub-panel'>
+          {guideUrl && (
+            <Button
+              block={true}
+              bsStyle='primary'
+              className='btn-primary-ghost btn-big'
+              href={guideUrl}
+              target='_blank'
+              >
+              Get a hint
+            </Button>
+          )}
+          <Button
+            block={true}
+            bsStyle='primary'
+            className='btn-primary-ghost btn-big'
+            onClick={openHelpModal}
+            >
+            Ask for help on the forum
+          </Button>
+        </div>
+      </div>
+    );
+  }
+}
+
+ToolPanel.displayName = 'ProjectToolPanel';
+ToolPanel.propTypes = propTypes;
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
+
+/**
+ *
+ * <Fragment>
         <ProjectForm isFrontEnd={isFrontEnd} openModal={openCompletionModal} />
         <ButtonSpacer />
         {guideUrl && (
@@ -67,11 +96,4 @@ export class ToolPanel extends PureComponent {
         </Button>
         <ButtonSpacer />
       </Fragment>
-    );
-  }
-}
-
-ToolPanel.displayName = 'ProjectToolPanel';
-ToolPanel.propTypes = propTypes;
-
-export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
+ */

@@ -1,3 +1,6 @@
+/*
+  TODO(Bouncey): Placed in ./src/pages when we have auth
+*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';

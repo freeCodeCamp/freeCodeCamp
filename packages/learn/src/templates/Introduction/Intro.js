@@ -18,7 +18,7 @@ const propTypes = {
   })
 };
 
-function renderMenuItems({ edges }) {
+function renderMenuItems({ edges = [] }) {
   return edges.map(({ node }) => node).map(({ title, fields: { slug } }) => (
     <Link key={'intro-' + slug} to={slug}>
       <ListGroupItem>{title}</ListGroupItem>
@@ -28,8 +28,10 @@ function renderMenuItems({ edges }) {
 
 function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
   const { html, frontmatter: { block } } = markdownRemark;
-  const firstLesson = allChallengeNode.edges[0].node;
-  const firstLessonPath = firstLesson.fields.slug;
+  const firstLesson = allChallengeNode && allChallengeNode.edges[0].node;
+  const firstLessonPath = firstLesson
+    ? firstLesson.fields.slug
+    : '/strange-place';
   return (
     <Fragment>
       <Helmet>
@@ -53,7 +55,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
       <FullWidthRow>
         <h2 className='intro-toc-title'>Upcoming Lessons</h2>
         <ListGroup className='intro-toc'>
-          {renderMenuItems(allChallengeNode)}
+          {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
         </ListGroup>
       </FullWidthRow>
     </Fragment>

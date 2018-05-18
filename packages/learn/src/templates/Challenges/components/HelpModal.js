@@ -27,12 +27,12 @@ export class HelpModal extends PureComponent {
   render() {
     const { isOpen, closeHelpModal, createQuestion } = this.props;
     return (
-      <Modal show={isOpen}>
-        <Modal.Header>
-          Ask for help?
-          <span className='close closing-x' onClick={closeHelpModal}>
-            ×
-          </span>
+      <Modal onHide={closeHelpModal} show={isOpen}>
+        <Modal.Header
+          className='help-modal-header fcc-modal'
+          closeButton={true}
+          >
+          <Modal.Title className='text-center'>Ask for help?</Modal.Title>
         </Modal.Header>
         <Modal.Body className='text-center'>
           <h3>

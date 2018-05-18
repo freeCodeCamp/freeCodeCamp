@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { template as _template } from 'lodash';
 import { Observable } from 'rxjs';
 import cond from 'lodash/cond';
 import flow from 'lodash/flow';
@@ -54,7 +54,7 @@ export const cssToHtml = cond([
 //   template: String
 // ) => Observable[{ build: String, sources: Dictionary }]
 export function concatHtml(required, template) {
-  const createBody = template ? _.template(template) : defaultTemplate;
+  const createBody = template ? _template(template) : defaultTemplate;
   const source = this.shareReplay();
   const sourceMap = source.flatMap(files =>
     files.reduce((sources, file) => {

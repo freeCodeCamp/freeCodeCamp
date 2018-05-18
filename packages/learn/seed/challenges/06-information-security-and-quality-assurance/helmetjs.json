@@ -277,7 +277,7 @@
         },
         {
           "text": "BCrypt has been properly required",
-          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /bcrypt.*=.*require.*('|\")bcrypt('|\")/gi, 'You should correctly require and instanciate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })"
+          "testString": "getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /bcrypt.*=.*require.*('|\")bcrypt('|\")/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
       "solutions": [],
@@ -333,8 +333,5 @@
       "releasedOn": "Feb 17, 2017",
       "translations": {}
     }
-  ],
-  "fileName": "06-information-security-and-quality-assurance/information-security-with-helmetjs.json",
-  "superBlock": "information-security-and-quality-assurance",
-  "superOrder": 6
+  ]
 }

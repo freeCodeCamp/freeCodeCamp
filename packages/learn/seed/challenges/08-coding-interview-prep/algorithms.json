@@ -6,7 +6,7 @@
   "challenges": [
     {
       "id": "a3f503de51cf954ede28891d",
-      "title": "Symmetric Difference",
+      "title": "Find the Symmetric Difference",
       "description": [
         "Create a function that takes two or more arrays and returns an array of the <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of the provided arrays.",
         "Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term \"symmetric difference\" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). The resulting array must contain only unique values (<em>no duplicates</em>).",
@@ -117,8 +117,8 @@
             "",
             "sym([1, 2, 3], [5, 2, 1, 4]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -214,8 +214,8 @@
             "",
             "updateInventory(curInv, newInv);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -316,8 +316,8 @@
             "",
             "permAlone('aab');"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -326,7 +326,7 @@
       "title": "Pairwise",
       "description": [
         "Given an array <code>arr</code>, find element pairs whose sum equal the second argument <code>arg</code> and return the sum of their indices.",
-        "You may use multiple pairs that have the same numeric elements but different indices. Each pair should use the lowest possible available indices. Once an element has been used it cannot be reused to pair with another element.",
+        "You may use multiple pairs that have the same numeric elements but different indices. Each pair should use the lowest possible available indices. Once an element has been used it cannot be reused to pair with another element. For instance, <code>pairwise([1, 1, 2], 3)</code> creates a pair <code>[2, 1]</code> using the 1 at indice 0 rather than the 1 at indice 1, because 0+2 < 1+2.",
         "For example <code>pairwise([7, 9, 11, 13, 15], 20)</code> returns <code>6</code>. The pairs that sum to 20 are <code>[7, 13]</code> and <code>[9, 11]</code>. We can then write out the array with their indices and values.",
         "<table class=\"table\"><tr><th><strong>Index</strong></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>Value</td><td>7</td><td>9</td><td>11</td><td>13</td><td>15</td></tr></table>",
         "Below we'll take their corresponding indices and add them.",
@@ -410,8 +410,8 @@
             "",
             "pairwise([1,4,2,3,0,5], 7);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -423,7 +423,7 @@
         "Here we will see bubble sort. The bubble sort method starts at the beginning of an unsorted array and 'bubbles up' unsorted values towards the end, iterating through the array until it is completely sorted. It does this by comparing adjacent items and swapping them if they are out of order. The method continues looping through the array until no swaps occur at which point the array is sorted.",
         "This method requires multiple iterations through the array and for average and worst cases has quadratic time complexity. While simple, it is usually impractical in most situations.",
         "<strong>Instructions:</strong> Write a function <code>bubbleSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
-        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
       "tests": [
         {
@@ -464,8 +464,13 @@
             "// test array:",
             "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
           ],
-          "head": "",
-          "tail": "function isSorted(arr) {\n  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);\n  return check(0);\n};"
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
         }
       }
     },
@@ -474,8 +479,8 @@
       "title": "Implement Selection Sort",
       "description": [
         "Here we will implement selection sort. Selection sort works by selecting the minimum value in a list and swapping it with the first value in the list. It then starts at the second position, selects the smallest value in the remaining list, and swaps it with the second element. It continues iterating through the list and swapping elements until it reaches the end of the list. Now the list is sorted. Selection sort has quadratic time complexity in all cases.",
-        "<stong>Instructions</stong>: Write a function <code>selectionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
-        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
+        "<strong>Instructions</strong>: Write a function <code>selectionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
       "tests": [
         {
@@ -516,8 +521,13 @@
             "// test array:",
             "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
           ],
-          "head": "",
-          "tail": "function isSorted(arr) {\n  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);\n  return check(0);\n};"
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
         }
       }
     },
@@ -527,7 +537,7 @@
       "description": [
         "The next sorting method we'll look at is insertion sort. This method works by building up a sorted array at the beginning of the list. It begins the sorted array with the first element. Then it inspects the next element and swaps it backwards into the sorted array until it is in sorted position. It continues iterating through the list and swapping new items backwards into the sorted portion until it reaches the end. This algorithm has quadratic time complexity in the average and worst cases.",
         "<strong>Instructions:</strong> Write a function <code>insertionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
-        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
       "tests": [
         {
@@ -568,8 +578,13 @@
             "// test array:",
             "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
           ],
-          "head": "",
-          "tail": "function isSorted(arr) {\n  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);\n  return check(0);\n};"
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
         }
       }
     },
@@ -580,7 +595,7 @@
         "Here we will move on to an intermediate sorting algorithm: quick sort. Quick sort is an efficient, recursive divide-and-conquer approach to sorting an array. In this method, a pivot value is chosen in the original array. The array is then partitioned into two subarrays of values less than and greater than the pivot value. We then combine the result of recursively calling the quick sort algorithm on both sub-arrays. This continues until the base case of an empty or single-item array is reached, which we return. The unwinding of the recursive calls return us the sorted array.",
         "Quick sort is a very efficient sorting method, providing <i>O(nlog(n))</i> performance on average. It is also relatively easy to implement. These attributes make it a popular and useful sorting method.",
         "<strong>Instructions:</strong> Write a function <code>quickSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. While the choice of the pivot value is important, any pivot will do for our purposes here. For simplicity, the first or last element could be used.",
-        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
       "tests": [
         {
@@ -621,8 +636,13 @@
             "// test array:",
             "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
           ],
-          "head": "",
-          "tail": "function isSorted(arr) {\n  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);\n  return check(0);\n};"
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
         }
       }
     },
@@ -636,7 +656,7 @@
         "Merge sort is an efficient sorting method, with time complexity of <i>O(nlog(n))</i>. This algorithm is popular because it is performant and relatively easy to implement.",
         "As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.",
         "<strong>Instructions:</strong> Write a function <code>mergeSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance <code>merge</code>, which is responsible for merging two sorted arrays, and another function, for instance <code>mergeSort</code>, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!",
-        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting alogrithm in action!"
+        "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
       "tests": [
         {
@@ -677,13 +697,15 @@
             "// test array:",
             "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
           ],
-          "head": "",
-          "tail": "function isSorted(arr) {\n  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);\n  return check(0);\n};"
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
         }
       }
     }
-  ],
-  "fileName": "08-coding-interview-questions-and-take-home-assignments/coding-interview-algorithm-questions.json",
-  "superBlock": "coding-interview-questions-and-take-home-assignments",
-  "superOrder": 8
+  ]
 }

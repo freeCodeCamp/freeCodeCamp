@@ -1,9 +1,9 @@
-aside#map {
+.map-ui {
   height: 100%;
   max-height: calc(100vh - (45px + 1.45rem));
 }
 
-aside#map ul {
+.map-ui ul {
   list-style: none;
   color: #006400;
 }
@@ -20,6 +20,6 @@ aside#map ul {
   flex-shrink: 0
 }
 
-li.open>.map-title svg {
+li.open > .map-title svg {
   transform: rotate(90deg);
 }

@@ -4,6 +4,14 @@
     "react"
   ],
   "plugins": [
-    "add-module-exports"
+    "add-module-exports",
+    [
+      "transform-imports", {
+        "react-bootstrap": {
+          "transform": "react-bootstrap/lib/${member}",
+          "preventFullImport": true
+        }
+      }
+    ]
   ]
 }

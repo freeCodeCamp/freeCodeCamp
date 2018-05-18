@@ -79,7 +79,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -116,8 +116,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -223,7 +223,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -260,8 +260,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -366,7 +366,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -409,8 +409,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -496,7 +496,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -539,8 +539,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -601,7 +601,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -644,8 +644,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -711,7 +711,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -758,8 +758,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -846,7 +846,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -894,8 +894,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -981,7 +981,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1034,8 +1034,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1111,7 +1111,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1164,8 +1164,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1262,7 +1262,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-borders-around-your-elements",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1319,8 +1319,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1385,7 +1385,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-rounded-corners-a-border-radius",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1448,8 +1448,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1508,7 +1508,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1572,8 +1572,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1644,7 +1644,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1708,8 +1708,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1784,7 +1784,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1852,8 +1852,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1938,7 +1938,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2006,8 +2006,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2087,7 +2087,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/adjust-the-padding-of-an-element",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2129,8 +2129,8 @@
             "  <h5 class=\"box blue-box\">padding</h5>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2196,7 +2196,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2240,8 +2240,8 @@
             "  <h5 class=\"box blue-box\">padding</h5>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2307,7 +2307,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-a-negative-margin-to-an-element",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2350,8 +2350,8 @@
             "  <h5 class=\"box blue-box\">padding</h5>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2424,7 +2424,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2468,8 +2468,8 @@
             "  <h5 class=\"box blue-box\">padding</h5>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2541,7 +2541,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2585,8 +2585,8 @@
             "  <h5 class=\"box blue-box\">padding</h5>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2667,7 +2667,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2708,8 +2708,8 @@
             "  <h5 class=\"box blue-box\">padding</h5>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2791,7 +2791,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2832,8 +2832,8 @@
             "  <h5 class=\"box blue-box\">padding</h5>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2869,7 +2869,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2937,8 +2937,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2967,7 +2967,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3008,8 +3008,8 @@
             "  <h5 class=\"box green-box\">padding</h5>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3089,7 +3089,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3098,8 +3098,8 @@
             "",
             "</style>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3193,7 +3193,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3205,8 +3205,8 @@
             "",
             "</style>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3282,7 +3282,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3296,8 +3296,8 @@
             "</style>",
             "<h1>Hello World!</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3394,7 +3394,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3411,8 +3411,8 @@
             "</style>",
             "<h1 class=\"pink-text\">Hello World!</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3524,7 +3524,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3544,8 +3544,8 @@
             "</style>",
             "<h1 class=\"pink-text blue-text\">Hello World!</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3631,7 +3631,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3654,8 +3654,8 @@
             "</style>",
             "<h1 id=\"orange-text\" class=\"pink-text blue-text\">Hello World!</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3755,7 +3755,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3778,8 +3778,8 @@
             "</style>",
             "<h1 id=\"orange-text\" class=\"pink-text blue-text\" style=\"color: white\">Hello World!</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3849,7 +3849,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3860,8 +3860,8 @@
             "  }",
             "</style>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3953,7 +3953,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3981,8 +3981,8 @@
             "",
             "<h1 class=\"orange-text\">I am orange!</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4076,7 +4076,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4104,8 +4104,8 @@
             "",
             "<h1 class=\"green-text\">I am green!</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4196,7 +4196,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4207,8 +4207,8 @@
             "  }",
             "</style>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4292,7 +4292,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4320,8 +4320,8 @@
             "",
             "<h1 class=\"blue-text\">I am blue!</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4355,7 +4355,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4561,8 +4561,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4590,7 +4590,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -4793,8 +4793,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -4834,7 +4834,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -5050,8 +5050,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5084,7 +5084,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -5294,8 +5294,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5303,7 +5303,7 @@
       "id": "5a9d7295424fe3d0e10cad14",
       "title": "Cascading CSS variables",
       "description": [
-        "When you create a variable, it is becomes available for you to use inside the element in which you create it. It also becomes available within any elements nested within it. This effect is known as <dfn>cascading</dfn>.",
+        "When you create a variable, it becomes available for you to use inside the element in which you create it. It also becomes available within any elements nested within it. This effect is known as <dfn>cascading</dfn>.",
         "Because of cascading, CSS variables are often defined in the <dfn>:root</dfn> element.",
         "You can think of the <code>:root</code> element as a container for your entire HTML document, in the same way that an <code>html</code> element is a container for the <code>body</code> element.",
         "By creating your variables in <code>:root</code>, they will be available throughout the whole web page.",
@@ -5323,7 +5323,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -5531,8 +5531,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5558,7 +5558,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -5768,8 +5768,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -5799,7 +5799,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -6035,13 +6035,10 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "01-responsive-web-design/basic-css.json",
-  "superBlock": "responsive-web-design",
-  "superOrder": 1
+  ]
 }

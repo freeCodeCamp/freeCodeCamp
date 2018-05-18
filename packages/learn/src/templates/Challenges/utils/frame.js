@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { toString, flow } from 'lodash';
 import Rx, { Observable } from 'rxjs';
 import { ShallowWrapper, ReactWrapper } from 'enzyme';
 import Adapter15 from 'enzyme-adapter-react-15';
@@ -110,7 +110,7 @@ const writeTestDepsToDocument = frameReady => ctx => {
   // should not be used for modern
   tests.__source = sources && 'index' in sources ? sources['index'] : '';
   // provide the file name and get the original source
-  tests.__getUserInput = fileName => _.toString(sources[fileName]);
+  tests.__getUserInput = fileName => toString(sources[fileName]);
   tests.__checkChallengePayload = checkChallengePayload;
   tests.__frameReady = frameReady;
   return ctx;
@@ -129,7 +129,7 @@ const writeContentToFrame = ctx => {
 };
 
 export const createMainFramer = (document, getState, proxyLogger) =>
-  _.flow(
+  flow(
     createFrame(document, getState, mainId),
     mountFrame(document),
     addDepsToDocument,
@@ -138,7 +138,7 @@ export const createMainFramer = (document, getState, proxyLogger) =>
   );
 
 export const createTestFramer = (document, getState, frameReady) =>
-  _.flow(
+  flow(
     createFrame(document, getState, testId),
     mountFrame(document),
     addDepsToDocument,

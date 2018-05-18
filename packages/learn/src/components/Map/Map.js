@@ -24,10 +24,12 @@ class ShowMap extends PureComponent {
     const { nodes } = this.props;
     const superBlocks = uniq(nodes.map(({ superBlock }) => superBlock));
     return (
-      <ul>
-        {this.renderSuperBlocks(superBlocks)}
-        <Spacer />
-      </ul>
+      <div className='map-ui'>
+        <ul>
+          {this.renderSuperBlocks(superBlocks)}
+          <Spacer />
+        </ul>
+      </div>
     );
   }
 }

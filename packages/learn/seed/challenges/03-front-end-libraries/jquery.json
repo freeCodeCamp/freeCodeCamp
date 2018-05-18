@@ -76,13 +76,11 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
           "contents": [
-            "",
-            "",
             "<!-- Only change code above this line. -->",
             "",
             "<div class=\"container-fluid\">",
@@ -107,8 +105,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -181,7 +179,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -216,8 +214,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -289,7 +287,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -324,8 +322,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -397,7 +395,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -434,8 +432,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -499,7 +497,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -537,8 +535,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -622,7 +620,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -657,8 +655,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -722,7 +720,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -760,8 +758,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -833,7 +831,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -872,8 +870,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -940,7 +938,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -976,8 +974,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1044,7 +1042,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1080,8 +1078,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1124,7 +1122,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1161,8 +1159,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1215,7 +1213,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1253,8 +1251,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1310,7 +1308,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1349,8 +1347,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1410,7 +1408,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1452,8 +1450,8 @@
             "  </div>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1509,7 +1507,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1550,8 +1548,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1616,7 +1614,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1658,8 +1656,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1716,7 +1714,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1760,8 +1758,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1808,7 +1806,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1853,13 +1851,10 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "03-front-end-libraries/jquery.json",
-  "superBlock": "front-end-libraries",
-  "superOrder": 3
+  ]
 }

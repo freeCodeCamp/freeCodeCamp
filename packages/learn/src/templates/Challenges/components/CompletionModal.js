@@ -7,6 +7,8 @@ import { Button, Modal } from 'react-bootstrap';
 
 import GreenPass from './icons/GreenPass';
 
+import './completion-modal.css';
+
 import {
   closeModal,
   submitChallenge,
@@ -58,22 +60,22 @@ export class CompletionModal extends PureComponent {
     return (
       <Modal
         animation={false}
-        dialogClassName={'challenge-success-modal'}
+        bsSize='lg'
+        dialogClassName='challenge-success-modal'
         keyboard={true}
         onHide={close}
         onKeyDown={isOpen ? handleKeypress : noop}
         show={isOpen}
         >
-        <Modal.Header className={'challenge-list-header'} closeButton={true}>
-          <Modal.Title>{message}</Modal.Title>
+        <Modal.Header
+          className='challenge-list-header fcc-modal'
+          closeButton={true}
+          >
+          <Modal.Title className='text-center'>{message}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <div className='text-center'>
-            <div className='row'>
-              <div>
-                <GreenPass />
-              </div>
-            </div>
+        <Modal.Body className='completion-modal-body'>
+          <div className='success-icon-wrapper'>
+            <GreenPass />
           </div>
         </Modal.Body>
         <Modal.Footer>

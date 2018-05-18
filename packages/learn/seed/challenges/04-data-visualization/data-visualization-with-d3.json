@@ -59,7 +59,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -74,8 +74,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -115,7 +115,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -135,8 +135,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -184,7 +184,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -201,8 +201,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -269,7 +269,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -290,8 +290,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -327,7 +327,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -349,8 +349,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -416,7 +416,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -438,8 +438,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -475,7 +475,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -504,8 +504,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -571,7 +571,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -601,8 +601,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -667,7 +667,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -699,8 +699,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -742,7 +742,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -768,8 +768,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -819,7 +819,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -843,8 +843,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -889,7 +889,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -919,8 +919,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -988,7 +988,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1022,8 +1022,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1087,7 +1087,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1121,8 +1121,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1189,7 +1189,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1223,8 +1223,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1255,7 +1255,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1288,8 +1288,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1354,7 +1354,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1393,8 +1393,8 @@
             "  </script>",
             "<body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1428,7 +1428,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1470,8 +1470,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1502,7 +1502,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1550,8 +1550,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1618,7 +1618,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1667,8 +1667,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1699,7 +1699,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1738,8 +1738,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1814,7 +1814,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1856,8 +1856,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1929,7 +1929,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1978,8 +1978,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2023,7 +2023,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2044,8 +2044,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2097,7 +2097,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2117,8 +2117,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2160,7 +2160,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2180,8 +2180,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2225,7 +2225,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2271,8 +2271,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2390,7 +2390,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2451,8 +2451,8 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2499,7 +2499,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2567,13 +2567,10 @@
             "  </script>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "04-data-visualization/data-visualization-with-d3.json",
-  "superBlock": "data-visualization",
-  "superOrder": 4
+  ]
 }

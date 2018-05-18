@@ -34,7 +34,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -73,8 +73,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -100,7 +100,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -140,8 +140,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -167,7 +167,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -208,8 +208,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -242,7 +242,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -286,8 +286,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -321,7 +321,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -365,8 +365,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -376,7 +376,7 @@
       "description": [
         "To emphasize text, you can use the <code>em</code> tag. This displays text as italicized, as the browser applies the CSS of <code>font-style: italic;</code> to the element.",
         "<hr>",
-        "Wrap an <code>em</code> tag around the paragraph tag to give it emphasis."
+        "Wrap an <code>em</code> tag around the contents of the paragraph tag to give it emphasis."
       ],
       "tests": [
         {
@@ -384,8 +384,8 @@
           "testString": "assert($('em').length == 1, 'Your code should add an <code>em</code> tag to the markup.');"
         },
         {
-          "text": "The <code>em</code> tag should wrap around the <code>p</code> tag and its contents.",
-          "testString": "assert($('em').children('p').length == 1, 'The <code>em</code> tag should wrap around the <code>p</code> tag and its contents.');"
+          "text": "The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.",
+          "testString": "assert($('p').children().length == 1 && $('em').children().length == 2, 'The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.');"
         }
       ],
       "solutions": [],
@@ -395,7 +395,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -439,8 +439,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -473,7 +473,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -517,8 +517,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -548,7 +548,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -593,8 +593,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -631,7 +631,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -678,8 +678,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -704,7 +704,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -751,8 +751,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -784,7 +784,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -834,8 +834,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -862,7 +862,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -913,8 +913,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -945,7 +945,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -997,8 +997,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1043,7 +1043,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1063,8 +1063,8 @@
             "<h5>This is h5 text</h5>",
             "<h6>This is h6 text</h6>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1110,7 +1110,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1148,8 +1148,8 @@
             "<h5>This is h5 text</h5>",
             "<h6>This is h6 text</h6>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1174,7 +1174,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1188,8 +1188,8 @@
             "  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             "</p>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1214,7 +1214,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1229,8 +1229,8 @@
             "  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             "</p>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1261,7 +1261,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1276,8 +1276,8 @@
             "</style>",
             "<a href=\"http://freecatphotoapp.com/\" target=\"_blank\">CatPhotoApp</a>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1310,7 +1310,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1327,8 +1327,8 @@
             "  <p>I still think the h2 is where it normally sits.</p>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1358,7 +1358,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1378,8 +1378,8 @@
             "  <p>I still think the h2 is where it normally sits.</p>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1390,7 +1390,7 @@
         "The next option for the CSS <code>position</code> property is <code>absolute</code>, which locks the element in place relative to its parent container. Unlike the <code>relative</code> position, this removes the element from the normal flow of the document, so surrounding items ignore it. The CSS offset properties (top or bottom and left or right) are used to adjust the position.",
         "One nuance with absolute positioning is that it will be locked relative to its closest <em>positioned</em> ancestor. If you forget to add a position rule to the parent item, (this is typically done using <code>position: relative;</code>), the browser will keep looking up the chain and ultimately default to the body tag.",
         "<hr>",
-        "Lock the <code>#searchbar</code> element to the top-right of its <code>section</code> parent by declaring its <code>position</code> as <code>absolute</code>. Give it <code>top</code> and <code>right</code> offsets of 0.5 pixels each."
+        "Lock the <code>#searchbar</code> element to the top-right of its <code>section</code> parent by declaring its <code>position</code> as <code>absolute</code>. Give it <code>top</code> and <code>right</code> offsets of 50 pixels each."
       ],
       "tests": [
         {
@@ -1398,12 +1398,12 @@
           "testString": "assert($('#searchbar').css('position') == 'absolute', 'The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.');"
         },
         {
-          "text": "Your code should use the <code>top</code> CSS offset of 0.5 pixels on the <code>#searchbar</code> element.",
-          "testString": "assert($('#searchbar').css('top') == '0.5px', 'Your code should use the <code>top</code> CSS offset of 0.5 pixels on the <code>#searchbar</code> element.');"
+          "text": "Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.",
+          "testString": "assert($('#searchbar').css('top') == '50px', 'Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
         },
         {
-          "text": "Your code should use the <code>right</code> CSS offset of 0.5 pixels on the <code>#searchbar</code> element.",
-          "testString": "assert($('#searchbar').css('right') == '0.5px', 'Your code should use the <code>right</code> CSS offset of 0.5 pixels on the <code>#searchbar</code> element.');"
+          "text": "Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.",
+          "testString": "assert($('#searchbar').css('right') == '50px', 'Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
         }
       ],
       "solutions": [],
@@ -1413,7 +1413,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1439,8 +1439,8 @@
             "  </section>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1474,7 +1474,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1512,8 +1512,8 @@
             "  <p>I shift up when the #navbar is fixed to the browser window.</p>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1542,7 +1542,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1577,8 +1577,8 @@
             "  </aside>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1603,7 +1603,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1632,8 +1632,8 @@
             "<div class=\"first\"></div>",
             "<div class=\"second\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1659,7 +1659,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1674,8 +1674,8 @@
             "</style>",
             "<div></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1709,7 +1709,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1733,8 +1733,8 @@
             "<div class=\"blue\"></div>",
             "<div class=\"yellow\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1771,7 +1771,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1804,8 +1804,8 @@
             "<div class=\"cyan\"></div>",
             "<div class=\"raspberry\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1842,7 +1842,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1886,8 +1886,8 @@
             "<br>",
             "<footer>&copy;2016 FCC Kitchen</footer>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1937,7 +1937,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1970,8 +1970,8 @@
             "<div class=\"cyan\"></div>",
             "<div class=\"blue\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1996,7 +1996,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2043,8 +2043,8 @@
             "  </nav>",
             "</header>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2074,7 +2074,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2093,8 +2093,8 @@
             "",
             "<div></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2144,7 +2144,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2169,8 +2169,8 @@
             "",
             "<div></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2197,7 +2197,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2208,8 +2208,8 @@
             "  }",
             "</style>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2235,7 +2235,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2267,8 +2267,8 @@
             "<div class=\"ball\" id= \"ball1\"></div>",
             "<div class=\"ball\" id= \"ball2\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2297,7 +2297,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2320,8 +2320,8 @@
             "",
             "<div></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2350,7 +2350,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2373,8 +2373,8 @@
             "<div id=\"top\"></div>",
             "<div id=\"bottom\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2399,7 +2399,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2423,8 +2423,8 @@
             "<div id=\"top\"></div>",
             "<div id=\"bottom\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2460,7 +2460,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2485,8 +2485,8 @@
             "</style>",
             "<div class=\"center\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2528,7 +2528,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2569,8 +2569,8 @@
             "</style>",
             "<div class = \"heart\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2622,7 +2622,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2647,8 +2647,8 @@
             "</style>",
             "<div id=\"rect\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2680,7 +2680,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2703,8 +2703,8 @@
             "  ",
             "<button>Register</button>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2730,7 +2730,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2757,8 +2757,8 @@
             "</style>",
             "<button>Register</button>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2793,7 +2793,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2834,8 +2834,8 @@
             "",
             "<div id=\"rect\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2861,7 +2861,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2895,8 +2895,8 @@
             "",
             "<div id=\"ball\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2923,7 +2923,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2962,8 +2962,8 @@
             "</style>",
             "<div id=\"ball\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2993,7 +2993,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3068,8 +3068,8 @@
             "<div class=\"back\"></div>",
             "<div class=\"heart\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3097,7 +3097,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3155,8 +3155,8 @@
             "<div class=\"star-1 stars\"></div>",
             "<div class=\"star-2 stars\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3190,7 +3190,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3249,8 +3249,8 @@
             "<div class=\"star-2 stars\"></div>",
             "<div class=\"star-3 stars\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3280,7 +3280,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3325,8 +3325,8 @@
             "<div class=\"balls\" id=\"ball1\"></div>",
             "<div class=\"balls\" id=\"ball2\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3359,7 +3359,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3404,8 +3404,8 @@
             "<div class=\"balls\" id=\"ball1\"></div>",
             "<div class=\"balls\" id=\"ball2\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3441,7 +3441,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3479,8 +3479,8 @@
             "<div class=\"balls\" id= \"red\"></div>",
             "<div class=\"balls\" id= \"blue\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3509,7 +3509,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3552,13 +3552,10 @@
             "<div class=\"balls\" id=\"blue\"></div>",
             "<div class=\"balls\" id=\"green\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "01-responsive-web-design/applied-visual-design.json",
-  "superBlock": "responsive-web-design",
-  "superOrder": 1
+  ]
 }

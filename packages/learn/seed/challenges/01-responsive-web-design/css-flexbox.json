@@ -26,7 +26,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -56,8 +56,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -107,7 +107,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -202,8 +202,8 @@
             "  </div>",
             "</footer>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -230,7 +230,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -259,8 +259,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -289,7 +289,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -386,8 +386,8 @@
             "  </div>",
             "</footer>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -412,7 +412,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -441,8 +441,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -467,7 +467,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -561,8 +561,8 @@
             "  </div>",
             "</footer>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -592,7 +592,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -622,8 +622,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -648,7 +648,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -743,8 +743,8 @@
             "  </div>",
             "</footer>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -774,7 +774,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -804,8 +804,8 @@
             "  <div id=\"box-2\"><p>Goodbye</p></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -838,7 +838,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -935,8 +935,8 @@
             "  </div>",
             "</footer>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -964,7 +964,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1018,8 +1018,8 @@
             "  <div id=\"box-6\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1050,7 +1050,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1080,8 +1080,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1111,7 +1111,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1140,8 +1140,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1179,7 +1179,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1208,8 +1208,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1245,7 +1245,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1273,8 +1273,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1303,7 +1303,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1333,8 +1333,8 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1364,7 +1364,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1394,13 +1394,10 @@
             "  <div id=\"box-2\"></div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "01-responsive-web-design/css-flexbox.json",
-  "superBlock": "responsive-web-design",
-  "superOrder": 1
+  ]
 }

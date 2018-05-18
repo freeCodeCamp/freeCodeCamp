@@ -1,0 +1,14 @@
+.challenge-instructions {
+  font-size: 16px;
+}
+
+.challenge-instructions blockquote {
+  background-color: #eee;
+  color: #c7254e;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1.45rem;
+  font-family: monospace;
+  font-size: 16px;
+}

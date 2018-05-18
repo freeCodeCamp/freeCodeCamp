@@ -1,0 +1,11 @@
+.reset-modal-header {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.reset-modal-header .close {
+  color: #fff;
+  font-size: 28px;
+  text-shadow: none;
+}

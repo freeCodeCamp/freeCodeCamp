@@ -29,15 +29,15 @@
       "translations": {},
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-alt-text-to-an-image-for-accessibility",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
           "contents": [
             "<img src=\"doingKarateWow.jpeg\">"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -70,7 +70,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -88,8 +88,8 @@
             "  <p>To Come...</p>",
             "</article>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -125,7 +125,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -145,8 +145,8 @@
             "  <h5>How to Simplify your Life</h5>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -178,7 +178,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -191,8 +191,8 @@
             "",
             "<footer></footer>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -225,7 +225,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -252,8 +252,8 @@
             "  </article>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -292,7 +292,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -323,8 +323,8 @@
             "  </main>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -362,7 +362,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -399,8 +399,8 @@
             "  </main>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -437,7 +437,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -477,8 +477,8 @@
             "",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -532,7 +532,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -549,8 +549,8 @@
             "  </main>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -598,7 +598,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -645,8 +645,8 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -679,7 +679,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -717,8 +717,8 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -763,7 +763,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -812,8 +812,8 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -854,7 +854,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -883,8 +883,8 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -923,7 +923,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -960,8 +960,8 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1006,7 +1006,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1096,8 +1096,8 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1127,7 +1127,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1151,8 +1151,8 @@
             "  </article>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1184,7 +1184,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1208,8 +1208,8 @@
             "  </article>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1236,7 +1236,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1258,8 +1258,8 @@
             "  <button>Delete Internet</button>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1289,7 +1289,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1304,8 +1304,8 @@
             "  </article>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1345,7 +1345,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1373,8 +1373,8 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1406,7 +1406,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1459,8 +1459,8 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1502,7 +1502,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1539,13 +1539,10 @@
             "  <footer>&copy; 2016 Camper Cat</footer>",
             "</body>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "01-responsive-web-design/applied-accessibility.json",
-  "superBlock": "responsive-web-design",
-  "superOrder": 1
+  ]
 }

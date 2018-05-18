@@ -3,12 +3,10 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
-
 import { AllChallengeNode } from '../redux/propTypes';
 
 import Header from '../components/Header';
-import Map from '../components/Map';
+import MapModal from '../components/MapModal';
 
 import './global.css';
 import 'react-reflex/styles.css';
@@ -24,24 +22,13 @@ const Layout = ({ children, data: { allChallengeNode: { edges } } }) => (
     />
     <Header />
     <div className='app-wrapper'>
-      <ReflexContainer orientation='vertical'>
-        <ReflexElement flex={0.2} minSize={100}>
-          <aside id='map'>
-            <Map
-              nodes={edges
-                .map(({ node }) => node)
-                .filter(({ isPrivate }) => !isPrivate)}
-            />
-          </aside>
-        </ReflexElement>
-
-        <ReflexSplitter />
-
-        <ReflexElement>
-          <main>{children()}</main>
-        </ReflexElement>
-      </ReflexContainer>
+      <main>{children()}</main>
     </div>
+    <MapModal
+      nodes={edges
+        .map(({ node }) => node)
+        .filter(({ isPrivate }) => !isPrivate)}
+    />
   </Fragment>
 );
 

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ChallengeTitle from '../components/Challenge-Title';
+import Spacer from '../../../components/util/Spacer';
 
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
@@ -24,6 +25,7 @@ export default class SidePanel extends PureComponent {
     const { title, description, isCompleted } = this.props;
     return (
       <div>
+        <Spacer />
         <ChallengeTitle isCompleted={isCompleted}>{title}</ChallengeTitle>
         <ul>{this.renderDescription(title, description)}</ul>
       </div>

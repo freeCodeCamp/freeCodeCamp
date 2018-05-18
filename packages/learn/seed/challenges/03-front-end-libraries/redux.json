@@ -40,7 +40,9 @@
             "// Define the store here:",
             "",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -82,7 +84,9 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -121,7 +125,9 @@
           "contents": [
             "// Define an action here:",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -162,7 +168,9 @@
             "}",
             "// Define an action creator here:",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -216,7 +224,9 @@
             "",
             "// Dispatch the action here:",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -274,7 +284,9 @@
             "    type: 'LOGIN'",
             "  }",
             "};"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -342,7 +354,9 @@
             "    type: 'LOGOUT'",
             "  }",
             "};"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -437,7 +451,9 @@
             "    type: 'LOGOUT'",
             "  }",
             "};"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -526,7 +542,8 @@
             "console.log(count);",
             "store.dispatch({type: ADD});",
             "console.log(count);"
-          ]
+          ],
+          "tail": []
         }
       },
       "tests": [
@@ -606,7 +623,9 @@
             "",
             "const store = Redux.createStore(rootReducer);",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -675,7 +694,9 @@
             "console.log(store.getState());",
             "store.dispatch(addNoteText('Hello!'));",
             "console.log(store.getState());"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -760,7 +781,9 @@
             "  asyncDataReducer,",
             "  Redux.applyMiddleware(ReduxThunk.default)",
             ");"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -818,7 +841,9 @@
             "const decAction = null; // define an action creator for decrementing",
             "",
             "const store = null; // define the Redux store here, passing in your reducers"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -901,7 +926,9 @@
             "}",
             "",
             "const store = Redux.createStore(immutableReducer);"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -961,7 +988,9 @@
             "}",
             "",
             "const store = Redux.createStore(immutableReducer);"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -1023,7 +1052,9 @@
             "}",
             "",
             "const store = Redux.createStore(immutableReducer);"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -1089,7 +1120,9 @@
             "};",
             "",
             "const store = Redux.createStore(immutableReducer);"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -1118,8 +1151,5 @@
       "translations": {},
       "redux": true
     }
-  ],
-  "fileName": "03-front-end-libraries/redux.json",
-  "superBlock": "front-end-libraries",
-  "superOrder": 3
+  ]
 }

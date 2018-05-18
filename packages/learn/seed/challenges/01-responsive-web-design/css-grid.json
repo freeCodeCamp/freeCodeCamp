@@ -26,7 +26,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -57,8 +57,8 @@
             "  <div class=\"d5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -86,7 +86,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -118,8 +118,8 @@
             "  <div class=\"d5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -144,7 +144,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -177,8 +177,8 @@
             "  <div class=\"d5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -209,7 +209,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -243,8 +243,8 @@
             "  <div class=\"d5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -271,7 +271,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -306,8 +306,8 @@
             "  <div class=\"d5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -332,7 +332,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -367,8 +367,8 @@
             "  <div class=\"d5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -393,7 +393,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -427,8 +427,8 @@
             "  <div class=\"d5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -438,6 +438,8 @@
       "description": [
         "Up to this point, all the properties that have been discussed are for grid containers. The <code>grid-column</code> property is the first one for use on the grid items themselves.",
         "The hypothetical horizontal and vertical lines that create the grid are referred to as <dfn>lines</dfn>. These lines are numbered starting with 1 at the top left corner of the grid and move right for columns and down for rows, counting upward.",
+        "This is what the lines look like for  a 3x3 grid:",
+        "<div style=\"position:relative;margin:auto;background:Gainsboro;display:block;margin-top:100px;margin-bottom:50px;width:200px;height:200px;\"><p style=\"left:25%;top:-30%;font-size:130%;position:absolute;color:RoyalBlue;\">column lines</p><p style=\"left:0%;top:-15%;font-size:130%;position:absolute;color:RoyalBlue;\">1</p><p style=\"left:30%;top:-15%;font-size:130%;position:absolute;color:RoyalBlue;\">2</p><p style=\"left:63%;top:-15%;font-size:130%;position:absolute;color:RoyalBlue;\">3</p><p style=\"left:95%;top:-15%;font-size:130%;position:absolute;color:RoyalBlue;\">4</p><p style=\"left:-40%;top:45%;font-size:130%;transform:rotateZ(-90deg);position:absolute;\">row lines</p><p style=\"left:-10%;top:-10%;font-size:130%;position:absolute;\">1</p><p style=\"left:-10%;top:21%;font-size:130%;position:absolute;\">2</p><p style=\"left:-10%;top:53%;font-size:130%;position:absolute;\">3</p><p style=\"left:-10%;top:85%;font-size:130%;position:absolute;\">4</p><div style=\"left:0%;top:0%;width:5%;height:100%;background:RoyalBlue;position:absolute;\"></div><div style=\"left:31%;top:0%;width:5%;height:100%;background:RoyalBlue;position:absolute;\"></div><div style=\"left:63%;top:0%;width:5%;height:100%;background:RoyalBlue;position:absolute;\"></div><div style=\"left:95%;top:0%;width:5%;height:100%;background:RoyalBlue;position:absolute;\"></div><div style=\"left:0%;top:0%;width:100%;height:5%;background:black;position:absolute;\"></div><div style=\"left:0%;top:31%;width:100%;height:5%;background:black;position:absolute;\"></div><div style=\"left:0%;top:63%;width:100%;height:5%;background:black;position:absolute;\"></div><div style=\"left:0%;top:95%;width:100%;height:5%;background:black;position:absolute;\"></div></div>",
         "To control the amount of columns an item will consume, you can use the <code>grid-column</code> property in conjunction with the line numbers you want the item to start and stop at.",
         "Here's an example:",
         "<blockquote>grid-column: 1 / 3;</blockquote>",
@@ -458,7 +460,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -497,8 +499,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -523,7 +525,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -563,8 +565,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -572,7 +574,7 @@
       "id": "5a90374338fddaf9a66b5d3a",
       "title": "Align an Item Horizontally using justify-self",
       "description": [
-        "In CSS Grid, the content of each item is located in a box which is referred to as a <dfn>cell</dfn>. You can align the content's position within its cell horizontally using the <code>justify-self</code> property on a grid item. By default, this property has a value of <code>stetch</code>, which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well:",
+        "In CSS Grid, the content of each item is located in a box which is referred to as a <dfn>cell</dfn>. You can align the content's position within its cell horizontally using the <code>justify-self</code> property on a grid item. By default, this property has a value of <code>stretch</code>, which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well:",
         "<code>start</code>: aligns the content at the left of the cell,",
         "<code>center</code>: aligns the content in the center of the cell,",
         "<code>end</code>: aligns the content at the right of the cell.",
@@ -592,7 +594,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -632,8 +634,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -658,7 +660,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -698,8 +700,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -724,7 +726,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -760,8 +762,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -786,7 +788,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -822,8 +824,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -852,7 +854,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -891,8 +893,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -919,7 +921,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -962,8 +964,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -992,7 +994,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1031,8 +1033,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1065,7 +1067,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1101,8 +1103,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1112,7 +1114,7 @@
       "description": [
         "There's another built-in function to use with <code>grid-template-columns</code> and <code>grid-template-rows</code> called <code>minmax</code>. It's used to limit the size of items when the grid container changes size. To do this you need to specify the acceptable size range for your item. Here is an example:",
         "<blockquote>grid-template-columns: 100px minmax(50px, 200px);</blockquote>",
-        "In the code above, <code>grid-template-columns</code> is set to create three columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.",
+        "In the code above, <code>grid-template-columns</code> is set to create two columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.",
         "<hr>",
         "Using the <code>minmax</code> function, replace the <code>1fr</code> in the <code>repeat</code> function with a column size that has the minimum width of <code>90px</code> and the maximum width of <code>1fr</code>, and resize the preview panel to see the effect."
       ],
@@ -1129,7 +1131,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1165,8 +1167,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1195,7 +1197,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1248,8 +1250,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1275,7 +1277,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1329,8 +1331,8 @@
             "  <div class=\"item5\">5</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1356,7 +1358,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1430,8 +1432,8 @@
             "  <div class=\"item4\">footer</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1461,7 +1463,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1525,13 +1527,10 @@
             "  <div class=\"item4\">footer</div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "01-responsive-web-design/css-grid.json",
-  "superBlock": "responsive-web-design",
-  "superOrder": 1
+  ]
 }

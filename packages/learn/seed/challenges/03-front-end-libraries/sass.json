@@ -47,7 +47,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -77,8 +77,8 @@
             "  <p>Even more random text within a paragraph</p>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -113,7 +113,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -136,8 +136,8 @@
             "  <p>This is a paragraph</p>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -196,7 +196,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -216,8 +216,8 @@
             "<div id=\"awesome\"></div>",
             "  "
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -232,9 +232,9 @@
       ],
       "description": [
         "The <code>@if</code> directive in Sass is useful to test for a specific case - it works just like the <code>if</code> statement in JavaScript</code>.",
-        "<blockquote>@mixin make-bold($bool) {<br>&nbsp;&nbsp;@if $bool == bold { font-weight: bold; }<br>}</blockquote>",
+        "<blockquote>@mixin make-bold($bool) {<br>&nbsp;&nbsp;@if $bool == true {<br>&nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "And just like in JavaScript, <code>@else if</code> and <code>@else</code> test for more conditions:",
-        "<blockquote>@mixin text-effect($val) {<br>&nbsp;&nbsp;@if $val == danger {color: red;}<br>&nbsp;&nbsp;@else if $val == alert {color: yellow;}<br>&nbsp;&nbsp;@else if $val == success {color: green;}<br>&nbsp;&nbsp;@else {color: black;}<br>}</blockquote>",
+        "<blockquote>@mixin text-effect($val) {<br>&nbsp;&nbsp;@if $val == danger {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: red;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;@else if $val == alert {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: yellow;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;@else if $val == success {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;@else {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: black;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "<hr>",
         "Create a <code>mixin</code> called <code>border-stroke</code> that takes a parameter <code>$val</code>. The <code>mixin</code> should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:",
         "<blockquote>light - 1px solid black<br>medium - 3px solid black<br>heavy - 6px solid black<br>none - no border</blockquote>"
@@ -268,7 +268,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -287,8 +287,8 @@
             "",
             "<div id=\"box\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -346,7 +346,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -363,8 +363,8 @@
             "<p class=\"text-4\">Hello</p>",
             "<p class=\"text-5\">Hello</p>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -397,15 +397,15 @@
         },
         {
           "text": "Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.",
-          "testString": "assert($('blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');"
+          "testString": "assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)', 'Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.');"
         },
         {
           "text": "Your <code>.black-bg</code> class should have a <code>background-color</code> of black.",
-          "testString": "assert($('black-bg').css('background-color') == 'rgb(0, 0, 0)', 'Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');"
+          "testString": "assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)', 'Your <code>.black-bg</code> class should have a <code>background-color</code> of black.');"
         },
         {
           "text": "Your <code>.red-bg</code> class should have a <code>background-color</code> of red.",
-          "testString": "assert($('red-bg').css('background-color') == 'rgb(255, 0, 0)', 'Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');"
+          "testString": "assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)', 'Your <code>.red-bg</code> class should have a <code>background-color</code> of red.');"
         }
       ],
       "solutions": [],
@@ -415,7 +415,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -434,8 +434,8 @@
             "<div class=\"black-bg\"></div>",
             "<div class=\"red-bg\"></div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -519,7 +519,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -541,8 +541,8 @@
             "<p class=\"text-9\">Hello</p>",
             "<p class=\"text-10\">Hello</p>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -577,7 +577,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -588,8 +588,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -616,16 +616,12 @@
       ],
       "tests": [
         {
-          "text": "Your code should use the <code>@extend</code> directive to extend the <code>info</code> class.",
-          "testString": "assert(code.match(/@extend\\s+?\\.info/g), 'Your code should use the <code>@extend</code> directive to extend the <code>info</code> class.');"
+          "text": "Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.",
+          "testString": "assert(code.match(/\\.info-important\\s*?{[\\s\\S]*background-color\\s*?:\\s*?magenta\\s*?;[\\s\\S]*}/gi), 'Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.');"
         },
         {
-          "text": "Your <code>info-important</code> class should have a <code>background-color</code> set to magenta.",
-          "testString": "assert($('.info-important').css('background-color') == 'rgb(255, 0, 255)', 'Your <code>info-important</code> class should have a <code>background-color</code> set to magenta.');"
-        },
-        {
-          "text": "Your <code>info-important</code> class should inherit the styling from the <code>info</code> class.",
-          "testString": "assert($('.info-important').css('width') == '200px', 'Your <code>info-important</code> class should inherit the styling from the <code>info</code> class.');"
+          "text": "Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.",
+          "testString": "assert(code.match(/\\.info-important\\s*?{[\\s\\S]*@extend\\s*?.info\\s*?;[\\s\\S]*/gi), 'Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.');"
         }
       ],
       "solutions": [],
@@ -635,7 +631,7 @@
       "challengeType": 0,
       "translations": {},
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -663,13 +659,10 @@
             "  <p>This is a simple post. It has basic styling and can be extended for other uses.</p>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "03-front-end-libraries/sass.json",
-  "superBlock": "front-end-libraries",
-  "superOrder": 3
+  ]
 }

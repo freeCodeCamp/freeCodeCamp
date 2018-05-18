@@ -183,8 +183,5 @@
       "challengeType": 3,
       "translations": {}
     }
-  ],
-  "fileName": "04-data-visualization/data-visualization-projects.json",
-  "superBlock": "data-visualization",
-  "superOrder": 4
+  ]
 }

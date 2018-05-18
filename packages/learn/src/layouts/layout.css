@@ -22,5 +22,6 @@ main {
 }
 
 .app-wrapper {
-  height: calc(100vh - (38px + 0.45rem));
+  margin-top: 38px;
+  height: calc(100vh - 80px);
 }

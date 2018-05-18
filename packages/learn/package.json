@@ -8,6 +8,7 @@
     "auth0-js": "^9.5.1",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
+    "babel-plugin-transform-imports": "^1.5.0",
     "babel-standalone": "^6.26.0",
     "brace": "^0.11.1",
     "chai": "^4.1.2",

@@ -51,8 +51,8 @@
           "contents": [
             "let yourArray; // change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -107,8 +107,8 @@
             "//change code above this line",
             "console.log(myArray);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -158,8 +158,8 @@
             "// do not change code below this line",
             "console.log(mixedNumbers(['IV', 5, 'six']));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -209,8 +209,8 @@
             "// do not change code below this line",
             "console.log(popShift(['challenge', 'is', 'not', 'complete']));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -257,8 +257,8 @@
             "// do not change code below this line",
             "console.log(sumOfTen([2, 5, 1, 5, 2, 1]));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -311,8 +311,8 @@
             "// do not change code below this line",
             "console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -356,8 +356,8 @@
             "// do not change code below this line",
             "console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -418,8 +418,8 @@
             "// change code here to test different cases:",
             "console.log(copyMachine([true, false, true], 2));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -463,8 +463,8 @@
             "// do not change code below this line",
             "console.log(spreadOut());"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -520,8 +520,8 @@
             "// change code here to test different cases:",
             "console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -580,8 +580,8 @@
             "// change code here to test different cases:",
             "console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -643,8 +643,8 @@
             "  // change code above this line",
             "];"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -707,8 +707,8 @@
             "",
             "console.log(foods);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -766,8 +766,8 @@
             "",
             "console.log(userActivity);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -832,8 +832,8 @@
             "// change code below this line to test different cases:",
             "console.log(checkInventory(\"apples\"));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -884,8 +884,8 @@
             "",
             "console.log(foods);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -950,8 +950,8 @@
             "",
             "console.log(isEveryoneHere(users));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1014,8 +1014,8 @@
             "",
             "console.log(countOnline(users));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1075,8 +1075,8 @@
             "",
             "console.log(getArrayOfUsers(users));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1141,13 +1141,10 @@
             "",
             "console.log(addFriend(user, 'Pete'));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/basic-data-structures.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }

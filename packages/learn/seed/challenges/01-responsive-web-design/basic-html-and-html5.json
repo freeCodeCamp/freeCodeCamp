@@ -101,15 +101,15 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
           "contents": [
             "<h1>Hello</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -189,15 +189,15 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
           "contents": [
             "<h1>Hello World</h1>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -269,7 +269,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -277,8 +277,8 @@
             "<h1>Hello World</h1>",
             "<h2>CatPhotoApp</h2>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -342,7 +342,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -353,8 +353,8 @@
             "",
             "<p>Hello Paragraph</p>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -362,7 +362,7 @@
       "id": "bad87fee1348bd9aedf08802",
       "title": "Uncomment HTML",
       "description": [
-        "Commenting is a way that you can leave comments for other developers within your code without affecting the resulting output that is displayed the the end user.",
+        "Commenting is a way that you can leave comments for other developers within your code without affecting the resulting output that is displayed the end user.",
         "Commenting is also a convenient way to make code inactive without having to delete it entirely.",
         "Comments in HTML starts with <code>&#60;!--</code>, and ends with a <code>--&#62;</code>",
         "<hr>",
@@ -430,7 +430,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -443,8 +443,8 @@
             "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
             "-->"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -519,7 +519,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -532,8 +532,8 @@
             "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
             "-->"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -600,7 +600,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -611,8 +611,8 @@
             "",
             "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -675,7 +675,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -684,8 +684,8 @@
             "",
             "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -695,13 +695,13 @@
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.",
         "An example of this would be:",
-        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" /&#62</code>",
-        "Note that in most cases, <code>img</code> elements are self-closing.",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\"&#62</code>",
+        "Note that <code>img</code> elements are self-closing.",
         "All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.",
         "Note: If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.",
         "Ideally the <code>alt</code> attribute should not contain special characters unless needed.",
         "Let's add an <code>alt</code> attribute to our <code>img</code> example above:",
-        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up.\" /&#62</code>",
+        "<code>&#60img src=\"https://www.your-image-source.com/your-image.jpg\" alt=\"Author standing on a beach with two thumbs up.\"&#62</code>",
         "<hr>",
         "Let's try to add an image to our website:",
         "Insert an <code>img</code> tag, before the <code>h2</code> element.",
@@ -783,7 +783,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-images-to-your-website",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -796,8 +796,8 @@
             "  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -850,7 +850,7 @@
             "He aquí un ejemplo:",
             "<code>&#60;p&#62;Aquí está un &#60;a href=\"https://freecodecamp.org\"&#62; enlace a freeCodeCamp&#60;/a&#62; para que lo sigas.&#60;/p&#62;</code>",
             "<hr>",
-            "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"fotos de gatos\"."
+            "Crea un elemento <code>a</code> que se vincule a <code>http://freecatphotoapp.com</code> y tenga como <code>texto de ancla</code> \"cat photos\"."
           ]
         },
         "pt-br": {
@@ -879,7 +879,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -895,8 +895,8 @@
             "  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -961,7 +961,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -982,8 +982,8 @@
             "  ",
             "<footer>Copyright Cat Photo App</footer>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1089,7 +1089,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1105,8 +1105,8 @@
             "  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1167,7 +1167,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1182,8 +1182,8 @@
             "  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1263,7 +1263,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1278,8 +1278,8 @@
             "  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1366,7 +1366,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1381,8 +1381,8 @@
             "  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1489,7 +1489,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1510,8 +1510,8 @@
             "  ",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1522,7 +1522,7 @@
         "Now let's create a web form.",
         "Input elements are a convenient way to get input from your user.",
         "You can create a text input like this:",
-        "<code>&#60;input type=\"text\" /&#62;</code>",
+        "<code>&#60;input type=\"text\"&#62;</code>",
         "Note that <code>input</code> elements are self-closing.",
         "<hr>",
         "Create an <code>input</code> element of type <code>text</code> below your lists."
@@ -1586,7 +1586,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1613,8 +1613,8 @@
             "  ",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1688,7 +1688,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1714,8 +1714,8 @@
             "  <input type=\"text\">",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1788,7 +1788,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1814,8 +1814,8 @@
             "  <input type=\"text\" placeholder=\"cat photo URL\">",
             "<main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1893,7 +1893,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/add-a-submit-button-to-a-form",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1921,8 +1921,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1991,7 +1991,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2020,8 +2020,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2127,7 +2127,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2156,8 +2156,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2249,7 +2249,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2280,8 +2280,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2350,7 +2350,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2384,8 +2384,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2467,7 +2467,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2502,8 +2502,8 @@
             "  </form>",
             "</main>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2554,17 +2554,13 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
-          "contents": [
-            "",
-            "",
-            ""
-          ],
-          "head": "",
-          "tail": ""
+          "contents": [],
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2621,7 +2617,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2635,13 +2631,10 @@
             "  ",
             "</html>  "
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "01-responsive-web-design/basic-html-and-html5.json",
-  "superBlock": "responsive-web-design",
-  "superOrder": 1
+  ]
 }

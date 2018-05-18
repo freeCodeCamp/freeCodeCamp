@@ -64,7 +64,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -124,8 +124,8 @@
             "  <button type=\"submit\">Submit</button>",
             "</form>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -182,7 +182,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -244,8 +244,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -288,7 +288,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -351,8 +351,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -361,16 +361,16 @@
       "title": "Create a Bootstrap Button",
       "description": [
         "Bootstrap has its own styles for <code>button</code> elements, which look much better than the plain HTML ones.",
-        "Create a new <code>button</code> element below your large kitten photo. Give it the class <code>btn</code> and the text of \"Like\"."
+        "Create a new <code>button</code> element below your large kitten photo. Give it the <code>btn</code> and <code>btn-default</code> classes, as well as the text of \"Like\"."
       ],
       "tests": [
         {
           "text": "Create a new <code>button</code> element with the text \"Like\".",
-          "testString": "assert(new RegExp(\"like\",\"gi\").test($(\"button\").text()), 'Create a new <code>button</code> element with the text \"Like\".');"
+          "testString": "assert(new RegExp(\"like\",\"gi\").test($(\"button\").text()) && ($(\"img.img-responsive + button.btn\").length > 0), 'Create a new <code>button</code> element with the text \"Like\".');"
         },
         {
-          "text": "Your new button should have the class <code>btn</code>.",
-          "testString": "assert($(\"button\").hasClass(\"btn\"), 'Your new button should have the class <code>btn</code>.');"
+          "text": "Your new button should have two classes: <code>btn</code> and <code>btn-default</code>.",
+          "testString": "assert($(\"button\").hasClass(\"btn\") && $(\"button\").hasClass(\"btn-default\"), 'Your new button should have two classes: <code>btn</code> and <code>btn-default</code>.');"
         },
         {
           "text": "Make sure all your <code>button</code> elements have a closing tag.",
@@ -396,7 +396,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -460,8 +460,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -469,21 +469,21 @@
       "id": "bad87fee1348cd8acef08812",
       "title": "Create a Block Element Bootstrap Button",
       "description": [
-        "Normally, your <code>button</code> elements with a class of <code>btn</code> are only as wide as the text that they contain. For example:",
-        "<code>&lt;button class=\"btn\"&gt;Submit&lt;/button&gt;</code>",
+        "Normally, your <code>button</code> elements with the <code>btn</code> and <code>btn-default</code> classes are only as wide as the text that they contain. For example:",
+        "<code>&lt;button class=\"btn btn-default\"&gt;Submit&lt;/button&gt;</code>",
         "This button would only be as wide as the word \"Submit\".",
-        "<button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>Submit</button>",
+        "<button class='btn btn-default'>Submit</button>",
         "By making them block elements with the additional class of <code>btn-block</code>, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a \"new line\" below the block.",
-        "<code>&lt;button class=\"btn btn-block\"&gt;Submit&lt;/button&gt;</code>",
+        "<code>&lt;button class=\"btn btn-default btn-block\"&gt;Submit&lt;/button&gt;</code>",
         "This button would take up 100% of the available width.",
-        "<button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>Submit</button>",
+        "<button class='btn btn-default btn-block'>Submit</button>",
         "Note that these buttons still need the <code>btn</code> class.",
         "Add Bootstrap's <code>btn-block</code> class to your Bootstrap button."
       ],
       "tests": [
         {
-          "text": "Your button should still have the class <code>btn</code>.",
-          "testString": "assert($(\"button\").hasClass(\"btn\"), 'Your button should still have the class <code>btn</code>.');"
+          "text": "Your button should still have the <code>btn</code> and <code>btn-default</code> classes.",
+          "testString": "assert($(\"button\").hasClass(\"btn\") && $(\"button\").hasClass(\"btn-default\"), 'Your button should still have the <code>btn</code> and <code>btn-default</code> classes.');"
         },
         {
           "text": "Your button should have the class <code>btn-block</code>.",
@@ -529,7 +529,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -569,7 +569,7 @@
             "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
             "",
             "  <img src=\"https://bit.ly/fcc-running-cats\" class=\"img-responsive\" alt=\"Three kittens running towards the camera.\">",
-            "  <button class=\"btn\">Like</button>",
+            "  <button class=\"btn btn-default\">Like</button>",
             "  <p>Things cats love:</p>",
             "  <ul>",
             "    <li>cat nip</li>",
@@ -593,8 +593,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -603,7 +603,7 @@
       "title": "Taste the Bootstrap Button Color Rainbow",
       "description": [
         "The <code>btn-primary</code> class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.",
-        "Add Bootstrap's <code>btn-primary</code> class to your button.",
+        "Replace Bootstrap's <code>btn-default</code> class by <code>btn-primary</code> in your button.",
         "Note that this button will still need the <code>btn</code> and <code>btn-block</code> classes."
       ],
       "tests": [
@@ -641,7 +641,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -681,7 +681,7 @@
             "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\" alt=\"A cute orange cat lying on its back.\"></a>",
             "",
             "  <img src=\"https://bit.ly/fcc-running-cats\" class=\"img-responsive\" alt=\"Three kittens running towards the camera.\">",
-            "  <button class=\"btn btn-block\">Like</button>",
+            "  <button class=\"btn btn-default btn-block\">Like</button>",
             "  <p>Things cats love:</p>",
             "  <ul>",
             "    <li>cat nip</li>",
@@ -705,8 +705,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -757,7 +757,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -821,8 +821,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -873,7 +873,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -938,8 +938,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1001,7 +1001,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1067,8 +1067,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1129,7 +1129,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1203,8 +1203,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1268,7 +1268,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1329,8 +1329,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1396,7 +1396,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1456,8 +1456,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1527,7 +1527,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1590,8 +1590,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1642,7 +1642,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1705,8 +1705,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1757,7 +1757,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1820,8 +1820,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1872,7 +1872,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -1942,8 +1942,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1998,7 +1998,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2076,8 +2076,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2134,7 +2134,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2212,8 +2212,8 @@
             "  </form>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2271,17 +2271,13 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
-          "contents": [
-            "",
-            "",
-            ""
-          ],
-          "head": "",
-          "tail": ""
+          "contents": [],
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2325,7 +2321,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2334,8 +2330,8 @@
             "",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2383,7 +2379,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2394,8 +2390,8 @@
             "</div>",
             ""
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2435,7 +2431,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2448,8 +2444,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2493,7 +2489,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2510,8 +2506,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2555,7 +2551,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2580,8 +2576,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2622,7 +2618,7 @@
       },
       "guideUrl": "https://guide.freecodecamp.org/certificates/apply-the-default-bootstrap-button-style",
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2647,8 +2643,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2684,7 +2680,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2709,8 +2705,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2762,7 +2758,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2787,8 +2783,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2839,7 +2835,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2866,8 +2862,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -2926,7 +2922,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -2953,8 +2949,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3010,7 +3006,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3037,8 +3033,8 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -3092,7 +3088,7 @@
         }
       },
       "files": {
-        "indexjs": {
+        "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
@@ -3119,13 +3115,10 @@
             "  </div>",
             "</div>"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "03-front-end-libraries/bootstrap.json",
-  "superBlock": "front-end-libraries",
-  "superOrder": 3
+  ]
 }

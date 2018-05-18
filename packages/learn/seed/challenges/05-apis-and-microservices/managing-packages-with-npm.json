@@ -278,8 +278,5 @@
       "challengeType": 2,
       "translations": {}
     }
-  ],
-  "fileName": "05-apis-and-microservices/managing-packages-with-npm.json",
-  "superBlock": "apis-and-microservices",
-  "superOrder": 5
+  ]
 }

@@ -41,8 +41,8 @@
             "let myRegex = /Hello/;",
             "let result = myRegex; // Change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -88,8 +88,8 @@
             "let waldoRegex = /search/; // Change this line",
             "let result = waldoRegex.test(waldoIsHiding);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -150,8 +150,8 @@
             "let petRegex = /change/; // Change this line",
             "let result = petRegex.test(petString);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -223,8 +223,8 @@
             "let fccRegex = /change/; // Change this line",
             "let result = fccRegex.test(myString);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -268,8 +268,8 @@
             "let codingRegex = /change/; // Change this line",
             "let result = extractStr; // Change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -319,8 +319,8 @@
             "let starRegex = /change/; // Change this line",
             "let result = twinkleStar; // Change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -392,8 +392,8 @@
             "let unRegex = /change/; // Change this line",
             "let result = unRegex.test(exampleStr);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -447,8 +447,8 @@
             "let vowelRegex = /change/; // Change this line",
             "let result = vowelRegex; // Change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -462,7 +462,7 @@
         "<blockquote>let catStr = \"cat\";<br>let batStr = \"bat\";<br>let matStr = \"mat\";<br>let bgRegex = /[a-e]at/;<br>catStr.match(bgRegex); // Returns [\"cat\"]<br>batStr.match(bgRegex); // Returns [\"bat\"]<br>matStr.match(bgRegex); // Returns null</blockquote>",
         "<hr>",
         "Match all the letters in the string <code>quoteSample</code>.",
-        "<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels."
+        "<strong>Note</strong><br>Be sure to match both upper- and lowercase <strong>letters<strong>."
       ],
       "tests": [
         {
@@ -494,8 +494,8 @@
             "let alphabetRegex = /change/; // Change this line",
             "let result = alphabetRegex; // Change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -540,8 +540,8 @@
             "let myRegex = /change/; // Change this line",
             "let result = myRegex; // Change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -585,8 +585,8 @@
             "let myRegex = /change/; // Change this line",
             "let result = myRegex; // Change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -631,8 +631,8 @@
             "let myRegex = /change/; // Change this line",
             "let result = difficultSpelling.match(myRegex);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -684,8 +684,8 @@
             "let chewieRegex = /change/; // Change this line",
             "let result = chewieQuote.match(chewieRegex);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -722,8 +722,8 @@
             "let myRegex = /<.*>/; // Change this line",
             "let result = text.match(myRegex);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -790,8 +790,8 @@
             "let matchedCriminals = crowd.match(reCriminals);",
             "console.log(matchedCriminals);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -839,8 +839,8 @@
             "let calRegex = /change/; // Change this line",
             "let result = calRegex.test(rickyAndCal);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -884,8 +884,8 @@
             "let lastRegex = /change/; // Change this line",
             "let result = lastRegex.test(caboose);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -938,8 +938,8 @@
             "let alphabetRegexV2 = /change/; // Change this line",
             "let result = quoteSample.match(alphabetRegexV2).length;"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -991,8 +991,8 @@
             "let nonAlphabetRegex = /change/; // Change this line",
             "let result = quoteSample.match(nonAlphabetRegex).length;"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1055,8 +1055,8 @@
             "let numRegex = /change/; // Change this line",
             "let result = numString.match(numRegex).length;"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1119,8 +1119,8 @@
             "let noNumRegex = /change/; // Change this line",
             "let result = numString.match(noNumRegex).length;"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1178,8 +1178,8 @@
             "let userCheck = /change/; // Change this line",
             "let result = userCheck.test(username);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1227,8 +1227,8 @@
             "let countWhiteSpace = /change/; // Change this line",
             "let result = sample.match(countWhiteSpace);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1276,8 +1276,8 @@
             "let countNonWhiteSpace = /change/; // Change this line",
             "let result = sample.match(countNonWhiteSpace);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1338,8 +1338,8 @@
             "let ohRegex = /change/; // Change this line",
             "let result = ohRegex.test(ohStr);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1400,8 +1400,8 @@
             "let haRegex = /change/; // Change this line",
             "let result = haRegex.test(haStr);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1458,8 +1458,8 @@
             "let timRegex = /change/; // Change this line",
             "let result = timRegex.test(timStr);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1508,8 +1508,8 @@
             "let favRegex = /change/; // Change this line",
             "let result = favRegex.test(favWord);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1574,8 +1574,8 @@
             "let pwRegex = /change/; // Change this line",
             "let result = pwRegex.test(sampleWord);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1650,8 +1650,8 @@
             "let reRegex = /change/; // Change this line",
             "let result = reRegex.test(repeatNum);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1698,8 +1698,8 @@
             "let replaceText = \"\"; // Change this line",
             "let result = huhText.replace(fixRegex, replaceText);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1744,13 +1744,10 @@
             "let wsRegex = /change/; // Change this line",
             "let result = hello; // Change this line"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/regular-expressions.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }

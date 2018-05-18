@@ -1,7 +1,8 @@
 .index-page-wrapper {
   display: flex;
-  /* width: calc(100vw - 340px); */
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-
+  max-width: 960px;
+  margin: 0 auto;
 }

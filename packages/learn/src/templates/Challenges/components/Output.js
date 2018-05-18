@@ -4,6 +4,7 @@ import MonacoEditor from 'react-monaco-editor';
 
 const propTypes = {
   defaultOutput: PropTypes.string,
+  height: PropTypes.number,
   output: PropTypes.string
 };
 
@@ -20,13 +21,13 @@ const options = {
   wordWrap: 'on'
 };
 
-function Output({ output, defaultOutput }) {
+function Output({ output, defaultOutput, height }) {
   return (
     <Fragment>
       <base href='/' />
       <MonacoEditor
         className='challenge-output'
-        height={150}
+        height={height}
         options={options}
         value={output ? output : defaultOutput}
       />

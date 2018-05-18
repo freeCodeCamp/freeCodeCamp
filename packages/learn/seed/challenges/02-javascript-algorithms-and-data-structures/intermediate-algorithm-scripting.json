@@ -80,8 +80,8 @@
             "",
             "sumAll([1, 4]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -198,8 +198,8 @@
             "",
             "diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -277,8 +277,8 @@
             "",
             "destroyer([1, 2, 3, 1, 2, 3], 2, 3);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -363,8 +363,8 @@
             "",
             "whatIsInAName([{ first: \"Romeo\", last: \"Montague\" }, { first: \"Mercutio\", last: null }, { first: \"Tybalt\", last: \"Capulet\" }], { last: \"Capulet\" });"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -437,8 +437,8 @@
             "",
             "spinalCase('This Is Spinal Tap');"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -529,8 +529,8 @@
             "",
             "translatePigLatin(\"consonant\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -614,8 +614,8 @@
             "",
             "myReplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -690,8 +690,8 @@
             "",
             "pairElement(\"GCG\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -765,8 +765,8 @@
             "",
             "fearNotLetter(\"abce\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -842,8 +842,8 @@
             "",
             "uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -924,8 +924,8 @@
             "",
             "convertHTML(\"Dolce & Gabbana\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1005,8 +1005,8 @@
             "",
             "sumFibs(4);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1075,8 +1075,8 @@
             "",
             "sumPrimes(10);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1157,8 +1157,8 @@
             "",
             "smallestCommons([1,5]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1238,8 +1238,8 @@
             "",
             "dropElements([1, 2, 3], function(n) {return n < 3; });"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1306,8 +1306,8 @@
             "",
             "steamrollArray([1, [2], [3, [[4]]]]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1369,8 +1369,8 @@
             "",
             "binaryAgent(\"01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1463,8 +1463,8 @@
             "",
             "truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1551,8 +1551,8 @@
             "",
             "addTogether(2,3);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1678,8 +1678,8 @@
             "var bob = new Person('Bob Ross');",
             "bob.getFullName();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1761,13 +1761,10 @@
             "",
             "orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/intermediate-algorithm-scripting.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }

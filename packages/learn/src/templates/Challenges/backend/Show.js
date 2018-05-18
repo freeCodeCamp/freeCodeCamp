@@ -10,6 +10,7 @@ import ChallengeDescription from '../components/Challenge-Description';
 import TestSuite from '../components/Test-Suite';
 import Output from '../components/Output';
 import CompletionModal from '../components/CompletionModal';
+import ProjectToolPanel from '../project/Tool-Panel';
 import {
   executeChallenge,
   challengeTestsSelector,
@@ -25,6 +26,7 @@ import {
   makeRequired,
   Form
 } from '../../../components/formHelpers';
+import Spacer from '../../../components/util/Spacer';
 
 // provided by redux form
 const reduxFormPropTypes = {
@@ -117,12 +119,14 @@ export class BackEnd extends PureComponent {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Row>
+        <ProjectToolPanel />
         <Col xs={6} xsOffset={3}>
-          <Row>
+          <Spacer />
+          <div>
             <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
             <ChallengeDescription description={description} />
-          </Row>
-          <Row>
+          </div>
+          <div>
             <Form
               buttonText={buttonCopy + '(Ctrl + Enter)'}
               formFields={formFields}
@@ -130,19 +134,24 @@ export class BackEnd extends PureComponent {
               options={options}
               submit={executeChallenge}
             />
-          </Row>
-          <Row>
+          </div>
+          <div>
             <br />
             <Output
               defaultOutput={`/**
+  *
   * Test output will go here
+  *
+  *
   */`}
+              height={150}
               output={output}
             />
-          </Row>
-          <Row>
+          </div>
+          <div>
             <TestSuite tests={tests} />
-          </Row>
+          </div>
+          <Spacer />
         </Col>
         <CompletionModal />
       </Row>

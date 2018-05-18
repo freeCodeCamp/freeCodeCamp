@@ -45,7 +45,10 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<DisplayMessages />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<DisplayMessages />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
@@ -109,7 +112,10 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<DisplayMessages />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<DisplayMessages />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
@@ -164,7 +170,9 @@
           "contents": [
             "// define ADD, addMessage(), messageReducer(), and store here:",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -298,7 +306,10 @@
             "  // change code above this line",
             "};"
           ],
-          "tail": "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
@@ -348,7 +359,9 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -403,7 +416,9 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -499,7 +514,8 @@
             "  }",
             "};",
             "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
-          ]
+          ],
+          "head": []
         }
       },
       "tests": [
@@ -637,7 +653,10 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
@@ -782,7 +801,10 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
@@ -872,7 +894,9 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
@@ -889,8 +913,5 @@
       "translations": {},
       "reactRedux": true
     }
-  ],
-  "fileName": "03-front-end-libraries/react-and-redux.json",
-  "superBlock": "front-end-libraries",
-  "superOrder": 3
+  ]
 }

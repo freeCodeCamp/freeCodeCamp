@@ -11,7 +11,7 @@
         "One of the biggest problems with declaring variables with the <code>var</code> keyword is that you can overwrite variable declarations without an error.",
         "<blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// logs 'David'</blockquote>",
         "As you can see in the code above, the <code>camper</code> variable is originally declared as <code>James</code> and then overridden to be <code>David</code>.",
-        "In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidently overwrite a variable that you did not intend to overwrite.",
+        "In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite.",
         "Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>",
         "A new keyword called <code>let</code> was introduced in ES6 to solve this potential issue with the <code>var</code> keyword.",
         "If you were to replace <code>var</code> with <code>let</code> in the variable declarations of the code above, the result would be an error.",
@@ -58,8 +58,8 @@
             "}",
             "catTalk();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -71,7 +71,7 @@
         "The <code>let</code> keyword behaves similarly, but with some extra features. When you declare a variable with the <code>let</code> keyword inside a block, statement, or expression, its scope is limited to that block, statement, or expression.",
         "For example:",
         "<blockquote>var numArray = [];<br>for (var i = 0; i < 3; i++) {<br>  numArray.push(i);<br>}<br>console.log(numArray);<br>// returns [0, 1, 2]<br>console.log(i);<br>// returns 3</blockquote>",
-        "With the <code>var</code> keyword, <code>i</code> is declared globally. So when <code>i++</code> is executed, it updates the global variable. This code is similiar to the following:",
+        "With the <code>var</code> keyword, <code>i</code> is declared globally. So when <code>i++</code> is executed, it updates the global variable. This code is similar to the following:",
         "<blockquote>var numArray = [];<br>var i;<br>for (i = 0; i < 3; i++) {<br>  numArray.push(i);<br>}<br>console.log(numArray);<br>// returns [0, 1, 2]<br>console.log(i);<br>// returns 3</blockquote>",
         "This behavior will cause problems if you were to create a function and store it for later use inside a for loop that uses the <code>i</code> variable. This is because the stored function will always refer to the value of the updated global <code>i</code> variable.",
         "<blockquote>var printNumTwo;<br>for (var i = 0; i < 3; i++) {<br>  if(i === 2){<br>    printNumTwo = function() {<br>      return i;<br>    };<br>  }<br>}<br>console.log(printNumTwo());<br>// returns 3</blockquote>",
@@ -106,7 +106,6 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "",
             "function checkScope() {",
             "\"use strict\";",
             "  var i = \"function scope\";",
@@ -118,8 +117,8 @@
             "  return i;",
             "}"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -173,8 +172,8 @@
             "}",
             "printManyTimes(\"freeCodeCamp\");"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -229,8 +228,8 @@
             "}",
             "editInPlace();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -290,8 +289,8 @@
             "}",
             "const PI = freezeObj();"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -347,8 +346,8 @@
             "  return new Date();",
             "};"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -401,8 +400,8 @@
             "// test your code",
             "console.log(myConcat([1, 2], [3, 4, 5]));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -472,8 +471,8 @@
             "const squaredIntegers = squareList(realNumberArray);",
             "console.log(squaredIntegers);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -521,8 +520,8 @@
             "console.log(increment(5, 2)); // returns 7",
             "console.log(increment(5)); // returns NaN"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -535,7 +534,7 @@
         "<blockquote>function howMany(...args) {<br>  return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>",
         "The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.",
         "<hr>",
-        "Modify the function <code>sum</code> so that is uses the rest operator and it works in the same way with any number of parameters."
+        "Modify the function <code>sum</code> so that it uses the rest operator and it works in the same way with any number of parameters."
       ],
       "tests": [
         {
@@ -578,8 +577,8 @@
             "})();",
             "console.log(sum(1, 2, 3)); // 6"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -631,8 +630,8 @@
             "})();",
             "console.log(arr2);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -689,8 +688,8 @@
             "",
             "console.log(getLength('FreeCodeCamp'));"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -740,8 +739,8 @@
             "",
             "console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -793,8 +792,8 @@
             "console.log(a); // should be 6",
             "console.log(b); // should be 8"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -808,7 +807,7 @@
         "Variables <code>a</code> and <code>b</code> take the first and second values from the array. After that, because of rest operator's presence, <code>arr</code> gets rest of the values in the form of an array.",
         "The rest element only works correctly as the last variable in the list. As in, you cannot use the rest operator to catch a subarray that leaves out last element of the original array.",
         "<hr>",
-        "Use destructuring assignment with the rest operator to perform an effective <code>Array.prototype.slice()</code> so that <code>arr</code> is a sub-array of the original array <code>source</code> with the first two elements ommitted."
+        "Use destructuring assignment with the rest operator to perform an effective <code>Array.prototype.slice()</code> so that <code>arr</code> is a sub-array of the original array <code>source</code> with the first two elements omitted."
       ],
       "tests": [
         {
@@ -817,7 +816,7 @@
         },
         {
           "text": "destructuring was used.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w\\s*,\\s*\\w\\s*,\\s*...arr\\s*\\]/g),'destructuring was used.');"
+          "testString": "getUserInput => assert(getUserInput('index').match(/\\[\\s*\\w*\\s*,\\s*\\w*\\s*,\\s*...arr\\s*\\]/g),'destructuring was used.');"
         },
         {
           "text": "<code>Array.slice()</code> was not used.",
@@ -846,8 +845,8 @@
             "console.log(arr); // should be [3,4,5,6,7,8,9,10]",
             "console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -911,8 +910,8 @@
             "console.log(stats); // should be object",
             "console.log(half(stats)); // should be 28.015"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -976,8 +975,8 @@
             " **/",
             "const resultDisplayArray = makeList(result.failure);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -985,7 +984,7 @@
       "id": "587d7b8a367417b2b2512b4f",
       "title": "Write Concise Object Literal Declarations Using Simple Fields",
       "description": [
-        "ES6 adds some nice support for easily definining object literals.",
+        "ES6 adds some nice support for easily defining object literals.",
         "Consider the following code:",
         "<blockquote>const getMousePosition = (x, y) => ({<br>  x: x,<br>  y: y<br>});</blockquote>",
         "<code>getMousePosition</code> is a simple function that returns an object containing two fields.",
@@ -1027,8 +1026,8 @@
             "};",
             "console.log(createPerson(\"Zodiac Hasbro\", 56, \"male\")); // returns a proper object"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1075,8 +1074,8 @@
             "bicycle.setGear(3);",
             "console.log(bicycle.gear);"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1130,8 +1129,8 @@
             "const carrot = new Vegetable('carrot');",
             "console.log(carrot.name); // => should be 'carrot'"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1147,7 +1146,7 @@
         "Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.",
         "Getters and setters are important, because they hide internal implementation details.",
         "<hr>",
-        "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Farenheit temperature.",
+        "Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Fahrenheit temperature.",
         "Now create <code>getter</code> and <code>setter</code> in the class, to obtain the temperature in Celsius scale.",
         "Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale",
         "Note",
@@ -1187,13 +1186,13 @@
             "  return Thermostat;",
             "}",
             "const Thermostat = makeClass();",
-            "const thermos = new Thermostat(76); // setting in Farenheit scale",
+            "const thermos = new Thermostat(76); // setting in Fahrenheit scale",
             "let temp = thermos.temperature; // 24.44 in C",
             "thermos.temperature = 26;",
             "temp = thermos.temperature; // 26 in C"
           ],
-          "head": "",
-          "tail": ""
+          "head": [],
+          "tail": []
         }
       }
     },
@@ -1210,7 +1209,7 @@
         "There are a few ways to write an <code>import</code> statement, but the above is a very common use-case.",
         "<strong>Note</strong><br>The whitespace surrounding the function inside the curly braces is a best practice - it makes it easier to read the <code>import</code> statement.",
         "<strong>Note</strong><br>The lessons in this section handle non-browser features. <code>import</code>, and the statements we introduce in the rest of these lessons, won't work on a browser directly. However, we can use various tools to create code out of this to make it work in browser.",
-        "<strong>Note</strong><br>In most cases, the file path requires a <code>./</code> before it; otherwise, node will look in the <code>node_modules</code> directory first trying to load it as a dependencie.",
+        "<strong>Note</strong><br>In most cases, the file path requires a <code>./</code> before it; otherwise, node will look in the <code>node_modules</code> directory first trying to load it as a dependency.",
         "<hr>",
         "Add the appropriate <code>import</code> statement that will allow the current file to use the <code>capitalizeString</code> function. The file where this function lives is called <code>\"string_functions\"</code>, and it is in the same directory as the current file."
       ],
@@ -1233,8 +1232,14 @@
             "\"use strict\";",
             "capitalizeString(\"hello!\");"
           ],
-          "head": "window.require = function (str) {\nif (str === 'string_functions') {\nreturn {\ncapitalizeString: str => str.toUpperCase()\n}}};",
-          "tail": ""
+          "head": [
+            "window.require = function (str) {",
+            "if (str === 'string_functions') {",
+            "return {",
+            "capitalizeString: str => str.toUpperCase()",
+            "}}};"
+          ],
+          "tail": []
         }
       }
     },
@@ -1275,8 +1280,10 @@
             "const foo = \"bar\";",
             "const boo = \"far\";"
           ],
-          "head": "window.exports = function(){};",
-          "tail": ""
+          "head": [
+            "window.exports = function(){};"
+          ],
+          "tail": []
         }
       }
     },
@@ -1286,7 +1293,7 @@
       "description": [
         "Suppose you have a file that you wish to import all of its contents into the current file. This can be done with the <dfn>import *</dfn> syntax.",
         "Here's an example where the contents of a file named <code>\"math_functions\"</code> are imported into a file in the same directory:",
-        "<blockquote>import * as myMathModule from \"math_functions\"<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>",
+        "<blockquote>import * as myMathModule from \"math_functions\";<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>",
         "And breaking down that code:",
         "<blockquote>import * as object_with_name_of_your_choice from \"file_path_goes_here\"<br>object_with_name_of_your_choice.imported_function</blockquote>",
         "You may use any name following the <code>import * as </code>portion of the statement. In order to utilize this method, it requires an object that receives the imported values. From here, you will use the dot notation to call your imported values.",
@@ -1296,7 +1303,7 @@
       "tests": [
         {
           "text": "Properly uses <code>import * as</code> syntax.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+\\*\\s+as\\s+myStringModule\\s+from\\s+\"capitalize_strings\"/g), 'Properly uses <code>import * as</code> syntax.');"
+          "testString": "assert(code.match(/import\\s+\\*\\s+as\\s+[a-zA-Z0-9_$]+\\s+from\\s*\"\\s*capitalize_strings\\s*\"\\s*;/gi), 'Properly uses <code>import * as</code> syntax.');"
         }
       ],
       "type": "waypoint",
@@ -1309,12 +1316,17 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "\"use strict\";",
-            "myStringModule.capitalize(\"foo\");",
-            "myStringModule.lowercase(\"Foo\");"
+            "\"use strict\";"
           ],
-          "head": "window.require = function(str) {\nif (str === 'capitalize_strings') {\nreturn {\ncapitalize: str => str.toUpperCase(),\nlowercase: str => str.toLowerCase()\n}}};",
-          "tail": ""
+          "head": [
+            "window.require = function(str) {",
+            "if (str === 'capitalize_strings') {",
+            "return {",
+            "capitalize: str => str.toUpperCase(),",
+            "lowercase: str => str.toLowerCase()",
+            "}}};"
+          ],
+          "tail": []
         }
       }
     },
@@ -1349,8 +1361,10 @@
             "\"use strict\";",
             "function subtract(x,y) {return x - y;}"
           ],
-          "head": "window.exports = function(){};",
-          "tail": ""
+          "head": [
+            "window.exports = function(){};"
+          ],
+          "tail": []
         }
       }
     },
@@ -1384,13 +1398,16 @@
             "\"use strict\";",
             "subtract(7,4);"
           ],
-          "head": "window.require = function(str) {\nif (str === 'math_functions') {\nreturn function(a, b) {\nreturn a - b;\n}}};",
-          "tail": ""
+          "head": [
+            "window.require = function(str) {",
+            "if (str === 'math_functions') {",
+            "return function(a, b) {",
+            "return a - b;",
+            "}}};"
+          ],
+          "tail": []
         }
       }
     }
-  ],
-  "fileName": "02-javascript-algorithms-and-data-structures/es6.json",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
+  ]
 }
