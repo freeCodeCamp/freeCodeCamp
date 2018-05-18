@@ -10,7 +10,7 @@ const log = debug('fcc:middlewares:error-reporter');
 
 const isOpbeatDisabled = !opbeat.appId;
 export default function errrorReporter() {
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== 'production' && process.env.ERROR_REPORTER) {
     return (err, req, res, next) => {
       if (isHandledError(err)) {
         // log out user messages in development
