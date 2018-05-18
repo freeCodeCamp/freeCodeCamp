@@ -20,6 +20,10 @@ const intro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/Intro.js'
 );
+const superBlockIntro = path.resolve(
+  __dirname,
+  '../../src/templates/Introduction/SuperBlockIntro.js'
+);
 
 const views = {
   backend,
@@ -73,13 +77,27 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
 };
 
 exports.createIntroPages = createPage => edge => {
-  const { fields: { slug }, frontmatter: { block } } = edge.node;
-  createPage({
-    path: slug,
-    component: intro,
-    context: {
-      block: dasherize(block),
-      slug
-    }
-  });
+  const { fields: { slug }, frontmatter: { superBlock, block } } = edge.node;
+
+  // If there is no block specified in the markdown we assume the markdown is
+  // for a superblock introduction. Otherwise create a block intro page.
+  if (!block) {
+    createPage({
+      path: slug,
+      component: superBlockIntro,
+      context: {
+        superBlock: dasherize(superBlock),
+        slug
+      }
+    });
+  } else {
+    createPage({
+      path: slug,
+      component: intro,
+      context: {
+        block: dasherize(block),
+        slug
+      }
+    });
+  }
 };

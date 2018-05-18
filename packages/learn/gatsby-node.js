@@ -21,7 +21,14 @@ exports.onCreateNode = function onCreateNode({ node, boundActionCreators }) {
   if (node.internal.type === 'MarkdownRemark') {
     const { frontmatter: { block, superBlock } } = node;
 
-    const slug = `/${dasherize(superBlock)}/${dasherize(block)}`;
+    let slug = `/${dasherize(superBlock)}`;
+
+    // Without this condition the slug for superblocks ends up as something like
+    // "/apis-and-microservice/undefined" and what we want instead is just
+    // "/apis-and-microservice"
+    if (typeof block !== 'undefined') {
+      slug = slug + `/${dasherize(block)}`;
+    }
 
     createNodeField({ node, name: 'slug', value: slug });
   }
