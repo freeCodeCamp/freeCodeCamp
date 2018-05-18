@@ -35,6 +35,7 @@
     "react": "16",
     "react-bootstrap": "^0.32.1",
     "react-dom": "16",
+    "react-ga": "^2.5.2",
     "react-helmet": "^5.2.0",
     "react-monaco-editor": "^0.14.1",
     "react-redux": "^5.0.7",

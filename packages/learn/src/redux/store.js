@@ -8,6 +8,7 @@ import { routerReducer as router, routerMiddleware } from 'react-router-redux';
 
 import { reducer as formReducer } from 'redux-form';
 
+import analyticsEpic from '../analytics/analytics-epic';
 import { reducer as app, epics as appEpics } from './app';
 import {
   reducer as challenge,
@@ -23,7 +24,7 @@ const rootReducer = combineReducers({
   router
 });
 
-const rootEpic = combineEpics(...appEpics, ...challengeEpics);
+const rootEpic = combineEpics(analyticsEpic, ...appEpics, ...challengeEpics);
 
 const epicMiddleware = createEpicMiddleware(rootEpic, {
   dependencies: {

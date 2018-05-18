@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import Link, { navigateTo } from 'gatsby-link';
 
+import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { toggleMapModal } from '../../../redux/app';
 import Caret from '../../icons/Caret';
@@ -44,18 +45,31 @@ export class Block extends PureComponent {
       .slice(0, -1)
       .join('/');
     toggleBlock(blockDashedName);
+    ga.event({
+      category: 'Map Block Click',
+      action: blockDashedName
+    });
     return navigateTo(blockPath);
   }
 
-  handleChallengeClick() {
-    this.props.toggleMapModal();
+  handleChallengeClick(slug) {
+    return () => {
+      this.props.toggleMapModal();
+      return ga.event({
+        category: 'Map Challenge Click',
+        action: slug
+      });
+    };
   }
 
   renderChallenges(challenges) {
     // TODO: Split this into a Challenge Component and add tests
     return challenges.map(challenge => (
       <li className='map-challenge-title' key={challenge.dashedName}>
-        <Link onClick={this.handleChallengeClick} to={challenge.fields.slug}>
+        <Link
+          onClick={this.handleChallengeClick(challenge.fields.slug)}
+          to={challenge.fields.slug}
+          >
           {challenge.title}
         </Link>
       </li>

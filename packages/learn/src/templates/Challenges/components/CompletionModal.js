@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from 'react-bootstrap';
 
+import ga from '../../../analytics';
 import GreenPass from './icons/GreenPass';
 
 import './completion-modal.css';
@@ -57,6 +58,9 @@ export class CompletionModal extends PureComponent {
       handleKeypress,
       message
     } = this.props;
+    if (isOpen) {
+      ga.modalview('/completion-modal');
+    }
     return (
       <Modal
         animation={false}

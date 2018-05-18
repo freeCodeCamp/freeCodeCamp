@@ -5,7 +5,8 @@ module.exports = {
     // '.module.css' https://regex101.com/r/VzwrKH/4
     '^(?!.*\\.module\\.css$).*\\.css$': '<rootDir>/src/__mocks__/styleMock.js',
     // CSS Modules - match files that end with 'module.css'
-    '\\.module\\.css$': 'identity-obj-proxy'
+    '\\.module\\.css$': 'identity-obj-proxy',
+    analytics: '<rootDir>/src/__mocks__/analyticsMock.js'
   },
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.cache/'],
   globals: {

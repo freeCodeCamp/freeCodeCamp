@@ -115,8 +115,8 @@ class ShowClassic extends PureComponent {
       },
       pathContext: { challengeMeta }
     } = this.props;
-    updateSuccessMessage(randomCompliment());
     if (prevTitle !== currentTitle) {
+      updateSuccessMessage(randomCompliment());
       createFiles(files);
       initTests(tests);
       updateChallengeMeta({ ...challengeMeta, title: currentTitle });

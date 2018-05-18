@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
 
+import ga from '../../../analytics';
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
 
 const mapStateToProps = state => ({ isOpen: isHelpModalOpenSelector(state) });
@@ -26,6 +27,9 @@ const RSA =
 export class HelpModal extends PureComponent {
   render() {
     const { isOpen, closeHelpModal, createQuestion } = this.props;
+    if (isOpen) {
+      ga.modalview('/help-modal');
+    }
     return (
       <Modal onHide={closeHelpModal} show={isOpen}>
         <Modal.Header

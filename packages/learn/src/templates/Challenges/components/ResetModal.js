@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from 'react-bootstrap';
 
+import ga from '../../../analytics';
 import { isResetModalOpenSelector, closeModal, resetChallenge } from '../redux';
 
 import './reset-modal.css';
@@ -30,6 +31,9 @@ function withActions(...fns) {
 }
 
 function ResetModal({ reset, close, isOpen }) {
+  if (isOpen) {
+    ga.modalview('/reset-modal');
+  }
   return (
     <Modal
       animation={false}
