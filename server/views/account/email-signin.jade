@@ -20,6 +20,12 @@ block content
                       .button-spacer
                       div.checkbox
                         label
+                          input(type='checkbox', name='quincy-emails', checked=false)
+                          span.cr
+                            i.cr-icon.fa.fa-check 
+                          |  I want weekly emails from Quincy, freeCodeCamp.org's founder.
+                      div.checkbox
+                        label
                           input#terms-privacy(type='checkbox', name='terms-privacy', checked=false)
                           span.cr
                             i.cr-icon.fa.fa-check 
@@ -27,13 +33,7 @@ block content
                           a(href="/terms" target="_blank") Terms of Service 
                           | and 
                           a(href="/privacy" target="_blank") Privacy Policy 
-                          | (required)
-                      div.checkbox
-                        label
-                          input(type='checkbox', name='quincy-emails', checked=false)
-                          span.cr
-                            i.cr-icon.fa.fa-check 
-                          |  I want weekly emails from Quincy (freeCodeCamp.org's founder)
+                          | (required).
                       .button-spacer
                       button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
                         | Get a sign in link
