@@ -11,6 +11,8 @@ import { toggleMapModal, isMapModalOpenSelector } from '../../redux/app';
 
 import Spacer from '../util/Spacer';
 
+import './map-modal.css';
+
 const mapStateToProps = createSelector(isMapModalOpenSelector, show => ({
   show
 }));

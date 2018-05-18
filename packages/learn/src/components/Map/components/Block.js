@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import Link, { navigateTo } from 'gatsby-link';
 
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
+import { toggleMapModal } from '../../../redux/app';
 import Caret from '../../icons/Caret';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,13 +18,14 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleBlock }, dispatch);
+  bindActionCreators({ toggleBlock, toggleMapModal }, dispatch);
 
 const propTypes = {
   blockDashedName: PropTypes.string,
   challenges: PropTypes.array,
   isExpanded: PropTypes.bool,
-  toggleBlock: PropTypes.func.isRequired
+  toggleBlock: PropTypes.func.isRequired,
+  toggleMapModal: PropTypes.func.isRequired
 };
 
 export class Block extends PureComponent {
@@ -31,6 +33,7 @@ export class Block extends PureComponent {
     super(...props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
+    this.handleChallengeClick = this.handleChallengeClick.bind(this);
     this.renderChallenges = this.renderChallenges.bind(this);
   }
 
@@ -44,11 +47,17 @@ export class Block extends PureComponent {
     return navigateTo(blockPath);
   }
 
+  handleChallengeClick() {
+    this.props.toggleMapModal();
+  }
+
   renderChallenges(challenges) {
     // TODO: Split this into a Challenge Component and add tests
     return challenges.map(challenge => (
       <li className='map-challenge-title' key={challenge.dashedName}>
-        <Link to={challenge.fields.slug}>{challenge.title}</Link>
+        <Link onClick={this.handleChallengeClick} to={challenge.fields.slug}>
+          {challenge.title}
+        </Link>
       </li>
     ));
   }

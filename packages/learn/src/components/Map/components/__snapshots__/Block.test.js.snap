@@ -35,6 +35,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
       className="map-challenge-title"
     >
       <Unknown
+        onClick={[Function]}
         to="/super-block-one/block-a/challenge-one"
       >
         Challenge One
@@ -44,6 +45,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
       className="map-challenge-title"
     >
       <Unknown
+        onClick={[Function]}
         to="/super-block-one/block-a/challenge-two"
       >
         Challenge Two
@@ -53,6 +55,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
       className="map-challenge-title"
     >
       <Unknown
+        onClick={[Function]}
         to="/super-block-one/block-a/challenge-one"
       >
         Challenge One
@@ -62,6 +65,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
       className="map-challenge-title"
     >
       <Unknown
+        onClick={[Function]}
         to="/super-block-one/block-a/challenge-two"
       >
         Challenge Two

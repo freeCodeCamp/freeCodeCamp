@@ -14,12 +14,14 @@ const renderer = new ShallowRenderer();
 
 test('<Block /> not expanded snapshot', () => {
   const toggleSpy = sinon.spy();
+  const toggleMapSpy = sinon.spy();
   const componentToRender = (
     <Block
       blockDashedName='block-a'
       challenges={mockNodes.filter(node => node.block === 'block-a')}
       isExpanded={false}
       toggleBlock={toggleSpy}
+      toggleMapModal={toggleMapSpy}
     />
   );
   const component = renderer.render(componentToRender);
@@ -29,12 +31,14 @@ test('<Block /> not expanded snapshot', () => {
 
 test('<Block expanded snapshot', () => {
   const toggleSpy = sinon.spy();
+  const toggleMapSpy = sinon.spy();
   const componentToRender = (
     <Block
       blockDashedName='block-a'
       challenges={mockNodes.filter(node => node.block === 'block-a')}
       isExpanded={true}
       toggleBlock={toggleSpy}
+      toggleMapModal={toggleMapSpy}
     />
   );
 
@@ -45,11 +49,13 @@ test('<Block expanded snapshot', () => {
 
 test('<Block />  should handle toggle clicks correctly', () => {
   const toggleSpy = sinon.spy();
+  const toggleMapSpy = sinon.spy();
   const props = {
     blockDashedName: 'block-a',
     challenges: mockNodes.filter(node => node.block === 'block-a'),
     isExpanded: false,
-    toggleBlock: toggleSpy
+    toggleBlock: toggleSpy,
+    toggleMapModal: toggleMapSpy
   };
 
   const componentToRender = <Block {...props} />;
