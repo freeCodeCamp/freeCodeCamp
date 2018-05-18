@@ -17,9 +17,26 @@ block content
                   input(type='hidden', name='_csrf', value=_csrf)
                   .form-group
                       input.input-lg.form-control(type='email', name='email', id='email', placeholder='Enter your email address', autofocus=true, required, oninvalid="this.setCustomValidity('Enter your email address')", oninput="setCustomValidity('')")
-                  .button-spacer
-                  button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
-                    | Get a sign in link
+                      .button-spacer
+                      div.checkbox
+                        label
+                          input#terms-privacy(type='checkbox', name='terms-privacy', checked=false)
+                          span.cr
+                            i.cr-icon.fa.fa-check 
+                          | I accept the 
+                          a(href="/terms" target="_blank") Terms of Service 
+                          | and 
+                          a(href="/privacy" target="_blank") Privacy Policy 
+                          | (required)
+                      div.checkbox
+                        label
+                          input(type='checkbox', name='quincy-emails', checked=false)
+                          span.cr
+                            i.cr-icon.fa.fa-check 
+                          |  I want weekly emails from Quincy (freeCodeCamp.org's founder)
+                      .button-spacer
+                      button#magic-btn.btn.btn-primary.btn-lg.btn-block(type='submit')
+                        | Get a sign in link
         .row
           .col-sm-6.col-sm-offset-3
               br
@@ -30,7 +47,7 @@ block content
 
         script.
           $(document).ready(function() {
-            function disableMagicButton (isDisabled) {
+            function disableMagicButton (isDisabled, isLaunched) {
                 if (isDisabled) {
                   $('#magic-btn')
                     .prop('disabled', true)
@@ -41,7 +58,30 @@ block content
                     .html('<span style="color:#E0E0E0;">If you didn\'t get the email, check your spam folder, or reload the page to try again.</span>');
                 }
             }
-
+            
+            function disableMagicButtonForAgreement (isLaunched) {
+              if(isLaunched) {
+                $('#magic-btn')
+                  .prop('disabled', true)
+                  .html('<span style="color:#E0E0E0;">Get a sign in link</span>');
+                return;
+              } else {
+              $('#magic-btn')
+                .prop('disabled', false)
+                .html('<span>Get a sign in link</span>');
+              }
+            }
+            
+            disableMagicButtonForAgreement(true);
+            
+            $('#terms-privacy').click(function(){
+              if(this.checked) {
+                disableMagicButtonForAgreement(false);
+              } else {
+                disableMagicButtonForAgreement(true);
+              }
+            });
+            
             $('form').submit(function(event){
               event.preventDefault();
               $('#flash-board').hide();

@@ -29,10 +29,10 @@ module.exports = function enableAuthentication(app) {
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
 
-  router.get('/login', (req, res) => res.redirect(301, '/signin'));
-  router.get('/logout', (req, res) => res.redirect(301, '/signout'));
-  router.get('/signup', (req, res) => res.redirect(301, '/signin'));
-  router.get('/email-signin', (req, res) => res.redirect(301, '/signin'));
+  router.get('/signup', (req, res) => res.redirect(301, '/login'));
+  router.get('/email-signin', (req, res) => res.redirect(301, '/login'));
+  router.get('/signin', (req, res) => res.redirect(301, '/login'));
+  router.get('/signout', (req, res) => res.redirect(301, '/logout'));
 
   function getEmailSignin(req, res) {
     if (isSignUpDisabled) {
@@ -45,9 +45,9 @@ module.exports = function enableAuthentication(app) {
     });
   }
 
-  router.get('/signin', ifUserRedirect, getEmailSignin);
+  router.get('/login', ifUserRedirect, getEmailSignin);
 
-  router.get('/signout', (req, res) => {
+  router.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
   });
