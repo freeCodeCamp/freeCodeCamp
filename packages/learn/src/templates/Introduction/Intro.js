@@ -1,21 +1,29 @@
 /* global graphql */
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import FullWidthRow from '../../components/util/FullWidthRow';
 import ButtonSpacer from '../../components/util/ButtonSpacer';
+import { toggleMapModal } from '../../redux/app';
 import { MarkdownRemark, AllChallengeNode } from '../../redux/propTypes';
 
 import './intro.css';
+
+const mapStateToProps = () => ({});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ toggleMapModal }, dispatch);
 
 const propTypes = {
   data: PropTypes.shape({
     markdownRemark: MarkdownRemark,
     allChallengeNode: AllChallengeNode
-  })
+  }),
+  toggleMapModal: PropTypes.func.isRequired
 };
 
 function renderMenuItems({ edges = [] }) {
@@ -26,7 +34,10 @@ function renderMenuItems({ edges = [] }) {
   ));
 }
 
-function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
+function IntroductionPage({
+  data: { markdownRemark, allChallengeNode },
+  toggleMapModal
+}) {
   const { html, frontmatter: { block } } = markdownRemark;
   const firstLesson = allChallengeNode && allChallengeNode.edges[0].node;
   const firstLessonPath = firstLesson
@@ -50,6 +61,9 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
           </Button>
         </Link>
         <ButtonSpacer />
+        <Button block={true} bsSize='sm' onClick={toggleMapModal}>
+          View the curriculum
+        </Button>
         <hr />
       </FullWidthRow>
       <FullWidthRow>
@@ -65,7 +79,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
 IntroductionPage.displayName = 'IntroductionPage';
 IntroductionPage.propTypes = propTypes;
 
-export default IntroductionPage;
+export default connect(mapStateToProps, mapDispatchToProps)(IntroductionPage);
 
 export const query = graphql`
   query IntroPageBySlug($slug: String!, $block: String!) {
