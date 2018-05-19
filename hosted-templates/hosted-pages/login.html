@@ -380,6 +380,8 @@
         domain: config.auth0Domain,
         clientID: config.clientID,
         redirectUri: config.callbackURL,
+        scope: 'openid email',
+        audience: 'https://' + config.auth0Domain + '/userinfo',
         responseType: 'code'
       }, config.internalOptions);
 
@@ -441,11 +443,11 @@
         }
       });
 
-      $('#send-email-btn').click(function() {
+      $('#send-email-btn').click(function(){
         sendEmail();
       });
 
-      $('#send-code-btn').click(function() {
+      $('#send-code-btn').click(function(){
         login();
       });
 

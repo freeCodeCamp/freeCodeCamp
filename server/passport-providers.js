@@ -178,7 +178,7 @@ export default {
     callbackPath: '/auth/auth0/callback',
     successRedirect: successRedirect,
     failureRedirect: failureRedirect,
-    scope: ['email'],
+    scope: ['openid email'],
     failureFlash: true
   }
 };
