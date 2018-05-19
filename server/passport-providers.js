@@ -1,4 +1,4 @@
-const successRedirect = '/settings';
+const successRedirect = '/';
 const failureRedirect = '/';
 const linkSuccessRedirect = '/settings';
 const linkFailureRedirect = '/settings';
@@ -176,7 +176,7 @@ export default {
     callbackURL: '/auth/auth0/callback',
     authPath: '/auth/auth0',
     callbackPath: '/auth/auth0/callback',
-    redirectWithToken: false,
+    redirectWithToken: true,
     successRedirect: successRedirect,
     failureRedirect: failureRedirect,
     scope: ['openid email'],

@@ -2,6 +2,7 @@ import passport from 'passport';
 import { PassportConfigurator } from
  '@freecodecamp/loopback-component-passport';
 import passportProviders from './passport-providers';
+import url from 'url';
 
 const passportOptions = {
   emailOptional: true,
@@ -90,26 +91,27 @@ export default function setupPassport(app) {
   configurator.init();
 
   Object.keys(passportProviders).map(function(strategy) {
-    var config = passportProviders[strategy];
+    let config = passportProviders[strategy];
     config.session = config.session !== false;
 
     // https://stackoverflow.com/q/37430452
     let successRedirect = (req) => {
       if (!!req && req.session && req.session.returnTo) {
-        var returnTo = req.session.returnTo;
+        let returnTo = req.session.returnTo;
         delete req.session.returnTo;
         return returnTo;
       }
       return config.successRedirect || '';
     };
+
     config.customCallback = !config.redirectWithToken
       ? null
-      : function(req, res, next) {
-        var url = require('url');
+      : (req, res, next) => {
+
         passport.authenticate(
           strategy,
-          {session: false},
-          function(err, user, info) {
+          { session: false },
+          (err, user) => {
             if (err) {
               return next(err);
             }
@@ -117,16 +119,24 @@ export default function setupPassport(app) {
             if (!user) {
               return res.redirect(config.failureRedirect);
             }
-            var redirect = url.parse(successRedirect(req), true);
+            let redirect = url.parse(successRedirect(req), true);
 
             delete redirect.search;
 
-            redirect.query = {
-              /* eslint-disable camelcase */
-              access_token: info.accessToken.id,
-              /* eslint-enable camelcase */
-              userId: user.id.toString()
-            };
+            req.flash(
+              'success',
+              'Success! You have signed in to your account. Happy Coding!'
+            );
+
+            // redirect.query = {
+            //   /* eslint-disable camelcase */
+            //   access_token: info.accessToken.id,
+            //   /* eslint-enable camelcase */
+            //   userId: user.id.toString()
+            // };
+
+            user.loginByRequest(req, res);
+
             redirect = url.format(redirect);
             return res.redirect(redirect);
           }
