@@ -64,7 +64,13 @@ class Layout extends PureComponent {
     }
   }
   render() {
-    const { children, data: { allChallengeNode: { edges } } } = this.props;
+    const {
+      children,
+      data: {
+        allChallengeNode: { edges },
+        allMarkdownRemark: { edges: mdEdges }
+      }
+    } = this.props;
     return (
       <Fragment>
         <Helmet
@@ -83,6 +89,7 @@ class Layout extends PureComponent {
           <main>{children()}</main>
         </div>
         <MapModal
+          introNodes={mdEdges.map(({ node }) => node)}
           nodes={edges
             .map(({ node }) => node)
             .filter(({ isPrivate }) => !isPrivate)}
@@ -117,6 +124,19 @@ export const query = graphql`
           isPrivate
           superBlock
           dashedName
+        }
+      }
+    }
+    allMarkdownRemark(filter: { frontmatter: { block: { ne: null } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            block
+          }
+          fields {
+            slug
+          }
         }
       }
     }

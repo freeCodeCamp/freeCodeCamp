@@ -6,6 +6,37 @@ exports[`<Map /> snapshot: Map 1`] = `
 >
   <ul>
     <Connect(SuperBlock)
+      introNodes={
+        Array [
+          Object {
+            "fields": Object {
+              "slug": "/super-block-one/block-a",
+            },
+            "frontmatter": Object {
+              "block": "Block A",
+              "title": "Introduction to Block A",
+            },
+          },
+          Object {
+            "fields": Object {
+              "slug": "/super-block-one/block-b",
+            },
+            "frontmatter": Object {
+              "block": "Block B",
+              "title": "Introduction to Block B",
+            },
+          },
+          Object {
+            "fields": Object {
+              "slug": "/super-block-one/block-c",
+            },
+            "frontmatter": Object {
+              "block": "Block C",
+              "title": "Introduction to Block C",
+            },
+          },
+        ]
+      }
       nodes={
         Array [
           Object {
@@ -121,6 +152,37 @@ exports[`<Map /> snapshot: Map 1`] = `
       superBlock="Super Block One"
     />
     <Connect(SuperBlock)
+      introNodes={
+        Array [
+          Object {
+            "fields": Object {
+              "slug": "/super-block-one/block-a",
+            },
+            "frontmatter": Object {
+              "block": "Block A",
+              "title": "Introduction to Block A",
+            },
+          },
+          Object {
+            "fields": Object {
+              "slug": "/super-block-one/block-b",
+            },
+            "frontmatter": Object {
+              "block": "Block B",
+              "title": "Introduction to Block B",
+            },
+          },
+          Object {
+            "fields": Object {
+              "slug": "/super-block-one/block-c",
+            },
+            "frontmatter": Object {
+              "block": "Block C",
+              "title": "Introduction to Block C",
+            },
+          },
+        ]
+      }
       nodes={
         Array [
           Object {

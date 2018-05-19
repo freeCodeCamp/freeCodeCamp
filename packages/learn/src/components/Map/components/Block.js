@@ -24,6 +24,13 @@ const mapDispatchToProps = dispatch =>
 const propTypes = {
   blockDashedName: PropTypes.string,
   challenges: PropTypes.array,
+  intro: PropTypes.shape({
+    fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
+    frontmatter: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      block: PropTypes.string.isRequired
+    })
+  }),
   isExpanded: PropTypes.bool,
   toggleBlock: PropTypes.func.isRequired,
   toggleMapModal: PropTypes.func.isRequired
@@ -62,22 +69,25 @@ export class Block extends PureComponent {
     };
   }
 
-  renderChallenges(challenges) {
+  renderChallenges(intro, challenges) {
     // TODO: Split this into a Challenge Component and add tests
-    return challenges.map(challenge => (
-      <li className='map-challenge-title' key={challenge.dashedName}>
+    return [intro].concat(challenges).map(challenge => (
+      <li
+        className='map-challenge-title'
+        key={'map-challenge' + challenge.fields.slug}
+        >
         <Link
           onClick={this.handleChallengeClick(challenge.fields.slug)}
           to={challenge.fields.slug}
           >
-          {challenge.title}
+          {challenge.title || challenge.frontmatter.title}
         </Link>
       </li>
     ));
   }
 
   render() {
-    const { challenges, isExpanded } = this.props;
+    const { challenges, isExpanded, intro } = this.props;
     const { blockName } = challenges[0].fields;
     return (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
@@ -85,7 +95,7 @@ export class Block extends PureComponent {
           <Caret />
           <h5>{blockName}</h5>
         </div>
-        <ul>{isExpanded ? this.renderChallenges(challenges) : null}</ul>
+        <ul>{isExpanded ? this.renderChallenges(intro, challenges) : null}</ul>
       </li>
     );
   }

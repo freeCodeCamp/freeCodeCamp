@@ -1,3 +1,7 @@
+.intro-layout {
+  margin-top: 1.45rem;
+}
+
 .intro-toc .list-group-item:hover {
   background-color: #eee;
 }

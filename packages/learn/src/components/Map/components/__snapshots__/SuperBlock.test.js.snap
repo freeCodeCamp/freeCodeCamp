@@ -44,6 +44,17 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
           },
         ]
       }
+      intro={
+        Object {
+          "fields": Object {
+            "slug": "/super-block-one/block-a",
+          },
+          "frontmatter": Object {
+            "block": "Block A",
+            "title": "Introduction to Block A",
+          },
+        }
+      }
     />
     <Connect(Block)
       blockDashedName="block-b"
@@ -75,6 +86,17 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
           },
         ]
       }
+      intro={
+        Object {
+          "fields": Object {
+            "slug": "/super-block-one/block-b",
+          },
+          "frontmatter": Object {
+            "block": "Block B",
+            "title": "Introduction to Block B",
+          },
+        }
+      }
     />
     <Connect(Block)
       blockDashedName="block-c"
@@ -93,6 +115,17 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
             "title": "Challenge One",
           },
         ]
+      }
+      intro={
+        Object {
+          "fields": Object {
+            "slug": "/super-block-one/block-c",
+          },
+          "frontmatter": Object {
+            "block": "Block C",
+            "title": "Introduction to Block C",
+          },
+        }
       }
     />
   </ul>

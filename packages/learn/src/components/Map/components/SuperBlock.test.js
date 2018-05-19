@@ -8,6 +8,7 @@ import sinon from 'sinon';
 
 import { SuperBlock } from './SuperBlock';
 import mockNodes from '../../../__mocks__/map-nodes';
+import mockIntroNodes from '../../../__mocks__/intro-nodes';
 
 Enzyme.configure({ adapter: new Adapter() });
 const renderer = new ShallowRenderer();
@@ -15,6 +16,7 @@ const renderer = new ShallowRenderer();
 test('<SuperBlock /> not expanded snapshot', () => {
   const toggleSpy = sinon.spy();
   const props = {
+    introNodes: mockIntroNodes,
     isExpanded: false,
     nodes: mockNodes,
     superBlock: 'Super Block One',
@@ -29,6 +31,7 @@ test('<SuperBlock /> not expanded snapshot', () => {
 test('<SuperBlock /> expanded snapshot', () => {
   const toggleSpy = sinon.spy();
   const props = {
+    introNodes: mockIntroNodes,
     isExpanded: true,
     nodes: mockNodes,
     superBlock: 'Super Block One',
@@ -43,6 +46,7 @@ test('<SuperBlock /> expanded snapshot', () => {
 test('<SuperBlock should handle toggle clicks correctly', () => {
   const toggleSpy = sinon.spy();
   const props = {
+    introNodes: mockIntroNodes,
     isExpanded: false,
     nodes: mockNodes,
     superBlock: 'Super Block One',

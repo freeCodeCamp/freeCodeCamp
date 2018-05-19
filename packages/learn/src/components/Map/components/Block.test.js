@@ -8,6 +8,7 @@ import sinon from 'sinon';
 
 import { Block } from './Block';
 import mockNodes from '../../../__mocks__/map-nodes';
+import mockIntroNodes from '../../../__mocks__/intro-nodes';
 
 Enzyme.configure({ adapter: new Adapter() });
 const renderer = new ShallowRenderer();
@@ -19,6 +20,7 @@ test('<Block /> not expanded snapshot', () => {
     <Block
       blockDashedName='block-a'
       challenges={mockNodes.filter(node => node.block === 'block-a')}
+      intro={mockIntroNodes[0]}
       isExpanded={false}
       toggleBlock={toggleSpy}
       toggleMapModal={toggleMapSpy}
@@ -36,6 +38,7 @@ test('<Block expanded snapshot', () => {
     <Block
       blockDashedName='block-a'
       challenges={mockNodes.filter(node => node.block === 'block-a')}
+      intro={mockIntroNodes[0]}
       isExpanded={true}
       toggleBlock={toggleSpy}
       toggleMapModal={toggleMapSpy}
@@ -53,6 +56,7 @@ test('<Block />  should handle toggle clicks correctly', () => {
   const props = {
     blockDashedName: 'block-a',
     challenges: mockNodes.filter(node => node.block === 'block-a'),
+    intro: mockIntroNodes[0],
     isExpanded: false,
     toggleBlock: toggleSpy,
     toggleMapModal: toggleMapSpy

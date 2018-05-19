@@ -36,6 +36,16 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     >
       <Unknown
         onClick={[Function]}
+        to="/super-block-one/block-a"
+      >
+        Introduction to Block A
+      </Unknown>
+    </li>
+    <li
+      className="map-challenge-title"
+    >
+      <Unknown
+        onClick={[Function]}
         to="/super-block-one/block-a/challenge-one"
       >
         Challenge One

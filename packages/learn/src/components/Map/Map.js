@@ -9,14 +9,28 @@ import './map.css';
 import { ChallengeNode } from '../../redux/propTypes';
 
 const propTypes = {
+  introNodes: PropTypes.arrayOf(
+    PropTypes.shape({
+      fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        block: PropTypes.string.isRequired
+      })
+    })
+  ),
   nodes: PropTypes.arrayOf(ChallengeNode)
 };
 
 class ShowMap extends PureComponent {
   renderSuperBlocks(superBlocks) {
-    const { nodes } = this.props;
+    const { nodes, introNodes } = this.props;
     return superBlocks.map(superBlock => (
-      <SuperBlock key={superBlock} nodes={nodes} superBlock={superBlock} />
+      <SuperBlock
+        introNodes={introNodes}
+        key={superBlock}
+        nodes={nodes}
+        superBlock={superBlock}
+      />
     ));
   }
 

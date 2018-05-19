@@ -21,12 +21,21 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleMapModal }, dispatch);
 
 const propTypes = {
+  introNodes: PropTypes.arrayOf(
+    PropTypes.shape({
+      fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        block: PropTypes.string.isRequired
+      })
+    })
+  ),
   nodes: PropTypes.arrayOf(ChallengeNode),
   show: PropTypes.bool,
   toggleMapModal: PropTypes.func.isRequired
 };
 
-function MapModal({ nodes, show, toggleMapModal }) {
+function MapModal({ introNodes, nodes, show, toggleMapModal }) {
   return (
     <Modal
       bsSize='lg'
@@ -41,7 +50,7 @@ function MapModal({ nodes, show, toggleMapModal }) {
       </Modal.Header>
       <Modal.Body>
         <Spacer />
-        <Map nodes={nodes} />
+        <Map introNodes={introNodes} nodes={nodes} />
         <Spacer />
       </Modal.Body>
     </Modal>

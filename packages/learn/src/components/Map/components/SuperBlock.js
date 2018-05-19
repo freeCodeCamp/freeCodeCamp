@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import uniq from 'lodash/uniq';
+import find from 'lodash/find';
 
 import Block from './Block';
 
@@ -29,6 +30,15 @@ function mapDispatchToProps(dispatch) {
 }
 
 const propTypes = {
+  introNodes: PropTypes.arrayOf(
+    PropTypes.shape({
+      fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        block: PropTypes.string.isRequired
+      })
+    })
+  ),
   isExpanded: PropTypes.bool,
   nodes: PropTypes.arrayOf(ChallengeNode),
   superBlock: PropTypes.string,
@@ -37,7 +47,7 @@ const propTypes = {
 
 export class SuperBlock extends PureComponent {
   renderBlock(superBlock) {
-    const { nodes } = this.props;
+    const { nodes, introNodes } = this.props;
     const blocksForSuperBlock = nodes.filter(
       node => node.superBlock === superBlock
     );
@@ -52,6 +62,14 @@ export class SuperBlock extends PureComponent {
             blockDashedName={blockDashedName}
             challenges={blocksForSuperBlock.filter(
               node => node.block === blockDashedName
+            )}
+            intro={find(
+              introNodes,
+              ({ frontmatter: { block } }) =>
+                block
+                  .toLowerCase()
+                  .split(' ')
+                  .join('-') === blockDashedName
             )}
             key={blockDashedName}
           />
