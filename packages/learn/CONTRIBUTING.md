@@ -9,7 +9,7 @@ node | ^8.11.x
 1. Fork the repo
 2. Clone locally
 3. `yarn install`
-4. `git checkout branch -b <your-branch-name>`
+4. `git checkout -b <your-branch-name>`
 5. `cp sample.env .env`
 6. `yarn develop`
 7. Make your changes
