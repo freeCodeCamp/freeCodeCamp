@@ -1,0 +1,15 @@
+extends ../layout
+block content
+    .container
+      .col-xs-12
+        .row
+          .text-center
+            h2 Sign up (or sign in with your existing account)
+            br
+            a.btn.btn-lg.btn-primary(href='/auth/auth0')
+              | Get a link on your email
+        .row
+          .text-center
+            br
+            a(href="/deprecated-signin")
+              | Continute with old sign in methods
