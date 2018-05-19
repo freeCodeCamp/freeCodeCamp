@@ -13,3 +13,8 @@
   display: flex;
   align-items: end;
 }
+
+.monaco-menu .action-label { 
+  color: #a2bd9b; 
+  letter-spacing: 0.02em;
+}
