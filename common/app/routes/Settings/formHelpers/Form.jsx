@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { reduxForm } from 'redux-form';
 
-import { FormFields, BlockSaveButton, BlockSaveWrapper } from './';
+import { FormFields, BlockSaveButton } from './';
 
 const propTypes = {
   buttonText: PropTypes.string,
@@ -50,22 +50,20 @@ function DynamicForm({
         fields={ fields }
         options={ options }
       />
-      <BlockSaveWrapper>
-        {
-          hideButton ?
-            null :
-          <BlockSaveButton
-            disabled={
-              allPristine && !enableSubmit ||
-              (!!Object.keys(errors).filter(key => errors[key]).length)
-            }
-            >
-            {
-              buttonText ? buttonText : null
-            }
-          </BlockSaveButton>
-        }
-      </BlockSaveWrapper>
+      {
+        hideButton ?
+          null :
+        <BlockSaveButton
+          disabled={
+            allPristine && !enableSubmit ||
+            (!!Object.keys(errors).filter(key => errors[key]).length)
+          }
+          >
+          {
+            buttonText ? buttonText : null
+          }
+        </BlockSaveButton>
+      }
     </form>
   );
 }
