@@ -16,6 +16,15 @@
       strong
         span.green-text 30
       |  projects
+    if !!completedLegacyCertCount
+      p.stats
+        | You have earned&nbsp;
+        strong
+          span.green-text=completedLegacyCertCount
+        |  out of&nbsp;
+        strong
+          span.green-text 3
+        |  legacy certifications
     p.stats
       | You have earned&nbsp;
       strong
