@@ -38,7 +38,20 @@ const mapStateToProps = createSelector(
   userFoundSelector,
   (
     isSignedIn,
-    { isLocked, username: requestedUsername },
+    {
+      username: requestedUsername,
+      profileUI: {
+        isLocked,
+        showAbout,
+        showCerts,
+        showHeatMap,
+        showLocation,
+        showName,
+        showPoints,
+        showPortfolio,
+        showTimeLine
+      } = {}
+    },
     { username: paramsUsername },
     currentUsername,
     showLoading,
@@ -47,12 +60,20 @@ const mapStateToProps = createSelector(
     isSignedIn,
     currentUsername,
     isCurrentUserProfile: paramsUsername === currentUsername,
-    isLocked,
     isUserFound,
     fetchOtherUserCompleted: typeof isUserFound === 'boolean',
     paramsUsername,
     requestedUsername,
-    showLoading
+    isLocked,
+    showLoading,
+    showAbout,
+    showCerts,
+    showHeatMap,
+    showLocation,
+    showName,
+    showPoints,
+    showPortfolio,
+    showTimeLine
   })
 );
 
@@ -71,7 +92,15 @@ const propTypes = {
   isUserFound: PropTypes.bool,
   paramsUsername: PropTypes.string,
   requestedUsername: PropTypes.string,
+  showAbout: PropTypes.bool,
+  showCerts: PropTypes.bool,
+  showHeatMap: PropTypes.bool,
   showLoading: PropTypes.bool,
+  showLocation: PropTypes.bool,
+  showName: PropTypes.bool,
+  showPoints: PropTypes.bool,
+  showPortfolio: PropTypes.bool,
+  showTimeLine: PropTypes.bool,
   updateTitle: PropTypes.func.isRequired
 };
 
@@ -93,7 +122,15 @@ class Profile extends Component {
       isLocked,
       isUserFound,
       isCurrentUserProfile,
-      paramsUsername
+      paramsUsername,
+      showAbout,
+      showLocation,
+      showName,
+      showPoints,
+      showHeatMap,
+      showCerts,
+      showPortfolio,
+      showTimeLine
     } = this.props;
     const takeMeToChallenges = (
       <a href='/challenges/current-challenge'>
@@ -113,8 +150,8 @@ class Profile extends Component {
           <Alert bsStyle='info'>
             <p>
               {
-                'In order to view their progress through the freeCodeCamp ' +
-                'curriculum, they need to make all of thie solutions public'
+                'In order to view their freeCodeCamp certiciations, ' +
+                'they need to make their profile public'
               }
             </p>
           </Alert>
@@ -136,11 +173,16 @@ class Profile extends Component {
     }
     return (
       <div>
-        <CamperHOC />
-        <HeatMap />
-        <Certificates />
-        <Portfolio />
-        <Timeline className='timelime-container' />
+        <CamperHOC
+          showAbout={ showAbout }
+          showLocation={ showLocation }
+          showName={ showName }
+          showPoints={ showPoints }
+        />
+        { showHeatMap ? <HeatMap /> : null }
+        { showCerts ? <Certificates /> : null }
+        { showPortfolio ? <Portfolio /> : null }
+        { showTimeLine ? <Timeline className='timelime-container' /> : null }
       </div>
     );
   }

@@ -31,6 +31,10 @@ const propTypes = {
   name: PropTypes.string,
   picture: PropTypes.string,
   points: PropTypes.number,
+  showAbout: PropTypes.bool,
+  showLocation: PropTypes.bool,
+  showName: PropTypes.bool,
+  showPoints: PropTypes.bool,
   username: PropTypes.string
 };
 
@@ -40,17 +44,21 @@ function CamperHOC({
   location,
   points,
   picture,
-  about
+  about,
+  showAbout,
+  showLocation,
+  showName,
+  showPoints
 }) {
 
   return (
     <div>
       <Camper
-        about={ about }
-        location={ location }
-        name={ name }
+        about={ showAbout && about }
+        location={ showLocation && location }
+        name={ showName && name }
         picture={ picture }
-        points={ points }
+        points={ showPoints && points }
         username={ username }
       />
       <hr />

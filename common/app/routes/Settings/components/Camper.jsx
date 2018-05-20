@@ -42,9 +42,13 @@ function Camper({
       { name && <p className='text-center name'>{ name }</p> }
       { location && <p className='text-center location'>{ location }</p> }
       { about && <p className='bio text-center'>{ about }</p> }
-      <p className='text-center points'>
-        { `${points} ${pluralise('point', points > 1)}` }
-      </p>
+      {
+        typeof points === 'number' ? (
+          <p className='text-center points'>
+            { `${points} ${pluralise('point', points > 1)}` }
+          </p>
+        ) : null
+      }
       <br/>
     </div>
   );

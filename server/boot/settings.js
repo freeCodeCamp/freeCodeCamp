@@ -114,6 +114,18 @@ export default function settingsController(app) {
       );
     }
 
+  function updateMyProfileUI(req, res, next) {
+    const {
+      user,
+      body: { profileUI }
+    } = req;
+    return user.updateMyProfileUI(profileUI)
+      .subscribe(
+        message => res.json({ message }),
+        next
+      );
+  }
+
   function updateMyProjects(req, res, next) {
     const {
       user,
@@ -163,6 +175,11 @@ export default function settingsController(app) {
     '/update-my-portfolio',
     ifNoUser401,
     updateMyPortfolio
+  );
+  api.post(
+    '/update-my-profile-ui',
+    ifNoUser401,
+    updateMyProfileUI
   );
   api.post(
     '/update-my-projects',

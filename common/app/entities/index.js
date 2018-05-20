@@ -20,6 +20,7 @@ export const types = createTypes([
   'optoUpdatePortfolio',
   'regresPortfolio',
   'resetFullBlocks',
+  'updateLocalProfileUI',
   'updateMultipleUserFlags',
   'updateTheme',
   'updateUserFlag',
@@ -55,6 +56,8 @@ export const updateUserLang = createAction(
   types.updateUserLang,
   (username, lang) => ({ username, languageTag: lang })
 );
+
+export const updateLocalProfileUI = createAction(types.updateLocalProfileUI);
 
 export const resetFullBlocks = createAction(types.resetFullBlocks);
 
@@ -292,6 +295,23 @@ export default composeReducers(
           [username]: {
             ...state.user[username],
             languageTag
+          }
+        }
+      }),
+      [types.updateLocalProfileUI]:
+      (
+        state,
+        { payload: { username, profileUI } }
+      ) => ({
+        ...state,
+        user: {
+          ...state.user,
+          [username]: {
+            ...state.user[username],
+            profileUI: {
+              ...state.user[username].profileUI,
+              ...profileUI
+            }
           }
         }
       })

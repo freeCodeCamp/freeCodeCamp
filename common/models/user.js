@@ -747,6 +747,22 @@ module.exports = function(User) {
       `);
   };
 
+  User.prototype.updateMyProfileUI = function updateMyProfileUI(profileUI) {
+    const oldUI = { ...this.profileUI };
+    const update = {
+      profileUI: {
+        ...oldUI,
+        ...profileUI
+      }
+    };
+
+    return this.update$(update)
+      .do(() => Object.assign(this, update))
+      .map(() => dedent`
+        Your privacy settings have been updated.
+      `);
+  };
+
   User.prototype.updateMyUsername = function updateMyUsername(newUsername) {
     return Observable.defer(
       () => {
