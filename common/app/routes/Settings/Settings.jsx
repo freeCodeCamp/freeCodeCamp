@@ -84,7 +84,7 @@ export class Settings extends React.Component {
               bsStyle='primary'
               className='btn-link-social'
               >
-              Show me my public profile
+              Show me my public portfolio
             </Button>
           </Link>
           <Button
