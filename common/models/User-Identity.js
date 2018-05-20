@@ -14,7 +14,6 @@ import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 export default function(UserIdent) {
   UserIdent.on('dataSourceAttached', () => {
     UserIdent.findOne$ = observeMethod(UserIdent, 'findOne');
-    UserIdent.create$ = observeMethod(UserIdent, 'create');
   });
   // original source
   // github.com/strongloop/loopback-component-passport
@@ -65,6 +64,7 @@ export default function(UserIdent) {
         );
 
     } else {
+
       return UserIdent.findOne$(query)
         .flatMap(identity => {
           if (!identity) {
@@ -76,7 +76,7 @@ export default function(UserIdent) {
                   Please create an account below
                 `,
                 type: 'info',
-                redirectTo: '/deprecated-signup'
+                redirectTo: '/signup'
               }
             );
           }
@@ -96,7 +96,7 @@ export default function(UserIdent) {
                   new Error('user identity is not associated with a user'),
                   {
                     type: 'info',
-                    redirectTo: '/deprecated-signup',
+                    redirectTo: '/signup',
                     message: dedent`
     The user account associated with the ${provider} user ${username || 'Anon'}
     no longer exists.
@@ -131,6 +131,7 @@ export default function(UserIdent) {
             }
           );
           return Observable.combineLatest(
+            Observable.of(user),
             updateIdentity,
             createToken,
             (user, identity, token) => ({ user, identity, token })

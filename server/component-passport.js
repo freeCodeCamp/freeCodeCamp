@@ -104,7 +104,7 @@ export default function setupPassport(app) {
       return config.successRedirect || '';
     };
 
-    config.customCallback = !config.redirectWithToken
+    config.customCallback = !config.useCustomCallback
       ? null
       : (req, res, next) => {
 

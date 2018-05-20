@@ -176,7 +176,7 @@ export default {
     callbackURL: '/auth/auth0/callback',
     authPath: '/auth/auth0',
     callbackPath: '/auth/auth0/callback',
-    redirectWithToken: true,
+    useCustomCallback: true,
     successRedirect: successRedirect,
     failureRedirect: failureRedirect,
     scope: ['openid email'],
