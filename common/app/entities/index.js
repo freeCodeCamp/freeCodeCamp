@@ -121,7 +121,9 @@ export function projectsSelector(state) {
   );
   return Object.keys(blocks)
     .filter(key =>
-      key.includes('projects') && !key.includes('coding-interview')
+      key.includes('projects') && !(
+        key.includes('coding-interview') || key.includes('take-home')
+      )
     )
     .map(key => blocks[key])
     .concat(legacyWithDashedNames)
