@@ -9,6 +9,8 @@ import {
   Col
 } from 'react-bootstrap';
 
+import { FullWidthRow } from '../../../helperComponents';
+
 import { userByNameSelector } from '../../../redux';
 
 const mapStateToProps = createSelector(
@@ -123,7 +125,7 @@ function renderCertShow(username, cert) {
   return cert.show ? (
     <Row key={ cert.showURL }>
       <Col sm={ 8 }>
-        <p>
+        <p className='bigger-text'>
           <strong>
             { cert.title }
           </strong>
@@ -154,25 +156,27 @@ function Certificates({
   const renderCertShowWithUsername = _.curry(renderCertShow)(username);
   return (
     <div>
-      <h2 className='text-center'>freeCodeCamp Certifications</h2>
-      <br />
-      {
-        hasModernCert ?
-        currentCerts.map(renderCertShowWithUsername) :
-        <p className='text-center' >
-          No certifications have been earned under the current curriculum
-        </p>
-      }
-      {
-        hasLegacyCert ?
-        <div>
-          <h3>Legacy Certifications</h3>
-          {
-            legacyCerts.map(renderCertShowWithUsername)
-          }
-        </div> :
-        null
-      }
+      <FullWidthRow>
+        <h2 className='text-center'>freeCodeCamp Certifications</h2>
+        <br />
+        {
+          hasModernCert ?
+          currentCerts.map(renderCertShowWithUsername) :
+          <p className='text-center' >
+            No certifications have been earned under the current curriculum
+          </p>
+        }
+        {
+          hasLegacyCert ?
+          <div>
+            <h3>Legacy Certifications</h3>
+            {
+              legacyCerts.map(renderCertShowWithUsername)
+            }
+          </div> :
+          null
+        }
+      </FullWidthRow>
       <hr />
     </div>
   );
