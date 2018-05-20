@@ -58,7 +58,7 @@ function CamperHOC({
         location={ showLocation && location }
         name={ showName && name }
         picture={ picture }
-        points={ showPoints && points }
+        points={ showPoints ? points : 0 }
         username={ username }
       />
       <hr />
