@@ -26,7 +26,7 @@ function ResetModal(props) {
       <Modal.Body>
         <p>
           This will really delete all of your progress, points, completed
-          challenges, our records of your projects, any certificates you have,
+          challenges, our records of your projects, any certifications you have,
           everything.
         </p>
         <p>
