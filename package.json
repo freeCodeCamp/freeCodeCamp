@@ -40,6 +40,7 @@
   "dependencies": {
     "@freecodecamp/loopback-component-passport": "^1.0.0",
     "accepts": "^1.3.0",
+    "auth0-js": "^9.5.1",
     "babel-core": "^6.18.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
@@ -101,6 +102,7 @@
     "normalizr": "2.2.1",
     "opbeat": "^4.14.0",
     "passport": "^0.4.0",
+    "passport-auth0": "^0.6.1",
     "passport-facebook": "^2.0.0",
     "passport-github": "^1.0.0",
     "passport-google-oauth2": "~0.1.6",

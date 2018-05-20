@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <title>Sign in to freeCodeCamp</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style>
+    html,
+    body,
+    div,
+    span,
+    a,
+    li,
+    td,
+    th {
+      font-family: 'Lato', sans-serif;
+    }
+
+    bold {
+      font-family: 'Lato-Bold', sans-serif;
+      font-weight: Bold;
+    }
+
+    .checkbox label:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .checkbox .cr {
+      position: relative;
+      display: inline-block;
+      border: 1px solid #a9a9a9;
+      border-radius: .25em;
+      width: 1.3em;
+      height: 1.3em;
+      float: left;
+      margin-right: .5em;
+    }
+
+    .checkbox .cr .cr-icon {
+      position: absolute;
+      font-size: .8em;
+      line-height: 0;
+      top: 50%;
+      left: 15%;
+    }
+
+    .checkbox label input[type="checkbox"] {
+      display: none;
+    }
+
+    .checkbox label input[type="checkbox"]+.cr>.cr-icon {
+      opacity: 0;
+    }
+
+    .checkbox label input[type="checkbox"]:checked+.cr>.cr-icon {
+      opacity: 1;
+    }
+
+    .checkbox label input[type="checkbox"]:disabled+.cr {
+      opacity: .5;
+    }
+
+    .btn-social {
+      width: 100%;
+      max-width: 260px;
+      margin: auto;
+    }
+
+    .btn-link-social {
+      max-width: 400px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+
+    a {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    h1,
+    h2 {
+      font-weight: 400;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .fa,
+    [class^='ion-'] {
+      margin-right: 5px;
+    }
+
+    .fa:hover {
+      text-decoration: none;
+    }
+
+    a {
+      color: darkgreen;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: darkgreen;
+    }
+
+    .img-center {
+      margin: 0 auto;
+    }
+
+    .button-spacer {
+      padding: 5px 0;
+    }
+
+    .spacer {
+      padding: 15px 0 15px 0;
+    }
+
+    .btn-primary {
+      color: darkgreen;
+      background-color: darkgreen;
+      border-color: #004a00;
+    }
+
+    .btn-lg,
+    .btn-group-lg>.btn {
+      padding: 10px 16px;
+      font-size: 19px;
+      line-height: 1.33;
+      border-radius: 6px;
+    }
+
+    .btn-block {
+      display: block;
+      width: 100%;
+    }
+
+    .btn {
+      font-weight: 400;
+      white-space: normal;
+      background: transparent;
+      -webkit-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+      -moz-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+      -ms-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+      -o-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .btn.focus {
+      color: #eeeeee;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary.focus,
+    .btn-primary:active,
+    .btn-primary:active:hover,
+    .btn-primary.active,
+    .open>.dropdown-toggle.btn-primary {
+      color: #eeeeee;
+      background-color: darkgreen;
+      border-color: #000d00;
+    }
+
+    .btn.disabled,
+    .btn[disabled],
+    fieldset[disabled] .btn {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.65;
+      filter: alpha(opacity=65);
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .btn-primary.disabled,
+    .btn-primary[disabled],
+    fieldset[disabled] .btn-primary,
+    .btn-primary.disabled:hover,
+    .btn-primary[disabled]:hover,
+    fieldset[disabled] .btn-primary:hover,
+    .btn-primary.disabled:focus,
+    .btn-primary[disabled]:focus,
+    fieldset[disabled] .btn-primary:focus,
+    .btn-primary.disabled.focus,
+    .btn-primary[disabled].focus,
+    fieldset[disabled] .btn-primary.focus,
+    .btn-primary.disabled:active,
+    .btn-primary[disabled]:active,
+    fieldset[disabled] .btn-primary:active,
+    .btn-primary.disabled.active,
+    .btn-primary[disabled].active,
+    fieldset[disabled] .btn-primary.active {
+      background-color: darkgreen;
+      border-color: #004a00;
+    }
+
+    h4 {
+      font-size: 22px;
+    }
+
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+      border-color: #e7e7e7;
+      background: darkgreen;
+    }
+
+    .navbar {
+      white-space: nowrap;
+      border: none;
+      line-height: 1;
+      background: darkgreen;
+    }
+
+    @media (min-width: 767px) {
+      .navbar {
+        padding-left: 15px;
+        padding-right: 30px;
+      }
+    }
+
+    .navbar-default .navbar-nav>li>a {
+      color: #eeeeee;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar navbar-default navbar-static-top nav-height">
+    <div class="navbar-header">
+      <button class="hamburger navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+      <div class="col-xs-12">
+        <span class="hamburger-text">Menu</span>
+      </div></button> <a class="navbar-brand" href="http://freecodecamp.org"><img alt=
+      "learn to code javascript at freeCodeCamp logo" class=
+      "img-responsive nav-logo" src=
+      "https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg"></a>
+    </div>
+
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right hamburger-dropdown">
+        <li>
+          <a href="https://learn.freecodecamp.org" rel="noopener" target="_blank">Learn</a>
+        </li>
+
+
+        <li>
+          <a href="https://forum.freecodecamp.org" rel="noopener" target="_blank">Forum</a>
+        </li>
+
+
+        <li>
+          <a href="https://freecodecamp.org/">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="container">
+      <div class="col-xs-12">
+
+        <div class="row">
+          <div class="text-center">
+            <h2>Sign up (or sign in with your existing account)</h2>
+            <div class="button-spacer"></div>
+          </div>
+
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+              <div class="enter-email">
+
+                <input autofocus="" class="input-lg form-control" id="email" name="email" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Enter your email address')" placeholder="Enter your email address" required="" type="email">
+
+                <div class="button-spacer">
+                </div>
+
+
+                <div class="checkbox">
+                  <label><input name="quincy-emails" type="checkbox">
+                    <span class="cr"><i class="cr-icon fa fa-check"></i></span> I
+                    want weekly emails from Quincy, freeCodeCamp.org's
+                    founder.</label>
+                </div>
+
+
+                <div class="checkbox">
+                  <label><input id="terms-privacy" name="terms-privacy" type=
+                      "checkbox"> <span class="cr"><i class=
+                        "cr-icon fa fa-check"></i></span> I accept the <a href=
+                        "/terms" target="_blank">Terms of Service</a> and <a href=
+                        "/privacy" target="_blank">Privacy Policy</a>
+                        (required)</label>
+                </div>
+
+
+                <div class="button-spacer">
+                </div>
+                <button id="send-email-btn" class="btn btn-primary btn-lg btn-block">Get a code on your email</button>
+              </div>
+
+
+              <div class="enter-code" style="display: none;">
+                <input name="code" id="code" value="" class="input-lg form-control" placeholder="Enter the code you recieved on your email">
+
+                <div class="button-spacer">
+                </div>
+                <button id="send-code-btn" class="btn btn-primary btn-lg btn-block">Submit Code</button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <br>
+            <p class="text-center"><br>
+              <br>
+              <a href="https://freecodecamp.org/deprecated-signin">Continute with
+                      old sign in methods</a>
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!--[if IE 8]>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+          <![endif]-->
+  <!--[if lte IE 9]>
+          <script src="https://cdn.auth0.com/js/polyfills/1.0/base64.min.js"></script>
+          <script src="https://cdn.auth0.com/js/polyfills/1.0/es5-shim.min.js"></script>
+          <![endif]-->
+          <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/ae11c47b27.js">
+  </script>
+  <script src="https://cdn.auth0.com/js/auth0/9.2/auth0.min.js">
+  </script>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/object-assign.min.js">
+  </script>
+  <script>
+    $(document).ready(function() {
+
+      var config = JSON.parse(
+        decodeURIComponent(escape(window.atob('@@config@@')))
+      );
+
+      var params = Object.assign({
+        domain: config.auth0Domain,
+        clientID: config.clientID,
+        redirectUri: config.callbackURL,
+        scope: 'openid email',
+        audience: 'https://' + config.auth0Domain + '/userinfo',
+        responseType: 'code'
+      }, config.internalOptions);
+
+      var webAuth = new auth0.WebAuth(params);
+
+      function disableMagicButtonForAgreement(isLaunched) {
+        if (isLaunched) {
+          $('#send-email-btn').prop('disabled', true).html(
+            '<span style="color:#E0E0E0;">Get a code on your email<\/span>');
+          return;
+        } else {
+          $('#send-email-btn').prop('disabled', false).html(
+            '<span>Get a code on your email<\/span>');
+        }
+      }
+
+      function sendEmail() {
+
+        var email = $('input#email').val();
+        webAuth.passwordlessStart({
+          connection: 'email',
+          send: 'code',
+          email: email
+        }, function(err, res) {
+          if (err) {
+            // Handle error
+            console.log('err', err);
+          }
+          console.log('res', res);
+          // Hide the input and show the code entry screen
+          $('.enter-email').hide();
+          $('.enter-code').show();
+        });
+      }
+
+      function login() {
+        console.log('logging in...');
+        var email = $('input#email').val();
+        var code = $('input#code').val();
+        webAuth.passwordlessLogin({
+          connection: 'email',
+          email: email,
+          verificationCode: code
+        }, function(err, res) {
+          if (err) {
+            console.log('error logging-in', err);
+            alert('Couldn\'t login ' + err.message);
+          }
+        });
+      };
+
+      disableMagicButtonForAgreement(true);
+
+      $('#terms-privacy').click(function() {
+        if (this.checked) {
+          disableMagicButtonForAgreement(false);
+        } else {
+          disableMagicButtonForAgreement(true);
+        }
+      });
+
+      $('#send-email-btn').click(function(){
+        sendEmail();
+      });
+
+      $('#send-code-btn').click(function(){
+        login();
+      });
+
+    });
+  </script>
+</body>
+
+</html>

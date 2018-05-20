@@ -4,8 +4,7 @@ import dedent from 'dedent';
 
 import {
   getSocialProvider,
-  getUsernameFromProvider,
-  createUserUpdatesFromProfile
+  getUsernameFromProvider
 } from '../../server/utils/auth';
 import { observeMethod, observeQuery } from '../../server/utils/rx';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
@@ -48,84 +47,100 @@ export default function(UserIdent) {
       },
       include: 'user'
     };
-    return UserIdent.findOne$(query)
-      .flatMap(identity => {
-        if (!identity) {
-          throw wrapHandledError(
-            new Error('user identity account not found'),
-            {
-              message: dedent`
-                New accounts can only be created using an email address.
-                Please create an account below
-              `,
-              type: 'info',
-              redirectTo: '/signup'
-            }
-          );
-        }
-        const modified = new Date();
-        const user = identity.user();
-        if (!user) {
-          const username = getUsernameFromProvider(provider, profile);
-          return observeQuery(
+
+    if (provider === 'auth0') {
+
+      const email = profile.emails[0].value;
+      return User.findOne$({ where: { email } })
+        .flatMap(user => {
+          if (!user) {
+            return User.create$({ email });
+          }
+          return Observable.of(user);
+        })
+        .subscribe(
+          ( user ) => cb(null, user, null, null),
+          cb
+        );
+
+    } else {
+
+      return UserIdent.findOne$(query)
+        .flatMap(identity => {
+          if (!identity) {
+            throw wrapHandledError(
+              new Error('user identity account not found'),
+              {
+                message: dedent`
+                  New accounts can only be created using an email address.
+                  Please create an account below
+                `,
+                type: 'info',
+                redirectTo: '/signup'
+              }
+            );
+          }
+          const modified = new Date();
+          const user = identity.user();
+          if (!user) {
+            const username = getUsernameFromProvider(provider, profile);
+            return observeQuery(
+              identity,
+              'updateAttributes',
+              {
+                isOrphaned: username || true
+              }
+            )
+              .do(() => {
+                throw wrapHandledError(
+                  new Error('user identity is not associated with a user'),
+                  {
+                    type: 'info',
+                    redirectTo: '/signup',
+                    message: dedent`
+    The user account associated with the ${provider} user ${username || 'Anon'}
+    no longer exists.
+                    `
+                  }
+                );
+              });
+          }
+
+          // identity already exists
+          // find user and log them in
+          identity.credentials = credentials;
+          const attributes = {
+            // we no longer want to keep the profile
+            // this is information we do not need or use
+            profile: null,
+            credentials: credentials,
+            modified
+          };
+          const updateIdentity = observeQuery(
             identity,
             'updateAttributes',
+            attributes
+          );
+          const createToken = observeQuery(
+            AccessToken,
+            'create',
             {
-              isOrphaned: username || true
+              userId: user.id,
+              created: new Date(),
+              ttl: user.constructor.settings.ttl
             }
-          )
-            .do(() => {
-              throw wrapHandledError(
-                new Error('user identity is not associated with a user'),
-                {
-                  type: 'info',
-                  redirectTo: '/signup',
-                  message: dedent`
-  The user account associated with the ${provider} user ${username || 'Anon'}
-  no longer exists.
-                  `
-                }
-              );
-            });
-        }
-        const updateUser = User.update$(
-          { id: user.id },
-          createUserUpdatesFromProfile(provider, profile)
-        ).map(() => user);
-        // identity already exists
-        // find user and log them in
-        identity.credentials = credentials;
-        const attributes = {
-          // we no longer want to keep the profile
-          // this is information we do not need or use
-          profile: null,
-          credentials: credentials,
-          modified
-        };
-        const updateIdentity = observeQuery(
-          identity,
-          'updateAttributes',
-          attributes
+          );
+          return Observable.combineLatest(
+            Observable.of(user),
+            updateIdentity,
+            createToken,
+            (user, identity, token) => ({ user, identity, token })
+          );
+        })
+        .subscribe(
+          ({ user, identity, token }) => cb(null, user, identity, token),
+          cb
         );
-        const createToken = observeQuery(
-          AccessToken,
-          'create',
-          {
-            userId: user.id,
-            created: new Date(),
-            ttl: user.constructor.settings.ttl
-          }
-        );
-        return Observable.combineLatest(
-          updateUser,
-          updateIdentity,
-          createToken,
-          (user, identity, token) => ({ user, identity, token })
-        );
-      })
-      .subscribe(
-        ({ user, identity, token }) => cb(null, user, identity, token),
-        cb
-      );
+    }
   };
 }
