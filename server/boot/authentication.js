@@ -29,21 +29,11 @@ module.exports = function enableAuthentication(app) {
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
 
+  router.get('/signup', (req, res) => res.redirect(301, '/login'));
   router.get('/email-signin', (req, res) => res.redirect(301, '/login'));
-  router.get('/signin', (req, res) => res.redirect(301, '/signup'));
+  router.get('/signin', (req, res) => res.redirect(301, '/login'));
   router.get('/signout', (req, res) => res.redirect(301, '/logout'));
 
-  function getLegacySignUp(req, res) {
-    if (isSignUpDisabled) {
-      return res.render('account/beta', {
-        title: 'New sign ups are disabled'
-      });
-    }
-    return res.render('account/deprecated-signup', {
-      title: 'Sign in to freeCodeCamp using your Email Address'
-    });
-  }
-  router.get('/signup', ifUserRedirect, getLegacySignUp);
   router.get('/login',
   ifUserRedirect,
   (req, res) => res.redirect(301, '/auth/auth0'));
@@ -52,7 +42,6 @@ module.exports = function enableAuthentication(app) {
     req.logout();
     res.redirect('/');
   });
-
 
   router.get(
     '/deprecated-signin',
